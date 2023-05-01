@@ -3,7 +3,7 @@
 /// An Amazon Connect campaign summary.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CampaignSummary {
+pub struct CampaignSummary  {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct CampaignSummary {
 }
 impl CampaignSummary {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The resource name of an Amazon Connect campaign.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The name of an Amazon Connect Campaign name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl CampaignSummaryBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// The resource name of an Amazon Connect campaign.
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl CampaignSummaryBuilder {
     }
     /// The resource name of an Amazon Connect campaign.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The name of an Amazon Connect Campaign name.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl CampaignSummaryBuilder {
     }
     /// The name of an Amazon Connect Campaign name.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Amazon Connect Instance Id
     pub fn connect_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,20 +85,21 @@ impl CampaignSummaryBuilder {
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connect_instance_id = input;
-        self
+    pub fn set_connect_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connect_instance_id = input; self
     }
     /// Consumes the builder and constructs a [`CampaignSummary`](crate::types::CampaignSummary).
     pub fn build(self) -> crate::types::CampaignSummary {
         crate::types::CampaignSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            connect_instance_id: self.connect_instance_id,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            connect_instance_id: self.connect_instance_id
+            ,
         }
     }
 }
+

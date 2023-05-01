@@ -3,7 +3,7 @@
 /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventStartCondition {
+pub struct EventStartCondition  {
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
     #[doc(hidden)]
     pub event_filter: std::option::Option<crate::types::EventFilter>,
@@ -13,11 +13,11 @@ pub struct EventStartCondition {
 }
 impl EventStartCondition {
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
-    pub fn event_filter(&self) -> std::option::Option<&crate::types::EventFilter> {
+    pub fn event_filter(&self) -> std::option::Option<& crate::types::EventFilter> {
         self.event_filter.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn segment_id(&self) -> std::option::Option<&str> {
+    pub fn segment_id(&self) -> std::option::Option<& str> {
         self.segment_id.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl EventStartConditionBuilder {
         self
     }
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
-    pub fn set_event_filter(
-        mut self,
-        input: std::option::Option<crate::types::EventFilter>,
-    ) -> Self {
-        self.event_filter = input;
-        self
+    pub fn set_event_filter(mut self, input: std::option::Option<crate::types::EventFilter>) -> Self {
+        self.event_filter = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl EventStartConditionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.segment_id = input;
-        self
+        self.segment_id = input; self
     }
     /// Consumes the builder and constructs a [`EventStartCondition`](crate::types::EventStartCondition).
     pub fn build(self) -> crate::types::EventStartCondition {
         crate::types::EventStartCondition {
-            event_filter: self.event_filter,
-            segment_id: self.segment_id,
+            event_filter: self.event_filter
+            ,
+            segment_id: self.segment_id
+            ,
         }
     }
 }
+

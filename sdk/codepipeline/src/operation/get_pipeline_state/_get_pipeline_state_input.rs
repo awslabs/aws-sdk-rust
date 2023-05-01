@@ -3,21 +3,20 @@
 /// <p>Represents the input of a <code>GetPipelineState</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPipelineStateInput {
+pub struct GetPipelineStateInput  {
     /// <p>The name of the pipeline about which you want to get information.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetPipelineStateInput {
     /// <p>The name of the pipeline about which you want to get information.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetPipelineStateInput {
     /// Creates a new builder-style object to manufacture [`GetPipelineStateInput`](crate::operation::get_pipeline_state::GetPipelineStateInput).
-    pub fn builder() -> crate::operation::get_pipeline_state::builders::GetPipelineStateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_pipeline_state::builders::GetPipelineStateInputBuilder {
         crate::operation::get_pipeline_state::builders::GetPipelineStateInputBuilder::default()
     }
 }
@@ -36,16 +35,16 @@ impl GetPipelineStateInputBuilder {
     }
     /// <p>The name of the pipeline about which you want to get information.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetPipelineStateInput`](crate::operation::get_pipeline_state::GetPipelineStateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_pipeline_state::GetPipelineStateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_pipeline_state::GetPipelineStateInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_pipeline_state::GetPipelineStateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_pipeline_state::GetPipelineStateInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

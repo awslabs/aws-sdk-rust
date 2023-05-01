@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHumanLoopInput {
+pub struct DescribeHumanLoopInput  {
     /// <p>The name of the human loop that you want information about.</p>
     #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl DescribeHumanLoopInput {
     /// <p>The name of the human loop that you want information about.</p>
-    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> std::option::Option<& str> {
         self.human_loop_name.as_deref()
     }
 }
 impl DescribeHumanLoopInput {
     /// Creates a new builder-style object to manufacture [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
-    pub fn builder(
-    ) -> crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder {
+    pub fn builder() -> crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder {
         crate::operation::describe_human_loop::builders::DescribeHumanLoopInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeHumanLoopInputBuilder {
     }
     /// <p>The name of the human loop that you want information about.</p>
     pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_loop_name = input;
-        self
+        self.human_loop_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeHumanLoopInput`](crate::operation::describe_human_loop::DescribeHumanLoopInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_human_loop::DescribeHumanLoopInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_human_loop::DescribeHumanLoopInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_human_loop::DescribeHumanLoopInput {
-                human_loop_name: self.human_loop_name,
-            },
+                human_loop_name: self.human_loop_name
+                ,
+            }
         )
     }
 }
+

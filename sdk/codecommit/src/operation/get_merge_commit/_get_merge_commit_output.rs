@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMergeCommitOutput {
+pub struct GetMergeCommitOutput  {
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     #[doc(hidden)]
     pub source_commit_id: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct GetMergeCommitOutput {
 }
 impl GetMergeCommitOutput {
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+    pub fn source_commit_id(&self) -> std::option::Option<& str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+    pub fn destination_commit_id(&self) -> std::option::Option<& str> {
         self.destination_commit_id.as_deref()
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+    pub fn base_commit_id(&self) -> std::option::Option<& str> {
         self.base_commit_id.as_deref()
     }
     /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
-    pub fn merged_commit_id(&self) -> std::option::Option<&str> {
+    pub fn merged_commit_id(&self) -> std::option::Option<& str> {
         self.merged_commit_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMergeCommitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMergeCommitOutput {
     /// Creates a new builder-style object to manufacture [`GetMergeCommitOutput`](crate::operation::get_merge_commit::GetMergeCommitOutput).
     pub fn builder() -> crate::operation::get_merge_commit::builders::GetMergeCommitOutputBuilder {
@@ -65,8 +65,7 @@ impl GetMergeCommitOutputBuilder {
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn set_source_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_commit_id = input;
-        self
+        self.source_commit_id = input; self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     pub fn destination_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,12 +73,8 @@ impl GetMergeCommitOutputBuilder {
         self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn set_destination_commit_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_commit_id = input;
-        self
+    pub fn set_destination_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_commit_id = input; self
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn base_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +83,7 @@ impl GetMergeCommitOutputBuilder {
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn set_base_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_commit_id = input;
-        self
+        self.base_commit_id = input; self
     }
     /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
     pub fn merged_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,26 +92,30 @@ impl GetMergeCommitOutputBuilder {
     }
     /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
     pub fn set_merged_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.merged_commit_id = input;
-        self
+        self.merged_commit_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMergeCommitOutput`](crate::operation::get_merge_commit::GetMergeCommitOutput).
     pub fn build(self) -> crate::operation::get_merge_commit::GetMergeCommitOutput {
         crate::operation::get_merge_commit::GetMergeCommitOutput {
-            source_commit_id: self.source_commit_id,
-            destination_commit_id: self.destination_commit_id,
-            base_commit_id: self.base_commit_id,
-            merged_commit_id: self.merged_commit_id,
+            source_commit_id: self.source_commit_id
+            ,
+            destination_commit_id: self.destination_commit_id
+            ,
+            base_commit_id: self.base_commit_id
+            ,
+            merged_commit_id: self.merged_commit_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

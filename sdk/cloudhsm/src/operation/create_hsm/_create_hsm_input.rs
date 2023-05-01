@@ -3,14 +3,14 @@
 /// <p>Contains the inputs for the <code>CreateHsm</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHsmInput {
+pub struct CreateHsmInput  {
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The SSH public key to install on the HSM.</p>
     #[doc(hidden)]
     pub ssh_key: std::option::Option<std::string::String>,
-    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>The IP address to assign to the HSM's ENI.</p> 
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     #[doc(hidden)]
     pub eni_ip: std::option::Option<std::string::String>,
@@ -20,10 +20,10 @@ pub struct CreateHsmInput {
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub subscription_type: std::option::Option<crate::types::SubscriptionType>,
@@ -36,40 +36,40 @@ pub struct CreateHsmInput {
 }
 impl CreateHsmInput {
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The SSH public key to install on the HSM.</p>
-    pub fn ssh_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_key(&self) -> std::option::Option<& str> {
         self.ssh_key.as_deref()
     }
-    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>The IP address to assign to the HSM's ENI.</p> 
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
-    pub fn eni_ip(&self) -> std::option::Option<&str> {
+    pub fn eni_ip(&self) -> std::option::Option<& str> {
         self.eni_ip.as_deref()
     }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
-    pub fn subscription_type(&self) -> std::option::Option<&crate::types::SubscriptionType> {
+    pub fn subscription_type(&self) -> std::option::Option<& crate::types::SubscriptionType> {
         self.subscription_type.as_ref()
     }
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
-    pub fn syslog_ip(&self) -> std::option::Option<&str> {
+    pub fn syslog_ip(&self) -> std::option::Option<& str> {
         self.syslog_ip.as_deref()
     }
 }
@@ -101,8 +101,7 @@ impl CreateHsmInputBuilder {
     }
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The SSH public key to install on the HSM.</p>
     pub fn ssh_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,20 +110,18 @@ impl CreateHsmInputBuilder {
     }
     /// <p>The SSH public key to install on the HSM.</p>
     pub fn set_ssh_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_key = input;
-        self
+        self.ssh_key = input; self
     }
-    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>The IP address to assign to the HSM's ENI.</p> 
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.eni_ip = Some(input.into());
         self
     }
-    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>The IP address to assign to the HSM's ENI.</p> 
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eni_ip = input;
-        self
+        self.eni_ip = input; self
     }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +130,7 @@ impl CreateHsmInputBuilder {
     }
     /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,29 +139,24 @@ impl CreateHsmInputBuilder {
     }
     /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.subscription_type = Some(input);
         self
     }
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
-    pub fn set_subscription_type(
-        mut self,
-        input: std::option::Option<crate::types::SubscriptionType>,
-    ) -> Self {
-        self.subscription_type = input;
-        self
+    pub fn set_subscription_type(mut self, input: std::option::Option<crate::types::SubscriptionType>) -> Self {
+        self.subscription_type = input; self
     }
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,8 +165,7 @@ impl CreateHsmInputBuilder {
     }
     /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,25 +174,30 @@ impl CreateHsmInputBuilder {
     }
     /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>
     pub fn set_syslog_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.syslog_ip = input;
-        self
+        self.syslog_ip = input; self
     }
     /// Consumes the builder and constructs a [`CreateHsmInput`](crate::operation::create_hsm::CreateHsmInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_hsm::CreateHsmInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_hsm::CreateHsmInput {
-            subnet_id: self.subnet_id,
-            ssh_key: self.ssh_key,
-            eni_ip: self.eni_ip,
-            iam_role_arn: self.iam_role_arn,
-            external_id: self.external_id,
-            subscription_type: self.subscription_type,
-            client_token: self.client_token,
-            syslog_ip: self.syslog_ip,
-        })
+    pub fn build(self) -> Result<crate::operation::create_hsm::CreateHsmInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_hsm::CreateHsmInput {
+                subnet_id: self.subnet_id
+                ,
+                ssh_key: self.ssh_key
+                ,
+                eni_ip: self.eni_ip
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                external_id: self.external_id
+                ,
+                subscription_type: self.subscription_type
+                ,
+                client_token: self.client_token
+                ,
+                syslog_ip: self.syslog_ip
+                ,
+            }
+        )
     }
 }
+

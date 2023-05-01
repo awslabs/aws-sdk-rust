@@ -3,17 +3,17 @@
 /// <p>The exclude period of <code>TimeRangeFilter</code> or <code>RelativeDatesFilter</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExcludePeriodConfiguration {
+pub struct ExcludePeriodConfiguration  {
     /// <p>The amount or number of the exclude period.</p>
     #[doc(hidden)]
     pub amount: std::option::Option<i32>,
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
     #[doc(hidden)]
     pub granularity: std::option::Option<crate::types::TimeGranularity>,
-    /// <p>The status of the exclude period. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> </p> </li>
-    /// <li> <p> <code>DISABLED</code> </p> </li>
+    /// <p>The status of the exclude period. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> </p> </li> 
+    /// <li> <p> <code>DISABLED</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::WidgetStatus>,
@@ -24,15 +24,15 @@ impl ExcludePeriodConfiguration {
         self.amount
     }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
-    pub fn granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
+    pub fn granularity(&self) -> std::option::Option<& crate::types::TimeGranularity> {
         self.granularity.as_ref()
     }
-    /// <p>The status of the exclude period. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> </p> </li>
-    /// <li> <p> <code>DISABLED</code> </p> </li>
+    /// <p>The status of the exclude period. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> </p> </li> 
+    /// <li> <p> <code>DISABLED</code> </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::WidgetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::WidgetStatus> {
         self.status.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ExcludePeriodConfigurationBuilder {
     }
     /// <p>The amount or number of the exclude period.</p>
     pub fn set_amount(mut self, input: std::option::Option<i32>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
     pub fn granularity(mut self, input: crate::types::TimeGranularity) -> Self {
@@ -68,37 +67,36 @@ impl ExcludePeriodConfigurationBuilder {
         self
     }
     /// <p>The granularity or unit (day, month, year) of the exclude period.</p>
-    pub fn set_granularity(
-        mut self,
-        input: std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
-        self.granularity = input;
-        self
+    pub fn set_granularity(mut self, input: std::option::Option<crate::types::TimeGranularity>) -> Self {
+        self.granularity = input; self
     }
-    /// <p>The status of the exclude period. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> </p> </li>
-    /// <li> <p> <code>DISABLED</code> </p> </li>
+    /// <p>The status of the exclude period. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> </p> </li> 
+    /// <li> <p> <code>DISABLED</code> </p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the exclude period. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> </p> </li>
-    /// <li> <p> <code>DISABLED</code> </p> </li>
+    /// <p>The status of the exclude period. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> </p> </li> 
+    /// <li> <p> <code>DISABLED</code> </p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::WidgetStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ExcludePeriodConfiguration`](crate::types::ExcludePeriodConfiguration).
     pub fn build(self) -> crate::types::ExcludePeriodConfiguration {
         crate::types::ExcludePeriodConfiguration {
-            amount: self.amount,
-            granularity: self.granularity,
-            status: self.status,
+            amount: self.amount
+            ,
+            granularity: self.granularity
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

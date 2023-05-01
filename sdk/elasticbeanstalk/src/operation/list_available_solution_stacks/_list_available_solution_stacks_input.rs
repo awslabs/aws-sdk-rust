@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableSolutionStacksInput {}
+pub struct ListAvailableSolutionStacksInput  {
+}
 impl ListAvailableSolutionStacksInput {
     /// Creates a new builder-style object to manufacture [`ListAvailableSolutionStacksInput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput).
-    pub fn builder() -> crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksInputBuilder{
+    pub fn builder() -> crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksInputBuilder {
         crate::operation::list_available_solution_stacks::builders::ListAvailableSolutionStacksInputBuilder::default()
     }
 }
@@ -13,15 +14,15 @@ impl ListAvailableSolutionStacksInput {
 /// A builder for [`ListAvailableSolutionStacksInput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct ListAvailableSolutionStacksInputBuilder {}
+pub struct ListAvailableSolutionStacksInputBuilder {
+}
 impl ListAvailableSolutionStacksInputBuilder {
     /// Consumes the builder and constructs a [`ListAvailableSolutionStacksInput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput {})
+    pub fn build(self) -> Result<crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksInput {
+            }
+        )
     }
 }
+

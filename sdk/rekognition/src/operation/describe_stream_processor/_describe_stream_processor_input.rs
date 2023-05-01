@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStreamProcessorInput {
+pub struct DescribeStreamProcessorInput  {
     /// <p>Name of the stream processor for which you want information.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeStreamProcessorInput {
     /// <p>Name of the stream processor for which you want information.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DescribeStreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`DescribeStreamProcessorInput`](crate::operation::describe_stream_processor::DescribeStreamProcessorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder {
         crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DescribeStreamProcessorInputBuilder {
     }
     /// <p>Name of the stream processor for which you want information.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeStreamProcessorInput`](crate::operation::describe_stream_processor::DescribeStreamProcessorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_stream_processor::DescribeStreamProcessorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_stream_processor::DescribeStreamProcessorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_stream_processor::DescribeStreamProcessorInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

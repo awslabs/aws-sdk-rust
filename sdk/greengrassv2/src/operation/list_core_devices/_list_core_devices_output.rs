@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoreDevicesOutput {
+pub struct ListCoreDevicesOutput  {
     /// <p>A list that summarizes each core device.</p>
     #[doc(hidden)]
     pub core_devices: std::option::Option<std::vec::Vec<crate::types::CoreDevice>>,
@@ -13,23 +13,22 @@ pub struct ListCoreDevicesOutput {
 }
 impl ListCoreDevicesOutput {
     /// <p>A list that summarizes each core device.</p>
-    pub fn core_devices(&self) -> std::option::Option<&[crate::types::CoreDevice]> {
+    pub fn core_devices(&self) -> std::option::Option<& [crate::types::CoreDevice]> {
         self.core_devices.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCoreDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCoreDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListCoreDevicesOutput`](crate::operation::list_core_devices::ListCoreDevicesOutput).
-    pub fn builder() -> crate::operation::list_core_devices::builders::ListCoreDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_core_devices::builders::ListCoreDevicesOutputBuilder {
         crate::operation::list_core_devices::builders::ListCoreDevicesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListCoreDevicesOutputBuilder {
     /// <p>A list that summarizes each core device.</p>
     pub fn core_devices(mut self, input: crate::types::CoreDevice) -> Self {
         let mut v = self.core_devices.unwrap_or_default();
-        v.push(input);
-        self.core_devices = Some(v);
-        self
+                        v.push(input);
+                        self.core_devices = Some(v);
+                        self
     }
     /// <p>A list that summarizes each core device.</p>
-    pub fn set_core_devices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CoreDevice>>,
-    ) -> Self {
-        self.core_devices = input;
-        self
+    pub fn set_core_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::CoreDevice>>) -> Self {
+        self.core_devices = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListCoreDevicesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCoreDevicesOutput`](crate::operation::list_core_devices::ListCoreDevicesOutput).
     pub fn build(self) -> crate::operation::list_core_devices::ListCoreDevicesOutput {
         crate::operation::list_core_devices::ListCoreDevicesOutput {
-            core_devices: self.core_devices,
-            next_token: self.next_token,
+            core_devices: self.core_devices
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

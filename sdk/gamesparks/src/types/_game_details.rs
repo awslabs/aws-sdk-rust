@@ -3,7 +3,7 @@
 /// <p>Details about a game.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GameDetails {
+pub struct GameDetails  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -27,32 +27,31 @@ pub struct GameDetails {
     pub enable_termination_protection: bool,
     /// <p>The tags associated with the game.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GameDetails {
     /// <p>The name of the game.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The state of the game.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::GameState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::GameState> {
         self.state.as_ref()
     }
     /// <p>Determines if the game can be deleted.</p>
@@ -60,10 +59,7 @@ impl GameDetails {
         self.enable_termination_protection
     }
     /// <p>The tags associated with the game.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -85,8 +81,7 @@ pub struct GameDetailsBuilder {
     pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) state: std::option::Option<crate::types::GameState>,
     pub(crate) enable_termination_protection: std::option::Option<bool>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GameDetailsBuilder {
     /// <p>The name of the game.</p>
@@ -96,8 +91,7 @@ impl GameDetailsBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl GameDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The description of the game.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +109,7 @@ impl GameDetailsBuilder {
     }
     /// <p>The description of the game.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The date when the game was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -126,8 +118,7 @@ impl GameDetailsBuilder {
     }
     /// <p>The date when the game was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date when the game was last modified.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,12 +126,8 @@ impl GameDetailsBuilder {
         self
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// <p>The state of the game.</p>
     pub fn state(mut self, input: crate::types::GameState) -> Self {
@@ -149,8 +136,7 @@ impl GameDetailsBuilder {
     }
     /// <p>The state of the game.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::GameState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Determines if the game can be deleted.</p>
     pub fn enable_termination_protection(mut self, input: bool) -> Self {
@@ -159,45 +145,44 @@ impl GameDetailsBuilder {
     }
     /// <p>Determines if the game can be deleted.</p>
     pub fn set_enable_termination_protection(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_termination_protection = input;
-        self
+        self.enable_termination_protection = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the game.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the game.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`GameDetails`](crate::types::GameDetails).
     pub fn build(self) -> crate::types::GameDetails {
         crate::types::GameDetails {
-            name: self.name,
-            arn: self.arn,
-            description: self.description,
-            created: self.created,
-            last_updated: self.last_updated,
-            state: self.state,
-            enable_termination_protection: self.enable_termination_protection.unwrap_or_default(),
-            tags: self.tags,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            created: self.created
+            ,
+            last_updated: self.last_updated
+            ,
+            state: self.state
+            ,
+            enable_termination_protection: self.enable_termination_protection
+                .unwrap_or_default()
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

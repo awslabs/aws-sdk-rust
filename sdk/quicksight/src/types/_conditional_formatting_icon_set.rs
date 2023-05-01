@@ -3,7 +3,7 @@
 /// <p>Formatting configuration for icon set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConditionalFormattingIconSet {
+pub struct ConditionalFormattingIconSet  {
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -13,17 +13,15 @@ pub struct ConditionalFormattingIconSet {
 }
 impl ConditionalFormattingIconSet {
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>Determines the icon set type.</p>
-    pub fn icon_set_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ConditionalFormattingIconSetType> {
+    pub fn icon_set_type(&self) -> std::option::Option<& crate::types::ConditionalFormattingIconSetType> {
         self.icon_set_type.as_ref()
     }
 }
-impl std::fmt::Debug for ConditionalFormattingIconSet {
+impl  std::fmt::Debug for ConditionalFormattingIconSet  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingIconSet");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -53,8 +51,7 @@ impl ConditionalFormattingIconSetBuilder {
     }
     /// <p>The expression that determines the formatting configuration for the icon set.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>Determines the icon set type.</p>
     pub fn icon_set_type(mut self, input: crate::types::ConditionalFormattingIconSetType) -> Self {
@@ -62,18 +59,16 @@ impl ConditionalFormattingIconSetBuilder {
         self
     }
     /// <p>Determines the icon set type.</p>
-    pub fn set_icon_set_type(
-        mut self,
-        input: std::option::Option<crate::types::ConditionalFormattingIconSetType>,
-    ) -> Self {
-        self.icon_set_type = input;
-        self
+    pub fn set_icon_set_type(mut self, input: std::option::Option<crate::types::ConditionalFormattingIconSetType>) -> Self {
+        self.icon_set_type = input; self
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingIconSet`](crate::types::ConditionalFormattingIconSet).
     pub fn build(self) -> crate::types::ConditionalFormattingIconSet {
         crate::types::ConditionalFormattingIconSet {
-            expression: self.expression,
-            icon_set_type: self.icon_set_type,
+            expression: self.expression
+            ,
+            icon_set_type: self.icon_set_type
+            ,
         }
     }
 }
@@ -85,3 +80,4 @@ impl std::fmt::Debug for ConditionalFormattingIconSetBuilder {
         formatter.finish()
     }
 }
+

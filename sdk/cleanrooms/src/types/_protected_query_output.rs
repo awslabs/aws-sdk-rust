@@ -21,11 +21,7 @@ impl ProtectedQueryOutput {
     /// Tries to convert the enum instance into [`S3`](crate::types::ProtectedQueryOutput::S3), extracting the inner [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3(&self) -> std::result::Result<&crate::types::ProtectedQueryS3Output, &Self> {
-        if let ProtectedQueryOutput::S3(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ProtectedQueryOutput::S3(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::ProtectedQueryOutput::S3).
     pub fn is_s3(&self) -> bool {
@@ -36,3 +32,4 @@ impl ProtectedQueryOutput {
         matches!(self, Self::Unknown)
     }
 }
+

@@ -4,71 +4,49 @@ pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featu
 pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featured_results_set_input::BatchDeleteFeaturedResultsSetInputBuilder;
 
 /// Fluent builder constructing a request to `BatchDeleteFeaturedResultsSet`.
-///
+/// 
 /// <p>Removes one or more sets of featured results. Features results are placed above all other results for certain queries. If there's an exact match of a query, then one or more specific documents are featured in the search results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteFeaturedResultsSetFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::batch_delete_featured_results_set::builders::BatchDeleteFeaturedResultsSetInputBuilder
             }
-impl BatchDeleteFeaturedResultsSetFluentBuilder {
+impl BatchDeleteFeaturedResultsSetFluentBuilder  {
     /// Creates a new `BatchDeleteFeaturedResultsSet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSet,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSet, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput, aws_smithy_http::result::SdkError<crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the index used for featuring results.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
@@ -89,11 +67,9 @@ impl BatchDeleteFeaturedResultsSetFluentBuilder {
         self
     }
     /// <p>The identifiers of the featured results sets that you want to delete.</p>
-    pub fn set_featured_results_set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_featured_results_set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_featured_results_set_ids(input);
         self
     }
 }
+

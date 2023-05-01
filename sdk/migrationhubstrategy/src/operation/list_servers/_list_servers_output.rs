@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServersOutput {
+pub struct ListServersOutput  {
     /// <p> The list of servers with detailed information about each server. </p>
     #[doc(hidden)]
     pub server_infos: std::option::Option<std::vec::Vec<crate::types::ServerDetail>>,
@@ -13,19 +13,19 @@ pub struct ListServersOutput {
 }
 impl ListServersOutput {
     /// <p> The list of servers with detailed information about each server. </p>
-    pub fn server_infos(&self) -> std::option::Option<&[crate::types::ServerDetail]> {
+    pub fn server_infos(&self) -> std::option::Option<& [crate::types::ServerDetail]> {
         self.server_infos.as_deref()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListServersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListServersOutput {
     /// Creates a new builder-style object to manufacture [`ListServersOutput`](crate::operation::list_servers::ListServersOutput).
     pub fn builder() -> crate::operation::list_servers::builders::ListServersOutputBuilder {
@@ -49,17 +49,13 @@ impl ListServersOutputBuilder {
     /// <p> The list of servers with detailed information about each server. </p>
     pub fn server_infos(mut self, input: crate::types::ServerDetail) -> Self {
         let mut v = self.server_infos.unwrap_or_default();
-        v.push(input);
-        self.server_infos = Some(v);
-        self
+                        v.push(input);
+                        self.server_infos = Some(v);
+                        self
     }
     /// <p> The list of servers with detailed information about each server. </p>
-    pub fn set_server_infos(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerDetail>>,
-    ) -> Self {
-        self.server_infos = input;
-        self
+    pub fn set_server_infos(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServerDetail>>) -> Self {
+        self.server_infos = input; self
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListServersOutputBuilder {
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListServersOutput`](crate::operation::list_servers::ListServersOutput).
     pub fn build(self) -> crate::operation::list_servers::ListServersOutput {
         crate::operation::list_servers::ListServersOutput {
-            server_infos: self.server_infos,
-            next_token: self.next_token,
+            server_infos: self.server_infos
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

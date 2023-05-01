@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMonitorInput {
+pub struct UpdateMonitorInput  {
     /// <p>The name of the monitor. </p>
     #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p> 
+    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note> 
+    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p> 
     /// </note>
     #[doc(hidden)]
     pub resources_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -26,31 +26,33 @@ pub struct UpdateMonitorInput {
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub internet_measurements_log_delivery:
-        std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub internet_measurements_log_delivery: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    #[doc(hidden)]
+    pub traffic_percentage_to_monitor: i32,
 }
 impl UpdateMonitorInput {
     /// <p>The name of the monitor. </p>
-    pub fn monitor_name(&self) -> std::option::Option<&str> {
+    pub fn monitor_name(&self) -> std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p> 
+    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note> 
+    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p> 
     /// </note>
-    pub fn resources_to_add(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resources_to_add(&self) -> std::option::Option<& [std::string::String]> {
         self.resources_to_add.as_deref()
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn resources_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resources_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.resources_to_remove.as_deref()
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MonitorConfigState> {
+    pub fn status(&self) -> std::option::Option<& crate::types::MonitorConfigState> {
         self.status.as_ref()
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
@@ -58,10 +60,12 @@ impl UpdateMonitorInput {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        &self,
-    ) -> std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
+    pub fn internet_measurements_log_delivery(&self) -> std::option::Option<& crate::types::InternetMeasurementsLogDelivery> {
         self.internet_measurements_log_delivery.as_ref()
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn traffic_percentage_to_monitor(&self) -> i32 {
+        self.traffic_percentage_to_monitor
     }
 }
 impl UpdateMonitorInput {
@@ -81,8 +85,8 @@ pub struct UpdateMonitorInputBuilder {
     pub(crate) status: std::option::Option<crate::types::MonitorConfigState>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) max_city_networks_to_monitor: std::option::Option<i32>,
-    pub(crate) internet_measurements_log_delivery:
-        std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub(crate) internet_measurements_log_delivery: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub(crate) traffic_percentage_to_monitor: std::option::Option<i32>,
 }
 impl UpdateMonitorInputBuilder {
     /// <p>The name of the monitor. </p>
@@ -92,33 +96,28 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The name of the monitor. </p>
     pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// Appends an item to `resources_to_add`.
     ///
     /// To override the contents of this collection use [`set_resources_to_add`](Self::set_resources_to_add).
     ///
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p> 
+    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note> 
+    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p> 
     /// </note>
     pub fn resources_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.resources_to_add = Some(v);
-        self
+                        v.push(input.into());
+                        self.resources_to_add = Some(v);
+                        self
     }
-    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note>
-    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
+    /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p> 
+    /// <p>You can add a combination of Amazon Virtual Private Clouds (VPCs) and Amazon CloudFront distributions, or you can add Amazon WorkSpaces directories. You can't add all three types of resources.</p> <note> 
+    /// <p>If you add only VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p> 
     /// </note>
-    pub fn set_resources_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resources_to_add = input;
-        self
+    pub fn set_resources_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resources_to_add = input; self
     }
     /// Appends an item to `resources_to_remove`.
     ///
@@ -127,17 +126,13 @@ impl UpdateMonitorInputBuilder {
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
     pub fn resources_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.resources_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.resources_to_remove = Some(v);
+                        self
     }
     /// <p>The resources to remove from a monitor, which you provide as a set of Amazon Resource Names (ARNs).</p>
-    pub fn set_resources_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resources_to_remove = input;
-        self
+    pub fn set_resources_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resources_to_remove = input; self
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
@@ -145,12 +140,8 @@ impl UpdateMonitorInputBuilder {
         self
     }
     /// <p>The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code> API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::MonitorConfigState>) -> Self {
+        self.status = input; self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +150,7 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters that you specify to make an idempotent API request. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
@@ -169,40 +159,50 @@ impl UpdateMonitorInputBuilder {
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider, that clients access the resources through.</p>
     pub fn set_max_city_networks_to_monitor(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_city_networks_to_monitor = input;
-        self
+        self.max_city_networks_to_monitor = input; self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        mut self,
-        input: crate::types::InternetMeasurementsLogDelivery,
-    ) -> Self {
+    pub fn internet_measurements_log_delivery(mut self, input: crate::types::InternetMeasurementsLogDelivery) -> Self {
         self.internet_measurements_log_delivery = Some(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn set_internet_measurements_log_delivery(
-        mut self,
-        input: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
-    ) -> Self {
-        self.internet_measurements_log_delivery = input;
+    pub fn set_internet_measurements_log_delivery(mut self, input: std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
+        self.internet_measurements_log_delivery = input; self
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
+        self.traffic_percentage_to_monitor = Some(input);
         self
     }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn set_traffic_percentage_to_monitor(mut self, input: std::option::Option<i32>) -> Self {
+        self.traffic_percentage_to_monitor = input; self
+    }
     /// Consumes the builder and constructs a [`UpdateMonitorInput`](crate::operation::update_monitor::UpdateMonitorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_monitor::UpdateMonitorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_monitor::UpdateMonitorInput {
-            monitor_name: self.monitor_name,
-            resources_to_add: self.resources_to_add,
-            resources_to_remove: self.resources_to_remove,
-            status: self.status,
-            client_token: self.client_token,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
-            internet_measurements_log_delivery: self.internet_measurements_log_delivery,
-        })
+    pub fn build(self) -> Result<crate::operation::update_monitor::UpdateMonitorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_monitor::UpdateMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+                resources_to_add: self.resources_to_add
+                ,
+                resources_to_remove: self.resources_to_remove
+                ,
+                status: self.status
+                ,
+                client_token: self.client_token
+                ,
+                max_city_networks_to_monitor: self.max_city_networks_to_monitor
+                    .unwrap_or_default()
+                ,
+                internet_measurements_log_delivery: self.internet_measurements_log_delivery
+                ,
+                traffic_percentage_to_monitor: self.traffic_percentage_to_monitor
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

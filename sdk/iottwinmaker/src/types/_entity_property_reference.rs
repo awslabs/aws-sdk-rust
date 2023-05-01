@@ -3,14 +3,13 @@
 /// <p>An object that uniquely identifies an entity property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityPropertyReference {
+pub struct EntityPropertyReference  {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
     #[doc(hidden)]
-    pub external_id_property:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub external_id_property: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ID of the entity.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
@@ -20,22 +19,19 @@ pub struct EntityPropertyReference {
 }
 impl EntityPropertyReference {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
-    pub fn external_id_property(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn external_id_property(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.external_id_property.as_ref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn property_name(&self) -> std::option::Option<&str> {
+    pub fn property_name(&self) -> std::option::Option<& str> {
         self.property_name.as_deref()
     }
 }
@@ -51,8 +47,7 @@ impl EntityPropertyReference {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EntityPropertyReferenceBuilder {
     pub(crate) component_name: std::option::Option<std::string::String>,
-    pub(crate) external_id_property:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) external_id_property: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) entity_id: std::option::Option<std::string::String>,
     pub(crate) property_name: std::option::Option<std::string::String>,
 }
@@ -64,33 +59,22 @@ impl EntityPropertyReferenceBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// Adds a key-value pair to `external_id_property`.
     ///
     /// To override the contents of this collection use [`set_external_id_property`](Self::set_external_id_property).
     ///
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
-    pub fn external_id_property(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn external_id_property(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.external_id_property.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.external_id_property = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.external_id_property = Some(hash_map);
+                        self
     }
     /// <p>A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.</p>
-    pub fn set_external_id_property(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.external_id_property = input;
-        self
+    pub fn set_external_id_property(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.external_id_property = input; self
     }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +83,7 @@ impl EntityPropertyReferenceBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The name of the property.</p>
     pub fn property_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,16 +92,20 @@ impl EntityPropertyReferenceBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_property_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_name = input;
-        self
+        self.property_name = input; self
     }
     /// Consumes the builder and constructs a [`EntityPropertyReference`](crate::types::EntityPropertyReference).
     pub fn build(self) -> crate::types::EntityPropertyReference {
         crate::types::EntityPropertyReference {
-            component_name: self.component_name,
-            external_id_property: self.external_id_property,
-            entity_id: self.entity_id,
-            property_name: self.property_name,
+            component_name: self.component_name
+            ,
+            external_id_property: self.external_id_property
+            ,
+            entity_id: self.entity_id
+            ,
+            property_name: self.property_name
+            ,
         }
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngineDefaultParametersInput {
+pub struct DescribeEngineDefaultParametersInput  {
     /// <p>The name of the DB parameter group family.</p>
     #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Not currently supported.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -20,27 +20,27 @@ pub struct DescribeEngineDefaultParametersInput {
 }
 impl DescribeEngineDefaultParametersInput {
     /// <p>The name of the DB parameter group family.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>Not currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeEngineDefaultParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
-    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder {
         crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder::default()
     }
 }
@@ -61,12 +61,8 @@ impl DescribeEngineDefaultParametersInputBuilder {
         self
     }
     /// <p>The name of the DB parameter group family.</p>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_parameter_group_family = input;
-        self
+    pub fn set_db_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_parameter_group_family = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -75,31 +71,26 @@ impl DescribeEngineDefaultParametersInputBuilder {
     /// <p>Not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,16 +99,10 @@ impl DescribeEngineDefaultParametersInputBuilder {
     }
     /// <p> An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersInput`](crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParametersInput {
                 db_parameter_group_family: self.db_parameter_group_family
@@ -132,3 +117,4 @@ impl DescribeEngineDefaultParametersInputBuilder {
         )
     }
 }
+

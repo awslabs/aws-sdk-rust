@@ -3,21 +3,20 @@
 /// <p>A request to obtain more information about a dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpPoolInput {
+pub struct GetDedicatedIpPoolInput  {
     /// <p>The name of the dedicated IP pool to retrieve.</p>
     #[doc(hidden)]
     pub pool_name: std::option::Option<std::string::String>,
 }
 impl GetDedicatedIpPoolInput {
     /// <p>The name of the dedicated IP pool to retrieve.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
 }
 impl GetDedicatedIpPoolInput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpPoolInput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolInput).
-    pub fn builder(
-    ) -> crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolInputBuilder {
+    pub fn builder() -> crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolInputBuilder {
         crate::operation::get_dedicated_ip_pool::builders::GetDedicatedIpPoolInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl GetDedicatedIpPoolInputBuilder {
     }
     /// <p>The name of the dedicated IP pool to retrieve.</p>
     pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// Consumes the builder and constructs a [`GetDedicatedIpPoolInput`](crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_dedicated_ip_pool::GetDedicatedIpPoolInput {
-                pool_name: self.pool_name,
-            },
+                pool_name: self.pool_name
+                ,
+            }
         )
     }
 }
+

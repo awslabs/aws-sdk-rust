@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let queueattributename = unimplemented!();
 /// match queueattributename {
@@ -50,22 +50,14 @@
 /// Specifically, when `queueattributename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueueAttributeName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueueAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -112,113 +104,81 @@ pub enum QueueAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     VisibilityTimeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueueAttributeName {
-    fn from(s: &str) -> Self {
-        match s {
-            "All" => QueueAttributeName::All,
-            "ApproximateNumberOfMessages" => QueueAttributeName::ApproximateNumberOfMessages,
-            "ApproximateNumberOfMessagesDelayed" => {
-                QueueAttributeName::ApproximateNumberOfMessagesDelayed
+                fn from(s: &str) -> Self {
+                    match s {
+                        "All" => QueueAttributeName::All,
+"ApproximateNumberOfMessages" => QueueAttributeName::ApproximateNumberOfMessages,
+"ApproximateNumberOfMessagesDelayed" => QueueAttributeName::ApproximateNumberOfMessagesDelayed,
+"ApproximateNumberOfMessagesNotVisible" => QueueAttributeName::ApproximateNumberOfMessagesNotVisible,
+"ContentBasedDeduplication" => QueueAttributeName::ContentBasedDeduplication,
+"CreatedTimestamp" => QueueAttributeName::CreatedTimestamp,
+"DeduplicationScope" => QueueAttributeName::DeduplicationScope,
+"DelaySeconds" => QueueAttributeName::DelaySeconds,
+"FifoQueue" => QueueAttributeName::FifoQueue,
+"FifoThroughputLimit" => QueueAttributeName::FifoThroughputLimit,
+"KmsDataKeyReusePeriodSeconds" => QueueAttributeName::KmsDataKeyReusePeriodSeconds,
+"KmsMasterKeyId" => QueueAttributeName::KmsMasterKeyId,
+"LastModifiedTimestamp" => QueueAttributeName::LastModifiedTimestamp,
+"MaximumMessageSize" => QueueAttributeName::MaximumMessageSize,
+"MessageRetentionPeriod" => QueueAttributeName::MessageRetentionPeriod,
+"Policy" => QueueAttributeName::Policy,
+"QueueArn" => QueueAttributeName::QueueArn,
+"ReceiveMessageWaitTimeSeconds" => QueueAttributeName::ReceiveMessageWaitTimeSeconds,
+"RedriveAllowPolicy" => QueueAttributeName::RedriveAllowPolicy,
+"RedrivePolicy" => QueueAttributeName::RedrivePolicy,
+"SqsManagedSseEnabled" => QueueAttributeName::SqsManagedSseEnabled,
+"VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
+other => QueueAttributeName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "ApproximateNumberOfMessagesNotVisible" => {
-                QueueAttributeName::ApproximateNumberOfMessagesNotVisible
-            }
-            "ContentBasedDeduplication" => QueueAttributeName::ContentBasedDeduplication,
-            "CreatedTimestamp" => QueueAttributeName::CreatedTimestamp,
-            "DeduplicationScope" => QueueAttributeName::DeduplicationScope,
-            "DelaySeconds" => QueueAttributeName::DelaySeconds,
-            "FifoQueue" => QueueAttributeName::FifoQueue,
-            "FifoThroughputLimit" => QueueAttributeName::FifoThroughputLimit,
-            "KmsDataKeyReusePeriodSeconds" => QueueAttributeName::KmsDataKeyReusePeriodSeconds,
-            "KmsMasterKeyId" => QueueAttributeName::KmsMasterKeyId,
-            "LastModifiedTimestamp" => QueueAttributeName::LastModifiedTimestamp,
-            "MaximumMessageSize" => QueueAttributeName::MaximumMessageSize,
-            "MessageRetentionPeriod" => QueueAttributeName::MessageRetentionPeriod,
-            "Policy" => QueueAttributeName::Policy,
-            "QueueArn" => QueueAttributeName::QueueArn,
-            "ReceiveMessageWaitTimeSeconds" => QueueAttributeName::ReceiveMessageWaitTimeSeconds,
-            "RedriveAllowPolicy" => QueueAttributeName::RedriveAllowPolicy,
-            "RedrivePolicy" => QueueAttributeName::RedrivePolicy,
-            "SqsManagedSseEnabled" => QueueAttributeName::SqsManagedSseEnabled,
-            "VisibilityTimeout" => QueueAttributeName::VisibilityTimeout,
-            other => QueueAttributeName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for QueueAttributeName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueueAttributeName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueueAttributeName::from(s))
+                }
+            }
 impl QueueAttributeName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QueueAttributeName::All => "All",
-            QueueAttributeName::ApproximateNumberOfMessages => "ApproximateNumberOfMessages",
-            QueueAttributeName::ApproximateNumberOfMessagesDelayed => {
-                "ApproximateNumberOfMessagesDelayed"
-            }
-            QueueAttributeName::ApproximateNumberOfMessagesNotVisible => {
-                "ApproximateNumberOfMessagesNotVisible"
-            }
-            QueueAttributeName::ContentBasedDeduplication => "ContentBasedDeduplication",
-            QueueAttributeName::CreatedTimestamp => "CreatedTimestamp",
-            QueueAttributeName::DeduplicationScope => "DeduplicationScope",
-            QueueAttributeName::DelaySeconds => "DelaySeconds",
-            QueueAttributeName::FifoQueue => "FifoQueue",
-            QueueAttributeName::FifoThroughputLimit => "FifoThroughputLimit",
-            QueueAttributeName::KmsDataKeyReusePeriodSeconds => "KmsDataKeyReusePeriodSeconds",
-            QueueAttributeName::KmsMasterKeyId => "KmsMasterKeyId",
-            QueueAttributeName::LastModifiedTimestamp => "LastModifiedTimestamp",
-            QueueAttributeName::MaximumMessageSize => "MaximumMessageSize",
-            QueueAttributeName::MessageRetentionPeriod => "MessageRetentionPeriod",
-            QueueAttributeName::Policy => "Policy",
-            QueueAttributeName::QueueArn => "QueueArn",
-            QueueAttributeName::ReceiveMessageWaitTimeSeconds => "ReceiveMessageWaitTimeSeconds",
-            QueueAttributeName::RedriveAllowPolicy => "RedriveAllowPolicy",
-            QueueAttributeName::RedrivePolicy => "RedrivePolicy",
-            QueueAttributeName::SqsManagedSseEnabled => "SqsManagedSseEnabled",
-            QueueAttributeName::VisibilityTimeout => "VisibilityTimeout",
-            QueueAttributeName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "All",
-            "ApproximateNumberOfMessages",
-            "ApproximateNumberOfMessagesDelayed",
-            "ApproximateNumberOfMessagesNotVisible",
-            "ContentBasedDeduplication",
-            "CreatedTimestamp",
-            "DeduplicationScope",
-            "DelaySeconds",
-            "FifoQueue",
-            "FifoThroughputLimit",
-            "KmsDataKeyReusePeriodSeconds",
-            "KmsMasterKeyId",
-            "LastModifiedTimestamp",
-            "MaximumMessageSize",
-            "MessageRetentionPeriod",
-            "Policy",
-            "QueueArn",
-            "ReceiveMessageWaitTimeSeconds",
-            "RedriveAllowPolicy",
-            "RedrivePolicy",
-            "SqsManagedSseEnabled",
-            "VisibilityTimeout",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QueueAttributeName::All => "All",
+    QueueAttributeName::ApproximateNumberOfMessages => "ApproximateNumberOfMessages",
+    QueueAttributeName::ApproximateNumberOfMessagesDelayed => "ApproximateNumberOfMessagesDelayed",
+    QueueAttributeName::ApproximateNumberOfMessagesNotVisible => "ApproximateNumberOfMessagesNotVisible",
+    QueueAttributeName::ContentBasedDeduplication => "ContentBasedDeduplication",
+    QueueAttributeName::CreatedTimestamp => "CreatedTimestamp",
+    QueueAttributeName::DeduplicationScope => "DeduplicationScope",
+    QueueAttributeName::DelaySeconds => "DelaySeconds",
+    QueueAttributeName::FifoQueue => "FifoQueue",
+    QueueAttributeName::FifoThroughputLimit => "FifoThroughputLimit",
+    QueueAttributeName::KmsDataKeyReusePeriodSeconds => "KmsDataKeyReusePeriodSeconds",
+    QueueAttributeName::KmsMasterKeyId => "KmsMasterKeyId",
+    QueueAttributeName::LastModifiedTimestamp => "LastModifiedTimestamp",
+    QueueAttributeName::MaximumMessageSize => "MaximumMessageSize",
+    QueueAttributeName::MessageRetentionPeriod => "MessageRetentionPeriod",
+    QueueAttributeName::Policy => "Policy",
+    QueueAttributeName::QueueArn => "QueueArn",
+    QueueAttributeName::ReceiveMessageWaitTimeSeconds => "ReceiveMessageWaitTimeSeconds",
+    QueueAttributeName::RedriveAllowPolicy => "RedriveAllowPolicy",
+    QueueAttributeName::RedrivePolicy => "RedrivePolicy",
+    QueueAttributeName::SqsManagedSseEnabled => "SqsManagedSseEnabled",
+    QueueAttributeName::VisibilityTimeout => "VisibilityTimeout",
+    QueueAttributeName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["All", "ApproximateNumberOfMessages", "ApproximateNumberOfMessagesDelayed", "ApproximateNumberOfMessagesNotVisible", "ContentBasedDeduplication", "CreatedTimestamp", "DeduplicationScope", "DelaySeconds", "FifoQueue", "FifoThroughputLimit", "KmsDataKeyReusePeriodSeconds", "KmsMasterKeyId", "LastModifiedTimestamp", "MaximumMessageSize", "MessageRetentionPeriod", "Policy", "QueueArn", "ReceiveMessageWaitTimeSeconds", "RedriveAllowPolicy", "RedrivePolicy", "SqsManagedSseEnabled", "VisibilityTimeout"]
+                }
+            }
 impl AsRef<str> for QueueAttributeName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

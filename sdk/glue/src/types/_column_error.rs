@@ -3,7 +3,7 @@
 /// <p>Encapsulates a column name that failed and the reason for failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnError {
+pub struct ColumnError  {
     /// <p>The name of the column that failed.</p>
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ColumnError {
 }
 impl ColumnError {
     /// <p>The name of the column that failed.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>An error message with the reason for the failure of an operation.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error(&self) -> std::option::Option<& crate::types::ErrorDetail> {
         self.error.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ColumnErrorBuilder {
     }
     /// <p>The name of the column that failed.</p>
     pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub fn error(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -53,14 +52,16 @@ impl ColumnErrorBuilder {
     }
     /// <p>An error message with the reason for the failure of an operation.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`ColumnError`](crate::types::ColumnError).
     pub fn build(self) -> crate::types::ColumnError {
         crate::types::ColumnError {
-            column_name: self.column_name,
-            error: self.error,
+            column_name: self.column_name
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

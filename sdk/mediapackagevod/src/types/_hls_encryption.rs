@@ -3,7 +3,7 @@
 /// An HTTP Live Streaming (HLS) encryption configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsEncryption {
+pub struct HlsEncryption  {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
     #[doc(hidden)]
     pub constant_initialization_vector: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct HlsEncryption {
 }
 impl HlsEncryption {
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn constant_initialization_vector(&self) -> std::option::Option<&str> {
+    pub fn constant_initialization_vector(&self) -> std::option::Option<& str> {
         self.constant_initialization_vector.as_deref()
     }
     /// The encryption method to use.
-    pub fn encryption_method(&self) -> std::option::Option<&crate::types::EncryptionMethod> {
+    pub fn encryption_method(&self) -> std::option::Option<& crate::types::EncryptionMethod> {
         self.encryption_method.as_ref()
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::types::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> std::option::Option<& crate::types::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl HlsEncryptionBuilder {
         self
     }
     /// A constant initialization vector for encryption (optional). When not specified the initialization vector will be periodically rotated.
-    pub fn set_constant_initialization_vector(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.constant_initialization_vector = input;
-        self
+    pub fn set_constant_initialization_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.constant_initialization_vector = input; self
     }
     /// The encryption method to use.
     pub fn encryption_method(mut self, input: crate::types::EncryptionMethod) -> Self {
@@ -63,12 +59,8 @@ impl HlsEncryptionBuilder {
         self
     }
     /// The encryption method to use.
-    pub fn set_encryption_method(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionMethod>,
-    ) -> Self {
-        self.encryption_method = input;
-        self
+    pub fn set_encryption_method(mut self, input: std::option::Option<crate::types::EncryptionMethod>) -> Self {
+        self.encryption_method = input; self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
@@ -76,19 +68,19 @@ impl HlsEncryptionBuilder {
         self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn set_speke_key_provider(
-        mut self,
-        input: std::option::Option<crate::types::SpekeKeyProvider>,
-    ) -> Self {
-        self.speke_key_provider = input;
-        self
+    pub fn set_speke_key_provider(mut self, input: std::option::Option<crate::types::SpekeKeyProvider>) -> Self {
+        self.speke_key_provider = input; self
     }
     /// Consumes the builder and constructs a [`HlsEncryption`](crate::types::HlsEncryption).
     pub fn build(self) -> crate::types::HlsEncryption {
         crate::types::HlsEncryption {
-            constant_initialization_vector: self.constant_initialization_vector,
-            encryption_method: self.encryption_method,
-            speke_key_provider: self.speke_key_provider,
+            constant_initialization_vector: self.constant_initialization_vector
+            ,
+            encryption_method: self.encryption_method
+            ,
+            speke_key_provider: self.speke_key_provider
+            ,
         }
     }
 }
+

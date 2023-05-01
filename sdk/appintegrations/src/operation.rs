@@ -45,3 +45,4 @@ pub mod update_data_integration;
 
 /// Types for the `UpdateEventIntegration` operation.
 pub mod update_event_integration;
+

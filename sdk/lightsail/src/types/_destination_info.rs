@@ -3,7 +3,7 @@
 /// <p>Describes the destination of a record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationInfo {
+pub struct DestinationInfo  {
     /// <p>The ID of the resource created at the destination.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DestinationInfo {
 }
 impl DestinationInfo {
     /// <p>The ID of the resource created at the destination.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The destination service of the record.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DestinationInfoBuilder {
     }
     /// <p>The ID of the resource created at the destination.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The destination service of the record.</p>
     pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DestinationInfoBuilder {
     }
     /// <p>The destination service of the record.</p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// Consumes the builder and constructs a [`DestinationInfo`](crate::types::DestinationInfo).
     pub fn build(self) -> crate::types::DestinationInfo {
         crate::types::DestinationInfo {
-            id: self.id,
-            service: self.service,
+            id: self.id
+            ,
+            service: self.service
+            ,
         }
     }
 }
+

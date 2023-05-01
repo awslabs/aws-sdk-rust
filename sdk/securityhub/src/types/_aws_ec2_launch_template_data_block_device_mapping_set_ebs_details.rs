@@ -3,7 +3,7 @@
 /// <p> Parameters for a block device for an Amazon Elastic Block Store (Amazon EBS) volume in an Amazon EC2 launch template. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
+pub struct AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails  {
     /// <p> Indicates whether the EBS volume is deleted on instance termination. </p>
     #[doc(hidden)]
     pub delete_on_termination: bool,
@@ -43,11 +43,11 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
         self.iops
     }
     /// <p> The Amazon Resource Name (ARN) of the symmetric Key Management Service (KMS) customer managed key used for encryption. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p> The ID of the EBS snapshot. </p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p> The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s. </p>
@@ -59,15 +59,13 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
         self.volume_size
     }
     /// <p> The volume type. </p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> std::option::Option<& str> {
         self.volume_type.as_deref()
     }
 }
 impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder::default()
     }
 }
@@ -93,8 +91,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> Indicates whether the EBS volume is deleted on instance termination. </p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p> Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you're creating a volume from a snapshot, you can't specify an encryption value. </p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -103,8 +100,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> Indicates whether the EBS volume is encrypted. Encrypted volumes can only be attached to instances that support Amazon EBS encryption. If you're creating a volume from a snapshot, you can't specify an encryption value. </p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p> The number of I/O operations per second (IOPS). </p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -113,8 +109,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> The number of I/O operations per second (IOPS). </p>
     pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the symmetric Key Management Service (KMS) customer managed key used for encryption. </p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +118,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the symmetric Key Management Service (KMS) customer managed key used for encryption. </p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p> The ID of the EBS snapshot. </p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +127,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> The ID of the EBS snapshot. </p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p> The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s. </p>
     pub fn throughput(mut self, input: i32) -> Self {
@@ -143,8 +136,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> The throughput to provision for a gp3 volume, with a maximum of 1,000 MiB/s. </p>
     pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// <p> The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. </p>
     pub fn volume_size(mut self, input: i32) -> Self {
@@ -153,8 +145,7 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. </p>
     pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p> The volume type. </p>
     pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,20 +154,33 @@ impl AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetailsBuilder {
     }
     /// <p> The volume type. </p>
     pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails`](crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
         crate::types::AwsEc2LaunchTemplateDataBlockDeviceMappingSetEbsDetails {
-            delete_on_termination: self.delete_on_termination.unwrap_or_default(),
-            encrypted: self.encrypted.unwrap_or_default(),
-            iops: self.iops.unwrap_or_default(),
-            kms_key_id: self.kms_key_id,
-            snapshot_id: self.snapshot_id,
-            throughput: self.throughput.unwrap_or_default(),
-            volume_size: self.volume_size.unwrap_or_default(),
-            volume_type: self.volume_type,
+            delete_on_termination: self.delete_on_termination
+                .unwrap_or_default()
+            ,
+            encrypted: self.encrypted
+                .unwrap_or_default()
+            ,
+            iops: self.iops
+                .unwrap_or_default()
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            throughput: self.throughput
+                .unwrap_or_default()
+            ,
+            volume_size: self.volume_size
+                .unwrap_or_default()
+            ,
+            volume_type: self.volume_type
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let connectionerrorcodetype = unimplemented!();
 /// match connectionerrorcodetype {
@@ -46,22 +46,14 @@
 /// Specifically, when `connectionerrorcodetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConnectionErrorCodeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConnectionErrorCodeType {
     #[allow(missing_docs)] // documentation missing in model
     ClusterNotFound,
@@ -100,113 +92,73 @@ pub enum ConnectionErrorCodeType {
     #[allow(missing_docs)] // documentation missing in model
     XksVpcEndpointServiceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConnectionErrorCodeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLUSTER_NOT_FOUND" => ConnectionErrorCodeType::ClusterNotFound,
-            "INSUFFICIENT_CLOUDHSM_HSMS" => ConnectionErrorCodeType::InsufficientCloudhsmHsms,
-            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => {
-                ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLUSTER_NOT_FOUND" => ConnectionErrorCodeType::ClusterNotFound,
+"INSUFFICIENT_CLOUDHSM_HSMS" => ConnectionErrorCodeType::InsufficientCloudhsmHsms,
+"INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET" => ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet,
+"INTERNAL_ERROR" => ConnectionErrorCodeType::InternalError,
+"INVALID_CREDENTIALS" => ConnectionErrorCodeType::InvalidCredentials,
+"NETWORK_ERRORS" => ConnectionErrorCodeType::NetworkErrors,
+"SUBNET_NOT_FOUND" => ConnectionErrorCodeType::SubnetNotFound,
+"USER_LOCKED_OUT" => ConnectionErrorCodeType::UserLockedOut,
+"USER_LOGGED_IN" => ConnectionErrorCodeType::UserLoggedIn,
+"USER_NOT_FOUND" => ConnectionErrorCodeType::UserNotFound,
+"XKS_PROXY_ACCESS_DENIED" => ConnectionErrorCodeType::XksProxyAccessDenied,
+"XKS_PROXY_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidConfiguration,
+"XKS_PROXY_INVALID_RESPONSE" => ConnectionErrorCodeType::XksProxyInvalidResponse,
+"XKS_PROXY_INVALID_TLS_CONFIGURATION" => ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration,
+"XKS_PROXY_NOT_REACHABLE" => ConnectionErrorCodeType::XksProxyNotReachable,
+"XKS_PROXY_TIMED_OUT" => ConnectionErrorCodeType::XksProxyTimedOut,
+"XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration,
+"XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => ConnectionErrorCodeType::XksVpcEndpointServiceNotFound,
+other => ConnectionErrorCodeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "INTERNAL_ERROR" => ConnectionErrorCodeType::InternalError,
-            "INVALID_CREDENTIALS" => ConnectionErrorCodeType::InvalidCredentials,
-            "NETWORK_ERRORS" => ConnectionErrorCodeType::NetworkErrors,
-            "SUBNET_NOT_FOUND" => ConnectionErrorCodeType::SubnetNotFound,
-            "USER_LOCKED_OUT" => ConnectionErrorCodeType::UserLockedOut,
-            "USER_LOGGED_IN" => ConnectionErrorCodeType::UserLoggedIn,
-            "USER_NOT_FOUND" => ConnectionErrorCodeType::UserNotFound,
-            "XKS_PROXY_ACCESS_DENIED" => ConnectionErrorCodeType::XksProxyAccessDenied,
-            "XKS_PROXY_INVALID_CONFIGURATION" => {
-                ConnectionErrorCodeType::XksProxyInvalidConfiguration
-            }
-            "XKS_PROXY_INVALID_RESPONSE" => ConnectionErrorCodeType::XksProxyInvalidResponse,
-            "XKS_PROXY_INVALID_TLS_CONFIGURATION" => {
-                ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration
-            }
-            "XKS_PROXY_NOT_REACHABLE" => ConnectionErrorCodeType::XksProxyNotReachable,
-            "XKS_PROXY_TIMED_OUT" => ConnectionErrorCodeType::XksProxyTimedOut,
-            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION" => {
-                ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration
-            }
-            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND" => {
-                ConnectionErrorCodeType::XksVpcEndpointServiceNotFound
-            }
-            other => ConnectionErrorCodeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for ConnectionErrorCodeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectionErrorCodeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConnectionErrorCodeType::from(s))
+                }
+            }
 impl ConnectionErrorCodeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConnectionErrorCodeType::ClusterNotFound => "CLUSTER_NOT_FOUND",
-            ConnectionErrorCodeType::InsufficientCloudhsmHsms => "INSUFFICIENT_CLOUDHSM_HSMS",
-            ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => {
-                "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET"
-            }
-            ConnectionErrorCodeType::InternalError => "INTERNAL_ERROR",
-            ConnectionErrorCodeType::InvalidCredentials => "INVALID_CREDENTIALS",
-            ConnectionErrorCodeType::NetworkErrors => "NETWORK_ERRORS",
-            ConnectionErrorCodeType::SubnetNotFound => "SUBNET_NOT_FOUND",
-            ConnectionErrorCodeType::UserLockedOut => "USER_LOCKED_OUT",
-            ConnectionErrorCodeType::UserLoggedIn => "USER_LOGGED_IN",
-            ConnectionErrorCodeType::UserNotFound => "USER_NOT_FOUND",
-            ConnectionErrorCodeType::XksProxyAccessDenied => "XKS_PROXY_ACCESS_DENIED",
-            ConnectionErrorCodeType::XksProxyInvalidConfiguration => {
-                "XKS_PROXY_INVALID_CONFIGURATION"
-            }
-            ConnectionErrorCodeType::XksProxyInvalidResponse => "XKS_PROXY_INVALID_RESPONSE",
-            ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => {
-                "XKS_PROXY_INVALID_TLS_CONFIGURATION"
-            }
-            ConnectionErrorCodeType::XksProxyNotReachable => "XKS_PROXY_NOT_REACHABLE",
-            ConnectionErrorCodeType::XksProxyTimedOut => "XKS_PROXY_TIMED_OUT",
-            ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => {
-                "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION"
-            }
-            ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => {
-                "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"
-            }
-            ConnectionErrorCodeType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLUSTER_NOT_FOUND",
-            "INSUFFICIENT_CLOUDHSM_HSMS",
-            "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
-            "INTERNAL_ERROR",
-            "INVALID_CREDENTIALS",
-            "NETWORK_ERRORS",
-            "SUBNET_NOT_FOUND",
-            "USER_LOCKED_OUT",
-            "USER_LOGGED_IN",
-            "USER_NOT_FOUND",
-            "XKS_PROXY_ACCESS_DENIED",
-            "XKS_PROXY_INVALID_CONFIGURATION",
-            "XKS_PROXY_INVALID_RESPONSE",
-            "XKS_PROXY_INVALID_TLS_CONFIGURATION",
-            "XKS_PROXY_NOT_REACHABLE",
-            "XKS_PROXY_TIMED_OUT",
-            "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
-            "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConnectionErrorCodeType::ClusterNotFound => "CLUSTER_NOT_FOUND",
+    ConnectionErrorCodeType::InsufficientCloudhsmHsms => "INSUFFICIENT_CLOUDHSM_HSMS",
+    ConnectionErrorCodeType::InsufficientFreeAddressesInSubnet => "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET",
+    ConnectionErrorCodeType::InternalError => "INTERNAL_ERROR",
+    ConnectionErrorCodeType::InvalidCredentials => "INVALID_CREDENTIALS",
+    ConnectionErrorCodeType::NetworkErrors => "NETWORK_ERRORS",
+    ConnectionErrorCodeType::SubnetNotFound => "SUBNET_NOT_FOUND",
+    ConnectionErrorCodeType::UserLockedOut => "USER_LOCKED_OUT",
+    ConnectionErrorCodeType::UserLoggedIn => "USER_LOGGED_IN",
+    ConnectionErrorCodeType::UserNotFound => "USER_NOT_FOUND",
+    ConnectionErrorCodeType::XksProxyAccessDenied => "XKS_PROXY_ACCESS_DENIED",
+    ConnectionErrorCodeType::XksProxyInvalidConfiguration => "XKS_PROXY_INVALID_CONFIGURATION",
+    ConnectionErrorCodeType::XksProxyInvalidResponse => "XKS_PROXY_INVALID_RESPONSE",
+    ConnectionErrorCodeType::XksProxyInvalidTlsConfiguration => "XKS_PROXY_INVALID_TLS_CONFIGURATION",
+    ConnectionErrorCodeType::XksProxyNotReachable => "XKS_PROXY_NOT_REACHABLE",
+    ConnectionErrorCodeType::XksProxyTimedOut => "XKS_PROXY_TIMED_OUT",
+    ConnectionErrorCodeType::XksVpcEndpointServiceInvalidConfiguration => "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION",
+    ConnectionErrorCodeType::XksVpcEndpointServiceNotFound => "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND",
+    ConnectionErrorCodeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLUSTER_NOT_FOUND", "INSUFFICIENT_CLOUDHSM_HSMS", "INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET", "INTERNAL_ERROR", "INVALID_CREDENTIALS", "NETWORK_ERRORS", "SUBNET_NOT_FOUND", "USER_LOCKED_OUT", "USER_LOGGED_IN", "USER_NOT_FOUND", "XKS_PROXY_ACCESS_DENIED", "XKS_PROXY_INVALID_CONFIGURATION", "XKS_PROXY_INVALID_RESPONSE", "XKS_PROXY_INVALID_TLS_CONFIGURATION", "XKS_PROXY_NOT_REACHABLE", "XKS_PROXY_TIMED_OUT", "XKS_VPC_ENDPOINT_SERVICE_INVALID_CONFIGURATION", "XKS_VPC_ENDPOINT_SERVICE_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for ConnectionErrorCodeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

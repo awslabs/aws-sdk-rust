@@ -3,7 +3,7 @@
 /// <p>Contains the filter to apply when retrieving metrics with the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterV2 {
+pub struct FilterV2  {
     /// <p>The key to use for filtering data. For example, <code>QUEUE</code>, <code>ROUTING_PROFILE, AGENT</code>, <code>CHANNEL</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>. There must be at least 1 key and a maximum 5 keys. </p>
     #[doc(hidden)]
     pub filter_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FilterV2 {
 }
 impl FilterV2 {
     /// <p>The key to use for filtering data. For example, <code>QUEUE</code>, <code>ROUTING_PROFILE, AGENT</code>, <code>CHANNEL</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>. There must be at least 1 key and a maximum 5 keys. </p>
-    pub fn filter_key(&self) -> std::option::Option<&str> {
+    pub fn filter_key(&self) -> std::option::Option<& str> {
         self.filter_key.as_deref()
     }
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
-    pub fn filter_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_values(&self) -> std::option::Option<& [std::string::String]> {
         self.filter_values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FilterV2Builder {
     }
     /// <p>The key to use for filtering data. For example, <code>QUEUE</code>, <code>ROUTING_PROFILE, AGENT</code>, <code>CHANNEL</code>, <code>AGENT_HIERARCHY_LEVEL_ONE</code>, <code>AGENT_HIERARCHY_LEVEL_TWO</code>, <code>AGENT_HIERARCHY_LEVEL_THREE</code>, <code>AGENT_HIERARCHY_LEVEL_FOUR</code>, <code>AGENT_HIERARCHY_LEVEL_FIVE</code>. There must be at least 1 key and a maximum 5 keys. </p>
     pub fn set_filter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_key = input;
-        self
+        self.filter_key = input; self
     }
     /// Appends an item to `filter_values`.
     ///
@@ -53,23 +52,22 @@ impl FilterV2Builder {
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
     pub fn filter_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
-        v.push(input.into());
-        self.filter_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.filter_values = Some(v);
+                        self
     }
     /// <p>The identifiers to use for filtering data. For example, if you have a filter key of <code>QUEUE</code>, you would add queue IDs or ARNs in <code>FilterValues</code>. </p>
-    pub fn set_filter_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.filter_values = input;
-        self
+    pub fn set_filter_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.filter_values = input; self
     }
     /// Consumes the builder and constructs a [`FilterV2`](crate::types::FilterV2).
     pub fn build(self) -> crate::types::FilterV2 {
         crate::types::FilterV2 {
-            filter_key: self.filter_key,
-            filter_values: self.filter_values,
+            filter_key: self.filter_key
+            ,
+            filter_values: self.filter_values
+            ,
         }
     }
 }
+

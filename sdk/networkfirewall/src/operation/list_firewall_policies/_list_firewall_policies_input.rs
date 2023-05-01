@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallPoliciesInput {
+pub struct ListFirewallPoliciesInput  {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListFirewallPoliciesInput {
 }
 impl ListFirewallPoliciesInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -22,8 +22,7 @@ impl ListFirewallPoliciesInput {
 }
 impl ListFirewallPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListFirewallPoliciesInput`](crate::operation::list_firewall_policies::ListFirewallPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_firewall_policies::builders::ListFirewallPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_firewall_policies::builders::ListFirewallPoliciesInputBuilder {
         crate::operation::list_firewall_policies::builders::ListFirewallPoliciesInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListFirewallPoliciesInputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl ListFirewallPoliciesInputBuilder {
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListFirewallPoliciesInput`](crate::operation::list_firewall_policies::ListFirewallPoliciesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_firewall_policies::ListFirewallPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_firewall_policies::ListFirewallPoliciesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_firewall_policies::ListFirewallPoliciesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

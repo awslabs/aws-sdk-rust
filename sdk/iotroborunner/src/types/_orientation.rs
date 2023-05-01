@@ -21,11 +21,7 @@ impl Orientation {
     /// Tries to convert the enum instance into [`Degrees`](crate::types::Orientation::Degrees), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_degrees(&self) -> std::result::Result<&f64, &Self> {
-        if let Orientation::Degrees(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Orientation::Degrees(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Degrees`](crate::types::Orientation::Degrees).
     pub fn is_degrees(&self) -> bool {
@@ -36,3 +32,4 @@ impl Orientation {
         matches!(self, Self::Unknown)
     }
 }
+

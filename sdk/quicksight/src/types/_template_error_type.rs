@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let templateerrortype = unimplemented!();
 /// match templateerrortype {
@@ -32,22 +32,14 @@
 /// Specifically, when `templateerrortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemplateErrorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemplateErrorType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -58,51 +50,45 @@ pub enum TemplateErrorType {
     #[allow(missing_docs)] // documentation missing in model
     SourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateErrorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => TemplateErrorType::AccessDenied,
-            "DATA_SET_NOT_FOUND" => TemplateErrorType::DataSetNotFound,
-            "INTERNAL_FAILURE" => TemplateErrorType::InternalFailure,
-            "SOURCE_NOT_FOUND" => TemplateErrorType::SourceNotFound,
-            other => {
-                TemplateErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => TemplateErrorType::AccessDenied,
+"DATA_SET_NOT_FOUND" => TemplateErrorType::DataSetNotFound,
+"INTERNAL_FAILURE" => TemplateErrorType::InternalFailure,
+"SOURCE_NOT_FOUND" => TemplateErrorType::SourceNotFound,
+other => TemplateErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for TemplateErrorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemplateErrorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemplateErrorType::from(s))
+                }
+            }
 impl TemplateErrorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TemplateErrorType::AccessDenied => "ACCESS_DENIED",
-            TemplateErrorType::DataSetNotFound => "DATA_SET_NOT_FOUND",
-            TemplateErrorType::InternalFailure => "INTERNAL_FAILURE",
-            TemplateErrorType::SourceNotFound => "SOURCE_NOT_FOUND",
-            TemplateErrorType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "DATA_SET_NOT_FOUND",
-            "INTERNAL_FAILURE",
-            "SOURCE_NOT_FOUND",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TemplateErrorType::AccessDenied => "ACCESS_DENIED",
+    TemplateErrorType::DataSetNotFound => "DATA_SET_NOT_FOUND",
+    TemplateErrorType::InternalFailure => "INTERNAL_FAILURE",
+    TemplateErrorType::SourceNotFound => "SOURCE_NOT_FOUND",
+    TemplateErrorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "DATA_SET_NOT_FOUND", "INTERNAL_FAILURE", "SOURCE_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for TemplateErrorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

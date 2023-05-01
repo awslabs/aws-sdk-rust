@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStreamInput {
+pub struct DeleteStreamInput  {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>Optional: The version of the stream that you want to delete. </p>
-    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>Optional: The version of the stream that you want to delete. </p> 
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> 
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     #[doc(hidden)]
     pub current_version: std::option::Option<std::string::String>,
 }
 impl DeleteStreamInput {
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
-    /// <p>Optional: The version of the stream that you want to delete. </p>
-    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>Optional: The version of the stream that you want to delete. </p> 
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> 
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> std::option::Option<& str> {
         self.current_version.as_deref()
     }
 }
@@ -46,33 +46,31 @@ impl DeleteStreamInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
-    /// <p>Optional: The version of the stream that you want to delete. </p>
-    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>Optional: The version of the stream that you want to delete. </p> 
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> 
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.current_version = Some(input.into());
         self
     }
-    /// <p>Optional: The version of the stream that you want to delete. </p>
-    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p>
+    /// <p>Optional: The version of the stream that you want to delete. </p> 
+    /// <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> 
     /// <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_stream::DeleteStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_stream::DeleteStreamInput {
-            stream_arn: self.stream_arn,
-            current_version: self.current_version,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_stream::DeleteStreamInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_stream::DeleteStreamInput {
+                stream_arn: self.stream_arn
+                ,
+                current_version: self.current_version
+                ,
+            }
+        )
     }
 }
+

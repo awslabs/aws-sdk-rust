@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lensstatus = unimplemented!();
 /// match lensstatus {
@@ -33,22 +33,14 @@
 /// Specifically, when `lensstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LensStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LensStatus {
     #[allow(missing_docs)] // documentation missing in model
     Current,
@@ -61,52 +53,47 @@ pub enum LensStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unshared,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LensStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CURRENT" => LensStatus::Current,
-            "DELETED" => LensStatus::Deleted,
-            "DEPRECATED" => LensStatus::Deprecated,
-            "NOT_CURRENT" => LensStatus::NotCurrent,
-            "UNSHARED" => LensStatus::Unshared,
-            other => LensStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CURRENT" => LensStatus::Current,
+"DELETED" => LensStatus::Deleted,
+"DEPRECATED" => LensStatus::Deprecated,
+"NOT_CURRENT" => LensStatus::NotCurrent,
+"UNSHARED" => LensStatus::Unshared,
+other => LensStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LensStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LensStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LensStatus::from(s))
+                }
+            }
 impl LensStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LensStatus::Current => "CURRENT",
-            LensStatus::Deleted => "DELETED",
-            LensStatus::Deprecated => "DEPRECATED",
-            LensStatus::NotCurrent => "NOT_CURRENT",
-            LensStatus::Unshared => "UNSHARED",
-            LensStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CURRENT",
-            "DELETED",
-            "DEPRECATED",
-            "NOT_CURRENT",
-            "UNSHARED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LensStatus::Current => "CURRENT",
+    LensStatus::Deleted => "DELETED",
+    LensStatus::Deprecated => "DEPRECATED",
+    LensStatus::NotCurrent => "NOT_CURRENT",
+    LensStatus::Unshared => "UNSHARED",
+    LensStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CURRENT", "DELETED", "DEPRECATED", "NOT_CURRENT", "UNSHARED"]
+                }
+            }
 impl AsRef<str> for LensStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

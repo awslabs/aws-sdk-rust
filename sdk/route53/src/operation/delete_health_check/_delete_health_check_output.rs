@@ -3,18 +3,17 @@
 /// <p>An empty element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHealthCheckOutput {
+pub struct DeleteHealthCheckOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteHealthCheckOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder {
+    pub fn builder() -> crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder {
         crate::operation::delete_health_check::builders::DeleteHealthCheckOutputBuilder::default()
     }
 }
@@ -27,14 +26,14 @@ pub struct DeleteHealthCheckOutputBuilder {
 }
 impl DeleteHealthCheckOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteHealthCheckOutput`](crate::operation::delete_health_check::DeleteHealthCheckOutput).
     pub fn build(self) -> crate::operation::delete_health_check::DeleteHealthCheckOutput {
         crate::operation::delete_health_check::DeleteHealthCheckOutput {
@@ -42,3 +41,4 @@ impl DeleteHealthCheckOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A request to associate a configuration set with an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityConfigurationSetAttributesInput {
+pub struct PutEmailIdentityConfigurationSetAttributesInput  {
     /// <p>The email address or domain to associate with a configuration set.</p>
     #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct PutEmailIdentityConfigurationSetAttributesInput {
 }
 impl PutEmailIdentityConfigurationSetAttributesInput {
     /// <p>The email address or domain to associate with a configuration set.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
     /// <p>The configuration set to associate with an email identity.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
 impl PutEmailIdentityConfigurationSetAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityConfigurationSetAttributesInput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput).
-    pub fn builder() -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder {
         crate::operation::put_email_identity_configuration_set_attributes::builders::PutEmailIdentityConfigurationSetAttributesInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
     }
     /// <p>The email address or domain to associate with a configuration set.</p>
     pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
     /// <p>The configuration set to associate with an email identity.</p>
     pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,15 +51,11 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
         self
     }
     /// <p>The configuration set to associate with an email identity.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityConfigurationSetAttributesInput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput).
-    pub fn build(self) -> Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesInput {
                 email_identity: self.email_identity
@@ -71,3 +66,4 @@ impl PutEmailIdentityConfigurationSetAttributesInputBuilder {
         )
     }
 }
+

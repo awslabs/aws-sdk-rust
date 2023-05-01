@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateEntitiesToExperienceInput {
+pub struct AssociateEntitiesToExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct AssociateEntitiesToExperienceInput {
 }
 impl AssociateEntitiesToExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn entity_list(&self) -> std::option::Option<&[crate::types::EntityConfiguration]> {
+    pub fn entity_list(&self) -> std::option::Option<& [crate::types::EntityConfiguration]> {
         self.entity_list.as_deref()
     }
 }
 impl AssociateEntitiesToExperienceInput {
     /// Creates a new builder-style object to manufacture [`AssociateEntitiesToExperienceInput`](crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput).
-    pub fn builder() -> crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder{
+    pub fn builder() -> crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder {
         crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl AssociateEntitiesToExperienceInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// Appends an item to `entity_list`.
     ///
@@ -70,25 +68,16 @@ impl AssociateEntitiesToExperienceInputBuilder {
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     pub fn entity_list(mut self, input: crate::types::EntityConfiguration) -> Self {
         let mut v = self.entity_list.unwrap_or_default();
-        v.push(input);
-        self.entity_list = Some(v);
-        self
+                        v.push(input);
+                        self.entity_list = Some(v);
+                        self
     }
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
-    pub fn set_entity_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntityConfiguration>>,
-    ) -> Self {
-        self.entity_list = input;
-        self
+    pub fn set_entity_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::EntityConfiguration>>) -> Self {
+        self.entity_list = input; self
     }
     /// Consumes the builder and constructs a [`AssociateEntitiesToExperienceInput`](crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceInput {
                 id: self.id
@@ -101,3 +90,4 @@ impl AssociateEntitiesToExperienceInputBuilder {
         )
     }
 }
+

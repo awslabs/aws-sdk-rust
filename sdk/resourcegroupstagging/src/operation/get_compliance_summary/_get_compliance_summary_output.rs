@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComplianceSummaryOutput {
+pub struct GetComplianceSummaryOutput  {
     /// <p>A table that shows counts of noncompliant resources.</p>
     #[doc(hidden)]
     pub summary_list: std::option::Option<std::vec::Vec<crate::types::Summary>>,
@@ -13,23 +13,22 @@ pub struct GetComplianceSummaryOutput {
 }
 impl GetComplianceSummaryOutput {
     /// <p>A table that shows counts of noncompliant resources.</p>
-    pub fn summary_list(&self) -> std::option::Option<&[crate::types::Summary]> {
+    pub fn summary_list(&self) -> std::option::Option<& [crate::types::Summary]> {
         self.summary_list.as_deref()
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetComplianceSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetComplianceSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetComplianceSummaryOutput`](crate::operation::get_compliance_summary::GetComplianceSummaryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryOutputBuilder {
+    pub fn builder() -> crate::operation::get_compliance_summary::builders::GetComplianceSummaryOutputBuilder {
         crate::operation::get_compliance_summary::builders::GetComplianceSummaryOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl GetComplianceSummaryOutputBuilder {
     /// <p>A table that shows counts of noncompliant resources.</p>
     pub fn summary_list(mut self, input: crate::types::Summary) -> Self {
         let mut v = self.summary_list.unwrap_or_default();
-        v.push(input);
-        self.summary_list = Some(v);
-        self
+                        v.push(input);
+                        self.summary_list = Some(v);
+                        self
     }
     /// <p>A table that shows counts of noncompliant resources.</p>
-    pub fn set_summary_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Summary>>,
-    ) -> Self {
-        self.summary_list = input;
-        self
+    pub fn set_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Summary>>) -> Self {
+        self.summary_list = input; self
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl GetComplianceSummaryOutputBuilder {
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetComplianceSummaryOutput`](crate::operation::get_compliance_summary::GetComplianceSummaryOutput).
     pub fn build(self) -> crate::operation::get_compliance_summary::GetComplianceSummaryOutput {
         crate::operation::get_compliance_summary::GetComplianceSummaryOutput {
-            summary_list: self.summary_list,
-            pagination_token: self.pagination_token,
+            summary_list: self.summary_list
+            ,
+            pagination_token: self.pagination_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,93 +4,62 @@ pub use crate::operation::list_application_components::_list_application_compone
 pub use crate::operation::list_application_components::_list_application_components_input::ListApplicationComponentsInputBuilder;
 
 /// Fluent builder constructing a request to `ListApplicationComponents`.
-///
+/// 
 /// <p> Retrieves a list of all the application components (processes). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListApplicationComponentsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder
             }
-impl ListApplicationComponentsFluentBuilder {
+impl ListApplicationComponentsFluentBuilder  {
     /// Creates a new `ListApplicationComponents`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_application_components::ListApplicationComponents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_application_components::ListApplicationComponentsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_application_components::ListApplicationComponentsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_application_components::ListApplicationComponentsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_application_components::ListApplicationComponents, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_application_components::ListApplicationComponentsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_application_components::ListApplicationComponentsOutput, aws_smithy_http::result::SdkError<crate::operation::list_application_components::ListApplicationComponentsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator
-    {
-        crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator {
+                            crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::new(self.handle, self.inner)
+                        }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn application_component_criteria(
-        mut self,
-        input: crate::types::ApplicationComponentCriteria,
-    ) -> Self {
+    pub fn application_component_criteria(mut self, input: crate::types::ApplicationComponentCriteria) -> Self {
         self.inner = self.inner.application_component_criteria(input);
         self
     }
     /// <p> Criteria for filtering the list of application components. </p>
-    pub fn set_application_component_criteria(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationComponentCriteria>,
-    ) -> Self {
+    pub fn set_application_component_criteria(mut self, input: std::option::Option<crate::types::ApplicationComponentCriteria>) -> Self {
         self.inner = self.inner.set_application_component_criteria(input);
         self
     }
@@ -124,10 +93,7 @@ impl ListApplicationComponentsFluentBuilder {
         self
     }
     /// <p> The group ID specified in to filter on. </p>
-    pub fn set_group_id_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Group>>,
-    ) -> Self {
+    pub fn set_group_id_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::Group>>) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self
     }
@@ -152,3 +118,4 @@ impl ListApplicationComponentsFluentBuilder {
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoleAliasesInput {
+pub struct ListRoleAliasesInput  {
     /// <p>The maximum number of results to return at one time.</p>
     #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
@@ -19,7 +19,7 @@ impl ListRoleAliasesInput {
         self.page_size
     }
     /// <p>A marker used to get the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
@@ -50,8 +50,7 @@ impl ListRoleAliasesInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListRoleAliasesInputBuilder {
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
@@ -70,20 +68,20 @@ impl ListRoleAliasesInputBuilder {
     }
     /// <p>Return the list of role aliases in ascending alphabetical order.</p>
     pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// Consumes the builder and constructs a [`ListRoleAliasesInput`](crate::operation::list_role_aliases::ListRoleAliasesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_role_aliases::ListRoleAliasesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_role_aliases::ListRoleAliasesInput {
-            page_size: self.page_size,
-            marker: self.marker,
-            ascending_order: self.ascending_order,
-        })
+    pub fn build(self) -> Result<crate::operation::list_role_aliases::ListRoleAliasesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_role_aliases::ListRoleAliasesInput {
+                page_size: self.page_size
+                ,
+                marker: self.marker
+                ,
+                ascending_order: self.ascending_order
+                ,
+            }
+        )
     }
 }
+

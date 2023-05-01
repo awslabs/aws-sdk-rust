@@ -3,7 +3,7 @@
 /// <p>Represents the output of a get commit operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCommitOutput {
+pub struct GetCommitOutput  {
     /// <p>A commit data type object that contains information about the specified commit.</p>
     #[doc(hidden)]
     pub commit: std::option::Option<crate::types::Commit>,
@@ -11,15 +11,15 @@ pub struct GetCommitOutput {
 }
 impl GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
-    pub fn commit(&self) -> std::option::Option<&crate::types::Commit> {
+    pub fn commit(&self) -> std::option::Option<& crate::types::Commit> {
         self.commit.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCommitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCommitOutput {
     /// Creates a new builder-style object to manufacture [`GetCommitOutput`](crate::operation::get_commit::GetCommitOutput).
     pub fn builder() -> crate::operation::get_commit::builders::GetCommitOutputBuilder {
@@ -42,23 +42,24 @@ impl GetCommitOutputBuilder {
     }
     /// <p>A commit data type object that contains information about the specified commit.</p>
     pub fn set_commit(mut self, input: std::option::Option<crate::types::Commit>) -> Self {
-        self.commit = input;
-        self
+        self.commit = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCommitOutput`](crate::operation::get_commit::GetCommitOutput).
     pub fn build(self) -> crate::operation::get_commit::GetCommitOutput {
         crate::operation::get_commit::GetCommitOutput {
-            commit: self.commit,
+            commit: self.commit
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

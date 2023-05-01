@@ -12,3 +12,4 @@ pub use crate::types::_edge_deployment::EdgeDeploymentBuilder;
 pub use crate::types::_definition::DefinitionBuilder;
 
 pub use crate::types::_checksum::ChecksumBuilder;
+

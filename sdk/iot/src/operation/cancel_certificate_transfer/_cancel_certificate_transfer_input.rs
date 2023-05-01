@@ -3,20 +3,20 @@
 /// <p>The input for the CancelCertificateTransfer operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelCertificateTransferInput {
+pub struct CancelCertificateTransferInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
 }
 impl CancelCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
 }
 impl CancelCertificateTransferInput {
     /// Creates a new builder-style object to manufacture [`CancelCertificateTransferInput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferInput).
-    pub fn builder() -> crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferInputBuilder{
+    pub fn builder() -> crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferInputBuilder {
         crate::operation::cancel_certificate_transfer::builders::CancelCertificateTransferInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl CancelCertificateTransferInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelCertificateTransferInput`](crate::operation::cancel_certificate_transfer::CancelCertificateTransferInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_certificate_transfer::CancelCertificateTransferInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_certificate_transfer::CancelCertificateTransferInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_certificate_transfer::CancelCertificateTransferInput {
-                certificate_id: self.certificate_id,
-            },
+                certificate_id: self.certificate_id
+                ,
+            }
         )
     }
 }
+

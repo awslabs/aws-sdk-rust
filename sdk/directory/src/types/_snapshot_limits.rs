@@ -3,7 +3,7 @@
 /// <p>Contains manual snapshot limit information for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotLimits {
+pub struct SnapshotLimits  {
     /// <p>The maximum number of manual snapshots allowed.</p>
     #[doc(hidden)]
     pub manual_snapshots_limit: std::option::Option<i32>,
@@ -51,8 +51,7 @@ impl SnapshotLimitsBuilder {
     }
     /// <p>The maximum number of manual snapshots allowed.</p>
     pub fn set_manual_snapshots_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshots_limit = input;
-        self
+        self.manual_snapshots_limit = input; self
     }
     /// <p>The current number of manual snapshots of the directory.</p>
     pub fn manual_snapshots_current_count(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl SnapshotLimitsBuilder {
     }
     /// <p>The current number of manual snapshots of the directory.</p>
     pub fn set_manual_snapshots_current_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshots_current_count = input;
-        self
+        self.manual_snapshots_current_count = input; self
     }
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
     pub fn manual_snapshots_limit_reached(mut self, input: bool) -> Self {
@@ -71,15 +69,19 @@ impl SnapshotLimitsBuilder {
     }
     /// <p>Indicates if the manual snapshot limit has been reached.</p>
     pub fn set_manual_snapshots_limit_reached(mut self, input: std::option::Option<bool>) -> Self {
-        self.manual_snapshots_limit_reached = input;
-        self
+        self.manual_snapshots_limit_reached = input; self
     }
     /// Consumes the builder and constructs a [`SnapshotLimits`](crate::types::SnapshotLimits).
     pub fn build(self) -> crate::types::SnapshotLimits {
         crate::types::SnapshotLimits {
-            manual_snapshots_limit: self.manual_snapshots_limit,
-            manual_snapshots_current_count: self.manual_snapshots_current_count,
-            manual_snapshots_limit_reached: self.manual_snapshots_limit_reached.unwrap_or_default(),
+            manual_snapshots_limit: self.manual_snapshots_limit
+            ,
+            manual_snapshots_current_count: self.manual_snapshots_current_count
+            ,
+            manual_snapshots_limit_reached: self.manual_snapshots_limit_reached
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

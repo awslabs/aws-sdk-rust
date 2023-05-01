@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSegmentsOutput {
+pub struct ListSegmentsOutput  {
     /// <p>An array of structures that contain information about the segments in this Region.</p>
     #[doc(hidden)]
     pub segments: std::option::Option<std::vec::Vec<crate::types::Segment>>,
@@ -13,19 +13,19 @@ pub struct ListSegmentsOutput {
 }
 impl ListSegmentsOutput {
     /// <p>An array of structures that contain information about the segments in this Region.</p>
-    pub fn segments(&self) -> std::option::Option<&[crate::types::Segment]> {
+    pub fn segments(&self) -> std::option::Option<& [crate::types::Segment]> {
         self.segments.as_deref()
     }
     /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSegmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSegmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListSegmentsOutput`](crate::operation::list_segments::ListSegmentsOutput).
     pub fn builder() -> crate::operation::list_segments::builders::ListSegmentsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListSegmentsOutputBuilder {
     /// <p>An array of structures that contain information about the segments in this Region.</p>
     pub fn segments(mut self, input: crate::types::Segment) -> Self {
         let mut v = self.segments.unwrap_or_default();
-        v.push(input);
-        self.segments = Some(v);
-        self
+                        v.push(input);
+                        self.segments = Some(v);
+                        self
     }
     /// <p>An array of structures that contain information about the segments in this Region.</p>
-    pub fn set_segments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Segment>>,
-    ) -> Self {
-        self.segments = input;
-        self
+    pub fn set_segments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Segment>>) -> Self {
+        self.segments = input; self
     }
     /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListSegmentsOutputBuilder {
     }
     /// <p>The token to use in a subsequent <code>ListSegments</code> operation to return the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSegmentsOutput`](crate::operation::list_segments::ListSegmentsOutput).
     pub fn build(self) -> crate::operation::list_segments::ListSegmentsOutput {
         crate::operation::list_segments::ListSegmentsOutput {
-            segments: self.segments,
-            next_token: self.next_token,
+            segments: self.segments
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A warning about an issue that occurred during asynchronous text analysis (<code>StartDocumentAnalysis</code>) or asynchronous document text detection (<code>StartDocumentTextDetection</code>). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Warning {
+pub struct Warning  {
     /// <p>The error code for the warning.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Warning {
 }
 impl Warning {
     /// <p>The error code for the warning.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A list of the pages that the warning applies to.</p>
-    pub fn pages(&self) -> std::option::Option<&[i32]> {
+    pub fn pages(&self) -> std::option::Option<& [i32]> {
         self.pages.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl WarningBuilder {
     }
     /// <p>The error code for the warning.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// Appends an item to `pages`.
     ///
@@ -53,20 +52,22 @@ impl WarningBuilder {
     /// <p>A list of the pages that the warning applies to.</p>
     pub fn pages(mut self, input: i32) -> Self {
         let mut v = self.pages.unwrap_or_default();
-        v.push(input);
-        self.pages = Some(v);
-        self
+                        v.push(input);
+                        self.pages = Some(v);
+                        self
     }
     /// <p>A list of the pages that the warning applies to.</p>
     pub fn set_pages(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.pages = input;
-        self
+        self.pages = input; self
     }
     /// Consumes the builder and constructs a [`Warning`](crate::types::Warning).
     pub fn build(self) -> crate::types::Warning {
         crate::types::Warning {
-            error_code: self.error_code,
-            pages: self.pages,
+            error_code: self.error_code
+            ,
+            pages: self.pages
+            ,
         }
     }
 }
+

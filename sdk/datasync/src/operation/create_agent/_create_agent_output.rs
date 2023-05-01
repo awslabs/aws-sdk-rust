@@ -3,7 +3,7 @@
 /// <p>CreateAgentResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAgentOutput {
+pub struct CreateAgentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
@@ -11,15 +11,15 @@ pub struct CreateAgentOutput {
 }
 impl CreateAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAgentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAgentOutput {
     /// Creates a new builder-style object to manufacture [`CreateAgentOutput`](crate::operation::create_agent::CreateAgentOutput).
     pub fn builder() -> crate::operation::create_agent::builders::CreateAgentOutputBuilder {
@@ -42,23 +42,24 @@ impl CreateAgentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAgentOutput`](crate::operation::create_agent::CreateAgentOutput).
     pub fn build(self) -> crate::operation::create_agent::CreateAgentOutput {
         crate::operation::create_agent::CreateAgentOutput {
-            agent_arn: self.agent_arn,
+            agent_arn: self.agent_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

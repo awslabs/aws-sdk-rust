@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesForWebAclOutput {
+pub struct ListResourcesForWebAclOutput  {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10,20 +10,18 @@ pub struct ListResourcesForWebAclOutput {
 }
 impl ListResourcesForWebAclOutput {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListResourcesForWebAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListResourcesForWebAclOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclOutput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput).
-    pub fn builder(
-    ) -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclOutputBuilder {
         crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclOutputBuilder::default()
     }
 }
@@ -43,34 +41,30 @@ impl ListResourcesForWebAclOutputBuilder {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
     pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = Some(v);
+                        self
     }
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListResourcesForWebAclOutput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput {
+    pub fn build(self) -> crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput {
         crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput {
-            resource_arns: self.resource_arns,
+            resource_arns: self.resource_arns
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,17 +3,14 @@
 /// <p>Specifies the range of environment parameters</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentParameterRanges {
+pub struct EnvironmentParameterRanges  {
     /// <p>Specified a list of parameters for each category.</p>
     #[doc(hidden)]
-    pub categorical_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::CategoricalParameter>>,
+    pub categorical_parameter_ranges: std::option::Option<std::vec::Vec<crate::types::CategoricalParameter>>,
 }
 impl EnvironmentParameterRanges {
     /// <p>Specified a list of parameters for each category.</p>
-    pub fn categorical_parameter_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::types::CategoricalParameter]> {
+    pub fn categorical_parameter_ranges(&self) -> std::option::Option<& [crate::types::CategoricalParameter]> {
         self.categorical_parameter_ranges.as_deref()
     }
 }
@@ -28,8 +25,7 @@ impl EnvironmentParameterRanges {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EnvironmentParameterRangesBuilder {
-    pub(crate) categorical_parameter_ranges:
-        std::option::Option<std::vec::Vec<crate::types::CategoricalParameter>>,
+    pub(crate) categorical_parameter_ranges: std::option::Option<std::vec::Vec<crate::types::CategoricalParameter>>,
 }
 impl EnvironmentParameterRangesBuilder {
     /// Appends an item to `categorical_parameter_ranges`.
@@ -37,27 +33,22 @@ impl EnvironmentParameterRangesBuilder {
     /// To override the contents of this collection use [`set_categorical_parameter_ranges`](Self::set_categorical_parameter_ranges).
     ///
     /// <p>Specified a list of parameters for each category.</p>
-    pub fn categorical_parameter_ranges(
-        mut self,
-        input: crate::types::CategoricalParameter,
-    ) -> Self {
+    pub fn categorical_parameter_ranges(mut self, input: crate::types::CategoricalParameter) -> Self {
         let mut v = self.categorical_parameter_ranges.unwrap_or_default();
-        v.push(input);
-        self.categorical_parameter_ranges = Some(v);
-        self
+                        v.push(input);
+                        self.categorical_parameter_ranges = Some(v);
+                        self
     }
     /// <p>Specified a list of parameters for each category.</p>
-    pub fn set_categorical_parameter_ranges(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CategoricalParameter>>,
-    ) -> Self {
-        self.categorical_parameter_ranges = input;
-        self
+    pub fn set_categorical_parameter_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::CategoricalParameter>>) -> Self {
+        self.categorical_parameter_ranges = input; self
     }
     /// Consumes the builder and constructs a [`EnvironmentParameterRanges`](crate::types::EnvironmentParameterRanges).
     pub fn build(self) -> crate::types::EnvironmentParameterRanges {
         crate::types::EnvironmentParameterRanges {
-            categorical_parameter_ranges: self.categorical_parameter_ranges,
+            categorical_parameter_ranges: self.categorical_parameter_ranges
+            ,
         }
     }
 }
+

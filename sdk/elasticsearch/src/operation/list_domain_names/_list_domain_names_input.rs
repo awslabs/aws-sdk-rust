@@ -3,14 +3,14 @@
 /// <p> Container for the parameters to the <code><code>ListDomainNames</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainNamesInput {
+pub struct ListDomainNamesInput  {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<crate::types::EngineType>,
 }
 impl ListDomainNamesInput {
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
-    pub fn engine_type(&self) -> std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
 }
@@ -35,18 +35,16 @@ impl ListDomainNamesInputBuilder {
     }
     /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
     pub fn set_engine_type(mut self, input: std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// Consumes the builder and constructs a [`ListDomainNamesInput`](crate::operation::list_domain_names::ListDomainNamesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_domain_names::ListDomainNamesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_domain_names::ListDomainNamesInput {
-            engine_type: self.engine_type,
-        })
+    pub fn build(self) -> Result<crate::operation::list_domain_names::ListDomainNamesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_domain_names::ListDomainNamesInput {
+                engine_type: self.engine_type
+                ,
+            }
+        )
     }
 }
+

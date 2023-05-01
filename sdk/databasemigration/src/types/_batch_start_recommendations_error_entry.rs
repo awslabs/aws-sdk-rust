@@ -3,7 +3,7 @@
 /// <p>Provides information about the errors that occurred during the analysis of the source database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchStartRecommendationsErrorEntry {
+pub struct BatchStartRecommendationsErrorEntry  {
     /// <p>The identifier of the source database.</p>
     #[doc(hidden)]
     pub database_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchStartRecommendationsErrorEntry {
 }
 impl BatchStartRecommendationsErrorEntry {
     /// <p>The identifier of the source database.</p>
-    pub fn database_id(&self) -> std::option::Option<&str> {
+    pub fn database_id(&self) -> std::option::Option<& str> {
         self.database_id.as_deref()
     }
     /// <p>The information about the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The code of an error that occurred during the analysis of the source database.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl BatchStartRecommendationsErrorEntryBuilder {
     }
     /// <p>The identifier of the source database.</p>
     pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_id = input;
-        self
+        self.database_id = input; self
     }
     /// <p>The information about the error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl BatchStartRecommendationsErrorEntryBuilder {
     }
     /// <p>The information about the error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The code of an error that occurred during the analysis of the source database.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl BatchStartRecommendationsErrorEntryBuilder {
     }
     /// <p>The code of an error that occurred during the analysis of the source database.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// Consumes the builder and constructs a [`BatchStartRecommendationsErrorEntry`](crate::types::BatchStartRecommendationsErrorEntry).
     pub fn build(self) -> crate::types::BatchStartRecommendationsErrorEntry {
         crate::types::BatchStartRecommendationsErrorEntry {
-            database_id: self.database_id,
-            message: self.message,
-            code: self.code,
+            database_id: self.database_id
+            ,
+            message: self.message
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

@@ -2,42 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetPortSettingsInput {
+pub struct UpdateFleetPortSettingsInput  {
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
     /// <p>A collection of port settings to be added to the fleet resource.</p>
     #[doc(hidden)]
-    pub inbound_permission_authorizations:
-        std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    pub inbound_permission_authorizations: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
     #[doc(hidden)]
-    pub inbound_permission_revocations:
-        std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    pub inbound_permission_revocations: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
 }
 impl UpdateFleetPortSettingsInput {
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A collection of port settings to be added to the fleet resource.</p>
-    pub fn inbound_permission_authorizations(
-        &self,
-    ) -> std::option::Option<&[crate::types::IpPermission]> {
+    pub fn inbound_permission_authorizations(&self) -> std::option::Option<& [crate::types::IpPermission]> {
         self.inbound_permission_authorizations.as_deref()
     }
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
-    pub fn inbound_permission_revocations(
-        &self,
-    ) -> std::option::Option<&[crate::types::IpPermission]> {
+    pub fn inbound_permission_revocations(&self) -> std::option::Option<& [crate::types::IpPermission]> {
         self.inbound_permission_revocations.as_deref()
     }
 }
 impl UpdateFleetPortSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetPortSettingsInput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder {
         crate::operation::update_fleet_port_settings::builders::UpdateFleetPortSettingsInputBuilder::default()
     }
 }
@@ -47,10 +39,8 @@ impl UpdateFleetPortSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFleetPortSettingsInputBuilder {
     pub(crate) fleet_id: std::option::Option<std::string::String>,
-    pub(crate) inbound_permission_authorizations:
-        std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
-    pub(crate) inbound_permission_revocations:
-        std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) inbound_permission_authorizations: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) inbound_permission_revocations: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
 }
 impl UpdateFleetPortSettingsInputBuilder {
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
@@ -60,8 +50,7 @@ impl UpdateFleetPortSettingsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to update port settings for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// Appends an item to `inbound_permission_authorizations`.
     ///
@@ -70,17 +59,13 @@ impl UpdateFleetPortSettingsInputBuilder {
     /// <p>A collection of port settings to be added to the fleet resource.</p>
     pub fn inbound_permission_authorizations(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.inbound_permission_authorizations.unwrap_or_default();
-        v.push(input);
-        self.inbound_permission_authorizations = Some(v);
-        self
+                        v.push(input);
+                        self.inbound_permission_authorizations = Some(v);
+                        self
     }
     /// <p>A collection of port settings to be added to the fleet resource.</p>
-    pub fn set_inbound_permission_authorizations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
-        self.inbound_permission_authorizations = input;
-        self
+    pub fn set_inbound_permission_authorizations(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
+        self.inbound_permission_authorizations = input; self
     }
     /// Appends an item to `inbound_permission_revocations`.
     ///
@@ -89,31 +74,26 @@ impl UpdateFleetPortSettingsInputBuilder {
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
     pub fn inbound_permission_revocations(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.inbound_permission_revocations.unwrap_or_default();
-        v.push(input);
-        self.inbound_permission_revocations = Some(v);
-        self
+                        v.push(input);
+                        self.inbound_permission_revocations = Some(v);
+                        self
     }
     /// <p>A collection of port settings to be removed from the fleet resource.</p>
-    pub fn set_inbound_permission_revocations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
-        self.inbound_permission_revocations = input;
-        self
+    pub fn set_inbound_permission_revocations(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
+        self.inbound_permission_revocations = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFleetPortSettingsInput`](crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsInput {
-                fleet_id: self.fleet_id,
-                inbound_permission_authorizations: self.inbound_permission_authorizations,
-                inbound_permission_revocations: self.inbound_permission_revocations,
-            },
+                fleet_id: self.fleet_id
+                ,
+                inbound_permission_authorizations: self.inbound_permission_authorizations
+                ,
+                inbound_permission_revocations: self.inbound_permission_revocations
+                ,
+            }
         )
     }
 }
+

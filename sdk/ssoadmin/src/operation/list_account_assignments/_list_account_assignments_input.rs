@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssignmentsInput {
+pub struct ListAccountAssignmentsInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListAccountAssignmentsInput {
 }
 impl ListAccountAssignmentsInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The identifier of the AWS account from which to list the assignments.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -37,15 +37,13 @@ impl ListAccountAssignmentsInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListAccountAssignmentsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentsInput`](crate::operation::list_account_assignments::ListAccountAssignmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder {
         crate::operation::list_account_assignments::builders::ListAccountAssignmentsInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl ListAccountAssignmentsInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The identifier of the AWS account from which to list the assignments.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +75,7 @@ impl ListAccountAssignmentsInputBuilder {
     }
     /// <p>The identifier of the AWS account from which to list the assignments.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
     pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,12 +83,8 @@ impl ListAccountAssignmentsInputBuilder {
         self
     }
     /// <p>The ARN of the permission set from which to list assignments.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_set_arn = input;
-        self
+    pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_set_arn = input; self
     }
     /// <p>The maximum number of results to display for the assignment.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -101,8 +93,7 @@ impl ListAccountAssignmentsInputBuilder {
     }
     /// <p>The maximum number of results to display for the assignment.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,24 +102,24 @@ impl ListAccountAssignmentsInputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListAccountAssignmentsInput`](crate::operation::list_account_assignments::ListAccountAssignmentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_account_assignments::ListAccountAssignmentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_account_assignments::ListAccountAssignmentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_account_assignments::ListAccountAssignmentsInput {
-                instance_arn: self.instance_arn,
-                account_id: self.account_id,
-                permission_set_arn: self.permission_set_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                instance_arn: self.instance_arn
+                ,
+                account_id: self.account_id
+                ,
+                permission_set_arn: self.permission_set_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

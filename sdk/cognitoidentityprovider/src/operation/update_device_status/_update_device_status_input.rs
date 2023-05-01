@@ -3,7 +3,7 @@
 /// <p>Represents the request to update the device status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateDeviceStatusInput {
+pub struct UpdateDeviceStatusInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -16,21 +16,19 @@ pub struct UpdateDeviceStatusInput {
 }
 impl UpdateDeviceStatusInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> std::option::Option<&str> {
+    pub fn device_key(&self) -> std::option::Option<& str> {
         self.device_key.as_deref()
     }
     /// <p>The status of whether a device is remembered.</p>
-    pub fn device_remembered_status(
-        &self,
-    ) -> std::option::Option<&crate::types::DeviceRememberedStatusType> {
+    pub fn device_remembered_status(&self) -> std::option::Option<& crate::types::DeviceRememberedStatusType> {
         self.device_remembered_status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateDeviceStatusInput {
+impl  std::fmt::Debug for UpdateDeviceStatusInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateDeviceStatusInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -41,8 +39,7 @@ impl std::fmt::Debug for UpdateDeviceStatusInput {
 }
 impl UpdateDeviceStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceStatusInput`](crate::operation::update_device_status::UpdateDeviceStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder {
+    pub fn builder() -> crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder {
         crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder::default()
     }
 }
@@ -53,8 +50,7 @@ impl UpdateDeviceStatusInput {
 pub struct UpdateDeviceStatusInputBuilder {
     pub(crate) access_token: std::option::Option<std::string::String>,
     pub(crate) device_key: std::option::Option<std::string::String>,
-    pub(crate) device_remembered_status:
-        std::option::Option<crate::types::DeviceRememberedStatusType>,
+    pub(crate) device_remembered_status: std::option::Option<crate::types::DeviceRememberedStatusType>,
 }
 impl UpdateDeviceStatusInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
@@ -64,8 +60,7 @@ impl UpdateDeviceStatusInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device status you want to update.</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>The device key.</p>
     pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,38 +69,28 @@ impl UpdateDeviceStatusInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_key = input;
-        self
+        self.device_key = input; self
     }
     /// <p>The status of whether a device is remembered.</p>
-    pub fn device_remembered_status(
-        mut self,
-        input: crate::types::DeviceRememberedStatusType,
-    ) -> Self {
+    pub fn device_remembered_status(mut self, input: crate::types::DeviceRememberedStatusType) -> Self {
         self.device_remembered_status = Some(input);
         self
     }
     /// <p>The status of whether a device is remembered.</p>
-    pub fn set_device_remembered_status(
-        mut self,
-        input: std::option::Option<crate::types::DeviceRememberedStatusType>,
-    ) -> Self {
-        self.device_remembered_status = input;
-        self
+    pub fn set_device_remembered_status(mut self, input: std::option::Option<crate::types::DeviceRememberedStatusType>) -> Self {
+        self.device_remembered_status = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDeviceStatusInput`](crate::operation::update_device_status::UpdateDeviceStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_device_status::UpdateDeviceStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_device_status::UpdateDeviceStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_device_status::UpdateDeviceStatusInput {
-                access_token: self.access_token,
-                device_key: self.device_key,
-                device_remembered_status: self.device_remembered_status,
-            },
+                access_token: self.access_token
+                ,
+                device_key: self.device_key
+                ,
+                device_remembered_status: self.device_remembered_status
+                ,
+            }
         )
     }
 }
@@ -118,3 +103,4 @@ impl std::fmt::Debug for UpdateDeviceStatusInputBuilder {
         formatter.finish()
     }
 }
+

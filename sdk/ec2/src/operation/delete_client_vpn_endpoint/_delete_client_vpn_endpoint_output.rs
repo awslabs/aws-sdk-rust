@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClientVpnEndpointOutput {
+pub struct DeleteClientVpnEndpointOutput  {
     /// <p>The current state of the Client VPN endpoint.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ClientVpnEndpointStatus>,
@@ -10,20 +10,18 @@ pub struct DeleteClientVpnEndpointOutput {
 }
 impl DeleteClientVpnEndpointOutput {
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClientVpnEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ClientVpnEndpointStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteClientVpnEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteClientVpnEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClientVpnEndpointOutput`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointOutputBuilder {
         crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DeleteClientVpnEndpointOutputBuilder {
         self
     }
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ClientVpnEndpointStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ClientVpnEndpointStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteClientVpnEndpointOutput`](crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput {
+    pub fn build(self) -> crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput {
         crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

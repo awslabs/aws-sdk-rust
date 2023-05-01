@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKeyInput {
+pub struct DeleteKeyInput  {
     /// <p>The name of the API key to delete.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
 }
 impl DeleteKeyInput {
     /// <p>The name of the API key to delete.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> std::option::Option<& str> {
         self.key_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteKeyInputBuilder {
     }
     /// <p>The name of the API key to delete.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_key::DeleteKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_key::DeleteKeyInput {
-            key_name: self.key_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_key::DeleteKeyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_key::DeleteKeyInput {
+                key_name: self.key_name
+                ,
+            }
+        )
     }
 }
+

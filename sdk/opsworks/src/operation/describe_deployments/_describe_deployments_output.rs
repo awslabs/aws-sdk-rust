@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeDeployments</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDeploymentsOutput {
+pub struct DescribeDeploymentsOutput  {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
@@ -11,21 +11,19 @@ pub struct DescribeDeploymentsOutput {
 }
 impl DescribeDeploymentsOutput {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    pub fn deployments(&self) -> std::option::Option<&[crate::types::Deployment]> {
+    pub fn deployments(&self) -> std::option::Option<& [crate::types::Deployment]> {
         self.deployments.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDeploymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder {
-        crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder {
+        crate::operation::describe_deployments::builders::DescribeDeploymentsOutputBuilder::default()
     }
 }
 
@@ -44,32 +42,30 @@ impl DescribeDeploymentsOutputBuilder {
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
     pub fn deployments(mut self, input: crate::types::Deployment) -> Self {
         let mut v = self.deployments.unwrap_or_default();
-        v.push(input);
-        self.deployments = Some(v);
-        self
+                        v.push(input);
+                        self.deployments = Some(v);
+                        self
     }
     /// <p>An array of <code>Deployment</code> objects that describe the deployments.</p>
-    pub fn set_deployments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Deployment>>,
-    ) -> Self {
-        self.deployments = input;
-        self
+    pub fn set_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Deployment>>) -> Self {
+        self.deployments = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDeploymentsOutput`](crate::operation::describe_deployments::DescribeDeploymentsOutput).
     pub fn build(self) -> crate::operation::describe_deployments::DescribeDeploymentsOutput {
         crate::operation::describe_deployments::DescribeDeploymentsOutput {
-            deployments: self.deployments,
+            deployments: self.deployments
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

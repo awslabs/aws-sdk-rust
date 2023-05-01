@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePullRequestApprovalRuleInput {
+pub struct DeletePullRequestApprovalRuleInput  {
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
     #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeletePullRequestApprovalRuleInput {
 }
 impl DeletePullRequestApprovalRuleInput {
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> std::option::Option<& str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The name of the approval rule you want to delete.</p>
-    pub fn approval_rule_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_name(&self) -> std::option::Option<& str> {
         self.approval_rule_name.as_deref()
     }
 }
 impl DeletePullRequestApprovalRuleInput {
     /// Creates a new builder-style object to manufacture [`DeletePullRequestApprovalRuleInput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput).
-    pub fn builder() -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder{
+    pub fn builder() -> crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder {
         crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeletePullRequestApprovalRuleInputBuilder {
     }
     /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
     pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pull_request_id = input;
-        self
+        self.pull_request_id = input; self
     }
     /// <p>The name of the approval rule you want to delete.</p>
     pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,20 +50,11 @@ impl DeletePullRequestApprovalRuleInputBuilder {
         self
     }
     /// <p>The name of the approval rule you want to delete.</p>
-    pub fn set_approval_rule_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.approval_rule_name = input;
-        self
+    pub fn set_approval_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.approval_rule_name = input; self
     }
     /// Consumes the builder and constructs a [`DeletePullRequestApprovalRuleInput`](crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleInput {
                 pull_request_id: self.pull_request_id
@@ -75,3 +65,4 @@ impl DeletePullRequestApprovalRuleInputBuilder {
         )
     }
 }
+

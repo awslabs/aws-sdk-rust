@@ -20,3 +20,4 @@ pub use crate::types::_gateway_details::GatewayDetailsBuilder;
 pub use crate::types::_maintenance_start_time::MaintenanceStartTimeBuilder;
 
 pub use crate::types::_bandwidth_rate_limit_interval::BandwidthRateLimitIntervalBuilder;
+

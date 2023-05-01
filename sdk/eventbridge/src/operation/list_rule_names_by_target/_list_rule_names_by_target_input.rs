@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleNamesByTargetInput {
+pub struct ListRuleNamesByTargetInput  {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListRuleNamesByTargetInput {
 }
 impl ListRuleNamesByTargetInput {
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -36,9 +36,7 @@ impl ListRuleNamesByTargetInput {
 }
 impl ListRuleNamesByTargetInput {
     /// Creates a new builder-style object to manufacture [`ListRuleNamesByTargetInput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetInput).
-    pub fn builder(
-    ) -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetInputBuilder {
         crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl ListRuleNamesByTargetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
     pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl ListRuleNamesByTargetInputBuilder {
     }
     /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.</p>
     pub fn set_event_bus_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl ListRuleNamesByTargetInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -90,23 +85,22 @@ impl ListRuleNamesByTargetInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListRuleNamesByTargetInput`](crate::operation::list_rule_names_by_target::ListRuleNamesByTargetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_rule_names_by_target::ListRuleNamesByTargetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_rule_names_by_target::ListRuleNamesByTargetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_rule_names_by_target::ListRuleNamesByTargetInput {
-                target_arn: self.target_arn,
-                event_bus_name: self.event_bus_name,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                target_arn: self.target_arn
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

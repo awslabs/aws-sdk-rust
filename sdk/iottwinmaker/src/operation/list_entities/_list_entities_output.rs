@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitiesOutput {
+pub struct ListEntitiesOutput  {
     /// <p>A list of objects that contain information about the entities.</p>
     #[doc(hidden)]
     pub entity_summaries: std::option::Option<std::vec::Vec<crate::types::EntitySummary>>,
@@ -13,19 +13,19 @@ pub struct ListEntitiesOutput {
 }
 impl ListEntitiesOutput {
     /// <p>A list of objects that contain information about the entities.</p>
-    pub fn entity_summaries(&self) -> std::option::Option<&[crate::types::EntitySummary]> {
+    pub fn entity_summaries(&self) -> std::option::Option<& [crate::types::EntitySummary]> {
         self.entity_summaries.as_deref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEntitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesOutput`](crate::operation::list_entities::ListEntitiesOutput).
     pub fn builder() -> crate::operation::list_entities::builders::ListEntitiesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListEntitiesOutputBuilder {
     /// <p>A list of objects that contain information about the entities.</p>
     pub fn entity_summaries(mut self, input: crate::types::EntitySummary) -> Self {
         let mut v = self.entity_summaries.unwrap_or_default();
-        v.push(input);
-        self.entity_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.entity_summaries = Some(v);
+                        self
     }
     /// <p>A list of objects that contain information about the entities.</p>
-    pub fn set_entity_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntitySummary>>,
-    ) -> Self {
-        self.entity_summaries = input;
-        self
+    pub fn set_entity_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::EntitySummary>>) -> Self {
+        self.entity_summaries = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListEntitiesOutputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListEntitiesOutput`](crate::operation::list_entities::ListEntitiesOutput).
     pub fn build(self) -> crate::operation::list_entities::ListEntitiesOutput {
         crate::operation::list_entities::ListEntitiesOutput {
-            entity_summaries: self.entity_summaries,
-            next_token: self.next_token,
+            entity_summaries: self.entity_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

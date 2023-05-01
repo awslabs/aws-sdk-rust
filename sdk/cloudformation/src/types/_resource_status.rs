@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcestatus = unimplemented!();
 /// match resourcestatus {
@@ -50,22 +50,14 @@
 /// Specifically, when `resourcestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -112,105 +104,81 @@ pub enum ResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateRollbackInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_COMPLETE" => ResourceStatus::CreateComplete,
-            "CREATE_FAILED" => ResourceStatus::CreateFailed,
-            "CREATE_IN_PROGRESS" => ResourceStatus::CreateInProgress,
-            "DELETE_COMPLETE" => ResourceStatus::DeleteComplete,
-            "DELETE_FAILED" => ResourceStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => ResourceStatus::DeleteInProgress,
-            "DELETE_SKIPPED" => ResourceStatus::DeleteSkipped,
-            "IMPORT_COMPLETE" => ResourceStatus::ImportComplete,
-            "IMPORT_FAILED" => ResourceStatus::ImportFailed,
-            "IMPORT_IN_PROGRESS" => ResourceStatus::ImportInProgress,
-            "IMPORT_ROLLBACK_COMPLETE" => ResourceStatus::ImportRollbackComplete,
-            "IMPORT_ROLLBACK_FAILED" => ResourceStatus::ImportRollbackFailed,
-            "IMPORT_ROLLBACK_IN_PROGRESS" => ResourceStatus::ImportRollbackInProgress,
-            "ROLLBACK_COMPLETE" => ResourceStatus::RollbackComplete,
-            "ROLLBACK_FAILED" => ResourceStatus::RollbackFailed,
-            "ROLLBACK_IN_PROGRESS" => ResourceStatus::RollbackInProgress,
-            "UPDATE_COMPLETE" => ResourceStatus::UpdateComplete,
-            "UPDATE_FAILED" => ResourceStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => ResourceStatus::UpdateInProgress,
-            "UPDATE_ROLLBACK_COMPLETE" => ResourceStatus::UpdateRollbackComplete,
-            "UPDATE_ROLLBACK_FAILED" => ResourceStatus::UpdateRollbackFailed,
-            "UPDATE_ROLLBACK_IN_PROGRESS" => ResourceStatus::UpdateRollbackInProgress,
-            other => {
-                ResourceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_COMPLETE" => ResourceStatus::CreateComplete,
+"CREATE_FAILED" => ResourceStatus::CreateFailed,
+"CREATE_IN_PROGRESS" => ResourceStatus::CreateInProgress,
+"DELETE_COMPLETE" => ResourceStatus::DeleteComplete,
+"DELETE_FAILED" => ResourceStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => ResourceStatus::DeleteInProgress,
+"DELETE_SKIPPED" => ResourceStatus::DeleteSkipped,
+"IMPORT_COMPLETE" => ResourceStatus::ImportComplete,
+"IMPORT_FAILED" => ResourceStatus::ImportFailed,
+"IMPORT_IN_PROGRESS" => ResourceStatus::ImportInProgress,
+"IMPORT_ROLLBACK_COMPLETE" => ResourceStatus::ImportRollbackComplete,
+"IMPORT_ROLLBACK_FAILED" => ResourceStatus::ImportRollbackFailed,
+"IMPORT_ROLLBACK_IN_PROGRESS" => ResourceStatus::ImportRollbackInProgress,
+"ROLLBACK_COMPLETE" => ResourceStatus::RollbackComplete,
+"ROLLBACK_FAILED" => ResourceStatus::RollbackFailed,
+"ROLLBACK_IN_PROGRESS" => ResourceStatus::RollbackInProgress,
+"UPDATE_COMPLETE" => ResourceStatus::UpdateComplete,
+"UPDATE_FAILED" => ResourceStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => ResourceStatus::UpdateInProgress,
+"UPDATE_ROLLBACK_COMPLETE" => ResourceStatus::UpdateRollbackComplete,
+"UPDATE_ROLLBACK_FAILED" => ResourceStatus::UpdateRollbackFailed,
+"UPDATE_ROLLBACK_IN_PROGRESS" => ResourceStatus::UpdateRollbackInProgress,
+other => ResourceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ResourceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceStatus::from(s))
+                }
+            }
 impl ResourceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceStatus::CreateComplete => "CREATE_COMPLETE",
-            ResourceStatus::CreateFailed => "CREATE_FAILED",
-            ResourceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            ResourceStatus::DeleteComplete => "DELETE_COMPLETE",
-            ResourceStatus::DeleteFailed => "DELETE_FAILED",
-            ResourceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            ResourceStatus::DeleteSkipped => "DELETE_SKIPPED",
-            ResourceStatus::ImportComplete => "IMPORT_COMPLETE",
-            ResourceStatus::ImportFailed => "IMPORT_FAILED",
-            ResourceStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
-            ResourceStatus::ImportRollbackComplete => "IMPORT_ROLLBACK_COMPLETE",
-            ResourceStatus::ImportRollbackFailed => "IMPORT_ROLLBACK_FAILED",
-            ResourceStatus::ImportRollbackInProgress => "IMPORT_ROLLBACK_IN_PROGRESS",
-            ResourceStatus::RollbackComplete => "ROLLBACK_COMPLETE",
-            ResourceStatus::RollbackFailed => "ROLLBACK_FAILED",
-            ResourceStatus::RollbackInProgress => "ROLLBACK_IN_PROGRESS",
-            ResourceStatus::UpdateComplete => "UPDATE_COMPLETE",
-            ResourceStatus::UpdateFailed => "UPDATE_FAILED",
-            ResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            ResourceStatus::UpdateRollbackComplete => "UPDATE_ROLLBACK_COMPLETE",
-            ResourceStatus::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
-            ResourceStatus::UpdateRollbackInProgress => "UPDATE_ROLLBACK_IN_PROGRESS",
-            ResourceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_COMPLETE",
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "DELETE_COMPLETE",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "DELETE_SKIPPED",
-            "IMPORT_COMPLETE",
-            "IMPORT_FAILED",
-            "IMPORT_IN_PROGRESS",
-            "IMPORT_ROLLBACK_COMPLETE",
-            "IMPORT_ROLLBACK_FAILED",
-            "IMPORT_ROLLBACK_IN_PROGRESS",
-            "ROLLBACK_COMPLETE",
-            "ROLLBACK_FAILED",
-            "ROLLBACK_IN_PROGRESS",
-            "UPDATE_COMPLETE",
-            "UPDATE_FAILED",
-            "UPDATE_IN_PROGRESS",
-            "UPDATE_ROLLBACK_COMPLETE",
-            "UPDATE_ROLLBACK_FAILED",
-            "UPDATE_ROLLBACK_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceStatus::CreateComplete => "CREATE_COMPLETE",
+    ResourceStatus::CreateFailed => "CREATE_FAILED",
+    ResourceStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    ResourceStatus::DeleteComplete => "DELETE_COMPLETE",
+    ResourceStatus::DeleteFailed => "DELETE_FAILED",
+    ResourceStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    ResourceStatus::DeleteSkipped => "DELETE_SKIPPED",
+    ResourceStatus::ImportComplete => "IMPORT_COMPLETE",
+    ResourceStatus::ImportFailed => "IMPORT_FAILED",
+    ResourceStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
+    ResourceStatus::ImportRollbackComplete => "IMPORT_ROLLBACK_COMPLETE",
+    ResourceStatus::ImportRollbackFailed => "IMPORT_ROLLBACK_FAILED",
+    ResourceStatus::ImportRollbackInProgress => "IMPORT_ROLLBACK_IN_PROGRESS",
+    ResourceStatus::RollbackComplete => "ROLLBACK_COMPLETE",
+    ResourceStatus::RollbackFailed => "ROLLBACK_FAILED",
+    ResourceStatus::RollbackInProgress => "ROLLBACK_IN_PROGRESS",
+    ResourceStatus::UpdateComplete => "UPDATE_COMPLETE",
+    ResourceStatus::UpdateFailed => "UPDATE_FAILED",
+    ResourceStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    ResourceStatus::UpdateRollbackComplete => "UPDATE_ROLLBACK_COMPLETE",
+    ResourceStatus::UpdateRollbackFailed => "UPDATE_ROLLBACK_FAILED",
+    ResourceStatus::UpdateRollbackInProgress => "UPDATE_ROLLBACK_IN_PROGRESS",
+    ResourceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_COMPLETE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_COMPLETE", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SKIPPED", "IMPORT_COMPLETE", "IMPORT_FAILED", "IMPORT_IN_PROGRESS", "IMPORT_ROLLBACK_COMPLETE", "IMPORT_ROLLBACK_FAILED", "IMPORT_ROLLBACK_IN_PROGRESS", "ROLLBACK_COMPLETE", "ROLLBACK_FAILED", "ROLLBACK_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_ROLLBACK_COMPLETE", "UPDATE_ROLLBACK_FAILED", "UPDATE_ROLLBACK_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for ResourceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

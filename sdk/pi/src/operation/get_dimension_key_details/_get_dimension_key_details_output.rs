@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDimensionKeyDetailsOutput {
+pub struct GetDimensionKeyDetailsOutput  {
     /// <p>The details for the requested dimensions.</p>
     #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::types::DimensionKeyDetail>>,
@@ -10,20 +10,18 @@ pub struct GetDimensionKeyDetailsOutput {
 }
 impl GetDimensionKeyDetailsOutput {
     /// <p>The details for the requested dimensions.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::DimensionKeyDetail]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::types::DimensionKeyDetail]> {
         self.dimensions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDimensionKeyDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDimensionKeyDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder {
         crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsOutputBuilder::default()
     }
 }
@@ -43,34 +41,30 @@ impl GetDimensionKeyDetailsOutputBuilder {
     /// <p>The details for the requested dimensions.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionKeyDetail) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = Some(v);
+                        self
     }
     /// <p>The details for the requested dimensions.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionKeyDetail>>,
-    ) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionKeyDetail>>) -> Self {
+        self.dimensions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDimensionKeyDetailsOutput`](crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput {
+    pub fn build(self) -> crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput {
         crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput {
-            dimensions: self.dimensions,
+            dimensions: self.dimensions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFunctionConcurrencyInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+pub struct PutFunctionConcurrencyInput  {
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct PutFunctionConcurrencyInput {
     pub reserved_concurrent_executions: std::option::Option<i32>,
 }
 impl PutFunctionConcurrencyInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The number of simultaneous executions to reserve for the function.</p>
@@ -36,9 +36,7 @@ impl PutFunctionConcurrencyInput {
 }
 impl PutFunctionConcurrencyInput {
     /// Creates a new builder-style object to manufacture [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
-    pub fn builder(
-    ) -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder {
         crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder::default()
     }
 }
@@ -51,29 +49,28 @@ pub struct PutFunctionConcurrencyInputBuilder {
     pub(crate) reserved_concurrent_executions: std::option::Option<i32>,
 }
 impl PutFunctionConcurrencyInputBuilder {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The number of simultaneous executions to reserve for the function.</p>
     pub fn reserved_concurrent_executions(mut self, input: i32) -> Self {
@@ -82,21 +79,18 @@ impl PutFunctionConcurrencyInputBuilder {
     }
     /// <p>The number of simultaneous executions to reserve for the function.</p>
     pub fn set_reserved_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
-        self.reserved_concurrent_executions = input;
-        self
+        self.reserved_concurrent_executions = input; self
     }
     /// Consumes the builder and constructs a [`PutFunctionConcurrencyInput`](crate::operation::put_function_concurrency::PutFunctionConcurrencyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_function_concurrency::PutFunctionConcurrencyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_function_concurrency::PutFunctionConcurrencyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_function_concurrency::PutFunctionConcurrencyInput {
-                function_name: self.function_name,
-                reserved_concurrent_executions: self.reserved_concurrent_executions,
-            },
+                function_name: self.function_name
+                ,
+                reserved_concurrent_executions: self.reserved_concurrent_executions
+                ,
+            }
         )
     }
 }
+

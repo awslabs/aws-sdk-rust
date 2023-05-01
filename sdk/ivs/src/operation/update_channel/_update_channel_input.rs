@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// <p>ARN of the channel to be updated.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12,10 +12,10 @@ pub struct UpdateChannelInput {
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     #[doc(hidden)]
     pub latency_mode: std::option::Option<crate::types::ChannelLatencyMode>,
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ChannelType>,
@@ -31,23 +31,23 @@ pub struct UpdateChannelInput {
 }
 impl UpdateChannelInput {
     /// <p>ARN of the channel to be updated.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Channel name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-    pub fn latency_mode(&self) -> std::option::Option<&crate::types::ChannelLatencyMode> {
+    pub fn latency_mode(&self) -> std::option::Option<& crate::types::ChannelLatencyMode> {
         self.latency_mode.as_ref()
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
@@ -55,7 +55,7 @@ impl UpdateChannelInput {
         self.authorized
     }
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
-    pub fn recording_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn recording_configuration_arn(&self) -> std::option::Option<& str> {
         self.recording_configuration_arn.as_deref()
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
@@ -90,8 +90,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>ARN of the channel to be updated.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Channel name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +99,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Channel name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
     pub fn latency_mode(mut self, input: crate::types::ChannelLatencyMode) -> Self {
@@ -109,30 +107,25 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)</p>
-    pub fn set_latency_mode(
-        mut self,
-        input: std::option::Option<crate::types::ChannelLatencyMode>,
-    ) -> Self {
-        self.latency_mode = input;
-        self
+    pub fn set_latency_mode(mut self, input: std::option::Option<crate::types::ChannelLatencyMode>) -> Self {
+        self.latency_mode = input; self
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ChannelType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li>
-    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li>
+    /// <p>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>STANDARD</code>: Video is transcoded: multiple qualities are generated from the original input, to automatically give viewers the best experience for their devices and network conditions. Transcoding allows higher playback quality across a range of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps. Audio is transcoded only for renditions 360p and below; above that, audio is passed through. This is the default.</p> </li> 
+    /// <li> <p> <code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is limited to the original input. Resolution can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for resolutions between 480p and 1080p.</p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ChannelType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
     pub fn authorized(mut self, input: bool) -> Self {
@@ -141,8 +134,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Whether the channel is private (enabled for playback authorization).</p>
     pub fn set_authorized(mut self, input: std::option::Option<bool>) -> Self {
-        self.authorized = input;
-        self
+        self.authorized = input; self
     }
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
     pub fn recording_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,12 +142,8 @@ impl UpdateChannelInputBuilder {
         self
     }
     /// <p>Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an empty string indicates that recording is enabled</p>
-    pub fn set_recording_configuration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recording_configuration_arn = input;
-        self
+    pub fn set_recording_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recording_configuration_arn = input; self
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
     pub fn insecure_ingest(mut self, input: bool) -> Self {
@@ -164,24 +152,30 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>Whether the channel allows insecure RTMP ingest. Default: <code>false</code>.</p>
     pub fn set_insecure_ingest(mut self, input: std::option::Option<bool>) -> Self {
-        self.insecure_ingest = input;
-        self
+        self.insecure_ingest = input; self
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_channel::UpdateChannelInput {
-            arn: self.arn,
-            name: self.name,
-            latency_mode: self.latency_mode,
-            r#type: self.r#type,
-            authorized: self.authorized.unwrap_or_default(),
-            recording_configuration_arn: self.recording_configuration_arn,
-            insecure_ingest: self.insecure_ingest.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::update_channel::UpdateChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                latency_mode: self.latency_mode
+                ,
+                r#type: self.r#type
+                ,
+                authorized: self.authorized
+                    .unwrap_or_default()
+                ,
+                recording_configuration_arn: self.recording_configuration_arn
+                ,
+                insecure_ingest: self.insecure_ingest
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

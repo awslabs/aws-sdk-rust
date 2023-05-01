@@ -3,7 +3,7 @@
 /// <p>Provides information about a type of sensitive data that Amazon Macie found in an S3 bucket while performing automated sensitive data discovery for the bucket. The information also specifies the custom data identifier or managed data identifier that detected the data. This information is available only if automated sensitive data discovery is currently enabled for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Detection {
+pub struct Detection  {
     /// <p>If the sensitive data was detected by a custom data identifier, the Amazon Resource Name (ARN) of the custom data identifier that detected the data. Otherwise, this value is null.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct Detection {
 }
 impl Detection {
     /// <p>If the sensitive data was detected by a custom data identifier, the Amazon Resource Name (ARN) of the custom data identifier that detected the data. Otherwise, this value is null.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The total number of occurrences of the sensitive data.</p>
@@ -33,11 +33,11 @@ impl Detection {
         self.count
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the custom data identifier or managed data identifier that detected the sensitive data. For a managed data identifier, this value is the same as the unique identifier (id).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
@@ -45,7 +45,7 @@ impl Detection {
         self.suppressed
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DataIdentifierType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::DataIdentifierType> {
         self.r#type.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl DetectionBuilder {
     }
     /// <p>If the sensitive data was detected by a custom data identifier, the Amazon Resource Name (ARN) of the custom data identifier that detected the data. Otherwise, this value is null.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The total number of occurrences of the sensitive data.</p>
     pub fn count(mut self, input: i64) -> Self {
@@ -85,8 +84,7 @@ impl DetectionBuilder {
     }
     /// <p>The total number of occurrences of the sensitive data.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl DetectionBuilder {
     }
     /// <p>The unique identifier for the custom data identifier or managed data identifier that detected the sensitive data. For additional details about a specified managed data identifier, see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the custom data identifier or managed data identifier that detected the sensitive data. For a managed data identifier, this value is the same as the unique identifier (id).</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +102,7 @@ impl DetectionBuilder {
     }
     /// <p>The name of the custom data identifier or managed data identifier that detected the sensitive data. For a managed data identifier, this value is the same as the unique identifier (id).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
     pub fn suppressed(mut self, input: bool) -> Self {
@@ -115,8 +111,7 @@ impl DetectionBuilder {
     }
     /// <p>Specifies whether occurrences of this type of sensitive data are excluded (true) or included (false) in the bucket's sensitivity score.</p>
     pub fn set_suppressed(mut self, input: std::option::Option<bool>) -> Self {
-        self.suppressed = input;
-        self
+        self.suppressed = input; self
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
     pub fn r#type(mut self, input: crate::types::DataIdentifierType) -> Self {
@@ -124,22 +119,27 @@ impl DetectionBuilder {
         self
     }
     /// <p>The type of data identifier that detected the sensitive data. Possible values are: CUSTOM, for a custom data identifier; and, MANAGED, for a managed data identifier.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::DataIdentifierType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::DataIdentifierType>) -> Self {
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`Detection`](crate::types::Detection).
     pub fn build(self) -> crate::types::Detection {
         crate::types::Detection {
-            arn: self.arn,
-            count: self.count.unwrap_or_default(),
-            id: self.id,
-            name: self.name,
-            suppressed: self.suppressed.unwrap_or_default(),
-            r#type: self.r#type,
+            arn: self.arn
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            suppressed: self.suppressed
+                .unwrap_or_default()
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The <code>ReadJobRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadJobInput {
+pub struct ReadJobInput  {
     /// <p>The identifier of the job for which you want to get detailed information.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ReadJobInput {
     /// <p>The identifier of the job for which you want to get detailed information.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl ReadJobInputBuilder {
     }
     /// <p>The identifier of the job for which you want to get detailed information.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`ReadJobInput`](crate::operation::read_job::ReadJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::read_job::ReadJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::read_job::ReadJobInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::read_job::ReadJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::read_job::ReadJobInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

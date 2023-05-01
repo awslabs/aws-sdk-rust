@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDbClusterParameterGroupInput {
+pub struct ResetDbClusterParameterGroupInput  {
     /// <p>The name of the DB cluster parameter group to reset.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ResetDbClusterParameterGroupInput {
 }
 impl ResetDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to reset.</p>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
@@ -23,13 +23,13 @@ impl ResetDbClusterParameterGroupInput {
         self.reset_all_parameters
     }
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
 impl ResetDbClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupInput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder {
         crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder::default()
     }
 }
@@ -44,20 +44,13 @@ pub struct ResetDbClusterParameterGroupInputBuilder {
 }
 impl ResetDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group to reset.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group to reset.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
+    pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_parameter_group_name = input; self
     }
     /// <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn reset_all_parameters(mut self, input: bool) -> Self {
@@ -66,8 +59,7 @@ impl ResetDbClusterParameterGroupInputBuilder {
     }
     /// <p>A value that is set to <code>true</code> to reset all parameters in the DB cluster parameter group to their default values, and <code>false</code> otherwise. You can't use this parameter if there is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
     pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
-        self.reset_all_parameters = input;
-        self
+        self.reset_all_parameters = input; self
     }
     /// Appends an item to `parameters`.
     ///
@@ -76,31 +68,27 @@ impl ResetDbClusterParameterGroupInputBuilder {
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = Some(v);
-        self
+                        v.push(input);
+                        self.parameters = Some(v);
+                        self
     }
     /// <p>A list of parameter names in the DB cluster parameter group to reset to the default values. You can't use this parameter if the <code>ResetAllParameters</code> parameter is set to <code>true</code>.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupInput`](crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reset_db_cluster_parameter_group::ResetDbClusterParameterGroupInput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
-                reset_all_parameters: self.reset_all_parameters.unwrap_or_default(),
-                parameters: self.parameters,
-            },
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
+                reset_all_parameters: self.reset_all_parameters
+                    .unwrap_or_default()
+                ,
+                parameters: self.parameters
+                ,
+            }
         )
     }
 }
+

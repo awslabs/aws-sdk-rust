@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteObjectsOnCancelInput {
+pub struct DeleteObjectsOnCancelInput  {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -21,31 +21,29 @@ pub struct DeleteObjectsOnCancelInput {
 }
 impl DeleteObjectsOnCancelInput {
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database that contains the governed table.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the governed table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>ID of the transaction that the writes occur in.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn objects(&self) -> std::option::Option<&[crate::types::VirtualObject]> {
+    pub fn objects(&self) -> std::option::Option<& [crate::types::VirtualObject]> {
         self.objects.as_deref()
     }
 }
 impl DeleteObjectsOnCancelInput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectsOnCancelInput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput).
-    pub fn builder(
-    ) -> crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder {
         crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>The Glue data catalog that contains the governed table. Defaults to the current account ID.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The database that contains the governed table.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +75,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>The database that contains the governed table.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the governed table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +84,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>The name of the governed table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>ID of the transaction that the writes occur in.</p>
     pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl DeleteObjectsOnCancelInputBuilder {
     }
     /// <p>ID of the transaction that the writes occur in.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// Appends an item to `objects`.
     ///
@@ -108,33 +102,30 @@ impl DeleteObjectsOnCancelInputBuilder {
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
     pub fn objects(mut self, input: crate::types::VirtualObject) -> Self {
         let mut v = self.objects.unwrap_or_default();
-        v.push(input);
-        self.objects = Some(v);
-        self
+                        v.push(input);
+                        self.objects = Some(v);
+                        self
     }
     /// <p>A list of VirtualObject structures, which indicates the Amazon S3 objects to be deleted if the transaction cancels.</p>
-    pub fn set_objects(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VirtualObject>>,
-    ) -> Self {
-        self.objects = input;
-        self
+    pub fn set_objects(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualObject>>) -> Self {
+        self.objects = input; self
     }
     /// Consumes the builder and constructs a [`DeleteObjectsOnCancelInput`](crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                transaction_id: self.transaction_id,
-                objects: self.objects,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                transaction_id: self.transaction_id
+                ,
+                objects: self.objects
+                ,
+            }
         )
     }
 }
+

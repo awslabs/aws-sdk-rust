@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptReservedNodeExchangeInput {
+pub struct AcceptReservedNodeExchangeInput  {
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
     #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AcceptReservedNodeExchangeInput {
 }
 impl AcceptReservedNodeExchangeInput {
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
-    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_id(&self) -> std::option::Option<& str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<& str> {
         self.target_reserved_node_offering_id.as_deref()
     }
 }
 impl AcceptReservedNodeExchangeInput {
     /// Creates a new builder-style object to manufacture [`AcceptReservedNodeExchangeInput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput).
-    pub fn builder() -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder{
+    pub fn builder() -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder {
         crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder::default()
     }
 }
@@ -42,37 +42,27 @@ impl AcceptReservedNodeExchangeInputBuilder {
     }
     /// <p>A string representing the node identifier of the DC1 Reserved Node to be exchanged.</p>
     pub fn set_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_node_id = input;
-        self
+        self.reserved_node_id = input; self
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn target_reserved_node_offering_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn target_reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_reserved_node_offering_id = Some(input.into());
         self
     }
     /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling <code>GetReservedNodeExchangeOfferings</code> </p>
-    pub fn set_target_reserved_node_offering_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_reserved_node_offering_id = input;
-        self
+    pub fn set_target_reserved_node_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_reserved_node_offering_id = input; self
     }
     /// Consumes the builder and constructs a [`AcceptReservedNodeExchangeInput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeInput {
-                reserved_node_id: self.reserved_node_id,
-                target_reserved_node_offering_id: self.target_reserved_node_offering_id,
-            },
+                reserved_node_id: self.reserved_node_id
+                ,
+                target_reserved_node_offering_id: self.target_reserved_node_offering_id
+                ,
+            }
         )
     }
 }
+

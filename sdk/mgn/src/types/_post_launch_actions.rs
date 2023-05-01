@@ -3,7 +3,7 @@
 /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostLaunchActions {
+pub struct PostLaunchActions  {
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
     #[doc(hidden)]
     pub deployment: std::option::Option<crate::types::PostLaunchActionsDeploymentType>,
@@ -22,25 +22,23 @@ pub struct PostLaunchActions {
 }
 impl PostLaunchActions {
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    pub fn deployment(
-        &self,
-    ) -> std::option::Option<&crate::types::PostLaunchActionsDeploymentType> {
+    pub fn deployment(&self) -> std::option::Option<& crate::types::PostLaunchActionsDeploymentType> {
         self.deployment.as_ref()
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
-    pub fn s3_log_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_log_bucket(&self) -> std::option::Option<& str> {
         self.s3_log_bucket.as_deref()
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-    pub fn s3_output_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_output_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_output_key_prefix.as_deref()
     }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_name.as_deref()
     }
     /// <p>AWS Systems Manager Documents.</p>
-    pub fn ssm_documents(&self) -> std::option::Option<&[crate::types::SsmDocument]> {
+    pub fn ssm_documents(&self) -> std::option::Option<& [crate::types::SsmDocument]> {
         self.ssm_documents.as_deref()
     }
 }
@@ -68,12 +66,8 @@ impl PostLaunchActionsBuilder {
         self
     }
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    pub fn set_deployment(
-        mut self,
-        input: std::option::Option<crate::types::PostLaunchActionsDeploymentType>,
-    ) -> Self {
-        self.deployment = input;
-        self
+    pub fn set_deployment(mut self, input: std::option::Option<crate::types::PostLaunchActionsDeploymentType>) -> Self {
+        self.deployment = input; self
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
     pub fn s3_log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl PostLaunchActionsBuilder {
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
     pub fn set_s3_log_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_log_bucket = input;
-        self
+        self.s3_log_bucket = input; self
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
     pub fn s3_output_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +84,8 @@ impl PostLaunchActionsBuilder {
         self
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-    pub fn set_s3_output_key_prefix(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.s3_output_key_prefix = input;
-        self
+    pub fn set_s3_output_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.s3_output_key_prefix = input; self
     }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
     pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,12 +93,8 @@ impl PostLaunchActionsBuilder {
         self
     }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-    pub fn set_cloud_watch_log_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cloud_watch_log_group_name = input;
-        self
+    pub fn set_cloud_watch_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cloud_watch_log_group_name = input; self
     }
     /// Appends an item to `ssm_documents`.
     ///
@@ -118,26 +103,28 @@ impl PostLaunchActionsBuilder {
     /// <p>AWS Systems Manager Documents.</p>
     pub fn ssm_documents(mut self, input: crate::types::SsmDocument) -> Self {
         let mut v = self.ssm_documents.unwrap_or_default();
-        v.push(input);
-        self.ssm_documents = Some(v);
-        self
+                        v.push(input);
+                        self.ssm_documents = Some(v);
+                        self
     }
     /// <p>AWS Systems Manager Documents.</p>
-    pub fn set_ssm_documents(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SsmDocument>>,
-    ) -> Self {
-        self.ssm_documents = input;
-        self
+    pub fn set_ssm_documents(mut self, input: std::option::Option<std::vec::Vec<crate::types::SsmDocument>>) -> Self {
+        self.ssm_documents = input; self
     }
     /// Consumes the builder and constructs a [`PostLaunchActions`](crate::types::PostLaunchActions).
     pub fn build(self) -> crate::types::PostLaunchActions {
         crate::types::PostLaunchActions {
-            deployment: self.deployment,
-            s3_log_bucket: self.s3_log_bucket,
-            s3_output_key_prefix: self.s3_output_key_prefix,
-            cloud_watch_log_group_name: self.cloud_watch_log_group_name,
-            ssm_documents: self.ssm_documents,
+            deployment: self.deployment
+            ,
+            s3_log_bucket: self.s3_log_bucket
+            ,
+            s3_output_key_prefix: self.s3_output_key_prefix
+            ,
+            cloud_watch_log_group_name: self.cloud_watch_log_group_name
+            ,
+            ssm_documents: self.ssm_documents
+            ,
         }
     }
 }
+

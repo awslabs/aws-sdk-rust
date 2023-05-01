@@ -3,7 +3,7 @@
 /// <p>A value or list of parameter values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterValue {
+pub struct ParameterValue  {
     /// <p>The ID of the parameter value.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParameterValue {
 }
 impl ParameterValue {
     /// <p>The ID of the parameter value.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> std::option::Option<& str> {
         self.string_value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ParameterValueBuilder {
     }
     /// <p>The ID of the parameter value.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ParameterValueBuilder {
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// Consumes the builder and constructs a [`ParameterValue`](crate::types::ParameterValue).
     pub fn build(self) -> crate::types::ParameterValue {
         crate::types::ParameterValue {
-            id: self.id,
-            string_value: self.string_value,
+            id: self.id
+            ,
+            string_value: self.string_value
+            ,
         }
     }
 }
+

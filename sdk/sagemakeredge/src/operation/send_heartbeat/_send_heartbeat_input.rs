@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendHeartbeatInput {
+pub struct SendHeartbeatInput  {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
     #[doc(hidden)]
     pub agent_metrics: std::option::Option<std::vec::Vec<crate::types::EdgeMetric>>,
@@ -24,27 +24,27 @@ pub struct SendHeartbeatInput {
 }
 impl SendHeartbeatInput {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn agent_metrics(&self) -> std::option::Option<&[crate::types::EdgeMetric]> {
+    pub fn agent_metrics(&self) -> std::option::Option<& [crate::types::EdgeMetric]> {
         self.agent_metrics.as_deref()
     }
     /// <p>Returns a list of models deployed on the the device.</p>
-    pub fn models(&self) -> std::option::Option<&[crate::types::Model]> {
+    pub fn models(&self) -> std::option::Option<& [crate::types::Model]> {
         self.models.as_deref()
     }
     /// <p>Returns the version of the agent.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>The unique name of the device.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>Returns the result of a deployment on the device.</p>
-    pub fn deployment_result(&self) -> std::option::Option<&crate::types::DeploymentResult> {
+    pub fn deployment_result(&self) -> std::option::Option<& crate::types::DeploymentResult> {
         self.deployment_result.as_ref()
     }
 }
@@ -74,17 +74,13 @@ impl SendHeartbeatInputBuilder {
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
     pub fn agent_metrics(mut self, input: crate::types::EdgeMetric) -> Self {
         let mut v = self.agent_metrics.unwrap_or_default();
-        v.push(input);
-        self.agent_metrics = Some(v);
-        self
+                        v.push(input);
+                        self.agent_metrics = Some(v);
+                        self
     }
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn set_agent_metrics(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EdgeMetric>>,
-    ) -> Self {
-        self.agent_metrics = input;
-        self
+    pub fn set_agent_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::EdgeMetric>>) -> Self {
+        self.agent_metrics = input; self
     }
     /// Appends an item to `models`.
     ///
@@ -93,17 +89,13 @@ impl SendHeartbeatInputBuilder {
     /// <p>Returns a list of models deployed on the the device.</p>
     pub fn models(mut self, input: crate::types::Model) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = Some(v);
-        self
+                        v.push(input);
+                        self.models = Some(v);
+                        self
     }
     /// <p>Returns a list of models deployed on the the device.</p>
-    pub fn set_models(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Model>>,
-    ) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: std::option::Option<std::vec::Vec<crate::types::Model>>) -> Self {
+        self.models = input; self
     }
     /// <p>Returns the version of the agent.</p>
     pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +104,7 @@ impl SendHeartbeatInputBuilder {
     }
     /// <p>Returns the version of the agent.</p>
     pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>The unique name of the device.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +113,7 @@ impl SendHeartbeatInputBuilder {
     }
     /// <p>The unique name of the device.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
     pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,12 +121,8 @@ impl SendHeartbeatInputBuilder {
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_fleet_name = input;
-        self
+    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_fleet_name = input; self
     }
     /// <p>Returns the result of a deployment on the device.</p>
     pub fn deployment_result(mut self, input: crate::types::DeploymentResult) -> Self {
@@ -144,27 +130,27 @@ impl SendHeartbeatInputBuilder {
         self
     }
     /// <p>Returns the result of a deployment on the device.</p>
-    pub fn set_deployment_result(
-        mut self,
-        input: std::option::Option<crate::types::DeploymentResult>,
-    ) -> Self {
-        self.deployment_result = input;
-        self
+    pub fn set_deployment_result(mut self, input: std::option::Option<crate::types::DeploymentResult>) -> Self {
+        self.deployment_result = input; self
     }
     /// Consumes the builder and constructs a [`SendHeartbeatInput`](crate::operation::send_heartbeat::SendHeartbeatInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_heartbeat::SendHeartbeatInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::send_heartbeat::SendHeartbeatInput {
-            agent_metrics: self.agent_metrics,
-            models: self.models,
-            agent_version: self.agent_version,
-            device_name: self.device_name,
-            device_fleet_name: self.device_fleet_name,
-            deployment_result: self.deployment_result,
-        })
+    pub fn build(self) -> Result<crate::operation::send_heartbeat::SendHeartbeatInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::send_heartbeat::SendHeartbeatInput {
+                agent_metrics: self.agent_metrics
+                ,
+                models: self.models
+                ,
+                agent_version: self.agent_version
+                ,
+                device_name: self.device_name
+                ,
+                device_fleet_name: self.device_fleet_name
+                ,
+                deployment_result: self.deployment_result
+                ,
+            }
+        )
     }
 }
+

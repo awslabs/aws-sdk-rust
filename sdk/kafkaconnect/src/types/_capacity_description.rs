@@ -3,7 +3,7 @@
 /// <p>A description of the connector's capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityDescription {
+pub struct CapacityDescription  {
     /// <p>Describes the connector's auto scaling capacity.</p>
     #[doc(hidden)]
     pub auto_scaling: std::option::Option<crate::types::AutoScalingDescription>,
@@ -13,13 +13,11 @@ pub struct CapacityDescription {
 }
 impl CapacityDescription {
     /// <p>Describes the connector's auto scaling capacity.</p>
-    pub fn auto_scaling(&self) -> std::option::Option<&crate::types::AutoScalingDescription> {
+    pub fn auto_scaling(&self) -> std::option::Option<& crate::types::AutoScalingDescription> {
         self.auto_scaling.as_ref()
     }
     /// <p>Describes a connector's provisioned capacity.</p>
-    pub fn provisioned_capacity(
-        &self,
-    ) -> std::option::Option<&crate::types::ProvisionedCapacityDescription> {
+    pub fn provisioned_capacity(&self) -> std::option::Option<& crate::types::ProvisionedCapacityDescription> {
         self.provisioned_capacity.as_ref()
     }
 }
@@ -35,8 +33,7 @@ impl CapacityDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CapacityDescriptionBuilder {
     pub(crate) auto_scaling: std::option::Option<crate::types::AutoScalingDescription>,
-    pub(crate) provisioned_capacity:
-        std::option::Option<crate::types::ProvisionedCapacityDescription>,
+    pub(crate) provisioned_capacity: std::option::Option<crate::types::ProvisionedCapacityDescription>,
 }
 impl CapacityDescriptionBuilder {
     /// <p>Describes the connector's auto scaling capacity.</p>
@@ -45,34 +42,26 @@ impl CapacityDescriptionBuilder {
         self
     }
     /// <p>Describes the connector's auto scaling capacity.</p>
-    pub fn set_auto_scaling(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingDescription>,
-    ) -> Self {
-        self.auto_scaling = input;
-        self
+    pub fn set_auto_scaling(mut self, input: std::option::Option<crate::types::AutoScalingDescription>) -> Self {
+        self.auto_scaling = input; self
     }
     /// <p>Describes a connector's provisioned capacity.</p>
-    pub fn provisioned_capacity(
-        mut self,
-        input: crate::types::ProvisionedCapacityDescription,
-    ) -> Self {
+    pub fn provisioned_capacity(mut self, input: crate::types::ProvisionedCapacityDescription) -> Self {
         self.provisioned_capacity = Some(input);
         self
     }
     /// <p>Describes a connector's provisioned capacity.</p>
-    pub fn set_provisioned_capacity(
-        mut self,
-        input: std::option::Option<crate::types::ProvisionedCapacityDescription>,
-    ) -> Self {
-        self.provisioned_capacity = input;
-        self
+    pub fn set_provisioned_capacity(mut self, input: std::option::Option<crate::types::ProvisionedCapacityDescription>) -> Self {
+        self.provisioned_capacity = input; self
     }
     /// Consumes the builder and constructs a [`CapacityDescription`](crate::types::CapacityDescription).
     pub fn build(self) -> crate::types::CapacityDescription {
         crate::types::CapacityDescription {
-            auto_scaling: self.auto_scaling,
-            provisioned_capacity: self.provisioned_capacity,
+            auto_scaling: self.auto_scaling
+            ,
+            provisioned_capacity: self.provisioned_capacity
+            ,
         }
     }
 }
+

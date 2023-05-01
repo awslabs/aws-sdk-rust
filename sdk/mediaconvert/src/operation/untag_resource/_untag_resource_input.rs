@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The keys of the tags that you want to remove from the resource.
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl UntagResourceInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -52,28 +51,24 @@ impl UntagResourceInputBuilder {
     /// The keys of the tags that you want to remove from the resource.
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = Some(v);
+                        self
     }
     /// The keys of the tags that you want to remove from the resource.
-    pub fn set_tag_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::untag_resource::UntagResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::untag_resource::UntagResourceInput {
-            arn: self.arn,
-            tag_keys: self.tag_keys,
-        })
+    pub fn build(self) -> Result<crate::operation::untag_resource::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::untag_resource::UntagResourceInput {
+                arn: self.arn
+                ,
+                tag_keys: self.tag_keys
+                ,
+            }
+        )
     }
 }
+

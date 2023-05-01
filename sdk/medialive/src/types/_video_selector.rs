@@ -3,7 +3,7 @@
 /// Specifies a particular video stream within an input source. An input may have only a single video selector.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoSelector {
+pub struct VideoSelector  {
     /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
     #[doc(hidden)]
     pub color_space: std::option::Option<crate::types::VideoSelectorColorSpace>,
@@ -19,23 +19,19 @@ pub struct VideoSelector {
 }
 impl VideoSelector {
     /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
-    pub fn color_space(&self) -> std::option::Option<&crate::types::VideoSelectorColorSpace> {
+    pub fn color_space(&self) -> std::option::Option<& crate::types::VideoSelectorColorSpace> {
         self.color_space.as_ref()
     }
     /// Color space settings
-    pub fn color_space_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::VideoSelectorColorSpaceSettings> {
+    pub fn color_space_settings(&self) -> std::option::Option<& crate::types::VideoSelectorColorSpaceSettings> {
         self.color_space_settings.as_ref()
     }
     /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
-    pub fn color_space_usage(
-        &self,
-    ) -> std::option::Option<&crate::types::VideoSelectorColorSpaceUsage> {
+    pub fn color_space_usage(&self) -> std::option::Option<& crate::types::VideoSelectorColorSpaceUsage> {
         self.color_space_usage.as_ref()
     }
     /// The video selector settings.
-    pub fn selector_settings(&self) -> std::option::Option<&crate::types::VideoSelectorSettings> {
+    pub fn selector_settings(&self) -> std::option::Option<& crate::types::VideoSelectorSettings> {
         self.selector_settings.as_ref()
     }
 }
@@ -51,8 +47,7 @@ impl VideoSelector {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct VideoSelectorBuilder {
     pub(crate) color_space: std::option::Option<crate::types::VideoSelectorColorSpace>,
-    pub(crate) color_space_settings:
-        std::option::Option<crate::types::VideoSelectorColorSpaceSettings>,
+    pub(crate) color_space_settings: std::option::Option<crate::types::VideoSelectorColorSpaceSettings>,
     pub(crate) color_space_usage: std::option::Option<crate::types::VideoSelectorColorSpaceUsage>,
     pub(crate) selector_settings: std::option::Option<crate::types::VideoSelectorSettings>,
 }
@@ -63,28 +58,17 @@ impl VideoSelectorBuilder {
         self
     }
     /// Specifies the color space of an input. This setting works in tandem with colorSpaceUsage and a video description's colorSpaceSettingsChoice to determine if any conversion will be performed.
-    pub fn set_color_space(
-        mut self,
-        input: std::option::Option<crate::types::VideoSelectorColorSpace>,
-    ) -> Self {
-        self.color_space = input;
-        self
+    pub fn set_color_space(mut self, input: std::option::Option<crate::types::VideoSelectorColorSpace>) -> Self {
+        self.color_space = input; self
     }
     /// Color space settings
-    pub fn color_space_settings(
-        mut self,
-        input: crate::types::VideoSelectorColorSpaceSettings,
-    ) -> Self {
+    pub fn color_space_settings(mut self, input: crate::types::VideoSelectorColorSpaceSettings) -> Self {
         self.color_space_settings = Some(input);
         self
     }
     /// Color space settings
-    pub fn set_color_space_settings(
-        mut self,
-        input: std::option::Option<crate::types::VideoSelectorColorSpaceSettings>,
-    ) -> Self {
-        self.color_space_settings = input;
-        self
+    pub fn set_color_space_settings(mut self, input: std::option::Option<crate::types::VideoSelectorColorSpaceSettings>) -> Self {
+        self.color_space_settings = input; self
     }
     /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
     pub fn color_space_usage(mut self, input: crate::types::VideoSelectorColorSpaceUsage) -> Self {
@@ -92,12 +76,8 @@ impl VideoSelectorBuilder {
         self
     }
     /// Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
-    pub fn set_color_space_usage(
-        mut self,
-        input: std::option::Option<crate::types::VideoSelectorColorSpaceUsage>,
-    ) -> Self {
-        self.color_space_usage = input;
-        self
+    pub fn set_color_space_usage(mut self, input: std::option::Option<crate::types::VideoSelectorColorSpaceUsage>) -> Self {
+        self.color_space_usage = input; self
     }
     /// The video selector settings.
     pub fn selector_settings(mut self, input: crate::types::VideoSelectorSettings) -> Self {
@@ -105,20 +85,21 @@ impl VideoSelectorBuilder {
         self
     }
     /// The video selector settings.
-    pub fn set_selector_settings(
-        mut self,
-        input: std::option::Option<crate::types::VideoSelectorSettings>,
-    ) -> Self {
-        self.selector_settings = input;
-        self
+    pub fn set_selector_settings(mut self, input: std::option::Option<crate::types::VideoSelectorSettings>) -> Self {
+        self.selector_settings = input; self
     }
     /// Consumes the builder and constructs a [`VideoSelector`](crate::types::VideoSelector).
     pub fn build(self) -> crate::types::VideoSelector {
         crate::types::VideoSelector {
-            color_space: self.color_space,
-            color_space_settings: self.color_space_settings,
-            color_space_usage: self.color_space_usage,
-            selector_settings: self.selector_settings,
+            color_space: self.color_space
+            ,
+            color_space_settings: self.color_space_settings
+            ,
+            color_space_usage: self.color_space_usage
+            ,
+            selector_settings: self.selector_settings
+            ,
         }
     }
 }
+

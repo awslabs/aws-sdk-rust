@@ -3,20 +3,18 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifyEmailIdentityOutput {
+pub struct VerifyEmailIdentityOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for VerifyEmailIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl VerifyEmailIdentityOutput {
     /// Creates a new builder-style object to manufacture [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput).
-    pub fn builder(
-    ) -> crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder {
-        crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder {
+        crate::operation::verify_email_identity::builders::VerifyEmailIdentityOutputBuilder::default()
     }
 }
 
@@ -28,14 +26,14 @@ pub struct VerifyEmailIdentityOutputBuilder {
 }
 impl VerifyEmailIdentityOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`VerifyEmailIdentityOutput`](crate::operation::verify_email_identity::VerifyEmailIdentityOutput).
     pub fn build(self) -> crate::operation::verify_email_identity::VerifyEmailIdentityOutput {
         crate::operation::verify_email_identity::VerifyEmailIdentityOutput {
@@ -43,3 +41,4 @@ impl VerifyEmailIdentityOutputBuilder {
         }
     }
 }
+

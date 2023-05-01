@@ -3,7 +3,7 @@
 /// <p>A multicast group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MulticastGroup {
+pub struct MulticastGroup  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct MulticastGroup {
 }
 impl MulticastGroup {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The arn of the multicast group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the multicast group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl MulticastGroupBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The arn of the multicast group.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl MulticastGroupBuilder {
     }
     /// <p>The arn of the multicast group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the multicast group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl MulticastGroupBuilder {
     }
     /// <p>The name of the multicast group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`MulticastGroup`](crate::types::MulticastGroup).
     pub fn build(self) -> crate::types::MulticastGroup {
         crate::types::MulticastGroup {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

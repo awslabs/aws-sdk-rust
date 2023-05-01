@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInternetGatewayInput {
+pub struct DeleteInternetGatewayInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,15 +16,13 @@ impl DeleteInternetGatewayInput {
         self.dry_run
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn internet_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn internet_gateway_id(&self) -> std::option::Option<& str> {
         self.internet_gateway_id.as_deref()
     }
 }
 impl DeleteInternetGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder {
         crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DeleteInternetGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the internet gateway.</p>
     pub fn internet_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,25 +50,19 @@ impl DeleteInternetGatewayInputBuilder {
         self
     }
     /// <p>The ID of the internet gateway.</p>
-    pub fn set_internet_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.internet_gateway_id = input;
-        self
+    pub fn set_internet_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.internet_gateway_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInternetGatewayInput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_internet_gateway::DeleteInternetGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_internet_gateway::DeleteInternetGatewayInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_internet_gateway::DeleteInternetGatewayInput {
-                dry_run: self.dry_run,
-                internet_gateway_id: self.internet_gateway_id,
-            },
+                dry_run: self.dry_run
+                ,
+                internet_gateway_id: self.internet_gateway_id
+                ,
+            }
         )
     }
 }
+

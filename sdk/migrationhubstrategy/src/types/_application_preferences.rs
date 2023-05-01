@@ -3,16 +3,14 @@
 /// <p> Application preferences that you specify. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationPreferences {
+pub struct ApplicationPreferences  {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
     #[doc(hidden)]
     pub management_preference: std::option::Option<crate::types::ManagementPreference>,
 }
 impl ApplicationPreferences {
     /// <p> Application preferences that you specify to prefer managed environment. </p>
-    pub fn management_preference(
-        &self,
-    ) -> std::option::Option<&crate::types::ManagementPreference> {
+    pub fn management_preference(&self) -> std::option::Option<& crate::types::ManagementPreference> {
         self.management_preference.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl ApplicationPreferencesBuilder {
         self
     }
     /// <p> Application preferences that you specify to prefer managed environment. </p>
-    pub fn set_management_preference(
-        mut self,
-        input: std::option::Option<crate::types::ManagementPreference>,
-    ) -> Self {
-        self.management_preference = input;
-        self
+    pub fn set_management_preference(mut self, input: std::option::Option<crate::types::ManagementPreference>) -> Self {
+        self.management_preference = input; self
     }
     /// Consumes the builder and constructs a [`ApplicationPreferences`](crate::types::ApplicationPreferences).
     pub fn build(self) -> crate::types::ApplicationPreferences {
         crate::types::ApplicationPreferences {
-            management_preference: self.management_preference,
+            management_preference: self.management_preference
+            ,
         }
     }
 }
+

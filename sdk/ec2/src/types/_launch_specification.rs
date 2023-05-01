@@ -3,7 +3,7 @@
 /// <p>Describes the launch specification for an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LaunchSpecification {
+pub struct LaunchSpecification  {
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     #[doc(hidden)]
     pub user_data: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct LaunchSpecification {
     /// <p>One or more block device mapping entries.</p>
     #[doc(hidden)]
     pub block_device_mappings: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p> 
     /// <p>Default: <code>false</code> </p>
     #[doc(hidden)]
     pub ebs_optimized: std::option::Option<bool>,
@@ -37,8 +37,7 @@ pub struct LaunchSpecification {
     pub key_name: std::option::Option<std::string::String>,
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
     #[doc(hidden)]
-    pub network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    pub network_interfaces: std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     /// <p>The placement information for the instance.</p>
     #[doc(hidden)]
     pub placement: std::option::Option<crate::types::SpotPlacement>,
@@ -54,74 +53,68 @@ pub struct LaunchSpecification {
 }
 impl LaunchSpecification {
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
-    pub fn user_data(&self) -> std::option::Option<&str> {
+    pub fn user_data(&self) -> std::option::Option<& str> {
         self.user_data.as_deref()
     }
     /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
+    pub fn security_groups(&self) -> std::option::Option<& [crate::types::GroupIdentifier]> {
         self.security_groups.as_deref()
     }
     /// <p>Deprecated.</p>
-    pub fn addressing_type(&self) -> std::option::Option<&str> {
+    pub fn addressing_type(&self) -> std::option::Option<& str> {
         self.addressing_type.as_deref()
     }
     /// <p>One or more block device mapping entries.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::types::BlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> std::option::Option<& [crate::types::BlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
-    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p> 
     /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(&self) -> std::option::Option<bool> {
         self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        &self,
-    ) -> std::option::Option<&crate::types::IamInstanceProfileSpecification> {
+    pub fn iam_instance_profile(&self) -> std::option::Option<& crate::types::IamInstanceProfileSpecification> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The instance type. Only one instance type can be specified.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The ID of the kernel.</p>
-    pub fn kernel_id(&self) -> std::option::Option<&str> {
+    pub fn kernel_id(&self) -> std::option::Option<& str> {
         self.kernel_id.as_deref()
     }
     /// <p>The name of the key pair.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn network_interfaces(
-        &self,
-    ) -> std::option::Option<&[crate::types::InstanceNetworkInterfaceSpecification]> {
+    pub fn network_interfaces(&self) -> std::option::Option<& [crate::types::InstanceNetworkInterfaceSpecification]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The placement information for the instance.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::types::SpotPlacement> {
+    pub fn placement(&self) -> std::option::Option<& crate::types::SpotPlacement> {
         self.placement.as_ref()
     }
     /// <p>The ID of the RAM disk.</p>
-    pub fn ramdisk_id(&self) -> std::option::Option<&str> {
+    pub fn ramdisk_id(&self) -> std::option::Option<& str> {
         self.ramdisk_id.as_deref()
     }
     /// <p>The ID of the subnet in which to launch the instance.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>Describes the monitoring of an instance.</p>
-    pub fn monitoring(&self) -> std::option::Option<&crate::types::RunInstancesMonitoringEnabled> {
+    pub fn monitoring(&self) -> std::option::Option<& crate::types::RunInstancesMonitoringEnabled> {
         self.monitoring.as_ref()
     }
 }
-impl std::fmt::Debug for LaunchSpecification {
+impl  std::fmt::Debug for LaunchSpecification  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchSpecification");
         formatter.field("user_data", &"*** Sensitive Data Redacted ***");
@@ -156,17 +149,14 @@ pub struct LaunchSpecificationBuilder {
     pub(crate) user_data: std::option::Option<std::string::String>,
     pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
     pub(crate) addressing_type: std::option::Option<std::string::String>,
-    pub(crate) block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
+    pub(crate) block_device_mappings: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
     pub(crate) ebs_optimized: std::option::Option<bool>,
-    pub(crate) iam_instance_profile:
-        std::option::Option<crate::types::IamInstanceProfileSpecification>,
+    pub(crate) iam_instance_profile: std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) image_id: std::option::Option<std::string::String>,
     pub(crate) instance_type: std::option::Option<crate::types::InstanceType>,
     pub(crate) kernel_id: std::option::Option<std::string::String>,
     pub(crate) key_name: std::option::Option<std::string::String>,
-    pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
+    pub(crate) network_interfaces: std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>,
     pub(crate) placement: std::option::Option<crate::types::SpotPlacement>,
     pub(crate) ramdisk_id: std::option::Option<std::string::String>,
     pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -180,8 +170,7 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.</p>
     pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_data = input;
-        self
+        self.user_data = input; self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -190,17 +179,13 @@ impl LaunchSpecificationBuilder {
     /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
     pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input);
-        self.security_groups = Some(v);
-        self
+                        v.push(input);
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>One or more security groups. When requesting instances in a VPC, you must specify the IDs of the security groups. When requesting instances in EC2-Classic, you can specify the names or the IDs of the security groups.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>Deprecated.</p>
     pub fn addressing_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,8 +194,7 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>Deprecated.</p>
     pub fn set_addressing_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.addressing_type = input;
-        self
+        self.addressing_type = input; self
     }
     /// Appends an item to `block_device_mappings`.
     ///
@@ -219,45 +203,33 @@ impl LaunchSpecificationBuilder {
     /// <p>One or more block device mapping entries.</p>
     pub fn block_device_mappings(mut self, input: crate::types::BlockDeviceMapping) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
-        v.push(input);
-        self.block_device_mappings = Some(v);
-        self
+                        v.push(input);
+                        self.block_device_mappings = Some(v);
+                        self
     }
     /// <p>One or more block device mapping entries.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
-        self.block_device_mappings = input;
-        self
+    pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
+        self.block_device_mappings = input; self
     }
-    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p> 
     /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
         self.ebs_optimized = Some(input);
         self
     }
-    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
+    /// <p>Indicates whether the instance is optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p> 
     /// <p>Default: <code>false</code> </p>
     pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input;
-        self
+        self.ebs_optimized = input; self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.iam_instance_profile = Some(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
-        self.iam_instance_profile = input;
-        self
+    pub fn set_iam_instance_profile(mut self, input: std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
+        self.iam_instance_profile = input; self
     }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +238,7 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The instance type. Only one instance type can be specified.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -275,12 +246,8 @@ impl LaunchSpecificationBuilder {
         self
     }
     /// <p>The instance type. Only one instance type can be specified.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input; self
     }
     /// <p>The ID of the kernel.</p>
     pub fn kernel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,8 +256,7 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>The ID of the kernel.</p>
     pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kernel_id = input;
-        self
+        self.kernel_id = input; self
     }
     /// <p>The name of the key pair.</p>
     pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -299,32 +265,22 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>The name of the key pair.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// Appends an item to `network_interfaces`.
     ///
     /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
     ///
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn network_interfaces(
-        mut self,
-        input: crate::types::InstanceNetworkInterfaceSpecification,
-    ) -> Self {
+    pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterfaceSpecification) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-        v.push(input);
-        self.network_interfaces = Some(v);
-        self
+                        v.push(input);
+                        self.network_interfaces = Some(v);
+                        self
     }
     /// <p>One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security group IDs using the network interface.</p>
-    pub fn set_network_interfaces(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>,
-        >,
-    ) -> Self {
-        self.network_interfaces = input;
-        self
+    pub fn set_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterfaceSpecification>>) -> Self {
+        self.network_interfaces = input; self
     }
     /// <p>The placement information for the instance.</p>
     pub fn placement(mut self, input: crate::types::SpotPlacement) -> Self {
@@ -332,12 +288,8 @@ impl LaunchSpecificationBuilder {
         self
     }
     /// <p>The placement information for the instance.</p>
-    pub fn set_placement(
-        mut self,
-        input: std::option::Option<crate::types::SpotPlacement>,
-    ) -> Self {
-        self.placement = input;
-        self
+    pub fn set_placement(mut self, input: std::option::Option<crate::types::SpotPlacement>) -> Self {
+        self.placement = input; self
     }
     /// <p>The ID of the RAM disk.</p>
     pub fn ramdisk_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -346,8 +298,7 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>The ID of the RAM disk.</p>
     pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ramdisk_id = input;
-        self
+        self.ramdisk_id = input; self
     }
     /// <p>The ID of the subnet in which to launch the instance.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,8 +307,7 @@ impl LaunchSpecificationBuilder {
     }
     /// <p>The ID of the subnet in which to launch the instance.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>Describes the monitoring of an instance.</p>
     pub fn monitoring(mut self, input: crate::types::RunInstancesMonitoringEnabled) -> Self {
@@ -365,31 +315,42 @@ impl LaunchSpecificationBuilder {
         self
     }
     /// <p>Describes the monitoring of an instance.</p>
-    pub fn set_monitoring(
-        mut self,
-        input: std::option::Option<crate::types::RunInstancesMonitoringEnabled>,
-    ) -> Self {
-        self.monitoring = input;
-        self
+    pub fn set_monitoring(mut self, input: std::option::Option<crate::types::RunInstancesMonitoringEnabled>) -> Self {
+        self.monitoring = input; self
     }
     /// Consumes the builder and constructs a [`LaunchSpecification`](crate::types::LaunchSpecification).
     pub fn build(self) -> crate::types::LaunchSpecification {
         crate::types::LaunchSpecification {
-            user_data: self.user_data,
-            security_groups: self.security_groups,
-            addressing_type: self.addressing_type,
-            block_device_mappings: self.block_device_mappings,
-            ebs_optimized: self.ebs_optimized,
-            iam_instance_profile: self.iam_instance_profile,
-            image_id: self.image_id,
-            instance_type: self.instance_type,
-            kernel_id: self.kernel_id,
-            key_name: self.key_name,
-            network_interfaces: self.network_interfaces,
-            placement: self.placement,
-            ramdisk_id: self.ramdisk_id,
-            subnet_id: self.subnet_id,
-            monitoring: self.monitoring,
+            user_data: self.user_data
+            ,
+            security_groups: self.security_groups
+            ,
+            addressing_type: self.addressing_type
+            ,
+            block_device_mappings: self.block_device_mappings
+            ,
+            ebs_optimized: self.ebs_optimized
+            ,
+            iam_instance_profile: self.iam_instance_profile
+            ,
+            image_id: self.image_id
+            ,
+            instance_type: self.instance_type
+            ,
+            kernel_id: self.kernel_id
+            ,
+            key_name: self.key_name
+            ,
+            network_interfaces: self.network_interfaces
+            ,
+            placement: self.placement
+            ,
+            ramdisk_id: self.ramdisk_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            monitoring: self.monitoring
+            ,
         }
     }
 }
@@ -414,3 +375,4 @@ impl std::fmt::Debug for LaunchSpecificationBuilder {
         formatter.finish()
     }
 }
+

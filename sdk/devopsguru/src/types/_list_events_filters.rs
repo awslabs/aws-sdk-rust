@@ -3,7 +3,7 @@
 /// <p> Filters you can use to specify which events are returned when <code>ListEvents</code> is called. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventsFilters {
+pub struct ListEventsFilters  {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ListEventsFilters {
 }
 impl ListEventsFilters {
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
-    pub fn insight_id(&self) -> std::option::Option<&str> {
+    pub fn insight_id(&self) -> std::option::Option<& str> {
         self.insight_id.as_deref()
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
-    pub fn event_time_range(&self) -> std::option::Option<&crate::types::EventTimeRange> {
+    pub fn event_time_range(&self) -> std::option::Option<& crate::types::EventTimeRange> {
         self.event_time_range.as_ref()
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
-    pub fn event_class(&self) -> std::option::Option<&crate::types::EventClass> {
+    pub fn event_class(&self) -> std::option::Option<& crate::types::EventClass> {
         self.event_class.as_ref()
     }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
-    pub fn event_source(&self) -> std::option::Option<&str> {
+    pub fn event_source(&self) -> std::option::Option<& str> {
         self.event_source.as_deref()
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::EventDataSource> {
+    pub fn data_source(&self) -> std::option::Option<& crate::types::EventDataSource> {
         self.data_source.as_ref()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> std::option::Option<& crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ListEventsFiltersBuilder {
     }
     /// <p> An ID of an insight that is related to the events you want to filter for. </p>
     pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_id = input;
-        self
+        self.insight_id = input; self
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
     pub fn event_time_range(mut self, input: crate::types::EventTimeRange) -> Self {
@@ -84,12 +83,8 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> A time range during which you want the filtered events to have occurred. </p>
-    pub fn set_event_time_range(
-        mut self,
-        input: std::option::Option<crate::types::EventTimeRange>,
-    ) -> Self {
-        self.event_time_range = input;
-        self
+    pub fn set_event_time_range(mut self, input: std::option::Option<crate::types::EventTimeRange>) -> Self {
+        self.event_time_range = input; self
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
     pub fn event_class(mut self, input: crate::types::EventClass) -> Self {
@@ -98,8 +93,7 @@ impl ListEventsFiltersBuilder {
     }
     /// <p> The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change. </p>
     pub fn set_event_class(mut self, input: std::option::Option<crate::types::EventClass>) -> Self {
-        self.event_class = input;
-        self
+        self.event_class = input; self
     }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
     pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +102,7 @@ impl ListEventsFiltersBuilder {
     }
     /// <p> The Amazon Web Services source that emitted the events you want to filter for. </p>
     pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_source = input;
-        self
+        self.event_source = input; self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
     pub fn data_source(mut self, input: crate::types::EventDataSource) -> Self {
@@ -117,12 +110,8 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned. </p>
-    pub fn set_data_source(
-        mut self,
-        input: std::option::Option<crate::types::EventDataSource>,
-    ) -> Self {
-        self.data_source = input;
-        self
+    pub fn set_data_source(mut self, input: std::option::Option<crate::types::EventDataSource>) -> Self {
+        self.data_source = input; self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
@@ -130,22 +119,25 @@ impl ListEventsFiltersBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
-        self.resource_collection = input;
-        self
+    pub fn set_resource_collection(mut self, input: std::option::Option<crate::types::ResourceCollection>) -> Self {
+        self.resource_collection = input; self
     }
     /// Consumes the builder and constructs a [`ListEventsFilters`](crate::types::ListEventsFilters).
     pub fn build(self) -> crate::types::ListEventsFilters {
         crate::types::ListEventsFilters {
-            insight_id: self.insight_id,
-            event_time_range: self.event_time_range,
-            event_class: self.event_class,
-            event_source: self.event_source,
-            data_source: self.data_source,
-            resource_collection: self.resource_collection,
+            insight_id: self.insight_id
+            ,
+            event_time_range: self.event_time_range
+            ,
+            event_class: self.event_class
+            ,
+            event_source: self.event_source
+            ,
+            data_source: self.data_source
+            ,
+            resource_collection: self.resource_collection
+            ,
         }
     }
 }
+

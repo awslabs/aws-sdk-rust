@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVoiceProfileOutput {
+pub struct CreateVoiceProfileOutput  {
     /// <p>The requested voice profile.</p>
     #[doc(hidden)]
     pub voice_profile: std::option::Option<crate::types::VoiceProfile>,
@@ -10,19 +10,18 @@ pub struct CreateVoiceProfileOutput {
 }
 impl CreateVoiceProfileOutput {
     /// <p>The requested voice profile.</p>
-    pub fn voice_profile(&self) -> std::option::Option<&crate::types::VoiceProfile> {
+    pub fn voice_profile(&self) -> std::option::Option<& crate::types::VoiceProfile> {
         self.voice_profile.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVoiceProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVoiceProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceProfileOutput`](crate::operation::create_voice_profile::CreateVoiceProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_voice_profile::builders::CreateVoiceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_voice_profile::builders::CreateVoiceProfileOutputBuilder {
         crate::operation::create_voice_profile::builders::CreateVoiceProfileOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateVoiceProfileOutputBuilder {
         self
     }
     /// <p>The requested voice profile.</p>
-    pub fn set_voice_profile(
-        mut self,
-        input: std::option::Option<crate::types::VoiceProfile>,
-    ) -> Self {
-        self.voice_profile = input;
-        self
+    pub fn set_voice_profile(mut self, input: std::option::Option<crate::types::VoiceProfile>) -> Self {
+        self.voice_profile = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVoiceProfileOutput`](crate::operation::create_voice_profile::CreateVoiceProfileOutput).
     pub fn build(self) -> crate::operation::create_voice_profile::CreateVoiceProfileOutput {
         crate::operation::create_voice_profile::CreateVoiceProfileOutput {
-            voice_profile: self.voice_profile,
+            voice_profile: self.voice_profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

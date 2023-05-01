@@ -4,72 +4,49 @@ pub use crate::operation::put_inbound_dmarc_settings::_put_inbound_dmarc_setting
 pub use crate::operation::put_inbound_dmarc_settings::_put_inbound_dmarc_settings_input::PutInboundDmarcSettingsInputBuilder;
 
 /// Fluent builder constructing a request to `PutInboundDmarcSettings`.
-///
+/// 
 /// <p>Enables or disables a DMARC policy for a given organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutInboundDmarcSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder,
-}
-impl PutInboundDmarcSettingsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsInputBuilder
+            }
+impl PutInboundDmarcSettingsFluentBuilder  {
     /// Creates a new `PutInboundDmarcSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettings, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput, aws_smithy_http::result::SdkError<crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the organization that you are applying the DMARC policy to.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -91,3 +68,4 @@ impl PutInboundDmarcSettingsFluentBuilder {
         self
     }
 }
+

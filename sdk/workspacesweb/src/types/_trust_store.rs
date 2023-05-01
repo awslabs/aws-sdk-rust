@@ -3,7 +3,7 @@
 /// <p>A trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrustStore {
+pub struct TrustStore  {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     #[doc(hidden)]
     pub associated_portal_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct TrustStore {
 }
 impl TrustStore {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn associated_portal_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn associated_portal_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.associated_portal_arns.as_deref()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl TrustStoreBuilder {
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
     pub fn associated_portal_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.associated_portal_arns.unwrap_or_default();
-        v.push(input.into());
-        self.associated_portal_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.associated_portal_arns = Some(v);
+                        self
     }
     /// <p>A list of web portal ARNs that this trust store is associated with.</p>
-    pub fn set_associated_portal_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.associated_portal_arns = input;
-        self
+    pub fn set_associated_portal_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.associated_portal_arns = input; self
     }
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,14 +58,16 @@ impl TrustStoreBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// Consumes the builder and constructs a [`TrustStore`](crate::types::TrustStore).
     pub fn build(self) -> crate::types::TrustStore {
         crate::types::TrustStore {
-            associated_portal_arns: self.associated_portal_arns,
-            trust_store_arn: self.trust_store_arn,
+            associated_portal_arns: self.associated_portal_arns
+            ,
+            trust_store_arn: self.trust_store_arn
+            ,
         }
     }
 }
+

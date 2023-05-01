@@ -3,7 +3,7 @@
 /// <p>List export request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportsInput {
+pub struct ListExportsInput  {
     /// <p>List exports request filters.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::ListExportsRequestFilters>,
@@ -16,7 +16,7 @@ pub struct ListExportsInput {
 }
 impl ListExportsInput {
     /// <p>List exports request filters.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ListExportsRequestFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ListExportsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>List export request max results.</p>
@@ -24,7 +24,7 @@ impl ListExportsInput {
         self.max_results
     }
     /// <p>List export request next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl ListExportsInputBuilder {
         self
     }
     /// <p>List exports request filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ListExportsRequestFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListExportsRequestFilters>) -> Self {
+        self.filters = input; self
     }
     /// <p>List export request max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -64,8 +60,7 @@ impl ListExportsInputBuilder {
     }
     /// <p>List export request max results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>List export request next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +69,21 @@ impl ListExportsInputBuilder {
     }
     /// <p>List export request next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListExportsInput`](crate::operation::list_exports::ListExportsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_exports::ListExportsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_exports::ListExportsInput {
-            filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_exports::ListExportsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_exports::ListExportsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

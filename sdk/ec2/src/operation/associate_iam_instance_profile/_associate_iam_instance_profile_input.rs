@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateIamInstanceProfileInput {
+pub struct AssociateIamInstanceProfileInput  {
     /// <p>The IAM instance profile.</p>
     #[doc(hidden)]
     pub iam_instance_profile: std::option::Option<crate::types::IamInstanceProfileSpecification>,
@@ -12,19 +12,17 @@ pub struct AssociateIamInstanceProfileInput {
 }
 impl AssociateIamInstanceProfileInput {
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        &self,
-    ) -> std::option::Option<&crate::types::IamInstanceProfileSpecification> {
+    pub fn iam_instance_profile(&self) -> std::option::Option<& crate::types::IamInstanceProfileSpecification> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl AssociateIamInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`AssociateIamInstanceProfileInput`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput).
-    pub fn builder() -> crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder{
+    pub fn builder() -> crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder {
         crate::operation::associate_iam_instance_profile::builders::AssociateIamInstanceProfileInputBuilder::default()
     }
 }
@@ -33,26 +31,18 @@ impl AssociateIamInstanceProfileInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AssociateIamInstanceProfileInputBuilder {
-    pub(crate) iam_instance_profile:
-        std::option::Option<crate::types::IamInstanceProfileSpecification>,
+    pub(crate) iam_instance_profile: std::option::Option<crate::types::IamInstanceProfileSpecification>,
     pub(crate) instance_id: std::option::Option<std::string::String>,
 }
 impl AssociateIamInstanceProfileInputBuilder {
     /// <p>The IAM instance profile.</p>
-    pub fn iam_instance_profile(
-        mut self,
-        input: crate::types::IamInstanceProfileSpecification,
-    ) -> Self {
+    pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfileSpecification) -> Self {
         self.iam_instance_profile = Some(input);
         self
     }
     /// <p>The IAM instance profile.</p>
-    pub fn set_iam_instance_profile(
-        mut self,
-        input: std::option::Option<crate::types::IamInstanceProfileSpecification>,
-    ) -> Self {
-        self.iam_instance_profile = input;
-        self
+    pub fn set_iam_instance_profile(mut self, input: std::option::Option<crate::types::IamInstanceProfileSpecification>) -> Self {
+        self.iam_instance_profile = input; self
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,21 +51,18 @@ impl AssociateIamInstanceProfileInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`AssociateIamInstanceProfileInput`](crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_iam_instance_profile::AssociateIamInstanceProfileInput {
-                iam_instance_profile: self.iam_instance_profile,
-                instance_id: self.instance_id,
-            },
+                iam_instance_profile: self.iam_instance_profile
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

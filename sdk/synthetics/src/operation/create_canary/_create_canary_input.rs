@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCanaryInput {
-    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
+pub struct CreateCanaryInput  {
+    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> 
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,23 +13,23 @@ pub struct CreateCanaryInput {
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
     #[doc(hidden)]
     pub artifact_s3_location: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
-    /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>s3:PutObject</code> </p> </li> 
+    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li> 
+    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> 
+    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li> 
+    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<crate::types::CanaryScheduleInput>,
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important> 
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
     /// </important>
     #[doc(hidden)]
     pub run_config: std::option::Option<crate::types::CanaryRunConfigInput>,
@@ -45,50 +45,49 @@ pub struct CreateCanaryInput {
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfigInput>,
-    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
+    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> 
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     #[doc(hidden)]
     pub artifact_config: std::option::Option<crate::types::ArtifactConfigInput>,
 }
 impl CreateCanaryInput {
-    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
+    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> 
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
-    pub fn code(&self) -> std::option::Option<&crate::types::CanaryCodeInput> {
+    pub fn code(&self) -> std::option::Option<& crate::types::CanaryCodeInput> {
         self.code.as_ref()
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn artifact_s3_location(&self) -> std::option::Option<&str> {
+    pub fn artifact_s3_location(&self) -> std::option::Option<& str> {
         self.artifact_s3_location.as_deref()
     }
-    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
-    /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>s3:PutObject</code> </p> </li> 
+    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li> 
+    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> 
+    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li> 
+    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li> 
     /// </ul>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::CanaryScheduleInput> {
+    pub fn schedule(&self) -> std::option::Option<& crate::types::CanaryScheduleInput> {
         self.schedule.as_ref()
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important> 
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
     /// </important>
-    pub fn run_config(&self) -> std::option::Option<&crate::types::CanaryRunConfigInput> {
+    pub fn run_config(&self) -> std::option::Option<& crate::types::CanaryRunConfigInput> {
         self.run_config.as_ref()
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
@@ -100,23 +99,20 @@ impl CreateCanaryInput {
         self.failure_retention_period_in_days
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn runtime_version(&self) -> std::option::Option<&str> {
+    pub fn runtime_version(&self) -> std::option::Option<& str> {
         self.runtime_version.as_deref()
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfigInput> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfigInput> {
         self.vpc_config.as_ref()
     }
-    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
+    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> 
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    pub fn artifact_config(&self) -> std::option::Option<&crate::types::ArtifactConfigInput> {
+    pub fn artifact_config(&self) -> std::option::Option<& crate::types::ArtifactConfigInput> {
         self.artifact_config.as_ref()
     }
 }
@@ -141,22 +137,20 @@ pub struct CreateCanaryInputBuilder {
     pub(crate) failure_retention_period_in_days: std::option::Option<i32>,
     pub(crate) runtime_version: std::option::Option<std::string::String>,
     pub(crate) vpc_config: std::option::Option<crate::types::VpcConfigInput>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) artifact_config: std::option::Option<crate::types::ArtifactConfigInput>,
 }
 impl CreateCanaryInputBuilder {
-    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
+    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> 
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
+    /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> 
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
     pub fn code(mut self, input: crate::types::CanaryCodeInput) -> Self {
@@ -165,8 +159,7 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
     pub fn set_code(mut self, input: std::option::Option<crate::types::CanaryCodeInput>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
     pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,43 +167,35 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn set_artifact_s3_location(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.artifact_s3_location = input;
-        self
+    pub fn set_artifact_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.artifact_s3_location = input; self
     }
-    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
-    /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>s3:PutObject</code> </p> </li> 
+    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li> 
+    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> 
+    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li> 
+    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li> 
     /// </ul>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.execution_role_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p>
-    /// <ul>
-    /// <li> <p> <code>s3:PutObject</code> </p> </li>
-    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li>
-    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li>
-    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li>
-    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
-    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
+    /// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p> <code>s3:PutObject</code> </p> </li> 
+    /// <li> <p> <code>s3:GetBucketLocation</code> </p> </li> 
+    /// <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> 
+    /// <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogGroup</code> </p> </li> 
+    /// <li> <p> <code>logs:CreateLogStream</code> </p> </li> 
+    /// <li> <p> <code>logs:PutLogEvents</code> </p> </li> 
     /// </ul>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_arn = input; self
     }
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
     pub fn schedule(mut self, input: crate::types::CanaryScheduleInput) -> Self {
@@ -218,29 +203,21 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
-    pub fn set_schedule(
-        mut self,
-        input: std::option::Option<crate::types::CanaryScheduleInput>,
-    ) -> Self {
-        self.schedule = input;
-        self
+    pub fn set_schedule(mut self, input: std::option::Option<crate::types::CanaryScheduleInput>) -> Self {
+        self.schedule = input; self
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important> 
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
     /// </important>
     pub fn run_config(mut self, input: crate::types::CanaryRunConfigInput) -> Self {
         self.run_config = Some(input);
         self
     }
-    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important>
-    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p>
+    /// <p>A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.</p> <important> 
+    /// <p>The environment variables keys and values are not encrypted. Do not store sensitive information in this field.</p> 
     /// </important>
-    pub fn set_run_config(
-        mut self,
-        input: std::option::Option<crate::types::CanaryRunConfigInput>,
-    ) -> Self {
-        self.run_config = input;
-        self
+    pub fn set_run_config(mut self, input: std::option::Option<crate::types::CanaryRunConfigInput>) -> Self {
+        self.run_config = input; self
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     pub fn success_retention_period_in_days(mut self, input: i32) -> Self {
@@ -249,8 +226,7 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     pub fn set_success_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.success_retention_period_in_days = input;
-        self
+        self.success_retention_period_in_days = input; self
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     pub fn failure_retention_period_in_days(mut self, input: i32) -> Self {
@@ -259,8 +235,7 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
     pub fn set_failure_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.failure_retention_period_in_days = input;
-        self
+        self.failure_retention_period_in_days = input; self
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -269,8 +244,7 @@ impl CreateCanaryInputBuilder {
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     pub fn set_runtime_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime_version = input;
-        self
+        self.runtime_version = input; self
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfigInput) -> Self {
@@ -278,39 +252,25 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
-    pub fn set_vpc_config(
-        mut self,
-        input: std::option::Option<crate::types::VpcConfigInput>,
-    ) -> Self {
-        self.vpc_config = input;
-        self
+    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfigInput>) -> Self {
+        self.vpc_config = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
+    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> 
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
-    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p>
+    /// <p>A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.</p> 
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     pub fn artifact_config(mut self, input: crate::types::ArtifactConfigInput) -> Self {
@@ -318,33 +278,39 @@ impl CreateCanaryInputBuilder {
         self
     }
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
-    pub fn set_artifact_config(
-        mut self,
-        input: std::option::Option<crate::types::ArtifactConfigInput>,
-    ) -> Self {
-        self.artifact_config = input;
-        self
+    pub fn set_artifact_config(mut self, input: std::option::Option<crate::types::ArtifactConfigInput>) -> Self {
+        self.artifact_config = input; self
     }
     /// Consumes the builder and constructs a [`CreateCanaryInput`](crate::operation::create_canary::CreateCanaryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_canary::CreateCanaryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_canary::CreateCanaryInput {
-            name: self.name,
-            code: self.code,
-            artifact_s3_location: self.artifact_s3_location,
-            execution_role_arn: self.execution_role_arn,
-            schedule: self.schedule,
-            run_config: self.run_config,
-            success_retention_period_in_days: self.success_retention_period_in_days,
-            failure_retention_period_in_days: self.failure_retention_period_in_days,
-            runtime_version: self.runtime_version,
-            vpc_config: self.vpc_config,
-            tags: self.tags,
-            artifact_config: self.artifact_config,
-        })
+    pub fn build(self) -> Result<crate::operation::create_canary::CreateCanaryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_canary::CreateCanaryInput {
+                name: self.name
+                ,
+                code: self.code
+                ,
+                artifact_s3_location: self.artifact_s3_location
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                schedule: self.schedule
+                ,
+                run_config: self.run_config
+                ,
+                success_retention_period_in_days: self.success_retention_period_in_days
+                ,
+                failure_retention_period_in_days: self.failure_retention_period_in_days
+                ,
+                runtime_version: self.runtime_version
+                ,
+                vpc_config: self.vpc_config
+                ,
+                tags: self.tags
+                ,
+                artifact_config: self.artifact_config
+                ,
+            }
+        )
     }
 }
+

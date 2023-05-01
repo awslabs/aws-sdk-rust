@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListSnapshotBlocksOutput {
+pub struct ListSnapshotBlocksOutput  {
     /// <p>An array of objects containing information about the blocks.</p>
     #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::types::Block>>,
@@ -22,11 +22,11 @@ pub struct ListSnapshotBlocksOutput {
 }
 impl ListSnapshotBlocksOutput {
     /// <p>An array of objects containing information about the blocks.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::types::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::types::Block]> {
         self.blocks.as_deref()
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry_time.as_ref()
     }
     /// <p>The size of the volume in GB.</p>
@@ -38,11 +38,11 @@ impl ListSnapshotBlocksOutput {
         self.block_size
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListSnapshotBlocksOutput {
+impl  std::fmt::Debug for ListSnapshotBlocksOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListSnapshotBlocksOutput");
         formatter.field("blocks", &"*** Sensitive Data Redacted ***");
@@ -55,14 +55,13 @@ impl std::fmt::Debug for ListSnapshotBlocksOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListSnapshotBlocksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSnapshotBlocksOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotBlocksOutput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput).
-    pub fn builder(
-    ) -> crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder {
+    pub fn builder() -> crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder {
         crate::operation::list_snapshot_blocks::builders::ListSnapshotBlocksOutputBuilder::default()
     }
 }
@@ -86,17 +85,13 @@ impl ListSnapshotBlocksOutputBuilder {
     /// <p>An array of objects containing information about the blocks.</p>
     pub fn blocks(mut self, input: crate::types::Block) -> Self {
         let mut v = self.blocks.unwrap_or_default();
-        v.push(input);
-        self.blocks = Some(v);
-        self
+                        v.push(input);
+                        self.blocks = Some(v);
+                        self
     }
     /// <p>An array of objects containing information about the blocks.</p>
-    pub fn set_blocks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
-        self.blocks = input;
-        self
+    pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Block>>) -> Self {
+        self.blocks = input; self
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
     pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -104,12 +99,8 @@ impl ListSnapshotBlocksOutputBuilder {
         self
     }
     /// <p>The time when the <code>BlockToken</code> expires.</p>
-    pub fn set_expiry_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiry_time = input;
-        self
+    pub fn set_expiry_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiry_time = input; self
     }
     /// <p>The size of the volume in GB.</p>
     pub fn volume_size(mut self, input: i64) -> Self {
@@ -118,8 +109,7 @@ impl ListSnapshotBlocksOutputBuilder {
     }
     /// <p>The size of the volume in GB.</p>
     pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub fn block_size(mut self, input: i32) -> Self {
@@ -128,8 +118,7 @@ impl ListSnapshotBlocksOutputBuilder {
     }
     /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub fn set_block_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.block_size = input;
-        self
+        self.block_size = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,26 +127,30 @@ impl ListSnapshotBlocksOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSnapshotBlocksOutput`](crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput).
     pub fn build(self) -> crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput {
         crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput {
-            blocks: self.blocks,
-            expiry_time: self.expiry_time,
-            volume_size: self.volume_size,
-            block_size: self.block_size,
-            next_token: self.next_token,
+            blocks: self.blocks
+            ,
+            expiry_time: self.expiry_time
+            ,
+            volume_size: self.volume_size
+            ,
+            block_size: self.block_size
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -174,3 +167,4 @@ impl std::fmt::Debug for ListSnapshotBlocksOutputBuilder {
         formatter.finish()
     }
 }
+

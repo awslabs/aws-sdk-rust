@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTemplatesInput {
+pub struct ListTemplatesInput  {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListTemplatesInput {
 }
 impl ListTemplatesInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -26,11 +26,11 @@ impl ListTemplatesInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn status(&self) -> std::option::Option<&[crate::types::TemplateStatus]> {
+    pub fn status(&self) -> std::option::Option<& [crate::types::TemplateStatus]> {
         self.status.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +67,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl ListTemplatesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `status`.
     ///
@@ -88,30 +85,28 @@ impl ListTemplatesInputBuilder {
     /// <p>A list of status values to filter on.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
-        v.push(input);
-        self.status = Some(v);
-        self
+                        v.push(input);
+                        self.status = Some(v);
+                        self
     }
     /// <p>A list of status values to filter on.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TemplateStatus>>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::TemplateStatus>>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_templates::ListTemplatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_templates::ListTemplatesInput {
-            domain_id: self.domain_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            status: self.status,
-        })
+    pub fn build(self) -> Result<crate::operation::list_templates::ListTemplatesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_templates::ListTemplatesInput {
+                domain_id: self.domain_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a property- or tag-based condition that defines criteria for including or excluding S3 objects from a classification job. A JobScopeTerm object can contain only one simpleScopeTerm object or one tagScopeTerm object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobScopeTerm {
+pub struct JobScopeTerm  {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
     #[doc(hidden)]
     pub simple_scope_term: std::option::Option<crate::types::SimpleScopeTerm>,
@@ -13,11 +13,11 @@ pub struct JobScopeTerm {
 }
 impl JobScopeTerm {
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
-    pub fn simple_scope_term(&self) -> std::option::Option<&crate::types::SimpleScopeTerm> {
+    pub fn simple_scope_term(&self) -> std::option::Option<& crate::types::SimpleScopeTerm> {
         self.simple_scope_term.as_ref()
     }
     /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
-    pub fn tag_scope_term(&self) -> std::option::Option<&crate::types::TagScopeTerm> {
+    pub fn tag_scope_term(&self) -> std::option::Option<& crate::types::TagScopeTerm> {
         self.tag_scope_term.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl JobScopeTermBuilder {
         self
     }
     /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
-    pub fn set_simple_scope_term(
-        mut self,
-        input: std::option::Option<crate::types::SimpleScopeTerm>,
-    ) -> Self {
-        self.simple_scope_term = input;
-        self
+    pub fn set_simple_scope_term(mut self, input: std::option::Option<crate::types::SimpleScopeTerm>) -> Self {
+        self.simple_scope_term = input; self
     }
     /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
     pub fn tag_scope_term(mut self, input: crate::types::TagScopeTerm) -> Self {
@@ -55,18 +51,17 @@ impl JobScopeTermBuilder {
         self
     }
     /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
-    pub fn set_tag_scope_term(
-        mut self,
-        input: std::option::Option<crate::types::TagScopeTerm>,
-    ) -> Self {
-        self.tag_scope_term = input;
-        self
+    pub fn set_tag_scope_term(mut self, input: std::option::Option<crate::types::TagScopeTerm>) -> Self {
+        self.tag_scope_term = input; self
     }
     /// Consumes the builder and constructs a [`JobScopeTerm`](crate::types::JobScopeTerm).
     pub fn build(self) -> crate::types::JobScopeTerm {
         crate::types::JobScopeTerm {
-            simple_scope_term: self.simple_scope_term,
-            tag_scope_term: self.tag_scope_term,
+            simple_scope_term: self.simple_scope_term
+            ,
+            tag_scope_term: self.tag_scope_term
+            ,
         }
     }
 }
+

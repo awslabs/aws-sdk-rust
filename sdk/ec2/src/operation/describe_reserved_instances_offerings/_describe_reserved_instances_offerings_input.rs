@@ -3,21 +3,21 @@
 /// <p>Contains the parameters for DescribeReservedInstancesOfferings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedInstancesOfferingsInput {
+pub struct DescribeReservedInstancesOfferingsInput  {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li>
-    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
-    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li>
-    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
-    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li>
-    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li>
-    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
-    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li> 
+    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li> 
+    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li> 
+    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li> 
+    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li> 
+    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> 
+    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li> 
+    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> 
+    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -27,15 +27,15 @@ pub struct DescribeReservedInstancesOfferingsInput {
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<crate::types::InstanceType>,
-    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 94608000 (3 years)</p>
     #[doc(hidden)]
     pub max_duration: std::option::Option<i64>,
-    /// <p>The maximum number of instances to filter when searching for offerings.</p>
+    /// <p>The maximum number of instances to filter when searching for offerings.</p> 
     /// <p>Default: 20</p>
     #[doc(hidden)]
     pub max_instance_count: std::option::Option<i32>,
-    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 2592000 (1 month)</p>
     #[doc(hidden)]
     pub min_duration: std::option::Option<i64>,
@@ -51,12 +51,12 @@ pub struct DescribeReservedInstancesOfferingsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
-    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p> 
+    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p> 
     /// <p>Default: <code>default</code> </p>
     #[doc(hidden)]
     pub instance_tenancy: std::option::Option<crate::types::Tenancy>,
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p> 
     /// <p>Default: 100</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -69,22 +69,22 @@ pub struct DescribeReservedInstancesOfferingsInput {
 }
 impl DescribeReservedInstancesOfferingsInput {
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li>
-    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
-    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li>
-    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
-    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li>
-    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li>
-    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
-    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li> 
+    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li> 
+    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li> 
+    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li> 
+    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li> 
+    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> 
+    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li> 
+    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> 
+    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
@@ -92,63 +92,63 @@ impl DescribeReservedInstancesOfferingsInput {
         self.include_marketplace
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<& crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
-    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 94608000 (3 years)</p>
     pub fn max_duration(&self) -> std::option::Option<i64> {
         self.max_duration
     }
-    /// <p>The maximum number of instances to filter when searching for offerings.</p>
+    /// <p>The maximum number of instances to filter when searching for offerings.</p> 
     /// <p>Default: 20</p>
     pub fn max_instance_count(&self) -> std::option::Option<i32> {
         self.max_instance_count
     }
-    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 2592000 (1 month)</p>
     pub fn min_duration(&self) -> std::option::Option<i64> {
         self.min_duration
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
-    pub fn offering_class(&self) -> std::option::Option<&crate::types::OfferingClassType> {
+    pub fn offering_class(&self) -> std::option::Option<& crate::types::OfferingClassType> {
         self.offering_class.as_ref()
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn product_description(&self) -> std::option::Option<&crate::types::RiProductDescription> {
+    pub fn product_description(&self) -> std::option::Option<& crate::types::RiProductDescription> {
         self.product_description.as_ref()
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn reserved_instances_offering_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reserved_instances_offering_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.reserved_instances_offering_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
-    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p> 
+    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p> 
     /// <p>Default: <code>default</code> </p>
-    pub fn instance_tenancy(&self) -> std::option::Option<&crate::types::Tenancy> {
+    pub fn instance_tenancy(&self) -> std::option::Option<& crate::types::Tenancy> {
         self.instance_tenancy.as_ref()
     }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p> 
     /// <p>Default: 100</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
-    pub fn offering_type(&self) -> std::option::Option<&crate::types::OfferingTypeValues> {
+    pub fn offering_type(&self) -> std::option::Option<& crate::types::OfferingTypeValues> {
         self.offering_type.as_ref()
     }
 }
 impl DescribeReservedInstancesOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
-    pub fn builder() -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder {
         crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder::default()
     }
 }
@@ -166,8 +166,7 @@ pub struct DescribeReservedInstancesOfferingsInputBuilder {
     pub(crate) min_duration: std::option::Option<i64>,
     pub(crate) offering_class: std::option::Option<crate::types::OfferingClassType>,
     pub(crate) product_description: std::option::Option<crate::types::RiProductDescription>,
-    pub(crate) reserved_instances_offering_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) reserved_instances_offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) instance_tenancy: std::option::Option<crate::types::Tenancy>,
     pub(crate) max_results: std::option::Option<i32>,
@@ -181,53 +180,45 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li>
-    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
-    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li>
-    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
-    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li>
-    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li>
-    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
-    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li> 
+    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li> 
+    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li> 
+    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li> 
+    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li> 
+    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> 
+    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li> 
+    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> 
+    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li>
-    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li>
-    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li>
-    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li>
-    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li>
-    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li>
-    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li>
-    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li>
-    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>availability-zone</code> - The Availability Zone where the Reserved Instance can be used.</p> </li> 
+    /// <li> <p> <code>duration</code> - The duration of the Reserved Instance (for example, one year or three years), in seconds (<code>31536000</code> | <code>94608000</code>).</p> </li> 
+    /// <li> <p> <code>fixed-price</code> - The purchase price of the Reserved Instance (for example, 9800.0).</p> </li> 
+    /// <li> <p> <code>instance-type</code> - The instance type that is covered by the reservation.</p> </li> 
+    /// <li> <p> <code>marketplace</code> - Set to <code>true</code> to show only Reserved Instance Marketplace offerings. When this filter is not used, which is the default behavior, all offerings from both Amazon Web Services and the Reserved Instance Marketplace are listed.</p> </li> 
+    /// <li> <p> <code>product-description</code> - The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the product platform description will only be displayed to EC2-Classic account holders and are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> 
+    /// <li> <p> <code>reserved-instances-offering-id</code> - The Reserved Instances offering ID.</p> </li> 
+    /// <li> <p> <code>scope</code> - The scope of the Reserved Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> 
+    /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn include_marketplace(mut self, input: bool) -> Self {
@@ -236,8 +227,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>Include Reserved Instance Marketplace offerings in the response.</p>
     pub fn set_include_marketplace(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_marketplace = input;
-        self
+        self.include_marketplace = input; self
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -245,48 +235,41 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: std::option::Option<crate::types::InstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: std::option::Option<crate::types::InstanceType>) -> Self {
+        self.instance_type = input; self
     }
-    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 94608000 (3 years)</p>
     pub fn max_duration(mut self, input: i64) -> Self {
         self.max_duration = Some(input);
         self
     }
-    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The maximum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 94608000 (3 years)</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i64>) -> Self {
-        self.max_duration = input;
-        self
+        self.max_duration = input; self
     }
-    /// <p>The maximum number of instances to filter when searching for offerings.</p>
+    /// <p>The maximum number of instances to filter when searching for offerings.</p> 
     /// <p>Default: 20</p>
     pub fn max_instance_count(mut self, input: i32) -> Self {
         self.max_instance_count = Some(input);
         self
     }
-    /// <p>The maximum number of instances to filter when searching for offerings.</p>
+    /// <p>The maximum number of instances to filter when searching for offerings.</p> 
     /// <p>Default: 20</p>
     pub fn set_max_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_instance_count = input;
-        self
+        self.max_instance_count = input; self
     }
-    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 2592000 (1 month)</p>
     pub fn min_duration(mut self, input: i64) -> Self {
         self.min_duration = Some(input);
         self
     }
-    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p>
+    /// <p>The minimum duration (in seconds) to filter when searching for offerings.</p> 
     /// <p>Default: 2592000 (1 month)</p>
     pub fn set_min_duration(mut self, input: std::option::Option<i64>) -> Self {
-        self.min_duration = input;
-        self
+        self.min_duration = input; self
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
     pub fn offering_class(mut self, input: crate::types::OfferingClassType) -> Self {
@@ -294,12 +277,8 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The offering class of the Reserved Instance. Can be <code>standard</code> or <code>convertible</code>.</p>
-    pub fn set_offering_class(
-        mut self,
-        input: std::option::Option<crate::types::OfferingClassType>,
-    ) -> Self {
-        self.offering_class = input;
-        self
+    pub fn set_offering_class(mut self, input: std::option::Option<crate::types::OfferingClassType>) -> Self {
+        self.offering_class = input; self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
     pub fn product_description(mut self, input: crate::types::RiProductDescription) -> Self {
@@ -307,34 +286,23 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The Reserved Instance product platform description. Instances that include <code>(Amazon VPC)</code> in the description are for use with Amazon VPC.</p>
-    pub fn set_product_description(
-        mut self,
-        input: std::option::Option<crate::types::RiProductDescription>,
-    ) -> Self {
-        self.product_description = input;
-        self
+    pub fn set_product_description(mut self, input: std::option::Option<crate::types::RiProductDescription>) -> Self {
+        self.product_description = input; self
     }
     /// Appends an item to `reserved_instances_offering_ids`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_offering_ids`](Self::set_reserved_instances_offering_ids).
     ///
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn reserved_instances_offering_ids(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn reserved_instances_offering_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.reserved_instances_offering_ids.unwrap_or_default();
-        v.push(input.into());
-        self.reserved_instances_offering_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.reserved_instances_offering_ids = Some(v);
+                        self
     }
     /// <p>One or more Reserved Instances offering IDs.</p>
-    pub fn set_reserved_instances_offering_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.reserved_instances_offering_ids = input;
-        self
+    pub fn set_reserved_instances_offering_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.reserved_instances_offering_ids = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -343,37 +311,31 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
-    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
-    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p> 
+    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p> 
     /// <p>Default: <code>default</code> </p>
     pub fn instance_tenancy(mut self, input: crate::types::Tenancy) -> Self {
         self.instance_tenancy = Some(input);
         self
     }
-    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p>
-    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p>
+    /// <p>The tenancy of the instances covered by the reservation. A Reserved Instance with a tenancy of <code>dedicated</code> is applied to instances that run in a VPC on single-tenant hardware (i.e., Dedicated Instances).</p> 
+    /// <p> <b>Important:</b> The <code>host</code> value cannot be used with this parameter. Use the <code>default</code> or <code>dedicated</code> values only.</p> 
     /// <p>Default: <code>default</code> </p>
-    pub fn set_instance_tenancy(
-        mut self,
-        input: std::option::Option<crate::types::Tenancy>,
-    ) -> Self {
-        self.instance_tenancy = input;
-        self
+    pub fn set_instance_tenancy(mut self, input: std::option::Option<crate::types::Tenancy>) -> Self {
+        self.instance_tenancy = input; self
     }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p> 
     /// <p>Default: 100</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. The maximum is 100.</p> 
     /// <p>Default: 100</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -382,8 +344,7 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
     pub fn offering_type(mut self, input: crate::types::OfferingTypeValues) -> Self {
@@ -391,15 +352,11 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type. </p>
-    pub fn set_offering_type(
-        mut self,
-        input: std::option::Option<crate::types::OfferingTypeValues>,
-    ) -> Self {
-        self.offering_type = input;
-        self
+    pub fn set_offering_type(mut self, input: std::option::Option<crate::types::OfferingTypeValues>) -> Self {
+        self.offering_type = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReservedInstancesOfferingsInput`](crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput).
-    pub fn build(self) -> Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsInput {
                 availability_zone: self.availability_zone
@@ -436,3 +393,4 @@ impl DescribeReservedInstancesOfferingsInputBuilder {
         )
     }
 }
+

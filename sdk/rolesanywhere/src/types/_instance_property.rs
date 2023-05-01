@@ -3,28 +3,24 @@
 /// <p>A key-value pair you set that identifies a property of the authenticating instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceProperty {
+pub struct InstanceProperty  {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>A list of instanceProperty objects. </p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     #[doc(hidden)]
     pub failed: std::option::Option<bool>,
 }
 impl InstanceProperty {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seen_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seen_at.as_ref()
     }
     /// <p>A list of instanceProperty objects. </p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
@@ -44,8 +40,7 @@ impl InstanceProperty {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InstancePropertyBuilder {
     pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) failed: std::option::Option<bool>,
 }
 impl InstancePropertyBuilder {
@@ -56,33 +51,22 @@ impl InstancePropertyBuilder {
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     pub fn set_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.seen_at = input;
-        self
+        self.seen_at = input; self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of instanceProperty objects. </p>
-    pub fn properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = Some(hash_map);
+                        self
     }
     /// <p>A list of instanceProperty objects. </p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     pub fn failed(mut self, input: bool) -> Self {
@@ -91,15 +75,18 @@ impl InstancePropertyBuilder {
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     pub fn set_failed(mut self, input: std::option::Option<bool>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// Consumes the builder and constructs a [`InstanceProperty`](crate::types::InstanceProperty).
     pub fn build(self) -> crate::types::InstanceProperty {
         crate::types::InstanceProperty {
-            seen_at: self.seen_at,
-            properties: self.properties,
-            failed: self.failed,
+            seen_at: self.seen_at
+            ,
+            properties: self.properties
+            ,
+            failed: self.failed
+            ,
         }
     }
 }
+

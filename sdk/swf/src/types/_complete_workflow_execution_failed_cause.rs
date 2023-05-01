@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let completeworkflowexecutionfailedcause = unimplemented!();
 /// match completeworkflowexecutionfailedcause {
@@ -30,68 +30,55 @@
 /// Specifically, when `completeworkflowexecutionfailedcause` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CompleteWorkflowExecutionFailedCause::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CompleteWorkflowExecutionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
     #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CompleteWorkflowExecutionFailedCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "OPERATION_NOT_PERMITTED" => {
-                CompleteWorkflowExecutionFailedCause::OperationNotPermitted
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OPERATION_NOT_PERMITTED" => CompleteWorkflowExecutionFailedCause::OperationNotPermitted,
+"UNHANDLED_DECISION" => CompleteWorkflowExecutionFailedCause::UnhandledDecision,
+other => CompleteWorkflowExecutionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "UNHANDLED_DECISION" => CompleteWorkflowExecutionFailedCause::UnhandledDecision,
-            other => CompleteWorkflowExecutionFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
 impl std::str::FromStr for CompleteWorkflowExecutionFailedCause {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CompleteWorkflowExecutionFailedCause::from(s))
-    }
-}
-impl CompleteWorkflowExecutionFailedCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CompleteWorkflowExecutionFailedCause::OperationNotPermitted => {
-                "OPERATION_NOT_PERMITTED"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CompleteWorkflowExecutionFailedCause::from(s))
+                }
             }
-            CompleteWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
-            CompleteWorkflowExecutionFailedCause::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
-    }
+impl CompleteWorkflowExecutionFailedCause {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CompleteWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+    CompleteWorkflowExecutionFailedCause::UnhandledDecision => "UNHANDLED_DECISION",
+    CompleteWorkflowExecutionFailedCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
+                }
+            }
 impl AsRef<str> for CompleteWorkflowExecutionFailedCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

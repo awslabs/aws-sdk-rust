@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSlackChannelConfigurationInput {
+pub struct UpdateSlackChannelConfigurationInput  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
@@ -21,20 +21,20 @@ pub struct UpdateSlackChannelConfigurationInput {
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     #[doc(hidden)]
     pub notify_on_resolve_case: std::option::Option<bool>,
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
     #[doc(hidden)]
     pub notify_on_case_severity: std::option::Option<crate::types::NotificationSeverityLevel>,
@@ -44,15 +44,15 @@ pub struct UpdateSlackChannelConfigurationInput {
 }
 impl UpdateSlackChannelConfigurationInput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// <p>The Slack channel name that you want to update.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -67,34 +67,32 @@ impl UpdateSlackChannelConfigurationInput {
     pub fn notify_on_resolve_case(&self) -> std::option::Option<bool> {
         self.notify_on_resolve_case
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
-    pub fn notify_on_case_severity(
-        &self,
-    ) -> std::option::Option<&crate::types::NotificationSeverityLevel> {
+    pub fn notify_on_case_severity(&self) -> std::option::Option<& crate::types::NotificationSeverityLevel> {
         self.notify_on_case_severity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_role_arn(&self) -> std::option::Option<& str> {
         self.channel_role_arn.as_deref()
     }
 }
 impl UpdateSlackChannelConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateSlackChannelConfigurationInput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput).
-    pub fn builder() -> crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder {
         crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder::default()
     }
 }
@@ -109,8 +107,7 @@ pub struct UpdateSlackChannelConfigurationInputBuilder {
     pub(crate) notify_on_create_or_reopen_case: std::option::Option<bool>,
     pub(crate) notify_on_add_correspondence_to_case: std::option::Option<bool>,
     pub(crate) notify_on_resolve_case: std::option::Option<bool>,
-    pub(crate) notify_on_case_severity:
-        std::option::Option<crate::types::NotificationSeverityLevel>,
+    pub(crate) notify_on_case_severity: std::option::Option<crate::types::NotificationSeverityLevel>,
     pub(crate) channel_role_arn: std::option::Option<std::string::String>,
 }
 impl UpdateSlackChannelConfigurationInputBuilder {
@@ -121,8 +118,7 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.team_id = input;
-        self
+        self.team_id = input; self
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +127,7 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
     pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// <p>The Slack channel name that you want to update.</p>
     pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +136,7 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     }
     /// <p>The Slack channel name that you want to update.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
@@ -151,8 +145,7 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
     pub fn set_notify_on_create_or_reopen_case(mut self, input: std::option::Option<bool>) -> Self {
-        self.notify_on_create_or_reopen_case = input;
-        self
+        self.notify_on_create_or_reopen_case = input; self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
     pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
@@ -160,12 +153,8 @@ impl UpdateSlackChannelConfigurationInputBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-    pub fn set_notify_on_add_correspondence_to_case(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.notify_on_add_correspondence_to_case = input;
-        self
+    pub fn set_notify_on_add_correspondence_to_case(mut self, input: std::option::Option<bool>) -> Self {
+        self.notify_on_add_correspondence_to_case = input; self
     }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
@@ -174,52 +163,44 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     }
     /// <p>Whether you want to get notified when a support case is resolved.</p>
     pub fn set_notify_on_resolve_case(mut self, input: std::option::Option<bool>) -> Self {
-        self.notify_on_resolve_case = input;
-        self
+        self.notify_on_resolve_case = input; self
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
-    pub fn notify_on_case_severity(
-        mut self,
-        input: crate::types::NotificationSeverityLevel,
-    ) -> Self {
+    pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
         self.notify_on_case_severity = Some(input);
         self
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
-    pub fn set_notify_on_case_severity(
-        mut self,
-        input: std::option::Option<crate::types::NotificationSeverityLevel>,
-    ) -> Self {
-        self.notify_on_case_severity = input;
-        self
+    pub fn set_notify_on_case_severity(mut self, input: std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
+        self.notify_on_case_severity = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn channel_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,16 +209,10 @@ impl UpdateSlackChannelConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     pub fn set_channel_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_role_arn = input;
-        self
+        self.channel_role_arn = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSlackChannelConfigurationInput`](crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationInput {
                 team_id: self.team_id
@@ -260,3 +235,4 @@ impl UpdateSlackChannelConfigurationInputBuilder {
         )
     }
 }
+

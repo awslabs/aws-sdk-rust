@@ -3,7 +3,7 @@
 /// <p>Gets suite run configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuiteRunConfiguration {
+pub struct SuiteRunConfiguration  {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
     #[doc(hidden)]
     pub primary_device: std::option::Option<crate::types::DeviceUnderTest>,
@@ -16,11 +16,11 @@ pub struct SuiteRunConfiguration {
 }
 impl SuiteRunConfiguration {
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-    pub fn primary_device(&self) -> std::option::Option<&crate::types::DeviceUnderTest> {
+    pub fn primary_device(&self) -> std::option::Option<& crate::types::DeviceUnderTest> {
         self.primary_device.as_ref()
     }
     /// <p>Sets test case list.</p>
-    pub fn selected_test_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn selected_test_list(&self) -> std::option::Option<& [std::string::String]> {
         self.selected_test_list.as_deref()
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
@@ -50,12 +50,8 @@ impl SuiteRunConfigurationBuilder {
         self
     }
     /// <p>Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.</p>
-    pub fn set_primary_device(
-        mut self,
-        input: std::option::Option<crate::types::DeviceUnderTest>,
-    ) -> Self {
-        self.primary_device = input;
-        self
+    pub fn set_primary_device(mut self, input: std::option::Option<crate::types::DeviceUnderTest>) -> Self {
+        self.primary_device = input; self
     }
     /// Appends an item to `selected_test_list`.
     ///
@@ -64,17 +60,13 @@ impl SuiteRunConfigurationBuilder {
     /// <p>Sets test case list.</p>
     pub fn selected_test_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.selected_test_list.unwrap_or_default();
-        v.push(input.into());
-        self.selected_test_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_test_list = Some(v);
+                        self
     }
     /// <p>Sets test case list.</p>
-    pub fn set_selected_test_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.selected_test_list = input;
-        self
+    pub fn set_selected_test_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.selected_test_list = input; self
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn parallel_run(mut self, input: bool) -> Self {
@@ -83,15 +75,19 @@ impl SuiteRunConfigurationBuilder {
     }
     /// <p>TRUE if multiple test suites run in parallel.</p>
     pub fn set_parallel_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.parallel_run = input;
-        self
+        self.parallel_run = input; self
     }
     /// Consumes the builder and constructs a [`SuiteRunConfiguration`](crate::types::SuiteRunConfiguration).
     pub fn build(self) -> crate::types::SuiteRunConfiguration {
         crate::types::SuiteRunConfiguration {
-            primary_device: self.primary_device,
-            selected_test_list: self.selected_test_list,
-            parallel_run: self.parallel_run.unwrap_or_default(),
+            primary_device: self.primary_device
+            ,
+            selected_test_list: self.selected_test_list
+            ,
+            parallel_run: self.parallel_run
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

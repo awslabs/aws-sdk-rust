@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpsItemOutput {
+pub struct GetOpsItemOutput  {
     /// <p>The OpsItem.</p>
     #[doc(hidden)]
     pub ops_item: std::option::Option<crate::types::OpsItem>,
@@ -10,15 +10,15 @@ pub struct GetOpsItemOutput {
 }
 impl GetOpsItemOutput {
     /// <p>The OpsItem.</p>
-    pub fn ops_item(&self) -> std::option::Option<&crate::types::OpsItem> {
+    pub fn ops_item(&self) -> std::option::Option<& crate::types::OpsItem> {
         self.ops_item.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetOpsItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetOpsItemOutput {
     /// Creates a new builder-style object to manufacture [`GetOpsItemOutput`](crate::operation::get_ops_item::GetOpsItemOutput).
     pub fn builder() -> crate::operation::get_ops_item::builders::GetOpsItemOutputBuilder {
@@ -41,23 +41,24 @@ impl GetOpsItemOutputBuilder {
     }
     /// <p>The OpsItem.</p>
     pub fn set_ops_item(mut self, input: std::option::Option<crate::types::OpsItem>) -> Self {
-        self.ops_item = input;
-        self
+        self.ops_item = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetOpsItemOutput`](crate::operation::get_ops_item::GetOpsItemOutput).
     pub fn build(self) -> crate::operation::get_ops_item::GetOpsItemOutput {
         crate::operation::get_ops_item::GetOpsItemOutput {
-            ops_item: self.ops_item,
+            ops_item: self.ops_item
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

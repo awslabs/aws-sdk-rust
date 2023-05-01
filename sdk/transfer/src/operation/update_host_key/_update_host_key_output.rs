@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHostKeyOutput {
+pub struct UpdateHostKeyOutput  {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct UpdateHostKeyOutput {
 }
 impl UpdateHostKeyOutput {
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns the host key identifier for the updated host key.</p>
-    pub fn host_key_id(&self) -> std::option::Option<&str> {
+    pub fn host_key_id(&self) -> std::option::Option<& str> {
         self.host_key_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateHostKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateHostKeyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateHostKeyOutput`](crate::operation::update_host_key::UpdateHostKeyOutput).
     pub fn builder() -> crate::operation::update_host_key::builders::UpdateHostKeyOutputBuilder {
@@ -49,8 +49,7 @@ impl UpdateHostKeyOutputBuilder {
     }
     /// <p>Returns the server identifier for the server that contains the updated host key.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>Returns the host key identifier for the updated host key.</p>
     pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl UpdateHostKeyOutputBuilder {
     }
     /// <p>Returns the host key identifier for the updated host key.</p>
     pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_key_id = input;
-        self
+        self.host_key_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateHostKeyOutput`](crate::operation::update_host_key::UpdateHostKeyOutput).
     pub fn build(self) -> crate::operation::update_host_key::UpdateHostKeyOutput {
         crate::operation::update_host_key::UpdateHostKeyOutput {
-            server_id: self.server_id,
-            host_key_id: self.host_key_id,
+            server_id: self.server_id
+            ,
+            host_key_id: self.host_key_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

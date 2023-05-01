@@ -3,7 +3,7 @@
 /// <p>The unaggregated field for a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnaggregatedField {
+pub struct UnaggregatedField  {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UnaggregatedField {
 }
 impl UnaggregatedField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(&self) -> std::option::Option<&crate::types::FormatConfiguration> {
+    pub fn format_configuration(&self) -> std::option::Option<& crate::types::FormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl UnaggregatedFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -60,12 +59,8 @@ impl UnaggregatedFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>UnaggregatedField</code>.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(mut self, input: crate::types::FormatConfiguration) -> Self {
@@ -73,19 +68,19 @@ impl UnaggregatedFieldBuilder {
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: std::option::Option<crate::types::FormatConfiguration>,
-    ) -> Self {
-        self.format_configuration = input;
-        self
+    pub fn set_format_configuration(mut self, input: std::option::Option<crate::types::FormatConfiguration>) -> Self {
+        self.format_configuration = input; self
     }
     /// Consumes the builder and constructs a [`UnaggregatedField`](crate::types::UnaggregatedField).
     pub fn build(self) -> crate::types::UnaggregatedField {
         crate::types::UnaggregatedField {
-            field_id: self.field_id,
-            column: self.column,
-            format_configuration: self.format_configuration,
+            field_id: self.field_id
+            ,
+            column: self.column
+            ,
+            format_configuration: self.format_configuration
+            ,
         }
     }
 }
+

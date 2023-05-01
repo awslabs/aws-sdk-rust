@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationComponentsOutput {
+pub struct ListApplicationComponentsOutput  {
     /// <p> The list of application components with detailed information about each component. </p>
     #[doc(hidden)]
-    pub application_component_infos:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationComponentDetail>>,
+    pub application_component_infos: std::option::Option<std::vec::Vec<crate::types::ApplicationComponentDetail>>,
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListApplicationComponentsOutput {
 }
 impl ListApplicationComponentsOutput {
     /// <p> The list of application components with detailed information about each component. </p>
-    pub fn application_component_infos(
-        &self,
-    ) -> std::option::Option<&[crate::types::ApplicationComponentDetail]> {
+    pub fn application_component_infos(&self) -> std::option::Option<& [crate::types::ApplicationComponentDetail]> {
         self.application_component_infos.as_deref()
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListApplicationComponentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListApplicationComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationComponentsOutput`](crate::operation::list_application_components::ListApplicationComponentsOutput).
-    pub fn builder() -> crate::operation::list_application_components::builders::ListApplicationComponentsOutputBuilder{
+    pub fn builder() -> crate::operation::list_application_components::builders::ListApplicationComponentsOutputBuilder {
         crate::operation::list_application_components::builders::ListApplicationComponentsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListApplicationComponentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListApplicationComponentsOutputBuilder {
-    pub(crate) application_component_infos:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationComponentDetail>>,
+    pub(crate) application_component_infos: std::option::Option<std::vec::Vec<crate::types::ApplicationComponentDetail>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListApplicationComponentsOutputBuilder {
     /// To override the contents of this collection use [`set_application_component_infos`](Self::set_application_component_infos).
     ///
     /// <p> The list of application components with detailed information about each component. </p>
-    pub fn application_component_infos(
-        mut self,
-        input: crate::types::ApplicationComponentDetail,
-    ) -> Self {
+    pub fn application_component_infos(mut self, input: crate::types::ApplicationComponentDetail) -> Self {
         let mut v = self.application_component_infos.unwrap_or_default();
-        v.push(input);
-        self.application_component_infos = Some(v);
-        self
+                        v.push(input);
+                        self.application_component_infos = Some(v);
+                        self
     }
     /// <p> The list of application components with detailed information about each component. </p>
-    pub fn set_application_component_infos(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationComponentDetail>>,
-    ) -> Self {
-        self.application_component_infos = input;
-        self
+    pub fn set_application_component_infos(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationComponentDetail>>) -> Self {
+        self.application_component_infos = input; self
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,26 +64,26 @@ impl ListApplicationComponentsOutputBuilder {
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListApplicationComponentsOutput`](crate::operation::list_application_components::ListApplicationComponentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_components::ListApplicationComponentsOutput {
+    pub fn build(self) -> crate::operation::list_application_components::ListApplicationComponentsOutput {
         crate::operation::list_application_components::ListApplicationComponentsOutput {
-            application_component_infos: self.application_component_infos,
-            next_token: self.next_token,
+            application_component_infos: self.application_component_infos
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

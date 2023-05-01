@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeModelCardOutput {
+pub struct DescribeModelCardOutput  {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
     #[doc(hidden)]
     pub model_card_arn: std::option::Option<std::string::String>,
@@ -15,12 +15,12 @@ pub struct DescribeModelCardOutput {
     /// <p>The content of the model card.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub model_card_status: std::option::Option<crate::types::ModelCardStatus>,
@@ -39,14 +39,14 @@ pub struct DescribeModelCardOutput {
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
     pub last_modified_by: std::option::Option<crate::types::UserContext>,
-    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
-    /// <ul>
-    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
-    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
-    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
-    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
-    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
-    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li> 
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li> 
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li> 
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li> 
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li> 
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub model_card_processing_status: std::option::Option<crate::types::ModelCardProcessingStatus>,
@@ -54,11 +54,11 @@ pub struct DescribeModelCardOutput {
 }
 impl DescribeModelCardOutput {
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
-    pub fn model_card_arn(&self) -> std::option::Option<&str> {
+    pub fn model_card_arn(&self) -> std::option::Option<& str> {
         self.model_card_arn.as_deref()
     }
     /// <p>The name of the model card.</p>
-    pub fn model_card_name(&self) -> std::option::Option<&str> {
+    pub fn model_card_name(&self) -> std::option::Option<& str> {
         self.model_card_name.as_deref()
     }
     /// <p>The version of the model card.</p>
@@ -66,55 +66,53 @@ impl DescribeModelCardOutput {
         self.model_card_version
     }
     /// <p>The content of the model card.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
-    pub fn model_card_status(&self) -> std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> std::option::Option<& crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>The security configuration used to protect model card content.</p>
-    pub fn security_config(&self) -> std::option::Option<&crate::types::ModelCardSecurityConfig> {
+    pub fn security_config(&self) -> std::option::Option<& crate::types::ModelCardSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>The date and time the model card was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>The date and time the model card was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
-    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
-    /// <ul>
-    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
-    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
-    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
-    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
-    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
-    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li> 
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li> 
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li> 
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li> 
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li> 
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li> 
     /// </ul>
-    pub fn model_card_processing_status(
-        &self,
-    ) -> std::option::Option<&crate::types::ModelCardProcessingStatus> {
+    pub fn model_card_processing_status(&self) -> std::option::Option<& crate::types::ModelCardProcessingStatus> {
         self.model_card_processing_status.as_ref()
     }
 }
-impl std::fmt::Debug for DescribeModelCardOutput {
+impl  std::fmt::Debug for DescribeModelCardOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeModelCardOutput");
         formatter.field("model_card_arn", &self.model_card_arn);
@@ -127,23 +125,19 @@ impl std::fmt::Debug for DescribeModelCardOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field(
-            "model_card_processing_status",
-            &self.model_card_processing_status,
-        );
+        formatter.field("model_card_processing_status", &self.model_card_processing_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
 impl aws_http::request_id::RequestId for DescribeModelCardOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeModelCardOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardOutput`](crate::operation::describe_model_card::DescribeModelCardOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder {
+    pub fn builder() -> crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder {
         crate::operation::describe_model_card::builders::DescribeModelCardOutputBuilder::default()
     }
 }
@@ -162,8 +156,7 @@ pub struct DescribeModelCardOutputBuilder {
     pub(crate) created_by: std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) model_card_processing_status:
-        std::option::Option<crate::types::ModelCardProcessingStatus>,
+    pub(crate) model_card_processing_status: std::option::Option<crate::types::ModelCardProcessingStatus>,
     _request_id: Option<String>,
 }
 impl DescribeModelCardOutputBuilder {
@@ -174,8 +167,7 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model card.</p>
     pub fn set_model_card_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_card_arn = input;
-        self
+        self.model_card_arn = input; self
     }
     /// <p>The name of the model card.</p>
     pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,8 +176,7 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The name of the model card.</p>
     pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_card_name = input;
-        self
+        self.model_card_name = input; self
     }
     /// <p>The version of the model card.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
@@ -194,8 +185,7 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The version of the model card.</p>
     pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.model_card_version = input;
-        self
+        self.model_card_version = input; self
     }
     /// <p>The content of the model card.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,33 +194,28 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>The content of the model card.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
         self.model_card_status = Some(input);
         self
     }
-    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p>
-    /// <ul>
-    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li>
-    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li>
-    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li>
-    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li>
+    /// <p>The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Draft</code>: The model card is a work in progress.</p> </li> 
+    /// <li> <p> <code>PendingReview</code>: The model card is pending review.</p> </li> 
+    /// <li> <p> <code>Approved</code>: The model card is approved.</p> </li> 
+    /// <li> <p> <code>Archived</code>: The model card is archived. No more updates should be made to the model card, but it can still be exported.</p> </li> 
     /// </ul>
-    pub fn set_model_card_status(
-        mut self,
-        input: std::option::Option<crate::types::ModelCardStatus>,
-    ) -> Self {
-        self.model_card_status = input;
-        self
+    pub fn set_model_card_status(mut self, input: std::option::Option<crate::types::ModelCardStatus>) -> Self {
+        self.model_card_status = input; self
     }
     /// <p>The security configuration used to protect model card content.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
@@ -238,12 +223,8 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>The security configuration used to protect model card content.</p>
-    pub fn set_security_config(
-        mut self,
-        input: std::option::Option<crate::types::ModelCardSecurityConfig>,
-    ) -> Self {
-        self.security_config = input;
-        self
+    pub fn set_security_config(mut self, input: std::option::Option<crate::types::ModelCardSecurityConfig>) -> Self {
+        self.security_config = input; self
     }
     /// <p>The date and time the model card was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -251,12 +232,8 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>The date and time the model card was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -265,8 +242,7 @@ impl DescribeModelCardOutputBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The date and time the model card was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -274,12 +250,8 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>The date and time the model card was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
@@ -287,68 +259,69 @@ impl DescribeModelCardOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: std::option::Option<crate::types::UserContext>,
-    ) -> Self {
-        self.last_modified_by = input;
-        self
+    pub fn set_last_modified_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+        self.last_modified_by = input; self
     }
-    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
-    /// <ul>
-    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
-    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
-    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
-    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
-    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
-    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li> 
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li> 
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li> 
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li> 
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li> 
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li> 
     /// </ul>
-    pub fn model_card_processing_status(
-        mut self,
-        input: crate::types::ModelCardProcessingStatus,
-    ) -> Self {
+    pub fn model_card_processing_status(mut self, input: crate::types::ModelCardProcessingStatus) -> Self {
         self.model_card_processing_status = Some(input);
         self
     }
-    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p>
-    /// <ul>
-    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li>
-    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li>
-    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li>
-    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li>
-    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li>
-    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li>
+    /// <p>The processing status of model card deletion. The <code>ModelCardProcessingStatus</code> updates throughout the different deletion steps.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DeletePending</code>: Model card deletion request received.</p> </li> 
+    /// <li> <p> <code>DeleteInProgress</code>: Model card deletion is in progress.</p> </li> 
+    /// <li> <p> <code>ContentDeleted</code>: Deleted model card content.</p> </li> 
+    /// <li> <p> <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model card.</p> </li> 
+    /// <li> <p> <code>DeleteCompleted</code>: Successfully deleted the model card.</p> </li> 
+    /// <li> <p> <code>DeleteFailed</code>: The model card failed to delete.</p> </li> 
     /// </ul>
-    pub fn set_model_card_processing_status(
-        mut self,
-        input: std::option::Option<crate::types::ModelCardProcessingStatus>,
-    ) -> Self {
-        self.model_card_processing_status = input;
-        self
+    pub fn set_model_card_processing_status(mut self, input: std::option::Option<crate::types::ModelCardProcessingStatus>) -> Self {
+        self.model_card_processing_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeModelCardOutput`](crate::operation::describe_model_card::DescribeModelCardOutput).
     pub fn build(self) -> crate::operation::describe_model_card::DescribeModelCardOutput {
         crate::operation::describe_model_card::DescribeModelCardOutput {
-            model_card_arn: self.model_card_arn,
-            model_card_name: self.model_card_name,
-            model_card_version: self.model_card_version.unwrap_or_default(),
-            content: self.content,
-            model_card_status: self.model_card_status,
-            security_config: self.security_config,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            model_card_processing_status: self.model_card_processing_status,
+            model_card_arn: self.model_card_arn
+            ,
+            model_card_name: self.model_card_name
+            ,
+            model_card_version: self.model_card_version
+                .unwrap_or_default()
+            ,
+            content: self.content
+            ,
+            model_card_status: self.model_card_status
+            ,
+            security_config: self.security_config
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            model_card_processing_status: self.model_card_processing_status
+            ,
             _request_id: self._request_id,
         }
     }
@@ -366,11 +339,9 @@ impl std::fmt::Debug for DescribeModelCardOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_modified_by", &self.last_modified_by);
-        formatter.field(
-            "model_card_processing_status",
-            &self.model_card_processing_status,
-        );
+        formatter.field("model_card_processing_status", &self.model_card_processing_status);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+

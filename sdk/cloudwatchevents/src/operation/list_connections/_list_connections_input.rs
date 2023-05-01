@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectionsInput {
+pub struct ListConnectionsInput  {
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
     #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListConnectionsInput {
 }
 impl ListConnectionsInput {
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
-    pub fn name_prefix(&self) -> std::option::Option<&str> {
+    pub fn name_prefix(&self) -> std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The state of the connection.</p>
-    pub fn connection_state(&self) -> std::option::Option<&crate::types::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<& crate::types::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of connections to return.</p>
@@ -58,8 +58,7 @@ impl ListConnectionsInputBuilder {
     }
     /// <p>A name prefix to filter results returned. Only connections with a name that starts with the prefix are returned.</p>
     pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>The state of the connection.</p>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
@@ -67,12 +66,8 @@ impl ListConnectionsInputBuilder {
         self
     }
     /// <p>The state of the connection.</p>
-    pub fn set_connection_state(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionState>,
-    ) -> Self {
-        self.connection_state = input;
-        self
+    pub fn set_connection_state(mut self, input: std::option::Option<crate::types::ConnectionState>) -> Self {
+        self.connection_state = input; self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl ListConnectionsInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of connections to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -91,21 +85,22 @@ impl ListConnectionsInputBuilder {
     }
     /// <p>The maximum number of connections to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListConnectionsInput`](crate::operation::list_connections::ListConnectionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_connections::ListConnectionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_connections::ListConnectionsInput {
-            name_prefix: self.name_prefix,
-            connection_state: self.connection_state,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> Result<crate::operation::list_connections::ListConnectionsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_connections::ListConnectionsInput {
+                name_prefix: self.name_prefix
+                ,
+                connection_state: self.connection_state
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

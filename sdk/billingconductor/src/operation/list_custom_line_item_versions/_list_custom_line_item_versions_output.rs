@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemVersionsOutput {
+pub struct ListCustomLineItemVersionsOutput  {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
     #[doc(hidden)]
-    pub custom_line_item_versions:
-        std::option::Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
+    pub custom_line_item_versions: std::option::Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListCustomLineItemVersionsOutput {
 }
 impl ListCustomLineItemVersionsOutput {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-    pub fn custom_line_item_versions(
-        &self,
-    ) -> std::option::Option<&[crate::types::CustomLineItemVersionListElement]> {
+    pub fn custom_line_item_versions(&self) -> std::option::Option<& [crate::types::CustomLineItemVersionListElement]> {
         self.custom_line_item_versions.as_deref()
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCustomLineItemVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCustomLineItemVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsOutput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput).
-    pub fn builder() -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsOutputBuilder {
         crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListCustomLineItemVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsOutputBuilder {
-    pub(crate) custom_line_item_versions:
-        std::option::Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
+    pub(crate) custom_line_item_versions: std::option::Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListCustomLineItemVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_custom_line_item_versions`](Self::set_custom_line_item_versions).
     ///
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-    pub fn custom_line_item_versions(
-        mut self,
-        input: crate::types::CustomLineItemVersionListElement,
-    ) -> Self {
+    pub fn custom_line_item_versions(mut self, input: crate::types::CustomLineItemVersionListElement) -> Self {
         let mut v = self.custom_line_item_versions.unwrap_or_default();
-        v.push(input);
-        self.custom_line_item_versions = Some(v);
-        self
+                        v.push(input);
+                        self.custom_line_item_versions = Some(v);
+                        self
     }
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
-    pub fn set_custom_line_item_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>,
-    ) -> Self {
-        self.custom_line_item_versions = input;
-        self
+    pub fn set_custom_line_item_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomLineItemVersionListElement>>) -> Self {
+        self.custom_line_item_versions = input; self
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,26 +64,26 @@ impl ListCustomLineItemVersionsOutputBuilder {
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCustomLineItemVersionsOutput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput {
+    pub fn build(self) -> crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput {
         crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsOutput {
-            custom_line_item_versions: self.custom_line_item_versions,
-            next_token: self.next_token,
+            custom_line_item_versions: self.custom_line_item_versions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

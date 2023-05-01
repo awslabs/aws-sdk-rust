@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApiMappingOutput {
+pub struct UpdateApiMappingOutput  {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -19,31 +19,30 @@ pub struct UpdateApiMappingOutput {
 }
 impl UpdateApiMappingOutput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The API mapping identifier.</p>
-    pub fn api_mapping_id(&self) -> std::option::Option<&str> {
+    pub fn api_mapping_id(&self) -> std::option::Option<& str> {
         self.api_mapping_id.as_deref()
     }
     /// <p>The API mapping key.</p>
-    pub fn api_mapping_key(&self) -> std::option::Option<&str> {
+    pub fn api_mapping_key(&self) -> std::option::Option<& str> {
         self.api_mapping_key.as_deref()
     }
     /// <p>The API stage.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> std::option::Option<& str> {
         self.stage.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateApiMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateApiMappingOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApiMappingOutput`](crate::operation::update_api_mapping::UpdateApiMappingOutput).
-    pub fn builder() -> crate::operation::update_api_mapping::builders::UpdateApiMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_api_mapping::builders::UpdateApiMappingOutputBuilder {
         crate::operation::update_api_mapping::builders::UpdateApiMappingOutputBuilder::default()
     }
 }
@@ -66,8 +65,7 @@ impl UpdateApiMappingOutputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The API mapping identifier.</p>
     pub fn api_mapping_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +74,7 @@ impl UpdateApiMappingOutputBuilder {
     }
     /// <p>The API mapping identifier.</p>
     pub fn set_api_mapping_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_mapping_id = input;
-        self
+        self.api_mapping_id = input; self
     }
     /// <p>The API mapping key.</p>
     pub fn api_mapping_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +83,7 @@ impl UpdateApiMappingOutputBuilder {
     }
     /// <p>The API mapping key.</p>
     pub fn set_api_mapping_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_mapping_key = input;
-        self
+        self.api_mapping_key = input; self
     }
     /// <p>The API stage.</p>
     pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,26 +92,30 @@ impl UpdateApiMappingOutputBuilder {
     }
     /// <p>The API stage.</p>
     pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateApiMappingOutput`](crate::operation::update_api_mapping::UpdateApiMappingOutput).
     pub fn build(self) -> crate::operation::update_api_mapping::UpdateApiMappingOutput {
         crate::operation::update_api_mapping::UpdateApiMappingOutput {
-            api_id: self.api_id,
-            api_mapping_id: self.api_mapping_id,
-            api_mapping_key: self.api_mapping_key,
-            stage: self.stage,
+            api_id: self.api_id
+            ,
+            api_mapping_id: self.api_mapping_id
+            ,
+            api_mapping_key: self.api_mapping_key
+            ,
+            stage: self.stage
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

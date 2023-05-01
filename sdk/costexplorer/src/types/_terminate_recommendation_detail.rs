@@ -3,7 +3,7 @@
 /// <p>Details on termination recommendation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateRecommendationDetail {
+pub struct TerminateRecommendationDetail  {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     #[doc(hidden)]
     pub estimated_monthly_savings: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TerminateRecommendationDetail {
 }
 impl TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings(&self) -> std::option::Option<& str> {
         self.estimated_monthly_savings.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl TerminateRecommendationDetailBuilder {
         self
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn set_estimated_monthly_savings(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.estimated_monthly_savings = input;
-        self
+    pub fn set_estimated_monthly_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.estimated_monthly_savings = input; self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl TerminateRecommendationDetailBuilder {
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// Consumes the builder and constructs a [`TerminateRecommendationDetail`](crate::types::TerminateRecommendationDetail).
     pub fn build(self) -> crate::types::TerminateRecommendationDetail {
         crate::types::TerminateRecommendationDetail {
-            estimated_monthly_savings: self.estimated_monthly_savings,
-            currency_code: self.currency_code,
+            estimated_monthly_savings: self.estimated_monthly_savings
+            ,
+            currency_code: self.currency_code
+            ,
         }
     }
 }
+

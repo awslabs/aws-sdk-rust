@@ -3,22 +3,20 @@
 /// <p>A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChapCredentialsInput {
+pub struct DescribeChapCredentialsInput  {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl DescribeChapCredentialsInput {
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
 impl DescribeChapCredentialsInput {
     /// Creates a new builder-style object to manufacture [`DescribeChapCredentialsInput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder {
         crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl DescribeChapCredentialsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeChapCredentialsInput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_chap_credentials::DescribeChapCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_chap_credentials::DescribeChapCredentialsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_chap_credentials::DescribeChapCredentialsInput {
-                target_arn: self.target_arn,
-            },
+                target_arn: self.target_arn
+                ,
+            }
         )
     }
 }
+

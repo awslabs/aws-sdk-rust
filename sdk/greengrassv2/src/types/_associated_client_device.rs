@@ -3,7 +3,7 @@
 /// <p>Contains information about a client device that is associated to a core device for cloud discovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedClientDevice {
+pub struct AssociatedClientDevice  {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AssociatedClientDevice {
 }
 impl AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub fn association_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_timestamp.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AssociatedClientDeviceBuilder {
     }
     /// <p>The name of the IoT thing that represents the associated client device.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
     pub fn association_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -52,18 +51,17 @@ impl AssociatedClientDeviceBuilder {
         self
     }
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub fn set_association_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.association_timestamp = input;
-        self
+    pub fn set_association_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.association_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`AssociatedClientDevice`](crate::types::AssociatedClientDevice).
     pub fn build(self) -> crate::types::AssociatedClientDevice {
         crate::types::AssociatedClientDevice {
-            thing_name: self.thing_name,
-            association_timestamp: self.association_timestamp,
+            thing_name: self.thing_name
+            ,
+            association_timestamp: self.association_timestamp
+            ,
         }
     }
 }
+

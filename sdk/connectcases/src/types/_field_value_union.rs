@@ -24,11 +24,7 @@ impl FieldValueUnion {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::types::FieldValueUnion::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
-        if let FieldValueUnion::BooleanValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldValueUnion::BooleanValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::FieldValueUnion::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -37,11 +33,7 @@ impl FieldValueUnion {
     /// Tries to convert the enum instance into [`DoubleValue`](crate::types::FieldValueUnion::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
-        if let FieldValueUnion::DoubleValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldValueUnion::DoubleValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::FieldValueUnion::DoubleValue).
     pub fn is_double_value(&self) -> bool {
@@ -50,11 +42,7 @@ impl FieldValueUnion {
     /// Tries to convert the enum instance into [`StringValue`](crate::types::FieldValueUnion::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FieldValueUnion::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldValueUnion::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::types::FieldValueUnion::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -65,3 +53,4 @@ impl FieldValueUnion {
         matches!(self, Self::Unknown)
     }
 }
+

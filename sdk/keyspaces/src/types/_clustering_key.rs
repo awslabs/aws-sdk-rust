@@ -3,7 +3,7 @@
 /// <p>The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusteringKey {
+pub struct ClusteringKey  {
     /// <p>The name(s) of the clustering column(s).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ClusteringKey {
 }
 impl ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    pub fn order_by(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order_by(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.order_by.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ClusteringKeyBuilder {
     }
     /// <p>The name(s) of the clustering column(s).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
     pub fn order_by(mut self, input: crate::types::SortOrder) -> Self {
@@ -53,14 +52,16 @@ impl ClusteringKeyBuilder {
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
     pub fn set_order_by(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order_by = input;
-        self
+        self.order_by = input; self
     }
     /// Consumes the builder and constructs a [`ClusteringKey`](crate::types::ClusteringKey).
     pub fn build(self) -> crate::types::ClusteringKey {
         crate::types::ClusteringKey {
-            name: self.name,
-            order_by: self.order_by,
+            name: self.name
+            ,
+            order_by: self.order_by
+            ,
         }
     }
 }
+

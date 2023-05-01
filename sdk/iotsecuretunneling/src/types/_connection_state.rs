@@ -3,7 +3,7 @@
 /// <p>The state of a connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionState {
+pub struct ConnectionState  {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ConnectionStatus>,
@@ -13,11 +13,11 @@ pub struct ConnectionState {
 }
 impl ConnectionState {
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ConnectionStatus> {
         self.status.as_ref()
     }
     /// <p>The last time the connection status was updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ConnectionStateBuilder {
         self
     }
     /// <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ConnectionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The last time the connection status was updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -55,18 +51,17 @@ impl ConnectionStateBuilder {
         self
     }
     /// <p>The last time the connection status was updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// Consumes the builder and constructs a [`ConnectionState`](crate::types::ConnectionState).
     pub fn build(self) -> crate::types::ConnectionState {
         crate::types::ConnectionState {
-            status: self.status,
-            last_updated_at: self.last_updated_at,
+            status: self.status
+            ,
+            last_updated_at: self.last_updated_at
+            ,
         }
     }
 }
+

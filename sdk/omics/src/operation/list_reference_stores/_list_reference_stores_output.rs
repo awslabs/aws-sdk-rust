@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReferenceStoresOutput {
+pub struct ListReferenceStoresOutput  {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,25 +13,23 @@ pub struct ListReferenceStoresOutput {
 }
 impl ListReferenceStoresOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of reference stores.</p>
-    pub fn reference_stores(&self) -> std::option::Option<&[crate::types::ReferenceStoreDetail]> {
+    pub fn reference_stores(&self) -> std::option::Option<& [crate::types::ReferenceStoreDetail]> {
         self.reference_stores.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReferenceStoresOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListReferenceStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder {
-        crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder {
+        crate::operation::list_reference_stores::builders::ListReferenceStoresOutputBuilder::default()
     }
 }
 
@@ -40,8 +38,7 @@ impl ListReferenceStoresOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListReferenceStoresOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) reference_stores:
-        std::option::Option<std::vec::Vec<crate::types::ReferenceStoreDetail>>,
+    pub(crate) reference_stores: std::option::Option<std::vec::Vec<crate::types::ReferenceStoreDetail>>,
     _request_id: Option<String>,
 }
 impl ListReferenceStoresOutputBuilder {
@@ -52,8 +49,7 @@ impl ListReferenceStoresOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `reference_stores`.
     ///
@@ -62,33 +58,32 @@ impl ListReferenceStoresOutputBuilder {
     /// <p>A list of reference stores.</p>
     pub fn reference_stores(mut self, input: crate::types::ReferenceStoreDetail) -> Self {
         let mut v = self.reference_stores.unwrap_or_default();
-        v.push(input);
-        self.reference_stores = Some(v);
-        self
+                        v.push(input);
+                        self.reference_stores = Some(v);
+                        self
     }
     /// <p>A list of reference stores.</p>
-    pub fn set_reference_stores(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReferenceStoreDetail>>,
-    ) -> Self {
-        self.reference_stores = input;
-        self
+    pub fn set_reference_stores(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReferenceStoreDetail>>) -> Self {
+        self.reference_stores = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListReferenceStoresOutput`](crate::operation::list_reference_stores::ListReferenceStoresOutput).
     pub fn build(self) -> crate::operation::list_reference_stores::ListReferenceStoresOutput {
         crate::operation::list_reference_stores::ListReferenceStoresOutput {
-            next_token: self.next_token,
-            reference_stores: self.reference_stores,
+            next_token: self.next_token
+            ,
+            reference_stores: self.reference_stores
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

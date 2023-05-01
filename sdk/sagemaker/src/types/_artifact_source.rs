@@ -3,7 +3,7 @@
 /// <p>A structure describing the source of an artifact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactSource {
+pub struct ArtifactSource  {
     /// <p>The URI of the source.</p>
     #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ArtifactSource {
 }
 impl ArtifactSource {
     /// <p>The URI of the source.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>A list of source types.</p>
-    pub fn source_types(&self) -> std::option::Option<&[crate::types::ArtifactSourceType]> {
+    pub fn source_types(&self) -> std::option::Option<& [crate::types::ArtifactSourceType]> {
         self.source_types.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ArtifactSourceBuilder {
     }
     /// <p>The URI of the source.</p>
     pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_uri = input;
-        self
+        self.source_uri = input; self
     }
     /// Appends an item to `source_types`.
     ///
@@ -53,23 +52,22 @@ impl ArtifactSourceBuilder {
     /// <p>A list of source types.</p>
     pub fn source_types(mut self, input: crate::types::ArtifactSourceType) -> Self {
         let mut v = self.source_types.unwrap_or_default();
-        v.push(input);
-        self.source_types = Some(v);
-        self
+                        v.push(input);
+                        self.source_types = Some(v);
+                        self
     }
     /// <p>A list of source types.</p>
-    pub fn set_source_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ArtifactSourceType>>,
-    ) -> Self {
-        self.source_types = input;
-        self
+    pub fn set_source_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ArtifactSourceType>>) -> Self {
+        self.source_types = input; self
     }
     /// Consumes the builder and constructs a [`ArtifactSource`](crate::types::ArtifactSource).
     pub fn build(self) -> crate::types::ArtifactSource {
         crate::types::ArtifactSource {
-            source_uri: self.source_uri,
-            source_types: self.source_types,
+            source_uri: self.source_uri
+            ,
+            source_types: self.source_types
+            ,
         }
     }
 }
+

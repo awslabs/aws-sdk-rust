@@ -3,7 +3,7 @@
 /// <p>A range of ports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortRange {
+pub struct PortRange  {
     /// <p>The first port in the port range.</p>
     #[doc(hidden)]
     pub begin: i32,
@@ -43,8 +43,7 @@ impl PortRangeBuilder {
     }
     /// <p>The first port in the port range.</p>
     pub fn set_begin(mut self, input: std::option::Option<i32>) -> Self {
-        self.begin = input;
-        self
+        self.begin = input; self
     }
     /// <p>The last port in the port range.</p>
     pub fn end(mut self, input: i32) -> Self {
@@ -53,14 +52,18 @@ impl PortRangeBuilder {
     }
     /// <p>The last port in the port range.</p>
     pub fn set_end(mut self, input: std::option::Option<i32>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// Consumes the builder and constructs a [`PortRange`](crate::types::PortRange).
     pub fn build(self) -> crate::types::PortRange {
         crate::types::PortRange {
-            begin: self.begin.unwrap_or_default(),
-            end: self.end.unwrap_or_default(),
+            begin: self.begin
+                .unwrap_or_default()
+            ,
+            end: self.end
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

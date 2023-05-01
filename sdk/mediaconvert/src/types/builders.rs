@@ -303,6 +303,8 @@ pub use crate::types::_hls_rendition_group_settings::HlsRenditionGroupSettingsBu
 
 pub use crate::types::_audio_selector_group::AudioSelectorGroupBuilder;
 
+pub use crate::types::_advanced_input_filter_settings::AdvancedInputFilterSettingsBuilder;
+
 pub use crate::types::_extended_data_services::ExtendedDataServicesBuilder;
 
 pub use crate::types::_esam_settings::EsamSettingsBuilder;
@@ -346,3 +348,4 @@ pub use crate::types::_video_detail::VideoDetailBuilder;
 pub use crate::types::_job_messages::JobMessagesBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
+

@@ -3,7 +3,7 @@
 /// <p>Specifies code that runs when a job is run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobCommand {
+pub struct JobCommand  {
     /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct JobCommand {
 }
 impl JobCommand {
     /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
-    pub fn script_location(&self) -> std::option::Option<&str> {
+    pub fn script_location(&self) -> std::option::Option<& str> {
         self.script_location.as_deref()
     }
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
-    pub fn python_version(&self) -> std::option::Option<&str> {
+    pub fn python_version(&self) -> std::option::Option<& str> {
         self.python_version.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl JobCommandBuilder {
     }
     /// <p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
     pub fn script_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl JobCommandBuilder {
     }
     /// <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that runs a job.</p>
     pub fn set_script_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.script_location = input;
-        self
+        self.script_location = input; self
     }
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub fn python_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl JobCommandBuilder {
     }
     /// <p>The Python version being used to run a Python shell job. Allowed values are 2 or 3.</p>
     pub fn set_python_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.python_version = input;
-        self
+        self.python_version = input; self
     }
     /// Consumes the builder and constructs a [`JobCommand`](crate::types::JobCommand).
     pub fn build(self) -> crate::types::JobCommand {
         crate::types::JobCommand {
-            name: self.name,
-            script_location: self.script_location,
-            python_version: self.python_version,
+            name: self.name
+            ,
+            script_location: self.script_location
+            ,
+            python_version: self.python_version
+            ,
         }
     }
 }
+

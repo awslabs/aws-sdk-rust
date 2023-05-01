@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEvidenceFoldersByAssessmentInput {
+pub struct GetEvidenceFoldersByAssessmentInput  {
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetEvidenceFoldersByAssessmentInput {
 }
 impl GetEvidenceFoldersByAssessmentInput {
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<&str> {
+    pub fn assessment_id(&self) -> std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -29,7 +29,7 @@ impl GetEvidenceFoldersByAssessmentInput {
 }
 impl GetEvidenceFoldersByAssessmentInput {
     /// Creates a new builder-style object to manufacture [`GetEvidenceFoldersByAssessmentInput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput).
-    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder{
+    pub fn builder() -> crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder {
         crate::operation::get_evidence_folders_by_assessment::builders::GetEvidenceFoldersByAssessmentInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetEvidenceFoldersByAssessmentInputBuilder {
     }
     /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetEvidenceFoldersByAssessmentInputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,16 +68,10 @@ impl GetEvidenceFoldersByAssessmentInputBuilder {
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetEvidenceFoldersByAssessmentInput`](crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentInput {
                 assessment_id: self.assessment_id
@@ -92,3 +84,4 @@ impl GetEvidenceFoldersByAssessmentInputBuilder {
         )
     }
 }
+

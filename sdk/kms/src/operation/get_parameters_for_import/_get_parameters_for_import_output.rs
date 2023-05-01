@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetParametersForImportOutput {
+pub struct GetParametersForImportOutput  {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct GetParametersForImportOutput {
 }
 impl GetParametersForImportOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
-    pub fn import_token(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn import_token(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.import_token.as_ref()
     }
     /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
-    pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn public_key(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.public_key.as_ref()
     }
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
-    pub fn parameters_valid_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn parameters_valid_to(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.parameters_valid_to.as_ref()
     }
 }
-impl std::fmt::Debug for GetParametersForImportOutput {
+impl  std::fmt::Debug for GetParametersForImportOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetParametersForImportOutput");
         formatter.field("key_id", &self.key_id);
@@ -47,15 +47,13 @@ impl std::fmt::Debug for GetParametersForImportOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetParametersForImportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetParametersForImportOutput {
     /// Creates a new builder-style object to manufacture [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn builder(
-    ) -> crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder {
         crate::operation::get_parameters_for_import::builders::GetParametersForImportOutputBuilder::default()
     }
 }
@@ -78,8 +76,7 @@ impl GetParametersForImportOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key to use in a subsequent <code>ImportKeyMaterial</code> request. This is the same KMS key specified in the <code>GetParametersForImport</code> request.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
     pub fn import_token(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -88,8 +85,7 @@ impl GetParametersForImportOutputBuilder {
     }
     /// <p>The import token to send in a subsequent <code>ImportKeyMaterial</code> request.</p>
     pub fn set_import_token(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.import_token = input;
-        self
+        self.import_token = input; self
     }
     /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
     pub fn public_key(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -98,8 +94,7 @@ impl GetParametersForImportOutputBuilder {
     }
     /// <p>The public key to use to encrypt the key material before importing it with <code>ImportKeyMaterial</code>.</p>
     pub fn set_public_key(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.public_key = input;
-        self
+        self.public_key = input; self
     }
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
     pub fn parameters_valid_to(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -107,31 +102,29 @@ impl GetParametersForImportOutputBuilder {
         self
     }
     /// <p>The time at which the import token and public key are no longer valid. After this time, you cannot use them to make an <code>ImportKeyMaterial</code> request and you must send another <code>GetParametersForImport</code> request to get new ones.</p>
-    pub fn set_parameters_valid_to(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.parameters_valid_to = input;
-        self
+    pub fn set_parameters_valid_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.parameters_valid_to = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetParametersForImportOutput`](crate::operation::get_parameters_for_import::GetParametersForImportOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
+    pub fn build(self) -> crate::operation::get_parameters_for_import::GetParametersForImportOutput {
         crate::operation::get_parameters_for_import::GetParametersForImportOutput {
-            key_id: self.key_id,
-            import_token: self.import_token,
-            public_key: self.public_key,
-            parameters_valid_to: self.parameters_valid_to,
+            key_id: self.key_id
+            ,
+            import_token: self.import_token
+            ,
+            public_key: self.public_key
+            ,
+            parameters_valid_to: self.parameters_valid_to
+            ,
             _request_id: self._request_id,
         }
     }
@@ -147,3 +140,4 @@ impl std::fmt::Debug for GetParametersForImportOutputBuilder {
         formatter.finish()
     }
 }
+

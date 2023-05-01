@@ -3,20 +3,20 @@
 /// <p>Changes the status of a journey.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JourneyStateRequest {
-    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
-    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p>
-    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p>
+pub struct JourneyStateRequest  {
+    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> 
+    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> 
+    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> 
     /// <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::State>,
 }
 impl JourneyStateRequest {
-    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
-    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p>
-    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p>
+    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> 
+    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> 
+    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> 
     /// <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
 }
@@ -34,24 +34,27 @@ pub struct JourneyStateRequestBuilder {
     pub(crate) state: std::option::Option<crate::types::State>,
 }
 impl JourneyStateRequestBuilder {
-    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
-    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p>
-    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p>
+    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> 
+    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> 
+    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> 
     /// <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
         self.state = Some(input);
         self
     }
-    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
-    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p>
-    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p>
+    /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> 
+    /// <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> 
+    /// <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> 
     /// <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`JourneyStateRequest`](crate::types::JourneyStateRequest).
     pub fn build(self) -> crate::types::JourneyStateRequest {
-        crate::types::JourneyStateRequest { state: self.state }
+        crate::types::JourneyStateRequest {
+            state: self.state
+            ,
+        }
     }
 }
+

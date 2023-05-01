@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentVersionsOutput {
+pub struct DescribeDocumentVersionsOutput  {
     /// <p>The document versions.</p>
     #[doc(hidden)]
-    pub document_versions:
-        std::option::Option<std::vec::Vec<crate::types::DocumentVersionMetadata>>,
+    pub document_versions: std::option::Option<std::vec::Vec<crate::types::DocumentVersionMetadata>>,
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct DescribeDocumentVersionsOutput {
 }
 impl DescribeDocumentVersionsOutput {
     /// <p>The document versions.</p>
-    pub fn document_versions(
-        &self,
-    ) -> std::option::Option<&[crate::types::DocumentVersionMetadata]> {
+    pub fn document_versions(&self) -> std::option::Option<& [crate::types::DocumentVersionMetadata]> {
         self.document_versions.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDocumentVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDocumentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder {
         crate::operation::describe_document_versions::builders::DescribeDocumentVersionsOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl DescribeDocumentVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDocumentVersionsOutputBuilder {
-    pub(crate) document_versions:
-        std::option::Option<std::vec::Vec<crate::types::DocumentVersionMetadata>>,
+    pub(crate) document_versions: std::option::Option<std::vec::Vec<crate::types::DocumentVersionMetadata>>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl DescribeDocumentVersionsOutputBuilder {
     /// <p>The document versions.</p>
     pub fn document_versions(mut self, input: crate::types::DocumentVersionMetadata) -> Self {
         let mut v = self.document_versions.unwrap_or_default();
-        v.push(input);
-        self.document_versions = Some(v);
-        self
+                        v.push(input);
+                        self.document_versions = Some(v);
+                        self
     }
     /// <p>The document versions.</p>
-    pub fn set_document_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentVersionMetadata>>,
-    ) -> Self {
-        self.document_versions = input;
-        self
+    pub fn set_document_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentVersionMetadata>>) -> Self {
+        self.document_versions = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,26 +64,26 @@ impl DescribeDocumentVersionsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDocumentVersionsOutput`](crate::operation::describe_document_versions::DescribeDocumentVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_document_versions::DescribeDocumentVersionsOutput {
+    pub fn build(self) -> crate::operation::describe_document_versions::DescribeDocumentVersionsOutput {
         crate::operation::describe_document_versions::DescribeDocumentVersionsOutput {
-            document_versions: self.document_versions,
-            marker: self.marker,
+            document_versions: self.document_versions
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

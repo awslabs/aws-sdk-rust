@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectorModelVersionsInput {
+pub struct ListDetectorModelVersionsInput  {
     /// <p>The name of the detector model whose versions are returned.</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListDetectorModelVersionsInput {
 }
 impl ListDetectorModelVersionsInput {
     /// <p>The name of the detector model whose versions are returned.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The token that you can use to return the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -29,7 +29,7 @@ impl ListDetectorModelVersionsInput {
 }
 impl ListDetectorModelVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelVersionsInput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput).
-    pub fn builder() -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder {
         crate::operation::list_detector_model_versions::builders::ListDetectorModelVersionsInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl ListDetectorModelVersionsInputBuilder {
         self
     }
     /// <p>The name of the detector model whose versions are returned.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.detector_model_name = input;
-        self
+    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.detector_model_name = input; self
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl ListDetectorModelVersionsInputBuilder {
     }
     /// <p>The token that you can use to return the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,22 +68,20 @@ impl ListDetectorModelVersionsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListDetectorModelVersionsInput`](crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_detector_model_versions::ListDetectorModelVersionsInput {
-                detector_model_name: self.detector_model_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                detector_model_name: self.detector_model_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

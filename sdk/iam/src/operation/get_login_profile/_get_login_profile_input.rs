@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoginProfileInput {
-    /// <p>The name of the user whose login profile you want to retrieve.</p>
+pub struct GetLoginProfileInput  {
+    /// <p>The name of the user whose login profile you want to retrieve.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl GetLoginProfileInput {
-    /// <p>The name of the user whose login profile you want to retrieve.</p>
+    /// <p>The name of the user whose login profile you want to retrieve.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -29,27 +29,25 @@ pub struct GetLoginProfileInputBuilder {
     pub(crate) user_name: std::option::Option<std::string::String>,
 }
 impl GetLoginProfileInputBuilder {
-    /// <p>The name of the user whose login profile you want to retrieve.</p>
+    /// <p>The name of the user whose login profile you want to retrieve.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the user whose login profile you want to retrieve.</p>
+    /// <p>The name of the user whose login profile you want to retrieve.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// Consumes the builder and constructs a [`GetLoginProfileInput`](crate::operation::get_login_profile::GetLoginProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_login_profile::GetLoginProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_login_profile::GetLoginProfileInput {
-            user_name: self.user_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_login_profile::GetLoginProfileInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_login_profile::GetLoginProfileInput {
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

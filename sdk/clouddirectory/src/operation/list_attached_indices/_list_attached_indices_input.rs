@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedIndicesInput {
+pub struct ListAttachedIndicesInput  {
     /// <p>The ARN of the directory.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListAttachedIndicesInput {
 }
 impl ListAttachedIndicesInput {
     /// <p>The ARN of the directory.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.target_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -37,16 +37,14 @@ impl ListAttachedIndicesInput {
         self.max_results
     }
     /// <p>The consistency level to use for this operation.</p>
-    pub fn consistency_level(&self) -> std::option::Option<&crate::types::ConsistencyLevel> {
+    pub fn consistency_level(&self) -> std::option::Option<& crate::types::ConsistencyLevel> {
         self.consistency_level.as_ref()
     }
 }
 impl ListAttachedIndicesInput {
     /// Creates a new builder-style object to manufacture [`ListAttachedIndicesInput`](crate::operation::list_attached_indices::ListAttachedIndicesInput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder {
-        crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder {
+        crate::operation::list_attached_indices::builders::ListAttachedIndicesInputBuilder::default()
     }
 }
 
@@ -68,8 +66,7 @@ impl ListAttachedIndicesInputBuilder {
     }
     /// <p>The ARN of the directory.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>A reference to the object that has indices attached.</p>
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -77,12 +74,8 @@ impl ListAttachedIndicesInputBuilder {
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.target_reference = input;
-        self
+    pub fn set_target_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.target_reference = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +84,7 @@ impl ListAttachedIndicesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -101,8 +93,7 @@ impl ListAttachedIndicesInputBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The consistency level to use for this operation.</p>
     pub fn consistency_level(mut self, input: crate::types::ConsistencyLevel) -> Self {
@@ -110,28 +101,25 @@ impl ListAttachedIndicesInputBuilder {
         self
     }
     /// <p>The consistency level to use for this operation.</p>
-    pub fn set_consistency_level(
-        mut self,
-        input: std::option::Option<crate::types::ConsistencyLevel>,
-    ) -> Self {
-        self.consistency_level = input;
-        self
+    pub fn set_consistency_level(mut self, input: std::option::Option<crate::types::ConsistencyLevel>) -> Self {
+        self.consistency_level = input; self
     }
     /// Consumes the builder and constructs a [`ListAttachedIndicesInput`](crate::operation::list_attached_indices::ListAttachedIndicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_attached_indices::ListAttachedIndicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_attached_indices::ListAttachedIndicesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_attached_indices::ListAttachedIndicesInput {
-                directory_arn: self.directory_arn,
-                target_reference: self.target_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                consistency_level: self.consistency_level,
-            },
+                directory_arn: self.directory_arn
+                ,
+                target_reference: self.target_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                consistency_level: self.consistency_level
+                ,
+            }
         )
     }
 }
+

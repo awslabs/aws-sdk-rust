@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountSettingsInput {
+pub struct DescribeAccountSettingsInput  {
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl DescribeAccountSettingsInput {
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
 impl DescribeAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountSettingsInput`](crate::operation::describe_account_settings::DescribeAccountSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder {
         crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DescribeAccountSettingsInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAccountSettingsInput`](crate::operation::describe_account_settings::DescribeAccountSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_account_settings::DescribeAccountSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_account_settings::DescribeAccountSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_account_settings::DescribeAccountSettingsInput {
-                aws_account_id: self.aws_account_id,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A response that contains details on the results of a finding aggregation by repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryAggregationResponse {
+pub struct RepositoryAggregationResponse  {
     /// <p>The name of the repository associated with the findings.</p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct RepositoryAggregationResponse {
 }
 impl RepositoryAggregationResponse {
     /// <p>The name of the repository associated with the findings.</p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
     /// <p>The number of container images impacted by the findings.</p>
@@ -59,8 +59,7 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>The name of the repository associated with the findings.</p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -78,12 +76,8 @@ impl RepositoryAggregationResponseBuilder {
         self
     }
     /// <p>An object that represent the count of matched findings per severity.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
-        self.severity_counts = input;
-        self
+    pub fn set_severity_counts(mut self, input: std::option::Option<crate::types::SeverityCounts>) -> Self {
+        self.severity_counts = input; self
     }
     /// <p>The number of container images impacted by the findings.</p>
     pub fn affected_images(mut self, input: i64) -> Self {
@@ -92,16 +86,20 @@ impl RepositoryAggregationResponseBuilder {
     }
     /// <p>The number of container images impacted by the findings.</p>
     pub fn set_affected_images(mut self, input: std::option::Option<i64>) -> Self {
-        self.affected_images = input;
-        self
+        self.affected_images = input; self
     }
     /// Consumes the builder and constructs a [`RepositoryAggregationResponse`](crate::types::RepositoryAggregationResponse).
     pub fn build(self) -> crate::types::RepositoryAggregationResponse {
         crate::types::RepositoryAggregationResponse {
-            repository: self.repository,
-            account_id: self.account_id,
-            severity_counts: self.severity_counts,
-            affected_images: self.affected_images,
+            repository: self.repository
+            ,
+            account_id: self.account_id
+            ,
+            severity_counts: self.severity_counts
+            ,
+            affected_images: self.affected_images
+            ,
         }
     }
 }
+

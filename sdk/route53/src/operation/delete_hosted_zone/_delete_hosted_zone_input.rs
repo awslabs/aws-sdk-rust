@@ -3,21 +3,20 @@
 /// <p>A request to delete a hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHostedZoneInput {
+pub struct DeleteHostedZoneInput  {
     /// <p>The ID of the hosted zone you want to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteHostedZoneInput {
     /// <p>The ID of the hosted zone you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteHostedZoneInput {
     /// Creates a new builder-style object to manufacture [`DeleteHostedZoneInput`](crate::operation::delete_hosted_zone::DeleteHostedZoneInput).
-    pub fn builder() -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneInputBuilder {
         crate::operation::delete_hosted_zone::builders::DeleteHostedZoneInputBuilder::default()
     }
 }
@@ -36,16 +35,16 @@ impl DeleteHostedZoneInputBuilder {
     }
     /// <p>The ID of the hosted zone you want to delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteHostedZoneInput`](crate::operation::delete_hosted_zone::DeleteHostedZoneInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_hosted_zone::DeleteHostedZoneInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_hosted_zone::DeleteHostedZoneInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::delete_hosted_zone::DeleteHostedZoneInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_hosted_zone::DeleteHostedZoneInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

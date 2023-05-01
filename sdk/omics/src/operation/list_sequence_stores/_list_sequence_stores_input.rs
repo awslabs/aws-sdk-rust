@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSequenceStoresInput {
+pub struct ListSequenceStoresInput  {
     /// <p>The maximum number of stores to return in one page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,18 +19,17 @@ impl ListSequenceStoresInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::SequenceStoreFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::SequenceStoreFilter> {
         self.filter.as_ref()
     }
 }
 impl ListSequenceStoresInput {
     /// Creates a new builder-style object to manufacture [`ListSequenceStoresInput`](crate::operation::list_sequence_stores::ListSequenceStoresInput).
-    pub fn builder(
-    ) -> crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder {
+    pub fn builder() -> crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder {
         crate::operation::list_sequence_stores::builders::ListSequenceStoresInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListSequenceStoresInputBuilder {
     }
     /// <p>The maximum number of stores to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl ListSequenceStoresInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::SequenceStoreFilter) -> Self {
@@ -70,26 +67,21 @@ impl ListSequenceStoresInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::SequenceStoreFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::SequenceStoreFilter>) -> Self {
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`ListSequenceStoresInput`](crate::operation::list_sequence_stores::ListSequenceStoresInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_sequence_stores::ListSequenceStoresInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_sequence_stores::ListSequenceStoresInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_sequence_stores::ListSequenceStoresInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter: self.filter
+                ,
+            }
         )
     }
 }
+

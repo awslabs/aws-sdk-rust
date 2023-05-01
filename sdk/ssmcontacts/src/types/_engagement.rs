@@ -3,7 +3,7 @@
 /// <p>Incident Manager reaching out to a contact or escalation plan to engage contact during an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Engagement {
+pub struct Engagement  {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct Engagement {
 }
 impl Engagement {
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+    pub fn engagement_arn(&self) -> std::option::Option<& str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<&str> {
+    pub fn sender(&self) -> std::option::Option<& str> {
         self.sender.as_deref()
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
-    pub fn incident_id(&self) -> std::option::Option<&str> {
+    pub fn incident_id(&self) -> std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that the engagement began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl EngagementBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engagement_arn = input;
-        self
+        self.engagement_arn = input; self
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
     pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl EngagementBuilder {
     }
     /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The user that started the engagement.</p>
     pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl EngagementBuilder {
     }
     /// <p>The user that started the engagement.</p>
     pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender = input;
-        self
+        self.sender = input; self
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +102,7 @@ impl EngagementBuilder {
     }
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_id = input;
-        self
+        self.incident_id = input; self
     }
     /// <p>The time that the engagement began.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,12 +110,8 @@ impl EngagementBuilder {
         self
     }
     /// <p>The time that the engagement began.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The time that the engagement ended.</p>
     pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -128,18 +120,24 @@ impl EngagementBuilder {
     }
     /// <p>The time that the engagement ended.</p>
     pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input;
-        self
+        self.stop_time = input; self
     }
     /// Consumes the builder and constructs a [`Engagement`](crate::types::Engagement).
     pub fn build(self) -> crate::types::Engagement {
         crate::types::Engagement {
-            engagement_arn: self.engagement_arn,
-            contact_arn: self.contact_arn,
-            sender: self.sender,
-            incident_id: self.incident_id,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
+            engagement_arn: self.engagement_arn
+            ,
+            contact_arn: self.contact_arn
+            ,
+            sender: self.sender
+            ,
+            incident_id: self.incident_id
+            ,
+            start_time: self.start_time
+            ,
+            stop_time: self.stop_time
+            ,
         }
     }
 }
+

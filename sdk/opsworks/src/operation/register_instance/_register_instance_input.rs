@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterInstanceInput {
+pub struct RegisterInstanceInput  {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -27,38 +27,37 @@ pub struct RegisterInstanceInput {
 }
 impl RegisterInstanceInput {
     /// <p>The ID of the stack that the instance is to be registered with.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The instance's hostname.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The instance's public IP address.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>The instance's private IP address.</p>
-    pub fn private_ip(&self) -> std::option::Option<&str> {
+    pub fn private_ip(&self) -> std::option::Option<& str> {
         self.private_ip.as_deref()
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-    pub fn rsa_public_key(&self) -> std::option::Option<&str> {
+    pub fn rsa_public_key(&self) -> std::option::Option<& str> {
         self.rsa_public_key.as_deref()
     }
     /// <p>The instances public RSA key fingerprint.</p>
-    pub fn rsa_public_key_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn rsa_public_key_fingerprint(&self) -> std::option::Option<& str> {
         self.rsa_public_key_fingerprint.as_deref()
     }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-    pub fn instance_identity(&self) -> std::option::Option<&crate::types::InstanceIdentity> {
+    pub fn instance_identity(&self) -> std::option::Option<& crate::types::InstanceIdentity> {
         self.instance_identity.as_ref()
     }
 }
 impl RegisterInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
-    pub fn builder() -> crate::operation::register_instance::builders::RegisterInstanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_instance::builders::RegisterInstanceInputBuilder {
         crate::operation::register_instance::builders::RegisterInstanceInputBuilder::default()
     }
 }
@@ -83,8 +82,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>The ID of the stack that the instance is to be registered with.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The instance's hostname.</p>
     pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +91,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>The instance's hostname.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The instance's public IP address.</p>
     pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +100,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>The instance's public IP address.</p>
     pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p>The instance's private IP address.</p>
     pub fn private_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +109,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>The instance's private IP address.</p>
     pub fn set_private_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_ip = input;
-        self
+        self.private_ip = input; self
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
     pub fn rsa_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +118,7 @@ impl RegisterInstanceInputBuilder {
     }
     /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
     pub fn set_rsa_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rsa_public_key = input;
-        self
+        self.rsa_public_key = input; self
     }
     /// <p>The instances public RSA key fingerprint.</p>
     pub fn rsa_public_key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,12 +126,8 @@ impl RegisterInstanceInputBuilder {
         self
     }
     /// <p>The instances public RSA key fingerprint.</p>
-    pub fn set_rsa_public_key_fingerprint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.rsa_public_key_fingerprint = input;
-        self
+    pub fn set_rsa_public_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.rsa_public_key_fingerprint = input; self
     }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
     pub fn instance_identity(mut self, input: crate::types::InstanceIdentity) -> Self {
@@ -145,28 +135,29 @@ impl RegisterInstanceInputBuilder {
         self
     }
     /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-    pub fn set_instance_identity(
-        mut self,
-        input: std::option::Option<crate::types::InstanceIdentity>,
-    ) -> Self {
-        self.instance_identity = input;
-        self
+    pub fn set_instance_identity(mut self, input: std::option::Option<crate::types::InstanceIdentity>) -> Self {
+        self.instance_identity = input; self
     }
     /// Consumes the builder and constructs a [`RegisterInstanceInput`](crate::operation::register_instance::RegisterInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_instance::RegisterInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::register_instance::RegisterInstanceInput {
-            stack_id: self.stack_id,
-            hostname: self.hostname,
-            public_ip: self.public_ip,
-            private_ip: self.private_ip,
-            rsa_public_key: self.rsa_public_key,
-            rsa_public_key_fingerprint: self.rsa_public_key_fingerprint,
-            instance_identity: self.instance_identity,
-        })
+    pub fn build(self) -> Result<crate::operation::register_instance::RegisterInstanceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::register_instance::RegisterInstanceInput {
+                stack_id: self.stack_id
+                ,
+                hostname: self.hostname
+                ,
+                public_ip: self.public_ip
+                ,
+                private_ip: self.private_ip
+                ,
+                rsa_public_key: self.rsa_public_key
+                ,
+                rsa_public_key_fingerprint: self.rsa_public_key_fingerprint
+                ,
+                instance_identity: self.instance_identity
+                ,
+            }
+        )
     }
 }
+

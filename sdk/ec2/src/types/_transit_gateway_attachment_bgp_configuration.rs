@@ -3,7 +3,7 @@
 /// <p>The BGP configuration information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayAttachmentBgpConfiguration {
+pub struct TransitGatewayAttachmentBgpConfiguration  {
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
     #[doc(hidden)]
     pub transit_gateway_asn: std::option::Option<i64>,
@@ -30,15 +30,15 @@ impl TransitGatewayAttachmentBgpConfiguration {
         self.peer_asn
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    pub fn transit_gateway_address(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_address(&self) -> std::option::Option<& str> {
         self.transit_gateway_address.as_deref()
     }
     /// <p>The interior BGP peer IP address for the appliance.</p>
-    pub fn peer_address(&self) -> std::option::Option<&str> {
+    pub fn peer_address(&self) -> std::option::Option<& str> {
         self.peer_address.as_deref()
     }
     /// <p>The BGP status.</p>
-    pub fn bgp_status(&self) -> std::option::Option<&crate::types::BgpStatus> {
+    pub fn bgp_status(&self) -> std::option::Option<& crate::types::BgpStatus> {
         self.bgp_status.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
     }
     /// <p>The transit gateway Autonomous System Number (ASN).</p>
     pub fn set_transit_gateway_asn(mut self, input: std::option::Option<i64>) -> Self {
-        self.transit_gateway_asn = input;
-        self
+        self.transit_gateway_asn = input; self
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn peer_asn(mut self, input: i64) -> Self {
@@ -77,8 +76,7 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn set_peer_asn(mut self, input: std::option::Option<i64>) -> Self {
-        self.peer_asn = input;
-        self
+        self.peer_asn = input; self
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
     pub fn transit_gateway_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,12 +84,8 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
         self
     }
     /// <p>The interior BGP peer IP address for the transit gateway.</p>
-    pub fn set_transit_gateway_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_address = input;
-        self
+    pub fn set_transit_gateway_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_address = input; self
     }
     /// <p>The interior BGP peer IP address for the appliance.</p>
     pub fn peer_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +94,7 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
     }
     /// <p>The interior BGP peer IP address for the appliance.</p>
     pub fn set_peer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peer_address = input;
-        self
+        self.peer_address = input; self
     }
     /// <p>The BGP status.</p>
     pub fn bgp_status(mut self, input: crate::types::BgpStatus) -> Self {
@@ -110,17 +103,22 @@ impl TransitGatewayAttachmentBgpConfigurationBuilder {
     }
     /// <p>The BGP status.</p>
     pub fn set_bgp_status(mut self, input: std::option::Option<crate::types::BgpStatus>) -> Self {
-        self.bgp_status = input;
-        self
+        self.bgp_status = input; self
     }
     /// Consumes the builder and constructs a [`TransitGatewayAttachmentBgpConfiguration`](crate::types::TransitGatewayAttachmentBgpConfiguration).
     pub fn build(self) -> crate::types::TransitGatewayAttachmentBgpConfiguration {
         crate::types::TransitGatewayAttachmentBgpConfiguration {
-            transit_gateway_asn: self.transit_gateway_asn,
-            peer_asn: self.peer_asn,
-            transit_gateway_address: self.transit_gateway_address,
-            peer_address: self.peer_address,
-            bgp_status: self.bgp_status,
+            transit_gateway_asn: self.transit_gateway_asn
+            ,
+            peer_asn: self.peer_asn
+            ,
+            transit_gateway_address: self.transit_gateway_address
+            ,
+            peer_address: self.peer_address
+            ,
+            bgp_status: self.bgp_status
+            ,
         }
     }
 }
+

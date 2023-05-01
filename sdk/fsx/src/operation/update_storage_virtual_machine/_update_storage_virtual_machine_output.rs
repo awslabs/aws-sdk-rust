@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStorageVirtualMachineOutput {
+pub struct UpdateStorageVirtualMachineOutput  {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
     #[doc(hidden)]
     pub storage_virtual_machine: std::option::Option<crate::types::StorageVirtualMachine>,
@@ -10,20 +10,18 @@ pub struct UpdateStorageVirtualMachineOutput {
 }
 impl UpdateStorageVirtualMachineOutput {
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
-    pub fn storage_virtual_machine(
-        &self,
-    ) -> std::option::Option<&crate::types::StorageVirtualMachine> {
+    pub fn storage_virtual_machine(&self) -> std::option::Option<& crate::types::StorageVirtualMachine> {
         self.storage_virtual_machine.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateStorageVirtualMachineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateStorageVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageVirtualMachineOutput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput).
-    pub fn builder() -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineOutputBuilder{
+    pub fn builder() -> crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineOutputBuilder {
         crate::operation::update_storage_virtual_machine::builders::UpdateStorageVirtualMachineOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl UpdateStorageVirtualMachineOutputBuilder {
         self
     }
     /// <p>Describes the Amazon FSx for NetApp ONTAP storage virtual machine (SVM) configuration.</p>
-    pub fn set_storage_virtual_machine(
-        mut self,
-        input: std::option::Option<crate::types::StorageVirtualMachine>,
-    ) -> Self {
-        self.storage_virtual_machine = input;
-        self
+    pub fn set_storage_virtual_machine(mut self, input: std::option::Option<crate::types::StorageVirtualMachine>) -> Self {
+        self.storage_virtual_machine = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateStorageVirtualMachineOutput`](crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput {
+    pub fn build(self) -> crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput {
         crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput {
-            storage_virtual_machine: self.storage_virtual_machine,
+            storage_virtual_machine: self.storage_virtual_machine
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

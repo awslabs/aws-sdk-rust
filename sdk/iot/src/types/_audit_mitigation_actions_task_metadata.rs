@@ -3,7 +3,7 @@
 /// <p>Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuditMitigationActionsTaskMetadata {
+pub struct AuditMitigationActionsTaskMetadata  {
     /// <p>The unique identifier for the task.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -16,17 +16,15 @@ pub struct AuditMitigationActionsTaskMetadata {
 }
 impl AuditMitigationActionsTaskMetadata {
     /// <p>The unique identifier for the task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The time at which the audit mitigation actions task was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The current state of the audit mitigation actions task.</p>
-    pub fn task_status(
-        &self,
-    ) -> std::option::Option<&crate::types::AuditMitigationActionsTaskStatus> {
+    pub fn task_status(&self) -> std::option::Option<& crate::types::AuditMitigationActionsTaskStatus> {
         self.task_status.as_ref()
     }
 }
@@ -53,8 +51,7 @@ impl AuditMitigationActionsTaskMetadataBuilder {
     }
     /// <p>The unique identifier for the task.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The time at which the audit mitigation actions task was started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -62,12 +59,8 @@ impl AuditMitigationActionsTaskMetadataBuilder {
         self
     }
     /// <p>The time at which the audit mitigation actions task was started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The current state of the audit mitigation actions task.</p>
     pub fn task_status(mut self, input: crate::types::AuditMitigationActionsTaskStatus) -> Self {
@@ -75,19 +68,19 @@ impl AuditMitigationActionsTaskMetadataBuilder {
         self
     }
     /// <p>The current state of the audit mitigation actions task.</p>
-    pub fn set_task_status(
-        mut self,
-        input: std::option::Option<crate::types::AuditMitigationActionsTaskStatus>,
-    ) -> Self {
-        self.task_status = input;
-        self
+    pub fn set_task_status(mut self, input: std::option::Option<crate::types::AuditMitigationActionsTaskStatus>) -> Self {
+        self.task_status = input; self
     }
     /// Consumes the builder and constructs a [`AuditMitigationActionsTaskMetadata`](crate::types::AuditMitigationActionsTaskMetadata).
     pub fn build(self) -> crate::types::AuditMitigationActionsTaskMetadata {
         crate::types::AuditMitigationActionsTaskMetadata {
-            task_id: self.task_id,
-            start_time: self.start_time,
-            task_status: self.task_status,
+            task_id: self.task_id
+            ,
+            start_time: self.start_time
+            ,
+            task_status: self.task_status
+            ,
         }
     }
 }
+

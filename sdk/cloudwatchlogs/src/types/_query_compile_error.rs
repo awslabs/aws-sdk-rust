@@ -3,7 +3,7 @@
 /// <p>Reserved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryCompileError {
+pub struct QueryCompileError  {
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub location: std::option::Option<crate::types::QueryCompileErrorLocation>,
@@ -13,11 +13,11 @@ pub struct QueryCompileError {
 }
 impl QueryCompileError {
     /// <p>Reserved.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::QueryCompileErrorLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::types::QueryCompileErrorLocation> {
         self.location.as_ref()
     }
     /// <p>Reserved.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl QueryCompileErrorBuilder {
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_location(
-        mut self,
-        input: std::option::Option<crate::types::QueryCompileErrorLocation>,
-    ) -> Self {
-        self.location = input;
-        self
+    pub fn set_location(mut self, input: std::option::Option<crate::types::QueryCompileErrorLocation>) -> Self {
+        self.location = input; self
     }
     /// <p>Reserved.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl QueryCompileErrorBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`QueryCompileError`](crate::types::QueryCompileError).
     pub fn build(self) -> crate::types::QueryCompileError {
         crate::types::QueryCompileError {
-            location: self.location,
-            message: self.message,
+            location: self.location
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

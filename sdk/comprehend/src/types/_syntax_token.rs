@@ -3,7 +3,7 @@
 /// <p>Represents a work in the input text that was recognized and assigned a part of speech. There is one syntax token record for each word in the source text.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SyntaxToken {
+pub struct SyntaxToken  {
     /// <p>A unique identifier for a token.</p>
     #[doc(hidden)]
     pub token_id: std::option::Option<i32>,
@@ -26,7 +26,7 @@ impl SyntaxToken {
         self.token_id
     }
     /// <p>The word that was recognized in the source text.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the word.</p>
@@ -38,7 +38,7 @@ impl SyntaxToken {
         self.end_offset
     }
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn part_of_speech(&self) -> std::option::Option<&crate::types::PartOfSpeechTag> {
+    pub fn part_of_speech(&self) -> std::option::Option<& crate::types::PartOfSpeechTag> {
         self.part_of_speech.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl SyntaxTokenBuilder {
     }
     /// <p>A unique identifier for a token.</p>
     pub fn set_token_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.token_id = input;
-        self
+        self.token_id = input; self
     }
     /// <p>The word that was recognized in the source text.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl SyntaxTokenBuilder {
     }
     /// <p>The word that was recognized in the source text.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the word.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -87,8 +85,7 @@ impl SyntaxTokenBuilder {
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the word.</p>
     pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -97,8 +94,7 @@ impl SyntaxTokenBuilder {
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the word.</p>
     pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     pub fn part_of_speech(mut self, input: crate::types::PartOfSpeechTag) -> Self {
@@ -106,21 +102,23 @@ impl SyntaxTokenBuilder {
         self
     }
     /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that the part of speech was correctly identified. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn set_part_of_speech(
-        mut self,
-        input: std::option::Option<crate::types::PartOfSpeechTag>,
-    ) -> Self {
-        self.part_of_speech = input;
-        self
+    pub fn set_part_of_speech(mut self, input: std::option::Option<crate::types::PartOfSpeechTag>) -> Self {
+        self.part_of_speech = input; self
     }
     /// Consumes the builder and constructs a [`SyntaxToken`](crate::types::SyntaxToken).
     pub fn build(self) -> crate::types::SyntaxToken {
         crate::types::SyntaxToken {
-            token_id: self.token_id,
-            text: self.text,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
-            part_of_speech: self.part_of_speech,
+            token_id: self.token_id
+            ,
+            text: self.text
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
+            part_of_speech: self.part_of_speech
+            ,
         }
     }
 }
+

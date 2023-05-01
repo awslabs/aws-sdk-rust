@@ -3,7 +3,7 @@
 /// <p>The list of information about logs currently enabled and pending to be deployed for the specified broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogsSummary {
+pub struct LogsSummary  {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     #[doc(hidden)]
     pub audit: bool,
@@ -26,7 +26,7 @@ impl LogsSummary {
         self.audit
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
-    pub fn audit_log_group(&self) -> std::option::Option<&str> {
+    pub fn audit_log_group(&self) -> std::option::Option<& str> {
         self.audit_log_group.as_deref()
     }
     /// <p>Enables general logging.</p>
@@ -34,11 +34,11 @@ impl LogsSummary {
         self.general
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    pub fn general_log_group(&self) -> std::option::Option<&str> {
+    pub fn general_log_group(&self) -> std::option::Option<& str> {
         self.general_log_group.as_deref()
     }
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
-    pub fn pending(&self) -> std::option::Option<&crate::types::PendingLogs> {
+    pub fn pending(&self) -> std::option::Option<& crate::types::PendingLogs> {
         self.pending.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl LogsSummaryBuilder {
     }
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.</p>
     pub fn set_audit(mut self, input: std::option::Option<bool>) -> Self {
-        self.audit = input;
-        self
+        self.audit = input; self
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
     pub fn audit_log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl LogsSummaryBuilder {
     }
     /// <p>The location of the CloudWatch Logs log group where audit logs are sent.</p>
     pub fn set_audit_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.audit_log_group = input;
-        self
+        self.audit_log_group = input; self
     }
     /// <p>Enables general logging.</p>
     pub fn general(mut self, input: bool) -> Self {
@@ -87,8 +85,7 @@ impl LogsSummaryBuilder {
     }
     /// <p>Enables general logging.</p>
     pub fn set_general(mut self, input: std::option::Option<bool>) -> Self {
-        self.general = input;
-        self
+        self.general = input; self
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
     pub fn general_log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,12 +93,8 @@ impl LogsSummaryBuilder {
         self
     }
     /// <p>The location of the CloudWatch Logs log group where general logs are sent.</p>
-    pub fn set_general_log_group(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.general_log_group = input;
-        self
+    pub fn set_general_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.general_log_group = input; self
     }
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
     pub fn pending(mut self, input: crate::types::PendingLogs) -> Self {
@@ -110,17 +103,24 @@ impl LogsSummaryBuilder {
     }
     /// <p>The list of information about logs pending to be deployed for the specified broker.</p>
     pub fn set_pending(mut self, input: std::option::Option<crate::types::PendingLogs>) -> Self {
-        self.pending = input;
-        self
+        self.pending = input; self
     }
     /// Consumes the builder and constructs a [`LogsSummary`](crate::types::LogsSummary).
     pub fn build(self) -> crate::types::LogsSummary {
         crate::types::LogsSummary {
-            audit: self.audit.unwrap_or_default(),
-            audit_log_group: self.audit_log_group,
-            general: self.general.unwrap_or_default(),
-            general_log_group: self.general_log_group,
-            pending: self.pending,
+            audit: self.audit
+                .unwrap_or_default()
+            ,
+            audit_log_group: self.audit_log_group
+            ,
+            general: self.general
+                .unwrap_or_default()
+            ,
+            general_log_group: self.general_log_group
+            ,
+            pending: self.pending
+            ,
         }
     }
 }
+

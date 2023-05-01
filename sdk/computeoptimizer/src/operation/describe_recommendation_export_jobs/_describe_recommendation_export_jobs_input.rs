@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecommendationExportJobsInput {
-    /// <p>The identification numbers of the export jobs to return.</p>
-    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
+pub struct DescribeRecommendationExportJobsInput  {
+    /// <p>The identification numbers of the export jobs to return.</p> 
+    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p> 
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
     #[doc(hidden)]
     pub job_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14,27 +14,27 @@ pub struct DescribeRecommendationExportJobsInput {
     /// <p>The token to advance to the next page of export jobs.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of export jobs to return with a single request.</p>
+    /// <p>The maximum number of export jobs to return with a single request.</p> 
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeRecommendationExportJobsInput {
-    /// <p>The identification numbers of the export jobs to return.</p>
-    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
+    /// <p>The identification numbers of the export jobs to return.</p> 
+    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p> 
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
-    pub fn job_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.job_ids.as_deref()
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::JobFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::JobFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to advance to the next page of export jobs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of export jobs to return with a single request.</p>
+    /// <p>The maximum number of export jobs to return with a single request.</p> 
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -42,7 +42,7 @@ impl DescribeRecommendationExportJobsInput {
 }
 impl DescribeRecommendationExportJobsInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
-    pub fn builder() -> crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder{
+    pub fn builder() -> crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder {
         crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder::default()
     }
 }
@@ -61,24 +61,20 @@ impl DescribeRecommendationExportJobsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_job_ids`](Self::set_job_ids).
     ///
-    /// <p>The identification numbers of the export jobs to return.</p>
-    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
+    /// <p>The identification numbers of the export jobs to return.</p> 
+    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p> 
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
     pub fn job_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_ids = Some(v);
+                        self
     }
-    /// <p>The identification numbers of the export jobs to return.</p>
-    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p>
+    /// <p>The identification numbers of the export jobs to return.</p> 
+    /// <p>An export job ID is returned when you create an export using the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions.</p> 
     /// <p>All export jobs created in the last seven days are returned if this parameter is omitted.</p>
-    pub fn set_job_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_ids = input;
-        self
+    pub fn set_job_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_ids = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -87,17 +83,13 @@ impl DescribeRecommendationExportJobsInputBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
     pub fn filters(mut self, input: crate::types::JobFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of export jobs.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token to advance to the next page of export jobs.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,23 +98,21 @@ impl DescribeRecommendationExportJobsInputBuilder {
     }
     /// <p>The token to advance to the next page of export jobs.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
-    /// <p>The maximum number of export jobs to return with a single request.</p>
+    /// <p>The maximum number of export jobs to return with a single request.</p> 
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of export jobs to return with a single request.</p>
+    /// <p>The maximum number of export jobs to return with a single request.</p> 
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeRecommendationExportJobsInput`](crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput).
-    pub fn build(self) -> Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobsInput {
                 job_ids: self.job_ids
@@ -137,3 +127,4 @@ impl DescribeRecommendationExportJobsInputBuilder {
         )
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p> Provides details on one or more IPv6 prefixes to be assigned to the network interface. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
+pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails  {
     /// <p> The IPv6 prefix. </p>
     #[doc(hidden)]
     pub ipv6_prefix: std::option::Option<std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
     /// <p> The IPv6 prefix. </p>
-    pub fn ipv6_prefix(&self) -> std::option::Option<&str> {
+    pub fn ipv6_prefix(&self) -> std::option::Option<& str> {
         self.ipv6_prefix.as_deref()
     }
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder::default()
     }
 }
@@ -37,15 +35,14 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetailsBuilder {
     }
     /// <p> The IPv6 prefix. </p>
     pub fn set_ipv6_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipv6_prefix = input;
-        self
+        self.ipv6_prefix = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
         crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails {
-            ipv6_prefix: self.ipv6_prefix,
+            ipv6_prefix: self.ipv6_prefix
+            ,
         }
     }
 }
+

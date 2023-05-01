@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClassifierInput {
+pub struct DeleteClassifierInput  {
     /// <p>Name of the classifier to remove.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteClassifierInput {
     /// <p>Name of the classifier to remove.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteClassifierInput {
     /// Creates a new builder-style object to manufacture [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
-    pub fn builder() -> crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder {
         crate::operation::delete_classifier::builders::DeleteClassifierInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteClassifierInputBuilder {
     }
     /// <p>Name of the classifier to remove.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteClassifierInput`](crate::operation::delete_classifier::DeleteClassifierInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_classifier::DeleteClassifierInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_classifier::DeleteClassifierInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_classifier::DeleteClassifierInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_classifier::DeleteClassifierInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

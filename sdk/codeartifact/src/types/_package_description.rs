@@ -3,16 +3,16 @@
 /// <p>Details about a package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageDescription {
+pub struct PackageDescription  {
     /// <p>A format that specifies the type of the package.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -25,27 +25,25 @@ pub struct PackageDescription {
 }
 impl PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The package origin configuration for the package.</p>
-    pub fn origin_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::PackageOriginConfiguration> {
+    pub fn origin_configuration(&self) -> std::option::Option<& crate::types::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
     }
 }
@@ -73,30 +71,28 @@ impl PackageDescriptionBuilder {
     }
     /// <p>A format that specifies the type of the package.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the package.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +101,7 @@ impl PackageDescriptionBuilder {
     }
     /// <p>The name of the package.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The package origin configuration for the package.</p>
     pub fn origin_configuration(mut self, input: crate::types::PackageOriginConfiguration) -> Self {
@@ -114,20 +109,21 @@ impl PackageDescriptionBuilder {
         self
     }
     /// <p>The package origin configuration for the package.</p>
-    pub fn set_origin_configuration(
-        mut self,
-        input: std::option::Option<crate::types::PackageOriginConfiguration>,
-    ) -> Self {
-        self.origin_configuration = input;
-        self
+    pub fn set_origin_configuration(mut self, input: std::option::Option<crate::types::PackageOriginConfiguration>) -> Self {
+        self.origin_configuration = input; self
     }
     /// Consumes the builder and constructs a [`PackageDescription`](crate::types::PackageDescription).
     pub fn build(self) -> crate::types::PackageDescription {
         crate::types::PackageDescription {
-            format: self.format,
-            namespace: self.namespace,
-            name: self.name,
-            origin_configuration: self.origin_configuration,
+            format: self.format
+            ,
+            namespace: self.namespace
+            ,
+            name: self.name
+            ,
+            origin_configuration: self.origin_configuration
+            ,
         }
     }
 }
+

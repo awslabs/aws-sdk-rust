@@ -4,84 +4,56 @@ pub use crate::operation::update_template_active_version::_update_template_activ
 pub use crate::operation::update_template_active_version::_update_template_active_version_input::UpdateTemplateActiveVersionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTemplateActiveVersion`.
-///
+/// 
 /// <p>Changes the status of a specific version of a message template to <i>active</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTemplateActiveVersionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder
             }
-impl UpdateTemplateActiveVersionFluentBuilder {
+impl UpdateTemplateActiveVersionFluentBuilder  {
     /// Creates a new `UpdateTemplateActiveVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_template_active_version::UpdateTemplateActiveVersion, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput, aws_smithy_http::result::SdkError<crate::operation::update_template_active_version::UpdateTemplateActiveVersionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
-    pub fn template_active_version_request(
-        mut self,
-        input: crate::types::TemplateActiveVersionRequest,
-    ) -> Self {
+    pub fn template_active_version_request(mut self, input: crate::types::TemplateActiveVersionRequest) -> Self {
         self.inner = self.inner.template_active_version_request(input);
         self
     }
     /// <p>Specifies which version of a message template to use as the active version of the template.</p>
-    pub fn set_template_active_version_request(
-        mut self,
-        input: std::option::Option<crate::types::TemplateActiveVersionRequest>,
-    ) -> Self {
+    pub fn set_template_active_version_request(mut self, input: std::option::Option<crate::types::TemplateActiveVersionRequest>) -> Self {
         self.inner = self.inner.set_template_active_version_request(input);
         self
     }
@@ -106,3 +78,4 @@ impl UpdateTemplateActiveVersionFluentBuilder {
         self
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSnapshotsInput {
+pub struct GetSnapshotsInput  {
     /// <p>The identifier of the index to get search metrics data.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
-    /// <ul>
-    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
-    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
+    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li> 
+    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub interval: std::option::Option<crate::types::Interval>,
-    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p> 
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
     #[doc(hidden)]
     pub metric_type: std::option::Option<crate::types::MetricType>,
@@ -30,28 +30,28 @@ pub struct GetSnapshotsInput {
 }
 impl GetSnapshotsInput {
     /// <p>The identifier of the index to get search metrics data.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
-    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
-    /// <ul>
-    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
-    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
+    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li> 
+    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li> 
     /// </ul>
-    pub fn interval(&self) -> std::option::Option<&crate::types::Interval> {
+    pub fn interval(&self) -> std::option::Option<& crate::types::Interval> {
         self.interval.as_ref()
     }
-    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p> 
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
-    pub fn metric_type(&self) -> std::option::Option<&crate::types::MetricType> {
+    pub fn metric_type(&self) -> std::option::Option<& crate::types::MetricType> {
         self.metric_type.as_ref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of returned data for the metric.</p>
@@ -84,46 +84,43 @@ impl GetSnapshotsInputBuilder {
     }
     /// <p>The identifier of the index to get search metrics data.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
-    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
-    /// <ul>
-    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
-    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
+    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li> 
+    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li> 
     /// </ul>
     pub fn interval(mut self, input: crate::types::Interval) -> Self {
         self.interval = Some(input);
         self
     }
-    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p>
-    /// <ul>
-    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li>
-    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li>
-    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li>
-    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li>
+    /// <p>The time interval or time window to get search metrics data. The time interval uses the time zone of your index. You can view data in the following time windows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday and ending on the following Saturday.</p> </li> 
+    /// <li> <p> <code>THIS_MONTH</code>: The current month, starting on the first day of the month and ending on the day before the current date.</p> </li> 
+    /// <li> <p> <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the month and ending on the last day of the month.</p> </li> 
+    /// <li> <p> <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the first day of the month and ending on last day of the month.</p> </li> 
     /// </ul>
     pub fn set_interval(mut self, input: std::option::Option<crate::types::Interval>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
-    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p> 
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
     pub fn metric_type(mut self, input: crate::types::MetricType) -> Self {
         self.metric_type = Some(input);
         self
     }
-    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p>
+    /// <p>The metric you want to retrieve. You can specify only one metric per call.</p> 
     /// <p>For more information about the metrics you can view, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining insights with search analytics</a>.</p>
     pub fn set_metric_type(mut self, input: std::option::Option<crate::types::MetricType>) -> Self {
-        self.metric_type = input;
-        self
+        self.metric_type = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +129,7 @@ impl GetSnapshotsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of search metrics data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of returned data for the metric.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -142,22 +138,24 @@ impl GetSnapshotsInputBuilder {
     }
     /// <p>The maximum number of returned data for the metric.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetSnapshotsInput`](crate::operation::get_snapshots::GetSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_snapshots::GetSnapshotsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_snapshots::GetSnapshotsInput {
-            index_id: self.index_id,
-            interval: self.interval,
-            metric_type: self.metric_type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::get_snapshots::GetSnapshotsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_snapshots::GetSnapshotsInput {
+                index_id: self.index_id
+                ,
+                interval: self.interval
+                ,
+                metric_type: self.metric_type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

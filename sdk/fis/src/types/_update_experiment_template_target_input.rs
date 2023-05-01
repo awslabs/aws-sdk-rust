@@ -3,7 +3,7 @@
 /// <p>Specifies a target for an experiment. You must specify at least one Amazon Resource Name (ARN) or at least one resource tag. You cannot specify both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExperimentTemplateTargetInput {
+pub struct UpdateExperimentTemplateTargetInput  {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -12,51 +12,40 @@ pub struct UpdateExperimentTemplateTargetInput {
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the target resources.</p>
     #[doc(hidden)]
-    pub resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     #[doc(hidden)]
-    pub filters:
-        std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
+    pub filters: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     #[doc(hidden)]
     pub selection_mode: std::option::Option<std::string::String>,
     /// <p>The resource type parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateExperimentTemplateTargetInput {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_tags.as_ref()
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn filters(
-        &self,
-    ) -> std::option::Option<&[crate::types::ExperimentTemplateTargetInputFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::ExperimentTemplateTargetInputFilter]> {
         self.filters.as_deref()
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
-    pub fn selection_mode(&self) -> std::option::Option<&str> {
+    pub fn selection_mode(&self) -> std::option::Option<& str> {
         self.selection_mode.as_deref()
     }
     /// <p>The resource type parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -73,13 +62,10 @@ impl UpdateExperimentTemplateTargetInput {
 pub struct UpdateExperimentTemplateTargetInputBuilder {
     pub(crate) resource_type: std::option::Option<std::string::String>,
     pub(crate) resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) resource_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) filters:
-        std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
+    pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>,
     pub(crate) selection_mode: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateExperimentTemplateTargetInputBuilder {
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
@@ -89,8 +75,7 @@ impl UpdateExperimentTemplateTargetInputBuilder {
     }
     /// <p>The resource type. The resource type must be supported for the specified action.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// Appends an item to `resource_arns`.
     ///
@@ -99,42 +84,28 @@ impl UpdateExperimentTemplateTargetInputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
     pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-        v.push(input.into());
-        self.resource_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the targets.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     /// Adds a key-value pair to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
     /// <p>The tags for the target resources.</p>
-    pub fn resource_tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_tags = Some(hash_map);
+                        self
     }
     /// <p>The tags for the target resources.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.resource_tags = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -143,19 +114,13 @@ impl UpdateExperimentTemplateTargetInputBuilder {
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
     pub fn filters(mut self, input: crate::types::ExperimentTemplateTargetInputFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>The filters to apply to identify target resources using specific attributes.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>,
-        >,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateTargetInputFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub fn selection_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,43 +129,39 @@ impl UpdateExperimentTemplateTargetInputBuilder {
     }
     /// <p>Scopes the identified resources to a specific count or percentage.</p>
     pub fn set_selection_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.selection_mode = input;
-        self
+        self.selection_mode = input; self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The resource type parameters.</p>
-    pub fn parameters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = Some(hash_map);
+                        self
     }
     /// <p>The resource type parameters.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// Consumes the builder and constructs a [`UpdateExperimentTemplateTargetInput`](crate::types::UpdateExperimentTemplateTargetInput).
     pub fn build(self) -> crate::types::UpdateExperimentTemplateTargetInput {
         crate::types::UpdateExperimentTemplateTargetInput {
-            resource_type: self.resource_type,
-            resource_arns: self.resource_arns,
-            resource_tags: self.resource_tags,
-            filters: self.filters,
-            selection_mode: self.selection_mode,
-            parameters: self.parameters,
+            resource_type: self.resource_type
+            ,
+            resource_arns: self.resource_arns
+            ,
+            resource_tags: self.resource_tags
+            ,
+            filters: self.filters
+            ,
+            selection_mode: self.selection_mode
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

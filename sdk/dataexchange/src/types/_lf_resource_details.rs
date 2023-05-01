@@ -3,7 +3,7 @@
 /// <p>Details about the AWS Lake Formation resource (Table or Database) included in the AWS Lake Formation data permission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfResourceDetails {
+pub struct LfResourceDetails  {
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
     #[doc(hidden)]
     pub database: std::option::Option<crate::types::DatabaseLfTagPolicy>,
@@ -13,11 +13,11 @@ pub struct LfResourceDetails {
 }
 impl LfResourceDetails {
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
-    pub fn database(&self) -> std::option::Option<&crate::types::DatabaseLfTagPolicy> {
+    pub fn database(&self) -> std::option::Option<& crate::types::DatabaseLfTagPolicy> {
         self.database.as_ref()
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
-    pub fn table(&self) -> std::option::Option<&crate::types::TableLfTagPolicy> {
+    pub fn table(&self) -> std::option::Option<& crate::types::TableLfTagPolicy> {
         self.table.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl LfResourceDetailsBuilder {
         self
     }
     /// <p>Details about the database resource included in the AWS Lake Formation data permission.</p>
-    pub fn set_database(
-        mut self,
-        input: std::option::Option<crate::types::DatabaseLfTagPolicy>,
-    ) -> Self {
-        self.database = input;
-        self
+    pub fn set_database(mut self, input: std::option::Option<crate::types::DatabaseLfTagPolicy>) -> Self {
+        self.database = input; self
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
     pub fn table(mut self, input: crate::types::TableLfTagPolicy) -> Self {
@@ -56,14 +52,16 @@ impl LfResourceDetailsBuilder {
     }
     /// <p>Details about the table resource included in the AWS Lake Formation data permission.</p>
     pub fn set_table(mut self, input: std::option::Option<crate::types::TableLfTagPolicy>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// Consumes the builder and constructs a [`LfResourceDetails`](crate::types::LfResourceDetails).
     pub fn build(self) -> crate::types::LfResourceDetails {
         crate::types::LfResourceDetails {
-            database: self.database,
-            table: self.table,
+            database: self.database
+            ,
+            table: self.table
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIpamResourceDiscoveriesInput {
+pub struct DescribeIpamResourceDiscoveriesInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -25,11 +25,11 @@ impl DescribeIpamResourceDiscoveriesInput {
         self.dry_run
     }
     /// <p>The IPAM resource discovery IDs.</p>
-    pub fn ipam_resource_discovery_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipam_resource_discovery_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ipam_resource_discovery_ids.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of resource discoveries to return in one page of results.</p>
@@ -37,13 +37,13 @@ impl DescribeIpamResourceDiscoveriesInput {
         self.max_results
     }
     /// <p>The resource discovery filters.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl DescribeIpamResourceDiscoveriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeIpamResourceDiscoveriesInput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput).
-    pub fn builder() -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesInputBuilder{
+    pub fn builder() -> crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesInputBuilder {
         crate::operation::describe_ipam_resource_discoveries::builders::DescribeIpamResourceDiscoveriesInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Appends an item to `ipam_resource_discovery_ids`.
     ///
@@ -76,17 +75,13 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     /// <p>The IPAM resource discovery IDs.</p>
     pub fn ipam_resource_discovery_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ipam_resource_discovery_ids.unwrap_or_default();
-        v.push(input.into());
-        self.ipam_resource_discovery_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ipam_resource_discovery_ids = Some(v);
+                        self
     }
     /// <p>The IPAM resource discovery IDs.</p>
-    pub fn set_ipam_resource_discovery_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ipam_resource_discovery_ids = input;
-        self
+    pub fn set_ipam_resource_discovery_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ipam_resource_discovery_ids = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +90,7 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of resource discoveries to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -105,8 +99,7 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     }
     /// <p>The maximum number of resource discoveries to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -115,25 +108,16 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
     /// <p>The resource discovery filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>The resource discovery filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Consumes the builder and constructs a [`DescribeIpamResourceDiscoveriesInput`](crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_ipam_resource_discoveries::DescribeIpamResourceDiscoveriesInput {
                 dry_run: self.dry_run
@@ -150,3 +134,4 @@ impl DescribeIpamResourceDiscoveriesInputBuilder {
         )
     }
 }
+

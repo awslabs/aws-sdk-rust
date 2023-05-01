@@ -3,7 +3,7 @@
 /// <p>A uniquely identified group of stream records within a stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Shard {
+pub struct Shard  {
     /// <p>The system-generated identifier for this shard.</p>
     #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Shard {
 }
 impl Shard {
     /// <p>The system-generated identifier for this shard.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> std::option::Option<& str> {
         self.shard_id.as_deref()
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn sequence_number_range(&self) -> std::option::Option<&crate::types::SequenceNumberRange> {
+    pub fn sequence_number_range(&self) -> std::option::Option<& crate::types::SequenceNumberRange> {
         self.sequence_number_range.as_ref()
     }
     /// <p>The shard ID of the current shard's parent.</p>
-    pub fn parent_shard_id(&self) -> std::option::Option<&str> {
+    pub fn parent_shard_id(&self) -> std::option::Option<& str> {
         self.parent_shard_id.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ShardBuilder {
     }
     /// <p>The system-generated identifier for this shard.</p>
     pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shard_id = input;
-        self
+        self.shard_id = input; self
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
     pub fn sequence_number_range(mut self, input: crate::types::SequenceNumberRange) -> Self {
@@ -60,12 +59,8 @@ impl ShardBuilder {
         self
     }
     /// <p>The range of possible sequence numbers for the shard.</p>
-    pub fn set_sequence_number_range(
-        mut self,
-        input: std::option::Option<crate::types::SequenceNumberRange>,
-    ) -> Self {
-        self.sequence_number_range = input;
-        self
+    pub fn set_sequence_number_range(mut self, input: std::option::Option<crate::types::SequenceNumberRange>) -> Self {
+        self.sequence_number_range = input; self
     }
     /// <p>The shard ID of the current shard's parent.</p>
     pub fn parent_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl ShardBuilder {
     }
     /// <p>The shard ID of the current shard's parent.</p>
     pub fn set_parent_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_shard_id = input;
-        self
+        self.parent_shard_id = input; self
     }
     /// Consumes the builder and constructs a [`Shard`](crate::types::Shard).
     pub fn build(self) -> crate::types::Shard {
         crate::types::Shard {
-            shard_id: self.shard_id,
-            sequence_number_range: self.sequence_number_range,
-            parent_shard_id: self.parent_shard_id,
+            shard_id: self.shard_id
+            ,
+            sequence_number_range: self.sequence_number_range
+            ,
+            parent_shard_id: self.parent_shard_id
+            ,
         }
     }
 }
+

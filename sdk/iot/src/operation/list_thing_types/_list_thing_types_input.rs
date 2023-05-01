@@ -3,7 +3,7 @@
 /// <p>The input for the ListThingTypes operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThingTypesInput {
+pub struct ListThingTypesInput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListThingTypesInput {
 }
 impl ListThingTypesInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -24,7 +24,7 @@ impl ListThingTypesInput {
         self.max_results
     }
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ListThingTypesInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl ListThingTypesInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The name of the thing type.</p>
     pub fn thing_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,20 +69,20 @@ impl ListThingTypesInputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// Consumes the builder and constructs a [`ListThingTypesInput`](crate::operation::list_thing_types::ListThingTypesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_thing_types::ListThingTypesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_thing_types::ListThingTypesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            thing_type_name: self.thing_type_name,
-        })
+    pub fn build(self) -> Result<crate::operation::list_thing_types::ListThingTypesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_thing_types::ListThingTypesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                thing_type_name: self.thing_type_name
+                ,
+            }
+        )
     }
 }
+

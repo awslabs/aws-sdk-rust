@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMeetingTranscriptionInput {
+pub struct StopMeetingTranscriptionInput  {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl StopMeetingTranscriptionInput {
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
 impl StopMeetingTranscriptionInput {
     /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionInput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder {
         crate::operation::stop_meeting_transcription::builders::StopMeetingTranscriptionInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl StopMeetingTranscriptionInputBuilder {
     }
     /// <p>The unique ID of the meeting for which you stop transcription.</p>
     pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// Consumes the builder and constructs a [`StopMeetingTranscriptionInput`](crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_meeting_transcription::StopMeetingTranscriptionInput {
-                meeting_id: self.meeting_id,
-            },
+                meeting_id: self.meeting_id
+                ,
+            }
         )
     }
 }
+

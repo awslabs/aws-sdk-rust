@@ -3,7 +3,7 @@
 /// <p>Object for field Options information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldOption {
+pub struct FieldOption  {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct FieldOption {
 }
 impl FieldOption {
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
@@ -51,8 +51,7 @@ impl FieldOptionBuilder {
     }
     /// <p> <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FieldOptionBuilder {
     }
     /// <p> <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens and underscores.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
     pub fn active(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl FieldOptionBuilder {
     }
     /// <p>Describes whether the <code>FieldOption</code> is active (displayed) or inactive.</p>
     pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-        self.active = input;
-        self
+        self.active = input; self
     }
     /// Consumes the builder and constructs a [`FieldOption`](crate::types::FieldOption).
     pub fn build(self) -> crate::types::FieldOption {
         crate::types::FieldOption {
-            name: self.name,
-            value: self.value,
-            active: self.active,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            active: self.active
+            ,
         }
     }
 }
+

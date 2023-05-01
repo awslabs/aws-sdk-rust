@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplateInput {
+pub struct UpdateTemplateInput  {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -27,31 +27,31 @@ pub struct UpdateTemplateInput {
 }
 impl UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A unique identifier for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the template. It must be unique per domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn layout_configuration(&self) -> std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn layout_configuration(&self) -> std::option::Option<& crate::types::LayoutConfiguration> {
         self.layout_configuration.as_ref()
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn required_fields(&self) -> std::option::Option<&[crate::types::RequiredField]> {
+    pub fn required_fields(&self) -> std::option::Option<& [crate::types::RequiredField]> {
         self.required_fields.as_deref()
     }
     /// <p>The status of the template.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TemplateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TemplateStatus> {
         self.status.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>A unique identifier for the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +91,7 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>A unique identifier for the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The name of the template. It must be unique per domain.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +100,7 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>The name of the template. It must be unique per domain.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A brief description of the template.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +109,7 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>A brief description of the template.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Configuration of layouts associated to the template.</p>
     pub fn layout_configuration(mut self, input: crate::types::LayoutConfiguration) -> Self {
@@ -121,12 +117,8 @@ impl UpdateTemplateInputBuilder {
         self
     }
     /// <p>Configuration of layouts associated to the template.</p>
-    pub fn set_layout_configuration(
-        mut self,
-        input: std::option::Option<crate::types::LayoutConfiguration>,
-    ) -> Self {
-        self.layout_configuration = input;
-        self
+    pub fn set_layout_configuration(mut self, input: std::option::Option<crate::types::LayoutConfiguration>) -> Self {
+        self.layout_configuration = input; self
     }
     /// Appends an item to `required_fields`.
     ///
@@ -135,17 +127,13 @@ impl UpdateTemplateInputBuilder {
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
     pub fn required_fields(mut self, input: crate::types::RequiredField) -> Self {
         let mut v = self.required_fields.unwrap_or_default();
-        v.push(input);
-        self.required_fields = Some(v);
-        self
+                        v.push(input);
+                        self.required_fields = Some(v);
+                        self
     }
     /// <p>A list of fields that must contain a value for a case to be successfully created with this template.</p>
-    pub fn set_required_fields(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RequiredField>>,
-    ) -> Self {
-        self.required_fields = input;
-        self
+    pub fn set_required_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::RequiredField>>) -> Self {
+        self.required_fields = input; self
     }
     /// <p>The status of the template.</p>
     pub fn status(mut self, input: crate::types::TemplateStatus) -> Self {
@@ -154,24 +142,28 @@ impl UpdateTemplateInputBuilder {
     }
     /// <p>The status of the template.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::TemplateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_template::UpdateTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_template::UpdateTemplateInput {
-            domain_id: self.domain_id,
-            template_id: self.template_id,
-            name: self.name,
-            description: self.description,
-            layout_configuration: self.layout_configuration,
-            required_fields: self.required_fields,
-            status: self.status,
-        })
+    pub fn build(self) -> Result<crate::operation::update_template::UpdateTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_template::UpdateTemplateInput {
+                domain_id: self.domain_id
+                ,
+                template_id: self.template_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                layout_configuration: self.layout_configuration
+                ,
+                required_fields: self.required_fields
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

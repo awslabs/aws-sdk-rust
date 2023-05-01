@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDestinationInput {
+pub struct DeleteDestinationInput  {
     /// <p>The name of the destination.</p>
     #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
 }
 impl DeleteDestinationInput {
     /// <p>The name of the destination.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
 }
 impl DeleteDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
-    pub fn builder() -> crate::operation::delete_destination::builders::DeleteDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_destination::builders::DeleteDestinationInputBuilder {
         crate::operation::delete_destination::builders::DeleteDestinationInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteDestinationInputBuilder {
     }
     /// <p>The name of the destination.</p>
     pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_destination::DeleteDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_destination::DeleteDestinationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_destination::DeleteDestinationInput {
-                destination_name: self.destination_name,
-            },
+                destination_name: self.destination_name
+                ,
+            }
         )
     }
 }
+

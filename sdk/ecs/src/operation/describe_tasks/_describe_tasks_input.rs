@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTasksInput {
+pub struct DescribeTasksInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DescribeTasksInput {
 }
 impl DescribeTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
-    pub fn cluster(&self) -> std::option::Option<&str> {
+    pub fn cluster(&self) -> std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn tasks(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tasks(&self) -> std::option::Option<& [std::string::String]> {
         self.tasks.as_deref()
     }
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn include(&self) -> std::option::Option<&[crate::types::TaskField]> {
+    pub fn include(&self) -> std::option::Option<& [crate::types::TaskField]> {
         self.include.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeTasksInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task or tasks to describe. If you do not specify a cluster, the default cluster is assumed. This parameter is required if the task or tasks you are describing were launched in any cluster other than the default cluster.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// Appends an item to `tasks`.
     ///
@@ -60,17 +59,13 @@ impl DescribeTasksInputBuilder {
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
     pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input.into());
-        self.tasks = Some(v);
-        self
+                        v.push(input.into());
+                        self.tasks = Some(v);
+                        self
     }
     /// <p>A list of up to 100 task IDs or full ARN entries.</p>
-    pub fn set_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tasks = input; self
     }
     /// Appends an item to `include`.
     ///
@@ -79,29 +74,26 @@ impl DescribeTasksInputBuilder {
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
     pub fn include(mut self, input: crate::types::TaskField) -> Self {
         let mut v = self.include.unwrap_or_default();
-        v.push(input);
-        self.include = Some(v);
-        self
+                        v.push(input);
+                        self.include = Some(v);
+                        self
     }
     /// <p>Specifies whether you want to see the resource tags for the task. If <code>TAGS</code> is specified, the tags are included in the response. If this field is omitted, tags aren't included in the response.</p>
-    pub fn set_include(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TaskField>>,
-    ) -> Self {
-        self.include = input;
-        self
+    pub fn set_include(mut self, input: std::option::Option<std::vec::Vec<crate::types::TaskField>>) -> Self {
+        self.include = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTasksInput`](crate::operation::describe_tasks::DescribeTasksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_tasks::DescribeTasksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_tasks::DescribeTasksInput {
-            cluster: self.cluster,
-            tasks: self.tasks,
-            include: self.include,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_tasks::DescribeTasksInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_tasks::DescribeTasksInput {
+                cluster: self.cluster
+                ,
+                tasks: self.tasks
+                ,
+                include: self.include
+                ,
+            }
+        )
     }
 }
+

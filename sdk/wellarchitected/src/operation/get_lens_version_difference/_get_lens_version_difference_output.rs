@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLensVersionDifferenceOutput {
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+pub struct GetLensVersionDifferenceOutput  {
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -27,42 +27,42 @@ pub struct GetLensVersionDifferenceOutput {
     _request_id: Option<String>,
 }
 impl GetLensVersionDifferenceOutput {
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<&str> {
+    pub fn lens_alias(&self) -> std::option::Option<& str> {
         self.lens_alias.as_deref()
     }
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> std::option::Option<& str> {
         self.lens_arn.as_deref()
     }
     /// <p>The base version of the lens.</p>
-    pub fn base_lens_version(&self) -> std::option::Option<&str> {
+    pub fn base_lens_version(&self) -> std::option::Option<& str> {
         self.base_lens_version.as_deref()
     }
     /// <p>The target lens version for the lens.</p>
-    pub fn target_lens_version(&self) -> std::option::Option<&str> {
+    pub fn target_lens_version(&self) -> std::option::Option<& str> {
         self.target_lens_version.as_deref()
     }
     /// <p>The latest version of the lens.</p>
-    pub fn latest_lens_version(&self) -> std::option::Option<&str> {
+    pub fn latest_lens_version(&self) -> std::option::Option<& str> {
         self.latest_lens_version.as_deref()
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn version_differences(&self) -> std::option::Option<&crate::types::VersionDifferences> {
+    pub fn version_differences(&self) -> std::option::Option<& crate::types::VersionDifferences> {
         self.version_differences.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetLensVersionDifferenceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetLensVersionDifferenceOutput {
     /// Creates a new builder-style object to manufacture [`GetLensVersionDifferenceOutput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput).
-    pub fn builder() -> crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceOutputBuilder{
+    pub fn builder() -> crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceOutputBuilder {
         crate::operation::get_lens_version_difference::builders::GetLensVersionDifferenceOutputBuilder::default()
     }
 }
@@ -80,21 +80,20 @@ pub struct GetLensVersionDifferenceOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLensVersionDifferenceOutputBuilder {
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_alias = Some(input.into());
         self
     }
-    /// <p>The alias of the lens.</p>
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
+    /// <p>The alias of the lens.</p> 
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_alias = input;
-        self
+        self.lens_alias = input; self
     }
     /// <p>The ARN for the lens.</p>
     pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +102,7 @@ impl GetLensVersionDifferenceOutputBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_arn = input;
-        self
+        self.lens_arn = input; self
     }
     /// <p>The base version of the lens.</p>
     pub fn base_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,12 +110,8 @@ impl GetLensVersionDifferenceOutputBuilder {
         self
     }
     /// <p>The base version of the lens.</p>
-    pub fn set_base_lens_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.base_lens_version = input;
-        self
+    pub fn set_base_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.base_lens_version = input; self
     }
     /// <p>The target lens version for the lens.</p>
     pub fn target_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,12 +119,8 @@ impl GetLensVersionDifferenceOutputBuilder {
         self
     }
     /// <p>The target lens version for the lens.</p>
-    pub fn set_target_lens_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_lens_version = input;
-        self
+    pub fn set_target_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_lens_version = input; self
     }
     /// <p>The latest version of the lens.</p>
     pub fn latest_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,12 +128,8 @@ impl GetLensVersionDifferenceOutputBuilder {
         self
     }
     /// <p>The latest version of the lens.</p>
-    pub fn set_latest_lens_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.latest_lens_version = input;
-        self
+    pub fn set_latest_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.latest_lens_version = input; self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
     pub fn version_differences(mut self, input: crate::types::VersionDifferences) -> Self {
@@ -151,34 +137,35 @@ impl GetLensVersionDifferenceOutputBuilder {
         self
     }
     /// <p>The differences between the base and latest versions of the lens.</p>
-    pub fn set_version_differences(
-        mut self,
-        input: std::option::Option<crate::types::VersionDifferences>,
-    ) -> Self {
-        self.version_differences = input;
-        self
+    pub fn set_version_differences(mut self, input: std::option::Option<crate::types::VersionDifferences>) -> Self {
+        self.version_differences = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetLensVersionDifferenceOutput`](crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput {
+    pub fn build(self) -> crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput {
         crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput {
-            lens_alias: self.lens_alias,
-            lens_arn: self.lens_arn,
-            base_lens_version: self.base_lens_version,
-            target_lens_version: self.target_lens_version,
-            latest_lens_version: self.latest_lens_version,
-            version_differences: self.version_differences,
+            lens_alias: self.lens_alias
+            ,
+            lens_arn: self.lens_arn
+            ,
+            base_lens_version: self.base_lens_version
+            ,
+            target_lens_version: self.target_lens_version
+            ,
+            latest_lens_version: self.latest_lens_version
+            ,
+            version_differences: self.version_differences
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

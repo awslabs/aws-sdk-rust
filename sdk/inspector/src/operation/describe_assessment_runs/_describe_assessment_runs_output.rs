@@ -2,41 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssessmentRunsOutput {
+pub struct DescribeAssessmentRunsOutput  {
     /// <p>Information about the assessment run.</p>
     #[doc(hidden)]
     pub assessment_runs: std::option::Option<std::vec::Vec<crate::types::AssessmentRun>>,
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
     #[doc(hidden)]
-    pub failed_items: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub failed_items: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAssessmentRunsOutput {
     /// <p>Information about the assessment run.</p>
-    pub fn assessment_runs(&self) -> std::option::Option<&[crate::types::AssessmentRun]> {
+    pub fn assessment_runs(&self) -> std::option::Option<& [crate::types::AssessmentRun]> {
         self.assessment_runs.as_deref()
     }
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>,
-    > {
+    pub fn failed_items(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>> {
         self.failed_items.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAssessmentRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAssessmentRunsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentRunsOutput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder {
         crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsOutputBuilder::default()
     }
 }
@@ -46,9 +38,7 @@ impl DescribeAssessmentRunsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAssessmentRunsOutputBuilder {
     pub(crate) assessment_runs: std::option::Option<std::vec::Vec<crate::types::AssessmentRun>>,
-    pub(crate) failed_items: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>,
-    >,
+    pub(crate) failed_items: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>>,
     _request_id: Option<String>,
 }
 impl DescribeAssessmentRunsOutputBuilder {
@@ -59,58 +49,47 @@ impl DescribeAssessmentRunsOutputBuilder {
     /// <p>Information about the assessment run.</p>
     pub fn assessment_runs(mut self, input: crate::types::AssessmentRun) -> Self {
         let mut v = self.assessment_runs.unwrap_or_default();
-        v.push(input);
-        self.assessment_runs = Some(v);
-        self
+                        v.push(input);
+                        self.assessment_runs = Some(v);
+                        self
     }
     /// <p>Information about the assessment run.</p>
-    pub fn set_assessment_runs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssessmentRun>>,
-    ) -> Self {
-        self.assessment_runs = input;
-        self
+    pub fn set_assessment_runs(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssessmentRun>>) -> Self {
+        self.assessment_runs = input; self
     }
     /// Adds a key-value pair to `failed_items`.
     ///
     /// To override the contents of this collection use [`set_failed_items`](Self::set_failed_items).
     ///
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn failed_items(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::FailedItemDetails,
-    ) -> Self {
+    pub fn failed_items(mut self, k: impl Into<std::string::String>, v: crate::types::FailedItemDetails) -> Self {
         let mut hash_map = self.failed_items.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.failed_items = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.failed_items = Some(hash_map);
+                        self
     }
     /// <p>Assessment run details that cannot be described. An error code is provided for each failed item.</p>
-    pub fn set_failed_items(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>,
-        >,
-    ) -> Self {
-        self.failed_items = input;
-        self
+    pub fn set_failed_items(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FailedItemDetails>>) -> Self {
+        self.failed_items = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsOutput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput).
     pub fn build(self) -> crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput {
         crate::operation::describe_assessment_runs::DescribeAssessmentRunsOutput {
-            assessment_runs: self.assessment_runs,
-            failed_items: self.failed_items,
+            assessment_runs: self.assessment_runs
+            ,
+            failed_items: self.failed_items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

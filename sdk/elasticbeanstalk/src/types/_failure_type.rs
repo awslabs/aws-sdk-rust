@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failuretype = unimplemented!();
 /// match failuretype {
@@ -35,22 +35,14 @@
 /// Specifically, when `failuretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailureType {
     #[allow(missing_docs)] // documentation missing in model
     CancellationFailed,
@@ -67,58 +59,51 @@ pub enum FailureType {
     #[allow(missing_docs)] // documentation missing in model
     UpdateCancelled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CancellationFailed" => FailureType::CancellationFailed,
-            "InternalFailure" => FailureType::InternalFailure,
-            "InvalidEnvironmentState" => FailureType::InvalidEnvironmentState,
-            "PermissionsError" => FailureType::PermissionsError,
-            "RollbackFailed" => FailureType::RollbackFailed,
-            "RollbackSuccessful" => FailureType::RollbackSuccessful,
-            "UpdateCancelled" => FailureType::UpdateCancelled,
-            other => FailureType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CancellationFailed" => FailureType::CancellationFailed,
+"InternalFailure" => FailureType::InternalFailure,
+"InvalidEnvironmentState" => FailureType::InvalidEnvironmentState,
+"PermissionsError" => FailureType::PermissionsError,
+"RollbackFailed" => FailureType::RollbackFailed,
+"RollbackSuccessful" => FailureType::RollbackSuccessful,
+"UpdateCancelled" => FailureType::UpdateCancelled,
+other => FailureType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FailureType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailureType::from(s))
+                }
+            }
 impl FailureType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailureType::CancellationFailed => "CancellationFailed",
-            FailureType::InternalFailure => "InternalFailure",
-            FailureType::InvalidEnvironmentState => "InvalidEnvironmentState",
-            FailureType::PermissionsError => "PermissionsError",
-            FailureType::RollbackFailed => "RollbackFailed",
-            FailureType::RollbackSuccessful => "RollbackSuccessful",
-            FailureType::UpdateCancelled => "UpdateCancelled",
-            FailureType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CancellationFailed",
-            "InternalFailure",
-            "InvalidEnvironmentState",
-            "PermissionsError",
-            "RollbackFailed",
-            "RollbackSuccessful",
-            "UpdateCancelled",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailureType::CancellationFailed => "CancellationFailed",
+    FailureType::InternalFailure => "InternalFailure",
+    FailureType::InvalidEnvironmentState => "InvalidEnvironmentState",
+    FailureType::PermissionsError => "PermissionsError",
+    FailureType::RollbackFailed => "RollbackFailed",
+    FailureType::RollbackSuccessful => "RollbackSuccessful",
+    FailureType::UpdateCancelled => "UpdateCancelled",
+    FailureType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CancellationFailed", "InternalFailure", "InvalidEnvironmentState", "PermissionsError", "RollbackFailed", "RollbackSuccessful", "UpdateCancelled"]
+                }
+            }
 impl AsRef<str> for FailureType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

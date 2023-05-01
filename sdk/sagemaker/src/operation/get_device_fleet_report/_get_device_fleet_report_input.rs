@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceFleetReportInput {
+pub struct GetDeviceFleetReportInput  {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
 }
 impl GetDeviceFleetReportInput {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
 }
 impl GetDeviceFleetReportInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder {
+    pub fn builder() -> crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder {
         crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetDeviceFleetReportInputBuilder {
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_fleet_name = input;
-        self
+    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_fleet_name = input; self
     }
     /// Consumes the builder and constructs a [`GetDeviceFleetReportInput`](crate::operation::get_device_fleet_report::GetDeviceFleetReportInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_device_fleet_report::GetDeviceFleetReportInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_device_fleet_report::GetDeviceFleetReportInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_device_fleet_report::GetDeviceFleetReportInput {
-                device_fleet_name: self.device_fleet_name,
-            },
+                device_fleet_name: self.device_fleet_name
+                ,
+            }
         )
     }
 }
+

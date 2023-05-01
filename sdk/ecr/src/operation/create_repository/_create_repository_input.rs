@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRepositoryInput {
+pub struct CreateRepositoryInput  {
     /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -24,38 +24,33 @@ pub struct CreateRepositoryInput {
 }
 impl CreateRepositoryInput {
     /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn image_tag_mutability(&self) -> std::option::Option<&crate::types::ImageTagMutability> {
+    pub fn image_tag_mutability(&self) -> std::option::Option<& crate::types::ImageTagMutability> {
         self.image_tag_mutability.as_ref()
     }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn image_scanning_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(&self) -> std::option::Option<& crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
 impl CreateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         crate::operation::create_repository::builders::CreateRepositoryInputBuilder::default()
     }
 }
@@ -68,8 +63,7 @@ pub struct CreateRepositoryInputBuilder {
     pub(crate) repository_name: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) image_tag_mutability: std::option::Option<crate::types::ImageTagMutability>,
-    pub(crate) image_scanning_configuration:
-        std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) image_scanning_configuration: std::option::Option<crate::types::ImageScanningConfiguration>,
     pub(crate) encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateRepositoryInputBuilder {
@@ -80,8 +74,7 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry to create the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +83,7 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p>The name to use for the repository. The repository name may be specified on its own (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such as <code>project-a/nginx-web-app</code>).</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -100,17 +92,13 @@ impl CreateRepositoryInputBuilder {
     /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The metadata that you apply to the repository to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
     pub fn image_tag_mutability(mut self, input: crate::types::ImageTagMutability) -> Self {
@@ -118,59 +106,45 @@ impl CreateRepositoryInputBuilder {
         self
     }
     /// <p>The tag mutability setting for the repository. If this parameter is omitted, the default setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten. If <code>IMMUTABLE</code> is specified, all image tags within the repository will be immutable which will prevent them from being overwritten.</p>
-    pub fn set_image_tag_mutability(
-        mut self,
-        input: std::option::Option<crate::types::ImageTagMutability>,
-    ) -> Self {
-        self.image_tag_mutability = input;
-        self
+    pub fn set_image_tag_mutability(mut self, input: std::option::Option<crate::types::ImageTagMutability>) -> Self {
+        self.image_tag_mutability = input; self
     }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn image_scanning_configuration(
-        mut self,
-        input: crate::types::ImageScanningConfiguration,
-    ) -> Self {
+    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
         self.image_scanning_configuration = Some(input);
         self
     }
     /// <p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>
-    pub fn set_image_scanning_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ImageScanningConfiguration>,
-    ) -> Self {
-        self.image_scanning_configuration = input;
-        self
+    pub fn set_image_scanning_configuration(mut self, input: std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
+        self.image_scanning_configuration = input; self
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = Some(input);
         self
     }
     /// <p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
-        self.encryption_configuration = input;
-        self
+    pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input; self
     }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_repository::CreateRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_repository::CreateRepositoryInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            tags: self.tags,
-            image_tag_mutability: self.image_tag_mutability,
-            image_scanning_configuration: self.image_scanning_configuration,
-            encryption_configuration: self.encryption_configuration,
-        })
+    pub fn build(self) -> Result<crate::operation::create_repository::CreateRepositoryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_repository::CreateRepositoryInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                tags: self.tags
+                ,
+                image_tag_mutability: self.image_tag_mutability
+                ,
+                image_scanning_configuration: self.image_scanning_configuration
+                ,
+                encryption_configuration: self.encryption_configuration
+                ,
+            }
+        )
     }
 }
+

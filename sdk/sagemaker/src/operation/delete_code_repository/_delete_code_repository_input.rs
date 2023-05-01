@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCodeRepositoryInput {
+pub struct DeleteCodeRepositoryInput  {
     /// <p>The name of the Git repository to delete.</p>
     #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteCodeRepositoryInput {
     /// <p>The name of the Git repository to delete.</p>
-    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+    pub fn code_repository_name(&self) -> std::option::Option<& str> {
         self.code_repository_name.as_deref()
     }
 }
 impl DeleteCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_code_repository::builders::DeleteCodeRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::delete_code_repository::builders::DeleteCodeRepositoryInputBuilder {
         crate::operation::delete_code_repository::builders::DeleteCodeRepositoryInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteCodeRepositoryInputBuilder {
         self
     }
     /// <p>The name of the Git repository to delete.</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_repository_name = input;
-        self
+    pub fn set_code_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_repository_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCodeRepositoryInput`](crate::operation::delete_code_repository::DeleteCodeRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_code_repository::DeleteCodeRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_code_repository::DeleteCodeRepositoryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_code_repository::DeleteCodeRepositoryInput {
-                code_repository_name: self.code_repository_name,
-            },
+                code_repository_name: self.code_repository_name
+                ,
+            }
         )
     }
 }
+

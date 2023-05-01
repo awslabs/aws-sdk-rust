@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscriptionDefinitionVersionsOutput {
+pub struct ListSubscriptionDefinitionVersionsOutput  {
     /// The token for the next set of results, or ''null'' if there are no additional results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct ListSubscriptionDefinitionVersionsOutput {
 }
 impl ListSubscriptionDefinitionVersionsOutput {
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Information about a version.
-    pub fn versions(&self) -> std::option::Option<&[crate::types::VersionInformation]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::types::VersionInformation]> {
         self.versions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSubscriptionDefinitionVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSubscriptionDefinitionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscriptionDefinitionVersionsOutput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput).
-    pub fn builder() -> crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsOutputBuilder {
         crate::operation::list_subscription_definition_versions::builders::ListSubscriptionDefinitionVersionsOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl ListSubscriptionDefinitionVersionsOutputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `versions`.
     ///
@@ -59,29 +58,25 @@ impl ListSubscriptionDefinitionVersionsOutputBuilder {
     /// Information about a version.
     pub fn versions(mut self, input: crate::types::VersionInformation) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input);
-        self.versions = Some(v);
-        self
+                        v.push(input);
+                        self.versions = Some(v);
+                        self
     }
     /// Information about a version.
-    pub fn set_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VersionInformation>>,
-    ) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::VersionInformation>>) -> Self {
+        self.versions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSubscriptionDefinitionVersionsOutput`](crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput).
-    pub fn build(self) -> crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput{
+    pub fn build(self) -> crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput {
         crate::operation::list_subscription_definition_versions::ListSubscriptionDefinitionVersionsOutput {
             next_token: self.next_token
             ,
@@ -91,3 +86,4 @@ impl ListSubscriptionDefinitionVersionsOutputBuilder {
         }
     }
 }
+

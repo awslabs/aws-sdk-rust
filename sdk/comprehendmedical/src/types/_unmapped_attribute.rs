@@ -3,7 +3,7 @@
 /// <p> An attribute that was extracted, but Comprehend Medical; was unable to relate to an entity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnmappedAttribute {
+pub struct UnmappedAttribute  {
     /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EntityType>,
@@ -13,11 +13,11 @@ pub struct UnmappedAttribute {
 }
 impl UnmappedAttribute {
     /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EntityType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::EntityType> {
         self.r#type.as_ref()
     }
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::Attribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::Attribute> {
         self.attribute.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UnmappedAttributeBuilder {
     }
     /// <p> The type of the unmapped attribute, could be one of the following values: "MEDICATION", "MEDICAL_CONDITION", "ANATOMY", "TEST_AND_TREATMENT_PROCEDURE" or "PROTECTED_HEALTH_INFORMATION". </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EntityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
     pub fn attribute(mut self, input: crate::types::Attribute) -> Self {
@@ -53,14 +52,16 @@ impl UnmappedAttributeBuilder {
     }
     /// <p> The specific attribute that has been extracted but not mapped to an entity. </p>
     pub fn set_attribute(mut self, input: std::option::Option<crate::types::Attribute>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// Consumes the builder and constructs a [`UnmappedAttribute`](crate::types::UnmappedAttribute).
     pub fn build(self) -> crate::types::UnmappedAttribute {
         crate::types::UnmappedAttribute {
-            r#type: self.r#type,
-            attribute: self.attribute,
+            r#type: self.r#type
+            ,
+            attribute: self.attribute
+            ,
         }
     }
 }
+

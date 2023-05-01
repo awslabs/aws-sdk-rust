@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateListInput {
+pub struct CreateListInput  {
     /// <p> The name of the list. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct CreateListInput {
 }
 impl CreateListInput {
     /// <p> The name of the list. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API. </p>
-    pub fn elements(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn elements(&self) -> std::option::Option<& [std::string::String]> {
         self.elements.as_deref()
     }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
-    pub fn variable_type(&self) -> std::option::Option<&str> {
+    pub fn variable_type(&self) -> std::option::Option<& str> {
         self.variable_type.as_deref()
     }
     /// <p> The description of the list. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A collection of the key and value pairs. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl CreateListInputBuilder {
     }
     /// <p> The name of the list. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `elements`.
     ///
@@ -76,17 +75,13 @@ impl CreateListInputBuilder {
     /// <p> The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API. </p>
     pub fn elements(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input.into());
-        self.elements = Some(v);
-        self
+                        v.push(input.into());
+                        self.elements = Some(v);
+                        self
     }
     /// <p> The names of the elements, if providing. You can also create an empty list and add elements later using the <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_Updatelist.html">UpdateList</a> API. </p>
-    pub fn set_elements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.elements = input; self
     }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
     pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +90,7 @@ impl CreateListInputBuilder {
     }
     /// <p> The variable type of the list. You can only assign the variable type with String data type. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable types</a>. </p>
     pub fn set_variable_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.variable_type = input;
-        self
+        self.variable_type = input; self
     }
     /// <p> The description of the list. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +99,7 @@ impl CreateListInputBuilder {
     }
     /// <p> The description of the list. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -115,31 +108,30 @@ impl CreateListInputBuilder {
     /// <p> A collection of the key and value pairs. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p> A collection of the key and value pairs. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateListInput`](crate::operation::create_list::CreateListInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_list::CreateListInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_list::CreateListInput {
-            name: self.name,
-            elements: self.elements,
-            variable_type: self.variable_type,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_list::CreateListInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_list::CreateListInput {
+                name: self.name
+                ,
+                elements: self.elements
+                ,
+                variable_type: self.variable_type
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

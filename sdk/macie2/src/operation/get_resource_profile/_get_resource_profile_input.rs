@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceProfileInput {
+pub struct GetResourceProfileInput  {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetResourceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl GetResourceProfileInput {
     /// Creates a new builder-style object to manufacture [`GetResourceProfileInput`](crate::operation::get_resource_profile::GetResourceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_profile::builders::GetResourceProfileInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_profile::builders::GetResourceProfileInputBuilder {
         crate::operation::get_resource_profile::builders::GetResourceProfileInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetResourceProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetResourceProfileInput`](crate::operation::get_resource_profile::GetResourceProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resource_profile::GetResourceProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_resource_profile::GetResourceProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_resource_profile::GetResourceProfileInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

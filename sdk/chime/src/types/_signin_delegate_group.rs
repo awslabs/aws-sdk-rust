@@ -3,14 +3,14 @@
 /// <p>An Active Directory (AD) group whose members are granted permission to act as delegates.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SigninDelegateGroup {
+pub struct SigninDelegateGroup  {
     /// <p>The group name.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
 }
 impl SigninDelegateGroup {
     /// <p>The group name.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl SigninDelegateGroupBuilder {
     }
     /// <p>The group name.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// Consumes the builder and constructs a [`SigninDelegateGroup`](crate::types::SigninDelegateGroup).
     pub fn build(self) -> crate::types::SigninDelegateGroup {
         crate::types::SigninDelegateGroup {
-            group_name: self.group_name,
+            group_name: self.group_name
+            ,
         }
     }
 }
+

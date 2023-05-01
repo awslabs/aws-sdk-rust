@@ -10,3 +10,4 @@ pub use crate::types::_cartesian_coordinates::CartesianCoordinatesBuilder;
 pub use crate::types::_vendor_properties::VendorPropertiesBuilder;
 
 pub use crate::types::_worker::WorkerBuilder;
+

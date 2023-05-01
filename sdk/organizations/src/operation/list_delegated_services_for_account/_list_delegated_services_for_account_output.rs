@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDelegatedServicesForAccountOutput {
+pub struct ListDelegatedServicesForAccountOutput  {
     /// <p>The services for which the account is a delegated administrator.</p>
     #[doc(hidden)]
     pub delegated_services: std::option::Option<std::vec::Vec<crate::types::DelegatedService>>,
@@ -13,22 +13,22 @@ pub struct ListDelegatedServicesForAccountOutput {
 }
 impl ListDelegatedServicesForAccountOutput {
     /// <p>The services for which the account is a delegated administrator.</p>
-    pub fn delegated_services(&self) -> std::option::Option<&[crate::types::DelegatedService]> {
+    pub fn delegated_services(&self) -> std::option::Option<& [crate::types::DelegatedService]> {
         self.delegated_services.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDelegatedServicesForAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDelegatedServicesForAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedServicesForAccountOutput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput).
-    pub fn builder() -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountOutputBuilder{
+    pub fn builder() -> crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountOutputBuilder {
         crate::operation::list_delegated_services_for_account::builders::ListDelegatedServicesForAccountOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl ListDelegatedServicesForAccountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDelegatedServicesForAccountOutputBuilder {
-    pub(crate) delegated_services:
-        std::option::Option<std::vec::Vec<crate::types::DelegatedService>>,
+    pub(crate) delegated_services: std::option::Option<std::vec::Vec<crate::types::DelegatedService>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListDelegatedServicesForAccountOutputBuilder {
     /// <p>The services for which the account is a delegated administrator.</p>
     pub fn delegated_services(mut self, input: crate::types::DelegatedService) -> Self {
         let mut v = self.delegated_services.unwrap_or_default();
-        v.push(input);
-        self.delegated_services = Some(v);
-        self
+                        v.push(input);
+                        self.delegated_services = Some(v);
+                        self
     }
     /// <p>The services for which the account is a delegated administrator.</p>
-    pub fn set_delegated_services(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DelegatedService>>,
-    ) -> Self {
-        self.delegated_services = input;
-        self
+    pub fn set_delegated_services(mut self, input: std::option::Option<std::vec::Vec<crate::types::DelegatedService>>) -> Self {
+        self.delegated_services = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,23 +64,19 @@ impl ListDelegatedServicesForAccountOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDelegatedServicesForAccountOutput`](crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput
-    {
+    pub fn build(self) -> crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput {
         crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput {
             delegated_services: self.delegated_services
             ,
@@ -95,3 +86,4 @@ impl ListDelegatedServicesForAccountOutputBuilder {
         }
     }
 }
+

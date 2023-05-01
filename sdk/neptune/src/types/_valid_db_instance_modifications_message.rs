@@ -3,14 +3,14 @@
 /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidDbInstanceModificationsMessage {
+pub struct ValidDbInstanceModificationsMessage  {
     /// <p>Valid storage options for your DB instance.</p>
     #[doc(hidden)]
     pub storage: std::option::Option<std::vec::Vec<crate::types::ValidStorageOptions>>,
 }
 impl ValidDbInstanceModificationsMessage {
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn storage(&self) -> std::option::Option<&[crate::types::ValidStorageOptions]> {
+    pub fn storage(&self) -> std::option::Option<& [crate::types::ValidStorageOptions]> {
         self.storage.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl ValidDbInstanceModificationsMessageBuilder {
     /// <p>Valid storage options for your DB instance.</p>
     pub fn storage(mut self, input: crate::types::ValidStorageOptions) -> Self {
         let mut v = self.storage.unwrap_or_default();
-        v.push(input);
-        self.storage = Some(v);
-        self
+                        v.push(input);
+                        self.storage = Some(v);
+                        self
     }
     /// <p>Valid storage options for your DB instance.</p>
-    pub fn set_storage(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidStorageOptions>>,
-    ) -> Self {
-        self.storage = input;
-        self
+    pub fn set_storage(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidStorageOptions>>) -> Self {
+        self.storage = input; self
     }
     /// Consumes the builder and constructs a [`ValidDbInstanceModificationsMessage`](crate::types::ValidDbInstanceModificationsMessage).
     pub fn build(self) -> crate::types::ValidDbInstanceModificationsMessage {
         crate::types::ValidDbInstanceModificationsMessage {
-            storage: self.storage,
+            storage: self.storage
+            ,
         }
     }
 }
+

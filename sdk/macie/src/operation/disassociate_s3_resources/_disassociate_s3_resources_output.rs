@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateS3ResourcesOutput {
+pub struct DisassociateS3ResourcesOutput  {
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     #[doc(hidden)]
     pub failed_s3_resources: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
@@ -10,20 +10,18 @@ pub struct DisassociateS3ResourcesOutput {
 }
 impl DisassociateS3ResourcesOutput {
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
-    pub fn failed_s3_resources(&self) -> std::option::Option<&[crate::types::FailedS3Resource]> {
+    pub fn failed_s3_resources(&self) -> std::option::Option<& [crate::types::FailedS3Resource]> {
         self.failed_s3_resources.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateS3ResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateS3ResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateS3ResourcesOutput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesOutputBuilder {
         crate::operation::disassociate_s3_resources::builders::DisassociateS3ResourcesOutputBuilder::default()
     }
 }
@@ -32,8 +30,7 @@ impl DisassociateS3ResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateS3ResourcesOutputBuilder {
-    pub(crate) failed_s3_resources:
-        std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
+    pub(crate) failed_s3_resources: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
     _request_id: Option<String>,
 }
 impl DisassociateS3ResourcesOutputBuilder {
@@ -44,34 +41,30 @@ impl DisassociateS3ResourcesOutputBuilder {
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
     pub fn failed_s3_resources(mut self, input: crate::types::FailedS3Resource) -> Self {
         let mut v = self.failed_s3_resources.unwrap_or_default();
-        v.push(input);
-        self.failed_s3_resources = Some(v);
-        self
+                        v.push(input);
+                        self.failed_s3_resources = Some(v);
+                        self
     }
     /// <p>(Discontinued) S3 resources that couldn't be removed from being monitored and classified by Amazon Macie Classic. An error code and an error message are provided for each failed item. </p>
-    pub fn set_failed_s3_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>,
-    ) -> Self {
-        self.failed_s3_resources = input;
-        self
+    pub fn set_failed_s3_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedS3Resource>>) -> Self {
+        self.failed_s3_resources = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateS3ResourcesOutput`](crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput {
+    pub fn build(self) -> crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput {
         crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput {
-            failed_s3_resources: self.failed_s3_resources,
+            failed_s3_resources: self.failed_s3_resources
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIpGroupInput {
+pub struct DeleteIpGroupInput  {
     /// <p>The identifier of the IP access control group.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl DeleteIpGroupInput {
     /// <p>The identifier of the IP access control group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteIpGroupInputBuilder {
     }
     /// <p>The identifier of the IP access control group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteIpGroupInput`](crate::operation::delete_ip_group::DeleteIpGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_ip_group::DeleteIpGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_ip_group::DeleteIpGroupInput {
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_ip_group::DeleteIpGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_ip_group::DeleteIpGroupInput {
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

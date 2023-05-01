@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobRunsInput {
+pub struct ListJobRunsInput  {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
     #[doc(hidden)]
     pub virtual_cluster_id: std::option::Option<std::string::String>,
@@ -27,23 +27,23 @@ pub struct ListJobRunsInput {
 }
 impl ListJobRunsInput {
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
     /// <p>The date and time before which the job runs were submitted.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The date and time after which the job runs were submitted.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The name of the job run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The states of the job run.</p>
-    pub fn states(&self) -> std::option::Option<&[crate::types::JobRunState]> {
+    pub fn states(&self) -> std::option::Option<& [crate::types::JobRunState]> {
         self.states.as_deref()
     }
     /// <p>The maximum number of job runs that can be listed.</p>
@@ -51,7 +51,7 @@ impl ListJobRunsInput {
         self.max_results
     }
     /// <p>The token for the next set of job runs to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -81,12 +81,8 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The ID of the virtual cluster for which to list the job run. </p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_cluster_id = input;
-        self
+    pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_cluster_id = input; self
     }
     /// <p>The date and time before which the job runs were submitted.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,12 +90,8 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The date and time before which the job runs were submitted.</p>
-    pub fn set_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_before = input;
-        self
+    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_before = input; self
     }
     /// <p>The date and time after which the job runs were submitted.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -107,12 +99,8 @@ impl ListJobRunsInputBuilder {
         self
     }
     /// <p>The date and time after which the job runs were submitted.</p>
-    pub fn set_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_after = input;
-        self
+    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_after = input; self
     }
     /// <p>The name of the job run.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +109,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The name of the job run.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `states`.
     ///
@@ -131,17 +118,13 @@ impl ListJobRunsInputBuilder {
     /// <p>The states of the job run.</p>
     pub fn states(mut self, input: crate::types::JobRunState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = Some(v);
-        self
+                        v.push(input);
+                        self.states = Some(v);
+                        self
     }
     /// <p>The states of the job run.</p>
-    pub fn set_states(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobRunState>>,
-    ) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobRunState>>) -> Self {
+        self.states = input; self
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -150,8 +133,7 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The maximum number of job runs that can be listed.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of job runs to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,24 +142,28 @@ impl ListJobRunsInputBuilder {
     }
     /// <p>The token for the next set of job runs to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_job_runs::ListJobRunsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_job_runs::ListJobRunsInput {
-            virtual_cluster_id: self.virtual_cluster_id,
-            created_before: self.created_before,
-            created_after: self.created_after,
-            name: self.name,
-            states: self.states,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_job_runs::ListJobRunsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_job_runs::ListJobRunsInput {
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
+                created_before: self.created_before
+                ,
+                created_after: self.created_after
+                ,
+                name: self.name
+                ,
+                states: self.states
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

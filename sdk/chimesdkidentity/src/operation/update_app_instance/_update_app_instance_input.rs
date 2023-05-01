@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAppInstanceInput {
+pub struct UpdateAppInstanceInput  {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdateAppInstanceInput {
 }
 impl UpdateAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The name that you want to change.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata that you want to change.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInstanceInput {
+impl  std::fmt::Debug for UpdateAppInstanceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -38,8 +38,7 @@ impl std::fmt::Debug for UpdateAppInstanceInput {
 }
 impl UpdateAppInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceInput`](crate::operation::update_app_instance::UpdateAppInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::update_app_instance::builders::UpdateAppInstanceInputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance::builders::UpdateAppInstanceInputBuilder {
         crate::operation::update_app_instance::builders::UpdateAppInstanceInputBuilder::default()
     }
 }
@@ -60,8 +59,7 @@ impl UpdateAppInstanceInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The name that you want to change.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +68,7 @@ impl UpdateAppInstanceInputBuilder {
     }
     /// <p>The name that you want to change.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metadata that you want to change.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,22 +77,19 @@ impl UpdateAppInstanceInputBuilder {
     }
     /// <p>The metadata that you want to change.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceInput`](crate::operation::update_app_instance::UpdateAppInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_app_instance::UpdateAppInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_app_instance::UpdateAppInstanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_app_instance::UpdateAppInstanceInput {
-                app_instance_arn: self.app_instance_arn,
-                name: self.name,
-                metadata: self.metadata,
-            },
+                app_instance_arn: self.app_instance_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+            }
         )
     }
 }
@@ -108,3 +102,4 @@ impl std::fmt::Debug for UpdateAppInstanceInputBuilder {
         formatter.finish()
     }
 }
+

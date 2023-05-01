@@ -4,80 +4,55 @@ pub use crate::operation::describe_image_scan_findings::_describe_image_scan_fin
 pub use crate::operation::describe_image_scan_findings::_describe_image_scan_findings_input::DescribeImageScanFindingsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeImageScanFindings`.
-///
+/// 
 /// <p>Returns the scan findings for the specified image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImageScanFindingsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder
             }
-impl DescribeImageScanFindingsFluentBuilder {
+impl DescribeImageScanFindingsFluentBuilder  {
     /// Creates a new `DescribeImageScanFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_image_scan_findings::DescribeImageScanFindings, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_image_scan_findings::DescribeImageScanFindingsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator
-    {
-        crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator {
+                            crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
@@ -104,10 +79,7 @@ impl DescribeImageScanFindingsFluentBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
+    pub fn set_image_id(mut self, input: std::option::Option<crate::types::ImageIdentifier>) -> Self {
         self.inner = self.inner.set_image_id(input);
         self
     }
@@ -132,3 +104,4 @@ impl DescribeImageScanFindingsFluentBuilder {
         self
     }
 }
+

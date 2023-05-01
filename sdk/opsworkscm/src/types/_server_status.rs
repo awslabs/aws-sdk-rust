@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let serverstatus = unimplemented!();
 /// match serverstatus {
@@ -41,22 +41,14 @@
 /// Specifically, when `serverstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServerStatus {
     #[allow(missing_docs)] // documentation missing in model
     BackingUp,
@@ -85,78 +77,63 @@ pub enum ServerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServerStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "BACKING_UP" => ServerStatus::BackingUp,
-            "CONNECTION_LOST" => ServerStatus::ConnectionLost,
-            "CREATING" => ServerStatus::Creating,
-            "DELETING" => ServerStatus::Deleting,
-            "FAILED" => ServerStatus::Failed,
-            "HEALTHY" => ServerStatus::Healthy,
-            "MODIFYING" => ServerStatus::Modifying,
-            "RESTORING" => ServerStatus::Restoring,
-            "RUNNING" => ServerStatus::Running,
-            "SETUP" => ServerStatus::Setup,
-            "TERMINATED" => ServerStatus::Terminated,
-            "UNDER_MAINTENANCE" => ServerStatus::UnderMaintenance,
-            "UNHEALTHY" => ServerStatus::Unhealthy,
-            other => {
-                ServerStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BACKING_UP" => ServerStatus::BackingUp,
+"CONNECTION_LOST" => ServerStatus::ConnectionLost,
+"CREATING" => ServerStatus::Creating,
+"DELETING" => ServerStatus::Deleting,
+"FAILED" => ServerStatus::Failed,
+"HEALTHY" => ServerStatus::Healthy,
+"MODIFYING" => ServerStatus::Modifying,
+"RESTORING" => ServerStatus::Restoring,
+"RUNNING" => ServerStatus::Running,
+"SETUP" => ServerStatus::Setup,
+"TERMINATED" => ServerStatus::Terminated,
+"UNDER_MAINTENANCE" => ServerStatus::UnderMaintenance,
+"UNHEALTHY" => ServerStatus::Unhealthy,
+other => ServerStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ServerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServerStatus::from(s))
+                }
+            }
 impl ServerStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServerStatus::BackingUp => "BACKING_UP",
-            ServerStatus::ConnectionLost => "CONNECTION_LOST",
-            ServerStatus::Creating => "CREATING",
-            ServerStatus::Deleting => "DELETING",
-            ServerStatus::Failed => "FAILED",
-            ServerStatus::Healthy => "HEALTHY",
-            ServerStatus::Modifying => "MODIFYING",
-            ServerStatus::Restoring => "RESTORING",
-            ServerStatus::Running => "RUNNING",
-            ServerStatus::Setup => "SETUP",
-            ServerStatus::Terminated => "TERMINATED",
-            ServerStatus::UnderMaintenance => "UNDER_MAINTENANCE",
-            ServerStatus::Unhealthy => "UNHEALTHY",
-            ServerStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BACKING_UP",
-            "CONNECTION_LOST",
-            "CREATING",
-            "DELETING",
-            "FAILED",
-            "HEALTHY",
-            "MODIFYING",
-            "RESTORING",
-            "RUNNING",
-            "SETUP",
-            "TERMINATED",
-            "UNDER_MAINTENANCE",
-            "UNHEALTHY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServerStatus::BackingUp => "BACKING_UP",
+    ServerStatus::ConnectionLost => "CONNECTION_LOST",
+    ServerStatus::Creating => "CREATING",
+    ServerStatus::Deleting => "DELETING",
+    ServerStatus::Failed => "FAILED",
+    ServerStatus::Healthy => "HEALTHY",
+    ServerStatus::Modifying => "MODIFYING",
+    ServerStatus::Restoring => "RESTORING",
+    ServerStatus::Running => "RUNNING",
+    ServerStatus::Setup => "SETUP",
+    ServerStatus::Terminated => "TERMINATED",
+    ServerStatus::UnderMaintenance => "UNDER_MAINTENANCE",
+    ServerStatus::Unhealthy => "UNHEALTHY",
+    ServerStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BACKING_UP", "CONNECTION_LOST", "CREATING", "DELETING", "FAILED", "HEALTHY", "MODIFYING", "RESTORING", "RUNNING", "SETUP", "TERMINATED", "UNDER_MAINTENANCE", "UNHEALTHY"]
+                }
+            }
 impl AsRef<str> for ServerStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

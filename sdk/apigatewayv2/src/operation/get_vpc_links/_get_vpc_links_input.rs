@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVpcLinksInput {
+pub struct GetVpcLinksInput  {
     /// <p>The maximum number of elements to be returned for this resource.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetVpcLinksInput {
 }
 impl GetVpcLinksInput {
     /// <p>The maximum number of elements to be returned for this resource.</p>
-    pub fn max_results(&self) -> std::option::Option<&str> {
+    pub fn max_results(&self) -> std::option::Option<& str> {
         self.max_results.as_deref()
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetVpcLinksInputBuilder {
     }
     /// <p>The maximum number of elements to be returned for this resource.</p>
     pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetVpcLinksInputBuilder {
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetVpcLinksInput`](crate::operation::get_vpc_links::GetVpcLinksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_vpc_links::GetVpcLinksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_vpc_links::GetVpcLinksInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::get_vpc_links::GetVpcLinksInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_vpc_links::GetVpcLinksInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

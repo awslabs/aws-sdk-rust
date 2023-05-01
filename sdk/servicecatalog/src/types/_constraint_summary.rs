@@ -3,13 +3,13 @@
 /// <p>Summary information about a constraint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConstraintSummary {
-    /// <p>The type of constraint.</p>
-    /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p>STACKSET</p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+pub struct ConstraintSummary  {
+    /// <p>The type of constraint.</p> 
+    /// <ul> 
+    /// <li> <p> <code>LAUNCH</code> </p> </li> 
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li> 
+    /// <li> <p>STACKSET</p> </li> 
+    /// <li> <p> <code>TEMPLATE</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -18,18 +18,18 @@ pub struct ConstraintSummary {
     pub description: std::option::Option<std::string::String>,
 }
 impl ConstraintSummary {
-    /// <p>The type of constraint.</p>
-    /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p>STACKSET</p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// <p>The type of constraint.</p> 
+    /// <ul> 
+    /// <li> <p> <code>LAUNCH</code> </p> </li> 
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li> 
+    /// <li> <p>STACKSET</p> </li> 
+    /// <li> <p> <code>TEMPLATE</code> </p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The description of the constraint.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -48,27 +48,26 @@ pub struct ConstraintSummaryBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
 }
 impl ConstraintSummaryBuilder {
-    /// <p>The type of constraint.</p>
-    /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p>STACKSET</p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// <p>The type of constraint.</p> 
+    /// <ul> 
+    /// <li> <p> <code>LAUNCH</code> </p> </li> 
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li> 
+    /// <li> <p>STACKSET</p> </li> 
+    /// <li> <p> <code>TEMPLATE</code> </p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>The type of constraint.</p>
-    /// <ul>
-    /// <li> <p> <code>LAUNCH</code> </p> </li>
-    /// <li> <p> <code>NOTIFICATION</code> </p> </li>
-    /// <li> <p>STACKSET</p> </li>
-    /// <li> <p> <code>TEMPLATE</code> </p> </li>
+    /// <p>The type of constraint.</p> 
+    /// <ul> 
+    /// <li> <p> <code>LAUNCH</code> </p> </li> 
+    /// <li> <p> <code>NOTIFICATION</code> </p> </li> 
+    /// <li> <p>STACKSET</p> </li> 
+    /// <li> <p> <code>TEMPLATE</code> </p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The description of the constraint.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,14 +76,16 @@ impl ConstraintSummaryBuilder {
     }
     /// <p>The description of the constraint.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`ConstraintSummary`](crate::types::ConstraintSummary).
     pub fn build(self) -> crate::types::ConstraintSummary {
         crate::types::ConstraintSummary {
-            r#type: self.r#type,
-            description: self.description,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

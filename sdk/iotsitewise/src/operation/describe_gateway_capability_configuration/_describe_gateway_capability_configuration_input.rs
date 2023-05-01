@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayCapabilityConfigurationInput {
+pub struct DescribeGatewayCapabilityConfigurationInput  {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeGatewayCapabilityConfigurationInput {
 }
 impl DescribeGatewayCapabilityConfigurationInput {
     /// <p>The ID of the gateway that defines the capability configuration.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn capability_namespace(&self) -> std::option::Option<&str> {
+    pub fn capability_namespace(&self) -> std::option::Option<& str> {
         self.capability_namespace.as_deref()
     }
 }
 impl DescribeGatewayCapabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayCapabilityConfigurationInput`](crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput).
-    pub fn builder() -> crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder {
         crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
     }
     /// <p>The ID of the gateway that defines the capability configuration.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
     pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,15 +50,11 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
         self
     }
     /// <p>The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.</p>
-    pub fn set_capability_namespace(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capability_namespace = input;
-        self
+    pub fn set_capability_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capability_namespace = input; self
     }
     /// Consumes the builder and constructs a [`DescribeGatewayCapabilityConfigurationInput`](crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationInput {
                 gateway_id: self.gateway_id
@@ -70,3 +65,4 @@ impl DescribeGatewayCapabilityConfigurationInputBuilder {
         )
     }
 }
+

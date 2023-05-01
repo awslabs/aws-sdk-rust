@@ -76,3 +76,4 @@ pub use crate::types::_app_block::AppBlockBuilder;
 pub use crate::types::_script_details::ScriptDetailsBuilder;
 
 pub use crate::types::_user_stack_association_error::UserStackAssociationErrorBuilder;
+

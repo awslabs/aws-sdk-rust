@@ -3,7 +3,7 @@
 /// <p> The minimum and maximum number of network interfaces to be attached to an Amazon EC2 instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails  {
     /// <p> The maximum number of network interfaces. </p>
     #[doc(hidden)]
     pub max: i32,
@@ -23,7 +23,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     }
     /// <p> The maximum number of network interfaces. </p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p> The minimum number of network interfaces. </p>
     pub fn min(mut self, input: i32) -> Self {
@@ -53,17 +52,18 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetailsBui
     }
     /// <p> The minimum number of network interfaces. </p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails
-    {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails {
-            max: self.max.unwrap_or_default(),
-            min: self.min.unwrap_or_default(),
+            max: self.max
+                .unwrap_or_default()
+            ,
+            min: self.min
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

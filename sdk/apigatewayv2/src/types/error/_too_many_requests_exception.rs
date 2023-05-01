@@ -3,7 +3,7 @@
 /// <p>A limit has been exceeded. See the accompanying error message for details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     /// <p>The limit type.</p>
     #[doc(hidden)]
     pub limit_type: std::option::Option<std::string::String>,
@@ -14,21 +14,19 @@ pub struct TooManyRequestsException {
 }
 impl TooManyRequestsException {
     /// <p>The limit type.</p>
-    pub fn limit_type(&self) -> std::option::Option<&str> {
+    pub fn limit_type(&self) -> std::option::Option<& str> {
         self.limit_type.as_deref()
     }
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl aws_http::request_id::RequestId for crate::types::error::TooManyRequestsExc
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::types::error::TooManyRequestsException).
@@ -70,8 +66,7 @@ impl TooManyRequestsExceptionBuilder {
     }
     /// <p>The limit type.</p>
     pub fn set_limit_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.limit_type = input;
-        self
+        self.limit_type = input; self
     }
     /// <p>Describes the error encountered.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,29 +75,28 @@ impl TooManyRequestsExceptionBuilder {
     }
     /// <p>Describes the error encountered.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::types::error::TooManyRequestsException).
     pub fn build(self) -> crate::types::error::TooManyRequestsException {
         crate::types::error::TooManyRequestsException {
-            limit_type: self.limit_type,
-            message: self.message,
+            limit_type: self.limit_type
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

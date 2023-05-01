@@ -3,7 +3,7 @@
 /// <p>Information about CloudWatch Logs for the build project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
+pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails  {
     /// <p>The group name of the logs in CloudWatch Logs.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
     /// <p>The group name of the logs in CloudWatch Logs.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
     /// Creates a new builder-style object to manufacture [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
         crate::types::builders::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
     }
     /// <p>The group name of the logs in CloudWatch Logs.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,15 +69,18 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
     }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// Consumes the builder and constructs a [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
     pub fn build(self) -> crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
         crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
-            group_name: self.group_name,
-            status: self.status,
-            stream_name: self.stream_name,
+            group_name: self.group_name
+            ,
+            status: self.status
+            ,
+            stream_name: self.stream_name
+            ,
         }
     }
 }
+

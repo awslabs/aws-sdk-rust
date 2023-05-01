@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTargetGroupOutput {
+pub struct UpdateTargetGroupOutput  {
     /// <p>The ID of the target group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,39 +25,38 @@ pub struct UpdateTargetGroupOutput {
 }
 impl UpdateTargetGroupOutput {
     /// <p>The ID of the target group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the target group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The target group type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TargetGroupType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::TargetGroupType> {
         self.r#type.as_ref()
     }
     /// <p>The target group configuration.</p>
-    pub fn config(&self) -> std::option::Option<&crate::types::TargetGroupConfig> {
+    pub fn config(&self) -> std::option::Option<& crate::types::TargetGroupConfig> {
         self.config.as_ref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TargetGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TargetGroupStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTargetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTargetGroupOutput`](crate::operation::update_target_group::UpdateTargetGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_target_group::builders::UpdateTargetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_target_group::builders::UpdateTargetGroupOutputBuilder {
         crate::operation::update_target_group::builders::UpdateTargetGroupOutputBuilder::default()
     }
 }
@@ -82,8 +81,7 @@ impl UpdateTargetGroupOutputBuilder {
     }
     /// <p>The ID of the target group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +90,7 @@ impl UpdateTargetGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the target group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +99,7 @@ impl UpdateTargetGroupOutputBuilder {
     }
     /// <p>The name of the target group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The target group type.</p>
     pub fn r#type(mut self, input: crate::types::TargetGroupType) -> Self {
@@ -112,8 +108,7 @@ impl UpdateTargetGroupOutputBuilder {
     }
     /// <p>The target group type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::TargetGroupType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The target group configuration.</p>
     pub fn config(mut self, input: crate::types::TargetGroupConfig) -> Self {
@@ -121,12 +116,8 @@ impl UpdateTargetGroupOutputBuilder {
         self
     }
     /// <p>The target group configuration.</p>
-    pub fn set_config(
-        mut self,
-        input: std::option::Option<crate::types::TargetGroupConfig>,
-    ) -> Self {
-        self.config = input;
-        self
+    pub fn set_config(mut self, input: std::option::Option<crate::types::TargetGroupConfig>) -> Self {
+        self.config = input; self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::TargetGroupStatus) -> Self {
@@ -134,32 +125,35 @@ impl UpdateTargetGroupOutputBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TargetGroupStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TargetGroupStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateTargetGroupOutput`](crate::operation::update_target_group::UpdateTargetGroupOutput).
     pub fn build(self) -> crate::operation::update_target_group::UpdateTargetGroupOutput {
         crate::operation::update_target_group::UpdateTargetGroupOutput {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            config: self.config,
-            status: self.status,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            config: self.config
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

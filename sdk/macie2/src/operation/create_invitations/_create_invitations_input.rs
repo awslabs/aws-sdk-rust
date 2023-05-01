@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInvitationsInput {
+pub struct CreateInvitationsInput  {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct CreateInvitationsInput {
 }
 impl CreateInvitationsInput {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
@@ -23,14 +23,13 @@ impl CreateInvitationsInput {
         self.disable_email_notification
     }
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl CreateInvitationsInput {
     /// Creates a new builder-style object to manufacture [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
-    pub fn builder() -> crate::operation::create_invitations::builders::CreateInvitationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_invitations::builders::CreateInvitationsInputBuilder {
         crate::operation::create_invitations::builders::CreateInvitationsInputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl CreateInvitationsInputBuilder {
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = Some(v);
+                        self
     }
     /// <p>An array that lists Amazon Web Services account IDs, one for each account to send the invitation to.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
     pub fn disable_email_notification(mut self, input: bool) -> Self {
@@ -70,8 +65,7 @@ impl CreateInvitationsInputBuilder {
     }
     /// <p>Specifies whether to send the invitation as an email message. If this value is false, Amazon Macie sends the invitation (as an email message) to the email address that you specified for the recipient's account when you associated the account with your account. The default value is false.</p>
     pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_email_notification = input;
-        self
+        self.disable_email_notification = input; self
     }
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,22 +74,20 @@ impl CreateInvitationsInputBuilder {
     }
     /// <p>Custom text to include in the email message that contains the invitation. The text can contain as many as 80 alphanumeric characters.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`CreateInvitationsInput`](crate::operation::create_invitations::CreateInvitationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_invitations::CreateInvitationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_invitations::CreateInvitationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_invitations::CreateInvitationsInput {
-                account_ids: self.account_ids,
-                disable_email_notification: self.disable_email_notification,
-                message: self.message,
-            },
+                account_ids: self.account_ids
+                ,
+                disable_email_notification: self.disable_email_notification
+                ,
+                message: self.message
+                ,
+            }
         )
     }
 }
+

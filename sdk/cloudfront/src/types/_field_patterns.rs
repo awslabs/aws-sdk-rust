@@ -3,7 +3,7 @@
 /// <p>A complex data type that includes the field patterns to match for field-level encryption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldPatterns {
+pub struct FieldPatterns  {
     /// <p>The number of field-level encryption field patterns.</p>
     #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl FieldPatterns {
         self.quantity
     }
     /// <p>An array of the field-level encryption field patterns.</p>
-    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn items(&self) -> std::option::Option<& [std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FieldPatternsBuilder {
     }
     /// <p>The number of field-level encryption field patterns.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -53,23 +52,22 @@ impl FieldPatternsBuilder {
     /// <p>An array of the field-level encryption field patterns.</p>
     pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = Some(v);
-        self
+                        v.push(input.into());
+                        self.items = Some(v);
+                        self
     }
     /// <p>An array of the field-level encryption field patterns.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`FieldPatterns`](crate::types::FieldPatterns).
     pub fn build(self) -> crate::types::FieldPatterns {
         crate::types::FieldPatterns {
-            quantity: self.quantity,
-            items: self.items,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

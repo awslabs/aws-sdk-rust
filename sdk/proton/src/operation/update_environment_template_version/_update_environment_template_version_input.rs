@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateEnvironmentTemplateVersionInput {
+pub struct UpdateEnvironmentTemplateVersionInput  {
     /// <p>The name of the environment template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -21,27 +21,27 @@ pub struct UpdateEnvironmentTemplateVersionInput {
 }
 impl UpdateEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>A description of environment template version to update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the environment template minor version to update.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TemplateVersionStatus> {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
+impl  std::fmt::Debug for UpdateEnvironmentTemplateVersionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateEnvironmentTemplateVersionInput");
         formatter.field("template_name", &self.template_name);
@@ -54,7 +54,7 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInput {
 }
 impl UpdateEnvironmentTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentTemplateVersionInput`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput).
-    pub fn builder() -> crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder {
         crate::operation::update_environment_template_version::builders::UpdateEnvironmentTemplateVersionInputBuilder::default()
     }
 }
@@ -77,8 +77,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>The name of the environment template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +86,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
     pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +95,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
     pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// <p>A description of environment template version to update.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +104,7 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>A description of environment template version to update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The status of the environment template minor version to update.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
@@ -116,15 +112,11 @@ impl UpdateEnvironmentTemplateVersionInputBuilder {
         self
     }
     /// <p>The status of the environment template minor version to update.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TemplateVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentTemplateVersionInput`](crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput).
-    pub fn build(self) -> Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_environment_template_version::UpdateEnvironmentTemplateVersionInput {
                 template_name: self.template_name
@@ -152,3 +144,4 @@ impl std::fmt::Debug for UpdateEnvironmentTemplateVersionInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIndicesOutput {
+pub struct ListIndicesOutput  {
     /// <p>The index names.</p>
     #[doc(hidden)]
     pub index_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,19 +13,19 @@ pub struct ListIndicesOutput {
 }
 impl ListIndicesOutput {
     /// <p>The index names.</p>
-    pub fn index_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn index_names(&self) -> std::option::Option<& [std::string::String]> {
         self.index_names.as_deref()
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListIndicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListIndicesOutput {
     /// Creates a new builder-style object to manufacture [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput).
     pub fn builder() -> crate::operation::list_indices::builders::ListIndicesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListIndicesOutputBuilder {
     /// <p>The index names.</p>
     pub fn index_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.index_names.unwrap_or_default();
-        v.push(input.into());
-        self.index_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.index_names = Some(v);
+                        self
     }
     /// <p>The index names.</p>
-    pub fn set_index_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.index_names = input;
-        self
+    pub fn set_index_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.index_names = input; self
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListIndicesOutputBuilder {
     }
     /// <p>The token used to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListIndicesOutput`](crate::operation::list_indices::ListIndicesOutput).
     pub fn build(self) -> crate::operation::list_indices::ListIndicesOutput {
         crate::operation::list_indices::ListIndicesOutput {
-            index_names: self.index_names,
-            next_token: self.next_token,
+            index_names: self.index_names
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

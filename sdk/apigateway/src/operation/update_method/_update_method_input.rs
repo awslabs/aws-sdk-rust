@@ -3,7 +3,7 @@
 /// <p>Request to update an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMethodInput {
+pub struct UpdateMethodInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct UpdateMethodInput {
 }
 impl UpdateMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The Resource identifier for the Method resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The HTTP verb of the Method resource.</p>
-    pub fn http_method(&self) -> std::option::Option<&str> {
+    pub fn http_method(&self) -> std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> std::option::Option<& [crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateMethodInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl UpdateMethodInputBuilder {
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl UpdateMethodInputBuilder {
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_method = input;
-        self
+        self.http_method = input; self
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -89,30 +86,28 @@ impl UpdateMethodInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// Consumes the builder and constructs a [`UpdateMethodInput`](crate::operation::update_method::UpdateMethodInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_method::UpdateMethodInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_method::UpdateMethodInput {
-            rest_api_id: self.rest_api_id,
-            resource_id: self.resource_id,
-            http_method: self.http_method,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> Result<crate::operation::update_method::UpdateMethodInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_method::UpdateMethodInput {
+                rest_api_id: self.rest_api_id
+                ,
+                resource_id: self.resource_id
+                ,
+                http_method: self.http_method
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

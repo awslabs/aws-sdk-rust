@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationProfileOutput {
+pub struct UpdateConfigurationProfileOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -24,8 +24,8 @@ pub struct UpdateConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     #[doc(hidden)]
     pub validators: std::option::Option<std::vec::Vec<crate::types::Validator>>,
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -33,48 +33,48 @@ pub struct UpdateConfigurationProfileOutput {
 }
 impl UpdateConfigurationProfileOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The configuration profile description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URI location of the configuration.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+    pub fn retrieval_role_arn(&self) -> std::option::Option<& str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn validators(&self) -> std::option::Option<&[crate::types::Validator]> {
+    pub fn validators(&self) -> std::option::Option<& [crate::types::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateConfigurationProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationProfileOutput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput).
-    pub fn builder() -> crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileOutputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileOutputBuilder {
         crate::operation::update_configuration_profile::builders::UpdateConfigurationProfileOutputBuilder::default()
     }
 }
@@ -101,8 +101,7 @@ impl UpdateConfigurationProfileOutputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The configuration profile ID.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +110,7 @@ impl UpdateConfigurationProfileOutputBuilder {
     }
     /// <p>The configuration profile ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the configuration profile.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +119,7 @@ impl UpdateConfigurationProfileOutputBuilder {
     }
     /// <p>The name of the configuration profile.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The configuration profile description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +128,7 @@ impl UpdateConfigurationProfileOutputBuilder {
     }
     /// <p>The configuration profile description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The URI location of the configuration.</p>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +137,7 @@ impl UpdateConfigurationProfileOutputBuilder {
     }
     /// <p>The URI location of the configuration.</p>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_uri = input;
-        self
+        self.location_uri = input; self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
     pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,12 +145,8 @@ impl UpdateConfigurationProfileOutputBuilder {
         self
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn set_retrieval_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.retrieval_role_arn = input;
-        self
+    pub fn set_retrieval_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.retrieval_role_arn = input; self
     }
     /// Appends an item to `validators`.
     ///
@@ -164,55 +155,57 @@ impl UpdateConfigurationProfileOutputBuilder {
     /// <p>A list of methods for validating the configuration.</p>
     pub fn validators(mut self, input: crate::types::Validator) -> Self {
         let mut v = self.validators.unwrap_or_default();
-        v.push(input);
-        self.validators = Some(v);
-        self
+                        v.push(input);
+                        self.validators = Some(v);
+                        self
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn set_validators(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Validator>>,
-    ) -> Self {
-        self.validators = input;
-        self
+    pub fn set_validators(mut self, input: std::option::Option<std::vec::Vec<crate::types::Validator>>) -> Self {
+        self.validators = input; self
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateConfigurationProfileOutput`](crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput {
+    pub fn build(self) -> crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput {
         crate::operation::update_configuration_profile::UpdateConfigurationProfileOutput {
-            application_id: self.application_id,
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            location_uri: self.location_uri,
-            retrieval_role_arn: self.retrieval_role_arn,
-            validators: self.validators,
-            r#type: self.r#type,
+            application_id: self.application_id
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            location_uri: self.location_uri
+            ,
+            retrieval_role_arn: self.retrieval_role_arn
+            ,
+            validators: self.validators
+            ,
+            r#type: self.r#type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHitTypeOfHitInput {
+pub struct UpdateHitTypeOfHitInput  {
     /// <p>The HIT to update.</p>
     #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct UpdateHitTypeOfHitInput {
 }
 impl UpdateHitTypeOfHitInput {
     /// <p>The HIT to update.</p>
-    pub fn hit_id(&self) -> std::option::Option<&str> {
+    pub fn hit_id(&self) -> std::option::Option<& str> {
         self.hit_id.as_deref()
     }
     /// <p>The ID of the new HIT type.</p>
-    pub fn hit_type_id(&self) -> std::option::Option<&str> {
+    pub fn hit_type_id(&self) -> std::option::Option<& str> {
         self.hit_type_id.as_deref()
     }
 }
 impl UpdateHitTypeOfHitInput {
     /// Creates a new builder-style object to manufacture [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
-    pub fn builder(
-    ) -> crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder {
-        crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder {
+        crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl UpdateHitTypeOfHitInputBuilder {
     }
     /// <p>The HIT to update.</p>
     pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_id = input;
-        self
+        self.hit_id = input; self
     }
     /// <p>The ID of the new HIT type.</p>
     pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl UpdateHitTypeOfHitInputBuilder {
     }
     /// <p>The ID of the new HIT type.</p>
     pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_type_id = input;
-        self
+        self.hit_type_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateHitTypeOfHitInput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitInput {
-                hit_id: self.hit_id,
-                hit_type_id: self.hit_type_id,
-            },
+                hit_id: self.hit_id
+                ,
+                hit_type_id: self.hit_type_id
+                ,
+            }
         )
     }
 }
+

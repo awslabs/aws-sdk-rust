@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRateBasedRuleInput {
+pub struct UpdateRateBasedRuleInput  {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct UpdateRateBasedRuleInput {
 }
 impl UpdateRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
-    pub fn updates(&self) -> std::option::Option<&[crate::types::RuleUpdate]> {
+    pub fn updates(&self) -> std::option::Option<& [crate::types::RuleUpdate]> {
         self.updates.as_deref()
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
@@ -36,10 +36,8 @@ impl UpdateRateBasedRuleInput {
 }
 impl UpdateRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateRateBasedRuleInput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
-        crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder {
+        crate::operation::update_rate_based_rule::builders::UpdateRateBasedRuleInputBuilder::default()
     }
 }
 
@@ -60,8 +58,7 @@ impl UpdateRateBasedRuleInputBuilder {
     }
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to update. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl UpdateRateBasedRuleInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// Appends an item to `updates`.
     ///
@@ -80,17 +76,13 @@ impl UpdateRateBasedRuleInputBuilder {
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
     pub fn updates(mut self, input: crate::types::RuleUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = Some(v);
-        self
+                        v.push(input);
+                        self.updates = Some(v);
+                        self
     }
     /// <p>An array of <code>RuleUpdate</code> objects that you want to insert into or delete from a <code>RateBasedRule</code>. </p>
-    pub fn set_updates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RuleUpdate>>,
-    ) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn rate_limit(mut self, input: i64) -> Self {
@@ -99,23 +91,23 @@ impl UpdateRateBasedRuleInputBuilder {
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
     pub fn set_rate_limit(mut self, input: std::option::Option<i64>) -> Self {
-        self.rate_limit = input;
-        self
+        self.rate_limit = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRateBasedRuleInput`](crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_rate_based_rule::UpdateRateBasedRuleInput {
-                rule_id: self.rule_id,
-                change_token: self.change_token,
-                updates: self.updates,
-                rate_limit: self.rate_limit.unwrap_or_default(),
-            },
+                rule_id: self.rule_id
+                ,
+                change_token: self.change_token
+                ,
+                updates: self.updates
+                ,
+                rate_limit: self.rate_limit
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

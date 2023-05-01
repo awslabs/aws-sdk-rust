@@ -3,7 +3,7 @@
 /// <p>Represents the base path that callers of the API must provide as part of the URL after the domain name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBasePathMappingOutput {
+pub struct CreateBasePathMappingOutput  {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     #[doc(hidden)]
     pub base_path: std::option::Option<std::string::String>,
@@ -17,28 +17,26 @@ pub struct CreateBasePathMappingOutput {
 }
 impl CreateBasePathMappingOutput {
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
-    pub fn base_path(&self) -> std::option::Option<&str> {
+    pub fn base_path(&self) -> std::option::Option<& str> {
         self.base_path.as_deref()
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the associated stage.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> std::option::Option<& str> {
         self.stage.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBasePathMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateBasePathMappingOutput {
     /// Creates a new builder-style object to manufacture [`CreateBasePathMappingOutput`](crate::operation::create_base_path_mapping::CreateBasePathMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::create_base_path_mapping::builders::CreateBasePathMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_base_path_mapping::builders::CreateBasePathMappingOutputBuilder {
         crate::operation::create_base_path_mapping::builders::CreateBasePathMappingOutputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl CreateBasePathMappingOutputBuilder {
     }
     /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
     pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_path = input;
-        self
+        self.base_path = input; self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl CreateBasePathMappingOutputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The name of the associated stage.</p>
     pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,25 +76,28 @@ impl CreateBasePathMappingOutputBuilder {
     }
     /// <p>The name of the associated stage.</p>
     pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateBasePathMappingOutput`](crate::operation::create_base_path_mapping::CreateBasePathMappingOutput).
     pub fn build(self) -> crate::operation::create_base_path_mapping::CreateBasePathMappingOutput {
         crate::operation::create_base_path_mapping::CreateBasePathMappingOutput {
-            base_path: self.base_path,
-            rest_api_id: self.rest_api_id,
-            stage: self.stage,
+            base_path: self.base_path
+            ,
+            rest_api_id: self.rest_api_id
+            ,
+            stage: self.stage
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

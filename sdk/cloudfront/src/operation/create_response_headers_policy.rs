@@ -6,63 +6,33 @@ impl CreateResponseHeadersPolicyInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::create_response_headers_policy::CreateResponseHeadersPolicy, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
-                write!(output, "/2020-05-31/response-headers-policy")
-                    .expect("formatting should succeed");
+            fn uri_base(_input: &crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+                write!(output, "/2020-05-31/response-headers-policy").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/xml",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/xml");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -71,56 +41,33 @@ impl CreateResponseHeadersPolicyInput {
             crate::protocol_serde::shape_create_response_headers_policy_input::ser_response_headers_policy_config_http_payload(& self.response_headers_policy_config)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicy::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateResponseHeadersPolicy",
-            "cloudfront",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::create_response_headers_policy::CreateResponseHeadersPolicy::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateResponseHeadersPolicy", "cloudfront"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -137,27 +84,22 @@ impl CreateResponseHeadersPolicy {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for CreateResponseHeadersPolicy {
-    type Output = std::result::Result<
-        crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput,
-        crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-        if !response.status().is_success() && response.status().as_u16() != 201 {
-            crate::protocol_serde::shape_create_response_headers_policy::de_create_response_headers_policy_http_error(response)
-        } else {
-            crate::protocol_serde::shape_create_response_headers_policy::de_create_response_headers_policy_http_response(response)
-        }
-    }
-}
+                type Output = std::result::Result<crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput, crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError>;
+                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+                     if !response.status().is_success() && response.status().as_u16() != 201 {
+                        crate::protocol_serde::shape_create_response_headers_policy::de_create_response_headers_policy_http_error(response)
+                     } else {
+                        crate::protocol_serde::shape_create_response_headers_policy::de_create_response_headers_policy_http_response(response)
+                     }
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type CreateResponseHeadersPolicyErrorKind = CreateResponseHeadersPolicyError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type CreateResponseHeadersPolicyErrorKind = CreateResponseHeadersPolicyError;
 /// Error type for the `CreateResponseHeadersPolicyError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -170,92 +112,106 @@ pub enum CreateResponseHeadersPolicyError {
     InvalidArgument(crate::types::error::InvalidArgument),
     /// <p>A response headers policy with this name already exists. You must provide a unique name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.</p>
     ResponseHeadersPolicyAlreadyExists(crate::types::error::ResponseHeadersPolicyAlreadyExists),
-    /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p>
+    /// <p>The length of the <code>Content-Security-Policy</code> header value in the response headers policy exceeds the maximum.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooLongCspInResponseHeadersPolicy(crate::types::error::TooLongCspInResponseHeadersPolicy),
-    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p>
+    /// <p>The number of custom headers in the response headers policy exceeds the maximum.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyCustomHeadersInResponseHeadersPolicy(
-        crate::types::error::TooManyCustomHeadersInResponseHeadersPolicy,
-    ),
-    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p>
+    TooManyCustomHeadersInResponseHeadersPolicy(crate::types::error::TooManyCustomHeadersInResponseHeadersPolicy),
+    /// <p>The number of headers in <code>RemoveHeadersConfig</code> in the response headers policy exceeds the maximum.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyRemoveHeadersInResponseHeadersPolicy(
-        crate::types::error::TooManyRemoveHeadersInResponseHeadersPolicy,
-    ),
-    /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p>
+    TooManyRemoveHeadersInResponseHeadersPolicy(crate::types::error::TooManyRemoveHeadersInResponseHeadersPolicy),
+    /// <p>You have reached the maximum number of response headers policies for this Amazon Web Services account.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyResponseHeadersPolicies(crate::types::error::TooManyResponseHeadersPolicies),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateResponseHeadersPolicyError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for CreateResponseHeadersPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::AccessDenied(_inner) => _inner.fmt(f),
-            Self::InconsistentQuantities(_inner) => _inner.fmt(f),
-            Self::InvalidArgument(_inner) => _inner.fmt(f),
-            Self::ResponseHeadersPolicyAlreadyExists(_inner) => _inner.fmt(f),
-            Self::TooLongCspInResponseHeadersPolicy(_inner) => _inner.fmt(f),
-            Self::TooManyCustomHeadersInResponseHeadersPolicy(_inner) => _inner.fmt(f),
-            Self::TooManyRemoveHeadersInResponseHeadersPolicy(_inner) => _inner.fmt(f),
-            Self::TooManyResponseHeadersPolicies(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::AccessDenied(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InconsistentQuantities(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidArgument(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ResponseHeadersPolicyAlreadyExists(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TooLongCspInResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TooManyCustomHeadersInResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TooManyRemoveHeadersInResponseHeadersPolicy(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TooManyResponseHeadersPolicies(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateResponseHeadersPolicyError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDenied(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InconsistentQuantities(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidArgument(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResponseHeadersPolicyAlreadyExists(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TooLongCspInResponseHeadersPolicy(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TooManyCustomHeadersInResponseHeadersPolicy(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TooManyRemoveHeadersInResponseHeadersPolicy(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TooManyResponseHeadersPolicies(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AccessDenied(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InconsistentQuantities(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidArgument(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ResponseHeadersPolicyAlreadyExists(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TooLongCspInResponseHeadersPolicy(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TooManyCustomHeadersInResponseHeadersPolicy(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TooManyRemoveHeadersInResponseHeadersPolicy(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TooManyResponseHeadersPolicies(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId
-    for crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError
-{
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+impl aws_http::request_id::RequestId for crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError {
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for CreateResponseHeadersPolicyError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -266,27 +222,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateResponseHeadersPolicyEr
 }
 impl CreateResponseHeadersPolicyError {
     /// Creates the `CreateResponseHeadersPolicyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `CreateResponseHeadersPolicyError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `CreateResponseHeadersPolicyError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -337,15 +284,33 @@ impl CreateResponseHeadersPolicyError {
 impl std::error::Error for CreateResponseHeadersPolicyError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::AccessDenied(_inner) => Some(_inner),
-            Self::InconsistentQuantities(_inner) => Some(_inner),
-            Self::InvalidArgument(_inner) => Some(_inner),
-            Self::ResponseHeadersPolicyAlreadyExists(_inner) => Some(_inner),
-            Self::TooLongCspInResponseHeadersPolicy(_inner) => Some(_inner),
-            Self::TooManyCustomHeadersInResponseHeadersPolicy(_inner) => Some(_inner),
-            Self::TooManyRemoveHeadersInResponseHeadersPolicy(_inner) => Some(_inner),
-            Self::TooManyResponseHeadersPolicies(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::AccessDenied(_inner) =>
+            Some(_inner)
+            ,
+            Self::InconsistentQuantities(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidArgument(_inner) =>
+            Some(_inner)
+            ,
+            Self::ResponseHeadersPolicyAlreadyExists(_inner) =>
+            Some(_inner)
+            ,
+            Self::TooLongCspInResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            Self::TooManyCustomHeadersInResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            Self::TooManyRemoveHeadersInResponseHeadersPolicy(_inner) =>
+            Some(_inner)
+            ,
+            Self::TooManyResponseHeadersPolicies(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -360,3 +325,4 @@ mod _create_response_headers_policy_output;
 
 /// Builders
 pub mod builders;
+

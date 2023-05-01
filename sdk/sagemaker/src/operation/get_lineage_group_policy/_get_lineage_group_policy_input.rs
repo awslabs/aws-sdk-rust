@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLineageGroupPolicyInput {
+pub struct GetLineageGroupPolicyInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     #[doc(hidden)]
     pub lineage_group_name: std::option::Option<std::string::String>,
 }
 impl GetLineageGroupPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_name(&self) -> std::option::Option<&str> {
+    pub fn lineage_group_name(&self) -> std::option::Option<& str> {
         self.lineage_group_name.as_deref()
     }
 }
 impl GetLineageGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetLineageGroupPolicyInput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyInputBuilder {
         crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl GetLineageGroupPolicyInputBuilder {
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn set_lineage_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.lineage_group_name = input;
-        self
+    pub fn set_lineage_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.lineage_group_name = input; self
     }
     /// Consumes the builder and constructs a [`GetLineageGroupPolicyInput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_lineage_group_policy::GetLineageGroupPolicyInput {
-                lineage_group_name: self.lineage_group_name,
-            },
+                lineage_group_name: self.lineage_group_name
+                ,
+            }
         )
     }
 }
+

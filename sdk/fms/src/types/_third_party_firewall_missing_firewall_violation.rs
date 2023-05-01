@@ -3,7 +3,7 @@
 /// <p>The violation details about a third-party firewall's subnet that doesn't have a Firewall Manager managed firewall in its VPC.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThirdPartyFirewallMissingFirewallViolation {
+pub struct ThirdPartyFirewallMissingFirewallViolation  {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
     #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ThirdPartyFirewallMissingFirewallViolation {
 }
 impl ThirdPartyFirewallMissingFirewallViolation {
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
-    pub fn violation_target(&self) -> std::option::Option<&str> {
+    pub fn violation_target(&self) -> std::option::Option<& str> {
         self.violation_target.as_deref()
     }
     /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
-    pub fn vpc(&self) -> std::option::Option<&str> {
+    pub fn vpc(&self) -> std::option::Option<& str> {
         self.vpc.as_deref()
     }
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
-    pub fn target_violation_reason(&self) -> std::option::Option<&str> {
+    pub fn target_violation_reason(&self) -> std::option::Option<& str> {
         self.target_violation_reason.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
     }
     /// <p>The ID of the third-party firewall that's causing the violation.</p>
     pub fn set_violation_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.violation_target = input;
-        self
+        self.violation_target = input; self
     }
     /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
     pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
     }
     /// <p>The resource ID of the VPC associated with a third-party firewall.</p>
     pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +76,8 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
         self
     }
     /// <p>The Availability Zone of the third-party firewall that's causing the violation.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
     pub fn target_violation_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,20 +85,21 @@ impl ThirdPartyFirewallMissingFirewallViolationBuilder {
         self
     }
     /// <p>The reason the resource is causing this violation, if a reason is available.</p>
-    pub fn set_target_violation_reason(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_violation_reason = input;
-        self
+    pub fn set_target_violation_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_violation_reason = input; self
     }
     /// Consumes the builder and constructs a [`ThirdPartyFirewallMissingFirewallViolation`](crate::types::ThirdPartyFirewallMissingFirewallViolation).
     pub fn build(self) -> crate::types::ThirdPartyFirewallMissingFirewallViolation {
         crate::types::ThirdPartyFirewallMissingFirewallViolation {
-            violation_target: self.violation_target,
-            vpc: self.vpc,
-            availability_zone: self.availability_zone,
-            target_violation_reason: self.target_violation_reason,
+            violation_target: self.violation_target
+            ,
+            vpc: self.vpc
+            ,
+            availability_zone: self.availability_zone
+            ,
+            target_violation_reason: self.target_violation_reason
+            ,
         }
     }
 }
+

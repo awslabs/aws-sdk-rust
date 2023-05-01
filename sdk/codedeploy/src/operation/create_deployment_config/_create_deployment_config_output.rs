@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>CreateDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentConfigOutput {
+pub struct CreateDeploymentConfigOutput  {
     /// <p>A unique deployment configuration ID.</p>
     #[doc(hidden)]
     pub deployment_config_id: std::option::Option<std::string::String>,
@@ -11,20 +11,18 @@ pub struct CreateDeploymentConfigOutput {
 }
 impl CreateDeploymentConfigOutput {
     /// <p>A unique deployment configuration ID.</p>
-    pub fn deployment_config_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_config_id(&self) -> std::option::Option<& str> {
         self.deployment_config_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDeploymentConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDeploymentConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentConfigOutput`](crate::operation::create_deployment_config::CreateDeploymentConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::create_deployment_config::builders::CreateDeploymentConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment_config::builders::CreateDeploymentConfigOutputBuilder {
         crate::operation::create_deployment_config::builders::CreateDeploymentConfigOutputBuilder::default()
     }
 }
@@ -43,27 +41,25 @@ impl CreateDeploymentConfigOutputBuilder {
         self
     }
     /// <p>A unique deployment configuration ID.</p>
-    pub fn set_deployment_config_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deployment_config_id = input;
-        self
+    pub fn set_deployment_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deployment_config_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDeploymentConfigOutput`](crate::operation::create_deployment_config::CreateDeploymentConfigOutput).
     pub fn build(self) -> crate::operation::create_deployment_config::CreateDeploymentConfigOutput {
         crate::operation::create_deployment_config::CreateDeploymentConfigOutput {
-            deployment_config_id: self.deployment_config_id,
+            deployment_config_id: self.deployment_config_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

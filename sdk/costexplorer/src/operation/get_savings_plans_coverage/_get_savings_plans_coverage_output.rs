@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansCoverageOutput {
+pub struct GetSavingsPlansCoverageOutput  {
     /// <p>The amount of spend that your Savings Plans covered.</p>
     #[doc(hidden)]
-    pub savings_plans_coverages:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlansCoverage>>,
+    pub savings_plans_coverages: std::option::Option<std::vec::Vec<crate::types::SavingsPlansCoverage>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct GetSavingsPlansCoverageOutput {
 }
 impl GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
-    pub fn savings_plans_coverages(
-        &self,
-    ) -> std::option::Option<&[crate::types::SavingsPlansCoverage]> {
+    pub fn savings_plans_coverages(&self) -> std::option::Option<& [crate::types::SavingsPlansCoverage]> {
         self.savings_plans_coverages.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetSavingsPlansCoverageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSavingsPlansCoverageOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansCoverageOutput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageOutputBuilder {
         crate::operation::get_savings_plans_coverage::builders::GetSavingsPlansCoverageOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl GetSavingsPlansCoverageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansCoverageOutputBuilder {
-    pub(crate) savings_plans_coverages:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlansCoverage>>,
+    pub(crate) savings_plans_coverages: std::option::Option<std::vec::Vec<crate::types::SavingsPlansCoverage>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl GetSavingsPlansCoverageOutputBuilder {
     /// <p>The amount of spend that your Savings Plans covered.</p>
     pub fn savings_plans_coverages(mut self, input: crate::types::SavingsPlansCoverage) -> Self {
         let mut v = self.savings_plans_coverages.unwrap_or_default();
-        v.push(input);
-        self.savings_plans_coverages = Some(v);
-        self
+                        v.push(input);
+                        self.savings_plans_coverages = Some(v);
+                        self
     }
     /// <p>The amount of spend that your Savings Plans covered.</p>
-    pub fn set_savings_plans_coverages(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlansCoverage>>,
-    ) -> Self {
-        self.savings_plans_coverages = input;
-        self
+    pub fn set_savings_plans_coverages(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlansCoverage>>) -> Self {
+        self.savings_plans_coverages = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,26 +64,26 @@ impl GetSavingsPlansCoverageOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSavingsPlansCoverageOutput`](crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
+    pub fn build(self) -> crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
         crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput {
-            savings_plans_coverages: self.savings_plans_coverages,
-            next_token: self.next_token,
+            savings_plans_coverages: self.savings_plans_coverages
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the metadata that's delivered to the specified HTTP endpoint destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HttpEndpointCommonAttribute {
+pub struct HttpEndpointCommonAttribute  {
     /// <p>The name of the HTTP endpoint common attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct HttpEndpointCommonAttribute {
 }
 impl HttpEndpointCommonAttribute {
     /// <p>The name of the HTTP endpoint common attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value of the HTTP endpoint common attribute.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for HttpEndpointCommonAttribute {
+impl  std::fmt::Debug for HttpEndpointCommonAttribute  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HttpEndpointCommonAttribute");
         formatter.field("attribute_name", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl HttpEndpointCommonAttributeBuilder {
     }
     /// <p>The name of the HTTP endpoint common attribute.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The value of the HTTP endpoint common attribute.</p>
     pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl HttpEndpointCommonAttributeBuilder {
     }
     /// <p>The value of the HTTP endpoint common attribute.</p>
     pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// Consumes the builder and constructs a [`HttpEndpointCommonAttribute`](crate::types::HttpEndpointCommonAttribute).
     pub fn build(self) -> crate::types::HttpEndpointCommonAttribute {
         crate::types::HttpEndpointCommonAttribute {
-            attribute_name: self.attribute_name,
-            attribute_value: self.attribute_value,
+            attribute_name: self.attribute_name
+            ,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for HttpEndpointCommonAttributeBuilder {
         formatter.finish()
     }
 }
+

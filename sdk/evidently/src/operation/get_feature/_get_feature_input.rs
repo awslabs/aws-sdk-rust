@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFeatureInput {
+pub struct GetFeatureInput  {
     /// <p>The name or ARN of the project that contains the feature.</p>
     #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetFeatureInput {
 }
 impl GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub fn project(&self) -> std::option::Option<&str> {
+    pub fn project(&self) -> std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the feature that you want to retrieve information for.</p>
-    pub fn feature(&self) -> std::option::Option<&str> {
+    pub fn feature(&self) -> std::option::Option<& str> {
         self.feature.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetFeatureInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the feature.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name of the feature that you want to retrieve information for.</p>
     pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetFeatureInputBuilder {
     }
     /// <p>The name of the feature that you want to retrieve information for.</p>
     pub fn set_feature(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// Consumes the builder and constructs a [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_feature::GetFeatureInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_feature::GetFeatureInput {
-            project: self.project,
-            feature: self.feature,
-        })
+    pub fn build(self) -> Result<crate::operation::get_feature::GetFeatureInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_feature::GetFeatureInput {
+                project: self.project
+                ,
+                feature: self.feature
+                ,
+            }
+        )
     }
 }
+

@@ -2,83 +2,82 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlatformBranchesInput {
-    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
-    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
-    /// <ul>
-    /// <li> <p> <code>Attribute = BranchName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = TierType</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
+pub struct ListPlatformBranchesInput  {
+    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p> 
+    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Attribute = BranchName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = TierType</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p> 
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::SearchFilter>>,
     /// <p>The maximum number of platform branch values returned in one call.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
-    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPlatformBranchesInput {
-    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
-    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
-    /// <ul>
-    /// <li> <p> <code>Attribute = BranchName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = TierType</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
+    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p> 
+    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Attribute = BranchName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = TierType</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p> 
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::SearchFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::SearchFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
-    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListPlatformBranchesInput {
     /// Creates a new builder-style object to manufacture [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
-    pub fn builder(
-    ) -> crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder {
+    pub fn builder() -> crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder {
         crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder::default()
     }
 }
@@ -96,66 +95,62 @@ impl ListPlatformBranchesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
-    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
-    /// <ul>
-    /// <li> <p> <code>Attribute = BranchName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = TierType</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
+    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p> 
+    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Attribute = BranchName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = TierType</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p> 
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p>
-    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p>
-    /// <ul>
-    /// <li> <p> <code>Attribute = BranchName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = LifecycleState</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = PlatformName</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>Attribute = TierType</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li>
-    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p>
+    /// <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p> 
+    /// <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Attribute = BranchName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = LifecycleState</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = PlatformName</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>Attribute = TierType</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li> 
+    /// <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p> 
     /// <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SearchFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SearchFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -164,34 +159,31 @@ impl ListPlatformBranchesInputBuilder {
     }
     /// <p>The maximum number of platform branch values returned in one call.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
-    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListPlatformBranchesInput`](crate::operation::list_platform_branches::ListPlatformBranchesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_platform_branches::ListPlatformBranchesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_platform_branches::ListPlatformBranchesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_platform_branches::ListPlatformBranchesInput {
-                filters: self.filters,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

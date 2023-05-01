@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failbackreplicationerror = unimplemented!();
 /// match failbackreplicationerror {
@@ -49,22 +49,14 @@
 /// Specifically, when `failbackreplicationerror` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailbackReplicationError::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailbackReplicationError {
     #[allow(missing_docs)] // documentation missing in model
     AgentNotSeen,
@@ -109,162 +101,79 @@ pub enum FailbackReplicationError {
     #[allow(missing_docs)] // documentation missing in model
     UnstableNetwork,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailbackReplicationError {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGENT_NOT_SEEN" => FailbackReplicationError::AgentNotSeen,
-            "FAILBACK_CLIENT_NOT_SEEN" => FailbackReplicationError::FailbackClientNotSeen,
-            "FAILED_GETTING_REPLICATION_STATE" => {
-                FailbackReplicationError::FailedGettingReplicationState
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AGENT_NOT_SEEN" => FailbackReplicationError::AgentNotSeen,
+"FAILBACK_CLIENT_NOT_SEEN" => FailbackReplicationError::FailbackClientNotSeen,
+"FAILED_GETTING_REPLICATION_STATE" => FailbackReplicationError::FailedGettingReplicationState,
+"FAILED_TO_ATTACH_STAGING_DISKS" => FailbackReplicationError::FailedToAttachStagingDisks,
+"FAILED_TO_AUTHENTICATE_WITH_SERVICE" => FailbackReplicationError::FailedToAuthenticateWithService,
+"FAILED_TO_BOOT_REPLICATION_SERVER" => FailbackReplicationError::FailedToBootReplicationServer,
+"FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE" => FailbackReplicationError::FailedToConfigureReplicationSoftware,
+"FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => FailbackReplicationError::FailedToConnectAgentToReplicationServer,
+"FAILED_TO_CREATE_SECURITY_GROUP" => FailbackReplicationError::FailedToCreateSecurityGroup,
+"FAILED_TO_CREATE_STAGING_DISKS" => FailbackReplicationError::FailedToCreateStagingDisks,
+"FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => FailbackReplicationError::FailedToDownloadReplicationSoftware,
+"FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient,
+"FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication,
+"FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication,
+"FAILED_TO_LAUNCH_REPLICATION_SERVER" => FailbackReplicationError::FailedToLaunchReplicationServer,
+"FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => FailbackReplicationError::FailedToPairAgentWithReplicationSoftware,
+"FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => FailbackReplicationError::FailedToPairReplicationServerWithAgent,
+"FAILED_TO_START_DATA_TRANSFER" => FailbackReplicationError::FailedToStartDataTransfer,
+"NOT_CONVERGING" => FailbackReplicationError::NotConverging,
+"SNAPSHOTS_FAILURE" => FailbackReplicationError::SnapshotsFailure,
+"UNSTABLE_NETWORK" => FailbackReplicationError::UnstableNetwork,
+other => FailbackReplicationError::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "FAILED_TO_ATTACH_STAGING_DISKS" => {
-                FailbackReplicationError::FailedToAttachStagingDisks
-            }
-            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => {
-                FailbackReplicationError::FailedToAuthenticateWithService
-            }
-            "FAILED_TO_BOOT_REPLICATION_SERVER" => {
-                FailbackReplicationError::FailedToBootReplicationServer
-            }
-            "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE" => {
-                FailbackReplicationError::FailedToConfigureReplicationSoftware
-            }
-            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => {
-                FailbackReplicationError::FailedToConnectAgentToReplicationServer
-            }
-            "FAILED_TO_CREATE_SECURITY_GROUP" => {
-                FailbackReplicationError::FailedToCreateSecurityGroup
-            }
-            "FAILED_TO_CREATE_STAGING_DISKS" => {
-                FailbackReplicationError::FailedToCreateStagingDisks
-            }
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => {
-                FailbackReplicationError::FailedToDownloadReplicationSoftware
-            }
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT" => {
-                FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient
-            }
-            "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION" => {
-                FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication
-            }
-            "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION" => {
-                FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication
-            }
-            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => {
-                FailbackReplicationError::FailedToLaunchReplicationServer
-            }
-            "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE" => {
-                FailbackReplicationError::FailedToPairAgentWithReplicationSoftware
-            }
-            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => {
-                FailbackReplicationError::FailedToPairReplicationServerWithAgent
-            }
-            "FAILED_TO_START_DATA_TRANSFER" => FailbackReplicationError::FailedToStartDataTransfer,
-            "NOT_CONVERGING" => FailbackReplicationError::NotConverging,
-            "SNAPSHOTS_FAILURE" => FailbackReplicationError::SnapshotsFailure,
-            "UNSTABLE_NETWORK" => FailbackReplicationError::UnstableNetwork,
-            other => FailbackReplicationError::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for FailbackReplicationError {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailbackReplicationError::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailbackReplicationError::from(s))
+                }
+            }
 impl FailbackReplicationError {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FailbackReplicationError::AgentNotSeen => "AGENT_NOT_SEEN",
-            FailbackReplicationError::FailbackClientNotSeen => "FAILBACK_CLIENT_NOT_SEEN",
-            FailbackReplicationError::FailedGettingReplicationState => {
-                "FAILED_GETTING_REPLICATION_STATE"
-            }
-            FailbackReplicationError::FailedToAttachStagingDisks => {
-                "FAILED_TO_ATTACH_STAGING_DISKS"
-            }
-            FailbackReplicationError::FailedToAuthenticateWithService => {
-                "FAILED_TO_AUTHENTICATE_WITH_SERVICE"
-            }
-            FailbackReplicationError::FailedToBootReplicationServer => {
-                "FAILED_TO_BOOT_REPLICATION_SERVER"
-            }
-            FailbackReplicationError::FailedToConfigureReplicationSoftware => {
-                "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE"
-            }
-            FailbackReplicationError::FailedToConnectAgentToReplicationServer => {
-                "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"
-            }
-            FailbackReplicationError::FailedToCreateSecurityGroup => {
-                "FAILED_TO_CREATE_SECURITY_GROUP"
-            }
-            FailbackReplicationError::FailedToCreateStagingDisks => {
-                "FAILED_TO_CREATE_STAGING_DISKS"
-            }
-            FailbackReplicationError::FailedToDownloadReplicationSoftware => {
-                "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"
-            }
-            FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient => {
-                "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT"
-            }
-            FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication => {
-                "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION"
-            }
-            FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => {
-                "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION"
-            }
-            FailbackReplicationError::FailedToLaunchReplicationServer => {
-                "FAILED_TO_LAUNCH_REPLICATION_SERVER"
-            }
-            FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => {
-                "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE"
-            }
-            FailbackReplicationError::FailedToPairReplicationServerWithAgent => {
-                "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"
-            }
-            FailbackReplicationError::FailedToStartDataTransfer => "FAILED_TO_START_DATA_TRANSFER",
-            FailbackReplicationError::NotConverging => "NOT_CONVERGING",
-            FailbackReplicationError::SnapshotsFailure => "SNAPSHOTS_FAILURE",
-            FailbackReplicationError::UnstableNetwork => "UNSTABLE_NETWORK",
-            FailbackReplicationError::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGENT_NOT_SEEN",
-            "FAILBACK_CLIENT_NOT_SEEN",
-            "FAILED_GETTING_REPLICATION_STATE",
-            "FAILED_TO_ATTACH_STAGING_DISKS",
-            "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
-            "FAILED_TO_BOOT_REPLICATION_SERVER",
-            "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE",
-            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
-            "FAILED_TO_CREATE_SECURITY_GROUP",
-            "FAILED_TO_CREATE_STAGING_DISKS",
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
-            "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
-            "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
-            "FAILED_TO_LAUNCH_REPLICATION_SERVER",
-            "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
-            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
-            "FAILED_TO_START_DATA_TRANSFER",
-            "NOT_CONVERGING",
-            "SNAPSHOTS_FAILURE",
-            "UNSTABLE_NETWORK",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FailbackReplicationError::AgentNotSeen => "AGENT_NOT_SEEN",
+    FailbackReplicationError::FailbackClientNotSeen => "FAILBACK_CLIENT_NOT_SEEN",
+    FailbackReplicationError::FailedGettingReplicationState => "FAILED_GETTING_REPLICATION_STATE",
+    FailbackReplicationError::FailedToAttachStagingDisks => "FAILED_TO_ATTACH_STAGING_DISKS",
+    FailbackReplicationError::FailedToAuthenticateWithService => "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
+    FailbackReplicationError::FailedToBootReplicationServer => "FAILED_TO_BOOT_REPLICATION_SERVER",
+    FailbackReplicationError::FailedToConfigureReplicationSoftware => "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE",
+    FailbackReplicationError::FailedToConnectAgentToReplicationServer => "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
+    FailbackReplicationError::FailedToCreateSecurityGroup => "FAILED_TO_CREATE_SECURITY_GROUP",
+    FailbackReplicationError::FailedToCreateStagingDisks => "FAILED_TO_CREATE_STAGING_DISKS",
+    FailbackReplicationError::FailedToDownloadReplicationSoftware => "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
+    FailbackReplicationError::FailedToDownloadReplicationSoftwareToFailbackClient => "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT",
+    FailbackReplicationError::FailedToEstablishAgentReplicatorSoftwareCommunication => "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION",
+    FailbackReplicationError::FailedToEstablishRecoveryInstanceCommunication => "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION",
+    FailbackReplicationError::FailedToLaunchReplicationServer => "FAILED_TO_LAUNCH_REPLICATION_SERVER",
+    FailbackReplicationError::FailedToPairAgentWithReplicationSoftware => "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE",
+    FailbackReplicationError::FailedToPairReplicationServerWithAgent => "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
+    FailbackReplicationError::FailedToStartDataTransfer => "FAILED_TO_START_DATA_TRANSFER",
+    FailbackReplicationError::NotConverging => "NOT_CONVERGING",
+    FailbackReplicationError::SnapshotsFailure => "SNAPSHOTS_FAILURE",
+    FailbackReplicationError::UnstableNetwork => "UNSTABLE_NETWORK",
+    FailbackReplicationError::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGENT_NOT_SEEN", "FAILBACK_CLIENT_NOT_SEEN", "FAILED_GETTING_REPLICATION_STATE", "FAILED_TO_ATTACH_STAGING_DISKS", "FAILED_TO_AUTHENTICATE_WITH_SERVICE", "FAILED_TO_BOOT_REPLICATION_SERVER", "FAILED_TO_CONFIGURE_REPLICATION_SOFTWARE", "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER", "FAILED_TO_CREATE_SECURITY_GROUP", "FAILED_TO_CREATE_STAGING_DISKS", "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE", "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE_TO_FAILBACK_CLIENT", "FAILED_TO_ESTABLISH_AGENT_REPLICATOR_SOFTWARE_COMMUNICATION", "FAILED_TO_ESTABLISH_RECOVERY_INSTANCE_COMMUNICATION", "FAILED_TO_LAUNCH_REPLICATION_SERVER", "FAILED_TO_PAIR_AGENT_WITH_REPLICATION_SOFTWARE", "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT", "FAILED_TO_START_DATA_TRANSFER", "NOT_CONVERGING", "SNAPSHOTS_FAILURE", "UNSTABLE_NETWORK"]
+                }
+            }
 impl AsRef<str> for FailbackReplicationError {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

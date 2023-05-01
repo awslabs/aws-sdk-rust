@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportSourceCredentialsInput {
+pub struct ImportSourceCredentialsInput  {
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct ImportSourceCredentialsInput {
 }
 impl ImportSourceCredentialsInput {
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p> The source provider used for this project. </p>
-    pub fn server_type(&self) -> std::option::Option<&crate::types::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<& crate::types::ServerType> {
         self.server_type.as_ref()
     }
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::types::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::types::AuthType> {
         self.auth_type.as_ref()
     }
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
@@ -41,7 +41,7 @@ impl ImportSourceCredentialsInput {
         self.should_overwrite
     }
 }
-impl std::fmt::Debug for ImportSourceCredentialsInput {
+impl  std::fmt::Debug for ImportSourceCredentialsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportSourceCredentialsInput");
         formatter.field("username", &self.username);
@@ -54,9 +54,7 @@ impl std::fmt::Debug for ImportSourceCredentialsInput {
 }
 impl ImportSourceCredentialsInput {
     /// Creates a new builder-style object to manufacture [`ImportSourceCredentialsInput`](crate::operation::import_source_credentials::ImportSourceCredentialsInput).
-    pub fn builder(
-    ) -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder {
         crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder::default()
     }
 }
@@ -79,8 +77,7 @@ impl ImportSourceCredentialsInputBuilder {
     }
     /// <p> The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter is not valid for other types of source providers or connections. </p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
     pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +86,7 @@ impl ImportSourceCredentialsInputBuilder {
     }
     /// <p> For GitHub or GitHub Enterprise, this is the personal access token. For Bitbucket, this is the app password. </p>
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p> The source provider used for this project. </p>
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
@@ -99,8 +95,7 @@ impl ImportSourceCredentialsInputBuilder {
     }
     /// <p> The source provider used for this project. </p>
     pub fn set_server_type(mut self, input: std::option::Option<crate::types::ServerType>) -> Self {
-        self.server_type = input;
-        self
+        self.server_type = input; self
     }
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
@@ -109,8 +104,7 @@ impl ImportSourceCredentialsInputBuilder {
     }
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API and must be created using the CodeBuild console. </p>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
     pub fn should_overwrite(mut self, input: bool) -> Self {
@@ -119,24 +113,23 @@ impl ImportSourceCredentialsInputBuilder {
     }
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials. Set to <code>true</code> to overwrite the repository source credentials. The default value is <code>true</code>. </p>
     pub fn set_should_overwrite(mut self, input: std::option::Option<bool>) -> Self {
-        self.should_overwrite = input;
-        self
+        self.should_overwrite = input; self
     }
     /// Consumes the builder and constructs a [`ImportSourceCredentialsInput`](crate::operation::import_source_credentials::ImportSourceCredentialsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_source_credentials::ImportSourceCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::import_source_credentials::ImportSourceCredentialsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::import_source_credentials::ImportSourceCredentialsInput {
-                username: self.username,
-                token: self.token,
-                server_type: self.server_type,
-                auth_type: self.auth_type,
-                should_overwrite: self.should_overwrite,
-            },
+                username: self.username
+                ,
+                token: self.token
+                ,
+                server_type: self.server_type
+                ,
+                auth_type: self.auth_type
+                ,
+                should_overwrite: self.should_overwrite
+                ,
+            }
         )
     }
 }
@@ -151,3 +144,4 @@ impl std::fmt::Debug for ImportSourceCredentialsInputBuilder {
         formatter.finish()
     }
 }
+

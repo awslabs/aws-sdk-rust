@@ -3,7 +3,7 @@
 /// <p> Contains the revision and status of a package version. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuccessfulPackageVersionInfo {
+pub struct SuccessfulPackageVersionInfo  {
     /// <p> The revision of a package version. </p>
     #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SuccessfulPackageVersionInfo {
 }
 impl SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p> The status of a package version. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SuccessfulPackageVersionInfoBuilder {
     }
     /// <p> The revision of a package version. </p>
     pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p> The status of a package version. </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
@@ -52,18 +51,17 @@ impl SuccessfulPackageVersionInfoBuilder {
         self
     }
     /// <p> The status of a package version. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::PackageVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`SuccessfulPackageVersionInfo`](crate::types::SuccessfulPackageVersionInfo).
     pub fn build(self) -> crate::types::SuccessfulPackageVersionInfo {
         crate::types::SuccessfulPackageVersionInfo {
-            revision: self.revision,
-            status: self.status,
+            revision: self.revision
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

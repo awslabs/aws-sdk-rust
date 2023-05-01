@@ -3,7 +3,7 @@
 /// Failed response of campaign state
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedCampaignStateResponse {
+pub struct FailedCampaignStateResponse  {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
@@ -13,13 +13,11 @@ pub struct FailedCampaignStateResponse {
 }
 impl FailedCampaignStateResponse {
     /// Identifier representing a Campaign
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
-    pub fn failure_code(
-        &self,
-    ) -> std::option::Option<&crate::types::GetCampaignStateBatchFailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::GetCampaignStateBatchFailureCode> {
         self.failure_code.as_ref()
     }
 }
@@ -45,8 +43,7 @@ impl FailedCampaignStateResponseBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
     pub fn failure_code(mut self, input: crate::types::GetCampaignStateBatchFailureCode) -> Self {
@@ -54,18 +51,17 @@ impl FailedCampaignStateResponseBuilder {
         self
     }
     /// A predefined code indicating the error that caused the failure in getting state of campaigns
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::GetCampaignStateBatchFailureCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::GetCampaignStateBatchFailureCode>) -> Self {
+        self.failure_code = input; self
     }
     /// Consumes the builder and constructs a [`FailedCampaignStateResponse`](crate::types::FailedCampaignStateResponse).
     pub fn build(self) -> crate::types::FailedCampaignStateResponse {
         crate::types::FailedCampaignStateResponse {
-            campaign_id: self.campaign_id,
-            failure_code: self.failure_code,
+            campaign_id: self.campaign_id
+            ,
+            failure_code: self.failure_code
+            ,
         }
     }
 }
+

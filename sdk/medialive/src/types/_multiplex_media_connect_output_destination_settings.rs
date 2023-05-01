@@ -3,21 +3,20 @@
 /// Multiplex MediaConnect output destination settings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiplexMediaConnectOutputDestinationSettings {
+pub struct MultiplexMediaConnectOutputDestinationSettings  {
     /// The MediaConnect entitlement ARN available as a Flow source.
     #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
 }
 impl MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
 }
 impl MultiplexMediaConnectOutputDestinationSettings {
     /// Creates a new builder-style object to manufacture [`MultiplexMediaConnectOutputDestinationSettings`](crate::types::MultiplexMediaConnectOutputDestinationSettings).
-    pub fn builder() -> crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder
-    {
+    pub fn builder() -> crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder {
         crate::types::builders::MultiplexMediaConnectOutputDestinationSettingsBuilder::default()
     }
 }
@@ -36,13 +35,14 @@ impl MultiplexMediaConnectOutputDestinationSettingsBuilder {
     }
     /// The MediaConnect entitlement ARN available as a Flow source.
     pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entitlement_arn = input;
-        self
+        self.entitlement_arn = input; self
     }
     /// Consumes the builder and constructs a [`MultiplexMediaConnectOutputDestinationSettings`](crate::types::MultiplexMediaConnectOutputDestinationSettings).
     pub fn build(self) -> crate::types::MultiplexMediaConnectOutputDestinationSettings {
         crate::types::MultiplexMediaConnectOutputDestinationSettings {
-            entitlement_arn: self.entitlement_arn,
+            entitlement_arn: self.entitlement_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the task action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskActionDefinition {
+pub struct TaskActionDefinition  {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,28 +15,23 @@ pub struct TaskActionDefinition {
     pub contact_flow_id: std::option::Option<std::string::String>,
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
     #[doc(hidden)]
-    pub references: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Reference>,
-    >,
+    pub references: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Reference>>,
 }
 impl TaskActionDefinition {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
-    pub fn references(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Reference>>
-    {
+    pub fn references(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::Reference>> {
         self.references.as_ref()
     }
 }
@@ -54,9 +49,7 @@ pub struct TaskActionDefinitionBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) contact_flow_id: std::option::Option<std::string::String>,
-    pub(crate) references: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Reference>,
-    >,
+    pub(crate) references: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Reference>>,
 }
 impl TaskActionDefinitionBuilder {
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
@@ -66,8 +59,7 @@ impl TaskActionDefinitionBuilder {
     }
     /// <p>The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +68,7 @@ impl TaskActionDefinitionBuilder {
     }
     /// <p>The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath reference</a> in the <i>Amazon Connect Administrators Guide</i>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,41 +77,35 @@ impl TaskActionDefinitionBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// Adds a key-value pair to `references`.
     ///
     /// To override the contents of this collection use [`set_references`](Self::set_references).
     ///
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
-    pub fn references(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::Reference,
-    ) -> Self {
+    pub fn references(mut self, k: impl Into<std::string::String>, v: crate::types::Reference) -> Self {
         let mut hash_map = self.references.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.references = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.references = Some(hash_map);
+                        self
     }
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null. (Supports variable injection in the <code>Value</code> field.)</p>
-    pub fn set_references(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Reference>,
-        >,
-    ) -> Self {
-        self.references = input;
-        self
+    pub fn set_references(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Reference>>) -> Self {
+        self.references = input; self
     }
     /// Consumes the builder and constructs a [`TaskActionDefinition`](crate::types::TaskActionDefinition).
     pub fn build(self) -> crate::types::TaskActionDefinition {
         crate::types::TaskActionDefinition {
-            name: self.name,
-            description: self.description,
-            contact_flow_id: self.contact_flow_id,
-            references: self.references,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            contact_flow_id: self.contact_flow_id
+            ,
+            references: self.references
+            ,
         }
     }
 }
+

@@ -3,18 +3,18 @@
 /// <p>Represents the input to <code>ModifyGlobalCluster</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyGlobalClusterInput {
-    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
+pub struct ModifyGlobalClusterInput  {
+    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub global_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-cluster2</code> </p>
     #[doc(hidden)]
     pub new_global_cluster_identifier: std::option::Option<std::string::String>,
@@ -23,20 +23,20 @@ pub struct ModifyGlobalClusterInput {
     pub deletion_protection: std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInput {
-    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
+    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li> 
     /// </ul>
-    pub fn global_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn global_cluster_identifier(&self) -> std::option::Option<& str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn new_global_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn new_global_cluster_identifier(&self) -> std::option::Option<& str> {
         self.new_global_cluster_identifier.as_deref()
     }
     /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
@@ -46,10 +46,8 @@ impl ModifyGlobalClusterInput {
 }
 impl ModifyGlobalClusterInput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
-    pub fn builder(
-    ) -> crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
-        crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder {
+        crate::operation::modify_global_cluster::builders::ModifyGlobalClusterInputBuilder::default()
     }
 }
 
@@ -62,47 +60,39 @@ pub struct ModifyGlobalClusterInputBuilder {
     pub(crate) deletion_protection: std::option::Option<bool>,
 }
 impl ModifyGlobalClusterInputBuilder {
-    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
+    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li> 
     /// </ul>
     pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.global_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li>
+    /// <p>The identifier for the global cluster being modified. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must match the identifier of an existing global cluster.</p> </li> 
     /// </ul>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_cluster_identifier = input;
-        self
+    pub fn set_global_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_cluster_identifier = input; self
     }
-    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-cluster2</code> </p>
     pub fn new_global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.new_global_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p>
-    /// <ul>
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul>
+    /// <p>The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> <p>The first character must be a letter</p> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>my-cluster2</code> </p>
-    pub fn set_new_global_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.new_global_cluster_identifier = input;
-        self
+    pub fn set_new_global_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.new_global_cluster_identifier = input; self
     }
     /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
@@ -111,22 +101,20 @@ impl ModifyGlobalClusterInputBuilder {
     }
     /// <p>Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled. </p>
     pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protection = input;
-        self
+        self.deletion_protection = input; self
     }
     /// Consumes the builder and constructs a [`ModifyGlobalClusterInput`](crate::operation::modify_global_cluster::ModifyGlobalClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_global_cluster::ModifyGlobalClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_global_cluster::ModifyGlobalClusterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_global_cluster::ModifyGlobalClusterInput {
-                global_cluster_identifier: self.global_cluster_identifier,
-                new_global_cluster_identifier: self.new_global_cluster_identifier,
-                deletion_protection: self.deletion_protection,
-            },
+                global_cluster_identifier: self.global_cluster_identifier
+                ,
+                new_global_cluster_identifier: self.new_global_cluster_identifier
+                ,
+                deletion_protection: self.deletion_protection
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// Placeholder documentation for DeleteChannelRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelInput {
+pub struct DeleteChannelInput  {
     /// Unique ID of the channel.
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteChannelInput {
     /// Unique ID of the channel.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DeleteChannelInputBuilder {
     }
     /// Unique ID of the channel.
     pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteChannelInput`](crate::operation::delete_channel::DeleteChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_channel::DeleteChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_channel::DeleteChannelInput {
-            channel_id: self.channel_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_channel::DeleteChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_channel::DeleteChannelInput {
+                channel_id: self.channel_id
+                ,
+            }
+        )
     }
 }
+

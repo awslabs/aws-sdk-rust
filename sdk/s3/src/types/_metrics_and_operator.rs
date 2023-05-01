@@ -3,7 +3,7 @@
 /// <p>A conjunction (logical AND) of predicates, which is used in evaluating a metrics filter. The operator must have at least two predicates, and an object must match all of the predicates in order for the filter to apply.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricsAndOperator {
+pub struct MetricsAndOperator  {
     /// <p>The prefix used when evaluating an AND predicate.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct MetricsAndOperator {
 }
 impl MetricsAndOperator {
     /// <p>The prefix used when evaluating an AND predicate.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The list of tags used when evaluating an AND predicate.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl MetricsAndOperatorBuilder {
     }
     /// <p>The prefix used when evaluating an AND predicate.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -61,17 +60,13 @@ impl MetricsAndOperatorBuilder {
     /// <p>The list of tags used when evaluating an AND predicate.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The list of tags used when evaluating an AND predicate.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +75,18 @@ impl MetricsAndOperatorBuilder {
     }
     /// <p>The access point ARN used when evaluating an <code>AND</code> predicate.</p>
     pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_point_arn = input;
-        self
+        self.access_point_arn = input; self
     }
     /// Consumes the builder and constructs a [`MetricsAndOperator`](crate::types::MetricsAndOperator).
     pub fn build(self) -> crate::types::MetricsAndOperator {
         crate::types::MetricsAndOperator {
-            prefix: self.prefix,
-            tags: self.tags,
-            access_point_arn: self.access_point_arn,
+            prefix: self.prefix
+            ,
+            tags: self.tags
+            ,
+            access_point_arn: self.access_point_arn
+            ,
         }
     }
 }
+

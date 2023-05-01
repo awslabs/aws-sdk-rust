@@ -3,7 +3,7 @@
 /// Represents the status of a logging configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfigurationStatus {
+pub struct LoggingConfigurationStatus  {
     /// Status code of the logging configuration.
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::types::LoggingConfigurationStatusCode>,
@@ -13,13 +13,11 @@ pub struct LoggingConfigurationStatus {
 }
 impl LoggingConfigurationStatus {
     /// Status code of the logging configuration.
-    pub fn status_code(
-        &self,
-    ) -> std::option::Option<&crate::types::LoggingConfigurationStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::types::LoggingConfigurationStatusCode> {
         self.status_code.as_ref()
     }
     /// The reason for failure if any.
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
@@ -44,12 +42,8 @@ impl LoggingConfigurationStatusBuilder {
         self
     }
     /// Status code of the logging configuration.
-    pub fn set_status_code(
-        mut self,
-        input: std::option::Option<crate::types::LoggingConfigurationStatusCode>,
-    ) -> Self {
-        self.status_code = input;
-        self
+    pub fn set_status_code(mut self, input: std::option::Option<crate::types::LoggingConfigurationStatusCode>) -> Self {
+        self.status_code = input; self
     }
     /// The reason for failure if any.
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,14 +52,16 @@ impl LoggingConfigurationStatusBuilder {
     }
     /// The reason for failure if any.
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// Consumes the builder and constructs a [`LoggingConfigurationStatus`](crate::types::LoggingConfigurationStatus).
     pub fn build(self) -> crate::types::LoggingConfigurationStatus {
         crate::types::LoggingConfigurationStatus {
-            status_code: self.status_code,
-            status_reason: self.status_reason,
+            status_code: self.status_code
+            ,
+            status_reason: self.status_reason
+            ,
         }
     }
 }
+

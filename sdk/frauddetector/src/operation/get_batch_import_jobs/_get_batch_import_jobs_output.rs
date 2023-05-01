@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBatchImportJobsOutput {
+pub struct GetBatchImportJobsOutput  {
     /// <p>An array containing the details of each batch import job.</p>
     #[doc(hidden)]
     pub batch_imports: std::option::Option<std::vec::Vec<crate::types::BatchImport>>,
@@ -13,25 +13,23 @@ pub struct GetBatchImportJobsOutput {
 }
 impl GetBatchImportJobsOutput {
     /// <p>An array containing the details of each batch import job.</p>
-    pub fn batch_imports(&self) -> std::option::Option<&[crate::types::BatchImport]> {
+    pub fn batch_imports(&self) -> std::option::Option<& [crate::types::BatchImport]> {
         self.batch_imports.as_deref()
     }
     /// <p>The next token for the subsequent resquest.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetBatchImportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBatchImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchImportJobsOutput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder {
-        crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder {
+        crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl GetBatchImportJobsOutputBuilder {
     /// <p>An array containing the details of each batch import job.</p>
     pub fn batch_imports(mut self, input: crate::types::BatchImport) -> Self {
         let mut v = self.batch_imports.unwrap_or_default();
-        v.push(input);
-        self.batch_imports = Some(v);
-        self
+                        v.push(input);
+                        self.batch_imports = Some(v);
+                        self
     }
     /// <p>An array containing the details of each batch import job.</p>
-    pub fn set_batch_imports(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchImport>>,
-    ) -> Self {
-        self.batch_imports = input;
-        self
+    pub fn set_batch_imports(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchImport>>) -> Self {
+        self.batch_imports = input; self
     }
     /// <p>The next token for the subsequent resquest.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl GetBatchImportJobsOutputBuilder {
     }
     /// <p>The next token for the subsequent resquest.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBatchImportJobsOutput`](crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput).
     pub fn build(self) -> crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput {
         crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput {
-            batch_imports: self.batch_imports,
-            next_token: self.next_token,
+            batch_imports: self.batch_imports
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

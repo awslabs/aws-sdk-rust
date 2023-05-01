@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProvisioningClaimOutput {
+pub struct CreateProvisioningClaimOutput  {
     /// <p>The ID of the certificate.</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -19,32 +19,30 @@ pub struct CreateProvisioningClaimOutput {
 }
 impl CreateProvisioningClaimOutput {
     /// <p>The ID of the certificate.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The provisioning claim certificate.</p>
-    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+    pub fn certificate_pem(&self) -> std::option::Option<& str> {
         self.certificate_pem.as_deref()
     }
     /// <p>The provisioning claim key pair.</p>
-    pub fn key_pair(&self) -> std::option::Option<&crate::types::KeyPair> {
+    pub fn key_pair(&self) -> std::option::Option<& crate::types::KeyPair> {
         self.key_pair.as_ref()
     }
     /// <p>The provisioning claim expiration time.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateProvisioningClaimOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateProvisioningClaimOutput {
     /// Creates a new builder-style object to manufacture [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput).
-    pub fn builder(
-    ) -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder {
         crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimOutputBuilder::default()
     }
 }
@@ -67,8 +65,7 @@ impl CreateProvisioningClaimOutputBuilder {
     }
     /// <p>The ID of the certificate.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The provisioning claim certificate.</p>
     pub fn certificate_pem(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +74,7 @@ impl CreateProvisioningClaimOutputBuilder {
     }
     /// <p>The provisioning claim certificate.</p>
     pub fn set_certificate_pem(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_pem = input;
-        self
+        self.certificate_pem = input; self
     }
     /// <p>The provisioning claim key pair.</p>
     pub fn key_pair(mut self, input: crate::types::KeyPair) -> Self {
@@ -87,8 +83,7 @@ impl CreateProvisioningClaimOutputBuilder {
     }
     /// <p>The provisioning claim key pair.</p>
     pub fn set_key_pair(mut self, input: std::option::Option<crate::types::KeyPair>) -> Self {
-        self.key_pair = input;
-        self
+        self.key_pair = input; self
     }
     /// <p>The provisioning claim expiration time.</p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -96,32 +91,31 @@ impl CreateProvisioningClaimOutputBuilder {
         self
     }
     /// <p>The provisioning claim expiration time.</p>
-    pub fn set_expiration(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration = input;
-        self
+    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput {
+    pub fn build(self) -> crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput {
         crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput {
-            certificate_id: self.certificate_id,
-            certificate_pem: self.certificate_pem,
-            key_pair: self.key_pair,
-            expiration: self.expiration,
+            certificate_id: self.certificate_id
+            ,
+            certificate_pem: self.certificate_pem
+            ,
+            key_pair: self.key_pair
+            ,
+            expiration: self.expiration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

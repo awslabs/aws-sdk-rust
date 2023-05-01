@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMonitoringScheduleInput {
+pub struct StartMonitoringScheduleInput  {
     /// <p>The name of the schedule to start.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl StartMonitoringScheduleInput {
     /// <p>The name of the schedule to start.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
 }
 impl StartMonitoringScheduleInput {
     /// Creates a new builder-style object to manufacture [`StartMonitoringScheduleInput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder {
         crate::operation::start_monitoring_schedule::builders::StartMonitoringScheduleInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl StartMonitoringScheduleInputBuilder {
         self
     }
     /// <p>The name of the schedule to start.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.monitoring_schedule_name = input; self
     }
     /// Consumes the builder and constructs a [`StartMonitoringScheduleInput`](crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_monitoring_schedule::StartMonitoringScheduleInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-            },
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+            }
         )
     }
 }
+

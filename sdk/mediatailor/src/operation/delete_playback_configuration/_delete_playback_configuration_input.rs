@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaybackConfigurationInput {
+pub struct DeletePlaybackConfigurationInput  {
     /// <p>The name of the playback configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeletePlaybackConfigurationInput {
     /// <p>The name of the playback configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeletePlaybackConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackConfigurationInput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput).
-    pub fn builder() -> crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder {
         crate::operation::delete_playback_configuration::builders::DeletePlaybackConfigurationInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeletePlaybackConfigurationInputBuilder {
     }
     /// <p>The name of the playback configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeletePlaybackConfigurationInput`](crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_playback_configuration::DeletePlaybackConfigurationInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

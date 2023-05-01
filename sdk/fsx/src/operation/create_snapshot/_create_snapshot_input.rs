@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotInput {
+pub struct CreateSnapshotInput  {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateSnapshotInput {
 }
 impl CreateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name of the snapshot. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -57,12 +57,8 @@ impl CreateSnapshotInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The name of the snapshot. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The ID of the volume that you are taking a snapshot of.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -91,30 +85,28 @@ impl CreateSnapshotInputBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_snapshot::CreateSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_snapshot::CreateSnapshotInput {
-            client_request_token: self.client_request_token,
-            name: self.name,
-            volume_id: self.volume_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_snapshot::CreateSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_snapshot::CreateSnapshotInput {
+                client_request_token: self.client_request_token
+                ,
+                name: self.name
+                ,
+                volume_id: self.volume_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

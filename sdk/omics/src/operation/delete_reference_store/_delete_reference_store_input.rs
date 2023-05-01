@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReferenceStoreInput {
+pub struct DeleteReferenceStoreInput  {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteReferenceStoreInput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteReferenceStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteReferenceStoreInput`](crate::operation::delete_reference_store::DeleteReferenceStoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_reference_store::builders::DeleteReferenceStoreInputBuilder {
+    pub fn builder() -> crate::operation::delete_reference_store::builders::DeleteReferenceStoreInputBuilder {
         crate::operation::delete_reference_store::builders::DeleteReferenceStoreInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteReferenceStoreInputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteReferenceStoreInput`](crate::operation::delete_reference_store::DeleteReferenceStoreInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_reference_store::DeleteReferenceStoreInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_reference_store::DeleteReferenceStoreInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::delete_reference_store::DeleteReferenceStoreInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_reference_store::DeleteReferenceStoreInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

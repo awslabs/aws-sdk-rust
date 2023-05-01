@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInterconnectInput {
+pub struct CreateInterconnectInput  {
     /// <p>The name of the interconnect.</p>
     #[doc(hidden)]
     pub interconnect_name: std::option::Option<std::string::String>,
@@ -24,34 +24,33 @@ pub struct CreateInterconnectInput {
 }
 impl CreateInterconnectInput {
     /// <p>The name of the interconnect.</p>
-    pub fn interconnect_name(&self) -> std::option::Option<&str> {
+    pub fn interconnect_name(&self) -> std::option::Option<& str> {
         self.interconnect_name.as_deref()
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The location of the interconnect.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> std::option::Option<& str> {
         self.lag_id.as_deref()
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
 impl CreateInterconnectInput {
     /// Creates a new builder-style object to manufacture [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
-    pub fn builder(
-    ) -> crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder {
+    pub fn builder() -> crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder {
         crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder::default()
     }
 }
@@ -74,12 +73,8 @@ impl CreateInterconnectInputBuilder {
         self
     }
     /// <p>The name of the interconnect.</p>
-    pub fn set_interconnect_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.interconnect_name = input;
-        self
+    pub fn set_interconnect_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.interconnect_name = input; self
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
     pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +83,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
     pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// <p>The location of the interconnect.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +92,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The location of the interconnect.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +101,7 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lag_id = input;
-        self
+        self.lag_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -118,17 +110,13 @@ impl CreateInterconnectInputBuilder {
     /// <p>The tags to associate with the interconnect.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,25 +125,26 @@ impl CreateInterconnectInputBuilder {
     }
     /// <p>The name of the service provider associated with the interconnect.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// Consumes the builder and constructs a [`CreateInterconnectInput`](crate::operation::create_interconnect::CreateInterconnectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_interconnect::CreateInterconnectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_interconnect::CreateInterconnectInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_interconnect::CreateInterconnectInput {
-                interconnect_name: self.interconnect_name,
-                bandwidth: self.bandwidth,
-                location: self.location,
-                lag_id: self.lag_id,
-                tags: self.tags,
-                provider_name: self.provider_name,
-            },
+                interconnect_name: self.interconnect_name
+                ,
+                bandwidth: self.bandwidth
+                ,
+                location: self.location
+                ,
+                lag_id: self.lag_id
+                ,
+                tags: self.tags
+                ,
+                provider_name: self.provider_name
+                ,
+            }
         )
     }
 }
+

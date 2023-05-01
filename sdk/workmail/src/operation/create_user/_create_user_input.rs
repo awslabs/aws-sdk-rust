@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateUserInput {
+pub struct CreateUserInput  {
     /// <p>The identifier of the organization for which the user is created.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -18,23 +18,23 @@ pub struct CreateUserInput {
 }
 impl CreateUserInput {
     /// <p>The identifier of the organization for which the user is created.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name for the new user.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The password for the new user.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for CreateUserInput {
+impl  std::fmt::Debug for CreateUserInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("organization_id", &self.organization_id);
@@ -68,8 +68,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The identifier of the organization for which the user is created.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +77,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum length of 20.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name for the new user.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +86,7 @@ impl CreateUserInputBuilder {
     }
     /// <p>The display name for the new user.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The password for the new user.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,22 +95,22 @@ impl CreateUserInputBuilder {
     }
     /// <p>The password for the new user.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_user::CreateUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_user::CreateUserInput {
-            organization_id: self.organization_id,
-            name: self.name,
-            display_name: self.display_name,
-            password: self.password,
-        })
+    pub fn build(self) -> Result<crate::operation::create_user::CreateUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_user::CreateUserInput {
+                organization_id: self.organization_id
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                password: self.password
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateUserInputBuilder {
@@ -126,3 +123,4 @@ impl std::fmt::Debug for CreateUserInputBuilder {
         formatter.finish()
     }
 }
+

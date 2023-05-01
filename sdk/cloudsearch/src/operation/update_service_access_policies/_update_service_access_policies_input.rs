@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>UpdateServiceAccessPolicies</code></code> operation. Specifies the name of the domain you want to update and the access rules you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceAccessPoliciesInput {
+pub struct UpdateServiceAccessPoliciesInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct UpdateServiceAccessPoliciesInput {
 }
 impl UpdateServiceAccessPoliciesInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-    pub fn access_policies(&self) -> std::option::Option<&str> {
+    pub fn access_policies(&self) -> std::option::Option<& str> {
         self.access_policies.as_deref()
     }
 }
 impl UpdateServiceAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceAccessPoliciesInput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput).
-    pub fn builder() -> crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder {
         crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateServiceAccessPoliciesInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +52,18 @@ impl UpdateServiceAccessPoliciesInputBuilder {
     }
     /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
     pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_policies = input;
-        self
+        self.access_policies = input; self
     }
     /// Consumes the builder and constructs a [`UpdateServiceAccessPoliciesInput`](crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_service_access_policies::UpdateServiceAccessPoliciesInput {
-                domain_name: self.domain_name,
-                access_policies: self.access_policies,
-            },
+                domain_name: self.domain_name
+                ,
+                access_policies: self.access_policies
+                ,
+            }
         )
     }
 }
+

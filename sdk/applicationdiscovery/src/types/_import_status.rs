@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let importstatus = unimplemented!();
 /// match importstatus {
@@ -39,22 +39,14 @@
 /// Specifically, when `importstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ImportStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ImportStatus {
     #[allow(missing_docs)] // documentation missing in model
     DeleteComplete,
@@ -79,72 +71,59 @@ pub enum ImportStatus {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ImportStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DELETE_COMPLETE" => ImportStatus::DeleteComplete,
-            "DELETE_FAILED" => ImportStatus::DeleteFailed,
-            "DELETE_FAILED_LIMIT_EXCEEDED" => ImportStatus::DeleteFailedLimitExceeded,
-            "DELETE_IN_PROGRESS" => ImportStatus::DeleteInProgress,
-            "IMPORT_COMPLETE" => ImportStatus::ImportComplete,
-            "IMPORT_COMPLETE_WITH_ERRORS" => ImportStatus::ImportCompleteWithErrors,
-            "IMPORT_FAILED" => ImportStatus::ImportFailed,
-            "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED" => ImportStatus::ImportFailedRecordLimitExceeded,
-            "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED" => ImportStatus::ImportFailedServerLimitExceeded,
-            "IMPORT_IN_PROGRESS" => ImportStatus::ImportInProgress,
-            "INTERNAL_ERROR" => ImportStatus::InternalError,
-            other => {
-                ImportStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DELETE_COMPLETE" => ImportStatus::DeleteComplete,
+"DELETE_FAILED" => ImportStatus::DeleteFailed,
+"DELETE_FAILED_LIMIT_EXCEEDED" => ImportStatus::DeleteFailedLimitExceeded,
+"DELETE_IN_PROGRESS" => ImportStatus::DeleteInProgress,
+"IMPORT_COMPLETE" => ImportStatus::ImportComplete,
+"IMPORT_COMPLETE_WITH_ERRORS" => ImportStatus::ImportCompleteWithErrors,
+"IMPORT_FAILED" => ImportStatus::ImportFailed,
+"IMPORT_FAILED_RECORD_LIMIT_EXCEEDED" => ImportStatus::ImportFailedRecordLimitExceeded,
+"IMPORT_FAILED_SERVER_LIMIT_EXCEEDED" => ImportStatus::ImportFailedServerLimitExceeded,
+"IMPORT_IN_PROGRESS" => ImportStatus::ImportInProgress,
+"INTERNAL_ERROR" => ImportStatus::InternalError,
+other => ImportStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ImportStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ImportStatus::from(s))
+                }
+            }
 impl ImportStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ImportStatus::DeleteComplete => "DELETE_COMPLETE",
-            ImportStatus::DeleteFailed => "DELETE_FAILED",
-            ImportStatus::DeleteFailedLimitExceeded => "DELETE_FAILED_LIMIT_EXCEEDED",
-            ImportStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            ImportStatus::ImportComplete => "IMPORT_COMPLETE",
-            ImportStatus::ImportCompleteWithErrors => "IMPORT_COMPLETE_WITH_ERRORS",
-            ImportStatus::ImportFailed => "IMPORT_FAILED",
-            ImportStatus::ImportFailedRecordLimitExceeded => "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED",
-            ImportStatus::ImportFailedServerLimitExceeded => "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED",
-            ImportStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
-            ImportStatus::InternalError => "INTERNAL_ERROR",
-            ImportStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DELETE_COMPLETE",
-            "DELETE_FAILED",
-            "DELETE_FAILED_LIMIT_EXCEEDED",
-            "DELETE_IN_PROGRESS",
-            "IMPORT_COMPLETE",
-            "IMPORT_COMPLETE_WITH_ERRORS",
-            "IMPORT_FAILED",
-            "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED",
-            "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED",
-            "IMPORT_IN_PROGRESS",
-            "INTERNAL_ERROR",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ImportStatus::DeleteComplete => "DELETE_COMPLETE",
+    ImportStatus::DeleteFailed => "DELETE_FAILED",
+    ImportStatus::DeleteFailedLimitExceeded => "DELETE_FAILED_LIMIT_EXCEEDED",
+    ImportStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    ImportStatus::ImportComplete => "IMPORT_COMPLETE",
+    ImportStatus::ImportCompleteWithErrors => "IMPORT_COMPLETE_WITH_ERRORS",
+    ImportStatus::ImportFailed => "IMPORT_FAILED",
+    ImportStatus::ImportFailedRecordLimitExceeded => "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED",
+    ImportStatus::ImportFailedServerLimitExceeded => "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED",
+    ImportStatus::ImportInProgress => "IMPORT_IN_PROGRESS",
+    ImportStatus::InternalError => "INTERNAL_ERROR",
+    ImportStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DELETE_COMPLETE", "DELETE_FAILED", "DELETE_FAILED_LIMIT_EXCEEDED", "DELETE_IN_PROGRESS", "IMPORT_COMPLETE", "IMPORT_COMPLETE_WITH_ERRORS", "IMPORT_FAILED", "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED", "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED", "IMPORT_IN_PROGRESS", "INTERNAL_ERROR"]
+                }
+            }
 impl AsRef<str> for ImportStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

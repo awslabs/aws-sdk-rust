@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateModelInput {
+pub struct CreateModelInput  {
     /// <p>The name of the new model.</p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct CreateModelInput {
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
     #[doc(hidden)]
     pub inference_execution_config: std::option::Option<crate::types::InferenceExecutionConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
-    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note> 
+    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p> 
     /// </note>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfig>,
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
@@ -32,35 +32,33 @@ pub struct CreateModelInput {
 }
 impl CreateModelInput {
     /// <p>The name of the new model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    pub fn primary_container(&self) -> std::option::Option<&crate::types::ContainerDefinition> {
+    pub fn primary_container(&self) -> std::option::Option<& crate::types::ContainerDefinition> {
         self.primary_container.as_ref()
     }
     /// <p>Specifies the containers in the inference pipeline.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::types::ContainerDefinition]> {
+    pub fn containers(&self) -> std::option::Option<& [crate::types::ContainerDefinition]> {
         self.containers.as_deref()
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn inference_execution_config(
-        &self,
-    ) -> std::option::Option<&crate::types::InferenceExecutionConfig> {
+    pub fn inference_execution_config(&self) -> std::option::Option<& crate::types::InferenceExecutionConfig> {
         self.inference_execution_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
-    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note> 
+    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p> 
     /// </note>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
@@ -82,8 +80,7 @@ pub struct CreateModelInputBuilder {
     pub(crate) model_name: std::option::Option<std::string::String>,
     pub(crate) primary_container: std::option::Option<crate::types::ContainerDefinition>,
     pub(crate) containers: std::option::Option<std::vec::Vec<crate::types::ContainerDefinition>>,
-    pub(crate) inference_execution_config:
-        std::option::Option<crate::types::InferenceExecutionConfig>,
+    pub(crate) inference_execution_config: std::option::Option<crate::types::InferenceExecutionConfig>,
     pub(crate) execution_role_arn: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_config: std::option::Option<crate::types::VpcConfig>,
@@ -97,8 +94,7 @@ impl CreateModelInputBuilder {
     }
     /// <p>The name of the new model.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
     pub fn primary_container(mut self, input: crate::types::ContainerDefinition) -> Self {
@@ -106,12 +102,8 @@ impl CreateModelInputBuilder {
         self
     }
     /// <p>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions. </p>
-    pub fn set_primary_container(
-        mut self,
-        input: std::option::Option<crate::types::ContainerDefinition>,
-    ) -> Self {
-        self.primary_container = input;
-        self
+    pub fn set_primary_container(mut self, input: std::option::Option<crate::types::ContainerDefinition>) -> Self {
+        self.primary_container = input; self
     }
     /// Appends an item to `containers`.
     ///
@@ -120,50 +112,35 @@ impl CreateModelInputBuilder {
     /// <p>Specifies the containers in the inference pipeline.</p>
     pub fn containers(mut self, input: crate::types::ContainerDefinition) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = Some(v);
-        self
+                        v.push(input);
+                        self.containers = Some(v);
+                        self
     }
     /// <p>Specifies the containers in the inference pipeline.</p>
-    pub fn set_containers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerDefinition>>,
-    ) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContainerDefinition>>) -> Self {
+        self.containers = input; self
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn inference_execution_config(
-        mut self,
-        input: crate::types::InferenceExecutionConfig,
-    ) -> Self {
+    pub fn inference_execution_config(mut self, input: crate::types::InferenceExecutionConfig) -> Self {
         self.inference_execution_config = Some(input);
         self
     }
     /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
-    pub fn set_inference_execution_config(
-        mut self,
-        input: std::option::Option<crate::types::InferenceExecutionConfig>,
-    ) -> Self {
-        self.inference_execution_config = input;
-        self
+    pub fn set_inference_execution_config(mut self, input: std::option::Option<crate::types::InferenceExecutionConfig>) -> Self {
+        self.inference_execution_config = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
-    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note> 
+    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p> 
     /// </note>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.execution_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note>
-    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker Roles</a>. </p> <note> 
+    /// <p>To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.</p> 
     /// </note>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -172,27 +149,22 @@ impl CreateModelInputBuilder {
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
-    /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
         self.vpc_config = Some(input);
         self
     }
-    /// <p>A <code>VpcConfig</code> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+    /// <p>A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <code>VpcConfig</code> is used in hosting services and in batch transform. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     pub fn enable_network_isolation(mut self, input: bool) -> Self {
@@ -201,25 +173,30 @@ impl CreateModelInputBuilder {
     }
     /// <p>Isolates the model container. No inbound or outbound network calls can be made to or from the model container.</p>
     pub fn set_enable_network_isolation(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_network_isolation = input;
-        self
+        self.enable_network_isolation = input; self
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_model::CreateModelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_model::CreateModelInput {
-            model_name: self.model_name,
-            primary_container: self.primary_container,
-            containers: self.containers,
-            inference_execution_config: self.inference_execution_config,
-            execution_role_arn: self.execution_role_arn,
-            tags: self.tags,
-            vpc_config: self.vpc_config,
-            enable_network_isolation: self.enable_network_isolation,
-        })
+    pub fn build(self) -> Result<crate::operation::create_model::CreateModelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_model::CreateModelInput {
+                model_name: self.model_name
+                ,
+                primary_container: self.primary_container
+                ,
+                containers: self.containers
+                ,
+                inference_execution_config: self.inference_execution_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                tags: self.tags
+                ,
+                vpc_config: self.vpc_config
+                ,
+                enable_network_isolation: self.enable_network_isolation
+                ,
+            }
+        )
     }
 }
+

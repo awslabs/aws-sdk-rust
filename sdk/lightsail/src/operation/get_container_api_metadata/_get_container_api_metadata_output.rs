@@ -2,33 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerApiMetadataOutput {
+pub struct GetContainerApiMetadataOutput  {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-    >,
+    pub metadata: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetContainerApiMetadataOutput {
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn metadata(
-        &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    pub fn metadata(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::string::String>]> {
         self.metadata.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContainerApiMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetContainerApiMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerApiMetadataOutput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder {
         crate::operation::get_container_api_metadata::builders::GetContainerApiMetadataOutputBuilder::default()
     }
 }
@@ -37,9 +30,7 @@ impl GetContainerApiMetadataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetContainerApiMetadataOutputBuilder {
-    pub(crate) metadata: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-    >,
+    pub(crate) metadata: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
     _request_id: Option<String>,
 }
 impl GetContainerApiMetadataOutputBuilder {
@@ -48,41 +39,32 @@ impl GetContainerApiMetadataOutputBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn metadata(
-        mut self,
-        input: std::collections::HashMap<std::string::String, std::string::String>,
-    ) -> Self {
+    pub fn metadata(mut self, input: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
-        v.push(input);
-        self.metadata = Some(v);
-        self
+                        v.push(input);
+                        self.metadata = Some(v);
+                        self
     }
     /// <p>Metadata about Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>
-    pub fn set_metadata(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
-        >,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+        self.metadata = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetContainerApiMetadataOutput`](crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput {
+    pub fn build(self) -> crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput {
         crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput {
-            metadata: self.metadata,
+            metadata: self.metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

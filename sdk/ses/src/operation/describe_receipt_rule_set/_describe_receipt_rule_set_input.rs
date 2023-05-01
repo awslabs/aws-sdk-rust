@@ -3,22 +3,20 @@
 /// <p>Represents a request to return the details of a receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReceiptRuleSetInput {
+pub struct DescribeReceiptRuleSetInput  {
     /// <p>The name of the receipt rule set to describe.</p>
     #[doc(hidden)]
     pub rule_set_name: std::option::Option<std::string::String>,
 }
 impl DescribeReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to describe.</p>
-    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
 }
 impl DescribeReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleSetInput`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetInputBuilder {
         crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl DescribeReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the receipt rule set to describe.</p>
     pub fn set_rule_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReceiptRuleSetInput`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetInput {
-                rule_set_name: self.rule_set_name,
-            },
+                rule_set_name: self.rule_set_name
+                ,
+            }
         )
     }
 }
+

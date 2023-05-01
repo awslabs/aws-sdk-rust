@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionsOutput {
+pub struct ListFunctionsOutput  {
     /// <p>A list of <code>Function</code> objects.</p>
     #[doc(hidden)]
     pub functions: std::option::Option<std::vec::Vec<crate::types::FunctionConfiguration>>,
@@ -13,19 +13,19 @@ pub struct ListFunctionsOutput {
 }
 impl ListFunctionsOutput {
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn functions(&self) -> std::option::Option<&[crate::types::FunctionConfiguration]> {
+    pub fn functions(&self) -> std::option::Option<& [crate::types::FunctionConfiguration]> {
         self.functions.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFunctionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFunctionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
     pub fn builder() -> crate::operation::list_functions::builders::ListFunctionsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListFunctionsOutputBuilder {
     /// <p>A list of <code>Function</code> objects.</p>
     pub fn functions(mut self, input: crate::types::FunctionConfiguration) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input);
-        self.functions = Some(v);
-        self
+                        v.push(input);
+                        self.functions = Some(v);
+                        self
     }
     /// <p>A list of <code>Function</code> objects.</p>
-    pub fn set_functions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FunctionConfiguration>>,
-    ) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FunctionConfiguration>>) -> Self {
+        self.functions = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListFunctionsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which you can use to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFunctionsOutput`](crate::operation::list_functions::ListFunctionsOutput).
     pub fn build(self) -> crate::operation::list_functions::ListFunctionsOutput {
         crate::operation::list_functions::ListFunctionsOutput {
-            functions: self.functions,
-            next_token: self.next_token,
+            functions: self.functions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

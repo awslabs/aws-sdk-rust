@@ -3,67 +3,67 @@
 /// <p>Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TruckDimensions {
-    /// <p>The length of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+pub struct TruckDimensions  {
+    /// <p>The length of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
     /// </note>
     #[doc(hidden)]
     pub length: std::option::Option<f64>,
-    /// <p>The height of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The height of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     #[doc(hidden)]
     pub height: std::option::Option<f64>,
-    /// <p>The width of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The width of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     #[doc(hidden)]
     pub width: std::option::Option<f64>,
-    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
     /// <p>Default Value: <code>Meters</code> </p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::types::DimensionUnit>,
 }
 impl TruckDimensions {
-    /// <p>The length of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// <p>The length of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
     /// </note>
     pub fn length(&self) -> std::option::Option<f64> {
         self.length
     }
-    /// <p>The height of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The height of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn height(&self) -> std::option::Option<f64> {
         self.height
     }
-    /// <p>The width of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The width of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn width(&self) -> std::option::Option<f64> {
         self.width
     }
-    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
     /// <p>Default Value: <code>Meters</code> </p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::DimensionUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::types::DimensionUnit> {
         self.unit.as_ref()
     }
 }
@@ -84,85 +84,86 @@ pub struct TruckDimensionsBuilder {
     pub(crate) unit: std::option::Option<crate::types::DimensionUnit>,
 }
 impl TruckDimensionsBuilder {
-    /// <p>The length of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// <p>The length of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
     /// </note>
     pub fn length(mut self, input: f64) -> Self {
         self.length = Some(input);
         self
     }
-    /// <p>The length of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>15.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p>
+    /// <p>The length of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>15.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 300 meters. </p> 
     /// </note>
     pub fn set_length(mut self, input: std::option::Option<f64>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
-    /// <p>The height of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The height of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn height(mut self, input: f64) -> Self {
         self.height = Some(input);
         self
     }
-    /// <p>The height of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The height of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
-        self.height = input;
-        self
+        self.height = input; self
     }
-    /// <p>The width of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The width of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn width(mut self, input: f64) -> Self {
         self.width = Some(input);
         self
     }
-    /// <p>The width of the truck.</p>
-    /// <ul>
-    /// <li> <p>For example, <code>4.5</code>.</p> </li>
-    /// </ul> <note>
-    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p>
+    /// <p>The width of the truck.</p> 
+    /// <ul> 
+    /// <li> <p>For example, <code>4.5</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p> For routes calculated with a HERE resource, this value must be between 0 and 50 meters. </p> 
     /// </note>
     pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
-    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
     /// <p>Default Value: <code>Meters</code> </p>
     pub fn unit(mut self, input: crate::types::DimensionUnit) -> Self {
         self.unit = Some(input);
         self
     }
-    /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+    /// <p> Specifies the unit of measurement for the truck dimensions.</p> 
     /// <p>Default Value: <code>Meters</code> </p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::DimensionUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// Consumes the builder and constructs a [`TruckDimensions`](crate::types::TruckDimensions).
     pub fn build(self) -> crate::types::TruckDimensions {
         crate::types::TruckDimensions {
-            length: self.length,
-            height: self.height,
-            width: self.width,
-            unit: self.unit,
+            length: self.length
+            ,
+            height: self.height
+            ,
+            width: self.width
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

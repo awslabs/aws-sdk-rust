@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateLensesOutput {
+pub struct DisassociateLensesOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateLensesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateLensesOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLensesOutput`](crate::operation::disassociate_lenses::DisassociateLensesOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_lenses::builders::DisassociateLensesOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_lenses::builders::DisassociateLensesOutputBuilder {
         crate::operation::disassociate_lenses::builders::DisassociateLensesOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DisassociateLensesOutputBuilder {
 }
 impl DisassociateLensesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateLensesOutput`](crate::operation::disassociate_lenses::DisassociateLensesOutput).
     pub fn build(self) -> crate::operation::disassociate_lenses::DisassociateLensesOutput {
         crate::operation::disassociate_lenses::DisassociateLensesOutput {
@@ -41,3 +40,4 @@ impl DisassociateLensesOutputBuilder {
         }
     }
 }
+

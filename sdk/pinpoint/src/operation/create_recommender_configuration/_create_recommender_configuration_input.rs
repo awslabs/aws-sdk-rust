@@ -2,23 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRecommenderConfigurationInput {
+pub struct CreateRecommenderConfigurationInput  {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
     #[doc(hidden)]
-    pub create_recommender_configuration:
-        std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
+    pub create_recommender_configuration: std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
 }
 impl CreateRecommenderConfigurationInput {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn create_recommender_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::CreateRecommenderConfigurationShape> {
+    pub fn create_recommender_configuration(&self) -> std::option::Option<& crate::types::CreateRecommenderConfigurationShape> {
         self.create_recommender_configuration.as_ref()
     }
 }
 impl CreateRecommenderConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateRecommenderConfigurationInput`](crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput).
-    pub fn builder() -> crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder {
         crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder::default()
     }
 }
@@ -27,33 +24,20 @@ impl CreateRecommenderConfigurationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationInputBuilder {
-    pub(crate) create_recommender_configuration:
-        std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
+    pub(crate) create_recommender_configuration: std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
 }
 impl CreateRecommenderConfigurationInputBuilder {
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn create_recommender_configuration(
-        mut self,
-        input: crate::types::CreateRecommenderConfigurationShape,
-    ) -> Self {
+    pub fn create_recommender_configuration(mut self, input: crate::types::CreateRecommenderConfigurationShape) -> Self {
         self.create_recommender_configuration = Some(input);
         self
     }
     /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
-    pub fn set_create_recommender_configuration(
-        mut self,
-        input: std::option::Option<crate::types::CreateRecommenderConfigurationShape>,
-    ) -> Self {
-        self.create_recommender_configuration = input;
-        self
+    pub fn set_create_recommender_configuration(mut self, input: std::option::Option<crate::types::CreateRecommenderConfigurationShape>) -> Self {
+        self.create_recommender_configuration = input; self
     }
     /// Consumes the builder and constructs a [`CreateRecommenderConfigurationInput`](crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_recommender_configuration::CreateRecommenderConfigurationInput {
                 create_recommender_configuration: self.create_recommender_configuration
@@ -62,3 +46,4 @@ impl CreateRecommenderConfigurationInputBuilder {
         )
     }
 }
+

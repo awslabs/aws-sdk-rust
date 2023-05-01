@@ -3,29 +3,25 @@
 /// <p>Describes the upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UploadMetadata {
+pub struct UploadMetadata  {
     /// <p>The URL of the upload.</p>
     #[doc(hidden)]
     pub upload_url: std::option::Option<std::string::String>,
     /// <p>The signed headers.</p>
     #[doc(hidden)]
-    pub signed_headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub signed_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UploadMetadata {
     /// <p>The URL of the upload.</p>
-    pub fn upload_url(&self) -> std::option::Option<&str> {
+    pub fn upload_url(&self) -> std::option::Option<& str> {
         self.upload_url.as_deref()
     }
     /// <p>The signed headers.</p>
-    pub fn signed_headers(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn signed_headers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.signed_headers.as_ref()
     }
 }
-impl std::fmt::Debug for UploadMetadata {
+impl  std::fmt::Debug for UploadMetadata  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UploadMetadata");
         formatter.field("upload_url", &"*** Sensitive Data Redacted ***");
@@ -45,8 +41,7 @@ impl UploadMetadata {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct UploadMetadataBuilder {
     pub(crate) upload_url: std::option::Option<std::string::String>,
-    pub(crate) signed_headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) signed_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UploadMetadataBuilder {
     /// <p>The URL of the upload.</p>
@@ -56,39 +51,30 @@ impl UploadMetadataBuilder {
     }
     /// <p>The URL of the upload.</p>
     pub fn set_upload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.upload_url = input;
-        self
+        self.upload_url = input; self
     }
     /// Adds a key-value pair to `signed_headers`.
     ///
     /// To override the contents of this collection use [`set_signed_headers`](Self::set_signed_headers).
     ///
     /// <p>The signed headers.</p>
-    pub fn signed_headers(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn signed_headers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.signed_headers.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.signed_headers = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.signed_headers = Some(hash_map);
+                        self
     }
     /// <p>The signed headers.</p>
-    pub fn set_signed_headers(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.signed_headers = input;
-        self
+    pub fn set_signed_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.signed_headers = input; self
     }
     /// Consumes the builder and constructs a [`UploadMetadata`](crate::types::UploadMetadata).
     pub fn build(self) -> crate::types::UploadMetadata {
         crate::types::UploadMetadata {
-            upload_url: self.upload_url,
-            signed_headers: self.signed_headers,
+            upload_url: self.upload_url
+            ,
+            signed_headers: self.signed_headers
+            ,
         }
     }
 }
@@ -100,3 +86,4 @@ impl std::fmt::Debug for UploadMetadataBuilder {
         formatter.finish()
     }
 }
+

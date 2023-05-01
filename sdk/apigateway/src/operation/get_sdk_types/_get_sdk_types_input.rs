@@ -3,7 +3,7 @@
 /// <p>Get the SdkTypes collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSdkTypesInput {
+pub struct GetSdkTypesInput  {
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
     pub position: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct GetSdkTypesInput {
 }
 impl GetSdkTypesInput {
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -43,8 +43,7 @@ impl GetSdkTypesInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -53,19 +52,18 @@ impl GetSdkTypesInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`GetSdkTypesInput`](crate::operation::get_sdk_types::GetSdkTypesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_sdk_types::GetSdkTypesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_sdk_types::GetSdkTypesInput {
-            position: self.position,
-            limit: self.limit,
-        })
+    pub fn build(self) -> Result<crate::operation::get_sdk_types::GetSdkTypesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_sdk_types::GetSdkTypesInput {
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

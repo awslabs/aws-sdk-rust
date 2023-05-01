@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a property associated with a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelPropertySummary {
+pub struct AssetModelPropertySummary  {
     /// <p>The ID of the property.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct AssetModelPropertySummary {
 }
 impl AssetModelPropertySummary {
     /// <p>The ID of the property.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the property.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::PropertyDataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::types::PropertyDataType> {
         self.data_type.as_ref()
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
-    pub fn data_type_spec(&self) -> std::option::Option<&str> {
+    pub fn data_type_spec(&self) -> std::option::Option<& str> {
         self.data_type_spec.as_deref()
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PropertyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PropertyType> {
         self.r#type.as_ref()
     }
     /// <p> The ID of the composite model that contains the asset model property. </p>
-    pub fn asset_model_composite_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_composite_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_composite_model_id.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The ID of the property.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the property.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The name of the property.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The data type of the property.</p>
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
@@ -102,12 +100,8 @@ impl AssetModelPropertySummaryBuilder {
         self
     }
     /// <p>The data type of the property.</p>
-    pub fn set_data_type(
-        mut self,
-        input: std::option::Option<crate::types::PropertyDataType>,
-    ) -> Self {
-        self.data_type = input;
-        self
+    pub fn set_data_type(mut self, input: std::option::Option<crate::types::PropertyDataType>) -> Self {
+        self.data_type = input; self
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn data_type_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +110,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
     pub fn set_data_type_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type_spec = input;
-        self
+        self.data_type_spec = input; self
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +119,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
     pub fn r#type(mut self, input: crate::types::PropertyType) -> Self {
@@ -136,8 +128,7 @@ impl AssetModelPropertySummaryBuilder {
     }
     /// <p>Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>, <code>metric</code>, or <code>transform</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PropertyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p> The ID of the composite model that contains the asset model property. </p>
     pub fn asset_model_composite_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,23 +136,27 @@ impl AssetModelPropertySummaryBuilder {
         self
     }
     /// <p> The ID of the composite model that contains the asset model property. </p>
-    pub fn set_asset_model_composite_model_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.asset_model_composite_model_id = input;
-        self
+    pub fn set_asset_model_composite_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.asset_model_composite_model_id = input; self
     }
     /// Consumes the builder and constructs a [`AssetModelPropertySummary`](crate::types::AssetModelPropertySummary).
     pub fn build(self) -> crate::types::AssetModelPropertySummary {
         crate::types::AssetModelPropertySummary {
-            id: self.id,
-            name: self.name,
-            data_type: self.data_type,
-            data_type_spec: self.data_type_spec,
-            unit: self.unit,
-            r#type: self.r#type,
-            asset_model_composite_model_id: self.asset_model_composite_model_id,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            data_type: self.data_type
+            ,
+            data_type_spec: self.data_type_spec
+            ,
+            unit: self.unit
+            ,
+            r#type: self.r#type
+            ,
+            asset_model_composite_model_id: self.asset_model_composite_model_id
+            ,
         }
     }
 }
+

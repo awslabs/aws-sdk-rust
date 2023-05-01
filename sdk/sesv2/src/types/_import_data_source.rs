@@ -3,7 +3,7 @@
 /// <p>An object that contains details about the data source of the import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportDataSource {
+pub struct ImportDataSource  {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
     #[doc(hidden)]
@@ -15,11 +15,11 @@ pub struct ImportDataSource {
 impl ImportDataSource {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> std::option::Option<& str> {
         self.s3_url.as_deref()
     }
     /// <p>The data format of the import job's data source.</p>
-    pub fn data_format(&self) -> std::option::Option<&crate::types::DataFormat> {
+    pub fn data_format(&self) -> std::option::Option<& crate::types::DataFormat> {
         self.data_format.as_ref()
     }
 }
@@ -47,8 +47,7 @@ impl ImportDataSourceBuilder {
     /// <p>An Amazon S3 URL in the format s3://<i>
     /// <bucket_name></bucket_name></i>/<i><object>.<p></p></object></i></p>
     pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_url = input;
-        self
+        self.s3_url = input; self
     }
     /// <p>The data format of the import job's data source.</p>
     pub fn data_format(mut self, input: crate::types::DataFormat) -> Self {
@@ -57,14 +56,16 @@ impl ImportDataSourceBuilder {
     }
     /// <p>The data format of the import job's data source.</p>
     pub fn set_data_format(mut self, input: std::option::Option<crate::types::DataFormat>) -> Self {
-        self.data_format = input;
-        self
+        self.data_format = input; self
     }
     /// Consumes the builder and constructs a [`ImportDataSource`](crate::types::ImportDataSource).
     pub fn build(self) -> crate::types::ImportDataSource {
         crate::types::ImportDataSource {
-            s3_url: self.s3_url,
-            data_format: self.data_format,
+            s3_url: self.s3_url
+            ,
+            data_format: self.data_format
+            ,
         }
     }
 }
+

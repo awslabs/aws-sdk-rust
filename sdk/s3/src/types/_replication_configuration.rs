@@ -3,7 +3,7 @@
 /// <p>A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationConfiguration {
+pub struct ReplicationConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReplicationConfiguration {
 }
 impl ReplicationConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::ReplicationRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::ReplicationRule]> {
         self.rules.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ReplicationConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// Appends an item to `rules`.
     ///
@@ -53,23 +52,22 @@ impl ReplicationConfigurationBuilder {
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
     pub fn rules(mut self, input: crate::types::ReplicationRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>A container for one or more replication rules. A replication configuration must have at least one rule and can contain a maximum of 1,000 rules. </p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplicationRule>>) -> Self {
+        self.rules = input; self
     }
     /// Consumes the builder and constructs a [`ReplicationConfiguration`](crate::types::ReplicationConfiguration).
     pub fn build(self) -> crate::types::ReplicationConfiguration {
         crate::types::ReplicationConfiguration {
-            role: self.role,
-            rules: self.rules,
+            role: self.role
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

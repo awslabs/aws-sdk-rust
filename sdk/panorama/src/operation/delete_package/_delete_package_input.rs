@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackageInput {
+pub struct DeletePackageInput  {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeletePackageInput {
 }
 impl DeletePackageInput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
@@ -42,8 +42,7 @@ impl DeletePackageInputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -52,19 +51,19 @@ impl DeletePackageInputBuilder {
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_package::DeletePackageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_package::DeletePackageInput {
-            package_id: self.package_id,
-            force_delete: self.force_delete.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::delete_package::DeletePackageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_package::DeletePackageInput {
+                package_id: self.package_id
+                ,
+                force_delete: self.force_delete
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

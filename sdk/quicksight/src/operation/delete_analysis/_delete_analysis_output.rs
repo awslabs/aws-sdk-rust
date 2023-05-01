@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnalysisOutput {
+pub struct DeleteAnalysisOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -26,27 +26,27 @@ impl DeleteAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the deleted analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deletion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deletion_time.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalysisOutput`](crate::operation::delete_analysis::DeleteAnalysisOutput).
     pub fn builder() -> crate::operation::delete_analysis::builders::DeleteAnalysisOutputBuilder {
@@ -73,8 +73,7 @@ impl DeleteAnalysisOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +82,7 @@ impl DeleteAnalysisOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted analysis.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the deleted analysis.</p>
     pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +91,7 @@ impl DeleteAnalysisOutputBuilder {
     }
     /// <p>The ID of the deleted analysis.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
     }
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
     pub fn deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,12 +99,8 @@ impl DeleteAnalysisOutputBuilder {
         self
     }
     /// <p>The date and time that the analysis is scheduled to be deleted.</p>
-    pub fn set_deletion_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.deletion_time = input;
-        self
+    pub fn set_deletion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.deletion_time = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,27 +109,33 @@ impl DeleteAnalysisOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAnalysisOutput`](crate::operation::delete_analysis::DeleteAnalysisOutput).
     pub fn build(self) -> crate::operation::delete_analysis::DeleteAnalysisOutput {
         crate::operation::delete_analysis::DeleteAnalysisOutput {
-            status: self.status.unwrap_or_default(),
-            arn: self.arn,
-            analysis_id: self.analysis_id,
-            deletion_time: self.deletion_time,
-            request_id: self.request_id,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            arn: self.arn
+            ,
+            analysis_id: self.analysis_id
+            ,
+            deletion_time: self.deletion_time
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

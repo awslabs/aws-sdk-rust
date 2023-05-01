@@ -3,7 +3,7 @@
 /// <p> Information about the summary of an event variable that was evaluated for generating prediction. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EventVariableSummary {
+pub struct EventVariableSummary  {
     /// <p> The event variable name. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct EventVariableSummary {
 }
 impl EventVariableSummary {
     /// <p> The event variable name. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The value of the event variable. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p> The event variable source. </p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
 }
-impl std::fmt::Debug for EventVariableSummary {
+impl  std::fmt::Debug for EventVariableSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EventVariableSummary");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -60,8 +60,7 @@ impl EventVariableSummaryBuilder {
     }
     /// <p> The event variable name. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The value of the event variable. </p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +69,7 @@ impl EventVariableSummaryBuilder {
     }
     /// <p> The value of the event variable. </p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p> The event variable source. </p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +78,17 @@ impl EventVariableSummaryBuilder {
     }
     /// <p> The event variable source. </p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// Consumes the builder and constructs a [`EventVariableSummary`](crate::types::EventVariableSummary).
     pub fn build(self) -> crate::types::EventVariableSummary {
         crate::types::EventVariableSummary {
-            name: self.name,
-            value: self.value,
-            source: self.source,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            source: self.source
+            ,
         }
     }
 }
@@ -101,3 +101,4 @@ impl std::fmt::Debug for EventVariableSummaryBuilder {
         formatter.finish()
     }
 }
+

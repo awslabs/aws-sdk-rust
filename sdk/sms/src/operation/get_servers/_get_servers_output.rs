@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServersOutput {
+pub struct GetServersOutput  {
     /// <p>The time when the server was last modified.</p>
     #[doc(hidden)]
     pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,27 +19,27 @@ pub struct GetServersOutput {
 }
 impl GetServersOutput {
     /// <p>The time when the server was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>The status of the server catalog.</p>
-    pub fn server_catalog_status(&self) -> std::option::Option<&crate::types::ServerCatalogStatus> {
+    pub fn server_catalog_status(&self) -> std::option::Option<& crate::types::ServerCatalogStatus> {
         self.server_catalog_status.as_ref()
     }
     /// <p>Information about the servers.</p>
-    pub fn server_list(&self) -> std::option::Option<&[crate::types::Server]> {
+    pub fn server_list(&self) -> std::option::Option<& [crate::types::Server]> {
         self.server_list.as_deref()
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetServersOutput {
     /// Creates a new builder-style object to manufacture [`GetServersOutput`](crate::operation::get_servers::GetServersOutput).
     pub fn builder() -> crate::operation::get_servers::builders::GetServersOutputBuilder {
@@ -64,12 +64,8 @@ impl GetServersOutputBuilder {
         self
     }
     /// <p>The time when the server was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_on = input;
-        self
+    pub fn set_last_modified_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_on = input; self
     }
     /// <p>The status of the server catalog.</p>
     pub fn server_catalog_status(mut self, input: crate::types::ServerCatalogStatus) -> Self {
@@ -77,12 +73,8 @@ impl GetServersOutputBuilder {
         self
     }
     /// <p>The status of the server catalog.</p>
-    pub fn set_server_catalog_status(
-        mut self,
-        input: std::option::Option<crate::types::ServerCatalogStatus>,
-    ) -> Self {
-        self.server_catalog_status = input;
-        self
+    pub fn set_server_catalog_status(mut self, input: std::option::Option<crate::types::ServerCatalogStatus>) -> Self {
+        self.server_catalog_status = input; self
     }
     /// Appends an item to `server_list`.
     ///
@@ -91,17 +83,13 @@ impl GetServersOutputBuilder {
     /// <p>Information about the servers.</p>
     pub fn server_list(mut self, input: crate::types::Server) -> Self {
         let mut v = self.server_list.unwrap_or_default();
-        v.push(input);
-        self.server_list = Some(v);
-        self
+                        v.push(input);
+                        self.server_list = Some(v);
+                        self
     }
     /// <p>Information about the servers.</p>
-    pub fn set_server_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Server>>,
-    ) -> Self {
-        self.server_list = input;
-        self
+    pub fn set_server_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Server>>) -> Self {
+        self.server_list = input; self
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,26 +98,30 @@ impl GetServersOutputBuilder {
     }
     /// <p>The token required to retrieve the next set of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetServersOutput`](crate::operation::get_servers::GetServersOutput).
     pub fn build(self) -> crate::operation::get_servers::GetServersOutput {
         crate::operation::get_servers::GetServersOutput {
-            last_modified_on: self.last_modified_on,
-            server_catalog_status: self.server_catalog_status,
-            server_list: self.server_list,
-            next_token: self.next_token,
+            last_modified_on: self.last_modified_on
+            ,
+            server_catalog_status: self.server_catalog_status
+            ,
+            server_list: self.server_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,19 +3,17 @@
 /// <p>The empty output for a successful deletion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableOutput {
+pub struct DeleteConfiguredTableOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteConfiguredTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_configured_table::builders::DeleteConfiguredTableOutputBuilder {
         crate::operation::delete_configured_table::builders::DeleteConfiguredTableOutputBuilder::default()
     }
 }
@@ -28,14 +26,14 @@ pub struct DeleteConfiguredTableOutputBuilder {
 }
 impl DeleteConfiguredTableOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableOutput`](crate::operation::delete_configured_table::DeleteConfiguredTableOutput).
     pub fn build(self) -> crate::operation::delete_configured_table::DeleteConfiguredTableOutput {
         crate::operation::delete_configured_table::DeleteConfiguredTableOutput {
@@ -43,3 +41,4 @@ impl DeleteConfiguredTableOutputBuilder {
         }
     }
 }
+

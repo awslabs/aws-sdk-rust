@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDevicePolicyConfigurationInput {
+pub struct UpdateDevicePolicyConfigurationInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateDevicePolicyConfigurationInput {
 }
 impl UpdateDevicePolicyConfigurationInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn device_ca_certificate(&self) -> std::option::Option<&str> {
+    pub fn device_ca_certificate(&self) -> std::option::Option<& str> {
         self.device_ca_certificate.as_deref()
     }
 }
 impl UpdateDevicePolicyConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateDevicePolicyConfigurationInput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput).
-    pub fn builder() -> crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder {
         crate::operation::update_device_policy_configuration::builders::UpdateDevicePolicyConfigurationInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
     pub fn device_ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,20 +50,11 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
         self
     }
     /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-    pub fn set_device_ca_certificate(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_ca_certificate = input;
-        self
+    pub fn set_device_ca_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_ca_certificate = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDevicePolicyConfigurationInput`](crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationInput {
                 fleet_arn: self.fleet_arn
@@ -75,3 +65,4 @@ impl UpdateDevicePolicyConfigurationInputBuilder {
         )
     }
 }
+

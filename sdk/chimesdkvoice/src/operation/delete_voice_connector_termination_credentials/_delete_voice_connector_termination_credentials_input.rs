@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceConnectorTerminationCredentialsInput {
+pub struct DeleteVoiceConnectorTerminationCredentialsInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteVoiceConnectorTerminationCredentialsInput {
 }
 impl DeleteVoiceConnectorTerminationCredentialsInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn usernames(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn usernames(&self) -> std::option::Option<& [std::string::String]> {
         self.usernames.as_deref()
     }
 }
 impl DeleteVoiceConnectorTerminationCredentialsInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorTerminationCredentialsInput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput).
-    pub fn builder() -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder {
         crate::operation::delete_voice_connector_termination_credentials::builders::DeleteVoiceConnectorTerminationCredentialsInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// Appends an item to `usernames`.
     ///
@@ -55,20 +51,16 @@ impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
     pub fn usernames(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.usernames.unwrap_or_default();
-        v.push(input.into());
-        self.usernames = Some(v);
-        self
+                        v.push(input.into());
+                        self.usernames = Some(v);
+                        self
     }
     /// <p>The RFC2617 compliant username associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn set_usernames(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.usernames = input;
-        self
+    pub fn set_usernames(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.usernames = input; self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorTerminationCredentialsInput`](crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput).
-    pub fn build(self) -> Result<crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_voice_connector_termination_credentials::DeleteVoiceConnectorTerminationCredentialsInput {
                 voice_connector_id: self.voice_connector_id
@@ -79,3 +71,4 @@ impl DeleteVoiceConnectorTerminationCredentialsInputBuilder {
         )
     }
 }
+

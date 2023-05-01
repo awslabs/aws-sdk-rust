@@ -3,7 +3,7 @@
 /// <p>Specifies a column to be joined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinColumn {
+pub struct JoinColumn  {
     /// <p>The column to be joined.</p>
     #[doc(hidden)]
     pub from: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct JoinColumn {
 }
 impl JoinColumn {
     /// <p>The column to be joined.</p>
-    pub fn from(&self) -> std::option::Option<&str> {
+    pub fn from(&self) -> std::option::Option<& str> {
         self.from.as_deref()
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn keys(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.keys.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl JoinColumnBuilder {
     }
     /// <p>The column to be joined.</p>
     pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// Appends an item to `keys`.
     ///
@@ -53,23 +52,22 @@ impl JoinColumnBuilder {
     /// <p>The key of the column to be joined.</p>
     pub fn keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input);
-        self.keys = Some(v);
-        self
+                        v.push(input);
+                        self.keys = Some(v);
+                        self
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn set_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+        self.keys = input; self
     }
     /// Consumes the builder and constructs a [`JoinColumn`](crate::types::JoinColumn).
     pub fn build(self) -> crate::types::JoinColumn {
         crate::types::JoinColumn {
-            from: self.from,
-            keys: self.keys,
+            from: self.from
+            ,
+            keys: self.keys
+            ,
         }
     }
 }
+

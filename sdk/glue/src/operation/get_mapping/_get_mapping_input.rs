@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMappingInput {
+pub struct GetMappingInput  {
     /// <p>Specifies the source table.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::CatalogEntry>,
@@ -15,15 +15,15 @@ pub struct GetMappingInput {
 }
 impl GetMappingInput {
     /// <p>Specifies the source table.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::CatalogEntry> {
+    pub fn source(&self) -> std::option::Option<& crate::types::CatalogEntry> {
         self.source.as_ref()
     }
     /// <p>A list of target tables.</p>
-    pub fn sinks(&self) -> std::option::Option<&[crate::types::CatalogEntry]> {
+    pub fn sinks(&self) -> std::option::Option<& [crate::types::CatalogEntry]> {
         self.sinks.as_deref()
     }
     /// <p>Parameters for the mapping.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl GetMappingInputBuilder {
     }
     /// <p>Specifies the source table.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::CatalogEntry>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// Appends an item to `sinks`.
     ///
@@ -60,17 +59,13 @@ impl GetMappingInputBuilder {
     /// <p>A list of target tables.</p>
     pub fn sinks(mut self, input: crate::types::CatalogEntry) -> Self {
         let mut v = self.sinks.unwrap_or_default();
-        v.push(input);
-        self.sinks = Some(v);
-        self
+                        v.push(input);
+                        self.sinks = Some(v);
+                        self
     }
     /// <p>A list of target tables.</p>
-    pub fn set_sinks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CatalogEntry>>,
-    ) -> Self {
-        self.sinks = input;
-        self
+    pub fn set_sinks(mut self, input: std::option::Option<std::vec::Vec<crate::types::CatalogEntry>>) -> Self {
+        self.sinks = input; self
     }
     /// <p>Parameters for the mapping.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
@@ -79,20 +74,20 @@ impl GetMappingInputBuilder {
     }
     /// <p>Parameters for the mapping.</p>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// Consumes the builder and constructs a [`GetMappingInput`](crate::operation::get_mapping::GetMappingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_mapping::GetMappingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_mapping::GetMappingInput {
-            source: self.source,
-            sinks: self.sinks,
-            location: self.location,
-        })
+    pub fn build(self) -> Result<crate::operation::get_mapping::GetMappingInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_mapping::GetMappingInput {
+                source: self.source
+                ,
+                sinks: self.sinks
+                ,
+                location: self.location
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a collection of cache nodes in a replication group. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeGroup {
+pub struct NodeGroup  {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
     #[doc(hidden)]
     pub node_group_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct NodeGroup {
 }
 impl NodeGroup {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
-    pub fn node_group_id(&self) -> std::option::Option<&str> {
+    pub fn node_group_id(&self) -> std::option::Option<& str> {
         self.node_group_id.as_deref()
     }
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The endpoint of the primary node in this node group (shard).</p>
-    pub fn primary_endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
+    pub fn primary_endpoint(&self) -> std::option::Option<& crate::types::Endpoint> {
         self.primary_endpoint.as_ref()
     }
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
-    pub fn reader_endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
+    pub fn reader_endpoint(&self) -> std::option::Option<& crate::types::Endpoint> {
         self.reader_endpoint.as_ref()
     }
     /// <p>The keyspace for this node group (shard).</p>
-    pub fn slots(&self) -> std::option::Option<&str> {
+    pub fn slots(&self) -> std::option::Option<& str> {
         self.slots.as_deref()
     }
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
-    pub fn node_group_members(&self) -> std::option::Option<&[crate::types::NodeGroupMember]> {
+    pub fn node_group_members(&self) -> std::option::Option<& [crate::types::NodeGroupMember]> {
         self.node_group_members.as_deref()
     }
 }
@@ -65,8 +65,7 @@ pub struct NodeGroupBuilder {
     pub(crate) primary_endpoint: std::option::Option<crate::types::Endpoint>,
     pub(crate) reader_endpoint: std::option::Option<crate::types::Endpoint>,
     pub(crate) slots: std::option::Option<std::string::String>,
-    pub(crate) node_group_members:
-        std::option::Option<std::vec::Vec<crate::types::NodeGroupMember>>,
+    pub(crate) node_group_members: std::option::Option<std::vec::Vec<crate::types::NodeGroupMember>>,
 }
 impl NodeGroupBuilder {
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
@@ -76,8 +75,7 @@ impl NodeGroupBuilder {
     }
     /// <p>The identifier for the node group (shard). A Redis (cluster mode disabled) replication group contains only 1 node group; therefore, the node group ID is 0001. A Redis (cluster mode enabled) replication group contains 1 to 90 node groups numbered 0001 to 0090. Optionally, the user can provide the id for a node group. </p>
     pub fn set_node_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_group_id = input;
-        self
+        self.node_group_id = input; self
     }
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl NodeGroupBuilder {
     }
     /// <p>The current state of this replication group - <code>creating</code>, <code>available</code>, <code>modifying</code>, <code>deleting</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The endpoint of the primary node in this node group (shard).</p>
     pub fn primary_endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -95,12 +92,8 @@ impl NodeGroupBuilder {
         self
     }
     /// <p>The endpoint of the primary node in this node group (shard).</p>
-    pub fn set_primary_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
-        self.primary_endpoint = input;
-        self
+    pub fn set_primary_endpoint(mut self, input: std::option::Option<crate::types::Endpoint>) -> Self {
+        self.primary_endpoint = input; self
     }
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
     pub fn reader_endpoint(mut self, input: crate::types::Endpoint) -> Self {
@@ -108,12 +101,8 @@ impl NodeGroupBuilder {
         self
     }
     /// <p>The endpoint of the replica nodes in this node group (shard).</p>
-    pub fn set_reader_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::Endpoint>,
-    ) -> Self {
-        self.reader_endpoint = input;
-        self
+    pub fn set_reader_endpoint(mut self, input: std::option::Option<crate::types::Endpoint>) -> Self {
+        self.reader_endpoint = input; self
     }
     /// <p>The keyspace for this node group (shard).</p>
     pub fn slots(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +111,7 @@ impl NodeGroupBuilder {
     }
     /// <p>The keyspace for this node group (shard).</p>
     pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slots = input;
-        self
+        self.slots = input; self
     }
     /// Appends an item to `node_group_members`.
     ///
@@ -132,27 +120,30 @@ impl NodeGroupBuilder {
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
     pub fn node_group_members(mut self, input: crate::types::NodeGroupMember) -> Self {
         let mut v = self.node_group_members.unwrap_or_default();
-        v.push(input);
-        self.node_group_members = Some(v);
-        self
+                        v.push(input);
+                        self.node_group_members = Some(v);
+                        self
     }
     /// <p>A list containing information about individual nodes within the node group (shard).</p>
-    pub fn set_node_group_members(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NodeGroupMember>>,
-    ) -> Self {
-        self.node_group_members = input;
-        self
+    pub fn set_node_group_members(mut self, input: std::option::Option<std::vec::Vec<crate::types::NodeGroupMember>>) -> Self {
+        self.node_group_members = input; self
     }
     /// Consumes the builder and constructs a [`NodeGroup`](crate::types::NodeGroup).
     pub fn build(self) -> crate::types::NodeGroup {
         crate::types::NodeGroup {
-            node_group_id: self.node_group_id,
-            status: self.status,
-            primary_endpoint: self.primary_endpoint,
-            reader_endpoint: self.reader_endpoint,
-            slots: self.slots,
-            node_group_members: self.node_group_members,
+            node_group_id: self.node_group_id
+            ,
+            status: self.status
+            ,
+            primary_endpoint: self.primary_endpoint
+            ,
+            reader_endpoint: self.reader_endpoint
+            ,
+            slots: self.slots
+            ,
+            node_group_members: self.node_group_members
+            ,
         }
     }
 }
+

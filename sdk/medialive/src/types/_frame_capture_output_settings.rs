@@ -3,14 +3,14 @@
 /// Frame Capture Output Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FrameCaptureOutputSettings {
+pub struct FrameCaptureOutputSettings  {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
     #[doc(hidden)]
     pub name_modifier: std::option::Option<std::string::String>,
 }
 impl FrameCaptureOutputSettings {
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
-    pub fn name_modifier(&self) -> std::option::Option<&str> {
+    pub fn name_modifier(&self) -> std::option::Option<& str> {
         self.name_modifier.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl FrameCaptureOutputSettingsBuilder {
     }
     /// Required if the output group contains more than one output. This modifier forms part of the output file name.
     pub fn set_name_modifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_modifier = input;
-        self
+        self.name_modifier = input; self
     }
     /// Consumes the builder and constructs a [`FrameCaptureOutputSettings`](crate::types::FrameCaptureOutputSettings).
     pub fn build(self) -> crate::types::FrameCaptureOutputSettings {
         crate::types::FrameCaptureOutputSettings {
-            name_modifier: self.name_modifier,
+            name_modifier: self.name_modifier
+            ,
         }
     }
 }
+

@@ -2,44 +2,41 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebhookInput {
+pub struct CreateWebhookInput  {
     /// <p>The name of the CodeBuild project.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub branch_filter: std::option::Option<std::string::String>,
-    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
     #[doc(hidden)]
-    pub filter_groups:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
+    pub filter_groups: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
     /// <p>Specifies the type of build this webhook will trigger.</p>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::types::WebhookBuildType>,
 }
 impl CreateWebhookInput {
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
-    pub fn branch_filter(&self) -> std::option::Option<&str> {
+    pub fn branch_filter(&self) -> std::option::Option<& str> {
         self.branch_filter.as_deref()
     }
-    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-    pub fn filter_groups(
-        &self,
-    ) -> std::option::Option<&[std::vec::Vec<crate::types::WebhookFilter>]> {
+    pub fn filter_groups(&self) -> std::option::Option<& [std::vec::Vec<crate::types::WebhookFilter>]> {
         self.filter_groups.as_deref()
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn build_type(&self) -> std::option::Option<&crate::types::WebhookBuildType> {
+    pub fn build_type(&self) -> std::option::Option<& crate::types::WebhookBuildType> {
         self.build_type.as_ref()
     }
 }
@@ -56,8 +53,7 @@ impl CreateWebhookInput {
 pub struct CreateWebhookInputBuilder {
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) branch_filter: std::option::Option<std::string::String>,
-    pub(crate) filter_groups:
-        std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
+    pub(crate) filter_groups: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
     pub(crate) build_type: std::option::Option<crate::types::WebhookBuildType>,
 }
 impl CreateWebhookInputBuilder {
@@ -68,43 +64,37 @@ impl CreateWebhookInputBuilder {
     }
     /// <p>The name of the CodeBuild project.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
     pub fn branch_filter(mut self, input: impl Into<std::string::String>) -> Self {
         self.branch_filter = Some(input.into());
         self
     }
-    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
-    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
+    /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note> 
+    /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
     /// </note>
     pub fn set_branch_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_filter = input;
-        self
+        self.branch_filter = input; self
     }
     /// Appends an item to `filter_groups`.
     ///
     /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
     ///
-    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
     pub fn filter_groups(mut self, input: std::vec::Vec<crate::types::WebhookFilter>) -> Self {
         let mut v = self.filter_groups.unwrap_or_default();
-        v.push(input);
-        self.filter_groups = Some(v);
-        self
+                        v.push(input);
+                        self.filter_groups = Some(v);
+                        self
     }
-    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
+    /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p> 
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-    pub fn set_filter_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
-    ) -> Self {
-        self.filter_groups = input;
-        self
+    pub fn set_filter_groups(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>) -> Self {
+        self.filter_groups = input; self
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn build_type(mut self, input: crate::types::WebhookBuildType) -> Self {
@@ -112,25 +102,23 @@ impl CreateWebhookInputBuilder {
         self
     }
     /// <p>Specifies the type of build this webhook will trigger.</p>
-    pub fn set_build_type(
-        mut self,
-        input: std::option::Option<crate::types::WebhookBuildType>,
-    ) -> Self {
-        self.build_type = input;
-        self
+    pub fn set_build_type(mut self, input: std::option::Option<crate::types::WebhookBuildType>) -> Self {
+        self.build_type = input; self
     }
     /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::operation::create_webhook::CreateWebhookInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_webhook::CreateWebhookInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_webhook::CreateWebhookInput {
-            project_name: self.project_name,
-            branch_filter: self.branch_filter,
-            filter_groups: self.filter_groups,
-            build_type: self.build_type,
-        })
+    pub fn build(self) -> Result<crate::operation::create_webhook::CreateWebhookInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_webhook::CreateWebhookInput {
+                project_name: self.project_name
+                ,
+                branch_filter: self.branch_filter
+                ,
+                filter_groups: self.filter_groups
+                ,
+                build_type: self.build_type
+                ,
+            }
+        )
     }
 }
+

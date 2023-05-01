@@ -2,42 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypesInput {
-    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
-    /// <ul>
-    /// <li> <p>Private extensions you have registered in this account and region.</p> </li>
-    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
-    /// </ul>
+pub struct ListTypesInput  {
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p> 
+    /// <ul> 
+    /// <li> <p>Private extensions you have registered in this account and region.</p> </li> 
+    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>PRIVATE</code>.</p>
     #[doc(hidden)]
     pub visibility: std::option::Option<crate::types::Visibility>,
-    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
-    /// </ul>
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     #[doc(hidden)]
     pub provisioning_type: std::option::Option<crate::types::ProvisioningType>,
-    /// <p>The deprecation status of the extension that you want to get summary information about.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
+    /// <p>The deprecation status of the extension that you want to get summary information about.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub deprecated_status: std::option::Option<crate::types::DeprecatedStatus>,
     /// <p>The type of extension.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::RegistryType>,
-    /// <p>Filter criteria to use in determining which extensions to return.</p>
+    /// <p>Filter criteria to use in determining which extensions to return.</p> 
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::TypeFilters>,
@@ -49,47 +49,47 @@ pub struct ListTypesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTypesInput {
-    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
-    /// <ul>
-    /// <li> <p>Private extensions you have registered in this account and region.</p> </li>
-    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
-    /// </ul>
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p> 
+    /// <ul> 
+    /// <li> <p>Private extensions you have registered in this account and region.</p> </li> 
+    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>PRIVATE</code>.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
-    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
-    /// </ul>
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
-    pub fn provisioning_type(&self) -> std::option::Option<&crate::types::ProvisioningType> {
+    pub fn provisioning_type(&self) -> std::option::Option<& crate::types::ProvisioningType> {
         self.provisioning_type.as_ref()
     }
-    /// <p>The deprecation status of the extension that you want to get summary information about.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
+    /// <p>The deprecation status of the extension that you want to get summary information about.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li> 
     /// </ul>
-    pub fn deprecated_status(&self) -> std::option::Option<&crate::types::DeprecatedStatus> {
+    pub fn deprecated_status(&self) -> std::option::Option<& crate::types::DeprecatedStatus> {
         self.deprecated_status.as_ref()
     }
     /// <p>The type of extension.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RegistryType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::RegistryType> {
         self.r#type.as_ref()
     }
-    /// <p>Filter criteria to use in determining which extensions to return.</p>
+    /// <p>Filter criteria to use in determining which extensions to return.</p> 
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::TypeFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::TypeFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
@@ -97,7 +97,7 @@ impl ListTypesInput {
         self.max_results
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -121,85 +121,76 @@ pub struct ListTypesInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListTypesInputBuilder {
-    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
-    /// <ul>
-    /// <li> <p>Private extensions you have registered in this account and region.</p> </li>
-    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
-    /// </ul>
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p> 
+    /// <ul> 
+    /// <li> <p>Private extensions you have registered in this account and region.</p> </li> 
+    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>PRIVATE</code>.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
         self.visibility = Some(input);
         self
     }
-    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
-    /// <ul>
-    /// <li> <p>Private extensions you have registered in this account and region.</p> </li>
-    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li>
-    /// </ul>
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p> 
+    /// <ul> 
+    /// <li> <p>Private extensions you have registered in this account and region.</p> </li> 
+    /// <li> <p>Public extensions that you have activated in this account and region.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon Web Services account. This includes extensions from Amazon Web Services, in addition to third-party publishers.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>PRIVATE</code>.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
-    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
-    /// </ul>
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     pub fn provisioning_type(mut self, input: crate::types::ProvisioningType) -> Self {
         self.provisioning_type = Some(input);
         self
     }
-    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li>
-    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li>
-    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li>
-    /// </ul>
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p> </li> 
+    /// <li> <p> <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the type can't be updated and must instead be replaced during stack update operations.</p> </li> 
+    /// <li> <p> <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and delete handlers, and therefore can't actually be provisioned.</p> </li> 
+    /// </ul> 
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
-    pub fn set_provisioning_type(
-        mut self,
-        input: std::option::Option<crate::types::ProvisioningType>,
-    ) -> Self {
-        self.provisioning_type = input;
-        self
+    pub fn set_provisioning_type(mut self, input: std::option::Option<crate::types::ProvisioningType>) -> Self {
+        self.provisioning_type = input; self
     }
-    /// <p>The deprecation status of the extension that you want to get summary information about.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
+    /// <p>The deprecation status of the extension that you want to get summary information about.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li> 
     /// </ul>
     pub fn deprecated_status(mut self, input: crate::types::DeprecatedStatus) -> Self {
         self.deprecated_status = Some(input);
         self
     }
-    /// <p>The deprecation status of the extension that you want to get summary information about.</p>
-    /// <p>Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li>
-    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li>
+    /// <p>The deprecation status of the extension that you want to get summary information about.</p> 
+    /// <p>Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p> </li> 
+    /// <li> <p> <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations.</p> </li> 
     /// </ul>
-    pub fn set_deprecated_status(
-        mut self,
-        input: std::option::Option<crate::types::DeprecatedStatus>,
-    ) -> Self {
-        self.deprecated_status = input;
-        self
+    pub fn set_deprecated_status(mut self, input: std::option::Option<crate::types::DeprecatedStatus>) -> Self {
+        self.deprecated_status = input; self
     }
     /// <p>The type of extension.</p>
     pub fn r#type(mut self, input: crate::types::RegistryType) -> Self {
@@ -208,20 +199,18 @@ impl ListTypesInputBuilder {
     }
     /// <p>The type of extension.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RegistryType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
-    /// <p>Filter criteria to use in determining which extensions to return.</p>
+    /// <p>Filter criteria to use in determining which extensions to return.</p> 
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
     pub fn filters(mut self, input: crate::types::TypeFilters) -> Self {
         self.filters = Some(input);
         self
     }
-    /// <p>Filter criteria to use in determining which extensions to return.</p>
+    /// <p>Filter criteria to use in determining which extensions to return.</p> 
     /// <p>Filters must be compatible with <code>Visibility</code> to return valid results. For example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code> for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code> for <code>Visibility</code> returns the desired list.</p>
     pub fn set_filters(mut self, input: std::option::Option<crate::types::TypeFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -230,8 +219,7 @@ impl ListTypesInputBuilder {
     }
     /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,24 +228,28 @@ impl ListTypesInputBuilder {
     }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListTypesInput`](crate::operation::list_types::ListTypesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_types::ListTypesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_types::ListTypesInput {
-            visibility: self.visibility,
-            provisioning_type: self.provisioning_type,
-            deprecated_status: self.deprecated_status,
-            r#type: self.r#type,
-            filters: self.filters,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_types::ListTypesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_types::ListTypesInput {
+                visibility: self.visibility
+                ,
+                provisioning_type: self.provisioning_type
+                ,
+                deprecated_status: self.deprecated_status
+                ,
+                r#type: self.r#type
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

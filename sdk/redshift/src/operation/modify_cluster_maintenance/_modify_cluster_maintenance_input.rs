@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterMaintenanceInput {
+pub struct ModifyClusterMaintenanceInput  {
     /// <p>A unique identifier for the cluster.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -24,7 +24,7 @@ pub struct ModifyClusterMaintenanceInput {
 }
 impl ModifyClusterMaintenanceInput {
     /// <p>A unique identifier for the cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
@@ -32,15 +32,15 @@ impl ModifyClusterMaintenanceInput {
         self.defer_maintenance
     }
     /// <p>A unique identifier for the deferred maintenance window.</p>
-    pub fn defer_maintenance_identifier(&self) -> std::option::Option<&str> {
+    pub fn defer_maintenance_identifier(&self) -> std::option::Option<& str> {
         self.defer_maintenance_identifier.as_deref()
     }
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
-    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn defer_maintenance_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.defer_maintenance_start_time.as_ref()
     }
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
-    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn defer_maintenance_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.defer_maintenance_end_time.as_ref()
     }
     /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
@@ -50,9 +50,7 @@ impl ModifyClusterMaintenanceInput {
 }
 impl ModifyClusterMaintenanceInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterMaintenanceInput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceInput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder {
         crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder::default()
     }
 }
@@ -75,12 +73,8 @@ impl ModifyClusterMaintenanceInputBuilder {
         self
     }
     /// <p>A unique identifier for the cluster.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn defer_maintenance(mut self, input: bool) -> Self {
@@ -89,8 +83,7 @@ impl ModifyClusterMaintenanceInputBuilder {
     }
     /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
     pub fn set_defer_maintenance(mut self, input: std::option::Option<bool>) -> Self {
-        self.defer_maintenance = input;
-        self
+        self.defer_maintenance = input; self
     }
     /// <p>A unique identifier for the deferred maintenance window.</p>
     pub fn defer_maintenance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,12 +91,8 @@ impl ModifyClusterMaintenanceInputBuilder {
         self
     }
     /// <p>A unique identifier for the deferred maintenance window.</p>
-    pub fn set_defer_maintenance_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.defer_maintenance_identifier = input;
-        self
+    pub fn set_defer_maintenance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.defer_maintenance_identifier = input; self
     }
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
     pub fn defer_maintenance_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -111,12 +100,8 @@ impl ModifyClusterMaintenanceInputBuilder {
         self
     }
     /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
-    pub fn set_defer_maintenance_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.defer_maintenance_start_time = input;
-        self
+    pub fn set_defer_maintenance_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.defer_maintenance_start_time = input; self
     }
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
     pub fn defer_maintenance_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -124,12 +109,8 @@ impl ModifyClusterMaintenanceInputBuilder {
         self
     }
     /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an end time, you can't specify a duration.</p>
-    pub fn set_defer_maintenance_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.defer_maintenance_end_time = input;
-        self
+    pub fn set_defer_maintenance_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.defer_maintenance_end_time = input; self
     }
     /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
     pub fn defer_maintenance_duration(mut self, input: i32) -> Self {
@@ -138,25 +119,26 @@ impl ModifyClusterMaintenanceInputBuilder {
     }
     /// <p>An integer indicating the duration of the maintenance window in days. If you specify a duration, you can't specify an end time. The duration must be 45 days or less.</p>
     pub fn set_defer_maintenance_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.defer_maintenance_duration = input;
-        self
+        self.defer_maintenance_duration = input; self
     }
     /// Consumes the builder and constructs a [`ModifyClusterMaintenanceInput`](crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceInput {
-                cluster_identifier: self.cluster_identifier,
-                defer_maintenance: self.defer_maintenance,
-                defer_maintenance_identifier: self.defer_maintenance_identifier,
-                defer_maintenance_start_time: self.defer_maintenance_start_time,
-                defer_maintenance_end_time: self.defer_maintenance_end_time,
-                defer_maintenance_duration: self.defer_maintenance_duration,
-            },
+                cluster_identifier: self.cluster_identifier
+                ,
+                defer_maintenance: self.defer_maintenance
+                ,
+                defer_maintenance_identifier: self.defer_maintenance_identifier
+                ,
+                defer_maintenance_start_time: self.defer_maintenance_start_time
+                ,
+                defer_maintenance_end_time: self.defer_maintenance_end_time
+                ,
+                defer_maintenance_duration: self.defer_maintenance_duration
+                ,
+            }
         )
     }
 }
+

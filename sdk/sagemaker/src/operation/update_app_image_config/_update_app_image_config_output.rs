@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppImageConfigOutput {
+pub struct UpdateAppImageConfigOutput  {
     /// <p>The Amazon Resource Name (ARN) for the AppImageConfig.</p>
     #[doc(hidden)]
     pub app_image_config_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct UpdateAppImageConfigOutput {
 }
 impl UpdateAppImageConfigOutput {
     /// <p>The Amazon Resource Name (ARN) for the AppImageConfig.</p>
-    pub fn app_image_config_arn(&self) -> std::option::Option<&str> {
+    pub fn app_image_config_arn(&self) -> std::option::Option<& str> {
         self.app_image_config_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAppImageConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAppImageConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppImageConfigOutput`](crate::operation::update_app_image_config::UpdateAppImageConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::update_app_image_config::builders::UpdateAppImageConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_app_image_config::builders::UpdateAppImageConfigOutputBuilder {
         crate::operation::update_app_image_config::builders::UpdateAppImageConfigOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl UpdateAppImageConfigOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the AppImageConfig.</p>
-    pub fn set_app_image_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_image_config_arn = input;
-        self
+    pub fn set_app_image_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_image_config_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAppImageConfigOutput`](crate::operation::update_app_image_config::UpdateAppImageConfigOutput).
     pub fn build(self) -> crate::operation::update_app_image_config::UpdateAppImageConfigOutput {
         crate::operation::update_app_image_config::UpdateAppImageConfigOutput {
-            app_image_config_arn: self.app_image_config_arn,
+            app_image_config_arn: self.app_image_config_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

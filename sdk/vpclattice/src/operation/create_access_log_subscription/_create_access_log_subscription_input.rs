@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessLogSubscriptionInput {
+pub struct CreateAccessLogSubscriptionInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -14,33 +14,29 @@ pub struct CreateAccessLogSubscriptionInput {
     pub destination_arn: std::option::Option<std::string::String>,
     /// <p>The tags for the access log subscription.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAccessLogSubscriptionInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The tags for the access log subscription.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateAccessLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
-    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder {
         crate::operation::create_access_log_subscription::builders::CreateAccessLogSubscriptionInputBuilder::default()
     }
 }
@@ -52,8 +48,7 @@ pub struct CreateAccessLogSubscriptionInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) resource_identifier: std::option::Option<std::string::String>,
     pub(crate) destination_arn: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateAccessLogSubscriptionInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -63,8 +58,7 @@ impl CreateAccessLogSubscriptionInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
     pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,12 +66,8 @@ impl CreateAccessLogSubscriptionInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,48 +76,37 @@ impl CreateAccessLogSubscriptionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the access log subscription.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags for the access log subscription.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateAccessLogSubscriptionInput`](crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_access_log_subscription::CreateAccessLogSubscriptionInput {
-                client_token: self.client_token,
-                resource_identifier: self.resource_identifier,
-                destination_arn: self.destination_arn,
-                tags: self.tags,
-            },
+                client_token: self.client_token
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                destination_arn: self.destination_arn
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

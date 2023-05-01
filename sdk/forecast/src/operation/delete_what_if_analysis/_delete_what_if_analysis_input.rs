@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWhatIfAnalysisInput {
+pub struct DeleteWhatIfAnalysisInput  {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
     #[doc(hidden)]
     pub what_if_analysis_arn: std::option::Option<std::string::String>,
 }
 impl DeleteWhatIfAnalysisInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
-    pub fn what_if_analysis_arn(&self) -> std::option::Option<&str> {
+    pub fn what_if_analysis_arn(&self) -> std::option::Option<& str> {
         self.what_if_analysis_arn.as_deref()
     }
 }
 impl DeleteWhatIfAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DeleteWhatIfAnalysisInput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisInputBuilder {
         crate::operation::delete_what_if_analysis::builders::DeleteWhatIfAnalysisInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteWhatIfAnalysisInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.</p>
-    pub fn set_what_if_analysis_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.what_if_analysis_arn = input;
-        self
+    pub fn set_what_if_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.what_if_analysis_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteWhatIfAnalysisInput`](crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisInput {
-                what_if_analysis_arn: self.what_if_analysis_arn,
-            },
+                what_if_analysis_arn: self.what_if_analysis_arn
+                ,
+            }
         )
     }
 }
+

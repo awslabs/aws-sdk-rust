@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStageOutput {
+pub struct CreateStageOutput  {
     /// <p>The stage that was created.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<crate::types::Stage>,
@@ -13,19 +13,19 @@ pub struct CreateStageOutput {
 }
 impl CreateStageOutput {
     /// <p>The stage that was created.</p>
-    pub fn stage(&self) -> std::option::Option<&crate::types::Stage> {
+    pub fn stage(&self) -> std::option::Option<& crate::types::Stage> {
         self.stage.as_ref()
     }
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
-    pub fn participant_tokens(&self) -> std::option::Option<&[crate::types::ParticipantToken]> {
+    pub fn participant_tokens(&self) -> std::option::Option<& [crate::types::ParticipantToken]> {
         self.participant_tokens.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateStageOutput {
     /// Creates a new builder-style object to manufacture [`CreateStageOutput`](crate::operation::create_stage::CreateStageOutput).
     pub fn builder() -> crate::operation::create_stage::builders::CreateStageOutputBuilder {
@@ -38,8 +38,7 @@ impl CreateStageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateStageOutputBuilder {
     pub(crate) stage: std::option::Option<crate::types::Stage>,
-    pub(crate) participant_tokens:
-        std::option::Option<std::vec::Vec<crate::types::ParticipantToken>>,
+    pub(crate) participant_tokens: std::option::Option<std::vec::Vec<crate::types::ParticipantToken>>,
     _request_id: Option<String>,
 }
 impl CreateStageOutputBuilder {
@@ -50,8 +49,7 @@ impl CreateStageOutputBuilder {
     }
     /// <p>The stage that was created.</p>
     pub fn set_stage(mut self, input: std::option::Option<crate::types::Stage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// Appends an item to `participant_tokens`.
     ///
@@ -60,33 +58,32 @@ impl CreateStageOutputBuilder {
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
     pub fn participant_tokens(mut self, input: crate::types::ParticipantToken) -> Self {
         let mut v = self.participant_tokens.unwrap_or_default();
-        v.push(input);
-        self.participant_tokens = Some(v);
-        self
+                        v.push(input);
+                        self.participant_tokens = Some(v);
+                        self
     }
     /// <p>Participant tokens attached to the stage. These correspond to the <code>participants</code> in the request.</p>
-    pub fn set_participant_tokens(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParticipantToken>>,
-    ) -> Self {
-        self.participant_tokens = input;
-        self
+    pub fn set_participant_tokens(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParticipantToken>>) -> Self {
+        self.participant_tokens = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateStageOutput`](crate::operation::create_stage::CreateStageOutput).
     pub fn build(self) -> crate::operation::create_stage::CreateStageOutput {
         crate::operation::create_stage::CreateStageOutput {
-            stage: self.stage,
-            participant_tokens: self.participant_tokens,
+            stage: self.stage
+            ,
+            participant_tokens: self.participant_tokens
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

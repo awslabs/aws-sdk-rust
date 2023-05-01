@@ -3,24 +3,21 @@
 /// <p>The configuration of the HTTP endpoint request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpEndpointRequestConfiguration {
+pub struct HttpEndpointRequestConfiguration  {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
     #[doc(hidden)]
     pub content_encoding: std::option::Option<crate::types::ContentEncoding>,
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
     #[doc(hidden)]
-    pub common_attributes:
-        std::option::Option<std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,
+    pub common_attributes: std::option::Option<std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,
 }
 impl HttpEndpointRequestConfiguration {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
-    pub fn content_encoding(&self) -> std::option::Option<&crate::types::ContentEncoding> {
+    pub fn content_encoding(&self) -> std::option::Option<& crate::types::ContentEncoding> {
         self.content_encoding.as_ref()
     }
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
-    pub fn common_attributes(
-        &self,
-    ) -> std::option::Option<&[crate::types::HttpEndpointCommonAttribute]> {
+    pub fn common_attributes(&self) -> std::option::Option<& [crate::types::HttpEndpointCommonAttribute]> {
         self.common_attributes.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl HttpEndpointRequestConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct HttpEndpointRequestConfigurationBuilder {
     pub(crate) content_encoding: std::option::Option<crate::types::ContentEncoding>,
-    pub(crate) common_attributes:
-        std::option::Option<std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,
+    pub(crate) common_attributes: std::option::Option<std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,
 }
 impl HttpEndpointRequestConfigurationBuilder {
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
@@ -46,12 +42,8 @@ impl HttpEndpointRequestConfigurationBuilder {
         self
     }
     /// <p>Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to the destination. For more information, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web Docs, the official Mozilla documentation.</p>
-    pub fn set_content_encoding(
-        mut self,
-        input: std::option::Option<crate::types::ContentEncoding>,
-    ) -> Self {
-        self.content_encoding = input;
-        self
+    pub fn set_content_encoding(mut self, input: std::option::Option<crate::types::ContentEncoding>) -> Self {
+        self.content_encoding = input; self
     }
     /// Appends an item to `common_attributes`.
     ///
@@ -60,23 +52,22 @@ impl HttpEndpointRequestConfigurationBuilder {
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
     pub fn common_attributes(mut self, input: crate::types::HttpEndpointCommonAttribute) -> Self {
         let mut v = self.common_attributes.unwrap_or_default();
-        v.push(input);
-        self.common_attributes = Some(v);
-        self
+                        v.push(input);
+                        self.common_attributes = Some(v);
+                        self
     }
     /// <p>Describes the metadata sent to the HTTP endpoint destination.</p>
-    pub fn set_common_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>,
-    ) -> Self {
-        self.common_attributes = input;
-        self
+    pub fn set_common_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::HttpEndpointCommonAttribute>>) -> Self {
+        self.common_attributes = input; self
     }
     /// Consumes the builder and constructs a [`HttpEndpointRequestConfiguration`](crate::types::HttpEndpointRequestConfiguration).
     pub fn build(self) -> crate::types::HttpEndpointRequestConfiguration {
         crate::types::HttpEndpointRequestConfiguration {
-            content_encoding: self.content_encoding,
-            common_attributes: self.common_attributes,
+            content_encoding: self.content_encoding
+            ,
+            common_attributes: self.common_attributes
+            ,
         }
     }
 }
+

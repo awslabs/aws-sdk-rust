@@ -3,7 +3,7 @@
 /// <p>Provides information about an internet provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpOrganizationDetails {
+pub struct IpOrganizationDetails  {
     /// <p>The Autonomous System Number (ASN) of the internet provider</p>
     #[doc(hidden)]
     pub asn: i32,
@@ -23,15 +23,15 @@ impl IpOrganizationDetails {
         self.asn
     }
     /// <p>The name of the organization that registered the ASN.</p>
-    pub fn asn_org(&self) -> std::option::Option<&str> {
+    pub fn asn_org(&self) -> std::option::Option<& str> {
         self.asn_org.as_deref()
     }
     /// <p>The ISP information for the internet provider.</p>
-    pub fn isp(&self) -> std::option::Option<&str> {
+    pub fn isp(&self) -> std::option::Option<& str> {
         self.isp.as_deref()
     }
     /// <p>The name of the internet provider.</p>
-    pub fn org(&self) -> std::option::Option<&str> {
+    pub fn org(&self) -> std::option::Option<& str> {
         self.org.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl IpOrganizationDetailsBuilder {
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider</p>
     pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
-        self.asn = input;
-        self
+        self.asn = input; self
     }
     /// <p>The name of the organization that registered the ASN.</p>
     pub fn asn_org(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl IpOrganizationDetailsBuilder {
     }
     /// <p>The name of the organization that registered the ASN.</p>
     pub fn set_asn_org(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asn_org = input;
-        self
+        self.asn_org = input; self
     }
     /// <p>The ISP information for the internet provider.</p>
     pub fn isp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl IpOrganizationDetailsBuilder {
     }
     /// <p>The ISP information for the internet provider.</p>
     pub fn set_isp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.isp = input;
-        self
+        self.isp = input; self
     }
     /// <p>The name of the internet provider.</p>
     pub fn org(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,21 @@ impl IpOrganizationDetailsBuilder {
     }
     /// <p>The name of the internet provider.</p>
     pub fn set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.org = input;
-        self
+        self.org = input; self
     }
     /// Consumes the builder and constructs a [`IpOrganizationDetails`](crate::types::IpOrganizationDetails).
     pub fn build(self) -> crate::types::IpOrganizationDetails {
         crate::types::IpOrganizationDetails {
-            asn: self.asn.unwrap_or_default(),
-            asn_org: self.asn_org,
-            isp: self.isp,
-            org: self.org,
+            asn: self.asn
+                .unwrap_or_default()
+            ,
+            asn_org: self.asn_org
+            ,
+            isp: self.isp
+            ,
+            org: self.org
+            ,
         }
     }
 }
+

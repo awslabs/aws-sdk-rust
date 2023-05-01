@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagePipelinesOutput {
+pub struct ListImagePipelinesOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct ListImagePipelinesOutput {
 }
 impl ListImagePipelinesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The list of image pipelines.</p>
-    pub fn image_pipeline_list(&self) -> std::option::Option<&[crate::types::ImagePipeline]> {
+    pub fn image_pipeline_list(&self) -> std::option::Option<& [crate::types::ImagePipeline]> {
         self.image_pipeline_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListImagePipelinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListImagePipelinesOutput {
     /// Creates a new builder-style object to manufacture [`ListImagePipelinesOutput`](crate::operation::list_image_pipelines::ListImagePipelinesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_image_pipelines::builders::ListImagePipelinesOutputBuilder {
+    pub fn builder() -> crate::operation::list_image_pipelines::builders::ListImagePipelinesOutputBuilder {
         crate::operation::list_image_pipelines::builders::ListImagePipelinesOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl ListImagePipelinesOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Appends an item to `image_pipeline_list`.
     ///
@@ -68,17 +66,13 @@ impl ListImagePipelinesOutputBuilder {
     /// <p>The list of image pipelines.</p>
     pub fn image_pipeline_list(mut self, input: crate::types::ImagePipeline) -> Self {
         let mut v = self.image_pipeline_list.unwrap_or_default();
-        v.push(input);
-        self.image_pipeline_list = Some(v);
-        self
+                        v.push(input);
+                        self.image_pipeline_list = Some(v);
+                        self
     }
     /// <p>The list of image pipelines.</p>
-    pub fn set_image_pipeline_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImagePipeline>>,
-    ) -> Self {
-        self.image_pipeline_list = input;
-        self
+    pub fn set_image_pipeline_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImagePipeline>>) -> Self {
+        self.image_pipeline_list = input; self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,25 +81,28 @@ impl ListImagePipelinesOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListImagePipelinesOutput`](crate::operation::list_image_pipelines::ListImagePipelinesOutput).
     pub fn build(self) -> crate::operation::list_image_pipelines::ListImagePipelinesOutput {
         crate::operation::list_image_pipelines::ListImagePipelinesOutput {
-            request_id: self.request_id,
-            image_pipeline_list: self.image_pipeline_list,
-            next_token: self.next_token,
+            request_id: self.request_id
+            ,
+            image_pipeline_list: self.image_pipeline_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

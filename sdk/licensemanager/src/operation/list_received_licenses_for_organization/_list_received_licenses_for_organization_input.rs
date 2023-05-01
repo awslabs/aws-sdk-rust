@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedLicensesForOrganizationInput {
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
+pub struct ListReceivedLicensesForOrganizationInput  {
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -18,16 +18,16 @@ pub struct ListReceivedLicensesForOrganizationInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListReceivedLicensesForOrganizationInput {
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -37,7 +37,7 @@ impl ListReceivedLicensesForOrganizationInput {
 }
 impl ListReceivedLicensesForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesForOrganizationInput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput).
-    pub fn builder() -> crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationInputBuilder {
         crate::operation::list_received_licenses_for_organization::builders::ListReceivedLicensesForOrganizationInputBuilder::default()
     }
 }
@@ -55,28 +55,24 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>Beneficiary</code> </p> </li>
-    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Beneficiary</code> </p> </li> 
+    /// <li> <p> <code>ProductSKU</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +81,7 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -95,11 +90,10 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListReceivedLicensesForOrganizationInput`](crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput).
-    pub fn build(self) -> Result<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_received_licenses_for_organization::ListReceivedLicensesForOrganizationInput {
                 filters: self.filters
@@ -112,3 +106,4 @@ impl ListReceivedLicensesForOrganizationInputBuilder {
         )
     }
 }
+

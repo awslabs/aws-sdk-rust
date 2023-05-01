@@ -3,7 +3,7 @@
 /// <p>An object representing a change in state for a task attachment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachmentStateChange {
+pub struct AttachmentStateChange  {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
     #[doc(hidden)]
     pub attachment_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AttachmentStateChange {
 }
 impl AttachmentStateChange {
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
-    pub fn attachment_arn(&self) -> std::option::Option<&str> {
+    pub fn attachment_arn(&self) -> std::option::Option<& str> {
         self.attachment_arn.as_deref()
     }
     /// <p>The status of the attachment.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AttachmentStateChangeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the attachment.</p>
     pub fn set_attachment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_arn = input;
-        self
+        self.attachment_arn = input; self
     }
     /// <p>The status of the attachment.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AttachmentStateChangeBuilder {
     }
     /// <p>The status of the attachment.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AttachmentStateChange`](crate::types::AttachmentStateChange).
     pub fn build(self) -> crate::types::AttachmentStateChange {
         crate::types::AttachmentStateChange {
-            attachment_arn: self.attachment_arn,
-            status: self.status,
+            attachment_arn: self.attachment_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

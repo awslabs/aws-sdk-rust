@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceIdentifiersOutput {
+pub struct ListDeviceIdentifiersOutput  {
     /// <p>Information about the device identifiers.</p>
     #[doc(hidden)]
     pub device_identifiers: std::option::Option<std::vec::Vec<crate::types::DeviceIdentifier>>,
@@ -13,24 +13,22 @@ pub struct ListDeviceIdentifiersOutput {
 }
 impl ListDeviceIdentifiersOutput {
     /// <p>Information about the device identifiers.</p>
-    pub fn device_identifiers(&self) -> std::option::Option<&[crate::types::DeviceIdentifier]> {
+    pub fn device_identifiers(&self) -> std::option::Option<& [crate::types::DeviceIdentifier]> {
         self.device_identifiers.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDeviceIdentifiersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDeviceIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceIdentifiersOutput`](crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersOutputBuilder {
         crate::operation::list_device_identifiers::builders::ListDeviceIdentifiersOutputBuilder::default()
     }
 }
@@ -39,8 +37,7 @@ impl ListDeviceIdentifiersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDeviceIdentifiersOutputBuilder {
-    pub(crate) device_identifiers:
-        std::option::Option<std::vec::Vec<crate::types::DeviceIdentifier>>,
+    pub(crate) device_identifiers: std::option::Option<std::vec::Vec<crate::types::DeviceIdentifier>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl ListDeviceIdentifiersOutputBuilder {
     /// <p>Information about the device identifiers.</p>
     pub fn device_identifiers(mut self, input: crate::types::DeviceIdentifier) -> Self {
         let mut v = self.device_identifiers.unwrap_or_default();
-        v.push(input);
-        self.device_identifiers = Some(v);
-        self
+                        v.push(input);
+                        self.device_identifiers = Some(v);
+                        self
     }
     /// <p>Information about the device identifiers.</p>
-    pub fn set_device_identifiers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceIdentifier>>,
-    ) -> Self {
-        self.device_identifiers = input;
-        self
+    pub fn set_device_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeviceIdentifier>>) -> Self {
+        self.device_identifiers = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +64,26 @@ impl ListDeviceIdentifiersOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDeviceIdentifiersOutput`](crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput).
     pub fn build(self) -> crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput {
         crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput {
-            device_identifiers: self.device_identifiers,
-            next_token: self.next_token,
+            device_identifiers: self.device_identifiers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

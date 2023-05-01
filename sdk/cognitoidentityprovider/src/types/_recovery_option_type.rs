@@ -3,7 +3,7 @@
 /// <p>A map containing a priority as a key, and recovery method name as a value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoveryOptionType {
+pub struct RecoveryOptionType  {
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     #[doc(hidden)]
     pub priority: i32,
@@ -17,7 +17,7 @@ impl RecoveryOptionType {
         self.priority
     }
     /// <p>The recovery method for a user.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::RecoveryOptionNameType> {
+    pub fn name(&self) -> std::option::Option<& crate::types::RecoveryOptionNameType> {
         self.name.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl RecoveryOptionTypeBuilder {
     }
     /// <p>A positive integer specifying priority of a method with 1 being the highest priority.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The recovery method for a user.</p>
     pub fn name(mut self, input: crate::types::RecoveryOptionNameType) -> Self {
@@ -52,18 +51,18 @@ impl RecoveryOptionTypeBuilder {
         self
     }
     /// <p>The recovery method for a user.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::RecoveryOptionNameType>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::RecoveryOptionNameType>) -> Self {
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`RecoveryOptionType`](crate::types::RecoveryOptionType).
     pub fn build(self) -> crate::types::RecoveryOptionType {
         crate::types::RecoveryOptionType {
-            priority: self.priority.unwrap_or_default(),
-            name: self.name,
+            priority: self.priority
+                .unwrap_or_default()
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

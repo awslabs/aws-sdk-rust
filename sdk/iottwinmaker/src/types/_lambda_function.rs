@@ -3,14 +3,14 @@
 /// <p>The Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaFunction {
+pub struct LambdaFunction  {
     /// <p>The ARN of the Lambda function.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaFunction {
     /// <p>The ARN of the Lambda function.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl LambdaFunctionBuilder {
     }
     /// <p>The ARN of the Lambda function.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`LambdaFunction`](crate::types::LambdaFunction).
     pub fn build(self) -> crate::types::LambdaFunction {
-        crate::types::LambdaFunction { arn: self.arn }
+        crate::types::LambdaFunction {
+            arn: self.arn
+            ,
+        }
     }
 }
+

@@ -6,125 +6,73 @@ impl StartQueryInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::start_query::StartQuery,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::start_query::StartQuery, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::start_query::StartQueryInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::start_query::StartQueryInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::start_query::StartQueryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::start_query::StartQueryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CloudTrail_20131101.StartQuery",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CloudTrail_20131101.StartQuery"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_start_query::ser_start_query_input(&self)?,
+            crate::protocol_serde::shape_start_query::ser_start_query_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::start_query::StartQuery::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartQuery",
-            "cloudtrail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::start_query::StartQuery::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartQuery", "cloudtrail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -141,27 +89,22 @@ impl StartQuery {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for StartQuery {
-    type Output = std::result::Result<
-        crate::operation::start_query::StartQueryOutput,
-        crate::operation::start_query::StartQueryError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::protocol_serde::shape_start_query::de_start_query_http_error(response)
-        } else {
-            crate::protocol_serde::shape_start_query::de_start_query_http_response(response)
-        }
-    }
-}
+                type Output = std::result::Result<crate::operation::start_query::StartQueryOutput, crate::operation::start_query::StartQueryError>;
+                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+                     if !response.status().is_success() && response.status().as_u16() != 200 {
+                        crate::protocol_serde::shape_start_query::de_start_query_http_error(response)
+                     } else {
+                        crate::protocol_serde::shape_start_query::de_start_query_http_response(response)
+                     }
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type StartQueryErrorKind = StartQueryError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type StartQueryErrorKind = StartQueryError;
 /// Error type for the `StartQueryError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -173,9 +116,7 @@ pub enum StartQueryError {
     /// <p>The event data store is inactive.</p>
     InactiveEventDataStoreException(crate::types::error::InactiveEventDataStoreException),
     /// <p>This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions for the operation.</p>
-    InsufficientEncryptionPolicyException(
-        crate::types::error::InsufficientEncryptionPolicyException,
-    ),
+    InsufficientEncryptionPolicyException(crate::types::error::InsufficientEncryptionPolicyException),
     /// <p>This exception is thrown when the policy on the S3 bucket is not sufficient.</p>
     InsufficientS3BucketPolicyException(crate::types::error::InsufficientS3BucketPolicyException),
     /// <p>The request includes a parameter that is not valid.</p>
@@ -189,9 +130,7 @@ pub enum StartQueryError {
     /// <p>You are already running the maximum number of concurrent queries. Wait a minute for some queries to finish, and then run the query again.</p>
     MaxConcurrentQueriesException(crate::types::error::MaxConcurrentQueriesException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
-    NoManagementAccountSlrExistsException(
-        crate::types::error::NoManagementAccountSlrExistsException,
-    ),
+    NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the specified S3 bucket does not exist.</p>
@@ -199,86 +138,118 @@ pub enum StartQueryError {
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartQueryError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for StartQueryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::EventDataStoreArnInvalidException(_inner) => _inner.fmt(f),
-            Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
-            Self::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
-            Self::InsufficientEncryptionPolicyException(_inner) => _inner.fmt(f),
-            Self::InsufficientS3BucketPolicyException(_inner) => _inner.fmt(f),
-            Self::InvalidParameterException(_inner) => _inner.fmt(f),
-            Self::InvalidQueryStatementException(_inner) => _inner.fmt(f),
-            Self::InvalidS3BucketNameException(_inner) => _inner.fmt(f),
-            Self::InvalidS3PrefixException(_inner) => _inner.fmt(f),
-            Self::MaxConcurrentQueriesException(_inner) => _inner.fmt(f),
-            Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
-            Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            Self::S3BucketDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::EventDataStoreArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EventDataStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InactiveEventDataStoreException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InsufficientEncryptionPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InsufficientS3BucketPolicyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidParameterException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidQueryStatementException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidS3BucketNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidS3PrefixException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaxConcurrentQueriesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::NoManagementAccountSlrExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::S3BucketDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StartQueryError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::EventDataStoreArnInvalidException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EventDataStoreNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InactiveEventDataStoreException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InsufficientEncryptionPolicyException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InsufficientS3BucketPolicyException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidParameterException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidQueryStatementException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidS3BucketNameException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidS3PrefixException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MaxConcurrentQueriesException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoManagementAccountSlrExistsException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::OperationNotPermittedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::S3BucketDoesNotExistException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnsupportedOperationException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::EventDataStoreArnInvalidException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EventDataStoreNotFoundException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InactiveEventDataStoreException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InsufficientEncryptionPolicyException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InsufficientS3BucketPolicyException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidParameterException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidQueryStatementException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidS3BucketNameException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidS3PrefixException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaxConcurrentQueriesException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::NoManagementAccountSlrExistsException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::OperationNotPermittedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::S3BucketDoesNotExistException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::UnsupportedOperationException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -286,10 +257,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for StartQueryError
     }
 }
 impl aws_http::request_id::RequestId for crate::operation::start_query::StartQueryError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for StartQueryError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -300,27 +271,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartQueryError {
 }
 impl StartQueryError {
     /// Creates the `StartQueryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `StartQueryError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `StartQueryError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -401,21 +363,51 @@ impl StartQueryError {
 impl std::error::Error for StartQueryError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::EventDataStoreArnInvalidException(_inner) => Some(_inner),
-            Self::EventDataStoreNotFoundException(_inner) => Some(_inner),
-            Self::InactiveEventDataStoreException(_inner) => Some(_inner),
-            Self::InsufficientEncryptionPolicyException(_inner) => Some(_inner),
-            Self::InsufficientS3BucketPolicyException(_inner) => Some(_inner),
-            Self::InvalidParameterException(_inner) => Some(_inner),
-            Self::InvalidQueryStatementException(_inner) => Some(_inner),
-            Self::InvalidS3BucketNameException(_inner) => Some(_inner),
-            Self::InvalidS3PrefixException(_inner) => Some(_inner),
-            Self::MaxConcurrentQueriesException(_inner) => Some(_inner),
-            Self::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
-            Self::OperationNotPermittedException(_inner) => Some(_inner),
-            Self::S3BucketDoesNotExistException(_inner) => Some(_inner),
-            Self::UnsupportedOperationException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::EventDataStoreArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EventDataStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InactiveEventDataStoreException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InsufficientEncryptionPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InsufficientS3BucketPolicyException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidParameterException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidQueryStatementException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidS3BucketNameException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidS3PrefixException(_inner) =>
+            Some(_inner)
+            ,
+            Self::MaxConcurrentQueriesException(_inner) =>
+            Some(_inner)
+            ,
+            Self::NoManagementAccountSlrExistsException(_inner) =>
+            Some(_inner)
+            ,
+            Self::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::S3BucketDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            Self::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -430,3 +422,4 @@ mod _start_query_output;
 
 /// Builders
 pub mod builders;
+

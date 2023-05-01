@@ -4,68 +4,50 @@ pub use crate::operation::add_profile_key::_add_profile_key_output::AddProfileKe
 pub use crate::operation::add_profile_key::_add_profile_key_input::AddProfileKeyInputBuilder;
 
 /// Fluent builder constructing a request to `AddProfileKey`.
-///
-/// <p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p>
+/// 
+/// <p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p> 
 /// <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddProfileKeyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_profile_key::builders::AddProfileKeyInputBuilder,
-}
-impl AddProfileKeyFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::add_profile_key::builders::AddProfileKeyInputBuilder
+            }
+impl AddProfileKeyFluentBuilder  {
     /// Creates a new `AddProfileKey`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_profile_key::AddProfileKey,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::add_profile_key::AddProfileKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::add_profile_key::AddProfileKey, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::add_profile_key::AddProfileKeyOutput, aws_smithy_http::result::SdkError<crate::operation::add_profile_key::AddProfileKeyError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.profile_id(input.into());
@@ -96,10 +78,7 @@ impl AddProfileKeyFluentBuilder {
         self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_values(input);
         self
     }
@@ -114,3 +93,4 @@ impl AddProfileKeyFluentBuilder {
         self
     }
 }
+

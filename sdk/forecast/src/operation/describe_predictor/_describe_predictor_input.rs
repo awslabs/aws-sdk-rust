@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePredictorInput {
+pub struct DescribePredictorInput  {
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
     #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl DescribePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
-    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+    pub fn predictor_arn(&self) -> std::option::Option<& str> {
         self.predictor_arn.as_deref()
     }
 }
 impl DescribePredictorInput {
     /// Creates a new builder-style object to manufacture [`DescribePredictorInput`](crate::operation::describe_predictor::DescribePredictorInput).
-    pub fn builder() -> crate::operation::describe_predictor::builders::DescribePredictorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_predictor::builders::DescribePredictorInputBuilder {
         crate::operation::describe_predictor::builders::DescribePredictorInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribePredictorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
     pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.predictor_arn = input;
-        self
+        self.predictor_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribePredictorInput`](crate::operation::describe_predictor::DescribePredictorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_predictor::DescribePredictorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_predictor::DescribePredictorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_predictor::DescribePredictorInput {
-                predictor_arn: self.predictor_arn,
-            },
+                predictor_arn: self.predictor_arn
+                ,
+            }
         )
     }
 }
+

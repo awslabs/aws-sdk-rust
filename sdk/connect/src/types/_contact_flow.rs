@@ -3,7 +3,7 @@
 /// <p>Contains information about a flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactFlow {
+pub struct ContactFlow  {
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -27,43 +27,39 @@ pub struct ContactFlow {
     pub content: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ContactFlow {
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the flow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ContactFlowType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ContactFlowType> {
         self.r#type.as_ref()
     }
     /// <p>The type of flow.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ContactFlowState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ContactFlowState> {
         self.state.as_ref()
     }
     /// <p>The description of the flow.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The content of the flow.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -85,8 +81,7 @@ pub struct ContactFlowBuilder {
     pub(crate) state: std::option::Option<crate::types::ContactFlowState>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ContactFlowBuilder {
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
@@ -96,8 +91,7 @@ impl ContactFlowBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl ContactFlowBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the flow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +109,7 @@ impl ContactFlowBuilder {
     }
     /// <p>The name of the flow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::ContactFlowType) -> Self {
@@ -126,8 +118,7 @@ impl ContactFlowBuilder {
     }
     /// <p>The type of the flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a flow type</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ContactFlowType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The type of flow.</p>
     pub fn state(mut self, input: crate::types::ContactFlowState) -> Self {
@@ -136,8 +127,7 @@ impl ContactFlowBuilder {
     }
     /// <p>The type of flow.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ContactFlowState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The description of the flow.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +136,7 @@ impl ContactFlowBuilder {
     }
     /// <p>The description of the flow.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The content of the flow.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,45 +145,43 @@ impl ContactFlowBuilder {
     }
     /// <p>The content of the flow.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`ContactFlow`](crate::types::ContactFlow).
     pub fn build(self) -> crate::types::ContactFlow {
         crate::types::ContactFlow {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            r#type: self.r#type,
-            state: self.state,
-            description: self.description,
-            content: self.content,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            description: self.description
+            ,
+            content: self.content
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

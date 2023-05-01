@@ -3,7 +3,7 @@
 /// <p>Indicates whether or not the eyes on the face are open, and the confidence level in the determination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EyeOpen {
+pub struct EyeOpen  {
     /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
     #[doc(hidden)]
     pub value: bool,
@@ -43,8 +43,7 @@ impl EyeOpenBuilder {
     }
     /// <p>Boolean value that indicates whether the eyes on the face are open.</p>
     pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -53,14 +52,17 @@ impl EyeOpenBuilder {
     }
     /// <p>Level of confidence in the determination.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// Consumes the builder and constructs a [`EyeOpen`](crate::types::EyeOpen).
     pub fn build(self) -> crate::types::EyeOpen {
         crate::types::EyeOpen {
-            value: self.value.unwrap_or_default(),
-            confidence: self.confidence,
+            value: self.value
+                .unwrap_or_default()
+            ,
+            confidence: self.confidence
+            ,
         }
     }
 }
+

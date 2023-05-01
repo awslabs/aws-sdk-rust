@@ -3,7 +3,7 @@
 /// <p>A Suricata rule specification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupSourceStatefulRulesDetails {
+pub struct RuleGroupSourceStatefulRulesDetails  {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria.</p>
     #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
@@ -12,25 +12,19 @@ pub struct RuleGroupSourceStatefulRulesDetails {
     pub header: std::option::Option<crate::types::RuleGroupSourceStatefulRulesHeaderDetails>,
     /// <p>Additional options for the rule.</p>
     #[doc(hidden)]
-    pub rule_options: std::option::Option<
-        std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>,
-    >,
+    pub rule_options: std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>>,
 }
 impl RuleGroupSourceStatefulRulesDetails {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>The stateful inspection criteria for the rule.</p>
-    pub fn header(
-        &self,
-    ) -> std::option::Option<&crate::types::RuleGroupSourceStatefulRulesHeaderDetails> {
+    pub fn header(&self) -> std::option::Option<& crate::types::RuleGroupSourceStatefulRulesHeaderDetails> {
         self.header.as_ref()
     }
     /// <p>Additional options for the rule.</p>
-    pub fn rule_options(
-        &self,
-    ) -> std::option::Option<&[crate::types::RuleGroupSourceStatefulRulesOptionsDetails]> {
+    pub fn rule_options(&self) -> std::option::Option<& [crate::types::RuleGroupSourceStatefulRulesOptionsDetails]> {
         self.rule_options.as_deref()
     }
 }
@@ -47,9 +41,7 @@ impl RuleGroupSourceStatefulRulesDetails {
 pub struct RuleGroupSourceStatefulRulesDetailsBuilder {
     pub(crate) action: std::option::Option<std::string::String>,
     pub(crate) header: std::option::Option<crate::types::RuleGroupSourceStatefulRulesHeaderDetails>,
-    pub(crate) rule_options: std::option::Option<
-        std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>,
-    >,
+    pub(crate) rule_options: std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>>,
 }
 impl RuleGroupSourceStatefulRulesDetailsBuilder {
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria.</p>
@@ -59,55 +51,42 @@ impl RuleGroupSourceStatefulRulesDetailsBuilder {
     }
     /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow matches the stateful rule criteria.</p>
     pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The stateful inspection criteria for the rule.</p>
-    pub fn header(
-        mut self,
-        input: crate::types::RuleGroupSourceStatefulRulesHeaderDetails,
-    ) -> Self {
+    pub fn header(mut self, input: crate::types::RuleGroupSourceStatefulRulesHeaderDetails) -> Self {
         self.header = Some(input);
         self
     }
     /// <p>The stateful inspection criteria for the rule.</p>
-    pub fn set_header(
-        mut self,
-        input: std::option::Option<crate::types::RuleGroupSourceStatefulRulesHeaderDetails>,
-    ) -> Self {
-        self.header = input;
-        self
+    pub fn set_header(mut self, input: std::option::Option<crate::types::RuleGroupSourceStatefulRulesHeaderDetails>) -> Self {
+        self.header = input; self
     }
     /// Appends an item to `rule_options`.
     ///
     /// To override the contents of this collection use [`set_rule_options`](Self::set_rule_options).
     ///
     /// <p>Additional options for the rule.</p>
-    pub fn rule_options(
-        mut self,
-        input: crate::types::RuleGroupSourceStatefulRulesOptionsDetails,
-    ) -> Self {
+    pub fn rule_options(mut self, input: crate::types::RuleGroupSourceStatefulRulesOptionsDetails) -> Self {
         let mut v = self.rule_options.unwrap_or_default();
-        v.push(input);
-        self.rule_options = Some(v);
-        self
+                        v.push(input);
+                        self.rule_options = Some(v);
+                        self
     }
     /// <p>Additional options for the rule.</p>
-    pub fn set_rule_options(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>,
-        >,
-    ) -> Self {
-        self.rule_options = input;
-        self
+    pub fn set_rule_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleGroupSourceStatefulRulesOptionsDetails>>) -> Self {
+        self.rule_options = input; self
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesDetails`](crate::types::RuleGroupSourceStatefulRulesDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatefulRulesDetails {
         crate::types::RuleGroupSourceStatefulRulesDetails {
-            action: self.action,
-            header: self.header,
-            rule_options: self.rule_options,
+            action: self.action
+            ,
+            header: self.header
+            ,
+            rule_options: self.rule_options
+            ,
         }
     }
 }
+

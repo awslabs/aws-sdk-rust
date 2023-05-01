@@ -3,22 +3,20 @@
 /// <p>The input for the <code>DeliverConfigSnapshot</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeliverConfigSnapshotInput {
+pub struct DeliverConfigSnapshotInput  {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
     #[doc(hidden)]
     pub delivery_channel_name: std::option::Option<std::string::String>,
 }
 impl DeliverConfigSnapshotInput {
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
-    pub fn delivery_channel_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_channel_name(&self) -> std::option::Option<& str> {
         self.delivery_channel_name.as_deref()
     }
 }
 impl DeliverConfigSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder {
         crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotInputBuilder::default()
     }
 }
@@ -36,24 +34,17 @@ impl DeliverConfigSnapshotInputBuilder {
         self
     }
     /// <p>The name of the delivery channel through which the snapshot is delivered.</p>
-    pub fn set_delivery_channel_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_channel_name = input;
-        self
+    pub fn set_delivery_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_channel_name = input; self
     }
     /// Consumes the builder and constructs a [`DeliverConfigSnapshotInput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deliver_config_snapshot::DeliverConfigSnapshotInput {
-                delivery_channel_name: self.delivery_channel_name,
-            },
+                delivery_channel_name: self.delivery_channel_name
+                ,
+            }
         )
     }
 }
+

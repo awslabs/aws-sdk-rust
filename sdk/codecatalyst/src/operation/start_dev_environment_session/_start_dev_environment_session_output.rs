@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartDevEnvironmentSessionOutput {
+pub struct StartDevEnvironmentSessionOutput  {
     /// <p>Information about connection details for a Dev Environment.</p>
     #[doc(hidden)]
     pub access_details: std::option::Option<crate::types::DevEnvironmentAccessDetails>,
@@ -22,29 +22,27 @@ pub struct StartDevEnvironmentSessionOutput {
 }
 impl StartDevEnvironmentSessionOutput {
     /// <p>Information about connection details for a Dev Environment.</p>
-    pub fn access_details(
-        &self,
-    ) -> std::option::Option<&crate::types::DevEnvironmentAccessDetails> {
+    pub fn access_details(&self) -> std::option::Option<& crate::types::DevEnvironmentAccessDetails> {
         self.access_details.as_ref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDevEnvironmentSessionOutput {
+impl  std::fmt::Debug for StartDevEnvironmentSessionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDevEnvironmentSessionOutput");
         formatter.field("access_details", &"*** Sensitive Data Redacted ***");
@@ -57,13 +55,13 @@ impl std::fmt::Debug for StartDevEnvironmentSessionOutput {
     }
 }
 impl aws_http::request_id::RequestId for StartDevEnvironmentSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartDevEnvironmentSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentSessionOutput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput).
-    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder{
+    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder {
         crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionOutputBuilder::default()
     }
 }
@@ -86,12 +84,8 @@ impl StartDevEnvironmentSessionOutputBuilder {
         self
     }
     /// <p>Information about connection details for a Dev Environment.</p>
-    pub fn set_access_details(
-        mut self,
-        input: std::option::Option<crate::types::DevEnvironmentAccessDetails>,
-    ) -> Self {
-        self.access_details = input;
-        self
+    pub fn set_access_details(mut self, input: std::option::Option<crate::types::DevEnvironmentAccessDetails>) -> Self {
+        self.access_details = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +94,7 @@ impl StartDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +103,7 @@ impl StartDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +112,7 @@ impl StartDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,28 +121,30 @@ impl StartDevEnvironmentSessionOutputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartDevEnvironmentSessionOutput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput {
+    pub fn build(self) -> crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput {
         crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput {
-            access_details: self.access_details,
-            session_id: self.session_id,
-            space_name: self.space_name,
-            project_name: self.project_name,
-            id: self.id,
+            access_details: self.access_details
+            ,
+            session_id: self.session_id
+            ,
+            space_name: self.space_name
+            ,
+            project_name: self.project_name
+            ,
+            id: self.id
+            ,
             _request_id: self._request_id,
         }
     }
@@ -168,3 +161,4 @@ impl std::fmt::Debug for StartDevEnvironmentSessionOutputBuilder {
         formatter.finish()
     }
 }
+

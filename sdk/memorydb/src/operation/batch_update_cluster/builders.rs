@@ -4,71 +4,49 @@ pub use crate::operation::batch_update_cluster::_batch_update_cluster_output::Ba
 pub use crate::operation::batch_update_cluster::_batch_update_cluster_input::BatchUpdateClusterInputBuilder;
 
 /// Fluent builder constructing a request to `BatchUpdateCluster`.
-///
+/// 
 /// <p>Apply the service update to a list of clusters supplied. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying the service updates</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder,
-}
-impl BatchUpdateClusterFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::batch_update_cluster::builders::BatchUpdateClusterInputBuilder
+            }
+impl BatchUpdateClusterFluentBuilder  {
     /// Creates a new `BatchUpdateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::batch_update_cluster::BatchUpdateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::batch_update_cluster::BatchUpdateClusterOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::batch_update_cluster::BatchUpdateClusterError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::batch_update_cluster::BatchUpdateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::batch_update_cluster::BatchUpdateClusterOutput, aws_smithy_http::result::SdkError<crate::operation::batch_update_cluster::BatchUpdateClusterError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `ClusterNames`.
     ///
     /// To override the contents of this collection use [`set_cluster_names`](Self::set_cluster_names).
@@ -79,10 +57,7 @@ impl BatchUpdateClusterFluentBuilder {
         self
     }
     /// <p>The cluster names to apply the updates.</p>
-    pub fn set_cluster_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_cluster_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_cluster_names(input);
         self
     }
@@ -92,11 +67,9 @@ impl BatchUpdateClusterFluentBuilder {
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update(
-        mut self,
-        input: std::option::Option<crate::types::ServiceUpdateRequest>,
-    ) -> Self {
+    pub fn set_service_update(mut self, input: std::option::Option<crate::types::ServiceUpdateRequest>) -> Self {
         self.inner = self.inner.set_service_update(input);
         self
     }
 }
+

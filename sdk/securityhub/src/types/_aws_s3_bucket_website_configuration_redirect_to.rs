@@ -3,7 +3,7 @@
 /// <p>The redirect behavior for requests to the website.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsS3BucketWebsiteConfigurationRedirectTo {
+pub struct AwsS3BucketWebsiteConfigurationRedirectTo  {
     /// <p>The name of the host to redirect requests to.</p>
     #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsS3BucketWebsiteConfigurationRedirectTo {
 }
 impl AwsS3BucketWebsiteConfigurationRedirectTo {
     /// <p>The name of the host to redirect requests to.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> std::option::Option<& str> {
         self.protocol.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AwsS3BucketWebsiteConfigurationRedirectToBuilder {
     }
     /// <p>The name of the host to redirect requests to.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AwsS3BucketWebsiteConfigurationRedirectToBuilder {
     }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::types::AwsS3BucketWebsiteConfigurationRedirectTo).
     pub fn build(self) -> crate::types::AwsS3BucketWebsiteConfigurationRedirectTo {
         crate::types::AwsS3BucketWebsiteConfigurationRedirectTo {
-            hostname: self.hostname,
-            protocol: self.protocol,
+            hostname: self.hostname
+            ,
+            protocol: self.protocol
+            ,
         }
     }
 }
+

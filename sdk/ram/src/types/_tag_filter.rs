@@ -3,7 +3,7 @@
 /// <p>A tag key and optional list of possible values that you can use to filter results for tagged resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagFilter {
+pub struct TagFilter  {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TagFilter {
 }
 impl TagFilter {
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> std::option::Option<& str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl TagFilterBuilder {
     }
     /// <p>The tag key. This must have a valid string value and can't be empty.</p>
     pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_key = input;
-        self
+        self.tag_key = input; self
     }
     /// Appends an item to `tag_values`.
     ///
@@ -53,23 +52,22 @@ impl TagFilterBuilder {
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
     pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-        v.push(input.into());
-        self.tag_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_values = Some(v);
+                        self
     }
     /// <p>A list of zero or more tag values. If no values are provided, then the filter matches any tag with the specified key, regardless of its value.</p>
-    pub fn set_tag_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_values = input;
-        self
+    pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_values = input; self
     }
     /// Consumes the builder and constructs a [`TagFilter`](crate::types::TagFilter).
     pub fn build(self) -> crate::types::TagFilter {
         crate::types::TagFilter {
-            tag_key: self.tag_key,
-            tag_values: self.tag_values,
+            tag_key: self.tag_key
+            ,
+            tag_values: self.tag_values
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDomainInput {
+pub struct AssociateDomainInput  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct AssociateDomainInput {
 }
 impl AssociateDomainInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The fully qualified domain name (FQDN).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn acm_certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn acm_certificate_arn(&self) -> std::option::Option<& str> {
         self.acm_certificate_arn.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl AssociateDomainInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The fully qualified domain name (FQDN).</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl AssociateDomainInputBuilder {
     }
     /// <p>The fully qualified domain name (FQDN).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl AssociateDomainInputBuilder {
     }
     /// <p>The name to display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
     pub fn acm_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,25 +84,23 @@ impl AssociateDomainInputBuilder {
         self
     }
     /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-    pub fn set_acm_certificate_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.acm_certificate_arn = input;
-        self
+    pub fn set_acm_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.acm_certificate_arn = input; self
     }
     /// Consumes the builder and constructs a [`AssociateDomainInput`](crate::operation::associate_domain::AssociateDomainInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_domain::AssociateDomainInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::associate_domain::AssociateDomainInput {
-            fleet_arn: self.fleet_arn,
-            domain_name: self.domain_name,
-            display_name: self.display_name,
-            acm_certificate_arn: self.acm_certificate_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::associate_domain::AssociateDomainInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::associate_domain::AssociateDomainInput {
+                fleet_arn: self.fleet_arn
+                ,
+                domain_name: self.domain_name
+                ,
+                display_name: self.display_name
+                ,
+                acm_certificate_arn: self.acm_certificate_arn
+                ,
+            }
+        )
     }
 }
+

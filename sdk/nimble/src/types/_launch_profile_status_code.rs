@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let launchprofilestatuscode = unimplemented!();
 /// match launchprofilestatuscode {
@@ -43,22 +43,14 @@
 /// Specifically, when `launchprofilestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LaunchProfileStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LaunchProfileStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     EncryptionKeyAccessDenied,
@@ -91,104 +83,67 @@ pub enum LaunchProfileStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     StreamingImageNotReady,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchProfileStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ENCRYPTION_KEY_ACCESS_DENIED" => LaunchProfileStatusCode::EncryptionKeyAccessDenied,
-            "ENCRYPTION_KEY_NOT_FOUND" => LaunchProfileStatusCode::EncryptionKeyNotFound,
-            "INTERNAL_ERROR" => LaunchProfileStatusCode::InternalError,
-            "INVALID_INSTANCE_TYPES_PROVIDED" => {
-                LaunchProfileStatusCode::InvalidInstanceTypesProvided
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ENCRYPTION_KEY_ACCESS_DENIED" => LaunchProfileStatusCode::EncryptionKeyAccessDenied,
+"ENCRYPTION_KEY_NOT_FOUND" => LaunchProfileStatusCode::EncryptionKeyNotFound,
+"INTERNAL_ERROR" => LaunchProfileStatusCode::InternalError,
+"INVALID_INSTANCE_TYPES_PROVIDED" => LaunchProfileStatusCode::InvalidInstanceTypesProvided,
+"INVALID_SUBNETS_COMBINATION" => LaunchProfileStatusCode::InvalidSubnetsCombination,
+"INVALID_SUBNETS_PROVIDED" => LaunchProfileStatusCode::InvalidSubnetsProvided,
+"LAUNCH_PROFILE_CREATED" => LaunchProfileStatusCode::LaunchProfileCreated,
+"LAUNCH_PROFILE_CREATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileCreateInProgress,
+"LAUNCH_PROFILE_DELETED" => LaunchProfileStatusCode::LaunchProfileDeleted,
+"LAUNCH_PROFILE_DELETE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileDeleteInProgress,
+"LAUNCH_PROFILE_UPDATED" => LaunchProfileStatusCode::LaunchProfileUpdated,
+"LAUNCH_PROFILE_UPDATE_IN_PROGRESS" => LaunchProfileStatusCode::LaunchProfileUpdateInProgress,
+"LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED" => LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted,
+"STREAMING_IMAGE_NOT_FOUND" => LaunchProfileStatusCode::StreamingImageNotFound,
+"STREAMING_IMAGE_NOT_READY" => LaunchProfileStatusCode::StreamingImageNotReady,
+other => LaunchProfileStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "INVALID_SUBNETS_COMBINATION" => LaunchProfileStatusCode::InvalidSubnetsCombination,
-            "INVALID_SUBNETS_PROVIDED" => LaunchProfileStatusCode::InvalidSubnetsProvided,
-            "LAUNCH_PROFILE_CREATED" => LaunchProfileStatusCode::LaunchProfileCreated,
-            "LAUNCH_PROFILE_CREATE_IN_PROGRESS" => {
-                LaunchProfileStatusCode::LaunchProfileCreateInProgress
-            }
-            "LAUNCH_PROFILE_DELETED" => LaunchProfileStatusCode::LaunchProfileDeleted,
-            "LAUNCH_PROFILE_DELETE_IN_PROGRESS" => {
-                LaunchProfileStatusCode::LaunchProfileDeleteInProgress
-            }
-            "LAUNCH_PROFILE_UPDATED" => LaunchProfileStatusCode::LaunchProfileUpdated,
-            "LAUNCH_PROFILE_UPDATE_IN_PROGRESS" => {
-                LaunchProfileStatusCode::LaunchProfileUpdateInProgress
-            }
-            "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED" => {
-                LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted
-            }
-            "STREAMING_IMAGE_NOT_FOUND" => LaunchProfileStatusCode::StreamingImageNotFound,
-            "STREAMING_IMAGE_NOT_READY" => LaunchProfileStatusCode::StreamingImageNotReady,
-            other => LaunchProfileStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for LaunchProfileStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchProfileStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LaunchProfileStatusCode::from(s))
+                }
+            }
 impl LaunchProfileStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
-            LaunchProfileStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
-            LaunchProfileStatusCode::InternalError => "INTERNAL_ERROR",
-            LaunchProfileStatusCode::InvalidInstanceTypesProvided => {
-                "INVALID_INSTANCE_TYPES_PROVIDED"
-            }
-            LaunchProfileStatusCode::InvalidSubnetsCombination => "INVALID_SUBNETS_COMBINATION",
-            LaunchProfileStatusCode::InvalidSubnetsProvided => "INVALID_SUBNETS_PROVIDED",
-            LaunchProfileStatusCode::LaunchProfileCreated => "LAUNCH_PROFILE_CREATED",
-            LaunchProfileStatusCode::LaunchProfileCreateInProgress => {
-                "LAUNCH_PROFILE_CREATE_IN_PROGRESS"
-            }
-            LaunchProfileStatusCode::LaunchProfileDeleted => "LAUNCH_PROFILE_DELETED",
-            LaunchProfileStatusCode::LaunchProfileDeleteInProgress => {
-                "LAUNCH_PROFILE_DELETE_IN_PROGRESS"
-            }
-            LaunchProfileStatusCode::LaunchProfileUpdated => "LAUNCH_PROFILE_UPDATED",
-            LaunchProfileStatusCode::LaunchProfileUpdateInProgress => {
-                "LAUNCH_PROFILE_UPDATE_IN_PROGRESS"
-            }
-            LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => {
-                "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED"
-            }
-            LaunchProfileStatusCode::StreamingImageNotFound => "STREAMING_IMAGE_NOT_FOUND",
-            LaunchProfileStatusCode::StreamingImageNotReady => "STREAMING_IMAGE_NOT_READY",
-            LaunchProfileStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ENCRYPTION_KEY_ACCESS_DENIED",
-            "ENCRYPTION_KEY_NOT_FOUND",
-            "INTERNAL_ERROR",
-            "INVALID_INSTANCE_TYPES_PROVIDED",
-            "INVALID_SUBNETS_COMBINATION",
-            "INVALID_SUBNETS_PROVIDED",
-            "LAUNCH_PROFILE_CREATED",
-            "LAUNCH_PROFILE_CREATE_IN_PROGRESS",
-            "LAUNCH_PROFILE_DELETED",
-            "LAUNCH_PROFILE_DELETE_IN_PROGRESS",
-            "LAUNCH_PROFILE_UPDATED",
-            "LAUNCH_PROFILE_UPDATE_IN_PROGRESS",
-            "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED",
-            "STREAMING_IMAGE_NOT_FOUND",
-            "STREAMING_IMAGE_NOT_READY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LaunchProfileStatusCode::EncryptionKeyAccessDenied => "ENCRYPTION_KEY_ACCESS_DENIED",
+    LaunchProfileStatusCode::EncryptionKeyNotFound => "ENCRYPTION_KEY_NOT_FOUND",
+    LaunchProfileStatusCode::InternalError => "INTERNAL_ERROR",
+    LaunchProfileStatusCode::InvalidInstanceTypesProvided => "INVALID_INSTANCE_TYPES_PROVIDED",
+    LaunchProfileStatusCode::InvalidSubnetsCombination => "INVALID_SUBNETS_COMBINATION",
+    LaunchProfileStatusCode::InvalidSubnetsProvided => "INVALID_SUBNETS_PROVIDED",
+    LaunchProfileStatusCode::LaunchProfileCreated => "LAUNCH_PROFILE_CREATED",
+    LaunchProfileStatusCode::LaunchProfileCreateInProgress => "LAUNCH_PROFILE_CREATE_IN_PROGRESS",
+    LaunchProfileStatusCode::LaunchProfileDeleted => "LAUNCH_PROFILE_DELETED",
+    LaunchProfileStatusCode::LaunchProfileDeleteInProgress => "LAUNCH_PROFILE_DELETE_IN_PROGRESS",
+    LaunchProfileStatusCode::LaunchProfileUpdated => "LAUNCH_PROFILE_UPDATED",
+    LaunchProfileStatusCode::LaunchProfileUpdateInProgress => "LAUNCH_PROFILE_UPDATE_IN_PROGRESS",
+    LaunchProfileStatusCode::LaunchProfileWithStreamSessionsNotDeleted => "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED",
+    LaunchProfileStatusCode::StreamingImageNotFound => "STREAMING_IMAGE_NOT_FOUND",
+    LaunchProfileStatusCode::StreamingImageNotReady => "STREAMING_IMAGE_NOT_READY",
+    LaunchProfileStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ENCRYPTION_KEY_ACCESS_DENIED", "ENCRYPTION_KEY_NOT_FOUND", "INTERNAL_ERROR", "INVALID_INSTANCE_TYPES_PROVIDED", "INVALID_SUBNETS_COMBINATION", "INVALID_SUBNETS_PROVIDED", "LAUNCH_PROFILE_CREATED", "LAUNCH_PROFILE_CREATE_IN_PROGRESS", "LAUNCH_PROFILE_DELETED", "LAUNCH_PROFILE_DELETE_IN_PROGRESS", "LAUNCH_PROFILE_UPDATED", "LAUNCH_PROFILE_UPDATE_IN_PROGRESS", "LAUNCH_PROFILE_WITH_STREAM_SESSIONS_NOT_DELETED", "STREAMING_IMAGE_NOT_FOUND", "STREAMING_IMAGE_NOT_READY"]
+                }
+            }
 impl AsRef<str> for LaunchProfileStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

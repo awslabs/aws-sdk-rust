@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProtectionGroupInput {
+pub struct CreateProtectionGroupInput  {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
-    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-    /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+    /// <ul> 
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub aggregation: std::option::Option<crate::types::ProtectionGroupAggregation>,
@@ -29,40 +29,38 @@ pub struct CreateProtectionGroupInput {
 }
 impl CreateProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+    pub fn protection_group_id(&self) -> std::option::Option<& str> {
         self.protection_group_id.as_deref()
     }
-    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-    /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+    /// <ul> 
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li> 
     /// </ul>
-    pub fn aggregation(&self) -> std::option::Option<&crate::types::ProtectionGroupAggregation> {
+    pub fn aggregation(&self) -> std::option::Option<& crate::types::ProtectionGroupAggregation> {
         self.aggregation.as_ref()
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
-    pub fn pattern(&self) -> std::option::Option<&crate::types::ProtectionGroupPattern> {
+    pub fn pattern(&self) -> std::option::Option<& crate::types::ProtectionGroupPattern> {
         self.pattern.as_ref()
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ProtectedResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ProtectedResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn members(&self) -> std::option::Option<& [std::string::String]> {
         self.members.as_deref()
     }
     /// <p>One or more tag key-value pairs for the protection group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateProtectionGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder {
         crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder::default()
     }
 }
@@ -85,35 +83,27 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.protection_group_id = input;
-        self
+    pub fn set_protection_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.protection_group_id = input; self
     }
-    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-    /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+    /// <ul> 
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li> 
     /// </ul>
     pub fn aggregation(mut self, input: crate::types::ProtectionGroupAggregation) -> Self {
         self.aggregation = Some(input);
         self
     }
-    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
-    /// <ul>
-    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
-    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
-    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li>
+    /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p> 
+    /// <ul> 
+    /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li> 
+    /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li> 
+    /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p> </li> 
     /// </ul>
-    pub fn set_aggregation(
-        mut self,
-        input: std::option::Option<crate::types::ProtectionGroupAggregation>,
-    ) -> Self {
-        self.aggregation = input;
-        self
+    pub fn set_aggregation(mut self, input: std::option::Option<crate::types::ProtectionGroupAggregation>) -> Self {
+        self.aggregation = input; self
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
     pub fn pattern(mut self, input: crate::types::ProtectionGroupPattern) -> Self {
@@ -121,12 +111,8 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
-    pub fn set_pattern(
-        mut self,
-        input: std::option::Option<crate::types::ProtectionGroupPattern>,
-    ) -> Self {
-        self.pattern = input;
-        self
+    pub fn set_pattern(mut self, input: std::option::Option<crate::types::ProtectionGroupPattern>) -> Self {
+        self.pattern = input; self
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn resource_type(mut self, input: crate::types::ProtectedResourceType) -> Self {
@@ -134,12 +120,8 @@ impl CreateProtectionGroupInputBuilder {
         self
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ProtectedResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ProtectedResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// Appends an item to `members`.
     ///
@@ -148,17 +130,13 @@ impl CreateProtectionGroupInputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn members(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input.into());
-        self.members = Some(v);
-        self
+                        v.push(input.into());
+                        self.members = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn set_members(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.members = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -167,34 +145,32 @@ impl CreateProtectionGroupInputBuilder {
     /// <p>One or more tag key-value pairs for the protection group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>One or more tag key-value pairs for the protection group.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateProtectionGroupInput`](crate::operation::create_protection_group::CreateProtectionGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_protection_group::CreateProtectionGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_protection_group::CreateProtectionGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_protection_group::CreateProtectionGroupInput {
-                protection_group_id: self.protection_group_id,
-                aggregation: self.aggregation,
-                pattern: self.pattern,
-                resource_type: self.resource_type,
-                members: self.members,
-                tags: self.tags,
-            },
+                protection_group_id: self.protection_group_id
+                ,
+                aggregation: self.aggregation
+                ,
+                pattern: self.pattern
+                ,
+                resource_type: self.resource_type
+                ,
+                members: self.members
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchNetworkProfilesOutput {
+pub struct SearchNetworkProfilesOutput  {
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     #[doc(hidden)]
     pub network_profiles: std::option::Option<std::vec::Vec<crate::types::NetworkProfileData>>,
@@ -16,11 +16,11 @@ pub struct SearchNetworkProfilesOutput {
 }
 impl SearchNetworkProfilesOutput {
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
-    pub fn network_profiles(&self) -> std::option::Option<&[crate::types::NetworkProfileData]> {
+    pub fn network_profiles(&self) -> std::option::Option<& [crate::types::NetworkProfileData]> {
         self.network_profiles.as_deref()
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of network profiles returned.</p>
@@ -29,15 +29,13 @@ impl SearchNetworkProfilesOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchNetworkProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchNetworkProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchNetworkProfilesOutput`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput).
-    pub fn builder(
-    ) -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::search_network_profiles::builders::SearchNetworkProfilesOutputBuilder {
         crate::operation::search_network_profiles::builders::SearchNetworkProfilesOutputBuilder::default()
     }
 }
@@ -46,8 +44,7 @@ impl SearchNetworkProfilesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SearchNetworkProfilesOutputBuilder {
-    pub(crate) network_profiles:
-        std::option::Option<std::vec::Vec<crate::types::NetworkProfileData>>,
+    pub(crate) network_profiles: std::option::Option<std::vec::Vec<crate::types::NetworkProfileData>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) total_count: std::option::Option<i32>,
     _request_id: Option<String>,
@@ -60,17 +57,13 @@ impl SearchNetworkProfilesOutputBuilder {
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
     pub fn network_profiles(mut self, input: crate::types::NetworkProfileData) -> Self {
         let mut v = self.network_profiles.unwrap_or_default();
-        v.push(input);
-        self.network_profiles = Some(v);
-        self
+                        v.push(input);
+                        self.network_profiles = Some(v);
+                        self
     }
     /// <p>The network profiles that meet the specified set of filter criteria, in sort order. It is a list of NetworkProfileData objects. </p>
-    pub fn set_network_profiles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkProfileData>>,
-    ) -> Self {
-        self.network_profiles = input;
-        self
+    pub fn set_network_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkProfileData>>) -> Self {
+        self.network_profiles = input; self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +72,7 @@ impl SearchNetworkProfilesOutputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The total number of network profiles returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -89,25 +81,28 @@ impl SearchNetworkProfilesOutputBuilder {
     }
     /// <p>The total number of network profiles returned.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchNetworkProfilesOutput`](crate::operation::search_network_profiles::SearchNetworkProfilesOutput).
     pub fn build(self) -> crate::operation::search_network_profiles::SearchNetworkProfilesOutput {
         crate::operation::search_network_profiles::SearchNetworkProfilesOutput {
-            network_profiles: self.network_profiles,
-            next_token: self.next_token,
-            total_count: self.total_count,
+            network_profiles: self.network_profiles
+            ,
+            next_token: self.next_token
+            ,
+            total_count: self.total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

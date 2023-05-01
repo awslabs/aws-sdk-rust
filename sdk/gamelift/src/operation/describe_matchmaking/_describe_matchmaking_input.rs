@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMatchmakingInput {
+pub struct DescribeMatchmakingInput  {
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
     #[doc(hidden)]
     pub ticket_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeMatchmakingInput {
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-    pub fn ticket_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ticket_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ticket_ids.as_deref()
     }
 }
 impl DescribeMatchmakingInput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
+    pub fn builder() -> crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder {
         crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder::default()
     }
 }
@@ -35,29 +34,22 @@ impl DescribeMatchmakingInputBuilder {
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
     pub fn ticket_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ticket_ids.unwrap_or_default();
-        v.push(input.into());
-        self.ticket_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ticket_ids = Some(v);
+                        self
     }
     /// <p>A unique identifier for a matchmaking ticket. You can include up to 10 ID values. </p>
-    pub fn set_ticket_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ticket_ids = input;
-        self
+    pub fn set_ticket_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ticket_ids = input; self
     }
     /// Consumes the builder and constructs a [`DescribeMatchmakingInput`](crate::operation::describe_matchmaking::DescribeMatchmakingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_matchmaking::DescribeMatchmakingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_matchmaking::DescribeMatchmakingInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_matchmaking::DescribeMatchmakingInput {
-                ticket_ids: self.ticket_ids,
-            },
+                ticket_ids: self.ticket_ids
+                ,
+            }
         )
     }
 }
+

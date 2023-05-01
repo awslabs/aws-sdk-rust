@@ -3,7 +3,7 @@
 /// <p>The input for the RejectCertificateTransfer operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectCertificateTransferInput {
+pub struct RejectCertificateTransferInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct RejectCertificateTransferInput {
 }
 impl RejectCertificateTransferInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The reason the certificate transfer was rejected.</p>
-    pub fn reject_reason(&self) -> std::option::Option<&str> {
+    pub fn reject_reason(&self) -> std::option::Option<& str> {
         self.reject_reason.as_deref()
     }
 }
 impl RejectCertificateTransferInput {
     /// Creates a new builder-style object to manufacture [`RejectCertificateTransferInput`](crate::operation::reject_certificate_transfer::RejectCertificateTransferInput).
-    pub fn builder() -> crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferInputBuilder{
+    pub fn builder() -> crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferInputBuilder {
         crate::operation::reject_certificate_transfer::builders::RejectCertificateTransferInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl RejectCertificateTransferInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The reason the certificate transfer was rejected.</p>
     pub fn reject_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +52,18 @@ impl RejectCertificateTransferInputBuilder {
     }
     /// <p>The reason the certificate transfer was rejected.</p>
     pub fn set_reject_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reject_reason = input;
-        self
+        self.reject_reason = input; self
     }
     /// Consumes the builder and constructs a [`RejectCertificateTransferInput`](crate::operation::reject_certificate_transfer::RejectCertificateTransferInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reject_certificate_transfer::RejectCertificateTransferInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::reject_certificate_transfer::RejectCertificateTransferInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reject_certificate_transfer::RejectCertificateTransferInput {
-                certificate_id: self.certificate_id,
-                reject_reason: self.reject_reason,
-            },
+                certificate_id: self.certificate_id
+                ,
+                reject_reason: self.reject_reason
+                ,
+            }
         )
     }
 }
+

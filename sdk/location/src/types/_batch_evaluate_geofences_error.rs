@@ -3,7 +3,7 @@
 /// <p>Contains error details for each device that failed to evaluate its position against the geofences in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchEvaluateGeofencesError {
+pub struct BatchEvaluateGeofencesError  {
     /// <p>The device associated with the position evaluation error.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchEvaluateGeofencesError {
 }
 impl BatchEvaluateGeofencesError {
     /// <p>The device associated with the position evaluation error.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
     /// <p>Contains details associated to the batch error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<& crate::types::BatchItemError> {
         self.error.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl BatchEvaluateGeofencesErrorBuilder {
     }
     /// <p>The device associated with the position evaluation error.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -60,12 +59,8 @@ impl BatchEvaluateGeofencesErrorBuilder {
         self
     }
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_sample_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.sample_time = input;
-        self
+    pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.sample_time = input; self
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
@@ -74,15 +69,18 @@ impl BatchEvaluateGeofencesErrorBuilder {
     }
     /// <p>Contains details associated to the batch error.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::BatchItemError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`BatchEvaluateGeofencesError`](crate::types::BatchEvaluateGeofencesError).
     pub fn build(self) -> crate::types::BatchEvaluateGeofencesError {
         crate::types::BatchEvaluateGeofencesError {
-            device_id: self.device_id,
-            sample_time: self.sample_time,
-            error: self.error,
+            device_id: self.device_id
+            ,
+            sample_time: self.sample_time
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

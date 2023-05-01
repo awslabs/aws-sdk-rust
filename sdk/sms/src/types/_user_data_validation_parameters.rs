@@ -3,7 +3,7 @@
 /// <p>Contains validation parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserDataValidationParameters {
+pub struct UserDataValidationParameters  {
     /// <p>The location of the validation script.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::Source>,
@@ -13,11 +13,11 @@ pub struct UserDataValidationParameters {
 }
 impl UserDataValidationParameters {
     /// <p>The location of the validation script.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>The type of validation script.</p>
-    pub fn script_type(&self) -> std::option::Option<&crate::types::ScriptType> {
+    pub fn script_type(&self) -> std::option::Option<& crate::types::ScriptType> {
         self.script_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UserDataValidationParametersBuilder {
     }
     /// <p>The location of the validation script.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The type of validation script.</p>
     pub fn script_type(mut self, input: crate::types::ScriptType) -> Self {
@@ -53,14 +52,16 @@ impl UserDataValidationParametersBuilder {
     }
     /// <p>The type of validation script.</p>
     pub fn set_script_type(mut self, input: std::option::Option<crate::types::ScriptType>) -> Self {
-        self.script_type = input;
-        self
+        self.script_type = input; self
     }
     /// Consumes the builder and constructs a [`UserDataValidationParameters`](crate::types::UserDataValidationParameters).
     pub fn build(self) -> crate::types::UserDataValidationParameters {
         crate::types::UserDataValidationParameters {
-            source: self.source,
-            script_type: self.script_type,
+            source: self.source
+            ,
+            script_type: self.script_type
+            ,
         }
     }
 }
+

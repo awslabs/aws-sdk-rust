@@ -3,7 +3,7 @@
 /// <p>Describes a tag for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagDescription {
+pub struct TagDescription  {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct TagDescription {
 }
 impl TagDescription {
     /// <p>The name of the group.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
@@ -67,8 +67,7 @@ impl TagDescriptionBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl TagDescriptionBuilder {
     }
     /// <p>The type of resource. The only supported value is <code>auto-scaling-group</code>.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The tag key.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl TagDescriptionBuilder {
     }
     /// <p>The tag key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl TagDescriptionBuilder {
     }
     /// <p>The tag value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     pub fn propagate_at_launch(mut self, input: bool) -> Self {
@@ -107,17 +103,22 @@ impl TagDescriptionBuilder {
     }
     /// <p>Determines whether the tag is added to new instances as they are launched in the group.</p>
     pub fn set_propagate_at_launch(mut self, input: std::option::Option<bool>) -> Self {
-        self.propagate_at_launch = input;
-        self
+        self.propagate_at_launch = input; self
     }
     /// Consumes the builder and constructs a [`TagDescription`](crate::types::TagDescription).
     pub fn build(self) -> crate::types::TagDescription {
         crate::types::TagDescription {
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            key: self.key,
-            value: self.value,
-            propagate_at_launch: self.propagate_at_launch,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            key: self.key
+            ,
+            value: self.value
+            ,
+            propagate_at_launch: self.propagate_at_launch
+            ,
         }
     }
 }
+

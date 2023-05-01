@@ -3,7 +3,7 @@
 /// <p>Information about a Sidewalk account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkAccountInfoWithFingerprint {
+pub struct SidewalkAccountInfoWithFingerprint  {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
     pub amazon_id: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct SidewalkAccountInfoWithFingerprint {
 }
 impl SidewalkAccountInfoWithFingerprint {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> std::option::Option<& str> {
         self.amazon_id.as_deref()
     }
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
-    pub fn fingerprint(&self) -> std::option::Option<&str> {
+    pub fn fingerprint(&self) -> std::option::Option<& str> {
         self.fingerprint.as_deref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
-impl std::fmt::Debug for SidewalkAccountInfoWithFingerprint {
+impl  std::fmt::Debug for SidewalkAccountInfoWithFingerprint  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkAccountInfoWithFingerprint");
         formatter.field("amazon_id", &self.amazon_id);
@@ -60,8 +60,7 @@ impl SidewalkAccountInfoWithFingerprintBuilder {
     }
     /// <p>The Sidewalk Amazon ID.</p>
     pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amazon_id = input;
-        self
+        self.amazon_id = input; self
     }
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
     pub fn fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +69,7 @@ impl SidewalkAccountInfoWithFingerprintBuilder {
     }
     /// <p>The fingerprint of the Sidewalk application server private key.</p>
     pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fingerprint = input;
-        self
+        self.fingerprint = input; self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +78,17 @@ impl SidewalkAccountInfoWithFingerprintBuilder {
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`SidewalkAccountInfoWithFingerprint`](crate::types::SidewalkAccountInfoWithFingerprint).
     pub fn build(self) -> crate::types::SidewalkAccountInfoWithFingerprint {
         crate::types::SidewalkAccountInfoWithFingerprint {
-            amazon_id: self.amazon_id,
-            fingerprint: self.fingerprint,
-            arn: self.arn,
+            amazon_id: self.amazon_id
+            ,
+            fingerprint: self.fingerprint
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
@@ -101,3 +101,4 @@ impl std::fmt::Debug for SidewalkAccountInfoWithFingerprintBuilder {
         formatter.finish()
     }
 }
+

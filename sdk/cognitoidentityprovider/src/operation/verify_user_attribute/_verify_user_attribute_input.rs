@@ -3,7 +3,7 @@
 /// <p>Represents the request to verify user attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VerifyUserAttributeInput {
+pub struct VerifyUserAttributeInput  {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct VerifyUserAttributeInput {
 }
 impl VerifyUserAttributeInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The verification code in the request to verify user attributes.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyUserAttributeInput {
+impl  std::fmt::Debug for VerifyUserAttributeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyUserAttributeInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -39,10 +39,8 @@ impl std::fmt::Debug for VerifyUserAttributeInput {
 }
 impl VerifyUserAttributeInput {
     /// Creates a new builder-style object to manufacture [`VerifyUserAttributeInput`](crate::operation::verify_user_attribute::VerifyUserAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder {
-        crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder {
+        crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder::default()
     }
 }
 
@@ -62,8 +60,7 @@ impl VerifyUserAttributeInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
     pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +69,7 @@ impl VerifyUserAttributeInputBuilder {
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The verification code in the request to verify user attributes.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,22 +78,19 @@ impl VerifyUserAttributeInputBuilder {
     }
     /// <p>The verification code in the request to verify user attributes.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// Consumes the builder and constructs a [`VerifyUserAttributeInput`](crate::operation::verify_user_attribute::VerifyUserAttributeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::verify_user_attribute::VerifyUserAttributeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::verify_user_attribute::VerifyUserAttributeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::verify_user_attribute::VerifyUserAttributeInput {
-                access_token: self.access_token,
-                attribute_name: self.attribute_name,
-                code: self.code,
-            },
+                access_token: self.access_token
+                ,
+                attribute_name: self.attribute_name
+                ,
+                code: self.code
+                ,
+            }
         )
     }
 }
@@ -110,3 +103,4 @@ impl std::fmt::Debug for VerifyUserAttributeInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypedLinkFacetAttributesOutput {
+pub struct ListTypedLinkFacetAttributesOutput  {
     /// <p>An ordered set of attributes associate with the typed link.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
@@ -13,22 +13,22 @@ pub struct ListTypedLinkFacetAttributesOutput {
 }
 impl ListTypedLinkFacetAttributesOutput {
     /// <p>An ordered set of attributes associate with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::TypedLinkAttributeDefinition]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::types::TypedLinkAttributeDefinition]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTypedLinkFacetAttributesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTypedLinkFacetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetAttributesOutput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput).
-    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesOutputBuilder{
+    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesOutputBuilder {
         crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl ListTypedLinkFacetAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListTypedLinkFacetAttributesOutputBuilder {
-    pub(crate) attributes:
-        std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
+    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListTypedLinkFacetAttributesOutputBuilder {
     /// <p>An ordered set of attributes associate with the typed link.</p>
     pub fn attributes(mut self, input: crate::types::TypedLinkAttributeDefinition) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = Some(v);
-        self
+                        v.push(input);
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>An ordered set of attributes associate with the typed link.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeDefinition>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,27 +64,26 @@ impl ListTypedLinkFacetAttributesOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTypedLinkFacetAttributesOutput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput
-    {
+    pub fn build(self) -> crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput {
         crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput {
-            attributes: self.attributes,
-            next_token: self.next_token,
+            attributes: self.attributes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

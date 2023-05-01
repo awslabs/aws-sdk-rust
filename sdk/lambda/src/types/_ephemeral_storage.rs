@@ -3,7 +3,7 @@
 /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but it can be any whole number between 512 and 10,240 MB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EphemeralStorage {
+pub struct EphemeralStorage  {
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
@@ -35,11 +35,14 @@ impl EphemeralStorageBuilder {
     }
     /// <p>The size of the function's <code>/tmp</code> directory.</p>
     pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// Consumes the builder and constructs a [`EphemeralStorage`](crate::types::EphemeralStorage).
     pub fn build(self) -> crate::types::EphemeralStorage {
-        crate::types::EphemeralStorage { size: self.size }
+        crate::types::EphemeralStorage {
+            size: self.size
+            ,
+        }
     }
 }
+

@@ -4,79 +4,57 @@ pub use crate::operation::create_channel_flow::_create_channel_flow_output::Crea
 pub use crate::operation::create_channel_flow::_create_channel_flow_input::CreateChannelFlowInputBuilder;
 
 /// Fluent builder constructing a request to `CreateChannelFlow`.
-///
-/// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions that perform actions on chat messages, such as stripping out profanity. You can associate channel flows with channels, and the processors in the channel flow then take action on all messages sent to that channel. This is a developer API.</p>
-/// <p>Channel flows process the following items:</p>
-/// <ol>
-/// <li> <p>New and updated messages</p> </li>
-/// <li> <p>Persistent and non-persistent messages</p> </li>
-/// <li> <p>The Standard message type</p> </li>
-/// </ol> <note>
-/// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p>
+/// 
+/// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions that perform actions on chat messages, such as stripping out profanity. You can associate channel flows with channels, and the processors in the channel flow then take action on all messages sent to that channel. This is a developer API.</p> 
+/// <p>Channel flows process the following items:</p> 
+/// <ol> 
+/// <li> <p>New and updated messages</p> </li> 
+/// <li> <p>Persistent and non-persistent messages</p> </li> 
+/// <li> <p>The Standard message type</p> </li> 
+/// </ol> <note> 
+/// <p>Channel flows don't process Control or System messages. For more information about the message types provided by Chime SDK Messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message types</a> in the <i>Amazon Chime developer guide</i>.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelFlowFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder,
-}
-impl CreateChannelFlowFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder
+            }
+impl CreateChannelFlowFluentBuilder  {
     /// Creates a new `CreateChannelFlow`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_channel_flow::CreateChannelFlow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_flow::CreateChannelFlowError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_channel_flow::CreateChannelFlowOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_channel_flow::CreateChannelFlowError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_channel_flow::CreateChannelFlow, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_channel_flow::CreateChannelFlowError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_channel_flow::CreateChannelFlowOutput, aws_smithy_http::result::SdkError<crate::operation::create_channel_flow::CreateChannelFlowError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ARN of the channel flow request.</p>
     pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
@@ -97,10 +75,7 @@ impl CreateChannelFlowFluentBuilder {
         self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn set_processors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
+    pub fn set_processors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Processor>>) -> Self {
         self.inner = self.inner.set_processors(input);
         self
     }
@@ -124,10 +99,7 @@ impl CreateChannelFlowFluentBuilder {
         self
     }
     /// <p>The tags for the creation request.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -137,11 +109,9 @@ impl CreateChannelFlowFluentBuilder {
         self
     }
     /// <p>The client token for the request. An Idempotency token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
 }
+

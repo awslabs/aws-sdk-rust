@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile properties required when using Veeva. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VeevaConnectorProfileProperties {
+pub struct VeevaConnectorProfileProperties  {
     /// <p> The location of the Veeva resource. </p>
     #[doc(hidden)]
     pub instance_url: std::option::Option<std::string::String>,
 }
 impl VeevaConnectorProfileProperties {
     /// <p> The location of the Veeva resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<&str> {
+    pub fn instance_url(&self) -> std::option::Option<& str> {
         self.instance_url.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl VeevaConnectorProfilePropertiesBuilder {
     }
     /// <p> The location of the Veeva resource. </p>
     pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_url = input;
-        self
+        self.instance_url = input; self
     }
     /// Consumes the builder and constructs a [`VeevaConnectorProfileProperties`](crate::types::VeevaConnectorProfileProperties).
     pub fn build(self) -> crate::types::VeevaConnectorProfileProperties {
         crate::types::VeevaConnectorProfileProperties {
-            instance_url: self.instance_url,
+            instance_url: self.instance_url
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkInsightsAnalysisOutput {
+pub struct DeleteNetworkInsightsAnalysisOutput  {
     /// <p>The ID of the network insights analysis.</p>
     #[doc(hidden)]
     pub network_insights_analysis_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DeleteNetworkInsightsAnalysisOutput {
 }
 impl DeleteNetworkInsightsAnalysisOutput {
     /// <p>The ID of the network insights analysis.</p>
-    pub fn network_insights_analysis_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_analysis_id(&self) -> std::option::Option<& str> {
         self.network_insights_analysis_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteNetworkInsightsAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteNetworkInsightsAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAnalysisOutput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput).
-    pub fn builder() -> crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisOutputBuilder {
         crate::operation::delete_network_insights_analysis::builders::DeleteNetworkInsightsAnalysisOutputBuilder::default()
     }
 }
@@ -40,30 +40,25 @@ impl DeleteNetworkInsightsAnalysisOutputBuilder {
         self
     }
     /// <p>The ID of the network insights analysis.</p>
-    pub fn set_network_insights_analysis_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_insights_analysis_id = input;
-        self
+    pub fn set_network_insights_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_insights_analysis_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsAnalysisOutput`](crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput
-    {
+    pub fn build(self) -> crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput {
         crate::operation::delete_network_insights_analysis::DeleteNetworkInsightsAnalysisOutput {
-            network_insights_analysis_id: self.network_insights_analysis_id,
+            network_insights_analysis_id: self.network_insights_analysis_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The database credentials to connect to a database on an RDS DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDatabaseCredentials {
+pub struct RdsDatabaseCredentials  {
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RdsDatabaseCredentials {
 }
 impl RdsDatabaseCredentials {
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RdsDatabaseCredentialsBuilder {
     }
     /// <p>The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl RdsDatabaseCredentialsBuilder {
     }
     /// <p>The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`RdsDatabaseCredentials`](crate::types::RdsDatabaseCredentials).
     pub fn build(self) -> crate::types::RdsDatabaseCredentials {
         crate::types::RdsDatabaseCredentials {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
+

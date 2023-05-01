@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountPermissionsInput {
+pub struct ListAccountPermissionsInput  {
     /// <p>The service scan type to check permissions for.</p>
     #[doc(hidden)]
     pub service: std::option::Option<crate::types::Service>,
@@ -15,7 +15,7 @@ pub struct ListAccountPermissionsInput {
 }
 impl ListAccountPermissionsInput {
     /// <p>The service scan type to check permissions for.</p>
-    pub fn service(&self) -> std::option::Option<&crate::types::Service> {
+    pub fn service(&self) -> std::option::Option<& crate::types::Service> {
         self.service.as_ref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -23,15 +23,13 @@ impl ListAccountPermissionsInput {
         self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListAccountPermissionsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountPermissionsInput`](crate::operation::list_account_permissions::ListAccountPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_permissions::builders::ListAccountPermissionsInputBuilder {
         crate::operation::list_account_permissions::builders::ListAccountPermissionsInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListAccountPermissionsInputBuilder {
     }
     /// <p>The service scan type to check permissions for.</p>
     pub fn set_service(mut self, input: std::option::Option<crate::types::Service>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +59,7 @@ impl ListAccountPermissionsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl ListAccountPermissionsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListAccountPermissionsInput`](crate::operation::list_account_permissions::ListAccountPermissionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_account_permissions::ListAccountPermissionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_account_permissions::ListAccountPermissionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_account_permissions::ListAccountPermissionsInput {
-                service: self.service,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                service: self.service
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

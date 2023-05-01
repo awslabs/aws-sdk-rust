@@ -3,14 +3,14 @@
 /// <p>The action that WAF takes when a web request matches all conditions in the rule, such as allow, block, or count the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsWafRegionalWebAclRulesListActionDetails {
+pub struct AwsWafRegionalWebAclRulesListActionDetails  {
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListActionDetails {
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl AwsWafRegionalWebAclRulesListActionDetailsBuilder {
     }
     /// <p>For actions that are associated with a rule, the action that WAF takes when a web request matches all conditions in a rule. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListActionDetails`](crate::types::AwsWafRegionalWebAclRulesListActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListActionDetails {
         crate::types::AwsWafRegionalWebAclRulesListActionDetails {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

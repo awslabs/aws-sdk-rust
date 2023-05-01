@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImageOutput {
+pub struct CreateImageOutput  {
     /// <p>The ARN of the image.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateImageOutput {
 }
 impl CreateImageOutput {
     /// <p>The ARN of the image.</p>
-    pub fn image_arn(&self) -> std::option::Option<&str> {
+    pub fn image_arn(&self) -> std::option::Option<& str> {
         self.image_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateImageOutput`](crate::operation::create_image::CreateImageOutput).
     pub fn builder() -> crate::operation::create_image::builders::CreateImageOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateImageOutputBuilder {
     }
     /// <p>The ARN of the image.</p>
     pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_arn = input;
-        self
+        self.image_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateImageOutput`](crate::operation::create_image::CreateImageOutput).
     pub fn build(self) -> crate::operation::create_image::CreateImageOutput {
         crate::operation::create_image::CreateImageOutput {
-            image_arn: self.image_arn,
+            image_arn: self.image_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

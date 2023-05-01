@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionBundlesOutput {
+pub struct GetDistributionBundlesOutput  {
     /// <p>An object that describes a distribution bundle.</p>
     #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::types::DistributionBundle>>,
@@ -10,20 +10,18 @@ pub struct GetDistributionBundlesOutput {
 }
 impl GetDistributionBundlesOutput {
     /// <p>An object that describes a distribution bundle.</p>
-    pub fn bundles(&self) -> std::option::Option<&[crate::types::DistributionBundle]> {
+    pub fn bundles(&self) -> std::option::Option<& [crate::types::DistributionBundle]> {
         self.bundles.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDistributionBundlesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDistributionBundlesOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionBundlesOutput`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distribution_bundles::builders::GetDistributionBundlesOutputBuilder {
         crate::operation::get_distribution_bundles::builders::GetDistributionBundlesOutputBuilder::default()
     }
 }
@@ -43,32 +41,30 @@ impl GetDistributionBundlesOutputBuilder {
     /// <p>An object that describes a distribution bundle.</p>
     pub fn bundles(mut self, input: crate::types::DistributionBundle) -> Self {
         let mut v = self.bundles.unwrap_or_default();
-        v.push(input);
-        self.bundles = Some(v);
-        self
+                        v.push(input);
+                        self.bundles = Some(v);
+                        self
     }
     /// <p>An object that describes a distribution bundle.</p>
-    pub fn set_bundles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DistributionBundle>>,
-    ) -> Self {
-        self.bundles = input;
-        self
+    pub fn set_bundles(mut self, input: std::option::Option<std::vec::Vec<crate::types::DistributionBundle>>) -> Self {
+        self.bundles = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDistributionBundlesOutput`](crate::operation::get_distribution_bundles::GetDistributionBundlesOutput).
     pub fn build(self) -> crate::operation::get_distribution_bundles::GetDistributionBundlesOutput {
         crate::operation::get_distribution_bundles::GetDistributionBundlesOutput {
-            bundles: self.bundles,
+            bundles: self.bundles
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

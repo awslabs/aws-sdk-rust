@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureLogsOutput {
+pub struct ConfigureLogsOutput  {
     /// The ARN of the PackagingGroup.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -23,48 +23,44 @@ pub struct ConfigureLogsOutput {
     pub id: std::option::Option<std::string::String>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl ConfigureLogsOutput {
     /// The ARN of the PackagingGroup.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::types::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::types::Authorization> {
         self.authorization.as_ref()
     }
     /// The time the PackagingGroup was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::types::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::types::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// The ID of the PackagingGroup.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ConfigureLogsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ConfigureLogsOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsOutput`](crate::operation::configure_logs::ConfigureLogsOutput).
     pub fn builder() -> crate::operation::configure_logs::builders::ConfigureLogsOutputBuilder {
@@ -82,8 +78,7 @@ pub struct ConfigureLogsOutputBuilder {
     pub(crate) domain_name: std::option::Option<std::string::String>,
     pub(crate) egress_access_logs: std::option::Option<crate::types::EgressAccessLogs>,
     pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl ConfigureLogsOutputBuilder {
@@ -94,8 +89,7 @@ impl ConfigureLogsOutputBuilder {
     }
     /// The ARN of the PackagingGroup.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// CDN Authorization credentials
     pub fn authorization(mut self, input: crate::types::Authorization) -> Self {
@@ -103,12 +97,8 @@ impl ConfigureLogsOutputBuilder {
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: std::option::Option<crate::types::Authorization>,
-    ) -> Self {
-        self.authorization = input;
-        self
+    pub fn set_authorization(mut self, input: std::option::Option<crate::types::Authorization>) -> Self {
+        self.authorization = input; self
     }
     /// The time the PackagingGroup was created.
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +107,7 @@ impl ConfigureLogsOutputBuilder {
     }
     /// The time the PackagingGroup was created.
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +116,7 @@ impl ConfigureLogsOutputBuilder {
     }
     /// The fully qualified domain name for Assets in the PackagingGroup.
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// Configure egress access logging.
     pub fn egress_access_logs(mut self, input: crate::types::EgressAccessLogs) -> Self {
@@ -136,12 +124,8 @@ impl ConfigureLogsOutputBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(
-        mut self,
-        input: std::option::Option<crate::types::EgressAccessLogs>,
-    ) -> Self {
-        self.egress_access_logs = input;
-        self
+    pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::types::EgressAccessLogs>) -> Self {
+        self.egress_access_logs = input; self
     }
     /// The ID of the PackagingGroup.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,54 +134,51 @@ impl ConfigureLogsOutputBuilder {
     }
     /// The ID of the PackagingGroup.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ConfigureLogsOutput`](crate::operation::configure_logs::ConfigureLogsOutput).
     pub fn build(self) -> crate::operation::configure_logs::ConfigureLogsOutput {
         crate::operation::configure_logs::ConfigureLogsOutput {
-            arn: self.arn,
-            authorization: self.authorization,
-            created_at: self.created_at,
-            domain_name: self.domain_name,
-            egress_access_logs: self.egress_access_logs,
-            id: self.id,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            authorization: self.authorization
+            ,
+            created_at: self.created_at
+            ,
+            domain_name: self.domain_name
+            ,
+            egress_access_logs: self.egress_access_logs
+            ,
+            id: self.id
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

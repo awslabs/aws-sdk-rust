@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLegalHoldInput {
+pub struct CreateLegalHoldInput  {
     /// <p>This is the string title of the legal hold.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -17,37 +17,31 @@ pub struct CreateLegalHoldInput {
     pub recovery_point_selection: std::option::Option<crate::types::RecoveryPointSelection>,
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLegalHoldInput {
     /// <p>This is the string title of the legal hold.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>This is the string description of the legal hold.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<&str> {
+    pub fn idempotency_token(&self) -> std::option::Option<& str> {
         self.idempotency_token.as_deref()
     }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
-    pub fn recovery_point_selection(
-        &self,
-    ) -> std::option::Option<&crate::types::RecoveryPointSelection> {
+    pub fn recovery_point_selection(&self) -> std::option::Option<& crate::types::RecoveryPointSelection> {
         self.recovery_point_selection.as_ref()
     }
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateLegalHoldInput {
+impl  std::fmt::Debug for CreateLegalHoldInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLegalHoldInput");
         formatter.field("title", &self.title);
@@ -73,8 +67,7 @@ pub struct CreateLegalHoldInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) idempotency_token: std::option::Option<std::string::String>,
     pub(crate) recovery_point_selection: std::option::Option<crate::types::RecoveryPointSelection>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateLegalHoldInputBuilder {
     /// <p>This is the string title of the legal hold.</p>
@@ -84,8 +77,7 @@ impl CreateLegalHoldInputBuilder {
     }
     /// <p>This is the string title of the legal hold.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>This is the string description of the legal hold.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +86,7 @@ impl CreateLegalHoldInputBuilder {
     }
     /// <p>This is the string description of the legal hold.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,12 +94,8 @@ impl CreateLegalHoldInputBuilder {
         self
     }
     /// <p>This is a user-chosen string used to distinguish between otherwise identical calls. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.idempotency_token = input;
-        self
+    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.idempotency_token = input; self
     }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
     pub fn recovery_point_selection(mut self, input: crate::types::RecoveryPointSelection) -> Self {
@@ -116,52 +103,40 @@ impl CreateLegalHoldInputBuilder {
         self
     }
     /// <p>This specifies criteria to assign a set of resources, such as resource types or backup vaults.</p>
-    pub fn set_recovery_point_selection(
-        mut self,
-        input: std::option::Option<crate::types::RecoveryPointSelection>,
-    ) -> Self {
-        self.recovery_point_selection = input;
-        self
+    pub fn set_recovery_point_selection(mut self, input: std::option::Option<crate::types::RecoveryPointSelection>) -> Self {
+        self.recovery_point_selection = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Optional tags to include. A tag is a key-value pair you can use to manage, filter, and search for your resources. Allowed characters include UTF-8 letters, numbers, spaces, and the following characters: + - = . _ : /. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateLegalHoldInput`](crate::operation::create_legal_hold::CreateLegalHoldInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_legal_hold::CreateLegalHoldInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_legal_hold::CreateLegalHoldInput {
-            title: self.title,
-            description: self.description,
-            idempotency_token: self.idempotency_token,
-            recovery_point_selection: self.recovery_point_selection,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_legal_hold::CreateLegalHoldInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_legal_hold::CreateLegalHoldInput {
+                title: self.title
+                ,
+                description: self.description
+                ,
+                idempotency_token: self.idempotency_token
+                ,
+                recovery_point_selection: self.recovery_point_selection
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateLegalHoldInputBuilder {
@@ -175,3 +150,4 @@ impl std::fmt::Debug for CreateLegalHoldInputBuilder {
         formatter.finish()
     }
 }
+

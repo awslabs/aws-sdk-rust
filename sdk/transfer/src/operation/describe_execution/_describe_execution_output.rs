@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExecutionOutput {
+pub struct DescribeExecutionOutput  {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct DescribeExecutionOutput {
 }
 impl DescribeExecutionOutput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
-    pub fn execution(&self) -> std::option::Option<&crate::types::DescribedExecution> {
+    pub fn execution(&self) -> std::option::Option<& crate::types::DescribedExecution> {
         self.execution.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeExecutionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder {
         crate::operation::describe_execution::builders::DescribeExecutionOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl DescribeExecutionOutputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
     pub fn execution(mut self, input: crate::types::DescribedExecution) -> Self {
@@ -59,28 +57,27 @@ impl DescribeExecutionOutputBuilder {
         self
     }
     /// <p>The structure that contains the details of the workflow' execution.</p>
-    pub fn set_execution(
-        mut self,
-        input: std::option::Option<crate::types::DescribedExecution>,
-    ) -> Self {
-        self.execution = input;
-        self
+    pub fn set_execution(mut self, input: std::option::Option<crate::types::DescribedExecution>) -> Self {
+        self.execution = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput).
     pub fn build(self) -> crate::operation::describe_execution::DescribeExecutionOutput {
         crate::operation::describe_execution::DescribeExecutionOutput {
-            workflow_id: self.workflow_id,
-            execution: self.execution,
+            workflow_id: self.workflow_id
+            ,
+            execution: self.execution
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

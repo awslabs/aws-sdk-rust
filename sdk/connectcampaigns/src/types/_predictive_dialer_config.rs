@@ -3,7 +3,7 @@
 /// Predictive Dialer config
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PredictiveDialerConfig {
+pub struct PredictiveDialerConfig  {
     /// The bandwidth allocation of a queue resource.
     #[doc(hidden)]
     pub bandwidth_allocation: std::option::Option<f64>,
@@ -35,13 +35,14 @@ impl PredictiveDialerConfigBuilder {
     }
     /// The bandwidth allocation of a queue resource.
     pub fn set_bandwidth_allocation(mut self, input: std::option::Option<f64>) -> Self {
-        self.bandwidth_allocation = input;
-        self
+        self.bandwidth_allocation = input; self
     }
     /// Consumes the builder and constructs a [`PredictiveDialerConfig`](crate::types::PredictiveDialerConfig).
     pub fn build(self) -> crate::types::PredictiveDialerConfig {
         crate::types::PredictiveDialerConfig {
-            bandwidth_allocation: self.bandwidth_allocation,
+            bandwidth_allocation: self.bandwidth_allocation
+            ,
         }
     }
 }
+

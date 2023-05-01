@@ -3,7 +3,7 @@
 /// <p>The entity details. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Entity {
+pub struct Entity  {
     /// <p>The entity type.</p>
     #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct Entity {
 }
 impl Entity {
     /// <p>The entity type.</p>
-    pub fn entity_type(&self) -> std::option::Option<&str> {
+    pub fn entity_type(&self) -> std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
-impl std::fmt::Debug for Entity {
+impl  std::fmt::Debug for Entity  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Entity");
         formatter.field("entity_type", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl EntityBuilder {
     }
     /// <p>The entity type.</p>
     pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_type = input;
-        self
+        self.entity_type = input; self
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl EntityBuilder {
     }
     /// <p>The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>, which is areserved string literal.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// Consumes the builder and constructs a [`Entity`](crate::types::Entity).
     pub fn build(self) -> crate::types::Entity {
         crate::types::Entity {
-            entity_type: self.entity_type,
-            entity_id: self.entity_id,
+            entity_type: self.entity_type
+            ,
+            entity_id: self.entity_id
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for EntityBuilder {
         formatter.finish()
     }
 }
+

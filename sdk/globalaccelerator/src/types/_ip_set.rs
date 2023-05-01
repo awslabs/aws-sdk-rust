@@ -3,7 +3,7 @@
 /// <p>A complex type for the set of IP addresses for an accelerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpSet {
+pub struct IpSet  {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
     #[doc(hidden)]
@@ -18,15 +18,15 @@ pub struct IpSet {
 impl IpSet {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
-    pub fn ip_family(&self) -> std::option::Option<&str> {
+    pub fn ip_family(&self) -> std::option::Option<& str> {
         self.ip_family.as_deref()
     }
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
-    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.ip_addresses.as_deref()
     }
     /// <p>The types of IP addresses included in this IP set. </p>
-    pub fn ip_address_family(&self) -> std::option::Option<&crate::types::IpAddressFamily> {
+    pub fn ip_address_family(&self) -> std::option::Option<& crate::types::IpAddressFamily> {
         self.ip_address_family.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl IpSetBuilder {
     /// <p>IpFamily is deprecated and has been replaced by IpAddressFamily.</p>
     #[deprecated(note = "IpFamily has been replaced by IpAddressFamily")]
     pub fn set_ip_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_family = input;
-        self
+        self.ip_family = input; self
     }
     /// Appends an item to `ip_addresses`.
     ///
@@ -65,17 +64,13 @@ impl IpSetBuilder {
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
     pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.ip_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.ip_addresses = Some(v);
+                        self
     }
     /// <p>The array of IP addresses in the IP address set. An IP address set can have a maximum of two IP addresses.</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ip_addresses = input; self
     }
     /// <p>The types of IP addresses included in this IP set. </p>
     pub fn ip_address_family(mut self, input: crate::types::IpAddressFamily) -> Self {
@@ -83,19 +78,19 @@ impl IpSetBuilder {
         self
     }
     /// <p>The types of IP addresses included in this IP set. </p>
-    pub fn set_ip_address_family(
-        mut self,
-        input: std::option::Option<crate::types::IpAddressFamily>,
-    ) -> Self {
-        self.ip_address_family = input;
-        self
+    pub fn set_ip_address_family(mut self, input: std::option::Option<crate::types::IpAddressFamily>) -> Self {
+        self.ip_address_family = input; self
     }
     /// Consumes the builder and constructs a [`IpSet`](crate::types::IpSet).
     pub fn build(self) -> crate::types::IpSet {
         crate::types::IpSet {
-            ip_family: self.ip_family,
-            ip_addresses: self.ip_addresses,
-            ip_address_family: self.ip_address_family,
+            ip_family: self.ip_family
+            ,
+            ip_addresses: self.ip_addresses
+            ,
+            ip_address_family: self.ip_address_family
+            ,
         }
     }
 }
+

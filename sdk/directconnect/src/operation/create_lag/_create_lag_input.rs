@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLagInput {
+pub struct CreateLagInput  {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     #[doc(hidden)]
     pub number_of_connections: std::option::Option<i32>,
@@ -27,8 +27,8 @@ pub struct CreateLagInput {
     /// <p>The name of the service provider associated with the LAG.</p>
     #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
-    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note> 
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
     /// </note>
     #[doc(hidden)]
     pub request_mac_sec: std::option::Option<bool>,
@@ -39,35 +39,35 @@ impl CreateLagInput {
         self.number_of_connections
     }
     /// <p>The location for the LAG.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn connections_bandwidth(&self) -> std::option::Option<&str> {
+    pub fn connections_bandwidth(&self) -> std::option::Option<& str> {
         self.connections_bandwidth.as_deref()
     }
     /// <p>The name of the LAG.</p>
-    pub fn lag_name(&self) -> std::option::Option<&str> {
+    pub fn lag_name(&self) -> std::option::Option<& str> {
         self.lag_name.as_deref()
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The tags to associate with the LAG.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn child_connection_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn child_connection_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.child_connection_tags.as_deref()
     }
     /// <p>The name of the service provider associated with the LAG.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
-    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note> 
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
     /// </note>
     pub fn request_mac_sec(&self) -> std::option::Option<bool> {
         self.request_mac_sec
@@ -102,8 +102,7 @@ impl CreateLagInputBuilder {
     }
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>
     pub fn set_number_of_connections(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_connections = input;
-        self
+        self.number_of_connections = input; self
     }
     /// <p>The location for the LAG.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +111,7 @@ impl CreateLagInputBuilder {
     }
     /// <p>The location for the LAG.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
     pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,12 +119,8 @@ impl CreateLagInputBuilder {
         self
     }
     /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
-    pub fn set_connections_bandwidth(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connections_bandwidth = input;
-        self
+    pub fn set_connections_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connections_bandwidth = input; self
     }
     /// <p>The name of the LAG.</p>
     pub fn lag_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,8 +129,7 @@ impl CreateLagInputBuilder {
     }
     /// <p>The name of the LAG.</p>
     pub fn set_lag_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lag_name = input;
-        self
+        self.lag_name = input; self
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
     pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,8 +138,7 @@ impl CreateLagInputBuilder {
     }
     /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -155,17 +147,13 @@ impl CreateLagInputBuilder {
     /// <p>The tags to associate with the LAG.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to associate with the LAG.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `child_connection_tags`.
     ///
@@ -174,17 +162,13 @@ impl CreateLagInputBuilder {
     /// <p>The tags to associate with the automtically created LAGs.</p>
     pub fn child_connection_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.child_connection_tags.unwrap_or_default();
-        v.push(input);
-        self.child_connection_tags = Some(v);
-        self
+                        v.push(input);
+                        self.child_connection_tags = Some(v);
+                        self
     }
     /// <p>The tags to associate with the automtically created LAGs.</p>
-    pub fn set_child_connection_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.child_connection_tags = input;
-        self
+    pub fn set_child_connection_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.child_connection_tags = input; self
     }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,40 +177,45 @@ impl CreateLagInputBuilder {
     }
     /// <p>The name of the service provider associated with the LAG.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
-    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note> 
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
     /// </note>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.request_mac_sec = Some(input);
         self
     }
-    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note>
-    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
+    /// <p>Indicates whether the connection will support MAC Security (MACsec).</p> <note> 
+    /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p> 
     /// </note>
     pub fn set_request_mac_sec(mut self, input: std::option::Option<bool>) -> Self {
-        self.request_mac_sec = input;
-        self
+        self.request_mac_sec = input; self
     }
     /// Consumes the builder and constructs a [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_lag::CreateLagInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_lag::CreateLagInput {
-            number_of_connections: self.number_of_connections,
-            location: self.location,
-            connections_bandwidth: self.connections_bandwidth,
-            lag_name: self.lag_name,
-            connection_id: self.connection_id,
-            tags: self.tags,
-            child_connection_tags: self.child_connection_tags,
-            provider_name: self.provider_name,
-            request_mac_sec: self.request_mac_sec,
-        })
+    pub fn build(self) -> Result<crate::operation::create_lag::CreateLagInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_lag::CreateLagInput {
+                number_of_connections: self.number_of_connections
+                ,
+                location: self.location
+                ,
+                connections_bandwidth: self.connections_bandwidth
+                ,
+                lag_name: self.lag_name
+                ,
+                connection_id: self.connection_id
+                ,
+                tags: self.tags
+                ,
+                child_connection_tags: self.child_connection_tags
+                ,
+                provider_name: self.provider_name
+                ,
+                request_mac_sec: self.request_mac_sec
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let slackconnectoroperator = unimplemented!();
 /// match slackconnectoroperator {
@@ -47,22 +47,14 @@
 /// Specifically, when `slackconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SlackConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SlackConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -103,96 +95,75 @@ pub enum SlackConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SlackConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SlackConnectorOperator::Addition,
-            "BETWEEN" => SlackConnectorOperator::Between,
-            "DIVISION" => SlackConnectorOperator::Division,
-            "EQUAL_TO" => SlackConnectorOperator::EqualTo,
-            "GREATER_THAN" => SlackConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => SlackConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => SlackConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => SlackConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => SlackConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SlackConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SlackConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SlackConnectorOperator::Multiplication,
-            "NO_OP" => SlackConnectorOperator::NoOp,
-            "PROJECTION" => SlackConnectorOperator::Projection,
-            "SUBTRACTION" => SlackConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SlackConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SlackConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SlackConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SlackConnectorOperator::ValidateNumeric,
-            other => SlackConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SlackConnectorOperator::Addition,
+"BETWEEN" => SlackConnectorOperator::Between,
+"DIVISION" => SlackConnectorOperator::Division,
+"EQUAL_TO" => SlackConnectorOperator::EqualTo,
+"GREATER_THAN" => SlackConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => SlackConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => SlackConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => SlackConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => SlackConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SlackConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SlackConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SlackConnectorOperator::Multiplication,
+"NO_OP" => SlackConnectorOperator::NoOp,
+"PROJECTION" => SlackConnectorOperator::Projection,
+"SUBTRACTION" => SlackConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SlackConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SlackConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SlackConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SlackConnectorOperator::ValidateNumeric,
+other => SlackConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SlackConnectorOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SlackConnectorOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SlackConnectorOperator::from(s))
+                }
+            }
 impl SlackConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SlackConnectorOperator::Addition => "ADDITION",
-            SlackConnectorOperator::Between => "BETWEEN",
-            SlackConnectorOperator::Division => "DIVISION",
-            SlackConnectorOperator::EqualTo => "EQUAL_TO",
-            SlackConnectorOperator::GreaterThan => "GREATER_THAN",
-            SlackConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            SlackConnectorOperator::LessThan => "LESS_THAN",
-            SlackConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            SlackConnectorOperator::MaskAll => "MASK_ALL",
-            SlackConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SlackConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SlackConnectorOperator::Multiplication => "MULTIPLICATION",
-            SlackConnectorOperator::NoOp => "NO_OP",
-            SlackConnectorOperator::Projection => "PROJECTION",
-            SlackConnectorOperator::Subtraction => "SUBTRACTION",
-            SlackConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SlackConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SlackConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SlackConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SlackConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "DIVISION",
-            "EQUAL_TO",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL_TO",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SlackConnectorOperator::Addition => "ADDITION",
+    SlackConnectorOperator::Between => "BETWEEN",
+    SlackConnectorOperator::Division => "DIVISION",
+    SlackConnectorOperator::EqualTo => "EQUAL_TO",
+    SlackConnectorOperator::GreaterThan => "GREATER_THAN",
+    SlackConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    SlackConnectorOperator::LessThan => "LESS_THAN",
+    SlackConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    SlackConnectorOperator::MaskAll => "MASK_ALL",
+    SlackConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SlackConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SlackConnectorOperator::Multiplication => "MULTIPLICATION",
+    SlackConnectorOperator::NoOp => "NO_OP",
+    SlackConnectorOperator::Projection => "PROJECTION",
+    SlackConnectorOperator::Subtraction => "SUBTRACTION",
+    SlackConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SlackConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SlackConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SlackConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SlackConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SlackConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

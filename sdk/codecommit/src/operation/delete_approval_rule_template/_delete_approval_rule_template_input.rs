@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApprovalRuleTemplateInput {
+pub struct DeleteApprovalRuleTemplateInput  {
     /// <p>The name of the approval rule template to delete.</p>
     #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
 }
 impl DeleteApprovalRuleTemplateInput {
     /// <p>The name of the approval rule template to delete.</p>
-    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
 }
 impl DeleteApprovalRuleTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteApprovalRuleTemplateInput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput).
-    pub fn builder() -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder{
+    pub fn builder() -> crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder {
         crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteApprovalRuleTemplateInputBuilder {
         self
     }
     /// <p>The name of the approval rule template to delete.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.approval_rule_template_name = input;
-        self
+    pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.approval_rule_template_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteApprovalRuleTemplateInput`](crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateInput {
-                approval_rule_template_name: self.approval_rule_template_name,
-            },
+                approval_rule_template_name: self.approval_rule_template_name
+                ,
+            }
         )
     }
 }
+

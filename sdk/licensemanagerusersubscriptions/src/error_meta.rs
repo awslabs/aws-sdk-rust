@@ -18,7 +18,7 @@ pub enum Error {
     /// <p>A parameter is not valid.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -30,104 +30,52 @@ impl std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::operation::associate_user::AssociateUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::associate_user::AssociateUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::associate_user::AssociateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::associate_user::AssociateUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::associate_user::AssociateUserError> for Error {
     fn from(err: crate::operation::associate_user::AssociateUserError) -> Self {
         match err {
-            crate::operation::associate_user::AssociateUserError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::associate_user::AssociateUserError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::associate_user::AssociateUserError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::associate_user::AssociateUserError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::associate_user::AssociateUserError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::associate_user::AssociateUserError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_user::AssociateUserError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_user::AssociateUserError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_user::AssociateUserError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_user::AssociateUserError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_user::AssociateUserError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_user::AssociateUserError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_user::AssociateUserError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError>
-    for Error
-{
-    fn from(
-        err: crate::operation::deregister_identity_provider::DeregisterIdentityProviderError,
-    ) -> Self {
+impl From<crate::operation::deregister_identity_provider::DeregisterIdentityProviderError> for Error {
+    fn from(err: crate::operation::deregister_identity_provider::DeregisterIdentityProviderError) -> Self {
         match err {
             crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::deregister_identity_provider::DeregisterIdentityProviderError::ConflictException(inner) => Error::ConflictException(inner),
@@ -140,34 +88,16 @@ impl From<crate::operation::deregister_identity_provider::DeregisterIdentityProv
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_user::DisassociateUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::disassociate_user::DisassociateUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -185,34 +115,16 @@ impl From<crate::operation::disassociate_user::DisassociateUserError> for Error 
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_identity_providers::ListIdentityProvidersError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_identity_providers::ListIdentityProvidersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -230,98 +142,48 @@ impl From<crate::operation::list_identity_providers::ListIdentityProvidersError>
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_instances::ListInstancesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_instances::ListInstancesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_instances::ListInstancesError> for Error {
     fn from(err: crate::operation::list_instances::ListInstancesError) -> Self {
         match err {
-            crate::operation::list_instances::ListInstancesError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::list_instances::ListInstancesError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::list_instances::ListInstancesError::ServiceQuotaExceededException(
-                inner,
-            ) => Error::ServiceQuotaExceededException(inner),
-            crate::operation::list_instances::ListInstancesError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::list_instances::ListInstancesError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::list_instances::ListInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_instances::ListInstancesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_instances::ListInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_instances::ListInstancesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_instances::ListInstancesError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::list_instances::ListInstancesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_instances::ListInstancesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_instances::ListInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_product_subscriptions::ListProductSubscriptionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_product_subscriptions::ListProductSubscriptionsError> for Error {
-    fn from(
-        err: crate::operation::list_product_subscriptions::ListProductSubscriptionsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_product_subscriptions::ListProductSubscriptionsError) -> Self {
         match err {
             crate::operation::list_product_subscriptions::ListProductSubscriptionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_product_subscriptions::ListProductSubscriptionsError::ConflictException(inner) => Error::ConflictException(inner),
@@ -334,34 +196,16 @@ impl From<crate::operation::list_product_subscriptions::ListProductSubscriptions
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_user_associations::ListUserAssociationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_user_associations::ListUserAssociationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -379,41 +223,21 @@ impl From<crate::operation::list_user_associations::ListUserAssociationsError> f
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::register_identity_provider::RegisterIdentityProviderError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_identity_provider::RegisterIdentityProviderError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::register_identity_provider::RegisterIdentityProviderError> for Error {
-    fn from(
-        err: crate::operation::register_identity_provider::RegisterIdentityProviderError,
-    ) -> Self {
+    fn from(err: crate::operation::register_identity_provider::RegisterIdentityProviderError) -> Self {
         match err {
             crate::operation::register_identity_provider::RegisterIdentityProviderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::register_identity_provider::RegisterIdentityProviderError::ConflictException(inner) => Error::ConflictException(inner),
@@ -426,41 +250,21 @@ impl From<crate::operation::register_identity_provider::RegisterIdentityProvider
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::start_product_subscription::StartProductSubscriptionError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_product_subscription::StartProductSubscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::start_product_subscription::StartProductSubscriptionError> for Error {
-    fn from(
-        err: crate::operation::start_product_subscription::StartProductSubscriptionError,
-    ) -> Self {
+    fn from(err: crate::operation::start_product_subscription::StartProductSubscriptionError) -> Self {
         match err {
             crate::operation::start_product_subscription::StartProductSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_product_subscription::StartProductSubscriptionError::ConflictException(inner) => Error::ConflictException(inner),
@@ -473,41 +277,21 @@ impl From<crate::operation::start_product_subscription::StartProductSubscription
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::stop_product_subscription::StopProductSubscriptionError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::stop_product_subscription::StopProductSubscriptionError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::stop_product_subscription::StopProductSubscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::stop_product_subscription::StopProductSubscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::stop_product_subscription::StopProductSubscriptionError> for Error {
-    fn from(
-        err: crate::operation::stop_product_subscription::StopProductSubscriptionError,
-    ) -> Self {
+    fn from(err: crate::operation::stop_product_subscription::StopProductSubscriptionError) -> Self {
         match err {
             crate::operation::stop_product_subscription::StopProductSubscriptionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::stop_product_subscription::StopProductSubscriptionError::ConflictException(inner) => Error::ConflictException(inner),
@@ -533,12 +317,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_identity
         }
     }
 }
-impl From<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError,
-    ) -> Self {
+impl From<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError> for Error {
+    fn from(err: crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError) -> Self {
         match err {
             crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -563,3 +343,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachSecurityProfileInput {
+pub struct AttachSecurityProfileInput  {
     /// <p>The security profile that is attached.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct AttachSecurityProfileInput {
 }
 impl AttachSecurityProfileInput {
     /// <p>The security profile that is attached.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    pub fn security_profile_target_arn(&self) -> std::option::Option<&str> {
+    pub fn security_profile_target_arn(&self) -> std::option::Option<& str> {
         self.security_profile_target_arn.as_deref()
     }
 }
 impl AttachSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
-    pub fn builder(
-    ) -> crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder {
         crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl AttachSecurityProfileInputBuilder {
         self
     }
     /// <p>The security profile that is attached.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_profile_name = input;
-        self
+    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_profile_name = input; self
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
     pub fn security_profile_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,25 +50,19 @@ impl AttachSecurityProfileInputBuilder {
         self
     }
     /// <p>The ARN of the target (thing group) to which the security profile is attached.</p>
-    pub fn set_security_profile_target_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_profile_target_arn = input;
-        self
+    pub fn set_security_profile_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_profile_target_arn = input; self
     }
     /// Consumes the builder and constructs a [`AttachSecurityProfileInput`](crate::operation::attach_security_profile::AttachSecurityProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::attach_security_profile::AttachSecurityProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::attach_security_profile::AttachSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::attach_security_profile::AttachSecurityProfileInput {
-                security_profile_name: self.security_profile_name,
-                security_profile_target_arn: self.security_profile_target_arn,
-            },
+                security_profile_name: self.security_profile_name
+                ,
+                security_profile_target_arn: self.security_profile_target_arn
+                ,
+            }
         )
     }
 }
+

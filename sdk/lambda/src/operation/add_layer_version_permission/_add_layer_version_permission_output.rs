@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddLayerVersionPermissionOutput {
+pub struct AddLayerVersionPermissionOutput  {
     /// <p>The permission statement.</p>
     #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct AddLayerVersionPermissionOutput {
 }
 impl AddLayerVersionPermissionOutput {
     /// <p>The permission statement.</p>
-    pub fn statement(&self) -> std::option::Option<&str> {
+    pub fn statement(&self) -> std::option::Option<& str> {
         self.statement.as_deref()
     }
     /// <p>A unique identifier for the current revision of the policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddLayerVersionPermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AddLayerVersionPermissionOutput {
     /// Creates a new builder-style object to manufacture [`AddLayerVersionPermissionOutput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput).
-    pub fn builder() -> crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder{
+    pub fn builder() -> crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder {
         crate::operation::add_layer_version_permission::builders::AddLayerVersionPermissionOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl AddLayerVersionPermissionOutputBuilder {
     }
     /// <p>The permission statement.</p>
     pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// <p>A unique identifier for the current revision of the policy.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +58,26 @@ impl AddLayerVersionPermissionOutputBuilder {
     }
     /// <p>A unique identifier for the current revision of the policy.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AddLayerVersionPermissionOutput`](crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput {
+    pub fn build(self) -> crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput {
         crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput {
-            statement: self.statement,
-            revision_id: self.revision_id,
+            statement: self.statement
+            ,
+            revision_id: self.revision_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

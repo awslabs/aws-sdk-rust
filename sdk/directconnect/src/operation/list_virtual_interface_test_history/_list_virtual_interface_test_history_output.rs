@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVirtualInterfaceTestHistoryOutput {
+pub struct ListVirtualInterfaceTestHistoryOutput  {
     /// <p>The ID of the tested virtual interface.</p>
     #[doc(hidden)]
-    pub virtual_interface_test_history:
-        std::option::Option<std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>,
+    pub virtual_interface_test_history: std::option::Option<std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListVirtualInterfaceTestHistoryOutput {
 }
 impl ListVirtualInterfaceTestHistoryOutput {
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn virtual_interface_test_history(
-        &self,
-    ) -> std::option::Option<&[crate::types::VirtualInterfaceTestHistory]> {
+    pub fn virtual_interface_test_history(&self) -> std::option::Option<& [crate::types::VirtualInterfaceTestHistory]> {
         self.virtual_interface_test_history.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVirtualInterfaceTestHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVirtualInterfaceTestHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListVirtualInterfaceTestHistoryOutput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput).
-    pub fn builder() -> crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryOutputBuilder {
         crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListVirtualInterfaceTestHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryOutputBuilder {
-    pub(crate) virtual_interface_test_history:
-        std::option::Option<std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>,
+    pub(crate) virtual_interface_test_history: std::option::Option<std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListVirtualInterfaceTestHistoryOutputBuilder {
     /// To override the contents of this collection use [`set_virtual_interface_test_history`](Self::set_virtual_interface_test_history).
     ///
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn virtual_interface_test_history(
-        mut self,
-        input: crate::types::VirtualInterfaceTestHistory,
-    ) -> Self {
+    pub fn virtual_interface_test_history(mut self, input: crate::types::VirtualInterfaceTestHistory) -> Self {
         let mut v = self.virtual_interface_test_history.unwrap_or_default();
-        v.push(input);
-        self.virtual_interface_test_history = Some(v);
-        self
+                        v.push(input);
+                        self.virtual_interface_test_history = Some(v);
+                        self
     }
     /// <p>The ID of the tested virtual interface.</p>
-    pub fn set_virtual_interface_test_history(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>,
-    ) -> Self {
-        self.virtual_interface_test_history = input;
-        self
+    pub fn set_virtual_interface_test_history(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualInterfaceTestHistory>>) -> Self {
+        self.virtual_interface_test_history = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,23 +64,19 @@ impl ListVirtualInterfaceTestHistoryOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryOutput`](crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput
-    {
+    pub fn build(self) -> crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput {
         crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput {
             virtual_interface_test_history: self.virtual_interface_test_history
             ,
@@ -101,3 +86,4 @@ impl ListVirtualInterfaceTestHistoryOutputBuilder {
         }
     }
 }
+

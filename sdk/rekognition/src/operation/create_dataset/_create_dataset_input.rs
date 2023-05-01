@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetInput {
+pub struct CreateDatasetInput  {
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
     #[doc(hidden)]
     pub dataset_source: std::option::Option<crate::types::DatasetSource>,
@@ -15,15 +15,15 @@ pub struct CreateDatasetInput {
 }
 impl CreateDatasetInput {
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
-    pub fn dataset_source(&self) -> std::option::Option<&crate::types::DatasetSource> {
+    pub fn dataset_source(&self) -> std::option::Option<& crate::types::DatasetSource> {
         self.dataset_source.as_ref()
     }
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
-    pub fn dataset_type(&self) -> std::option::Option<&crate::types::DatasetType> {
+    pub fn dataset_type(&self) -> std::option::Option<& crate::types::DatasetType> {
         self.dataset_type.as_ref()
     }
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
 }
@@ -49,12 +49,8 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p> The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify <code>datasetSource</code>, an empty dataset is created. To add labeled images to the dataset, You can use the console or call <code>UpdateDatasetEntries</code>. </p>
-    pub fn set_dataset_source(
-        mut self,
-        input: std::option::Option<crate::types::DatasetSource>,
-    ) -> Self {
-        self.dataset_source = input;
-        self
+    pub fn set_dataset_source(mut self, input: std::option::Option<crate::types::DatasetSource>) -> Self {
+        self.dataset_source = input; self
     }
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
     pub fn dataset_type(mut self, input: crate::types::DatasetType) -> Self {
@@ -62,12 +58,8 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p> The type of the dataset. Specify <code>train</code> to create a training dataset. Specify <code>test</code> to create a test dataset. </p>
-    pub fn set_dataset_type(
-        mut self,
-        input: std::option::Option<crate::types::DatasetType>,
-    ) -> Self {
-        self.dataset_type = input;
-        self
+    pub fn set_dataset_type(mut self, input: std::option::Option<crate::types::DatasetType>) -> Self {
+        self.dataset_type = input; self
     }
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
     pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,20 +68,20 @@ impl CreateDatasetInputBuilder {
     }
     /// <p> The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset. </p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_dataset::CreateDatasetInput {
-            dataset_source: self.dataset_source,
-            dataset_type: self.dataset_type,
-            project_arn: self.project_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::create_dataset::CreateDatasetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_dataset::CreateDatasetInput {
+                dataset_source: self.dataset_source
+                ,
+                dataset_type: self.dataset_type
+                ,
+                project_arn: self.project_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains general information about the LDAPS settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LdapsSettingInfo {
+pub struct LdapsSettingInfo  {
     /// <p>The state of the LDAPS settings.</p>
     #[doc(hidden)]
     pub ldaps_status: std::option::Option<crate::types::LdapsStatus>,
@@ -16,15 +16,15 @@ pub struct LdapsSettingInfo {
 }
 impl LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
-    pub fn ldaps_status(&self) -> std::option::Option<&crate::types::LdapsStatus> {
+    pub fn ldaps_status(&self) -> std::option::Option<& crate::types::LdapsStatus> {
         self.ldaps_status.as_ref()
     }
     /// <p>Describes a state change for LDAPS.</p>
-    pub fn ldaps_status_reason(&self) -> std::option::Option<&str> {
+    pub fn ldaps_status_reason(&self) -> std::option::Option<& str> {
         self.ldaps_status_reason.as_deref()
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl LdapsSettingInfoBuilder {
         self
     }
     /// <p>The state of the LDAPS settings.</p>
-    pub fn set_ldaps_status(
-        mut self,
-        input: std::option::Option<crate::types::LdapsStatus>,
-    ) -> Self {
-        self.ldaps_status = input;
-        self
+    pub fn set_ldaps_status(mut self, input: std::option::Option<crate::types::LdapsStatus>) -> Self {
+        self.ldaps_status = input; self
     }
     /// <p>Describes a state change for LDAPS.</p>
     pub fn ldaps_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,12 +59,8 @@ impl LdapsSettingInfoBuilder {
         self
     }
     /// <p>Describes a state change for LDAPS.</p>
-    pub fn set_ldaps_status_reason(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ldaps_status_reason = input;
-        self
+    pub fn set_ldaps_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ldaps_status_reason = input; self
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,19 +68,19 @@ impl LdapsSettingInfoBuilder {
         self
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
     }
     /// Consumes the builder and constructs a [`LdapsSettingInfo`](crate::types::LdapsSettingInfo).
     pub fn build(self) -> crate::types::LdapsSettingInfo {
         crate::types::LdapsSettingInfo {
-            ldaps_status: self.ldaps_status,
-            ldaps_status_reason: self.ldaps_status_reason,
-            last_updated_date_time: self.last_updated_date_time,
+            ldaps_status: self.ldaps_status
+            ,
+            ldaps_status_reason: self.ldaps_status_reason
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

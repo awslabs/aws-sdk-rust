@@ -3,7 +3,7 @@
 /// <p>A <code>BatchMeterUsageRequest</code> contains <code>UsageRecords</code>, which indicate quantities of usage within your application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchMeterUsageInput {
+pub struct BatchMeterUsageInput  {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     #[doc(hidden)]
     pub usage_records: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>,
@@ -13,11 +13,11 @@ pub struct BatchMeterUsageInput {
 }
 impl BatchMeterUsageInput {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn usage_records(&self) -> std::option::Option<&[crate::types::UsageRecord]> {
+    pub fn usage_records(&self) -> std::option::Option<& [crate::types::UsageRecord]> {
         self.usage_records.as_deref()
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    pub fn product_code(&self) -> std::option::Option<&str> {
+    pub fn product_code(&self) -> std::option::Option<& str> {
         self.product_code.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl BatchMeterUsageInputBuilder {
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
     pub fn usage_records(mut self, input: crate::types::UsageRecord) -> Self {
         let mut v = self.usage_records.unwrap_or_default();
-        v.push(input);
-        self.usage_records = Some(v);
-        self
+                        v.push(input);
+                        self.usage_records = Some(v);
+                        self
     }
     /// <p>The set of <code>UsageRecords</code> to submit. <code>BatchMeterUsage</code> accepts up to 25 <code>UsageRecords</code> at a time.</p>
-    pub fn set_usage_records(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>,
-    ) -> Self {
-        self.usage_records = input;
-        self
+    pub fn set_usage_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>) -> Self {
+        self.usage_records = input; self
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,19 +58,18 @@ impl BatchMeterUsageInputBuilder {
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_code = input;
-        self
+        self.product_code = input; self
     }
     /// Consumes the builder and constructs a [`BatchMeterUsageInput`](crate::operation::batch_meter_usage::BatchMeterUsageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_meter_usage::BatchMeterUsageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::batch_meter_usage::BatchMeterUsageInput {
-            usage_records: self.usage_records,
-            product_code: self.product_code,
-        })
+    pub fn build(self) -> Result<crate::operation::batch_meter_usage::BatchMeterUsageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::batch_meter_usage::BatchMeterUsageInput {
+                usage_records: self.usage_records
+                ,
+                product_code: self.product_code
+                ,
+            }
+        )
     }
 }
+

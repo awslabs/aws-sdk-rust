@@ -3,7 +3,7 @@
 /// <p>Configuration specifying how to treat different headers. If no headers are specified SageMaker will by default base64 encode when capturing the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaptureContentTypeHeader {
+pub struct CaptureContentTypeHeader  {
     /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
     #[doc(hidden)]
     pub csv_content_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct CaptureContentTypeHeader {
 }
 impl CaptureContentTypeHeader {
     /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
-    pub fn csv_content_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn csv_content_types(&self) -> std::option::Option<& [std::string::String]> {
         self.csv_content_types.as_deref()
     }
     /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
-    pub fn json_content_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn json_content_types(&self) -> std::option::Option<& [std::string::String]> {
         self.json_content_types.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl CaptureContentTypeHeaderBuilder {
     /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
     pub fn csv_content_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.csv_content_types.unwrap_or_default();
-        v.push(input.into());
-        self.csv_content_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.csv_content_types = Some(v);
+                        self
     }
     /// <p>The list of all content type headers that SageMaker will treat as CSV and capture accordingly.</p>
-    pub fn set_csv_content_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.csv_content_types = input;
-        self
+    pub fn set_csv_content_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.csv_content_types = input; self
     }
     /// Appends an item to `json_content_types`.
     ///
@@ -62,23 +58,22 @@ impl CaptureContentTypeHeaderBuilder {
     /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
     pub fn json_content_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.json_content_types.unwrap_or_default();
-        v.push(input.into());
-        self.json_content_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.json_content_types = Some(v);
+                        self
     }
     /// <p>The list of all content type headers that SageMaker will treat as JSON and capture accordingly.</p>
-    pub fn set_json_content_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.json_content_types = input;
-        self
+    pub fn set_json_content_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.json_content_types = input; self
     }
     /// Consumes the builder and constructs a [`CaptureContentTypeHeader`](crate::types::CaptureContentTypeHeader).
     pub fn build(self) -> crate::types::CaptureContentTypeHeader {
         crate::types::CaptureContentTypeHeader {
-            csv_content_types: self.csv_content_types,
-            json_content_types: self.json_content_types,
+            csv_content_types: self.csv_content_types
+            ,
+            json_content_types: self.json_content_types
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Response statistics for a service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceStatistics {
+pub struct ServiceStatistics  {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
     pub ok_count: std::option::Option<i64>,
@@ -26,11 +26,11 @@ impl ServiceStatistics {
         self.ok_count
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn error_statistics(&self) -> std::option::Option<&crate::types::ErrorStatistics> {
+    pub fn error_statistics(&self) -> std::option::Option<& crate::types::ErrorStatistics> {
         self.error_statistics.as_ref()
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn fault_statistics(&self) -> std::option::Option<&crate::types::FaultStatistics> {
+    pub fn fault_statistics(&self) -> std::option::Option<& crate::types::FaultStatistics> {
         self.fault_statistics.as_ref()
     }
     /// <p>The total number of completed requests.</p>
@@ -67,8 +67,7 @@ impl ServiceStatisticsBuilder {
     }
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     pub fn set_ok_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.ok_count = input;
-        self
+        self.ok_count = input; self
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
     pub fn error_statistics(mut self, input: crate::types::ErrorStatistics) -> Self {
@@ -76,12 +75,8 @@ impl ServiceStatisticsBuilder {
         self
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn set_error_statistics(
-        mut self,
-        input: std::option::Option<crate::types::ErrorStatistics>,
-    ) -> Self {
-        self.error_statistics = input;
-        self
+    pub fn set_error_statistics(mut self, input: std::option::Option<crate::types::ErrorStatistics>) -> Self {
+        self.error_statistics = input; self
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
     pub fn fault_statistics(mut self, input: crate::types::FaultStatistics) -> Self {
@@ -89,12 +84,8 @@ impl ServiceStatisticsBuilder {
         self
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn set_fault_statistics(
-        mut self,
-        input: std::option::Option<crate::types::FaultStatistics>,
-    ) -> Self {
-        self.fault_statistics = input;
-        self
+    pub fn set_fault_statistics(mut self, input: std::option::Option<crate::types::FaultStatistics>) -> Self {
+        self.fault_statistics = input; self
     }
     /// <p>The total number of completed requests.</p>
     pub fn total_count(mut self, input: i64) -> Self {
@@ -103,8 +94,7 @@ impl ServiceStatisticsBuilder {
     }
     /// <p>The total number of completed requests.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     /// <p>The aggregate response time of completed requests.</p>
     pub fn total_response_time(mut self, input: f64) -> Self {
@@ -113,17 +103,22 @@ impl ServiceStatisticsBuilder {
     }
     /// <p>The aggregate response time of completed requests.</p>
     pub fn set_total_response_time(mut self, input: std::option::Option<f64>) -> Self {
-        self.total_response_time = input;
-        self
+        self.total_response_time = input; self
     }
     /// Consumes the builder and constructs a [`ServiceStatistics`](crate::types::ServiceStatistics).
     pub fn build(self) -> crate::types::ServiceStatistics {
         crate::types::ServiceStatistics {
-            ok_count: self.ok_count,
-            error_statistics: self.error_statistics,
-            fault_statistics: self.fault_statistics,
-            total_count: self.total_count,
-            total_response_time: self.total_response_time,
+            ok_count: self.ok_count
+            ,
+            error_statistics: self.error_statistics
+            ,
+            fault_statistics: self.fault_statistics
+            ,
+            total_count: self.total_count
+            ,
+            total_response_time: self.total_response_time
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a failed association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedCreateAssociation {
+pub struct FailedCreateAssociation  {
     /// <p>The association.</p>
     #[doc(hidden)]
     pub entry: std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
@@ -16,15 +16,15 @@ pub struct FailedCreateAssociation {
 }
 impl FailedCreateAssociation {
     /// <p>The association.</p>
-    pub fn entry(&self) -> std::option::Option<&crate::types::CreateAssociationBatchRequestEntry> {
+    pub fn entry(&self) -> std::option::Option<& crate::types::CreateAssociationBatchRequestEntry> {
         self.entry.as_ref()
     }
     /// <p>A description of the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The source of the failure.</p>
-    pub fn fault(&self) -> std::option::Option<&crate::types::Fault> {
+    pub fn fault(&self) -> std::option::Option<& crate::types::Fault> {
         self.fault.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl FailedCreateAssociationBuilder {
         self
     }
     /// <p>The association.</p>
-    pub fn set_entry(
-        mut self,
-        input: std::option::Option<crate::types::CreateAssociationBatchRequestEntry>,
-    ) -> Self {
-        self.entry = input;
-        self
+    pub fn set_entry(mut self, input: std::option::Option<crate::types::CreateAssociationBatchRequestEntry>) -> Self {
+        self.entry = input; self
     }
     /// <p>A description of the failure.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl FailedCreateAssociationBuilder {
     }
     /// <p>A description of the failure.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The source of the failure.</p>
     pub fn fault(mut self, input: crate::types::Fault) -> Self {
@@ -74,15 +69,18 @@ impl FailedCreateAssociationBuilder {
     }
     /// <p>The source of the failure.</p>
     pub fn set_fault(mut self, input: std::option::Option<crate::types::Fault>) -> Self {
-        self.fault = input;
-        self
+        self.fault = input; self
     }
     /// Consumes the builder and constructs a [`FailedCreateAssociation`](crate::types::FailedCreateAssociation).
     pub fn build(self) -> crate::types::FailedCreateAssociation {
         crate::types::FailedCreateAssociation {
-            entry: self.entry,
-            message: self.message,
-            fault: self.fault,
+            entry: self.entry
+            ,
+            message: self.message
+            ,
+            fault: self.fault
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let salesforceconnectoroperator = unimplemented!();
 /// match salesforceconnectoroperator {
@@ -49,22 +49,14 @@
 /// Specifically, when `salesforceconnectoroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SalesforceConnectorOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SalesforceConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     Addition,
@@ -109,102 +101,79 @@ pub enum SalesforceConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SalesforceConnectorOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADDITION" => SalesforceConnectorOperator::Addition,
-            "BETWEEN" => SalesforceConnectorOperator::Between,
-            "CONTAINS" => SalesforceConnectorOperator::Contains,
-            "DIVISION" => SalesforceConnectorOperator::Division,
-            "EQUAL_TO" => SalesforceConnectorOperator::EqualTo,
-            "GREATER_THAN" => SalesforceConnectorOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::GreaterThanOrEqualTo,
-            "LESS_THAN" => SalesforceConnectorOperator::LessThan,
-            "LESS_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::LessThanOrEqualTo,
-            "MASK_ALL" => SalesforceConnectorOperator::MaskAll,
-            "MASK_FIRST_N" => SalesforceConnectorOperator::MaskFirstN,
-            "MASK_LAST_N" => SalesforceConnectorOperator::MaskLastN,
-            "MULTIPLICATION" => SalesforceConnectorOperator::Multiplication,
-            "NOT_EQUAL_TO" => SalesforceConnectorOperator::NotEqualTo,
-            "NO_OP" => SalesforceConnectorOperator::NoOp,
-            "PROJECTION" => SalesforceConnectorOperator::Projection,
-            "SUBTRACTION" => SalesforceConnectorOperator::Subtraction,
-            "VALIDATE_NON_NEGATIVE" => SalesforceConnectorOperator::ValidateNonNegative,
-            "VALIDATE_NON_NULL" => SalesforceConnectorOperator::ValidateNonNull,
-            "VALIDATE_NON_ZERO" => SalesforceConnectorOperator::ValidateNonZero,
-            "VALIDATE_NUMERIC" => SalesforceConnectorOperator::ValidateNumeric,
-            other => SalesforceConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADDITION" => SalesforceConnectorOperator::Addition,
+"BETWEEN" => SalesforceConnectorOperator::Between,
+"CONTAINS" => SalesforceConnectorOperator::Contains,
+"DIVISION" => SalesforceConnectorOperator::Division,
+"EQUAL_TO" => SalesforceConnectorOperator::EqualTo,
+"GREATER_THAN" => SalesforceConnectorOperator::GreaterThan,
+"GREATER_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::GreaterThanOrEqualTo,
+"LESS_THAN" => SalesforceConnectorOperator::LessThan,
+"LESS_THAN_OR_EQUAL_TO" => SalesforceConnectorOperator::LessThanOrEqualTo,
+"MASK_ALL" => SalesforceConnectorOperator::MaskAll,
+"MASK_FIRST_N" => SalesforceConnectorOperator::MaskFirstN,
+"MASK_LAST_N" => SalesforceConnectorOperator::MaskLastN,
+"MULTIPLICATION" => SalesforceConnectorOperator::Multiplication,
+"NOT_EQUAL_TO" => SalesforceConnectorOperator::NotEqualTo,
+"NO_OP" => SalesforceConnectorOperator::NoOp,
+"PROJECTION" => SalesforceConnectorOperator::Projection,
+"SUBTRACTION" => SalesforceConnectorOperator::Subtraction,
+"VALIDATE_NON_NEGATIVE" => SalesforceConnectorOperator::ValidateNonNegative,
+"VALIDATE_NON_NULL" => SalesforceConnectorOperator::ValidateNonNull,
+"VALIDATE_NON_ZERO" => SalesforceConnectorOperator::ValidateNonZero,
+"VALIDATE_NUMERIC" => SalesforceConnectorOperator::ValidateNumeric,
+other => SalesforceConnectorOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SalesforceConnectorOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SalesforceConnectorOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SalesforceConnectorOperator::from(s))
+                }
+            }
 impl SalesforceConnectorOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SalesforceConnectorOperator::Addition => "ADDITION",
-            SalesforceConnectorOperator::Between => "BETWEEN",
-            SalesforceConnectorOperator::Contains => "CONTAINS",
-            SalesforceConnectorOperator::Division => "DIVISION",
-            SalesforceConnectorOperator::EqualTo => "EQUAL_TO",
-            SalesforceConnectorOperator::GreaterThan => "GREATER_THAN",
-            SalesforceConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
-            SalesforceConnectorOperator::LessThan => "LESS_THAN",
-            SalesforceConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
-            SalesforceConnectorOperator::MaskAll => "MASK_ALL",
-            SalesforceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
-            SalesforceConnectorOperator::MaskLastN => "MASK_LAST_N",
-            SalesforceConnectorOperator::Multiplication => "MULTIPLICATION",
-            SalesforceConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
-            SalesforceConnectorOperator::NoOp => "NO_OP",
-            SalesforceConnectorOperator::Projection => "PROJECTION",
-            SalesforceConnectorOperator::Subtraction => "SUBTRACTION",
-            SalesforceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
-            SalesforceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
-            SalesforceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
-            SalesforceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
-            SalesforceConnectorOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADDITION",
-            "BETWEEN",
-            "CONTAINS",
-            "DIVISION",
-            "EQUAL_TO",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL_TO",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL_TO",
-            "MASK_ALL",
-            "MASK_FIRST_N",
-            "MASK_LAST_N",
-            "MULTIPLICATION",
-            "NOT_EQUAL_TO",
-            "NO_OP",
-            "PROJECTION",
-            "SUBTRACTION",
-            "VALIDATE_NON_NEGATIVE",
-            "VALIDATE_NON_NULL",
-            "VALIDATE_NON_ZERO",
-            "VALIDATE_NUMERIC",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SalesforceConnectorOperator::Addition => "ADDITION",
+    SalesforceConnectorOperator::Between => "BETWEEN",
+    SalesforceConnectorOperator::Contains => "CONTAINS",
+    SalesforceConnectorOperator::Division => "DIVISION",
+    SalesforceConnectorOperator::EqualTo => "EQUAL_TO",
+    SalesforceConnectorOperator::GreaterThan => "GREATER_THAN",
+    SalesforceConnectorOperator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
+    SalesforceConnectorOperator::LessThan => "LESS_THAN",
+    SalesforceConnectorOperator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+    SalesforceConnectorOperator::MaskAll => "MASK_ALL",
+    SalesforceConnectorOperator::MaskFirstN => "MASK_FIRST_N",
+    SalesforceConnectorOperator::MaskLastN => "MASK_LAST_N",
+    SalesforceConnectorOperator::Multiplication => "MULTIPLICATION",
+    SalesforceConnectorOperator::NotEqualTo => "NOT_EQUAL_TO",
+    SalesforceConnectorOperator::NoOp => "NO_OP",
+    SalesforceConnectorOperator::Projection => "PROJECTION",
+    SalesforceConnectorOperator::Subtraction => "SUBTRACTION",
+    SalesforceConnectorOperator::ValidateNonNegative => "VALIDATE_NON_NEGATIVE",
+    SalesforceConnectorOperator::ValidateNonNull => "VALIDATE_NON_NULL",
+    SalesforceConnectorOperator::ValidateNonZero => "VALIDATE_NON_ZERO",
+    SalesforceConnectorOperator::ValidateNumeric => "VALIDATE_NUMERIC",
+    SalesforceConnectorOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADDITION", "BETWEEN", "CONTAINS", "DIVISION", "EQUAL_TO", "GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO", "LESS_THAN", "LESS_THAN_OR_EQUAL_TO", "MASK_ALL", "MASK_FIRST_N", "MASK_LAST_N", "MULTIPLICATION", "NOT_EQUAL_TO", "NO_OP", "PROJECTION", "SUBTRACTION", "VALIDATE_NON_NEGATIVE", "VALIDATE_NON_NULL", "VALIDATE_NON_ZERO", "VALIDATE_NUMERIC"]
+                }
+            }
 impl AsRef<str> for SalesforceConnectorOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -3,14 +3,14 @@
 /// <p>(Discontinued) Contains information about the Amazon Macie Classic member account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberAccount {
+pub struct MemberAccount  {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl MemberAccount {
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl MemberAccountBuilder {
     }
     /// <p>(Discontinued) The Amazon Web Services account ID of the Amazon Macie Classic member account.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Consumes the builder and constructs a [`MemberAccount`](crate::types::MemberAccount).
     pub fn build(self) -> crate::types::MemberAccount {
         crate::types::MemberAccount {
-            account_id: self.account_id,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

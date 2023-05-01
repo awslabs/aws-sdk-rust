@@ -3,7 +3,7 @@
 /// <p>Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitionEvent {
+pub struct TransitionEvent  {
     /// <p>The name of the transition event.</p>
     #[doc(hidden)]
     pub event_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TransitionEvent {
 }
 impl TransitionEvent {
     /// <p>The name of the transition event.</p>
-    pub fn event_name(&self) -> std::option::Option<&str> {
+    pub fn event_name(&self) -> std::option::Option<& str> {
         self.event_name.as_deref()
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    pub fn condition(&self) -> std::option::Option<&str> {
+    pub fn condition(&self) -> std::option::Option<& str> {
         self.condition.as_deref()
     }
     /// <p>The actions to be performed.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::types::Action]> {
         self.actions.as_deref()
     }
     /// <p>The next state to enter.</p>
-    pub fn next_state(&self) -> std::option::Option<&str> {
+    pub fn next_state(&self) -> std::option::Option<& str> {
         self.next_state.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl TransitionEventBuilder {
     }
     /// <p>The name of the transition event.</p>
     pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_name = input;
-        self
+        self.event_name = input; self
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
     pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl TransitionEventBuilder {
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
     pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// Appends an item to `actions`.
     ///
@@ -79,17 +77,13 @@ impl TransitionEventBuilder {
     /// <p>The actions to be performed.</p>
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = Some(v);
-        self
+                        v.push(input);
+                        self.actions = Some(v);
+                        self
     }
     /// <p>The actions to be performed.</p>
-    pub fn set_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Action>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The next state to enter.</p>
     pub fn next_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,16 +92,20 @@ impl TransitionEventBuilder {
     }
     /// <p>The next state to enter.</p>
     pub fn set_next_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_state = input;
-        self
+        self.next_state = input; self
     }
     /// Consumes the builder and constructs a [`TransitionEvent`](crate::types::TransitionEvent).
     pub fn build(self) -> crate::types::TransitionEvent {
         crate::types::TransitionEvent {
-            event_name: self.event_name,
-            condition: self.condition,
-            actions: self.actions,
-            next_state: self.next_state,
+            event_name: self.event_name
+            ,
+            condition: self.condition
+            ,
+            actions: self.actions
+            ,
+            next_state: self.next_state
+            ,
         }
     }
 }
+

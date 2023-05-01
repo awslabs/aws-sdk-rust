@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let repositoryaccessmode = unimplemented!();
 /// match repositoryaccessmode {
@@ -30,64 +30,55 @@
 /// Specifically, when `repositoryaccessmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RepositoryAccessMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RepositoryAccessMode {
     #[allow(missing_docs)] // documentation missing in model
     Platform,
     #[allow(missing_docs)] // documentation missing in model
     Vpc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RepositoryAccessMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "Platform" => RepositoryAccessMode::Platform,
-            "Vpc" => RepositoryAccessMode::Vpc,
-            other => RepositoryAccessMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Platform" => RepositoryAccessMode::Platform,
+"Vpc" => RepositoryAccessMode::Vpc,
+other => RepositoryAccessMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RepositoryAccessMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositoryAccessMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RepositoryAccessMode::from(s))
+                }
+            }
 impl RepositoryAccessMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RepositoryAccessMode::Platform => "Platform",
-            RepositoryAccessMode::Vpc => "Vpc",
-            RepositoryAccessMode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Platform", "Vpc"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RepositoryAccessMode::Platform => "Platform",
+    RepositoryAccessMode::Vpc => "Vpc",
+    RepositoryAccessMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Platform", "Vpc"]
+                }
+            }
 impl AsRef<str> for RepositoryAccessMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

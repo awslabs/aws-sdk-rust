@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForDeliveryStreamOutput {
+pub struct ListTagsForDeliveryStreamOutput  {
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -13,7 +13,7 @@ pub struct ListTagsForDeliveryStreamOutput {
 }
 impl ListTagsForDeliveryStreamOutput {
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
@@ -22,13 +22,13 @@ impl ListTagsForDeliveryStreamOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListTagsForDeliveryStreamOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTagsForDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
-    pub fn builder() -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder{
+    pub fn builder() -> crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder {
         crate::operation::list_tags_for_delivery_stream::builders::ListTagsForDeliveryStreamOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl ListTagsForDeliveryStreamOutputBuilder {
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags associated with <code>DeliveryStreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
     pub fn has_more_tags(mut self, input: bool) -> Self {
@@ -68,26 +64,26 @@ impl ListTagsForDeliveryStreamOutputBuilder {
     }
     /// <p>If this is <code>true</code> in the response, more tags are available. To list the remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned and call <code>ListTagsForDeliveryStream</code> again.</p>
     pub fn set_has_more_tags(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_more_tags = input;
-        self
+        self.has_more_tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTagsForDeliveryStreamOutput`](crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
+    pub fn build(self) -> crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
         crate::operation::list_tags_for_delivery_stream::ListTagsForDeliveryStreamOutput {
-            tags: self.tags,
-            has_more_tags: self.has_more_tags,
+            tags: self.tags
+            ,
+            has_more_tags: self.has_more_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

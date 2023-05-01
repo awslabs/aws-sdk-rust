@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitTaskStateChangeInput {
+pub struct SubmitTaskStateChangeInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -36,51 +36,49 @@ pub struct SubmitTaskStateChangeInput {
 }
 impl SubmitTaskStateChangeInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
-    pub fn cluster(&self) -> std::option::Option<&str> {
+    pub fn cluster(&self) -> std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The task ID or full ARN of the task in the state change request.</p>
-    pub fn task(&self) -> std::option::Option<&str> {
+    pub fn task(&self) -> std::option::Option<& str> {
         self.task.as_deref()
     }
     /// <p>The status of the state change request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The reason for the state change request.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>Any containers that's associated with the state change request.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::types::ContainerStateChange]> {
+    pub fn containers(&self) -> std::option::Option<& [crate::types::ContainerStateChange]> {
         self.containers.as_deref()
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn attachments(&self) -> std::option::Option<&[crate::types::AttachmentStateChange]> {
+    pub fn attachments(&self) -> std::option::Option<& [crate::types::AttachmentStateChange]> {
         self.attachments.as_deref()
     }
     /// <p>The details for the managed agent that's associated with the task.</p>
-    pub fn managed_agents(&self) -> std::option::Option<&[crate::types::ManagedAgentStateChange]> {
+    pub fn managed_agents(&self) -> std::option::Option<& [crate::types::ManagedAgentStateChange]> {
         self.managed_agents.as_deref()
     }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
-    pub fn pull_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pull_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.pull_started_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    pub fn pull_stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pull_stopped_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.pull_stopped_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    pub fn execution_stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn execution_stopped_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.execution_stopped_at.as_ref()
     }
 }
 impl SubmitTaskStateChangeInput {
     /// Creates a new builder-style object to manufacture [`SubmitTaskStateChangeInput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeInput).
-    pub fn builder(
-    ) -> crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder
-    {
+    pub fn builder() -> crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder {
         crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder::default()
     }
 }
@@ -95,8 +93,7 @@ pub struct SubmitTaskStateChangeInputBuilder {
     pub(crate) reason: std::option::Option<std::string::String>,
     pub(crate) containers: std::option::Option<std::vec::Vec<crate::types::ContainerStateChange>>,
     pub(crate) attachments: std::option::Option<std::vec::Vec<crate::types::AttachmentStateChange>>,
-    pub(crate) managed_agents:
-        std::option::Option<std::vec::Vec<crate::types::ManagedAgentStateChange>>,
+    pub(crate) managed_agents: std::option::Option<std::vec::Vec<crate::types::ManagedAgentStateChange>>,
     pub(crate) pull_started_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) execution_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -109,8 +106,7 @@ impl SubmitTaskStateChangeInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the task.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The task ID or full ARN of the task in the state change request.</p>
     pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +115,7 @@ impl SubmitTaskStateChangeInputBuilder {
     }
     /// <p>The task ID or full ARN of the task in the state change request.</p>
     pub fn set_task(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     /// <p>The status of the state change request.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +124,7 @@ impl SubmitTaskStateChangeInputBuilder {
     }
     /// <p>The status of the state change request.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The reason for the state change request.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +133,7 @@ impl SubmitTaskStateChangeInputBuilder {
     }
     /// <p>The reason for the state change request.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Appends an item to `containers`.
     ///
@@ -149,17 +142,13 @@ impl SubmitTaskStateChangeInputBuilder {
     /// <p>Any containers that's associated with the state change request.</p>
     pub fn containers(mut self, input: crate::types::ContainerStateChange) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = Some(v);
-        self
+                        v.push(input);
+                        self.containers = Some(v);
+                        self
     }
     /// <p>Any containers that's associated with the state change request.</p>
-    pub fn set_containers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerStateChange>>,
-    ) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContainerStateChange>>) -> Self {
+        self.containers = input; self
     }
     /// Appends an item to `attachments`.
     ///
@@ -168,17 +157,13 @@ impl SubmitTaskStateChangeInputBuilder {
     /// <p>Any attachments associated with the state change request.</p>
     pub fn attachments(mut self, input: crate::types::AttachmentStateChange) -> Self {
         let mut v = self.attachments.unwrap_or_default();
-        v.push(input);
-        self.attachments = Some(v);
-        self
+                        v.push(input);
+                        self.attachments = Some(v);
+                        self
     }
     /// <p>Any attachments associated with the state change request.</p>
-    pub fn set_attachments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttachmentStateChange>>,
-    ) -> Self {
-        self.attachments = input;
-        self
+    pub fn set_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttachmentStateChange>>) -> Self {
+        self.attachments = input; self
     }
     /// Appends an item to `managed_agents`.
     ///
@@ -187,17 +172,13 @@ impl SubmitTaskStateChangeInputBuilder {
     /// <p>The details for the managed agent that's associated with the task.</p>
     pub fn managed_agents(mut self, input: crate::types::ManagedAgentStateChange) -> Self {
         let mut v = self.managed_agents.unwrap_or_default();
-        v.push(input);
-        self.managed_agents = Some(v);
-        self
+                        v.push(input);
+                        self.managed_agents = Some(v);
+                        self
     }
     /// <p>The details for the managed agent that's associated with the task.</p>
-    pub fn set_managed_agents(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ManagedAgentStateChange>>,
-    ) -> Self {
-        self.managed_agents = input;
-        self
+    pub fn set_managed_agents(mut self, input: std::option::Option<std::vec::Vec<crate::types::ManagedAgentStateChange>>) -> Self {
+        self.managed_agents = input; self
     }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
     pub fn pull_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -205,12 +186,8 @@ impl SubmitTaskStateChangeInputBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull started.</p>
-    pub fn set_pull_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.pull_started_at = input;
-        self
+    pub fn set_pull_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.pull_started_at = input; self
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
     pub fn pull_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -218,12 +195,8 @@ impl SubmitTaskStateChangeInputBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    pub fn set_pull_stopped_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.pull_stopped_at = input;
-        self
+    pub fn set_pull_stopped_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.pull_stopped_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
     pub fn execution_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -231,33 +204,35 @@ impl SubmitTaskStateChangeInputBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    pub fn set_execution_stopped_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.execution_stopped_at = input;
-        self
+    pub fn set_execution_stopped_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.execution_stopped_at = input; self
     }
     /// Consumes the builder and constructs a [`SubmitTaskStateChangeInput`](crate::operation::submit_task_state_change::SubmitTaskStateChangeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::submit_task_state_change::SubmitTaskStateChangeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::submit_task_state_change::SubmitTaskStateChangeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::submit_task_state_change::SubmitTaskStateChangeInput {
-                cluster: self.cluster,
-                task: self.task,
-                status: self.status,
-                reason: self.reason,
-                containers: self.containers,
-                attachments: self.attachments,
-                managed_agents: self.managed_agents,
-                pull_started_at: self.pull_started_at,
-                pull_stopped_at: self.pull_stopped_at,
-                execution_stopped_at: self.execution_stopped_at,
-            },
+                cluster: self.cluster
+                ,
+                task: self.task
+                ,
+                status: self.status
+                ,
+                reason: self.reason
+                ,
+                containers: self.containers
+                ,
+                attachments: self.attachments
+                ,
+                managed_agents: self.managed_agents
+                ,
+                pull_started_at: self.pull_started_at
+                ,
+                pull_stopped_at: self.pull_stopped_at
+                ,
+                execution_stopped_at: self.execution_stopped_at
+                ,
+            }
         )
     }
 }
+

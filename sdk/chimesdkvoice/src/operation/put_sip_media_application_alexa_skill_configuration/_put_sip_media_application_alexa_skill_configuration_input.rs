@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSipMediaApplicationAlexaSkillConfigurationInput {
+pub struct PutSipMediaApplicationAlexaSkillConfigurationInput  {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
     /// <p>The Alexa Skill configuration.</p>
     #[doc(hidden)]
-    pub sip_media_application_alexa_skill_configuration:
-        std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
+    pub sip_media_application_alexa_skill_configuration: std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationInput {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     /// <p>The Alexa Skill configuration.</p>
-    pub fn sip_media_application_alexa_skill_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::SipMediaApplicationAlexaSkillConfiguration> {
-        self.sip_media_application_alexa_skill_configuration
-            .as_ref()
+    pub fn sip_media_application_alexa_skill_configuration(&self) -> std::option::Option<& crate::types::SipMediaApplicationAlexaSkillConfiguration> {
+        self.sip_media_application_alexa_skill_configuration.as_ref()
     }
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutSipMediaApplicationAlexaSkillConfigurationInput`](crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput).
-    pub fn builder() -> crate::operation::put_sip_media_application_alexa_skill_configuration::builders::PutSipMediaApplicationAlexaSkillConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_sip_media_application_alexa_skill_configuration::builders::PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         crate::operation::put_sip_media_application_alexa_skill_configuration::builders::PutSipMediaApplicationAlexaSkillConfigurationInputBuilder::default()
     }
 }
@@ -36,8 +32,7 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
     pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
-    pub(crate) sip_media_application_alexa_skill_configuration:
-        std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
+    pub(crate) sip_media_application_alexa_skill_configuration: std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
 }
 impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
     /// <p>The SIP media application ID.</p>
@@ -46,31 +41,20 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sip_media_application_id = input;
-        self
+    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sip_media_application_id = input; self
     }
     /// <p>The Alexa Skill configuration.</p>
-    pub fn sip_media_application_alexa_skill_configuration(
-        mut self,
-        input: crate::types::SipMediaApplicationAlexaSkillConfiguration,
-    ) -> Self {
+    pub fn sip_media_application_alexa_skill_configuration(mut self, input: crate::types::SipMediaApplicationAlexaSkillConfiguration) -> Self {
         self.sip_media_application_alexa_skill_configuration = Some(input);
         self
     }
     /// <p>The Alexa Skill configuration.</p>
-    pub fn set_sip_media_application_alexa_skill_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>,
-    ) -> Self {
-        self.sip_media_application_alexa_skill_configuration = input;
-        self
+    pub fn set_sip_media_application_alexa_skill_configuration(mut self, input: std::option::Option<crate::types::SipMediaApplicationAlexaSkillConfiguration>) -> Self {
+        self.sip_media_application_alexa_skill_configuration = input; self
     }
     /// Consumes the builder and constructs a [`PutSipMediaApplicationAlexaSkillConfigurationInput`](crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_sip_media_application_alexa_skill_configuration::PutSipMediaApplicationAlexaSkillConfigurationInput {
                 sip_media_application_id: self.sip_media_application_id
@@ -81,3 +65,4 @@ impl PutSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         )
     }
 }
+

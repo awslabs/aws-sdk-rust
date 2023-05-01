@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutVoiceConnectorTerminationInput {
+pub struct PutVoiceConnectorTerminationInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct PutVoiceConnectorTerminationInput {
 }
 impl PutVoiceConnectorTerminationInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The termination settings to be updated.</p>
-    pub fn termination(&self) -> std::option::Option<&crate::types::Termination> {
+    pub fn termination(&self) -> std::option::Option<& crate::types::Termination> {
         self.termination.as_ref()
     }
 }
 impl PutVoiceConnectorTerminationInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorTerminationInput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput).
-    pub fn builder() -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder {
         crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl PutVoiceConnectorTerminationInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// <p>The termination settings to be updated.</p>
     pub fn termination(mut self, input: crate::types::Termination) -> Self {
@@ -54,25 +50,19 @@ impl PutVoiceConnectorTerminationInputBuilder {
         self
     }
     /// <p>The termination settings to be updated.</p>
-    pub fn set_termination(
-        mut self,
-        input: std::option::Option<crate::types::Termination>,
-    ) -> Self {
-        self.termination = input;
-        self
+    pub fn set_termination(mut self, input: std::option::Option<crate::types::Termination>) -> Self {
+        self.termination = input; self
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationInput`](crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationInput {
-                voice_connector_id: self.voice_connector_id,
-                termination: self.termination,
-            },
+                voice_connector_id: self.voice_connector_id
+                ,
+                termination: self.termination
+                ,
+            }
         )
     }
 }
+

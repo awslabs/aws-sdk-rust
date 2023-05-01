@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelRunInput {
+pub struct CancelRunInput  {
     /// <p>The run's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CancelRunInput {
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl CancelRunInputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`CancelRunInput`](crate::operation::cancel_run::CancelRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_run::CancelRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::cancel_run::CancelRunInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::cancel_run::CancelRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::cancel_run::CancelRunInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

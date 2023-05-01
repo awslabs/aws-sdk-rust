@@ -3,7 +3,7 @@
 /// <p>Contains details about a state entered during an execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StateEnteredEventDetails {
+pub struct StateEnteredEventDetails  {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,21 +16,19 @@ pub struct StateEnteredEventDetails {
 }
 impl StateEnteredEventDetails {
     /// <p>The name of the state.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
 }
-impl std::fmt::Debug for StateEnteredEventDetails {
+impl  std::fmt::Debug for StateEnteredEventDetails  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StateEnteredEventDetails");
         formatter.field("name", &self.name);
@@ -62,8 +60,7 @@ impl StateEnteredEventDetailsBuilder {
     }
     /// <p>The name of the state.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +69,7 @@ impl StateEnteredEventDetailsBuilder {
     }
     /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -81,19 +77,18 @@ impl StateEnteredEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
-        self.input_details = input;
-        self
+    pub fn set_input_details(mut self, input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
+        self.input_details = input; self
     }
     /// Consumes the builder and constructs a [`StateEnteredEventDetails`](crate::types::StateEnteredEventDetails).
     pub fn build(self) -> crate::types::StateEnteredEventDetails {
         crate::types::StateEnteredEventDetails {
-            name: self.name,
-            input: self.input,
-            input_details: self.input_details,
+            name: self.name
+            ,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
         }
     }
 }
@@ -106,3 +101,4 @@ impl std::fmt::Debug for StateEnteredEventDetailsBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountSettingDefaultOutput {
+pub struct PutAccountSettingDefaultOutput  {
     /// <p>The current setting for a resource.</p>
     #[doc(hidden)]
     pub setting: std::option::Option<crate::types::Setting>,
@@ -10,18 +10,18 @@ pub struct PutAccountSettingDefaultOutput {
 }
 impl PutAccountSettingDefaultOutput {
     /// <p>The current setting for a resource.</p>
-    pub fn setting(&self) -> std::option::Option<&crate::types::Setting> {
+    pub fn setting(&self) -> std::option::Option<& crate::types::Setting> {
         self.setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutAccountSettingDefaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutAccountSettingDefaultOutput {
     /// Creates a new builder-style object to manufacture [`PutAccountSettingDefaultOutput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput).
-    pub fn builder() -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder{
+    pub fn builder() -> crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder {
         crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl PutAccountSettingDefaultOutputBuilder {
     }
     /// <p>The current setting for a resource.</p>
     pub fn set_setting(mut self, input: std::option::Option<crate::types::Setting>) -> Self {
-        self.setting = input;
-        self
+        self.setting = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutAccountSettingDefaultOutput`](crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput {
+    pub fn build(self) -> crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput {
         crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput {
-            setting: self.setting,
+            setting: self.setting
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

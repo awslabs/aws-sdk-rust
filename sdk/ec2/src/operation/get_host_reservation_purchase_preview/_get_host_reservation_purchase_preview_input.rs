@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHostReservationPurchasePreviewInput {
+pub struct GetHostReservationPurchasePreviewInput  {
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
     #[doc(hidden)]
     pub host_id_set: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,17 +12,17 @@ pub struct GetHostReservationPurchasePreviewInput {
 }
 impl GetHostReservationPurchasePreviewInput {
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn host_id_set(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn host_id_set(&self) -> std::option::Option<& [std::string::String]> {
         self.host_id_set.as_deref()
     }
     /// <p>The offering ID of the reservation.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
 }
 impl GetHostReservationPurchasePreviewInput {
     /// Creates a new builder-style object to manufacture [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
-    pub fn builder() -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder{
+    pub fn builder() -> crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder {
         crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder::default()
     }
 }
@@ -42,17 +42,13 @@ impl GetHostReservationPurchasePreviewInputBuilder {
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
     pub fn host_id_set(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.host_id_set.unwrap_or_default();
-        v.push(input.into());
-        self.host_id_set = Some(v);
-        self
+                        v.push(input.into());
+                        self.host_id_set = Some(v);
+                        self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-    pub fn set_host_id_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.host_id_set = input;
-        self
+    pub fn set_host_id_set(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.host_id_set = input; self
     }
     /// <p>The offering ID of the reservation.</p>
     pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,11 +57,10 @@ impl GetHostReservationPurchasePreviewInputBuilder {
     }
     /// <p>The offering ID of the reservation.</p>
     pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// Consumes the builder and constructs a [`GetHostReservationPurchasePreviewInput`](crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput).
-    pub fn build(self) -> Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewInput {
                 host_id_set: self.host_id_set
@@ -76,3 +71,4 @@ impl GetHostReservationPurchasePreviewInputBuilder {
         )
     }
 }
+

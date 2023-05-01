@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServerStrategiesInput {
+pub struct GetServerStrategiesInput  {
     /// <p> The ID of the server. </p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl GetServerStrategiesInput {
     /// <p> The ID of the server. </p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
 impl GetServerStrategiesInput {
     /// Creates a new builder-style object to manufacture [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
-    pub fn builder(
-    ) -> crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder {
-        crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder {
+        crate::operation::get_server_strategies::builders::GetServerStrategiesInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl GetServerStrategiesInputBuilder {
     }
     /// <p> The ID of the server. </p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// Consumes the builder and constructs a [`GetServerStrategiesInput`](crate::operation::get_server_strategies::GetServerStrategiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_server_strategies::GetServerStrategiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_server_strategies::GetServerStrategiesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_server_strategies::GetServerStrategiesInput {
-                server_id: self.server_id,
-            },
+                server_id: self.server_id
+                ,
+            }
         )
     }
 }
+

@@ -4,68 +4,50 @@ pub use crate::operation::create_agreement::_create_agreement_output::CreateAgre
 pub use crate::operation::create_agreement::_create_agreement_input::CreateAgreementInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAgreement`.
-///
-/// <p>Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership, between an Transfer Family server and an AS2 process. The agreement defines the file and message transfer relationship between the server and the AS2 process. To define an agreement, Transfer Family combines a server, local profile, partner profile, certificate, and other attributes.</p>
+/// 
+/// <p>Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership, between an Transfer Family server and an AS2 process. The agreement defines the file and message transfer relationship between the server and the AS2 process. To define an agreement, Transfer Family combines a server, local profile, partner profile, certificate, and other attributes.</p> 
 /// <p>The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process is identified with the <code>LocalProfileId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAgreementFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_agreement::builders::CreateAgreementInputBuilder,
-}
-impl CreateAgreementFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_agreement::builders::CreateAgreementInputBuilder
+            }
+impl CreateAgreementFluentBuilder  {
     /// Creates a new `CreateAgreement`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_agreement::CreateAgreement,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_agreement::CreateAgreementOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_agreement::CreateAgreement, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_agreement::CreateAgreementOutput, aws_smithy_http::result::SdkError<crate::operation::create_agreement::CreateAgreementError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>A name or short description to identify the agreement. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -102,20 +84,17 @@ impl CreateAgreementFluentBuilder {
         self
     }
     /// <p>A unique identifier for the partner profile used in the agreement.</p>
-    pub fn set_partner_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_partner_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_partner_profile_id(input);
         self
     }
-    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> 
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn base_directory(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.base_directory(input.into());
         self
     }
-    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p>
+    /// <p>The landing directory (folder) for files transferred by using the AS2 protocol.</p> 
     /// <p>A <code>BaseDirectory</code> example is <code>/DOC-EXAMPLE-BUCKET/home/mydirectory</code>.</p>
     pub fn set_base_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_base_directory(input);
@@ -137,10 +116,7 @@ impl CreateAgreementFluentBuilder {
         self
     }
     /// <p>The status of the agreement. The agreement can be either <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::AgreementStatusType>,
-    ) -> Self {
+    pub fn set_status(mut self, input: std::option::Option<crate::types::AgreementStatusType>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -154,11 +130,9 @@ impl CreateAgreementFluentBuilder {
         self
     }
     /// <p>Key-value pairs that can be used to group and search for agreements.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

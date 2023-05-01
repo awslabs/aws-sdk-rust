@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFolderResolvedPermissionsInput {
+pub struct DescribeFolderResolvedPermissionsInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeFolderResolvedPermissionsInput {
 }
 impl DescribeFolderResolvedPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
 }
 impl DescribeFolderResolvedPermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderResolvedPermissionsInput`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput).
-    pub fn builder() -> crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsInputBuilder {
         crate::operation::describe_folder_resolved_permissions::builders::DescribeFolderResolvedPermissionsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeFolderResolvedPermissionsInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,11 +51,10 @@ impl DescribeFolderResolvedPermissionsInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFolderResolvedPermissionsInput`](crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_folder_resolved_permissions::DescribeFolderResolvedPermissionsInput {
                 aws_account_id: self.aws_account_id
@@ -67,3 +65,4 @@ impl DescribeFolderResolvedPermissionsInputBuilder {
         )
     }
 }
+

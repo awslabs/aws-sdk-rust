@@ -3,25 +3,25 @@
 /// <p>A complex type that contains the information about the request to list your traffic policy instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrafficPolicyInstancesByPolicyInput {
+pub struct ListTrafficPolicyInstancesByPolicyInput  {
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
     #[doc(hidden)]
     pub traffic_policy_id: std::option::Option<std::string::String>,
     /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
     #[doc(hidden)]
     pub traffic_policy_version: std::option::Option<i32>,
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
-    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p> 
+    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     #[doc(hidden)]
     pub hosted_zone_id_marker: std::option::Option<std::string::String>,
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     #[doc(hidden)]
     pub traffic_policy_instance_name_marker: std::option::Option<std::string::String>,
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     #[doc(hidden)]
     pub traffic_policy_instance_type_marker: std::option::Option<crate::types::RrType>,
@@ -31,31 +31,29 @@ pub struct ListTrafficPolicyInstancesByPolicyInput {
 }
 impl ListTrafficPolicyInstancesByPolicyInput {
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
-    pub fn traffic_policy_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_id(&self) -> std::option::Option<& str> {
         self.traffic_policy_id.as_deref()
     }
     /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
     pub fn traffic_policy_version(&self) -> std::option::Option<i32> {
         self.traffic_policy_version
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
-    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p> 
+    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn hosted_zone_id_marker(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id_marker(&self) -> std::option::Option<& str> {
         self.hosted_zone_id_marker.as_deref()
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn traffic_policy_instance_name_marker(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_instance_name_marker(&self) -> std::option::Option<& str> {
         self.traffic_policy_instance_name_marker.as_deref()
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn traffic_policy_instance_type_marker(
-        &self,
-    ) -> std::option::Option<&crate::types::RrType> {
+    pub fn traffic_policy_instance_type_marker(&self) -> std::option::Option<& crate::types::RrType> {
         self.traffic_policy_instance_type_marker.as_ref()
     }
     /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
@@ -65,7 +63,7 @@ impl ListTrafficPolicyInstancesByPolicyInput {
 }
 impl ListTrafficPolicyInstancesByPolicyInput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPolicyInstancesByPolicyInput`](crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyInput).
-    pub fn builder() -> crate::operation::list_traffic_policy_instances_by_policy::builders::ListTrafficPolicyInstancesByPolicyInputBuilder{
+    pub fn builder() -> crate::operation::list_traffic_policy_instances_by_policy::builders::ListTrafficPolicyInstancesByPolicyInputBuilder {
         crate::operation::list_traffic_policy_instances_by_policy::builders::ListTrafficPolicyInstancesByPolicyInputBuilder::default()
     }
 }
@@ -88,12 +86,8 @@ impl ListTrafficPolicyInstancesByPolicyInputBuilder {
         self
     }
     /// <p>The ID of the traffic policy for which you want to list traffic policy instances.</p>
-    pub fn set_traffic_policy_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.traffic_policy_id = input;
-        self
+    pub fn set_traffic_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.traffic_policy_id = input; self
     }
     /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
@@ -102,62 +96,46 @@ impl ListTrafficPolicyInstancesByPolicyInputBuilder {
     }
     /// <p>The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.</p>
     pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.traffic_policy_version = input;
-        self
+        self.traffic_policy_version = input; self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
-    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p> 
+    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     pub fn hosted_zone_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.hosted_zone_id_marker = Some(input.into());
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p>
-    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request. </p> 
+    /// <p>For the value of <code>hostedzoneid</code>, specify the value of <code>HostedZoneIdMarker</code> from the previous response, which is the hosted zone ID of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn set_hosted_zone_id_marker(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hosted_zone_id_marker = input;
-        self
+    pub fn set_hosted_zone_id_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hosted_zone_id_marker = input; self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn traffic_policy_instance_name_marker(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn traffic_policy_instance_name_marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.traffic_policy_instance_name_marker = Some(input.into());
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn set_traffic_policy_instance_name_marker(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.traffic_policy_instance_name_marker = input;
-        self
+    pub fn set_traffic_policy_instance_name_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.traffic_policy_instance_name_marker = input; self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     pub fn traffic_policy_instance_type_marker(mut self, input: crate::types::RrType) -> Self {
         self.traffic_policy_instance_type_marker = Some(input);
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p>
-    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstancesByPolicy</code> request.</p> 
+    /// <p>For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the name of the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn set_traffic_policy_instance_type_marker(
-        mut self,
-        input: std::option::Option<crate::types::RrType>,
-    ) -> Self {
-        self.traffic_policy_instance_type_marker = input;
-        self
+    pub fn set_traffic_policy_instance_type_marker(mut self, input: std::option::Option<crate::types::RrType>) -> Self {
+        self.traffic_policy_instance_type_marker = input; self
     }
     /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -166,11 +144,10 @@ impl ListTrafficPolicyInstancesByPolicyInputBuilder {
     }
     /// <p>The maximum number of traffic policy instances to be included in the response body for this request. If you have more than <code>MaxItems</code> traffic policy instances, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> represent the first traffic policy instance that Amazon Route 53 will return if you submit another request.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// Consumes the builder and constructs a [`ListTrafficPolicyInstancesByPolicyInput`](crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyInput).
-    pub fn build(self) -> Result<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_traffic_policy_instances_by_policy::ListTrafficPolicyInstancesByPolicyInput {
                 traffic_policy_id: self.traffic_policy_id
@@ -189,3 +166,4 @@ impl ListTrafficPolicyInstancesByPolicyInputBuilder {
         )
     }
 }
+

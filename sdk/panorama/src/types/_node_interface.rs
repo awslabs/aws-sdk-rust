@@ -3,7 +3,7 @@
 /// <p>A node interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeInterface {
+pub struct NodeInterface  {
     /// <p>The node interface's inputs.</p>
     #[doc(hidden)]
     pub inputs: std::option::Option<std::vec::Vec<crate::types::NodeInputPort>>,
@@ -13,11 +13,11 @@ pub struct NodeInterface {
 }
 impl NodeInterface {
     /// <p>The node interface's inputs.</p>
-    pub fn inputs(&self) -> std::option::Option<&[crate::types::NodeInputPort]> {
+    pub fn inputs(&self) -> std::option::Option<& [crate::types::NodeInputPort]> {
         self.inputs.as_deref()
     }
     /// <p>The node interface's outputs.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::NodeOutputPort]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::types::NodeOutputPort]> {
         self.outputs.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl NodeInterfaceBuilder {
     /// <p>The node interface's inputs.</p>
     pub fn inputs(mut self, input: crate::types::NodeInputPort) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input);
-        self.inputs = Some(v);
-        self
+                        v.push(input);
+                        self.inputs = Some(v);
+                        self
     }
     /// <p>The node interface's inputs.</p>
-    pub fn set_inputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NodeInputPort>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::NodeInputPort>>) -> Self {
+        self.inputs = input; self
     }
     /// Appends an item to `outputs`.
     ///
@@ -62,23 +58,22 @@ impl NodeInterfaceBuilder {
     /// <p>The node interface's outputs.</p>
     pub fn outputs(mut self, input: crate::types::NodeOutputPort) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = Some(v);
-        self
+                        v.push(input);
+                        self.outputs = Some(v);
+                        self
     }
     /// <p>The node interface's outputs.</p>
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NodeOutputPort>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::NodeOutputPort>>) -> Self {
+        self.outputs = input; self
     }
     /// Consumes the builder and constructs a [`NodeInterface`](crate::types::NodeInterface).
     pub fn build(self) -> crate::types::NodeInterface {
         crate::types::NodeInterface {
-            inputs: self.inputs,
-            outputs: self.outputs,
+            inputs: self.inputs
+            ,
+            outputs: self.outputs
+            ,
         }
     }
 }
+

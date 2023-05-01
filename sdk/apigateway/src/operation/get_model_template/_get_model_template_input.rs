@@ -3,7 +3,7 @@
 /// <p>Request to generate a sample mapping template used to transform the payload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelTemplateInput {
+pub struct GetModelTemplateInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -13,18 +13,17 @@ pub struct GetModelTemplateInput {
 }
 impl GetModelTemplateInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the model for which to generate a template.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
 impl GetModelTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
-    pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_model_template::builders::GetModelTemplateInputBuilder {
         crate::operation::get_model_template::builders::GetModelTemplateInputBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl GetModelTemplateInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The name of the model for which to generate a template.</p>
     pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +52,18 @@ impl GetModelTemplateInputBuilder {
     }
     /// <p>The name of the model for which to generate a template.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// Consumes the builder and constructs a [`GetModelTemplateInput`](crate::operation::get_model_template::GetModelTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_model_template::GetModelTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_model_template::GetModelTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_model_template::GetModelTemplateInput {
-                rest_api_id: self.rest_api_id,
-                model_name: self.model_name,
-            },
+                rest_api_id: self.rest_api_id
+                ,
+                model_name: self.model_name
+                ,
+            }
         )
     }
 }
+

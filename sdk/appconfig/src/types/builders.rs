@@ -30,3 +30,4 @@ pub use crate::types::_deployment_summary::DeploymentSummaryBuilder;
 pub use crate::types::_configuration_profile_summary::ConfigurationProfileSummaryBuilder;
 
 pub use crate::types::_application::ApplicationBuilder;
+

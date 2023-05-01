@@ -4,81 +4,56 @@ pub use crate::operation::update_trial_component::_update_trial_component_output
 pub use crate::operation::update_trial_component::_update_trial_component_input::UpdateTrialComponentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTrialComponent`.
-///
+/// 
 /// <p>Updates one or more properties of a trial component.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTrialComponentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder,
-}
-impl UpdateTrialComponentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder
+            }
+impl UpdateTrialComponentFluentBuilder  {
     /// Creates a new `UpdateTrialComponent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_trial_component::UpdateTrialComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_trial_component::UpdateTrialComponentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_trial_component::UpdateTrialComponentOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_trial_component::UpdateTrialComponentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_trial_component::UpdateTrialComponent, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_trial_component::UpdateTrialComponentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_trial_component::UpdateTrialComponentOutput, aws_smithy_http::result::SdkError<crate::operation::update_trial_component::UpdateTrialComponentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the component to update.</p>
     pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
     /// <p>The name of the component to update.</p>
-    pub fn set_trial_component_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_trial_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
@@ -98,10 +73,7 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The new status of the component.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TrialComponentStatus>,
-    ) -> Self {
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TrialComponentStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -111,10 +83,7 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>When the component started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -133,24 +102,12 @@ impl UpdateTrialComponentFluentBuilder {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
-    pub fn parameters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::TrialComponentParameterValue,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::types::TrialComponentParameterValue) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>Replaces all of the component's hyperparameters with the specified hyperparameters or add new hyperparameters. Existing hyperparameters are replaced if the trial component is updated with an identical hyperparameter key.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::types::TrialComponentParameterValue,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::TrialComponentParameterValue>>) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -164,10 +121,7 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The hyperparameters to remove from the component.</p>
-    pub fn set_parameters_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_parameters_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_parameters_to_remove(input);
         self
     }
@@ -176,21 +130,12 @@ impl UpdateTrialComponentFluentBuilder {
     /// To override the contents of this collection use [`set_input_artifacts`](Self::set_input_artifacts).
     ///
     /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
-    pub fn input_artifacts(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::TrialComponentArtifact,
-    ) -> Self {
+    pub fn input_artifacts(mut self, k: impl Into<std::string::String>, v: crate::types::TrialComponentArtifact) -> Self {
         self.inner = self.inner.input_artifacts(k.into(), v);
         self
     }
     /// <p>Replaces all of the component's input artifacts with the specified artifacts or adds new input artifacts. Existing input artifacts are replaced if the trial component is updated with an identical input artifact key.</p>
-    pub fn set_input_artifacts(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
-        >,
-    ) -> Self {
+    pub fn set_input_artifacts(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>>) -> Self {
         self.inner = self.inner.set_input_artifacts(input);
         self
     }
@@ -204,10 +149,7 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The input artifacts to remove from the component.</p>
-    pub fn set_input_artifacts_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_input_artifacts_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_input_artifacts_to_remove(input);
         self
     }
@@ -216,21 +158,12 @@ impl UpdateTrialComponentFluentBuilder {
     /// To override the contents of this collection use [`set_output_artifacts`](Self::set_output_artifacts).
     ///
     /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
-    pub fn output_artifacts(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::TrialComponentArtifact,
-    ) -> Self {
+    pub fn output_artifacts(mut self, k: impl Into<std::string::String>, v: crate::types::TrialComponentArtifact) -> Self {
         self.inner = self.inner.output_artifacts(k.into(), v);
         self
     }
     /// <p>Replaces all of the component's output artifacts with the specified artifacts or adds new output artifacts. Existing output artifacts are replaced if the trial component is updated with an identical output artifact key.</p>
-    pub fn set_output_artifacts(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>,
-        >,
-    ) -> Self {
+    pub fn set_output_artifacts(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::TrialComponentArtifact>>) -> Self {
         self.inner = self.inner.set_output_artifacts(input);
         self
     }
@@ -244,11 +177,9 @@ impl UpdateTrialComponentFluentBuilder {
         self
     }
     /// <p>The output artifacts to remove from the component.</p>
-    pub fn set_output_artifacts_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_output_artifacts_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_output_artifacts_to_remove(input);
         self
     }
 }
+

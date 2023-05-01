@@ -4,92 +4,62 @@ pub use crate::operation::update_table_replica_auto_scaling::_update_table_repli
 pub use crate::operation::update_table_replica_auto_scaling::_update_table_replica_auto_scaling_input::UpdateTableReplicaAutoScalingInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTableReplicaAutoScaling`.
-///
-/// <p>Updates auto scaling settings on your global tables at once.</p> <important>
-/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p>
+/// 
+/// <p>Updates auto scaling settings on your global tables at once.</p> <important> 
+/// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> of global tables. </p> 
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTableReplicaAutoScalingFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_table_replica_auto_scaling::builders::UpdateTableReplicaAutoScalingInputBuilder
             }
-impl UpdateTableReplicaAutoScalingFluentBuilder {
+impl UpdateTableReplicaAutoScalingFluentBuilder  {
     /// Creates a new `UpdateTableReplicaAutoScaling`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScaling,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScaling, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput, aws_smithy_http::result::SdkError<crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `GlobalSecondaryIndexUpdates`.
     ///
     /// To override the contents of this collection use [`set_global_secondary_index_updates`](Self::set_global_secondary_index_updates).
     ///
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
-    pub fn global_secondary_index_updates(
-        mut self,
-        input: crate::types::GlobalSecondaryIndexAutoScalingUpdate,
-    ) -> Self {
+    pub fn global_secondary_index_updates(mut self, input: crate::types::GlobalSecondaryIndexAutoScalingUpdate) -> Self {
         self.inner = self.inner.global_secondary_index_updates(input);
         self
     }
     /// <p>Represents the auto scaling settings of the global secondary indexes of the replica to be updated.</p>
-    pub fn set_global_secondary_index_updates(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>,
-        >,
-    ) -> Self {
+    pub fn set_global_secondary_index_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndexAutoScalingUpdate>>) -> Self {
         self.inner = self.inner.set_global_secondary_index_updates(input);
         self
     }
@@ -104,23 +74,13 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    pub fn provisioned_write_capacity_auto_scaling_update(
-        mut self,
-        input: crate::types::AutoScalingSettingsUpdate,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .provisioned_write_capacity_auto_scaling_update(input);
+    pub fn provisioned_write_capacity_auto_scaling_update(mut self, input: crate::types::AutoScalingSettingsUpdate) -> Self {
+        self.inner = self.inner.provisioned_write_capacity_auto_scaling_update(input);
         self
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
-    pub fn set_provisioned_write_capacity_auto_scaling_update(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingSettingsUpdate>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_provisioned_write_capacity_auto_scaling_update(input);
+    pub fn set_provisioned_write_capacity_auto_scaling_update(mut self, input: std::option::Option<crate::types::AutoScalingSettingsUpdate>) -> Self {
+        self.inner = self.inner.set_provisioned_write_capacity_auto_scaling_update(input);
         self
     }
     /// Appends an item to `ReplicaUpdates`.
@@ -133,11 +93,9 @@ impl UpdateTableReplicaAutoScalingFluentBuilder {
         self
     }
     /// <p>Represents the auto scaling settings of replicas of the table that will be modified.</p>
-    pub fn set_replica_updates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>>,
-    ) -> Self {
+    pub fn set_replica_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplicaAutoScalingUpdate>>) -> Self {
         self.inner = self.inner.set_replica_updates(input);
         self
     }
 }
+

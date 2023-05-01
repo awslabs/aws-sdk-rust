@@ -3,9 +3,9 @@
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+pub struct FileAccessLog  {
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
     /// </note>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -14,14 +14,14 @@ pub struct FileAccessLog {
     pub format: std::option::Option<crate::types::LoggingFormat>,
 }
 impl FileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
     /// </note>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::LoggingFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::LoggingFormat> {
         self.format.as_ref()
     }
 }
@@ -40,19 +40,18 @@ pub struct FileAccessLogBuilder {
     pub(crate) format: std::option::Option<crate::types::LoggingFormat>,
 }
 impl FileAccessLogBuilder {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
     /// </note>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
         self.path = Some(input.into());
         self
     }
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
     /// </note>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn format(mut self, input: crate::types::LoggingFormat) -> Self {
@@ -61,14 +60,16 @@ impl FileAccessLogBuilder {
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::LoggingFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// Consumes the builder and constructs a [`FileAccessLog`](crate::types::FileAccessLog).
     pub fn build(self) -> crate::types::FileAccessLog {
         crate::types::FileAccessLog {
-            path: self.path,
-            format: self.format,
+            path: self.path
+            ,
+            format: self.format
+            ,
         }
     }
 }
+

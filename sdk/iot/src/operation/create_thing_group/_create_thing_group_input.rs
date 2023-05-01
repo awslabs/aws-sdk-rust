@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThingGroupInput {
+pub struct CreateThingGroupInput  {
     /// <p>The thing group name to create.</p>
     #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -18,28 +18,25 @@ pub struct CreateThingGroupInput {
 }
 impl CreateThingGroupInput {
     /// <p>The thing group name to create.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The name of the parent thing group.</p>
-    pub fn parent_group_name(&self) -> std::option::Option<&str> {
+    pub fn parent_group_name(&self) -> std::option::Option<& str> {
         self.parent_group_name.as_deref()
     }
     /// <p>The thing group properties.</p>
-    pub fn thing_group_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::ThingGroupProperties> {
+    pub fn thing_group_properties(&self) -> std::option::Option<& crate::types::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the thing group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateThingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateThingGroupInput`](crate::operation::create_thing_group::CreateThingGroupInput).
-    pub fn builder() -> crate::operation::create_thing_group::builders::CreateThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_thing_group::builders::CreateThingGroupInputBuilder {
         crate::operation::create_thing_group::builders::CreateThingGroupInputBuilder::default()
     }
 }
@@ -61,8 +58,7 @@ impl CreateThingGroupInputBuilder {
     }
     /// <p>The thing group name to create.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The name of the parent thing group.</p>
     pub fn parent_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,12 +66,8 @@ impl CreateThingGroupInputBuilder {
         self
     }
     /// <p>The name of the parent thing group.</p>
-    pub fn set_parent_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parent_group_name = input;
-        self
+    pub fn set_parent_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parent_group_name = input; self
     }
     /// <p>The thing group properties.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
@@ -83,12 +75,8 @@ impl CreateThingGroupInputBuilder {
         self
     }
     /// <p>The thing group properties.</p>
-    pub fn set_thing_group_properties(
-        mut self,
-        input: std::option::Option<crate::types::ThingGroupProperties>,
-    ) -> Self {
-        self.thing_group_properties = input;
-        self
+    pub fn set_thing_group_properties(mut self, input: std::option::Option<crate::types::ThingGroupProperties>) -> Self {
+        self.thing_group_properties = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -97,32 +85,28 @@ impl CreateThingGroupInputBuilder {
     /// <p>Metadata which can be used to manage the thing group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the thing group.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateThingGroupInput`](crate::operation::create_thing_group::CreateThingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_thing_group::CreateThingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_thing_group::CreateThingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_thing_group::CreateThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                parent_group_name: self.parent_group_name,
-                thing_group_properties: self.thing_group_properties,
-                tags: self.tags,
-            },
+                thing_group_name: self.thing_group_name
+                ,
+                parent_group_name: self.parent_group_name
+                ,
+                thing_group_properties: self.thing_group_properties
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

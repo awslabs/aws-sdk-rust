@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFhirDatastoreInput {
+pub struct DeleteFhirDatastoreInput  {
     /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
 }
 impl DeleteFhirDatastoreInput {
     /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> std::option::Option<& str> {
         self.datastore_id.as_deref()
     }
 }
 impl DeleteFhirDatastoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
-    pub fn builder(
-    ) -> crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
-        crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder {
+        crate::operation::delete_fhir_datastore::builders::DeleteFhirDatastoreInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl DeleteFhirDatastoreInputBuilder {
     }
     /// <p> The AWS-generated ID for the Data Store to be deleted.</p>
     pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_id = input;
-        self
+        self.datastore_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteFhirDatastoreInput`](crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_fhir_datastore::DeleteFhirDatastoreInput {
-                datastore_id: self.datastore_id,
-            },
+                datastore_id: self.datastore_id
+                ,
+            }
         )
     }
 }
+

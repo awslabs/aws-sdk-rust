@@ -3,7 +3,7 @@
 /// <p>An object that represents the details of a multi-node parallel job node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeDetails {
+pub struct NodeDetails  {
     /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     #[doc(hidden)]
     pub node_index: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl NodeDetailsBuilder {
     }
     /// <p>The node index for the node. Node index numbering starts at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>
     pub fn set_node_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.node_index = input;
-        self
+        self.node_index = input; self
     }
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     pub fn is_main_node(mut self, input: bool) -> Self {
@@ -53,14 +52,16 @@ impl NodeDetailsBuilder {
     }
     /// <p>Specifies whether the current node is the main node for a multi-node parallel job.</p>
     pub fn set_is_main_node(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_main_node = input;
-        self
+        self.is_main_node = input; self
     }
     /// Consumes the builder and constructs a [`NodeDetails`](crate::types::NodeDetails).
     pub fn build(self) -> crate::types::NodeDetails {
         crate::types::NodeDetails {
-            node_index: self.node_index,
-            is_main_node: self.is_main_node,
+            node_index: self.node_index
+            ,
+            is_main_node: self.is_main_node
+            ,
         }
     }
 }
+

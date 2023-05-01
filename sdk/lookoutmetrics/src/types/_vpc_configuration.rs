@@ -3,7 +3,7 @@
 /// <p>Contains configuration information about the Amazon Virtual Private Cloud (VPC).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfiguration {
+pub struct VpcConfiguration  {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
     #[doc(hidden)]
     pub subnet_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct VpcConfiguration {
 }
 impl VpcConfiguration {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn subnet_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_id_list.as_deref()
     }
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_id_list.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl VpcConfigurationBuilder {
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
     pub fn subnet_id_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_id_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_id_list = Some(v);
+                        self
     }
     /// <p>An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.</p>
-    pub fn set_subnet_id_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_id_list = input;
-        self
+    pub fn set_subnet_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_id_list = input; self
     }
     /// Appends an item to `security_group_id_list`.
     ///
@@ -62,23 +58,22 @@ impl VpcConfigurationBuilder {
     /// <p>An array of strings containing the list of security groups.</p>
     pub fn security_group_id_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_id_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_id_list = Some(v);
+                        self
     }
     /// <p>An array of strings containing the list of security groups.</p>
-    pub fn set_security_group_id_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_id_list = input;
-        self
+    pub fn set_security_group_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_id_list = input; self
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {
         crate::types::VpcConfiguration {
-            subnet_id_list: self.subnet_id_list,
-            security_group_id_list: self.security_group_id_list,
+            subnet_id_list: self.subnet_id_list
+            ,
+            security_group_id_list: self.security_group_id_list
+            ,
         }
     }
 }
+

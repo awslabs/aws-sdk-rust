@@ -3,7 +3,7 @@
 /// <p>The object that contains the statistical summary of the recommended slot type associated with the bot recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeStatistics {
+pub struct SlotTypeStatistics  {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     #[doc(hidden)]
     pub discovered_slot_type_count: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl SlotTypeStatisticsBuilder {
     }
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     pub fn set_discovered_slot_type_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.discovered_slot_type_count = input;
-        self
+        self.discovered_slot_type_count = input; self
     }
     /// Consumes the builder and constructs a [`SlotTypeStatistics`](crate::types::SlotTypeStatistics).
     pub fn build(self) -> crate::types::SlotTypeStatistics {
         crate::types::SlotTypeStatistics {
-            discovered_slot_type_count: self.discovered_slot_type_count,
+            discovered_slot_type_count: self.discovered_slot_type_count
+            ,
         }
     }
 }
+

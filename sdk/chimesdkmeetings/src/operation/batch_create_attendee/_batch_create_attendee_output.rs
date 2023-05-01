@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateAttendeeOutput {
+pub struct BatchCreateAttendeeOutput  {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     #[doc(hidden)]
     pub attendees: std::option::Option<std::vec::Vec<crate::types::Attendee>>,
@@ -13,25 +13,23 @@ pub struct BatchCreateAttendeeOutput {
 }
 impl BatchCreateAttendeeOutput {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn attendees(&self) -> std::option::Option<&[crate::types::Attendee]> {
+    pub fn attendees(&self) -> std::option::Option<& [crate::types::Attendee]> {
         self.attendees.as_deref()
     }
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::CreateAttendeeError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::CreateAttendeeError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchCreateAttendeeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchCreateAttendeeOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder {
-        crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder {
+        crate::operation::batch_create_attendee::builders::BatchCreateAttendeeOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl BatchCreateAttendeeOutputBuilder {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     pub fn attendees(mut self, input: crate::types::Attendee) -> Self {
         let mut v = self.attendees.unwrap_or_default();
-        v.push(input);
-        self.attendees = Some(v);
-        self
+                        v.push(input);
+                        self.attendees = Some(v);
+                        self
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn set_attendees(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attendee>>,
-    ) -> Self {
-        self.attendees = input;
-        self
+    pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attendee>>) -> Self {
+        self.attendees = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -70,33 +64,32 @@ impl BatchCreateAttendeeOutputBuilder {
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
     pub fn errors(mut self, input: crate::types::CreateAttendeeError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>If the action fails for one or more of the attendees in the request, a list of the attendees is returned, along with error codes and error messages.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput).
     pub fn build(self) -> crate::operation::batch_create_attendee::BatchCreateAttendeeOutput {
         crate::operation::batch_create_attendee::BatchCreateAttendeeOutput {
-            attendees: self.attendees,
-            errors: self.errors,
+            attendees: self.attendees
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

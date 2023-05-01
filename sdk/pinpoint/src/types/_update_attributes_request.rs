@@ -3,14 +3,14 @@
 /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAttributesRequest {
+pub struct UpdateAttributesRequest  {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     #[doc(hidden)]
     pub blacklist: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateAttributesRequest {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    pub fn blacklist(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn blacklist(&self) -> std::option::Option<& [std::string::String]> {
         self.blacklist.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl UpdateAttributesRequestBuilder {
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
     pub fn blacklist(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.blacklist.unwrap_or_default();
-        v.push(input.into());
-        self.blacklist = Some(v);
-        self
+                        v.push(input.into());
+                        self.blacklist = Some(v);
+                        self
     }
     /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
-    pub fn set_blacklist(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.blacklist = input;
-        self
+    pub fn set_blacklist(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.blacklist = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAttributesRequest`](crate::types::UpdateAttributesRequest).
     pub fn build(self) -> crate::types::UpdateAttributesRequest {
         crate::types::UpdateAttributesRequest {
-            blacklist: self.blacklist,
+            blacklist: self.blacklist
+            ,
         }
     }
 }
+

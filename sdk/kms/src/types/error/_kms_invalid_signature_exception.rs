@@ -3,7 +3,7 @@
 /// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsInvalidSignatureException {
+pub struct KmsInvalidSignatureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,18 +11,13 @@ pub struct KmsInvalidSignatureException {
 }
 impl KmsInvalidSignatureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for KmsInvalidSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "KmsInvalidSignatureException [KMSInvalidSignatureException]"
-        )?;
+        write!(f, "KmsInvalidSignatureException [KMSInvalidSignatureException]")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -37,9 +32,7 @@ impl aws_http::request_id::RequestId for crate::types::error::KmsInvalidSignatur
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for KmsInvalidSignatureException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl KmsInvalidSignatureException {
     /// Creates a new builder-style object to manufacture [`KmsInvalidSignatureException`](crate::types::error::KmsInvalidSignatureException).
@@ -63,28 +56,26 @@ impl KmsInvalidSignatureExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`KmsInvalidSignatureException`](crate::types::error::KmsInvalidSignatureException).
     pub fn build(self) -> crate::types::error::KmsInvalidSignatureException {
         crate::types::error::KmsInvalidSignatureException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduledActionInput {
+pub struct DeleteScheduledActionInput  {
     /// <p>The name of the scheduled action to delete. </p>
     #[doc(hidden)]
     pub scheduled_action_name: std::option::Option<std::string::String>,
 }
 impl DeleteScheduledActionInput {
     /// <p>The name of the scheduled action to delete. </p>
-    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> std::option::Option<& str> {
         self.scheduled_action_name.as_deref()
     }
 }
 impl DeleteScheduledActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder {
         crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteScheduledActionInputBuilder {
         self
     }
     /// <p>The name of the scheduled action to delete. </p>
-    pub fn set_scheduled_action_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.scheduled_action_name = input;
-        self
+    pub fn set_scheduled_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.scheduled_action_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_scheduled_action::DeleteScheduledActionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
-                scheduled_action_name: self.scheduled_action_name,
-            },
+                scheduled_action_name: self.scheduled_action_name
+                ,
+            }
         )
     }
 }
+

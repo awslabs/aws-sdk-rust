@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceQuotaIncreaseRequestsInTemplateInput {
+pub struct ListServiceQuotaIncreaseRequestsInTemplateInput  {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateInput {
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The AWS Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
@@ -36,7 +36,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInput {
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateInput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput).
-    pub fn builder() -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder{
+    pub fn builder() -> crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
         crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>The AWS Region.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
     }
     /// <p>The AWS Region.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -88,11 +85,10 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, if any, make another call with the token returned from this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListServiceQuotaIncreaseRequestsInTemplateInput`](crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput).
-    pub fn build(self) -> Result<crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateInput {
                 service_code: self.service_code
@@ -107,3 +103,4 @@ impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
         )
     }
 }
+

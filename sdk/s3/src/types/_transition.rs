@@ -3,7 +3,7 @@
 /// <p>Specifies when an object transitions to a specified storage class. For more information about Amazon S3 lifecycle configuration rules, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">Transitioning Objects Using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transition {
+pub struct Transition  {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,7 +16,7 @@ pub struct Transition {
 }
 impl Transition {
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
@@ -24,7 +24,7 @@ impl Transition {
         self.days
     }
     /// <p>The storage class to which you want the object to transition.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::types::TransitionStorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::types::TransitionStorageClass> {
         self.storage_class.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl TransitionBuilder {
     }
     /// <p>Indicates when objects are transitioned to the specified storage class. The date value must be in ISO 8601 format. The time is always midnight UTC.</p>
     pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date = input;
-        self
+        self.date = input; self
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
     pub fn days(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl TransitionBuilder {
     }
     /// <p>Indicates the number of days after creation when objects are transitioned to the specified storage class. The value must be a positive integer.</p>
     pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>The storage class to which you want the object to transition.</p>
     pub fn storage_class(mut self, input: crate::types::TransitionStorageClass) -> Self {
@@ -70,19 +68,20 @@ impl TransitionBuilder {
         self
     }
     /// <p>The storage class to which you want the object to transition.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: std::option::Option<crate::types::TransitionStorageClass>,
-    ) -> Self {
-        self.storage_class = input;
-        self
+    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::TransitionStorageClass>) -> Self {
+        self.storage_class = input; self
     }
     /// Consumes the builder and constructs a [`Transition`](crate::types::Transition).
     pub fn build(self) -> crate::types::Transition {
         crate::types::Transition {
-            date: self.date,
-            days: self.days.unwrap_or_default(),
-            storage_class: self.storage_class,
+            date: self.date
+            ,
+            days: self.days
+                .unwrap_or_default()
+            ,
+            storage_class: self.storage_class
+            ,
         }
     }
 }
+

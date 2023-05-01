@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectionInput {
+pub struct UpdateConnectionInput  {
     /// <p>The name of the connection to update.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,30 +18,25 @@ pub struct UpdateConnectionInput {
 }
 impl UpdateConnectionInput {
     /// <p>The name of the connection to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the connection.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of authorization to use for the connection.</p>
-    pub fn authorization_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ConnectionAuthorizationType> {
+    pub fn authorization_type(&self) -> std::option::Option<& crate::types::ConnectionAuthorizationType> {
         self.authorization_type.as_ref()
     }
     /// <p>The authorization parameters to use for the connection.</p>
-    pub fn auth_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateConnectionAuthRequestParameters> {
+    pub fn auth_parameters(&self) -> std::option::Option<& crate::types::UpdateConnectionAuthRequestParameters> {
         self.auth_parameters.as_ref()
     }
 }
 impl UpdateConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_connection::builders::UpdateConnectionInputBuilder {
         crate::operation::update_connection::builders::UpdateConnectionInputBuilder::default()
     }
 }
@@ -53,8 +48,7 @@ pub struct UpdateConnectionInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) authorization_type: std::option::Option<crate::types::ConnectionAuthorizationType>,
-    pub(crate) auth_parameters:
-        std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>,
+    pub(crate) auth_parameters: std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>,
 }
 impl UpdateConnectionInputBuilder {
     /// <p>The name of the connection to update.</p>
@@ -64,8 +58,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>The name of the connection to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description for the connection.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +67,7 @@ impl UpdateConnectionInputBuilder {
     }
     /// <p>A description for the connection.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The type of authorization to use for the connection.</p>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
@@ -83,41 +75,32 @@ impl UpdateConnectionInputBuilder {
         self
     }
     /// <p>The type of authorization to use for the connection.</p>
-    pub fn set_authorization_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionAuthorizationType>,
-    ) -> Self {
-        self.authorization_type = input;
-        self
+    pub fn set_authorization_type(mut self, input: std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
+        self.authorization_type = input; self
     }
     /// <p>The authorization parameters to use for the connection.</p>
-    pub fn auth_parameters(
-        mut self,
-        input: crate::types::UpdateConnectionAuthRequestParameters,
-    ) -> Self {
+    pub fn auth_parameters(mut self, input: crate::types::UpdateConnectionAuthRequestParameters) -> Self {
         self.auth_parameters = Some(input);
         self
     }
     /// <p>The authorization parameters to use for the connection.</p>
-    pub fn set_auth_parameters(
-        mut self,
-        input: std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>,
-    ) -> Self {
-        self.auth_parameters = input;
-        self
+    pub fn set_auth_parameters(mut self, input: std::option::Option<crate::types::UpdateConnectionAuthRequestParameters>) -> Self {
+        self.auth_parameters = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConnectionInput`](crate::operation::update_connection::UpdateConnectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_connection::UpdateConnectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_connection::UpdateConnectionInput {
-            name: self.name,
-            description: self.description,
-            authorization_type: self.authorization_type,
-            auth_parameters: self.auth_parameters,
-        })
+    pub fn build(self) -> Result<crate::operation::update_connection::UpdateConnectionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_connection::UpdateConnectionInput {
+                name: self.name
+                ,
+                description: self.description
+                ,
+                authorization_type: self.authorization_type
+                ,
+                auth_parameters: self.auth_parameters
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents entity counters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Counters {
+pub struct Counters  {
     /// <p>The total number of entities.</p>
     #[doc(hidden)]
     pub total: std::option::Option<i32>,
@@ -83,8 +83,7 @@ impl CountersBuilder {
     }
     /// <p>The total number of entities.</p>
     pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The number of passed entities.</p>
     pub fn passed(mut self, input: i32) -> Self {
@@ -93,8 +92,7 @@ impl CountersBuilder {
     }
     /// <p>The number of passed entities.</p>
     pub fn set_passed(mut self, input: std::option::Option<i32>) -> Self {
-        self.passed = input;
-        self
+        self.passed = input; self
     }
     /// <p>The number of failed entities.</p>
     pub fn failed(mut self, input: i32) -> Self {
@@ -103,8 +101,7 @@ impl CountersBuilder {
     }
     /// <p>The number of failed entities.</p>
     pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>The number of warned entities.</p>
     pub fn warned(mut self, input: i32) -> Self {
@@ -113,8 +110,7 @@ impl CountersBuilder {
     }
     /// <p>The number of warned entities.</p>
     pub fn set_warned(mut self, input: std::option::Option<i32>) -> Self {
-        self.warned = input;
-        self
+        self.warned = input; self
     }
     /// <p>The number of errored entities.</p>
     pub fn errored(mut self, input: i32) -> Self {
@@ -123,8 +119,7 @@ impl CountersBuilder {
     }
     /// <p>The number of errored entities.</p>
     pub fn set_errored(mut self, input: std::option::Option<i32>) -> Self {
-        self.errored = input;
-        self
+        self.errored = input; self
     }
     /// <p>The number of stopped entities.</p>
     pub fn stopped(mut self, input: i32) -> Self {
@@ -133,8 +128,7 @@ impl CountersBuilder {
     }
     /// <p>The number of stopped entities.</p>
     pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
-        self.stopped = input;
-        self
+        self.stopped = input; self
     }
     /// <p>The number of skipped entities.</p>
     pub fn skipped(mut self, input: i32) -> Self {
@@ -143,19 +137,26 @@ impl CountersBuilder {
     }
     /// <p>The number of skipped entities.</p>
     pub fn set_skipped(mut self, input: std::option::Option<i32>) -> Self {
-        self.skipped = input;
-        self
+        self.skipped = input; self
     }
     /// Consumes the builder and constructs a [`Counters`](crate::types::Counters).
     pub fn build(self) -> crate::types::Counters {
         crate::types::Counters {
-            total: self.total,
-            passed: self.passed,
-            failed: self.failed,
-            warned: self.warned,
-            errored: self.errored,
-            stopped: self.stopped,
-            skipped: self.skipped,
+            total: self.total
+            ,
+            passed: self.passed
+            ,
+            failed: self.failed
+            ,
+            warned: self.warned
+            ,
+            errored: self.errored
+            ,
+            stopped: self.stopped
+            ,
+            skipped: self.skipped
+            ,
         }
     }
 }
+

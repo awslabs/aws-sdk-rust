@@ -3,7 +3,7 @@
 /// <p>The initial capacity configuration per worker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitialCapacityConfig {
+pub struct InitialCapacityConfig  {
     /// <p>The number of workers in the initial capacity configuration.</p>
     #[doc(hidden)]
     pub worker_count: i64,
@@ -17,7 +17,7 @@ impl InitialCapacityConfig {
         self.worker_count
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn worker_configuration(&self) -> std::option::Option<&crate::types::WorkerResourceConfig> {
+    pub fn worker_configuration(&self) -> std::option::Option<& crate::types::WorkerResourceConfig> {
         self.worker_configuration.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl InitialCapacityConfigBuilder {
     }
     /// <p>The number of workers in the initial capacity configuration.</p>
     pub fn set_worker_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.worker_count = input;
-        self
+        self.worker_count = input; self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
     pub fn worker_configuration(mut self, input: crate::types::WorkerResourceConfig) -> Self {
@@ -52,18 +51,18 @@ impl InitialCapacityConfigBuilder {
         self
     }
     /// <p>The resource configuration of the initial capacity configuration.</p>
-    pub fn set_worker_configuration(
-        mut self,
-        input: std::option::Option<crate::types::WorkerResourceConfig>,
-    ) -> Self {
-        self.worker_configuration = input;
-        self
+    pub fn set_worker_configuration(mut self, input: std::option::Option<crate::types::WorkerResourceConfig>) -> Self {
+        self.worker_configuration = input; self
     }
     /// Consumes the builder and constructs a [`InitialCapacityConfig`](crate::types::InitialCapacityConfig).
     pub fn build(self) -> crate::types::InitialCapacityConfig {
         crate::types::InitialCapacityConfig {
-            worker_count: self.worker_count.unwrap_or_default(),
-            worker_configuration: self.worker_configuration,
+            worker_count: self.worker_count
+                .unwrap_or_default()
+            ,
+            worker_configuration: self.worker_configuration
+            ,
         }
     }
 }
+

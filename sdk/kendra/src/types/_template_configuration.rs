@@ -3,16 +3,16 @@
 /// <p>Provides a template for the configuration information to connect to your data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateConfiguration {
-    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+pub struct TemplateConfiguration  {
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p> 
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     #[doc(hidden)]
     pub template: std::option::Option<aws_smithy_types::Document>,
 }
 impl TemplateConfiguration {
-    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p> 
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
-    pub fn template(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn template(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.template.as_ref()
     }
 }
@@ -30,22 +30,23 @@ pub struct TemplateConfigurationBuilder {
     pub(crate) template: std::option::Option<aws_smithy_types::Document>,
 }
 impl TemplateConfigurationBuilder {
-    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p> 
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     pub fn template(mut self, input: aws_smithy_types::Document) -> Self {
         self.template = Some(input);
         self
     }
-    /// <p>The template schema used for the data source, where templates schemas are supported.</p>
+    /// <p>The template schema used for the data source, where templates schemas are supported.</p> 
     /// <p>See <a href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source template schemas</a>.</p>
     pub fn set_template(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// Consumes the builder and constructs a [`TemplateConfiguration`](crate::types::TemplateConfiguration).
     pub fn build(self) -> crate::types::TemplateConfiguration {
         crate::types::TemplateConfiguration {
-            template: self.template,
+            template: self.template
+            ,
         }
     }
 }
+

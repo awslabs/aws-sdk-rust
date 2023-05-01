@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let canarystatereasoncode = unimplemented!();
 /// match canarystatereasoncode {
@@ -40,22 +40,14 @@
 /// Specifically, when `canarystatereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CanaryStateReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CanaryStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -82,75 +74,61 @@ pub enum CanaryStateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     UpdatePending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CanaryStateReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => CanaryStateReasonCode::CreateFailed,
-            "CREATE_IN_PROGRESS" => CanaryStateReasonCode::CreateInProgress,
-            "CREATE_PENDING" => CanaryStateReasonCode::CreatePending,
-            "DELETE_FAILED" => CanaryStateReasonCode::DeleteFailed,
-            "DELETE_IN_PROGRESS" => CanaryStateReasonCode::DeleteInProgress,
-            "INVALID_PERMISSIONS" => CanaryStateReasonCode::InvalidPermissions,
-            "ROLLBACK_COMPLETE" => CanaryStateReasonCode::RollbackComplete,
-            "ROLLBACK_FAILED" => CanaryStateReasonCode::RollbackFailed,
-            "SYNC_DELETE_IN_PROGRESS" => CanaryStateReasonCode::SyncDeleteInProgress,
-            "UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
-            "UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
-            "UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
-            other => CanaryStateReasonCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => CanaryStateReasonCode::CreateFailed,
+"CREATE_IN_PROGRESS" => CanaryStateReasonCode::CreateInProgress,
+"CREATE_PENDING" => CanaryStateReasonCode::CreatePending,
+"DELETE_FAILED" => CanaryStateReasonCode::DeleteFailed,
+"DELETE_IN_PROGRESS" => CanaryStateReasonCode::DeleteInProgress,
+"INVALID_PERMISSIONS" => CanaryStateReasonCode::InvalidPermissions,
+"ROLLBACK_COMPLETE" => CanaryStateReasonCode::RollbackComplete,
+"ROLLBACK_FAILED" => CanaryStateReasonCode::RollbackFailed,
+"SYNC_DELETE_IN_PROGRESS" => CanaryStateReasonCode::SyncDeleteInProgress,
+"UPDATE_COMPLETE" => CanaryStateReasonCode::UpdateComplete,
+"UPDATE_IN_PROGRESS" => CanaryStateReasonCode::UpdateInProgress,
+"UPDATE_PENDING" => CanaryStateReasonCode::UpdatePending,
+other => CanaryStateReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CanaryStateReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CanaryStateReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CanaryStateReasonCode::from(s))
+                }
+            }
 impl CanaryStateReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CanaryStateReasonCode::CreateFailed => "CREATE_FAILED",
-            CanaryStateReasonCode::CreateInProgress => "CREATE_IN_PROGRESS",
-            CanaryStateReasonCode::CreatePending => "CREATE_PENDING",
-            CanaryStateReasonCode::DeleteFailed => "DELETE_FAILED",
-            CanaryStateReasonCode::DeleteInProgress => "DELETE_IN_PROGRESS",
-            CanaryStateReasonCode::InvalidPermissions => "INVALID_PERMISSIONS",
-            CanaryStateReasonCode::RollbackComplete => "ROLLBACK_COMPLETE",
-            CanaryStateReasonCode::RollbackFailed => "ROLLBACK_FAILED",
-            CanaryStateReasonCode::SyncDeleteInProgress => "SYNC_DELETE_IN_PROGRESS",
-            CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
-            CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
-            CanaryStateReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "CREATE_PENDING",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "INVALID_PERMISSIONS",
-            "ROLLBACK_COMPLETE",
-            "ROLLBACK_FAILED",
-            "SYNC_DELETE_IN_PROGRESS",
-            "UPDATE_COMPLETE",
-            "UPDATE_IN_PROGRESS",
-            "UPDATE_PENDING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CanaryStateReasonCode::CreateFailed => "CREATE_FAILED",
+    CanaryStateReasonCode::CreateInProgress => "CREATE_IN_PROGRESS",
+    CanaryStateReasonCode::CreatePending => "CREATE_PENDING",
+    CanaryStateReasonCode::DeleteFailed => "DELETE_FAILED",
+    CanaryStateReasonCode::DeleteInProgress => "DELETE_IN_PROGRESS",
+    CanaryStateReasonCode::InvalidPermissions => "INVALID_PERMISSIONS",
+    CanaryStateReasonCode::RollbackComplete => "ROLLBACK_COMPLETE",
+    CanaryStateReasonCode::RollbackFailed => "ROLLBACK_FAILED",
+    CanaryStateReasonCode::SyncDeleteInProgress => "SYNC_DELETE_IN_PROGRESS",
+    CanaryStateReasonCode::UpdateComplete => "UPDATE_COMPLETE",
+    CanaryStateReasonCode::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    CanaryStateReasonCode::UpdatePending => "UPDATE_PENDING",
+    CanaryStateReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_PENDING", "DELETE_FAILED", "DELETE_IN_PROGRESS", "INVALID_PERMISSIONS", "ROLLBACK_COMPLETE", "ROLLBACK_FAILED", "SYNC_DELETE_IN_PROGRESS", "UPDATE_COMPLETE", "UPDATE_IN_PROGRESS", "UPDATE_PENDING"]
+                }
+            }
 impl AsRef<str> for CanaryStateReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

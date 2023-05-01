@@ -3,7 +3,7 @@
 /// <p>Contains information about the access keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessKeyDetails {
+pub struct AccessKeyDetails  {
     /// <p>The access key ID of the user.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct AccessKeyDetails {
 }
 impl AccessKeyDetails {
     /// <p>The access key ID of the user.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The principal ID of the user.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The type of the user.</p>
-    pub fn user_type(&self) -> std::option::Option<&str> {
+    pub fn user_type(&self) -> std::option::Option<& str> {
         self.user_type.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl AccessKeyDetailsBuilder {
     }
     /// <p>The access key ID of the user.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The principal ID of the user.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl AccessKeyDetailsBuilder {
     }
     /// <p>The principal ID of the user.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The name of the user.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl AccessKeyDetailsBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The type of the user.</p>
     pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl AccessKeyDetailsBuilder {
     }
     /// <p>The type of the user.</p>
     pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// Consumes the builder and constructs a [`AccessKeyDetails`](crate::types::AccessKeyDetails).
     pub fn build(self) -> crate::types::AccessKeyDetails {
         crate::types::AccessKeyDetails {
-            access_key_id: self.access_key_id,
-            principal_id: self.principal_id,
-            user_name: self.user_name,
-            user_type: self.user_type,
+            access_key_id: self.access_key_id
+            ,
+            principal_id: self.principal_id
+            ,
+            user_name: self.user_name
+            ,
+            user_type: self.user_type
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFacesInput {
+pub struct ListFacesInput  {
     /// <p>ID of the collection from which to list the faces.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListFacesInput {
 }
 impl ListFacesInput {
     /// <p>ID of the collection from which to list the faces.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of faces to return.</p>
@@ -50,8 +50,7 @@ impl ListFacesInputBuilder {
     }
     /// <p>ID of the collection from which to list the faces.</p>
     pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListFacesInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of faces to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl ListFacesInputBuilder {
     }
     /// <p>Maximum number of faces to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListFacesInput`](crate::operation::list_faces::ListFacesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_faces::ListFacesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_faces::ListFacesInput {
-            collection_id: self.collection_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_faces::ListFacesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_faces::ListFacesInput {
+                collection_id: self.collection_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

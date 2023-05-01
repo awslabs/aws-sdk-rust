@@ -3,16 +3,14 @@
 /// <p>The scope of the cell for conditional formatting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PivotTableConditionalFormattingScope {
+pub struct PivotTableConditionalFormattingScope  {
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
     #[doc(hidden)]
     pub role: std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>,
 }
 impl PivotTableConditionalFormattingScope {
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
-    pub fn role(
-        &self,
-    ) -> std::option::Option<&crate::types::PivotTableConditionalFormattingScopeRole> {
+    pub fn role(&self) -> std::option::Option<& crate::types::PivotTableConditionalFormattingScopeRole> {
         self.role.as_ref()
     }
 }
@@ -36,15 +34,15 @@ impl PivotTableConditionalFormattingScopeBuilder {
         self
     }
     /// <p>The role (field, field total, grand total) of the cell for conditional formatting.</p>
-    pub fn set_role(
-        mut self,
-        input: std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>,
-    ) -> Self {
-        self.role = input;
-        self
+    pub fn set_role(mut self, input: std::option::Option<crate::types::PivotTableConditionalFormattingScopeRole>) -> Self {
+        self.role = input; self
     }
     /// Consumes the builder and constructs a [`PivotTableConditionalFormattingScope`](crate::types::PivotTableConditionalFormattingScope).
     pub fn build(self) -> crate::types::PivotTableConditionalFormattingScope {
-        crate::types::PivotTableConditionalFormattingScope { role: self.role }
+        crate::types::PivotTableConditionalFormattingScope {
+            role: self.role
+            ,
+        }
     }
 }
+

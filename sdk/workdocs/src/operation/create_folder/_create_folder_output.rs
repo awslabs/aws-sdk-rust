@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFolderOutput {
+pub struct CreateFolderOutput  {
     /// <p>The metadata of the folder.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::types::FolderMetadata>,
@@ -10,15 +10,15 @@ pub struct CreateFolderOutput {
 }
 impl CreateFolderOutput {
     /// <p>The metadata of the folder.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::FolderMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::types::FolderMetadata> {
         self.metadata.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFolderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateFolderOutput {
     /// Creates a new builder-style object to manufacture [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
     pub fn builder() -> crate::operation::create_folder::builders::CreateFolderOutputBuilder {
@@ -40,27 +40,25 @@ impl CreateFolderOutputBuilder {
         self
     }
     /// <p>The metadata of the folder.</p>
-    pub fn set_metadata(
-        mut self,
-        input: std::option::Option<crate::types::FolderMetadata>,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: std::option::Option<crate::types::FolderMetadata>) -> Self {
+        self.metadata = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateFolderOutput`](crate::operation::create_folder::CreateFolderOutput).
     pub fn build(self) -> crate::operation::create_folder::CreateFolderOutput {
         crate::operation::create_folder::CreateFolderOutput {
-            metadata: self.metadata,
+            metadata: self.metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

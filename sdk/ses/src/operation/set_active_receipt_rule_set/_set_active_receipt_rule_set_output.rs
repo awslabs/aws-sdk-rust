@@ -3,19 +3,17 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetActiveReceiptRuleSetOutput {
+pub struct SetActiveReceiptRuleSetOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetActiveReceiptRuleSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetActiveReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput).
-    pub fn builder(
-    ) -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetOutputBuilder {
         crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetOutputBuilder::default()
     }
 }
@@ -28,20 +26,19 @@ pub struct SetActiveReceiptRuleSetOutputBuilder {
 }
 impl SetActiveReceiptRuleSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetActiveReceiptRuleSetOutput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput {
+    pub fn build(self) -> crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput {
         crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput {
             _request_id: self._request_id,
         }
     }
 }
+

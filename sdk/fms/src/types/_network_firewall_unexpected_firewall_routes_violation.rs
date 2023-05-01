@@ -3,7 +3,7 @@
 /// <p>Violation detail for an unexpected route that's present in a route table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
+pub struct NetworkFirewallUnexpectedFirewallRoutesViolation  {
     /// <p>The subnet ID for the firewall.</p>
     #[doc(hidden)]
     pub firewall_subnet_id: std::option::Option<std::string::String>,
@@ -22,30 +22,29 @@ pub struct NetworkFirewallUnexpectedFirewallRoutesViolation {
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// <p>The subnet ID for the firewall.</p>
-    pub fn firewall_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_subnet_id(&self) -> std::option::Option<& str> {
         self.firewall_subnet_id.as_deref()
     }
     /// <p>The routes that are in violation.</p>
-    pub fn violating_routes(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn violating_routes(&self) -> std::option::Option<& [crate::types::Route]> {
         self.violating_routes.as_deref()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> std::option::Option<&str> {
+    pub fn route_table_id(&self) -> std::option::Option<& str> {
         self.route_table_id.as_deref()
     }
     /// <p>The endpoint of the firewall.</p>
-    pub fn firewall_endpoint(&self) -> std::option::Option<&str> {
+    pub fn firewall_endpoint(&self) -> std::option::Option<& str> {
         self.firewall_endpoint.as_deref()
     }
     /// <p>Information about the VPC ID.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 impl NetworkFirewallUnexpectedFirewallRoutesViolation {
     /// Creates a new builder-style object to manufacture [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation).
-    pub fn builder(
-    ) -> crate::types::builders::NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
+    pub fn builder() -> crate::types::builders::NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         crate::types::builders::NetworkFirewallUnexpectedFirewallRoutesViolationBuilder::default()
     }
 }
@@ -67,12 +66,8 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         self
     }
     /// <p>The subnet ID for the firewall.</p>
-    pub fn set_firewall_subnet_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.firewall_subnet_id = input;
-        self
+    pub fn set_firewall_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.firewall_subnet_id = input; self
     }
     /// Appends an item to `violating_routes`.
     ///
@@ -81,17 +76,13 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     /// <p>The routes that are in violation.</p>
     pub fn violating_routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.violating_routes.unwrap_or_default();
-        v.push(input);
-        self.violating_routes = Some(v);
-        self
+                        v.push(input);
+                        self.violating_routes = Some(v);
+                        self
     }
     /// <p>The routes that are in violation.</p>
-    pub fn set_violating_routes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
-    ) -> Self {
-        self.violating_routes = input;
-        self
+    pub fn set_violating_routes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Route>>) -> Self {
+        self.violating_routes = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +91,7 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_table_id = input;
-        self
+        self.route_table_id = input; self
     }
     /// <p>The endpoint of the firewall.</p>
     pub fn firewall_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,12 +99,8 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
         self
     }
     /// <p>The endpoint of the firewall.</p>
-    pub fn set_firewall_endpoint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.firewall_endpoint = input;
-        self
+    pub fn set_firewall_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.firewall_endpoint = input; self
     }
     /// <p>Information about the VPC ID.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,17 +109,22 @@ impl NetworkFirewallUnexpectedFirewallRoutesViolationBuilder {
     }
     /// <p>Information about the VPC ID.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Consumes the builder and constructs a [`NetworkFirewallUnexpectedFirewallRoutesViolation`](crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation).
     pub fn build(self) -> crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation {
         crate::types::NetworkFirewallUnexpectedFirewallRoutesViolation {
-            firewall_subnet_id: self.firewall_subnet_id,
-            violating_routes: self.violating_routes,
-            route_table_id: self.route_table_id,
-            firewall_endpoint: self.firewall_endpoint,
-            vpc_id: self.vpc_id,
+            firewall_subnet_id: self.firewall_subnet_id
+            ,
+            violating_routes: self.violating_routes
+            ,
+            route_table_id: self.route_table_id
+            ,
+            firewall_endpoint: self.firewall_endpoint
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

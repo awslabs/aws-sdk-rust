@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchTemplateVersionsInput {
+pub struct DeleteLaunchTemplateVersionsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     #[doc(hidden)]
     pub launch_template_name: std::option::Option<std::string::String>,
@@ -23,24 +23,24 @@ impl DeleteLaunchTemplateVersionsInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version numbers of one or more launch template versions to delete.</p>
-    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
         self.versions.as_deref()
     }
 }
 impl DeleteLaunchTemplateVersionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateVersionsInput`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsInput).
-    pub fn builder() -> crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsInputBuilder{
+    pub fn builder() -> crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsInputBuilder {
         crate::operation::delete_launch_template_versions::builders::DeleteLaunchTemplateVersionsInputBuilder::default()
     }
 }
@@ -62,38 +62,29 @@ impl DeleteLaunchTemplateVersionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.launch_template_id = Some(input.into());
         self
     }
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_id = input;
-        self
+    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_id = input; self
     }
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.launch_template_name = Some(input.into());
         self
     }
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_name = input;
-        self
+    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_name = input; self
     }
     /// Appends an item to `versions`.
     ///
@@ -102,32 +93,28 @@ impl DeleteLaunchTemplateVersionsInputBuilder {
     /// <p>The version numbers of one or more launch template versions to delete.</p>
     pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input.into());
-        self.versions = Some(v);
-        self
+                        v.push(input.into());
+                        self.versions = Some(v);
+                        self
     }
     /// <p>The version numbers of one or more launch template versions to delete.</p>
-    pub fn set_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.versions = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateVersionsInput`](crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsInput {
-                dry_run: self.dry_run,
-                launch_template_id: self.launch_template_id,
-                launch_template_name: self.launch_template_name,
-                versions: self.versions,
-            },
+                dry_run: self.dry_run
+                ,
+                launch_template_id: self.launch_template_id
+                ,
+                launch_template_name: self.launch_template_name
+                ,
+                versions: self.versions
+                ,
+            }
         )
     }
 }
+

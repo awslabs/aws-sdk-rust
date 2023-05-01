@@ -3,7 +3,7 @@
 /// <p>An object that describes the recipients for an email.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
     #[doc(hidden)]
     pub to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct Destination {
 }
 impl Destination {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub fn to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn to_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.to_addresses.as_deref()
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub fn cc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.cc_addresses.as_deref()
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub fn bcc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bcc_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.bcc_addresses.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl DestinationBuilder {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
     pub fn to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.to_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.to_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.to_addresses = Some(v);
+                        self
     }
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub fn set_to_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.to_addresses = input;
-        self
+    pub fn set_to_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.to_addresses = input; self
     }
     /// Appends an item to `cc_addresses`.
     ///
@@ -70,17 +66,13 @@ impl DestinationBuilder {
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
     pub fn cc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cc_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.cc_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.cc_addresses = Some(v);
+                        self
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub fn set_cc_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.cc_addresses = input;
-        self
+    pub fn set_cc_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.cc_addresses = input; self
     }
     /// Appends an item to `bcc_addresses`.
     ///
@@ -89,24 +81,24 @@ impl DestinationBuilder {
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
     pub fn bcc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.bcc_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.bcc_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.bcc_addresses = Some(v);
+                        self
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub fn set_bcc_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.bcc_addresses = input;
-        self
+    pub fn set_bcc_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.bcc_addresses = input; self
     }
     /// Consumes the builder and constructs a [`Destination`](crate::types::Destination).
     pub fn build(self) -> crate::types::Destination {
         crate::types::Destination {
-            to_addresses: self.to_addresses,
-            cc_addresses: self.cc_addresses,
-            bcc_addresses: self.bcc_addresses,
+            to_addresses: self.to_addresses
+            ,
+            cc_addresses: self.cc_addresses
+            ,
+            bcc_addresses: self.bcc_addresses
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRelationalDatabaseInput {
+pub struct StopRelationalDatabaseInput  {
     /// <p>The name of your database to stop.</p>
     #[doc(hidden)]
     pub relational_database_name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct StopRelationalDatabaseInput {
 }
 impl StopRelationalDatabaseInput {
     /// <p>The name of your database to stop.</p>
-    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<& str> {
         self.relational_database_snapshot_name.as_deref()
     }
 }
 impl StopRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`StopRelationalDatabaseInput`](crate::operation::stop_relational_database::StopRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::stop_relational_database::builders::StopRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_relational_database::builders::StopRelationalDatabaseInputBuilder {
         crate::operation::stop_relational_database::builders::StopRelationalDatabaseInputBuilder::default()
     }
 }
@@ -43,41 +41,28 @@ impl StopRelationalDatabaseInputBuilder {
         self
     }
     /// <p>The name of your database to stop.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relational_database_name = input;
-        self
+    pub fn set_relational_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relational_database_name = input; self
     }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.relational_database_snapshot_name = Some(input.into());
         self
     }
     /// <p>The name of your new database snapshot to be created before stopping your database.</p>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relational_database_snapshot_name = input;
-        self
+    pub fn set_relational_database_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relational_database_snapshot_name = input; self
     }
     /// Consumes the builder and constructs a [`StopRelationalDatabaseInput`](crate::operation::stop_relational_database::StopRelationalDatabaseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_relational_database::StopRelationalDatabaseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_relational_database::StopRelationalDatabaseInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_relational_database::StopRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-                relational_database_snapshot_name: self.relational_database_snapshot_name,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+                relational_database_snapshot_name: self.relational_database_snapshot_name
+                ,
+            }
         )
     }
 }
+

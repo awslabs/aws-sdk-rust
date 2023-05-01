@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMonitoringScheduleInput {
+pub struct CreateMonitoringScheduleInput  {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
@@ -15,25 +15,21 @@ pub struct CreateMonitoringScheduleInput {
 }
 impl CreateMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    pub fn monitoring_schedule_config(
-        &self,
-    ) -> std::option::Option<&crate::types::MonitoringScheduleConfig> {
+    pub fn monitoring_schedule_config(&self) -> std::option::Option<& crate::types::MonitoringScheduleConfig> {
         self.monitoring_schedule_config.as_ref()
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateMonitoringScheduleInput {
     /// Creates a new builder-style object to manufacture [`CreateMonitoringScheduleInput`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleInputBuilder {
         crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleInputBuilder::default()
     }
 }
@@ -43,8 +39,7 @@ impl CreateMonitoringScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateMonitoringScheduleInputBuilder {
     pub(crate) monitoring_schedule_name: std::option::Option<std::string::String>,
-    pub(crate) monitoring_schedule_config:
-        std::option::Option<crate::types::MonitoringScheduleConfig>,
+    pub(crate) monitoring_schedule_config: std::option::Option<crate::types::MonitoringScheduleConfig>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMonitoringScheduleInputBuilder {
@@ -54,28 +49,17 @@ impl CreateMonitoringScheduleInputBuilder {
         self
     }
     /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within an Amazon Web Services account.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.monitoring_schedule_name = input;
-        self
+    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.monitoring_schedule_name = input; self
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    pub fn monitoring_schedule_config(
-        mut self,
-        input: crate::types::MonitoringScheduleConfig,
-    ) -> Self {
+    pub fn monitoring_schedule_config(mut self, input: crate::types::MonitoringScheduleConfig) -> Self {
         self.monitoring_schedule_config = Some(input);
         self
     }
     /// <p>The configuration object that specifies the monitoring schedule and defines the monitoring job.</p>
-    pub fn set_monitoring_schedule_config(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringScheduleConfig>,
-    ) -> Self {
-        self.monitoring_schedule_config = input;
-        self
+    pub fn set_monitoring_schedule_config(mut self, input: std::option::Option<crate::types::MonitoringScheduleConfig>) -> Self {
+        self.monitoring_schedule_config = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -84,31 +68,26 @@ impl CreateMonitoringScheduleInputBuilder {
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href=" https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateMonitoringScheduleInput`](crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_monitoring_schedule::CreateMonitoringScheduleInput {
-                monitoring_schedule_name: self.monitoring_schedule_name,
-                monitoring_schedule_config: self.monitoring_schedule_config,
-                tags: self.tags,
-            },
+                monitoring_schedule_name: self.monitoring_schedule_name
+                ,
+                monitoring_schedule_config: self.monitoring_schedule_config
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

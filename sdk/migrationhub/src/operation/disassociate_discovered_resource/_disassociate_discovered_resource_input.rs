@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDiscoveredResourceInput {
+pub struct DisassociateDiscoveredResourceInput  {
     /// <p>The name of the ProgressUpdateStream.</p>
     #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DisassociateDiscoveredResourceInput {
 }
 impl DisassociateDiscoveredResourceInput {
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
-    pub fn configuration_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_id(&self) -> std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -36,7 +36,7 @@ impl DisassociateDiscoveredResourceInput {
 }
 impl DisassociateDiscoveredResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDiscoveredResourceInput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput).
-    pub fn builder() -> crate::operation::disassociate_discovered_resource::builders::DisassociateDiscoveredResourceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_discovered_resource::builders::DisassociateDiscoveredResourceInputBuilder {
         crate::operation::disassociate_discovered_resource::builders::DisassociateDiscoveredResourceInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl DisassociateDiscoveredResourceInputBuilder {
         self
     }
     /// <p>The name of the ProgressUpdateStream.</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.progress_update_stream = input;
-        self
+    pub fn set_progress_update_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.progress_update_stream = input; self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,12 +66,8 @@ impl DisassociateDiscoveredResourceInputBuilder {
         self
     }
     /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.migration_task_name = input;
-        self
+    pub fn set_migration_task_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.migration_task_name = input; self
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
     pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +76,7 @@ impl DisassociateDiscoveredResourceInputBuilder {
     }
     /// <p>ConfigurationId of the Application Discovery Service resource to be disassociated.</p>
     pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -94,16 +85,10 @@ impl DisassociateDiscoveredResourceInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateDiscoveredResourceInput`](crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceInput {
                 progress_update_stream: self.progress_update_stream
@@ -119,3 +104,4 @@ impl DisassociateDiscoveredResourceInputBuilder {
         )
     }
 }
+

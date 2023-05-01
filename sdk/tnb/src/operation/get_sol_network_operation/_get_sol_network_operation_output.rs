@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetSolNetworkOperationOutput {
+pub struct GetSolNetworkOperationOutput  {
     /// <p>ID of this network operation occurrence.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -29,52 +29,48 @@ pub struct GetSolNetworkOperationOutput {
     pub tasks: std::option::Option<std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkOperationOutput {
     /// <p>ID of this network operation occurrence.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Network operation ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The state of the network operation.</p>
-    pub fn operation_state(&self) -> std::option::Option<&crate::types::NsLcmOperationState> {
+    pub fn operation_state(&self) -> std::option::Option<& crate::types::NsLcmOperationState> {
         self.operation_state.as_ref()
     }
     /// <p>ID of the network operation instance.</p>
-    pub fn ns_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ns_instance_id(&self) -> std::option::Option<& str> {
         self.ns_instance_id.as_deref()
     }
     /// <p>Type of the operation represented by this occurrence.</p>
-    pub fn lcm_operation_type(&self) -> std::option::Option<&crate::types::LcmOperationType> {
+    pub fn lcm_operation_type(&self) -> std::option::Option<& crate::types::LcmOperationType> {
         self.lcm_operation_type.as_ref()
     }
     /// <p>Error related to this specific network operation occurrence.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ProblemDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::types::ProblemDetails> {
         self.error.as_ref()
     }
     /// <p>Metadata of this network operation occurrence.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::GetSolNetworkOperationMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::types::GetSolNetworkOperationMetadata> {
         self.metadata.as_ref()
     }
     /// <p>All tasks associated with this operation occurrence.</p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::types::GetSolNetworkOperationTaskDetails]> {
+    pub fn tasks(&self) -> std::option::Option<& [crate::types::GetSolNetworkOperationTaskDetails]> {
         self.tasks.as_deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetSolNetworkOperationOutput {
+impl  std::fmt::Debug for GetSolNetworkOperationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetSolNetworkOperationOutput");
         formatter.field("id", &self.id);
@@ -91,15 +87,13 @@ impl std::fmt::Debug for GetSolNetworkOperationOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetSolNetworkOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSolNetworkOperationOutput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput).
-    pub fn builder(
-    ) -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder {
         crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationOutputBuilder::default()
     }
 }
@@ -115,10 +109,8 @@ pub struct GetSolNetworkOperationOutputBuilder {
     pub(crate) lcm_operation_type: std::option::Option<crate::types::LcmOperationType>,
     pub(crate) error: std::option::Option<crate::types::ProblemDetails>,
     pub(crate) metadata: std::option::Option<crate::types::GetSolNetworkOperationMetadata>,
-    pub(crate) tasks:
-        std::option::Option<std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tasks: std::option::Option<std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetSolNetworkOperationOutputBuilder {
@@ -129,8 +121,7 @@ impl GetSolNetworkOperationOutputBuilder {
     }
     /// <p>ID of this network operation occurrence.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Network operation ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +130,7 @@ impl GetSolNetworkOperationOutputBuilder {
     }
     /// <p>Network operation ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The state of the network operation.</p>
     pub fn operation_state(mut self, input: crate::types::NsLcmOperationState) -> Self {
@@ -148,12 +138,8 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>The state of the network operation.</p>
-    pub fn set_operation_state(
-        mut self,
-        input: std::option::Option<crate::types::NsLcmOperationState>,
-    ) -> Self {
-        self.operation_state = input;
-        self
+    pub fn set_operation_state(mut self, input: std::option::Option<crate::types::NsLcmOperationState>) -> Self {
+        self.operation_state = input; self
     }
     /// <p>ID of the network operation instance.</p>
     pub fn ns_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +148,7 @@ impl GetSolNetworkOperationOutputBuilder {
     }
     /// <p>ID of the network operation instance.</p>
     pub fn set_ns_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ns_instance_id = input;
-        self
+        self.ns_instance_id = input; self
     }
     /// <p>Type of the operation represented by this occurrence.</p>
     pub fn lcm_operation_type(mut self, input: crate::types::LcmOperationType) -> Self {
@@ -171,12 +156,8 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>Type of the operation represented by this occurrence.</p>
-    pub fn set_lcm_operation_type(
-        mut self,
-        input: std::option::Option<crate::types::LcmOperationType>,
-    ) -> Self {
-        self.lcm_operation_type = input;
-        self
+    pub fn set_lcm_operation_type(mut self, input: std::option::Option<crate::types::LcmOperationType>) -> Self {
+        self.lcm_operation_type = input; self
     }
     /// <p>Error related to this specific network operation occurrence.</p>
     pub fn error(mut self, input: crate::types::ProblemDetails) -> Self {
@@ -185,8 +166,7 @@ impl GetSolNetworkOperationOutputBuilder {
     }
     /// <p>Error related to this specific network operation occurrence.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ProblemDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>Metadata of this network operation occurrence.</p>
     pub fn metadata(mut self, input: crate::types::GetSolNetworkOperationMetadata) -> Self {
@@ -194,12 +174,8 @@ impl GetSolNetworkOperationOutputBuilder {
         self
     }
     /// <p>Metadata of this network operation occurrence.</p>
-    pub fn set_metadata(
-        mut self,
-        input: std::option::Option<crate::types::GetSolNetworkOperationMetadata>,
-    ) -> Self {
-        self.metadata = input;
-        self
+    pub fn set_metadata(mut self, input: std::option::Option<crate::types::GetSolNetworkOperationMetadata>) -> Self {
+        self.metadata = input; self
     }
     /// Appends an item to `tasks`.
     ///
@@ -208,66 +184,59 @@ impl GetSolNetworkOperationOutputBuilder {
     /// <p>All tasks associated with this operation occurrence.</p>
     pub fn tasks(mut self, input: crate::types::GetSolNetworkOperationTaskDetails) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-        v.push(input);
-        self.tasks = Some(v);
-        self
+                        v.push(input);
+                        self.tasks = Some(v);
+                        self
     }
     /// <p>All tasks associated with this operation occurrence.</p>
-    pub fn set_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>,
-    ) -> Self {
-        self.tasks = input;
-        self
+    pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::GetSolNetworkOperationTaskDetails>>) -> Self {
+        self.tasks = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSolNetworkOperationOutput`](crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
+    pub fn build(self) -> crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
         crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput {
-            id: self.id,
-            arn: self.arn,
-            operation_state: self.operation_state,
-            ns_instance_id: self.ns_instance_id,
-            lcm_operation_type: self.lcm_operation_type,
-            error: self.error,
-            metadata: self.metadata,
-            tasks: self.tasks,
-            tags: self.tags,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            operation_state: self.operation_state
+            ,
+            ns_instance_id: self.ns_instance_id
+            ,
+            lcm_operation_type: self.lcm_operation_type
+            ,
+            error: self.error
+            ,
+            metadata: self.metadata
+            ,
+            tasks: self.tasks
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -288,3 +257,4 @@ impl std::fmt::Debug for GetSolNetworkOperationOutputBuilder {
         formatter.finish()
     }
 }
+

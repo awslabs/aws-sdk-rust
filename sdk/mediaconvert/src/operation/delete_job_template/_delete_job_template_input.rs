@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobTemplateInput {
+pub struct DeleteJobTemplateInput  {
     /// The name of the job template to be deleted.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteJobTemplateInput {
     /// The name of the job template to be deleted.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder {
         crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteJobTemplateInputBuilder {
     }
     /// The name of the job template to be deleted.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteJobTemplateInput`](crate::operation::delete_job_template::DeleteJobTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_job_template::DeleteJobTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_job_template::DeleteJobTemplateInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_job_template::DeleteJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_job_template::DeleteJobTemplateInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

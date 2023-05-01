@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePullThroughCacheRuleOutput {
+pub struct DeletePullThroughCacheRuleOutput  {
     /// <p>The Amazon ECR repository prefix associated with the request.</p>
     #[doc(hidden)]
     pub ecr_repository_prefix: std::option::Option<std::string::String>,
@@ -19,30 +19,30 @@ pub struct DeletePullThroughCacheRuleOutput {
 }
 impl DeletePullThroughCacheRuleOutput {
     /// <p>The Amazon ECR repository prefix associated with the request.</p>
-    pub fn ecr_repository_prefix(&self) -> std::option::Option<&str> {
+    pub fn ecr_repository_prefix(&self) -> std::option::Option<& str> {
         self.ecr_repository_prefix.as_deref()
     }
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
-    pub fn upstream_registry_url(&self) -> std::option::Option<&str> {
+    pub fn upstream_registry_url(&self) -> std::option::Option<& str> {
         self.upstream_registry_url.as_deref()
     }
     /// <p>The timestamp associated with the pull through cache rule.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The registry ID associated with the request.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeletePullThroughCacheRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeletePullThroughCacheRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeletePullThroughCacheRuleOutput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput).
-    pub fn builder() -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleOutputBuilder{
+    pub fn builder() -> crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleOutputBuilder {
         crate::operation::delete_pull_through_cache_rule::builders::DeletePullThroughCacheRuleOutputBuilder::default()
     }
 }
@@ -64,12 +64,8 @@ impl DeletePullThroughCacheRuleOutputBuilder {
         self
     }
     /// <p>The Amazon ECR repository prefix associated with the request.</p>
-    pub fn set_ecr_repository_prefix(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ecr_repository_prefix = input;
-        self
+    pub fn set_ecr_repository_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ecr_repository_prefix = input; self
     }
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
     pub fn upstream_registry_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +73,8 @@ impl DeletePullThroughCacheRuleOutputBuilder {
         self
     }
     /// <p>The upstream registry URL associated with the pull through cache rule.</p>
-    pub fn set_upstream_registry_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.upstream_registry_url = input;
-        self
+    pub fn set_upstream_registry_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.upstream_registry_url = input; self
     }
     /// <p>The timestamp associated with the pull through cache rule.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -90,12 +82,8 @@ impl DeletePullThroughCacheRuleOutputBuilder {
         self
     }
     /// <p>The timestamp associated with the pull through cache rule.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,28 +92,30 @@ impl DeletePullThroughCacheRuleOutputBuilder {
     }
     /// <p>The registry ID associated with the request.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeletePullThroughCacheRuleOutput`](crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput {
+    pub fn build(self) -> crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput {
         crate::operation::delete_pull_through_cache_rule::DeletePullThroughCacheRuleOutput {
-            ecr_repository_prefix: self.ecr_repository_prefix,
-            upstream_registry_url: self.upstream_registry_url,
-            created_at: self.created_at,
-            registry_id: self.registry_id,
+            ecr_repository_prefix: self.ecr_repository_prefix
+            ,
+            upstream_registry_url: self.upstream_registry_url
+            ,
+            created_at: self.created_at
+            ,
+            registry_id: self.registry_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

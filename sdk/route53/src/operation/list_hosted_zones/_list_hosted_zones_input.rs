@@ -3,9 +3,9 @@
 /// <p>A request to retrieve a list of the public and private hosted zones that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHostedZonesInput {
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
-    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
+pub struct ListHostedZonesInput  {
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p> 
+    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -17,10 +17,10 @@ pub struct ListHostedZonesInput {
     pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl ListHostedZonesInput {
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
-    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p> 
+    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
@@ -28,7 +28,7 @@ impl ListHostedZonesInput {
         self.max_items
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-    pub fn delegation_set_id(&self) -> std::option::Option<&str> {
+    pub fn delegation_set_id(&self) -> std::option::Option<& str> {
         self.delegation_set_id.as_deref()
     }
 }
@@ -48,19 +48,18 @@ pub struct ListHostedZonesInputBuilder {
     pub(crate) delegation_set_id: std::option::Option<std::string::String>,
 }
 impl ListHostedZonesInputBuilder {
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
-    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p> 
+    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.marker = Some(input.into());
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p>
-    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p>
+    /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>true</code>, you have more hosted zones. To get more hosted zones, submit another <code>ListHostedZones</code> request. </p> 
+    /// <p>For the value of <code>marker</code>, specify the value of <code>NextMarker</code> from the previous response, which is the ID of the first hosted zone that Amazon Route 53 will return if you submit another request.</p> 
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more hosted zones to get.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl ListHostedZonesInputBuilder {
     }
     /// <p>(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If you have more than <code>maxitems</code> hosted zones, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that Route 53 will return if you submit another request.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
     pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,24 +76,21 @@ impl ListHostedZonesInputBuilder {
         self
     }
     /// <p>If you're using reusable delegation sets and you want to list all of the hosted zones that are associated with a reusable delegation set, specify the ID of that reusable delegation set. </p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delegation_set_id = input;
-        self
+    pub fn set_delegation_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delegation_set_id = input; self
     }
     /// Consumes the builder and constructs a [`ListHostedZonesInput`](crate::operation::list_hosted_zones::ListHostedZonesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_hosted_zones::ListHostedZonesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_hosted_zones::ListHostedZonesInput {
-            marker: self.marker,
-            max_items: self.max_items,
-            delegation_set_id: self.delegation_set_id,
-        })
+    pub fn build(self) -> Result<crate::operation::list_hosted_zones::ListHostedZonesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_hosted_zones::ListHostedZonesInput {
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+                delegation_set_id: self.delegation_set_id
+                ,
+            }
+        )
     }
 }
+

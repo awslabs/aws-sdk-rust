@@ -3,7 +3,7 @@
 /// <p>Input for the ListCACertificates operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCaCertificatesInput {
+pub struct ListCaCertificatesInput  {
     /// <p>The result page size.</p>
     #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl ListCaCertificatesInput {
         self.page_size
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Determines the order of the results.</p>
@@ -31,14 +31,13 @@ impl ListCaCertificatesInput {
         self.ascending_order
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
 }
 impl ListCaCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder {
+    pub fn builder() -> crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder {
         crate::operation::list_ca_certificates::builders::ListCaCertificatesInputBuilder::default()
     }
 }
@@ -60,8 +59,7 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +68,7 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Determines the order of the results.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
@@ -80,8 +77,7 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>Determines the order of the results.</p>
     pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
-        self.ascending_order = input;
-        self
+        self.ascending_order = input; self
     }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,23 +86,22 @@ impl ListCaCertificatesInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// Consumes the builder and constructs a [`ListCaCertificatesInput`](crate::operation::list_ca_certificates::ListCaCertificatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_ca_certificates::ListCaCertificatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_ca_certificates::ListCaCertificatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_ca_certificates::ListCaCertificatesInput {
-                page_size: self.page_size,
-                marker: self.marker,
-                ascending_order: self.ascending_order,
-                template_name: self.template_name,
-            },
+                page_size: self.page_size
+                ,
+                marker: self.marker
+                ,
+                ascending_order: self.ascending_order
+                ,
+                template_name: self.template_name
+                ,
+            }
         )
     }
 }
+

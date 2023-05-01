@@ -3,7 +3,7 @@
 /// <p>Specifies an alarm and associates it with the specified metric or metric math expression. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudWatchAlarmDetails {
+pub struct AwsCloudWatchAlarmDetails  {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. </p>
     #[doc(hidden)]
     pub actions_enabled: bool,
@@ -30,8 +30,7 @@ pub struct AwsCloudWatchAlarmDetails {
     pub datapoints_to_alarm: i32,
     /// <p>The dimensions for the metric associated with the alarm. </p>
     #[doc(hidden)]
-    pub dimensions:
-        std::option::Option<std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
+    pub dimensions: std::option::Option<std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
     #[doc(hidden)]
     pub evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
@@ -56,8 +55,8 @@ pub struct AwsCloudWatchAlarmDetails {
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
     #[doc(hidden)]
     pub period: i32,
-    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
-    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p> 
+    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p> 
     /// <p>For an alarm based on a math expression, you can't specify <code>Statistic</code>. Instead, you use <code>Metrics</code>.</p>
     #[doc(hidden)]
     pub statistic: std::option::Option<std::string::String>,
@@ -80,27 +79,27 @@ impl AwsCloudWatchAlarmDetails {
         self.actions_enabled
     }
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
-    pub fn alarm_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_actions.as_deref()
     }
     /// <p>The ARN of the alarm. </p>
-    pub fn alarm_arn(&self) -> std::option::Option<&str> {
+    pub fn alarm_arn(&self) -> std::option::Option<& str> {
         self.alarm_arn.as_deref()
     }
     /// <p>The time stamp of the last update to the alarm configuration. </p>
-    pub fn alarm_configuration_updated_timestamp(&self) -> std::option::Option<&str> {
+    pub fn alarm_configuration_updated_timestamp(&self) -> std::option::Option<& str> {
         self.alarm_configuration_updated_timestamp.as_deref()
     }
     /// <p>The description of the alarm. </p>
-    pub fn alarm_description(&self) -> std::option::Option<&str> {
+    pub fn alarm_description(&self) -> std::option::Option<& str> {
         self.alarm_description.as_deref()
     }
     /// <p>The name of the alarm. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the alarm name. </p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. </p>
-    pub fn comparison_operator(&self) -> std::option::Option<&str> {
+    pub fn comparison_operator(&self) -> std::option::Option<& str> {
         self.comparison_operator.as_deref()
     }
     /// <p>The number of datapoints that must be breaching to trigger the alarm. </p>
@@ -108,13 +107,11 @@ impl AwsCloudWatchAlarmDetails {
         self.datapoints_to_alarm
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
-    pub fn dimensions(
-        &self,
-    ) -> std::option::Option<&[crate::types::AwsCloudWatchAlarmDimensionsDetails]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::types::AwsCloudWatchAlarmDimensionsDetails]> {
         self.dimensions.as_deref()
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
-    pub fn evaluate_low_sample_count_percentile(&self) -> std::option::Option<&str> {
+    pub fn evaluate_low_sample_count_percentile(&self) -> std::option::Option<& str> {
         self.evaluate_low_sample_count_percentile.as_deref()
     }
     /// <p>The number of periods over which data is compared to the specified threshold. </p>
@@ -122,33 +119,33 @@ impl AwsCloudWatchAlarmDetails {
         self.evaluation_periods
     }
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
-    pub fn extended_statistic(&self) -> std::option::Option<&str> {
+    pub fn extended_statistic(&self) -> std::option::Option<& str> {
         self.extended_statistic.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn insufficient_data_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn insufficient_data_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.insufficient_data_actions.as_deref()
     }
     /// <p>The name of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you use <code>Metrics</code> instead and you can't specify <code>MetricName</code>. </p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you can't specify <code>Namespace</code> and you use <code>Metrics</code> instead. </p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn ok_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ok_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.ok_actions.as_deref()
     }
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
     pub fn period(&self) -> i32 {
         self.period
     }
-    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
-    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p> 
+    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p> 
     /// <p>For an alarm based on a math expression, you can't specify <code>Statistic</code>. Instead, you use <code>Metrics</code>.</p>
-    pub fn statistic(&self) -> std::option::Option<&str> {
+    pub fn statistic(&self) -> std::option::Option<& str> {
         self.statistic.as_deref()
     }
     /// <p>The value to compare with the specified statistic. </p>
@@ -156,15 +153,15 @@ impl AwsCloudWatchAlarmDetails {
         self.threshold
     }
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
-    pub fn threshold_metric_id(&self) -> std::option::Option<&str> {
+    pub fn threshold_metric_id(&self) -> std::option::Option<& str> {
         self.threshold_metric_id.as_deref()
     }
     /// <p>Sets how this alarm is to handle missing data points. </p>
-    pub fn treat_missing_data(&self) -> std::option::Option<&str> {
+    pub fn treat_missing_data(&self) -> std::option::Option<& str> {
         self.treat_missing_data.as_deref()
     }
     /// <p>The unit of the metric associated with the alarm. </p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -187,8 +184,7 @@ pub struct AwsCloudWatchAlarmDetailsBuilder {
     pub(crate) alarm_name: std::option::Option<std::string::String>,
     pub(crate) comparison_operator: std::option::Option<std::string::String>,
     pub(crate) datapoints_to_alarm: std::option::Option<i32>,
-    pub(crate) dimensions:
-        std::option::Option<std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
+    pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>,
     pub(crate) evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
     pub(crate) evaluation_periods: std::option::Option<i32>,
     pub(crate) extended_statistic: std::option::Option<std::string::String>,
@@ -211,8 +207,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. </p>
     pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.actions_enabled = input;
-        self
+        self.actions_enabled = input; self
     }
     /// Appends an item to `alarm_actions`.
     ///
@@ -221,17 +216,13 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
     pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_actions = Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_actions = Some(v);
+                        self
     }
     /// <p>The list of actions, specified as Amazon Resource Names (ARNs) to execute when this alarm transitions into an <code>ALARM</code> state from any other state. </p>
-    pub fn set_alarm_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.alarm_actions = input;
-        self
+    pub fn set_alarm_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.alarm_actions = input; self
     }
     /// <p>The ARN of the alarm. </p>
     pub fn alarm_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,24 +231,16 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The ARN of the alarm. </p>
     pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_arn = input;
-        self
+        self.alarm_arn = input; self
     }
     /// <p>The time stamp of the last update to the alarm configuration. </p>
-    pub fn alarm_configuration_updated_timestamp(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn alarm_configuration_updated_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
         self.alarm_configuration_updated_timestamp = Some(input.into());
         self
     }
     /// <p>The time stamp of the last update to the alarm configuration. </p>
-    pub fn set_alarm_configuration_updated_timestamp(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.alarm_configuration_updated_timestamp = input;
-        self
+    pub fn set_alarm_configuration_updated_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.alarm_configuration_updated_timestamp = input; self
     }
     /// <p>The description of the alarm. </p>
     pub fn alarm_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,12 +248,8 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>The description of the alarm. </p>
-    pub fn set_alarm_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.alarm_description = input;
-        self
+    pub fn set_alarm_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.alarm_description = input; self
     }
     /// <p>The name of the alarm. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the alarm name. </p>
     pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -279,8 +258,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The name of the alarm. If you don't specify a name, CloudFront generates a unique physical ID and uses that ID for the alarm name. </p>
     pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. </p>
     pub fn comparison_operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -288,12 +266,8 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. </p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.comparison_operator = input;
-        self
+    pub fn set_comparison_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.comparison_operator = input; self
     }
     /// <p>The number of datapoints that must be breaching to trigger the alarm. </p>
     pub fn datapoints_to_alarm(mut self, input: i32) -> Self {
@@ -302,8 +276,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The number of datapoints that must be breaching to trigger the alarm. </p>
     pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
-        self.datapoints_to_alarm = input;
-        self
+        self.datapoints_to_alarm = input; self
     }
     /// Appends an item to `dimensions`.
     ///
@@ -312,35 +285,22 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// <p>The dimensions for the metric associated with the alarm. </p>
     pub fn dimensions(mut self, input: crate::types::AwsCloudWatchAlarmDimensionsDetails) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = Some(v);
+                        self
     }
     /// <p>The dimensions for the metric associated with the alarm. </p>
-    pub fn set_dimensions(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>,
-        >,
-    ) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsCloudWatchAlarmDimensionsDetails>>) -> Self {
+        self.dimensions = input; self
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
-    pub fn evaluate_low_sample_count_percentile(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn evaluate_low_sample_count_percentile(mut self, input: impl Into<std::string::String>) -> Self {
         self.evaluate_low_sample_count_percentile = Some(input.into());
         self
     }
     /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available. </p>
-    pub fn set_evaluate_low_sample_count_percentile(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.evaluate_low_sample_count_percentile = input;
-        self
+    pub fn set_evaluate_low_sample_count_percentile(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.evaluate_low_sample_count_percentile = input; self
     }
     /// <p>The number of periods over which data is compared to the specified threshold. </p>
     pub fn evaluation_periods(mut self, input: i32) -> Self {
@@ -349,8 +309,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The number of periods over which data is compared to the specified threshold. </p>
     pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
-        self.evaluation_periods = input;
-        self
+        self.evaluation_periods = input; self
     }
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
     pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -358,12 +317,8 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>The percentile statistic for the metric associated with the alarm. </p>
-    pub fn set_extended_statistic(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.extended_statistic = input;
-        self
+    pub fn set_extended_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.extended_statistic = input; self
     }
     /// Appends an item to `insufficient_data_actions`.
     ///
@@ -372,17 +327,13 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
     pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.insufficient_data_actions.unwrap_or_default();
-        v.push(input.into());
-        self.insufficient_data_actions = Some(v);
-        self
+                        v.push(input.into());
+                        self.insufficient_data_actions = Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn set_insufficient_data_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.insufficient_data_actions = input;
-        self
+    pub fn set_insufficient_data_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.insufficient_data_actions = input; self
     }
     /// <p>The name of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you use <code>Metrics</code> instead and you can't specify <code>MetricName</code>. </p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -391,8 +342,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The name of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you use <code>Metrics</code> instead and you can't specify <code>MetricName</code>. </p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The namespace of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you can't specify <code>Namespace</code> and you use <code>Metrics</code> instead. </p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -401,8 +351,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The namespace of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you can't specify <code>Namespace</code> and you use <code>Metrics</code> instead. </p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// Appends an item to `ok_actions`.
     ///
@@ -411,17 +360,13 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an ARN. </p>
     pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ok_actions.unwrap_or_default();
-        v.push(input.into());
-        self.ok_actions = Some(v);
-        self
+                        v.push(input.into());
+                        self.ok_actions = Some(v);
+                        self
     }
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state from any other state. Each action is specified as an ARN. </p>
-    pub fn set_ok_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ok_actions = input;
-        self
+    pub fn set_ok_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ok_actions = input; self
     }
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
     pub fn period(mut self, input: i32) -> Self {
@@ -430,22 +375,20 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. </p>
     pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
-    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
-    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p> 
+    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p> 
     /// <p>For an alarm based on a math expression, you can't specify <code>Statistic</code>. Instead, you use <code>Metrics</code>.</p>
     pub fn statistic(mut self, input: impl Into<std::string::String>) -> Self {
         self.statistic = Some(input.into());
         self
     }
-    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
-    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+    /// <p>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p> 
+    /// <p>For an alarm based on a metric, you must specify either <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p> 
     /// <p>For an alarm based on a math expression, you can't specify <code>Statistic</code>. Instead, you use <code>Metrics</code>.</p>
     pub fn set_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// <p>The value to compare with the specified statistic. </p>
     pub fn threshold(mut self, input: f64) -> Self {
@@ -454,8 +397,7 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The value to compare with the specified statistic. </p>
     pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
     pub fn threshold_metric_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -463,12 +405,8 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>n an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code> function used as the threshold for the alarm. </p>
-    pub fn set_threshold_metric_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.threshold_metric_id = input;
-        self
+    pub fn set_threshold_metric_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.threshold_metric_id = input; self
     }
     /// <p>Sets how this alarm is to handle missing data points. </p>
     pub fn treat_missing_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -476,12 +414,8 @@ impl AwsCloudWatchAlarmDetailsBuilder {
         self
     }
     /// <p>Sets how this alarm is to handle missing data points. </p>
-    pub fn set_treat_missing_data(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.treat_missing_data = input;
-        self
+    pub fn set_treat_missing_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.treat_missing_data = input; self
     }
     /// <p>The unit of the metric associated with the alarm. </p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -490,34 +424,61 @@ impl AwsCloudWatchAlarmDetailsBuilder {
     }
     /// <p>The unit of the metric associated with the alarm. </p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// Consumes the builder and constructs a [`AwsCloudWatchAlarmDetails`](crate::types::AwsCloudWatchAlarmDetails).
     pub fn build(self) -> crate::types::AwsCloudWatchAlarmDetails {
         crate::types::AwsCloudWatchAlarmDetails {
-            actions_enabled: self.actions_enabled.unwrap_or_default(),
-            alarm_actions: self.alarm_actions,
-            alarm_arn: self.alarm_arn,
-            alarm_configuration_updated_timestamp: self.alarm_configuration_updated_timestamp,
-            alarm_description: self.alarm_description,
-            alarm_name: self.alarm_name,
-            comparison_operator: self.comparison_operator,
-            datapoints_to_alarm: self.datapoints_to_alarm.unwrap_or_default(),
-            dimensions: self.dimensions,
-            evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile,
-            evaluation_periods: self.evaluation_periods.unwrap_or_default(),
-            extended_statistic: self.extended_statistic,
-            insufficient_data_actions: self.insufficient_data_actions,
-            metric_name: self.metric_name,
-            namespace: self.namespace,
-            ok_actions: self.ok_actions,
-            period: self.period.unwrap_or_default(),
-            statistic: self.statistic,
-            threshold: self.threshold.unwrap_or_default(),
-            threshold_metric_id: self.threshold_metric_id,
-            treat_missing_data: self.treat_missing_data,
-            unit: self.unit,
+            actions_enabled: self.actions_enabled
+                .unwrap_or_default()
+            ,
+            alarm_actions: self.alarm_actions
+            ,
+            alarm_arn: self.alarm_arn
+            ,
+            alarm_configuration_updated_timestamp: self.alarm_configuration_updated_timestamp
+            ,
+            alarm_description: self.alarm_description
+            ,
+            alarm_name: self.alarm_name
+            ,
+            comparison_operator: self.comparison_operator
+            ,
+            datapoints_to_alarm: self.datapoints_to_alarm
+                .unwrap_or_default()
+            ,
+            dimensions: self.dimensions
+            ,
+            evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile
+            ,
+            evaluation_periods: self.evaluation_periods
+                .unwrap_or_default()
+            ,
+            extended_statistic: self.extended_statistic
+            ,
+            insufficient_data_actions: self.insufficient_data_actions
+            ,
+            metric_name: self.metric_name
+            ,
+            namespace: self.namespace
+            ,
+            ok_actions: self.ok_actions
+            ,
+            period: self.period
+                .unwrap_or_default()
+            ,
+            statistic: self.statistic
+            ,
+            threshold: self.threshold
+                .unwrap_or_default()
+            ,
+            threshold_metric_id: self.threshold_metric_id
+            ,
+            treat_missing_data: self.treat_missing_data
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

@@ -4,63 +4,54 @@ pub use crate::operation::purchase_reserved_instances_offering::_purchase_reserv
 pub use crate::operation::purchase_reserved_instances_offering::_purchase_reserved_instances_offering_input::PurchaseReservedInstancesOfferingInputBuilder;
 
 /// Fluent builder constructing a request to `PurchaseReservedInstancesOffering`.
-///
-/// <p>Purchases a Reserved Instance for use with your account. With Reserved Instances, you pay a lower hourly rate compared to On-Demand instance pricing.</p>
-/// <p>Use <code>DescribeReservedInstancesOfferings</code> to get a list of Reserved Instance offerings that match your specifications. After you've purchased a Reserved Instance, you can check for your new Reserved Instance with <code>DescribeReservedInstances</code>.</p>
-/// <p>To queue a purchase for a future date and time, specify a purchase time. If you do not specify a purchase time, the default is the current time.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// 
+/// <p>Purchases a Reserved Instance for use with your account. With Reserved Instances, you pay a lower hourly rate compared to On-Demand instance pricing.</p> 
+/// <p>Use <code>DescribeReservedInstancesOfferings</code> to get a list of Reserved Instance offerings that match your specifications. After you've purchased a Reserved Instance, you can check for your new Reserved Instance with <code>DescribeReservedInstances</code>.</p> 
+/// <p>To queue a purchase for a future date and time, specify a purchase time. If you do not specify a purchase time, the default is the current time.</p> 
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p> <note> 
+/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseReservedInstancesOfferingFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder
             }
-impl PurchaseReservedInstancesOfferingFluentBuilder {
+impl PurchaseReservedInstancesOfferingFluentBuilder  {
     /// Creates a new `PurchaseReservedInstancesOffering`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOffering, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput, aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The number of Reserved Instances to purchase.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
         self.inner = self.inner.instance_count(input);
@@ -77,10 +68,7 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn set_reserved_instances_offering_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_reserved_instances_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_reserved_instances_offering_id(input);
         self
     }
@@ -100,10 +88,7 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
         self
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
-    pub fn set_limit_price(
-        mut self,
-        input: std::option::Option<crate::types::ReservedInstanceLimitPrice>,
-    ) -> Self {
+    pub fn set_limit_price(mut self, input: std::option::Option<crate::types::ReservedInstanceLimitPrice>) -> Self {
         self.inner = self.inner.set_limit_price(input);
         self
     }
@@ -113,11 +98,9 @@ impl PurchaseReservedInstancesOfferingFluentBuilder {
         self
     }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_purchase_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_purchase_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_purchase_time(input);
         self
     }
 }
+

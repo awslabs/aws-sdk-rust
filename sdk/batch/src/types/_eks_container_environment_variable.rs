@@ -3,7 +3,7 @@
 /// <p>An environment variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EksContainerEnvironmentVariable {
+pub struct EksContainerEnvironmentVariable  {
     /// <p>The name of the environment variable.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EksContainerEnvironmentVariable {
 }
 impl EksContainerEnvironmentVariable {
     /// <p>The name of the environment variable.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the environment variable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl EksContainerEnvironmentVariableBuilder {
     }
     /// <p>The name of the environment variable.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The value of the environment variable.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl EksContainerEnvironmentVariableBuilder {
     }
     /// <p>The value of the environment variable.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`EksContainerEnvironmentVariable`](crate::types::EksContainerEnvironmentVariable).
     pub fn build(self) -> crate::types::EksContainerEnvironmentVariable {
         crate::types::EksContainerEnvironmentVariable {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

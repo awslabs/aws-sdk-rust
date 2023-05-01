@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSecurityConfigurationInput {
+pub struct GetSecurityConfigurationInput  {
     /// <p>The name of the security configuration to retrieve.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetSecurityConfigurationInput {
     /// <p>The name of the security configuration to retrieve.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetSecurityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetSecurityConfigurationInput`](crate::operation::get_security_configuration::GetSecurityConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder {
         crate::operation::get_security_configuration::builders::GetSecurityConfigurationInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetSecurityConfigurationInputBuilder {
     }
     /// <p>The name of the security configuration to retrieve.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetSecurityConfigurationInput`](crate::operation::get_security_configuration::GetSecurityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_security_configuration::GetSecurityConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_security_configuration::GetSecurityConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_security_configuration::GetSecurityConfigurationInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

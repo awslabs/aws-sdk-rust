@@ -3,7 +3,7 @@
 /// <p>Details about the configuration for encryption at rest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsElasticsearchDomainEncryptionAtRestOptions {
+pub struct AwsElasticsearchDomainEncryptionAtRestOptions  {
     /// <p>Whether encryption at rest is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,14 +17,13 @@ impl AwsElasticsearchDomainEncryptionAtRestOptions {
         self.enabled
     }
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 impl AwsElasticsearchDomainEncryptionAtRestOptions {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::types::AwsElasticsearchDomainEncryptionAtRestOptions).
-    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainEncryptionAtRestOptionsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
         crate::types::builders::AwsElasticsearchDomainEncryptionAtRestOptionsBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
     }
     /// <p>Whether encryption at rest is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,14 +52,17 @@ impl AwsElasticsearchDomainEncryptionAtRestOptionsBuilder {
     }
     /// <p>The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::types::AwsElasticsearchDomainEncryptionAtRestOptions).
     pub fn build(self) -> crate::types::AwsElasticsearchDomainEncryptionAtRestOptions {
         crate::types::AwsElasticsearchDomainEncryptionAtRestOptions {
-            enabled: self.enabled.unwrap_or_default(),
-            kms_key_id: self.kms_key_id,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

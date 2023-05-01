@@ -3,14 +3,14 @@
 /// <p>Export errors data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportErrorData {
+pub struct ExportErrorData  {
     /// <p>Export errors data raw error.</p>
     #[doc(hidden)]
     pub raw_error: std::option::Option<std::string::String>,
 }
 impl ExportErrorData {
     /// <p>Export errors data raw error.</p>
-    pub fn raw_error(&self) -> std::option::Option<&str> {
+    pub fn raw_error(&self) -> std::option::Option<& str> {
         self.raw_error.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ExportErrorDataBuilder {
     }
     /// <p>Export errors data raw error.</p>
     pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raw_error = input;
-        self
+        self.raw_error = input; self
     }
     /// Consumes the builder and constructs a [`ExportErrorData`](crate::types::ExportErrorData).
     pub fn build(self) -> crate::types::ExportErrorData {
         crate::types::ExportErrorData {
-            raw_error: self.raw_error,
+            raw_error: self.raw_error
+            ,
         }
     }
 }
+

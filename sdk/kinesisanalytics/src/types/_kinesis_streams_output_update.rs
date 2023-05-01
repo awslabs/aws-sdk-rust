@@ -3,7 +3,7 @@
 /// <p> When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisStreamsOutputUpdate {
+pub struct KinesisStreamsOutputUpdate  {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
     #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct KinesisStreamsOutputUpdate {
 }
 impl KinesisStreamsOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
-    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> std::option::Option<& str> {
         self.resource_arn_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+    pub fn role_arn_update(&self) -> std::option::Option<& str> {
         self.role_arn_update.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl KinesisStreamsOutputUpdateBuilder {
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
-    pub fn set_resource_arn_update(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_arn_update = input;
-        self
+    pub fn set_resource_arn_update(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_arn_update = input; self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn role_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl KinesisStreamsOutputUpdateBuilder {
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     pub fn set_role_arn_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn_update = input;
-        self
+        self.role_arn_update = input; self
     }
     /// Consumes the builder and constructs a [`KinesisStreamsOutputUpdate`](crate::types::KinesisStreamsOutputUpdate).
     pub fn build(self) -> crate::types::KinesisStreamsOutputUpdate {
         crate::types::KinesisStreamsOutputUpdate {
-            resource_arn_update: self.resource_arn_update,
-            role_arn_update: self.role_arn_update,
+            resource_arn_update: self.resource_arn_update
+            ,
+            role_arn_update: self.role_arn_update
+            ,
         }
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutJobFailureResultOutput {
+pub struct PutJobFailureResultOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutJobFailureResultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutJobFailureResultOutput {
     /// Creates a new builder-style object to manufacture [`PutJobFailureResultOutput`](crate::operation::put_job_failure_result::PutJobFailureResultOutput).
-    pub fn builder(
-    ) -> crate::operation::put_job_failure_result::builders::PutJobFailureResultOutputBuilder {
+    pub fn builder() -> crate::operation::put_job_failure_result::builders::PutJobFailureResultOutputBuilder {
         crate::operation::put_job_failure_result::builders::PutJobFailureResultOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct PutJobFailureResultOutputBuilder {
 }
 impl PutJobFailureResultOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutJobFailureResultOutput`](crate::operation::put_job_failure_result::PutJobFailureResultOutput).
     pub fn build(self) -> crate::operation::put_job_failure_result::PutJobFailureResultOutput {
         crate::operation::put_job_failure_result::PutJobFailureResultOutput {
@@ -41,3 +40,4 @@ impl PutJobFailureResultOutputBuilder {
         }
     }
 }
+

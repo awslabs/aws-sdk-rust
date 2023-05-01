@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the resource record sets that you want to update based on a specified traffic policy instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTrafficPolicyInstanceInput {
+pub struct UpdateTrafficPolicyInstanceInput  {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct UpdateTrafficPolicyInstanceInput {
 }
 impl UpdateTrafficPolicyInstanceInput {
     /// <p>The ID of the traffic policy instance that you want to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
@@ -27,7 +27,7 @@ impl UpdateTrafficPolicyInstanceInput {
         self.ttl
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    pub fn traffic_policy_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_id(&self) -> std::option::Option<& str> {
         self.traffic_policy_id.as_deref()
     }
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
@@ -37,7 +37,7 @@ impl UpdateTrafficPolicyInstanceInput {
 }
 impl UpdateTrafficPolicyInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrafficPolicyInstanceInput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput).
-    pub fn builder() -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder{
+    pub fn builder() -> crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder {
         crate::operation::update_traffic_policy_instance::builders::UpdateTrafficPolicyInstanceInputBuilder::default()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
     }
     /// <p>The ID of the traffic policy instance that you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
     pub fn ttl(mut self, input: i64) -> Self {
@@ -69,8 +68,7 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
     }
     /// <p>The TTL that you want Amazon Route 53 to assign to all of the updated resource record sets.</p>
     pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
-        self.ttl = input;
-        self
+        self.ttl = input; self
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
     pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +76,8 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
         self
     }
     /// <p>The ID of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
-    pub fn set_traffic_policy_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.traffic_policy_id = input;
-        self
+    pub fn set_traffic_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.traffic_policy_id = input; self
     }
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
     pub fn traffic_policy_version(mut self, input: i32) -> Self {
@@ -92,23 +86,22 @@ impl UpdateTrafficPolicyInstanceInputBuilder {
     }
     /// <p>The version of the traffic policy that you want Amazon Route 53 to use to update resource record sets for the specified traffic policy instance.</p>
     pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.traffic_policy_version = input;
-        self
+        self.traffic_policy_version = input; self
     }
     /// Consumes the builder and constructs a [`UpdateTrafficPolicyInstanceInput`](crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceInput {
-                id: self.id,
-                ttl: self.ttl,
-                traffic_policy_id: self.traffic_policy_id,
-                traffic_policy_version: self.traffic_policy_version,
-            },
+                id: self.id
+                ,
+                ttl: self.ttl
+                ,
+                traffic_policy_id: self.traffic_policy_id
+                ,
+                traffic_policy_version: self.traffic_policy_version
+                ,
+            }
         )
     }
 }
+

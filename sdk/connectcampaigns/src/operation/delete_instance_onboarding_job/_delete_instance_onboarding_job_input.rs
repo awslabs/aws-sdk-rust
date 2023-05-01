@@ -3,20 +3,20 @@
 /// The request for DeleteInstanceOnboardingJob API.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceOnboardingJobInput {
+pub struct DeleteInstanceOnboardingJobInput  {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
 }
 impl DeleteInstanceOnboardingJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceOnboardingJobInput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput).
-    pub fn builder() -> crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobInputBuilder{
+    pub fn builder() -> crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobInputBuilder {
         crate::operation::delete_instance_onboarding_job::builders::DeleteInstanceOnboardingJobInputBuilder::default()
     }
 }
@@ -34,24 +34,17 @@ impl DeleteInstanceOnboardingJobInputBuilder {
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connect_instance_id = input;
-        self
+    pub fn set_connect_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connect_instance_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInstanceOnboardingJobInput`](crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobInput {
-                connect_instance_id: self.connect_instance_id,
-            },
+                connect_instance_id: self.connect_instance_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetHealthInput {
+pub struct DescribeTargetHealthInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DescribeTargetHealthInput {
 }
 impl DescribeTargetHealthInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
     /// <p>The targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::TargetDescription]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::types::TargetDescription]> {
         self.targets.as_deref()
     }
 }
 impl DescribeTargetHealthInput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetHealthInput`](crate::operation::describe_target_health::DescribeTargetHealthInput).
-    pub fn builder(
-    ) -> crate::operation::describe_target_health::builders::DescribeTargetHealthInputBuilder {
+    pub fn builder() -> crate::operation::describe_target_health::builders::DescribeTargetHealthInputBuilder {
         crate::operation::describe_target_health::builders::DescribeTargetHealthInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeTargetHealthInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_group_arn = input;
-        self
+        self.target_group_arn = input; self
     }
     /// Appends an item to `targets`.
     ///
@@ -53,30 +51,24 @@ impl DescribeTargetHealthInputBuilder {
     /// <p>The targets.</p>
     pub fn targets(mut self, input: crate::types::TargetDescription) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = Some(v);
-        self
+                        v.push(input);
+                        self.targets = Some(v);
+                        self
     }
     /// <p>The targets.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetDescription>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetDescription>>) -> Self {
+        self.targets = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTargetHealthInput`](crate::operation::describe_target_health::DescribeTargetHealthInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_target_health::DescribeTargetHealthInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_target_health::DescribeTargetHealthInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_target_health::DescribeTargetHealthInput {
-                target_group_arn: self.target_group_arn,
-                targets: self.targets,
-            },
+                target_group_arn: self.target_group_arn
+                ,
+                targets: self.targets
+                ,
+            }
         )
     }
 }
+

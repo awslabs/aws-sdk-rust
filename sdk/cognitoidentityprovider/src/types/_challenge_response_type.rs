@@ -3,7 +3,7 @@
 /// <p>The challenge response type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChallengeResponseType {
+pub struct ChallengeResponseType  {
     /// <p>The challenge name.</p>
     #[doc(hidden)]
     pub challenge_name: std::option::Option<crate::types::ChallengeName>,
@@ -13,11 +13,11 @@ pub struct ChallengeResponseType {
 }
 impl ChallengeResponseType {
     /// <p>The challenge name.</p>
-    pub fn challenge_name(&self) -> std::option::Option<&crate::types::ChallengeName> {
+    pub fn challenge_name(&self) -> std::option::Option<& crate::types::ChallengeName> {
         self.challenge_name.as_ref()
     }
     /// <p>The challenge response.</p>
-    pub fn challenge_response(&self) -> std::option::Option<&crate::types::ChallengeResponse> {
+    pub fn challenge_response(&self) -> std::option::Option<& crate::types::ChallengeResponse> {
         self.challenge_response.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ChallengeResponseTypeBuilder {
         self
     }
     /// <p>The challenge name.</p>
-    pub fn set_challenge_name(
-        mut self,
-        input: std::option::Option<crate::types::ChallengeName>,
-    ) -> Self {
-        self.challenge_name = input;
-        self
+    pub fn set_challenge_name(mut self, input: std::option::Option<crate::types::ChallengeName>) -> Self {
+        self.challenge_name = input; self
     }
     /// <p>The challenge response.</p>
     pub fn challenge_response(mut self, input: crate::types::ChallengeResponse) -> Self {
@@ -55,18 +51,17 @@ impl ChallengeResponseTypeBuilder {
         self
     }
     /// <p>The challenge response.</p>
-    pub fn set_challenge_response(
-        mut self,
-        input: std::option::Option<crate::types::ChallengeResponse>,
-    ) -> Self {
-        self.challenge_response = input;
-        self
+    pub fn set_challenge_response(mut self, input: std::option::Option<crate::types::ChallengeResponse>) -> Self {
+        self.challenge_response = input; self
     }
     /// Consumes the builder and constructs a [`ChallengeResponseType`](crate::types::ChallengeResponseType).
     pub fn build(self) -> crate::types::ChallengeResponseType {
         crate::types::ChallengeResponseType {
-            challenge_name: self.challenge_name,
-            challenge_response: self.challenge_response,
+            challenge_name: self.challenge_name
+            ,
+            challenge_response: self.challenge_response
+            ,
         }
     }
 }
+

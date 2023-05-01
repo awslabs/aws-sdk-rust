@@ -4,58 +4,49 @@ pub use crate::operation::get_temporary_glue_table_credentials::_get_temporary_g
 pub use crate::operation::get_temporary_glue_table_credentials::_get_temporary_glue_table_credentials_input::GetTemporaryGlueTableCredentialsInputBuilder;
 
 /// Fluent builder constructing a request to `GetTemporaryGlueTableCredentials`.
-///
+/// 
 /// <p>Allows a caller in a secure environment to assume a role with permission to access Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated with a registered location, for example an Amazon S3 bucket, with a scope down policy which restricts the access to a single prefix.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTemporaryGlueTableCredentialsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsInputBuilder
             }
-impl GetTemporaryGlueTableCredentialsFluentBuilder {
+impl GetTemporaryGlueTableCredentialsFluentBuilder  {
     /// Creates a new `GetTemporaryGlueTableCredentials`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentials, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput, aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ARN identifying a table in the Data Catalog for the temporary credentials request.</p>
     pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.table_arn(input.into());
@@ -76,10 +67,7 @@ impl GetTemporaryGlueTableCredentialsFluentBuilder {
         self
     }
     /// <p>Filters the request based on the user having been granted a list of specified permissions on the requested resource(s).</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Permission>>) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
@@ -99,10 +87,7 @@ impl GetTemporaryGlueTableCredentialsFluentBuilder {
         self
     }
     /// <p>A structure representing context to access a resource (column names, query ID, etc).</p>
-    pub fn set_audit_context(
-        mut self,
-        input: std::option::Option<crate::types::AuditContext>,
-    ) -> Self {
+    pub fn set_audit_context(mut self, input: std::option::Option<crate::types::AuditContext>) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
     }
@@ -116,11 +101,9 @@ impl GetTemporaryGlueTableCredentialsFluentBuilder {
         self
     }
     /// <p>A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code> and <code>CELL_FILTER_PERMISSION</code>.</p>
-    pub fn set_supported_permission_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
-    ) -> Self {
+    pub fn set_supported_permission_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
 }
+

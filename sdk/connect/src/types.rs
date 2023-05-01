@@ -129,11 +129,57 @@ pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSlice;
 
 pub use crate::types::_hours_of_operation_days::HoursOfOperationDays;
 
+pub use crate::types::_evaluation_form_scoring_strategy::EvaluationFormScoringStrategy;
+
+pub use crate::types::_evaluation_form_scoring_status::EvaluationFormScoringStatus;
+
+pub use crate::types::_evaluation_form_scoring_mode::EvaluationFormScoringMode;
+
+pub use crate::types::_evaluation_form_item::EvaluationFormItem;
+
+pub use crate::types::_evaluation_form_question::EvaluationFormQuestion;
+
+pub use crate::types::_evaluation_form_question_type_properties::EvaluationFormQuestionTypeProperties;
+
+pub use crate::types::_evaluation_form_single_select_question_properties::EvaluationFormSingleSelectQuestionProperties;
+
+pub use crate::types::_evaluation_form_single_select_question_automation::EvaluationFormSingleSelectQuestionAutomation;
+
+pub use crate::types::_evaluation_form_single_select_question_automation_option::EvaluationFormSingleSelectQuestionAutomationOption;
+
+pub use crate::types::_single_select_question_rule_category_automation::SingleSelectQuestionRuleCategoryAutomation;
+
+pub use crate::types::_single_select_question_rule_category_automation_condition::SingleSelectQuestionRuleCategoryAutomationCondition;
+
+pub use crate::types::_evaluation_form_single_select_question_display_mode::EvaluationFormSingleSelectQuestionDisplayMode;
+
+pub use crate::types::_evaluation_form_single_select_question_option::EvaluationFormSingleSelectQuestionOption;
+
+pub use crate::types::_evaluation_form_numeric_question_properties::EvaluationFormNumericQuestionProperties;
+
+pub use crate::types::_evaluation_form_numeric_question_automation::EvaluationFormNumericQuestionAutomation;
+
+pub use crate::types::_numeric_question_property_value_automation::NumericQuestionPropertyValueAutomation;
+
+pub use crate::types::_numeric_question_property_automation_label::NumericQuestionPropertyAutomationLabel;
+
+pub use crate::types::_evaluation_form_numeric_question_option::EvaluationFormNumericQuestionOption;
+
+pub use crate::types::_evaluation_form_question_type::EvaluationFormQuestionType;
+
+pub use crate::types::_evaluation_form_section::EvaluationFormSection;
+
 pub use crate::types::_contact_flow_module_state::ContactFlowModuleState;
 
 pub use crate::types::_problem_detail::ProblemDetail;
 
 pub use crate::types::_contact_flow_state::ContactFlowState;
+
+pub use crate::types::_evaluation_note::EvaluationNote;
+
+pub use crate::types::_evaluation_answer_input::EvaluationAnswerInput;
+
+pub use crate::types::_evaluation_answer_data::EvaluationAnswerData;
 
 pub use crate::types::_agent_status_state::AgentStatusState;
 
@@ -267,6 +313,12 @@ pub use crate::types::_attribute::Attribute;
 
 pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummary;
 
+pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummary;
+
+pub use crate::types::_evaluation_form_version_status::EvaluationFormVersionStatus;
+
+pub use crate::types::_evaluation_form_summary::EvaluationFormSummary;
+
 pub use crate::types::_default_vocabulary::DefaultVocabulary;
 
 pub use crate::types::_reference_summary::ReferenceSummary;
@@ -290,6 +342,12 @@ pub use crate::types::_contact_flow_summary::ContactFlowSummary;
 pub use crate::types::_contact_flow_type::ContactFlowType;
 
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummary;
+
+pub use crate::types::_evaluation_summary::EvaluationSummary;
+
+pub use crate::types::_evaluation_score::EvaluationScore;
+
+pub use crate::types::_evaluation_status::EvaluationStatus;
 
 pub use crate::types::_lex_bot_config::LexBotConfig;
 
@@ -407,11 +465,21 @@ pub use crate::types::_instance_status_reason::InstanceStatusReason;
 
 pub use crate::types::_hours_of_operation::HoursOfOperation;
 
+pub use crate::types::_evaluation_form::EvaluationForm;
+
 pub use crate::types::_contact_flow_module::ContactFlowModule;
 
 pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
 
 pub use crate::types::_contact_flow::ContactFlow;
+
+pub use crate::types::_evaluation_form_content::EvaluationFormContent;
+
+pub use crate::types::_evaluation::Evaluation;
+
+pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutput;
+
+pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_contact::Contact;
 
@@ -422,6 +490,12 @@ pub use crate::types::_agent_info::AgentInfo;
 pub use crate::types::_queue_info::QueueInfo;
 
 pub use crate::types::_agent_status::AgentStatus;
+
+pub use crate::types::_participant_token_credentials::ParticipantTokenCredentials;
+
+pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
+
+pub use crate::types::_participant_role::ParticipantRole;
 
 mod _action_summary;
 
@@ -520,6 +594,66 @@ mod _email_reference;
 mod _encryption_config;
 
 mod _encryption_type;
+
+mod _evaluation;
+
+mod _evaluation_answer_data;
+
+mod _evaluation_answer_input;
+
+mod _evaluation_answer_output;
+
+mod _evaluation_form;
+
+mod _evaluation_form_content;
+
+mod _evaluation_form_item;
+
+mod _evaluation_form_numeric_question_automation;
+
+mod _evaluation_form_numeric_question_option;
+
+mod _evaluation_form_numeric_question_properties;
+
+mod _evaluation_form_question;
+
+mod _evaluation_form_question_type;
+
+mod _evaluation_form_question_type_properties;
+
+mod _evaluation_form_scoring_mode;
+
+mod _evaluation_form_scoring_status;
+
+mod _evaluation_form_scoring_strategy;
+
+mod _evaluation_form_section;
+
+mod _evaluation_form_single_select_question_automation;
+
+mod _evaluation_form_single_select_question_automation_option;
+
+mod _evaluation_form_single_select_question_display_mode;
+
+mod _evaluation_form_single_select_question_option;
+
+mod _evaluation_form_single_select_question_properties;
+
+mod _evaluation_form_summary;
+
+mod _evaluation_form_version_status;
+
+mod _evaluation_form_version_summary;
+
+mod _evaluation_metadata;
+
+mod _evaluation_note;
+
+mod _evaluation_score;
+
+mod _evaluation_status;
+
+mod _evaluation_summary;
 
 mod _event_bridge_action_definition;
 
@@ -627,9 +761,17 @@ mod _notification_recipient_type;
 
 mod _number_reference;
 
+mod _numeric_question_property_automation_label;
+
+mod _numeric_question_property_value_automation;
+
 mod _outbound_caller_config;
 
 mod _participant_details;
+
+mod _participant_details_to_add;
+
+mod _participant_role;
 
 mod _participant_timer_action;
 
@@ -638,6 +780,8 @@ mod _participant_timer_configuration;
 mod _participant_timer_type;
 
 mod _participant_timer_value;
+
+mod _participant_token_credentials;
 
 mod _persistent_chat;
 
@@ -749,6 +893,10 @@ mod _security_profiles_search_filter;
 
 mod _send_notification_action_definition;
 
+mod _single_select_question_rule_category_automation;
+
+mod _single_select_question_rule_category_automation_condition;
+
 mod _sort_order;
 
 mod _source_type;
@@ -852,3 +1000,4 @@ pub mod builders;
 
 /// Error types that Amazon Connect Service can respond with.
 pub mod error;
+

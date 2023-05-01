@@ -3,8 +3,8 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationTaskIndividualAssessmentsInput {
-    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+pub struct DescribeReplicationTaskIndividualAssessmentsInput  {
+    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p> 
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -16,9 +16,9 @@ pub struct DescribeReplicationTaskIndividualAssessmentsInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsInput {
-    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p> 
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -26,13 +26,13 @@ impl DescribeReplicationTaskIndividualAssessmentsInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeReplicationTaskIndividualAssessmentsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationTaskIndividualAssessmentsInput`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsInput).
-    pub fn builder() -> crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsInputBuilder {
         crate::operation::describe_replication_task_individual_assessments::builders::DescribeReplicationTaskIndividualAssessmentsInputBuilder::default()
     }
 }
@@ -50,22 +50,18 @@ impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p> 
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p>
+    /// <p>Filters applied to the individual assessments described in the form of key-value pairs.</p> 
     /// <p>Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>, <code>status</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -74,8 +70,7 @@ impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,11 +79,10 @@ impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationTaskIndividualAssessmentsInput`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsInput).
-    pub fn build(self) -> Result<crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsInput {
                 filters: self.filters
@@ -101,3 +95,4 @@ impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
         )
     }
 }
+

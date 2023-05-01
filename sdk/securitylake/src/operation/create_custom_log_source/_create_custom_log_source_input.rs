@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomLogSourceInput {
+pub struct CreateCustomLogSourceInput  {
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
     #[doc(hidden)]
     pub custom_source_name: std::option::Option<std::string::String>,
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
     #[doc(hidden)]
     pub event_class: std::option::Option<crate::types::OcsfEventClass>,
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
-    /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p> 
+    /// <ul> 
+    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> 
+    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub glue_invocation_role_arn: std::option::Option<std::string::String>,
@@ -22,31 +22,29 @@ pub struct CreateCustomLogSourceInput {
 }
 impl CreateCustomLogSourceInput {
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn custom_source_name(&self) -> std::option::Option<&str> {
+    pub fn custom_source_name(&self) -> std::option::Option<& str> {
         self.custom_source_name.as_deref()
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
-    pub fn event_class(&self) -> std::option::Option<&crate::types::OcsfEventClass> {
+    pub fn event_class(&self) -> std::option::Option<& crate::types::OcsfEventClass> {
         self.event_class.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
-    /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p> 
+    /// <ul> 
+    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> 
+    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li> 
     /// </ul>
-    pub fn glue_invocation_role_arn(&self) -> std::option::Option<&str> {
+    pub fn glue_invocation_role_arn(&self) -> std::option::Option<& str> {
         self.glue_invocation_role_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
-    pub fn log_provider_account_id(&self) -> std::option::Option<&str> {
+    pub fn log_provider_account_id(&self) -> std::option::Option<& str> {
         self.log_provider_account_id.as_deref()
     }
 }
 impl CreateCustomLogSourceInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder {
         crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder::default()
     }
 }
@@ -67,12 +65,8 @@ impl CreateCustomLogSourceInputBuilder {
         self
     }
     /// <p>The name for a third-party custom source. This must be a Regionally unique value.</p>
-    pub fn set_custom_source_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.custom_source_name = input;
-        self
+    pub fn set_custom_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.custom_source_name = input; self
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
     pub fn event_class(mut self, input: crate::types::OcsfEventClass) -> Self {
@@ -80,33 +74,25 @@ impl CreateCustomLogSourceInputBuilder {
         self
     }
     /// <p>The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom source will send to Security Lake.</p>
-    pub fn set_event_class(
-        mut self,
-        input: std::option::Option<crate::types::OcsfEventClass>,
-    ) -> Self {
-        self.event_class = input;
-        self
+    pub fn set_event_class(mut self, input: std::option::Option<crate::types::OcsfEventClass>) -> Self {
+        self.event_class = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
-    /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p> 
+    /// <ul> 
+    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> 
+    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li> 
     /// </ul>
     pub fn glue_invocation_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.glue_invocation_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p>
-    /// <ul>
-    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li>
-    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler. The recommended IAM policies are:</p> 
+    /// <ul> 
+    /// <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> 
+    /// <li> <p>A custom policy granting access to your Amazon S3 Data Lake</p> </li> 
     /// </ul>
-    pub fn set_glue_invocation_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.glue_invocation_role_arn = input;
-        self
+    pub fn set_glue_invocation_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.glue_invocation_role_arn = input; self
     }
     /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
     pub fn log_provider_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,27 +100,23 @@ impl CreateCustomLogSourceInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data Lake.</p>
-    pub fn set_log_provider_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.log_provider_account_id = input;
-        self
+    pub fn set_log_provider_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.log_provider_account_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateCustomLogSourceInput`](crate::operation::create_custom_log_source::CreateCustomLogSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_custom_log_source::CreateCustomLogSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_custom_log_source::CreateCustomLogSourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_custom_log_source::CreateCustomLogSourceInput {
-                custom_source_name: self.custom_source_name,
-                event_class: self.event_class,
-                glue_invocation_role_arn: self.glue_invocation_role_arn,
-                log_provider_account_id: self.log_provider_account_id,
-            },
+                custom_source_name: self.custom_source_name
+                ,
+                event_class: self.event_class
+                ,
+                glue_invocation_role_arn: self.glue_invocation_role_arn
+                ,
+                log_provider_account_id: self.log_provider_account_id
+                ,
+            }
         )
     }
 }
+

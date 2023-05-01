@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMetricSetInput {
+pub struct DescribeMetricSetInput  {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMetricSetInput {
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_set_arn(&self) -> std::option::Option<& str> {
         self.metric_set_arn.as_deref()
     }
 }
 impl DescribeMetricSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
-    pub fn builder(
-    ) -> crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
+    pub fn builder() -> crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder {
         crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeMetricSetInputBuilder {
     }
     /// <p>The ARN of the dataset.</p>
     pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_set_arn = input;
-        self
+        self.metric_set_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeMetricSetInput`](crate::operation::describe_metric_set::DescribeMetricSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_metric_set::DescribeMetricSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_metric_set::DescribeMetricSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_metric_set::DescribeMetricSetInput {
-                metric_set_arn: self.metric_set_arn,
-            },
+                metric_set_arn: self.metric_set_arn
+                ,
+            }
         )
     }
 }
+

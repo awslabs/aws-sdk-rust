@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserPolicyInput {
-    /// <p>The name of the user who the policy is associated with.</p>
+pub struct GetUserPolicyInput  {
+    /// <p>The name of the user who the policy is associated with.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The name of the policy document to get.</p>
+    /// <p>The name of the policy document to get.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl GetUserPolicyInput {
-    /// <p>The name of the user who the policy is associated with.</p>
+    /// <p>The name of the user who the policy is associated with.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
-    /// <p>The name of the policy document to get.</p>
+    /// <p>The name of the policy document to get.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
@@ -39,40 +39,38 @@ pub struct GetUserPolicyInputBuilder {
     pub(crate) policy_name: std::option::Option<std::string::String>,
 }
 impl GetUserPolicyInputBuilder {
-    /// <p>The name of the user who the policy is associated with.</p>
+    /// <p>The name of the user who the policy is associated with.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the user who the policy is associated with.</p>
+    /// <p>The name of the user who the policy is associated with.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
-    /// <p>The name of the policy document to get.</p>
+    /// <p>The name of the policy document to get.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.policy_name = Some(input.into());
         self
     }
-    /// <p>The name of the policy document to get.</p>
+    /// <p>The name of the policy document to get.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// Consumes the builder and constructs a [`GetUserPolicyInput`](crate::operation::get_user_policy::GetUserPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_user_policy::GetUserPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_user_policy::GetUserPolicyInput {
-            user_name: self.user_name,
-            policy_name: self.policy_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_user_policy::GetUserPolicyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_user_policy::GetUserPolicyInput {
+                user_name: self.user_name
+                ,
+                policy_name: self.policy_name
+                ,
+            }
+        )
     }
 }
+

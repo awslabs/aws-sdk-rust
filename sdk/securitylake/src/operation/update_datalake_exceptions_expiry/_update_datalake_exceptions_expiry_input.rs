@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatalakeExceptionsExpiryInput {
+pub struct UpdateDatalakeExceptionsExpiryInput  {
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     #[doc(hidden)]
     pub exception_message_expiry: std::option::Option<i64>,
@@ -15,7 +15,7 @@ impl UpdateDatalakeExceptionsExpiryInput {
 }
 impl UpdateDatalakeExceptionsExpiryInput {
     /// Creates a new builder-style object to manufacture [`UpdateDatalakeExceptionsExpiryInput`](crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryInput).
-    pub fn builder() -> crate::operation::update_datalake_exceptions_expiry::builders::UpdateDatalakeExceptionsExpiryInputBuilder{
+    pub fn builder() -> crate::operation::update_datalake_exceptions_expiry::builders::UpdateDatalakeExceptionsExpiryInputBuilder {
         crate::operation::update_datalake_exceptions_expiry::builders::UpdateDatalakeExceptionsExpiryInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl UpdateDatalakeExceptionsExpiryInputBuilder {
     }
     /// <p>The time-to-live (TTL) for the exception message to remain.</p>
     pub fn set_exception_message_expiry(mut self, input: std::option::Option<i64>) -> Self {
-        self.exception_message_expiry = input;
-        self
+        self.exception_message_expiry = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDatalakeExceptionsExpiryInput`](crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiryInput {
                 exception_message_expiry: self.exception_message_expiry
@@ -52,3 +46,4 @@ impl UpdateDatalakeExceptionsExpiryInputBuilder {
         )
     }
 }
+

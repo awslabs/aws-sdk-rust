@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStatisticsOutput {
+pub struct GetStatisticsOutput  {
     /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
     #[doc(hidden)]
     pub statistics: std::option::Option<crate::types::Statistics>,
@@ -10,15 +10,15 @@ pub struct GetStatisticsOutput {
 }
 impl GetStatisticsOutput {
     /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::types::Statistics> {
+    pub fn statistics(&self) -> std::option::Option<& crate::types::Statistics> {
         self.statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetStatisticsOutput`](crate::operation::get_statistics::GetStatisticsOutput).
     pub fn builder() -> crate::operation::get_statistics::builders::GetStatisticsOutputBuilder {
@@ -41,23 +41,24 @@ impl GetStatisticsOutputBuilder {
     }
     /// <p>The statistics returned by the Fleet Indexing service based on the query and aggregation field.</p>
     pub fn set_statistics(mut self, input: std::option::Option<crate::types::Statistics>) -> Self {
-        self.statistics = input;
-        self
+        self.statistics = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetStatisticsOutput`](crate::operation::get_statistics::GetStatisticsOutput).
     pub fn build(self) -> crate::operation::get_statistics::GetStatisticsOutput {
         crate::operation::get_statistics::GetStatisticsOutput {
-            statistics: self.statistics,
+            statistics: self.statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

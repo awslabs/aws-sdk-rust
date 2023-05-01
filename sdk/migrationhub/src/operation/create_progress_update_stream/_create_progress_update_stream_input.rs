@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProgressUpdateStreamInput {
+pub struct CreateProgressUpdateStreamInput  {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
     pub progress_update_stream_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateProgressUpdateStreamInput {
 }
 impl CreateProgressUpdateStreamInput {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
+    pub fn progress_update_stream_name(&self) -> std::option::Option<& str> {
         self.progress_update_stream_name.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -22,7 +22,7 @@ impl CreateProgressUpdateStreamInput {
 }
 impl CreateProgressUpdateStreamInput {
     /// Creates a new builder-style object to manufacture [`CreateProgressUpdateStreamInput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput).
-    pub fn builder() -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder{
+    pub fn builder() -> crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder {
         crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl CreateProgressUpdateStreamInputBuilder {
         self
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_progress_update_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.progress_update_stream_name = input;
-        self
+    pub fn set_progress_update_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.progress_update_stream_name = input; self
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -55,21 +51,19 @@ impl CreateProgressUpdateStreamInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateProgressUpdateStreamInput`](crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_progress_update_stream::CreateProgressUpdateStreamInput {
-                progress_update_stream_name: self.progress_update_stream_name,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
+                progress_update_stream_name: self.progress_update_stream_name
+                ,
+                dry_run: self.dry_run
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

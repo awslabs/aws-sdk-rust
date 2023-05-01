@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerImagesInput {
+pub struct GetContainerImagesInput  {
     /// <p>The name of the container service for which to return registered container images.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl GetContainerImagesInput {
     /// <p>The name of the container service for which to return registered container images.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
 impl GetContainerImagesInput {
     /// Creates a new builder-style object to manufacture [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
-    pub fn builder(
-    ) -> crate::operation::get_container_images::builders::GetContainerImagesInputBuilder {
+    pub fn builder() -> crate::operation::get_container_images::builders::GetContainerImagesInputBuilder {
         crate::operation::get_container_images::builders::GetContainerImagesInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetContainerImagesInputBuilder {
     }
     /// <p>The name of the container service for which to return registered container images.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// Consumes the builder and constructs a [`GetContainerImagesInput`](crate::operation::get_container_images::GetContainerImagesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_container_images::GetContainerImagesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_container_images::GetContainerImagesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_container_images::GetContainerImagesInput {
-                service_name: self.service_name,
-            },
+                service_name: self.service_name
+                ,
+            }
         )
     }
 }
+

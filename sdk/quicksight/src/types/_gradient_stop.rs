@@ -3,7 +3,7 @@
 /// <p>Determines the gradient stop configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GradientStop {
+pub struct GradientStop  {
     /// <p>Determines gradient offset value.</p>
     #[doc(hidden)]
     pub gradient_offset: f64,
@@ -24,7 +24,7 @@ impl GradientStop {
         self.data_value
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> std::option::Option<& str> {
         self.color.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl GradientStopBuilder {
     }
     /// <p>Determines gradient offset value.</p>
     pub fn set_gradient_offset(mut self, input: std::option::Option<f64>) -> Self {
-        self.gradient_offset = input;
-        self
+        self.gradient_offset = input; self
     }
     /// <p>Determines the data value.</p>
     pub fn data_value(mut self, input: f64) -> Self {
@@ -61,8 +60,7 @@ impl GradientStopBuilder {
     }
     /// <p>Determines the data value.</p>
     pub fn set_data_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.data_value = input;
-        self
+        self.data_value = input; self
     }
     /// <p>Determines the color.</p>
     pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,19 @@ impl GradientStopBuilder {
     }
     /// <p>Determines the color.</p>
     pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// Consumes the builder and constructs a [`GradientStop`](crate::types::GradientStop).
     pub fn build(self) -> crate::types::GradientStop {
         crate::types::GradientStop {
-            gradient_offset: self.gradient_offset.unwrap_or_default(),
-            data_value: self.data_value,
-            color: self.color,
+            gradient_offset: self.gradient_offset
+                .unwrap_or_default()
+            ,
+            data_value: self.data_value
+            ,
+            color: self.color
+            ,
         }
     }
 }
+

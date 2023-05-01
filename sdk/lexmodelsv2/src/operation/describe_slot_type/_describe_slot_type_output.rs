@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSlotTypeOutput {
+pub struct DescribeSlotTypeOutput  {
     /// <p>The unique identifier for the slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -46,73 +46,66 @@ pub struct DescribeSlotTypeOutput {
 }
 impl DescribeSlotTypeOutput {
     /// <p>The unique identifier for the slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The name specified for the slot type.</p>
-    pub fn slot_type_name(&self) -> std::option::Option<&str> {
+    pub fn slot_type_name(&self) -> std::option::Option<& str> {
         self.slot_type_name.as_deref()
     }
     /// <p>The description specified for the slot type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
-    pub fn slot_type_values(&self) -> std::option::Option<&[crate::types::SlotTypeValue]> {
+    pub fn slot_type_values(&self) -> std::option::Option<& [crate::types::SlotTypeValue]> {
         self.slot_type_values.as_deref()
     }
     /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-    pub fn value_selection_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::SlotValueSelectionSetting> {
+    pub fn value_selection_setting(&self) -> std::option::Option<& crate::types::SlotValueSelectionSetting> {
         self.value_selection_setting.as_ref()
     }
     /// <p>The built in slot type used as a parent to this slot type.</p>
-    pub fn parent_slot_type_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_slot_type_signature(&self) -> std::option::Option<& str> {
         self.parent_slot_type_signature.as_deref()
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot type.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale specified for the slot type.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the slot type was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn external_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::ExternalSourceSetting> {
+    pub fn external_source_setting(&self) -> std::option::Option<& crate::types::ExternalSourceSetting> {
         self.external_source_setting.as_ref()
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::CompositeSlotTypeSetting> {
+    pub fn composite_slot_type_setting(&self) -> std::option::Option<& crate::types::CompositeSlotTypeSetting> {
         self.composite_slot_type_setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSlotTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSlotTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSlotTypeOutput`](crate::operation::describe_slot_type::DescribeSlotTypeOutput).
-    pub fn builder() -> crate::operation::describe_slot_type::builders::DescribeSlotTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_slot_type::builders::DescribeSlotTypeOutputBuilder {
         crate::operation::describe_slot_type::builders::DescribeSlotTypeOutputBuilder::default()
     }
 }
@@ -125,8 +118,7 @@ pub struct DescribeSlotTypeOutputBuilder {
     pub(crate) slot_type_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) slot_type_values: std::option::Option<std::vec::Vec<crate::types::SlotTypeValue>>,
-    pub(crate) value_selection_setting:
-        std::option::Option<crate::types::SlotValueSelectionSetting>,
+    pub(crate) value_selection_setting: std::option::Option<crate::types::SlotValueSelectionSetting>,
     pub(crate) parent_slot_type_signature: std::option::Option<std::string::String>,
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
@@ -134,8 +126,7 @@ pub struct DescribeSlotTypeOutputBuilder {
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) external_source_setting: std::option::Option<crate::types::ExternalSourceSetting>,
-    pub(crate) composite_slot_type_setting:
-        std::option::Option<crate::types::CompositeSlotTypeSetting>,
+    pub(crate) composite_slot_type_setting: std::option::Option<crate::types::CompositeSlotTypeSetting>,
     _request_id: Option<String>,
 }
 impl DescribeSlotTypeOutputBuilder {
@@ -146,8 +137,7 @@ impl DescribeSlotTypeOutputBuilder {
     }
     /// <p>The unique identifier for the slot type.</p>
     pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
     }
     /// <p>The name specified for the slot type.</p>
     pub fn slot_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +146,7 @@ impl DescribeSlotTypeOutputBuilder {
     }
     /// <p>The name specified for the slot type.</p>
     pub fn set_slot_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_name = input;
-        self
+        self.slot_type_name = input; self
     }
     /// <p>The description specified for the slot type.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,8 +155,7 @@ impl DescribeSlotTypeOutputBuilder {
     }
     /// <p>The description specified for the slot type.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `slot_type_values`.
     ///
@@ -176,33 +164,22 @@ impl DescribeSlotTypeOutputBuilder {
     /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
     pub fn slot_type_values(mut self, input: crate::types::SlotTypeValue) -> Self {
         let mut v = self.slot_type_values.unwrap_or_default();
-        v.push(input);
-        self.slot_type_values = Some(v);
-        self
+                        v.push(input);
+                        self.slot_type_values = Some(v);
+                        self
     }
     /// <p>The values that the slot type can take. Includes any synonyms for the slot type values.</p>
-    pub fn set_slot_type_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlotTypeValue>>,
-    ) -> Self {
-        self.slot_type_values = input;
-        self
+    pub fn set_slot_type_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlotTypeValue>>) -> Self {
+        self.slot_type_values = input; self
     }
     /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-    pub fn value_selection_setting(
-        mut self,
-        input: crate::types::SlotValueSelectionSetting,
-    ) -> Self {
+    pub fn value_selection_setting(mut self, input: crate::types::SlotValueSelectionSetting) -> Self {
         self.value_selection_setting = Some(input);
         self
     }
     /// <p>The strategy that Amazon Lex uses to choose a value from a list of possible values.</p>
-    pub fn set_value_selection_setting(
-        mut self,
-        input: std::option::Option<crate::types::SlotValueSelectionSetting>,
-    ) -> Self {
-        self.value_selection_setting = input;
-        self
+    pub fn set_value_selection_setting(mut self, input: std::option::Option<crate::types::SlotValueSelectionSetting>) -> Self {
+        self.value_selection_setting = input; self
     }
     /// <p>The built in slot type used as a parent to this slot type.</p>
     pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,12 +187,8 @@ impl DescribeSlotTypeOutputBuilder {
         self
     }
     /// <p>The built in slot type used as a parent to this slot type.</p>
-    pub fn set_parent_slot_type_signature(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parent_slot_type_signature = input;
-        self
+    pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parent_slot_type_signature = input; self
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,8 +197,7 @@ impl DescribeSlotTypeOutputBuilder {
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +206,7 @@ impl DescribeSlotTypeOutputBuilder {
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The language and locale specified for the slot type.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,8 +215,7 @@ impl DescribeSlotTypeOutputBuilder {
     }
     /// <p>The language and locale specified for the slot type.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>A timestamp of the date and time that the slot type was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -253,12 +223,8 @@ impl DescribeSlotTypeOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the slot type was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -266,12 +232,8 @@ impl DescribeSlotTypeOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the slot type was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
     pub fn external_source_setting(mut self, input: crate::types::ExternalSourceSetting) -> Self {
@@ -279,55 +241,58 @@ impl DescribeSlotTypeOutputBuilder {
         self
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn set_external_source_setting(
-        mut self,
-        input: std::option::Option<crate::types::ExternalSourceSetting>,
-    ) -> Self {
-        self.external_source_setting = input;
-        self
+    pub fn set_external_source_setting(mut self, input: std::option::Option<crate::types::ExternalSourceSetting>) -> Self {
+        self.external_source_setting = input; self
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(
-        mut self,
-        input: crate::types::CompositeSlotTypeSetting,
-    ) -> Self {
+    pub fn composite_slot_type_setting(mut self, input: crate::types::CompositeSlotTypeSetting) -> Self {
         self.composite_slot_type_setting = Some(input);
         self
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn set_composite_slot_type_setting(
-        mut self,
-        input: std::option::Option<crate::types::CompositeSlotTypeSetting>,
-    ) -> Self {
-        self.composite_slot_type_setting = input;
-        self
+    pub fn set_composite_slot_type_setting(mut self, input: std::option::Option<crate::types::CompositeSlotTypeSetting>) -> Self {
+        self.composite_slot_type_setting = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSlotTypeOutput`](crate::operation::describe_slot_type::DescribeSlotTypeOutput).
     pub fn build(self) -> crate::operation::describe_slot_type::DescribeSlotTypeOutput {
         crate::operation::describe_slot_type::DescribeSlotTypeOutput {
-            slot_type_id: self.slot_type_id,
-            slot_type_name: self.slot_type_name,
-            description: self.description,
-            slot_type_values: self.slot_type_values,
-            value_selection_setting: self.value_selection_setting,
-            parent_slot_type_signature: self.parent_slot_type_signature,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            external_source_setting: self.external_source_setting,
-            composite_slot_type_setting: self.composite_slot_type_setting,
+            slot_type_id: self.slot_type_id
+            ,
+            slot_type_name: self.slot_type_name
+            ,
+            description: self.description
+            ,
+            slot_type_values: self.slot_type_values
+            ,
+            value_selection_setting: self.value_selection_setting
+            ,
+            parent_slot_type_signature: self.parent_slot_type_signature
+            ,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            external_source_setting: self.external_source_setting
+            ,
+            composite_slot_type_setting: self.composite_slot_type_setting
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

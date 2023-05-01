@@ -3,7 +3,7 @@
 /// <p>Trace content for your wireless gateway and wireless device resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TraceContent {
+pub struct TraceContent  {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
     #[doc(hidden)]
     pub wireless_device_frame_info: std::option::Option<crate::types::WirelessDeviceFrameInfo>,
@@ -13,13 +13,11 @@ pub struct TraceContent {
 }
 impl TraceContent {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-    pub fn wireless_device_frame_info(
-        &self,
-    ) -> std::option::Option<&crate::types::WirelessDeviceFrameInfo> {
+    pub fn wireless_device_frame_info(&self) -> std::option::Option<& crate::types::WirelessDeviceFrameInfo> {
         self.wireless_device_frame_info.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -34,26 +32,18 @@ impl TraceContent {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TraceContentBuilder {
-    pub(crate) wireless_device_frame_info:
-        std::option::Option<crate::types::WirelessDeviceFrameInfo>,
+    pub(crate) wireless_device_frame_info: std::option::Option<crate::types::WirelessDeviceFrameInfo>,
     pub(crate) log_level: std::option::Option<crate::types::LogLevel>,
 }
 impl TraceContentBuilder {
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-    pub fn wireless_device_frame_info(
-        mut self,
-        input: crate::types::WirelessDeviceFrameInfo,
-    ) -> Self {
+    pub fn wireless_device_frame_info(mut self, input: crate::types::WirelessDeviceFrameInfo) -> Self {
         self.wireless_device_frame_info = Some(input);
         self
     }
     /// <p> <code>FrameInfo</code> of your wireless device resources for the trace content. Use FrameInfo to debug the communication between your LoRaWAN end devices and the network server.</p>
-    pub fn set_wireless_device_frame_info(
-        mut self,
-        input: std::option::Option<crate::types::WirelessDeviceFrameInfo>,
-    ) -> Self {
-        self.wireless_device_frame_info = input;
-        self
+    pub fn set_wireless_device_frame_info(mut self, input: std::option::Option<crate::types::WirelessDeviceFrameInfo>) -> Self {
+        self.wireless_device_frame_info = input; self
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -62,14 +52,16 @@ impl TraceContentBuilder {
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// Consumes the builder and constructs a [`TraceContent`](crate::types::TraceContent).
     pub fn build(self) -> crate::types::TraceContent {
         crate::types::TraceContent {
-            wireless_device_frame_info: self.wireless_device_frame_info,
-            log_level: self.log_level,
+            wireless_device_frame_info: self.wireless_device_frame_info
+            ,
+            log_level: self.log_level
+            ,
         }
     }
 }
+

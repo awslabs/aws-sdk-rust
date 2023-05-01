@@ -2,36 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyRecommendationsReceivedOutput {
+pub struct NotifyRecommendationsReceivedOutput  {
     /// <p>The identifiers of the recommendations.</p>
     #[doc(hidden)]
     pub recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The identifiers of recommendations that are causing errors.</p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
     _request_id: Option<String>,
 }
 impl NotifyRecommendationsReceivedOutput {
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommendation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.recommendation_ids.as_deref()
     }
     /// <p>The identifiers of recommendations that are causing errors.</p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::types::NotifyRecommendationsReceivedError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::NotifyRecommendationsReceivedError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for NotifyRecommendationsReceivedOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl NotifyRecommendationsReceivedOutput {
     /// Creates a new builder-style object to manufacture [`NotifyRecommendationsReceivedOutput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput).
-    pub fn builder() -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder{
+    pub fn builder() -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder {
         crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedOutputBuilder::default()
     }
 }
@@ -41,8 +38,7 @@ impl NotifyRecommendationsReceivedOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedOutputBuilder {
     pub(crate) recommendation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) errors:
-        std::option::Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
+    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
     _request_id: Option<String>,
 }
 impl NotifyRecommendationsReceivedOutputBuilder {
@@ -53,17 +49,13 @@ impl NotifyRecommendationsReceivedOutputBuilder {
     /// <p>The identifiers of the recommendations.</p>
     pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -72,36 +64,32 @@ impl NotifyRecommendationsReceivedOutputBuilder {
     /// <p>The identifiers of recommendations that are causing errors.</p>
     pub fn errors(mut self, input: crate::types::NotifyRecommendationsReceivedError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>The identifiers of recommendations that are causing errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotifyRecommendationsReceivedError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedOutput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput
-    {
+    pub fn build(self) -> crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput {
         crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput {
-            recommendation_ids: self.recommendation_ids,
-            errors: self.errors,
+            recommendation_ids: self.recommendation_ids
+            ,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

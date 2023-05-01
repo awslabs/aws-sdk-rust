@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let xavc4kprofilebitrateclass = unimplemented!();
 /// match xavc4kprofilebitrateclass {
@@ -31,22 +31,14 @@
 /// Specifically, when `xavc4kprofilebitrateclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Xavc4kProfileBitrateClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Xavc4kProfileBitrateClass {
     #[allow(missing_docs)] // documentation missing in model
     BitrateClass100,
@@ -55,48 +47,43 @@ pub enum Xavc4kProfileBitrateClass {
     #[allow(missing_docs)] // documentation missing in model
     BitrateClass200,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Xavc4kProfileBitrateClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "BITRATE_CLASS_100" => Xavc4kProfileBitrateClass::BitrateClass100,
-            "BITRATE_CLASS_140" => Xavc4kProfileBitrateClass::BitrateClass140,
-            "BITRATE_CLASS_200" => Xavc4kProfileBitrateClass::BitrateClass200,
-            other => Xavc4kProfileBitrateClass::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BITRATE_CLASS_100" => Xavc4kProfileBitrateClass::BitrateClass100,
+"BITRATE_CLASS_140" => Xavc4kProfileBitrateClass::BitrateClass140,
+"BITRATE_CLASS_200" => Xavc4kProfileBitrateClass::BitrateClass200,
+other => Xavc4kProfileBitrateClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Xavc4kProfileBitrateClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Xavc4kProfileBitrateClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Xavc4kProfileBitrateClass::from(s))
+                }
+            }
 impl Xavc4kProfileBitrateClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Xavc4kProfileBitrateClass::BitrateClass100 => "BITRATE_CLASS_100",
-            Xavc4kProfileBitrateClass::BitrateClass140 => "BITRATE_CLASS_140",
-            Xavc4kProfileBitrateClass::BitrateClass200 => "BITRATE_CLASS_200",
-            Xavc4kProfileBitrateClass::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BITRATE_CLASS_100",
-            "BITRATE_CLASS_140",
-            "BITRATE_CLASS_200",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Xavc4kProfileBitrateClass::BitrateClass100 => "BITRATE_CLASS_100",
+    Xavc4kProfileBitrateClass::BitrateClass140 => "BITRATE_CLASS_140",
+    Xavc4kProfileBitrateClass::BitrateClass200 => "BITRATE_CLASS_200",
+    Xavc4kProfileBitrateClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BITRATE_CLASS_100", "BITRATE_CLASS_140", "BITRATE_CLASS_200"]
+                }
+            }
 impl AsRef<str> for Xavc4kProfileBitrateClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

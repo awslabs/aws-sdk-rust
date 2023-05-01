@@ -3,7 +3,7 @@
 /// <p>A phone number for which an order has been placed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OrderedPhoneNumber {
+pub struct OrderedPhoneNumber  {
     /// <p>The phone number, in E.164 format.</p>
     #[doc(hidden)]
     pub e164_phone_number: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct OrderedPhoneNumber {
 }
 impl OrderedPhoneNumber {
     /// <p>The phone number, in E.164 format.</p>
-    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+    pub fn e164_phone_number(&self) -> std::option::Option<& str> {
         self.e164_phone_number.as_deref()
     }
     /// <p>The phone number status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OrderedPhoneNumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OrderedPhoneNumberStatus> {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for OrderedPhoneNumber {
+impl  std::fmt::Debug for OrderedPhoneNumber  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrderedPhoneNumber");
         formatter.field("e164_phone_number", &"*** Sensitive Data Redacted ***");
@@ -50,12 +50,8 @@ impl OrderedPhoneNumberBuilder {
         self
     }
     /// <p>The phone number, in E.164 format.</p>
-    pub fn set_e164_phone_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.e164_phone_number = input;
-        self
+    pub fn set_e164_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.e164_phone_number = input; self
     }
     /// <p>The phone number status.</p>
     pub fn status(mut self, input: crate::types::OrderedPhoneNumberStatus) -> Self {
@@ -63,18 +59,16 @@ impl OrderedPhoneNumberBuilder {
         self
     }
     /// <p>The phone number status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::OrderedPhoneNumberStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::OrderedPhoneNumberStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`OrderedPhoneNumber`](crate::types::OrderedPhoneNumber).
     pub fn build(self) -> crate::types::OrderedPhoneNumber {
         crate::types::OrderedPhoneNumber {
-            e164_phone_number: self.e164_phone_number,
-            status: self.status,
+            e164_phone_number: self.e164_phone_number
+            ,
+            status: self.status
+            ,
         }
     }
 }
@@ -86,3 +80,4 @@ impl std::fmt::Debug for OrderedPhoneNumberBuilder {
         formatter.finish()
     }
 }
+

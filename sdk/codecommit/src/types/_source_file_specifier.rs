@@ -3,7 +3,7 @@
 /// <p>Information about a source file that is part of changes made in a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceFileSpecifier {
+pub struct SourceFileSpecifier  {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct SourceFileSpecifier {
 }
 impl SourceFileSpecifier {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
@@ -43,8 +43,7 @@ impl SourceFileSpecifierBuilder {
     }
     /// <p>The full path to the file, including the name of the file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn is_move(mut self, input: bool) -> Self {
@@ -53,14 +52,17 @@ impl SourceFileSpecifierBuilder {
     }
     /// <p>Whether to remove the source file from the parent commit.</p>
     pub fn set_is_move(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_move = input;
-        self
+        self.is_move = input; self
     }
     /// Consumes the builder and constructs a [`SourceFileSpecifier`](crate::types::SourceFileSpecifier).
     pub fn build(self) -> crate::types::SourceFileSpecifier {
         crate::types::SourceFileSpecifier {
-            file_path: self.file_path,
-            is_move: self.is_move.unwrap_or_default(),
+            file_path: self.file_path
+            ,
+            is_move: self.is_move
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

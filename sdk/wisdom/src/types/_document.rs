@@ -3,7 +3,7 @@
 /// <p>The document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Document {
+pub struct Document  {
     /// <p>A reference to the content resource.</p>
     #[doc(hidden)]
     pub content_reference: std::option::Option<crate::types::ContentReference>,
@@ -16,15 +16,15 @@ pub struct Document {
 }
 impl Document {
     /// <p>A reference to the content resource.</p>
-    pub fn content_reference(&self) -> std::option::Option<&crate::types::ContentReference> {
+    pub fn content_reference(&self) -> std::option::Option<& crate::types::ContentReference> {
         self.content_reference.as_ref()
     }
     /// <p>The title of the document.</p>
-    pub fn title(&self) -> std::option::Option<&crate::types::DocumentText> {
+    pub fn title(&self) -> std::option::Option<& crate::types::DocumentText> {
         self.title.as_ref()
     }
     /// <p>The excerpt from the document.</p>
-    pub fn excerpt(&self) -> std::option::Option<&crate::types::DocumentText> {
+    pub fn excerpt(&self) -> std::option::Option<& crate::types::DocumentText> {
         self.excerpt.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl DocumentBuilder {
         self
     }
     /// <p>A reference to the content resource.</p>
-    pub fn set_content_reference(
-        mut self,
-        input: std::option::Option<crate::types::ContentReference>,
-    ) -> Self {
-        self.content_reference = input;
-        self
+    pub fn set_content_reference(mut self, input: std::option::Option<crate::types::ContentReference>) -> Self {
+        self.content_reference = input; self
     }
     /// <p>The title of the document.</p>
     pub fn title(mut self, input: crate::types::DocumentText) -> Self {
@@ -64,8 +60,7 @@ impl DocumentBuilder {
     }
     /// <p>The title of the document.</p>
     pub fn set_title(mut self, input: std::option::Option<crate::types::DocumentText>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The excerpt from the document.</p>
     pub fn excerpt(mut self, input: crate::types::DocumentText) -> Self {
@@ -74,15 +69,18 @@ impl DocumentBuilder {
     }
     /// <p>The excerpt from the document.</p>
     pub fn set_excerpt(mut self, input: std::option::Option<crate::types::DocumentText>) -> Self {
-        self.excerpt = input;
-        self
+        self.excerpt = input; self
     }
     /// Consumes the builder and constructs a [`Document`](crate::types::Document).
     pub fn build(self) -> crate::types::Document {
         crate::types::Document {
-            content_reference: self.content_reference,
-            title: self.title,
-            excerpt: self.excerpt,
+            content_reference: self.content_reference
+            ,
+            title: self.title
+            ,
+            excerpt: self.excerpt
+            ,
         }
     }
 }
+

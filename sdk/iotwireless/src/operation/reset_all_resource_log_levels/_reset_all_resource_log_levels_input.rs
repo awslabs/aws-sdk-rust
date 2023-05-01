@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetAllResourceLogLevelsInput {}
+pub struct ResetAllResourceLogLevelsInput  {
+}
 impl ResetAllResourceLogLevelsInput {
     /// Creates a new builder-style object to manufacture [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
-    pub fn builder() -> crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder{
+    pub fn builder() -> crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder {
         crate::operation::reset_all_resource_log_levels::builders::ResetAllResourceLogLevelsInputBuilder::default()
     }
 }
@@ -13,15 +14,15 @@ impl ResetAllResourceLogLevelsInput {
 /// A builder for [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct ResetAllResourceLogLevelsInputBuilder {}
+pub struct ResetAllResourceLogLevelsInputBuilder {
+}
 impl ResetAllResourceLogLevelsInputBuilder {
     /// Consumes the builder and constructs a [`ResetAllResourceLogLevelsInput`](crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput {})
+    pub fn build(self) -> Result<crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::reset_all_resource_log_levels::ResetAllResourceLogLevelsInput {
+            }
+        )
     }
 }
+

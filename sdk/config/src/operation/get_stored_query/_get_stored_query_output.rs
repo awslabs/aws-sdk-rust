@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStoredQueryOutput {
+pub struct GetStoredQueryOutput  {
     /// <p>Returns a <code>StoredQuery</code> object.</p>
     #[doc(hidden)]
     pub stored_query: std::option::Option<crate::types::StoredQuery>,
@@ -10,15 +10,15 @@ pub struct GetStoredQueryOutput {
 }
 impl GetStoredQueryOutput {
     /// <p>Returns a <code>StoredQuery</code> object.</p>
-    pub fn stored_query(&self) -> std::option::Option<&crate::types::StoredQuery> {
+    pub fn stored_query(&self) -> std::option::Option<& crate::types::StoredQuery> {
         self.stored_query.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetStoredQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetStoredQueryOutput {
     /// Creates a new builder-style object to manufacture [`GetStoredQueryOutput`](crate::operation::get_stored_query::GetStoredQueryOutput).
     pub fn builder() -> crate::operation::get_stored_query::builders::GetStoredQueryOutputBuilder {
@@ -40,27 +40,25 @@ impl GetStoredQueryOutputBuilder {
         self
     }
     /// <p>Returns a <code>StoredQuery</code> object.</p>
-    pub fn set_stored_query(
-        mut self,
-        input: std::option::Option<crate::types::StoredQuery>,
-    ) -> Self {
-        self.stored_query = input;
-        self
+    pub fn set_stored_query(mut self, input: std::option::Option<crate::types::StoredQuery>) -> Self {
+        self.stored_query = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetStoredQueryOutput`](crate::operation::get_stored_query::GetStoredQueryOutput).
     pub fn build(self) -> crate::operation::get_stored_query::GetStoredQueryOutput {
         crate::operation::get_stored_query::GetStoredQueryOutput {
-            stored_query: self.stored_query,
+            stored_query: self.stored_query
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An adjustment to the CVSS metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Adjustment {
+pub struct Adjustment  {
     /// <p>The metric to adjust.</p>
     #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Adjustment {
 }
 impl Adjustment {
     /// <p>The metric to adjust.</p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The reason for the adjustment.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AdjustmentBuilder {
     }
     /// <p>The metric to adjust.</p>
     pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The reason for the adjustment.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AdjustmentBuilder {
     }
     /// <p>The reason for the adjustment.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`Adjustment`](crate::types::Adjustment).
     pub fn build(self) -> crate::types::Adjustment {
         crate::types::Adjustment {
-            metric: self.metric,
-            reason: self.reason,
+            metric: self.metric
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

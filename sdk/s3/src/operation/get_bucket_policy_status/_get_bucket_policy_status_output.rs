@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketPolicyStatusOutput {
+pub struct GetBucketPolicyStatusOutput  {
     /// <p>The policy status for the specified bucket.</p>
     #[doc(hidden)]
     pub policy_status: std::option::Option<crate::types::PolicyStatus>,
@@ -11,25 +11,23 @@ pub struct GetBucketPolicyStatusOutput {
 }
 impl GetBucketPolicyStatusOutput {
     /// <p>The policy status for the specified bucket.</p>
-    pub fn policy_status(&self) -> std::option::Option<&crate::types::PolicyStatus> {
+    pub fn policy_status(&self) -> std::option::Option<& crate::types::PolicyStatus> {
         self.policy_status.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketPolicyStatusOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for GetBucketPolicyStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBucketPolicyStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketPolicyStatusOutput`](crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_policy_status::builders::GetBucketPolicyStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_bucket_policy_status::builders::GetBucketPolicyStatusOutputBuilder {
         crate::operation::get_bucket_policy_status::builders::GetBucketPolicyStatusOutputBuilder::default()
     }
 }
@@ -49,40 +47,35 @@ impl GetBucketPolicyStatusOutputBuilder {
         self
     }
     /// <p>The policy status for the specified bucket.</p>
-    pub fn set_policy_status(
-        mut self,
-        input: std::option::Option<crate::types::PolicyStatus>,
-    ) -> Self {
-        self.policy_status = input;
-        self
+    pub fn set_policy_status(mut self, input: std::option::Option<crate::types::PolicyStatus>) -> Self {
+        self.policy_status = input; self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBucketPolicyStatusOutput`](crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput).
     pub fn build(self) -> crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput {
         crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput {
-            policy_status: self.policy_status,
+            policy_status: self.policy_status
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

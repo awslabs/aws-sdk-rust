@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePhoneNumberOrderInput {
+pub struct CreatePhoneNumberOrderInput  {
     /// <p>The phone number product type.</p>
     #[doc(hidden)]
     pub product_type: std::option::Option<crate::types::PhoneNumberProductType>,
@@ -12,19 +12,17 @@ pub struct CreatePhoneNumberOrderInput {
 }
 impl CreatePhoneNumberOrderInput {
     /// <p>The phone number product type.</p>
-    pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn e164_phone_numbers(&self) -> std::option::Option<& [std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
 }
 impl CreatePhoneNumberOrderInput {
     /// Creates a new builder-style object to manufacture [`CreatePhoneNumberOrderInput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput).
-    pub fn builder(
-    ) -> crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder {
         crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl CreatePhoneNumberOrderInputBuilder {
         self
     }
     /// <p>The phone number product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
-        self.product_type = input;
-        self
+    pub fn set_product_type(mut self, input: std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
+        self.product_type = input; self
     }
     /// Appends an item to `e164_phone_numbers`.
     ///
@@ -57,30 +51,24 @@ impl CreatePhoneNumberOrderInputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.e164_phone_numbers = Some(v);
-        self
+                        v.push(input.into());
+                        self.e164_phone_numbers = Some(v);
+                        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.e164_phone_numbers = input;
-        self
+    pub fn set_e164_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.e164_phone_numbers = input; self
     }
     /// Consumes the builder and constructs a [`CreatePhoneNumberOrderInput`](crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_phone_number_order::CreatePhoneNumberOrderInput {
-                product_type: self.product_type,
-                e164_phone_numbers: self.e164_phone_numbers,
-            },
+                product_type: self.product_type
+                ,
+                e164_phone_numbers: self.e164_phone_numbers
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsInput {
+pub struct ListApplicationsInput  {
     /// <p>Applications list filters.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::ListApplicationsRequestFilters>,
@@ -15,7 +15,7 @@ pub struct ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// <p>Applications list filters.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ListApplicationsRequestFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ListApplicationsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum results to return when listing applications.</p>
@@ -23,14 +23,13 @@ impl ListApplicationsInput {
         self.max_results
     }
     /// <p>Request next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl ListApplicationsInputBuilder {
         self
     }
     /// <p>Applications list filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ListApplicationsRequestFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListApplicationsRequestFilters>) -> Self {
+        self.filters = input; self
     }
     /// <p>Maximum results to return when listing applications.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -64,8 +59,7 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>Maximum results to return when listing applications.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Request next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +68,21 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>Request next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_applications::ListApplicationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_applications::ListApplicationsInput {
-            filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_applications::ListApplicationsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_applications::ListApplicationsInput {
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

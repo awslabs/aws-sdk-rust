@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddThingToBillingGroupOutput {
+pub struct AddThingToBillingGroupOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AddThingToBillingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AddThingToBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`AddThingToBillingGroupOutput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupOutputBuilder {
         crate::operation::add_thing_to_billing_group::builders::AddThingToBillingGroupOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct AddThingToBillingGroupOutputBuilder {
 }
 impl AddThingToBillingGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AddThingToBillingGroupOutput`](crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput {
+    pub fn build(self) -> crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput {
         crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput {
             _request_id: self._request_id,
         }
     }
 }
+

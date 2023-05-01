@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let devicestatusdetailcode = unimplemented!();
 /// match devicestatusdetailcode {
@@ -45,22 +45,14 @@
 /// Specifically, when `devicestatusdetailcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceStatusDetailCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceStatusDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     AssociationRejection,
@@ -97,98 +89,71 @@ pub enum DeviceStatusDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceStatusDetailCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSOCIATION_REJECTION" => DeviceStatusDetailCode::AssociationRejection,
-            "AUTHENTICATION_FAILURE" => DeviceStatusDetailCode::AuthenticationFailure,
-            "CERTIFICATE_AUTHORITY_ACCESS_DENIED" => {
-                DeviceStatusDetailCode::CertificateAuthorityAccessDenied
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSOCIATION_REJECTION" => DeviceStatusDetailCode::AssociationRejection,
+"AUTHENTICATION_FAILURE" => DeviceStatusDetailCode::AuthenticationFailure,
+"CERTIFICATE_AUTHORITY_ACCESS_DENIED" => DeviceStatusDetailCode::CertificateAuthorityAccessDenied,
+"CERTIFICATE_ISSUING_LIMIT_EXCEEDED" => DeviceStatusDetailCode::CertificateIssuingLimitExceeded,
+"CREDENTIALS_ACCESS_FAILURE" => DeviceStatusDetailCode::CredentialsAccessFailure,
+"DEVICE_SOFTWARE_UPDATE_NEEDED" => DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded,
+"DEVICE_WAS_OFFLINE" => DeviceStatusDetailCode::DeviceWasOffline,
+"DHCP_FAILURE" => DeviceStatusDetailCode::DhcpFailure,
+"DNS_FAILURE" => DeviceStatusDetailCode::DnsFailure,
+"INTERNET_UNAVAILABLE" => DeviceStatusDetailCode::InternetUnavailable,
+"INVALID_CERTIFICATE_AUTHORITY" => DeviceStatusDetailCode::InvalidCertificateAuthority,
+"INVALID_PASSWORD_STATE" => DeviceStatusDetailCode::InvalidPasswordState,
+"NETWORK_PROFILE_NOT_FOUND" => DeviceStatusDetailCode::NetworkProfileNotFound,
+"PASSWORD_MANAGER_ACCESS_DENIED" => DeviceStatusDetailCode::PasswordManagerAccessDenied,
+"PASSWORD_NOT_FOUND" => DeviceStatusDetailCode::PasswordNotFound,
+"TLS_VERSION_MISMATCH" => DeviceStatusDetailCode::TlsVersionMismatch,
+"UNKNOWN_FAILURE" => DeviceStatusDetailCode::UnknownFailure,
+other => DeviceStatusDetailCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" => {
-                DeviceStatusDetailCode::CertificateIssuingLimitExceeded
-            }
-            "CREDENTIALS_ACCESS_FAILURE" => DeviceStatusDetailCode::CredentialsAccessFailure,
-            "DEVICE_SOFTWARE_UPDATE_NEEDED" => DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded,
-            "DEVICE_WAS_OFFLINE" => DeviceStatusDetailCode::DeviceWasOffline,
-            "DHCP_FAILURE" => DeviceStatusDetailCode::DhcpFailure,
-            "DNS_FAILURE" => DeviceStatusDetailCode::DnsFailure,
-            "INTERNET_UNAVAILABLE" => DeviceStatusDetailCode::InternetUnavailable,
-            "INVALID_CERTIFICATE_AUTHORITY" => DeviceStatusDetailCode::InvalidCertificateAuthority,
-            "INVALID_PASSWORD_STATE" => DeviceStatusDetailCode::InvalidPasswordState,
-            "NETWORK_PROFILE_NOT_FOUND" => DeviceStatusDetailCode::NetworkProfileNotFound,
-            "PASSWORD_MANAGER_ACCESS_DENIED" => DeviceStatusDetailCode::PasswordManagerAccessDenied,
-            "PASSWORD_NOT_FOUND" => DeviceStatusDetailCode::PasswordNotFound,
-            "TLS_VERSION_MISMATCH" => DeviceStatusDetailCode::TlsVersionMismatch,
-            "UNKNOWN_FAILURE" => DeviceStatusDetailCode::UnknownFailure,
-            other => DeviceStatusDetailCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for DeviceStatusDetailCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceStatusDetailCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceStatusDetailCode::from(s))
+                }
+            }
 impl DeviceStatusDetailCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DeviceStatusDetailCode::AssociationRejection => "ASSOCIATION_REJECTION",
-            DeviceStatusDetailCode::AuthenticationFailure => "AUTHENTICATION_FAILURE",
-            DeviceStatusDetailCode::CertificateAuthorityAccessDenied => {
-                "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
-            }
-            DeviceStatusDetailCode::CertificateIssuingLimitExceeded => {
-                "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
-            }
-            DeviceStatusDetailCode::CredentialsAccessFailure => "CREDENTIALS_ACCESS_FAILURE",
-            DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded => "DEVICE_SOFTWARE_UPDATE_NEEDED",
-            DeviceStatusDetailCode::DeviceWasOffline => "DEVICE_WAS_OFFLINE",
-            DeviceStatusDetailCode::DhcpFailure => "DHCP_FAILURE",
-            DeviceStatusDetailCode::DnsFailure => "DNS_FAILURE",
-            DeviceStatusDetailCode::InternetUnavailable => "INTERNET_UNAVAILABLE",
-            DeviceStatusDetailCode::InvalidCertificateAuthority => "INVALID_CERTIFICATE_AUTHORITY",
-            DeviceStatusDetailCode::InvalidPasswordState => "INVALID_PASSWORD_STATE",
-            DeviceStatusDetailCode::NetworkProfileNotFound => "NETWORK_PROFILE_NOT_FOUND",
-            DeviceStatusDetailCode::PasswordManagerAccessDenied => "PASSWORD_MANAGER_ACCESS_DENIED",
-            DeviceStatusDetailCode::PasswordNotFound => "PASSWORD_NOT_FOUND",
-            DeviceStatusDetailCode::TlsVersionMismatch => "TLS_VERSION_MISMATCH",
-            DeviceStatusDetailCode::UnknownFailure => "UNKNOWN_FAILURE",
-            DeviceStatusDetailCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSOCIATION_REJECTION",
-            "AUTHENTICATION_FAILURE",
-            "CERTIFICATE_AUTHORITY_ACCESS_DENIED",
-            "CERTIFICATE_ISSUING_LIMIT_EXCEEDED",
-            "CREDENTIALS_ACCESS_FAILURE",
-            "DEVICE_SOFTWARE_UPDATE_NEEDED",
-            "DEVICE_WAS_OFFLINE",
-            "DHCP_FAILURE",
-            "DNS_FAILURE",
-            "INTERNET_UNAVAILABLE",
-            "INVALID_CERTIFICATE_AUTHORITY",
-            "INVALID_PASSWORD_STATE",
-            "NETWORK_PROFILE_NOT_FOUND",
-            "PASSWORD_MANAGER_ACCESS_DENIED",
-            "PASSWORD_NOT_FOUND",
-            "TLS_VERSION_MISMATCH",
-            "UNKNOWN_FAILURE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DeviceStatusDetailCode::AssociationRejection => "ASSOCIATION_REJECTION",
+    DeviceStatusDetailCode::AuthenticationFailure => "AUTHENTICATION_FAILURE",
+    DeviceStatusDetailCode::CertificateAuthorityAccessDenied => "CERTIFICATE_AUTHORITY_ACCESS_DENIED",
+    DeviceStatusDetailCode::CertificateIssuingLimitExceeded => "CERTIFICATE_ISSUING_LIMIT_EXCEEDED",
+    DeviceStatusDetailCode::CredentialsAccessFailure => "CREDENTIALS_ACCESS_FAILURE",
+    DeviceStatusDetailCode::DeviceSoftwareUpdateNeeded => "DEVICE_SOFTWARE_UPDATE_NEEDED",
+    DeviceStatusDetailCode::DeviceWasOffline => "DEVICE_WAS_OFFLINE",
+    DeviceStatusDetailCode::DhcpFailure => "DHCP_FAILURE",
+    DeviceStatusDetailCode::DnsFailure => "DNS_FAILURE",
+    DeviceStatusDetailCode::InternetUnavailable => "INTERNET_UNAVAILABLE",
+    DeviceStatusDetailCode::InvalidCertificateAuthority => "INVALID_CERTIFICATE_AUTHORITY",
+    DeviceStatusDetailCode::InvalidPasswordState => "INVALID_PASSWORD_STATE",
+    DeviceStatusDetailCode::NetworkProfileNotFound => "NETWORK_PROFILE_NOT_FOUND",
+    DeviceStatusDetailCode::PasswordManagerAccessDenied => "PASSWORD_MANAGER_ACCESS_DENIED",
+    DeviceStatusDetailCode::PasswordNotFound => "PASSWORD_NOT_FOUND",
+    DeviceStatusDetailCode::TlsVersionMismatch => "TLS_VERSION_MISMATCH",
+    DeviceStatusDetailCode::UnknownFailure => "UNKNOWN_FAILURE",
+    DeviceStatusDetailCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSOCIATION_REJECTION", "AUTHENTICATION_FAILURE", "CERTIFICATE_AUTHORITY_ACCESS_DENIED", "CERTIFICATE_ISSUING_LIMIT_EXCEEDED", "CREDENTIALS_ACCESS_FAILURE", "DEVICE_SOFTWARE_UPDATE_NEEDED", "DEVICE_WAS_OFFLINE", "DHCP_FAILURE", "DNS_FAILURE", "INTERNET_UNAVAILABLE", "INVALID_CERTIFICATE_AUTHORITY", "INVALID_PASSWORD_STATE", "NETWORK_PROFILE_NOT_FOUND", "PASSWORD_MANAGER_ACCESS_DENIED", "PASSWORD_NOT_FOUND", "TLS_VERSION_MISMATCH", "UNKNOWN_FAILURE"]
+                }
+            }
 impl AsRef<str> for DeviceStatusDetailCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -3,7 +3,7 @@
 /// <p>The input for the DeleteCertificate operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateInput {
+pub struct DeleteCertificateInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DeleteCertificateInput {
 }
 impl DeleteCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
@@ -23,8 +23,7 @@ impl DeleteCertificateInput {
 }
 impl DeleteCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
-    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
         crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl DeleteCertificateInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -54,21 +52,18 @@ impl DeleteCertificateInputBuilder {
     }
     /// <p>Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</p>
     pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_certificate::DeleteCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_certificate::DeleteCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_certificate::DeleteCertificateInput {
-                certificate_id: self.certificate_id,
-                force_delete: self.force_delete,
-            },
+                certificate_id: self.certificate_id
+                ,
+                force_delete: self.force_delete
+                ,
+            }
         )
     }
 }
+

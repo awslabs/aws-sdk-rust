@@ -3,7 +3,7 @@
 /// <p>Specifies a tag key, a tag value, or a tag key and value (as a pair) to use in a tag-based filter condition for a query. Tag keys and values are case sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard characters in tag-based filter conditions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchResourcesTagCriterionPair {
+pub struct SearchResourcesTagCriterionPair  {
     /// <p>The value for the tag key to use in the condition.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SearchResourcesTagCriterionPair {
 }
 impl SearchResourcesTagCriterionPair {
     /// <p>The value for the tag key to use in the condition.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value to use in the condition.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SearchResourcesTagCriterionPairBuilder {
     }
     /// <p>The value for the tag key to use in the condition.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The tag value to use in the condition.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SearchResourcesTagCriterionPairBuilder {
     }
     /// <p>The tag value to use in the condition.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`SearchResourcesTagCriterionPair`](crate::types::SearchResourcesTagCriterionPair).
     pub fn build(self) -> crate::types::SearchResourcesTagCriterionPair {
         crate::types::SearchResourcesTagCriterionPair {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

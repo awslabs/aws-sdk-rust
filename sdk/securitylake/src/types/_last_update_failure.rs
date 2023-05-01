@@ -3,7 +3,7 @@
 /// <p>The details of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request which failed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LastUpdateFailure {
+pub struct LastUpdateFailure  {
     /// <p>The reason for the failure of the last <code>UpdateDatalake</code>or <code>DeleteDatalake</code> API request.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LastUpdateFailure {
 }
 impl LastUpdateFailure {
     /// <p>The reason for the failure of the last <code>UpdateDatalake</code>or <code>DeleteDatalake</code> API request.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The reason code for the failure of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl LastUpdateFailureBuilder {
     }
     /// <p>The reason for the failure of the last <code>UpdateDatalake</code>or <code>DeleteDatalake</code> API request.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The reason code for the failure of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl LastUpdateFailureBuilder {
     }
     /// <p>The reason code for the failure of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// Consumes the builder and constructs a [`LastUpdateFailure`](crate::types::LastUpdateFailure).
     pub fn build(self) -> crate::types::LastUpdateFailure {
         crate::types::LastUpdateFailure {
-            reason: self.reason,
-            code: self.code,
+            reason: self.reason
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Request to add a new Model to an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateModelInput {
+pub struct CreateModelInput  {
     /// <p>The RestApi identifier under which the Model will be created.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct CreateModelInput {
 }
 impl CreateModelInput {
     /// <p>The RestApi identifier under which the Model will be created.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The content-type for the model.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl CreateModelInputBuilder {
     }
     /// <p>The RestApi identifier under which the Model will be created.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl CreateModelInputBuilder {
     }
     /// <p>The name of the model. Must be alphanumeric.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the model.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl CreateModelInputBuilder {
     }
     /// <p>The description of the model.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl CreateModelInputBuilder {
     }
     /// <p>The schema for the model. For <code>application/json</code> models, this should be JSON schema draft 4 model.</p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The content-type for the model.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,22 +103,24 @@ impl CreateModelInputBuilder {
     }
     /// <p>The content-type for the model.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// Consumes the builder and constructs a [`CreateModelInput`](crate::operation::create_model::CreateModelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_model::CreateModelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_model::CreateModelInput {
-            rest_api_id: self.rest_api_id,
-            name: self.name,
-            description: self.description,
-            schema: self.schema,
-            content_type: self.content_type,
-        })
+    pub fn build(self) -> Result<crate::operation::create_model::CreateModelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_model::CreateModelInput {
+                rest_api_id: self.rest_api_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                schema: self.schema
+                ,
+                content_type: self.content_type
+                ,
+            }
+        )
     }
 }
+

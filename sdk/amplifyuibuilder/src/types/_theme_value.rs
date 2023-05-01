@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of a theme's properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeValue {
+pub struct ThemeValue  {
     /// <p>The value of a theme property.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ThemeValue {
 }
 impl ThemeValue {
     /// <p>The value of a theme property.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
+    pub fn children(&self) -> std::option::Option<& [crate::types::ThemeValues]> {
         self.children.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ThemeValueBuilder {
     }
     /// <p>The value of a theme property.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Appends an item to `children`.
     ///
@@ -53,23 +52,22 @@ impl ThemeValueBuilder {
     /// <p>A list of key-value pairs that define the theme's properties.</p>
     pub fn children(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.children.unwrap_or_default();
-        v.push(input);
-        self.children = Some(v);
-        self
+                        v.push(input);
+                        self.children = Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn set_children(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
-    ) -> Self {
-        self.children = input;
-        self
+    pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>) -> Self {
+        self.children = input; self
     }
     /// Consumes the builder and constructs a [`ThemeValue`](crate::types::ThemeValue).
     pub fn build(self) -> crate::types::ThemeValue {
         crate::types::ThemeValue {
-            value: self.value,
-            children: self.children,
+            value: self.value
+            ,
+            children: self.children
+            ,
         }
     }
 }
+

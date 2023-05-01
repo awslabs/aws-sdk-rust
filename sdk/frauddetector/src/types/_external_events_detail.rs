@@ -3,7 +3,7 @@
 /// <p>Details for the external events data used for model version training.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExternalEventsDetail {
+pub struct ExternalEventsDetail  {
     /// <p>The Amazon S3 bucket location for the data.</p>
     #[doc(hidden)]
     pub data_location: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExternalEventsDetail {
 }
 impl ExternalEventsDetail {
     /// <p>The Amazon S3 bucket location for the data.</p>
-    pub fn data_location(&self) -> std::option::Option<&str> {
+    pub fn data_location(&self) -> std::option::Option<& str> {
         self.data_location.as_deref()
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ExternalEventsDetailBuilder {
     }
     /// <p>The Amazon S3 bucket location for the data.</p>
     pub fn set_data_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_location = input;
-        self
+        self.data_location = input; self
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl ExternalEventsDetailBuilder {
         self
     }
     /// <p>The ARN of the role that provides Amazon Fraud Detector access to the data location.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
     }
     /// Consumes the builder and constructs a [`ExternalEventsDetail`](crate::types::ExternalEventsDetail).
     pub fn build(self) -> crate::types::ExternalEventsDetail {
         crate::types::ExternalEventsDetail {
-            data_location: self.data_location,
-            data_access_role_arn: self.data_access_role_arn,
+            data_location: self.data_location
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
         }
     }
 }
+

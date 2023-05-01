@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSavingsPlanRatesInput {
+pub struct DescribeSavingsPlanRatesInput  {
     /// <p>The ID of the Savings Plan.</p>
     #[doc(hidden)]
     pub savings_plan_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DescribeSavingsPlanRatesInput {
 }
 impl DescribeSavingsPlanRatesInput {
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+    pub fn savings_plan_id(&self) -> std::option::Option<& str> {
         self.savings_plan_id.as_deref()
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::SavingsPlanRateFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::SavingsPlanRateFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
@@ -36,9 +36,7 @@ impl DescribeSavingsPlanRatesInput {
 }
 impl DescribeSavingsPlanRatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlanRatesInput`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder {
         crate::operation::describe_savings_plan_rates::builders::DescribeSavingsPlanRatesInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl DescribeSavingsPlanRatesInputBuilder {
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn set_savings_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.savings_plan_id = input;
-        self
+        self.savings_plan_id = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -70,17 +67,13 @@ impl DescribeSavingsPlanRatesInputBuilder {
     /// <p>The filters.</p>
     pub fn filters(mut self, input: crate::types::SavingsPlanRateFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanRateFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanRateFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +82,7 @@ impl DescribeSavingsPlanRatesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -99,23 +91,22 @@ impl DescribeSavingsPlanRatesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlanRatesInput`](crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_savings_plan_rates::DescribeSavingsPlanRatesInput {
-                savings_plan_id: self.savings_plan_id,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                savings_plan_id: self.savings_plan_id
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

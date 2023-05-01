@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOpsItemEventsInput {
+pub struct ListOpsItemEventsInput  {
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::OpsItemEventFilter>>,
@@ -15,7 +15,7 @@ pub struct ListOpsItemEventsInput {
 }
 impl ListOpsItemEventsInput {
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::OpsItemEventFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::OpsItemEventFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
@@ -23,14 +23,13 @@ impl ListOpsItemEventsInput {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListOpsItemEventsInput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemEventsInput`](crate::operation::list_ops_item_events::ListOpsItemEventsInput).
-    pub fn builder(
-    ) -> crate::operation::list_ops_item_events::builders::ListOpsItemEventsInputBuilder {
+    pub fn builder() -> crate::operation::list_ops_item_events::builders::ListOpsItemEventsInputBuilder {
         crate::operation::list_ops_item_events::builders::ListOpsItemEventsInputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListOpsItemEventsInputBuilder {
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn filters(mut self, input: crate::types::OpsItemEventFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsItemEventFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsItemEventFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,8 +65,7 @@ impl ListOpsItemEventsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,22 +74,20 @@ impl ListOpsItemEventsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListOpsItemEventsInput`](crate::operation::list_ops_item_events::ListOpsItemEventsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_ops_item_events::ListOpsItemEventsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_ops_item_events::ListOpsItemEventsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_ops_item_events::ListOpsItemEventsInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

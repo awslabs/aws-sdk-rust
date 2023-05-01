@@ -3,8 +3,8 @@
 /// <p>Lists the properties for one or more specified associated accesses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListedAccess {
-    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+pub struct ListedAccess  {
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p> 
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     #[doc(hidden)]
     pub home_directory: std::option::Option<std::string::String>,
@@ -14,32 +14,32 @@ pub struct ListedAccess {
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     #[doc(hidden)]
     pub role: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
-    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
-    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p> 
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p> 
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p> 
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl ListedAccess {
-    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p> 
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-    pub fn home_directory(&self) -> std::option::Option<&str> {
+    pub fn home_directory(&self) -> std::option::Option<& str> {
         self.home_directory.as_deref()
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
-    pub fn home_directory_type(&self) -> std::option::Option<&crate::types::HomeDirectoryType> {
+    pub fn home_directory_type(&self) -> std::option::Option<& crate::types::HomeDirectoryType> {
         self.home_directory_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
-    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
-    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p> 
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p> 
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p> 
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
@@ -60,17 +60,16 @@ pub struct ListedAccessBuilder {
     pub(crate) external_id: std::option::Option<std::string::String>,
 }
 impl ListedAccessBuilder {
-    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p> 
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub fn home_directory(mut self, input: impl Into<std::string::String>) -> Self {
         self.home_directory = Some(input.into());
         self
     }
-    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+    /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p> 
     /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
     pub fn set_home_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.home_directory = input;
-        self
+        self.home_directory = input; self
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
     pub fn home_directory_type(mut self, input: crate::types::HomeDirectoryType) -> Self {
@@ -78,12 +77,8 @@ impl ListedAccessBuilder {
         self
     }
     /// <p>The type of landing directory (folder) that you want your users' home directory to be when they log in to the server. If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon EFS paths visible to your users.</p>
-    pub fn set_home_directory_type(
-        mut self,
-        input: std::option::Option<crate::types::HomeDirectoryType>,
-    ) -> Self {
-        self.home_directory_type = input;
-        self
+    pub fn set_home_directory_type(mut self, input: std::option::Option<crate::types::HomeDirectoryType>) -> Self {
+        self.home_directory_type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,32 +87,35 @@ impl ListedAccessBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that controls your users' access to your Amazon S3 bucket or Amazon EFS file system. The policies attached to this role determine the level of access that you want to provide your users when transferring files into and out of your Amazon S3 bucket or Amazon EFS file system. The IAM role should also contain a trust relationship that allows the server to access your resources when servicing your users' transfer requests.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
-    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
-    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p> 
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p> 
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p> 
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.external_id = Some(input.into());
         self
     }
-    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p>
-    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p>
-    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    /// <p>A unique identifier that is required to identify specific groups within your directory. The users of the group that you associate have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If you know the group name, you can view the SID values by running the following command using Windows PowerShell.</p> 
+    /// <p> <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code> </p> 
+    /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p> 
     /// <p>The regular expression used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@:/-</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// Consumes the builder and constructs a [`ListedAccess`](crate::types::ListedAccess).
     pub fn build(self) -> crate::types::ListedAccess {
         crate::types::ListedAccess {
-            home_directory: self.home_directory,
-            home_directory_type: self.home_directory_type,
-            role: self.role,
-            external_id: self.external_id,
+            home_directory: self.home_directory
+            ,
+            home_directory_type: self.home_directory_type
+            ,
+            role: self.role
+            ,
+            external_id: self.external_id
+            ,
         }
     }
 }
+

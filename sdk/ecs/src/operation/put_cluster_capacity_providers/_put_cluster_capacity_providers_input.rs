@@ -2,49 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutClusterCapacityProvidersInput {
+pub struct PutClusterCapacityProvidersInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
-    /// <p>The name of one or more capacity providers to associate with the cluster.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The name of one or more capacity providers to associate with the cluster.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     #[doc(hidden)]
     pub capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The capacity provider strategy to use by default for the cluster.</p>
-    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The capacity provider strategy to use by default for the cluster.</p> 
+    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p> 
+    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     #[doc(hidden)]
-    pub default_capacity_provider_strategy:
-        std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub default_capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
 }
 impl PutClusterCapacityProvidersInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> std::option::Option<&str> {
+    pub fn cluster(&self) -> std::option::Option<& str> {
         self.cluster.as_deref()
     }
-    /// <p>The name of one or more capacity providers to associate with the cluster.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The name of one or more capacity providers to associate with the cluster.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn capacity_providers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn capacity_providers(&self) -> std::option::Option<& [std::string::String]> {
         self.capacity_providers.as_deref()
     }
-    /// <p>The capacity provider strategy to use by default for the cluster.</p>
-    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The capacity provider strategy to use by default for the cluster.</p> 
+    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p> 
+    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn default_capacity_provider_strategy(
-        &self,
-    ) -> std::option::Option<&[crate::types::CapacityProviderStrategyItem]> {
+    pub fn default_capacity_provider_strategy(&self) -> std::option::Option<& [crate::types::CapacityProviderStrategyItem]> {
         self.default_capacity_provider_strategy.as_deref()
     }
 }
 impl PutClusterCapacityProvidersInput {
     /// Creates a new builder-style object to manufacture [`PutClusterCapacityProvidersInput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersInput).
-    pub fn builder() -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder{
+    pub fn builder() -> crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder {
         crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder::default()
     }
 }
@@ -55,8 +52,7 @@ impl PutClusterCapacityProvidersInput {
 pub struct PutClusterCapacityProvidersInputBuilder {
     pub(crate) cluster: std::option::Option<std::string::String>,
     pub(crate) capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) default_capacity_provider_strategy:
-        std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+    pub(crate) default_capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
 }
 impl PutClusterCapacityProvidersInputBuilder {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
@@ -66,75 +62,62 @@ impl PutClusterCapacityProvidersInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to modify the capacity provider settings for. If you don't specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// Appends an item to `capacity_providers`.
     ///
     /// To override the contents of this collection use [`set_capacity_providers`](Self::set_capacity_providers).
     ///
-    /// <p>The name of one or more capacity providers to associate with the cluster.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The name of one or more capacity providers to associate with the cluster.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
     pub fn capacity_providers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.capacity_providers.unwrap_or_default();
-        v.push(input.into());
-        self.capacity_providers = Some(v);
-        self
+                        v.push(input.into());
+                        self.capacity_providers = Some(v);
+                        self
     }
-    /// <p>The name of one or more capacity providers to associate with the cluster.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The name of one or more capacity providers to associate with the cluster.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn set_capacity_providers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.capacity_providers = input;
-        self
+    pub fn set_capacity_providers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.capacity_providers = input; self
     }
     /// Appends an item to `default_capacity_provider_strategy`.
     ///
     /// To override the contents of this collection use [`set_default_capacity_provider_strategy`](Self::set_default_capacity_provider_strategy).
     ///
-    /// <p>The capacity provider strategy to use by default for the cluster.</p>
-    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The capacity provider strategy to use by default for the cluster.</p> 
+    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p> 
+    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn default_capacity_provider_strategy(
-        mut self,
-        input: crate::types::CapacityProviderStrategyItem,
-    ) -> Self {
+    pub fn default_capacity_provider_strategy(mut self, input: crate::types::CapacityProviderStrategyItem) -> Self {
         let mut v = self.default_capacity_provider_strategy.unwrap_or_default();
-        v.push(input);
-        self.default_capacity_provider_strategy = Some(v);
-        self
+                        v.push(input);
+                        self.default_capacity_provider_strategy = Some(v);
+                        self
     }
-    /// <p>The capacity provider strategy to use by default for the cluster.</p>
-    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p>
-    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p>
-    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p>
+    /// <p>The capacity provider strategy to use by default for the cluster.</p> 
+    /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified then the default capacity provider strategy for the cluster is used.</p> 
+    /// <p>A capacity provider strategy consists of one or more capacity providers along with the <code>base</code> and <code>weight</code> to assign to them. A capacity provider must be associated with the cluster to be used in a capacity provider strategy. The <code>PutClusterCapacityProviders</code> API is used to associate a capacity provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> 
+    /// <p>If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New capacity providers can be created with the <code>CreateCapacityProvider</code> API operation.</p> 
     /// <p>To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used.</p>
-    pub fn set_default_capacity_provider_strategy(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
-    ) -> Self {
-        self.default_capacity_provider_strategy = input;
-        self
+    pub fn set_default_capacity_provider_strategy(mut self, input: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>) -> Self {
+        self.default_capacity_provider_strategy = input; self
     }
     /// Consumes the builder and constructs a [`PutClusterCapacityProvidersInput`](crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_cluster_capacity_providers::PutClusterCapacityProvidersInput {
-                cluster: self.cluster,
-                capacity_providers: self.capacity_providers,
-                default_capacity_provider_strategy: self.default_capacity_provider_strategy,
-            },
+                cluster: self.cluster
+                ,
+                capacity_providers: self.capacity_providers
+                ,
+                default_capacity_provider_strategy: self.default_capacity_provider_strategy
+                ,
+            }
         )
     }
 }
+

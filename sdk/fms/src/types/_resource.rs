@@ -3,7 +3,7 @@
 /// <p>Details of a resource that is associated to an Firewall Manager resource set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The resource's universal resource indicator (URI).</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The resource's universal resource indicator (URI).</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ResourceBuilder {
     }
     /// <p>The resource's universal resource indicator (URI).</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon Web Services account ID that the associated resource belongs to.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            uri: self.uri,
-            account_id: self.account_id,
+            uri: self.uri
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
+

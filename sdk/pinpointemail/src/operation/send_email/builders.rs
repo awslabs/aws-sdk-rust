@@ -4,81 +4,60 @@ pub use crate::operation::send_email::_send_email_output::SendEmailOutputBuilder
 pub use crate::operation::send_email::_send_email_input::SendEmailInputBuilder;
 
 /// Fluent builder constructing a request to `SendEmail`.
-///
-/// <p>Sends an email message. You can use the Amazon Pinpoint Email API to send two types of messages:</p>
-/// <ul>
-/// <li> <p> <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon Pinpoint assembles the message for you.</p> </li>
-/// <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.</p> </li>
+/// 
+/// <p>Sends an email message. You can use the Amazon Pinpoint Email API to send two types of messages:</p> 
+/// <ul> 
+/// <li> <p> <b>Simple</b> – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon Pinpoint assembles the message for you.</p> </li> 
+/// <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.</p> </li> 
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendEmailFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::send_email::builders::SendEmailInputBuilder,
-}
-impl SendEmailFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::send_email::builders::SendEmailInputBuilder
+            }
+impl SendEmailFluentBuilder  {
     /// Creates a new `SendEmail`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::send_email::SendEmail,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::send_email::SendEmailOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::send_email::SendEmail, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::send_email::SendEmailOutput, aws_smithy_http::result::SdkError<crate::operation::send_email::SendEmailError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
     pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.from_email_address(input.into());
         self
     }
     /// <p>The email address that you want to use as the "From" address for the email. The address that you specify has to be verified. </p>
-    pub fn set_from_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_from_email_address(input);
         self
     }
@@ -88,10 +67,7 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>An object that contains the recipients of the email message.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::Destination>,
-    ) -> Self {
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::Destination>) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
@@ -105,26 +81,17 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn set_reply_to_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_reply_to_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_reply_to_addresses(input);
         self
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn feedback_forwarding_email_address(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn feedback_forwarding_email_address(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.feedback_forwarding_email_address(input.into());
         self
     }
     /// <p>The address that Amazon Pinpoint should send bounce and complaint notifications to.</p>
-    pub fn set_feedback_forwarding_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_feedback_forwarding_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_feedback_forwarding_email_address(input);
         self
     }
@@ -148,10 +115,7 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events. </p>
-    pub fn set_email_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
+    pub fn set_email_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.inner = self.inner.set_email_tags(input);
         self
     }
@@ -161,11 +125,9 @@ impl SendEmailFluentBuilder {
         self
     }
     /// <p>The name of the configuration set that you want to use when sending the email.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
 }
+

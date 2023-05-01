@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDelegationSignerToDomainOutput {
+pub struct AssociateDelegationSignerToDomainOutput  {
     /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct AssociateDelegationSignerToDomainOutput {
 }
 impl AssociateDelegationSignerToDomainOutput {
     /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateDelegationSignerToDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateDelegationSignerToDomainOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput).
-    pub fn builder() -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder{
+    pub fn builder() -> crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder {
         crate::operation::associate_delegation_signer_to_domain::builders::AssociateDelegationSignerToDomainOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl AssociateDelegationSignerToDomainOutputBuilder {
     }
     /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateDelegationSignerToDomainOutput`](crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput).
-    pub fn build(self) -> crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput{
+    pub fn build(self) -> crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput {
         crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput {
             operation_id: self.operation_id
             ,
@@ -62,3 +61,4 @@ impl AssociateDelegationSignerToDomainOutputBuilder {
         }
     }
 }
+

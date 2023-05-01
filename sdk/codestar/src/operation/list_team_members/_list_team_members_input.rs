@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTeamMembersInput {
+pub struct ListTeamMembersInput  {
     /// <p>The ID of the project for which you want to list team members.</p>
     #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListTeamMembersInput {
 }
 impl ListTeamMembersInput {
     /// <p>The ID of the project for which you want to list team members.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of team members you want returned in a response.</p>
@@ -50,8 +50,7 @@ impl ListTeamMembersInputBuilder {
     }
     /// <p>The ID of the project for which you want to list team members.</p>
     pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListTeamMembersInputBuilder {
     }
     /// <p>The continuation token for the next set of results, if the results cannot be returned in one response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of team members you want returned in a response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl ListTeamMembersInputBuilder {
     }
     /// <p>The maximum number of team members you want returned in a response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListTeamMembersInput`](crate::operation::list_team_members::ListTeamMembersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_team_members::ListTeamMembersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_team_members::ListTeamMembersInput {
-            project_id: self.project_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_team_members::ListTeamMembersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_team_members::ListTeamMembersInput {
+                project_id: self.project_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

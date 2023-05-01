@@ -3,7 +3,7 @@
 /// <p>The aggregated field wells of a word cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WordCloudAggregatedFieldWells {
+pub struct WordCloudAggregatedFieldWells  {
     /// <p>The group by field well of a word cloud. Values are grouped by group by fields.</p>
     #[doc(hidden)]
     pub group_by: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
@@ -13,11 +13,11 @@ pub struct WordCloudAggregatedFieldWells {
 }
 impl WordCloudAggregatedFieldWells {
     /// <p>The group by field well of a word cloud. Values are grouped by group by fields.</p>
-    pub fn group_by(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn group_by(&self) -> std::option::Option<& [crate::types::DimensionField]> {
         self.group_by.as_deref()
     }
     /// <p>The size field well of a word cloud. Values are aggregated based on group by fields.</p>
-    pub fn size(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn size(&self) -> std::option::Option<& [crate::types::MeasureField]> {
         self.size.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl WordCloudAggregatedFieldWellsBuilder {
     /// <p>The group by field well of a word cloud. Values are grouped by group by fields.</p>
     pub fn group_by(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.group_by.unwrap_or_default();
-        v.push(input);
-        self.group_by = Some(v);
-        self
+                        v.push(input);
+                        self.group_by = Some(v);
+                        self
     }
     /// <p>The group by field well of a word cloud. Values are grouped by group by fields.</p>
-    pub fn set_group_by(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.group_by = input;
-        self
+    pub fn set_group_by(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.group_by = input; self
     }
     /// Appends an item to `size`.
     ///
@@ -62,23 +58,22 @@ impl WordCloudAggregatedFieldWellsBuilder {
     /// <p>The size field well of a word cloud. Values are aggregated based on group by fields.</p>
     pub fn size(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.size.unwrap_or_default();
-        v.push(input);
-        self.size = Some(v);
-        self
+                        v.push(input);
+                        self.size = Some(v);
+                        self
     }
     /// <p>The size field well of a word cloud. Values are aggregated based on group by fields.</p>
-    pub fn set_size(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.size = input;
-        self
+    pub fn set_size(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.size = input; self
     }
     /// Consumes the builder and constructs a [`WordCloudAggregatedFieldWells`](crate::types::WordCloudAggregatedFieldWells).
     pub fn build(self) -> crate::types::WordCloudAggregatedFieldWells {
         crate::types::WordCloudAggregatedFieldWells {
-            group_by: self.group_by,
-            size: self.size,
+            group_by: self.group_by
+            ,
+            size: self.size
+            ,
         }
     }
 }
+

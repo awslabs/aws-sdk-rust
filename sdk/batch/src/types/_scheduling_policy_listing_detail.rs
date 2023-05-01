@@ -3,14 +3,14 @@
 /// <p>An object that contains the details of a scheduling policy that's returned in a <code>ListSchedulingPolicy</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchedulingPolicyListingDetail {
+pub struct SchedulingPolicyListingDetail  {
     /// <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl SchedulingPolicyListingDetail {
     /// <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl SchedulingPolicyListingDetailBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the scheduling policy.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`SchedulingPolicyListingDetail`](crate::types::SchedulingPolicyListingDetail).
     pub fn build(self) -> crate::types::SchedulingPolicyListingDetail {
-        crate::types::SchedulingPolicyListingDetail { arn: self.arn }
+        crate::types::SchedulingPolicyListingDetail {
+            arn: self.arn
+            ,
+        }
     }
 }
+

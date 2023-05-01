@@ -3,25 +3,23 @@
 /// <p>The configuration of adding parameters in action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetParameterValueConfiguration {
+pub struct SetParameterValueConfiguration  {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
     #[doc(hidden)]
     pub destination_parameter_name: std::option::Option<std::string::String>,
-    /// <p>The configuration of destination parameter values.</p>
+    /// <p>The configuration of destination parameter values.</p> 
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::DestinationParameterValueConfiguration>,
 }
 impl SetParameterValueConfiguration {
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
-    pub fn destination_parameter_name(&self) -> std::option::Option<&str> {
+    pub fn destination_parameter_name(&self) -> std::option::Option<& str> {
         self.destination_parameter_name.as_deref()
     }
-    /// <p>The configuration of destination parameter values.</p>
+    /// <p>The configuration of destination parameter values.</p> 
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn value(
-        &self,
-    ) -> std::option::Option<&crate::types::DestinationParameterValueConfiguration> {
+    pub fn value(&self) -> std::option::Option<& crate::types::DestinationParameterValueConfiguration> {
         self.value.as_ref()
     }
 }
@@ -46,33 +44,28 @@ impl SetParameterValueConfigurationBuilder {
         self
     }
     /// <p>The destination parameter name of the <code>SetParameterValueConfiguration</code>.</p>
-    pub fn set_destination_parameter_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_parameter_name = input;
-        self
+    pub fn set_destination_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_parameter_name = input; self
     }
-    /// <p>The configuration of destination parameter values.</p>
+    /// <p>The configuration of destination parameter values.</p> 
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn value(mut self, input: crate::types::DestinationParameterValueConfiguration) -> Self {
         self.value = Some(input);
         self
     }
-    /// <p>The configuration of destination parameter values.</p>
+    /// <p>The configuration of destination parameter values.</p> 
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
-    pub fn set_value(
-        mut self,
-        input: std::option::Option<crate::types::DestinationParameterValueConfiguration>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: std::option::Option<crate::types::DestinationParameterValueConfiguration>) -> Self {
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`SetParameterValueConfiguration`](crate::types::SetParameterValueConfiguration).
     pub fn build(self) -> crate::types::SetParameterValueConfiguration {
         crate::types::SetParameterValueConfiguration {
-            destination_parameter_name: self.destination_parameter_name,
-            value: self.value,
+            destination_parameter_name: self.destination_parameter_name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

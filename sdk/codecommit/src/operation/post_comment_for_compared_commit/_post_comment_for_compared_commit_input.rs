@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostCommentForComparedCommitInput {
+pub struct PostCommentForComparedCommitInput  {
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -24,33 +24,33 @@ pub struct PostCommentForComparedCommitInput {
 }
 impl PostCommentForComparedCommitInput {
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> std::option::Option<& str> {
         self.before_commit_id.as_deref()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> std::option::Option<& str> {
         self.after_commit_id.as_deref()
     }
     /// <p>The location of the comparison where you want to comment.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>The content of the comment you want to make.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl PostCommentForComparedCommitInput {
     /// Creates a new builder-style object to manufacture [`PostCommentForComparedCommitInput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput).
-    pub fn builder() -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder{
+    pub fn builder() -> crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder {
         crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder::default()
     }
 }
@@ -74,8 +74,7 @@ impl PostCommentForComparedCommitInputBuilder {
     }
     /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
     pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl PostCommentForComparedCommitInputBuilder {
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit. Required for commenting on any commit unless that commit is the initial commit.</p>
     pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_commit_id = input;
-        self
+        self.before_commit_id = input; self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl PostCommentForComparedCommitInputBuilder {
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_commit_id = input;
-        self
+        self.after_commit_id = input; self
     }
     /// <p>The location of the comparison where you want to comment.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
@@ -104,8 +101,7 @@ impl PostCommentForComparedCommitInputBuilder {
     }
     /// <p>The location of the comparison where you want to comment.</p>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The content of the comment you want to make.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +110,7 @@ impl PostCommentForComparedCommitInputBuilder {
     }
     /// <p>The content of the comment you want to make.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,29 +118,27 @@ impl PostCommentForComparedCommitInputBuilder {
         self
     }
     /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`PostCommentForComparedCommitInput`](crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitInput {
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                location: self.location,
-                content: self.content,
-                client_request_token: self.client_request_token,
-            },
+                repository_name: self.repository_name
+                ,
+                before_commit_id: self.before_commit_id
+                ,
+                after_commit_id: self.after_commit_id
+                ,
+                location: self.location
+                ,
+                content: self.content
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

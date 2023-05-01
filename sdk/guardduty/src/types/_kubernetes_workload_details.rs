@@ -3,7 +3,7 @@
 /// <p>Details about the Kubernetes workload involved in a Kubernetes finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KubernetesWorkloadDetails {
+pub struct KubernetesWorkloadDetails  {
     /// <p>Kubernetes workload name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,19 +28,19 @@ pub struct KubernetesWorkloadDetails {
 }
 impl KubernetesWorkloadDetails {
     /// <p>Kubernetes workload name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Kubernetes workload ID.</p>
-    pub fn uid(&self) -> std::option::Option<&str> {
+    pub fn uid(&self) -> std::option::Option<& str> {
         self.uid.as_deref()
     }
     /// <p>Kubernetes namespace that the workload is part of.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
@@ -48,11 +48,11 @@ impl KubernetesWorkloadDetails {
         self.host_network
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::types::Container]> {
+    pub fn containers(&self) -> std::option::Option<& [crate::types::Container]> {
         self.containers.as_deref()
     }
     /// <p>Volumes used by the Kubernetes workload.</p>
-    pub fn volumes(&self) -> std::option::Option<&[crate::types::Volume]> {
+    pub fn volumes(&self) -> std::option::Option<& [crate::types::Volume]> {
         self.volumes.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes workload name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes workload type (e.g. Pod, Deployment, etc.).</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Kubernetes workload ID.</p>
     pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +101,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes workload ID.</p>
     pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uid = input;
-        self
+        self.uid = input; self
     }
     /// <p>Kubernetes namespace that the workload is part of.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +110,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Kubernetes namespace that the workload is part of.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
     pub fn host_network(mut self, input: bool) -> Self {
@@ -123,8 +119,7 @@ impl KubernetesWorkloadDetailsBuilder {
     }
     /// <p>Whether the hostNetwork flag is enabled for the pods included in the workload.</p>
     pub fn set_host_network(mut self, input: std::option::Option<bool>) -> Self {
-        self.host_network = input;
-        self
+        self.host_network = input; self
     }
     /// Appends an item to `containers`.
     ///
@@ -133,17 +128,13 @@ impl KubernetesWorkloadDetailsBuilder {
     /// <p>Containers running as part of the Kubernetes workload.</p>
     pub fn containers(mut self, input: crate::types::Container) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = Some(v);
-        self
+                        v.push(input);
+                        self.containers = Some(v);
+                        self
     }
     /// <p>Containers running as part of the Kubernetes workload.</p>
-    pub fn set_containers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Container>>,
-    ) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Container>>) -> Self {
+        self.containers = input; self
     }
     /// Appends an item to `volumes`.
     ///
@@ -152,28 +143,33 @@ impl KubernetesWorkloadDetailsBuilder {
     /// <p>Volumes used by the Kubernetes workload.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = Some(v);
-        self
+                        v.push(input);
+                        self.volumes = Some(v);
+                        self
     }
     /// <p>Volumes used by the Kubernetes workload.</p>
-    pub fn set_volumes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Volume>>,
-    ) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Volume>>) -> Self {
+        self.volumes = input; self
     }
     /// Consumes the builder and constructs a [`KubernetesWorkloadDetails`](crate::types::KubernetesWorkloadDetails).
     pub fn build(self) -> crate::types::KubernetesWorkloadDetails {
         crate::types::KubernetesWorkloadDetails {
-            name: self.name,
-            r#type: self.r#type,
-            uid: self.uid,
-            namespace: self.namespace,
-            host_network: self.host_network.unwrap_or_default(),
-            containers: self.containers,
-            volumes: self.volumes,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            uid: self.uid
+            ,
+            namespace: self.namespace
+            ,
+            host_network: self.host_network
+                .unwrap_or_default()
+            ,
+            containers: self.containers
+            ,
+            volumes: self.volumes
+            ,
         }
     }
 }
+

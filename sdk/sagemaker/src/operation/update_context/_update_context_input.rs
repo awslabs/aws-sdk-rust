@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContextInput {
+pub struct UpdateContextInput  {
     /// <p>The name of the context to update.</p>
     #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
@@ -11,30 +11,26 @@ pub struct UpdateContextInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of properties to remove.</p>
     #[doc(hidden)]
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateContextInput {
     /// <p>The name of the context to update.</p>
-    pub fn context_name(&self) -> std::option::Option<&str> {
+    pub fn context_name(&self) -> std::option::Option<& str> {
         self.context_name.as_deref()
     }
     /// <p>The new description for the context.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>A list of properties to remove.</p>
-    pub fn properties_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn properties_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.properties_to_remove.as_deref()
     }
 }
@@ -51,8 +47,7 @@ impl UpdateContextInput {
 pub struct UpdateContextInputBuilder {
     pub(crate) context_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateContextInputBuilder {
@@ -63,8 +58,7 @@ impl UpdateContextInputBuilder {
     }
     /// <p>The name of the context to update.</p>
     pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context_name = input;
-        self
+        self.context_name = input; self
     }
     /// <p>The new description for the context.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,33 +67,22 @@ impl UpdateContextInputBuilder {
     }
     /// <p>The new description for the context.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = Some(hash_map);
+                        self
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// Appends an item to `properties_to_remove`.
     ///
@@ -108,30 +91,28 @@ impl UpdateContextInputBuilder {
     /// <p>A list of properties to remove.</p>
     pub fn properties_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.properties_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.properties_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.properties_to_remove = Some(v);
+                        self
     }
     /// <p>A list of properties to remove.</p>
-    pub fn set_properties_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.properties_to_remove = input;
-        self
+    pub fn set_properties_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.properties_to_remove = input; self
     }
     /// Consumes the builder and constructs a [`UpdateContextInput`](crate::operation::update_context::UpdateContextInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_context::UpdateContextInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_context::UpdateContextInput {
-            context_name: self.context_name,
-            description: self.description,
-            properties: self.properties,
-            properties_to_remove: self.properties_to_remove,
-        })
+    pub fn build(self) -> Result<crate::operation::update_context::UpdateContextInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_context::UpdateContextInput {
+                context_name: self.context_name
+                ,
+                description: self.description
+                ,
+                properties: self.properties
+                ,
+                properties_to_remove: self.properties_to_remove
+                ,
+            }
+        )
     }
 }
+

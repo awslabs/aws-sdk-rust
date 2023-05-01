@@ -3,7 +3,7 @@
 /// <p>This exception is thrown when event categories of specified event data stores are not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidEventDataStoreCategoryException {
+pub struct InvalidEventDataStoreCategoryException  {
     /// <p>Brief description of the exception returned by the request.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct InvalidEventDataStoreCategoryException {
 }
 impl InvalidEventDataStoreCategoryException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidEventDataStoreCategoryException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidEventDataStoreCategoryException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,25 +25,18 @@ impl std::fmt::Display for InvalidEventDataStoreCategoryException {
     }
 }
 impl std::error::Error for InvalidEventDataStoreCategoryException {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::InvalidEventDataStoreCategoryException
-{
+impl aws_http::request_id::RequestId for crate::types::error::InvalidEventDataStoreCategoryException {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InvalidEventDataStoreCategoryException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidEventDataStoreCategoryException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidEventDataStoreCategoryException {
     /// Creates a new builder-style object to manufacture [`InvalidEventDataStoreCategoryException`](crate::types::error::InvalidEventDataStoreCategoryException).
-    pub fn builder() -> crate::types::error::builders::InvalidEventDataStoreCategoryExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InvalidEventDataStoreCategoryExceptionBuilder {
         crate::types::error::builders::InvalidEventDataStoreCategoryExceptionBuilder::default()
     }
 }
@@ -65,28 +56,26 @@ impl InvalidEventDataStoreCategoryExceptionBuilder {
     }
     /// <p>Brief description of the exception returned by the request.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidEventDataStoreCategoryException`](crate::types::error::InvalidEventDataStoreCategoryException).
     pub fn build(self) -> crate::types::error::InvalidEventDataStoreCategoryException {
         crate::types::error::InvalidEventDataStoreCategoryException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

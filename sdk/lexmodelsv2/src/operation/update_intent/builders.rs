@@ -4,67 +4,49 @@ pub use crate::operation::update_intent::_update_intent_output::UpdateIntentOutp
 pub use crate::operation::update_intent::_update_intent_input::UpdateIntentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateIntent`.
-///
+/// 
 /// <p>Updates the settings for an intent.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateIntentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_intent::builders::UpdateIntentInputBuilder,
-}
-impl UpdateIntentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_intent::builders::UpdateIntentInputBuilder
+            }
+impl UpdateIntentFluentBuilder  {
     /// Creates a new `UpdateIntent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_intent::UpdateIntent,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_intent::UpdateIntentError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_intent::UpdateIntentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_intent::UpdateIntentError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_intent::UpdateIntent, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_intent::UpdateIntentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_intent::UpdateIntentOutput, aws_smithy_http::result::SdkError<crate::operation::update_intent::UpdateIntentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The unique identifier of the intent to update.</p>
     pub fn intent_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.intent_id(input.into());
@@ -101,10 +83,7 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>The signature of the new built-in intent to use as the parent of this intent.</p>
-    pub fn set_parent_intent_signature(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_parent_intent_signature(input);
         self
     }
@@ -118,10 +97,7 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>New utterances used to invoke the intent.</p>
-    pub fn set_sample_utterances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
-    ) -> Self {
+    pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
         self.inner = self.inner.set_sample_utterances(input);
         self
     }
@@ -131,26 +107,17 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>The new Lambda function to use between each turn of the conversation with the bot.</p>
-    pub fn set_dialog_code_hook(
-        mut self,
-        input: std::option::Option<crate::types::DialogCodeHookSettings>,
-    ) -> Self {
+    pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::types::DialogCodeHookSettings>) -> Self {
         self.inner = self.inner.set_dialog_code_hook(input);
         self
     }
     /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
-    pub fn fulfillment_code_hook(
-        mut self,
-        input: crate::types::FulfillmentCodeHookSettings,
-    ) -> Self {
+    pub fn fulfillment_code_hook(mut self, input: crate::types::FulfillmentCodeHookSettings) -> Self {
         self.inner = self.inner.fulfillment_code_hook(input);
         self
     }
     /// <p>The new Lambda function to call when all of the intents required slots are provided and the intent is ready for fulfillment.</p>
-    pub fn set_fulfillment_code_hook(
-        mut self,
-        input: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
-    ) -> Self {
+    pub fn set_fulfillment_code_hook(mut self, input: std::option::Option<crate::types::FulfillmentCodeHookSettings>) -> Self {
         self.inner = self.inner.set_fulfillment_code_hook(input);
         self
     }
@@ -164,26 +131,17 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>A new list of slots and their priorities that are contained by the intent.</p>
-    pub fn set_slot_priorities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlotPriority>>,
-    ) -> Self {
+    pub fn set_slot_priorities(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlotPriority>>) -> Self {
         self.inner = self.inner.set_slot_priorities(input);
         self
     }
     /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    pub fn intent_confirmation_setting(
-        mut self,
-        input: crate::types::IntentConfirmationSetting,
-    ) -> Self {
+    pub fn intent_confirmation_setting(mut self, input: crate::types::IntentConfirmationSetting) -> Self {
         self.inner = self.inner.intent_confirmation_setting(input);
         self
     }
     /// <p>New prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    pub fn set_intent_confirmation_setting(
-        mut self,
-        input: std::option::Option<crate::types::IntentConfirmationSetting>,
-    ) -> Self {
+    pub fn set_intent_confirmation_setting(mut self, input: std::option::Option<crate::types::IntentConfirmationSetting>) -> Self {
         self.inner = self.inner.set_intent_confirmation_setting(input);
         self
     }
@@ -193,10 +151,7 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>The new response that Amazon Lex sends the user when the intent is closed.</p>
-    pub fn set_intent_closing_setting(
-        mut self,
-        input: std::option::Option<crate::types::IntentClosingSetting>,
-    ) -> Self {
+    pub fn set_intent_closing_setting(mut self, input: std::option::Option<crate::types::IntentClosingSetting>) -> Self {
         self.inner = self.inner.set_intent_closing_setting(input);
         self
     }
@@ -210,10 +165,7 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>A new list of contexts that must be active in order for Amazon Lex to consider the intent.</p>
-    pub fn set_input_contexts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
-    ) -> Self {
+    pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputContext>>) -> Self {
         self.inner = self.inner.set_input_contexts(input);
         self
     }
@@ -227,10 +179,7 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>A new list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn set_output_contexts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
-    ) -> Self {
+    pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>) -> Self {
         self.inner = self.inner.set_output_contexts(input);
         self
     }
@@ -240,10 +189,7 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
-    pub fn set_kendra_configuration(
-        mut self,
-        input: std::option::Option<crate::types::KendraConfiguration>,
-    ) -> Self {
+    pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::types::KendraConfiguration>) -> Self {
         self.inner = self.inner.set_kendra_configuration(input);
         self
     }
@@ -283,11 +229,9 @@ impl UpdateIntentFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_initial_response_setting(
-        mut self,
-        input: std::option::Option<crate::types::InitialResponseSetting>,
-    ) -> Self {
+    pub fn set_initial_response_setting(mut self, input: std::option::Option<crate::types::InitialResponseSetting>) -> Self {
         self.inner = self.inner.set_initial_response_setting(input);
         self
     }
 }
+

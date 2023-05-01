@@ -4,71 +4,49 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEnvironment`.
-///
+/// 
 /// <p>Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder,
-}
-impl CreateEnvironmentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder
+            }
+impl CreateEnvironmentFluentBuilder  {
     /// Creates a new `CreateEnvironment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_environment::CreateEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_environment::CreateEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_environment::CreateEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -85,10 +63,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
@@ -98,10 +73,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
-    pub fn set_source_bucket_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_source_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_bucket_arn(input);
         self
     }
@@ -121,10 +93,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources for your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
-    pub fn set_network_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NetworkConfiguration>,
-    ) -> Self {
+    pub fn set_network_configuration(mut self, input: std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
@@ -144,10 +113,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
-    pub fn set_plugins_s3_object_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_plugins_s3_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_plugins_s3_object_version(input);
         self
     }
@@ -157,10 +123,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
-    pub fn set_requirements_s3_path(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_requirements_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_requirements_s3_path(input);
         self
     }
@@ -170,47 +133,35 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each time a requirements.txt file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
-    pub fn set_requirements_s3_object_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_requirements_s3_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_requirements_s3_object_version(input);
         self
     }
-    /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
+    /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> 
     /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
     pub fn startup_script_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.startup_script_s3_path(input.into());
         self
     }
-    /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p>
+    /// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> 
     /// <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-    pub fn set_startup_script_s3_path(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_startup_script_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_startup_script_s3_path(input);
         self
     }
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
-    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
-    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> 
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> 
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> 
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-    pub fn startup_script_s3_object_version(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn startup_script_s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.startup_script_s3_object_version(input.into());
         self
     }
-    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
-    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p>
-    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p>
+    /// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> 
+    /// <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> 
+    /// <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> 
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-    pub fn set_startup_script_s3_object_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_startup_script_s3_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_startup_script_s3_object_version(input);
         self
     }
@@ -219,21 +170,12 @@ impl CreateEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_airflow_configuration_options`](Self::set_airflow_configuration_options).
     ///
     /// <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
-    pub fn airflow_configuration_options(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn airflow_configuration_options(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.airflow_configuration_options(k.into(), v.into());
         self
     }
     /// <p>A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your environment. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow configuration options</a>.</p>
-    pub fn set_airflow_configuration_options(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_airflow_configuration_options(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_airflow_configuration_options(input);
         self
     }
@@ -243,10 +185,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
-    pub fn set_environment_class(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_environment_class(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_environment_class(input);
         self
     }
@@ -286,26 +225,17 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs.</p>
-    pub fn set_logging_configuration(
-        mut self,
-        input: std::option::Option<crate::types::LoggingConfigurationInput>,
-    ) -> Self {
+    pub fn set_logging_configuration(mut self, input: std::option::Option<crate::types::LoggingConfigurationInput>) -> Self {
         self.inner = self.inner.set_logging_configuration(input);
         self
     }
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.</p>
-    pub fn weekly_maintenance_window_start(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn weekly_maintenance_window_start(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.weekly_maintenance_window_start(input.into());
         self
     }
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.</p>
-    pub fn set_weekly_maintenance_window_start(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_weekly_maintenance_window_start(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_weekly_maintenance_window_start(input);
         self
     }
@@ -314,21 +244,12 @@ impl CreateEnvironmentFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The key-value tag pairs you want to associate to your environment. For example, <code>"Environment": "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -338,10 +259,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>The Apache Airflow <i>Web server</i> access mode. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
-    pub fn set_webserver_access_mode(
-        mut self,
-        input: std::option::Option<crate::types::WebserverAccessMode>,
-    ) -> Self {
+    pub fn set_webserver_access_mode(mut self, input: std::option::Option<crate::types::WebserverAccessMode>) -> Self {
         self.inner = self.inner.set_webserver_access_mode(input);
         self
     }
@@ -355,22 +273,23 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_min_workers(input);
         self
     }
-    /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
-    /// <ul>
-    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-    /// <li> <p>v1 - Accepts 1.</p> </li>
+    /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li> 
+    /// <li> <p>v1 - Accepts 1.</p> </li> 
     /// </ul>
     pub fn schedulers(mut self, input: i32) -> Self {
         self.inner = self.inner.schedulers(input);
         self
     }
-    /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p>
-    /// <ul>
-    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li>
-    /// <li> <p>v1 - Accepts 1.</p> </li>
+    /// <p>The number of Apache Airflow schedulers to run in your environment. Valid values:</p> 
+    /// <ul> 
+    /// <li> <p>v2 - Accepts between 2 to 5. Defaults to 2.</p> </li> 
+    /// <li> <p>v1 - Accepts 1.</p> </li> 
     /// </ul>
     pub fn set_schedulers(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_schedulers(input);
         self
     }
 }
+

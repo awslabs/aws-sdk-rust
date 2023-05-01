@@ -3,7 +3,7 @@
 /// <p>Contains information about the quick connect configuration settings for a user. The contact flow must be of type Transfer to Agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserQuickConnectConfig {
+pub struct UserQuickConnectConfig  {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UserQuickConnectConfig {
 }
 impl UserQuickConnectConfig {
     /// <p>The identifier of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UserQuickConnectConfigBuilder {
     }
     /// <p>The identifier of the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl UserQuickConnectConfigBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// Consumes the builder and constructs a [`UserQuickConnectConfig`](crate::types::UserQuickConnectConfig).
     pub fn build(self) -> crate::types::UserQuickConnectConfig {
         crate::types::UserQuickConnectConfig {
-            user_id: self.user_id,
-            contact_flow_id: self.contact_flow_id,
+            user_id: self.user_id
+            ,
+            contact_flow_id: self.contact_flow_id
+            ,
         }
     }
 }
+

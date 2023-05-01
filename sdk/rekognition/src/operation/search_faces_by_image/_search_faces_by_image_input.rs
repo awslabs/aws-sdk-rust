@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchFacesByImageInput {
+pub struct SearchFacesByImageInput  {
     /// <p>ID of the collection to search.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     #[doc(hidden)]
     pub image: std::option::Option<crate::types::Image>,
@@ -16,19 +16,19 @@ pub struct SearchFacesByImageInput {
     /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     #[doc(hidden)]
     pub face_match_threshold: std::option::Option<f32>,
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p> 
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     #[doc(hidden)]
     pub quality_filter: std::option::Option<crate::types::QualityFilter>,
 }
 impl SearchFacesByImageInput {
     /// <p>ID of the collection to search.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> std::option::Option<& str> {
         self.collection_id.as_deref()
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn image(&self) -> std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
@@ -39,16 +39,15 @@ impl SearchFacesByImageInput {
     pub fn face_match_threshold(&self) -> std::option::Option<f32> {
         self.face_match_threshold
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p> 
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    pub fn quality_filter(&self) -> std::option::Option<&crate::types::QualityFilter> {
+    pub fn quality_filter(&self) -> std::option::Option<& crate::types::QualityFilter> {
         self.quality_filter.as_ref()
     }
 }
 impl SearchFacesByImageInput {
     /// Creates a new builder-style object to manufacture [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
-    pub fn builder(
-    ) -> crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
+    pub fn builder() -> crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder {
         crate::operation::search_faces_by_image::builders::SearchFacesByImageInputBuilder::default()
     }
 }
@@ -71,20 +70,18 @@ impl SearchFacesByImageInputBuilder {
     }
     /// <p>ID of the collection to search.</p>
     pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn image(mut self, input: crate::types::Image) -> Self {
         self.image = Some(input);
         self
     }
-    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+    /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p> 
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
     pub fn set_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub fn max_faces(mut self, input: i32) -> Self {
@@ -93,8 +90,7 @@ impl SearchFacesByImageInputBuilder {
     }
     /// <p>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</p>
     pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_faces = input;
-        self
+        self.max_faces = input; self
     }
     /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
@@ -103,39 +99,35 @@ impl SearchFacesByImageInputBuilder {
     }
     /// <p>(Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
-        self.face_match_threshold = input;
-        self
+        self.face_match_threshold = input; self
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p> 
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn quality_filter(mut self, input: crate::types::QualityFilter) -> Self {
         self.quality_filter = Some(input);
         self
     }
-    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p>
+    /// <p>A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>, Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify <code>NONE</code>, no filtering is performed. The default value is <code>NONE</code>. </p> 
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
-    pub fn set_quality_filter(
-        mut self,
-        input: std::option::Option<crate::types::QualityFilter>,
-    ) -> Self {
-        self.quality_filter = input;
-        self
+    pub fn set_quality_filter(mut self, input: std::option::Option<crate::types::QualityFilter>) -> Self {
+        self.quality_filter = input; self
     }
     /// Consumes the builder and constructs a [`SearchFacesByImageInput`](crate::operation::search_faces_by_image::SearchFacesByImageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_faces_by_image::SearchFacesByImageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::search_faces_by_image::SearchFacesByImageInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::search_faces_by_image::SearchFacesByImageInput {
-                collection_id: self.collection_id,
-                image: self.image,
-                max_faces: self.max_faces,
-                face_match_threshold: self.face_match_threshold,
-                quality_filter: self.quality_filter,
-            },
+                collection_id: self.collection_id
+                ,
+                image: self.image
+                ,
+                max_faces: self.max_faces
+                ,
+                face_match_threshold: self.face_match_threshold
+                ,
+                quality_filter: self.quality_filter
+                ,
+            }
         )
     }
 }
+

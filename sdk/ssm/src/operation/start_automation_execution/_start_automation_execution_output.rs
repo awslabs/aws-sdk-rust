@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAutomationExecutionOutput {
+pub struct StartAutomationExecutionOutput  {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
     #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct StartAutomationExecutionOutput {
 }
 impl StartAutomationExecutionOutput {
     /// <p>The unique ID of a newly scheduled automation execution.</p>
-    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+    pub fn automation_execution_id(&self) -> std::option::Option<& str> {
         self.automation_execution_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartAutomationExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartAutomationExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartAutomationExecutionOutput`](crate::operation::start_automation_execution::StartAutomationExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_automation_execution::builders::StartAutomationExecutionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_automation_execution::builders::StartAutomationExecutionOutputBuilder {
         crate::operation::start_automation_execution::builders::StartAutomationExecutionOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl StartAutomationExecutionOutputBuilder {
         self
     }
     /// <p>The unique ID of a newly scheduled automation execution.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.automation_execution_id = input;
-        self
+    pub fn set_automation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.automation_execution_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartAutomationExecutionOutput`](crate::operation::start_automation_execution::StartAutomationExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_automation_execution::StartAutomationExecutionOutput {
+    pub fn build(self) -> crate::operation::start_automation_execution::StartAutomationExecutionOutput {
         crate::operation::start_automation_execution::StartAutomationExecutionOutput {
-            automation_execution_id: self.automation_execution_id,
+            automation_execution_id: self.automation_execution_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

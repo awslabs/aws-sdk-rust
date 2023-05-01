@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupMembershipOutput {
+pub struct DeleteGroupMembershipOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteGroupMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupMembershipOutput`](crate::operation::delete_group_membership::DeleteGroupMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_group_membership::builders::DeleteGroupMembershipOutputBuilder {
         crate::operation::delete_group_membership::builders::DeleteGroupMembershipOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteGroupMembershipOutputBuilder {
 }
 impl DeleteGroupMembershipOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteGroupMembershipOutput`](crate::operation::delete_group_membership::DeleteGroupMembershipOutput).
     pub fn build(self) -> crate::operation::delete_group_membership::DeleteGroupMembershipOutput {
         crate::operation::delete_group_membership::DeleteGroupMembershipOutput {
@@ -42,3 +40,4 @@ impl DeleteGroupMembershipOutputBuilder {
         }
     }
 }
+

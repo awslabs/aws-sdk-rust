@@ -303,3 +303,4 @@ pub mod verify_software_token;
 
 /// Types for the `VerifyUserAttribute` operation.
 pub mod verify_user_attribute;
+

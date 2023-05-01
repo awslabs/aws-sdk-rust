@@ -3,7 +3,7 @@
 /// <p>Describes a transit gateway policy table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayPolicyTable {
+pub struct TransitGatewayPolicyTable  {
     /// <p>The ID of the transit gateway policy table.</p>
     #[doc(hidden)]
     pub transit_gateway_policy_table_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct TransitGatewayPolicyTable {
 }
 impl TransitGatewayPolicyTable {
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_policy_table_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_policy_table_id.as_deref()
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The state of the transit gateway policy table</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::TransitGatewayPolicyTableState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::TransitGatewayPolicyTableState> {
         self.state.as_ref()
     }
     /// <p>The timestamp when the transit gateway policy table was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>he key-value pairs associated with the transit gateway policy table.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -61,20 +61,13 @@ pub struct TransitGatewayPolicyTableBuilder {
 }
 impl TransitGatewayPolicyTableBuilder {
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn transit_gateway_policy_table_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_policy_table_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.transit_gateway_policy_table_id = Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway policy table.</p>
-    pub fn set_transit_gateway_policy_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_policy_table_id = input;
-        self
+    pub fn set_transit_gateway_policy_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_policy_table_id = input; self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,12 +75,8 @@ impl TransitGatewayPolicyTableBuilder {
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_id = input;
-        self
+    pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_id = input; self
     }
     /// <p>The state of the transit gateway policy table</p>
     pub fn state(mut self, input: crate::types::TransitGatewayPolicyTableState) -> Self {
@@ -95,12 +84,8 @@ impl TransitGatewayPolicyTableBuilder {
         self
     }
     /// <p>The state of the transit gateway policy table</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayPolicyTableState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::TransitGatewayPolicyTableState>) -> Self {
+        self.state = input; self
     }
     /// <p>The timestamp when the transit gateway policy table was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,12 +93,8 @@ impl TransitGatewayPolicyTableBuilder {
         self
     }
     /// <p>The timestamp when the transit gateway policy table was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -122,26 +103,28 @@ impl TransitGatewayPolicyTableBuilder {
     /// <p>he key-value pairs associated with the transit gateway policy table.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>he key-value pairs associated with the transit gateway policy table.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyTable`](crate::types::TransitGatewayPolicyTable).
     pub fn build(self) -> crate::types::TransitGatewayPolicyTable {
         crate::types::TransitGatewayPolicyTable {
-            transit_gateway_policy_table_id: self.transit_gateway_policy_table_id,
-            transit_gateway_id: self.transit_gateway_id,
-            state: self.state,
-            creation_time: self.creation_time,
-            tags: self.tags,
+            transit_gateway_policy_table_id: self.transit_gateway_policy_table_id
+            ,
+            transit_gateway_id: self.transit_gateway_id
+            ,
+            state: self.state
+            ,
+            creation_time: self.creation_time
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PauseClusterInput {
+pub struct PauseClusterInput  {
     /// <p>The identifier of the cluster to be paused.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl PauseClusterInput {
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -34,22 +34,17 @@ impl PauseClusterInputBuilder {
         self
     }
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// Consumes the builder and constructs a [`PauseClusterInput`](crate::operation::pause_cluster::PauseClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::pause_cluster::PauseClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::pause_cluster::PauseClusterInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> Result<crate::operation::pause_cluster::PauseClusterInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::pause_cluster::PauseClusterInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

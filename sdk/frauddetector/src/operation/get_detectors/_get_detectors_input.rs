@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDetectorsInput {
+pub struct GetDetectorsInput  {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetDetectorsInput {
 }
 impl GetDetectorsInput {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The next token for the subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return for the request.</p>
@@ -50,8 +50,7 @@ impl GetDetectorsInputBuilder {
     }
     /// <p>The detector ID.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The next token for the subsequent request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetDetectorsInputBuilder {
     }
     /// <p>The next token for the subsequent request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl GetDetectorsInputBuilder {
     }
     /// <p>The maximum number of objects to return for the request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetDetectorsInput`](crate::operation::get_detectors::GetDetectorsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_detectors::GetDetectorsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_detectors::GetDetectorsInput {
-            detector_id: self.detector_id,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::get_detectors::GetDetectorsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_detectors::GetDetectorsInput {
+                detector_id: self.detector_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

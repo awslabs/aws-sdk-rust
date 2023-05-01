@@ -3,7 +3,7 @@
 /// <p>Options for a field that contains an array of double-precision 64-bit floating point values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DoubleArrayOptions {
+pub struct DoubleArrayOptions  {
     /// A value to use for the field if the field isn't specified for a document.
     #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
@@ -26,7 +26,7 @@ impl DoubleArrayOptions {
         self.default_value
     }
     /// <p>A list of source fields to map to the field. </p>
-    pub fn source_fields(&self) -> std::option::Option<&str> {
+    pub fn source_fields(&self) -> std::option::Option<& str> {
         self.source_fields.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -67,8 +67,7 @@ impl DoubleArrayOptionsBuilder {
     }
     /// A value to use for the field if the field isn't specified for a document.
     pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>A list of source fields to map to the field. </p>
     pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl DoubleArrayOptionsBuilder {
     }
     /// <p>A list of source fields to map to the field. </p>
     pub fn set_source_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_fields = input;
-        self
+        self.source_fields = input; self
     }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -87,8 +85,7 @@ impl DoubleArrayOptionsBuilder {
     }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.facet_enabled = input;
-        self
+        self.facet_enabled = input; self
     }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn search_enabled(mut self, input: bool) -> Self {
@@ -97,8 +94,7 @@ impl DoubleArrayOptionsBuilder {
     }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.search_enabled = input;
-        self
+        self.search_enabled = input; self
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
@@ -107,17 +103,22 @@ impl DoubleArrayOptionsBuilder {
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_enabled = input;
-        self
+        self.return_enabled = input; self
     }
     /// Consumes the builder and constructs a [`DoubleArrayOptions`](crate::types::DoubleArrayOptions).
     pub fn build(self) -> crate::types::DoubleArrayOptions {
         crate::types::DoubleArrayOptions {
-            default_value: self.default_value,
-            source_fields: self.source_fields,
-            facet_enabled: self.facet_enabled,
-            search_enabled: self.search_enabled,
-            return_enabled: self.return_enabled,
+            default_value: self.default_value
+            ,
+            source_fields: self.source_fields
+            ,
+            facet_enabled: self.facet_enabled
+            ,
+            search_enabled: self.search_enabled
+            ,
+            return_enabled: self.return_enabled
+            ,
         }
     }
 }
+

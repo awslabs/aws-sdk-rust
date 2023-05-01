@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrustStoreOutput {
+pub struct CreateTrustStoreOutput  {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct CreateTrustStoreOutput {
 }
 impl CreateTrustStoreOutput {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrustStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTrustStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
-    pub fn builder() -> crate::operation::create_trust_store::builders::CreateTrustStoreOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_trust_store::builders::CreateTrustStoreOutputBuilder {
         crate::operation::create_trust_store::builders::CreateTrustStoreOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl CreateTrustStoreOutputBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTrustStoreOutput`](crate::operation::create_trust_store::CreateTrustStoreOutput).
     pub fn build(self) -> crate::operation::create_trust_store::CreateTrustStoreOutput {
         crate::operation::create_trust_store::CreateTrustStoreOutput {
-            trust_store_arn: self.trust_store_arn,
+            trust_store_arn: self.trust_store_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

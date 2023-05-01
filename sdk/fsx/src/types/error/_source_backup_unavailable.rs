@@ -3,7 +3,7 @@
 /// <p>The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceBackupUnavailable {
+pub struct SourceBackupUnavailable  {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -14,21 +14,19 @@ pub struct SourceBackupUnavailable {
 }
 impl SourceBackupUnavailable {
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
-    pub fn backup_id(&self) -> std::option::Option<&str> {
+    pub fn backup_id(&self) -> std::option::Option<& str> {
         self.backup_id.as_deref()
     }
 }
 impl SourceBackupUnavailable {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SourceBackupUnavailable {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceBackupUnavailable")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl aws_http::request_id::RequestId for crate::types::error::SourceBackupUnavai
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SourceBackupUnavailable {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl SourceBackupUnavailable {
     /// Creates a new builder-style object to manufacture [`SourceBackupUnavailable`](crate::types::error::SourceBackupUnavailable).
@@ -70,8 +66,7 @@ impl SourceBackupUnavailableBuilder {
     }
     /// <p>A detailed error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,29 +75,28 @@ impl SourceBackupUnavailableBuilder {
     }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`SourceBackupUnavailable`](crate::types::error::SourceBackupUnavailable).
     pub fn build(self) -> crate::types::error::SourceBackupUnavailable {
         crate::types::error::SourceBackupUnavailable {
-            message: self.message,
-            backup_id: self.backup_id,
+            message: self.message
+            ,
+            backup_id: self.backup_id
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

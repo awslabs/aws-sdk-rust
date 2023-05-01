@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultPolicyVersionOutput {
+pub struct SetDefaultPolicyVersionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetDefaultPolicyVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetDefaultPolicyVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionOutputBuilder {
         crate::operation::set_default_policy_version::builders::SetDefaultPolicyVersionOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct SetDefaultPolicyVersionOutputBuilder {
 }
 impl SetDefaultPolicyVersionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetDefaultPolicyVersionOutput`](crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput {
+    pub fn build(self) -> crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput {
         crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput {
             _request_id: self._request_id,
         }
     }
 }
+

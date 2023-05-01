@@ -3,7 +3,7 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbParametersOutput {
+pub struct DescribeDbParametersOutput  {
     /// <p>A list of <code>Parameter</code> values.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
@@ -14,23 +14,22 @@ pub struct DescribeDbParametersOutput {
 }
 impl DescribeDbParametersOutput {
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbParametersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDbParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder {
         crate::operation::describe_db_parameters::builders::DescribeDbParametersOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl DescribeDbParametersOutputBuilder {
     /// <p>A list of <code>Parameter</code> values.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = Some(v);
-        self
+                        v.push(input);
+                        self.parameters = Some(v);
+                        self
     }
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl DescribeDbParametersOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDbParametersOutput`](crate::operation::describe_db_parameters::DescribeDbParametersOutput).
     pub fn build(self) -> crate::operation::describe_db_parameters::DescribeDbParametersOutput {
         crate::operation::describe_db_parameters::DescribeDbParametersOutput {
-            parameters: self.parameters,
-            marker: self.marker,
+            parameters: self.parameters
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

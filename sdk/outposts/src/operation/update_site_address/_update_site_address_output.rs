@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSiteAddressOutput {
+pub struct UpdateSiteAddressOutput  {
     /// <p> The type of the address. </p>
     #[doc(hidden)]
     pub address_type: std::option::Option<crate::types::AddressType>,
@@ -13,23 +13,22 @@ pub struct UpdateSiteAddressOutput {
 }
 impl UpdateSiteAddressOutput {
     /// <p> The type of the address. </p>
-    pub fn address_type(&self) -> std::option::Option<&crate::types::AddressType> {
+    pub fn address_type(&self) -> std::option::Option<& crate::types::AddressType> {
         self.address_type.as_ref()
     }
     /// <p> Information about an address. </p>
-    pub fn address(&self) -> std::option::Option<&crate::types::Address> {
+    pub fn address(&self) -> std::option::Option<& crate::types::Address> {
         self.address.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSiteAddressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateSiteAddressOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSiteAddressOutput`](crate::operation::update_site_address::UpdateSiteAddressOutput).
-    pub fn builder(
-    ) -> crate::operation::update_site_address::builders::UpdateSiteAddressOutputBuilder {
+    pub fn builder() -> crate::operation::update_site_address::builders::UpdateSiteAddressOutputBuilder {
         crate::operation::update_site_address::builders::UpdateSiteAddressOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl UpdateSiteAddressOutputBuilder {
         self
     }
     /// <p> The type of the address. </p>
-    pub fn set_address_type(
-        mut self,
-        input: std::option::Option<crate::types::AddressType>,
-    ) -> Self {
-        self.address_type = input;
-        self
+    pub fn set_address_type(mut self, input: std::option::Option<crate::types::AddressType>) -> Self {
+        self.address_type = input; self
     }
     /// <p> Information about an address. </p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
@@ -63,24 +58,26 @@ impl UpdateSiteAddressOutputBuilder {
     }
     /// <p> Information about an address. </p>
     pub fn set_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateSiteAddressOutput`](crate::operation::update_site_address::UpdateSiteAddressOutput).
     pub fn build(self) -> crate::operation::update_site_address::UpdateSiteAddressOutput {
         crate::operation::update_site_address::UpdateSiteAddressOutput {
-            address_type: self.address_type,
-            address: self.address,
+            address_type: self.address_type
+            ,
+            address: self.address
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

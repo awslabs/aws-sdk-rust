@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h264qualitytuninglevel = unimplemented!();
 /// match h264qualitytuninglevel {
@@ -31,22 +31,14 @@
 /// Specifically, when `h264qualitytuninglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264QualityTuningLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
-/// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+/// The Quality tuning level you choose represents a trade-off between the encoding speed of your job and the output video quality. For the fastest encoding speed at the cost of video quality: Choose Single pass. For a good balance between encoding speed and video quality: Leave blank or keep the default value Single pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi pass HQ. MediaConvert performs an analysis pass on your input followed by an encoding pass. Outputs that use this feature incur pro-tier pricing.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum H264QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
     MultiPassHq,
@@ -55,44 +47,43 @@ pub enum H264QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
     SinglePassHq,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for H264QualityTuningLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "MULTI_PASS_HQ" => H264QualityTuningLevel::MultiPassHq,
-            "SINGLE_PASS" => H264QualityTuningLevel::SinglePass,
-            "SINGLE_PASS_HQ" => H264QualityTuningLevel::SinglePassHq,
-            other => H264QualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MULTI_PASS_HQ" => H264QualityTuningLevel::MultiPassHq,
+"SINGLE_PASS" => H264QualityTuningLevel::SinglePass,
+"SINGLE_PASS_HQ" => H264QualityTuningLevel::SinglePassHq,
+other => H264QualityTuningLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for H264QualityTuningLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264QualityTuningLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(H264QualityTuningLevel::from(s))
+                }
+            }
 impl H264QualityTuningLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H264QualityTuningLevel::MultiPassHq => "MULTI_PASS_HQ",
-            H264QualityTuningLevel::SinglePass => "SINGLE_PASS",
-            H264QualityTuningLevel::SinglePassHq => "SINGLE_PASS_HQ",
-            H264QualityTuningLevel::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["MULTI_PASS_HQ", "SINGLE_PASS", "SINGLE_PASS_HQ"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H264QualityTuningLevel::MultiPassHq => "MULTI_PASS_HQ",
+    H264QualityTuningLevel::SinglePass => "SINGLE_PASS",
+    H264QualityTuningLevel::SinglePassHq => "SINGLE_PASS_HQ",
+    H264QualityTuningLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MULTI_PASS_HQ", "SINGLE_PASS", "SINGLE_PASS_HQ"]
+                }
+            }
 impl AsRef<str> for H264QualityTuningLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

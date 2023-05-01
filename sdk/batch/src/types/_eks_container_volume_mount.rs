@@ -3,7 +3,7 @@
 /// <p>The volume mounts for a container for an Amazon EKS job. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EksContainerVolumeMount {
+pub struct EksContainerVolumeMount  {
     /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct EksContainerVolumeMount {
 }
 impl EksContainerVolumeMount {
     /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path on the container where the volume is mounted.</p>
-    pub fn mount_path(&self) -> std::option::Option<&str> {
+    pub fn mount_path(&self) -> std::option::Option<& str> {
         self.mount_path.as_deref()
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
@@ -51,8 +51,7 @@ impl EksContainerVolumeMountBuilder {
     }
     /// <p>The name the volume mount. This must match the name of one of the volumes in the pod.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The path on the container where the volume is mounted.</p>
     pub fn mount_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl EksContainerVolumeMountBuilder {
     }
     /// <p>The path on the container where the volume is mounted.</p>
     pub fn set_mount_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mount_path = input;
-        self
+        self.mount_path = input; self
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn read_only(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl EksContainerVolumeMountBuilder {
     }
     /// <p>If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container can write to the volume. The default value is <code>false</code>.</p>
     pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.read_only = input;
-        self
+        self.read_only = input; self
     }
     /// Consumes the builder and constructs a [`EksContainerVolumeMount`](crate::types::EksContainerVolumeMount).
     pub fn build(self) -> crate::types::EksContainerVolumeMount {
         crate::types::EksContainerVolumeMount {
-            name: self.name,
-            mount_path: self.mount_path,
-            read_only: self.read_only,
+            name: self.name
+            ,
+            mount_path: self.mount_path
+            ,
+            read_only: self.read_only
+            ,
         }
     }
 }
+

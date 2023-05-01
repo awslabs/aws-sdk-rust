@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEndpointInput {
+pub struct GetEndpointInput  {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
     #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetEndpointInput {
 }
 impl GetEndpointInput {
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetEndpointInputBuilder {
     }
     /// <p>The thing ARN of the device. This is an optional parameter.</p>
     pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetEndpointInputBuilder {
     }
     /// <p>The certificate ARN of the device. This is an optional parameter.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetEndpointInput`](crate::operation::get_endpoint::GetEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_endpoint::GetEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_endpoint::GetEndpointInput {
-            thing_arn: self.thing_arn,
-            certificate_arn: self.certificate_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_endpoint::GetEndpointInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_endpoint::GetEndpointInput {
+                thing_arn: self.thing_arn
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about the managed agent status for the container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedAgent {
+pub struct ManagedAgent  {
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
     #[doc(hidden)]
     pub last_started_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,19 +19,19 @@ pub struct ManagedAgent {
 }
 impl ManagedAgent {
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
-    pub fn last_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_started_at.as_ref()
     }
     /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::ManagedAgentName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::ManagedAgentName> {
         self.name.as_ref()
     }
     /// <p>The reason for why the managed agent is in the state it is in.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
     /// <p>The last known status of the managed agent.</p>
-    pub fn last_status(&self) -> std::option::Option<&str> {
+    pub fn last_status(&self) -> std::option::Option<& str> {
         self.last_status.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl ManagedAgentBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the managed agent was last started.</p>
-    pub fn set_last_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_started_at = input;
-        self
+    pub fn set_last_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_started_at = input; self
     }
     /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub fn name(mut self, input: crate::types::ManagedAgentName) -> Self {
@@ -72,8 +68,7 @@ impl ManagedAgentBuilder {
     }
     /// <p>The name of the managed agent. When the execute command feature is turned on, the managed agent name is <code>ExecuteCommandAgent</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::ManagedAgentName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The reason for why the managed agent is in the state it is in.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +77,7 @@ impl ManagedAgentBuilder {
     }
     /// <p>The reason for why the managed agent is in the state it is in.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// <p>The last known status of the managed agent.</p>
     pub fn last_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl ManagedAgentBuilder {
     }
     /// <p>The last known status of the managed agent.</p>
     pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_status = input;
-        self
+        self.last_status = input; self
     }
     /// Consumes the builder and constructs a [`ManagedAgent`](crate::types::ManagedAgent).
     pub fn build(self) -> crate::types::ManagedAgent {
         crate::types::ManagedAgent {
-            last_started_at: self.last_started_at,
-            name: self.name,
-            reason: self.reason,
-            last_status: self.last_status,
+            last_started_at: self.last_started_at
+            ,
+            name: self.name
+            ,
+            reason: self.reason
+            ,
+            last_status: self.last_status
+            ,
         }
     }
 }
+

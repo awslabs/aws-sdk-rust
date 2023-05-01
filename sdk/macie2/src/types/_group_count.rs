@@ -3,7 +3,7 @@
 /// <p>Provides a group of results for a query that retrieved aggregated statistical data about findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupCount {
+pub struct GroupCount  {
     /// <p>The total number of findings in the group of query results.</p>
     #[doc(hidden)]
     pub count: i64,
@@ -17,7 +17,7 @@ impl GroupCount {
         self.count
     }
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
-    pub fn group_key(&self) -> std::option::Option<&str> {
+    pub fn group_key(&self) -> std::option::Option<& str> {
         self.group_key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GroupCountBuilder {
     }
     /// <p>The total number of findings in the group of query results.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
     pub fn group_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,17 @@ impl GroupCountBuilder {
     }
     /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
     pub fn set_group_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_key = input;
-        self
+        self.group_key = input; self
     }
     /// Consumes the builder and constructs a [`GroupCount`](crate::types::GroupCount).
     pub fn build(self) -> crate::types::GroupCount {
         crate::types::GroupCount {
-            count: self.count.unwrap_or_default(),
-            group_key: self.group_key,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            group_key: self.group_key
+            ,
         }
     }
 }
+

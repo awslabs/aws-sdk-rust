@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SetUiCustomizationInput {
+pub struct SetUiCustomizationInput  {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -18,23 +18,23 @@ pub struct SetUiCustomizationInput {
 }
 impl SetUiCustomizationInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The client ID for the client app.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The CSS values in the UI customization.</p>
-    pub fn css(&self) -> std::option::Option<&str> {
+    pub fn css(&self) -> std::option::Option<& str> {
         self.css.as_deref()
     }
     /// <p>The uploaded logo image for the UI customization.</p>
-    pub fn image_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn image_file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.image_file.as_ref()
     }
 }
-impl std::fmt::Debug for SetUiCustomizationInput {
+impl  std::fmt::Debug for SetUiCustomizationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SetUiCustomizationInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -46,8 +46,7 @@ impl std::fmt::Debug for SetUiCustomizationInput {
 }
 impl SetUiCustomizationInput {
     /// Creates a new builder-style object to manufacture [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
-    pub fn builder(
-    ) -> crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
+    pub fn builder() -> crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder {
         crate::operation::set_ui_customization::builders::SetUiCustomizationInputBuilder::default()
     }
 }
@@ -69,8 +68,7 @@ impl SetUiCustomizationInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The client ID for the client app.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl SetUiCustomizationInputBuilder {
     }
     /// <p>The client ID for the client app.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>The CSS values in the UI customization.</p>
     pub fn css(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +86,7 @@ impl SetUiCustomizationInputBuilder {
     }
     /// <p>The CSS values in the UI customization.</p>
     pub fn set_css(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.css = input;
-        self
+        self.css = input; self
     }
     /// <p>The uploaded logo image for the UI customization.</p>
     pub fn image_file(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -99,23 +95,21 @@ impl SetUiCustomizationInputBuilder {
     }
     /// <p>The uploaded logo image for the UI customization.</p>
     pub fn set_image_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.image_file = input;
-        self
+        self.image_file = input; self
     }
     /// Consumes the builder and constructs a [`SetUiCustomizationInput`](crate::operation::set_ui_customization::SetUiCustomizationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::set_ui_customization::SetUiCustomizationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::set_ui_customization::SetUiCustomizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::set_ui_customization::SetUiCustomizationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-                css: self.css,
-                image_file: self.image_file,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                client_id: self.client_id
+                ,
+                css: self.css
+                ,
+                image_file: self.image_file
+                ,
+            }
         )
     }
 }
@@ -129,3 +123,4 @@ impl std::fmt::Debug for SetUiCustomizationInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains information about a delivery stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeliveryStreamDescription {
+pub struct DeliveryStreamDescription  {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
@@ -18,12 +18,11 @@ pub struct DeliveryStreamDescription {
     pub failure_description: std::option::Option<crate::types::FailureDescription>,
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
     #[doc(hidden)]
-    pub delivery_stream_encryption_configuration:
-        std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>,
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    pub delivery_stream_encryption_configuration: std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>,
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub delivery_stream_type: std::option::Option<crate::types::DeliveryStreamType>,
@@ -48,55 +47,51 @@ pub struct DeliveryStreamDescription {
 }
 impl DeliveryStreamDescription {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_arn(&self) -> std::option::Option<& str> {
         self.delivery_stream_arn.as_deref()
     }
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
-    pub fn delivery_stream_status(
-        &self,
-    ) -> std::option::Option<&crate::types::DeliveryStreamStatus> {
+    pub fn delivery_stream_status(&self) -> std::option::Option<& crate::types::DeliveryStreamStatus> {
         self.delivery_stream_status.as_ref()
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
-    pub fn failure_description(&self) -> std::option::Option<&crate::types::FailureDescription> {
+    pub fn failure_description(&self) -> std::option::Option<& crate::types::FailureDescription> {
         self.failure_description.as_ref()
     }
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
-    pub fn delivery_stream_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::DeliveryStreamEncryptionConfiguration> {
+    pub fn delivery_stream_encryption_configuration(&self) -> std::option::Option<& crate::types::DeliveryStreamEncryptionConfiguration> {
         self.delivery_stream_encryption_configuration.as_ref()
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
     /// </ul>
-    pub fn delivery_stream_type(&self) -> std::option::Option<&crate::types::DeliveryStreamType> {
+    pub fn delivery_stream_type(&self) -> std::option::Option<& crate::types::DeliveryStreamType> {
         self.delivery_stream_type.as_ref()
     }
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>The date and time that the delivery stream was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The date and time that the delivery stream was last updated.</p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a <code>SourceDescription</code> object describing the source Kinesis data stream.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::SourceDescription> {
+    pub fn source(&self) -> std::option::Option<& crate::types::SourceDescription> {
         self.source.as_ref()
     }
     /// <p>The destinations.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::DestinationDescription]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::types::DestinationDescription]> {
         self.destinations.as_deref()
     }
     /// <p>Indicates whether there are more destinations available to list.</p>
@@ -119,15 +114,13 @@ pub struct DeliveryStreamDescriptionBuilder {
     pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
     pub(crate) delivery_stream_status: std::option::Option<crate::types::DeliveryStreamStatus>,
     pub(crate) failure_description: std::option::Option<crate::types::FailureDescription>,
-    pub(crate) delivery_stream_encryption_configuration:
-        std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>,
+    pub(crate) delivery_stream_encryption_configuration: std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>,
     pub(crate) delivery_stream_type: std::option::Option<crate::types::DeliveryStreamType>,
     pub(crate) version_id: std::option::Option<std::string::String>,
     pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) source: std::option::Option<crate::types::SourceDescription>,
-    pub(crate) destinations:
-        std::option::Option<std::vec::Vec<crate::types::DestinationDescription>>,
+    pub(crate) destinations: std::option::Option<std::vec::Vec<crate::types::DestinationDescription>>,
     pub(crate) has_more_destinations: std::option::Option<bool>,
 }
 impl DeliveryStreamDescriptionBuilder {
@@ -137,12 +130,8 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn delivery_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,12 +139,8 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn set_delivery_stream_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_arn = input;
-        self
+    pub fn set_delivery_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_arn = input; self
     }
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
     pub fn delivery_stream_status(mut self, input: crate::types::DeliveryStreamStatus) -> Self {
@@ -163,12 +148,8 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it.</p>
-    pub fn set_delivery_stream_status(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryStreamStatus>,
-    ) -> Self {
-        self.delivery_stream_status = input;
-        self
+    pub fn set_delivery_stream_status(mut self, input: std::option::Option<crate::types::DeliveryStreamStatus>) -> Self {
+        self.delivery_stream_status = input; self
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
     pub fn failure_description(mut self, input: crate::types::FailureDescription) -> Self {
@@ -176,49 +157,34 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>Provides details in case one of the following operations fails due to an error related to KMS: <code>CreateDeliveryStream</code>, <code>DeleteDeliveryStream</code>, <code>StartDeliveryStreamEncryption</code>, <code>StopDeliveryStreamEncryption</code>.</p>
-    pub fn set_failure_description(
-        mut self,
-        input: std::option::Option<crate::types::FailureDescription>,
-    ) -> Self {
-        self.failure_description = input;
-        self
+    pub fn set_failure_description(mut self, input: std::option::Option<crate::types::FailureDescription>) -> Self {
+        self.failure_description = input; self
     }
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
-    pub fn delivery_stream_encryption_configuration(
-        mut self,
-        input: crate::types::DeliveryStreamEncryptionConfiguration,
-    ) -> Self {
+    pub fn delivery_stream_encryption_configuration(mut self, input: crate::types::DeliveryStreamEncryptionConfiguration) -> Self {
         self.delivery_stream_encryption_configuration = Some(input);
         self
     }
     /// <p>Indicates the server-side encryption (SSE) status for the delivery stream.</p>
-    pub fn set_delivery_stream_encryption_configuration(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>,
-    ) -> Self {
-        self.delivery_stream_encryption_configuration = input;
-        self
+    pub fn set_delivery_stream_encryption_configuration(mut self, input: std::option::Option<crate::types::DeliveryStreamEncryptionConfiguration>) -> Self {
+        self.delivery_stream_encryption_configuration = input; self
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
     /// </ul>
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
         self.delivery_stream_type = Some(input);
         self
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
     /// </ul>
-    pub fn set_delivery_stream_type(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryStreamType>,
-    ) -> Self {
-        self.delivery_stream_type = input;
-        self
+    pub fn set_delivery_stream_type(mut self, input: std::option::Option<crate::types::DeliveryStreamType>) -> Self {
+        self.delivery_stream_type = input; self
     }
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,8 +193,7 @@ impl DeliveryStreamDescriptionBuilder {
     }
     /// <p>Each time the destination is updated for a delivery stream, the version ID is changed, and the current version ID is required when updating the destination. This is so that the service knows it is applying the changes to the correct version of the delivery stream.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The date and time that the delivery stream was created.</p>
     pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -236,12 +201,8 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>The date and time that the delivery stream was created.</p>
-    pub fn set_create_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_timestamp = input;
-        self
+    pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_timestamp = input; self
     }
     /// <p>The date and time that the delivery stream was last updated.</p>
     pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -249,12 +210,8 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>The date and time that the delivery stream was last updated.</p>
-    pub fn set_last_update_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_timestamp = input;
-        self
+    pub fn set_last_update_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_update_timestamp = input; self
     }
     /// <p>If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a <code>SourceDescription</code> object describing the source Kinesis data stream.</p>
     pub fn source(mut self, input: crate::types::SourceDescription) -> Self {
@@ -262,12 +219,8 @@ impl DeliveryStreamDescriptionBuilder {
         self
     }
     /// <p>If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a <code>SourceDescription</code> object describing the source Kinesis data stream.</p>
-    pub fn set_source(
-        mut self,
-        input: std::option::Option<crate::types::SourceDescription>,
-    ) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: std::option::Option<crate::types::SourceDescription>) -> Self {
+        self.source = input; self
     }
     /// Appends an item to `destinations`.
     ///
@@ -276,17 +229,13 @@ impl DeliveryStreamDescriptionBuilder {
     /// <p>The destinations.</p>
     pub fn destinations(mut self, input: crate::types::DestinationDescription) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = Some(v);
-        self
+                        v.push(input);
+                        self.destinations = Some(v);
+                        self
     }
     /// <p>The destinations.</p>
-    pub fn set_destinations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DestinationDescription>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::DestinationDescription>>) -> Self {
+        self.destinations = input; self
     }
     /// <p>Indicates whether there are more destinations available to list.</p>
     pub fn has_more_destinations(mut self, input: bool) -> Self {
@@ -295,24 +244,36 @@ impl DeliveryStreamDescriptionBuilder {
     }
     /// <p>Indicates whether there are more destinations available to list.</p>
     pub fn set_has_more_destinations(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_more_destinations = input;
-        self
+        self.has_more_destinations = input; self
     }
     /// Consumes the builder and constructs a [`DeliveryStreamDescription`](crate::types::DeliveryStreamDescription).
     pub fn build(self) -> crate::types::DeliveryStreamDescription {
         crate::types::DeliveryStreamDescription {
-            delivery_stream_name: self.delivery_stream_name,
-            delivery_stream_arn: self.delivery_stream_arn,
-            delivery_stream_status: self.delivery_stream_status,
-            failure_description: self.failure_description,
-            delivery_stream_encryption_configuration: self.delivery_stream_encryption_configuration,
-            delivery_stream_type: self.delivery_stream_type,
-            version_id: self.version_id,
-            create_timestamp: self.create_timestamp,
-            last_update_timestamp: self.last_update_timestamp,
-            source: self.source,
-            destinations: self.destinations,
-            has_more_destinations: self.has_more_destinations,
+            delivery_stream_name: self.delivery_stream_name
+            ,
+            delivery_stream_arn: self.delivery_stream_arn
+            ,
+            delivery_stream_status: self.delivery_stream_status
+            ,
+            failure_description: self.failure_description
+            ,
+            delivery_stream_encryption_configuration: self.delivery_stream_encryption_configuration
+            ,
+            delivery_stream_type: self.delivery_stream_type
+            ,
+            version_id: self.version_id
+            ,
+            create_timestamp: self.create_timestamp
+            ,
+            last_update_timestamp: self.last_update_timestamp
+            ,
+            source: self.source
+            ,
+            destinations: self.destinations
+            ,
+            has_more_destinations: self.has_more_destinations
+            ,
         }
     }
 }
+

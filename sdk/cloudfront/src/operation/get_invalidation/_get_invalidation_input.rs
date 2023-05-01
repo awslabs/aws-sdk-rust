@@ -3,7 +3,7 @@
 /// <p>The request to get an invalidation's information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInvalidationInput {
+pub struct GetInvalidationInput  {
     /// <p>The distribution's ID.</p>
     #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetInvalidationInput {
 }
 impl GetInvalidationInput {
     /// <p>The distribution's ID.</p>
-    pub fn distribution_id(&self) -> std::option::Option<&str> {
+    pub fn distribution_id(&self) -> std::option::Option<& str> {
         self.distribution_id.as_deref()
     }
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GetInvalidationInputBuilder {
     }
     /// <p>The distribution's ID.</p>
     pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.distribution_id = input;
-        self
+        self.distribution_id = input; self
     }
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +52,18 @@ impl GetInvalidationInputBuilder {
     }
     /// <p>The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetInvalidationInput`](crate::operation::get_invalidation::GetInvalidationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_invalidation::GetInvalidationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_invalidation::GetInvalidationInput {
-            distribution_id: self.distribution_id,
-            id: self.id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_invalidation::GetInvalidationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_invalidation::GetInvalidationInput {
+                distribution_id: self.distribution_id
+                ,
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

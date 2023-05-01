@@ -3,14 +3,14 @@
 /// <p>Details of what case data is published through the case event stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaseEventIncludedData {
+pub struct CaseEventIncludedData  {
     /// <p>List of field identifiers.</p>
     #[doc(hidden)]
     pub fields: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::FieldIdentifier]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::types::FieldIdentifier]> {
         self.fields.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl CaseEventIncludedDataBuilder {
     /// <p>List of field identifiers.</p>
     pub fn fields(mut self, input: crate::types::FieldIdentifier) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = Some(v);
-        self
+                        v.push(input);
+                        self.fields = Some(v);
+                        self
     }
     /// <p>List of field identifiers.</p>
-    pub fn set_fields(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>) -> Self {
+        self.fields = input; self
     }
     /// Consumes the builder and constructs a [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
     pub fn build(self) -> crate::types::CaseEventIncludedData {
         crate::types::CaseEventIncludedData {
-            fields: self.fields,
+            fields: self.fields
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Workflow specific execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppflowIntegrationWorkflowMetrics {
+pub struct AppflowIntegrationWorkflowMetrics  {
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     #[doc(hidden)]
     pub records_processed: i64,
@@ -51,8 +51,7 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
     }
     /// <p>Number of records processed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_records_processed(mut self, input: std::option::Option<i64>) -> Self {
-        self.records_processed = input;
-        self
+        self.records_processed = input; self
     }
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn steps_completed(mut self, input: i64) -> Self {
@@ -61,8 +60,7 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
     }
     /// <p>Total steps completed in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_steps_completed(mut self, input: std::option::Option<i64>) -> Self {
-        self.steps_completed = input;
-        self
+        self.steps_completed = input; self
     }
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn total_steps(mut self, input: i64) -> Self {
@@ -71,15 +69,21 @@ impl AppflowIntegrationWorkflowMetricsBuilder {
     }
     /// <p>Total steps in <code>APPFLOW_INTEGRATION</code> workflow.</p>
     pub fn set_total_steps(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_steps = input;
-        self
+        self.total_steps = input; self
     }
     /// Consumes the builder and constructs a [`AppflowIntegrationWorkflowMetrics`](crate::types::AppflowIntegrationWorkflowMetrics).
     pub fn build(self) -> crate::types::AppflowIntegrationWorkflowMetrics {
         crate::types::AppflowIntegrationWorkflowMetrics {
-            records_processed: self.records_processed.unwrap_or_default(),
-            steps_completed: self.steps_completed.unwrap_or_default(),
-            total_steps: self.total_steps.unwrap_or_default(),
+            records_processed: self.records_processed
+                .unwrap_or_default()
+            ,
+            steps_completed: self.steps_completed
+                .unwrap_or_default()
+            ,
+            total_steps: self.total_steps
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

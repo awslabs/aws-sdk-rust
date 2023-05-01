@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFuotaTasksOutput {
+pub struct ListFuotaTasksOutput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListFuotaTasksOutput {
 }
 impl ListFuotaTasksOutput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    pub fn fuota_task_list(&self) -> std::option::Option<&[crate::types::FuotaTask]> {
+    pub fn fuota_task_list(&self) -> std::option::Option<& [crate::types::FuotaTask]> {
         self.fuota_task_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFuotaTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFuotaTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListFuotaTasksOutput`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput).
     pub fn builder() -> crate::operation::list_fuota_tasks::builders::ListFuotaTasksOutputBuilder {
@@ -49,8 +49,7 @@ impl ListFuotaTasksOutputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `fuota_task_list`.
     ///
@@ -59,33 +58,32 @@ impl ListFuotaTasksOutputBuilder {
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
     pub fn fuota_task_list(mut self, input: crate::types::FuotaTask) -> Self {
         let mut v = self.fuota_task_list.unwrap_or_default();
-        v.push(input);
-        self.fuota_task_list = Some(v);
-        self
+                        v.push(input);
+                        self.fuota_task_list = Some(v);
+                        self
     }
     /// <p>Lists the FUOTA tasks registered to your AWS account.</p>
-    pub fn set_fuota_task_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FuotaTask>>,
-    ) -> Self {
-        self.fuota_task_list = input;
-        self
+    pub fn set_fuota_task_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::FuotaTask>>) -> Self {
+        self.fuota_task_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFuotaTasksOutput`](crate::operation::list_fuota_tasks::ListFuotaTasksOutput).
     pub fn build(self) -> crate::operation::list_fuota_tasks::ListFuotaTasksOutput {
         crate::operation::list_fuota_tasks::ListFuotaTasksOutput {
-            next_token: self.next_token,
-            fuota_task_list: self.fuota_task_list,
+            next_token: self.next_token
+            ,
+            fuota_task_list: self.fuota_task_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

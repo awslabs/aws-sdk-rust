@@ -3,7 +3,7 @@
 /// <p>Additional settings for a stateful rule. This is part of the <code>StatefulRule</code> configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleOption {
+pub struct RuleOption  {
     /// <p></p>
     #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RuleOption {
 }
 impl RuleOption {
     /// <p></p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p></p>
-    pub fn settings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn settings(&self) -> std::option::Option<& [std::string::String]> {
         self.settings.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RuleOptionBuilder {
     }
     /// <p></p>
     pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
     }
     /// Appends an item to `settings`.
     ///
@@ -53,23 +52,22 @@ impl RuleOptionBuilder {
     /// <p></p>
     pub fn settings(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input.into());
-        self.settings = Some(v);
-        self
+                        v.push(input.into());
+                        self.settings = Some(v);
+                        self
     }
     /// <p></p>
-    pub fn set_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.settings = input; self
     }
     /// Consumes the builder and constructs a [`RuleOption`](crate::types::RuleOption).
     pub fn build(self) -> crate::types::RuleOption {
         crate::types::RuleOption {
-            keyword: self.keyword,
-            settings: self.settings,
+            keyword: self.keyword
+            ,
+            settings: self.settings
+            ,
         }
     }
 }
+

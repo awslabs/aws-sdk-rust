@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVpcAttachmentInput {
+pub struct GetVpcAttachmentInput  {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl GetVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
 }
 impl GetVpcAttachmentInput {
     /// Creates a new builder-style object to manufacture [`GetVpcAttachmentInput`](crate::operation::get_vpc_attachment::GetVpcAttachmentInput).
-    pub fn builder() -> crate::operation::get_vpc_attachment::builders::GetVpcAttachmentInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_vpc_attachment::builders::GetVpcAttachmentInputBuilder {
         crate::operation::get_vpc_attachment::builders::GetVpcAttachmentInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetVpcAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// Consumes the builder and constructs a [`GetVpcAttachmentInput`](crate::operation::get_vpc_attachment::GetVpcAttachmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_vpc_attachment::GetVpcAttachmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_vpc_attachment::GetVpcAttachmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_vpc_attachment::GetVpcAttachmentInput {
-                attachment_id: self.attachment_id,
-            },
+                attachment_id: self.attachment_id
+                ,
+            }
         )
     }
 }
+

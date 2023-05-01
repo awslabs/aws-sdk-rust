@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsInput {
+pub struct DeleteTagsInput  {
     /// <p>One or more tags to delete.</p>
     #[doc(hidden)]
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,15 +15,15 @@ pub struct DeleteTagsInput {
 }
 impl DeleteTagsInput {
     /// <p>One or more tags to delete.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -50,17 +50,13 @@ impl DeleteTagsInputBuilder {
     /// <p>One or more tags to delete.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = Some(v);
+                        self
     }
     /// <p>One or more tags to delete.</p>
-    pub fn set_tag_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +65,7 @@ impl DeleteTagsInputBuilder {
     }
     /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
@@ -78,24 +73,21 @@ impl DeleteTagsInputBuilder {
         self
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::TaggableResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::TaggableResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::operation::delete_tags::DeleteTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_tags::DeleteTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_tags::DeleteTagsInput {
-            tag_keys: self.tag_keys,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_tags::DeleteTagsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_tags::DeleteTagsInput {
+                tag_keys: self.tag_keys
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+            }
+        )
     }
 }
+

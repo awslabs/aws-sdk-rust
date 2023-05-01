@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceNetworkInput {
+pub struct DeleteServiceNetworkInput  {
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
     #[doc(hidden)]
     pub service_network_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteServiceNetworkInput {
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-    pub fn service_network_identifier(&self) -> std::option::Option<&str> {
+    pub fn service_network_identifier(&self) -> std::option::Option<& str> {
         self.service_network_identifier.as_deref()
     }
 }
 impl DeleteServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceNetworkInput`](crate::operation::delete_service_network::DeleteServiceNetworkInput).
-    pub fn builder(
-    ) -> crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder {
+    pub fn builder() -> crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder {
         crate::operation::delete_service_network::builders::DeleteServiceNetworkInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteServiceNetworkInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_network_identifier = input;
-        self
+    pub fn set_service_network_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_network_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteServiceNetworkInput`](crate::operation::delete_service_network::DeleteServiceNetworkInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_service_network::DeleteServiceNetworkInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_service_network::DeleteServiceNetworkInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_service_network::DeleteServiceNetworkInput {
-                service_network_identifier: self.service_network_identifier,
-            },
+                service_network_identifier: self.service_network_identifier
+                ,
+            }
         )
     }
 }
+

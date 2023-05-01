@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
+pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetInput {
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the list call.</p>
@@ -30,13 +30,13 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput).
-    pub fn builder() -> crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
         crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
     pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code>. </p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_set_arn = input;
-        self
+    pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_set_arn = input; self
     }
     /// <p>The maximum number of results to display for the list call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,8 +76,7 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
     }
     /// <p>The maximum number of results to display for the list call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,11 +85,10 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListCustomerManagedPolicyReferencesInPermissionSetInput`](crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput).
-    pub fn build(self) -> Result<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetInput {
                 instance_arn: self.instance_arn
@@ -110,3 +103,4 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
         )
     }
 }
+

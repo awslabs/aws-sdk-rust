@@ -3,14 +3,14 @@
 /// <p>Information required to reset the timer. The timer is reset to the previously evaluated result of the duration. The duration expression isn't reevaluated when you reset the timer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetTimerAction {
+pub struct ResetTimerAction  {
     /// <p>The name of the timer to reset.</p>
     #[doc(hidden)]
     pub timer_name: std::option::Option<std::string::String>,
 }
 impl ResetTimerAction {
     /// <p>The name of the timer to reset.</p>
-    pub fn timer_name(&self) -> std::option::Option<&str> {
+    pub fn timer_name(&self) -> std::option::Option<& str> {
         self.timer_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ResetTimerActionBuilder {
     }
     /// <p>The name of the timer to reset.</p>
     pub fn set_timer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timer_name = input;
-        self
+        self.timer_name = input; self
     }
     /// Consumes the builder and constructs a [`ResetTimerAction`](crate::types::ResetTimerAction).
     pub fn build(self) -> crate::types::ResetTimerAction {
         crate::types::ResetTimerAction {
-            timer_name: self.timer_name,
+            timer_name: self.timer_name
+            ,
         }
     }
 }
+

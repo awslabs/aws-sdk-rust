@@ -189,3 +189,4 @@ pub mod update_lag;
 
 /// Types for the `UpdateVirtualInterfaceAttributes` operation.
 pub mod update_virtual_interface_attributes;
+

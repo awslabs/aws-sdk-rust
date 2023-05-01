@@ -2,38 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatalakeExceptionsInput {
+pub struct ListDatalakeExceptionsInput  {
     /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
     #[doc(hidden)]
     pub region_set: std::option::Option<std::vec::Vec<crate::types::Region>>,
     /// <p>List the maximum number of failures in Security Lake.</p>
     #[doc(hidden)]
     pub max_failures: std::option::Option<i32>,
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDatalakeExceptionsInput {
     /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-    pub fn region_set(&self) -> std::option::Option<&[crate::types::Region]> {
+    pub fn region_set(&self) -> std::option::Option<& [crate::types::Region]> {
         self.region_set.as_deref()
     }
     /// <p>List the maximum number of failures in Security Lake.</p>
     pub fn max_failures(&self) -> std::option::Option<i32> {
         self.max_failures
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListDatalakeExceptionsInput {
     /// Creates a new builder-style object to manufacture [`ListDatalakeExceptionsInput`](crate::operation::list_datalake_exceptions::ListDatalakeExceptionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_datalake_exceptions::builders::ListDatalakeExceptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_datalake_exceptions::builders::ListDatalakeExceptionsInputBuilder {
         crate::operation::list_datalake_exceptions::builders::ListDatalakeExceptionsInputBuilder::default()
     }
 }
@@ -54,17 +52,13 @@ impl ListDatalakeExceptionsInputBuilder {
     /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
     pub fn region_set(mut self, input: crate::types::Region) -> Self {
         let mut v = self.region_set.unwrap_or_default();
-        v.push(input);
-        self.region_set = Some(v);
-        self
+                        v.push(input);
+                        self.region_set = Some(v);
+                        self
     }
     /// <p>List the Amazon Web Services Regions from which exceptions are retrieved.</p>
-    pub fn set_region_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Region>>,
-    ) -> Self {
-        self.region_set = input;
-        self
+    pub fn set_region_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::Region>>) -> Self {
+        self.region_set = input; self
     }
     /// <p>List the maximum number of failures in Security Lake.</p>
     pub fn max_failures(mut self, input: i32) -> Self {
@@ -73,34 +67,31 @@ impl ListDatalakeExceptionsInputBuilder {
     }
     /// <p>List the maximum number of failures in Security Lake.</p>
     pub fn set_max_failures(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_failures = input;
-        self
+        self.max_failures = input; self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
+    /// <p>List if there are more results available. The value of nextToken is a unique pagination token for each page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged. </p> 
     /// <p>Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListDatalakeExceptionsInput`](crate::operation::list_datalake_exceptions::ListDatalakeExceptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_datalake_exceptions::ListDatalakeExceptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_datalake_exceptions::ListDatalakeExceptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_datalake_exceptions::ListDatalakeExceptionsInput {
-                region_set: self.region_set,
-                max_failures: self.max_failures,
-                next_token: self.next_token,
-            },
+                region_set: self.region_set
+                ,
+                max_failures: self.max_failures
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOrganizationCustomRulePolicyOutput {
+pub struct GetOrganizationCustomRulePolicyOutput  {
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
     #[doc(hidden)]
     pub policy_text: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct GetOrganizationCustomRulePolicyOutput {
 }
 impl GetOrganizationCustomRulePolicyOutput {
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
-    pub fn policy_text(&self) -> std::option::Option<&str> {
+    pub fn policy_text(&self) -> std::option::Option<& str> {
         self.policy_text.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetOrganizationCustomRulePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetOrganizationCustomRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyOutput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput).
-    pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyOutputBuilder {
         crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyOutputBuilder::default()
     }
 }
@@ -41,23 +41,19 @@ impl GetOrganizationCustomRulePolicyOutputBuilder {
     }
     /// <p>The policy definition containing the logic for your organization Config Custom Policy rule.</p>
     pub fn set_policy_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_text = input;
-        self
+        self.policy_text = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyOutput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput {
         crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyOutput {
             policy_text: self.policy_text
             ,
@@ -65,3 +61,4 @@ impl GetOrganizationCustomRulePolicyOutputBuilder {
         }
     }
 }
+

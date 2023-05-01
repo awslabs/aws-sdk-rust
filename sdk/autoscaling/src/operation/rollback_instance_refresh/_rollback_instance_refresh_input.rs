@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackInstanceRefreshInput {
+pub struct RollbackInstanceRefreshInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
 }
 impl RollbackInstanceRefreshInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
 }
 impl RollbackInstanceRefreshInput {
     /// Creates a new builder-style object to manufacture [`RollbackInstanceRefreshInput`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshInput).
-    pub fn builder(
-    ) -> crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshInputBuilder
-    {
+    pub fn builder() -> crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshInputBuilder {
         crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl RollbackInstanceRefreshInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
     }
     /// Consumes the builder and constructs a [`RollbackInstanceRefreshInput`](crate::operation::rollback_instance_refresh::RollbackInstanceRefreshInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::rollback_instance_refresh::RollbackInstanceRefreshInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::rollback_instance_refresh::RollbackInstanceRefreshInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::rollback_instance_refresh::RollbackInstanceRefreshInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+            }
         )
     }
 }
+

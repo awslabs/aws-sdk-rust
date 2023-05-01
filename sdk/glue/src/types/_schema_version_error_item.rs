@@ -3,7 +3,7 @@
 /// <p>An object that contains the error details for an operation on a schema version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaVersionErrorItem {
+pub struct SchemaVersionErrorItem  {
     /// <p>The version number of the schema.</p>
     #[doc(hidden)]
     pub version_number: i64,
@@ -17,7 +17,7 @@ impl SchemaVersionErrorItem {
         self.version_number
     }
     /// <p>The details of the error for the schema version.</p>
-    pub fn error_details(&self) -> std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SchemaVersionErrorItemBuilder {
     }
     /// <p>The version number of the schema.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The details of the error for the schema version.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
@@ -52,18 +51,18 @@ impl SchemaVersionErrorItemBuilder {
         self
     }
     /// <p>The details of the error for the schema version.</p>
-    pub fn set_error_details(
-        mut self,
-        input: std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
-        self.error_details = input;
-        self
+    pub fn set_error_details(mut self, input: std::option::Option<crate::types::ErrorDetails>) -> Self {
+        self.error_details = input; self
     }
     /// Consumes the builder and constructs a [`SchemaVersionErrorItem`](crate::types::SchemaVersionErrorItem).
     pub fn build(self) -> crate::types::SchemaVersionErrorItem {
         crate::types::SchemaVersionErrorItem {
-            version_number: self.version_number.unwrap_or_default(),
-            error_details: self.error_details,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

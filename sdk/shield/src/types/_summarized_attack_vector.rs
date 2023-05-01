@@ -3,7 +3,7 @@
 /// <p>A summary of information about the attack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SummarizedAttackVector {
+pub struct SummarizedAttackVector  {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
     #[doc(hidden)]
     pub vector_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SummarizedAttackVector {
 }
 impl SummarizedAttackVector {
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
-    pub fn vector_type(&self) -> std::option::Option<&str> {
+    pub fn vector_type(&self) -> std::option::Option<& str> {
         self.vector_type.as_deref()
     }
     /// <p>The list of counters that describe the details of the attack.</p>
-    pub fn vector_counters(&self) -> std::option::Option<&[crate::types::SummarizedCounter]> {
+    pub fn vector_counters(&self) -> std::option::Option<& [crate::types::SummarizedCounter]> {
         self.vector_counters.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SummarizedAttackVectorBuilder {
     }
     /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
     pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vector_type = input;
-        self
+        self.vector_type = input; self
     }
     /// Appends an item to `vector_counters`.
     ///
@@ -53,23 +52,22 @@ impl SummarizedAttackVectorBuilder {
     /// <p>The list of counters that describe the details of the attack.</p>
     pub fn vector_counters(mut self, input: crate::types::SummarizedCounter) -> Self {
         let mut v = self.vector_counters.unwrap_or_default();
-        v.push(input);
-        self.vector_counters = Some(v);
-        self
+                        v.push(input);
+                        self.vector_counters = Some(v);
+                        self
     }
     /// <p>The list of counters that describe the details of the attack.</p>
-    pub fn set_vector_counters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SummarizedCounter>>,
-    ) -> Self {
-        self.vector_counters = input;
-        self
+    pub fn set_vector_counters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SummarizedCounter>>) -> Self {
+        self.vector_counters = input; self
     }
     /// Consumes the builder and constructs a [`SummarizedAttackVector`](crate::types::SummarizedAttackVector).
     pub fn build(self) -> crate::types::SummarizedAttackVector {
         crate::types::SummarizedAttackVector {
-            vector_type: self.vector_type,
-            vector_counters: self.vector_counters,
+            vector_type: self.vector_type
+            ,
+            vector_counters: self.vector_counters
+            ,
         }
     }
 }
+

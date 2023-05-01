@@ -3,7 +3,7 @@
 /// <p>The scheduled maintenance for a runtime engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingMaintenance {
+pub struct PendingMaintenance  {
     /// <p>The maintenance schedule for the runtime engine version.</p>
     #[doc(hidden)]
     pub schedule: std::option::Option<crate::types::MaintenanceSchedule>,
@@ -13,11 +13,11 @@ pub struct PendingMaintenance {
 }
 impl PendingMaintenance {
     /// <p>The maintenance schedule for the runtime engine version.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::MaintenanceSchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::types::MaintenanceSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl PendingMaintenanceBuilder {
         self
     }
     /// <p>The maintenance schedule for the runtime engine version.</p>
-    pub fn set_schedule(
-        mut self,
-        input: std::option::Option<crate::types::MaintenanceSchedule>,
-    ) -> Self {
-        self.schedule = input;
-        self
+    pub fn set_schedule(mut self, input: std::option::Option<crate::types::MaintenanceSchedule>) -> Self {
+        self.schedule = input; self
     }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl PendingMaintenanceBuilder {
     }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// Consumes the builder and constructs a [`PendingMaintenance`](crate::types::PendingMaintenance).
     pub fn build(self) -> crate::types::PendingMaintenance {
         crate::types::PendingMaintenance {
-            schedule: self.schedule,
-            engine_version: self.engine_version,
+            schedule: self.schedule
+            ,
+            engine_version: self.engine_version
+            ,
         }
     }
 }
+

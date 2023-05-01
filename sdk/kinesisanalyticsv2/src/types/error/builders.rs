@@ -24,3 +24,4 @@ pub use crate::types::error::_unable_to_detect_schema_exception::UnableToDetectS
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
 
 pub use crate::types::error::_resource_provisioned_throughput_exceeded_exception::ResourceProvisionedThroughputExceededExceptionBuilder;
+

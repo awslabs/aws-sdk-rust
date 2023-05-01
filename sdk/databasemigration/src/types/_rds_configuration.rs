@@ -3,7 +3,7 @@
 /// <p>Provides information that describes the configuration of the recommended target engine on Amazon RDS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsConfiguration {
+pub struct RdsConfiguration  {
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
     #[doc(hidden)]
     pub engine_edition: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct RdsConfiguration {
     /// <p>Describes the memory on the recommended Amazon RDS DB instance that meets your requirements.</p>
     #[doc(hidden)]
     pub instance_memory: std::option::Option<f64>,
-    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p>
+    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p> 
     /// <p>Amazon RDS provides three storage types: General Purpose SSD (also known as gp2 and gp3), Provisioned IOPS SSD (also known as io1), and magnetic (also known as standard).</p>
     #[doc(hidden)]
     pub storage_type: std::option::Option<std::string::String>,
@@ -32,11 +32,11 @@ pub struct RdsConfiguration {
 }
 impl RdsConfiguration {
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
-    pub fn engine_edition(&self) -> std::option::Option<&str> {
+    pub fn engine_edition(&self) -> std::option::Option<& str> {
         self.engine_edition.as_deref()
     }
     /// <p>Describes the recommended target Amazon RDS instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>Describes the number of virtual CPUs (vCPU) on the recommended Amazon RDS DB instance that meets your requirements.</p>
@@ -47,9 +47,9 @@ impl RdsConfiguration {
     pub fn instance_memory(&self) -> std::option::Option<f64> {
         self.instance_memory
     }
-    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p>
+    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p> 
     /// <p>Amazon RDS provides three storage types: General Purpose SSD (also known as gp2 and gp3), Provisioned IOPS SSD (also known as io1), and magnetic (also known as standard).</p>
-    pub fn storage_type(&self) -> std::option::Option<&str> {
+    pub fn storage_type(&self) -> std::option::Option<& str> {
         self.storage_type.as_deref()
     }
     /// <p>Describes the storage size of the recommended Amazon RDS DB instance that meets your requirements.</p>
@@ -61,7 +61,7 @@ impl RdsConfiguration {
         self.storage_iops
     }
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
-    pub fn deployment_option(&self) -> std::option::Option<&str> {
+    pub fn deployment_option(&self) -> std::option::Option<& str> {
         self.deployment_option.as_deref()
     }
 }
@@ -93,8 +93,7 @@ impl RdsConfigurationBuilder {
     }
     /// <p>Describes the recommended target Amazon RDS engine edition.</p>
     pub fn set_engine_edition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_edition = input;
-        self
+        self.engine_edition = input; self
     }
     /// <p>Describes the recommended target Amazon RDS instance type.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +102,7 @@ impl RdsConfigurationBuilder {
     }
     /// <p>Describes the recommended target Amazon RDS instance type.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>Describes the number of virtual CPUs (vCPU) on the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn instance_vcpu(mut self, input: f64) -> Self {
@@ -113,8 +111,7 @@ impl RdsConfigurationBuilder {
     }
     /// <p>Describes the number of virtual CPUs (vCPU) on the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn set_instance_vcpu(mut self, input: std::option::Option<f64>) -> Self {
-        self.instance_vcpu = input;
-        self
+        self.instance_vcpu = input; self
     }
     /// <p>Describes the memory on the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn instance_memory(mut self, input: f64) -> Self {
@@ -123,20 +120,18 @@ impl RdsConfigurationBuilder {
     }
     /// <p>Describes the memory on the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn set_instance_memory(mut self, input: std::option::Option<f64>) -> Self {
-        self.instance_memory = input;
-        self
+        self.instance_memory = input; self
     }
-    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p>
+    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p> 
     /// <p>Amazon RDS provides three storage types: General Purpose SSD (also known as gp2 and gp3), Provisioned IOPS SSD (also known as io1), and magnetic (also known as standard).</p>
     pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.storage_type = Some(input.into());
         self
     }
-    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p>
+    /// <p>Describes the storage type of the recommended Amazon RDS DB instance that meets your requirements.</p> 
     /// <p>Amazon RDS provides three storage types: General Purpose SSD (also known as gp2 and gp3), Provisioned IOPS SSD (also known as io1), and magnetic (also known as standard).</p>
     pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_type = input;
-        self
+        self.storage_type = input; self
     }
     /// <p>Describes the storage size of the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn storage_size(mut self, input: i32) -> Self {
@@ -145,8 +140,7 @@ impl RdsConfigurationBuilder {
     }
     /// <p>Describes the storage size of the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn set_storage_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_size = input;
-        self
+        self.storage_size = input; self
     }
     /// <p>Describes the number of I/O operations completed each second (IOPS) on the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn storage_iops(mut self, input: i32) -> Self {
@@ -155,8 +149,7 @@ impl RdsConfigurationBuilder {
     }
     /// <p>Describes the number of I/O operations completed each second (IOPS) on the recommended Amazon RDS DB instance that meets your requirements.</p>
     pub fn set_storage_iops(mut self, input: std::option::Option<i32>) -> Self {
-        self.storage_iops = input;
-        self
+        self.storage_iops = input; self
     }
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
     pub fn deployment_option(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,24 +157,29 @@ impl RdsConfigurationBuilder {
         self
     }
     /// <p>Describes the deployment option for the recommended Amazon RDS DB instance. The deployment options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code> and <code>"SINGLE_AZ"</code>.</p>
-    pub fn set_deployment_option(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deployment_option = input;
-        self
+    pub fn set_deployment_option(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deployment_option = input; self
     }
     /// Consumes the builder and constructs a [`RdsConfiguration`](crate::types::RdsConfiguration).
     pub fn build(self) -> crate::types::RdsConfiguration {
         crate::types::RdsConfiguration {
-            engine_edition: self.engine_edition,
-            instance_type: self.instance_type,
-            instance_vcpu: self.instance_vcpu,
-            instance_memory: self.instance_memory,
-            storage_type: self.storage_type,
-            storage_size: self.storage_size,
-            storage_iops: self.storage_iops,
-            deployment_option: self.deployment_option,
+            engine_edition: self.engine_edition
+            ,
+            instance_type: self.instance_type
+            ,
+            instance_vcpu: self.instance_vcpu
+            ,
+            instance_memory: self.instance_memory
+            ,
+            storage_type: self.storage_type
+            ,
+            storage_size: self.storage_size
+            ,
+            storage_iops: self.storage_iops
+            ,
+            deployment_option: self.deployment_option
+            ,
         }
     }
 }
+

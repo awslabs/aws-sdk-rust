@@ -3,7 +3,7 @@
 /// <p>Location details for where the generated manifest should be written.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ManifestOutputLocation {
+pub struct S3ManifestOutputLocation  {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
     #[doc(hidden)]
     pub expected_manifest_bucket_owner: std::option::Option<std::string::String>,
@@ -22,25 +22,23 @@ pub struct S3ManifestOutputLocation {
 }
 impl S3ManifestOutputLocation {
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-    pub fn expected_manifest_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_manifest_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_manifest_bucket_owner.as_deref()
     }
     /// <p>The bucket ARN the generated manifest should be written to.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
-    pub fn manifest_prefix(&self) -> std::option::Option<&str> {
+    pub fn manifest_prefix(&self) -> std::option::Option<& str> {
         self.manifest_prefix.as_deref()
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-    pub fn manifest_encryption(
-        &self,
-    ) -> std::option::Option<&crate::types::GeneratedManifestEncryption> {
+    pub fn manifest_encryption(&self) -> std::option::Option<& crate::types::GeneratedManifestEncryption> {
         self.manifest_encryption.as_ref()
     }
     /// <p>The format of the generated manifest.</p>
-    pub fn manifest_format(&self) -> std::option::Option<&crate::types::GeneratedManifestFormat> {
+    pub fn manifest_format(&self) -> std::option::Option<& crate::types::GeneratedManifestFormat> {
         self.manifest_format.as_ref()
     }
 }
@@ -68,12 +66,8 @@ impl S3ManifestOutputLocationBuilder {
         self
     }
     /// <p>The Account ID that owns the bucket the generated manifest is written to.</p>
-    pub fn set_expected_manifest_bucket_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.expected_manifest_bucket_owner = input;
-        self
+    pub fn set_expected_manifest_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.expected_manifest_bucket_owner = input; self
     }
     /// <p>The bucket ARN the generated manifest should be written to.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl S3ManifestOutputLocationBuilder {
     }
     /// <p>The bucket ARN the generated manifest should be written to.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
     pub fn manifest_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +85,7 @@ impl S3ManifestOutputLocationBuilder {
     }
     /// <p>Prefix identifying one or more objects to which the manifest applies.</p>
     pub fn set_manifest_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manifest_prefix = input;
-        self
+        self.manifest_prefix = input; self
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
     pub fn manifest_encryption(mut self, input: crate::types::GeneratedManifestEncryption) -> Self {
@@ -101,12 +93,8 @@ impl S3ManifestOutputLocationBuilder {
         self
     }
     /// <p>Specifies what encryption should be used when the generated manifest objects are written.</p>
-    pub fn set_manifest_encryption(
-        mut self,
-        input: std::option::Option<crate::types::GeneratedManifestEncryption>,
-    ) -> Self {
-        self.manifest_encryption = input;
-        self
+    pub fn set_manifest_encryption(mut self, input: std::option::Option<crate::types::GeneratedManifestEncryption>) -> Self {
+        self.manifest_encryption = input; self
     }
     /// <p>The format of the generated manifest.</p>
     pub fn manifest_format(mut self, input: crate::types::GeneratedManifestFormat) -> Self {
@@ -114,21 +102,23 @@ impl S3ManifestOutputLocationBuilder {
         self
     }
     /// <p>The format of the generated manifest.</p>
-    pub fn set_manifest_format(
-        mut self,
-        input: std::option::Option<crate::types::GeneratedManifestFormat>,
-    ) -> Self {
-        self.manifest_format = input;
-        self
+    pub fn set_manifest_format(mut self, input: std::option::Option<crate::types::GeneratedManifestFormat>) -> Self {
+        self.manifest_format = input; self
     }
     /// Consumes the builder and constructs a [`S3ManifestOutputLocation`](crate::types::S3ManifestOutputLocation).
     pub fn build(self) -> crate::types::S3ManifestOutputLocation {
         crate::types::S3ManifestOutputLocation {
-            expected_manifest_bucket_owner: self.expected_manifest_bucket_owner,
-            bucket: self.bucket,
-            manifest_prefix: self.manifest_prefix,
-            manifest_encryption: self.manifest_encryption,
-            manifest_format: self.manifest_format,
+            expected_manifest_bucket_owner: self.expected_manifest_bucket_owner
+            ,
+            bucket: self.bucket
+            ,
+            manifest_prefix: self.manifest_prefix
+            ,
+            manifest_encryption: self.manifest_encryption
+            ,
+            manifest_format: self.manifest_format
+            ,
         }
     }
 }
+

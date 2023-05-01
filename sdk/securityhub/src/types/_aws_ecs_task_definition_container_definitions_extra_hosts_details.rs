@@ -3,7 +3,7 @@
 /// <p>A hostname and IP address mapping to append to the <b>/etc/hosts</b> file on the container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails  {
     /// <p>The hostname to use in the <b>/etc/hosts</b> entry.</p>
     #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
@@ -13,19 +13,17 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
     /// <p>The hostname to use in the <b>/etc/hosts</b> entry.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The IP address to use in the <b>/etc/hosts</b> entry.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetailsBuilder::default()
     }
 }
@@ -45,8 +43,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetailsBuilder {
     }
     /// <p>The hostname to use in the <b>/etc/hosts</b> entry.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The IP address to use in the <b>/etc/hosts</b> entry.</p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,14 +52,16 @@ impl AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetailsBuilder {
     }
     /// <p>The IP address to use in the <b>/etc/hosts</b> entry.</p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsExtraHostsDetails {
-            hostname: self.hostname,
-            ip_address: self.ip_address,
+            hostname: self.hostname
+            ,
+            ip_address: self.ip_address
+            ,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterCrossAccountAccessRoleInput {
+pub struct RegisterCrossAccountAccessRoleInput  {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl RegisterCrossAccountAccessRoleInput {
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl RegisterCrossAccountAccessRoleInput {
     /// Creates a new builder-style object to manufacture [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
-    pub fn builder() -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder{
+    pub fn builder() -> crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder {
         crate::operation::register_cross_account_access_role::builders::RegisterCrossAccountAccessRoleInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl RegisterCrossAccountAccessRoleInputBuilder {
     }
     /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments. </p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`RegisterCrossAccountAccessRoleInput`](crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleInput {
                 role_arn: self.role_arn
@@ -52,3 +46,4 @@ impl RegisterCrossAccountAccessRoleInputBuilder {
         )
     }
 }
+

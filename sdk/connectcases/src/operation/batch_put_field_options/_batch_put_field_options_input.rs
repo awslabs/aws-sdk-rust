@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutFieldOptionsInput {
+pub struct BatchPutFieldOptionsInput  {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct BatchPutFieldOptionsInput {
 }
 impl BatchPutFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::types::FieldOption]> {
+    pub fn options(&self) -> std::option::Option<& [crate::types::FieldOption]> {
         self.options.as_deref()
     }
 }
 impl BatchPutFieldOptionsInput {
     /// Creates a new builder-style object to manufacture [`BatchPutFieldOptionsInput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder {
+    pub fn builder() -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder {
         crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl BatchPutFieldOptionsInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of a field.</p>
     pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl BatchPutFieldOptionsInputBuilder {
     }
     /// <p>The unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// Appends an item to `options`.
     ///
@@ -71,31 +68,26 @@ impl BatchPutFieldOptionsInputBuilder {
     /// <p>A list of <code>FieldOption</code> objects.</p>
     pub fn options(mut self, input: crate::types::FieldOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = Some(v);
-        self
+                        v.push(input);
+                        self.options = Some(v);
+                        self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldOption>>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldOption>>) -> Self {
+        self.options = input; self
     }
     /// Consumes the builder and constructs a [`BatchPutFieldOptionsInput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_put_field_options::BatchPutFieldOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_put_field_options::BatchPutFieldOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_put_field_options::BatchPutFieldOptionsInput {
-                domain_id: self.domain_id,
-                field_id: self.field_id,
-                options: self.options,
-            },
+                domain_id: self.domain_id
+                ,
+                field_id: self.field_id
+                ,
+                options: self.options
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDefaultVocabularyInput {
+pub struct AssociateDefaultVocabularyInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct AssociateDefaultVocabularyInput {
 }
 impl AssociateDefaultVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn language_code(&self) -> std::option::Option<&crate::types::VocabularyLanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::types::VocabularyLanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
-    pub fn vocabulary_id(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_id(&self) -> std::option::Option<& str> {
         self.vocabulary_id.as_deref()
     }
 }
 impl AssociateDefaultVocabularyInput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultVocabularyInput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput).
-    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder{
+    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder {
         crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl AssociateDefaultVocabularyInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
@@ -59,12 +58,8 @@ impl AssociateDefaultVocabularyInputBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(
-        mut self,
-        input: std::option::Option<crate::types::VocabularyLanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
+        self.language_code = input; self
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
     pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,22 +68,20 @@ impl AssociateDefaultVocabularyInputBuilder {
     }
     /// <p>The identifier of the custom vocabulary. If this is empty, the default is set to none.</p>
     pub fn set_vocabulary_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_id = input;
-        self
+        self.vocabulary_id = input; self
     }
     /// Consumes the builder and constructs a [`AssociateDefaultVocabularyInput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyInput {
-                instance_id: self.instance_id,
-                language_code: self.language_code,
-                vocabulary_id: self.vocabulary_id,
-            },
+                instance_id: self.instance_id
+                ,
+                language_code: self.language_code
+                ,
+                vocabulary_id: self.vocabulary_id
+                ,
+            }
         )
     }
 }
+

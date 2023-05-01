@@ -3,7 +3,7 @@
 /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventBridgeConfiguration {
+pub struct EventBridgeConfiguration  {
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl EventBridgeConfiguration {
         self.enabled
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
-    pub fn included_data(&self) -> std::option::Option<&crate::types::EventIncludedData> {
+    pub fn included_data(&self) -> std::option::Option<& crate::types::EventIncludedData> {
         self.included_data.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl EventBridgeConfigurationBuilder {
     }
     /// <p>Indicates whether the to broadcast case event data to the customer.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
     pub fn included_data(mut self, input: crate::types::EventIncludedData) -> Self {
@@ -52,18 +51,17 @@ impl EventBridgeConfigurationBuilder {
         self
     }
     /// <p>Details of what case and related item data is published through the case event stream.</p>
-    pub fn set_included_data(
-        mut self,
-        input: std::option::Option<crate::types::EventIncludedData>,
-    ) -> Self {
-        self.included_data = input;
-        self
+    pub fn set_included_data(mut self, input: std::option::Option<crate::types::EventIncludedData>) -> Self {
+        self.included_data = input; self
     }
     /// Consumes the builder and constructs a [`EventBridgeConfiguration`](crate::types::EventBridgeConfiguration).
     pub fn build(self) -> crate::types::EventBridgeConfiguration {
         crate::types::EventBridgeConfiguration {
-            enabled: self.enabled,
-            included_data: self.included_data,
+            enabled: self.enabled
+            ,
+            included_data: self.included_data
+            ,
         }
     }
 }
+

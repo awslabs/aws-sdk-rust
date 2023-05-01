@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDevicesInput {
+pub struct GetDevicesInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct GetDevicesInput {
 }
 impl GetDevicesInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>One or more device IDs. The maximum is 10.</p>
-    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.device_ids.as_deref()
     }
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> std::option::Option<&str> {
+    pub fn site_id(&self) -> std::option::Option<& str> {
         self.site_id.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -37,7 +37,7 @@ impl GetDevicesInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -65,12 +65,8 @@ impl GetDevicesInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// Appends an item to `device_ids`.
     ///
@@ -79,17 +75,13 @@ impl GetDevicesInputBuilder {
     /// <p>One or more device IDs. The maximum is 10.</p>
     pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.device_ids.unwrap_or_default();
-        v.push(input.into());
-        self.device_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.device_ids = Some(v);
+                        self
     }
     /// <p>One or more device IDs. The maximum is 10.</p>
-    pub fn set_device_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.device_ids = input;
-        self
+    pub fn set_device_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.device_ids = input; self
     }
     /// <p>The ID of the site.</p>
     pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +90,7 @@ impl GetDevicesInputBuilder {
     }
     /// <p>The ID of the site.</p>
     pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_id = input;
-        self
+        self.site_id = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -108,8 +99,7 @@ impl GetDevicesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,22 +108,24 @@ impl GetDevicesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetDevicesInput`](crate::operation::get_devices::GetDevicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_devices::GetDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_devices::GetDevicesInput {
-            global_network_id: self.global_network_id,
-            device_ids: self.device_ids,
-            site_id: self.site_id,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::get_devices::GetDevicesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_devices::GetDevicesInput {
+                global_network_id: self.global_network_id
+                ,
+                device_ids: self.device_ids
+                ,
+                site_id: self.site_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

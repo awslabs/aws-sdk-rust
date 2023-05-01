@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyInput {
+pub struct DeleteLifecyclePolicyInput  {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl DeleteLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
-    pub fn policy_id(&self) -> std::option::Option<&str> {
+    pub fn policy_id(&self) -> std::option::Option<& str> {
         self.policy_id.as_deref()
     }
 }
 impl DeleteLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyInputBuilder {
         crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DeleteLifecyclePolicyInputBuilder {
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
-                policy_id: self.policy_id,
-            },
+                policy_id: self.policy_id
+                ,
+            }
         )
     }
 }
+

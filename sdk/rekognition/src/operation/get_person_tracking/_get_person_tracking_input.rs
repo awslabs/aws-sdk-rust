@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPersonTrackingInput {
+pub struct GetPersonTrackingInput  {
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct GetPersonTrackingInput {
 }
 impl GetPersonTrackingInput {
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
@@ -26,18 +26,17 @@ impl GetPersonTrackingInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::PersonTrackingSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::PersonTrackingSortBy> {
         self.sort_by.as_ref()
     }
 }
 impl GetPersonTrackingInput {
     /// Creates a new builder-style object to manufacture [`GetPersonTrackingInput`](crate::operation::get_person_tracking::GetPersonTrackingInput).
-    pub fn builder(
-    ) -> crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder {
+    pub fn builder() -> crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder {
         crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl GetPersonTrackingInputBuilder {
     }
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,8 +67,7 @@ impl GetPersonTrackingInputBuilder {
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl GetPersonTrackingInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
     pub fn sort_by(mut self, input: crate::types::PersonTrackingSortBy) -> Self {
@@ -88,27 +84,23 @@ impl GetPersonTrackingInputBuilder {
         self
     }
     /// <p>Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code> to sort array elements by the time persons are detected. Use <code>INDEX</code> to sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::PersonTrackingSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::PersonTrackingSortBy>) -> Self {
+        self.sort_by = input; self
     }
     /// Consumes the builder and constructs a [`GetPersonTrackingInput`](crate::operation::get_person_tracking::GetPersonTrackingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_person_tracking::GetPersonTrackingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_person_tracking::GetPersonTrackingInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_person_tracking::GetPersonTrackingInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-            },
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+            }
         )
     }
 }
+

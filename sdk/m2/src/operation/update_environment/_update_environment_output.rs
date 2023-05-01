@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentOutput {
+pub struct UpdateEnvironmentOutput  {
     /// <p>The unique identifier of the runtime environment that was updated.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct UpdateEnvironmentOutput {
 }
 impl UpdateEnvironmentOutput {
     /// <p>The unique identifier of the runtime environment that was updated.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder {
         crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl UpdateEnvironmentOutputBuilder {
     }
     /// <p>The unique identifier of the runtime environment that was updated.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::operation::update_environment::UpdateEnvironmentOutput).
     pub fn build(self) -> crate::operation::update_environment::UpdateEnvironmentOutput {
         crate::operation::update_environment::UpdateEnvironmentOutput {
-            environment_id: self.environment_id,
+            environment_id: self.environment_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DetachLoadBalancerFromSubnets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachLoadBalancerFromSubnetsInput {
+pub struct DetachLoadBalancerFromSubnetsInput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct DetachLoadBalancerFromSubnetsInput {
 }
 impl DetachLoadBalancerFromSubnetsInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
 }
 impl DetachLoadBalancerFromSubnetsInput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancerFromSubnetsInput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput).
-    pub fn builder() -> crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsInputBuilder{
+    pub fn builder() -> crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsInputBuilder {
         crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsInputBuilder::default()
     }
 }
@@ -42,12 +42,8 @@ impl DetachLoadBalancerFromSubnetsInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
     /// Appends an item to `subnets`.
     ///
@@ -56,25 +52,16 @@ impl DetachLoadBalancerFromSubnetsInputBuilder {
     /// <p>The IDs of the subnets.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = Some(v);
+                        self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerFromSubnetsInput`](crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnetsInput {
                 load_balancer_name: self.load_balancer_name
@@ -85,3 +72,4 @@ impl DetachLoadBalancerFromSubnetsInputBuilder {
         )
     }
 }
+

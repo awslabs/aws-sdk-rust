@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryEndpointOutput {
+pub struct GetRepositoryEndpointOutput  {
     /// <p> A string that specifies the URL of the returned endpoint. </p>
     #[doc(hidden)]
     pub repository_endpoint: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct GetRepositoryEndpointOutput {
 }
 impl GetRepositoryEndpointOutput {
     /// <p> A string that specifies the URL of the returned endpoint. </p>
-    pub fn repository_endpoint(&self) -> std::option::Option<&str> {
+    pub fn repository_endpoint(&self) -> std::option::Option<& str> {
         self.repository_endpoint.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRepositoryEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRepositoryEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryEndpointOutput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointOutputBuilder {
         crate::operation::get_repository_endpoint::builders::GetRepositoryEndpointOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl GetRepositoryEndpointOutputBuilder {
         self
     }
     /// <p> A string that specifies the URL of the returned endpoint. </p>
-    pub fn set_repository_endpoint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.repository_endpoint = input;
-        self
+    pub fn set_repository_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.repository_endpoint = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRepositoryEndpointOutput`](crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput).
     pub fn build(self) -> crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput {
         crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput {
-            repository_endpoint: self.repository_endpoint,
+            repository_endpoint: self.repository_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

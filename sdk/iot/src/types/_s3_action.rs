@@ -3,7 +3,7 @@
 /// <p>Describes an action to write data to an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Action {
+pub struct S3Action  {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct S3Action {
 }
 impl S3Action {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
-    pub fn canned_acl(&self) -> std::option::Option<&crate::types::CannedAccessControlList> {
+    pub fn canned_acl(&self) -> std::option::Option<& crate::types::CannedAccessControlList> {
         self.canned_acl.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl S3ActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon S3 bucket.</p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl S3ActionBuilder {
     }
     /// <p>The Amazon S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl S3ActionBuilder {
     }
     /// <p>The object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions, resources, and condition keys for Amazon S3</a>.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
     pub fn canned_acl(mut self, input: crate::types::CannedAccessControlList) -> Self {
@@ -88,20 +85,21 @@ impl S3ActionBuilder {
         self
     }
     /// <p>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.</p>
-    pub fn set_canned_acl(
-        mut self,
-        input: std::option::Option<crate::types::CannedAccessControlList>,
-    ) -> Self {
-        self.canned_acl = input;
-        self
+    pub fn set_canned_acl(mut self, input: std::option::Option<crate::types::CannedAccessControlList>) -> Self {
+        self.canned_acl = input; self
     }
     /// Consumes the builder and constructs a [`S3Action`](crate::types::S3Action).
     pub fn build(self) -> crate::types::S3Action {
         crate::types::S3Action {
-            role_arn: self.role_arn,
-            bucket_name: self.bucket_name,
-            key: self.key,
-            canned_acl: self.canned_acl,
+            role_arn: self.role_arn
+            ,
+            bucket_name: self.bucket_name
+            ,
+            key: self.key
+            ,
+            canned_acl: self.canned_acl
+            ,
         }
     }
 }
+

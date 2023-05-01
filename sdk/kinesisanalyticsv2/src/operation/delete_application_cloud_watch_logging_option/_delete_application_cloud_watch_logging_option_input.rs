@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationCloudWatchLoggingOptionInput {
+pub struct DeleteApplicationCloudWatchLoggingOptionInput  {
     /// <p>The application name.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct DeleteApplicationCloudWatchLoggingOptionInput {
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
     /// <p>The application name.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
@@ -26,17 +26,17 @@ impl DeleteApplicationCloudWatchLoggingOptionInput {
         self.current_application_version_id
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<& str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn conditional_token(&self) -> std::option::Option<&str> {
+    pub fn conditional_token(&self) -> std::option::Option<& str> {
         self.conditional_token.as_deref()
     }
 }
 impl DeleteApplicationCloudWatchLoggingOptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput).
-    pub fn builder() -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     }
     /// <p>The application name.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
@@ -68,8 +67,7 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
     }
     /// <p>The version ID of the application. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can retrieve the application version ID using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn set_current_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
     pub fn cloud_watch_logging_option_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +75,8 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         self
     }
     /// <p>The <code>CloudWatchLoggingOptionId</code> of the Amazon CloudWatch logging option to delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <code>DescribeApplication</code> operation. </p>
-    pub fn set_cloud_watch_logging_option_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cloud_watch_logging_option_id = input;
-        self
+    pub fn set_cloud_watch_logging_option_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cloud_watch_logging_option_id = input; self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
     pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,15 +84,11 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.conditional_token = input;
-        self
+    pub fn set_conditional_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.conditional_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionInput`](crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput).
-    pub fn build(self) -> Result<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionInput {
                 application_name: self.application_name
@@ -113,3 +103,4 @@ impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
         )
     }
 }
+

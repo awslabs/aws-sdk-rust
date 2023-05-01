@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scte35segmentationcancelindicator = unimplemented!();
 /// match scte35segmentationcancelindicator {
@@ -30,75 +30,55 @@
 /// Specifically, when `scte35segmentationcancelindicator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Scte35SegmentationCancelIndicator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Corresponds to SCTE-35 segmentation_event_cancel_indicator. SEGMENTATION_EVENT_NOT_CANCELED corresponds to 0 in the SCTE-35 specification and indicates that this is an insertion request. SEGMENTATION_EVENT_CANCELED corresponds to 1 in the SCTE-35 specification and indicates that this is a cancelation request, in which case complete this field and the existing event ID to cancel.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Scte35SegmentationCancelIndicator {
     #[allow(missing_docs)] // documentation missing in model
     SegmentationEventCanceled,
     #[allow(missing_docs)] // documentation missing in model
     SegmentationEventNotCanceled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Scte35SegmentationCancelIndicator {
-    fn from(s: &str) -> Self {
-        match s {
-            "SEGMENTATION_EVENT_CANCELED" => {
-                Scte35SegmentationCancelIndicator::SegmentationEventCanceled
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SEGMENTATION_EVENT_CANCELED" => Scte35SegmentationCancelIndicator::SegmentationEventCanceled,
+"SEGMENTATION_EVENT_NOT_CANCELED" => Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled,
+other => Scte35SegmentationCancelIndicator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "SEGMENTATION_EVENT_NOT_CANCELED" => {
-                Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled
-            }
-            other => Scte35SegmentationCancelIndicator::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
 impl std::str::FromStr for Scte35SegmentationCancelIndicator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Scte35SegmentationCancelIndicator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Scte35SegmentationCancelIndicator::from(s))
+                }
+            }
 impl Scte35SegmentationCancelIndicator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Scte35SegmentationCancelIndicator::SegmentationEventCanceled => {
-                "SEGMENTATION_EVENT_CANCELED"
-            }
-            Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled => {
-                "SEGMENTATION_EVENT_NOT_CANCELED"
-            }
-            Scte35SegmentationCancelIndicator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "SEGMENTATION_EVENT_CANCELED",
-            "SEGMENTATION_EVENT_NOT_CANCELED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Scte35SegmentationCancelIndicator::SegmentationEventCanceled => "SEGMENTATION_EVENT_CANCELED",
+    Scte35SegmentationCancelIndicator::SegmentationEventNotCanceled => "SEGMENTATION_EVENT_NOT_CANCELED",
+    Scte35SegmentationCancelIndicator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SEGMENTATION_EVENT_CANCELED", "SEGMENTATION_EVENT_NOT_CANCELED"]
+                }
+            }
 impl AsRef<str> for Scte35SegmentationCancelIndicator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -3,7 +3,7 @@
 /// <p>Identifying information for a Device Defender security profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityProfileIdentifier {
+pub struct SecurityProfileIdentifier  {
     /// <p>The name you've given to the security profile.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SecurityProfileIdentifier {
 }
 impl SecurityProfileIdentifier {
     /// <p>The name you've given to the security profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the security profile.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SecurityProfileIdentifierBuilder {
     }
     /// <p>The name you've given to the security profile.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ARN of the security profile.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SecurityProfileIdentifierBuilder {
     }
     /// <p>The ARN of the security profile.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`SecurityProfileIdentifier`](crate::types::SecurityProfileIdentifier).
     pub fn build(self) -> crate::types::SecurityProfileIdentifier {
         crate::types::SecurityProfileIdentifier {
-            name: self.name,
-            arn: self.arn,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

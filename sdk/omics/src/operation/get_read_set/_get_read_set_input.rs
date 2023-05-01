@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetInput {
+pub struct GetReadSetInput  {
     /// <p>The read set's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct GetReadSetInput {
 }
 impl GetReadSetInput {
     /// <p>The read set's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The file to retrieve.</p>
-    pub fn file(&self) -> std::option::Option<&crate::types::ReadSetFile> {
+    pub fn file(&self) -> std::option::Option<& crate::types::ReadSetFile> {
         self.file.as_ref()
     }
     /// <p>The part number to retrieve.</p>
@@ -58,8 +58,7 @@ impl GetReadSetInputBuilder {
     }
     /// <p>The read set's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The read set's sequence store ID.</p>
     pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl GetReadSetInputBuilder {
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sequence_store_id = input; self
     }
     /// <p>The file to retrieve.</p>
     pub fn file(mut self, input: crate::types::ReadSetFile) -> Self {
@@ -81,8 +76,7 @@ impl GetReadSetInputBuilder {
     }
     /// <p>The file to retrieve.</p>
     pub fn set_file(mut self, input: std::option::Option<crate::types::ReadSetFile>) -> Self {
-        self.file = input;
-        self
+        self.file = input; self
     }
     /// <p>The part number to retrieve.</p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -91,21 +85,22 @@ impl GetReadSetInputBuilder {
     }
     /// <p>The part number to retrieve.</p>
     pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.part_number = input;
-        self
+        self.part_number = input; self
     }
     /// Consumes the builder and constructs a [`GetReadSetInput`](crate::operation::get_read_set::GetReadSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_read_set::GetReadSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_read_set::GetReadSetInput {
-            id: self.id,
-            sequence_store_id: self.sequence_store_id,
-            file: self.file,
-            part_number: self.part_number,
-        })
+    pub fn build(self) -> Result<crate::operation::get_read_set::GetReadSetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_read_set::GetReadSetInput {
+                id: self.id
+                ,
+                sequence_store_id: self.sequence_store_id
+                ,
+                file: self.file
+                ,
+                part_number: self.part_number
+                ,
+            }
+        )
     }
 }
+

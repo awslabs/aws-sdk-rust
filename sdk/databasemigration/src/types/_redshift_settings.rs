@@ -3,16 +3,16 @@
 /// <p>Provides information that defines an Amazon Redshift endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RedshiftSettings {
-    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
+pub struct RedshiftSettings  {
+    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p> 
     /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
     #[doc(hidden)]
     pub accept_any_date: std::option::Option<bool>,
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
     #[doc(hidden)]
     pub after_connect_script: std::option::Option<std::string::String>,
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
-    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p> 
+    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p> 
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     #[doc(hidden)]
     pub bucket_folder: std::option::Option<std::string::String>,
@@ -31,24 +31,24 @@ pub struct RedshiftSettings {
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
     #[doc(hidden)]
     pub date_format: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.</p>
     #[doc(hidden)]
     pub empty_as_null: std::option::Option<bool>,
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
-    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
-    /// </note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note> 
+    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p> 
+    /// </note> 
     /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::types::EncryptionModeValue>,
     /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is <code>false</code>.</p>
     #[doc(hidden)]
     pub explicit_ids: std::option::Option<bool>,
-    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
+    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p> 
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p> 
     /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     #[doc(hidden)]
     pub file_transfer_upload_streams: std::option::Option<i32>,
@@ -82,7 +82,7 @@ pub struct RedshiftSettings {
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
     #[doc(hidden)]
     pub server_side_encryption_kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
     #[doc(hidden)]
     pub time_format: std::option::Option<std::string::String>,
@@ -98,8 +98,8 @@ pub struct RedshiftSettings {
     /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS replication instance. The default value is 1000 (buffer size is 1000KB).</p>
     #[doc(hidden)]
     pub write_buffer_size: std::option::Option<i32>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note> 
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
     /// </note>
     #[doc(hidden)]
     pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
@@ -111,23 +111,23 @@ pub struct RedshiftSettings {
     pub map_boolean_as_boolean: std::option::Option<bool>,
 }
 impl RedshiftSettings {
-    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
+    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p> 
     /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
     pub fn accept_any_date(&self) -> std::option::Option<bool> {
         self.accept_any_date
     }
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
-    pub fn after_connect_script(&self) -> std::option::Option<&str> {
+    pub fn after_connect_script(&self) -> std::option::Option<& str> {
         self.after_connect_script.as_deref()
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
-    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p> 
+    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p> 
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
-    pub fn bucket_folder(&self) -> std::option::Option<&str> {
+    pub fn bucket_folder(&self) -> std::option::Option<& str> {
         self.bucket_folder.as_deref()
     }
     /// <p>The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.</p>
@@ -143,31 +143,31 @@ impl RedshiftSettings {
         self.connection_timeout
     }
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
-    pub fn date_format(&self) -> std::option::Option<&str> {
+    pub fn date_format(&self) -> std::option::Option<& str> {
         self.date_format.as_deref()
     }
     /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.</p>
     pub fn empty_as_null(&self) -> std::option::Option<bool> {
         self.empty_as_null
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
-    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
-    /// </note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note> 
+    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p> 
+    /// </note> 
     /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
-    pub fn encryption_mode(&self) -> std::option::Option<&crate::types::EncryptionModeValue> {
+    pub fn encryption_mode(&self) -> std::option::Option<& crate::types::EncryptionModeValue> {
         self.encryption_mode.as_ref()
     }
     /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is <code>false</code>.</p>
     pub fn explicit_ids(&self) -> std::option::Option<bool> {
         self.explicit_ids
     }
-    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
+    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p> 
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p> 
     /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn file_transfer_upload_streams(&self) -> std::option::Option<i32> {
         self.file_transfer_upload_streams
@@ -181,7 +181,7 @@ impl RedshiftSettings {
         self.max_file_size
     }
     /// <p>The password for the user named in the <code>username</code> property.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The port number for Amazon Redshift. The default value is 5439.</p>
@@ -193,28 +193,28 @@ impl RedshiftSettings {
         self.remove_quotes
     }
     /// <p>A list of characters that you want to replace. Use with <code>ReplaceChars</code>.</p>
-    pub fn replace_invalid_chars(&self) -> std::option::Option<&str> {
+    pub fn replace_invalid_chars(&self) -> std::option::Option<& str> {
         self.replace_invalid_chars.as_deref()
     }
     /// <p>A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The default is <code>"?"</code>.</p>
-    pub fn replace_chars(&self) -> std::option::Option<&str> {
+    pub fn replace_chars(&self) -> std::option::Option<& str> {
         self.replace_chars.as_deref()
     }
     /// <p>The name of the Amazon Redshift cluster you are using.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    pub fn server_side_encryption_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn server_side_encryption_kms_key_id(&self) -> std::option::Option<& str> {
         self.server_side_encryption_kms_key_id.as_deref()
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
-    pub fn time_format(&self) -> std::option::Option<&str> {
+    pub fn time_format(&self) -> std::option::Option<& str> {
         self.time_format.as_deref()
     }
     /// <p>A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The default is <code>false</code>.</p>
@@ -226,21 +226,21 @@ impl RedshiftSettings {
         self.truncate_columns
     }
     /// <p>An Amazon Redshift user name for a registered user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS replication instance. The default value is 1000 (buffer size is 1000KB).</p>
     pub fn write_buffer_size(&self) -> std::option::Option<i32> {
         self.write_buffer_size
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note> 
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<& str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> std::option::Option<& str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
@@ -248,7 +248,7 @@ impl RedshiftSettings {
         self.map_boolean_as_boolean
     }
 }
-impl std::fmt::Debug for RedshiftSettings {
+impl  std::fmt::Debug for RedshiftSettings  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftSettings");
         formatter.field("accept_any_date", &self.accept_any_date);
@@ -263,10 +263,7 @@ impl std::fmt::Debug for RedshiftSettings {
         formatter.field("empty_as_null", &self.empty_as_null);
         formatter.field("encryption_mode", &self.encryption_mode);
         formatter.field("explicit_ids", &self.explicit_ids);
-        formatter.field(
-            "file_transfer_upload_streams",
-            &self.file_transfer_upload_streams,
-        );
+        formatter.field("file_transfer_upload_streams", &self.file_transfer_upload_streams);
         formatter.field("load_timeout", &self.load_timeout);
         formatter.field("max_file_size", &self.max_file_size);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -276,19 +273,13 @@ impl std::fmt::Debug for RedshiftSettings {
         formatter.field("replace_chars", &self.replace_chars);
         formatter.field("server_name", &self.server_name);
         formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field(
-            "server_side_encryption_kms_key_id",
-            &self.server_side_encryption_kms_key_id,
-        );
+        formatter.field("server_side_encryption_kms_key_id", &self.server_side_encryption_kms_key_id);
         formatter.field("time_format", &self.time_format);
         formatter.field("trim_blanks", &self.trim_blanks);
         formatter.field("truncate_columns", &self.truncate_columns);
         formatter.field("username", &self.username);
         formatter.field("write_buffer_size", &self.write_buffer_size);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
@@ -338,17 +329,16 @@ pub struct RedshiftSettingsBuilder {
     pub(crate) map_boolean_as_boolean: std::option::Option<bool>,
 }
 impl RedshiftSettingsBuilder {
-    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
+    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p> 
     /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
     pub fn accept_any_date(mut self, input: bool) -> Self {
         self.accept_any_date = Some(input);
         self
     }
-    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p>
+    /// <p>A value that indicates to allow any date format, including invalid formats such as 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code> or <code>false</code> (the default).</p> 
     /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT specification, Amazon Redshift inserts a NULL value into that field. </p>
     pub fn set_accept_any_date(mut self, input: std::option::Option<bool>) -> Self {
-        self.accept_any_date = input;
-        self
+        self.accept_any_date = input; self
     }
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
     pub fn after_connect_script(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,26 +346,21 @@ impl RedshiftSettingsBuilder {
         self
     }
     /// <p>Code to run after connecting. This parameter should contain the code itself, not the name of a file containing the code.</p>
-    pub fn set_after_connect_script(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.after_connect_script = input;
-        self
+    pub fn set_after_connect_script(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.after_connect_script = input; self
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
-    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p> 
+    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p> 
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub fn bucket_folder(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket_folder = Some(input.into());
         self
     }
-    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p>
-    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p>
+    /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being uploaded to the target Redshift cluster. </p> 
+    /// <p>For full load mode, DMS converts source records into .csv files and loads them to the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command to upload the .csv files to the target table. The files are deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the <i>Amazon Redshift Database Developer Guide</i>.</p> 
     /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table, and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
     pub fn set_bucket_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_folder = input;
-        self
+        self.bucket_folder = input; self
     }
     /// <p>The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.</p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -384,8 +369,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.</p>
     pub fn case_sensitive_names(mut self, input: bool) -> Self {
@@ -394,8 +378,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code> to <code>true</code>. The default is <code>false</code>.</p>
     pub fn set_case_sensitive_names(mut self, input: std::option::Option<bool>) -> Self {
-        self.case_sensitive_names = input;
-        self
+        self.case_sensitive_names = input; self
     }
     /// <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column encodings aren't changed. The default is <code>true</code>.</p>
     pub fn comp_update(mut self, input: bool) -> Self {
@@ -404,8 +387,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic compression if the table is empty. This applies even if the table columns already have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to <code>false</code>, automatic compression is disabled and existing column encodings aren't changed. The default is <code>true</code>.</p>
     pub fn set_comp_update(mut self, input: std::option::Option<bool>) -> Self {
-        self.comp_update = input;
-        self
+        self.comp_update = input; self
     }
     /// <p>A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish a connection.</p>
     pub fn connection_timeout(mut self, input: i32) -> Self {
@@ -414,8 +396,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>A value that sets the amount of time to wait (in milliseconds) before timing out, beginning from when you initially establish a connection.</p>
     pub fn set_connection_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.connection_timeout = input;
-        self
+        self.connection_timeout = input; self
     }
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -424,20 +405,18 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The name of the Amazon Redshift data warehouse (service) that you are working with.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
     pub fn date_format(mut self, input: impl Into<std::string::String>) -> Self {
         self.date_format = Some(input.into());
         self
     }
-    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p>
+    /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive), your date format string enclosed in quotes, or NULL. If this parameter is left unset (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a date format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this to <code>auto</code>. </p>
     pub fn set_date_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_format = input;
-        self
+        self.date_format = input; self
     }
     /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.</p>
     pub fn empty_as_null(mut self, input: bool) -> Self {
@@ -446,27 +425,22 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default is <code>false</code>.</p>
     pub fn set_empty_as_null(mut self, input: std::option::Option<bool>) -> Self {
-        self.empty_as_null = input;
-        self
+        self.empty_as_null = input; self
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
-    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
-    /// </note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note> 
+    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p> 
+    /// </note> 
     /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionModeValue) -> Self {
         self.encryption_mode = Some(input);
         self
     }
-    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
-    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p>
-    /// </note>
+    /// <p>The type of server-side encryption that you want to use for your data. This encryption type is part of the endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note> 
+    /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.</p> 
+    /// </note> 
     /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject", "s3:ListBucket"</code> </p>
-    pub fn set_encryption_mode(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionModeValue>,
-    ) -> Self {
-        self.encryption_mode = input;
-        self
+    pub fn set_encryption_mode(mut self, input: std::option::Option<crate::types::EncryptionModeValue>) -> Self {
+        self.encryption_mode = input; self
     }
     /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is <code>false</code>.</p>
     pub fn explicit_ids(mut self, input: bool) -> Self {
@@ -475,22 +449,20 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code> to <code>true</code> to have tables with <code>IDENTITY</code> columns override their auto-generated values with explicit values loaded from the source data files used to populate the tables. The default is <code>false</code>.</p>
     pub fn set_explicit_ids(mut self, input: std::option::Option<bool>) -> Self {
-        self.explicit_ids = input;
-        self
+        self.explicit_ids = input; self
     }
-    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
+    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p> 
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p> 
     /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn file_transfer_upload_streams(mut self, input: i32) -> Self {
         self.file_transfer_upload_streams = Some(input);
         self
     }
-    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p>
-    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p>
+    /// <p>The number of threads used to upload a single file. This parameter accepts a value from 1 through 64. It defaults to 10.</p> 
+    /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>. </p> 
     /// <p> <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub fn set_file_transfer_upload_streams(mut self, input: std::option::Option<i32>) -> Self {
-        self.file_transfer_upload_streams = input;
-        self
+        self.file_transfer_upload_streams = input; self
     }
     /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub fn load_timeout(mut self, input: i32) -> Self {
@@ -499,8 +471,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub fn set_load_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.load_timeout = input;
-        self
+        self.load_timeout = input; self
     }
     /// <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
     pub fn max_file_size(mut self, input: i32) -> Self {
@@ -509,8 +480,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
     pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_file_size = input;
-        self
+        self.max_file_size = input; self
     }
     /// <p>The password for the user named in the <code>username</code> property.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -519,8 +489,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The password for the user named in the <code>username</code> property.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The port number for Amazon Redshift. The default value is 5439.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -529,8 +498,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The port number for Amazon Redshift. The default value is 5439.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation marks. The default is <code>false</code>.</p>
     pub fn remove_quotes(mut self, input: bool) -> Self {
@@ -539,8 +507,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>A value that specifies to remove surrounding quotation marks from strings in the incoming data. All characters within the quotation marks, including delimiters, are retained. Choose <code>true</code> to remove quotation marks. The default is <code>false</code>.</p>
     pub fn set_remove_quotes(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_quotes = input;
-        self
+        self.remove_quotes = input; self
     }
     /// <p>A list of characters that you want to replace. Use with <code>ReplaceChars</code>.</p>
     pub fn replace_invalid_chars(mut self, input: impl Into<std::string::String>) -> Self {
@@ -548,12 +515,8 @@ impl RedshiftSettingsBuilder {
         self
     }
     /// <p>A list of characters that you want to replace. Use with <code>ReplaceChars</code>.</p>
-    pub fn set_replace_invalid_chars(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replace_invalid_chars = input;
-        self
+    pub fn set_replace_invalid_chars(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replace_invalid_chars = input; self
     }
     /// <p>A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The default is <code>"?"</code>.</p>
     pub fn replace_chars(mut self, input: impl Into<std::string::String>) -> Self {
@@ -562,8 +525,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The default is <code>"?"</code>.</p>
     pub fn set_replace_chars(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replace_chars = input;
-        self
+        self.replace_chars = input; self
     }
     /// <p>The name of the Amazon Redshift cluster you are using.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -572,8 +534,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The name of the Amazon Redshift cluster you are using.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
     pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -581,40 +542,28 @@ impl RedshiftSettingsBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift service. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_access_role_arn = input;
-        self
+    pub fn set_service_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_access_role_arn = input; self
     }
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    pub fn server_side_encryption_kms_key_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn server_side_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.server_side_encryption_kms_key_id = Some(input.into());
         self
     }
     /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide this key ID. The key that you use needs an attached policy that enables IAM user permissions and allows use of the key.</p>
-    pub fn set_server_side_encryption_kms_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.server_side_encryption_kms_key_id = input;
-        self
+    pub fn set_server_side_encryption_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.server_side_encryption_kms_key_id = input; self
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
     pub fn time_format(mut self, input: impl Into<std::string::String>) -> Self {
         self.time_format = Some(input.into());
         self
     }
-    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p>
+    /// <p>The time format that you want to use. Valid values are <code>auto</code> (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes most strings, even some that aren't supported when you use a time format string. </p> 
     /// <p>If your date and time values use formats different from each other, set this parameter to <code>auto</code>. </p>
     pub fn set_time_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_format = input;
-        self
+        self.time_format = input; self
     }
     /// <p>A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The default is <code>false</code>.</p>
     pub fn trim_blanks(mut self, input: bool) -> Self {
@@ -623,8 +572,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>A value that specifies to remove the trailing white space characters from a VARCHAR string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code> to remove unneeded white space. The default is <code>false</code>.</p>
     pub fn set_trim_blanks(mut self, input: std::option::Option<bool>) -> Self {
-        self.trim_blanks = input;
-        self
+        self.trim_blanks = input; self
     }
     /// <p>A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.</p>
     pub fn truncate_columns(mut self, input: bool) -> Self {
@@ -633,8 +581,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>A value that specifies to truncate data in columns to the appropriate number of characters, so that the data fits in the column. This parameter applies only to columns with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose <code>true</code> to truncate data. The default is <code>false</code>.</p>
     pub fn set_truncate_columns(mut self, input: std::option::Option<bool>) -> Self {
-        self.truncate_columns = input;
-        self
+        self.truncate_columns = input; self
     }
     /// <p>An Amazon Redshift user name for a registered user.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -643,8 +590,7 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>An Amazon Redshift user name for a registered user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS replication instance. The default value is 1000 (buffer size is 1000KB).</p>
     pub fn write_buffer_size(mut self, input: i32) -> Self {
@@ -653,28 +599,20 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files on the local disk at the DMS replication instance. The default value is 1000 (buffer size is 1000KB).</p>
     pub fn set_write_buffer_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.write_buffer_size = input;
-        self
+        self.write_buffer_size = input; self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note> 
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
     /// </note>
-    pub fn secrets_manager_access_role_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn secrets_manager_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.secrets_manager_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note>
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p> <note> 
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secrets_manager_access_role_arn = input;
-        self
+    pub fn set_secrets_manager_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secrets_manager_access_role_arn = input; self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
     pub fn secrets_manager_secret_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -682,12 +620,8 @@ impl RedshiftSettingsBuilder {
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secrets_manager_secret_id = input;
-        self
+    pub fn set_secrets_manager_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secrets_manager_secret_id = input; self
     }
     /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
     pub fn map_boolean_as_boolean(mut self, input: bool) -> Self {
@@ -696,43 +630,73 @@ impl RedshiftSettingsBuilder {
     }
     /// <p>When true, lets Redshift migrate the boolean type as boolean. By default, Redshift migrates booleans as <code>varchar(1)</code>.</p>
     pub fn set_map_boolean_as_boolean(mut self, input: std::option::Option<bool>) -> Self {
-        self.map_boolean_as_boolean = input;
-        self
+        self.map_boolean_as_boolean = input; self
     }
     /// Consumes the builder and constructs a [`RedshiftSettings`](crate::types::RedshiftSettings).
     pub fn build(self) -> crate::types::RedshiftSettings {
         crate::types::RedshiftSettings {
-            accept_any_date: self.accept_any_date,
-            after_connect_script: self.after_connect_script,
-            bucket_folder: self.bucket_folder,
-            bucket_name: self.bucket_name,
-            case_sensitive_names: self.case_sensitive_names,
-            comp_update: self.comp_update,
-            connection_timeout: self.connection_timeout,
-            database_name: self.database_name,
-            date_format: self.date_format,
-            empty_as_null: self.empty_as_null,
-            encryption_mode: self.encryption_mode,
-            explicit_ids: self.explicit_ids,
-            file_transfer_upload_streams: self.file_transfer_upload_streams,
-            load_timeout: self.load_timeout,
-            max_file_size: self.max_file_size,
-            password: self.password,
-            port: self.port,
-            remove_quotes: self.remove_quotes,
-            replace_invalid_chars: self.replace_invalid_chars,
-            replace_chars: self.replace_chars,
-            server_name: self.server_name,
-            service_access_role_arn: self.service_access_role_arn,
-            server_side_encryption_kms_key_id: self.server_side_encryption_kms_key_id,
-            time_format: self.time_format,
-            trim_blanks: self.trim_blanks,
-            truncate_columns: self.truncate_columns,
-            username: self.username,
-            write_buffer_size: self.write_buffer_size,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
-            secrets_manager_secret_id: self.secrets_manager_secret_id,
-            map_boolean_as_boolean: self.map_boolean_as_boolean,
+            accept_any_date: self.accept_any_date
+            ,
+            after_connect_script: self.after_connect_script
+            ,
+            bucket_folder: self.bucket_folder
+            ,
+            bucket_name: self.bucket_name
+            ,
+            case_sensitive_names: self.case_sensitive_names
+            ,
+            comp_update: self.comp_update
+            ,
+            connection_timeout: self.connection_timeout
+            ,
+            database_name: self.database_name
+            ,
+            date_format: self.date_format
+            ,
+            empty_as_null: self.empty_as_null
+            ,
+            encryption_mode: self.encryption_mode
+            ,
+            explicit_ids: self.explicit_ids
+            ,
+            file_transfer_upload_streams: self.file_transfer_upload_streams
+            ,
+            load_timeout: self.load_timeout
+            ,
+            max_file_size: self.max_file_size
+            ,
+            password: self.password
+            ,
+            port: self.port
+            ,
+            remove_quotes: self.remove_quotes
+            ,
+            replace_invalid_chars: self.replace_invalid_chars
+            ,
+            replace_chars: self.replace_chars
+            ,
+            server_name: self.server_name
+            ,
+            service_access_role_arn: self.service_access_role_arn
+            ,
+            server_side_encryption_kms_key_id: self.server_side_encryption_kms_key_id
+            ,
+            time_format: self.time_format
+            ,
+            trim_blanks: self.trim_blanks
+            ,
+            truncate_columns: self.truncate_columns
+            ,
+            username: self.username
+            ,
+            write_buffer_size: self.write_buffer_size
+            ,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
+            ,
+            secrets_manager_secret_id: self.secrets_manager_secret_id
+            ,
+            map_boolean_as_boolean: self.map_boolean_as_boolean
+            ,
         }
     }
 }
@@ -751,10 +715,7 @@ impl std::fmt::Debug for RedshiftSettingsBuilder {
         formatter.field("empty_as_null", &self.empty_as_null);
         formatter.field("encryption_mode", &self.encryption_mode);
         formatter.field("explicit_ids", &self.explicit_ids);
-        formatter.field(
-            "file_transfer_upload_streams",
-            &self.file_transfer_upload_streams,
-        );
+        formatter.field("file_transfer_upload_streams", &self.file_transfer_upload_streams);
         formatter.field("load_timeout", &self.load_timeout);
         formatter.field("max_file_size", &self.max_file_size);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -764,21 +725,16 @@ impl std::fmt::Debug for RedshiftSettingsBuilder {
         formatter.field("replace_chars", &self.replace_chars);
         formatter.field("server_name", &self.server_name);
         formatter.field("service_access_role_arn", &self.service_access_role_arn);
-        formatter.field(
-            "server_side_encryption_kms_key_id",
-            &self.server_side_encryption_kms_key_id,
-        );
+        formatter.field("server_side_encryption_kms_key_id", &self.server_side_encryption_kms_key_id);
         formatter.field("time_format", &self.time_format);
         formatter.field("trim_blanks", &self.trim_blanks);
         formatter.field("truncate_columns", &self.truncate_columns);
         formatter.field("username", &self.username);
         formatter.field("write_buffer_size", &self.write_buffer_size);
-        formatter.field(
-            "secrets_manager_access_role_arn",
-            &self.secrets_manager_access_role_arn,
-        );
+        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("map_boolean_as_boolean", &self.map_boolean_as_boolean);
         formatter.finish()
     }
 }
+

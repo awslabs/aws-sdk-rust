@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCoreNetworkPolicyInput {
+pub struct PutCoreNetworkPolicyInput  {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct PutCoreNetworkPolicyInput {
 }
 impl PutCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<&str> {
+    pub fn core_network_id(&self) -> std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The policy document.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>a core network policy description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of a core network policy. </p>
@@ -37,14 +37,13 @@ impl PutCoreNetworkPolicyInput {
         self.latest_version_id
     }
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl PutCoreNetworkPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyInput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder {
         crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl PutCoreNetworkPolicyInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The policy document.</p>
     pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +75,7 @@ impl PutCoreNetworkPolicyInputBuilder {
     }
     /// <p>The policy document.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>a core network policy description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +84,7 @@ impl PutCoreNetworkPolicyInputBuilder {
     }
     /// <p>a core network policy description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ID of a core network policy. </p>
     pub fn latest_version_id(mut self, input: i32) -> Self {
@@ -97,8 +93,7 @@ impl PutCoreNetworkPolicyInputBuilder {
     }
     /// <p>The ID of a core network policy. </p>
     pub fn set_latest_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.latest_version_id = input;
-        self
+        self.latest_version_id = input; self
     }
     /// <p>The client token associated with the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,24 +102,24 @@ impl PutCoreNetworkPolicyInputBuilder {
     }
     /// <p>The client token associated with the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`PutCoreNetworkPolicyInput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_core_network_policy::PutCoreNetworkPolicyInput {
-                core_network_id: self.core_network_id,
-                policy_document: self.policy_document,
-                description: self.description,
-                latest_version_id: self.latest_version_id,
-                client_token: self.client_token,
-            },
+                core_network_id: self.core_network_id
+                ,
+                policy_document: self.policy_document
+                ,
+                description: self.description
+                ,
+                latest_version_id: self.latest_version_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateOutput {
+pub struct CreateJobTemplateOutput  {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     #[doc(hidden)]
     pub job_template: std::option::Option<crate::types::JobTemplate>,
@@ -10,19 +10,18 @@ pub struct CreateJobTemplateOutput {
 }
 impl CreateJobTemplateOutput {
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn job_template(&self) -> std::option::Option<&crate::types::JobTemplate> {
+    pub fn job_template(&self) -> std::option::Option<& crate::types::JobTemplate> {
         self.job_template.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateJobTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateJobTemplateOutputBuilder {
         self
     }
     /// A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
-    pub fn set_job_template(
-        mut self,
-        input: std::option::Option<crate::types::JobTemplate>,
-    ) -> Self {
-        self.job_template = input;
-        self
+    pub fn set_job_template(mut self, input: std::option::Option<crate::types::JobTemplate>) -> Self {
+        self.job_template = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
     pub fn build(self) -> crate::operation::create_job_template::CreateJobTemplateOutput {
         crate::operation::create_job_template::CreateJobTemplateOutput {
-            job_template: self.job_template,
+            job_template: self.job_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

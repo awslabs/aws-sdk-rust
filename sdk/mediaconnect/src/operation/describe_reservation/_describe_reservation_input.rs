@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservationInput {
+pub struct DescribeReservationInput  {
     /// The Amazon Resource Name (ARN) of the reservation.
     #[doc(hidden)]
     pub reservation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeReservationInput {
     /// The Amazon Resource Name (ARN) of the reservation.
-    pub fn reservation_arn(&self) -> std::option::Option<&str> {
+    pub fn reservation_arn(&self) -> std::option::Option<& str> {
         self.reservation_arn.as_deref()
     }
 }
 impl DescribeReservationInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
+    pub fn builder() -> crate::operation::describe_reservation::builders::DescribeReservationInputBuilder {
         crate::operation::describe_reservation::builders::DescribeReservationInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeReservationInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the reservation.
     pub fn set_reservation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_arn = input;
-        self
+        self.reservation_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReservationInput`](crate::operation::describe_reservation::DescribeReservationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_reservation::DescribeReservationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_reservation::DescribeReservationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_reservation::DescribeReservationInput {
-                reservation_arn: self.reservation_arn,
-            },
+                reservation_arn: self.reservation_arn
+                ,
+            }
         )
     }
 }
+

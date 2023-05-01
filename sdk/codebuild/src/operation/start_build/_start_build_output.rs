@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBuildOutput {
+pub struct StartBuildOutput  {
     /// <p>Information about the build to be run.</p>
     ///
     /// _Note: This member has been renamed from `build`._
@@ -14,15 +14,15 @@ impl StartBuildOutput {
     /// <p>Information about the build to be run.</p>
     ///
     /// _Note: This member has been renamed from `build`._
-    pub fn build_value(&self) -> std::option::Option<&crate::types::Build> {
+    pub fn build_value(&self) -> std::option::Option<& crate::types::Build> {
         self.build_value.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartBuildOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartBuildOutput {
     /// Creates a new builder-style object to manufacture [`StartBuildOutput`](crate::operation::start_build::StartBuildOutput).
     pub fn builder() -> crate::operation::start_build::builders::StartBuildOutputBuilder {
@@ -45,23 +45,24 @@ impl StartBuildOutputBuilder {
     }
     /// <p>Information about the build to be run.</p>
     pub fn set_build(mut self, input: std::option::Option<crate::types::Build>) -> Self {
-        self.build_value = input;
-        self
+        self.build_value = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartBuildOutput`](crate::operation::start_build::StartBuildOutput).
     pub fn build(self) -> crate::operation::start_build::StartBuildOutput {
         crate::operation::start_build::StartBuildOutput {
-            build_value: self.build_value,
+            build_value: self.build_value
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

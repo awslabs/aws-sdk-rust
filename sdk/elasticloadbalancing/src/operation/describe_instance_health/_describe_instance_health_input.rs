@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeInstanceHealth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceHealthInput {
+pub struct DescribeInstanceHealthInput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -13,19 +13,17 @@ pub struct DescribeInstanceHealthInput {
 }
 impl DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::types::Instance]> {
         self.instances.as_deref()
     }
 }
 impl DescribeInstanceHealthInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
-    pub fn builder(
-    ) -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder {
         crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder::default()
     }
 }
@@ -44,12 +42,8 @@ impl DescribeInstanceHealthInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
     /// Appends an item to `instances`.
     ///
@@ -58,30 +52,24 @@ impl DescribeInstanceHealthInputBuilder {
     /// <p>The IDs of the instances.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = Some(v);
-        self
+                        v.push(input);
+                        self.instances = Some(v);
+                        self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::Instance>>) -> Self {
+        self.instances = input; self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_instance_health::DescribeInstanceHealthInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_instance_health::DescribeInstanceHealthInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_instance_health::DescribeInstanceHealthInput {
-                load_balancer_name: self.load_balancer_name,
-                instances: self.instances,
-            },
+                load_balancer_name: self.load_balancer_name
+                ,
+                instances: self.instances
+                ,
+            }
         )
     }
 }
+

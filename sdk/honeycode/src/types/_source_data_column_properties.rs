@@ -3,7 +3,7 @@
 /// <p>An object that contains the properties for importing data to a specific column in a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceDataColumnProperties {
+pub struct SourceDataColumnProperties  {
     /// <p>The index of the column in the input file.</p>
     #[doc(hidden)]
     pub column_index: i32,
@@ -35,13 +35,15 @@ impl SourceDataColumnPropertiesBuilder {
     }
     /// <p>The index of the column in the input file.</p>
     pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.column_index = input;
-        self
+        self.column_index = input; self
     }
     /// Consumes the builder and constructs a [`SourceDataColumnProperties`](crate::types::SourceDataColumnProperties).
     pub fn build(self) -> crate::types::SourceDataColumnProperties {
         crate::types::SourceDataColumnProperties {
-            column_index: self.column_index.unwrap_or_default(),
+            column_index: self.column_index
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

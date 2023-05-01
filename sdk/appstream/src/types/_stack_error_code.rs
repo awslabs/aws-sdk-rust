@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stackerrorcode = unimplemented!();
 /// match stackerrorcode {
@@ -30,64 +30,55 @@
 /// Specifically, when `stackerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StackErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalServiceError,
     #[allow(missing_docs)] // documentation missing in model
     StorageConnectorError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StackErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "INTERNAL_SERVICE_ERROR" => StackErrorCode::InternalServiceError,
-            "STORAGE_CONNECTOR_ERROR" => StackErrorCode::StorageConnectorError,
-            other => {
-                StackErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "INTERNAL_SERVICE_ERROR" => StackErrorCode::InternalServiceError,
+"STORAGE_CONNECTOR_ERROR" => StackErrorCode::StorageConnectorError,
+other => StackErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for StackErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StackErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StackErrorCode::from(s))
+                }
+            }
 impl StackErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StackErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
-            StackErrorCode::StorageConnectorError => "STORAGE_CONNECTOR_ERROR",
-            StackErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StackErrorCode::InternalServiceError => "INTERNAL_SERVICE_ERROR",
+    StackErrorCode::StorageConnectorError => "STORAGE_CONNECTOR_ERROR",
+    StackErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["INTERNAL_SERVICE_ERROR", "STORAGE_CONNECTOR_ERROR"]
+                }
+            }
 impl AsRef<str> for StackErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

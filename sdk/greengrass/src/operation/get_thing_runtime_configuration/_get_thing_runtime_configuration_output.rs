@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetThingRuntimeConfigurationOutput {
+pub struct GetThingRuntimeConfigurationOutput  {
     /// Runtime configuration for a thing.
     #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::types::RuntimeConfiguration>,
@@ -10,20 +10,18 @@ pub struct GetThingRuntimeConfigurationOutput {
 }
 impl GetThingRuntimeConfigurationOutput {
     /// Runtime configuration for a thing.
-    pub fn runtime_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> std::option::Option<& crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetThingRuntimeConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetThingRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetThingRuntimeConfigurationOutput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput).
-    pub fn builder() -> crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationOutputBuilder {
         crate::operation::get_thing_runtime_configuration::builders::GetThingRuntimeConfigurationOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl GetThingRuntimeConfigurationOutputBuilder {
         self
     }
     /// Runtime configuration for a thing.
-    pub fn set_runtime_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RuntimeConfiguration>,
-    ) -> Self {
-        self.runtime_configuration = input;
-        self
+    pub fn set_runtime_configuration(mut self, input: std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
+        self.runtime_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetThingRuntimeConfigurationOutput`](crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput {
+    pub fn build(self) -> crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput {
         crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput {
-            runtime_configuration: self.runtime_configuration,
+            runtime_configuration: self.runtime_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

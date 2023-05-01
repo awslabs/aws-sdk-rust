@@ -4,71 +4,49 @@ pub use crate::operation::put_report_definition::_put_report_definition_output::
 pub use crate::operation::put_report_definition::_put_report_definition_input::PutReportDefinitionInputBuilder;
 
 /// Fluent builder constructing a request to `PutReportDefinition`.
-///
+/// 
 /// <p>Creates the report definition for a report in Application Cost Profiler.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutReportDefinitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder,
-}
-impl PutReportDefinitionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_report_definition::builders::PutReportDefinitionInputBuilder
+            }
+impl PutReportDefinitionFluentBuilder  {
     /// Creates a new `PutReportDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_report_definition::PutReportDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_report_definition::PutReportDefinitionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_report_definition::PutReportDefinitionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_report_definition::PutReportDefinition, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_report_definition::PutReportDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::put_report_definition::PutReportDefinitionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Required. ID of the report. You can choose any valid string matching the pattern for the ID.</p>
     pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.report_id(input.into());
@@ -85,10 +63,7 @@ impl PutReportDefinitionFluentBuilder {
         self
     }
     /// <p>Required. Description of the report.</p>
-    pub fn set_report_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_report_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_report_description(input);
         self
     }
@@ -98,10 +73,7 @@ impl PutReportDefinitionFluentBuilder {
         self
     }
     /// <p>Required. The cadence to generate the report.</p>
-    pub fn set_report_frequency(
-        mut self,
-        input: std::option::Option<crate::types::ReportFrequency>,
-    ) -> Self {
+    pub fn set_report_frequency(mut self, input: std::option::Option<crate::types::ReportFrequency>) -> Self {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
@@ -121,11 +93,9 @@ impl PutReportDefinitionFluentBuilder {
         self
     }
     /// <p>Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.</p>
-    pub fn set_destination_s3_location(
-        mut self,
-        input: std::option::Option<crate::types::S3Location>,
-    ) -> Self {
+    pub fn set_destination_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_destination_s3_location(input);
         self
     }
 }
+

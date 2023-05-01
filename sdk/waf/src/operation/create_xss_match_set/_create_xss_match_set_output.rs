@@ -3,7 +3,7 @@
 /// <p>The response to a <code>CreateXssMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateXssMatchSetOutput {
+pub struct CreateXssMatchSetOutput  {
     /// <p>An <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::types::XssMatchSet>,
@@ -14,23 +14,22 @@ pub struct CreateXssMatchSetOutput {
 }
 impl CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
-    pub fn xss_match_set(&self) -> std::option::Option<&crate::types::XssMatchSet> {
+    pub fn xss_match_set(&self) -> std::option::Option<& crate::types::XssMatchSet> {
         self.xss_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateXssMatchSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateXssMatchSetOutput`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::create_xss_match_set::builders::CreateXssMatchSetOutputBuilder {
         crate::operation::create_xss_match_set::builders::CreateXssMatchSetOutputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl CreateXssMatchSetOutputBuilder {
         self
     }
     /// <p>An <code>XssMatchSet</code>.</p>
-    pub fn set_xss_match_set(
-        mut self,
-        input: std::option::Option<crate::types::XssMatchSet>,
-    ) -> Self {
-        self.xss_match_set = input;
-        self
+    pub fn set_xss_match_set(mut self, input: std::option::Option<crate::types::XssMatchSet>) -> Self {
+        self.xss_match_set = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,24 +59,26 @@ impl CreateXssMatchSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateXssMatchSetOutput`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput).
     pub fn build(self) -> crate::operation::create_xss_match_set::CreateXssMatchSetOutput {
         crate::operation::create_xss_match_set::CreateXssMatchSetOutput {
-            xss_match_set: self.xss_match_set,
-            change_token: self.change_token,
+            xss_match_set: self.xss_match_set
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

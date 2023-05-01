@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHarvestJobInput {
+pub struct DescribeHarvestJobInput  {
     /// The ID of the HarvestJob.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeHarvestJobInput {
     /// The ID of the HarvestJob.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DescribeHarvestJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeHarvestJobInput`](crate::operation::describe_harvest_job::DescribeHarvestJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_harvest_job::builders::DescribeHarvestJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_harvest_job::builders::DescribeHarvestJobInputBuilder {
         crate::operation::describe_harvest_job::builders::DescribeHarvestJobInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DescribeHarvestJobInputBuilder {
     }
     /// The ID of the HarvestJob.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeHarvestJobInput`](crate::operation::describe_harvest_job::DescribeHarvestJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_harvest_job::DescribeHarvestJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_harvest_job::DescribeHarvestJobInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::describe_harvest_job::DescribeHarvestJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_harvest_job::DescribeHarvestJobInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

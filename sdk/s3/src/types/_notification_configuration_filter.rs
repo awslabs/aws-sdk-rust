@@ -3,14 +3,14 @@
 /// <p>Specifies object key name filtering rules. For information about key name filtering, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationConfigurationFilter {
+pub struct NotificationConfigurationFilter  {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::S3KeyFilter>,
 }
 impl NotificationConfigurationFilter {
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::S3KeyFilter> {
+    pub fn key(&self) -> std::option::Option<& crate::types::S3KeyFilter> {
         self.key.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl NotificationConfigurationFilterBuilder {
     }
     /// <p>A container for object key name prefix and suffix filtering rules.</p>
     pub fn set_key(mut self, input: std::option::Option<crate::types::S3KeyFilter>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// Consumes the builder and constructs a [`NotificationConfigurationFilter`](crate::types::NotificationConfigurationFilter).
     pub fn build(self) -> crate::types::NotificationConfigurationFilter {
-        crate::types::NotificationConfigurationFilter { key: self.key }
+        crate::types::NotificationConfigurationFilter {
+            key: self.key
+            ,
+        }
     }
 }
+

@@ -3,20 +3,20 @@
 /// <p>Represents the request to delete the specified remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRemoteAccessSessionInput {
+pub struct DeleteRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`DeleteRemoteAccessSessionInput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput).
-    pub fn builder() -> crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder{
+    pub fn builder() -> crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder {
         crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl DeleteRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote access.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRemoteAccessSessionInput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

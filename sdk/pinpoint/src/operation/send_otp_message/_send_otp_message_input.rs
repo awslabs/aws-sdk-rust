@@ -2,24 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendOtpMessageInput {
+pub struct SendOtpMessageInput  {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Send OTP message request parameters.</p>
     #[doc(hidden)]
-    pub send_otp_message_request_parameters:
-        std::option::Option<crate::types::SendOtpMessageRequestParameters>,
+    pub send_otp_message_request_parameters: std::option::Option<crate::types::SendOtpMessageRequestParameters>,
 }
 impl SendOtpMessageInput {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Send OTP message request parameters.</p>
-    pub fn send_otp_message_request_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::SendOtpMessageRequestParameters> {
+    pub fn send_otp_message_request_parameters(&self) -> std::option::Option<& crate::types::SendOtpMessageRequestParameters> {
         self.send_otp_message_request_parameters.as_ref()
     }
 }
@@ -35,8 +32,7 @@ impl SendOtpMessageInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SendOtpMessageInputBuilder {
     pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) send_otp_message_request_parameters:
-        std::option::Option<crate::types::SendOtpMessageRequestParameters>,
+    pub(crate) send_otp_message_request_parameters: std::option::Option<crate::types::SendOtpMessageRequestParameters>,
 }
 impl SendOtpMessageInputBuilder {
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
@@ -46,35 +42,27 @@ impl SendOtpMessageInputBuilder {
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Send OTP message request parameters.</p>
-    pub fn send_otp_message_request_parameters(
-        mut self,
-        input: crate::types::SendOtpMessageRequestParameters,
-    ) -> Self {
+    pub fn send_otp_message_request_parameters(mut self, input: crate::types::SendOtpMessageRequestParameters) -> Self {
         self.send_otp_message_request_parameters = Some(input);
         self
     }
     /// <p>Send OTP message request parameters.</p>
-    pub fn set_send_otp_message_request_parameters(
-        mut self,
-        input: std::option::Option<crate::types::SendOtpMessageRequestParameters>,
-    ) -> Self {
-        self.send_otp_message_request_parameters = input;
-        self
+    pub fn set_send_otp_message_request_parameters(mut self, input: std::option::Option<crate::types::SendOtpMessageRequestParameters>) -> Self {
+        self.send_otp_message_request_parameters = input; self
     }
     /// Consumes the builder and constructs a [`SendOtpMessageInput`](crate::operation::send_otp_message::SendOtpMessageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_otp_message::SendOtpMessageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::send_otp_message::SendOtpMessageInput {
-            application_id: self.application_id,
-            send_otp_message_request_parameters: self.send_otp_message_request_parameters,
-        })
+    pub fn build(self) -> Result<crate::operation::send_otp_message::SendOtpMessageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::send_otp_message::SendOtpMessageInput {
+                application_id: self.application_id
+                ,
+                send_otp_message_request_parameters: self.send_otp_message_request_parameters
+                ,
+            }
+        )
     }
 }
+

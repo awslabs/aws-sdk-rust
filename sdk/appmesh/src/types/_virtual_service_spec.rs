@@ -3,14 +3,14 @@
 /// <p>An object that represents the specification of a virtual service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceSpec {
+pub struct VirtualServiceSpec  {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::types::VirtualServiceProvider>,
 }
 impl VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::VirtualServiceProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::types::VirtualServiceProvider> {
         self.provider.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl VirtualServiceSpecBuilder {
         self
     }
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
-    pub fn set_provider(
-        mut self,
-        input: std::option::Option<crate::types::VirtualServiceProvider>,
-    ) -> Self {
-        self.provider = input;
-        self
+    pub fn set_provider(mut self, input: std::option::Option<crate::types::VirtualServiceProvider>) -> Self {
+        self.provider = input; self
     }
     /// Consumes the builder and constructs a [`VirtualServiceSpec`](crate::types::VirtualServiceSpec).
     pub fn build(self) -> crate::types::VirtualServiceSpec {
         crate::types::VirtualServiceSpec {
-            provider: self.provider,
+            provider: self.provider
+            ,
         }
     }
 }
+

@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAlarmActionsInput {
+pub struct DisableAlarmActionsInput  {
     /// <p>The names of the alarms.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
-    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_names(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_names.as_deref()
     }
 }
 impl DisableAlarmActionsInput {
     /// Creates a new builder-style object to manufacture [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
-    pub fn builder(
-    ) -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder {
-        crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder {
+        crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder::default()
     }
 }
 
@@ -36,29 +34,22 @@ impl DisableAlarmActionsInputBuilder {
     /// <p>The names of the alarms.</p>
     pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
-        v.push(input.into());
-        self.alarm_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.alarm_names = Some(v);
+                        self
     }
     /// <p>The names of the alarms.</p>
-    pub fn set_alarm_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.alarm_names = input;
-        self
+    pub fn set_alarm_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.alarm_names = input; self
     }
     /// Consumes the builder and constructs a [`DisableAlarmActionsInput`](crate::operation::disable_alarm_actions::DisableAlarmActionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disable_alarm_actions::DisableAlarmActionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disable_alarm_actions::DisableAlarmActionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disable_alarm_actions::DisableAlarmActionsInput {
-                alarm_names: self.alarm_names,
-            },
+                alarm_names: self.alarm_names
+                ,
+            }
         )
     }
 }
+

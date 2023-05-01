@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMobileSdkReleasesInput {
+pub struct ListMobileSdkReleasesInput  {
     /// <p>The device platform to retrieve the list for.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::Platform>,
@@ -15,11 +15,11 @@ pub struct ListMobileSdkReleasesInput {
 }
 impl ListMobileSdkReleasesInput {
     /// <p>The device platform to retrieve the list for.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -29,9 +29,7 @@ impl ListMobileSdkReleasesInput {
 }
 impl ListMobileSdkReleasesInput {
     /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
-    pub fn builder(
-    ) -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder {
         crate::operation::list_mobile_sdk_releases::builders::ListMobileSdkReleasesInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListMobileSdkReleasesInputBuilder {
     }
     /// <p>The device platform to retrieve the list for.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl ListMobileSdkReleasesInputBuilder {
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -72,22 +68,20 @@ impl ListMobileSdkReleasesInputBuilder {
     }
     /// <p>The maximum number of objects that you want WAF to return for this request. If more objects are available, in the response, WAF provides a <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListMobileSdkReleasesInput`](crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesInput {
-                platform: self.platform,
-                next_marker: self.next_marker,
-                limit: self.limit,
-            },
+                platform: self.platform
+                ,
+                next_marker: self.next_marker
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

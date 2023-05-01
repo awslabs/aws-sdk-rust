@@ -3,7 +3,7 @@
 /// <p>Information about the instances to which the volume is attached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeStatusAttachmentStatus {
+pub struct VolumeStatusAttachmentStatus  {
     /// <p>The maximum IOPS supported by the attached instance.</p>
     #[doc(hidden)]
     pub io_performance: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VolumeStatusAttachmentStatus {
 }
 impl VolumeStatusAttachmentStatus {
     /// <p>The maximum IOPS supported by the attached instance.</p>
-    pub fn io_performance(&self) -> std::option::Option<&str> {
+    pub fn io_performance(&self) -> std::option::Option<& str> {
         self.io_performance.as_deref()
     }
     /// <p>The ID of the attached instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl VolumeStatusAttachmentStatusBuilder {
     }
     /// <p>The maximum IOPS supported by the attached instance.</p>
     pub fn set_io_performance(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.io_performance = input;
-        self
+        self.io_performance = input; self
     }
     /// <p>The ID of the attached instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl VolumeStatusAttachmentStatusBuilder {
     }
     /// <p>The ID of the attached instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`VolumeStatusAttachmentStatus`](crate::types::VolumeStatusAttachmentStatus).
     pub fn build(self) -> crate::types::VolumeStatusAttachmentStatus {
         crate::types::VolumeStatusAttachmentStatus {
-            io_performance: self.io_performance,
-            instance_id: self.instance_id,
+            io_performance: self.io_performance
+            ,
+            instance_id: self.instance_id
+            ,
         }
     }
 }
+

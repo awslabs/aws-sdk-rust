@@ -4,90 +4,62 @@ pub use crate::operation::list_monitoring_executions::_list_monitoring_execution
 pub use crate::operation::list_monitoring_executions::_list_monitoring_executions_input::ListMonitoringExecutionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListMonitoringExecutions`.
-///
+/// 
 /// <p>Returns list of all monitoring job executions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMonitoringExecutionsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_monitoring_executions::builders::ListMonitoringExecutionsInputBuilder
             }
-impl ListMonitoringExecutionsFluentBuilder {
+impl ListMonitoringExecutionsFluentBuilder  {
     /// Creates a new `ListMonitoringExecutions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_monitoring_executions::ListMonitoringExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_monitoring_executions::ListMonitoringExecutionsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_monitoring_executions::ListMonitoringExecutionsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator
-    {
-        crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator {
+                            crate::operation::list_monitoring_executions::paginator::ListMonitoringExecutionsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>Name of a specific schedule to fetch jobs for.</p>
     pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.monitoring_schedule_name(input.into());
         self
     }
     /// <p>Name of a specific schedule to fetch jobs for.</p>
-    pub fn set_monitoring_schedule_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
@@ -107,10 +79,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringExecutionSortKey>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::MonitoringExecutionSortKey>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -150,10 +119,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Filter for jobs scheduled before a specified time.</p>
-    pub fn set_scheduled_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time_before(input);
         self
     }
@@ -163,10 +129,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Filter for jobs scheduled after a specified time.</p>
-    pub fn set_scheduled_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_time_after(input);
         self
     }
@@ -176,10 +139,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs created before a specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -189,10 +149,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs created after a specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -202,10 +159,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs modified after a specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -215,10 +169,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only jobs modified before a specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -228,10 +179,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -241,10 +189,7 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>Gets a list of the monitoring job runs of the specified monitoring job definitions.</p>
-    pub fn set_monitoring_job_definition_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_monitoring_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_monitoring_job_definition_name(input);
         self
     }
@@ -254,11 +199,9 @@ impl ListMonitoringExecutionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only the monitoring job runs of the specified monitoring type.</p>
-    pub fn set_monitoring_type_equals(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringType>,
-    ) -> Self {
+    pub fn set_monitoring_type_equals(mut self, input: std::option::Option<crate::types::MonitoringType>) -> Self {
         self.inner = self.inner.set_monitoring_type_equals(input);
         self
     }
 }
+

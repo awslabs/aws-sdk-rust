@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationDependenciesOutput {
+pub struct ListApplicationDependenciesOutput  {
     /// <p>An array of application summaries nested in the application.</p>
     #[doc(hidden)]
-    pub dependencies:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationDependencySummary>>,
+    pub dependencies: std::option::Option<std::vec::Vec<crate::types::ApplicationDependencySummary>>,
     /// <p>The token to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListApplicationDependenciesOutput {
 }
 impl ListApplicationDependenciesOutput {
     /// <p>An array of application summaries nested in the application.</p>
-    pub fn dependencies(
-        &self,
-    ) -> std::option::Option<&[crate::types::ApplicationDependencySummary]> {
+    pub fn dependencies(&self) -> std::option::Option<& [crate::types::ApplicationDependencySummary]> {
         self.dependencies.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListApplicationDependenciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListApplicationDependenciesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput).
-    pub fn builder() -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_application_dependencies::builders::ListApplicationDependenciesOutputBuilder {
         crate::operation::list_application_dependencies::builders::ListApplicationDependenciesOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListApplicationDependenciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListApplicationDependenciesOutputBuilder {
-    pub(crate) dependencies:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationDependencySummary>>,
+    pub(crate) dependencies: std::option::Option<std::vec::Vec<crate::types::ApplicationDependencySummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl ListApplicationDependenciesOutputBuilder {
     /// <p>An array of application summaries nested in the application.</p>
     pub fn dependencies(mut self, input: crate::types::ApplicationDependencySummary) -> Self {
         let mut v = self.dependencies.unwrap_or_default();
-        v.push(input);
-        self.dependencies = Some(v);
-        self
+                        v.push(input);
+                        self.dependencies = Some(v);
+                        self
     }
     /// <p>An array of application summaries nested in the application.</p>
-    pub fn set_dependencies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationDependencySummary>>,
-    ) -> Self {
-        self.dependencies = input;
-        self
+    pub fn set_dependencies(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationDependencySummary>>) -> Self {
+        self.dependencies = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl ListApplicationDependenciesOutputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListApplicationDependenciesOutput`](crate::operation::list_application_dependencies::ListApplicationDependenciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_application_dependencies::ListApplicationDependenciesOutput {
+    pub fn build(self) -> crate::operation::list_application_dependencies::ListApplicationDependenciesOutput {
         crate::operation::list_application_dependencies::ListApplicationDependenciesOutput {
-            dependencies: self.dependencies,
-            next_token: self.next_token,
+            dependencies: self.dependencies
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

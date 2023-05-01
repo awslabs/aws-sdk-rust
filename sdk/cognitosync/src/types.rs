@@ -48,3 +48,4 @@ pub mod builders;
 
 /// Error types that Amazon Cognito Sync can respond with.
 pub mod error;
+

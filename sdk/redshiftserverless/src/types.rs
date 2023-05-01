@@ -88,3 +88,4 @@ pub mod builders;
 
 /// Error types that Redshift Serverless can respond with.
 pub mod error;
+

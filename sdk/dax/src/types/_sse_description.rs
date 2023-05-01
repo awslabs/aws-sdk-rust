@@ -3,26 +3,26 @@
 /// <p>The description of the server-side encryption status on the specified DAX cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SseDescription {
-    /// <p>The current state of server-side encryption:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+pub struct SseDescription  {
+    /// <p>The current state of server-side encryption:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> 
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::SseStatus>,
 }
 impl SseDescription {
-    /// <p>The current state of server-side encryption:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+    /// <p>The current state of server-side encryption:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> 
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::SseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::SseStatus> {
         self.status.as_ref()
     }
 }
@@ -40,32 +40,33 @@ pub struct SseDescriptionBuilder {
     pub(crate) status: std::option::Option<crate::types::SseStatus>,
 }
 impl SseDescriptionBuilder {
-    /// <p>The current state of server-side encryption:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+    /// <p>The current state of server-side encryption:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> 
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::SseStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current state of server-side encryption:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li>
-    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li>
-    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+    /// <p>The current state of server-side encryption:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> 
+    /// <li> <p> <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::SseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`SseDescription`](crate::types::SseDescription).
     pub fn build(self) -> crate::types::SseDescription {
         crate::types::SseDescription {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

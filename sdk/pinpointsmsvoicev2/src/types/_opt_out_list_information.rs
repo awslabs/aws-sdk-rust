@@ -3,7 +3,7 @@
 /// <p>The information for all OptOutList in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptOutListInformation {
+pub struct OptOutListInformation  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct OptOutListInformation {
 }
 impl OptOutListInformation {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl OptOutListInformationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opt_out_list_arn = input;
-        self
+        self.opt_out_list_arn = input; self
     }
     /// <p>The name of the OptOutList.</p>
     pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl OptOutListInformationBuilder {
         self
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.opt_out_list_name = input;
-        self
+    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.opt_out_list_name = input; self
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -73,19 +68,19 @@ impl OptOutListInformationBuilder {
         self
     }
     /// <p>The time when the OutOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`OptOutListInformation`](crate::types::OptOutListInformation).
     pub fn build(self) -> crate::types::OptOutListInformation {
         crate::types::OptOutListInformation {
-            opt_out_list_arn: self.opt_out_list_arn,
-            opt_out_list_name: self.opt_out_list_name,
-            created_timestamp: self.created_timestamp,
+            opt_out_list_arn: self.opt_out_list_arn
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            created_timestamp: self.created_timestamp
+            ,
         }
     }
 }
+

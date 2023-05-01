@@ -3,24 +3,21 @@
 /// <p>The phone number country.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberCountry {
+pub struct PhoneNumberCountry  {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
     #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     /// <p>The supported phone number types. </p>
     #[doc(hidden)]
-    pub supported_phone_number_types:
-        std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub supported_phone_number_types: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
 }
 impl PhoneNumberCountry {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// <p>The supported phone number types. </p>
-    pub fn supported_phone_number_types(
-        &self,
-    ) -> std::option::Option<&[crate::types::PhoneNumberType]> {
+    pub fn supported_phone_number_types(&self) -> std::option::Option<& [crate::types::PhoneNumberType]> {
         self.supported_phone_number_types.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl PhoneNumberCountry {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PhoneNumberCountryBuilder {
     pub(crate) country_code: std::option::Option<std::string::String>,
-    pub(crate) supported_phone_number_types:
-        std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
+    pub(crate) supported_phone_number_types: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
 }
 impl PhoneNumberCountryBuilder {
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
@@ -47,8 +43,7 @@ impl PhoneNumberCountryBuilder {
     }
     /// <p>The phone number country code. Format: ISO 3166-1 alpha-2.</p>
     pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// Appends an item to `supported_phone_number_types`.
     ///
@@ -57,23 +52,22 @@ impl PhoneNumberCountryBuilder {
     /// <p>The supported phone number types. </p>
     pub fn supported_phone_number_types(mut self, input: crate::types::PhoneNumberType) -> Self {
         let mut v = self.supported_phone_number_types.unwrap_or_default();
-        v.push(input);
-        self.supported_phone_number_types = Some(v);
-        self
+                        v.push(input);
+                        self.supported_phone_number_types = Some(v);
+                        self
     }
     /// <p>The supported phone number types. </p>
-    pub fn set_supported_phone_number_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
-    ) -> Self {
-        self.supported_phone_number_types = input;
-        self
+    pub fn set_supported_phone_number_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
+        self.supported_phone_number_types = input; self
     }
     /// Consumes the builder and constructs a [`PhoneNumberCountry`](crate::types::PhoneNumberCountry).
     pub fn build(self) -> crate::types::PhoneNumberCountry {
         crate::types::PhoneNumberCountry {
-            country_code: self.country_code,
-            supported_phone_number_types: self.supported_phone_number_types,
+            country_code: self.country_code
+            ,
+            supported_phone_number_types: self.supported_phone_number_types
+            ,
         }
     }
 }
+

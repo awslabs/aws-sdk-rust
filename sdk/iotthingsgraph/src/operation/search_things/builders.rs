@@ -4,90 +4,67 @@ pub use crate::operation::search_things::_search_things_output::SearchThingsOutp
 pub use crate::operation::search_things::_search_things_input::SearchThingsInputBuilder;
 
 /// Fluent builder constructing a request to `SearchThings`.
-///
-/// <p>Searches for things associated with the specified entity. You can search by both device and device model.</p>
-/// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2. <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p>
+/// 
+/// <p>Searches for things associated with the specified entity. You can search by both device and device model.</p> 
+/// <p>For example, if two different devices, camera1 and camera2, implement the camera device model, the user can associate thing1 to camera1 and thing2 to camera2. <code>SearchThings(camera2)</code> will return only thing2, but <code>SearchThings(camera)</code> will return both thing1 and thing2.</p> 
 /// <p>This action searches for exact matches and doesn't perform partial text matching.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchThingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_things::builders::SearchThingsInputBuilder,
-}
-impl SearchThingsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::search_things::builders::SearchThingsInputBuilder
+            }
+impl SearchThingsFluentBuilder  {
     /// Creates a new `SearchThings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_things::SearchThings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::search_things::SearchThingsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::search_things::SearchThings, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::search_things::SearchThingsOutput, aws_smithy_http::result::SdkError<crate::operation::search_things::SearchThingsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_things::paginator::SearchThingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_things::paginator::SearchThingsPaginator {
-        crate::operation::search_things::paginator::SearchThingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>The ID of the entity to which the things are associated.</p>
-    /// <p>The IDs should be in the following format.</p>
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::search_things::paginator::SearchThingsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::search_things::paginator::SearchThingsPaginator {
+                            crate::operation::search_things::paginator::SearchThingsPaginator::new(self.handle, self.inner)
+                        }
+    /// <p>The ID of the entity to which the things are associated.</p> 
+    /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.entity_id(input.into());
         self
     }
-    /// <p>The ID of the entity to which the things are associated.</p>
-    /// <p>The IDs should be in the following format.</p>
+    /// <p>The ID of the entity to which the things are associated.</p> 
+    /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_entity_id(input);
@@ -124,3 +101,4 @@ impl SearchThingsFluentBuilder {
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Parameters for Amazon Aurora PostgreSQL-Compatible Edition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuroraPostgreSqlParameters {
+pub struct AuroraPostgreSqlParameters  {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AuroraPostgreSqlParameters {
 }
 impl AuroraPostgreSqlParameters {
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
@@ -24,7 +24,7 @@ impl AuroraPostgreSqlParameters {
         self.port
     }
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AuroraPostgreSqlParametersBuilder {
     }
     /// <p>The Amazon Aurora PostgreSQL-Compatible host to connect to.</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl AuroraPostgreSqlParametersBuilder {
     }
     /// <p>The port that Amazon Aurora PostgreSQL is listening on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,19 @@ impl AuroraPostgreSqlParametersBuilder {
     }
     /// <p>The Amazon Aurora PostgreSQL database to connect to.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// Consumes the builder and constructs a [`AuroraPostgreSqlParameters`](crate::types::AuroraPostgreSqlParameters).
     pub fn build(self) -> crate::types::AuroraPostgreSqlParameters {
         crate::types::AuroraPostgreSqlParameters {
-            host: self.host,
-            port: self.port.unwrap_or_default(),
-            database: self.database,
+            host: self.host
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            database: self.database
+            ,
         }
     }
 }
+

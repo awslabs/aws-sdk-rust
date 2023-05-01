@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountPreferencesInput {
+pub struct DescribeAccountPreferencesInput  {
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeAccountPreferencesInput {
 }
 impl DescribeAccountPreferencesInput {
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
@@ -22,7 +22,7 @@ impl DescribeAccountPreferencesInput {
 }
 impl DescribeAccountPreferencesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountPreferencesInput`](crate::operation::describe_account_preferences::DescribeAccountPreferencesInput).
-    pub fn builder() -> crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder {
         crate::operation::describe_account_preferences::builders::DescribeAccountPreferencesInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeAccountPreferencesInputBuilder {
     }
     /// <p>(Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of Amazon Web Services account preferences if the response payload was paginated.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,21 +51,18 @@ impl DescribeAccountPreferencesInputBuilder {
     }
     /// <p>(Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAccountPreferencesInput`](crate::operation::describe_account_preferences::DescribeAccountPreferencesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_account_preferences::DescribeAccountPreferencesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_account_preferences::DescribeAccountPreferencesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_account_preferences::DescribeAccountPreferencesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

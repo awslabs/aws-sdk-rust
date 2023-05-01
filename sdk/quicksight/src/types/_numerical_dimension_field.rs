@@ -3,7 +3,7 @@
 /// <p>The dimension type field with numerical type columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumericalDimensionField {
+pub struct NumericalDimensionField  {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -19,21 +19,19 @@ pub struct NumericalDimensionField {
 }
 impl NumericalDimensionField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::NumberFormatConfiguration> {
+    pub fn format_configuration(&self) -> std::option::Option<& crate::types::NumberFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -61,8 +59,7 @@ impl NumericalDimensionFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -70,12 +67,8 @@ impl NumericalDimensionFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>NumericalDimensionField</code>.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +77,7 @@ impl NumericalDimensionFieldBuilder {
     }
     /// <p>The custom hierarchy ID.</p>
     pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(mut self, input: crate::types::NumberFormatConfiguration) -> Self {
@@ -93,20 +85,21 @@ impl NumericalDimensionFieldBuilder {
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: std::option::Option<crate::types::NumberFormatConfiguration>,
-    ) -> Self {
-        self.format_configuration = input;
-        self
+    pub fn set_format_configuration(mut self, input: std::option::Option<crate::types::NumberFormatConfiguration>) -> Self {
+        self.format_configuration = input; self
     }
     /// Consumes the builder and constructs a [`NumericalDimensionField`](crate::types::NumericalDimensionField).
     pub fn build(self) -> crate::types::NumericalDimensionField {
         crate::types::NumericalDimensionField {
-            field_id: self.field_id,
-            column: self.column,
-            hierarchy_id: self.hierarchy_id,
-            format_configuration: self.format_configuration,
+            field_id: self.field_id
+            ,
+            column: self.column
+            ,
+            hierarchy_id: self.hierarchy_id
+            ,
+            format_configuration: self.format_configuration
+            ,
         }
     }
 }
+

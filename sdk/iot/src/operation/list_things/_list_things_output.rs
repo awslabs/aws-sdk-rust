@@ -3,7 +3,7 @@
 /// <p>The output from the ListThings operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThingsOutput {
+pub struct ListThingsOutput  {
     /// <p>The things.</p>
     #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<crate::types::ThingAttribute>>,
@@ -14,19 +14,19 @@ pub struct ListThingsOutput {
 }
 impl ListThingsOutput {
     /// <p>The things.</p>
-    pub fn things(&self) -> std::option::Option<&[crate::types::ThingAttribute]> {
+    pub fn things(&self) -> std::option::Option<& [crate::types::ThingAttribute]> {
         self.things.as_deref()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListThingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListThingsOutput {
     /// Creates a new builder-style object to manufacture [`ListThingsOutput`](crate::operation::list_things::ListThingsOutput).
     pub fn builder() -> crate::operation::list_things::builders::ListThingsOutputBuilder {
@@ -50,17 +50,13 @@ impl ListThingsOutputBuilder {
     /// <p>The things.</p>
     pub fn things(mut self, input: crate::types::ThingAttribute) -> Self {
         let mut v = self.things.unwrap_or_default();
-        v.push(input);
-        self.things = Some(v);
-        self
+                        v.push(input);
+                        self.things = Some(v);
+                        self
     }
     /// <p>The things.</p>
-    pub fn set_things(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThingAttribute>>,
-    ) -> Self {
-        self.things = input;
-        self
+    pub fn set_things(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThingAttribute>>) -> Self {
+        self.things = input; self
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +65,26 @@ impl ListThingsOutputBuilder {
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListThingsOutput`](crate::operation::list_things::ListThingsOutput).
     pub fn build(self) -> crate::operation::list_things::ListThingsOutput {
         crate::operation::list_things::ListThingsOutput {
-            things: self.things,
-            next_token: self.next_token,
+            things: self.things
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

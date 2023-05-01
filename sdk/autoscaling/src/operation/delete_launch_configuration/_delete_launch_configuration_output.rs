@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchConfigurationOutput {
+pub struct DeleteLaunchConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteLaunchConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteLaunchConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationOutput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder {
         crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeleteLaunchConfigurationOutputBuilder {
 }
 impl DeleteLaunchConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationOutput`](crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput {
+    pub fn build(self) -> crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput {
         crate::operation::delete_launch_configuration::DeleteLaunchConfigurationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

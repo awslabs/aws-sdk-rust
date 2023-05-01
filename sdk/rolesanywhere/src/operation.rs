@@ -78,3 +78,4 @@ pub mod update_profile;
 
 /// Types for the `UpdateTrustAnchor` operation.
 pub mod update_trust_anchor;
+

@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIndexingConfigurationInput {}
+pub struct GetIndexingConfigurationInput  {
+}
 impl GetIndexingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetIndexingConfigurationInput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder {
         crate::operation::get_indexing_configuration::builders::GetIndexingConfigurationInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl GetIndexingConfigurationInput {
 /// A builder for [`GetIndexingConfigurationInput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetIndexingConfigurationInputBuilder {}
+pub struct GetIndexingConfigurationInputBuilder {
+}
 impl GetIndexingConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetIndexingConfigurationInput`](crate::operation::get_indexing_configuration::GetIndexingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_indexing_configuration::GetIndexingConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_indexing_configuration::GetIndexingConfigurationInput {})
+    pub fn build(self) -> Result<crate::operation::get_indexing_configuration::GetIndexingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_indexing_configuration::GetIndexingConfigurationInput {
+            }
+        )
     }
 }
+

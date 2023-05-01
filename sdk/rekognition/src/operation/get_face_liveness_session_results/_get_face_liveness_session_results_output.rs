@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFaceLivenessSessionResultsOutput {
+pub struct GetFaceLivenessSessionResultsOutput  {
     /// <p>The sessionId for which this request was called.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct GetFaceLivenessSessionResultsOutput {
 }
 impl GetFaceLivenessSessionResultsOutput {
     /// <p>The sessionId for which this request was called.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::LivenessSessionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::LivenessSessionStatus> {
         self.status.as_ref()
     }
     /// <p>Probabalistic confidence score for if the person in the given video was live, represented as a float value between 0 to 100.</p>
@@ -34,22 +34,22 @@ impl GetFaceLivenessSessionResultsOutput {
         self.confidence
     }
     /// <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
-    pub fn reference_image(&self) -> std::option::Option<&crate::types::AuditImage> {
+    pub fn reference_image(&self) -> std::option::Option<& crate::types::AuditImage> {
         self.reference_image.as_ref()
     }
     /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
-    pub fn audit_images(&self) -> std::option::Option<&[crate::types::AuditImage]> {
+    pub fn audit_images(&self) -> std::option::Option<& [crate::types::AuditImage]> {
         self.audit_images.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetFaceLivenessSessionResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFaceLivenessSessionResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetFaceLivenessSessionResultsOutput`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput).
-    pub fn builder() -> crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder{
+    pub fn builder() -> crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder {
         crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsOutputBuilder::default()
     }
 }
@@ -73,8 +73,7 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
     }
     /// <p>The sessionId for which this request was called.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
     pub fn status(mut self, input: crate::types::LivenessSessionStatus) -> Self {
@@ -82,12 +81,8 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
         self
     }
     /// <p>Represents a status corresponding to the state of the session. Possible statuses are: CREATED, IN_PROGRESS, SUCCEEDED, FAILED, EXPIRED.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::LivenessSessionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::LivenessSessionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>Probabalistic confidence score for if the person in the given video was live, represented as a float value between 0 to 100.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -96,8 +91,7 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
     }
     /// <p>Probabalistic confidence score for if the person in the given video was live, represented as a float value between 0 to 100.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
     pub fn reference_image(mut self, input: crate::types::AuditImage) -> Self {
@@ -105,12 +99,8 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
         self
     }
     /// <p>A high-quality image from the Face Liveness video that can be used for face comparison or search. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration. In case the reference image is not returned, it's recommended to retry the Liveness check.</p>
-    pub fn set_reference_image(
-        mut self,
-        input: std::option::Option<crate::types::AuditImage>,
-    ) -> Self {
-        self.reference_image = input;
-        self
+    pub fn set_reference_image(mut self, input: std::option::Option<crate::types::AuditImage>) -> Self {
+        self.reference_image = input; self
     }
     /// Appends an item to `audit_images`.
     ///
@@ -119,39 +109,38 @@ impl GetFaceLivenessSessionResultsOutputBuilder {
     /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
     pub fn audit_images(mut self, input: crate::types::AuditImage) -> Self {
         let mut v = self.audit_images.unwrap_or_default();
-        v.push(input);
-        self.audit_images = Some(v);
-        self
+                        v.push(input);
+                        self.audit_images = Some(v);
+                        self
     }
     /// <p>A set of images from the Face Liveness video that can be used for audit purposes. It includes a bounding box of the face and the Base64-encoded bytes that return an image. If the CreateFaceLivenessSession request included an OutputConfig argument, the image will be uploaded to an S3Object specified in the output configuration.</p>
-    pub fn set_audit_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AuditImage>>,
-    ) -> Self {
-        self.audit_images = input;
-        self
+    pub fn set_audit_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuditImage>>) -> Self {
+        self.audit_images = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFaceLivenessSessionResultsOutput`](crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput
-    {
+    pub fn build(self) -> crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput {
         crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput {
-            session_id: self.session_id,
-            status: self.status,
-            confidence: self.confidence,
-            reference_image: self.reference_image,
-            audit_images: self.audit_images,
+            session_id: self.session_id
+            ,
+            status: self.status
+            ,
+            confidence: self.confidence
+            ,
+            reference_image: self.reference_image
+            ,
+            audit_images: self.audit_images
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

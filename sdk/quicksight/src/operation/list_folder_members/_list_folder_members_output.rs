@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFolderMembersOutput {
+pub struct ListFolderMembersOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -23,27 +23,26 @@ impl ListFolderMembersOutput {
         self.status
     }
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-    pub fn folder_member_list(&self) -> std::option::Option<&[crate::types::MemberIdArnPair]> {
+    pub fn folder_member_list(&self) -> std::option::Option<& [crate::types::MemberIdArnPair]> {
         self.folder_member_list.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFolderMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFolderMembersOutput {
     /// Creates a new builder-style object to manufacture [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_folder_members::builders::ListFolderMembersOutputBuilder {
+    pub fn builder() -> crate::operation::list_folder_members::builders::ListFolderMembersOutputBuilder {
         crate::operation::list_folder_members::builders::ListFolderMembersOutputBuilder::default()
     }
 }
@@ -53,8 +52,7 @@ impl ListFolderMembersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFolderMembersOutputBuilder {
     pub(crate) status: std::option::Option<i32>,
-    pub(crate) folder_member_list:
-        std::option::Option<std::vec::Vec<crate::types::MemberIdArnPair>>,
+    pub(crate) folder_member_list: std::option::Option<std::vec::Vec<crate::types::MemberIdArnPair>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) request_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -67,8 +65,7 @@ impl ListFolderMembersOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Appends an item to `folder_member_list`.
     ///
@@ -77,17 +74,13 @@ impl ListFolderMembersOutputBuilder {
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
     pub fn folder_member_list(mut self, input: crate::types::MemberIdArnPair) -> Self {
         let mut v = self.folder_member_list.unwrap_or_default();
-        v.push(input);
-        self.folder_member_list = Some(v);
-        self
+                        v.push(input);
+                        self.folder_member_list = Some(v);
+                        self
     }
     /// <p>A structure that contains all of the folder members (dashboards, analyses, and datasets) in the folder.</p>
-    pub fn set_folder_member_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MemberIdArnPair>>,
-    ) -> Self {
-        self.folder_member_list = input;
-        self
+    pub fn set_folder_member_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::MemberIdArnPair>>) -> Self {
+        self.folder_member_list = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +89,7 @@ impl ListFolderMembersOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,26 +98,31 @@ impl ListFolderMembersOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFolderMembersOutput`](crate::operation::list_folder_members::ListFolderMembersOutput).
     pub fn build(self) -> crate::operation::list_folder_members::ListFolderMembersOutput {
         crate::operation::list_folder_members::ListFolderMembersOutput {
-            status: self.status.unwrap_or_default(),
-            folder_member_list: self.folder_member_list,
-            next_token: self.next_token,
-            request_id: self.request_id,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            folder_member_list: self.folder_member_list
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

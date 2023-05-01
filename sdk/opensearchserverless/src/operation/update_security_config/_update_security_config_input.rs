@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecurityConfigInput {
+pub struct UpdateSecurityConfigInput  {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -21,30 +21,29 @@ pub struct UpdateSecurityConfigInput {
 }
 impl UpdateSecurityConfigInput {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn config_version(&self) -> std::option::Option<&str> {
+    pub fn config_version(&self) -> std::option::Option<& str> {
         self.config_version.as_deref()
     }
     /// <p>A description of the security configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>SAML options in in the form of a key-value map.</p>
-    pub fn saml_options(&self) -> std::option::Option<&crate::types::SamlConfigOptions> {
+    pub fn saml_options(&self) -> std::option::Option<& crate::types::SamlConfigOptions> {
         self.saml_options.as_ref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateSecurityConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder {
         crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
     pub fn config_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +75,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
     pub fn set_config_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_version = input;
-        self
+        self.config_version = input; self
     }
     /// <p>A description of the security configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +84,7 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>A description of the security configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>SAML options in in the form of a key-value map.</p>
     pub fn saml_options(mut self, input: crate::types::SamlConfigOptions) -> Self {
@@ -96,12 +92,8 @@ impl UpdateSecurityConfigInputBuilder {
         self
     }
     /// <p>SAML options in in the form of a key-value map.</p>
-    pub fn set_saml_options(
-        mut self,
-        input: std::option::Option<crate::types::SamlConfigOptions>,
-    ) -> Self {
-        self.saml_options = input;
-        self
+    pub fn set_saml_options(mut self, input: std::option::Option<crate::types::SamlConfigOptions>) -> Self {
+        self.saml_options = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,24 +102,24 @@ impl UpdateSecurityConfigInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_security_config::UpdateSecurityConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_security_config::UpdateSecurityConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_security_config::UpdateSecurityConfigInput {
-                id: self.id,
-                config_version: self.config_version,
-                description: self.description,
-                saml_options: self.saml_options,
-                client_token: self.client_token,
-            },
+                id: self.id
+                ,
+                config_version: self.config_version
+                ,
+                description: self.description
+                ,
+                saml_options: self.saml_options
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

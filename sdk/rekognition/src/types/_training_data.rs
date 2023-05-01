@@ -3,14 +3,14 @@
 /// <p>The dataset used for training.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrainingData {
+pub struct TrainingData  {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::types::Asset>>,
 }
 impl TrainingData {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-    pub fn assets(&self) -> std::option::Option<&[crate::types::Asset]> {
+    pub fn assets(&self) -> std::option::Option<& [crate::types::Asset]> {
         self.assets.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl TrainingDataBuilder {
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
     pub fn assets(mut self, input: crate::types::Asset) -> Self {
         let mut v = self.assets.unwrap_or_default();
-        v.push(input);
-        self.assets = Some(v);
-        self
+                        v.push(input);
+                        self.assets = Some(v);
+                        self
     }
     /// <p>A Sagemaker GroundTruth manifest file that contains the training images (assets).</p>
-    pub fn set_assets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Asset>>,
-    ) -> Self {
-        self.assets = input;
-        self
+    pub fn set_assets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Asset>>) -> Self {
+        self.assets = input; self
     }
     /// Consumes the builder and constructs a [`TrainingData`](crate::types::TrainingData).
     pub fn build(self) -> crate::types::TrainingData {
         crate::types::TrainingData {
-            assets: self.assets,
+            assets: self.assets
+            ,
         }
     }
 }
+

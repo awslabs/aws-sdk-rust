@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeComponentOutput {
+pub struct DescribeComponentOutput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -29,60 +29,55 @@ pub struct DescribeComponentOutput {
     pub platforms: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeComponentOutput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<&str> {
+    pub fn component_version(&self) -> std::option::Option<& str> {
         self.component_version.as_deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The publisher of the component version.</p>
-    pub fn publisher(&self) -> std::option::Option<&str> {
+    pub fn publisher(&self) -> std::option::Option<& str> {
         self.publisher.as_deref()
     }
     /// <p>The description of the component version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CloudComponentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::CloudComponentStatus> {
         self.status.as_ref()
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn platforms(&self) -> std::option::Option<&[crate::types::ComponentPlatform]> {
+    pub fn platforms(&self) -> std::option::Option<& [crate::types::ComponentPlatform]> {
         self.platforms.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeComponentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_component::builders::DescribeComponentOutputBuilder {
+    pub fn builder() -> crate::operation::describe_component::builders::DescribeComponentOutputBuilder {
         crate::operation::describe_component::builders::DescribeComponentOutputBuilder::default()
     }
 }
@@ -99,8 +94,7 @@ pub struct DescribeComponentOutputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::CloudComponentStatus>,
     pub(crate) platforms: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeComponentOutputBuilder {
@@ -111,8 +105,7 @@ impl DescribeComponentOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +114,7 @@ impl DescribeComponentOutputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The version of the component.</p>
     pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,12 +122,8 @@ impl DescribeComponentOutputBuilder {
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.component_version = input;
-        self
+    pub fn set_component_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_version = input; self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,12 +131,8 @@ impl DescribeComponentOutputBuilder {
         self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_timestamp = input;
-        self
+    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_timestamp = input; self
     }
     /// <p>The publisher of the component version.</p>
     pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +141,7 @@ impl DescribeComponentOutputBuilder {
     }
     /// <p>The publisher of the component version.</p>
     pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.publisher = input;
-        self
+        self.publisher = input; self
     }
     /// <p>The description of the component version.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +150,7 @@ impl DescribeComponentOutputBuilder {
     }
     /// <p>The description of the component version.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
     pub fn status(mut self, input: crate::types::CloudComponentStatus) -> Self {
@@ -176,12 +158,8 @@ impl DescribeComponentOutputBuilder {
         self
     }
     /// <p>The status of the component version in IoT Greengrass V2. This status is different from the status of the component on a core device.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::CloudComponentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::CloudComponentStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `platforms`.
     ///
@@ -190,65 +168,61 @@ impl DescribeComponentOutputBuilder {
     /// <p>The platforms that the component version supports.</p>
     pub fn platforms(mut self, input: crate::types::ComponentPlatform) -> Self {
         let mut v = self.platforms.unwrap_or_default();
-        v.push(input);
-        self.platforms = Some(v);
-        self
+                        v.push(input);
+                        self.platforms = Some(v);
+                        self
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn set_platforms(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
-    ) -> Self {
-        self.platforms = input;
-        self
+    pub fn set_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>) -> Self {
+        self.platforms = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeComponentOutput`](crate::operation::describe_component::DescribeComponentOutput).
     pub fn build(self) -> crate::operation::describe_component::DescribeComponentOutput {
         crate::operation::describe_component::DescribeComponentOutput {
-            arn: self.arn,
-            component_name: self.component_name,
-            component_version: self.component_version,
-            creation_timestamp: self.creation_timestamp,
-            publisher: self.publisher,
-            description: self.description,
-            status: self.status,
-            platforms: self.platforms,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            component_name: self.component_name
+            ,
+            component_version: self.component_version
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            publisher: self.publisher
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            platforms: self.platforms
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

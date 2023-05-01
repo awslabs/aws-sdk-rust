@@ -3,12 +3,10 @@
 /// <p>Represents a request to perform a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Put {
+pub struct Put  {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
     #[doc(hidden)]
-    pub item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub item: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     /// <p>Name of the table in which to write the item.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -17,54 +15,37 @@ pub struct Put {
     pub condition_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
     #[doc(hidden)]
-    pub expression_attribute_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub expression_attribute_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>One or more values that can be substituted in an expression.</p>
     #[doc(hidden)]
-    pub expression_attribute_values: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub expression_attribute_values: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
     #[doc(hidden)]
-    pub return_values_on_condition_check_failure:
-        std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
+    pub return_values_on_condition_check_failure: std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl Put {
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
-    pub fn item(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn item(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::AttributeValue>> {
         self.item.as_ref()
     }
     /// <p>Name of the table in which to write the item.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
-    pub fn condition_expression(&self) -> std::option::Option<&str> {
+    pub fn condition_expression(&self) -> std::option::Option<& str> {
         self.condition_expression.as_deref()
     }
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    pub fn expression_attribute_names(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn expression_attribute_names(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.expression_attribute_names.as_ref()
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    pub fn expression_attribute_values(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn expression_attribute_values(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::AttributeValue>> {
         self.expression_attribute_values.as_ref()
     }
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
-    pub fn return_values_on_condition_check_failure(
-        &self,
-    ) -> std::option::Option<&crate::types::ReturnValuesOnConditionCheckFailure> {
+    pub fn return_values_on_condition_check_failure(&self) -> std::option::Option<& crate::types::ReturnValuesOnConditionCheckFailure> {
         self.return_values_on_condition_check_failure.as_ref()
     }
 }
@@ -79,18 +60,12 @@ impl Put {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutBuilder {
-    pub(crate) item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     pub(crate) table_name: std::option::Option<std::string::String>,
     pub(crate) condition_expression: std::option::Option<std::string::String>,
-    pub(crate) expression_attribute_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) expression_attribute_values: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
-    pub(crate) return_values_on_condition_check_failure:
-        std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
+    pub(crate) expression_attribute_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) expression_attribute_values: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
+    pub(crate) return_values_on_condition_check_failure: std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
 }
 impl PutBuilder {
     /// Adds a key-value pair to `item`.
@@ -98,25 +73,15 @@ impl PutBuilder {
     /// To override the contents of this collection use [`set_item`](Self::set_item).
     ///
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
-    pub fn item(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn item(mut self, k: impl Into<std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.item.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.item = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.item = Some(hash_map);
+                        self
     }
     /// <p>A map of attribute name to attribute values, representing the primary key of the item to be written by <code>PutItem</code>. All of the table's primary key attributes must be specified, and their data types must match those of the table's key schema. If any attributes are present in the item that are part of an index key schema for the table, their types must match the index key schema. </p>
-    pub fn set_item(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-        >,
-    ) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.item = input; self
     }
     /// <p>Name of the table in which to write the item.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +90,7 @@ impl PutBuilder {
     }
     /// <p>Name of the table in which to write the item.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
     pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,88 +98,64 @@ impl PutBuilder {
         self
     }
     /// <p>A condition that must be satisfied in order for a conditional update to succeed.</p>
-    pub fn set_condition_expression(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.condition_expression = input;
-        self
+    pub fn set_condition_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.condition_expression = input; self
     }
     /// Adds a key-value pair to `expression_attribute_names`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
     ///
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    pub fn expression_attribute_names(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn expression_attribute_names(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.expression_attribute_names.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.expression_attribute_names = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.expression_attribute_names = Some(hash_map);
+                        self
     }
     /// <p>One or more substitution tokens for attribute names in an expression.</p>
-    pub fn set_expression_attribute_names(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.expression_attribute_names = input;
-        self
+    pub fn set_expression_attribute_names(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.expression_attribute_names = input; self
     }
     /// Adds a key-value pair to `expression_attribute_values`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_values`](Self::set_expression_attribute_values).
     ///
     /// <p>One or more values that can be substituted in an expression.</p>
-    pub fn expression_attribute_values(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn expression_attribute_values(mut self, k: impl Into<std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.expression_attribute_values.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.expression_attribute_values = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.expression_attribute_values = Some(hash_map);
+                        self
     }
     /// <p>One or more values that can be substituted in an expression.</p>
-    pub fn set_expression_attribute_values(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-        >,
-    ) -> Self {
-        self.expression_attribute_values = input;
-        self
+    pub fn set_expression_attribute_values(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.expression_attribute_values = input; self
     }
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
-    pub fn return_values_on_condition_check_failure(
-        mut self,
-        input: crate::types::ReturnValuesOnConditionCheckFailure,
-    ) -> Self {
+    pub fn return_values_on_condition_check_failure(mut self, input: crate::types::ReturnValuesOnConditionCheckFailure) -> Self {
         self.return_values_on_condition_check_failure = Some(input);
         self
     }
     /// <p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and ALL_OLD.</p>
-    pub fn set_return_values_on_condition_check_failure(
-        mut self,
-        input: std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>,
-    ) -> Self {
-        self.return_values_on_condition_check_failure = input;
-        self
+    pub fn set_return_values_on_condition_check_failure(mut self, input: std::option::Option<crate::types::ReturnValuesOnConditionCheckFailure>) -> Self {
+        self.return_values_on_condition_check_failure = input; self
     }
     /// Consumes the builder and constructs a [`Put`](crate::types::Put).
     pub fn build(self) -> crate::types::Put {
         crate::types::Put {
-            item: self.item,
-            table_name: self.table_name,
-            condition_expression: self.condition_expression,
-            expression_attribute_names: self.expression_attribute_names,
-            expression_attribute_values: self.expression_attribute_values,
-            return_values_on_condition_check_failure: self.return_values_on_condition_check_failure,
+            item: self.item
+            ,
+            table_name: self.table_name
+            ,
+            condition_expression: self.condition_expression
+            ,
+            expression_attribute_names: self.expression_attribute_names
+            ,
+            expression_attribute_values: self.expression_attribute_values
+            ,
+            return_values_on_condition_check_failure: self.return_values_on_condition_check_failure
+            ,
         }
     }
 }
+

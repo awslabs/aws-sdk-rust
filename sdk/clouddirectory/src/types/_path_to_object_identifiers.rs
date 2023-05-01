@@ -3,7 +3,7 @@
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PathToObjectIdentifiers {
+pub struct PathToObjectIdentifiers  {
     /// <p>The path that is used to identify the object starting from directory root.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PathToObjectIdentifiers {
 }
 impl PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.object_identifiers.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl PathToObjectIdentifiersBuilder {
     }
     /// <p>The path that is used to identify the object starting from directory root.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// Appends an item to `object_identifiers`.
     ///
@@ -53,23 +52,22 @@ impl PathToObjectIdentifiersBuilder {
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
     pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.object_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.object_identifiers = Some(v);
-        self
+                        v.push(input.into());
+                        self.object_identifiers = Some(v);
+                        self
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn set_object_identifiers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.object_identifiers = input;
-        self
+    pub fn set_object_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.object_identifiers = input; self
     }
     /// Consumes the builder and constructs a [`PathToObjectIdentifiers`](crate::types::PathToObjectIdentifiers).
     pub fn build(self) -> crate::types::PathToObjectIdentifiers {
         crate::types::PathToObjectIdentifiers {
-            path: self.path,
-            object_identifiers: self.object_identifiers,
+            path: self.path
+            ,
+            object_identifiers: self.object_identifiers
+            ,
         }
     }
 }
+

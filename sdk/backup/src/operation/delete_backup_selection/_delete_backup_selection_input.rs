@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupSelectionInput {
+pub struct DeleteBackupSelectionInput  {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DeleteBackupSelectionInput {
 }
 impl DeleteBackupSelectionInput {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
-    pub fn selection_id(&self) -> std::option::Option<&str> {
+    pub fn selection_id(&self) -> std::option::Option<& str> {
         self.selection_id.as_deref()
     }
 }
 impl DeleteBackupSelectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder {
         crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DeleteBackupSelectionInputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn selection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DeleteBackupSelectionInputBuilder {
     }
     /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup plan.</p>
     pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.selection_id = input;
-        self
+        self.selection_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteBackupSelectionInput`](crate::operation::delete_backup_selection::DeleteBackupSelectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_backup_selection::DeleteBackupSelectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_backup_selection::DeleteBackupSelectionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_backup_selection::DeleteBackupSelectionInput {
-                backup_plan_id: self.backup_plan_id,
-                selection_id: self.selection_id,
-            },
+                backup_plan_id: self.backup_plan_id
+                ,
+                selection_id: self.selection_id
+                ,
+            }
         )
     }
 }
+

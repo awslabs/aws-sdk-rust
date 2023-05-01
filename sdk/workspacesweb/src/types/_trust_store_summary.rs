@@ -3,14 +3,14 @@
 /// <p>The summary of the trust store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrustStoreSummary {
+pub struct TrustStoreSummary  {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl TrustStoreSummary {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl TrustStoreSummaryBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// Consumes the builder and constructs a [`TrustStoreSummary`](crate::types::TrustStoreSummary).
     pub fn build(self) -> crate::types::TrustStoreSummary {
         crate::types::TrustStoreSummary {
-            trust_store_arn: self.trust_store_arn,
+            trust_store_arn: self.trust_store_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the constraints for a header match. Matches incoming requests with rule based on request header value before applying rule action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HeaderMatch {
+pub struct HeaderMatch  {
     /// <p>The name of the header.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct HeaderMatch {
 }
 impl HeaderMatch {
     /// <p>The name of the header.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The header match type.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::HeaderMatchType> {
+    pub fn r#match(&self) -> std::option::Option<& crate::types::HeaderMatchType> {
         self.r#match.as_ref()
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
@@ -51,8 +51,7 @@ impl HeaderMatchBuilder {
     }
     /// <p>The name of the header.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The header match type.</p>
     pub fn r#match(mut self, input: crate::types::HeaderMatchType) -> Self {
@@ -61,8 +60,7 @@ impl HeaderMatchBuilder {
     }
     /// <p>The header match type.</p>
     pub fn set_match(mut self, input: std::option::Option<crate::types::HeaderMatchType>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl HeaderMatchBuilder {
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn set_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
-        self.case_sensitive = input;
-        self
+        self.case_sensitive = input; self
     }
     /// Consumes the builder and constructs a [`HeaderMatch`](crate::types::HeaderMatch).
     pub fn build(self) -> crate::types::HeaderMatch {
         crate::types::HeaderMatch {
-            name: self.name,
-            r#match: self.r#match,
-            case_sensitive: self.case_sensitive,
+            name: self.name
+            ,
+            r#match: self.r#match
+            ,
+            case_sensitive: self.case_sensitive
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains details about the start of the execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExecutionStartedEventDetails {
+pub struct ExecutionStartedEventDetails  {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
@@ -16,21 +16,19 @@ pub struct ExecutionStartedEventDetails {
 }
 impl ExecutionStartedEventDetails {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ExecutionStartedEventDetails {
+impl  std::fmt::Debug for ExecutionStartedEventDetails  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionStartedEventDetails");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
@@ -62,8 +60,7 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -71,12 +68,8 @@ impl ExecutionStartedEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
-        self.input_details = input;
-        self
+    pub fn set_input_details(mut self, input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
+        self.input_details = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,15 +78,17 @@ impl ExecutionStartedEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`ExecutionStartedEventDetails`](crate::types::ExecutionStartedEventDetails).
     pub fn build(self) -> crate::types::ExecutionStartedEventDetails {
         crate::types::ExecutionStartedEventDetails {
-            input: self.input,
-            input_details: self.input_details,
-            role_arn: self.role_arn,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
@@ -106,3 +101,4 @@ impl std::fmt::Debug for ExecutionStartedEventDetailsBuilder {
         formatter.finish()
     }
 }
+

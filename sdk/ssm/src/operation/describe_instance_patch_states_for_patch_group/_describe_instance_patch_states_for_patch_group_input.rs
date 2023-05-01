@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancePatchStatesForPatchGroupInput {
+pub struct DescribeInstancePatchStatesForPatchGroupInput  {
     /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
     #[doc(hidden)]
     pub patch_group: std::option::Option<std::string::String>,
-    /// <p>Each entry in the array is a structure containing:</p>
-    /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <p>Each entry in the array is a structure containing:</p> 
+    /// <ul> 
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li> 
+    /// <li> <p>Values (array containing a single string)</p> </li> 
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::InstancePatchStateFilter>>,
@@ -23,20 +23,20 @@ pub struct DescribeInstancePatchStatesForPatchGroupInput {
 }
 impl DescribeInstancePatchStatesForPatchGroupInput {
     /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> std::option::Option<& str> {
         self.patch_group.as_deref()
     }
-    /// <p>Each entry in the array is a structure containing:</p>
-    /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <p>Each entry in the array is a structure containing:</p> 
+    /// <ul> 
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li> 
+    /// <li> <p>Values (array containing a single string)</p> </li> 
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::InstancePatchStateFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::InstancePatchStateFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of patches to return (per page).</p>
@@ -46,7 +46,7 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
 }
 impl DescribeInstancePatchStatesForPatchGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
-    pub fn builder() -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder{
+    pub fn builder() -> crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder {
         crate::operation::describe_instance_patch_states_for_patch_group::builders::DescribeInstancePatchStatesForPatchGroupInputBuilder::default()
     }
 }
@@ -68,37 +68,32 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     }
     /// <p>The name of the patch group for which the patch state information should be retrieved.</p>
     pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.patch_group = input;
-        self
+        self.patch_group = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Each entry in the array is a structure containing:</p>
-    /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <p>Each entry in the array is a structure containing:</p> 
+    /// <ul> 
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li> 
+    /// <li> <p>Values (array containing a single string)</p> </li> 
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::InstancePatchStateFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Each entry in the array is a structure containing:</p>
-    /// <ul>
-    /// <li> <p>Key (string between 1 and 200 characters)</p> </li>
-    /// <li> <p>Values (array containing a single string)</p> </li>
-    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li>
+    /// <p>Each entry in the array is a structure containing:</p> 
+    /// <ul> 
+    /// <li> <p>Key (string between 1 and 200 characters)</p> </li> 
+    /// <li> <p>Values (array containing a single string)</p> </li> 
+    /// <li> <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstancePatchStateFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstancePatchStateFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +102,7 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -117,11 +111,10 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeInstancePatchStatesForPatchGroupInput`](crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_instance_patch_states_for_patch_group::DescribeInstancePatchStatesForPatchGroupInput {
                 patch_group: self.patch_group
@@ -136,3 +129,4 @@ impl DescribeInstancePatchStatesForPatchGroupInputBuilder {
         )
     }
 }
+

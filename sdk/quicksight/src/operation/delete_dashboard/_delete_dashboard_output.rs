@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardOutput {
+pub struct DeleteDashboardOutput  {
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
@@ -23,23 +23,23 @@ impl DeleteDashboardOutput {
         self.status
     }
     /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDashboardOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteDashboardOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDashboardOutput`](crate::operation::delete_dashboard::DeleteDashboardOutput).
     pub fn builder() -> crate::operation::delete_dashboard::builders::DeleteDashboardOutputBuilder {
@@ -65,8 +65,7 @@ impl DeleteDashboardOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +74,7 @@ impl DeleteDashboardOutputBuilder {
     }
     /// <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +83,7 @@ impl DeleteDashboardOutputBuilder {
     }
     /// <p>The ID of the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,26 +92,31 @@ impl DeleteDashboardOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteDashboardOutput`](crate::operation::delete_dashboard::DeleteDashboardOutput).
     pub fn build(self) -> crate::operation::delete_dashboard::DeleteDashboardOutput {
         crate::operation::delete_dashboard::DeleteDashboardOutput {
-            status: self.status.unwrap_or_default(),
-            arn: self.arn,
-            dashboard_id: self.dashboard_id,
-            request_id: self.request_id,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            arn: self.arn
+            ,
+            dashboard_id: self.dashboard_id
+            ,
+            request_id: self.request_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

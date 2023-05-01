@@ -3,7 +3,7 @@
 /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SslProperties {
+pub struct SslProperties  {
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     #[doc(hidden)]
     pub disable_ssl: bool,
@@ -35,13 +35,15 @@ impl SslPropertiesBuilder {
     }
     /// <p>A Boolean option to control whether SSL should be disabled.</p>
     pub fn set_disable_ssl(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_ssl = input;
-        self
+        self.disable_ssl = input; self
     }
     /// Consumes the builder and constructs a [`SslProperties`](crate::types::SslProperties).
     pub fn build(self) -> crate::types::SslProperties {
         crate::types::SslProperties {
-            disable_ssl: self.disable_ssl.unwrap_or_default(),
+            disable_ssl: self.disable_ssl
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

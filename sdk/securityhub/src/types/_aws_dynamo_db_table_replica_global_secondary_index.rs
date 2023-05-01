@@ -3,24 +3,21 @@
 /// <p>Information about a global secondary index for a DynamoDB table replica.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndex {
+pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndex  {
     /// <p>The name of the index.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
     #[doc(hidden)]
-    pub provisioned_throughput_override:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+    pub provisioned_throughput_override: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
     /// <p>The name of the index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    pub fn provisioned_throughput_override(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+    pub fn provisioned_throughput_override(&self) -> std::option::Option<& crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
 }
@@ -36,8 +33,7 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
     pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) provisioned_throughput_override:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+    pub(crate) provisioned_throughput_override: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
     /// <p>The name of the index.</p>
@@ -47,30 +43,25 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
     }
     /// <p>The name of the index.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    pub fn provisioned_throughput_override(
-        mut self,
-        input: crate::types::AwsDynamoDbTableProvisionedThroughputOverride,
-    ) -> Self {
+    pub fn provisioned_throughput_override(mut self, input: crate::types::AwsDynamoDbTableProvisionedThroughputOverride) -> Self {
         self.provisioned_throughput_override = Some(input);
         self
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
-    pub fn set_provisioned_throughput_override(
-        mut self,
-        input: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
-    ) -> Self {
-        self.provisioned_throughput_override = input;
-        self
+    pub fn set_provisioned_throughput_override(mut self, input: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>) -> Self {
+        self.provisioned_throughput_override = input; self
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
     pub fn build(self) -> crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex {
         crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex {
-            index_name: self.index_name,
-            provisioned_throughput_override: self.provisioned_throughput_override,
+            index_name: self.index_name
+            ,
+            provisioned_throughput_override: self.provisioned_throughput_override
+            ,
         }
     }
 }
+

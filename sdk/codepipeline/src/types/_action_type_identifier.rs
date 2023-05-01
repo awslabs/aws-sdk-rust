@@ -3,15 +3,15 @@
 /// <p>Specifies the category, owner, provider, and version of the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeIdentifier {
-    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+pub struct ActionTypeIdentifier  {
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub category: std::option::Option<crate::types::ActionCategory>,
@@ -26,28 +26,28 @@ pub struct ActionTypeIdentifier {
     pub version: std::option::Option<std::string::String>,
 }
 impl ActionTypeIdentifier {
-    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
-    pub fn category(&self) -> std::option::Option<&crate::types::ActionCategory> {
+    pub fn category(&self) -> std::option::Option<& crate::types::ActionCategory> {
         self.category.as_ref()
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -68,34 +68,30 @@ pub struct ActionTypeIdentifierBuilder {
     pub(crate) version: std::option::Option<std::string::String>,
 }
 impl ActionTypeIdentifierBuilder {
-    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = Some(input);
         self
     }
-    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
-    pub fn set_category(
-        mut self,
-        input: std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: std::option::Option<crate::types::ActionCategory>) -> Self {
+        self.category = input; self
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +100,7 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
     pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +109,7 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
     pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>A string that describes the action type version.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,16 +118,20 @@ impl ActionTypeIdentifierBuilder {
     }
     /// <p>A string that describes the action type version.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`ActionTypeIdentifier`](crate::types::ActionTypeIdentifier).
     pub fn build(self) -> crate::types::ActionTypeIdentifier {
         crate::types::ActionTypeIdentifier {
-            category: self.category,
-            owner: self.owner,
-            provider: self.provider,
-            version: self.version,
+            category: self.category
+            ,
+            owner: self.owner
+            ,
+            provider: self.provider
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

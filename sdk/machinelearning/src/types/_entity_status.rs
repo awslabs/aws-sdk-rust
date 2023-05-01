@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitystatus = unimplemented!();
 /// match entitystatus {
@@ -33,7 +33,7 @@
 /// Specifically, when `entitystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntityStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -67,15 +67,7 @@
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntityStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -88,48 +80,47 @@ pub enum EntityStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "COMPLETED" => EntityStatus::Completed,
-            "DELETED" => EntityStatus::Deleted,
-            "FAILED" => EntityStatus::Failed,
-            "INPROGRESS" => EntityStatus::Inprogress,
-            "PENDING" => EntityStatus::Pending,
-            other => {
-                EntityStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "COMPLETED" => EntityStatus::Completed,
+"DELETED" => EntityStatus::Deleted,
+"FAILED" => EntityStatus::Failed,
+"INPROGRESS" => EntityStatus::Inprogress,
+"PENDING" => EntityStatus::Pending,
+other => EntityStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for EntityStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntityStatus::from(s))
+                }
+            }
 impl EntityStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EntityStatus::Completed => "COMPLETED",
-            EntityStatus::Deleted => "DELETED",
-            EntityStatus::Failed => "FAILED",
-            EntityStatus::Inprogress => "INPROGRESS",
-            EntityStatus::Pending => "PENDING",
-            EntityStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EntityStatus::Completed => "COMPLETED",
+    EntityStatus::Deleted => "DELETED",
+    EntityStatus::Failed => "FAILED",
+    EntityStatus::Inprogress => "INPROGRESS",
+    EntityStatus::Pending => "PENDING",
+    EntityStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"]
+                }
+            }
 impl AsRef<str> for EntityStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

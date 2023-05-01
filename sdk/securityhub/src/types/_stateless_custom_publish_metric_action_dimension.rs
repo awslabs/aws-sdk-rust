@@ -3,14 +3,14 @@
 /// <p>Defines a CloudWatch dimension value to publish.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatelessCustomPublishMetricActionDimension {
+pub struct StatelessCustomPublishMetricActionDimension  {
     /// <p>The value to use for the custom metric dimension.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl StatelessCustomPublishMetricActionDimension {
     /// <p>The value to use for the custom metric dimension.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl StatelessCustomPublishMetricActionDimensionBuilder {
     }
     /// <p>The value to use for the custom metric dimension.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`StatelessCustomPublishMetricActionDimension`](crate::types::StatelessCustomPublishMetricActionDimension).
     pub fn build(self) -> crate::types::StatelessCustomPublishMetricActionDimension {
-        crate::types::StatelessCustomPublishMetricActionDimension { value: self.value }
+        crate::types::StatelessCustomPublishMetricActionDimension {
+            value: self.value
+            ,
+        }
     }
 }
+

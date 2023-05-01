@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuntimeConfigurationOutput {
+pub struct DescribeRuntimeConfigurationOutput  {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
     #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::types::RuntimeConfiguration>,
@@ -10,20 +10,18 @@ pub struct DescribeRuntimeConfigurationOutput {
 }
 impl DescribeRuntimeConfigurationOutput {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
-    pub fn runtime_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> std::option::Option<& crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRuntimeConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeConfigurationOutput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationOutputBuilder {
         crate::operation::describe_runtime_configuration::builders::DescribeRuntimeConfigurationOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DescribeRuntimeConfigurationOutputBuilder {
         self
     }
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
-    pub fn set_runtime_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RuntimeConfiguration>,
-    ) -> Self {
-        self.runtime_configuration = input;
-        self
+    pub fn set_runtime_configuration(mut self, input: std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
+        self.runtime_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeRuntimeConfigurationOutput`](crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput {
         crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput {
-            runtime_configuration: self.runtime_configuration,
+            runtime_configuration: self.runtime_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteActionInput {
+pub struct DeleteActionInput  {
     /// <p>The name of the action to delete.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
 }
 impl DeleteActionInput {
     /// <p>The name of the action to delete.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteActionInputBuilder {
     }
     /// <p>The name of the action to delete.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input;
-        self
+        self.action_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteActionInput`](crate::operation::delete_action::DeleteActionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_action::DeleteActionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_action::DeleteActionInput {
-            action_name: self.action_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_action::DeleteActionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_action::DeleteActionInput {
+                action_name: self.action_name
+                ,
+            }
+        )
     }
 }
+

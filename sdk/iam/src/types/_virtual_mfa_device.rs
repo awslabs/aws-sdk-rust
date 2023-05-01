@@ -3,7 +3,7 @@
 /// <p>Contains information about a virtual MFA device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VirtualMfaDevice {
+pub struct VirtualMfaDevice  {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     #[doc(hidden)]
     pub serial_number: std::option::Option<std::string::String>,
@@ -25,31 +25,31 @@ pub struct VirtualMfaDevice {
 }
 impl VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
-    pub fn base32_string_seed(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn base32_string_seed(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.base32_string_seed.as_ref()
     }
     /// <p> A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code> value is base64-encoded. </p>
-    pub fn qr_code_png(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn qr_code_png(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.qr_code_png.as_ref()
     }
     /// <p>The IAM user associated with this virtual MFA device.</p>
-    pub fn user(&self) -> std::option::Option<&crate::types::User> {
+    pub fn user(&self) -> std::option::Option<& crate::types::User> {
         self.user.as_ref()
     }
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
-    pub fn enable_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enable_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enable_date.as_ref()
     }
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for VirtualMfaDevice {
+impl  std::fmt::Debug for VirtualMfaDevice  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VirtualMfaDevice");
         formatter.field("serial_number", &self.serial_number);
@@ -87,8 +87,7 @@ impl VirtualMfaDeviceBuilder {
     }
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
     pub fn base32_string_seed(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -96,12 +95,8 @@ impl VirtualMfaDeviceBuilder {
         self
     }
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
-    pub fn set_base32_string_seed(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.base32_string_seed = input;
-        self
+    pub fn set_base32_string_seed(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.base32_string_seed = input; self
     }
     /// <p> A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code> value is base64-encoded. </p>
     pub fn qr_code_png(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -110,8 +105,7 @@ impl VirtualMfaDeviceBuilder {
     }
     /// <p> A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code> where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code> value is base64-encoded. </p>
     pub fn set_qr_code_png(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.qr_code_png = input;
-        self
+        self.qr_code_png = input; self
     }
     /// <p>The IAM user associated with this virtual MFA device.</p>
     pub fn user(mut self, input: crate::types::User) -> Self {
@@ -120,8 +114,7 @@ impl VirtualMfaDeviceBuilder {
     }
     /// <p>The IAM user associated with this virtual MFA device.</p>
     pub fn set_user(mut self, input: std::option::Option<crate::types::User>) -> Self {
-        self.user = input;
-        self
+        self.user = input; self
     }
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
     pub fn enable_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -129,12 +122,8 @@ impl VirtualMfaDeviceBuilder {
         self
     }
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
-    pub fn set_enable_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.enable_date = input;
-        self
+    pub fn set_enable_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.enable_date = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -143,27 +132,29 @@ impl VirtualMfaDeviceBuilder {
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`VirtualMfaDevice`](crate::types::VirtualMfaDevice).
     pub fn build(self) -> crate::types::VirtualMfaDevice {
         crate::types::VirtualMfaDevice {
-            serial_number: self.serial_number,
-            base32_string_seed: self.base32_string_seed,
-            qr_code_png: self.qr_code_png,
-            user: self.user,
-            enable_date: self.enable_date,
-            tags: self.tags,
+            serial_number: self.serial_number
+            ,
+            base32_string_seed: self.base32_string_seed
+            ,
+            qr_code_png: self.qr_code_png
+            ,
+            user: self.user
+            ,
+            enable_date: self.enable_date
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
@@ -179,3 +170,4 @@ impl std::fmt::Debug for VirtualMfaDeviceBuilder {
         formatter.finish()
     }
 }
+

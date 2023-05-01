@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssessmentOutput {
+pub struct GetAssessmentOutput  {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::types::Assessment>,
@@ -13,19 +13,19 @@ pub struct GetAssessmentOutput {
 }
 impl GetAssessmentOutput {
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
-    pub fn assessment(&self) -> std::option::Option<&crate::types::Assessment> {
+    pub fn assessment(&self) -> std::option::Option<& crate::types::Assessment> {
         self.assessment.as_ref()
     }
     /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
-    pub fn user_role(&self) -> std::option::Option<&crate::types::Role> {
+    pub fn user_role(&self) -> std::option::Option<& crate::types::Role> {
         self.user_role.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAssessmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
     pub fn builder() -> crate::operation::get_assessment::builders::GetAssessmentOutputBuilder {
@@ -49,8 +49,7 @@ impl GetAssessmentOutputBuilder {
     }
     /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
     pub fn set_assessment(mut self, input: std::option::Option<crate::types::Assessment>) -> Self {
-        self.assessment = input;
-        self
+        self.assessment = input; self
     }
     /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
     pub fn user_role(mut self, input: crate::types::Role) -> Self {
@@ -59,24 +58,26 @@ impl GetAssessmentOutputBuilder {
     }
     /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
     pub fn set_user_role(mut self, input: std::option::Option<crate::types::Role>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAssessmentOutput`](crate::operation::get_assessment::GetAssessmentOutput).
     pub fn build(self) -> crate::operation::get_assessment::GetAssessmentOutput {
         crate::operation::get_assessment::GetAssessmentOutput {
-            assessment: self.assessment,
-            user_role: self.user_role,
+            assessment: self.assessment
+            ,
+            user_role: self.user_role
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

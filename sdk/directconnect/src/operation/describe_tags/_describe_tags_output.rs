@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsOutput {
+pub struct DescribeTagsOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
@@ -10,15 +10,15 @@ pub struct DescribeTagsOutput {
 }
 impl DescribeTagsOutput {
     /// <p>Information about the tags.</p>
-    pub fn resource_tags(&self) -> std::option::Option<&[crate::types::ResourceTag]> {
+    pub fn resource_tags(&self) -> std::option::Option<& [crate::types::ResourceTag]> {
         self.resource_tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
     pub fn builder() -> crate::operation::describe_tags::builders::DescribeTagsOutputBuilder {
@@ -41,32 +41,30 @@ impl DescribeTagsOutputBuilder {
     /// <p>Information about the tags.</p>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-        v.push(input);
-        self.resource_tags = Some(v);
-        self
+                        v.push(input);
+                        self.resource_tags = Some(v);
+                        self
     }
     /// <p>Information about the tags.</p>
-    pub fn set_resource_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
-        self.resource_tags = input;
-        self
+    pub fn set_resource_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>) -> Self {
+        self.resource_tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
     pub fn build(self) -> crate::operation::describe_tags::DescribeTagsOutput {
         crate::operation::describe_tags::DescribeTagsOutput {
-            resource_tags: self.resource_tags,
+            resource_tags: self.resource_tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

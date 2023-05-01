@@ -63,3 +63,4 @@ pub mod update_logging_configuration;
 
 /// Types for the `UpdateWorkspaceAlias` operation.
 pub mod update_workspace_alias;
+

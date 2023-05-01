@@ -3,7 +3,7 @@
 /// Contains summary configuration for a Multiplex event.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MultiplexSettingsSummary {
+pub struct MultiplexSettingsSummary  {
     /// Transport stream bit rate.
     #[doc(hidden)]
     pub transport_stream_bitrate: i32,
@@ -35,13 +35,15 @@ impl MultiplexSettingsSummaryBuilder {
     }
     /// Transport stream bit rate.
     pub fn set_transport_stream_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.transport_stream_bitrate = input;
-        self
+        self.transport_stream_bitrate = input; self
     }
     /// Consumes the builder and constructs a [`MultiplexSettingsSummary`](crate::types::MultiplexSettingsSummary).
     pub fn build(self) -> crate::types::MultiplexSettingsSummary {
         crate::types::MultiplexSettingsSummary {
-            transport_stream_bitrate: self.transport_stream_bitrate.unwrap_or_default(),
+            transport_stream_bitrate: self.transport_stream_bitrate
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

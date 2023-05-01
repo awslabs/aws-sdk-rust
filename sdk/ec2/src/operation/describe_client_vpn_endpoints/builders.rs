@@ -4,77 +4,55 @@ pub use crate::operation::describe_client_vpn_endpoints::_describe_client_vpn_en
 pub use crate::operation::describe_client_vpn_endpoints::_describe_client_vpn_endpoints_input::DescribeClientVpnEndpointsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeClientVpnEndpoints`.
-///
+/// 
 /// <p>Describes one or more Client VPN endpoints in the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClientVpnEndpointsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder
             }
-impl DescribeClientVpnEndpointsFluentBuilder {
+impl DescribeClientVpnEndpointsFluentBuilder  {
     /// Creates a new `DescribeClientVpnEndpoints`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpoints,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpointsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator{
-        crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator {
+                            crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `ClientVpnEndpointIds`.
     ///
     /// To override the contents of this collection use [`set_client_vpn_endpoint_ids`](Self::set_client_vpn_endpoint_ids).
@@ -85,10 +63,7 @@ impl DescribeClientVpnEndpointsFluentBuilder {
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_client_vpn_endpoint_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_client_vpn_endpoint_ids(input);
         self
     }
@@ -116,24 +91,21 @@ impl DescribeClientVpnEndpointsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    /// <ul>
-    /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li>
-    /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li>
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li> 
+    /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    /// <ul>
-    /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li>
-    /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li>
+    /// <p>One or more filters. Filter names and values are case-sensitive.</p> 
+    /// <ul> 
+    /// <li> <p> <code>endpoint-id</code> - The ID of the Client VPN endpoint.</p> </li> 
+    /// <li> <p> <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -148,3 +120,4 @@ impl DescribeClientVpnEndpointsFluentBuilder {
         self
     }
 }
+

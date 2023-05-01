@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateControlPanelOutput {
+pub struct UpdateControlPanelOutput  {
     /// <p>The control panel to update.</p>
     #[doc(hidden)]
     pub control_panel: std::option::Option<crate::types::ControlPanel>,
@@ -10,19 +10,18 @@ pub struct UpdateControlPanelOutput {
 }
 impl UpdateControlPanelOutput {
     /// <p>The control panel to update.</p>
-    pub fn control_panel(&self) -> std::option::Option<&crate::types::ControlPanel> {
+    pub fn control_panel(&self) -> std::option::Option<& crate::types::ControlPanel> {
         self.control_panel.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateControlPanelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateControlPanelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateControlPanelOutput`](crate::operation::update_control_panel::UpdateControlPanelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_control_panel::builders::UpdateControlPanelOutputBuilder {
+    pub fn builder() -> crate::operation::update_control_panel::builders::UpdateControlPanelOutputBuilder {
         crate::operation::update_control_panel::builders::UpdateControlPanelOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateControlPanelOutputBuilder {
         self
     }
     /// <p>The control panel to update.</p>
-    pub fn set_control_panel(
-        mut self,
-        input: std::option::Option<crate::types::ControlPanel>,
-    ) -> Self {
-        self.control_panel = input;
-        self
+    pub fn set_control_panel(mut self, input: std::option::Option<crate::types::ControlPanel>) -> Self {
+        self.control_panel = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateControlPanelOutput`](crate::operation::update_control_panel::UpdateControlPanelOutput).
     pub fn build(self) -> crate::operation::update_control_panel::UpdateControlPanelOutput {
         crate::operation::update_control_panel::UpdateControlPanelOutput {
-            control_panel: self.control_panel,
+            control_panel: self.control_panel
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

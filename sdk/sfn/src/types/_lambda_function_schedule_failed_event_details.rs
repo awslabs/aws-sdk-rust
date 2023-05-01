@@ -3,7 +3,7 @@
 /// <p>Contains details about a failed Lambda function schedule event that occurred during an execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LambdaFunctionScheduleFailedEventDetails {
+pub struct LambdaFunctionScheduleFailedEventDetails  {
     /// <p>The error code of the failure.</p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct LambdaFunctionScheduleFailedEventDetails {
 }
 impl LambdaFunctionScheduleFailedEventDetails {
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> std::option::Option<& str> {
         self.cause.as_deref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionScheduleFailedEventDetails {
+impl  std::fmt::Debug for LambdaFunctionScheduleFailedEventDetails  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionScheduleFailedEventDetails");
         formatter.field("error", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl LambdaFunctionScheduleFailedEventDetailsBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl LambdaFunctionScheduleFailedEventDetailsBuilder {
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionScheduleFailedEventDetails`](crate::types::LambdaFunctionScheduleFailedEventDetails).
     pub fn build(self) -> crate::types::LambdaFunctionScheduleFailedEventDetails {
         crate::types::LambdaFunctionScheduleFailedEventDetails {
-            error: self.error,
-            cause: self.cause,
+            error: self.error
+            ,
+            cause: self.cause
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for LambdaFunctionScheduleFailedEventDetailsBuilder {
         formatter.finish()
     }
 }
+

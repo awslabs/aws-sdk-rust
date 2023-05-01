@@ -3,23 +3,21 @@
 /// <p>DescribeLocationEfsRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationEfsInput {
+pub struct DescribeLocationEfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationEfsInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl DescribeLocationEfsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder {
-        crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder {
+        crate::operation::describe_location_efs::builders::DescribeLocationEfsInputBuilder::default()
     }
 }
 
@@ -37,20 +35,16 @@ impl DescribeLocationEfsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS file system location that you want information about.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLocationEfsInput`](crate::operation::describe_location_efs::DescribeLocationEfsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_location_efs::DescribeLocationEfsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_location_efs::DescribeLocationEfsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_location_efs::DescribeLocationEfsInput {
-                location_arn: self.location_arn,
-            },
+                location_arn: self.location_arn
+                ,
+            }
         )
     }
 }
+

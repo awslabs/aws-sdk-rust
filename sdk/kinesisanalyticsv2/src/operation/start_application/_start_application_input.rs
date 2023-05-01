@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartApplicationInput {
+pub struct StartApplicationInput  {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct StartApplicationInput {
 }
 impl StartApplicationInput {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
-    pub fn run_configuration(&self) -> std::option::Option<&crate::types::RunConfiguration> {
+    pub fn run_configuration(&self) -> std::option::Option<& crate::types::RunConfiguration> {
         self.run_configuration.as_ref()
     }
 }
 impl StartApplicationInput {
     /// Creates a new builder-style object to manufacture [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
-    pub fn builder() -> crate::operation::start_application::builders::StartApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_application::builders::StartApplicationInputBuilder {
         crate::operation::start_application::builders::StartApplicationInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl StartApplicationInputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
     pub fn run_configuration(mut self, input: crate::types::RunConfiguration) -> Self {
@@ -52,23 +50,19 @@ impl StartApplicationInputBuilder {
         self
     }
     /// <p>Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.</p>
-    pub fn set_run_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RunConfiguration>,
-    ) -> Self {
-        self.run_configuration = input;
-        self
+    pub fn set_run_configuration(mut self, input: std::option::Option<crate::types::RunConfiguration>) -> Self {
+        self.run_configuration = input; self
     }
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_application::StartApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_application::StartApplicationInput {
-            application_name: self.application_name,
-            run_configuration: self.run_configuration,
-        })
+    pub fn build(self) -> Result<crate::operation::start_application::StartApplicationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_application::StartApplicationInput {
+                application_name: self.application_name
+                ,
+                run_configuration: self.run_configuration
+                ,
+            }
+        )
     }
 }
+

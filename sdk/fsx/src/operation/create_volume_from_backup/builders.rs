@@ -4,72 +4,49 @@ pub use crate::operation::create_volume_from_backup::_create_volume_from_backup_
 pub use crate::operation::create_volume_from_backup::_create_volume_from_backup_input::CreateVolumeFromBackupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateVolumeFromBackup`.
-///
+/// 
 /// <p>Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx volume backup.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVolumeFromBackupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder,
-}
-impl CreateVolumeFromBackupFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_volume_from_backup::builders::CreateVolumeFromBackupInputBuilder
+            }
+impl CreateVolumeFromBackupFluentBuilder  {
     /// Creates a new `CreateVolumeFromBackup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_volume_from_backup::CreateVolumeFromBackupError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_volume_from_backup::CreateVolumeFromBackup, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_volume_from_backup::CreateVolumeFromBackupError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_volume_from_backup::CreateVolumeFromBackupOutput, aws_smithy_http::result::SdkError<crate::operation::create_volume_from_backup::CreateVolumeFromBackupError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the source backup. Specifies the backup that you are copying.</p>
     pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
@@ -86,10 +63,7 @@ impl CreateVolumeFromBackupFluentBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -104,18 +78,12 @@ impl CreateVolumeFromBackupFluentBuilder {
         self
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn ontap_configuration(
-        mut self,
-        input: crate::types::CreateOntapVolumeConfiguration,
-    ) -> Self {
+    pub fn ontap_configuration(mut self, input: crate::types::CreateOntapVolumeConfiguration) -> Self {
         self.inner = self.inner.ontap_configuration(input);
         self
     }
     /// <p>Specifies the configuration of the ONTAP volume that you are creating.</p>
-    pub fn set_ontap_configuration(
-        mut self,
-        input: std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
-    ) -> Self {
+    pub fn set_ontap_configuration(mut self, input: std::option::Option<crate::types::CreateOntapVolumeConfiguration>) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
@@ -129,11 +97,9 @@ impl CreateVolumeFromBackupFluentBuilder {
         self
     }
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

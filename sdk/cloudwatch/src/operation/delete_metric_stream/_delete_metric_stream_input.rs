@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMetricStreamInput {
+pub struct DeleteMetricStreamInput  {
     /// <p>The name of the metric stream to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMetricStreamInput {
     /// <p>The name of the metric stream to delete.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteMetricStreamInput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricStreamInput`](crate::operation::delete_metric_stream::DeleteMetricStreamInput).
-    pub fn builder(
-    ) -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamInputBuilder {
+    pub fn builder() -> crate::operation::delete_metric_stream::builders::DeleteMetricStreamInputBuilder {
         crate::operation::delete_metric_stream::builders::DeleteMetricStreamInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteMetricStreamInputBuilder {
     }
     /// <p>The name of the metric stream to delete.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMetricStreamInput`](crate::operation::delete_metric_stream::DeleteMetricStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_metric_stream::DeleteMetricStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_metric_stream::DeleteMetricStreamInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_metric_stream::DeleteMetricStreamInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_metric_stream::DeleteMetricStreamInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

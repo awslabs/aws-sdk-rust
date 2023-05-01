@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelectResourceConfigOutput {
+pub struct SelectResourceConfigOutput  {
     /// <p>Returns the results for the SQL query.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,27 +16,26 @@ pub struct SelectResourceConfigOutput {
 }
 impl SelectResourceConfigOutput {
     /// <p>Returns the results for the SQL query.</p>
-    pub fn results(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn results(&self) -> std::option::Option<& [std::string::String]> {
         self.results.as_deref()
     }
     /// <p>Returns the <code>QueryInfo</code> object.</p>
-    pub fn query_info(&self) -> std::option::Option<&crate::types::QueryInfo> {
+    pub fn query_info(&self) -> std::option::Option<& crate::types::QueryInfo> {
         self.query_info.as_ref()
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SelectResourceConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SelectResourceConfigOutput {
     /// Creates a new builder-style object to manufacture [`SelectResourceConfigOutput`](crate::operation::select_resource_config::SelectResourceConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder {
+    pub fn builder() -> crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder {
         crate::operation::select_resource_config::builders::SelectResourceConfigOutputBuilder::default()
     }
 }
@@ -58,17 +57,13 @@ impl SelectResourceConfigOutputBuilder {
     /// <p>Returns the results for the SQL query.</p>
     pub fn results(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input.into());
-        self.results = Some(v);
-        self
+                        v.push(input.into());
+                        self.results = Some(v);
+                        self
     }
     /// <p>Returns the results for the SQL query.</p>
-    pub fn set_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.results = input; self
     }
     /// <p>Returns the <code>QueryInfo</code> object.</p>
     pub fn query_info(mut self, input: crate::types::QueryInfo) -> Self {
@@ -77,8 +72,7 @@ impl SelectResourceConfigOutputBuilder {
     }
     /// <p>Returns the <code>QueryInfo</code> object.</p>
     pub fn set_query_info(mut self, input: std::option::Option<crate::types::QueryInfo>) -> Self {
-        self.query_info = input;
-        self
+        self.query_info = input; self
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,25 +81,28 @@ impl SelectResourceConfigOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SelectResourceConfigOutput`](crate::operation::select_resource_config::SelectResourceConfigOutput).
     pub fn build(self) -> crate::operation::select_resource_config::SelectResourceConfigOutput {
         crate::operation::select_resource_config::SelectResourceConfigOutput {
-            results: self.results,
-            query_info: self.query_info,
-            next_token: self.next_token,
+            results: self.results
+            ,
+            query_info: self.query_info
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

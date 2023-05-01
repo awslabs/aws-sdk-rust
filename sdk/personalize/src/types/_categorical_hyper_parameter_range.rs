@@ -3,7 +3,7 @@
 /// <p>Provides the name and range of a categorical hyperparameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoricalHyperParameterRange {
+pub struct CategoricalHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CategoricalHyperParameterRange {
 }
 impl CategoricalHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of the categories for the hyperparameter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CategoricalHyperParameterRangeBuilder {
     }
     /// <p>The name of the hyperparameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -53,23 +52,22 @@ impl CategoricalHyperParameterRangeBuilder {
     /// <p>A list of the categories for the hyperparameter.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>A list of the categories for the hyperparameter.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`CategoricalHyperParameterRange`](crate::types::CategoricalHyperParameterRange).
     pub fn build(self) -> crate::types::CategoricalHyperParameterRange {
         crate::types::CategoricalHyperParameterRange {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerRecipePolicyInput {
+pub struct GetContainerRecipePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetContainerRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-    pub fn container_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn container_recipe_arn(&self) -> std::option::Option<& str> {
         self.container_recipe_arn.as_deref()
     }
 }
 impl GetContainerRecipePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetContainerRecipePolicyInput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder {
         crate::operation::get_container_recipe_policy::builders::GetContainerRecipePolicyInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl GetContainerRecipePolicyInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the container recipe for the policy being requested.</p>
-    pub fn set_container_recipe_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.container_recipe_arn = input;
-        self
+    pub fn set_container_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.container_recipe_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetContainerRecipePolicyInput`](crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_container_recipe_policy::GetContainerRecipePolicyInput {
-                container_recipe_arn: self.container_recipe_arn,
-            },
+                container_recipe_arn: self.container_recipe_arn
+                ,
+            }
         )
     }
 }
+

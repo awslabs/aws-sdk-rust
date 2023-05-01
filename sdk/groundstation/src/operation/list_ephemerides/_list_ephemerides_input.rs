@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEphemeridesInput {
+pub struct ListEphemeridesInput  {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
     #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct ListEphemeridesInput {
 }
 impl ListEphemeridesInput {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    pub fn satellite_id(&self) -> std::option::Option<&str> {
+    pub fn satellite_id(&self) -> std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn status_list(&self) -> std::option::Option<&[crate::types::EphemerisStatus]> {
+    pub fn status_list(&self) -> std::option::Option<& [crate::types::EphemerisStatus]> {
         self.status_list.as_deref()
     }
     /// <p>Maximum number of ephemerides to return.</p>
@@ -44,7 +44,7 @@ impl ListEphemeridesInput {
         self.max_results
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -74,8 +74,7 @@ impl ListEphemeridesInputBuilder {
     }
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
     pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.satellite_id = input;
-        self
+        self.satellite_id = input; self
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -83,12 +82,8 @@ impl ListEphemeridesInputBuilder {
         self
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -97,8 +92,7 @@ impl ListEphemeridesInputBuilder {
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// Appends an item to `status_list`.
     ///
@@ -107,17 +101,13 @@ impl ListEphemeridesInputBuilder {
     /// <p>The list of ephemeris status to return.</p>
     pub fn status_list(mut self, input: crate::types::EphemerisStatus) -> Self {
         let mut v = self.status_list.unwrap_or_default();
-        v.push(input);
-        self.status_list = Some(v);
-        self
+                        v.push(input);
+                        self.status_list = Some(v);
+                        self
     }
     /// <p>The list of ephemeris status to return.</p>
-    pub fn set_status_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EphemerisStatus>>,
-    ) -> Self {
-        self.status_list = input;
-        self
+    pub fn set_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::EphemerisStatus>>) -> Self {
+        self.status_list = input; self
     }
     /// <p>Maximum number of ephemerides to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -126,8 +116,7 @@ impl ListEphemeridesInputBuilder {
     }
     /// <p>Maximum number of ephemerides to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,23 +125,26 @@ impl ListEphemeridesInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListEphemeridesInput`](crate::operation::list_ephemerides::ListEphemeridesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_ephemerides::ListEphemeridesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_ephemerides::ListEphemeridesInput {
-            satellite_id: self.satellite_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            status_list: self.status_list,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_ephemerides::ListEphemeridesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_ephemerides::ListEphemeridesInput {
+                satellite_id: self.satellite_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                status_list: self.status_list
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

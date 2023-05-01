@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sourceaccesstype = unimplemented!();
 /// match sourceaccesstype {
@@ -36,22 +36,14 @@
 /// Specifically, when `sourceaccesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceAccessType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SourceAccessType {
     #[allow(missing_docs)] // documentation missing in model
     BasicAuth,
@@ -70,63 +62,53 @@ pub enum SourceAccessType {
     #[allow(missing_docs)] // documentation missing in model
     VpcSubnet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SourceAccessType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BASIC_AUTH" => SourceAccessType::BasicAuth,
-            "CLIENT_CERTIFICATE_TLS_AUTH" => SourceAccessType::ClientCertificateTlsAuth,
-            "SASL_SCRAM_256_AUTH" => SourceAccessType::SaslScram256Auth,
-            "SASL_SCRAM_512_AUTH" => SourceAccessType::SaslScram512Auth,
-            "SERVER_ROOT_CA_CERTIFICATE" => SourceAccessType::ServerRootCaCertificate,
-            "VIRTUAL_HOST" => SourceAccessType::VirtualHost,
-            "VPC_SECURITY_GROUP" => SourceAccessType::VpcSecurityGroup,
-            "VPC_SUBNET" => SourceAccessType::VpcSubnet,
-            other => {
-                SourceAccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BASIC_AUTH" => SourceAccessType::BasicAuth,
+"CLIENT_CERTIFICATE_TLS_AUTH" => SourceAccessType::ClientCertificateTlsAuth,
+"SASL_SCRAM_256_AUTH" => SourceAccessType::SaslScram256Auth,
+"SASL_SCRAM_512_AUTH" => SourceAccessType::SaslScram512Auth,
+"SERVER_ROOT_CA_CERTIFICATE" => SourceAccessType::ServerRootCaCertificate,
+"VIRTUAL_HOST" => SourceAccessType::VirtualHost,
+"VPC_SECURITY_GROUP" => SourceAccessType::VpcSecurityGroup,
+"VPC_SUBNET" => SourceAccessType::VpcSubnet,
+other => SourceAccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for SourceAccessType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SourceAccessType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SourceAccessType::from(s))
+                }
+            }
 impl SourceAccessType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SourceAccessType::BasicAuth => "BASIC_AUTH",
-            SourceAccessType::ClientCertificateTlsAuth => "CLIENT_CERTIFICATE_TLS_AUTH",
-            SourceAccessType::SaslScram256Auth => "SASL_SCRAM_256_AUTH",
-            SourceAccessType::SaslScram512Auth => "SASL_SCRAM_512_AUTH",
-            SourceAccessType::ServerRootCaCertificate => "SERVER_ROOT_CA_CERTIFICATE",
-            SourceAccessType::VirtualHost => "VIRTUAL_HOST",
-            SourceAccessType::VpcSecurityGroup => "VPC_SECURITY_GROUP",
-            SourceAccessType::VpcSubnet => "VPC_SUBNET",
-            SourceAccessType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BASIC_AUTH",
-            "CLIENT_CERTIFICATE_TLS_AUTH",
-            "SASL_SCRAM_256_AUTH",
-            "SASL_SCRAM_512_AUTH",
-            "SERVER_ROOT_CA_CERTIFICATE",
-            "VIRTUAL_HOST",
-            "VPC_SECURITY_GROUP",
-            "VPC_SUBNET",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SourceAccessType::BasicAuth => "BASIC_AUTH",
+    SourceAccessType::ClientCertificateTlsAuth => "CLIENT_CERTIFICATE_TLS_AUTH",
+    SourceAccessType::SaslScram256Auth => "SASL_SCRAM_256_AUTH",
+    SourceAccessType::SaslScram512Auth => "SASL_SCRAM_512_AUTH",
+    SourceAccessType::ServerRootCaCertificate => "SERVER_ROOT_CA_CERTIFICATE",
+    SourceAccessType::VirtualHost => "VIRTUAL_HOST",
+    SourceAccessType::VpcSecurityGroup => "VPC_SECURITY_GROUP",
+    SourceAccessType::VpcSubnet => "VPC_SUBNET",
+    SourceAccessType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BASIC_AUTH", "CLIENT_CERTIFICATE_TLS_AUTH", "SASL_SCRAM_256_AUTH", "SASL_SCRAM_512_AUTH", "SERVER_ROOT_CA_CERTIFICATE", "VIRTUAL_HOST", "VPC_SECURITY_GROUP", "VPC_SUBNET"]
+                }
+            }
 impl AsRef<str> for SourceAccessType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

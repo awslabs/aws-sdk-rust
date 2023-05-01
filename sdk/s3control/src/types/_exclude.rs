@@ -3,7 +3,7 @@
 /// <p>A container for what Amazon S3 Storage Lens will exclude.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Exclude {
+pub struct Exclude  {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct Exclude {
 }
 impl Exclude {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn buckets(&self) -> std::option::Option<& [std::string::String]> {
         self.buckets.as_deref()
     }
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl ExcludeBuilder {
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
     pub fn buckets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input.into());
-        self.buckets = Some(v);
-        self
+                        v.push(input.into());
+                        self.buckets = Some(v);
+                        self
     }
     /// <p>A container for the S3 Storage Lens bucket excludes.</p>
-    pub fn set_buckets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.buckets = input; self
     }
     /// Appends an item to `regions`.
     ///
@@ -62,23 +58,22 @@ impl ExcludeBuilder {
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
     pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = Some(v);
+                        self
     }
     /// <p>A container for the S3 Storage Lens Region excludes.</p>
-    pub fn set_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// Consumes the builder and constructs a [`Exclude`](crate::types::Exclude).
     pub fn build(self) -> crate::types::Exclude {
         crate::types::Exclude {
-            buckets: self.buckets,
-            regions: self.regions,
+            buckets: self.buckets
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

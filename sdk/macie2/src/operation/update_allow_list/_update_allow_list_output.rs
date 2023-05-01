@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAllowListOutput {
+pub struct UpdateAllowListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct UpdateAllowListOutput {
 }
 impl UpdateAllowListOutput {
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique identifier for the allow list.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAllowListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAllowListOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAllowListOutput`](crate::operation::update_allow_list::UpdateAllowListOutput).
-    pub fn builder() -> crate::operation::update_allow_list::builders::UpdateAllowListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_allow_list::builders::UpdateAllowListOutputBuilder {
         crate::operation::update_allow_list::builders::UpdateAllowListOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl UpdateAllowListOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the allow list.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The unique identifier for the allow list.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,24 +58,26 @@ impl UpdateAllowListOutputBuilder {
     }
     /// <p>The unique identifier for the allow list.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAllowListOutput`](crate::operation::update_allow_list::UpdateAllowListOutput).
     pub fn build(self) -> crate::operation::update_allow_list::UpdateAllowListOutput {
         crate::operation::update_allow_list::UpdateAllowListOutput {
-            arn: self.arn,
-            id: self.id,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

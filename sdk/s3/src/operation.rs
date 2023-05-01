@@ -281,3 +281,4 @@ pub mod upload_part_copy;
 
 /// Types for the `WriteGetObjectResponse` operation.
 pub mod write_get_object_response;
+

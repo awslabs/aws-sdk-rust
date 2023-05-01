@@ -150,3 +150,4 @@ pub mod update_vpc_endpoint;
 
 /// Types for the `UpgradeElasticsearchDomain` operation.
 pub mod upgrade_elasticsearch_domain;
+

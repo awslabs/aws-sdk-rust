@@ -3,7 +3,7 @@
 /// <p> Contains information about the configuration of destination connectors present in the flow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationFlowConfig {
+pub struct DestinationFlowConfig  {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     #[doc(hidden)]
     pub connector_type: std::option::Option<crate::types::ConnectorType>,
@@ -15,26 +15,23 @@ pub struct DestinationFlowConfig {
     pub connector_profile_name: std::option::Option<std::string::String>,
     /// <p> This stores the information that is required to query a particular connector. </p>
     #[doc(hidden)]
-    pub destination_connector_properties:
-        std::option::Option<crate::types::DestinationConnectorProperties>,
+    pub destination_connector_properties: std::option::Option<crate::types::DestinationConnectorProperties>,
 }
 impl DestinationFlowConfig {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<&crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<& crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The API version that the destination connector uses.</p>
-    pub fn api_version(&self) -> std::option::Option<&str> {
+    pub fn api_version(&self) -> std::option::Option<& str> {
         self.api_version.as_deref()
     }
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
         self.connector_profile_name.as_deref()
     }
     /// <p> This stores the information that is required to query a particular connector. </p>
-    pub fn destination_connector_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::DestinationConnectorProperties> {
+    pub fn destination_connector_properties(&self) -> std::option::Option<& crate::types::DestinationConnectorProperties> {
         self.destination_connector_properties.as_ref()
     }
 }
@@ -52,8 +49,7 @@ pub struct DestinationFlowConfigBuilder {
     pub(crate) connector_type: std::option::Option<crate::types::ConnectorType>,
     pub(crate) api_version: std::option::Option<std::string::String>,
     pub(crate) connector_profile_name: std::option::Option<std::string::String>,
-    pub(crate) destination_connector_properties:
-        std::option::Option<crate::types::DestinationConnectorProperties>,
+    pub(crate) destination_connector_properties: std::option::Option<crate::types::DestinationConnectorProperties>,
 }
 impl DestinationFlowConfigBuilder {
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
@@ -62,12 +58,8 @@ impl DestinationFlowConfigBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
-        self.connector_type = input;
-        self
+    pub fn set_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
+        self.connector_type = input; self
     }
     /// <p>The API version that the destination connector uses.</p>
     pub fn api_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +68,7 @@ impl DestinationFlowConfigBuilder {
     }
     /// <p>The API version that the destination connector uses.</p>
     pub fn set_api_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_version = input;
-        self
+        self.api_version = input; self
     }
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
     pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,36 +76,30 @@ impl DestinationFlowConfigBuilder {
         self
     }
     /// <p> The name of the connector profile. This name must be unique for each connector profile in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connector_profile_name = input;
-        self
+    pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connector_profile_name = input; self
     }
     /// <p> This stores the information that is required to query a particular connector. </p>
-    pub fn destination_connector_properties(
-        mut self,
-        input: crate::types::DestinationConnectorProperties,
-    ) -> Self {
+    pub fn destination_connector_properties(mut self, input: crate::types::DestinationConnectorProperties) -> Self {
         self.destination_connector_properties = Some(input);
         self
     }
     /// <p> This stores the information that is required to query a particular connector. </p>
-    pub fn set_destination_connector_properties(
-        mut self,
-        input: std::option::Option<crate::types::DestinationConnectorProperties>,
-    ) -> Self {
-        self.destination_connector_properties = input;
-        self
+    pub fn set_destination_connector_properties(mut self, input: std::option::Option<crate::types::DestinationConnectorProperties>) -> Self {
+        self.destination_connector_properties = input; self
     }
     /// Consumes the builder and constructs a [`DestinationFlowConfig`](crate::types::DestinationFlowConfig).
     pub fn build(self) -> crate::types::DestinationFlowConfig {
         crate::types::DestinationFlowConfig {
-            connector_type: self.connector_type,
-            api_version: self.api_version,
-            connector_profile_name: self.connector_profile_name,
-            destination_connector_properties: self.destination_connector_properties,
+            connector_type: self.connector_type
+            ,
+            api_version: self.api_version
+            ,
+            connector_profile_name: self.connector_profile_name
+            ,
+            destination_connector_properties: self.destination_connector_properties
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobManifestOutput {
+pub struct GetJobManifestOutput  {
     /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
     #[doc(hidden)]
     pub manifest_uri: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct GetJobManifestOutput {
 }
 impl GetJobManifestOutput {
     /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
-    pub fn manifest_uri(&self) -> std::option::Option<&str> {
+    pub fn manifest_uri(&self) -> std::option::Option<& str> {
         self.manifest_uri.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetJobManifestOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetJobManifestOutput {
     /// Creates a new builder-style object to manufacture [`GetJobManifestOutput`](crate::operation::get_job_manifest::GetJobManifestOutput).
     pub fn builder() -> crate::operation::get_job_manifest::builders::GetJobManifestOutputBuilder {
@@ -41,23 +41,24 @@ impl GetJobManifestOutputBuilder {
     }
     /// <p>The Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value.</p>
     pub fn set_manifest_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manifest_uri = input;
-        self
+        self.manifest_uri = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetJobManifestOutput`](crate::operation::get_job_manifest::GetJobManifestOutput).
     pub fn build(self) -> crate::operation::get_job_manifest::GetJobManifestOutput {
         crate::operation::get_job_manifest::GetJobManifestOutput {
-            manifest_uri: self.manifest_uri,
+            manifest_uri: self.manifest_uri
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

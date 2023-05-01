@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLocationsInput {
+pub struct ListLocationsInput  {
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::LocationFilter>>,
@@ -15,7 +15,7 @@ pub struct ListLocationsInput {
 }
 impl ListLocationsInput {
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::LocationFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::LocationFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -23,7 +23,7 @@ impl ListLocationsInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,17 +50,13 @@ impl ListLocationsInputBuilder {
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
     pub fn filters(mut self, input: crate::types::LocationFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LocationFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::LocationFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -69,8 +65,7 @@ impl ListLocationsInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,20 +74,20 @@ impl ListLocationsInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListLocationsInput`](crate::operation::list_locations::ListLocationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_locations::ListLocationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_locations::ListLocationsInput {
-            filters: self.filters,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_locations::ListLocationsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_locations::ListLocationsInput {
+                filters: self.filters
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

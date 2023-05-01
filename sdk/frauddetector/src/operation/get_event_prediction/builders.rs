@@ -4,71 +4,49 @@ pub use crate::operation::get_event_prediction::_get_event_prediction_output::Ge
 pub use crate::operation::get_event_prediction::_get_event_prediction_input::GetEventPredictionInputBuilder;
 
 /// Fluent builder constructing a request to `GetEventPrediction`.
-///
+/// 
 /// <p>Evaluates an event against a detector version. If a version ID is not provided, the detector’s (<code>ACTIVE</code>) version is used.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventPredictionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder,
-}
-impl GetEventPredictionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder
+            }
+impl GetEventPredictionFluentBuilder  {
     /// Creates a new `GetEventPrediction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_event_prediction::GetEventPrediction,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_event_prediction::GetEventPredictionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_event_prediction::GetEventPredictionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_event_prediction::GetEventPredictionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_event_prediction::GetEventPrediction, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_event_prediction::GetEventPredictionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_event_prediction::GetEventPredictionOutput, aws_smithy_http::result::SdkError<crate::operation::get_event_prediction::GetEventPredictionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The detector ID.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -85,10 +63,7 @@ impl GetEventPredictionFluentBuilder {
         self
     }
     /// <p>The detector version ID.</p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
@@ -122,10 +97,7 @@ impl GetEventPredictionFluentBuilder {
         self
     }
     /// <p>The entity type (associated with the detector's event type) and specific entity ID representing who performed the event. If an entity id is not available, use "UNKNOWN."</p>
-    pub fn set_entities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
+    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entity>>) -> Self {
         self.inner = self.inner.set_entities(input);
         self
     }
@@ -143,36 +115,27 @@ impl GetEventPredictionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_variables`](Self::set_event_variables).
     ///
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
-    /// <p>You must provide at least one eventVariable</p>
-    /// </important>
-    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
-    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important> 
+    /// <p>You must provide at least one eventVariable</p> 
+    /// </important> 
+    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p> 
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p> 
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p> 
+    /// <p> <b>For imported SageMaker models:</b> </p> 
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
-    pub fn event_variables(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn event_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_variables(k.into(), v.into());
         self
     }
-    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important>
-    /// <p>You must provide at least one eventVariable</p>
-    /// </important>
-    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p>
-    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p>
-    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p>
-    /// <p> <b>For imported SageMaker models:</b> </p>
+    /// <p>Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.</p> <important> 
+    /// <p>You must provide at least one eventVariable</p> 
+    /// </important> 
+    /// <p>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon Fraud Detector will replace all missing variables or values as follows:</p> 
+    /// <p> <b>For Amazon Fraud Detector trained models:</b> </p> 
+    /// <p>If a null value is provided explicitly for a variable or if a variable is missing, model will replace the null value or the missing variable (no variable name in the eventVariables map) with calculated default mean/medians for numeric variables and with special values for categorical variables.</p> 
+    /// <p> <b>For imported SageMaker models:</b> </p> 
     /// <p>If a null value is provided explicitly for a variable, the model and rules will use “null” as the value. If a variable is not provided (no variable name in the eventVariables map), model and rules will use the default value that is provided for the variable. </p>
-    pub fn set_event_variables(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_event_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_event_variables(input);
         self
     }
@@ -181,22 +144,14 @@ impl GetEventPredictionFluentBuilder {
     /// To override the contents of this collection use [`set_external_model_endpoint_data_blobs`](Self::set_external_model_endpoint_data_blobs).
     ///
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
-    pub fn external_model_endpoint_data_blobs(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::ModelEndpointDataBlob,
-    ) -> Self {
+    pub fn external_model_endpoint_data_blobs(mut self, k: impl Into<std::string::String>, v: crate::types::ModelEndpointDataBlob) -> Self {
         self.inner = self.inner.external_model_endpoint_data_blobs(k.into(), v);
         self
     }
     /// <p>The Amazon SageMaker model endpoint input data blobs.</p>
-    pub fn set_external_model_endpoint_data_blobs(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ModelEndpointDataBlob>,
-        >,
-    ) -> Self {
+    pub fn set_external_model_endpoint_data_blobs(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ModelEndpointDataBlob>>) -> Self {
         self.inner = self.inner.set_external_model_endpoint_data_blobs(input);
         self
     }
 }
+

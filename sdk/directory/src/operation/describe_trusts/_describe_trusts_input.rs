@@ -3,11 +3,11 @@
 /// <p>Describes the trust relationships for a particular Managed Microsoft AD directory. If no input parameters are provided, such as directory ID or trust ID, this request describes all the trust relationships.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustsInput {
+pub struct DescribeTrustsInput  {
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
-    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p> 
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     #[doc(hidden)]
     pub trust_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -20,16 +20,16 @@ pub struct DescribeTrustsInput {
 }
 impl DescribeTrustsInput {
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
-    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p> 
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn trust_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn trust_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.trust_ids.as_deref()
     }
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects to return.</p>
@@ -61,29 +61,24 @@ impl DescribeTrustsInputBuilder {
     }
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// Appends an item to `trust_ids`.
     ///
     /// To override the contents of this collection use [`set_trust_ids`](Self::set_trust_ids).
     ///
-    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p> 
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
     pub fn trust_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.trust_ids.unwrap_or_default();
-        v.push(input.into());
-        self.trust_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.trust_ids = Some(v);
+                        self
     }
-    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+    /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p> 
     /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
-    pub fn set_trust_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.trust_ids = input;
-        self
+    pub fn set_trust_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.trust_ids = input; self
     }
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +87,7 @@ impl DescribeTrustsInputBuilder {
     }
     /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to <code>DescribeTrusts</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -102,21 +96,22 @@ impl DescribeTrustsInputBuilder {
     }
     /// <p>The maximum number of objects to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTrustsInput`](crate::operation::describe_trusts::DescribeTrustsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_trusts::DescribeTrustsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_trusts::DescribeTrustsInput {
-            directory_id: self.directory_id,
-            trust_ids: self.trust_ids,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_trusts::DescribeTrustsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_trusts::DescribeTrustsInput {
+                directory_id: self.directory_id
+                ,
+                trust_ids: self.trust_ids
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

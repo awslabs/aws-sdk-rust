@@ -3,7 +3,7 @@
 /// <p>The attack information for the specified SubResource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubResourceSummary {
+pub struct SubResourceSummary  {
     /// <p>The <code>SubResource</code> type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SubResourceType>,
@@ -19,19 +19,19 @@ pub struct SubResourceSummary {
 }
 impl SubResourceSummary {
     /// <p>The <code>SubResource</code> type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SubResourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SubResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The list of attack types and associated counters.</p>
-    pub fn attack_vectors(&self) -> std::option::Option<&[crate::types::SummarizedAttackVector]> {
+    pub fn attack_vectors(&self) -> std::option::Option<& [crate::types::SummarizedAttackVector]> {
         self.attack_vectors.as_deref()
     }
     /// <p>The counters that describe the details of the attack.</p>
-    pub fn counters(&self) -> std::option::Option<&[crate::types::SummarizedCounter]> {
+    pub fn counters(&self) -> std::option::Option<& [crate::types::SummarizedCounter]> {
         self.counters.as_deref()
     }
 }
@@ -48,8 +48,7 @@ impl SubResourceSummary {
 pub struct SubResourceSummaryBuilder {
     pub(crate) r#type: std::option::Option<crate::types::SubResourceType>,
     pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) attack_vectors:
-        std::option::Option<std::vec::Vec<crate::types::SummarizedAttackVector>>,
+    pub(crate) attack_vectors: std::option::Option<std::vec::Vec<crate::types::SummarizedAttackVector>>,
     pub(crate) counters: std::option::Option<std::vec::Vec<crate::types::SummarizedCounter>>,
 }
 impl SubResourceSummaryBuilder {
@@ -60,8 +59,7 @@ impl SubResourceSummaryBuilder {
     }
     /// <p>The <code>SubResource</code> type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::SubResourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +68,7 @@ impl SubResourceSummaryBuilder {
     }
     /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Appends an item to `attack_vectors`.
     ///
@@ -80,17 +77,13 @@ impl SubResourceSummaryBuilder {
     /// <p>The list of attack types and associated counters.</p>
     pub fn attack_vectors(mut self, input: crate::types::SummarizedAttackVector) -> Self {
         let mut v = self.attack_vectors.unwrap_or_default();
-        v.push(input);
-        self.attack_vectors = Some(v);
-        self
+                        v.push(input);
+                        self.attack_vectors = Some(v);
+                        self
     }
     /// <p>The list of attack types and associated counters.</p>
-    pub fn set_attack_vectors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SummarizedAttackVector>>,
-    ) -> Self {
-        self.attack_vectors = input;
-        self
+    pub fn set_attack_vectors(mut self, input: std::option::Option<std::vec::Vec<crate::types::SummarizedAttackVector>>) -> Self {
+        self.attack_vectors = input; self
     }
     /// Appends an item to `counters`.
     ///
@@ -99,25 +92,26 @@ impl SubResourceSummaryBuilder {
     /// <p>The counters that describe the details of the attack.</p>
     pub fn counters(mut self, input: crate::types::SummarizedCounter) -> Self {
         let mut v = self.counters.unwrap_or_default();
-        v.push(input);
-        self.counters = Some(v);
-        self
+                        v.push(input);
+                        self.counters = Some(v);
+                        self
     }
     /// <p>The counters that describe the details of the attack.</p>
-    pub fn set_counters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SummarizedCounter>>,
-    ) -> Self {
-        self.counters = input;
-        self
+    pub fn set_counters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SummarizedCounter>>) -> Self {
+        self.counters = input; self
     }
     /// Consumes the builder and constructs a [`SubResourceSummary`](crate::types::SubResourceSummary).
     pub fn build(self) -> crate::types::SubResourceSummary {
         crate::types::SubResourceSummary {
-            r#type: self.r#type,
-            id: self.id,
-            attack_vectors: self.attack_vectors,
-            counters: self.counters,
+            r#type: self.r#type
+            ,
+            id: self.id
+            ,
+            attack_vectors: self.attack_vectors
+            ,
+            counters: self.counters
+            ,
         }
     }
 }
+

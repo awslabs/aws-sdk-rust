@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAgentStatusInput {
+pub struct UpdateAgentStatusInput  {
     /// <p>UUID of agent to update.</p>
     #[doc(hidden)]
     pub agent_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct UpdateAgentStatusInput {
 }
 impl UpdateAgentStatusInput {
     /// <p>UUID of agent to update.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>GUID of agent task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>Aggregate status for agent.</p>
-    pub fn aggregate_status(&self) -> std::option::Option<&crate::types::AggregateStatus> {
+    pub fn aggregate_status(&self) -> std::option::Option<& crate::types::AggregateStatus> {
         self.aggregate_status.as_ref()
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn component_statuses(&self) -> std::option::Option<&[crate::types::ComponentStatusData]> {
+    pub fn component_statuses(&self) -> std::option::Option<& [crate::types::ComponentStatusData]> {
         self.component_statuses.as_deref()
     }
 }
 impl UpdateAgentStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
+    pub fn builder() -> crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder {
         crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ pub struct UpdateAgentStatusInputBuilder {
     pub(crate) agent_id: std::option::Option<std::string::String>,
     pub(crate) task_id: std::option::Option<std::string::String>,
     pub(crate) aggregate_status: std::option::Option<crate::types::AggregateStatus>,
-    pub(crate) component_statuses:
-        std::option::Option<std::vec::Vec<crate::types::ComponentStatusData>>,
+    pub(crate) component_statuses: std::option::Option<std::vec::Vec<crate::types::ComponentStatusData>>,
 }
 impl UpdateAgentStatusInputBuilder {
     /// <p>UUID of agent to update.</p>
@@ -60,8 +58,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>UUID of agent to update.</p>
     pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>GUID of agent task.</p>
     pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl UpdateAgentStatusInputBuilder {
     }
     /// <p>GUID of agent task.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>Aggregate status for agent.</p>
     pub fn aggregate_status(mut self, input: crate::types::AggregateStatus) -> Self {
@@ -79,12 +75,8 @@ impl UpdateAgentStatusInputBuilder {
         self
     }
     /// <p>Aggregate status for agent.</p>
-    pub fn set_aggregate_status(
-        mut self,
-        input: std::option::Option<crate::types::AggregateStatus>,
-    ) -> Self {
-        self.aggregate_status = input;
-        self
+    pub fn set_aggregate_status(mut self, input: std::option::Option<crate::types::AggregateStatus>) -> Self {
+        self.aggregate_status = input; self
     }
     /// Appends an item to `component_statuses`.
     ///
@@ -93,32 +85,28 @@ impl UpdateAgentStatusInputBuilder {
     /// <p>List of component statuses for agent.</p>
     pub fn component_statuses(mut self, input: crate::types::ComponentStatusData) -> Self {
         let mut v = self.component_statuses.unwrap_or_default();
-        v.push(input);
-        self.component_statuses = Some(v);
-        self
+                        v.push(input);
+                        self.component_statuses = Some(v);
+                        self
     }
     /// <p>List of component statuses for agent.</p>
-    pub fn set_component_statuses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentStatusData>>,
-    ) -> Self {
-        self.component_statuses = input;
-        self
+    pub fn set_component_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentStatusData>>) -> Self {
+        self.component_statuses = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_agent_status::UpdateAgentStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_agent_status::UpdateAgentStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_agent_status::UpdateAgentStatusInput {
-                agent_id: self.agent_id,
-                task_id: self.task_id,
-                aggregate_status: self.aggregate_status,
-                component_statuses: self.component_statuses,
-            },
+                agent_id: self.agent_id
+                ,
+                task_id: self.task_id
+                ,
+                aggregate_status: self.aggregate_status
+                ,
+                component_statuses: self.component_statuses
+                ,
+            }
         )
     }
 }
+

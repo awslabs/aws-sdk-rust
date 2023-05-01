@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsOutput {
+pub struct PutEventsOutput  {
     /// <p>The number of failed entries.</p>
     #[doc(hidden)]
     pub failed_entry_count: i32,
-    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p> 
     /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::PutEventsResultEntry>>,
@@ -17,17 +17,17 @@ impl PutEventsOutput {
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
-    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p> 
     /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::types::PutEventsResultEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::types::PutEventsResultEntry]> {
         self.entries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
     pub fn builder() -> crate::operation::put_events::builders::PutEventsOutputBuilder {
@@ -51,45 +51,44 @@ impl PutEventsOutputBuilder {
     }
     /// <p>The number of failed entries.</p>
     pub fn set_failed_entry_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_entry_count = input;
-        self
+        self.failed_entry_count = input; self
     }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p> 
     /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
     pub fn entries(mut self, input: crate::types::PutEventsResultEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = Some(v);
-        self
+                        v.push(input);
+                        self.entries = Some(v);
+                        self
     }
-    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p>
+    /// <p>The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.</p> 
     /// <p>For each record, the index of the response element is the same as the index in the request array.</p>
-    pub fn set_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PutEventsResultEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::PutEventsResultEntry>>) -> Self {
+        self.entries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
     pub fn build(self) -> crate::operation::put_events::PutEventsOutput {
         crate::operation::put_events::PutEventsOutput {
-            failed_entry_count: self.failed_entry_count.unwrap_or_default(),
-            entries: self.entries,
+            failed_entry_count: self.failed_entry_count
+                .unwrap_or_default()
+            ,
+            entries: self.entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

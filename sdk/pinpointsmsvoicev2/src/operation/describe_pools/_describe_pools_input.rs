@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePoolsInput {
+pub struct DescribePoolsInput  {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
     #[doc(hidden)]
     pub pool_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,15 +18,15 @@ pub struct DescribePoolsInput {
 }
 impl DescribePoolsInput {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    pub fn pool_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pool_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.pool_ids.as_deref()
     }
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::PoolFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::PoolFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -58,17 +58,13 @@ impl DescribePoolsInputBuilder {
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
     pub fn pool_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.pool_ids.unwrap_or_default();
-        v.push(input.into());
-        self.pool_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.pool_ids = Some(v);
+                        self
     }
     /// <p>The unique identifier of pools to find. This is an array of strings that can be either the PoolId or PoolArn.</p>
-    pub fn set_pool_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.pool_ids = input;
-        self
+    pub fn set_pool_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.pool_ids = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -77,17 +73,13 @@ impl DescribePoolsInputBuilder {
     /// <p>An array of PoolFilter objects to filter the results.</p>
     pub fn filters(mut self, input: crate::types::PoolFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>An array of PoolFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PoolFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::PoolFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +88,7 @@ impl DescribePoolsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -106,21 +97,22 @@ impl DescribePoolsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribePoolsInput`](crate::operation::describe_pools::DescribePoolsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_pools::DescribePoolsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_pools::DescribePoolsInput {
-            pool_ids: self.pool_ids,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_pools::DescribePoolsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_pools::DescribePoolsInput {
+                pool_ids: self.pool_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

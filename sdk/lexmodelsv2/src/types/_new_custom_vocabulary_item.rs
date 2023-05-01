@@ -3,7 +3,7 @@
 /// <p>The new custom vocabulary item from the custom vocabulary list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NewCustomVocabularyItem {
+pub struct NewCustomVocabularyItem  {
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
     #[doc(hidden)]
     pub phrase: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct NewCustomVocabularyItem {
 }
 impl NewCustomVocabularyItem {
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
-    pub fn phrase(&self) -> std::option::Option<&str> {
+    pub fn phrase(&self) -> std::option::Option<& str> {
         self.phrase.as_deref()
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
@@ -24,7 +24,7 @@ impl NewCustomVocabularyItem {
         self.weight
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
-    pub fn display_as(&self) -> std::option::Option<&str> {
+    pub fn display_as(&self) -> std::option::Option<& str> {
         self.display_as.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl NewCustomVocabularyItemBuilder {
     }
     /// <p>The unique phrase for the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_phrase(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phrase = input;
-        self
+        self.phrase = input; self
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn weight(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl NewCustomVocabularyItemBuilder {
     }
     /// <p>The weight assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn display_as(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl NewCustomVocabularyItemBuilder {
     }
     /// <p>The display as value assigned to the new custom vocabulary item from the custom vocabulary list.</p>
     pub fn set_display_as(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_as = input;
-        self
+        self.display_as = input; self
     }
     /// Consumes the builder and constructs a [`NewCustomVocabularyItem`](crate::types::NewCustomVocabularyItem).
     pub fn build(self) -> crate::types::NewCustomVocabularyItem {
         crate::types::NewCustomVocabularyItem {
-            phrase: self.phrase,
-            weight: self.weight,
-            display_as: self.display_as,
+            phrase: self.phrase
+            ,
+            weight: self.weight
+            ,
+            display_as: self.display_as
+            ,
         }
     }
 }
+

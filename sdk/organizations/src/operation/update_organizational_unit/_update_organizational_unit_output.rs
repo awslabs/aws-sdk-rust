@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOrganizationalUnitOutput {
+pub struct UpdateOrganizationalUnitOutput  {
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
     #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::types::OrganizationalUnit>,
@@ -10,20 +10,18 @@ pub struct UpdateOrganizationalUnitOutput {
 }
 impl UpdateOrganizationalUnitOutput {
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-    pub fn organizational_unit(&self) -> std::option::Option<&crate::types::OrganizationalUnit> {
+    pub fn organizational_unit(&self) -> std::option::Option<& crate::types::OrganizationalUnit> {
         self.organizational_unit.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateOrganizationalUnitOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationalUnitOutput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput).
-    pub fn builder(
-    ) -> crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitOutputBuilder {
         crate::operation::update_organizational_unit::builders::UpdateOrganizationalUnitOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl UpdateOrganizationalUnitOutputBuilder {
         self
     }
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-    pub fn set_organizational_unit(
-        mut self,
-        input: std::option::Option<crate::types::OrganizationalUnit>,
-    ) -> Self {
-        self.organizational_unit = input;
-        self
+    pub fn set_organizational_unit(mut self, input: std::option::Option<crate::types::OrganizationalUnit>) -> Self {
+        self.organizational_unit = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateOrganizationalUnitOutput`](crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput {
+    pub fn build(self) -> crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput {
         crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput {
-            organizational_unit: self.organizational_unit,
+            organizational_unit: self.organizational_unit
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

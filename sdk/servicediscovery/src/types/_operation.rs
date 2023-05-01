@@ -3,54 +3,54 @@
 /// <p>A complex type that contains information about a specified operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Operation {
+pub struct Operation  {
     /// <p>The ID of the operation that you want to get information about.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The name of the operation that's associated with the specified ID.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::OperationType>,
-    /// <p>The status of the operation. Values include the following:</p>
-    /// <dl>
+    /// <p>The status of the operation. Values include the following:</p> 
+    /// <dl> 
     /// <dt>
     /// SUBMITTED
-    /// </dt>
-    /// <dd>
-    /// <p>This is the initial state that occurs immediately after you submit a request.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>This is the initial state that occurs immediately after you submit a request.</p> 
+    /// </dd> 
     /// <dt>
     /// PENDING
-    /// </dt>
-    /// <dd>
-    /// <p>Cloud Map is performing the operation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Cloud Map is performing the operation.</p> 
+    /// </dd> 
     /// <dt>
     /// SUCCESS
-    /// </dt>
-    /// <dd>
-    /// <p>The operation succeeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation succeeded.</p> 
+    /// </dd> 
     /// <dt>
     /// FAIL
-    /// </dt>
-    /// <dd>
-    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::OperationStatus>,
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
-    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
-    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
-    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
-    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
-    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
-    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
+    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li> 
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> 
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li> 
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> 
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li> 
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li> 
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -60,122 +60,116 @@ pub struct Operation {
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
     pub update_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The name of the target entity that's associated with the operation:</p>
-    /// <dl>
+    /// <p>The name of the target entity that's associated with the operation:</p> 
+    /// <dl> 
     /// <dt>
     /// NAMESPACE
-    /// </dt>
-    /// <dd>
-    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE
-    /// </dt>
-    /// <dd>
-    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// INSTANCE
-    /// </dt>
-    /// <dd>
-    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
-    pub targets: std::option::Option<
-        std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
-    >,
+    pub targets: std::option::Option<std::collections::HashMap<crate::types::OperationTargetType, std::string::String>>,
 }
 impl Operation {
     /// <p>The ID of the operation that you want to get information about.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::OperationType> {
         self.r#type.as_ref()
     }
-    /// <p>The status of the operation. Values include the following:</p>
-    /// <dl>
+    /// <p>The status of the operation. Values include the following:</p> 
+    /// <dl> 
     /// <dt>
     /// SUBMITTED
-    /// </dt>
-    /// <dd>
-    /// <p>This is the initial state that occurs immediately after you submit a request.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>This is the initial state that occurs immediately after you submit a request.</p> 
+    /// </dd> 
     /// <dt>
     /// PENDING
-    /// </dt>
-    /// <dd>
-    /// <p>Cloud Map is performing the operation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Cloud Map is performing the operation.</p> 
+    /// </dd> 
     /// <dt>
     /// SUCCESS
-    /// </dt>
-    /// <dd>
-    /// <p>The operation succeeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation succeeded.</p> 
+    /// </dd> 
     /// <dt>
     /// FAIL
-    /// </dt>
-    /// <dd>
-    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
-    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
-    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
-    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
-    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
-    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
-    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
+    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li> 
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> 
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li> 
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> 
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li> 
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li> 
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li> 
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
-    /// <p>The name of the target entity that's associated with the operation:</p>
-    /// <dl>
+    /// <p>The name of the target entity that's associated with the operation:</p> 
+    /// <dl> 
     /// <dt>
     /// NAMESPACE
-    /// </dt>
-    /// <dd>
-    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE
-    /// </dt>
-    /// <dd>
-    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// INSTANCE
-    /// </dt>
-    /// <dd>
-    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn targets(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
-    > {
+    pub fn targets(&self) -> std::option::Option<& std::collections::HashMap<crate::types::OperationTargetType, std::string::String>> {
         self.targets.as_ref()
     }
 }
@@ -197,9 +191,7 @@ pub struct OperationBuilder {
     pub(crate) error_code: std::option::Option<std::string::String>,
     pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) targets: std::option::Option<
-        std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
-    >,
+    pub(crate) targets: std::option::Option<std::collections::HashMap<crate::types::OperationTargetType, std::string::String>>,
 }
 impl OperationBuilder {
     /// <p>The ID of the operation that you want to get information about.</p>
@@ -209,8 +201,7 @@ impl OperationBuilder {
     }
     /// <p>The ID of the operation that you want to get information about.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
@@ -219,70 +210,68 @@ impl OperationBuilder {
     }
     /// <p>The name of the operation that's associated with the specified ID.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
-    /// <p>The status of the operation. Values include the following:</p>
-    /// <dl>
+    /// <p>The status of the operation. Values include the following:</p> 
+    /// <dl> 
     /// <dt>
     /// SUBMITTED
-    /// </dt>
-    /// <dd>
-    /// <p>This is the initial state that occurs immediately after you submit a request.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>This is the initial state that occurs immediately after you submit a request.</p> 
+    /// </dd> 
     /// <dt>
     /// PENDING
-    /// </dt>
-    /// <dd>
-    /// <p>Cloud Map is performing the operation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Cloud Map is performing the operation.</p> 
+    /// </dd> 
     /// <dt>
     /// SUCCESS
-    /// </dt>
-    /// <dd>
-    /// <p>The operation succeeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation succeeded.</p> 
+    /// </dd> 
     /// <dt>
     /// FAIL
-    /// </dt>
-    /// <dd>
-    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> 
+    /// </dd> 
     /// </dl>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the operation. Values include the following:</p>
-    /// <dl>
+    /// <p>The status of the operation. Values include the following:</p> 
+    /// <dl> 
     /// <dt>
     /// SUBMITTED
-    /// </dt>
-    /// <dd>
-    /// <p>This is the initial state that occurs immediately after you submit a request.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>This is the initial state that occurs immediately after you submit a request.</p> 
+    /// </dd> 
     /// <dt>
     /// PENDING
-    /// </dt>
-    /// <dd>
-    /// <p>Cloud Map is performing the operation.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Cloud Map is performing the operation.</p> 
+    /// </dd> 
     /// <dt>
     /// SUCCESS
-    /// </dt>
-    /// <dd>
-    /// <p>The operation succeeded.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation succeeded.</p> 
+    /// </dd> 
     /// <dt>
     /// FAIL
-    /// </dt>
-    /// <dd>
-    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> 
+    /// </dd> 
     /// </dl>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -291,36 +280,34 @@ impl OperationBuilder {
     }
     /// <p>If the value of <code>Status</code> is <code>FAIL</code>, the reason that the operation failed.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
-    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
-    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
-    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
-    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
-    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
-    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
+    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li> 
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> 
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li> 
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> 
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li> 
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li> 
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li> 
     /// </ul>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.error_code = Some(input.into());
         self
     }
-    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li>
-    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li>
-    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li>
-    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li>
-    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li>
-    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li>
+    /// <p>The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACCESS_DENIED</code> </p> </li> 
+    /// <li> <p> <code>CANNOT_CREATE_HOSTED_ZONE</code> </p> </li> 
+    /// <li> <p> <code>EXPIRED_TOKEN</code> </p> </li> 
+    /// <li> <p> <code>HOSTED_ZONE_NOT_FOUND</code> </p> </li> 
+    /// <li> <p> <code>INTERNAL_FAILURE</code> </p> </li> 
+    /// <li> <p> <code>INVALID_CHANGE_BATCH</code> </p> </li> 
+    /// <li> <p> <code>THROTTLED_REQUEST</code> </p> </li> 
     /// </ul>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -328,12 +315,8 @@ impl OperationBuilder {
         self
     }
     /// <p>The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_create_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_date = input;
-        self
+    pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_date = input; self
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -341,89 +324,84 @@ impl OperationBuilder {
         self
     }
     /// <p>The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_update_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date = input;
-        self
+    pub fn set_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_date = input; self
     }
     /// Adds a key-value pair to `targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
-    /// <p>The name of the target entity that's associated with the operation:</p>
-    /// <dl>
+    /// <p>The name of the target entity that's associated with the operation:</p> 
+    /// <dl> 
     /// <dt>
     /// NAMESPACE
-    /// </dt>
-    /// <dd>
-    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE
-    /// </dt>
-    /// <dd>
-    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// INSTANCE
-    /// </dt>
-    /// <dd>
-    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn targets(
-        mut self,
-        k: crate::types::OperationTargetType,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn targets(mut self, k: crate::types::OperationTargetType, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.targets.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.targets = Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.targets = Some(hash_map);
+                        self
     }
-    /// <p>The name of the target entity that's associated with the operation:</p>
-    /// <dl>
+    /// <p>The name of the target entity that's associated with the operation:</p> 
+    /// <dl> 
     /// <dt>
     /// NAMESPACE
-    /// </dt>
-    /// <dd>
-    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The namespace ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// SERVICE
-    /// </dt>
-    /// <dd>
-    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The service ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// <dt>
     /// INSTANCE
-    /// </dt>
-    /// <dd>
-    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The instance ID is returned in the <code>ResourceId</code> property.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::OperationTargetType, std::string::String>,
-        >,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<crate::types::OperationTargetType, std::string::String>>) -> Self {
+        self.targets = input; self
     }
     /// Consumes the builder and constructs a [`Operation`](crate::types::Operation).
     pub fn build(self) -> crate::types::Operation {
         crate::types::Operation {
-            id: self.id,
-            r#type: self.r#type,
-            status: self.status,
-            error_message: self.error_message,
-            error_code: self.error_code,
-            create_date: self.create_date,
-            update_date: self.update_date,
-            targets: self.targets,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
+            create_date: self.create_date
+            ,
+            update_date: self.update_date
+            ,
+            targets: self.targets
+            ,
         }
     }
 }
+

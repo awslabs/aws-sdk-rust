@@ -3,7 +3,7 @@
 /// <p>Information about a team member in a project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TeamMember {
+pub struct TeamMember  {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct TeamMember {
 }
 impl TeamMember {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
-    pub fn project_role(&self) -> std::option::Option<&str> {
+    pub fn project_role(&self) -> std::option::Option<& str> {
         self.project_role.as_deref()
     }
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
@@ -51,8 +51,7 @@ impl TeamMemberBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl TeamMemberBuilder {
     }
     /// <p>The role assigned to the user in the project. Project roles have different levels of access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
     pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_role = input;
-        self
+        self.project_role = input; self
     }
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub fn remote_access_allowed(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl TeamMemberBuilder {
     }
     /// <p>Whether the user is allowed to remotely access project resources using an SSH public/private key pair.</p>
     pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
-        self.remote_access_allowed = input;
-        self
+        self.remote_access_allowed = input; self
     }
     /// Consumes the builder and constructs a [`TeamMember`](crate::types::TeamMember).
     pub fn build(self) -> crate::types::TeamMember {
         crate::types::TeamMember {
-            user_arn: self.user_arn,
-            project_role: self.project_role,
-            remote_access_allowed: self.remote_access_allowed,
+            user_arn: self.user_arn
+            ,
+            project_role: self.project_role
+            ,
+            remote_access_allowed: self.remote_access_allowed
+            ,
         }
     }
 }
+

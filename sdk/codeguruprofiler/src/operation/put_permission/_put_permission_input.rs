@@ -3,7 +3,7 @@
 /// <p>The structure representing the <code>putPermissionRequest</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionInput {
+pub struct PutPermissionInput  {
     /// <p>The name of the profiling group to grant access to.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct PutPermissionInput {
 }
 impl PutPermissionInput {
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn action_group(&self) -> std::option::Option<&crate::types::ActionGroup> {
+    pub fn action_group(&self) -> std::option::Option<& crate::types::ActionGroup> {
         self.action_group.as_ref()
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principals(&self) -> std::option::Option<& [std::string::String]> {
         self.principals.as_deref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl PutPermissionInputBuilder {
         self
     }
     /// <p>The name of the profiling group to grant access to.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.profiling_group_name = input;
-        self
+    pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.profiling_group_name = input; self
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
     pub fn action_group(mut self, input: crate::types::ActionGroup) -> Self {
@@ -71,12 +67,8 @@ impl PutPermissionInputBuilder {
         self
     }
     /// <p> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn set_action_group(
-        mut self,
-        input: std::option::Option<crate::types::ActionGroup>,
-    ) -> Self {
-        self.action_group = input;
-        self
+    pub fn set_action_group(mut self, input: std::option::Option<crate::types::ActionGroup>) -> Self {
+        self.action_group = input; self
     }
     /// Appends an item to `principals`.
     ///
@@ -85,17 +77,13 @@ impl PutPermissionInputBuilder {
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
     pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-        v.push(input.into());
-        self.principals = Some(v);
-        self
+                        v.push(input.into());
+                        self.principals = Some(v);
+                        self
     }
     /// <p> A list ARNs for the roles and users you want to grant access to the profiling group. Wildcards are not are supported in the ARNs. </p>
-    pub fn set_principals(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.principals = input;
-        self
+    pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.principals = input; self
     }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,21 +92,22 @@ impl PutPermissionInputBuilder {
     }
     /// <p> A universally unique identifier (UUID) for the revision of the policy you are adding to the profiling group. Do not specify this when you add permissions to a profiling group for the first time. If a policy already exists on the profiling group, you must specify the <code>revisionId</code>. </p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// Consumes the builder and constructs a [`PutPermissionInput`](crate::operation::put_permission::PutPermissionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_permission::PutPermissionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_permission::PutPermissionInput {
-            profiling_group_name: self.profiling_group_name,
-            action_group: self.action_group,
-            principals: self.principals,
-            revision_id: self.revision_id,
-        })
+    pub fn build(self) -> Result<crate::operation::put_permission::PutPermissionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_permission::PutPermissionInput {
+                profiling_group_name: self.profiling_group_name
+                ,
+                action_group: self.action_group
+                ,
+                principals: self.principals
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

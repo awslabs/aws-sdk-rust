@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentOutputsInput {
+pub struct ListEnvironmentOutputsInput  {
     /// <p>The environment name.</p>
     #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct ListEnvironmentOutputsInput {
 }
 impl ListEnvironmentOutputsInput {
     /// <p>The environment name.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListEnvironmentOutputsInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
-    pub fn builder(
-    ) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder {
         crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl ListEnvironmentOutputsInputBuilder {
     }
     /// <p>The environment name.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl ListEnvironmentOutputsInputBuilder {
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the list of environment outputs that was previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsInput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_environment_outputs::ListEnvironmentOutputsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_environment_outputs::ListEnvironmentOutputsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_environment_outputs::ListEnvironmentOutputsInput {
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-            },
+                environment_name: self.environment_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

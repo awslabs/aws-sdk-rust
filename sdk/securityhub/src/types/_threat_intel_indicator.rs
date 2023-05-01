@@ -3,7 +3,7 @@
 /// <p>Details about the threat intelligence related to a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThreatIntelIndicator {
+pub struct ThreatIntelIndicator  {
     /// <p>The type of threat intelligence indicator.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ThreatIntelIndicatorType>,
@@ -13,7 +13,7 @@ pub struct ThreatIntelIndicator {
     /// <p>The category of a threat intelligence indicator.</p>
     #[doc(hidden)]
     pub category: std::option::Option<crate::types::ThreatIntelIndicatorCategory>,
-    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
+    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub last_observed_at: std::option::Option<std::string::String>,
@@ -26,28 +26,28 @@ pub struct ThreatIntelIndicator {
 }
 impl ThreatIntelIndicator {
     /// <p>The type of threat intelligence indicator.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ThreatIntelIndicatorType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ThreatIntelIndicatorType> {
         self.r#type.as_ref()
     }
     /// <p>The value of a threat intelligence indicator.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The category of a threat intelligence indicator.</p>
-    pub fn category(&self) -> std::option::Option<&crate::types::ThreatIntelIndicatorCategory> {
+    pub fn category(&self) -> std::option::Option<& crate::types::ThreatIntelIndicatorCategory> {
         self.category.as_ref()
     }
-    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
+    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_observed_at(&self) -> std::option::Option<&str> {
+    pub fn last_observed_at(&self) -> std::option::Option<& str> {
         self.last_observed_at.as_deref()
     }
     /// <p>The source of the threat intelligence indicator.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
-    pub fn source_url(&self) -> std::option::Option<&str> {
+    pub fn source_url(&self) -> std::option::Option<& str> {
         self.source_url.as_deref()
     }
 }
@@ -76,12 +76,8 @@ impl ThreatIntelIndicatorBuilder {
         self
     }
     /// <p>The type of threat intelligence indicator.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ThreatIntelIndicatorType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ThreatIntelIndicatorType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The value of a threat intelligence indicator.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +86,7 @@ impl ThreatIntelIndicatorBuilder {
     }
     /// <p>The value of a threat intelligence indicator.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The category of a threat intelligence indicator.</p>
     pub fn category(mut self, input: crate::types::ThreatIntelIndicatorCategory) -> Self {
@@ -99,24 +94,19 @@ impl ThreatIntelIndicatorBuilder {
         self
     }
     /// <p>The category of a threat intelligence indicator.</p>
-    pub fn set_category(
-        mut self,
-        input: std::option::Option<crate::types::ThreatIntelIndicatorCategory>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: std::option::Option<crate::types::ThreatIntelIndicatorCategory>) -> Self {
+        self.category = input; self
     }
-    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
+    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_observed_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_observed_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p>
+    /// <p>Indicates when the most recent instance of a threat intelligence indicator was observed.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_last_observed_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_observed_at = input;
-        self
+        self.last_observed_at = input; self
     }
     /// <p>The source of the threat intelligence indicator.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +115,7 @@ impl ThreatIntelIndicatorBuilder {
     }
     /// <p>The source of the threat intelligence indicator.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
     pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,18 +124,24 @@ impl ThreatIntelIndicatorBuilder {
     }
     /// <p>The URL to the page or site where you can get more information about the threat intelligence indicator.</p>
     pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_url = input;
-        self
+        self.source_url = input; self
     }
     /// Consumes the builder and constructs a [`ThreatIntelIndicator`](crate::types::ThreatIntelIndicator).
     pub fn build(self) -> crate::types::ThreatIntelIndicator {
         crate::types::ThreatIntelIndicator {
-            r#type: self.r#type,
-            value: self.value,
-            category: self.category,
-            last_observed_at: self.last_observed_at,
-            source: self.source,
-            source_url: self.source_url,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
+            category: self.category
+            ,
+            last_observed_at: self.last_observed_at
+            ,
+            source: self.source
+            ,
+            source_url: self.source_url
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of a blueprint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlueprintDetails {
+pub struct BlueprintDetails  {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BlueprintDetails {
 }
 impl BlueprintDetails {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> std::option::Option<& str> {
         self.blueprint_name.as_deref()
     }
     /// <p>The run ID for this blueprint.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl BlueprintDetailsBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_blueprint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blueprint_name = input;
-        self
+        self.blueprint_name = input; self
     }
     /// <p>The run ID for this blueprint.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl BlueprintDetailsBuilder {
     }
     /// <p>The run ID for this blueprint.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// Consumes the builder and constructs a [`BlueprintDetails`](crate::types::BlueprintDetails).
     pub fn build(self) -> crate::types::BlueprintDetails {
         crate::types::BlueprintDetails {
-            blueprint_name: self.blueprint_name,
-            run_id: self.run_id,
+            blueprint_name: self.blueprint_name
+            ,
+            run_id: self.run_id
+            ,
         }
     }
 }
+

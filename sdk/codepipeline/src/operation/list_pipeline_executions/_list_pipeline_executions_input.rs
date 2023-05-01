@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>ListPipelineExecutions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPipelineExecutionsInput {
+pub struct ListPipelineExecutionsInput  {
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
     #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListPipelineExecutionsInput {
 }
 impl ListPipelineExecutionsInput {
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
@@ -24,15 +24,13 @@ impl ListPipelineExecutionsInput {
         self.max_results
     }
     /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListPipelineExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder {
         crate::operation::list_pipeline_executions::builders::ListPipelineExecutionsInputBuilder::default()
     }
 }
@@ -53,8 +51,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The name of the pipeline for which you want to get execution summary information.</p>
     pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_name = input;
-        self
+        self.pipeline_name = input; self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,8 +60,7 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,22 +69,20 @@ impl ListPipelineExecutionsInputBuilder {
     }
     /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to return the next set of pipeline executions in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListPipelineExecutionsInput`](crate::operation::list_pipeline_executions::ListPipelineExecutionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_pipeline_executions::ListPipelineExecutionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_pipeline_executions::ListPipelineExecutionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_pipeline_executions::ListPipelineExecutionsInput {
-                pipeline_name: self.pipeline_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                pipeline_name: self.pipeline_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

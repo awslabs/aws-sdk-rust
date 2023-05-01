@@ -3,7 +3,7 @@
 /// <p>Summary information about a stream session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSessionSummary {
+pub struct StreamSessionSummary  {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct StreamSessionSummary {
 }
 impl StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
@@ -59,8 +59,7 @@ impl StreamSessionSummaryBuilder {
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,12 +67,8 @@ impl StreamSessionSummaryBuilder {
         self
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +77,7 @@ impl StreamSessionSummaryBuilder {
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     pub fn has_error_event(mut self, input: bool) -> Self {
@@ -92,16 +86,21 @@ impl StreamSessionSummaryBuilder {
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     pub fn set_has_error_event(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_error_event = input;
-        self
+        self.has_error_event = input; self
     }
     /// Consumes the builder and constructs a [`StreamSessionSummary`](crate::types::StreamSessionSummary).
     pub fn build(self) -> crate::types::StreamSessionSummary {
         crate::types::StreamSessionSummary {
-            stream_id: self.stream_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            has_error_event: self.has_error_event.unwrap_or_default(),
+            stream_id: self.stream_id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            has_error_event: self.has_error_event
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

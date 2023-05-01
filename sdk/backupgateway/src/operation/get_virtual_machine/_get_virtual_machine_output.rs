@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVirtualMachineOutput {
+pub struct GetVirtualMachineOutput  {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     #[doc(hidden)]
     pub virtual_machine: std::option::Option<crate::types::VirtualMachineDetails>,
@@ -10,19 +10,18 @@ pub struct GetVirtualMachineOutput {
 }
 impl GetVirtualMachineOutput {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-    pub fn virtual_machine(&self) -> std::option::Option<&crate::types::VirtualMachineDetails> {
+    pub fn virtual_machine(&self) -> std::option::Option<& crate::types::VirtualMachineDetails> {
         self.virtual_machine.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetVirtualMachineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetVirtualMachineOutput {
     /// Creates a new builder-style object to manufacture [`GetVirtualMachineOutput`](crate::operation::get_virtual_machine::GetVirtualMachineOutput).
-    pub fn builder(
-    ) -> crate::operation::get_virtual_machine::builders::GetVirtualMachineOutputBuilder {
+    pub fn builder() -> crate::operation::get_virtual_machine::builders::GetVirtualMachineOutputBuilder {
         crate::operation::get_virtual_machine::builders::GetVirtualMachineOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetVirtualMachineOutputBuilder {
         self
     }
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
-    pub fn set_virtual_machine(
-        mut self,
-        input: std::option::Option<crate::types::VirtualMachineDetails>,
-    ) -> Self {
-        self.virtual_machine = input;
-        self
+    pub fn set_virtual_machine(mut self, input: std::option::Option<crate::types::VirtualMachineDetails>) -> Self {
+        self.virtual_machine = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetVirtualMachineOutput`](crate::operation::get_virtual_machine::GetVirtualMachineOutput).
     pub fn build(self) -> crate::operation::get_virtual_machine::GetVirtualMachineOutput {
         crate::operation::get_virtual_machine::GetVirtualMachineOutput {
-            virtual_machine: self.virtual_machine,
+            virtual_machine: self.virtual_machine
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataQualityRulesetInput {
+pub struct DeleteDataQualityRulesetInput  {
     /// <p>A name for the data quality ruleset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteDataQualityRulesetInput {
     /// <p>A name for the data quality ruleset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataQualityRulesetInput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetInputBuilder {
         crate::operation::delete_data_quality_ruleset::builders::DeleteDataQualityRulesetInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DeleteDataQualityRulesetInputBuilder {
     }
     /// <p>A name for the data quality ruleset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDataQualityRulesetInput`](crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_data_quality_ruleset::DeleteDataQualityRulesetInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

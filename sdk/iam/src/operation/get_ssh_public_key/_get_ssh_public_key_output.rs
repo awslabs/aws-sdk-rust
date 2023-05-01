@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GetSSHPublicKey</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSshPublicKeyOutput {
+pub struct GetSshPublicKeyOutput  {
     /// <p>A structure containing details about the SSH public key.</p>
     #[doc(hidden)]
     pub ssh_public_key: std::option::Option<crate::types::SshPublicKey>,
@@ -11,19 +11,18 @@ pub struct GetSshPublicKeyOutput {
 }
 impl GetSshPublicKeyOutput {
     /// <p>A structure containing details about the SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&crate::types::SshPublicKey> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& crate::types::SshPublicKey> {
         self.ssh_public_key.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSshPublicKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetSshPublicKeyOutput`](crate::operation::get_ssh_public_key::GetSshPublicKeyOutput).
-    pub fn builder() -> crate::operation::get_ssh_public_key::builders::GetSshPublicKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ssh_public_key::builders::GetSshPublicKeyOutputBuilder {
         crate::operation::get_ssh_public_key::builders::GetSshPublicKeyOutputBuilder::default()
     }
 }
@@ -42,27 +41,25 @@ impl GetSshPublicKeyOutputBuilder {
         self
     }
     /// <p>A structure containing details about the SSH public key.</p>
-    pub fn set_ssh_public_key(
-        mut self,
-        input: std::option::Option<crate::types::SshPublicKey>,
-    ) -> Self {
-        self.ssh_public_key = input;
-        self
+    pub fn set_ssh_public_key(mut self, input: std::option::Option<crate::types::SshPublicKey>) -> Self {
+        self.ssh_public_key = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSshPublicKeyOutput`](crate::operation::get_ssh_public_key::GetSshPublicKeyOutput).
     pub fn build(self) -> crate::operation::get_ssh_public_key::GetSshPublicKeyOutput {
         crate::operation::get_ssh_public_key::GetSshPublicKeyOutput {
-            ssh_public_key: self.ssh_public_key,
+            ssh_public_key: self.ssh_public_key
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

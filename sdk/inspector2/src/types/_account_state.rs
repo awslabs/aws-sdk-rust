@@ -3,7 +3,7 @@
 /// <p>An object with details the status of an Amazon Web Services account within your Amazon Inspector environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountState {
+pub struct AccountState  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AccountState {
 }
 impl AccountState {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    pub fn resource_state(&self) -> std::option::Option<&crate::types::ResourceState> {
+    pub fn resource_state(&self) -> std::option::Option<& crate::types::ResourceState> {
         self.resource_state.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl AccountStateBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -61,8 +60,7 @@ impl AccountStateBuilder {
     }
     /// <p>An object detailing the status of Amazon Inspector for the account.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceState) -> Self {
@@ -70,19 +68,19 @@ impl AccountStateBuilder {
         self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    pub fn set_resource_state(
-        mut self,
-        input: std::option::Option<crate::types::ResourceState>,
-    ) -> Self {
-        self.resource_state = input;
-        self
+    pub fn set_resource_state(mut self, input: std::option::Option<crate::types::ResourceState>) -> Self {
+        self.resource_state = input; self
     }
     /// Consumes the builder and constructs a [`AccountState`](crate::types::AccountState).
     pub fn build(self) -> crate::types::AccountState {
         crate::types::AccountState {
-            account_id: self.account_id,
-            state: self.state,
-            resource_state: self.resource_state,
+            account_id: self.account_id
+            ,
+            state: self.state
+            ,
+            resource_state: self.resource_state
+            ,
         }
     }
 }
+

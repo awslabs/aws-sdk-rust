@@ -21,14 +21,8 @@ pub enum ConfiguredTableAnalysisRulePolicyV1 {
 impl ConfiguredTableAnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`Aggregation`](crate::types::ConfiguredTableAnalysisRulePolicyV1::Aggregation), extracting the inner [`AnalysisRuleAggregation`](crate::types::AnalysisRuleAggregation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aggregation(
-        &self,
-    ) -> std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
-        if let ConfiguredTableAnalysisRulePolicyV1::Aggregation(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_aggregation(&self) -> std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
+        if let ConfiguredTableAnalysisRulePolicyV1::Aggregation(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Aggregation`](crate::types::ConfiguredTableAnalysisRulePolicyV1::Aggregation).
     pub fn is_aggregation(&self) -> bool {
@@ -37,11 +31,7 @@ impl ConfiguredTableAnalysisRulePolicyV1 {
     /// Tries to convert the enum instance into [`List`](crate::types::ConfiguredTableAnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_list(&self) -> std::result::Result<&crate::types::AnalysisRuleList, &Self> {
-        if let ConfiguredTableAnalysisRulePolicyV1::List(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ConfiguredTableAnalysisRulePolicyV1::List(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`List`](crate::types::ConfiguredTableAnalysisRulePolicyV1::List).
     pub fn is_list(&self) -> bool {
@@ -52,3 +42,4 @@ impl ConfiguredTableAnalysisRulePolicyV1 {
         matches!(self, Self::Unknown)
     }
 }
+

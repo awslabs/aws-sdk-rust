@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoteOnProposalInput {
+pub struct VoteOnProposalInput  {
     /// <p> The unique identifier of the network. </p>
     #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct VoteOnProposalInput {
 }
 impl VoteOnProposalInput {
     /// <p> The unique identifier of the network. </p>
-    pub fn network_id(&self) -> std::option::Option<&str> {
+    pub fn network_id(&self) -> std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// <p> The unique identifier of the proposal. </p>
-    pub fn proposal_id(&self) -> std::option::Option<&str> {
+    pub fn proposal_id(&self) -> std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
     /// <p>The unique identifier of the member casting the vote. </p>
-    pub fn voter_member_id(&self) -> std::option::Option<&str> {
+    pub fn voter_member_id(&self) -> std::option::Option<& str> {
         self.voter_member_id.as_deref()
     }
     /// <p> The value of the vote. </p>
-    pub fn vote(&self) -> std::option::Option<&crate::types::VoteValue> {
+    pub fn vote(&self) -> std::option::Option<& crate::types::VoteValue> {
         self.vote.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl VoteOnProposalInputBuilder {
     }
     /// <p> The unique identifier of the network. </p>
     pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// <p> The unique identifier of the proposal. </p>
     pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl VoteOnProposalInputBuilder {
     }
     /// <p> The unique identifier of the proposal. </p>
     pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
     }
     /// <p>The unique identifier of the member casting the vote. </p>
     pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl VoteOnProposalInputBuilder {
     }
     /// <p>The unique identifier of the member casting the vote. </p>
     pub fn set_voter_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voter_member_id = input;
-        self
+        self.voter_member_id = input; self
     }
     /// <p> The value of the vote. </p>
     pub fn vote(mut self, input: crate::types::VoteValue) -> Self {
@@ -88,21 +85,22 @@ impl VoteOnProposalInputBuilder {
     }
     /// <p> The value of the vote. </p>
     pub fn set_vote(mut self, input: std::option::Option<crate::types::VoteValue>) -> Self {
-        self.vote = input;
-        self
+        self.vote = input; self
     }
     /// Consumes the builder and constructs a [`VoteOnProposalInput`](crate::operation::vote_on_proposal::VoteOnProposalInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::vote_on_proposal::VoteOnProposalInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::vote_on_proposal::VoteOnProposalInput {
-            network_id: self.network_id,
-            proposal_id: self.proposal_id,
-            voter_member_id: self.voter_member_id,
-            vote: self.vote,
-        })
+    pub fn build(self) -> Result<crate::operation::vote_on_proposal::VoteOnProposalInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::vote_on_proposal::VoteOnProposalInput {
+                network_id: self.network_id
+                ,
+                proposal_id: self.proposal_id
+                ,
+                voter_member_id: self.voter_member_id
+                ,
+                vote: self.vote
+                ,
+            }
+        )
     }
 }
+

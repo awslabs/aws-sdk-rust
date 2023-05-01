@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListTagsForResourceInput {
 }
 impl ListTagsForResourceInput {
     /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Reserved for future use.</p>
@@ -29,10 +29,8 @@ impl ListTagsForResourceInput {
 }
 impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
-        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -72,22 +68,20 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tags_for_resource::ListTagsForResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-                resource_id: self.resource_id,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                resource_id: self.resource_id
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

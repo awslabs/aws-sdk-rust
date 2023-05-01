@@ -3,14 +3,14 @@
 /// <p>The targeted recipient for a streaming configuration notification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingNotificationTarget {
+pub struct StreamingNotificationTarget  {
     /// <p>The streaming notification target.</p>
     #[doc(hidden)]
     pub notification_target: std::option::Option<crate::types::NotificationTarget>,
 }
 impl StreamingNotificationTarget {
     /// <p>The streaming notification target.</p>
-    pub fn notification_target(&self) -> std::option::Option<&crate::types::NotificationTarget> {
+    pub fn notification_target(&self) -> std::option::Option<& crate::types::NotificationTarget> {
         self.notification_target.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl StreamingNotificationTargetBuilder {
         self
     }
     /// <p>The streaming notification target.</p>
-    pub fn set_notification_target(
-        mut self,
-        input: std::option::Option<crate::types::NotificationTarget>,
-    ) -> Self {
-        self.notification_target = input;
-        self
+    pub fn set_notification_target(mut self, input: std::option::Option<crate::types::NotificationTarget>) -> Self {
+        self.notification_target = input; self
     }
     /// Consumes the builder and constructs a [`StreamingNotificationTarget`](crate::types::StreamingNotificationTarget).
     pub fn build(self) -> crate::types::StreamingNotificationTarget {
         crate::types::StreamingNotificationTarget {
-            notification_target: self.notification_target,
+            notification_target: self.notification_target
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterDbProxyTargetsInput {
+pub struct DeregisterDbProxyTargetsInput  {
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
     #[doc(hidden)]
     pub db_proxy_name: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct DeregisterDbProxyTargetsInput {
 }
 impl DeregisterDbProxyTargetsInput {
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-    pub fn db_proxy_name(&self) -> std::option::Option<&str> {
+    pub fn db_proxy_name(&self) -> std::option::Option<& str> {
         self.db_proxy_name.as_deref()
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-    pub fn target_group_name(&self) -> std::option::Option<&str> {
+    pub fn target_group_name(&self) -> std::option::Option<& str> {
         self.target_group_name.as_deref()
     }
     /// <p>One or more DB instance identifiers.</p>
-    pub fn db_instance_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn db_instance_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.db_instance_identifiers.as_deref()
     }
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn db_cluster_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn db_cluster_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.db_cluster_identifiers.as_deref()
     }
 }
 impl DeregisterDbProxyTargetsInput {
     /// Creates a new builder-style object to manufacture [`DeregisterDbProxyTargetsInput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder {
         crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl DeregisterDbProxyTargetsInputBuilder {
     }
     /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
     pub fn set_db_proxy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_proxy_name = input;
-        self
+        self.db_proxy_name = input; self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
     pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +66,8 @@ impl DeregisterDbProxyTargetsInputBuilder {
         self
     }
     /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-    pub fn set_target_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_group_name = input;
-        self
+    pub fn set_target_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_group_name = input; self
     }
     /// Appends an item to `db_instance_identifiers`.
     ///
@@ -83,17 +76,13 @@ impl DeregisterDbProxyTargetsInputBuilder {
     /// <p>One or more DB instance identifiers.</p>
     pub fn db_instance_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.db_instance_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.db_instance_identifiers = Some(v);
-        self
+                        v.push(input.into());
+                        self.db_instance_identifiers = Some(v);
+                        self
     }
     /// <p>One or more DB instance identifiers.</p>
-    pub fn set_db_instance_identifiers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.db_instance_identifiers = input;
-        self
+    pub fn set_db_instance_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.db_instance_identifiers = input; self
     }
     /// Appends an item to `db_cluster_identifiers`.
     ///
@@ -102,32 +91,28 @@ impl DeregisterDbProxyTargetsInputBuilder {
     /// <p>One or more DB cluster identifiers.</p>
     pub fn db_cluster_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.db_cluster_identifiers.unwrap_or_default();
-        v.push(input.into());
-        self.db_cluster_identifiers = Some(v);
-        self
+                        v.push(input.into());
+                        self.db_cluster_identifiers = Some(v);
+                        self
     }
     /// <p>One or more DB cluster identifiers.</p>
-    pub fn set_db_cluster_identifiers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.db_cluster_identifiers = input;
-        self
+    pub fn set_db_cluster_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.db_cluster_identifiers = input; self
     }
     /// Consumes the builder and constructs a [`DeregisterDbProxyTargetsInput`](crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsInput {
-                db_proxy_name: self.db_proxy_name,
-                target_group_name: self.target_group_name,
-                db_instance_identifiers: self.db_instance_identifiers,
-                db_cluster_identifiers: self.db_cluster_identifiers,
-            },
+                db_proxy_name: self.db_proxy_name
+                ,
+                target_group_name: self.target_group_name
+                ,
+                db_instance_identifiers: self.db_instance_identifiers
+                ,
+                db_cluster_identifiers: self.db_cluster_identifiers
+                ,
+            }
         )
     }
 }
+

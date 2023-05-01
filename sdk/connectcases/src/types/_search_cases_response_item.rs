@@ -3,7 +3,7 @@
 /// <p>A list of items that represent cases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchCasesResponseItem {
+pub struct SearchCasesResponseItem  {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -15,29 +15,23 @@ pub struct SearchCasesResponseItem {
     pub fields: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl SearchCasesResponseItem {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>List of case field values.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::FieldValue]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::types::FieldValue]> {
         self.fields.as_deref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -55,9 +49,7 @@ pub struct SearchCasesResponseItemBuilder {
     pub(crate) case_id: std::option::Option<std::string::String>,
     pub(crate) template_id: std::option::Option<std::string::String>,
     pub(crate) fields: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
-    pub(crate) tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl SearchCasesResponseItemBuilder {
     /// <p>A unique identifier of the case.</p>
@@ -67,8 +59,7 @@ impl SearchCasesResponseItemBuilder {
     }
     /// <p>A unique identifier of the case.</p>
     pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>A unique identifier of a template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +68,7 @@ impl SearchCasesResponseItemBuilder {
     }
     /// <p>A unique identifier of a template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// Appends an item to `fields`.
     ///
@@ -87,53 +77,41 @@ impl SearchCasesResponseItemBuilder {
     /// <p>List of case field values.</p>
     pub fn fields(mut self, input: crate::types::FieldValue) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = Some(v);
-        self
+                        v.push(input);
+                        self.fields = Some(v);
+                        self
     }
     /// <p>List of case field values.</p>
-    pub fn set_fields(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldValue>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldValue>>) -> Self {
+        self.fields = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`SearchCasesResponseItem`](crate::types::SearchCasesResponseItem).
     pub fn build(self) -> crate::types::SearchCasesResponseItem {
         crate::types::SearchCasesResponseItem {
-            case_id: self.case_id,
-            template_id: self.template_id,
-            fields: self.fields,
-            tags: self.tags,
+            case_id: self.case_id
+            ,
+            template_id: self.template_id
+            ,
+            fields: self.fields
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

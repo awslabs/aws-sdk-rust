@@ -3,7 +3,7 @@
 /// <p>Information about a health event created in a monitor in Amazon CloudWatch Internet Monitor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthEvent {
+pub struct HealthEvent  {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
     #[doc(hidden)]
     pub event_arn: std::option::Option<std::string::String>,
@@ -37,35 +37,35 @@ pub struct HealthEvent {
 }
 impl HealthEvent {
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
-    pub fn event_arn(&self) -> std::option::Option<&str> {
+    pub fn event_arn(&self) -> std::option::Option<& str> {
         self.event_arn.as_deref()
     }
     /// <p>The internally generated identifier of a specific network traffic impairment health event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>When a health event started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time when a health event ended. If the health event is still active, then the end time is not set.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>When the health event was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the health event was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The locations impacted by the health event.</p>
-    pub fn impacted_locations(&self) -> std::option::Option<&[crate::types::ImpactedLocation]> {
+    pub fn impacted_locations(&self) -> std::option::Option<& [crate::types::ImpactedLocation]> {
         self.impacted_locations.as_deref()
     }
     /// <p>Health event list member.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::HealthEventStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::HealthEventStatus> {
         self.status.as_ref()
     }
     /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
@@ -73,7 +73,7 @@ impl HealthEvent {
         self.percent_of_total_traffic_impacted
     }
     /// <p>The type of impairment for a health event.</p>
-    pub fn impact_type(&self) -> std::option::Option<&crate::types::HealthEventImpactType> {
+    pub fn impact_type(&self) -> std::option::Option<& crate::types::HealthEventImpactType> {
         self.impact_type.as_ref()
     }
 }
@@ -94,8 +94,7 @@ pub struct HealthEventBuilder {
     pub(crate) ended_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) impacted_locations:
-        std::option::Option<std::vec::Vec<crate::types::ImpactedLocation>>,
+    pub(crate) impacted_locations: std::option::Option<std::vec::Vec<crate::types::ImpactedLocation>>,
     pub(crate) status: std::option::Option<crate::types::HealthEventStatus>,
     pub(crate) percent_of_total_traffic_impacted: std::option::Option<f64>,
     pub(crate) impact_type: std::option::Option<crate::types::HealthEventImpactType>,
@@ -108,8 +107,7 @@ impl HealthEventBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the event.</p>
     pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_arn = input;
-        self
+        self.event_arn = input; self
     }
     /// <p>The internally generated identifier of a specific network traffic impairment health event.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +116,7 @@ impl HealthEventBuilder {
     }
     /// <p>The internally generated identifier of a specific network traffic impairment health event.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>When a health event started.</p>
     pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,12 +124,8 @@ impl HealthEventBuilder {
         self
     }
     /// <p>When a health event started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_at = input;
-        self
+    pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input; self
     }
     /// <p>The time when a health event ended. If the health event is still active, then the end time is not set.</p>
     pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,8 +134,7 @@ impl HealthEventBuilder {
     }
     /// <p>The time when a health event ended. If the health event is still active, then the end time is not set.</p>
     pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.ended_at = input;
-        self
+        self.ended_at = input; self
     }
     /// <p>When the health event was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,12 +142,8 @@ impl HealthEventBuilder {
         self
     }
     /// <p>When the health event was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>When the health event was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -163,12 +151,8 @@ impl HealthEventBuilder {
         self
     }
     /// <p>When the health event was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// Appends an item to `impacted_locations`.
     ///
@@ -177,17 +161,13 @@ impl HealthEventBuilder {
     /// <p>The locations impacted by the health event.</p>
     pub fn impacted_locations(mut self, input: crate::types::ImpactedLocation) -> Self {
         let mut v = self.impacted_locations.unwrap_or_default();
-        v.push(input);
-        self.impacted_locations = Some(v);
-        self
+                        v.push(input);
+                        self.impacted_locations = Some(v);
+                        self
     }
     /// <p>The locations impacted by the health event.</p>
-    pub fn set_impacted_locations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImpactedLocation>>,
-    ) -> Self {
-        self.impacted_locations = input;
-        self
+    pub fn set_impacted_locations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImpactedLocation>>) -> Self {
+        self.impacted_locations = input; self
     }
     /// <p>Health event list member.</p>
     pub fn status(mut self, input: crate::types::HealthEventStatus) -> Self {
@@ -195,12 +175,8 @@ impl HealthEventBuilder {
         self
     }
     /// <p>Health event list member.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::HealthEventStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::HealthEventStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
     pub fn percent_of_total_traffic_impacted(mut self, input: f64) -> Self {
@@ -208,12 +184,8 @@ impl HealthEventBuilder {
         self
     }
     /// <p>The impact on global traffic monitored by this monitor for this health event.</p>
-    pub fn set_percent_of_total_traffic_impacted(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.percent_of_total_traffic_impacted = input;
-        self
+    pub fn set_percent_of_total_traffic_impacted(mut self, input: std::option::Option<f64>) -> Self {
+        self.percent_of_total_traffic_impacted = input; self
     }
     /// <p>The type of impairment for a health event.</p>
     pub fn impact_type(mut self, input: crate::types::HealthEventImpactType) -> Self {
@@ -221,26 +193,33 @@ impl HealthEventBuilder {
         self
     }
     /// <p>The type of impairment for a health event.</p>
-    pub fn set_impact_type(
-        mut self,
-        input: std::option::Option<crate::types::HealthEventImpactType>,
-    ) -> Self {
-        self.impact_type = input;
-        self
+    pub fn set_impact_type(mut self, input: std::option::Option<crate::types::HealthEventImpactType>) -> Self {
+        self.impact_type = input; self
     }
     /// Consumes the builder and constructs a [`HealthEvent`](crate::types::HealthEvent).
     pub fn build(self) -> crate::types::HealthEvent {
         crate::types::HealthEvent {
-            event_arn: self.event_arn,
-            event_id: self.event_id,
-            started_at: self.started_at,
-            ended_at: self.ended_at,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            impacted_locations: self.impacted_locations,
-            status: self.status,
-            percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted,
-            impact_type: self.impact_type,
+            event_arn: self.event_arn
+            ,
+            event_id: self.event_id
+            ,
+            started_at: self.started_at
+            ,
+            ended_at: self.ended_at
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            impacted_locations: self.impacted_locations
+            ,
+            status: self.status
+            ,
+            percent_of_total_traffic_impacted: self.percent_of_total_traffic_impacted
+            ,
+            impact_type: self.impact_type
+            ,
         }
     }
 }
+

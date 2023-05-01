@@ -3,7 +3,7 @@
 /// <p>A filter to apply to the <code>DescribePackage</code> response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackagesFilter {
+pub struct DescribePackagesFilter  {
     /// <p>Any field from <code>PackageDetails</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::DescribePackagesFilterName>,
@@ -13,11 +13,11 @@ pub struct DescribePackagesFilter {
 }
 impl DescribePackagesFilter {
     /// <p>Any field from <code>PackageDetails</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::DescribePackagesFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::DescribePackagesFilterName> {
         self.name.as_ref()
     }
     /// <p>A list of values for the specified filter field.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl DescribePackagesFilterBuilder {
         self
     }
     /// <p>Any field from <code>PackageDetails</code>.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::DescribePackagesFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::DescribePackagesFilterName>) -> Self {
+        self.name = input; self
     }
     /// Appends an item to `value`.
     ///
@@ -56,23 +52,22 @@ impl DescribePackagesFilterBuilder {
     /// <p>A list of values for the specified filter field.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = Some(v);
-        self
+                        v.push(input.into());
+                        self.value = Some(v);
+                        self
     }
     /// <p>A list of values for the specified filter field.</p>
-    pub fn set_value(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`DescribePackagesFilter`](crate::types::DescribePackagesFilter).
     pub fn build(self) -> crate::types::DescribePackagesFilter {
         crate::types::DescribePackagesFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

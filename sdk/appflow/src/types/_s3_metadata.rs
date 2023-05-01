@@ -3,7 +3,8 @@
 /// <p> The connector metadata specific to Amazon S3. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Metadata {}
+pub struct S3Metadata  {
+}
 impl S3Metadata {
     /// Creates a new builder-style object to manufacture [`S3Metadata`](crate::types::S3Metadata).
     pub fn builder() -> crate::types::builders::S3MetadataBuilder {
@@ -14,10 +15,13 @@ impl S3Metadata {
 /// A builder for [`S3Metadata`](crate::types::S3Metadata).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct S3MetadataBuilder {}
+pub struct S3MetadataBuilder {
+}
 impl S3MetadataBuilder {
     /// Consumes the builder and constructs a [`S3Metadata`](crate::types::S3Metadata).
     pub fn build(self) -> crate::types::S3Metadata {
-        crate::types::S3Metadata {}
+        crate::types::S3Metadata {
+        }
     }
 }
+

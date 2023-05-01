@@ -3,7 +3,7 @@
 /// <p>An edge represents a directed connection between two Glue components that are part of the workflow the edge belongs to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Edge {
+pub struct Edge  {
     /// <p>The unique of the node within the workflow where the edge starts.</p>
     #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Edge {
 }
 impl Edge {
     /// <p>The unique of the node within the workflow where the edge starts.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The unique of the node within the workflow where the edge ends.</p>
-    pub fn destination_id(&self) -> std::option::Option<&str> {
+    pub fn destination_id(&self) -> std::option::Option<& str> {
         self.destination_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl EdgeBuilder {
     }
     /// <p>The unique of the node within the workflow where the edge starts.</p>
     pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>The unique of the node within the workflow where the edge ends.</p>
     pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl EdgeBuilder {
     }
     /// <p>The unique of the node within the workflow where the edge ends.</p>
     pub fn set_destination_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_id = input;
-        self
+        self.destination_id = input; self
     }
     /// Consumes the builder and constructs a [`Edge`](crate::types::Edge).
     pub fn build(self) -> crate::types::Edge {
         crate::types::Edge {
-            source_id: self.source_id,
-            destination_id: self.destination_id,
+            source_id: self.source_id
+            ,
+            destination_id: self.destination_id
+            ,
         }
     }
 }
+

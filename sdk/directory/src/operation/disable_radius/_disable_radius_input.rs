@@ -3,14 +3,14 @@
 /// <p>Contains the inputs for the <code>DisableRadius</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableRadiusInput {
+pub struct DisableRadiusInput  {
     /// <p>The identifier of the directory for which to disable MFA.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DisableRadiusInput {
     /// <p>The identifier of the directory for which to disable MFA.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DisableRadiusInputBuilder {
     }
     /// <p>The identifier of the directory for which to disable MFA.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// Consumes the builder and constructs a [`DisableRadiusInput`](crate::operation::disable_radius::DisableRadiusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disable_radius::DisableRadiusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::disable_radius::DisableRadiusInput {
-            directory_id: self.directory_id,
-        })
+    pub fn build(self) -> Result<crate::operation::disable_radius::DisableRadiusInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::disable_radius::DisableRadiusInput {
+                directory_id: self.directory_id
+                ,
+            }
+        )
     }
 }
+

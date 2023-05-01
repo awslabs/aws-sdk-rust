@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConferenceProviderOutput {
+pub struct DeleteConferenceProviderOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteConferenceProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteConferenceProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderOutputBuilder {
         crate::operation::delete_conference_provider::builders::DeleteConferenceProviderOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct DeleteConferenceProviderOutputBuilder {
 }
 impl DeleteConferenceProviderOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_conference_provider::DeleteConferenceProviderOutput {
+    pub fn build(self) -> crate::operation::delete_conference_provider::DeleteConferenceProviderOutput {
         crate::operation::delete_conference_provider::DeleteConferenceProviderOutput {
             _request_id: self._request_id,
         }
     }
 }
+

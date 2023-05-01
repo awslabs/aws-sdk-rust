@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetRulePrioritiesOutput {
+pub struct SetRulePrioritiesOutput  {
     /// <p>Information about the rules.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
@@ -10,19 +10,18 @@ pub struct SetRulePrioritiesOutput {
 }
 impl SetRulePrioritiesOutput {
     /// <p>Information about the rules.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::Rule]> {
         self.rules.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SetRulePrioritiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetRulePrioritiesOutput {
     /// Creates a new builder-style object to manufacture [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput).
-    pub fn builder(
-    ) -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder {
+    pub fn builder() -> crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder {
         crate::operation::set_rule_priorities::builders::SetRulePrioritiesOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl SetRulePrioritiesOutputBuilder {
     /// <p>Information about the rules.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>Information about the rules.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
+        self.rules = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetRulePrioritiesOutput`](crate::operation::set_rule_priorities::SetRulePrioritiesOutput).
     pub fn build(self) -> crate::operation::set_rule_priorities::SetRulePrioritiesOutput {
         crate::operation::set_rule_priorities::SetRulePrioritiesOutput {
-            rules: self.rules,
+            rules: self.rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

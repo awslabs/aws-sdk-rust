@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsFilterInput {
+pub struct GetFindingsFilterInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder {
         crate::operation::get_findings_filter::builders::GetFindingsFilterInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetFindingsFilterInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetFindingsFilterInput`](crate::operation::get_findings_filter::GetFindingsFilterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_findings_filter::GetFindingsFilterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_findings_filter::GetFindingsFilterInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::get_findings_filter::GetFindingsFilterInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_findings_filter::GetFindingsFilterInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

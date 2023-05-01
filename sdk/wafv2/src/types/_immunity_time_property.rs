@@ -3,14 +3,14 @@
 /// <p>Used for CAPTCHA and challenge token settings. Determines how long a <code>CAPTCHA</code> or challenge timestamp remains valid after WAF updates it for a successful <code>CAPTCHA</code> or challenge response. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImmunityTimeProperty {
-    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
+pub struct ImmunityTimeProperty  {
+    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p> 
     /// <p>For the Challenge action, the minimum setting is 300. </p>
     #[doc(hidden)]
     pub immunity_time: std::option::Option<i64>,
 }
 impl ImmunityTimeProperty {
-    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
+    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p> 
     /// <p>For the Challenge action, the minimum setting is 300. </p>
     pub fn immunity_time(&self) -> std::option::Option<i64> {
         self.immunity_time
@@ -30,22 +30,23 @@ pub struct ImmunityTimePropertyBuilder {
     pub(crate) immunity_time: std::option::Option<i64>,
 }
 impl ImmunityTimePropertyBuilder {
-    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
+    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p> 
     /// <p>For the Challenge action, the minimum setting is 300. </p>
     pub fn immunity_time(mut self, input: i64) -> Self {
         self.immunity_time = Some(input);
         self
     }
-    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p>
+    /// <p>The amount of time, in seconds, that a <code>CAPTCHA</code> or challenge timestamp is considered valid by WAF. The default setting is 300. </p> 
     /// <p>For the Challenge action, the minimum setting is 300. </p>
     pub fn set_immunity_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.immunity_time = input;
-        self
+        self.immunity_time = input; self
     }
     /// Consumes the builder and constructs a [`ImmunityTimeProperty`](crate::types::ImmunityTimeProperty).
     pub fn build(self) -> crate::types::ImmunityTimeProperty {
         crate::types::ImmunityTimeProperty {
-            immunity_time: self.immunity_time,
+            immunity_time: self.immunity_time
+            ,
         }
     }
 }
+

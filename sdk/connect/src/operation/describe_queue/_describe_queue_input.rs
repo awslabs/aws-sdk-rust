@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeQueueInput {
+pub struct DescribeQueueInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeQueueInput {
 }
 impl DescribeQueueInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> std::option::Option<&str> {
+    pub fn queue_id(&self) -> std::option::Option<& str> {
         self.queue_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeQueueInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier for the queue.</p>
     pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeQueueInputBuilder {
     }
     /// <p>The identifier for the queue.</p>
     pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_id = input;
-        self
+        self.queue_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeQueueInput`](crate::operation::describe_queue::DescribeQueueInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_queue::DescribeQueueInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_queue::DescribeQueueInput {
-            instance_id: self.instance_id,
-            queue_id: self.queue_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_queue::DescribeQueueInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_queue::DescribeQueueInput {
+                instance_id: self.instance_id
+                ,
+                queue_id: self.queue_id
+                ,
+            }
+        )
     }
 }
+

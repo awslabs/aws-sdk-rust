@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetBlueprintsOutput {
+pub struct BatchGetBlueprintsOutput  {
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
     #[doc(hidden)]
     pub blueprints: std::option::Option<std::vec::Vec<crate::types::Blueprint>>,
@@ -13,23 +13,22 @@ pub struct BatchGetBlueprintsOutput {
 }
 impl BatchGetBlueprintsOutput {
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
-    pub fn blueprints(&self) -> std::option::Option<&[crate::types::Blueprint]> {
+    pub fn blueprints(&self) -> std::option::Option<& [crate::types::Blueprint]> {
         self.blueprints.as_deref()
     }
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
-    pub fn missing_blueprints(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn missing_blueprints(&self) -> std::option::Option<& [std::string::String]> {
         self.missing_blueprints.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetBlueprintsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetBlueprintsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetBlueprintsOutput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsOutputBuilder {
         crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl BatchGetBlueprintsOutputBuilder {
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
     pub fn blueprints(mut self, input: crate::types::Blueprint) -> Self {
         let mut v = self.blueprints.unwrap_or_default();
-        v.push(input);
-        self.blueprints = Some(v);
-        self
+                        v.push(input);
+                        self.blueprints = Some(v);
+                        self
     }
     /// <p>Returns a list of blueprint as a <code>Blueprints</code> object.</p>
-    pub fn set_blueprints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Blueprint>>,
-    ) -> Self {
-        self.blueprints = input;
-        self
+    pub fn set_blueprints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Blueprint>>) -> Self {
+        self.blueprints = input; self
     }
     /// Appends an item to `missing_blueprints`.
     ///
@@ -69,33 +64,32 @@ impl BatchGetBlueprintsOutputBuilder {
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
     pub fn missing_blueprints(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.missing_blueprints.unwrap_or_default();
-        v.push(input.into());
-        self.missing_blueprints = Some(v);
-        self
+                        v.push(input.into());
+                        self.missing_blueprints = Some(v);
+                        self
     }
     /// <p>Returns a list of <code>BlueprintNames</code> that were not found.</p>
-    pub fn set_missing_blueprints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.missing_blueprints = input;
-        self
+    pub fn set_missing_blueprints(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.missing_blueprints = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetBlueprintsOutput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput).
     pub fn build(self) -> crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput {
         crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput {
-            blueprints: self.blueprints,
-            missing_blueprints: self.missing_blueprints,
+            blueprints: self.blueprints
+            ,
+            missing_blueprints: self.missing_blueprints
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

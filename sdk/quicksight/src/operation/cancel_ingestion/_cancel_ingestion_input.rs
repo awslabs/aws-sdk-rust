@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelIngestionInput {
+pub struct CancelIngestionInput  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct CancelIngestionInput {
 }
 impl CancelIngestionInput {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl CancelIngestionInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl CancelIngestionInputBuilder {
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>An ID for the ingestion.</p>
     pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,20 @@ impl CancelIngestionInputBuilder {
     }
     /// <p>An ID for the ingestion.</p>
     pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ingestion_id = input;
-        self
+        self.ingestion_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelIngestionInput`](crate::operation::cancel_ingestion::CancelIngestionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_ingestion::CancelIngestionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::cancel_ingestion::CancelIngestionInput {
-            aws_account_id: self.aws_account_id,
-            data_set_id: self.data_set_id,
-            ingestion_id: self.ingestion_id,
-        })
+    pub fn build(self) -> Result<crate::operation::cancel_ingestion::CancelIngestionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::cancel_ingestion::CancelIngestionInput {
+                aws_account_id: self.aws_account_id
+                ,
+                data_set_id: self.data_set_id
+                ,
+                ingestion_id: self.ingestion_id
+                ,
+            }
+        )
     }
 }
+

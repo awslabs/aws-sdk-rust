@@ -3,7 +3,7 @@
 /// <p>The member details, such as email address, name, member ID, and member type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Member {
+pub struct Member  {
     /// <p>The member ID (user ID or bot ID).</p>
     #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
@@ -22,27 +22,27 @@ pub struct Member {
 }
 impl Member {
     /// <p>The member ID (user ID or bot ID).</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> std::option::Option<& str> {
         self.member_id.as_deref()
     }
     /// <p>The member type.</p>
-    pub fn member_type(&self) -> std::option::Option<&crate::types::MemberType> {
+    pub fn member_type(&self) -> std::option::Option<& crate::types::MemberType> {
         self.member_type.as_ref()
     }
     /// <p>The member email address.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The member name.</p>
-    pub fn full_name(&self) -> std::option::Option<&str> {
+    pub fn full_name(&self) -> std::option::Option<& str> {
         self.full_name.as_deref()
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for Member {
+impl  std::fmt::Debug for Member  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Member");
         formatter.field("member_id", &self.member_id);
@@ -78,8 +78,7 @@ impl MemberBuilder {
     }
     /// <p>The member ID (user ID or bot ID).</p>
     pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_id = input;
-        self
+        self.member_id = input; self
     }
     /// <p>The member type.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
@@ -88,8 +87,7 @@ impl MemberBuilder {
     }
     /// <p>The member type.</p>
     pub fn set_member_type(mut self, input: std::option::Option<crate::types::MemberType>) -> Self {
-        self.member_type = input;
-        self
+        self.member_type = input; self
     }
     /// <p>The member email address.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +96,7 @@ impl MemberBuilder {
     }
     /// <p>The member email address.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The member name.</p>
     pub fn full_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +105,7 @@ impl MemberBuilder {
     }
     /// <p>The member name.</p>
     pub fn set_full_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.full_name = input;
-        self
+        self.full_name = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,17 +114,21 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {
         crate::types::Member {
-            member_id: self.member_id,
-            member_type: self.member_type,
-            email: self.email,
-            full_name: self.full_name,
-            account_id: self.account_id,
+            member_id: self.member_id
+            ,
+            member_type: self.member_type
+            ,
+            email: self.email
+            ,
+            full_name: self.full_name
+            ,
+            account_id: self.account_id
+            ,
         }
     }
 }
@@ -143,3 +143,4 @@ impl std::fmt::Debug for MemberBuilder {
         formatter.finish()
     }
 }
+

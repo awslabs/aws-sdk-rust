@@ -3,14 +3,14 @@
 /// <p>Specifies configuration properties for a labeling set generation task run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelingSetGenerationTaskRunProperties {
+pub struct LabelingSetGenerationTaskRunProperties  {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
     #[doc(hidden)]
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl LabelingSetGenerationTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
-    pub fn output_s3_path(&self) -> std::option::Option<&str> {
+    pub fn output_s3_path(&self) -> std::option::Option<& str> {
         self.output_s3_path.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl LabelingSetGenerationTaskRunPropertiesBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will generate the labeling set.</p>
     pub fn set_output_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_s3_path = input;
-        self
+        self.output_s3_path = input; self
     }
     /// Consumes the builder and constructs a [`LabelingSetGenerationTaskRunProperties`](crate::types::LabelingSetGenerationTaskRunProperties).
     pub fn build(self) -> crate::types::LabelingSetGenerationTaskRunProperties {
         crate::types::LabelingSetGenerationTaskRunProperties {
-            output_s3_path: self.output_s3_path,
+            output_s3_path: self.output_s3_path
+            ,
         }
     }
 }
+

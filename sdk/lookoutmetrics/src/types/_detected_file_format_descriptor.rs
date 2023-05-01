@@ -3,7 +3,7 @@
 /// <p>Properties of an inferred data format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedFileFormatDescriptor {
+pub struct DetectedFileFormatDescriptor  {
     /// <p>Details about a CSV format.</p>
     #[doc(hidden)]
     pub csv_format_descriptor: std::option::Option<crate::types::DetectedCsvFormatDescriptor>,
@@ -13,15 +13,11 @@ pub struct DetectedFileFormatDescriptor {
 }
 impl DetectedFileFormatDescriptor {
     /// <p>Details about a CSV format.</p>
-    pub fn csv_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::types::DetectedCsvFormatDescriptor> {
+    pub fn csv_format_descriptor(&self) -> std::option::Option<& crate::types::DetectedCsvFormatDescriptor> {
         self.csv_format_descriptor.as_ref()
     }
     /// <p>Details about a JSON format.</p>
-    pub fn json_format_descriptor(
-        &self,
-    ) -> std::option::Option<&crate::types::DetectedJsonFormatDescriptor> {
+    pub fn json_format_descriptor(&self) -> std::option::Option<& crate::types::DetectedJsonFormatDescriptor> {
         self.json_format_descriptor.as_ref()
     }
 }
@@ -36,49 +32,36 @@ impl DetectedFileFormatDescriptor {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DetectedFileFormatDescriptorBuilder {
-    pub(crate) csv_format_descriptor:
-        std::option::Option<crate::types::DetectedCsvFormatDescriptor>,
-    pub(crate) json_format_descriptor:
-        std::option::Option<crate::types::DetectedJsonFormatDescriptor>,
+    pub(crate) csv_format_descriptor: std::option::Option<crate::types::DetectedCsvFormatDescriptor>,
+    pub(crate) json_format_descriptor: std::option::Option<crate::types::DetectedJsonFormatDescriptor>,
 }
 impl DetectedFileFormatDescriptorBuilder {
     /// <p>Details about a CSV format.</p>
-    pub fn csv_format_descriptor(
-        mut self,
-        input: crate::types::DetectedCsvFormatDescriptor,
-    ) -> Self {
+    pub fn csv_format_descriptor(mut self, input: crate::types::DetectedCsvFormatDescriptor) -> Self {
         self.csv_format_descriptor = Some(input);
         self
     }
     /// <p>Details about a CSV format.</p>
-    pub fn set_csv_format_descriptor(
-        mut self,
-        input: std::option::Option<crate::types::DetectedCsvFormatDescriptor>,
-    ) -> Self {
-        self.csv_format_descriptor = input;
-        self
+    pub fn set_csv_format_descriptor(mut self, input: std::option::Option<crate::types::DetectedCsvFormatDescriptor>) -> Self {
+        self.csv_format_descriptor = input; self
     }
     /// <p>Details about a JSON format.</p>
-    pub fn json_format_descriptor(
-        mut self,
-        input: crate::types::DetectedJsonFormatDescriptor,
-    ) -> Self {
+    pub fn json_format_descriptor(mut self, input: crate::types::DetectedJsonFormatDescriptor) -> Self {
         self.json_format_descriptor = Some(input);
         self
     }
     /// <p>Details about a JSON format.</p>
-    pub fn set_json_format_descriptor(
-        mut self,
-        input: std::option::Option<crate::types::DetectedJsonFormatDescriptor>,
-    ) -> Self {
-        self.json_format_descriptor = input;
-        self
+    pub fn set_json_format_descriptor(mut self, input: std::option::Option<crate::types::DetectedJsonFormatDescriptor>) -> Self {
+        self.json_format_descriptor = input; self
     }
     /// Consumes the builder and constructs a [`DetectedFileFormatDescriptor`](crate::types::DetectedFileFormatDescriptor).
     pub fn build(self) -> crate::types::DetectedFileFormatDescriptor {
         crate::types::DetectedFileFormatDescriptor {
-            csv_format_descriptor: self.csv_format_descriptor,
-            json_format_descriptor: self.json_format_descriptor,
+            csv_format_descriptor: self.csv_format_descriptor
+            ,
+            json_format_descriptor: self.json_format_descriptor
+            ,
         }
     }
 }
+

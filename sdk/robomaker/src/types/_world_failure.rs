@@ -3,39 +3,39 @@
 /// <p>Information about a failed world.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldFailure {
-    /// <p>The failure code of the world export job if it failed:</p>
-    /// <dl>
+pub struct WorldFailure  {
+    /// <p>The failure code of the world export job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub failure_code: std::option::Option<crate::types::WorldGenerationJobErrorCode>,
@@ -47,44 +47,44 @@ pub struct WorldFailure {
     pub failure_count: i32,
 }
 impl WorldFailure {
-    /// <p>The failure code of the world export job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world export job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::WorldGenerationJobErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::WorldGenerationJobErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-    pub fn sample_failure_reason(&self) -> std::option::Option<&str> {
+    pub fn sample_failure_reason(&self) -> std::option::Option<& str> {
         self.sample_failure_reason.as_deref()
     }
     /// <p>The number of failed worlds.</p>
@@ -108,82 +108,78 @@ pub struct WorldFailureBuilder {
     pub(crate) failure_count: std::option::Option<i32>,
 }
 impl WorldFailureBuilder {
-    /// <p>The failure code of the world export job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world export job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
     pub fn failure_code(mut self, input: crate::types::WorldGenerationJobErrorCode) -> Self {
         self.failure_code = Some(input);
         self
     }
-    /// <p>The failure code of the world export job if it failed:</p>
-    /// <dl>
+    /// <p>The failure code of the world export job if it failed:</p> 
+    /// <dl> 
     /// <dt>
     /// InternalServiceError
-    /// </dt>
-    /// <dd>
-    /// <p>Internal service error.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Internal service error.</p> 
+    /// </dd> 
     /// <dt>
     /// LimitExceeded
-    /// </dt>
-    /// <dd>
-    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed. </p> 
+    /// </dd> 
     /// <dt>
     /// ResourceNotFound
-    /// </dt>
-    /// <dd>
-    /// <p>The specified resource could not be found. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The specified resource could not be found. </p> 
+    /// </dd> 
     /// <dt>
     /// RequestThrottled
-    /// </dt>
-    /// <dd>
-    /// <p>The request was throttled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The request was throttled.</p> 
+    /// </dd> 
     /// <dt>
     /// InvalidInput
-    /// </dt>
-    /// <dd>
-    /// <p>An input parameter in the request is not valid.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>An input parameter in the request is not valid.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::WorldGenerationJobErrorCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::WorldGenerationJobErrorCode>) -> Self {
+        self.failure_code = input; self
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
     pub fn sample_failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,12 +187,8 @@ impl WorldFailureBuilder {
         self
     }
     /// <p>The sample reason why the world failed. World errors are aggregated. A sample is used as the <code>sampleFailureReason</code>. </p>
-    pub fn set_sample_failure_reason(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sample_failure_reason = input;
-        self
+    pub fn set_sample_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sample_failure_reason = input; self
     }
     /// <p>The number of failed worlds.</p>
     pub fn failure_count(mut self, input: i32) -> Self {
@@ -205,15 +197,19 @@ impl WorldFailureBuilder {
     }
     /// <p>The number of failed worlds.</p>
     pub fn set_failure_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failure_count = input;
-        self
+        self.failure_count = input; self
     }
     /// Consumes the builder and constructs a [`WorldFailure`](crate::types::WorldFailure).
     pub fn build(self) -> crate::types::WorldFailure {
         crate::types::WorldFailure {
-            failure_code: self.failure_code,
-            sample_failure_reason: self.sample_failure_reason,
-            failure_count: self.failure_count.unwrap_or_default(),
+            failure_code: self.failure_code
+            ,
+            sample_failure_reason: self.sample_failure_reason
+            ,
+            failure_count: self.failure_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

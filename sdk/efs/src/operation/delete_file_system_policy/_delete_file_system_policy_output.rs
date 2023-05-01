@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemPolicyOutput {
+pub struct DeleteFileSystemPolicyOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteFileSystemPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteFileSystemPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemPolicyOutput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder {
         crate::operation::delete_file_system_policy::builders::DeleteFileSystemPolicyOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct DeleteFileSystemPolicyOutputBuilder {
 }
 impl DeleteFileSystemPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteFileSystemPolicyOutput`](crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput {
+    pub fn build(self) -> crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput {
         crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput {
             _request_id: self._request_id,
         }
     }
 }
+

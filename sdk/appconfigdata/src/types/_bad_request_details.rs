@@ -5,9 +5,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum BadRequestDetails {
     /// <p>One or more specified parameters are not valid for the call.</p>
-    InvalidParameters(
-        std::collections::HashMap<std::string::String, crate::types::InvalidParameterDetail>,
-    ),
+    InvalidParameters(std::collections::HashMap<std::string::String, crate::types::InvalidParameterDetail>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -22,17 +20,8 @@ impl BadRequestDetails {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`InvalidParameters`](crate::types::BadRequestDetails::InvalidParameters), extracting the inner [`HashMap`](std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_invalid_parameters(
-        &self,
-    ) -> std::result::Result<
-        &std::collections::HashMap<std::string::String, crate::types::InvalidParameterDetail>,
-        &Self,
-    > {
-        if let BadRequestDetails::InvalidParameters(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_invalid_parameters(&self) -> std::result::Result<&std::collections::HashMap<std::string::String, crate::types::InvalidParameterDetail>, &Self> {
+        if let BadRequestDetails::InvalidParameters(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`InvalidParameters`](crate::types::BadRequestDetails::InvalidParameters).
     pub fn is_invalid_parameters(&self) -> bool {
@@ -43,3 +32,4 @@ impl BadRequestDetails {
         matches!(self, Self::Unknown)
     }
 }
+

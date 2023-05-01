@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeclineHandshakeOutput {
+pub struct DeclineHandshakeOutput  {
     /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::types::Handshake>,
@@ -10,19 +10,18 @@ pub struct DeclineHandshakeOutput {
 }
 impl DeclineHandshakeOutput {
     /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::types::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::types::Handshake> {
         self.handshake.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeclineHandshakeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeclineHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`DeclineHandshakeOutput`](crate::operation::decline_handshake::DeclineHandshakeOutput).
-    pub fn builder() -> crate::operation::decline_handshake::builders::DeclineHandshakeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::decline_handshake::builders::DeclineHandshakeOutputBuilder {
         crate::operation::decline_handshake::builders::DeclineHandshakeOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl DeclineHandshakeOutputBuilder {
     }
     /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
     pub fn set_handshake(mut self, input: std::option::Option<crate::types::Handshake>) -> Self {
-        self.handshake = input;
-        self
+        self.handshake = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeclineHandshakeOutput`](crate::operation::decline_handshake::DeclineHandshakeOutput).
     pub fn build(self) -> crate::operation::decline_handshake::DeclineHandshakeOutput {
         crate::operation::decline_handshake::DeclineHandshakeOutput {
-            handshake: self.handshake,
+            handshake: self.handshake
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionInput {
+pub struct GetFunctionInput  {
     /// <p>The GraphQL API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetFunctionInput {
 }
 impl GetFunctionInput {
     /// <p>The GraphQL API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The <code>Function</code> ID.</p>
-    pub fn function_id(&self) -> std::option::Option<&str> {
+    pub fn function_id(&self) -> std::option::Option<& str> {
         self.function_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetFunctionInputBuilder {
     }
     /// <p>The GraphQL API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The <code>Function</code> ID.</p>
     pub fn function_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetFunctionInputBuilder {
     }
     /// <p>The <code>Function</code> ID.</p>
     pub fn set_function_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_id = input;
-        self
+        self.function_id = input; self
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_function::GetFunctionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_function::GetFunctionInput {
-            api_id: self.api_id,
-            function_id: self.function_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_function::GetFunctionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_function::GetFunctionInput {
+                api_id: self.api_id
+                ,
+                function_id: self.function_id
+                ,
+            }
+        )
     }
 }
+

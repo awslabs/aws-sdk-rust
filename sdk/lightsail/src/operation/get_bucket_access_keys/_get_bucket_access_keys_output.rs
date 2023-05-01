@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketAccessKeysOutput {
+pub struct GetBucketAccessKeysOutput  {
     /// <p>An object that describes the access keys for the specified bucket.</p>
     #[doc(hidden)]
     pub access_keys: std::option::Option<std::vec::Vec<crate::types::AccessKey>>,
@@ -10,19 +10,18 @@ pub struct GetBucketAccessKeysOutput {
 }
 impl GetBucketAccessKeysOutput {
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    pub fn access_keys(&self) -> std::option::Option<&[crate::types::AccessKey]> {
+    pub fn access_keys(&self) -> std::option::Option<& [crate::types::AccessKey]> {
         self.access_keys.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetBucketAccessKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBucketAccessKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysOutput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput).
-    pub fn builder(
-    ) -> crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysOutputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysOutputBuilder {
         crate::operation::get_bucket_access_keys::builders::GetBucketAccessKeysOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl GetBucketAccessKeysOutputBuilder {
     /// <p>An object that describes the access keys for the specified bucket.</p>
     pub fn access_keys(mut self, input: crate::types::AccessKey) -> Self {
         let mut v = self.access_keys.unwrap_or_default();
-        v.push(input);
-        self.access_keys = Some(v);
-        self
+                        v.push(input);
+                        self.access_keys = Some(v);
+                        self
     }
     /// <p>An object that describes the access keys for the specified bucket.</p>
-    pub fn set_access_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccessKey>>,
-    ) -> Self {
-        self.access_keys = input;
-        self
+    pub fn set_access_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessKey>>) -> Self {
+        self.access_keys = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBucketAccessKeysOutput`](crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput).
     pub fn build(self) -> crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput {
         crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput {
-            access_keys: self.access_keys,
+            access_keys: self.access_keys
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

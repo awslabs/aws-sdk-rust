@@ -3,14 +3,14 @@
 /// <p>Dashboard source entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashboardSourceEntity {
+pub struct DashboardSourceEntity  {
     /// <p>Source template.</p>
     #[doc(hidden)]
     pub source_template: std::option::Option<crate::types::DashboardSourceTemplate>,
 }
 impl DashboardSourceEntity {
     /// <p>Source template.</p>
-    pub fn source_template(&self) -> std::option::Option<&crate::types::DashboardSourceTemplate> {
+    pub fn source_template(&self) -> std::option::Option<& crate::types::DashboardSourceTemplate> {
         self.source_template.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl DashboardSourceEntityBuilder {
         self
     }
     /// <p>Source template.</p>
-    pub fn set_source_template(
-        mut self,
-        input: std::option::Option<crate::types::DashboardSourceTemplate>,
-    ) -> Self {
-        self.source_template = input;
-        self
+    pub fn set_source_template(mut self, input: std::option::Option<crate::types::DashboardSourceTemplate>) -> Self {
+        self.source_template = input; self
     }
     /// Consumes the builder and constructs a [`DashboardSourceEntity`](crate::types::DashboardSourceEntity).
     pub fn build(self) -> crate::types::DashboardSourceEntity {
         crate::types::DashboardSourceEntity {
-            source_template: self.source_template,
+            source_template: self.source_template
+            ,
         }
     }
 }
+

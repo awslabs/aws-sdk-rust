@@ -3,7 +3,7 @@
 /// <p>Information about the action to be performed when a rule is triggered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleAction {
+pub struct RuleAction  {
     /// <p>The type of action that creates a rule.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::types::ActionType>,
@@ -15,38 +15,30 @@ pub struct RuleAction {
     pub event_bridge_action: std::option::Option<crate::types::EventBridgeActionDefinition>,
     /// <p>Information about the contact category action.</p>
     #[doc(hidden)]
-    pub assign_contact_category_action:
-        std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
+    pub assign_contact_category_action: std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
     /// <p>Information about the send notification action.</p>
     #[doc(hidden)]
-    pub send_notification_action:
-        std::option::Option<crate::types::SendNotificationActionDefinition>,
+    pub send_notification_action: std::option::Option<crate::types::SendNotificationActionDefinition>,
 }
 impl RuleAction {
     /// <p>The type of action that creates a rule.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
-    pub fn task_action(&self) -> std::option::Option<&crate::types::TaskActionDefinition> {
+    pub fn task_action(&self) -> std::option::Option<& crate::types::TaskActionDefinition> {
         self.task_action.as_ref()
     }
     /// <p>Information about the EventBridge action.</p>
-    pub fn event_bridge_action(
-        &self,
-    ) -> std::option::Option<&crate::types::EventBridgeActionDefinition> {
+    pub fn event_bridge_action(&self) -> std::option::Option<& crate::types::EventBridgeActionDefinition> {
         self.event_bridge_action.as_ref()
     }
     /// <p>Information about the contact category action.</p>
-    pub fn assign_contact_category_action(
-        &self,
-    ) -> std::option::Option<&crate::types::AssignContactCategoryActionDefinition> {
+    pub fn assign_contact_category_action(&self) -> std::option::Option<& crate::types::AssignContactCategoryActionDefinition> {
         self.assign_contact_category_action.as_ref()
     }
     /// <p>Information about the send notification action.</p>
-    pub fn send_notification_action(
-        &self,
-    ) -> std::option::Option<&crate::types::SendNotificationActionDefinition> {
+    pub fn send_notification_action(&self) -> std::option::Option<& crate::types::SendNotificationActionDefinition> {
         self.send_notification_action.as_ref()
     }
 }
@@ -64,10 +56,8 @@ pub struct RuleActionBuilder {
     pub(crate) action_type: std::option::Option<crate::types::ActionType>,
     pub(crate) task_action: std::option::Option<crate::types::TaskActionDefinition>,
     pub(crate) event_bridge_action: std::option::Option<crate::types::EventBridgeActionDefinition>,
-    pub(crate) assign_contact_category_action:
-        std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
-    pub(crate) send_notification_action:
-        std::option::Option<crate::types::SendNotificationActionDefinition>,
+    pub(crate) assign_contact_category_action: std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
+    pub(crate) send_notification_action: std::option::Option<crate::types::SendNotificationActionDefinition>,
 }
 impl RuleActionBuilder {
     /// <p>The type of action that creates a rule.</p>
@@ -77,8 +67,7 @@ impl RuleActionBuilder {
     }
     /// <p>The type of action that creates a rule.</p>
     pub fn set_action_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
     pub fn task_action(mut self, input: crate::types::TaskActionDefinition) -> Self {
@@ -86,12 +75,8 @@ impl RuleActionBuilder {
         self
     }
     /// <p>Information about the task action. This field is required if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> </p>
-    pub fn set_task_action(
-        mut self,
-        input: std::option::Option<crate::types::TaskActionDefinition>,
-    ) -> Self {
-        self.task_action = input;
-        self
+    pub fn set_task_action(mut self, input: std::option::Option<crate::types::TaskActionDefinition>) -> Self {
+        self.task_action = input; self
     }
     /// <p>Information about the EventBridge action.</p>
     pub fn event_bridge_action(mut self, input: crate::types::EventBridgeActionDefinition) -> Self {
@@ -99,53 +84,41 @@ impl RuleActionBuilder {
         self
     }
     /// <p>Information about the EventBridge action.</p>
-    pub fn set_event_bridge_action(
-        mut self,
-        input: std::option::Option<crate::types::EventBridgeActionDefinition>,
-    ) -> Self {
-        self.event_bridge_action = input;
-        self
+    pub fn set_event_bridge_action(mut self, input: std::option::Option<crate::types::EventBridgeActionDefinition>) -> Self {
+        self.event_bridge_action = input; self
     }
     /// <p>Information about the contact category action.</p>
-    pub fn assign_contact_category_action(
-        mut self,
-        input: crate::types::AssignContactCategoryActionDefinition,
-    ) -> Self {
+    pub fn assign_contact_category_action(mut self, input: crate::types::AssignContactCategoryActionDefinition) -> Self {
         self.assign_contact_category_action = Some(input);
         self
     }
     /// <p>Information about the contact category action.</p>
-    pub fn set_assign_contact_category_action(
-        mut self,
-        input: std::option::Option<crate::types::AssignContactCategoryActionDefinition>,
-    ) -> Self {
-        self.assign_contact_category_action = input;
-        self
+    pub fn set_assign_contact_category_action(mut self, input: std::option::Option<crate::types::AssignContactCategoryActionDefinition>) -> Self {
+        self.assign_contact_category_action = input; self
     }
     /// <p>Information about the send notification action.</p>
-    pub fn send_notification_action(
-        mut self,
-        input: crate::types::SendNotificationActionDefinition,
-    ) -> Self {
+    pub fn send_notification_action(mut self, input: crate::types::SendNotificationActionDefinition) -> Self {
         self.send_notification_action = Some(input);
         self
     }
     /// <p>Information about the send notification action.</p>
-    pub fn set_send_notification_action(
-        mut self,
-        input: std::option::Option<crate::types::SendNotificationActionDefinition>,
-    ) -> Self {
-        self.send_notification_action = input;
-        self
+    pub fn set_send_notification_action(mut self, input: std::option::Option<crate::types::SendNotificationActionDefinition>) -> Self {
+        self.send_notification_action = input; self
     }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     pub fn build(self) -> crate::types::RuleAction {
         crate::types::RuleAction {
-            action_type: self.action_type,
-            task_action: self.task_action,
-            event_bridge_action: self.event_bridge_action,
-            assign_contact_category_action: self.assign_contact_category_action,
-            send_notification_action: self.send_notification_action,
+            action_type: self.action_type
+            ,
+            task_action: self.task_action
+            ,
+            event_bridge_action: self.event_bridge_action
+            ,
+            assign_contact_category_action: self.assign_contact_category_action
+            ,
+            send_notification_action: self.send_notification_action
+            ,
         }
     }
 }
+

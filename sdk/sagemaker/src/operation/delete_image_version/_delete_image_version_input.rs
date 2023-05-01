@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageVersionInput {
+pub struct DeleteImageVersionInput  {
     /// <p>The name of the image to delete.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DeleteImageVersionInput {
 }
 impl DeleteImageVersionInput {
     /// <p>The name of the image to delete.</p>
-    pub fn image_name(&self) -> std::option::Option<&str> {
+    pub fn image_name(&self) -> std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The version to delete.</p>
@@ -23,14 +23,13 @@ impl DeleteImageVersionInput {
         self.version
     }
     /// <p>The alias of the image to delete.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
 }
 impl DeleteImageVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageVersionInput`](crate::operation::delete_image_version::DeleteImageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder {
         crate::operation::delete_image_version::builders::DeleteImageVersionInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DeleteImageVersionInputBuilder {
     }
     /// <p>The name of the image to delete.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The version to delete.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl DeleteImageVersionInputBuilder {
     }
     /// <p>The version to delete.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The alias of the image to delete.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl DeleteImageVersionInputBuilder {
     }
     /// <p>The alias of the image to delete.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// Consumes the builder and constructs a [`DeleteImageVersionInput`](crate::operation::delete_image_version::DeleteImageVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_image_version::DeleteImageVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_image_version::DeleteImageVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_image_version::DeleteImageVersionInput {
-                image_name: self.image_name,
-                version: self.version,
-                alias: self.alias,
-            },
+                image_name: self.image_name
+                ,
+                version: self.version
+                ,
+                alias: self.alias
+                ,
+            }
         )
     }
 }
+

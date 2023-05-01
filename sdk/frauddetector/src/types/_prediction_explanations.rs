@@ -3,29 +3,23 @@
 /// <p> The prediction explanations that provide insight into how each event variable impacted the model version's fraud prediction score. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PredictionExplanations {
+pub struct PredictionExplanations  {
     /// <p> The details of the event variable's impact on the prediction score. </p>
     #[doc(hidden)]
-    pub variable_impact_explanations:
-        std::option::Option<std::vec::Vec<crate::types::VariableImpactExplanation>>,
-    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    pub variable_impact_explanations: std::option::Option<std::vec::Vec<crate::types::VariableImpactExplanation>>,
+    /// <p> The details of the aggregated variables impact on the prediction score. </p> 
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
     #[doc(hidden)]
-    pub aggregated_variables_impact_explanations:
-        std::option::Option<std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>,
+    pub aggregated_variables_impact_explanations: std::option::Option<std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>,
 }
 impl PredictionExplanations {
     /// <p> The details of the event variable's impact on the prediction score. </p>
-    pub fn variable_impact_explanations(
-        &self,
-    ) -> std::option::Option<&[crate::types::VariableImpactExplanation]> {
+    pub fn variable_impact_explanations(&self) -> std::option::Option<& [crate::types::VariableImpactExplanation]> {
         self.variable_impact_explanations.as_deref()
     }
-    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    /// <p> The details of the aggregated variables impact on the prediction score. </p> 
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn aggregated_variables_impact_explanations(
-        &self,
-    ) -> std::option::Option<&[crate::types::AggregatedVariablesImpactExplanation]> {
+    pub fn aggregated_variables_impact_explanations(&self) -> std::option::Option<& [crate::types::AggregatedVariablesImpactExplanation]> {
         self.aggregated_variables_impact_explanations.as_deref()
     }
 }
@@ -40,10 +34,8 @@ impl PredictionExplanations {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PredictionExplanationsBuilder {
-    pub(crate) variable_impact_explanations:
-        std::option::Option<std::vec::Vec<crate::types::VariableImpactExplanation>>,
-    pub(crate) aggregated_variables_impact_explanations:
-        std::option::Option<std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>,
+    pub(crate) variable_impact_explanations: std::option::Option<std::vec::Vec<crate::types::VariableImpactExplanation>>,
+    pub(crate) aggregated_variables_impact_explanations: std::option::Option<std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>,
 }
 impl PredictionExplanationsBuilder {
     /// Appends an item to `variable_impact_explanations`.
@@ -51,56 +43,41 @@ impl PredictionExplanationsBuilder {
     /// To override the contents of this collection use [`set_variable_impact_explanations`](Self::set_variable_impact_explanations).
     ///
     /// <p> The details of the event variable's impact on the prediction score. </p>
-    pub fn variable_impact_explanations(
-        mut self,
-        input: crate::types::VariableImpactExplanation,
-    ) -> Self {
+    pub fn variable_impact_explanations(mut self, input: crate::types::VariableImpactExplanation) -> Self {
         let mut v = self.variable_impact_explanations.unwrap_or_default();
-        v.push(input);
-        self.variable_impact_explanations = Some(v);
-        self
+                        v.push(input);
+                        self.variable_impact_explanations = Some(v);
+                        self
     }
     /// <p> The details of the event variable's impact on the prediction score. </p>
-    pub fn set_variable_impact_explanations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VariableImpactExplanation>>,
-    ) -> Self {
-        self.variable_impact_explanations = input;
-        self
+    pub fn set_variable_impact_explanations(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariableImpactExplanation>>) -> Self {
+        self.variable_impact_explanations = input; self
     }
     /// Appends an item to `aggregated_variables_impact_explanations`.
     ///
     /// To override the contents of this collection use [`set_aggregated_variables_impact_explanations`](Self::set_aggregated_variables_impact_explanations).
     ///
-    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    /// <p> The details of the aggregated variables impact on the prediction score. </p> 
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn aggregated_variables_impact_explanations(
-        mut self,
-        input: crate::types::AggregatedVariablesImpactExplanation,
-    ) -> Self {
-        let mut v = self
-            .aggregated_variables_impact_explanations
-            .unwrap_or_default();
-        v.push(input);
-        self.aggregated_variables_impact_explanations = Some(v);
-        self
+    pub fn aggregated_variables_impact_explanations(mut self, input: crate::types::AggregatedVariablesImpactExplanation) -> Self {
+        let mut v = self.aggregated_variables_impact_explanations.unwrap_or_default();
+                        v.push(input);
+                        self.aggregated_variables_impact_explanations = Some(v);
+                        self
     }
-    /// <p> The details of the aggregated variables impact on the prediction score. </p>
+    /// <p> The details of the aggregated variables impact on the prediction score. </p> 
     /// <p>Account Takeover Insights (ATI) model uses event variables from the login data you provide to continuously calculate a set of variables (aggregated variables) based on historical events. For example, your ATI model might calculate the number of times an user has logged in using the same IP address. In this case, event variables used to derive the aggregated variables are <code>IP address</code> and <code>user</code>.</p>
-    pub fn set_aggregated_variables_impact_explanations(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>,
-        >,
-    ) -> Self {
-        self.aggregated_variables_impact_explanations = input;
-        self
+    pub fn set_aggregated_variables_impact_explanations(mut self, input: std::option::Option<std::vec::Vec<crate::types::AggregatedVariablesImpactExplanation>>) -> Self {
+        self.aggregated_variables_impact_explanations = input; self
     }
     /// Consumes the builder and constructs a [`PredictionExplanations`](crate::types::PredictionExplanations).
     pub fn build(self) -> crate::types::PredictionExplanations {
         crate::types::PredictionExplanations {
-            variable_impact_explanations: self.variable_impact_explanations,
-            aggregated_variables_impact_explanations: self.aggregated_variables_impact_explanations,
+            variable_impact_explanations: self.variable_impact_explanations
+            ,
+            aggregated_variables_impact_explanations: self.aggregated_variables_impact_explanations
+            ,
         }
     }
 }
+

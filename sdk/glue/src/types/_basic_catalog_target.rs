@@ -3,7 +3,7 @@
 /// <p>Specifies a target that uses a Glue Data Catalog table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BasicCatalogTarget {
+pub struct BasicCatalogTarget  {
     /// <p>The name of your data target.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct BasicCatalogTarget {
 }
 impl BasicCatalogTarget {
     /// <p>The name of your data target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> std::option::Option<& str> {
         self.table.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl BasicCatalogTargetBuilder {
     }
     /// <p>The name of your data target.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `inputs`.
     ///
@@ -69,17 +68,13 @@ impl BasicCatalogTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-        v.push(input.into());
-        self.inputs = Some(v);
-        self
+                        v.push(input.into());
+                        self.inputs = Some(v);
+                        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.inputs = input;
-        self
+    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.inputs = input; self
     }
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +83,7 @@ impl BasicCatalogTargetBuilder {
     }
     /// <p>The database that contains the table you want to use as the target. This database must already exist in the Data Catalog.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,16 +92,20 @@ impl BasicCatalogTargetBuilder {
     }
     /// <p>The table that defines the schema of your output data. This table must already exist in the Data Catalog.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// Consumes the builder and constructs a [`BasicCatalogTarget`](crate::types::BasicCatalogTarget).
     pub fn build(self) -> crate::types::BasicCatalogTarget {
         crate::types::BasicCatalogTarget {
-            name: self.name,
-            inputs: self.inputs,
-            database: self.database,
-            table: self.table,
+            name: self.name
+            ,
+            inputs: self.inputs
+            ,
+            database: self.database
+            ,
+            table: self.table
+            ,
         }
     }
 }
+

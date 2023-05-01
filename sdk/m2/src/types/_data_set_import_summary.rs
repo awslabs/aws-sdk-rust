@@ -3,7 +3,7 @@
 /// <p>Represents a summary of data set imports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSetImportSummary {
+pub struct DataSetImportSummary  {
     /// <p>The total number of data set imports.</p>
     #[doc(hidden)]
     pub total: i32,
@@ -67,8 +67,7 @@ impl DataSetImportSummaryBuilder {
     }
     /// <p>The total number of data set imports.</p>
     pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The number of data set imports that have succeeded.</p>
     pub fn succeeded(mut self, input: i32) -> Self {
@@ -77,8 +76,7 @@ impl DataSetImportSummaryBuilder {
     }
     /// <p>The number of data set imports that have succeeded.</p>
     pub fn set_succeeded(mut self, input: std::option::Option<i32>) -> Self {
-        self.succeeded = input;
-        self
+        self.succeeded = input; self
     }
     /// <p>The number of data set imports that have failed.</p>
     pub fn failed(mut self, input: i32) -> Self {
@@ -87,8 +85,7 @@ impl DataSetImportSummaryBuilder {
     }
     /// <p>The number of data set imports that have failed.</p>
     pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// <p>The number of data set imports that are pending.</p>
     pub fn pending(mut self, input: i32) -> Self {
@@ -97,8 +94,7 @@ impl DataSetImportSummaryBuilder {
     }
     /// <p>The number of data set imports that are pending.</p>
     pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
-        self.pending = input;
-        self
+        self.pending = input; self
     }
     /// <p>The number of data set imports that are in progress.</p>
     pub fn in_progress(mut self, input: i32) -> Self {
@@ -107,17 +103,27 @@ impl DataSetImportSummaryBuilder {
     }
     /// <p>The number of data set imports that are in progress.</p>
     pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
-        self.in_progress = input;
-        self
+        self.in_progress = input; self
     }
     /// Consumes the builder and constructs a [`DataSetImportSummary`](crate::types::DataSetImportSummary).
     pub fn build(self) -> crate::types::DataSetImportSummary {
         crate::types::DataSetImportSummary {
-            total: self.total.unwrap_or_default(),
-            succeeded: self.succeeded.unwrap_or_default(),
-            failed: self.failed.unwrap_or_default(),
-            pending: self.pending.unwrap_or_default(),
-            in_progress: self.in_progress.unwrap_or_default(),
+            total: self.total
+                .unwrap_or_default()
+            ,
+            succeeded: self.succeeded
+                .unwrap_or_default()
+            ,
+            failed: self.failed
+                .unwrap_or_default()
+            ,
+            pending: self.pending
+                .unwrap_or_default()
+            ,
+            in_progress: self.in_progress
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

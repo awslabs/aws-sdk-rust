@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationTaskOutput {
+pub struct DeleteReplicationTaskOutput  {
     /// <p>The deleted replication task.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::types::ReplicationTask>,
@@ -11,20 +11,18 @@ pub struct DeleteReplicationTaskOutput {
 }
 impl DeleteReplicationTaskOutput {
     /// <p>The deleted replication task.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::types::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::types::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteReplicationTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationTaskOutput`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_task::builders::DeleteReplicationTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_replication_task::builders::DeleteReplicationTaskOutputBuilder {
         crate::operation::delete_replication_task::builders::DeleteReplicationTaskOutputBuilder::default()
     }
 }
@@ -43,27 +41,25 @@ impl DeleteReplicationTaskOutputBuilder {
         self
     }
     /// <p>The deleted replication task.</p>
-    pub fn set_replication_task(
-        mut self,
-        input: std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
-        self.replication_task = input;
-        self
+    pub fn set_replication_task(mut self, input: std::option::Option<crate::types::ReplicationTask>) -> Self {
+        self.replication_task = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteReplicationTaskOutput`](crate::operation::delete_replication_task::DeleteReplicationTaskOutput).
     pub fn build(self) -> crate::operation::delete_replication_task::DeleteReplicationTaskOutput {
         crate::operation::delete_replication_task::DeleteReplicationTaskOutput {
-            replication_task: self.replication_task,
+            replication_task: self.replication_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

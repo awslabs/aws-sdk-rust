@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let blueprintrunstate = unimplemented!();
 /// match blueprintrunstate {
@@ -32,22 +32,14 @@
 /// Specifically, when `blueprintrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BlueprintRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BlueprintRunState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -58,46 +50,45 @@ pub enum BlueprintRunState {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BlueprintRunState {
-    fn from(s: &str) -> Self {
-        match s {
-            "FAILED" => BlueprintRunState::Failed,
-            "ROLLING_BACK" => BlueprintRunState::RollingBack,
-            "RUNNING" => BlueprintRunState::Running,
-            "SUCCEEDED" => BlueprintRunState::Succeeded,
-            other => {
-                BlueprintRunState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FAILED" => BlueprintRunState::Failed,
+"ROLLING_BACK" => BlueprintRunState::RollingBack,
+"RUNNING" => BlueprintRunState::Running,
+"SUCCEEDED" => BlueprintRunState::Succeeded,
+other => BlueprintRunState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for BlueprintRunState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BlueprintRunState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BlueprintRunState::from(s))
+                }
+            }
 impl BlueprintRunState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BlueprintRunState::Failed => "FAILED",
-            BlueprintRunState::RollingBack => "ROLLING_BACK",
-            BlueprintRunState::Running => "RUNNING",
-            BlueprintRunState::Succeeded => "SUCCEEDED",
-            BlueprintRunState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "ROLLING_BACK", "RUNNING", "SUCCEEDED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BlueprintRunState::Failed => "FAILED",
+    BlueprintRunState::RollingBack => "ROLLING_BACK",
+    BlueprintRunState::Running => "RUNNING",
+    BlueprintRunState::Succeeded => "SUCCEEDED",
+    BlueprintRunState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FAILED", "ROLLING_BACK", "RUNNING", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for BlueprintRunState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

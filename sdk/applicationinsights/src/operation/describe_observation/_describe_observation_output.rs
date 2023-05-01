@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeObservationOutput {
+pub struct DescribeObservationOutput  {
     /// <p>Information about the observation.</p>
     #[doc(hidden)]
     pub observation: std::option::Option<crate::types::Observation>,
@@ -10,21 +10,19 @@ pub struct DescribeObservationOutput {
 }
 impl DescribeObservationOutput {
     /// <p>Information about the observation.</p>
-    pub fn observation(&self) -> std::option::Option<&crate::types::Observation> {
+    pub fn observation(&self) -> std::option::Option<& crate::types::Observation> {
         self.observation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeObservationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeObservationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_observation::builders::DescribeObservationOutputBuilder {
-        crate::operation::describe_observation::builders::DescribeObservationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_observation::builders::DescribeObservationOutputBuilder {
+        crate::operation::describe_observation::builders::DescribeObservationOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,25 @@ impl DescribeObservationOutputBuilder {
         self
     }
     /// <p>Information about the observation.</p>
-    pub fn set_observation(
-        mut self,
-        input: std::option::Option<crate::types::Observation>,
-    ) -> Self {
-        self.observation = input;
-        self
+    pub fn set_observation(mut self, input: std::option::Option<crate::types::Observation>) -> Self {
+        self.observation = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeObservationOutput`](crate::operation::describe_observation::DescribeObservationOutput).
     pub fn build(self) -> crate::operation::describe_observation::DescribeObservationOutput {
         crate::operation::describe_observation::DescribeObservationOutput {
-            observation: self.observation,
+            observation: self.observation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

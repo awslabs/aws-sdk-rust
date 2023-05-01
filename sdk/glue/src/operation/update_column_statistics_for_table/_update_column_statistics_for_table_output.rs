@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateColumnStatisticsForTableOutput {
+pub struct UpdateColumnStatisticsForTableOutput  {
     /// <p>List of ColumnStatisticsErrors.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::ColumnStatisticsError>>,
@@ -10,18 +10,18 @@ pub struct UpdateColumnStatisticsForTableOutput {
 }
 impl UpdateColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatisticsErrors.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::ColumnStatisticsError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::ColumnStatisticsError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateColumnStatisticsForTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateColumnStatisticsForTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput).
-    pub fn builder() -> crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableOutputBuilder{
+    pub fn builder() -> crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableOutputBuilder {
         crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableOutputBuilder::default()
     }
 }
@@ -41,35 +41,30 @@ impl UpdateColumnStatisticsForTableOutputBuilder {
     /// <p>List of ColumnStatisticsErrors.</p>
     pub fn errors(mut self, input: crate::types::ColumnStatisticsError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>List of ColumnStatisticsErrors.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnStatisticsError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnStatisticsError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateColumnStatisticsForTableOutput`](crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput
-    {
+    pub fn build(self) -> crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput {
         crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

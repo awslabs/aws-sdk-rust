@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMatchmakingConfigurationInput {
+pub struct DeleteMatchmakingConfigurationInput  {
     /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMatchmakingConfigurationInput {
     /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteMatchmakingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingConfigurationInput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationInputBuilder {
         crate::operation::delete_matchmaking_configuration::builders::DeleteMatchmakingConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl DeleteMatchmakingConfigurationInputBuilder {
     }
     /// <p>A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMatchmakingConfigurationInput`](crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationInput {
                 name: self.name
@@ -52,3 +46,4 @@ impl DeleteMatchmakingConfigurationInputBuilder {
         )
     }
 }
+

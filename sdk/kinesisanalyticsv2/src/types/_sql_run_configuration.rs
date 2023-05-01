@@ -3,24 +3,21 @@
 /// <p>Describes the starting parameters for a SQL-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlRunConfiguration {
+pub struct SqlRunConfiguration  {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     #[doc(hidden)]
     pub input_id: std::option::Option<std::string::String>,
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
     #[doc(hidden)]
-    pub input_starting_position_configuration:
-        std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub input_starting_position_configuration: std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfiguration {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
-    pub fn input_id(&self) -> std::option::Option<&str> {
+    pub fn input_id(&self) -> std::option::Option<& str> {
         self.input_id.as_deref()
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    pub fn input_starting_position_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::InputStartingPositionConfiguration> {
+    pub fn input_starting_position_configuration(&self) -> std::option::Option<& crate::types::InputStartingPositionConfiguration> {
         self.input_starting_position_configuration.as_ref()
     }
 }
@@ -36,8 +33,7 @@ impl SqlRunConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SqlRunConfigurationBuilder {
     pub(crate) input_id: std::option::Option<std::string::String>,
-    pub(crate) input_starting_position_configuration:
-        std::option::Option<crate::types::InputStartingPositionConfiguration>,
+    pub(crate) input_starting_position_configuration: std::option::Option<crate::types::InputStartingPositionConfiguration>,
 }
 impl SqlRunConfigurationBuilder {
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
@@ -47,30 +43,25 @@ impl SqlRunConfigurationBuilder {
     }
     /// <p>The input source ID. You can get this ID by calling the <code>DescribeApplication</code> operation. </p>
     pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_id = input;
-        self
+        self.input_id = input; self
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    pub fn input_starting_position_configuration(
-        mut self,
-        input: crate::types::InputStartingPositionConfiguration,
-    ) -> Self {
+    pub fn input_starting_position_configuration(mut self, input: crate::types::InputStartingPositionConfiguration) -> Self {
         self.input_starting_position_configuration = Some(input);
         self
     }
     /// <p>The point at which you want the application to start processing records from the streaming source. </p>
-    pub fn set_input_starting_position_configuration(
-        mut self,
-        input: std::option::Option<crate::types::InputStartingPositionConfiguration>,
-    ) -> Self {
-        self.input_starting_position_configuration = input;
-        self
+    pub fn set_input_starting_position_configuration(mut self, input: std::option::Option<crate::types::InputStartingPositionConfiguration>) -> Self {
+        self.input_starting_position_configuration = input; self
     }
     /// Consumes the builder and constructs a [`SqlRunConfiguration`](crate::types::SqlRunConfiguration).
     pub fn build(self) -> crate::types::SqlRunConfiguration {
         crate::types::SqlRunConfiguration {
-            input_id: self.input_id,
-            input_starting_position_configuration: self.input_starting_position_configuration,
+            input_id: self.input_id
+            ,
+            input_starting_position_configuration: self.input_starting_position_configuration
+            ,
         }
     }
 }
+

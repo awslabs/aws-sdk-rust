@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListPipesInput {
+pub struct ListPipesInput  {
     /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
     #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
@@ -27,27 +27,27 @@ pub struct ListPipesInput {
 }
 impl ListPipesInput {
     /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-    pub fn name_prefix(&self) -> std::option::Option<&str> {
+    pub fn name_prefix(&self) -> std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::RequestedPipeState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::types::RequestedPipeState> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::types::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::types::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn source_prefix(&self) -> std::option::Option<&str> {
+    pub fn source_prefix(&self) -> std::option::Option<& str> {
         self.source_prefix.as_deref()
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn target_prefix(&self) -> std::option::Option<&str> {
+    pub fn target_prefix(&self) -> std::option::Option<& str> {
         self.target_prefix.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of pipes to include in the response.</p>
@@ -55,7 +55,7 @@ impl ListPipesInput {
         self.limit
     }
 }
-impl std::fmt::Debug for ListPipesInput {
+impl  std::fmt::Debug for ListPipesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipesInput");
         formatter.field("name_prefix", &self.name_prefix);
@@ -95,8 +95,7 @@ impl ListPipesInputBuilder {
     }
     /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
     pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>The state the pipe should be in.</p>
     pub fn desired_state(mut self, input: crate::types::RequestedPipeState) -> Self {
@@ -104,12 +103,8 @@ impl ListPipesInputBuilder {
         self
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: std::option::Option<crate::types::RequestedPipeState>,
-    ) -> Self {
-        self.desired_state = input;
-        self
+    pub fn set_desired_state(mut self, input: std::option::Option<crate::types::RequestedPipeState>) -> Self {
+        self.desired_state = input; self
     }
     /// <p>The state the pipe is in.</p>
     pub fn current_state(mut self, input: crate::types::PipeState) -> Self {
@@ -117,12 +112,8 @@ impl ListPipesInputBuilder {
         self
     }
     /// <p>The state the pipe is in.</p>
-    pub fn set_current_state(
-        mut self,
-        input: std::option::Option<crate::types::PipeState>,
-    ) -> Self {
-        self.current_state = input;
-        self
+    pub fn set_current_state(mut self, input: std::option::Option<crate::types::PipeState>) -> Self {
+        self.current_state = input; self
     }
     /// <p>The prefix matching the pipe source.</p>
     pub fn source_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +122,7 @@ impl ListPipesInputBuilder {
     }
     /// <p>The prefix matching the pipe source.</p>
     pub fn set_source_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_prefix = input;
-        self
+        self.source_prefix = input; self
     }
     /// <p>The prefix matching the pipe target.</p>
     pub fn target_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +131,7 @@ impl ListPipesInputBuilder {
     }
     /// <p>The prefix matching the pipe target.</p>
     pub fn set_target_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_prefix = input;
-        self
+        self.target_prefix = input; self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +140,7 @@ impl ListPipesInputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of pipes to include in the response.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -161,25 +149,28 @@ impl ListPipesInputBuilder {
     }
     /// <p>The maximum number of pipes to include in the response.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListPipesInput`](crate::operation::list_pipes::ListPipesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_pipes::ListPipesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_pipes::ListPipesInput {
-            name_prefix: self.name_prefix,
-            desired_state: self.desired_state,
-            current_state: self.current_state,
-            source_prefix: self.source_prefix,
-            target_prefix: self.target_prefix,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> Result<crate::operation::list_pipes::ListPipesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_pipes::ListPipesInput {
+                name_prefix: self.name_prefix
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                source_prefix: self.source_prefix
+                ,
+                target_prefix: self.target_prefix
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for ListPipesInputBuilder {
@@ -195,3 +186,4 @@ impl std::fmt::Debug for ListPipesInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// Represents the properties of an alert manager definition.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlertManagerDefinitionDescription {
+pub struct AlertManagerDefinitionDescription  {
     /// The status of alert manager definition.
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
@@ -19,19 +19,19 @@ pub struct AlertManagerDefinitionDescription {
 }
 impl AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
-    pub fn status(&self) -> std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
     /// The alert manager definition.
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// The time when the alert manager definition was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the alert manager definition was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl AlertManagerDefinitionDescriptionBuilder {
         self
     }
     /// The status of alert manager definition.
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::AlertManagerDefinitionStatus>) -> Self {
+        self.status = input; self
     }
     /// The alert manager definition.
     pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -72,8 +68,7 @@ impl AlertManagerDefinitionDescriptionBuilder {
     }
     /// The alert manager definition.
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// The time when the alert manager definition was created.
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,12 +76,8 @@ impl AlertManagerDefinitionDescriptionBuilder {
         self
     }
     /// The time when the alert manager definition was created.
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// The time when the alert manager definition was modified.
     pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,20 +85,21 @@ impl AlertManagerDefinitionDescriptionBuilder {
         self
     }
     /// The time when the alert manager definition was modified.
-    pub fn set_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_at = input;
-        self
+    pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input; self
     }
     /// Consumes the builder and constructs a [`AlertManagerDefinitionDescription`](crate::types::AlertManagerDefinitionDescription).
     pub fn build(self) -> crate::types::AlertManagerDefinitionDescription {
         crate::types::AlertManagerDefinitionDescription {
-            status: self.status,
-            data: self.data,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
+            status: self.status
+            ,
+            data: self.data
+            ,
+            created_at: self.created_at
+            ,
+            modified_at: self.modified_at
+            ,
         }
     }
 }
+

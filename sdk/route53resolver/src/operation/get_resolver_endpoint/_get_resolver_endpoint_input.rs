@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverEndpointInput {
+pub struct GetResolverEndpointInput  {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
     #[doc(hidden)]
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
 }
 impl GetResolverEndpointInput {
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-    pub fn resolver_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn resolver_endpoint_id(&self) -> std::option::Option<& str> {
         self.resolver_endpoint_id.as_deref()
     }
 }
 impl GetResolverEndpointInput {
     /// Creates a new builder-style object to manufacture [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder {
-        crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder {
+        crate::operation::get_resolver_endpoint::builders::GetResolverEndpointInputBuilder::default()
     }
 }
 
@@ -35,24 +33,17 @@ impl GetResolverEndpointInputBuilder {
         self
     }
     /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-    pub fn set_resolver_endpoint_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resolver_endpoint_id = input;
-        self
+    pub fn set_resolver_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resolver_endpoint_id = input; self
     }
     /// Consumes the builder and constructs a [`GetResolverEndpointInput`](crate::operation::get_resolver_endpoint::GetResolverEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resolver_endpoint::GetResolverEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_resolver_endpoint::GetResolverEndpointInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_resolver_endpoint::GetResolverEndpointInput {
-                resolver_endpoint_id: self.resolver_endpoint_id,
-            },
+                resolver_endpoint_id: self.resolver_endpoint_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Parameters to define a mitigation action that changes the state of the device certificate to inactive.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeviceCertificateParams {
+pub struct UpdateDeviceCertificateParams  {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::DeviceCertificateUpdateAction>,
 }
 impl UpdateDeviceCertificateParams {
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::DeviceCertificateUpdateAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::DeviceCertificateUpdateAction> {
         self.action.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl UpdateDeviceCertificateParamsBuilder {
         self
     }
     /// <p>The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.</p>
-    pub fn set_action(
-        mut self,
-        input: std::option::Option<crate::types::DeviceCertificateUpdateAction>,
-    ) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: std::option::Option<crate::types::DeviceCertificateUpdateAction>) -> Self {
+        self.action = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDeviceCertificateParams`](crate::types::UpdateDeviceCertificateParams).
     pub fn build(self) -> crate::types::UpdateDeviceCertificateParams {
         crate::types::UpdateDeviceCertificateParams {
-            action: self.action,
+            action: self.action
+            ,
         }
     }
 }
+

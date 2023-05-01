@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInferenceSchedulerOutput {
+pub struct CreateInferenceSchedulerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
     #[doc(hidden)]
     pub inference_scheduler_arn: std::option::Option<std::string::String>,
@@ -16,28 +16,26 @@ pub struct CreateInferenceSchedulerOutput {
 }
 impl CreateInferenceSchedulerOutput {
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
-    pub fn inference_scheduler_arn(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_arn(&self) -> std::option::Option<& str> {
         self.inference_scheduler_arn.as_deref()
     }
     /// <p>The name of inference scheduler being created. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::InferenceSchedulerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::InferenceSchedulerStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateInferenceSchedulerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateInferenceSchedulerOutput {
     /// Creates a new builder-style object to manufacture [`CreateInferenceSchedulerOutput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput).
-    pub fn builder(
-    ) -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerOutputBuilder {
         crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerOutputBuilder::default()
     }
 }
@@ -58,12 +56,8 @@ impl CreateInferenceSchedulerOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the inference scheduler being created. </p>
-    pub fn set_inference_scheduler_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_arn = input;
-        self
+    pub fn set_inference_scheduler_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inference_scheduler_arn = input; self
     }
     /// <p>The name of inference scheduler being created. </p>
     pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +65,8 @@ impl CreateInferenceSchedulerOutputBuilder {
         self
     }
     /// <p>The name of inference scheduler being created. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_name = input;
-        self
+    pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inference_scheduler_name = input; self
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
     pub fn status(mut self, input: crate::types::InferenceSchedulerStatus) -> Self {
@@ -84,31 +74,29 @@ impl CreateInferenceSchedulerOutputBuilder {
         self
     }
     /// <p>Indicates the status of the <code>CreateInferenceScheduler</code> operation. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::InferenceSchedulerStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::InferenceSchedulerStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateInferenceSchedulerOutput`](crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput {
+    pub fn build(self) -> crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput {
         crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput {
-            inference_scheduler_arn: self.inference_scheduler_arn,
-            inference_scheduler_name: self.inference_scheduler_name,
-            status: self.status,
+            inference_scheduler_arn: self.inference_scheduler_arn
+            ,
+            inference_scheduler_name: self.inference_scheduler_name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

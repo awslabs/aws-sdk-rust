@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopGameSessionPlacementOutput {
+pub struct StopGameSessionPlacementOutput  {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::types::GameSessionPlacement>,
@@ -10,20 +10,18 @@ pub struct StopGameSessionPlacementOutput {
 }
 impl StopGameSessionPlacementOutput {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
-    pub fn game_session_placement(
-        &self,
-    ) -> std::option::Option<&crate::types::GameSessionPlacement> {
+    pub fn game_session_placement(&self) -> std::option::Option<& crate::types::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopGameSessionPlacementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopGameSessionPlacementOutput {
     /// Creates a new builder-style object to manufacture [`StopGameSessionPlacementOutput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput).
-    pub fn builder() -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementOutputBuilder{
+    pub fn builder() -> crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementOutputBuilder {
         crate::operation::stop_game_session_placement::builders::StopGameSessionPlacementOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl StopGameSessionPlacementOutputBuilder {
         self
     }
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
-    pub fn set_game_session_placement(
-        mut self,
-        input: std::option::Option<crate::types::GameSessionPlacement>,
-    ) -> Self {
-        self.game_session_placement = input;
-        self
+    pub fn set_game_session_placement(mut self, input: std::option::Option<crate::types::GameSessionPlacement>) -> Self {
+        self.game_session_placement = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopGameSessionPlacementOutput`](crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput {
+    pub fn build(self) -> crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput {
         crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput {
-            game_session_placement: self.game_session_placement,
+            game_session_placement: self.game_session_placement
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of a scanning repository filter. For more information on how to use filters, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html#image-scanning-filters">Using filters</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanningRepositoryFilter {
+pub struct ScanningRepositoryFilter  {
     /// <p>The filter to use when scanning.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ScanningRepositoryFilter {
 }
 impl ScanningRepositoryFilter {
     /// <p>The filter to use when scanning.</p>
-    pub fn filter(&self) -> std::option::Option<&str> {
+    pub fn filter(&self) -> std::option::Option<& str> {
         self.filter.as_deref()
     }
     /// <p>The type associated with the filter.</p>
-    pub fn filter_type(&self) -> std::option::Option<&crate::types::ScanningRepositoryFilterType> {
+    pub fn filter_type(&self) -> std::option::Option<& crate::types::ScanningRepositoryFilterType> {
         self.filter_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ScanningRepositoryFilterBuilder {
     }
     /// <p>The filter to use when scanning.</p>
     pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The type associated with the filter.</p>
     pub fn filter_type(mut self, input: crate::types::ScanningRepositoryFilterType) -> Self {
@@ -52,18 +51,17 @@ impl ScanningRepositoryFilterBuilder {
         self
     }
     /// <p>The type associated with the filter.</p>
-    pub fn set_filter_type(
-        mut self,
-        input: std::option::Option<crate::types::ScanningRepositoryFilterType>,
-    ) -> Self {
-        self.filter_type = input;
-        self
+    pub fn set_filter_type(mut self, input: std::option::Option<crate::types::ScanningRepositoryFilterType>) -> Self {
+        self.filter_type = input; self
     }
     /// Consumes the builder and constructs a [`ScanningRepositoryFilter`](crate::types::ScanningRepositoryFilter).
     pub fn build(self) -> crate::types::ScanningRepositoryFilter {
         crate::types::ScanningRepositoryFilter {
-            filter: self.filter,
-            filter_type: self.filter_type,
+            filter: self.filter
+            ,
+            filter_type: self.filter_type
+            ,
         }
     }
 }
+

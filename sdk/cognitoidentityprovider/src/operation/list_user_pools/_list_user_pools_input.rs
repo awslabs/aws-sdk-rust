@@ -3,7 +3,7 @@
 /// <p>Represents the request to list user pools.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserPoolsInput {
+pub struct ListUserPoolsInput  {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ListUserPoolsInput {
 }
 impl ListUserPoolsInput {
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
@@ -43,8 +43,7 @@ impl ListUserPoolsInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,19 +52,19 @@ impl ListUserPoolsInputBuilder {
     }
     /// <p>The maximum number of results you want the request to return when listing the user pools.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListUserPoolsInput`](crate::operation::list_user_pools::ListUserPoolsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_user_pools::ListUserPoolsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_user_pools::ListUserPoolsInput {
-            next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::list_user_pools::ListUserPoolsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_user_pools::ListUserPoolsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

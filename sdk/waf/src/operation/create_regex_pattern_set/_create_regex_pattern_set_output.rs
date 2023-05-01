@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRegexPatternSetOutput {
+pub struct CreateRegexPatternSetOutput  {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
     #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::types::RegexPatternSet>,
@@ -13,24 +13,22 @@ pub struct CreateRegexPatternSetOutput {
 }
 impl CreateRegexPatternSetOutput {
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
-    pub fn regex_pattern_set(&self) -> std::option::Option<&crate::types::RegexPatternSet> {
+    pub fn regex_pattern_set(&self) -> std::option::Option<& crate::types::RegexPatternSet> {
         self.regex_pattern_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateRegexPatternSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder {
         crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl CreateRegexPatternSetOutputBuilder {
         self
     }
     /// <p>A <code>RegexPatternSet</code> that contains no objects.</p>
-    pub fn set_regex_pattern_set(
-        mut self,
-        input: std::option::Option<crate::types::RegexPatternSet>,
-    ) -> Self {
-        self.regex_pattern_set = input;
-        self
+    pub fn set_regex_pattern_set(mut self, input: std::option::Option<crate::types::RegexPatternSet>) -> Self {
+        self.regex_pattern_set = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,24 +58,26 @@ impl CreateRegexPatternSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateRegexPatternSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRegexPatternSetOutput`](crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput).
     pub fn build(self) -> crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput {
         crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput {
-            regex_pattern_set: self.regex_pattern_set,
-            change_token: self.change_token,
+            regex_pattern_set: self.regex_pattern_set
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

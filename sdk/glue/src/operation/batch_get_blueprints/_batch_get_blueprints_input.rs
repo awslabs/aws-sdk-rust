@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetBlueprintsInput {
+pub struct BatchGetBlueprintsInput  {
     /// <p>A list of blueprint names.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct BatchGetBlueprintsInput {
 }
 impl BatchGetBlueprintsInput {
     /// <p>A list of blueprint names.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -29,8 +29,7 @@ impl BatchGetBlueprintsInput {
 }
 impl BatchGetBlueprintsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder {
         crate::operation::batch_get_blueprints::builders::BatchGetBlueprintsInputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl BatchGetBlueprintsInputBuilder {
     /// <p>A list of blueprint names.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = Some(v);
-        self
+                        v.push(input.into());
+                        self.names = Some(v);
+                        self
     }
     /// <p>A list of blueprint names.</p>
-    pub fn set_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn include_blueprint(mut self, input: bool) -> Self {
@@ -70,8 +65,7 @@ impl BatchGetBlueprintsInputBuilder {
     }
     /// <p>Specifies whether or not to include the blueprint in the response.</p>
     pub fn set_include_blueprint(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_blueprint = input;
-        self
+        self.include_blueprint = input; self
     }
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
     pub fn include_parameter_spec(mut self, input: bool) -> Self {
@@ -80,22 +74,20 @@ impl BatchGetBlueprintsInputBuilder {
     }
     /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
     pub fn set_include_parameter_spec(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_parameter_spec = input;
-        self
+        self.include_parameter_spec = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetBlueprintsInput`](crate::operation::batch_get_blueprints::BatchGetBlueprintsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_blueprints::BatchGetBlueprintsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_blueprints::BatchGetBlueprintsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_blueprints::BatchGetBlueprintsInput {
-                names: self.names,
-                include_blueprint: self.include_blueprint,
-                include_parameter_spec: self.include_parameter_spec,
-            },
+                names: self.names
+                ,
+                include_blueprint: self.include_blueprint
+                ,
+                include_parameter_spec: self.include_parameter_spec
+                ,
+            }
         )
     }
 }
+

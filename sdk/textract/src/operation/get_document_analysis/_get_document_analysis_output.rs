@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDocumentAnalysisOutput {
+pub struct GetDocumentAnalysisOutput  {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::types::DocumentMetadata>,
@@ -28,45 +28,43 @@ pub struct GetDocumentAnalysisOutput {
 }
 impl GetDocumentAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The current status of the text detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The results of the text-analysis operation.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::types::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::types::Block]> {
         self.blocks.as_deref()
     }
     /// <p>A list of warnings that occurred during the document-analysis operation.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::types::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::types::Warning]> {
         self.warnings.as_deref()
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p></p>
-    pub fn analyze_document_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_document_model_version(&self) -> std::option::Option<& str> {
         self.analyze_document_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDocumentAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDocumentAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`GetDocumentAnalysisOutput`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput).
-    pub fn builder(
-    ) -> crate::operation::get_document_analysis::builders::GetDocumentAnalysisOutputBuilder {
-        crate::operation::get_document_analysis::builders::GetDocumentAnalysisOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_document_analysis::builders::GetDocumentAnalysisOutputBuilder {
+        crate::operation::get_document_analysis::builders::GetDocumentAnalysisOutputBuilder::default()
     }
 }
 
@@ -90,12 +88,8 @@ impl GetDocumentAnalysisOutputBuilder {
         self
     }
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
-        self.document_metadata = input;
-        self
+    pub fn set_document_metadata(mut self, input: std::option::Option<crate::types::DocumentMetadata>) -> Self {
+        self.document_metadata = input; self
     }
     /// <p>The current status of the text detection job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -104,8 +98,7 @@ impl GetDocumentAnalysisOutputBuilder {
     }
     /// <p>The current status of the text detection job.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +107,7 @@ impl GetDocumentAnalysisOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Textract returns this token. You can use this token in the subsequent request to retrieve the next set of text detection results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `blocks`.
     ///
@@ -124,17 +116,13 @@ impl GetDocumentAnalysisOutputBuilder {
     /// <p>The results of the text-analysis operation.</p>
     pub fn blocks(mut self, input: crate::types::Block) -> Self {
         let mut v = self.blocks.unwrap_or_default();
-        v.push(input);
-        self.blocks = Some(v);
-        self
+                        v.push(input);
+                        self.blocks = Some(v);
+                        self
     }
     /// <p>The results of the text-analysis operation.</p>
-    pub fn set_blocks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Block>>,
-    ) -> Self {
-        self.blocks = input;
-        self
+    pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Block>>) -> Self {
+        self.blocks = input; self
     }
     /// Appends an item to `warnings`.
     ///
@@ -143,17 +131,13 @@ impl GetDocumentAnalysisOutputBuilder {
     /// <p>A list of warnings that occurred during the document-analysis operation.</p>
     pub fn warnings(mut self, input: crate::types::Warning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = Some(v);
-        self
+                        v.push(input);
+                        self.warnings = Some(v);
+                        self
     }
     /// <p>A list of warnings that occurred during the document-analysis operation.</p>
-    pub fn set_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::types::Warning>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +146,7 @@ impl GetDocumentAnalysisOutputBuilder {
     }
     /// <p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p></p>
     pub fn analyze_document_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -171,33 +154,37 @@ impl GetDocumentAnalysisOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_analyze_document_model_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.analyze_document_model_version = input;
-        self
+    pub fn set_analyze_document_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.analyze_document_model_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDocumentAnalysisOutput`](crate::operation::get_document_analysis::GetDocumentAnalysisOutput).
     pub fn build(self) -> crate::operation::get_document_analysis::GetDocumentAnalysisOutput {
         crate::operation::get_document_analysis::GetDocumentAnalysisOutput {
-            document_metadata: self.document_metadata,
-            job_status: self.job_status,
-            next_token: self.next_token,
-            blocks: self.blocks,
-            warnings: self.warnings,
-            status_message: self.status_message,
-            analyze_document_model_version: self.analyze_document_model_version,
+            document_metadata: self.document_metadata
+            ,
+            job_status: self.job_status
+            ,
+            next_token: self.next_token
+            ,
+            blocks: self.blocks
+            ,
+            warnings: self.warnings
+            ,
+            status_message: self.status_message
+            ,
+            analyze_document_model_version: self.analyze_document_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDominantLanguageDetectionJobInput {
+pub struct StopDominantLanguageDetectionJobInput  {
     /// <p>The identifier of the dominant language detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopDominantLanguageDetectionJobInput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl StopDominantLanguageDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder {
         crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl StopDominantLanguageDetectionJobInputBuilder {
     }
     /// <p>The identifier of the dominant language detection job to stop.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`StopDominantLanguageDetectionJobInput`](crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJobInput {
                 job_id: self.job_id
@@ -47,3 +46,4 @@ impl StopDominantLanguageDetectionJobInputBuilder {
         )
     }
 }
+

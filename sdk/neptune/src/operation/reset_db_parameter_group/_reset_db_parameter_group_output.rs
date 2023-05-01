@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDbParameterGroupOutput {
+pub struct ResetDbParameterGroupOutput  {
     /// <p>Provides the name of the DB parameter group.</p>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct ResetDbParameterGroupOutput {
 }
 impl ResetDbParameterGroupOutput {
     /// <p>Provides the name of the DB parameter group.</p>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ResetDbParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResetDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupOutput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupOutputBuilder {
         crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl ResetDbParameterGroupOutputBuilder {
         self
     }
     /// <p>Provides the name of the DB parameter group.</p>
-    pub fn set_db_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_parameter_group_name = input;
-        self
+    pub fn set_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_parameter_group_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResetDbParameterGroupOutput`](crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput).
     pub fn build(self) -> crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput {
         crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput {
-            db_parameter_group_name: self.db_parameter_group_name,
+            db_parameter_group_name: self.db_parameter_group_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

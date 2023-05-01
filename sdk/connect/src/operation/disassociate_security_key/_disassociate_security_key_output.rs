@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateSecurityKeyOutput {
+pub struct DisassociateSecurityKeyOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateSecurityKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateSecurityKeyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSecurityKeyOutput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyOutputBuilder {
         crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct DisassociateSecurityKeyOutputBuilder {
 }
 impl DisassociateSecurityKeyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateSecurityKeyOutput`](crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput {
+    pub fn build(self) -> crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput {
         crate::operation::disassociate_security_key::DisassociateSecurityKeyOutput {
             _request_id: self._request_id,
         }
     }
 }
+

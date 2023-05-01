@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeFraudsterInput {
+pub struct DescribeFraudsterInput  {
     /// <p>The identifier of the domain that contains the fraudster.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DescribeFraudsterInput {
 }
 impl DescribeFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the fraudster you are describing.</p>
-    pub fn fraudster_id(&self) -> std::option::Option<&str> {
+    pub fn fraudster_id(&self) -> std::option::Option<& str> {
         self.fraudster_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeFraudsterInput {
+impl  std::fmt::Debug for DescribeFraudsterInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeFraudsterInput");
         formatter.field("domain_id", &self.domain_id);
@@ -30,8 +30,7 @@ impl std::fmt::Debug for DescribeFraudsterInput {
 }
 impl DescribeFraudsterInput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
-    pub fn builder() -> crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder {
         crate::operation::describe_fraudster::builders::DescribeFraudsterInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DescribeFraudsterInputBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fn fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,21 +59,17 @@ impl DescribeFraudsterInputBuilder {
     }
     /// <p>The identifier of the fraudster you are describing.</p>
     pub fn set_fraudster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fraudster_id = input;
-        self
+        self.fraudster_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterInput`](crate::operation::describe_fraudster::DescribeFraudsterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_fraudster::DescribeFraudsterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_fraudster::DescribeFraudsterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_fraudster::DescribeFraudsterInput {
-                domain_id: self.domain_id,
-                fraudster_id: self.fraudster_id,
-            },
+                domain_id: self.domain_id
+                ,
+                fraudster_id: self.fraudster_id
+                ,
+            }
         )
     }
 }
@@ -87,3 +81,4 @@ impl std::fmt::Debug for DescribeFraudsterInputBuilder {
         formatter.finish()
     }
 }
+

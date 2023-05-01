@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsFiltersInput {
+pub struct ListFindingsFiltersInput  {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,16 +16,14 @@ impl ListFindingsFiltersInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListFindingsFiltersInput {
     /// Creates a new builder-style object to manufacture [`ListFindingsFiltersInput`](crate::operation::list_findings_filters::ListFindingsFiltersInput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder {
-        crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder {
+        crate::operation::list_findings_filters::builders::ListFindingsFiltersInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl ListFindingsFiltersInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl ListFindingsFiltersInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListFindingsFiltersInput`](crate::operation::list_findings_filters::ListFindingsFiltersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_findings_filters::ListFindingsFiltersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_findings_filters::ListFindingsFiltersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_findings_filters::ListFindingsFiltersInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

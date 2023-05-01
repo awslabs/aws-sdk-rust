@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mxfprofile = unimplemented!();
 /// match mxfprofile {
@@ -32,22 +32,14 @@
 /// Specifically, when `mxfprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MxfProfile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MxfProfile {
     #[allow(missing_docs)] // documentation missing in model
     D10,
@@ -58,44 +50,45 @@ pub enum MxfProfile {
     #[allow(missing_docs)] // documentation missing in model
     Xdcam,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MxfProfile {
-    fn from(s: &str) -> Self {
-        match s {
-            "D_10" => MxfProfile::D10,
-            "OP1A" => MxfProfile::Op1A,
-            "XAVC" => MxfProfile::Xavc,
-            "XDCAM" => MxfProfile::Xdcam,
-            other => MxfProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "D_10" => MxfProfile::D10,
+"OP1A" => MxfProfile::Op1A,
+"XAVC" => MxfProfile::Xavc,
+"XDCAM" => MxfProfile::Xdcam,
+other => MxfProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MxfProfile {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MxfProfile::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MxfProfile::from(s))
+                }
+            }
 impl MxfProfile {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MxfProfile::D10 => "D_10",
-            MxfProfile::Op1A => "OP1A",
-            MxfProfile::Xavc => "XAVC",
-            MxfProfile::Xdcam => "XDCAM",
-            MxfProfile::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["D_10", "OP1A", "XAVC", "XDCAM"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MxfProfile::D10 => "D_10",
+    MxfProfile::Op1A => "OP1A",
+    MxfProfile::Xavc => "XAVC",
+    MxfProfile::Xdcam => "XDCAM",
+    MxfProfile::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["D_10", "OP1A", "XAVC", "XDCAM"]
+                }
+            }
 impl AsRef<str> for MxfProfile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

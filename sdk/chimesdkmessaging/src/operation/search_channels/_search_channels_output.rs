@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchChannelsOutput {
+pub struct SearchChannelsOutput  {
     /// <p>A list of the channels in the request.</p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::types::ChannelSummary>>,
@@ -13,15 +13,15 @@ pub struct SearchChannelsOutput {
 }
 impl SearchChannelsOutput {
     /// <p>A list of the channels in the request.</p>
-    pub fn channels(&self) -> std::option::Option<&[crate::types::ChannelSummary]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::types::ChannelSummary]> {
         self.channels.as_deref()
     }
     /// <p>The token returned from previous API responses until the number of channels is reached.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchChannelsOutput {
+impl  std::fmt::Debug for SearchChannelsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchChannelsOutput");
         formatter.field("channels", &self.channels);
@@ -31,10 +31,10 @@ impl std::fmt::Debug for SearchChannelsOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchChannelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchChannelsOutput {
     /// Creates a new builder-style object to manufacture [`SearchChannelsOutput`](crate::operation::search_channels::SearchChannelsOutput).
     pub fn builder() -> crate::operation::search_channels::builders::SearchChannelsOutputBuilder {
@@ -58,17 +58,13 @@ impl SearchChannelsOutputBuilder {
     /// <p>A list of the channels in the request.</p>
     pub fn channels(mut self, input: crate::types::ChannelSummary) -> Self {
         let mut v = self.channels.unwrap_or_default();
-        v.push(input);
-        self.channels = Some(v);
-        self
+                        v.push(input);
+                        self.channels = Some(v);
+                        self
     }
     /// <p>A list of the channels in the request.</p>
-    pub fn set_channels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChannelSummary>>,
-    ) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChannelSummary>>) -> Self {
+        self.channels = input; self
     }
     /// <p>The token returned from previous API responses until the number of channels is reached.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,23 +73,24 @@ impl SearchChannelsOutputBuilder {
     }
     /// <p>The token returned from previous API responses until the number of channels is reached.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchChannelsOutput`](crate::operation::search_channels::SearchChannelsOutput).
     pub fn build(self) -> crate::operation::search_channels::SearchChannelsOutput {
         crate::operation::search_channels::SearchChannelsOutput {
-            channels: self.channels,
-            next_token: self.next_token,
+            channels: self.channels
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -107,3 +104,4 @@ impl std::fmt::Debug for SearchChannelsOutputBuilder {
         formatter.finish()
     }
 }
+

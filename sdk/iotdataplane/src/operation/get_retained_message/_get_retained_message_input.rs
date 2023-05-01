@@ -3,21 +3,20 @@
 /// <p>The input for the GetRetainedMessage operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRetainedMessageInput {
+pub struct GetRetainedMessageInput  {
     /// <p>The topic name of the retained message to retrieve.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
 }
 impl GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> std::option::Option<& str> {
         self.topic.as_deref()
     }
 }
 impl GetRetainedMessageInput {
     /// Creates a new builder-style object to manufacture [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
-    pub fn builder(
-    ) -> crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder {
+    pub fn builder() -> crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder {
         crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder::default()
     }
 }
@@ -36,16 +35,16 @@ impl GetRetainedMessageInputBuilder {
     }
     /// <p>The topic name of the retained message to retrieve.</p>
     pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_retained_message::GetRetainedMessageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_retained_message::GetRetainedMessageInput { topic: self.topic })
+    pub fn build(self) -> Result<crate::operation::get_retained_message::GetRetainedMessageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_retained_message::GetRetainedMessageInput {
+                topic: self.topic
+                ,
+            }
+        )
     }
 }
+

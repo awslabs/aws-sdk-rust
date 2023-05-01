@@ -3,7 +3,7 @@
 /// <p>Describes a data processing configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessingConfiguration {
+pub struct ProcessingConfiguration  {
     /// <p>Enables or disables data processing.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl ProcessingConfiguration {
         self.enabled
     }
     /// <p>The data processors.</p>
-    pub fn processors(&self) -> std::option::Option<&[crate::types::Processor]> {
+    pub fn processors(&self) -> std::option::Option<& [crate::types::Processor]> {
         self.processors.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ProcessingConfigurationBuilder {
     }
     /// <p>Enables or disables data processing.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Appends an item to `processors`.
     ///
@@ -53,23 +52,22 @@ impl ProcessingConfigurationBuilder {
     /// <p>The data processors.</p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
-        v.push(input);
-        self.processors = Some(v);
-        self
+                        v.push(input);
+                        self.processors = Some(v);
+                        self
     }
     /// <p>The data processors.</p>
-    pub fn set_processors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
-    ) -> Self {
-        self.processors = input;
-        self
+    pub fn set_processors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Processor>>) -> Self {
+        self.processors = input; self
     }
     /// Consumes the builder and constructs a [`ProcessingConfiguration`](crate::types::ProcessingConfiguration).
     pub fn build(self) -> crate::types::ProcessingConfiguration {
         crate::types::ProcessingConfiguration {
-            enabled: self.enabled,
-            processors: self.processors,
+            enabled: self.enabled
+            ,
+            processors: self.processors
+            ,
         }
     }
 }
+

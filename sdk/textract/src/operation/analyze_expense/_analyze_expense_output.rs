@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzeExpenseOutput {
+pub struct AnalyzeExpenseOutput  {
     /// <p>Information about the input document.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::types::DocumentMetadata>,
@@ -13,19 +13,19 @@ pub struct AnalyzeExpenseOutput {
 }
 impl AnalyzeExpenseOutput {
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn expense_documents(&self) -> std::option::Option<&[crate::types::ExpenseDocument]> {
+    pub fn expense_documents(&self) -> std::option::Option<& [crate::types::ExpenseDocument]> {
         self.expense_documents.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AnalyzeExpenseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AnalyzeExpenseOutput {
     /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::operation::analyze_expense::AnalyzeExpenseOutput).
     pub fn builder() -> crate::operation::analyze_expense::builders::AnalyzeExpenseOutputBuilder {
@@ -48,12 +48,8 @@ impl AnalyzeExpenseOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
-        self.document_metadata = input;
-        self
+    pub fn set_document_metadata(mut self, input: std::option::Option<crate::types::DocumentMetadata>) -> Self {
+        self.document_metadata = input; self
     }
     /// Appends an item to `expense_documents`.
     ///
@@ -62,33 +58,32 @@ impl AnalyzeExpenseOutputBuilder {
     /// <p>The expenses detected by Amazon Textract.</p>
     pub fn expense_documents(mut self, input: crate::types::ExpenseDocument) -> Self {
         let mut v = self.expense_documents.unwrap_or_default();
-        v.push(input);
-        self.expense_documents = Some(v);
-        self
+                        v.push(input);
+                        self.expense_documents = Some(v);
+                        self
     }
     /// <p>The expenses detected by Amazon Textract.</p>
-    pub fn set_expense_documents(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExpenseDocument>>,
-    ) -> Self {
-        self.expense_documents = input;
-        self
+    pub fn set_expense_documents(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExpenseDocument>>) -> Self {
+        self.expense_documents = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AnalyzeExpenseOutput`](crate::operation::analyze_expense::AnalyzeExpenseOutput).
     pub fn build(self) -> crate::operation::analyze_expense::AnalyzeExpenseOutput {
         crate::operation::analyze_expense::AnalyzeExpenseOutput {
-            document_metadata: self.document_metadata,
-            expense_documents: self.expense_documents,
+            document_metadata: self.document_metadata
+            ,
+            expense_documents: self.expense_documents
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

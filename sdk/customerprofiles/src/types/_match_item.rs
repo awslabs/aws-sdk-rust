@@ -3,7 +3,7 @@
 /// <p>The Match group object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MatchItem {
+pub struct MatchItem  {
     /// <p>The unique identifiers for this group of profiles that match.</p>
     #[doc(hidden)]
     pub match_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct MatchItem {
 }
 impl MatchItem {
     /// <p>The unique identifiers for this group of profiles that match.</p>
-    pub fn match_id(&self) -> std::option::Option<&str> {
+    pub fn match_id(&self) -> std::option::Option<& str> {
         self.match_id.as_deref()
     }
     /// <p>A list of identifiers for profiles that match.</p>
-    pub fn profile_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn profile_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.profile_ids.as_deref()
     }
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
@@ -51,8 +51,7 @@ impl MatchItemBuilder {
     }
     /// <p>The unique identifiers for this group of profiles that match.</p>
     pub fn set_match_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.match_id = input;
-        self
+        self.match_id = input; self
     }
     /// Appends an item to `profile_ids`.
     ///
@@ -61,17 +60,13 @@ impl MatchItemBuilder {
     /// <p>A list of identifiers for profiles that match.</p>
     pub fn profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.profile_ids.unwrap_or_default();
-        v.push(input.into());
-        self.profile_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.profile_ids = Some(v);
+                        self
     }
     /// <p>A list of identifiers for profiles that match.</p>
-    pub fn set_profile_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.profile_ids = input;
-        self
+    pub fn set_profile_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.profile_ids = input; self
     }
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
     pub fn confidence_score(mut self, input: f64) -> Self {
@@ -80,15 +75,18 @@ impl MatchItemBuilder {
     }
     /// <p>A number between 0 and 1, where a higher score means higher similarity. Examining match confidence scores lets you distinguish between groups of similar records in which the system is highly confident (which you may decide to merge), groups of similar records about which the system is uncertain (which you may decide to have reviewed by a human), and groups of similar records that the system deems to be unlikely (which you may decide to reject). Given confidence scores vary as per the data input, it should not be used an absolute measure of matching quality.</p>
     pub fn set_confidence_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.confidence_score = input;
-        self
+        self.confidence_score = input; self
     }
     /// Consumes the builder and constructs a [`MatchItem`](crate::types::MatchItem).
     pub fn build(self) -> crate::types::MatchItem {
         crate::types::MatchItem {
-            match_id: self.match_id,
-            profile_ids: self.profile_ids,
-            confidence_score: self.confidence_score,
+            match_id: self.match_id
+            ,
+            profile_ids: self.profile_ids
+            ,
+            confidence_score: self.confidence_score
+            ,
         }
     }
 }
+

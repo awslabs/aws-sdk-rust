@@ -3,7 +3,7 @@
 /// <p>An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, in addition to the ID of the actual stack and the stack status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackInstance {
+pub struct StackInstance  {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     #[doc(hidden)]
     pub stack_set_id: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct StackInstance {
     /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
     #[doc(hidden)]
     pub parameter_overrides: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
-    /// <ul>
-    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
-    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
-    /// <ul>
-    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
-    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p> 
+    /// <ul> 
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li> 
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p> 
+    /// <ul> 
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li> 
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::StackInstanceStatus>,
@@ -40,12 +40,12 @@ pub struct StackInstance {
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     #[doc(hidden)]
     pub organizational_unit_id: std::option::Option<std::string::String>,
-    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
-    /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub drift_status: std::option::Option<crate::types::StackDriftStatus>,
@@ -58,68 +58,66 @@ pub struct StackInstance {
 }
 impl StackInstance {
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
-    pub fn stack_set_id(&self) -> std::option::Option<&str> {
+    pub fn stack_set_id(&self) -> std::option::Option<& str> {
         self.stack_set_id.as_deref()
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
-    pub fn account(&self) -> std::option::Option<&str> {
+    pub fn account(&self) -> std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>The ID of the stack instance.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
-    pub fn parameter_overrides(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameter_overrides(&self) -> std::option::Option<& [crate::types::Parameter]> {
         self.parameter_overrides.as_deref()
     }
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
-    /// <ul>
-    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
-    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
-    /// <ul>
-    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
-    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p> 
+    /// <ul> 
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li> 
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p> 
+    /// <ul> 
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li> 
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::StackInstanceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::StackInstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The detailed status of the stack instance.</p>
-    pub fn stack_instance_status(
-        &self,
-    ) -> std::option::Option<&crate::types::StackInstanceComprehensiveStatus> {
+    pub fn stack_instance_status(&self) -> std::option::Option<& crate::types::StackInstanceComprehensiveStatus> {
         self.stack_instance_status.as_ref()
     }
     /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
+    pub fn organizational_unit_id(&self) -> std::option::Option<& str> {
         self.organizational_unit_id.as_deref()
     }
-    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
-    /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
     /// </ul>
-    pub fn drift_status(&self) -> std::option::Option<&crate::types::StackDriftStatus> {
+    pub fn drift_status(&self) -> std::option::Option<& crate::types::StackDriftStatus> {
         self.drift_status.as_ref()
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
-    pub fn last_drift_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_drift_check_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_drift_check_timestamp.as_ref()
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
-    pub fn last_operation_id(&self) -> std::option::Option<&str> {
+    pub fn last_operation_id(&self) -> std::option::Option<& str> {
         self.last_operation_id.as_deref()
     }
 }
@@ -140,8 +138,7 @@ pub struct StackInstanceBuilder {
     pub(crate) stack_id: std::option::Option<std::string::String>,
     pub(crate) parameter_overrides: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
     pub(crate) status: std::option::Option<crate::types::StackInstanceStatus>,
-    pub(crate) stack_instance_status:
-        std::option::Option<crate::types::StackInstanceComprehensiveStatus>,
+    pub(crate) stack_instance_status: std::option::Option<crate::types::StackInstanceComprehensiveStatus>,
     pub(crate) status_reason: std::option::Option<std::string::String>,
     pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
     pub(crate) drift_status: std::option::Option<crate::types::StackDriftStatus>,
@@ -156,8 +153,7 @@ impl StackInstanceBuilder {
     }
     /// <p>The name or unique ID of the stack set that the stack instance is associated with.</p>
     pub fn set_stack_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_set_id = input;
-        self
+        self.stack_set_id = input; self
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,8 +162,7 @@ impl StackInstanceBuilder {
     }
     /// <p>The name of the Amazon Web Services Region that the stack instance is associated with.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +171,7 @@ impl StackInstanceBuilder {
     }
     /// <p>[Self-managed permissions] The name of the Amazon Web Services account that the stack instance is associated with.</p>
     pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>The ID of the stack instance.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,8 +180,7 @@ impl StackInstanceBuilder {
     }
     /// <p>The ID of the stack instance.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// Appends an item to `parameter_overrides`.
     ///
@@ -196,64 +189,49 @@ impl StackInstanceBuilder {
     /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
     pub fn parameter_overrides(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameter_overrides.unwrap_or_default();
-        v.push(input);
-        self.parameter_overrides = Some(v);
-        self
+                        v.push(input);
+                        self.parameter_overrides = Some(v);
+                        self
     }
     /// <p>A list of parameters from the stack set template whose values have been overridden in this stack instance.</p>
-    pub fn set_parameter_overrides(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
-        self.parameter_overrides = input;
-        self
+    pub fn set_parameter_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
+        self.parameter_overrides = input; self
     }
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
-    /// <ul>
-    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
-    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
-    /// <ul>
-    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
-    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p> 
+    /// <ul> 
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li> 
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p> 
+    /// <ul> 
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li> 
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::StackInstanceStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p>
-    /// <ul>
-    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li>
-    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p>
-    /// <ul>
-    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
-    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li>
+    /// <p>The status of the stack instance, in terms of its synchronization with its associated stack set.</p> 
+    /// <ul> 
+    /// <li> <p> <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed and left the stack in an unstable state. Stacks in this state are excluded from further <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the stack instance, and then delete the stack manually.</p> </li> 
+    /// <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:</p> 
+    /// <ul> 
+    /// <li> <p>The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li> 
+    /// <li> <p>The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation that failed or was stopped before the stack was created or updated.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>CURRENT</code>: The stack is currently up to date with the stack set.</p> </li> 
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::StackInstanceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::StackInstanceStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The detailed status of the stack instance.</p>
-    pub fn stack_instance_status(
-        mut self,
-        input: crate::types::StackInstanceComprehensiveStatus,
-    ) -> Self {
+    pub fn stack_instance_status(mut self, input: crate::types::StackInstanceComprehensiveStatus) -> Self {
         self.stack_instance_status = Some(input);
         self
     }
     /// <p>The detailed status of the stack instance.</p>
-    pub fn set_stack_instance_status(
-        mut self,
-        input: std::option::Option<crate::types::StackInstanceComprehensiveStatus>,
-    ) -> Self {
-        self.stack_instance_status = input;
-        self
+    pub fn set_stack_instance_status(mut self, input: std::option::Option<crate::types::StackInstanceComprehensiveStatus>) -> Self {
+        self.stack_instance_status = input; self
     }
     /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,8 +240,7 @@ impl StackInstanceBuilder {
     }
     /// <p>The explanation for the specific status code that's assigned to this stack instance.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
     pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -271,37 +248,29 @@ impl StackInstanceBuilder {
         self
     }
     /// <p>[Service-managed permissions] The organization root ID or organizational unit (OU) IDs that you specified for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
-    pub fn set_organizational_unit_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.organizational_unit_id = input;
-        self
+    pub fn set_organizational_unit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.organizational_unit_id = input; self
     }
-    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
-    /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
     /// </ul>
     pub fn drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
         self.drift_status = Some(input);
         self
     }
-    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p>
-    /// <ul>
-    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li>
-    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
+    /// <p>Status of the stack instance's actual configuration compared to the expected template and parameter configuration of the stack set to which it belongs.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DRIFTED</code>: The stack differs from the expected template and parameter configuration of the stack set to which it belongs. A stack instance is considered to have drifted if one or more of the resources in the associated stack have drifted.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs from its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected stack set configuration.</p> </li> 
+    /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li> 
     /// </ul>
-    pub fn set_drift_status(
-        mut self,
-        input: std::option::Option<crate::types::StackDriftStatus>,
-    ) -> Self {
-        self.drift_status = input;
-        self
+    pub fn set_drift_status(mut self, input: std::option::Option<crate::types::StackDriftStatus>) -> Self {
+        self.drift_status = input; self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
     pub fn last_drift_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -309,12 +278,8 @@ impl StackInstanceBuilder {
         self
     }
     /// <p>Most recent time when CloudFormation performed a drift detection operation on the stack instance. This value will be <code>NULL</code> for any stack instance on which drift detection hasn't yet been performed.</p>
-    pub fn set_last_drift_check_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_drift_check_timestamp = input;
-        self
+    pub fn set_last_drift_check_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_drift_check_timestamp = input; self
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
     pub fn last_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -322,28 +287,37 @@ impl StackInstanceBuilder {
         self
     }
     /// <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
-    pub fn set_last_operation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.last_operation_id = input;
-        self
+    pub fn set_last_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.last_operation_id = input; self
     }
     /// Consumes the builder and constructs a [`StackInstance`](crate::types::StackInstance).
     pub fn build(self) -> crate::types::StackInstance {
         crate::types::StackInstance {
-            stack_set_id: self.stack_set_id,
-            region: self.region,
-            account: self.account,
-            stack_id: self.stack_id,
-            parameter_overrides: self.parameter_overrides,
-            status: self.status,
-            stack_instance_status: self.stack_instance_status,
-            status_reason: self.status_reason,
-            organizational_unit_id: self.organizational_unit_id,
-            drift_status: self.drift_status,
-            last_drift_check_timestamp: self.last_drift_check_timestamp,
-            last_operation_id: self.last_operation_id,
+            stack_set_id: self.stack_set_id
+            ,
+            region: self.region
+            ,
+            account: self.account
+            ,
+            stack_id: self.stack_id
+            ,
+            parameter_overrides: self.parameter_overrides
+            ,
+            status: self.status
+            ,
+            stack_instance_status: self.stack_instance_status
+            ,
+            status_reason: self.status_reason
+            ,
+            organizational_unit_id: self.organizational_unit_id
+            ,
+            drift_status: self.drift_status
+            ,
+            last_drift_check_timestamp: self.last_drift_check_timestamp
+            ,
+            last_operation_id: self.last_operation_id
+            ,
         }
     }
 }
+

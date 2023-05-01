@@ -3,20 +3,20 @@
 /// <p>DescribeLocationObjectStorageRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationObjectStorageInput {
+pub struct DescribeLocationObjectStorageInput  {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationObjectStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl DescribeLocationObjectStorageInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
-    pub fn builder() -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder {
         crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder::default()
     }
 }
@@ -35,16 +35,10 @@ impl DescribeLocationObjectStorageInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the object storage system location that you want information about.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLocationObjectStorageInput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_location_object_storage::DescribeLocationObjectStorageInput {
                 location_arn: self.location_arn
@@ -53,3 +47,4 @@ impl DescribeLocationObjectStorageInputBuilder {
         )
     }
 }
+

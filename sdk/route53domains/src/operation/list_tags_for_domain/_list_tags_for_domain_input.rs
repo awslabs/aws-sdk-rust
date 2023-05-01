@@ -3,21 +3,20 @@
 /// <p>The ListTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForDomainInput {
+pub struct ListTagsForDomainInput  {
     /// <p>The domain for which you want to get a list of tags.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl ListTagsForDomainInput {
     /// <p>The domain for which you want to get a list of tags.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl ListTagsForDomainInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder {
         crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl ListTagsForDomainInputBuilder {
     }
     /// <p>The domain for which you want to get a list of tags.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// Consumes the builder and constructs a [`ListTagsForDomainInput`](crate::operation::list_tags_for_domain::ListTagsForDomainInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tags_for_domain::ListTagsForDomainInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_tags_for_domain::ListTagsForDomainInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_tags_for_domain::ListTagsForDomainInput {
-                domain_name: self.domain_name,
-            },
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

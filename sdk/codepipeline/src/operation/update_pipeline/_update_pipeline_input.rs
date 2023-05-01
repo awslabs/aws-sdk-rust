@@ -3,14 +3,14 @@
 /// <p>Represents the input of an <code>UpdatePipeline</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipelineInput {
+pub struct UpdatePipelineInput  {
     /// <p>The name of the pipeline to be updated.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::types::PipelineDeclaration>,
 }
 impl UpdatePipelineInput {
     /// <p>The name of the pipeline to be updated.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::types::PipelineDeclaration> {
+    pub fn pipeline(&self) -> std::option::Option<& crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
 }
@@ -34,22 +34,17 @@ impl UpdatePipelineInputBuilder {
         self
     }
     /// <p>The name of the pipeline to be updated.</p>
-    pub fn set_pipeline(
-        mut self,
-        input: std::option::Option<crate::types::PipelineDeclaration>,
-    ) -> Self {
-        self.pipeline = input;
-        self
+    pub fn set_pipeline(mut self, input: std::option::Option<crate::types::PipelineDeclaration>) -> Self {
+        self.pipeline = input; self
     }
     /// Consumes the builder and constructs a [`UpdatePipelineInput`](crate::operation::update_pipeline::UpdatePipelineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_pipeline::UpdatePipelineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_pipeline::UpdatePipelineInput {
-            pipeline: self.pipeline,
-        })
+    pub fn build(self) -> Result<crate::operation::update_pipeline::UpdatePipelineInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_pipeline::UpdatePipelineInput {
+                pipeline: self.pipeline
+                ,
+            }
+        )
     }
 }
+

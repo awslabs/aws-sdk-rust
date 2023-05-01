@@ -4,87 +4,60 @@ pub use crate::operation::list_trial_components::_list_trial_components_output::
 pub use crate::operation::list_trial_components::_list_trial_components_input::ListTrialComponentsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTrialComponents`.
-///
-/// <p>Lists the trial components in your account. You can sort the list by trial component name or creation time. You can filter the list to show only components that were created in a specific time range. You can also filter on one of the following:</p>
-/// <ul>
-/// <li> <p> <code>ExperimentName</code> </p> </li>
-/// <li> <p> <code>SourceArn</code> </p> </li>
-/// <li> <p> <code>TrialName</code> </p> </li>
+/// 
+/// <p>Lists the trial components in your account. You can sort the list by trial component name or creation time. You can filter the list to show only components that were created in a specific time range. You can also filter on one of the following:</p> 
+/// <ul> 
+/// <li> <p> <code>ExperimentName</code> </p> </li> 
+/// <li> <p> <code>SourceArn</code> </p> </li> 
+/// <li> <p> <code>TrialName</code> </p> </li> 
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrialComponentsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder,
-}
-impl ListTrialComponentsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder
+            }
+impl ListTrialComponentsFluentBuilder  {
     /// Creates a new `ListTrialComponents`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_trial_components::ListTrialComponents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_trial_components::ListTrialComponentsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_trial_components::ListTrialComponentsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_trial_components::ListTrialComponentsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_trial_components::ListTrialComponents, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_trial_components::ListTrialComponentsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_trial_components::ListTrialComponentsOutput, aws_smithy_http::result::SdkError<crate::operation::list_trial_components::ListTrialComponentsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator {
-        crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator {
+                            crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
     pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());
@@ -121,10 +94,7 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
     /// <p>A filter that returns only components created after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -134,10 +104,7 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
     /// <p>A filter that returns only components created before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -147,10 +114,7 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::SortTrialComponentsBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SortTrialComponentsBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -185,3 +149,4 @@ impl ListTrialComponentsFluentBuilder {
         self
     }
 }
+

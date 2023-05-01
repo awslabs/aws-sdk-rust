@@ -3,7 +3,7 @@
 /// Wav Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WavSettings {
+pub struct WavSettings  {
     /// Bits per sample.
     #[doc(hidden)]
     pub bit_depth: f64,
@@ -20,7 +20,7 @@ impl WavSettings {
         self.bit_depth
     }
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
-    pub fn coding_mode(&self) -> std::option::Option<&crate::types::WavCodingMode> {
+    pub fn coding_mode(&self) -> std::option::Option<& crate::types::WavCodingMode> {
         self.coding_mode.as_ref()
     }
     /// Sample rate in Hz.
@@ -51,8 +51,7 @@ impl WavSettingsBuilder {
     }
     /// Bits per sample.
     pub fn set_bit_depth(mut self, input: std::option::Option<f64>) -> Self {
-        self.bit_depth = input;
-        self
+        self.bit_depth = input; self
     }
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
     pub fn coding_mode(mut self, input: crate::types::WavCodingMode) -> Self {
@@ -60,12 +59,8 @@ impl WavSettingsBuilder {
         self
     }
     /// The audio coding mode for the WAV audio. The mode determines the number of channels in the audio.
-    pub fn set_coding_mode(
-        mut self,
-        input: std::option::Option<crate::types::WavCodingMode>,
-    ) -> Self {
-        self.coding_mode = input;
-        self
+    pub fn set_coding_mode(mut self, input: std::option::Option<crate::types::WavCodingMode>) -> Self {
+        self.coding_mode = input; self
     }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: f64) -> Self {
@@ -74,15 +69,20 @@ impl WavSettingsBuilder {
     }
     /// Sample rate in Hz.
     pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
     }
     /// Consumes the builder and constructs a [`WavSettings`](crate::types::WavSettings).
     pub fn build(self) -> crate::types::WavSettings {
         crate::types::WavSettings {
-            bit_depth: self.bit_depth.unwrap_or_default(),
-            coding_mode: self.coding_mode,
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            bit_depth: self.bit_depth
+                .unwrap_or_default()
+            ,
+            coding_mode: self.coding_mode
+            ,
+            sample_rate: self.sample_rate
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

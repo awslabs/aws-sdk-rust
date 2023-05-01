@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetModelPropertiesInput {
+pub struct ListAssetModelPropertiesInput  {
     /// <p>The ID of the asset model.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
@@ -12,43 +12,41 @@ pub struct ListAssetModelPropertiesInput {
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
-    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
-    /// </ul>
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li> 
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li> 
+    /// </ul> 
     /// <p>Default: <code>BASE</code> </p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
 }
 impl ListAssetModelPropertiesInput {
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn asset_model_id(&self) -> std::option::Option<& str> {
         self.asset_model_id.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
-    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
-    /// </ul>
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li> 
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li> 
+    /// </ul> 
     /// <p>Default: <code>BASE</code> </p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::ListAssetModelPropertiesFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::ListAssetModelPropertiesFilter> {
         self.filter.as_ref()
     }
 }
 impl ListAssetModelPropertiesInput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
-    pub fn builder(
-    ) -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder {
         crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder::default()
     }
 }
@@ -70,8 +68,7 @@ impl ListAssetModelPropertiesInputBuilder {
     }
     /// <p>The ID of the asset model.</p>
     pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_model_id = input;
-        self
+        self.asset_model_id = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +77,7 @@ impl ListAssetModelPropertiesInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -90,46 +86,41 @@ impl ListAssetModelPropertiesInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
-    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
-    /// </ul>
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li> 
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li> 
+    /// </ul> 
     /// <p>Default: <code>BASE</code> </p>
     pub fn filter(mut self, input: crate::types::ListAssetModelPropertiesFilter) -> Self {
         self.filter = Some(input);
         self
     }
-    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li>
-    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li>
-    /// </ul>
+    /// <p> Filters the requested list of asset model properties. You can choose one of the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all asset model properties for a given asset model ID. </p> </li> 
+    /// <li> <p> <code>BASE</code> – The list includes only base asset model properties for a given asset model ID. </p> </li> 
+    /// </ul> 
     /// <p>Default: <code>BASE</code> </p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::ListAssetModelPropertiesFilter>) -> Self {
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`ListAssetModelPropertiesInput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesInput {
-                asset_model_id: self.asset_model_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
+                asset_model_id: self.asset_model_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filter: self.filter
+                ,
+            }
         )
     }
 }
+

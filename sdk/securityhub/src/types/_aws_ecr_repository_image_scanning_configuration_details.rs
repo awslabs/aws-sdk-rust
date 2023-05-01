@@ -3,7 +3,7 @@
 /// <p>The image scanning configuration for a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcrRepositoryImageScanningConfigurationDetails {
+pub struct AwsEcrRepositoryImageScanningConfigurationDetails  {
     /// <p>Whether to scan images after they are pushed to a repository.</p>
     #[doc(hidden)]
     pub scan_on_push: bool,
@@ -16,8 +16,7 @@ impl AwsEcrRepositoryImageScanningConfigurationDetails {
 }
 impl AwsEcrRepositoryImageScanningConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
         crate::types::builders::AwsEcrRepositoryImageScanningConfigurationDetailsBuilder::default()
     }
 }
@@ -36,13 +35,15 @@ impl AwsEcrRepositoryImageScanningConfigurationDetailsBuilder {
     }
     /// <p>Whether to scan images after they are pushed to a repository.</p>
     pub fn set_scan_on_push(mut self, input: std::option::Option<bool>) -> Self {
-        self.scan_on_push = input;
-        self
+        self.scan_on_push = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcrRepositoryImageScanningConfigurationDetails`](crate::types::AwsEcrRepositoryImageScanningConfigurationDetails).
     pub fn build(self) -> crate::types::AwsEcrRepositoryImageScanningConfigurationDetails {
         crate::types::AwsEcrRepositoryImageScanningConfigurationDetails {
-            scan_on_push: self.scan_on_push.unwrap_or_default(),
+            scan_on_push: self.scan_on_push
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,17 +3,17 @@
 /// Placeholder documentation for CancelInputDeviceTransferResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelInputDeviceTransferOutput {
+pub struct CancelInputDeviceTransferOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CancelInputDeviceTransferOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelInputDeviceTransferOutput {
     /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
-    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferOutputBuilder {
         crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferOutputBuilder::default()
     }
 }
@@ -26,20 +26,19 @@ pub struct CancelInputDeviceTransferOutputBuilder {
 }
 impl CancelInputDeviceTransferOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput {
+    pub fn build(self) -> crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput {
         crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput {
             _request_id: self._request_id,
         }
     }
 }
+

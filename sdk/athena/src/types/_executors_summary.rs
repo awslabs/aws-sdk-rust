@@ -3,7 +3,7 @@
 /// <p>Contains summary information about an executor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutorsSummary {
+pub struct ExecutorsSummary  {
     /// <p>The UUID of the executor.</p>
     #[doc(hidden)]
     pub executor_id: std::option::Option<std::string::String>,
@@ -16,12 +16,12 @@ pub struct ExecutorsSummary {
     /// <p>The date and time that the executor was terminated.</p>
     #[doc(hidden)]
     pub termination_date_time: std::option::Option<i64>,
-    /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p> <code>CREATED</code> - The executor has been started.</p>
-    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p>The processing state of the executor. A description of each state follows.</p> 
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p> 
+    /// <p> <code>CREATED</code> - The executor has been started.</p> 
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p> 
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p> 
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p> 
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     #[doc(hidden)]
     pub executor_state: std::option::Option<crate::types::ExecutorState>,
@@ -31,11 +31,11 @@ pub struct ExecutorsSummary {
 }
 impl ExecutorsSummary {
     /// <p>The UUID of the executor.</p>
-    pub fn executor_id(&self) -> std::option::Option<&str> {
+    pub fn executor_id(&self) -> std::option::Option<& str> {
         self.executor_id.as_deref()
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
-    pub fn executor_type(&self) -> std::option::Option<&crate::types::ExecutorType> {
+    pub fn executor_type(&self) -> std::option::Option<& crate::types::ExecutorType> {
         self.executor_type.as_ref()
     }
     /// <p>The date and time that the executor started.</p>
@@ -46,14 +46,14 @@ impl ExecutorsSummary {
     pub fn termination_date_time(&self) -> std::option::Option<i64> {
         self.termination_date_time
     }
-    /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p> <code>CREATED</code> - The executor has been started.</p>
-    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p>The processing state of the executor. A description of each state follows.</p> 
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p> 
+    /// <p> <code>CREATED</code> - The executor has been started.</p> 
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p> 
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p> 
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p> 
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    pub fn executor_state(&self) -> std::option::Option<&crate::types::ExecutorState> {
+    pub fn executor_state(&self) -> std::option::Option<& crate::types::ExecutorState> {
         self.executor_state.as_ref()
     }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
@@ -87,8 +87,7 @@ impl ExecutorsSummaryBuilder {
     }
     /// <p>The UUID of the executor.</p>
     pub fn set_executor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.executor_id = input;
-        self
+        self.executor_id = input; self
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
     pub fn executor_type(mut self, input: crate::types::ExecutorType) -> Self {
@@ -96,12 +95,8 @@ impl ExecutorsSummaryBuilder {
         self
     }
     /// <p>The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>, or <code>WORKER</code>).</p>
-    pub fn set_executor_type(
-        mut self,
-        input: std::option::Option<crate::types::ExecutorType>,
-    ) -> Self {
-        self.executor_type = input;
-        self
+    pub fn set_executor_type(mut self, input: std::option::Option<crate::types::ExecutorType>) -> Self {
+        self.executor_type = input; self
     }
     /// <p>The date and time that the executor started.</p>
     pub fn start_date_time(mut self, input: i64) -> Self {
@@ -110,8 +105,7 @@ impl ExecutorsSummaryBuilder {
     }
     /// <p>The date and time that the executor started.</p>
     pub fn set_start_date_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.start_date_time = input;
-        self
+        self.start_date_time = input; self
     }
     /// <p>The date and time that the executor was terminated.</p>
     pub fn termination_date_time(mut self, input: i64) -> Self {
@@ -120,33 +114,28 @@ impl ExecutorsSummaryBuilder {
     }
     /// <p>The date and time that the executor was terminated.</p>
     pub fn set_termination_date_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.termination_date_time = input;
-        self
+        self.termination_date_time = input; self
     }
-    /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p> <code>CREATED</code> - The executor has been started.</p>
-    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p>The processing state of the executor. A description of each state follows.</p> 
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p> 
+    /// <p> <code>CREATED</code> - The executor has been started.</p> 
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p> 
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p> 
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p> 
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
     pub fn executor_state(mut self, input: crate::types::ExecutorState) -> Self {
         self.executor_state = Some(input);
         self
     }
-    /// <p>The processing state of the executor. A description of each state follows.</p>
-    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p>
-    /// <p> <code>CREATED</code> - The executor has been started.</p>
-    /// <p> <code>REGISTERED</code> - The executor has been registered.</p>
-    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p>
-    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p>
+    /// <p>The processing state of the executor. A description of each state follows.</p> 
+    /// <p> <code>CREATING</code> - The executor is being started, including acquiring resources.</p> 
+    /// <p> <code>CREATED</code> - The executor has been started.</p> 
+    /// <p> <code>REGISTERED</code> - The executor has been registered.</p> 
+    /// <p> <code>TERMINATING</code> - The executor is in the process of shutting down.</p> 
+    /// <p> <code>TERMINATED</code> - The executor is no longer running.</p> 
     /// <p> <code>FAILED</code> - Due to a failure, the executor is no longer running.</p>
-    pub fn set_executor_state(
-        mut self,
-        input: std::option::Option<crate::types::ExecutorState>,
-    ) -> Self {
-        self.executor_state = input;
-        self
+    pub fn set_executor_state(mut self, input: std::option::Option<crate::types::ExecutorState>) -> Self {
+        self.executor_state = input; self
     }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
     pub fn executor_size(mut self, input: i64) -> Self {
@@ -155,18 +144,24 @@ impl ExecutorsSummaryBuilder {
     }
     /// <p>The smallest unit of compute that a session can request from Athena. Size is measured in data processing unit (DPU) values, a relative measure of processing power.</p>
     pub fn set_executor_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.executor_size = input;
-        self
+        self.executor_size = input; self
     }
     /// Consumes the builder and constructs a [`ExecutorsSummary`](crate::types::ExecutorsSummary).
     pub fn build(self) -> crate::types::ExecutorsSummary {
         crate::types::ExecutorsSummary {
-            executor_id: self.executor_id,
-            executor_type: self.executor_type,
-            start_date_time: self.start_date_time,
-            termination_date_time: self.termination_date_time,
-            executor_state: self.executor_state,
-            executor_size: self.executor_size,
+            executor_id: self.executor_id
+            ,
+            executor_type: self.executor_type
+            ,
+            start_date_time: self.start_date_time
+            ,
+            termination_date_time: self.termination_date_time
+            ,
+            executor_state: self.executor_state
+            ,
+            executor_size: self.executor_size
+            ,
         }
     }
 }
+

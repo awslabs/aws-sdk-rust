@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -37,22 +37,14 @@
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -73,64 +65,55 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpointLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => Status::Active,
-            "CREATING" => Status::Creating,
-            "DELETING" => Status::Deleting,
-            "INACCESSIBLE_ENCRYPTION_CREDS" => Status::InaccessibleEncryptionCreds,
-            "INVALID_SECURITY_GROUP_ID" => Status::InvalidSecurityGroupId,
-            "INVALID_SUBNET_ID" => Status::InvalidSubnetId,
-            "IP_ADDRESS_LIMIT_EXCEEDED" => Status::IpAddressLimitExceeded,
-            "UPDATING" => Status::Updating,
-            "VPC_ENDPOINT_LIMIT_EXCEEDED" => Status::VpcEndpointLimitExceeded,
-            other => Status::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => Status::Active,
+"CREATING" => Status::Creating,
+"DELETING" => Status::Deleting,
+"INACCESSIBLE_ENCRYPTION_CREDS" => Status::InaccessibleEncryptionCreds,
+"INVALID_SECURITY_GROUP_ID" => Status::InvalidSecurityGroupId,
+"INVALID_SUBNET_ID" => Status::InvalidSubnetId,
+"IP_ADDRESS_LIMIT_EXCEEDED" => Status::IpAddressLimitExceeded,
+"UPDATING" => Status::Updating,
+"VPC_ENDPOINT_LIMIT_EXCEEDED" => Status::VpcEndpointLimitExceeded,
+other => Status::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Status::Active => "ACTIVE",
-            Status::Creating => "CREATING",
-            Status::Deleting => "DELETING",
-            Status::InaccessibleEncryptionCreds => "INACCESSIBLE_ENCRYPTION_CREDS",
-            Status::InvalidSecurityGroupId => "INVALID_SECURITY_GROUP_ID",
-            Status::InvalidSubnetId => "INVALID_SUBNET_ID",
-            Status::IpAddressLimitExceeded => "IP_ADDRESS_LIMIT_EXCEEDED",
-            Status::Updating => "UPDATING",
-            Status::VpcEndpointLimitExceeded => "VPC_ENDPOINT_LIMIT_EXCEEDED",
-            Status::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "DELETING",
-            "INACCESSIBLE_ENCRYPTION_CREDS",
-            "INVALID_SECURITY_GROUP_ID",
-            "INVALID_SUBNET_ID",
-            "IP_ADDRESS_LIMIT_EXCEEDED",
-            "UPDATING",
-            "VPC_ENDPOINT_LIMIT_EXCEEDED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Status::Active => "ACTIVE",
+    Status::Creating => "CREATING",
+    Status::Deleting => "DELETING",
+    Status::InaccessibleEncryptionCreds => "INACCESSIBLE_ENCRYPTION_CREDS",
+    Status::InvalidSecurityGroupId => "INVALID_SECURITY_GROUP_ID",
+    Status::InvalidSubnetId => "INVALID_SUBNET_ID",
+    Status::IpAddressLimitExceeded => "IP_ADDRESS_LIMIT_EXCEEDED",
+    Status::Updating => "UPDATING",
+    Status::VpcEndpointLimitExceeded => "VPC_ENDPOINT_LIMIT_EXCEEDED",
+    Status::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "DELETING", "INACCESSIBLE_ENCRYPTION_CREDS", "INVALID_SECURITY_GROUP_ID", "INVALID_SUBNET_ID", "IP_ADDRESS_LIMIT_EXCEEDED", "UPDATING", "VPC_ENDPOINT_LIMIT_EXCEEDED"]
+                }
+            }
 impl AsRef<str> for Status {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

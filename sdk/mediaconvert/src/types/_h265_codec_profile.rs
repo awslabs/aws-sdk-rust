@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h265codecprofile = unimplemented!();
 /// match h265codecprofile {
@@ -36,22 +36,14 @@
 /// Specifically, when `h265codecprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H265CodecProfile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum H265CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
     Main10High,
@@ -70,63 +62,53 @@ pub enum H265CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
     MainMain,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for H265CodecProfile {
-    fn from(s: &str) -> Self {
-        match s {
-            "MAIN10_HIGH" => H265CodecProfile::Main10High,
-            "MAIN10_MAIN" => H265CodecProfile::Main10Main,
-            "MAIN_422_10BIT_HIGH" => H265CodecProfile::Main42210BitHigh,
-            "MAIN_422_10BIT_MAIN" => H265CodecProfile::Main42210BitMain,
-            "MAIN_422_8BIT_HIGH" => H265CodecProfile::Main4228BitHigh,
-            "MAIN_422_8BIT_MAIN" => H265CodecProfile::Main4228BitMain,
-            "MAIN_HIGH" => H265CodecProfile::MainHigh,
-            "MAIN_MAIN" => H265CodecProfile::MainMain,
-            other => {
-                H265CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MAIN10_HIGH" => H265CodecProfile::Main10High,
+"MAIN10_MAIN" => H265CodecProfile::Main10Main,
+"MAIN_422_10BIT_HIGH" => H265CodecProfile::Main42210BitHigh,
+"MAIN_422_10BIT_MAIN" => H265CodecProfile::Main42210BitMain,
+"MAIN_422_8BIT_HIGH" => H265CodecProfile::Main4228BitHigh,
+"MAIN_422_8BIT_MAIN" => H265CodecProfile::Main4228BitMain,
+"MAIN_HIGH" => H265CodecProfile::MainHigh,
+"MAIN_MAIN" => H265CodecProfile::MainMain,
+other => H265CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for H265CodecProfile {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265CodecProfile::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(H265CodecProfile::from(s))
+                }
+            }
 impl H265CodecProfile {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H265CodecProfile::Main10High => "MAIN10_HIGH",
-            H265CodecProfile::Main10Main => "MAIN10_MAIN",
-            H265CodecProfile::Main42210BitHigh => "MAIN_422_10BIT_HIGH",
-            H265CodecProfile::Main42210BitMain => "MAIN_422_10BIT_MAIN",
-            H265CodecProfile::Main4228BitHigh => "MAIN_422_8BIT_HIGH",
-            H265CodecProfile::Main4228BitMain => "MAIN_422_8BIT_MAIN",
-            H265CodecProfile::MainHigh => "MAIN_HIGH",
-            H265CodecProfile::MainMain => "MAIN_MAIN",
-            H265CodecProfile::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MAIN10_HIGH",
-            "MAIN10_MAIN",
-            "MAIN_422_10BIT_HIGH",
-            "MAIN_422_10BIT_MAIN",
-            "MAIN_422_8BIT_HIGH",
-            "MAIN_422_8BIT_MAIN",
-            "MAIN_HIGH",
-            "MAIN_MAIN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H265CodecProfile::Main10High => "MAIN10_HIGH",
+    H265CodecProfile::Main10Main => "MAIN10_MAIN",
+    H265CodecProfile::Main42210BitHigh => "MAIN_422_10BIT_HIGH",
+    H265CodecProfile::Main42210BitMain => "MAIN_422_10BIT_MAIN",
+    H265CodecProfile::Main4228BitHigh => "MAIN_422_8BIT_HIGH",
+    H265CodecProfile::Main4228BitMain => "MAIN_422_8BIT_MAIN",
+    H265CodecProfile::MainHigh => "MAIN_HIGH",
+    H265CodecProfile::MainMain => "MAIN_MAIN",
+    H265CodecProfile::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MAIN10_HIGH", "MAIN10_MAIN", "MAIN_422_10BIT_HIGH", "MAIN_422_10BIT_MAIN", "MAIN_422_8BIT_HIGH", "MAIN_422_8BIT_MAIN", "MAIN_HIGH", "MAIN_MAIN"]
+                }
+            }
 impl AsRef<str> for H265CodecProfile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

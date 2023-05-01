@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssetPropertyValueHistoryOutput {
+pub struct GetAssetPropertyValueHistoryOutput  {
     /// <p>The asset property's value history.</p>
     #[doc(hidden)]
-    pub asset_property_value_history:
-        std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub asset_property_value_history: std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct GetAssetPropertyValueHistoryOutput {
 }
 impl GetAssetPropertyValueHistoryOutput {
     /// <p>The asset property's value history.</p>
-    pub fn asset_property_value_history(
-        &self,
-    ) -> std::option::Option<&[crate::types::AssetPropertyValue]> {
+    pub fn asset_property_value_history(&self) -> std::option::Option<& [crate::types::AssetPropertyValue]> {
         self.asset_property_value_history.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAssetPropertyValueHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAssetPropertyValueHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput).
-    pub fn builder() -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder {
         crate::operation::get_asset_property_value_history::builders::GetAssetPropertyValueHistoryOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl GetAssetPropertyValueHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetAssetPropertyValueHistoryOutputBuilder {
-    pub(crate) asset_property_value_history:
-        std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
+    pub(crate) asset_property_value_history: std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
     /// <p>The asset property's value history.</p>
     pub fn asset_property_value_history(mut self, input: crate::types::AssetPropertyValue) -> Self {
         let mut v = self.asset_property_value_history.unwrap_or_default();
-        v.push(input);
-        self.asset_property_value_history = Some(v);
-        self
+                        v.push(input);
+                        self.asset_property_value_history = Some(v);
+                        self
     }
     /// <p>The asset property's value history.</p>
-    pub fn set_asset_property_value_history(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>,
-    ) -> Self {
-        self.asset_property_value_history = input;
-        self
+    pub fn set_asset_property_value_history(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssetPropertyValue>>) -> Self {
+        self.asset_property_value_history = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,27 +64,26 @@ impl GetAssetPropertyValueHistoryOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAssetPropertyValueHistoryOutput`](crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput
-    {
+    pub fn build(self) -> crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
         crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput {
-            asset_property_value_history: self.asset_property_value_history,
-            next_token: self.next_token,
+            asset_property_value_history: self.asset_property_value_history
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

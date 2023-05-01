@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBlueGreenDeploymentsOutput {
+pub struct DescribeBlueGreenDeploymentsOutput  {
     /// <p>Contains a list of blue/green deployments for the user.</p>
     #[doc(hidden)]
-    pub blue_green_deployments:
-        std::option::Option<std::vec::Vec<crate::types::BlueGreenDeployment>>,
+    pub blue_green_deployments: std::option::Option<std::vec::Vec<crate::types::BlueGreenDeployment>>,
     /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeBlueGreenDeploymentsOutput {
 }
 impl DescribeBlueGreenDeploymentsOutput {
     /// <p>Contains a list of blue/green deployments for the user.</p>
-    pub fn blue_green_deployments(
-        &self,
-    ) -> std::option::Option<&[crate::types::BlueGreenDeployment]> {
+    pub fn blue_green_deployments(&self) -> std::option::Option<& [crate::types::BlueGreenDeployment]> {
         self.blue_green_deployments.as_deref()
     }
     /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBlueGreenDeploymentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeBlueGreenDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsOutput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput).
-    pub fn builder() -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsOutputBuilder {
         crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeBlueGreenDeploymentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsOutputBuilder {
-    pub(crate) blue_green_deployments:
-        std::option::Option<std::vec::Vec<crate::types::BlueGreenDeployment>>,
+    pub(crate) blue_green_deployments: std::option::Option<std::vec::Vec<crate::types::BlueGreenDeployment>>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
     /// <p>Contains a list of blue/green deployments for the user.</p>
     pub fn blue_green_deployments(mut self, input: crate::types::BlueGreenDeployment) -> Self {
         let mut v = self.blue_green_deployments.unwrap_or_default();
-        v.push(input);
-        self.blue_green_deployments = Some(v);
-        self
+                        v.push(input);
+                        self.blue_green_deployments = Some(v);
+                        self
     }
     /// <p>Contains a list of blue/green deployments for the user.</p>
-    pub fn set_blue_green_deployments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlueGreenDeployment>>,
-    ) -> Self {
-        self.blue_green_deployments = input;
-        self
+    pub fn set_blue_green_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::types::BlueGreenDeployment>>) -> Self {
+        self.blue_green_deployments = input; self
     }
     /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl DescribeBlueGreenDeploymentsOutputBuilder {
     }
     /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeBlueGreenDeploymentsOutput`](crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput {
+    pub fn build(self) -> crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput {
         crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeploymentsOutput {
-            blue_green_deployments: self.blue_green_deployments,
-            marker: self.marker,
+            blue_green_deployments: self.blue_green_deployments
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

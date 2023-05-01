@@ -3,20 +3,14 @@
 /// <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelsResponse {
+pub struct ChannelsResponse  {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
     #[doc(hidden)]
-    pub channels: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
-    >,
+    pub channels: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ChannelResponse>>,
 }
 impl ChannelsResponse {
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
-    pub fn channels(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
-    > {
+    pub fn channels(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::ChannelResponse>> {
         self.channels.as_ref()
     }
 }
@@ -31,9 +25,7 @@ impl ChannelsResponse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ChannelsResponseBuilder {
-    pub(crate) channels: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
-    >,
+    pub(crate) channels: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ChannelResponse>>,
 }
 impl ChannelsResponseBuilder {
     /// Adds a key-value pair to `channels`.
@@ -41,30 +33,22 @@ impl ChannelsResponseBuilder {
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
-    pub fn channels(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::ChannelResponse,
-    ) -> Self {
+    pub fn channels(mut self, k: impl Into<std::string::String>, v: crate::types::ChannelResponse) -> Self {
         let mut hash_map = self.channels.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.channels = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.channels = Some(hash_map);
+                        self
     }
     /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
-    pub fn set_channels(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ChannelResponse>,
-        >,
-    ) -> Self {
-        self.channels = input;
-        self
+    pub fn set_channels(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ChannelResponse>>) -> Self {
+        self.channels = input; self
     }
     /// Consumes the builder and constructs a [`ChannelsResponse`](crate::types::ChannelsResponse).
     pub fn build(self) -> crate::types::ChannelsResponse {
         crate::types::ChannelsResponse {
-            channels: self.channels,
+            channels: self.channels
+            ,
         }
     }
 }
+

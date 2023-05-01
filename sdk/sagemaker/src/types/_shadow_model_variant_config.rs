@@ -3,7 +3,7 @@
 /// <p>The name and sampling percentage of a shadow variant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShadowModelVariantConfig {
+pub struct ShadowModelVariantConfig  {
     /// <p>The name of the shadow variant.</p>
     #[doc(hidden)]
     pub shadow_model_variant_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ShadowModelVariantConfig {
 }
 impl ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
-    pub fn shadow_model_variant_name(&self) -> std::option::Option<&str> {
+    pub fn shadow_model_variant_name(&self) -> std::option::Option<& str> {
         self.shadow_model_variant_name.as_deref()
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
@@ -42,12 +42,8 @@ impl ShadowModelVariantConfigBuilder {
         self
     }
     /// <p>The name of the shadow variant.</p>
-    pub fn set_shadow_model_variant_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.shadow_model_variant_name = input;
-        self
+    pub fn set_shadow_model_variant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.shadow_model_variant_name = input; self
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn sampling_percentage(mut self, input: i32) -> Self {
@@ -56,14 +52,17 @@ impl ShadowModelVariantConfigBuilder {
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn set_sampling_percentage(mut self, input: std::option::Option<i32>) -> Self {
-        self.sampling_percentage = input;
-        self
+        self.sampling_percentage = input; self
     }
     /// Consumes the builder and constructs a [`ShadowModelVariantConfig`](crate::types::ShadowModelVariantConfig).
     pub fn build(self) -> crate::types::ShadowModelVariantConfig {
         crate::types::ShadowModelVariantConfig {
-            shadow_model_variant_name: self.shadow_model_variant_name,
-            sampling_percentage: self.sampling_percentage.unwrap_or_default(),
+            shadow_model_variant_name: self.shadow_model_variant_name
+            ,
+            sampling_percentage: self.sampling_percentage
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

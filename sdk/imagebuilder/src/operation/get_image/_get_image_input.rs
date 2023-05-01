@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImageInput {
+pub struct GetImageInput  {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
 }
 impl GetImageInput {
     /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
 }
@@ -33,22 +33,17 @@ impl GetImageInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image that you want to get.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_build_version_arn = input;
-        self
+    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_build_version_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetImageInput`](crate::operation::get_image::GetImageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_image::GetImageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_image::GetImageInput {
-            image_build_version_arn: self.image_build_version_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_image::GetImageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_image::GetImageInput {
+                image_build_version_arn: self.image_build_version_arn
+                ,
+            }
+        )
     }
 }
+

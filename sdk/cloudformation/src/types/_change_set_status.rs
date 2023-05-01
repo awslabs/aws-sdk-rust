@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changesetstatus = unimplemented!();
 /// match changesetstatus {
@@ -36,22 +36,14 @@
 /// Specifically, when `changesetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeSetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeSetStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -70,63 +62,53 @@ pub enum ChangeSetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeSetStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_COMPLETE" => ChangeSetStatus::CreateComplete,
-            "CREATE_IN_PROGRESS" => ChangeSetStatus::CreateInProgress,
-            "CREATE_PENDING" => ChangeSetStatus::CreatePending,
-            "DELETE_COMPLETE" => ChangeSetStatus::DeleteComplete,
-            "DELETE_FAILED" => ChangeSetStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => ChangeSetStatus::DeleteInProgress,
-            "DELETE_PENDING" => ChangeSetStatus::DeletePending,
-            "FAILED" => ChangeSetStatus::Failed,
-            other => {
-                ChangeSetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_COMPLETE" => ChangeSetStatus::CreateComplete,
+"CREATE_IN_PROGRESS" => ChangeSetStatus::CreateInProgress,
+"CREATE_PENDING" => ChangeSetStatus::CreatePending,
+"DELETE_COMPLETE" => ChangeSetStatus::DeleteComplete,
+"DELETE_FAILED" => ChangeSetStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => ChangeSetStatus::DeleteInProgress,
+"DELETE_PENDING" => ChangeSetStatus::DeletePending,
+"FAILED" => ChangeSetStatus::Failed,
+other => ChangeSetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ChangeSetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeSetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeSetStatus::from(s))
+                }
+            }
 impl ChangeSetStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeSetStatus::CreateComplete => "CREATE_COMPLETE",
-            ChangeSetStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            ChangeSetStatus::CreatePending => "CREATE_PENDING",
-            ChangeSetStatus::DeleteComplete => "DELETE_COMPLETE",
-            ChangeSetStatus::DeleteFailed => "DELETE_FAILED",
-            ChangeSetStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            ChangeSetStatus::DeletePending => "DELETE_PENDING",
-            ChangeSetStatus::Failed => "FAILED",
-            ChangeSetStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_COMPLETE",
-            "CREATE_IN_PROGRESS",
-            "CREATE_PENDING",
-            "DELETE_COMPLETE",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "DELETE_PENDING",
-            "FAILED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeSetStatus::CreateComplete => "CREATE_COMPLETE",
+    ChangeSetStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    ChangeSetStatus::CreatePending => "CREATE_PENDING",
+    ChangeSetStatus::DeleteComplete => "DELETE_COMPLETE",
+    ChangeSetStatus::DeleteFailed => "DELETE_FAILED",
+    ChangeSetStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    ChangeSetStatus::DeletePending => "DELETE_PENDING",
+    ChangeSetStatus::Failed => "FAILED",
+    ChangeSetStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_COMPLETE", "CREATE_IN_PROGRESS", "CREATE_PENDING", "DELETE_COMPLETE", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_PENDING", "FAILED"]
+                }
+            }
 impl AsRef<str> for ChangeSetStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

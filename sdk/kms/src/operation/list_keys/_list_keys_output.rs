@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeysOutput {
+pub struct ListKeysOutput  {
     /// <p>A list of KMS keys.</p>
     #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<crate::types::KeyListEntry>>,
@@ -16,11 +16,11 @@ pub struct ListKeysOutput {
 }
 impl ListKeysOutput {
     /// <p>A list of KMS keys.</p>
-    pub fn keys(&self) -> std::option::Option<&[crate::types::KeyListEntry]> {
+    pub fn keys(&self) -> std::option::Option<& [crate::types::KeyListEntry]> {
         self.keys.as_deref()
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
@@ -29,10 +29,10 @@ impl ListKeysOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListKeysOutput`](crate::operation::list_keys::ListKeysOutput).
     pub fn builder() -> crate::operation::list_keys::builders::ListKeysOutputBuilder {
@@ -57,17 +57,13 @@ impl ListKeysOutputBuilder {
     /// <p>A list of KMS keys.</p>
     pub fn keys(mut self, input: crate::types::KeyListEntry) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input);
-        self.keys = Some(v);
-        self
+                        v.push(input);
+                        self.keys = Some(v);
+                        self
     }
     /// <p>A list of KMS keys.</p>
-    pub fn set_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeyListEntry>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyListEntry>>) -> Self {
+        self.keys = input; self
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +72,7 @@ impl ListKeysOutputBuilder {
     }
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn truncated(mut self, input: bool) -> Self {
@@ -86,25 +81,29 @@ impl ListKeysOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items in the list. When this value is true, the list in this response is truncated. To get more items, pass the value of the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter in a subsequent request.</p>
     pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListKeysOutput`](crate::operation::list_keys::ListKeysOutput).
     pub fn build(self) -> crate::operation::list_keys::ListKeysOutput {
         crate::operation::list_keys::ListKeysOutput {
-            keys: self.keys,
-            next_marker: self.next_marker,
-            truncated: self.truncated.unwrap_or_default(),
+            keys: self.keys
+            ,
+            next_marker: self.next_marker
+            ,
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

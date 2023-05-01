@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelResourceRequestInput {
+pub struct CancelResourceRequestInput  {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
     #[doc(hidden)]
     pub request_token: std::option::Option<std::string::String>,
 }
 impl CancelResourceRequestInput {
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
-    pub fn request_token(&self) -> std::option::Option<&str> {
+    pub fn request_token(&self) -> std::option::Option<& str> {
         self.request_token.as_deref()
     }
 }
 impl CancelResourceRequestInput {
     /// Creates a new builder-style object to manufacture [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder {
         crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl CancelResourceRequestInputBuilder {
     }
     /// <p>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by the resource operation request.</p>
     pub fn set_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_token = input;
-        self
+        self.request_token = input; self
     }
     /// Consumes the builder and constructs a [`CancelResourceRequestInput`](crate::operation::cancel_resource_request::CancelResourceRequestInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_resource_request::CancelResourceRequestInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_resource_request::CancelResourceRequestInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_resource_request::CancelResourceRequestInput {
-                request_token: self.request_token,
-            },
+                request_token: self.request_token
+                ,
+            }
         )
     }
 }
+

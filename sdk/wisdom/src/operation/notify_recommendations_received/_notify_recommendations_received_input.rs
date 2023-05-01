@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyRecommendationsReceivedInput {
+pub struct NotifyRecommendationsReceivedInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct NotifyRecommendationsReceivedInput {
 }
 impl NotifyRecommendationsReceivedInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommendation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.recommendation_ids.as_deref()
     }
 }
 impl NotifyRecommendationsReceivedInput {
     /// Creates a new builder-style object to manufacture [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
-    pub fn builder() -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder{
+    pub fn builder() -> crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder {
         crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl NotifyRecommendationsReceivedInputBuilder {
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// Appends an item to `recommendation_ids`.
     ///
@@ -70,31 +68,26 @@ impl NotifyRecommendationsReceivedInputBuilder {
     /// <p>The identifiers of the recommendations.</p>
     pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of the recommendations.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
-                assistant_id: self.assistant_id,
-                session_id: self.session_id,
-                recommendation_ids: self.recommendation_ids,
-            },
+                assistant_id: self.assistant_id
+                ,
+                session_id: self.session_id
+                ,
+                recommendation_ids: self.recommendation_ids
+                ,
+            }
         )
     }
 }
+

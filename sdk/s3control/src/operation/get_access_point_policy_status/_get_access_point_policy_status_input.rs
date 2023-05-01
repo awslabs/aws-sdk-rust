@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyStatusInput {
+pub struct GetAccessPointPolicyStatusInput  {
     /// <p>The account ID for the account that owns the specified access point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetAccessPointPolicyStatusInput {
 }
 impl GetAccessPointPolicyStatusInput {
     /// <p>The account ID for the account that owns the specified access point.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetAccessPointPolicyStatusInput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyStatusInput`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput).
-    pub fn builder() -> crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder {
         crate::operation::get_access_point_policy_status::builders::GetAccessPointPolicyStatusInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl GetAccessPointPolicyStatusInputBuilder {
     }
     /// <p>The account ID for the account that owns the specified access point.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl GetAccessPointPolicyStatusInputBuilder {
     }
     /// <p>The name of the access point whose policy status you want to retrieve.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyStatusInput`](crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusInput {
-                account_id: self.account_id,
-                name: self.name,
-            },
+                account_id: self.account_id
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

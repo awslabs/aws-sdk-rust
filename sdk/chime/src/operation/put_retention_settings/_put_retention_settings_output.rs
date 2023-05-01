@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRetentionSettingsOutput {
+pub struct PutRetentionSettingsOutput  {
     /// <p>The retention settings.</p>
     #[doc(hidden)]
     pub retention_settings: std::option::Option<crate::types::RetentionSettings>,
@@ -13,23 +13,22 @@ pub struct PutRetentionSettingsOutput {
 }
 impl PutRetentionSettingsOutput {
     /// <p>The retention settings.</p>
-    pub fn retention_settings(&self) -> std::option::Option<&crate::types::RetentionSettings> {
+    pub fn retention_settings(&self) -> std::option::Option<& crate::types::RetentionSettings> {
         self.retention_settings.as_ref()
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn initiate_deletion_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutRetentionSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutRetentionSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutRetentionSettingsOutput`](crate::operation::put_retention_settings::PutRetentionSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_retention_settings::builders::PutRetentionSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::put_retention_settings::builders::PutRetentionSettingsOutputBuilder {
         crate::operation::put_retention_settings::builders::PutRetentionSettingsOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl PutRetentionSettingsOutputBuilder {
         self
     }
     /// <p>The retention settings.</p>
-    pub fn set_retention_settings(
-        mut self,
-        input: std::option::Option<crate::types::RetentionSettings>,
-    ) -> Self {
-        self.retention_settings = input;
-        self
+    pub fn set_retention_settings(mut self, input: std::option::Option<crate::types::RetentionSettings>) -> Self {
+        self.retention_settings = input; self
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
     pub fn initiate_deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -62,28 +57,27 @@ impl PutRetentionSettingsOutputBuilder {
         self
     }
     /// <p>The timestamp representing the time at which the specified items are permanently deleted, in ISO 8601 format.</p>
-    pub fn set_initiate_deletion_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.initiate_deletion_timestamp = input;
-        self
+    pub fn set_initiate_deletion_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.initiate_deletion_timestamp = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutRetentionSettingsOutput`](crate::operation::put_retention_settings::PutRetentionSettingsOutput).
     pub fn build(self) -> crate::operation::put_retention_settings::PutRetentionSettingsOutput {
         crate::operation::put_retention_settings::PutRetentionSettingsOutput {
-            retention_settings: self.retention_settings,
-            initiate_deletion_timestamp: self.initiate_deletion_timestamp,
+            retention_settings: self.retention_settings
+            ,
+            initiate_deletion_timestamp: self.initiate_deletion_timestamp
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

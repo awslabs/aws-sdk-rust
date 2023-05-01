@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetInput {
+pub struct DescribeAssetInput  {
     /// The ID of an MediaPackage VOD Asset resource.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeAssetInput {
     /// The ID of an MediaPackage VOD Asset resource.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DescribeAssetInputBuilder {
     }
     /// The ID of an MediaPackage VOD Asset resource.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_asset::DescribeAssetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_asset::DescribeAssetInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::describe_asset::DescribeAssetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_asset::DescribeAssetInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

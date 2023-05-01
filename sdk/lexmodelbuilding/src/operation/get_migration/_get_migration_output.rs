@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMigrationOutput {
+pub struct GetMigrationOutput  {
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
     #[doc(hidden)]
     pub migration_id: std::option::Option<std::string::String>,
@@ -24,17 +24,17 @@ pub struct GetMigrationOutput {
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
     #[doc(hidden)]
     pub migration_status: std::option::Option<crate::types::MigrationStatus>,
-    /// <p>The strategy used to conduct the migration.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// <p>The strategy used to conduct the migration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub migration_strategy: std::option::Option<crate::types::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
     #[doc(hidden)]
     pub migration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
     #[doc(hidden)]
     pub alerts: std::option::Option<std::vec::Vec<crate::types::MigrationAlert>>,
@@ -42,56 +42,56 @@ pub struct GetMigrationOutput {
 }
 impl GetMigrationOutput {
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
-    pub fn migration_id(&self) -> std::option::Option<&str> {
+    pub fn migration_id(&self) -> std::option::Option<& str> {
         self.migration_id.as_deref()
     }
     /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_name(&self) -> std::option::Option<&str> {
+    pub fn v1_bot_name(&self) -> std::option::Option<& str> {
         self.v1_bot_name.as_deref()
     }
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_version(&self) -> std::option::Option<&str> {
+    pub fn v1_bot_version(&self) -> std::option::Option<& str> {
         self.v1_bot_version.as_deref()
     }
     /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
-    pub fn v1_bot_locale(&self) -> std::option::Option<&crate::types::Locale> {
+    pub fn v1_bot_locale(&self) -> std::option::Option<& crate::types::Locale> {
         self.v1_bot_locale.as_ref()
     }
     /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
-    pub fn v2_bot_id(&self) -> std::option::Option<&str> {
+    pub fn v2_bot_id(&self) -> std::option::Option<& str> {
         self.v2_bot_id.as_deref()
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-    pub fn v2_bot_role(&self) -> std::option::Option<&str> {
+    pub fn v2_bot_role(&self) -> std::option::Option<& str> {
         self.v2_bot_role.as_deref()
     }
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn migration_status(&self) -> std::option::Option<&crate::types::MigrationStatus> {
+    pub fn migration_status(&self) -> std::option::Option<& crate::types::MigrationStatus> {
         self.migration_status.as_ref()
     }
-    /// <p>The strategy used to conduct the migration.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// <p>The strategy used to conduct the migration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
     /// </ul>
-    pub fn migration_strategy(&self) -> std::option::Option<&crate::types::MigrationStrategy> {
+    pub fn migration_strategy(&self) -> std::option::Option<& crate::types::MigrationStrategy> {
         self.migration_strategy.as_ref()
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn migration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn migration_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.migration_timestamp.as_ref()
     }
-    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-    pub fn alerts(&self) -> std::option::Option<&[crate::types::MigrationAlert]> {
+    pub fn alerts(&self) -> std::option::Option<& [crate::types::MigrationAlert]> {
         self.alerts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMigrationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMigrationOutput {
     /// Creates a new builder-style object to manufacture [`GetMigrationOutput`](crate::operation::get_migration::GetMigrationOutput).
     pub fn builder() -> crate::operation::get_migration::builders::GetMigrationOutputBuilder {
@@ -123,8 +123,7 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>The unique identifier of the migration. This is the same as the identifier used when calling the <code>GetMigration</code> operation.</p>
     pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.migration_id = input;
-        self
+        self.migration_id = input; self
     }
     /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
     pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +132,7 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
     pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.v1_bot_name = input;
-        self
+        self.v1_bot_name = input; self
     }
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
     pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +141,7 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
     pub fn set_v1_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.v1_bot_version = input;
-        self
+        self.v1_bot_version = input; self
     }
     /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
     pub fn v1_bot_locale(mut self, input: crate::types::Locale) -> Self {
@@ -153,8 +150,7 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
     pub fn set_v1_bot_locale(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
-        self.v1_bot_locale = input;
-        self
+        self.v1_bot_locale = input; self
     }
     /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
     pub fn v2_bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,8 +159,7 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is being migrated to.</p>
     pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.v2_bot_id = input;
-        self
+        self.v2_bot_id = input; self
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +168,7 @@ impl GetMigrationOutputBuilder {
     }
     /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
     pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.v2_bot_role = input;
-        self
+        self.v2_bot_role = input; self
     }
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
     pub fn migration_status(mut self, input: crate::types::MigrationStatus) -> Self {
@@ -182,33 +176,25 @@ impl GetMigrationOutputBuilder {
         self
     }
     /// <p>Indicates the status of the migration. When the status is <code>COMPLETE</code> the migration is finished and the bot is available in Amazon Lex V2. There may be alerts and warnings that need to be resolved to complete the migration.</p>
-    pub fn set_migration_status(
-        mut self,
-        input: std::option::Option<crate::types::MigrationStatus>,
-    ) -> Self {
-        self.migration_status = input;
-        self
+    pub fn set_migration_status(mut self, input: std::option::Option<crate::types::MigrationStatus>) -> Self {
+        self.migration_status = input; self
     }
-    /// <p>The strategy used to conduct the migration.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// <p>The strategy used to conduct the migration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
     /// </ul>
     pub fn migration_strategy(mut self, input: crate::types::MigrationStrategy) -> Self {
         self.migration_strategy = Some(input);
         self
     }
-    /// <p>The strategy used to conduct the migration.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li>
-    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li>
+    /// <p>The strategy used to conduct the migration.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates the Amazon Lex V1 bot to the new bot.</p> </li> 
+    /// <li> <p> <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot metadata and the locale being migrated. It doesn't change any other locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in the Amazon Lex V2 bot.</p> </li> 
     /// </ul>
-    pub fn set_migration_strategy(
-        mut self,
-        input: std::option::Option<crate::types::MigrationStrategy>,
-    ) -> Self {
-        self.migration_strategy = input;
-        self
+    pub fn set_migration_strategy(mut self, input: std::option::Option<crate::types::MigrationStrategy>) -> Self {
+        self.migration_strategy = input; self
     }
     /// <p>The date and time that the migration started.</p>
     pub fn migration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -216,57 +202,60 @@ impl GetMigrationOutputBuilder {
         self
     }
     /// <p>The date and time that the migration started.</p>
-    pub fn set_migration_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.migration_timestamp = input;
-        self
+    pub fn set_migration_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.migration_timestamp = input; self
     }
     /// Appends an item to `alerts`.
     ///
     /// To override the contents of this collection use [`set_alerts`](Self::set_alerts).
     ///
-    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
     pub fn alerts(mut self, input: crate::types::MigrationAlert) -> Self {
         let mut v = self.alerts.unwrap_or_default();
-        v.push(input);
-        self.alerts = Some(v);
-        self
+                        v.push(input);
+                        self.alerts = Some(v);
+                        self
     }
-    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p>
+    /// <p>A list of alerts and warnings that indicate issues with the migration for the Amazon Lex V1 bot to Amazon Lex V2. You receive a warning when an Amazon Lex V1 feature has a different implementation if Amazon Lex V2.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
-    pub fn set_alerts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MigrationAlert>>,
-    ) -> Self {
-        self.alerts = input;
-        self
+    pub fn set_alerts(mut self, input: std::option::Option<std::vec::Vec<crate::types::MigrationAlert>>) -> Self {
+        self.alerts = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMigrationOutput`](crate::operation::get_migration::GetMigrationOutput).
     pub fn build(self) -> crate::operation::get_migration::GetMigrationOutput {
         crate::operation::get_migration::GetMigrationOutput {
-            migration_id: self.migration_id,
-            v1_bot_name: self.v1_bot_name,
-            v1_bot_version: self.v1_bot_version,
-            v1_bot_locale: self.v1_bot_locale,
-            v2_bot_id: self.v2_bot_id,
-            v2_bot_role: self.v2_bot_role,
-            migration_status: self.migration_status,
-            migration_strategy: self.migration_strategy,
-            migration_timestamp: self.migration_timestamp,
-            alerts: self.alerts,
+            migration_id: self.migration_id
+            ,
+            v1_bot_name: self.v1_bot_name
+            ,
+            v1_bot_version: self.v1_bot_version
+            ,
+            v1_bot_locale: self.v1_bot_locale
+            ,
+            v2_bot_id: self.v2_bot_id
+            ,
+            v2_bot_role: self.v2_bot_role
+            ,
+            migration_status: self.migration_status
+            ,
+            migration_strategy: self.migration_strategy
+            ,
+            migration_timestamp: self.migration_timestamp
+            ,
+            alerts: self.alerts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

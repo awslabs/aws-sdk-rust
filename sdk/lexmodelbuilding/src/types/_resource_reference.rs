@@ -3,7 +3,7 @@
 /// <p>Describes the resource that refers to the resource that you are attempting to delete. This object is returned as part of the <code>ResourceInUseException</code> exception. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceReference {
+pub struct ResourceReference  {
     /// <p>The name of the resource that is using the resource that you are trying to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ResourceReference {
 }
 impl ResourceReference {
     /// <p>The name of the resource that is using the resource that you are trying to delete.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the resource that is using the resource that you are trying to delete.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ResourceReferenceBuilder {
     }
     /// <p>The name of the resource that is using the resource that you are trying to delete.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the resource that is using the resource that you are trying to delete.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ResourceReferenceBuilder {
     }
     /// <p>The version of the resource that is using the resource that you are trying to delete.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`ResourceReference`](crate::types::ResourceReference).
     pub fn build(self) -> crate::types::ResourceReference {
         crate::types::ResourceReference {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

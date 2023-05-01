@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommenderConfigurationInput {
+pub struct GetRecommenderConfigurationInput  {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub recommender_id: std::option::Option<std::string::String>,
 }
 impl GetRecommenderConfigurationInput {
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-    pub fn recommender_id(&self) -> std::option::Option<&str> {
+    pub fn recommender_id(&self) -> std::option::Option<& str> {
         self.recommender_id.as_deref()
     }
 }
 impl GetRecommenderConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetRecommenderConfigurationInput`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput).
-    pub fn builder() -> crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder {
         crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl GetRecommenderConfigurationInputBuilder {
     }
     /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_recommender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommender_id = input;
-        self
+        self.recommender_id = input; self
     }
     /// Consumes the builder and constructs a [`GetRecommenderConfigurationInput`](crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_recommender_configuration::GetRecommenderConfigurationInput {
-                recommender_id: self.recommender_id,
-            },
+                recommender_id: self.recommender_id
+                ,
+            }
         )
     }
 }
+

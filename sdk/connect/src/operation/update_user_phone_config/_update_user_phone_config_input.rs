@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserPhoneConfigInput {
+pub struct UpdateUserPhoneConfigInput  {
     /// <p>Information about phone configuration settings for the user.</p>
     #[doc(hidden)]
     pub phone_config: std::option::Option<crate::types::UserPhoneConfig>,
@@ -15,23 +15,21 @@ pub struct UpdateUserPhoneConfigInput {
 }
 impl UpdateUserPhoneConfigInput {
     /// <p>Information about phone configuration settings for the user.</p>
-    pub fn phone_config(&self) -> std::option::Option<&crate::types::UserPhoneConfig> {
+    pub fn phone_config(&self) -> std::option::Option<& crate::types::UserPhoneConfig> {
         self.phone_config.as_ref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl UpdateUserPhoneConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder {
         crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl UpdateUserPhoneConfigInputBuilder {
         self
     }
     /// <p>Information about phone configuration settings for the user.</p>
-    pub fn set_phone_config(
-        mut self,
-        input: std::option::Option<crate::types::UserPhoneConfig>,
-    ) -> Self {
-        self.phone_config = input;
-        self
+    pub fn set_phone_config(mut self, input: std::option::Option<crate::types::UserPhoneConfig>) -> Self {
+        self.phone_config = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl UpdateUserPhoneConfigInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl UpdateUserPhoneConfigInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateUserPhoneConfigInput`](crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_user_phone_config::UpdateUserPhoneConfigInput {
-                phone_config: self.phone_config,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
+                phone_config: self.phone_config
+                ,
+                user_id: self.user_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

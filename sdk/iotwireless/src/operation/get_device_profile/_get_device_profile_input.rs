@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeviceProfileInput {
+pub struct GetDeviceProfileInput  {
     /// <p>The ID of the resource to get.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetDeviceProfileInput {
     /// <p>The ID of the resource to get.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetDeviceProfileInput {
     /// Creates a new builder-style object to manufacture [`GetDeviceProfileInput`](crate::operation::get_device_profile::GetDeviceProfileInput).
-    pub fn builder() -> crate::operation::get_device_profile::builders::GetDeviceProfileInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_device_profile::builders::GetDeviceProfileInputBuilder {
         crate::operation::get_device_profile::builders::GetDeviceProfileInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetDeviceProfileInputBuilder {
     }
     /// <p>The ID of the resource to get.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetDeviceProfileInput`](crate::operation::get_device_profile::GetDeviceProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_device_profile::GetDeviceProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_device_profile::GetDeviceProfileInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::get_device_profile::GetDeviceProfileInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_device_profile::GetDeviceProfileInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

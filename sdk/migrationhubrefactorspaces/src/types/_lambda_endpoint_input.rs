@@ -3,14 +3,14 @@
 /// <p>The input for the Lambda endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaEndpointInput {
+pub struct LambdaEndpointInput  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointInput {
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl LambdaEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function or alias.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`LambdaEndpointInput`](crate::types::LambdaEndpointInput).
     pub fn build(self) -> crate::types::LambdaEndpointInput {
-        crate::types::LambdaEndpointInput { arn: self.arn }
+        crate::types::LambdaEndpointInput {
+            arn: self.arn
+            ,
+        }
     }
 }
+

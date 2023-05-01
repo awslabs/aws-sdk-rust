@@ -6,3 +6,4 @@ pub mod get_personalized_ranking;
 
 /// Types for the `GetRecommendations` operation.
 pub mod get_recommendations;
+

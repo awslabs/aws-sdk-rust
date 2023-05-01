@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCodeReviewOutput {
+pub struct CreateCodeReviewOutput  {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
     #[doc(hidden)]
     pub code_review: std::option::Option<crate::types::CodeReview>,
@@ -10,19 +10,18 @@ pub struct CreateCodeReviewOutput {
 }
 impl CreateCodeReviewOutput {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
-    pub fn code_review(&self) -> std::option::Option<&crate::types::CodeReview> {
+    pub fn code_review(&self) -> std::option::Option<& crate::types::CodeReview> {
         self.code_review.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCodeReviewOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCodeReviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateCodeReviewOutput`](crate::operation::create_code_review::CreateCodeReviewOutput).
-    pub fn builder() -> crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder {
         crate::operation::create_code_review::builders::CreateCodeReviewOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl CreateCodeReviewOutputBuilder {
     }
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
     pub fn set_code_review(mut self, input: std::option::Option<crate::types::CodeReview>) -> Self {
-        self.code_review = input;
-        self
+        self.code_review = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCodeReviewOutput`](crate::operation::create_code_review::CreateCodeReviewOutput).
     pub fn build(self) -> crate::operation::create_code_review::CreateCodeReviewOutput {
         crate::operation::create_code_review::CreateCodeReviewOutput {
-            code_review: self.code_review,
+            code_review: self.code_review
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

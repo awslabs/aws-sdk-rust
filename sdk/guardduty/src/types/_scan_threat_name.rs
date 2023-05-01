@@ -3,7 +3,7 @@
 /// <p>Contains files infected with the given threat providing details of malware name and severity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanThreatName {
+pub struct ScanThreatName  {
     /// <p>The name of the identified threat.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct ScanThreatName {
 }
 impl ScanThreatName {
     /// <p>The name of the identified threat.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Severity of threat identified as part of the malware scan.</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>Total number of files infected with given threat.</p>
@@ -31,7 +31,7 @@ impl ScanThreatName {
         self.item_count
     }
     /// <p>List of infected files in EBS volume with details.</p>
-    pub fn file_paths(&self) -> std::option::Option<&[crate::types::ScanFilePath]> {
+    pub fn file_paths(&self) -> std::option::Option<& [crate::types::ScanFilePath]> {
         self.file_paths.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ScanThreatNameBuilder {
     }
     /// <p>The name of the identified threat.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Severity of threat identified as part of the malware scan.</p>
     pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ScanThreatNameBuilder {
     }
     /// <p>Severity of threat identified as part of the malware scan.</p>
     pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>Total number of files infected with given threat.</p>
     pub fn item_count(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl ScanThreatNameBuilder {
     }
     /// <p>Total number of files infected with given threat.</p>
     pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// Appends an item to `file_paths`.
     ///
@@ -89,25 +86,27 @@ impl ScanThreatNameBuilder {
     /// <p>List of infected files in EBS volume with details.</p>
     pub fn file_paths(mut self, input: crate::types::ScanFilePath) -> Self {
         let mut v = self.file_paths.unwrap_or_default();
-        v.push(input);
-        self.file_paths = Some(v);
-        self
+                        v.push(input);
+                        self.file_paths = Some(v);
+                        self
     }
     /// <p>List of infected files in EBS volume with details.</p>
-    pub fn set_file_paths(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScanFilePath>>,
-    ) -> Self {
-        self.file_paths = input;
-        self
+    pub fn set_file_paths(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScanFilePath>>) -> Self {
+        self.file_paths = input; self
     }
     /// Consumes the builder and constructs a [`ScanThreatName`](crate::types::ScanThreatName).
     pub fn build(self) -> crate::types::ScanThreatName {
         crate::types::ScanThreatName {
-            name: self.name,
-            severity: self.severity,
-            item_count: self.item_count.unwrap_or_default(),
-            file_paths: self.file_paths,
+            name: self.name
+            ,
+            severity: self.severity
+            ,
+            item_count: self.item_count
+                .unwrap_or_default()
+            ,
+            file_paths: self.file_paths
+            ,
         }
     }
 }
+

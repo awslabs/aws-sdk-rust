@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountSettingsOutput {
+pub struct ListAccountSettingsOutput  {
     /// <p>The account settings for the resource.</p>
     #[doc(hidden)]
     pub settings: std::option::Option<std::vec::Vec<crate::types::Setting>>,
@@ -13,25 +13,23 @@ pub struct ListAccountSettingsOutput {
 }
 impl ListAccountSettingsOutput {
     /// <p>The account settings for the resource.</p>
-    pub fn settings(&self) -> std::option::Option<&[crate::types::Setting]> {
+    pub fn settings(&self) -> std::option::Option<& [crate::types::Setting]> {
         self.settings.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccountSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAccountSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountSettingsOutput`](crate::operation::list_account_settings::ListAccountSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder {
-        crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder {
+        crate::operation::list_account_settings::builders::ListAccountSettingsOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl ListAccountSettingsOutputBuilder {
     /// <p>The account settings for the resource.</p>
     pub fn settings(mut self, input: crate::types::Setting) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input);
-        self.settings = Some(v);
-        self
+                        v.push(input);
+                        self.settings = Some(v);
+                        self
     }
     /// <p>The account settings for the resource.</p>
-    pub fn set_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Setting>>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::Setting>>) -> Self {
+        self.settings = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListAccountSettingsOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListAccountSettings</code> request. When the results of a <code>ListAccountSettings</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAccountSettingsOutput`](crate::operation::list_account_settings::ListAccountSettingsOutput).
     pub fn build(self) -> crate::operation::list_account_settings::ListAccountSettingsOutput {
         crate::operation::list_account_settings::ListAccountSettingsOutput {
-            settings: self.settings,
-            next_token: self.next_token,
+            settings: self.settings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

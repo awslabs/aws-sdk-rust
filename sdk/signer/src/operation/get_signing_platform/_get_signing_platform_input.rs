@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSigningPlatformInput {
+pub struct GetSigningPlatformInput  {
     /// <p>The ID of the target signing platform.</p>
     #[doc(hidden)]
     pub platform_id: std::option::Option<std::string::String>,
 }
 impl GetSigningPlatformInput {
     /// <p>The ID of the target signing platform.</p>
-    pub fn platform_id(&self) -> std::option::Option<&str> {
+    pub fn platform_id(&self) -> std::option::Option<& str> {
         self.platform_id.as_deref()
     }
 }
 impl GetSigningPlatformInput {
     /// Creates a new builder-style object to manufacture [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
-    pub fn builder(
-    ) -> crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder {
+    pub fn builder() -> crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder {
         crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetSigningPlatformInputBuilder {
     }
     /// <p>The ID of the target signing platform.</p>
     pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_id = input;
-        self
+        self.platform_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSigningPlatformInput`](crate::operation::get_signing_platform::GetSigningPlatformInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_signing_platform::GetSigningPlatformInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_signing_platform::GetSigningPlatformInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_signing_platform::GetSigningPlatformInput {
-                platform_id: self.platform_id,
-            },
+                platform_id: self.platform_id
+                ,
+            }
         )
     }
 }
+

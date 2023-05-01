@@ -3,7 +3,7 @@
 /// <p>Requests API Gateway to get information about a Deployments collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentsInput {
+pub struct GetDeploymentsInput  {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct GetDeploymentsInput {
 }
 impl GetDeploymentsInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> std::option::Option<& str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> std::option::Option<& str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -51,8 +51,7 @@ impl GetDeploymentsInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input;
-        self
+        self.rest_api_id = input; self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl GetDeploymentsInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -71,20 +69,20 @@ impl GetDeploymentsInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`GetDeploymentsInput`](crate::operation::get_deployments::GetDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_deployments::GetDeploymentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_deployments::GetDeploymentsInput {
-            rest_api_id: self.rest_api_id,
-            position: self.position,
-            limit: self.limit,
-        })
+    pub fn build(self) -> Result<crate::operation::get_deployments::GetDeploymentsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_deployments::GetDeploymentsInput {
+                rest_api_id: self.rest_api_id
+                ,
+                position: self.position
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

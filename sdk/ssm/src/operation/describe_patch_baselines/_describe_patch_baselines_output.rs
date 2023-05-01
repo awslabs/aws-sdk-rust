@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePatchBaselinesOutput {
+pub struct DescribePatchBaselinesOutput  {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     #[doc(hidden)]
-    pub baseline_identities:
-        std::option::Option<std::vec::Vec<crate::types::PatchBaselineIdentity>>,
+    pub baseline_identities: std::option::Option<std::vec::Vec<crate::types::PatchBaselineIdentity>>,
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct DescribePatchBaselinesOutput {
 }
 impl DescribePatchBaselinesOutput {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    pub fn baseline_identities(
-        &self,
-    ) -> std::option::Option<&[crate::types::PatchBaselineIdentity]> {
+    pub fn baseline_identities(&self) -> std::option::Option<& [crate::types::PatchBaselineIdentity]> {
         self.baseline_identities.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePatchBaselinesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribePatchBaselinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesOutputBuilder {
         crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl DescribePatchBaselinesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribePatchBaselinesOutputBuilder {
-    pub(crate) baseline_identities:
-        std::option::Option<std::vec::Vec<crate::types::PatchBaselineIdentity>>,
+    pub(crate) baseline_identities: std::option::Option<std::vec::Vec<crate::types::PatchBaselineIdentity>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl DescribePatchBaselinesOutputBuilder {
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
     pub fn baseline_identities(mut self, input: crate::types::PatchBaselineIdentity) -> Self {
         let mut v = self.baseline_identities.unwrap_or_default();
-        v.push(input);
-        self.baseline_identities = Some(v);
-        self
+                        v.push(input);
+                        self.baseline_identities = Some(v);
+                        self
     }
     /// <p>An array of <code>PatchBaselineIdentity</code> elements.</p>
-    pub fn set_baseline_identities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchBaselineIdentity>>,
-    ) -> Self {
-        self.baseline_identities = input;
-        self
+    pub fn set_baseline_identities(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchBaselineIdentity>>) -> Self {
+        self.baseline_identities = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,24 +64,26 @@ impl DescribePatchBaselinesOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribePatchBaselinesOutput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput).
     pub fn build(self) -> crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput {
         crate::operation::describe_patch_baselines::DescribePatchBaselinesOutput {
-            baseline_identities: self.baseline_identities,
-            next_token: self.next_token,
+            baseline_identities: self.baseline_identities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

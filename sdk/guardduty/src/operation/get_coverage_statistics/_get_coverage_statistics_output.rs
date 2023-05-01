@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoverageStatisticsOutput {
+pub struct GetCoverageStatisticsOutput  {
     /// <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
     #[doc(hidden)]
     pub coverage_statistics: std::option::Option<crate::types::CoverageStatistics>,
@@ -10,20 +10,18 @@ pub struct GetCoverageStatisticsOutput {
 }
 impl GetCoverageStatisticsOutput {
     /// <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
-    pub fn coverage_statistics(&self) -> std::option::Option<&crate::types::CoverageStatistics> {
+    pub fn coverage_statistics(&self) -> std::option::Option<& crate::types::CoverageStatistics> {
         self.coverage_statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCoverageStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCoverageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetCoverageStatisticsOutput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsOutputBuilder {
         crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl GetCoverageStatisticsOutputBuilder {
         self
     }
     /// <p>Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.</p>
-    pub fn set_coverage_statistics(
-        mut self,
-        input: std::option::Option<crate::types::CoverageStatistics>,
-    ) -> Self {
-        self.coverage_statistics = input;
-        self
+    pub fn set_coverage_statistics(mut self, input: std::option::Option<crate::types::CoverageStatistics>) -> Self {
+        self.coverage_statistics = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCoverageStatisticsOutput`](crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput).
     pub fn build(self) -> crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput {
         crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput {
-            coverage_statistics: self.coverage_statistics,
+            coverage_statistics: self.coverage_statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

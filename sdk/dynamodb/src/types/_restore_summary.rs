@@ -3,7 +3,7 @@
 /// <p>Contains details for the restore.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreSummary {
+pub struct RestoreSummary  {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
     #[doc(hidden)]
     pub source_backup_arn: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct RestoreSummary {
 }
 impl RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
-    pub fn source_backup_arn(&self) -> std::option::Option<&str> {
+    pub fn source_backup_arn(&self) -> std::option::Option<& str> {
         self.source_backup_arn.as_deref()
     }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
-    pub fn source_table_arn(&self) -> std::option::Option<&str> {
+    pub fn source_table_arn(&self) -> std::option::Option<& str> {
         self.source_table_arn.as_deref()
     }
     /// <p>Point in time or source backup time.</p>
-    pub fn restore_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn restore_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.restore_date_time.as_ref()
     }
     /// <p>Indicates if a restore is in progress or not.</p>
@@ -58,12 +58,8 @@ impl RestoreSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
-    pub fn set_source_backup_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_backup_arn = input;
-        self
+    pub fn set_source_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_backup_arn = input; self
     }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
     pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +68,7 @@ impl RestoreSummaryBuilder {
     }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
     pub fn set_source_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_table_arn = input;
-        self
+        self.source_table_arn = input; self
     }
     /// <p>Point in time or source backup time.</p>
     pub fn restore_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,12 +76,8 @@ impl RestoreSummaryBuilder {
         self
     }
     /// <p>Point in time or source backup time.</p>
-    pub fn set_restore_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.restore_date_time = input;
-        self
+    pub fn set_restore_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.restore_date_time = input; self
     }
     /// <p>Indicates if a restore is in progress or not.</p>
     pub fn restore_in_progress(mut self, input: bool) -> Self {
@@ -95,16 +86,20 @@ impl RestoreSummaryBuilder {
     }
     /// <p>Indicates if a restore is in progress or not.</p>
     pub fn set_restore_in_progress(mut self, input: std::option::Option<bool>) -> Self {
-        self.restore_in_progress = input;
-        self
+        self.restore_in_progress = input; self
     }
     /// Consumes the builder and constructs a [`RestoreSummary`](crate::types::RestoreSummary).
     pub fn build(self) -> crate::types::RestoreSummary {
         crate::types::RestoreSummary {
-            source_backup_arn: self.source_backup_arn,
-            source_table_arn: self.source_table_arn,
-            restore_date_time: self.restore_date_time,
-            restore_in_progress: self.restore_in_progress,
+            source_backup_arn: self.source_backup_arn
+            ,
+            source_table_arn: self.source_table_arn
+            ,
+            restore_date_time: self.restore_date_time
+            ,
+            restore_in_progress: self.restore_in_progress
+            ,
         }
     }
 }
+

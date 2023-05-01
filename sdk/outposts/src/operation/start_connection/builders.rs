@@ -4,81 +4,60 @@ pub use crate::operation::start_connection::_start_connection_output::StartConne
 pub use crate::operation::start_connection::_start_connection_input::StartConnectionInputBuilder;
 
 /// Fluent builder constructing a request to `StartConnection`.
-///
-/// <note>
-/// <p> Amazon Web Services uses this action to install Outpost servers.</p>
-/// </note>
-/// <p> Starts the connection required for Outpost server installation. </p>
+/// 
+/// <note> 
+/// <p> Amazon Web Services uses this action to install Outpost servers.</p> 
+/// </note> 
+/// <p> Starts the connection required for Outpost server installation. </p> 
 /// <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartConnectionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::start_connection::builders::StartConnectionInputBuilder,
-}
-impl StartConnectionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::start_connection::builders::StartConnectionInputBuilder
+            }
+impl StartConnectionFluentBuilder  {
     /// Creates a new `StartConnection`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_connection::StartConnection,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::start_connection::StartConnectionError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::start_connection::StartConnectionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_connection::StartConnectionError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::start_connection::StartConnection, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::start_connection::StartConnectionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::start_connection::StartConnectionOutput, aws_smithy_http::result::SdkError<crate::operation::start_connection::StartConnectionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The serial number of the dongle. </p>
     pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.device_serial_number(input.into());
         self
     }
     /// <p> The serial number of the dongle. </p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_device_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_device_serial_number(input);
         self
     }
@@ -98,10 +77,7 @@ impl StartConnectionFluentBuilder {
         self
     }
     /// <p> The public key of the client. </p>
-    pub fn set_client_public_key(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_public_key(input);
         self
     }
@@ -116,3 +92,4 @@ impl StartConnectionFluentBuilder {
         self
     }
 }
+

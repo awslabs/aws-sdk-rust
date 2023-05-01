@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelCardExportJobInput {
+pub struct DescribeModelCardExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
     #[doc(hidden)]
     pub model_card_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeModelCardExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    pub fn model_card_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn model_card_export_job_arn(&self) -> std::option::Option<& str> {
         self.model_card_export_job_arn.as_deref()
     }
 }
 impl DescribeModelCardExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelCardExportJobInput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput).
-    pub fn builder() -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder {
         crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DescribeModelCardExportJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model card export job to describe.</p>
-    pub fn set_model_card_export_job_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_card_export_job_arn = input;
-        self
+    pub fn set_model_card_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_card_export_job_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeModelCardExportJobInput`](crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_model_card_export_job::DescribeModelCardExportJobInput {
-                model_card_export_job_arn: self.model_card_export_job_arn,
-            },
+                model_card_export_job_arn: self.model_card_export_job_arn
+                ,
+            }
         )
     }
 }
+

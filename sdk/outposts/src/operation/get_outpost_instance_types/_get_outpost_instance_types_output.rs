@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOutpostInstanceTypesOutput {
+pub struct GetOutpostInstanceTypesOutput  {
     /// <p>Information about the instance types.</p>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<crate::types::InstanceTypeItem>>,
@@ -19,32 +19,30 @@ pub struct GetOutpostInstanceTypesOutput {
 }
 impl GetOutpostInstanceTypesOutput {
     /// <p>Information about the instance types.</p>
-    pub fn instance_types(&self) -> std::option::Option<&[crate::types::InstanceTypeItem]> {
+    pub fn instance_types(&self) -> std::option::Option<& [crate::types::InstanceTypeItem]> {
         self.instance_types.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The ID of the Outpost. </p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> std::option::Option<& str> {
         self.outpost_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetOutpostInstanceTypesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetOutpostInstanceTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetOutpostInstanceTypesOutput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder {
         crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesOutputBuilder::default()
     }
 }
@@ -67,17 +65,13 @@ impl GetOutpostInstanceTypesOutputBuilder {
     /// <p>Information about the instance types.</p>
     pub fn instance_types(mut self, input: crate::types::InstanceTypeItem) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-        v.push(input);
-        self.instance_types = Some(v);
-        self
+                        v.push(input);
+                        self.instance_types = Some(v);
+                        self
     }
     /// <p>Information about the instance types.</p>
-    pub fn set_instance_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceTypeItem>>,
-    ) -> Self {
-        self.instance_types = input;
-        self
+    pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceTypeItem>>) -> Self {
+        self.instance_types = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +80,7 @@ impl GetOutpostInstanceTypesOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The ID of the Outpost. </p>
     pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +89,7 @@ impl GetOutpostInstanceTypesOutputBuilder {
     }
     /// <p> The ID of the Outpost. </p>
     pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,28 +98,30 @@ impl GetOutpostInstanceTypesOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_arn = input;
-        self
+        self.outpost_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetOutpostInstanceTypesOutput`](crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput {
+    pub fn build(self) -> crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput {
         crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput {
-            instance_types: self.instance_types,
-            next_token: self.next_token,
-            outpost_id: self.outpost_id,
-            outpost_arn: self.outpost_arn,
+            instance_types: self.instance_types
+            ,
+            next_token: self.next_token
+            ,
+            outpost_id: self.outpost_id
+            ,
+            outpost_arn: self.outpost_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

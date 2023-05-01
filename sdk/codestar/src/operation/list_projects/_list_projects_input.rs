@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectsInput {
+pub struct ListProjectsInput  {
     /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListProjectsInput {
 }
 impl ListProjectsInput {
     /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
@@ -42,8 +42,7 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The continuation token to be used to return the next set of results, if the results cannot be returned in one response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,19 +51,18 @@ impl ListProjectsInputBuilder {
     }
     /// <p>The maximum amount of data that can be contained in a single set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_projects::ListProjectsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_projects::ListProjectsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_projects::ListProjectsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_projects::ListProjectsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

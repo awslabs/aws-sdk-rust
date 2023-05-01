@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartAppAssessmentInput {
+pub struct StartAppAssessmentInput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -17,35 +17,31 @@ pub struct StartAppAssessmentInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartAppAssessmentInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
     /// <p>The name for the assessment.</p>
-    pub fn assessment_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_name(&self) -> std::option::Option<& str> {
         self.assessment_name.as_deref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for StartAppAssessmentInput {
+impl  std::fmt::Debug for StartAppAssessmentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAppAssessmentInput");
         formatter.field("app_arn", &self.app_arn);
@@ -58,8 +54,7 @@ impl std::fmt::Debug for StartAppAssessmentInput {
 }
 impl StartAppAssessmentInput {
     /// Creates a new builder-style object to manufacture [`StartAppAssessmentInput`](crate::operation::start_app_assessment::StartAppAssessmentInput).
-    pub fn builder(
-    ) -> crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder {
+    pub fn builder() -> crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder {
         crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder::default()
     }
 }
@@ -72,8 +67,7 @@ pub struct StartAppAssessmentInputBuilder {
     pub(crate) app_version: std::option::Option<std::string::String>,
     pub(crate) assessment_name: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartAppAssessmentInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
@@ -83,8 +77,7 @@ impl StartAppAssessmentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +86,7 @@ impl StartAppAssessmentInputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// <p>The name for the assessment.</p>
     pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +95,7 @@ impl StartAppAssessmentInputBuilder {
     }
     /// <p>The name for the assessment.</p>
     pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_name = input;
-        self
+        self.assessment_name = input; self
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,49 +104,38 @@ impl StartAppAssessmentInputBuilder {
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`StartAppAssessmentInput`](crate::operation::start_app_assessment::StartAppAssessmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_app_assessment::StartAppAssessmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_app_assessment::StartAppAssessmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_app_assessment::StartAppAssessmentInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-                assessment_name: self.assessment_name,
-                client_token: self.client_token,
-                tags: self.tags,
-            },
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+                assessment_name: self.assessment_name
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -170,3 +150,4 @@ impl std::fmt::Debug for StartAppAssessmentInputBuilder {
         formatter.finish()
     }
 }
+

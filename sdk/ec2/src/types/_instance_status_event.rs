@@ -3,14 +3,14 @@
 /// <p>Describes a scheduled event for an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStatusEvent {
+pub struct InstanceStatusEvent  {
     /// <p>The ID of the event.</p>
     #[doc(hidden)]
     pub instance_event_id: std::option::Option<std::string::String>,
     /// <p>The event code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::EventCode>,
-    /// <p>A description of the event.</p>
+    /// <p>A description of the event.</p> 
     /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -26,28 +26,28 @@ pub struct InstanceStatusEvent {
 }
 impl InstanceStatusEvent {
     /// <p>The ID of the event.</p>
-    pub fn instance_event_id(&self) -> std::option::Option<&str> {
+    pub fn instance_event_id(&self) -> std::option::Option<& str> {
         self.instance_event_id.as_deref()
     }
     /// <p>The event code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::EventCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::EventCode> {
         self.code.as_ref()
     }
-    /// <p>A description of the event.</p>
+    /// <p>A description of the event.</p> 
     /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The latest scheduled end time for the event.</p>
-    pub fn not_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn not_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.not_after.as_ref()
     }
     /// <p>The earliest scheduled start time for the event.</p>
-    pub fn not_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn not_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.not_before.as_ref()
     }
     /// <p>The deadline for starting the event.</p>
-    pub fn not_before_deadline(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn not_before_deadline(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.not_before_deadline.as_ref()
     }
 }
@@ -76,12 +76,8 @@ impl InstanceStatusEventBuilder {
         self
     }
     /// <p>The ID of the event.</p>
-    pub fn set_instance_event_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_event_id = input;
-        self
+    pub fn set_instance_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_event_id = input; self
     }
     /// <p>The event code.</p>
     pub fn code(mut self, input: crate::types::EventCode) -> Self {
@@ -90,20 +86,18 @@ impl InstanceStatusEventBuilder {
     }
     /// <p>The event code.</p>
     pub fn set_code(mut self, input: std::option::Option<crate::types::EventCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
-    /// <p>A description of the event.</p>
+    /// <p>A description of the event.</p> 
     /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description of the event.</p>
+    /// <p>A description of the event.</p> 
     /// <p>After a scheduled event is completed, it can still be described for up to a week. If the event has been completed, this description starts with the following text: [Completed].</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The latest scheduled end time for the event.</p>
     pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -112,8 +106,7 @@ impl InstanceStatusEventBuilder {
     }
     /// <p>The latest scheduled end time for the event.</p>
     pub fn set_not_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.not_after = input;
-        self
+        self.not_after = input; self
     }
     /// <p>The earliest scheduled start time for the event.</p>
     pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -121,12 +114,8 @@ impl InstanceStatusEventBuilder {
         self
     }
     /// <p>The earliest scheduled start time for the event.</p>
-    pub fn set_not_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.not_before = input;
-        self
+    pub fn set_not_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.not_before = input; self
     }
     /// <p>The deadline for starting the event.</p>
     pub fn not_before_deadline(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -134,22 +123,25 @@ impl InstanceStatusEventBuilder {
         self
     }
     /// <p>The deadline for starting the event.</p>
-    pub fn set_not_before_deadline(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.not_before_deadline = input;
-        self
+    pub fn set_not_before_deadline(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.not_before_deadline = input; self
     }
     /// Consumes the builder and constructs a [`InstanceStatusEvent`](crate::types::InstanceStatusEvent).
     pub fn build(self) -> crate::types::InstanceStatusEvent {
         crate::types::InstanceStatusEvent {
-            instance_event_id: self.instance_event_id,
-            code: self.code,
-            description: self.description,
-            not_after: self.not_after,
-            not_before: self.not_before,
-            not_before_deadline: self.not_before_deadline,
+            instance_event_id: self.instance_event_id
+            ,
+            code: self.code
+            ,
+            description: self.description
+            ,
+            not_after: self.not_after
+            ,
+            not_before: self.not_before
+            ,
+            not_before_deadline: self.not_before_deadline
+            ,
         }
     }
 }
+

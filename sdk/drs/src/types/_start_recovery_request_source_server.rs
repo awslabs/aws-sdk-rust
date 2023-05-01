@@ -3,7 +3,7 @@
 /// <p>An object representing the Source Server to recover.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRecoveryRequestSourceServer {
+pub struct StartRecoveryRequestSourceServer  {
     /// <p>The ID of the Source Server you want to recover.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct StartRecoveryRequestSourceServer {
 }
 impl StartRecoveryRequestSourceServer {
     /// <p>The ID of the Source Server you want to recover.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
-    pub fn recovery_snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn recovery_snapshot_id(&self) -> std::option::Option<& str> {
         self.recovery_snapshot_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl StartRecoveryRequestSourceServerBuilder {
     }
     /// <p>The ID of the Source Server you want to recover.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
     pub fn recovery_snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl StartRecoveryRequestSourceServerBuilder {
         self
     }
     /// <p>The ID of a Recovery Snapshot we want to recover from. Omit this field to launch from the latest data by taking an on-demand snapshot.</p>
-    pub fn set_recovery_snapshot_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_snapshot_id = input;
-        self
+    pub fn set_recovery_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_snapshot_id = input; self
     }
     /// Consumes the builder and constructs a [`StartRecoveryRequestSourceServer`](crate::types::StartRecoveryRequestSourceServer).
     pub fn build(self) -> crate::types::StartRecoveryRequestSourceServer {
         crate::types::StartRecoveryRequestSourceServer {
-            source_server_id: self.source_server_id,
-            recovery_snapshot_id: self.recovery_snapshot_id,
+            source_server_id: self.source_server_id
+            ,
+            recovery_snapshot_id: self.recovery_snapshot_id
+            ,
         }
     }
 }
+

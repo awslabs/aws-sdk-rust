@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactCenterActivity {
+pub struct ContactCenterActivity  {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
     #[doc(hidden)]
     pub next_activity: std::option::Option<std::string::String>,
 }
 impl ContactCenterActivity {
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
-    pub fn next_activity(&self) -> std::option::Option<&str> {
+    pub fn next_activity(&self) -> std::option::Option<& str> {
         self.next_activity.as_deref()
     }
 }
@@ -34,13 +34,14 @@ impl ContactCenterActivityBuilder {
     }
     /// <p>The unique identifier for the next activity to perform after the this activity.</p>
     pub fn set_next_activity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_activity = input;
-        self
+        self.next_activity = input; self
     }
     /// Consumes the builder and constructs a [`ContactCenterActivity`](crate::types::ContactCenterActivity).
     pub fn build(self) -> crate::types::ContactCenterActivity {
         crate::types::ContactCenterActivity {
-            next_activity: self.next_activity,
+            next_activity: self.next_activity
+            ,
         }
     }
 }
+

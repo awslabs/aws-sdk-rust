@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keyspec = unimplemented!();
 /// match keyspec {
@@ -41,22 +41,14 @@
 /// Specifically, when `keyspec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeySpec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     EccNistP256,
@@ -85,76 +77,63 @@ pub enum KeySpec {
     #[allow(missing_docs)] // documentation missing in model
     SymmetricDefault,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeySpec {
-    fn from(s: &str) -> Self {
-        match s {
-            "ECC_NIST_P256" => KeySpec::EccNistP256,
-            "ECC_NIST_P384" => KeySpec::EccNistP384,
-            "ECC_NIST_P521" => KeySpec::EccNistP521,
-            "ECC_SECG_P256K1" => KeySpec::EccSecgP256K1,
-            "HMAC_224" => KeySpec::Hmac224,
-            "HMAC_256" => KeySpec::Hmac256,
-            "HMAC_384" => KeySpec::Hmac384,
-            "HMAC_512" => KeySpec::Hmac512,
-            "RSA_2048" => KeySpec::Rsa2048,
-            "RSA_3072" => KeySpec::Rsa3072,
-            "RSA_4096" => KeySpec::Rsa4096,
-            "SM2" => KeySpec::Sm2,
-            "SYMMETRIC_DEFAULT" => KeySpec::SymmetricDefault,
-            other => KeySpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ECC_NIST_P256" => KeySpec::EccNistP256,
+"ECC_NIST_P384" => KeySpec::EccNistP384,
+"ECC_NIST_P521" => KeySpec::EccNistP521,
+"ECC_SECG_P256K1" => KeySpec::EccSecgP256K1,
+"HMAC_224" => KeySpec::Hmac224,
+"HMAC_256" => KeySpec::Hmac256,
+"HMAC_384" => KeySpec::Hmac384,
+"HMAC_512" => KeySpec::Hmac512,
+"RSA_2048" => KeySpec::Rsa2048,
+"RSA_3072" => KeySpec::Rsa3072,
+"RSA_4096" => KeySpec::Rsa4096,
+"SM2" => KeySpec::Sm2,
+"SYMMETRIC_DEFAULT" => KeySpec::SymmetricDefault,
+other => KeySpec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for KeySpec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeySpec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeySpec::from(s))
+                }
+            }
 impl KeySpec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeySpec::EccNistP256 => "ECC_NIST_P256",
-            KeySpec::EccNistP384 => "ECC_NIST_P384",
-            KeySpec::EccNistP521 => "ECC_NIST_P521",
-            KeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
-            KeySpec::Hmac224 => "HMAC_224",
-            KeySpec::Hmac256 => "HMAC_256",
-            KeySpec::Hmac384 => "HMAC_384",
-            KeySpec::Hmac512 => "HMAC_512",
-            KeySpec::Rsa2048 => "RSA_2048",
-            KeySpec::Rsa3072 => "RSA_3072",
-            KeySpec::Rsa4096 => "RSA_4096",
-            KeySpec::Sm2 => "SM2",
-            KeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
-            KeySpec::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ECC_NIST_P256",
-            "ECC_NIST_P384",
-            "ECC_NIST_P521",
-            "ECC_SECG_P256K1",
-            "HMAC_224",
-            "HMAC_256",
-            "HMAC_384",
-            "HMAC_512",
-            "RSA_2048",
-            "RSA_3072",
-            "RSA_4096",
-            "SM2",
-            "SYMMETRIC_DEFAULT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeySpec::EccNistP256 => "ECC_NIST_P256",
+    KeySpec::EccNistP384 => "ECC_NIST_P384",
+    KeySpec::EccNistP521 => "ECC_NIST_P521",
+    KeySpec::EccSecgP256K1 => "ECC_SECG_P256K1",
+    KeySpec::Hmac224 => "HMAC_224",
+    KeySpec::Hmac256 => "HMAC_256",
+    KeySpec::Hmac384 => "HMAC_384",
+    KeySpec::Hmac512 => "HMAC_512",
+    KeySpec::Rsa2048 => "RSA_2048",
+    KeySpec::Rsa3072 => "RSA_3072",
+    KeySpec::Rsa4096 => "RSA_4096",
+    KeySpec::Sm2 => "SM2",
+    KeySpec::SymmetricDefault => "SYMMETRIC_DEFAULT",
+    KeySpec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ECC_NIST_P256", "ECC_NIST_P384", "ECC_NIST_P521", "ECC_SECG_P256K1", "HMAC_224", "HMAC_256", "HMAC_384", "HMAC_512", "RSA_2048", "RSA_3072", "RSA_4096", "SM2", "SYMMETRIC_DEFAULT"]
+                }
+            }
 impl AsRef<str> for KeySpec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

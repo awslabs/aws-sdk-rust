@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateKeyspaceInput {
+pub struct CreateKeyspaceInput  {
     /// <p>The name of the keyspace to be created.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,40 +44,35 @@ impl CreateKeyspaceInputBuilder {
     }
     /// <p>The name of the keyspace to be created.</p>
     pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keyspace_name = input;
-        self
+        self.keyspace_name = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::operation::create_keyspace::CreateKeyspaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_keyspace::CreateKeyspaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_keyspace::CreateKeyspaceInput {
-            keyspace_name: self.keyspace_name,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_keyspace::CreateKeyspaceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_keyspace::CreateKeyspaceInput {
+                keyspace_name: self.keyspace_name
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

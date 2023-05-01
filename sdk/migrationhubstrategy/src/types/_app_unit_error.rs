@@ -3,16 +3,14 @@
 /// <p>Error in the analysis of the application unit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppUnitError {
+pub struct AppUnitError  {
     /// <p>The category of the error.</p>
     #[doc(hidden)]
     pub app_unit_error_category: std::option::Option<crate::types::AppUnitErrorCategory>,
 }
 impl AppUnitError {
     /// <p>The category of the error.</p>
-    pub fn app_unit_error_category(
-        &self,
-    ) -> std::option::Option<&crate::types::AppUnitErrorCategory> {
+    pub fn app_unit_error_category(&self) -> std::option::Option<& crate::types::AppUnitErrorCategory> {
         self.app_unit_error_category.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl AppUnitErrorBuilder {
         self
     }
     /// <p>The category of the error.</p>
-    pub fn set_app_unit_error_category(
-        mut self,
-        input: std::option::Option<crate::types::AppUnitErrorCategory>,
-    ) -> Self {
-        self.app_unit_error_category = input;
-        self
+    pub fn set_app_unit_error_category(mut self, input: std::option::Option<crate::types::AppUnitErrorCategory>) -> Self {
+        self.app_unit_error_category = input; self
     }
     /// Consumes the builder and constructs a [`AppUnitError`](crate::types::AppUnitError).
     pub fn build(self) -> crate::types::AppUnitError {
         crate::types::AppUnitError {
-            app_unit_error_category: self.app_unit_error_category,
+            app_unit_error_category: self.app_unit_error_category
+            ,
         }
     }
 }
+

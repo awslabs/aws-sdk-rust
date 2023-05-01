@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketMetricsConfigurationInput {
+pub struct GetBucketMetricsConfigurationInput  {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    /// <p>The ID used to identify the metrics configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
@@ -15,21 +15,21 @@ pub struct GetBucketMetricsConfigurationInput {
 }
 impl GetBucketMetricsConfigurationInput {
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
-    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    /// <p>The ID used to identify the metrics configuration.</p>
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl GetBucketMetricsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketMetricsConfigurationInput`](crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationInput).
-    pub fn builder() -> crate::operation::get_bucket_metrics_configuration::builders::GetBucketMetricsConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_metrics_configuration::builders::GetBucketMetricsConfigurationInputBuilder {
         crate::operation::get_bucket_metrics_configuration::builders::GetBucketMetricsConfigurationInputBuilder::default()
     }
 }
@@ -50,18 +50,16 @@ impl GetBucketMetricsConfigurationInputBuilder {
     }
     /// <p>The name of the bucket containing the metrics configuration to retrieve.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
-    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    /// <p>The ID used to identify the metrics configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.</p>
+    /// <p>The ID used to identify the metrics configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +67,11 @@ impl GetBucketMetricsConfigurationInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.expected_bucket_owner = input;
-        self
+    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.expected_bucket_owner = input; self
     }
     /// Consumes the builder and constructs a [`GetBucketMetricsConfigurationInput`](crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationInput {
                 bucket: self.bucket
@@ -95,3 +84,4 @@ impl GetBucketMetricsConfigurationInputBuilder {
         )
     }
 }
+

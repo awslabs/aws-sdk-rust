@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceTemplateOutput {
+pub struct GetVoiceTemplateOutput  {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
     #[doc(hidden)]
     pub voice_template_response: std::option::Option<crate::types::VoiceTemplateResponse>,
@@ -10,21 +10,18 @@ pub struct GetVoiceTemplateOutput {
 }
 impl GetVoiceTemplateOutput {
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn voice_template_response(
-        &self,
-    ) -> std::option::Option<&crate::types::VoiceTemplateResponse> {
+    pub fn voice_template_response(&self) -> std::option::Option<& crate::types::VoiceTemplateResponse> {
         self.voice_template_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetVoiceTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetVoiceTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetVoiceTemplateOutput`](crate::operation::get_voice_template::GetVoiceTemplateOutput).
-    pub fn builder() -> crate::operation::get_voice_template::builders::GetVoiceTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_voice_template::builders::GetVoiceTemplateOutputBuilder {
         crate::operation::get_voice_template::builders::GetVoiceTemplateOutputBuilder::default()
     }
 }
@@ -43,27 +40,25 @@ impl GetVoiceTemplateOutputBuilder {
         self
     }
     /// <p>Provides information about the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-    pub fn set_voice_template_response(
-        mut self,
-        input: std::option::Option<crate::types::VoiceTemplateResponse>,
-    ) -> Self {
-        self.voice_template_response = input;
-        self
+    pub fn set_voice_template_response(mut self, input: std::option::Option<crate::types::VoiceTemplateResponse>) -> Self {
+        self.voice_template_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetVoiceTemplateOutput`](crate::operation::get_voice_template::GetVoiceTemplateOutput).
     pub fn build(self) -> crate::operation::get_voice_template::GetVoiceTemplateOutput {
         crate::operation::get_voice_template::GetVoiceTemplateOutput {
-            voice_template_response: self.voice_template_response,
+            voice_template_response: self.voice_template_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

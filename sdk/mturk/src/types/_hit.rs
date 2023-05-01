@@ -3,7 +3,7 @@
 /// <p> The HIT data structure represents a single HIT, including all the information necessary for a Worker to accept and complete the HIT.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Hit {
+pub struct Hit  {
     /// <p> A unique identifier for the HIT.</p>
     #[doc(hidden)]
     pub hit_id: std::option::Option<std::string::String>,
@@ -54,8 +54,7 @@ pub struct Hit {
     pub requester_annotation: std::option::Option<std::string::String>,
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
     #[doc(hidden)]
-    pub qualification_requirements:
-        std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>,
+    pub qualification_requirements: std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>,
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
     #[doc(hidden)]
     pub hit_review_status: std::option::Option<crate::types::HitReviewStatus>,
@@ -71,43 +70,43 @@ pub struct Hit {
 }
 impl Hit {
     /// <p> A unique identifier for the HIT.</p>
-    pub fn hit_id(&self) -> std::option::Option<&str> {
+    pub fn hit_id(&self) -> std::option::Option<& str> {
         self.hit_id.as_deref()
     }
     /// <p>The ID of the HIT type of this HIT</p>
-    pub fn hit_type_id(&self) -> std::option::Option<&str> {
+    pub fn hit_type_id(&self) -> std::option::Option<& str> {
         self.hit_type_id.as_deref()
     }
     /// <p> The ID of the HIT Group of this HIT.</p>
-    pub fn hit_group_id(&self) -> std::option::Option<&str> {
+    pub fn hit_group_id(&self) -> std::option::Option<& str> {
         self.hit_group_id.as_deref()
     }
     /// <p> The ID of the HIT Layout of this HIT.</p>
-    pub fn hit_layout_id(&self) -> std::option::Option<&str> {
+    pub fn hit_layout_id(&self) -> std::option::Option<& str> {
         self.hit_layout_id.as_deref()
     }
     /// <p> The date and time the HIT was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The title of the HIT.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p> A general description of the HIT.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The data the Worker completing the HIT uses produce the results. This is either either a QuestionForm, HTMLQuestion or an ExternalQuestion data structure.</p>
-    pub fn question(&self) -> std::option::Option<&str> {
+    pub fn question(&self) -> std::option::Option<& str> {
         self.question.as_deref()
     }
     /// <p> One or more words or phrases that describe the HIT, separated by commas. Search terms similar to the keywords of a HIT are more likely to have the HIT in the search results.</p>
-    pub fn keywords(&self) -> std::option::Option<&str> {
+    pub fn keywords(&self) -> std::option::Option<& str> {
         self.keywords.as_deref()
     }
     /// <p>The status of the HIT and its assignments. Valid Values are Assignable | Unassignable | Reviewable | Reviewing | Disposed. </p>
-    pub fn hit_status(&self) -> std::option::Option<&crate::types::HitStatus> {
+    pub fn hit_status(&self) -> std::option::Option<& crate::types::HitStatus> {
         self.hit_status.as_ref()
     }
     /// <p>The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
@@ -115,7 +114,7 @@ impl Hit {
         self.max_assignments
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn reward(&self) -> std::option::Option<&str> {
+    pub fn reward(&self) -> std::option::Option<& str> {
         self.reward.as_deref()
     }
     /// <p>The amount of time, in seconds, after the Worker submits an assignment for the HIT that the results are automatically approved by Amazon Mechanical Turk. This is the amount of time the Requester has to reject an assignment submitted by a Worker before the assignment is auto-approved and the Worker is paid. </p>
@@ -123,7 +122,7 @@ impl Hit {
         self.auto_approval_delay_in_seconds
     }
     /// <p>The date and time the HIT expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
     /// <p> The length of time, in seconds, that a Worker has to complete the HIT after accepting it.</p>
@@ -131,17 +130,15 @@ impl Hit {
         self.assignment_duration_in_seconds
     }
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
-    pub fn requester_annotation(&self) -> std::option::Option<&str> {
+    pub fn requester_annotation(&self) -> std::option::Option<& str> {
         self.requester_annotation.as_deref()
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        &self,
-    ) -> std::option::Option<&[crate::types::QualificationRequirement]> {
+    pub fn qualification_requirements(&self) -> std::option::Option<& [crate::types::QualificationRequirement]> {
         self.qualification_requirements.as_deref()
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
-    pub fn hit_review_status(&self) -> std::option::Option<&crate::types::HitReviewStatus> {
+    pub fn hit_review_status(&self) -> std::option::Option<& crate::types::HitReviewStatus> {
         self.hit_review_status.as_ref()
     }
     /// <p> The number of assignments for this HIT that are being previewed or have been accepted by Workers, but have not yet been submitted, returned, or abandoned.</p>
@@ -184,8 +181,7 @@ pub struct HitBuilder {
     pub(crate) expiration: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) assignment_duration_in_seconds: std::option::Option<i64>,
     pub(crate) requester_annotation: std::option::Option<std::string::String>,
-    pub(crate) qualification_requirements:
-        std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>,
+    pub(crate) qualification_requirements: std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>,
     pub(crate) hit_review_status: std::option::Option<crate::types::HitReviewStatus>,
     pub(crate) number_of_assignments_pending: std::option::Option<i32>,
     pub(crate) number_of_assignments_available: std::option::Option<i32>,
@@ -199,8 +195,7 @@ impl HitBuilder {
     }
     /// <p> A unique identifier for the HIT.</p>
     pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_id = input;
-        self
+        self.hit_id = input; self
     }
     /// <p>The ID of the HIT type of this HIT</p>
     pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,8 +204,7 @@ impl HitBuilder {
     }
     /// <p>The ID of the HIT type of this HIT</p>
     pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_type_id = input;
-        self
+        self.hit_type_id = input; self
     }
     /// <p> The ID of the HIT Group of this HIT.</p>
     pub fn hit_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,8 +213,7 @@ impl HitBuilder {
     }
     /// <p> The ID of the HIT Group of this HIT.</p>
     pub fn set_hit_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_group_id = input;
-        self
+        self.hit_group_id = input; self
     }
     /// <p> The ID of the HIT Layout of this HIT.</p>
     pub fn hit_layout_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,8 +222,7 @@ impl HitBuilder {
     }
     /// <p> The ID of the HIT Layout of this HIT.</p>
     pub fn set_hit_layout_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_layout_id = input;
-        self
+        self.hit_layout_id = input; self
     }
     /// <p> The date and time the HIT was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -238,12 +230,8 @@ impl HitBuilder {
         self
     }
     /// <p> The date and time the HIT was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p> The title of the HIT.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -252,8 +240,7 @@ impl HitBuilder {
     }
     /// <p> The title of the HIT.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p> A general description of the HIT.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,8 +249,7 @@ impl HitBuilder {
     }
     /// <p> A general description of the HIT.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The data the Worker completing the HIT uses produce the results. This is either either a QuestionForm, HTMLQuestion or an ExternalQuestion data structure.</p>
     pub fn question(mut self, input: impl Into<std::string::String>) -> Self {
@@ -272,8 +258,7 @@ impl HitBuilder {
     }
     /// <p> The data the Worker completing the HIT uses produce the results. This is either either a QuestionForm, HTMLQuestion or an ExternalQuestion data structure.</p>
     pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.question = input;
-        self
+        self.question = input; self
     }
     /// <p> One or more words or phrases that describe the HIT, separated by commas. Search terms similar to the keywords of a HIT are more likely to have the HIT in the search results.</p>
     pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
@@ -282,8 +267,7 @@ impl HitBuilder {
     }
     /// <p> One or more words or phrases that describe the HIT, separated by commas. Search terms similar to the keywords of a HIT are more likely to have the HIT in the search results.</p>
     pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keywords = input;
-        self
+        self.keywords = input; self
     }
     /// <p>The status of the HIT and its assignments. Valid Values are Assignable | Unassignable | Reviewable | Reviewing | Disposed. </p>
     pub fn hit_status(mut self, input: crate::types::HitStatus) -> Self {
@@ -292,8 +276,7 @@ impl HitBuilder {
     }
     /// <p>The status of the HIT and its assignments. Valid Values are Assignable | Unassignable | Reviewable | Reviewing | Disposed. </p>
     pub fn set_hit_status(mut self, input: std::option::Option<crate::types::HitStatus>) -> Self {
-        self.hit_status = input;
-        self
+        self.hit_status = input; self
     }
     /// <p>The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn max_assignments(mut self, input: i32) -> Self {
@@ -302,8 +285,7 @@ impl HitBuilder {
     }
     /// <p>The number of times the HIT can be accepted and completed before the HIT becomes unavailable. </p>
     pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_assignments = input;
-        self
+        self.max_assignments = input; self
     }
     /// <p>A string representing a currency amount.</p>
     pub fn reward(mut self, input: impl Into<std::string::String>) -> Self {
@@ -312,8 +294,7 @@ impl HitBuilder {
     }
     /// <p>A string representing a currency amount.</p>
     pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reward = input;
-        self
+        self.reward = input; self
     }
     /// <p>The amount of time, in seconds, after the Worker submits an assignment for the HIT that the results are automatically approved by Amazon Mechanical Turk. This is the amount of time the Requester has to reject an assignment submitted by a Worker before the assignment is auto-approved and the Worker is paid. </p>
     pub fn auto_approval_delay_in_seconds(mut self, input: i64) -> Self {
@@ -322,8 +303,7 @@ impl HitBuilder {
     }
     /// <p>The amount of time, in seconds, after the Worker submits an assignment for the HIT that the results are automatically approved by Amazon Mechanical Turk. This is the amount of time the Requester has to reject an assignment submitted by a Worker before the assignment is auto-approved and the Worker is paid. </p>
     pub fn set_auto_approval_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.auto_approval_delay_in_seconds = input;
-        self
+        self.auto_approval_delay_in_seconds = input; self
     }
     /// <p>The date and time the HIT expires.</p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -331,12 +311,8 @@ impl HitBuilder {
         self
     }
     /// <p>The date and time the HIT expires.</p>
-    pub fn set_expiration(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration = input;
-        self
+    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration = input; self
     }
     /// <p> The length of time, in seconds, that a Worker has to complete the HIT after accepting it.</p>
     pub fn assignment_duration_in_seconds(mut self, input: i64) -> Self {
@@ -345,8 +321,7 @@ impl HitBuilder {
     }
     /// <p> The length of time, in seconds, that a Worker has to complete the HIT after accepting it.</p>
     pub fn set_assignment_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.assignment_duration_in_seconds = input;
-        self
+        self.assignment_duration_in_seconds = input; self
     }
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
     pub fn requester_annotation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,34 +329,23 @@ impl HitBuilder {
         self
     }
     /// <p> An arbitrary data field the Requester who created the HIT can use. This field is visible only to the creator of the HIT.</p>
-    pub fn set_requester_annotation(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.requester_annotation = input;
-        self
+    pub fn set_requester_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.requester_annotation = input; self
     }
     /// Appends an item to `qualification_requirements`.
     ///
     /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
     ///
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn qualification_requirements(
-        mut self,
-        input: crate::types::QualificationRequirement,
-    ) -> Self {
+    pub fn qualification_requirements(mut self, input: crate::types::QualificationRequirement) -> Self {
         let mut v = self.qualification_requirements.unwrap_or_default();
-        v.push(input);
-        self.qualification_requirements = Some(v);
-        self
+                        v.push(input);
+                        self.qualification_requirements = Some(v);
+                        self
     }
     /// <p> Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code> structure. </p>
-    pub fn set_qualification_requirements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>,
-    ) -> Self {
-        self.qualification_requirements = input;
-        self
+    pub fn set_qualification_requirements(mut self, input: std::option::Option<std::vec::Vec<crate::types::QualificationRequirement>>) -> Self {
+        self.qualification_requirements = input; self
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
     pub fn hit_review_status(mut self, input: crate::types::HitReviewStatus) -> Self {
@@ -389,12 +353,8 @@ impl HitBuilder {
         self
     }
     /// <p> Indicates the review status of the HIT. Valid Values are NotReviewed | MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
-    pub fn set_hit_review_status(
-        mut self,
-        input: std::option::Option<crate::types::HitReviewStatus>,
-    ) -> Self {
-        self.hit_review_status = input;
-        self
+    pub fn set_hit_review_status(mut self, input: std::option::Option<crate::types::HitReviewStatus>) -> Self {
+        self.hit_review_status = input; self
     }
     /// <p> The number of assignments for this HIT that are being previewed or have been accepted by Workers, but have not yet been submitted, returned, or abandoned.</p>
     pub fn number_of_assignments_pending(mut self, input: i32) -> Self {
@@ -403,8 +363,7 @@ impl HitBuilder {
     }
     /// <p> The number of assignments for this HIT that are being previewed or have been accepted by Workers, but have not yet been submitted, returned, or abandoned.</p>
     pub fn set_number_of_assignments_pending(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_assignments_pending = input;
-        self
+        self.number_of_assignments_pending = input; self
     }
     /// <p> The number of assignments for this HIT that are available for Workers to accept.</p>
     pub fn number_of_assignments_available(mut self, input: i32) -> Self {
@@ -413,8 +372,7 @@ impl HitBuilder {
     }
     /// <p> The number of assignments for this HIT that are available for Workers to accept.</p>
     pub fn set_number_of_assignments_available(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_assignments_available = input;
-        self
+        self.number_of_assignments_available = input; self
     }
     /// <p> The number of assignments for this HIT that have been approved or rejected.</p>
     pub fn number_of_assignments_completed(mut self, input: i32) -> Self {
@@ -423,33 +381,54 @@ impl HitBuilder {
     }
     /// <p> The number of assignments for this HIT that have been approved or rejected.</p>
     pub fn set_number_of_assignments_completed(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_assignments_completed = input;
-        self
+        self.number_of_assignments_completed = input; self
     }
     /// Consumes the builder and constructs a [`Hit`](crate::types::Hit).
     pub fn build(self) -> crate::types::Hit {
         crate::types::Hit {
-            hit_id: self.hit_id,
-            hit_type_id: self.hit_type_id,
-            hit_group_id: self.hit_group_id,
-            hit_layout_id: self.hit_layout_id,
-            creation_time: self.creation_time,
-            title: self.title,
-            description: self.description,
-            question: self.question,
-            keywords: self.keywords,
-            hit_status: self.hit_status,
-            max_assignments: self.max_assignments,
-            reward: self.reward,
-            auto_approval_delay_in_seconds: self.auto_approval_delay_in_seconds,
-            expiration: self.expiration,
-            assignment_duration_in_seconds: self.assignment_duration_in_seconds,
-            requester_annotation: self.requester_annotation,
-            qualification_requirements: self.qualification_requirements,
-            hit_review_status: self.hit_review_status,
-            number_of_assignments_pending: self.number_of_assignments_pending,
-            number_of_assignments_available: self.number_of_assignments_available,
-            number_of_assignments_completed: self.number_of_assignments_completed,
+            hit_id: self.hit_id
+            ,
+            hit_type_id: self.hit_type_id
+            ,
+            hit_group_id: self.hit_group_id
+            ,
+            hit_layout_id: self.hit_layout_id
+            ,
+            creation_time: self.creation_time
+            ,
+            title: self.title
+            ,
+            description: self.description
+            ,
+            question: self.question
+            ,
+            keywords: self.keywords
+            ,
+            hit_status: self.hit_status
+            ,
+            max_assignments: self.max_assignments
+            ,
+            reward: self.reward
+            ,
+            auto_approval_delay_in_seconds: self.auto_approval_delay_in_seconds
+            ,
+            expiration: self.expiration
+            ,
+            assignment_duration_in_seconds: self.assignment_duration_in_seconds
+            ,
+            requester_annotation: self.requester_annotation
+            ,
+            qualification_requirements: self.qualification_requirements
+            ,
+            hit_review_status: self.hit_review_status
+            ,
+            number_of_assignments_pending: self.number_of_assignments_pending
+            ,
+            number_of_assignments_available: self.number_of_assignments_available
+            ,
+            number_of_assignments_completed: self.number_of_assignments_completed
+            ,
         }
     }
 }
+

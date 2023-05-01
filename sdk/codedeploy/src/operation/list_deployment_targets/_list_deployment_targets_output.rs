@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentTargetsOutput {
+pub struct ListDeploymentTargetsOutput  {
     /// <p> The unique IDs of deployment targets. </p>
     #[doc(hidden)]
     pub target_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,24 +13,22 @@ pub struct ListDeploymentTargetsOutput {
 }
 impl ListDeploymentTargetsOutput {
     /// <p> The unique IDs of deployment targets. </p>
-    pub fn target_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.target_ids.as_deref()
     }
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDeploymentTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDeploymentTargetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentTargetsOutput`](crate::operation::list_deployment_targets::ListDeploymentTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_deployment_targets::builders::ListDeploymentTargetsOutputBuilder {
         crate::operation::list_deployment_targets::builders::ListDeploymentTargetsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListDeploymentTargetsOutputBuilder {
     /// <p> The unique IDs of deployment targets. </p>
     pub fn target_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_ids.unwrap_or_default();
-        v.push(input.into());
-        self.target_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.target_ids = Some(v);
+                        self
     }
     /// <p> The unique IDs of deployment targets. </p>
-    pub fn set_target_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.target_ids = input;
-        self
+    pub fn set_target_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.target_ids = input; self
     }
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListDeploymentTargetsOutputBuilder {
     }
     /// <p> If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDeploymentTargetsOutput`](crate::operation::list_deployment_targets::ListDeploymentTargetsOutput).
     pub fn build(self) -> crate::operation::list_deployment_targets::ListDeploymentTargetsOutput {
         crate::operation::list_deployment_targets::ListDeploymentTargetsOutput {
-            target_ids: self.target_ids,
-            next_token: self.next_token,
+            target_ids: self.target_ids
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

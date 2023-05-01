@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGameConfigurationInput {
+pub struct GetGameConfigurationInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct GetGameConfigurationInput {
 }
 impl GetGameConfigurationInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The list of sections to return.</p>
-    pub fn sections(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sections(&self) -> std::option::Option<& [std::string::String]> {
         self.sections.as_deref()
     }
 }
 impl GetGameConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetGameConfigurationInput`](crate::operation::get_game_configuration::GetGameConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder {
         crate::operation::get_game_configuration::builders::GetGameConfigurationInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl GetGameConfigurationInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// Appends an item to `sections`.
     ///
@@ -53,30 +51,24 @@ impl GetGameConfigurationInputBuilder {
     /// <p>The list of sections to return.</p>
     pub fn sections(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sections.unwrap_or_default();
-        v.push(input.into());
-        self.sections = Some(v);
-        self
+                        v.push(input.into());
+                        self.sections = Some(v);
+                        self
     }
     /// <p>The list of sections to return.</p>
-    pub fn set_sections(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.sections = input;
-        self
+    pub fn set_sections(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.sections = input; self
     }
     /// Consumes the builder and constructs a [`GetGameConfigurationInput`](crate::operation::get_game_configuration::GetGameConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_game_configuration::GetGameConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_game_configuration::GetGameConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_game_configuration::GetGameConfigurationInput {
-                game_name: self.game_name,
-                sections: self.sections,
-            },
+                game_name: self.game_name
+                ,
+                sections: self.sections
+                ,
+            }
         )
     }
 }
+

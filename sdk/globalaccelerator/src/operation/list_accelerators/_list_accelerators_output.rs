@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAcceleratorsOutput {
+pub struct ListAcceleratorsOutput  {
     /// <p>The list of accelerators for a customer account.</p>
     #[doc(hidden)]
     pub accelerators: std::option::Option<std::vec::Vec<crate::types::Accelerator>>,
@@ -13,23 +13,22 @@ pub struct ListAcceleratorsOutput {
 }
 impl ListAcceleratorsOutput {
     /// <p>The list of accelerators for a customer account.</p>
-    pub fn accelerators(&self) -> std::option::Option<&[crate::types::Accelerator]> {
+    pub fn accelerators(&self) -> std::option::Option<& [crate::types::Accelerator]> {
         self.accelerators.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAcceleratorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAcceleratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListAcceleratorsOutput`](crate::operation::list_accelerators::ListAcceleratorsOutput).
-    pub fn builder() -> crate::operation::list_accelerators::builders::ListAcceleratorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_accelerators::builders::ListAcceleratorsOutputBuilder {
         crate::operation::list_accelerators::builders::ListAcceleratorsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListAcceleratorsOutputBuilder {
     /// <p>The list of accelerators for a customer account.</p>
     pub fn accelerators(mut self, input: crate::types::Accelerator) -> Self {
         let mut v = self.accelerators.unwrap_or_default();
-        v.push(input);
-        self.accelerators = Some(v);
-        self
+                        v.push(input);
+                        self.accelerators = Some(v);
+                        self
     }
     /// <p>The list of accelerators for a customer account.</p>
-    pub fn set_accelerators(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Accelerator>>,
-    ) -> Self {
-        self.accelerators = input;
-        self
+    pub fn set_accelerators(mut self, input: std::option::Option<std::vec::Vec<crate::types::Accelerator>>) -> Self {
+        self.accelerators = input; self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListAcceleratorsOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAcceleratorsOutput`](crate::operation::list_accelerators::ListAcceleratorsOutput).
     pub fn build(self) -> crate::operation::list_accelerators::ListAcceleratorsOutput {
         crate::operation::list_accelerators::ListAcceleratorsOutput {
-            accelerators: self.accelerators,
-            next_token: self.next_token,
+            accelerators: self.accelerators
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

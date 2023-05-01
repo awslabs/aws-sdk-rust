@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for ApplySecurityGroupsToLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplySecurityGroupsToLoadBalancerInput {
+pub struct ApplySecurityGroupsToLoadBalancerInput  {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ApplySecurityGroupsToLoadBalancerInput {
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
 }
 impl ApplySecurityGroupsToLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`ApplySecurityGroupsToLoadBalancerInput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput).
-    pub fn builder() -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder {
         crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder::default()
     }
 }
@@ -42,12 +42,8 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -56,20 +52,16 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// Consumes the builder and constructs a [`ApplySecurityGroupsToLoadBalancerInput`](crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput).
-    pub fn build(self) -> Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name
@@ -80,3 +72,4 @@ impl ApplySecurityGroupsToLoadBalancerInputBuilder {
         )
     }
 }
+

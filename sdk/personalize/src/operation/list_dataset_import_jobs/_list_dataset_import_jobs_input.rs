@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetImportJobsInput {
+pub struct ListDatasetImportJobsInput  {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListDatasetImportJobsInput {
 }
 impl ListDatasetImportJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of dataset import jobs to return.</p>
@@ -29,9 +29,7 @@ impl ListDatasetImportJobsInput {
 }
 impl ListDatasetImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetImportJobsInput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder {
         crate::operation::list_dataset_import_jobs::builders::ListDatasetImportJobsInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListDatasetImportJobsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl ListDatasetImportJobsInputBuilder {
     }
     /// <p>A token returned from the previous call to <code>ListDatasetImportJobs</code> for getting the next set of dataset import jobs (if they exist).</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of dataset import jobs to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,22 +68,20 @@ impl ListDatasetImportJobsInputBuilder {
     }
     /// <p>The maximum number of dataset import jobs to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListDatasetImportJobsInput`](crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_dataset_import_jobs::ListDatasetImportJobsInput {
-                dataset_arn: self.dataset_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                dataset_arn: self.dataset_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

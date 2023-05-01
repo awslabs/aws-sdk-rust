@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>GetAccountPasswordPolicy</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountPasswordPolicyOutput {
+pub struct GetAccountPasswordPolicyOutput  {
     /// <p>A structure that contains details about the account's password policy.</p>
     #[doc(hidden)]
     pub password_policy: std::option::Option<crate::types::PasswordPolicy>,
@@ -11,18 +11,18 @@ pub struct GetAccountPasswordPolicyOutput {
 }
 impl GetAccountPasswordPolicyOutput {
     /// <p>A structure that contains details about the account's password policy.</p>
-    pub fn password_policy(&self) -> std::option::Option<&crate::types::PasswordPolicy> {
+    pub fn password_policy(&self) -> std::option::Option<& crate::types::PasswordPolicy> {
         self.password_policy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccountPasswordPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAccountPasswordPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountPasswordPolicyOutput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput).
-    pub fn builder() -> crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyOutputBuilder {
         crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyOutputBuilder::default()
     }
 }
@@ -41,29 +41,25 @@ impl GetAccountPasswordPolicyOutputBuilder {
         self
     }
     /// <p>A structure that contains details about the account's password policy.</p>
-    pub fn set_password_policy(
-        mut self,
-        input: std::option::Option<crate::types::PasswordPolicy>,
-    ) -> Self {
-        self.password_policy = input;
-        self
+    pub fn set_password_policy(mut self, input: std::option::Option<crate::types::PasswordPolicy>) -> Self {
+        self.password_policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAccountPasswordPolicyOutput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput {
+    pub fn build(self) -> crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput {
         crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput {
-            password_policy: self.password_policy,
+            password_policy: self.password_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeApps</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppsOutput {
+pub struct DescribeAppsOutput  {
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::types::App>>,
@@ -11,15 +11,15 @@ pub struct DescribeAppsOutput {
 }
 impl DescribeAppsOutput {
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
-    pub fn apps(&self) -> std::option::Option<&[crate::types::App]> {
+    pub fn apps(&self) -> std::option::Option<& [crate::types::App]> {
         self.apps.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAppsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAppsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppsOutput`](crate::operation::describe_apps::DescribeAppsOutput).
     pub fn builder() -> crate::operation::describe_apps::builders::DescribeAppsOutputBuilder {
@@ -42,32 +42,30 @@ impl DescribeAppsOutputBuilder {
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
     pub fn apps(mut self, input: crate::types::App) -> Self {
         let mut v = self.apps.unwrap_or_default();
-        v.push(input);
-        self.apps = Some(v);
-        self
+                        v.push(input);
+                        self.apps = Some(v);
+                        self
     }
     /// <p>An array of <code>App</code> objects that describe the specified apps. </p>
-    pub fn set_apps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::App>>,
-    ) -> Self {
-        self.apps = input;
-        self
+    pub fn set_apps(mut self, input: std::option::Option<std::vec::Vec<crate::types::App>>) -> Self {
+        self.apps = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAppsOutput`](crate::operation::describe_apps::DescribeAppsOutput).
     pub fn build(self) -> crate::operation::describe_apps::DescribeAppsOutput {
         crate::operation::describe_apps::DescribeAppsOutput {
-            apps: self.apps,
+            apps: self.apps
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

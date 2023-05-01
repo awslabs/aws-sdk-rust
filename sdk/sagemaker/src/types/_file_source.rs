@@ -3,7 +3,7 @@
 /// <p>Contains details regarding the file source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileSource {
+pub struct FileSource  {
     /// <p>The type of content stored in the file source.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct FileSource {
 }
 impl FileSource {
     /// <p>The type of content stored in the file source.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The digest of the file source.</p>
-    pub fn content_digest(&self) -> std::option::Option<&str> {
+    pub fn content_digest(&self) -> std::option::Option<& str> {
         self.content_digest.as_deref()
     }
     /// <p>The Amazon S3 URI for the file source.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl FileSourceBuilder {
     }
     /// <p>The type of content stored in the file source.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The digest of the file source.</p>
     pub fn content_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FileSourceBuilder {
     }
     /// <p>The digest of the file source.</p>
     pub fn set_content_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_digest = input;
-        self
+        self.content_digest = input; self
     }
     /// <p>The Amazon S3 URI for the file source.</p>
     pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl FileSourceBuilder {
     }
     /// <p>The Amazon S3 URI for the file source.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// Consumes the builder and constructs a [`FileSource`](crate::types::FileSource).
     pub fn build(self) -> crate::types::FileSource {
         crate::types::FileSource {
-            content_type: self.content_type,
-            content_digest: self.content_digest,
-            s3_uri: self.s3_uri,
+            content_type: self.content_type
+            ,
+            content_digest: self.content_digest
+            ,
+            s3_uri: self.s3_uri
+            ,
         }
     }
 }
+

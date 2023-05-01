@@ -2,15 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClustersInput {
-    /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+pub struct DescribeClustersInput  {
+    /// <p>One or more filters to limit the items returned in the response.</p> 
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> 
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> 
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub filters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,19 +17,15 @@ pub struct DescribeClustersInput {
     pub max_results: std::option::Option<i32>,
 }
 impl DescribeClustersInput {
-    /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>One or more filters to limit the items returned in the response.</p> 
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> 
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> 
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn filters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn filters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.filters.as_ref()
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
@@ -41,8 +35,7 @@ impl DescribeClustersInput {
 }
 impl DescribeClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_clusters::builders::DescribeClustersInputBuilder {
         crate::operation::describe_clusters::builders::DescribeClustersInputBuilder::default()
     }
 }
@@ -51,9 +44,7 @@ impl DescribeClustersInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeClustersInputBuilder {
-    pub(crate) filters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub(crate) filters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -62,32 +53,22 @@ impl DescribeClustersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>One or more filters to limit the items returned in the response.</p> 
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> 
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> 
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn filters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.filters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.filters = Some(hash_map);
+                        self
     }
-    /// <p>One or more filters to limit the items returned in the response.</p>
-    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p>
-    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p>
+    /// <p>One or more filters to limit the items returned in the response.</p> 
+    /// <p>Use the <code>clusterIds</code> filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).</p> 
+    /// <p>Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> 
     /// <p>Use the <code>states</code> filter to return only clusters that match the specified state.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +77,7 @@ impl DescribeClustersInputBuilder {
     }
     /// <p>The <code>NextToken</code> value that you received in the previous response. Use this value to get more clusters.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -106,20 +86,20 @@ impl DescribeClustersInputBuilder {
     }
     /// <p>The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeClustersInput`](crate::operation::describe_clusters::DescribeClustersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_clusters::DescribeClustersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_clusters::DescribeClustersInput {
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_clusters::DescribeClustersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_clusters::DescribeClustersInput {
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

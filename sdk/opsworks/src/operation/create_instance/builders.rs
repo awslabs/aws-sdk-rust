@@ -4,68 +4,50 @@ pub use crate::operation::create_instance::_create_instance_output::CreateInstan
 pub use crate::operation::create_instance::_create_instance_input::CreateInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `CreateInstance`.
-///
-/// <p>Creates an instance in a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p>
+/// 
+/// <p>Creates an instance in a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p> 
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_instance::builders::CreateInstanceInputBuilder,
-}
-impl CreateInstanceFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_instance::builders::CreateInstanceInputBuilder
+            }
+impl CreateInstanceFluentBuilder  {
     /// Creates a new `CreateInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_instance::CreateInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_instance::CreateInstanceError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_instance::CreateInstanceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_instance::CreateInstanceError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_instance::CreateInstance, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_instance::CreateInstanceError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_instance::CreateInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::create_instance::CreateInstanceError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -86,10 +68,7 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>An array that contains the instance's layer IDs.</p>
-    pub fn set_layer_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_layer_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }
@@ -109,10 +88,7 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-    pub fn set_auto_scaling_type(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingType>,
-    ) -> Self {
+    pub fn set_auto_scaling_type(mut self, input: std::option::Option<crate::types::AutoScalingType>) -> Self {
         self.inner = self.inner.set_auto_scaling_type(input);
         self
     }
@@ -126,45 +102,45 @@ impl CreateInstanceFluentBuilder {
         self.inner = self.inner.set_hostname(input);
         self
     }
-    /// <p>The instance's operating system, which must be set to one of the following.</p>
-    /// <ul>
-    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
-    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
-    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
-    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
-    /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The instance's operating system, which must be set to one of the following.</p> 
+    /// <ul> 
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> 
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> 
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li> 
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> 
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li> 
+    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> 
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.os(input.into());
         self
     }
-    /// <p>The instance's operating system, which must be set to one of the following.</p>
-    /// <ul>
-    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li>
-    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li>
-    /// <li> <p> <code>CentOS Linux 7</code> </p> </li>
-    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li>
-    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
-    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li>
-    /// </ul>
-    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
+    /// <p>The instance's operating system, which must be set to one of the following.</p> 
+    /// <ul> 
+    /// <li> <p>A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> 
+    /// <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> 
+    /// <li> <p> <code>CentOS Linux 7</code> </p> </li> 
+    /// <li> <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> 
+    /// <li> <p>A supported Windows operating system, such as <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li> 
+    /// <li> <p>A custom AMI: <code>Custom</code>.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about the supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p> 
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the <code>CreateInstance</code> action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p>
     pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_os(input);
         self
     }
-    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
-    /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
+    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note> 
+    /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p> 
     /// </note>
     pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ami_id(input.into());
         self
     }
-    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
-    /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
+    /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note> 
+    /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p> 
     /// </note>
     pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_ami_id(input);
@@ -186,10 +162,7 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -199,10 +172,7 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
-    pub fn set_virtualization_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_virtualization_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_virtualization_type(input);
         self
     }
@@ -222,10 +192,7 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
-    pub fn set_architecture(
-        mut self,
-        input: std::option::Option<crate::types::Architecture>,
-    ) -> Self {
+    pub fn set_architecture(mut self, input: std::option::Option<crate::types::Architecture>) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
     }
@@ -235,10 +202,7 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-    pub fn set_root_device_type(
-        mut self,
-        input: std::option::Option<crate::types::RootDeviceType>,
-    ) -> Self {
+    pub fn set_root_device_type(mut self, input: std::option::Option<crate::types::RootDeviceType>) -> Self {
         self.inner = self.inner.set_root_device_type(input);
         self
     }
@@ -252,22 +216,19 @@ impl CreateInstanceFluentBuilder {
         self
     }
     /// <p>An array of <code>BlockDeviceMapping</code> objects that specify the instance's block devices. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device Mapping</a>. Note that block device mappings are not supported for custom AMIs.</p>
-    pub fn set_block_device_mappings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
-    ) -> Self {
+    pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p> 
     /// </note>
     pub fn install_updates_on_boot(mut self, input: bool) -> Self {
         self.inner = self.inner.install_updates_on_boot(input);
         self
     }
-    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
-    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p>
+    /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note> 
+    /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest security updates.</p> 
     /// </note>
     pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_install_updates_on_boot(input);
@@ -283,21 +244,21 @@ impl CreateInstanceFluentBuilder {
         self.inner = self.inner.set_ebs_optimized(input);
         self
     }
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
-    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
-    /// </ul>
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li> 
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li> 
+    /// </ul> 
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
-    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li>
-    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li>
-    /// </ul>
+    /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>INHERIT</code> - Use the stack's default agent version setting.</p> </li> 
+    /// <li> <p> <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.</p> </li> 
+    /// </ul> 
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p>
     pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_agent_version(input);
@@ -314,3 +275,4 @@ impl CreateInstanceFluentBuilder {
         self
     }
 }
+

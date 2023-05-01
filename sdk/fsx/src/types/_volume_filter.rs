@@ -3,7 +3,7 @@
 /// <p>A filter used to restrict the results of describe calls for Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes. You can use multiple filters to return results that meet all applied filter requirements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeFilter {
+pub struct VolumeFilter  {
     /// <p>The name for this filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::VolumeFilterName>,
@@ -13,11 +13,11 @@ pub struct VolumeFilter {
 }
 impl VolumeFilter {
     /// <p>The name for this filter.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::VolumeFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::VolumeFilterName> {
         self.name.as_ref()
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl VolumeFilterBuilder {
     }
     /// <p>The name for this filter.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::VolumeFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -53,23 +52,22 @@ impl VolumeFilterBuilder {
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>The values of the filter. These are all the values for any of the applied filters.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`VolumeFilter`](crate::types::VolumeFilter).
     pub fn build(self) -> crate::types::VolumeFilter {
         crate::types::VolumeFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

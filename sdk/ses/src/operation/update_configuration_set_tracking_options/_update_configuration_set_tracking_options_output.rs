@@ -3,17 +3,17 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationSetTrackingOptionsOutput {
+pub struct UpdateConfigurationSetTrackingOptionsOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateConfigurationSetTrackingOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateConfigurationSetTrackingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetTrackingOptionsOutput`](crate::operation::update_configuration_set_tracking_options::UpdateConfigurationSetTrackingOptionsOutput).
-    pub fn builder() -> crate::operation::update_configuration_set_tracking_options::builders::UpdateConfigurationSetTrackingOptionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_set_tracking_options::builders::UpdateConfigurationSetTrackingOptionsOutputBuilder {
         crate::operation::update_configuration_set_tracking_options::builders::UpdateConfigurationSetTrackingOptionsOutputBuilder::default()
     }
 }
@@ -26,18 +26,19 @@ pub struct UpdateConfigurationSetTrackingOptionsOutputBuilder {
 }
 impl UpdateConfigurationSetTrackingOptionsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetTrackingOptionsOutput`](crate::operation::update_configuration_set_tracking_options::UpdateConfigurationSetTrackingOptionsOutput).
-    pub fn build(self) -> crate::operation::update_configuration_set_tracking_options::UpdateConfigurationSetTrackingOptionsOutput{
+    pub fn build(self) -> crate::operation::update_configuration_set_tracking_options::UpdateConfigurationSetTrackingOptionsOutput {
         crate::operation::update_configuration_set_tracking_options::UpdateConfigurationSetTrackingOptionsOutput {
             _request_id: self._request_id,
         }
     }
 }
+

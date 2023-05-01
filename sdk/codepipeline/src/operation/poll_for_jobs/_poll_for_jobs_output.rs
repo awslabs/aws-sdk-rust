@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>PollForJobs</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForJobsOutput {
+pub struct PollForJobsOutput  {
     /// <p>Information about the jobs to take action on.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::types::Job>>,
@@ -11,15 +11,15 @@ pub struct PollForJobsOutput {
 }
 impl PollForJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::types::Job]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::types::Job]> {
         self.jobs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PollForJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PollForJobsOutput {
     /// Creates a new builder-style object to manufacture [`PollForJobsOutput`](crate::operation::poll_for_jobs::PollForJobsOutput).
     pub fn builder() -> crate::operation::poll_for_jobs::builders::PollForJobsOutputBuilder {
@@ -42,32 +42,30 @@ impl PollForJobsOutputBuilder {
     /// <p>Information about the jobs to take action on.</p>
     pub fn jobs(mut self, input: crate::types::Job) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = Some(v);
-        self
+                        v.push(input);
+                        self.jobs = Some(v);
+                        self
     }
     /// <p>Information about the jobs to take action on.</p>
-    pub fn set_jobs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Job>>,
-    ) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Job>>) -> Self {
+        self.jobs = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PollForJobsOutput`](crate::operation::poll_for_jobs::PollForJobsOutput).
     pub fn build(self) -> crate::operation::poll_for_jobs::PollForJobsOutput {
         crate::operation::poll_for_jobs::PollForJobsOutput {
-            jobs: self.jobs,
+            jobs: self.jobs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

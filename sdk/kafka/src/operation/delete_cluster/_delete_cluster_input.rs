@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClusterInput {
+pub struct DeleteClusterInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteClusterInput {
 }
 impl DeleteClusterInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The current version of the MSK cluster.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> std::option::Option<& str> {
         self.current_version.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteClusterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The current version of the MSK cluster.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteClusterInputBuilder {
     }
     /// <p>The current version of the MSK cluster.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// Consumes the builder and constructs a [`DeleteClusterInput`](crate::operation::delete_cluster::DeleteClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_cluster::DeleteClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_cluster::DeleteClusterInput {
-            cluster_arn: self.cluster_arn,
-            current_version: self.current_version,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_cluster::DeleteClusterInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_cluster::DeleteClusterInput {
+                cluster_arn: self.cluster_arn
+                ,
+                current_version: self.current_version
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveBackendConfigOutput {
+pub struct RemoveBackendConfigOutput  {
     /// <p>If the request fails, this error is returned.</p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
@@ -10,21 +10,19 @@ pub struct RemoveBackendConfigOutput {
 }
 impl RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RemoveBackendConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveBackendConfigOutput {
     /// Creates a new builder-style object to manufacture [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder {
-        crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder {
+        crate::operation::remove_backend_config::builders::RemoveBackendConfigOutputBuilder::default()
     }
 }
 
@@ -43,23 +41,24 @@ impl RemoveBackendConfigOutputBuilder {
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveBackendConfigOutput`](crate::operation::remove_backend_config::RemoveBackendConfigOutput).
     pub fn build(self) -> crate::operation::remove_backend_config::RemoveBackendConfigOutput {
         crate::operation::remove_backend_config::RemoveBackendConfigOutput {
-            error: self.error,
+            error: self.error
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

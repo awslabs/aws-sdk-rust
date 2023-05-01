@@ -153,6 +153,10 @@ pub use crate::types::_document_classifier_output_data_config::DocumentClassifie
 
 pub use crate::types::_document_classifier_input_data_config::DocumentClassifierInputDataConfig;
 
+pub use crate::types::_document_classifier_documents::DocumentClassifierDocuments;
+
+pub use crate::types::_document_classifier_document_type_format::DocumentClassifierDocumentTypeFormat;
+
 pub use crate::types::_document_classifier_data_format::DocumentClassifierDataFormat;
 
 pub use crate::types::_document_classifier_filter::DocumentClassifierFilter;
@@ -247,6 +251,10 @@ pub use crate::types::_dataset_augmented_manifests_list_item::DatasetAugmentedMa
 
 pub use crate::types::_entity_label::EntityLabel;
 
+pub use crate::types::_warnings_list_item::WarningsListItem;
+
+pub use crate::types::_page_based_warning_code::PageBasedWarningCode;
+
 pub use crate::types::_document_label::DocumentLabel;
 
 pub use crate::types::_document_class::DocumentClass;
@@ -332,6 +340,10 @@ mod _document_classification_job_filter;
 mod _document_classification_job_properties;
 
 mod _document_classifier_data_format;
+
+mod _document_classifier_document_type_format;
+
+mod _document_classifier_documents;
 
 mod _document_classifier_filter;
 
@@ -469,6 +481,8 @@ mod _output_data_config;
 
 mod _page_based_error_code;
 
+mod _page_based_warning_code;
+
 mod _part_of_speech_tag;
 
 mod _part_of_speech_tag_type;
@@ -531,8 +545,11 @@ mod _update_data_security_config;
 
 mod _vpc_config;
 
+mod _warnings_list_item;
+
 /// Builders
 pub mod builders;
 
 /// Error types that Amazon Comprehend can respond with.
 pub mod error;
+

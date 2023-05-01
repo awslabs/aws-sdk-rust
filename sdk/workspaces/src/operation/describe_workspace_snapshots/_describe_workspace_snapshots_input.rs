@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceSnapshotsInput {
+pub struct DescribeWorkspaceSnapshotsInput  {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceSnapshotsInput {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
 impl DescribeWorkspaceSnapshotsInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
-    pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder {
         crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeWorkspaceSnapshotsInputBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceSnapshotsInput`](crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsInput {
-                workspace_id: self.workspace_id,
-            },
+                workspace_id: self.workspace_id
+                ,
+            }
         )
     }
 }
+

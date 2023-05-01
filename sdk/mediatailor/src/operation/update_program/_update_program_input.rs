@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProgramInput {
+pub struct UpdateProgramInput  {
     /// <p>The ad break configuration settings.</p>
     #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
@@ -14,26 +14,23 @@ pub struct UpdateProgramInput {
     pub program_name: std::option::Option<std::string::String>,
     /// <p>The schedule configuration settings.</p>
     #[doc(hidden)]
-    pub schedule_configuration:
-        std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
+    pub schedule_configuration: std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
 }
 impl UpdateProgramInput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> std::option::Option<&[crate::types::AdBreak]> {
+    pub fn ad_breaks(&self) -> std::option::Option<& [crate::types::AdBreak]> {
         self.ad_breaks.as_deref()
     }
     /// <p>The name of the channel for this Program.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name of the Program.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> std::option::Option<& str> {
         self.program_name.as_deref()
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateProgramScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> std::option::Option<& crate::types::UpdateProgramScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
 }
@@ -51,8 +48,7 @@ pub struct UpdateProgramInputBuilder {
     pub(crate) ad_breaks: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
     pub(crate) channel_name: std::option::Option<std::string::String>,
     pub(crate) program_name: std::option::Option<std::string::String>,
-    pub(crate) schedule_configuration:
-        std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
+    pub(crate) schedule_configuration: std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
 }
 impl UpdateProgramInputBuilder {
     /// Appends an item to `ad_breaks`.
@@ -62,17 +58,13 @@ impl UpdateProgramInputBuilder {
     /// <p>The ad break configuration settings.</p>
     pub fn ad_breaks(mut self, input: crate::types::AdBreak) -> Self {
         let mut v = self.ad_breaks.unwrap_or_default();
-        v.push(input);
-        self.ad_breaks = Some(v);
-        self
+                        v.push(input);
+                        self.ad_breaks = Some(v);
+                        self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
-        self.ad_breaks = input;
-        self
+    pub fn set_ad_breaks(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>) -> Self {
+        self.ad_breaks = input; self
     }
     /// <p>The name of the channel for this Program.</p>
     pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +73,7 @@ impl UpdateProgramInputBuilder {
     }
     /// <p>The name of the channel for this Program.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the Program.</p>
     pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,37 +82,31 @@ impl UpdateProgramInputBuilder {
     }
     /// <p>The name of the Program.</p>
     pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(
-        mut self,
-        input: crate::types::UpdateProgramScheduleConfiguration,
-    ) -> Self {
+    pub fn schedule_configuration(mut self, input: crate::types::UpdateProgramScheduleConfiguration) -> Self {
         self.schedule_configuration = Some(input);
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(
-        mut self,
-        input: std::option::Option<crate::types::UpdateProgramScheduleConfiguration>,
-    ) -> Self {
-        self.schedule_configuration = input;
-        self
+    pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::types::UpdateProgramScheduleConfiguration>) -> Self {
+        self.schedule_configuration = input; self
     }
     /// Consumes the builder and constructs a [`UpdateProgramInput`](crate::operation::update_program::UpdateProgramInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_program::UpdateProgramInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_program::UpdateProgramInput {
-            ad_breaks: self.ad_breaks,
-            channel_name: self.channel_name,
-            program_name: self.program_name,
-            schedule_configuration: self.schedule_configuration,
-        })
+    pub fn build(self) -> Result<crate::operation::update_program::UpdateProgramInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_program::UpdateProgramInput {
+                ad_breaks: self.ad_breaks
+                ,
+                channel_name: self.channel_name
+                ,
+                program_name: self.program_name
+                ,
+                schedule_configuration: self.schedule_configuration
+                ,
+            }
+        )
     }
 }
+

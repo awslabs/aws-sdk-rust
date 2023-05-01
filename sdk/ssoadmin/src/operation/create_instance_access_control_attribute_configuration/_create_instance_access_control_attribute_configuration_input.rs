@@ -2,31 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstanceAccessControlAttributeConfigurationInput {
+pub struct CreateInstanceAccessControlAttributeConfigurationInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
     #[doc(hidden)]
-    pub instance_access_control_attribute_configuration:
-        std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
+    pub instance_access_control_attribute_configuration: std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
 }
 impl CreateInstanceAccessControlAttributeConfigurationInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
-    pub fn instance_access_control_attribute_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::InstanceAccessControlAttributeConfiguration> {
-        self.instance_access_control_attribute_configuration
-            .as_ref()
+    pub fn instance_access_control_attribute_configuration(&self) -> std::option::Option<& crate::types::InstanceAccessControlAttributeConfiguration> {
+        self.instance_access_control_attribute_configuration.as_ref()
     }
 }
 impl CreateInstanceAccessControlAttributeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput).
-    pub fn builder() -> crate::operation::create_instance_access_control_attribute_configuration::builders::CreateInstanceAccessControlAttributeConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_instance_access_control_attribute_configuration::builders::CreateInstanceAccessControlAttributeConfigurationInputBuilder {
         crate::operation::create_instance_access_control_attribute_configuration::builders::CreateInstanceAccessControlAttributeConfigurationInputBuilder::default()
     }
 }
@@ -36,8 +32,7 @@ impl CreateInstanceAccessControlAttributeConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateInstanceAccessControlAttributeConfigurationInputBuilder {
     pub(crate) instance_arn: std::option::Option<std::string::String>,
-    pub(crate) instance_access_control_attribute_configuration:
-        std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
+    pub(crate) instance_access_control_attribute_configuration: std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
 }
 impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
@@ -47,27 +42,19 @@ impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
-    pub fn instance_access_control_attribute_configuration(
-        mut self,
-        input: crate::types::InstanceAccessControlAttributeConfiguration,
-    ) -> Self {
+    pub fn instance_access_control_attribute_configuration(mut self, input: crate::types::InstanceAccessControlAttributeConfiguration) -> Self {
         self.instance_access_control_attribute_configuration = Some(input);
         self
     }
     /// <p>Specifies the IAM Identity Center identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion. Doing so provides an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center will replace the attribute value with the value from the IAM Identity Center identity store.</p>
-    pub fn set_instance_access_control_attribute_configuration(
-        mut self,
-        input: std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>,
-    ) -> Self {
-        self.instance_access_control_attribute_configuration = input;
-        self
+    pub fn set_instance_access_control_attribute_configuration(mut self, input: std::option::Option<crate::types::InstanceAccessControlAttributeConfiguration>) -> Self {
+        self.instance_access_control_attribute_configuration = input; self
     }
     /// Consumes the builder and constructs a [`CreateInstanceAccessControlAttributeConfigurationInput`](crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationInput {
                 instance_arn: self.instance_arn
@@ -78,3 +65,4 @@ impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
         )
     }
 }
+

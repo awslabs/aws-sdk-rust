@@ -3,7 +3,7 @@
 /// <p>Provides details about input or output in an execution history event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HistoryEventExecutionDataDetails {
+pub struct HistoryEventExecutionDataDetails  {
     /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
     #[doc(hidden)]
     pub truncated: bool,
@@ -35,13 +35,15 @@ impl HistoryEventExecutionDataDetailsBuilder {
     }
     /// <p>Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.</p>
     pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
     }
     /// Consumes the builder and constructs a [`HistoryEventExecutionDataDetails`](crate::types::HistoryEventExecutionDataDetails).
     pub fn build(self) -> crate::types::HistoryEventExecutionDataDetails {
         crate::types::HistoryEventExecutionDataDetails {
-            truncated: self.truncated.unwrap_or_default(),
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

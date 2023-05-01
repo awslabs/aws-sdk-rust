@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkRoutesInput {
+pub struct GetNetworkRoutesInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -32,62 +32,53 @@ pub struct GetNetworkRoutesInput {
     pub types: std::option::Option<std::vec::Vec<crate::types::RouteType>>,
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
     #[doc(hidden)]
-    pub destination_filters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub destination_filters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
 }
 impl GetNetworkRoutesInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_identifier(
-        &self,
-    ) -> std::option::Option<&crate::types::RouteTableIdentifier> {
+    pub fn route_table_identifier(&self) -> std::option::Option<& crate::types::RouteTableIdentifier> {
         self.route_table_identifier.as_ref()
     }
     /// <p>An exact CIDR block.</p>
-    pub fn exact_cidr_matches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exact_cidr_matches(&self) -> std::option::Option<& [std::string::String]> {
         self.exact_cidr_matches.as_deref()
     }
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    pub fn longest_prefix_matches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn longest_prefix_matches(&self) -> std::option::Option<& [std::string::String]> {
         self.longest_prefix_matches.as_deref()
     }
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    pub fn subnet_of_matches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_of_matches(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_of_matches.as_deref()
     }
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    pub fn supernet_of_matches(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supernet_of_matches(&self) -> std::option::Option<& [std::string::String]> {
         self.supernet_of_matches.as_deref()
     }
     /// <p>The IDs of the prefix lists.</p>
-    pub fn prefix_list_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn prefix_list_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.prefix_list_ids.as_deref()
     }
     /// <p>The route states.</p>
-    pub fn states(&self) -> std::option::Option<&[crate::types::RouteState]> {
+    pub fn states(&self) -> std::option::Option<& [crate::types::RouteState]> {
         self.states.as_deref()
     }
     /// <p>The route types.</p>
-    pub fn types(&self) -> std::option::Option<&[crate::types::RouteType]> {
+    pub fn types(&self) -> std::option::Option<& [crate::types::RouteType]> {
         self.types.as_deref()
     }
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn destination_filters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn destination_filters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.destination_filters.as_ref()
     }
 }
 impl GetNetworkRoutesInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkRoutesInput`](crate::operation::get_network_routes::GetNetworkRoutesInput).
-    pub fn builder() -> crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder {
         crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder::default()
     }
 }
@@ -105,9 +96,7 @@ pub struct GetNetworkRoutesInputBuilder {
     pub(crate) prefix_list_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) states: std::option::Option<std::vec::Vec<crate::types::RouteState>>,
     pub(crate) types: std::option::Option<std::vec::Vec<crate::types::RouteType>>,
-    pub(crate) destination_filters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub(crate) destination_filters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
 }
 impl GetNetworkRoutesInputBuilder {
     /// <p>The ID of the global network.</p>
@@ -116,12 +105,8 @@ impl GetNetworkRoutesInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_identifier(mut self, input: crate::types::RouteTableIdentifier) -> Self {
@@ -129,12 +114,8 @@ impl GetNetworkRoutesInputBuilder {
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_identifier(
-        mut self,
-        input: std::option::Option<crate::types::RouteTableIdentifier>,
-    ) -> Self {
-        self.route_table_identifier = input;
-        self
+    pub fn set_route_table_identifier(mut self, input: std::option::Option<crate::types::RouteTableIdentifier>) -> Self {
+        self.route_table_identifier = input; self
     }
     /// Appends an item to `exact_cidr_matches`.
     ///
@@ -143,17 +124,13 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>An exact CIDR block.</p>
     pub fn exact_cidr_matches(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.exact_cidr_matches.unwrap_or_default();
-        v.push(input.into());
-        self.exact_cidr_matches = Some(v);
-        self
+                        v.push(input.into());
+                        self.exact_cidr_matches = Some(v);
+                        self
     }
     /// <p>An exact CIDR block.</p>
-    pub fn set_exact_cidr_matches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.exact_cidr_matches = input;
-        self
+    pub fn set_exact_cidr_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.exact_cidr_matches = input; self
     }
     /// Appends an item to `longest_prefix_matches`.
     ///
@@ -162,17 +139,13 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
     pub fn longest_prefix_matches(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.longest_prefix_matches.unwrap_or_default();
-        v.push(input.into());
-        self.longest_prefix_matches = Some(v);
-        self
+                        v.push(input.into());
+                        self.longest_prefix_matches = Some(v);
+                        self
     }
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    pub fn set_longest_prefix_matches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.longest_prefix_matches = input;
-        self
+    pub fn set_longest_prefix_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.longest_prefix_matches = input; self
     }
     /// Appends an item to `subnet_of_matches`.
     ///
@@ -181,17 +154,13 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
     pub fn subnet_of_matches(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_of_matches.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_of_matches = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_of_matches = Some(v);
+                        self
     }
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    pub fn set_subnet_of_matches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_of_matches = input;
-        self
+    pub fn set_subnet_of_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_of_matches = input; self
     }
     /// Appends an item to `supernet_of_matches`.
     ///
@@ -200,17 +169,13 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
     pub fn supernet_of_matches(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supernet_of_matches.unwrap_or_default();
-        v.push(input.into());
-        self.supernet_of_matches = Some(v);
-        self
+                        v.push(input.into());
+                        self.supernet_of_matches = Some(v);
+                        self
     }
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    pub fn set_supernet_of_matches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.supernet_of_matches = input;
-        self
+    pub fn set_supernet_of_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.supernet_of_matches = input; self
     }
     /// Appends an item to `prefix_list_ids`.
     ///
@@ -219,17 +184,13 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>The IDs of the prefix lists.</p>
     pub fn prefix_list_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.prefix_list_ids.unwrap_or_default();
-        v.push(input.into());
-        self.prefix_list_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.prefix_list_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the prefix lists.</p>
-    pub fn set_prefix_list_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.prefix_list_ids = input;
-        self
+    pub fn set_prefix_list_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.prefix_list_ids = input; self
     }
     /// Appends an item to `states`.
     ///
@@ -238,17 +199,13 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>The route states.</p>
     pub fn states(mut self, input: crate::types::RouteState) -> Self {
         let mut v = self.states.unwrap_or_default();
-        v.push(input);
-        self.states = Some(v);
-        self
+                        v.push(input);
+                        self.states = Some(v);
+                        self
     }
     /// <p>The route states.</p>
-    pub fn set_states(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RouteState>>,
-    ) -> Self {
-        self.states = input;
-        self
+    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::RouteState>>) -> Self {
+        self.states = input; self
     }
     /// Appends an item to `types`.
     ///
@@ -257,63 +214,55 @@ impl GetNetworkRoutesInputBuilder {
     /// <p>The route types.</p>
     pub fn types(mut self, input: crate::types::RouteType) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input);
-        self.types = Some(v);
-        self
+                        v.push(input);
+                        self.types = Some(v);
+                        self
     }
     /// <p>The route types.</p>
-    pub fn set_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RouteType>>,
-    ) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::RouteType>>) -> Self {
+        self.types = input; self
     }
     /// Adds a key-value pair to `destination_filters`.
     ///
     /// To override the contents of this collection use [`set_destination_filters`](Self::set_destination_filters).
     ///
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn destination_filters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
-    ) -> Self {
+    pub fn destination_filters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
         let mut hash_map = self.destination_filters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.destination_filters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.destination_filters = Some(hash_map);
+                        self
     }
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn set_destination_filters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-    ) -> Self {
-        self.destination_filters = input;
-        self
+    pub fn set_destination_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+        self.destination_filters = input; self
     }
     /// Consumes the builder and constructs a [`GetNetworkRoutesInput`](crate::operation::get_network_routes::GetNetworkRoutesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_network_routes::GetNetworkRoutesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_network_routes::GetNetworkRoutesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_network_routes::GetNetworkRoutesInput {
-                global_network_id: self.global_network_id,
-                route_table_identifier: self.route_table_identifier,
-                exact_cidr_matches: self.exact_cidr_matches,
-                longest_prefix_matches: self.longest_prefix_matches,
-                subnet_of_matches: self.subnet_of_matches,
-                supernet_of_matches: self.supernet_of_matches,
-                prefix_list_ids: self.prefix_list_ids,
-                states: self.states,
-                types: self.types,
-                destination_filters: self.destination_filters,
-            },
+                global_network_id: self.global_network_id
+                ,
+                route_table_identifier: self.route_table_identifier
+                ,
+                exact_cidr_matches: self.exact_cidr_matches
+                ,
+                longest_prefix_matches: self.longest_prefix_matches
+                ,
+                subnet_of_matches: self.subnet_of_matches
+                ,
+                supernet_of_matches: self.supernet_of_matches
+                ,
+                prefix_list_ids: self.prefix_list_ids
+                ,
+                states: self.states
+                ,
+                types: self.types
+                ,
+                destination_filters: self.destination_filters
+                ,
+            }
         )
     }
 }
+

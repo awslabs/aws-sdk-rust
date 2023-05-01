@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateComponentInput {
+pub struct UpdateComponentInput  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateComponentInput {
 }
 impl UpdateComponentInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The new name of the component.</p>
-    pub fn new_component_name(&self) -> std::option::Option<&str> {
+    pub fn new_component_name(&self) -> std::option::Option<& str> {
         self.new_component_name.as_deref()
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn resource_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_list(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_list.as_deref()
     }
 }
@@ -57,12 +57,8 @@ impl UpdateComponentInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_group_name = input; self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl UpdateComponentInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// <p>The new name of the component.</p>
     pub fn new_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,12 +75,8 @@ impl UpdateComponentInputBuilder {
         self
     }
     /// <p>The new name of the component.</p>
-    pub fn set_new_component_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.new_component_name = input;
-        self
+    pub fn set_new_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.new_component_name = input; self
     }
     /// Appends an item to `resource_list`.
     ///
@@ -94,30 +85,28 @@ impl UpdateComponentInputBuilder {
     /// <p>The list of resource ARNs that belong to the component.</p>
     pub fn resource_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_list.unwrap_or_default();
-        v.push(input.into());
-        self.resource_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_list = Some(v);
+                        self
     }
     /// <p>The list of resource ARNs that belong to the component.</p>
-    pub fn set_resource_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_list = input;
-        self
+    pub fn set_resource_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_list = input; self
     }
     /// Consumes the builder and constructs a [`UpdateComponentInput`](crate::operation::update_component::UpdateComponentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_component::UpdateComponentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_component::UpdateComponentInput {
-            resource_group_name: self.resource_group_name,
-            component_name: self.component_name,
-            new_component_name: self.new_component_name,
-            resource_list: self.resource_list,
-        })
+    pub fn build(self) -> Result<crate::operation::update_component::UpdateComponentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_component::UpdateComponentInput {
+                resource_group_name: self.resource_group_name
+                ,
+                component_name: self.component_name
+                ,
+                new_component_name: self.new_component_name
+                ,
+                resource_list: self.resource_list
+                ,
+            }
+        )
     }
 }
+

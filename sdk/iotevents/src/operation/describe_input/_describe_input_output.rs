@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInputOutput {
+pub struct DescribeInputOutput  {
     /// <p>Information about the input.</p>
     #[doc(hidden)]
     pub input: std::option::Option<crate::types::Input>,
@@ -10,15 +10,15 @@ pub struct DescribeInputOutput {
 }
 impl DescribeInputOutput {
     /// <p>Information about the input.</p>
-    pub fn input(&self) -> std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInputOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeInputOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput).
     pub fn builder() -> crate::operation::describe_input::builders::DescribeInputOutputBuilder {
@@ -41,23 +41,24 @@ impl DescribeInputOutputBuilder {
     }
     /// <p>Information about the input.</p>
     pub fn set_input(mut self, input: std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput).
     pub fn build(self) -> crate::operation::describe_input::DescribeInputOutput {
         crate::operation::describe_input::DescribeInputOutput {
-            input: self.input,
+            input: self.input
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

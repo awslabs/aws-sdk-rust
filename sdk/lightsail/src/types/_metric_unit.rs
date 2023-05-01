@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metricunit = unimplemented!();
 /// match metricunit {
@@ -55,22 +55,14 @@
 /// Specifically, when `metricunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MetricUnit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -127,118 +119,91 @@ pub enum MetricUnit {
     #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricUnit {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bits" => MetricUnit::Bits,
-            "Bits/Second" => MetricUnit::BitsSecond,
-            "Bytes" => MetricUnit::Bytes,
-            "Bytes/Second" => MetricUnit::BytesSecond,
-            "Count" => MetricUnit::Count,
-            "Count/Second" => MetricUnit::CountSecond,
-            "Gigabits" => MetricUnit::Gigabits,
-            "Gigabits/Second" => MetricUnit::GigabitsSecond,
-            "Gigabytes" => MetricUnit::Gigabytes,
-            "Gigabytes/Second" => MetricUnit::GigabytesSecond,
-            "Kilobits" => MetricUnit::Kilobits,
-            "Kilobits/Second" => MetricUnit::KilobitsSecond,
-            "Kilobytes" => MetricUnit::Kilobytes,
-            "Kilobytes/Second" => MetricUnit::KilobytesSecond,
-            "Megabits" => MetricUnit::Megabits,
-            "Megabits/Second" => MetricUnit::MegabitsSecond,
-            "Megabytes" => MetricUnit::Megabytes,
-            "Megabytes/Second" => MetricUnit::MegabytesSecond,
-            "Microseconds" => MetricUnit::Microseconds,
-            "Milliseconds" => MetricUnit::Milliseconds,
-            "None" => MetricUnit::None,
-            "Percent" => MetricUnit::Percent,
-            "Seconds" => MetricUnit::Seconds,
-            "Terabits" => MetricUnit::Terabits,
-            "Terabits/Second" => MetricUnit::TerabitsSecond,
-            "Terabytes" => MetricUnit::Terabytes,
-            "Terabytes/Second" => MetricUnit::TerabytesSecond,
-            other => MetricUnit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Bits" => MetricUnit::Bits,
+"Bits/Second" => MetricUnit::BitsSecond,
+"Bytes" => MetricUnit::Bytes,
+"Bytes/Second" => MetricUnit::BytesSecond,
+"Count" => MetricUnit::Count,
+"Count/Second" => MetricUnit::CountSecond,
+"Gigabits" => MetricUnit::Gigabits,
+"Gigabits/Second" => MetricUnit::GigabitsSecond,
+"Gigabytes" => MetricUnit::Gigabytes,
+"Gigabytes/Second" => MetricUnit::GigabytesSecond,
+"Kilobits" => MetricUnit::Kilobits,
+"Kilobits/Second" => MetricUnit::KilobitsSecond,
+"Kilobytes" => MetricUnit::Kilobytes,
+"Kilobytes/Second" => MetricUnit::KilobytesSecond,
+"Megabits" => MetricUnit::Megabits,
+"Megabits/Second" => MetricUnit::MegabitsSecond,
+"Megabytes" => MetricUnit::Megabytes,
+"Megabytes/Second" => MetricUnit::MegabytesSecond,
+"Microseconds" => MetricUnit::Microseconds,
+"Milliseconds" => MetricUnit::Milliseconds,
+"None" => MetricUnit::None,
+"Percent" => MetricUnit::Percent,
+"Seconds" => MetricUnit::Seconds,
+"Terabits" => MetricUnit::Terabits,
+"Terabits/Second" => MetricUnit::TerabitsSecond,
+"Terabytes" => MetricUnit::Terabytes,
+"Terabytes/Second" => MetricUnit::TerabytesSecond,
+other => MetricUnit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MetricUnit::from(s))
+                }
+            }
 impl MetricUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricUnit::Bits => "Bits",
-            MetricUnit::BitsSecond => "Bits/Second",
-            MetricUnit::Bytes => "Bytes",
-            MetricUnit::BytesSecond => "Bytes/Second",
-            MetricUnit::Count => "Count",
-            MetricUnit::CountSecond => "Count/Second",
-            MetricUnit::Gigabits => "Gigabits",
-            MetricUnit::GigabitsSecond => "Gigabits/Second",
-            MetricUnit::Gigabytes => "Gigabytes",
-            MetricUnit::GigabytesSecond => "Gigabytes/Second",
-            MetricUnit::Kilobits => "Kilobits",
-            MetricUnit::KilobitsSecond => "Kilobits/Second",
-            MetricUnit::Kilobytes => "Kilobytes",
-            MetricUnit::KilobytesSecond => "Kilobytes/Second",
-            MetricUnit::Megabits => "Megabits",
-            MetricUnit::MegabitsSecond => "Megabits/Second",
-            MetricUnit::Megabytes => "Megabytes",
-            MetricUnit::MegabytesSecond => "Megabytes/Second",
-            MetricUnit::Microseconds => "Microseconds",
-            MetricUnit::Milliseconds => "Milliseconds",
-            MetricUnit::None => "None",
-            MetricUnit::Percent => "Percent",
-            MetricUnit::Seconds => "Seconds",
-            MetricUnit::Terabits => "Terabits",
-            MetricUnit::TerabitsSecond => "Terabits/Second",
-            MetricUnit::Terabytes => "Terabytes",
-            MetricUnit::TerabytesSecond => "Terabytes/Second",
-            MetricUnit::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricUnit::Bits => "Bits",
+    MetricUnit::BitsSecond => "Bits/Second",
+    MetricUnit::Bytes => "Bytes",
+    MetricUnit::BytesSecond => "Bytes/Second",
+    MetricUnit::Count => "Count",
+    MetricUnit::CountSecond => "Count/Second",
+    MetricUnit::Gigabits => "Gigabits",
+    MetricUnit::GigabitsSecond => "Gigabits/Second",
+    MetricUnit::Gigabytes => "Gigabytes",
+    MetricUnit::GigabytesSecond => "Gigabytes/Second",
+    MetricUnit::Kilobits => "Kilobits",
+    MetricUnit::KilobitsSecond => "Kilobits/Second",
+    MetricUnit::Kilobytes => "Kilobytes",
+    MetricUnit::KilobytesSecond => "Kilobytes/Second",
+    MetricUnit::Megabits => "Megabits",
+    MetricUnit::MegabitsSecond => "Megabits/Second",
+    MetricUnit::Megabytes => "Megabytes",
+    MetricUnit::MegabytesSecond => "Megabytes/Second",
+    MetricUnit::Microseconds => "Microseconds",
+    MetricUnit::Milliseconds => "Milliseconds",
+    MetricUnit::None => "None",
+    MetricUnit::Percent => "Percent",
+    MetricUnit::Seconds => "Seconds",
+    MetricUnit::Terabits => "Terabits",
+    MetricUnit::TerabitsSecond => "Terabits/Second",
+    MetricUnit::Terabytes => "Terabytes",
+    MetricUnit::TerabytesSecond => "Terabytes/Second",
+    MetricUnit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"]
+                }
+            }
 impl AsRef<str> for MetricUnit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

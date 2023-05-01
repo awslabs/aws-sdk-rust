@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateCustomerGatewayInput {
+pub struct DisassociateCustomerGatewayInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateCustomerGatewayInput {
 }
 impl DisassociateCustomerGatewayInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn customer_gateway_arn(&self) -> std::option::Option<& str> {
         self.customer_gateway_arn.as_deref()
     }
 }
 impl DisassociateCustomerGatewayInput {
     /// Creates a new builder-style object to manufacture [`DisassociateCustomerGatewayInput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput).
-    pub fn builder() -> crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayInputBuilder {
         crate::operation::disassociate_customer_gateway::builders::DisassociateCustomerGatewayInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl DisassociateCustomerGatewayInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,25 +50,19 @@ impl DisassociateCustomerGatewayInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn set_customer_gateway_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.customer_gateway_arn = input;
-        self
+    pub fn set_customer_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.customer_gateway_arn = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateCustomerGatewayInput`](crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayInput {
-                global_network_id: self.global_network_id,
-                customer_gateway_arn: self.customer_gateway_arn,
-            },
+                global_network_id: self.global_network_id
+                ,
+                customer_gateway_arn: self.customer_gateway_arn
+                ,
+            }
         )
     }
 }
+

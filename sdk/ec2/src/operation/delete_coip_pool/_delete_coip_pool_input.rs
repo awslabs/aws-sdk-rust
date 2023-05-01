@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCoipPoolInput {
+pub struct DeleteCoipPoolInput  {
     /// <p>The ID of the CoIP pool that you want to delete. </p>
     #[doc(hidden)]
     pub coip_pool_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteCoipPoolInput {
 }
 impl DeleteCoipPoolInput {
     /// <p>The ID of the CoIP pool that you want to delete. </p>
-    pub fn coip_pool_id(&self) -> std::option::Option<&str> {
+    pub fn coip_pool_id(&self) -> std::option::Option<& str> {
         self.coip_pool_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -42,8 +42,7 @@ impl DeleteCoipPoolInputBuilder {
     }
     /// <p>The ID of the CoIP pool that you want to delete. </p>
     pub fn set_coip_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.coip_pool_id = input;
-        self
+        self.coip_pool_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -52,19 +51,18 @@ impl DeleteCoipPoolInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCoipPoolInput`](crate::operation::delete_coip_pool::DeleteCoipPoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_coip_pool::DeleteCoipPoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_coip_pool::DeleteCoipPoolInput {
-            coip_pool_id: self.coip_pool_id,
-            dry_run: self.dry_run,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_coip_pool::DeleteCoipPoolInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_coip_pool::DeleteCoipPoolInput {
+                coip_pool_id: self.coip_pool_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
+        )
     }
 }
+

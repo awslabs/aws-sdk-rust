@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateChangeSetOutput {
+pub struct GenerateChangeSetOutput  {
     /// <p>The location of the Amazon S3 object.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::types::S3Location>,
@@ -10,19 +10,18 @@ pub struct GenerateChangeSetOutput {
 }
 impl GenerateChangeSetOutput {
     /// <p>The location of the Amazon S3 object.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GenerateChangeSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GenerateChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`GenerateChangeSetOutput`](crate::operation::generate_change_set::GenerateChangeSetOutput).
-    pub fn builder(
-    ) -> crate::operation::generate_change_set::builders::GenerateChangeSetOutputBuilder {
+    pub fn builder() -> crate::operation::generate_change_set::builders::GenerateChangeSetOutputBuilder {
         crate::operation::generate_change_set::builders::GenerateChangeSetOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl GenerateChangeSetOutputBuilder {
     }
     /// <p>The location of the Amazon S3 object.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GenerateChangeSetOutput`](crate::operation::generate_change_set::GenerateChangeSetOutput).
     pub fn build(self) -> crate::operation::generate_change_set::GenerateChangeSetOutput {
         crate::operation::generate_change_set::GenerateChangeSetOutput {
-            s3_location: self.s3_location,
+            s3_location: self.s3_location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelReadMarkerOutput {
+pub struct UpdateChannelReadMarkerOutput  {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct UpdateChannelReadMarkerOutput {
 }
 impl UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateChannelReadMarkerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateChannelReadMarkerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput).
-    pub fn builder(
-    ) -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder {
         crate::operation::update_channel_read_marker::builders::UpdateChannelReadMarkerOutputBuilder::default()
     }
 }
@@ -43,25 +41,24 @@ impl UpdateChannelReadMarkerOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateChannelReadMarkerOutput`](crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput {
+    pub fn build(self) -> crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput {
         crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput {
-            channel_arn: self.channel_arn,
+            channel_arn: self.channel_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

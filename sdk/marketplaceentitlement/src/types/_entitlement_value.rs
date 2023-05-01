@@ -3,7 +3,7 @@
 /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitlementValue {
+pub struct EntitlementValue  {
     /// <p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>
     #[doc(hidden)]
     pub integer_value: std::option::Option<i32>,
@@ -31,7 +31,7 @@ impl EntitlementValue {
         self.boolean_value
     }
     /// <p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>
-    pub fn string_value(&self) -> std::option::Option<&str> {
+    pub fn string_value(&self) -> std::option::Option<& str> {
         self.string_value.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl EntitlementValueBuilder {
     }
     /// <p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>
     pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.integer_value = input;
-        self
+        self.integer_value = input; self
     }
     /// <p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>
     pub fn double_value(mut self, input: f64) -> Self {
@@ -69,8 +68,7 @@ impl EntitlementValueBuilder {
     }
     /// <p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>
     pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.double_value = input;
-        self
+        self.double_value = input; self
     }
     /// <p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>
     pub fn boolean_value(mut self, input: bool) -> Self {
@@ -79,8 +77,7 @@ impl EntitlementValueBuilder {
     }
     /// <p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>
     pub fn set_boolean_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.boolean_value = input;
-        self
+        self.boolean_value = input; self
     }
     /// <p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>
     pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl EntitlementValueBuilder {
     }
     /// <p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>
     pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.string_value = input;
-        self
+        self.string_value = input; self
     }
     /// Consumes the builder and constructs a [`EntitlementValue`](crate::types::EntitlementValue).
     pub fn build(self) -> crate::types::EntitlementValue {
         crate::types::EntitlementValue {
-            integer_value: self.integer_value,
-            double_value: self.double_value,
-            boolean_value: self.boolean_value,
-            string_value: self.string_value,
+            integer_value: self.integer_value
+            ,
+            double_value: self.double_value
+            ,
+            boolean_value: self.boolean_value
+            ,
+            string_value: self.string_value
+            ,
         }
     }
 }
+

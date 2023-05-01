@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminListUserAuthEventsInput {
+pub struct AdminListUserAuthEventsInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct AdminListUserAuthEventsInput {
 }
 impl AdminListUserAuthEventsInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user pool username or an alias.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
@@ -30,11 +30,11 @@ impl AdminListUserAuthEventsInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for AdminListUserAuthEventsInput {
+impl  std::fmt::Debug for AdminListUserAuthEventsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminListUserAuthEventsInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -46,9 +46,7 @@ impl std::fmt::Debug for AdminListUserAuthEventsInput {
 }
 impl AdminListUserAuthEventsInput {
     /// Creates a new builder-style object to manufacture [`AdminListUserAuthEventsInput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsInput).
-    pub fn builder(
-    ) -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder {
         crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder::default()
     }
 }
@@ -70,8 +68,7 @@ impl AdminListUserAuthEventsInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user pool username or an alias.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +77,7 @@ impl AdminListUserAuthEventsInputBuilder {
     }
     /// <p>The user pool username or an alias.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -90,8 +86,7 @@ impl AdminListUserAuthEventsInputBuilder {
     }
     /// <p>The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,23 +95,21 @@ impl AdminListUserAuthEventsInputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`AdminListUserAuthEventsInput`](crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
@@ -130,3 +123,4 @@ impl std::fmt::Debug for AdminListUserAuthEventsInputBuilder {
         formatter.finish()
     }
 }
+

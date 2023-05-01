@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSetRevisionsInput {
+pub struct ListDataSetRevisionsInput  {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListDataSetRevisionsInput {
 }
 impl ListDataSetRevisionsInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The maximum number of results returned by a single call.</p>
@@ -23,14 +23,13 @@ impl ListDataSetRevisionsInput {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListDataSetRevisionsInput {
     /// Creates a new builder-style object to manufacture [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder {
+    pub fn builder() -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder {
         crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListDataSetRevisionsInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl ListDataSetRevisionsInputBuilder {
     }
     /// <p>The maximum number of results returned by a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,21 @@ impl ListDataSetRevisionsInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListDataSetRevisionsInput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_data_set_revisions::ListDataSetRevisionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_data_set_revisions::ListDataSetRevisionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_data_set_revisions::ListDataSetRevisionsInput {
-                data_set_id: self.data_set_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                data_set_id: self.data_set_id
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

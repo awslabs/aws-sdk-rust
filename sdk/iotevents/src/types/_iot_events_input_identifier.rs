@@ -3,14 +3,14 @@
 /// <p> The identifier of the input routed to AWS IoT Events. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IotEventsInputIdentifier {
+pub struct IotEventsInputIdentifier  {
     /// <p> The name of the input routed to AWS IoT Events. </p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
 }
 impl IotEventsInputIdentifier {
     /// <p> The name of the input routed to AWS IoT Events. </p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> std::option::Option<& str> {
         self.input_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl IotEventsInputIdentifierBuilder {
     }
     /// <p> The name of the input routed to AWS IoT Events. </p>
     pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// Consumes the builder and constructs a [`IotEventsInputIdentifier`](crate::types::IotEventsInputIdentifier).
     pub fn build(self) -> crate::types::IotEventsInputIdentifier {
         crate::types::IotEventsInputIdentifier {
-            input_name: self.input_name,
+            input_name: self.input_name
+            ,
         }
     }
 }
+

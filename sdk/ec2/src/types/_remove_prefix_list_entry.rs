@@ -3,14 +3,14 @@
 /// <p>An entry for a prefix list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePrefixListEntry {
+pub struct RemovePrefixListEntry  {
     /// <p>The CIDR block.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl RemovePrefixListEntry {
     /// <p>The CIDR block.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl RemovePrefixListEntryBuilder {
     }
     /// <p>The CIDR block.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// Consumes the builder and constructs a [`RemovePrefixListEntry`](crate::types::RemovePrefixListEntry).
     pub fn build(self) -> crate::types::RemovePrefixListEntry {
-        crate::types::RemovePrefixListEntry { cidr: self.cidr }
+        crate::types::RemovePrefixListEntry {
+            cidr: self.cidr
+            ,
+        }
     }
 }
+

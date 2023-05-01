@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSessionStatusOutput {
+pub struct GetSessionStatusOutput  {
     /// <p>The session ID.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct GetSessionStatusOutput {
 }
 impl GetSessionStatusOutput {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>Contains information about the status of the session.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SessionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::SessionStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSessionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSessionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionStatusOutput`](crate::operation::get_session_status::GetSessionStatusOutput).
-    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusOutputBuilder {
         crate::operation::get_session_status::builders::GetSessionStatusOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl GetSessionStatusOutputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>Contains information about the status of the session.</p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
@@ -60,24 +58,26 @@ impl GetSessionStatusOutputBuilder {
     }
     /// <p>Contains information about the status of the session.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::SessionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSessionStatusOutput`](crate::operation::get_session_status::GetSessionStatusOutput).
     pub fn build(self) -> crate::operation::get_session_status::GetSessionStatusOutput {
         crate::operation::get_session_status::GetSessionStatusOutput {
-            session_id: self.session_id,
-            status: self.status,
+            session_id: self.session_id
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

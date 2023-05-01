@@ -3,7 +3,7 @@
 /// Create maintenance setting for a flow
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddMaintenance {
+pub struct AddMaintenance  {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::types::MaintenanceDay>,
@@ -13,11 +13,11 @@ pub struct AddMaintenance {
 }
 impl AddMaintenance {
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn maintenance_day(&self) -> std::option::Option<&crate::types::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> std::option::Option<& crate::types::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
+    pub fn maintenance_start_hour(&self) -> std::option::Option<& str> {
         self.maintenance_start_hour.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl AddMaintenanceBuilder {
         self
     }
     /// A day of a week when the maintenance will happen. Use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn set_maintenance_day(
-        mut self,
-        input: std::option::Option<crate::types::MaintenanceDay>,
-    ) -> Self {
-        self.maintenance_day = input;
-        self
+    pub fn set_maintenance_day(mut self, input: std::option::Option<crate::types::MaintenanceDay>) -> Self {
+        self.maintenance_day = input; self
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl AddMaintenanceBuilder {
         self
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn set_maintenance_start_hour(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.maintenance_start_hour = input;
-        self
+    pub fn set_maintenance_start_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.maintenance_start_hour = input; self
     }
     /// Consumes the builder and constructs a [`AddMaintenance`](crate::types::AddMaintenance).
     pub fn build(self) -> crate::types::AddMaintenance {
         crate::types::AddMaintenance {
-            maintenance_day: self.maintenance_day,
-            maintenance_start_hour: self.maintenance_start_hour,
+            maintenance_day: self.maintenance_day
+            ,
+            maintenance_start_hour: self.maintenance_start_hour
+            ,
         }
     }
 }
+

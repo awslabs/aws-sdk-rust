@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLocalGatewayRouteInput {
+pub struct DeleteLocalGatewayRouteInput  {
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DeleteLocalGatewayRouteInput {
 }
 impl DeleteLocalGatewayRouteInput {
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -30,15 +30,13 @@ impl DeleteLocalGatewayRouteInput {
         self.dry_run
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
 }
 impl DeleteLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`DeleteLocalGatewayRouteInput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput).
-    pub fn builder(
-    ) -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder {
         crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder::default()
     }
 }
@@ -59,12 +57,8 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,12 +66,8 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_route_table_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -86,8 +76,7 @@ impl DeleteLocalGatewayRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,27 +84,23 @@ impl DeleteLocalGatewayRouteInputBuilder {
         self
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+    pub fn set_destination_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_prefix_list_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLocalGatewayRouteInput`](crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block,
-                local_gateway_route_table_id: self.local_gateway_route_table_id,
-                dry_run: self.dry_run,
-                destination_prefix_list_id: self.destination_prefix_list_id,
-            },
+                destination_cidr_block: self.destination_cidr_block
+                ,
+                local_gateway_route_table_id: self.local_gateway_route_table_id
+                ,
+                dry_run: self.dry_run
+                ,
+                destination_prefix_list_id: self.destination_prefix_list_id
+                ,
+            }
         )
     }
 }
+

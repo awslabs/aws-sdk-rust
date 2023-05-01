@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceServerInput {
+pub struct UpdateResourceServerInput  {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct UpdateResourceServerInput {
 }
 impl UpdateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The identifier for the resource server.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>The name of the resource server.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn scopes(&self) -> std::option::Option<&[crate::types::ResourceServerScopeType]> {
+    pub fn scopes(&self) -> std::option::Option<& [crate::types::ResourceServerScopeType]> {
         self.scopes.as_deref()
     }
 }
 impl UpdateResourceServerInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceServerInput`](crate::operation::update_resource_server::UpdateResourceServerInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_server::builders::UpdateResourceServerInputBuilder {
+    pub fn builder() -> crate::operation::update_resource_server::builders::UpdateResourceServerInputBuilder {
         crate::operation::update_resource_server::builders::UpdateResourceServerInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl UpdateResourceServerInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The identifier for the resource server.</p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl UpdateResourceServerInputBuilder {
     }
     /// <p>The identifier for the resource server.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>The name of the resource server.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl UpdateResourceServerInputBuilder {
     }
     /// <p>The name of the resource server.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `scopes`.
     ///
@@ -89,32 +85,28 @@ impl UpdateResourceServerInputBuilder {
     /// <p>The scope values to be set for the resource server.</p>
     pub fn scopes(mut self, input: crate::types::ResourceServerScopeType) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = Some(v);
-        self
+                        v.push(input);
+                        self.scopes = Some(v);
+                        self
     }
     /// <p>The scope values to be set for the resource server.</p>
-    pub fn set_scopes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceServerScopeType>>,
-    ) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
+        self.scopes = input; self
     }
     /// Consumes the builder and constructs a [`UpdateResourceServerInput`](crate::operation::update_resource_server::UpdateResourceServerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_resource_server::UpdateResourceServerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_resource_server::UpdateResourceServerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_resource_server::UpdateResourceServerInput {
-                user_pool_id: self.user_pool_id,
-                identifier: self.identifier,
-                name: self.name,
-                scopes: self.scopes,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                scopes: self.scopes
+                ,
+            }
         )
     }
 }
+

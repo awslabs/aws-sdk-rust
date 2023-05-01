@@ -4,81 +4,56 @@ pub use crate::operation::update_model_package::_update_model_package_output::Up
 pub use crate::operation::update_model_package::_update_model_package_input::UpdateModelPackageInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateModelPackage`.
-///
+/// 
 /// <p>Updates a versioned model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateModelPackageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder,
-}
-impl UpdateModelPackageFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_model_package::builders::UpdateModelPackageInputBuilder
+            }
+impl UpdateModelPackageFluentBuilder  {
     /// Creates a new `UpdateModelPackage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_model_package::UpdateModelPackage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_model_package::UpdateModelPackageOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_model_package::UpdateModelPackageError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_model_package::UpdateModelPackage, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_model_package::UpdateModelPackageOutput, aws_smithy_http::result::SdkError<crate::operation::update_model_package::UpdateModelPackageError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
     pub fn model_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_package_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-    pub fn set_model_package_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_model_package_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_model_package_arn(input);
         self
     }
@@ -88,10 +63,7 @@ impl UpdateModelPackageFluentBuilder {
         self
     }
     /// <p>The approval status of the model.</p>
-    pub fn set_model_approval_status(
-        mut self,
-        input: std::option::Option<crate::types::ModelApprovalStatus>,
-    ) -> Self {
+    pub fn set_model_approval_status(mut self, input: std::option::Option<crate::types::ModelApprovalStatus>) -> Self {
         self.inner = self.inner.set_model_approval_status(input);
         self
     }
@@ -101,10 +73,7 @@ impl UpdateModelPackageFluentBuilder {
         self
     }
     /// <p>A description for the approval status of the model.</p>
-    pub fn set_approval_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_approval_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_approval_description(input);
         self
     }
@@ -113,21 +82,12 @@ impl UpdateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_customer_metadata_properties`](Self::set_customer_metadata_properties).
     ///
     /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn customer_metadata_properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn customer_metadata_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.customer_metadata_properties(k.into(), v.into());
         self
     }
     /// <p>The metadata properties associated with the model package versions.</p>
-    pub fn set_customer_metadata_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_customer_metadata_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_customer_metadata_properties(input);
         self
     }
@@ -136,20 +96,12 @@ impl UpdateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_customer_metadata_properties_to_remove`](Self::set_customer_metadata_properties_to_remove).
     ///
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn customer_metadata_properties_to_remove(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .customer_metadata_properties_to_remove(input.into());
+    pub fn customer_metadata_properties_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.customer_metadata_properties_to_remove(input.into());
         self
     }
     /// <p>The metadata properties associated with the model package versions to remove.</p>
-    pub fn set_customer_metadata_properties_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_customer_metadata_properties_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_customer_metadata_properties_to_remove(input);
         self
     }
@@ -158,23 +110,14 @@ impl UpdateModelPackageFluentBuilder {
     /// To override the contents of this collection use [`set_additional_inference_specifications_to_add`](Self::set_additional_inference_specifications_to_add).
     ///
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn additional_inference_specifications_to_add(
-        mut self,
-        input: crate::types::AdditionalInferenceSpecificationDefinition,
-    ) -> Self {
+    pub fn additional_inference_specifications_to_add(mut self, input: crate::types::AdditionalInferenceSpecificationDefinition) -> Self {
         self.inner = self.inner.additional_inference_specifications_to_add(input);
         self
     }
     /// <p>An array of additional Inference Specification objects to be added to the existing array additional Inference Specification. Total number of additional Inference Specifications can not exceed 15. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.</p>
-    pub fn set_additional_inference_specifications_to_add(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>,
-        >,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_additional_inference_specifications_to_add(input);
+    pub fn set_additional_inference_specifications_to_add(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalInferenceSpecificationDefinition>>) -> Self {
+        self.inner = self.inner.set_additional_inference_specifications_to_add(input);
         self
     }
 }
+

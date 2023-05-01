@@ -4,71 +4,49 @@ pub use crate::operation::disable_stage_transition::_disable_stage_transition_ou
 pub use crate::operation::disable_stage_transition::_disable_stage_transition_input::DisableStageTransitionInputBuilder;
 
 /// Fluent builder constructing a request to `DisableStageTransition`.
-///
+/// 
 /// <p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableStageTransitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder,
-}
-impl DisableStageTransitionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder
+            }
+impl DisableStageTransitionFluentBuilder  {
     /// Creates a new `DisableStageTransition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disable_stage_transition::DisableStageTransition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::disable_stage_transition::DisableStageTransitionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::disable_stage_transition::DisableStageTransitionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::disable_stage_transition::DisableStageTransitionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::disable_stage_transition::DisableStageTransition, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::disable_stage_transition::DisableStageTransitionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::disable_stage_transition::DisableStageTransitionOutput, aws_smithy_http::result::SdkError<crate::operation::disable_stage_transition::DisableStageTransitionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
@@ -95,10 +73,7 @@ impl DisableStageTransitionFluentBuilder {
         self
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
-    pub fn set_transition_type(
-        mut self,
-        input: std::option::Option<crate::types::StageTransitionType>,
-    ) -> Self {
+    pub fn set_transition_type(mut self, input: std::option::Option<crate::types::StageTransitionType>) -> Self {
         self.inner = self.inner.set_transition_type(input);
         self
     }
@@ -113,3 +88,4 @@ impl DisableStageTransitionFluentBuilder {
         self
     }
 }
+

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportComponentInput {
+pub struct ImportComponentInput  {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -18,8 +18,8 @@ pub struct ImportComponentInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     #[doc(hidden)]
     pub semantic_version: std::option::Option<std::string::String>,
@@ -49,18 +49,17 @@ pub struct ImportComponentInput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The tags of the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The idempotency token of the component.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl ImportComponentInput {
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -72,53 +71,50 @@ impl ImportComponentInput {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
-    pub fn semantic_version(&self) -> std::option::Option<&str> {
+    pub fn semantic_version(&self) -> std::option::Option<& str> {
         self.semantic_version.as_deref()
     }
     /// <p>The description of the component. Describes the contents of the component.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(&self) -> std::option::Option<&str> {
+    pub fn change_description(&self) -> std::option::Option<& str> {
         self.change_description.as_deref()
     }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ComponentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ComponentType> {
         self.r#type.as_ref()
     }
     /// <p>The format of the resource that you want to import as a component.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::ComponentFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::ComponentFormat> {
         self.format.as_ref()
     }
     /// <p>The platform of the component.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The tags of the component.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The idempotency token of the component.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -143,8 +139,7 @@ pub struct ImportComponentInputBuilder {
     pub(crate) data: std::option::Option<std::string::String>,
     pub(crate) uri: std::option::Option<std::string::String>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl ImportComponentInputBuilder {
@@ -155,10 +150,9 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -170,14 +164,14 @@ impl ImportComponentInputBuilder {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.semantic_version = Some(input.into());
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -189,12 +183,11 @@ impl ImportComponentInputBuilder {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p>
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+    /// </major></p> 
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
     /// </note>
     pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.semantic_version = input;
-        self
+        self.semantic_version = input; self
     }
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,8 +196,7 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,12 +204,8 @@ impl ImportComponentInputBuilder {
         self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn set_change_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.change_description = input;
-        self
+    pub fn set_change_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.change_description = input; self
     }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
     pub fn r#type(mut self, input: crate::types::ComponentType) -> Self {
@@ -226,8 +214,7 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ComponentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The format of the resource that you want to import as a component.</p>
     pub fn format(mut self, input: crate::types::ComponentFormat) -> Self {
@@ -236,8 +223,7 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The format of the resource that you want to import as a component.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::ComponentFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The platform of the component.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -246,8 +232,7 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The platform of the component.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,8 +241,7 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +250,7 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,33 +259,22 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the component.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags of the component.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The idempotency token of the component.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -311,29 +283,38 @@ impl ImportComponentInputBuilder {
     }
     /// <p>The idempotency token of the component.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`ImportComponentInput`](crate::operation::import_component::ImportComponentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_component::ImportComponentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::import_component::ImportComponentInput {
-            name: self.name,
-            semantic_version: self.semantic_version,
-            description: self.description,
-            change_description: self.change_description,
-            r#type: self.r#type,
-            format: self.format,
-            platform: self.platform,
-            data: self.data,
-            uri: self.uri,
-            kms_key_id: self.kms_key_id,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> Result<crate::operation::import_component::ImportComponentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::import_component::ImportComponentInput {
+                name: self.name
+                ,
+                semantic_version: self.semantic_version
+                ,
+                description: self.description
+                ,
+                change_description: self.change_description
+                ,
+                r#type: self.r#type
+                ,
+                format: self.format
+                ,
+                platform: self.platform
+                ,
+                data: self.data
+                ,
+                uri: self.uri
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

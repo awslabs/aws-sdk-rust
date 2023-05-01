@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetInput {
+pub struct CreateDatasetInput  {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -20,35 +20,31 @@ pub struct CreateDatasetInput {
     pub path_options: std::option::Option<crate::types::PathOptions>,
     /// <p>Metadata tags to apply to this dataset.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDatasetInput {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::InputFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::InputFormat> {
         self.format.as_ref()
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    pub fn format_options(&self) -> std::option::Option<&crate::types::FormatOptions> {
+    pub fn format_options(&self) -> std::option::Option<& crate::types::FormatOptions> {
         self.format_options.as_ref()
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
-    pub fn input(&self) -> std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::types::Input> {
         self.input.as_ref()
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn path_options(&self) -> std::option::Option<&crate::types::PathOptions> {
+    pub fn path_options(&self) -> std::option::Option<& crate::types::PathOptions> {
         self.path_options.as_ref()
     }
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -68,8 +64,7 @@ pub struct CreateDatasetInputBuilder {
     pub(crate) format_options: std::option::Option<crate::types::FormatOptions>,
     pub(crate) input: std::option::Option<crate::types::Input>,
     pub(crate) path_options: std::option::Option<crate::types::PathOptions>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDatasetInputBuilder {
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
@@ -79,8 +74,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn format(mut self, input: crate::types::InputFormat) -> Self {
@@ -89,8 +83,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::InputFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -98,12 +91,8 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
-    pub fn set_format_options(
-        mut self,
-        input: std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
-        self.format_options = input;
-        self
+    pub fn set_format_options(mut self, input: std::option::Option<crate::types::FormatOptions>) -> Self {
+        self.format_options = input; self
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn input(mut self, input: crate::types::Input) -> Self {
@@ -112,8 +101,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
     pub fn set_input(mut self, input: std::option::Option<crate::types::Input>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
     pub fn path_options(mut self, input: crate::types::PathOptions) -> Self {
@@ -121,52 +109,42 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn set_path_options(
-        mut self,
-        input: std::option::Option<crate::types::PathOptions>,
-    ) -> Self {
-        self.path_options = input;
-        self
+    pub fn set_path_options(mut self, input: std::option::Option<crate::types::PathOptions>) -> Self {
+        self.path_options = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Metadata tags to apply to this dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_dataset::CreateDatasetInput {
-            name: self.name,
-            format: self.format,
-            format_options: self.format_options,
-            input: self.input,
-            path_options: self.path_options,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_dataset::CreateDatasetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_dataset::CreateDatasetInput {
+                name: self.name
+                ,
+                format: self.format
+                ,
+                format_options: self.format_options
+                ,
+                input: self.input
+                ,
+                path_options: self.path_options
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

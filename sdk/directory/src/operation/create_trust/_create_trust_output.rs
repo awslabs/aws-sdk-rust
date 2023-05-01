@@ -3,7 +3,7 @@
 /// <p>The result of a CreateTrust request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrustOutput {
+pub struct CreateTrustOutput  {
     /// <p>A unique identifier for the trust relationship that was created.</p>
     #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
@@ -11,15 +11,15 @@ pub struct CreateTrustOutput {
 }
 impl CreateTrustOutput {
     /// <p>A unique identifier for the trust relationship that was created.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> std::option::Option<& str> {
         self.trust_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrustOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTrustOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrustOutput`](crate::operation::create_trust::CreateTrustOutput).
     pub fn builder() -> crate::operation::create_trust::builders::CreateTrustOutputBuilder {
@@ -42,23 +42,24 @@ impl CreateTrustOutputBuilder {
     }
     /// <p>A unique identifier for the trust relationship that was created.</p>
     pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_id = input;
-        self
+        self.trust_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTrustOutput`](crate::operation::create_trust::CreateTrustOutput).
     pub fn build(self) -> crate::operation::create_trust::CreateTrustOutput {
         crate::operation::create_trust::CreateTrustOutput {
-            trust_id: self.trust_id,
+            trust_id: self.trust_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

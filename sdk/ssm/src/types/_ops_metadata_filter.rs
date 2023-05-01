@@ -3,7 +3,7 @@
 /// <p>A filter to limit the number of OpsMetadata objects displayed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsMetadataFilter {
+pub struct OpsMetadataFilter  {
     /// <p>A filter key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OpsMetadataFilter {
 }
 impl OpsMetadataFilter {
     /// <p>A filter key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A filter value.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl OpsMetadataFilterBuilder {
     }
     /// <p>A filter key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -53,23 +52,22 @@ impl OpsMetadataFilterBuilder {
     /// <p>A filter value.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>A filter value.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`OpsMetadataFilter`](crate::types::OpsMetadataFilter).
     pub fn build(self) -> crate::types::OpsMetadataFilter {
         crate::types::OpsMetadataFilter {
-            key: self.key,
-            values: self.values,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

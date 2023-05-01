@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseProvisionedCapacityOutput {
+pub struct PurchaseProvisionedCapacityOutput  {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     #[doc(hidden)]
     pub capacity_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct PurchaseProvisionedCapacityOutput {
 }
 impl PurchaseProvisionedCapacityOutput {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    pub fn capacity_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_id(&self) -> std::option::Option<& str> {
         self.capacity_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PurchaseProvisionedCapacityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PurchaseProvisionedCapacityOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseProvisionedCapacityOutput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput).
-    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder {
         crate::operation::purchase_provisioned_capacity::builders::PurchaseProvisionedCapacityOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl PurchaseProvisionedCapacityOutputBuilder {
     }
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     pub fn set_capacity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capacity_id = input;
-        self
+        self.capacity_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PurchaseProvisionedCapacityOutput`](crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput {
+    pub fn build(self) -> crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput {
         crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput {
-            capacity_id: self.capacity_id,
+            capacity_id: self.capacity_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

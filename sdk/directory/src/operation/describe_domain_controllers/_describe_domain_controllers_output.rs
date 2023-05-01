@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainControllersOutput {
+pub struct DescribeDomainControllersOutput  {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     #[doc(hidden)]
     pub domain_controllers: std::option::Option<std::vec::Vec<crate::types::DomainController>>,
@@ -13,22 +13,22 @@ pub struct DescribeDomainControllersOutput {
 }
 impl DescribeDomainControllersOutput {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
-    pub fn domain_controllers(&self) -> std::option::Option<&[crate::types::DomainController]> {
+    pub fn domain_controllers(&self) -> std::option::Option<& [crate::types::DomainController]> {
         self.domain_controllers.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDomainControllersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDomainControllersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainControllersOutput`](crate::operation::describe_domain_controllers::DescribeDomainControllersOutput).
-    pub fn builder() -> crate::operation::describe_domain_controllers::builders::DescribeDomainControllersOutputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_controllers::builders::DescribeDomainControllersOutputBuilder {
         crate::operation::describe_domain_controllers::builders::DescribeDomainControllersOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl DescribeDomainControllersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomainControllersOutputBuilder {
-    pub(crate) domain_controllers:
-        std::option::Option<std::vec::Vec<crate::types::DomainController>>,
+    pub(crate) domain_controllers: std::option::Option<std::vec::Vec<crate::types::DomainController>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl DescribeDomainControllersOutputBuilder {
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
     pub fn domain_controllers(mut self, input: crate::types::DomainController) -> Self {
         let mut v = self.domain_controllers.unwrap_or_default();
-        v.push(input);
-        self.domain_controllers = Some(v);
-        self
+                        v.push(input);
+                        self.domain_controllers = Some(v);
+                        self
     }
     /// <p>List of the <code>DomainController</code> objects that were retrieved.</p>
-    pub fn set_domain_controllers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainController>>,
-    ) -> Self {
-        self.domain_controllers = input;
-        self
+    pub fn set_domain_controllers(mut self, input: std::option::Option<std::vec::Vec<crate::types::DomainController>>) -> Self {
+        self.domain_controllers = input; self
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,26 +64,26 @@ impl DescribeDomainControllersOutputBuilder {
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeDomainControllers</code> retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDomainControllersOutput`](crate::operation::describe_domain_controllers::DescribeDomainControllersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_domain_controllers::DescribeDomainControllersOutput {
+    pub fn build(self) -> crate::operation::describe_domain_controllers::DescribeDomainControllersOutput {
         crate::operation::describe_domain_controllers::DescribeDomainControllersOutput {
-            domain_controllers: self.domain_controllers,
-            next_token: self.next_token,
+            domain_controllers: self.domain_controllers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

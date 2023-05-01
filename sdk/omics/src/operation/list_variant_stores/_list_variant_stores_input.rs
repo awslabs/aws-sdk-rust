@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVariantStoresInput {
+pub struct ListVariantStoresInput  {
     /// <p>The maximum number of stores to return in one page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -22,22 +22,21 @@ impl ListVariantStoresInput {
         self.max_results
     }
     /// <p>A list of store IDs.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::ListVariantStoresFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::ListVariantStoresFilter> {
         self.filter.as_ref()
     }
 }
 impl ListVariantStoresInput {
     /// Creates a new builder-style object to manufacture [`ListVariantStoresInput`](crate::operation::list_variant_stores::ListVariantStoresInput).
-    pub fn builder(
-    ) -> crate::operation::list_variant_stores::builders::ListVariantStoresInputBuilder {
+    pub fn builder() -> crate::operation::list_variant_stores::builders::ListVariantStoresInputBuilder {
         crate::operation::list_variant_stores::builders::ListVariantStoresInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListVariantStoresInputBuilder {
     }
     /// <p>The maximum number of stores to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `ids`.
     ///
@@ -69,17 +67,13 @@ impl ListVariantStoresInputBuilder {
     /// <p>A list of store IDs.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
     /// <p>A list of store IDs.</p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +82,7 @@ impl ListVariantStoresInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ListVariantStoresFilter) -> Self {
@@ -97,27 +90,23 @@ impl ListVariantStoresInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::ListVariantStoresFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::ListVariantStoresFilter>) -> Self {
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`ListVariantStoresInput`](crate::operation::list_variant_stores::ListVariantStoresInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_variant_stores::ListVariantStoresInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_variant_stores::ListVariantStoresInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_variant_stores::ListVariantStoresInput {
-                max_results: self.max_results,
-                ids: self.ids,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
+                max_results: self.max_results
+                ,
+                ids: self.ids
+                ,
+                next_token: self.next_token
+                ,
+                filter: self.filter
+                ,
+            }
         )
     }
 }
+

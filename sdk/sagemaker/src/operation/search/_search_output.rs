@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchOutput {
+pub struct SearchOutput  {
     /// <p>A list of <code>SearchRecord</code> objects.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::types::SearchRecord>>,
@@ -13,19 +13,19 @@ pub struct SearchOutput {
 }
 impl SearchOutput {
     /// <p>A list of <code>SearchRecord</code> objects.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::SearchRecord]> {
+    pub fn results(&self) -> std::option::Option<& [crate::types::SearchRecord]> {
         self.results.as_deref()
     }
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchOutput {
     /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::operation::search::SearchOutput).
     pub fn builder() -> crate::operation::search::builders::SearchOutputBuilder {
@@ -49,17 +49,13 @@ impl SearchOutputBuilder {
     /// <p>A list of <code>SearchRecord</code> objects.</p>
     pub fn results(mut self, input: crate::types::SearchRecord) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = Some(v);
-        self
+                        v.push(input);
+                        self.results = Some(v);
+                        self
     }
     /// <p>A list of <code>SearchRecord</code> objects.</p>
-    pub fn set_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SearchRecord>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::SearchRecord>>) -> Self {
+        self.results = input; self
     }
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl SearchOutputBuilder {
     }
     /// <p>If the result of the previous <code>Search</code> request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchOutput`](crate::operation::search::SearchOutput).
     pub fn build(self) -> crate::operation::search::SearchOutput {
         crate::operation::search::SearchOutput {
-            results: self.results,
-            next_token: self.next_token,
+            results: self.results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

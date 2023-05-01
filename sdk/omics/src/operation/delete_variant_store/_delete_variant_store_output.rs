@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVariantStoreOutput {
+pub struct DeleteVariantStoreOutput  {
     /// <p>The store's status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::StoreStatus>,
@@ -10,19 +10,18 @@ pub struct DeleteVariantStoreOutput {
 }
 impl DeleteVariantStoreOutput {
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::StoreStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVariantStoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVariantStoreOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder {
+    pub fn builder() -> crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder {
         crate::operation::delete_variant_store::builders::DeleteVariantStoreOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl DeleteVariantStoreOutputBuilder {
     }
     /// <p>The store's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVariantStoreOutput`](crate::operation::delete_variant_store::DeleteVariantStoreOutput).
     pub fn build(self) -> crate::operation::delete_variant_store::DeleteVariantStoreOutput {
         crate::operation::delete_variant_store::DeleteVariantStoreOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

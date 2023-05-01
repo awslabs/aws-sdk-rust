@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDevicePositionOutput {
+pub struct BatchGetDevicePositionOutput  {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
@@ -13,24 +13,22 @@ pub struct BatchGetDevicePositionOutput {
 }
 impl BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchGetDevicePositionError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchGetDevicePositionError]> {
         self.errors.as_deref()
     }
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    pub fn device_positions(&self) -> std::option::Option<&[crate::types::DevicePosition]> {
+    pub fn device_positions(&self) -> std::option::Option<& [crate::types::DevicePosition]> {
         self.device_positions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetDevicePositionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionOutput`](crate::operation::batch_get_device_position::BatchGetDevicePositionOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder {
         crate::operation::batch_get_device_position::builders::BatchGetDevicePositionOutputBuilder::default()
     }
 }
@@ -39,8 +37,7 @@ impl BatchGetDevicePositionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetDevicePositionOutputBuilder {
-    pub(crate) errors:
-        std::option::Option<std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
+    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
     pub(crate) device_positions: std::option::Option<std::vec::Vec<crate::types::DevicePosition>>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl BatchGetDevicePositionOutputBuilder {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
     pub fn errors(mut self, input: crate::types::BatchGetDevicePositionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchGetDevicePositionError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetDevicePositionError>>) -> Self {
+        self.errors = input; self
     }
     /// Appends an item to `device_positions`.
     ///
@@ -71,35 +64,32 @@ impl BatchGetDevicePositionOutputBuilder {
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
     pub fn device_positions(mut self, input: crate::types::DevicePosition) -> Self {
         let mut v = self.device_positions.unwrap_or_default();
-        v.push(input);
-        self.device_positions = Some(v);
-        self
+                        v.push(input);
+                        self.device_positions = Some(v);
+                        self
     }
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
-    pub fn set_device_positions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DevicePosition>>,
-    ) -> Self {
-        self.device_positions = input;
-        self
+    pub fn set_device_positions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DevicePosition>>) -> Self {
+        self.device_positions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionOutput`](crate::operation::batch_get_device_position::BatchGetDevicePositionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_device_position::BatchGetDevicePositionOutput {
+    pub fn build(self) -> crate::operation::batch_get_device_position::BatchGetDevicePositionOutput {
         crate::operation::batch_get_device_position::BatchGetDevicePositionOutput {
-            errors: self.errors,
-            device_positions: self.device_positions,
+            errors: self.errors
+            ,
+            device_positions: self.device_positions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p> Container for request parameters to <code> <code>GetUpgradeStatus</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUpgradeStatusInput {
+pub struct GetUpgradeStatusInput  {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetUpgradeStatusInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl GetUpgradeStatusInput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
-    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder {
         crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl GetUpgradeStatusInputBuilder {
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// Consumes the builder and constructs a [`GetUpgradeStatusInput`](crate::operation::get_upgrade_status::GetUpgradeStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_upgrade_status::GetUpgradeStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_upgrade_status::GetUpgradeStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_upgrade_status::GetUpgradeStatusInput {
-                domain_name: self.domain_name,
-            },
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

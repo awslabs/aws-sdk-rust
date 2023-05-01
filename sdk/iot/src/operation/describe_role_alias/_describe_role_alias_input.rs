@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRoleAliasInput {
+pub struct DescribeRoleAliasInput  {
     /// <p>The role alias to describe.</p>
     #[doc(hidden)]
     pub role_alias: std::option::Option<std::string::String>,
 }
 impl DescribeRoleAliasInput {
     /// <p>The role alias to describe.</p>
-    pub fn role_alias(&self) -> std::option::Option<&str> {
+    pub fn role_alias(&self) -> std::option::Option<& str> {
         self.role_alias.as_deref()
     }
 }
 impl DescribeRoleAliasInput {
     /// Creates a new builder-style object to manufacture [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
-    pub fn builder(
-    ) -> crate::operation::describe_role_alias::builders::DescribeRoleAliasInputBuilder {
+    pub fn builder() -> crate::operation::describe_role_alias::builders::DescribeRoleAliasInputBuilder {
         crate::operation::describe_role_alias::builders::DescribeRoleAliasInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeRoleAliasInputBuilder {
     }
     /// <p>The role alias to describe.</p>
     pub fn set_role_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_alias = input;
-        self
+        self.role_alias = input; self
     }
     /// Consumes the builder and constructs a [`DescribeRoleAliasInput`](crate::operation::describe_role_alias::DescribeRoleAliasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_role_alias::DescribeRoleAliasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_role_alias::DescribeRoleAliasInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_role_alias::DescribeRoleAliasInput {
-                role_alias: self.role_alias,
-            },
+                role_alias: self.role_alias
+                ,
+            }
         )
     }
 }
+

@@ -2,36 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateScramSecretOutput {
+pub struct BatchAssociateScramSecretOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of errors when associating secrets to cluster.</p>
     #[doc(hidden)]
-    pub unprocessed_scram_secrets:
-        std::option::Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>,
+    pub unprocessed_scram_secrets: std::option::Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateScramSecretOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>List of errors when associating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(
-        &self,
-    ) -> std::option::Option<&[crate::types::UnprocessedScramSecret]> {
+    pub fn unprocessed_scram_secrets(&self) -> std::option::Option<& [crate::types::UnprocessedScramSecret]> {
         self.unprocessed_scram_secrets.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchAssociateScramSecretOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchAssociateScramSecretOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateScramSecretOutput`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput).
-    pub fn builder() -> crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretOutputBuilder{
+    pub fn builder() -> crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretOutputBuilder {
         crate::operation::batch_associate_scram_secret::builders::BatchAssociateScramSecretOutputBuilder::default()
     }
 }
@@ -41,8 +38,7 @@ impl BatchAssociateScramSecretOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchAssociateScramSecretOutputBuilder {
     pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) unprocessed_scram_secrets:
-        std::option::Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>,
+    pub(crate) unprocessed_scram_secrets: std::option::Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>,
     _request_id: Option<String>,
 }
 impl BatchAssociateScramSecretOutputBuilder {
@@ -53,48 +49,41 @@ impl BatchAssociateScramSecretOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// Appends an item to `unprocessed_scram_secrets`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_scram_secrets`](Self::set_unprocessed_scram_secrets).
     ///
     /// <p>List of errors when associating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(
-        mut self,
-        input: crate::types::UnprocessedScramSecret,
-    ) -> Self {
+    pub fn unprocessed_scram_secrets(mut self, input: crate::types::UnprocessedScramSecret) -> Self {
         let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_scram_secrets = Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_scram_secrets = Some(v);
+                        self
     }
     /// <p>List of errors when associating secrets to cluster.</p>
-    pub fn set_unprocessed_scram_secrets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>,
-    ) -> Self {
-        self.unprocessed_scram_secrets = input;
-        self
+    pub fn set_unprocessed_scram_secrets(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnprocessedScramSecret>>) -> Self {
+        self.unprocessed_scram_secrets = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchAssociateScramSecretOutput`](crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput {
+    pub fn build(self) -> crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput {
         crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput {
-            cluster_arn: self.cluster_arn,
-            unprocessed_scram_secrets: self.unprocessed_scram_secrets,
+            cluster_arn: self.cluster_arn
+            ,
+            unprocessed_scram_secrets: self.unprocessed_scram_secrets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

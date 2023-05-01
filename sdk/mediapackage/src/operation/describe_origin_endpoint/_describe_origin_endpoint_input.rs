@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOriginEndpointInput {
+pub struct DescribeOriginEndpointInput  {
     /// The ID of the OriginEndpoint.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeOriginEndpointInput {
     /// The ID of the OriginEndpoint.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DescribeOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeOriginEndpointInput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder {
         crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder::default()
     }
 }
@@ -36,16 +34,16 @@ impl DescribeOriginEndpointInputBuilder {
     }
     /// The ID of the OriginEndpoint.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeOriginEndpointInput`](crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_origin_endpoint::DescribeOriginEndpointInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

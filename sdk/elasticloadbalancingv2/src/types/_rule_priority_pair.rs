@@ -3,7 +3,7 @@
 /// <p>Information about the priorities for the rules for a listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RulePriorityPair {
+pub struct RulePriorityPair  {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
     pub rule_arn: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct RulePriorityPair {
 }
 impl RulePriorityPair {
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>The rule priority.</p>
@@ -43,8 +43,7 @@ impl RulePriorityPairBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The rule priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl RulePriorityPairBuilder {
     }
     /// <p>The rule priority.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// Consumes the builder and constructs a [`RulePriorityPair`](crate::types::RulePriorityPair).
     pub fn build(self) -> crate::types::RulePriorityPair {
         crate::types::RulePriorityPair {
-            rule_arn: self.rule_arn,
-            priority: self.priority,
+            rule_arn: self.rule_arn
+            ,
+            priority: self.priority
+            ,
         }
     }
 }
+

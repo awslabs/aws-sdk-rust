@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceServerInput {
+pub struct CreateResourceServerInput  {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct CreateResourceServerInput {
 }
 impl CreateResourceServerInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>A friendly name for the resource server.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
-    pub fn scopes(&self) -> std::option::Option<&[crate::types::ResourceServerScopeType]> {
+    pub fn scopes(&self) -> std::option::Option<& [crate::types::ResourceServerScopeType]> {
         self.scopes.as_deref()
     }
 }
 impl CreateResourceServerInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceServerInput`](crate::operation::create_resource_server::CreateResourceServerInput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_server::builders::CreateResourceServerInputBuilder {
+    pub fn builder() -> crate::operation::create_resource_server::builders::CreateResourceServerInputBuilder {
         crate::operation::create_resource_server::builders::CreateResourceServerInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateResourceServerInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl CreateResourceServerInputBuilder {
     }
     /// <p>A unique resource server identifier for the resource server. This could be an HTTPS endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>A friendly name for the resource server.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl CreateResourceServerInputBuilder {
     }
     /// <p>A friendly name for the resource server.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `scopes`.
     ///
@@ -89,32 +85,28 @@ impl CreateResourceServerInputBuilder {
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
     pub fn scopes(mut self, input: crate::types::ResourceServerScopeType) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-        v.push(input);
-        self.scopes = Some(v);
-        self
+                        v.push(input);
+                        self.scopes = Some(v);
+                        self
     }
     /// <p>A list of scopes. Each scope is a key-value map with the keys <code>name</code> and <code>description</code>.</p>
-    pub fn set_scopes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceServerScopeType>>,
-    ) -> Self {
-        self.scopes = input;
-        self
+    pub fn set_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceServerScopeType>>) -> Self {
+        self.scopes = input; self
     }
     /// Consumes the builder and constructs a [`CreateResourceServerInput`](crate::operation::create_resource_server::CreateResourceServerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_resource_server::CreateResourceServerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_resource_server::CreateResourceServerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_resource_server::CreateResourceServerInput {
-                user_pool_id: self.user_pool_id,
-                identifier: self.identifier,
-                name: self.name,
-                scopes: self.scopes,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                identifier: self.identifier
+                ,
+                name: self.name
+                ,
+                scopes: self.scopes
+                ,
+            }
         )
     }
 }
+

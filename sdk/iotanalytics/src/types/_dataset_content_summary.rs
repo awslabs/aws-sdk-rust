@@ -3,7 +3,7 @@
 /// <p>Summary information about dataset contents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetContentSummary {
+pub struct DatasetContentSummary  {
     /// <p>The version of the dataset contents.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DatasetContentSummary {
 }
 impl DatasetContentSummary {
     /// <p>The version of the dataset contents.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The status of the dataset contents.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DatasetContentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DatasetContentStatus> {
         self.status.as_ref()
     }
     /// <p>The actual time the creation of the dataset contents was started.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-    pub fn schedule_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn schedule_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.schedule_time.as_ref()
     }
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl DatasetContentSummaryBuilder {
     }
     /// <p>The version of the dataset contents.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The status of the dataset contents.</p>
     pub fn status(mut self, input: crate::types::DatasetContentStatus) -> Self {
@@ -76,12 +75,8 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The status of the dataset contents.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DatasetContentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetContentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The actual time the creation of the dataset contents was started.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,12 +84,8 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The actual time the creation of the dataset contents was started.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
     pub fn schedule_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,12 +93,8 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The time the creation of the dataset contents was scheduled to start.</p>
-    pub fn set_schedule_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.schedule_time = input;
-        self
+    pub fn set_schedule_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.schedule_time = input; self
     }
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
     pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -115,21 +102,23 @@ impl DatasetContentSummaryBuilder {
         self
     }
     /// <p>The time the dataset content status was updated to SUCCEEDED or FAILED.</p>
-    pub fn set_completion_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.completion_time = input;
-        self
+    pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.completion_time = input; self
     }
     /// Consumes the builder and constructs a [`DatasetContentSummary`](crate::types::DatasetContentSummary).
     pub fn build(self) -> crate::types::DatasetContentSummary {
         crate::types::DatasetContentSummary {
-            version: self.version,
-            status: self.status,
-            creation_time: self.creation_time,
-            schedule_time: self.schedule_time,
-            completion_time: self.completion_time,
+            version: self.version
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            schedule_time: self.schedule_time
+            ,
+            completion_time: self.completion_time
+            ,
         }
     }
 }
+

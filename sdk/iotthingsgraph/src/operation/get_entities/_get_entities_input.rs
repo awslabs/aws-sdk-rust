@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEntitiesInput {
-    /// <p>An array of entity IDs.</p>
-    /// <p>The IDs should be in the following format.</p>
+pub struct GetEntitiesInput  {
+    /// <p>An array of entity IDs.</p> 
+    /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,10 +13,10 @@ pub struct GetEntitiesInput {
     pub namespace_version: std::option::Option<i64>,
 }
 impl GetEntitiesInput {
-    /// <p>An array of entity IDs.</p>
-    /// <p>The IDs should be in the following format.</p>
+    /// <p>An array of entity IDs.</p> 
+    /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -43,24 +43,20 @@ impl GetEntitiesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
     ///
-    /// <p>An array of entity IDs.</p>
-    /// <p>The IDs should be in the following format.</p>
+    /// <p>An array of entity IDs.</p> 
+    /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
-    /// <p>An array of entity IDs.</p>
-    /// <p>The IDs should be in the following format.</p>
+    /// <p>An array of entity IDs.</p> 
+    /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
@@ -69,19 +65,18 @@ impl GetEntitiesInputBuilder {
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn set_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.namespace_version = input;
-        self
+        self.namespace_version = input; self
     }
     /// Consumes the builder and constructs a [`GetEntitiesInput`](crate::operation::get_entities::GetEntitiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_entities::GetEntitiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_entities::GetEntitiesInput {
-            ids: self.ids,
-            namespace_version: self.namespace_version,
-        })
+    pub fn build(self) -> Result<crate::operation::get_entities::GetEntitiesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_entities::GetEntitiesInput {
+                ids: self.ids
+                ,
+                namespace_version: self.namespace_version
+                ,
+            }
+        )
     }
 }
+

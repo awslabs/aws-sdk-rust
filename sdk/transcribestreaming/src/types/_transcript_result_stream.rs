@@ -20,14 +20,8 @@ impl TranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::types::TranscriptResultStream::TranscriptEvent), extracting the inner [`TranscriptEvent`](crate::types::TranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_event(
-        &self,
-    ) -> std::result::Result<&crate::types::TranscriptEvent, &Self> {
-        if let TranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_transcript_event(&self) -> std::result::Result<&crate::types::TranscriptEvent, &Self> {
+        if let TranscriptResultStream::TranscriptEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::types::TranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
@@ -38,3 +32,4 @@ impl TranscriptResultStream {
         matches!(self, Self::Unknown)
     }
 }
+

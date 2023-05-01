@@ -3,11 +3,11 @@
 /// Attributes related to the transport stream that are used in a source or output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transport {
+pub struct Transport  {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
     pub cidr_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     #[doc(hidden)]
     pub max_bitrate: i32,
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
@@ -40,16 +40,16 @@ pub struct Transport {
     /// Source port for SRT-caller protocol.
     #[doc(hidden)]
     pub source_listener_port: i32,
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl Transport {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_allow_list(&self) -> std::option::Option<& [std::string::String]> {
         self.cidr_allow_list.as_deref()
     }
-    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn max_bitrate(&self) -> i32 {
         self.max_bitrate
     }
@@ -66,11 +66,11 @@ impl Transport {
         self.min_latency
     }
     /// The protocol that is used by the source or output.
-    pub fn protocol(&self) -> std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// The remote ID for the Zixi-pull stream.
-    pub fn remote_id(&self) -> std::option::Option<&str> {
+    pub fn remote_id(&self) -> std::option::Option<& str> {
         self.remote_id.as_deref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -78,7 +78,7 @@ impl Transport {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
         self.sender_ip_address.as_deref()
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
@@ -86,15 +86,15 @@ impl Transport {
         self.smoothing_latency
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(&self) -> std::option::Option<&str> {
+    pub fn source_listener_address(&self) -> std::option::Option<& str> {
         self.source_listener_address.as_deref()
     }
     /// Source port for SRT-caller protocol.
     pub fn source_listener_port(&self) -> i32 {
         self.source_listener_port
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
 }
@@ -131,27 +131,22 @@ impl TransportBuilder {
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn cidr_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cidr_allow_list.unwrap_or_default();
-        v.push(input.into());
-        self.cidr_allow_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.cidr_allow_list = Some(v);
+                        self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_cidr_allow_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.cidr_allow_list = input;
-        self
+    pub fn set_cidr_allow_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.cidr_allow_list = input; self
     }
-    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn max_bitrate(mut self, input: i32) -> Self {
         self.max_bitrate = Some(input);
         self
     }
-    /// The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+    /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_bitrate = input;
-        self
+        self.max_bitrate = input; self
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(mut self, input: i32) -> Self {
@@ -160,8 +155,7 @@ impl TransportBuilder {
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_latency = input;
-        self
+        self.max_latency = input; self
     }
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub fn max_sync_buffer(mut self, input: i32) -> Self {
@@ -170,8 +164,7 @@ impl TransportBuilder {
     }
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_sync_buffer = input;
-        self
+        self.max_sync_buffer = input; self
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(mut self, input: i32) -> Self {
@@ -180,8 +173,7 @@ impl TransportBuilder {
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_latency = input;
-        self
+        self.min_latency = input; self
     }
     /// The protocol that is used by the source or output.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
@@ -190,8 +182,7 @@ impl TransportBuilder {
     }
     /// The protocol that is used by the source or output.
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// The remote ID for the Zixi-pull stream.
     pub fn remote_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +191,7 @@ impl TransportBuilder {
     }
     /// The remote ID for the Zixi-pull stream.
     pub fn set_remote_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.remote_id = input;
-        self
+        self.remote_id = input; self
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -210,8 +200,7 @@ impl TransportBuilder {
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.sender_control_port = input;
-        self
+        self.sender_control_port = input; self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,12 +208,8 @@ impl TransportBuilder {
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sender_ip_address = input;
-        self
+    pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sender_ip_address = input; self
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn smoothing_latency(mut self, input: i32) -> Self {
@@ -233,8 +218,7 @@ impl TransportBuilder {
     }
     /// The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
     pub fn set_smoothing_latency(mut self, input: std::option::Option<i32>) -> Self {
-        self.smoothing_latency = input;
-        self
+        self.smoothing_latency = input; self
     }
     /// Source IP or domain name for SRT-caller protocol.
     pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -242,12 +226,8 @@ impl TransportBuilder {
         self
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn set_source_listener_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_listener_address = input;
-        self
+    pub fn set_source_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_listener_address = input; self
     }
     /// Source port for SRT-caller protocol.
     pub fn source_listener_port(mut self, input: i32) -> Self {
@@ -256,35 +236,54 @@ impl TransportBuilder {
     }
     /// Source port for SRT-caller protocol.
     pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.source_listener_port = input;
-        self
+        self.source_listener_port = input; self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.stream_id = Some(input.into());
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// Consumes the builder and constructs a [`Transport`](crate::types::Transport).
     pub fn build(self) -> crate::types::Transport {
         crate::types::Transport {
-            cidr_allow_list: self.cidr_allow_list,
-            max_bitrate: self.max_bitrate.unwrap_or_default(),
-            max_latency: self.max_latency.unwrap_or_default(),
-            max_sync_buffer: self.max_sync_buffer.unwrap_or_default(),
-            min_latency: self.min_latency.unwrap_or_default(),
-            protocol: self.protocol,
-            remote_id: self.remote_id,
-            sender_control_port: self.sender_control_port.unwrap_or_default(),
-            sender_ip_address: self.sender_ip_address,
-            smoothing_latency: self.smoothing_latency.unwrap_or_default(),
-            source_listener_address: self.source_listener_address,
-            source_listener_port: self.source_listener_port.unwrap_or_default(),
-            stream_id: self.stream_id,
+            cidr_allow_list: self.cidr_allow_list
+            ,
+            max_bitrate: self.max_bitrate
+                .unwrap_or_default()
+            ,
+            max_latency: self.max_latency
+                .unwrap_or_default()
+            ,
+            max_sync_buffer: self.max_sync_buffer
+                .unwrap_or_default()
+            ,
+            min_latency: self.min_latency
+                .unwrap_or_default()
+            ,
+            protocol: self.protocol
+            ,
+            remote_id: self.remote_id
+            ,
+            sender_control_port: self.sender_control_port
+                .unwrap_or_default()
+            ,
+            sender_ip_address: self.sender_ip_address
+            ,
+            smoothing_latency: self.smoothing_latency
+                .unwrap_or_default()
+            ,
+            source_listener_address: self.source_listener_address
+            ,
+            source_listener_port: self.source_listener_port
+                .unwrap_or_default()
+            ,
+            stream_id: self.stream_id
+            ,
         }
     }
 }
+

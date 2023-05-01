@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetObjectOutput {
+pub struct GetObjectOutput  {
     /// <p>The bytes of the object. </p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
@@ -31,16 +31,16 @@ pub struct GetObjectOutput {
 }
 impl GetObjectOutput {
     /// <p>The bytes of the object. </p>
-    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
-    pub fn cache_control(&self) -> std::option::Option<&str> {
+    pub fn cache_control(&self) -> std::option::Option<& str> {
         self.cache_control.as_deref()
     }
     /// <p>The range of bytes to retrieve.</p>
-    pub fn content_range(&self) -> std::option::Option<&str> {
+    pub fn content_range(&self) -> std::option::Option<& str> {
         self.content_range.as_deref()
     }
     /// <p>The length of the object in bytes.</p>
@@ -48,15 +48,15 @@ impl GetObjectOutput {
         self.content_length
     }
     /// <p>The content type of the object.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The ETag that represents a unique instance of the object.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
@@ -65,10 +65,10 @@ impl GetObjectOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetObjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetObjectOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectOutput`](crate::operation::get_object::GetObjectOutput).
     pub fn builder() -> crate::operation::get_object::builders::GetObjectOutputBuilder {
@@ -97,24 +97,19 @@ impl GetObjectOutputBuilder {
         self
     }
     /// <p>The bytes of the object. </p>
-    pub fn set_body(
-        mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
-        self.body = input;
-        self
+    pub fn set_body(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+        self.body = input; self
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
         self.cache_control = Some(input.into());
         self
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_control = input;
-        self
+        self.cache_control = input; self
     }
     /// <p>The range of bytes to retrieve.</p>
     pub fn content_range(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +118,7 @@ impl GetObjectOutputBuilder {
     }
     /// <p>The range of bytes to retrieve.</p>
     pub fn set_content_range(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_range = input;
-        self
+        self.content_range = input; self
     }
     /// <p>The length of the object in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
@@ -133,8 +127,7 @@ impl GetObjectOutputBuilder {
     }
     /// <p>The length of the object in bytes.</p>
     pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-        self.content_length = input;
-        self
+        self.content_length = input; self
     }
     /// <p>The content type of the object.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +136,7 @@ impl GetObjectOutputBuilder {
     }
     /// <p>The content type of the object.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The ETag that represents a unique instance of the object.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +145,7 @@ impl GetObjectOutputBuilder {
     }
     /// <p>The ETag that represents a unique instance of the object.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The date and time that the object was last modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -162,12 +153,8 @@ impl GetObjectOutputBuilder {
         self
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
     pub fn status_code(mut self, input: i32) -> Self {
@@ -176,30 +163,40 @@ impl GetObjectOutputBuilder {
     }
     /// <p>The HTML status code of the request. Status codes ranging from 200 to 299 indicate success. All other status codes indicate the type of error that occurred.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetObjectOutput`](crate::operation::get_object::GetObjectOutput).
     pub fn build(self) -> crate::operation::get_object::GetObjectOutput {
         crate::operation::get_object::GetObjectOutput {
-            body: self.body.unwrap_or_default(),
-            cache_control: self.cache_control,
-            content_range: self.content_range,
-            content_length: self.content_length,
-            content_type: self.content_type,
-            e_tag: self.e_tag,
-            last_modified: self.last_modified,
-            status_code: self.status_code.unwrap_or_default(),
+            body: self.body
+                .unwrap_or_default()
+            ,
+            cache_control: self.cache_control
+            ,
+            content_range: self.content_range
+            ,
+            content_length: self.content_length
+            ,
+            content_type: self.content_type
+            ,
+            e_tag: self.e_tag
+            ,
+            last_modified: self.last_modified
+            ,
+            status_code: self.status_code
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

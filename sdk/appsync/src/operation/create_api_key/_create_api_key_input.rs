@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApiKeyInput {
+pub struct CreateApiKeyInput  {
     /// <p>The ID for your GraphQL API.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct CreateApiKeyInput {
 }
 impl CreateApiKeyInput {
     /// <p>The ID for your GraphQL API.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>A description of the purpose of the API key.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
@@ -50,8 +50,7 @@ impl CreateApiKeyInputBuilder {
     }
     /// <p>The ID for your GraphQL API.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl CreateApiKeyInputBuilder {
     }
     /// <p>A description of the purpose of the API key.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     pub fn expires(mut self, input: i64) -> Self {
@@ -70,20 +68,21 @@ impl CreateApiKeyInputBuilder {
     }
     /// <p>From the creation time, the time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more information, see .</p>
     pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
-        self.expires = input;
-        self
+        self.expires = input; self
     }
     /// Consumes the builder and constructs a [`CreateApiKeyInput`](crate::operation::create_api_key::CreateApiKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_api_key::CreateApiKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_api_key::CreateApiKeyInput {
-            api_id: self.api_id,
-            description: self.description,
-            expires: self.expires.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::create_api_key::CreateApiKeyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_api_key::CreateApiKeyInput {
+                api_id: self.api_id
+                ,
+                description: self.description
+                ,
+                expires: self.expires
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

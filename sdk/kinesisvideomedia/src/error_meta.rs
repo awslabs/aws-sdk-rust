@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>Status Code: 404, The stream with the given name does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27,54 +27,32 @@ impl std::fmt::Display for Error {
             Error::InvalidEndpointException(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_media::GetMediaError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_media::GetMediaError> for Error {
     fn from(err: crate::operation::get_media::GetMediaError) -> Self {
         match err {
-            crate::operation::get_media::GetMediaError::ClientLimitExceededException(inner) => {
-                Error::ClientLimitExceededException(inner)
-            }
-            crate::operation::get_media::GetMediaError::ConnectionLimitExceededException(inner) => {
-                Error::ConnectionLimitExceededException(inner)
-            }
-            crate::operation::get_media::GetMediaError::InvalidArgumentException(inner) => {
-                Error::InvalidArgumentException(inner)
-            }
-            crate::operation::get_media::GetMediaError::InvalidEndpointException(inner) => {
-                Error::InvalidEndpointException(inner)
-            }
-            crate::operation::get_media::GetMediaError::NotAuthorizedException(inner) => {
-                Error::NotAuthorizedException(inner)
-            }
-            crate::operation::get_media::GetMediaError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
+            crate::operation::get_media::GetMediaError::ClientLimitExceededException(inner) => Error::ClientLimitExceededException(inner),
+            crate::operation::get_media::GetMediaError::ConnectionLimitExceededException(inner) => Error::ConnectionLimitExceededException(inner),
+            crate::operation::get_media::GetMediaError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::get_media::GetMediaError::InvalidEndpointException(inner) => Error::InvalidEndpointException(inner),
+            crate::operation::get_media::GetMediaError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_media::GetMediaError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_media::GetMediaError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -93,3 +71,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

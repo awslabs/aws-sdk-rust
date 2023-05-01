@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainConfigurationInput {
+pub struct DeleteDomainConfigurationInput  {
     /// <p>The name of the domain configuration to be deleted.</p>
     #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
 }
 impl DeleteDomainConfigurationInput {
     /// <p>The name of the domain configuration to be deleted.</p>
-    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn domain_configuration_name(&self) -> std::option::Option<& str> {
         self.domain_configuration_name.as_deref()
     }
 }
 impl DeleteDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainConfigurationInput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput).
-    pub fn builder() -> crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder {
         crate::operation::delete_domain_configuration::builders::DeleteDomainConfigurationInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteDomainConfigurationInputBuilder {
         self
     }
     /// <p>The name of the domain configuration to be deleted.</p>
-    pub fn set_domain_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.domain_configuration_name = input;
-        self
+    pub fn set_domain_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.domain_configuration_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDomainConfigurationInput`](crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_domain_configuration::DeleteDomainConfigurationInput {
-                domain_configuration_name: self.domain_configuration_name,
-            },
+                domain_configuration_name: self.domain_configuration_name
+                ,
+            }
         )
     }
 }
+

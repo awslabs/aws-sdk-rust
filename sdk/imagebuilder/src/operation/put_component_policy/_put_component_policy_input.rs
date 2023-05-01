@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutComponentPolicyInput {
+pub struct PutComponentPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct PutComponentPolicyInput {
 }
 impl PutComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
-    pub fn component_arn(&self) -> std::option::Option<&str> {
+    pub fn component_arn(&self) -> std::option::Option<& str> {
         self.component_arn.as_deref()
     }
     /// <p>The policy to apply.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl PutComponentPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutComponentPolicyInput`](crate::operation::put_component_policy::PutComponentPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_component_policy::builders::PutComponentPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_component_policy::builders::PutComponentPolicyInputBuilder {
         crate::operation::put_component_policy::builders::PutComponentPolicyInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl PutComponentPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component that this policy should be applied to.</p>
     pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_arn = input;
-        self
+        self.component_arn = input; self
     }
     /// <p>The policy to apply.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl PutComponentPolicyInputBuilder {
     }
     /// <p>The policy to apply.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// Consumes the builder and constructs a [`PutComponentPolicyInput`](crate::operation::put_component_policy::PutComponentPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_component_policy::PutComponentPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_component_policy::PutComponentPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_component_policy::PutComponentPolicyInput {
-                component_arn: self.component_arn,
-                policy: self.policy,
-            },
+                component_arn: self.component_arn
+                ,
+                policy: self.policy
+                ,
+            }
         )
     }
 }
+

@@ -4,87 +4,75 @@ pub use crate::operation::describe_host_reservation_offerings::_describe_host_re
 pub use crate::operation::describe_host_reservation_offerings::_describe_host_reservation_offerings_input::DescribeHostReservationOfferingsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeHostReservationOfferings`.
-///
-/// <p>Describes the Dedicated Host reservations that are available to purchase.</p>
+/// 
+/// <p>Describes the Dedicated Host reservations that are available to purchase.</p> 
 /// <p>The results describe all of the Dedicated Host reservation offerings, including offerings that might not match the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder
             }
-impl DescribeHostReservationOfferingsFluentBuilder {
+impl DescribeHostReservationOfferingsFluentBuilder  {
     /// Creates a new `DescribeHostReservationOfferings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator{
-        crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator {
+                            crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
-    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
+    /// <p>The filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li> 
+    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> 
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li>
-    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li>
+    /// <p>The filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>instance-family</code> - The instance family of the offering (for example, <code>m4</code>).</p> </li> 
+    /// <li> <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> 
     /// </ul>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -139,3 +127,4 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self
     }
 }
+

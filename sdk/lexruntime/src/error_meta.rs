@@ -9,11 +9,11 @@ pub enum Error {
     BadRequestException(crate::types::error::BadRequestException),
     /// <p> Two clients are using the same AWS account, Amazon Lex bot, and user ID. </p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p>
-    /// <ul>
-    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li>
-    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li>
-    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li>
+    /// <p> One of the dependencies, such as AWS Lambda or Amazon Polly, threw an exception. For example, </p> 
+    /// <ul> 
+    /// <li> <p>If Amazon Lex does not have sufficient permissions to call a Lambda function.</p> </li> 
+    /// <li> <p>If a Lambda function takes longer than 30 seconds to execute.</p> </li> 
+    /// <li> <p>If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without removing any slot values.</p> </li> 
     /// </ul>
     DependencyFailedException(crate::types::error::DependencyFailedException),
     /// <p>Internal service error. Retry the call.</p>
@@ -31,7 +31,7 @@ pub enum Error {
     /// <p>The Content-Type header (<code>PostContent</code> API) has an invalid value. </p>
     UnsupportedMediaTypeException(crate::types::error::UnsupportedMediaTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,277 +47,143 @@ impl std::fmt::Display for Error {
             Error::NotFoundException(inner) => inner.fmt(f),
             Error::RequestTimeoutException(inner) => inner.fmt(f),
             Error::UnsupportedMediaTypeException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::operation::delete_session::DeleteSessionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::delete_session::DeleteSessionError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_session::DeleteSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_session::DeleteSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_session::DeleteSessionError> for Error {
     fn from(err: crate::operation::delete_session::DeleteSessionError) -> Self {
         match err {
-            crate::operation::delete_session::DeleteSessionError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::delete_session::DeleteSessionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::delete_session::DeleteSessionError::InternalFailureException(
-                inner,
-            ) => Error::InternalFailureException(inner),
-            crate::operation::delete_session::DeleteSessionError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::delete_session::DeleteSessionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::delete_session::DeleteSessionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::delete_session::DeleteSessionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_session::DeleteSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_session::DeleteSessionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_session::DeleteSessionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_session::DeleteSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_session::DeleteSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_session::GetSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_session::GetSessionError> for Error {
     fn from(err: crate::operation::get_session::GetSessionError) -> Self {
         match err {
-            crate::operation::get_session::GetSessionError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::get_session::GetSessionError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::operation::get_session::GetSessionError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::get_session::GetSessionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::get_session::GetSessionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_session::GetSessionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_session::GetSessionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::get_session::GetSessionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::get_session::GetSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::post_content::PostContentError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::post_content::PostContentError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::post_content::PostContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::post_content::PostContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::post_content::PostContentError> for Error {
     fn from(err: crate::operation::post_content::PostContentError) -> Self {
         match err {
-            crate::operation::post_content::PostContentError::BadGatewayException(inner) => {
-                Error::BadGatewayException(inner)
-            }
-            crate::operation::post_content::PostContentError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::post_content::PostContentError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::post_content::PostContentError::DependencyFailedException(inner) => {
-                Error::DependencyFailedException(inner)
-            }
-            crate::operation::post_content::PostContentError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::operation::post_content::PostContentError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::post_content::PostContentError::LoopDetectedException(inner) => {
-                Error::LoopDetectedException(inner)
-            }
-            crate::operation::post_content::PostContentError::NotAcceptableException(inner) => {
-                Error::NotAcceptableException(inner)
-            }
-            crate::operation::post_content::PostContentError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::post_content::PostContentError::RequestTimeoutException(inner) => {
-                Error::RequestTimeoutException(inner)
-            }
-            crate::operation::post_content::PostContentError::UnsupportedMediaTypeException(
-                inner,
-            ) => Error::UnsupportedMediaTypeException(inner),
-            crate::operation::post_content::PostContentError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::post_content::PostContentError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::post_content::PostContentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::post_content::PostContentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::post_content::PostContentError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::post_content::PostContentError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::post_content::PostContentError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::post_content::PostContentError::LoopDetectedException(inner) => Error::LoopDetectedException(inner),
+            crate::operation::post_content::PostContentError::NotAcceptableException(inner) => Error::NotAcceptableException(inner),
+            crate::operation::post_content::PostContentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::post_content::PostContentError::RequestTimeoutException(inner) => Error::RequestTimeoutException(inner),
+            crate::operation::post_content::PostContentError::UnsupportedMediaTypeException(inner) => Error::UnsupportedMediaTypeException(inner),
+            crate::operation::post_content::PostContentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::post_text::PostTextError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::post_text::PostTextError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::post_text::PostTextError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::post_text::PostTextError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::post_text::PostTextError> for Error {
     fn from(err: crate::operation::post_text::PostTextError) -> Self {
         match err {
-            crate::operation::post_text::PostTextError::BadGatewayException(inner) => {
-                Error::BadGatewayException(inner)
-            }
-            crate::operation::post_text::PostTextError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::post_text::PostTextError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::post_text::PostTextError::DependencyFailedException(inner) => {
-                Error::DependencyFailedException(inner)
-            }
-            crate::operation::post_text::PostTextError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::operation::post_text::PostTextError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::post_text::PostTextError::LoopDetectedException(inner) => {
-                Error::LoopDetectedException(inner)
-            }
-            crate::operation::post_text::PostTextError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
+            crate::operation::post_text::PostTextError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::post_text::PostTextError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::post_text::PostTextError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::post_text::PostTextError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::post_text::PostTextError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::post_text::PostTextError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::post_text::PostTextError::LoopDetectedException(inner) => Error::LoopDetectedException(inner),
+            crate::operation::post_text::PostTextError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::post_text::PostTextError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_session::PutSessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_session::PutSessionError> for Error {
     fn from(err: crate::operation::put_session::PutSessionError) -> Self {
         match err {
-            crate::operation::put_session::PutSessionError::BadGatewayException(inner) => {
-                Error::BadGatewayException(inner)
-            }
-            crate::operation::put_session::PutSessionError::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::operation::put_session::PutSessionError::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::operation::put_session::PutSessionError::DependencyFailedException(inner) => {
-                Error::DependencyFailedException(inner)
-            }
-            crate::operation::put_session::PutSessionError::InternalFailureException(inner) => {
-                Error::InternalFailureException(inner)
-            }
-            crate::operation::put_session::PutSessionError::LimitExceededException(inner) => {
-                Error::LimitExceededException(inner)
-            }
-            crate::operation::put_session::PutSessionError::NotAcceptableException(inner) => {
-                Error::NotAcceptableException(inner)
-            }
-            crate::operation::put_session::PutSessionError::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::operation::put_session::PutSessionError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_session::PutSessionError::BadGatewayException(inner) => Error::BadGatewayException(inner),
+            crate::operation::put_session::PutSessionError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::put_session::PutSessionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_session::PutSessionError::DependencyFailedException(inner) => Error::DependencyFailedException(inner),
+            crate::operation::put_session::PutSessionError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::put_session::PutSessionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::put_session::PutSessionError::NotAcceptableException(inner) => Error::NotAcceptableException(inner),
+            crate::operation::put_session::PutSessionError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::put_session::PutSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -340,3 +206,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

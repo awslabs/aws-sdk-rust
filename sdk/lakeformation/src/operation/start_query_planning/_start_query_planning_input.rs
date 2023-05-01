@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartQueryPlanningInput {
+pub struct StartQueryPlanningInput  {
     /// <p>A structure containing information about the query plan.</p>
     #[doc(hidden)]
     pub query_planning_context: std::option::Option<crate::types::QueryPlanningContext>,
@@ -12,17 +12,15 @@ pub struct StartQueryPlanningInput {
 }
 impl StartQueryPlanningInput {
     /// <p>A structure containing information about the query plan.</p>
-    pub fn query_planning_context(
-        &self,
-    ) -> std::option::Option<&crate::types::QueryPlanningContext> {
+    pub fn query_planning_context(&self) -> std::option::Option<& crate::types::QueryPlanningContext> {
         self.query_planning_context.as_ref()
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
-impl std::fmt::Debug for StartQueryPlanningInput {
+impl  std::fmt::Debug for StartQueryPlanningInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartQueryPlanningInput");
         formatter.field("query_planning_context", &self.query_planning_context);
@@ -32,8 +30,7 @@ impl std::fmt::Debug for StartQueryPlanningInput {
 }
 impl StartQueryPlanningInput {
     /// Creates a new builder-style object to manufacture [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
-    pub fn builder(
-    ) -> crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder {
+    pub fn builder() -> crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder {
         crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder::default()
     }
 }
@@ -52,12 +49,8 @@ impl StartQueryPlanningInputBuilder {
         self
     }
     /// <p>A structure containing information about the query plan.</p>
-    pub fn set_query_planning_context(
-        mut self,
-        input: std::option::Option<crate::types::QueryPlanningContext>,
-    ) -> Self {
-        self.query_planning_context = input;
-        self
+    pub fn set_query_planning_context(mut self, input: std::option::Option<crate::types::QueryPlanningContext>) -> Self {
+        self.query_planning_context = input; self
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,21 +59,17 @@ impl StartQueryPlanningInputBuilder {
     }
     /// <p>A PartiQL query statement used as an input to the planner service.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// Consumes the builder and constructs a [`StartQueryPlanningInput`](crate::operation::start_query_planning::StartQueryPlanningInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_query_planning::StartQueryPlanningInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_query_planning::StartQueryPlanningInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_query_planning::StartQueryPlanningInput {
-                query_planning_context: self.query_planning_context,
-                query_string: self.query_string,
-            },
+                query_planning_context: self.query_planning_context
+                ,
+                query_string: self.query_string
+                ,
+            }
         )
     }
 }
@@ -92,3 +81,4 @@ impl std::fmt::Debug for StartQueryPlanningInputBuilder {
         formatter.finish()
     }
 }
+

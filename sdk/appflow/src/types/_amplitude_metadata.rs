@@ -3,7 +3,8 @@
 /// <p> The connector metadata specific to Amplitude. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmplitudeMetadata {}
+pub struct AmplitudeMetadata  {
+}
 impl AmplitudeMetadata {
     /// Creates a new builder-style object to manufacture [`AmplitudeMetadata`](crate::types::AmplitudeMetadata).
     pub fn builder() -> crate::types::builders::AmplitudeMetadataBuilder {
@@ -14,10 +15,13 @@ impl AmplitudeMetadata {
 /// A builder for [`AmplitudeMetadata`](crate::types::AmplitudeMetadata).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct AmplitudeMetadataBuilder {}
+pub struct AmplitudeMetadataBuilder {
+}
 impl AmplitudeMetadataBuilder {
     /// Consumes the builder and constructs a [`AmplitudeMetadata`](crate::types::AmplitudeMetadata).
     pub fn build(self) -> crate::types::AmplitudeMetadata {
-        crate::types::AmplitudeMetadata {}
+        crate::types::AmplitudeMetadata {
+        }
     }
 }
+

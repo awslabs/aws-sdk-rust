@@ -24,3 +24,4 @@ pub mod list_resources;
 
 /// Types for the `UpdateResource` operation.
 pub mod update_resource;
+

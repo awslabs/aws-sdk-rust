@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationsOutput {
+pub struct GetRecommendationsOutput  {
     /// <p>The recommendations.</p>
     #[doc(hidden)]
     pub recommendations: std::option::Option<std::vec::Vec<crate::types::RecommendationData>>,
@@ -13,23 +13,22 @@ pub struct GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// <p>The recommendations.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::types::RecommendationData]> {
+    pub fn recommendations(&self) -> std::option::Option<& [crate::types::RecommendationData]> {
         self.recommendations.as_deref()
     }
     /// <p>The triggers corresponding to recommendations.</p>
-    pub fn triggers(&self) -> std::option::Option<&[crate::types::RecommendationTrigger]> {
+    pub fn triggers(&self) -> std::option::Option<& [crate::types::RecommendationTrigger]> {
         self.triggers.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::default()
     }
 }
@@ -38,8 +37,7 @@ impl GetRecommendationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendationsOutputBuilder {
-    pub(crate) recommendations:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationData>>,
+    pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::types::RecommendationData>>,
     pub(crate) triggers: std::option::Option<std::vec::Vec<crate::types::RecommendationTrigger>>,
     _request_id: Option<String>,
 }
@@ -51,17 +49,13 @@ impl GetRecommendationsOutputBuilder {
     /// <p>The recommendations.</p>
     pub fn recommendations(mut self, input: crate::types::RecommendationData) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-        v.push(input);
-        self.recommendations = Some(v);
-        self
+                        v.push(input);
+                        self.recommendations = Some(v);
+                        self
     }
     /// <p>The recommendations.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationData>>,
-    ) -> Self {
-        self.recommendations = input;
-        self
+    pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationData>>) -> Self {
+        self.recommendations = input; self
     }
     /// Appends an item to `triggers`.
     ///
@@ -70,33 +64,32 @@ impl GetRecommendationsOutputBuilder {
     /// <p>The triggers corresponding to recommendations.</p>
     pub fn triggers(mut self, input: crate::types::RecommendationTrigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-        v.push(input);
-        self.triggers = Some(v);
-        self
+                        v.push(input);
+                        self.triggers = Some(v);
+                        self
     }
     /// <p>The triggers corresponding to recommendations.</p>
-    pub fn set_triggers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationTrigger>>,
-    ) -> Self {
-        self.triggers = input;
-        self
+    pub fn set_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationTrigger>>) -> Self {
+        self.triggers = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_recommendations::GetRecommendationsOutput {
         crate::operation::get_recommendations::GetRecommendationsOutput {
-            recommendations: self.recommendations,
-            triggers: self.triggers,
+            recommendations: self.recommendations
+            ,
+            triggers: self.triggers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

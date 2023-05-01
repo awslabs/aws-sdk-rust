@@ -2,30 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLabelGroupInput {
+pub struct UpdateLabelGroupInput  {
     /// <p> The name of the label group to be updated. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
-    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub fault_codes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateLabelGroupInput {
     /// <p> The name of the label group to be updated. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
-    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn fault_codes(&self) -> std::option::Option<& [std::string::String]> {
         self.fault_codes.as_deref()
     }
 }
 impl UpdateLabelGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateLabelGroupInput`](crate::operation::update_label_group::UpdateLabelGroupInput).
-    pub fn builder() -> crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder {
         crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder::default()
     }
 }
@@ -45,42 +44,35 @@ impl UpdateLabelGroupInputBuilder {
     }
     /// <p> The name of the label group to be updated. </p>
     pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// Appends an item to `fault_codes`.
     ///
     /// To override the contents of this collection use [`set_fault_codes`](Self::set_fault_codes).
     ///
-    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_codes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.fault_codes.unwrap_or_default();
-        v.push(input.into());
-        self.fault_codes = Some(v);
-        self
+                        v.push(input.into());
+                        self.fault_codes = Some(v);
+                        self
     }
-    /// <p> Updates the code indicating the type of anomaly associated with the label. </p>
+    /// <p> Updates the code indicating the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_fault_codes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.fault_codes = input;
-        self
+    pub fn set_fault_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.fault_codes = input; self
     }
     /// Consumes the builder and constructs a [`UpdateLabelGroupInput`](crate::operation::update_label_group::UpdateLabelGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_label_group::UpdateLabelGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_label_group::UpdateLabelGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_label_group::UpdateLabelGroupInput {
-                label_group_name: self.label_group_name,
-                fault_codes: self.fault_codes,
-            },
+                label_group_name: self.label_group_name
+                ,
+                fault_codes: self.fault_codes
+                ,
+            }
         )
     }
 }
+

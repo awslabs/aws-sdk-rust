@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePresetInput {
+pub struct DeletePresetInput  {
     /// The name of the preset to be deleted.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeletePresetInput {
     /// The name of the preset to be deleted.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DeletePresetInputBuilder {
     }
     /// The name of the preset to be deleted.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeletePresetInput`](crate::operation::delete_preset::DeletePresetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_preset::DeletePresetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_preset::DeletePresetInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_preset::DeletePresetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_preset::DeletePresetInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

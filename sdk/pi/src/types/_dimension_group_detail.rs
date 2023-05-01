@@ -3,7 +3,7 @@
 /// <p>Information about dimensions within a dimension group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionGroupDetail {
+pub struct DimensionGroupDetail  {
     /// <p>The name of the dimension group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DimensionGroupDetail {
 }
 impl DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::DimensionDetail]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::types::DimensionDetail]> {
         self.dimensions.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DimensionGroupDetailBuilder {
     }
     /// <p>The name of the dimension group.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// Appends an item to `dimensions`.
     ///
@@ -53,23 +52,22 @@ impl DimensionGroupDetailBuilder {
     /// <p>The dimensions within a dimension group.</p>
     pub fn dimensions(mut self, input: crate::types::DimensionDetail) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = Some(v);
+                        self
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionDetail>>,
-    ) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionDetail>>) -> Self {
+        self.dimensions = input; self
     }
     /// Consumes the builder and constructs a [`DimensionGroupDetail`](crate::types::DimensionGroupDetail).
     pub fn build(self) -> crate::types::DimensionGroupDetail {
         crate::types::DimensionGroupDetail {
-            group: self.group,
-            dimensions: self.dimensions,
+            group: self.group
+            ,
+            dimensions: self.dimensions
+            ,
         }
     }
 }
+

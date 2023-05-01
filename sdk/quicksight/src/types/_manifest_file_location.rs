@@ -3,7 +3,7 @@
 /// <p>Amazon S3 manifest file location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManifestFileLocation {
+pub struct ManifestFileLocation  {
     /// <p>Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ManifestFileLocation {
 }
 impl ManifestFileLocation {
     /// <p>Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Amazon S3 key that identifies an object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ManifestFileLocationBuilder {
     }
     /// <p>Amazon S3 bucket.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Amazon S3 key that identifies an object.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ManifestFileLocationBuilder {
     }
     /// <p>Amazon S3 key that identifies an object.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// Consumes the builder and constructs a [`ManifestFileLocation`](crate::types::ManifestFileLocation).
     pub fn build(self) -> crate::types::ManifestFileLocation {
         crate::types::ManifestFileLocation {
-            bucket: self.bucket,
-            key: self.key,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

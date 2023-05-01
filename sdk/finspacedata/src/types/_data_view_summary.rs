@@ -3,7 +3,7 @@
 /// <p>Structure for the summary of a Dataview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataViewSummary {
+pub struct DataViewSummary  {
     /// <p>The unique identifier for the Dataview.</p>
     #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
@@ -22,16 +22,16 @@ pub struct DataViewSummary {
     /// <p>Columns to be used for sorting the data.</p>
     #[doc(hidden)]
     pub sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The status of a Dataview creation.</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// <p>The status of a Dataview creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::DataViewStatus>,
@@ -40,8 +40,7 @@ pub struct DataViewSummary {
     pub error_info: std::option::Option<crate::types::DataViewErrorInfo>,
     /// <p>Information about the Dataview destination.</p>
     #[doc(hidden)]
-    pub destination_type_properties:
-        std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub destination_type_properties: std::option::Option<crate::types::DataViewDestinationTypeParams>,
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
     #[doc(hidden)]
     pub auto_update: bool,
@@ -54,15 +53,15 @@ pub struct DataViewSummary {
 }
 impl DataViewSummary {
     /// <p>The unique identifier for the Dataview.</p>
-    pub fn data_view_id(&self) -> std::option::Option<&str> {
+    pub fn data_view_id(&self) -> std::option::Option<& str> {
         self.data_view_id.as_deref()
     }
     /// <p>The ARN identifier of the Dataview.</p>
-    pub fn data_view_arn(&self) -> std::option::Option<&str> {
+    pub fn data_view_arn(&self) -> std::option::Option<& str> {
         self.data_view_arn.as_deref()
     }
     /// <p>Th unique identifier for the Dataview Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> std::option::Option<& str> {
         self.dataset_id.as_deref()
     }
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -70,35 +69,33 @@ impl DataViewSummary {
         self.as_of_timestamp
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn partition_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_columns.as_deref()
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn sort_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sort_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.sort_columns.as_deref()
     }
-    /// <p>The status of a Dataview creation.</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// <p>The status of a Dataview creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataViewStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DataViewStatus> {
         self.status.as_ref()
     }
     /// <p>The structure with error messages.</p>
-    pub fn error_info(&self) -> std::option::Option<&crate::types::DataViewErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::types::DataViewErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn destination_type_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::DataViewDestinationTypeParams> {
+    pub fn destination_type_properties(&self) -> std::option::Option<& crate::types::DataViewDestinationTypeParams> {
         self.destination_type_properties.as_ref()
     }
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
@@ -133,8 +130,7 @@ pub struct DataViewSummaryBuilder {
     pub(crate) sort_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) status: std::option::Option<crate::types::DataViewStatus>,
     pub(crate) error_info: std::option::Option<crate::types::DataViewErrorInfo>,
-    pub(crate) destination_type_properties:
-        std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    pub(crate) destination_type_properties: std::option::Option<crate::types::DataViewDestinationTypeParams>,
     pub(crate) auto_update: std::option::Option<bool>,
     pub(crate) create_time: std::option::Option<i64>,
     pub(crate) last_modified_time: std::option::Option<i64>,
@@ -147,8 +143,7 @@ impl DataViewSummaryBuilder {
     }
     /// <p>The unique identifier for the Dataview.</p>
     pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_view_id = input;
-        self
+        self.data_view_id = input; self
     }
     /// <p>The ARN identifier of the Dataview.</p>
     pub fn data_view_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +152,7 @@ impl DataViewSummaryBuilder {
     }
     /// <p>The ARN identifier of the Dataview.</p>
     pub fn set_data_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_view_arn = input;
-        self
+        self.data_view_arn = input; self
     }
     /// <p>Th unique identifier for the Dataview Dataset.</p>
     pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +161,7 @@ impl DataViewSummaryBuilder {
     }
     /// <p>Th unique identifier for the Dataview Dataset.</p>
     pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_id = input;
-        self
+        self.dataset_id = input; self
     }
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn as_of_timestamp(mut self, input: i64) -> Self {
@@ -177,8 +170,7 @@ impl DataViewSummaryBuilder {
     }
     /// <p>Time range to use for the Dataview. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_as_of_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-        self.as_of_timestamp = input;
-        self
+        self.as_of_timestamp = input; self
     }
     /// Appends an item to `partition_columns`.
     ///
@@ -187,17 +179,13 @@ impl DataViewSummaryBuilder {
     /// <p>Ordered set of column names used to partition data.</p>
     pub fn partition_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.partition_columns.unwrap_or_default();
-        v.push(input.into());
-        self.partition_columns = Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_columns = Some(v);
+                        self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.partition_columns = input;
-        self
+    pub fn set_partition_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.partition_columns = input; self
     }
     /// Appends an item to `sort_columns`.
     ///
@@ -206,47 +194,42 @@ impl DataViewSummaryBuilder {
     /// <p>Columns to be used for sorting the data.</p>
     pub fn sort_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sort_columns.unwrap_or_default();
-        v.push(input.into());
-        self.sort_columns = Some(v);
-        self
+                        v.push(input.into());
+                        self.sort_columns = Some(v);
+                        self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.sort_columns = input;
-        self
+    pub fn set_sort_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.sort_columns = input; self
     }
-    /// <p>The status of a Dataview creation.</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// <p>The status of a Dataview creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::DataViewStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of a Dataview creation.</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li>
-    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li>
-    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li>
-    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li>
-    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li>
+    /// <p>The status of a Dataview creation.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> – Dataview creation is running.</p> </li> 
+    /// <li> <p> <code>STARTING</code> – Dataview creation is starting.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Dataview creation has failed.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> – Dataview creation has been cancelled.</p> </li> 
+    /// <li> <p> <code>TIMEOUT</code> – Dataview creation has timed out.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Dataview creation has succeeded.</p> </li> 
+    /// <li> <p> <code>PENDING</code> – Dataview creation is pending.</p> </li> 
+    /// <li> <p> <code>FAILED_CLEANUP_FAILED</code> – Dataview creation failed and resource cleanup failed.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DataViewStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The structure with error messages.</p>
     pub fn error_info(mut self, input: crate::types::DataViewErrorInfo) -> Self {
@@ -254,28 +237,17 @@ impl DataViewSummaryBuilder {
         self
     }
     /// <p>The structure with error messages.</p>
-    pub fn set_error_info(
-        mut self,
-        input: std::option::Option<crate::types::DataViewErrorInfo>,
-    ) -> Self {
-        self.error_info = input;
-        self
+    pub fn set_error_info(mut self, input: std::option::Option<crate::types::DataViewErrorInfo>) -> Self {
+        self.error_info = input; self
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn destination_type_properties(
-        mut self,
-        input: crate::types::DataViewDestinationTypeParams,
-    ) -> Self {
+    pub fn destination_type_properties(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
         self.destination_type_properties = Some(input);
         self
     }
     /// <p>Information about the Dataview destination.</p>
-    pub fn set_destination_type_properties(
-        mut self,
-        input: std::option::Option<crate::types::DataViewDestinationTypeParams>,
-    ) -> Self {
-        self.destination_type_properties = input;
-        self
+    pub fn set_destination_type_properties(mut self, input: std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
+        self.destination_type_properties = input; self
     }
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
     pub fn auto_update(mut self, input: bool) -> Self {
@@ -284,8 +256,7 @@ impl DataViewSummaryBuilder {
     }
     /// <p>The flag to indicate Dataview should be updated automatically.</p>
     pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_update = input;
-        self
+        self.auto_update = input; self
     }
     /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn create_time(mut self, input: i64) -> Self {
@@ -294,8 +265,7 @@ impl DataViewSummaryBuilder {
     }
     /// <p>The timestamp at which the Dataview was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.create_time = input;
-        self
+        self.create_time = input; self
     }
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -304,24 +274,39 @@ impl DataViewSummaryBuilder {
     }
     /// <p>The last time that a Dataview was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// Consumes the builder and constructs a [`DataViewSummary`](crate::types::DataViewSummary).
     pub fn build(self) -> crate::types::DataViewSummary {
         crate::types::DataViewSummary {
-            data_view_id: self.data_view_id,
-            data_view_arn: self.data_view_arn,
-            dataset_id: self.dataset_id,
-            as_of_timestamp: self.as_of_timestamp,
-            partition_columns: self.partition_columns,
-            sort_columns: self.sort_columns,
-            status: self.status,
-            error_info: self.error_info,
-            destination_type_properties: self.destination_type_properties,
-            auto_update: self.auto_update.unwrap_or_default(),
-            create_time: self.create_time.unwrap_or_default(),
-            last_modified_time: self.last_modified_time.unwrap_or_default(),
+            data_view_id: self.data_view_id
+            ,
+            data_view_arn: self.data_view_arn
+            ,
+            dataset_id: self.dataset_id
+            ,
+            as_of_timestamp: self.as_of_timestamp
+            ,
+            partition_columns: self.partition_columns
+            ,
+            sort_columns: self.sort_columns
+            ,
+            status: self.status
+            ,
+            error_info: self.error_info
+            ,
+            destination_type_properties: self.destination_type_properties
+            ,
+            auto_update: self.auto_update
+                .unwrap_or_default()
+            ,
+            create_time: self.create_time
+                .unwrap_or_default()
+            ,
+            last_modified_time: self.last_modified_time
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

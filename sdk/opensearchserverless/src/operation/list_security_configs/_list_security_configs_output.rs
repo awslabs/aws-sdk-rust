@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityConfigsOutput {
+pub struct ListSecurityConfigsOutput  {
     /// <p>Details about the security configurations in your account.</p>
     #[doc(hidden)]
-    pub security_config_summaries:
-        std::option::Option<std::vec::Vec<crate::types::SecurityConfigSummary>>,
+    pub security_config_summaries: std::option::Option<std::vec::Vec<crate::types::SecurityConfigSummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,27 +13,23 @@ pub struct ListSecurityConfigsOutput {
 }
 impl ListSecurityConfigsOutput {
     /// <p>Details about the security configurations in your account.</p>
-    pub fn security_config_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::SecurityConfigSummary]> {
+    pub fn security_config_summaries(&self) -> std::option::Option<& [crate::types::SecurityConfigSummary]> {
         self.security_config_summaries.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSecurityConfigsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSecurityConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigsOutput`](crate::operation::list_security_configs::ListSecurityConfigsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder {
-        crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder {
+        crate::operation::list_security_configs::builders::ListSecurityConfigsOutputBuilder::default()
     }
 }
 
@@ -42,8 +37,7 @@ impl ListSecurityConfigsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSecurityConfigsOutputBuilder {
-    pub(crate) security_config_summaries:
-        std::option::Option<std::vec::Vec<crate::types::SecurityConfigSummary>>,
+    pub(crate) security_config_summaries: std::option::Option<std::vec::Vec<crate::types::SecurityConfigSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl ListSecurityConfigsOutputBuilder {
     /// <p>Details about the security configurations in your account.</p>
     pub fn security_config_summaries(mut self, input: crate::types::SecurityConfigSummary) -> Self {
         let mut v = self.security_config_summaries.unwrap_or_default();
-        v.push(input);
-        self.security_config_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.security_config_summaries = Some(v);
+                        self
     }
     /// <p>Details about the security configurations in your account.</p>
-    pub fn set_security_config_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityConfigSummary>>,
-    ) -> Self {
-        self.security_config_summaries = input;
-        self
+    pub fn set_security_config_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityConfigSummary>>) -> Self {
+        self.security_config_summaries = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,24 +64,26 @@ impl ListSecurityConfigsOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSecurityConfigsOutput`](crate::operation::list_security_configs::ListSecurityConfigsOutput).
     pub fn build(self) -> crate::operation::list_security_configs::ListSecurityConfigsOutput {
         crate::operation::list_security_configs::ListSecurityConfigsOutput {
-            security_config_summaries: self.security_config_summaries,
-            next_token: self.next_token,
+            security_config_summaries: self.security_config_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

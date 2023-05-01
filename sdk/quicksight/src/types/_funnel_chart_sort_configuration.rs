@@ -3,7 +3,7 @@
 /// <p>The sort configuration of a <code>FunnelChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunnelChartSortConfiguration {
+pub struct FunnelChartSortConfiguration  {
     /// <p>The sort configuration of the category fields.</p>
     #[doc(hidden)]
     pub category_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
@@ -13,13 +13,11 @@ pub struct FunnelChartSortConfiguration {
 }
 impl FunnelChartSortConfiguration {
     /// <p>The sort configuration of the category fields.</p>
-    pub fn category_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn category_sort(&self) -> std::option::Option<& [crate::types::FieldSortOptions]> {
         self.category_sort.as_deref()
     }
     /// <p>The limit on the number of categories displayed.</p>
-    pub fn category_items_limit(
-        &self,
-    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    pub fn category_items_limit(&self) -> std::option::Option<& crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
 }
@@ -45,17 +43,13 @@ impl FunnelChartSortConfigurationBuilder {
     /// <p>The sort configuration of the category fields.</p>
     pub fn category_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.category_sort.unwrap_or_default();
-        v.push(input);
-        self.category_sort = Some(v);
-        self
+                        v.push(input);
+                        self.category_sort = Some(v);
+                        self
     }
     /// <p>The sort configuration of the category fields.</p>
-    pub fn set_category_sort(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
-    ) -> Self {
-        self.category_sort = input;
-        self
+    pub fn set_category_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
+        self.category_sort = input; self
     }
     /// <p>The limit on the number of categories displayed.</p>
     pub fn category_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
@@ -63,18 +57,17 @@ impl FunnelChartSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of categories displayed.</p>
-    pub fn set_category_items_limit(
-        mut self,
-        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
-    ) -> Self {
-        self.category_items_limit = input;
-        self
+    pub fn set_category_items_limit(mut self, input: std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
+        self.category_items_limit = input; self
     }
     /// Consumes the builder and constructs a [`FunnelChartSortConfiguration`](crate::types::FunnelChartSortConfiguration).
     pub fn build(self) -> crate::types::FunnelChartSortConfiguration {
         crate::types::FunnelChartSortConfiguration {
-            category_sort: self.category_sort,
-            category_items_limit: self.category_items_limit,
+            category_sort: self.category_sort
+            ,
+            category_items_limit: self.category_items_limit
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMonitorOutput {
+pub struct UpdateMonitorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct UpdateMonitorOutput {
 }
 impl UpdateMonitorOutput {
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The status of a monitor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MonitorConfigState> {
+    pub fn status(&self) -> std::option::Option<& crate::types::MonitorConfigState> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitorOutput`](crate::operation::update_monitor::UpdateMonitorOutput).
     pub fn builder() -> crate::operation::update_monitor::builders::UpdateMonitorOutputBuilder {
@@ -49,8 +49,7 @@ impl UpdateMonitorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The status of a monitor.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
@@ -58,28 +57,27 @@ impl UpdateMonitorOutputBuilder {
         self
     }
     /// <p>The status of a monitor.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::MonitorConfigState>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateMonitorOutput`](crate::operation::update_monitor::UpdateMonitorOutput).
     pub fn build(self) -> crate::operation::update_monitor::UpdateMonitorOutput {
         crate::operation::update_monitor::UpdateMonitorOutput {
-            monitor_arn: self.monitor_arn,
-            status: self.status,
+            monitor_arn: self.monitor_arn
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

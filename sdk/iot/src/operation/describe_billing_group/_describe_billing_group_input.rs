@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBillingGroupInput {
+pub struct DescribeBillingGroupInput  {
     /// <p>The name of the billing group.</p>
     #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeBillingGroupInput {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+    pub fn billing_group_name(&self) -> std::option::Option<& str> {
         self.billing_group_name.as_deref()
     }
 }
 impl DescribeBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_billing_group::builders::DescribeBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_billing_group::builders::DescribeBillingGroupInputBuilder {
         crate::operation::describe_billing_group::builders::DescribeBillingGroupInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DescribeBillingGroupInputBuilder {
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.billing_group_name = input;
-        self
+    pub fn set_billing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.billing_group_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeBillingGroupInput`](crate::operation::describe_billing_group::DescribeBillingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_billing_group::DescribeBillingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_billing_group::DescribeBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_billing_group::DescribeBillingGroupInput {
-                billing_group_name: self.billing_group_name,
-            },
+                billing_group_name: self.billing_group_name
+                ,
+            }
         )
     }
 }
+

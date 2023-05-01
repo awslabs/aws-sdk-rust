@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePoolInput {
+pub struct UpdatePoolInput  {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
@@ -27,7 +27,7 @@ pub struct UpdatePoolInput {
 }
 impl UpdatePoolInput {
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -35,7 +35,7 @@ impl UpdatePoolInput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -43,7 +43,7 @@ impl UpdatePoolInput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -82,8 +82,7 @@ impl UpdatePoolInputBuilder {
     }
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -92,8 +91,7 @@ impl UpdatePoolInputBuilder {
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.two_way_enabled = input;
-        self
+        self.two_way_enabled = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,12 +99,8 @@ impl UpdatePoolInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn set_two_way_channel_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.two_way_channel_arn = input;
-        self
+    pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.two_way_channel_arn = input; self
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -115,8 +109,7 @@ impl UpdatePoolInputBuilder {
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.self_managed_opt_outs_enabled = input;
-        self
+        self.self_managed_opt_outs_enabled = input; self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
     pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,12 +117,8 @@ impl UpdatePoolInputBuilder {
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.opt_out_list_name = input;
-        self
+    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.opt_out_list_name = input; self
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn shared_routes_enabled(mut self, input: bool) -> Self {
@@ -138,8 +127,7 @@ impl UpdatePoolInputBuilder {
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
     pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.shared_routes_enabled = input;
-        self
+        self.shared_routes_enabled = input; self
     }
     /// <p>When set to true the pool can't be deleted.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -148,24 +136,28 @@ impl UpdatePoolInputBuilder {
     }
     /// <p>When set to true the pool can't be deleted.</p>
     pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input;
-        self
+        self.deletion_protection_enabled = input; self
     }
     /// Consumes the builder and constructs a [`UpdatePoolInput`](crate::operation::update_pool::UpdatePoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_pool::UpdatePoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_pool::UpdatePoolInput {
-            pool_id: self.pool_id,
-            two_way_enabled: self.two_way_enabled,
-            two_way_channel_arn: self.two_way_channel_arn,
-            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,
-            opt_out_list_name: self.opt_out_list_name,
-            shared_routes_enabled: self.shared_routes_enabled,
-            deletion_protection_enabled: self.deletion_protection_enabled,
-        })
+    pub fn build(self) -> Result<crate::operation::update_pool::UpdatePoolInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_pool::UpdatePoolInput {
+                pool_id: self.pool_id
+                ,
+                two_way_enabled: self.two_way_enabled
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                shared_routes_enabled: self.shared_routes_enabled
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                ,
+            }
+        )
     }
 }
+

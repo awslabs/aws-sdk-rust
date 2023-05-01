@@ -3,16 +3,14 @@
 /// <p>The sort configuration for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PivotTableSortConfiguration {
+pub struct PivotTableSortConfiguration  {
     /// <p>The field sort options for a pivot table sort configuration.</p>
     #[doc(hidden)]
     pub field_sort_options: std::option::Option<std::vec::Vec<crate::types::PivotFieldSortOptions>>,
 }
 impl PivotTableSortConfiguration {
     /// <p>The field sort options for a pivot table sort configuration.</p>
-    pub fn field_sort_options(
-        &self,
-    ) -> std::option::Option<&[crate::types::PivotFieldSortOptions]> {
+    pub fn field_sort_options(&self) -> std::option::Option<& [crate::types::PivotFieldSortOptions]> {
         self.field_sort_options.as_deref()
     }
 }
@@ -27,8 +25,7 @@ impl PivotTableSortConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PivotTableSortConfigurationBuilder {
-    pub(crate) field_sort_options:
-        std::option::Option<std::vec::Vec<crate::types::PivotFieldSortOptions>>,
+    pub(crate) field_sort_options: std::option::Option<std::vec::Vec<crate::types::PivotFieldSortOptions>>,
 }
 impl PivotTableSortConfigurationBuilder {
     /// Appends an item to `field_sort_options`.
@@ -38,22 +35,20 @@ impl PivotTableSortConfigurationBuilder {
     /// <p>The field sort options for a pivot table sort configuration.</p>
     pub fn field_sort_options(mut self, input: crate::types::PivotFieldSortOptions) -> Self {
         let mut v = self.field_sort_options.unwrap_or_default();
-        v.push(input);
-        self.field_sort_options = Some(v);
-        self
+                        v.push(input);
+                        self.field_sort_options = Some(v);
+                        self
     }
     /// <p>The field sort options for a pivot table sort configuration.</p>
-    pub fn set_field_sort_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PivotFieldSortOptions>>,
-    ) -> Self {
-        self.field_sort_options = input;
-        self
+    pub fn set_field_sort_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::PivotFieldSortOptions>>) -> Self {
+        self.field_sort_options = input; self
     }
     /// Consumes the builder and constructs a [`PivotTableSortConfiguration`](crate::types::PivotTableSortConfiguration).
     pub fn build(self) -> crate::types::PivotTableSortConfiguration {
         crate::types::PivotTableSortConfiguration {
-            field_sort_options: self.field_sort_options,
+            field_sort_options: self.field_sort_options
+            ,
         }
     }
 }
+

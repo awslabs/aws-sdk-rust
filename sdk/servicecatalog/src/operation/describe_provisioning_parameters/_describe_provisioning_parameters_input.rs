@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisioningParametersInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+pub struct DescribeProvisioningParametersInput  {
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -30,42 +30,42 @@ pub struct DescribeProvisioningParametersInput {
     pub path_name: std::option::Option<std::string::String>,
 }
 impl DescribeProvisioningParametersInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<&str> {
+    pub fn accept_language(&self) -> std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-    pub fn product_name(&self) -> std::option::Option<&str> {
+    pub fn product_name(&self) -> std::option::Option<& str> {
         self.product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_name(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_name(&self) -> std::option::Option<& str> {
         self.provisioning_artifact_name.as_deref()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    pub fn path_id(&self) -> std::option::Option<&str> {
+    pub fn path_id(&self) -> std::option::Option<& str> {
         self.path_id.as_deref()
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-    pub fn path_name(&self) -> std::option::Option<&str> {
+    pub fn path_name(&self) -> std::option::Option<& str> {
         self.path_name.as_deref()
     }
 }
 impl DescribeProvisioningParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningParametersInput`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersInput).
-    pub fn builder() -> crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder {
         crate::operation::describe_provisioning_parameters::builders::DescribeProvisioningParametersInputBuilder::default()
     }
 }
@@ -83,23 +83,22 @@ pub struct DescribeProvisioningParametersInputBuilder {
     pub(crate) path_name: std::option::Option<std::string::String>,
 }
 impl DescribeProvisioningParametersInputBuilder {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +107,7 @@ impl DescribeProvisioningParametersInputBuilder {
     }
     /// <p>The product identifier. You must provide the product name or ID, but not both.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
     pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +116,7 @@ impl DescribeProvisioningParametersInputBuilder {
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
     pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_name = input;
-        self
+        self.product_name = input; self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,12 +124,8 @@ impl DescribeProvisioningParametersInputBuilder {
         self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,12 +133,8 @@ impl DescribeProvisioningParametersInputBuilder {
         self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn set_provisioning_artifact_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.provisioning_artifact_name = input;
-        self
+    pub fn set_provisioning_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.provisioning_artifact_name = input; self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +143,7 @@ impl DescribeProvisioningParametersInputBuilder {
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
     pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path_id = input;
-        self
+        self.path_id = input; self
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub fn path_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,16 +152,10 @@ impl DescribeProvisioningParametersInputBuilder {
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
     pub fn set_path_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path_name = input;
-        self
+        self.path_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningParametersInput`](crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersInput {
                 accept_language: self.accept_language
@@ -194,3 +176,4 @@ impl DescribeProvisioningParametersInputBuilder {
         )
     }
 }
+

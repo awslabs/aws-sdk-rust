@@ -21,14 +21,8 @@ pub enum LoggingFormat {
 impl LoggingFormat {
     /// Tries to convert the enum instance into [`Json`](crate::types::LoggingFormat::Json), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_json(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::types::JsonFormatRef>, &Self> {
-        if let LoggingFormat::Json(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_json(&self) -> std::result::Result<&std::vec::Vec<crate::types::JsonFormatRef>, &Self> {
+        if let LoggingFormat::Json(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Json`](crate::types::LoggingFormat::Json).
     pub fn is_json(&self) -> bool {
@@ -37,11 +31,7 @@ impl LoggingFormat {
     /// Tries to convert the enum instance into [`Text`](crate::types::LoggingFormat::Text), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let LoggingFormat::Text(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let LoggingFormat::Text(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Text`](crate::types::LoggingFormat::Text).
     pub fn is_text(&self) -> bool {
@@ -52,3 +42,4 @@ impl LoggingFormat {
         matches!(self, Self::Unknown)
     }
 }
+

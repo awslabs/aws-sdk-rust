@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobRunOutput {
+pub struct GetJobRunOutput  {
     /// <p>The requested job-run metadata.</p>
     #[doc(hidden)]
     pub job_run: std::option::Option<crate::types::JobRun>,
@@ -10,15 +10,15 @@ pub struct GetJobRunOutput {
 }
 impl GetJobRunOutput {
     /// <p>The requested job-run metadata.</p>
-    pub fn job_run(&self) -> std::option::Option<&crate::types::JobRun> {
+    pub fn job_run(&self) -> std::option::Option<& crate::types::JobRun> {
         self.job_run.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetJobRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetJobRunOutput {
     /// Creates a new builder-style object to manufacture [`GetJobRunOutput`](crate::operation::get_job_run::GetJobRunOutput).
     pub fn builder() -> crate::operation::get_job_run::builders::GetJobRunOutputBuilder {
@@ -41,23 +41,24 @@ impl GetJobRunOutputBuilder {
     }
     /// <p>The requested job-run metadata.</p>
     pub fn set_job_run(mut self, input: std::option::Option<crate::types::JobRun>) -> Self {
-        self.job_run = input;
-        self
+        self.job_run = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetJobRunOutput`](crate::operation::get_job_run::GetJobRunOutput).
     pub fn build(self) -> crate::operation::get_job_run::GetJobRunOutput {
         crate::operation::get_job_run::GetJobRunOutput {
-            job_run: self.job_run,
+            job_run: self.job_run
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

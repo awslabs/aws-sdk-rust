@@ -3,7 +3,7 @@
 /// <p>Details about the issuer of a license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Issuer {
+pub struct Issuer  {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Issuer {
 }
 impl Issuer {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> std::option::Option<&str> {
+    pub fn sign_key(&self) -> std::option::Option<& str> {
         self.sign_key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl IssuerBuilder {
     }
     /// <p>Issuer name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl IssuerBuilder {
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sign_key = input;
-        self
+        self.sign_key = input; self
     }
     /// Consumes the builder and constructs a [`Issuer`](crate::types::Issuer).
     pub fn build(self) -> crate::types::Issuer {
         crate::types::Issuer {
-            name: self.name,
-            sign_key: self.sign_key,
+            name: self.name
+            ,
+            sign_key: self.sign_key
+            ,
         }
     }
 }
+

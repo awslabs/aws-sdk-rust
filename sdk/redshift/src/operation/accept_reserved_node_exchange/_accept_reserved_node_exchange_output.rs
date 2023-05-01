@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptReservedNodeExchangeOutput {
+pub struct AcceptReservedNodeExchangeOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub exchanged_reserved_node: std::option::Option<crate::types::ReservedNode>,
@@ -10,18 +10,18 @@ pub struct AcceptReservedNodeExchangeOutput {
 }
 impl AcceptReservedNodeExchangeOutput {
     /// <p></p>
-    pub fn exchanged_reserved_node(&self) -> std::option::Option<&crate::types::ReservedNode> {
+    pub fn exchanged_reserved_node(&self) -> std::option::Option<& crate::types::ReservedNode> {
         self.exchanged_reserved_node.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AcceptReservedNodeExchangeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AcceptReservedNodeExchangeOutput {
     /// Creates a new builder-style object to manufacture [`AcceptReservedNodeExchangeOutput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput).
-    pub fn builder() -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeOutputBuilder{
+    pub fn builder() -> crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeOutputBuilder {
         crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl AcceptReservedNodeExchangeOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_exchanged_reserved_node(
-        mut self,
-        input: std::option::Option<crate::types::ReservedNode>,
-    ) -> Self {
-        self.exchanged_reserved_node = input;
-        self
+    pub fn set_exchanged_reserved_node(mut self, input: std::option::Option<crate::types::ReservedNode>) -> Self {
+        self.exchanged_reserved_node = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AcceptReservedNodeExchangeOutput`](crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput {
+    pub fn build(self) -> crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput {
         crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput {
-            exchanged_reserved_node: self.exchanged_reserved_node,
+            exchanged_reserved_node: self.exchanged_reserved_node
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

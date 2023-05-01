@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeletionProtectionInput {
+pub struct UpdateDeletionProtectionInput  {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateDeletionProtectionInput {
 }
 impl UpdateDeletionProtectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
@@ -23,15 +23,13 @@ impl UpdateDeletionProtectionInput {
         self.deletion_protected
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateDeletionProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
-    pub fn builder(
-    ) -> crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder {
         crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl UpdateDeletionProtectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn deletion_protected(mut self, input: bool) -> Self {
@@ -62,8 +59,7 @@ impl UpdateDeletionProtectionInputBuilder {
     }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
     pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protected = input;
-        self
+        self.deletion_protected = input; self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl UpdateDeletionProtectionInputBuilder {
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_deletion_protection::UpdateDeletionProtectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_deletion_protection::UpdateDeletionProtectionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_deletion_protection::UpdateDeletionProtectionInput {
-                arn: self.arn,
-                deletion_protected: self.deletion_protected,
-                client_token: self.client_token,
-            },
+                arn: self.arn
+                ,
+                deletion_protected: self.deletion_protected
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

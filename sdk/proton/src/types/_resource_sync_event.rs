@@ -3,7 +3,7 @@
 /// <p>Detail data for a resource sync event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSyncEvent {
+pub struct ResourceSyncEvent  {
     /// <p>The type of event.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ResourceSyncEvent {
 }
 impl ResourceSyncEvent {
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The external ID for the event.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The time when the event occurred.</p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>A resource sync event.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> std::option::Option<& str> {
         self.event.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The type of event.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The external ID for the event.</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The external ID for the event.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The time when the event occurred.</p>
     pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -79,8 +77,7 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>The time when the event occurred.</p>
     pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>A resource sync event.</p>
     pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl ResourceSyncEventBuilder {
     }
     /// <p>A resource sync event.</p>
     pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event = input;
-        self
+        self.event = input; self
     }
     /// Consumes the builder and constructs a [`ResourceSyncEvent`](crate::types::ResourceSyncEvent).
     pub fn build(self) -> crate::types::ResourceSyncEvent {
         crate::types::ResourceSyncEvent {
-            r#type: self.r#type,
-            external_id: self.external_id,
-            time: self.time,
-            event: self.event,
+            r#type: self.r#type
+            ,
+            external_id: self.external_id
+            ,
+            time: self.time
+            ,
+            event: self.event
+            ,
         }
     }
 }
+

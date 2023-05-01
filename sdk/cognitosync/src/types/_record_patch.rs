@@ -3,7 +3,7 @@
 /// An update operation for a record.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordPatch {
+pub struct RecordPatch  {
     /// An operation, either replace or remove.
     #[doc(hidden)]
     pub op: std::option::Option<crate::types::Operation>,
@@ -22,15 +22,15 @@ pub struct RecordPatch {
 }
 impl RecordPatch {
     /// An operation, either replace or remove.
-    pub fn op(&self) -> std::option::Option<&crate::types::Operation> {
+    pub fn op(&self) -> std::option::Option<& crate::types::Operation> {
         self.op.as_ref()
     }
     /// The key associated with the record patch.
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// The value associated with the record patch.
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
@@ -38,7 +38,7 @@ impl RecordPatch {
         self.sync_count
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl RecordPatchBuilder {
     }
     /// An operation, either replace or remove.
     pub fn set_op(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.op = input;
-        self
+        self.op = input; self
     }
     /// The key associated with the record patch.
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl RecordPatchBuilder {
     }
     /// The key associated with the record patch.
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// The value associated with the record patch.
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl RecordPatchBuilder {
     }
     /// The value associated with the record patch.
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
     pub fn sync_count(mut self, input: i64) -> Self {
@@ -97,8 +94,7 @@ impl RecordPatchBuilder {
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
     pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.sync_count = input;
-        self
+        self.sync_count = input; self
     }
     /// The last modified date of the client device.
     pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -106,21 +102,23 @@ impl RecordPatchBuilder {
         self
     }
     /// The last modified date of the client device.
-    pub fn set_device_last_modified_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.device_last_modified_date = input;
-        self
+    pub fn set_device_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.device_last_modified_date = input; self
     }
     /// Consumes the builder and constructs a [`RecordPatch`](crate::types::RecordPatch).
     pub fn build(self) -> crate::types::RecordPatch {
         crate::types::RecordPatch {
-            op: self.op,
-            key: self.key,
-            value: self.value,
-            sync_count: self.sync_count,
-            device_last_modified_date: self.device_last_modified_date,
+            op: self.op
+            ,
+            key: self.key
+            ,
+            value: self.value
+            ,
+            sync_count: self.sync_count
+            ,
+            device_last_modified_date: self.device_last_modified_date
+            ,
         }
     }
 }
+

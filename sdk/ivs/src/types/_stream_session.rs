@@ -3,7 +3,7 @@
 /// <p>Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamSession {
+pub struct StreamSession  {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
@@ -28,33 +28,31 @@ pub struct StreamSession {
 }
 impl StreamSession {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The properties of the channel at the time of going live.</p>
-    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>The properties of the incoming RTMP stream for the stream.</p>
-    pub fn ingest_configuration(&self) -> std::option::Option<&crate::types::IngestConfiguration> {
+    pub fn ingest_configuration(&self) -> std::option::Option<& crate::types::IngestConfiguration> {
         self.ingest_configuration.as_ref()
     }
     /// <p>The properties of recording the live stream.</p>
-    pub fn recording_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::RecordingConfiguration> {
+    pub fn recording_configuration(&self) -> std::option::Option<& crate::types::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
-    pub fn truncated_events(&self) -> std::option::Option<&[crate::types::StreamEvent]> {
+    pub fn truncated_events(&self) -> std::option::Option<& [crate::types::StreamEvent]> {
         self.truncated_events.as_deref()
     }
 }
@@ -85,8 +83,7 @@ impl StreamSessionBuilder {
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,12 +91,8 @@ impl StreamSessionBuilder {
         self
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,8 +101,7 @@ impl StreamSessionBuilder {
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The properties of the channel at the time of going live.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
@@ -118,8 +110,7 @@ impl StreamSessionBuilder {
     }
     /// <p>The properties of the channel at the time of going live.</p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>The properties of the incoming RTMP stream for the stream.</p>
     pub fn ingest_configuration(mut self, input: crate::types::IngestConfiguration) -> Self {
@@ -127,12 +118,8 @@ impl StreamSessionBuilder {
         self
     }
     /// <p>The properties of the incoming RTMP stream for the stream.</p>
-    pub fn set_ingest_configuration(
-        mut self,
-        input: std::option::Option<crate::types::IngestConfiguration>,
-    ) -> Self {
-        self.ingest_configuration = input;
-        self
+    pub fn set_ingest_configuration(mut self, input: std::option::Option<crate::types::IngestConfiguration>) -> Self {
+        self.ingest_configuration = input; self
     }
     /// <p>The properties of recording the live stream.</p>
     pub fn recording_configuration(mut self, input: crate::types::RecordingConfiguration) -> Self {
@@ -140,12 +127,8 @@ impl StreamSessionBuilder {
         self
     }
     /// <p>The properties of recording the live stream.</p>
-    pub fn set_recording_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RecordingConfiguration>,
-    ) -> Self {
-        self.recording_configuration = input;
-        self
+    pub fn set_recording_configuration(mut self, input: std::option::Option<crate::types::RecordingConfiguration>) -> Self {
+        self.recording_configuration = input; self
     }
     /// Appends an item to `truncated_events`.
     ///
@@ -154,28 +137,32 @@ impl StreamSessionBuilder {
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
     pub fn truncated_events(mut self, input: crate::types::StreamEvent) -> Self {
         let mut v = self.truncated_events.unwrap_or_default();
-        v.push(input);
-        self.truncated_events = Some(v);
-        self
+                        v.push(input);
+                        self.truncated_events = Some(v);
+                        self
     }
     /// <p>List of Amazon IVS events that the stream encountered. The list is sorted by most recent events and contains up to 500 events. For Amazon IVS events, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using Amazon EventBridge with Amazon IVS</a>.</p>
-    pub fn set_truncated_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StreamEvent>>,
-    ) -> Self {
-        self.truncated_events = input;
-        self
+    pub fn set_truncated_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamEvent>>) -> Self {
+        self.truncated_events = input; self
     }
     /// Consumes the builder and constructs a [`StreamSession`](crate::types::StreamSession).
     pub fn build(self) -> crate::types::StreamSession {
         crate::types::StreamSession {
-            stream_id: self.stream_id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            channel: self.channel,
-            ingest_configuration: self.ingest_configuration,
-            recording_configuration: self.recording_configuration,
-            truncated_events: self.truncated_events,
+            stream_id: self.stream_id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            channel: self.channel
+            ,
+            ingest_configuration: self.ingest_configuration
+            ,
+            recording_configuration: self.recording_configuration
+            ,
+            truncated_events: self.truncated_events
+            ,
         }
     }
 }
+

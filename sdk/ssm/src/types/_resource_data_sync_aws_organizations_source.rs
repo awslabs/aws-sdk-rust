@@ -3,24 +3,21 @@
 /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations or, if an Amazon Web Services organization isn't present, from multiple Amazon Web Services Regions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDataSyncAwsOrganizationsSource {
+pub struct ResourceDataSyncAwsOrganizationsSource  {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
     #[doc(hidden)]
     pub organization_source_type: std::option::Option<std::string::String>,
     /// <p>The Organizations organization units included in the sync.</p>
     #[doc(hidden)]
-    pub organizational_units:
-        std::option::Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
+    pub organizational_units: std::option::Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
 }
 impl ResourceDataSyncAwsOrganizationsSource {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    pub fn organization_source_type(&self) -> std::option::Option<&str> {
+    pub fn organization_source_type(&self) -> std::option::Option<& str> {
         self.organization_source_type.as_deref()
     }
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn organizational_units(
-        &self,
-    ) -> std::option::Option<&[crate::types::ResourceDataSyncOrganizationalUnit]> {
+    pub fn organizational_units(&self) -> std::option::Option<& [crate::types::ResourceDataSyncOrganizationalUnit]> {
         self.organizational_units.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl ResourceDataSyncAwsOrganizationsSource {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ResourceDataSyncAwsOrganizationsSourceBuilder {
     pub(crate) organization_source_type: std::option::Option<std::string::String>,
-    pub(crate) organizational_units:
-        std::option::Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
+    pub(crate) organizational_units: std::option::Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
 }
 impl ResourceDataSyncAwsOrganizationsSourceBuilder {
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
@@ -46,40 +42,32 @@ impl ResourceDataSyncAwsOrganizationsSourceBuilder {
         self
     }
     /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated from the entire Amazon Web Services organization.</p>
-    pub fn set_organization_source_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.organization_source_type = input;
-        self
+    pub fn set_organization_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.organization_source_type = input; self
     }
     /// Appends an item to `organizational_units`.
     ///
     /// To override the contents of this collection use [`set_organizational_units`](Self::set_organizational_units).
     ///
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn organizational_units(
-        mut self,
-        input: crate::types::ResourceDataSyncOrganizationalUnit,
-    ) -> Self {
+    pub fn organizational_units(mut self, input: crate::types::ResourceDataSyncOrganizationalUnit) -> Self {
         let mut v = self.organizational_units.unwrap_or_default();
-        v.push(input);
-        self.organizational_units = Some(v);
-        self
+                        v.push(input);
+                        self.organizational_units = Some(v);
+                        self
     }
     /// <p>The Organizations organization units included in the sync.</p>
-    pub fn set_organizational_units(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>,
-    ) -> Self {
-        self.organizational_units = input;
-        self
+    pub fn set_organizational_units(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceDataSyncOrganizationalUnit>>) -> Self {
+        self.organizational_units = input; self
     }
     /// Consumes the builder and constructs a [`ResourceDataSyncAwsOrganizationsSource`](crate::types::ResourceDataSyncAwsOrganizationsSource).
     pub fn build(self) -> crate::types::ResourceDataSyncAwsOrganizationsSource {
         crate::types::ResourceDataSyncAwsOrganizationsSource {
-            organization_source_type: self.organization_source_type,
-            organizational_units: self.organizational_units,
+            organization_source_type: self.organization_source_type
+            ,
+            organizational_units: self.organizational_units
+            ,
         }
     }
 }
+

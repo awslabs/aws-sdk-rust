@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notificationtarget = unimplemented!();
 /// match notificationtarget {
@@ -31,22 +31,14 @@
 /// Specifically, when `notificationtarget` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotificationTarget::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotificationTarget {
     #[allow(missing_docs)] // documentation missing in model
     EventBridge,
@@ -55,44 +47,43 @@ pub enum NotificationTarget {
     #[allow(missing_docs)] // documentation missing in model
     Sqs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationTarget {
-    fn from(s: &str) -> Self {
-        match s {
-            "EventBridge" => NotificationTarget::EventBridge,
-            "SNS" => NotificationTarget::Sns,
-            "SQS" => NotificationTarget::Sqs,
-            other => NotificationTarget::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EventBridge" => NotificationTarget::EventBridge,
+"SNS" => NotificationTarget::Sns,
+"SQS" => NotificationTarget::Sqs,
+other => NotificationTarget::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NotificationTarget {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationTarget::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotificationTarget::from(s))
+                }
+            }
 impl NotificationTarget {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NotificationTarget::EventBridge => "EventBridge",
-            NotificationTarget::Sns => "SNS",
-            NotificationTarget::Sqs => "SQS",
-            NotificationTarget::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EventBridge", "SNS", "SQS"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NotificationTarget::EventBridge => "EventBridge",
+    NotificationTarget::Sns => "SNS",
+    NotificationTarget::Sqs => "SQS",
+    NotificationTarget::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EventBridge", "SNS", "SQS"]
+                }
+            }
 impl AsRef<str> for NotificationTarget {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

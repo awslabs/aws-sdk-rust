@@ -3,7 +3,7 @@
 /// <p>The specification of a Jupyter kernel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KernelSpec {
+pub struct KernelSpec  {
     /// <p>The name of the Jupyter kernel in the image. This value is case sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct KernelSpec {
 }
 impl KernelSpec {
     /// <p>The name of the Jupyter kernel in the image. This value is case sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name of the kernel.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl KernelSpecBuilder {
     }
     /// <p>The name of the Jupyter kernel in the image. This value is case sensitive.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name of the kernel.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl KernelSpecBuilder {
     }
     /// <p>The display name of the kernel.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// Consumes the builder and constructs a [`KernelSpec`](crate::types::KernelSpec).
     pub fn build(self) -> crate::types::KernelSpec {
         crate::types::KernelSpec {
-            name: self.name,
-            display_name: self.display_name,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let amitypes = unimplemented!();
 /// match amitypes {
@@ -40,22 +40,14 @@
 /// Specifically, when `amitypes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AmiTypes::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
     Al2Arm64,
@@ -82,73 +74,61 @@ pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
     WindowsFull2022X8664,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AmiTypes {
-    fn from(s: &str) -> Self {
-        match s {
-            "AL2_ARM_64" => AmiTypes::Al2Arm64,
-            "AL2_x86_64" => AmiTypes::Al2X8664,
-            "AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
-            "BOTTLEROCKET_ARM_64" => AmiTypes::BottlerocketArm64,
-            "BOTTLEROCKET_ARM_64_NVIDIA" => AmiTypes::BottlerocketArm64Nvidia,
-            "BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
-            "BOTTLEROCKET_x86_64_NVIDIA" => AmiTypes::BottlerocketX8664Nvidia,
-            "CUSTOM" => AmiTypes::Custom,
-            "WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
-            "WINDOWS_CORE_2022_x86_64" => AmiTypes::WindowsCore2022X8664,
-            "WINDOWS_FULL_2019_x86_64" => AmiTypes::WindowsFull2019X8664,
-            "WINDOWS_FULL_2022_x86_64" => AmiTypes::WindowsFull2022X8664,
-            other => AmiTypes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AL2_ARM_64" => AmiTypes::Al2Arm64,
+"AL2_x86_64" => AmiTypes::Al2X8664,
+"AL2_x86_64_GPU" => AmiTypes::Al2X8664Gpu,
+"BOTTLEROCKET_ARM_64" => AmiTypes::BottlerocketArm64,
+"BOTTLEROCKET_ARM_64_NVIDIA" => AmiTypes::BottlerocketArm64Nvidia,
+"BOTTLEROCKET_x86_64" => AmiTypes::BottlerocketX8664,
+"BOTTLEROCKET_x86_64_NVIDIA" => AmiTypes::BottlerocketX8664Nvidia,
+"CUSTOM" => AmiTypes::Custom,
+"WINDOWS_CORE_2019_x86_64" => AmiTypes::WindowsCore2019X8664,
+"WINDOWS_CORE_2022_x86_64" => AmiTypes::WindowsCore2022X8664,
+"WINDOWS_FULL_2019_x86_64" => AmiTypes::WindowsFull2019X8664,
+"WINDOWS_FULL_2022_x86_64" => AmiTypes::WindowsFull2022X8664,
+other => AmiTypes::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AmiTypes {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AmiTypes::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AmiTypes::from(s))
+                }
+            }
 impl AmiTypes {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AmiTypes::Al2Arm64 => "AL2_ARM_64",
-            AmiTypes::Al2X8664 => "AL2_x86_64",
-            AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
-            AmiTypes::BottlerocketArm64 => "BOTTLEROCKET_ARM_64",
-            AmiTypes::BottlerocketArm64Nvidia => "BOTTLEROCKET_ARM_64_NVIDIA",
-            AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
-            AmiTypes::BottlerocketX8664Nvidia => "BOTTLEROCKET_x86_64_NVIDIA",
-            AmiTypes::Custom => "CUSTOM",
-            AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
-            AmiTypes::WindowsCore2022X8664 => "WINDOWS_CORE_2022_x86_64",
-            AmiTypes::WindowsFull2019X8664 => "WINDOWS_FULL_2019_x86_64",
-            AmiTypes::WindowsFull2022X8664 => "WINDOWS_FULL_2022_x86_64",
-            AmiTypes::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AL2_ARM_64",
-            "AL2_x86_64",
-            "AL2_x86_64_GPU",
-            "BOTTLEROCKET_ARM_64",
-            "BOTTLEROCKET_ARM_64_NVIDIA",
-            "BOTTLEROCKET_x86_64",
-            "BOTTLEROCKET_x86_64_NVIDIA",
-            "CUSTOM",
-            "WINDOWS_CORE_2019_x86_64",
-            "WINDOWS_CORE_2022_x86_64",
-            "WINDOWS_FULL_2019_x86_64",
-            "WINDOWS_FULL_2022_x86_64",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AmiTypes::Al2Arm64 => "AL2_ARM_64",
+    AmiTypes::Al2X8664 => "AL2_x86_64",
+    AmiTypes::Al2X8664Gpu => "AL2_x86_64_GPU",
+    AmiTypes::BottlerocketArm64 => "BOTTLEROCKET_ARM_64",
+    AmiTypes::BottlerocketArm64Nvidia => "BOTTLEROCKET_ARM_64_NVIDIA",
+    AmiTypes::BottlerocketX8664 => "BOTTLEROCKET_x86_64",
+    AmiTypes::BottlerocketX8664Nvidia => "BOTTLEROCKET_x86_64_NVIDIA",
+    AmiTypes::Custom => "CUSTOM",
+    AmiTypes::WindowsCore2019X8664 => "WINDOWS_CORE_2019_x86_64",
+    AmiTypes::WindowsCore2022X8664 => "WINDOWS_CORE_2022_x86_64",
+    AmiTypes::WindowsFull2019X8664 => "WINDOWS_FULL_2019_x86_64",
+    AmiTypes::WindowsFull2022X8664 => "WINDOWS_FULL_2022_x86_64",
+    AmiTypes::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AL2_ARM_64", "AL2_x86_64", "AL2_x86_64_GPU", "BOTTLEROCKET_ARM_64", "BOTTLEROCKET_ARM_64_NVIDIA", "BOTTLEROCKET_x86_64", "BOTTLEROCKET_x86_64_NVIDIA", "CUSTOM", "WINDOWS_CORE_2019_x86_64", "WINDOWS_CORE_2022_x86_64", "WINDOWS_FULL_2019_x86_64", "WINDOWS_FULL_2022_x86_64"]
+                }
+            }
 impl AsRef<str> for AmiTypes {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

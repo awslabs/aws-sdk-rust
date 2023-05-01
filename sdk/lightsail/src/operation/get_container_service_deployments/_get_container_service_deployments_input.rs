@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerServiceDeploymentsInput {
+pub struct GetContainerServiceDeploymentsInput  {
     /// <p>The name of the container service for which to return deployments.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl GetContainerServiceDeploymentsInput {
     /// <p>The name of the container service for which to return deployments.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
 impl GetContainerServiceDeploymentsInput {
     /// Creates a new builder-style object to manufacture [`GetContainerServiceDeploymentsInput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput).
-    pub fn builder() -> crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsInputBuilder{
+    pub fn builder() -> crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsInputBuilder {
         crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl GetContainerServiceDeploymentsInputBuilder {
     }
     /// <p>The name of the container service for which to return deployments.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// Consumes the builder and constructs a [`GetContainerServiceDeploymentsInput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsInput {
                 service_name: self.service_name
@@ -52,3 +46,4 @@ impl GetContainerServiceDeploymentsInputBuilder {
         )
     }
 }
+

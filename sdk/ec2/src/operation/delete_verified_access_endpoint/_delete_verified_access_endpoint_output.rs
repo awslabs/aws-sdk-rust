@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVerifiedAccessEndpointOutput {
-    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+pub struct DeleteVerifiedAccessEndpointOutput  {
+    /// <p>The ID of the Verified Access endpoint.</p>
     #[doc(hidden)]
     pub verified_access_endpoint: std::option::Option<crate::types::VerifiedAccessEndpoint>,
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessEndpointOutput {
-    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn verified_access_endpoint(
-        &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessEndpoint> {
+    /// <p>The ID of the Verified Access endpoint.</p>
+    pub fn verified_access_endpoint(&self) -> std::option::Option<& crate::types::VerifiedAccessEndpoint> {
         self.verified_access_endpoint.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVerifiedAccessEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVerifiedAccessEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput).
-    pub fn builder() -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder {
         crate::operation::delete_verified_access_endpoint::builders::DeleteVerifiedAccessEndpointOutputBuilder::default()
     }
 }
@@ -36,35 +34,31 @@ pub struct DeleteVerifiedAccessEndpointOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessEndpointOutputBuilder {
-    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+    /// <p>The ID of the Verified Access endpoint.</p>
     pub fn verified_access_endpoint(mut self, input: crate::types::VerifiedAccessEndpoint) -> Self {
         self.verified_access_endpoint = Some(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_verified_access_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpoint>,
-    ) -> Self {
-        self.verified_access_endpoint = input;
-        self
+    /// <p>The ID of the Verified Access endpoint.</p>
+    pub fn set_verified_access_endpoint(mut self, input: std::option::Option<crate::types::VerifiedAccessEndpoint>) -> Self {
+        self.verified_access_endpoint = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessEndpointOutput`](crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput {
+    pub fn build(self) -> crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput {
         crate::operation::delete_verified_access_endpoint::DeleteVerifiedAccessEndpointOutput {
-            verified_access_endpoint: self.verified_access_endpoint,
+            verified_access_endpoint: self.verified_access_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

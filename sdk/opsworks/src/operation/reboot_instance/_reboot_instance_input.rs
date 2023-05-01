@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootInstanceInput {
+pub struct RebootInstanceInput  {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
 }
 impl RebootInstanceInput {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl RebootInstanceInputBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`RebootInstanceInput`](crate::operation::reboot_instance::RebootInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reboot_instance::RebootInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::reboot_instance::RebootInstanceInput {
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> Result<crate::operation::reboot_instance::RebootInstanceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::reboot_instance::RebootInstanceInput {
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

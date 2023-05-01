@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectParentPathsOutput {
+pub struct ListObjectParentPathsOutput  {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     #[doc(hidden)]
-    pub path_to_object_identifiers_list:
-        std::option::Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
+    pub path_to_object_identifiers_list: std::option::Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct ListObjectParentPathsOutput {
 }
 impl ListObjectParentPathsOutput {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::PathToObjectIdentifiers]> {
+    pub fn path_to_object_identifiers_list(&self) -> std::option::Option<& [crate::types::PathToObjectIdentifiers]> {
         self.path_to_object_identifiers_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListObjectParentPathsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListObjectParentPathsOutput {
     /// Creates a new builder-style object to manufacture [`ListObjectParentPathsOutput`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_object_parent_paths::builders::ListObjectParentPathsOutputBuilder {
         crate::operation::list_object_parent_paths::builders::ListObjectParentPathsOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl ListObjectParentPathsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListObjectParentPathsOutputBuilder {
-    pub(crate) path_to_object_identifiers_list:
-        std::option::Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
+    pub(crate) path_to_object_identifiers_list: std::option::Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,22 +47,15 @@ impl ListObjectParentPathsOutputBuilder {
     /// To override the contents of this collection use [`set_path_to_object_identifiers_list`](Self::set_path_to_object_identifiers_list).
     ///
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(
-        mut self,
-        input: crate::types::PathToObjectIdentifiers,
-    ) -> Self {
+    pub fn path_to_object_identifiers_list(mut self, input: crate::types::PathToObjectIdentifiers) -> Self {
         let mut v = self.path_to_object_identifiers_list.unwrap_or_default();
-        v.push(input);
-        self.path_to_object_identifiers_list = Some(v);
-        self
+                        v.push(input);
+                        self.path_to_object_identifiers_list = Some(v);
+                        self
     }
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn set_path_to_object_identifiers_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>,
-    ) -> Self {
-        self.path_to_object_identifiers_list = input;
-        self
+    pub fn set_path_to_object_identifiers_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::PathToObjectIdentifiers>>) -> Self {
+        self.path_to_object_identifiers_list = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,24 +64,26 @@ impl ListObjectParentPathsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListObjectParentPathsOutput`](crate::operation::list_object_parent_paths::ListObjectParentPathsOutput).
     pub fn build(self) -> crate::operation::list_object_parent_paths::ListObjectParentPathsOutput {
         crate::operation::list_object_parent_paths::ListObjectParentPathsOutput {
-            path_to_object_identifiers_list: self.path_to_object_identifiers_list,
-            next_token: self.next_token,
+            path_to_object_identifiers_list: self.path_to_object_identifiers_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

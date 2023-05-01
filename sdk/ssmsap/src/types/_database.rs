@@ -3,7 +3,7 @@
 /// <p>The SAP HANA database of the application registered with AWS Systems Manager for SAP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Database {
+pub struct Database  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -40,39 +40,39 @@ pub struct Database {
 }
 impl Database {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<&str> {
+    pub fn component_id(&self) -> std::option::Option<& str> {
         self.component_id.as_deref()
     }
     /// <p>The credentials of the database.</p>
-    pub fn credentials(&self) -> std::option::Option<&[crate::types::ApplicationCredential]> {
+    pub fn credentials(&self) -> std::option::Option<& [crate::types::ApplicationCredential]> {
         self.credentials.as_deref()
     }
     /// <p>The ID of the SAP HANA database.</p>
-    pub fn database_id(&self) -> std::option::Option<&str> {
+    pub fn database_id(&self) -> std::option::Option<& str> {
         self.database_id.as_deref()
     }
     /// <p>The name of the database.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The type of the database.</p>
-    pub fn database_type(&self) -> std::option::Option<&crate::types::DatabaseType> {
+    pub fn database_type(&self) -> std::option::Option<& crate::types::DatabaseType> {
         self.database_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the database.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DatabaseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DatabaseStatus> {
         self.status.as_ref()
     }
     /// <p>The primary host of the database.</p>
-    pub fn primary_host(&self) -> std::option::Option<&str> {
+    pub fn primary_host(&self) -> std::option::Option<& str> {
         self.primary_host.as_deref()
     }
     /// <p>The SQL port of the database.</p>
@@ -80,7 +80,7 @@ impl Database {
         self.sql_port
     }
     /// <p>The time at which the database was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -115,8 +115,7 @@ impl DatabaseBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +124,7 @@ impl DatabaseBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
     }
     /// Appends an item to `credentials`.
     ///
@@ -135,17 +133,13 @@ impl DatabaseBuilder {
     /// <p>The credentials of the database.</p>
     pub fn credentials(mut self, input: crate::types::ApplicationCredential) -> Self {
         let mut v = self.credentials.unwrap_or_default();
-        v.push(input);
-        self.credentials = Some(v);
-        self
+                        v.push(input);
+                        self.credentials = Some(v);
+                        self
     }
     /// <p>The credentials of the database.</p>
-    pub fn set_credentials(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationCredential>>,
-    ) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationCredential>>) -> Self {
+        self.credentials = input; self
     }
     /// <p>The ID of the SAP HANA database.</p>
     pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +148,7 @@ impl DatabaseBuilder {
     }
     /// <p>The ID of the SAP HANA database.</p>
     pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_id = input;
-        self
+        self.database_id = input; self
     }
     /// <p>The name of the database.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,8 +157,7 @@ impl DatabaseBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The type of the database.</p>
     pub fn database_type(mut self, input: crate::types::DatabaseType) -> Self {
@@ -173,12 +165,8 @@ impl DatabaseBuilder {
         self
     }
     /// <p>The type of the database.</p>
-    pub fn set_database_type(
-        mut self,
-        input: std::option::Option<crate::types::DatabaseType>,
-    ) -> Self {
-        self.database_type = input;
-        self
+    pub fn set_database_type(mut self, input: std::option::Option<crate::types::DatabaseType>) -> Self {
+        self.database_type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,8 +175,7 @@ impl DatabaseBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The status of the database.</p>
     pub fn status(mut self, input: crate::types::DatabaseStatus) -> Self {
@@ -197,8 +184,7 @@ impl DatabaseBuilder {
     }
     /// <p>The status of the database.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DatabaseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The primary host of the database.</p>
     pub fn primary_host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,8 +193,7 @@ impl DatabaseBuilder {
     }
     /// <p>The primary host of the database.</p>
     pub fn set_primary_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_host = input;
-        self
+        self.primary_host = input; self
     }
     /// <p>The SQL port of the database.</p>
     pub fn sql_port(mut self, input: i32) -> Self {
@@ -217,8 +202,7 @@ impl DatabaseBuilder {
     }
     /// <p>The SQL port of the database.</p>
     pub fn set_sql_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.sql_port = input;
-        self
+        self.sql_port = input; self
     }
     /// <p>The time at which the database was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -226,27 +210,35 @@ impl DatabaseBuilder {
         self
     }
     /// <p>The time at which the database was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {
         crate::types::Database {
-            application_id: self.application_id,
-            component_id: self.component_id,
-            credentials: self.credentials,
-            database_id: self.database_id,
-            database_name: self.database_name,
-            database_type: self.database_type,
-            arn: self.arn,
-            status: self.status,
-            primary_host: self.primary_host,
-            sql_port: self.sql_port,
-            last_updated: self.last_updated,
+            application_id: self.application_id
+            ,
+            component_id: self.component_id
+            ,
+            credentials: self.credentials
+            ,
+            database_id: self.database_id
+            ,
+            database_name: self.database_name
+            ,
+            database_type: self.database_type
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            primary_host: self.primary_host
+            ,
+            sql_port: self.sql_port
+            ,
+            last_updated: self.last_updated
+            ,
         }
     }
 }
+

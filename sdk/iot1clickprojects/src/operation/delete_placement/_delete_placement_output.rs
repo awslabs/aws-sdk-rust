@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlacementOutput {
+pub struct DeletePlacementOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeletePlacementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeletePlacementOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlacementOutput`](crate::operation::delete_placement::DeletePlacementOutput).
     pub fn builder() -> crate::operation::delete_placement::builders::DeletePlacementOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeletePlacementOutputBuilder {
 }
 impl DeletePlacementOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeletePlacementOutput`](crate::operation::delete_placement::DeletePlacementOutput).
     pub fn build(self) -> crate::operation::delete_placement::DeletePlacementOutput {
         crate::operation::delete_placement::DeletePlacementOutput {
@@ -40,3 +40,4 @@ impl DeletePlacementOutputBuilder {
         }
     }
 }
+

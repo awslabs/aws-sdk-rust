@@ -3,7 +3,7 @@
 /// <p>Provides information about the context in which temporary security credentials were issued to an entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionContextAttributes {
+pub struct SessionContextAttributes  {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,7 +13,7 @@ pub struct SessionContextAttributes {
 }
 impl SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
@@ -42,12 +42,8 @@ impl SessionContextAttributesBuilder {
         self
     }
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn mfa_authenticated(mut self, input: bool) -> Self {
@@ -56,14 +52,17 @@ impl SessionContextAttributesBuilder {
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn set_mfa_authenticated(mut self, input: std::option::Option<bool>) -> Self {
-        self.mfa_authenticated = input;
-        self
+        self.mfa_authenticated = input; self
     }
     /// Consumes the builder and constructs a [`SessionContextAttributes`](crate::types::SessionContextAttributes).
     pub fn build(self) -> crate::types::SessionContextAttributes {
         crate::types::SessionContextAttributes {
-            creation_date: self.creation_date,
-            mfa_authenticated: self.mfa_authenticated.unwrap_or_default(),
+            creation_date: self.creation_date
+            ,
+            mfa_authenticated: self.mfa_authenticated
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

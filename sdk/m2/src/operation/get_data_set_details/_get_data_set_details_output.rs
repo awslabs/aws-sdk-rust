@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataSetDetailsOutput {
+pub struct GetDataSetDetailsOutput  {
     /// <p>The name of the data set.</p>
     #[doc(hidden)]
     pub data_set_name: std::option::Option<std::string::String>,
@@ -31,11 +31,11 @@ pub struct GetDataSetDetailsOutput {
 }
 impl GetDataSetDetailsOutput {
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(&self) -> std::option::Option<&str> {
+    pub fn data_set_name(&self) -> std::option::Option<& str> {
         self.data_set_name.as_deref()
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    pub fn data_set_org(&self) -> std::option::Option<&crate::types::DatasetDetailOrgAttributes> {
+    pub fn data_set_org(&self) -> std::option::Option<& crate::types::DatasetDetailOrgAttributes> {
         self.data_set_org.as_ref()
     }
     /// <p>The length of records in the data set.</p>
@@ -43,7 +43,7 @@ impl GetDataSetDetailsOutput {
         self.record_length
     }
     /// <p>The location where the data set is stored.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The size of the block on disk. </p>
@@ -51,27 +51,26 @@ impl GetDataSetDetailsOutput {
         self.blocksize
     }
     /// <p>The timestamp when the data set was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the data set was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The last time the data set was referenced.</p>
-    pub fn last_referenced_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_referenced_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_referenced_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataSetDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDataSetDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSetDetailsOutput`](crate::operation::get_data_set_details::GetDataSetDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder {
         crate::operation::get_data_set_details::builders::GetDataSetDetailsOutputBuilder::default()
     }
 }
@@ -98,8 +97,7 @@ impl GetDataSetDetailsOutputBuilder {
     }
     /// <p>The name of the data set.</p>
     pub fn set_data_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_name = input;
-        self
+        self.data_set_name = input; self
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
     pub fn data_set_org(mut self, input: crate::types::DatasetDetailOrgAttributes) -> Self {
@@ -107,12 +105,8 @@ impl GetDataSetDetailsOutputBuilder {
         self
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    pub fn set_data_set_org(
-        mut self,
-        input: std::option::Option<crate::types::DatasetDetailOrgAttributes>,
-    ) -> Self {
-        self.data_set_org = input;
-        self
+    pub fn set_data_set_org(mut self, input: std::option::Option<crate::types::DatasetDetailOrgAttributes>) -> Self {
+        self.data_set_org = input; self
     }
     /// <p>The length of records in the data set.</p>
     pub fn record_length(mut self, input: i32) -> Self {
@@ -121,8 +115,7 @@ impl GetDataSetDetailsOutputBuilder {
     }
     /// <p>The length of records in the data set.</p>
     pub fn set_record_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.record_length = input;
-        self
+        self.record_length = input; self
     }
     /// <p>The location where the data set is stored.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +124,7 @@ impl GetDataSetDetailsOutputBuilder {
     }
     /// <p>The location where the data set is stored.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// <p>The size of the block on disk. </p>
     pub fn blocksize(mut self, input: i32) -> Self {
@@ -141,8 +133,7 @@ impl GetDataSetDetailsOutputBuilder {
     }
     /// <p>The size of the block on disk. </p>
     pub fn set_blocksize(mut self, input: std::option::Option<i32>) -> Self {
-        self.blocksize = input;
-        self
+        self.blocksize = input; self
     }
     /// <p>The timestamp when the data set was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,12 +141,8 @@ impl GetDataSetDetailsOutputBuilder {
         self
     }
     /// <p>The timestamp when the data set was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The last time the data set was updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -163,12 +150,8 @@ impl GetDataSetDetailsOutputBuilder {
         self
     }
     /// <p>The last time the data set was updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// <p>The last time the data set was referenced.</p>
     pub fn last_referenced_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,34 +159,39 @@ impl GetDataSetDetailsOutputBuilder {
         self
     }
     /// <p>The last time the data set was referenced.</p>
-    pub fn set_last_referenced_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_referenced_time = input;
-        self
+    pub fn set_last_referenced_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_referenced_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDataSetDetailsOutput`](crate::operation::get_data_set_details::GetDataSetDetailsOutput).
     pub fn build(self) -> crate::operation::get_data_set_details::GetDataSetDetailsOutput {
         crate::operation::get_data_set_details::GetDataSetDetailsOutput {
-            data_set_name: self.data_set_name,
-            data_set_org: self.data_set_org,
-            record_length: self.record_length,
-            location: self.location,
-            blocksize: self.blocksize,
-            creation_time: self.creation_time,
-            last_updated_time: self.last_updated_time,
-            last_referenced_time: self.last_referenced_time,
+            data_set_name: self.data_set_name
+            ,
+            data_set_org: self.data_set_org
+            ,
+            record_length: self.record_length
+            ,
+            location: self.location
+            ,
+            blocksize: self.blocksize
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            last_referenced_time: self.last_referenced_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

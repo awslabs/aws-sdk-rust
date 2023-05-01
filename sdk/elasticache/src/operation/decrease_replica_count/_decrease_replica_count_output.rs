@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecreaseReplicaCountOutput {
+pub struct DecreaseReplicaCountOutput  {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
     #[doc(hidden)]
     pub replication_group: std::option::Option<crate::types::ReplicationGroup>,
@@ -10,19 +10,18 @@ pub struct DecreaseReplicaCountOutput {
 }
 impl DecreaseReplicaCountOutput {
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn replication_group(&self) -> std::option::Option<&crate::types::ReplicationGroup> {
+    pub fn replication_group(&self) -> std::option::Option<& crate::types::ReplicationGroup> {
         self.replication_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DecreaseReplicaCountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DecreaseReplicaCountOutput {
     /// Creates a new builder-style object to manufacture [`DecreaseReplicaCountOutput`](crate::operation::decrease_replica_count::DecreaseReplicaCountOutput).
-    pub fn builder(
-    ) -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder {
+    pub fn builder() -> crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder {
         crate::operation::decrease_replica_count::builders::DecreaseReplicaCountOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DecreaseReplicaCountOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific Redis replication group.</p>
-    pub fn set_replication_group(
-        mut self,
-        input: std::option::Option<crate::types::ReplicationGroup>,
-    ) -> Self {
-        self.replication_group = input;
-        self
+    pub fn set_replication_group(mut self, input: std::option::Option<crate::types::ReplicationGroup>) -> Self {
+        self.replication_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DecreaseReplicaCountOutput`](crate::operation::decrease_replica_count::DecreaseReplicaCountOutput).
     pub fn build(self) -> crate::operation::decrease_replica_count::DecreaseReplicaCountOutput {
         crate::operation::decrease_replica_count::DecreaseReplicaCountOutput {
-            replication_group: self.replication_group,
+            replication_group: self.replication_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

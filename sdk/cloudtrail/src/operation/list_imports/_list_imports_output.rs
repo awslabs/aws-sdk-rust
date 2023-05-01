@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportsOutput {
+pub struct ListImportsOutput  {
     /// <p> The list of returned imports. </p>
     #[doc(hidden)]
     pub imports: std::option::Option<std::vec::Vec<crate::types::ImportsListItem>>,
@@ -13,19 +13,19 @@ pub struct ListImportsOutput {
 }
 impl ListImportsOutput {
     /// <p> The list of returned imports. </p>
-    pub fn imports(&self) -> std::option::Option<&[crate::types::ImportsListItem]> {
+    pub fn imports(&self) -> std::option::Option<& [crate::types::ImportsListItem]> {
         self.imports.as_deref()
     }
     /// <p> A token you can use to get the next page of import results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListImportsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListImportsOutput {
     /// Creates a new builder-style object to manufacture [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput).
     pub fn builder() -> crate::operation::list_imports::builders::ListImportsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListImportsOutputBuilder {
     /// <p> The list of returned imports. </p>
     pub fn imports(mut self, input: crate::types::ImportsListItem) -> Self {
         let mut v = self.imports.unwrap_or_default();
-        v.push(input);
-        self.imports = Some(v);
-        self
+                        v.push(input);
+                        self.imports = Some(v);
+                        self
     }
     /// <p> The list of returned imports. </p>
-    pub fn set_imports(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportsListItem>>,
-    ) -> Self {
-        self.imports = input;
-        self
+    pub fn set_imports(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportsListItem>>) -> Self {
+        self.imports = input; self
     }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListImportsOutputBuilder {
     }
     /// <p> A token you can use to get the next page of import results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput).
     pub fn build(self) -> crate::operation::list_imports::ListImportsOutput {
         crate::operation::list_imports::ListImportsOutput {
-            imports: self.imports,
-            next_token: self.next_token,
+            imports: self.imports
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

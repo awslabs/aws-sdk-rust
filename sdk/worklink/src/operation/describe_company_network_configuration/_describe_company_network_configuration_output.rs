@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCompanyNetworkConfigurationOutput {
+pub struct DescribeCompanyNetworkConfigurationOutput  {
     /// <p>The VPC with connectivity to associated websites.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct DescribeCompanyNetworkConfigurationOutput {
 }
 impl DescribeCompanyNetworkConfigurationOutput {
     /// <p>The VPC with connectivity to associated websites.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCompanyNetworkConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCompanyNetworkConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCompanyNetworkConfigurationOutput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationOutputBuilder {
         crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
     }
     /// <p>The VPC with connectivity to associated websites.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -67,17 +66,13 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The subnets used for X-ENI connections from Amazon WorkLink rendering containers.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -86,29 +81,25 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
     /// <p>The security groups associated with access to the provided subnets.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = Some(v);
+                        self
     }
     /// <p>The security groups associated with access to the provided subnets.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCompanyNetworkConfigurationOutput`](crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput {
         crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfigurationOutput {
             vpc_id: self.vpc_id
             ,
@@ -120,3 +111,4 @@ impl DescribeCompanyNetworkConfigurationOutputBuilder {
         }
     }
 }
+

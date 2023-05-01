@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFaceLivenessSessionOutput {
+pub struct CreateFaceLivenessSessionOutput  {
     /// <p>A unique 128-bit UUID identifying a Face Liveness session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct CreateFaceLivenessSessionOutput {
 }
 impl CreateFaceLivenessSessionOutput {
     /// <p>A unique 128-bit UUID identifying a Face Liveness session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFaceLivenessSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateFaceLivenessSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput).
-    pub fn builder() -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionOutputBuilder{
+    pub fn builder() -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionOutputBuilder {
         crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl CreateFaceLivenessSessionOutputBuilder {
     }
     /// <p>A unique 128-bit UUID identifying a Face Liveness session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateFaceLivenessSessionOutput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput {
+    pub fn build(self) -> crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput {
         crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput {
-            session_id: self.session_id,
+            session_id: self.session_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

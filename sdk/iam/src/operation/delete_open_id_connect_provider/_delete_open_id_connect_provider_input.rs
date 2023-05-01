@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOpenIdConnectProviderInput {
+pub struct DeleteOpenIdConnectProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     #[doc(hidden)]
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
 }
 impl DeleteOpenIdConnectProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<& str> {
         self.open_id_connect_provider_arn.as_deref()
     }
 }
 impl DeleteOpenIdConnectProviderInput {
     /// Creates a new builder-style object to manufacture [`DeleteOpenIdConnectProviderInput`](crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput).
-    pub fn builder() -> crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder{
+    pub fn builder() -> crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder {
         crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteOpenIdConnectProviderInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to delete. You can get a list of OpenID Connect provider resource ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.open_id_connect_provider_arn = input;
-        self
+    pub fn set_open_id_connect_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.open_id_connect_provider_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteOpenIdConnectProviderInput`](crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderInput {
-                open_id_connect_provider_arn: self.open_id_connect_provider_arn,
-            },
+                open_id_connect_provider_arn: self.open_id_connect_provider_arn
+                ,
+            }
         )
     }
 }
+

@@ -2,25 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFlowTemplateInput {
-    /// <p>The ID of the workflow to be deleted.</p>
-    /// <p>The ID should be in the following format.</p>
+pub struct DeleteFlowTemplateInput  {
+    /// <p>The ID of the workflow to be deleted.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFlowTemplateInput {
-    /// <p>The ID of the workflow to be deleted.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow to be deleted.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteFlowTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder {
         crate::operation::delete_flow_template::builders::DeleteFlowTemplateInputBuilder::default()
     }
 }
@@ -32,27 +31,27 @@ pub struct DeleteFlowTemplateInputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
 }
 impl DeleteFlowTemplateInputBuilder {
-    /// <p>The ID of the workflow to be deleted.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow to be deleted.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID of the workflow to be deleted.</p>
-    /// <p>The ID should be in the following format.</p>
+    /// <p>The ID of the workflow to be deleted.</p> 
+    /// <p>The ID should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteFlowTemplateInput`](crate::operation::delete_flow_template::DeleteFlowTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_flow_template::DeleteFlowTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_flow_template::DeleteFlowTemplateInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::delete_flow_template::DeleteFlowTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_flow_template::DeleteFlowTemplateInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

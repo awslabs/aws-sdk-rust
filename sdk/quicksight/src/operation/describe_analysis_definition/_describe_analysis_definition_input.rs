@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisDefinitionInput {
+pub struct DescribeAnalysisDefinitionInput  {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeAnalysisDefinitionInput {
 }
 impl DescribeAnalysisDefinitionInput {
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
 }
 impl DescribeAnalysisDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisDefinitionInput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput).
-    pub fn builder() -> crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder {
         crate::operation::describe_analysis_definition::builders::DescribeAnalysisDefinitionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeAnalysisDefinitionInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
     pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl DescribeAnalysisDefinitionInputBuilder {
     }
     /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the analysis.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAnalysisDefinitionInput`](crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionInput {
-                aws_account_id: self.aws_account_id,
-                analysis_id: self.analysis_id,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                analysis_id: self.analysis_id
+                ,
+            }
         )
     }
 }
+

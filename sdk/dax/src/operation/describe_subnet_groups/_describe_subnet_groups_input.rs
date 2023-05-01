@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSubnetGroupsInput {
+pub struct DescribeSubnetGroupsInput  {
     /// <p>The name of the subnet group.</p>
     #[doc(hidden)]
     pub subnet_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,23 +16,22 @@ pub struct DescribeSubnetGroupsInput {
 }
 impl DescribeSubnetGroupsInput {
     /// <p>The name of the subnet group.</p>
-    pub fn subnet_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_group_names.as_deref()
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder {
         crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder::default()
     }
 }
@@ -53,29 +52,24 @@ impl DescribeSubnetGroupsInputBuilder {
     /// <p>The name of the subnet group.</p>
     pub fn subnet_group_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_group_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_group_names = Some(v);
+                        self
     }
     /// <p>The name of the subnet group.</p>
-    pub fn set_subnet_group_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_group_names = input;
-        self
+    pub fn set_subnet_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_group_names = input; self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p> 
     /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,22 +78,20 @@ impl DescribeSubnetGroupsInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSubnetGroupsInput`](crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_subnet_groups::DescribeSubnetGroupsInput {
-                subnet_group_names: self.subnet_group_names,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                subnet_group_names: self.subnet_group_names
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

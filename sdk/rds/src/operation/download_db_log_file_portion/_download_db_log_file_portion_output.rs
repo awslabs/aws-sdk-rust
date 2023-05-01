@@ -3,7 +3,7 @@
 /// <p>This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DownloadDbLogFilePortionOutput {
+pub struct DownloadDbLogFilePortionOutput  {
     /// <p>Entries from the specified log file.</p>
     #[doc(hidden)]
     pub log_file_data: std::option::Option<std::string::String>,
@@ -17,11 +17,11 @@ pub struct DownloadDbLogFilePortionOutput {
 }
 impl DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
-    pub fn log_file_data(&self) -> std::option::Option<&str> {
+    pub fn log_file_data(&self) -> std::option::Option<& str> {
         self.log_file_data.as_deref()
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
@@ -30,13 +30,13 @@ impl DownloadDbLogFilePortionOutput {
     }
 }
 impl aws_http::request_id::RequestId for DownloadDbLogFilePortionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DownloadDbLogFilePortionOutput {
     /// Creates a new builder-style object to manufacture [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
-    pub fn builder() -> crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder{
+    pub fn builder() -> crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder {
         crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionOutputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DownloadDbLogFilePortionOutputBuilder {
     }
     /// <p>Entries from the specified log file.</p>
     pub fn set_log_file_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_file_data = input;
-        self
+        self.log_file_data = input; self
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl DownloadDbLogFilePortionOutputBuilder {
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     pub fn additional_data_pending(mut self, input: bool) -> Self {
@@ -78,27 +76,29 @@ impl DownloadDbLogFilePortionOutputBuilder {
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     pub fn set_additional_data_pending(mut self, input: std::option::Option<bool>) -> Self {
-        self.additional_data_pending = input;
-        self
+        self.additional_data_pending = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
+    pub fn build(self) -> crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput {
-            log_file_data: self.log_file_data,
-            marker: self.marker,
-            additional_data_pending: self.additional_data_pending.unwrap_or_default(),
+            log_file_data: self.log_file_data
+            ,
+            marker: self.marker
+            ,
+            additional_data_pending: self.additional_data_pending
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContributorInsightsOutput {
+pub struct ListContributorInsightsOutput  {
     /// <p>A list of ContributorInsightsSummary.</p>
     #[doc(hidden)]
-    pub contributor_insights_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ContributorInsightsSummary>>,
+    pub contributor_insights_summaries: std::option::Option<std::vec::Vec<crate::types::ContributorInsightsSummary>>,
     /// <p>A token to go to the next page if there is one.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct ListContributorInsightsOutput {
 }
 impl ListContributorInsightsOutput {
     /// <p>A list of ContributorInsightsSummary.</p>
-    pub fn contributor_insights_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::ContributorInsightsSummary]> {
+    pub fn contributor_insights_summaries(&self) -> std::option::Option<& [crate::types::ContributorInsightsSummary]> {
         self.contributor_insights_summaries.as_deref()
     }
     /// <p>A token to go to the next page if there is one.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContributorInsightsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListContributorInsightsOutput {
     /// Creates a new builder-style object to manufacture [`ListContributorInsightsOutput`](crate::operation::list_contributor_insights::ListContributorInsightsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_contributor_insights::builders::ListContributorInsightsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contributor_insights::builders::ListContributorInsightsOutputBuilder {
         crate::operation::list_contributor_insights::builders::ListContributorInsightsOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl ListContributorInsightsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListContributorInsightsOutputBuilder {
-    pub(crate) contributor_insights_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ContributorInsightsSummary>>,
+    pub(crate) contributor_insights_summaries: std::option::Option<std::vec::Vec<crate::types::ContributorInsightsSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,22 +47,15 @@ impl ListContributorInsightsOutputBuilder {
     /// To override the contents of this collection use [`set_contributor_insights_summaries`](Self::set_contributor_insights_summaries).
     ///
     /// <p>A list of ContributorInsightsSummary.</p>
-    pub fn contributor_insights_summaries(
-        mut self,
-        input: crate::types::ContributorInsightsSummary,
-    ) -> Self {
+    pub fn contributor_insights_summaries(mut self, input: crate::types::ContributorInsightsSummary) -> Self {
         let mut v = self.contributor_insights_summaries.unwrap_or_default();
-        v.push(input);
-        self.contributor_insights_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.contributor_insights_summaries = Some(v);
+                        self
     }
     /// <p>A list of ContributorInsightsSummary.</p>
-    pub fn set_contributor_insights_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContributorInsightsSummary>>,
-    ) -> Self {
-        self.contributor_insights_summaries = input;
-        self
+    pub fn set_contributor_insights_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContributorInsightsSummary>>) -> Self {
+        self.contributor_insights_summaries = input; self
     }
     /// <p>A token to go to the next page if there is one.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,26 +64,26 @@ impl ListContributorInsightsOutputBuilder {
     }
     /// <p>A token to go to the next page if there is one.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListContributorInsightsOutput`](crate::operation::list_contributor_insights::ListContributorInsightsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_contributor_insights::ListContributorInsightsOutput {
+    pub fn build(self) -> crate::operation::list_contributor_insights::ListContributorInsightsOutput {
         crate::operation::list_contributor_insights::ListContributorInsightsOutput {
-            contributor_insights_summaries: self.contributor_insights_summaries,
-            next_token: self.next_token,
+            contributor_insights_summaries: self.contributor_insights_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detailed data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Repository {
+pub struct Repository  {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Repository {
 }
 impl Repository {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::types::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl RepositoryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The repository provider.</p>
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
@@ -76,12 +75,8 @@ impl RepositoryBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
-        self.provider = input;
-        self
+    pub fn set_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
+        self.provider = input; self
     }
     /// <p>The repository name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +85,7 @@ impl RepositoryBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
     pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +94,7 @@ impl RepositoryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of your AWS CodeStar connection that connects Proton to your repository provider account.</p>
     pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
     pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,17 +103,22 @@ impl RepositoryBuilder {
     }
     /// <p>Your customer Amazon Web Services KMS encryption key.</p>
     pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encryption_key = input;
-        self
+        self.encryption_key = input; self
     }
     /// Consumes the builder and constructs a [`Repository`](crate::types::Repository).
     pub fn build(self) -> crate::types::Repository {
         crate::types::Repository {
-            arn: self.arn,
-            provider: self.provider,
-            name: self.name,
-            connection_arn: self.connection_arn,
-            encryption_key: self.encryption_key,
+            arn: self.arn
+            ,
+            provider: self.provider
+            ,
+            name: self.name
+            ,
+            connection_arn: self.connection_arn
+            ,
+            encryption_key: self.encryption_key
+            ,
         }
     }
 }
+

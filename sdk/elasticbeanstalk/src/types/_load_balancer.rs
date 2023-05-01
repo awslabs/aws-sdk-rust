@@ -3,14 +3,14 @@
 /// <p>Describes a LoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoadBalancer {
+pub struct LoadBalancer  {
     /// <p>The name of the LoadBalancer.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LoadBalancer {
     /// <p>The name of the LoadBalancer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl LoadBalancerBuilder {
     }
     /// <p>The name of the LoadBalancer.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`LoadBalancer`](crate::types::LoadBalancer).
     pub fn build(self) -> crate::types::LoadBalancer {
-        crate::types::LoadBalancer { name: self.name }
+        crate::types::LoadBalancer {
+            name: self.name
+            ,
+        }
     }
 }
+

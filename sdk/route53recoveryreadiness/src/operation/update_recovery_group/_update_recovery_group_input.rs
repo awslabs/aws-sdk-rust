@@ -3,7 +3,7 @@
 /// <p>Name of a recovery group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecoveryGroupInput {
+pub struct UpdateRecoveryGroupInput  {
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
     #[doc(hidden)]
     pub cells: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,20 +13,18 @@ pub struct UpdateRecoveryGroupInput {
 }
 impl UpdateRecoveryGroupInput {
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
-    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
         self.cells.as_deref()
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
 impl UpdateRecoveryGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
-        crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder {
+        crate::operation::update_recovery_group::builders::UpdateRecoveryGroupInputBuilder::default()
     }
 }
 
@@ -45,17 +43,13 @@ impl UpdateRecoveryGroupInputBuilder {
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
     pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cells.unwrap_or_default();
-        v.push(input.into());
-        self.cells = Some(v);
-        self
+                        v.push(input.into());
+                        self.cells = Some(v);
+                        self
     }
     /// <p>A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.</p>
-    pub fn set_cells(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.cells = input;
-        self
+    pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.cells = input; self
     }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,25 +57,19 @@ impl UpdateRecoveryGroupInputBuilder {
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_group_name = input;
-        self
+    pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_group_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRecoveryGroupInput`](crate::operation::update_recovery_group::UpdateRecoveryGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_recovery_group::UpdateRecoveryGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_recovery_group::UpdateRecoveryGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_recovery_group::UpdateRecoveryGroupInput {
-                cells: self.cells,
-                recovery_group_name: self.recovery_group_name,
-            },
+                cells: self.cells
+                ,
+                recovery_group_name: self.recovery_group_name
+                ,
+            }
         )
     }
 }
+

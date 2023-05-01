@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingInfo {
+pub struct LoggingInfo  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub broker_logs: std::option::Option<crate::types::BrokerLogs>,
 }
 impl LoggingInfo {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn broker_logs(&self) -> std::option::Option<&crate::types::BrokerLogs> {
+    pub fn broker_logs(&self) -> std::option::Option<& crate::types::BrokerLogs> {
         self.broker_logs.as_ref()
     }
 }
@@ -34,13 +34,14 @@ impl LoggingInfoBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_broker_logs(mut self, input: std::option::Option<crate::types::BrokerLogs>) -> Self {
-        self.broker_logs = input;
-        self
+        self.broker_logs = input; self
     }
     /// Consumes the builder and constructs a [`LoggingInfo`](crate::types::LoggingInfo).
     pub fn build(self) -> crate::types::LoggingInfo {
         crate::types::LoggingInfo {
-            broker_logs: self.broker_logs,
+            broker_logs: self.broker_logs
+            ,
         }
     }
 }
+

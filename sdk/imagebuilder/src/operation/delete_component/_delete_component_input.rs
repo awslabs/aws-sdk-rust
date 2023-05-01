@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteComponentInput {
+pub struct DeleteComponentInput  {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
 }
 impl DeleteComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    pub fn component_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn component_build_version_arn(&self) -> std::option::Option<& str> {
         self.component_build_version_arn.as_deref()
     }
 }
@@ -33,22 +33,17 @@ impl DeleteComponentInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component build version to delete.</p>
-    pub fn set_component_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.component_build_version_arn = input;
-        self
+    pub fn set_component_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_build_version_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteComponentInput`](crate::operation::delete_component::DeleteComponentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_component::DeleteComponentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_component::DeleteComponentInput {
-            component_build_version_arn: self.component_build_version_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_component::DeleteComponentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_component::DeleteComponentInput {
+                component_build_version_arn: self.component_build_version_arn
+                ,
+            }
+        )
     }
 }
+

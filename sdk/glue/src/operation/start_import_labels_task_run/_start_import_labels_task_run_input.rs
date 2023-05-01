@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportLabelsTaskRunInput {
+pub struct StartImportLabelsTaskRunInput  {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct StartImportLabelsTaskRunInput {
 }
 impl StartImportLabelsTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> std::option::Option<&str> {
+    pub fn transform_id(&self) -> std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
-    pub fn input_s3_path(&self) -> std::option::Option<&str> {
+    pub fn input_s3_path(&self) -> std::option::Option<& str> {
         self.input_s3_path.as_deref()
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
@@ -29,7 +29,7 @@ impl StartImportLabelsTaskRunInput {
 }
 impl StartImportLabelsTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
-    pub fn builder() -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder{
+    pub fn builder() -> crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder {
         crate::operation::start_import_labels_task_run::builders::StartImportLabelsTaskRunInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl StartImportLabelsTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn input_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl StartImportLabelsTaskRunInputBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the labels.</p>
     pub fn set_input_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_s3_path = input;
-        self
+        self.input_s3_path = input; self
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn replace_all_labels(mut self, input: bool) -> Self {
@@ -70,22 +68,20 @@ impl StartImportLabelsTaskRunInputBuilder {
     }
     /// <p>Indicates whether to overwrite your existing labels.</p>
     pub fn set_replace_all_labels(mut self, input: std::option::Option<bool>) -> Self {
-        self.replace_all_labels = input;
-        self
+        self.replace_all_labels = input; self
     }
     /// Consumes the builder and constructs a [`StartImportLabelsTaskRunInput`](crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunInput {
-                transform_id: self.transform_id,
-                input_s3_path: self.input_s3_path,
-                replace_all_labels: self.replace_all_labels,
-            },
+                transform_id: self.transform_id
+                ,
+                input_s3_path: self.input_s3_path
+                ,
+                replace_all_labels: self.replace_all_labels
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserOutput {
+pub struct DescribeUserOutput  {
     /// <p>The identifier for the described user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -31,43 +31,43 @@ pub struct DescribeUserOutput {
 }
 impl DescribeUserOutput {
     /// <p>The identifier for the described user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name for the user.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The email of the user.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
-    pub fn user_role(&self) -> std::option::Option<&crate::types::UserRole> {
+    pub fn user_role(&self) -> std::option::Option<& crate::types::UserRole> {
         self.user_role.as_ref()
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn builder() -> crate::operation::describe_user::builders::DescribeUserOutputBuilder {
@@ -97,8 +97,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The identifier for the described user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The name for the user.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +106,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The name for the user.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The email of the user.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +115,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The email of the user.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The display name of the user.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +124,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The display name of the user.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
@@ -137,8 +133,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>The state of a user: enabled (registered to WorkMail) or disabled (deregistered or never registered to WorkMail).</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
@@ -147,8 +142,7 @@ impl DescribeUserOutputBuilder {
     }
     /// <p>In certain cases, other entities are modeled as users. If interoperability is enabled, resources are imported into WorkMail as users. Because different WorkMail organizations rely on different directory types, administrators can distinguish between an unregistered user (account is disabled and has a user role) and the directory administrators. The values are USER, RESOURCE, and SYSTEM_USER.</p>
     pub fn set_user_role(mut self, input: std::option::Option<crate::types::UserRole>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
     pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +150,8 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The date and time at which the user was enabled for WorkMailusage, in UNIX epoch time format.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.enabled_date = input;
-        self
+    pub fn set_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.enabled_date = input; self
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
     pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -169,34 +159,39 @@ impl DescribeUserOutputBuilder {
         self
     }
     /// <p>The date and time at which the user was disabled for WorkMail usage, in UNIX epoch time format.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.disabled_date = input;
-        self
+    pub fn set_disabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.disabled_date = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeUserOutput`](crate::operation::describe_user::DescribeUserOutput).
     pub fn build(self) -> crate::operation::describe_user::DescribeUserOutput {
         crate::operation::describe_user::DescribeUserOutput {
-            user_id: self.user_id,
-            name: self.name,
-            email: self.email,
-            display_name: self.display_name,
-            state: self.state,
-            user_role: self.user_role,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
+            user_id: self.user_id
+            ,
+            name: self.name
+            ,
+            email: self.email
+            ,
+            display_name: self.display_name
+            ,
+            state: self.state
+            ,
+            user_role: self.user_role
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

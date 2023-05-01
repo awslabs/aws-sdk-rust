@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDeviceJobOutput {
+pub struct DescribeDeviceJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -34,51 +34,50 @@ pub struct DescribeDeviceJobOutput {
 }
 impl DescribeDeviceJobOutput {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// <p>The device's ARN.</p>
-    pub fn device_arn(&self) -> std::option::Option<&str> {
+    pub fn device_arn(&self) -> std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>The device's name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The device's type.</p>
-    pub fn device_type(&self) -> std::option::Option<&crate::types::DeviceType> {
+    pub fn device_type(&self) -> std::option::Option<& crate::types::DeviceType> {
         self.device_type.as_ref()
     }
     /// <p>For an OTA job, the target version of the device software.</p>
-    pub fn image_version(&self) -> std::option::Option<&str> {
+    pub fn image_version(&self) -> std::option::Option<& str> {
         self.image_version.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::UpdateProgress> {
+    pub fn status(&self) -> std::option::Option<& crate::types::UpdateProgress> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The job's type.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDeviceJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDeviceJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDeviceJobOutput`](crate::operation::describe_device_job::DescribeDeviceJobOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_device_job::builders::DescribeDeviceJobOutputBuilder {
+    pub fn builder() -> crate::operation::describe_device_job::builders::DescribeDeviceJobOutputBuilder {
         crate::operation::describe_device_job::builders::DescribeDeviceJobOutputBuilder::default()
     }
 }
@@ -106,8 +105,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The device's ID.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +114,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The device's ID.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// <p>The device's ARN.</p>
     pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +123,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The device's ARN.</p>
     pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>The device's name.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +132,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The device's name.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>The device's type.</p>
     pub fn device_type(mut self, input: crate::types::DeviceType) -> Self {
@@ -146,8 +141,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The device's type.</p>
     pub fn set_device_type(mut self, input: std::option::Option<crate::types::DeviceType>) -> Self {
-        self.device_type = input;
-        self
+        self.device_type = input; self
     }
     /// <p>For an OTA job, the target version of the device software.</p>
     pub fn image_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +150,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>For an OTA job, the target version of the device software.</p>
     pub fn set_image_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_version = input;
-        self
+        self.image_version = input; self
     }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::UpdateProgress) -> Self {
@@ -166,8 +159,7 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The job's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::UpdateProgress>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>When the job was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -175,12 +167,8 @@ impl DescribeDeviceJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
@@ -189,31 +177,40 @@ impl DescribeDeviceJobOutputBuilder {
     }
     /// <p>The job's type.</p>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDeviceJobOutput`](crate::operation::describe_device_job::DescribeDeviceJobOutput).
     pub fn build(self) -> crate::operation::describe_device_job::DescribeDeviceJobOutput {
         crate::operation::describe_device_job::DescribeDeviceJobOutput {
-            job_id: self.job_id,
-            device_id: self.device_id,
-            device_arn: self.device_arn,
-            device_name: self.device_name,
-            device_type: self.device_type,
-            image_version: self.image_version,
-            status: self.status,
-            created_time: self.created_time,
-            job_type: self.job_type,
+            job_id: self.job_id
+            ,
+            device_id: self.device_id
+            ,
+            device_arn: self.device_arn
+            ,
+            device_name: self.device_name
+            ,
+            device_type: self.device_type
+            ,
+            image_version: self.image_version
+            ,
+            status: self.status
+            ,
+            created_time: self.created_time
+            ,
+            job_type: self.job_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

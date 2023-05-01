@@ -3,7 +3,7 @@
 /// Hls Akamai Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsAkamaiSettings {
+pub struct HlsAkamaiSettings  {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
     pub connection_retry_interval: i32,
@@ -36,9 +36,7 @@ impl HlsAkamaiSettings {
         self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
-    pub fn http_transfer_mode(
-        &self,
-    ) -> std::option::Option<&crate::types::HlsAkamaiHttpTransferMode> {
+    pub fn http_transfer_mode(&self) -> std::option::Option<& crate::types::HlsAkamaiHttpTransferMode> {
         self.http_transfer_mode.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
@@ -50,11 +48,11 @@ impl HlsAkamaiSettings {
         self.restart_delay
     }
     /// Salt for authenticated Akamai.
-    pub fn salt(&self) -> std::option::Option<&str> {
+    pub fn salt(&self) -> std::option::Option<& str> {
         self.salt.as_deref()
     }
     /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
 }
@@ -85,8 +83,7 @@ impl HlsAkamaiSettingsBuilder {
     }
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.connection_retry_interval = input;
-        self
+        self.connection_retry_interval = input; self
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn filecache_duration(mut self, input: i32) -> Self {
@@ -95,8 +92,7 @@ impl HlsAkamaiSettingsBuilder {
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.filecache_duration = input;
-        self
+        self.filecache_duration = input; self
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
     pub fn http_transfer_mode(mut self, input: crate::types::HlsAkamaiHttpTransferMode) -> Self {
@@ -104,12 +100,8 @@ impl HlsAkamaiSettingsBuilder {
         self
     }
     /// Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.
-    pub fn set_http_transfer_mode(
-        mut self,
-        input: std::option::Option<crate::types::HlsAkamaiHttpTransferMode>,
-    ) -> Self {
-        self.http_transfer_mode = input;
-        self
+    pub fn set_http_transfer_mode(mut self, input: std::option::Option<crate::types::HlsAkamaiHttpTransferMode>) -> Self {
+        self.http_transfer_mode = input; self
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
@@ -118,8 +110,7 @@ impl HlsAkamaiSettingsBuilder {
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_retries = input;
-        self
+        self.num_retries = input; self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
@@ -128,8 +119,7 @@ impl HlsAkamaiSettingsBuilder {
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
-        self.restart_delay = input;
-        self
+        self.restart_delay = input; self
     }
     /// Salt for authenticated Akamai.
     pub fn salt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +128,7 @@ impl HlsAkamaiSettingsBuilder {
     }
     /// Salt for authenticated Akamai.
     pub fn set_salt(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.salt = input;
-        self
+        self.salt = input; self
     }
     /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
     pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,19 +137,30 @@ impl HlsAkamaiSettingsBuilder {
     }
     /// Token parameter for authenticated akamai. If not specified, _gda_ is used.
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// Consumes the builder and constructs a [`HlsAkamaiSettings`](crate::types::HlsAkamaiSettings).
     pub fn build(self) -> crate::types::HlsAkamaiSettings {
         crate::types::HlsAkamaiSettings {
-            connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
-            filecache_duration: self.filecache_duration.unwrap_or_default(),
-            http_transfer_mode: self.http_transfer_mode,
-            num_retries: self.num_retries.unwrap_or_default(),
-            restart_delay: self.restart_delay.unwrap_or_default(),
-            salt: self.salt,
-            token: self.token,
+            connection_retry_interval: self.connection_retry_interval
+                .unwrap_or_default()
+            ,
+            filecache_duration: self.filecache_duration
+                .unwrap_or_default()
+            ,
+            http_transfer_mode: self.http_transfer_mode
+            ,
+            num_retries: self.num_retries
+                .unwrap_or_default()
+            ,
+            restart_delay: self.restart_delay
+                .unwrap_or_default()
+            ,
+            salt: self.salt
+            ,
+            token: self.token
+            ,
         }
     }
 }
+

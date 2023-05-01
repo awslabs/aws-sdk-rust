@@ -3,19 +3,19 @@
 /// <p>Represents the input of a <code>GetShardIterator</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetShardIteratorInput {
+pub struct GetShardIteratorInput  {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
     #[doc(hidden)]
     pub shard_id: std::option::Option<std::string::String>,
-    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
-    /// <ul>
-    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
-    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
+    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> 
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub shard_iterator_type: std::option::Option<crate::types::ShardIteratorType>,
@@ -25,32 +25,31 @@ pub struct GetShardIteratorInput {
 }
 impl GetShardIteratorInput {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
-    pub fn shard_id(&self) -> std::option::Option<&str> {
+    pub fn shard_id(&self) -> std::option::Option<& str> {
         self.shard_id.as_deref()
     }
-    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
-    /// <ul>
-    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
-    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
+    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> 
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> 
     /// </ul>
-    pub fn shard_iterator_type(&self) -> std::option::Option<&crate::types::ShardIteratorType> {
+    pub fn shard_iterator_type(&self) -> std::option::Option<& crate::types::ShardIteratorType> {
         self.shard_iterator_type.as_ref()
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
-    pub fn sequence_number(&self) -> std::option::Option<&str> {
+    pub fn sequence_number(&self) -> std::option::Option<& str> {
         self.sequence_number.as_deref()
     }
 }
 impl GetShardIteratorInput {
     /// Creates a new builder-style object to manufacture [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder {
         crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder::default()
     }
 }
@@ -72,8 +71,7 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
     pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,33 +80,28 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The identifier of the shard. The iterator will be returned for this shard ID.</p>
     pub fn set_shard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shard_id = input;
-        self
+        self.shard_id = input; self
     }
-    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
-    /// <ul>
-    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
-    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
+    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> 
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> 
     /// </ul>
     pub fn shard_iterator_type(mut self, input: crate::types::ShardIteratorType) -> Self {
         self.shard_iterator_type = Some(input);
         self
     }
-    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p>
-    /// <ul>
-    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li>
-    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li>
-    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li>
+    /// <p>Determines how the shard iterator is used to start reading stream records from the shard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted by a specific sequence number.</p> </li> 
+    /// <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.</p> </li> 
+    /// <li> <p> <code>LATEST</code> - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.</p> </li> 
     /// </ul>
-    pub fn set_shard_iterator_type(
-        mut self,
-        input: std::option::Option<crate::types::ShardIteratorType>,
-    ) -> Self {
-        self.shard_iterator_type = input;
-        self
+    pub fn set_shard_iterator_type(mut self, input: std::option::Option<crate::types::ShardIteratorType>) -> Self {
+        self.shard_iterator_type = input; self
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,23 +110,22 @@ impl GetShardIteratorInputBuilder {
     }
     /// <p>The sequence number of a stream record in the shard from which to start reading.</p>
     pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sequence_number = input;
-        self
+        self.sequence_number = input; self
     }
     /// Consumes the builder and constructs a [`GetShardIteratorInput`](crate::operation::get_shard_iterator::GetShardIteratorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_shard_iterator::GetShardIteratorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_shard_iterator::GetShardIteratorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_shard_iterator::GetShardIteratorInput {
-                stream_arn: self.stream_arn,
-                shard_id: self.shard_id,
-                shard_iterator_type: self.shard_iterator_type,
-                sequence_number: self.sequence_number,
-            },
+                stream_arn: self.stream_arn
+                ,
+                shard_id: self.shard_id
+                ,
+                shard_iterator_type: self.shard_iterator_type
+                ,
+                sequence_number: self.sequence_number
+                ,
+            }
         )
     }
 }
+

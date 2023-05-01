@@ -4,95 +4,68 @@ pub use crate::operation::list_schema_versions::_list_schema_versions_output::Li
 pub use crate::operation::list_schema_versions::_list_schema_versions_input::ListSchemaVersionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListSchemaVersions`.
-///
+/// 
 /// <p>Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchemaVersionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder,
-}
-impl ListSchemaVersionsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder
+            }
+impl ListSchemaVersionsFluentBuilder  {
     /// Creates a new `ListSchemaVersions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_schema_versions::ListSchemaVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_versions::ListSchemaVersionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_schema_versions::ListSchemaVersionsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_schema_versions::ListSchemaVersionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_schema_versions::ListSchemaVersions, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_schema_versions::ListSchemaVersionsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_schema_versions::ListSchemaVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_schema_versions::ListSchemaVersionsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator {
-        crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator {
+                            crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::new(self.handle, self.inner)
+                        }
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
     /// </ul>
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.inner = self.inner.schema_id(input);
         self
     }
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
     /// </ul>
     pub fn set_schema_id(mut self, input: std::option::Option<crate::types::SchemaId>) -> Self {
         self.inner = self.inner.set_schema_id(input);
@@ -119,3 +92,4 @@ impl ListSchemaVersionsFluentBuilder {
         self
     }
 }
+

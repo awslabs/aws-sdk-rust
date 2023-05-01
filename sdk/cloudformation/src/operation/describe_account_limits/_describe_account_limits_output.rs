@@ -3,7 +3,7 @@
 /// <p>The output for the <code>DescribeAccountLimits</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountLimitsOutput {
+pub struct DescribeAccountLimitsOutput  {
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
     #[doc(hidden)]
     pub account_limits: std::option::Option<std::vec::Vec<crate::types::AccountLimit>>,
@@ -14,24 +14,22 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
-    pub fn account_limits(&self) -> std::option::Option<&[crate::types::AccountLimit]> {
+    pub fn account_limits(&self) -> std::option::Option<& [crate::types::AccountLimit]> {
         self.account_limits.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAccountLimitsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder {
         crate::operation::describe_account_limits::builders::DescribeAccountLimitsOutputBuilder::default()
     }
 }
@@ -52,17 +50,13 @@ impl DescribeAccountLimitsOutputBuilder {
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
     pub fn account_limits(mut self, input: crate::types::AccountLimit) -> Self {
         let mut v = self.account_limits.unwrap_or_default();
-        v.push(input);
-        self.account_limits = Some(v);
-        self
+                        v.push(input);
+                        self.account_limits = Some(v);
+                        self
     }
     /// <p>An account limit structure that contain a list of CloudFormation account limits and their values.</p>
-    pub fn set_account_limits(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccountLimit>>,
-    ) -> Self {
-        self.account_limits = input;
-        self
+    pub fn set_account_limits(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountLimit>>) -> Self {
+        self.account_limits = input; self
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +65,26 @@ impl DescribeAccountLimitsOutputBuilder {
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of limits. If no additional page exists, this value is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::operation::describe_account_limits::DescribeAccountLimitsOutput).
     pub fn build(self) -> crate::operation::describe_account_limits::DescribeAccountLimitsOutput {
         crate::operation::describe_account_limits::DescribeAccountLimitsOutput {
-            account_limits: self.account_limits,
-            next_token: self.next_token,
+            account_limits: self.account_limits
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

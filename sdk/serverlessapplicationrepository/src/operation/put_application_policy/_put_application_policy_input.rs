@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutApplicationPolicyInput {
+pub struct PutApplicationPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct PutApplicationPolicyInput {
 }
 impl PutApplicationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn statements(&self) -> std::option::Option<&[crate::types::ApplicationPolicyStatement]> {
+    pub fn statements(&self) -> std::option::Option<& [crate::types::ApplicationPolicyStatement]> {
         self.statements.as_deref()
     }
 }
 impl PutApplicationPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder {
         crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder::default()
     }
 }
@@ -33,8 +32,7 @@ impl PutApplicationPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutApplicationPolicyInputBuilder {
     pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) statements:
-        std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub(crate) statements: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
 }
 impl PutApplicationPolicyInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -44,8 +42,7 @@ impl PutApplicationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// Appends an item to `statements`.
     ///
@@ -54,30 +51,24 @@ impl PutApplicationPolicyInputBuilder {
     /// <p>An array of policy statements applied to the application.</p>
     pub fn statements(mut self, input: crate::types::ApplicationPolicyStatement) -> Self {
         let mut v = self.statements.unwrap_or_default();
-        v.push(input);
-        self.statements = Some(v);
-        self
+                        v.push(input);
+                        self.statements = Some(v);
+                        self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn set_statements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
-    ) -> Self {
-        self.statements = input;
-        self
+    pub fn set_statements(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>) -> Self {
+        self.statements = input; self
     }
     /// Consumes the builder and constructs a [`PutApplicationPolicyInput`](crate::operation::put_application_policy::PutApplicationPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_application_policy::PutApplicationPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_application_policy::PutApplicationPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_application_policy::PutApplicationPolicyInput {
-                application_id: self.application_id,
-                statements: self.statements,
-            },
+                application_id: self.application_id
+                ,
+                statements: self.statements
+                ,
+            }
         )
     }
 }
+

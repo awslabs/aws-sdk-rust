@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExperimentTemplateInput {
+pub struct DeleteExperimentTemplateInput  {
     /// <p>The ID of the experiment template.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteExperimentTemplateInput {
     /// <p>The ID of the experiment template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteExperimentTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentTemplateInput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder {
         crate::operation::delete_experiment_template::builders::DeleteExperimentTemplateInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DeleteExperimentTemplateInputBuilder {
     }
     /// <p>The ID of the experiment template.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteExperimentTemplateInput`](crate::operation::delete_experiment_template::DeleteExperimentTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_experiment_template::DeleteExperimentTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_experiment_template::DeleteExperimentTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_experiment_template::DeleteExperimentTemplateInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

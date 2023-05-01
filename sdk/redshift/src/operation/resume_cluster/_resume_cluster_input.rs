@@ -3,14 +3,14 @@
 /// <p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeClusterInput {
+pub struct ResumeClusterInput  {
     /// <p>The identifier of the cluster to be resumed.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl ResumeClusterInput {
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -34,22 +34,17 @@ impl ResumeClusterInputBuilder {
         self
     }
     /// <p>The identifier of the cluster to be resumed.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// Consumes the builder and constructs a [`ResumeClusterInput`](crate::operation::resume_cluster::ResumeClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::resume_cluster::ResumeClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::resume_cluster::ResumeClusterInput {
-            cluster_identifier: self.cluster_identifier,
-        })
+    pub fn build(self) -> Result<crate::operation::resume_cluster::ResumeClusterInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::resume_cluster::ResumeClusterInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+            }
+        )
     }
 }
+

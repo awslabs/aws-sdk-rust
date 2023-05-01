@@ -3,14 +3,14 @@
 /// <p>The parameters for OpenSearch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmazonElasticsearchParameters {
+pub struct AmazonElasticsearchParameters  {
     /// <p>The OpenSearch domain.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
 }
 impl AmazonElasticsearchParameters {
     /// <p>The OpenSearch domain.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl AmazonElasticsearchParametersBuilder {
     }
     /// <p>The OpenSearch domain.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// Consumes the builder and constructs a [`AmazonElasticsearchParameters`](crate::types::AmazonElasticsearchParameters).
     pub fn build(self) -> crate::types::AmazonElasticsearchParameters {
         crate::types::AmazonElasticsearchParameters {
-            domain: self.domain,
+            domain: self.domain
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary data of an Proton environment account connection resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentAccountConnectionSummary {
+pub struct EnvironmentAccountConnectionSummary  {
     /// <p>The ID of the environment account connection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -31,53 +31,53 @@ pub struct EnvironmentAccountConnectionSummary {
     /// <p>The status of the environment account connection.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::EnvironmentAccountConnectionStatus>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
     pub component_role_arn: std::option::Option<std::string::String>,
 }
 impl EnvironmentAccountConnectionSummary {
     /// <p>The ID of the environment account connection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
-    pub fn management_account_id(&self) -> std::option::Option<&str> {
+    pub fn management_account_id(&self) -> std::option::Option<& str> {
         self.management_account_id.as_deref()
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
-    pub fn environment_account_id(&self) -> std::option::Option<&str> {
+    pub fn environment_account_id(&self) -> std::option::Option<& str> {
         self.environment_account_id.as_deref()
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn requested_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn requested_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.requested_at.as_ref()
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the environment account connection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EnvironmentAccountConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::EnvironmentAccountConnectionStatus> {
         self.status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn component_role_arn(&self) -> std::option::Option<&str> {
+    pub fn component_role_arn(&self) -> std::option::Option<& str> {
         self.component_role_arn.as_deref()
     }
 }
@@ -111,8 +111,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The ID of the environment account connection.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +120,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment account connection.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
     pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,12 +128,8 @@ impl EnvironmentAccountConnectionSummaryBuilder {
         self
     }
     /// <p>The ID of the management account that's connected to the environment account connection.</p>
-    pub fn set_management_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.management_account_id = input;
-        self
+    pub fn set_management_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.management_account_id = input; self
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
     pub fn environment_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,12 +137,8 @@ impl EnvironmentAccountConnectionSummaryBuilder {
         self
     }
     /// <p>The ID of the environment account that's connected to the environment account connection.</p>
-    pub fn set_environment_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.environment_account_id = input;
-        self
+    pub fn set_environment_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.environment_account_id = input; self
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +147,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The IAM service role that's associated with the environment account connection.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +156,7 @@ impl EnvironmentAccountConnectionSummaryBuilder {
     }
     /// <p>The name of the environment that's associated with the environment account connection.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The time when the environment account connection request was made.</p>
     pub fn requested_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,12 +164,8 @@ impl EnvironmentAccountConnectionSummaryBuilder {
         self
     }
     /// <p>The time when the environment account connection request was made.</p>
-    pub fn set_requested_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.requested_at = input;
-        self
+    pub fn set_requested_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.requested_at = input; self
     }
     /// <p>The time when the environment account connection was last modified.</p>
     pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -189,12 +173,8 @@ impl EnvironmentAccountConnectionSummaryBuilder {
         self
     }
     /// <p>The time when the environment account connection was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_at = input;
-        self
+    pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_at = input; self
     }
     /// <p>The status of the environment account connection.</p>
     pub fn status(mut self, input: crate::types::EnvironmentAccountConnectionStatus) -> Self {
@@ -202,43 +182,46 @@ impl EnvironmentAccountConnectionSummaryBuilder {
         self
     }
     /// <p>The status of the environment account connection.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::EnvironmentAccountConnectionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::EnvironmentAccountConnectionStatus>) -> Self {
+        self.status = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     pub fn component_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.component_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p>
-    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined components in the associated environment account. It determines the scope of infrastructure that a component can provision in the account.</p> 
+    /// <p>The environment account connection must have a <code>componentRoleArn</code> to allow directly defined components to be associated with any environments running in the account.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_component_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.component_role_arn = input;
-        self
+    pub fn set_component_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_role_arn = input; self
     }
     /// Consumes the builder and constructs a [`EnvironmentAccountConnectionSummary`](crate::types::EnvironmentAccountConnectionSummary).
     pub fn build(self) -> crate::types::EnvironmentAccountConnectionSummary {
         crate::types::EnvironmentAccountConnectionSummary {
-            id: self.id,
-            arn: self.arn,
-            management_account_id: self.management_account_id,
-            environment_account_id: self.environment_account_id,
-            role_arn: self.role_arn,
-            environment_name: self.environment_name,
-            requested_at: self.requested_at,
-            last_modified_at: self.last_modified_at,
-            status: self.status,
-            component_role_arn: self.component_role_arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            management_account_id: self.management_account_id
+            ,
+            environment_account_id: self.environment_account_id
+            ,
+            role_arn: self.role_arn
+            ,
+            environment_name: self.environment_name
+            ,
+            requested_at: self.requested_at
+            ,
+            last_modified_at: self.last_modified_at
+            ,
+            status: self.status
+            ,
+            component_role_arn: self.component_role_arn
+            ,
         }
     }
 }
+

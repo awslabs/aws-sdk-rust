@@ -3,7 +3,7 @@
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionStatistics {
+pub struct ExecutionStatistics  {
     /// <p>The average time the request took to be executed.</p>
     #[doc(hidden)]
     pub average_execution_time_millis: i64,
@@ -51,8 +51,7 @@ impl ExecutionStatisticsBuilder {
     }
     /// <p>The average time the request took to be executed.</p>
     pub fn set_average_execution_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.average_execution_time_millis = input;
-        self
+        self.average_execution_time_millis = input; self
     }
     /// <p>The amount of data that was scanned in bytes.</p>
     pub fn data_scanned_bytes(mut self, input: i64) -> Self {
@@ -61,8 +60,7 @@ impl ExecutionStatisticsBuilder {
     }
     /// <p>The amount of data that was scanned in bytes.</p>
     pub fn set_data_scanned_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.data_scanned_bytes = input;
-        self
+        self.data_scanned_bytes = input; self
     }
     /// <p>The number of work units executed.</p>
     pub fn work_units_executed_count(mut self, input: i64) -> Self {
@@ -71,15 +69,21 @@ impl ExecutionStatisticsBuilder {
     }
     /// <p>The number of work units executed.</p>
     pub fn set_work_units_executed_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.work_units_executed_count = input;
-        self
+        self.work_units_executed_count = input; self
     }
     /// Consumes the builder and constructs a [`ExecutionStatistics`](crate::types::ExecutionStatistics).
     pub fn build(self) -> crate::types::ExecutionStatistics {
         crate::types::ExecutionStatistics {
-            average_execution_time_millis: self.average_execution_time_millis.unwrap_or_default(),
-            data_scanned_bytes: self.data_scanned_bytes.unwrap_or_default(),
-            work_units_executed_count: self.work_units_executed_count.unwrap_or_default(),
+            average_execution_time_millis: self.average_execution_time_millis
+                .unwrap_or_default()
+            ,
+            data_scanned_bytes: self.data_scanned_bytes
+                .unwrap_or_default()
+            ,
+            work_units_executed_count: self.work_units_executed_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

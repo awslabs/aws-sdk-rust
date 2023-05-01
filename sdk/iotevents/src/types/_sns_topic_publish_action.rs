@@ -3,7 +3,7 @@
 /// <p>Information required to publish the Amazon SNS message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsTopicPublishAction {
+pub struct SnsTopicPublishAction  {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SnsTopicPublishAction {
 }
 impl SnsTopicPublishAction {
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
-    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> std::option::Option<& crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SnsTopicPublishActionBuilder {
     }
     /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
     pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
@@ -53,14 +52,16 @@ impl SnsTopicPublishActionBuilder {
     }
     /// <p>You can configure the action payload when you send a message as an Amazon SNS push notification.</p>
     pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     /// Consumes the builder and constructs a [`SnsTopicPublishAction`](crate::types::SnsTopicPublishAction).
     pub fn build(self) -> crate::types::SnsTopicPublishAction {
         crate::types::SnsTopicPublishAction {
-            target_arn: self.target_arn,
-            payload: self.payload,
+            target_arn: self.target_arn
+            ,
+            payload: self.payload
+            ,
         }
     }
 }
+

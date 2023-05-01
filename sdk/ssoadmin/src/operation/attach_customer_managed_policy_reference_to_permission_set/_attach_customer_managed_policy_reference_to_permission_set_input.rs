@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput {
+pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -11,28 +11,25 @@ pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     pub permission_set_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
     #[doc(hidden)]
-    pub customer_managed_policy_reference:
-        std::option::Option<crate::types::CustomerManagedPolicyReference>,
+    pub customer_managed_policy_reference: std::option::Option<crate::types::CustomerManagedPolicyReference>,
 }
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn permission_set_arn(&self) -> std::option::Option<&str> {
+    pub fn permission_set_arn(&self) -> std::option::Option<& str> {
         self.permission_set_arn.as_deref()
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(
-        &self,
-    ) -> std::option::Option<&crate::types::CustomerManagedPolicyReference> {
+    pub fn customer_managed_policy_reference(&self) -> std::option::Option<& crate::types::CustomerManagedPolicyReference> {
         self.customer_managed_policy_reference.as_ref()
     }
 }
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
     /// Creates a new builder-style object to manufacture [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
-    pub fn builder() -> crate::operation::attach_customer_managed_policy_reference_to_permission_set::builders::AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder{
+    pub fn builder() -> crate::operation::attach_customer_managed_policy_reference_to_permission_set::builders::AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
         crate::operation::attach_customer_managed_policy_reference_to_permission_set::builders::AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder::default()
     }
 }
@@ -43,8 +40,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInput {
 pub struct AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
     pub(crate) instance_arn: std::option::Option<std::string::String>,
     pub(crate) permission_set_arn: std::option::Option<std::string::String>,
-    pub(crate) customer_managed_policy_reference:
-        std::option::Option<crate::types::CustomerManagedPolicyReference>,
+    pub(crate) customer_managed_policy_reference: std::option::Option<crate::types::CustomerManagedPolicyReference>,
 }
 impl AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
@@ -54,8 +50,7 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
     pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,31 +58,20 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
         self
     }
     /// <p>The ARN of the <code>PermissionSet</code>.</p>
-    pub fn set_permission_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_set_arn = input;
-        self
+    pub fn set_permission_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_set_arn = input; self
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn customer_managed_policy_reference(
-        mut self,
-        input: crate::types::CustomerManagedPolicyReference,
-    ) -> Self {
+    pub fn customer_managed_policy_reference(mut self, input: crate::types::CustomerManagedPolicyReference) -> Self {
         self.customer_managed_policy_reference = Some(input);
         self
     }
     /// <p>Specifies the name and path of a customer managed policy. You must have an IAM policy that matches the name and path in each AWS account where you want to deploy your permission set.</p>
-    pub fn set_customer_managed_policy_reference(
-        mut self,
-        input: std::option::Option<crate::types::CustomerManagedPolicyReference>,
-    ) -> Self {
-        self.customer_managed_policy_reference = input;
-        self
+    pub fn set_customer_managed_policy_reference(mut self, input: std::option::Option<crate::types::CustomerManagedPolicyReference>) -> Self {
+        self.customer_managed_policy_reference = input; self
     }
     /// Consumes the builder and constructs a [`AttachCustomerManagedPolicyReferenceToPermissionSetInput`](crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetInput).
-    pub fn build(self) -> Result<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetInput {
                 instance_arn: self.instance_arn
@@ -100,3 +84,4 @@ impl AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
         )
     }
 }
+

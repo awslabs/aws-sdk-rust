@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivityOutput {
+pub struct DescribeActivityOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
     #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the activity.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the activity.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,36 +25,35 @@ pub struct DescribeActivityOutput {
 }
 impl DescribeActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
-    pub fn activity_arn(&self) -> std::option::Option<&str> {
+    pub fn activity_arn(&self) -> std::option::Option<& str> {
         self.activity_arn.as_deref()
     }
-    /// <p>The name of the activity.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the activity.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeActivityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeActivityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityOutput`](crate::operation::describe_activity::DescribeActivityOutput).
-    pub fn builder() -> crate::operation::describe_activity::builders::DescribeActivityOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_activity::builders::DescribeActivityOutputBuilder {
         crate::operation::describe_activity::builders::DescribeActivityOutputBuilder::default()
     }
 }
@@ -76,36 +75,34 @@ impl DescribeActivityOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
     pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.activity_arn = input;
-        self
+        self.activity_arn = input; self
     }
-    /// <p>The name of the activity.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the activity.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the activity.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the activity.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The date the activity is created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -113,29 +110,29 @@ impl DescribeActivityOutputBuilder {
         self
     }
     /// <p>The date the activity is created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeActivityOutput`](crate::operation::describe_activity::DescribeActivityOutput).
     pub fn build(self) -> crate::operation::describe_activity::DescribeActivityOutput {
         crate::operation::describe_activity::DescribeActivityOutput {
-            activity_arn: self.activity_arn,
-            name: self.name,
-            creation_date: self.creation_date,
+            activity_arn: self.activity_arn
+            ,
+            name: self.name
+            ,
+            creation_date: self.creation_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

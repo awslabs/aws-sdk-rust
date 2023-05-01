@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataQualityRulesetOutput {
+pub struct UpdateDataQualityRulesetOutput  {
     /// <p>The name of the data quality ruleset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct UpdateDataQualityRulesetOutput {
 }
 impl UpdateDataQualityRulesetOutput {
     /// <p>The name of the data quality ruleset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the ruleset.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
-    pub fn ruleset(&self) -> std::option::Option<&str> {
+    pub fn ruleset(&self) -> std::option::Option<& str> {
         self.ruleset.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDataQualityRulesetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDataQualityRulesetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataQualityRulesetOutput`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput).
-    pub fn builder() -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetOutputBuilder{
+    pub fn builder() -> crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetOutputBuilder {
         crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateDataQualityRulesetOutputBuilder {
     }
     /// <p>The name of the data quality ruleset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the ruleset.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl UpdateDataQualityRulesetOutputBuilder {
     }
     /// <p>A description of the ruleset.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,27 +75,28 @@ impl UpdateDataQualityRulesetOutputBuilder {
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ruleset = input;
-        self
+        self.ruleset = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDataQualityRulesetOutput`](crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput {
+    pub fn build(self) -> crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput {
         crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput {
-            name: self.name,
-            description: self.description,
-            ruleset: self.ruleset,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            ruleset: self.ruleset
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The file format of the data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileFormat {
+pub struct FileFormat  {
     /// <p>The .csv file format.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::types::Csv>,
 }
 impl FileFormat {
     /// <p>The .csv file format.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::types::Csv> {
+    pub fn csv(&self) -> std::option::Option<& crate::types::Csv> {
         self.csv.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl FileFormatBuilder {
     }
     /// <p>The .csv file format.</p>
     pub fn set_csv(mut self, input: std::option::Option<crate::types::Csv>) -> Self {
-        self.csv = input;
-        self
+        self.csv = input; self
     }
     /// Consumes the builder and constructs a [`FileFormat`](crate::types::FileFormat).
     pub fn build(self) -> crate::types::FileFormat {
-        crate::types::FileFormat { csv: self.csv }
+        crate::types::FileFormat {
+            csv: self.csv
+            ,
+        }
     }
 }
+

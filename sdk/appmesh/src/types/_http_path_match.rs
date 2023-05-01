@@ -3,7 +3,7 @@
 /// <p>An object representing the path to match in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpPathMatch {
+pub struct HttpPathMatch  {
     /// <p>The exact path to match on.</p>
     #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct HttpPathMatch {
 }
 impl HttpPathMatch {
     /// <p>The exact path to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> std::option::Option<& str> {
         self.exact.as_deref()
     }
     /// <p>The regex used to match the path.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> std::option::Option<& str> {
         self.regex.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl HttpPathMatchBuilder {
     }
     /// <p>The exact path to match on.</p>
     pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.exact = input;
-        self
+        self.exact = input; self
     }
     /// <p>The regex used to match the path.</p>
     pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl HttpPathMatchBuilder {
     }
     /// <p>The regex used to match the path.</p>
     pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.regex = input;
-        self
+        self.regex = input; self
     }
     /// Consumes the builder and constructs a [`HttpPathMatch`](crate::types::HttpPathMatch).
     pub fn build(self) -> crate::types::HttpPathMatch {
         crate::types::HttpPathMatch {
-            exact: self.exact,
-            regex: self.regex,
+            exact: self.exact
+            ,
+            regex: self.regex
+            ,
         }
     }
 }
+

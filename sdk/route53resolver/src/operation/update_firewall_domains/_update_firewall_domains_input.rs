@@ -2,62 +2,60 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFirewallDomainsInput {
+pub struct UpdateFirewallDomainsInput  {
     /// <p>The ID of the domain list whose domains you want to update. </p>
     #[doc(hidden)]
     pub firewall_domain_list_id: std::option::Option<std::string::String>,
-    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
-    /// <ul>
-    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
-    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
-    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li> 
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li> 
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::FirewallDomainUpdateOperation>,
-    /// <p>A list of domains to use in the update operation.</p> <important>
-    /// <p>There is a limit of 1000 domains per request.</p>
-    /// </important>
-    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
-    /// <ul>
-    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
-    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
-    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
+    /// <p>A list of domains to use in the update operation.</p> <important> 
+    /// <p>There is a limit of 1000 domains per request.</p> 
+    /// </important> 
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p> 
+    /// <ul> 
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> 
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> 
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateFirewallDomainsInput {
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn firewall_domain_list_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_domain_list_id(&self) -> std::option::Option<& str> {
         self.firewall_domain_list_id.as_deref()
     }
-    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
-    /// <ul>
-    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
-    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
-    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li> 
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li> 
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li> 
     /// </ul>
-    pub fn operation(&self) -> std::option::Option<&crate::types::FirewallDomainUpdateOperation> {
+    pub fn operation(&self) -> std::option::Option<& crate::types::FirewallDomainUpdateOperation> {
         self.operation.as_ref()
     }
-    /// <p>A list of domains to use in the update operation.</p> <important>
-    /// <p>There is a limit of 1000 domains per request.</p>
-    /// </important>
-    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
-    /// <ul>
-    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
-    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
-    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
+    /// <p>A list of domains to use in the update operation.</p> <important> 
+    /// <p>There is a limit of 1000 domains per request.</p> 
+    /// </important> 
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p> 
+    /// <ul> 
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> 
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> 
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li> 
     /// </ul>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> std::option::Option<& [std::string::String]> {
         self.domains.as_deref()
     }
 }
 impl UpdateFirewallDomainsInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
-    pub fn builder(
-    ) -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder {
         crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder::default()
     }
 }
@@ -77,84 +75,71 @@ impl UpdateFirewallDomainsInputBuilder {
         self
     }
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn set_firewall_domain_list_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.firewall_domain_list_id = input;
-        self
+    pub fn set_firewall_domain_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.firewall_domain_list_id = input; self
     }
-    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
-    /// <ul>
-    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
-    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
-    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li> 
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li> 
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li> 
     /// </ul>
     pub fn operation(mut self, input: crate::types::FirewallDomainUpdateOperation) -> Self {
         self.operation = Some(input);
         self
     }
-    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
-    /// <ul>
-    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
-    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
-    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li> 
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li> 
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li> 
     /// </ul>
-    pub fn set_operation(
-        mut self,
-        input: std::option::Option<crate::types::FirewallDomainUpdateOperation>,
-    ) -> Self {
-        self.operation = input;
-        self
+    pub fn set_operation(mut self, input: std::option::Option<crate::types::FirewallDomainUpdateOperation>) -> Self {
+        self.operation = input; self
     }
     /// Appends an item to `domains`.
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
-    /// <p>A list of domains to use in the update operation.</p> <important>
-    /// <p>There is a limit of 1000 domains per request.</p>
-    /// </important>
-    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
-    /// <ul>
-    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
-    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
-    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
+    /// <p>A list of domains to use in the update operation.</p> <important> 
+    /// <p>There is a limit of 1000 domains per request.</p> 
+    /// </important> 
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p> 
+    /// <ul> 
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> 
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> 
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li> 
     /// </ul>
     pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = Some(v);
+                        self
     }
-    /// <p>A list of domains to use in the update operation.</p> <important>
-    /// <p>There is a limit of 1000 domains per request.</p>
-    /// </important>
-    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
-    /// <ul>
-    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
-    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
-    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
+    /// <p>A list of domains to use in the update operation.</p> <important> 
+    /// <p>There is a limit of 1000 domains per request.</p> 
+    /// </important> 
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p> 
+    /// <ul> 
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> 
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> 
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li> 
     /// </ul>
-    pub fn set_domains(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallDomainsInput`](crate::operation::update_firewall_domains::UpdateFirewallDomainsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_firewall_domains::UpdateFirewallDomainsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_firewall_domains::UpdateFirewallDomainsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_firewall_domains::UpdateFirewallDomainsInput {
-                firewall_domain_list_id: self.firewall_domain_list_id,
-                operation: self.operation,
-                domains: self.domains,
-            },
+                firewall_domain_list_id: self.firewall_domain_list_id
+                ,
+                operation: self.operation
+                ,
+                domains: self.domains
+                ,
+            }
         )
     }
 }
+

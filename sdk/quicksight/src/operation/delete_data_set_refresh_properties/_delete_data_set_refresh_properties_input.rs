@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSetRefreshPropertiesInput {
+pub struct DeleteDataSetRefreshPropertiesInput  {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteDataSetRefreshPropertiesInput {
 }
 impl DeleteDataSetRefreshPropertiesInput {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the dataset.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
 }
 impl DeleteDataSetRefreshPropertiesInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSetRefreshPropertiesInput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput).
-    pub fn builder() -> crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesInputBuilder{
+    pub fn builder() -> crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesInputBuilder {
         crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the dataset.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +51,10 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDataSetRefreshPropertiesInput`](crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshPropertiesInput {
                 aws_account_id: self.aws_account_id
@@ -72,3 +65,4 @@ impl DeleteDataSetRefreshPropertiesInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRegionInput {
+pub struct AddRegionInput  {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct AddRegionInput {
 }
 impl AddRegionInput {
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn vpc_settings(&self) -> std::option::Option<&crate::types::DirectoryVpcSettings> {
+    pub fn vpc_settings(&self) -> std::option::Option<& crate::types::DirectoryVpcSettings> {
         self.vpc_settings.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl AddRegionInputBuilder {
     }
     /// <p>The identifier of the directory to which you want to add Region replication.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
     pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl AddRegionInputBuilder {
     }
     /// <p>The name of the Region where you want to add domain controllers for replication. For example, <code>us-east-1</code>.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
     pub fn vpc_settings(mut self, input: crate::types::DirectoryVpcSettings) -> Self {
@@ -69,24 +67,21 @@ impl AddRegionInputBuilder {
         self
     }
     /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
-    pub fn set_vpc_settings(
-        mut self,
-        input: std::option::Option<crate::types::DirectoryVpcSettings>,
-    ) -> Self {
-        self.vpc_settings = input;
-        self
+    pub fn set_vpc_settings(mut self, input: std::option::Option<crate::types::DirectoryVpcSettings>) -> Self {
+        self.vpc_settings = input; self
     }
     /// Consumes the builder and constructs a [`AddRegionInput`](crate::operation::add_region::AddRegionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_region::AddRegionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::add_region::AddRegionInput {
-            directory_id: self.directory_id,
-            region_name: self.region_name,
-            vpc_settings: self.vpc_settings,
-        })
+    pub fn build(self) -> Result<crate::operation::add_region::AddRegionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::add_region::AddRegionInput {
+                directory_id: self.directory_id
+                ,
+                region_name: self.region_name
+                ,
+                vpc_settings: self.vpc_settings
+                ,
+            }
+        )
     }
 }
+

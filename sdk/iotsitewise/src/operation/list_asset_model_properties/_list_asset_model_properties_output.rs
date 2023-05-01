@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetModelPropertiesOutput {
+pub struct ListAssetModelPropertiesOutput  {
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
     #[doc(hidden)]
-    pub asset_model_property_summaries:
-        std::option::Option<std::vec::Vec<crate::types::AssetModelPropertySummary>>,
+    pub asset_model_property_summaries: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertySummary>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListAssetModelPropertiesOutput {
 }
 impl ListAssetModelPropertiesOutput {
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn asset_model_property_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::AssetModelPropertySummary]> {
+    pub fn asset_model_property_summaries(&self) -> std::option::Option<& [crate::types::AssetModelPropertySummary]> {
         self.asset_model_property_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssetModelPropertiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssetModelPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetModelPropertiesOutput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput).
-    pub fn builder() -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder {
         crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListAssetModelPropertiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAssetModelPropertiesOutputBuilder {
-    pub(crate) asset_model_property_summaries:
-        std::option::Option<std::vec::Vec<crate::types::AssetModelPropertySummary>>,
+    pub(crate) asset_model_property_summaries: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertySummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListAssetModelPropertiesOutputBuilder {
     /// To override the contents of this collection use [`set_asset_model_property_summaries`](Self::set_asset_model_property_summaries).
     ///
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn asset_model_property_summaries(
-        mut self,
-        input: crate::types::AssetModelPropertySummary,
-    ) -> Self {
+    pub fn asset_model_property_summaries(mut self, input: crate::types::AssetModelPropertySummary) -> Self {
         let mut v = self.asset_model_property_summaries.unwrap_or_default();
-        v.push(input);
-        self.asset_model_property_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.asset_model_property_summaries = Some(v);
+                        self
     }
     /// <p>A list that summarizes the properties associated with the specified asset model.</p>
-    pub fn set_asset_model_property_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertySummary>>,
-    ) -> Self {
-        self.asset_model_property_summaries = input;
-        self
+    pub fn set_asset_model_property_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertySummary>>) -> Self {
+        self.asset_model_property_summaries = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,26 +64,26 @@ impl ListAssetModelPropertiesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssetModelPropertiesOutput`](crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
+    pub fn build(self) -> crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput {
-            asset_model_property_summaries: self.asset_model_property_summaries,
-            next_token: self.next_token,
+            asset_model_property_summaries: self.asset_model_property_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

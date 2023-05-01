@@ -3,7 +3,7 @@
 /// <p>The configuration used to authenticate a speaker during a session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationConfiguration {
+pub struct AuthenticationConfiguration  {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     #[doc(hidden)]
     pub acceptance_threshold: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl AuthenticationConfigurationBuilder {
     }
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub fn set_acceptance_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.acceptance_threshold = input;
-        self
+        self.acceptance_threshold = input; self
     }
     /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
     pub fn build(self) -> crate::types::AuthenticationConfiguration {
         crate::types::AuthenticationConfiguration {
-            acceptance_threshold: self.acceptance_threshold,
+            acceptance_threshold: self.acceptance_threshold
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details about an imported annotation item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnnotationImportItemDetail {
+pub struct AnnotationImportItemDetail  {
     /// <p>The source file's location in Amazon S3.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AnnotationImportItemDetail {
 }
 impl AnnotationImportItemDetail {
     /// <p>The source file's location in Amazon S3.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The item's job status.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AnnotationImportItemDetailBuilder {
     }
     /// <p>The source file's location in Amazon S3.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The item's job status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -53,14 +52,16 @@ impl AnnotationImportItemDetailBuilder {
     }
     /// <p>The item's job status.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// Consumes the builder and constructs a [`AnnotationImportItemDetail`](crate::types::AnnotationImportItemDetail).
     pub fn build(self) -> crate::types::AnnotationImportItemDetail {
         crate::types::AnnotationImportItemDetail {
-            source: self.source,
-            job_status: self.job_status,
+            source: self.source
+            ,
+            job_status: self.job_status
+            ,
         }
     }
 }
+

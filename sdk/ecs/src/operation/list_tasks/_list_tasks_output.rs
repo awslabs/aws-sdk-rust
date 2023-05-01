@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTasksOutput {
+pub struct ListTasksOutput  {
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
     #[doc(hidden)]
     pub task_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,19 +13,19 @@ pub struct ListTasksOutput {
 }
 impl ListTasksOutput {
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
-    pub fn task_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn task_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.task_arns.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput).
     pub fn builder() -> crate::operation::list_tasks::builders::ListTasksOutputBuilder {
@@ -49,17 +49,13 @@ impl ListTasksOutputBuilder {
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
     pub fn task_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.task_arns.unwrap_or_default();
-        v.push(input.into());
-        self.task_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.task_arns = Some(v);
+                        self
     }
     /// <p>The list of task ARN entries for the <code>ListTasks</code> request.</p>
-    pub fn set_task_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.task_arns = input;
-        self
+    pub fn set_task_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.task_arns = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListTasksOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTasks</code> request. When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput).
     pub fn build(self) -> crate::operation::list_tasks::ListTasksOutput {
         crate::operation::list_tasks::ListTasksOutput {
-            task_arns: self.task_arns,
-            next_token: self.next_token,
+            task_arns: self.task_arns
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,72 +4,49 @@ pub use crate::operation::create_classification_job::_create_classification_job_
 pub use crate::operation::create_classification_job::_create_classification_job_input::CreateClassificationJobInputBuilder;
 
 /// Fluent builder constructing a request to `CreateClassificationJob`.
-///
+/// 
 /// <p>Creates and defines the settings for a classification job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClassificationJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder,
-}
-impl CreateClassificationJobFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_classification_job::builders::CreateClassificationJobInputBuilder
+            }
+impl CreateClassificationJobFluentBuilder  {
     /// Creates a new `CreateClassificationJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_classification_job::CreateClassificationJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_classification_job::CreateClassificationJobError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_classification_job::CreateClassificationJobOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_classification_job::CreateClassificationJobError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_classification_job::CreateClassificationJob, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_classification_job::CreateClassificationJobError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_classification_job::CreateClassificationJobOutput, aws_smithy_http::result::SdkError<crate::operation::create_classification_job::CreateClassificationJobError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `allowListIds`.
     ///
     /// To override the contents of this collection use [`set_allow_list_ids`](Self::set_allow_list_ids).
@@ -80,10 +57,7 @@ impl CreateClassificationJobFluentBuilder {
         self
     }
     /// <p>An array of unique identifiers, one for each allow list for the job to use when it analyzes data.</p>
-    pub fn set_allow_list_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_allow_list_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_allow_list_ids(input);
         self
     }
@@ -107,10 +81,7 @@ impl CreateClassificationJobFluentBuilder {
         self
     }
     /// <p>An array of unique identifiers, one for each custom data identifier for the job to use when it analyzes data. To use only managed data identifiers, don't specify a value for this property and specify a value other than NONE for the managedDataIdentifierSelector property.</p>
-    pub fn set_custom_data_identifier_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_custom_data_identifier_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_custom_data_identifier_ids(input);
         self
     }
@@ -124,30 +95,30 @@ impl CreateClassificationJobFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p> 
     /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
     pub fn initial_run(mut self, input: bool) -> Self {
         self.inner = self.inner.initial_run(input);
         self
     }
-    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p>
+    /// <p>For a recurring job, specifies whether to analyze all existing, eligible objects immediately after the job is created (true). To analyze only those objects that are created or changed after you create the job and before the job's first scheduled run, set this value to false.</p> 
     /// <p>If you configure the job to run only once, don't specify a value for this property.</p>
     pub fn set_initial_run(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_initial_run(input);
         self
     }
-    /// <p>The schedule for running the job. Valid values are:</p>
+    /// <p>The schedule for running the job. Valid values are:</p> 
     /// <ul>
-    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> 
     /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.inner = self.inner.job_type(input);
         self
     }
-    /// <p>The schedule for running the job. Valid values are:</p>
+    /// <p>The schedule for running the job. Valid values are:</p> 
     /// <ul>
-    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li>
+    /// <li><p>ONE_TIME - Run the job only once. If you specify this value, don't specify a value for the scheduleFrequency property.</p></li> 
     /// <li><p>SCHEDULED - Run the job on a daily, weekly, or monthly basis. If you specify this value, use the scheduleFrequency property to define the recurrence pattern for the job.</p></li>
     /// </ul>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
@@ -158,48 +129,39 @@ impl CreateClassificationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_managed_data_identifier_ids`](Self::set_managed_data_identifier_ids).
     ///
-    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p> 
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
     pub fn managed_data_identifier_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.managed_data_identifier_ids(input.into());
         self
     }
-    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p>
+    /// <p>An array of unique identifiers, one for each managed data identifier for the job to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data identifier selection type that you specify for the job (managedDataIdentifierSelector).</p> 
     /// <p>To retrieve a list of valid values for this property, use the ListManagedDataIdentifiers operation.</p>
-    pub fn set_managed_data_identifier_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_managed_data_identifier_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_managed_data_identifier_ids(input);
         self
     }
-    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> 
     /// <ul>
-    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> 
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
     /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
-    pub fn managed_data_identifier_selector(
-        mut self,
-        input: crate::types::ManagedDataIdentifierSelector,
-    ) -> Self {
+    pub fn managed_data_identifier_selector(mut self, input: crate::types::ManagedDataIdentifierSelector) -> Self {
         self.inner = self.inner.managed_data_identifier_selector(input);
         self
     }
-    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p>
+    /// <p>The selection type to apply when determining which managed data identifiers the job uses to analyze data. Valid values are:</p> 
     /// <ul>
-    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
-    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li>
+    /// <li><p>ALL - Use all the managed data identifiers that Amazon Macie provides. If you specify this value, don't specify any values for the managedDataIdentifierIds property.</p></li> 
+    /// <li><p>EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
+    /// <li><p>INCLUDE - Use only the managed data identifiers specified by the managedDataIdentifierIds property.</p></li> 
     /// <li><p>NONE - Don't use any managed data identifiers. If you specify this value, specify at least one custom data identifier for the job (customDataIdentifierIds) and don't specify any values for the managedDataIdentifierIds property.</p></li>
-    /// </ul>
+    /// </ul> 
     /// <p>If you don't specify a value for this property, the job uses all managed data identifiers. If you don't specify a value for this property or you specify ALL or EXCLUDE for a recurring job, the job also uses new managed data identifiers as they are released.</p>
-    pub fn set_managed_data_identifier_selector(
-        mut self,
-        input: std::option::Option<crate::types::ManagedDataIdentifierSelector>,
-    ) -> Self {
+    pub fn set_managed_data_identifier_selector(mut self, input: std::option::Option<crate::types::ManagedDataIdentifierSelector>) -> Self {
         self.inner = self.inner.set_managed_data_identifier_selector(input);
         self
     }
@@ -219,10 +181,7 @@ impl CreateClassificationJobFluentBuilder {
         self
     }
     /// <p>The S3 buckets that contain the objects to analyze, and the scope of that analysis.</p>
-    pub fn set_s3_job_definition(
-        mut self,
-        input: std::option::Option<crate::types::S3JobDefinition>,
-    ) -> Self {
+    pub fn set_s3_job_definition(mut self, input: std::option::Option<crate::types::S3JobDefinition>) -> Self {
         self.inner = self.inner.set_s3_job_definition(input);
         self
     }
@@ -242,10 +201,7 @@ impl CreateClassificationJobFluentBuilder {
         self
     }
     /// <p>The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and set the value for the jobType property to ONE_TIME.</p>
-    pub fn set_schedule_frequency(
-        mut self,
-        input: std::option::Option<crate::types::JobScheduleFrequency>,
-    ) -> Self {
+    pub fn set_schedule_frequency(mut self, input: std::option::Option<crate::types::JobScheduleFrequency>) -> Self {
         self.inner = self.inner.set_schedule_frequency(input);
         self
     }
@@ -253,25 +209,17 @@ impl CreateClassificationJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> 
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p>
+    /// <p>A map of key-value pairs that specifies the tags to associate with the job.</p> 
     /// <p>A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLaunchTemplateVersionOutput {
+pub struct CreateLaunchTemplateVersionOutput  {
     /// <p>Information about the launch template version.</p>
     #[doc(hidden)]
     pub launch_template_version: std::option::Option<crate::types::LaunchTemplateVersion>,
@@ -13,24 +13,22 @@ pub struct CreateLaunchTemplateVersionOutput {
 }
 impl CreateLaunchTemplateVersionOutput {
     /// <p>Information about the launch template version.</p>
-    pub fn launch_template_version(
-        &self,
-    ) -> std::option::Option<&crate::types::LaunchTemplateVersion> {
+    pub fn launch_template_version(&self) -> std::option::Option<& crate::types::LaunchTemplateVersion> {
         self.launch_template_version.as_ref()
     }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-    pub fn warning(&self) -> std::option::Option<&crate::types::ValidationWarning> {
+    pub fn warning(&self) -> std::option::Option<& crate::types::ValidationWarning> {
         self.warning.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLaunchTemplateVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLaunchTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchTemplateVersionOutput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput).
-    pub fn builder() -> crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionOutputBuilder {
         crate::operation::create_launch_template_version::builders::CreateLaunchTemplateVersionOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl CreateLaunchTemplateVersionOutputBuilder {
         self
     }
     /// <p>Information about the launch template version.</p>
-    pub fn set_launch_template_version(
-        mut self,
-        input: std::option::Option<crate::types::LaunchTemplateVersion>,
-    ) -> Self {
-        self.launch_template_version = input;
-        self
+    pub fn set_launch_template_version(mut self, input: std::option::Option<crate::types::LaunchTemplateVersion>) -> Self {
+        self.launch_template_version = input; self
     }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
     pub fn warning(mut self, input: crate::types::ValidationWarning) -> Self {
@@ -63,30 +57,27 @@ impl CreateLaunchTemplateVersionOutputBuilder {
         self
     }
     /// <p>If the new version of the launch template contains parameters or parameter combinations that are not valid, an error code and an error message are returned for each issue that's found.</p>
-    pub fn set_warning(
-        mut self,
-        input: std::option::Option<crate::types::ValidationWarning>,
-    ) -> Self {
-        self.warning = input;
-        self
+    pub fn set_warning(mut self, input: std::option::Option<crate::types::ValidationWarning>) -> Self {
+        self.warning = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLaunchTemplateVersionOutput`](crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput {
+    pub fn build(self) -> crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput {
         crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput {
-            launch_template_version: self.launch_template_version,
-            warning: self.warning,
+            launch_template_version: self.launch_template_version
+            ,
+            warning: self.warning
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

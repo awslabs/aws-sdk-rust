@@ -3,7 +3,7 @@
 /// <p> Provides details for an Amazon Elastic Inference accelerator. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
+pub struct AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails  {
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
     #[doc(hidden)]
     pub count: i32,
@@ -17,15 +17,13 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
         self.count
     }
     /// <p> The type of Elastic Inference accelerator. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder::default()
     }
 }
@@ -45,8 +43,7 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     }
     /// <p> The number of Elastic Inference accelerators to attach to the instance. </p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p> The type of Elastic Inference accelerator. </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,16 +52,17 @@ impl AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetailsBuilder {
     }
     /// <p> The type of Elastic Inference accelerator. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
+    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
         crate::types::AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails {
-            count: self.count.unwrap_or_default(),
-            r#type: self.r#type,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

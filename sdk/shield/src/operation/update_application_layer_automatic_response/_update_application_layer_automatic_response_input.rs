@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationLayerAutomaticResponseInput {
+pub struct UpdateApplicationLayerAutomaticResponseInput  {
     /// <p>The ARN (Amazon Resource Name) of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateApplicationLayerAutomaticResponseInput {
 }
 impl UpdateApplicationLayerAutomaticResponseInput {
     /// <p>The ARN (Amazon Resource Name) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ResponseAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::ResponseAction> {
         self.action.as_ref()
     }
 }
 impl UpdateApplicationLayerAutomaticResponseInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseInput`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput).
-    pub fn builder() -> crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder{
+    pub fn builder() -> crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder {
         crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateApplicationLayerAutomaticResponseInputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub fn action(mut self, input: crate::types::ResponseAction) -> Self {
@@ -52,11 +51,10 @@ impl UpdateApplicationLayerAutomaticResponseInputBuilder {
     }
     /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::ResponseAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseInput`](crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput).
-    pub fn build(self) -> Result<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponseInput {
                 resource_arn: self.resource_arn
@@ -67,3 +65,4 @@ impl UpdateApplicationLayerAutomaticResponseInputBuilder {
         )
     }
 }
+

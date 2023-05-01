@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionSetProvisioningStatusInput {
+pub struct ListPermissionSetProvisioningStatusInput  {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     #[doc(hidden)]
     pub instance_arn: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListPermissionSetProvisioningStatusInput {
 }
 impl ListPermissionSetProvisioningStatusInput {
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The maximum number of results to display for the assignment.</p>
@@ -26,17 +26,17 @@ impl ListPermissionSetProvisioningStatusInput {
         self.max_results
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::OperationStatusFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::OperationStatusFilter> {
         self.filter.as_ref()
     }
 }
 impl ListPermissionSetProvisioningStatusInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetProvisioningStatusInput`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusInput).
-    pub fn builder() -> crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusInputBuilder{
+    pub fn builder() -> crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusInputBuilder {
         crate::operation::list_permission_set_provisioning_status::builders::ListPermissionSetProvisioningStatusInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListPermissionSetProvisioningStatusInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The maximum number of results to display for the assignment.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +67,7 @@ impl ListPermissionSetProvisioningStatusInputBuilder {
     }
     /// <p>The maximum number of results to display for the assignment.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl ListPermissionSetProvisioningStatusInputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Filters results based on the passed attribute value.</p>
     pub fn filter(mut self, input: crate::types::OperationStatusFilter) -> Self {
@@ -87,15 +84,11 @@ impl ListPermissionSetProvisioningStatusInputBuilder {
         self
     }
     /// <p>Filters results based on the passed attribute value.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::OperationStatusFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::OperationStatusFilter>) -> Self {
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`ListPermissionSetProvisioningStatusInput`](crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusInput).
-    pub fn build(self) -> Result<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusInput {
                 instance_arn: self.instance_arn
@@ -110,3 +103,4 @@ impl ListPermissionSetProvisioningStatusInputBuilder {
         )
     }
 }
+

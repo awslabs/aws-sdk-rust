@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerTlsCertificateInput {
+pub struct DeleteLoadBalancerTlsCertificateInput  {
     /// <p>The load balancer name.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
     /// <p>The SSL/TLS certificate name.</p>
     #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
-    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p> 
     /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
     #[doc(hidden)]
     pub force: std::option::Option<bool>,
 }
 impl DeleteLoadBalancerTlsCertificateInput {
     /// <p>The load balancer name.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The SSL/TLS certificate name.</p>
-    pub fn certificate_name(&self) -> std::option::Option<&str> {
+    pub fn certificate_name(&self) -> std::option::Option<& str> {
         self.certificate_name.as_deref()
     }
-    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p> 
     /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
@@ -31,7 +31,7 @@ impl DeleteLoadBalancerTlsCertificateInput {
 }
 impl DeleteLoadBalancerTlsCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerTlsCertificateInput`](crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput).
-    pub fn builder() -> crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder{
+    pub fn builder() -> crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder {
         crate::operation::delete_load_balancer_tls_certificate::builders::DeleteLoadBalancerTlsCertificateInputBuilder::default()
     }
 }
@@ -51,12 +51,8 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
         self
     }
     /// <p>The load balancer name.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
     /// <p>The SSL/TLS certificate name.</p>
     pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,23 +61,21 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
     }
     /// <p>The SSL/TLS certificate name.</p>
     pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_name = input;
-        self
+        self.certificate_name = input; self
     }
-    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p> 
     /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = Some(input);
         self
     }
-    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+    /// <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p> 
     /// <p>There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The <code>force</code> parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load balancer.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerTlsCertificateInput`](crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput).
-    pub fn build(self) -> Result<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateInput {
                 load_balancer_name: self.load_balancer_name
@@ -94,3 +88,4 @@ impl DeleteLoadBalancerTlsCertificateInputBuilder {
         )
     }
 }
+

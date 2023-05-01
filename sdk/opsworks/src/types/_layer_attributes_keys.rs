@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let layerattributeskeys = unimplemented!();
 /// match layerattributeskeys {
@@ -53,22 +53,14 @@
 /// Specifically, when `layerattributeskeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LayerAttributesKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LayerAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     BundlerVersion,
@@ -121,114 +113,87 @@ pub enum LayerAttributesKeys {
     #[allow(missing_docs)] // documentation missing in model
     RubygemsVersion,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LayerAttributesKeys {
-    fn from(s: &str) -> Self {
-        match s {
-            "BundlerVersion" => LayerAttributesKeys::BundlerVersion,
-            "EcsClusterArn" => LayerAttributesKeys::EcsClusterArn,
-            "EnableHaproxyStats" => LayerAttributesKeys::EnableHaproxyStats,
-            "GangliaPassword" => LayerAttributesKeys::GangliaPassword,
-            "GangliaUrl" => LayerAttributesKeys::GangliaUrl,
-            "GangliaUser" => LayerAttributesKeys::GangliaUser,
-            "HaproxyHealthCheckMethod" => LayerAttributesKeys::HaproxyHealthCheckMethod,
-            "HaproxyHealthCheckUrl" => LayerAttributesKeys::HaproxyHealthCheckUrl,
-            "HaproxyStatsPassword" => LayerAttributesKeys::HaproxyStatsPassword,
-            "HaproxyStatsUrl" => LayerAttributesKeys::HaproxyStatsUrl,
-            "HaproxyStatsUser" => LayerAttributesKeys::HaproxyStatsUser,
-            "JavaAppServer" => LayerAttributesKeys::JavaAppServer,
-            "JavaAppServerVersion" => LayerAttributesKeys::JavaAppServerVersion,
-            "Jvm" => LayerAttributesKeys::Jvm,
-            "JvmOptions" => LayerAttributesKeys::JvmOptions,
-            "JvmVersion" => LayerAttributesKeys::JvmVersion,
-            "ManageBundler" => LayerAttributesKeys::ManageBundler,
-            "MemcachedMemory" => LayerAttributesKeys::MemcachedMemory,
-            "MysqlRootPassword" => LayerAttributesKeys::MysqlRootPassword,
-            "MysqlRootPasswordUbiquitous" => LayerAttributesKeys::MysqlRootPasswordUbiquitous,
-            "NodejsVersion" => LayerAttributesKeys::NodejsVersion,
-            "PassengerVersion" => LayerAttributesKeys::PassengerVersion,
-            "RailsStack" => LayerAttributesKeys::RailsStack,
-            "RubyVersion" => LayerAttributesKeys::RubyVersion,
-            "RubygemsVersion" => LayerAttributesKeys::RubygemsVersion,
-            other => LayerAttributesKeys::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BundlerVersion" => LayerAttributesKeys::BundlerVersion,
+"EcsClusterArn" => LayerAttributesKeys::EcsClusterArn,
+"EnableHaproxyStats" => LayerAttributesKeys::EnableHaproxyStats,
+"GangliaPassword" => LayerAttributesKeys::GangliaPassword,
+"GangliaUrl" => LayerAttributesKeys::GangliaUrl,
+"GangliaUser" => LayerAttributesKeys::GangliaUser,
+"HaproxyHealthCheckMethod" => LayerAttributesKeys::HaproxyHealthCheckMethod,
+"HaproxyHealthCheckUrl" => LayerAttributesKeys::HaproxyHealthCheckUrl,
+"HaproxyStatsPassword" => LayerAttributesKeys::HaproxyStatsPassword,
+"HaproxyStatsUrl" => LayerAttributesKeys::HaproxyStatsUrl,
+"HaproxyStatsUser" => LayerAttributesKeys::HaproxyStatsUser,
+"JavaAppServer" => LayerAttributesKeys::JavaAppServer,
+"JavaAppServerVersion" => LayerAttributesKeys::JavaAppServerVersion,
+"Jvm" => LayerAttributesKeys::Jvm,
+"JvmOptions" => LayerAttributesKeys::JvmOptions,
+"JvmVersion" => LayerAttributesKeys::JvmVersion,
+"ManageBundler" => LayerAttributesKeys::ManageBundler,
+"MemcachedMemory" => LayerAttributesKeys::MemcachedMemory,
+"MysqlRootPassword" => LayerAttributesKeys::MysqlRootPassword,
+"MysqlRootPasswordUbiquitous" => LayerAttributesKeys::MysqlRootPasswordUbiquitous,
+"NodejsVersion" => LayerAttributesKeys::NodejsVersion,
+"PassengerVersion" => LayerAttributesKeys::PassengerVersion,
+"RailsStack" => LayerAttributesKeys::RailsStack,
+"RubyVersion" => LayerAttributesKeys::RubyVersion,
+"RubygemsVersion" => LayerAttributesKeys::RubygemsVersion,
+other => LayerAttributesKeys::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LayerAttributesKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LayerAttributesKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LayerAttributesKeys::from(s))
+                }
+            }
 impl LayerAttributesKeys {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LayerAttributesKeys::BundlerVersion => "BundlerVersion",
-            LayerAttributesKeys::EcsClusterArn => "EcsClusterArn",
-            LayerAttributesKeys::EnableHaproxyStats => "EnableHaproxyStats",
-            LayerAttributesKeys::GangliaPassword => "GangliaPassword",
-            LayerAttributesKeys::GangliaUrl => "GangliaUrl",
-            LayerAttributesKeys::GangliaUser => "GangliaUser",
-            LayerAttributesKeys::HaproxyHealthCheckMethod => "HaproxyHealthCheckMethod",
-            LayerAttributesKeys::HaproxyHealthCheckUrl => "HaproxyHealthCheckUrl",
-            LayerAttributesKeys::HaproxyStatsPassword => "HaproxyStatsPassword",
-            LayerAttributesKeys::HaproxyStatsUrl => "HaproxyStatsUrl",
-            LayerAttributesKeys::HaproxyStatsUser => "HaproxyStatsUser",
-            LayerAttributesKeys::JavaAppServer => "JavaAppServer",
-            LayerAttributesKeys::JavaAppServerVersion => "JavaAppServerVersion",
-            LayerAttributesKeys::Jvm => "Jvm",
-            LayerAttributesKeys::JvmOptions => "JvmOptions",
-            LayerAttributesKeys::JvmVersion => "JvmVersion",
-            LayerAttributesKeys::ManageBundler => "ManageBundler",
-            LayerAttributesKeys::MemcachedMemory => "MemcachedMemory",
-            LayerAttributesKeys::MysqlRootPassword => "MysqlRootPassword",
-            LayerAttributesKeys::MysqlRootPasswordUbiquitous => "MysqlRootPasswordUbiquitous",
-            LayerAttributesKeys::NodejsVersion => "NodejsVersion",
-            LayerAttributesKeys::PassengerVersion => "PassengerVersion",
-            LayerAttributesKeys::RailsStack => "RailsStack",
-            LayerAttributesKeys::RubyVersion => "RubyVersion",
-            LayerAttributesKeys::RubygemsVersion => "RubygemsVersion",
-            LayerAttributesKeys::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BundlerVersion",
-            "EcsClusterArn",
-            "EnableHaproxyStats",
-            "GangliaPassword",
-            "GangliaUrl",
-            "GangliaUser",
-            "HaproxyHealthCheckMethod",
-            "HaproxyHealthCheckUrl",
-            "HaproxyStatsPassword",
-            "HaproxyStatsUrl",
-            "HaproxyStatsUser",
-            "JavaAppServer",
-            "JavaAppServerVersion",
-            "Jvm",
-            "JvmOptions",
-            "JvmVersion",
-            "ManageBundler",
-            "MemcachedMemory",
-            "MysqlRootPassword",
-            "MysqlRootPasswordUbiquitous",
-            "NodejsVersion",
-            "PassengerVersion",
-            "RailsStack",
-            "RubyVersion",
-            "RubygemsVersion",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LayerAttributesKeys::BundlerVersion => "BundlerVersion",
+    LayerAttributesKeys::EcsClusterArn => "EcsClusterArn",
+    LayerAttributesKeys::EnableHaproxyStats => "EnableHaproxyStats",
+    LayerAttributesKeys::GangliaPassword => "GangliaPassword",
+    LayerAttributesKeys::GangliaUrl => "GangliaUrl",
+    LayerAttributesKeys::GangliaUser => "GangliaUser",
+    LayerAttributesKeys::HaproxyHealthCheckMethod => "HaproxyHealthCheckMethod",
+    LayerAttributesKeys::HaproxyHealthCheckUrl => "HaproxyHealthCheckUrl",
+    LayerAttributesKeys::HaproxyStatsPassword => "HaproxyStatsPassword",
+    LayerAttributesKeys::HaproxyStatsUrl => "HaproxyStatsUrl",
+    LayerAttributesKeys::HaproxyStatsUser => "HaproxyStatsUser",
+    LayerAttributesKeys::JavaAppServer => "JavaAppServer",
+    LayerAttributesKeys::JavaAppServerVersion => "JavaAppServerVersion",
+    LayerAttributesKeys::Jvm => "Jvm",
+    LayerAttributesKeys::JvmOptions => "JvmOptions",
+    LayerAttributesKeys::JvmVersion => "JvmVersion",
+    LayerAttributesKeys::ManageBundler => "ManageBundler",
+    LayerAttributesKeys::MemcachedMemory => "MemcachedMemory",
+    LayerAttributesKeys::MysqlRootPassword => "MysqlRootPassword",
+    LayerAttributesKeys::MysqlRootPasswordUbiquitous => "MysqlRootPasswordUbiquitous",
+    LayerAttributesKeys::NodejsVersion => "NodejsVersion",
+    LayerAttributesKeys::PassengerVersion => "PassengerVersion",
+    LayerAttributesKeys::RailsStack => "RailsStack",
+    LayerAttributesKeys::RubyVersion => "RubyVersion",
+    LayerAttributesKeys::RubygemsVersion => "RubygemsVersion",
+    LayerAttributesKeys::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BundlerVersion", "EcsClusterArn", "EnableHaproxyStats", "GangliaPassword", "GangliaUrl", "GangliaUser", "HaproxyHealthCheckMethod", "HaproxyHealthCheckUrl", "HaproxyStatsPassword", "HaproxyStatsUrl", "HaproxyStatsUser", "JavaAppServer", "JavaAppServerVersion", "Jvm", "JvmOptions", "JvmVersion", "ManageBundler", "MemcachedMemory", "MysqlRootPassword", "MysqlRootPasswordUbiquitous", "NodejsVersion", "PassengerVersion", "RailsStack", "RubyVersion", "RubygemsVersion"]
+                }
+            }
 impl AsRef<str> for LayerAttributesKeys {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

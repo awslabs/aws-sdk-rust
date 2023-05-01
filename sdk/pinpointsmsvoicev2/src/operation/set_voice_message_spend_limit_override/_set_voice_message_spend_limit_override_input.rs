@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVoiceMessageSpendLimitOverrideInput {
+pub struct SetVoiceMessageSpendLimitOverrideInput  {
     /// <p>The new monthly limit to enforce on voice messages.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -15,7 +15,7 @@ impl SetVoiceMessageSpendLimitOverrideInput {
 }
 impl SetVoiceMessageSpendLimitOverrideInput {
     /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
-    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder{
+    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder {
         crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
     }
     /// <p>The new monthly limit to enforce on voice messages.</p>
     pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-        self.monthly_limit = input;
-        self
+        self.monthly_limit = input; self
     }
     /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideInput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput).
-    pub fn build(self) -> Result<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideInput {
                 monthly_limit: self.monthly_limit
@@ -47,3 +46,4 @@ impl SetVoiceMessageSpendLimitOverrideInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The list of severity levels returned by the <code>DescribeSeverityLevels</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSeverityLevelsOutput {
+pub struct DescribeSeverityLevelsOutput  {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     #[doc(hidden)]
     pub severity_levels: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>,
@@ -11,20 +11,18 @@ pub struct DescribeSeverityLevelsOutput {
 }
 impl DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    pub fn severity_levels(&self) -> std::option::Option<&[crate::types::SeverityLevel]> {
+    pub fn severity_levels(&self) -> std::option::Option<& [crate::types::SeverityLevel]> {
         self.severity_levels.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSeverityLevelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSeverityLevelsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsOutput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsOutputBuilder {
         crate::operation::describe_severity_levels::builders::DescribeSeverityLevelsOutputBuilder::default()
     }
 }
@@ -44,32 +42,30 @@ impl DescribeSeverityLevelsOutputBuilder {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     pub fn severity_levels(mut self, input: crate::types::SeverityLevel) -> Self {
         let mut v = self.severity_levels.unwrap_or_default();
-        v.push(input);
-        self.severity_levels = Some(v);
-        self
+                        v.push(input);
+                        self.severity_levels = Some(v);
+                        self
     }
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    pub fn set_severity_levels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>,
-    ) -> Self {
-        self.severity_levels = input;
-        self
+    pub fn set_severity_levels(mut self, input: std::option::Option<std::vec::Vec<crate::types::SeverityLevel>>) -> Self {
+        self.severity_levels = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSeverityLevelsOutput`](crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput).
     pub fn build(self) -> crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput {
         crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput {
-            severity_levels: self.severity_levels,
+            severity_levels: self.severity_levels
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

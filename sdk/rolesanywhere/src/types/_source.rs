@@ -3,7 +3,7 @@
 /// <p>The trust anchor type and its related certificate data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Source {
+pub struct Source  {
     /// <p>The type of the trust anchor. </p>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::types::TrustAnchorType>,
@@ -13,11 +13,11 @@ pub struct Source {
 }
 impl Source {
     /// <p>The type of the trust anchor. </p>
-    pub fn source_type(&self) -> std::option::Option<&crate::types::TrustAnchorType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::types::TrustAnchorType> {
         self.source_type.as_ref()
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
-    pub fn source_data(&self) -> std::option::Option<&crate::types::SourceData> {
+    pub fn source_data(&self) -> std::option::Option<& crate::types::SourceData> {
         self.source_data.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl SourceBuilder {
         self
     }
     /// <p>The type of the trust anchor. </p>
-    pub fn set_source_type(
-        mut self,
-        input: std::option::Option<crate::types::TrustAnchorType>,
-    ) -> Self {
-        self.source_type = input;
-        self
+    pub fn set_source_type(mut self, input: std::option::Option<crate::types::TrustAnchorType>) -> Self {
+        self.source_type = input; self
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
     pub fn source_data(mut self, input: crate::types::SourceData) -> Self {
@@ -56,14 +52,16 @@ impl SourceBuilder {
     }
     /// <p>The data field of the trust anchor depending on its type. </p>
     pub fn set_source_data(mut self, input: std::option::Option<crate::types::SourceData>) -> Self {
-        self.source_data = input;
-        self
+        self.source_data = input; self
     }
     /// Consumes the builder and constructs a [`Source`](crate::types::Source).
     pub fn build(self) -> crate::types::Source {
         crate::types::Source {
-            source_type: self.source_type,
-            source_data: self.source_data,
+            source_type: self.source_type
+            ,
+            source_data: self.source_data
+            ,
         }
     }
 }
+

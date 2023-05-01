@@ -3,7 +3,7 @@
 /// <p>The Diffie-Hellmann group number for phase 1 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Phase1DhGroupNumbersListValue {
+pub struct Phase1DhGroupNumbersListValue  {
     /// <p>The Diffie-Hellmann group number.</p>
     #[doc(hidden)]
     pub value: std::option::Option<i32>,
@@ -35,11 +35,14 @@ impl Phase1DhGroupNumbersListValueBuilder {
     }
     /// <p>The Diffie-Hellmann group number.</p>
     pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Phase1DhGroupNumbersListValue`](crate::types::Phase1DhGroupNumbersListValue).
     pub fn build(self) -> crate::types::Phase1DhGroupNumbersListValue {
-        crate::types::Phase1DhGroupNumbersListValue { value: self.value }
+        crate::types::Phase1DhGroupNumbersListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

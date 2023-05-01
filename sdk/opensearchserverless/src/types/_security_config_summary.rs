@@ -3,7 +3,7 @@
 /// <p>A summary of a security configuration for OpenSearch Serverless.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigSummary {
+pub struct SecurityConfigSummary  {
     /// <p>The unique identifier of the security configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,19 +25,19 @@ pub struct SecurityConfigSummary {
 }
 impl SecurityConfigSummary {
     /// <p>The unique identifier of the security configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SecurityConfigType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SecurityConfigType> {
         self.r#type.as_ref()
     }
     /// <p>The version of the security configuration.</p>
-    pub fn config_version(&self) -> std::option::Option<&str> {
+    pub fn config_version(&self) -> std::option::Option<& str> {
         self.config_version.as_deref()
     }
     /// <p>The description of the security configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Epoch time when the security configuration was created.</p>
@@ -75,8 +75,7 @@ impl SecurityConfigSummaryBuilder {
     }
     /// <p>The unique identifier of the security configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The type of security configuration.</p>
     pub fn r#type(mut self, input: crate::types::SecurityConfigType) -> Self {
@@ -84,12 +83,8 @@ impl SecurityConfigSummaryBuilder {
         self
     }
     /// <p>The type of security configuration.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::SecurityConfigType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::SecurityConfigType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The version of the security configuration.</p>
     pub fn config_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl SecurityConfigSummaryBuilder {
     }
     /// <p>The version of the security configuration.</p>
     pub fn set_config_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_version = input;
-        self
+        self.config_version = input; self
     }
     /// <p>The description of the security configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +102,7 @@ impl SecurityConfigSummaryBuilder {
     }
     /// <p>The description of the security configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The Epoch time when the security configuration was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
@@ -118,8 +111,7 @@ impl SecurityConfigSummaryBuilder {
     }
     /// <p>The Epoch time when the security configuration was created.</p>
     pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp of when the configuration was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -128,18 +120,24 @@ impl SecurityConfigSummaryBuilder {
     }
     /// <p>The timestamp of when the configuration was last modified.</p>
     pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// Consumes the builder and constructs a [`SecurityConfigSummary`](crate::types::SecurityConfigSummary).
     pub fn build(self) -> crate::types::SecurityConfigSummary {
         crate::types::SecurityConfigSummary {
-            id: self.id,
-            r#type: self.r#type,
-            config_version: self.config_version,
-            description: self.description,
-            created_date: self.created_date,
-            last_modified_date: self.last_modified_date,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            config_version: self.config_version
+            ,
+            description: self.description
+            ,
+            created_date: self.created_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

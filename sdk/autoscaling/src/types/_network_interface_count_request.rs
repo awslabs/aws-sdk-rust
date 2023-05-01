@@ -3,7 +3,7 @@
 /// <p>Specifies the minimum and maximum for the <code>NetworkInterfaceCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterfaceCountRequest {
+pub struct NetworkInterfaceCountRequest  {
     /// <p>The minimum number of network interfaces.</p>
     #[doc(hidden)]
     pub min: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl NetworkInterfaceCountRequestBuilder {
     }
     /// <p>The minimum number of network interfaces.</p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The maximum number of network interfaces.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl NetworkInterfaceCountRequestBuilder {
     }
     /// <p>The maximum number of network interfaces.</p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// Consumes the builder and constructs a [`NetworkInterfaceCountRequest`](crate::types::NetworkInterfaceCountRequest).
     pub fn build(self) -> crate::types::NetworkInterfaceCountRequest {
         crate::types::NetworkInterfaceCountRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

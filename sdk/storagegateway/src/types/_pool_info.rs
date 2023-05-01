@@ -3,7 +3,7 @@
 /// <p>Describes a custom tape pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PoolInfo {
+pub struct PoolInfo  {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -25,19 +25,19 @@ pub struct PoolInfo {
 }
 impl PoolInfo {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters, except '/' and '\'.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
     /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::types::TapeStorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::types::TapeStorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn retention_lock_type(&self) -> std::option::Option<&crate::types::RetentionLockType> {
+    pub fn retention_lock_type(&self) -> std::option::Option<& crate::types::RetentionLockType> {
         self.retention_lock_type.as_ref()
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
@@ -45,7 +45,7 @@ impl PoolInfo {
         self.retention_lock_time_in_days
     }
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
-    pub fn pool_status(&self) -> std::option::Option<&crate::types::PoolStatus> {
+    pub fn pool_status(&self) -> std::option::Option<& crate::types::PoolStatus> {
         self.pool_status.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl PoolInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <code>ListTapePools</code> operation to return a list of custom tape pools for your account and Amazon Web Services Region.</p>
     pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters, except '/' and '\'.</p>
     pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl PoolInfoBuilder {
     }
     /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters, except '/' and '\'.</p>
     pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_name = input;
-        self
+        self.pool_name = input; self
     }
     /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn storage_class(mut self, input: crate::types::TapeStorageClass) -> Self {
@@ -94,12 +92,8 @@ impl PoolInfoBuilder {
         self
     }
     /// <p>The storage class that is associated with the custom pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn set_storage_class(
-        mut self,
-        input: std::option::Option<crate::types::TapeStorageClass>,
-    ) -> Self {
-        self.storage_class = input;
-        self
+    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::TapeStorageClass>) -> Self {
+        self.storage_class = input; self
     }
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
     pub fn retention_lock_type(mut self, input: crate::types::RetentionLockType) -> Self {
@@ -107,12 +101,8 @@ impl PoolInfoBuilder {
         self
     }
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in governance mode, Amazon Web Services accounts with specific IAM permissions are authorized to remove the tape retention lock from archived virtual tapes. When configured in compliance mode, the tape retention lock cannot be removed by any user, including the root Amazon Web Services account.</p>
-    pub fn set_retention_lock_type(
-        mut self,
-        input: std::option::Option<crate::types::RetentionLockType>,
-    ) -> Self {
-        self.retention_lock_type = input;
-        self
+    pub fn set_retention_lock_type(mut self, input: std::option::Option<crate::types::RetentionLockType>) -> Self {
+        self.retention_lock_type = input; self
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
     pub fn retention_lock_time_in_days(mut self, input: i32) -> Self {
@@ -121,8 +111,7 @@ impl PoolInfoBuilder {
     }
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to 100 years (36,500 days).</p>
     pub fn set_retention_lock_time_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_lock_time_in_days = input;
-        self
+        self.retention_lock_time_in_days = input; self
     }
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
     pub fn pool_status(mut self, input: crate::types::PoolStatus) -> Self {
@@ -131,18 +120,24 @@ impl PoolInfoBuilder {
     }
     /// <p>Status of the custom tape pool. Pool can be <code>ACTIVE</code> or <code>DELETED</code>.</p>
     pub fn set_pool_status(mut self, input: std::option::Option<crate::types::PoolStatus>) -> Self {
-        self.pool_status = input;
-        self
+        self.pool_status = input; self
     }
     /// Consumes the builder and constructs a [`PoolInfo`](crate::types::PoolInfo).
     pub fn build(self) -> crate::types::PoolInfo {
         crate::types::PoolInfo {
-            pool_arn: self.pool_arn,
-            pool_name: self.pool_name,
-            storage_class: self.storage_class,
-            retention_lock_type: self.retention_lock_type,
-            retention_lock_time_in_days: self.retention_lock_time_in_days,
-            pool_status: self.pool_status,
+            pool_arn: self.pool_arn
+            ,
+            pool_name: self.pool_name
+            ,
+            storage_class: self.storage_class
+            ,
+            retention_lock_type: self.retention_lock_type
+            ,
+            retention_lock_time_in_days: self.retention_lock_time_in_days
+            ,
+            pool_status: self.pool_status
+            ,
         }
     }
 }
+

@@ -3,20 +3,20 @@
 /// <p>Container for the parameters to the <code><code>DescribeElasticsearchDomain</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeElasticsearchDomainInput {
+pub struct DescribeElasticsearchDomainInput  {
     /// <p>The name of the Elasticsearch domain for which you want information.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl DescribeElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain for which you want information.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl DescribeElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainInput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainInputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainInputBuilder {
         crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl DescribeElasticsearchDomainInputBuilder {
     }
     /// <p>The name of the Elasticsearch domain for which you want information.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainInput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainInput {
-                domain_name: self.domain_name,
-            },
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

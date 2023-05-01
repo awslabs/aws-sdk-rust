@@ -3,7 +3,7 @@
 /// The properties for a private VPC Output
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcOutputSettingsDescription {
+pub struct VpcOutputSettingsDescription  {
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,19 +19,19 @@ pub struct VpcOutputSettingsDescription {
 }
 impl VpcOutputSettingsDescription {
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
-    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn network_interface_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.network_interface_ids.as_deref()
     }
     /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
@@ -59,17 +59,13 @@ impl VpcOutputSettingsDescriptionBuilder {
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = Some(v);
+                        self
     }
     /// The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet in the list of subnets. The second Availability Zone applies to the second subnet.
-    pub fn set_availability_zones(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// Appends an item to `network_interface_ids`.
     ///
@@ -78,17 +74,13 @@ impl VpcOutputSettingsDescriptionBuilder {
     /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
     pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
-        v.push(input.into());
-        self.network_interface_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.network_interface_ids = Some(v);
+                        self
     }
     /// A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
-    pub fn set_network_interface_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.network_interface_ids = input;
-        self
+    pub fn set_network_interface_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.network_interface_ids = input; self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -97,17 +89,13 @@ impl VpcOutputSettingsDescriptionBuilder {
     /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = Some(v);
+                        self
     }
     /// A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
-    pub fn set_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -116,25 +104,26 @@ impl VpcOutputSettingsDescriptionBuilder {
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// Consumes the builder and constructs a [`VpcOutputSettingsDescription`](crate::types::VpcOutputSettingsDescription).
     pub fn build(self) -> crate::types::VpcOutputSettingsDescription {
         crate::types::VpcOutputSettingsDescription {
-            availability_zones: self.availability_zones,
-            network_interface_ids: self.network_interface_ids,
-            security_group_ids: self.security_group_ids,
-            subnet_ids: self.subnet_ids,
+            availability_zones: self.availability_zones
+            ,
+            network_interface_ids: self.network_interface_ids
+            ,
+            security_group_ids: self.security_group_ids
+            ,
+            subnet_ids: self.subnet_ids
+            ,
         }
     }
 }
+

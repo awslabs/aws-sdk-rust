@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApprovedOriginInput {
+pub struct DisassociateApprovedOriginInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateApprovedOriginInput {
 }
 impl DisassociateApprovedOriginInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The domain URL of the integrated application.</p>
-    pub fn origin(&self) -> std::option::Option<&str> {
+    pub fn origin(&self) -> std::option::Option<& str> {
         self.origin.as_deref()
     }
 }
 impl DisassociateApprovedOriginInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApprovedOriginInput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput).
-    pub fn builder() -> crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginInputBuilder {
         crate::operation::disassociate_approved_origin::builders::DisassociateApprovedOriginInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DisassociateApprovedOriginInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The domain URL of the integrated application.</p>
     pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl DisassociateApprovedOriginInputBuilder {
     }
     /// <p>The domain URL of the integrated application.</p>
     pub fn set_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origin = input;
-        self
+        self.origin = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateApprovedOriginInput`](crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_approved_origin::DisassociateApprovedOriginInput {
-                instance_id: self.instance_id,
-                origin: self.origin,
-            },
+                instance_id: self.instance_id
+                ,
+                origin: self.origin
+                ,
+            }
         )
     }
 }
+

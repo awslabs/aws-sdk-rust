@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTransitGatewayRouteTableInput {
+pub struct DeleteTransitGatewayRouteTableInput  {
     /// <p>The ID of the transit gateway route table.</p>
     #[doc(hidden)]
     pub transit_gateway_route_table_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteTransitGatewayRouteTableInput {
 }
 impl DeleteTransitGatewayRouteTableInput {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl DeleteTransitGatewayRouteTableInput {
 }
 impl DeleteTransitGatewayRouteTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayRouteTableInput`](crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableInput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_route_table::builders::DeleteTransitGatewayRouteTableInputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_route_table::builders::DeleteTransitGatewayRouteTableInputBuilder {
         crate::operation::delete_transit_gateway_route_table::builders::DeleteTransitGatewayRouteTableInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl DeleteTransitGatewayRouteTableInputBuilder {
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_route_table_id = input;
-        self
+    pub fn set_transit_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_route_table_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -55,16 +51,10 @@ impl DeleteTransitGatewayRouteTableInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayRouteTableInput`](crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_transit_gateway_route_table::DeleteTransitGatewayRouteTableInput {
                 transit_gateway_route_table_id: self.transit_gateway_route_table_id
@@ -75,3 +65,4 @@ impl DeleteTransitGatewayRouteTableInputBuilder {
         )
     }
 }
+

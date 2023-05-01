@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeRevisionOutput {
+pub struct RevokeRevisionOutput  {
     /// <p>The ARN for the revision.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -40,19 +40,19 @@ pub struct RevokeRevisionOutput {
 }
 impl RevokeRevisionOutput {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -60,19 +60,19 @@ impl RevokeRevisionOutput {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -80,15 +80,15 @@ impl RevokeRevisionOutput {
         self.revoked
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RevokeRevisionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RevokeRevisionOutput {
     /// Creates a new builder-style object to manufacture [`RevokeRevisionOutput`](crate::operation::revoke_revision::RevokeRevisionOutput).
     pub fn builder() -> crate::operation::revoke_revision::builders::RevokeRevisionOutputBuilder {
@@ -121,8 +121,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>The ARN for the revision.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>An optional comment about the revision.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +130,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>An optional comment about the revision.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,12 +138,8 @@ impl RevokeRevisionOutputBuilder {
         self
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +148,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn finalized(mut self, input: bool) -> Self {
@@ -164,8 +157,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
     pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
-        self.finalized = input;
-        self
+        self.finalized = input; self
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,8 +166,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,8 +175,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
     pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -193,12 +183,8 @@ impl RevokeRevisionOutputBuilder {
         self
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
     pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,12 +192,8 @@ impl RevokeRevisionOutputBuilder {
         self
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn set_revocation_comment(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.revocation_comment = input;
-        self
+    pub fn set_revocation_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.revocation_comment = input; self
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
     pub fn revoked(mut self, input: bool) -> Self {
@@ -220,8 +202,7 @@ impl RevokeRevisionOutputBuilder {
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
     pub fn set_revoked(mut self, input: std::option::Option<bool>) -> Self {
-        self.revoked = input;
-        self
+        self.revoked = input; self
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
     pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -229,37 +210,47 @@ impl RevokeRevisionOutputBuilder {
         self
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn set_revoked_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.revoked_at = input;
-        self
+    pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.revoked_at = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RevokeRevisionOutput`](crate::operation::revoke_revision::RevokeRevisionOutput).
     pub fn build(self) -> crate::operation::revoke_revision::RevokeRevisionOutput {
         crate::operation::revoke_revision::RevokeRevisionOutput {
-            arn: self.arn,
-            comment: self.comment,
-            created_at: self.created_at,
-            data_set_id: self.data_set_id,
-            finalized: self.finalized.unwrap_or_default(),
-            id: self.id,
-            source_id: self.source_id,
-            updated_at: self.updated_at,
-            revocation_comment: self.revocation_comment,
-            revoked: self.revoked.unwrap_or_default(),
-            revoked_at: self.revoked_at,
+            arn: self.arn
+            ,
+            comment: self.comment
+            ,
+            created_at: self.created_at
+            ,
+            data_set_id: self.data_set_id
+            ,
+            finalized: self.finalized
+                .unwrap_or_default()
+            ,
+            id: self.id
+            ,
+            source_id: self.source_id
+            ,
+            updated_at: self.updated_at
+            ,
+            revocation_comment: self.revocation_comment
+            ,
+            revoked: self.revoked
+                .unwrap_or_default()
+            ,
+            revoked_at: self.revoked_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,27 +3,27 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClustersInput {
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+pub struct DescribeDbClustersInput  {
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
+    /// <p>A filter that specifies one or more DB clusters to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li> 
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li> 
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li> 
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -35,34 +35,34 @@ pub struct DescribeDbClustersInput {
     pub include_shared: bool,
 }
 impl DescribeDbClustersInput {
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li> 
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
+    /// <p>A filter that specifies one or more DB clusters to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li> 
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li> 
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li> 
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
@@ -72,8 +72,7 @@ impl DescribeDbClustersInput {
 }
 impl DescribeDbClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder {
+    pub fn builder() -> crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder {
         crate::operation::describe_db_clusters::builders::DescribeDbClustersInputBuilder::default()
     }
 }
@@ -89,75 +88,66 @@ pub struct DescribeDbClustersInputBuilder {
     pub(crate) include_shared: std::option::Option<bool>,
 }
 impl DescribeDbClustersInputBuilder {
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li> 
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li>
+    /// <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of the DB cluster. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBClusterIdentifier.</p> </li> 
     /// </ul>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_identifier = input;
-        self
+    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_identifier = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
+    /// <p>A filter that specifies one or more DB clusters to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li> 
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li> 
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li> 
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>A filter that specifies one or more DB clusters to describe.</p>
-    /// <p>Supported filters:</p>
-    /// <ul>
-    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li>
-    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li>
-    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li>
-    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li>
-    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li>
+    /// <p>A filter that specifies one or more DB clusters to describe.</p> 
+    /// <p>Supported filters:</p> 
+    /// <ul> 
+    /// <li> <p> <code>clone-group-id</code> - Accepts clone group identifiers. The results list only includes information about the DB clusters associated with these clone groups.</p> </li> 
+    /// <li> <p> <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB clusters identified by these ARNs.</p> </li> 
+    /// <li> <p> <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The results list will only include information about the DB clusters identified by these DB cluster resource identifiers.</p> </li> 
+    /// <li> <p> <code>domain</code> - Accepts Active Directory directory IDs. The results list only includes information about the DB clusters associated with these domains.</p> </li> 
+    /// <li> <p> <code>engine</code> - Accepts engine names. The results list only includes information about the DB clusters for these engines.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,8 +156,7 @@ impl DescribeDbClustersInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn include_shared(mut self, input: bool) -> Self {
@@ -176,24 +165,25 @@ impl DescribeDbClustersInputBuilder {
     }
     /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters shared from other Amazon Web Services accounts.</p>
     pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_shared = input;
-        self
+        self.include_shared = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDbClustersInput`](crate::operation::describe_db_clusters::DescribeDbClustersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_db_clusters::DescribeDbClustersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_db_clusters::DescribeDbClustersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_db_clusters::DescribeDbClustersInput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                include_shared: self.include_shared.unwrap_or_default(),
-            },
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                include_shared: self.include_shared
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

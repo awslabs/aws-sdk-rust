@@ -3,24 +3,20 @@
 /// <p>The input for the <code>PutConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationRecorderInput {
+pub struct PutConfigurationRecorderInput  {
     /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
     #[doc(hidden)]
     pub configuration_recorder: std::option::Option<crate::types::ConfigurationRecorder>,
 }
 impl PutConfigurationRecorderInput {
     /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
-    pub fn configuration_recorder(
-        &self,
-    ) -> std::option::Option<&crate::types::ConfigurationRecorder> {
+    pub fn configuration_recorder(&self) -> std::option::Option<& crate::types::ConfigurationRecorder> {
         self.configuration_recorder.as_ref()
     }
 }
 impl PutConfigurationRecorderInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationRecorderInput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderInput).
-    pub fn builder(
-    ) -> crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder {
         crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderInputBuilder::default()
     }
 }
@@ -38,24 +34,17 @@ impl PutConfigurationRecorderInputBuilder {
         self
     }
     /// <p>The configuration recorder object that records each configuration change made to the resources.</p>
-    pub fn set_configuration_recorder(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationRecorder>,
-    ) -> Self {
-        self.configuration_recorder = input;
-        self
+    pub fn set_configuration_recorder(mut self, input: std::option::Option<crate::types::ConfigurationRecorder>) -> Self {
+        self.configuration_recorder = input; self
     }
     /// Consumes the builder and constructs a [`PutConfigurationRecorderInput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_configuration_recorder::PutConfigurationRecorderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_configuration_recorder::PutConfigurationRecorderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_configuration_recorder::PutConfigurationRecorderInput {
-                configuration_recorder: self.configuration_recorder,
-            },
+                configuration_recorder: self.configuration_recorder
+                ,
+            }
         )
     }
 }
+

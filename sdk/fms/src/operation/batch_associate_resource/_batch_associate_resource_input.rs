@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateResourceInput {
-    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+pub struct BatchAssociateResourceInput  {
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     #[doc(hidden)]
     pub resource_set_identifier: std::option::Option<std::string::String>,
     /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
@@ -11,20 +11,18 @@ pub struct BatchAssociateResourceInput {
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchAssociateResourceInput {
-    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
-    pub fn resource_set_identifier(&self) -> std::option::Option<&str> {
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn resource_set_identifier(&self) -> std::option::Option<& str> {
         self.resource_set_identifier.as_deref()
     }
     /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
-    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn items(&self) -> std::option::Option<& [std::string::String]> {
         self.items.as_deref()
     }
 }
 impl BatchAssociateResourceInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateResourceInput`](crate::operation::batch_associate_resource::BatchAssociateResourceInput).
-    pub fn builder(
-    ) -> crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder {
         crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder::default()
     }
 }
@@ -37,18 +35,14 @@ pub struct BatchAssociateResourceInputBuilder {
     pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchAssociateResourceInputBuilder {
-    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     pub fn resource_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_set_identifier = Some(input.into());
         self
     }
-    /// <p>A unique identifier for the resource set, used in a TODO to refer to the resource set.</p>
-    pub fn set_resource_set_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_set_identifier = input;
-        self
+    /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
+    pub fn set_resource_set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_set_identifier = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -57,30 +51,24 @@ impl BatchAssociateResourceInputBuilder {
     /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
     pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input.into());
-        self.items = Some(v);
-        self
+                        v.push(input.into());
+                        self.items = Some(v);
+                        self
     }
     /// <p>The uniform resource identifiers (URIs) of resources that should be associated to the resource set. The URIs must be Amazon Resource Names (ARNs).</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`BatchAssociateResourceInput`](crate::operation::batch_associate_resource::BatchAssociateResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_associate_resource::BatchAssociateResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_associate_resource::BatchAssociateResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_associate_resource::BatchAssociateResourceInput {
-                resource_set_identifier: self.resource_set_identifier,
-                items: self.items,
-            },
+                resource_set_identifier: self.resource_set_identifier
+                ,
+                items: self.items
+                ,
+            }
         )
     }
 }
+

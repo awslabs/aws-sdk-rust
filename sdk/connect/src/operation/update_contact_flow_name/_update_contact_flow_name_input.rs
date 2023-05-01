@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactFlowNameInput {
+pub struct UpdateContactFlowNameInput  {
     /// <p>The identifier of the Amazon Connect instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct UpdateContactFlowNameInput {
 }
 impl UpdateContactFlowNameInput {
     /// <p>The identifier of the Amazon Connect instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the flow.</p>
-    pub fn contact_flow_id(&self) -> std::option::Option<&str> {
+    pub fn contact_flow_id(&self) -> std::option::Option<& str> {
         self.contact_flow_id.as_deref()
     }
     /// <p>The name of the flow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the flow.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateContactFlowNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameInputBuilder {
         crate::operation::update_contact_flow_name::builders::UpdateContactFlowNameInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl UpdateContactFlowNameInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the flow.</p>
     pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl UpdateContactFlowNameInputBuilder {
     }
     /// <p>The identifier of the flow.</p>
     pub fn set_contact_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_flow_id = input;
-        self
+        self.contact_flow_id = input; self
     }
     /// <p>The name of the flow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl UpdateContactFlowNameInputBuilder {
     }
     /// <p>The name of the flow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the flow.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,23 +85,22 @@ impl UpdateContactFlowNameInputBuilder {
     }
     /// <p>The description of the flow.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateContactFlowNameInput`](crate::operation::update_contact_flow_name::UpdateContactFlowNameInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_contact_flow_name::UpdateContactFlowNameInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_contact_flow_name::UpdateContactFlowNameInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_contact_flow_name::UpdateContactFlowNameInput {
-                instance_id: self.instance_id,
-                contact_flow_id: self.contact_flow_id,
-                name: self.name,
-                description: self.description,
-            },
+                instance_id: self.instance_id
+                ,
+                contact_flow_id: self.contact_flow_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

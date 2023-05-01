@@ -4,68 +4,50 @@ pub use crate::operation::create_rule::_create_rule_output::CreateRuleOutputBuil
 pub use crate::operation::create_rule::_create_rule_input::CreateRuleInputBuilder;
 
 /// Fluent builder constructing a request to `CreateRule`.
-///
-/// <p>Creates a rule for the specified Amazon Connect instance.</p>
+/// 
+/// <p>Creates a rule for the specified Amazon Connect instance.</p> 
 /// <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_rule::builders::CreateRuleInputBuilder,
-}
-impl CreateRuleFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_rule::builders::CreateRuleInputBuilder
+            }
+impl CreateRuleFluentBuilder  {
     /// Creates a new `CreateRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_rule::CreateRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_rule::CreateRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_rule::CreateRule, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_rule::CreateRuleOutput, aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -92,10 +74,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn set_trigger_event_source(
-        mut self,
-        input: std::option::Option<crate::types::RuleTriggerEventSource>,
-    ) -> Self {
+    pub fn set_trigger_event_source(mut self, input: std::option::Option<crate::types::RuleTriggerEventSource>) -> Self {
         self.inner = self.inner.set_trigger_event_source(input);
         self
     }
@@ -119,10 +98,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RuleAction>>,
-    ) -> Self {
+    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleAction>>) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -132,10 +108,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
+    pub fn set_publish_status(mut self, input: std::option::Option<crate::types::RulePublishStatus>) -> Self {
         self.inner = self.inner.set_publish_status(input);
         self
     }
@@ -150,3 +123,4 @@ impl CreateRuleFluentBuilder {
         self
     }
 }
+

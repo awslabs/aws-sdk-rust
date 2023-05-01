@@ -3,7 +3,7 @@
 /// <p>A static IP configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StaticIpConnectionInfo {
+pub struct StaticIpConnectionInfo  {
     /// <p>The connection's IP address.</p>
     #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct StaticIpConnectionInfo {
 }
 impl StaticIpConnectionInfo {
     /// <p>The connection's IP address.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The connection's DNS mask.</p>
-    pub fn mask(&self) -> std::option::Option<&str> {
+    pub fn mask(&self) -> std::option::Option<& str> {
         self.mask.as_deref()
     }
     /// <p>The connection's DNS address.</p>
-    pub fn dns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dns(&self) -> std::option::Option<& [std::string::String]> {
         self.dns.as_deref()
     }
     /// <p>The connection's default gateway.</p>
-    pub fn default_gateway(&self) -> std::option::Option<&str> {
+    pub fn default_gateway(&self) -> std::option::Option<& str> {
         self.default_gateway.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl StaticIpConnectionInfoBuilder {
     }
     /// <p>The connection's IP address.</p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The connection's DNS mask.</p>
     pub fn mask(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl StaticIpConnectionInfoBuilder {
     }
     /// <p>The connection's DNS mask.</p>
     pub fn set_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mask = input;
-        self
+        self.mask = input; self
     }
     /// Appends an item to `dns`.
     ///
@@ -79,17 +77,13 @@ impl StaticIpConnectionInfoBuilder {
     /// <p>The connection's DNS address.</p>
     pub fn dns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns.unwrap_or_default();
-        v.push(input.into());
-        self.dns = Some(v);
-        self
+                        v.push(input.into());
+                        self.dns = Some(v);
+                        self
     }
     /// <p>The connection's DNS address.</p>
-    pub fn set_dns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.dns = input;
-        self
+    pub fn set_dns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.dns = input; self
     }
     /// <p>The connection's default gateway.</p>
     pub fn default_gateway(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,16 +92,20 @@ impl StaticIpConnectionInfoBuilder {
     }
     /// <p>The connection's default gateway.</p>
     pub fn set_default_gateway(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_gateway = input;
-        self
+        self.default_gateway = input; self
     }
     /// Consumes the builder and constructs a [`StaticIpConnectionInfo`](crate::types::StaticIpConnectionInfo).
     pub fn build(self) -> crate::types::StaticIpConnectionInfo {
         crate::types::StaticIpConnectionInfo {
-            ip_address: self.ip_address,
-            mask: self.mask,
-            dns: self.dns,
-            default_gateway: self.default_gateway,
+            ip_address: self.ip_address
+            ,
+            mask: self.mask
+            ,
+            dns: self.dns
+            ,
+            default_gateway: self.default_gateway
+            ,
         }
     }
 }
+

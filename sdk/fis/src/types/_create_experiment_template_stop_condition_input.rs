@@ -3,7 +3,7 @@
 /// <p>Specifies a stop condition for an experiment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExperimentTemplateStopConditionInput {
+pub struct CreateExperimentTemplateStopConditionInput  {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CreateExperimentTemplateStopConditionInput {
 }
 impl CreateExperimentTemplateStopConditionInput {
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CreateExperimentTemplateStopConditionInputBuilder {
     }
     /// <p>The source for the stop condition. Specify <code>aws:cloudwatch:alarm</code> if the stop condition is defined by a CloudWatch alarm. Specify <code>none</code> if there is no stop condition.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CreateExperimentTemplateStopConditionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm. This is required if the source is a CloudWatch alarm.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`CreateExperimentTemplateStopConditionInput`](crate::types::CreateExperimentTemplateStopConditionInput).
     pub fn build(self) -> crate::types::CreateExperimentTemplateStopConditionInput {
         crate::types::CreateExperimentTemplateStopConditionInput {
-            source: self.source,
-            value: self.value,
+            source: self.source
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

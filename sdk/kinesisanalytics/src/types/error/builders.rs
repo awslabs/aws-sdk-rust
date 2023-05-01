@@ -22,3 +22,4 @@ pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableE
 pub use crate::types::error::_resource_provisioned_throughput_exceeded_exception::ResourceProvisionedThroughputExceededExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
+

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunFleetAdvisorLsaAnalysisInput {}
+pub struct RunFleetAdvisorLsaAnalysisInput  {
+}
 impl RunFleetAdvisorLsaAnalysisInput {
     /// Creates a new builder-style object to manufacture [`RunFleetAdvisorLsaAnalysisInput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput).
-    pub fn builder() -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder{
+    pub fn builder() -> crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder {
         crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder::default()
     }
 }
@@ -13,15 +14,15 @@ impl RunFleetAdvisorLsaAnalysisInput {
 /// A builder for [`RunFleetAdvisorLsaAnalysisInput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct RunFleetAdvisorLsaAnalysisInputBuilder {}
+pub struct RunFleetAdvisorLsaAnalysisInputBuilder {
+}
 impl RunFleetAdvisorLsaAnalysisInputBuilder {
     /// Consumes the builder and constructs a [`RunFleetAdvisorLsaAnalysisInput`](crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput {})
+    pub fn build(self) -> Result<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisInput {
+            }
+        )
     }
 }
+

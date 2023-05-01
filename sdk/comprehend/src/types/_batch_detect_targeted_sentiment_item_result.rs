@@ -3,7 +3,7 @@
 /// <p>Analysis results for one of the documents in the batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetectTargetedSentimentItemResult {
+pub struct BatchDetectTargetedSentimentItemResult  {
     /// <p>The zero-based index of this result in the input list.</p>
     #[doc(hidden)]
     pub index: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl BatchDetectTargetedSentimentItemResult {
         self.index
     }
     /// <p>An array of targeted sentiment entities.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::types::TargetedSentimentEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::types::TargetedSentimentEntity]> {
         self.entities.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
     }
     /// <p>The zero-based index of this result in the input list.</p>
     pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// Appends an item to `entities`.
     ///
@@ -53,23 +52,22 @@ impl BatchDetectTargetedSentimentItemResultBuilder {
     /// <p>An array of targeted sentiment entities.</p>
     pub fn entities(mut self, input: crate::types::TargetedSentimentEntity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = Some(v);
-        self
+                        v.push(input);
+                        self.entities = Some(v);
+                        self
     }
     /// <p>An array of targeted sentiment entities.</p>
-    pub fn set_entities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetedSentimentEntity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetedSentimentEntity>>) -> Self {
+        self.entities = input; self
     }
     /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentItemResult`](crate::types::BatchDetectTargetedSentimentItemResult).
     pub fn build(self) -> crate::types::BatchDetectTargetedSentimentItemResult {
         crate::types::BatchDetectTargetedSentimentItemResult {
-            index: self.index,
-            entities: self.entities,
+            index: self.index
+            ,
+            entities: self.entities
+            ,
         }
     }
 }
+

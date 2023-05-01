@@ -3,14 +3,14 @@
 /// <p>Specifies the settings for a random split activity in a journey. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RandomSplitActivity {
+pub struct RandomSplitActivity  {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     #[doc(hidden)]
     pub branches: std::option::Option<std::vec::Vec<crate::types::RandomSplitEntry>>,
 }
 impl RandomSplitActivity {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-    pub fn branches(&self) -> std::option::Option<&[crate::types::RandomSplitEntry]> {
+    pub fn branches(&self) -> std::option::Option<& [crate::types::RandomSplitEntry]> {
         self.branches.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl RandomSplitActivityBuilder {
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
     pub fn branches(mut self, input: crate::types::RandomSplitEntry) -> Self {
         let mut v = self.branches.unwrap_or_default();
-        v.push(input);
-        self.branches = Some(v);
-        self
+                        v.push(input);
+                        self.branches = Some(v);
+                        self
     }
     /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
-    pub fn set_branches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RandomSplitEntry>>,
-    ) -> Self {
-        self.branches = input;
-        self
+    pub fn set_branches(mut self, input: std::option::Option<std::vec::Vec<crate::types::RandomSplitEntry>>) -> Self {
+        self.branches = input; self
     }
     /// Consumes the builder and constructs a [`RandomSplitActivity`](crate::types::RandomSplitActivity).
     pub fn build(self) -> crate::types::RandomSplitActivity {
         crate::types::RandomSplitActivity {
-            branches: self.branches,
+            branches: self.branches
+            ,
         }
     }
 }
+

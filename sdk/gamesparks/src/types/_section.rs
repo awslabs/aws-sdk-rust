@@ -3,7 +3,7 @@
 /// <p>The configuration section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Section {
+pub struct Section  {
     /// <p>The name of the section.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct Section {
 }
 impl Section {
     /// <p>The name of the section.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The size, in bytes, of the section contents.</p>
@@ -24,7 +24,7 @@ impl Section {
         self.size
     }
     /// <p>The content of a configuration section.</p>
-    pub fn attributes(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn attributes(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.attributes.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl SectionBuilder {
     }
     /// <p>The name of the section.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The size, in bytes, of the section contents.</p>
     pub fn size(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl SectionBuilder {
     }
     /// <p>The size, in bytes, of the section contents.</p>
     pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The content of a configuration section.</p>
     pub fn attributes(mut self, input: aws_smithy_types::Document) -> Self {
@@ -70,19 +68,20 @@ impl SectionBuilder {
         self
     }
     /// <p>The content of a configuration section.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Document>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`Section`](crate::types::Section).
     pub fn build(self) -> crate::types::Section {
         crate::types::Section {
-            name: self.name,
-            size: self.size.unwrap_or_default(),
-            attributes: self.attributes,
+            name: self.name
+            ,
+            size: self.size
+                .unwrap_or_default()
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

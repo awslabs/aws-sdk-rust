@@ -3,7 +3,7 @@
 /// <p>The time range drill down filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeRangeDrillDownFilter {
+pub struct TimeRangeDrillDownFilter  {
     /// <p>The column that the filter is applied to.</p>
     #[doc(hidden)]
     pub column: std::option::Option<crate::types::ColumnIdentifier>,
@@ -19,19 +19,19 @@ pub struct TimeRangeDrillDownFilter {
 }
 impl TimeRangeDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn range_minimum(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn range_minimum(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.range_minimum.as_ref()
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn range_maximum(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn range_maximum(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.range_maximum.as_ref()
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn time_granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> std::option::Option<& crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
     /// <p>The minimum value for the filter value range.</p>
     pub fn range_minimum(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -71,12 +67,8 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The minimum value for the filter value range.</p>
-    pub fn set_range_minimum(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.range_minimum = input;
-        self
+    pub fn set_range_minimum(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.range_minimum = input; self
     }
     /// <p>The maximum value for the filter value range.</p>
     pub fn range_maximum(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,12 +76,8 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The maximum value for the filter value range.</p>
-    pub fn set_range_maximum(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.range_maximum = input;
-        self
+    pub fn set_range_maximum(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.range_maximum = input; self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
@@ -97,20 +85,21 @@ impl TimeRangeDrillDownFilterBuilder {
         self
     }
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
-        self.time_granularity = input;
-        self
+    pub fn set_time_granularity(mut self, input: std::option::Option<crate::types::TimeGranularity>) -> Self {
+        self.time_granularity = input; self
     }
     /// Consumes the builder and constructs a [`TimeRangeDrillDownFilter`](crate::types::TimeRangeDrillDownFilter).
     pub fn build(self) -> crate::types::TimeRangeDrillDownFilter {
         crate::types::TimeRangeDrillDownFilter {
-            column: self.column,
-            range_minimum: self.range_minimum,
-            range_maximum: self.range_maximum,
-            time_granularity: self.time_granularity,
+            column: self.column
+            ,
+            range_minimum: self.range_minimum
+            ,
+            range_maximum: self.range_maximum
+            ,
+            time_granularity: self.time_granularity
+            ,
         }
     }
 }
+

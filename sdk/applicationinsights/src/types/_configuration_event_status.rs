@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let configurationeventstatus = unimplemented!();
 /// match configurationeventstatus {
@@ -31,22 +31,14 @@
 /// Specifically, when `configurationeventstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfigurationEventStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConfigurationEventStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -55,44 +47,43 @@ pub enum ConfigurationEventStatus {
     #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConfigurationEventStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "ERROR" => ConfigurationEventStatus::Error,
-            "INFO" => ConfigurationEventStatus::Info,
-            "WARN" => ConfigurationEventStatus::Warn,
-            other => ConfigurationEventStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ERROR" => ConfigurationEventStatus::Error,
+"INFO" => ConfigurationEventStatus::Info,
+"WARN" => ConfigurationEventStatus::Warn,
+other => ConfigurationEventStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ConfigurationEventStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConfigurationEventStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConfigurationEventStatus::from(s))
+                }
+            }
 impl ConfigurationEventStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ConfigurationEventStatus::Error => "ERROR",
-            ConfigurationEventStatus::Info => "INFO",
-            ConfigurationEventStatus::Warn => "WARN",
-            ConfigurationEventStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "INFO", "WARN"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ConfigurationEventStatus::Error => "ERROR",
+    ConfigurationEventStatus::Info => "INFO",
+    ConfigurationEventStatus::Warn => "WARN",
+    ConfigurationEventStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ERROR", "INFO", "WARN"]
+                }
+            }
 impl AsRef<str> for ConfigurationEventStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

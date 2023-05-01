@@ -4,85 +4,59 @@ pub use crate::operation::list_deployment_instances::_list_deployment_instances_
 pub use crate::operation::list_deployment_instances::_list_deployment_instances_input::ListDeploymentInstancesInputBuilder;
 
 /// Fluent builder constructing a request to `ListDeploymentInstances`.
-///
-/// <note>
-/// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or Lambda. </p>
-/// </note>
+/// 
+/// <note> 
+/// <p> The newer <code>BatchGetDeploymentTargets</code> should be used instead because it works with all compute types. <code>ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than EC2/On-premises or Lambda. </p> 
+/// </note> 
 /// <p> Lists the instance for a deployment associated with the IAM user or Amazon Web Services account. </p>
 #[deprecated(note = "This operation is deprecated, use ListDeploymentTargets instead.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeploymentInstancesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder,
-}
-impl ListDeploymentInstancesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder
+            }
+impl ListDeploymentInstancesFluentBuilder  {
     /// Creates a new `ListDeploymentInstances`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_deployment_instances::ListDeploymentInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_instances::ListDeploymentInstancesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_deployment_instances::ListDeploymentInstancesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_deployment_instances::ListDeploymentInstancesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_deployment_instances::ListDeploymentInstances, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_deployment_instances::ListDeploymentInstancesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_deployment_instances::ListDeploymentInstancesOutput, aws_smithy_http::result::SdkError<crate::operation::list_deployment_instances::ListDeploymentInstancesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator
-    {
-        crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator {
+                            crate::operation::list_deployment_instances::paginator::ListDeploymentInstancesPaginator::new(self.handle, self.inner)
+                        }
     /// <p> The unique ID of a deployment. </p>
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.deployment_id(input.into());
@@ -107,32 +81,29 @@ impl ListDeploymentInstancesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_status_filter`](Self::set_instance_status_filter).
     ///
-    /// <p>A subset of instances to list by status:</p>
-    /// <ul>
-    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
-    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
-    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
-    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
-    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
-    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
+    /// <p>A subset of instances to list by status:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li> 
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li> 
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li> 
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li> 
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li> 
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li> 
     /// </ul>
     pub fn instance_status_filter(mut self, input: crate::types::InstanceStatus) -> Self {
         self.inner = self.inner.instance_status_filter(input);
         self
     }
-    /// <p>A subset of instances to list by status:</p>
-    /// <ul>
-    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
-    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
-    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
-    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
-    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
-    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
+    /// <p>A subset of instances to list by status:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li> 
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li> 
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li> 
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li> 
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li> 
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li> 
     /// </ul>
-    pub fn set_instance_status_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>,
-    ) -> Self {
+    pub fn set_instance_status_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>) -> Self {
         self.inner = self.inner.set_instance_status_filter(input);
         self
     }
@@ -146,11 +117,9 @@ impl ListDeploymentInstancesFluentBuilder {
         self
     }
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    pub fn set_instance_type_filter(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceType>>,
-    ) -> Self {
+    pub fn set_instance_type_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceType>>) -> Self {
         self.inner = self.inner.set_instance_type_filter(input);
         self
     }
 }
+

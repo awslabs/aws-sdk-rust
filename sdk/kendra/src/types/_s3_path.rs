@@ -3,7 +3,7 @@
 /// <p>Information required to find a specific file in an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Path {
+pub struct S3Path  {
     /// <p>The name of the S3 bucket that contains the file.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Path {
 }
 impl S3Path {
     /// <p>The name of the S3 bucket that contains the file.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The name of the file.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3PathBuilder {
     }
     /// <p>The name of the S3 bucket that contains the file.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the file.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3PathBuilder {
     }
     /// <p>The name of the file.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// Consumes the builder and constructs a [`S3Path`](crate::types::S3Path).
     pub fn build(self) -> crate::types::S3Path {
         crate::types::S3Path {
-            bucket: self.bucket,
-            key: self.key,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// Audio Only Hls Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioOnlyHlsSettings {
+pub struct AudioOnlyHlsSettings  {
     /// Specifies the group to which the audio Rendition belongs.
     #[doc(hidden)]
     pub audio_group_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct AudioOnlyHlsSettings {
 }
 impl AudioOnlyHlsSettings {
     /// Specifies the group to which the audio Rendition belongs.
-    pub fn audio_group_id(&self) -> std::option::Option<&str> {
+    pub fn audio_group_id(&self) -> std::option::Option<& str> {
         self.audio_group_id.as_deref()
     }
     /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
-    pub fn audio_only_image(&self) -> std::option::Option<&crate::types::InputLocation> {
+    pub fn audio_only_image(&self) -> std::option::Option<& crate::types::InputLocation> {
         self.audio_only_image.as_ref()
     }
     /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
-    pub fn audio_track_type(&self) -> std::option::Option<&crate::types::AudioOnlyHlsTrackType> {
+    pub fn audio_track_type(&self) -> std::option::Option<& crate::types::AudioOnlyHlsTrackType> {
         self.audio_track_type.as_ref()
     }
     /// Specifies the segment type.
-    pub fn segment_type(&self) -> std::option::Option<&crate::types::AudioOnlyHlsSegmentType> {
+    pub fn segment_type(&self) -> std::option::Option<& crate::types::AudioOnlyHlsSegmentType> {
         self.segment_type.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl AudioOnlyHlsSettingsBuilder {
     }
     /// Specifies the group to which the audio Rendition belongs.
     pub fn set_audio_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.audio_group_id = input;
-        self
+        self.audio_group_id = input; self
     }
     /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
     pub fn audio_only_image(mut self, input: crate::types::InputLocation) -> Self {
@@ -68,12 +67,8 @@ impl AudioOnlyHlsSettingsBuilder {
         self
     }
     /// Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low bit-size file because the image increases the output audio bandwidth. The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the "ID3 tag version 2.4.0 - Native Frames" standard.
-    pub fn set_audio_only_image(
-        mut self,
-        input: std::option::Option<crate::types::InputLocation>,
-    ) -> Self {
-        self.audio_only_image = input;
-        self
+    pub fn set_audio_only_image(mut self, input: std::option::Option<crate::types::InputLocation>) -> Self {
+        self.audio_only_image = input; self
     }
     /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
     pub fn audio_track_type(mut self, input: crate::types::AudioOnlyHlsTrackType) -> Self {
@@ -81,12 +76,8 @@ impl AudioOnlyHlsSettingsBuilder {
         self
     }
     /// Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO
-    pub fn set_audio_track_type(
-        mut self,
-        input: std::option::Option<crate::types::AudioOnlyHlsTrackType>,
-    ) -> Self {
-        self.audio_track_type = input;
-        self
+    pub fn set_audio_track_type(mut self, input: std::option::Option<crate::types::AudioOnlyHlsTrackType>) -> Self {
+        self.audio_track_type = input; self
     }
     /// Specifies the segment type.
     pub fn segment_type(mut self, input: crate::types::AudioOnlyHlsSegmentType) -> Self {
@@ -94,20 +85,21 @@ impl AudioOnlyHlsSettingsBuilder {
         self
     }
     /// Specifies the segment type.
-    pub fn set_segment_type(
-        mut self,
-        input: std::option::Option<crate::types::AudioOnlyHlsSegmentType>,
-    ) -> Self {
-        self.segment_type = input;
-        self
+    pub fn set_segment_type(mut self, input: std::option::Option<crate::types::AudioOnlyHlsSegmentType>) -> Self {
+        self.segment_type = input; self
     }
     /// Consumes the builder and constructs a [`AudioOnlyHlsSettings`](crate::types::AudioOnlyHlsSettings).
     pub fn build(self) -> crate::types::AudioOnlyHlsSettings {
         crate::types::AudioOnlyHlsSettings {
-            audio_group_id: self.audio_group_id,
-            audio_only_image: self.audio_only_image,
-            audio_track_type: self.audio_track_type,
-            segment_type: self.segment_type,
+            audio_group_id: self.audio_group_id
+            ,
+            audio_only_image: self.audio_only_image
+            ,
+            audio_track_type: self.audio_track_type
+            ,
+            segment_type: self.segment_type
+            ,
         }
     }
 }
+

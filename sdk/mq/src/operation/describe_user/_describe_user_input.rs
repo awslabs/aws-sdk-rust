@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserInput {
+pub struct DescribeUserInput  {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeUserInput {
 }
 impl DescribeUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> std::option::Option<&str> {
+    pub fn broker_id(&self) -> std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeUserInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeUserInputBuilder {
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_user::DescribeUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_user::DescribeUserInput {
-            broker_id: self.broker_id,
-            username: self.username,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_user::DescribeUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_user::DescribeUserInput {
+                broker_id: self.broker_id
+                ,
+                username: self.username
+                ,
+            }
+        )
     }
 }
+

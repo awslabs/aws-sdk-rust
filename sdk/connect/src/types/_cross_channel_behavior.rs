@@ -3,14 +3,14 @@
 /// <p>Defines the cross-channel routing behavior that allows an agent working on a contact in one channel to be offered a contact from a different channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CrossChannelBehavior {
+pub struct CrossChannelBehavior  {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
     #[doc(hidden)]
     pub behavior_type: std::option::Option<crate::types::BehaviorType>,
 }
 impl CrossChannelBehavior {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
-    pub fn behavior_type(&self) -> std::option::Option<&crate::types::BehaviorType> {
+    pub fn behavior_type(&self) -> std::option::Option<& crate::types::BehaviorType> {
         self.behavior_type.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl CrossChannelBehaviorBuilder {
         self
     }
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
-    pub fn set_behavior_type(
-        mut self,
-        input: std::option::Option<crate::types::BehaviorType>,
-    ) -> Self {
-        self.behavior_type = input;
-        self
+    pub fn set_behavior_type(mut self, input: std::option::Option<crate::types::BehaviorType>) -> Self {
+        self.behavior_type = input; self
     }
     /// Consumes the builder and constructs a [`CrossChannelBehavior`](crate::types::CrossChannelBehavior).
     pub fn build(self) -> crate::types::CrossChannelBehavior {
         crate::types::CrossChannelBehavior {
-            behavior_type: self.behavior_type,
+            behavior_type: self.behavior_type
+            ,
         }
     }
 }
+

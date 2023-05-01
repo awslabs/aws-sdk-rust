@@ -3,7 +3,7 @@
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentationVersionOutput {
+pub struct UpdateDocumentationVersionOutput  {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -17,26 +17,26 @@ pub struct UpdateDocumentationVersionOutput {
 }
 impl UpdateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API documentation snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDocumentationVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDocumentationVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
-    pub fn builder() -> crate::operation::update_documentation_version::builders::UpdateDocumentationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::update_documentation_version::builders::UpdateDocumentationVersionOutputBuilder {
         crate::operation::update_documentation_version::builders::UpdateDocumentationVersionOutputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl UpdateDocumentationVersionOutputBuilder {
     }
     /// <p>The version identifier of the API documentation snapshot.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The date when the API documentation snapshot is created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -67,12 +66,8 @@ impl UpdateDocumentationVersionOutputBuilder {
         self
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_date = input;
-        self
+    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_date = input; self
     }
     /// <p>The description of the API documentation snapshot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,27 +76,28 @@ impl UpdateDocumentationVersionOutputBuilder {
     }
     /// <p>The description of the API documentation snapshot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_documentation_version::UpdateDocumentationVersionOutput {
+    pub fn build(self) -> crate::operation::update_documentation_version::UpdateDocumentationVersionOutput {
         crate::operation::update_documentation_version::UpdateDocumentationVersionOutput {
-            version: self.version,
-            created_date: self.created_date,
-            description: self.description,
+            version: self.version
+            ,
+            created_date: self.created_date
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an Availability Zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
     pub zone_name: std::option::Option<std::string::String>,
@@ -15,26 +15,23 @@ pub struct AvailabilityZone {
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     #[doc(hidden)]
-    pub load_balancer_addresses:
-        std::option::Option<std::vec::Vec<crate::types::LoadBalancerAddress>>,
+    pub load_balancer_addresses: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAddress>>,
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
-    pub fn zone_name(&self) -> std::option::Option<&str> {
+    pub fn zone_name(&self) -> std::option::Option<& str> {
         self.zone_name.as_deref()
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    pub fn load_balancer_addresses(
-        &self,
-    ) -> std::option::Option<&[crate::types::LoadBalancerAddress]> {
+    pub fn load_balancer_addresses(&self) -> std::option::Option<& [crate::types::LoadBalancerAddress]> {
         self.load_balancer_addresses.as_deref()
     }
 }
@@ -52,8 +49,7 @@ pub struct AvailabilityZoneBuilder {
     pub(crate) zone_name: std::option::Option<std::string::String>,
     pub(crate) subnet_id: std::option::Option<std::string::String>,
     pub(crate) outpost_id: std::option::Option<std::string::String>,
-    pub(crate) load_balancer_addresses:
-        std::option::Option<std::vec::Vec<crate::types::LoadBalancerAddress>>,
+    pub(crate) load_balancer_addresses: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAddress>>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the Availability Zone.</p>
@@ -63,8 +59,7 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The name of the Availability Zone.</p>
     pub fn set_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.zone_name = input;
-        self
+        self.zone_name = input; self
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +68,7 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
     pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +77,7 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>[Application Load Balancers on Outposts] The ID of the Outpost.</p>
     pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// Appends an item to `load_balancer_addresses`.
     ///
@@ -93,25 +86,26 @@ impl AvailabilityZoneBuilder {
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
     pub fn load_balancer_addresses(mut self, input: crate::types::LoadBalancerAddress) -> Self {
         let mut v = self.load_balancer_addresses.unwrap_or_default();
-        v.push(input);
-        self.load_balancer_addresses = Some(v);
-        self
+                        v.push(input);
+                        self.load_balancer_addresses = Some(v);
+                        self
     }
     /// <p>[Network Load Balancers] If you need static IP addresses for your load balancer, you can specify one Elastic IP address per Availability Zone when you create an internal-facing load balancer. For internal load balancers, you can specify a private IP address from the IPv4 range of the subnet.</p>
-    pub fn set_load_balancer_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAddress>>,
-    ) -> Self {
-        self.load_balancer_addresses = input;
-        self
+    pub fn set_load_balancer_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAddress>>) -> Self {
+        self.load_balancer_addresses = input; self
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
-            zone_name: self.zone_name,
-            subnet_id: self.subnet_id,
-            outpost_id: self.outpost_id,
-            load_balancer_addresses: self.load_balancer_addresses,
+            zone_name: self.zone_name
+            ,
+            subnet_id: self.subnet_id
+            ,
+            outpost_id: self.outpost_id
+            ,
+            load_balancer_addresses: self.load_balancer_addresses
+            ,
         }
     }
 }
+

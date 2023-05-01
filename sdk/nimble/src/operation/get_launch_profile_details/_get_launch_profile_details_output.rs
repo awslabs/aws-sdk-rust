@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchProfileDetailsOutput {
+pub struct GetLaunchProfileDetailsOutput  {
     /// <p>The launch profile.</p>
     #[doc(hidden)]
     pub launch_profile: std::option::Option<crate::types::LaunchProfile>,
@@ -11,36 +11,31 @@ pub struct GetLaunchProfileDetailsOutput {
     pub streaming_images: std::option::Option<std::vec::Vec<crate::types::StreamingImage>>,
     /// <p>A collection of studio component summaries.</p>
     #[doc(hidden)]
-    pub studio_component_summaries:
-        std::option::Option<std::vec::Vec<crate::types::StudioComponentSummary>>,
+    pub studio_component_summaries: std::option::Option<std::vec::Vec<crate::types::StudioComponentSummary>>,
     _request_id: Option<String>,
 }
 impl GetLaunchProfileDetailsOutput {
     /// <p>The launch profile.</p>
-    pub fn launch_profile(&self) -> std::option::Option<&crate::types::LaunchProfile> {
+    pub fn launch_profile(&self) -> std::option::Option<& crate::types::LaunchProfile> {
         self.launch_profile.as_ref()
     }
     /// <p>A collection of streaming images.</p>
-    pub fn streaming_images(&self) -> std::option::Option<&[crate::types::StreamingImage]> {
+    pub fn streaming_images(&self) -> std::option::Option<& [crate::types::StreamingImage]> {
         self.streaming_images.as_deref()
     }
     /// <p>A collection of studio component summaries.</p>
-    pub fn studio_component_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::StudioComponentSummary]> {
+    pub fn studio_component_summaries(&self) -> std::option::Option<& [crate::types::StudioComponentSummary]> {
         self.studio_component_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetLaunchProfileDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetLaunchProfileDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileDetailsOutput`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsOutputBuilder {
         crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsOutputBuilder::default()
     }
 }
@@ -51,8 +46,7 @@ impl GetLaunchProfileDetailsOutput {
 pub struct GetLaunchProfileDetailsOutputBuilder {
     pub(crate) launch_profile: std::option::Option<crate::types::LaunchProfile>,
     pub(crate) streaming_images: std::option::Option<std::vec::Vec<crate::types::StreamingImage>>,
-    pub(crate) studio_component_summaries:
-        std::option::Option<std::vec::Vec<crate::types::StudioComponentSummary>>,
+    pub(crate) studio_component_summaries: std::option::Option<std::vec::Vec<crate::types::StudioComponentSummary>>,
     _request_id: Option<String>,
 }
 impl GetLaunchProfileDetailsOutputBuilder {
@@ -62,12 +56,8 @@ impl GetLaunchProfileDetailsOutputBuilder {
         self
     }
     /// <p>The launch profile.</p>
-    pub fn set_launch_profile(
-        mut self,
-        input: std::option::Option<crate::types::LaunchProfile>,
-    ) -> Self {
-        self.launch_profile = input;
-        self
+    pub fn set_launch_profile(mut self, input: std::option::Option<crate::types::LaunchProfile>) -> Self {
+        self.launch_profile = input; self
     }
     /// Appends an item to `streaming_images`.
     ///
@@ -76,58 +66,49 @@ impl GetLaunchProfileDetailsOutputBuilder {
     /// <p>A collection of streaming images.</p>
     pub fn streaming_images(mut self, input: crate::types::StreamingImage) -> Self {
         let mut v = self.streaming_images.unwrap_or_default();
-        v.push(input);
-        self.streaming_images = Some(v);
-        self
+                        v.push(input);
+                        self.streaming_images = Some(v);
+                        self
     }
     /// <p>A collection of streaming images.</p>
-    pub fn set_streaming_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StreamingImage>>,
-    ) -> Self {
-        self.streaming_images = input;
-        self
+    pub fn set_streaming_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamingImage>>) -> Self {
+        self.streaming_images = input; self
     }
     /// Appends an item to `studio_component_summaries`.
     ///
     /// To override the contents of this collection use [`set_studio_component_summaries`](Self::set_studio_component_summaries).
     ///
     /// <p>A collection of studio component summaries.</p>
-    pub fn studio_component_summaries(
-        mut self,
-        input: crate::types::StudioComponentSummary,
-    ) -> Self {
+    pub fn studio_component_summaries(mut self, input: crate::types::StudioComponentSummary) -> Self {
         let mut v = self.studio_component_summaries.unwrap_or_default();
-        v.push(input);
-        self.studio_component_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.studio_component_summaries = Some(v);
+                        self
     }
     /// <p>A collection of studio component summaries.</p>
-    pub fn set_studio_component_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StudioComponentSummary>>,
-    ) -> Self {
-        self.studio_component_summaries = input;
-        self
+    pub fn set_studio_component_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::StudioComponentSummary>>) -> Self {
+        self.studio_component_summaries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetLaunchProfileDetailsOutput`](crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput {
+    pub fn build(self) -> crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput {
         crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput {
-            launch_profile: self.launch_profile,
-            streaming_images: self.streaming_images,
-            studio_component_summaries: self.studio_component_summaries,
+            launch_profile: self.launch_profile
+            ,
+            streaming_images: self.streaming_images
+            ,
+            studio_component_summaries: self.studio_component_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

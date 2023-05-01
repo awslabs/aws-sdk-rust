@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartAppInput {
+pub struct StartAppInput  {
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -24,31 +24,31 @@ pub struct StartAppInput {
 }
 impl StartAppInput {
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> std::option::Option<&str> {
+    pub fn simulation(&self) -> std::option::Option<& str> {
         self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
-    pub fn launch_overrides(&self) -> std::option::Option<&crate::types::LaunchOverrides> {
+    pub fn launch_overrides(&self) -> std::option::Option<& crate::types::LaunchOverrides> {
         self.launch_overrides.as_ref()
     }
 }
-impl std::fmt::Debug for StartAppInput {
+impl  std::fmt::Debug for StartAppInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartAppInput");
         formatter.field("client_token", &"*** Sensitive Data Redacted ***");
@@ -86,8 +86,7 @@ impl StartAppInputBuilder {
     }
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +95,7 @@ impl StartAppInputBuilder {
     }
     /// <p>The name of the simulation of the app.</p>
     pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
     }
     /// <p>The name of the domain of the app.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +104,7 @@ impl StartAppInputBuilder {
     }
     /// <p>The name of the domain of the app.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the app.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +113,7 @@ impl StartAppInputBuilder {
     }
     /// <p>The name of the app.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the app.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +122,7 @@ impl StartAppInputBuilder {
     }
     /// <p>The description of the app.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
     pub fn launch_overrides(mut self, input: crate::types::LaunchOverrides) -> Self {
@@ -135,28 +130,27 @@ impl StartAppInputBuilder {
         self
     }
     /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
-    pub fn set_launch_overrides(
-        mut self,
-        input: std::option::Option<crate::types::LaunchOverrides>,
-    ) -> Self {
-        self.launch_overrides = input;
-        self
+    pub fn set_launch_overrides(mut self, input: std::option::Option<crate::types::LaunchOverrides>) -> Self {
+        self.launch_overrides = input; self
     }
     /// Consumes the builder and constructs a [`StartAppInput`](crate::operation::start_app::StartAppInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_app::StartAppInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_app::StartAppInput {
-            client_token: self.client_token,
-            simulation: self.simulation,
-            domain: self.domain,
-            name: self.name,
-            description: self.description,
-            launch_overrides: self.launch_overrides,
-        })
+    pub fn build(self) -> Result<crate::operation::start_app::StartAppInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_app::StartAppInput {
+                client_token: self.client_token
+                ,
+                simulation: self.simulation
+                ,
+                domain: self.domain
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                launch_overrides: self.launch_overrides
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for StartAppInputBuilder {
@@ -171,3 +165,4 @@ impl std::fmt::Debug for StartAppInputBuilder {
         formatter.finish()
     }
 }
+

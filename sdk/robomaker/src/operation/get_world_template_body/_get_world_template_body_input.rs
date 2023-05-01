@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorldTemplateBodyInput {
+pub struct GetWorldTemplateBodyInput  {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct GetWorldTemplateBodyInput {
 }
 impl GetWorldTemplateBodyInput {
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-    pub fn generation_job(&self) -> std::option::Option<&str> {
+    pub fn generation_job(&self) -> std::option::Option<& str> {
         self.generation_job.as_deref()
     }
 }
 impl GetWorldTemplateBodyInput {
     /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
-    pub fn builder(
-    ) -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder {
+    pub fn builder() -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder {
         crate::operation::get_world_template_body::builders::GetWorldTemplateBodyInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl GetWorldTemplateBodyInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl GetWorldTemplateBodyInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
     pub fn set_generation_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.generation_job = input;
-        self
+        self.generation_job = input; self
     }
     /// Consumes the builder and constructs a [`GetWorldTemplateBodyInput`](crate::operation::get_world_template_body::GetWorldTemplateBodyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_world_template_body::GetWorldTemplateBodyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_world_template_body::GetWorldTemplateBodyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_world_template_body::GetWorldTemplateBodyInput {
-                template: self.template,
-                generation_job: self.generation_job,
-            },
+                template: self.template
+                ,
+                generation_job: self.generation_job
+                ,
+            }
         )
     }
 }
+

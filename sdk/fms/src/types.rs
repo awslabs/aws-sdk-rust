@@ -3,9 +3,13 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_resource_set::ResourceSet;
 
+pub use crate::types::_resource_set_status::ResourceSetStatus;
+
 pub use crate::types::_protocols_list_data::ProtocolsListData;
 
 pub use crate::types::_policy::Policy;
+
+pub use crate::types::_customer_policy_status::CustomerPolicyStatus;
 
 pub use crate::types::_customer_policy_scope_id_type::CustomerPolicyScopeIdType;
 
@@ -26,6 +30,16 @@ pub use crate::types::_security_service_type::SecurityServiceType;
 pub use crate::types::_apps_list_data::AppsListData;
 
 pub use crate::types::_app::App;
+
+pub use crate::types::_admin_scope::AdminScope;
+
+pub use crate::types::_policy_type_scope::PolicyTypeScope;
+
+pub use crate::types::_region_scope::RegionScope;
+
+pub use crate::types::_organizational_unit_scope::OrganizationalUnitScope;
+
+pub use crate::types::_account_scope::AccountScope;
 
 pub use crate::types::_third_party_firewall_firewall_policy::ThirdPartyFirewallFirewallPolicy;
 
@@ -50,6 +64,10 @@ pub use crate::types::_evaluation_result::EvaluationResult;
 pub use crate::types::_policy_compliance_status_type::PolicyComplianceStatusType;
 
 pub use crate::types::_apps_list_data_summary::AppsListDataSummary;
+
+pub use crate::types::_admin_account_summary::AdminAccountSummary;
+
+pub use crate::types::_organization_status::OrganizationStatus;
 
 pub use crate::types::_violation_detail::ViolationDetail;
 
@@ -173,7 +191,13 @@ pub use crate::types::_failed_item_reason::FailedItemReason;
 
 mod _account_role_status;
 
+mod _account_scope;
+
 mod _action_target;
+
+mod _admin_account_summary;
+
+mod _admin_scope;
 
 mod _app;
 
@@ -190,6 +214,8 @@ mod _aws_vpc_security_group_violation;
 mod _compliance_violator;
 
 mod _customer_policy_scope_id_type;
+
+mod _customer_policy_status;
 
 mod _dependent_service_name;
 
@@ -263,6 +289,10 @@ mod _network_firewall_unexpected_firewall_routes_violation;
 
 mod _network_firewall_unexpected_gateway_routes_violation;
 
+mod _organization_status;
+
+mod _organizational_unit_scope;
+
 mod _partial_match;
 
 mod _policy;
@@ -277,6 +307,8 @@ mod _policy_option;
 
 mod _policy_summary;
 
+mod _policy_type_scope;
+
 mod _possible_remediation_action;
 
 mod _possible_remediation_actions;
@@ -284,6 +316,8 @@ mod _possible_remediation_actions;
 mod _protocols_list_data;
 
 mod _protocols_list_data_summary;
+
+mod _region_scope;
 
 mod _remediation_action;
 
@@ -294,6 +328,8 @@ mod _remediation_action_with_order;
 mod _resource;
 
 mod _resource_set;
+
+mod _resource_set_status;
 
 mod _resource_set_summary;
 
@@ -348,3 +384,4 @@ pub mod builders;
 
 /// Error types that Firewall Management Service can respond with.
 pub mod error;
+

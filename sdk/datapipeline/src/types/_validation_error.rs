@@ -3,7 +3,7 @@
 /// <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationError {
+pub struct ValidationError  {
     /// <p>The identifier of the object that contains the validation error.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ValidationError {
 }
 impl ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A description of the validation error.</p>
-    pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn errors(&self) -> std::option::Option<& [std::string::String]> {
         self.errors.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ValidationErrorBuilder {
     }
     /// <p>The identifier of the object that contains the validation error.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -53,23 +52,22 @@ impl ValidationErrorBuilder {
     /// <p>A description of the validation error.</p>
     pub fn errors(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input.into());
-        self.errors = Some(v);
-        self
+                        v.push(input.into());
+                        self.errors = Some(v);
+                        self
     }
     /// <p>A description of the validation error.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.errors = input; self
     }
     /// Consumes the builder and constructs a [`ValidationError`](crate::types::ValidationError).
     pub fn build(self) -> crate::types::ValidationError {
         crate::types::ValidationError {
-            id: self.id,
-            errors: self.errors,
+            id: self.id
+            ,
+            errors: self.errors
+            ,
         }
     }
 }
+

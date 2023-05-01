@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRouteAnalysisInput {
+pub struct StartRouteAnalysisInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -21,19 +21,15 @@ pub struct StartRouteAnalysisInput {
 }
 impl StartRouteAnalysisInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The source from which traffic originates.</p>
-    pub fn source(
-        &self,
-    ) -> std::option::Option<&crate::types::RouteAnalysisEndpointOptionsSpecification> {
+    pub fn source(&self) -> std::option::Option<& crate::types::RouteAnalysisEndpointOptionsSpecification> {
         self.source.as_ref()
     }
     /// <p>The destination.</p>
-    pub fn destination(
-        &self,
-    ) -> std::option::Option<&crate::types::RouteAnalysisEndpointOptionsSpecification> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::RouteAnalysisEndpointOptionsSpecification> {
         self.destination.as_ref()
     }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
@@ -47,8 +43,7 @@ impl StartRouteAnalysisInput {
 }
 impl StartRouteAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartRouteAnalysisInput`](crate::operation::start_route_analysis::StartRouteAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder {
         crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder::default()
     }
 }
@@ -59,8 +54,7 @@ impl StartRouteAnalysisInput {
 pub struct StartRouteAnalysisInputBuilder {
     pub(crate) global_network_id: std::option::Option<std::string::String>,
     pub(crate) source: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
-    pub(crate) destination:
-        std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
+    pub(crate) destination: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
     pub(crate) include_return_path: std::option::Option<bool>,
     pub(crate) use_middleboxes: std::option::Option<bool>,
 }
@@ -71,44 +65,26 @@ impl StartRouteAnalysisInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// <p>The source from which traffic originates.</p>
-    pub fn source(
-        mut self,
-        input: crate::types::RouteAnalysisEndpointOptionsSpecification,
-    ) -> Self {
+    pub fn source(mut self, input: crate::types::RouteAnalysisEndpointOptionsSpecification) -> Self {
         self.source = Some(input);
         self
     }
     /// <p>The source from which traffic originates.</p>
-    pub fn set_source(
-        mut self,
-        input: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
-    ) -> Self {
-        self.source = input;
-        self
+    pub fn set_source(mut self, input: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>) -> Self {
+        self.source = input; self
     }
     /// <p>The destination.</p>
-    pub fn destination(
-        mut self,
-        input: crate::types::RouteAnalysisEndpointOptionsSpecification,
-    ) -> Self {
+    pub fn destination(mut self, input: crate::types::RouteAnalysisEndpointOptionsSpecification) -> Self {
         self.destination = Some(input);
         self
     }
     /// <p>The destination.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::RouteAnalysisEndpointOptionsSpecification>) -> Self {
+        self.destination = input; self
     }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
     pub fn include_return_path(mut self, input: bool) -> Self {
@@ -117,8 +93,7 @@ impl StartRouteAnalysisInputBuilder {
     }
     /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
     pub fn set_include_return_path(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_return_path = input;
-        self
+        self.include_return_path = input; self
     }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     pub fn use_middleboxes(mut self, input: bool) -> Self {
@@ -127,24 +102,24 @@ impl StartRouteAnalysisInputBuilder {
     }
     /// <p>Indicates whether to include the location of middlebox appliances in the route analysis. The default is <code>false</code>.</p>
     pub fn set_use_middleboxes(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_middleboxes = input;
-        self
+        self.use_middleboxes = input; self
     }
     /// Consumes the builder and constructs a [`StartRouteAnalysisInput`](crate::operation::start_route_analysis::StartRouteAnalysisInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_route_analysis::StartRouteAnalysisInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_route_analysis::StartRouteAnalysisInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_route_analysis::StartRouteAnalysisInput {
-                global_network_id: self.global_network_id,
-                source: self.source,
-                destination: self.destination,
-                include_return_path: self.include_return_path,
-                use_middleboxes: self.use_middleboxes,
-            },
+                global_network_id: self.global_network_id
+                ,
+                source: self.source
+                ,
+                destination: self.destination
+                ,
+                include_return_path: self.include_return_path
+                ,
+                use_middleboxes: self.use_middleboxes
+                ,
+            }
         )
     }
 }
+

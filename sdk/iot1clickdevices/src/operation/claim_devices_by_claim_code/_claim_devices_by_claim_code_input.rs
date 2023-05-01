@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimDevicesByClaimCodeInput {
+pub struct ClaimDevicesByClaimCodeInput  {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     #[doc(hidden)]
     pub claim_code: std::option::Option<std::string::String>,
 }
 impl ClaimDevicesByClaimCodeInput {
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-    pub fn claim_code(&self) -> std::option::Option<&str> {
+    pub fn claim_code(&self) -> std::option::Option<& str> {
         self.claim_code.as_deref()
     }
 }
 impl ClaimDevicesByClaimCodeInput {
     /// Creates a new builder-style object to manufacture [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
-    pub fn builder(
-    ) -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder
-    {
+    pub fn builder() -> crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder {
         crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl ClaimDevicesByClaimCodeInputBuilder {
     }
     /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     pub fn set_claim_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.claim_code = input;
-        self
+        self.claim_code = input; self
     }
     /// Consumes the builder and constructs a [`ClaimDevicesByClaimCodeInput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeInput {
-                claim_code: self.claim_code,
-            },
+                claim_code: self.claim_code
+                ,
+            }
         )
     }
 }
+

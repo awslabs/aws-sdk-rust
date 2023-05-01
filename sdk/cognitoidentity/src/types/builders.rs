@@ -14,3 +14,4 @@ pub use crate::types::_identity_description::IdentityDescriptionBuilder;
 pub use crate::types::_credentials::CredentialsBuilder;
 
 pub use crate::types::_unprocessed_identity_id::UnprocessedIdentityIdBuilder;
+

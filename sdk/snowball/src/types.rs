@@ -7,11 +7,13 @@ pub use crate::types::_shipping_option::ShippingOption;
 
 pub use crate::types::_on_device_service_configuration::OnDeviceServiceConfiguration;
 
+pub use crate::types::_s3_on_device_service_configuration::S3OnDeviceServiceConfiguration;
+
+pub use crate::types::_storage_unit::StorageUnit;
+
 pub use crate::types::_eks_on_device_service_configuration::EksOnDeviceServiceConfiguration;
 
 pub use crate::types::_tgw_on_device_service_configuration::TgwOnDeviceServiceConfiguration;
-
-pub use crate::types::_storage_unit::StorageUnit;
 
 pub use crate::types::_nfs_on_device_service_configuration::NfsOnDeviceServiceConfiguration;
 
@@ -141,6 +143,8 @@ mod _on_device_service_configuration;
 
 mod _remote_management;
 
+mod _s3_on_device_service_configuration;
+
 mod _s3_resource;
 
 mod _service_name;
@@ -180,3 +184,4 @@ pub mod builders;
 
 /// Error types that Amazon Import/Export Snowball can respond with.
 pub mod error;
+

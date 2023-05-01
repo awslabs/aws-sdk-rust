@@ -3,7 +3,7 @@
 /// <p>Defines an instance group for heterogeneous cluster training. When requesting a training job using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> API, you can configure multiple instance groups .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroup {
+pub struct InstanceGroup  {
     /// <p>Specifies the instance type of the instance group.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<crate::types::TrainingInstanceType>,
@@ -16,7 +16,7 @@ pub struct InstanceGroup {
 }
 impl InstanceGroup {
     /// <p>Specifies the instance type of the instance group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::TrainingInstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<& crate::types::TrainingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Specifies the number of instances of the instance group.</p>
@@ -24,7 +24,7 @@ impl InstanceGroup {
         self.instance_count
     }
     /// <p>Specifies the name of the instance group.</p>
-    pub fn instance_group_name(&self) -> std::option::Option<&str> {
+    pub fn instance_group_name(&self) -> std::option::Option<& str> {
         self.instance_group_name.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl InstanceGroupBuilder {
         self
     }
     /// <p>Specifies the instance type of the instance group.</p>
-    pub fn set_instance_type(
-        mut self,
-        input: std::option::Option<crate::types::TrainingInstanceType>,
-    ) -> Self {
-        self.instance_type = input;
-        self
+    pub fn set_instance_type(mut self, input: std::option::Option<crate::types::TrainingInstanceType>) -> Self {
+        self.instance_type = input; self
     }
     /// <p>Specifies the number of instances of the instance group.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
@@ -64,8 +60,7 @@ impl InstanceGroupBuilder {
     }
     /// <p>Specifies the number of instances of the instance group.</p>
     pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>Specifies the name of the instance group.</p>
     pub fn instance_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,19 +68,20 @@ impl InstanceGroupBuilder {
         self
     }
     /// <p>Specifies the name of the instance group.</p>
-    pub fn set_instance_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_group_name = input;
-        self
+    pub fn set_instance_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_group_name = input; self
     }
     /// Consumes the builder and constructs a [`InstanceGroup`](crate::types::InstanceGroup).
     pub fn build(self) -> crate::types::InstanceGroup {
         crate::types::InstanceGroup {
-            instance_type: self.instance_type,
-            instance_count: self.instance_count.unwrap_or_default(),
-            instance_group_name: self.instance_group_name,
+            instance_type: self.instance_type
+            ,
+            instance_count: self.instance_count
+                .unwrap_or_default()
+            ,
+            instance_group_name: self.instance_group_name
+            ,
         }
     }
 }
+

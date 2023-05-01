@@ -3,14 +3,14 @@
 /// Placeholder documentation for DescribeChannelRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelInput {
+pub struct DescribeChannelInput  {
     /// channel ID
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
     /// channel ID
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DescribeChannelInputBuilder {
     }
     /// channel ID
     pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_channel::DescribeChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_channel::DescribeChannelInput {
-            channel_id: self.channel_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_channel::DescribeChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_channel::DescribeChannelInput {
+                channel_id: self.channel_id
+                ,
+            }
+        )
     }
 }
+

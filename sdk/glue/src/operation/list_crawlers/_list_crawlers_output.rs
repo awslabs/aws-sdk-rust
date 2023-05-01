@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCrawlersOutput {
+pub struct ListCrawlersOutput  {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     #[doc(hidden)]
     pub crawler_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,19 +13,19 @@ pub struct ListCrawlersOutput {
 }
 impl ListCrawlersOutput {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
-    pub fn crawler_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn crawler_names(&self) -> std::option::Option<& [std::string::String]> {
         self.crawler_names.as_deref()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCrawlersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCrawlersOutput {
     /// Creates a new builder-style object to manufacture [`ListCrawlersOutput`](crate::operation::list_crawlers::ListCrawlersOutput).
     pub fn builder() -> crate::operation::list_crawlers::builders::ListCrawlersOutputBuilder {
@@ -49,17 +49,13 @@ impl ListCrawlersOutputBuilder {
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
     pub fn crawler_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.crawler_names.unwrap_or_default();
-        v.push(input.into());
-        self.crawler_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.crawler_names = Some(v);
+                        self
     }
     /// <p>The names of all crawlers in the account, or the crawlers with the specified tags.</p>
-    pub fn set_crawler_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.crawler_names = input;
-        self
+    pub fn set_crawler_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.crawler_names = input; self
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListCrawlersOutputBuilder {
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCrawlersOutput`](crate::operation::list_crawlers::ListCrawlersOutput).
     pub fn build(self) -> crate::operation::list_crawlers::ListCrawlersOutput {
         crate::operation::list_crawlers::ListCrawlersOutput {
-            crawler_names: self.crawler_names,
-            next_token: self.next_token,
+            crawler_names: self.crawler_names
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRotationShiftsInput {
+pub struct ListRotationShiftsInput  {
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     #[doc(hidden)]
     pub rotation_id: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct ListRotationShiftsInput {
 }
 impl ListRotationShiftsInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
-    pub fn rotation_id(&self) -> std::option::Option<&str> {
+    pub fn rotation_id(&self) -> std::option::Option<& str> {
         self.rotation_id.as_deref()
     }
     /// <p>The date and time for the beginning of the time range to list shifts for.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time for the end of the time range to list shifts for.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -43,8 +43,7 @@ impl ListRotationShiftsInput {
 }
 impl ListRotationShiftsInput {
     /// Creates a new builder-style object to manufacture [`ListRotationShiftsInput`](crate::operation::list_rotation_shifts::ListRotationShiftsInput).
-    pub fn builder(
-    ) -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsInputBuilder {
+    pub fn builder() -> crate::operation::list_rotation_shifts::builders::ListRotationShiftsInputBuilder {
         crate::operation::list_rotation_shifts::builders::ListRotationShiftsInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl ListRotationShiftsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation to retrieve shift information about. </p>
     pub fn set_rotation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_id = input;
-        self
+        self.rotation_id = input; self
     }
     /// <p>The date and time for the beginning of the time range to list shifts for.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,12 +74,8 @@ impl ListRotationShiftsInputBuilder {
         self
     }
     /// <p>The date and time for the beginning of the time range to list shifts for.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The date and time for the end of the time range to list shifts for.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -90,8 +84,7 @@ impl ListRotationShiftsInputBuilder {
     }
     /// <p>The date and time for the end of the time range to list shifts for.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +93,7 @@ impl ListRotationShiftsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -110,24 +102,24 @@ impl ListRotationShiftsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListRotationShiftsInput`](crate::operation::list_rotation_shifts::ListRotationShiftsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_rotation_shifts::ListRotationShiftsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_rotation_shifts::ListRotationShiftsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_rotation_shifts::ListRotationShiftsInput {
-                rotation_id: self.rotation_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                rotation_id: self.rotation_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

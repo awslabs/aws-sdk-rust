@@ -3,20 +3,14 @@
 /// <p>Specifies a batch of events to process.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventsRequest {
+pub struct EventsRequest  {
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
     #[doc(hidden)]
-    pub batch_item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::EventsBatch>,
-    >,
+    pub batch_item: std::option::Option<std::collections::HashMap<std::string::String, crate::types::EventsBatch>>,
 }
 impl EventsRequest {
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
-    pub fn batch_item(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::EventsBatch>,
-    > {
+    pub fn batch_item(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::EventsBatch>> {
         self.batch_item.as_ref()
     }
 }
@@ -31,9 +25,7 @@ impl EventsRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EventsRequestBuilder {
-    pub(crate) batch_item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::EventsBatch>,
-    >,
+    pub(crate) batch_item: std::option::Option<std::collections::HashMap<std::string::String, crate::types::EventsBatch>>,
 }
 impl EventsRequestBuilder {
     /// Adds a key-value pair to `batch_item`.
@@ -41,30 +33,22 @@ impl EventsRequestBuilder {
     /// To override the contents of this collection use [`set_batch_item`](Self::set_batch_item).
     ///
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
-    pub fn batch_item(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::EventsBatch,
-    ) -> Self {
+    pub fn batch_item(mut self, k: impl Into<std::string::String>, v: crate::types::EventsBatch) -> Self {
         let mut hash_map = self.batch_item.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.batch_item = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.batch_item = Some(hash_map);
+                        self
     }
     /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
-    pub fn set_batch_item(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::EventsBatch>,
-        >,
-    ) -> Self {
-        self.batch_item = input;
-        self
+    pub fn set_batch_item(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::EventsBatch>>) -> Self {
+        self.batch_item = input; self
     }
     /// Consumes the builder and constructs a [`EventsRequest`](crate::types::EventsRequest).
     pub fn build(self) -> crate::types::EventsRequest {
         crate::types::EventsRequest {
-            batch_item: self.batch_item,
+            batch_item: self.batch_item
+            ,
         }
     }
 }
+

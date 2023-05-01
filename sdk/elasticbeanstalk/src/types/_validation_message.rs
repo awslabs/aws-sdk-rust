@@ -3,14 +3,14 @@
 /// <p>An error or warning for a desired configuration option value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationMessage {
+pub struct ValidationMessage  {
     /// <p>A message describing the error or warning.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>An indication of the severity of this message:</p>
-    /// <ul>
-    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// <p>An indication of the severity of this message:</p> 
+    /// <ul> 
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub severity: std::option::Option<crate::types::ValidationSeverity>,
@@ -23,23 +23,23 @@ pub struct ValidationMessage {
 }
 impl ValidationMessage {
     /// <p>A message describing the error or warning.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
-    /// <p>An indication of the severity of this message:</p>
-    /// <ul>
-    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// <p>An indication of the severity of this message:</p> 
+    /// <ul> 
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
     /// </ul>
-    pub fn severity(&self) -> std::option::Option<&crate::types::ValidationSeverity> {
+    pub fn severity(&self) -> std::option::Option<& crate::types::ValidationSeverity> {
         self.severity.as_ref()
     }
     /// <p>The namespace to which the option belongs.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the option.</p>
-    pub fn option_name(&self) -> std::option::Option<&str> {
+    pub fn option_name(&self) -> std::option::Option<& str> {
         self.option_name.as_deref()
     }
 }
@@ -67,29 +67,24 @@ impl ValidationMessageBuilder {
     }
     /// <p>A message describing the error or warning.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
-    /// <p>An indication of the severity of this message:</p>
-    /// <ul>
-    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// <p>An indication of the severity of this message:</p> 
+    /// <ul> 
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
     /// </ul>
     pub fn severity(mut self, input: crate::types::ValidationSeverity) -> Self {
         self.severity = Some(input);
         self
     }
-    /// <p>An indication of the severity of this message:</p>
-    /// <ul>
-    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li>
-    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li>
+    /// <p>An indication of the severity of this message:</p> 
+    /// <ul> 
+    /// <li> <p> <code>error</code>: This message indicates that this is not a valid setting for an option.</p> </li> 
+    /// <li> <p> <code>warning</code>: This message is providing information you should take into account.</p> </li> 
     /// </ul>
-    pub fn set_severity(
-        mut self,
-        input: std::option::Option<crate::types::ValidationSeverity>,
-    ) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: std::option::Option<crate::types::ValidationSeverity>) -> Self {
+        self.severity = input; self
     }
     /// <p>The namespace to which the option belongs.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl ValidationMessageBuilder {
     }
     /// <p>The namespace to which the option belongs.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the option.</p>
     pub fn option_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,16 +102,20 @@ impl ValidationMessageBuilder {
     }
     /// <p>The name of the option.</p>
     pub fn set_option_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.option_name = input;
-        self
+        self.option_name = input; self
     }
     /// Consumes the builder and constructs a [`ValidationMessage`](crate::types::ValidationMessage).
     pub fn build(self) -> crate::types::ValidationMessage {
         crate::types::ValidationMessage {
-            message: self.message,
-            severity: self.severity,
-            namespace: self.namespace,
-            option_name: self.option_name,
+            message: self.message
+            ,
+            severity: self.severity
+            ,
+            namespace: self.namespace
+            ,
+            option_name: self.option_name
+            ,
         }
     }
 }
+

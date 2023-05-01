@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberaccountrulestatus = unimplemented!();
 /// match memberaccountrulestatus {
@@ -37,22 +37,14 @@
 /// Specifically, when `memberaccountrulestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberAccountRuleStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberAccountRuleStatus {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -73,66 +65,55 @@ pub enum MemberAccountRuleStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateSuccessful,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberAccountRuleStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => MemberAccountRuleStatus::CreateFailed,
-            "CREATE_IN_PROGRESS" => MemberAccountRuleStatus::CreateInProgress,
-            "CREATE_SUCCESSFUL" => MemberAccountRuleStatus::CreateSuccessful,
-            "DELETE_FAILED" => MemberAccountRuleStatus::DeleteFailed,
-            "DELETE_IN_PROGRESS" => MemberAccountRuleStatus::DeleteInProgress,
-            "DELETE_SUCCESSFUL" => MemberAccountRuleStatus::DeleteSuccessful,
-            "UPDATE_FAILED" => MemberAccountRuleStatus::UpdateFailed,
-            "UPDATE_IN_PROGRESS" => MemberAccountRuleStatus::UpdateInProgress,
-            "UPDATE_SUCCESSFUL" => MemberAccountRuleStatus::UpdateSuccessful,
-            other => MemberAccountRuleStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => MemberAccountRuleStatus::CreateFailed,
+"CREATE_IN_PROGRESS" => MemberAccountRuleStatus::CreateInProgress,
+"CREATE_SUCCESSFUL" => MemberAccountRuleStatus::CreateSuccessful,
+"DELETE_FAILED" => MemberAccountRuleStatus::DeleteFailed,
+"DELETE_IN_PROGRESS" => MemberAccountRuleStatus::DeleteInProgress,
+"DELETE_SUCCESSFUL" => MemberAccountRuleStatus::DeleteSuccessful,
+"UPDATE_FAILED" => MemberAccountRuleStatus::UpdateFailed,
+"UPDATE_IN_PROGRESS" => MemberAccountRuleStatus::UpdateInProgress,
+"UPDATE_SUCCESSFUL" => MemberAccountRuleStatus::UpdateSuccessful,
+other => MemberAccountRuleStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MemberAccountRuleStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberAccountRuleStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberAccountRuleStatus::from(s))
+                }
+            }
 impl MemberAccountRuleStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MemberAccountRuleStatus::CreateFailed => "CREATE_FAILED",
-            MemberAccountRuleStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-            MemberAccountRuleStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
-            MemberAccountRuleStatus::DeleteFailed => "DELETE_FAILED",
-            MemberAccountRuleStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-            MemberAccountRuleStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
-            MemberAccountRuleStatus::UpdateFailed => "UPDATE_FAILED",
-            MemberAccountRuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
-            MemberAccountRuleStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
-            MemberAccountRuleStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED",
-            "CREATE_IN_PROGRESS",
-            "CREATE_SUCCESSFUL",
-            "DELETE_FAILED",
-            "DELETE_IN_PROGRESS",
-            "DELETE_SUCCESSFUL",
-            "UPDATE_FAILED",
-            "UPDATE_IN_PROGRESS",
-            "UPDATE_SUCCESSFUL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MemberAccountRuleStatus::CreateFailed => "CREATE_FAILED",
+    MemberAccountRuleStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+    MemberAccountRuleStatus::CreateSuccessful => "CREATE_SUCCESSFUL",
+    MemberAccountRuleStatus::DeleteFailed => "DELETE_FAILED",
+    MemberAccountRuleStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+    MemberAccountRuleStatus::DeleteSuccessful => "DELETE_SUCCESSFUL",
+    MemberAccountRuleStatus::UpdateFailed => "UPDATE_FAILED",
+    MemberAccountRuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
+    MemberAccountRuleStatus::UpdateSuccessful => "UPDATE_SUCCESSFUL",
+    MemberAccountRuleStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATE_IN_PROGRESS", "CREATE_SUCCESSFUL", "DELETE_FAILED", "DELETE_IN_PROGRESS", "DELETE_SUCCESSFUL", "UPDATE_FAILED", "UPDATE_IN_PROGRESS", "UPDATE_SUCCESSFUL"]
+                }
+            }
 impl AsRef<str> for MemberAccountRuleStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

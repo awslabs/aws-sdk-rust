@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h265codeclevel = unimplemented!();
 /// match h265codeclevel {
@@ -42,22 +42,14 @@
 /// Specifically, when `h265codeclevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H265CodecLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// H.265 Level.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum H265CodecLevel {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -88,81 +80,65 @@ pub enum H265CodecLevel {
     #[allow(missing_docs)] // documentation missing in model
     Level62,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for H265CodecLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => H265CodecLevel::Auto,
-            "LEVEL_1" => H265CodecLevel::Level1,
-            "LEVEL_2" => H265CodecLevel::Level2,
-            "LEVEL_2_1" => H265CodecLevel::Level21,
-            "LEVEL_3" => H265CodecLevel::Level3,
-            "LEVEL_3_1" => H265CodecLevel::Level31,
-            "LEVEL_4" => H265CodecLevel::Level4,
-            "LEVEL_4_1" => H265CodecLevel::Level41,
-            "LEVEL_5" => H265CodecLevel::Level5,
-            "LEVEL_5_1" => H265CodecLevel::Level51,
-            "LEVEL_5_2" => H265CodecLevel::Level52,
-            "LEVEL_6" => H265CodecLevel::Level6,
-            "LEVEL_6_1" => H265CodecLevel::Level61,
-            "LEVEL_6_2" => H265CodecLevel::Level62,
-            other => {
-                H265CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTO" => H265CodecLevel::Auto,
+"LEVEL_1" => H265CodecLevel::Level1,
+"LEVEL_2" => H265CodecLevel::Level2,
+"LEVEL_2_1" => H265CodecLevel::Level21,
+"LEVEL_3" => H265CodecLevel::Level3,
+"LEVEL_3_1" => H265CodecLevel::Level31,
+"LEVEL_4" => H265CodecLevel::Level4,
+"LEVEL_4_1" => H265CodecLevel::Level41,
+"LEVEL_5" => H265CodecLevel::Level5,
+"LEVEL_5_1" => H265CodecLevel::Level51,
+"LEVEL_5_2" => H265CodecLevel::Level52,
+"LEVEL_6" => H265CodecLevel::Level6,
+"LEVEL_6_1" => H265CodecLevel::Level61,
+"LEVEL_6_2" => H265CodecLevel::Level62,
+other => H265CodecLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for H265CodecLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265CodecLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(H265CodecLevel::from(s))
+                }
+            }
 impl H265CodecLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H265CodecLevel::Auto => "AUTO",
-            H265CodecLevel::Level1 => "LEVEL_1",
-            H265CodecLevel::Level2 => "LEVEL_2",
-            H265CodecLevel::Level21 => "LEVEL_2_1",
-            H265CodecLevel::Level3 => "LEVEL_3",
-            H265CodecLevel::Level31 => "LEVEL_3_1",
-            H265CodecLevel::Level4 => "LEVEL_4",
-            H265CodecLevel::Level41 => "LEVEL_4_1",
-            H265CodecLevel::Level5 => "LEVEL_5",
-            H265CodecLevel::Level51 => "LEVEL_5_1",
-            H265CodecLevel::Level52 => "LEVEL_5_2",
-            H265CodecLevel::Level6 => "LEVEL_6",
-            H265CodecLevel::Level61 => "LEVEL_6_1",
-            H265CodecLevel::Level62 => "LEVEL_6_2",
-            H265CodecLevel::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTO",
-            "LEVEL_1",
-            "LEVEL_2",
-            "LEVEL_2_1",
-            "LEVEL_3",
-            "LEVEL_3_1",
-            "LEVEL_4",
-            "LEVEL_4_1",
-            "LEVEL_5",
-            "LEVEL_5_1",
-            "LEVEL_5_2",
-            "LEVEL_6",
-            "LEVEL_6_1",
-            "LEVEL_6_2",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H265CodecLevel::Auto => "AUTO",
+    H265CodecLevel::Level1 => "LEVEL_1",
+    H265CodecLevel::Level2 => "LEVEL_2",
+    H265CodecLevel::Level21 => "LEVEL_2_1",
+    H265CodecLevel::Level3 => "LEVEL_3",
+    H265CodecLevel::Level31 => "LEVEL_3_1",
+    H265CodecLevel::Level4 => "LEVEL_4",
+    H265CodecLevel::Level41 => "LEVEL_4_1",
+    H265CodecLevel::Level5 => "LEVEL_5",
+    H265CodecLevel::Level51 => "LEVEL_5_1",
+    H265CodecLevel::Level52 => "LEVEL_5_2",
+    H265CodecLevel::Level6 => "LEVEL_6",
+    H265CodecLevel::Level61 => "LEVEL_6_1",
+    H265CodecLevel::Level62 => "LEVEL_6_2",
+    H265CodecLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "LEVEL_1", "LEVEL_2", "LEVEL_2_1", "LEVEL_3", "LEVEL_3_1", "LEVEL_4", "LEVEL_4_1", "LEVEL_5", "LEVEL_5_1", "LEVEL_5_2", "LEVEL_6", "LEVEL_6_1", "LEVEL_6_2"]
+                }
+            }
 impl AsRef<str> for H265CodecLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

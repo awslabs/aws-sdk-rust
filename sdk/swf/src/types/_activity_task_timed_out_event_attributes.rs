@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ActivityTaskTimedOut</code> event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivityTaskTimedOutEventAttributes {
+pub struct ActivityTaskTimedOutEventAttributes  {
     /// <p>The type of the timeout that caused this event.</p>
     #[doc(hidden)]
     pub timeout_type: std::option::Option<crate::types::ActivityTaskTimeoutType>,
@@ -19,7 +19,7 @@ pub struct ActivityTaskTimedOutEventAttributes {
 }
 impl ActivityTaskTimedOutEventAttributes {
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn timeout_type(&self) -> std::option::Option<&crate::types::ActivityTaskTimeoutType> {
+    pub fn timeout_type(&self) -> std::option::Option<& crate::types::ActivityTaskTimeoutType> {
         self.timeout_type.as_ref()
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -31,7 +31,7 @@ impl ActivityTaskTimedOutEventAttributes {
         self.started_event_id
     }
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
         self
     }
     /// <p>The type of the timeout that caused this event.</p>
-    pub fn set_timeout_type(
-        mut self,
-        input: std::option::Option<crate::types::ActivityTaskTimeoutType>,
-    ) -> Self {
-        self.timeout_type = input;
-        self
+    pub fn set_timeout_type(mut self, input: std::option::Option<crate::types::ActivityTaskTimeoutType>) -> Self {
+        self.timeout_type = input; self
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
@@ -72,8 +68,7 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input;
-        self
+        self.scheduled_event_id = input; self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
@@ -82,8 +77,7 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
     pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,22 @@ impl ActivityTaskTimedOutEventAttributesBuilder {
     }
     /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to <code>RecordActivityTaskHeartbeat</code>.</p>
     pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// Consumes the builder and constructs a [`ActivityTaskTimedOutEventAttributes`](crate::types::ActivityTaskTimedOutEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskTimedOutEventAttributes {
         crate::types::ActivityTaskTimedOutEventAttributes {
-            timeout_type: self.timeout_type,
-            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
-            started_event_id: self.started_event_id.unwrap_or_default(),
-            details: self.details,
+            timeout_type: self.timeout_type
+            ,
+            scheduled_event_id: self.scheduled_event_id
+                .unwrap_or_default()
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

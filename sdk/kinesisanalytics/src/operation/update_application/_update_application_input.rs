@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationInput {
+pub struct UpdateApplicationInput  {
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateApplicationInput {
 }
 impl UpdateApplicationInput {
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
@@ -23,14 +23,13 @@ impl UpdateApplicationInput {
         self.current_application_version_id
     }
     /// <p>Describes application updates.</p>
-    pub fn application_update(&self) -> std::option::Option<&crate::types::ApplicationUpdate> {
+    pub fn application_update(&self) -> std::option::Option<& crate::types::ApplicationUpdate> {
         self.application_update.as_ref()
     }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn current_application_version_id(mut self, input: i64) -> Self {
@@ -61,8 +59,7 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>The current application version ID. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
     pub fn set_current_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.current_application_version_id = input;
-        self
+        self.current_application_version_id = input; self
     }
     /// <p>Describes application updates.</p>
     pub fn application_update(mut self, input: crate::types::ApplicationUpdate) -> Self {
@@ -70,26 +67,21 @@ impl UpdateApplicationInputBuilder {
         self
     }
     /// <p>Describes application updates.</p>
-    pub fn set_application_update(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationUpdate>,
-    ) -> Self {
-        self.application_update = input;
-        self
+    pub fn set_application_update(mut self, input: std::option::Option<crate::types::ApplicationUpdate>) -> Self {
+        self.application_update = input; self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_application::UpdateApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_application::UpdateApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_application::UpdateApplicationInput {
-                application_name: self.application_name,
-                current_application_version_id: self.current_application_version_id,
-                application_update: self.application_update,
-            },
+                application_name: self.application_name
+                ,
+                current_application_version_id: self.current_application_version_id
+                ,
+                application_update: self.application_update
+                ,
+            }
         )
     }
 }
+

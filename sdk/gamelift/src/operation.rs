@@ -312,3 +312,4 @@ pub mod update_script;
 
 /// Types for the `ValidateMatchmakingRuleSet` operation.
 pub mod validate_matchmaking_rule_set;
+

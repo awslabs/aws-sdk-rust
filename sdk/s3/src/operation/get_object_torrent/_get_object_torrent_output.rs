@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetObjectTorrentOutput {
+pub struct GetObjectTorrentOutput  {
     /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
     pub body: aws_smithy_http::byte_stream::ByteStream,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
@@ -13,28 +13,27 @@ pub struct GetObjectTorrentOutput {
 }
 impl GetObjectTorrentOutput {
     /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
-    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> & aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn request_charged(&self) -> std::option::Option<&crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> std::option::Option<& crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetObjectTorrentOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for GetObjectTorrentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetObjectTorrentOutput {
     /// Creates a new builder-style object to manufacture [`GetObjectTorrentOutput`](crate::operation::get_object_torrent::GetObjectTorrentOutput).
-    pub fn builder() -> crate::operation::get_object_torrent::builders::GetObjectTorrentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_object_torrent::builders::GetObjectTorrentOutputBuilder {
         crate::operation::get_object_torrent::builders::GetObjectTorrentOutputBuilder::default()
     }
 }
@@ -55,12 +54,8 @@ impl GetObjectTorrentOutputBuilder {
         self
     }
     /// <p>A Bencoded dictionary as defined by the BitTorrent specification</p>
-    pub fn set_body(
-        mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
-        self.body = input;
-        self
+    pub fn set_body(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
+        self.body = input; self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
@@ -68,41 +63,38 @@ impl GetObjectTorrentOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
-        self.request_charged = input;
-        self
+    pub fn set_request_charged(mut self, input: std::option::Option<crate::types::RequestCharged>) -> Self {
+        self.request_charged = input; self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetObjectTorrentOutput`](crate::operation::get_object_torrent::GetObjectTorrentOutput).
     pub fn build(self) -> crate::operation::get_object_torrent::GetObjectTorrentOutput {
         crate::operation::get_object_torrent::GetObjectTorrentOutput {
-            body: self.body.unwrap_or_default(),
-            request_charged: self.request_charged,
+            body: self.body
+                .unwrap_or_default()
+            ,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

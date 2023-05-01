@@ -3,7 +3,7 @@
 /// <p>The details of a capacity provider strategy. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CapacityProviderStrategyItem.html">CapacityProviderStrategyItem</a> in the Amazon ECS API Reference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CapacityProviderStrategyItem {
+pub struct CapacityProviderStrategyItem  {
     /// <p>The short name of the capacity provider.</p>
     #[doc(hidden)]
     pub capacity_provider: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct CapacityProviderStrategyItem {
 }
 impl CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+    pub fn capacity_provider(&self) -> std::option::Option<& str> {
         self.capacity_provider.as_deref()
     }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
@@ -28,7 +28,7 @@ impl CapacityProviderStrategyItem {
         self.base
     }
 }
-impl std::fmt::Debug for CapacityProviderStrategyItem {
+impl  std::fmt::Debug for CapacityProviderStrategyItem  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CapacityProviderStrategyItem");
         formatter.field("capacity_provider", &"*** Sensitive Data Redacted ***");
@@ -59,12 +59,8 @@ impl CapacityProviderStrategyItemBuilder {
         self
     }
     /// <p>The short name of the capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capacity_provider = input;
-        self
+    pub fn set_capacity_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capacity_provider = input; self
     }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub fn weight(mut self, input: i32) -> Self {
@@ -73,8 +69,7 @@ impl CapacityProviderStrategyItemBuilder {
     }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
     pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn base(mut self, input: i32) -> Self {
@@ -83,15 +78,19 @@ impl CapacityProviderStrategyItemBuilder {
     }
     /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
     pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::types::CapacityProviderStrategyItem).
     pub fn build(self) -> crate::types::CapacityProviderStrategyItem {
         crate::types::CapacityProviderStrategyItem {
-            capacity_provider: self.capacity_provider,
-            weight: self.weight.unwrap_or_default(),
-            base: self.base.unwrap_or_default(),
+            capacity_provider: self.capacity_provider
+            ,
+            weight: self.weight
+                .unwrap_or_default()
+            ,
+            base: self.base
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -104,3 +103,4 @@ impl std::fmt::Debug for CapacityProviderStrategyItemBuilder {
         formatter.finish()
     }
 }
+

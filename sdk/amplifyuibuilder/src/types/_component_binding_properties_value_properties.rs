@@ -3,7 +3,7 @@
 /// <p>Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amazon S3 bucket, an Amplify DataStore model or an authenticated user attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentBindingPropertiesValueProperties {
+pub struct ComponentBindingPropertiesValueProperties  {
     /// <p>An Amplify DataStore model.</p>
     #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct ComponentBindingPropertiesValueProperties {
 }
 impl ComponentBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The field to bind the data to.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    pub fn predicates(&self) -> std::option::Option<&[crate::types::Predicate]> {
+    pub fn predicates(&self) -> std::option::Option<& [crate::types::Predicate]> {
         self.predicates.as_deref()
     }
     /// <p>An authenticated user attribute.</p>
-    pub fn user_attribute(&self) -> std::option::Option<&str> {
+    pub fn user_attribute(&self) -> std::option::Option<& str> {
         self.user_attribute.as_deref()
     }
     /// <p>An Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The storage key for an Amazon S3 bucket.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The default value to assign to the property.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The name of a component slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>An Amplify DataStore model.</p>
     pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model = input;
-        self
+        self.model = input; self
     }
     /// <p>The field to bind the data to.</p>
     pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>The field to bind the data to.</p>
     pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// Appends an item to `predicates`.
     ///
@@ -111,17 +109,13 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     /// <p>A list of predicates for binding a component's properties to data.</p>
     pub fn predicates(mut self, input: crate::types::Predicate) -> Self {
         let mut v = self.predicates.unwrap_or_default();
-        v.push(input);
-        self.predicates = Some(v);
-        self
+                        v.push(input);
+                        self.predicates = Some(v);
+                        self
     }
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    pub fn set_predicates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Predicate>>,
-    ) -> Self {
-        self.predicates = input;
-        self
+    pub fn set_predicates(mut self, input: std::option::Option<std::vec::Vec<crate::types::Predicate>>) -> Self {
+        self.predicates = input; self
     }
     /// <p>An authenticated user attribute.</p>
     pub fn user_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +124,7 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>An authenticated user attribute.</p>
     pub fn set_user_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_attribute = input;
-        self
+        self.user_attribute = input; self
     }
     /// <p>An Amazon S3 bucket.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +133,7 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>An Amazon S3 bucket.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The storage key for an Amazon S3 bucket.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +142,7 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>The storage key for an Amazon S3 bucket.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The default value to assign to the property.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,8 +151,7 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>The default value to assign to the property.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// <p>The name of a component slot.</p>
     pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,20 +160,28 @@ impl ComponentBindingPropertiesValuePropertiesBuilder {
     }
     /// <p>The name of a component slot.</p>
     pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_name = input;
-        self
+        self.slot_name = input; self
     }
     /// Consumes the builder and constructs a [`ComponentBindingPropertiesValueProperties`](crate::types::ComponentBindingPropertiesValueProperties).
     pub fn build(self) -> crate::types::ComponentBindingPropertiesValueProperties {
         crate::types::ComponentBindingPropertiesValueProperties {
-            model: self.model,
-            field: self.field,
-            predicates: self.predicates,
-            user_attribute: self.user_attribute,
-            bucket: self.bucket,
-            key: self.key,
-            default_value: self.default_value,
-            slot_name: self.slot_name,
+            model: self.model
+            ,
+            field: self.field
+            ,
+            predicates: self.predicates
+            ,
+            user_attribute: self.user_attribute
+            ,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            default_value: self.default_value
+            ,
+            slot_name: self.slot_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessTokenInput {
+pub struct GetAccessTokenInput  {
     /// <p>Refresh token, encoded as a JWT token.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetAccessTokenInput {
 }
 impl GetAccessTokenInput {
     /// <p>Refresh token, encoded as a JWT token.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_properties(&self) -> std::option::Option<& [std::string::String]> {
         self.token_properties.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetAccessTokenInputBuilder {
     }
     /// <p>Refresh token, encoded as a JWT token.</p>
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// Appends an item to `token_properties`.
     ///
@@ -52,28 +51,24 @@ impl GetAccessTokenInputBuilder {
     /// <p>Token properties to validate against those present in the JWT token.</p>
     pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.token_properties.unwrap_or_default();
-        v.push(input.into());
-        self.token_properties = Some(v);
-        self
+                        v.push(input.into());
+                        self.token_properties = Some(v);
+                        self
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn set_token_properties(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.token_properties = input;
-        self
+    pub fn set_token_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.token_properties = input; self
     }
     /// Consumes the builder and constructs a [`GetAccessTokenInput`](crate::operation::get_access_token::GetAccessTokenInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_access_token::GetAccessTokenInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_access_token::GetAccessTokenInput {
-            token: self.token,
-            token_properties: self.token_properties,
-        })
+    pub fn build(self) -> Result<crate::operation::get_access_token::GetAccessTokenInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_access_token::GetAccessTokenInput {
+                token: self.token
+                ,
+                token_properties: self.token_properties
+                ,
+            }
+        )
     }
 }
+

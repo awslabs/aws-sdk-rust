@@ -3,7 +3,7 @@
 /// <p>The details of the maintenance configuration for the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationMaintenanceConfigurationDescription {
+pub struct ApplicationMaintenanceConfigurationDescription  {
     /// <p>The start time for the maintenance window.</p>
     #[doc(hidden)]
     pub application_maintenance_window_start_time: std::option::Option<std::string::String>,
@@ -13,18 +13,17 @@ pub struct ApplicationMaintenanceConfigurationDescription {
 }
 impl ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time(&self) -> std::option::Option<&str> {
+    pub fn application_maintenance_window_start_time(&self) -> std::option::Option<& str> {
         self.application_maintenance_window_start_time.as_deref()
     }
     /// <p>The end time for the maintenance window.</p>
-    pub fn application_maintenance_window_end_time(&self) -> std::option::Option<&str> {
+    pub fn application_maintenance_window_end_time(&self) -> std::option::Option<& str> {
         self.application_maintenance_window_end_time.as_deref()
     }
 }
 impl ApplicationMaintenanceConfigurationDescription {
     /// Creates a new builder-style object to manufacture [`ApplicationMaintenanceConfigurationDescription`](crate::types::ApplicationMaintenanceConfigurationDescription).
-    pub fn builder() -> crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder
-    {
+    pub fn builder() -> crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder {
         crate::types::builders::ApplicationMaintenanceConfigurationDescriptionBuilder::default()
     }
 }
@@ -38,43 +37,31 @@ pub struct ApplicationMaintenanceConfigurationDescriptionBuilder {
 }
 impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     /// <p>The start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn application_maintenance_window_start_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.application_maintenance_window_start_time = Some(input.into());
         self
     }
     /// <p>The start time for the maintenance window.</p>
-    pub fn set_application_maintenance_window_start_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_maintenance_window_start_time = input;
-        self
+    pub fn set_application_maintenance_window_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_maintenance_window_start_time = input; self
     }
     /// <p>The end time for the maintenance window.</p>
-    pub fn application_maintenance_window_end_time(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn application_maintenance_window_end_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.application_maintenance_window_end_time = Some(input.into());
         self
     }
     /// <p>The end time for the maintenance window.</p>
-    pub fn set_application_maintenance_window_end_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_maintenance_window_end_time = input;
-        self
+    pub fn set_application_maintenance_window_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_maintenance_window_end_time = input; self
     }
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationDescription`](crate::types::ApplicationMaintenanceConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationMaintenanceConfigurationDescription {
         crate::types::ApplicationMaintenanceConfigurationDescription {
-            application_maintenance_window_start_time: self
-                .application_maintenance_window_start_time,
-            application_maintenance_window_end_time: self.application_maintenance_window_end_time,
+            application_maintenance_window_start_time: self.application_maintenance_window_start_time
+            ,
+            application_maintenance_window_end_time: self.application_maintenance_window_end_time
+            ,
         }
     }
 }
+

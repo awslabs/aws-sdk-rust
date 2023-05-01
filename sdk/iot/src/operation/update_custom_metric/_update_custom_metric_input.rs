@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomMetricInput {
+pub struct UpdateCustomMetricInput  {
     /// <p> The name of the custom metric. Cannot be updated. </p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct UpdateCustomMetricInput {
 }
 impl UpdateCustomMetricInput {
     /// <p> The name of the custom metric. Cannot be updated. </p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
 impl UpdateCustomMetricInput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
-    pub fn builder(
-    ) -> crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder {
+    pub fn builder() -> crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder {
         crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl UpdateCustomMetricInputBuilder {
     }
     /// <p> The name of the custom metric. Cannot be updated. </p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl UpdateCustomMetricInputBuilder {
     }
     /// <p> Field represents a friendly name in the console for the custom metric, it doesn't have to be unique. Don't use this name as the metric identifier in the device metric report. Can be updated. </p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateCustomMetricInput`](crate::operation::update_custom_metric::UpdateCustomMetricInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_custom_metric::UpdateCustomMetricInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_custom_metric::UpdateCustomMetricInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_custom_metric::UpdateCustomMetricInput {
-                metric_name: self.metric_name,
-                display_name: self.display_name,
-            },
+                metric_name: self.metric_name
+                ,
+                display_name: self.display_name
+                ,
+            }
         )
     }
 }
+

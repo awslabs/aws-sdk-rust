@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteParameterGroupOutput {
+pub struct DeleteParameterGroupOutput  {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     #[doc(hidden)]
     pub deletion_message: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct DeleteParameterGroupOutput {
 }
 impl DeleteParameterGroupOutput {
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
-    pub fn deletion_message(&self) -> std::option::Option<&str> {
+    pub fn deletion_message(&self) -> std::option::Option<& str> {
         self.deletion_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder {
         crate::operation::delete_parameter_group::builders::DeleteParameterGroupOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl DeleteParameterGroupOutputBuilder {
     }
     /// <p>A user-specified message for this action (i.e., a reason for deleting the parameter group).</p>
     pub fn set_deletion_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deletion_message = input;
-        self
+        self.deletion_message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteParameterGroupOutput`](crate::operation::delete_parameter_group::DeleteParameterGroupOutput).
     pub fn build(self) -> crate::operation::delete_parameter_group::DeleteParameterGroupOutput {
         crate::operation::delete_parameter_group::DeleteParameterGroupOutput {
-            deletion_message: self.deletion_message,
+            deletion_message: self.deletion_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

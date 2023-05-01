@@ -3,7 +3,7 @@
 /// <p>DescribeTapeArchivesInput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTapeArchivesInput {
+pub struct DescribeTapeArchivesInput  {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
     #[doc(hidden)]
     pub tape_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,11 +16,11 @@ pub struct DescribeTapeArchivesInput {
 }
 impl DescribeTapeArchivesInput {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn tape_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tape_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
         self.tape_ar_ns.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
@@ -30,8 +30,7 @@ impl DescribeTapeArchivesInput {
 }
 impl DescribeTapeArchivesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
+    pub fn builder() -> crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder {
         crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder::default()
     }
 }
@@ -52,17 +51,13 @@ impl DescribeTapeArchivesInputBuilder {
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
     pub fn tape_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tape_ar_ns.unwrap_or_default();
-        v.push(input.into());
-        self.tape_ar_ns = Some(v);
-        self
+                        v.push(input.into());
+                        self.tape_ar_ns = Some(v);
+                        self
     }
     /// <p>Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.</p>
-    pub fn set_tape_ar_ns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tape_ar_ns = input;
-        self
+    pub fn set_tape_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tape_ar_ns = input; self
     }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +66,7 @@ impl DescribeTapeArchivesInputBuilder {
     }
     /// <p>An opaque string that indicates the position at which to begin describing virtual tapes.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -81,22 +75,20 @@ impl DescribeTapeArchivesInputBuilder {
     }
     /// <p>Specifies that the number of virtual tapes described be limited to the specified number.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTapeArchivesInput`](crate::operation::describe_tape_archives::DescribeTapeArchivesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_tape_archives::DescribeTapeArchivesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_tape_archives::DescribeTapeArchivesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_tape_archives::DescribeTapeArchivesInput {
-                tape_ar_ns: self.tape_ar_ns,
-                marker: self.marker,
-                limit: self.limit,
-            },
+                tape_ar_ns: self.tape_ar_ns
+                ,
+                marker: self.marker
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

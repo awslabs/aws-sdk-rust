@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDeviceFromPlacementInput {
+pub struct DisassociateDeviceFromPlacementInput  {
     /// <p>The name of the project that contains the placement.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DisassociateDeviceFromPlacementInput {
 }
 impl DisassociateDeviceFromPlacementInput {
     /// <p>The name of the project that contains the placement.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the placement that the device should be removed from.</p>
-    pub fn placement_name(&self) -> std::option::Option<&str> {
+    pub fn placement_name(&self) -> std::option::Option<& str> {
         self.placement_name.as_deref()
     }
     /// <p>The device ID that should be removed from the placement.</p>
-    pub fn device_template_name(&self) -> std::option::Option<&str> {
+    pub fn device_template_name(&self) -> std::option::Option<& str> {
         self.device_template_name.as_deref()
     }
 }
 impl DisassociateDeviceFromPlacementInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDeviceFromPlacementInput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput).
-    pub fn builder() -> crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder {
         crate::operation::disassociate_device_from_placement::builders::DisassociateDeviceFromPlacementInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DisassociateDeviceFromPlacementInputBuilder {
     }
     /// <p>The name of the project that contains the placement.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the placement that the device should be removed from.</p>
     pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DisassociateDeviceFromPlacementInputBuilder {
     }
     /// <p>The name of the placement that the device should be removed from.</p>
     pub fn set_placement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.placement_name = input;
-        self
+        self.placement_name = input; self
     }
     /// <p>The device ID that should be removed from the placement.</p>
     pub fn device_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +67,11 @@ impl DisassociateDeviceFromPlacementInputBuilder {
         self
     }
     /// <p>The device ID that should be removed from the placement.</p>
-    pub fn set_device_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_template_name = input;
-        self
+    pub fn set_device_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_template_name = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateDeviceFromPlacementInput`](crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementInput {
                 project_name: self.project_name
@@ -95,3 +84,4 @@ impl DisassociateDeviceFromPlacementInputBuilder {
         )
     }
 }
+

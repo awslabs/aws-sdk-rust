@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataQualityRulesetInput {
+pub struct GetDataQualityRulesetInput  {
     /// <p>The name of the ruleset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDataQualityRulesetInput {
     /// <p>The name of the ruleset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder {
         crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetDataQualityRulesetInputBuilder {
     }
     /// <p>The name of the ruleset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetInput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_data_quality_ruleset::GetDataQualityRulesetInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

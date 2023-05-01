@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVocabularyInput {
+pub struct DeleteVocabularyInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DeleteVocabularyInput {
 }
 impl DeleteVocabularyInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the custom vocabulary.</p>
-    pub fn vocabulary_id(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_id(&self) -> std::option::Option<& str> {
         self.vocabulary_id.as_deref()
     }
 }
 impl DeleteVocabularyInput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
-    pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder {
         crate::operation::delete_vocabulary::builders::DeleteVocabularyInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteVocabularyInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn vocabulary_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +51,18 @@ impl DeleteVocabularyInputBuilder {
     }
     /// <p>The identifier of the custom vocabulary.</p>
     pub fn set_vocabulary_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_id = input;
-        self
+        self.vocabulary_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteVocabularyInput`](crate::operation::delete_vocabulary::DeleteVocabularyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_vocabulary::DeleteVocabularyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_vocabulary::DeleteVocabularyInput {
-            instance_id: self.instance_id,
-            vocabulary_id: self.vocabulary_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_vocabulary::DeleteVocabularyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_vocabulary::DeleteVocabularyInput {
+                instance_id: self.instance_id
+                ,
+                vocabulary_id: self.vocabulary_id
+                ,
+            }
+        )
     }
 }
+

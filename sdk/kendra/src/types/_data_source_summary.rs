@@ -3,7 +3,7 @@
 /// <p>Summary information for a Amazon Kendra data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSourceSummary {
+pub struct DataSourceSummary  {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct DataSourceSummary {
 }
 impl DataSourceSummary {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier for the data source.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the data source.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> std::option::Option<& str> {
         self.language_code.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The identifier for the data source.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The identifier for the data source.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The type of the data source.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
@@ -103,8 +101,7 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The type of the data source.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -112,12 +109,8 @@ impl DataSourceSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the data source connector was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,12 +118,8 @@ impl DataSourceSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the data source connector was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
@@ -138,12 +127,8 @@ impl DataSourceSummaryBuilder {
         self
     }
     /// <p>The status of the data source. When the status is <code>ACTIVE</code> the data source is ready to use.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DataSourceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DataSourceStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,19 +137,26 @@ impl DataSourceSummaryBuilder {
     }
     /// <p>The code for a language. This shows a supported language for all documents in the data source. English is supported by default. For more information on supported languages, including their codes, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding documents in languages other than English</a>.</p>
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// Consumes the builder and constructs a [`DataSourceSummary`](crate::types::DataSourceSummary).
     pub fn build(self) -> crate::types::DataSourceSummary {
         crate::types::DataSourceSummary {
-            name: self.name,
-            id: self.id,
-            r#type: self.r#type,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            status: self.status,
-            language_code: self.language_code,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            status: self.status
+            ,
+            language_code: self.language_code
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAssessmentRunInput {
+pub struct StartAssessmentRunInput  {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
     #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct StartAssessmentRunInput {
 }
 impl StartAssessmentRunInput {
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
         self.assessment_template_arn.as_deref()
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn assessment_run_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_name(&self) -> std::option::Option<& str> {
         self.assessment_run_name.as_deref()
     }
 }
 impl StartAssessmentRunInput {
     /// Creates a new builder-style object to manufacture [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
-    pub fn builder(
-    ) -> crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
+    pub fn builder() -> crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder {
         crate::operation::start_assessment_run::builders::StartAssessmentRunInputBuilder::default()
     }
 }
@@ -42,12 +41,8 @@ impl StartAssessmentRunInputBuilder {
         self
     }
     /// <p>The ARN of the assessment template of the assessment run that you want to start.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_template_arn = input;
-        self
+    pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_template_arn = input; self
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
     pub fn assessment_run_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,25 +50,19 @@ impl StartAssessmentRunInputBuilder {
         self
     }
     /// <p>You can specify the name for the assessment run. The name must be unique for the assessment template whose ARN is used to start the assessment run.</p>
-    pub fn set_assessment_run_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_run_name = input;
-        self
+    pub fn set_assessment_run_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_run_name = input; self
     }
     /// Consumes the builder and constructs a [`StartAssessmentRunInput`](crate::operation::start_assessment_run::StartAssessmentRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_assessment_run::StartAssessmentRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_assessment_run::StartAssessmentRunInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_assessment_run::StartAssessmentRunInput {
-                assessment_template_arn: self.assessment_template_arn,
-                assessment_run_name: self.assessment_run_name,
-            },
+                assessment_template_arn: self.assessment_template_arn
+                ,
+                assessment_run_name: self.assessment_run_name
+                ,
+            }
         )
     }
 }
+

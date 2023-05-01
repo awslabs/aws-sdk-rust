@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkAnalyzerConfigurationInput {
+pub struct DeleteNetworkAnalyzerConfigurationInput  {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
 }
 impl DeleteNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_name(&self) -> std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
 }
 impl DeleteNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAnalyzerConfigurationInput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput).
-    pub fn builder() -> crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationInputBuilder {
         crate::operation::delete_network_analyzer_configuration::builders::DeleteNetworkAnalyzerConfigurationInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl DeleteNetworkAnalyzerConfigurationInputBuilder {
         self
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_name = input;
-        self
+    pub fn set_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkAnalyzerConfigurationInput`](crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_network_analyzer_configuration::DeleteNetworkAnalyzerConfigurationInput {
                 configuration_name: self.configuration_name
@@ -50,3 +46,4 @@ impl DeleteNetworkAnalyzerConfigurationInputBuilder {
         )
     }
 }
+

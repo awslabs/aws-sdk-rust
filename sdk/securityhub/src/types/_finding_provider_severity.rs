@@ -3,7 +3,7 @@
 /// <p>The severity assigned to the finding by the finding provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingProviderSeverity {
+pub struct FindingProviderSeverity  {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
     #[doc(hidden)]
     pub label: std::option::Option<crate::types::SeverityLabel>,
@@ -13,11 +13,11 @@ pub struct FindingProviderSeverity {
 }
 impl FindingProviderSeverity {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
-    pub fn label(&self) -> std::option::Option<&crate::types::SeverityLabel> {
+    pub fn label(&self) -> std::option::Option<& crate::types::SeverityLabel> {
         self.label.as_ref()
     }
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn original(&self) -> std::option::Option<&str> {
+    pub fn original(&self) -> std::option::Option<& str> {
         self.original.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FindingProviderSeverityBuilder {
     }
     /// <p>The severity label assigned to the finding by the finding provider.</p>
     pub fn set_label(mut self, input: std::option::Option<crate::types::SeverityLabel>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The finding provider's original value for the severity.</p>
     pub fn original(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl FindingProviderSeverityBuilder {
     }
     /// <p>The finding provider's original value for the severity.</p>
     pub fn set_original(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.original = input;
-        self
+        self.original = input; self
     }
     /// Consumes the builder and constructs a [`FindingProviderSeverity`](crate::types::FindingProviderSeverity).
     pub fn build(self) -> crate::types::FindingProviderSeverity {
         crate::types::FindingProviderSeverity {
-            label: self.label,
-            original: self.original,
+            label: self.label
+            ,
+            original: self.original
+            ,
         }
     }
 }
+

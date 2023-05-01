@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentInput {
+pub struct CreateDeploymentInput  {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -21,30 +21,29 @@ pub struct CreateDeploymentInput {
 }
 impl CreateDeploymentInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
-    pub fn deployment_type(&self) -> std::option::Option<&crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> std::option::Option<& crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// The ID of the group version to be deployed.
-    pub fn group_version_id(&self) -> std::option::Option<&str> {
+    pub fn group_version_id(&self) -> std::option::Option<& str> {
         self.group_version_id.as_deref()
     }
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
@@ -66,12 +65,8 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.amzn_client_token = input;
-        self
+    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.amzn_client_token = input; self
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +75,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
@@ -89,12 +83,8 @@ impl CreateDeploymentInputBuilder {
         self
     }
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
-    pub fn set_deployment_type(
-        mut self,
-        input: std::option::Option<crate::types::DeploymentType>,
-    ) -> Self {
-        self.deployment_type = input;
-        self
+    pub fn set_deployment_type(mut self, input: std::option::Option<crate::types::DeploymentType>) -> Self {
+        self.deployment_type = input; self
     }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +93,7 @@ impl CreateDeploymentInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// The ID of the group version to be deployed.
     pub fn group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,22 +102,24 @@ impl CreateDeploymentInputBuilder {
     }
     /// The ID of the group version to be deployed.
     pub fn set_group_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_version_id = input;
-        self
+        self.group_version_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_deployment::CreateDeploymentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_deployment::CreateDeploymentInput {
-            amzn_client_token: self.amzn_client_token,
-            deployment_id: self.deployment_id,
-            deployment_type: self.deployment_type,
-            group_id: self.group_id,
-            group_version_id: self.group_version_id,
-        })
+    pub fn build(self) -> Result<crate::operation::create_deployment::CreateDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_deployment::CreateDeploymentInput {
+                amzn_client_token: self.amzn_client_token
+                ,
+                deployment_id: self.deployment_id
+                ,
+                deployment_type: self.deployment_type
+                ,
+                group_id: self.group_id
+                ,
+                group_version_id: self.group_version_id
+                ,
+            }
+        )
     }
 }
+

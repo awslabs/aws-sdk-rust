@@ -3,14 +3,14 @@
 /// Placeholder documentation for DeleteScheduleRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduleInput {
+pub struct DeleteScheduleInput  {
     /// Id of the channel whose schedule is being deleted.
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl DeleteScheduleInput {
     /// Id of the channel whose schedule is being deleted.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DeleteScheduleInputBuilder {
     }
     /// Id of the channel whose schedule is being deleted.
     pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteScheduleInput`](crate::operation::delete_schedule::DeleteScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_schedule::DeleteScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_schedule::DeleteScheduleInput {
-            channel_id: self.channel_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_schedule::DeleteScheduleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_schedule::DeleteScheduleInput {
+                channel_id: self.channel_id
+                ,
+            }
+        )
     }
 }
+

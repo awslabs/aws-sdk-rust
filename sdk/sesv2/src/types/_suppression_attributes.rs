@@ -3,24 +3,22 @@
 /// <p>An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuppressionAttributes {
-    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+pub struct SuppressionAttributes  {
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl SuppressionAttributes {
-    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
     /// </ul>
-    pub fn suppressed_reasons(
-        &self,
-    ) -> std::option::Option<&[crate::types::SuppressionListReason]> {
+    pub fn suppressed_reasons(&self) -> std::option::Option<& [crate::types::SuppressionListReason]> {
         self.suppressed_reasons.as_deref()
     }
 }
@@ -35,41 +33,38 @@ impl SuppressionAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SuppressionAttributesBuilder {
-    pub(crate) suppressed_reasons:
-        std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) suppressed_reasons: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl SuppressionAttributesBuilder {
     /// Appends an item to `suppressed_reasons`.
     ///
     /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
     ///
-    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
     /// </ul>
     pub fn suppressed_reasons(mut self, input: crate::types::SuppressionListReason) -> Self {
         let mut v = self.suppressed_reasons.unwrap_or_default();
-        v.push(input);
-        self.suppressed_reasons = Some(v);
-        self
+                        v.push(input);
+                        self.suppressed_reasons = Some(v);
+                        self
     }
-    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
+    /// <p>A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
     /// </ul>
-    pub fn set_suppressed_reasons(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
-    ) -> Self {
-        self.suppressed_reasons = input;
-        self
+    pub fn set_suppressed_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
+        self.suppressed_reasons = input; self
     }
     /// Consumes the builder and constructs a [`SuppressionAttributes`](crate::types::SuppressionAttributes).
     pub fn build(self) -> crate::types::SuppressionAttributes {
         crate::types::SuppressionAttributes {
-            suppressed_reasons: self.suppressed_reasons,
+            suppressed_reasons: self.suppressed_reasons
+            ,
         }
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMovingAddressesInput {
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
+pub struct DescribeMovingAddressesInput  {
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p> 
     /// <p>Default: If no value is provided, the default is 1000.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -24,36 +24,34 @@ pub struct DescribeMovingAddressesInput {
     pub public_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeMovingAddressesInput {
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p> 
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>One or more Elastic IP addresses.</p>
-    pub fn public_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn public_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.public_ips.as_deref()
     }
 }
 impl DescribeMovingAddressesInput {
     /// Creates a new builder-style object to manufacture [`DescribeMovingAddressesInput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder {
         crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder::default()
     }
 }
@@ -73,26 +71,22 @@ impl DescribeMovingAddressesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code> | <code>RestoringToClassic</code>).</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -101,20 +95,18 @@ impl DescribeMovingAddressesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p> 
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p>
+    /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a value outside of this range, an error is returned.</p> 
     /// <p>Default: If no value is provided, the default is 1000.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +115,7 @@ impl DescribeMovingAddressesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `public_ips`.
     ///
@@ -133,33 +124,30 @@ impl DescribeMovingAddressesInputBuilder {
     /// <p>One or more Elastic IP addresses.</p>
     pub fn public_ips(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.public_ips.unwrap_or_default();
-        v.push(input.into());
-        self.public_ips = Some(v);
-        self
+                        v.push(input.into());
+                        self.public_ips = Some(v);
+                        self
     }
     /// <p>One or more Elastic IP addresses.</p>
-    pub fn set_public_ips(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.public_ips = input;
-        self
+    pub fn set_public_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.public_ips = input; self
     }
     /// Consumes the builder and constructs a [`DescribeMovingAddressesInput`](crate::operation::describe_moving_addresses::DescribeMovingAddressesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_moving_addresses::DescribeMovingAddressesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_moving_addresses::DescribeMovingAddressesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_moving_addresses::DescribeMovingAddressesInput {
-                filters: self.filters,
-                dry_run: self.dry_run,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                public_ips: self.public_ips,
-            },
+                filters: self.filters
+                ,
+                dry_run: self.dry_run
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                public_ips: self.public_ips
+                ,
+            }
         )
     }
 }
+

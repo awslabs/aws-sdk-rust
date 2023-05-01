@@ -3,14 +3,14 @@
 /// <p>Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information and adult content. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopDataAttributes {
+pub struct HumanLoopDataAttributes  {
     /// <p>Sets whether the input image is free of personally identifiable information or adult content.</p>
     #[doc(hidden)]
     pub content_classifiers: std::option::Option<std::vec::Vec<crate::types::ContentClassifier>>,
 }
 impl HumanLoopDataAttributes {
     /// <p>Sets whether the input image is free of personally identifiable information or adult content.</p>
-    pub fn content_classifiers(&self) -> std::option::Option<&[crate::types::ContentClassifier]> {
+    pub fn content_classifiers(&self) -> std::option::Option<& [crate::types::ContentClassifier]> {
         self.content_classifiers.as_deref()
     }
 }
@@ -25,8 +25,7 @@ impl HumanLoopDataAttributes {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct HumanLoopDataAttributesBuilder {
-    pub(crate) content_classifiers:
-        std::option::Option<std::vec::Vec<crate::types::ContentClassifier>>,
+    pub(crate) content_classifiers: std::option::Option<std::vec::Vec<crate::types::ContentClassifier>>,
 }
 impl HumanLoopDataAttributesBuilder {
     /// Appends an item to `content_classifiers`.
@@ -36,22 +35,20 @@ impl HumanLoopDataAttributesBuilder {
     /// <p>Sets whether the input image is free of personally identifiable information or adult content.</p>
     pub fn content_classifiers(mut self, input: crate::types::ContentClassifier) -> Self {
         let mut v = self.content_classifiers.unwrap_or_default();
-        v.push(input);
-        self.content_classifiers = Some(v);
-        self
+                        v.push(input);
+                        self.content_classifiers = Some(v);
+                        self
     }
     /// <p>Sets whether the input image is free of personally identifiable information or adult content.</p>
-    pub fn set_content_classifiers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContentClassifier>>,
-    ) -> Self {
-        self.content_classifiers = input;
-        self
+    pub fn set_content_classifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContentClassifier>>) -> Self {
+        self.content_classifiers = input; self
     }
     /// Consumes the builder and constructs a [`HumanLoopDataAttributes`](crate::types::HumanLoopDataAttributes).
     pub fn build(self) -> crate::types::HumanLoopDataAttributes {
         crate::types::HumanLoopDataAttributes {
-            content_classifiers: self.content_classifiers,
+            content_classifiers: self.content_classifiers
+            ,
         }
     }
 }
+

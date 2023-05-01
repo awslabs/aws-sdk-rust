@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFileTransferOutput {
+pub struct StartFileTransferOutput  {
     /// <p>Returns the unique identifier for this file transfer. </p>
     #[doc(hidden)]
     pub transfer_id: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct StartFileTransferOutput {
 }
 impl StartFileTransferOutput {
     /// <p>Returns the unique identifier for this file transfer. </p>
-    pub fn transfer_id(&self) -> std::option::Option<&str> {
+    pub fn transfer_id(&self) -> std::option::Option<& str> {
         self.transfer_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartFileTransferOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartFileTransferOutput {
     /// Creates a new builder-style object to manufacture [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput).
-    pub fn builder(
-    ) -> crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder {
+    pub fn builder() -> crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder {
         crate::operation::start_file_transfer::builders::StartFileTransferOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl StartFileTransferOutputBuilder {
     }
     /// <p>Returns the unique identifier for this file transfer. </p>
     pub fn set_transfer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transfer_id = input;
-        self
+        self.transfer_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartFileTransferOutput`](crate::operation::start_file_transfer::StartFileTransferOutput).
     pub fn build(self) -> crate::operation::start_file_transfer::StartFileTransferOutput {
         crate::operation::start_file_transfer::StartFileTransferOutput {
-            transfer_id: self.transfer_id,
+            transfer_id: self.transfer_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,77 +4,55 @@ pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_d
 pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_device_types_input::GetVpnConnectionDeviceTypesInputBuilder;
 
 /// Fluent builder constructing a request to `GetVpnConnectionDeviceTypes`.
-///
+/// 
 /// <p>Obtain a list of customer gateway devices for which sample configuration files can be provided. The request has no additional parameters. You can also see the list of device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVpnConnectionDeviceTypesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_vpn_connection_device_types::builders::GetVpnConnectionDeviceTypesInputBuilder
             }
-impl GetVpnConnectionDeviceTypesFluentBuilder {
+impl GetVpnConnectionDeviceTypesFluentBuilder  {
     /// Creates a new `GetVpnConnectionDeviceTypes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypes, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput, aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator{
-        crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator {
+                            crate::operation::get_vpn_connection_device_types::paginator::GetVpnConnectionDeviceTypesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The maximum number of results returned by <code>GetVpnConnectionDeviceTypes</code> in paginated output. When this parameter is used, <code>GetVpnConnectionDeviceTypes</code> only returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetVpnConnectionDeviceTypes</code> request with the returned <code>NextToken</code> value. This value can be between 200 and 1000. If this parameter is not used, then <code>GetVpnConnectionDeviceTypes</code> returns all results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -106,3 +84,4 @@ impl GetVpnConnectionDeviceTypesFluentBuilder {
         self
     }
 }
+

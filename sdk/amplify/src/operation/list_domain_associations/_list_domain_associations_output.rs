@@ -3,7 +3,7 @@
 /// <p> The result structure for the list domain association request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainAssociationsOutput {
+pub struct ListDomainAssociationsOutput  {
     /// <p> A list of domain associations. </p>
     #[doc(hidden)]
     pub domain_associations: std::option::Option<std::vec::Vec<crate::types::DomainAssociation>>,
@@ -14,24 +14,22 @@ pub struct ListDomainAssociationsOutput {
 }
 impl ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
-    pub fn domain_associations(&self) -> std::option::Option<&[crate::types::DomainAssociation]> {
+    pub fn domain_associations(&self) -> std::option::Option<& [crate::types::DomainAssociation]> {
         self.domain_associations.as_deref()
     }
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDomainAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDomainAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainAssociationsOutput`](crate::operation::list_domain_associations::ListDomainAssociationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder {
         crate::operation::list_domain_associations::builders::ListDomainAssociationsOutputBuilder::default()
     }
 }
@@ -40,8 +38,7 @@ impl ListDomainAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDomainAssociationsOutputBuilder {
-    pub(crate) domain_associations:
-        std::option::Option<std::vec::Vec<crate::types::DomainAssociation>>,
+    pub(crate) domain_associations: std::option::Option<std::vec::Vec<crate::types::DomainAssociation>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +50,13 @@ impl ListDomainAssociationsOutputBuilder {
     /// <p> A list of domain associations. </p>
     pub fn domain_associations(mut self, input: crate::types::DomainAssociation) -> Self {
         let mut v = self.domain_associations.unwrap_or_default();
-        v.push(input);
-        self.domain_associations = Some(v);
-        self
+                        v.push(input);
+                        self.domain_associations = Some(v);
+                        self
     }
     /// <p> A list of domain associations. </p>
-    pub fn set_domain_associations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainAssociation>>,
-    ) -> Self {
-        self.domain_associations = input;
-        self
+    pub fn set_domain_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::DomainAssociation>>) -> Self {
+        self.domain_associations = input; self
     }
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,24 +65,26 @@ impl ListDomainAssociationsOutputBuilder {
     }
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDomainAssociationsOutput`](crate::operation::list_domain_associations::ListDomainAssociationsOutput).
     pub fn build(self) -> crate::operation::list_domain_associations::ListDomainAssociationsOutput {
         crate::operation::list_domain_associations::ListDomainAssociationsOutput {
-            domain_associations: self.domain_associations,
-            next_token: self.next_token,
+            domain_associations: self.domain_associations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

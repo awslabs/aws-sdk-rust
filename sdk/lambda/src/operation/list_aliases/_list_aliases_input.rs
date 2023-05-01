@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAliasesInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+pub struct ListAliasesInput  {
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -24,23 +24,23 @@ pub struct ListAliasesInput {
     pub max_items: std::option::Option<i32>,
 }
 impl ListAliasesInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>Specify a function version to only list aliases that invoke that version.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> std::option::Option<& str> {
         self.function_version.as_deref()
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Limit the number of aliases returned.</p>
@@ -65,29 +65,28 @@ pub struct ListAliasesInputBuilder {
     pub(crate) max_items: std::option::Option<i32>,
 }
 impl ListAliasesInputBuilder {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>Specify a function version to only list aliases that invoke that version.</p>
     pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +95,7 @@ impl ListAliasesInputBuilder {
     }
     /// <p>Specify a function version to only list aliases that invoke that version.</p>
     pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_version = input;
-        self
+        self.function_version = input; self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +104,7 @@ impl ListAliasesInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Limit the number of aliases returned.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -116,21 +113,22 @@ impl ListAliasesInputBuilder {
     }
     /// <p>Limit the number of aliases returned.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_aliases::ListAliasesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_aliases::ListAliasesInput {
-            function_name: self.function_name,
-            function_version: self.function_version,
-            marker: self.marker,
-            max_items: self.max_items,
-        })
+    pub fn build(self) -> Result<crate::operation::list_aliases::ListAliasesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_aliases::ListAliasesInput {
+                function_name: self.function_name
+                ,
+                function_version: self.function_version
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
+        )
     }
 }
+

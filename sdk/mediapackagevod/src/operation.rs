@@ -51,3 +51,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdatePackagingGroup` operation.
 pub mod update_packaging_group;
+

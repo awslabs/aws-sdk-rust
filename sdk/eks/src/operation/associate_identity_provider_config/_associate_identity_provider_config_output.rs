@@ -2,37 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateIdentityProviderConfigOutput {
+pub struct AssociateIdentityProviderConfigOutput  {
     /// <p>An object representing an asynchronous update.</p>
     #[doc(hidden)]
     pub update: std::option::Option<crate::types::Update>,
     /// <p>The tags for the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl AssociateIdentityProviderConfigOutput {
     /// <p>An object representing an asynchronous update.</p>
-    pub fn update(&self) -> std::option::Option<&crate::types::Update> {
+    pub fn update(&self) -> std::option::Option<& crate::types::Update> {
         self.update.as_ref()
     }
     /// <p>The tags for the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateIdentityProviderConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateIdentityProviderConfigOutput {
     /// Creates a new builder-style object to manufacture [`AssociateIdentityProviderConfigOutput`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput).
-    pub fn builder() -> crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigOutputBuilder{
+    pub fn builder() -> crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigOutputBuilder {
         crate::operation::associate_identity_provider_config::builders::AssociateIdentityProviderConfigOutputBuilder::default()
     }
 }
@@ -42,8 +38,7 @@ impl AssociateIdentityProviderConfigOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AssociateIdentityProviderConfigOutputBuilder {
     pub(crate) update: std::option::Option<crate::types::Update>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl AssociateIdentityProviderConfigOutputBuilder {
@@ -54,48 +49,34 @@ impl AssociateIdentityProviderConfigOutputBuilder {
     }
     /// <p>An object representing an asynchronous update.</p>
     pub fn set_update(mut self, input: std::option::Option<crate::types::Update>) -> Self {
-        self.update = input;
-        self
+        self.update = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags for the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateIdentityProviderConfigOutput`](crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput
-    {
+    pub fn build(self) -> crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput {
         crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput {
             update: self.update
             ,
@@ -105,3 +86,4 @@ impl AssociateIdentityProviderConfigOutputBuilder {
         }
     }
 }
+

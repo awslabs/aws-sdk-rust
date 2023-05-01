@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecommendationFeedbackInput {
+pub struct PutRecommendationFeedbackInput  {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
     pub code_review_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct PutRecommendationFeedbackInput {
 }
 impl PutRecommendationFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
-    pub fn reactions(&self) -> std::option::Option<&[crate::types::Reaction]> {
+    pub fn reactions(&self) -> std::option::Option<& [crate::types::Reaction]> {
         self.reactions.as_deref()
     }
 }
 impl PutRecommendationFeedbackInput {
     /// Creates a new builder-style object to manufacture [`PutRecommendationFeedbackInput`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput).
-    pub fn builder() -> crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder{
+    pub fn builder() -> crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder {
         crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl PutRecommendationFeedbackInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_review_arn = input;
-        self
+        self.code_review_arn = input; self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
     pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,12 +58,8 @@ impl PutRecommendationFeedbackInputBuilder {
         self
     }
     /// <p>The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recommendation_id = input; self
     }
     /// Appends an item to `reactions`.
     ///
@@ -73,31 +68,26 @@ impl PutRecommendationFeedbackInputBuilder {
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
     pub fn reactions(mut self, input: crate::types::Reaction) -> Self {
         let mut v = self.reactions.unwrap_or_default();
-        v.push(input);
-        self.reactions = Some(v);
-        self
+                        v.push(input);
+                        self.reactions = Some(v);
+                        self
     }
     /// <p>List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.</p>
-    pub fn set_reactions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Reaction>>,
-    ) -> Self {
-        self.reactions = input;
-        self
+    pub fn set_reactions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Reaction>>) -> Self {
+        self.reactions = input; self
     }
     /// Consumes the builder and constructs a [`PutRecommendationFeedbackInput`](crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_recommendation_feedback::PutRecommendationFeedbackInput {
-                code_review_arn: self.code_review_arn,
-                recommendation_id: self.recommendation_id,
-                reactions: self.reactions,
-            },
+                code_review_arn: self.code_review_arn
+                ,
+                recommendation_id: self.recommendation_id
+                ,
+                reactions: self.reactions
+                ,
+            }
         )
     }
 }
+

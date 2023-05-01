@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGlobalSettingsOutput {
+pub struct GetGlobalSettingsOutput  {
     /// <p>The Amazon Chime Business Calling settings.</p>
     #[doc(hidden)]
     pub business_calling: std::option::Option<crate::types::BusinessCallingSettings>,
@@ -13,23 +13,22 @@ pub struct GetGlobalSettingsOutput {
 }
 impl GetGlobalSettingsOutput {
     /// <p>The Amazon Chime Business Calling settings.</p>
-    pub fn business_calling(&self) -> std::option::Option<&crate::types::BusinessCallingSettings> {
+    pub fn business_calling(&self) -> std::option::Option<& crate::types::BusinessCallingSettings> {
         self.business_calling.as_ref()
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    pub fn voice_connector(&self) -> std::option::Option<&crate::types::VoiceConnectorSettings> {
+    pub fn voice_connector(&self) -> std::option::Option<& crate::types::VoiceConnectorSettings> {
         self.voice_connector.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetGlobalSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetGlobalSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder {
         crate::operation::get_global_settings::builders::GetGlobalSettingsOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl GetGlobalSettingsOutputBuilder {
         self
     }
     /// <p>The Amazon Chime Business Calling settings.</p>
-    pub fn set_business_calling(
-        mut self,
-        input: std::option::Option<crate::types::BusinessCallingSettings>,
-    ) -> Self {
-        self.business_calling = input;
-        self
+    pub fn set_business_calling(mut self, input: std::option::Option<crate::types::BusinessCallingSettings>) -> Self {
+        self.business_calling = input; self
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
     pub fn voice_connector(mut self, input: crate::types::VoiceConnectorSettings) -> Self {
@@ -62,28 +57,27 @@ impl GetGlobalSettingsOutputBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector settings.</p>
-    pub fn set_voice_connector(
-        mut self,
-        input: std::option::Option<crate::types::VoiceConnectorSettings>,
-    ) -> Self {
-        self.voice_connector = input;
-        self
+    pub fn set_voice_connector(mut self, input: std::option::Option<crate::types::VoiceConnectorSettings>) -> Self {
+        self.voice_connector = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetGlobalSettingsOutput`](crate::operation::get_global_settings::GetGlobalSettingsOutput).
     pub fn build(self) -> crate::operation::get_global_settings::GetGlobalSettingsOutput {
         crate::operation::get_global_settings::GetGlobalSettingsOutput {
-            business_calling: self.business_calling,
-            voice_connector: self.voice_connector,
+            business_calling: self.business_calling
+            ,
+            voice_connector: self.voice_connector
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

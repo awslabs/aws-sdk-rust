@@ -4,67 +4,49 @@ pub use crate::operation::put_file::_put_file_output::PutFileOutputBuilder;
 pub use crate::operation::put_file::_put_file_input::PutFileInputBuilder;
 
 /// Fluent builder constructing a request to `PutFile`.
-///
+/// 
 /// <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutFileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_file::builders::PutFileInputBuilder,
-}
-impl PutFileFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_file::builders::PutFileInputBuilder
+            }
+impl PutFileFluentBuilder  {
     /// Creates a new `PutFile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_file::PutFile,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_file::PutFileOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_file::PutFile, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_file::PutFileOutput, aws_smithy_http::result::SdkError<crate::operation::put_file::PutFileError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the repository where you want to add or update the file.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
@@ -95,15 +77,15 @@ impl PutFileFluentBuilder {
         self.inner = self.inner.set_file_content(input);
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
-    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note> 
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p> 
     /// </note>
     pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.file_path(input.into());
         self
     }
-    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note>
-    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p>
+    /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p> <note> 
+    /// <p>If the path does not currently exist in the repository, the path is created as part of adding the file.</p> 
     /// </note>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_file_path(input);
@@ -115,20 +97,17 @@ impl PutFileFluentBuilder {
         self
     }
     /// <p>The file mode permissions of the blob. Valid file mode permissions are listed here.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
+    pub fn set_file_mode(mut self, input: std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
         self.inner = self.inner.set_file_mode(input);
         self
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> 
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.parent_commit_id(input.into());
         self
     }
-    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
+    /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository, no commit ID is required. If this is not an empty repository, a commit ID is required. </p> 
     /// <p>The commit ID must match the ID of the head commit at the time of the operation. Otherwise, an error occurs, and the file is not added or updated.</p>
     pub fn set_parent_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_parent_commit_id(input);
@@ -165,3 +144,4 @@ impl PutFileFluentBuilder {
         self
     }
 }
+

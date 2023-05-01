@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOtaUpdateOutput {
+pub struct GetOtaUpdateOutput  {
     /// <p>The OTA update info.</p>
     #[doc(hidden)]
     pub ota_update_info: std::option::Option<crate::types::OtaUpdateInfo>,
@@ -10,15 +10,15 @@ pub struct GetOtaUpdateOutput {
 }
 impl GetOtaUpdateOutput {
     /// <p>The OTA update info.</p>
-    pub fn ota_update_info(&self) -> std::option::Option<&crate::types::OtaUpdateInfo> {
+    pub fn ota_update_info(&self) -> std::option::Option<& crate::types::OtaUpdateInfo> {
         self.ota_update_info.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetOtaUpdateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetOtaUpdateOutput {
     /// Creates a new builder-style object to manufacture [`GetOtaUpdateOutput`](crate::operation::get_ota_update::GetOtaUpdateOutput).
     pub fn builder() -> crate::operation::get_ota_update::builders::GetOtaUpdateOutputBuilder {
@@ -40,27 +40,25 @@ impl GetOtaUpdateOutputBuilder {
         self
     }
     /// <p>The OTA update info.</p>
-    pub fn set_ota_update_info(
-        mut self,
-        input: std::option::Option<crate::types::OtaUpdateInfo>,
-    ) -> Self {
-        self.ota_update_info = input;
-        self
+    pub fn set_ota_update_info(mut self, input: std::option::Option<crate::types::OtaUpdateInfo>) -> Self {
+        self.ota_update_info = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetOtaUpdateOutput`](crate::operation::get_ota_update::GetOtaUpdateOutput).
     pub fn build(self) -> crate::operation::get_ota_update::GetOtaUpdateOutput {
         crate::operation::get_ota_update::GetOtaUpdateOutput {
-            ota_update_info: self.ota_update_info,
+            ota_update_info: self.ota_update_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

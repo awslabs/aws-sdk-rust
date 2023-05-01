@@ -3,16 +3,14 @@
 /// <p>The shape conditional formatting of a filled map visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShapeConditionalFormat {
+pub struct ShapeConditionalFormat  {
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
     #[doc(hidden)]
     pub background_color: std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl ShapeConditionalFormat {
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
-    pub fn background_color(
-        &self,
-    ) -> std::option::Option<&crate::types::ConditionalFormattingColor> {
+    pub fn background_color(&self) -> std::option::Option<& crate::types::ConditionalFormattingColor> {
         self.background_color.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl ShapeConditionalFormatBuilder {
         self
     }
     /// <p>The conditional formatting for the shape background color of a filled map visual.</p>
-    pub fn set_background_color(
-        mut self,
-        input: std::option::Option<crate::types::ConditionalFormattingColor>,
-    ) -> Self {
-        self.background_color = input;
-        self
+    pub fn set_background_color(mut self, input: std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
+        self.background_color = input; self
     }
     /// Consumes the builder and constructs a [`ShapeConditionalFormat`](crate::types::ShapeConditionalFormat).
     pub fn build(self) -> crate::types::ShapeConditionalFormat {
         crate::types::ShapeConditionalFormat {
-            background_color: self.background_color,
+            background_color: self.background_color
+            ,
         }
     }
 }
+

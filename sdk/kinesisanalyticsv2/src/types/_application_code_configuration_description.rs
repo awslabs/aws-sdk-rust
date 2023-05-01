@@ -3,7 +3,7 @@
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationCodeConfigurationDescription {
+pub struct ApplicationCodeConfigurationDescription  {
     /// <p>Specifies whether the code content is in text or zip format.</p>
     #[doc(hidden)]
     pub code_content_type: std::option::Option<crate::types::CodeContentType>,
@@ -13,13 +13,11 @@ pub struct ApplicationCodeConfigurationDescription {
 }
 impl ApplicationCodeConfigurationDescription {
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn code_content_type(&self) -> std::option::Option<&crate::types::CodeContentType> {
+    pub fn code_content_type(&self) -> std::option::Option<& crate::types::CodeContentType> {
         self.code_content_type.as_ref()
     }
     /// <p>Describes details about the location and format of the application code.</p>
-    pub fn code_content_description(
-        &self,
-    ) -> std::option::Option<&crate::types::CodeContentDescription> {
+    pub fn code_content_description(&self) -> std::option::Option<& crate::types::CodeContentDescription> {
         self.code_content_description.as_ref()
     }
 }
@@ -44,12 +42,8 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
         self
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn set_code_content_type(
-        mut self,
-        input: std::option::Option<crate::types::CodeContentType>,
-    ) -> Self {
-        self.code_content_type = input;
-        self
+    pub fn set_code_content_type(mut self, input: std::option::Option<crate::types::CodeContentType>) -> Self {
+        self.code_content_type = input; self
     }
     /// <p>Describes details about the location and format of the application code.</p>
     pub fn code_content_description(mut self, input: crate::types::CodeContentDescription) -> Self {
@@ -57,18 +51,17 @@ impl ApplicationCodeConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes details about the location and format of the application code.</p>
-    pub fn set_code_content_description(
-        mut self,
-        input: std::option::Option<crate::types::CodeContentDescription>,
-    ) -> Self {
-        self.code_content_description = input;
-        self
+    pub fn set_code_content_description(mut self, input: std::option::Option<crate::types::CodeContentDescription>) -> Self {
+        self.code_content_description = input; self
     }
     /// Consumes the builder and constructs a [`ApplicationCodeConfigurationDescription`](crate::types::ApplicationCodeConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationCodeConfigurationDescription {
         crate::types::ApplicationCodeConfigurationDescription {
-            code_content_type: self.code_content_type,
-            code_content_description: self.code_content_description,
+            code_content_type: self.code_content_type
+            ,
+            code_content_description: self.code_content_description
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSkillGroupOutput {
+pub struct GetSkillGroupOutput  {
     /// <p>The details of the skill group requested. Required.</p>
     #[doc(hidden)]
     pub skill_group: std::option::Option<crate::types::SkillGroup>,
@@ -10,15 +10,15 @@ pub struct GetSkillGroupOutput {
 }
 impl GetSkillGroupOutput {
     /// <p>The details of the skill group requested. Required.</p>
-    pub fn skill_group(&self) -> std::option::Option<&crate::types::SkillGroup> {
+    pub fn skill_group(&self) -> std::option::Option<& crate::types::SkillGroup> {
         self.skill_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSkillGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSkillGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetSkillGroupOutput`](crate::operation::get_skill_group::GetSkillGroupOutput).
     pub fn builder() -> crate::operation::get_skill_group::builders::GetSkillGroupOutputBuilder {
@@ -41,23 +41,24 @@ impl GetSkillGroupOutputBuilder {
     }
     /// <p>The details of the skill group requested. Required.</p>
     pub fn set_skill_group(mut self, input: std::option::Option<crate::types::SkillGroup>) -> Self {
-        self.skill_group = input;
-        self
+        self.skill_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSkillGroupOutput`](crate::operation::get_skill_group::GetSkillGroupOutput).
     pub fn build(self) -> crate::operation::get_skill_group::GetSkillGroupOutput {
         crate::operation::get_skill_group::GetSkillGroupOutput {
-            skill_group: self.skill_group,
+            skill_group: self.skill_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagementOptions {
+pub struct ListManagementOptions  {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ListManagementOptions {
 }
 impl ListManagementOptions {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>The name of the topic.</p>
-    pub fn topic_name(&self) -> std::option::Option<&str> {
+    pub fn topic_name(&self) -> std::option::Option<& str> {
         self.topic_name.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl ListManagementOptionsBuilder {
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.contact_list_name = input;
-        self
+    pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.contact_list_name = input; self
     }
     /// <p>The name of the topic.</p>
     pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl ListManagementOptionsBuilder {
     }
     /// <p>The name of the topic.</p>
     pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_name = input;
-        self
+        self.topic_name = input; self
     }
     /// Consumes the builder and constructs a [`ListManagementOptions`](crate::types::ListManagementOptions).
     pub fn build(self) -> crate::types::ListManagementOptions {
         crate::types::ListManagementOptions {
-            contact_list_name: self.contact_list_name,
-            topic_name: self.topic_name,
+            contact_list_name: self.contact_list_name
+            ,
+            topic_name: self.topic_name
+            ,
         }
     }
 }
+

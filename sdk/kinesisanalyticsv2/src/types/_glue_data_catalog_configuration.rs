@@ -3,14 +3,14 @@
 /// <p>The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueDataCatalogConfiguration {
+pub struct GlueDataCatalogConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
     pub database_arn: std::option::Option<std::string::String>,
 }
 impl GlueDataCatalogConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn(&self) -> std::option::Option<&str> {
+    pub fn database_arn(&self) -> std::option::Option<& str> {
         self.database_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl GlueDataCatalogConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn set_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_arn = input;
-        self
+        self.database_arn = input; self
     }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfiguration`](crate::types::GlueDataCatalogConfiguration).
     pub fn build(self) -> crate::types::GlueDataCatalogConfiguration {
         crate::types::GlueDataCatalogConfiguration {
-            database_arn: self.database_arn,
+            database_arn: self.database_arn
+            ,
         }
     }
 }
+

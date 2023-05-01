@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePricingRuleInput {
+pub struct UpdatePricingRuleInput  {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct UpdatePricingRuleInput {
 }
 impl UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The new description for the pricing rule. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The new pricing rule type. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PricingRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PricingRuleType> {
         self.r#type.as_ref()
     }
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
@@ -44,11 +44,11 @@ impl UpdatePricingRuleInput {
         self.modifier_percentage
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn tiering(&self) -> std::option::Option<&crate::types::UpdateTieringInput> {
+    pub fn tiering(&self) -> std::option::Option<& crate::types::UpdateTieringInput> {
         self.tiering.as_ref()
     }
 }
-impl std::fmt::Debug for UpdatePricingRuleInput {
+impl  std::fmt::Debug for UpdatePricingRuleInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePricingRuleInput");
         formatter.field("arn", &self.arn);
@@ -62,8 +62,7 @@ impl std::fmt::Debug for UpdatePricingRuleInput {
 }
 impl UpdatePricingRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdatePricingRuleInput`](crate::operation::update_pricing_rule::UpdatePricingRuleInput).
-    pub fn builder(
-    ) -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
+    pub fn builder() -> crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder {
         crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder::default()
     }
 }
@@ -87,8 +86,7 @@ impl UpdatePricingRuleInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +95,7 @@ impl UpdatePricingRuleInputBuilder {
     }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The new description for the pricing rule. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +104,7 @@ impl UpdatePricingRuleInputBuilder {
     }
     /// <p> The new description for the pricing rule. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The new pricing rule type. </p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
@@ -117,8 +113,7 @@ impl UpdatePricingRuleInputBuilder {
     }
     /// <p> The new pricing rule type. </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PricingRuleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -127,8 +122,7 @@ impl UpdatePricingRuleInputBuilder {
     }
     /// <p> The new modifier to show pricing plan rates as a percentage. </p>
     pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.modifier_percentage = input;
-        self
+        self.modifier_percentage = input; self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
     pub fn tiering(mut self, input: crate::types::UpdateTieringInput) -> Self {
@@ -136,29 +130,26 @@ impl UpdatePricingRuleInputBuilder {
         self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn set_tiering(
-        mut self,
-        input: std::option::Option<crate::types::UpdateTieringInput>,
-    ) -> Self {
-        self.tiering = input;
-        self
+    pub fn set_tiering(mut self, input: std::option::Option<crate::types::UpdateTieringInput>) -> Self {
+        self.tiering = input; self
     }
     /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::operation::update_pricing_rule::UpdatePricingRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_pricing_rule::UpdatePricingRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_pricing_rule::UpdatePricingRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_pricing_rule::UpdatePricingRuleInput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                modifier_percentage: self.modifier_percentage,
-                tiering: self.tiering,
-            },
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                modifier_percentage: self.modifier_percentage
+                ,
+                tiering: self.tiering
+                ,
+            }
         )
     }
 }
@@ -174,3 +165,4 @@ impl std::fmt::Debug for UpdatePricingRuleInputBuilder {
         formatter.finish()
     }
 }
+

@@ -4,65 +4,56 @@ pub use crate::operation::get_enrollment_statuses_for_organization::_get_enrollm
 pub use crate::operation::get_enrollment_statuses_for_organization::_get_enrollment_statuses_for_organization_input::GetEnrollmentStatusesForOrganizationInputBuilder;
 
 /// Fluent builder constructing a request to `GetEnrollmentStatusesForOrganization`.
-///
-/// <p>Returns the Compute Optimizer enrollment (opt-in) status of organization member accounts, if your account is an organization management account.</p>
+/// 
+/// <p>Returns the Compute Optimizer enrollment (opt-in) status of organization member accounts, if your account is an organization management account.</p> 
 /// <p>To get the enrollment status of standalone accounts, use the <code>GetEnrollmentStatus</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_enrollment_statuses_for_organization::builders::GetEnrollmentStatusesForOrganizationInputBuilder
             }
-impl GetEnrollmentStatusesForOrganizationFluentBuilder {
+impl GetEnrollmentStatusesForOrganizationFluentBuilder  {
     /// Creates a new `GetEnrollmentStatusesForOrganization`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationOutput, aws_smithy_http::result::SdkError<crate::operation::get_enrollment_statuses_for_organization::GetEnrollmentStatusesForOrganizationError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_enrollment_statuses_for_organization::paginator::GetEnrollmentStatusesForOrganizationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_enrollment_statuses_for_organization::paginator::GetEnrollmentStatusesForOrganizationPaginator{
-        crate::operation::get_enrollment_statuses_for_organization::paginator::GetEnrollmentStatusesForOrganizationPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_enrollment_statuses_for_organization::paginator::GetEnrollmentStatusesForOrganizationPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_enrollment_statuses_for_organization::paginator::GetEnrollmentStatusesForOrganizationPaginator {
+                            crate::operation::get_enrollment_statuses_for_organization::paginator::GetEnrollmentStatusesForOrganizationPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -73,10 +64,7 @@ impl GetEnrollmentStatusesForOrganizationFluentBuilder {
         self
     }
     /// <p>An array of objects to specify a filter that returns a more specific list of account enrollment statuses.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnrollmentFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnrollmentFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -90,16 +78,17 @@ impl GetEnrollmentStatusesForOrganizationFluentBuilder {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
+    /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p> 
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p>
+    /// <p>The maximum number of account enrollment statuses to return with a single request. You can specify up to 100 statuses to return with each request.</p> 
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
 }
+

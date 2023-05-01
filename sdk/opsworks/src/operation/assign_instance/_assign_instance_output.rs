@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssignInstanceOutput {
+pub struct AssignInstanceOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssignInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssignInstanceOutput {
     /// Creates a new builder-style object to manufacture [`AssignInstanceOutput`](crate::operation::assign_instance::AssignInstanceOutput).
     pub fn builder() -> crate::operation::assign_instance::builders::AssignInstanceOutputBuilder {
@@ -25,14 +25,14 @@ pub struct AssignInstanceOutputBuilder {
 }
 impl AssignInstanceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssignInstanceOutput`](crate::operation::assign_instance::AssignInstanceOutput).
     pub fn build(self) -> crate::operation::assign_instance::AssignInstanceOutput {
         crate::operation::assign_instance::AssignInstanceOutput {
@@ -40,3 +40,4 @@ impl AssignInstanceOutputBuilder {
         }
     }
 }
+

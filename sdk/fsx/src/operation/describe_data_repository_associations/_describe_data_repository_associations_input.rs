@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataRepositoryAssociationsInput {
+pub struct DescribeDataRepositoryAssociationsInput  {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
     #[doc(hidden)]
     pub association_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,11 +18,11 @@ pub struct DescribeDataRepositoryAssociationsInput {
 }
 impl DescribeDataRepositoryAssociationsInput {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn association_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn association_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.association_ids.as_deref()
     }
     /// <p>A list of <code>Filter</code> elements.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
@@ -30,13 +30,13 @@ impl DescribeDataRepositoryAssociationsInput {
         self.max_results
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeDataRepositoryAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDataRepositoryAssociationsInput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput).
-    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder {
         crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder::default()
     }
 }
@@ -58,17 +58,13 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
     pub fn association_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.association_ids.unwrap_or_default();
-        v.push(input.into());
-        self.association_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.association_ids = Some(v);
+                        self
     }
     /// <p>IDs of the data repository associations whose descriptions you want to retrieve (String).</p>
-    pub fn set_association_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.association_ids = input;
-        self
+    pub fn set_association_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.association_ids = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -77,17 +73,13 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
     /// <p>A list of <code>Filter</code> elements.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>A list of <code>Filter</code> elements.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,8 +88,7 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
     }
     /// <p>The maximum number of resources to return in the response. This value must be an integer greater than zero.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,11 +97,10 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDataRepositoryAssociationsInput`](crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsInput {
                 association_ids: self.association_ids
@@ -125,3 +115,4 @@ impl DescribeDataRepositoryAssociationsInputBuilder {
         )
     }
 }
+

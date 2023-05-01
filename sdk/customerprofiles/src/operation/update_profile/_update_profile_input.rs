@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfileInput {
+pub struct UpdateProfileInput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -71,8 +71,7 @@ pub struct UpdateProfileInput {
     pub billing_address: std::option::Option<crate::types::UpdateAddress>,
     /// <p>A key value pair of attributes of a customer profile.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
     #[doc(hidden)]
     pub party_type_string: std::option::Option<std::string::String>,
@@ -82,106 +81,103 @@ pub struct UpdateProfileInput {
 }
 impl UpdateProfileInput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of a customer profile.</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> std::option::Option<& str> {
         self.profile_id.as_deref()
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn additional_information(&self) -> std::option::Option<&str> {
+    pub fn additional_information(&self) -> std::option::Option<& str> {
         self.additional_information.as_deref()
     }
     /// <p>A unique account number that you have given to the customer.</p>
-    pub fn account_number(&self) -> std::option::Option<&str> {
+    pub fn account_number(&self) -> std::option::Option<& str> {
         self.account_number.as_deref()
     }
     /// <p>The type of profile used to describe the customer.</p>
-    pub fn party_type(&self) -> std::option::Option<&crate::types::PartyType> {
+    pub fn party_type(&self) -> std::option::Option<& crate::types::PartyType> {
         self.party_type.as_ref()
     }
     /// <p>The name of the customer’s business.</p>
-    pub fn business_name(&self) -> std::option::Option<&str> {
+    pub fn business_name(&self) -> std::option::Option<& str> {
         self.business_name.as_deref()
     }
     /// <p>The customer’s first name.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The customer’s middle name.</p>
-    pub fn middle_name(&self) -> std::option::Option<&str> {
+    pub fn middle_name(&self) -> std::option::Option<& str> {
         self.middle_name.as_deref()
     }
     /// <p>The customer’s last name.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
     /// <p>The customer’s birth date. </p>
-    pub fn birth_date(&self) -> std::option::Option<&str> {
+    pub fn birth_date(&self) -> std::option::Option<& str> {
         self.birth_date.as_deref()
     }
     /// <p>The gender with which the customer identifies. </p>
-    pub fn gender(&self) -> std::option::Option<&crate::types::Gender> {
+    pub fn gender(&self) -> std::option::Option<& crate::types::Gender> {
         self.gender.as_ref()
     }
     /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn mobile_phone_number(&self) -> std::option::Option<&str> {
+    pub fn mobile_phone_number(&self) -> std::option::Option<& str> {
         self.mobile_phone_number.as_deref()
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn home_phone_number(&self) -> std::option::Option<&str> {
+    pub fn home_phone_number(&self) -> std::option::Option<& str> {
         self.home_phone_number.as_deref()
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn business_phone_number(&self) -> std::option::Option<&str> {
+    pub fn business_phone_number(&self) -> std::option::Option<& str> {
         self.business_phone_number.as_deref()
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn personal_email_address(&self) -> std::option::Option<&str> {
+    pub fn personal_email_address(&self) -> std::option::Option<& str> {
         self.personal_email_address.as_deref()
     }
     /// <p>The customer’s business email address.</p>
-    pub fn business_email_address(&self) -> std::option::Option<&str> {
+    pub fn business_email_address(&self) -> std::option::Option<& str> {
         self.business_email_address.as_deref()
     }
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
-    pub fn address(&self) -> std::option::Option<&crate::types::UpdateAddress> {
+    pub fn address(&self) -> std::option::Option<& crate::types::UpdateAddress> {
         self.address.as_ref()
     }
     /// <p>The customer’s shipping address.</p>
-    pub fn shipping_address(&self) -> std::option::Option<&crate::types::UpdateAddress> {
+    pub fn shipping_address(&self) -> std::option::Option<& crate::types::UpdateAddress> {
         self.shipping_address.as_ref()
     }
     /// <p>The customer’s mailing address.</p>
-    pub fn mailing_address(&self) -> std::option::Option<&crate::types::UpdateAddress> {
+    pub fn mailing_address(&self) -> std::option::Option<& crate::types::UpdateAddress> {
         self.mailing_address.as_ref()
     }
     /// <p>The customer’s billing address.</p>
-    pub fn billing_address(&self) -> std::option::Option<&crate::types::UpdateAddress> {
+    pub fn billing_address(&self) -> std::option::Option<& crate::types::UpdateAddress> {
         self.billing_address.as_ref()
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn party_type_string(&self) -> std::option::Option<&str> {
+    pub fn party_type_string(&self) -> std::option::Option<& str> {
         self.party_type_string.as_deref()
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
-    pub fn gender_string(&self) -> std::option::Option<&str> {
+    pub fn gender_string(&self) -> std::option::Option<& str> {
         self.gender_string.as_deref()
     }
 }
@@ -218,8 +214,7 @@ pub struct UpdateProfileInputBuilder {
     pub(crate) shipping_address: std::option::Option<crate::types::UpdateAddress>,
     pub(crate) mailing_address: std::option::Option<crate::types::UpdateAddress>,
     pub(crate) billing_address: std::option::Option<crate::types::UpdateAddress>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) party_type_string: std::option::Option<std::string::String>,
     pub(crate) gender_string: std::option::Option<std::string::String>,
 }
@@ -231,8 +226,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,8 +235,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The unique identifier of a customer profile.</p>
     pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_id = input;
-        self
+        self.profile_id = input; self
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
     pub fn additional_information(mut self, input: impl Into<std::string::String>) -> Self {
@@ -250,12 +243,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn set_additional_information(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.additional_information = input;
-        self
+    pub fn set_additional_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.additional_information = input; self
     }
     /// <p>A unique account number that you have given to the customer.</p>
     pub fn account_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -264,8 +253,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>A unique account number that you have given to the customer.</p>
     pub fn set_account_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_number = input;
-        self
+        self.account_number = input; self
     }
     /// <p>The type of profile used to describe the customer.</p>
     pub fn party_type(mut self, input: crate::types::PartyType) -> Self {
@@ -274,8 +262,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The type of profile used to describe the customer.</p>
     pub fn set_party_type(mut self, input: std::option::Option<crate::types::PartyType>) -> Self {
-        self.party_type = input;
-        self
+        self.party_type = input; self
     }
     /// <p>The name of the customer’s business.</p>
     pub fn business_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,8 +271,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The name of the customer’s business.</p>
     pub fn set_business_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.business_name = input;
-        self
+        self.business_name = input; self
     }
     /// <p>The customer’s first name.</p>
     pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -294,8 +280,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The customer’s first name.</p>
     pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The customer’s middle name.</p>
     pub fn middle_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -304,8 +289,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The customer’s middle name.</p>
     pub fn set_middle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.middle_name = input;
-        self
+        self.middle_name = input; self
     }
     /// <p>The customer’s last name.</p>
     pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -314,8 +298,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The customer’s last name.</p>
     pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// <p>The customer’s birth date. </p>
     pub fn birth_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -324,8 +307,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The customer’s birth date. </p>
     pub fn set_birth_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.birth_date = input;
-        self
+        self.birth_date = input; self
     }
     /// <p>The gender with which the customer identifies. </p>
     pub fn gender(mut self, input: crate::types::Gender) -> Self {
@@ -334,8 +316,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The gender with which the customer identifies. </p>
     pub fn set_gender(mut self, input: std::option::Option<crate::types::Gender>) -> Self {
-        self.gender = input;
-        self
+        self.gender = input; self
     }
     /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,8 +325,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The customer’s phone number, which has not been specified as a mobile, home, or business number. </p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The customer’s mobile phone number.</p>
     pub fn mobile_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -353,12 +333,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn set_mobile_phone_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.mobile_phone_number = input;
-        self
+    pub fn set_mobile_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.mobile_phone_number = input; self
     }
     /// <p>The customer’s home phone number.</p>
     pub fn home_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -366,12 +342,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn set_home_phone_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.home_phone_number = input;
-        self
+    pub fn set_home_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.home_phone_number = input; self
     }
     /// <p>The customer’s business phone number.</p>
     pub fn business_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -379,12 +351,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn set_business_phone_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.business_phone_number = input;
-        self
+    pub fn set_business_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.business_phone_number = input; self
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,8 +361,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The customer’s email address, which has not been specified as a personal or business address. </p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The customer’s personal email address.</p>
     pub fn personal_email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -402,12 +369,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn set_personal_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.personal_email_address = input;
-        self
+    pub fn set_personal_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.personal_email_address = input; self
     }
     /// <p>The customer’s business email address.</p>
     pub fn business_email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -415,12 +378,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s business email address.</p>
-    pub fn set_business_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.business_email_address = input;
-        self
+    pub fn set_business_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.business_email_address = input; self
     }
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn address(mut self, input: crate::types::UpdateAddress) -> Self {
@@ -429,8 +388,7 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>A generic address associated with the customer that is not mailing, shipping, or billing.</p>
     pub fn set_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The customer’s shipping address.</p>
     pub fn shipping_address(mut self, input: crate::types::UpdateAddress) -> Self {
@@ -438,12 +396,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s shipping address.</p>
-    pub fn set_shipping_address(
-        mut self,
-        input: std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
-        self.shipping_address = input;
-        self
+    pub fn set_shipping_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
+        self.shipping_address = input; self
     }
     /// <p>The customer’s mailing address.</p>
     pub fn mailing_address(mut self, input: crate::types::UpdateAddress) -> Self {
@@ -451,12 +405,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s mailing address.</p>
-    pub fn set_mailing_address(
-        mut self,
-        input: std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
-        self.mailing_address = input;
-        self
+    pub fn set_mailing_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
+        self.mailing_address = input; self
     }
     /// <p>The customer’s billing address.</p>
     pub fn billing_address(mut self, input: crate::types::UpdateAddress) -> Self {
@@ -464,37 +414,23 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>The customer’s billing address.</p>
-    pub fn set_billing_address(
-        mut self,
-        input: std::option::Option<crate::types::UpdateAddress>,
-    ) -> Self {
-        self.billing_address = input;
-        self
+    pub fn set_billing_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
+        self.billing_address = input; self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn attributes(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = Some(hash_map);
+                        self
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
     pub fn party_type_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,12 +438,8 @@ impl UpdateProfileInputBuilder {
         self
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn set_party_type_string(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.party_type_string = input;
-        self
+    pub fn set_party_type_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.party_type_string = input; self
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
     pub fn gender_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -516,42 +448,64 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>An alternative to <code>Gender</code> which accepts any string as input.</p>
     pub fn set_gender_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gender_string = input;
-        self
+        self.gender_string = input; self
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_profile::UpdateProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_profile::UpdateProfileInput {
-            domain_name: self.domain_name,
-            profile_id: self.profile_id,
-            additional_information: self.additional_information,
-            account_number: self.account_number,
-            party_type: self.party_type,
-            business_name: self.business_name,
-            first_name: self.first_name,
-            middle_name: self.middle_name,
-            last_name: self.last_name,
-            birth_date: self.birth_date,
-            gender: self.gender,
-            phone_number: self.phone_number,
-            mobile_phone_number: self.mobile_phone_number,
-            home_phone_number: self.home_phone_number,
-            business_phone_number: self.business_phone_number,
-            email_address: self.email_address,
-            personal_email_address: self.personal_email_address,
-            business_email_address: self.business_email_address,
-            address: self.address,
-            shipping_address: self.shipping_address,
-            mailing_address: self.mailing_address,
-            billing_address: self.billing_address,
-            attributes: self.attributes,
-            party_type_string: self.party_type_string,
-            gender_string: self.gender_string,
-        })
+    pub fn build(self) -> Result<crate::operation::update_profile::UpdateProfileInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_profile::UpdateProfileInput {
+                domain_name: self.domain_name
+                ,
+                profile_id: self.profile_id
+                ,
+                additional_information: self.additional_information
+                ,
+                account_number: self.account_number
+                ,
+                party_type: self.party_type
+                ,
+                business_name: self.business_name
+                ,
+                first_name: self.first_name
+                ,
+                middle_name: self.middle_name
+                ,
+                last_name: self.last_name
+                ,
+                birth_date: self.birth_date
+                ,
+                gender: self.gender
+                ,
+                phone_number: self.phone_number
+                ,
+                mobile_phone_number: self.mobile_phone_number
+                ,
+                home_phone_number: self.home_phone_number
+                ,
+                business_phone_number: self.business_phone_number
+                ,
+                email_address: self.email_address
+                ,
+                personal_email_address: self.personal_email_address
+                ,
+                business_email_address: self.business_email_address
+                ,
+                address: self.address
+                ,
+                shipping_address: self.shipping_address
+                ,
+                mailing_address: self.mailing_address
+                ,
+                billing_address: self.billing_address
+                ,
+                attributes: self.attributes
+                ,
+                party_type_string: self.party_type_string
+                ,
+                gender_string: self.gender_string
+                ,
+            }
+        )
     }
 }
+

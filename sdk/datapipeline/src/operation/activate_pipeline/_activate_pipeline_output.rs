@@ -3,18 +3,17 @@
 /// <p>Contains the output of ActivatePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivatePipelineOutput {
+pub struct ActivatePipelineOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ActivatePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ActivatePipelineOutput {
     /// Creates a new builder-style object to manufacture [`ActivatePipelineOutput`](crate::operation::activate_pipeline::ActivatePipelineOutput).
-    pub fn builder() -> crate::operation::activate_pipeline::builders::ActivatePipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::activate_pipeline::builders::ActivatePipelineOutputBuilder {
         crate::operation::activate_pipeline::builders::ActivatePipelineOutputBuilder::default()
     }
 }
@@ -27,14 +26,14 @@ pub struct ActivatePipelineOutputBuilder {
 }
 impl ActivatePipelineOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ActivatePipelineOutput`](crate::operation::activate_pipeline::ActivatePipelineOutput).
     pub fn build(self) -> crate::operation::activate_pipeline::ActivatePipelineOutput {
         crate::operation::activate_pipeline::ActivatePipelineOutput {
@@ -42,3 +41,4 @@ impl ActivatePipelineOutputBuilder {
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let interconnectstate = unimplemented!();
 /// match interconnectstate {
@@ -35,22 +35,14 @@
 /// Specifically, when `interconnectstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InterconnectState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `InterconnectState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InterconnectState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -67,60 +59,51 @@ pub enum InterconnectState {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InterconnectState {
-    fn from(s: &str) -> Self {
-        match s {
-            "available" => InterconnectState::Available,
-            "deleted" => InterconnectState::Deleted,
-            "deleting" => InterconnectState::Deleting,
-            "down" => InterconnectState::Down,
-            "pending" => InterconnectState::Pending,
-            "requested" => InterconnectState::Requested,
-            "unknown" => InterconnectState::UnknownValue,
-            other => {
-                InterconnectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "available" => InterconnectState::Available,
+"deleted" => InterconnectState::Deleted,
+"deleting" => InterconnectState::Deleting,
+"down" => InterconnectState::Down,
+"pending" => InterconnectState::Pending,
+"requested" => InterconnectState::Requested,
+"unknown" => InterconnectState::UnknownValue,
+other => InterconnectState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for InterconnectState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InterconnectState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InterconnectState::from(s))
+                }
+            }
 impl InterconnectState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InterconnectState::Available => "available",
-            InterconnectState::Deleted => "deleted",
-            InterconnectState::Deleting => "deleting",
-            InterconnectState::Down => "down",
-            InterconnectState::Pending => "pending",
-            InterconnectState::Requested => "requested",
-            InterconnectState::UnknownValue => "unknown",
-            InterconnectState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "available",
-            "deleted",
-            "deleting",
-            "down",
-            "pending",
-            "requested",
-            "unknown",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InterconnectState::Available => "available",
+    InterconnectState::Deleted => "deleted",
+    InterconnectState::Deleting => "deleting",
+    InterconnectState::Down => "down",
+    InterconnectState::Pending => "pending",
+    InterconnectState::Requested => "requested",
+    InterconnectState::UnknownValue => "unknown",
+    InterconnectState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["available", "deleted", "deleting", "down", "pending", "requested", "unknown"]
+                }
+            }
 impl AsRef<str> for InterconnectState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

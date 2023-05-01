@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateActivityOutput {
+pub struct CreateActivityOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     #[doc(hidden)]
     pub activity_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateActivityOutput {
 }
 impl CreateActivityOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
-    pub fn activity_arn(&self) -> std::option::Option<&str> {
+    pub fn activity_arn(&self) -> std::option::Option<& str> {
         self.activity_arn.as_deref()
     }
     /// <p>The date the activity is created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateActivityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateActivityOutput {
     /// Creates a new builder-style object to manufacture [`CreateActivityOutput`](crate::operation::create_activity::CreateActivityOutput).
     pub fn builder() -> crate::operation::create_activity::builders::CreateActivityOutputBuilder {
@@ -49,8 +49,7 @@ impl CreateActivityOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the created activity.</p>
     pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.activity_arn = input;
-        self
+        self.activity_arn = input; self
     }
     /// <p>The date the activity is created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -58,28 +57,27 @@ impl CreateActivityOutputBuilder {
         self
     }
     /// <p>The date the activity is created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateActivityOutput`](crate::operation::create_activity::CreateActivityOutput).
     pub fn build(self) -> crate::operation::create_activity::CreateActivityOutput {
         crate::operation::create_activity::CreateActivityOutput {
-            activity_arn: self.activity_arn,
-            creation_date: self.creation_date,
+            activity_arn: self.activity_arn
+            ,
+            creation_date: self.creation_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

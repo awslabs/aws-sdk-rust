@@ -3,7 +3,7 @@
 /// <p>The reference that specifies where the axis label is applied to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AxisLabelReferenceOptions {
+pub struct AxisLabelReferenceOptions  {
     /// <p>The field that the axis label is targeted to.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AxisLabelReferenceOptions {
 }
 impl AxisLabelReferenceOptions {
     /// <p>The field that the axis label is targeted to.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The column that the axis label is targeted to.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AxisLabelReferenceOptionsBuilder {
     }
     /// <p>The field that the axis label is targeted to.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The column that the axis label is targeted to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -52,18 +51,17 @@ impl AxisLabelReferenceOptionsBuilder {
         self
     }
     /// <p>The column that the axis label is targeted to.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
     /// Consumes the builder and constructs a [`AxisLabelReferenceOptions`](crate::types::AxisLabelReferenceOptions).
     pub fn build(self) -> crate::types::AxisLabelReferenceOptions {
         crate::types::AxisLabelReferenceOptions {
-            field_id: self.field_id,
-            column: self.column,
+            field_id: self.field_id
+            ,
+            column: self.column
+            ,
         }
     }
 }
+

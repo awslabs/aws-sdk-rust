@@ -3,7 +3,7 @@
 /// <p>Identifies the attribute name and value for a typed link.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeNameAndValue {
+pub struct AttributeNameAndValue  {
     /// <p>The attribute name of the typed link.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AttributeNameAndValue {
 }
 impl AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value for the typed link.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::TypedAttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::TypedAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AttributeNameAndValueBuilder {
     }
     /// <p>The attribute name of the typed link.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input;
-        self
+        self.attribute_name = input; self
     }
     /// <p>The value for the typed link.</p>
     pub fn value(mut self, input: crate::types::TypedAttributeValue) -> Self {
@@ -52,18 +51,17 @@ impl AttributeNameAndValueBuilder {
         self
     }
     /// <p>The value for the typed link.</p>
-    pub fn set_value(
-        mut self,
-        input: std::option::Option<crate::types::TypedAttributeValue>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: std::option::Option<crate::types::TypedAttributeValue>) -> Self {
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`AttributeNameAndValue`](crate::types::AttributeNameAndValue).
     pub fn build(self) -> crate::types::AttributeNameAndValue {
         crate::types::AttributeNameAndValue {
-            attribute_name: self.attribute_name,
-            value: self.value,
+            attribute_name: self.attribute_name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

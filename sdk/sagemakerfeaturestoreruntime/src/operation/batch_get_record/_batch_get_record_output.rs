@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRecordOutput {
+pub struct BatchGetRecordOutput  {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordResultDetail>>,
@@ -11,31 +11,28 @@ pub struct BatchGetRecordOutput {
     pub errors: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordError>>,
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
     #[doc(hidden)]
-    pub unprocessed_identifiers:
-        std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    pub unprocessed_identifiers: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     _request_id: Option<String>,
 }
 impl BatchGetRecordOutput {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::types::BatchGetRecordResultDetail]> {
+    pub fn records(&self) -> std::option::Option<& [crate::types::BatchGetRecordResultDetail]> {
         self.records.as_deref()
     }
     /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchGetRecordError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchGetRecordError]> {
         self.errors.as_deref()
     }
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
-    pub fn unprocessed_identifiers(
-        &self,
-    ) -> std::option::Option<&[crate::types::BatchGetRecordIdentifier]> {
+    pub fn unprocessed_identifiers(&self) -> std::option::Option<& [crate::types::BatchGetRecordIdentifier]> {
         self.unprocessed_identifiers.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetRecordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetRecordOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRecordOutput`](crate::operation::batch_get_record::BatchGetRecordOutput).
     pub fn builder() -> crate::operation::batch_get_record::builders::BatchGetRecordOutputBuilder {
@@ -47,11 +44,9 @@ impl BatchGetRecordOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRecordOutputBuilder {
-    pub(crate) records:
-        std::option::Option<std::vec::Vec<crate::types::BatchGetRecordResultDetail>>,
+    pub(crate) records: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordResultDetail>>,
     pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordError>>,
-    pub(crate) unprocessed_identifiers:
-        std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
+    pub(crate) unprocessed_identifiers: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
     _request_id: Option<String>,
 }
 impl BatchGetRecordOutputBuilder {
@@ -62,17 +57,13 @@ impl BatchGetRecordOutputBuilder {
     /// <p>A list of Records you requested to be retrieved in batch.</p>
     pub fn records(mut self, input: crate::types::BatchGetRecordResultDetail) -> Self {
         let mut v = self.records.unwrap_or_default();
-        v.push(input);
-        self.records = Some(v);
-        self
+                        v.push(input);
+                        self.records = Some(v);
+                        self
     }
     /// <p>A list of Records you requested to be retrieved in batch.</p>
-    pub fn set_records(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordResultDetail>>,
-    ) -> Self {
-        self.records = input;
-        self
+    pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordResultDetail>>) -> Self {
+        self.records = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -81,56 +72,49 @@ impl BatchGetRecordOutputBuilder {
     /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
     pub fn errors(mut self, input: crate::types::BatchGetRecordError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>A list of errors that have occurred when retrieving a batch of Records.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordError>>) -> Self {
+        self.errors = input; self
     }
     /// Appends an item to `unprocessed_identifiers`.
     ///
     /// To override the contents of this collection use [`set_unprocessed_identifiers`](Self::set_unprocessed_identifiers).
     ///
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
-    pub fn unprocessed_identifiers(
-        mut self,
-        input: crate::types::BatchGetRecordIdentifier,
-    ) -> Self {
+    pub fn unprocessed_identifiers(mut self, input: crate::types::BatchGetRecordIdentifier) -> Self {
         let mut v = self.unprocessed_identifiers.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_identifiers = Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_identifiers = Some(v);
+                        self
     }
     /// <p>A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and Feature name.</p>
-    pub fn set_unprocessed_identifiers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>,
-    ) -> Self {
-        self.unprocessed_identifiers = input;
-        self
+    pub fn set_unprocessed_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchGetRecordIdentifier>>) -> Self {
+        self.unprocessed_identifiers = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetRecordOutput`](crate::operation::batch_get_record::BatchGetRecordOutput).
     pub fn build(self) -> crate::operation::batch_get_record::BatchGetRecordOutput {
         crate::operation::batch_get_record::BatchGetRecordOutput {
-            records: self.records,
-            errors: self.errors,
-            unprocessed_identifiers: self.unprocessed_identifiers,
+            records: self.records
+            ,
+            errors: self.errors
+            ,
+            unprocessed_identifiers: self.unprocessed_identifiers
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

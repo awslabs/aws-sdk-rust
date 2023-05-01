@@ -3,7 +3,7 @@
 /// <p>Provided if <code>ActionType</code> is <code>AWS_API_CALL</code>. It provides details about the API call that was detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsApiCallAction {
+pub struct AwsApiCallAction  {
     /// <p>The name of the API method that was issued.</p>
     #[doc(hidden)]
     pub api: std::option::Option<std::string::String>,
@@ -21,55 +21,49 @@ pub struct AwsApiCallAction {
     pub domain_details: std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
     /// <p>Identifies the resources that were affected by the API call.</p>
     #[doc(hidden)]
-    pub affected_resources:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    pub affected_resources: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub first_seen: std::option::Option<std::string::String>,
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     #[doc(hidden)]
     pub last_seen: std::option::Option<std::string::String>,
 }
 impl AwsApiCallAction {
     /// <p>The name of the API method that was issued.</p>
-    pub fn api(&self) -> std::option::Option<&str> {
+    pub fn api(&self) -> std::option::Option<& str> {
         self.api.as_deref()
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
-    pub fn caller_type(&self) -> std::option::Option<&str> {
+    pub fn caller_type(&self) -> std::option::Option<& str> {
         self.caller_type.as_deref()
     }
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
-    pub fn remote_ip_details(&self) -> std::option::Option<&crate::types::ActionRemoteIpDetails> {
+    pub fn remote_ip_details(&self) -> std::option::Option<& crate::types::ActionRemoteIpDetails> {
         self.remote_ip_details.as_ref()
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
-    pub fn domain_details(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsApiCallActionDomainDetails> {
+    pub fn domain_details(&self) -> std::option::Option<& crate::types::AwsApiCallActionDomainDetails> {
         self.domain_details.as_ref()
     }
     /// <p>Identifies the resources that were affected by the API call.</p>
-    pub fn affected_resources(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn affected_resources(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.affected_resources.as_ref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn first_seen(&self) -> std::option::Option<&str> {
+    pub fn first_seen(&self) -> std::option::Option<& str> {
         self.first_seen.as_deref()
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
-    pub fn last_seen(&self) -> std::option::Option<&str> {
+    pub fn last_seen(&self) -> std::option::Option<& str> {
         self.last_seen.as_deref()
     }
 }
@@ -89,8 +83,7 @@ pub struct AwsApiCallActionBuilder {
     pub(crate) caller_type: std::option::Option<std::string::String>,
     pub(crate) remote_ip_details: std::option::Option<crate::types::ActionRemoteIpDetails>,
     pub(crate) domain_details: std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
-    pub(crate) affected_resources:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) affected_resources: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) first_seen: std::option::Option<std::string::String>,
     pub(crate) last_seen: std::option::Option<std::string::String>,
 }
@@ -102,8 +95,7 @@ impl AwsApiCallActionBuilder {
     }
     /// <p>The name of the API method that was issued.</p>
     pub fn set_api(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api = input;
-        self
+        self.api = input; self
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +104,7 @@ impl AwsApiCallActionBuilder {
     }
     /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
     pub fn caller_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +113,7 @@ impl AwsApiCallActionBuilder {
     }
     /// <p>Indicates whether the API call originated from a remote IP address (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
     pub fn set_caller_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.caller_type = input;
-        self
+        self.caller_type = input; self
     }
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
     pub fn remote_ip_details(mut self, input: crate::types::ActionRemoteIpDetails) -> Self {
@@ -131,12 +121,8 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information about the remote IP address that the API call originated from.</p>
-    pub fn set_remote_ip_details(
-        mut self,
-        input: std::option::Option<crate::types::ActionRemoteIpDetails>,
-    ) -> Self {
-        self.remote_ip_details = input;
-        self
+    pub fn set_remote_ip_details(mut self, input: std::option::Option<crate::types::ActionRemoteIpDetails>) -> Self {
+        self.remote_ip_details = input; self
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
     pub fn domain_details(mut self, input: crate::types::AwsApiCallActionDomainDetails) -> Self {
@@ -144,73 +130,66 @@ impl AwsApiCallActionBuilder {
         self
     }
     /// <p>Provided if <code>CallerType</code> is <code>domain</code>. Provides information about the DNS domain that the API call originated from.</p>
-    pub fn set_domain_details(
-        mut self,
-        input: std::option::Option<crate::types::AwsApiCallActionDomainDetails>,
-    ) -> Self {
-        self.domain_details = input;
-        self
+    pub fn set_domain_details(mut self, input: std::option::Option<crate::types::AwsApiCallActionDomainDetails>) -> Self {
+        self.domain_details = input; self
     }
     /// Adds a key-value pair to `affected_resources`.
     ///
     /// To override the contents of this collection use [`set_affected_resources`](Self::set_affected_resources).
     ///
     /// <p>Identifies the resources that were affected by the API call.</p>
-    pub fn affected_resources(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn affected_resources(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.affected_resources.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.affected_resources = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.affected_resources = Some(hash_map);
+                        self
     }
     /// <p>Identifies the resources that were affected by the API call.</p>
-    pub fn set_affected_resources(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.affected_resources = input;
-        self
+    pub fn set_affected_resources(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.affected_resources = input; self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn first_seen(mut self, input: impl Into<std::string::String>) -> Self {
         self.first_seen = Some(input.into());
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was first observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_first_seen(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.first_seen = input;
-        self
+        self.first_seen = input; self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn last_seen(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_seen = Some(input.into());
         self
     }
-    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p>
+    /// <p>An ISO8601-formatted timestamp that indicates when the API call was most recently observed.</p> 
     /// <p>A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>.</p>
     pub fn set_last_seen(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_seen = input;
-        self
+        self.last_seen = input; self
     }
     /// Consumes the builder and constructs a [`AwsApiCallAction`](crate::types::AwsApiCallAction).
     pub fn build(self) -> crate::types::AwsApiCallAction {
         crate::types::AwsApiCallAction {
-            api: self.api,
-            service_name: self.service_name,
-            caller_type: self.caller_type,
-            remote_ip_details: self.remote_ip_details,
-            domain_details: self.domain_details,
-            affected_resources: self.affected_resources,
-            first_seen: self.first_seen,
-            last_seen: self.last_seen,
+            api: self.api
+            ,
+            service_name: self.service_name
+            ,
+            caller_type: self.caller_type
+            ,
+            remote_ip_details: self.remote_ip_details
+            ,
+            domain_details: self.domain_details
+            ,
+            affected_resources: self.affected_resources
+            ,
+            first_seen: self.first_seen
+            ,
+            last_seen: self.last_seen
+            ,
         }
     }
 }
+

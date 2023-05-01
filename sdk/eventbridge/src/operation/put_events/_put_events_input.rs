@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsInput {
+pub struct PutEventsInput  {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::PutEventsRequestEntry>>,
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
     /// </important>
     #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
 }
 impl PutEventsInput {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::types::PutEventsRequestEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::types::PutEventsRequestEntry]> {
         self.entries.as_deref()
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
     /// </important>
-    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
 }
@@ -46,42 +46,37 @@ impl PutEventsInputBuilder {
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
     pub fn entries(mut self, input: crate::types::PutEventsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = Some(v);
-        self
+                        v.push(input);
+                        self.entries = Some(v);
+                        self
     }
     /// <p>The entry that defines an event in your system. You can specify several parameters for the entry such as the source and type of the event, resources associated with the event, and so on.</p>
-    pub fn set_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PutEventsRequestEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::PutEventsRequestEntry>>) -> Self {
+        self.entries = input; self
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
     /// </important>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.endpoint_id = Some(input.into());
         self
     }
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
     /// </important>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_id = input;
-        self
+        self.endpoint_id = input; self
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_events::PutEventsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_events::PutEventsInput {
-            entries: self.entries,
-            endpoint_id: self.endpoint_id,
-        })
+    pub fn build(self) -> Result<crate::operation::put_events::PutEventsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_events::PutEventsInput {
+                entries: self.entries
+                ,
+                endpoint_id: self.endpoint_id
+                ,
+            }
+        )
     }
 }
+

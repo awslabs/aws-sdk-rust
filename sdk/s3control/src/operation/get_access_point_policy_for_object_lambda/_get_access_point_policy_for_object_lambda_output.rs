@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPointPolicyForObjectLambdaOutput {
+pub struct GetAccessPointPolicyForObjectLambdaOutput  {
     /// <p>Object Lambda Access Point resource policy document.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct GetAccessPointPolicyForObjectLambdaOutput {
 }
 impl GetAccessPointPolicyForObjectLambdaOutput {
     /// <p>Object Lambda Access Point resource policy document.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccessPointPolicyForObjectLambdaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAccessPointPolicyForObjectLambdaOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput).
-    pub fn builder() -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaOutputBuilder{
+    pub fn builder() -> crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaOutputBuilder {
         crate::operation::get_access_point_policy_for_object_lambda::builders::GetAccessPointPolicyForObjectLambdaOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl GetAccessPointPolicyForObjectLambdaOutputBuilder {
     }
     /// <p>Object Lambda Access Point resource policy document.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAccessPointPolicyForObjectLambdaOutput`](crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput).
-    pub fn build(self) -> crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput{
+    pub fn build(self) -> crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput {
         crate::operation::get_access_point_policy_for_object_lambda::GetAccessPointPolicyForObjectLambdaOutput {
             policy: self.policy
             ,
@@ -62,3 +61,4 @@ impl GetAccessPointPolicyForObjectLambdaOutputBuilder {
         }
     }
 }
+

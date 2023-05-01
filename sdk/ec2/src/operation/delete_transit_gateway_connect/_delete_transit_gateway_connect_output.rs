@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTransitGatewayConnectOutput {
+pub struct DeleteTransitGatewayConnectOutput  {
     /// <p>Information about the deleted Connect attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_connect: std::option::Option<crate::types::TransitGatewayConnect>,
@@ -10,20 +10,18 @@ pub struct DeleteTransitGatewayConnectOutput {
 }
 impl DeleteTransitGatewayConnectOutput {
     /// <p>Information about the deleted Connect attachment.</p>
-    pub fn transit_gateway_connect(
-        &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayConnect> {
+    pub fn transit_gateway_connect(&self) -> std::option::Option<& crate::types::TransitGatewayConnect> {
         self.transit_gateway_connect.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTransitGatewayConnectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteTransitGatewayConnectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayConnectOutput`](crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectOutputBuilder{
+    pub fn builder() -> crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectOutputBuilder {
         crate::operation::delete_transit_gateway_connect::builders::DeleteTransitGatewayConnectOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DeleteTransitGatewayConnectOutputBuilder {
         self
     }
     /// <p>Information about the deleted Connect attachment.</p>
-    pub fn set_transit_gateway_connect(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayConnect>,
-    ) -> Self {
-        self.transit_gateway_connect = input;
-        self
+    pub fn set_transit_gateway_connect(mut self, input: std::option::Option<crate::types::TransitGatewayConnect>) -> Self {
+        self.transit_gateway_connect = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayConnectOutput`](crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput {
+    pub fn build(self) -> crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput {
         crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput {
-            transit_gateway_connect: self.transit_gateway_connect,
+            transit_gateway_connect: self.transit_gateway_connect
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

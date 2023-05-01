@@ -3,7 +3,7 @@
 /// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceQuota {
+pub struct ResourceQuota  {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     #[doc(hidden)]
     pub maximum: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl ResourceQuotaBuilder {
     }
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// Consumes the builder and constructs a [`ResourceQuota`](crate::types::ResourceQuota).
     pub fn build(self) -> crate::types::ResourceQuota {
         crate::types::ResourceQuota {
-            maximum: self.maximum,
+            maximum: self.maximum
+            ,
         }
     }
 }
+

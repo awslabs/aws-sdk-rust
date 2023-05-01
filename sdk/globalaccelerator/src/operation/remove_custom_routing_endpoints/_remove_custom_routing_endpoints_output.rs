@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveCustomRoutingEndpointsOutput {
+pub struct RemoveCustomRoutingEndpointsOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveCustomRoutingEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveCustomRoutingEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsOutput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput).
-    pub fn builder() -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsOutputBuilder{
+    pub fn builder() -> crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsOutputBuilder {
         crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct RemoveCustomRoutingEndpointsOutputBuilder {
 }
 impl RemoveCustomRoutingEndpointsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveCustomRoutingEndpointsOutput`](crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput {
+    pub fn build(self) -> crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput {
         crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput {
             _request_id: self._request_id,
         }
     }
 }
+

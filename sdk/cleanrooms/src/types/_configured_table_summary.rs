@@ -3,7 +3,7 @@
 /// <p>The configured table summary for the objects listed by the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfiguredTableSummary {
+pub struct ConfiguredTableSummary  {
     /// <p>The unique ID of the configured table.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -21,41 +21,38 @@ pub struct ConfiguredTableSummary {
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The types of analysis rules associated with this configured table.</p>
     #[doc(hidden)]
-    pub analysis_rule_types:
-        std::option::Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub analysis_rule_types: std::option::Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     #[doc(hidden)]
     pub analysis_method: std::option::Option<crate::types::AnalysisMethod>,
 }
 impl ConfiguredTableSummary {
     /// <p>The unique ID of the configured table.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique ARN of the configured table.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the configured table was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time the configured table was last updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn analysis_rule_types(
-        &self,
-    ) -> std::option::Option<&[crate::types::ConfiguredTableAnalysisRuleType]> {
+    pub fn analysis_rule_types(&self) -> std::option::Option<& [crate::types::ConfiguredTableAnalysisRuleType]> {
         self.analysis_rule_types.as_deref()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> std::option::Option<&crate::types::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<& crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
 }
@@ -75,8 +72,7 @@ pub struct ConfiguredTableSummaryBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) analysis_rule_types:
-        std::option::Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
+    pub(crate) analysis_rule_types: std::option::Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
     pub(crate) analysis_method: std::option::Option<crate::types::AnalysisMethod>,
 }
 impl ConfiguredTableSummaryBuilder {
@@ -87,8 +83,7 @@ impl ConfiguredTableSummaryBuilder {
     }
     /// <p>The unique ID of the configured table.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique ARN of the configured table.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +92,7 @@ impl ConfiguredTableSummaryBuilder {
     }
     /// <p>The unique ARN of the configured table.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the configured table.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +101,7 @@ impl ConfiguredTableSummaryBuilder {
     }
     /// <p>The name of the configured table.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The time the configured table was created.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,12 +109,8 @@ impl ConfiguredTableSummaryBuilder {
         self
     }
     /// <p>The time the configured table was created.</p>
-    pub fn set_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
     }
     /// <p>The time the configured table was last updated.</p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -129,34 +118,23 @@ impl ConfiguredTableSummaryBuilder {
         self
     }
     /// <p>The time the configured table was last updated.</p>
-    pub fn set_update_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
     }
     /// Appends an item to `analysis_rule_types`.
     ///
     /// To override the contents of this collection use [`set_analysis_rule_types`](Self::set_analysis_rule_types).
     ///
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn analysis_rule_types(
-        mut self,
-        input: crate::types::ConfiguredTableAnalysisRuleType,
-    ) -> Self {
+    pub fn analysis_rule_types(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         let mut v = self.analysis_rule_types.unwrap_or_default();
-        v.push(input);
-        self.analysis_rule_types = Some(v);
-        self
+                        v.push(input);
+                        self.analysis_rule_types = Some(v);
+                        self
     }
     /// <p>The types of analysis rules associated with this configured table.</p>
-    pub fn set_analysis_rule_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>,
-    ) -> Self {
-        self.analysis_rule_types = input;
-        self
+    pub fn set_analysis_rule_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfiguredTableAnalysisRuleType>>) -> Self {
+        self.analysis_rule_types = input; self
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
@@ -164,23 +142,27 @@ impl ConfiguredTableSummaryBuilder {
         self
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn set_analysis_method(
-        mut self,
-        input: std::option::Option<crate::types::AnalysisMethod>,
-    ) -> Self {
-        self.analysis_method = input;
-        self
+    pub fn set_analysis_method(mut self, input: std::option::Option<crate::types::AnalysisMethod>) -> Self {
+        self.analysis_method = input; self
     }
     /// Consumes the builder and constructs a [`ConfiguredTableSummary`](crate::types::ConfiguredTableSummary).
     pub fn build(self) -> crate::types::ConfiguredTableSummary {
         crate::types::ConfiguredTableSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            analysis_rule_types: self.analysis_rule_types,
-            analysis_method: self.analysis_method,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
+            analysis_rule_types: self.analysis_rule_types
+            ,
+            analysis_method: self.analysis_method
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlayerSessionsInput {
+pub struct DescribePlayerSessionsInput  {
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
     #[doc(hidden)]
     pub game_session_id: std::option::Option<std::string::String>,
@@ -12,13 +12,13 @@ pub struct DescribePlayerSessionsInput {
     /// <p>A unique identifier for a player session to retrieve.</p>
     #[doc(hidden)]
     pub player_session_id: std::option::Option<std::string::String>,
-    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
-    /// <p>Possible player session statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p> 
+    /// <p>Possible player session statuses include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li> 
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li> 
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li> 
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub player_session_status_filter: std::option::Option<std::string::String>,
@@ -31,26 +31,26 @@ pub struct DescribePlayerSessionsInput {
 }
 impl DescribePlayerSessionsInput {
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn game_session_id(&self) -> std::option::Option<&str> {
+    pub fn game_session_id(&self) -> std::option::Option<& str> {
         self.game_session_id.as_deref()
     }
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
-    pub fn player_id(&self) -> std::option::Option<&str> {
+    pub fn player_id(&self) -> std::option::Option<& str> {
         self.player_id.as_deref()
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn player_session_id(&self) -> std::option::Option<&str> {
+    pub fn player_session_id(&self) -> std::option::Option<& str> {
         self.player_session_id.as_deref()
     }
-    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
-    /// <p>Possible player session statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p> 
+    /// <p>Possible player session statuses include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li> 
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li> 
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li> 
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li> 
     /// </ul>
-    pub fn player_session_status_filter(&self) -> std::option::Option<&str> {
+    pub fn player_session_status_filter(&self) -> std::option::Option<& str> {
         self.player_session_status_filter.as_deref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
@@ -58,15 +58,13 @@ impl DescribePlayerSessionsInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribePlayerSessionsInput {
     /// Creates a new builder-style object to manufacture [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder {
         crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder::default()
     }
 }
@@ -90,8 +88,7 @@ impl DescribePlayerSessionsInputBuilder {
     }
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
     pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_session_id = input;
-        self
+        self.game_session_id = input; self
     }
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
     pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +97,7 @@ impl DescribePlayerSessionsInputBuilder {
     }
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
     pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.player_id = input;
-        self
+        self.player_id = input; self
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
     pub fn player_session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,39 +105,31 @@ impl DescribePlayerSessionsInputBuilder {
         self
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn set_player_session_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.player_session_id = input;
-        self
+    pub fn set_player_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.player_session_id = input; self
     }
-    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
-    /// <p>Possible player session statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p> 
+    /// <p>Possible player session statuses include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li> 
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li> 
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li> 
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li> 
     /// </ul>
     pub fn player_session_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
         self.player_session_status_filter = Some(input.into());
         self
     }
-    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
-    /// <p>Possible player session statuses include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li>
-    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li>
-    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
-    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
+    /// <p>Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p> 
+    /// <p>Possible player session statuses include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>RESERVED</b> -- The player session request has been received, but the player has not yet connected to the server process and/or been validated. </p> </li> 
+    /// <li> <p> <b>ACTIVE</b> -- The player has been validated by the server process and is currently connected.</p> </li> 
+    /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li> 
+    /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li> 
     /// </ul>
-    pub fn set_player_session_status_filter(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.player_session_status_filter = input;
-        self
+    pub fn set_player_session_status_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.player_session_status_filter = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -150,8 +138,7 @@ impl DescribePlayerSessionsInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,25 +147,26 @@ impl DescribePlayerSessionsInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribePlayerSessionsInput`](crate::operation::describe_player_sessions::DescribePlayerSessionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_player_sessions::DescribePlayerSessionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_player_sessions::DescribePlayerSessionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_player_sessions::DescribePlayerSessionsInput {
-                game_session_id: self.game_session_id,
-                player_id: self.player_id,
-                player_session_id: self.player_session_id,
-                player_session_status_filter: self.player_session_status_filter,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                game_session_id: self.game_session_id
+                ,
+                player_id: self.player_id
+                ,
+                player_session_id: self.player_session_id
+                ,
+                player_session_status_filter: self.player_session_status_filter
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

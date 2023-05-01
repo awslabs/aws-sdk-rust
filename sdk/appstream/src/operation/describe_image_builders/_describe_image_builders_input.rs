@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageBuildersInput {
+pub struct DescribeImageBuildersInput  {
     /// <p>The names of the image builders to describe.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeImageBuildersInput {
 }
 impl DescribeImageBuildersInput {
     /// <p>The names of the image builders to describe.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -23,15 +23,13 @@ impl DescribeImageBuildersInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeImageBuildersInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder {
         crate::operation::describe_image_builders::builders::DescribeImageBuildersInputBuilder::default()
     }
 }
@@ -52,17 +50,13 @@ impl DescribeImageBuildersInputBuilder {
     /// <p>The names of the image builders to describe.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = Some(v);
-        self
+                        v.push(input.into());
+                        self.names = Some(v);
+                        self
     }
     /// <p>The names of the image builders to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,8 +65,7 @@ impl DescribeImageBuildersInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +74,20 @@ impl DescribeImageBuildersInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeImageBuildersInput`](crate::operation::describe_image_builders::DescribeImageBuildersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_image_builders::DescribeImageBuildersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_image_builders::DescribeImageBuildersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_image_builders::DescribeImageBuildersInput {
-                names: self.names,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                names: self.names
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

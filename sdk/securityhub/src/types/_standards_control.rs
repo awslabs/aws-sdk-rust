@@ -3,7 +3,7 @@
 /// <p>Details for an individual security standard control.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StandardsControl {
+pub struct StandardsControl  {
     /// <p>The ARN of the security standard control.</p>
     #[doc(hidden)]
     pub standards_control_arn: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ pub struct StandardsControl {
     /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
     #[doc(hidden)]
     pub remediation_url: std::option::Option<std::string::String>,
-    /// <p>The severity of findings generated from this security standard control.</p>
+    /// <p>The severity of findings generated from this security standard control.</p> 
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
     #[doc(hidden)]
     pub severity_rating: std::option::Option<crate::types::SeverityRating>,
@@ -38,44 +38,44 @@ pub struct StandardsControl {
 }
 impl StandardsControl {
     /// <p>The ARN of the security standard control.</p>
-    pub fn standards_control_arn(&self) -> std::option::Option<&str> {
+    pub fn standards_control_arn(&self) -> std::option::Option<& str> {
         self.standards_control_arn.as_deref()
     }
     /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
-    pub fn control_status(&self) -> std::option::Option<&crate::types::ControlStatus> {
+    pub fn control_status(&self) -> std::option::Option<& crate::types::ControlStatus> {
         self.control_status.as_ref()
     }
     /// <p>The reason provided for the most recent change in status for the control.</p>
-    pub fn disabled_reason(&self) -> std::option::Option<&str> {
+    pub fn disabled_reason(&self) -> std::option::Option<& str> {
         self.disabled_reason.as_deref()
     }
     /// <p>The date and time that the status of the security standard control was most recently updated.</p>
-    pub fn control_status_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn control_status_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.control_status_updated_at.as_ref()
     }
     /// <p>The identifier of the security standard control.</p>
-    pub fn control_id(&self) -> std::option::Option<&str> {
+    pub fn control_id(&self) -> std::option::Option<& str> {
         self.control_id.as_deref()
     }
     /// <p>The title of the security standard control.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
-    pub fn remediation_url(&self) -> std::option::Option<&str> {
+    pub fn remediation_url(&self) -> std::option::Option<& str> {
         self.remediation_url.as_deref()
     }
-    /// <p>The severity of findings generated from this security standard control.</p>
+    /// <p>The severity of findings generated from this security standard control.</p> 
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
-    pub fn severity_rating(&self) -> std::option::Option<&crate::types::SeverityRating> {
+    pub fn severity_rating(&self) -> std::option::Option<& crate::types::SeverityRating> {
         self.severity_rating.as_ref()
     }
     /// <p>The list of requirements that are related to this control.</p>
-    pub fn related_requirements(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn related_requirements(&self) -> std::option::Option<& [std::string::String]> {
         self.related_requirements.as_deref()
     }
 }
@@ -108,12 +108,8 @@ impl StandardsControlBuilder {
         self
     }
     /// <p>The ARN of the security standard control.</p>
-    pub fn set_standards_control_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.standards_control_arn = input;
-        self
+    pub fn set_standards_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.standards_control_arn = input; self
     }
     /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
     pub fn control_status(mut self, input: crate::types::ControlStatus) -> Self {
@@ -121,12 +117,8 @@ impl StandardsControlBuilder {
         self
     }
     /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
-    pub fn set_control_status(
-        mut self,
-        input: std::option::Option<crate::types::ControlStatus>,
-    ) -> Self {
-        self.control_status = input;
-        self
+    pub fn set_control_status(mut self, input: std::option::Option<crate::types::ControlStatus>) -> Self {
+        self.control_status = input; self
     }
     /// <p>The reason provided for the most recent change in status for the control.</p>
     pub fn disabled_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,8 +127,7 @@ impl StandardsControlBuilder {
     }
     /// <p>The reason provided for the most recent change in status for the control.</p>
     pub fn set_disabled_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.disabled_reason = input;
-        self
+        self.disabled_reason = input; self
     }
     /// <p>The date and time that the status of the security standard control was most recently updated.</p>
     pub fn control_status_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,12 +135,8 @@ impl StandardsControlBuilder {
         self
     }
     /// <p>The date and time that the status of the security standard control was most recently updated.</p>
-    pub fn set_control_status_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.control_status_updated_at = input;
-        self
+    pub fn set_control_status_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.control_status_updated_at = input; self
     }
     /// <p>The identifier of the security standard control.</p>
     pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +145,7 @@ impl StandardsControlBuilder {
     }
     /// <p>The identifier of the security standard control.</p>
     pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_id = input;
-        self
+        self.control_id = input; self
     }
     /// <p>The title of the security standard control.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +154,7 @@ impl StandardsControlBuilder {
     }
     /// <p>The title of the security standard control.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +163,7 @@ impl StandardsControlBuilder {
     }
     /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
     pub fn remediation_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,23 +172,18 @@ impl StandardsControlBuilder {
     }
     /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
     pub fn set_remediation_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.remediation_url = input;
-        self
+        self.remediation_url = input; self
     }
-    /// <p>The severity of findings generated from this security standard control.</p>
+    /// <p>The severity of findings generated from this security standard control.</p> 
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
     pub fn severity_rating(mut self, input: crate::types::SeverityRating) -> Self {
         self.severity_rating = Some(input);
         self
     }
-    /// <p>The severity of findings generated from this security standard control.</p>
+    /// <p>The severity of findings generated from this security standard control.</p> 
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
-    pub fn set_severity_rating(
-        mut self,
-        input: std::option::Option<crate::types::SeverityRating>,
-    ) -> Self {
-        self.severity_rating = input;
-        self
+    pub fn set_severity_rating(mut self, input: std::option::Option<crate::types::SeverityRating>) -> Self {
+        self.severity_rating = input; self
     }
     /// Appends an item to `related_requirements`.
     ///
@@ -213,31 +192,38 @@ impl StandardsControlBuilder {
     /// <p>The list of requirements that are related to this control.</p>
     pub fn related_requirements(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.related_requirements.unwrap_or_default();
-        v.push(input.into());
-        self.related_requirements = Some(v);
-        self
+                        v.push(input.into());
+                        self.related_requirements = Some(v);
+                        self
     }
     /// <p>The list of requirements that are related to this control.</p>
-    pub fn set_related_requirements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.related_requirements = input;
-        self
+    pub fn set_related_requirements(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.related_requirements = input; self
     }
     /// Consumes the builder and constructs a [`StandardsControl`](crate::types::StandardsControl).
     pub fn build(self) -> crate::types::StandardsControl {
         crate::types::StandardsControl {
-            standards_control_arn: self.standards_control_arn,
-            control_status: self.control_status,
-            disabled_reason: self.disabled_reason,
-            control_status_updated_at: self.control_status_updated_at,
-            control_id: self.control_id,
-            title: self.title,
-            description: self.description,
-            remediation_url: self.remediation_url,
-            severity_rating: self.severity_rating,
-            related_requirements: self.related_requirements,
+            standards_control_arn: self.standards_control_arn
+            ,
+            control_status: self.control_status
+            ,
+            disabled_reason: self.disabled_reason
+            ,
+            control_status_updated_at: self.control_status_updated_at
+            ,
+            control_id: self.control_id
+            ,
+            title: self.title
+            ,
+            description: self.description
+            ,
+            remediation_url: self.remediation_url
+            ,
+            severity_rating: self.severity_rating
+            ,
+            related_requirements: self.related_requirements
+            ,
         }
     }
 }
+

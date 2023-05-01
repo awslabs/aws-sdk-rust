@@ -5,14 +5,14 @@
 pub enum Error {
     /// <p>You don't have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-    /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+    /// <ul> 
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
     /// </ul>
     ConflictException(crate::types::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -24,7 +24,7 @@ pub enum Error {
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35,7 +35,7 @@ impl std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
@@ -52,13 +52,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_slack_ch
         }
     }
 }
-impl
-    From<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError,
-    ) -> Self {
+impl From<crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError> for Error {
+    fn from(err: crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError) -> Self {
         match err {
             crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_slack_channel_configuration::CreateSlackChannelConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
@@ -69,34 +64,16 @@ impl
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::delete_account_alias::DeleteAccountAliasError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_account_alias::DeleteAccountAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -123,13 +100,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_slack_ch
         }
     }
 }
-impl
-    From<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError,
-    ) -> Self {
+impl From<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError> for Error {
+    fn from(err: crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError) -> Self {
         match err {
             crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
@@ -165,46 +137,24 @@ impl From<crate::operation::delete_slack_workspace_configuration::DeleteSlackWor
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_account_alias::GetAccountAliasError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_account_alias::GetAccountAliasError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_account_alias::GetAccountAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_account_alias::GetAccountAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::get_account_alias::GetAccountAliasError> for Error {
     fn from(err: crate::operation::get_account_alias::GetAccountAliasError) -> Self {
         match err {
-            crate::operation::get_account_alias::GetAccountAliasError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::get_account_alias::GetAccountAliasError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::get_account_alias::GetAccountAliasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_account_alias::GetAccountAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -221,12 +171,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_slack_chan
         }
     }
 }
-impl From<crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError>
-    for Error
-{
-    fn from(
-        err: crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError,
-    ) -> Self {
+impl From<crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError> for Error {
+    fn from(err: crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError) -> Self {
         match err {
             crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -256,52 +202,26 @@ impl From<crate::operation::list_slack_workspace_configurations::ListSlackWorksp
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::put_account_alias::PutAccountAliasError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_account_alias::PutAccountAliasError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::put_account_alias::PutAccountAliasError> for Error {
     fn from(err: crate::operation::put_account_alias::PutAccountAliasError) -> Self {
         match err {
-            crate::operation::put_account_alias::PutAccountAliasError::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::operation::put_account_alias::PutAccountAliasError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::put_account_alias::PutAccountAliasError::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::operation::put_account_alias::PutAccountAliasError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::put_account_alias::PutAccountAliasError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_account_alias::PutAccountAliasError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_account_alias::PutAccountAliasError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_account_alias::PutAccountAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -343,13 +263,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_slack_ch
         }
     }
 }
-impl
-    From<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError,
-    ) -> Self {
+impl From<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError> for Error {
+    fn from(err: crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError) -> Self {
         match err {
             crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
@@ -374,3 +289,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Contains the parameters for DeletePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePipelineInput {
+pub struct DeletePipelineInput  {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
 }
 impl DeletePipelineInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DeletePipelineInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// Consumes the builder and constructs a [`DeletePipelineInput`](crate::operation::delete_pipeline::DeletePipelineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_pipeline::DeletePipelineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_pipeline::DeletePipelineInput {
-            pipeline_id: self.pipeline_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_pipeline::DeletePipelineInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_pipeline::DeletePipelineInput {
+                pipeline_id: self.pipeline_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListV2LoggingLevelsOutput {
+pub struct ListV2LoggingLevelsOutput  {
     /// <p>The logging configuration for a target.</p>
     #[doc(hidden)]
-    pub log_target_configurations:
-        std::option::Option<std::vec::Vec<crate::types::LogTargetConfiguration>>,
+    pub log_target_configurations: std::option::Option<std::vec::Vec<crate::types::LogTargetConfiguration>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,25 +13,22 @@ pub struct ListV2LoggingLevelsOutput {
 }
 impl ListV2LoggingLevelsOutput {
     /// <p>The logging configuration for a target.</p>
-    pub fn log_target_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::LogTargetConfiguration]> {
+    pub fn log_target_configurations(&self) -> std::option::Option<& [crate::types::LogTargetConfiguration]> {
         self.log_target_configurations.as_deref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListV2LoggingLevelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListV2LoggingLevelsOutput {
     /// Creates a new builder-style object to manufacture [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder {
         crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsOutputBuilder::default()
     }
 }
@@ -41,8 +37,7 @@ impl ListV2LoggingLevelsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListV2LoggingLevelsOutputBuilder {
-    pub(crate) log_target_configurations:
-        std::option::Option<std::vec::Vec<crate::types::LogTargetConfiguration>>,
+    pub(crate) log_target_configurations: std::option::Option<std::vec::Vec<crate::types::LogTargetConfiguration>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,22 +47,15 @@ impl ListV2LoggingLevelsOutputBuilder {
     /// To override the contents of this collection use [`set_log_target_configurations`](Self::set_log_target_configurations).
     ///
     /// <p>The logging configuration for a target.</p>
-    pub fn log_target_configurations(
-        mut self,
-        input: crate::types::LogTargetConfiguration,
-    ) -> Self {
+    pub fn log_target_configurations(mut self, input: crate::types::LogTargetConfiguration) -> Self {
         let mut v = self.log_target_configurations.unwrap_or_default();
-        v.push(input);
-        self.log_target_configurations = Some(v);
-        self
+                        v.push(input);
+                        self.log_target_configurations = Some(v);
+                        self
     }
     /// <p>The logging configuration for a target.</p>
-    pub fn set_log_target_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogTargetConfiguration>>,
-    ) -> Self {
-        self.log_target_configurations = input;
-        self
+    pub fn set_log_target_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::LogTargetConfiguration>>) -> Self {
+        self.log_target_configurations = input; self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,24 +64,26 @@ impl ListV2LoggingLevelsOutputBuilder {
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListV2LoggingLevelsOutput`](crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput).
     pub fn build(self) -> crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput {
         crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput {
-            log_target_configurations: self.log_target_configurations,
-            next_token: self.next_token,
+            log_target_configurations: self.log_target_configurations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

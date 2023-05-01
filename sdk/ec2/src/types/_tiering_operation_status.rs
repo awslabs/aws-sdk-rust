@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tieringoperationstatus = unimplemented!();
 /// match tieringoperationstatus {
@@ -37,22 +37,14 @@
 /// Specifically, when `tieringoperationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TieringOperationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TieringOperationStatus {
     #[allow(missing_docs)] // documentation missing in model
     ArchivalCompleted,
@@ -73,66 +65,55 @@ pub enum TieringOperationStatus {
     #[allow(missing_docs)] // documentation missing in model
     TemporaryRestoreInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TieringOperationStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "archival-completed" => TieringOperationStatus::ArchivalCompleted,
-            "archival-failed" => TieringOperationStatus::ArchivalFailed,
-            "archival-in-progress" => TieringOperationStatus::ArchivalInProgress,
-            "permanent-restore-completed" => TieringOperationStatus::PermanentRestoreCompleted,
-            "permanent-restore-failed" => TieringOperationStatus::PermanentRestoreFailed,
-            "permanent-restore-in-progress" => TieringOperationStatus::PermanentRestoreInProgress,
-            "temporary-restore-completed" => TieringOperationStatus::TemporaryRestoreCompleted,
-            "temporary-restore-failed" => TieringOperationStatus::TemporaryRestoreFailed,
-            "temporary-restore-in-progress" => TieringOperationStatus::TemporaryRestoreInProgress,
-            other => TieringOperationStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "archival-completed" => TieringOperationStatus::ArchivalCompleted,
+"archival-failed" => TieringOperationStatus::ArchivalFailed,
+"archival-in-progress" => TieringOperationStatus::ArchivalInProgress,
+"permanent-restore-completed" => TieringOperationStatus::PermanentRestoreCompleted,
+"permanent-restore-failed" => TieringOperationStatus::PermanentRestoreFailed,
+"permanent-restore-in-progress" => TieringOperationStatus::PermanentRestoreInProgress,
+"temporary-restore-completed" => TieringOperationStatus::TemporaryRestoreCompleted,
+"temporary-restore-failed" => TieringOperationStatus::TemporaryRestoreFailed,
+"temporary-restore-in-progress" => TieringOperationStatus::TemporaryRestoreInProgress,
+other => TieringOperationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TieringOperationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TieringOperationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TieringOperationStatus::from(s))
+                }
+            }
 impl TieringOperationStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TieringOperationStatus::ArchivalCompleted => "archival-completed",
-            TieringOperationStatus::ArchivalFailed => "archival-failed",
-            TieringOperationStatus::ArchivalInProgress => "archival-in-progress",
-            TieringOperationStatus::PermanentRestoreCompleted => "permanent-restore-completed",
-            TieringOperationStatus::PermanentRestoreFailed => "permanent-restore-failed",
-            TieringOperationStatus::PermanentRestoreInProgress => "permanent-restore-in-progress",
-            TieringOperationStatus::TemporaryRestoreCompleted => "temporary-restore-completed",
-            TieringOperationStatus::TemporaryRestoreFailed => "temporary-restore-failed",
-            TieringOperationStatus::TemporaryRestoreInProgress => "temporary-restore-in-progress",
-            TieringOperationStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "archival-completed",
-            "archival-failed",
-            "archival-in-progress",
-            "permanent-restore-completed",
-            "permanent-restore-failed",
-            "permanent-restore-in-progress",
-            "temporary-restore-completed",
-            "temporary-restore-failed",
-            "temporary-restore-in-progress",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TieringOperationStatus::ArchivalCompleted => "archival-completed",
+    TieringOperationStatus::ArchivalFailed => "archival-failed",
+    TieringOperationStatus::ArchivalInProgress => "archival-in-progress",
+    TieringOperationStatus::PermanentRestoreCompleted => "permanent-restore-completed",
+    TieringOperationStatus::PermanentRestoreFailed => "permanent-restore-failed",
+    TieringOperationStatus::PermanentRestoreInProgress => "permanent-restore-in-progress",
+    TieringOperationStatus::TemporaryRestoreCompleted => "temporary-restore-completed",
+    TieringOperationStatus::TemporaryRestoreFailed => "temporary-restore-failed",
+    TieringOperationStatus::TemporaryRestoreInProgress => "temporary-restore-in-progress",
+    TieringOperationStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["archival-completed", "archival-failed", "archival-in-progress", "permanent-restore-completed", "permanent-restore-failed", "permanent-restore-in-progress", "temporary-restore-completed", "temporary-restore-failed", "temporary-restore-in-progress"]
+                }
+            }
 impl AsRef<str> for TieringOperationStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

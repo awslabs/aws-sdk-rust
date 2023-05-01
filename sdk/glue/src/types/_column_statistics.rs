@@ -3,7 +3,7 @@
 /// <p>Represents the generated column-level statistics for a table or partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnStatistics {
+pub struct ColumnStatistics  {
     /// <p>Name of column which statistics belong to.</p>
     #[doc(hidden)]
     pub column_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ColumnStatistics {
 }
 impl ColumnStatistics {
     /// <p>Name of column which statistics belong to.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn column_type(&self) -> std::option::Option<&str> {
+    pub fn column_type(&self) -> std::option::Option<& str> {
         self.column_type.as_deref()
     }
     /// <p>The timestamp of when column statistics were generated.</p>
-    pub fn analyzed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn analyzed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.analyzed_time.as_ref()
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
-    pub fn statistics_data(&self) -> std::option::Option<&crate::types::ColumnStatisticsData> {
+    pub fn statistics_data(&self) -> std::option::Option<& crate::types::ColumnStatisticsData> {
         self.statistics_data.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ColumnStatisticsBuilder {
     }
     /// <p>Name of column which statistics belong to.</p>
     pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn column_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ColumnStatisticsBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_column_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_type = input;
-        self
+        self.column_type = input; self
     }
     /// <p>The timestamp of when column statistics were generated.</p>
     pub fn analyzed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl ColumnStatisticsBuilder {
         self
     }
     /// <p>The timestamp of when column statistics were generated.</p>
-    pub fn set_analyzed_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.analyzed_time = input;
-        self
+    pub fn set_analyzed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.analyzed_time = input; self
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
     pub fn statistics_data(mut self, input: crate::types::ColumnStatisticsData) -> Self {
@@ -91,20 +85,21 @@ impl ColumnStatisticsBuilder {
         self
     }
     /// <p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>
-    pub fn set_statistics_data(
-        mut self,
-        input: std::option::Option<crate::types::ColumnStatisticsData>,
-    ) -> Self {
-        self.statistics_data = input;
-        self
+    pub fn set_statistics_data(mut self, input: std::option::Option<crate::types::ColumnStatisticsData>) -> Self {
+        self.statistics_data = input; self
     }
     /// Consumes the builder and constructs a [`ColumnStatistics`](crate::types::ColumnStatistics).
     pub fn build(self) -> crate::types::ColumnStatistics {
         crate::types::ColumnStatistics {
-            column_name: self.column_name,
-            column_type: self.column_type,
-            analyzed_time: self.analyzed_time,
-            statistics_data: self.statistics_data,
+            column_name: self.column_name
+            ,
+            column_type: self.column_type
+            ,
+            analyzed_time: self.analyzed_time
+            ,
+            statistics_data: self.statistics_data
+            ,
         }
     }
 }
+

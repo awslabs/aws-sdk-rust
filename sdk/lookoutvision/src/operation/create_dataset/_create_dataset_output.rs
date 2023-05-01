@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetOutput {
+pub struct CreateDatasetOutput  {
     /// <p>Information about the dataset.</p>
     #[doc(hidden)]
     pub dataset_metadata: std::option::Option<crate::types::DatasetMetadata>,
@@ -10,15 +10,15 @@ pub struct CreateDatasetOutput {
 }
 impl CreateDatasetOutput {
     /// <p>Information about the dataset.</p>
-    pub fn dataset_metadata(&self) -> std::option::Option<&crate::types::DatasetMetadata> {
+    pub fn dataset_metadata(&self) -> std::option::Option<& crate::types::DatasetMetadata> {
         self.dataset_metadata.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDatasetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
     pub fn builder() -> crate::operation::create_dataset::builders::CreateDatasetOutputBuilder {
@@ -40,27 +40,25 @@ impl CreateDatasetOutputBuilder {
         self
     }
     /// <p>Information about the dataset.</p>
-    pub fn set_dataset_metadata(
-        mut self,
-        input: std::option::Option<crate::types::DatasetMetadata>,
-    ) -> Self {
-        self.dataset_metadata = input;
-        self
+    pub fn set_dataset_metadata(mut self, input: std::option::Option<crate::types::DatasetMetadata>) -> Self {
+        self.dataset_metadata = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
     pub fn build(self) -> crate::operation::create_dataset::CreateDatasetOutput {
         crate::operation::create_dataset::CreateDatasetOutput {
-            dataset_metadata: self.dataset_metadata,
+            dataset_metadata: self.dataset_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

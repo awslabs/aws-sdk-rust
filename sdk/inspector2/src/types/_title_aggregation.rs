@@ -3,7 +3,7 @@
 /// <p>The details that define an aggregation based on finding title.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TitleAggregation {
+pub struct TitleAggregation  {
     /// <p>The finding titles to aggregate on.</p>
     #[doc(hidden)]
     pub titles: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -22,23 +22,23 @@ pub struct TitleAggregation {
 }
 impl TitleAggregation {
     /// <p>The finding titles to aggregate on.</p>
-    pub fn titles(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn titles(&self) -> std::option::Option<& [crate::types::StringFilter]> {
         self.titles.as_deref()
     }
     /// <p>The vulnerability IDs of the findings.</p>
-    pub fn vulnerability_ids(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn vulnerability_ids(&self) -> std::option::Option<& [crate::types::StringFilter]> {
         self.vulnerability_ids.as_deref()
     }
     /// <p>The resource type to aggregate on.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::AggregationResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::AggregationResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::TitleSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::TitleSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -67,17 +67,13 @@ impl TitleAggregationBuilder {
     /// <p>The finding titles to aggregate on.</p>
     pub fn titles(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.titles.unwrap_or_default();
-        v.push(input);
-        self.titles = Some(v);
-        self
+                        v.push(input);
+                        self.titles = Some(v);
+                        self
     }
     /// <p>The finding titles to aggregate on.</p>
-    pub fn set_titles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
-        self.titles = input;
-        self
+    pub fn set_titles(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.titles = input; self
     }
     /// Appends an item to `vulnerability_ids`.
     ///
@@ -86,17 +82,13 @@ impl TitleAggregationBuilder {
     /// <p>The vulnerability IDs of the findings.</p>
     pub fn vulnerability_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.vulnerability_ids.unwrap_or_default();
-        v.push(input);
-        self.vulnerability_ids = Some(v);
-        self
+                        v.push(input);
+                        self.vulnerability_ids = Some(v);
+                        self
     }
     /// <p>The vulnerability IDs of the findings.</p>
-    pub fn set_vulnerability_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
-        self.vulnerability_ids = input;
-        self
+    pub fn set_vulnerability_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.vulnerability_ids = input; self
     }
     /// <p>The resource type to aggregate on.</p>
     pub fn resource_type(mut self, input: crate::types::AggregationResourceType) -> Self {
@@ -104,12 +96,8 @@ impl TitleAggregationBuilder {
         self
     }
     /// <p>The resource type to aggregate on.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::AggregationResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::AggregationResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -118,8 +106,7 @@ impl TitleAggregationBuilder {
     }
     /// <p>The order to sort results by.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::TitleSortBy) -> Self {
@@ -128,17 +115,22 @@ impl TitleAggregationBuilder {
     }
     /// <p>The value to sort results by.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::TitleSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// Consumes the builder and constructs a [`TitleAggregation`](crate::types::TitleAggregation).
     pub fn build(self) -> crate::types::TitleAggregation {
         crate::types::TitleAggregation {
-            titles: self.titles,
-            vulnerability_ids: self.vulnerability_ids,
-            resource_type: self.resource_type,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            titles: self.titles
+            ,
+            vulnerability_ids: self.vulnerability_ids
+            ,
+            resource_type: self.resource_type
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

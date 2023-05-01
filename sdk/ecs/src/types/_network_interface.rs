@@ -3,7 +3,7 @@
 /// <p>An object representing the elastic network interface for tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The attachment ID for the network interface.</p>
     #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The attachment ID for the network interface.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
     /// <p>The private IPv4 address for the network interface.</p>
-    pub fn private_ipv4_address(&self) -> std::option::Option<&str> {
+    pub fn private_ipv4_address(&self) -> std::option::Option<& str> {
         self.private_ipv4_address.as_deref()
     }
     /// <p>The private IPv6 address for the network interface.</p>
-    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The attachment ID for the network interface.</p>
     pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// <p>The private IPv4 address for the network interface.</p>
     pub fn private_ipv4_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl NetworkInterfaceBuilder {
         self
     }
     /// <p>The private IPv4 address for the network interface.</p>
-    pub fn set_private_ipv4_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.private_ipv4_address = input;
-        self
+    pub fn set_private_ipv4_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.private_ipv4_address = input; self
     }
     /// <p>The private IPv6 address for the network interface.</p>
     pub fn ipv6_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The private IPv6 address for the network interface.</p>
     pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
-            attachment_id: self.attachment_id,
-            private_ipv4_address: self.private_ipv4_address,
-            ipv6_address: self.ipv6_address,
+            attachment_id: self.attachment_id
+            ,
+            private_ipv4_address: self.private_ipv4_address
+            ,
+            ipv6_address: self.ipv6_address
+            ,
         }
     }
 }
+

@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNamedQueryInput {
+pub struct DeleteNamedQueryInput  {
     /// <p>The unique ID of the query to delete.</p>
     #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
 }
 impl DeleteNamedQueryInput {
     /// <p>The unique ID of the query to delete.</p>
-    pub fn named_query_id(&self) -> std::option::Option<&str> {
+    pub fn named_query_id(&self) -> std::option::Option<& str> {
         self.named_query_id.as_deref()
     }
 }
 impl DeleteNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
-    pub fn builder() -> crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder {
         crate::operation::delete_named_query::builders::DeleteNamedQueryInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteNamedQueryInputBuilder {
     }
     /// <p>The unique ID of the query to delete.</p>
     pub fn set_named_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.named_query_id = input;
-        self
+        self.named_query_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteNamedQueryInput`](crate::operation::delete_named_query::DeleteNamedQueryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_named_query::DeleteNamedQueryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_named_query::DeleteNamedQueryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_named_query::DeleteNamedQueryInput {
-                named_query_id: self.named_query_id,
-            },
+                named_query_id: self.named_query_id
+                ,
+            }
         )
     }
 }
+

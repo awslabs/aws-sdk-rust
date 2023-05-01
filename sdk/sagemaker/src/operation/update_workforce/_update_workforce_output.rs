@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkforceOutput {
+pub struct UpdateWorkforceOutput  {
     /// <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     #[doc(hidden)]
     pub workforce: std::option::Option<crate::types::Workforce>,
@@ -10,15 +10,15 @@ pub struct UpdateWorkforceOutput {
 }
 impl UpdateWorkforceOutput {
     /// <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
-    pub fn workforce(&self) -> std::option::Option<&crate::types::Workforce> {
+    pub fn workforce(&self) -> std::option::Option<& crate::types::Workforce> {
         self.workforce.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateWorkforceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateWorkforceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkforceOutput`](crate::operation::update_workforce::UpdateWorkforceOutput).
     pub fn builder() -> crate::operation::update_workforce::builders::UpdateWorkforceOutputBuilder {
@@ -41,23 +41,24 @@ impl UpdateWorkforceOutputBuilder {
     }
     /// <p>A single private workforce. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create a Private Workforce</a>.</p>
     pub fn set_workforce(mut self, input: std::option::Option<crate::types::Workforce>) -> Self {
-        self.workforce = input;
-        self
+        self.workforce = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateWorkforceOutput`](crate::operation::update_workforce::UpdateWorkforceOutput).
     pub fn build(self) -> crate::operation::update_workforce::UpdateWorkforceOutput {
         crate::operation::update_workforce::UpdateWorkforceOutput {
-            workforce: self.workforce,
+            workforce: self.workforce
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

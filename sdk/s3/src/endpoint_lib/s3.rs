@@ -36,3 +36,4 @@ fn is_virtual_hostable_segment(host_label: &str) -> bool {
         && !IPV4.is_match(host_label) // don't allow ip address
         && !DOTS_AND_DASHES.is_match(host_label) // don't allow names like bucket-.name or bucket.-name
 }
+

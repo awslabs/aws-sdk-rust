@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAutoTerminationPolicyInput {
+pub struct PutAutoTerminationPolicyInput  {
     /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -12,21 +12,17 @@ pub struct PutAutoTerminationPolicyInput {
 }
 impl PutAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
-    pub fn auto_termination_policy(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoTerminationPolicy> {
+    pub fn auto_termination_policy(&self) -> std::option::Option<& crate::types::AutoTerminationPolicy> {
         self.auto_termination_policy.as_ref()
     }
 }
 impl PutAutoTerminationPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutAutoTerminationPolicyInput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder {
         crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder::default()
     }
 }
@@ -46,8 +42,7 @@ impl PutAutoTerminationPolicyInputBuilder {
     }
     /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
     pub fn auto_termination_policy(mut self, input: crate::types::AutoTerminationPolicy) -> Self {
@@ -55,25 +50,19 @@ impl PutAutoTerminationPolicyInputBuilder {
         self
     }
     /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
-    pub fn set_auto_termination_policy(
-        mut self,
-        input: std::option::Option<crate::types::AutoTerminationPolicy>,
-    ) -> Self {
-        self.auto_termination_policy = input;
-        self
+    pub fn set_auto_termination_policy(mut self, input: std::option::Option<crate::types::AutoTerminationPolicy>) -> Self {
+        self.auto_termination_policy = input; self
     }
     /// Consumes the builder and constructs a [`PutAutoTerminationPolicyInput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyInput {
-                cluster_id: self.cluster_id,
-                auto_termination_policy: self.auto_termination_policy,
-            },
+                cluster_id: self.cluster_id
+                ,
+                auto_termination_policy: self.auto_termination_policy
+                ,
+            }
         )
     }
 }
+

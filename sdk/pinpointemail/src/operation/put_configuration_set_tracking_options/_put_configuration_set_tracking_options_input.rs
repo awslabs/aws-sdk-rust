@@ -3,7 +3,7 @@
 /// <p>A request to add a custom domain for tracking open and click events to a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetTrackingOptionsInput {
+pub struct PutConfigurationSetTrackingOptionsInput  {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct PutConfigurationSetTrackingOptionsInput {
 }
 impl PutConfigurationSetTrackingOptionsInput {
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The domain that you want to use to track open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+    pub fn custom_redirect_domain(&self) -> std::option::Option<& str> {
         self.custom_redirect_domain.as_deref()
     }
 }
 impl PutConfigurationSetTrackingOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder{
+    pub fn builder() -> crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder {
         crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder::default()
     }
 }
@@ -42,12 +42,8 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
         self
     }
     /// <p>The name of the configuration set that you want to add a custom tracking domain to.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// <p>The domain that you want to use to track open and click events.</p>
     pub fn custom_redirect_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,15 +51,11 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
         self
     }
     /// <p>The domain that you want to use to track open and click events.</p>
-    pub fn set_custom_redirect_domain(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.custom_redirect_domain = input;
-        self
+    pub fn set_custom_redirect_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.custom_redirect_domain = input; self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsInput`](crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput).
-    pub fn build(self) -> Result<crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptionsInput {
                 configuration_set_name: self.configuration_set_name
@@ -74,3 +66,4 @@ impl PutConfigurationSetTrackingOptionsInputBuilder {
         )
     }
 }
+

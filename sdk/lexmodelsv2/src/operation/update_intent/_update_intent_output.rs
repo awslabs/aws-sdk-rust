@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIntentOutput {
+pub struct UpdateIntentOutput  {
     /// <p>The identifier of the intent that was updated.</p>
     #[doc(hidden)]
     pub intent_id: std::option::Option<std::string::String>,
@@ -64,95 +64,87 @@ pub struct UpdateIntentOutput {
 }
 impl UpdateIntentOutput {
     /// <p>The identifier of the intent that was updated.</p>
-    pub fn intent_id(&self) -> std::option::Option<&str> {
+    pub fn intent_id(&self) -> std::option::Option<& str> {
         self.intent_id.as_deref()
     }
     /// <p>The updated name of the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> std::option::Option<& str> {
         self.intent_name.as_deref()
     }
     /// <p>The updated description of the intent.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The updated built-in intent that is the parent of this intent.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
         self.parent_intent_signature.as_deref()
     }
     /// <p>The updated list of sample utterances for the intent.</p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[crate::types::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [crate::types::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
     /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::types::DialogCodeHookSettings> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::types::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
     /// <p>The updated Lambda function called when the intent is ready for fulfillment.</p>
-    pub fn fulfillment_code_hook(
-        &self,
-    ) -> std::option::Option<&crate::types::FulfillmentCodeHookSettings> {
+    pub fn fulfillment_code_hook(&self) -> std::option::Option<& crate::types::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
-    pub fn slot_priorities(&self) -> std::option::Option<&[crate::types::SlotPriority]> {
+    pub fn slot_priorities(&self) -> std::option::Option<& [crate::types::SlotPriority]> {
         self.slot_priorities.as_deref()
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    pub fn intent_confirmation_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::IntentConfirmationSetting> {
+    pub fn intent_confirmation_setting(&self) -> std::option::Option<& crate::types::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
     /// <p>The updated response that Amazon Lex sends the user when the intent is closed.</p>
-    pub fn intent_closing_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::IntentClosingSetting> {
+    pub fn intent_closing_setting(&self) -> std::option::Option<& crate::types::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
     /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
-    pub fn input_contexts(&self) -> std::option::Option<&[crate::types::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<& [crate::types::InputContext]> {
         self.input_contexts.as_deref()
     }
     /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn output_contexts(&self) -> std::option::Option<&[crate::types::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<& [crate::types::OutputContext]> {
         self.output_contexts.as_deref()
     }
     /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<&crate::types::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<& crate::types::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>The identifier of the bot that contains the intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the intent. Will always be <code>DRAFT</code>.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The updated language and locale of the intent.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>A timestamp of when the intent was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the last time that the intent was modified.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p></p>
-    pub fn initial_response_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::InitialResponseSetting> {
+    pub fn initial_response_setting(&self) -> std::option::Option<& crate::types::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateIntentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateIntentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIntentOutput`](crate::operation::update_intent::UpdateIntentOutput).
     pub fn builder() -> crate::operation::update_intent::builders::UpdateIntentOutputBuilder {
@@ -170,11 +162,9 @@ pub struct UpdateIntentOutputBuilder {
     pub(crate) parent_intent_signature: std::option::Option<std::string::String>,
     pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
     pub(crate) dialog_code_hook: std::option::Option<crate::types::DialogCodeHookSettings>,
-    pub(crate) fulfillment_code_hook:
-        std::option::Option<crate::types::FulfillmentCodeHookSettings>,
+    pub(crate) fulfillment_code_hook: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
     pub(crate) slot_priorities: std::option::Option<std::vec::Vec<crate::types::SlotPriority>>,
-    pub(crate) intent_confirmation_setting:
-        std::option::Option<crate::types::IntentConfirmationSetting>,
+    pub(crate) intent_confirmation_setting: std::option::Option<crate::types::IntentConfirmationSetting>,
     pub(crate) intent_closing_setting: std::option::Option<crate::types::IntentClosingSetting>,
     pub(crate) input_contexts: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
     pub(crate) output_contexts: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
@@ -195,8 +185,7 @@ impl UpdateIntentOutputBuilder {
     }
     /// <p>The identifier of the intent that was updated.</p>
     pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_id = input;
-        self
+        self.intent_id = input; self
     }
     /// <p>The updated name of the intent.</p>
     pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,8 +194,7 @@ impl UpdateIntentOutputBuilder {
     }
     /// <p>The updated name of the intent.</p>
     pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_name = input;
-        self
+        self.intent_name = input; self
     }
     /// <p>The updated description of the intent.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,8 +203,7 @@ impl UpdateIntentOutputBuilder {
     }
     /// <p>The updated description of the intent.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The updated built-in intent that is the parent of this intent.</p>
     pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,12 +211,8 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p>The updated built-in intent that is the parent of this intent.</p>
-    pub fn set_parent_intent_signature(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parent_intent_signature = input;
-        self
+    pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parent_intent_signature = input; self
     }
     /// Appends an item to `sample_utterances`.
     ///
@@ -238,17 +221,13 @@ impl UpdateIntentOutputBuilder {
     /// <p>The updated list of sample utterances for the intent.</p>
     pub fn sample_utterances(mut self, input: crate::types::SampleUtterance) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
-        v.push(input);
-        self.sample_utterances = Some(v);
-        self
+                        v.push(input);
+                        self.sample_utterances = Some(v);
+                        self
     }
     /// <p>The updated list of sample utterances for the intent.</p>
-    pub fn set_sample_utterances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
-    ) -> Self {
-        self.sample_utterances = input;
-        self
+    pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
+        self.sample_utterances = input; self
     }
     /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
     pub fn dialog_code_hook(mut self, input: crate::types::DialogCodeHookSettings) -> Self {
@@ -256,28 +235,17 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p>The updated Lambda function called during each turn of the conversation with the user.</p>
-    pub fn set_dialog_code_hook(
-        mut self,
-        input: std::option::Option<crate::types::DialogCodeHookSettings>,
-    ) -> Self {
-        self.dialog_code_hook = input;
-        self
+    pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::types::DialogCodeHookSettings>) -> Self {
+        self.dialog_code_hook = input; self
     }
     /// <p>The updated Lambda function called when the intent is ready for fulfillment.</p>
-    pub fn fulfillment_code_hook(
-        mut self,
-        input: crate::types::FulfillmentCodeHookSettings,
-    ) -> Self {
+    pub fn fulfillment_code_hook(mut self, input: crate::types::FulfillmentCodeHookSettings) -> Self {
         self.fulfillment_code_hook = Some(input);
         self
     }
     /// <p>The updated Lambda function called when the intent is ready for fulfillment.</p>
-    pub fn set_fulfillment_code_hook(
-        mut self,
-        input: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
-    ) -> Self {
-        self.fulfillment_code_hook = input;
-        self
+    pub fn set_fulfillment_code_hook(mut self, input: std::option::Option<crate::types::FulfillmentCodeHookSettings>) -> Self {
+        self.fulfillment_code_hook = input; self
     }
     /// Appends an item to `slot_priorities`.
     ///
@@ -286,33 +254,22 @@ impl UpdateIntentOutputBuilder {
     /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
     pub fn slot_priorities(mut self, input: crate::types::SlotPriority) -> Self {
         let mut v = self.slot_priorities.unwrap_or_default();
-        v.push(input);
-        self.slot_priorities = Some(v);
-        self
+                        v.push(input);
+                        self.slot_priorities = Some(v);
+                        self
     }
     /// <p>The updated list of slots and their priorities that are elicited from the user for the intent.</p>
-    pub fn set_slot_priorities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlotPriority>>,
-    ) -> Self {
-        self.slot_priorities = input;
-        self
+    pub fn set_slot_priorities(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlotPriority>>) -> Self {
+        self.slot_priorities = input; self
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    pub fn intent_confirmation_setting(
-        mut self,
-        input: crate::types::IntentConfirmationSetting,
-    ) -> Self {
+    pub fn intent_confirmation_setting(mut self, input: crate::types::IntentConfirmationSetting) -> Self {
         self.intent_confirmation_setting = Some(input);
         self
     }
     /// <p>The updated prompts that Amazon Lex sends to the user to confirm the completion of an intent.</p>
-    pub fn set_intent_confirmation_setting(
-        mut self,
-        input: std::option::Option<crate::types::IntentConfirmationSetting>,
-    ) -> Self {
-        self.intent_confirmation_setting = input;
-        self
+    pub fn set_intent_confirmation_setting(mut self, input: std::option::Option<crate::types::IntentConfirmationSetting>) -> Self {
+        self.intent_confirmation_setting = input; self
     }
     /// <p>The updated response that Amazon Lex sends the user when the intent is closed.</p>
     pub fn intent_closing_setting(mut self, input: crate::types::IntentClosingSetting) -> Self {
@@ -320,12 +277,8 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p>The updated response that Amazon Lex sends the user when the intent is closed.</p>
-    pub fn set_intent_closing_setting(
-        mut self,
-        input: std::option::Option<crate::types::IntentClosingSetting>,
-    ) -> Self {
-        self.intent_closing_setting = input;
-        self
+    pub fn set_intent_closing_setting(mut self, input: std::option::Option<crate::types::IntentClosingSetting>) -> Self {
+        self.intent_closing_setting = input; self
     }
     /// Appends an item to `input_contexts`.
     ///
@@ -334,17 +287,13 @@ impl UpdateIntentOutputBuilder {
     /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
     pub fn input_contexts(mut self, input: crate::types::InputContext) -> Self {
         let mut v = self.input_contexts.unwrap_or_default();
-        v.push(input);
-        self.input_contexts = Some(v);
-        self
+                        v.push(input);
+                        self.input_contexts = Some(v);
+                        self
     }
     /// <p>The updated list of contexts that must be active for the intent to be considered by Amazon Lex.</p>
-    pub fn set_input_contexts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
-    ) -> Self {
-        self.input_contexts = input;
-        self
+    pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputContext>>) -> Self {
+        self.input_contexts = input; self
     }
     /// Appends an item to `output_contexts`.
     ///
@@ -353,17 +302,13 @@ impl UpdateIntentOutputBuilder {
     /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
     pub fn output_contexts(mut self, input: crate::types::OutputContext) -> Self {
         let mut v = self.output_contexts.unwrap_or_default();
-        v.push(input);
-        self.output_contexts = Some(v);
-        self
+                        v.push(input);
+                        self.output_contexts = Some(v);
+                        self
     }
     /// <p>The updated list of contexts that Amazon Lex activates when the intent is fulfilled.</p>
-    pub fn set_output_contexts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
-    ) -> Self {
-        self.output_contexts = input;
-        self
+    pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>) -> Self {
+        self.output_contexts = input; self
     }
     /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
     pub fn kendra_configuration(mut self, input: crate::types::KendraConfiguration) -> Self {
@@ -371,12 +316,8 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p>The updated configuration for connecting to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>
-    pub fn set_kendra_configuration(
-        mut self,
-        input: std::option::Option<crate::types::KendraConfiguration>,
-    ) -> Self {
-        self.kendra_configuration = input;
-        self
+    pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::types::KendraConfiguration>) -> Self {
+        self.kendra_configuration = input; self
     }
     /// <p>The identifier of the bot that contains the intent.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -385,8 +326,7 @@ impl UpdateIntentOutputBuilder {
     }
     /// <p>The identifier of the bot that contains the intent.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot that contains the intent. Will always be <code>DRAFT</code>.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -395,8 +335,7 @@ impl UpdateIntentOutputBuilder {
     }
     /// <p>The version of the bot that contains the intent. Will always be <code>DRAFT</code>.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The updated language and locale of the intent.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -405,8 +344,7 @@ impl UpdateIntentOutputBuilder {
     }
     /// <p>The updated language and locale of the intent.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>A timestamp of when the intent was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -414,12 +352,8 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p>A timestamp of when the intent was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>A timestamp of the last time that the intent was modified.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -427,12 +361,8 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p>A timestamp of the last time that the intent was modified.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
     }
     /// <p></p>
     pub fn initial_response_setting(mut self, input: crate::types::InitialResponseSetting) -> Self {
@@ -440,45 +370,61 @@ impl UpdateIntentOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_initial_response_setting(
-        mut self,
-        input: std::option::Option<crate::types::InitialResponseSetting>,
-    ) -> Self {
-        self.initial_response_setting = input;
-        self
+    pub fn set_initial_response_setting(mut self, input: std::option::Option<crate::types::InitialResponseSetting>) -> Self {
+        self.initial_response_setting = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateIntentOutput`](crate::operation::update_intent::UpdateIntentOutput).
     pub fn build(self) -> crate::operation::update_intent::UpdateIntentOutput {
         crate::operation::update_intent::UpdateIntentOutput {
-            intent_id: self.intent_id,
-            intent_name: self.intent_name,
-            description: self.description,
-            parent_intent_signature: self.parent_intent_signature,
-            sample_utterances: self.sample_utterances,
-            dialog_code_hook: self.dialog_code_hook,
-            fulfillment_code_hook: self.fulfillment_code_hook,
-            slot_priorities: self.slot_priorities,
-            intent_confirmation_setting: self.intent_confirmation_setting,
-            intent_closing_setting: self.intent_closing_setting,
-            input_contexts: self.input_contexts,
-            output_contexts: self.output_contexts,
-            kendra_configuration: self.kendra_configuration,
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
-            initial_response_setting: self.initial_response_setting,
+            intent_id: self.intent_id
+            ,
+            intent_name: self.intent_name
+            ,
+            description: self.description
+            ,
+            parent_intent_signature: self.parent_intent_signature
+            ,
+            sample_utterances: self.sample_utterances
+            ,
+            dialog_code_hook: self.dialog_code_hook
+            ,
+            fulfillment_code_hook: self.fulfillment_code_hook
+            ,
+            slot_priorities: self.slot_priorities
+            ,
+            intent_confirmation_setting: self.intent_confirmation_setting
+            ,
+            intent_closing_setting: self.intent_closing_setting
+            ,
+            input_contexts: self.input_contexts
+            ,
+            output_contexts: self.output_contexts
+            ,
+            kendra_configuration: self.kendra_configuration
+            ,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
+            initial_response_setting: self.initial_response_setting
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

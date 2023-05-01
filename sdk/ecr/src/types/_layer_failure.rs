@@ -3,7 +3,7 @@
 /// <p>An object representing an Amazon ECR image layer failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LayerFailure {
+pub struct LayerFailure  {
     /// <p>The layer digest associated with the failure.</p>
     #[doc(hidden)]
     pub layer_digest: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct LayerFailure {
 }
 impl LayerFailure {
     /// <p>The layer digest associated with the failure.</p>
-    pub fn layer_digest(&self) -> std::option::Option<&str> {
+    pub fn layer_digest(&self) -> std::option::Option<& str> {
         self.layer_digest.as_deref()
     }
     /// <p>The failure code associated with the failure.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::LayerFailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::LayerFailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl LayerFailureBuilder {
     }
     /// <p>The layer digest associated with the failure.</p>
     pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_digest = input;
-        self
+        self.layer_digest = input; self
     }
     /// <p>The failure code associated with the failure.</p>
     pub fn failure_code(mut self, input: crate::types::LayerFailureCode) -> Self {
@@ -60,12 +59,8 @@ impl LayerFailureBuilder {
         self
     }
     /// <p>The failure code associated with the failure.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::LayerFailureCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::LayerFailureCode>) -> Self {
+        self.failure_code = input; self
     }
     /// <p>The reason for the failure.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl LayerFailureBuilder {
     }
     /// <p>The reason for the failure.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// Consumes the builder and constructs a [`LayerFailure`](crate::types::LayerFailure).
     pub fn build(self) -> crate::types::LayerFailure {
         crate::types::LayerFailure {
-            layer_digest: self.layer_digest,
-            failure_code: self.failure_code,
-            failure_reason: self.failure_reason,
+            layer_digest: self.layer_digest
+            ,
+            failure_code: self.failure_code
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the output of QueryObjects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryObjectsOutput {
+pub struct QueryObjectsOutput  {
     /// <p>The identifiers that match the query selectors.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17,11 +17,11 @@ pub struct QueryObjectsOutput {
 }
 impl QueryObjectsOutput {
     /// <p>The identifiers that match the query selectors.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
@@ -30,10 +30,10 @@ impl QueryObjectsOutput {
     }
 }
 impl aws_http::request_id::RequestId for QueryObjectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl QueryObjectsOutput {
     /// Creates a new builder-style object to manufacture [`QueryObjectsOutput`](crate::operation::query_objects::QueryObjectsOutput).
     pub fn builder() -> crate::operation::query_objects::builders::QueryObjectsOutputBuilder {
@@ -58,17 +58,13 @@ impl QueryObjectsOutputBuilder {
     /// <p>The identifiers that match the query selectors.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
     /// <p>The identifiers that match the query selectors.</p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +73,7 @@ impl QueryObjectsOutputBuilder {
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code> again with this marker value. If the value is null, there are no more results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub fn has_more_results(mut self, input: bool) -> Self {
@@ -87,25 +82,29 @@ impl QueryObjectsOutputBuilder {
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_more_results = input;
-        self
+        self.has_more_results = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`QueryObjectsOutput`](crate::operation::query_objects::QueryObjectsOutput).
     pub fn build(self) -> crate::operation::query_objects::QueryObjectsOutput {
         crate::operation::query_objects::QueryObjectsOutput {
-            ids: self.ids,
-            marker: self.marker,
-            has_more_results: self.has_more_results.unwrap_or_default(),
+            ids: self.ids
+            ,
+            marker: self.marker
+            ,
+            has_more_results: self.has_more_results
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

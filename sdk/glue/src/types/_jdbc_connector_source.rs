@@ -3,7 +3,7 @@
 /// <p>Specifies a connector to a JDBC data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JdbcConnectorSource {
+pub struct JdbcConnectorSource  {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct JdbcConnectorSource {
 }
 impl JdbcConnectorSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the connection that is associated with the connector.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
-    pub fn connector_name(&self) -> std::option::Option<&str> {
+    pub fn connector_name(&self) -> std::option::Option<& str> {
         self.connector_name.as_deref()
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
-    pub fn connection_type(&self) -> std::option::Option<&str> {
+    pub fn connection_type(&self) -> std::option::Option<& str> {
         self.connection_type.as_deref()
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn additional_options(&self) -> std::option::Option<&crate::types::JdbcConnectorOptions> {
+    pub fn additional_options(&self) -> std::option::Option<& crate::types::JdbcConnectorOptions> {
         self.additional_options.as_ref()
     }
     /// <p>The name of the table in the data source.</p>
-    pub fn connection_table(&self) -> std::option::Option<&str> {
+    pub fn connection_table(&self) -> std::option::Option<& str> {
         self.connection_table.as_deref()
     }
     /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> std::option::Option<& str> {
         self.query.as_deref()
     }
     /// <p>Specifies the data schema for the custom JDBC source.</p>
-    pub fn output_schemas(&self) -> std::option::Option<&[crate::types::GlueSchema]> {
+    pub fn output_schemas(&self) -> std::option::Option<& [crate::types::GlueSchema]> {
         self.output_schemas.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl JdbcConnectorSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl JdbcConnectorSourceBuilder {
     }
     /// <p>The name of the connection that is associated with the connector.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
     pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +109,7 @@ impl JdbcConnectorSourceBuilder {
     }
     /// <p>The name of a connector that assists with accessing the data store in Glue Studio.</p>
     pub fn set_connector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_name = input;
-        self
+        self.connector_name = input; self
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
     pub fn connection_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +118,7 @@ impl JdbcConnectorSourceBuilder {
     }
     /// <p>The type of connection, such as marketplace.jdbc or custom.jdbc, designating a connection to a JDBC data store.</p>
     pub fn set_connection_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_type = input;
-        self
+        self.connection_type = input; self
     }
     /// <p>Additional connection options for the connector.</p>
     pub fn additional_options(mut self, input: crate::types::JdbcConnectorOptions) -> Self {
@@ -130,12 +126,8 @@ impl JdbcConnectorSourceBuilder {
         self
     }
     /// <p>Additional connection options for the connector.</p>
-    pub fn set_additional_options(
-        mut self,
-        input: std::option::Option<crate::types::JdbcConnectorOptions>,
-    ) -> Self {
-        self.additional_options = input;
-        self
+    pub fn set_additional_options(mut self, input: std::option::Option<crate::types::JdbcConnectorOptions>) -> Self {
+        self.additional_options = input; self
     }
     /// <p>The name of the table in the data source.</p>
     pub fn connection_table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +136,7 @@ impl JdbcConnectorSourceBuilder {
     }
     /// <p>The name of the table in the data source.</p>
     pub fn set_connection_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_table = input;
-        self
+        self.connection_table = input; self
     }
     /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
     pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +145,7 @@ impl JdbcConnectorSourceBuilder {
     }
     /// <p>The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code> or <code>query</code>, but not both.</p>
     pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query = input;
-        self
+        self.query = input; self
     }
     /// Appends an item to `output_schemas`.
     ///
@@ -164,29 +154,34 @@ impl JdbcConnectorSourceBuilder {
     /// <p>Specifies the data schema for the custom JDBC source.</p>
     pub fn output_schemas(mut self, input: crate::types::GlueSchema) -> Self {
         let mut v = self.output_schemas.unwrap_or_default();
-        v.push(input);
-        self.output_schemas = Some(v);
-        self
+                        v.push(input);
+                        self.output_schemas = Some(v);
+                        self
     }
     /// <p>Specifies the data schema for the custom JDBC source.</p>
-    pub fn set_output_schemas(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>,
-    ) -> Self {
-        self.output_schemas = input;
-        self
+    pub fn set_output_schemas(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlueSchema>>) -> Self {
+        self.output_schemas = input; self
     }
     /// Consumes the builder and constructs a [`JdbcConnectorSource`](crate::types::JdbcConnectorSource).
     pub fn build(self) -> crate::types::JdbcConnectorSource {
         crate::types::JdbcConnectorSource {
-            name: self.name,
-            connection_name: self.connection_name,
-            connector_name: self.connector_name,
-            connection_type: self.connection_type,
-            additional_options: self.additional_options,
-            connection_table: self.connection_table,
-            query: self.query,
-            output_schemas: self.output_schemas,
+            name: self.name
+            ,
+            connection_name: self.connection_name
+            ,
+            connector_name: self.connector_name
+            ,
+            connection_type: self.connection_type
+            ,
+            additional_options: self.additional_options
+            ,
+            connection_table: self.connection_table
+            ,
+            query: self.query
+            ,
+            output_schemas: self.output_schemas
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterConstraints {
+pub struct ParameterConstraints  {
     /// <p>A list of values that are permitted for a parameter.</p>
     #[doc(hidden)]
     pub allowed_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ParameterConstraints {
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_values.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl ParameterConstraintsBuilder {
     /// <p>A list of values that are permitted for a parameter.</p>
     pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_values = Some(v);
+                        self
     }
     /// <p>A list of values that are permitted for a parameter.</p>
-    pub fn set_allowed_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.allowed_values = input;
-        self
+    pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.allowed_values = input; self
     }
     /// Consumes the builder and constructs a [`ParameterConstraints`](crate::types::ParameterConstraints).
     pub fn build(self) -> crate::types::ParameterConstraints {
         crate::types::ParameterConstraints {
-            allowed_values: self.allowed_values,
+            allowed_values: self.allowed_values
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricStatisticsOutput {
+pub struct GetMetricStatisticsOutput  {
     /// <p>A label for the specified metric.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
@@ -13,25 +13,23 @@ pub struct GetMetricStatisticsOutput {
 }
 impl GetMetricStatisticsOutput {
     /// <p>A label for the specified metric.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn datapoints(&self) -> std::option::Option<&[crate::types::Datapoint]> {
+    pub fn datapoints(&self) -> std::option::Option<& [crate::types::Datapoint]> {
         self.datapoints.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMetricStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMetricStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder {
-        crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder {
+        crate::operation::get_metric_statistics::builders::GetMetricStatisticsOutputBuilder::default()
     }
 }
 
@@ -51,8 +49,7 @@ impl GetMetricStatisticsOutputBuilder {
     }
     /// <p>A label for the specified metric.</p>
     pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// Appends an item to `datapoints`.
     ///
@@ -61,33 +58,32 @@ impl GetMetricStatisticsOutputBuilder {
     /// <p>The data points for the specified metric.</p>
     pub fn datapoints(mut self, input: crate::types::Datapoint) -> Self {
         let mut v = self.datapoints.unwrap_or_default();
-        v.push(input);
-        self.datapoints = Some(v);
-        self
+                        v.push(input);
+                        self.datapoints = Some(v);
+                        self
     }
     /// <p>The data points for the specified metric.</p>
-    pub fn set_datapoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Datapoint>>,
-    ) -> Self {
-        self.datapoints = input;
-        self
+    pub fn set_datapoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Datapoint>>) -> Self {
+        self.datapoints = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMetricStatisticsOutput`](crate::operation::get_metric_statistics::GetMetricStatisticsOutput).
     pub fn build(self) -> crate::operation::get_metric_statistics::GetMetricStatisticsOutput {
         crate::operation::get_metric_statistics::GetMetricStatisticsOutput {
-            label: self.label,
-            datapoints: self.datapoints,
+            label: self.label
+            ,
+            datapoints: self.datapoints
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

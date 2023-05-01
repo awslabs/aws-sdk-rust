@@ -3,7 +3,7 @@
 /// <p>The proxy configuration for an Amazon Chime SDK Voice Connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Proxy {
+pub struct Proxy  {
     /// <p>The default number of minutes allowed for proxy sessions.</p>
     #[doc(hidden)]
     pub default_session_expiry_minutes: std::option::Option<i32>,
@@ -27,21 +27,18 @@ impl Proxy {
         self.disabled
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn fall_back_phone_number(&self) -> std::option::Option<&str> {
+    pub fn fall_back_phone_number(&self) -> std::option::Option<& str> {
         self.fall_back_phone_number.as_deref()
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn phone_number_countries(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn phone_number_countries(&self) -> std::option::Option<& [std::string::String]> {
         self.phone_number_countries.as_deref()
     }
 }
-impl std::fmt::Debug for Proxy {
+impl  std::fmt::Debug for Proxy  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Proxy");
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
         formatter.field("disabled", &self.disabled);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("phone_number_countries", &self.phone_number_countries);
@@ -72,8 +69,7 @@ impl ProxyBuilder {
     }
     /// <p>The default number of minutes allowed for proxy sessions.</p>
     pub fn set_default_session_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.default_session_expiry_minutes = input;
-        self
+        self.default_session_expiry_minutes = input; self
     }
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn disabled(mut self, input: bool) -> Self {
@@ -82,8 +78,7 @@ impl ProxyBuilder {
     }
     /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime SDK Voice Connector.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
     pub fn fall_back_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +86,8 @@ impl ProxyBuilder {
         self
     }
     /// <p>The phone number to route calls to after a proxy session expires.</p>
-    pub fn set_fall_back_phone_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.fall_back_phone_number = input;
-        self
+    pub fn set_fall_back_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.fall_back_phone_number = input; self
     }
     /// Appends an item to `phone_number_countries`.
     ///
@@ -105,38 +96,36 @@ impl ProxyBuilder {
     /// <p>The countries for proxy phone numbers to be selected from.</p>
     pub fn phone_number_countries(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.phone_number_countries.unwrap_or_default();
-        v.push(input.into());
-        self.phone_number_countries = Some(v);
-        self
+                        v.push(input.into());
+                        self.phone_number_countries = Some(v);
+                        self
     }
     /// <p>The countries for proxy phone numbers to be selected from.</p>
-    pub fn set_phone_number_countries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.phone_number_countries = input;
-        self
+    pub fn set_phone_number_countries(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.phone_number_countries = input; self
     }
     /// Consumes the builder and constructs a [`Proxy`](crate::types::Proxy).
     pub fn build(self) -> crate::types::Proxy {
         crate::types::Proxy {
-            default_session_expiry_minutes: self.default_session_expiry_minutes,
-            disabled: self.disabled,
-            fall_back_phone_number: self.fall_back_phone_number,
-            phone_number_countries: self.phone_number_countries,
+            default_session_expiry_minutes: self.default_session_expiry_minutes
+            ,
+            disabled: self.disabled
+            ,
+            fall_back_phone_number: self.fall_back_phone_number
+            ,
+            phone_number_countries: self.phone_number_countries
+            ,
         }
     }
 }
 impl std::fmt::Debug for ProxyBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProxyBuilder");
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
         formatter.field("disabled", &self.disabled);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("phone_number_countries", &self.phone_number_countries);
         formatter.finish()
     }
 }
+

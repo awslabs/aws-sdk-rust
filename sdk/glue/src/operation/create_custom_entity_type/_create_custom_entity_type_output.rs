@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomEntityTypeOutput {
+pub struct CreateCustomEntityTypeOutput  {
     /// <p>The name of the custom pattern you created.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateCustomEntityTypeOutput {
 }
 impl CreateCustomEntityTypeOutput {
     /// <p>The name of the custom pattern you created.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCustomEntityTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCustomEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeOutputBuilder {
         crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeOutputBuilder::default()
     }
 }
@@ -43,25 +41,24 @@ impl CreateCustomEntityTypeOutputBuilder {
     }
     /// <p>The name of the custom pattern you created.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCustomEntityTypeOutput`](crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput {
+    pub fn build(self) -> crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput {
         crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput {
-            name: self.name,
+            name: self.name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

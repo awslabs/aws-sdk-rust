@@ -3,7 +3,7 @@
 /// <p> Information about the label. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelSummary {
+pub struct LabelSummary  {
     /// <p> The name of the label group. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct LabelSummary {
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     #[doc(hidden)]
     pub rating: std::option::Option<crate::types::LabelRating>,
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     #[doc(hidden)]
     pub fault_code: std::option::Option<std::string::String>,
@@ -35,40 +35,40 @@ pub struct LabelSummary {
 }
 impl LabelSummary {
     /// <p> The name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ID of the label. </p>
-    pub fn label_id(&self) -> std::option::Option<&str> {
+    pub fn label_id(&self) -> std::option::Option<& str> {
         self.label_id.as_deref()
     }
     /// <p> The ARN of the label group. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<&str> {
+    pub fn label_group_arn(&self) -> std::option::Option<& str> {
         self.label_group_arn.as_deref()
     }
     /// <p> The timestamp indicating the start of the label. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The timestamp indicating the end of the label. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    pub fn rating(&self) -> std::option::Option<&crate::types::LabelRating> {
+    pub fn rating(&self) -> std::option::Option<& crate::types::LabelRating> {
         self.rating.as_ref()
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn fault_code(&self) -> std::option::Option<&str> {
+    pub fn fault_code(&self) -> std::option::Option<& str> {
         self.fault_code.as_deref()
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
-    pub fn equipment(&self) -> std::option::Option<&str> {
+    pub fn equipment(&self) -> std::option::Option<& str> {
         self.equipment.as_deref()
     }
     /// <p> The time at which the label was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -101,8 +101,7 @@ impl LabelSummaryBuilder {
     }
     /// <p> The name of the label group. </p>
     pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// <p> The ID of the label. </p>
     pub fn label_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +110,7 @@ impl LabelSummaryBuilder {
     }
     /// <p> The ID of the label. </p>
     pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_id = input;
-        self
+        self.label_id = input; self
     }
     /// <p> The ARN of the label group. </p>
     pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +119,7 @@ impl LabelSummaryBuilder {
     }
     /// <p> The ARN of the label group. </p>
     pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_arn = input;
-        self
+        self.label_group_arn = input; self
     }
     /// <p> The timestamp indicating the start of the label. </p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,12 +127,8 @@ impl LabelSummaryBuilder {
         self
     }
     /// <p> The timestamp indicating the start of the label. </p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p> The timestamp indicating the end of the label. </p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,8 +137,7 @@ impl LabelSummaryBuilder {
     }
     /// <p> The timestamp indicating the end of the label. </p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn rating(mut self, input: crate::types::LabelRating) -> Self {
@@ -154,20 +146,18 @@ impl LabelSummaryBuilder {
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
     pub fn set_rating(mut self, input: std::option::Option<crate::types::LabelRating>) -> Self {
-        self.rating = input;
-        self
+        self.rating = input; self
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.fault_code = Some(input.into());
         self
     }
-    /// <p> Indicates the type of anomaly associated with the label. </p>
+    /// <p> Indicates the type of anomaly associated with the label. </p> 
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
     pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fault_code = input;
-        self
+        self.fault_code = input; self
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +166,7 @@ impl LabelSummaryBuilder {
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.equipment = input;
-        self
+        self.equipment = input; self
     }
     /// <p> The time at which the label was created. </p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,25 +174,31 @@ impl LabelSummaryBuilder {
         self
     }
     /// <p> The time at which the label was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Consumes the builder and constructs a [`LabelSummary`](crate::types::LabelSummary).
     pub fn build(self) -> crate::types::LabelSummary {
         crate::types::LabelSummary {
-            label_group_name: self.label_group_name,
-            label_id: self.label_id,
-            label_group_arn: self.label_group_arn,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            rating: self.rating,
-            fault_code: self.fault_code,
-            equipment: self.equipment,
-            created_at: self.created_at,
+            label_group_name: self.label_group_name
+            ,
+            label_id: self.label_id
+            ,
+            label_group_arn: self.label_group_arn
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            rating: self.rating
+            ,
+            fault_code: self.fault_code
+            ,
+            equipment: self.equipment
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchQuantumTasksOutput {
+pub struct SearchQuantumTasksOutput  {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
     #[doc(hidden)]
     pub quantum_tasks: std::option::Option<std::vec::Vec<crate::types::QuantumTaskSummary>>,
@@ -13,23 +13,22 @@ pub struct SearchQuantumTasksOutput {
 }
 impl SearchQuantumTasksOutput {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    pub fn quantum_tasks(&self) -> std::option::Option<&[crate::types::QuantumTaskSummary]> {
+    pub fn quantum_tasks(&self) -> std::option::Option<& [crate::types::QuantumTaskSummary]> {
         self.quantum_tasks.as_deref()
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchQuantumTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchQuantumTasksOutput {
     /// Creates a new builder-style object to manufacture [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder {
+    pub fn builder() -> crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder {
         crate::operation::search_quantum_tasks::builders::SearchQuantumTasksOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl SearchQuantumTasksOutputBuilder {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
     pub fn quantum_tasks(mut self, input: crate::types::QuantumTaskSummary) -> Self {
         let mut v = self.quantum_tasks.unwrap_or_default();
-        v.push(input);
-        self.quantum_tasks = Some(v);
-        self
+                        v.push(input);
+                        self.quantum_tasks = Some(v);
+                        self
     }
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
-    pub fn set_quantum_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QuantumTaskSummary>>,
-    ) -> Self {
-        self.quantum_tasks = input;
-        self
+    pub fn set_quantum_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::QuantumTaskSummary>>) -> Self {
+        self.quantum_tasks = input; self
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl SearchQuantumTasksOutputBuilder {
     }
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchQuantumTasksOutput`](crate::operation::search_quantum_tasks::SearchQuantumTasksOutput).
     pub fn build(self) -> crate::operation::search_quantum_tasks::SearchQuantumTasksOutput {
         crate::operation::search_quantum_tasks::SearchQuantumTasksOutput {
-            quantum_tasks: self.quantum_tasks,
-            next_token: self.next_token,
+            quantum_tasks: self.quantum_tasks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

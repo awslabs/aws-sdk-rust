@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFaceLivenessSessionInput {
+pub struct CreateFaceLivenessSessionInput  {
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct CreateFaceLivenessSessionInput {
 }
 impl CreateFaceLivenessSessionInput {
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    pub fn settings(
-        &self,
-    ) -> std::option::Option<&crate::types::CreateFaceLivenessSessionRequestSettings> {
+    pub fn settings(&self) -> std::option::Option<& crate::types::CreateFaceLivenessSessionRequestSettings> {
         self.settings.as_ref()
     }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl CreateFaceLivenessSessionInput {
     /// Creates a new builder-style object to manufacture [`CreateFaceLivenessSessionInput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput).
-    pub fn builder() -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder{
+    pub fn builder() -> crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder {
         crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder::default()
     }
 }
@@ -41,8 +39,7 @@ impl CreateFaceLivenessSessionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionInputBuilder {
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) settings:
-        std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>,
+    pub(crate) settings: std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateFaceLivenessSessionInputBuilder {
@@ -53,24 +50,16 @@ impl CreateFaceLivenessSessionInputBuilder {
     }
     /// <p> The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    pub fn settings(
-        mut self,
-        input: crate::types::CreateFaceLivenessSessionRequestSettings,
-    ) -> Self {
+    pub fn settings(mut self, input: crate::types::CreateFaceLivenessSessionRequestSettings) -> Self {
         self.settings = Some(input);
         self
     }
     /// <p>A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts <code>OutputConfig</code> and <code>AuditImagesLimit</code>.</p>
-    pub fn set_settings(
-        mut self,
-        input: std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: std::option::Option<crate::types::CreateFaceLivenessSessionRequestSettings>) -> Self {
+        self.settings = input; self
     }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,26 +67,21 @@ impl CreateFaceLivenessSessionInputBuilder {
         self
     }
     /// <p>Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple <code>CreateFaceLivenessSession</code> requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateFaceLivenessSessionInput`](crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_face_liveness_session::CreateFaceLivenessSessionInput {
-                kms_key_id: self.kms_key_id,
-                settings: self.settings,
-                client_request_token: self.client_request_token,
-            },
+                kms_key_id: self.kms_key_id
+                ,
+                settings: self.settings
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

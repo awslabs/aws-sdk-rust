@@ -53,15 +53,11 @@ pub use crate::types::_user_type::UserType;
 
 pub use crate::types::_operation_type::OperationType;
 
-pub use crate::types::_catalog_action_version_file_record_type::CatalogActionVersionFileRecordType;
-
 pub use crate::types::_access_token_summary::AccessTokenSummary;
 
 pub use crate::types::_email_address::EmailAddress;
 
 mod _access_token_summary;
-
-mod _catalog_action_version_file_record_type;
 
 mod _comparison_operator;
 
@@ -124,3 +120,4 @@ pub mod builders;
 
 /// Error types that Amazon CodeCatalyst can respond with.
 pub mod error;
+

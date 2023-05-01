@@ -4,67 +4,49 @@ pub use crate::operation::update_workload::_update_workload_output::UpdateWorklo
 pub use crate::operation::update_workload::_update_workload_input::UpdateWorkloadInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateWorkload`.
-///
+/// 
 /// <p>Update an existing workload.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkloadFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_workload::builders::UpdateWorkloadInputBuilder,
-}
-impl UpdateWorkloadFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_workload::builders::UpdateWorkloadInputBuilder
+            }
+impl UpdateWorkloadFluentBuilder  {
     /// Creates a new `UpdateWorkload`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_workload::UpdateWorkload,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_workload::UpdateWorkloadOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_workload::UpdateWorkload, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_workload::UpdateWorkloadOutput, aws_smithy_http::result::SdkError<crate::operation::update_workload::UpdateWorkloadError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
@@ -75,13 +57,13 @@ impl UpdateWorkloadFluentBuilder {
         self.inner = self.inner.set_workload_id(input);
         self
     }
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload.</p> 
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workload_name(input.into());
         self
     }
-    /// <p>The name of the workload.</p>
+    /// <p>The name of the workload.</p> 
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_workload_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_workload_name(input);
@@ -103,10 +85,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The environment for the workload.</p>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<crate::types::WorkloadEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: std::option::Option<crate::types::WorkloadEnvironment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -120,10 +99,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
@@ -137,10 +113,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_aws_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_aws_regions(input);
         self
     }
@@ -154,10 +127,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_non_aws_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_non_aws_regions(input);
         self
     }
@@ -171,10 +141,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_pillar_priorities(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_pillar_priorities(input);
         self
     }
@@ -184,10 +151,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn set_architectural_design(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_architectural_design(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_architectural_design(input);
         self
     }
@@ -201,86 +165,83 @@ impl UpdateWorkloadFluentBuilder {
         self.inner = self.inner.set_review_owner(input);
         self
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> 
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
         self.inner = self.inner.is_review_owner_update_acknowledged(input);
         self
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> 
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    pub fn set_is_review_owner_update_acknowledged(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_is_review_owner_update_acknowledged(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_review_owner_update_acknowledged(input);
         self
     }
-    /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Agriculture</code> </p> </li>
-    /// <li> <p> <code>Automobile</code> </p> </li>
-    /// <li> <p> <code>Defense</code> </p> </li>
-    /// <li> <p> <code>Design and Engineering</code> </p> </li>
-    /// <li> <p> <code>Digital Advertising</code> </p> </li>
-    /// <li> <p> <code>Education</code> </p> </li>
-    /// <li> <p> <code>Environmental Protection</code> </p> </li>
-    /// <li> <p> <code>Financial Services</code> </p> </li>
-    /// <li> <p> <code>Gaming</code> </p> </li>
-    /// <li> <p> <code>General Public Services</code> </p> </li>
-    /// <li> <p> <code>Healthcare</code> </p> </li>
-    /// <li> <p> <code>Hospitality</code> </p> </li>
-    /// <li> <p> <code>InfoTech</code> </p> </li>
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
-    /// <li> <p> <code>Life Sciences</code> </p> </li>
-    /// <li> <p> <code>Manufacturing</code> </p> </li>
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
-    /// <li> <p> <code>Professional Services</code> </p> </li>
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
-    /// <li> <p> <code>Social Protection</code> </p> </li>
-    /// <li> <p> <code>Telecommunications</code> </p> </li>
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
-    /// <li> <p> <code>Other</code> </p> </li>
+    /// <p>The industry type for the workload.</p> 
+    /// <p>If specified, must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Agriculture</code> </p> </li> 
+    /// <li> <p> <code>Automobile</code> </p> </li> 
+    /// <li> <p> <code>Defense</code> </p> </li> 
+    /// <li> <p> <code>Design and Engineering</code> </p> </li> 
+    /// <li> <p> <code>Digital Advertising</code> </p> </li> 
+    /// <li> <p> <code>Education</code> </p> </li> 
+    /// <li> <p> <code>Environmental Protection</code> </p> </li> 
+    /// <li> <p> <code>Financial Services</code> </p> </li> 
+    /// <li> <p> <code>Gaming</code> </p> </li> 
+    /// <li> <p> <code>General Public Services</code> </p> </li> 
+    /// <li> <p> <code>Healthcare</code> </p> </li> 
+    /// <li> <p> <code>Hospitality</code> </p> </li> 
+    /// <li> <p> <code>InfoTech</code> </p> </li> 
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li> 
+    /// <li> <p> <code>Life Sciences</code> </p> </li> 
+    /// <li> <p> <code>Manufacturing</code> </p> </li> 
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li> 
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li> 
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li> 
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li> 
+    /// <li> <p> <code>Professional Services</code> </p> </li> 
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> 
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> 
+    /// <li> <p> <code>Social Protection</code> </p> </li> 
+    /// <li> <p> <code>Telecommunications</code> </p> </li> 
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> 
+    /// <li> <p> <code>Other</code> </p> </li> 
     /// </ul>
     pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.industry_type(input.into());
         self
     }
-    /// <p>The industry type for the workload.</p>
-    /// <p>If specified, must be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Agriculture</code> </p> </li>
-    /// <li> <p> <code>Automobile</code> </p> </li>
-    /// <li> <p> <code>Defense</code> </p> </li>
-    /// <li> <p> <code>Design and Engineering</code> </p> </li>
-    /// <li> <p> <code>Digital Advertising</code> </p> </li>
-    /// <li> <p> <code>Education</code> </p> </li>
-    /// <li> <p> <code>Environmental Protection</code> </p> </li>
-    /// <li> <p> <code>Financial Services</code> </p> </li>
-    /// <li> <p> <code>Gaming</code> </p> </li>
-    /// <li> <p> <code>General Public Services</code> </p> </li>
-    /// <li> <p> <code>Healthcare</code> </p> </li>
-    /// <li> <p> <code>Hospitality</code> </p> </li>
-    /// <li> <p> <code>InfoTech</code> </p> </li>
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
-    /// <li> <p> <code>Life Sciences</code> </p> </li>
-    /// <li> <p> <code>Manufacturing</code> </p> </li>
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
-    /// <li> <p> <code>Professional Services</code> </p> </li>
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
-    /// <li> <p> <code>Social Protection</code> </p> </li>
-    /// <li> <p> <code>Telecommunications</code> </p> </li>
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
-    /// <li> <p> <code>Other</code> </p> </li>
+    /// <p>The industry type for the workload.</p> 
+    /// <p>If specified, must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Agriculture</code> </p> </li> 
+    /// <li> <p> <code>Automobile</code> </p> </li> 
+    /// <li> <p> <code>Defense</code> </p> </li> 
+    /// <li> <p> <code>Design and Engineering</code> </p> </li> 
+    /// <li> <p> <code>Digital Advertising</code> </p> </li> 
+    /// <li> <p> <code>Education</code> </p> </li> 
+    /// <li> <p> <code>Environmental Protection</code> </p> </li> 
+    /// <li> <p> <code>Financial Services</code> </p> </li> 
+    /// <li> <p> <code>Gaming</code> </p> </li> 
+    /// <li> <p> <code>General Public Services</code> </p> </li> 
+    /// <li> <p> <code>Healthcare</code> </p> </li> 
+    /// <li> <p> <code>Hospitality</code> </p> </li> 
+    /// <li> <p> <code>InfoTech</code> </p> </li> 
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li> 
+    /// <li> <p> <code>Life Sciences</code> </p> </li> 
+    /// <li> <p> <code>Manufacturing</code> </p> </li> 
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li> 
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li> 
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li> 
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li> 
+    /// <li> <p> <code>Professional Services</code> </p> </li> 
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> 
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> 
+    /// <li> <p> <code>Social Protection</code> </p> </li> 
+    /// <li> <p> <code>Telecommunications</code> </p> </li> 
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> 
+    /// <li> <p> <code>Other</code> </p> </li> 
     /// </ul>
     pub fn set_industry_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_industry_type(input);
@@ -312,10 +273,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn set_improvement_status(
-        mut self,
-        input: std::option::Option<crate::types::WorkloadImprovementStatus>,
-    ) -> Self {
+    pub fn set_improvement_status(mut self, input: std::option::Option<crate::types::WorkloadImprovementStatus>) -> Self {
         self.inner = self.inner.set_improvement_status(input);
         self
     }
@@ -325,10 +283,7 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>Well-Architected discovery configuration settings to associate to the workload.</p>
-    pub fn set_discovery_config(
-        mut self,
-        input: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
-    ) -> Self {
+    pub fn set_discovery_config(mut self, input: std::option::Option<crate::types::WorkloadDiscoveryConfig>) -> Self {
         self.inner = self.inner.set_discovery_config(input);
         self
     }
@@ -342,11 +297,9 @@ impl UpdateWorkloadFluentBuilder {
         self
     }
     /// <p>List of AppRegistry application ARNs to associate to the workload.</p>
-    pub fn set_applications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_applications(input);
         self
     }
 }
+

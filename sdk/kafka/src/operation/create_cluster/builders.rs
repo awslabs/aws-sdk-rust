@@ -4,77 +4,56 @@ pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterO
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCluster`.
-///
+/// 
 /// <p>Creates a new MSK cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
-}
-impl CreateClusterFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder
+            }
+impl CreateClusterFluentBuilder  {
     /// Creates a new `CreateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_cluster::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_cluster::CreateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_cluster::CreateClusterOutput, aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Information about the broker nodes in the cluster.</p>
     pub fn broker_node_group_info(mut self, input: crate::types::BrokerNodeGroupInfo) -> Self {
         self.inner = self.inner.broker_node_group_info(input);
         self
     }
     /// <p>Information about the broker nodes in the cluster.</p>
-    pub fn set_broker_node_group_info(
-        mut self,
-        input: std::option::Option<crate::types::BrokerNodeGroupInfo>,
-    ) -> Self {
+    pub fn set_broker_node_group_info(mut self, input: std::option::Option<crate::types::BrokerNodeGroupInfo>) -> Self {
         self.inner = self.inner.set_broker_node_group_info(input);
         self
     }
@@ -84,10 +63,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Includes all client authentication related information.</p>
-    pub fn set_client_authentication(
-        mut self,
-        input: std::option::Option<crate::types::ClientAuthentication>,
-    ) -> Self {
+    pub fn set_client_authentication(mut self, input: std::option::Option<crate::types::ClientAuthentication>) -> Self {
         self.inner = self.inner.set_client_authentication(input);
         self
     }
@@ -107,10 +83,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-    pub fn set_configuration_info(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationInfo>,
-    ) -> Self {
+    pub fn set_configuration_info(mut self, input: std::option::Option<crate::types::ConfigurationInfo>) -> Self {
         self.inner = self.inner.set_configuration_info(input);
         self
     }
@@ -120,10 +93,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionInfo>,
-    ) -> Self {
+    pub fn set_encryption_info(mut self, input: std::option::Option<crate::types::EncryptionInfo>) -> Self {
         self.inner = self.inner.set_encryption_info(input);
         self
     }
@@ -133,10 +103,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn set_enhanced_monitoring(
-        mut self,
-        input: std::option::Option<crate::types::EnhancedMonitoring>,
-    ) -> Self {
+    pub fn set_enhanced_monitoring(mut self, input: std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
         self.inner = self.inner.set_enhanced_monitoring(input);
         self
     }
@@ -146,10 +113,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(
-        mut self,
-        input: std::option::Option<crate::types::OpenMonitoringInfo>,
-    ) -> Self {
+    pub fn set_open_monitoring(mut self, input: std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
         self.inner = self.inner.set_open_monitoring(input);
         self
     }
@@ -169,10 +133,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_logging_info(
-        mut self,
-        input: std::option::Option<crate::types::LoggingInfo>,
-    ) -> Self {
+    pub fn set_logging_info(mut self, input: std::option::Option<crate::types::LoggingInfo>) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
     }
@@ -191,21 +152,12 @@ impl CreateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Create tags when creating the cluster.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Create tags when creating the cluster.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -215,11 +167,9 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(
-        mut self,
-        input: std::option::Option<crate::types::StorageMode>,
-    ) -> Self {
+    pub fn set_storage_mode(mut self, input: std::option::Option<crate::types::StorageMode>) -> Self {
         self.inner = self.inner.set_storage_mode(input);
         self
     }
 }
+

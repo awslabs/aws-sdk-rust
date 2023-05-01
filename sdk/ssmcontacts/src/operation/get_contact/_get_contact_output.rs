@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactOutput {
+pub struct GetContactOutput  {
     /// <p>The ARN of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct GetContactOutput {
 }
 impl GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ContactType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ContactType> {
         self.r#type.as_ref()
     }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
-    pub fn plan(&self) -> std::option::Option<&crate::types::Plan> {
+    pub fn plan(&self) -> std::option::Option<& crate::types::Plan> {
         self.plan.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetContactOutput {
     /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
     pub fn builder() -> crate::operation::get_contact::builders::GetContactOutputBuilder {
@@ -73,8 +73,7 @@ impl GetContactOutputBuilder {
     }
     /// <p>The ARN of the contact or escalation plan.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +82,7 @@ impl GetContactOutputBuilder {
     }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +91,7 @@ impl GetContactOutputBuilder {
     }
     /// <p>The full name of the contact or escalation plan.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
     pub fn r#type(mut self, input: crate::types::ContactType) -> Self {
@@ -103,8 +100,7 @@ impl GetContactOutputBuilder {
     }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ContactType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub fn plan(mut self, input: crate::types::Plan) -> Self {
@@ -113,27 +109,32 @@ impl GetContactOutputBuilder {
     }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
     pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
-        self.plan = input;
-        self
+        self.plan = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetContactOutput`](crate::operation::get_contact::GetContactOutput).
     pub fn build(self) -> crate::operation::get_contact::GetContactOutput {
         crate::operation::get_contact::GetContactOutput {
-            contact_arn: self.contact_arn,
-            alias: self.alias,
-            display_name: self.display_name,
-            r#type: self.r#type,
-            plan: self.plan,
+            contact_arn: self.contact_arn
+            ,
+            alias: self.alias
+            ,
+            display_name: self.display_name
+            ,
+            r#type: self.r#type
+            ,
+            plan: self.plan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

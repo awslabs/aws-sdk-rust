@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpacesOutput {
+pub struct ListSpacesOutput  {
     /// <p>The list of spaces.</p>
     #[doc(hidden)]
     pub spaces: std::option::Option<std::vec::Vec<crate::types::SpaceDetails>>,
@@ -13,19 +13,19 @@ pub struct ListSpacesOutput {
 }
 impl ListSpacesOutput {
     /// <p>The list of spaces.</p>
-    pub fn spaces(&self) -> std::option::Option<&[crate::types::SpaceDetails]> {
+    pub fn spaces(&self) -> std::option::Option<& [crate::types::SpaceDetails]> {
         self.spaces.as_deref()
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSpacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSpacesOutput {
     /// Creates a new builder-style object to manufacture [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput).
     pub fn builder() -> crate::operation::list_spaces::builders::ListSpacesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListSpacesOutputBuilder {
     /// <p>The list of spaces.</p>
     pub fn spaces(mut self, input: crate::types::SpaceDetails) -> Self {
         let mut v = self.spaces.unwrap_or_default();
-        v.push(input);
-        self.spaces = Some(v);
-        self
+                        v.push(input);
+                        self.spaces = Some(v);
+                        self
     }
     /// <p>The list of spaces.</p>
-    pub fn set_spaces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SpaceDetails>>,
-    ) -> Self {
-        self.spaces = input;
-        self
+    pub fn set_spaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::SpaceDetails>>) -> Self {
+        self.spaces = input; self
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListSpacesOutputBuilder {
     }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSpacesOutput`](crate::operation::list_spaces::ListSpacesOutput).
     pub fn build(self) -> crate::operation::list_spaces::ListSpacesOutput {
         crate::operation::list_spaces::ListSpacesOutput {
-            spaces: self.spaces,
-            next_token: self.next_token,
+            spaces: self.spaces
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

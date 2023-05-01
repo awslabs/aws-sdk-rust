@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseLogStreamsInput {
+pub struct GetRelationalDatabaseLogStreamsInput  {
     /// <p>The name of your database for which to get log streams.</p>
     #[doc(hidden)]
     pub relational_database_name: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseLogStreamsInput {
     /// <p>The name of your database for which to get log streams.</p>
-    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
 }
 impl GetRelationalDatabaseLogStreamsInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseLogStreamsInput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput).
-    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder{
+    pub fn builder() -> crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder {
         crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl GetRelationalDatabaseLogStreamsInputBuilder {
         self
     }
     /// <p>The name of your database for which to get log streams.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relational_database_name = input;
-        self
+    pub fn set_relational_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relational_database_name = input; self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseLogStreamsInput`](crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsInput {
                 relational_database_name: self.relational_database_name
@@ -55,3 +46,4 @@ impl GetRelationalDatabaseLogStreamsInputBuilder {
         )
     }
 }
+

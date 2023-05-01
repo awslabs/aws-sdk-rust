@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomMetricInput {
+pub struct DescribeCustomMetricInput  {
     /// <p> The name of the custom metric. </p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl DescribeCustomMetricInput {
     /// <p> The name of the custom metric. </p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
 }
 impl DescribeCustomMetricInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
-    pub fn builder(
-    ) -> crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder {
+    pub fn builder() -> crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder {
         crate::operation::describe_custom_metric::builders::DescribeCustomMetricInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeCustomMetricInputBuilder {
     }
     /// <p> The name of the custom metric. </p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeCustomMetricInput`](crate::operation::describe_custom_metric::DescribeCustomMetricInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_custom_metric::DescribeCustomMetricInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_custom_metric::DescribeCustomMetricInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_custom_metric::DescribeCustomMetricInput {
-                metric_name: self.metric_name,
-            },
+                metric_name: self.metric_name
+                ,
+            }
         )
     }
 }
+

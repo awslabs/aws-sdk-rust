@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelInput {
+pub struct DescribeModelInput  {
     /// <p>The project that contains the version of a model that you want to describe.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeModelInput {
 }
 impl DescribeModelInput {
     /// <p>The project that contains the version of a model that you want to describe.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The version of the model that you want to describe.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeModelInputBuilder {
     }
     /// <p>The project that contains the version of a model that you want to describe.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The version of the model that you want to describe.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeModelInputBuilder {
     }
     /// <p>The version of the model that you want to describe.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// Consumes the builder and constructs a [`DescribeModelInput`](crate::operation::describe_model::DescribeModelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_model::DescribeModelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_model::DescribeModelInput {
-            project_name: self.project_name,
-            model_version: self.model_version,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_model::DescribeModelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_model::DescribeModelInput {
+                project_name: self.project_name
+                ,
+                model_version: self.model_version
+                ,
+            }
+        )
     }
 }
+

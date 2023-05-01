@@ -3,18 +3,17 @@
 /// <p>The output for the DeprecateThingType operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprecateThingTypeOutput {
+pub struct DeprecateThingTypeOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeprecateThingTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeprecateThingTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput).
-    pub fn builder(
-    ) -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeOutputBuilder {
+    pub fn builder() -> crate::operation::deprecate_thing_type::builders::DeprecateThingTypeOutputBuilder {
         crate::operation::deprecate_thing_type::builders::DeprecateThingTypeOutputBuilder::default()
     }
 }
@@ -27,14 +26,14 @@ pub struct DeprecateThingTypeOutputBuilder {
 }
 impl DeprecateThingTypeOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeprecateThingTypeOutput`](crate::operation::deprecate_thing_type::DeprecateThingTypeOutput).
     pub fn build(self) -> crate::operation::deprecate_thing_type::DeprecateThingTypeOutput {
         crate::operation::deprecate_thing_type::DeprecateThingTypeOutput {
@@ -42,3 +41,4 @@ impl DeprecateThingTypeOutputBuilder {
         }
     }
 }
+

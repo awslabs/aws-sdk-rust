@@ -4,67 +4,49 @@ pub use crate::operation::get_images::_get_images_output::GetImagesOutputBuilder
 pub use crate::operation::get_images::_get_images_input::GetImagesInputBuilder;
 
 /// Fluent builder constructing a request to `GetImages`.
-///
+/// 
 /// <p>Retrieves a list of Images corresponding to each timestamp for a given time range, sampling interval, and image format configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetImagesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_images::builders::GetImagesInputBuilder,
-}
-impl GetImagesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_images::builders::GetImagesInputBuilder
+            }
+impl GetImagesFluentBuilder  {
     /// Creates a new `GetImages`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_images::GetImages,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_images::GetImagesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_images::GetImages, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_images::GetImagesOutput, aws_smithy_http::result::SdkError<crate::operation::get_images::GetImagesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -91,10 +73,7 @@ impl GetImagesFluentBuilder {
         self
     }
     /// <p>The origin of the Server or Producer timestamps to use to generate the images.</p>
-    pub fn set_image_selector_type(
-        mut self,
-        input: std::option::Option<crate::types::ImageSelectorType>,
-    ) -> Self {
+    pub fn set_image_selector_type(mut self, input: std::option::Option<crate::types::ImageSelectorType>) -> Self {
         self.inner = self.inner.set_image_selector_type(input);
         self
     }
@@ -104,10 +83,7 @@ impl GetImagesFluentBuilder {
         self
     }
     /// <p>The starting point from which the images should be generated. This <code>StartTimestamp</code> must be within an inclusive range of timestamps for an image to be returned.</p>
-    pub fn set_start_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_timestamp(input);
         self
     }
@@ -117,22 +93,19 @@ impl GetImagesFluentBuilder {
         self
     }
     /// <p>The end timestamp for the range of images to be generated.</p>
-    pub fn set_end_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_end_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_end_timestamp(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note> 
+    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p> 
     /// </note>
     pub fn sampling_interval(mut self, input: i32) -> Self {
         self.inner = self.inner.sampling_interval(input);
         self
     }
-    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p>
+    /// <p>The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from the <code>startTimestamp</code> will be returned if available. </p> <note> 
+    /// <p>The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.</p> 
     /// </note>
     pub fn set_sampling_interval(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_sampling_interval(input);
@@ -153,21 +126,12 @@ impl GetImagesFluentBuilder {
     /// To override the contents of this collection use [`set_format_config`](Self::set_format_config).
     ///
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn format_config(
-        mut self,
-        k: crate::types::FormatConfigKey,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn format_config(mut self, k: crate::types::FormatConfigKey, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.format_config(k, v.into());
         self
     }
     /// <p>The list of a key-value pair structure that contains extra parameters that can be applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>, which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code> value accepts ints from 1 to 100. If the value is 1, the image will be generated with less quality and the best compression. If the value is 100, the image will be generated with the best quality and less compression. If no value is provided, the default value of the <code>JPEGQuality</code> key will be set to 80.</p>
-    pub fn set_format_config(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::FormatConfigKey, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_format_config(mut self, input: std::option::Option<std::collections::HashMap<crate::types::FormatConfigKey, std::string::String>>) -> Self {
         self.inner = self.inner.set_format_config(input);
         self
     }
@@ -191,15 +155,15 @@ impl GetImagesFluentBuilder {
         self.inner = self.inner.set_height_pixels(input);
         self
     }
-    /// <p>The maximum number of images to be returned by the API. </p> <note>
-    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
+    /// <p>The maximum number of images to be returned by the API. </p> <note> 
+    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p> 
     /// </note>
     pub fn max_results(mut self, input: i64) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of images to be returned by the API. </p> <note>
-    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p>
+    /// <p>The maximum number of images to be returned by the API. </p> <note> 
+    /// <p>The default limit is 100 images per API response. The additional results will be paginated. </p> 
     /// </note>
     pub fn set_max_results(mut self, input: std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -216,3 +180,4 @@ impl GetImagesFluentBuilder {
         self
     }
 }
+

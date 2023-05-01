@@ -3,7 +3,7 @@
 /// <p>Information about a project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectSummary {
+pub struct ProjectSummary  {
     /// <p>The name of the project in the space.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ProjectSummary {
 }
 impl ProjectSummary {
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The friendly name displayed to users of the project in Amazon CodeCatalyst.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The description of the project.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The description of the project.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {
         crate::types::ProjectSummary {
-            name: self.name,
-            display_name: self.display_name,
-            description: self.description,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

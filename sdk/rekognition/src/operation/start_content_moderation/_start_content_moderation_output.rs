@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartContentModerationOutput {
+pub struct StartContentModerationOutput  {
     /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct StartContentModerationOutput {
 }
 impl StartContentModerationOutput {
     /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartContentModerationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartContentModerationOutput {
     /// Creates a new builder-style object to manufacture [`StartContentModerationOutput`](crate::operation::start_content_moderation::StartContentModerationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_content_moderation::builders::StartContentModerationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_content_moderation::builders::StartContentModerationOutputBuilder {
         crate::operation::start_content_moderation::builders::StartContentModerationOutputBuilder::default()
     }
 }
@@ -43,23 +41,24 @@ impl StartContentModerationOutputBuilder {
     }
     /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartContentModerationOutput`](crate::operation::start_content_moderation::StartContentModerationOutput).
     pub fn build(self) -> crate::operation::start_content_moderation::StartContentModerationOutput {
         crate::operation::start_content_moderation::StartContentModerationOutput {
-            job_id: self.job_id,
+            job_id: self.job_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

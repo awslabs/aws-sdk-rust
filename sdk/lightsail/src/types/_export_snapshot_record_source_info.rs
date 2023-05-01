@@ -3,7 +3,7 @@
 /// <p>Describes the source of an export snapshot record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSnapshotRecordSourceInfo {
+pub struct ExportSnapshotRecordSourceInfo  {
     /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ExportSnapshotRecordSourceType>,
@@ -31,39 +31,35 @@ pub struct ExportSnapshotRecordSourceInfo {
 }
 impl ExportSnapshotRecordSourceInfo {
     /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
-    pub fn resource_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ExportSnapshotRecordSourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ExportSnapshotRecordSourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The date when the source instance or disk snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The name of the source instance or disk snapshot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the snapshot's source instance or disk.</p>
-    pub fn from_resource_name(&self) -> std::option::Option<&str> {
+    pub fn from_resource_name(&self) -> std::option::Option<& str> {
         self.from_resource_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
-    pub fn from_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn from_resource_arn(&self) -> std::option::Option<& str> {
         self.from_resource_arn.as_deref()
     }
     /// <p>A list of objects describing an instance snapshot.</p>
-    pub fn instance_snapshot_info(
-        &self,
-    ) -> std::option::Option<&crate::types::InstanceSnapshotInfo> {
+    pub fn instance_snapshot_info(&self) -> std::option::Option<& crate::types::InstanceSnapshotInfo> {
         self.instance_snapshot_info.as_ref()
     }
     /// <p>A list of objects describing a disk snapshot.</p>
-    pub fn disk_snapshot_info(&self) -> std::option::Option<&crate::types::DiskSnapshotInfo> {
+    pub fn disk_snapshot_info(&self) -> std::option::Option<& crate::types::DiskSnapshotInfo> {
         self.disk_snapshot_info.as_ref()
     }
 }
@@ -94,12 +90,8 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ExportSnapshotRecordSourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ExportSnapshotRecordSourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The date when the source instance or disk snapshot was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -107,12 +99,8 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self
     }
     /// <p>The date when the source instance or disk snapshot was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The name of the source instance or disk snapshot.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +109,7 @@ impl ExportSnapshotRecordSourceInfoBuilder {
     }
     /// <p>The name of the source instance or disk snapshot.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +118,7 @@ impl ExportSnapshotRecordSourceInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance or disk snapshot.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the snapshot's source instance or disk.</p>
     pub fn from_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,12 +126,8 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self
     }
     /// <p>The name of the snapshot's source instance or disk.</p>
-    pub fn set_from_resource_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_resource_name = input;
-        self
+    pub fn set_from_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_resource_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
     pub fn from_resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,12 +135,8 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot's source instance or disk.</p>
-    pub fn set_from_resource_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_resource_arn = input;
-        self
+    pub fn set_from_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_resource_arn = input; self
     }
     /// <p>A list of objects describing an instance snapshot.</p>
     pub fn instance_snapshot_info(mut self, input: crate::types::InstanceSnapshotInfo) -> Self {
@@ -166,12 +144,8 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self
     }
     /// <p>A list of objects describing an instance snapshot.</p>
-    pub fn set_instance_snapshot_info(
-        mut self,
-        input: std::option::Option<crate::types::InstanceSnapshotInfo>,
-    ) -> Self {
-        self.instance_snapshot_info = input;
-        self
+    pub fn set_instance_snapshot_info(mut self, input: std::option::Option<crate::types::InstanceSnapshotInfo>) -> Self {
+        self.instance_snapshot_info = input; self
     }
     /// <p>A list of objects describing a disk snapshot.</p>
     pub fn disk_snapshot_info(mut self, input: crate::types::DiskSnapshotInfo) -> Self {
@@ -179,24 +153,29 @@ impl ExportSnapshotRecordSourceInfoBuilder {
         self
     }
     /// <p>A list of objects describing a disk snapshot.</p>
-    pub fn set_disk_snapshot_info(
-        mut self,
-        input: std::option::Option<crate::types::DiskSnapshotInfo>,
-    ) -> Self {
-        self.disk_snapshot_info = input;
-        self
+    pub fn set_disk_snapshot_info(mut self, input: std::option::Option<crate::types::DiskSnapshotInfo>) -> Self {
+        self.disk_snapshot_info = input; self
     }
     /// Consumes the builder and constructs a [`ExportSnapshotRecordSourceInfo`](crate::types::ExportSnapshotRecordSourceInfo).
     pub fn build(self) -> crate::types::ExportSnapshotRecordSourceInfo {
         crate::types::ExportSnapshotRecordSourceInfo {
-            resource_type: self.resource_type,
-            created_at: self.created_at,
-            name: self.name,
-            arn: self.arn,
-            from_resource_name: self.from_resource_name,
-            from_resource_arn: self.from_resource_arn,
-            instance_snapshot_info: self.instance_snapshot_info,
-            disk_snapshot_info: self.disk_snapshot_info,
+            resource_type: self.resource_type
+            ,
+            created_at: self.created_at
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            from_resource_name: self.from_resource_name
+            ,
+            from_resource_arn: self.from_resource_arn
+            ,
+            instance_snapshot_info: self.instance_snapshot_info
+            ,
+            disk_snapshot_info: self.disk_snapshot_info
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContentsOutput {
+pub struct ListContentsOutput  {
     /// <p>Information about the content.</p>
     #[doc(hidden)]
     pub content_summaries: std::option::Option<std::vec::Vec<crate::types::ContentSummary>>,
@@ -13,19 +13,19 @@ pub struct ListContentsOutput {
 }
 impl ListContentsOutput {
     /// <p>Information about the content.</p>
-    pub fn content_summaries(&self) -> std::option::Option<&[crate::types::ContentSummary]> {
+    pub fn content_summaries(&self) -> std::option::Option<& [crate::types::ContentSummary]> {
         self.content_summaries.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListContentsOutput {
     /// Creates a new builder-style object to manufacture [`ListContentsOutput`](crate::operation::list_contents::ListContentsOutput).
     pub fn builder() -> crate::operation::list_contents::builders::ListContentsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListContentsOutputBuilder {
     /// <p>Information about the content.</p>
     pub fn content_summaries(mut self, input: crate::types::ContentSummary) -> Self {
         let mut v = self.content_summaries.unwrap_or_default();
-        v.push(input);
-        self.content_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.content_summaries = Some(v);
+                        self
     }
     /// <p>Information about the content.</p>
-    pub fn set_content_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContentSummary>>,
-    ) -> Self {
-        self.content_summaries = input;
-        self
+    pub fn set_content_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContentSummary>>) -> Self {
+        self.content_summaries = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListContentsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListContentsOutput`](crate::operation::list_contents::ListContentsOutput).
     pub fn build(self) -> crate::operation::list_contents::ListContentsOutput {
         crate::operation::list_contents::ListContentsOutput {
-            content_summaries: self.content_summaries,
-            next_token: self.next_token,
+            content_summaries: self.content_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

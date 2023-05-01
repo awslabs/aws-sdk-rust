@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVodSourceInput {
+pub struct DeleteVodSourceInput  {
     /// <p>The name of the source location associated with this VOD Source.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteVodSourceInput {
 }
 impl DeleteVodSourceInput {
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl DeleteVodSourceInputBuilder {
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_location_name = input;
-        self
+    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_location_name = input; self
     }
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,19 +51,18 @@ impl DeleteVodSourceInputBuilder {
     }
     /// <p>The name of the VOD source.</p>
     pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteVodSourceInput`](crate::operation::delete_vod_source::DeleteVodSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_vod_source::DeleteVodSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_vod_source::DeleteVodSourceInput {
-            source_location_name: self.source_location_name,
-            vod_source_name: self.vod_source_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_vod_source::DeleteVodSourceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_vod_source::DeleteVodSourceInput {
+                source_location_name: self.source_location_name
+                ,
+                vod_source_name: self.vod_source_name
+                ,
+            }
+        )
     }
 }
+

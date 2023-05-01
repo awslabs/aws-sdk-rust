@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCrawlersOutput {
+pub struct GetCrawlersOutput  {
     /// <p>A list of crawler metadata.</p>
     #[doc(hidden)]
     pub crawlers: std::option::Option<std::vec::Vec<crate::types::Crawler>>,
@@ -13,19 +13,19 @@ pub struct GetCrawlersOutput {
 }
 impl GetCrawlersOutput {
     /// <p>A list of crawler metadata.</p>
-    pub fn crawlers(&self) -> std::option::Option<&[crate::types::Crawler]> {
+    pub fn crawlers(&self) -> std::option::Option<& [crate::types::Crawler]> {
         self.crawlers.as_deref()
     }
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCrawlersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCrawlersOutput {
     /// Creates a new builder-style object to manufacture [`GetCrawlersOutput`](crate::operation::get_crawlers::GetCrawlersOutput).
     pub fn builder() -> crate::operation::get_crawlers::builders::GetCrawlersOutputBuilder {
@@ -49,17 +49,13 @@ impl GetCrawlersOutputBuilder {
     /// <p>A list of crawler metadata.</p>
     pub fn crawlers(mut self, input: crate::types::Crawler) -> Self {
         let mut v = self.crawlers.unwrap_or_default();
-        v.push(input);
-        self.crawlers = Some(v);
-        self
+                        v.push(input);
+                        self.crawlers = Some(v);
+                        self
     }
     /// <p>A list of crawler metadata.</p>
-    pub fn set_crawlers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Crawler>>,
-    ) -> Self {
-        self.crawlers = input;
-        self
+    pub fn set_crawlers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Crawler>>) -> Self {
+        self.crawlers = input; self
     }
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl GetCrawlersOutputBuilder {
     }
     /// <p>A continuation token, if the returned list has not reached the end of those defined in this customer account.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCrawlersOutput`](crate::operation::get_crawlers::GetCrawlersOutput).
     pub fn build(self) -> crate::operation::get_crawlers::GetCrawlersOutput {
         crate::operation::get_crawlers::GetCrawlersOutput {
-            crawlers: self.crawlers,
-            next_token: self.next_token,
+            crawlers: self.crawlers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Indicates that the scope provided in the request is invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidScopeException {
+pub struct InvalidScopeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
@@ -17,25 +17,23 @@ pub struct InvalidScopeException {
 }
 impl InvalidScopeException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_description(&self) -> std::option::Option<&str> {
+    pub fn error_description(&self) -> std::option::Option<& str> {
         self.error_description.as_deref()
     }
 }
 impl InvalidScopeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidScopeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidScopeException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -50,9 +48,7 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidScopeExcept
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidScopeException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidScopeException {
     /// Creates a new builder-style object to manufacture [`InvalidScopeException`](crate::types::error::InvalidScopeException).
@@ -78,8 +74,7 @@ impl InvalidScopeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn error_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,12 +82,8 @@ impl InvalidScopeExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_error_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.error_description = input;
-        self
+    pub fn set_error_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.error_description = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,30 +92,30 @@ impl InvalidScopeExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidScopeException`](crate::types::error::InvalidScopeException).
     pub fn build(self) -> crate::types::error::InvalidScopeException {
         crate::types::error::InvalidScopeException {
-            error: self.error,
-            error_description: self.error_description,
-            message: self.message,
+            error: self.error
+            ,
+            error_description: self.error_description
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

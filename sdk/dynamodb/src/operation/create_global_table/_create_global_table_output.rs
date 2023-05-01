@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalTableOutput {
+pub struct CreateGlobalTableOutput  {
     /// <p>Contains the details of the global table.</p>
     #[doc(hidden)]
     pub global_table_description: std::option::Option<crate::types::GlobalTableDescription>,
@@ -10,21 +10,18 @@ pub struct CreateGlobalTableOutput {
 }
 impl CreateGlobalTableOutput {
     /// <p>Contains the details of the global table.</p>
-    pub fn global_table_description(
-        &self,
-    ) -> std::option::Option<&crate::types::GlobalTableDescription> {
+    pub fn global_table_description(&self) -> std::option::Option<& crate::types::GlobalTableDescription> {
         self.global_table_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateGlobalTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateGlobalTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalTableOutput`](crate::operation::create_global_table::CreateGlobalTableOutput).
-    pub fn builder(
-    ) -> crate::operation::create_global_table::builders::CreateGlobalTableOutputBuilder {
+    pub fn builder() -> crate::operation::create_global_table::builders::CreateGlobalTableOutputBuilder {
         crate::operation::create_global_table::builders::CreateGlobalTableOutputBuilder::default()
     }
 }
@@ -43,27 +40,25 @@ impl CreateGlobalTableOutputBuilder {
         self
     }
     /// <p>Contains the details of the global table.</p>
-    pub fn set_global_table_description(
-        mut self,
-        input: std::option::Option<crate::types::GlobalTableDescription>,
-    ) -> Self {
-        self.global_table_description = input;
-        self
+    pub fn set_global_table_description(mut self, input: std::option::Option<crate::types::GlobalTableDescription>) -> Self {
+        self.global_table_description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateGlobalTableOutput`](crate::operation::create_global_table::CreateGlobalTableOutput).
     pub fn build(self) -> crate::operation::create_global_table::CreateGlobalTableOutput {
         crate::operation::create_global_table::CreateGlobalTableOutput {
-            global_table_description: self.global_table_description,
+            global_table_description: self.global_table_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

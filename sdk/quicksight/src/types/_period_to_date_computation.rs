@@ -3,7 +3,7 @@
 /// <p>The period to date computation configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PeriodToDateComputation {
+pub struct PeriodToDateComputation  {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
     pub computation_id: std::option::Option<std::string::String>,
@@ -16,37 +16,37 @@ pub struct PeriodToDateComputation {
     /// <p>The value field that is used in a computation.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::MeasureField>,
-    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p>YEAR: Year to date.</p> </li>
-    /// <li> <p>MONTH: Month to date.</p> </li>
+    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p>YEAR: Year to date.</p> </li> 
+    /// <li> <p>MONTH: Month to date.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub period_time_granularity: std::option::Option<crate::types::TimeGranularity>,
 }
 impl PeriodToDateComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> std::option::Option<& str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> std::option::Option<& crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> std::option::Option<& crate::types::MeasureField> {
         self.value.as_ref()
     }
-    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p>YEAR: Year to date.</p> </li>
-    /// <li> <p>MONTH: Month to date.</p> </li>
+    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p>YEAR: Year to date.</p> </li> 
+    /// <li> <p>MONTH: Month to date.</p> </li> 
     /// </ul>
-    pub fn period_time_granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
+    pub fn period_time_granularity(&self) -> std::option::Option<& crate::types::TimeGranularity> {
         self.period_time_granularity.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The ID for a computation.</p>
     pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.computation_id = input;
-        self
+        self.computation_id = input; self
     }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -95,8 +93,7 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn set_time(mut self, input: std::option::Option<crate::types::DimensionField>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
@@ -105,38 +102,39 @@ impl PeriodToDateComputationBuilder {
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
-    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p>YEAR: Year to date.</p> </li>
-    /// <li> <p>MONTH: Month to date.</p> </li>
+    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p>YEAR: Year to date.</p> </li> 
+    /// <li> <p>MONTH: Month to date.</p> </li> 
     /// </ul>
     pub fn period_time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
         self.period_time_granularity = Some(input);
         self
     }
-    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p>YEAR: Year to date.</p> </li>
-    /// <li> <p>MONTH: Month to date.</p> </li>
+    /// <p>The time granularity setup of period to date computation. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p>YEAR: Year to date.</p> </li> 
+    /// <li> <p>MONTH: Month to date.</p> </li> 
     /// </ul>
-    pub fn set_period_time_granularity(
-        mut self,
-        input: std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
-        self.period_time_granularity = input;
-        self
+    pub fn set_period_time_granularity(mut self, input: std::option::Option<crate::types::TimeGranularity>) -> Self {
+        self.period_time_granularity = input; self
     }
     /// Consumes the builder and constructs a [`PeriodToDateComputation`](crate::types::PeriodToDateComputation).
     pub fn build(self) -> crate::types::PeriodToDateComputation {
         crate::types::PeriodToDateComputation {
-            computation_id: self.computation_id,
-            name: self.name,
-            time: self.time,
-            value: self.value,
-            period_time_granularity: self.period_time_granularity,
+            computation_id: self.computation_id
+            ,
+            name: self.name
+            ,
+            time: self.time
+            ,
+            value: self.value
+            ,
+            period_time_granularity: self.period_time_granularity
+            ,
         }
     }
 }
+

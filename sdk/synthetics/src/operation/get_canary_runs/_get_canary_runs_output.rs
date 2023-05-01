@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCanaryRunsOutput {
+pub struct GetCanaryRunsOutput  {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     #[doc(hidden)]
     pub canary_runs: std::option::Option<std::vec::Vec<crate::types::CanaryRun>>,
@@ -13,19 +13,19 @@ pub struct GetCanaryRunsOutput {
 }
 impl GetCanaryRunsOutput {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-    pub fn canary_runs(&self) -> std::option::Option<&[crate::types::CanaryRun]> {
+    pub fn canary_runs(&self) -> std::option::Option<& [crate::types::CanaryRun]> {
         self.canary_runs.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCanaryRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCanaryRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetCanaryRunsOutput`](crate::operation::get_canary_runs::GetCanaryRunsOutput).
     pub fn builder() -> crate::operation::get_canary_runs::builders::GetCanaryRunsOutputBuilder {
@@ -49,17 +49,13 @@ impl GetCanaryRunsOutputBuilder {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     pub fn canary_runs(mut self, input: crate::types::CanaryRun) -> Self {
         let mut v = self.canary_runs.unwrap_or_default();
-        v.push(input);
-        self.canary_runs = Some(v);
-        self
+                        v.push(input);
+                        self.canary_runs = Some(v);
+                        self
     }
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-    pub fn set_canary_runs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CanaryRun>>,
-    ) -> Self {
-        self.canary_runs = input;
-        self
+    pub fn set_canary_runs(mut self, input: std::option::Option<std::vec::Vec<crate::types::CanaryRun>>) -> Self {
+        self.canary_runs = input; self
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl GetCanaryRunsOutputBuilder {
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCanaryRunsOutput`](crate::operation::get_canary_runs::GetCanaryRunsOutput).
     pub fn build(self) -> crate::operation::get_canary_runs::GetCanaryRunsOutput {
         crate::operation::get_canary_runs::GetCanaryRunsOutput {
-            canary_runs: self.canary_runs,
-            next_token: self.next_token,
+            canary_runs: self.canary_runs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

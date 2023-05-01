@@ -216,3 +216,4 @@ pub use crate::types::_job_manifest::JobManifestBuilder;
 pub use crate::types::_job_manifest_spec::JobManifestSpecBuilder;
 
 pub use crate::types::_create_bucket_configuration::CreateBucketConfigurationBuilder;
+

@@ -219,3 +219,4 @@ pub mod update_rule_version;
 
 /// Types for the `UpdateVariable` operation.
 pub mod update_variable;
+

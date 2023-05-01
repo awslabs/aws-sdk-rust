@@ -3,7 +3,7 @@
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeHttp2ConnectionPool {
+pub struct VirtualNodeHttp2ConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_requests: i32,
@@ -35,13 +35,15 @@ impl VirtualNodeHttp2ConnectionPoolBuilder {
     }
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_requests = input;
-        self
+        self.max_requests = input; self
     }
     /// Consumes the builder and constructs a [`VirtualNodeHttp2ConnectionPool`](crate::types::VirtualNodeHttp2ConnectionPool).
     pub fn build(self) -> crate::types::VirtualNodeHttp2ConnectionPool {
         crate::types::VirtualNodeHttp2ConnectionPool {
-            max_requests: self.max_requests.unwrap_or_default(),
+            max_requests: self.max_requests
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

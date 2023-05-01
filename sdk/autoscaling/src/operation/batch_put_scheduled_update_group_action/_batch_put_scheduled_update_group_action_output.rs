@@ -2,29 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutScheduledUpdateGroupActionOutput {
+pub struct BatchPutScheduledUpdateGroupActionOutput  {
     /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
     #[doc(hidden)]
-    pub failed_scheduled_update_group_actions:
-        std::option::Option<std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
+    pub failed_scheduled_update_group_actions: std::option::Option<std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,
 }
 impl BatchPutScheduledUpdateGroupActionOutput {
     /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
-    pub fn failed_scheduled_update_group_actions(
-        &self,
-    ) -> std::option::Option<&[crate::types::FailedScheduledUpdateGroupActionRequest]> {
+    pub fn failed_scheduled_update_group_actions(&self) -> std::option::Option<& [crate::types::FailedScheduledUpdateGroupActionRequest]> {
         self.failed_scheduled_update_group_actions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchPutScheduledUpdateGroupActionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchPutScheduledUpdateGroupActionOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutScheduledUpdateGroupActionOutput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput).
-    pub fn builder() -> crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionOutputBuilder{
+    pub fn builder() -> crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionOutputBuilder {
         crate::operation::batch_put_scheduled_update_group_action::builders::BatchPutScheduledUpdateGroupActionOutputBuilder::default()
     }
 }
@@ -33,8 +30,7 @@ impl BatchPutScheduledUpdateGroupActionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutScheduledUpdateGroupActionOutputBuilder {
-    pub(crate) failed_scheduled_update_group_actions:
-        std::option::Option<std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
+    pub(crate) failed_scheduled_update_group_actions: std::option::Option<std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>,
     _request_id: Option<String>,
 }
 impl BatchPutScheduledUpdateGroupActionOutputBuilder {
@@ -43,38 +39,27 @@ impl BatchPutScheduledUpdateGroupActionOutputBuilder {
     /// To override the contents of this collection use [`set_failed_scheduled_update_group_actions`](Self::set_failed_scheduled_update_group_actions).
     ///
     /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
-    pub fn failed_scheduled_update_group_actions(
-        mut self,
-        input: crate::types::FailedScheduledUpdateGroupActionRequest,
-    ) -> Self {
-        let mut v = self
-            .failed_scheduled_update_group_actions
-            .unwrap_or_default();
-        v.push(input);
-        self.failed_scheduled_update_group_actions = Some(v);
-        self
+    pub fn failed_scheduled_update_group_actions(mut self, input: crate::types::FailedScheduledUpdateGroupActionRequest) -> Self {
+        let mut v = self.failed_scheduled_update_group_actions.unwrap_or_default();
+                        v.push(input);
+                        self.failed_scheduled_update_group_actions = Some(v);
+                        self
     }
     /// <p>The names of the scheduled actions that could not be created or updated, including an error message.</p>
-    pub fn set_failed_scheduled_update_group_actions(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>,
-        >,
-    ) -> Self {
-        self.failed_scheduled_update_group_actions = input;
-        self
+    pub fn set_failed_scheduled_update_group_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedScheduledUpdateGroupActionRequest>>) -> Self {
+        self.failed_scheduled_update_group_actions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchPutScheduledUpdateGroupActionOutput`](crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput).
-    pub fn build(self) -> crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput{
+    pub fn build(self) -> crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput {
         crate::operation::batch_put_scheduled_update_group_action::BatchPutScheduledUpdateGroupActionOutput {
             failed_scheduled_update_group_actions: self.failed_scheduled_update_group_actions
             ,
@@ -82,3 +67,4 @@ impl BatchPutScheduledUpdateGroupActionOutputBuilder {
         }
     }
 }
+

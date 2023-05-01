@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationFsxLustreInput {
+pub struct CreateLocationFsxLustreInput  {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
     #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct CreateLocationFsxLustreInput {
 }
 impl CreateLocationFsxLustreInput {
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::TagListEntry]> {
         self.tags.as_deref()
     }
 }
 impl CreateLocationFsxLustreInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxLustreInput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreInput).
-    pub fn builder(
-    ) -> crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreInputBuilder {
         crate::operation::create_location_fsx_lustre::builders::CreateLocationFsxLustreInputBuilder::default()
     }
 }
@@ -59,12 +57,8 @@ impl CreateLocationFsxLustreInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the FSx for Lustre file system.</p>
-    pub fn set_fsx_filesystem_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.fsx_filesystem_arn = input;
-        self
+    pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.fsx_filesystem_arn = input; self
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -73,17 +67,13 @@ impl CreateLocationFsxLustreInputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
     pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are used to configure the FSx for Lustre file system.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_arns = input;
-        self
+    pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_arns = input; self
     }
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
     pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +82,7 @@ impl CreateLocationFsxLustreInputBuilder {
     }
     /// <p>A subdirectory in the location's path. This subdirectory in the FSx for Lustre file system is used to read data from the FSx for Lustre source location or write data to the FSx for Lustre destination.</p>
     pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -102,32 +91,28 @@ impl CreateLocationFsxLustreInputBuilder {
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxLustreInput`](crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreInput {
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
-                security_group_arns: self.security_group_arns,
-                subdirectory: self.subdirectory,
-                tags: self.tags,
-            },
+                fsx_filesystem_arn: self.fsx_filesystem_arn
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                subdirectory: self.subdirectory
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

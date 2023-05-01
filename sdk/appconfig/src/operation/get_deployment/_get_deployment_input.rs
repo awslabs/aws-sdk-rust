@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentInput {
+pub struct GetDeploymentInput  {
     /// <p>The ID of the application that includes the deployment you want to get. </p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetDeploymentInput {
 }
 impl GetDeploymentInput {
     /// <p>The ID of the application that includes the deployment you want to get. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the environment that includes the deployment you want to get. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The sequence number of the deployment.</p>
@@ -50,8 +50,7 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The ID of the application that includes the deployment you want to get. </p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The ID of the environment that includes the deployment you want to get. </p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The ID of the environment that includes the deployment you want to get. </p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input;
-        self
+        self.environment_id = input; self
     }
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl GetDeploymentInputBuilder {
     }
     /// <p>The sequence number of the deployment.</p>
     pub fn set_deployment_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.deployment_number = input;
-        self
+        self.deployment_number = input; self
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_deployment::GetDeploymentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_deployment::GetDeploymentInput {
-            application_id: self.application_id,
-            environment_id: self.environment_id,
-            deployment_number: self.deployment_number,
-        })
+    pub fn build(self) -> Result<crate::operation::get_deployment::GetDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_deployment::GetDeploymentInput {
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                deployment_number: self.deployment_number
+                ,
+            }
+        )
     }
 }
+

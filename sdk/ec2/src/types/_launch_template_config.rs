@@ -3,24 +3,21 @@
 /// <p>Describes a launch template and overrides.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateConfig {
+pub struct LaunchTemplateConfig  {
     /// <p>The launch template.</p>
     #[doc(hidden)]
-    pub launch_template_specification:
-        std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
+    pub launch_template_specification: std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     #[doc(hidden)]
     pub overrides: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateConfig {
     /// <p>The launch template.</p>
-    pub fn launch_template_specification(
-        &self,
-    ) -> std::option::Option<&crate::types::FleetLaunchTemplateSpecification> {
+    pub fn launch_template_specification(&self) -> std::option::Option<& crate::types::FleetLaunchTemplateSpecification> {
         self.launch_template_specification.as_ref()
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::types::LaunchTemplateOverrides]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::types::LaunchTemplateOverrides]> {
         self.overrides.as_deref()
     }
 }
@@ -35,26 +32,18 @@ impl LaunchTemplateConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LaunchTemplateConfigBuilder {
-    pub(crate) launch_template_specification:
-        std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
+    pub(crate) launch_template_specification: std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
     pub(crate) overrides: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
 }
 impl LaunchTemplateConfigBuilder {
     /// <p>The launch template.</p>
-    pub fn launch_template_specification(
-        mut self,
-        input: crate::types::FleetLaunchTemplateSpecification,
-    ) -> Self {
+    pub fn launch_template_specification(mut self, input: crate::types::FleetLaunchTemplateSpecification) -> Self {
         self.launch_template_specification = Some(input);
         self
     }
     /// <p>The launch template.</p>
-    pub fn set_launch_template_specification(
-        mut self,
-        input: std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
-    ) -> Self {
-        self.launch_template_specification = input;
-        self
+    pub fn set_launch_template_specification(mut self, input: std::option::Option<crate::types::FleetLaunchTemplateSpecification>) -> Self {
+        self.launch_template_specification = input; self
     }
     /// Appends an item to `overrides`.
     ///
@@ -63,23 +52,22 @@ impl LaunchTemplateConfigBuilder {
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     pub fn overrides(mut self, input: crate::types::LaunchTemplateOverrides) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-        v.push(input);
-        self.overrides = Some(v);
-        self
+                        v.push(input);
+                        self.overrides = Some(v);
+                        self
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
-    pub fn set_overrides(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>,
-    ) -> Self {
-        self.overrides = input;
-        self
+    pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateOverrides>>) -> Self {
+        self.overrides = input; self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateConfig`](crate::types::LaunchTemplateConfig).
     pub fn build(self) -> crate::types::LaunchTemplateConfig {
         crate::types::LaunchTemplateConfig {
-            launch_template_specification: self.launch_template_specification,
-            overrides: self.overrides,
+            launch_template_specification: self.launch_template_specification
+            ,
+            overrides: self.overrides
+            ,
         }
     }
 }
+

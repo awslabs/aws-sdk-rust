@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPhoneNumbersInput {
+pub struct ListPhoneNumbersInput  {
     /// <p>The phone number status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::PhoneNumberStatus>,
@@ -24,19 +24,19 @@ pub struct ListPhoneNumbersInput {
 }
 impl ListPhoneNumbersInput {
     /// <p>The phone number status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PhoneNumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::PhoneNumberStatus> {
         self.status.as_ref()
     }
     /// <p>The phone number product type.</p>
-    pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>The filter to use to limit the number of results.</p>
-    pub fn filter_name(&self) -> std::option::Option<&crate::types::PhoneNumberAssociationName> {
+    pub fn filter_name(&self) -> std::option::Option<& crate::types::PhoneNumberAssociationName> {
         self.filter_name.as_ref()
     }
     /// <p>The value to use for the filter.</p>
-    pub fn filter_value(&self) -> std::option::Option<&str> {
+    pub fn filter_value(&self) -> std::option::Option<& str> {
         self.filter_value.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -44,14 +44,13 @@ impl ListPhoneNumbersInput {
         self.max_results
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListPhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
-    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder {
         crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder::default()
     }
 }
@@ -74,12 +73,8 @@ impl ListPhoneNumbersInputBuilder {
         self
     }
     /// <p>The phone number status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::PhoneNumberStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::PhoneNumberStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The phone number product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
@@ -87,12 +82,8 @@ impl ListPhoneNumbersInputBuilder {
         self
     }
     /// <p>The phone number product type.</p>
-    pub fn set_product_type(
-        mut self,
-        input: std::option::Option<crate::types::PhoneNumberProductType>,
-    ) -> Self {
-        self.product_type = input;
-        self
+    pub fn set_product_type(mut self, input: std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
+        self.product_type = input; self
     }
     /// <p>The filter to use to limit the number of results.</p>
     pub fn filter_name(mut self, input: crate::types::PhoneNumberAssociationName) -> Self {
@@ -100,12 +91,8 @@ impl ListPhoneNumbersInputBuilder {
         self
     }
     /// <p>The filter to use to limit the number of results.</p>
-    pub fn set_filter_name(
-        mut self,
-        input: std::option::Option<crate::types::PhoneNumberAssociationName>,
-    ) -> Self {
-        self.filter_name = input;
-        self
+    pub fn set_filter_name(mut self, input: std::option::Option<crate::types::PhoneNumberAssociationName>) -> Self {
+        self.filter_name = input; self
     }
     /// <p>The value to use for the filter.</p>
     pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +101,7 @@ impl ListPhoneNumbersInputBuilder {
     }
     /// <p>The value to use for the filter.</p>
     pub fn set_filter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_value = input;
-        self
+        self.filter_value = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -124,8 +110,7 @@ impl ListPhoneNumbersInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,25 +119,26 @@ impl ListPhoneNumbersInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListPhoneNumbersInput`](crate::operation::list_phone_numbers::ListPhoneNumbersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_phone_numbers::ListPhoneNumbersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_phone_numbers::ListPhoneNumbersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_phone_numbers::ListPhoneNumbersInput {
-                status: self.status,
-                product_type: self.product_type,
-                filter_name: self.filter_name,
-                filter_value: self.filter_value,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                status: self.status
+                ,
+                product_type: self.product_type
+                ,
+                filter_name: self.filter_name
+                ,
+                filter_value: self.filter_value
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

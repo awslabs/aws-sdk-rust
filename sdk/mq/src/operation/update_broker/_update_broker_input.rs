@@ -3,7 +3,7 @@
 /// <p>Updates the broker using the specified properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerInput {
+pub struct UpdateBrokerInput  {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     #[doc(hidden)]
     pub authentication_strategy: std::option::Option<crate::types::AuthenticationStrategy>,
@@ -37,9 +37,7 @@ pub struct UpdateBrokerInput {
 }
 impl UpdateBrokerInput {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn authentication_strategy(
-        &self,
-    ) -> std::option::Option<&crate::types::AuthenticationStrategy> {
+    pub fn authentication_strategy(&self) -> std::option::Option<& crate::types::AuthenticationStrategy> {
         self.authentication_strategy.as_ref()
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -47,39 +45,35 @@ impl UpdateBrokerInput {
         self.auto_minor_version_upgrade
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> std::option::Option<&str> {
+    pub fn broker_id(&self) -> std::option::Option<& str> {
         self.broker_id.as_deref()
     }
     /// <p>A list of information about the configuration.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::ConfigurationId> {
+    pub fn configuration(&self) -> std::option::Option<& crate::types::ConfigurationId> {
         self.configuration.as_ref()
     }
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn host_instance_type(&self) -> std::option::Option<&str> {
+    pub fn host_instance_type(&self) -> std::option::Option<& str> {
         self.host_instance_type.as_deref()
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn ldap_server_metadata(
-        &self,
-    ) -> std::option::Option<&crate::types::LdapServerMetadataInput> {
+    pub fn ldap_server_metadata(&self) -> std::option::Option<& crate::types::LdapServerMetadataInput> {
         self.ldap_server_metadata.as_ref()
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-    pub fn logs(&self) -> std::option::Option<&crate::types::Logs> {
+    pub fn logs(&self) -> std::option::Option<& crate::types::Logs> {
         self.logs.as_ref()
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn maintenance_window_start_time(
-        &self,
-    ) -> std::option::Option<&crate::types::WeeklyStartTime> {
+    pub fn maintenance_window_start_time(&self) -> std::option::Option<& crate::types::WeeklyStartTime> {
         self.maintenance_window_start_time.as_ref()
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
 }
@@ -112,12 +106,8 @@ impl UpdateBrokerInputBuilder {
         self
     }
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
-    pub fn set_authentication_strategy(
-        mut self,
-        input: std::option::Option<crate::types::AuthenticationStrategy>,
-    ) -> Self {
-        self.authentication_strategy = input;
-        self
+    pub fn set_authentication_strategy(mut self, input: std::option::Option<crate::types::AuthenticationStrategy>) -> Self {
+        self.authentication_strategy = input; self
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
@@ -126,8 +116,7 @@ impl UpdateBrokerInputBuilder {
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_minor_version_upgrade = input;
-        self
+        self.auto_minor_version_upgrade = input; self
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +125,7 @@ impl UpdateBrokerInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.broker_id = input;
-        self
+        self.broker_id = input; self
     }
     /// <p>A list of information about the configuration.</p>
     pub fn configuration(mut self, input: crate::types::ConfigurationId) -> Self {
@@ -145,12 +133,8 @@ impl UpdateBrokerInputBuilder {
         self
     }
     /// <p>A list of information about the configuration.</p>
-    pub fn set_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationId>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: std::option::Option<crate::types::ConfigurationId>) -> Self {
+        self.configuration = input; self
     }
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +143,7 @@ impl UpdateBrokerInputBuilder {
     }
     /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
     pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,12 +151,8 @@ impl UpdateBrokerInputBuilder {
         self
     }
     /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-    pub fn set_host_instance_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.host_instance_type = input;
-        self
+    pub fn set_host_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.host_instance_type = input; self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn ldap_server_metadata(mut self, input: crate::types::LdapServerMetadataInput) -> Self {
@@ -181,12 +160,8 @@ impl UpdateBrokerInputBuilder {
         self
     }
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
-    pub fn set_ldap_server_metadata(
-        mut self,
-        input: std::option::Option<crate::types::LdapServerMetadataInput>,
-    ) -> Self {
-        self.ldap_server_metadata = input;
-        self
+    pub fn set_ldap_server_metadata(mut self, input: std::option::Option<crate::types::LdapServerMetadataInput>) -> Self {
+        self.ldap_server_metadata = input; self
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub fn logs(mut self, input: crate::types::Logs) -> Self {
@@ -195,8 +170,7 @@ impl UpdateBrokerInputBuilder {
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
     pub fn set_logs(mut self, input: std::option::Option<crate::types::Logs>) -> Self {
-        self.logs = input;
-        self
+        self.logs = input; self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn maintenance_window_start_time(mut self, input: crate::types::WeeklyStartTime) -> Self {
@@ -204,12 +178,8 @@ impl UpdateBrokerInputBuilder {
         self
     }
     /// <p>The parameters that determine the WeeklyStartTime.</p>
-    pub fn set_maintenance_window_start_time(
-        mut self,
-        input: std::option::Option<crate::types::WeeklyStartTime>,
-    ) -> Self {
-        self.maintenance_window_start_time = input;
-        self
+    pub fn set_maintenance_window_start_time(mut self, input: std::option::Option<crate::types::WeeklyStartTime>) -> Self {
+        self.maintenance_window_start_time = input; self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -218,36 +188,41 @@ impl UpdateBrokerInputBuilder {
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// Consumes the builder and constructs a [`UpdateBrokerInput`](crate::operation::update_broker::UpdateBrokerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_broker::UpdateBrokerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_broker::UpdateBrokerInput {
-            authentication_strategy: self.authentication_strategy,
-            auto_minor_version_upgrade: self.auto_minor_version_upgrade.unwrap_or_default(),
-            broker_id: self.broker_id,
-            configuration: self.configuration,
-            engine_version: self.engine_version,
-            host_instance_type: self.host_instance_type,
-            ldap_server_metadata: self.ldap_server_metadata,
-            logs: self.logs,
-            maintenance_window_start_time: self.maintenance_window_start_time,
-            security_groups: self.security_groups,
-        })
+    pub fn build(self) -> Result<crate::operation::update_broker::UpdateBrokerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_broker::UpdateBrokerInput {
+                authentication_strategy: self.authentication_strategy
+                ,
+                auto_minor_version_upgrade: self.auto_minor_version_upgrade
+                    .unwrap_or_default()
+                ,
+                broker_id: self.broker_id
+                ,
+                configuration: self.configuration
+                ,
+                engine_version: self.engine_version
+                ,
+                host_instance_type: self.host_instance_type
+                ,
+                ldap_server_metadata: self.ldap_server_metadata
+                ,
+                logs: self.logs
+                ,
+                maintenance_window_start_time: self.maintenance_window_start_time
+                ,
+                security_groups: self.security_groups
+                ,
+            }
+        )
     }
 }
+

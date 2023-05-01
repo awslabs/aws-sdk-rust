@@ -3,7 +3,7 @@
 /// <p>Represents the context of an action in the stage of a pipeline to a job worker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionContext {
+pub struct ActionContext  {
     /// <p>The name of the action in the context of a job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ActionContext {
 }
 impl ActionContext {
     /// <p>The name of the action in the context of a job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+    pub fn action_execution_id(&self) -> std::option::Option<& str> {
         self.action_execution_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ActionContextBuilder {
     }
     /// <p>The name of the action in the context of a job.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
     pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl ActionContextBuilder {
         self
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-    pub fn set_action_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.action_execution_id = input;
-        self
+    pub fn set_action_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.action_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`ActionContext`](crate::types::ActionContext).
     pub fn build(self) -> crate::types::ActionContext {
         crate::types::ActionContext {
-            name: self.name,
-            action_execution_id: self.action_execution_id,
+            name: self.name
+            ,
+            action_execution_id: self.action_execution_id
+            ,
         }
     }
 }
+

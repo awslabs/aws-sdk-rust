@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeControlPanelInput {
+pub struct DescribeControlPanelInput  {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
     pub control_panel_arn: std::option::Option<std::string::String>,
 }
 impl DescribeControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> std::option::Option<& str> {
         self.control_panel_arn.as_deref()
     }
 }
 impl DescribeControlPanelInput {
     /// Creates a new builder-style object to manufacture [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
-    pub fn builder(
-    ) -> crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder {
+    pub fn builder() -> crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder {
         crate::operation::describe_control_panel::builders::DescribeControlPanelInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DescribeControlPanelInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn set_control_panel_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.control_panel_arn = input;
-        self
+    pub fn set_control_panel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.control_panel_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeControlPanelInput`](crate::operation::describe_control_panel::DescribeControlPanelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_control_panel::DescribeControlPanelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_control_panel::DescribeControlPanelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_control_panel::DescribeControlPanelInput {
-                control_panel_arn: self.control_panel_arn,
-            },
+                control_panel_arn: self.control_panel_arn
+                ,
+            }
         )
     }
 }
+

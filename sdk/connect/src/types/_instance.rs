@@ -3,7 +3,7 @@
 /// <p>The Amazon Connect instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -37,35 +37,35 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The identity management type.</p>
-    pub fn identity_management_type(&self) -> std::option::Option<&crate::types::DirectoryType> {
+    pub fn identity_management_type(&self) -> std::option::Option<& crate::types::DirectoryType> {
         self.identity_management_type.as_ref()
     }
     /// <p>The alias of instance.</p>
-    pub fn instance_alias(&self) -> std::option::Option<&str> {
+    pub fn instance_alias(&self) -> std::option::Option<& str> {
         self.instance_alias.as_deref()
     }
     /// <p>When the instance was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The service role of the instance.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The state of the instance.</p>
-    pub fn instance_status(&self) -> std::option::Option<&crate::types::InstanceStatus> {
+    pub fn instance_status(&self) -> std::option::Option<& crate::types::InstanceStatus> {
         self.instance_status.as_ref()
     }
     /// <p>Relevant details why the instance was not successfully created. </p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::types::InstanceStatusReason> {
+    pub fn status_reason(&self) -> std::option::Option<& crate::types::InstanceStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>Whether inbound calls are enabled.</p>
@@ -77,7 +77,7 @@ impl Instance {
         self.outbound_calls_enabled
     }
 }
-impl std::fmt::Debug for Instance {
+impl  std::fmt::Debug for Instance  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Instance");
         formatter.field("id", &self.id);
@@ -123,8 +123,7 @@ impl InstanceBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +132,7 @@ impl InstanceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The identity management type.</p>
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
@@ -142,12 +140,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The identity management type.</p>
-    pub fn set_identity_management_type(
-        mut self,
-        input: std::option::Option<crate::types::DirectoryType>,
-    ) -> Self {
-        self.identity_management_type = input;
-        self
+    pub fn set_identity_management_type(mut self, input: std::option::Option<crate::types::DirectoryType>) -> Self {
+        self.identity_management_type = input; self
     }
     /// <p>The alias of instance.</p>
     pub fn instance_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +150,7 @@ impl InstanceBuilder {
     }
     /// <p>The alias of instance.</p>
     pub fn set_instance_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_alias = input;
-        self
+        self.instance_alias = input; self
     }
     /// <p>When the instance was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -165,12 +158,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>When the instance was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The service role of the instance.</p>
     pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,8 +168,7 @@ impl InstanceBuilder {
     }
     /// <p>The service role of the instance.</p>
     pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
     }
     /// <p>The state of the instance.</p>
     pub fn instance_status(mut self, input: crate::types::InstanceStatus) -> Self {
@@ -188,12 +176,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The state of the instance.</p>
-    pub fn set_instance_status(
-        mut self,
-        input: std::option::Option<crate::types::InstanceStatus>,
-    ) -> Self {
-        self.instance_status = input;
-        self
+    pub fn set_instance_status(mut self, input: std::option::Option<crate::types::InstanceStatus>) -> Self {
+        self.instance_status = input; self
     }
     /// <p>Relevant details why the instance was not successfully created. </p>
     pub fn status_reason(mut self, input: crate::types::InstanceStatusReason) -> Self {
@@ -201,12 +185,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>Relevant details why the instance was not successfully created. </p>
-    pub fn set_status_reason(
-        mut self,
-        input: std::option::Option<crate::types::InstanceStatusReason>,
-    ) -> Self {
-        self.status_reason = input;
-        self
+    pub fn set_status_reason(mut self, input: std::option::Option<crate::types::InstanceStatusReason>) -> Self {
+        self.status_reason = input; self
     }
     /// <p>Whether inbound calls are enabled.</p>
     pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
@@ -215,8 +195,7 @@ impl InstanceBuilder {
     }
     /// <p>Whether inbound calls are enabled.</p>
     pub fn set_inbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.inbound_calls_enabled = input;
-        self
+        self.inbound_calls_enabled = input; self
     }
     /// <p>Whether outbound calls are enabled.</p>
     pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
@@ -225,22 +204,31 @@ impl InstanceBuilder {
     }
     /// <p>Whether outbound calls are enabled.</p>
     pub fn set_outbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.outbound_calls_enabled = input;
-        self
+        self.outbound_calls_enabled = input; self
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            id: self.id,
-            arn: self.arn,
-            identity_management_type: self.identity_management_type,
-            instance_alias: self.instance_alias,
-            created_time: self.created_time,
-            service_role: self.service_role,
-            instance_status: self.instance_status,
-            status_reason: self.status_reason,
-            inbound_calls_enabled: self.inbound_calls_enabled,
-            outbound_calls_enabled: self.outbound_calls_enabled,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            identity_management_type: self.identity_management_type
+            ,
+            instance_alias: self.instance_alias
+            ,
+            created_time: self.created_time
+            ,
+            service_role: self.service_role
+            ,
+            instance_status: self.instance_status
+            ,
+            status_reason: self.status_reason
+            ,
+            inbound_calls_enabled: self.inbound_calls_enabled
+            ,
+            outbound_calls_enabled: self.outbound_calls_enabled
+            ,
         }
     }
 }
@@ -260,3 +248,4 @@ impl std::fmt::Debug for InstanceBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateImportJobInput {
+pub struct CreateImportJobInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateImportJobInput {
 }
 impl CreateImportJobInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn import_job_request(&self) -> std::option::Option<&crate::types::ImportJobRequest> {
+    pub fn import_job_request(&self) -> std::option::Option<& crate::types::ImportJobRequest> {
         self.import_job_request.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateImportJobInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn import_job_request(mut self, input: crate::types::ImportJobRequest) -> Self {
@@ -51,23 +50,19 @@ impl CreateImportJobInputBuilder {
         self
     }
     /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn set_import_job_request(
-        mut self,
-        input: std::option::Option<crate::types::ImportJobRequest>,
-    ) -> Self {
-        self.import_job_request = input;
-        self
+    pub fn set_import_job_request(mut self, input: std::option::Option<crate::types::ImportJobRequest>) -> Self {
+        self.import_job_request = input; self
     }
     /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_import_job::CreateImportJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_import_job::CreateImportJobInput {
-            application_id: self.application_id,
-            import_job_request: self.import_job_request,
-        })
+    pub fn build(self) -> Result<crate::operation::create_import_job::CreateImportJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_import_job::CreateImportJobInput {
+                application_id: self.application_id
+                ,
+                import_job_request: self.import_job_request
+                ,
+            }
+        )
     }
 }
+

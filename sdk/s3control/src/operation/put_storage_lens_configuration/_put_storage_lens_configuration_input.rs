@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutStorageLensConfigurationInput {
+pub struct PutStorageLensConfigurationInput  {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -12,37 +12,35 @@ pub struct PutStorageLensConfigurationInput {
     /// <p>The S3 Storage Lens configuration.</p>
     #[doc(hidden)]
     pub storage_lens_configuration: std::option::Option<crate::types::StorageLensConfiguration>,
-    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
-    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note> 
+    /// <p>You can set up to a maximum of 50 tags.</p> 
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::StorageLensTag>>,
 }
 impl PutStorageLensConfigurationInput {
     /// <p>The ID of the S3 Storage Lens configuration.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>The account ID of the requester.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn storage_lens_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::StorageLensConfiguration> {
+    pub fn storage_lens_configuration(&self) -> std::option::Option<& crate::types::StorageLensConfiguration> {
         self.storage_lens_configuration.as_ref()
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
-    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note> 
+    /// <p>You can set up to a maximum of 50 tags.</p> 
     /// </note>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::StorageLensTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::StorageLensTag]> {
         self.tags.as_deref()
     }
 }
 impl PutStorageLensConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationInput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput).
-    pub fn builder() -> crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder {
         crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder::default()
     }
 }
@@ -53,8 +51,7 @@ impl PutStorageLensConfigurationInput {
 pub struct PutStorageLensConfigurationInputBuilder {
     pub(crate) config_id: std::option::Option<std::string::String>,
     pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) storage_lens_configuration:
-        std::option::Option<crate::types::StorageLensConfiguration>,
+    pub(crate) storage_lens_configuration: std::option::Option<crate::types::StorageLensConfiguration>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::StorageLensTag>>,
 }
 impl PutStorageLensConfigurationInputBuilder {
@@ -65,8 +62,7 @@ impl PutStorageLensConfigurationInputBuilder {
     }
     /// <p>The ID of the S3 Storage Lens configuration.</p>
     pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_id = input;
-        self
+        self.config_id = input; self
     }
     /// <p>The account ID of the requester.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,62 +71,50 @@ impl PutStorageLensConfigurationInputBuilder {
     }
     /// <p>The account ID of the requester.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn storage_lens_configuration(
-        mut self,
-        input: crate::types::StorageLensConfiguration,
-    ) -> Self {
+    pub fn storage_lens_configuration(mut self, input: crate::types::StorageLensConfiguration) -> Self {
         self.storage_lens_configuration = Some(input);
         self
     }
     /// <p>The S3 Storage Lens configuration.</p>
-    pub fn set_storage_lens_configuration(
-        mut self,
-        input: std::option::Option<crate::types::StorageLensConfiguration>,
-    ) -> Self {
-        self.storage_lens_configuration = input;
-        self
+    pub fn set_storage_lens_configuration(mut self, input: std::option::Option<crate::types::StorageLensConfiguration>) -> Self {
+        self.storage_lens_configuration = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
-    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note> 
+    /// <p>You can set up to a maximum of 50 tags.</p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::StorageLensTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note>
-    /// <p>You can set up to a maximum of 50 tags.</p>
+    /// <p>The tag set of the S3 Storage Lens configuration.</p> <note> 
+    /// <p>You can set up to a maximum of 50 tags.</p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StorageLensTag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::StorageLensTag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`PutStorageLensConfigurationInput`](crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationInput {
-                config_id: self.config_id,
-                account_id: self.account_id,
-                storage_lens_configuration: self.storage_lens_configuration,
-                tags: self.tags,
-            },
+                config_id: self.config_id
+                ,
+                account_id: self.account_id
+                ,
+                storage_lens_configuration: self.storage_lens_configuration
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

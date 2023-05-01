@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMediaCapturePipelineInput {
+pub struct CreateMediaCapturePipelineInput  {
     /// <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::types::MediaPipelineSourceType>,
@@ -20,45 +20,42 @@ pub struct CreateMediaCapturePipelineInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
     #[doc(hidden)]
-    pub chime_sdk_meeting_configuration:
-        std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
+    pub chime_sdk_meeting_configuration: std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
     /// <p>The tag key-value pairs.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaCapturePipelineInput {
     /// <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
-    pub fn source_type(&self) -> std::option::Option<&crate::types::MediaPipelineSourceType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::types::MediaPipelineSourceType> {
         self.source_type.as_ref()
     }
     /// <p>ARN of the source from which the media artifacts are captured.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
-    pub fn sink_type(&self) -> std::option::Option<&crate::types::MediaPipelineSinkType> {
+    pub fn sink_type(&self) -> std::option::Option<& crate::types::MediaPipelineSinkType> {
         self.sink_type.as_ref()
     }
     /// <p>The ARN of the sink type.</p>
-    pub fn sink_arn(&self) -> std::option::Option<&str> {
+    pub fn sink_arn(&self) -> std::option::Option<& str> {
         self.sink_arn.as_deref()
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn chime_sdk_meeting_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::ChimeSdkMeetingConfiguration> {
+    pub fn chime_sdk_meeting_configuration(&self) -> std::option::Option<& crate::types::ChimeSdkMeetingConfiguration> {
         self.chime_sdk_meeting_configuration.as_ref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMediaCapturePipelineInput {
+impl  std::fmt::Debug for CreateMediaCapturePipelineInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaCapturePipelineInput");
         formatter.field("source_type", &self.source_type);
@@ -66,17 +63,14 @@ impl std::fmt::Debug for CreateMediaCapturePipelineInput {
         formatter.field("sink_type", &self.sink_type);
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "chime_sdk_meeting_configuration",
-            &self.chime_sdk_meeting_configuration,
-        );
+        formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
 impl CreateMediaCapturePipelineInput {
     /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineInput`](crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput).
-    pub fn builder() -> crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder{
+    pub fn builder() -> crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder {
         crate::operation::create_media_capture_pipeline::builders::CreateMediaCapturePipelineInputBuilder::default()
     }
 }
@@ -90,8 +84,7 @@ pub struct CreateMediaCapturePipelineInputBuilder {
     pub(crate) sink_type: std::option::Option<crate::types::MediaPipelineSinkType>,
     pub(crate) sink_arn: std::option::Option<std::string::String>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
-    pub(crate) chime_sdk_meeting_configuration:
-        std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
+    pub(crate) chime_sdk_meeting_configuration: std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMediaCapturePipelineInputBuilder {
@@ -101,12 +94,8 @@ impl CreateMediaCapturePipelineInputBuilder {
         self
     }
     /// <p>Source type from which the media artifacts are captured. A Chime SDK Meeting is the only supported source.</p>
-    pub fn set_source_type(
-        mut self,
-        input: std::option::Option<crate::types::MediaPipelineSourceType>,
-    ) -> Self {
-        self.source_type = input;
-        self
+    pub fn set_source_type(mut self, input: std::option::Option<crate::types::MediaPipelineSourceType>) -> Self {
+        self.source_type = input; self
     }
     /// <p>ARN of the source from which the media artifacts are captured.</p>
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +104,7 @@ impl CreateMediaCapturePipelineInputBuilder {
     }
     /// <p>ARN of the source from which the media artifacts are captured.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
     pub fn sink_type(mut self, input: crate::types::MediaPipelineSinkType) -> Self {
@@ -124,12 +112,8 @@ impl CreateMediaCapturePipelineInputBuilder {
         self
     }
     /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket.</p>
-    pub fn set_sink_type(
-        mut self,
-        input: std::option::Option<crate::types::MediaPipelineSinkType>,
-    ) -> Self {
-        self.sink_type = input;
-        self
+    pub fn set_sink_type(mut self, input: std::option::Option<crate::types::MediaPipelineSinkType>) -> Self {
+        self.sink_type = input; self
     }
     /// <p>The ARN of the sink type.</p>
     pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +122,7 @@ impl CreateMediaCapturePipelineInputBuilder {
     }
     /// <p>The ARN of the sink type.</p>
     pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sink_arn = input;
-        self
+        self.sink_arn = input; self
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,28 +130,17 @@ impl CreateMediaCapturePipelineInputBuilder {
         self
     }
     /// <p>The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn chime_sdk_meeting_configuration(
-        mut self,
-        input: crate::types::ChimeSdkMeetingConfiguration,
-    ) -> Self {
+    pub fn chime_sdk_meeting_configuration(mut self, input: crate::types::ChimeSdkMeetingConfiguration) -> Self {
         self.chime_sdk_meeting_configuration = Some(input);
         self
     }
     /// <p>The configuration for a specified media pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
-    pub fn set_chime_sdk_meeting_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ChimeSdkMeetingConfiguration>,
-    ) -> Self {
-        self.chime_sdk_meeting_configuration = input;
-        self
+    pub fn set_chime_sdk_meeting_configuration(mut self, input: std::option::Option<crate::types::ChimeSdkMeetingConfiguration>) -> Self {
+        self.chime_sdk_meeting_configuration = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -177,35 +149,33 @@ impl CreateMediaCapturePipelineInputBuilder {
     /// <p>The tag key-value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateMediaCapturePipelineInput`](crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_media_capture_pipeline::CreateMediaCapturePipelineInput {
-                source_type: self.source_type,
-                source_arn: self.source_arn,
-                sink_type: self.sink_type,
-                sink_arn: self.sink_arn,
-                client_request_token: self.client_request_token,
-                chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration,
-                tags: self.tags,
-            },
+                source_type: self.source_type
+                ,
+                source_arn: self.source_arn
+                ,
+                sink_type: self.sink_type
+                ,
+                sink_arn: self.sink_arn
+                ,
+                client_request_token: self.client_request_token
+                ,
+                chime_sdk_meeting_configuration: self.chime_sdk_meeting_configuration
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -217,11 +187,9 @@ impl std::fmt::Debug for CreateMediaCapturePipelineInputBuilder {
         formatter.field("sink_type", &self.sink_type);
         formatter.field("sink_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "chime_sdk_meeting_configuration",
-            &self.chime_sdk_meeting_configuration,
-        );
+        formatter.field("chime_sdk_meeting_configuration", &self.chime_sdk_meeting_configuration);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobExecutionsForJobInput {
+pub struct ListJobExecutionsForJobInput  {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListJobExecutionsForJobInput {
 }
 impl ListJobExecutionsForJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -30,15 +30,13 @@ impl ListJobExecutionsForJobInput {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListJobExecutionsForJobInput {
     /// Creates a new builder-style object to manufacture [`ListJobExecutionsForJobInput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput).
-    pub fn builder(
-    ) -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder {
         crate::operation::list_job_executions_for_job::builders::ListJobExecutionsForJobInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl ListJobExecutionsForJobInputBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The status of the job.</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
@@ -69,12 +66,8 @@ impl ListJobExecutionsForJobInputBuilder {
         self
     }
     /// <p>The status of the job.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::JobExecutionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,8 +76,7 @@ impl ListJobExecutionsForJobInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,23 +85,22 @@ impl ListJobExecutionsForJobInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListJobExecutionsForJobInput`](crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_job_executions_for_job::ListJobExecutionsForJobInput {
-                job_id: self.job_id,
-                status: self.status,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

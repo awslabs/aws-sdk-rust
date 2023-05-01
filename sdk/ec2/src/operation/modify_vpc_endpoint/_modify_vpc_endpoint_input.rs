@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVpcEndpointInput {
+pub struct ModifyVpcEndpointInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -49,7 +49,7 @@ impl ModifyVpcEndpointInput {
         self.dry_run
     }
     /// <p>The ID of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>(Gateway endpoint) Specify <code>true</code> to reset the policy document to the default policy. The default policy allows full access to the service.</p>
@@ -57,39 +57,39 @@ impl ModifyVpcEndpointInput {
         self.reset_policy
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    pub fn add_route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn add_route_table_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.add_route_table_ids.as_deref()
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    pub fn remove_route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_route_table_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.remove_route_table_ids.as_deref()
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn add_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn add_subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.add_subnet_ids.as_deref()
     }
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    pub fn remove_subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.remove_subnet_ids.as_deref()
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
-    pub fn add_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn add_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.add_security_group_ids.as_deref()
     }
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
-    pub fn remove_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.remove_security_group_ids.as_deref()
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn dns_options(&self) -> std::option::Option<&crate::types::DnsOptionsSpecification> {
+    pub fn dns_options(&self) -> std::option::Option<& crate::types::DnsOptionsSpecification> {
         self.dns_options.as_ref()
     }
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
@@ -99,8 +99,7 @@ impl ModifyVpcEndpointInput {
 }
 impl ModifyVpcEndpointInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder {
         crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder::default()
     }
 }
@@ -131,8 +130,7 @@ impl ModifyVpcEndpointInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the endpoint.</p>
     pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +139,7 @@ impl ModifyVpcEndpointInputBuilder {
     }
     /// <p>The ID of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>(Gateway endpoint) Specify <code>true</code> to reset the policy document to the default policy. The default policy allows full access to the service.</p>
     pub fn reset_policy(mut self, input: bool) -> Self {
@@ -151,8 +148,7 @@ impl ModifyVpcEndpointInputBuilder {
     }
     /// <p>(Gateway endpoint) Specify <code>true</code> to reset the policy document to the default policy. The default policy allows full access to the service.</p>
     pub fn set_reset_policy(mut self, input: std::option::Option<bool>) -> Self {
-        self.reset_policy = input;
-        self
+        self.reset_policy = input; self
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
     pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,8 +157,7 @@ impl ModifyVpcEndpointInputBuilder {
     }
     /// <p>(Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// Appends an item to `add_route_table_ids`.
     ///
@@ -171,17 +166,13 @@ impl ModifyVpcEndpointInputBuilder {
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
     pub fn add_route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.add_route_table_ids.unwrap_or_default();
-        v.push(input.into());
-        self.add_route_table_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.add_route_table_ids = Some(v);
+                        self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to associate with the endpoint.</p>
-    pub fn set_add_route_table_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.add_route_table_ids = input;
-        self
+    pub fn set_add_route_table_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.add_route_table_ids = input; self
     }
     /// Appends an item to `remove_route_table_ids`.
     ///
@@ -190,17 +181,13 @@ impl ModifyVpcEndpointInputBuilder {
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
     pub fn remove_route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.remove_route_table_ids.unwrap_or_default();
-        v.push(input.into());
-        self.remove_route_table_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_route_table_ids = Some(v);
+                        self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables to disassociate from the endpoint.</p>
-    pub fn set_remove_route_table_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.remove_route_table_ids = input;
-        self
+    pub fn set_remove_route_table_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.remove_route_table_ids = input; self
     }
     /// Appends an item to `add_subnet_ids`.
     ///
@@ -209,17 +196,13 @@ impl ModifyVpcEndpointInputBuilder {
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
     pub fn add_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.add_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.add_subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.add_subnet_ids = Some(v);
+                        self
     }
     /// <p>(Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one subnet.</p>
-    pub fn set_add_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.add_subnet_ids = input;
-        self
+    pub fn set_add_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.add_subnet_ids = input; self
     }
     /// Appends an item to `remove_subnet_ids`.
     ///
@@ -228,17 +211,13 @@ impl ModifyVpcEndpointInputBuilder {
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
     pub fn remove_subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.remove_subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.remove_subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_subnet_ids = Some(v);
+                        self
     }
     /// <p>(Interface endpoint) The IDs of the subnets from which to remove the endpoint.</p>
-    pub fn set_remove_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.remove_subnet_ids = input;
-        self
+    pub fn set_remove_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.remove_subnet_ids = input; self
     }
     /// Appends an item to `add_security_group_ids`.
     ///
@@ -247,17 +226,13 @@ impl ModifyVpcEndpointInputBuilder {
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
     pub fn add_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.add_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.add_security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.add_security_group_ids = Some(v);
+                        self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to associate with the network interface.</p>
-    pub fn set_add_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.add_security_group_ids = input;
-        self
+    pub fn set_add_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.add_security_group_ids = input; self
     }
     /// Appends an item to `remove_security_group_ids`.
     ///
@@ -266,17 +241,13 @@ impl ModifyVpcEndpointInputBuilder {
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
     pub fn remove_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.remove_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.remove_security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.remove_security_group_ids = Some(v);
+                        self
     }
     /// <p>(Interface endpoint) The IDs of the security groups to disassociate from the network interface.</p>
-    pub fn set_remove_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.remove_security_group_ids = input;
-        self
+    pub fn set_remove_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.remove_security_group_ids = input; self
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -284,12 +255,8 @@ impl ModifyVpcEndpointInputBuilder {
         self
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
-        self.ip_address_type = input;
-        self
+    pub fn set_ip_address_type(mut self, input: std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input; self
     }
     /// <p>The DNS options for the endpoint.</p>
     pub fn dns_options(mut self, input: crate::types::DnsOptionsSpecification) -> Self {
@@ -297,12 +264,8 @@ impl ModifyVpcEndpointInputBuilder {
         self
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn set_dns_options(
-        mut self,
-        input: std::option::Option<crate::types::DnsOptionsSpecification>,
-    ) -> Self {
-        self.dns_options = input;
-        self
+    pub fn set_dns_options(mut self, input: std::option::Option<crate::types::DnsOptionsSpecification>) -> Self {
+        self.dns_options = input; self
     }
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
     pub fn private_dns_enabled(mut self, input: bool) -> Self {
@@ -311,32 +274,40 @@ impl ModifyVpcEndpointInputBuilder {
     }
     /// <p>(Interface endpoint) Indicates whether a private hosted zone is associated with the VPC.</p>
     pub fn set_private_dns_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.private_dns_enabled = input;
-        self
+        self.private_dns_enabled = input; self
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointInput`](crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_vpc_endpoint::ModifyVpcEndpointInput {
-                dry_run: self.dry_run,
-                vpc_endpoint_id: self.vpc_endpoint_id,
-                reset_policy: self.reset_policy,
-                policy_document: self.policy_document,
-                add_route_table_ids: self.add_route_table_ids,
-                remove_route_table_ids: self.remove_route_table_ids,
-                add_subnet_ids: self.add_subnet_ids,
-                remove_subnet_ids: self.remove_subnet_ids,
-                add_security_group_ids: self.add_security_group_ids,
-                remove_security_group_ids: self.remove_security_group_ids,
-                ip_address_type: self.ip_address_type,
-                dns_options: self.dns_options,
-                private_dns_enabled: self.private_dns_enabled,
-            },
+                dry_run: self.dry_run
+                ,
+                vpc_endpoint_id: self.vpc_endpoint_id
+                ,
+                reset_policy: self.reset_policy
+                ,
+                policy_document: self.policy_document
+                ,
+                add_route_table_ids: self.add_route_table_ids
+                ,
+                remove_route_table_ids: self.remove_route_table_ids
+                ,
+                add_subnet_ids: self.add_subnet_ids
+                ,
+                remove_subnet_ids: self.remove_subnet_ids
+                ,
+                add_security_group_ids: self.add_security_group_ids
+                ,
+                remove_security_group_ids: self.remove_security_group_ids
+                ,
+                ip_address_type: self.ip_address_type
+                ,
+                dns_options: self.dns_options
+                ,
+                private_dns_enabled: self.private_dns_enabled
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentInput {
+pub struct DescribeDocumentInput  {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct DescribeDocumentInput {
 }
 impl DescribeDocumentInput {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> std::option::Option<& str> {
         self.version_name.as_deref()
     }
 }
 impl DescribeDocumentInput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
-    pub fn builder() -> crate::operation::describe_document::builders::DescribeDocumentInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_document::builders::DescribeDocumentInputBuilder {
         crate::operation::describe_document::builders::DescribeDocumentInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DescribeDocumentInputBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
     pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl DescribeDocumentInputBuilder {
     }
     /// <p>The document version for which you want information. Can be a specific version or the default version.</p>
     pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,20 +68,20 @@ impl DescribeDocumentInputBuilder {
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDocumentInput`](crate::operation::describe_document::DescribeDocumentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_document::DescribeDocumentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_document::DescribeDocumentInput {
-            name: self.name,
-            document_version: self.document_version,
-            version_name: self.version_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_document::DescribeDocumentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_document::DescribeDocumentInput {
+                name: self.name
+                ,
+                document_version: self.document_version
+                ,
+                version_name: self.version_name
+                ,
+            }
+        )
     }
 }
+

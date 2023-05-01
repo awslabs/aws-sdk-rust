@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSipMediaApplicationInput {
+pub struct DeleteSipMediaApplicationInput  {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
 }
 impl DeleteSipMediaApplicationInput {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
 }
 impl DeleteSipMediaApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSipMediaApplicationInput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput).
-    pub fn builder() -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder{
+    pub fn builder() -> crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder {
         crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteSipMediaApplicationInputBuilder {
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sip_media_application_id = input;
-        self
+    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sip_media_application_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSipMediaApplicationInput`](crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_sip_media_application::DeleteSipMediaApplicationInput {
-                sip_media_application_id: self.sip_media_application_id,
-            },
+                sip_media_application_id: self.sip_media_application_id
+                ,
+            }
         )
     }
 }
+

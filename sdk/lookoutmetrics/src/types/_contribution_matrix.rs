@@ -3,17 +3,14 @@
 /// <p>Details about dimensions that contributed to an anomaly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContributionMatrix {
+pub struct ContributionMatrix  {
     /// <p>A list of contributing dimensions.</p>
     #[doc(hidden)]
-    pub dimension_contribution_list:
-        std::option::Option<std::vec::Vec<crate::types::DimensionContribution>>,
+    pub dimension_contribution_list: std::option::Option<std::vec::Vec<crate::types::DimensionContribution>>,
 }
 impl ContributionMatrix {
     /// <p>A list of contributing dimensions.</p>
-    pub fn dimension_contribution_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::DimensionContribution]> {
+    pub fn dimension_contribution_list(&self) -> std::option::Option<& [crate::types::DimensionContribution]> {
         self.dimension_contribution_list.as_deref()
     }
 }
@@ -28,8 +25,7 @@ impl ContributionMatrix {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ContributionMatrixBuilder {
-    pub(crate) dimension_contribution_list:
-        std::option::Option<std::vec::Vec<crate::types::DimensionContribution>>,
+    pub(crate) dimension_contribution_list: std::option::Option<std::vec::Vec<crate::types::DimensionContribution>>,
 }
 impl ContributionMatrixBuilder {
     /// Appends an item to `dimension_contribution_list`.
@@ -37,27 +33,22 @@ impl ContributionMatrixBuilder {
     /// To override the contents of this collection use [`set_dimension_contribution_list`](Self::set_dimension_contribution_list).
     ///
     /// <p>A list of contributing dimensions.</p>
-    pub fn dimension_contribution_list(
-        mut self,
-        input: crate::types::DimensionContribution,
-    ) -> Self {
+    pub fn dimension_contribution_list(mut self, input: crate::types::DimensionContribution) -> Self {
         let mut v = self.dimension_contribution_list.unwrap_or_default();
-        v.push(input);
-        self.dimension_contribution_list = Some(v);
-        self
+                        v.push(input);
+                        self.dimension_contribution_list = Some(v);
+                        self
     }
     /// <p>A list of contributing dimensions.</p>
-    pub fn set_dimension_contribution_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionContribution>>,
-    ) -> Self {
-        self.dimension_contribution_list = input;
-        self
+    pub fn set_dimension_contribution_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionContribution>>) -> Self {
+        self.dimension_contribution_list = input; self
     }
     /// Consumes the builder and constructs a [`ContributionMatrix`](crate::types::ContributionMatrix).
     pub fn build(self) -> crate::types::ContributionMatrix {
         crate::types::ContributionMatrix {
-            dimension_contribution_list: self.dimension_contribution_list,
+            dimension_contribution_list: self.dimension_contribution_list
+            ,
         }
     }
 }
+

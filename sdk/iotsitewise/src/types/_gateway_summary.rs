@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewaySummary {
+pub struct GatewaySummary  {
     /// <p>The ID of the gateway device.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -15,8 +15,7 @@ pub struct GatewaySummary {
     pub gateway_platform: std::option::Option<crate::types::GatewayPlatform>,
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
     #[doc(hidden)]
-    pub gateway_capability_summaries:
-        std::option::Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
+    pub gateway_capability_summaries: std::option::Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     /// <p>The date the gateway was created, in Unix epoch time.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -26,29 +25,27 @@ pub struct GatewaySummary {
 }
 impl GatewaySummary {
     /// <p>The ID of the gateway device.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
     /// <p>Contains a gateway's platform information.</p>
-    pub fn gateway_platform(&self) -> std::option::Option<&crate::types::GatewayPlatform> {
+    pub fn gateway_platform(&self) -> std::option::Option<& crate::types::GatewayPlatform> {
         self.gateway_platform.as_ref()
     }
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    pub fn gateway_capability_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::GatewayCapabilitySummary]> {
+    pub fn gateway_capability_summaries(&self) -> std::option::Option<& [crate::types::GatewayCapabilitySummary]> {
         self.gateway_capability_summaries.as_deref()
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
 }
@@ -66,8 +63,7 @@ pub struct GatewaySummaryBuilder {
     pub(crate) gateway_id: std::option::Option<std::string::String>,
     pub(crate) gateway_name: std::option::Option<std::string::String>,
     pub(crate) gateway_platform: std::option::Option<crate::types::GatewayPlatform>,
-    pub(crate) gateway_capability_summaries:
-        std::option::Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
+    pub(crate) gateway_capability_summaries: std::option::Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
     pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_update_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -79,8 +75,7 @@ impl GatewaySummaryBuilder {
     }
     /// <p>The ID of the gateway device.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>The name of the asset.</p>
     pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +84,7 @@ impl GatewaySummaryBuilder {
     }
     /// <p>The name of the asset.</p>
     pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_name = input;
-        self
+        self.gateway_name = input; self
     }
     /// <p>Contains a gateway's platform information.</p>
     pub fn gateway_platform(mut self, input: crate::types::GatewayPlatform) -> Self {
@@ -98,34 +92,23 @@ impl GatewaySummaryBuilder {
         self
     }
     /// <p>Contains a gateway's platform information.</p>
-    pub fn set_gateway_platform(
-        mut self,
-        input: std::option::Option<crate::types::GatewayPlatform>,
-    ) -> Self {
-        self.gateway_platform = input;
-        self
+    pub fn set_gateway_platform(mut self, input: std::option::Option<crate::types::GatewayPlatform>) -> Self {
+        self.gateway_platform = input; self
     }
     /// Appends an item to `gateway_capability_summaries`.
     ///
     /// To override the contents of this collection use [`set_gateway_capability_summaries`](Self::set_gateway_capability_summaries).
     ///
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    pub fn gateway_capability_summaries(
-        mut self,
-        input: crate::types::GatewayCapabilitySummary,
-    ) -> Self {
+    pub fn gateway_capability_summaries(mut self, input: crate::types::GatewayCapabilitySummary) -> Self {
         let mut v = self.gateway_capability_summaries.unwrap_or_default();
-        v.push(input);
-        self.gateway_capability_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.gateway_capability_summaries = Some(v);
+                        self
     }
     /// <p>A list of gateway capability summaries that each contain a namespace and status. Each gateway capability defines data sources for the gateway. To retrieve a capability configuration's definition, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGatewayCapabilityConfiguration.html">DescribeGatewayCapabilityConfiguration</a>.</p>
-    pub fn set_gateway_capability_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>,
-    ) -> Self {
-        self.gateway_capability_summaries = input;
-        self
+    pub fn set_gateway_capability_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::GatewayCapabilitySummary>>) -> Self {
+        self.gateway_capability_summaries = input; self
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,12 +116,8 @@ impl GatewaySummaryBuilder {
         self
     }
     /// <p>The date the gateway was created, in Unix epoch time.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -146,22 +125,25 @@ impl GatewaySummaryBuilder {
         self
     }
     /// <p>The date the gateway was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_date = input;
-        self
+    pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_update_date = input; self
     }
     /// Consumes the builder and constructs a [`GatewaySummary`](crate::types::GatewaySummary).
     pub fn build(self) -> crate::types::GatewaySummary {
         crate::types::GatewaySummary {
-            gateway_id: self.gateway_id,
-            gateway_name: self.gateway_name,
-            gateway_platform: self.gateway_platform,
-            gateway_capability_summaries: self.gateway_capability_summaries,
-            creation_date: self.creation_date,
-            last_update_date: self.last_update_date,
+            gateway_id: self.gateway_id
+            ,
+            gateway_name: self.gateway_name
+            ,
+            gateway_platform: self.gateway_platform
+            ,
+            gateway_capability_summaries: self.gateway_capability_summaries
+            ,
+            creation_date: self.creation_date
+            ,
+            last_update_date: self.last_update_date
+            ,
         }
     }
 }
+

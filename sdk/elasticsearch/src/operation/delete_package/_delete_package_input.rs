@@ -3,14 +3,14 @@
 /// <p> Container for request parameters to <code> <code>DeletePackage</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackageInput {
+pub struct DeletePackageInput  {
     /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
 }
 impl DeletePackageInput {
     /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DeletePackageInputBuilder {
     }
     /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_package::DeletePackageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_package::DeletePackageInput {
-            package_id: self.package_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_package::DeletePackageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_package::DeletePackageInput {
+                package_id: self.package_id
+                ,
+            }
+        )
     }
 }
+

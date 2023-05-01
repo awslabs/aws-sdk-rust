@@ -3,7 +3,7 @@
 /// <p>A description of the stream's edge configuration that will be used to sync with the Edge Agent IoT Greengrass component. The Edge Agent component will run on an IoT Hub Device setup at your premise.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeConfig {
+pub struct EdgeConfig  {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
     #[doc(hidden)]
     pub hub_device_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct EdgeConfig {
 }
 impl EdgeConfig {
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
-    pub fn hub_device_arn(&self) -> std::option::Option<&str> {
+    pub fn hub_device_arn(&self) -> std::option::Option<& str> {
         self.hub_device_arn.as_deref()
     }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
-    pub fn recorder_config(&self) -> std::option::Option<&crate::types::RecorderConfig> {
+    pub fn recorder_config(&self) -> std::option::Option<& crate::types::RecorderConfig> {
         self.recorder_config.as_ref()
     }
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
-    pub fn uploader_config(&self) -> std::option::Option<&crate::types::UploaderConfig> {
+    pub fn uploader_config(&self) -> std::option::Option<& crate::types::UploaderConfig> {
         self.uploader_config.as_ref()
     }
     /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
-    pub fn deletion_config(&self) -> std::option::Option<&crate::types::DeletionConfig> {
+    pub fn deletion_config(&self) -> std::option::Option<& crate::types::DeletionConfig> {
         self.deletion_config.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl EdgeConfigBuilder {
     }
     /// <p>The "<b>Internet of Things (IoT) Thing</b>" Arn of the stream.</p>
     pub fn set_hub_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hub_device_arn = input;
-        self
+        self.hub_device_arn = input; self
     }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
     pub fn recorder_config(mut self, input: crate::types::RecorderConfig) -> Self {
@@ -68,12 +67,8 @@ impl EdgeConfigBuilder {
         self
     }
     /// <p>The recorder configuration consists of the local <code>MediaSourceConfig</code> details, that are used as credentials to access the local media files streamed on the camera. </p>
-    pub fn set_recorder_config(
-        mut self,
-        input: std::option::Option<crate::types::RecorderConfig>,
-    ) -> Self {
-        self.recorder_config = input;
-        self
+    pub fn set_recorder_config(mut self, input: std::option::Option<crate::types::RecorderConfig>) -> Self {
+        self.recorder_config = input; self
     }
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
     pub fn uploader_config(mut self, input: crate::types::UploaderConfig) -> Self {
@@ -81,12 +76,8 @@ impl EdgeConfigBuilder {
         self
     }
     /// <p>The uploader configuration contains the <code>ScheduleExpression</code> details that are used to schedule upload jobs for the recorded media files from the Edge Agent to a Kinesis Video Stream.</p>
-    pub fn set_uploader_config(
-        mut self,
-        input: std::option::Option<crate::types::UploaderConfig>,
-    ) -> Self {
-        self.uploader_config = input;
-        self
+    pub fn set_uploader_config(mut self, input: std::option::Option<crate::types::UploaderConfig>) -> Self {
+        self.uploader_config = input; self
     }
     /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
     pub fn deletion_config(mut self, input: crate::types::DeletionConfig) -> Self {
@@ -94,20 +85,21 @@ impl EdgeConfigBuilder {
         self
     }
     /// <p>The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>) and local size configuration (<code>LocalSizeConfig</code>) details that are used to make the deletion.</p>
-    pub fn set_deletion_config(
-        mut self,
-        input: std::option::Option<crate::types::DeletionConfig>,
-    ) -> Self {
-        self.deletion_config = input;
-        self
+    pub fn set_deletion_config(mut self, input: std::option::Option<crate::types::DeletionConfig>) -> Self {
+        self.deletion_config = input; self
     }
     /// Consumes the builder and constructs a [`EdgeConfig`](crate::types::EdgeConfig).
     pub fn build(self) -> crate::types::EdgeConfig {
         crate::types::EdgeConfig {
-            hub_device_arn: self.hub_device_arn,
-            recorder_config: self.recorder_config,
-            uploader_config: self.uploader_config,
-            deletion_config: self.deletion_config,
+            hub_device_arn: self.hub_device_arn
+            ,
+            recorder_config: self.recorder_config
+            ,
+            uploader_config: self.uploader_config
+            ,
+            deletion_config: self.deletion_config
+            ,
         }
     }
 }
+

@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkteamInput {
+pub struct DescribeWorkteamInput  {
     /// <p>The name of the work team to return a description of.</p>
     #[doc(hidden)]
     pub workteam_name: std::option::Option<std::string::String>,
 }
 impl DescribeWorkteamInput {
     /// <p>The name of the work team to return a description of.</p>
-    pub fn workteam_name(&self) -> std::option::Option<&str> {
+    pub fn workteam_name(&self) -> std::option::Option<& str> {
         self.workteam_name.as_deref()
     }
 }
 impl DescribeWorkteamInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
-    pub fn builder() -> crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder {
         crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl DescribeWorkteamInputBuilder {
     }
     /// <p>The name of the work team to return a description of.</p>
     pub fn set_workteam_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workteam_name = input;
-        self
+        self.workteam_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorkteamInput`](crate::operation::describe_workteam::DescribeWorkteamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_workteam::DescribeWorkteamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_workteam::DescribeWorkteamInput {
-            workteam_name: self.workteam_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_workteam::DescribeWorkteamInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_workteam::DescribeWorkteamInput {
+                workteam_name: self.workteam_name
+                ,
+            }
+        )
     }
 }
+

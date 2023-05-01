@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAuditFindingsOutput {
+pub struct ListAuditFindingsOutput  {
     /// <p>The findings (results) of the audit.</p>
     #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::types::AuditFinding>>,
@@ -13,23 +13,22 @@ pub struct ListAuditFindingsOutput {
 }
 impl ListAuditFindingsOutput {
     /// <p>The findings (results) of the audit.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::types::AuditFinding]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::types::AuditFinding]> {
         self.findings.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAuditFindingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAuditFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder {
+    pub fn builder() -> crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder {
         crate::operation::list_audit_findings::builders::ListAuditFindingsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListAuditFindingsOutputBuilder {
     /// <p>The findings (results) of the audit.</p>
     pub fn findings(mut self, input: crate::types::AuditFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
-        v.push(input);
-        self.findings = Some(v);
-        self
+                        v.push(input);
+                        self.findings = Some(v);
+                        self
     }
     /// <p>The findings (results) of the audit.</p>
-    pub fn set_findings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AuditFinding>>,
-    ) -> Self {
-        self.findings = input;
-        self
+    pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuditFinding>>) -> Self {
+        self.findings = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListAuditFindingsOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAuditFindingsOutput`](crate::operation::list_audit_findings::ListAuditFindingsOutput).
     pub fn build(self) -> crate::operation::list_audit_findings::ListAuditFindingsOutput {
         crate::operation::list_audit_findings::ListAuditFindingsOutput {
-            findings: self.findings,
-            next_token: self.next_token,
+            findings: self.findings
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

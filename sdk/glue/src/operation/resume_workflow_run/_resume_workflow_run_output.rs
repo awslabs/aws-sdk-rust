@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeWorkflowRunOutput {
+pub struct ResumeWorkflowRunOutput  {
     /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
     #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ResumeWorkflowRunOutput {
 }
 impl ResumeWorkflowRunOutput {
     /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
-    pub fn node_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn node_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.node_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ResumeWorkflowRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResumeWorkflowRunOutput {
     /// Creates a new builder-style object to manufacture [`ResumeWorkflowRunOutput`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput).
-    pub fn builder(
-    ) -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder {
+    pub fn builder() -> crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder {
         crate::operation::resume_workflow_run::builders::ResumeWorkflowRunOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ResumeWorkflowRunOutputBuilder {
     }
     /// <p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// Appends an item to `node_ids`.
     ///
@@ -60,33 +58,32 @@ impl ResumeWorkflowRunOutputBuilder {
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
     pub fn node_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.node_ids.unwrap_or_default();
-        v.push(input.into());
-        self.node_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.node_ids = Some(v);
+                        self
     }
     /// <p>A list of the node IDs for the nodes that were actually restarted.</p>
-    pub fn set_node_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.node_ids = input;
-        self
+    pub fn set_node_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.node_ids = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResumeWorkflowRunOutput`](crate::operation::resume_workflow_run::ResumeWorkflowRunOutput).
     pub fn build(self) -> crate::operation::resume_workflow_run::ResumeWorkflowRunOutput {
         crate::operation::resume_workflow_run::ResumeWorkflowRunOutput {
-            run_id: self.run_id,
-            node_ids: self.node_ids,
+            run_id: self.run_id
+            ,
+            node_ids: self.node_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

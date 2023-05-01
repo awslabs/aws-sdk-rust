@@ -3,14 +3,14 @@
 /// <p>The Lake Formation principal. Supported principals are IAM users or IAM roles.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataLakePrincipal {
+pub struct DataLakePrincipal  {
     /// <p>An identifier for the Lake Formation principal.</p>
     #[doc(hidden)]
     pub data_lake_principal_identifier: std::option::Option<std::string::String>,
 }
 impl DataLakePrincipal {
     /// <p>An identifier for the Lake Formation principal.</p>
-    pub fn data_lake_principal_identifier(&self) -> std::option::Option<&str> {
+    pub fn data_lake_principal_identifier(&self) -> std::option::Option<& str> {
         self.data_lake_principal_identifier.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl DataLakePrincipalBuilder {
         self
     }
     /// <p>An identifier for the Lake Formation principal.</p>
-    pub fn set_data_lake_principal_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_lake_principal_identifier = input;
-        self
+    pub fn set_data_lake_principal_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_lake_principal_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DataLakePrincipal`](crate::types::DataLakePrincipal).
     pub fn build(self) -> crate::types::DataLakePrincipal {
         crate::types::DataLakePrincipal {
-            data_lake_principal_identifier: self.data_lake_principal_identifier,
+            data_lake_principal_identifier: self.data_lake_principal_identifier
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThingGroupInput {
+pub struct DeleteThingGroupInput  {
     /// <p>The name of the thing group to delete.</p>
     #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteThingGroupInput {
 }
 impl DeleteThingGroupInput {
     /// <p>The name of the thing group to delete.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The expected version of the thing group to delete.</p>
@@ -22,8 +22,7 @@ impl DeleteThingGroupInput {
 }
 impl DeleteThingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
-    pub fn builder() -> crate::operation::delete_thing_group::builders::DeleteThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_thing_group::builders::DeleteThingGroupInputBuilder {
         crate::operation::delete_thing_group::builders::DeleteThingGroupInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteThingGroupInputBuilder {
     }
     /// <p>The name of the thing group to delete.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The expected version of the thing group to delete.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -53,21 +51,18 @@ impl DeleteThingGroupInputBuilder {
     }
     /// <p>The expected version of the thing group to delete.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// Consumes the builder and constructs a [`DeleteThingGroupInput`](crate::operation::delete_thing_group::DeleteThingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_thing_group::DeleteThingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_thing_group::DeleteThingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_thing_group::DeleteThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                expected_version: self.expected_version,
-            },
+                thing_group_name: self.thing_group_name
+                ,
+                expected_version: self.expected_version
+                ,
+            }
         )
     }
 }
+

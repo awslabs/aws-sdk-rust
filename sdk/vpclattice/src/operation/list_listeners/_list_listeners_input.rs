@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListListenersInput {
+pub struct ListListenersInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListListenersInput {
 }
 impl ListListenersInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> std::option::Option<&str> {
+    pub fn service_identifier(&self) -> std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -23,7 +23,7 @@ impl ListListenersInput {
         self.max_results
     }
     /// <p>A pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,12 +49,8 @@ impl ListListenersInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_identifier = input;
-        self
+    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_identifier = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,8 +59,7 @@ impl ListListenersInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,20 +68,20 @@ impl ListListenersInputBuilder {
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListListenersInput`](crate::operation::list_listeners::ListListenersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_listeners::ListListenersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_listeners::ListListenersInput {
-            service_identifier: self.service_identifier,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_listeners::ListListenersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_listeners::ListListenersInput {
+                service_identifier: self.service_identifier
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

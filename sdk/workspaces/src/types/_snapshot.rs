@@ -3,14 +3,14 @@
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The time when the snapshot was created.</p>
     #[doc(hidden)]
     pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Snapshot {
     /// <p>The time when the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time when the snapshot was created.</p>
-    pub fn set_snapshot_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.snapshot_time = input;
-        self
+    pub fn set_snapshot_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.snapshot_time = input; self
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
-            snapshot_time: self.snapshot_time,
+            snapshot_time: self.snapshot_time
+            ,
         }
     }
 }
+

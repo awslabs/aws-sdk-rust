@@ -3,7 +3,7 @@
 /// <p> Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportBundleInput {
+pub struct ExportBundleInput  {
     /// <p> Unique bundle identifier. </p>
     #[doc(hidden)]
     pub bundle_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ExportBundleInput {
 }
 impl ExportBundleInput {
     /// <p> Unique bundle identifier. </p>
-    pub fn bundle_id(&self) -> std::option::Option<&str> {
+    pub fn bundle_id(&self) -> std::option::Option<& str> {
         self.bundle_id.as_deref()
     }
     /// <p> Unique project identifier. </p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p> Developer desktop or target application platform. </p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ExportBundleInputBuilder {
     }
     /// <p> Unique bundle identifier. </p>
     pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bundle_id = input;
-        self
+        self.bundle_id = input; self
     }
     /// <p> Unique project identifier. </p>
     pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ExportBundleInputBuilder {
     }
     /// <p> Unique project identifier. </p>
     pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p> Developer desktop or target application platform. </p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -71,20 +69,20 @@ impl ExportBundleInputBuilder {
     }
     /// <p> Developer desktop or target application platform. </p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// Consumes the builder and constructs a [`ExportBundleInput`](crate::operation::export_bundle::ExportBundleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::export_bundle::ExportBundleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::export_bundle::ExportBundleInput {
-            bundle_id: self.bundle_id,
-            project_id: self.project_id,
-            platform: self.platform,
-        })
+    pub fn build(self) -> Result<crate::operation::export_bundle::ExportBundleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::export_bundle::ExportBundleInput {
+                bundle_id: self.bundle_id
+                ,
+                project_id: self.project_id
+                ,
+                platform: self.platform
+                ,
+            }
+        )
     }
 }
+

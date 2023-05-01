@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAlertInput {
+pub struct CreateAlertInput  {
     /// <p>The name of the alert.</p>
     #[doc(hidden)]
     pub alert_name: std::option::Option<std::string::String>,
@@ -20,15 +20,14 @@ pub struct CreateAlertInput {
     pub action: std::option::Option<crate::types::Action>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
     #[doc(hidden)]
     pub alert_filters: std::option::Option<crate::types::AlertFilters>,
 }
 impl CreateAlertInput {
     /// <p>The name of the alert.</p>
-    pub fn alert_name(&self) -> std::option::Option<&str> {
+    pub fn alert_name(&self) -> std::option::Option<& str> {
         self.alert_name.as_deref()
     }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
@@ -36,26 +35,23 @@ impl CreateAlertInput {
         self.alert_sensitivity_threshold
     }
     /// <p>A description of the alert.</p>
-    pub fn alert_description(&self) -> std::option::Option<&str> {
+    pub fn alert_description(&self) -> std::option::Option<& str> {
         self.alert_description.as_deref()
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>Action that will be triggered when there is an alert.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-    pub fn alert_filters(&self) -> std::option::Option<&crate::types::AlertFilters> {
+    pub fn alert_filters(&self) -> std::option::Option<& crate::types::AlertFilters> {
         self.alert_filters.as_ref()
     }
 }
@@ -75,8 +71,7 @@ pub struct CreateAlertInputBuilder {
     pub(crate) alert_description: std::option::Option<std::string::String>,
     pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
     pub(crate) action: std::option::Option<crate::types::Action>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) alert_filters: std::option::Option<crate::types::AlertFilters>,
 }
 impl CreateAlertInputBuilder {
@@ -87,8 +82,7 @@ impl CreateAlertInputBuilder {
     }
     /// <p>The name of the alert.</p>
     pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alert_name = input;
-        self
+        self.alert_name = input; self
     }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
     pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
@@ -97,8 +91,7 @@ impl CreateAlertInputBuilder {
     }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
     pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.alert_sensitivity_threshold = input;
-        self
+        self.alert_sensitivity_threshold = input; self
     }
     /// <p>A description of the alert.</p>
     pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,12 +99,8 @@ impl CreateAlertInputBuilder {
         self
     }
     /// <p>A description of the alert.</p>
-    pub fn set_alert_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.alert_description = input;
-        self
+    pub fn set_alert_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.alert_description = input; self
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
     pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,12 +108,8 @@ impl CreateAlertInputBuilder {
         self
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.anomaly_detector_arn = input; self
     }
     /// <p>Action that will be triggered when there is an alert.</p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
@@ -133,33 +118,22 @@ impl CreateAlertInputBuilder {
     }
     /// <p>Action that will be triggered when there is an alert.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
     pub fn alert_filters(mut self, input: crate::types::AlertFilters) -> Self {
@@ -167,28 +141,30 @@ impl CreateAlertInputBuilder {
         self
     }
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
-    pub fn set_alert_filters(
-        mut self,
-        input: std::option::Option<crate::types::AlertFilters>,
-    ) -> Self {
-        self.alert_filters = input;
-        self
+    pub fn set_alert_filters(mut self, input: std::option::Option<crate::types::AlertFilters>) -> Self {
+        self.alert_filters = input; self
     }
     /// Consumes the builder and constructs a [`CreateAlertInput`](crate::operation::create_alert::CreateAlertInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_alert::CreateAlertInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_alert::CreateAlertInput {
-            alert_name: self.alert_name,
-            alert_sensitivity_threshold: self.alert_sensitivity_threshold.unwrap_or_default(),
-            alert_description: self.alert_description,
-            anomaly_detector_arn: self.anomaly_detector_arn,
-            action: self.action,
-            tags: self.tags,
-            alert_filters: self.alert_filters,
-        })
+    pub fn build(self) -> Result<crate::operation::create_alert::CreateAlertInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_alert::CreateAlertInput {
+                alert_name: self.alert_name
+                ,
+                alert_sensitivity_threshold: self.alert_sensitivity_threshold
+                    .unwrap_or_default()
+                ,
+                alert_description: self.alert_description
+                ,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+                action: self.action
+                ,
+                tags: self.tags
+                ,
+                alert_filters: self.alert_filters
+                ,
+            }
+        )
     }
 }
+

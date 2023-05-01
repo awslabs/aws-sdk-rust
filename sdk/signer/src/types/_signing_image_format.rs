@@ -3,7 +3,7 @@
 /// <p>The image format of a code signing platform or profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SigningImageFormat {
+pub struct SigningImageFormat  {
     /// <p>The supported formats of a code signing image.</p>
     #[doc(hidden)]
     pub supported_formats: std::option::Option<std::vec::Vec<crate::types::ImageFormat>>,
@@ -13,11 +13,11 @@ pub struct SigningImageFormat {
 }
 impl SigningImageFormat {
     /// <p>The supported formats of a code signing image.</p>
-    pub fn supported_formats(&self) -> std::option::Option<&[crate::types::ImageFormat]> {
+    pub fn supported_formats(&self) -> std::option::Option<& [crate::types::ImageFormat]> {
         self.supported_formats.as_deref()
     }
     /// <p>The default format of a code signing image.</p>
-    pub fn default_format(&self) -> std::option::Option<&crate::types::ImageFormat> {
+    pub fn default_format(&self) -> std::option::Option<& crate::types::ImageFormat> {
         self.default_format.as_ref()
     }
 }
@@ -43,17 +43,13 @@ impl SigningImageFormatBuilder {
     /// <p>The supported formats of a code signing image.</p>
     pub fn supported_formats(mut self, input: crate::types::ImageFormat) -> Self {
         let mut v = self.supported_formats.unwrap_or_default();
-        v.push(input);
-        self.supported_formats = Some(v);
-        self
+                        v.push(input);
+                        self.supported_formats = Some(v);
+                        self
     }
     /// <p>The supported formats of a code signing image.</p>
-    pub fn set_supported_formats(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImageFormat>>,
-    ) -> Self {
-        self.supported_formats = input;
-        self
+    pub fn set_supported_formats(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageFormat>>) -> Self {
+        self.supported_formats = input; self
     }
     /// <p>The default format of a code signing image.</p>
     pub fn default_format(mut self, input: crate::types::ImageFormat) -> Self {
@@ -61,18 +57,17 @@ impl SigningImageFormatBuilder {
         self
     }
     /// <p>The default format of a code signing image.</p>
-    pub fn set_default_format(
-        mut self,
-        input: std::option::Option<crate::types::ImageFormat>,
-    ) -> Self {
-        self.default_format = input;
-        self
+    pub fn set_default_format(mut self, input: std::option::Option<crate::types::ImageFormat>) -> Self {
+        self.default_format = input; self
     }
     /// Consumes the builder and constructs a [`SigningImageFormat`](crate::types::SigningImageFormat).
     pub fn build(self) -> crate::types::SigningImageFormat {
         crate::types::SigningImageFormat {
-            supported_formats: self.supported_formats,
-            default_format: self.default_format,
+            supported_formats: self.supported_formats
+            ,
+            default_format: self.default_format
+            ,
         }
     }
 }
+

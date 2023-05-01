@@ -6,13 +6,14 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let livenesssessionstatus = unimplemented!();
 /// match livenesssessionstatus {
 ///     LivenessSessionStatus::Created => { /* ... */ },
+///     LivenessSessionStatus::Expired => { /* ... */ },
 ///     LivenessSessionStatus::Failed => { /* ... */ },
 ///     LivenessSessionStatus::InProgress => { /* ... */ },
 ///     LivenessSessionStatus::Succeeded => { /* ... */ },
@@ -32,25 +33,19 @@
 /// Specifically, when `livenesssessionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LivenessSessionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LivenessSessionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
+    Expired,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
@@ -58,46 +53,47 @@ pub enum LivenessSessionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LivenessSessionStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED" => LivenessSessionStatus::Created,
-            "FAILED" => LivenessSessionStatus::Failed,
-            "IN_PROGRESS" => LivenessSessionStatus::InProgress,
-            "SUCCEEDED" => LivenessSessionStatus::Succeeded,
-            other => LivenessSessionStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED" => LivenessSessionStatus::Created,
+"EXPIRED" => LivenessSessionStatus::Expired,
+"FAILED" => LivenessSessionStatus::Failed,
+"IN_PROGRESS" => LivenessSessionStatus::InProgress,
+"SUCCEEDED" => LivenessSessionStatus::Succeeded,
+other => LivenessSessionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for LivenessSessionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LivenessSessionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LivenessSessionStatus::from(s))
+                }
+            }
 impl LivenessSessionStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LivenessSessionStatus::Created => "CREATED",
-            LivenessSessionStatus::Failed => "FAILED",
-            LivenessSessionStatus::InProgress => "IN_PROGRESS",
-            LivenessSessionStatus::Succeeded => "SUCCEEDED",
-            LivenessSessionStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LivenessSessionStatus::Created => "CREATED",
+    LivenessSessionStatus::Expired => "EXPIRED",
+    LivenessSessionStatus::Failed => "FAILED",
+    LivenessSessionStatus::InProgress => "IN_PROGRESS",
+    LivenessSessionStatus::Succeeded => "SUCCEEDED",
+    LivenessSessionStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED", "EXPIRED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for LivenessSessionStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

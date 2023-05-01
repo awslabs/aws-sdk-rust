@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLedgerPermissionsModeOutput {
+pub struct UpdateLedgerPermissionsModeOutput  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct UpdateLedgerPermissionsModeOutput {
 }
 impl UpdateLedgerPermissionsModeOutput {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The current permissions mode of the ledger.</p>
-    pub fn permissions_mode(&self) -> std::option::Option<&crate::types::PermissionsMode> {
+    pub fn permissions_mode(&self) -> std::option::Option<& crate::types::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateLedgerPermissionsModeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateLedgerPermissionsModeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLedgerPermissionsModeOutput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput).
-    pub fn builder() -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeOutputBuilder{
+    pub fn builder() -> crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeOutputBuilder {
         crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl UpdateLedgerPermissionsModeOutputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl UpdateLedgerPermissionsModeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The current permissions mode of the ledger.</p>
     pub fn permissions_mode(mut self, input: crate::types::PermissionsMode) -> Self {
@@ -76,31 +74,29 @@ impl UpdateLedgerPermissionsModeOutputBuilder {
         self
     }
     /// <p>The current permissions mode of the ledger.</p>
-    pub fn set_permissions_mode(
-        mut self,
-        input: std::option::Option<crate::types::PermissionsMode>,
-    ) -> Self {
-        self.permissions_mode = input;
-        self
+    pub fn set_permissions_mode(mut self, input: std::option::Option<crate::types::PermissionsMode>) -> Self {
+        self.permissions_mode = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeOutput`](crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput {
+    pub fn build(self) -> crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput {
         crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput {
-            name: self.name,
-            arn: self.arn,
-            permissions_mode: self.permissions_mode,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            permissions_mode: self.permissions_mode
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

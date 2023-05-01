@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationInput {
+pub struct DescribeOrganizationConfigurationInput  {
     /// <p>The ARN of the organization behavior graph.</p>
     #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DescribeOrganizationConfigurationInput {
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
 }
 impl DescribeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl DescribeOrganizationConfigurationInputBuilder {
     }
     /// <p>The ARN of the organization behavior graph.</p>
     pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
                 graph_arn: self.graph_arn
@@ -47,3 +46,4 @@ impl DescribeOrganizationConfigurationInputBuilder {
         )
     }
 }
+

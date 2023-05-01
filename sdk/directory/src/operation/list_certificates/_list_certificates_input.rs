@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCertificatesInput {
+pub struct ListCertificatesInput  {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListCertificatesInput {
 }
 impl ListCertificatesInput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of items that should show up on one page</p>
@@ -29,8 +29,7 @@ impl ListCertificatesInput {
 }
 impl ListCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_certificates::builders::ListCertificatesInputBuilder {
         crate::operation::list_certificates::builders::ListCertificatesInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response element indicates that more certificates are available. Use the value of the returned <code>NextToken</code> element in your request until the token comes back as <code>null</code>. Pass <code>null</code> if this is the first call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The number of items that should show up on one page</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -71,20 +68,20 @@ impl ListCertificatesInputBuilder {
     }
     /// <p>The number of items that should show up on one page</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListCertificatesInput`](crate::operation::list_certificates::ListCertificatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_certificates::ListCertificatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_certificates::ListCertificatesInput {
-            directory_id: self.directory_id,
-            next_token: self.next_token,
-            limit: self.limit,
-        })
+    pub fn build(self) -> Result<crate::operation::list_certificates::ListCertificatesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_certificates::ListCertificatesInput {
+                directory_id: self.directory_id
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
+        )
     }
 }
+

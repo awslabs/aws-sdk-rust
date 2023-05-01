@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput {
+pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput  {
     /// <p>The ID for this specific recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput {
 }
 impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The ID for this specific recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The start time of the recommendation generation.</p>
-    pub fn generation_started_time(&self) -> std::option::Option<&str> {
+    pub fn generation_started_time(&self) -> std::option::Option<& str> {
         self.generation_started_time.as_deref()
     }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
-    pub fn estimated_completion_time(&self) -> std::option::Option<&str> {
+    pub fn estimated_completion_time(&self) -> std::option::Option<& str> {
         self.estimated_completion_time.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartSavingsPlansPurchaseRecommendationGenerationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn builder() -> crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder{
+    pub fn builder() -> crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         crate::operation::start_savings_plans_purchase_recommendation_generation::builders::StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder::default()
     }
 }
@@ -56,12 +56,8 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self
     }
     /// <p>The ID for this specific recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recommendation_id = input; self
     }
     /// <p>The start time of the recommendation generation.</p>
     pub fn generation_started_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +65,8 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self
     }
     /// <p>The start time of the recommendation generation.</p>
-    pub fn set_generation_started_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.generation_started_time = input;
-        self
+    pub fn set_generation_started_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.generation_started_time = input; self
     }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
     pub fn estimated_completion_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,24 +74,20 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         self
     }
     /// <p>The estimated time for when the recommendation generation will complete.</p>
-    pub fn set_estimated_completion_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.estimated_completion_time = input;
-        self
+    pub fn set_estimated_completion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.estimated_completion_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput).
-    pub fn build(self) -> crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput{
+    pub fn build(self) -> crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput {
         crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput {
             recommendation_id: self.recommendation_id
             ,
@@ -111,3 +99,4 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutputBuilder {
         }
     }
 }
+

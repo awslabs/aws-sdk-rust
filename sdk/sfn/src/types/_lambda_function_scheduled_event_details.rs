@@ -3,7 +3,7 @@
 /// <p>Contains details about a Lambda function scheduled during an execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LambdaFunctionScheduledEventDetails {
+pub struct LambdaFunctionScheduledEventDetails  {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
@@ -22,17 +22,15 @@ pub struct LambdaFunctionScheduledEventDetails {
 }
 impl LambdaFunctionScheduledEventDetails {
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Contains details about input for an execution history event.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
@@ -40,11 +38,11 @@ impl LambdaFunctionScheduledEventDetails {
         self.timeout_in_seconds
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
-    pub fn task_credentials(&self) -> std::option::Option<&crate::types::TaskCredentials> {
+    pub fn task_credentials(&self) -> std::option::Option<& crate::types::TaskCredentials> {
         self.task_credentials.as_ref()
     }
 }
-impl std::fmt::Debug for LambdaFunctionScheduledEventDetails {
+impl  std::fmt::Debug for LambdaFunctionScheduledEventDetails  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionScheduledEventDetails");
         formatter.field("resource", &self.resource);
@@ -80,8 +78,7 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled Lambda function.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +87,7 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
     }
     /// <p>The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Contains details about input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -99,12 +95,8 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
         self
     }
     /// <p>Contains details about input for an execution history event.</p>
-    pub fn set_input_details(
-        mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    ) -> Self {
-        self.input_details = input;
-        self
+    pub fn set_input_details(mut self, input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
+        self.input_details = input; self
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
     pub fn timeout_in_seconds(mut self, input: i64) -> Self {
@@ -113,8 +105,7 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
     }
     /// <p>The maximum allowed duration of the Lambda function.</p>
     pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.timeout_in_seconds = input;
-        self
+        self.timeout_in_seconds = input; self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
     pub fn task_credentials(mut self, input: crate::types::TaskCredentials) -> Self {
@@ -122,21 +113,22 @@ impl LambdaFunctionScheduledEventDetailsBuilder {
         self
     }
     /// <p>The credentials that Step Functions uses for the task.</p>
-    pub fn set_task_credentials(
-        mut self,
-        input: std::option::Option<crate::types::TaskCredentials>,
-    ) -> Self {
-        self.task_credentials = input;
-        self
+    pub fn set_task_credentials(mut self, input: std::option::Option<crate::types::TaskCredentials>) -> Self {
+        self.task_credentials = input; self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventDetails`](crate::types::LambdaFunctionScheduledEventDetails).
     pub fn build(self) -> crate::types::LambdaFunctionScheduledEventDetails {
         crate::types::LambdaFunctionScheduledEventDetails {
-            resource: self.resource,
-            input: self.input,
-            input_details: self.input_details,
-            timeout_in_seconds: self.timeout_in_seconds,
-            task_credentials: self.task_credentials,
+            resource: self.resource
+            ,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
+            timeout_in_seconds: self.timeout_in_seconds
+            ,
+            task_credentials: self.task_credentials
+            ,
         }
     }
 }
@@ -151,3 +143,4 @@ impl std::fmt::Debug for LambdaFunctionScheduledEventDetailsBuilder {
         formatter.finish()
     }
 }
+

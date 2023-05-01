@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyInput {
+pub struct GetResourcePolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
 impl GetResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource associated with the policy. </p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// Consumes the builder and constructs a [`GetResourcePolicyInput`](crate::operation::get_resource_policy::GetResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resource_policy::GetResourcePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_resource_policy::GetResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_resource_policy::GetResourcePolicyInput {
-                identifier: self.identifier,
-            },
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

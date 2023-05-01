@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointServicesOutput {
+pub struct DescribeVpcEndpointServicesOutput  {
     /// <p>The supported services.</p>
     #[doc(hidden)]
     pub service_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,26 +16,26 @@ pub struct DescribeVpcEndpointServicesOutput {
 }
 impl DescribeVpcEndpointServicesOutput {
     /// <p>The supported services.</p>
-    pub fn service_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn service_names(&self) -> std::option::Option<& [std::string::String]> {
         self.service_names.as_deref()
     }
     /// <p>Information about the service.</p>
-    pub fn service_details(&self) -> std::option::Option<&[crate::types::ServiceDetail]> {
+    pub fn service_details(&self) -> std::option::Option<& [crate::types::ServiceDetail]> {
         self.service_details.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVpcEndpointServicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeVpcEndpointServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicesOutput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesOutputBuilder {
         crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesOutputBuilder::default()
     }
 }
@@ -57,17 +57,13 @@ impl DescribeVpcEndpointServicesOutputBuilder {
     /// <p>The supported services.</p>
     pub fn service_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.service_names.unwrap_or_default();
-        v.push(input.into());
-        self.service_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.service_names = Some(v);
+                        self
     }
     /// <p>The supported services.</p>
-    pub fn set_service_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.service_names = input;
-        self
+    pub fn set_service_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.service_names = input; self
     }
     /// Appends an item to `service_details`.
     ///
@@ -76,17 +72,13 @@ impl DescribeVpcEndpointServicesOutputBuilder {
     /// <p>Information about the service.</p>
     pub fn service_details(mut self, input: crate::types::ServiceDetail) -> Self {
         let mut v = self.service_details.unwrap_or_default();
-        v.push(input);
-        self.service_details = Some(v);
-        self
+                        v.push(input);
+                        self.service_details = Some(v);
+                        self
     }
     /// <p>Information about the service.</p>
-    pub fn set_service_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceDetail>>,
-    ) -> Self {
-        self.service_details = input;
-        self
+    pub fn set_service_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceDetail>>) -> Self {
+        self.service_details = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,27 +87,28 @@ impl DescribeVpcEndpointServicesOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServicesOutput`](crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput {
+    pub fn build(self) -> crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput {
         crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServicesOutput {
-            service_names: self.service_names,
-            service_details: self.service_details,
-            next_token: self.next_token,
+            service_names: self.service_names
+            ,
+            service_details: self.service_details
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

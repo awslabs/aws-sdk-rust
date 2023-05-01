@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectoryConfigInput {
+pub struct DeleteDirectoryConfigInput  {
     /// <p>The name of the directory configuration.</p>
     #[doc(hidden)]
     pub directory_name: std::option::Option<std::string::String>,
 }
 impl DeleteDirectoryConfigInput {
     /// <p>The name of the directory configuration.</p>
-    pub fn directory_name(&self) -> std::option::Option<&str> {
+    pub fn directory_name(&self) -> std::option::Option<& str> {
         self.directory_name.as_deref()
     }
 }
 impl DeleteDirectoryConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder {
         crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DeleteDirectoryConfigInputBuilder {
     }
     /// <p>The name of the directory configuration.</p>
     pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_name = input;
-        self
+        self.directory_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDirectoryConfigInput`](crate::operation::delete_directory_config::DeleteDirectoryConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_directory_config::DeleteDirectoryConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_directory_config::DeleteDirectoryConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_directory_config::DeleteDirectoryConfigInput {
-                directory_name: self.directory_name,
-            },
+                directory_name: self.directory_name
+                ,
+            }
         )
     }
 }
+

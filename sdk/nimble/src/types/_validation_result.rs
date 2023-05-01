@@ -3,7 +3,7 @@
 /// <p>The launch profile validation result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationResult {
+pub struct ValidationResult  {
     /// <p>The type of the validation result.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::LaunchProfileValidationType>,
@@ -19,21 +19,19 @@ pub struct ValidationResult {
 }
 impl ValidationResult {
     /// <p>The type of the validation result.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LaunchProfileValidationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::LaunchProfileValidationType> {
         self.r#type.as_ref()
     }
     /// <p>The current state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::LaunchProfileValidationState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::LaunchProfileValidationState> {
         self.state.as_ref()
     }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
-    pub fn status_code(
-        &self,
-    ) -> std::option::Option<&crate::types::LaunchProfileValidationStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::types::LaunchProfileValidationStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The status message for the validation result.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -60,12 +58,8 @@ impl ValidationResultBuilder {
         self
     }
     /// <p>The type of the validation result.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::LaunchProfileValidationType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::LaunchProfileValidationType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::LaunchProfileValidationState) -> Self {
@@ -73,12 +67,8 @@ impl ValidationResultBuilder {
         self
     }
     /// <p>The current state.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::LaunchProfileValidationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::LaunchProfileValidationState>) -> Self {
+        self.state = input; self
     }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
     pub fn status_code(mut self, input: crate::types::LaunchProfileValidationStatusCode) -> Self {
@@ -86,12 +76,8 @@ impl ValidationResultBuilder {
         self
     }
     /// <p>The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.</p>
-    pub fn set_status_code(
-        mut self,
-        input: std::option::Option<crate::types::LaunchProfileValidationStatusCode>,
-    ) -> Self {
-        self.status_code = input;
-        self
+    pub fn set_status_code(mut self, input: std::option::Option<crate::types::LaunchProfileValidationStatusCode>) -> Self {
+        self.status_code = input; self
     }
     /// <p>The status message for the validation result.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,16 +86,20 @@ impl ValidationResultBuilder {
     }
     /// <p>The status message for the validation result.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// Consumes the builder and constructs a [`ValidationResult`](crate::types::ValidationResult).
     pub fn build(self) -> crate::types::ValidationResult {
         crate::types::ValidationResult {
-            r#type: self.r#type,
-            state: self.state,
-            status_code: self.status_code,
-            status_message: self.status_message,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            status_code: self.status_code
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

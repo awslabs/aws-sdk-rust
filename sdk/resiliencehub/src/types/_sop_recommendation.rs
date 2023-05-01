@@ -3,7 +3,7 @@
 /// <p>Defines a standard operating procedure (SOP) recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SopRecommendation {
+pub struct SopRecommendation  {
     /// <p>The service type.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::SopServiceType>,
@@ -31,35 +31,35 @@ pub struct SopRecommendation {
 }
 impl SopRecommendation {
     /// <p>The service type.</p>
-    pub fn service_type(&self) -> std::option::Option<&crate::types::SopServiceType> {
+    pub fn service_type(&self) -> std::option::Option<& crate::types::SopServiceType> {
         self.service_type.as_ref()
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The description of the SOP recommendation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Identifier for the SOP recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The name of the SOP recommendation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The recommendation items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::RecommendationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::RecommendationItem]> {
         self.items.as_deref()
     }
     /// <p>The reference identifier for the SOP recommendation.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The prerequisite for the SOP recommendation.</p>
-    pub fn prerequisite(&self) -> std::option::Option<&str> {
+    pub fn prerequisite(&self) -> std::option::Option<& str> {
         self.prerequisite.as_deref()
     }
 }
@@ -90,12 +90,8 @@ impl SopRecommendationBuilder {
         self
     }
     /// <p>The service type.</p>
-    pub fn set_service_type(
-        mut self,
-        input: std::option::Option<crate::types::SopServiceType>,
-    ) -> Self {
-        self.service_type = input;
-        self
+    pub fn set_service_type(mut self, input: std::option::Option<crate::types::SopServiceType>) -> Self {
+        self.service_type = input; self
     }
     /// <p>The name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,12 +99,8 @@ impl SopRecommendationBuilder {
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn set_app_component_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_component_name = input;
-        self
+    pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_component_name = input; self
     }
     /// <p>The description of the SOP recommendation.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +109,7 @@ impl SopRecommendationBuilder {
     }
     /// <p>The description of the SOP recommendation.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Identifier for the SOP recommendation.</p>
     pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,12 +117,8 @@ impl SopRecommendationBuilder {
         self
     }
     /// <p>Identifier for the SOP recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recommendation_id = input; self
     }
     /// <p>The name of the SOP recommendation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +127,7 @@ impl SopRecommendationBuilder {
     }
     /// <p>The name of the SOP recommendation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -150,17 +136,13 @@ impl SopRecommendationBuilder {
     /// <p>The recommendation items.</p>
     pub fn items(mut self, input: crate::types::RecommendationItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The recommendation items.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationItem>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The reference identifier for the SOP recommendation.</p>
     pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +151,7 @@ impl SopRecommendationBuilder {
     }
     /// <p>The reference identifier for the SOP recommendation.</p>
     pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>The prerequisite for the SOP recommendation.</p>
     pub fn prerequisite(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,20 +160,28 @@ impl SopRecommendationBuilder {
     }
     /// <p>The prerequisite for the SOP recommendation.</p>
     pub fn set_prerequisite(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prerequisite = input;
-        self
+        self.prerequisite = input; self
     }
     /// Consumes the builder and constructs a [`SopRecommendation`](crate::types::SopRecommendation).
     pub fn build(self) -> crate::types::SopRecommendation {
         crate::types::SopRecommendation {
-            service_type: self.service_type,
-            app_component_name: self.app_component_name,
-            description: self.description,
-            recommendation_id: self.recommendation_id,
-            name: self.name,
-            items: self.items,
-            reference_id: self.reference_id,
-            prerequisite: self.prerequisite,
+            service_type: self.service_type
+            ,
+            app_component_name: self.app_component_name
+            ,
+            description: self.description
+            ,
+            recommendation_id: self.recommendation_id
+            ,
+            name: self.name
+            ,
+            items: self.items
+            ,
+            reference_id: self.reference_id
+            ,
+            prerequisite: self.prerequisite
+            ,
         }
     }
 }
+

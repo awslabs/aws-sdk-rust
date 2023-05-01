@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metricaggregationtype = unimplemented!();
 /// match metricaggregationtype {
@@ -31,22 +31,14 @@
 /// Specifically, when `metricaggregationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricAggregationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MetricAggregationType {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -55,44 +47,43 @@ pub enum MetricAggregationType {
     #[allow(missing_docs)] // documentation missing in model
     Minimum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricAggregationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => MetricAggregationType::Average,
-            "Maximum" => MetricAggregationType::Maximum,
-            "Minimum" => MetricAggregationType::Minimum,
-            other => MetricAggregationType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => MetricAggregationType::Average,
+"Maximum" => MetricAggregationType::Maximum,
+"Minimum" => MetricAggregationType::Minimum,
+other => MetricAggregationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricAggregationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricAggregationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MetricAggregationType::from(s))
+                }
+            }
 impl MetricAggregationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricAggregationType::Average => "Average",
-            MetricAggregationType::Maximum => "Maximum",
-            MetricAggregationType::Minimum => "Minimum",
-            MetricAggregationType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Average", "Maximum", "Minimum"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricAggregationType::Average => "Average",
+    MetricAggregationType::Maximum => "Maximum",
+    MetricAggregationType::Minimum => "Minimum",
+    MetricAggregationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum", "Minimum"]
+                }
+            }
 impl AsRef<str> for MetricAggregationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayInput {
+pub struct UpdateGatewayInput  {
     /// <p>The ID of the gateway to update.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateGatewayInput {
 }
 impl UpdateGatewayInput {
     /// <p>The ID of the gateway to update.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
     /// <p>A unique, friendly name for the gateway.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateGatewayInputBuilder {
     }
     /// <p>The ID of the gateway to update.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// <p>A unique, friendly name for the gateway.</p>
     pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl UpdateGatewayInputBuilder {
     }
     /// <p>A unique, friendly name for the gateway.</p>
     pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_name = input;
-        self
+        self.gateway_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInput`](crate::operation::update_gateway::UpdateGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_gateway::UpdateGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_gateway::UpdateGatewayInput {
-            gateway_id: self.gateway_id,
-            gateway_name: self.gateway_name,
-        })
+    pub fn build(self) -> Result<crate::operation::update_gateway::UpdateGatewayInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_gateway::UpdateGatewayInput {
+                gateway_id: self.gateway_id
+                ,
+                gateway_name: self.gateway_name
+                ,
+            }
+        )
     }
 }
+

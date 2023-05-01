@@ -3,3 +3,4 @@ pub use aws_http::request_id::RequestId;
 
 /// Types for the `ListRealtimeContactAnalysisSegments` operation.
 pub mod list_realtime_contact_analysis_segments;
+

@@ -84,3 +84,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateChannel` operation.
 pub mod update_channel;
+

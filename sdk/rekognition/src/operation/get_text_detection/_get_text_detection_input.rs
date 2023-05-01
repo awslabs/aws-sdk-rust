@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTextDetectionInput {
+pub struct GetTextDetectionInput  {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetTextDetectionInput {
 }
 impl GetTextDetectionInput {
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
@@ -23,14 +23,13 @@ impl GetTextDetectionInput {
         self.max_results
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetTextDetectionInput {
     /// Creates a new builder-style object to manufacture [`GetTextDetectionInput`](crate::operation::get_text_detection::GetTextDetectionInput).
-    pub fn builder() -> crate::operation::get_text_detection::builders::GetTextDetectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_text_detection::builders::GetTextDetectionInputBuilder {
         crate::operation::get_text_detection::builders::GetTextDetectionInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl GetTextDetectionInputBuilder {
     }
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl GetTextDetectionInputBuilder {
     }
     /// <p>Maximum number of results to return per paginated call. The largest value you can specify is 1000.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl GetTextDetectionInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetTextDetectionInput`](crate::operation::get_text_detection::GetTextDetectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_text_detection::GetTextDetectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_text_detection::GetTextDetectionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_text_detection::GetTextDetectionInput {
-                job_id: self.job_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                job_id: self.job_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

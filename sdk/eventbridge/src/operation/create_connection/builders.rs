@@ -4,71 +4,49 @@ pub use crate::operation::create_connection::_create_connection_output::CreateCo
 pub use crate::operation::create_connection::_create_connection_input::CreateConnectionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateConnection`.
-///
+/// 
 /// <p>Creates a connection. A connection defines the authorization type and credentials to use for authorization with an API destination HTTP endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_connection::builders::CreateConnectionInputBuilder,
-}
-impl CreateConnectionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_connection::builders::CreateConnectionInputBuilder
+            }
+impl CreateConnectionFluentBuilder  {
     /// Creates a new `CreateConnection`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_connection::CreateConnection,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_connection::CreateConnectionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_connection::CreateConnectionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_connection::CreateConnection, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_connection::CreateConnectionOutput, aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name for the connection to create.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -89,37 +67,29 @@ impl CreateConnectionFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p> <note>
-    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note> 
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p> 
     /// </note>
     pub fn authorization_type(mut self, input: crate::types::ConnectionAuthorizationType) -> Self {
         self.inner = self.inner.authorization_type(input);
         self
     }
-    /// <p>The type of authorization to use for the connection.</p> <note>
-    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p>
+    /// <p>The type of authorization to use for the connection.</p> <note> 
+    /// <p>OAUTH tokens are refreshed when a 401 or 407 response is returned.</p> 
     /// </note>
-    pub fn set_authorization_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionAuthorizationType>,
-    ) -> Self {
+    pub fn set_authorization_type(mut self, input: std::option::Option<crate::types::ConnectionAuthorizationType>) -> Self {
         self.inner = self.inner.set_authorization_type(input);
         self
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
-    pub fn auth_parameters(
-        mut self,
-        input: crate::types::CreateConnectionAuthRequestParameters,
-    ) -> Self {
+    pub fn auth_parameters(mut self, input: crate::types::CreateConnectionAuthRequestParameters) -> Self {
         self.inner = self.inner.auth_parameters(input);
         self
     }
     /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the authorization parameters to use to authorize with the endpoint. </p>
-    pub fn set_auth_parameters(
-        mut self,
-        input: std::option::Option<crate::types::CreateConnectionAuthRequestParameters>,
-    ) -> Self {
+    pub fn set_auth_parameters(mut self, input: std::option::Option<crate::types::CreateConnectionAuthRequestParameters>) -> Self {
         self.inner = self.inner.set_auth_parameters(input);
         self
     }
 }
+

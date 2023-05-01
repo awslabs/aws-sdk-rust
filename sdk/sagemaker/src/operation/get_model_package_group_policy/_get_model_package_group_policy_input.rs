@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelPackageGroupPolicyInput {
+pub struct GetModelPackageGroupPolicyInput  {
     /// <p>The name of the model group for which to get the resource policy.</p>
     #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl GetModelPackageGroupPolicyInput {
     /// <p>The name of the model group for which to get the resource policy.</p>
-    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
 }
 impl GetModelPackageGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetModelPackageGroupPolicyInput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput).
-    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder {
         crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl GetModelPackageGroupPolicyInputBuilder {
         self
     }
     /// <p>The name of the model group for which to get the resource policy.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_group_name = input;
-        self
+    pub fn set_model_package_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_group_name = input; self
     }
     /// Consumes the builder and constructs a [`GetModelPackageGroupPolicyInput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyInput {
-                model_package_group_name: self.model_package_group_name,
-            },
+                model_package_group_name: self.model_package_group_name
+                ,
+            }
         )
     }
 }
+

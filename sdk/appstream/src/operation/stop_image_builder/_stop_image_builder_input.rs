@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopImageBuilderInput {
+pub struct StopImageBuilderInput  {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopImageBuilderInput {
     /// <p>The name of the image builder.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl StopImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`StopImageBuilderInput`](crate::operation::stop_image_builder::StopImageBuilderInput).
-    pub fn builder() -> crate::operation::stop_image_builder::builders::StopImageBuilderInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_image_builder::builders::StopImageBuilderInputBuilder {
         crate::operation::stop_image_builder::builders::StopImageBuilderInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl StopImageBuilderInputBuilder {
     }
     /// <p>The name of the image builder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`StopImageBuilderInput`](crate::operation::stop_image_builder::StopImageBuilderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_image_builder::StopImageBuilderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_image_builder::StopImageBuilderInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::stop_image_builder::StopImageBuilderInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_image_builder::StopImageBuilderInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

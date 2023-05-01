@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactMethodsOutput {
+pub struct GetContactMethodsOutput  {
     /// <p>An array of objects that describe the contact methods.</p>
     #[doc(hidden)]
     pub contact_methods: std::option::Option<std::vec::Vec<crate::types::ContactMethod>>,
@@ -10,19 +10,18 @@ pub struct GetContactMethodsOutput {
 }
 impl GetContactMethodsOutput {
     /// <p>An array of objects that describe the contact methods.</p>
-    pub fn contact_methods(&self) -> std::option::Option<&[crate::types::ContactMethod]> {
+    pub fn contact_methods(&self) -> std::option::Option<& [crate::types::ContactMethod]> {
         self.contact_methods.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContactMethodsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetContactMethodsOutput {
     /// Creates a new builder-style object to manufacture [`GetContactMethodsOutput`](crate::operation::get_contact_methods::GetContactMethodsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_contact_methods::builders::GetContactMethodsOutputBuilder {
+    pub fn builder() -> crate::operation::get_contact_methods::builders::GetContactMethodsOutputBuilder {
         crate::operation::get_contact_methods::builders::GetContactMethodsOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl GetContactMethodsOutputBuilder {
     /// <p>An array of objects that describe the contact methods.</p>
     pub fn contact_methods(mut self, input: crate::types::ContactMethod) -> Self {
         let mut v = self.contact_methods.unwrap_or_default();
-        v.push(input);
-        self.contact_methods = Some(v);
-        self
+                        v.push(input);
+                        self.contact_methods = Some(v);
+                        self
     }
     /// <p>An array of objects that describe the contact methods.</p>
-    pub fn set_contact_methods(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactMethod>>,
-    ) -> Self {
-        self.contact_methods = input;
-        self
+    pub fn set_contact_methods(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContactMethod>>) -> Self {
+        self.contact_methods = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetContactMethodsOutput`](crate::operation::get_contact_methods::GetContactMethodsOutput).
     pub fn build(self) -> crate::operation::get_contact_methods::GetContactMethodsOutput {
         crate::operation::get_contact_methods::GetContactMethodsOutput {
-            contact_methods: self.contact_methods,
+            contact_methods: self.contact_methods
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

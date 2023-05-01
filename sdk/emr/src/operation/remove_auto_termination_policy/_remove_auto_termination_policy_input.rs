@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAutoTerminationPolicyInput {
+pub struct RemoveAutoTerminationPolicyInput  {
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RemoveAutoTerminationPolicyInput {
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
 }
 impl RemoveAutoTerminationPolicyInput {
     /// Creates a new builder-style object to manufacture [`RemoveAutoTerminationPolicyInput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput).
-    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder{
+    pub fn builder() -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder {
         crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl RemoveAutoTerminationPolicyInputBuilder {
     }
     /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// Consumes the builder and constructs a [`RemoveAutoTerminationPolicyInput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyInput {
-                cluster_id: self.cluster_id,
-            },
+                cluster_id: self.cluster_id
+                ,
+            }
         )
     }
 }
+

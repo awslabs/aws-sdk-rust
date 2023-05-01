@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrustAnchorInput {
+pub struct CreateTrustAnchorInput  {
     /// <p>The name of the trust anchor.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct CreateTrustAnchorInput {
 }
 impl CreateTrustAnchorInput {
     /// <p>The name of the trust anchor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The trust anchor type and its related certificate data.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>Specifies whether the trust anchor is enabled.</p>
@@ -30,14 +30,13 @@ impl CreateTrustAnchorInput {
         self.enabled
     }
     /// <p>The tags to attach to the trust anchor.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateTrustAnchorInput {
     /// Creates a new builder-style object to manufacture [`CreateTrustAnchorInput`](crate::operation::create_trust_anchor::CreateTrustAnchorInput).
-    pub fn builder(
-    ) -> crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder {
+    pub fn builder() -> crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder {
         crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateTrustAnchorInputBuilder {
     }
     /// <p>The name of the trust anchor.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
@@ -69,8 +67,7 @@ impl CreateTrustAnchorInputBuilder {
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -79,8 +76,7 @@ impl CreateTrustAnchorInputBuilder {
     }
     /// <p>Specifies whether the trust anchor is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -89,32 +85,28 @@ impl CreateTrustAnchorInputBuilder {
     /// <p>The tags to attach to the trust anchor.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to attach to the trust anchor.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateTrustAnchorInput`](crate::operation::create_trust_anchor::CreateTrustAnchorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_trust_anchor::CreateTrustAnchorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_trust_anchor::CreateTrustAnchorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_trust_anchor::CreateTrustAnchorInput {
-                name: self.name,
-                source: self.source,
-                enabled: self.enabled,
-                tags: self.tags,
-            },
+                name: self.name
+                ,
+                source: self.source
+                ,
+                enabled: self.enabled
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

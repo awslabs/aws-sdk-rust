@@ -3,7 +3,7 @@
 /// <p>Contains VPC information for the <code>CreateDirectory</code> or <code>CreateMicrosoftAD</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectoryVpcSettings {
+pub struct DirectoryVpcSettings  {
     /// <p>The identifier of the VPC in which to create the directory.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DirectoryVpcSettings {
 }
 impl DirectoryVpcSettings {
     /// <p>The identifier of the VPC in which to create the directory.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DirectoryVpcSettingsBuilder {
     }
     /// <p>The identifier of the VPC in which to create the directory.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -53,23 +52,22 @@ impl DirectoryVpcSettingsBuilder {
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of the subnets for the directory servers. The two subnets must be in different Availability Zones. Directory Service creates a directory server and a DNS server in each of these subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// Consumes the builder and constructs a [`DirectoryVpcSettings`](crate::types::DirectoryVpcSettings).
     pub fn build(self) -> crate::types::DirectoryVpcSettings {
         crate::types::DirectoryVpcSettings {
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
+            vpc_id: self.vpc_id
+            ,
+            subnet_ids: self.subnet_ids
+            ,
         }
     }
 }
+

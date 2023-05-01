@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccountSettingsInput {
+pub struct UpdateAccountSettingsInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UpdateAccountSettingsInput {
 }
 impl UpdateAccountSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Chime account settings to update.</p>
-    pub fn account_settings(&self) -> std::option::Option<&crate::types::AccountSettings> {
+    pub fn account_settings(&self) -> std::option::Option<& crate::types::AccountSettings> {
         self.account_settings.as_ref()
     }
 }
 impl UpdateAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder {
         crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl UpdateAccountSettingsInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account settings to update.</p>
     pub fn account_settings(mut self, input: crate::types::AccountSettings) -> Self {
@@ -53,25 +50,19 @@ impl UpdateAccountSettingsInputBuilder {
         self
     }
     /// <p>The Amazon Chime account settings to update.</p>
-    pub fn set_account_settings(
-        mut self,
-        input: std::option::Option<crate::types::AccountSettings>,
-    ) -> Self {
-        self.account_settings = input;
-        self
+    pub fn set_account_settings(mut self, input: std::option::Option<crate::types::AccountSettings>) -> Self {
+        self.account_settings = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAccountSettingsInput`](crate::operation::update_account_settings::UpdateAccountSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_account_settings::UpdateAccountSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_account_settings::UpdateAccountSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_account_settings::UpdateAccountSettingsInput {
-                account_id: self.account_id,
-                account_settings: self.account_settings,
-            },
+                account_id: self.account_id
+                ,
+                account_settings: self.account_settings
+                ,
+            }
         )
     }
 }
+

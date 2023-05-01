@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTableOutput {
+pub struct CreateTableOutput  {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateTableOutput {
 }
 impl CreateTableOutput {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::operation::create_table::CreateTableOutput).
     pub fn builder() -> crate::operation::create_table::builders::CreateTableOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateTableOutputBuilder {
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTableOutput`](crate::operation::create_table::CreateTableOutput).
     pub fn build(self) -> crate::operation::create_table::CreateTableOutput {
         crate::operation::create_table::CreateTableOutput {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

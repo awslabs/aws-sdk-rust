@@ -3,7 +3,7 @@
 /// <p>A virtual machine that is on a hypervisor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualMachine {
+pub struct VirtualMachine  {
     /// <p>The host name of the virtual machine.</p>
     #[doc(hidden)]
     pub host_name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct VirtualMachine {
 }
 impl VirtualMachine {
     /// <p>The host name of the virtual machine.</p>
-    pub fn host_name(&self) -> std::option::Option<&str> {
+    pub fn host_name(&self) -> std::option::Option<& str> {
         self.host_name.as_deref()
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
-    pub fn hypervisor_id(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_id(&self) -> std::option::Option<& str> {
         self.hypervisor_id.as_deref()
     }
     /// <p>The name of the virtual machine.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The path of the virtual machine.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn last_backup_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_backup_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_backup_date.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl VirtualMachineBuilder {
     }
     /// <p>The host name of the virtual machine.</p>
     pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_name = input;
-        self
+        self.host_name = input; self
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
     pub fn hypervisor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl VirtualMachineBuilder {
     }
     /// <p>The ID of the virtual machine's hypervisor.</p>
     pub fn set_hypervisor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hypervisor_id = input;
-        self
+        self.hypervisor_id = input; self
     }
     /// <p>The name of the virtual machine.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl VirtualMachineBuilder {
     }
     /// <p>The name of the virtual machine.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The path of the virtual machine.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +102,7 @@ impl VirtualMachineBuilder {
     }
     /// <p>The path of the virtual machine.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +111,7 @@ impl VirtualMachineBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual machine. For example, <code>arn:aws:backup-gateway:us-west-1:0000000000000:vm/vm-0000ABCDEFGIJKL</code>.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
     pub fn last_backup_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -124,22 +119,25 @@ impl VirtualMachineBuilder {
         self
     }
     /// <p>The most recent date a virtual machine was backed up, in Unix format and UTC time.</p>
-    pub fn set_last_backup_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_backup_date = input;
-        self
+    pub fn set_last_backup_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_backup_date = input; self
     }
     /// Consumes the builder and constructs a [`VirtualMachine`](crate::types::VirtualMachine).
     pub fn build(self) -> crate::types::VirtualMachine {
         crate::types::VirtualMachine {
-            host_name: self.host_name,
-            hypervisor_id: self.hypervisor_id,
-            name: self.name,
-            path: self.path,
-            resource_arn: self.resource_arn,
-            last_backup_date: self.last_backup_date,
+            host_name: self.host_name
+            ,
+            hypervisor_id: self.hypervisor_id
+            ,
+            name: self.name
+            ,
+            path: self.path
+            ,
+            resource_arn: self.resource_arn
+            ,
+            last_backup_date: self.last_backup_date
+            ,
         }
     }
 }
+

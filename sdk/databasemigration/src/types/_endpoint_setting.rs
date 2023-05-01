@@ -3,7 +3,7 @@
 /// <p>Endpoint settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointSetting {
+pub struct EndpointSetting  {
     /// <p>The name that you want to give the endpoint settings.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -34,15 +34,15 @@ pub struct EndpointSetting {
 }
 impl EndpointSetting {
     /// <p>The name that you want to give the endpoint settings.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EndpointSettingTypeValue> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::EndpointSettingTypeValue> {
         self.r#type.as_ref()
     }
     /// <p>Enumerated values to use for this endpoint.</p>
-    pub fn enum_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn enum_values(&self) -> std::option::Option<& [std::string::String]> {
         self.enum_values.as_deref()
     }
     /// <p>A value that marks this endpoint setting as sensitive.</p>
@@ -50,11 +50,11 @@ impl EndpointSetting {
         self.sensitive
     }
     /// <p>The unit of measure for this endpoint setting.</p>
-    pub fn units(&self) -> std::option::Option<&str> {
+    pub fn units(&self) -> std::option::Option<& str> {
         self.units.as_deref()
     }
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
-    pub fn applicability(&self) -> std::option::Option<&str> {
+    pub fn applicability(&self) -> std::option::Option<& str> {
         self.applicability.as_deref()
     }
     /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
@@ -66,7 +66,7 @@ impl EndpointSetting {
         self.int_value_max
     }
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl EndpointSettingBuilder {
     }
     /// <p>The name that you want to give the endpoint settings.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
     pub fn r#type(mut self, input: crate::types::EndpointSettingTypeValue) -> Self {
@@ -108,12 +107,8 @@ impl EndpointSettingBuilder {
         self
     }
     /// <p>The type of endpoint. Valid values are <code>source</code> and <code>target</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::EndpointSettingTypeValue>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::EndpointSettingTypeValue>) -> Self {
+        self.r#type = input; self
     }
     /// Appends an item to `enum_values`.
     ///
@@ -122,17 +117,13 @@ impl EndpointSettingBuilder {
     /// <p>Enumerated values to use for this endpoint.</p>
     pub fn enum_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.enum_values.unwrap_or_default();
-        v.push(input.into());
-        self.enum_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.enum_values = Some(v);
+                        self
     }
     /// <p>Enumerated values to use for this endpoint.</p>
-    pub fn set_enum_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.enum_values = input;
-        self
+    pub fn set_enum_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.enum_values = input; self
     }
     /// <p>A value that marks this endpoint setting as sensitive.</p>
     pub fn sensitive(mut self, input: bool) -> Self {
@@ -141,8 +132,7 @@ impl EndpointSettingBuilder {
     }
     /// <p>A value that marks this endpoint setting as sensitive.</p>
     pub fn set_sensitive(mut self, input: std::option::Option<bool>) -> Self {
-        self.sensitive = input;
-        self
+        self.sensitive = input; self
     }
     /// <p>The unit of measure for this endpoint setting.</p>
     pub fn units(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +141,7 @@ impl EndpointSettingBuilder {
     }
     /// <p>The unit of measure for this endpoint setting.</p>
     pub fn set_units(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.units = input;
-        self
+        self.units = input; self
     }
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
     pub fn applicability(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,8 +150,7 @@ impl EndpointSettingBuilder {
     }
     /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
     pub fn set_applicability(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.applicability = input;
-        self
+        self.applicability = input; self
     }
     /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
     pub fn int_value_min(mut self, input: i32) -> Self {
@@ -171,8 +159,7 @@ impl EndpointSettingBuilder {
     }
     /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
     pub fn set_int_value_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.int_value_min = input;
-        self
+        self.int_value_min = input; self
     }
     /// <p>The maximum value of an endpoint setting that is of type <code>int</code>.</p>
     pub fn int_value_max(mut self, input: i32) -> Self {
@@ -181,8 +168,7 @@ impl EndpointSettingBuilder {
     }
     /// <p>The maximum value of an endpoint setting that is of type <code>int</code>.</p>
     pub fn set_int_value_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.int_value_max = input;
-        self
+        self.int_value_max = input; self
     }
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,21 +177,30 @@ impl EndpointSettingBuilder {
     }
     /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// Consumes the builder and constructs a [`EndpointSetting`](crate::types::EndpointSetting).
     pub fn build(self) -> crate::types::EndpointSetting {
         crate::types::EndpointSetting {
-            name: self.name,
-            r#type: self.r#type,
-            enum_values: self.enum_values,
-            sensitive: self.sensitive,
-            units: self.units,
-            applicability: self.applicability,
-            int_value_min: self.int_value_min,
-            int_value_max: self.int_value_max,
-            default_value: self.default_value,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            enum_values: self.enum_values
+            ,
+            sensitive: self.sensitive
+            ,
+            units: self.units
+            ,
+            applicability: self.applicability
+            ,
+            int_value_min: self.int_value_min
+            ,
+            int_value_max: self.int_value_max
+            ,
+            default_value: self.default_value
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImportImageTasksInput {
+pub struct DescribeImportImageTasksInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -25,11 +25,11 @@ impl DescribeImportImageTasksInput {
         self.dry_run
     }
     /// <p>Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The IDs of the import image tasks.</p>
-    pub fn import_task_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn import_task_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.import_task_ids.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -37,15 +37,13 @@ impl DescribeImportImageTasksInput {
         self.max_results
     }
     /// <p>A token that indicates the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeImportImageTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeImportImageTasksInput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksInputBuilder {
         crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl DescribeImportImageTasksInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -78,17 +75,13 @@ impl DescribeImportImageTasksInputBuilder {
     /// <p>Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Appends an item to `import_task_ids`.
     ///
@@ -97,17 +90,13 @@ impl DescribeImportImageTasksInputBuilder {
     /// <p>The IDs of the import image tasks.</p>
     pub fn import_task_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.import_task_ids.unwrap_or_default();
-        v.push(input.into());
-        self.import_task_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.import_task_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the import image tasks.</p>
-    pub fn set_import_task_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.import_task_ids = input;
-        self
+    pub fn set_import_task_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.import_task_ids = input; self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -116,8 +105,7 @@ impl DescribeImportImageTasksInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token that indicates the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,24 +114,24 @@ impl DescribeImportImageTasksInputBuilder {
     }
     /// <p>A token that indicates the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeImportImageTasksInput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_import_image_tasks::DescribeImportImageTasksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_import_image_tasks::DescribeImportImageTasksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_import_image_tasks::DescribeImportImageTasksInput {
-                dry_run: self.dry_run,
-                filters: self.filters,
-                import_task_ids: self.import_task_ids,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                dry_run: self.dry_run
+                ,
+                filters: self.filters
+                ,
+                import_task_ids: self.import_task_ids
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

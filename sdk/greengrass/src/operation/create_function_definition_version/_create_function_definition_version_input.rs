@@ -3,7 +3,7 @@
 /// Information needed to create a function definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionDefinitionVersionInput {
+pub struct CreateFunctionDefinitionVersionInput  {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -19,25 +19,25 @@ pub struct CreateFunctionDefinitionVersionInput {
 }
 impl CreateFunctionDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
         self.amzn_client_token.as_deref()
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn default_config(&self) -> std::option::Option<&crate::types::FunctionDefaultConfig> {
+    pub fn default_config(&self) -> std::option::Option<& crate::types::FunctionDefaultConfig> {
         self.default_config.as_ref()
     }
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+    pub fn function_definition_id(&self) -> std::option::Option<& str> {
         self.function_definition_id.as_deref()
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn functions(&self) -> std::option::Option<&[crate::types::Function]> {
+    pub fn functions(&self) -> std::option::Option<& [crate::types::Function]> {
         self.functions.as_deref()
     }
 }
 impl CreateFunctionDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionDefinitionVersionInput`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder {
         crate::operation::create_function_definition_version::builders::CreateFunctionDefinitionVersionInputBuilder::default()
     }
 }
@@ -58,12 +58,8 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.amzn_client_token = input;
-        self
+    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.amzn_client_token = input; self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     pub fn default_config(mut self, input: crate::types::FunctionDefaultConfig) -> Self {
@@ -71,12 +67,8 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn set_default_config(
-        mut self,
-        input: std::option::Option<crate::types::FunctionDefaultConfig>,
-    ) -> Self {
-        self.default_config = input;
-        self
+    pub fn set_default_config(mut self, input: std::option::Option<crate::types::FunctionDefaultConfig>) -> Self {
+        self.default_config = input; self
     }
     /// The ID of the Lambda function definition.
     pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +76,8 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.function_definition_id = input;
-        self
+    pub fn set_function_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.function_definition_id = input; self
     }
     /// Appends an item to `functions`.
     ///
@@ -98,25 +86,16 @@ impl CreateFunctionDefinitionVersionInputBuilder {
     /// A list of Lambda functions in this function definition version.
     pub fn functions(mut self, input: crate::types::Function) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input);
-        self.functions = Some(v);
-        self
+                        v.push(input);
+                        self.functions = Some(v);
+                        self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn set_functions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Function>>,
-    ) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Function>>) -> Self {
+        self.functions = input; self
     }
     /// Consumes the builder and constructs a [`CreateFunctionDefinitionVersionInput`](crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionInput {
                 amzn_client_token: self.amzn_client_token
@@ -131,3 +110,4 @@ impl CreateFunctionDefinitionVersionInputBuilder {
         )
     }
 }
+

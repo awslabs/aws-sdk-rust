@@ -12,3 +12,4 @@ pub mod builders;
 
 /// Error types that Amazon Kinesis Video Signaling Channels can respond with.
 pub mod error;
+

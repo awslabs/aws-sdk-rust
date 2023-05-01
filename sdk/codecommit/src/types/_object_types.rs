@@ -3,7 +3,7 @@
 /// <p>Information about the type of an object in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectTypes {
+pub struct ObjectTypes  {
     /// <p>The type of the object in the source branch.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::ObjectTypeEnum>,
@@ -16,15 +16,15 @@ pub struct ObjectTypes {
 }
 impl ObjectTypes {
     /// <p>The type of the object in the source branch.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::ObjectTypeEnum> {
+    pub fn source(&self) -> std::option::Option<& crate::types::ObjectTypeEnum> {
         self.source.as_ref()
     }
     /// <p>The type of the object in the destination branch.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::ObjectTypeEnum> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::ObjectTypeEnum> {
         self.destination.as_ref()
     }
     /// <p>The type of the object in the base commit of the merge.</p>
-    pub fn base(&self) -> std::option::Option<&crate::types::ObjectTypeEnum> {
+    pub fn base(&self) -> std::option::Option<& crate::types::ObjectTypeEnum> {
         self.base.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ObjectTypesBuilder {
     }
     /// <p>The type of the object in the source branch.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The type of the object in the destination branch.</p>
     pub fn destination(mut self, input: crate::types::ObjectTypeEnum) -> Self {
@@ -60,12 +59,8 @@ impl ObjectTypesBuilder {
         self
     }
     /// <p>The type of the object in the destination branch.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::ObjectTypeEnum>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
+        self.destination = input; self
     }
     /// <p>The type of the object in the base commit of the merge.</p>
     pub fn base(mut self, input: crate::types::ObjectTypeEnum) -> Self {
@@ -74,15 +69,18 @@ impl ObjectTypesBuilder {
     }
     /// <p>The type of the object in the base commit of the merge.</p>
     pub fn set_base(mut self, input: std::option::Option<crate::types::ObjectTypeEnum>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// Consumes the builder and constructs a [`ObjectTypes`](crate::types::ObjectTypes).
     pub fn build(self) -> crate::types::ObjectTypes {
         crate::types::ObjectTypes {
-            source: self.source,
-            destination: self.destination,
-            base: self.base,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            base: self.base
+            ,
         }
     }
 }
+

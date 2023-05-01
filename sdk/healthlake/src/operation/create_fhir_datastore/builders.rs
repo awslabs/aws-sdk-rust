@@ -4,71 +4,49 @@ pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_output::
 pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_input::CreateFhirDatastoreInputBuilder;
 
 /// Fluent builder constructing a request to `CreateFHIRDatastore`.
-///
+/// 
 /// <p>Creates a Data Store that can ingest and export FHIR formatted data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFHIRDatastoreFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder,
-}
-impl CreateFHIRDatastoreFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder
+            }
+impl CreateFHIRDatastoreFluentBuilder  {
     /// Creates a new `CreateFHIRDatastore`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastore,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_fhir_datastore::CreateFHIRDatastore, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput, aws_smithy_http::result::SdkError<crate::operation::create_fhir_datastore::CreateFHIRDatastoreError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The user generated name for the Data Store.</p>
     pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.datastore_name(input.into());
@@ -85,10 +63,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p>The FHIR version of the Data Store. The only supported version is R4.</p>
-    pub fn set_datastore_type_version(
-        mut self,
-        input: std::option::Option<crate::types::FhirVersion>,
-    ) -> Self {
+    pub fn set_datastore_type_version(mut self, input: std::option::Option<crate::types::FhirVersion>) -> Self {
         self.inner = self.inner.set_datastore_type_version(input);
         self
     }
@@ -98,10 +73,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p> The server-side encryption key configuration for a customer provided encryption key specified for creating a Data Store. </p>
-    pub fn set_sse_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SseConfiguration>,
-    ) -> Self {
+    pub fn set_sse_configuration(mut self, input: std::option::Option<crate::types::SseConfiguration>) -> Self {
         self.inner = self.inner.set_sse_configuration(input);
         self
     }
@@ -111,10 +83,7 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p>Optional parameter to preload data upon creation of the Data Store. Currently, the only supported preloaded data is synthetic data generated from Synthea.</p>
-    pub fn set_preload_data_config(
-        mut self,
-        input: std::option::Option<crate::types::PreloadDataConfig>,
-    ) -> Self {
+    pub fn set_preload_data_config(mut self, input: std::option::Option<crate::types::PreloadDataConfig>) -> Self {
         self.inner = self.inner.set_preload_data_config(input);
         self
     }
@@ -138,11 +107,9 @@ impl CreateFHIRDatastoreFluentBuilder {
         self
     }
     /// <p> Resource tags that are applied to a Data Store when it is created. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

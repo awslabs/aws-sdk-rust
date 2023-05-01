@@ -3,27 +3,27 @@
 /// <p>A series of reports. Each report contains information about the results from running a series of test cases. You specify the test cases for a report group in the buildspec for a build project using one or more paths to the test case files. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportGroup {
+pub struct ReportGroup  {
     /// <p>The ARN of the <code>ReportGroup</code>. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the <code>ReportGroup</code>. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// CODE_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains code coverage reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains code coverage reports.</p> 
+    /// </dd> 
     /// <dt>
     /// TEST
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains test reports.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ReportType>,
@@ -36,90 +36,90 @@ pub struct ReportGroup {
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The status of the report group. This property is read-only.</p>
-    /// <p>This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The status of the report group. This property is read-only.</p> 
+    /// <p>This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// ACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is active.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is active.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is in the process of being deleted.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is in the process of being deleted.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ReportGroupStatusType>,
 }
 impl ReportGroup {
     /// <p>The ARN of the <code>ReportGroup</code>. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the <code>ReportGroup</code>. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// CODE_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains code coverage reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains code coverage reports.</p> 
+    /// </dd> 
     /// <dt>
     /// TEST
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains test reports.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ReportType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ReportType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the destination where the raw data of this <code>ReportGroup</code> is exported. </p>
-    pub fn export_config(&self) -> std::option::Option<&crate::types::ReportExportConfig> {
+    pub fn export_config(&self) -> std::option::Option<& crate::types::ReportExportConfig> {
         self.export_config.as_ref()
     }
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
-    /// <p>A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The status of the report group. This property is read-only.</p>
-    /// <p>This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The status of the report group. This property is read-only.</p> 
+    /// <p>This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// ACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is active.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is active.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is in the process of being deleted.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is in the process of being deleted.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReportGroupStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ReportGroupStatusType> {
         self.status.as_ref()
     }
 }
@@ -151,8 +151,7 @@ impl ReportGroupBuilder {
     }
     /// <p>The ARN of the <code>ReportGroup</code>. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the <code>ReportGroup</code>. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,46 +160,44 @@ impl ReportGroupBuilder {
     }
     /// <p>The name of the <code>ReportGroup</code>. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// CODE_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains code coverage reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains code coverage reports.</p> 
+    /// </dd> 
     /// <dt>
     /// TEST
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains test reports.</p> 
+    /// </dd> 
     /// </dl>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The type of the <code>ReportGroup</code>. This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// CODE_COVERAGE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains code coverage reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains code coverage reports.</p> 
+    /// </dd> 
     /// <dt>
     /// TEST
-    /// </dt>
-    /// <dd>
-    /// <p>The report group contains test reports.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group contains test reports.</p> 
+    /// </dd> 
     /// </dl>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ReportType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Information about the destination where the raw data of this <code>ReportGroup</code> is exported. </p>
     pub fn export_config(mut self, input: crate::types::ReportExportConfig) -> Self {
@@ -208,12 +205,8 @@ impl ReportGroupBuilder {
         self
     }
     /// <p>Information about the destination where the raw data of this <code>ReportGroup</code> is exported. </p>
-    pub fn set_export_config(
-        mut self,
-        input: std::option::Option<crate::types::ReportExportConfig>,
-    ) -> Self {
-        self.export_config = input;
-        self
+    pub fn set_export_config(mut self, input: std::option::Option<crate::types::ReportExportConfig>) -> Self {
+        self.export_config = input; self
     }
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -222,8 +215,7 @@ impl ReportGroupBuilder {
     }
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -231,88 +223,85 @@ impl ReportGroupBuilder {
         self
     }
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>A list of tag key and value pairs associated with this report group. </p>
+    /// <p>A list of tag key and value pairs associated with this report group. </p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
-    /// <p>The status of the report group. This property is read-only.</p>
-    /// <p>This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The status of the report group. This property is read-only.</p> 
+    /// <p>This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// ACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is active.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is active.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is in the process of being deleted.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is in the process of being deleted.</p> 
+    /// </dd> 
     /// </dl>
     pub fn status(mut self, input: crate::types::ReportGroupStatusType) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the report group. This property is read-only.</p>
-    /// <p>This can be one of the following values:</p>
-    /// <dl>
+    /// <p>The status of the report group. This property is read-only.</p> 
+    /// <p>This can be one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// ACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is active.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is active.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>The report group is in the process of being deleted.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The report group is in the process of being deleted.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ReportGroupStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ReportGroupStatusType>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ReportGroup`](crate::types::ReportGroup).
     pub fn build(self) -> crate::types::ReportGroup {
         crate::types::ReportGroup {
-            arn: self.arn,
-            name: self.name,
-            r#type: self.r#type,
-            export_config: self.export_config,
-            created: self.created,
-            last_modified: self.last_modified,
-            tags: self.tags,
-            status: self.status,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            export_config: self.export_config
+            ,
+            created: self.created
+            ,
+            last_modified: self.last_modified
+            ,
+            tags: self.tags
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

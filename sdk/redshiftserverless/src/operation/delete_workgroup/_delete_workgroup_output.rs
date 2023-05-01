@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkgroupOutput {
+pub struct DeleteWorkgroupOutput  {
     /// <p>The deleted workgroup object.</p>
     #[doc(hidden)]
     pub workgroup: std::option::Option<crate::types::Workgroup>,
@@ -10,15 +10,15 @@ pub struct DeleteWorkgroupOutput {
 }
 impl DeleteWorkgroupOutput {
     /// <p>The deleted workgroup object.</p>
-    pub fn workgroup(&self) -> std::option::Option<&crate::types::Workgroup> {
+    pub fn workgroup(&self) -> std::option::Option<& crate::types::Workgroup> {
         self.workgroup.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteWorkgroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteWorkgroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkgroupOutput`](crate::operation::delete_workgroup::DeleteWorkgroupOutput).
     pub fn builder() -> crate::operation::delete_workgroup::builders::DeleteWorkgroupOutputBuilder {
@@ -41,23 +41,24 @@ impl DeleteWorkgroupOutputBuilder {
     }
     /// <p>The deleted workgroup object.</p>
     pub fn set_workgroup(mut self, input: std::option::Option<crate::types::Workgroup>) -> Self {
-        self.workgroup = input;
-        self
+        self.workgroup = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteWorkgroupOutput`](crate::operation::delete_workgroup::DeleteWorkgroupOutput).
     pub fn build(self) -> crate::operation::delete_workgroup::DeleteWorkgroupOutput {
         crate::operation::delete_workgroup::DeleteWorkgroupOutput {
-            workgroup: self.workgroup,
+            workgroup: self.workgroup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

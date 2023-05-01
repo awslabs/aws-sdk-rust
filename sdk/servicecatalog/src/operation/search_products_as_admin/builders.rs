@@ -4,95 +4,68 @@ pub use crate::operation::search_products_as_admin::_search_products_as_admin_ou
 pub use crate::operation::search_products_as_admin::_search_products_as_admin_input::SearchProductsAsAdminInputBuilder;
 
 /// Fluent builder constructing a request to `SearchProductsAsAdmin`.
-///
+/// 
 /// <p>Gets information about the products for the specified portfolio or all products.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchProductsAsAdminFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder,
-}
-impl SearchProductsAsAdminFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder
+            }
+impl SearchProductsAsAdminFluentBuilder  {
     /// Creates a new `SearchProductsAsAdmin`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_products_as_admin::SearchProductsAsAdmin,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::search_products_as_admin::SearchProductsAsAdminOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::search_products_as_admin::SearchProductsAsAdminError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::search_products_as_admin::SearchProductsAsAdmin, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::search_products_as_admin::SearchProductsAsAdminOutput, aws_smithy_http::result::SdkError<crate::operation::search_products_as_admin::SearchProductsAsAdminError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator {
-        crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator {
+                            crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::new(self.handle, self.inner)
+                        }
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -113,24 +86,12 @@ impl SearchProductsAsAdminFluentBuilder {
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
-    pub fn filters(
-        mut self,
-        k: crate::types::ProductViewFilterBy,
-        v: std::vec::Vec<std::string::String>,
-    ) -> Self {
+    pub fn filters(mut self, k: crate::types::ProductViewFilterBy, v: std::vec::Vec<std::string::String>) -> Self {
         self.inner = self.inner.filters(k, v);
         self
     }
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the administrator has access.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                crate::types::ProductViewFilterBy,
-                std::vec::Vec<std::string::String>,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<crate::types::ProductViewFilterBy, std::vec::Vec<std::string::String>>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -140,10 +101,7 @@ impl SearchProductsAsAdminFluentBuilder {
         self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::ProductViewSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ProductViewSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -183,11 +141,9 @@ impl SearchProductsAsAdminFluentBuilder {
         self
     }
     /// <p>Access level of the source of the product.</p>
-    pub fn set_product_source(
-        mut self,
-        input: std::option::Option<crate::types::ProductSource>,
-    ) -> Self {
+    pub fn set_product_source(mut self, input: std::option::Option<crate::types::ProductSource>) -> Self {
         self.inner = self.inner.set_product_source(input);
         self
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsSdsCertificate {
+pub struct VirtualGatewayListenerTlsSdsCertificate  {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> std::option::Option<& str> {
         self.secret_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl VirtualGatewayListenerTlsSdsCertificateBuilder {
     }
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_name = input;
-        self
+        self.secret_name = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsSdsCertificate`](crate::types::VirtualGatewayListenerTlsSdsCertificate).
     pub fn build(self) -> crate::types::VirtualGatewayListenerTlsSdsCertificate {
         crate::types::VirtualGatewayListenerTlsSdsCertificate {
-            secret_name: self.secret_name,
+            secret_name: self.secret_name
+            ,
         }
     }
 }
+

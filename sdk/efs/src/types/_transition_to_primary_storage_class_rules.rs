@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transitiontoprimarystorageclassrules = unimplemented!();
 /// match transitiontoprimarystorageclassrules {
@@ -29,60 +29,51 @@
 /// Specifically, when `transitiontoprimarystorageclassrules` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransitionToPrimaryStorageClassRules::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TransitionToPrimaryStorageClassRules {
     #[allow(missing_docs)] // documentation missing in model
     After1Access,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TransitionToPrimaryStorageClassRules {
-    fn from(s: &str) -> Self {
-        match s {
-            "AFTER_1_ACCESS" => TransitionToPrimaryStorageClassRules::After1Access,
-            other => TransitionToPrimaryStorageClassRules::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AFTER_1_ACCESS" => TransitionToPrimaryStorageClassRules::After1Access,
+other => TransitionToPrimaryStorageClassRules::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TransitionToPrimaryStorageClassRules {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TransitionToPrimaryStorageClassRules::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TransitionToPrimaryStorageClassRules::from(s))
+                }
+            }
 impl TransitionToPrimaryStorageClassRules {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TransitionToPrimaryStorageClassRules::After1Access => "AFTER_1_ACCESS",
-            TransitionToPrimaryStorageClassRules::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["AFTER_1_ACCESS"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TransitionToPrimaryStorageClassRules::After1Access => "AFTER_1_ACCESS",
+    TransitionToPrimaryStorageClassRules::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AFTER_1_ACCESS"]
+                }
+            }
 impl AsRef<str> for TransitionToPrimaryStorageClassRules {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

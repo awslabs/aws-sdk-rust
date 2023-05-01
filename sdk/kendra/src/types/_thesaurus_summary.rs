@@ -3,7 +3,7 @@
 /// <p>An array of summary information for a thesaurus or multiple thesauri.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThesaurusSummary {
+pub struct ThesaurusSummary  {
     /// <p>The identifier of the thesaurus.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ThesaurusSummary {
 }
 impl ThesaurusSummary {
     /// <p>The identifier of the thesaurus.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the thesaurus.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the thesaurus.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ThesaurusStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ThesaurusStatus> {
         self.status.as_ref()
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl ThesaurusSummaryBuilder {
     }
     /// <p>The identifier of the thesaurus.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the thesaurus.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl ThesaurusSummaryBuilder {
     }
     /// <p>The name of the thesaurus.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The status of the thesaurus.</p>
     pub fn status(mut self, input: crate::types::ThesaurusStatus) -> Self {
@@ -87,8 +85,7 @@ impl ThesaurusSummaryBuilder {
     }
     /// <p>The status of the thesaurus.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ThesaurusStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -96,12 +93,8 @@ impl ThesaurusSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the thesaurus was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -109,21 +102,23 @@ impl ThesaurusSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the thesaurus was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// Consumes the builder and constructs a [`ThesaurusSummary`](crate::types::ThesaurusSummary).
     pub fn build(self) -> crate::types::ThesaurusSummary {
         crate::types::ThesaurusSummary {
-            id: self.id,
-            name: self.name,
-            status: self.status,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The field well configuration of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KpiFieldWells {
+pub struct KpiFieldWells  {
     /// <p>The value field wells of a KPI visual.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
@@ -16,15 +16,15 @@ pub struct KpiFieldWells {
 }
 impl KpiFieldWells {
     /// <p>The value field wells of a KPI visual.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
         self.values.as_deref()
     }
     /// <p>The target value field wells of a KPI visual.</p>
-    pub fn target_values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn target_values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
         self.target_values.as_deref()
     }
     /// <p>The trend group field wells of a KPI visual.</p>
-    pub fn trend_groups(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn trend_groups(&self) -> std::option::Option<& [crate::types::DimensionField]> {
         self.trend_groups.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl KpiFieldWellsBuilder {
     /// <p>The value field wells of a KPI visual.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>The value field wells of a KPI visual.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
     }
     /// Appends an item to `target_values`.
     ///
@@ -70,17 +66,13 @@ impl KpiFieldWellsBuilder {
     /// <p>The target value field wells of a KPI visual.</p>
     pub fn target_values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.target_values.unwrap_or_default();
-        v.push(input);
-        self.target_values = Some(v);
-        self
+                        v.push(input);
+                        self.target_values = Some(v);
+                        self
     }
     /// <p>The target value field wells of a KPI visual.</p>
-    pub fn set_target_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.target_values = input;
-        self
+    pub fn set_target_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.target_values = input; self
     }
     /// Appends an item to `trend_groups`.
     ///
@@ -89,24 +81,24 @@ impl KpiFieldWellsBuilder {
     /// <p>The trend group field wells of a KPI visual.</p>
     pub fn trend_groups(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.trend_groups.unwrap_or_default();
-        v.push(input);
-        self.trend_groups = Some(v);
-        self
+                        v.push(input);
+                        self.trend_groups = Some(v);
+                        self
     }
     /// <p>The trend group field wells of a KPI visual.</p>
-    pub fn set_trend_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.trend_groups = input;
-        self
+    pub fn set_trend_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.trend_groups = input; self
     }
     /// Consumes the builder and constructs a [`KpiFieldWells`](crate::types::KpiFieldWells).
     pub fn build(self) -> crate::types::KpiFieldWells {
         crate::types::KpiFieldWells {
-            values: self.values,
-            target_values: self.target_values,
-            trend_groups: self.trend_groups,
+            values: self.values
+            ,
+            target_values: self.target_values
+            ,
+            trend_groups: self.trend_groups
+            ,
         }
     }
 }
+

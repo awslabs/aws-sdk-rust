@@ -3,7 +3,7 @@
 /// <p>Contains metadata information for a database in a data catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Database {
+pub struct Database  {
     /// <p>The name of the database.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,23 +12,19 @@ pub struct Database {
     pub description: std::option::Option<std::string::String>,
     /// <p>A set of custom key/value pairs.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Database {
     /// <p>The name of the database.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the database.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A set of custom key/value pairs.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
@@ -45,8 +41,7 @@ impl Database {
 pub struct DatabaseBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DatabaseBuilder {
     /// <p>The name of the database.</p>
@@ -56,8 +51,7 @@ impl DatabaseBuilder {
     }
     /// <p>The name of the database.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An optional description of the database.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,40 +60,33 @@ impl DatabaseBuilder {
     }
     /// <p>An optional description of the database.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>A set of custom key/value pairs.</p>
-    pub fn parameters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = Some(hash_map);
+                        self
     }
     /// <p>A set of custom key/value pairs.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// Consumes the builder and constructs a [`Database`](crate::types::Database).
     pub fn build(self) -> crate::types::Database {
         crate::types::Database {
-            name: self.name,
-            description: self.description,
-            parameters: self.parameters,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserInput {
+pub struct DescribeUserInput  {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeUserInput {
 }
 impl DescribeUserInput {
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeUserInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeUserInputBuilder {
     }
     /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in credentials to use the Transfer Family service and perform file transfer tasks.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeUserInput`](crate::operation::describe_user::DescribeUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_user::DescribeUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_user::DescribeUserInput {
-            server_id: self.server_id,
-            user_name: self.user_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_user::DescribeUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_user::DescribeUserInput {
+                server_id: self.server_id
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

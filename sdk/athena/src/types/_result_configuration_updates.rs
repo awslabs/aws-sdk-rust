@@ -3,7 +3,7 @@
 /// <p>The information about the updates in the query results, such as output location and encryption configuration for the query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultConfigurationUpdates {
+pub struct ResultConfigurationUpdates  {
     /// <p>The location in Amazon S3 where your query and calculation results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>. If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     #[doc(hidden)]
     pub output_location: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ResultConfigurationUpdates {
     /// <p>If set to "true", indicates that the previously-specified encryption configuration (also known as the client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     #[doc(hidden)]
     pub remove_encryption_configuration: std::option::Option<bool>,
-    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p> 
     /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
@@ -32,7 +32,7 @@ pub struct ResultConfigurationUpdates {
 }
 impl ResultConfigurationUpdates {
     /// <p>The location in Amazon S3 where your query and calculation results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>. If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn output_location(&self) -> std::option::Option<&str> {
+    pub fn output_location(&self) -> std::option::Option<& str> {
         self.output_location.as_deref()
     }
     /// <p>If set to "true", indicates that the previously-specified query results location (also known as a client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -40,18 +40,16 @@ impl ResultConfigurationUpdates {
         self.remove_output_location
     }
     /// <p>The encryption configuration for query and calculation results.</p>
-    pub fn encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(&self) -> std::option::Option<& crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
     /// <p>If set to "true", indicates that the previously-specified encryption configuration (also known as the client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn remove_encryption_configuration(&self) -> std::option::Option<bool> {
         self.remove_encryption_configuration
     }
-    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p> 
     /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
     /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -59,7 +57,7 @@ impl ResultConfigurationUpdates {
         self.remove_expected_bucket_owner
     }
     /// <p>The ACL configuration for the query results.</p>
-    pub fn acl_configuration(&self) -> std::option::Option<&crate::types::AclConfiguration> {
+    pub fn acl_configuration(&self) -> std::option::Option<& crate::types::AclConfiguration> {
         self.acl_configuration.as_ref()
     }
     /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -95,8 +93,7 @@ impl ResultConfigurationUpdatesBuilder {
     }
     /// <p>The location in Amazon S3 where your query and calculation results are stored, such as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a>. If workgroup settings override client-side settings, then the query uses the location for the query results and the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn set_output_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_location = input;
-        self
+        self.output_location = input; self
     }
     /// <p>If set to "true", indicates that the previously-specified query results location (also known as a client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn remove_output_location(mut self, input: bool) -> Self {
@@ -105,24 +102,16 @@ impl ResultConfigurationUpdatesBuilder {
     }
     /// <p>If set to "true", indicates that the previously-specified query results location (also known as a client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn set_remove_output_location(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_output_location = input;
-        self
+        self.remove_output_location = input; self
     }
     /// <p>The encryption configuration for query and calculation results.</p>
-    pub fn encryption_configuration(
-        mut self,
-        input: crate::types::EncryptionConfiguration,
-    ) -> Self {
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = Some(input);
         self
     }
     /// <p>The encryption configuration for query and calculation results.</p>
-    pub fn set_encryption_configuration(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionConfiguration>,
-    ) -> Self {
-        self.encryption_configuration = input;
-        self
+    pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input; self
     }
     /// <p>If set to "true", indicates that the previously-specified encryption configuration (also known as the client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn remove_encryption_configuration(mut self, input: bool) -> Self {
@@ -131,23 +120,18 @@ impl ResultConfigurationUpdatesBuilder {
     }
     /// <p>If set to "true", indicates that the previously-specified encryption configuration (also known as the client-side setting) for queries in this workgroup should be ignored and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's <code>ResultConfiguration</code> will be updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn set_remove_encryption_configuration(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_encryption_configuration = input;
-        self
+        self.remove_encryption_configuration = input; self
     }
-    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p> 
     /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
         self.expected_bucket_owner = Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p>
+    /// <p>The Amazon Web Services account ID that you expect to be the owner of the Amazon S3 bucket specified by <code>ResultConfiguration$OutputLocation</code>. If set, Athena uses the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services account ID does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions error.</p> 
     /// <p>If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code> setting that is specified for the workgroup, and also uses the location for storing query results specified in the workgroup. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.expected_bucket_owner = input;
-        self
+    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.expected_bucket_owner = input; self
     }
     /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn remove_expected_bucket_owner(mut self, input: bool) -> Self {
@@ -156,8 +140,7 @@ impl ResultConfigurationUpdatesBuilder {
     }
     /// <p>If set to "true", removes the Amazon Web Services account ID previously specified for <code>ResultConfiguration$ExpectedBucketOwner</code>. If set to "false" or not set, and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn set_remove_expected_bucket_owner(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_expected_bucket_owner = input;
-        self
+        self.remove_expected_bucket_owner = input; self
     }
     /// <p>The ACL configuration for the query results.</p>
     pub fn acl_configuration(mut self, input: crate::types::AclConfiguration) -> Self {
@@ -165,12 +148,8 @@ impl ResultConfigurationUpdatesBuilder {
         self
     }
     /// <p>The ACL configuration for the query results.</p>
-    pub fn set_acl_configuration(
-        mut self,
-        input: std::option::Option<crate::types::AclConfiguration>,
-    ) -> Self {
-        self.acl_configuration = input;
-        self
+    pub fn set_acl_configuration(mut self, input: std::option::Option<crate::types::AclConfiguration>) -> Self {
+        self.acl_configuration = input; self
     }
     /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn remove_acl_configuration(mut self, input: bool) -> Self {
@@ -179,20 +158,28 @@ impl ResultConfigurationUpdatesBuilder {
     }
     /// <p>If set to <code>true</code>, indicates that the previously-specified ACL configuration for queries in this workgroup should be ignored and set to null. If set to <code>false</code> or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>, the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code> is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub fn set_remove_acl_configuration(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_acl_configuration = input;
-        self
+        self.remove_acl_configuration = input; self
     }
     /// Consumes the builder and constructs a [`ResultConfigurationUpdates`](crate::types::ResultConfigurationUpdates).
     pub fn build(self) -> crate::types::ResultConfigurationUpdates {
         crate::types::ResultConfigurationUpdates {
-            output_location: self.output_location,
-            remove_output_location: self.remove_output_location,
-            encryption_configuration: self.encryption_configuration,
-            remove_encryption_configuration: self.remove_encryption_configuration,
-            expected_bucket_owner: self.expected_bucket_owner,
-            remove_expected_bucket_owner: self.remove_expected_bucket_owner,
-            acl_configuration: self.acl_configuration,
-            remove_acl_configuration: self.remove_acl_configuration,
+            output_location: self.output_location
+            ,
+            remove_output_location: self.remove_output_location
+            ,
+            encryption_configuration: self.encryption_configuration
+            ,
+            remove_encryption_configuration: self.remove_encryption_configuration
+            ,
+            expected_bucket_owner: self.expected_bucket_owner
+            ,
+            remove_expected_bucket_owner: self.remove_expected_bucket_owner
+            ,
+            acl_configuration: self.acl_configuration
+            ,
+            remove_acl_configuration: self.remove_acl_configuration
+            ,
         }
     }
 }
+

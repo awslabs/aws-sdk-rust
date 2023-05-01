@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAssociationsOutput {
+pub struct DescribeDirectConnectGatewayAssociationsOutput  {
     /// <p>Information about the associations.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_associations:
-        std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociation>>,
+    pub direct_connect_gateway_associations: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociation>>,
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeDirectConnectGatewayAssociationsOutput {
 }
 impl DescribeDirectConnectGatewayAssociationsOutput {
     /// <p>Information about the associations.</p>
-    pub fn direct_connect_gateway_associations(
-        &self,
-    ) -> std::option::Option<&[crate::types::DirectConnectGatewayAssociation]> {
+    pub fn direct_connect_gateway_associations(&self) -> std::option::Option<& [crate::types::DirectConnectGatewayAssociation]> {
         self.direct_connect_gateway_associations.as_deref()
     }
     /// <p>The token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDirectConnectGatewayAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsOutput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsOutputBuilder {
         crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeDirectConnectGatewayAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationsOutputBuilder {
-    pub(crate) direct_connect_gateway_associations:
-        std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociation>>,
+    pub(crate) direct_connect_gateway_associations: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociation>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl DescribeDirectConnectGatewayAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_direct_connect_gateway_associations`](Self::set_direct_connect_gateway_associations).
     ///
     /// <p>Information about the associations.</p>
-    pub fn direct_connect_gateway_associations(
-        mut self,
-        input: crate::types::DirectConnectGatewayAssociation,
-    ) -> Self {
+    pub fn direct_connect_gateway_associations(mut self, input: crate::types::DirectConnectGatewayAssociation) -> Self {
         let mut v = self.direct_connect_gateway_associations.unwrap_or_default();
-        v.push(input);
-        self.direct_connect_gateway_associations = Some(v);
-        self
+                        v.push(input);
+                        self.direct_connect_gateway_associations = Some(v);
+                        self
     }
     /// <p>Information about the associations.</p>
-    pub fn set_direct_connect_gateway_associations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociation>>,
-    ) -> Self {
-        self.direct_connect_gateway_associations = input;
-        self
+    pub fn set_direct_connect_gateway_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociation>>) -> Self {
+        self.direct_connect_gateway_associations = input; self
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl DescribeDirectConnectGatewayAssociationsOutputBuilder {
     }
     /// <p>The token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsOutput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput {
         crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput {
             direct_connect_gateway_associations: self.direct_connect_gateway_associations
             ,
@@ -98,3 +86,4 @@ impl DescribeDirectConnectGatewayAssociationsOutputBuilder {
         }
     }
 }
+

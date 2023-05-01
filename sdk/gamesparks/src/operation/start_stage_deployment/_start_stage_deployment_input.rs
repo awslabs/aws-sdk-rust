@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartStageDeploymentInput {
+pub struct StartStageDeploymentInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct StartStageDeploymentInput {
 }
 impl StartStageDeploymentInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage to deploy the snapshot onto.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The identifier of the snapshot to deploy.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl StartStageDeploymentInput {
     /// Creates a new builder-style object to manufacture [`StartStageDeploymentInput`](crate::operation::start_stage_deployment::StartStageDeploymentInput).
-    pub fn builder(
-    ) -> crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder {
         crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl StartStageDeploymentInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// <p>The name of the stage to deploy the snapshot onto.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl StartStageDeploymentInputBuilder {
     }
     /// <p>The name of the stage to deploy the snapshot onto.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The identifier of the snapshot to deploy.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl StartStageDeploymentInputBuilder {
     }
     /// <p>The identifier of the snapshot to deploy.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,23 +85,22 @@ impl StartStageDeploymentInputBuilder {
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`StartStageDeploymentInput`](crate::operation::start_stage_deployment::StartStageDeploymentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_stage_deployment::StartStageDeploymentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_stage_deployment::StartStageDeploymentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_stage_deployment::StartStageDeploymentInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                snapshot_id: self.snapshot_id,
-                client_token: self.client_token,
-            },
+                game_name: self.game_name
+                ,
+                stage_name: self.stage_name
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

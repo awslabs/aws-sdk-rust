@@ -3,7 +3,7 @@
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueSuccessEntry {
+pub struct BatchGetAssetPropertyValueSuccessEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BatchGetAssetPropertyValueSuccessEntry {
 }
 impl BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>Contains asset property value information.</p>
-    pub fn asset_property_value(&self) -> std::option::Option<&crate::types::AssetPropertyValue> {
+    pub fn asset_property_value(&self) -> std::option::Option<& crate::types::AssetPropertyValue> {
         self.asset_property_value.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl BatchGetAssetPropertyValueSuccessEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>Contains asset property value information.</p>
     pub fn asset_property_value(mut self, input: crate::types::AssetPropertyValue) -> Self {
@@ -52,18 +51,17 @@ impl BatchGetAssetPropertyValueSuccessEntryBuilder {
         self
     }
     /// <p>Contains asset property value information.</p>
-    pub fn set_asset_property_value(
-        mut self,
-        input: std::option::Option<crate::types::AssetPropertyValue>,
-    ) -> Self {
-        self.asset_property_value = input;
-        self
+    pub fn set_asset_property_value(mut self, input: std::option::Option<crate::types::AssetPropertyValue>) -> Self {
+        self.asset_property_value = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSuccessEntry`](crate::types::BatchGetAssetPropertyValueSuccessEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueSuccessEntry {
         crate::types::BatchGetAssetPropertyValueSuccessEntry {
-            entry_id: self.entry_id,
-            asset_property_value: self.asset_property_value,
+            entry_id: self.entry_id
+            ,
+            asset_property_value: self.asset_property_value
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorldTemplateInput {
+pub struct UpdateWorldTemplateInput  {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
     #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
@@ -18,28 +18,26 @@ pub struct UpdateWorldTemplateInput {
 }
 impl UpdateWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The world template body.</p>
-    pub fn template_body(&self) -> std::option::Option<&str> {
+    pub fn template_body(&self) -> std::option::Option<& str> {
         self.template_body.as_deref()
     }
     /// <p>The location of the world template.</p>
-    pub fn template_location(&self) -> std::option::Option<&crate::types::TemplateLocation> {
+    pub fn template_location(&self) -> std::option::Option<& crate::types::TemplateLocation> {
         self.template_location.as_ref()
     }
 }
 impl UpdateWorldTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorldTemplateInput`](crate::operation::update_world_template::UpdateWorldTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder {
-        crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder {
+        crate::operation::update_world_template::builders::UpdateWorldTemplateInputBuilder::default()
     }
 }
 
@@ -60,8 +58,7 @@ impl UpdateWorldTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// <p>The name of the template.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl UpdateWorldTemplateInputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The world template body.</p>
     pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl UpdateWorldTemplateInputBuilder {
     }
     /// <p>The world template body.</p>
     pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_body = input;
-        self
+        self.template_body = input; self
     }
     /// <p>The location of the world template.</p>
     pub fn template_location(mut self, input: crate::types::TemplateLocation) -> Self {
@@ -89,27 +84,23 @@ impl UpdateWorldTemplateInputBuilder {
         self
     }
     /// <p>The location of the world template.</p>
-    pub fn set_template_location(
-        mut self,
-        input: std::option::Option<crate::types::TemplateLocation>,
-    ) -> Self {
-        self.template_location = input;
-        self
+    pub fn set_template_location(mut self, input: std::option::Option<crate::types::TemplateLocation>) -> Self {
+        self.template_location = input; self
     }
     /// Consumes the builder and constructs a [`UpdateWorldTemplateInput`](crate::operation::update_world_template::UpdateWorldTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_world_template::UpdateWorldTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_world_template::UpdateWorldTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_world_template::UpdateWorldTemplateInput {
-                template: self.template,
-                name: self.name,
-                template_body: self.template_body,
-                template_location: self.template_location,
-            },
+                template: self.template
+                ,
+                name: self.name
+                ,
+                template_body: self.template_body
+                ,
+                template_location: self.template_location
+                ,
+            }
         )
     }
 }
+

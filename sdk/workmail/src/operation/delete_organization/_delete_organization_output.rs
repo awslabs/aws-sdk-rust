@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOrganizationOutput {
+pub struct DeleteOrganizationOutput  {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct DeleteOrganizationOutput {
 }
 impl DeleteOrganizationOutput {
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The state of the organization.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationOutput`](crate::operation::delete_organization::DeleteOrganizationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_organization::builders::DeleteOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_organization::builders::DeleteOrganizationOutputBuilder {
         crate::operation::delete_organization::builders::DeleteOrganizationOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl DeleteOrganizationOutputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The state of the organization.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,24 +58,26 @@ impl DeleteOrganizationOutputBuilder {
     }
     /// <p>The state of the organization.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteOrganizationOutput`](crate::operation::delete_organization::DeleteOrganizationOutput).
     pub fn build(self) -> crate::operation::delete_organization::DeleteOrganizationOutput {
         crate::operation::delete_organization::DeleteOrganizationOutput {
-            organization_id: self.organization_id,
-            state: self.state,
+            organization_id: self.organization_id
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

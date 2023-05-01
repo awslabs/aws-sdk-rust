@@ -3,7 +3,7 @@
 /// <p>Describes a resource entitled for use with a license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Entitlement {
+pub struct Entitlement  {
     /// <p>Entitlement name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct Entitlement {
 }
 impl Entitlement {
     /// <p>Entitlement name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
@@ -41,7 +41,7 @@ impl Entitlement {
         self.overage
     }
     /// <p>Entitlement unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::EntitlementUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::types::EntitlementUnit> {
         self.unit.as_ref()
     }
     /// <p>Indicates whether check-ins are allowed.</p>
@@ -75,8 +75,7 @@ impl EntitlementBuilder {
     }
     /// <p>Entitlement name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl EntitlementBuilder {
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     pub fn max_count(mut self, input: i64) -> Self {
@@ -95,8 +93,7 @@ impl EntitlementBuilder {
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     pub fn set_max_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>Indicates whether overages are allowed.</p>
     pub fn overage(mut self, input: bool) -> Self {
@@ -105,8 +102,7 @@ impl EntitlementBuilder {
     }
     /// <p>Indicates whether overages are allowed.</p>
     pub fn set_overage(mut self, input: std::option::Option<bool>) -> Self {
-        self.overage = input;
-        self
+        self.overage = input; self
     }
     /// <p>Entitlement unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementUnit) -> Self {
@@ -115,8 +111,7 @@ impl EntitlementBuilder {
     }
     /// <p>Entitlement unit.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::EntitlementUnit>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn allow_check_in(mut self, input: bool) -> Self {
@@ -125,18 +120,24 @@ impl EntitlementBuilder {
     }
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn set_allow_check_in(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_check_in = input;
-        self
+        self.allow_check_in = input; self
     }
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {
         crate::types::Entitlement {
-            name: self.name,
-            value: self.value,
-            max_count: self.max_count,
-            overage: self.overage,
-            unit: self.unit,
-            allow_check_in: self.allow_check_in,
+            name: self.name
+            ,
+            value: self.value
+            ,
+            max_count: self.max_count
+            ,
+            overage: self.overage
+            ,
+            unit: self.unit
+            ,
+            allow_check_in: self.allow_check_in
+            ,
         }
     }
 }
+

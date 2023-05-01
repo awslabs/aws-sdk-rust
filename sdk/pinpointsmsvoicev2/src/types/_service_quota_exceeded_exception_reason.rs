@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let servicequotaexceededexceptionreason = unimplemented!();
 /// match servicequotaexceededexceptionreason {
@@ -41,22 +41,14 @@
 /// Specifically, when `servicequotaexceededexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceQuotaExceededExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationSetsPerAccount,
@@ -85,118 +77,63 @@ pub enum ServiceQuotaExceededExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     TagsPerResource,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServiceQuotaExceededExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFIGURATION_SETS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONFIGURATION_SETS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount,
+"DAILY_DESTINATION_CALL_LIMIT" => ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit,
+"EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet,
+"KEYWORDS_PER_PHONE_NUMBER" => ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber,
+"KEYWORDS_PER_POOL" => ServiceQuotaExceededExceptionReason::KeywordsPerPool,
+"MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText,
+"MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice,
+"OPT_OUT_LISTS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::OptOutListsPerAccount,
+"ORIGINATION_IDENTITIES_PER_POOL" => ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool,
+"PHONE_NUMBERS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount,
+"PHONE_NUMBERS_PER_REGISTRATION" => ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration,
+"POOLS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PoolsPerAccount,
+"TAGS_PER_RESOURCE" => ServiceQuotaExceededExceptionReason::TagsPerResource,
+other => ServiceQuotaExceededExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "DAILY_DESTINATION_CALL_LIMIT" => {
-                ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit
-            }
-            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET" => {
-                ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet
-            }
-            "KEYWORDS_PER_PHONE_NUMBER" => {
-                ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber
-            }
-            "KEYWORDS_PER_POOL" => ServiceQuotaExceededExceptionReason::KeywordsPerPool,
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT" => {
-                ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText
-            }
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE" => {
-                ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice
-            }
-            "OPT_OUT_LISTS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::OptOutListsPerAccount
-            }
-            "ORIGINATION_IDENTITIES_PER_POOL" => {
-                ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool
-            }
-            "PHONE_NUMBERS_PER_ACCOUNT" => {
-                ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount
-            }
-            "PHONE_NUMBERS_PER_REGISTRATION" => {
-                ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration
-            }
-            "POOLS_PER_ACCOUNT" => ServiceQuotaExceededExceptionReason::PoolsPerAccount,
-            "TAGS_PER_RESOURCE" => ServiceQuotaExceededExceptionReason::TagsPerResource,
-            other => ServiceQuotaExceededExceptionReason::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
 impl std::str::FromStr for ServiceQuotaExceededExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceQuotaExceededExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServiceQuotaExceededExceptionReason::from(s))
+                }
+            }
 impl ServiceQuotaExceededExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => {
-                "CONFIGURATION_SETS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => {
-                "DAILY_DESTINATION_CALL_LIMIT"
-            }
-            ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => {
-                "EVENT_DESTINATIONS_PER_CONFIGURATION_SET"
-            }
-            ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => {
-                "KEYWORDS_PER_PHONE_NUMBER"
-            }
-            ServiceQuotaExceededExceptionReason::KeywordsPerPool => "KEYWORDS_PER_POOL",
-            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => {
-                "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT"
-            }
-            ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => {
-                "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE"
-            }
-            ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => {
-                "OPT_OUT_LISTS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => {
-                "ORIGINATION_IDENTITIES_PER_POOL"
-            }
-            ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => {
-                "PHONE_NUMBERS_PER_ACCOUNT"
-            }
-            ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => {
-                "PHONE_NUMBERS_PER_REGISTRATION"
-            }
-            ServiceQuotaExceededExceptionReason::PoolsPerAccount => "POOLS_PER_ACCOUNT",
-            ServiceQuotaExceededExceptionReason::TagsPerResource => "TAGS_PER_RESOURCE",
-            ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFIGURATION_SETS_PER_ACCOUNT",
-            "DAILY_DESTINATION_CALL_LIMIT",
-            "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
-            "KEYWORDS_PER_PHONE_NUMBER",
-            "KEYWORDS_PER_POOL",
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
-            "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
-            "OPT_OUT_LISTS_PER_ACCOUNT",
-            "ORIGINATION_IDENTITIES_PER_POOL",
-            "PHONE_NUMBERS_PER_ACCOUNT",
-            "PHONE_NUMBERS_PER_REGISTRATION",
-            "POOLS_PER_ACCOUNT",
-            "TAGS_PER_RESOURCE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ServiceQuotaExceededExceptionReason::ConfigurationSetsPerAccount => "CONFIGURATION_SETS_PER_ACCOUNT",
+    ServiceQuotaExceededExceptionReason::DailyDestinationCallLimit => "DAILY_DESTINATION_CALL_LIMIT",
+    ServiceQuotaExceededExceptionReason::EventDestinationsPerConfigurationSet => "EVENT_DESTINATIONS_PER_CONFIGURATION_SET",
+    ServiceQuotaExceededExceptionReason::KeywordsPerPhoneNumber => "KEYWORDS_PER_PHONE_NUMBER",
+    ServiceQuotaExceededExceptionReason::KeywordsPerPool => "KEYWORDS_PER_POOL",
+    ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForText => "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT",
+    ServiceQuotaExceededExceptionReason::MonthlySpendLimitReachedForVoice => "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE",
+    ServiceQuotaExceededExceptionReason::OptOutListsPerAccount => "OPT_OUT_LISTS_PER_ACCOUNT",
+    ServiceQuotaExceededExceptionReason::OriginationIdentitiesPerPool => "ORIGINATION_IDENTITIES_PER_POOL",
+    ServiceQuotaExceededExceptionReason::PhoneNumbersPerAccount => "PHONE_NUMBERS_PER_ACCOUNT",
+    ServiceQuotaExceededExceptionReason::PhoneNumbersPerRegistration => "PHONE_NUMBERS_PER_REGISTRATION",
+    ServiceQuotaExceededExceptionReason::PoolsPerAccount => "POOLS_PER_ACCOUNT",
+    ServiceQuotaExceededExceptionReason::TagsPerResource => "TAGS_PER_RESOURCE",
+    ServiceQuotaExceededExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFIGURATION_SETS_PER_ACCOUNT", "DAILY_DESTINATION_CALL_LIMIT", "EVENT_DESTINATIONS_PER_CONFIGURATION_SET", "KEYWORDS_PER_PHONE_NUMBER", "KEYWORDS_PER_POOL", "MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT", "MONTHLY_SPEND_LIMIT_REACHED_FOR_VOICE", "OPT_OUT_LISTS_PER_ACCOUNT", "ORIGINATION_IDENTITIES_PER_POOL", "PHONE_NUMBERS_PER_ACCOUNT", "PHONE_NUMBERS_PER_REGISTRATION", "POOLS_PER_ACCOUNT", "TAGS_PER_RESOURCE"]
+                }
+            }
 impl AsRef<str> for ServiceQuotaExceededExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

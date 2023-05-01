@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesOutput {
+pub struct ListPricingRulesOutput  {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct ListPricingRulesOutput {
 }
 impl ListPricingRulesOutput {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> A list containing the described pricing rules. </p>
-    pub fn pricing_rules(&self) -> std::option::Option<&[crate::types::PricingRuleListElement]> {
+    pub fn pricing_rules(&self) -> std::option::Option<& [crate::types::PricingRuleListElement]> {
         self.pricing_rules.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPricingRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPricingRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput).
-    pub fn builder() -> crate::operation::list_pricing_rules::builders::ListPricingRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pricing_rules::builders::ListPricingRulesOutputBuilder {
         crate::operation::list_pricing_rules::builders::ListPricingRulesOutputBuilder::default()
     }
 }
@@ -46,8 +45,7 @@ impl ListPricingRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListPricingRulesOutputBuilder {
     pub(crate) billing_period: std::option::Option<std::string::String>,
-    pub(crate) pricing_rules:
-        std::option::Option<std::vec::Vec<crate::types::PricingRuleListElement>>,
+    pub(crate) pricing_rules: std::option::Option<std::vec::Vec<crate::types::PricingRuleListElement>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -59,8 +57,7 @@ impl ListPricingRulesOutputBuilder {
     }
     /// <p> The billing period for which the described pricing rules are applicable. </p>
     pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// Appends an item to `pricing_rules`.
     ///
@@ -69,17 +66,13 @@ impl ListPricingRulesOutputBuilder {
     /// <p> A list containing the described pricing rules. </p>
     pub fn pricing_rules(mut self, input: crate::types::PricingRuleListElement) -> Self {
         let mut v = self.pricing_rules.unwrap_or_default();
-        v.push(input);
-        self.pricing_rules = Some(v);
-        self
+                        v.push(input);
+                        self.pricing_rules = Some(v);
+                        self
     }
     /// <p> A list containing the described pricing rules. </p>
-    pub fn set_pricing_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PricingRuleListElement>>,
-    ) -> Self {
-        self.pricing_rules = input;
-        self
+    pub fn set_pricing_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::PricingRuleListElement>>) -> Self {
+        self.pricing_rules = input; self
     }
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,25 +81,28 @@ impl ListPricingRulesOutputBuilder {
     }
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPricingRulesOutput`](crate::operation::list_pricing_rules::ListPricingRulesOutput).
     pub fn build(self) -> crate::operation::list_pricing_rules::ListPricingRulesOutput {
         crate::operation::list_pricing_rules::ListPricingRulesOutput {
-            billing_period: self.billing_period,
-            pricing_rules: self.pricing_rules,
-            next_token: self.next_token,
+            billing_period: self.billing_period
+            ,
+            pricing_rules: self.pricing_rules
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Read options for an annotation import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadOptions {
+pub struct ReadOptions  {
     /// <p>The file's field separator.</p>
     #[doc(hidden)]
     pub sep: std::option::Option<std::string::String>,
@@ -34,15 +34,15 @@ pub struct ReadOptions {
 }
 impl ReadOptions {
     /// <p>The file's field separator.</p>
-    pub fn sep(&self) -> std::option::Option<&str> {
+    pub fn sep(&self) -> std::option::Option<& str> {
         self.sep.as_deref()
     }
     /// <p>The file's encoding.</p>
-    pub fn encoding(&self) -> std::option::Option<&str> {
+    pub fn encoding(&self) -> std::option::Option<& str> {
         self.encoding.as_deref()
     }
     /// <p>The file's quote character.</p>
-    pub fn quote(&self) -> std::option::Option<&str> {
+    pub fn quote(&self) -> std::option::Option<& str> {
         self.quote.as_deref()
     }
     /// <p>Whether all values need to be quoted, or just those that contain quotes.</p>
@@ -50,7 +50,7 @@ impl ReadOptions {
         self.quote_all
     }
     /// <p>A character for escaping quotes in the file.</p>
-    pub fn escape(&self) -> std::option::Option<&str> {
+    pub fn escape(&self) -> std::option::Option<& str> {
         self.escape.as_deref()
     }
     /// <p>Whether quotes need to be escaped in the file.</p>
@@ -58,7 +58,7 @@ impl ReadOptions {
         self.escape_quotes
     }
     /// <p>The file's comment character.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>Whether the file has a header row.</p>
@@ -66,7 +66,7 @@ impl ReadOptions {
         self.header
     }
     /// <p>A line separator for the file.</p>
-    pub fn line_sep(&self) -> std::option::Option<&str> {
+    pub fn line_sep(&self) -> std::option::Option<& str> {
         self.line_sep.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>The file's field separator.</p>
     pub fn set_sep(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sep = input;
-        self
+        self.sep = input; self
     }
     /// <p>The file's encoding.</p>
     pub fn encoding(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>The file's encoding.</p>
     pub fn set_encoding(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encoding = input;
-        self
+        self.encoding = input; self
     }
     /// <p>The file's quote character.</p>
     pub fn quote(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>The file's quote character.</p>
     pub fn set_quote(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quote = input;
-        self
+        self.quote = input; self
     }
     /// <p>Whether all values need to be quoted, or just those that contain quotes.</p>
     pub fn quote_all(mut self, input: bool) -> Self {
@@ -129,8 +126,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>Whether all values need to be quoted, or just those that contain quotes.</p>
     pub fn set_quote_all(mut self, input: std::option::Option<bool>) -> Self {
-        self.quote_all = input;
-        self
+        self.quote_all = input; self
     }
     /// <p>A character for escaping quotes in the file.</p>
     pub fn escape(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +135,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>A character for escaping quotes in the file.</p>
     pub fn set_escape(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.escape = input;
-        self
+        self.escape = input; self
     }
     /// <p>Whether quotes need to be escaped in the file.</p>
     pub fn escape_quotes(mut self, input: bool) -> Self {
@@ -149,8 +144,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>Whether quotes need to be escaped in the file.</p>
     pub fn set_escape_quotes(mut self, input: std::option::Option<bool>) -> Self {
-        self.escape_quotes = input;
-        self
+        self.escape_quotes = input; self
     }
     /// <p>The file's comment character.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +153,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>The file's comment character.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>Whether the file has a header row.</p>
     pub fn header(mut self, input: bool) -> Self {
@@ -169,8 +162,7 @@ impl ReadOptionsBuilder {
     }
     /// <p>Whether the file has a header row.</p>
     pub fn set_header(mut self, input: std::option::Option<bool>) -> Self {
-        self.header = input;
-        self
+        self.header = input; self
     }
     /// <p>A line separator for the file.</p>
     pub fn line_sep(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,21 +171,33 @@ impl ReadOptionsBuilder {
     }
     /// <p>A line separator for the file.</p>
     pub fn set_line_sep(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.line_sep = input;
-        self
+        self.line_sep = input; self
     }
     /// Consumes the builder and constructs a [`ReadOptions`](crate::types::ReadOptions).
     pub fn build(self) -> crate::types::ReadOptions {
         crate::types::ReadOptions {
-            sep: self.sep,
-            encoding: self.encoding,
-            quote: self.quote,
-            quote_all: self.quote_all.unwrap_or_default(),
-            escape: self.escape,
-            escape_quotes: self.escape_quotes.unwrap_or_default(),
-            comment: self.comment,
-            header: self.header.unwrap_or_default(),
-            line_sep: self.line_sep,
+            sep: self.sep
+            ,
+            encoding: self.encoding
+            ,
+            quote: self.quote
+            ,
+            quote_all: self.quote_all
+                .unwrap_or_default()
+            ,
+            escape: self.escape
+            ,
+            escape_quotes: self.escape_quotes
+                .unwrap_or_default()
+            ,
+            comment: self.comment
+            ,
+            header: self.header
+                .unwrap_or_default()
+            ,
+            line_sep: self.line_sep
+            ,
         }
     }
 }
+

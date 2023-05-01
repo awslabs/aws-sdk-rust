@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRecommenderInput {
+pub struct StopRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
     #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl StopRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
-    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl StopRecommenderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
     pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// Consumes the builder and constructs a [`StopRecommenderInput`](crate::operation::stop_recommender::StopRecommenderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_recommender::StopRecommenderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_recommender::StopRecommenderInput {
-            recommender_arn: self.recommender_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_recommender::StopRecommenderInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_recommender::StopRecommenderInput {
+                recommender_arn: self.recommender_arn
+                ,
+            }
+        )
     }
 }
+

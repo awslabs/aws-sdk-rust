@@ -3,7 +3,7 @@
 /// <p>Information about agents or connectors that were instructed to start collecting data. Information includes the agent/connector ID, a description of the operation, and whether the agent/connector configuration was updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentConfigurationStatus {
+pub struct AgentConfigurationStatus  {
     /// <p>The agent/connector ID.</p>
     #[doc(hidden)]
     pub agent_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AgentConfigurationStatus {
 }
 impl AgentConfigurationStatus {
     /// <p>The agent/connector ID.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
@@ -24,7 +24,7 @@ impl AgentConfigurationStatus {
         self.operation_succeeded
     }
     /// <p>A description of the operation performed.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AgentConfigurationStatusBuilder {
     }
     /// <p>The agent/connector ID.</p>
     pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
     pub fn operation_succeeded(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl AgentConfigurationStatusBuilder {
     }
     /// <p>Information about the status of the <code>StartDataCollection</code> and <code>StopDataCollection</code> operations. The system has recorded the data collection operation. The agent/connector receives this command the next time it polls for a new command. </p>
     pub fn set_operation_succeeded(mut self, input: std::option::Option<bool>) -> Self {
-        self.operation_succeeded = input;
-        self
+        self.operation_succeeded = input; self
     }
     /// <p>A description of the operation performed.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,19 @@ impl AgentConfigurationStatusBuilder {
     }
     /// <p>A description of the operation performed.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`AgentConfigurationStatus`](crate::types::AgentConfigurationStatus).
     pub fn build(self) -> crate::types::AgentConfigurationStatus {
         crate::types::AgentConfigurationStatus {
-            agent_id: self.agent_id,
-            operation_succeeded: self.operation_succeeded.unwrap_or_default(),
-            description: self.description,
+            agent_id: self.agent_id
+            ,
+            operation_succeeded: self.operation_succeeded
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

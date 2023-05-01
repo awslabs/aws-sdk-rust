@@ -3,7 +3,7 @@
 /// <p>The InputConfig for an EarthObservationJob response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputConfigOutput {
+pub struct InputConfigOutput  {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
     #[doc(hidden)]
     pub previous_earth_observation_job_arn: std::option::Option<std::string::String>,
@@ -12,24 +12,19 @@ pub struct InputConfigOutput {
     pub data_source_config: std::option::Option<crate::types::EojDataSourceConfigInput>,
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
     #[doc(hidden)]
-    pub raster_data_collection_query:
-        std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
+    pub raster_data_collection_query: std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
 }
 impl InputConfigOutput {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
-    pub fn previous_earth_observation_job_arn(&self) -> std::option::Option<&str> {
+    pub fn previous_earth_observation_job_arn(&self) -> std::option::Option<& str> {
         self.previous_earth_observation_job_arn.as_deref()
     }
     /// <p>The location of the input data.</p>
-    pub fn data_source_config(
-        &self,
-    ) -> std::option::Option<&crate::types::EojDataSourceConfigInput> {
+    pub fn data_source_config(&self) -> std::option::Option<& crate::types::EojDataSourceConfigInput> {
         self.data_source_config.as_ref()
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
-    pub fn raster_data_collection_query(
-        &self,
-    ) -> std::option::Option<&crate::types::RasterDataCollectionQueryOutput> {
+    pub fn raster_data_collection_query(&self) -> std::option::Option<& crate::types::RasterDataCollectionQueryOutput> {
         self.raster_data_collection_query.as_ref()
     }
 }
@@ -46,25 +41,17 @@ impl InputConfigOutput {
 pub struct InputConfigOutputBuilder {
     pub(crate) previous_earth_observation_job_arn: std::option::Option<std::string::String>,
     pub(crate) data_source_config: std::option::Option<crate::types::EojDataSourceConfigInput>,
-    pub(crate) raster_data_collection_query:
-        std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
+    pub(crate) raster_data_collection_query: std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
 }
 impl InputConfigOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
-    pub fn previous_earth_observation_job_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn previous_earth_observation_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.previous_earth_observation_job_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the previous Earth Observation job.</p>
-    pub fn set_previous_earth_observation_job_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.previous_earth_observation_job_arn = input;
-        self
+    pub fn set_previous_earth_observation_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.previous_earth_observation_job_arn = input; self
     }
     /// <p>The location of the input data.</p>
     pub fn data_source_config(mut self, input: crate::types::EojDataSourceConfigInput) -> Self {
@@ -72,35 +59,28 @@ impl InputConfigOutputBuilder {
         self
     }
     /// <p>The location of the input data.</p>
-    pub fn set_data_source_config(
-        mut self,
-        input: std::option::Option<crate::types::EojDataSourceConfigInput>,
-    ) -> Self {
-        self.data_source_config = input;
-        self
+    pub fn set_data_source_config(mut self, input: std::option::Option<crate::types::EojDataSourceConfigInput>) -> Self {
+        self.data_source_config = input; self
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
-    pub fn raster_data_collection_query(
-        mut self,
-        input: crate::types::RasterDataCollectionQueryOutput,
-    ) -> Self {
+    pub fn raster_data_collection_query(mut self, input: crate::types::RasterDataCollectionQueryOutput) -> Self {
         self.raster_data_collection_query = Some(input);
         self
     }
     /// <p>The structure representing the RasterDataCollection Query consisting of the Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange, and Property Filters.</p>
-    pub fn set_raster_data_collection_query(
-        mut self,
-        input: std::option::Option<crate::types::RasterDataCollectionQueryOutput>,
-    ) -> Self {
-        self.raster_data_collection_query = input;
-        self
+    pub fn set_raster_data_collection_query(mut self, input: std::option::Option<crate::types::RasterDataCollectionQueryOutput>) -> Self {
+        self.raster_data_collection_query = input; self
     }
     /// Consumes the builder and constructs a [`InputConfigOutput`](crate::types::InputConfigOutput).
     pub fn build(self) -> crate::types::InputConfigOutput {
         crate::types::InputConfigOutput {
-            previous_earth_observation_job_arn: self.previous_earth_observation_job_arn,
-            data_source_config: self.data_source_config,
-            raster_data_collection_query: self.raster_data_collection_query,
+            previous_earth_observation_job_arn: self.previous_earth_observation_job_arn
+            ,
+            data_source_config: self.data_source_config
+            ,
+            raster_data_collection_query: self.raster_data_collection_query
+            ,
         }
     }
 }
+

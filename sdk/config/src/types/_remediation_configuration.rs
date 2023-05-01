@@ -3,7 +3,7 @@
 /// <p>An object that represents the details about the remediation configuration that includes the remediation action, parameters, and data to execute the action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemediationConfiguration {
+pub struct RemediationConfiguration  {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
@@ -13,16 +13,14 @@ pub struct RemediationConfiguration {
     /// <p>Target ID is the name of the SSM document.</p>
     #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
-    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
+    /// <p>Version of the target. For example, version of the SSM document.</p> <note> 
+    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_version: std::option::Option<std::string::String>,
     /// <p>An object of the RemediationParameterValue.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>>,
     /// <p>The type of a resource. </p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -32,11 +30,11 @@ pub struct RemediationConfiguration {
     /// <p>An ExecutionControls object.</p>
     #[doc(hidden)]
     pub execution_controls: std::option::Option<crate::types::ExecutionControls>,
-    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
+    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p> 
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     #[doc(hidden)]
     pub maximum_automatic_attempts: std::option::Option<i32>,
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p> 
     /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
     #[doc(hidden)]
     pub retry_attempt_seconds: std::option::Option<i64>,
@@ -49,33 +47,29 @@ pub struct RemediationConfiguration {
 }
 impl RemediationConfiguration {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::types::RemediationTargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::types::RemediationTargetType> {
         self.target_type.as_ref()
     }
     /// <p>Target ID is the name of the SSM document.</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
-    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
+    /// <p>Version of the target. For example, version of the SSM document.</p> <note> 
+    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p> 
     /// </note>
-    pub fn target_version(&self) -> std::option::Option<&str> {
+    pub fn target_version(&self) -> std::option::Option<& str> {
         self.target_version.as_deref()
     }
     /// <p>An object of the RemediationParameterValue.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>> {
         self.parameters.as_ref()
     }
     /// <p>The type of a resource. </p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The remediation is triggered automatically.</p>
@@ -83,25 +77,25 @@ impl RemediationConfiguration {
         self.automatic
     }
     /// <p>An ExecutionControls object.</p>
-    pub fn execution_controls(&self) -> std::option::Option<&crate::types::ExecutionControls> {
+    pub fn execution_controls(&self) -> std::option::Option<& crate::types::ExecutionControls> {
         self.execution_controls.as_ref()
     }
-    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
+    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p> 
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub fn maximum_automatic_attempts(&self) -> std::option::Option<i32> {
         self.maximum_automatic_attempts
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p> 
     /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
     pub fn retry_attempt_seconds(&self) -> std::option::Option<i64> {
         self.retry_attempt_seconds
     }
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
-    pub fn created_by_service(&self) -> std::option::Option<&str> {
+    pub fn created_by_service(&self) -> std::option::Option<& str> {
         self.created_by_service.as_deref()
     }
 }
@@ -120,9 +114,7 @@ pub struct RemediationConfigurationBuilder {
     pub(crate) target_type: std::option::Option<crate::types::RemediationTargetType>,
     pub(crate) target_id: std::option::Option<std::string::String>,
     pub(crate) target_version: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>,
-    >,
+    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
     pub(crate) automatic: std::option::Option<bool>,
     pub(crate) execution_controls: std::option::Option<crate::types::ExecutionControls>,
@@ -139,8 +131,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
     pub fn target_type(mut self, input: crate::types::RemediationTargetType) -> Self {
@@ -148,12 +139,8 @@ impl RemediationConfigurationBuilder {
         self
     }
     /// <p>The type of the target. Target executes remediation. For example, SSM document.</p>
-    pub fn set_target_type(
-        mut self,
-        input: std::option::Option<crate::types::RemediationTargetType>,
-    ) -> Self {
-        self.target_type = input;
-        self
+    pub fn set_target_type(mut self, input: std::option::Option<crate::types::RemediationTargetType>) -> Self {
+        self.target_type = input; self
     }
     /// <p>Target ID is the name of the SSM document.</p>
     pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,47 +149,35 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>Target ID is the name of the SSM document.</p>
     pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
-    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
+    /// <p>Version of the target. For example, version of the SSM document.</p> <note> 
+    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p> 
     /// </note>
     pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_version = Some(input.into());
         self
     }
-    /// <p>Version of the target. For example, version of the SSM document.</p> <note>
-    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p>
+    /// <p>Version of the target. For example, version of the SSM document.</p> <note> 
+    /// <p>If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.</p> 
     /// </note>
     pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_version = input;
-        self
+        self.target_version = input; self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>An object of the RemediationParameterValue.</p>
-    pub fn parameters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::RemediationParameterValue,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::types::RemediationParameterValue) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.parameters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.parameters = Some(hash_map);
+                        self
     }
     /// <p>An object of the RemediationParameterValue.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>,
-        >,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::RemediationParameterValue>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The type of a resource. </p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,8 +186,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The type of a resource. </p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The remediation is triggered automatically.</p>
     pub fn automatic(mut self, input: bool) -> Self {
@@ -221,8 +195,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>The remediation is triggered automatically.</p>
     pub fn set_automatic(mut self, input: std::option::Option<bool>) -> Self {
-        self.automatic = input;
-        self
+        self.automatic = input; self
     }
     /// <p>An ExecutionControls object.</p>
     pub fn execution_controls(mut self, input: crate::types::ExecutionControls) -> Self {
@@ -230,36 +203,30 @@ impl RemediationConfigurationBuilder {
         self
     }
     /// <p>An ExecutionControls object.</p>
-    pub fn set_execution_controls(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionControls>,
-    ) -> Self {
-        self.execution_controls = input;
-        self
+    pub fn set_execution_controls(mut self, input: std::option::Option<crate::types::ExecutionControls>) -> Self {
+        self.execution_controls = input; self
     }
-    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
+    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p> 
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub fn maximum_automatic_attempts(mut self, input: i32) -> Self {
         self.maximum_automatic_attempts = Some(input);
         self
     }
-    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p>
+    /// <p>The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.</p> 
     /// <p>For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.</p>
     pub fn set_maximum_automatic_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_automatic_attempts = input;
-        self
+        self.maximum_automatic_attempts = input; self
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p> 
     /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
     pub fn retry_attempt_seconds(mut self, input: i64) -> Self {
         self.retry_attempt_seconds = Some(input);
         self
     }
-    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p>
+    /// <p>Maximum time in seconds that Config runs auto-remediation. If you do not select a number, the default is 60 seconds. </p> 
     /// <p>For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, Config will run auto-remediations 5 times within 50 seconds before throwing an exception.</p>
     pub fn set_retry_attempt_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.retry_attempt_seconds = input;
-        self
+        self.retry_attempt_seconds = input; self
     }
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,8 +235,7 @@ impl RemediationConfigurationBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of remediation configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
     pub fn created_by_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -277,28 +243,38 @@ impl RemediationConfigurationBuilder {
         self
     }
     /// <p>Name of the service that owns the service-linked rule, if applicable.</p>
-    pub fn set_created_by_service(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.created_by_service = input;
-        self
+    pub fn set_created_by_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.created_by_service = input; self
     }
     /// Consumes the builder and constructs a [`RemediationConfiguration`](crate::types::RemediationConfiguration).
     pub fn build(self) -> crate::types::RemediationConfiguration {
         crate::types::RemediationConfiguration {
-            config_rule_name: self.config_rule_name,
-            target_type: self.target_type,
-            target_id: self.target_id,
-            target_version: self.target_version,
-            parameters: self.parameters,
-            resource_type: self.resource_type,
-            automatic: self.automatic.unwrap_or_default(),
-            execution_controls: self.execution_controls,
-            maximum_automatic_attempts: self.maximum_automatic_attempts,
-            retry_attempt_seconds: self.retry_attempt_seconds,
-            arn: self.arn,
-            created_by_service: self.created_by_service,
+            config_rule_name: self.config_rule_name
+            ,
+            target_type: self.target_type
+            ,
+            target_id: self.target_id
+            ,
+            target_version: self.target_version
+            ,
+            parameters: self.parameters
+            ,
+            resource_type: self.resource_type
+            ,
+            automatic: self.automatic
+                .unwrap_or_default()
+            ,
+            execution_controls: self.execution_controls
+            ,
+            maximum_automatic_attempts: self.maximum_automatic_attempts
+            ,
+            retry_attempt_seconds: self.retry_attempt_seconds
+            ,
+            arn: self.arn
+            ,
+            created_by_service: self.created_by_service
+            ,
         }
     }
 }
+

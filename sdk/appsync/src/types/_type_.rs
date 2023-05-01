@@ -3,7 +3,7 @@
 /// <p>Describes a type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Type {
+pub struct Type  {
     /// <p>The type name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Type {
 }
 impl Type {
     /// <p>The type name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type definition.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> std::option::Option<& str> {
         self.definition.as_deref()
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::TypeDefinitionFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::TypeDefinitionFormat> {
         self.format.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl TypeBuilder {
     }
     /// <p>The type name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl TypeBuilder {
     }
     /// <p>The type description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl TypeBuilder {
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The type definition.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl TypeBuilder {
     }
     /// <p>The type definition.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
@@ -106,21 +102,23 @@ impl TypeBuilder {
         self
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn set_format(
-        mut self,
-        input: std::option::Option<crate::types::TypeDefinitionFormat>,
-    ) -> Self {
-        self.format = input;
-        self
+    pub fn set_format(mut self, input: std::option::Option<crate::types::TypeDefinitionFormat>) -> Self {
+        self.format = input; self
     }
     /// Consumes the builder and constructs a [`Type`](crate::types::Type).
     pub fn build(self) -> crate::types::Type {
         crate::types::Type {
-            name: self.name,
-            description: self.description,
-            arn: self.arn,
-            definition: self.definition,
-            format: self.format,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
+            definition: self.definition
+            ,
+            format: self.format
+            ,
         }
     }
 }
+

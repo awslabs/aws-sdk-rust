@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceOutput {
+pub struct DeleteServiceOutput  {
     /// <p>The ID of the service.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct DeleteServiceOutput {
 }
 impl DeleteServiceOutput {
     /// <p>The ID of the service.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ServiceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ServiceStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteServiceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteServiceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput).
     pub fn builder() -> crate::operation::delete_service::builders::DeleteServiceOutputBuilder {
@@ -65,8 +65,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +74,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +83,7 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
@@ -95,26 +92,30 @@ impl DeleteServiceOutputBuilder {
     }
     /// <p>The status. You can retry the operation if the status is <code>DELETE_FAILED</code>. However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the status doesn't change.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::operation::delete_service::DeleteServiceOutput).
     pub fn build(self) -> crate::operation::delete_service::DeleteServiceOutput {
         crate::operation::delete_service::DeleteServiceOutput {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            status: self.status,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

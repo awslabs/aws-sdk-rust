@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricDataV2Output {
+pub struct GetMetricDataV2Output  {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct GetMetricDataV2Output {
 }
 impl GetMetricDataV2Output {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
-    pub fn metric_results(&self) -> std::option::Option<&[crate::types::MetricResultV2]> {
+    pub fn metric_results(&self) -> std::option::Option<& [crate::types::MetricResultV2]> {
         self.metric_results.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMetricDataV2Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMetricDataV2Output {
     /// Creates a new builder-style object to manufacture [`GetMetricDataV2Output`](crate::operation::get_metric_data_v2::GetMetricDataV2Output).
-    pub fn builder() -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2OutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_metric_data_v2::builders::GetMetricDataV2OutputBuilder {
         crate::operation::get_metric_data_v2::builders::GetMetricDataV2OutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl GetMetricDataV2OutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `metric_results`.
     ///
@@ -60,33 +58,32 @@ impl GetMetricDataV2OutputBuilder {
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
     pub fn metric_results(mut self, input: crate::types::MetricResultV2) -> Self {
         let mut v = self.metric_results.unwrap_or_default();
-        v.push(input);
-        self.metric_results = Some(v);
-        self
+                        v.push(input);
+                        self.metric_results = Some(v);
+                        self
     }
     /// <p>Information about the metrics requested in the API request If no grouping is specified, a summary of metric data is returned. </p>
-    pub fn set_metric_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricResultV2>>,
-    ) -> Self {
-        self.metric_results = input;
-        self
+    pub fn set_metric_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricResultV2>>) -> Self {
+        self.metric_results = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMetricDataV2Output`](crate::operation::get_metric_data_v2::GetMetricDataV2Output).
     pub fn build(self) -> crate::operation::get_metric_data_v2::GetMetricDataV2Output {
         crate::operation::get_metric_data_v2::GetMetricDataV2Output {
-            next_token: self.next_token,
-            metric_results: self.metric_results,
+            next_token: self.next_token
+            ,
+            metric_results: self.metric_results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

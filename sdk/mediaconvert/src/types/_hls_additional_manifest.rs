@@ -3,7 +3,7 @@
 /// Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsAdditionalManifest {
+pub struct HlsAdditionalManifest  {
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
     #[doc(hidden)]
     pub manifest_name_modifier: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct HlsAdditionalManifest {
 }
 impl HlsAdditionalManifest {
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
-    pub fn manifest_name_modifier(&self) -> std::option::Option<&str> {
+    pub fn manifest_name_modifier(&self) -> std::option::Option<& str> {
         self.manifest_name_modifier.as_deref()
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn selected_outputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn selected_outputs(&self) -> std::option::Option<& [std::string::String]> {
         self.selected_outputs.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl HlsAdditionalManifestBuilder {
         self
     }
     /// Specify a name modifier that the service adds to the name of this manifest to make it different from the file names of the other main manifests in the output group. For example, say that the default main manifest for your HLS group is film-name.m3u8. If you enter "-no-premium" for this setting, then the file name the service generates for this top-level manifest is film-name-no-premium.m3u8. For HLS output groups, specify a manifestNameModifier that is different from the nameModifier of the output. The service uses the output name modifier to create unique names for the individual variant manifests.
-    pub fn set_manifest_name_modifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.manifest_name_modifier = input;
-        self
+    pub fn set_manifest_name_modifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.manifest_name_modifier = input; self
     }
     /// Appends an item to `selected_outputs`.
     ///
@@ -56,23 +52,22 @@ impl HlsAdditionalManifestBuilder {
     /// Specify the outputs that you want this additional top-level manifest to reference.
     pub fn selected_outputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.selected_outputs.unwrap_or_default();
-        v.push(input.into());
-        self.selected_outputs = Some(v);
-        self
+                        v.push(input.into());
+                        self.selected_outputs = Some(v);
+                        self
     }
     /// Specify the outputs that you want this additional top-level manifest to reference.
-    pub fn set_selected_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.selected_outputs = input;
-        self
+    pub fn set_selected_outputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.selected_outputs = input; self
     }
     /// Consumes the builder and constructs a [`HlsAdditionalManifest`](crate::types::HlsAdditionalManifest).
     pub fn build(self) -> crate::types::HlsAdditionalManifest {
         crate::types::HlsAdditionalManifest {
-            manifest_name_modifier: self.manifest_name_modifier,
-            selected_outputs: self.selected_outputs,
+            manifest_name_modifier: self.manifest_name_modifier
+            ,
+            selected_outputs: self.selected_outputs
+            ,
         }
     }
 }
+

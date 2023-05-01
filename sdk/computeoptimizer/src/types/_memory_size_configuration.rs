@@ -3,7 +3,7 @@
 /// <p> The memory size configurations of a container. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemorySizeConfiguration {
+pub struct MemorySizeConfiguration  {
     /// <p> The amount of memory in the container. </p>
     #[doc(hidden)]
     pub memory: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl MemorySizeConfigurationBuilder {
     }
     /// <p> The amount of memory in the container. </p>
     pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p> The limit of memory reserve for the container. </p>
     pub fn memory_reservation(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl MemorySizeConfigurationBuilder {
     }
     /// <p> The limit of memory reserve for the container. </p>
     pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory_reservation = input;
-        self
+        self.memory_reservation = input; self
     }
     /// Consumes the builder and constructs a [`MemorySizeConfiguration`](crate::types::MemorySizeConfiguration).
     pub fn build(self) -> crate::types::MemorySizeConfiguration {
         crate::types::MemorySizeConfiguration {
-            memory: self.memory,
-            memory_reservation: self.memory_reservation,
+            memory: self.memory
+            ,
+            memory_reservation: self.memory_reservation
+            ,
         }
     }
 }
+

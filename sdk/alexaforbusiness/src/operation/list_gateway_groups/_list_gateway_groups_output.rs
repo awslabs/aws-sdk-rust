@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewayGroupsOutput {
+pub struct ListGatewayGroupsOutput  {
     /// <p>The gateway groups in the list.</p>
     #[doc(hidden)]
     pub gateway_groups: std::option::Option<std::vec::Vec<crate::types::GatewayGroupSummary>>,
@@ -13,23 +13,22 @@ pub struct ListGatewayGroupsOutput {
 }
 impl ListGatewayGroupsOutput {
     /// <p>The gateway groups in the list.</p>
-    pub fn gateway_groups(&self) -> std::option::Option<&[crate::types::GatewayGroupSummary]> {
+    pub fn gateway_groups(&self) -> std::option::Option<& [crate::types::GatewayGroupSummary]> {
         self.gateway_groups.as_deref()
     }
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListGatewayGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListGatewayGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGatewayGroupsOutput`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsOutputBuilder {
         crate::operation::list_gateway_groups::builders::ListGatewayGroupsOutputBuilder::default()
     }
 }
@@ -38,8 +37,7 @@ impl ListGatewayGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListGatewayGroupsOutputBuilder {
-    pub(crate) gateway_groups:
-        std::option::Option<std::vec::Vec<crate::types::GatewayGroupSummary>>,
+    pub(crate) gateway_groups: std::option::Option<std::vec::Vec<crate::types::GatewayGroupSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +49,13 @@ impl ListGatewayGroupsOutputBuilder {
     /// <p>The gateway groups in the list.</p>
     pub fn gateway_groups(mut self, input: crate::types::GatewayGroupSummary) -> Self {
         let mut v = self.gateway_groups.unwrap_or_default();
-        v.push(input);
-        self.gateway_groups = Some(v);
-        self
+                        v.push(input);
+                        self.gateway_groups = Some(v);
+                        self
     }
     /// <p>The gateway groups in the list.</p>
-    pub fn set_gateway_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GatewayGroupSummary>>,
-    ) -> Self {
-        self.gateway_groups = input;
-        self
+    pub fn set_gateway_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GatewayGroupSummary>>) -> Self {
+        self.gateway_groups = input; self
     }
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListGatewayGroupsOutputBuilder {
     }
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListGatewayGroupsOutput`](crate::operation::list_gateway_groups::ListGatewayGroupsOutput).
     pub fn build(self) -> crate::operation::list_gateway_groups::ListGatewayGroupsOutput {
         crate::operation::list_gateway_groups::ListGatewayGroupsOutput {
-            gateway_groups: self.gateway_groups,
-            next_token: self.next_token,
+            gateway_groups: self.gateway_groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAnnotationImportJobInput {
+pub struct StartAnnotationImportJobInput  {
     /// <p>A destination annotation store for the job.</p>
     #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct StartAnnotationImportJobInput {
 }
 impl StartAnnotationImportJobInput {
     /// <p>A destination annotation store for the job.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>A service role for the job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Items to import.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::AnnotationImportItemSource]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::AnnotationImportItemSource]> {
         self.items.as_deref()
     }
     /// <p>Formatting options for the annotation file.</p>
-    pub fn format_options(&self) -> std::option::Option<&crate::types::FormatOptions> {
+    pub fn format_options(&self) -> std::option::Option<& crate::types::FormatOptions> {
         self.format_options.as_ref()
     }
     /// <p>The job's left normalization setting.</p>
@@ -43,9 +43,7 @@ impl StartAnnotationImportJobInput {
 }
 impl StartAnnotationImportJobInput {
     /// Creates a new builder-style object to manufacture [`StartAnnotationImportJobInput`](crate::operation::start_annotation_import_job::StartAnnotationImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder {
         crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl StartAnnotationImportJobInputBuilder {
     }
     /// <p>A destination annotation store for the job.</p>
     pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>A service role for the job.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +75,7 @@ impl StartAnnotationImportJobInputBuilder {
     }
     /// <p>A service role for the job.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -88,17 +84,13 @@ impl StartAnnotationImportJobInputBuilder {
     /// <p>Items to import.</p>
     pub fn items(mut self, input: crate::types::AnnotationImportItemSource) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>Items to import.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnnotationImportItemSource>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnnotationImportItemSource>>) -> Self {
+        self.items = input; self
     }
     /// <p>Formatting options for the annotation file.</p>
     pub fn format_options(mut self, input: crate::types::FormatOptions) -> Self {
@@ -106,12 +98,8 @@ impl StartAnnotationImportJobInputBuilder {
         self
     }
     /// <p>Formatting options for the annotation file.</p>
-    pub fn set_format_options(
-        mut self,
-        input: std::option::Option<crate::types::FormatOptions>,
-    ) -> Self {
-        self.format_options = input;
-        self
+    pub fn set_format_options(mut self, input: std::option::Option<crate::types::FormatOptions>) -> Self {
+        self.format_options = input; self
     }
     /// <p>The job's left normalization setting.</p>
     pub fn run_left_normalization(mut self, input: bool) -> Self {
@@ -120,24 +108,24 @@ impl StartAnnotationImportJobInputBuilder {
     }
     /// <p>The job's left normalization setting.</p>
     pub fn set_run_left_normalization(mut self, input: std::option::Option<bool>) -> Self {
-        self.run_left_normalization = input;
-        self
+        self.run_left_normalization = input; self
     }
     /// Consumes the builder and constructs a [`StartAnnotationImportJobInput`](crate::operation::start_annotation_import_job::StartAnnotationImportJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_annotation_import_job::StartAnnotationImportJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_annotation_import_job::StartAnnotationImportJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_annotation_import_job::StartAnnotationImportJobInput {
-                destination_name: self.destination_name,
-                role_arn: self.role_arn,
-                items: self.items,
-                format_options: self.format_options,
-                run_left_normalization: self.run_left_normalization,
-            },
+                destination_name: self.destination_name
+                ,
+                role_arn: self.role_arn
+                ,
+                items: self.items
+                ,
+                format_options: self.format_options
+                ,
+                run_left_normalization: self.run_left_normalization
+                ,
+            }
         )
     }
 }
+

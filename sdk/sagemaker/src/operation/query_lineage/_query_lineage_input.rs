@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryLineageInput {
+pub struct QueryLineageInput  {
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
     #[doc(hidden)]
     pub start_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,13 +12,13 @@ pub struct QueryLineageInput {
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     #[doc(hidden)]
     pub include_edges: std::option::Option<bool>,
-    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
-    /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p> 
+    /// <ul> 
+    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li> 
+    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li> 
+    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li> 
+    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li> 
+    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::QueryFilters>,
@@ -34,26 +34,26 @@ pub struct QueryLineageInput {
 }
 impl QueryLineageInput {
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn start_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn start_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.start_arns.as_deref()
     }
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::types::Direction> {
+    pub fn direction(&self) -> std::option::Option<& crate::types::Direction> {
         self.direction.as_ref()
     }
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     pub fn include_edges(&self) -> std::option::Option<bool> {
         self.include_edges
     }
-    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
-    /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p> 
+    /// <ul> 
+    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li> 
+    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li> 
+    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li> 
+    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li> 
+    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&crate::types::QueryFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::QueryFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
@@ -65,7 +65,7 @@ impl QueryLineageInput {
         self.max_results
     }
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -96,17 +96,13 @@ impl QueryLineageInputBuilder {
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
     pub fn start_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.start_arns.unwrap_or_default();
-        v.push(input.into());
-        self.start_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.start_arns = Some(v);
+                        self
     }
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn set_start_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.start_arns = input;
-        self
+    pub fn set_start_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.start_arns = input; self
     }
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
     pub fn direction(mut self, input: crate::types::Direction) -> Self {
@@ -115,8 +111,7 @@ impl QueryLineageInputBuilder {
     }
     /// <p>Associations between lineage entities have a direction. This parameter determines the direction from the StartArn(s) that the query traverses.</p>
     pub fn set_direction(mut self, input: std::option::Option<crate::types::Direction>) -> Self {
-        self.direction = input;
-        self
+        self.direction = input; self
     }
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     pub fn include_edges(mut self, input: bool) -> Self {
@@ -125,32 +120,30 @@ impl QueryLineageInputBuilder {
     }
     /// <p> Setting this value to <code>True</code> retrieves not only the entities of interest but also the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
     pub fn set_include_edges(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_edges = input;
-        self
+        self.include_edges = input; self
     }
-    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
-    /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p> 
+    /// <ul> 
+    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li> 
+    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li> 
+    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li> 
+    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li> 
+    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::QueryFilters) -> Self {
         self.filters = Some(input);
         self
     }
-    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
-    /// <ul>
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p> 
+    /// <ul> 
+    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li> 
+    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li> 
+    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li> 
+    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li> 
+    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li> 
     /// </ul>
     pub fn set_filters(mut self, input: std::option::Option<crate::types::QueryFilters>) -> Self {
-        self.filters = input;
-        self
+        self.filters = input; self
     }
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
     pub fn max_depth(mut self, input: i32) -> Self {
@@ -159,8 +152,7 @@ impl QueryLineageInputBuilder {
     }
     /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that are traversed. Depth is a measure of the number of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
     pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_depth = input;
-        self
+        self.max_depth = input; self
     }
     /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -169,8 +161,7 @@ impl QueryLineageInputBuilder {
     }
     /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,24 +170,28 @@ impl QueryLineageInputBuilder {
     }
     /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`QueryLineageInput`](crate::operation::query_lineage::QueryLineageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::query_lineage::QueryLineageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::query_lineage::QueryLineageInput {
-            start_arns: self.start_arns,
-            direction: self.direction,
-            include_edges: self.include_edges,
-            filters: self.filters,
-            max_depth: self.max_depth,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::query_lineage::QueryLineageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::query_lineage::QueryLineageInput {
+                start_arns: self.start_arns
+                ,
+                direction: self.direction
+                ,
+                include_edges: self.include_edges
+                ,
+                filters: self.filters
+                ,
+                max_depth: self.max_depth
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

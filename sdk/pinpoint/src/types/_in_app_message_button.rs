@@ -3,7 +3,7 @@
 /// <p>Button Config for an in-app message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InAppMessageButton {
+pub struct InAppMessageButton  {
     /// <p>Default button content.</p>
     #[doc(hidden)]
     pub android: std::option::Option<crate::types::OverrideButtonConfiguration>,
@@ -19,19 +19,19 @@ pub struct InAppMessageButton {
 }
 impl InAppMessageButton {
     /// <p>Default button content.</p>
-    pub fn android(&self) -> std::option::Option<&crate::types::OverrideButtonConfiguration> {
+    pub fn android(&self) -> std::option::Option<& crate::types::OverrideButtonConfiguration> {
         self.android.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn default_config(&self) -> std::option::Option<&crate::types::DefaultButtonConfiguration> {
+    pub fn default_config(&self) -> std::option::Option<& crate::types::DefaultButtonConfiguration> {
         self.default_config.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn ios(&self) -> std::option::Option<&crate::types::OverrideButtonConfiguration> {
+    pub fn ios(&self) -> std::option::Option<& crate::types::OverrideButtonConfiguration> {
         self.ios.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn web(&self) -> std::option::Option<&crate::types::OverrideButtonConfiguration> {
+    pub fn web(&self) -> std::option::Option<& crate::types::OverrideButtonConfiguration> {
         self.web.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_android(
-        mut self,
-        input: std::option::Option<crate::types::OverrideButtonConfiguration>,
-    ) -> Self {
-        self.android = input;
-        self
+    pub fn set_android(mut self, input: std::option::Option<crate::types::OverrideButtonConfiguration>) -> Self {
+        self.android = input; self
     }
     /// <p>Default button content.</p>
     pub fn default_config(mut self, input: crate::types::DefaultButtonConfiguration) -> Self {
@@ -71,12 +67,8 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_default_config(
-        mut self,
-        input: std::option::Option<crate::types::DefaultButtonConfiguration>,
-    ) -> Self {
-        self.default_config = input;
-        self
+    pub fn set_default_config(mut self, input: std::option::Option<crate::types::DefaultButtonConfiguration>) -> Self {
+        self.default_config = input; self
     }
     /// <p>Default button content.</p>
     pub fn ios(mut self, input: crate::types::OverrideButtonConfiguration) -> Self {
@@ -84,12 +76,8 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_ios(
-        mut self,
-        input: std::option::Option<crate::types::OverrideButtonConfiguration>,
-    ) -> Self {
-        self.ios = input;
-        self
+    pub fn set_ios(mut self, input: std::option::Option<crate::types::OverrideButtonConfiguration>) -> Self {
+        self.ios = input; self
     }
     /// <p>Default button content.</p>
     pub fn web(mut self, input: crate::types::OverrideButtonConfiguration) -> Self {
@@ -97,20 +85,21 @@ impl InAppMessageButtonBuilder {
         self
     }
     /// <p>Default button content.</p>
-    pub fn set_web(
-        mut self,
-        input: std::option::Option<crate::types::OverrideButtonConfiguration>,
-    ) -> Self {
-        self.web = input;
-        self
+    pub fn set_web(mut self, input: std::option::Option<crate::types::OverrideButtonConfiguration>) -> Self {
+        self.web = input; self
     }
     /// Consumes the builder and constructs a [`InAppMessageButton`](crate::types::InAppMessageButton).
     pub fn build(self) -> crate::types::InAppMessageButton {
         crate::types::InAppMessageButton {
-            android: self.android,
-            default_config: self.default_config,
-            ios: self.ios,
-            web: self.web,
+            android: self.android
+            ,
+            default_config: self.default_config
+            ,
+            ios: self.ios
+            ,
+            web: self.web
+            ,
         }
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStreamProcessorInput {
+pub struct DeleteStreamProcessorInput  {
     /// <p>The name of the stream processor you want to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteStreamProcessorInput {
     /// <p>The name of the stream processor you want to delete.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteStreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
-    pub fn builder(
-    ) -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder {
         crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DeleteStreamProcessorInputBuilder {
     }
     /// <p>The name of the stream processor you want to delete.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteStreamProcessorInput`](crate::operation::delete_stream_processor::DeleteStreamProcessorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_stream_processor::DeleteStreamProcessorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_stream_processor::DeleteStreamProcessorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_stream_processor::DeleteStreamProcessorInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

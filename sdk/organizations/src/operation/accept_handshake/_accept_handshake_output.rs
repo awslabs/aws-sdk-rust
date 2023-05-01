@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptHandshakeOutput {
+pub struct AcceptHandshakeOutput  {
     /// <p>A structure that contains details about the accepted handshake.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::types::Handshake>,
@@ -10,15 +10,15 @@ pub struct AcceptHandshakeOutput {
 }
 impl AcceptHandshakeOutput {
     /// <p>A structure that contains details about the accepted handshake.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::types::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::types::Handshake> {
         self.handshake.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AcceptHandshakeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AcceptHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`AcceptHandshakeOutput`](crate::operation::accept_handshake::AcceptHandshakeOutput).
     pub fn builder() -> crate::operation::accept_handshake::builders::AcceptHandshakeOutputBuilder {
@@ -41,23 +41,24 @@ impl AcceptHandshakeOutputBuilder {
     }
     /// <p>A structure that contains details about the accepted handshake.</p>
     pub fn set_handshake(mut self, input: std::option::Option<crate::types::Handshake>) -> Self {
-        self.handshake = input;
-        self
+        self.handshake = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AcceptHandshakeOutput`](crate::operation::accept_handshake::AcceptHandshakeOutput).
     pub fn build(self) -> crate::operation::accept_handshake::AcceptHandshakeOutput {
         crate::operation::accept_handshake::AcceptHandshakeOutput {
-            handshake: self.handshake,
+            handshake: self.handshake
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

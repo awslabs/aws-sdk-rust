@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationPresignedUrlOutput {
+pub struct CreateApplicationPresignedUrlOutput  {
     /// <p>The URL of the extension.</p>
     #[doc(hidden)]
     pub authorized_url: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct CreateApplicationPresignedUrlOutput {
 }
 impl CreateApplicationPresignedUrlOutput {
     /// <p>The URL of the extension.</p>
-    pub fn authorized_url(&self) -> std::option::Option<&str> {
+    pub fn authorized_url(&self) -> std::option::Option<& str> {
         self.authorized_url.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateApplicationPresignedUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateApplicationPresignedUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationPresignedUrlOutput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput).
-    pub fn builder() -> crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlOutputBuilder{
+    pub fn builder() -> crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlOutputBuilder {
         crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlOutputBuilder::default()
     }
 }
@@ -41,26 +41,24 @@ impl CreateApplicationPresignedUrlOutputBuilder {
     }
     /// <p>The URL of the extension.</p>
     pub fn set_authorized_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authorized_url = input;
-        self
+        self.authorized_url = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateApplicationPresignedUrlOutput`](crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput
-    {
+    pub fn build(self) -> crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput {
         crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput {
-            authorized_url: self.authorized_url,
+            authorized_url: self.authorized_url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

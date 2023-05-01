@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueryExecutionInput {
+pub struct GetQueryExecutionInput  {
     /// <p>The unique ID of the query execution.</p>
     #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
 }
 impl GetQueryExecutionInput {
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> std::option::Option<& str> {
         self.query_execution_id.as_deref()
     }
 }
 impl GetQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder {
+    pub fn builder() -> crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder {
         crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetQueryExecutionInputBuilder {
         self
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.query_execution_id = input;
-        self
+    pub fn set_query_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.query_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`GetQueryExecutionInput`](crate::operation::get_query_execution::GetQueryExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_query_execution::GetQueryExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_query_execution::GetQueryExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_query_execution::GetQueryExecutionInput {
-                query_execution_id: self.query_execution_id,
-            },
+                query_execution_id: self.query_execution_id
+                ,
+            }
         )
     }
 }
+

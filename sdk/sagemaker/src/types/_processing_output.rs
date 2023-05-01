@@ -3,7 +3,7 @@
 /// <p>Describes the results of a processing job. The processing output must specify exactly one of either <code>S3Output</code> or <code>FeatureStoreOutput</code> types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessingOutput {
+pub struct ProcessingOutput  {
     /// <p>The name for the processing job output.</p>
     #[doc(hidden)]
     pub output_name: std::option::Option<std::string::String>,
@@ -19,17 +19,15 @@ pub struct ProcessingOutput {
 }
 impl ProcessingOutput {
     /// <p>The name for the processing job output.</p>
-    pub fn output_name(&self) -> std::option::Option<&str> {
+    pub fn output_name(&self) -> std::option::Option<& str> {
         self.output_name.as_deref()
     }
     /// <p>Configuration for processing job outputs in Amazon S3.</p>
-    pub fn s3_output(&self) -> std::option::Option<&crate::types::ProcessingS3Output> {
+    pub fn s3_output(&self) -> std::option::Option<& crate::types::ProcessingS3Output> {
         self.s3_output.as_ref()
     }
     /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
-    pub fn feature_store_output(
-        &self,
-    ) -> std::option::Option<&crate::types::ProcessingFeatureStoreOutput> {
+    pub fn feature_store_output(&self) -> std::option::Option<& crate::types::ProcessingFeatureStoreOutput> {
         self.feature_store_output.as_ref()
     }
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
@@ -50,8 +48,7 @@ impl ProcessingOutput {
 pub struct ProcessingOutputBuilder {
     pub(crate) output_name: std::option::Option<std::string::String>,
     pub(crate) s3_output: std::option::Option<crate::types::ProcessingS3Output>,
-    pub(crate) feature_store_output:
-        std::option::Option<crate::types::ProcessingFeatureStoreOutput>,
+    pub(crate) feature_store_output: std::option::Option<crate::types::ProcessingFeatureStoreOutput>,
     pub(crate) app_managed: std::option::Option<bool>,
 }
 impl ProcessingOutputBuilder {
@@ -62,8 +59,7 @@ impl ProcessingOutputBuilder {
     }
     /// <p>The name for the processing job output.</p>
     pub fn set_output_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_name = input;
-        self
+        self.output_name = input; self
     }
     /// <p>Configuration for processing job outputs in Amazon S3.</p>
     pub fn s3_output(mut self, input: crate::types::ProcessingS3Output) -> Self {
@@ -71,28 +67,17 @@ impl ProcessingOutputBuilder {
         self
     }
     /// <p>Configuration for processing job outputs in Amazon S3.</p>
-    pub fn set_s3_output(
-        mut self,
-        input: std::option::Option<crate::types::ProcessingS3Output>,
-    ) -> Self {
-        self.s3_output = input;
-        self
+    pub fn set_s3_output(mut self, input: std::option::Option<crate::types::ProcessingS3Output>) -> Self {
+        self.s3_output = input; self
     }
     /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
-    pub fn feature_store_output(
-        mut self,
-        input: crate::types::ProcessingFeatureStoreOutput,
-    ) -> Self {
+    pub fn feature_store_output(mut self, input: crate::types::ProcessingFeatureStoreOutput) -> Self {
         self.feature_store_output = Some(input);
         self
     }
     /// <p>Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing output type is only supported when <code>AppManaged</code> is specified. </p>
-    pub fn set_feature_store_output(
-        mut self,
-        input: std::option::Option<crate::types::ProcessingFeatureStoreOutput>,
-    ) -> Self {
-        self.feature_store_output = input;
-        self
+    pub fn set_feature_store_output(mut self, input: std::option::Option<crate::types::ProcessingFeatureStoreOutput>) -> Self {
+        self.feature_store_output = input; self
     }
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
     pub fn app_managed(mut self, input: bool) -> Self {
@@ -101,16 +86,21 @@ impl ProcessingOutputBuilder {
     }
     /// <p>When <code>True</code>, output operations such as data upload are managed natively by the processing job application. When <code>False</code> (default), output operations are managed by Amazon SageMaker.</p>
     pub fn set_app_managed(mut self, input: std::option::Option<bool>) -> Self {
-        self.app_managed = input;
-        self
+        self.app_managed = input; self
     }
     /// Consumes the builder and constructs a [`ProcessingOutput`](crate::types::ProcessingOutput).
     pub fn build(self) -> crate::types::ProcessingOutput {
         crate::types::ProcessingOutput {
-            output_name: self.output_name,
-            s3_output: self.s3_output,
-            feature_store_output: self.feature_store_output,
-            app_managed: self.app_managed.unwrap_or_default(),
+            output_name: self.output_name
+            ,
+            s3_output: self.s3_output
+            ,
+            feature_store_output: self.feature_store_output
+            ,
+            app_managed: self.app_managed
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

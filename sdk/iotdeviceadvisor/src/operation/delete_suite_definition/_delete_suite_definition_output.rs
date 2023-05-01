@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSuiteDefinitionOutput {
+pub struct DeleteSuiteDefinitionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSuiteDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteSuiteDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSuiteDefinitionOutput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionOutputBuilder {
         crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteSuiteDefinitionOutputBuilder {
 }
 impl DeleteSuiteDefinitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionOutput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput).
     pub fn build(self) -> crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput {
         crate::operation::delete_suite_definition::DeleteSuiteDefinitionOutput {
@@ -42,3 +40,4 @@ impl DeleteSuiteDefinitionOutputBuilder {
         }
     }
 }
+

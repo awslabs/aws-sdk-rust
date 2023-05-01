@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLaunchTemplatesOutput {
+pub struct DescribeLaunchTemplatesOutput  {
     /// <p>Information about the launch templates.</p>
     #[doc(hidden)]
     pub launch_templates: std::option::Option<std::vec::Vec<crate::types::LaunchTemplate>>,
@@ -13,24 +13,22 @@ pub struct DescribeLaunchTemplatesOutput {
 }
 impl DescribeLaunchTemplatesOutput {
     /// <p>Information about the launch templates.</p>
-    pub fn launch_templates(&self) -> std::option::Option<&[crate::types::LaunchTemplate]> {
+    pub fn launch_templates(&self) -> std::option::Option<& [crate::types::LaunchTemplate]> {
         self.launch_templates.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLaunchTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeLaunchTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplatesOutput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesOutputBuilder {
         crate::operation::describe_launch_templates::builders::DescribeLaunchTemplatesOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl DescribeLaunchTemplatesOutputBuilder {
     /// <p>Information about the launch templates.</p>
     pub fn launch_templates(mut self, input: crate::types::LaunchTemplate) -> Self {
         let mut v = self.launch_templates.unwrap_or_default();
-        v.push(input);
-        self.launch_templates = Some(v);
-        self
+                        v.push(input);
+                        self.launch_templates = Some(v);
+                        self
     }
     /// <p>Information about the launch templates.</p>
-    pub fn set_launch_templates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplate>>,
-    ) -> Self {
-        self.launch_templates = input;
-        self
+    pub fn set_launch_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplate>>) -> Self {
+        self.launch_templates = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl DescribeLaunchTemplatesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeLaunchTemplatesOutput`](crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput {
+    pub fn build(self) -> crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput {
         crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput {
-            launch_templates: self.launch_templates,
-            next_token: self.next_token,
+            launch_templates: self.launch_templates
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationFsxWindowsInput {
+pub struct DescribeLocationFsxWindowsInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationFsxWindowsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl DescribeLocationFsxWindowsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsInput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput).
-    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder{
+    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder {
         crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeLocationFsxWindowsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to describe.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLocationFsxWindowsInput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsInput {
-                location_arn: self.location_arn,
-            },
+                location_arn: self.location_arn
+                ,
+            }
         )
     }
 }
+

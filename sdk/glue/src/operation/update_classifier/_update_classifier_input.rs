@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClassifierInput {
+pub struct UpdateClassifierInput  {
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
     #[doc(hidden)]
     pub grok_classifier: std::option::Option<crate::types::UpdateGrokClassifierRequest>,
@@ -18,30 +18,25 @@ pub struct UpdateClassifierInput {
 }
 impl UpdateClassifierInput {
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-    pub fn grok_classifier(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateGrokClassifierRequest> {
+    pub fn grok_classifier(&self) -> std::option::Option<& crate::types::UpdateGrokClassifierRequest> {
         self.grok_classifier.as_ref()
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-    pub fn xml_classifier(&self) -> std::option::Option<&crate::types::UpdateXmlClassifierRequest> {
+    pub fn xml_classifier(&self) -> std::option::Option<& crate::types::UpdateXmlClassifierRequest> {
         self.xml_classifier.as_ref()
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-    pub fn json_classifier(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateJsonClassifierRequest> {
+    pub fn json_classifier(&self) -> std::option::Option<& crate::types::UpdateJsonClassifierRequest> {
         self.json_classifier.as_ref()
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-    pub fn csv_classifier(&self) -> std::option::Option<&crate::types::UpdateCsvClassifierRequest> {
+    pub fn csv_classifier(&self) -> std::option::Option<& crate::types::UpdateCsvClassifierRequest> {
         self.csv_classifier.as_ref()
     }
 }
 impl UpdateClassifierInput {
     /// Creates a new builder-style object to manufacture [`UpdateClassifierInput`](crate::operation::update_classifier::UpdateClassifierInput).
-    pub fn builder() -> crate::operation::update_classifier::builders::UpdateClassifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_classifier::builders::UpdateClassifierInputBuilder {
         crate::operation::update_classifier::builders::UpdateClassifierInputBuilder::default()
     }
 }
@@ -62,12 +57,8 @@ impl UpdateClassifierInputBuilder {
         self
     }
     /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-    pub fn set_grok_classifier(
-        mut self,
-        input: std::option::Option<crate::types::UpdateGrokClassifierRequest>,
-    ) -> Self {
-        self.grok_classifier = input;
-        self
+    pub fn set_grok_classifier(mut self, input: std::option::Option<crate::types::UpdateGrokClassifierRequest>) -> Self {
+        self.grok_classifier = input; self
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
     pub fn xml_classifier(mut self, input: crate::types::UpdateXmlClassifierRequest) -> Self {
@@ -75,12 +66,8 @@ impl UpdateClassifierInputBuilder {
         self
     }
     /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-    pub fn set_xml_classifier(
-        mut self,
-        input: std::option::Option<crate::types::UpdateXmlClassifierRequest>,
-    ) -> Self {
-        self.xml_classifier = input;
-        self
+    pub fn set_xml_classifier(mut self, input: std::option::Option<crate::types::UpdateXmlClassifierRequest>) -> Self {
+        self.xml_classifier = input; self
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
     pub fn json_classifier(mut self, input: crate::types::UpdateJsonClassifierRequest) -> Self {
@@ -88,12 +75,8 @@ impl UpdateClassifierInputBuilder {
         self
     }
     /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-    pub fn set_json_classifier(
-        mut self,
-        input: std::option::Option<crate::types::UpdateJsonClassifierRequest>,
-    ) -> Self {
-        self.json_classifier = input;
-        self
+    pub fn set_json_classifier(mut self, input: std::option::Option<crate::types::UpdateJsonClassifierRequest>) -> Self {
+        self.json_classifier = input; self
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
     pub fn csv_classifier(mut self, input: crate::types::UpdateCsvClassifierRequest) -> Self {
@@ -101,25 +84,23 @@ impl UpdateClassifierInputBuilder {
         self
     }
     /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-    pub fn set_csv_classifier(
-        mut self,
-        input: std::option::Option<crate::types::UpdateCsvClassifierRequest>,
-    ) -> Self {
-        self.csv_classifier = input;
-        self
+    pub fn set_csv_classifier(mut self, input: std::option::Option<crate::types::UpdateCsvClassifierRequest>) -> Self {
+        self.csv_classifier = input; self
     }
     /// Consumes the builder and constructs a [`UpdateClassifierInput`](crate::operation::update_classifier::UpdateClassifierInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_classifier::UpdateClassifierInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_classifier::UpdateClassifierInput {
-            grok_classifier: self.grok_classifier,
-            xml_classifier: self.xml_classifier,
-            json_classifier: self.json_classifier,
-            csv_classifier: self.csv_classifier,
-        })
+    pub fn build(self) -> Result<crate::operation::update_classifier::UpdateClassifierInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_classifier::UpdateClassifierInput {
+                grok_classifier: self.grok_classifier
+                ,
+                xml_classifier: self.xml_classifier
+                ,
+                json_classifier: self.json_classifier
+                ,
+                csv_classifier: self.csv_classifier
+                ,
+            }
+        )
     }
 }
+

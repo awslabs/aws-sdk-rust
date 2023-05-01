@@ -3,7 +3,7 @@
 /// <p>Describes an IPv4 address pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublicIpv4Pool {
+pub struct PublicIpv4Pool  {
     /// <p>The ID of the address pool.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
@@ -28,15 +28,15 @@ pub struct PublicIpv4Pool {
 }
 impl PublicIpv4Pool {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>A description of the address pool.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The address ranges.</p>
-    pub fn pool_address_ranges(&self) -> std::option::Option<&[crate::types::PublicIpv4PoolRange]> {
+    pub fn pool_address_ranges(&self) -> std::option::Option<& [crate::types::PublicIpv4PoolRange]> {
         self.pool_address_ranges.as_deref()
     }
     /// <p>The total number of addresses.</p>
@@ -48,11 +48,11 @@ impl PublicIpv4Pool {
         self.total_available_address_count
     }
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
-    pub fn network_border_group(&self) -> std::option::Option<&str> {
+    pub fn network_border_group(&self) -> std::option::Option<& str> {
         self.network_border_group.as_deref()
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -69,8 +69,7 @@ impl PublicIpv4Pool {
 pub struct PublicIpv4PoolBuilder {
     pub(crate) pool_id: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) pool_address_ranges:
-        std::option::Option<std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
+    pub(crate) pool_address_ranges: std::option::Option<std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
     pub(crate) total_address_count: std::option::Option<i32>,
     pub(crate) total_available_address_count: std::option::Option<i32>,
     pub(crate) network_border_group: std::option::Option<std::string::String>,
@@ -84,8 +83,7 @@ impl PublicIpv4PoolBuilder {
     }
     /// <p>The ID of the address pool.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// <p>A description of the address pool.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl PublicIpv4PoolBuilder {
     }
     /// <p>A description of the address pool.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `pool_address_ranges`.
     ///
@@ -104,17 +101,13 @@ impl PublicIpv4PoolBuilder {
     /// <p>The address ranges.</p>
     pub fn pool_address_ranges(mut self, input: crate::types::PublicIpv4PoolRange) -> Self {
         let mut v = self.pool_address_ranges.unwrap_or_default();
-        v.push(input);
-        self.pool_address_ranges = Some(v);
-        self
+                        v.push(input);
+                        self.pool_address_ranges = Some(v);
+                        self
     }
     /// <p>The address ranges.</p>
-    pub fn set_pool_address_ranges(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PublicIpv4PoolRange>>,
-    ) -> Self {
-        self.pool_address_ranges = input;
-        self
+    pub fn set_pool_address_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::PublicIpv4PoolRange>>) -> Self {
+        self.pool_address_ranges = input; self
     }
     /// <p>The total number of addresses.</p>
     pub fn total_address_count(mut self, input: i32) -> Self {
@@ -123,8 +116,7 @@ impl PublicIpv4PoolBuilder {
     }
     /// <p>The total number of addresses.</p>
     pub fn set_total_address_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_address_count = input;
-        self
+        self.total_address_count = input; self
     }
     /// <p>The total number of available addresses.</p>
     pub fn total_available_address_count(mut self, input: i32) -> Self {
@@ -133,8 +125,7 @@ impl PublicIpv4PoolBuilder {
     }
     /// <p>The total number of available addresses.</p>
     pub fn set_total_available_address_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_available_address_count = input;
-        self
+        self.total_available_address_count = input; self
     }
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
     pub fn network_border_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,12 +133,8 @@ impl PublicIpv4PoolBuilder {
         self
     }
     /// <p>The name of the location from which the address pool is advertised. A network border group is a unique set of Availability Zones or Local Zones from where Amazon Web Services advertises public IP addresses.</p>
-    pub fn set_network_border_group(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_border_group = input;
-        self
+    pub fn set_network_border_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_border_group = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -156,28 +143,32 @@ impl PublicIpv4PoolBuilder {
     /// <p>Any tags for the address pool.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`PublicIpv4Pool`](crate::types::PublicIpv4Pool).
     pub fn build(self) -> crate::types::PublicIpv4Pool {
         crate::types::PublicIpv4Pool {
-            pool_id: self.pool_id,
-            description: self.description,
-            pool_address_ranges: self.pool_address_ranges,
-            total_address_count: self.total_address_count,
-            total_available_address_count: self.total_available_address_count,
-            network_border_group: self.network_border_group,
-            tags: self.tags,
+            pool_id: self.pool_id
+            ,
+            description: self.description
+            ,
+            pool_address_ranges: self.pool_address_ranges
+            ,
+            total_address_count: self.total_address_count
+            ,
+            total_available_address_count: self.total_available_address_count
+            ,
+            network_border_group: self.network_border_group
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

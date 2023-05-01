@@ -3,7 +3,7 @@
 /// <p>Contains data processing unit (DPU) configuration settings and parameter mappings for a notebook engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineConfiguration {
+pub struct EngineConfiguration  {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
     #[doc(hidden)]
     pub coordinator_dpu_size: std::option::Option<i32>,
@@ -16,8 +16,7 @@ pub struct EngineConfiguration {
     /// <p>Contains additional notebook engine <code>MAP
     /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
     #[doc(hidden)]
-    pub additional_configs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_configs: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EngineConfiguration {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
@@ -34,10 +33,7 @@ impl EngineConfiguration {
     }
     /// <p>Contains additional notebook engine <code>MAP
     /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
-    pub fn additional_configs(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn additional_configs(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.additional_configs.as_ref()
     }
 }
@@ -55,8 +51,7 @@ pub struct EngineConfigurationBuilder {
     pub(crate) coordinator_dpu_size: std::option::Option<i32>,
     pub(crate) max_concurrent_dpus: std::option::Option<i32>,
     pub(crate) default_executor_dpu_size: std::option::Option<i32>,
-    pub(crate) additional_configs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) additional_configs: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EngineConfigurationBuilder {
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
@@ -66,8 +61,7 @@ impl EngineConfigurationBuilder {
     }
     /// <p>The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing work and manages other executors in a notebook session.</p>
     pub fn set_coordinator_dpu_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.coordinator_dpu_size = input;
-        self
+        self.coordinator_dpu_size = input; self
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
     pub fn max_concurrent_dpus(mut self, input: i32) -> Self {
@@ -76,8 +70,7 @@ impl EngineConfigurationBuilder {
     }
     /// <p>The maximum number of DPUs that can run concurrently.</p>
     pub fn set_max_concurrent_dpus(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_concurrent_dpus = input;
-        self
+        self.max_concurrent_dpus = input; self
     }
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
     pub fn default_executor_dpu_size(mut self, input: i32) -> Self {
@@ -86,8 +79,7 @@ impl EngineConfigurationBuilder {
     }
     /// <p>The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook session can request from Athena.</p>
     pub fn set_default_executor_dpu_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.default_executor_dpu_size = input;
-        self
+        self.default_executor_dpu_size = input; self
     }
     /// Adds a key-value pair to `additional_configs`.
     ///
@@ -95,34 +87,30 @@ impl EngineConfigurationBuilder {
     ///
     /// <p>Contains additional notebook engine <code>MAP
     /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
-    pub fn additional_configs(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn additional_configs(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.additional_configs.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.additional_configs = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.additional_configs = Some(hash_map);
+                        self
     }
     /// <p>Contains additional notebook engine <code>MAP
     /// <string, string></string,></code> parameter mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter server will download and serve, specify a value for the <code>StartSessionRequest$NotebookVersion</code> field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of the Athena notebook ID.</p>
-    pub fn set_additional_configs(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.additional_configs = input;
-        self
+    pub fn set_additional_configs(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.additional_configs = input; self
     }
     /// Consumes the builder and constructs a [`EngineConfiguration`](crate::types::EngineConfiguration).
     pub fn build(self) -> crate::types::EngineConfiguration {
         crate::types::EngineConfiguration {
-            coordinator_dpu_size: self.coordinator_dpu_size,
-            max_concurrent_dpus: self.max_concurrent_dpus.unwrap_or_default(),
-            default_executor_dpu_size: self.default_executor_dpu_size,
-            additional_configs: self.additional_configs,
+            coordinator_dpu_size: self.coordinator_dpu_size
+            ,
+            max_concurrent_dpus: self.max_concurrent_dpus
+                .unwrap_or_default()
+            ,
+            default_executor_dpu_size: self.default_executor_dpu_size
+            ,
+            additional_configs: self.additional_configs
+            ,
         }
     }
 }
+

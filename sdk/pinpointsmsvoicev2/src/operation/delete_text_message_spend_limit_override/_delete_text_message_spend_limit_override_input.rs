@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTextMessageSpendLimitOverrideInput {}
+pub struct DeleteTextMessageSpendLimitOverrideInput  {
+}
 impl DeleteTextMessageSpendLimitOverrideInput {
     /// Creates a new builder-style object to manufacture [`DeleteTextMessageSpendLimitOverrideInput`](crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput).
-    pub fn builder() -> crate::operation::delete_text_message_spend_limit_override::builders::DeleteTextMessageSpendLimitOverrideInputBuilder{
+    pub fn builder() -> crate::operation::delete_text_message_spend_limit_override::builders::DeleteTextMessageSpendLimitOverrideInputBuilder {
         crate::operation::delete_text_message_spend_limit_override::builders::DeleteTextMessageSpendLimitOverrideInputBuilder::default()
     }
 }
@@ -13,13 +14,15 @@ impl DeleteTextMessageSpendLimitOverrideInput {
 /// A builder for [`DeleteTextMessageSpendLimitOverrideInput`](crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteTextMessageSpendLimitOverrideInputBuilder {}
+pub struct DeleteTextMessageSpendLimitOverrideInputBuilder {
+}
 impl DeleteTextMessageSpendLimitOverrideInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTextMessageSpendLimitOverrideInput`](crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput).
-    pub fn build(self) -> Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverrideInput {
             }
         )
     }
 }
+

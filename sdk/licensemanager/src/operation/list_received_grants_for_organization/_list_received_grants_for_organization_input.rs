@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedGrantsForOrganizationInput {
+pub struct ListReceivedGrantsForOrganizationInput  {
     /// <p>The Amazon Resource Name (ARN) of the received license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ParentArn</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ParentArn</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -22,19 +22,19 @@ pub struct ListReceivedGrantsForOrganizationInput {
 }
 impl ListReceivedGrantsForOrganizationInput {
     /// <p>The Amazon Resource Name (ARN) of the received license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ParentArn</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ParentArn</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -44,7 +44,7 @@ impl ListReceivedGrantsForOrganizationInput {
 }
 impl ListReceivedGrantsForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`ListReceivedGrantsForOrganizationInput`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput).
-    pub fn builder() -> crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationInputBuilder{
+    pub fn builder() -> crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationInputBuilder {
         crate::operation::list_received_grants_for_organization::builders::ListReceivedGrantsForOrganizationInputBuilder::default()
     }
 }
@@ -66,35 +66,30 @@ impl ListReceivedGrantsForOrganizationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the received license.</p>
     pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ParentArn</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ParentArn</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p>
-    /// <ul>
-    /// <li> <p> <code>ParentArn</code> </p> </li>
-    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li>
+    /// <p>Filters to scope the results. The following filters are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ParentArn</code> </p> </li> 
+    /// <li> <p> <code>GranteePrincipalArn</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +98,7 @@ impl ListReceivedGrantsForOrganizationInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -113,11 +107,10 @@ impl ListReceivedGrantsForOrganizationInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListReceivedGrantsForOrganizationInput`](crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput).
-    pub fn build(self) -> Result<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_received_grants_for_organization::ListReceivedGrantsForOrganizationInput {
                 license_arn: self.license_arn
@@ -132,3 +125,4 @@ impl ListReceivedGrantsForOrganizationInputBuilder {
         )
     }
 }
+

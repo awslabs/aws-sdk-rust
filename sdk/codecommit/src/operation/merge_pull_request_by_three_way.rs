@@ -6,67 +6,38 @@ impl MergePullRequestByThreeWayInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CodeCommit_20150413.MergePullRequestByThreeWay",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CodeCommit_20150413.MergePullRequestByThreeWay"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -75,56 +46,33 @@ impl MergePullRequestByThreeWayInput {
             crate::protocol_serde::shape_merge_pull_request_by_three_way::ser_merge_pull_request_by_three_way_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "MergePullRequestByThreeWay",
-            "codecommit",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("MergePullRequestByThreeWay", "codecommit"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -141,27 +89,22 @@ impl MergePullRequestByThreeWay {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByThreeWay {
-    type Output = std::result::Result<
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput,
-        crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::protocol_serde::shape_merge_pull_request_by_three_way::de_merge_pull_request_by_three_way_http_error(response)
-        } else {
-            crate::protocol_serde::shape_merge_pull_request_by_three_way::de_merge_pull_request_by_three_way_http_response(response)
-        }
-    }
-}
+                type Output = std::result::Result<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayOutput, crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError>;
+                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+                     if !response.status().is_success() && response.status().as_u16() != 200 {
+                        crate::protocol_serde::shape_merge_pull_request_by_three_way::de_merge_pull_request_by_three_way_http_error(response)
+                     } else {
+                        crate::protocol_serde::shape_merge_pull_request_by_three_way::de_merge_pull_request_by_three_way_http_response(response)
+                     }
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type MergePullRequestByThreeWayErrorKind = MergePullRequestByThreeWayError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type MergePullRequestByThreeWayErrorKind = MergePullRequestByThreeWayError;
 /// Error type for the `MergePullRequestByThreeWayError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -171,9 +114,7 @@ pub enum MergePullRequestByThreeWayError {
     /// <p>The merge cannot be completed because the target branch has been modified. Another user might have modified the target branch while the merge was in progress. Wait a few minutes, and then try again.</p>
     ConcurrentReferenceUpdateException(crate::types::error::ConcurrentReferenceUpdateException),
     /// <p>An encryption integrity check failed.</p>
-    EncryptionIntegrityChecksFailedException(
-        crate::types::error::EncryptionIntegrityChecksFailedException,
-    ),
+    EncryptionIntegrityChecksFailedException(crate::types::error::EncryptionIntegrityChecksFailedException),
     /// <p>An encryption key could not be accessed.</p>
     EncryptionKeyAccessDeniedException(crate::types::error::EncryptionKeyAccessDeniedException),
     /// <p>The encryption key is disabled.</p>
@@ -183,13 +124,9 @@ pub enum MergePullRequestByThreeWayError {
     /// <p>The encryption key is not available.</p>
     EncryptionKeyUnavailableException(crate::types::error::EncryptionKeyUnavailableException),
     /// <p>The file cannot be added because it is too large. The maximum file size is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git client.</p>
-    FileContentSizeLimitExceededException(
-        crate::types::error::FileContentSizeLimitExceededException,
-    ),
+    FileContentSizeLimitExceededException(crate::types::error::FileContentSizeLimitExceededException),
     /// <p>The commit cannot be created because at least one of the overall changes in the commit results in a folder whose contents exceed the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple folders.</p>
-    FolderContentSizeLimitExceededException(
-        crate::types::error::FolderContentSizeLimitExceededException,
-    ),
+    FolderContentSizeLimitExceededException(crate::types::error::FolderContentSizeLimitExceededException),
     /// <p>The specified commit ID is not valid.</p>
     InvalidCommitIdException(crate::types::error::InvalidCommitIdException),
     /// <p>The specified conflict detail level is not valid.</p>
@@ -197,9 +134,7 @@ pub enum MergePullRequestByThreeWayError {
     /// <p>The specified conflict resolution list is not valid.</p>
     InvalidConflictResolutionException(crate::types::error::InvalidConflictResolutionException),
     /// <p>The specified conflict resolution strategy is not valid.</p>
-    InvalidConflictResolutionStrategyException(
-        crate::types::error::InvalidConflictResolutionStrategyException,
-    ),
+    InvalidConflictResolutionStrategyException(crate::types::error::InvalidConflictResolutionStrategyException),
     /// <p>The specified email address either contains one or more characters that are not allowed, or it exceeds the maximum number of characters allowed for an email address.</p>
     InvalidEmailException(crate::types::error::InvalidEmailException),
     /// <p>The specified file mode permission is not valid. For a list of valid file mode permissions, see <code>PutFile</code>. </p>
@@ -212,28 +147,20 @@ pub enum MergePullRequestByThreeWayError {
     InvalidReplacementContentException(crate::types::error::InvalidReplacementContentException),
     /// <p>Automerge was specified for resolving the conflict, but the specified replacement type is not valid.</p>
     InvalidReplacementTypeException(crate::types::error::InvalidReplacementTypeException),
-    /// <p>A specified repository name is not valid.</p> <note>
-    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p>
+    /// <p>A specified repository name is not valid.</p> <note> 
+    /// <p>This exception occurs only when a specified repository name is not valid. Other exceptions occur when a required repository parameter is missing, or when a specified repository does not exist.</p> 
     /// </note>
     InvalidRepositoryNameException(crate::types::error::InvalidRepositoryNameException),
     /// <p>The pull request cannot be merged automatically into the destination branch. You must manually merge the branches and resolve any conflicts.</p>
     ManualMergeRequiredException(crate::types::error::ManualMergeRequiredException),
     /// <p>The number of allowed conflict resolution entries was exceeded.</p>
-    MaximumConflictResolutionEntriesExceededException(
-        crate::types::error::MaximumConflictResolutionEntriesExceededException,
-    ),
+    MaximumConflictResolutionEntriesExceededException(crate::types::error::MaximumConflictResolutionEntriesExceededException),
     /// <p>The number of files to load exceeds the allowed limit.</p>
-    MaximumFileContentToLoadExceededException(
-        crate::types::error::MaximumFileContentToLoadExceededException,
-    ),
+    MaximumFileContentToLoadExceededException(crate::types::error::MaximumFileContentToLoadExceededException),
     /// <p>The number of items to compare between the source or destination branches and the merge base has exceeded the maximum allowed.</p>
-    MaximumItemsToCompareExceededException(
-        crate::types::error::MaximumItemsToCompareExceededException,
-    ),
+    MaximumItemsToCompareExceededException(crate::types::error::MaximumItemsToCompareExceededException),
     /// <p>More than one conflict resolution entries exists for the conflict. A conflict can have only one conflict resolution entry.</p>
-    MultipleConflictResolutionEntriesException(
-        crate::types::error::MultipleConflictResolutionEntriesException,
-    ),
+    MultipleConflictResolutionEntriesException(crate::types::error::MultipleConflictResolutionEntriesException),
     /// <p>The user name is not valid because it has exceeded the character limit for author names. </p>
     NameLengthExceededException(crate::types::error::NameLengthExceededException),
     /// <p>The folderPath for a location cannot be null.</p>
@@ -241,9 +168,7 @@ pub enum MergePullRequestByThreeWayError {
     /// <p>The pull request status cannot be updated because it is already closed.</p>
     PullRequestAlreadyClosedException(crate::types::error::PullRequestAlreadyClosedException),
     /// <p>The pull request cannot be merged because one or more approval rules applied to the pull request have conditions that have not been met.</p>
-    PullRequestApprovalRulesNotSatisfiedException(
-        crate::types::error::PullRequestApprovalRulesNotSatisfiedException,
-    ),
+    PullRequestApprovalRulesNotSatisfiedException(crate::types::error::PullRequestApprovalRulesNotSatisfiedException),
     /// <p>The pull request ID could not be found. Make sure that you have specified the correct repository name and pull request ID, and then try again.</p>
     PullRequestDoesNotExistException(crate::types::error::PullRequestDoesNotExistException),
     /// <p>A pull request ID is required, but none was provided.</p>
@@ -257,205 +182,279 @@ pub enum MergePullRequestByThreeWayError {
     /// <p>A repository name is required, but was not specified.</p>
     RepositoryNameRequiredException(crate::types::error::RepositoryNameRequiredException),
     /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
-    RepositoryNotAssociatedWithPullRequestException(
-        crate::types::error::RepositoryNotAssociatedWithPullRequestException,
-    ),
+    RepositoryNotAssociatedWithPullRequestException(crate::types::error::RepositoryNotAssociatedWithPullRequestException),
     /// <p>The tip of the source branch in the destination repository does not match the tip of the source branch specified in your request. The pull request might have been updated. Make sure that you have the latest changes.</p>
-    TipOfSourceReferenceIsDifferentException(
-        crate::types::error::TipOfSourceReferenceIsDifferentException,
-    ),
+    TipOfSourceReferenceIsDifferentException(crate::types::error::TipOfSourceReferenceIsDifferentException),
     /// <p>The divergence between the tips of the provided commit specifiers is too great to determine whether there might be any merge conflicts. Locally compare the specifiers using <code>git diff</code> or a diff tool.</p>
     TipsDivergenceExceededException(crate::types::error::TipsDivergenceExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for MergePullRequestByThreeWayError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for MergePullRequestByThreeWayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::CommitMessageLengthExceededException(_inner) => _inner.fmt(f),
-            Self::ConcurrentReferenceUpdateException(_inner) => _inner.fmt(f),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyAccessDeniedException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyDisabledException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyNotFoundException(_inner) => _inner.fmt(f),
-            Self::EncryptionKeyUnavailableException(_inner) => _inner.fmt(f),
-            Self::FileContentSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::FolderContentSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::InvalidCommitIdException(_inner) => _inner.fmt(f),
-            Self::InvalidConflictDetailLevelException(_inner) => _inner.fmt(f),
-            Self::InvalidConflictResolutionException(_inner) => _inner.fmt(f),
-            Self::InvalidConflictResolutionStrategyException(_inner) => _inner.fmt(f),
-            Self::InvalidEmailException(_inner) => _inner.fmt(f),
-            Self::InvalidFileModeException(_inner) => _inner.fmt(f),
-            Self::InvalidPathException(_inner) => _inner.fmt(f),
-            Self::InvalidPullRequestIdException(_inner) => _inner.fmt(f),
-            Self::InvalidReplacementContentException(_inner) => _inner.fmt(f),
-            Self::InvalidReplacementTypeException(_inner) => _inner.fmt(f),
-            Self::InvalidRepositoryNameException(_inner) => _inner.fmt(f),
-            Self::ManualMergeRequiredException(_inner) => _inner.fmt(f),
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => _inner.fmt(f),
-            Self::MaximumFileContentToLoadExceededException(_inner) => _inner.fmt(f),
-            Self::MaximumItemsToCompareExceededException(_inner) => _inner.fmt(f),
-            Self::MultipleConflictResolutionEntriesException(_inner) => _inner.fmt(f),
-            Self::NameLengthExceededException(_inner) => _inner.fmt(f),
-            Self::PathRequiredException(_inner) => _inner.fmt(f),
-            Self::PullRequestAlreadyClosedException(_inner) => _inner.fmt(f),
-            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) => _inner.fmt(f),
-            Self::PullRequestDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::PullRequestIdRequiredException(_inner) => _inner.fmt(f),
-            Self::ReplacementContentRequiredException(_inner) => _inner.fmt(f),
-            Self::ReplacementTypeRequiredException(_inner) => _inner.fmt(f),
-            Self::RepositoryDoesNotExistException(_inner) => _inner.fmt(f),
-            Self::RepositoryNameRequiredException(_inner) => _inner.fmt(f),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => _inner.fmt(f),
-            Self::TipOfSourceReferenceIsDifferentException(_inner) => _inner.fmt(f),
-            Self::TipsDivergenceExceededException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::CommitMessageLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ConcurrentReferenceUpdateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::FileContentSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::FolderContentSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidConflictDetailLevelException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidConflictResolutionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidConflictResolutionStrategyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidEmailException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidFileModeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidPathException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidReplacementContentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidReplacementTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ManualMergeRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaximumFileContentToLoadExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MaximumItemsToCompareExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MultipleConflictResolutionEntriesException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::NameLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PathRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestAlreadyClosedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ReplacementContentRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ReplacementTypeRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TipOfSourceReferenceIsDifferentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TipsDivergenceExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MergePullRequestByThreeWayError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CommitMessageLengthExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ConcurrentReferenceUpdateException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionIntegrityChecksFailedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyAccessDeniedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyDisabledException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EncryptionKeyUnavailableException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FileContentSizeLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::FolderContentSizeLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidCommitIdException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidConflictDetailLevelException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidConflictResolutionException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidConflictResolutionStrategyException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidEmailException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidFileModeException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidPathException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidPullRequestIdException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidReplacementContentException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidReplacementTypeException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidRepositoryNameException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ManualMergeRequiredException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MaximumFileContentToLoadExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MaximumItemsToCompareExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MultipleConflictResolutionEntriesException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NameLengthExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PathRequiredException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PullRequestAlreadyClosedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PullRequestDoesNotExistException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::PullRequestIdRequiredException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ReplacementContentRequiredException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ReplacementTypeRequiredException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryDoesNotExistException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryNameRequiredException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TipOfSourceReferenceIsDifferentException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TipsDivergenceExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::CommitMessageLengthExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ConcurrentReferenceUpdateException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::FileContentSizeLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::FolderContentSizeLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidConflictDetailLevelException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidConflictResolutionException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidConflictResolutionStrategyException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidEmailException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidFileModeException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidPathException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidReplacementContentException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidReplacementTypeException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ManualMergeRequiredException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaximumFileContentToLoadExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MaximumItemsToCompareExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MultipleConflictResolutionEntriesException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::NameLengthExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PathRequiredException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestAlreadyClosedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ReplacementContentRequiredException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ReplacementTypeRequiredException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TipOfSourceReferenceIsDifferentException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TipsDivergenceExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId
-    for crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError
-{
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+impl aws_http::request_id::RequestId for crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWayError {
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for MergePullRequestByThreeWayError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -466,27 +465,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for MergePullRequestByThreeWayErr
 }
 impl MergePullRequestByThreeWayError {
     /// Creates the `MergePullRequestByThreeWayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `MergePullRequestByThreeWayError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `MergePullRequestByThreeWayError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -617,10 +607,7 @@ impl MergePullRequestByThreeWayError {
     }
     /// Returns `true` if the error kind is `MergePullRequestByThreeWayError::MaximumConflictResolutionEntriesExceededException`.
     pub fn is_maximum_conflict_resolution_entries_exceeded_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::MaximumConflictResolutionEntriesExceededException(_)
-        )
+        matches!(self, Self::MaximumConflictResolutionEntriesExceededException(_))
     }
     /// Returns `true` if the error kind is `MergePullRequestByThreeWayError::MaximumFileContentToLoadExceededException`.
     pub fn is_maximum_file_content_to_load_exceeded_exception(&self) -> bool {
@@ -676,10 +663,7 @@ impl MergePullRequestByThreeWayError {
     }
     /// Returns `true` if the error kind is `MergePullRequestByThreeWayError::RepositoryNotAssociatedWithPullRequestException`.
     pub fn is_repository_not_associated_with_pull_request_exception(&self) -> bool {
-        matches!(
-            self,
-            Self::RepositoryNotAssociatedWithPullRequestException(_)
-        )
+        matches!(self, Self::RepositoryNotAssociatedWithPullRequestException(_))
     }
     /// Returns `true` if the error kind is `MergePullRequestByThreeWayError::TipOfSourceReferenceIsDifferentException`.
     pub fn is_tip_of_source_reference_is_different_exception(&self) -> bool {
@@ -693,45 +677,123 @@ impl MergePullRequestByThreeWayError {
 impl std::error::Error for MergePullRequestByThreeWayError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::CommitMessageLengthExceededException(_inner) => Some(_inner),
-            Self::ConcurrentReferenceUpdateException(_inner) => Some(_inner),
-            Self::EncryptionIntegrityChecksFailedException(_inner) => Some(_inner),
-            Self::EncryptionKeyAccessDeniedException(_inner) => Some(_inner),
-            Self::EncryptionKeyDisabledException(_inner) => Some(_inner),
-            Self::EncryptionKeyNotFoundException(_inner) => Some(_inner),
-            Self::EncryptionKeyUnavailableException(_inner) => Some(_inner),
-            Self::FileContentSizeLimitExceededException(_inner) => Some(_inner),
-            Self::FolderContentSizeLimitExceededException(_inner) => Some(_inner),
-            Self::InvalidCommitIdException(_inner) => Some(_inner),
-            Self::InvalidConflictDetailLevelException(_inner) => Some(_inner),
-            Self::InvalidConflictResolutionException(_inner) => Some(_inner),
-            Self::InvalidConflictResolutionStrategyException(_inner) => Some(_inner),
-            Self::InvalidEmailException(_inner) => Some(_inner),
-            Self::InvalidFileModeException(_inner) => Some(_inner),
-            Self::InvalidPathException(_inner) => Some(_inner),
-            Self::InvalidPullRequestIdException(_inner) => Some(_inner),
-            Self::InvalidReplacementContentException(_inner) => Some(_inner),
-            Self::InvalidReplacementTypeException(_inner) => Some(_inner),
-            Self::InvalidRepositoryNameException(_inner) => Some(_inner),
-            Self::ManualMergeRequiredException(_inner) => Some(_inner),
-            Self::MaximumConflictResolutionEntriesExceededException(_inner) => Some(_inner),
-            Self::MaximumFileContentToLoadExceededException(_inner) => Some(_inner),
-            Self::MaximumItemsToCompareExceededException(_inner) => Some(_inner),
-            Self::MultipleConflictResolutionEntriesException(_inner) => Some(_inner),
-            Self::NameLengthExceededException(_inner) => Some(_inner),
-            Self::PathRequiredException(_inner) => Some(_inner),
-            Self::PullRequestAlreadyClosedException(_inner) => Some(_inner),
-            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) => Some(_inner),
-            Self::PullRequestDoesNotExistException(_inner) => Some(_inner),
-            Self::PullRequestIdRequiredException(_inner) => Some(_inner),
-            Self::ReplacementContentRequiredException(_inner) => Some(_inner),
-            Self::ReplacementTypeRequiredException(_inner) => Some(_inner),
-            Self::RepositoryDoesNotExistException(_inner) => Some(_inner),
-            Self::RepositoryNameRequiredException(_inner) => Some(_inner),
-            Self::RepositoryNotAssociatedWithPullRequestException(_inner) => Some(_inner),
-            Self::TipOfSourceReferenceIsDifferentException(_inner) => Some(_inner),
-            Self::TipsDivergenceExceededException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::CommitMessageLengthExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ConcurrentReferenceUpdateException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EncryptionIntegrityChecksFailedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EncryptionKeyAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EncryptionKeyDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EncryptionKeyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EncryptionKeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            Self::FileContentSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::FolderContentSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidCommitIdException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidConflictDetailLevelException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidConflictResolutionException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidConflictResolutionStrategyException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidEmailException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidFileModeException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidPathException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidPullRequestIdException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidReplacementContentException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidReplacementTypeException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidRepositoryNameException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ManualMergeRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            Self::MaximumConflictResolutionEntriesExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::MaximumFileContentToLoadExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::MaximumItemsToCompareExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::MultipleConflictResolutionEntriesException(_inner) =>
+            Some(_inner)
+            ,
+            Self::NameLengthExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::PathRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            Self::PullRequestAlreadyClosedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::PullRequestApprovalRulesNotSatisfiedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::PullRequestDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            Self::PullRequestIdRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ReplacementContentRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ReplacementTypeRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            Self::RepositoryDoesNotExistException(_inner) =>
+            Some(_inner)
+            ,
+            Self::RepositoryNameRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            Self::RepositoryNotAssociatedWithPullRequestException(_inner) =>
+            Some(_inner)
+            ,
+            Self::TipOfSourceReferenceIsDifferentException(_inner) =>
+            Some(_inner)
+            ,
+            Self::TipsDivergenceExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -746,3 +808,4 @@ mod _merge_pull_request_by_three_way_output;
 
 /// Builders
 pub mod builders;
+

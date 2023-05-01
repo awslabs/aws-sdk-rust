@@ -3,7 +3,7 @@
 /// <p>The response elements represent the output of a request to perform a rollback of a transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackTransactionOutput {
+pub struct RollbackTransactionOutput  {
     /// <p>The status of the rollback operation.</p>
     #[doc(hidden)]
     pub transaction_status: std::option::Option<std::string::String>,
@@ -11,21 +11,19 @@ pub struct RollbackTransactionOutput {
 }
 impl RollbackTransactionOutput {
     /// <p>The status of the rollback operation.</p>
-    pub fn transaction_status(&self) -> std::option::Option<&str> {
+    pub fn transaction_status(&self) -> std::option::Option<& str> {
         self.transaction_status.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RollbackTransactionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RollbackTransactionOutput {
     /// Creates a new builder-style object to manufacture [`RollbackTransactionOutput`](crate::operation::rollback_transaction::RollbackTransactionOutput).
-    pub fn builder(
-    ) -> crate::operation::rollback_transaction::builders::RollbackTransactionOutputBuilder {
-        crate::operation::rollback_transaction::builders::RollbackTransactionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::rollback_transaction::builders::RollbackTransactionOutputBuilder {
+        crate::operation::rollback_transaction::builders::RollbackTransactionOutputBuilder::default()
     }
 }
 
@@ -43,27 +41,25 @@ impl RollbackTransactionOutputBuilder {
         self
     }
     /// <p>The status of the rollback operation.</p>
-    pub fn set_transaction_status(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transaction_status = input;
-        self
+    pub fn set_transaction_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transaction_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RollbackTransactionOutput`](crate::operation::rollback_transaction::RollbackTransactionOutput).
     pub fn build(self) -> crate::operation::rollback_transaction::RollbackTransactionOutput {
         crate::operation::rollback_transaction::RollbackTransactionOutput {
-            transaction_status: self.transaction_status,
+            transaction_status: self.transaction_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

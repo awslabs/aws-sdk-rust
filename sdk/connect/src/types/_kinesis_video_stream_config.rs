@@ -3,11 +3,11 @@
 /// <p>Configuration information of a Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisVideoStreamConfig {
+pub struct KinesisVideoStreamConfig  {
     /// <p>The prefix of the video stream.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
-    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> 
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     #[doc(hidden)]
     pub retention_period_hours: i32,
@@ -17,16 +17,16 @@ pub struct KinesisVideoStreamConfig {
 }
 impl KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
-    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> 
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub fn retention_period_hours(&self) -> i32 {
         self.retention_period_hours
     }
     /// <p>The encryption configuration.</p>
-    pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -53,20 +53,18 @@ impl KinesisVideoStreamConfigBuilder {
     }
     /// <p>The prefix of the video stream.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
-    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> 
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub fn retention_period_hours(mut self, input: i32) -> Self {
         self.retention_period_hours = Some(input);
         self
     }
-    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
+    /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> 
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_period_hours = input;
-        self
+        self.retention_period_hours = input; self
     }
     /// <p>The encryption configuration.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
@@ -74,19 +72,20 @@ impl KinesisVideoStreamConfigBuilder {
         self
     }
     /// <p>The encryption configuration.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
-        self.encryption_config = input;
-        self
+    pub fn set_encryption_config(mut self, input: std::option::Option<crate::types::EncryptionConfig>) -> Self {
+        self.encryption_config = input; self
     }
     /// Consumes the builder and constructs a [`KinesisVideoStreamConfig`](crate::types::KinesisVideoStreamConfig).
     pub fn build(self) -> crate::types::KinesisVideoStreamConfig {
         crate::types::KinesisVideoStreamConfig {
-            prefix: self.prefix,
-            retention_period_hours: self.retention_period_hours.unwrap_or_default(),
-            encryption_config: self.encryption_config,
+            prefix: self.prefix
+            ,
+            retention_period_hours: self.retention_period_hours
+                .unwrap_or_default()
+            ,
+            encryption_config: self.encryption_config
+            ,
         }
     }
 }
+

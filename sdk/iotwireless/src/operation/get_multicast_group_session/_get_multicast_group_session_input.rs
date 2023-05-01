@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMulticastGroupSessionInput {
+pub struct GetMulticastGroupSessionInput  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetMulticastGroupSessionInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetMulticastGroupSessionInput {
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionInput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput).
-    pub fn builder(
-    ) -> crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder {
         crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetMulticastGroupSessionInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetMulticastGroupSessionInput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_multicast_group_session::GetMulticastGroupSessionInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

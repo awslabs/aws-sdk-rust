@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelScheduleInput {
+pub struct GetChannelScheduleInput  {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -12,38 +12,37 @@ pub struct GetChannelScheduleInput {
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     #[doc(hidden)]
     pub max_results: i32,
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> 
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The duration in minutes of the channel schedule.</p>
-    pub fn duration_minutes(&self) -> std::option::Option<&str> {
+    pub fn duration_minutes(&self) -> std::option::Option<& str> {
         self.duration_minutes.as_deref()
     }
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(&self) -> i32 {
         self.max_results
     }
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> 
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetChannelScheduleInput {
     /// Creates a new builder-style object to manufacture [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
+    pub fn builder() -> crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder {
         crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder::default()
     }
 }
@@ -65,8 +64,7 @@ impl GetChannelScheduleInputBuilder {
     }
     /// <p>The name of the channel associated with this Channel Schedule.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The duration in minutes of the channel schedule.</p>
     pub fn duration_minutes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +73,7 @@ impl GetChannelScheduleInputBuilder {
     }
     /// <p>The duration in minutes of the channel schedule.</p>
     pub fn set_duration_minutes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.duration_minutes = input;
-        self
+        self.duration_minutes = input; self
     }
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,39 +82,38 @@ impl GetChannelScheduleInputBuilder {
     }
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> 
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
-    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
-    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
+    /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p> 
+    /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p> 
+    /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p> 
     /// <p>If the previous response didn't include a <code>NextToken</code> element, there are no more channel schedules to get.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_channel_schedule::GetChannelScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_channel_schedule::GetChannelScheduleInput {
-                channel_name: self.channel_name,
-                duration_minutes: self.duration_minutes,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                channel_name: self.channel_name
+                ,
+                duration_minutes: self.duration_minutes
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

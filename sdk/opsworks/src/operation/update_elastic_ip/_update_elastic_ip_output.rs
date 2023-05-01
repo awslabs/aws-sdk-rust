@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateElasticIpOutput {
+pub struct UpdateElasticIpOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateElasticIpOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput).
-    pub fn builder() -> crate::operation::update_elastic_ip::builders::UpdateElasticIpOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_elastic_ip::builders::UpdateElasticIpOutputBuilder {
         crate::operation::update_elastic_ip::builders::UpdateElasticIpOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct UpdateElasticIpOutputBuilder {
 }
 impl UpdateElasticIpOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateElasticIpOutput`](crate::operation::update_elastic_ip::UpdateElasticIpOutput).
     pub fn build(self) -> crate::operation::update_elastic_ip::UpdateElasticIpOutput {
         crate::operation::update_elastic_ip::UpdateElasticIpOutput {
@@ -41,3 +40,4 @@ impl UpdateElasticIpOutputBuilder {
         }
     }
 }
+

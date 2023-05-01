@@ -3,7 +3,7 @@
 /// <p>The phone number and proxy phone number for a participant in an Amazon Chime Voice Connector proxy session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Participant {
+pub struct Participant  {
     /// <p>The participant's phone number.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct Participant {
 }
 impl Participant {
     /// <p>The participant's phone number.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The participant's proxy phone number.</p>
-    pub fn proxy_phone_number(&self) -> std::option::Option<&str> {
+    pub fn proxy_phone_number(&self) -> std::option::Option<& str> {
         self.proxy_phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for Participant {
+impl  std::fmt::Debug for Participant  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Participant");
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl ParticipantBuilder {
     }
     /// <p>The participant's phone number.</p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>The participant's proxy phone number.</p>
     pub fn proxy_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,18 +59,16 @@ impl ParticipantBuilder {
         self
     }
     /// <p>The participant's proxy phone number.</p>
-    pub fn set_proxy_phone_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.proxy_phone_number = input;
-        self
+    pub fn set_proxy_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.proxy_phone_number = input; self
     }
     /// Consumes the builder and constructs a [`Participant`](crate::types::Participant).
     pub fn build(self) -> crate::types::Participant {
         crate::types::Participant {
-            phone_number: self.phone_number,
-            proxy_phone_number: self.proxy_phone_number,
+            phone_number: self.phone_number
+            ,
+            proxy_phone_number: self.proxy_phone_number
+            ,
         }
     }
 }
@@ -83,3 +80,4 @@ impl std::fmt::Debug for ParticipantBuilder {
         formatter.finish()
     }
 }
+

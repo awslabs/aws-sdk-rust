@@ -3,7 +3,7 @@
 /// <p>The aggregated value for a metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricValue {
+pub struct MetricValue  {
     /// <p>The actual number that represents the metric.</p>
     #[doc(hidden)]
     pub amount: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MetricValue {
 }
 impl MetricValue {
     /// <p>The actual number that represents the metric.</p>
-    pub fn amount(&self) -> std::option::Option<&str> {
+    pub fn amount(&self) -> std::option::Option<& str> {
         self.amount.as_deref()
     }
     /// <p>The unit that the metric is given in.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl MetricValueBuilder {
     }
     /// <p>The actual number that represents the metric.</p>
     pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amount = input;
-        self
+        self.amount = input; self
     }
     /// <p>The unit that the metric is given in.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl MetricValueBuilder {
     }
     /// <p>The unit that the metric is given in.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// Consumes the builder and constructs a [`MetricValue`](crate::types::MetricValue).
     pub fn build(self) -> crate::types::MetricValue {
         crate::types::MetricValue {
-            amount: self.amount,
-            unit: self.unit,
+            amount: self.amount
+            ,
+            unit: self.unit
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Temporary credentials with authorization to log on to an Amazon Redshift database. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetClusterCredentialsOutput {
+pub struct GetClusterCredentialsOutput  {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
@@ -17,19 +17,19 @@ pub struct GetClusterCredentialsOutput {
 }
 impl GetClusterCredentialsOutput {
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
-    pub fn db_password(&self) -> std::option::Option<&str> {
+    pub fn db_password(&self) -> std::option::Option<& str> {
         self.db_password.as_deref()
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
-impl std::fmt::Debug for GetClusterCredentialsOutput {
+impl  std::fmt::Debug for GetClusterCredentialsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClusterCredentialsOutput");
         formatter.field("db_user", &self.db_user);
@@ -40,15 +40,13 @@ impl std::fmt::Debug for GetClusterCredentialsOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetClusterCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetClusterCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsOutput`](crate::operation::get_cluster_credentials::GetClusterCredentialsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_cluster_credentials::builders::GetClusterCredentialsOutputBuilder {
         crate::operation::get_cluster_credentials::builders::GetClusterCredentialsOutputBuilder::default()
     }
 }
@@ -70,8 +68,7 @@ impl GetClusterCredentialsOutputBuilder {
     }
     /// <p>A database user name that is authorized to log on to the database <code>DbName</code> using the password <code>DbPassword</code>. If the specified DbUser exists in the database, the new user name has the same database permissions as the the user named in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter is specifed, <code>DbUser</code> is added to the listed groups for any sessions created using these credentials.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +77,7 @@ impl GetClusterCredentialsOutputBuilder {
     }
     /// <p>A temporary password that authorizes the user name returned by <code>DbUser</code> to log on to the database <code>DbName</code>. </p>
     pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_password = input;
-        self
+        self.db_password = input; self
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,28 +85,27 @@ impl GetClusterCredentialsOutputBuilder {
         self
     }
     /// <p>The date and time the password in <code>DbPassword</code> expires.</p>
-    pub fn set_expiration(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration = input;
-        self
+    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetClusterCredentialsOutput`](crate::operation::get_cluster_credentials::GetClusterCredentialsOutput).
     pub fn build(self) -> crate::operation::get_cluster_credentials::GetClusterCredentialsOutput {
         crate::operation::get_cluster_credentials::GetClusterCredentialsOutput {
-            db_user: self.db_user,
-            db_password: self.db_password,
-            expiration: self.expiration,
+            db_user: self.db_user
+            ,
+            db_password: self.db_password
+            ,
+            expiration: self.expiration
+            ,
             _request_id: self._request_id,
         }
     }
@@ -125,3 +120,4 @@ impl std::fmt::Debug for GetClusterCredentialsOutputBuilder {
         formatter.finish()
     }
 }
+

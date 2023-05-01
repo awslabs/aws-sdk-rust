@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let allowliststatuscode = unimplemented!();
 /// match allowliststatuscode {
@@ -36,22 +36,14 @@
 /// Specifically, when `allowliststatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AllowListStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Indicates the current status of an allow list. Depending on the type of criteria that the list specifies, possible values are:</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AllowListStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Ok,
@@ -70,63 +62,53 @@ pub enum AllowListStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowListStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "OK" => AllowListStatusCode::Ok,
-            "S3_OBJECT_ACCESS_DENIED" => AllowListStatusCode::S3ObjectAccessDenied,
-            "S3_OBJECT_EMPTY" => AllowListStatusCode::S3ObjectEmpty,
-            "S3_OBJECT_NOT_FOUND" => AllowListStatusCode::S3ObjectNotFound,
-            "S3_OBJECT_OVERSIZE" => AllowListStatusCode::S3ObjectOversize,
-            "S3_THROTTLED" => AllowListStatusCode::S3Throttled,
-            "S3_USER_ACCESS_DENIED" => AllowListStatusCode::S3UserAccessDenied,
-            "UNKNOWN_ERROR" => AllowListStatusCode::UnknownError,
-            other => AllowListStatusCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OK" => AllowListStatusCode::Ok,
+"S3_OBJECT_ACCESS_DENIED" => AllowListStatusCode::S3ObjectAccessDenied,
+"S3_OBJECT_EMPTY" => AllowListStatusCode::S3ObjectEmpty,
+"S3_OBJECT_NOT_FOUND" => AllowListStatusCode::S3ObjectNotFound,
+"S3_OBJECT_OVERSIZE" => AllowListStatusCode::S3ObjectOversize,
+"S3_THROTTLED" => AllowListStatusCode::S3Throttled,
+"S3_USER_ACCESS_DENIED" => AllowListStatusCode::S3UserAccessDenied,
+"UNKNOWN_ERROR" => AllowListStatusCode::UnknownError,
+other => AllowListStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AllowListStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowListStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AllowListStatusCode::from(s))
+                }
+            }
 impl AllowListStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AllowListStatusCode::Ok => "OK",
-            AllowListStatusCode::S3ObjectAccessDenied => "S3_OBJECT_ACCESS_DENIED",
-            AllowListStatusCode::S3ObjectEmpty => "S3_OBJECT_EMPTY",
-            AllowListStatusCode::S3ObjectNotFound => "S3_OBJECT_NOT_FOUND",
-            AllowListStatusCode::S3ObjectOversize => "S3_OBJECT_OVERSIZE",
-            AllowListStatusCode::S3Throttled => "S3_THROTTLED",
-            AllowListStatusCode::S3UserAccessDenied => "S3_USER_ACCESS_DENIED",
-            AllowListStatusCode::UnknownError => "UNKNOWN_ERROR",
-            AllowListStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OK",
-            "S3_OBJECT_ACCESS_DENIED",
-            "S3_OBJECT_EMPTY",
-            "S3_OBJECT_NOT_FOUND",
-            "S3_OBJECT_OVERSIZE",
-            "S3_THROTTLED",
-            "S3_USER_ACCESS_DENIED",
-            "UNKNOWN_ERROR",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AllowListStatusCode::Ok => "OK",
+    AllowListStatusCode::S3ObjectAccessDenied => "S3_OBJECT_ACCESS_DENIED",
+    AllowListStatusCode::S3ObjectEmpty => "S3_OBJECT_EMPTY",
+    AllowListStatusCode::S3ObjectNotFound => "S3_OBJECT_NOT_FOUND",
+    AllowListStatusCode::S3ObjectOversize => "S3_OBJECT_OVERSIZE",
+    AllowListStatusCode::S3Throttled => "S3_THROTTLED",
+    AllowListStatusCode::S3UserAccessDenied => "S3_USER_ACCESS_DENIED",
+    AllowListStatusCode::UnknownError => "UNKNOWN_ERROR",
+    AllowListStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OK", "S3_OBJECT_ACCESS_DENIED", "S3_OBJECT_EMPTY", "S3_OBJECT_NOT_FOUND", "S3_OBJECT_OVERSIZE", "S3_THROTTLED", "S3_USER_ACCESS_DENIED", "UNKNOWN_ERROR"]
+                }
+            }
 impl AsRef<str> for AllowListStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

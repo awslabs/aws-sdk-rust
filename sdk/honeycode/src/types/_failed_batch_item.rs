@@ -3,7 +3,7 @@
 /// <p> A single item in a batch that failed to perform the intended action because of an error preventing it from succeeding. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedBatchItem {
+pub struct FailedBatchItem  {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FailedBatchItem {
 }
 impl FailedBatchItem {
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The error message that indicates why the batch item failed. </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FailedBatchItemBuilder {
     }
     /// <p> The id of the batch item that failed. This is the batch item id for the BatchCreateTableRows and BatchUpsertTableRows operations and the row id for the BatchUpdateTableRows and BatchDeleteTableRows operations. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p> The error message that indicates why the batch item failed. </p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl FailedBatchItemBuilder {
     }
     /// <p> The error message that indicates why the batch item failed. </p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Consumes the builder and constructs a [`FailedBatchItem`](crate::types::FailedBatchItem).
     pub fn build(self) -> crate::types::FailedBatchItem {
         crate::types::FailedBatchItem {
-            id: self.id,
-            error_message: self.error_message,
+            id: self.id
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchPlaceIndexForPositionOutput {
+pub struct SearchPlaceIndexForPositionOutput  {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>,
@@ -13,24 +13,22 @@ pub struct SearchPlaceIndexForPositionOutput {
 }
 impl SearchPlaceIndexForPositionOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
-    pub fn summary(
-        &self,
-    ) -> std::option::Option<&crate::types::SearchPlaceIndexForPositionSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::types::SearchPlaceIndexForPositionSummary> {
         self.summary.as_ref()
     }
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::SearchForPositionResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::types::SearchForPositionResult]> {
         self.results.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchPlaceIndexForPositionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchPlaceIndexForPositionOutput {
     /// Creates a new builder-style object to manufacture [`SearchPlaceIndexForPositionOutput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput).
-    pub fn builder() -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionOutputBuilder{
+    pub fn builder() -> crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionOutputBuilder {
         crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl SearchPlaceIndexForPositionOutputBuilder {
         self
     }
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
-    pub fn set_summary(
-        mut self,
-        input: std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>,
-    ) -> Self {
-        self.summary = input;
-        self
+    pub fn set_summary(mut self, input: std::option::Option<crate::types::SearchPlaceIndexForPositionSummary>) -> Self {
+        self.summary = input; self
     }
     /// Appends an item to `results`.
     ///
@@ -64,35 +58,32 @@ impl SearchPlaceIndexForPositionOutputBuilder {
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
     pub fn results(mut self, input: crate::types::SearchForPositionResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = Some(v);
-        self
+                        v.push(input);
+                        self.results = Some(v);
+                        self
     }
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
-    pub fn set_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SearchForPositionResult>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::SearchForPositionResult>>) -> Self {
+        self.results = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionOutput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput {
+    pub fn build(self) -> crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput {
         crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionOutput {
-            summary: self.summary,
-            results: self.results,
+            summary: self.summary
+            ,
+            results: self.results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The insight results returned by the <code>GetInsightResults</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightResults {
+pub struct InsightResults  {
     /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     #[doc(hidden)]
     pub insight_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct InsightResults {
 }
 impl InsightResults {
     /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn insight_arn(&self) -> std::option::Option<&str> {
+    pub fn insight_arn(&self) -> std::option::Option<& str> {
         self.insight_arn.as_deref()
     }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn group_by_attribute(&self) -> std::option::Option<&str> {
+    pub fn group_by_attribute(&self) -> std::option::Option<& str> {
         self.group_by_attribute.as_deref()
     }
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn result_values(&self) -> std::option::Option<&[crate::types::InsightResultValue]> {
+    pub fn result_values(&self) -> std::option::Option<& [crate::types::InsightResultValue]> {
         self.result_values.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl InsightResultsBuilder {
     }
     /// <p>The ARN of the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     pub fn set_insight_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_arn = input;
-        self
+        self.insight_arn = input; self
     }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     pub fn group_by_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl InsightResultsBuilder {
         self
     }
     /// <p>The attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn set_group_by_attribute(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.group_by_attribute = input;
-        self
+    pub fn set_group_by_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.group_by_attribute = input; self
     }
     /// Appends an item to `result_values`.
     ///
@@ -74,24 +69,24 @@ impl InsightResultsBuilder {
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
     pub fn result_values(mut self, input: crate::types::InsightResultValue) -> Self {
         let mut v = self.result_values.unwrap_or_default();
-        v.push(input);
-        self.result_values = Some(v);
-        self
+                        v.push(input);
+                        self.result_values = Some(v);
+                        self
     }
     /// <p>The list of insight result values returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn set_result_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightResultValue>>,
-    ) -> Self {
-        self.result_values = input;
-        self
+    pub fn set_result_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightResultValue>>) -> Self {
+        self.result_values = input; self
     }
     /// Consumes the builder and constructs a [`InsightResults`](crate::types::InsightResults).
     pub fn build(self) -> crate::types::InsightResults {
         crate::types::InsightResults {
-            insight_arn: self.insight_arn,
-            group_by_attribute: self.group_by_attribute,
-            result_values: self.result_values,
+            insight_arn: self.insight_arn
+            ,
+            group_by_attribute: self.group_by_attribute
+            ,
+            result_values: self.result_values
+            ,
         }
     }
 }
+

@@ -4,64 +4,55 @@ pub use crate::operation::describe_subscribers_for_notification::_describe_subsc
 pub use crate::operation::describe_subscribers_for_notification::_describe_subscribers_for_notification_input::DescribeSubscribersForNotificationInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeSubscribersForNotification`.
-///
+/// 
 /// <p>Lists the subscribers that are associated with a notification.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSubscribersForNotificationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_subscribers_for_notification::builders::DescribeSubscribersForNotificationInputBuilder
             }
-impl DescribeSubscribersForNotificationFluentBuilder {
+impl DescribeSubscribersForNotificationFluentBuilder  {
     /// Creates a new `DescribeSubscribersForNotification`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotification, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_subscribers_for_notification::paginator::DescribeSubscribersForNotificationPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_subscribers_for_notification::paginator::DescribeSubscribersForNotificationPaginator{
-        crate::operation::describe_subscribers_for_notification::paginator::DescribeSubscribersForNotificationPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_subscribers_for_notification::paginator::DescribeSubscribersForNotificationPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_subscribers_for_notification::paginator::DescribeSubscribersForNotificationPaginator {
+                            crate::operation::describe_subscribers_for_notification::paginator::DescribeSubscribersForNotificationPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
@@ -88,10 +79,7 @@ impl DescribeSubscribersForNotificationFluentBuilder {
         self
     }
     /// <p>The notification whose subscribers you want to list.</p>
-    pub fn set_notification(
-        mut self,
-        input: std::option::Option<crate::types::Notification>,
-    ) -> Self {
+    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
@@ -116,3 +104,4 @@ impl DescribeSubscribersForNotificationFluentBuilder {
         self
     }
 }
+

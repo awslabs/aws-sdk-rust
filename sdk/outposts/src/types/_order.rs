@@ -3,22 +3,22 @@
 /// <p>Information about an order.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Order {
+pub struct Order  {
     /// <p> The ID of the Outpost in the order. </p>
     #[doc(hidden)]
     pub outpost_id: std::option::Option<std::string::String>,
     /// <p>The ID of the order.</p>
     #[doc(hidden)]
     pub order_id: std::option::Option<std::string::String>,
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::OrderStatus>,
@@ -43,48 +43,48 @@ pub struct Order {
 }
 impl Order {
     /// <p> The ID of the Outpost in the order. </p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> std::option::Option<& str> {
         self.outpost_id.as_deref()
     }
     /// <p>The ID of the order.</p>
-    pub fn order_id(&self) -> std::option::Option<&str> {
+    pub fn order_id(&self) -> std::option::Option<& str> {
         self.order_id.as_deref()
     }
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::types::OrderStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OrderStatus> {
         self.status.as_ref()
     }
     /// <p>The line items for the order</p>
-    pub fn line_items(&self) -> std::option::Option<&[crate::types::LineItem]> {
+    pub fn line_items(&self) -> std::option::Option<& [crate::types::LineItem]> {
         self.line_items.as_deref()
     }
     /// <p>The payment option for the order.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The submission date for the order.</p>
-    pub fn order_submission_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_submission_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.order_submission_date.as_ref()
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn order_fulfilled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn order_fulfilled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.order_fulfilled_date.as_ref()
     }
     /// <p>The payment term.</p>
-    pub fn payment_term(&self) -> std::option::Option<&crate::types::PaymentTerm> {
+    pub fn payment_term(&self) -> std::option::Option<& crate::types::PaymentTerm> {
         self.payment_term.as_ref()
     }
     /// <p>The type of order.</p>
-    pub fn order_type(&self) -> std::option::Option<&crate::types::OrderType> {
+    pub fn order_type(&self) -> std::option::Option<& crate::types::OrderType> {
         self.order_type.as_ref()
     }
 }
@@ -117,8 +117,7 @@ impl OrderBuilder {
     }
     /// <p> The ID of the Outpost in the order. </p>
     pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_id = input;
-        self
+        self.outpost_id = input; self
     }
     /// <p>The ID of the order.</p>
     pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,36 +126,34 @@ impl OrderBuilder {
     }
     /// <p>The ID of the order.</p>
     pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.order_id = input;
-        self
+        self.order_id = input; self
     }
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
     pub fn status(mut self, input: crate::types::OrderStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the order.</p>
-    /// <ul>
-    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li>
-    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li>
-    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li>
-    /// </ul> <note>
-    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p>
+    /// <p>The status of the order.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PREPARING</code> - Order is received and being prepared.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. To get more details, see the line item status.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Order is complete.</p> </li> 
+    /// <li> <p> <code>CANCELLED</code> - Order is cancelled.</p> </li> 
+    /// <li> <p> <code>ERROR</code> - Customer should contact support.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The following status are deprecated: <code>RECEIVED</code>, <code>PENDING</code>, <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. </p> 
     /// </note>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OrderStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Appends an item to `line_items`.
     ///
@@ -165,17 +162,13 @@ impl OrderBuilder {
     /// <p>The line items for the order</p>
     pub fn line_items(mut self, input: crate::types::LineItem) -> Self {
         let mut v = self.line_items.unwrap_or_default();
-        v.push(input);
-        self.line_items = Some(v);
-        self
+                        v.push(input);
+                        self.line_items = Some(v);
+                        self
     }
     /// <p>The line items for the order</p>
-    pub fn set_line_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LineItem>>,
-    ) -> Self {
-        self.line_items = input;
-        self
+    pub fn set_line_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::LineItem>>) -> Self {
+        self.line_items = input; self
     }
     /// <p>The payment option for the order.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
@@ -183,12 +176,8 @@ impl OrderBuilder {
         self
     }
     /// <p>The payment option for the order.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
-        self.payment_option = input;
-        self
+    pub fn set_payment_option(mut self, input: std::option::Option<crate::types::PaymentOption>) -> Self {
+        self.payment_option = input; self
     }
     /// <p>The submission date for the order.</p>
     pub fn order_submission_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -196,12 +185,8 @@ impl OrderBuilder {
         self
     }
     /// <p>The submission date for the order.</p>
-    pub fn set_order_submission_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.order_submission_date = input;
-        self
+    pub fn set_order_submission_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.order_submission_date = input; self
     }
     /// <p>The fulfillment date of the order.</p>
     pub fn order_fulfilled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -209,12 +194,8 @@ impl OrderBuilder {
         self
     }
     /// <p>The fulfillment date of the order.</p>
-    pub fn set_order_fulfilled_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.order_fulfilled_date = input;
-        self
+    pub fn set_order_fulfilled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.order_fulfilled_date = input; self
     }
     /// <p>The payment term.</p>
     pub fn payment_term(mut self, input: crate::types::PaymentTerm) -> Self {
@@ -222,12 +203,8 @@ impl OrderBuilder {
         self
     }
     /// <p>The payment term.</p>
-    pub fn set_payment_term(
-        mut self,
-        input: std::option::Option<crate::types::PaymentTerm>,
-    ) -> Self {
-        self.payment_term = input;
-        self
+    pub fn set_payment_term(mut self, input: std::option::Option<crate::types::PaymentTerm>) -> Self {
+        self.payment_term = input; self
     }
     /// <p>The type of order.</p>
     pub fn order_type(mut self, input: crate::types::OrderType) -> Self {
@@ -236,21 +213,30 @@ impl OrderBuilder {
     }
     /// <p>The type of order.</p>
     pub fn set_order_type(mut self, input: std::option::Option<crate::types::OrderType>) -> Self {
-        self.order_type = input;
-        self
+        self.order_type = input; self
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {
         crate::types::Order {
-            outpost_id: self.outpost_id,
-            order_id: self.order_id,
-            status: self.status,
-            line_items: self.line_items,
-            payment_option: self.payment_option,
-            order_submission_date: self.order_submission_date,
-            order_fulfilled_date: self.order_fulfilled_date,
-            payment_term: self.payment_term,
-            order_type: self.order_type,
+            outpost_id: self.outpost_id
+            ,
+            order_id: self.order_id
+            ,
+            status: self.status
+            ,
+            line_items: self.line_items
+            ,
+            payment_option: self.payment_option
+            ,
+            order_submission_date: self.order_submission_date
+            ,
+            order_fulfilled_date: self.order_fulfilled_date
+            ,
+            payment_term: self.payment_term
+            ,
+            order_type: self.order_type
+            ,
         }
     }
 }
+

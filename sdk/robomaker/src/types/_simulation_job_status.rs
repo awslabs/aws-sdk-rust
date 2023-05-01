@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationjobstatus = unimplemented!();
 /// match simulationjobstatus {
@@ -38,22 +38,14 @@
 /// Specifically, when `simulationjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -76,69 +68,57 @@ pub enum SimulationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Terminating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => SimulationJobStatus::Canceled,
-            "Completed" => SimulationJobStatus::Completed,
-            "Failed" => SimulationJobStatus::Failed,
-            "Pending" => SimulationJobStatus::Pending,
-            "Preparing" => SimulationJobStatus::Preparing,
-            "Restarting" => SimulationJobStatus::Restarting,
-            "Running" => SimulationJobStatus::Running,
-            "RunningFailed" => SimulationJobStatus::RunningFailed,
-            "Terminated" => SimulationJobStatus::Terminated,
-            "Terminating" => SimulationJobStatus::Terminating,
-            other => SimulationJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => SimulationJobStatus::Canceled,
+"Completed" => SimulationJobStatus::Completed,
+"Failed" => SimulationJobStatus::Failed,
+"Pending" => SimulationJobStatus::Pending,
+"Preparing" => SimulationJobStatus::Preparing,
+"Restarting" => SimulationJobStatus::Restarting,
+"Running" => SimulationJobStatus::Running,
+"RunningFailed" => SimulationJobStatus::RunningFailed,
+"Terminated" => SimulationJobStatus::Terminated,
+"Terminating" => SimulationJobStatus::Terminating,
+other => SimulationJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SimulationJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationJobStatus::from(s))
+                }
+            }
 impl SimulationJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SimulationJobStatus::Canceled => "Canceled",
-            SimulationJobStatus::Completed => "Completed",
-            SimulationJobStatus::Failed => "Failed",
-            SimulationJobStatus::Pending => "Pending",
-            SimulationJobStatus::Preparing => "Preparing",
-            SimulationJobStatus::Restarting => "Restarting",
-            SimulationJobStatus::Running => "Running",
-            SimulationJobStatus::RunningFailed => "RunningFailed",
-            SimulationJobStatus::Terminated => "Terminated",
-            SimulationJobStatus::Terminating => "Terminating",
-            SimulationJobStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled",
-            "Completed",
-            "Failed",
-            "Pending",
-            "Preparing",
-            "Restarting",
-            "Running",
-            "RunningFailed",
-            "Terminated",
-            "Terminating",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SimulationJobStatus::Canceled => "Canceled",
+    SimulationJobStatus::Completed => "Completed",
+    SimulationJobStatus::Failed => "Failed",
+    SimulationJobStatus::Pending => "Pending",
+    SimulationJobStatus::Preparing => "Preparing",
+    SimulationJobStatus::Restarting => "Restarting",
+    SimulationJobStatus::Running => "Running",
+    SimulationJobStatus::RunningFailed => "RunningFailed",
+    SimulationJobStatus::Terminated => "Terminated",
+    SimulationJobStatus::Terminating => "Terminating",
+    SimulationJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Completed", "Failed", "Pending", "Preparing", "Restarting", "Running", "RunningFailed", "Terminated", "Terminating"]
+                }
+            }
 impl AsRef<str> for SimulationJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

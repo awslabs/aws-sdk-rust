@@ -4,81 +4,56 @@ pub use crate::operation::put_resource_permission::_put_resource_permission_outp
 pub use crate::operation::put_resource_permission::_put_resource_permission_input::PutResourcePermissionInputBuilder;
 
 /// Fluent builder constructing a request to `PutResourcePermission`.
-///
+/// 
 /// <p>Adds permissions to the target database.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourcePermissionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder,
-}
-impl PutResourcePermissionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder
+            }
+impl PutResourcePermissionFluentBuilder  {
     /// Creates a new `PutResourcePermission`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_resource_permission::PutResourcePermission,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_permission::PutResourcePermissionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_resource_permission::PutResourcePermissionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_resource_permission::PutResourcePermissionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_resource_permission::PutResourcePermission, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_resource_permission::PutResourcePermissionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionOutput, aws_smithy_http::result::SdkError<crate::operation::put_resource_permission::PutResourcePermissionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p></p>
     pub fn action_type(mut self, input: crate::types::PermissionActionType) -> Self {
         self.inner = self.inner.action_type(input);
         self
     }
     /// <p></p>
-    pub fn set_action_type(
-        mut self,
-        input: std::option::Option<crate::types::PermissionActionType>,
-    ) -> Self {
+    pub fn set_action_type(mut self, input: std::option::Option<crate::types::PermissionActionType>) -> Self {
         self.inner = self.inner.set_action_type(input);
         self
     }
@@ -88,10 +63,7 @@ impl PutResourcePermissionFluentBuilder {
         self
     }
     /// <p></p>
-    pub fn set_source_resource_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_source_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_resource_arn(input);
         self
     }
@@ -106,3 +78,4 @@ impl PutResourcePermissionFluentBuilder {
         self
     }
 }
+

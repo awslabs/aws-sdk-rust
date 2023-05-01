@@ -4,96 +4,74 @@ pub use crate::operation::update_theme_permissions::_update_theme_permissions_ou
 pub use crate::operation::update_theme_permissions::_update_theme_permissions_input::UpdateThemePermissionsInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateThemePermissions`.
-///
-/// <p>Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.</p>
-/// <p>Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions, which are user, owner, or no permissions: </p>
-/// <ul>
-/// <li> <p>User</p>
-/// <ul>
-/// <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
-/// <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li>
-/// <li> <p> <code>"quicksight:ListThemeAliases"</code> </p> </li>
-/// <li> <p> <code>"quicksight:ListThemeVersions"</code> </p> </li>
-/// </ul> </li>
-/// <li> <p>Owner</p>
-/// <ul>
-/// <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li>
-/// <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li>
-/// <li> <p> <code>"quicksight:ListThemeAliases"</code> </p> </li>
-/// <li> <p> <code>"quicksight:ListThemeVersions"</code> </p> </li>
-/// <li> <p> <code>"quicksight:DeleteTheme"</code> </p> </li>
-/// <li> <p> <code>"quicksight:UpdateTheme"</code> </p> </li>
-/// <li> <p> <code>"quicksight:CreateThemeAlias"</code> </p> </li>
-/// <li> <p> <code>"quicksight:DeleteThemeAlias"</code> </p> </li>
-/// <li> <p> <code>"quicksight:UpdateThemeAlias"</code> </p> </li>
-/// <li> <p> <code>"quicksight:UpdateThemePermissions"</code> </p> </li>
-/// <li> <p> <code>"quicksight:DescribeThemePermissions"</code> </p> </li>
-/// </ul> </li>
-/// <li> <p>To specify no permissions, omit the permissions list.</p> </li>
+/// 
+/// <p>Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.</p> 
+/// <p>Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions, which are user, owner, or no permissions: </p> 
+/// <ul> 
+/// <li> <p>User</p> 
+/// <ul> 
+/// <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:ListThemeAliases"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:ListThemeVersions"</code> </p> </li> 
+/// </ul> </li> 
+/// <li> <p>Owner</p> 
+/// <ul> 
+/// <li> <p> <code>"quicksight:DescribeTheme"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:DescribeThemeAlias"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:ListThemeAliases"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:ListThemeVersions"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:DeleteTheme"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:UpdateTheme"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:CreateThemeAlias"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:DeleteThemeAlias"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:UpdateThemeAlias"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:UpdateThemePermissions"</code> </p> </li> 
+/// <li> <p> <code>"quicksight:DescribeThemePermissions"</code> </p> </li> 
+/// </ul> </li> 
+/// <li> <p>To specify no permissions, omit the permissions list.</p> </li> 
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateThemePermissionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_theme_permissions::builders::UpdateThemePermissionsInputBuilder,
-}
-impl UpdateThemePermissionsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_theme_permissions::builders::UpdateThemePermissionsInputBuilder
+            }
+impl UpdateThemePermissionsFluentBuilder  {
     /// Creates a new `UpdateThemePermissions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_theme_permissions::UpdateThemePermissions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_theme_permissions::UpdateThemePermissionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_theme_permissions::UpdateThemePermissionsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_theme_permissions::UpdateThemePermissionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_theme_permissions::UpdateThemePermissions, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_theme_permissions::UpdateThemePermissionsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_theme_permissions::UpdateThemePermissionsOutput, aws_smithy_http::result::SdkError<crate::operation::update_theme_permissions::UpdateThemePermissionsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -124,10 +102,7 @@ impl UpdateThemePermissionsFluentBuilder {
         self
     }
     /// <p>A list of resource permissions to be granted for the theme.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_grant_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_grant_permissions(input);
         self
     }
@@ -141,11 +116,9 @@ impl UpdateThemePermissionsFluentBuilder {
         self
     }
     /// <p>A list of resource permissions to be revoked from the theme.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
+    pub fn set_revoke_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
         self.inner = self.inner.set_revoke_permissions(input);
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateRouteTableInput {
+pub struct DisassociateRouteTableInput  {
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DisassociateRouteTableInput {
 }
 impl DisassociateRouteTableInput {
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,9 +22,7 @@ impl DisassociateRouteTableInput {
 }
 impl DisassociateRouteTableInput {
     /// Creates a new builder-style object to manufacture [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder {
         crate::operation::disassociate_route_table::builders::DisassociateRouteTableInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DisassociateRouteTableInputBuilder {
     }
     /// <p>The association ID representing the current association between the route table and subnet or gateway.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -54,21 +51,18 @@ impl DisassociateRouteTableInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateRouteTableInput`](crate::operation::disassociate_route_table::DisassociateRouteTableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_route_table::DisassociateRouteTableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_route_table::DisassociateRouteTableInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_route_table::DisassociateRouteTableInput {
-                association_id: self.association_id,
-                dry_run: self.dry_run,
-            },
+                association_id: self.association_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

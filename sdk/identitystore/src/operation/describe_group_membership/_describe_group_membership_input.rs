@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGroupMembershipInput {
+pub struct DescribeGroupMembershipInput  {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DescribeGroupMembershipInput {
 }
 impl DescribeGroupMembershipInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
 }
 impl DescribeGroupMembershipInput {
     /// Creates a new builder-style object to manufacture [`DescribeGroupMembershipInput`](crate::operation::describe_group_membership::DescribeGroupMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder {
         crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl DescribeGroupMembershipInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identity_store_id = input;
-        self
+    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identity_store_id = input; self
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn membership_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl DescribeGroupMembershipInputBuilder {
     }
     /// <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeGroupMembershipInput`](crate::operation::describe_group_membership::DescribeGroupMembershipInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_group_membership::DescribeGroupMembershipInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_group_membership::DescribeGroupMembershipInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_group_membership::DescribeGroupMembershipInput {
-                identity_store_id: self.identity_store_id,
-                membership_id: self.membership_id,
-            },
+                identity_store_id: self.identity_store_id
+                ,
+                membership_id: self.membership_id
+                ,
+            }
         )
     }
 }
+

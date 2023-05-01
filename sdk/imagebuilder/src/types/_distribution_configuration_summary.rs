@@ -3,7 +3,7 @@
 /// <p>A high-level overview of a distribution configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributionConfigurationSummary {
+pub struct DistributionConfigurationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -21,42 +21,38 @@ pub struct DistributionConfigurationSummary {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags associated with the distribution configuration.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of Regions where the container image is distributed to.</p>
     #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DistributionConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the distribution configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date on which the distribution configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&str> {
+    pub fn date_created(&self) -> std::option::Option<& str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which the distribution configuration was updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<&str> {
+    pub fn date_updated(&self) -> std::option::Option<& str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags associated with the distribution configuration.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of Regions where the container image is distributed to.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
 }
@@ -76,8 +72,7 @@ pub struct DistributionConfigurationSummaryBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) date_created: std::option::Option<std::string::String>,
     pub(crate) date_updated: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DistributionConfigurationSummaryBuilder {
@@ -88,8 +83,7 @@ impl DistributionConfigurationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +92,7 @@ impl DistributionConfigurationSummaryBuilder {
     }
     /// <p>The name of the distribution configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +101,7 @@ impl DistributionConfigurationSummaryBuilder {
     }
     /// <p>The description of the distribution configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The date on which the distribution configuration was created.</p>
     pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +110,7 @@ impl DistributionConfigurationSummaryBuilder {
     }
     /// <p>The date on which the distribution configuration was created.</p>
     pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_created = input;
-        self
+        self.date_created = input; self
     }
     /// <p>The date on which the distribution configuration was updated.</p>
     pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,33 +119,22 @@ impl DistributionConfigurationSummaryBuilder {
     }
     /// <p>The date on which the distribution configuration was updated.</p>
     pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_updated = input;
-        self
+        self.date_updated = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the distribution configuration.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags associated with the distribution configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `regions`.
     ///
@@ -163,28 +143,32 @@ impl DistributionConfigurationSummaryBuilder {
     /// <p>A list of Regions where the container image is distributed to.</p>
     pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = Some(v);
+                        self
     }
     /// <p>A list of Regions where the container image is distributed to.</p>
-    pub fn set_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// Consumes the builder and constructs a [`DistributionConfigurationSummary`](crate::types::DistributionConfigurationSummary).
     pub fn build(self) -> crate::types::DistributionConfigurationSummary {
         crate::types::DistributionConfigurationSummary {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            date_created: self.date_created,
-            date_updated: self.date_updated,
-            tags: self.tags,
-            regions: self.regions,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            date_created: self.date_created
+            ,
+            date_updated: self.date_updated
+            ,
+            tags: self.tags
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

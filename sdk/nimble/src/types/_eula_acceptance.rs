@@ -3,7 +3,7 @@
 /// <p>The acceptance of a EULA, required to use Amazon-provided streaming images.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EulaAcceptance {
+pub struct EulaAcceptance  {
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
     #[doc(hidden)]
     pub accepted_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,23 +22,23 @@ pub struct EulaAcceptance {
 }
 impl EulaAcceptance {
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
-    pub fn accepted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn accepted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.accepted_at.as_ref()
     }
     /// <p>The ID of the person who accepted the EULA.</p>
-    pub fn accepted_by(&self) -> std::option::Option<&str> {
+    pub fn accepted_by(&self) -> std::option::Option<& str> {
         self.accepted_by.as_deref()
     }
     /// <p>The ID of the acceptee.</p>
-    pub fn acceptee_id(&self) -> std::option::Option<&str> {
+    pub fn acceptee_id(&self) -> std::option::Option<& str> {
         self.acceptee_id.as_deref()
     }
     /// <p>The EULA acceptance ID.</p>
-    pub fn eula_acceptance_id(&self) -> std::option::Option<&str> {
+    pub fn eula_acceptance_id(&self) -> std::option::Option<& str> {
         self.eula_acceptance_id.as_deref()
     }
     /// <p>The EULA ID.</p>
-    pub fn eula_id(&self) -> std::option::Option<&str> {
+    pub fn eula_id(&self) -> std::option::Option<& str> {
         self.eula_id.as_deref()
     }
 }
@@ -66,12 +66,8 @@ impl EulaAcceptanceBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the EULA was accepted.</p>
-    pub fn set_accepted_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.accepted_at = input;
-        self
+    pub fn set_accepted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.accepted_at = input; self
     }
     /// <p>The ID of the person who accepted the EULA.</p>
     pub fn accepted_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl EulaAcceptanceBuilder {
     }
     /// <p>The ID of the person who accepted the EULA.</p>
     pub fn set_accepted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accepted_by = input;
-        self
+        self.accepted_by = input; self
     }
     /// <p>The ID of the acceptee.</p>
     pub fn acceptee_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +85,7 @@ impl EulaAcceptanceBuilder {
     }
     /// <p>The ID of the acceptee.</p>
     pub fn set_acceptee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.acceptee_id = input;
-        self
+        self.acceptee_id = input; self
     }
     /// <p>The EULA acceptance ID.</p>
     pub fn eula_acceptance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,12 +93,8 @@ impl EulaAcceptanceBuilder {
         self
     }
     /// <p>The EULA acceptance ID.</p>
-    pub fn set_eula_acceptance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.eula_acceptance_id = input;
-        self
+    pub fn set_eula_acceptance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.eula_acceptance_id = input; self
     }
     /// <p>The EULA ID.</p>
     pub fn eula_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,17 +103,22 @@ impl EulaAcceptanceBuilder {
     }
     /// <p>The EULA ID.</p>
     pub fn set_eula_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eula_id = input;
-        self
+        self.eula_id = input; self
     }
     /// Consumes the builder and constructs a [`EulaAcceptance`](crate::types::EulaAcceptance).
     pub fn build(self) -> crate::types::EulaAcceptance {
         crate::types::EulaAcceptance {
-            accepted_at: self.accepted_at,
-            accepted_by: self.accepted_by,
-            acceptee_id: self.acceptee_id,
-            eula_acceptance_id: self.eula_acceptance_id,
-            eula_id: self.eula_id,
+            accepted_at: self.accepted_at
+            ,
+            accepted_by: self.accepted_by
+            ,
+            acceptee_id: self.acceptee_id
+            ,
+            eula_acceptance_id: self.eula_acceptance_id
+            ,
+            eula_id: self.eula_id
+            ,
         }
     }
 }
+

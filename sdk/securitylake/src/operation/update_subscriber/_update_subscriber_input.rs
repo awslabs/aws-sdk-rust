@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriberInput {
+pub struct UpdateSubscriberInput  {
     /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -21,30 +21,29 @@ pub struct UpdateSubscriberInput {
 }
 impl UpdateSubscriberInput {
     /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn source_types(&self) -> std::option::Option<&[crate::types::SourceType]> {
+    pub fn source_types(&self) -> std::option::Option<& [crate::types::SourceType]> {
         self.source_types.as_deref()
     }
     /// <p>The external ID of the Security Lake account.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
     /// <p>The name of the Security Lake account subscriber. </p>
-    pub fn subscriber_name(&self) -> std::option::Option<&str> {
+    pub fn subscriber_name(&self) -> std::option::Option<& str> {
         self.subscriber_name.as_deref()
     }
     /// <p>The description of the Security Lake account subscriber.</p>
-    pub fn subscriber_description(&self) -> std::option::Option<&str> {
+    pub fn subscriber_description(&self) -> std::option::Option<& str> {
         self.subscriber_description.as_deref()
     }
 }
 impl UpdateSubscriberInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
-    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder {
         crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>A value created by Security Lake that uniquely identifies your subscription. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Appends an item to `source_types`.
     ///
@@ -77,17 +75,13 @@ impl UpdateSubscriberInputBuilder {
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
     pub fn source_types(mut self, input: crate::types::SourceType) -> Self {
         let mut v = self.source_types.unwrap_or_default();
-        v.push(input);
-        self.source_types = Some(v);
-        self
+                        v.push(input);
+                        self.source_types = Some(v);
+                        self
     }
     /// <p>The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User Guide</a>.</p>
-    pub fn set_source_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceType>>,
-    ) -> Self {
-        self.source_types = input;
-        self
+    pub fn set_source_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceType>>) -> Self {
+        self.source_types = input; self
     }
     /// <p>The external ID of the Security Lake account.</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +90,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The external ID of the Security Lake account.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// <p>The name of the Security Lake account subscriber. </p>
     pub fn subscriber_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +99,7 @@ impl UpdateSubscriberInputBuilder {
     }
     /// <p>The name of the Security Lake account subscriber. </p>
     pub fn set_subscriber_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscriber_name = input;
-        self
+        self.subscriber_name = input; self
     }
     /// <p>The description of the Security Lake account subscriber.</p>
     pub fn subscriber_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,26 +107,25 @@ impl UpdateSubscriberInputBuilder {
         self
     }
     /// <p>The description of the Security Lake account subscriber.</p>
-    pub fn set_subscriber_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.subscriber_description = input;
-        self
+    pub fn set_subscriber_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.subscriber_description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSubscriberInput`](crate::operation::update_subscriber::UpdateSubscriberInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_subscriber::UpdateSubscriberInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_subscriber::UpdateSubscriberInput {
-            id: self.id,
-            source_types: self.source_types,
-            external_id: self.external_id,
-            subscriber_name: self.subscriber_name,
-            subscriber_description: self.subscriber_description,
-        })
+    pub fn build(self) -> Result<crate::operation::update_subscriber::UpdateSubscriberInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_subscriber::UpdateSubscriberInput {
+                id: self.id
+                ,
+                source_types: self.source_types
+                ,
+                external_id: self.external_id
+                ,
+                subscriber_name: self.subscriber_name
+                ,
+                subscriber_description: self.subscriber_description
+                ,
+            }
+        )
     }
 }
+

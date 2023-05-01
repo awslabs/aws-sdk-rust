@@ -3,7 +3,7 @@
 /// Blackout Slate
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlackoutSlate {
+pub struct BlackoutSlate  {
     /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
     #[doc(hidden)]
     pub blackout_slate_image: std::option::Option<crate::types::InputLocation>,
@@ -22,25 +22,23 @@ pub struct BlackoutSlate {
 }
 impl BlackoutSlate {
     /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn blackout_slate_image(&self) -> std::option::Option<&crate::types::InputLocation> {
+    pub fn blackout_slate_image(&self) -> std::option::Option<& crate::types::InputLocation> {
         self.blackout_slate_image.as_ref()
     }
     /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
-    pub fn network_end_blackout(
-        &self,
-    ) -> std::option::Option<&crate::types::BlackoutSlateNetworkEndBlackout> {
+    pub fn network_end_blackout(&self) -> std::option::Option<& crate::types::BlackoutSlateNetworkEndBlackout> {
         self.network_end_blackout.as_ref()
     }
     /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
-    pub fn network_end_blackout_image(&self) -> std::option::Option<&crate::types::InputLocation> {
+    pub fn network_end_blackout_image(&self) -> std::option::Option<& crate::types::InputLocation> {
         self.network_end_blackout_image.as_ref()
     }
     /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
-    pub fn network_id(&self) -> std::option::Option<&str> {
+    pub fn network_id(&self) -> std::option::Option<& str> {
         self.network_id.as_deref()
     }
     /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
-    pub fn state(&self) -> std::option::Option<&crate::types::BlackoutSlateState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::BlackoutSlateState> {
         self.state.as_ref()
     }
 }
@@ -56,8 +54,7 @@ impl BlackoutSlate {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BlackoutSlateBuilder {
     pub(crate) blackout_slate_image: std::option::Option<crate::types::InputLocation>,
-    pub(crate) network_end_blackout:
-        std::option::Option<crate::types::BlackoutSlateNetworkEndBlackout>,
+    pub(crate) network_end_blackout: std::option::Option<crate::types::BlackoutSlateNetworkEndBlackout>,
     pub(crate) network_end_blackout_image: std::option::Option<crate::types::InputLocation>,
     pub(crate) network_id: std::option::Option<std::string::String>,
     pub(crate) state: std::option::Option<crate::types::BlackoutSlateState>,
@@ -69,28 +66,17 @@ impl BlackoutSlateBuilder {
         self
     }
     /// Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn set_blackout_slate_image(
-        mut self,
-        input: std::option::Option<crate::types::InputLocation>,
-    ) -> Self {
-        self.blackout_slate_image = input;
-        self
+    pub fn set_blackout_slate_image(mut self, input: std::option::Option<crate::types::InputLocation>) -> Self {
+        self.blackout_slate_image = input; self
     }
     /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
-    pub fn network_end_blackout(
-        mut self,
-        input: crate::types::BlackoutSlateNetworkEndBlackout,
-    ) -> Self {
+    pub fn network_end_blackout(mut self, input: crate::types::BlackoutSlateNetworkEndBlackout) -> Self {
         self.network_end_blackout = Some(input);
         self
     }
     /// Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the "Network Blackout Image" slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in "Network ID".
-    pub fn set_network_end_blackout(
-        mut self,
-        input: std::option::Option<crate::types::BlackoutSlateNetworkEndBlackout>,
-    ) -> Self {
-        self.network_end_blackout = input;
-        self
+    pub fn set_network_end_blackout(mut self, input: std::option::Option<crate::types::BlackoutSlateNetworkEndBlackout>) -> Self {
+        self.network_end_blackout = input; self
     }
     /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
     pub fn network_end_blackout_image(mut self, input: crate::types::InputLocation) -> Self {
@@ -98,12 +84,8 @@ impl BlackoutSlateBuilder {
         self
     }
     /// Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.
-    pub fn set_network_end_blackout_image(
-        mut self,
-        input: std::option::Option<crate::types::InputLocation>,
-    ) -> Self {
-        self.network_end_blackout_image = input;
-        self
+    pub fn set_network_end_blackout_image(mut self, input: std::option::Option<crate::types::InputLocation>) -> Self {
+        self.network_end_blackout_image = input; self
     }
     /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
     pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +94,7 @@ impl BlackoutSlateBuilder {
     }
     /// Provides Network ID that matches EIDR ID format (e.g., "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
     pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_id = input;
-        self
+        self.network_id = input; self
     }
     /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
     pub fn state(mut self, input: crate::types::BlackoutSlateState) -> Self {
@@ -121,21 +102,23 @@ impl BlackoutSlateBuilder {
         self
     }
     /// When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::BlackoutSlateState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::BlackoutSlateState>) -> Self {
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`BlackoutSlate`](crate::types::BlackoutSlate).
     pub fn build(self) -> crate::types::BlackoutSlate {
         crate::types::BlackoutSlate {
-            blackout_slate_image: self.blackout_slate_image,
-            network_end_blackout: self.network_end_blackout,
-            network_end_blackout_image: self.network_end_blackout_image,
-            network_id: self.network_id,
-            state: self.state,
+            blackout_slate_image: self.blackout_slate_image
+            ,
+            network_end_blackout: self.network_end_blackout
+            ,
+            network_end_blackout_image: self.network_end_blackout_image
+            ,
+            network_id: self.network_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Represents a request to set a receipt rule set as the active receipt rule set. You use receipt rule sets to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetActiveReceiptRuleSetInput {
+pub struct SetActiveReceiptRuleSetInput  {
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
     #[doc(hidden)]
     pub rule_set_name: std::option::Option<std::string::String>,
 }
 impl SetActiveReceiptRuleSetInput {
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
-    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
 }
 impl SetActiveReceiptRuleSetInput {
     /// Creates a new builder-style object to manufacture [`SetActiveReceiptRuleSetInput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput).
-    pub fn builder(
-    ) -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder {
         crate::operation::set_active_receipt_rule_set::builders::SetActiveReceiptRuleSetInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl SetActiveReceiptRuleSetInputBuilder {
     }
     /// <p>The name of the receipt rule set to make active. Setting this value to null disables all email receiving.</p>
     pub fn set_rule_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// Consumes the builder and constructs a [`SetActiveReceiptRuleSetInput`](crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetInput {
-                rule_set_name: self.rule_set_name,
-            },
+                rule_set_name: self.rule_set_name
+                ,
+            }
         )
     }
 }
+

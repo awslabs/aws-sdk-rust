@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionInput {
+pub struct CreateConnectionInput  {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::types::ProviderType>,
@@ -18,26 +18,25 @@ pub struct CreateConnectionInput {
 }
 impl CreateConnectionInput {
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> std::option::Option<& crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
-    pub fn host_arn(&self) -> std::option::Option<&str> {
+    pub fn host_arn(&self) -> std::option::Option<& str> {
         self.host_arn.as_deref()
     }
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionInputBuilder {
         crate::operation::create_connection::builders::CreateConnectionInputBuilder::default()
     }
 }
@@ -58,12 +57,8 @@ impl CreateConnectionInputBuilder {
         self
     }
     /// <p>The name of the external provider where your third-party code repository is configured.</p>
-    pub fn set_provider_type(
-        mut self,
-        input: std::option::Option<crate::types::ProviderType>,
-    ) -> Self {
-        self.provider_type = input;
-        self
+    pub fn set_provider_type(mut self, input: std::option::Option<crate::types::ProviderType>) -> Self {
+        self.provider_type = input; self
     }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +67,7 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The name of the connection to be created. The name must be unique in the calling AWS account.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -82,17 +76,13 @@ impl CreateConnectionInputBuilder {
     /// <p>The key-value pair to use when tagging the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The key-value pair to use when tagging the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn host_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,21 +91,22 @@ impl CreateConnectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection to be created.</p>
     pub fn set_host_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_arn = input;
-        self
+        self.host_arn = input; self
     }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_connection::CreateConnectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_connection::CreateConnectionInput {
-            provider_type: self.provider_type,
-            connection_name: self.connection_name,
-            tags: self.tags,
-            host_arn: self.host_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::create_connection::CreateConnectionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_connection::CreateConnectionInput {
+                provider_type: self.provider_type
+                ,
+                connection_name: self.connection_name
+                ,
+                tags: self.tags
+                ,
+                host_arn: self.host_arn
+                ,
+            }
+        )
     }
 }
+

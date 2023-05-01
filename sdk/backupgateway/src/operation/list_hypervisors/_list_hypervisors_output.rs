@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHypervisorsOutput {
+pub struct ListHypervisorsOutput  {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
     pub hypervisors: std::option::Option<std::vec::Vec<crate::types::Hypervisor>>,
@@ -13,19 +13,19 @@ pub struct ListHypervisorsOutput {
 }
 impl ListHypervisorsOutput {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn hypervisors(&self) -> std::option::Option<&[crate::types::Hypervisor]> {
+    pub fn hypervisors(&self) -> std::option::Option<& [crate::types::Hypervisor]> {
         self.hypervisors.as_deref()
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListHypervisorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListHypervisorsOutput {
     /// Creates a new builder-style object to manufacture [`ListHypervisorsOutput`](crate::operation::list_hypervisors::ListHypervisorsOutput).
     pub fn builder() -> crate::operation::list_hypervisors::builders::ListHypervisorsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListHypervisorsOutputBuilder {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
     pub fn hypervisors(mut self, input: crate::types::Hypervisor) -> Self {
         let mut v = self.hypervisors.unwrap_or_default();
-        v.push(input);
-        self.hypervisors = Some(v);
-        self
+                        v.push(input);
+                        self.hypervisors = Some(v);
+                        self
     }
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
-    pub fn set_hypervisors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Hypervisor>>,
-    ) -> Self {
-        self.hypervisors = input;
-        self
+    pub fn set_hypervisors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Hypervisor>>) -> Self {
+        self.hypervisors = input; self
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListHypervisorsOutputBuilder {
     }
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListHypervisorsOutput`](crate::operation::list_hypervisors::ListHypervisorsOutput).
     pub fn build(self) -> crate::operation::list_hypervisors::ListHypervisorsOutput {
         crate::operation::list_hypervisors::ListHypervisorsOutput {
-            hypervisors: self.hypervisors,
-            next_token: self.next_token,
+            hypervisors: self.hypervisors
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

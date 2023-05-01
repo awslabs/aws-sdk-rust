@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingStatisticsInput {
+pub struct GetFindingStatisticsInput  {
     /// <p>The criteria to use to filter the query results.</p>
     #[doc(hidden)]
     pub finding_criteria: std::option::Option<crate::types::FindingCriteria>,
-    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <p>The finding property to use to group the query results. Valid values are:</p> 
     /// <ul>
-    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> 
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> 
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> 
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -24,17 +24,17 @@ pub struct GetFindingStatisticsInput {
 }
 impl GetFindingStatisticsInput {
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn finding_criteria(&self) -> std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
-    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <p>The finding property to use to group the query results. Valid values are:</p> 
     /// <ul>
-    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> 
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> 
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> 
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
-    pub fn group_by(&self) -> std::option::Option<&crate::types::GroupBy> {
+    pub fn group_by(&self) -> std::option::Option<& crate::types::GroupBy> {
         self.group_by.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
@@ -42,16 +42,13 @@ impl GetFindingStatisticsInput {
         self.size
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn sort_criteria(
-        &self,
-    ) -> std::option::Option<&crate::types::FindingStatisticsSortCriteria> {
+    pub fn sort_criteria(&self) -> std::option::Option<& crate::types::FindingStatisticsSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
 impl GetFindingStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
+    pub fn builder() -> crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder {
         crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder::default()
     }
 }
@@ -72,34 +69,29 @@ impl GetFindingStatisticsInputBuilder {
         self
     }
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
-        self.finding_criteria = input;
-        self
+    pub fn set_finding_criteria(mut self, input: std::option::Option<crate::types::FindingCriteria>) -> Self {
+        self.finding_criteria = input; self
     }
-    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <p>The finding property to use to group the query results. Valid values are:</p> 
     /// <ul>
-    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> 
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> 
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> 
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn group_by(mut self, input: crate::types::GroupBy) -> Self {
         self.group_by = Some(input);
         self
     }
-    /// <p>The finding property to use to group the query results. Valid values are:</p>
+    /// <p>The finding property to use to group the query results. Valid values are:</p> 
     /// <ul>
-    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
-    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
-    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> 
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> 
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> 
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn set_group_by(mut self, input: std::option::Option<crate::types::GroupBy>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn size(mut self, input: i32) -> Self {
@@ -108,8 +100,7 @@ impl GetFindingStatisticsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p>The criteria to use to sort the query results.</p>
     pub fn sort_criteria(mut self, input: crate::types::FindingStatisticsSortCriteria) -> Self {
@@ -117,27 +108,23 @@ impl GetFindingStatisticsInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: std::option::Option<crate::types::FindingStatisticsSortCriteria>,
-    ) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::FindingStatisticsSortCriteria>) -> Self {
+        self.sort_criteria = input; self
     }
     /// Consumes the builder and constructs a [`GetFindingStatisticsInput`](crate::operation::get_finding_statistics::GetFindingStatisticsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_finding_statistics::GetFindingStatisticsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_finding_statistics::GetFindingStatisticsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_finding_statistics::GetFindingStatisticsInput {
-                finding_criteria: self.finding_criteria,
-                group_by: self.group_by,
-                size: self.size,
-                sort_criteria: self.sort_criteria,
-            },
+                finding_criteria: self.finding_criteria
+                ,
+                group_by: self.group_by
+                ,
+                size: self.size
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
         )
     }
 }
+

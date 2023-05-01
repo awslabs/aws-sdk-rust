@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCopyProductStatusOutput {
+pub struct DescribeCopyProductStatusOutput  {
     /// <p>The status of the copy product operation.</p>
     #[doc(hidden)]
     pub copy_product_status: std::option::Option<crate::types::CopyProductStatus>,
@@ -16,26 +16,26 @@ pub struct DescribeCopyProductStatusOutput {
 }
 impl DescribeCopyProductStatusOutput {
     /// <p>The status of the copy product operation.</p>
-    pub fn copy_product_status(&self) -> std::option::Option<&crate::types::CopyProductStatus> {
+    pub fn copy_product_status(&self) -> std::option::Option<& crate::types::CopyProductStatus> {
         self.copy_product_status.as_ref()
     }
     /// <p>The identifier of the copied product.</p>
-    pub fn target_product_id(&self) -> std::option::Option<&str> {
+    pub fn target_product_id(&self) -> std::option::Option<& str> {
         self.target_product_id.as_deref()
     }
     /// <p>The status message.</p>
-    pub fn status_detail(&self) -> std::option::Option<&str> {
+    pub fn status_detail(&self) -> std::option::Option<& str> {
         self.status_detail.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCopyProductStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCopyProductStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCopyProductStatusOutput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput).
-    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusOutputBuilder {
         crate::operation::describe_copy_product_status::builders::DescribeCopyProductStatusOutputBuilder::default()
     }
 }
@@ -56,12 +56,8 @@ impl DescribeCopyProductStatusOutputBuilder {
         self
     }
     /// <p>The status of the copy product operation.</p>
-    pub fn set_copy_product_status(
-        mut self,
-        input: std::option::Option<crate::types::CopyProductStatus>,
-    ) -> Self {
-        self.copy_product_status = input;
-        self
+    pub fn set_copy_product_status(mut self, input: std::option::Option<crate::types::CopyProductStatus>) -> Self {
+        self.copy_product_status = input; self
     }
     /// <p>The identifier of the copied product.</p>
     pub fn target_product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +65,8 @@ impl DescribeCopyProductStatusOutputBuilder {
         self
     }
     /// <p>The identifier of the copied product.</p>
-    pub fn set_target_product_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_product_id = input;
-        self
+    pub fn set_target_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_product_id = input; self
     }
     /// <p>The status message.</p>
     pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,27 +75,28 @@ impl DescribeCopyProductStatusOutputBuilder {
     }
     /// <p>The status message.</p>
     pub fn set_status_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_detail = input;
-        self
+        self.status_detail = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCopyProductStatusOutput`](crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput {
+    pub fn build(self) -> crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput {
         crate::operation::describe_copy_product_status::DescribeCopyProductStatusOutput {
-            copy_product_status: self.copy_product_status,
-            target_product_id: self.target_product_id,
-            status_detail: self.status_detail,
+            copy_product_status: self.copy_product_status
+            ,
+            target_product_id: self.target_product_id
+            ,
+            status_detail: self.status_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,11 +3,10 @@
 /// M2ts Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct M2tsSettings {
+pub struct M2tsSettings  {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
     #[doc(hidden)]
-    pub absent_input_audio_behavior:
-        std::option::Option<crate::types::M2tsAbsentInputAudioBehavior>,
+    pub absent_input_audio_behavior: std::option::Option<crate::types::M2tsAbsentInputAudioBehavior>,
     /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
     #[doc(hidden)]
     pub arib: std::option::Option<crate::types::M2tsArib>,
@@ -152,27 +151,23 @@ pub struct M2tsSettings {
 }
 impl M2tsSettings {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
-    pub fn absent_input_audio_behavior(
-        &self,
-    ) -> std::option::Option<&crate::types::M2tsAbsentInputAudioBehavior> {
+    pub fn absent_input_audio_behavior(&self) -> std::option::Option<& crate::types::M2tsAbsentInputAudioBehavior> {
         self.absent_input_audio_behavior.as_ref()
     }
     /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
-    pub fn arib(&self) -> std::option::Option<&crate::types::M2tsArib> {
+    pub fn arib(&self) -> std::option::Option<& crate::types::M2tsArib> {
         self.arib.as_ref()
     }
     /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn arib_captions_pid(&self) -> std::option::Option<&str> {
+    pub fn arib_captions_pid(&self) -> std::option::Option<& str> {
         self.arib_captions_pid.as_deref()
     }
     /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
-    pub fn arib_captions_pid_control(
-        &self,
-    ) -> std::option::Option<&crate::types::M2tsAribCaptionsPidControl> {
+    pub fn arib_captions_pid_control(&self) -> std::option::Option<& crate::types::M2tsAribCaptionsPidControl> {
         self.arib_captions_pid_control.as_ref()
     }
     /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
-    pub fn audio_buffer_model(&self) -> std::option::Option<&crate::types::M2tsAudioBufferModel> {
+    pub fn audio_buffer_model(&self) -> std::option::Option<& crate::types::M2tsAudioBufferModel> {
         self.audio_buffer_model.as_ref()
     }
     /// The number of audio frames to insert for each PES packet.
@@ -180,11 +175,11 @@ impl M2tsSettings {
         self.audio_frames_per_pes
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn audio_pids(&self) -> std::option::Option<&str> {
+    pub fn audio_pids(&self) -> std::option::Option<& str> {
         self.audio_pids.as_deref()
     }
     /// When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.
-    pub fn audio_stream_type(&self) -> std::option::Option<&crate::types::M2tsAudioStreamType> {
+    pub fn audio_stream_type(&self) -> std::option::Option<& crate::types::M2tsAudioStreamType> {
         self.audio_stream_type.as_ref()
     }
     /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
@@ -192,39 +187,39 @@ impl M2tsSettings {
         self.bitrate
     }
     /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
-    pub fn buffer_model(&self) -> std::option::Option<&crate::types::M2tsBufferModel> {
+    pub fn buffer_model(&self) -> std::option::Option<& crate::types::M2tsBufferModel> {
         self.buffer_model.as_ref()
     }
     /// When set to enabled, generates captionServiceDescriptor in PMT.
-    pub fn cc_descriptor(&self) -> std::option::Option<&crate::types::M2tsCcDescriptor> {
+    pub fn cc_descriptor(&self) -> std::option::Option<& crate::types::M2tsCcDescriptor> {
         self.cc_descriptor.as_ref()
     }
     /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
-    pub fn dvb_nit_settings(&self) -> std::option::Option<&crate::types::DvbNitSettings> {
+    pub fn dvb_nit_settings(&self) -> std::option::Option<& crate::types::DvbNitSettings> {
         self.dvb_nit_settings.as_ref()
     }
     /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
-    pub fn dvb_sdt_settings(&self) -> std::option::Option<&crate::types::DvbSdtSettings> {
+    pub fn dvb_sdt_settings(&self) -> std::option::Option<& crate::types::DvbSdtSettings> {
         self.dvb_sdt_settings.as_ref()
     }
     /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn dvb_sub_pids(&self) -> std::option::Option<&str> {
+    pub fn dvb_sub_pids(&self) -> std::option::Option<& str> {
         self.dvb_sub_pids.as_deref()
     }
     /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
-    pub fn dvb_tdt_settings(&self) -> std::option::Option<&crate::types::DvbTdtSettings> {
+    pub fn dvb_tdt_settings(&self) -> std::option::Option<& crate::types::DvbTdtSettings> {
         self.dvb_tdt_settings.as_ref()
     }
     /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn dvb_teletext_pid(&self) -> std::option::Option<&str> {
+    pub fn dvb_teletext_pid(&self) -> std::option::Option<& str> {
         self.dvb_teletext_pid.as_deref()
     }
     /// If set to passthrough, passes any EBIF data from the input source to this output.
-    pub fn ebif(&self) -> std::option::Option<&crate::types::M2tsEbifControl> {
+    pub fn ebif(&self) -> std::option::Option<& crate::types::M2tsEbifControl> {
         self.ebif.as_ref()
     }
     /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
-    pub fn ebp_audio_interval(&self) -> std::option::Option<&crate::types::M2tsAudioInterval> {
+    pub fn ebp_audio_interval(&self) -> std::option::Option<& crate::types::M2tsAudioInterval> {
         self.ebp_audio_interval.as_ref()
     }
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
@@ -232,23 +227,23 @@ impl M2tsSettings {
         self.ebp_lookahead_ms
     }
     /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
-    pub fn ebp_placement(&self) -> std::option::Option<&crate::types::M2tsEbpPlacement> {
+    pub fn ebp_placement(&self) -> std::option::Option<& crate::types::M2tsEbpPlacement> {
         self.ebp_placement.as_ref()
     }
     /// This field is unused and deprecated.
-    pub fn ecm_pid(&self) -> std::option::Option<&str> {
+    pub fn ecm_pid(&self) -> std::option::Option<& str> {
         self.ecm_pid.as_deref()
     }
     /// Include or exclude the ES Rate field in the PES header.
-    pub fn es_rate_in_pes(&self) -> std::option::Option<&crate::types::M2tsEsRateInPes> {
+    pub fn es_rate_in_pes(&self) -> std::option::Option<& crate::types::M2tsEsRateInPes> {
         self.es_rate_in_pes.as_ref()
     }
     /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn etv_platform_pid(&self) -> std::option::Option<&str> {
+    pub fn etv_platform_pid(&self) -> std::option::Option<& str> {
         self.etv_platform_pid.as_deref()
     }
     /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn etv_signal_pid(&self) -> std::option::Option<&str> {
+    pub fn etv_signal_pid(&self) -> std::option::Option<& str> {
         self.etv_signal_pid.as_deref()
     }
     /// The length in seconds of each fragment. Only used with EBP markers.
@@ -256,17 +251,15 @@ impl M2tsSettings {
         self.fragment_time
     }
     /// If set to passthrough, passes any KLV data from the input source to this output.
-    pub fn klv(&self) -> std::option::Option<&crate::types::M2tsKlv> {
+    pub fn klv(&self) -> std::option::Option<& crate::types::M2tsKlv> {
         self.klv.as_ref()
     }
     /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn klv_data_pids(&self) -> std::option::Option<&str> {
+    pub fn klv_data_pids(&self) -> std::option::Option<& str> {
         self.klv_data_pids.as_deref()
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn nielsen_id3_behavior(
-        &self,
-    ) -> std::option::Option<&crate::types::M2tsNielsenId3Behavior> {
+    pub fn nielsen_id3_behavior(&self) -> std::option::Option<& crate::types::M2tsNielsenId3Behavior> {
         self.nielsen_id3_behavior.as_ref()
     }
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
@@ -278,7 +271,7 @@ impl M2tsSettings {
         self.pat_interval
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn pcr_control(&self) -> std::option::Option<&crate::types::M2tsPcrControl> {
+    pub fn pcr_control(&self) -> std::option::Option<& crate::types::M2tsPcrControl> {
         self.pcr_control.as_ref()
     }
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
@@ -286,7 +279,7 @@ impl M2tsSettings {
         self.pcr_period
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn pcr_pid(&self) -> std::option::Option<&str> {
+    pub fn pcr_pid(&self) -> std::option::Option<& str> {
         self.pcr_pid.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
@@ -294,7 +287,7 @@ impl M2tsSettings {
         self.pmt_interval
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn pmt_pid(&self) -> std::option::Option<&str> {
+    pub fn pmt_pid(&self) -> std::option::Option<& str> {
         self.pmt_pid.as_deref()
     }
     /// The value of the program number field in the Program Map Table.
@@ -302,29 +295,27 @@ impl M2tsSettings {
         self.program_num
     }
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
-    pub fn rate_mode(&self) -> std::option::Option<&crate::types::M2tsRateMode> {
+    pub fn rate_mode(&self) -> std::option::Option<& crate::types::M2tsRateMode> {
         self.rate_mode.as_ref()
     }
     /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn scte27_pids(&self) -> std::option::Option<&str> {
+    pub fn scte27_pids(&self) -> std::option::Option<& str> {
         self.scte27_pids.as_deref()
     }
     /// Optionally pass SCTE-35 signals from the input source to this output.
-    pub fn scte35_control(&self) -> std::option::Option<&crate::types::M2tsScte35Control> {
+    pub fn scte35_control(&self) -> std::option::Option<& crate::types::M2tsScte35Control> {
         self.scte35_control.as_ref()
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn scte35_pid(&self) -> std::option::Option<&str> {
+    pub fn scte35_pid(&self) -> std::option::Option<& str> {
         self.scte35_pid.as_deref()
     }
     /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-    pub fn segmentation_markers(
-        &self,
-    ) -> std::option::Option<&crate::types::M2tsSegmentationMarkers> {
+    pub fn segmentation_markers(&self) -> std::option::Option<& crate::types::M2tsSegmentationMarkers> {
         self.segmentation_markers.as_ref()
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
-    pub fn segmentation_style(&self) -> std::option::Option<&crate::types::M2tsSegmentationStyle> {
+    pub fn segmentation_style(&self) -> std::option::Option<& crate::types::M2tsSegmentationStyle> {
         self.segmentation_style.as_ref()
     }
     /// The length in seconds of each segment. Required unless markers is set to _none_.
@@ -332,13 +323,11 @@ impl M2tsSettings {
         self.segmentation_time
     }
     /// When set to passthrough, timed metadata will be passed through from input to output.
-    pub fn timed_metadata_behavior(
-        &self,
-    ) -> std::option::Option<&crate::types::M2tsTimedMetadataBehavior> {
+    pub fn timed_metadata_behavior(&self) -> std::option::Option<& crate::types::M2tsTimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn timed_metadata_pid(&self) -> std::option::Option<&str> {
+    pub fn timed_metadata_pid(&self) -> std::option::Option<& str> {
         self.timed_metadata_pid.as_deref()
     }
     /// The value of the transport stream ID field in the Program Map Table.
@@ -346,7 +335,7 @@ impl M2tsSettings {
         self.transport_stream_id
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn video_pid(&self) -> std::option::Option<&str> {
+    pub fn video_pid(&self) -> std::option::Option<& str> {
         self.video_pid.as_deref()
     }
     /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
@@ -365,12 +354,10 @@ impl M2tsSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct M2tsSettingsBuilder {
-    pub(crate) absent_input_audio_behavior:
-        std::option::Option<crate::types::M2tsAbsentInputAudioBehavior>,
+    pub(crate) absent_input_audio_behavior: std::option::Option<crate::types::M2tsAbsentInputAudioBehavior>,
     pub(crate) arib: std::option::Option<crate::types::M2tsArib>,
     pub(crate) arib_captions_pid: std::option::Option<std::string::String>,
-    pub(crate) arib_captions_pid_control:
-        std::option::Option<crate::types::M2tsAribCaptionsPidControl>,
+    pub(crate) arib_captions_pid_control: std::option::Option<crate::types::M2tsAribCaptionsPidControl>,
     pub(crate) audio_buffer_model: std::option::Option<crate::types::M2tsAudioBufferModel>,
     pub(crate) audio_frames_per_pes: std::option::Option<i32>,
     pub(crate) audio_pids: std::option::Option<std::string::String>,
@@ -410,8 +397,7 @@ pub struct M2tsSettingsBuilder {
     pub(crate) segmentation_markers: std::option::Option<crate::types::M2tsSegmentationMarkers>,
     pub(crate) segmentation_style: std::option::Option<crate::types::M2tsSegmentationStyle>,
     pub(crate) segmentation_time: std::option::Option<f64>,
-    pub(crate) timed_metadata_behavior:
-        std::option::Option<crate::types::M2tsTimedMetadataBehavior>,
+    pub(crate) timed_metadata_behavior: std::option::Option<crate::types::M2tsTimedMetadataBehavior>,
     pub(crate) timed_metadata_pid: std::option::Option<std::string::String>,
     pub(crate) transport_stream_id: std::option::Option<i32>,
     pub(crate) video_pid: std::option::Option<std::string::String>,
@@ -419,20 +405,13 @@ pub struct M2tsSettingsBuilder {
 }
 impl M2tsSettingsBuilder {
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
-    pub fn absent_input_audio_behavior(
-        mut self,
-        input: crate::types::M2tsAbsentInputAudioBehavior,
-    ) -> Self {
+    pub fn absent_input_audio_behavior(mut self, input: crate::types::M2tsAbsentInputAudioBehavior) -> Self {
         self.absent_input_audio_behavior = Some(input);
         self
     }
     /// When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.
-    pub fn set_absent_input_audio_behavior(
-        mut self,
-        input: std::option::Option<crate::types::M2tsAbsentInputAudioBehavior>,
-    ) -> Self {
-        self.absent_input_audio_behavior = input;
-        self
+    pub fn set_absent_input_audio_behavior(mut self, input: std::option::Option<crate::types::M2tsAbsentInputAudioBehavior>) -> Self {
+        self.absent_input_audio_behavior = input; self
     }
     /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
     pub fn arib(mut self, input: crate::types::M2tsArib) -> Self {
@@ -441,8 +420,7 @@ impl M2tsSettingsBuilder {
     }
     /// When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.
     pub fn set_arib(mut self, input: std::option::Option<crate::types::M2tsArib>) -> Self {
-        self.arib = input;
-        self
+        self.arib = input; self
     }
     /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn arib_captions_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -450,28 +428,17 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn set_arib_captions_pid(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.arib_captions_pid = input;
-        self
+    pub fn set_arib_captions_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.arib_captions_pid = input; self
     }
     /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
-    pub fn arib_captions_pid_control(
-        mut self,
-        input: crate::types::M2tsAribCaptionsPidControl,
-    ) -> Self {
+    pub fn arib_captions_pid_control(mut self, input: crate::types::M2tsAribCaptionsPidControl) -> Self {
         self.arib_captions_pid_control = Some(input);
         self
     }
     /// If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.
-    pub fn set_arib_captions_pid_control(
-        mut self,
-        input: std::option::Option<crate::types::M2tsAribCaptionsPidControl>,
-    ) -> Self {
-        self.arib_captions_pid_control = input;
-        self
+    pub fn set_arib_captions_pid_control(mut self, input: std::option::Option<crate::types::M2tsAribCaptionsPidControl>) -> Self {
+        self.arib_captions_pid_control = input; self
     }
     /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
     pub fn audio_buffer_model(mut self, input: crate::types::M2tsAudioBufferModel) -> Self {
@@ -479,12 +446,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.
-    pub fn set_audio_buffer_model(
-        mut self,
-        input: std::option::Option<crate::types::M2tsAudioBufferModel>,
-    ) -> Self {
-        self.audio_buffer_model = input;
-        self
+    pub fn set_audio_buffer_model(mut self, input: std::option::Option<crate::types::M2tsAudioBufferModel>) -> Self {
+        self.audio_buffer_model = input; self
     }
     /// The number of audio frames to insert for each PES packet.
     pub fn audio_frames_per_pes(mut self, input: i32) -> Self {
@@ -493,8 +456,7 @@ impl M2tsSettingsBuilder {
     }
     /// The number of audio frames to insert for each PES packet.
     pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
-        self.audio_frames_per_pes = input;
-        self
+        self.audio_frames_per_pes = input; self
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn audio_pids(mut self, input: impl Into<std::string::String>) -> Self {
@@ -503,8 +465,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_audio_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.audio_pids = input;
-        self
+        self.audio_pids = input; self
     }
     /// When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.
     pub fn audio_stream_type(mut self, input: crate::types::M2tsAudioStreamType) -> Self {
@@ -512,12 +473,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.
-    pub fn set_audio_stream_type(
-        mut self,
-        input: std::option::Option<crate::types::M2tsAudioStreamType>,
-    ) -> Self {
-        self.audio_stream_type = input;
-        self
+    pub fn set_audio_stream_type(mut self, input: std::option::Option<crate::types::M2tsAudioStreamType>) -> Self {
+        self.audio_stream_type = input; self
     }
     /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
     pub fn bitrate(mut self, input: i32) -> Self {
@@ -526,8 +483,7 @@ impl M2tsSettingsBuilder {
     }
     /// The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.
     pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
     pub fn buffer_model(mut self, input: crate::types::M2tsBufferModel) -> Self {
@@ -535,12 +491,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices.
-    pub fn set_buffer_model(
-        mut self,
-        input: std::option::Option<crate::types::M2tsBufferModel>,
-    ) -> Self {
-        self.buffer_model = input;
-        self
+    pub fn set_buffer_model(mut self, input: std::option::Option<crate::types::M2tsBufferModel>) -> Self {
+        self.buffer_model = input; self
     }
     /// When set to enabled, generates captionServiceDescriptor in PMT.
     pub fn cc_descriptor(mut self, input: crate::types::M2tsCcDescriptor) -> Self {
@@ -548,12 +500,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to enabled, generates captionServiceDescriptor in PMT.
-    pub fn set_cc_descriptor(
-        mut self,
-        input: std::option::Option<crate::types::M2tsCcDescriptor>,
-    ) -> Self {
-        self.cc_descriptor = input;
-        self
+    pub fn set_cc_descriptor(mut self, input: std::option::Option<crate::types::M2tsCcDescriptor>) -> Self {
+        self.cc_descriptor = input; self
     }
     /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
     pub fn dvb_nit_settings(mut self, input: crate::types::DvbNitSettings) -> Self {
@@ -561,12 +509,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
-    pub fn set_dvb_nit_settings(
-        mut self,
-        input: std::option::Option<crate::types::DvbNitSettings>,
-    ) -> Self {
-        self.dvb_nit_settings = input;
-        self
+    pub fn set_dvb_nit_settings(mut self, input: std::option::Option<crate::types::DvbNitSettings>) -> Self {
+        self.dvb_nit_settings = input; self
     }
     /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
     pub fn dvb_sdt_settings(mut self, input: crate::types::DvbSdtSettings) -> Self {
@@ -574,12 +518,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Inserts DVB Service Description Table (SDT) at the specified table repetition interval.
-    pub fn set_dvb_sdt_settings(
-        mut self,
-        input: std::option::Option<crate::types::DvbSdtSettings>,
-    ) -> Self {
-        self.dvb_sdt_settings = input;
-        self
+    pub fn set_dvb_sdt_settings(mut self, input: std::option::Option<crate::types::DvbSdtSettings>) -> Self {
+        self.dvb_sdt_settings = input; self
     }
     /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn dvb_sub_pids(mut self, input: impl Into<std::string::String>) -> Self {
@@ -588,8 +528,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_dvb_sub_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dvb_sub_pids = input;
-        self
+        self.dvb_sub_pids = input; self
     }
     /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
     pub fn dvb_tdt_settings(mut self, input: crate::types::DvbTdtSettings) -> Self {
@@ -597,12 +536,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
-    pub fn set_dvb_tdt_settings(
-        mut self,
-        input: std::option::Option<crate::types::DvbTdtSettings>,
-    ) -> Self {
-        self.dvb_tdt_settings = input;
-        self
+    pub fn set_dvb_tdt_settings(mut self, input: std::option::Option<crate::types::DvbTdtSettings>) -> Self {
+        self.dvb_tdt_settings = input; self
     }
     /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn dvb_teletext_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -611,8 +546,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_dvb_teletext_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dvb_teletext_pid = input;
-        self
+        self.dvb_teletext_pid = input; self
     }
     /// If set to passthrough, passes any EBIF data from the input source to this output.
     pub fn ebif(mut self, input: crate::types::M2tsEbifControl) -> Self {
@@ -621,8 +555,7 @@ impl M2tsSettingsBuilder {
     }
     /// If set to passthrough, passes any EBIF data from the input source to this output.
     pub fn set_ebif(mut self, input: std::option::Option<crate::types::M2tsEbifControl>) -> Self {
-        self.ebif = input;
-        self
+        self.ebif = input; self
     }
     /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
     pub fn ebp_audio_interval(mut self, input: crate::types::M2tsAudioInterval) -> Self {
@@ -630,12 +563,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.
-    pub fn set_ebp_audio_interval(
-        mut self,
-        input: std::option::Option<crate::types::M2tsAudioInterval>,
-    ) -> Self {
-        self.ebp_audio_interval = input;
-        self
+    pub fn set_ebp_audio_interval(mut self, input: std::option::Option<crate::types::M2tsAudioInterval>) -> Self {
+        self.ebp_audio_interval = input; self
     }
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
     pub fn ebp_lookahead_ms(mut self, input: i32) -> Self {
@@ -644,8 +573,7 @@ impl M2tsSettingsBuilder {
     }
     /// When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is "stretched" to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.
     pub fn set_ebp_lookahead_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.ebp_lookahead_ms = input;
-        self
+        self.ebp_lookahead_ms = input; self
     }
     /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
     pub fn ebp_placement(mut self, input: crate::types::M2tsEbpPlacement) -> Self {
@@ -653,12 +581,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.
-    pub fn set_ebp_placement(
-        mut self,
-        input: std::option::Option<crate::types::M2tsEbpPlacement>,
-    ) -> Self {
-        self.ebp_placement = input;
-        self
+    pub fn set_ebp_placement(mut self, input: std::option::Option<crate::types::M2tsEbpPlacement>) -> Self {
+        self.ebp_placement = input; self
     }
     /// This field is unused and deprecated.
     pub fn ecm_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -667,8 +591,7 @@ impl M2tsSettingsBuilder {
     }
     /// This field is unused and deprecated.
     pub fn set_ecm_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ecm_pid = input;
-        self
+        self.ecm_pid = input; self
     }
     /// Include or exclude the ES Rate field in the PES header.
     pub fn es_rate_in_pes(mut self, input: crate::types::M2tsEsRateInPes) -> Self {
@@ -676,12 +599,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Include or exclude the ES Rate field in the PES header.
-    pub fn set_es_rate_in_pes(
-        mut self,
-        input: std::option::Option<crate::types::M2tsEsRateInPes>,
-    ) -> Self {
-        self.es_rate_in_pes = input;
-        self
+    pub fn set_es_rate_in_pes(mut self, input: std::option::Option<crate::types::M2tsEsRateInPes>) -> Self {
+        self.es_rate_in_pes = input; self
     }
     /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn etv_platform_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -690,8 +609,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_etv_platform_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.etv_platform_pid = input;
-        self
+        self.etv_platform_pid = input; self
     }
     /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn etv_signal_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -700,8 +618,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_etv_signal_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.etv_signal_pid = input;
-        self
+        self.etv_signal_pid = input; self
     }
     /// The length in seconds of each fragment. Only used with EBP markers.
     pub fn fragment_time(mut self, input: f64) -> Self {
@@ -710,8 +627,7 @@ impl M2tsSettingsBuilder {
     }
     /// The length in seconds of each fragment. Only used with EBP markers.
     pub fn set_fragment_time(mut self, input: std::option::Option<f64>) -> Self {
-        self.fragment_time = input;
-        self
+        self.fragment_time = input; self
     }
     /// If set to passthrough, passes any KLV data from the input source to this output.
     pub fn klv(mut self, input: crate::types::M2tsKlv) -> Self {
@@ -720,8 +636,7 @@ impl M2tsSettingsBuilder {
     }
     /// If set to passthrough, passes any KLV data from the input source to this output.
     pub fn set_klv(mut self, input: std::option::Option<crate::types::M2tsKlv>) -> Self {
-        self.klv = input;
-        self
+        self.klv = input; self
     }
     /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn klv_data_pids(mut self, input: impl Into<std::string::String>) -> Self {
@@ -730,8 +645,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_klv_data_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.klv_data_pids = input;
-        self
+        self.klv_data_pids = input; self
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn nielsen_id3_behavior(mut self, input: crate::types::M2tsNielsenId3Behavior) -> Self {
@@ -739,12 +653,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
-    pub fn set_nielsen_id3_behavior(
-        mut self,
-        input: std::option::Option<crate::types::M2tsNielsenId3Behavior>,
-    ) -> Self {
-        self.nielsen_id3_behavior = input;
-        self
+    pub fn set_nielsen_id3_behavior(mut self, input: std::option::Option<crate::types::M2tsNielsenId3Behavior>) -> Self {
+        self.nielsen_id3_behavior = input; self
     }
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
     pub fn null_packet_bitrate(mut self, input: f64) -> Self {
@@ -753,8 +663,7 @@ impl M2tsSettingsBuilder {
     }
     /// Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.
     pub fn set_null_packet_bitrate(mut self, input: std::option::Option<f64>) -> Self {
-        self.null_packet_bitrate = input;
-        self
+        self.null_packet_bitrate = input; self
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub fn pat_interval(mut self, input: i32) -> Self {
@@ -763,8 +672,7 @@ impl M2tsSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.pat_interval = input;
-        self
+        self.pat_interval = input; self
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     pub fn pcr_control(mut self, input: crate::types::M2tsPcrControl) -> Self {
@@ -772,12 +680,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn set_pcr_control(
-        mut self,
-        input: std::option::Option<crate::types::M2tsPcrControl>,
-    ) -> Self {
-        self.pcr_control = input;
-        self
+    pub fn set_pcr_control(mut self, input: std::option::Option<crate::types::M2tsPcrControl>) -> Self {
+        self.pcr_control = input; self
     }
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
     pub fn pcr_period(mut self, input: i32) -> Self {
@@ -786,8 +690,7 @@ impl M2tsSettingsBuilder {
     }
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
     pub fn set_pcr_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.pcr_period = input;
-        self
+        self.pcr_period = input; self
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn pcr_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -796,8 +699,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pcr_pid = input;
-        self
+        self.pcr_pid = input; self
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub fn pmt_interval(mut self, input: i32) -> Self {
@@ -806,8 +708,7 @@ impl M2tsSettingsBuilder {
     }
     /// The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.
     pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.pmt_interval = input;
-        self
+        self.pmt_interval = input; self
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn pmt_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -816,8 +717,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_pmt_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pmt_pid = input;
-        self
+        self.pmt_pid = input; self
     }
     /// The value of the program number field in the Program Map Table.
     pub fn program_num(mut self, input: i32) -> Self {
@@ -826,8 +726,7 @@ impl M2tsSettingsBuilder {
     }
     /// The value of the program number field in the Program Map Table.
     pub fn set_program_num(mut self, input: std::option::Option<i32>) -> Self {
-        self.program_num = input;
-        self
+        self.program_num = input; self
     }
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
     pub fn rate_mode(mut self, input: crate::types::M2tsRateMode) -> Self {
@@ -836,8 +735,7 @@ impl M2tsSettingsBuilder {
     }
     /// When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
     pub fn set_rate_mode(mut self, input: std::option::Option<crate::types::M2tsRateMode>) -> Self {
-        self.rate_mode = input;
-        self
+        self.rate_mode = input; self
     }
     /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn scte27_pids(mut self, input: impl Into<std::string::String>) -> Self {
@@ -846,8 +744,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_scte27_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scte27_pids = input;
-        self
+        self.scte27_pids = input; self
     }
     /// Optionally pass SCTE-35 signals from the input source to this output.
     pub fn scte35_control(mut self, input: crate::types::M2tsScte35Control) -> Self {
@@ -855,12 +752,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Optionally pass SCTE-35 signals from the input source to this output.
-    pub fn set_scte35_control(
-        mut self,
-        input: std::option::Option<crate::types::M2tsScte35Control>,
-    ) -> Self {
-        self.scte35_control = input;
-        self
+    pub fn set_scte35_control(mut self, input: std::option::Option<crate::types::M2tsScte35Control>) -> Self {
+        self.scte35_control = input; self
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn scte35_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -869,8 +762,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scte35_pid = input;
-        self
+        self.scte35_pid = input; self
     }
     /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
     pub fn segmentation_markers(mut self, input: crate::types::M2tsSegmentationMarkers) -> Self {
@@ -878,12 +770,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
-    pub fn set_segmentation_markers(
-        mut self,
-        input: std::option::Option<crate::types::M2tsSegmentationMarkers>,
-    ) -> Self {
-        self.segmentation_markers = input;
-        self
+    pub fn set_segmentation_markers(mut self, input: std::option::Option<crate::types::M2tsSegmentationMarkers>) -> Self {
+        self.segmentation_markers = input; self
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
     pub fn segmentation_style(mut self, input: crate::types::M2tsSegmentationStyle) -> Self {
@@ -891,12 +779,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "resetCadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of "maintainCadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.
-    pub fn set_segmentation_style(
-        mut self,
-        input: std::option::Option<crate::types::M2tsSegmentationStyle>,
-    ) -> Self {
-        self.segmentation_style = input;
-        self
+    pub fn set_segmentation_style(mut self, input: std::option::Option<crate::types::M2tsSegmentationStyle>) -> Self {
+        self.segmentation_style = input; self
     }
     /// The length in seconds of each segment. Required unless markers is set to _none_.
     pub fn segmentation_time(mut self, input: f64) -> Self {
@@ -905,24 +789,16 @@ impl M2tsSettingsBuilder {
     }
     /// The length in seconds of each segment. Required unless markers is set to _none_.
     pub fn set_segmentation_time(mut self, input: std::option::Option<f64>) -> Self {
-        self.segmentation_time = input;
-        self
+        self.segmentation_time = input; self
     }
     /// When set to passthrough, timed metadata will be passed through from input to output.
-    pub fn timed_metadata_behavior(
-        mut self,
-        input: crate::types::M2tsTimedMetadataBehavior,
-    ) -> Self {
+    pub fn timed_metadata_behavior(mut self, input: crate::types::M2tsTimedMetadataBehavior) -> Self {
         self.timed_metadata_behavior = Some(input);
         self
     }
     /// When set to passthrough, timed metadata will be passed through from input to output.
-    pub fn set_timed_metadata_behavior(
-        mut self,
-        input: std::option::Option<crate::types::M2tsTimedMetadataBehavior>,
-    ) -> Self {
-        self.timed_metadata_behavior = input;
-        self
+    pub fn set_timed_metadata_behavior(mut self, input: std::option::Option<crate::types::M2tsTimedMetadataBehavior>) -> Self {
+        self.timed_metadata_behavior = input; self
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn timed_metadata_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -930,12 +806,8 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn set_timed_metadata_pid(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.timed_metadata_pid = input;
-        self
+    pub fn set_timed_metadata_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.timed_metadata_pid = input; self
     }
     /// The value of the transport stream ID field in the Program Map Table.
     pub fn transport_stream_id(mut self, input: i32) -> Self {
@@ -944,8 +816,7 @@ impl M2tsSettingsBuilder {
     }
     /// The value of the transport stream ID field in the Program Map Table.
     pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.transport_stream_id = input;
-        self
+        self.transport_stream_id = input; self
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn video_pid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -954,8 +825,7 @@ impl M2tsSettingsBuilder {
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.video_pid = input;
-        self
+        self.video_pid = input; self
     }
     /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
     pub fn scte35_preroll_pullup_milliseconds(mut self, input: f64) -> Self {
@@ -963,66 +833,121 @@ impl M2tsSettingsBuilder {
         self
     }
     /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
-    pub fn set_scte35_preroll_pullup_milliseconds(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.scte35_preroll_pullup_milliseconds = input;
-        self
+    pub fn set_scte35_preroll_pullup_milliseconds(mut self, input: std::option::Option<f64>) -> Self {
+        self.scte35_preroll_pullup_milliseconds = input; self
     }
     /// Consumes the builder and constructs a [`M2tsSettings`](crate::types::M2tsSettings).
     pub fn build(self) -> crate::types::M2tsSettings {
         crate::types::M2tsSettings {
-            absent_input_audio_behavior: self.absent_input_audio_behavior,
-            arib: self.arib,
-            arib_captions_pid: self.arib_captions_pid,
-            arib_captions_pid_control: self.arib_captions_pid_control,
-            audio_buffer_model: self.audio_buffer_model,
-            audio_frames_per_pes: self.audio_frames_per_pes.unwrap_or_default(),
-            audio_pids: self.audio_pids,
-            audio_stream_type: self.audio_stream_type,
-            bitrate: self.bitrate.unwrap_or_default(),
-            buffer_model: self.buffer_model,
-            cc_descriptor: self.cc_descriptor,
-            dvb_nit_settings: self.dvb_nit_settings,
-            dvb_sdt_settings: self.dvb_sdt_settings,
-            dvb_sub_pids: self.dvb_sub_pids,
-            dvb_tdt_settings: self.dvb_tdt_settings,
-            dvb_teletext_pid: self.dvb_teletext_pid,
-            ebif: self.ebif,
-            ebp_audio_interval: self.ebp_audio_interval,
-            ebp_lookahead_ms: self.ebp_lookahead_ms.unwrap_or_default(),
-            ebp_placement: self.ebp_placement,
-            ecm_pid: self.ecm_pid,
-            es_rate_in_pes: self.es_rate_in_pes,
-            etv_platform_pid: self.etv_platform_pid,
-            etv_signal_pid: self.etv_signal_pid,
-            fragment_time: self.fragment_time.unwrap_or_default(),
-            klv: self.klv,
-            klv_data_pids: self.klv_data_pids,
-            nielsen_id3_behavior: self.nielsen_id3_behavior,
-            null_packet_bitrate: self.null_packet_bitrate.unwrap_or_default(),
-            pat_interval: self.pat_interval.unwrap_or_default(),
-            pcr_control: self.pcr_control,
-            pcr_period: self.pcr_period.unwrap_or_default(),
-            pcr_pid: self.pcr_pid,
-            pmt_interval: self.pmt_interval.unwrap_or_default(),
-            pmt_pid: self.pmt_pid,
-            program_num: self.program_num.unwrap_or_default(),
-            rate_mode: self.rate_mode,
-            scte27_pids: self.scte27_pids,
-            scte35_control: self.scte35_control,
-            scte35_pid: self.scte35_pid,
-            segmentation_markers: self.segmentation_markers,
-            segmentation_style: self.segmentation_style,
-            segmentation_time: self.segmentation_time.unwrap_or_default(),
-            timed_metadata_behavior: self.timed_metadata_behavior,
-            timed_metadata_pid: self.timed_metadata_pid,
-            transport_stream_id: self.transport_stream_id.unwrap_or_default(),
-            video_pid: self.video_pid,
-            scte35_preroll_pullup_milliseconds: self
-                .scte35_preroll_pullup_milliseconds
-                .unwrap_or_default(),
+            absent_input_audio_behavior: self.absent_input_audio_behavior
+            ,
+            arib: self.arib
+            ,
+            arib_captions_pid: self.arib_captions_pid
+            ,
+            arib_captions_pid_control: self.arib_captions_pid_control
+            ,
+            audio_buffer_model: self.audio_buffer_model
+            ,
+            audio_frames_per_pes: self.audio_frames_per_pes
+                .unwrap_or_default()
+            ,
+            audio_pids: self.audio_pids
+            ,
+            audio_stream_type: self.audio_stream_type
+            ,
+            bitrate: self.bitrate
+                .unwrap_or_default()
+            ,
+            buffer_model: self.buffer_model
+            ,
+            cc_descriptor: self.cc_descriptor
+            ,
+            dvb_nit_settings: self.dvb_nit_settings
+            ,
+            dvb_sdt_settings: self.dvb_sdt_settings
+            ,
+            dvb_sub_pids: self.dvb_sub_pids
+            ,
+            dvb_tdt_settings: self.dvb_tdt_settings
+            ,
+            dvb_teletext_pid: self.dvb_teletext_pid
+            ,
+            ebif: self.ebif
+            ,
+            ebp_audio_interval: self.ebp_audio_interval
+            ,
+            ebp_lookahead_ms: self.ebp_lookahead_ms
+                .unwrap_or_default()
+            ,
+            ebp_placement: self.ebp_placement
+            ,
+            ecm_pid: self.ecm_pid
+            ,
+            es_rate_in_pes: self.es_rate_in_pes
+            ,
+            etv_platform_pid: self.etv_platform_pid
+            ,
+            etv_signal_pid: self.etv_signal_pid
+            ,
+            fragment_time: self.fragment_time
+                .unwrap_or_default()
+            ,
+            klv: self.klv
+            ,
+            klv_data_pids: self.klv_data_pids
+            ,
+            nielsen_id3_behavior: self.nielsen_id3_behavior
+            ,
+            null_packet_bitrate: self.null_packet_bitrate
+                .unwrap_or_default()
+            ,
+            pat_interval: self.pat_interval
+                .unwrap_or_default()
+            ,
+            pcr_control: self.pcr_control
+            ,
+            pcr_period: self.pcr_period
+                .unwrap_or_default()
+            ,
+            pcr_pid: self.pcr_pid
+            ,
+            pmt_interval: self.pmt_interval
+                .unwrap_or_default()
+            ,
+            pmt_pid: self.pmt_pid
+            ,
+            program_num: self.program_num
+                .unwrap_or_default()
+            ,
+            rate_mode: self.rate_mode
+            ,
+            scte27_pids: self.scte27_pids
+            ,
+            scte35_control: self.scte35_control
+            ,
+            scte35_pid: self.scte35_pid
+            ,
+            segmentation_markers: self.segmentation_markers
+            ,
+            segmentation_style: self.segmentation_style
+            ,
+            segmentation_time: self.segmentation_time
+                .unwrap_or_default()
+            ,
+            timed_metadata_behavior: self.timed_metadata_behavior
+            ,
+            timed_metadata_pid: self.timed_metadata_pid
+            ,
+            transport_stream_id: self.transport_stream_id
+                .unwrap_or_default()
+            ,
+            video_pid: self.video_pid
+            ,
+            scte35_preroll_pullup_milliseconds: self.scte35_preroll_pullup_milliseconds
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

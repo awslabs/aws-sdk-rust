@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectMitigationActionsExecutionsInput {
+pub struct ListDetectMitigationActionsExecutionsInput  {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -27,23 +27,23 @@ pub struct ListDetectMitigationActionsExecutionsInput {
 }
 impl ListDetectMitigationActionsExecutionsInput {
     /// <p> The unique identifier of the task. </p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p> The unique identifier of the violation. </p>
-    pub fn violation_id(&self) -> std::option::Option<&str> {
+    pub fn violation_id(&self) -> std::option::Option<& str> {
         self.violation_id.as_deref()
     }
     /// <p> The name of the thing whose mitigation actions are listed. </p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
@@ -51,13 +51,13 @@ impl ListDetectMitigationActionsExecutionsInput {
         self.max_results
     }
     /// <p> The token for the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListDetectMitigationActionsExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListDetectMitigationActionsExecutionsInput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput).
-    pub fn builder() -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder {
         crate::operation::list_detect_mitigation_actions_executions::builders::ListDetectMitigationActionsExecutionsInputBuilder::default()
     }
 }
@@ -82,8 +82,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
     }
     /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p> The unique identifier of the violation. </p>
     pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +91,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
     }
     /// <p> The unique identifier of the violation. </p>
     pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.violation_id = input;
-        self
+        self.violation_id = input; self
     }
     /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +100,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
     }
     /// <p> The name of the thing whose mitigation actions are listed. </p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -111,12 +108,8 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
         self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,8 +118,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
     }
     /// <p> The end of the time period for which ML Detect mitigation actions executions are returned. </p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -135,8 +127,7 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
     }
     /// <p> The maximum number of results to return at one time. The default is 25. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,11 +136,10 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
     }
     /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListDetectMitigationActionsExecutionsInput`](crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_detect_mitigation_actions_executions::ListDetectMitigationActionsExecutionsInput {
                 task_id: self.task_id
@@ -170,3 +160,4 @@ impl ListDetectMitigationActionsExecutionsInputBuilder {
         )
     }
 }
+

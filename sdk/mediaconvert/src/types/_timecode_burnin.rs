@@ -3,7 +3,7 @@
 /// Settings for burning the output timecode and specified prefix into the output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimecodeBurnin {
+pub struct TimecodeBurnin  {
     /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     #[doc(hidden)]
     pub font_size: i32,
@@ -20,11 +20,11 @@ impl TimecodeBurnin {
         self.font_size
     }
     /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
-    pub fn position(&self) -> std::option::Option<&crate::types::TimecodeBurninPosition> {
+    pub fn position(&self) -> std::option::Option<& crate::types::TimecodeBurninPosition> {
         self.position.as_ref()
     }
     /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl TimecodeBurninBuilder {
     }
     /// Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
     pub fn set_font_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.font_size = input;
-        self
+        self.font_size = input; self
     }
     /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
     pub fn position(mut self, input: crate::types::TimecodeBurninPosition) -> Self {
@@ -60,12 +59,8 @@ impl TimecodeBurninBuilder {
         self
     }
     /// Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video.
-    pub fn set_position(
-        mut self,
-        input: std::option::Option<crate::types::TimecodeBurninPosition>,
-    ) -> Self {
-        self.position = input;
-        self
+    pub fn set_position(mut self, input: std::option::Option<crate::types::TimecodeBurninPosition>) -> Self {
+        self.position = input; self
     }
     /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,19 @@ impl TimecodeBurninBuilder {
     }
     /// Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters represented on a standard English keyboard.
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// Consumes the builder and constructs a [`TimecodeBurnin`](crate::types::TimecodeBurnin).
     pub fn build(self) -> crate::types::TimecodeBurnin {
         crate::types::TimecodeBurnin {
-            font_size: self.font_size.unwrap_or_default(),
-            position: self.position,
-            prefix: self.prefix,
+            font_size: self.font_size
+                .unwrap_or_default()
+            ,
+            position: self.position
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

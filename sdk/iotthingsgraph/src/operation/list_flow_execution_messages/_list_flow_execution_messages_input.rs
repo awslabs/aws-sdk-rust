@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFlowExecutionMessagesInput {
+pub struct ListFlowExecutionMessagesInput  {
     /// <p>The ID of the flow execution.</p>
     #[doc(hidden)]
     pub flow_execution_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListFlowExecutionMessagesInput {
 }
 impl ListFlowExecutionMessagesInput {
     /// <p>The ID of the flow execution.</p>
-    pub fn flow_execution_id(&self) -> std::option::Option<&str> {
+    pub fn flow_execution_id(&self) -> std::option::Option<& str> {
         self.flow_execution_id.as_deref()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -29,7 +29,7 @@ impl ListFlowExecutionMessagesInput {
 }
 impl ListFlowExecutionMessagesInput {
     /// Creates a new builder-style object to manufacture [`ListFlowExecutionMessagesInput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesInput).
-    pub fn builder() -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder{
+    pub fn builder() -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder {
         crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl ListFlowExecutionMessagesInputBuilder {
         self
     }
     /// <p>The ID of the flow execution.</p>
-    pub fn set_flow_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.flow_execution_id = input;
-        self
+    pub fn set_flow_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flow_execution_id = input; self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl ListFlowExecutionMessagesInputBuilder {
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,22 +68,20 @@ impl ListFlowExecutionMessagesInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListFlowExecutionMessagesInput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesInput {
-                flow_execution_id: self.flow_execution_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                flow_execution_id: self.flow_execution_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

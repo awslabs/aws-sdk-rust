@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateActivationInput {
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+pub struct CreateActivationInput  {
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
     #[doc(hidden)]
     pub default_instance_name: std::option::Option<std::string::String>,
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> 
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p> 
     /// </note>
     #[doc(hidden)]
     pub iam_role: std::option::Option<std::string::String>,
@@ -24,38 +24,37 @@ pub struct CreateActivationInput {
     /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
     #[doc(hidden)]
     pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
-    /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// </ul> <important>
-    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
-    /// </important>
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> 
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> 
+    /// </ul> <important> 
+    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p> 
+    /// </important> 
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>Reserved for internal use.</p>
     #[doc(hidden)]
-    pub registration_metadata:
-        std::option::Option<std::vec::Vec<crate::types::RegistrationMetadataItem>>,
+    pub registration_metadata: std::option::Option<std::vec::Vec<crate::types::RegistrationMetadataItem>>,
 }
 impl CreateActivationInput {
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
-    pub fn default_instance_name(&self) -> std::option::Option<&str> {
+    pub fn default_instance_name(&self) -> std::option::Option<& str> {
         self.default_instance_name.as_deref()
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> 
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p> 
     /// </note>
-    pub fn iam_role(&self) -> std::option::Option<&str> {
+    pub fn iam_role(&self) -> std::option::Option<& str> {
         self.iam_role.as_deref()
     }
     /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
@@ -63,31 +62,28 @@ impl CreateActivationInput {
         self.registration_limit
     }
     /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
-    /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// </ul> <important>
-    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
-    /// </important>
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> 
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> 
+    /// </ul> <important> 
+    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p> 
+    /// </important> 
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Reserved for internal use.</p>
-    pub fn registration_metadata(
-        &self,
-    ) -> std::option::Option<&[crate::types::RegistrationMetadataItem]> {
+    pub fn registration_metadata(&self) -> std::option::Option<& [crate::types::RegistrationMetadataItem]> {
         self.registration_metadata.as_deref()
     }
 }
 impl CreateActivationInput {
     /// Creates a new builder-style object to manufacture [`CreateActivationInput`](crate::operation::create_activation::CreateActivationInput).
-    pub fn builder() -> crate::operation::create_activation::builders::CreateActivationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_activation::builders::CreateActivationInputBuilder {
         crate::operation::create_activation::builders::CreateActivationInputBuilder::default()
     }
 }
@@ -102,54 +98,47 @@ pub struct CreateActivationInputBuilder {
     pub(crate) registration_limit: std::option::Option<i32>,
     pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) registration_metadata:
-        std::option::Option<std::vec::Vec<crate::types::RegistrationMetadataItem>>,
+    pub(crate) registration_metadata: std::option::Option<std::vec::Vec<crate::types::RegistrationMetadataItem>>,
 }
 impl CreateActivationInputBuilder {
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
     pub fn default_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.default_instance_name = Some(input.into());
         self
     }
-    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important>
-    /// <p>Don't enter personally identifiable information in this field.</p>
+    /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when you use the Amazon Web Services command line tools to list Systems Manager resources.</p> <important> 
+    /// <p>Don't enter personally identifiable information in this field.</p> 
     /// </important>
-    pub fn set_default_instance_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.default_instance_name = input;
-        self
+    pub fn set_default_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.default_instance_name = input; self
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> 
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p> 
     /// </note>
     pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
         self.iam_role = Some(input.into());
         self
     }
-    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
-    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p>
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> 
+    /// <p>You can't specify an IAM service-linked role for this parameter. You must create a unique role.</p> 
     /// </note>
     pub fn set_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role = input;
-        self
+        self.iam_role = input; self
     }
     /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
     pub fn registration_limit(mut self, input: i32) -> Self {
@@ -158,8 +147,7 @@ impl CreateActivationInputBuilder {
     }
     /// <p>Specify the maximum number of managed nodes you want to register. The default value is <code>1</code>.</p>
     pub fn set_registration_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.registration_limit = input;
-        self
+        self.registration_limit = input; self
     }
     /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
     pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,45 +155,37 @@ impl CreateActivationInputBuilder {
         self
     }
     /// <p>The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires in 24 hours.</p>
-    pub fn set_expiration_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration_date = input;
-        self
+    pub fn set_expiration_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration_date = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
-    /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// </ul> <important>
-    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
-    /// </important>
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> 
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> 
+    /// </ul> <important> 
+    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p> 
+    /// </important> 
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p>
-    /// <ul>
-    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li>
-    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li>
-    /// </ul> <important>
-    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p>
-    /// </important>
+    /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag an activation to identify which servers or virtual machines (VMs) in your on-premises environment you intend to activate. In this case, you could specify the following key-value pairs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> 
+    /// <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> 
+    /// </ul> <important> 
+    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID and code. When you specify the activation ID and code, tags assigned to the activation are automatically applied to the on-premises servers or VMs.</p> 
+    /// </important> 
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your on-premises servers, edge devices, and VMs after they connect to Systems Manager for the first time and are assigned a managed node ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is prefixed with "mi-". For information about how to add tags to your managed nodes, see <code>AddTagsToResource</code>. For information about how to remove tags from your managed nodes, see <code>RemoveTagsFromResource</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `registration_metadata`.
     ///
@@ -214,33 +194,34 @@ impl CreateActivationInputBuilder {
     /// <p>Reserved for internal use.</p>
     pub fn registration_metadata(mut self, input: crate::types::RegistrationMetadataItem) -> Self {
         let mut v = self.registration_metadata.unwrap_or_default();
-        v.push(input);
-        self.registration_metadata = Some(v);
-        self
+                        v.push(input);
+                        self.registration_metadata = Some(v);
+                        self
     }
     /// <p>Reserved for internal use.</p>
-    pub fn set_registration_metadata(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RegistrationMetadataItem>>,
-    ) -> Self {
-        self.registration_metadata = input;
-        self
+    pub fn set_registration_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::RegistrationMetadataItem>>) -> Self {
+        self.registration_metadata = input; self
     }
     /// Consumes the builder and constructs a [`CreateActivationInput`](crate::operation::create_activation::CreateActivationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_activation::CreateActivationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_activation::CreateActivationInput {
-            description: self.description,
-            default_instance_name: self.default_instance_name,
-            iam_role: self.iam_role,
-            registration_limit: self.registration_limit,
-            expiration_date: self.expiration_date,
-            tags: self.tags,
-            registration_metadata: self.registration_metadata,
-        })
+    pub fn build(self) -> Result<crate::operation::create_activation::CreateActivationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_activation::CreateActivationInput {
+                description: self.description
+                ,
+                default_instance_name: self.default_instance_name
+                ,
+                iam_role: self.iam_role
+                ,
+                registration_limit: self.registration_limit
+                ,
+                expiration_date: self.expiration_date
+                ,
+                tags: self.tags
+                ,
+                registration_metadata: self.registration_metadata
+                ,
+            }
+        )
     }
 }
+

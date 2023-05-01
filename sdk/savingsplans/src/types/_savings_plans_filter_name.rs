@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplansfiltername = unimplemented!();
 /// match savingsplansfiltername {
@@ -37,22 +37,14 @@
 /// Specifically, when `savingsplansfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlansFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlansFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Commitment,
@@ -73,66 +65,55 @@ pub enum SavingsPlansFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Upfront,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlansFilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "commitment" => SavingsPlansFilterName::Commitment,
-            "ec2-instance-family" => SavingsPlansFilterName::Ec2InstanceFamily,
-            "end" => SavingsPlansFilterName::End,
-            "payment-option" => SavingsPlansFilterName::PaymentOption,
-            "region" => SavingsPlansFilterName::Region,
-            "savings-plan-type" => SavingsPlansFilterName::SavingsPlanType,
-            "start" => SavingsPlansFilterName::Start,
-            "term" => SavingsPlansFilterName::Term,
-            "upfront" => SavingsPlansFilterName::Upfront,
-            other => SavingsPlansFilterName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "commitment" => SavingsPlansFilterName::Commitment,
+"ec2-instance-family" => SavingsPlansFilterName::Ec2InstanceFamily,
+"end" => SavingsPlansFilterName::End,
+"payment-option" => SavingsPlansFilterName::PaymentOption,
+"region" => SavingsPlansFilterName::Region,
+"savings-plan-type" => SavingsPlansFilterName::SavingsPlanType,
+"start" => SavingsPlansFilterName::Start,
+"term" => SavingsPlansFilterName::Term,
+"upfront" => SavingsPlansFilterName::Upfront,
+other => SavingsPlansFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SavingsPlansFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlansFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlansFilterName::from(s))
+                }
+            }
 impl SavingsPlansFilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlansFilterName::Commitment => "commitment",
-            SavingsPlansFilterName::Ec2InstanceFamily => "ec2-instance-family",
-            SavingsPlansFilterName::End => "end",
-            SavingsPlansFilterName::PaymentOption => "payment-option",
-            SavingsPlansFilterName::Region => "region",
-            SavingsPlansFilterName::SavingsPlanType => "savings-plan-type",
-            SavingsPlansFilterName::Start => "start",
-            SavingsPlansFilterName::Term => "term",
-            SavingsPlansFilterName::Upfront => "upfront",
-            SavingsPlansFilterName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "commitment",
-            "ec2-instance-family",
-            "end",
-            "payment-option",
-            "region",
-            "savings-plan-type",
-            "start",
-            "term",
-            "upfront",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlansFilterName::Commitment => "commitment",
+    SavingsPlansFilterName::Ec2InstanceFamily => "ec2-instance-family",
+    SavingsPlansFilterName::End => "end",
+    SavingsPlansFilterName::PaymentOption => "payment-option",
+    SavingsPlansFilterName::Region => "region",
+    SavingsPlansFilterName::SavingsPlanType => "savings-plan-type",
+    SavingsPlansFilterName::Start => "start",
+    SavingsPlansFilterName::Term => "term",
+    SavingsPlansFilterName::Upfront => "upfront",
+    SavingsPlansFilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["commitment", "ec2-instance-family", "end", "payment-option", "region", "savings-plan-type", "start", "term", "upfront"]
+                }
+            }
 impl AsRef<str> for SavingsPlansFilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

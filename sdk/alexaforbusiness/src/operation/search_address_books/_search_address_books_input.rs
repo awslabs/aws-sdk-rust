@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAddressBooksInput {
+pub struct SearchAddressBooksInput  {
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -18,15 +18,15 @@ pub struct SearchAddressBooksInput {
 }
 impl SearchAddressBooksInput {
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<&[crate::types::Sort]> {
+    pub fn sort_criteria(&self) -> std::option::Option<& [crate::types::Sort]> {
         self.sort_criteria.as_deref()
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -36,8 +36,7 @@ impl SearchAddressBooksInput {
 }
 impl SearchAddressBooksInput {
     /// Creates a new builder-style object to manufacture [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
-    pub fn builder(
-    ) -> crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder {
+    pub fn builder() -> crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder {
         crate::operation::search_address_books::builders::SearchAddressBooksInputBuilder::default()
     }
 }
@@ -59,17 +58,13 @@ impl SearchAddressBooksInputBuilder {
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>The filters to use to list a specified set of address books. The supported filter key is AddressBookName.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Appends an item to `sort_criteria`.
     ///
@@ -78,17 +73,13 @@ impl SearchAddressBooksInputBuilder {
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
     pub fn sort_criteria(mut self, input: crate::types::Sort) -> Self {
         let mut v = self.sort_criteria.unwrap_or_default();
-        v.push(input);
-        self.sort_criteria = Some(v);
-        self
+                        v.push(input);
+                        self.sort_criteria = Some(v);
+                        self
     }
     /// <p>The sort order to use in listing the specified set of address books. The supported sort key is AddressBookName.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::types::Sort>>) -> Self {
+        self.sort_criteria = input; self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +88,7 @@ impl SearchAddressBooksInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -107,23 +97,22 @@ impl SearchAddressBooksInputBuilder {
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`SearchAddressBooksInput`](crate::operation::search_address_books::SearchAddressBooksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_address_books::SearchAddressBooksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::search_address_books::SearchAddressBooksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::search_address_books::SearchAddressBooksInput {
-                filters: self.filters,
-                sort_criteria: self.sort_criteria,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                filters: self.filters
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

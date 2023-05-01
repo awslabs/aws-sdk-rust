@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServicesInput {
+pub struct ListServicesInput  {
     /// <p>A token that indicates the location of the next service in the array of services, after the list of services that was previously requested.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListServicesInput {
 }
 impl ListServicesInput {
     /// <p>A token that indicates the location of the next service in the array of services, after the list of services that was previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of services to list.</p>
@@ -42,8 +42,7 @@ impl ListServicesInputBuilder {
     }
     /// <p>A token that indicates the location of the next service in the array of services, after the list of services that was previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of services to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,19 +51,18 @@ impl ListServicesInputBuilder {
     }
     /// <p>The maximum number of services to list.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListServicesInput`](crate::operation::list_services::ListServicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_services::ListServicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_services::ListServicesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_services::ListServicesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_services::ListServicesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

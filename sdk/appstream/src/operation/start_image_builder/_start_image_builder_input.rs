@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImageBuilderInput {
+pub struct StartImageBuilderInput  {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct StartImageBuilderInput {
 }
 impl StartImageBuilderInput {
     /// <p>The name of the image builder.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn appstream_agent_version(&self) -> std::option::Option<&str> {
+    pub fn appstream_agent_version(&self) -> std::option::Option<& str> {
         self.appstream_agent_version.as_deref()
     }
 }
 impl StartImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
+    pub fn builder() -> crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder {
         crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl StartImageBuilderInputBuilder {
     }
     /// <p>The name of the image builder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
     pub fn appstream_agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,25 +50,19 @@ impl StartImageBuilderInputBuilder {
         self
     }
     /// <p>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST]. </p>
-    pub fn set_appstream_agent_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.appstream_agent_version = input;
-        self
+    pub fn set_appstream_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.appstream_agent_version = input; self
     }
     /// Consumes the builder and constructs a [`StartImageBuilderInput`](crate::operation::start_image_builder::StartImageBuilderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_image_builder::StartImageBuilderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_image_builder::StartImageBuilderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_image_builder::StartImageBuilderInput {
-                name: self.name,
-                appstream_agent_version: self.appstream_agent_version,
-            },
+                name: self.name
+                ,
+                appstream_agent_version: self.appstream_agent_version
+                ,
+            }
         )
     }
 }
+

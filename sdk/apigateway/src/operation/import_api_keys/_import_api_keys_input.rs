@@ -3,7 +3,7 @@
 /// <p>The POST request to import API keys from an external source, such as a CSV-formatted file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportApiKeysInput {
+pub struct ImportApiKeysInput  {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
     #[doc(hidden)]
     pub body: std::option::Option<aws_smithy_types::Blob>,
@@ -16,11 +16,11 @@ pub struct ImportApiKeysInput {
 }
 impl ImportApiKeysInput {
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
-    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn body(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.body.as_ref()
     }
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::ApiKeysFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::ApiKeysFormat> {
         self.format.as_ref()
     }
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
@@ -51,8 +51,7 @@ impl ImportApiKeysInputBuilder {
     }
     /// <p>The payload of the POST request to import API keys. For the payload format, see API Key File Format.</p>
     pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
     pub fn format(mut self, input: crate::types::ApiKeysFormat) -> Self {
@@ -61,8 +60,7 @@ impl ImportApiKeysInputBuilder {
     }
     /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::ApiKeysFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
     pub fn fail_on_warnings(mut self, input: bool) -> Self {
@@ -71,20 +69,21 @@ impl ImportApiKeysInputBuilder {
     }
     /// <p>A query parameter to indicate whether to rollback ApiKey importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
     pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
-        self.fail_on_warnings = input;
-        self
+        self.fail_on_warnings = input; self
     }
     /// Consumes the builder and constructs a [`ImportApiKeysInput`](crate::operation::import_api_keys::ImportApiKeysInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_api_keys::ImportApiKeysInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::import_api_keys::ImportApiKeysInput {
-            body: self.body,
-            format: self.format,
-            fail_on_warnings: self.fail_on_warnings.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::import_api_keys::ImportApiKeysInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::import_api_keys::ImportApiKeysInput {
+                body: self.body
+                ,
+                format: self.format
+                ,
+                fail_on_warnings: self.fail_on_warnings
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents information about an offering promotion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OfferingPromotion {
+pub struct OfferingPromotion  {
     /// <p>The ID of the offering promotion.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OfferingPromotion {
 }
 impl OfferingPromotion {
     /// <p>The ID of the offering promotion.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A string that describes the offering promotion.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl OfferingPromotionBuilder {
     }
     /// <p>The ID of the offering promotion.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A string that describes the offering promotion.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl OfferingPromotionBuilder {
     }
     /// <p>A string that describes the offering promotion.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`OfferingPromotion`](crate::types::OfferingPromotion).
     pub fn build(self) -> crate::types::OfferingPromotion {
         crate::types::OfferingPromotion {
-            id: self.id,
-            description: self.description,
+            id: self.id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

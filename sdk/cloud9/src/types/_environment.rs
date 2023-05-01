@@ -3,7 +3,7 @@
 /// <p>Information about an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Environment {
+pub struct Environment  {
     /// <p>The ID of the environment.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,10 +13,10 @@ pub struct Environment {
     /// <p>The description for the environment.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of environment. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// <p>The type of environment. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EnvironmentType>,
@@ -32,79 +32,77 @@ pub struct Environment {
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::types::EnvironmentLifecycle>,
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub managed_credentials_status: std::option::Option<crate::types::ManagedCredentialsStatus>,
 }
 impl Environment {
     /// <p>The ID of the environment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The type of environment. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// <p>The type of environment. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EnvironmentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::EnvironmentType> {
         self.r#type.as_ref()
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-    pub fn connection_type(&self) -> std::option::Option<&crate::types::ConnectionType> {
+    pub fn connection_type(&self) -> std::option::Option<& crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
-    pub fn owner_arn(&self) -> std::option::Option<&str> {
+    pub fn owner_arn(&self) -> std::option::Option<& str> {
         self.owner_arn.as_deref()
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::types::EnvironmentLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::types::EnvironmentLifecycle> {
         self.lifecycle.as_ref()
     }
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
     /// </ul>
-    pub fn managed_credentials_status(
-        &self,
-    ) -> std::option::Option<&crate::types::ManagedCredentialsStatus> {
+    pub fn managed_credentials_status(&self) -> std::option::Option<& crate::types::ManagedCredentialsStatus> {
         self.managed_credentials_status.as_ref()
     }
 }
-impl std::fmt::Debug for Environment {
+impl  std::fmt::Debug for Environment  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Environment");
         formatter.field("id", &self.id);
@@ -115,10 +113,7 @@ impl std::fmt::Debug for Environment {
         formatter.field("arn", &self.arn);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "managed_credentials_status",
-            &self.managed_credentials_status,
-        );
+        formatter.field("managed_credentials_status", &self.managed_credentials_status);
         formatter.finish()
     }
 }
@@ -141,8 +136,7 @@ pub struct EnvironmentBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) owner_arn: std::option::Option<std::string::String>,
     pub(crate) lifecycle: std::option::Option<crate::types::EnvironmentLifecycle>,
-    pub(crate) managed_credentials_status:
-        std::option::Option<crate::types::ManagedCredentialsStatus>,
+    pub(crate) managed_credentials_status: std::option::Option<crate::types::ManagedCredentialsStatus>,
 }
 impl EnvironmentBuilder {
     /// <p>The ID of the environment.</p>
@@ -152,8 +146,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The ID of the environment.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the environment.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +155,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The name of the environment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description for the environment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,26 +164,24 @@ impl EnvironmentBuilder {
     }
     /// <p>The description for the environment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>The type of environment. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// <p>The type of environment. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::EnvironmentType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of environment. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li>
-    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>
+    /// <p>The type of environment. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> 
+    /// <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EnvironmentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
@@ -199,12 +189,8 @@ impl EnvironmentBuilder {
         self
     }
     /// <p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
-        self.connection_type = input;
-        self
+    pub fn set_connection_type(mut self, input: std::option::Option<crate::types::ConnectionType>) -> Self {
+        self.connection_type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -213,8 +199,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
     pub fn owner_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -223,8 +208,7 @@ impl EnvironmentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner.</p>
     pub fn set_owner_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_arn = input;
-        self
+        self.owner_arn = input; self
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
     pub fn lifecycle(mut self, input: crate::types::EnvironmentLifecycle) -> Self {
@@ -232,65 +216,63 @@ impl EnvironmentBuilder {
         self
     }
     /// <p>The state of the environment in its creation or deletion lifecycle.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: std::option::Option<crate::types::EnvironmentLifecycle>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::EnvironmentLifecycle>) -> Self {
+        self.lifecycle = input; self
     }
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
     /// </ul>
-    pub fn managed_credentials_status(
-        mut self,
-        input: crate::types::ManagedCredentialsStatus,
-    ) -> Self {
+    pub fn managed_credentials_status(mut self, input: crate::types::ManagedCredentialsStatus) -> Self {
         self.managed_credentials_status = Some(input);
         self
     }
-    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li>
-    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li>
-    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>
+    /// <p>Describes the status of Amazon Web Services managed temporary credentials for the Cloud9 environment. Available values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> 
+    /// <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> 
+    /// <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> 
     /// </ul>
-    pub fn set_managed_credentials_status(
-        mut self,
-        input: std::option::Option<crate::types::ManagedCredentialsStatus>,
-    ) -> Self {
-        self.managed_credentials_status = input;
-        self
+    pub fn set_managed_credentials_status(mut self, input: std::option::Option<crate::types::ManagedCredentialsStatus>) -> Self {
+        self.managed_credentials_status = input; self
     }
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
         crate::types::Environment {
-            id: self.id,
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            connection_type: self.connection_type,
-            arn: self.arn,
-            owner_arn: self.owner_arn,
-            lifecycle: self.lifecycle,
-            managed_credentials_status: self.managed_credentials_status,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            connection_type: self.connection_type
+            ,
+            arn: self.arn
+            ,
+            owner_arn: self.owner_arn
+            ,
+            lifecycle: self.lifecycle
+            ,
+            managed_credentials_status: self.managed_credentials_status
+            ,
         }
     }
 }
@@ -305,10 +287,8 @@ impl std::fmt::Debug for EnvironmentBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("lifecycle", &self.lifecycle);
-        formatter.field(
-            "managed_credentials_status",
-            &self.managed_credentials_status,
-        );
+        formatter.field("managed_credentials_status", &self.managed_credentials_status);
         formatter.finish()
     }
 }
+

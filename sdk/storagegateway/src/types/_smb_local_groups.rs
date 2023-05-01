@@ -3,16 +3,16 @@
 /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmbLocalGroups {
-    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+pub struct SmbLocalGroups  {
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
     #[doc(hidden)]
     pub gateway_admins: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SmbLocalGroups {
-    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-    pub fn gateway_admins(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn gateway_admins(&self) -> std::option::Option<& [std::string::String]> {
         self.gateway_admins.as_deref()
     }
 }
@@ -34,27 +34,25 @@ impl SmbLocalGroupsBuilder {
     ///
     /// To override the contents of this collection use [`set_gateway_admins`](Self::set_gateway_admins).
     ///
-    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
     pub fn gateway_admins(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.gateway_admins.unwrap_or_default();
-        v.push(input.into());
-        self.gateway_admins = Some(v);
-        self
+                        v.push(input.into());
+                        self.gateway_admins = Some(v);
+                        self
     }
-    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p>
+    /// <p>A list of Active Directory users and groups that have local Gateway Admin permissions. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>, and <code>group1</code>.</p> 
     /// <p>Gateway Admins can use the Shared Folders Microsoft Management Console snap-in to force-close files that are open and locked.</p>
-    pub fn set_gateway_admins(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.gateway_admins = input;
-        self
+    pub fn set_gateway_admins(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.gateway_admins = input; self
     }
     /// Consumes the builder and constructs a [`SmbLocalGroups`](crate::types::SmbLocalGroups).
     pub fn build(self) -> crate::types::SmbLocalGroups {
         crate::types::SmbLocalGroups {
-            gateway_admins: self.gateway_admins,
+            gateway_admins: self.gateway_admins
+            ,
         }
     }
 }
+

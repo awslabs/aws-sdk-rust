@@ -3,7 +3,7 @@
 /// <p>A list of receipt rule sets that exist under your AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceiptRuleSetsOutput {
+pub struct ListReceiptRuleSetsOutput  {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     #[doc(hidden)]
     pub rule_sets: std::option::Option<std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
@@ -14,23 +14,22 @@ pub struct ListReceiptRuleSetsOutput {
 }
 impl ListReceiptRuleSetsOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
-    pub fn rule_sets(&self) -> std::option::Option<&[crate::types::ReceiptRuleSetMetadata]> {
+    pub fn rule_sets(&self) -> std::option::Option<& [crate::types::ReceiptRuleSetMetadata]> {
         self.rule_sets.as_deref()
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReceiptRuleSetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListReceiptRuleSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListReceiptRuleSetsOutput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsOutputBuilder {
+    pub fn builder() -> crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsOutputBuilder {
         crate::operation::list_receipt_rule_sets::builders::ListReceiptRuleSetsOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListReceiptRuleSetsOutputBuilder {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     pub fn rule_sets(mut self, input: crate::types::ReceiptRuleSetMetadata) -> Self {
         let mut v = self.rule_sets.unwrap_or_default();
-        v.push(input);
-        self.rule_sets = Some(v);
-        self
+                        v.push(input);
+                        self.rule_sets = Some(v);
+                        self
     }
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
-    pub fn set_rule_sets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
-    ) -> Self {
-        self.rule_sets = input;
-        self
+    pub fn set_rule_sets(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>) -> Self {
+        self.rule_sets = input; self
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListReceiptRuleSetsOutputBuilder {
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListReceiptRuleSetsOutput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput).
     pub fn build(self) -> crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput {
         crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput {
-            rule_sets: self.rule_sets,
-            next_token: self.next_token,
+            rule_sets: self.rule_sets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

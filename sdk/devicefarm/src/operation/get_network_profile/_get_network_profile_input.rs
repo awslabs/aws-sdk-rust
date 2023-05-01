@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkProfileInput {
+pub struct GetNetworkProfileInput  {
     /// <p>The ARN of the network profile to return information about.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetNetworkProfileInput {
     /// <p>The ARN of the network profile to return information about.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl GetNetworkProfileInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
-    pub fn builder(
-    ) -> crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder {
+    pub fn builder() -> crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder {
         crate::operation::get_network_profile::builders::GetNetworkProfileInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetNetworkProfileInputBuilder {
     }
     /// <p>The ARN of the network profile to return information about.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`GetNetworkProfileInput`](crate::operation::get_network_profile::GetNetworkProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_network_profile::GetNetworkProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_network_profile::GetNetworkProfileInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::get_network_profile::GetNetworkProfileInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_network_profile::GetNetworkProfileInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

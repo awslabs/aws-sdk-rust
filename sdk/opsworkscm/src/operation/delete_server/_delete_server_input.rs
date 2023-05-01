@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServerInput {
+pub struct DeleteServerInput  {
     /// <p>The ID of the server to delete.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
 }
 impl DeleteServerInput {
     /// <p>The ID of the server to delete.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> std::option::Option<& str> {
         self.server_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteServerInputBuilder {
     }
     /// <p>The ID of the server to delete.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteServerInput`](crate::operation::delete_server::DeleteServerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_server::DeleteServerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_server::DeleteServerInput {
-            server_name: self.server_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_server::DeleteServerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_server::DeleteServerInput {
+                server_name: self.server_name
+                ,
+            }
+        )
     }
 }
+

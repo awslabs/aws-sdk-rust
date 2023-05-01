@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecordInput {
+pub struct PutRecordInput  {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutRecordInput {
 }
 impl PutRecordInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>The record.</p>
-    pub fn record(&self) -> std::option::Option<&crate::types::Record> {
+    pub fn record(&self) -> std::option::Option<& crate::types::Record> {
         self.record.as_ref()
     }
 }
@@ -41,12 +41,8 @@ impl PutRecordInputBuilder {
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
     }
     /// <p>The record.</p>
     pub fn record(mut self, input: crate::types::Record) -> Self {
@@ -55,19 +51,18 @@ impl PutRecordInputBuilder {
     }
     /// <p>The record.</p>
     pub fn set_record(mut self, input: std::option::Option<crate::types::Record>) -> Self {
-        self.record = input;
-        self
+        self.record = input; self
     }
     /// Consumes the builder and constructs a [`PutRecordInput`](crate::operation::put_record::PutRecordInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_record::PutRecordInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_record::PutRecordInput {
-            delivery_stream_name: self.delivery_stream_name,
-            record: self.record,
-        })
+    pub fn build(self) -> Result<crate::operation::put_record::PutRecordInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_record::PutRecordInput {
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                record: self.record
+                ,
+            }
+        )
     }
 }
+

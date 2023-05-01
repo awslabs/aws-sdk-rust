@@ -4,80 +4,55 @@ pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_acc
 pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_accounts_input::GetIpamDiscoveredAccountsInputBuilder;
 
 /// Fluent builder constructing a request to `GetIpamDiscoveredAccounts`.
-///
+/// 
 /// <p>Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account that is monitored under a resource discovery. If you have integrated IPAM with Amazon Web Services Organizations, all accounts in the organization are discovered accounts. Only the IPAM account can get all discovered accounts in the organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder
             }
-impl GetIpamDiscoveredAccountsFluentBuilder {
+impl GetIpamDiscoveredAccountsFluentBuilder  {
     /// Creates a new `GetIpamDiscoveredAccounts`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccounts,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccounts, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput, aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator
-    {
-        crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator {
+                            crate::operation::get_ipam_discovered_accounts::paginator::GetIpamDiscoveredAccountsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -94,10 +69,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_ipam_resource_discovery_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }
@@ -121,10 +93,7 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self
     }
     /// <p>Discovered account filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -149,3 +118,4 @@ impl GetIpamDiscoveredAccountsFluentBuilder {
         self
     }
 }
+

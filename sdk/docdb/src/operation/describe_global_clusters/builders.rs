@@ -4,95 +4,64 @@ pub use crate::operation::describe_global_clusters::_describe_global_clusters_ou
 pub use crate::operation::describe_global_clusters::_describe_global_clusters_input::DescribeGlobalClustersInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeGlobalClusters`.
-///
-/// <p>Returns information about Amazon DocumentDB global clusters. This API supports pagination.</p> <note>
-/// <p>This action only applies to Amazon DocumentDB clusters.</p>
+/// 
+/// <p>Returns information about Amazon DocumentDB global clusters. This API supports pagination.</p> <note> 
+/// <p>This action only applies to Amazon DocumentDB clusters.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGlobalClustersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder,
-}
-impl DescribeGlobalClustersFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder
+            }
+impl DescribeGlobalClustersFluentBuilder  {
     /// Creates a new `DescribeGlobalClusters`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_global_clusters::DescribeGlobalClusters,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_global_clusters::DescribeGlobalClusters, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_global_clusters::DescribeGlobalClustersOutput, aws_smithy_http::result::SdkError<crate::operation::describe_global_clusters::DescribeGlobalClustersError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator
-    {
-        crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator {
+                            crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</p>
     pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.</p>
-    pub fn set_global_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_global_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -100,18 +69,15 @@ impl DescribeGlobalClustersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A filter that specifies one or more global DB clusters to describe.</p>
+    /// <p>A filter that specifies one or more global DB clusters to describe.</p> 
     /// <p>Supported filters: <code>db-cluster-id</code> accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A filter that specifies one or more global DB clusters to describe.</p>
+    /// <p>A filter that specifies one or more global DB clusters to describe.</p> 
     /// <p>Supported filters: <code>db-cluster-id</code> accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -136,3 +102,4 @@ impl DescribeGlobalClustersFluentBuilder {
         self
     }
 }
+

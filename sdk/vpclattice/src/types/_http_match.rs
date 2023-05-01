@@ -3,7 +3,7 @@
 /// <p>Describes criteria that can be applied to incoming requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpMatch {
+pub struct HttpMatch  {
     /// <p>The HTTP method type.</p>
     #[doc(hidden)]
     pub method: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct HttpMatch {
 }
 impl HttpMatch {
     /// <p>The HTTP method type.</p>
-    pub fn method(&self) -> std::option::Option<&str> {
+    pub fn method(&self) -> std::option::Option<& str> {
         self.method.as_deref()
     }
     /// <p>The path match.</p>
-    pub fn path_match(&self) -> std::option::Option<&crate::types::PathMatch> {
+    pub fn path_match(&self) -> std::option::Option<& crate::types::PathMatch> {
         self.path_match.as_ref()
     }
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
-    pub fn header_matches(&self) -> std::option::Option<&[crate::types::HeaderMatch]> {
+    pub fn header_matches(&self) -> std::option::Option<& [crate::types::HeaderMatch]> {
         self.header_matches.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl HttpMatchBuilder {
     }
     /// <p>The HTTP method type.</p>
     pub fn set_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.method = input;
-        self
+        self.method = input; self
     }
     /// <p>The path match.</p>
     pub fn path_match(mut self, input: crate::types::PathMatch) -> Self {
@@ -61,8 +60,7 @@ impl HttpMatchBuilder {
     }
     /// <p>The path match.</p>
     pub fn set_path_match(mut self, input: std::option::Option<crate::types::PathMatch>) -> Self {
-        self.path_match = input;
-        self
+        self.path_match = input; self
     }
     /// Appends an item to `header_matches`.
     ///
@@ -71,24 +69,24 @@ impl HttpMatchBuilder {
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
     pub fn header_matches(mut self, input: crate::types::HeaderMatch) -> Self {
         let mut v = self.header_matches.unwrap_or_default();
-        v.push(input);
-        self.header_matches = Some(v);
-        self
+                        v.push(input);
+                        self.header_matches = Some(v);
+                        self
     }
     /// <p>The header matches. Matches incoming requests with rule based on request header value before applying rule action.</p>
-    pub fn set_header_matches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HeaderMatch>>,
-    ) -> Self {
-        self.header_matches = input;
-        self
+    pub fn set_header_matches(mut self, input: std::option::Option<std::vec::Vec<crate::types::HeaderMatch>>) -> Self {
+        self.header_matches = input; self
     }
     /// Consumes the builder and constructs a [`HttpMatch`](crate::types::HttpMatch).
     pub fn build(self) -> crate::types::HttpMatch {
         crate::types::HttpMatch {
-            method: self.method,
-            path_match: self.path_match,
-            header_matches: self.header_matches,
+            method: self.method
+            ,
+            path_match: self.path_match
+            ,
+            header_matches: self.header_matches
+            ,
         }
     }
 }
+

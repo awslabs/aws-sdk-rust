@@ -21,6 +21,8 @@ pub use crate::types::_spark_submit::SparkSubmit;
 
 pub use crate::types::_job_run::JobRun;
 
+pub use crate::types::_resource_utilization::ResourceUtilization;
+
 pub use crate::types::_network_configuration::NetworkConfiguration;
 
 pub use crate::types::_total_resource_utilization::TotalResourceUtilization;
@@ -91,6 +93,8 @@ mod _monitoring_configuration;
 
 mod _network_configuration;
 
+mod _resource_utilization;
+
 mod _s3_monitoring_configuration;
 
 mod _spark_submit;
@@ -108,3 +112,4 @@ pub mod builders;
 
 /// Error types that EMR Serverless can respond with.
 pub mod error;
+

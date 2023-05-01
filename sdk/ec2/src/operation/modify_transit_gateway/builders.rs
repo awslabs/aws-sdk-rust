@@ -4,81 +4,56 @@ pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_output
 pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_input::ModifyTransitGatewayInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyTransitGateway`.
-///
+/// 
 /// <p>Modifies the specified transit gateway. When you modify a transit gateway, the modified options are applied to new transit gateway attachments only. Your existing transit gateway attachments are not modified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyTransitGatewayFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder,
-}
-impl ModifyTransitGatewayFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder
+            }
+impl ModifyTransitGatewayFluentBuilder  {
     /// Creates a new `ModifyTransitGateway`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_transit_gateway::ModifyTransitGateway,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::modify_transit_gateway::ModifyTransitGateway, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway::ModifyTransitGatewayError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput, aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway::ModifyTransitGatewayError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
@@ -98,10 +73,7 @@ impl ModifyTransitGatewayFluentBuilder {
         self
     }
     /// <p>The options to modify.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<crate::types::ModifyTransitGatewayOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: std::option::Option<crate::types::ModifyTransitGatewayOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
@@ -116,3 +88,4 @@ impl ModifyTransitGatewayFluentBuilder {
         self
     }
 }
+

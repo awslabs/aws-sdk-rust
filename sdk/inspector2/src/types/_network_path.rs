@@ -3,14 +3,14 @@
 /// <p>Information on the network path associated with a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkPath {
+pub struct NetworkPath  {
     /// <p>The details on the steps in the network path.</p>
     #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::types::Step>>,
 }
 impl NetworkPath {
     /// <p>The details on the steps in the network path.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::types::Step]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::types::Step]> {
         self.steps.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl NetworkPathBuilder {
     /// <p>The details on the steps in the network path.</p>
     pub fn steps(mut self, input: crate::types::Step) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = Some(v);
-        self
+                        v.push(input);
+                        self.steps = Some(v);
+                        self
     }
     /// <p>The details on the steps in the network path.</p>
-    pub fn set_steps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Step>>,
-    ) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::Step>>) -> Self {
+        self.steps = input; self
     }
     /// Consumes the builder and constructs a [`NetworkPath`](crate::types::NetworkPath).
     pub fn build(self) -> crate::types::NetworkPath {
-        crate::types::NetworkPath { steps: self.steps }
+        crate::types::NetworkPath {
+            steps: self.steps
+            ,
+        }
     }
 }
+

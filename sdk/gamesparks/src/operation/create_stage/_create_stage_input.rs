@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStageInput {
+pub struct CreateStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -20,35 +20,31 @@ pub struct CreateStageInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The list of tags to apply to the stage.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The list of tags to apply to the stage.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -68,8 +64,7 @@ pub struct CreateStageInputBuilder {
     pub(crate) role: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateStageInputBuilder {
     /// <p>The name of the game.</p>
@@ -79,8 +74,7 @@ impl CreateStageInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +83,7 @@ impl CreateStageInputBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +92,7 @@ impl CreateStageInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. </p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The description of the stage.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +101,7 @@ impl CreateStageInputBuilder {
     }
     /// <p>The description of the stage.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,48 +110,41 @@ impl CreateStageInputBuilder {
     }
     /// <p> A client-defined token. With an active client token in the request, this action is idempotent. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tags to apply to the stage.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The list of tags to apply to the stage.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateStageInput`](crate::operation::create_stage::CreateStageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_stage::CreateStageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_stage::CreateStageInput {
-            game_name: self.game_name,
-            stage_name: self.stage_name,
-            role: self.role,
-            description: self.description,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_stage::CreateStageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_stage::CreateStageInput {
+                game_name: self.game_name
+                ,
+                stage_name: self.stage_name
+                ,
+                role: self.role
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

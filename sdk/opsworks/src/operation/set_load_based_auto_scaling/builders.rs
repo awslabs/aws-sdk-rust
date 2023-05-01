@@ -4,74 +4,52 @@ pub use crate::operation::set_load_based_auto_scaling::_set_load_based_auto_scal
 pub use crate::operation::set_load_based_auto_scaling::_set_load_based_auto_scaling_input::SetLoadBasedAutoScalingInputBuilder;
 
 /// Fluent builder constructing a request to `SetLoadBasedAutoScaling`.
-///
-/// <p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <note>
-/// <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p>
-/// </note>
+/// 
+/// <p>Specify the load-based auto scaling configuration for a specified layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p> <note> 
+/// <p>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the instances from that set, so you must ensure that you have created enough instances to handle the maximum anticipated load.</p> 
+/// </note> 
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetLoadBasedAutoScalingFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::set_load_based_auto_scaling::builders::SetLoadBasedAutoScalingInputBuilder
             }
-impl SetLoadBasedAutoScalingFluentBuilder {
+impl SetLoadBasedAutoScalingFluentBuilder  {
     /// Creates a new `SetLoadBasedAutoScaling`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScaling,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScaling, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingOutput, aws_smithy_http::result::SdkError<crate::operation::set_load_based_auto_scaling::SetLoadBasedAutoScalingError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The layer ID.</p>
     pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.layer_id(input.into());
@@ -98,10 +76,7 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified number of instances.</p>
-    pub fn set_up_scaling(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_up_scaling(mut self, input: std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.inner = self.inner.set_up_scaling(input);
         self
     }
@@ -111,11 +86,9 @@ impl SetLoadBasedAutoScalingFluentBuilder {
         self
     }
     /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified number of instances.</p>
-    pub fn set_down_scaling(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingThresholds>,
-    ) -> Self {
+    pub fn set_down_scaling(mut self, input: std::option::Option<crate::types::AutoScalingThresholds>) -> Self {
         self.inner = self.inner.set_down_scaling(input);
         self
     }
 }
+

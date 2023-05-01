@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAppInstanceBotsInput {
+pub struct ListAppInstanceBotsInput  {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAppInstanceBotsInput {
 }
 impl ListAppInstanceBotsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The maximum number of requests to return.</p>
@@ -23,11 +23,11 @@ impl ListAppInstanceBotsInput {
         self.max_results
     }
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListAppInstanceBotsInput {
+impl  std::fmt::Debug for ListAppInstanceBotsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceBotsInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -38,10 +38,8 @@ impl std::fmt::Debug for ListAppInstanceBotsInput {
 }
 impl ListAppInstanceBotsInput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceBotsInput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsInput).
-    pub fn builder(
-    ) -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsInputBuilder {
-        crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsInputBuilder {
+        crate::operation::list_app_instance_bots::builders::ListAppInstanceBotsInputBuilder::default()
     }
 }
 
@@ -61,8 +59,7 @@ impl ListAppInstanceBotsInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The maximum number of requests to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,8 +68,7 @@ impl ListAppInstanceBotsInputBuilder {
     }
     /// <p>The maximum number of requests to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +77,19 @@ impl ListAppInstanceBotsInputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested bots are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListAppInstanceBotsInput`](crate::operation::list_app_instance_bots::ListAppInstanceBotsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_app_instance_bots::ListAppInstanceBotsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_app_instance_bots::ListAppInstanceBotsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_app_instance_bots::ListAppInstanceBotsInput {
-                app_instance_arn: self.app_instance_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                app_instance_arn: self.app_instance_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
@@ -109,3 +102,4 @@ impl std::fmt::Debug for ListAppInstanceBotsInputBuilder {
         formatter.finish()
     }
 }
+

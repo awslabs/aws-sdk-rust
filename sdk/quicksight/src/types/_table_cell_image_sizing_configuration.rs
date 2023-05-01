@@ -3,17 +3,14 @@
 /// <p>The sizing options for the table image configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableCellImageSizingConfiguration {
+pub struct TableCellImageSizingConfiguration  {
     /// <p>The cell scaling configuration of the sizing options for the table image configuration.</p>
     #[doc(hidden)]
-    pub table_cell_image_scaling_configuration:
-        std::option::Option<crate::types::TableCellImageScalingConfiguration>,
+    pub table_cell_image_scaling_configuration: std::option::Option<crate::types::TableCellImageScalingConfiguration>,
 }
 impl TableCellImageSizingConfiguration {
     /// <p>The cell scaling configuration of the sizing options for the table image configuration.</p>
-    pub fn table_cell_image_scaling_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::TableCellImageScalingConfiguration> {
+    pub fn table_cell_image_scaling_configuration(&self) -> std::option::Option<& crate::types::TableCellImageScalingConfiguration> {
         self.table_cell_image_scaling_configuration.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl TableCellImageSizingConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TableCellImageSizingConfigurationBuilder {
-    pub(crate) table_cell_image_scaling_configuration:
-        std::option::Option<crate::types::TableCellImageScalingConfiguration>,
+    pub(crate) table_cell_image_scaling_configuration: std::option::Option<crate::types::TableCellImageScalingConfiguration>,
 }
 impl TableCellImageSizingConfigurationBuilder {
     /// <p>The cell scaling configuration of the sizing options for the table image configuration.</p>
-    pub fn table_cell_image_scaling_configuration(
-        mut self,
-        input: crate::types::TableCellImageScalingConfiguration,
-    ) -> Self {
+    pub fn table_cell_image_scaling_configuration(mut self, input: crate::types::TableCellImageScalingConfiguration) -> Self {
         self.table_cell_image_scaling_configuration = Some(input);
         self
     }
     /// <p>The cell scaling configuration of the sizing options for the table image configuration.</p>
-    pub fn set_table_cell_image_scaling_configuration(
-        mut self,
-        input: std::option::Option<crate::types::TableCellImageScalingConfiguration>,
-    ) -> Self {
-        self.table_cell_image_scaling_configuration = input;
-        self
+    pub fn set_table_cell_image_scaling_configuration(mut self, input: std::option::Option<crate::types::TableCellImageScalingConfiguration>) -> Self {
+        self.table_cell_image_scaling_configuration = input; self
     }
     /// Consumes the builder and constructs a [`TableCellImageSizingConfiguration`](crate::types::TableCellImageSizingConfiguration).
     pub fn build(self) -> crate::types::TableCellImageSizingConfiguration {
         crate::types::TableCellImageSizingConfiguration {
-            table_cell_image_scaling_configuration: self.table_cell_image_scaling_configuration,
+            table_cell_image_scaling_configuration: self.table_cell_image_scaling_configuration
+            ,
         }
     }
 }
+

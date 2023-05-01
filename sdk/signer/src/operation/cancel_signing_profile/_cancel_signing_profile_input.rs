@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSigningProfileInput {
+pub struct CancelSigningProfileInput  {
     /// <p>The name of the signing profile to be canceled.</p>
     #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
 }
 impl CancelSigningProfileInput {
     /// <p>The name of the signing profile to be canceled.</p>
-    pub fn profile_name(&self) -> std::option::Option<&str> {
+    pub fn profile_name(&self) -> std::option::Option<& str> {
         self.profile_name.as_deref()
     }
 }
 impl CancelSigningProfileInput {
     /// Creates a new builder-style object to manufacture [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
+    pub fn builder() -> crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder {
         crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl CancelSigningProfileInputBuilder {
     }
     /// <p>The name of the signing profile to be canceled.</p>
     pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_name = input;
-        self
+        self.profile_name = input; self
     }
     /// Consumes the builder and constructs a [`CancelSigningProfileInput`](crate::operation::cancel_signing_profile::CancelSigningProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_signing_profile::CancelSigningProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_signing_profile::CancelSigningProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_signing_profile::CancelSigningProfileInput {
-                profile_name: self.profile_name,
-            },
+                profile_name: self.profile_name
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeyspacesOutput {
+pub struct ListKeyspacesOutput  {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListKeyspacesOutput {
 }
 impl ListKeyspacesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of keyspaces.</p>
-    pub fn keyspaces(&self) -> std::option::Option<&[crate::types::KeyspaceSummary]> {
+    pub fn keyspaces(&self) -> std::option::Option<& [crate::types::KeyspaceSummary]> {
         self.keyspaces.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListKeyspacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListKeyspacesOutput {
     /// Creates a new builder-style object to manufacture [`ListKeyspacesOutput`](crate::operation::list_keyspaces::ListKeyspacesOutput).
     pub fn builder() -> crate::operation::list_keyspaces::builders::ListKeyspacesOutputBuilder {
@@ -49,8 +49,7 @@ impl ListKeyspacesOutputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `keyspaces`.
     ///
@@ -59,33 +58,32 @@ impl ListKeyspacesOutputBuilder {
     /// <p>A list of keyspaces.</p>
     pub fn keyspaces(mut self, input: crate::types::KeyspaceSummary) -> Self {
         let mut v = self.keyspaces.unwrap_or_default();
-        v.push(input);
-        self.keyspaces = Some(v);
-        self
+                        v.push(input);
+                        self.keyspaces = Some(v);
+                        self
     }
     /// <p>A list of keyspaces.</p>
-    pub fn set_keyspaces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeyspaceSummary>>,
-    ) -> Self {
-        self.keyspaces = input;
-        self
+    pub fn set_keyspaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyspaceSummary>>) -> Self {
+        self.keyspaces = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListKeyspacesOutput`](crate::operation::list_keyspaces::ListKeyspacesOutput).
     pub fn build(self) -> crate::operation::list_keyspaces::ListKeyspacesOutput {
         crate::operation::list_keyspaces::ListKeyspacesOutput {
-            next_token: self.next_token,
-            keyspaces: self.keyspaces,
+            next_token: self.next_token
+            ,
+            keyspaces: self.keyspaces
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a package installed on an Image Builder image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImagePackage {
+pub struct ImagePackage  {
     /// <p>The name of the package as reported to the operating system package manager.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ImagePackage {
 }
 impl ImagePackage {
     /// <p>The name of the package as reported to the operating system package manager.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The version of the package as reported to the operating system package manager.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ImagePackageBuilder {
     }
     /// <p>The name of the package as reported to the operating system package manager.</p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The version of the package as reported to the operating system package manager.</p>
     pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ImagePackageBuilder {
     }
     /// <p>The version of the package as reported to the operating system package manager.</p>
     pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// Consumes the builder and constructs a [`ImagePackage`](crate::types::ImagePackage).
     pub fn build(self) -> crate::types::ImagePackage {
         crate::types::ImagePackage {
-            package_name: self.package_name,
-            package_version: self.package_version,
+            package_name: self.package_name
+            ,
+            package_version: self.package_version
+            ,
         }
     }
 }
+

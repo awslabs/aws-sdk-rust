@@ -3,7 +3,7 @@
 /// <p> Request structure used to request details about a project. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectInput {
+pub struct DescribeProjectInput  {
     /// <p> Unique project identifier. </p>
     #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DescribeProjectInput {
 }
 impl DescribeProjectInput {
     /// <p> Unique project identifier. </p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
@@ -43,8 +43,7 @@ impl DescribeProjectInputBuilder {
     }
     /// <p> Unique project identifier. </p>
     pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
     pub fn sync_from_resources(mut self, input: bool) -> Self {
@@ -53,19 +52,19 @@ impl DescribeProjectInputBuilder {
     }
     /// <p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>
     pub fn set_sync_from_resources(mut self, input: std::option::Option<bool>) -> Self {
-        self.sync_from_resources = input;
-        self
+        self.sync_from_resources = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_project::DescribeProjectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_project::DescribeProjectInput {
-            project_id: self.project_id,
-            sync_from_resources: self.sync_from_resources.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::describe_project::DescribeProjectInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_project::DescribeProjectInput {
+                project_id: self.project_id
+                ,
+                sync_from_resources: self.sync_from_resources
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

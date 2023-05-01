@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterPackageVersionOutput {
+pub struct DeregisterPackageVersionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterPackageVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeregisterPackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_package_version::builders::DeregisterPackageVersionOutputBuilder {
         crate::operation::deregister_package_version::builders::DeregisterPackageVersionOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct DeregisterPackageVersionOutputBuilder {
 }
 impl DeregisterPackageVersionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeregisterPackageVersionOutput`](crate::operation::deregister_package_version::DeregisterPackageVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_package_version::DeregisterPackageVersionOutput {
+    pub fn build(self) -> crate::operation::deregister_package_version::DeregisterPackageVersionOutput {
         crate::operation::deregister_package_version::DeregisterPackageVersionOutput {
             _request_id: self._request_id,
         }
     }
 }
+

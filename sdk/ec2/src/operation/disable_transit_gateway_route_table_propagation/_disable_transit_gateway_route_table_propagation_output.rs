@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableTransitGatewayRouteTablePropagationOutput {
+pub struct DisableTransitGatewayRouteTablePropagationOutput  {
     /// <p>Information about route propagation.</p>
     #[doc(hidden)]
     pub propagation: std::option::Option<crate::types::TransitGatewayPropagation>,
@@ -10,18 +10,18 @@ pub struct DisableTransitGatewayRouteTablePropagationOutput {
 }
 impl DisableTransitGatewayRouteTablePropagationOutput {
     /// <p>Information about route propagation.</p>
-    pub fn propagation(&self) -> std::option::Option<&crate::types::TransitGatewayPropagation> {
+    pub fn propagation(&self) -> std::option::Option<& crate::types::TransitGatewayPropagation> {
         self.propagation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DisableTransitGatewayRouteTablePropagationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisableTransitGatewayRouteTablePropagationOutput {
     /// Creates a new builder-style object to manufacture [`DisableTransitGatewayRouteTablePropagationOutput`](crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput).
-    pub fn builder() -> crate::operation::disable_transit_gateway_route_table_propagation::builders::DisableTransitGatewayRouteTablePropagationOutputBuilder{
+    pub fn builder() -> crate::operation::disable_transit_gateway_route_table_propagation::builders::DisableTransitGatewayRouteTablePropagationOutputBuilder {
         crate::operation::disable_transit_gateway_route_table_propagation::builders::DisableTransitGatewayRouteTablePropagationOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl DisableTransitGatewayRouteTablePropagationOutputBuilder {
         self
     }
     /// <p>Information about route propagation.</p>
-    pub fn set_propagation(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayPropagation>,
-    ) -> Self {
-        self.propagation = input;
-        self
+    pub fn set_propagation(mut self, input: std::option::Option<crate::types::TransitGatewayPropagation>) -> Self {
+        self.propagation = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisableTransitGatewayRouteTablePropagationOutput`](crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput).
-    pub fn build(self) -> crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput{
+    pub fn build(self) -> crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput {
         crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput {
             propagation: self.propagation
             ,
@@ -65,3 +61,4 @@ impl DisableTransitGatewayRouteTablePropagationOutputBuilder {
         }
     }
 }
+

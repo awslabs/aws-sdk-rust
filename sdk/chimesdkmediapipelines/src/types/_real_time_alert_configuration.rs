@@ -3,7 +3,7 @@
 /// <p>A structure that contains the configuration settings for real-time alerts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RealTimeAlertConfiguration {
+pub struct RealTimeAlertConfiguration  {
     /// <p>Turns off real-time alerts.</p>
     #[doc(hidden)]
     pub disabled: bool,
@@ -17,7 +17,7 @@ impl RealTimeAlertConfiguration {
         self.disabled
     }
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::RealTimeAlertRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::RealTimeAlertRule]> {
         self.rules.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RealTimeAlertConfigurationBuilder {
     }
     /// <p>Turns off real-time alerts.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input;
-        self
+        self.disabled = input; self
     }
     /// Appends an item to `rules`.
     ///
@@ -53,23 +52,23 @@ impl RealTimeAlertConfigurationBuilder {
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
     pub fn rules(mut self, input: crate::types::RealTimeAlertRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RealTimeAlertRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RealTimeAlertRule>>) -> Self {
+        self.rules = input; self
     }
     /// Consumes the builder and constructs a [`RealTimeAlertConfiguration`](crate::types::RealTimeAlertConfiguration).
     pub fn build(self) -> crate::types::RealTimeAlertConfiguration {
         crate::types::RealTimeAlertConfiguration {
-            disabled: self.disabled.unwrap_or_default(),
-            rules: self.rules,
+            disabled: self.disabled
+                .unwrap_or_default()
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

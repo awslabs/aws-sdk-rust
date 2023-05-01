@@ -3,7 +3,7 @@
 /// OutputChannel mapping settings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputChannelMapping {
+pub struct OutputChannelMapping  {
     /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
     #[doc(hidden)]
     pub input_channels: std::option::Option<std::vec::Vec<i32>>,
@@ -13,11 +13,11 @@ pub struct OutputChannelMapping {
 }
 impl OutputChannelMapping {
     /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
-    pub fn input_channels(&self) -> std::option::Option<&[i32]> {
+    pub fn input_channels(&self) -> std::option::Option<& [i32]> {
         self.input_channels.as_deref()
     }
     /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
-    pub fn input_channels_fine_tune(&self) -> std::option::Option<&[f64]> {
+    pub fn input_channels_fine_tune(&self) -> std::option::Option<& [f64]> {
         self.input_channels_fine_tune.as_deref()
     }
 }
@@ -43,14 +43,13 @@ impl OutputChannelMappingBuilder {
     /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
     pub fn input_channels(mut self, input: i32) -> Self {
         let mut v = self.input_channels.unwrap_or_default();
-        v.push(input);
-        self.input_channels = Some(v);
-        self
+                        v.push(input);
+                        self.input_channels = Some(v);
+                        self
     }
     /// Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
     pub fn set_input_channels(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.input_channels = input;
-        self
+        self.input_channels = input; self
     }
     /// Appends an item to `input_channels_fine_tune`.
     ///
@@ -59,23 +58,22 @@ impl OutputChannelMappingBuilder {
     /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
     pub fn input_channels_fine_tune(mut self, input: f64) -> Self {
         let mut v = self.input_channels_fine_tune.unwrap_or_default();
-        v.push(input);
-        self.input_channels_fine_tune = Some(v);
-        self
+                        v.push(input);
+                        self.input_channels_fine_tune = Some(v);
+                        self
     }
     /// Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
-    pub fn set_input_channels_fine_tune(
-        mut self,
-        input: std::option::Option<std::vec::Vec<f64>>,
-    ) -> Self {
-        self.input_channels_fine_tune = input;
-        self
+    pub fn set_input_channels_fine_tune(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+        self.input_channels_fine_tune = input; self
     }
     /// Consumes the builder and constructs a [`OutputChannelMapping`](crate::types::OutputChannelMapping).
     pub fn build(self) -> crate::types::OutputChannelMapping {
         crate::types::OutputChannelMapping {
-            input_channels: self.input_channels,
-            input_channels_fine_tune: self.input_channels_fine_tune,
+            input_channels: self.input_channels
+            ,
+            input_channels_fine_tune: self.input_channels_fine_tune
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachClassicLinkVpcOutput {
+pub struct DetachClassicLinkVpcOutput  {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
@@ -15,15 +15,13 @@ impl DetachClassicLinkVpcOutput {
     }
 }
 impl aws_http::request_id::RequestId for DetachClassicLinkVpcOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetachClassicLinkVpcOutput {
     /// Creates a new builder-style object to manufacture [`DetachClassicLinkVpcOutput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcOutputBuilder {
         crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcOutputBuilder::default()
     }
 }
@@ -43,23 +41,24 @@ impl DetachClassicLinkVpcOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetachClassicLinkVpcOutput`](crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput).
     pub fn build(self) -> crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput {
         crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput {
-            r#return: self.r#return,
+            r#return: self.r#return
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

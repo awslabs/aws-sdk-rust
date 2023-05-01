@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceLfTagsOutput {
+pub struct GetResourceLfTagsOutput  {
     /// <p>A list of LF-tags applied to a database resource.</p>
     #[doc(hidden)]
     pub lf_tag_on_database: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
@@ -16,27 +16,26 @@ pub struct GetResourceLfTagsOutput {
 }
 impl GetResourceLfTagsOutput {
     /// <p>A list of LF-tags applied to a database resource.</p>
-    pub fn lf_tag_on_database(&self) -> std::option::Option<&[crate::types::LfTagPair]> {
+    pub fn lf_tag_on_database(&self) -> std::option::Option<& [crate::types::LfTagPair]> {
         self.lf_tag_on_database.as_deref()
     }
     /// <p>A list of LF-tags applied to a table resource.</p>
-    pub fn lf_tags_on_table(&self) -> std::option::Option<&[crate::types::LfTagPair]> {
+    pub fn lf_tags_on_table(&self) -> std::option::Option<& [crate::types::LfTagPair]> {
         self.lf_tags_on_table.as_deref()
     }
     /// <p>A list of LF-tags applied to a column resource.</p>
-    pub fn lf_tags_on_columns(&self) -> std::option::Option<&[crate::types::ColumnLfTag]> {
+    pub fn lf_tags_on_columns(&self) -> std::option::Option<& [crate::types::ColumnLfTag]> {
         self.lf_tags_on_columns.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourceLfTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResourceLfTagsOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceLfTagsOutput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder {
         crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsOutputBuilder::default()
     }
 }
@@ -58,17 +57,13 @@ impl GetResourceLfTagsOutputBuilder {
     /// <p>A list of LF-tags applied to a database resource.</p>
     pub fn lf_tag_on_database(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tag_on_database.unwrap_or_default();
-        v.push(input);
-        self.lf_tag_on_database = Some(v);
-        self
+                        v.push(input);
+                        self.lf_tag_on_database = Some(v);
+                        self
     }
     /// <p>A list of LF-tags applied to a database resource.</p>
-    pub fn set_lf_tag_on_database(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
-        self.lf_tag_on_database = input;
-        self
+    pub fn set_lf_tag_on_database(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>) -> Self {
+        self.lf_tag_on_database = input; self
     }
     /// Appends an item to `lf_tags_on_table`.
     ///
@@ -77,17 +72,13 @@ impl GetResourceLfTagsOutputBuilder {
     /// <p>A list of LF-tags applied to a table resource.</p>
     pub fn lf_tags_on_table(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags_on_table.unwrap_or_default();
-        v.push(input);
-        self.lf_tags_on_table = Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags_on_table = Some(v);
+                        self
     }
     /// <p>A list of LF-tags applied to a table resource.</p>
-    pub fn set_lf_tags_on_table(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
-    ) -> Self {
-        self.lf_tags_on_table = input;
-        self
+    pub fn set_lf_tags_on_table(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>) -> Self {
+        self.lf_tags_on_table = input; self
     }
     /// Appends an item to `lf_tags_on_columns`.
     ///
@@ -96,34 +87,34 @@ impl GetResourceLfTagsOutputBuilder {
     /// <p>A list of LF-tags applied to a column resource.</p>
     pub fn lf_tags_on_columns(mut self, input: crate::types::ColumnLfTag) -> Self {
         let mut v = self.lf_tags_on_columns.unwrap_or_default();
-        v.push(input);
-        self.lf_tags_on_columns = Some(v);
-        self
+                        v.push(input);
+                        self.lf_tags_on_columns = Some(v);
+                        self
     }
     /// <p>A list of LF-tags applied to a column resource.</p>
-    pub fn set_lf_tags_on_columns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnLfTag>>,
-    ) -> Self {
-        self.lf_tags_on_columns = input;
-        self
+    pub fn set_lf_tags_on_columns(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnLfTag>>) -> Self {
+        self.lf_tags_on_columns = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResourceLfTagsOutput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput).
     pub fn build(self) -> crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput {
         crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput {
-            lf_tag_on_database: self.lf_tag_on_database,
-            lf_tags_on_table: self.lf_tags_on_table,
-            lf_tags_on_columns: self.lf_tags_on_columns,
+            lf_tag_on_database: self.lf_tag_on_database
+            ,
+            lf_tags_on_table: self.lf_tags_on_table
+            ,
+            lf_tags_on_columns: self.lf_tags_on_columns
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

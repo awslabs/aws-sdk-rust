@@ -3,26 +3,21 @@
 /// <p>Represents the auto scaling policy to be modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicyUpdate {
+pub struct AutoScalingPolicyUpdate  {
     /// <p>The name of the scaling policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>Represents a target tracking scaling policy configuration.</p>
     #[doc(hidden)]
-    pub target_tracking_scaling_policy_configuration: std::option::Option<
-        crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-    >,
+    pub target_tracking_scaling_policy_configuration: std::option::Option<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>,
 }
 impl AutoScalingPolicyUpdate {
     /// <p>The name of the scaling policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>Represents a target tracking scaling policy configuration.</p>
-    pub fn target_tracking_scaling_policy_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>
-    {
+    pub fn target_tracking_scaling_policy_configuration(&self) -> std::option::Option<& crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate> {
         self.target_tracking_scaling_policy_configuration.as_ref()
     }
 }
@@ -38,9 +33,7 @@ impl AutoScalingPolicyUpdate {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AutoScalingPolicyUpdateBuilder {
     pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) target_tracking_scaling_policy_configuration: std::option::Option<
-        crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-    >,
+    pub(crate) target_tracking_scaling_policy_configuration: std::option::Option<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>,
 }
 impl AutoScalingPolicyUpdateBuilder {
     /// <p>The name of the scaling policy.</p>
@@ -50,33 +43,25 @@ impl AutoScalingPolicyUpdateBuilder {
     }
     /// <p>The name of the scaling policy.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>Represents a target tracking scaling policy configuration.</p>
-    pub fn target_tracking_scaling_policy_configuration(
-        mut self,
-        input: crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-    ) -> Self {
+    pub fn target_tracking_scaling_policy_configuration(mut self, input: crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate) -> Self {
         self.target_tracking_scaling_policy_configuration = Some(input);
         self
     }
     /// <p>Represents a target tracking scaling policy configuration.</p>
-    pub fn set_target_tracking_scaling_policy_configuration(
-        mut self,
-        input: std::option::Option<
-            crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
-        >,
-    ) -> Self {
-        self.target_tracking_scaling_policy_configuration = input;
-        self
+    pub fn set_target_tracking_scaling_policy_configuration(mut self, input: std::option::Option<crate::types::AutoScalingTargetTrackingScalingPolicyConfigurationUpdate>) -> Self {
+        self.target_tracking_scaling_policy_configuration = input; self
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicyUpdate`](crate::types::AutoScalingPolicyUpdate).
     pub fn build(self) -> crate::types::AutoScalingPolicyUpdate {
         crate::types::AutoScalingPolicyUpdate {
-            policy_name: self.policy_name,
-            target_tracking_scaling_policy_configuration: self
-                .target_tracking_scaling_policy_configuration,
+            policy_name: self.policy_name
+            ,
+            target_tracking_scaling_policy_configuration: self.target_tracking_scaling_policy_configuration
+            ,
         }
     }
 }
+

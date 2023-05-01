@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVariantStoreInput {
+pub struct UpdateVariantStoreInput  {
     /// <p>A name for the store.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct UpdateVariantStoreInput {
 }
 impl UpdateVariantStoreInput {
     /// <p>A name for the store.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description for the store.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateVariantStoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateVariantStoreInput`](crate::operation::update_variant_store::UpdateVariantStoreInput).
-    pub fn builder(
-    ) -> crate::operation::update_variant_store::builders::UpdateVariantStoreInputBuilder {
+    pub fn builder() -> crate::operation::update_variant_store::builders::UpdateVariantStoreInputBuilder {
         crate::operation::update_variant_store::builders::UpdateVariantStoreInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl UpdateVariantStoreInputBuilder {
     }
     /// <p>A name for the store.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description for the store.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl UpdateVariantStoreInputBuilder {
     }
     /// <p>A description for the store.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateVariantStoreInput`](crate::operation::update_variant_store::UpdateVariantStoreInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_variant_store::UpdateVariantStoreInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_variant_store::UpdateVariantStoreInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_variant_store::UpdateVariantStoreInput {
-                name: self.name,
-                description: self.description,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

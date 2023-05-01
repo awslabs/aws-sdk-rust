@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCodeSigningConfigInput {
+pub struct GetCodeSigningConfigInput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
     #[doc(hidden)]
     pub code_signing_config_arn: std::option::Option<std::string::String>,
 }
 impl GetCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
 }
 impl GetCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`GetCodeSigningConfigInput`](crate::operation::get_code_signing_config::GetCodeSigningConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_code_signing_config::builders::GetCodeSigningConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_code_signing_config::builders::GetCodeSigningConfigInputBuilder {
         crate::operation::get_code_signing_config::builders::GetCodeSigningConfigInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetCodeSigningConfigInputBuilder {
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_signing_config_arn = input;
-        self
+    pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_signing_config_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetCodeSigningConfigInput`](crate::operation::get_code_signing_config::GetCodeSigningConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_code_signing_config::GetCodeSigningConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_code_signing_config::GetCodeSigningConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_code_signing_config::GetCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn,
-            },
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+            }
         )
     }
 }
+

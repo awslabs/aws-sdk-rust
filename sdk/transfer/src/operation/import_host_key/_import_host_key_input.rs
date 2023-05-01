@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportHostKeyInput {
+pub struct ImportHostKeyInput  {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
-    /// <p>The private key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p> 
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     #[doc(hidden)]
     pub host_key_body: std::option::Option<std::string::String>,
@@ -19,24 +19,24 @@ pub struct ImportHostKeyInput {
 }
 impl ImportHostKeyInput {
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
-    /// <p>The private key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p> 
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn host_key_body(&self) -> std::option::Option<&str> {
+    pub fn host_key_body(&self) -> std::option::Option<& str> {
         self.host_key_body.as_deref()
     }
     /// <p>The text description that identifies this host key.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ImportHostKeyInput {
+impl  std::fmt::Debug for ImportHostKeyInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportHostKeyInput");
         formatter.field("server_id", &self.server_id);
@@ -70,20 +70,18 @@ impl ImportHostKeyInputBuilder {
     }
     /// <p>The identifier of the server that contains the host key that you are importing.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
-    /// <p>The private key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p> 
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn host_key_body(mut self, input: impl Into<std::string::String>) -> Self {
         self.host_key_body = Some(input.into());
         self
     }
-    /// <p>The private key portion of an SSH key pair.</p>
+    /// <p>The private key portion of an SSH key pair.</p> 
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn set_host_key_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_key_body = input;
-        self
+        self.host_key_body = input; self
     }
     /// <p>The text description that identifies this host key.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +90,7 @@ impl ImportHostKeyInputBuilder {
     }
     /// <p>The text description that identifies this host key.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -102,31 +99,28 @@ impl ImportHostKeyInputBuilder {
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`ImportHostKeyInput`](crate::operation::import_host_key::ImportHostKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_host_key::ImportHostKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::import_host_key::ImportHostKeyInput {
-            server_id: self.server_id,
-            host_key_body: self.host_key_body,
-            description: self.description,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::import_host_key::ImportHostKeyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::import_host_key::ImportHostKeyInput {
+                server_id: self.server_id
+                ,
+                host_key_body: self.host_key_body
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for ImportHostKeyInputBuilder {
@@ -139,3 +133,4 @@ impl std::fmt::Debug for ImportHostKeyInputBuilder {
         formatter.finish()
     }
 }
+

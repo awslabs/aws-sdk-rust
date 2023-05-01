@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCallerIdentityInput {}
+pub struct GetCallerIdentityInput  {
+}
 impl GetCallerIdentityInput {
     /// Creates a new builder-style object to manufacture [`GetCallerIdentityInput`](crate::operation::get_caller_identity::GetCallerIdentityInput).
-    pub fn builder(
-    ) -> crate::operation::get_caller_identity::builders::GetCallerIdentityInputBuilder {
+    pub fn builder() -> crate::operation::get_caller_identity::builders::GetCallerIdentityInputBuilder {
         crate::operation::get_caller_identity::builders::GetCallerIdentityInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl GetCallerIdentityInput {
 /// A builder for [`GetCallerIdentityInput`](crate::operation::get_caller_identity::GetCallerIdentityInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetCallerIdentityInputBuilder {}
+pub struct GetCallerIdentityInputBuilder {
+}
 impl GetCallerIdentityInputBuilder {
     /// Consumes the builder and constructs a [`GetCallerIdentityInput`](crate::operation::get_caller_identity::GetCallerIdentityInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_caller_identity::GetCallerIdentityInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_caller_identity::GetCallerIdentityInput {})
+    pub fn build(self) -> Result<crate::operation::get_caller_identity::GetCallerIdentityInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_caller_identity::GetCallerIdentityInput {
+            }
+        )
     }
 }
+

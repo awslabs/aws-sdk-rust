@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationRevisionInput {
+pub struct DescribeConfigurationRevisionInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeConfigurationRevisionInput {
 }
 impl DescribeConfigurationRevisionInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
@@ -22,7 +22,7 @@ impl DescribeConfigurationRevisionInput {
 }
 impl DescribeConfigurationRevisionInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
-    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder{
+    pub fn builder() -> crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder {
         crate::operation::describe_configuration_revision::builders::DescribeConfigurationRevisionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeConfigurationRevisionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     pub fn revision(mut self, input: i64) -> Self {
@@ -52,21 +51,18 @@ impl DescribeConfigurationRevisionInputBuilder {
     }
     /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
     pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationRevisionInput`](crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_configuration_revision::DescribeConfigurationRevisionInput {
-                arn: self.arn,
-                revision: self.revision,
-            },
+                arn: self.arn
+                ,
+                revision: self.revision
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The properties of a virtual private cloud (VPC) destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcDestinationProperties {
+pub struct VpcDestinationProperties  {
     /// <p>The subnet IDs of the VPC destination.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,19 +19,19 @@ pub struct VpcDestinationProperties {
 }
 impl VpcDestinationProperties {
     /// <p>The subnet IDs of the VPC destination.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The security groups of the VPC destination.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -59,17 +59,13 @@ impl VpcDestinationPropertiesBuilder {
     /// <p>The subnet IDs of the VPC destination.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The subnet IDs of the VPC destination.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -78,17 +74,13 @@ impl VpcDestinationPropertiesBuilder {
     /// <p>The security groups of the VPC destination.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>The security groups of the VPC destination.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +89,7 @@ impl VpcDestinationPropertiesBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,16 +98,20 @@ impl VpcDestinationPropertiesBuilder {
     }
     /// <p>The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`VpcDestinationProperties`](crate::types::VpcDestinationProperties).
     pub fn build(self) -> crate::types::VpcDestinationProperties {
         crate::types::VpcDestinationProperties {
-            subnet_ids: self.subnet_ids,
-            security_groups: self.security_groups,
-            vpc_id: self.vpc_id,
-            role_arn: self.role_arn,
+            subnet_ids: self.subnet_ids
+            ,
+            security_groups: self.security_groups
+            ,
+            vpc_id: self.vpc_id
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

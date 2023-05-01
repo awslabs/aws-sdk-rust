@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpcEndpointOutput {
+pub struct CreateVpcEndpointOutput  {
     /// <p>Information about the endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::types::VpcEndpoint>,
@@ -13,23 +13,22 @@ pub struct CreateVpcEndpointOutput {
 }
 impl CreateVpcEndpointOutput {
     /// <p>Information about the endpoint.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::types::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::types::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVpcEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder {
         crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl CreateVpcEndpointOutputBuilder {
         self
     }
     /// <p>Information about the endpoint.</p>
-    pub fn set_vpc_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::VpcEndpoint>,
-    ) -> Self {
-        self.vpc_endpoint = input;
-        self
+    pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::types::VpcEndpoint>) -> Self {
+        self.vpc_endpoint = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,24 +58,26 @@ impl CreateVpcEndpointOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
     pub fn build(self) -> crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput {
         crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput {
-            vpc_endpoint: self.vpc_endpoint,
-            client_token: self.client_token,
+            vpc_endpoint: self.vpc_endpoint
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

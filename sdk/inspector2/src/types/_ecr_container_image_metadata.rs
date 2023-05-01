@@ -3,14 +3,14 @@
 /// <p>Information on the Amazon ECR image metadata associated with a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcrContainerImageMetadata {
+pub struct EcrContainerImageMetadata  {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EcrContainerImageMetadata {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tags(&self) -> std::option::Option<& [std::string::String]> {
         self.tags.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl EcrContainerImageMetadataBuilder {
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
     pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input.into());
-        self.tags = Some(v);
-        self
+                        v.push(input.into());
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Tags associated with the Amazon ECR image metadata.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`EcrContainerImageMetadata`](crate::types::EcrContainerImageMetadata).
     pub fn build(self) -> crate::types::EcrContainerImageMetadata {
-        crate::types::EcrContainerImageMetadata { tags: self.tags }
+        crate::types::EcrContainerImageMetadata {
+            tags: self.tags
+            ,
+        }
     }
 }
+

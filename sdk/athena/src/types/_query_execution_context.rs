@@ -3,7 +3,7 @@
 /// <p>The database and data catalog context in which the query execution occurs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryExecutionContext {
+pub struct QueryExecutionContext  {
     /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
     #[doc(hidden)]
     pub database: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct QueryExecutionContext {
 }
 impl QueryExecutionContext {
     /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The name of the data catalog used in the query execution.</p>
-    pub fn catalog(&self) -> std::option::Option<&str> {
+    pub fn catalog(&self) -> std::option::Option<& str> {
         self.catalog.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl QueryExecutionContextBuilder {
     }
     /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The name of the data catalog used in the query execution.</p>
     pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl QueryExecutionContextBuilder {
     }
     /// <p>The name of the data catalog used in the query execution.</p>
     pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog = input;
-        self
+        self.catalog = input; self
     }
     /// Consumes the builder and constructs a [`QueryExecutionContext`](crate::types::QueryExecutionContext).
     pub fn build(self) -> crate::types::QueryExecutionContext {
         crate::types::QueryExecutionContext {
-            database: self.database,
-            catalog: self.catalog,
+            database: self.database
+            ,
+            catalog: self.catalog
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> Provides contextual information about the extracted entity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Trait {
+pub struct Trait  {
     /// <p> Provides a name or contextual description about the trait. </p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::AttributeName>,
@@ -13,7 +13,7 @@ pub struct Trait {
 }
 impl Trait {
     /// <p> Provides a name or contextual description about the trait. </p>
-    pub fn name(&self) -> std::option::Option<&crate::types::AttributeName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::AttributeName> {
         self.name.as_ref()
     }
     /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
@@ -43,8 +43,7 @@ impl TraitBuilder {
     }
     /// <p> Provides a name or contextual description about the trait. </p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::AttributeName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -53,14 +52,16 @@ impl TraitBuilder {
     }
     /// <p> The level of confidence that Comprehend Medical; has in the accuracy of this trait.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// Consumes the builder and constructs a [`Trait`](crate::types::Trait).
     pub fn build(self) -> crate::types::Trait {
         crate::types::Trait {
-            name: self.name,
-            score: self.score,
+            name: self.name
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

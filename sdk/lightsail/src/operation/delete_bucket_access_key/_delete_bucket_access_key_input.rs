@@ -2,31 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketAccessKeyInput {
+pub struct DeleteBucketAccessKeyInput  {
     /// <p>The name of the bucket that the access key belongs to.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the access key to delete.</p>
+    /// <p>The ID of the access key to delete.</p> 
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
 }
 impl DeleteBucketAccessKeyInput {
     /// <p>The name of the bucket that the access key belongs to.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
-    /// <p>The ID of the access key to delete.</p>
+    /// <p>The ID of the access key to delete.</p> 
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
 }
 impl DeleteBucketAccessKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder {
         crate::operation::delete_bucket_access_key::builders::DeleteBucketAccessKeyInputBuilder::default()
     }
 }
@@ -46,33 +44,29 @@ impl DeleteBucketAccessKeyInputBuilder {
     }
     /// <p>The name of the bucket that the access key belongs to.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
-    /// <p>The ID of the access key to delete.</p>
+    /// <p>The ID of the access key to delete.</p> 
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.access_key_id = Some(input.into());
         self
     }
-    /// <p>The ID of the access key to delete.</p>
+    /// <p>The ID of the access key to delete.</p> 
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBucketAccessKeys.html">GetBucketAccessKeys</a> action to get a list of access key IDs that you can specify.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteBucketAccessKeyInput`](crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyInput {
-                bucket_name: self.bucket_name,
-                access_key_id: self.access_key_id,
-            },
+                bucket_name: self.bucket_name
+                ,
+                access_key_id: self.access_key_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <code>StartLabelDetection</code> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Video {
+pub struct Video  {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
     #[doc(hidden)]
     pub s3_object: std::option::Option<crate::types::S3Object>,
 }
 impl Video {
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> std::option::Option<& crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl VideoBuilder {
     }
     /// <p>The Amazon S3 bucket name and file name for the video.</p>
     pub fn set_s3_object(mut self, input: std::option::Option<crate::types::S3Object>) -> Self {
-        self.s3_object = input;
-        self
+        self.s3_object = input; self
     }
     /// Consumes the builder and constructs a [`Video`](crate::types::Video).
     pub fn build(self) -> crate::types::Video {
         crate::types::Video {
-            s3_object: self.s3_object,
+            s3_object: self.s3_object
+            ,
         }
     }
 }
+

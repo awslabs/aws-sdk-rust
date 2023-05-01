@@ -3,7 +3,7 @@
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
+pub struct BatchGetAssetPropertyAggregatesSkippedEntry  {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -16,19 +16,15 @@ pub struct BatchGetAssetPropertyAggregatesSkippedEntry {
 }
 impl BatchGetAssetPropertyAggregatesSkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-    pub fn completion_status(
-        &self,
-    ) -> std::option::Option<&crate::types::BatchEntryCompletionStatus> {
+    pub fn completion_status(&self) -> std::option::Option<& crate::types::BatchEntryCompletionStatus> {
         self.completion_status.as_ref()
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(
-        &self,
-    ) -> std::option::Option<&crate::types::BatchGetAssetPropertyAggregatesErrorInfo> {
+    pub fn error_info(&self) -> std::option::Option<& crate::types::BatchGetAssetPropertyAggregatesErrorInfo> {
         self.error_info.as_ref()
     }
 }
@@ -45,8 +41,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntry {
 pub struct BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     pub(crate) entry_id: std::option::Option<std::string::String>,
     pub(crate) completion_status: std::option::Option<crate::types::BatchEntryCompletionStatus>,
-    pub(crate) error_info:
-        std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>,
+    pub(crate) error_info: std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>,
 }
 impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     /// <p>The ID of the entry.</p>
@@ -56,8 +51,7 @@ impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
     pub fn completion_status(mut self, input: crate::types::BatchEntryCompletionStatus) -> Self {
@@ -65,35 +59,28 @@ impl BatchGetAssetPropertyAggregatesSkippedEntryBuilder {
         self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyAggregates.html">BatchGetAssetPropertyAggregates</a> API.</p>
-    pub fn set_completion_status(
-        mut self,
-        input: std::option::Option<crate::types::BatchEntryCompletionStatus>,
-    ) -> Self {
-        self.completion_status = input;
-        self
+    pub fn set_completion_status(mut self, input: std::option::Option<crate::types::BatchEntryCompletionStatus>) -> Self {
+        self.completion_status = input; self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(
-        mut self,
-        input: crate::types::BatchGetAssetPropertyAggregatesErrorInfo,
-    ) -> Self {
+    pub fn error_info(mut self, input: crate::types::BatchGetAssetPropertyAggregatesErrorInfo) -> Self {
         self.error_info = Some(input);
         self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn set_error_info(
-        mut self,
-        input: std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>,
-    ) -> Self {
-        self.error_info = input;
-        self
+    pub fn set_error_info(mut self, input: std::option::Option<crate::types::BatchGetAssetPropertyAggregatesErrorInfo>) -> Self {
+        self.error_info = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyAggregatesSkippedEntry`](crate::types::BatchGetAssetPropertyAggregatesSkippedEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyAggregatesSkippedEntry {
         crate::types::BatchGetAssetPropertyAggregatesSkippedEntry {
-            entry_id: self.entry_id,
-            completion_status: self.completion_status,
-            error_info: self.error_info,
+            entry_id: self.entry_id
+            ,
+            completion_status: self.completion_status
+            ,
+            error_info: self.error_info
+            ,
         }
     }
 }
+

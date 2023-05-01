@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobDocumentOutput {
+pub struct GetJobDocumentOutput  {
     /// <p>The job document content.</p>
     #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct GetJobDocumentOutput {
 }
 impl GetJobDocumentOutput {
     /// <p>The job document content.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetJobDocumentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetJobDocumentOutput {
     /// Creates a new builder-style object to manufacture [`GetJobDocumentOutput`](crate::operation::get_job_document::GetJobDocumentOutput).
     pub fn builder() -> crate::operation::get_job_document::builders::GetJobDocumentOutputBuilder {
@@ -41,23 +41,24 @@ impl GetJobDocumentOutputBuilder {
     }
     /// <p>The job document content.</p>
     pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetJobDocumentOutput`](crate::operation::get_job_document::GetJobDocumentOutput).
     pub fn build(self) -> crate::operation::get_job_document::GetJobDocumentOutput {
         crate::operation::get_job_document::GetJobDocumentOutput {
-            document: self.document,
+            document: self.document
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCrawlerMetricsInput {
+pub struct GetCrawlerMetricsInput  {
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
     #[doc(hidden)]
     pub crawler_name_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct GetCrawlerMetricsInput {
 }
 impl GetCrawlerMetricsInput {
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-    pub fn crawler_name_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn crawler_name_list(&self) -> std::option::Option<& [std::string::String]> {
         self.crawler_name_list.as_deref()
     }
     /// <p>The maximum size of a list to return.</p>
@@ -23,14 +23,13 @@ impl GetCrawlerMetricsInput {
         self.max_results
     }
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetCrawlerMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetCrawlerMetricsInput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsInput).
-    pub fn builder(
-    ) -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder {
+    pub fn builder() -> crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder {
         crate::operation::get_crawler_metrics::builders::GetCrawlerMetricsInputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl GetCrawlerMetricsInputBuilder {
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
     pub fn crawler_name_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.crawler_name_list.unwrap_or_default();
-        v.push(input.into());
-        self.crawler_name_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.crawler_name_list = Some(v);
+                        self
     }
     /// <p>A list of the names of crawlers about which to retrieve metrics.</p>
-    pub fn set_crawler_name_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.crawler_name_list = input;
-        self
+    pub fn set_crawler_name_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.crawler_name_list = input; self
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,8 +65,7 @@ impl GetCrawlerMetricsInputBuilder {
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,22 +74,20 @@ impl GetCrawlerMetricsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetCrawlerMetricsInput`](crate::operation::get_crawler_metrics::GetCrawlerMetricsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_crawler_metrics::GetCrawlerMetricsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_crawler_metrics::GetCrawlerMetricsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_crawler_metrics::GetCrawlerMetricsInput {
-                crawler_name_list: self.crawler_name_list,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                crawler_name_list: self.crawler_name_list
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

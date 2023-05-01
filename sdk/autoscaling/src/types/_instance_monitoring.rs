@@ -3,7 +3,7 @@
 /// <p>Describes whether detailed monitoring is enabled for the Auto Scaling instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceMonitoring {
+pub struct InstanceMonitoring  {
     /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl InstanceMonitoringBuilder {
     }
     /// <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`InstanceMonitoring`](crate::types::InstanceMonitoring).
     pub fn build(self) -> crate::types::InstanceMonitoring {
         crate::types::InstanceMonitoring {
-            enabled: self.enabled,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

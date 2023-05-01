@@ -183,3 +183,4 @@ pub mod update_settings;
 
 /// Types for the `ValidateAssessmentReportIntegrity` operation.
 pub mod validate_assessment_report_integrity;
+

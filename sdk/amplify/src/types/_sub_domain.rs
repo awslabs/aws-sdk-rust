@@ -3,7 +3,7 @@
 /// <p> The subdomain for the domain association. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubDomain {
+pub struct SubDomain  {
     /// <p> Describes the settings for the subdomain. </p>
     #[doc(hidden)]
     pub sub_domain_setting: std::option::Option<crate::types::SubDomainSetting>,
@@ -16,7 +16,7 @@ pub struct SubDomain {
 }
 impl SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
-    pub fn sub_domain_setting(&self) -> std::option::Option<&crate::types::SubDomainSetting> {
+    pub fn sub_domain_setting(&self) -> std::option::Option<& crate::types::SubDomainSetting> {
         self.sub_domain_setting.as_ref()
     }
     /// <p> The verified status of the subdomain </p>
@@ -24,7 +24,7 @@ impl SubDomain {
         self.verified
     }
     /// <p> The DNS record for the subdomain. </p>
-    pub fn dns_record(&self) -> std::option::Option<&str> {
+    pub fn dns_record(&self) -> std::option::Option<& str> {
         self.dns_record.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl SubDomainBuilder {
         self
     }
     /// <p> Describes the settings for the subdomain. </p>
-    pub fn set_sub_domain_setting(
-        mut self,
-        input: std::option::Option<crate::types::SubDomainSetting>,
-    ) -> Self {
-        self.sub_domain_setting = input;
-        self
+    pub fn set_sub_domain_setting(mut self, input: std::option::Option<crate::types::SubDomainSetting>) -> Self {
+        self.sub_domain_setting = input; self
     }
     /// <p> The verified status of the subdomain </p>
     pub fn verified(mut self, input: bool) -> Self {
@@ -64,8 +60,7 @@ impl SubDomainBuilder {
     }
     /// <p> The verified status of the subdomain </p>
     pub fn set_verified(mut self, input: std::option::Option<bool>) -> Self {
-        self.verified = input;
-        self
+        self.verified = input; self
     }
     /// <p> The DNS record for the subdomain. </p>
     pub fn dns_record(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl SubDomainBuilder {
     }
     /// <p> The DNS record for the subdomain. </p>
     pub fn set_dns_record(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dns_record = input;
-        self
+        self.dns_record = input; self
     }
     /// Consumes the builder and constructs a [`SubDomain`](crate::types::SubDomain).
     pub fn build(self) -> crate::types::SubDomain {
         crate::types::SubDomain {
-            sub_domain_setting: self.sub_domain_setting,
-            verified: self.verified,
-            dns_record: self.dns_record,
+            sub_domain_setting: self.sub_domain_setting
+            ,
+            verified: self.verified
+            ,
+            dns_record: self.dns_record
+            ,
         }
     }
 }
+

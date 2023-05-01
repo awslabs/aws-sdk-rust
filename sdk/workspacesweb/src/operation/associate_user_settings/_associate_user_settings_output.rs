@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateUserSettingsOutput {
+pub struct AssociateUserSettingsOutput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct AssociateUserSettingsOutput {
 }
 impl AssociateUserSettingsOutput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> std::option::Option<&str> {
+    pub fn portal_arn(&self) -> std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(&self) -> std::option::Option<&str> {
+    pub fn user_settings_arn(&self) -> std::option::Option<& str> {
         self.user_settings_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateUserSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserSettingsOutput`](crate::operation::associate_user_settings::AssociateUserSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder {
         crate::operation::associate_user_settings::builders::AssociateUserSettingsOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl AssociateUserSettingsOutputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the user settings.</p>
     pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,28 +57,27 @@ impl AssociateUserSettingsOutputBuilder {
         self
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn set_user_settings_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.user_settings_arn = input;
-        self
+    pub fn set_user_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.user_settings_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateUserSettingsOutput`](crate::operation::associate_user_settings::AssociateUserSettingsOutput).
     pub fn build(self) -> crate::operation::associate_user_settings::AssociateUserSettingsOutput {
         crate::operation::associate_user_settings::AssociateUserSettingsOutput {
-            portal_arn: self.portal_arn,
-            user_settings_arn: self.user_settings_arn,
+            portal_arn: self.portal_arn
+            ,
+            user_settings_arn: self.user_settings_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

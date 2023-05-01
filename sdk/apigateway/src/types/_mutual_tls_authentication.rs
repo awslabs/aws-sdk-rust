@@ -3,7 +3,7 @@
 /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MutualTlsAuthentication {
+pub struct MutualTlsAuthentication  {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     #[doc(hidden)]
     pub truststore_uri: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct MutualTlsAuthentication {
 }
 impl MutualTlsAuthentication {
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
-    pub fn truststore_uri(&self) -> std::option::Option<&str> {
+    pub fn truststore_uri(&self) -> std::option::Option<& str> {
         self.truststore_uri.as_deref()
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
-    pub fn truststore_version(&self) -> std::option::Option<&str> {
+    pub fn truststore_version(&self) -> std::option::Option<& str> {
         self.truststore_version.as_deref()
     }
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    pub fn truststore_warnings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn truststore_warnings(&self) -> std::option::Option<& [std::string::String]> {
         self.truststore_warnings.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl MutualTlsAuthenticationBuilder {
     }
     /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example <code>s3://bucket-name/key-name</code>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
     pub fn set_truststore_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.truststore_uri = input;
-        self
+        self.truststore_uri = input; self
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
     pub fn truststore_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl MutualTlsAuthenticationBuilder {
         self
     }
     /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
-    pub fn set_truststore_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.truststore_version = input;
-        self
+    pub fn set_truststore_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.truststore_version = input; self
     }
     /// Appends an item to `truststore_warnings`.
     ///
@@ -74,24 +69,24 @@ impl MutualTlsAuthenticationBuilder {
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
     pub fn truststore_warnings(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.truststore_warnings.unwrap_or_default();
-        v.push(input.into());
-        self.truststore_warnings = Some(v);
-        self
+                        v.push(input.into());
+                        self.truststore_warnings = Some(v);
+                        self
     }
     /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
-    pub fn set_truststore_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.truststore_warnings = input;
-        self
+    pub fn set_truststore_warnings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.truststore_warnings = input; self
     }
     /// Consumes the builder and constructs a [`MutualTlsAuthentication`](crate::types::MutualTlsAuthentication).
     pub fn build(self) -> crate::types::MutualTlsAuthentication {
         crate::types::MutualTlsAuthentication {
-            truststore_uri: self.truststore_uri,
-            truststore_version: self.truststore_version,
-            truststore_warnings: self.truststore_warnings,
+            truststore_uri: self.truststore_uri
+            ,
+            truststore_version: self.truststore_version
+            ,
+            truststore_warnings: self.truststore_warnings
+            ,
         }
     }
 }
+

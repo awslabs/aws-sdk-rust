@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchInput {
+pub struct GetLaunchInput  {
     /// <p>The name or ARN of the project that contains the launch.</p>
     #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetLaunchInput {
 }
 impl GetLaunchInput {
     /// <p>The name or ARN of the project that contains the launch.</p>
-    pub fn project(&self) -> std::option::Option<&str> {
+    pub fn project(&self) -> std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the launch that you want to see the details of.</p>
-    pub fn launch(&self) -> std::option::Option<&str> {
+    pub fn launch(&self) -> std::option::Option<& str> {
         self.launch.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetLaunchInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the launch.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name of the launch that you want to see the details of.</p>
     pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetLaunchInputBuilder {
     }
     /// <p>The name of the launch that you want to see the details of.</p>
     pub fn set_launch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch = input;
-        self
+        self.launch = input; self
     }
     /// Consumes the builder and constructs a [`GetLaunchInput`](crate::operation::get_launch::GetLaunchInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_launch::GetLaunchInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_launch::GetLaunchInput {
-            project: self.project,
-            launch: self.launch,
-        })
+    pub fn build(self) -> Result<crate::operation::get_launch::GetLaunchInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_launch::GetLaunchInput {
+                project: self.project
+                ,
+                launch: self.launch
+                ,
+            }
+        )
     }
 }
+

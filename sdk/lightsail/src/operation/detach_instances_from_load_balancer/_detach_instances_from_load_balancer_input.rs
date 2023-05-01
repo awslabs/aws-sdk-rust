@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachInstancesFromLoadBalancerInput {
+pub struct DetachInstancesFromLoadBalancerInput  {
     /// <p>The name of the Lightsail load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DetachInstancesFromLoadBalancerInput {
 }
 impl DetachInstancesFromLoadBalancerInput {
     /// <p>The name of the Lightsail load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_names(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_names.as_deref()
     }
 }
 impl DetachInstancesFromLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
-    pub fn builder() -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder {
         crate::operation::detach_instances_from_load_balancer::builders::DetachInstancesFromLoadBalancerInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
         self
     }
     /// <p>The name of the Lightsail load balancer.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
     /// Appends an item to `instance_names`.
     ///
@@ -55,25 +51,16 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
     pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
-        v.push(input.into());
-        self.instance_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_names = Some(v);
+                        self
     }
     /// <p>An array of strings containing the names of the instances you want to detach from the load balancer.</p>
-    pub fn set_instance_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.instance_names = input;
-        self
+    pub fn set_instance_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.instance_names = input; self
     }
     /// Consumes the builder and constructs a [`DetachInstancesFromLoadBalancerInput`](crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name
@@ -84,3 +71,4 @@ impl DetachInstancesFromLoadBalancerInputBuilder {
         )
     }
 }
+

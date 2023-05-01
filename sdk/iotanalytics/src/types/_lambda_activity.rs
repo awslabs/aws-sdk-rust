@@ -3,14 +3,14 @@
 /// <p>An activity that runs a Lambda function to modify the message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaActivity {
+pub struct LambdaActivity  {
     /// <p>The name of the lambda activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The name of the Lambda function that is run on the message.</p>
     #[doc(hidden)]
     pub lambda_name: std::option::Option<std::string::String>,
-    /// <p>The number of messages passed to the Lambda function for processing.</p>
+    /// <p>The number of messages passed to the Lambda function for processing.</p> 
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -20,20 +20,20 @@ pub struct LambdaActivity {
 }
 impl LambdaActivity {
     /// <p>The name of the lambda activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the Lambda function that is run on the message.</p>
-    pub fn lambda_name(&self) -> std::option::Option<&str> {
+    pub fn lambda_name(&self) -> std::option::Option<& str> {
         self.lambda_name.as_deref()
     }
-    /// <p>The number of messages passed to the Lambda function for processing.</p>
+    /// <p>The number of messages passed to the Lambda function for processing.</p> 
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     pub fn batch_size(&self) -> std::option::Option<i32> {
         self.batch_size
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl LambdaActivityBuilder {
     }
     /// <p>The name of the lambda activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the Lambda function that is run on the message.</p>
     pub fn lambda_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,20 +70,18 @@ impl LambdaActivityBuilder {
     }
     /// <p>The name of the Lambda function that is run on the message.</p>
     pub fn set_lambda_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lambda_name = input;
-        self
+        self.lambda_name = input; self
     }
-    /// <p>The number of messages passed to the Lambda function for processing.</p>
+    /// <p>The number of messages passed to the Lambda function for processing.</p> 
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
         self.batch_size = Some(input);
         self
     }
-    /// <p>The number of messages passed to the Lambda function for processing.</p>
+    /// <p>The number of messages passed to the Lambda function for processing.</p> 
     /// <p>The Lambda function must be able to process all of these messages within five minutes, which is the maximum timeout duration for Lambda functions.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,16 +90,20 @@ impl LambdaActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// Consumes the builder and constructs a [`LambdaActivity`](crate::types::LambdaActivity).
     pub fn build(self) -> crate::types::LambdaActivity {
         crate::types::LambdaActivity {
-            name: self.name,
-            lambda_name: self.lambda_name,
-            batch_size: self.batch_size,
-            next: self.next,
+            name: self.name
+            ,
+            lambda_name: self.lambda_name
+            ,
+            batch_size: self.batch_size
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

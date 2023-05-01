@@ -3,7 +3,7 @@
 /// <p>The log options for wireless devices and can be used to set log levels for a specific type of wireless device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessDeviceLogOption {
+pub struct WirelessDeviceLogOption  {
     /// <p>The wireless device type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::WirelessDeviceType>,
@@ -16,15 +16,15 @@ pub struct WirelessDeviceLogOption {
 }
 impl WirelessDeviceLogOption {
     /// <p>The wireless device type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::WirelessDeviceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::WirelessDeviceType> {
         self.r#type.as_ref()
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
     /// <p>The list of wireless device event log options.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::WirelessDeviceEventLogOption]> {
+    pub fn events(&self) -> std::option::Option<& [crate::types::WirelessDeviceEventLogOption]> {
         self.events.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl WirelessDeviceLogOption {
 pub struct WirelessDeviceLogOptionBuilder {
     pub(crate) r#type: std::option::Option<crate::types::WirelessDeviceType>,
     pub(crate) log_level: std::option::Option<crate::types::LogLevel>,
-    pub(crate) events:
-        std::option::Option<std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
+    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
 }
 impl WirelessDeviceLogOptionBuilder {
     /// <p>The wireless device type.</p>
@@ -51,12 +50,8 @@ impl WirelessDeviceLogOptionBuilder {
         self
     }
     /// <p>The wireless device type.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::WirelessDeviceType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -65,8 +60,7 @@ impl WirelessDeviceLogOptionBuilder {
     }
     /// <p>The log level for a log message. The log levels can be disabled, or set to <code>ERROR</code> to display less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// Appends an item to `events`.
     ///
@@ -75,24 +69,24 @@ impl WirelessDeviceLogOptionBuilder {
     /// <p>The list of wireless device event log options.</p>
     pub fn events(mut self, input: crate::types::WirelessDeviceEventLogOption) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = Some(v);
-        self
+                        v.push(input);
+                        self.events = Some(v);
+                        self
     }
     /// <p>The list of wireless device event log options.</p>
-    pub fn set_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceEventLogOption>>) -> Self {
+        self.events = input; self
     }
     /// Consumes the builder and constructs a [`WirelessDeviceLogOption`](crate::types::WirelessDeviceLogOption).
     pub fn build(self) -> crate::types::WirelessDeviceLogOption {
         crate::types::WirelessDeviceLogOption {
-            r#type: self.r#type,
-            log_level: self.log_level,
-            events: self.events,
+            r#type: self.r#type
+            ,
+            log_level: self.log_level
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

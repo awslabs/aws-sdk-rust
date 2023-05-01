@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOrganizationConfigurationInput {
+pub struct UpdateOrganizationConfigurationInput  {
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
     #[doc(hidden)]
     pub auto_enable: std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl UpdateOrganizationConfigurationInput {
 }
 impl UpdateOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder {
         crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl UpdateOrganizationConfigurationInputBuilder {
     }
     /// <p>Specifies whether to enable Amazon Macie automatically for an account when the account is added to the organization in Organizations.</p>
     pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// Consumes the builder and constructs a [`UpdateOrganizationConfigurationInput`](crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_organization_configuration::UpdateOrganizationConfigurationInput {
                 auto_enable: self.auto_enable
@@ -52,3 +46,4 @@ impl UpdateOrganizationConfigurationInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedGroupsInput {
+pub struct ListAssociatedGroupsInput  {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAssociatedGroupsInput {
 }
 impl ListAssociatedGroupsInput {
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
@@ -23,14 +23,13 @@ impl ListAssociatedGroupsInput {
         self.max_results
     }
     /// <p>The ARN of the canary that you want to view groups for.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl ListAssociatedGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder {
         crate::operation::list_associated_groups::builders::ListAssociatedGroupsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListAssociatedGroupsInputBuilder {
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl ListAssociatedGroupsInputBuilder {
     }
     /// <p>Specify this parameter to limit how many groups are returned each time you use the <code>ListAssociatedGroups</code> operation. If you omit this parameter, the default of 20 is used.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The ARN of the canary that you want to view groups for.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl ListAssociatedGroupsInputBuilder {
     }
     /// <p>The ARN of the canary that you want to view groups for.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`ListAssociatedGroupsInput`](crate::operation::list_associated_groups::ListAssociatedGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_associated_groups::ListAssociatedGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_associated_groups::ListAssociatedGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_associated_groups::ListAssociatedGroupsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                resource_arn: self.resource_arn,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

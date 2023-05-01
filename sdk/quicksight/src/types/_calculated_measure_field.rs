@@ -3,7 +3,7 @@
 /// <p>The table calculation measure field for pivot tables.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CalculatedMeasureField {
+pub struct CalculatedMeasureField  {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct CalculatedMeasureField {
 }
 impl CalculatedMeasureField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The expression in the table calculation.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for CalculatedMeasureField {
+impl  std::fmt::Debug for CalculatedMeasureField  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedMeasureField");
         formatter.field("field_id", &self.field_id);
@@ -51,8 +51,7 @@ impl CalculatedMeasureFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The expression in the table calculation.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl CalculatedMeasureFieldBuilder {
     }
     /// <p>The expression in the table calculation.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// Consumes the builder and constructs a [`CalculatedMeasureField`](crate::types::CalculatedMeasureField).
     pub fn build(self) -> crate::types::CalculatedMeasureField {
         crate::types::CalculatedMeasureField {
-            field_id: self.field_id,
-            expression: self.expression,
+            field_id: self.field_id
+            ,
+            expression: self.expression
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for CalculatedMeasureFieldBuilder {
         formatter.finish()
     }
 }
+

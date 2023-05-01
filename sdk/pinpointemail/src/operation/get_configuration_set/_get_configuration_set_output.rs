@@ -3,7 +3,7 @@
 /// <p>Information about a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationSetOutput {
+pub struct GetConfigurationSetOutput  {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -26,41 +26,39 @@ pub struct GetConfigurationSetOutput {
 }
 impl GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn tracking_options(&self) -> std::option::Option<&crate::types::TrackingOptions> {
+    pub fn tracking_options(&self) -> std::option::Option<& crate::types::TrackingOptions> {
         self.tracking_options.as_ref()
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn delivery_options(&self) -> std::option::Option<&crate::types::DeliveryOptions> {
+    pub fn delivery_options(&self) -> std::option::Option<& crate::types::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn reputation_options(&self) -> std::option::Option<&crate::types::ReputationOptions> {
+    pub fn reputation_options(&self) -> std::option::Option<& crate::types::ReputationOptions> {
         self.reputation_options.as_ref()
     }
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    pub fn sending_options(&self) -> std::option::Option<&crate::types::SendingOptions> {
+    pub fn sending_options(&self) -> std::option::Option<& crate::types::SendingOptions> {
         self.sending_options.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetConfigurationSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationSetOutput`](crate::operation::get_configuration_set::GetConfigurationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder {
-        crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder {
+        crate::operation::get_configuration_set::builders::GetConfigurationSetOutputBuilder::default()
     }
 }
 
@@ -83,12 +81,8 @@ impl GetConfigurationSetOutputBuilder {
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
     pub fn tracking_options(mut self, input: crate::types::TrackingOptions) -> Self {
@@ -96,12 +90,8 @@ impl GetConfigurationSetOutputBuilder {
         self
     }
     /// <p>An object that defines the open and click tracking options for emails that you send using the configuration set.</p>
-    pub fn set_tracking_options(
-        mut self,
-        input: std::option::Option<crate::types::TrackingOptions>,
-    ) -> Self {
-        self.tracking_options = input;
-        self
+    pub fn set_tracking_options(mut self, input: std::option::Option<crate::types::TrackingOptions>) -> Self {
+        self.tracking_options = input; self
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
@@ -109,12 +99,8 @@ impl GetConfigurationSetOutputBuilder {
         self
     }
     /// <p>An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.</p>
-    pub fn set_delivery_options(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryOptions>,
-    ) -> Self {
-        self.delivery_options = input;
-        self
+    pub fn set_delivery_options(mut self, input: std::option::Option<crate::types::DeliveryOptions>) -> Self {
+        self.delivery_options = input; self
     }
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
     pub fn reputation_options(mut self, input: crate::types::ReputationOptions) -> Self {
@@ -122,12 +108,8 @@ impl GetConfigurationSetOutputBuilder {
         self
     }
     /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.</p>
-    pub fn set_reputation_options(
-        mut self,
-        input: std::option::Option<crate::types::ReputationOptions>,
-    ) -> Self {
-        self.reputation_options = input;
-        self
+    pub fn set_reputation_options(mut self, input: std::option::Option<crate::types::ReputationOptions>) -> Self {
+        self.reputation_options = input; self
     }
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
     pub fn sending_options(mut self, input: crate::types::SendingOptions) -> Self {
@@ -135,12 +117,8 @@ impl GetConfigurationSetOutputBuilder {
         self
     }
     /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.</p>
-    pub fn set_sending_options(
-        mut self,
-        input: std::option::Option<crate::types::SendingOptions>,
-    ) -> Self {
-        self.sending_options = input;
-        self
+    pub fn set_sending_options(mut self, input: std::option::Option<crate::types::SendingOptions>) -> Self {
+        self.sending_options = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -149,37 +127,40 @@ impl GetConfigurationSetOutputBuilder {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetConfigurationSetOutput`](crate::operation::get_configuration_set::GetConfigurationSetOutput).
     pub fn build(self) -> crate::operation::get_configuration_set::GetConfigurationSetOutput {
         crate::operation::get_configuration_set::GetConfigurationSetOutput {
-            configuration_set_name: self.configuration_set_name,
-            tracking_options: self.tracking_options,
-            delivery_options: self.delivery_options,
-            reputation_options: self.reputation_options,
-            sending_options: self.sending_options,
-            tags: self.tags,
+            configuration_set_name: self.configuration_set_name
+            ,
+            tracking_options: self.tracking_options
+            ,
+            delivery_options: self.delivery_options
+            ,
+            reputation_options: self.reputation_options
+            ,
+            sending_options: self.sending_options
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

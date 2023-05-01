@@ -3,7 +3,7 @@
 /// <p> Specifies whether profiling is enabled or disabled for a profiling group. It is used by <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code>ConfigureAgent</code> </a> to enable or disable profiling for a profiling group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentOrchestrationConfig {
+pub struct AgentOrchestrationConfig  {
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     #[doc(hidden)]
     pub profiling_enabled: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl AgentOrchestrationConfigBuilder {
     }
     /// <p> A <code>Boolean</code> that specifies whether the profiling agent collects profiling data or not. Set to <code>true</code> to enable profiling. </p>
     pub fn set_profiling_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.profiling_enabled = input;
-        self
+        self.profiling_enabled = input; self
     }
     /// Consumes the builder and constructs a [`AgentOrchestrationConfig`](crate::types::AgentOrchestrationConfig).
     pub fn build(self) -> crate::types::AgentOrchestrationConfig {
         crate::types::AgentOrchestrationConfig {
-            profiling_enabled: self.profiling_enabled,
+            profiling_enabled: self.profiling_enabled
+            ,
         }
     }
 }
+

@@ -3,16 +3,14 @@
 /// <p>Details about the state of the ECR scans for your environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcrConfigurationState {
+pub struct EcrConfigurationState  {
     /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
     #[doc(hidden)]
     pub rescan_duration_state: std::option::Option<crate::types::EcrRescanDurationState>,
 }
 impl EcrConfigurationState {
     /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
-    pub fn rescan_duration_state(
-        &self,
-    ) -> std::option::Option<&crate::types::EcrRescanDurationState> {
+    pub fn rescan_duration_state(&self) -> std::option::Option<& crate::types::EcrRescanDurationState> {
         self.rescan_duration_state.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl EcrConfigurationStateBuilder {
         self
     }
     /// <p>An object that contains details about the state of the ECR automated re-scan setting.</p>
-    pub fn set_rescan_duration_state(
-        mut self,
-        input: std::option::Option<crate::types::EcrRescanDurationState>,
-    ) -> Self {
-        self.rescan_duration_state = input;
-        self
+    pub fn set_rescan_duration_state(mut self, input: std::option::Option<crate::types::EcrRescanDurationState>) -> Self {
+        self.rescan_duration_state = input; self
     }
     /// Consumes the builder and constructs a [`EcrConfigurationState`](crate::types::EcrConfigurationState).
     pub fn build(self) -> crate::types::EcrConfigurationState {
         crate::types::EcrConfigurationState {
-            rescan_duration_state: self.rescan_duration_state,
+            rescan_duration_state: self.rescan_duration_state
+            ,
         }
     }
 }
+

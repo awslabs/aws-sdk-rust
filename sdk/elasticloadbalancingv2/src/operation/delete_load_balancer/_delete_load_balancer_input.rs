@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoadBalancerInput {
+pub struct DeleteLoadBalancerInput  {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLoadBalancerInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
 }
 impl DeleteLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
-    pub fn builder(
-    ) -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder {
+    pub fn builder() -> crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder {
         crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteLoadBalancerInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_arn = input;
-        self
+    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLoadBalancerInput`](crate::operation::delete_load_balancer::DeleteLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_load_balancer::DeleteLoadBalancerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_load_balancer::DeleteLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_load_balancer::DeleteLoadBalancerInput {
-                load_balancer_arn: self.load_balancer_arn,
-            },
+                load_balancer_arn: self.load_balancer_arn
+                ,
+            }
         )
     }
 }
+

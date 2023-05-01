@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssessmentFrameworkOutput {
+pub struct DeleteAssessmentFrameworkOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteAssessmentFrameworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAssessmentFrameworkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput).
-    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkOutputBuilder{
+    pub fn builder() -> crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkOutputBuilder {
         crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeleteAssessmentFrameworkOutputBuilder {
 }
 impl DeleteAssessmentFrameworkOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAssessmentFrameworkOutput`](crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput {
+    pub fn build(self) -> crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput {
         crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput {
             _request_id: self._request_id,
         }
     }
 }
+

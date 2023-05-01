@@ -4,87 +4,62 @@ pub use crate::operation::describe_table_restore_status::_describe_table_restore
 pub use crate::operation::describe_table_restore_status::_describe_table_restore_status_input::DescribeTableRestoreStatusInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTableRestoreStatus`.
-///
+/// 
 /// <p>Lists the status of one or more table restore requests made using the <code>RestoreTableFromClusterSnapshot</code> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder
             }
-impl DescribeTableRestoreStatusFluentBuilder {
+impl DescribeTableRestoreStatusFluentBuilder  {
     /// Creates a new `DescribeTableRestoreStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_table_restore_status::DescribeTableRestoreStatus, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput, aws_smithy_http::result::SdkError<crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator{
-        crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator {
+                            crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -94,10 +69,7 @@ impl DescribeTableRestoreStatusFluentBuilder {
         self
     }
     /// <p>The identifier of the table restore request to return status for. If you don't specify a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table restore requests.</p>
-    pub fn set_table_restore_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_table_restore_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_table_restore_request_id(input);
         self
     }
@@ -122,3 +94,4 @@ impl DescribeTableRestoreStatusFluentBuilder {
         self
     }
 }
+

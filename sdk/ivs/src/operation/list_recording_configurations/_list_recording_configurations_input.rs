@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecordingConfigurationsInput {
+pub struct ListRecordingConfigurationsInput  {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListRecordingConfigurationsInput {
 }
 impl ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
@@ -22,7 +22,7 @@ impl ListRecordingConfigurationsInput {
 }
 impl ListRecordingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsInput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsInput).
-    pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsInputBuilder {
         crate::operation::list_recording_configurations::builders::ListRecordingConfigurationsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl ListRecordingConfigurationsInputBuilder {
     }
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,21 +51,19 @@ impl ListRecordingConfigurationsInputBuilder {
     }
     /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListRecordingConfigurationsInput`](crate::operation::list_recording_configurations::ListRecordingConfigurationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_recording_configurations::ListRecordingConfigurationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_recording_configurations::ListRecordingConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_recording_configurations::ListRecordingConfigurationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

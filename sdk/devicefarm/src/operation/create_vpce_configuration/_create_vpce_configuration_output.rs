@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpceConfigurationOutput {
+pub struct CreateVpceConfigurationOutput  {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
     #[doc(hidden)]
     pub vpce_configuration: std::option::Option<crate::types::VpceConfiguration>,
@@ -10,20 +10,18 @@ pub struct CreateVpceConfigurationOutput {
 }
 impl CreateVpceConfigurationOutput {
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn vpce_configuration(&self) -> std::option::Option<&crate::types::VpceConfiguration> {
+    pub fn vpce_configuration(&self) -> std::option::Option<& crate::types::VpceConfiguration> {
         self.vpce_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVpceConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVpceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpceConfigurationOutput`](crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationOutputBuilder {
         crate::operation::create_vpce_configuration::builders::CreateVpceConfigurationOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl CreateVpceConfigurationOutputBuilder {
         self
     }
     /// <p>An object that contains information about your VPC endpoint configuration.</p>
-    pub fn set_vpce_configuration(
-        mut self,
-        input: std::option::Option<crate::types::VpceConfiguration>,
-    ) -> Self {
-        self.vpce_configuration = input;
-        self
+    pub fn set_vpce_configuration(mut self, input: std::option::Option<crate::types::VpceConfiguration>) -> Self {
+        self.vpce_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVpceConfigurationOutput`](crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput {
         crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput {
-            vpce_configuration: self.vpce_configuration,
+            vpce_configuration: self.vpce_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

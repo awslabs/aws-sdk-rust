@@ -2,42 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactAttributesInput {
+pub struct UpdateContactAttributesInput  {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     #[doc(hidden)]
     pub initial_contact_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p> 
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateContactAttributesInput {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
+    pub fn initial_contact_id(&self) -> std::option::Option<& str> {
         self.initial_contact_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p> 
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
 impl UpdateContactAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateContactAttributesInput`](crate::operation::update_contact_attributes::UpdateContactAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder {
         crate::operation::update_contact_attributes::builders::UpdateContactAttributesInputBuilder::default()
     }
 }
@@ -48,8 +42,7 @@ impl UpdateContactAttributesInput {
 pub struct UpdateContactAttributesInputBuilder {
     pub(crate) initial_contact_id: std::option::Option<std::string::String>,
     pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateContactAttributesInputBuilder {
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
@@ -58,12 +51,8 @@ impl UpdateContactAttributesInputBuilder {
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.initial_contact_id = input;
-        self
+    pub fn set_initial_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.initial_contact_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,49 +61,37 @@ impl UpdateContactAttributesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p> 
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn attributes(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = Some(hash_map);
+                        self
     }
-    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p>
+    /// <p>The Amazon Connect attributes. These attributes can be accessed in flows just like any other contact attributes.</p> 
     /// <p>You can have up to 32,768 UTF-8 bytes across all attributes for a contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`UpdateContactAttributesInput`](crate::operation::update_contact_attributes::UpdateContactAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_contact_attributes::UpdateContactAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_contact_attributes::UpdateContactAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_contact_attributes::UpdateContactAttributesInput {
-                initial_contact_id: self.initial_contact_id,
-                instance_id: self.instance_id,
-                attributes: self.attributes,
-            },
+                initial_contact_id: self.initial_contact_id
+                ,
+                instance_id: self.instance_id
+                ,
+                attributes: self.attributes
+                ,
+            }
         )
     }
 }
+

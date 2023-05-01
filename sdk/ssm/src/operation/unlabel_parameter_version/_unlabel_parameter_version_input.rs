@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlabelParameterVersionInput {
+pub struct UnlabelParameterVersionInput  {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct UnlabelParameterVersionInput {
 }
 impl UnlabelParameterVersionInput {
     /// <p>The name of the parameter from which you want to delete one or more labels.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
@@ -23,15 +23,13 @@ impl UnlabelParameterVersionInput {
         self.parameter_version
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
 }
 impl UnlabelParameterVersionInput {
     /// Creates a new builder-style object to manufacture [`UnlabelParameterVersionInput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput).
-    pub fn builder(
-    ) -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder {
         crate::operation::unlabel_parameter_version::builders::UnlabelParameterVersionInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl UnlabelParameterVersionInputBuilder {
     }
     /// <p>The name of the parameter from which you want to delete one or more labels.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub fn parameter_version(mut self, input: i64) -> Self {
@@ -62,8 +59,7 @@ impl UnlabelParameterVersionInputBuilder {
     }
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If it isn't present, the call will fail.</p>
     pub fn set_parameter_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.parameter_version = input;
-        self
+        self.parameter_version = input; self
     }
     /// Appends an item to `labels`.
     ///
@@ -72,31 +68,26 @@ impl UnlabelParameterVersionInputBuilder {
     /// <p>One or more labels to delete from the specified parameter version.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = Some(v);
+                        self
     }
     /// <p>One or more labels to delete from the specified parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// Consumes the builder and constructs a [`UnlabelParameterVersionInput`](crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::unlabel_parameter_version::UnlabelParameterVersionInput {
-                name: self.name,
-                parameter_version: self.parameter_version,
-                labels: self.labels,
-            },
+                name: self.name
+                ,
+                parameter_version: self.parameter_version
+                ,
+                labels: self.labels
+                ,
+            }
         )
     }
 }
+

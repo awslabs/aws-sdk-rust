@@ -3,21 +3,21 @@
 /// <p>Describes a specific Amazon FSx administrative action for the current Windows, Lustre, or OpenZFS file system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdministrativeAction {
-    /// <p>Describes the type of administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
-    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
-    /// <ul>
-    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
-    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
-    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
-    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
+pub struct AdministrativeAction  {
+    /// <p>Describes the type of administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li> 
+    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p> 
+    /// <ul> 
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li> 
+    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li> 
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li> 
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub administrative_action_type: std::option::Option<crate::types::AdministrativeActionType>,
@@ -27,13 +27,13 @@ pub struct AdministrativeAction {
     /// <p>The time that the administrative action request was received.</p>
     #[doc(hidden)]
     pub request_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Describes the status of the administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
-    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
+    /// <p>Describes the status of the administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li> 
+    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
@@ -51,24 +51,22 @@ pub struct AdministrativeAction {
     pub target_snapshot_values: std::option::Option<crate::types::Snapshot>,
 }
 impl AdministrativeAction {
-    /// <p>Describes the type of administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
-    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
-    /// <ul>
-    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
-    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
-    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
-    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
+    /// <p>Describes the type of administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li> 
+    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p> 
+    /// <ul> 
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li> 
+    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li> 
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li> 
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li> 
     /// </ul>
-    pub fn administrative_action_type(
-        &self,
-    ) -> std::option::Option<&crate::types::AdministrativeActionType> {
+    pub fn administrative_action_type(&self) -> std::option::Option<& crate::types::AdministrativeActionType> {
         self.administrative_action_type.as_ref()
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
@@ -76,36 +74,34 @@ impl AdministrativeAction {
         self.progress_percent
     }
     /// <p>The time that the administrative action request was received.</p>
-    pub fn request_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn request_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.request_time.as_ref()
     }
-    /// <p>Describes the status of the administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
-    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
+    /// <p>Describes the status of the administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li> 
+    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-    pub fn target_file_system_values(&self) -> std::option::Option<&crate::types::FileSystem> {
+    pub fn target_file_system_values(&self) -> std::option::Option<& crate::types::FileSystem> {
         self.target_file_system_values.as_ref()
     }
     /// <p>Provides information about a failed administrative action.</p>
-    pub fn failure_details(
-        &self,
-    ) -> std::option::Option<&crate::types::AdministrativeActionFailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::types::AdministrativeActionFailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    pub fn target_volume_values(&self) -> std::option::Option<&crate::types::Volume> {
+    pub fn target_volume_values(&self) -> std::option::Option<& crate::types::Volume> {
         self.target_volume_values.as_ref()
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
-    pub fn target_snapshot_values(&self) -> std::option::Option<&crate::types::Snapshot> {
+    pub fn target_snapshot_values(&self) -> std::option::Option<& crate::types::Snapshot> {
         self.target_snapshot_values.as_ref()
     }
 }
@@ -120,61 +116,52 @@ impl AdministrativeAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AdministrativeActionBuilder {
-    pub(crate) administrative_action_type:
-        std::option::Option<crate::types::AdministrativeActionType>,
+    pub(crate) administrative_action_type: std::option::Option<crate::types::AdministrativeActionType>,
     pub(crate) progress_percent: std::option::Option<i32>,
     pub(crate) request_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) status: std::option::Option<crate::types::Status>,
     pub(crate) target_file_system_values: std::option::Option<crate::types::FileSystem>,
-    pub(crate) failure_details:
-        std::option::Option<crate::types::AdministrativeActionFailureDetails>,
+    pub(crate) failure_details: std::option::Option<crate::types::AdministrativeActionFailureDetails>,
     pub(crate) target_volume_values: std::option::Option<crate::types::Volume>,
     pub(crate) target_snapshot_values: std::option::Option<crate::types::Snapshot>,
 }
 impl AdministrativeActionBuilder {
-    /// <p>Describes the type of administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
-    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
-    /// <ul>
-    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
-    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
-    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
-    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
+    /// <p>Describes the type of administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li> 
+    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p> 
+    /// <ul> 
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li> 
+    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li> 
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li> 
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li> 
     /// </ul>
-    pub fn administrative_action_type(
-        mut self,
-        input: crate::types::AdministrativeActionType,
-    ) -> Self {
+    pub fn administrative_action_type(mut self, input: crate::types::AdministrativeActionType) -> Self {
         self.administrative_action_type = Some(input);
         self
     }
-    /// <p>Describes the type of administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li>
-    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p>
-    /// <ul>
-    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li>
-    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li>
-    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li>
-    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li>
-    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li>
-    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li>
-    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li>
+    /// <p>Describes the type of administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated from the Amazon FSx console, API (<code>UpdateFileSystem</code>), or CLI (<code>update-file-system</code>).</p> </li> 
+    /// <li> <p> <code>STORAGE_OPTIMIZATION</code> - After the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity has been completed successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. </p> 
+    /// <ul> 
+    /// <li> <p>For Windows and ONTAP, storage optimization is the process of migrating the file system data to newer larger disks.</p> </li> 
+    /// <li> <p>For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers.</p> </li> 
+    /// </ul> <p>You can track the storage-optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> has been completed successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>, <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>, and <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-storage-capacity.html">Managing storage capacity and provisioned IOPS</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new Domain Name System (DNS) alias with the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_AssociateFileSystemAliases.html"> AssociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DisassociateFileSystemAliases.html">DisassociateFileSystemAliases</a>.</p> </li> 
+    /// <li> <p> <code>VOLUME_UPDATE</code> - A volume update to an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateVolume</code>), or CLI (<code>update-volume</code>).</p> </li> 
+    /// <li> <p> <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (<code>restore-volume-from-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).</p> </li> 
+    /// <li> <p> <code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p> </li> 
     /// </ul>
-    pub fn set_administrative_action_type(
-        mut self,
-        input: std::option::Option<crate::types::AdministrativeActionType>,
-    ) -> Self {
-        self.administrative_action_type = input;
-        self
+    pub fn set_administrative_action_type(mut self, input: std::option::Option<crate::types::AdministrativeActionType>) -> Self {
+        self.administrative_action_type = input; self
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
@@ -183,8 +170,7 @@ impl AdministrativeActionBuilder {
     }
     /// <p>The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative action. Does not apply to any other administrative action type.</p>
     pub fn set_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.progress_percent = input;
-        self
+        self.progress_percent = input; self
     }
     /// <p>The time that the administrative action request was received.</p>
     pub fn request_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,36 +178,31 @@ impl AdministrativeActionBuilder {
         self
     }
     /// <p>The time that the administrative action request was received.</p>
-    pub fn set_request_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.request_time = input;
-        self
+    pub fn set_request_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.request_time = input; self
     }
-    /// <p>Describes the status of the administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
-    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
+    /// <p>Describes the status of the administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li> 
+    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>Describes the status of the administrative action, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li>
-    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li>
-    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li>
-    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li>
+    /// <p>Describes the status of the administrative action, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.</p> </li> 
+    /// <li> <p> <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.</p> </li> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p> </li> 
+    /// <li> <p> <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p> </li> 
+    /// <li> <p> <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process. </p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
     pub fn target_file_system_values(mut self, input: crate::types::FileSystem) -> Self {
@@ -229,28 +210,17 @@ impl AdministrativeActionBuilder {
         self
     }
     /// <p>Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. </p>
-    pub fn set_target_file_system_values(
-        mut self,
-        input: std::option::Option<crate::types::FileSystem>,
-    ) -> Self {
-        self.target_file_system_values = input;
-        self
+    pub fn set_target_file_system_values(mut self, input: std::option::Option<crate::types::FileSystem>) -> Self {
+        self.target_file_system_values = input; self
     }
     /// <p>Provides information about a failed administrative action.</p>
-    pub fn failure_details(
-        mut self,
-        input: crate::types::AdministrativeActionFailureDetails,
-    ) -> Self {
+    pub fn failure_details(mut self, input: crate::types::AdministrativeActionFailureDetails) -> Self {
         self.failure_details = Some(input);
         self
     }
     /// <p>Provides information about a failed administrative action.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: std::option::Option<crate::types::AdministrativeActionFailureDetails>,
-    ) -> Self {
-        self.failure_details = input;
-        self
+    pub fn set_failure_details(mut self, input: std::option::Option<crate::types::AdministrativeActionFailureDetails>) -> Self {
+        self.failure_details = input; self
     }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
     pub fn target_volume_values(mut self, input: crate::types::Volume) -> Self {
@@ -258,12 +228,8 @@ impl AdministrativeActionBuilder {
         self
     }
     /// <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-    pub fn set_target_volume_values(
-        mut self,
-        input: std::option::Option<crate::types::Volume>,
-    ) -> Self {
-        self.target_volume_values = input;
-        self
+    pub fn set_target_volume_values(mut self, input: std::option::Option<crate::types::Volume>) -> Self {
+        self.target_volume_values = input; self
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
     pub fn target_snapshot_values(mut self, input: crate::types::Snapshot) -> Self {
@@ -271,24 +237,29 @@ impl AdministrativeActionBuilder {
         self
     }
     /// <p>A snapshot of an Amazon FSx for OpenZFS volume.</p>
-    pub fn set_target_snapshot_values(
-        mut self,
-        input: std::option::Option<crate::types::Snapshot>,
-    ) -> Self {
-        self.target_snapshot_values = input;
-        self
+    pub fn set_target_snapshot_values(mut self, input: std::option::Option<crate::types::Snapshot>) -> Self {
+        self.target_snapshot_values = input; self
     }
     /// Consumes the builder and constructs a [`AdministrativeAction`](crate::types::AdministrativeAction).
     pub fn build(self) -> crate::types::AdministrativeAction {
         crate::types::AdministrativeAction {
-            administrative_action_type: self.administrative_action_type,
-            progress_percent: self.progress_percent,
-            request_time: self.request_time,
-            status: self.status,
-            target_file_system_values: self.target_file_system_values,
-            failure_details: self.failure_details,
-            target_volume_values: self.target_volume_values,
-            target_snapshot_values: self.target_snapshot_values,
+            administrative_action_type: self.administrative_action_type
+            ,
+            progress_percent: self.progress_percent
+            ,
+            request_time: self.request_time
+            ,
+            status: self.status
+            ,
+            target_file_system_values: self.target_file_system_values
+            ,
+            failure_details: self.failure_details
+            ,
+            target_volume_values: self.target_volume_values
+            ,
+            target_snapshot_values: self.target_snapshot_values
+            ,
         }
     }
 }
+

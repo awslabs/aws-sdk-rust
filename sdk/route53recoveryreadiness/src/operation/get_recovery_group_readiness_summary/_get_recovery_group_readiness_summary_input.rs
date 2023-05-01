@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecoveryGroupReadinessSummaryInput {
+pub struct GetRecoveryGroupReadinessSummaryInput  {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -19,17 +19,17 @@ impl GetRecoveryGroupReadinessSummaryInput {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
 impl GetRecoveryGroupReadinessSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryGroupReadinessSummaryInput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput).
-    pub fn builder() -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryInputBuilder{
+    pub fn builder() -> crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryInputBuilder {
         crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetRecoveryGroupReadinessSummaryInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetRecoveryGroupReadinessSummaryInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,15 +67,11 @@ impl GetRecoveryGroupReadinessSummaryInputBuilder {
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_group_name = input;
-        self
+    pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_group_name = input; self
     }
     /// Consumes the builder and constructs a [`GetRecoveryGroupReadinessSummaryInput`](crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput).
-    pub fn build(self) -> Result<crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummaryInput {
                 max_results: self.max_results
@@ -91,3 +85,4 @@ impl GetRecoveryGroupReadinessSummaryInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotOutput {
+pub struct CreateSnapshotOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct CreateSnapshotOutput {
 }
 impl CreateSnapshotOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
     pub fn builder() -> crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder {
@@ -50,8 +50,7 @@ impl CreateSnapshotOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
     pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,24 +59,26 @@ impl CreateSnapshotOutputBuilder {
     }
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
     pub fn build(self) -> crate::operation::create_snapshot::CreateSnapshotOutput {
         crate::operation::create_snapshot::CreateSnapshotOutput {
-            volume_arn: self.volume_arn,
-            snapshot_id: self.snapshot_id,
+            volume_arn: self.volume_arn
+            ,
+            snapshot_id: self.snapshot_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

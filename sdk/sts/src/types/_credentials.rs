@@ -3,7 +3,7 @@
 /// <p>Amazon Web Services credentials for API authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Credentials {
+pub struct Credentials  {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Credentials {
 }
 impl Credentials {
     /// <p>The access key ID that identifies the temporary security credentials.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The secret access key that can be used to sign requests.</p>
-    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> std::option::Option<& str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> std::option::Option<& str> {
         self.session_token.as_deref()
     }
     /// <p>The date on which the current credentials expire.</p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl CredentialsBuilder {
     }
     /// <p>The access key ID that identifies the temporary security credentials.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input;
-        self
+        self.access_key_id = input; self
     }
     /// <p>The secret access key that can be used to sign requests.</p>
     pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,12 +67,8 @@ impl CredentialsBuilder {
         self
     }
     /// <p>The secret access key that can be used to sign requests.</p>
-    pub fn set_secret_access_key(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secret_access_key = input;
-        self
+    pub fn set_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secret_access_key = input; self
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +77,7 @@ impl CredentialsBuilder {
     }
     /// <p>The token that users must pass to the service API to use the temporary credentials.</p>
     pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_token = input;
-        self
+        self.session_token = input; self
     }
     /// <p>The date on which the current credentials expire.</p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,20 +85,21 @@ impl CredentialsBuilder {
         self
     }
     /// <p>The date on which the current credentials expire.</p>
-    pub fn set_expiration(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration = input;
-        self
+    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration = input; self
     }
     /// Consumes the builder and constructs a [`Credentials`](crate::types::Credentials).
     pub fn build(self) -> crate::types::Credentials {
         crate::types::Credentials {
-            access_key_id: self.access_key_id,
-            secret_access_key: self.secret_access_key,
-            session_token: self.session_token,
-            expiration: self.expiration,
+            access_key_id: self.access_key_id
+            ,
+            secret_access_key: self.secret_access_key
+            ,
+            session_token: self.session_token
+            ,
+            expiration: self.expiration
+            ,
         }
     }
 }
+

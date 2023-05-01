@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProjectInput {
+pub struct DeleteProjectInput  {
     /// <p>The name of the empty project to delete.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
     /// <p>The name of the empty project to delete.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The name of the empty project to delete.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_project::DeleteProjectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_project::DeleteProjectInput {
-            project_name: self.project_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_project::DeleteProjectInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_project::DeleteProjectInput {
+                project_name: self.project_name
+                ,
+            }
+        )
     }
 }
+

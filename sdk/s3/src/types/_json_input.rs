@@ -3,14 +3,14 @@
 /// <p>Specifies JSON as object's input serialization format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JsonInput {
+pub struct JsonInput  {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::JsonType>,
 }
 impl JsonInput {
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::JsonType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::JsonType> {
         self.r#type.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl JsonInputBuilder {
     }
     /// <p>The type of JSON. Valid values: Document, Lines.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::JsonType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`JsonInput`](crate::types::JsonInput).
     pub fn build(self) -> crate::types::JsonInput {
         crate::types::JsonInput {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

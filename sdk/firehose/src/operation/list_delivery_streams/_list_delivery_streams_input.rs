@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeliveryStreamsInput {
+pub struct ListDeliveryStreamsInput  {
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-    /// </ul>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+    /// </ul> 
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
     #[doc(hidden)]
     pub delivery_stream_type: std::option::Option<crate::types::DeliveryStreamType>,
@@ -23,26 +23,24 @@ impl ListDeliveryStreamsInput {
     pub fn limit(&self) -> std::option::Option<i32> {
         self.limit
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-    /// </ul>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+    /// </ul> 
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    pub fn delivery_stream_type(&self) -> std::option::Option<&crate::types::DeliveryStreamType> {
+    pub fn delivery_stream_type(&self) -> std::option::Option<& crate::types::DeliveryStreamType> {
         self.delivery_stream_type.as_ref()
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn exclusive_start_delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn exclusive_start_delivery_stream_name(&self) -> std::option::Option<& str> {
         self.exclusive_start_delivery_stream_name.as_deref()
     }
 }
 impl ListDeliveryStreamsInput {
     /// Creates a new builder-style object to manufacture [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
-    pub fn builder(
-    ) -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder {
-        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder {
+        crate::operation::list_delivery_streams::builders::ListDeliveryStreamsInputBuilder::default()
     }
 }
 
@@ -62,61 +60,48 @@ impl ListDeliveryStreamsInputBuilder {
     }
     /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-    /// </ul>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+    /// </ul> 
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
     pub fn delivery_stream_type(mut self, input: crate::types::DeliveryStreamType) -> Self {
         self.delivery_stream_type = Some(input);
         self
     }
-    /// <p>The delivery stream type. This can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li>
-    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li>
-    /// </ul>
+    /// <p>The delivery stream type. This can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DirectPut</code>: Provider applications access the delivery stream directly.</p> </li> 
+    /// <li> <p> <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.</p> </li> 
+    /// </ul> 
     /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all types are returned.</p>
-    pub fn set_delivery_stream_type(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryStreamType>,
-    ) -> Self {
-        self.delivery_stream_type = input;
-        self
+    pub fn set_delivery_stream_type(mut self, input: std::option::Option<crate::types::DeliveryStreamType>) -> Self {
+        self.delivery_stream_type = input; self
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn exclusive_start_delivery_stream_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn exclusive_start_delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.exclusive_start_delivery_stream_name = Some(input.into());
         self
     }
     /// <p>The list of delivery streams returned by this call to <code>ListDeliveryStreams</code> will start with the delivery stream whose name comes alphabetically immediately after the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.</p>
-    pub fn set_exclusive_start_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.exclusive_start_delivery_stream_name = input;
-        self
+    pub fn set_exclusive_start_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.exclusive_start_delivery_stream_name = input; self
     }
     /// Consumes the builder and constructs a [`ListDeliveryStreamsInput`](crate::operation::list_delivery_streams::ListDeliveryStreamsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_delivery_streams::ListDeliveryStreamsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_delivery_streams::ListDeliveryStreamsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_delivery_streams::ListDeliveryStreamsInput {
-                limit: self.limit,
-                delivery_stream_type: self.delivery_stream_type,
-                exclusive_start_delivery_stream_name: self.exclusive_start_delivery_stream_name,
-            },
+                limit: self.limit
+                ,
+                delivery_stream_type: self.delivery_stream_type
+                ,
+                exclusive_start_delivery_stream_name: self.exclusive_start_delivery_stream_name
+                ,
+            }
         )
     }
 }
+

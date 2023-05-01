@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectionAliasesInput {
+pub struct DescribeConnectionAliasesInput  {
     /// <p>The identifiers of the connection aliases to describe.</p>
     #[doc(hidden)]
     pub alias_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,11 +18,11 @@ pub struct DescribeConnectionAliasesInput {
 }
 impl DescribeConnectionAliasesInput {
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn alias_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alias_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.alias_ids.as_deref()
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The maximum number of connection aliases to return.</p>
@@ -30,13 +30,13 @@ impl DescribeConnectionAliasesInput {
         self.limit
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeConnectionAliasesInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
-    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder{
+    pub fn builder() -> crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder {
         crate::operation::describe_connection_aliases::builders::DescribeConnectionAliasesInputBuilder::default()
     }
 }
@@ -58,17 +58,13 @@ impl DescribeConnectionAliasesInputBuilder {
     /// <p>The identifiers of the connection aliases to describe.</p>
     pub fn alias_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alias_ids.unwrap_or_default();
-        v.push(input.into());
-        self.alias_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.alias_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of the connection aliases to describe.</p>
-    pub fn set_alias_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.alias_ids = input;
-        self
+    pub fn set_alias_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.alias_ids = input; self
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +73,7 @@ impl DescribeConnectionAliasesInputBuilder {
     }
     /// <p>The identifier of the directory associated with the connection alias.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The maximum number of connection aliases to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -87,8 +82,7 @@ impl DescribeConnectionAliasesInputBuilder {
     }
     /// <p>The maximum number of connection aliases to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,23 +91,22 @@ impl DescribeConnectionAliasesInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeConnectionAliasesInput`](crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_connection_aliases::DescribeConnectionAliasesInput {
-                alias_ids: self.alias_ids,
-                resource_id: self.resource_id,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                alias_ids: self.alias_ids
+                ,
+                resource_id: self.resource_id
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

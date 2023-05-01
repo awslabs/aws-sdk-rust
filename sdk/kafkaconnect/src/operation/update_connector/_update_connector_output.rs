@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectorOutput {
+pub struct UpdateConnectorOutput  {
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
     #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct UpdateConnectorOutput {
 }
 impl UpdateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-    pub fn connector_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_arn(&self) -> std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
     /// <p>The state of the connector.</p>
-    pub fn connector_state(&self) -> std::option::Option<&crate::types::ConnectorState> {
+    pub fn connector_state(&self) -> std::option::Option<& crate::types::ConnectorState> {
         self.connector_state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateConnectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateConnectorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorOutput`](crate::operation::update_connector::UpdateConnectorOutput).
     pub fn builder() -> crate::operation::update_connector::builders::UpdateConnectorOutputBuilder {
@@ -49,8 +49,7 @@ impl UpdateConnectorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
     pub fn set_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_arn = input;
-        self
+        self.connector_arn = input; self
     }
     /// <p>The state of the connector.</p>
     pub fn connector_state(mut self, input: crate::types::ConnectorState) -> Self {
@@ -58,28 +57,27 @@ impl UpdateConnectorOutputBuilder {
         self
     }
     /// <p>The state of the connector.</p>
-    pub fn set_connector_state(
-        mut self,
-        input: std::option::Option<crate::types::ConnectorState>,
-    ) -> Self {
-        self.connector_state = input;
-        self
+    pub fn set_connector_state(mut self, input: std::option::Option<crate::types::ConnectorState>) -> Self {
+        self.connector_state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateConnectorOutput`](crate::operation::update_connector::UpdateConnectorOutput).
     pub fn build(self) -> crate::operation::update_connector::UpdateConnectorOutput {
         crate::operation::update_connector::UpdateConnectorOutput {
-            connector_arn: self.connector_arn,
-            connector_state: self.connector_state,
+            connector_arn: self.connector_arn
+            ,
+            connector_state: self.connector_state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

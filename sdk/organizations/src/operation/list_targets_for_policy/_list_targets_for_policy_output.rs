@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsForPolicyOutput {
+pub struct ListTargetsForPolicyOutput  {
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::types::PolicyTargetSummary>>,
@@ -13,24 +13,22 @@ pub struct ListTargetsForPolicyOutput {
 }
 impl ListTargetsForPolicyOutput {
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::PolicyTargetSummary]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::types::PolicyTargetSummary]> {
         self.targets.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTargetsForPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTargetsForPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder {
         crate::operation::list_targets_for_policy::builders::ListTargetsForPolicyOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListTargetsForPolicyOutputBuilder {
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
     pub fn targets(mut self, input: crate::types::PolicyTargetSummary) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = Some(v);
-        self
+                        v.push(input);
+                        self.targets = Some(v);
+                        self
     }
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyTargetSummary>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::PolicyTargetSummary>>) -> Self {
+        self.targets = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListTargetsForPolicyOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTargetsForPolicyOutput`](crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput).
     pub fn build(self) -> crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput {
         crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput {
-            targets: self.targets,
-            next_token: self.next_token,
+            targets: self.targets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

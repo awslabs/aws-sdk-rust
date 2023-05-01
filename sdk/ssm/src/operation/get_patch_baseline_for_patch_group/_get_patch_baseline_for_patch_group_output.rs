@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPatchBaselineForPatchGroupOutput {
+pub struct GetPatchBaselineForPatchGroupOutput  {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct GetPatchBaselineForPatchGroupOutput {
 }
 impl GetPatchBaselineForPatchGroupOutput {
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The name of the patch group.</p>
-    pub fn patch_group(&self) -> std::option::Option<&str> {
+    pub fn patch_group(&self) -> std::option::Option<& str> {
         self.patch_group.as_deref()
     }
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
-    pub fn operating_system(&self) -> std::option::Option<&crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<& crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPatchBaselineForPatchGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetPatchBaselineForPatchGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetPatchBaselineForPatchGroupOutput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput).
-    pub fn builder() -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupOutputBuilder{
+    pub fn builder() -> crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupOutputBuilder {
         crate::operation::get_patch_baseline_for_patch_group::builders::GetPatchBaselineForPatchGroupOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl GetPatchBaselineForPatchGroupOutputBuilder {
     }
     /// <p>The ID of the patch baseline that should be used for the patch group.</p>
     pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The name of the patch group.</p>
     pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl GetPatchBaselineForPatchGroupOutputBuilder {
     }
     /// <p>The name of the patch group.</p>
     pub fn set_patch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.patch_group = input;
-        self
+        self.patch_group = input; self
     }
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -76,32 +74,29 @@ impl GetPatchBaselineForPatchGroupOutputBuilder {
         self
     }
     /// <p>The operating system rule specified for patch groups using the patch baseline.</p>
-    pub fn set_operating_system(
-        mut self,
-        input: std::option::Option<crate::types::OperatingSystem>,
-    ) -> Self {
-        self.operating_system = input;
-        self
+    pub fn set_operating_system(mut self, input: std::option::Option<crate::types::OperatingSystem>) -> Self {
+        self.operating_system = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetPatchBaselineForPatchGroupOutput`](crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput
-    {
+    pub fn build(self) -> crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput {
         crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput {
-            baseline_id: self.baseline_id,
-            patch_group: self.patch_group,
-            operating_system: self.operating_system,
+            baseline_id: self.baseline_id
+            ,
+            patch_group: self.patch_group
+            ,
+            operating_system: self.operating_system
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies the serverless configuration for an endpoint variant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProductionVariantServerlessConfig {
+pub struct ProductionVariantServerlessConfig  {
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
     #[doc(hidden)]
     pub memory_size_in_mb: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl ProductionVariantServerlessConfigBuilder {
     }
     /// <p>The memory size of your serverless endpoint. Valid values are in 1 GB increments: 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.</p>
     pub fn set_memory_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory_size_in_mb = input;
-        self
+        self.memory_size_in_mb = input; self
     }
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl ProductionVariantServerlessConfigBuilder {
     }
     /// <p>The maximum number of concurrent invocations your serverless endpoint can process.</p>
     pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_concurrency = input;
-        self
+        self.max_concurrency = input; self
     }
     /// Consumes the builder and constructs a [`ProductionVariantServerlessConfig`](crate::types::ProductionVariantServerlessConfig).
     pub fn build(self) -> crate::types::ProductionVariantServerlessConfig {
         crate::types::ProductionVariantServerlessConfig {
-            memory_size_in_mb: self.memory_size_in_mb,
-            max_concurrency: self.max_concurrency,
+            memory_size_in_mb: self.memory_size_in_mb
+            ,
+            max_concurrency: self.max_concurrency
+            ,
         }
     }
 }
+

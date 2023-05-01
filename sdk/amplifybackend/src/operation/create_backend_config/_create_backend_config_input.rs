@@ -3,7 +3,7 @@
 /// <p>The request body for CreateBackendConfig.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendConfigInput {
+pub struct CreateBackendConfigInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -13,20 +13,18 @@ pub struct CreateBackendConfigInput {
 }
 impl CreateBackendConfigInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn backend_manager_app_id(&self) -> std::option::Option<&str> {
+    pub fn backend_manager_app_id(&self) -> std::option::Option<& str> {
         self.backend_manager_app_id.as_deref()
     }
 }
 impl CreateBackendConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder {
-        crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder {
+        crate::operation::create_backend_config::builders::CreateBackendConfigInputBuilder::default()
     }
 }
 
@@ -45,8 +43,7 @@ impl CreateBackendConfigInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app ID for the backend manager.</p>
     pub fn backend_manager_app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,25 +51,19 @@ impl CreateBackendConfigInputBuilder {
         self
     }
     /// <p>The app ID for the backend manager.</p>
-    pub fn set_backend_manager_app_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.backend_manager_app_id = input;
-        self
+    pub fn set_backend_manager_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.backend_manager_app_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateBackendConfigInput`](crate::operation::create_backend_config::CreateBackendConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_backend_config::CreateBackendConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_backend_config::CreateBackendConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_backend_config::CreateBackendConfigInput {
-                app_id: self.app_id,
-                backend_manager_app_id: self.backend_manager_app_id,
-            },
+                app_id: self.app_id
+                ,
+                backend_manager_app_id: self.backend_manager_app_id
+                ,
+            }
         )
     }
 }
+

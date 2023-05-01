@@ -3,7 +3,7 @@
 /// <p>Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoEnable {
+pub struct AutoEnable  {
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     #[doc(hidden)]
     pub ec2: std::option::Option<bool>,
@@ -51,8 +51,7 @@ impl AutoEnableBuilder {
     }
     /// <p>Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn set_ec2(mut self, input: std::option::Option<bool>) -> Self {
-        self.ec2 = input;
-        self
+        self.ec2 = input; self
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn ecr(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl AutoEnableBuilder {
     }
     /// <p>Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization.</p>
     pub fn set_ecr(mut self, input: std::option::Option<bool>) -> Self {
-        self.ecr = input;
-        self
+        self.ecr = input; self
     }
     /// <p>Represents whether AWS Lambda scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     pub fn lambda(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl AutoEnableBuilder {
     }
     /// <p>Represents whether AWS Lambda scans are automatically enabled for new members of your Amazon Inspector organization. </p>
     pub fn set_lambda(mut self, input: std::option::Option<bool>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// Consumes the builder and constructs a [`AutoEnable`](crate::types::AutoEnable).
     pub fn build(self) -> crate::types::AutoEnable {
         crate::types::AutoEnable {
-            ec2: self.ec2,
-            ecr: self.ecr,
-            lambda: self.lambda,
+            ec2: self.ec2
+            ,
+            ecr: self.ecr
+            ,
+            lambda: self.lambda
+            ,
         }
     }
 }
+

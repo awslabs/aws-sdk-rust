@@ -3,7 +3,7 @@
 /// <p>Information on the usage of a data source package in the behavior graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasourcePackageUsageInfo {
+pub struct DatasourcePackageUsageInfo  {
     /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
     #[doc(hidden)]
     pub volume_usage_in_bytes: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl DatasourcePackageUsageInfo {
         self.volume_usage_in_bytes
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn volume_usage_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn volume_usage_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.volume_usage_update_time.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DatasourcePackageUsageInfoBuilder {
     }
     /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
     pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.volume_usage_in_bytes = input;
-        self
+        self.volume_usage_in_bytes = input; self
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     pub fn volume_usage_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -52,18 +51,17 @@ impl DatasourcePackageUsageInfoBuilder {
         self
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn set_volume_usage_update_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.volume_usage_update_time = input;
-        self
+    pub fn set_volume_usage_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.volume_usage_update_time = input; self
     }
     /// Consumes the builder and constructs a [`DatasourcePackageUsageInfo`](crate::types::DatasourcePackageUsageInfo).
     pub fn build(self) -> crate::types::DatasourcePackageUsageInfo {
         crate::types::DatasourcePackageUsageInfo {
-            volume_usage_in_bytes: self.volume_usage_in_bytes,
-            volume_usage_update_time: self.volume_usage_update_time,
+            volume_usage_in_bytes: self.volume_usage_in_bytes
+            ,
+            volume_usage_update_time: self.volume_usage_update_time
+            ,
         }
     }
 }
+

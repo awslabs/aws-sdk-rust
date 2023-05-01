@@ -3,7 +3,7 @@
 /// <p>Describes a block device for an EBS volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateEbsBlockDevice {
+pub struct LaunchTemplateEbsBlockDevice  {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
@@ -43,11 +43,11 @@ impl LaunchTemplateEbsBlockDevice {
         self.iops
     }
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -55,7 +55,7 @@ impl LaunchTemplateEbsBlockDevice {
         self.volume_size
     }
     /// <p>The volume type.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> std::option::Option<& crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
@@ -91,8 +91,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>Indicates whether the EBS volume is encrypted.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -101,8 +100,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_on_termination = input;
-        self
+        self.delete_on_termination = input; self
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -111,8 +109,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
     pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-        self.iops = input;
-        self
+        self.iops = input; self
     }
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +118,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +127,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
@@ -141,8 +136,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.volume_size = input;
-        self
+        self.volume_size = input; self
     }
     /// <p>The volume type.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
@@ -151,8 +145,7 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>The volume type.</p>
     pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
-        self.volume_type = input;
-        self
+        self.volume_type = input; self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub fn throughput(mut self, input: i32) -> Self {
@@ -161,20 +154,28 @@ impl LaunchTemplateEbsBlockDeviceBuilder {
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
-        self.throughput = input;
-        self
+        self.throughput = input; self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateEbsBlockDevice`](crate::types::LaunchTemplateEbsBlockDevice).
     pub fn build(self) -> crate::types::LaunchTemplateEbsBlockDevice {
         crate::types::LaunchTemplateEbsBlockDevice {
-            encrypted: self.encrypted,
-            delete_on_termination: self.delete_on_termination,
-            iops: self.iops,
-            kms_key_id: self.kms_key_id,
-            snapshot_id: self.snapshot_id,
-            volume_size: self.volume_size,
-            volume_type: self.volume_type,
-            throughput: self.throughput,
+            encrypted: self.encrypted
+            ,
+            delete_on_termination: self.delete_on_termination
+            ,
+            iops: self.iops
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            volume_size: self.volume_size
+            ,
+            volume_type: self.volume_type
+            ,
+            throughput: self.throughput
+            ,
         }
     }
 }
+

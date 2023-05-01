@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalTableSettingsInput {
+pub struct DescribeGlobalTableSettingsInput  {
     /// <p>The name of the global table to describe.</p>
     #[doc(hidden)]
     pub global_table_name: std::option::Option<std::string::String>,
 }
 impl DescribeGlobalTableSettingsInput {
     /// <p>The name of the global table to describe.</p>
-    pub fn global_table_name(&self) -> std::option::Option<&str> {
+    pub fn global_table_name(&self) -> std::option::Option<& str> {
         self.global_table_name.as_deref()
     }
 }
 impl DescribeGlobalTableSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalTableSettingsInput`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput).
-    pub fn builder() -> crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder {
         crate::operation::describe_global_table_settings::builders::DescribeGlobalTableSettingsInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DescribeGlobalTableSettingsInputBuilder {
         self
     }
     /// <p>The name of the global table to describe.</p>
-    pub fn set_global_table_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_table_name = input;
-        self
+    pub fn set_global_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_table_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeGlobalTableSettingsInput`](crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_global_table_settings::DescribeGlobalTableSettingsInput {
-                global_table_name: self.global_table_name,
-            },
+                global_table_name: self.global_table_name
+                ,
+            }
         )
     }
 }
+

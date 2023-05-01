@@ -140,3 +140,4 @@ pub use crate::types::_redshift_destination_configuration::RedshiftDestinationCo
 pub use crate::types::_extended_s3_destination_configuration::ExtendedS3DestinationConfigurationBuilder;
 
 pub use crate::types::_kinesis_stream_source_configuration::KinesisStreamSourceConfigurationBuilder;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppAssessmentOutput {
+pub struct DescribeAppAssessmentOutput  {
     /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
     pub assessment: std::option::Option<crate::types::AppAssessment>,
@@ -10,20 +10,18 @@ pub struct DescribeAppAssessmentOutput {
 }
 impl DescribeAppAssessmentOutput {
     /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
-    pub fn assessment(&self) -> std::option::Option<&crate::types::AppAssessment> {
+    pub fn assessment(&self) -> std::option::Option<& crate::types::AppAssessment> {
         self.assessment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAppAssessmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAppAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppAssessmentOutput`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_assessment::builders::DescribeAppAssessmentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_assessment::builders::DescribeAppAssessmentOutputBuilder {
         crate::operation::describe_app_assessment::builders::DescribeAppAssessmentOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl DescribeAppAssessmentOutputBuilder {
         self
     }
     /// <p>The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.</p>
-    pub fn set_assessment(
-        mut self,
-        input: std::option::Option<crate::types::AppAssessment>,
-    ) -> Self {
-        self.assessment = input;
-        self
+    pub fn set_assessment(mut self, input: std::option::Option<crate::types::AppAssessment>) -> Self {
+        self.assessment = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAppAssessmentOutput`](crate::operation::describe_app_assessment::DescribeAppAssessmentOutput).
     pub fn build(self) -> crate::operation::describe_app_assessment::DescribeAppAssessmentOutput {
         crate::operation::describe_app_assessment::DescribeAppAssessmentOutput {
-            assessment: self.assessment,
+            assessment: self.assessment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

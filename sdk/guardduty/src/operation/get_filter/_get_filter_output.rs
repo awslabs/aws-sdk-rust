@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFilterOutput {
+pub struct GetFilterOutput  {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -20,21 +20,20 @@ pub struct GetFilterOutput {
     pub finding_criteria: std::option::Option<crate::types::FindingCriteria>,
     /// <p>The tags of the filter resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFilterOutput {
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the filter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::FilterAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::FilterAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
@@ -42,22 +41,19 @@ impl GetFilterOutput {
         self.rank
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    pub fn finding_criteria(&self) -> std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
     /// <p>The tags of the filter resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFilterOutput {
     /// Creates a new builder-style object to manufacture [`GetFilterOutput`](crate::operation::get_filter::GetFilterOutput).
     pub fn builder() -> crate::operation::get_filter::builders::GetFilterOutputBuilder {
@@ -74,8 +70,7 @@ pub struct GetFilterOutputBuilder {
     pub(crate) action: std::option::Option<crate::types::FilterAction>,
     pub(crate) rank: std::option::Option<i32>,
     pub(crate) finding_criteria: std::option::Option<crate::types::FindingCriteria>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetFilterOutputBuilder {
@@ -86,8 +81,7 @@ impl GetFilterOutputBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the filter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +90,7 @@ impl GetFilterOutputBuilder {
     }
     /// <p>The description of the filter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
@@ -106,8 +99,7 @@ impl GetFilterOutputBuilder {
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::FilterAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn rank(mut self, input: i32) -> Self {
@@ -116,8 +108,7 @@ impl GetFilterOutputBuilder {
     }
     /// <p>Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.</p>
     pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
-        self.rank = input;
-        self
+        self.rank = input; self
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
@@ -125,57 +116,51 @@ impl GetFilterOutputBuilder {
         self
     }
     /// <p>Represents the criteria to be used in the filter for querying findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
-        self.finding_criteria = input;
-        self
+    pub fn set_finding_criteria(mut self, input: std::option::Option<crate::types::FindingCriteria>) -> Self {
+        self.finding_criteria = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the filter resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags of the filter resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFilterOutput`](crate::operation::get_filter::GetFilterOutput).
     pub fn build(self) -> crate::operation::get_filter::GetFilterOutput {
         crate::operation::get_filter::GetFilterOutput {
-            name: self.name,
-            description: self.description,
-            action: self.action,
-            rank: self.rank.unwrap_or_default(),
-            finding_criteria: self.finding_criteria,
-            tags: self.tags,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            action: self.action
+            ,
+            rank: self.rank
+                .unwrap_or_default()
+            ,
+            finding_criteria: self.finding_criteria
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

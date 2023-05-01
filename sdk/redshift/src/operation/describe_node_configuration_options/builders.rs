@@ -4,64 +4,55 @@ pub use crate::operation::describe_node_configuration_options::_describe_node_co
 pub use crate::operation::describe_node_configuration_options::_describe_node_configuration_options_input::DescribeNodeConfigurationOptionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeNodeConfigurationOptions`.
-///
+/// 
 /// <p>Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNodeConfigurationOptionsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsInputBuilder
             }
-impl DescribeNodeConfigurationOptionsFluentBuilder {
+impl DescribeNodeConfigurationOptionsFluentBuilder  {
     /// Creates a new `DescribeNodeConfigurationOptions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptions, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptionsError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator{
-        crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator {
+                            crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.inner = self.inner.action_type(input);
@@ -78,10 +69,7 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self
     }
     /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
@@ -91,10 +79,7 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self
     }
     /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
@@ -128,10 +113,7 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self
     }
     /// <p>A set of name, operator, and value items to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::NodeConfigurationOptionsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -145,18 +127,19 @@ impl DescribeNodeConfigurationOptionsFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
-    /// <p>Default: <code>500</code> </p>
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> 
+    /// <p>Default: <code>500</code> </p> 
     /// <p>Constraints: minimum 100, maximum 500.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
-    /// <p>Default: <code>500</code> </p>
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> 
+    /// <p>Default: <code>500</code> </p> 
     /// <p>Constraints: minimum 100, maximum 500.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
 }
+

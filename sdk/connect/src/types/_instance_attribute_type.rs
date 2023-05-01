@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instanceattributetype = unimplemented!();
 /// match instanceattributetype {
@@ -38,22 +38,14 @@
 /// Specifically, when `instanceattributetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceAttributeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     AutoResolveBestVoices,
@@ -76,69 +68,57 @@ pub enum InstanceAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     UseCustomTtsVoices,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO_RESOLVE_BEST_VOICES" => InstanceAttributeType::AutoResolveBestVoices,
-            "CONTACTFLOW_LOGS" => InstanceAttributeType::ContactflowLogs,
-            "CONTACT_LENS" => InstanceAttributeType::ContactLens,
-            "EARLY_MEDIA" => InstanceAttributeType::EarlyMedia,
-            "ENHANCED_CONTACT_MONITORING" => InstanceAttributeType::EnhancedContactMonitoring,
-            "HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
-            "INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
-            "MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
-            "OUTBOUND_CALLS" => InstanceAttributeType::OutboundCalls,
-            "USE_CUSTOM_TTS_VOICES" => InstanceAttributeType::UseCustomTtsVoices,
-            other => InstanceAttributeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTO_RESOLVE_BEST_VOICES" => InstanceAttributeType::AutoResolveBestVoices,
+"CONTACTFLOW_LOGS" => InstanceAttributeType::ContactflowLogs,
+"CONTACT_LENS" => InstanceAttributeType::ContactLens,
+"EARLY_MEDIA" => InstanceAttributeType::EarlyMedia,
+"ENHANCED_CONTACT_MONITORING" => InstanceAttributeType::EnhancedContactMonitoring,
+"HIGH_VOLUME_OUTBOUND" => InstanceAttributeType::HighVolumeOutbound,
+"INBOUND_CALLS" => InstanceAttributeType::InboundCalls,
+"MULTI_PARTY_CONFERENCE" => InstanceAttributeType::MultiPartyConference,
+"OUTBOUND_CALLS" => InstanceAttributeType::OutboundCalls,
+"USE_CUSTOM_TTS_VOICES" => InstanceAttributeType::UseCustomTtsVoices,
+other => InstanceAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceAttributeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceAttributeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceAttributeType::from(s))
+                }
+            }
 impl InstanceAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceAttributeType::AutoResolveBestVoices => "AUTO_RESOLVE_BEST_VOICES",
-            InstanceAttributeType::ContactflowLogs => "CONTACTFLOW_LOGS",
-            InstanceAttributeType::ContactLens => "CONTACT_LENS",
-            InstanceAttributeType::EarlyMedia => "EARLY_MEDIA",
-            InstanceAttributeType::EnhancedContactMonitoring => "ENHANCED_CONTACT_MONITORING",
-            InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
-            InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
-            InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
-            InstanceAttributeType::OutboundCalls => "OUTBOUND_CALLS",
-            InstanceAttributeType::UseCustomTtsVoices => "USE_CUSTOM_TTS_VOICES",
-            InstanceAttributeType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTO_RESOLVE_BEST_VOICES",
-            "CONTACTFLOW_LOGS",
-            "CONTACT_LENS",
-            "EARLY_MEDIA",
-            "ENHANCED_CONTACT_MONITORING",
-            "HIGH_VOLUME_OUTBOUND",
-            "INBOUND_CALLS",
-            "MULTI_PARTY_CONFERENCE",
-            "OUTBOUND_CALLS",
-            "USE_CUSTOM_TTS_VOICES",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceAttributeType::AutoResolveBestVoices => "AUTO_RESOLVE_BEST_VOICES",
+    InstanceAttributeType::ContactflowLogs => "CONTACTFLOW_LOGS",
+    InstanceAttributeType::ContactLens => "CONTACT_LENS",
+    InstanceAttributeType::EarlyMedia => "EARLY_MEDIA",
+    InstanceAttributeType::EnhancedContactMonitoring => "ENHANCED_CONTACT_MONITORING",
+    InstanceAttributeType::HighVolumeOutbound => "HIGH_VOLUME_OUTBOUND",
+    InstanceAttributeType::InboundCalls => "INBOUND_CALLS",
+    InstanceAttributeType::MultiPartyConference => "MULTI_PARTY_CONFERENCE",
+    InstanceAttributeType::OutboundCalls => "OUTBOUND_CALLS",
+    InstanceAttributeType::UseCustomTtsVoices => "USE_CUSTOM_TTS_VOICES",
+    InstanceAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO_RESOLVE_BEST_VOICES", "CONTACTFLOW_LOGS", "CONTACT_LENS", "EARLY_MEDIA", "ENHANCED_CONTACT_MONITORING", "HIGH_VOLUME_OUTBOUND", "INBOUND_CALLS", "MULTI_PARTY_CONFERENCE", "OUTBOUND_CALLS", "USE_CUSTOM_TTS_VOICES"]
+                }
+            }
 impl AsRef<str> for InstanceAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

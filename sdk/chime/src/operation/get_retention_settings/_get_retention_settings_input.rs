@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRetentionSettingsInput {
+pub struct GetRetentionSettingsInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetRetentionSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 impl GetRetentionSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetRetentionSettingsInput`](crate::operation::get_retention_settings::GetRetentionSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder {
+    pub fn builder() -> crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder {
         crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetRetentionSettingsInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Consumes the builder and constructs a [`GetRetentionSettingsInput`](crate::operation::get_retention_settings::GetRetentionSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_retention_settings::GetRetentionSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_retention_settings::GetRetentionSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_retention_settings::GetRetentionSettingsInput {
-                account_id: self.account_id,
-            },
+                account_id: self.account_id
+                ,
+            }
         )
     }
 }
+

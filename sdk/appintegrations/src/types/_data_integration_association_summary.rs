@@ -3,7 +3,7 @@
 /// <p>Summary information about the DataIntegration association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataIntegrationAssociationSummary {
+pub struct DataIntegrationAssociationSummary  {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
     #[doc(hidden)]
     pub data_integration_association_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DataIntegrationAssociationSummary {
 }
 impl DataIntegrationAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    pub fn data_integration_association_arn(&self) -> std::option::Option<&str> {
+    pub fn data_integration_association_arn(&self) -> std::option::Option<& str> {
         self.data_integration_association_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn data_integration_arn(&self) -> std::option::Option<&str> {
+    pub fn data_integration_arn(&self) -> std::option::Option<& str> {
         self.data_integration_arn.as_deref()
     }
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
@@ -45,20 +45,13 @@ pub struct DataIntegrationAssociationSummaryBuilder {
 }
 impl DataIntegrationAssociationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    pub fn data_integration_association_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn data_integration_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_integration_association_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
-    pub fn set_data_integration_association_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_integration_association_arn = input;
-        self
+    pub fn set_data_integration_association_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_integration_association_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
     pub fn data_integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,12 +59,8 @@ impl DataIntegrationAssociationSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
-    pub fn set_data_integration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_integration_arn = input;
-        self
+    pub fn set_data_integration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_integration_arn = input; self
     }
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +69,18 @@ impl DataIntegrationAssociationSummaryBuilder {
     }
     /// <p>The identifier for the client that is associated with the DataIntegration association.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Consumes the builder and constructs a [`DataIntegrationAssociationSummary`](crate::types::DataIntegrationAssociationSummary).
     pub fn build(self) -> crate::types::DataIntegrationAssociationSummary {
         crate::types::DataIntegrationAssociationSummary {
-            data_integration_association_arn: self.data_integration_association_arn,
-            data_integration_arn: self.data_integration_arn,
-            client_id: self.client_id,
+            data_integration_association_arn: self.data_integration_association_arn
+            ,
+            data_integration_arn: self.data_integration_arn
+            ,
+            client_id: self.client_id
+            ,
         }
     }
 }
+

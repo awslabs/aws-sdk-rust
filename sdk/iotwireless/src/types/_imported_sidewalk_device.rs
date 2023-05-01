@@ -3,7 +3,7 @@
 /// <p>Information about a Sidewalk device that has been added to an import task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportedSidewalkDevice {
+pub struct ImportedSidewalkDevice  {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
     #[doc(hidden)]
     pub sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ImportedSidewalkDevice {
 }
 impl ImportedSidewalkDevice {
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
-    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<& str> {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The onboarding status of the Sidewalk device in the import task.</p>
-    pub fn onboarding_status(&self) -> std::option::Option<&crate::types::OnboardStatus> {
+    pub fn onboarding_status(&self) -> std::option::Option<& crate::types::OnboardStatus> {
         self.onboarding_status.as_ref()
     }
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
-    pub fn onboarding_status_reason(&self) -> std::option::Option<&str> {
+    pub fn onboarding_status_reason(&self) -> std::option::Option<& str> {
         self.onboarding_status_reason.as_deref()
     }
     /// <p>The time at which the status information was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl ImportedSidewalkDeviceBuilder {
         self
     }
     /// <p>The Sidewalk manufacturing serial number (SMSN) of the Sidewalk device.</p>
-    pub fn set_sidewalk_manufacturing_sn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sidewalk_manufacturing_sn = input;
-        self
+    pub fn set_sidewalk_manufacturing_sn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sidewalk_manufacturing_sn = input; self
     }
     /// <p>The onboarding status of the Sidewalk device in the import task.</p>
     pub fn onboarding_status(mut self, input: crate::types::OnboardStatus) -> Self {
@@ -71,12 +67,8 @@ impl ImportedSidewalkDeviceBuilder {
         self
     }
     /// <p>The onboarding status of the Sidewalk device in the import task.</p>
-    pub fn set_onboarding_status(
-        mut self,
-        input: std::option::Option<crate::types::OnboardStatus>,
-    ) -> Self {
-        self.onboarding_status = input;
-        self
+    pub fn set_onboarding_status(mut self, input: std::option::Option<crate::types::OnboardStatus>) -> Self {
+        self.onboarding_status = input; self
     }
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
     pub fn onboarding_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +76,8 @@ impl ImportedSidewalkDeviceBuilder {
         self
     }
     /// <p>The reason for the onboarding status information for the Sidewalk device.</p>
-    pub fn set_onboarding_status_reason(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.onboarding_status_reason = input;
-        self
+    pub fn set_onboarding_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.onboarding_status_reason = input; self
     }
     /// <p>The time at which the status information was last updated.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -97,20 +85,21 @@ impl ImportedSidewalkDeviceBuilder {
         self
     }
     /// <p>The time at which the status information was last updated.</p>
-    pub fn set_last_update_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_time = input;
-        self
+    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_update_time = input; self
     }
     /// Consumes the builder and constructs a [`ImportedSidewalkDevice`](crate::types::ImportedSidewalkDevice).
     pub fn build(self) -> crate::types::ImportedSidewalkDevice {
         crate::types::ImportedSidewalkDevice {
-            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
-            onboarding_status: self.onboarding_status,
-            onboarding_status_reason: self.onboarding_status_reason,
-            last_update_time: self.last_update_time,
+            sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn
+            ,
+            onboarding_status: self.onboarding_status
+            ,
+            onboarding_status_reason: self.onboarding_status_reason
+            ,
+            last_update_time: self.last_update_time
+            ,
         }
     }
 }
+

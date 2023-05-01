@@ -3,7 +3,7 @@
 /// <p>Contains details for the backup.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackupSummary {
+pub struct BackupSummary  {
     /// <p>Name of the table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -28,11 +28,11 @@ pub struct BackupSummary {
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
     #[doc(hidden)]
     pub backup_status: std::option::Option<crate::types::BackupStatus>,
-    /// <p>BackupType:</p>
-    /// <ul>
-    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li>
-    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
-    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
+    /// <p>BackupType:</p> 
+    /// <ul> 
+    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li> 
+    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li> 
+    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub backup_type: std::option::Option<crate::types::BackupType>,
@@ -42,44 +42,44 @@ pub struct BackupSummary {
 }
 impl BackupSummary {
     /// <p>Name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>Unique identifier for the table.</p>
-    pub fn table_id(&self) -> std::option::Option<&str> {
+    pub fn table_id(&self) -> std::option::Option<& str> {
         self.table_id.as_deref()
     }
     /// <p>ARN associated with the table.</p>
-    pub fn table_arn(&self) -> std::option::Option<&str> {
+    pub fn table_arn(&self) -> std::option::Option<& str> {
         self.table_arn.as_deref()
     }
     /// <p>ARN associated with the backup.</p>
-    pub fn backup_arn(&self) -> std::option::Option<&str> {
+    pub fn backup_arn(&self) -> std::option::Option<& str> {
         self.backup_arn.as_deref()
     }
     /// <p>Name of the specified backup.</p>
-    pub fn backup_name(&self) -> std::option::Option<&str> {
+    pub fn backup_name(&self) -> std::option::Option<& str> {
         self.backup_name.as_deref()
     }
     /// <p>Time at which the backup was created.</p>
-    pub fn backup_creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backup_creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backup_creation_date_time.as_ref()
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
-    pub fn backup_expiry_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backup_expiry_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backup_expiry_date_time.as_ref()
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
-    pub fn backup_status(&self) -> std::option::Option<&crate::types::BackupStatus> {
+    pub fn backup_status(&self) -> std::option::Option<& crate::types::BackupStatus> {
         self.backup_status.as_ref()
     }
-    /// <p>BackupType:</p>
-    /// <ul>
-    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li>
-    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
-    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
+    /// <p>BackupType:</p> 
+    /// <ul> 
+    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li> 
+    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li> 
+    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li> 
     /// </ul>
-    pub fn backup_type(&self) -> std::option::Option<&crate::types::BackupType> {
+    pub fn backup_type(&self) -> std::option::Option<& crate::types::BackupType> {
         self.backup_type.as_ref()
     }
     /// <p>Size of the backup in bytes.</p>
@@ -117,8 +117,7 @@ impl BackupSummaryBuilder {
     }
     /// <p>Name of the table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>Unique identifier for the table.</p>
     pub fn table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +126,7 @@ impl BackupSummaryBuilder {
     }
     /// <p>Unique identifier for the table.</p>
     pub fn set_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_id = input;
-        self
+        self.table_id = input; self
     }
     /// <p>ARN associated with the table.</p>
     pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +135,7 @@ impl BackupSummaryBuilder {
     }
     /// <p>ARN associated with the table.</p>
     pub fn set_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_arn = input;
-        self
+        self.table_arn = input; self
     }
     /// <p>ARN associated with the backup.</p>
     pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +144,7 @@ impl BackupSummaryBuilder {
     }
     /// <p>ARN associated with the backup.</p>
     pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_arn = input;
-        self
+        self.backup_arn = input; self
     }
     /// <p>Name of the specified backup.</p>
     pub fn backup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +153,7 @@ impl BackupSummaryBuilder {
     }
     /// <p>Name of the specified backup.</p>
     pub fn set_backup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_name = input;
-        self
+        self.backup_name = input; self
     }
     /// <p>Time at which the backup was created.</p>
     pub fn backup_creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -166,12 +161,8 @@ impl BackupSummaryBuilder {
         self
     }
     /// <p>Time at which the backup was created.</p>
-    pub fn set_backup_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.backup_creation_date_time = input;
-        self
+    pub fn set_backup_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.backup_creation_date_time = input; self
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
     pub fn backup_expiry_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -179,12 +170,8 @@ impl BackupSummaryBuilder {
         self
     }
     /// <p>Time at which the automatic on-demand backup created by DynamoDB will expire. This <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.</p>
-    pub fn set_backup_expiry_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.backup_expiry_date_time = input;
-        self
+    pub fn set_backup_expiry_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.backup_expiry_date_time = input; self
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
     pub fn backup_status(mut self, input: crate::types::BackupStatus) -> Self {
@@ -192,32 +179,27 @@ impl BackupSummaryBuilder {
         self
     }
     /// <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
-    pub fn set_backup_status(
-        mut self,
-        input: std::option::Option<crate::types::BackupStatus>,
-    ) -> Self {
-        self.backup_status = input;
-        self
+    pub fn set_backup_status(mut self, input: std::option::Option<crate::types::BackupStatus>) -> Self {
+        self.backup_status = input; self
     }
-    /// <p>BackupType:</p>
-    /// <ul>
-    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li>
-    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
-    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
+    /// <p>BackupType:</p> 
+    /// <ul> 
+    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li> 
+    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li> 
+    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li> 
     /// </ul>
     pub fn backup_type(mut self, input: crate::types::BackupType) -> Self {
         self.backup_type = Some(input);
         self
     }
-    /// <p>BackupType:</p>
-    /// <ul>
-    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li>
-    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li>
-    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li>
+    /// <p>BackupType:</p> 
+    /// <ul> 
+    /// <li> <p> <code>USER</code> - You create and manage these using the on-demand backup feature.</p> </li> 
+    /// <li> <p> <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled, a <code>SYSTEM</code> backup is automatically created and is retained for 35 days (at no additional cost). System backups allow you to restore the deleted table to the state it was in just before the point of deletion. </p> </li> 
+    /// <li> <p> <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.</p> </li> 
     /// </ul>
     pub fn set_backup_type(mut self, input: std::option::Option<crate::types::BackupType>) -> Self {
-        self.backup_type = input;
-        self
+        self.backup_type = input; self
     }
     /// <p>Size of the backup in bytes.</p>
     pub fn backup_size_bytes(mut self, input: i64) -> Self {
@@ -226,22 +208,32 @@ impl BackupSummaryBuilder {
     }
     /// <p>Size of the backup in bytes.</p>
     pub fn set_backup_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.backup_size_bytes = input;
-        self
+        self.backup_size_bytes = input; self
     }
     /// Consumes the builder and constructs a [`BackupSummary`](crate::types::BackupSummary).
     pub fn build(self) -> crate::types::BackupSummary {
         crate::types::BackupSummary {
-            table_name: self.table_name,
-            table_id: self.table_id,
-            table_arn: self.table_arn,
-            backup_arn: self.backup_arn,
-            backup_name: self.backup_name,
-            backup_creation_date_time: self.backup_creation_date_time,
-            backup_expiry_date_time: self.backup_expiry_date_time,
-            backup_status: self.backup_status,
-            backup_type: self.backup_type,
-            backup_size_bytes: self.backup_size_bytes,
+            table_name: self.table_name
+            ,
+            table_id: self.table_id
+            ,
+            table_arn: self.table_arn
+            ,
+            backup_arn: self.backup_arn
+            ,
+            backup_name: self.backup_name
+            ,
+            backup_creation_date_time: self.backup_creation_date_time
+            ,
+            backup_expiry_date_time: self.backup_expiry_date_time
+            ,
+            backup_status: self.backup_status
+            ,
+            backup_type: self.backup_type
+            ,
+            backup_size_bytes: self.backup_size_bytes
+            ,
         }
     }
 }
+

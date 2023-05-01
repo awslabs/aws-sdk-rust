@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReportDefinitionsOutput {
+pub struct ListReportDefinitionsOutput  {
     /// <p>The retrieved reports.</p>
     #[doc(hidden)]
     pub report_definitions: std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
@@ -13,24 +13,22 @@ pub struct ListReportDefinitionsOutput {
 }
 impl ListReportDefinitionsOutput {
     /// <p>The retrieved reports.</p>
-    pub fn report_definitions(&self) -> std::option::Option<&[crate::types::ReportDefinition]> {
+    pub fn report_definitions(&self) -> std::option::Option<& [crate::types::ReportDefinition]> {
         self.report_definitions.as_deref()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReportDefinitionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListReportDefinitionsOutput {
     /// Creates a new builder-style object to manufacture [`ListReportDefinitionsOutput`](crate::operation::list_report_definitions::ListReportDefinitionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder {
         crate::operation::list_report_definitions::builders::ListReportDefinitionsOutputBuilder::default()
     }
 }
@@ -39,8 +37,7 @@ impl ListReportDefinitionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListReportDefinitionsOutputBuilder {
-    pub(crate) report_definitions:
-        std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
+    pub(crate) report_definitions: std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl ListReportDefinitionsOutputBuilder {
     /// <p>The retrieved reports.</p>
     pub fn report_definitions(mut self, input: crate::types::ReportDefinition) -> Self {
         let mut v = self.report_definitions.unwrap_or_default();
-        v.push(input);
-        self.report_definitions = Some(v);
-        self
+                        v.push(input);
+                        self.report_definitions = Some(v);
+                        self
     }
     /// <p>The retrieved reports.</p>
-    pub fn set_report_definitions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>,
-    ) -> Self {
-        self.report_definitions = input;
-        self
+    pub fn set_report_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReportDefinition>>) -> Self {
+        self.report_definitions = input; self
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +64,26 @@ impl ListReportDefinitionsOutputBuilder {
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListReportDefinitionsOutput`](crate::operation::list_report_definitions::ListReportDefinitionsOutput).
     pub fn build(self) -> crate::operation::list_report_definitions::ListReportDefinitionsOutput {
         crate::operation::list_report_definitions::ListReportDefinitionsOutput {
-            report_definitions: self.report_definitions,
-            next_token: self.next_token,
+            report_definitions: self.report_definitions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

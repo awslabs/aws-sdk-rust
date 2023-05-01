@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTableVersionOutput {
+pub struct DeleteTableVersionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteTableVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteTableVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTableVersionOutput`](crate::operation::delete_table_version::DeleteTableVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_table_version::builders::DeleteTableVersionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_table_version::builders::DeleteTableVersionOutputBuilder {
         crate::operation::delete_table_version::builders::DeleteTableVersionOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteTableVersionOutputBuilder {
 }
 impl DeleteTableVersionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteTableVersionOutput`](crate::operation::delete_table_version::DeleteTableVersionOutput).
     pub fn build(self) -> crate::operation::delete_table_version::DeleteTableVersionOutput {
         crate::operation::delete_table_version::DeleteTableVersionOutput {
@@ -41,3 +40,4 @@ impl DeleteTableVersionOutputBuilder {
         }
     }
 }
+

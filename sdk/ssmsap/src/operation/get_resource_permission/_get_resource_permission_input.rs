@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePermissionInput {
+pub struct GetResourcePermissionInput  {
     /// <p></p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::types::PermissionActionType>,
@@ -12,19 +12,17 @@ pub struct GetResourcePermissionInput {
 }
 impl GetResourcePermissionInput {
     /// <p></p>
-    pub fn action_type(&self) -> std::option::Option<&crate::types::PermissionActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::types::PermissionActionType> {
         self.action_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl GetResourcePermissionInput {
     /// Creates a new builder-style object to manufacture [`GetResourcePermissionInput`](crate::operation::get_resource_permission::GetResourcePermissionInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_permission::builders::GetResourcePermissionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resource_permission::builders::GetResourcePermissionInputBuilder {
         crate::operation::get_resource_permission::builders::GetResourcePermissionInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl GetResourcePermissionInputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_action_type(
-        mut self,
-        input: std::option::Option<crate::types::PermissionActionType>,
-    ) -> Self {
-        self.action_type = input;
-        self
+    pub fn set_action_type(mut self, input: std::option::Option<crate::types::PermissionActionType>) -> Self {
+        self.action_type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl GetResourcePermissionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetResourcePermissionInput`](crate::operation::get_resource_permission::GetResourcePermissionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resource_permission::GetResourcePermissionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_resource_permission::GetResourcePermissionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_resource_permission::GetResourcePermissionInput {
-                action_type: self.action_type,
-                resource_arn: self.resource_arn,
-            },
+                action_type: self.action_type
+                ,
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

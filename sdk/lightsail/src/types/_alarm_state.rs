@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alarmstate = unimplemented!();
 /// match alarmstate {
@@ -31,22 +31,14 @@
 /// Specifically, when `alarmstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlarmState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlarmState {
     #[allow(missing_docs)] // documentation missing in model
     Alarm,
@@ -55,42 +47,43 @@ pub enum AlarmState {
     #[allow(missing_docs)] // documentation missing in model
     Ok,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlarmState {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALARM" => AlarmState::Alarm,
-            "INSUFFICIENT_DATA" => AlarmState::InsufficientData,
-            "OK" => AlarmState::Ok,
-            other => AlarmState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALARM" => AlarmState::Alarm,
+"INSUFFICIENT_DATA" => AlarmState::InsufficientData,
+"OK" => AlarmState::Ok,
+other => AlarmState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AlarmState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlarmState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlarmState::from(s))
+                }
+            }
 impl AlarmState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AlarmState::Alarm => "ALARM",
-            AlarmState::InsufficientData => "INSUFFICIENT_DATA",
-            AlarmState::Ok => "OK",
-            AlarmState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ALARM", "INSUFFICIENT_DATA", "OK"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AlarmState::Alarm => "ALARM",
+    AlarmState::InsufficientData => "INSUFFICIENT_DATA",
+    AlarmState::Ok => "OK",
+    AlarmState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALARM", "INSUFFICIENT_DATA", "OK"]
+                }
+            }
 impl AsRef<str> for AlarmState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

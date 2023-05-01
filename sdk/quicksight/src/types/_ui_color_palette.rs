@@ -3,7 +3,7 @@
 /// <p>The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UiColorPalette {
+pub struct UiColorPalette  {
     /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
     #[doc(hidden)]
     pub primary_foreground: std::option::Option<std::string::String>,
@@ -55,67 +55,67 @@ pub struct UiColorPalette {
 }
 impl UiColorPalette {
     /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
-    pub fn primary_foreground(&self) -> std::option::Option<&str> {
+    pub fn primary_foreground(&self) -> std::option::Option<& str> {
         self.primary_foreground.as_deref()
     }
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
-    pub fn primary_background(&self) -> std::option::Option<&str> {
+    pub fn primary_background(&self) -> std::option::Option<& str> {
         self.primary_background.as_deref()
     }
     /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
-    pub fn secondary_foreground(&self) -> std::option::Option<&str> {
+    pub fn secondary_foreground(&self) -> std::option::Option<& str> {
         self.secondary_foreground.as_deref()
     }
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
-    pub fn secondary_background(&self) -> std::option::Option<&str> {
+    pub fn secondary_background(&self) -> std::option::Option<& str> {
         self.secondary_background.as_deref()
     }
     /// <p>This color is that applies to selected states and buttons.</p>
-    pub fn accent(&self) -> std::option::Option<&str> {
+    pub fn accent(&self) -> std::option::Option<& str> {
         self.accent.as_deref()
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
-    pub fn accent_foreground(&self) -> std::option::Option<&str> {
+    pub fn accent_foreground(&self) -> std::option::Option<& str> {
         self.accent_foreground.as_deref()
     }
     /// <p>The color that applies to error messages.</p>
-    pub fn danger(&self) -> std::option::Option<&str> {
+    pub fn danger(&self) -> std::option::Option<& str> {
         self.danger.as_deref()
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
-    pub fn danger_foreground(&self) -> std::option::Option<&str> {
+    pub fn danger_foreground(&self) -> std::option::Option<& str> {
         self.danger_foreground.as_deref()
     }
     /// <p>This color that applies to warning and informational messages.</p>
-    pub fn warning(&self) -> std::option::Option<&str> {
+    pub fn warning(&self) -> std::option::Option<& str> {
         self.warning.as_deref()
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
-    pub fn warning_foreground(&self) -> std::option::Option<&str> {
+    pub fn warning_foreground(&self) -> std::option::Option<& str> {
         self.warning_foreground.as_deref()
     }
     /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
-    pub fn success(&self) -> std::option::Option<&str> {
+    pub fn success(&self) -> std::option::Option<& str> {
         self.success.as_deref()
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
-    pub fn success_foreground(&self) -> std::option::Option<&str> {
+    pub fn success_foreground(&self) -> std::option::Option<& str> {
         self.success_foreground.as_deref()
     }
     /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
-    pub fn dimension(&self) -> std::option::Option<&str> {
+    pub fn dimension(&self) -> std::option::Option<& str> {
         self.dimension.as_deref()
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
-    pub fn dimension_foreground(&self) -> std::option::Option<&str> {
+    pub fn dimension_foreground(&self) -> std::option::Option<& str> {
         self.dimension_foreground.as_deref()
     }
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
-    pub fn measure(&self) -> std::option::Option<&str> {
+    pub fn measure(&self) -> std::option::Option<& str> {
         self.measure.as_deref()
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
-    pub fn measure_foreground(&self) -> std::option::Option<&str> {
+    pub fn measure_foreground(&self) -> std::option::Option<& str> {
         self.measure_foreground.as_deref()
     }
 }
@@ -154,12 +154,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The color of text and other foreground elements that appear over the primary background regions, such as grid lines, borders, table banding, icons, and so on.</p>
-    pub fn set_primary_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.primary_foreground = input;
-        self
+    pub fn set_primary_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.primary_foreground = input; self
     }
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
     pub fn primary_background(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,12 +163,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The background color that applies to visuals and other high emphasis UI.</p>
-    pub fn set_primary_background(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.primary_background = input;
-        self
+    pub fn set_primary_background(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.primary_background = input; self
     }
     /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
     pub fn secondary_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,12 +172,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any sheet title, sheet control text, or UI that appears over the secondary background.</p>
-    pub fn set_secondary_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secondary_foreground = input;
-        self
+    pub fn set_secondary_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secondary_foreground = input; self
     }
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
     pub fn secondary_background(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,12 +181,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The background color that applies to the sheet background and sheet controls.</p>
-    pub fn set_secondary_background(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secondary_background = input;
-        self
+    pub fn set_secondary_background(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secondary_background = input; self
     }
     /// <p>This color is that applies to selected states and buttons.</p>
     pub fn accent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,8 +191,7 @@ impl UiColorPaletteBuilder {
     }
     /// <p>This color is that applies to selected states and buttons.</p>
     pub fn set_accent(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accent = input;
-        self
+        self.accent = input; self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
     pub fn accent_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,12 +199,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the accent color.</p>
-    pub fn set_accent_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.accent_foreground = input;
-        self
+    pub fn set_accent_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.accent_foreground = input; self
     }
     /// <p>The color that applies to error messages.</p>
     pub fn danger(mut self, input: impl Into<std::string::String>) -> Self {
@@ -230,8 +209,7 @@ impl UiColorPaletteBuilder {
     }
     /// <p>The color that applies to error messages.</p>
     pub fn set_danger(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.danger = input;
-        self
+        self.danger = input; self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
     pub fn danger_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -239,12 +217,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the error color.</p>
-    pub fn set_danger_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.danger_foreground = input;
-        self
+    pub fn set_danger_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.danger_foreground = input; self
     }
     /// <p>This color that applies to warning and informational messages.</p>
     pub fn warning(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,8 +227,7 @@ impl UiColorPaletteBuilder {
     }
     /// <p>This color that applies to warning and informational messages.</p>
     pub fn set_warning(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.warning = input;
-        self
+        self.warning = input; self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
     pub fn warning_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,12 +235,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the warning color.</p>
-    pub fn set_warning_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.warning_foreground = input;
-        self
+    pub fn set_warning_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.warning_foreground = input; self
     }
     /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
     pub fn success(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,8 +245,7 @@ impl UiColorPaletteBuilder {
     }
     /// <p>The color that applies to success messages, for example the check mark for a successful download.</p>
     pub fn set_success(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.success = input;
-        self
+        self.success = input; self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
     pub fn success_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -285,12 +253,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the success color.</p>
-    pub fn set_success_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.success_foreground = input;
-        self
+    pub fn set_success_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.success_foreground = input; self
     }
     /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
     pub fn dimension(mut self, input: impl Into<std::string::String>) -> Self {
@@ -299,8 +263,7 @@ impl UiColorPaletteBuilder {
     }
     /// <p>The color that applies to the names of fields that are identified as dimensions.</p>
     pub fn set_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dimension = input;
-        self
+        self.dimension = input; self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
     pub fn dimension_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -308,12 +271,8 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the dimension color.</p>
-    pub fn set_dimension_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dimension_foreground = input;
-        self
+    pub fn set_dimension_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dimension_foreground = input; self
     }
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
     pub fn measure(mut self, input: impl Into<std::string::String>) -> Self {
@@ -322,8 +281,7 @@ impl UiColorPaletteBuilder {
     }
     /// <p>The color that applies to the names of fields that are identified as measures.</p>
     pub fn set_measure(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.measure = input;
-        self
+        self.measure = input; self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
     pub fn measure_foreground(mut self, input: impl Into<std::string::String>) -> Self {
@@ -331,32 +289,45 @@ impl UiColorPaletteBuilder {
         self
     }
     /// <p>The foreground color that applies to any text or other elements that appear over the measure color.</p>
-    pub fn set_measure_foreground(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.measure_foreground = input;
-        self
+    pub fn set_measure_foreground(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.measure_foreground = input; self
     }
     /// Consumes the builder and constructs a [`UiColorPalette`](crate::types::UiColorPalette).
     pub fn build(self) -> crate::types::UiColorPalette {
         crate::types::UiColorPalette {
-            primary_foreground: self.primary_foreground,
-            primary_background: self.primary_background,
-            secondary_foreground: self.secondary_foreground,
-            secondary_background: self.secondary_background,
-            accent: self.accent,
-            accent_foreground: self.accent_foreground,
-            danger: self.danger,
-            danger_foreground: self.danger_foreground,
-            warning: self.warning,
-            warning_foreground: self.warning_foreground,
-            success: self.success,
-            success_foreground: self.success_foreground,
-            dimension: self.dimension,
-            dimension_foreground: self.dimension_foreground,
-            measure: self.measure,
-            measure_foreground: self.measure_foreground,
+            primary_foreground: self.primary_foreground
+            ,
+            primary_background: self.primary_background
+            ,
+            secondary_foreground: self.secondary_foreground
+            ,
+            secondary_background: self.secondary_background
+            ,
+            accent: self.accent
+            ,
+            accent_foreground: self.accent_foreground
+            ,
+            danger: self.danger
+            ,
+            danger_foreground: self.danger_foreground
+            ,
+            warning: self.warning
+            ,
+            warning_foreground: self.warning_foreground
+            ,
+            success: self.success
+            ,
+            success_foreground: self.success_foreground
+            ,
+            dimension: self.dimension
+            ,
+            dimension_foreground: self.dimension_foreground
+            ,
+            measure: self.measure
+            ,
+            measure_foreground: self.measure_foreground
+            ,
         }
     }
 }
+

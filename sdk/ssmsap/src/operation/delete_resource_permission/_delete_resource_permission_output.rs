@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePermissionOutput {
+pub struct DeleteResourcePermissionOutput  {
     /// <p>The policy that removes permissions on the target database.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct DeleteResourcePermissionOutput {
 }
 impl DeleteResourcePermissionOutput {
     /// <p>The policy that removes permissions on the target database.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteResourcePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_permission::builders::DeleteResourcePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_resource_permission::builders::DeleteResourcePermissionOutputBuilder {
         crate::operation::delete_resource_permission::builders::DeleteResourcePermissionOutputBuilder::default()
     }
 }
@@ -43,25 +41,24 @@ impl DeleteResourcePermissionOutputBuilder {
     }
     /// <p>The policy that removes permissions on the target database.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteResourcePermissionOutput`](crate::operation::delete_resource_permission::DeleteResourcePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_resource_permission::DeleteResourcePermissionOutput {
+    pub fn build(self) -> crate::operation::delete_resource_permission::DeleteResourcePermissionOutput {
         crate::operation::delete_resource_permission::DeleteResourcePermissionOutput {
-            policy: self.policy,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyOutput {
+pub struct GetPolicyOutput  {
     /// <p>Information about the specified Firewall Manager policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::types::Policy>,
@@ -13,19 +13,19 @@ pub struct GetPolicyOutput {
 }
 impl GetPolicyOutput {
     /// <p>Information about the specified Firewall Manager policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::types::Policy> {
         self.policy.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     pub fn builder() -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
@@ -49,8 +49,7 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>Information about the specified Firewall Manager policy.</p>
     pub fn set_policy(mut self, input: std::option::Option<crate::types::Policy>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl GetPolicyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetPolicyOutput`](crate::operation::get_policy::GetPolicyOutput).
     pub fn build(self) -> crate::operation::get_policy::GetPolicyOutput {
         crate::operation::get_policy::GetPolicyOutput {
-            policy: self.policy,
-            policy_arn: self.policy_arn,
+            policy: self.policy
+            ,
+            policy_arn: self.policy_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

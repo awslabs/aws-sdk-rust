@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsInput {
+pub struct ListTagsInput  {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListTagsInput {
 }
 impl ListTagsInput {
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
@@ -23,7 +23,7 @@ impl ListTagsInput {
         self.max_results
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ListTagsInputBuilder {
     }
     /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListTagsInputBuilder {
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,21 @@ impl ListTagsInputBuilder {
     }
     /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tags::ListTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_tags::ListTagsInput {
-            resource_arn: self.resource_arn,
-            max_results: self.max_results.unwrap_or_default(),
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_tags::ListTagsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_tags::ListTagsInput {
+                resource_arn: self.resource_arn
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

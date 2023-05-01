@@ -4,92 +4,62 @@ pub use crate::operation::list_image_versions::_list_image_versions_output::List
 pub use crate::operation::list_image_versions::_list_image_versions_input::ListImageVersionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListImageVersions`.
-///
+/// 
 /// <p>Lists the versions of a specified image and their properties. The list can be filtered by creation time or modified time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageVersionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder,
-}
-impl ListImageVersionsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder
+            }
+impl ListImageVersionsFluentBuilder  {
     /// Creates a new `ListImageVersions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_image_versions::ListImageVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_image_versions::ListImageVersionsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_image_versions::ListImageVersionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_image_versions::ListImageVersions, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_image_versions::ListImageVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_image_versions::ListImageVersionsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_image_versions::paginator::ListImageVersionsPaginator {
-        crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_image_versions::paginator::ListImageVersionsPaginator {
+                            crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>A filter that returns only versions created on or after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only versions created on or after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -99,10 +69,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions created on or before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -122,10 +89,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions modified on or after the specified time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -135,10 +99,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>A filter that returns only versions modified on or before the specified time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -168,10 +129,7 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::ImageVersionSortBy>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ImageVersionSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -181,11 +139,9 @@ impl ListImageVersionsFluentBuilder {
         self
     }
     /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: std::option::Option<crate::types::ImageVersionSortOrder>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::ImageVersionSortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
 }
+

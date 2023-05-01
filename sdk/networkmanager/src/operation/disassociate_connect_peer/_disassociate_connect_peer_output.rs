@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateConnectPeerOutput {
+pub struct DisassociateConnectPeerOutput  {
     /// <p>Describes the Connect peer association.</p>
     #[doc(hidden)]
     pub connect_peer_association: std::option::Option<crate::types::ConnectPeerAssociation>,
@@ -10,22 +10,18 @@ pub struct DisassociateConnectPeerOutput {
 }
 impl DisassociateConnectPeerOutput {
     /// <p>Describes the Connect peer association.</p>
-    pub fn connect_peer_association(
-        &self,
-    ) -> std::option::Option<&crate::types::ConnectPeerAssociation> {
+    pub fn connect_peer_association(&self) -> std::option::Option<& crate::types::ConnectPeerAssociation> {
         self.connect_peer_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateConnectPeerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerOutput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerOutputBuilder {
         crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerOutputBuilder::default()
     }
 }
@@ -44,29 +40,25 @@ impl DisassociateConnectPeerOutputBuilder {
         self
     }
     /// <p>Describes the Connect peer association.</p>
-    pub fn set_connect_peer_association(
-        mut self,
-        input: std::option::Option<crate::types::ConnectPeerAssociation>,
-    ) -> Self {
-        self.connect_peer_association = input;
-        self
+    pub fn set_connect_peer_association(mut self, input: std::option::Option<crate::types::ConnectPeerAssociation>) -> Self {
+        self.connect_peer_association = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateConnectPeerOutput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput {
+    pub fn build(self) -> crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput {
         crate::operation::disassociate_connect_peer::DisassociateConnectPeerOutput {
-            connect_peer_association: self.connect_peer_association,
+            connect_peer_association: self.connect_peer_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

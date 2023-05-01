@@ -3,7 +3,7 @@
 /// <p>Request to create or update a group of environments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComposeEnvironmentsInput {
+pub struct ComposeEnvironmentsInput  {
     /// <p>The name of the application to which the specified source bundles belong.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct ComposeEnvironmentsInput {
 }
 impl ComposeEnvironmentsInput {
     /// <p>The name of the application to which the specified source bundles belong.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
-    pub fn version_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn version_labels(&self) -> std::option::Option<& [std::string::String]> {
         self.version_labels.as_deref()
     }
 }
 impl ComposeEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ComposeEnvironmentsInput`](crate::operation::compose_environments::ComposeEnvironmentsInput).
-    pub fn builder(
-    ) -> crate::operation::compose_environments::builders::ComposeEnvironmentsInputBuilder {
+    pub fn builder() -> crate::operation::compose_environments::builders::ComposeEnvironmentsInputBuilder {
         crate::operation::compose_environments::builders::ComposeEnvironmentsInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl ComposeEnvironmentsInputBuilder {
     }
     /// <p>The name of the application to which the specified source bundles belong.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl ComposeEnvironmentsInputBuilder {
     }
     /// <p>The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// Appends an item to `version_labels`.
     ///
@@ -72,31 +69,26 @@ impl ComposeEnvironmentsInputBuilder {
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
     pub fn version_labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.version_labels.unwrap_or_default();
-        v.push(input.into());
-        self.version_labels = Some(v);
-        self
+                        v.push(input.into());
+                        self.version_labels = Some(v);
+                        self
     }
     /// <p>A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</p>
-    pub fn set_version_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.version_labels = input;
-        self
+    pub fn set_version_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.version_labels = input; self
     }
     /// Consumes the builder and constructs a [`ComposeEnvironmentsInput`](crate::operation::compose_environments::ComposeEnvironmentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::compose_environments::ComposeEnvironmentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::compose_environments::ComposeEnvironmentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::compose_environments::ComposeEnvironmentsInput {
-                application_name: self.application_name,
-                group_name: self.group_name,
-                version_labels: self.version_labels,
-            },
+                application_name: self.application_name
+                ,
+                group_name: self.group_name
+                ,
+                version_labels: self.version_labels
+                ,
+            }
         )
     }
 }
+

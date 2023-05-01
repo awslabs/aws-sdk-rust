@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteComponentOutput {
+pub struct DeleteComponentOutput  {
     /// <p>The detailed data of the component being deleted.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::types::Component>,
@@ -10,15 +10,15 @@ pub struct DeleteComponentOutput {
 }
 impl DeleteComponentOutput {
     /// <p>The detailed data of the component being deleted.</p>
-    pub fn component(&self) -> std::option::Option<&crate::types::Component> {
+    pub fn component(&self) -> std::option::Option<& crate::types::Component> {
         self.component.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteComponentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput).
     pub fn builder() -> crate::operation::delete_component::builders::DeleteComponentOutputBuilder {
@@ -41,23 +41,24 @@ impl DeleteComponentOutputBuilder {
     }
     /// <p>The detailed data of the component being deleted.</p>
     pub fn set_component(mut self, input: std::option::Option<crate::types::Component>) -> Self {
-        self.component = input;
-        self
+        self.component = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteComponentOutput`](crate::operation::delete_component::DeleteComponentOutput).
     pub fn build(self) -> crate::operation::delete_component::DeleteComponentOutput {
         crate::operation::delete_component::DeleteComponentOutput {
-            component: self.component,
+            component: self.component
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

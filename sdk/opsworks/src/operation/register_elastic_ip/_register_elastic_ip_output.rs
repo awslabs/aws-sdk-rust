@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>RegisterElasticIp</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterElasticIpOutput {
+pub struct RegisterElasticIpOutput  {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -11,19 +11,18 @@ pub struct RegisterElasticIpOutput {
 }
 impl RegisterElasticIpOutput {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterElasticIpOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterElasticIpOutput {
     /// Creates a new builder-style object to manufacture [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput).
-    pub fn builder(
-    ) -> crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder {
+    pub fn builder() -> crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder {
         crate::operation::register_elastic_ip::builders::RegisterElasticIpOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl RegisterElasticIpOutputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterElasticIpOutput`](crate::operation::register_elastic_ip::RegisterElasticIpOutput).
     pub fn build(self) -> crate::operation::register_elastic_ip::RegisterElasticIpOutput {
         crate::operation::register_elastic_ip::RegisterElasticIpOutput {
-            elastic_ip: self.elastic_ip,
+            elastic_ip: self.elastic_ip
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

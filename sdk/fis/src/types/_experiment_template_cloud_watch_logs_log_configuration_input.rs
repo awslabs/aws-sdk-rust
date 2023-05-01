@@ -3,21 +3,20 @@
 /// <p>Specifies the configuration for experiment logging to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput {
+pub struct ExperimentTemplateCloudWatchLogsLogConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 impl ExperimentTemplateCloudWatchLogsLogConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
-    pub fn builder(
-    ) -> crate::types::builders::ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
+    pub fn builder() -> crate::types::builders::ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
         crate::types::builders::ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder::default()
     }
 }
@@ -36,13 +35,14 @@ impl ExperimentTemplateCloudWatchLogsLogConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon CloudWatch Logs log group.</p>
     pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_arn = input;
-        self
+        self.log_group_arn = input; self
     }
     /// Consumes the builder and constructs a [`ExperimentTemplateCloudWatchLogsLogConfigurationInput`](crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput).
     pub fn build(self) -> crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
         crate::types::ExperimentTemplateCloudWatchLogsLogConfigurationInput {
-            log_group_arn: self.log_group_arn,
+            log_group_arn: self.log_group_arn
+            ,
         }
     }
 }
+

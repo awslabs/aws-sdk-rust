@@ -3,7 +3,7 @@
 /// <p>Represents the input of a delete branch operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBranchInput {
+pub struct DeleteBranchInput  {
     /// <p>The name of the repository that contains the branch to be deleted.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeleteBranchInput {
 }
 impl DeleteBranchInput {
     /// <p>The name of the repository that contains the branch to be deleted.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the branch to delete.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DeleteBranchInputBuilder {
     }
     /// <p>The name of the repository that contains the branch to be deleted.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The name of the branch to delete.</p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +52,18 @@ impl DeleteBranchInputBuilder {
     }
     /// <p>The name of the branch to delete.</p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::operation::delete_branch::DeleteBranchInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_branch::DeleteBranchInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_branch::DeleteBranchInput {
-            repository_name: self.repository_name,
-            branch_name: self.branch_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_branch::DeleteBranchInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_branch::DeleteBranchInput {
+                repository_name: self.repository_name
+                ,
+                branch_name: self.branch_name
+                ,
+            }
+        )
     }
 }
+

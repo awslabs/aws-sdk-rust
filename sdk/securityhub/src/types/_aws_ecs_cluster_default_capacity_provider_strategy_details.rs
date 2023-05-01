@@ -3,7 +3,7 @@
 /// <p>The default capacity provider strategy for the cluster. The default capacity provider strategy is used when services or tasks are run without a specified launch type or capacity provider strategy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsClusterDefaultCapacityProviderStrategyDetails {
+pub struct AwsEcsClusterDefaultCapacityProviderStrategyDetails  {
     /// <p>The minimum number of tasks to run on the specified capacity provider.</p>
     #[doc(hidden)]
     pub base: i32,
@@ -20,7 +20,7 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
         self.base
     }
     /// <p>The name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+    pub fn capacity_provider(&self) -> std::option::Option<& str> {
         self.capacity_provider.as_deref()
     }
     /// <p>The relative percentage of the total number of tasks launched that should use the capacity provider.</p>
@@ -30,10 +30,8 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
 }
 impl AwsEcsClusterDefaultCapacityProviderStrategyDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
-        crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder::default(
-        )
+    pub fn builder() -> crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
+        crate::types::builders::AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder::default()
     }
 }
 
@@ -53,8 +51,7 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
     }
     /// <p>The minimum number of tasks to run on the specified capacity provider.</p>
     pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// <p>The name of the capacity provider.</p>
     pub fn capacity_provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,12 +59,8 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
         self
     }
     /// <p>The name of the capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capacity_provider = input;
-        self
+    pub fn set_capacity_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capacity_provider = input; self
     }
     /// <p>The relative percentage of the total number of tasks launched that should use the capacity provider.</p>
     pub fn weight(mut self, input: i32) -> Self {
@@ -76,15 +69,20 @@ impl AwsEcsClusterDefaultCapacityProviderStrategyDetailsBuilder {
     }
     /// <p>The relative percentage of the total number of tasks launched that should use the capacity provider.</p>
     pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsClusterDefaultCapacityProviderStrategyDetails`](crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails).
     pub fn build(self) -> crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails {
         crate::types::AwsEcsClusterDefaultCapacityProviderStrategyDetails {
-            base: self.base.unwrap_or_default(),
-            capacity_provider: self.capacity_provider,
-            weight: self.weight.unwrap_or_default(),
+            base: self.base
+                .unwrap_or_default()
+            ,
+            capacity_provider: self.capacity_provider
+            ,
+            weight: self.weight
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

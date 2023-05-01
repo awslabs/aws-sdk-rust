@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatastoreOutput {
+pub struct CreateDatastoreOutput  {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
     pub datastore_name: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateDatastoreOutput {
 }
 impl CreateDatastoreOutput {
     /// <p>The name of the data store.</p>
-    pub fn datastore_name(&self) -> std::option::Option<&str> {
+    pub fn datastore_name(&self) -> std::option::Option<& str> {
         self.datastore_name.as_deref()
     }
     /// <p>The ARN of the data store.</p>
-    pub fn datastore_arn(&self) -> std::option::Option<&str> {
+    pub fn datastore_arn(&self) -> std::option::Option<& str> {
         self.datastore_arn.as_deref()
     }
     /// <p>How long, in days, message data is kept for the data store.</p>
-    pub fn retention_period(&self) -> std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDatastoreOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDatastoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatastoreOutput`](crate::operation::create_datastore::CreateDatastoreOutput).
     pub fn builder() -> crate::operation::create_datastore::builders::CreateDatastoreOutputBuilder {
@@ -57,8 +57,7 @@ impl CreateDatastoreOutputBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_datastore_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_name = input;
-        self
+        self.datastore_name = input; self
     }
     /// <p>The ARN of the data store.</p>
     pub fn datastore_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl CreateDatastoreOutputBuilder {
     }
     /// <p>The ARN of the data store.</p>
     pub fn set_datastore_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_arn = input;
-        self
+        self.datastore_arn = input; self
     }
     /// <p>How long, in days, message data is kept for the data store.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
@@ -76,29 +74,29 @@ impl CreateDatastoreOutputBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the data store.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
-        self.retention_period = input;
-        self
+    pub fn set_retention_period(mut self, input: std::option::Option<crate::types::RetentionPeriod>) -> Self {
+        self.retention_period = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDatastoreOutput`](crate::operation::create_datastore::CreateDatastoreOutput).
     pub fn build(self) -> crate::operation::create_datastore::CreateDatastoreOutput {
         crate::operation::create_datastore::CreateDatastoreOutput {
-            datastore_name: self.datastore_name,
-            datastore_arn: self.datastore_arn,
-            retention_period: self.retention_period,
+            datastore_name: self.datastore_name
+            ,
+            datastore_arn: self.datastore_arn
+            ,
+            retention_period: self.retention_period
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

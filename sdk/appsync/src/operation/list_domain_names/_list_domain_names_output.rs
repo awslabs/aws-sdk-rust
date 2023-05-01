@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainNamesOutput {
+pub struct ListDomainNamesOutput  {
     /// <p>Lists configurations for multiple domain names.</p>
     #[doc(hidden)]
     pub domain_name_configs: std::option::Option<std::vec::Vec<crate::types::DomainNameConfig>>,
@@ -13,23 +13,22 @@ pub struct ListDomainNamesOutput {
 }
 impl ListDomainNamesOutput {
     /// <p>Lists configurations for multiple domain names.</p>
-    pub fn domain_name_configs(&self) -> std::option::Option<&[crate::types::DomainNameConfig]> {
+    pub fn domain_name_configs(&self) -> std::option::Option<& [crate::types::DomainNameConfig]> {
         self.domain_name_configs.as_deref()
     }
     /// <p>The API token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDomainNamesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDomainNamesOutput {
     /// Creates a new builder-style object to manufacture [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput).
-    pub fn builder() -> crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder {
         crate::operation::list_domain_names::builders::ListDomainNamesOutputBuilder::default()
     }
 }
@@ -38,8 +37,7 @@ impl ListDomainNamesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDomainNamesOutputBuilder {
-    pub(crate) domain_name_configs:
-        std::option::Option<std::vec::Vec<crate::types::DomainNameConfig>>,
+    pub(crate) domain_name_configs: std::option::Option<std::vec::Vec<crate::types::DomainNameConfig>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +49,13 @@ impl ListDomainNamesOutputBuilder {
     /// <p>Lists configurations for multiple domain names.</p>
     pub fn domain_name_configs(mut self, input: crate::types::DomainNameConfig) -> Self {
         let mut v = self.domain_name_configs.unwrap_or_default();
-        v.push(input);
-        self.domain_name_configs = Some(v);
-        self
+                        v.push(input);
+                        self.domain_name_configs = Some(v);
+                        self
     }
     /// <p>Lists configurations for multiple domain names.</p>
-    pub fn set_domain_name_configs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainNameConfig>>,
-    ) -> Self {
-        self.domain_name_configs = input;
-        self
+    pub fn set_domain_name_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::DomainNameConfig>>) -> Self {
+        self.domain_name_configs = input; self
     }
     /// <p>The API token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListDomainNamesOutputBuilder {
     }
     /// <p>The API token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput).
     pub fn build(self) -> crate::operation::list_domain_names::ListDomainNamesOutput {
         crate::operation::list_domain_names::ListDomainNamesOutput {
-            domain_name_configs: self.domain_name_configs,
-            next_token: self.next_token,
+            domain_name_configs: self.domain_name_configs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

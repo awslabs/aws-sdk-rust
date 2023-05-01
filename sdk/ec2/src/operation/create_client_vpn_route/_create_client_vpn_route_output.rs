@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClientVpnRouteOutput {
+pub struct CreateClientVpnRouteOutput  {
     /// <p>The current state of the route.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ClientVpnRouteStatus>,
@@ -10,20 +10,18 @@ pub struct CreateClientVpnRouteOutput {
 }
 impl CreateClientVpnRouteOutput {
     /// <p>The current state of the route.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClientVpnRouteStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ClientVpnRouteStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateClientVpnRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateClientVpnRouteOutput {
     /// Creates a new builder-style object to manufacture [`CreateClientVpnRouteOutput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder {
         crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateClientVpnRouteOutputBuilder {
         self
     }
     /// <p>The current state of the route.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ClientVpnRouteStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ClientVpnRouteStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateClientVpnRouteOutput`](crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput).
     pub fn build(self) -> crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput {
         crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

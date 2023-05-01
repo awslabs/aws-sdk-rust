@@ -3,7 +3,7 @@
 /// <p>Information about a position.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Position {
+pub struct Position  {
     /// <p>The latitude of the position.</p>
     #[doc(hidden)]
     pub latitude: std::option::Option<f64>,
@@ -34,11 +34,11 @@ impl Position {
         self.elevation
     }
     /// <p>The units used to measure the elevation of the position.</p>
-    pub fn elevation_unit(&self) -> std::option::Option<&crate::types::ElevationUnit> {
+    pub fn elevation_unit(&self) -> std::option::Option<& crate::types::ElevationUnit> {
         self.elevation_unit.as_ref()
     }
     /// <p>The reference point from which elevation is reported.</p>
-    pub fn elevation_reference(&self) -> std::option::Option<&crate::types::ElevationReference> {
+    pub fn elevation_reference(&self) -> std::option::Option<& crate::types::ElevationReference> {
         self.elevation_reference.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl PositionBuilder {
     }
     /// <p>The latitude of the position.</p>
     pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
-        self.latitude = input;
-        self
+        self.latitude = input; self
     }
     /// <p>The longitude of the position.</p>
     pub fn longitude(mut self, input: f64) -> Self {
@@ -77,8 +76,7 @@ impl PositionBuilder {
     }
     /// <p>The longitude of the position.</p>
     pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
-        self.longitude = input;
-        self
+        self.longitude = input; self
     }
     /// <p>The elevation of the equipment at this position.</p>
     pub fn elevation(mut self, input: f64) -> Self {
@@ -87,8 +85,7 @@ impl PositionBuilder {
     }
     /// <p>The elevation of the equipment at this position.</p>
     pub fn set_elevation(mut self, input: std::option::Option<f64>) -> Self {
-        self.elevation = input;
-        self
+        self.elevation = input; self
     }
     /// <p>The units used to measure the elevation of the position.</p>
     pub fn elevation_unit(mut self, input: crate::types::ElevationUnit) -> Self {
@@ -96,12 +93,8 @@ impl PositionBuilder {
         self
     }
     /// <p>The units used to measure the elevation of the position.</p>
-    pub fn set_elevation_unit(
-        mut self,
-        input: std::option::Option<crate::types::ElevationUnit>,
-    ) -> Self {
-        self.elevation_unit = input;
-        self
+    pub fn set_elevation_unit(mut self, input: std::option::Option<crate::types::ElevationUnit>) -> Self {
+        self.elevation_unit = input; self
     }
     /// <p>The reference point from which elevation is reported.</p>
     pub fn elevation_reference(mut self, input: crate::types::ElevationReference) -> Self {
@@ -109,21 +102,23 @@ impl PositionBuilder {
         self
     }
     /// <p>The reference point from which elevation is reported.</p>
-    pub fn set_elevation_reference(
-        mut self,
-        input: std::option::Option<crate::types::ElevationReference>,
-    ) -> Self {
-        self.elevation_reference = input;
-        self
+    pub fn set_elevation_reference(mut self, input: std::option::Option<crate::types::ElevationReference>) -> Self {
+        self.elevation_reference = input; self
     }
     /// Consumes the builder and constructs a [`Position`](crate::types::Position).
     pub fn build(self) -> crate::types::Position {
         crate::types::Position {
-            latitude: self.latitude,
-            longitude: self.longitude,
-            elevation: self.elevation,
-            elevation_unit: self.elevation_unit,
-            elevation_reference: self.elevation_reference,
+            latitude: self.latitude
+            ,
+            longitude: self.longitude
+            ,
+            elevation: self.elevation
+            ,
+            elevation_unit: self.elevation_unit
+            ,
+            elevation_reference: self.elevation_reference
+            ,
         }
     }
 }
+

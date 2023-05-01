@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDeliveryStreamEncryptionInput {
+pub struct StopDeliveryStreamEncryptionInput  {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
 }
 impl StopDeliveryStreamEncryptionInput {
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
 }
 impl StopDeliveryStreamEncryptionInput {
     /// Creates a new builder-style object to manufacture [`StopDeliveryStreamEncryptionInput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput).
-    pub fn builder() -> crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder{
+    pub fn builder() -> crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder {
         crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl StopDeliveryStreamEncryptionInputBuilder {
         self
     }
     /// <p>The name of the delivery stream for which you want to disable server-side encryption (SSE).</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
     }
     /// Consumes the builder and constructs a [`StopDeliveryStreamEncryptionInput`](crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionInput {
-                delivery_stream_name: self.delivery_stream_name,
-            },
+                delivery_stream_name: self.delivery_stream_name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Summary information for a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RescoreExecutionPlanSummary {
+pub struct RescoreExecutionPlanSummary  {
     /// <p>The name of the rescore execution plan.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RescoreExecutionPlanSummary {
 }
 impl RescoreExecutionPlanSummary {
     /// <p>The name of the rescore execution plan.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the rescore execution plan.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Unix timestamp when the rescore execution plan was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RescoreExecutionPlanStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::RescoreExecutionPlanStatus> {
         self.status.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl RescoreExecutionPlanSummaryBuilder {
     }
     /// <p>The name of the rescore execution plan.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The identifier of the rescore execution plan.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl RescoreExecutionPlanSummaryBuilder {
     }
     /// <p>The identifier of the rescore execution plan.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Unix timestamp when the rescore execution plan was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,12 +84,8 @@ impl RescoreExecutionPlanSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the rescore execution plan was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,12 +93,8 @@ impl RescoreExecutionPlanSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when the rescore execution plan was last updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
     pub fn status(mut self, input: crate::types::RescoreExecutionPlanStatus) -> Self {
@@ -112,21 +102,23 @@ impl RescoreExecutionPlanSummaryBuilder {
         self
     }
     /// <p>The current status of the rescore execution plan. When the value is <code>ACTIVE</code>, the rescore execution plan is ready for use.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::RescoreExecutionPlanStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::RescoreExecutionPlanStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`RescoreExecutionPlanSummary`](crate::types::RescoreExecutionPlanSummary).
     pub fn build(self) -> crate::types::RescoreExecutionPlanSummary {
         crate::types::RescoreExecutionPlanSummary {
-            name: self.name,
-            id: self.id,
-            created_at: self.created_at,
-            updated_at: self.updated_at,
-            status: self.status,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            created_at: self.created_at
+            ,
+            updated_at: self.updated_at
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

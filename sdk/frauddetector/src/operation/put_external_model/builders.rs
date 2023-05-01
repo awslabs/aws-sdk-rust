@@ -4,71 +4,49 @@ pub use crate::operation::put_external_model::_put_external_model_output::PutExt
 pub use crate::operation::put_external_model::_put_external_model_input::PutExternalModelInputBuilder;
 
 /// Fluent builder constructing a request to `PutExternalModel`.
-///
+/// 
 /// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutExternalModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_external_model::builders::PutExternalModelInputBuilder,
-}
-impl PutExternalModelFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_external_model::builders::PutExternalModelInputBuilder
+            }
+impl PutExternalModelFluentBuilder  {
     /// Creates a new `PutExternalModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_external_model::PutExternalModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_external_model::PutExternalModelError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_external_model::PutExternalModelOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_external_model::PutExternalModelError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_external_model::PutExternalModel, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_external_model::PutExternalModelError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_external_model::PutExternalModelOutput, aws_smithy_http::result::SdkError<crate::operation::put_external_model::PutExternalModelError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The model endpoints name.</p>
     pub fn model_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_endpoint(input.into());
@@ -85,10 +63,7 @@ impl PutExternalModelFluentBuilder {
         self
     }
     /// <p>The source of the model.</p>
-    pub fn set_model_source(
-        mut self,
-        input: std::option::Option<crate::types::ModelSource>,
-    ) -> Self {
+    pub fn set_model_source(mut self, input: std::option::Option<crate::types::ModelSource>) -> Self {
         self.inner = self.inner.set_model_source(input);
         self
     }
@@ -98,10 +73,7 @@ impl PutExternalModelFluentBuilder {
         self
     }
     /// <p>The IAM role used to invoke the model endpoint.</p>
-    pub fn set_invoke_model_endpoint_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_invoke_model_endpoint_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_invoke_model_endpoint_role_arn(input);
         self
     }
@@ -111,10 +83,7 @@ impl PutExternalModelFluentBuilder {
         self
     }
     /// <p>The model endpoint input configuration.</p>
-    pub fn set_input_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ModelInputConfiguration>,
-    ) -> Self {
+    pub fn set_input_configuration(mut self, input: std::option::Option<crate::types::ModelInputConfiguration>) -> Self {
         self.inner = self.inner.set_input_configuration(input);
         self
     }
@@ -124,10 +93,7 @@ impl PutExternalModelFluentBuilder {
         self
     }
     /// <p>The model endpoint output configuration.</p>
-    pub fn set_output_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ModelOutputConfiguration>,
-    ) -> Self {
+    pub fn set_output_configuration(mut self, input: std::option::Option<crate::types::ModelOutputConfiguration>) -> Self {
         self.inner = self.inner.set_output_configuration(input);
         self
     }
@@ -137,10 +103,7 @@ impl PutExternalModelFluentBuilder {
         self
     }
     /// <p>The model endpoint’s status in Amazon Fraud Detector.</p>
-    pub fn set_model_endpoint_status(
-        mut self,
-        input: std::option::Option<crate::types::ModelEndpointStatus>,
-    ) -> Self {
+    pub fn set_model_endpoint_status(mut self, input: std::option::Option<crate::types::ModelEndpointStatus>) -> Self {
         self.inner = self.inner.set_model_endpoint_status(input);
         self
     }
@@ -154,11 +117,9 @@ impl PutExternalModelFluentBuilder {
         self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

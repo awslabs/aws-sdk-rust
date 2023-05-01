@@ -3,7 +3,7 @@
 /// Fec Output Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FecOutputSettings {
+pub struct FecOutputSettings  {
     /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
     #[doc(hidden)]
     pub column_depth: i32,
@@ -20,7 +20,7 @@ impl FecOutputSettings {
         self.column_depth
     }
     /// Enables column only or column and row based FEC
-    pub fn include_fec(&self) -> std::option::Option<&crate::types::FecOutputIncludeFec> {
+    pub fn include_fec(&self) -> std::option::Option<& crate::types::FecOutputIncludeFec> {
         self.include_fec.as_ref()
     }
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
@@ -51,8 +51,7 @@ impl FecOutputSettingsBuilder {
     }
     /// Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.
     pub fn set_column_depth(mut self, input: std::option::Option<i32>) -> Self {
-        self.column_depth = input;
-        self
+        self.column_depth = input; self
     }
     /// Enables column only or column and row based FEC
     pub fn include_fec(mut self, input: crate::types::FecOutputIncludeFec) -> Self {
@@ -60,12 +59,8 @@ impl FecOutputSettingsBuilder {
         self
     }
     /// Enables column only or column and row based FEC
-    pub fn set_include_fec(
-        mut self,
-        input: std::option::Option<crate::types::FecOutputIncludeFec>,
-    ) -> Self {
-        self.include_fec = input;
-        self
+    pub fn set_include_fec(mut self, input: std::option::Option<crate::types::FecOutputIncludeFec>) -> Self {
+        self.include_fec = input; self
     }
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
     pub fn row_length(mut self, input: i32) -> Self {
@@ -74,15 +69,20 @@ impl FecOutputSettingsBuilder {
     }
     /// Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.
     pub fn set_row_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.row_length = input;
-        self
+        self.row_length = input; self
     }
     /// Consumes the builder and constructs a [`FecOutputSettings`](crate::types::FecOutputSettings).
     pub fn build(self) -> crate::types::FecOutputSettings {
         crate::types::FecOutputSettings {
-            column_depth: self.column_depth.unwrap_or_default(),
-            include_fec: self.include_fec,
-            row_length: self.row_length.unwrap_or_default(),
+            column_depth: self.column_depth
+                .unwrap_or_default()
+            ,
+            include_fec: self.include_fec
+            ,
+            row_length: self.row_length
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

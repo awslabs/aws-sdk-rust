@@ -3,7 +3,7 @@
 /// <p>An asset in AWS Data Exchange is a piece of data (Amazon S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API, AWS Lake Formation data permission, or Amazon S3 data access). The asset can be a structured data file, an image file, or some other data file that can be stored as an Amazon S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare, an AWS Lake Formation data permission, or an Amazon S3 data access. When you create an import job for your files, API Gateway APIs, Amazon Redshift datashares, AWS Lake Formation data permission, or Amazon S3 data access, you create an asset in AWS Data Exchange.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetEntry {
+pub struct AssetEntry  {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -37,43 +37,43 @@ pub struct AssetEntry {
 }
 impl AssetEntry {
     /// <p>The ARN for the asset.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Details about the asset.</p>
-    pub fn asset_details(&self) -> std::option::Option<&crate::types::AssetDetails> {
+    pub fn asset_details(&self) -> std::option::Option<& crate::types::AssetDetails> {
         self.asset_details.as_ref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::types::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::types::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the asset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -107,8 +107,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The ARN for the asset.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Details about the asset.</p>
     pub fn asset_details(mut self, input: crate::types::AssetDetails) -> Self {
@@ -116,12 +115,8 @@ impl AssetEntryBuilder {
         self
     }
     /// <p>Details about the asset.</p>
-    pub fn set_asset_details(
-        mut self,
-        input: std::option::Option<crate::types::AssetDetails>,
-    ) -> Self {
-        self.asset_details = input;
-        self
+    pub fn set_asset_details(mut self, input: std::option::Option<crate::types::AssetDetails>) -> Self {
+        self.asset_details = input; self
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
@@ -130,8 +125,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn set_asset_type(mut self, input: std::option::Option<crate::types::AssetType>) -> Self {
-        self.asset_type = input;
-        self
+        self.asset_type = input; self
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -139,12 +133,8 @@ impl AssetEntryBuilder {
         self
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +143,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the asset.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,8 +152,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The unique identifier for the asset.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +161,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in LF-tag policy" or "Table(s) included in LF-tag policy" are used as the asset name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,8 +170,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,8 +179,7 @@ impl AssetEntryBuilder {
     }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
     pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_id = input;
-        self
+        self.source_id = input; self
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -202,26 +187,33 @@ impl AssetEntryBuilder {
         self
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// Consumes the builder and constructs a [`AssetEntry`](crate::types::AssetEntry).
     pub fn build(self) -> crate::types::AssetEntry {
         crate::types::AssetEntry {
-            arn: self.arn,
-            asset_details: self.asset_details,
-            asset_type: self.asset_type,
-            created_at: self.created_at,
-            data_set_id: self.data_set_id,
-            id: self.id,
-            name: self.name,
-            revision_id: self.revision_id,
-            source_id: self.source_id,
-            updated_at: self.updated_at,
+            arn: self.arn
+            ,
+            asset_details: self.asset_details
+            ,
+            asset_type: self.asset_type
+            ,
+            created_at: self.created_at
+            ,
+            data_set_id: self.data_set_id
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            revision_id: self.revision_id
+            ,
+            source_id: self.source_id
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

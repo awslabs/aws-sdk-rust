@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationFsxOpenZfsInput {
+pub struct CreateLocationFsxOpenZfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
     #[doc(hidden)]
     pub fsx_filesystem_arn: std::option::Option<std::string::String>,
@@ -21,29 +21,29 @@ pub struct CreateLocationFsxOpenZfsInput {
 }
 impl CreateLocationFsxOpenZfsInput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    pub fn fsx_filesystem_arn(&self) -> std::option::Option<&str> {
+    pub fn fsx_filesystem_arn(&self) -> std::option::Option<& str> {
         self.fsx_filesystem_arn.as_deref()
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::FsxProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::FsxProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
-    pub fn subdirectory(&self) -> std::option::Option<&str> {
+    pub fn subdirectory(&self) -> std::option::Option<& str> {
         self.subdirectory.as_deref()
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::TagListEntry]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::TagListEntry]> {
         self.tags.as_deref()
     }
 }
 impl CreateLocationFsxOpenZfsInput {
     /// Creates a new builder-style object to manufacture [`CreateLocationFsxOpenZfsInput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput).
-    pub fn builder() -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder{
+    pub fn builder() -> crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder {
         crate::operation::create_location_fsx_open_zfs::builders::CreateLocationFsxOpenZfsInputBuilder::default()
     }
 }
@@ -65,12 +65,8 @@ impl CreateLocationFsxOpenZfsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the FSx for OpenZFS file system.</p>
-    pub fn set_fsx_filesystem_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.fsx_filesystem_arn = input;
-        self
+    pub fn set_fsx_filesystem_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.fsx_filesystem_arn = input; self
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
     pub fn protocol(mut self, input: crate::types::FsxProtocol) -> Self {
@@ -79,8 +75,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
     }
     /// <p>The type of protocol that DataSync uses to access your file system.</p>
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::FsxProtocol>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -89,17 +84,13 @@ impl CreateLocationFsxOpenZfsInputBuilder {
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
     pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_arns = Some(v);
+                        self
     }
     /// <p>The ARNs of the security groups that are used to configure the FSx for OpenZFS file system.</p>
-    pub fn set_security_group_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_arns = input;
-        self
+    pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_arns = input; self
     }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
     pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +99,7 @@ impl CreateLocationFsxOpenZfsInputBuilder {
     }
     /// <p>A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync uses this subdirectory to read or write data (depending on whether the file system is a source or destination location).</p>
     pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subdirectory = input;
-        self
+        self.subdirectory = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -118,33 +108,30 @@ impl CreateLocationFsxOpenZfsInputBuilder {
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
     pub fn tags(mut self, input: crate::types::TagListEntry) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The key-value pair that represents a tag that you want to add to the resource. The value can be an empty string. This value helps you manage, filter, and search for your resources. We recommend that you create a name tag for your location.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateLocationFsxOpenZfsInput`](crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsInput {
-                fsx_filesystem_arn: self.fsx_filesystem_arn,
-                protocol: self.protocol,
-                security_group_arns: self.security_group_arns,
-                subdirectory: self.subdirectory,
-                tags: self.tags,
-            },
+                fsx_filesystem_arn: self.fsx_filesystem_arn
+                ,
+                protocol: self.protocol
+                ,
+                security_group_arns: self.security_group_arns
+                ,
+                subdirectory: self.subdirectory
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

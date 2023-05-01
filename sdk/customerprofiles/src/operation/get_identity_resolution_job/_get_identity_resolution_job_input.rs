@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIdentityResolutionJobInput {
+pub struct GetIdentityResolutionJobInput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct GetIdentityResolutionJobInput {
 }
 impl GetIdentityResolutionJobInput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl GetIdentityResolutionJobInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityResolutionJobInput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput).
-    pub fn builder(
-    ) -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobInputBuilder {
         crate::operation::get_identity_resolution_job::builders::GetIdentityResolutionJobInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl GetIdentityResolutionJobInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl GetIdentityResolutionJobInputBuilder {
     }
     /// <p>The unique identifier of the Identity Resolution Job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`GetIdentityResolutionJobInput`](crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_identity_resolution_job::GetIdentityResolutionJobInput {
-                domain_name: self.domain_name,
-                job_id: self.job_id,
-            },
+                domain_name: self.domain_name
+                ,
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

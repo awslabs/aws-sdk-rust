@@ -3,14 +3,14 @@
 /// <p>An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplacementTemplate {
+pub struct ReplacementTemplate  {
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     #[doc(hidden)]
     pub replacement_template_data: std::option::Option<std::string::String>,
 }
 impl ReplacementTemplate {
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn replacement_template_data(&self) -> std::option::Option<&str> {
+    pub fn replacement_template_data(&self) -> std::option::Option<& str> {
         self.replacement_template_data.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl ReplacementTemplateBuilder {
         self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn set_replacement_template_data(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replacement_template_data = input;
-        self
+    pub fn set_replacement_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replacement_template_data = input; self
     }
     /// Consumes the builder and constructs a [`ReplacementTemplate`](crate::types::ReplacementTemplate).
     pub fn build(self) -> crate::types::ReplacementTemplate {
         crate::types::ReplacementTemplate {
-            replacement_template_data: self.replacement_template_data,
+            replacement_template_data: self.replacement_template_data
+            ,
         }
     }
 }
+

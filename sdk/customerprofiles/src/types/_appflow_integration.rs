@@ -3,7 +3,7 @@
 /// <p>Details for workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppflowIntegration {
+pub struct AppflowIntegration  {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
     #[doc(hidden)]
     pub flow_definition: std::option::Option<crate::types::FlowDefinition>,
@@ -13,11 +13,11 @@ pub struct AppflowIntegration {
 }
 impl AppflowIntegration {
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
-    pub fn flow_definition(&self) -> std::option::Option<&crate::types::FlowDefinition> {
+    pub fn flow_definition(&self) -> std::option::Option<& crate::types::FlowDefinition> {
         self.flow_definition.as_ref()
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub fn batches(&self) -> std::option::Option<&[crate::types::Batch]> {
+    pub fn batches(&self) -> std::option::Option<& [crate::types::Batch]> {
         self.batches.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl AppflowIntegrationBuilder {
         self
     }
     /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
-    pub fn set_flow_definition(
-        mut self,
-        input: std::option::Option<crate::types::FlowDefinition>,
-    ) -> Self {
-        self.flow_definition = input;
-        self
+    pub fn set_flow_definition(mut self, input: std::option::Option<crate::types::FlowDefinition>) -> Self {
+        self.flow_definition = input; self
     }
     /// Appends an item to `batches`.
     ///
@@ -56,23 +52,22 @@ impl AppflowIntegrationBuilder {
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
     pub fn batches(mut self, input: crate::types::Batch) -> Self {
         let mut v = self.batches.unwrap_or_default();
-        v.push(input);
-        self.batches = Some(v);
-        self
+                        v.push(input);
+                        self.batches = Some(v);
+                        self
     }
     /// <p>Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.</p>
-    pub fn set_batches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Batch>>,
-    ) -> Self {
-        self.batches = input;
-        self
+    pub fn set_batches(mut self, input: std::option::Option<std::vec::Vec<crate::types::Batch>>) -> Self {
+        self.batches = input; self
     }
     /// Consumes the builder and constructs a [`AppflowIntegration`](crate::types::AppflowIntegration).
     pub fn build(self) -> crate::types::AppflowIntegration {
         crate::types::AppflowIntegration {
-            flow_definition: self.flow_definition,
-            batches: self.batches,
+            flow_definition: self.flow_definition
+            ,
+            batches: self.batches
+            ,
         }
     }
 }
+

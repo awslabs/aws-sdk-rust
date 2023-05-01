@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverInput {
+pub struct GetResolverInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetResolverInput {
 }
 impl GetResolverInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The resolver type name.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> std::option::Option<& str> {
         self.type_name.as_deref()
     }
     /// <p>The resolver field name.</p>
-    pub fn field_name(&self) -> std::option::Option<&str> {
+    pub fn field_name(&self) -> std::option::Option<& str> {
         self.field_name.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl GetResolverInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The resolver type name.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetResolverInputBuilder {
     }
     /// <p>The resolver type name.</p>
     pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.type_name = input;
-        self
+        self.type_name = input; self
     }
     /// <p>The resolver field name.</p>
     pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,20 @@ impl GetResolverInputBuilder {
     }
     /// <p>The resolver field name.</p>
     pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_name = input;
-        self
+        self.field_name = input; self
     }
     /// Consumes the builder and constructs a [`GetResolverInput`](crate::operation::get_resolver::GetResolverInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resolver::GetResolverInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_resolver::GetResolverInput {
-            api_id: self.api_id,
-            type_name: self.type_name,
-            field_name: self.field_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_resolver::GetResolverInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_resolver::GetResolverInput {
+                api_id: self.api_id
+                ,
+                type_name: self.type_name
+                ,
+                field_name: self.field_name
+                ,
+            }
+        )
     }
 }
+

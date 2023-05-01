@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changesetstate = unimplemented!();
 /// match changesetstate {
@@ -34,22 +34,14 @@
 /// Specifically, when `changesetstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeSetState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeSetState {
     #[allow(missing_docs)] // documentation missing in model
     Executing,
@@ -64,57 +56,49 @@ pub enum ChangeSetState {
     #[allow(missing_docs)] // documentation missing in model
     ReadyToExecute,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeSetState {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXECUTING" => ChangeSetState::Executing,
-            "EXECUTION_SUCCEEDED" => ChangeSetState::ExecutionSucceeded,
-            "FAILED_GENERATION" => ChangeSetState::FailedGeneration,
-            "OUT_OF_DATE" => ChangeSetState::OutOfDate,
-            "PENDING_GENERATION" => ChangeSetState::PendingGeneration,
-            "READY_TO_EXECUTE" => ChangeSetState::ReadyToExecute,
-            other => {
-                ChangeSetState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXECUTING" => ChangeSetState::Executing,
+"EXECUTION_SUCCEEDED" => ChangeSetState::ExecutionSucceeded,
+"FAILED_GENERATION" => ChangeSetState::FailedGeneration,
+"OUT_OF_DATE" => ChangeSetState::OutOfDate,
+"PENDING_GENERATION" => ChangeSetState::PendingGeneration,
+"READY_TO_EXECUTE" => ChangeSetState::ReadyToExecute,
+other => ChangeSetState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ChangeSetState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeSetState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeSetState::from(s))
+                }
+            }
 impl ChangeSetState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ChangeSetState::Executing => "EXECUTING",
-            ChangeSetState::ExecutionSucceeded => "EXECUTION_SUCCEEDED",
-            ChangeSetState::FailedGeneration => "FAILED_GENERATION",
-            ChangeSetState::OutOfDate => "OUT_OF_DATE",
-            ChangeSetState::PendingGeneration => "PENDING_GENERATION",
-            ChangeSetState::ReadyToExecute => "READY_TO_EXECUTE",
-            ChangeSetState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EXECUTING",
-            "EXECUTION_SUCCEEDED",
-            "FAILED_GENERATION",
-            "OUT_OF_DATE",
-            "PENDING_GENERATION",
-            "READY_TO_EXECUTE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ChangeSetState::Executing => "EXECUTING",
+    ChangeSetState::ExecutionSucceeded => "EXECUTION_SUCCEEDED",
+    ChangeSetState::FailedGeneration => "FAILED_GENERATION",
+    ChangeSetState::OutOfDate => "OUT_OF_DATE",
+    ChangeSetState::PendingGeneration => "PENDING_GENERATION",
+    ChangeSetState::ReadyToExecute => "READY_TO_EXECUTE",
+    ChangeSetState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXECUTING", "EXECUTION_SUCCEEDED", "FAILED_GENERATION", "OUT_OF_DATE", "PENDING_GENERATION", "READY_TO_EXECUTE"]
+                }
+            }
 impl AsRef<str> for ChangeSetState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

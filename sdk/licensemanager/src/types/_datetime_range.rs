@@ -3,7 +3,7 @@
 /// <p>Describes a time range, in ISO8601-UTC format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatetimeRange {
+pub struct DatetimeRange  {
     /// <p>Start of the time range.</p>
     #[doc(hidden)]
     pub begin: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DatetimeRange {
 }
 impl DatetimeRange {
     /// <p>Start of the time range.</p>
-    pub fn begin(&self) -> std::option::Option<&str> {
+    pub fn begin(&self) -> std::option::Option<& str> {
         self.begin.as_deref()
     }
     /// <p>End of the time range.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DatetimeRangeBuilder {
     }
     /// <p>Start of the time range.</p>
     pub fn set_begin(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.begin = input;
-        self
+        self.begin = input; self
     }
     /// <p>End of the time range.</p>
     pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DatetimeRangeBuilder {
     }
     /// <p>End of the time range.</p>
     pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// Consumes the builder and constructs a [`DatetimeRange`](crate::types::DatetimeRange).
     pub fn build(self) -> crate::types::DatetimeRange {
         crate::types::DatetimeRange {
-            begin: self.begin,
-            end: self.end,
+            begin: self.begin
+            ,
+            end: self.end
+            ,
         }
     }
 }
+

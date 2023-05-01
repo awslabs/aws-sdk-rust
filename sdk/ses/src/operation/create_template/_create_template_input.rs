@@ -3,14 +3,14 @@
 /// <p>Represents a request to create an email template. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTemplateInput {
+pub struct CreateTemplateInput  {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     #[doc(hidden)]
     pub template: std::option::Option<crate::types::Template>,
 }
 impl CreateTemplateInput {
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
-    pub fn template(&self) -> std::option::Option<&crate::types::Template> {
+    pub fn template(&self) -> std::option::Option<& crate::types::Template> {
         self.template.as_ref()
     }
 }
@@ -35,18 +35,16 @@ impl CreateTemplateInputBuilder {
     }
     /// <p>The content of the email, composed of a subject line, an HTML part, and a text-only part.</p>
     pub fn set_template(mut self, input: std::option::Option<crate::types::Template>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_template::CreateTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_template::CreateTemplateInput {
-            template: self.template,
-        })
+    pub fn build(self) -> Result<crate::operation::create_template::CreateTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_template::CreateTemplateInput {
+                template: self.template
+                ,
+            }
+        )
     }
 }
+

@@ -3,44 +3,34 @@
 /// <p>The type of experience you want to embed. For anonymous users, you can embed Amazon QuickSight dashboards.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnonymousUserEmbeddingExperienceConfiguration {
+pub struct AnonymousUserEmbeddingExperienceConfiguration  {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
     #[doc(hidden)]
     pub dashboard: std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
     #[doc(hidden)]
-    pub dashboard_visual:
-        std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
+    pub dashboard_visual: std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
     #[doc(hidden)]
-    pub q_search_bar:
-        std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
+    pub q_search_bar: std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
-    pub fn dashboard(
-        &self,
-    ) -> std::option::Option<&crate::types::AnonymousUserDashboardEmbeddingConfiguration> {
+    pub fn dashboard(&self) -> std::option::Option<& crate::types::AnonymousUserDashboardEmbeddingConfiguration> {
         self.dashboard.as_ref()
     }
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
-    pub fn dashboard_visual(
-        &self,
-    ) -> std::option::Option<&crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>
-    {
+    pub fn dashboard_visual(&self) -> std::option::Option<& crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration> {
         self.dashboard_visual.as_ref()
     }
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
-    pub fn q_search_bar(
-        &self,
-    ) -> std::option::Option<&crate::types::AnonymousUserQSearchBarEmbeddingConfiguration> {
+    pub fn q_search_bar(&self) -> std::option::Option<& crate::types::AnonymousUserQSearchBarEmbeddingConfiguration> {
         self.q_search_bar.as_ref()
     }
 }
 impl AnonymousUserEmbeddingExperienceConfiguration {
     /// Creates a new builder-style object to manufacture [`AnonymousUserEmbeddingExperienceConfiguration`](crate::types::AnonymousUserEmbeddingExperienceConfiguration).
-    pub fn builder() -> crate::types::builders::AnonymousUserEmbeddingExperienceConfigurationBuilder
-    {
+    pub fn builder() -> crate::types::builders::AnonymousUserEmbeddingExperienceConfigurationBuilder {
         crate::types::builders::AnonymousUserEmbeddingExperienceConfigurationBuilder::default()
     }
 }
@@ -49,70 +39,48 @@ impl AnonymousUserEmbeddingExperienceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AnonymousUserEmbeddingExperienceConfigurationBuilder {
-    pub(crate) dashboard:
-        std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
-    pub(crate) dashboard_visual:
-        std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
-    pub(crate) q_search_bar:
-        std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
+    pub(crate) dashboard: std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
+    pub(crate) dashboard_visual: std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>,
+    pub(crate) q_search_bar: std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
 }
 impl AnonymousUserEmbeddingExperienceConfigurationBuilder {
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
-    pub fn dashboard(
-        mut self,
-        input: crate::types::AnonymousUserDashboardEmbeddingConfiguration,
-    ) -> Self {
+    pub fn dashboard(mut self, input: crate::types::AnonymousUserDashboardEmbeddingConfiguration) -> Self {
         self.dashboard = Some(input);
         self
     }
     /// <p>The type of embedding experience. In this case, Amazon QuickSight dashboards.</p>
-    pub fn set_dashboard(
-        mut self,
-        input: std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>,
-    ) -> Self {
-        self.dashboard = input;
-        self
+    pub fn set_dashboard(mut self, input: std::option::Option<crate::types::AnonymousUserDashboardEmbeddingConfiguration>) -> Self {
+        self.dashboard = input; self
     }
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
-    pub fn dashboard_visual(
-        mut self,
-        input: crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration,
-    ) -> Self {
+    pub fn dashboard_visual(mut self, input: crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration) -> Self {
         self.dashboard_visual = Some(input);
         self
     }
     /// <p>The type of embedding experience. In this case, Amazon QuickSight visuals.</p>
-    pub fn set_dashboard_visual(
-        mut self,
-        input: std::option::Option<
-            crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration,
-        >,
-    ) -> Self {
-        self.dashboard_visual = input;
-        self
+    pub fn set_dashboard_visual(mut self, input: std::option::Option<crate::types::AnonymousUserDashboardVisualEmbeddingConfiguration>) -> Self {
+        self.dashboard_visual = input; self
     }
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
-    pub fn q_search_bar(
-        mut self,
-        input: crate::types::AnonymousUserQSearchBarEmbeddingConfiguration,
-    ) -> Self {
+    pub fn q_search_bar(mut self, input: crate::types::AnonymousUserQSearchBarEmbeddingConfiguration) -> Self {
         self.q_search_bar = Some(input);
         self
     }
     /// <p>The Q search bar that you want to use for anonymous user embedding.</p>
-    pub fn set_q_search_bar(
-        mut self,
-        input: std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>,
-    ) -> Self {
-        self.q_search_bar = input;
-        self
+    pub fn set_q_search_bar(mut self, input: std::option::Option<crate::types::AnonymousUserQSearchBarEmbeddingConfiguration>) -> Self {
+        self.q_search_bar = input; self
     }
     /// Consumes the builder and constructs a [`AnonymousUserEmbeddingExperienceConfiguration`](crate::types::AnonymousUserEmbeddingExperienceConfiguration).
     pub fn build(self) -> crate::types::AnonymousUserEmbeddingExperienceConfiguration {
         crate::types::AnonymousUserEmbeddingExperienceConfiguration {
-            dashboard: self.dashboard,
-            dashboard_visual: self.dashboard_visual,
-            q_search_bar: self.q_search_bar,
+            dashboard: self.dashboard
+            ,
+            dashboard_visual: self.dashboard_visual
+            ,
+            q_search_bar: self.q_search_bar
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The container element for a bucket's policy status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyStatus {
+pub struct PolicyStatus  {
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     #[doc(hidden)]
     pub is_public: bool,
@@ -35,13 +35,15 @@ impl PolicyStatusBuilder {
     }
     /// <p>The policy status for this bucket. <code>TRUE</code> indicates that this bucket is public. <code>FALSE</code> indicates that the bucket is not public.</p>
     pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_public = input;
-        self
+        self.is_public = input; self
     }
     /// Consumes the builder and constructs a [`PolicyStatus`](crate::types::PolicyStatus).
     pub fn build(self) -> crate::types::PolicyStatus {
         crate::types::PolicyStatus {
-            is_public: self.is_public.unwrap_or_default(),
+            is_public: self.is_public
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

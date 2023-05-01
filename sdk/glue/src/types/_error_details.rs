@@ -3,7 +3,7 @@
 /// <p>An object containing error details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>The error code for an error.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ErrorDetails {
 }
 impl ErrorDetails {
     /// <p>The error code for an error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message for an error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ErrorDetailsBuilder {
     }
     /// <p>The error code for an error.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error message for an error.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ErrorDetailsBuilder {
     }
     /// <p>The error message for an error.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Consumes the builder and constructs a [`ErrorDetails`](crate::types::ErrorDetails).
     pub fn build(self) -> crate::types::ErrorDetails {
         crate::types::ErrorDetails {
-            error_code: self.error_code,
-            error_message: self.error_message,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

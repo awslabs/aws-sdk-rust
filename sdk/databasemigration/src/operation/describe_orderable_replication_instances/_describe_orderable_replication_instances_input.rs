@@ -3,9 +3,9 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrderableReplicationInstancesInput {
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+pub struct DescribeOrderableReplicationInstancesInput  {
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -14,20 +14,20 @@ pub struct DescribeOrderableReplicationInstancesInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesInput {
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeOrderableReplicationInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableReplicationInstancesInput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput).
-    pub fn builder() -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder {
         crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder::default()
     }
 }
@@ -40,19 +40,18 @@ pub struct DescribeOrderableReplicationInstancesInputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableReplicationInstancesInputBuilder {
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,11 +60,10 @@ impl DescribeOrderableReplicationInstancesInputBuilder {
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeOrderableReplicationInstancesInput`](crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput).
-    pub fn build(self) -> Result<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesInput {
                 max_records: self.max_records
@@ -76,3 +74,4 @@ impl DescribeOrderableReplicationInstancesInputBuilder {
         )
     }
 }
+

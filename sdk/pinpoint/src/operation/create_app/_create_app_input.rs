@@ -2,16 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppInput {
+pub struct CreateAppInput  {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
     #[doc(hidden)]
     pub create_application_request: std::option::Option<crate::types::CreateApplicationRequest>,
 }
 impl CreateAppInput {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    pub fn create_application_request(
-        &self,
-    ) -> std::option::Option<&crate::types::CreateApplicationRequest> {
+    pub fn create_application_request(&self) -> std::option::Option<& crate::types::CreateApplicationRequest> {
         self.create_application_request.as_ref()
     }
 }
@@ -26,35 +24,26 @@ impl CreateAppInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateAppInputBuilder {
-    pub(crate) create_application_request:
-        std::option::Option<crate::types::CreateApplicationRequest>,
+    pub(crate) create_application_request: std::option::Option<crate::types::CreateApplicationRequest>,
 }
 impl CreateAppInputBuilder {
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    pub fn create_application_request(
-        mut self,
-        input: crate::types::CreateApplicationRequest,
-    ) -> Self {
+    pub fn create_application_request(mut self, input: crate::types::CreateApplicationRequest) -> Self {
         self.create_application_request = Some(input);
         self
     }
     /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
-    pub fn set_create_application_request(
-        mut self,
-        input: std::option::Option<crate::types::CreateApplicationRequest>,
-    ) -> Self {
-        self.create_application_request = input;
-        self
+    pub fn set_create_application_request(mut self, input: std::option::Option<crate::types::CreateApplicationRequest>) -> Self {
+        self.create_application_request = input; self
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_app::CreateAppInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_app::CreateAppInput {
-            create_application_request: self.create_application_request,
-        })
+    pub fn build(self) -> Result<crate::operation::create_app::CreateAppInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_app::CreateAppInput {
+                create_application_request: self.create_application_request
+                ,
+            }
+        )
     }
 }
+

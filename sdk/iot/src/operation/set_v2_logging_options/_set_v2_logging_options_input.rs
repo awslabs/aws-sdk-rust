@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetV2LoggingOptionsInput {
+pub struct SetV2LoggingOptionsInput  {
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct SetV2LoggingOptionsInput {
 }
 impl SetV2LoggingOptionsInput {
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The default logging level.</p>
-    pub fn default_log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn default_log_level(&self) -> std::option::Option<& crate::types::LogLevel> {
         self.default_log_level.as_ref()
     }
     /// <p>If true all logs are disabled. The default is false.</p>
@@ -29,10 +29,8 @@ impl SetV2LoggingOptionsInput {
 }
 impl SetV2LoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder {
-        crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder {
+        crate::operation::set_v2_logging_options::builders::SetV2LoggingOptionsInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl SetV2LoggingOptionsInputBuilder {
     }
     /// <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The default logging level.</p>
     pub fn default_log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -61,12 +58,8 @@ impl SetV2LoggingOptionsInputBuilder {
         self
     }
     /// <p>The default logging level.</p>
-    pub fn set_default_log_level(
-        mut self,
-        input: std::option::Option<crate::types::LogLevel>,
-    ) -> Self {
-        self.default_log_level = input;
-        self
+    pub fn set_default_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
+        self.default_log_level = input; self
     }
     /// <p>If true all logs are disabled. The default is false.</p>
     pub fn disable_all_logs(mut self, input: bool) -> Self {
@@ -75,22 +68,20 @@ impl SetV2LoggingOptionsInputBuilder {
     }
     /// <p>If true all logs are disabled. The default is false.</p>
     pub fn set_disable_all_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_all_logs = input;
-        self
+        self.disable_all_logs = input; self
     }
     /// Consumes the builder and constructs a [`SetV2LoggingOptionsInput`](crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::set_v2_logging_options::SetV2LoggingOptionsInput {
-                role_arn: self.role_arn,
-                default_log_level: self.default_log_level,
-                disable_all_logs: self.disable_all_logs,
-            },
+                role_arn: self.role_arn
+                ,
+                default_log_level: self.default_log_level
+                ,
+                disable_all_logs: self.disable_all_logs
+                ,
+            }
         )
     }
 }
+

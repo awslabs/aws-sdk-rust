@@ -3,7 +3,7 @@
 /// <p>Permissions granted to a principal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrincipalPermissions {
+pub struct PrincipalPermissions  {
     /// <p>The principal who is granted permissions.</p>
     #[doc(hidden)]
     pub principal: std::option::Option<crate::types::DataLakePrincipal>,
@@ -13,11 +13,11 @@ pub struct PrincipalPermissions {
 }
 impl PrincipalPermissions {
     /// <p>The principal who is granted permissions.</p>
-    pub fn principal(&self) -> std::option::Option<&crate::types::DataLakePrincipal> {
+    pub fn principal(&self) -> std::option::Option<& crate::types::DataLakePrincipal> {
         self.principal.as_ref()
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::Permission]> {
         self.permissions.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl PrincipalPermissionsBuilder {
         self
     }
     /// <p>The principal who is granted permissions.</p>
-    pub fn set_principal(
-        mut self,
-        input: std::option::Option<crate::types::DataLakePrincipal>,
-    ) -> Self {
-        self.principal = input;
-        self
+    pub fn set_principal(mut self, input: std::option::Option<crate::types::DataLakePrincipal>) -> Self {
+        self.principal = input; self
     }
     /// Appends an item to `permissions`.
     ///
@@ -56,23 +52,22 @@ impl PrincipalPermissionsBuilder {
     /// <p>The permissions that are granted to the principal.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>The permissions that are granted to the principal.</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
     }
     /// Consumes the builder and constructs a [`PrincipalPermissions`](crate::types::PrincipalPermissions).
     pub fn build(self) -> crate::types::PrincipalPermissions {
         crate::types::PrincipalPermissions {
-            principal: self.principal,
-            permissions: self.permissions,
+            principal: self.principal
+            ,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

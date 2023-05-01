@@ -3,7 +3,7 @@
 /// <p>The SyncJob status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SyncJobStatus {
+pub struct SyncJobStatus  {
     /// <p>The SyncJob status state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::SyncJobState>,
@@ -13,11 +13,11 @@ pub struct SyncJobStatus {
 }
 impl SyncJobStatus {
     /// <p>The SyncJob status state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::SyncJobState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::SyncJobState> {
         self.state.as_ref()
     }
     /// <p>The SyncJob error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SyncJobStatusBuilder {
     }
     /// <p>The SyncJob status state.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::SyncJobState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The SyncJob error.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
@@ -53,14 +52,16 @@ impl SyncJobStatusBuilder {
     }
     /// <p>The SyncJob error.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`SyncJobStatus`](crate::types::SyncJobStatus).
     pub fn build(self) -> crate::types::SyncJobStatus {
         crate::types::SyncJobStatus {
-            state: self.state,
-            error: self.error,
+            state: self.state
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

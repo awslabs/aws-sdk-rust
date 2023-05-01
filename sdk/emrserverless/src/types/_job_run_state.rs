@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobrunstate = unimplemented!();
 /// match jobrunstate {
@@ -36,22 +36,14 @@
 /// Specifically, when `jobrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -70,61 +62,53 @@ pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobRunState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELLED" => JobRunState::Cancelled,
-            "CANCELLING" => JobRunState::Cancelling,
-            "FAILED" => JobRunState::Failed,
-            "PENDING" => JobRunState::Pending,
-            "RUNNING" => JobRunState::Running,
-            "SCHEDULED" => JobRunState::Scheduled,
-            "SUBMITTED" => JobRunState::Submitted,
-            "SUCCESS" => JobRunState::Success,
-            other => JobRunState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELLED" => JobRunState::Cancelled,
+"CANCELLING" => JobRunState::Cancelling,
+"FAILED" => JobRunState::Failed,
+"PENDING" => JobRunState::Pending,
+"RUNNING" => JobRunState::Running,
+"SCHEDULED" => JobRunState::Scheduled,
+"SUBMITTED" => JobRunState::Submitted,
+"SUCCESS" => JobRunState::Success,
+other => JobRunState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobRunState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobRunState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobRunState::from(s))
+                }
+            }
 impl JobRunState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobRunState::Cancelled => "CANCELLED",
-            JobRunState::Cancelling => "CANCELLING",
-            JobRunState::Failed => "FAILED",
-            JobRunState::Pending => "PENDING",
-            JobRunState::Running => "RUNNING",
-            JobRunState::Scheduled => "SCHEDULED",
-            JobRunState::Submitted => "SUBMITTED",
-            JobRunState::Success => "SUCCESS",
-            JobRunState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELLED",
-            "CANCELLING",
-            "FAILED",
-            "PENDING",
-            "RUNNING",
-            "SCHEDULED",
-            "SUBMITTED",
-            "SUCCESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobRunState::Cancelled => "CANCELLED",
+    JobRunState::Cancelling => "CANCELLING",
+    JobRunState::Failed => "FAILED",
+    JobRunState::Pending => "PENDING",
+    JobRunState::Running => "RUNNING",
+    JobRunState::Scheduled => "SCHEDULED",
+    JobRunState::Submitted => "SUBMITTED",
+    JobRunState::Success => "SUCCESS",
+    JobRunState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELLED", "CANCELLING", "FAILED", "PENDING", "RUNNING", "SCHEDULED", "SUBMITTED", "SUCCESS"]
+                }
+            }
 impl AsRef<str> for JobRunState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDominantLanguageDetectionJobInput {
+pub struct StartDominantLanguageDetectionJobInput  {
     /// <p>Specifies the format and location of the input data for the job.</p>
     #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::types::InputDataConfig>,
@@ -18,10 +18,10 @@ pub struct StartDominantLanguageDetectionJobInput {
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
-    /// <ul>
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
+    /// <ul> 
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub volume_kms_key_id: std::option::Option<std::string::String>,
@@ -34,45 +34,45 @@ pub struct StartDominantLanguageDetectionJobInput {
 }
 impl StartDominantLanguageDetectionJobInput {
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<& crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<& crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>An identifier for the job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
-    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
-    /// <ul>
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
+    /// <ul> 
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
     /// </ul>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> std::option::Option<& str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl StartDominantLanguageDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobInput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput).
-    pub fn builder() -> crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobInputBuilder {
         crate::operation::start_dominant_language_detection_job::builders::StartDominantLanguageDetectionJobInputBuilder::default()
     }
 }
@@ -97,12 +97,8 @@ impl StartDominantLanguageDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(
-        mut self,
-        input: std::option::Option<crate::types::InputDataConfig>,
-    ) -> Self {
-        self.input_data_config = input;
-        self
+    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
+        self.input_data_config = input; self
     }
     /// <p>Specifies where to send the output files.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -110,12 +106,8 @@ impl StartDominantLanguageDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(
-        mut self,
-        input: std::option::Option<crate::types::OutputDataConfig>,
-    ) -> Self {
-        self.output_data_config = input;
-        self
+    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
+        self.output_data_config = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,12 +115,8 @@ impl StartDominantLanguageDetectionJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions">Role-based permissions</a>.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
     }
     /// <p>An identifier for the job.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +125,7 @@ impl StartDominantLanguageDetectionJobInputBuilder {
     }
     /// <p>An identifier for the job.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,33 +133,25 @@ impl StartDominantLanguageDetectionJobInputBuilder {
         self
     }
     /// <p>A unique identifier for the request. If you do not set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
-    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
-    /// <ul>
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
+    /// <ul> 
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
     /// </ul>
     pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.volume_kms_key_id = Some(input.into());
         self
     }
-    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p>
-    /// <ul>
-    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
-    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li>
+    /// <p>ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:</p> 
+    /// <ul> 
+    /// <li> <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
+    /// <li> <p>Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> 
     /// </ul>
-    pub fn set_volume_kms_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.volume_kms_key_id = input;
-        self
+    pub fn set_volume_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.volume_kms_key_id = input; self
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -181,8 +160,7 @@ impl StartDominantLanguageDetectionJobInputBuilder {
     }
     /// <p>Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for your dominant language detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -191,20 +169,16 @@ impl StartDominantLanguageDetectionJobInputBuilder {
     /// <p>Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Tags to associate with the dominant language detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`StartDominantLanguageDetectionJobInput`](crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobInput {
                 input_data_config: self.input_data_config
@@ -227,3 +201,4 @@ impl StartDominantLanguageDetectionJobInputBuilder {
         )
     }
 }
+

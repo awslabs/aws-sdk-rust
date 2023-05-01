@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRescoreExecutionPlanOutput {
+pub struct CreateRescoreExecutionPlanOutput  {
     /// <p>The identifier of the rescore execution plan.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct CreateRescoreExecutionPlanOutput {
 }
 impl CreateRescoreExecutionPlanOutput {
     /// <p>The identifier of the rescore execution plan.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateRescoreExecutionPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateRescoreExecutionPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateRescoreExecutionPlanOutput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput).
-    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder{
+    pub fn builder() -> crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder {
         crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl CreateRescoreExecutionPlanOutputBuilder {
     }
     /// <p>The identifier of the rescore execution plan.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +58,26 @@ impl CreateRescoreExecutionPlanOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rescore execution plan.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateRescoreExecutionPlanOutput`](crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
+    pub fn build(self) -> crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
         crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlanOutput {
-            id: self.id,
-            arn: self.arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemOutput {
+pub struct DeleteFileSystemOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteFileSystemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemOutput`](crate::operation::delete_file_system::DeleteFileSystemOutput).
-    pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemOutputBuilder {
         crate::operation::delete_file_system::builders::DeleteFileSystemOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteFileSystemOutputBuilder {
 }
 impl DeleteFileSystemOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteFileSystemOutput`](crate::operation::delete_file_system::DeleteFileSystemOutput).
     pub fn build(self) -> crate::operation::delete_file_system::DeleteFileSystemOutput {
         crate::operation::delete_file_system::DeleteFileSystemOutput {
@@ -41,3 +40,4 @@ impl DeleteFileSystemOutputBuilder {
         }
     }
 }
+

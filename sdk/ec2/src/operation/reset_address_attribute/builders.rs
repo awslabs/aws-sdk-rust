@@ -4,71 +4,49 @@ pub use crate::operation::reset_address_attribute::_reset_address_attribute_outp
 pub use crate::operation::reset_address_attribute::_reset_address_attribute_input::ResetAddressAttributeInputBuilder;
 
 /// Fluent builder constructing a request to `ResetAddressAttribute`.
-///
+/// 
 /// <p>Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetAddressAttributeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder,
-}
-impl ResetAddressAttributeFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder
+            }
+impl ResetAddressAttributeFluentBuilder  {
     /// Creates a new `ResetAddressAttribute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::reset_address_attribute::ResetAddressAttribute,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::reset_address_attribute::ResetAddressAttributeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::reset_address_attribute::ResetAddressAttributeOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::reset_address_attribute::ResetAddressAttributeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::reset_address_attribute::ResetAddressAttribute, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::reset_address_attribute::ResetAddressAttributeError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::reset_address_attribute::ResetAddressAttributeOutput, aws_smithy_http::result::SdkError<crate::operation::reset_address_attribute::ResetAddressAttributeError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>[EC2-VPC] The allocation ID.</p>
     pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.allocation_id(input.into());
@@ -85,10 +63,7 @@ impl ResetAddressAttributeFluentBuilder {
         self
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::AddressAttributeName>,
-    ) -> Self {
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::AddressAttributeName>) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
@@ -103,3 +78,4 @@ impl ResetAddressAttributeFluentBuilder {
         self
     }
 }
+

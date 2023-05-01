@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventLabelInput {
+pub struct UpdateEventLabelInput  {
     /// <p>The ID of the event associated with the label to update.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct UpdateEventLabelInput {
 }
 impl UpdateEventLabelInput {
     /// <p>The ID of the event associated with the label to update.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The event type of the event associated with the label to update.</p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The new label to assign to the event.</p>
-    pub fn assigned_label(&self) -> std::option::Option<&str> {
+    pub fn assigned_label(&self) -> std::option::Option<& str> {
         self.assigned_label.as_deref()
     }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
-    pub fn label_timestamp(&self) -> std::option::Option<&str> {
+    pub fn label_timestamp(&self) -> std::option::Option<& str> {
         self.label_timestamp.as_deref()
     }
 }
 impl UpdateEventLabelInput {
     /// Creates a new builder-style object to manufacture [`UpdateEventLabelInput`](crate::operation::update_event_label::UpdateEventLabelInput).
-    pub fn builder() -> crate::operation::update_event_label::builders::UpdateEventLabelInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_label::builders::UpdateEventLabelInputBuilder {
         crate::operation::update_event_label::builders::UpdateEventLabelInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl UpdateEventLabelInputBuilder {
     }
     /// <p>The ID of the event associated with the label to update.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The event type of the event associated with the label to update.</p>
     pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl UpdateEventLabelInputBuilder {
     }
     /// <p>The event type of the event associated with the label to update.</p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p>The new label to assign to the event.</p>
     pub fn assigned_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl UpdateEventLabelInputBuilder {
     }
     /// <p>The new label to assign to the event.</p>
     pub fn set_assigned_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assigned_label = input;
-        self
+        self.assigned_label = input; self
     }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn label_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,23 +85,22 @@ impl UpdateEventLabelInputBuilder {
     }
     /// <p>The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC. </p>
     pub fn set_label_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_timestamp = input;
-        self
+        self.label_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`UpdateEventLabelInput`](crate::operation::update_event_label::UpdateEventLabelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_event_label::UpdateEventLabelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_event_label::UpdateEventLabelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_event_label::UpdateEventLabelInput {
-                event_id: self.event_id,
-                event_type_name: self.event_type_name,
-                assigned_label: self.assigned_label,
-                label_timestamp: self.label_timestamp,
-            },
+                event_id: self.event_id
+                ,
+                event_type_name: self.event_type_name
+                ,
+                assigned_label: self.assigned_label
+                ,
+                label_timestamp: self.label_timestamp
+                ,
+            }
         )
     }
 }
+

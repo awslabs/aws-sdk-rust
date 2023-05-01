@@ -3,7 +3,7 @@
 /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileGroupSettings {
+pub struct FileGroupSettings  {
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FileGroupSettings {
 }
 impl FileGroupSettings {
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn destination_settings(&self) -> std::option::Option<&crate::types::DestinationSettings> {
+    pub fn destination_settings(&self) -> std::option::Option<& crate::types::DestinationSettings> {
         self.destination_settings.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl FileGroupSettingsBuilder {
     }
     /// Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input file. If your job has multiple inputs, the service uses the filename of the first input file.
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
     pub fn destination_settings(mut self, input: crate::types::DestinationSettings) -> Self {
@@ -52,18 +51,17 @@ impl FileGroupSettingsBuilder {
         self
     }
     /// Settings associated with the destination. Will vary based on the type of destination
-    pub fn set_destination_settings(
-        mut self,
-        input: std::option::Option<crate::types::DestinationSettings>,
-    ) -> Self {
-        self.destination_settings = input;
-        self
+    pub fn set_destination_settings(mut self, input: std::option::Option<crate::types::DestinationSettings>) -> Self {
+        self.destination_settings = input; self
     }
     /// Consumes the builder and constructs a [`FileGroupSettings`](crate::types::FileGroupSettings).
     pub fn build(self) -> crate::types::FileGroupSettings {
         crate::types::FileGroupSettings {
-            destination: self.destination,
-            destination_settings: self.destination_settings,
+            destination: self.destination
+            ,
+            destination_settings: self.destination_settings
+            ,
         }
     }
 }
+

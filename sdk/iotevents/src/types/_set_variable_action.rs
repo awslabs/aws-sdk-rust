@@ -3,7 +3,7 @@
 /// <p>Information about the variable and its new value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVariableAction {
+pub struct SetVariableAction  {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
     pub variable_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SetVariableAction {
 }
 impl SetVariableAction {
     /// <p>The name of the variable.</p>
-    pub fn variable_name(&self) -> std::option::Option<&str> {
+    pub fn variable_name(&self) -> std::option::Option<& str> {
         self.variable_name.as_deref()
     }
     /// <p>The new value of the variable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SetVariableActionBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_variable_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.variable_name = input;
-        self
+        self.variable_name = input; self
     }
     /// <p>The new value of the variable.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SetVariableActionBuilder {
     }
     /// <p>The new value of the variable.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`SetVariableAction`](crate::types::SetVariableAction).
     pub fn build(self) -> crate::types::SetVariableAction {
         crate::types::SetVariableAction {
-            variable_name: self.variable_name,
-            value: self.value,
+            variable_name: self.variable_name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

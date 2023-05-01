@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMailDomainsOutput {
+pub struct ListMailDomainsOutput  {
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     #[doc(hidden)]
     pub mail_domains: std::option::Option<std::vec::Vec<crate::types::MailDomainSummary>>,
@@ -13,23 +13,22 @@ pub struct ListMailDomainsOutput {
 }
 impl ListMailDomainsOutput {
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
-    pub fn mail_domains(&self) -> std::option::Option<&[crate::types::MailDomainSummary]> {
+    pub fn mail_domains(&self) -> std::option::Option<& [crate::types::MailDomainSummary]> {
         self.mail_domains.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMailDomainsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMailDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListMailDomainsOutput`](crate::operation::list_mail_domains::ListMailDomainsOutput).
-    pub fn builder() -> crate::operation::list_mail_domains::builders::ListMailDomainsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_mail_domains::builders::ListMailDomainsOutputBuilder {
         crate::operation::list_mail_domains::builders::ListMailDomainsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListMailDomainsOutputBuilder {
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
     pub fn mail_domains(mut self, input: crate::types::MailDomainSummary) -> Self {
         let mut v = self.mail_domains.unwrap_or_default();
-        v.push(input);
-        self.mail_domains = Some(v);
-        self
+                        v.push(input);
+                        self.mail_domains = Some(v);
+                        self
     }
     /// <p>The list of mail domain summaries, specifying domains that exist in the specified WorkMail organization, along with the information about whether the domain is or isn't the default.</p>
-    pub fn set_mail_domains(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MailDomainSummary>>,
-    ) -> Self {
-        self.mail_domains = input;
-        self
+    pub fn set_mail_domains(mut self, input: std::option::Option<std::vec::Vec<crate::types::MailDomainSummary>>) -> Self {
+        self.mail_domains = input; self
     }
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListMailDomainsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. The value becomes <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMailDomainsOutput`](crate::operation::list_mail_domains::ListMailDomainsOutput).
     pub fn build(self) -> crate::operation::list_mail_domains::ListMailDomainsOutput {
         crate::operation::list_mail_domains::ListMailDomainsOutput {
-            mail_domains: self.mail_domains,
-            next_token: self.next_token,
+            mail_domains: self.mail_domains
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

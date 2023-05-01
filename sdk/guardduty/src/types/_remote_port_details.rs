@@ -3,7 +3,7 @@
 /// <p>Contains information about the remote port.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemotePortDetails {
+pub struct RemotePortDetails  {
     /// <p>The port number of the remote connection.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -17,7 +17,7 @@ impl RemotePortDetails {
         self.port
     }
     /// <p>The port name of the remote connection.</p>
-    pub fn port_name(&self) -> std::option::Option<&str> {
+    pub fn port_name(&self) -> std::option::Option<& str> {
         self.port_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RemotePortDetailsBuilder {
     }
     /// <p>The port number of the remote connection.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The port name of the remote connection.</p>
     pub fn port_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,17 @@ impl RemotePortDetailsBuilder {
     }
     /// <p>The port name of the remote connection.</p>
     pub fn set_port_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.port_name = input;
-        self
+        self.port_name = input; self
     }
     /// Consumes the builder and constructs a [`RemotePortDetails`](crate::types::RemotePortDetails).
     pub fn build(self) -> crate::types::RemotePortDetails {
         crate::types::RemotePortDetails {
-            port: self.port.unwrap_or_default(),
-            port_name: self.port_name,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            port_name: self.port_name
+            ,
         }
     }
 }
+

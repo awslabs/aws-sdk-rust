@@ -4,72 +4,50 @@ pub use crate::operation::update_identity_pool::_update_identity_pool_output::Up
 pub use crate::operation::update_identity_pool::_update_identity_pool_input::UpdateIdentityPoolInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateIdentityPool`.
-///
-/// <p>Updates an identity pool.</p>
+/// 
+/// <p>Updates an identity pool.</p> 
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateIdentityPoolFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder,
-}
-impl UpdateIdentityPoolFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder
+            }
+impl UpdateIdentityPoolFluentBuilder  {
     /// Creates a new `UpdateIdentityPool`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_identity_pool::UpdateIdentityPool,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_pool::UpdateIdentityPoolError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_identity_pool::UpdateIdentityPoolOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_identity_pool::UpdateIdentityPoolError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_identity_pool::UpdateIdentityPool, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_identity_pool::UpdateIdentityPoolError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolOutput, aws_smithy_http::result::SdkError<crate::operation::update_identity_pool::UpdateIdentityPoolError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -86,10 +64,7 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>A string that you provide.</p>
-    pub fn set_identity_pool_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_identity_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_identity_pool_name(input);
         self
     }
@@ -99,10 +74,7 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub fn set_allow_unauthenticated_identities(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_allow_unauthenticated_identities(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_unauthenticated_identities(input);
         self
     }
@@ -121,21 +93,12 @@ impl UpdateIdentityPoolFluentBuilder {
     /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
     ///
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn supported_login_providers(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn supported_login_providers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.supported_login_providers(k.into(), v.into());
         self
     }
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
-    pub fn set_supported_login_providers(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_supported_login_providers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_supported_login_providers(input);
         self
     }
@@ -145,10 +108,7 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn set_developer_provider_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_developer_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_developer_provider_name(input);
         self
     }
@@ -162,10 +122,7 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn set_open_id_connect_provider_ar_ns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_open_id_connect_provider_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_open_id_connect_provider_ar_ns(input);
         self
     }
@@ -174,18 +131,12 @@ impl UpdateIdentityPoolFluentBuilder {
     /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
     ///
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    pub fn cognito_identity_providers(
-        mut self,
-        input: crate::types::CognitoIdentityProvider,
-    ) -> Self {
+    pub fn cognito_identity_providers(mut self, input: crate::types::CognitoIdentityProvider) -> Self {
         self.inner = self.inner.cognito_identity_providers(input);
         self
     }
     /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
-    pub fn set_cognito_identity_providers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CognitoIdentityProvider>>,
-    ) -> Self {
+    pub fn set_cognito_identity_providers(mut self, input: std::option::Option<std::vec::Vec<crate::types::CognitoIdentityProvider>>) -> Self {
         self.inner = self.inner.set_cognito_identity_providers(input);
         self
     }
@@ -199,10 +150,7 @@ impl UpdateIdentityPoolFluentBuilder {
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn set_saml_provider_ar_ns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_saml_provider_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_saml_provider_ar_ns(input);
         self
     }
@@ -211,22 +159,14 @@ impl UpdateIdentityPoolFluentBuilder {
     /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
     ///
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn identity_pool_tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn identity_pool_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_tags(k.into(), v.into());
         self
     }
     /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
-    pub fn set_identity_pool_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_identity_pool_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_identity_pool_tags(input);
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An array of objects representing the destination for a replication rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationDestination {
+pub struct ReplicationDestination  {
     /// <p>The Region to replicate to.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReplicationDestination {
 }
 impl ReplicationDestination {
     /// <p>The Region to replicate to.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ReplicationDestinationBuilder {
     }
     /// <p>The Region to replicate to.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ReplicationDestinationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Amazon ECR private registry to replicate to. When configuring cross-Region replication within your own registry, specify your own account ID.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// Consumes the builder and constructs a [`ReplicationDestination`](crate::types::ReplicationDestination).
     pub fn build(self) -> crate::types::ReplicationDestination {
         crate::types::ReplicationDestination {
-            region: self.region,
-            registry_id: self.registry_id,
+            region: self.region
+            ,
+            registry_id: self.registry_id
+            ,
         }
     }
 }
+

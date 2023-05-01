@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPullRequestsOutput {
+pub struct ListPullRequestsOutput  {
     /// <p>The system-generated IDs of the pull requests.</p>
     #[doc(hidden)]
     pub pull_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,23 +13,22 @@ pub struct ListPullRequestsOutput {
 }
 impl ListPullRequestsOutput {
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub fn pull_request_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pull_request_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.pull_request_ids.as_deref()
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPullRequestsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPullRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput).
-    pub fn builder() -> crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder {
         crate::operation::list_pull_requests::builders::ListPullRequestsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListPullRequestsOutputBuilder {
     /// <p>The system-generated IDs of the pull requests.</p>
     pub fn pull_request_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.pull_request_ids.unwrap_or_default();
-        v.push(input.into());
-        self.pull_request_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.pull_request_ids = Some(v);
+                        self
     }
     /// <p>The system-generated IDs of the pull requests.</p>
-    pub fn set_pull_request_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.pull_request_ids = input;
-        self
+    pub fn set_pull_request_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.pull_request_ids = input; self
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListPullRequestsOutputBuilder {
     }
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPullRequestsOutput`](crate::operation::list_pull_requests::ListPullRequestsOutput).
     pub fn build(self) -> crate::operation::list_pull_requests::ListPullRequestsOutput {
         crate::operation::list_pull_requests::ListPullRequestsOutput {
-            pull_request_ids: self.pull_request_ids,
-            next_token: self.next_token,
+            pull_request_ids: self.pull_request_ids
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -126,3 +126,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateConfigurationSetEventDestination` operation.
 pub mod update_configuration_set_event_destination;
+

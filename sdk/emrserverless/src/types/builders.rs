@@ -17,6 +17,8 @@ pub use crate::types::_spark_submit::SparkSubmitBuilder;
 
 pub use crate::types::_job_run::JobRunBuilder;
 
+pub use crate::types::_resource_utilization::ResourceUtilizationBuilder;
+
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
 pub use crate::types::_total_resource_utilization::TotalResourceUtilizationBuilder;
@@ -42,3 +44,4 @@ pub use crate::types::_application::ApplicationBuilder;
 pub use crate::types::_worker_type_specification::WorkerTypeSpecificationBuilder;
 
 pub use crate::types::_image_configuration::ImageConfigurationBuilder;
+

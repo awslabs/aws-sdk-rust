@@ -3,20 +3,20 @@
 /// DeleteCampaignRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectInstanceConfigInput {
+pub struct DeleteConnectInstanceConfigInput  {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectInstanceConfigInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
 }
 impl DeleteConnectInstanceConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
-    pub fn builder() -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder{
+    pub fn builder() -> crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder {
         crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder::default()
     }
 }
@@ -34,24 +34,17 @@ impl DeleteConnectInstanceConfigInputBuilder {
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connect_instance_id = input;
-        self
+    pub fn set_connect_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connect_instance_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteConnectInstanceConfigInput`](crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigInput {
-                connect_instance_id: self.connect_instance_id,
-            },
+                connect_instance_id: self.connect_instance_id
+                ,
+            }
         )
     }
 }
+

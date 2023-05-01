@@ -3,7 +3,7 @@
 /// <p>The Amazon Chime account details. An AWS account can have multiple Amazon Chime accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Account {
+pub struct Account  {
     /// <p>The AWS account ID.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -30,46 +30,43 @@ pub struct Account {
     pub account_status: std::option::Option<crate::types::AccountStatus>,
     /// <p>The sign-in delegate groups associated with the account.</p>
     #[doc(hidden)]
-    pub signin_delegate_groups:
-        std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    pub signin_delegate_groups: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl Account {
     /// <p>The AWS account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Chime account name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
-    pub fn account_type(&self) -> std::option::Option<&crate::types::AccountType> {
+    pub fn account_type(&self) -> std::option::Option<& crate::types::AccountType> {
         self.account_type.as_ref()
     }
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The default license for the Amazon Chime account.</p>
-    pub fn default_license(&self) -> std::option::Option<&crate::types::License> {
+    pub fn default_license(&self) -> std::option::Option<& crate::types::License> {
         self.default_license.as_ref()
     }
     /// <p>Supported licenses for the Amazon Chime account.</p>
-    pub fn supported_licenses(&self) -> std::option::Option<&[crate::types::License]> {
+    pub fn supported_licenses(&self) -> std::option::Option<& [crate::types::License]> {
         self.supported_licenses.as_deref()
     }
     /// <p>The status of the account.</p>
-    pub fn account_status(&self) -> std::option::Option<&crate::types::AccountStatus> {
+    pub fn account_status(&self) -> std::option::Option<& crate::types::AccountStatus> {
         self.account_status.as_ref()
     }
     /// <p>The sign-in delegate groups associated with the account.</p>
-    pub fn signin_delegate_groups(
-        &self,
-    ) -> std::option::Option<&[crate::types::SigninDelegateGroup]> {
+    pub fn signin_delegate_groups(&self) -> std::option::Option<& [crate::types::SigninDelegateGroup]> {
         self.signin_delegate_groups.as_deref()
     }
 }
@@ -92,8 +89,7 @@ pub struct AccountBuilder {
     pub(crate) default_license: std::option::Option<crate::types::License>,
     pub(crate) supported_licenses: std::option::Option<std::vec::Vec<crate::types::License>>,
     pub(crate) account_status: std::option::Option<crate::types::AccountStatus>,
-    pub(crate) signin_delegate_groups:
-        std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
+    pub(crate) signin_delegate_groups: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
 }
 impl AccountBuilder {
     /// <p>The AWS account ID.</p>
@@ -103,8 +99,7 @@ impl AccountBuilder {
     }
     /// <p>The AWS account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +108,7 @@ impl AccountBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Chime account name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +117,7 @@ impl AccountBuilder {
     }
     /// <p>The Amazon Chime account name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
     pub fn account_type(mut self, input: crate::types::AccountType) -> Self {
@@ -132,12 +125,8 @@ impl AccountBuilder {
         self
     }
     /// <p>The Amazon Chime account type. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>
-    pub fn set_account_type(
-        mut self,
-        input: std::option::Option<crate::types::AccountType>,
-    ) -> Self {
-        self.account_type = input;
-        self
+    pub fn set_account_type(mut self, input: std::option::Option<crate::types::AccountType>) -> Self {
+        self.account_type = input; self
     }
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -145,12 +134,8 @@ impl AccountBuilder {
         self
     }
     /// <p>The Amazon Chime account creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The default license for the Amazon Chime account.</p>
     pub fn default_license(mut self, input: crate::types::License) -> Self {
@@ -158,12 +143,8 @@ impl AccountBuilder {
         self
     }
     /// <p>The default license for the Amazon Chime account.</p>
-    pub fn set_default_license(
-        mut self,
-        input: std::option::Option<crate::types::License>,
-    ) -> Self {
-        self.default_license = input;
-        self
+    pub fn set_default_license(mut self, input: std::option::Option<crate::types::License>) -> Self {
+        self.default_license = input; self
     }
     /// Appends an item to `supported_licenses`.
     ///
@@ -172,17 +153,13 @@ impl AccountBuilder {
     /// <p>Supported licenses for the Amazon Chime account.</p>
     pub fn supported_licenses(mut self, input: crate::types::License) -> Self {
         let mut v = self.supported_licenses.unwrap_or_default();
-        v.push(input);
-        self.supported_licenses = Some(v);
-        self
+                        v.push(input);
+                        self.supported_licenses = Some(v);
+                        self
     }
     /// <p>Supported licenses for the Amazon Chime account.</p>
-    pub fn set_supported_licenses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::License>>,
-    ) -> Self {
-        self.supported_licenses = input;
-        self
+    pub fn set_supported_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::types::License>>) -> Self {
+        self.supported_licenses = input; self
     }
     /// <p>The status of the account.</p>
     pub fn account_status(mut self, input: crate::types::AccountStatus) -> Self {
@@ -190,12 +167,8 @@ impl AccountBuilder {
         self
     }
     /// <p>The status of the account.</p>
-    pub fn set_account_status(
-        mut self,
-        input: std::option::Option<crate::types::AccountStatus>,
-    ) -> Self {
-        self.account_status = input;
-        self
+    pub fn set_account_status(mut self, input: std::option::Option<crate::types::AccountStatus>) -> Self {
+        self.account_status = input; self
     }
     /// Appends an item to `signin_delegate_groups`.
     ///
@@ -204,30 +177,36 @@ impl AccountBuilder {
     /// <p>The sign-in delegate groups associated with the account.</p>
     pub fn signin_delegate_groups(mut self, input: crate::types::SigninDelegateGroup) -> Self {
         let mut v = self.signin_delegate_groups.unwrap_or_default();
-        v.push(input);
-        self.signin_delegate_groups = Some(v);
-        self
+                        v.push(input);
+                        self.signin_delegate_groups = Some(v);
+                        self
     }
     /// <p>The sign-in delegate groups associated with the account.</p>
-    pub fn set_signin_delegate_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>,
-    ) -> Self {
-        self.signin_delegate_groups = input;
-        self
+    pub fn set_signin_delegate_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SigninDelegateGroup>>) -> Self {
+        self.signin_delegate_groups = input; self
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {
         crate::types::Account {
-            aws_account_id: self.aws_account_id,
-            account_id: self.account_id,
-            name: self.name,
-            account_type: self.account_type,
-            created_timestamp: self.created_timestamp,
-            default_license: self.default_license,
-            supported_licenses: self.supported_licenses,
-            account_status: self.account_status,
-            signin_delegate_groups: self.signin_delegate_groups,
+            aws_account_id: self.aws_account_id
+            ,
+            account_id: self.account_id
+            ,
+            name: self.name
+            ,
+            account_type: self.account_type
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            default_license: self.default_license
+            ,
+            supported_licenses: self.supported_licenses
+            ,
+            account_status: self.account_status
+            ,
+            signin_delegate_groups: self.signin_delegate_groups
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Specifies an S3 location where chat logs will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DestinationConfiguration {
+pub struct S3DestinationConfiguration  {
     /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
 }
 impl S3DestinationConfiguration {
     /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl S3DestinationConfigurationBuilder {
     }
     /// <p>Name of the Amazon S3 bucket where chat activity will be logged.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// Consumes the builder and constructs a [`S3DestinationConfiguration`](crate::types::S3DestinationConfiguration).
     pub fn build(self) -> crate::types::S3DestinationConfiguration {
         crate::types::S3DestinationConfiguration {
-            bucket_name: self.bucket_name,
+            bucket_name: self.bucket_name
+            ,
         }
     }
 }
+

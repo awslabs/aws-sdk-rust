@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceConnectorStreamingConfigurationInput {
+pub struct GetVoiceConnectorStreamingConfigurationInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorStreamingConfigurationInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl GetVoiceConnectorStreamingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorStreamingConfigurationInput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationInput).
-    pub fn builder() -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationInputBuilder {
         crate::operation::get_voice_connector_streaming_configuration::builders::GetVoiceConnectorStreamingConfigurationInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl GetVoiceConnectorStreamingConfigurationInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorStreamingConfigurationInput`](crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationInput {
                 voice_connector_id: self.voice_connector_id
@@ -50,3 +46,4 @@ impl GetVoiceConnectorStreamingConfigurationInputBuilder {
         )
     }
 }
+

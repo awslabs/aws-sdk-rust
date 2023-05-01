@@ -3,7 +3,7 @@
 /// <p>The parameters for SQL Server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlServerParameters {
+pub struct SqlServerParameters  {
     /// <p>Host.</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct SqlServerParameters {
 }
 impl SqlServerParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>Port.</p>
@@ -24,7 +24,7 @@ impl SqlServerParameters {
         self.port
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl SqlServerParametersBuilder {
     }
     /// <p>Host.</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>Port.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl SqlServerParametersBuilder {
     }
     /// <p>Port.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,19 @@ impl SqlServerParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// Consumes the builder and constructs a [`SqlServerParameters`](crate::types::SqlServerParameters).
     pub fn build(self) -> crate::types::SqlServerParameters {
         crate::types::SqlServerParameters {
-            host: self.host,
-            port: self.port.unwrap_or_default(),
-            database: self.database,
+            host: self.host
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            database: self.database
+            ,
         }
     }
 }
+

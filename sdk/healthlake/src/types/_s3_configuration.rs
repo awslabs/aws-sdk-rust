@@ -3,7 +3,7 @@
 /// <p> The configuration of the S3 bucket for either an import or export job. This includes assigning permissions for access. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Configuration {
+pub struct S3Configuration  {
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Configuration {
 }
 impl S3Configuration {
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p> The KMS key ID used to access the S3 bucket. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3ConfigurationBuilder {
     }
     /// <p> The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake. </p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p> The KMS key ID used to access the S3 bucket. </p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3ConfigurationBuilder {
     }
     /// <p> The KMS key ID used to access the S3 bucket. </p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`S3Configuration`](crate::types::S3Configuration).
     pub fn build(self) -> crate::types::S3Configuration {
         crate::types::S3Configuration {
-            s3_uri: self.s3_uri,
-            kms_key_id: self.kms_key_id,
+            s3_uri: self.s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

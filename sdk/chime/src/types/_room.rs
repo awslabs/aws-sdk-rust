@@ -3,7 +3,7 @@
 /// <p>The Amazon Chime chat room details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Room {
+pub struct Room  {
     /// <p>The room ID.</p>
     #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
@@ -25,31 +25,31 @@ pub struct Room {
 }
 impl Room {
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> std::option::Option<&str> {
+    pub fn room_id(&self) -> std::option::Option<& str> {
         self.room_id.as_deref()
     }
     /// <p>The room name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The identifier of the room creator.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The room creation timestamp, in ISO 8601 format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The room update timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for Room {
+impl  std::fmt::Debug for Room  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Room");
         formatter.field("room_id", &self.room_id);
@@ -87,8 +87,7 @@ impl RoomBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_id = input;
-        self
+        self.room_id = input; self
     }
     /// <p>The room name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +96,7 @@ impl RoomBuilder {
     }
     /// <p>The room name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +105,7 @@ impl RoomBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The identifier of the room creator.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +114,7 @@ impl RoomBuilder {
     }
     /// <p>The identifier of the room creator.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The room creation timestamp, in ISO 8601 format.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -126,12 +122,8 @@ impl RoomBuilder {
         self
     }
     /// <p>The room creation timestamp, in ISO 8601 format.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The room update timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -139,22 +131,24 @@ impl RoomBuilder {
         self
     }
     /// <p>The room update timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`Room`](crate::types::Room).
     pub fn build(self) -> crate::types::Room {
         crate::types::Room {
-            room_id: self.room_id,
-            name: self.name,
-            account_id: self.account_id,
-            created_by: self.created_by,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
+            room_id: self.room_id
+            ,
+            name: self.name
+            ,
+            account_id: self.account_id
+            ,
+            created_by: self.created_by
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
         }
     }
 }
@@ -170,3 +164,4 @@ impl std::fmt::Debug for RoomBuilder {
         formatter.finish()
     }
 }
+

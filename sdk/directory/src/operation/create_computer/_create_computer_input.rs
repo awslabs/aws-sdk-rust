@@ -3,7 +3,7 @@
 /// <p>Contains the inputs for the <code>CreateComputer</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateComputerInput {
+pub struct CreateComputerInput  {
     /// <p>The identifier of the directory in which to create the computer account.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -22,36 +22,33 @@ pub struct CreateComputerInput {
 }
 impl CreateComputerInput {
     /// <p>The identifier of the directory in which to create the computer account.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the computer account.</p>
-    pub fn computer_name(&self) -> std::option::Option<&str> {
+    pub fn computer_name(&self) -> std::option::Option<& str> {
         self.computer_name.as_deref()
     }
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<& str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    pub fn computer_attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn computer_attributes(&self) -> std::option::Option<& [crate::types::Attribute]> {
         self.computer_attributes.as_deref()
     }
 }
-impl std::fmt::Debug for CreateComputerInput {
+impl  std::fmt::Debug for CreateComputerInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComputerInput");
         formatter.field("directory_id", &self.directory_id);
         formatter.field("computer_name", &self.computer_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "organizational_unit_distinguished_name",
-            &self.organizational_unit_distinguished_name,
-        );
+        formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
         formatter.field("computer_attributes", &self.computer_attributes);
         formatter.finish()
     }
@@ -81,8 +78,7 @@ impl CreateComputerInputBuilder {
     }
     /// <p>The identifier of the directory in which to create the computer account.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The name of the computer account.</p>
     pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +87,7 @@ impl CreateComputerInputBuilder {
     }
     /// <p>The name of the computer account.</p>
     pub fn set_computer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.computer_name = input;
-        self
+        self.computer_name = input; self
     }
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,24 +96,16 @@ impl CreateComputerInputBuilder {
     }
     /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn organizational_unit_distinguished_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn organizational_unit_distinguished_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.organizational_unit_distinguished_name = Some(input.into());
         self
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn set_organizational_unit_distinguished_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.organizational_unit_distinguished_name = input;
-        self
+    pub fn set_organizational_unit_distinguished_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.organizational_unit_distinguished_name = input; self
     }
     /// Appends an item to `computer_attributes`.
     ///
@@ -127,32 +114,30 @@ impl CreateComputerInputBuilder {
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
     pub fn computer_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.computer_attributes.unwrap_or_default();
-        v.push(input);
-        self.computer_attributes = Some(v);
-        self
+                        v.push(input);
+                        self.computer_attributes = Some(v);
+                        self
     }
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    pub fn set_computer_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.computer_attributes = input;
-        self
+    pub fn set_computer_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.computer_attributes = input; self
     }
     /// Consumes the builder and constructs a [`CreateComputerInput`](crate::operation::create_computer::CreateComputerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_computer::CreateComputerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_computer::CreateComputerInput {
-            directory_id: self.directory_id,
-            computer_name: self.computer_name,
-            password: self.password,
-            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
-            computer_attributes: self.computer_attributes,
-        })
+    pub fn build(self) -> Result<crate::operation::create_computer::CreateComputerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_computer::CreateComputerInput {
+                directory_id: self.directory_id
+                ,
+                computer_name: self.computer_name
+                ,
+                password: self.password
+                ,
+                organizational_unit_distinguished_name: self.organizational_unit_distinguished_name
+                ,
+                computer_attributes: self.computer_attributes
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateComputerInputBuilder {
@@ -161,11 +146,9 @@ impl std::fmt::Debug for CreateComputerInputBuilder {
         formatter.field("directory_id", &self.directory_id);
         formatter.field("computer_name", &self.computer_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "organizational_unit_distinguished_name",
-            &self.organizational_unit_distinguished_name,
-        );
+        formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
         formatter.field("computer_attributes", &self.computer_attributes);
         formatter.finish()
     }
 }
+

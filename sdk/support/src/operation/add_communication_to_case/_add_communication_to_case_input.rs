@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddCommunicationToCaseInput {
+pub struct AddCommunicationToCaseInput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct AddCommunicationToCaseInput {
 }
 impl AddCommunicationToCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
     /// <p>The body of an email communication to add to the support case.</p>
-    pub fn communication_body(&self) -> std::option::Option<&str> {
+    pub fn communication_body(&self) -> std::option::Option<& str> {
         self.communication_body.as_deref()
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_email_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_set_id(&self) -> std::option::Option<& str> {
         self.attachment_set_id.as_deref()
     }
 }
 impl AddCommunicationToCaseInput {
     /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseInput`](crate::operation::add_communication_to_case::AddCommunicationToCaseInput).
-    pub fn builder(
-    ) -> crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder {
         crate::operation::add_communication_to_case::builders::AddCommunicationToCaseInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl AddCommunicationToCaseInputBuilder {
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// <p>The body of an email communication to add to the support case.</p>
     pub fn communication_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +66,8 @@ impl AddCommunicationToCaseInputBuilder {
         self
     }
     /// <p>The body of an email communication to add to the support case.</p>
-    pub fn set_communication_body(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.communication_body = input;
-        self
+    pub fn set_communication_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.communication_body = input; self
     }
     /// Appends an item to `cc_email_addresses`.
     ///
@@ -83,17 +76,13 @@ impl AddCommunicationToCaseInputBuilder {
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
     pub fn cc_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cc_email_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.cc_email_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.cc_email_addresses = Some(v);
+                        self
     }
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
-    pub fn set_cc_email_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.cc_email_addresses = input;
-        self
+    pub fn set_cc_email_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.cc_email_addresses = input; self
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
     pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,27 +90,23 @@ impl AddCommunicationToCaseInputBuilder {
         self
     }
     /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code> </p>
-    pub fn set_attachment_set_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.attachment_set_id = input;
-        self
+    pub fn set_attachment_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.attachment_set_id = input; self
     }
     /// Consumes the builder and constructs a [`AddCommunicationToCaseInput`](crate::operation::add_communication_to_case::AddCommunicationToCaseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_communication_to_case::AddCommunicationToCaseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::add_communication_to_case::AddCommunicationToCaseInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::add_communication_to_case::AddCommunicationToCaseInput {
-                case_id: self.case_id,
-                communication_body: self.communication_body,
-                cc_email_addresses: self.cc_email_addresses,
-                attachment_set_id: self.attachment_set_id,
-            },
+                case_id: self.case_id
+                ,
+                communication_body: self.communication_body
+                ,
+                cc_email_addresses: self.cc_email_addresses
+                ,
+                attachment_set_id: self.attachment_set_id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>ListRoles</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRolesOutput {
+pub struct ListRolesOutput  {
     /// <p>A list of roles.</p>
     #[doc(hidden)]
     pub roles: std::option::Option<std::vec::Vec<crate::types::Role>>,
@@ -17,7 +17,7 @@ pub struct ListRolesOutput {
 }
 impl ListRolesOutput {
     /// <p>A list of roles.</p>
-    pub fn roles(&self) -> std::option::Option<&[crate::types::Role]> {
+    pub fn roles(&self) -> std::option::Option<& [crate::types::Role]> {
         self.roles.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -25,15 +25,15 @@ impl ListRolesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRolesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListRolesOutput {
     /// Creates a new builder-style object to manufacture [`ListRolesOutput`](crate::operation::list_roles::ListRolesOutput).
     pub fn builder() -> crate::operation::list_roles::builders::ListRolesOutputBuilder {
@@ -58,17 +58,13 @@ impl ListRolesOutputBuilder {
     /// <p>A list of roles.</p>
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = Some(v);
-        self
+                        v.push(input);
+                        self.roles = Some(v);
+                        self
     }
     /// <p>A list of roles.</p>
-    pub fn set_roles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::types::Role>>) -> Self {
+        self.roles = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -77,8 +73,7 @@ impl ListRolesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,25 +82,29 @@ impl ListRolesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListRolesOutput`](crate::operation::list_roles::ListRolesOutput).
     pub fn build(self) -> crate::operation::list_roles::ListRolesOutput {
         crate::operation::list_roles::ListRolesOutput {
-            roles: self.roles,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
+            roles: self.roles
+            ,
+            is_truncated: self.is_truncated
+                .unwrap_or_default()
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

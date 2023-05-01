@@ -4,72 +4,49 @@ pub use crate::operation::describe_group_membership::_describe_group_membership_
 pub use crate::operation::describe_group_membership::_describe_group_membership_input::DescribeGroupMembershipInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeGroupMembership`.
-///
+/// 
 /// <p>Use the <code>DescribeGroupMembership</code> operation to determine if a user is a member of the specified group. If the user exists and is a member of the specified group, an associated <code>GroupMember</code> object is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGroupMembershipFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder,
-}
-impl DescribeGroupMembershipFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder
+            }
+impl DescribeGroupMembershipFluentBuilder  {
     /// Creates a new `DescribeGroupMembership`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_group_membership::DescribeGroupMembership,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_group_membership::DescribeGroupMembershipError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_group_membership::DescribeGroupMembershipOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_group_membership::DescribeGroupMembershipError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_group_membership::DescribeGroupMembership, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_group_membership::DescribeGroupMembershipError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_group_membership::DescribeGroupMembershipOutput, aws_smithy_http::result::SdkError<crate::operation::describe_group_membership::DescribeGroupMembershipError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The user name of the user that you want to search for.</p>
     pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.member_name(input.into());
@@ -111,3 +88,4 @@ impl DescribeGroupMembershipFluentBuilder {
         self
     }
 }
+

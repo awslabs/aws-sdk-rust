@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAuditConfigurationInput {}
+pub struct DescribeAccountAuditConfigurationInput  {
+}
 impl DescribeAccountAuditConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAuditConfigurationInput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput).
-    pub fn builder() -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationInputBuilder {
         crate::operation::describe_account_audit_configuration::builders::DescribeAccountAuditConfigurationInputBuilder::default()
     }
 }
@@ -13,13 +14,15 @@ impl DescribeAccountAuditConfigurationInput {
 /// A builder for [`DescribeAccountAuditConfigurationInput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeAccountAuditConfigurationInputBuilder {}
+pub struct DescribeAccountAuditConfigurationInputBuilder {
+}
 impl DescribeAccountAuditConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeAccountAuditConfigurationInput`](crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationInput {
             }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The configuration of a tree map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TreeMapConfiguration {
+pub struct TreeMapConfiguration  {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
     pub field_wells: std::option::Option<crate::types::TreeMapFieldWells>,
@@ -34,41 +34,39 @@ pub struct TreeMapConfiguration {
 }
 impl TreeMapConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::TreeMapFieldWells> {
+    pub fn field_wells(&self) -> std::option::Option<& crate::types::TreeMapFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a tree map.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::TreeMapSortConfiguration> {
+    pub fn sort_configuration(&self) -> std::option::Option<& crate::types::TreeMapSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The label options (label text, label visibility) of the groups that are displayed in a tree map.</p>
-    pub fn group_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn group_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.group_label_options.as_ref()
     }
     /// <p>The label options (label text, label visibility) of the sizes that are displayed in a tree map.</p>
-    pub fn size_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn size_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.size_label_options.as_ref()
     }
     /// <p>The label options (label text, label visibility) for the colors displayed in a tree map.</p>
-    pub fn color_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn color_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.color_label_options.as_ref()
     }
     /// <p>The color options (gradient color, point of divergence) of a tree map.</p>
-    pub fn color_scale(&self) -> std::option::Option<&crate::types::ColorScale> {
+    pub fn color_scale(&self) -> std::option::Option<& crate::types::ColorScale> {
         self.color_scale.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The tooltip display setup of the visual.</p>
-    pub fn tooltip(&self) -> std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> std::option::Option<& crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
 }
@@ -100,12 +98,8 @@ impl TreeMapConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: std::option::Option<crate::types::TreeMapFieldWells>,
-    ) -> Self {
-        self.field_wells = input;
-        self
+    pub fn set_field_wells(mut self, input: std::option::Option<crate::types::TreeMapFieldWells>) -> Self {
+        self.field_wells = input; self
     }
     /// <p>The sort configuration of a tree map.</p>
     pub fn sort_configuration(mut self, input: crate::types::TreeMapSortConfiguration) -> Self {
@@ -113,12 +107,8 @@ impl TreeMapConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a tree map.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: std::option::Option<crate::types::TreeMapSortConfiguration>,
-    ) -> Self {
-        self.sort_configuration = input;
-        self
+    pub fn set_sort_configuration(mut self, input: std::option::Option<crate::types::TreeMapSortConfiguration>) -> Self {
+        self.sort_configuration = input; self
     }
     /// <p>The label options (label text, label visibility) of the groups that are displayed in a tree map.</p>
     pub fn group_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -126,12 +116,8 @@ impl TreeMapConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility) of the groups that are displayed in a tree map.</p>
-    pub fn set_group_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.group_label_options = input;
-        self
+    pub fn set_group_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.group_label_options = input; self
     }
     /// <p>The label options (label text, label visibility) of the sizes that are displayed in a tree map.</p>
     pub fn size_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -139,12 +125,8 @@ impl TreeMapConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility) of the sizes that are displayed in a tree map.</p>
-    pub fn set_size_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.size_label_options = input;
-        self
+    pub fn set_size_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.size_label_options = input; self
     }
     /// <p>The label options (label text, label visibility) for the colors displayed in a tree map.</p>
     pub fn color_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -152,12 +134,8 @@ impl TreeMapConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility) for the colors displayed in a tree map.</p>
-    pub fn set_color_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.color_label_options = input;
-        self
+    pub fn set_color_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.color_label_options = input; self
     }
     /// <p>The color options (gradient color, point of divergence) of a tree map.</p>
     pub fn color_scale(mut self, input: crate::types::ColorScale) -> Self {
@@ -166,8 +144,7 @@ impl TreeMapConfigurationBuilder {
     }
     /// <p>The color options (gradient color, point of divergence) of a tree map.</p>
     pub fn set_color_scale(mut self, input: std::option::Option<crate::types::ColorScale>) -> Self {
-        self.color_scale = input;
-        self
+        self.color_scale = input; self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
@@ -176,8 +153,7 @@ impl TreeMapConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
@@ -185,12 +161,8 @@ impl TreeMapConfigurationBuilder {
         self
     }
     /// <p>The options that determine if visual data labels are displayed.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
-        self.data_labels = input;
-        self
+    pub fn set_data_labels(mut self, input: std::option::Option<crate::types::DataLabelOptions>) -> Self {
+        self.data_labels = input; self
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
@@ -199,21 +171,30 @@ impl TreeMapConfigurationBuilder {
     }
     /// <p>The tooltip display setup of the visual.</p>
     pub fn set_tooltip(mut self, input: std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input;
-        self
+        self.tooltip = input; self
     }
     /// Consumes the builder and constructs a [`TreeMapConfiguration`](crate::types::TreeMapConfiguration).
     pub fn build(self) -> crate::types::TreeMapConfiguration {
         crate::types::TreeMapConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            group_label_options: self.group_label_options,
-            size_label_options: self.size_label_options,
-            color_label_options: self.color_label_options,
-            color_scale: self.color_scale,
-            legend: self.legend,
-            data_labels: self.data_labels,
-            tooltip: self.tooltip,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            group_label_options: self.group_label_options
+            ,
+            size_label_options: self.size_label_options
+            ,
+            color_label_options: self.color_label_options
+            ,
+            color_scale: self.color_scale
+            ,
+            legend: self.legend
+            ,
+            data_labels: self.data_labels
+            ,
+            tooltip: self.tooltip
+            ,
         }
     }
 }
+

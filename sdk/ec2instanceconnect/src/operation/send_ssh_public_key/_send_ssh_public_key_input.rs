@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendSshPublicKeyInput {
+pub struct SendSshPublicKeyInput  {
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct SendSshPublicKeyInput {
 }
 impl SendSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-    pub fn instance_os_user(&self) -> std::option::Option<&str> {
+    pub fn instance_os_user(&self) -> std::option::Option<& str> {
         self.instance_os_user.as_deref()
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
 }
 impl SendSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`SendSshPublicKeyInput`](crate::operation::send_ssh_public_key::SendSshPublicKeyInput).
-    pub fn builder() -> crate::operation::send_ssh_public_key::builders::SendSshPublicKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::send_ssh_public_key::builders::SendSshPublicKeyInputBuilder {
         crate::operation::send_ssh_public_key::builders::SendSshPublicKeyInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl SendSshPublicKeyInputBuilder {
     }
     /// <p>The ID of the EC2 instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
     pub fn instance_os_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl SendSshPublicKeyInputBuilder {
     }
     /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
     pub fn set_instance_os_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_os_user = input;
-        self
+        self.instance_os_user = input; self
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
     pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl SendSshPublicKeyInputBuilder {
     }
     /// <p>The public key material. To use the public key, you must have the matching private key.</p>
     pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_public_key = input;
-        self
+        self.ssh_public_key = input; self
     }
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,27 +84,23 @@ impl SendSshPublicKeyInputBuilder {
         self
     }
     /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
     /// Consumes the builder and constructs a [`SendSshPublicKeyInput`](crate::operation::send_ssh_public_key::SendSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_ssh_public_key::SendSshPublicKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::send_ssh_public_key::SendSshPublicKeyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::send_ssh_public_key::SendSshPublicKeyInput {
-                instance_id: self.instance_id,
-                instance_os_user: self.instance_os_user,
-                ssh_public_key: self.ssh_public_key,
-                availability_zone: self.availability_zone,
-            },
+                instance_id: self.instance_id
+                ,
+                instance_os_user: self.instance_os_user
+                ,
+                ssh_public_key: self.ssh_public_key
+                ,
+                availability_zone: self.availability_zone
+                ,
+            }
         )
     }
 }
+

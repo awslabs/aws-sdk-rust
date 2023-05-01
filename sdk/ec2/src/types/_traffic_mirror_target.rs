@@ -3,7 +3,7 @@
 /// <p>Describes a Traffic Mirror target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficMirrorTarget {
+pub struct TrafficMirrorTarget  {
     /// <p>The ID of the Traffic Mirror target.</p>
     #[doc(hidden)]
     pub traffic_mirror_target_id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct TrafficMirrorTarget {
 }
 impl TrafficMirrorTarget {
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn traffic_mirror_target_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_mirror_target_id(&self) -> std::option::Option<& str> {
         self.traffic_mirror_target_id.as_deref()
     }
     /// <p>The network interface ID that is attached to the target.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer.</p>
-    pub fn network_load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn network_load_balancer_arn(&self) -> std::option::Option<& str> {
         self.network_load_balancer_arn.as_deref()
     }
     /// <p>The type of Traffic Mirror target.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TrafficMirrorTargetType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::TrafficMirrorTargetType> {
         self.r#type.as_ref()
     }
     /// <p>Information about the Traffic Mirror target.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the account that owns the Traffic Mirror target.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The tags assigned to the Traffic Mirror target.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    pub fn gateway_load_balancer_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_load_balancer_endpoint_id(&self) -> std::option::Option<& str> {
         self.gateway_load_balancer_endpoint_id.as_deref()
     }
 }
@@ -90,12 +90,8 @@ impl TrafficMirrorTargetBuilder {
         self
     }
     /// <p>The ID of the Traffic Mirror target.</p>
-    pub fn set_traffic_mirror_target_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.traffic_mirror_target_id = input;
-        self
+    pub fn set_traffic_mirror_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.traffic_mirror_target_id = input; self
     }
     /// <p>The network interface ID that is attached to the target.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,12 +99,8 @@ impl TrafficMirrorTargetBuilder {
         self
     }
     /// <p>The network interface ID that is attached to the target.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_interface_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer.</p>
     pub fn network_load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,12 +108,8 @@ impl TrafficMirrorTargetBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer.</p>
-    pub fn set_network_load_balancer_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_load_balancer_arn = input;
-        self
+    pub fn set_network_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_load_balancer_arn = input; self
     }
     /// <p>The type of Traffic Mirror target.</p>
     pub fn r#type(mut self, input: crate::types::TrafficMirrorTargetType) -> Self {
@@ -129,12 +117,8 @@ impl TrafficMirrorTargetBuilder {
         self
     }
     /// <p>The type of Traffic Mirror target.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::TrafficMirrorTargetType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::TrafficMirrorTargetType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>Information about the Traffic Mirror target.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +127,7 @@ impl TrafficMirrorTargetBuilder {
     }
     /// <p>Information about the Traffic Mirror target.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ID of the account that owns the Traffic Mirror target.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +136,7 @@ impl TrafficMirrorTargetBuilder {
     }
     /// <p>The ID of the account that owns the Traffic Mirror target.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -163,45 +145,43 @@ impl TrafficMirrorTargetBuilder {
     /// <p>The tags assigned to the Traffic Mirror target.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags assigned to the Traffic Mirror target.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    pub fn gateway_load_balancer_endpoint_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn gateway_load_balancer_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.gateway_load_balancer_endpoint_id = Some(input.into());
         self
     }
     /// <p>The ID of the Gateway Load Balancer endpoint.</p>
-    pub fn set_gateway_load_balancer_endpoint_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.gateway_load_balancer_endpoint_id = input;
-        self
+    pub fn set_gateway_load_balancer_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.gateway_load_balancer_endpoint_id = input; self
     }
     /// Consumes the builder and constructs a [`TrafficMirrorTarget`](crate::types::TrafficMirrorTarget).
     pub fn build(self) -> crate::types::TrafficMirrorTarget {
         crate::types::TrafficMirrorTarget {
-            traffic_mirror_target_id: self.traffic_mirror_target_id,
-            network_interface_id: self.network_interface_id,
-            network_load_balancer_arn: self.network_load_balancer_arn,
-            r#type: self.r#type,
-            description: self.description,
-            owner_id: self.owner_id,
-            tags: self.tags,
-            gateway_load_balancer_endpoint_id: self.gateway_load_balancer_endpoint_id,
+            traffic_mirror_target_id: self.traffic_mirror_target_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            network_load_balancer_arn: self.network_load_balancer_arn
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
+            owner_id: self.owner_id
+            ,
+            tags: self.tags
+            ,
+            gateway_load_balancer_endpoint_id: self.gateway_load_balancer_endpoint_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Details of a reserved Elasticsearch instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedElasticsearchInstance {
+pub struct ReservedElasticsearchInstance  {
     /// <p>The customer-specified identifier to track this reservation.</p>
     #[doc(hidden)]
     pub reservation_name: std::option::Option<std::string::String>,
@@ -39,33 +39,30 @@ pub struct ReservedElasticsearchInstance {
     pub state: std::option::Option<std::string::String>,
     /// <p>The payment option as defined in the reserved Elasticsearch instance offering.</p>
     #[doc(hidden)]
-    pub payment_option:
-        std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
+    pub payment_option: std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
     #[doc(hidden)]
     pub recurring_charges: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedElasticsearchInstance {
     /// <p>The customer-specified identifier to track this reservation.</p>
-    pub fn reservation_name(&self) -> std::option::Option<&str> {
+    pub fn reservation_name(&self) -> std::option::Option<& str> {
         self.reservation_name.as_deref()
     }
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_elasticsearch_instance_id(&self) -> std::option::Option<& str> {
         self.reserved_elasticsearch_instance_id.as_deref()
     }
     /// <p>The offering identifier.</p>
-    pub fn reserved_elasticsearch_instance_offering_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_elasticsearch_instance_offering_id(&self) -> std::option::Option<& str> {
         self.reserved_elasticsearch_instance_offering_id.as_deref()
     }
     /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
-    pub fn elasticsearch_instance_type(
-        &self,
-    ) -> std::option::Option<&crate::types::EsPartitionInstanceType> {
+    pub fn elasticsearch_instance_type(&self) -> std::option::Option<& crate::types::EsPartitionInstanceType> {
         self.elasticsearch_instance_type.as_ref()
     }
     /// <p>The time the reservation started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The duration, in seconds, for which the Elasticsearch instance is reserved.</p>
@@ -81,7 +78,7 @@ impl ReservedElasticsearchInstance {
         self.usage_price
     }
     /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> std::option::Option<& str> {
         self.currency_code.as_deref()
     }
     /// <p>The number of Elasticsearch instances that have been reserved.</p>
@@ -89,17 +86,15 @@ impl ReservedElasticsearchInstance {
         self.elasticsearch_instance_count
     }
     /// <p>The state of the reserved Elasticsearch instance.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The payment option as defined in the reserved Elasticsearch instance offering.</p>
-    pub fn payment_option(
-        &self,
-    ) -> std::option::Option<&crate::types::ReservedElasticsearchInstancePaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::types::ReservedElasticsearchInstancePaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-    pub fn recurring_charges(&self) -> std::option::Option<&[crate::types::RecurringCharge]> {
+    pub fn recurring_charges(&self) -> std::option::Option<& [crate::types::RecurringCharge]> {
         self.recurring_charges.as_deref()
     }
 }
@@ -116,10 +111,8 @@ impl ReservedElasticsearchInstance {
 pub struct ReservedElasticsearchInstanceBuilder {
     pub(crate) reservation_name: std::option::Option<std::string::String>,
     pub(crate) reserved_elasticsearch_instance_id: std::option::Option<std::string::String>,
-    pub(crate) reserved_elasticsearch_instance_offering_id:
-        std::option::Option<std::string::String>,
-    pub(crate) elasticsearch_instance_type:
-        std::option::Option<crate::types::EsPartitionInstanceType>,
+    pub(crate) reserved_elasticsearch_instance_offering_id: std::option::Option<std::string::String>,
+    pub(crate) elasticsearch_instance_type: std::option::Option<crate::types::EsPartitionInstanceType>,
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) duration: std::option::Option<i32>,
     pub(crate) fixed_price: std::option::Option<f64>,
@@ -127,8 +120,7 @@ pub struct ReservedElasticsearchInstanceBuilder {
     pub(crate) currency_code: std::option::Option<std::string::String>,
     pub(crate) elasticsearch_instance_count: std::option::Option<i32>,
     pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) payment_option:
-        std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
+    pub(crate) payment_option: std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
     pub(crate) recurring_charges: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>,
 }
 impl ReservedElasticsearchInstanceBuilder {
@@ -139,56 +131,34 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The customer-specified identifier to track this reservation.</p>
     pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_name = input;
-        self
+        self.reservation_name = input; self
     }
     /// <p>The unique identifier for the reservation.</p>
-    pub fn reserved_elasticsearch_instance_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn reserved_elasticsearch_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.reserved_elasticsearch_instance_id = Some(input.into());
         self
     }
     /// <p>The unique identifier for the reservation.</p>
-    pub fn set_reserved_elasticsearch_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.reserved_elasticsearch_instance_id = input;
-        self
+    pub fn set_reserved_elasticsearch_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.reserved_elasticsearch_instance_id = input; self
     }
     /// <p>The offering identifier.</p>
-    pub fn reserved_elasticsearch_instance_offering_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn reserved_elasticsearch_instance_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.reserved_elasticsearch_instance_offering_id = Some(input.into());
         self
     }
     /// <p>The offering identifier.</p>
-    pub fn set_reserved_elasticsearch_instance_offering_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.reserved_elasticsearch_instance_offering_id = input;
-        self
+    pub fn set_reserved_elasticsearch_instance_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.reserved_elasticsearch_instance_offering_id = input; self
     }
     /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
-    pub fn elasticsearch_instance_type(
-        mut self,
-        input: crate::types::EsPartitionInstanceType,
-    ) -> Self {
+    pub fn elasticsearch_instance_type(mut self, input: crate::types::EsPartitionInstanceType) -> Self {
         self.elasticsearch_instance_type = Some(input);
         self
     }
     /// <p>The Elasticsearch instance type offered by the reserved instance offering.</p>
-    pub fn set_elasticsearch_instance_type(
-        mut self,
-        input: std::option::Option<crate::types::EsPartitionInstanceType>,
-    ) -> Self {
-        self.elasticsearch_instance_type = input;
-        self
+    pub fn set_elasticsearch_instance_type(mut self, input: std::option::Option<crate::types::EsPartitionInstanceType>) -> Self {
+        self.elasticsearch_instance_type = input; self
     }
     /// <p>The time the reservation started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -196,12 +166,8 @@ impl ReservedElasticsearchInstanceBuilder {
         self
     }
     /// <p>The time the reservation started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The duration, in seconds, for which the Elasticsearch instance is reserved.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -210,8 +176,7 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The duration, in seconds, for which the Elasticsearch instance is reserved.</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -220,8 +185,7 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The upfront fixed charge you will paid to purchase the specific reserved Elasticsearch instance offering. </p>
     pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.fixed_price = input;
-        self
+        self.fixed_price = input; self
     }
     /// <p>The rate you are charged for each hour for the domain that is using this reserved instance.</p>
     pub fn usage_price(mut self, input: f64) -> Self {
@@ -230,8 +194,7 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The rate you are charged for each hour for the domain that is using this reserved instance.</p>
     pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.usage_price = input;
-        self
+        self.usage_price = input; self
     }
     /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
     pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,8 +203,7 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The currency code for the reserved Elasticsearch instance offering.</p>
     pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency_code = input;
-        self
+        self.currency_code = input; self
     }
     /// <p>The number of Elasticsearch instances that have been reserved.</p>
     pub fn elasticsearch_instance_count(mut self, input: i32) -> Self {
@@ -250,8 +212,7 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The number of Elasticsearch instances that have been reserved.</p>
     pub fn set_elasticsearch_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.elasticsearch_instance_count = input;
-        self
+        self.elasticsearch_instance_count = input; self
     }
     /// <p>The state of the reserved Elasticsearch instance.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -260,24 +221,16 @@ impl ReservedElasticsearchInstanceBuilder {
     }
     /// <p>The state of the reserved Elasticsearch instance.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The payment option as defined in the reserved Elasticsearch instance offering.</p>
-    pub fn payment_option(
-        mut self,
-        input: crate::types::ReservedElasticsearchInstancePaymentOption,
-    ) -> Self {
+    pub fn payment_option(mut self, input: crate::types::ReservedElasticsearchInstancePaymentOption) -> Self {
         self.payment_option = Some(input);
         self
     }
     /// <p>The payment option as defined in the reserved Elasticsearch instance offering.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>,
-    ) -> Self {
-        self.payment_option = input;
-        self
+    pub fn set_payment_option(mut self, input: std::option::Option<crate::types::ReservedElasticsearchInstancePaymentOption>) -> Self {
+        self.payment_option = input; self
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -286,35 +239,46 @@ impl ReservedElasticsearchInstanceBuilder {
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-        v.push(input);
-        self.recurring_charges = Some(v);
-        self
+                        v.push(input);
+                        self.recurring_charges = Some(v);
+                        self
     }
     /// <p>The charge to your account regardless of whether you are creating any domains using the instance offering.</p>
-    pub fn set_recurring_charges(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>,
-    ) -> Self {
-        self.recurring_charges = input;
-        self
+    pub fn set_recurring_charges(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
+        self.recurring_charges = input; self
     }
     /// Consumes the builder and constructs a [`ReservedElasticsearchInstance`](crate::types::ReservedElasticsearchInstance).
     pub fn build(self) -> crate::types::ReservedElasticsearchInstance {
         crate::types::ReservedElasticsearchInstance {
-            reservation_name: self.reservation_name,
-            reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id,
-            reserved_elasticsearch_instance_offering_id: self
-                .reserved_elasticsearch_instance_offering_id,
-            elasticsearch_instance_type: self.elasticsearch_instance_type,
-            start_time: self.start_time,
-            duration: self.duration.unwrap_or_default(),
-            fixed_price: self.fixed_price,
-            usage_price: self.usage_price,
-            currency_code: self.currency_code,
-            elasticsearch_instance_count: self.elasticsearch_instance_count.unwrap_or_default(),
-            state: self.state,
-            payment_option: self.payment_option,
-            recurring_charges: self.recurring_charges,
+            reservation_name: self.reservation_name
+            ,
+            reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id
+            ,
+            reserved_elasticsearch_instance_offering_id: self.reserved_elasticsearch_instance_offering_id
+            ,
+            elasticsearch_instance_type: self.elasticsearch_instance_type
+            ,
+            start_time: self.start_time
+            ,
+            duration: self.duration
+                .unwrap_or_default()
+            ,
+            fixed_price: self.fixed_price
+            ,
+            usage_price: self.usage_price
+            ,
+            currency_code: self.currency_code
+            ,
+            elasticsearch_instance_count: self.elasticsearch_instance_count
+                .unwrap_or_default()
+            ,
+            state: self.state
+            ,
+            payment_option: self.payment_option
+            ,
+            recurring_charges: self.recurring_charges
+            ,
         }
     }
 }
+

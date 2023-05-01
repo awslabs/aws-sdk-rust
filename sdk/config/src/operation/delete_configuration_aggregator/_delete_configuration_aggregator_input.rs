@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationAggregatorInput {
+pub struct DeleteConfigurationAggregatorInput  {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
 }
 impl DeleteConfigurationAggregatorInput {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
 }
 impl DeleteConfigurationAggregatorInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationAggregatorInput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput).
-    pub fn builder() -> crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorInputBuilder{
+    pub fn builder() -> crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorInputBuilder {
         crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteConfigurationAggregatorInputBuilder {
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_aggregator_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationAggregatorInput`](crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregatorInput {
-                configuration_aggregator_name: self.configuration_aggregator_name,
-            },
+                configuration_aggregator_name: self.configuration_aggregator_name
+                ,
+            }
         )
     }
 }
+

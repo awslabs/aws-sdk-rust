@@ -119,6 +119,8 @@ pub use crate::types::_transcribe_medical_language_code::TranscribeMedicalLangua
 
 pub use crate::types::_engine_transcribe_settings::EngineTranscribeSettings;
 
+pub use crate::types::_transcribe_language_code::TranscribeLanguageCode;
+
 pub use crate::types::_transcribe_content_redaction_type::TranscribeContentRedactionType;
 
 pub use crate::types::_transcribe_content_identification_type::TranscribeContentIdentificationType;
@@ -128,8 +130,6 @@ pub use crate::types::_transcribe_partial_results_stability::TranscribePartialRe
 pub use crate::types::_transcribe_region::TranscribeRegion;
 
 pub use crate::types::_transcribe_vocabulary_filter_method::TranscribeVocabularyFilterMethod;
-
-pub use crate::types::_transcribe_language_code::TranscribeLanguageCode;
 
 pub use crate::types::_channel_message_persistence_type::ChannelMessagePersistenceType;
 
@@ -604,3 +604,4 @@ pub mod builders;
 
 /// Error types that Amazon Chime can respond with.
 pub mod error;
+

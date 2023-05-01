@@ -3,7 +3,7 @@
 /// <p>The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct repository name for the pull request ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryNotAssociatedWithPullRequestException {
+pub struct RepositoryNotAssociatedWithPullRequestException  {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct RepositoryNotAssociatedWithPullRequestException {
 }
 impl RepositoryNotAssociatedWithPullRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RepositoryNotAssociatedWithPullRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryNotAssociatedWithPullRequestException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,25 +25,18 @@ impl std::fmt::Display for RepositoryNotAssociatedWithPullRequestException {
     }
 }
 impl std::error::Error for RepositoryNotAssociatedWithPullRequestException {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::RepositoryNotAssociatedWithPullRequestException
-{
+impl aws_http::request_id::RequestId for crate::types::error::RepositoryNotAssociatedWithPullRequestException {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for RepositoryNotAssociatedWithPullRequestException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RepositoryNotAssociatedWithPullRequestException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl RepositoryNotAssociatedWithPullRequestException {
     /// Creates a new builder-style object to manufacture [`RepositoryNotAssociatedWithPullRequestException`](crate::types::error::RepositoryNotAssociatedWithPullRequestException).
-    pub fn builder(
-    ) -> crate::types::error::builders::RepositoryNotAssociatedWithPullRequestExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::RepositoryNotAssociatedWithPullRequestExceptionBuilder {
         crate::types::error::builders::RepositoryNotAssociatedWithPullRequestExceptionBuilder::default()
     }
 }
@@ -65,28 +56,26 @@ impl RepositoryNotAssociatedWithPullRequestExceptionBuilder {
     }
     /// <p>Any message associated with the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`RepositoryNotAssociatedWithPullRequestException`](crate::types::error::RepositoryNotAssociatedWithPullRequestException).
     pub fn build(self) -> crate::types::error::RepositoryNotAssociatedWithPullRequestException {
         crate::types::error::RepositoryNotAssociatedWithPullRequestException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

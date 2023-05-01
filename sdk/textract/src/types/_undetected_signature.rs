@@ -3,7 +3,7 @@
 /// <p>A structure containing information about an undetected signature on a page where it was expected but not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndetectedSignature {
+pub struct UndetectedSignature  {
     /// <p>The page where a signature was expected but not found.</p>
     #[doc(hidden)]
     pub page: std::option::Option<i32>,
@@ -35,11 +35,14 @@ impl UndetectedSignatureBuilder {
     }
     /// <p>The page where a signature was expected but not found.</p>
     pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
-        self.page = input;
-        self
+        self.page = input; self
     }
     /// Consumes the builder and constructs a [`UndetectedSignature`](crate::types::UndetectedSignature).
     pub fn build(self) -> crate::types::UndetectedSignature {
-        crate::types::UndetectedSignature { page: self.page }
+        crate::types::UndetectedSignature {
+            page: self.page
+            ,
+        }
     }
 }
+

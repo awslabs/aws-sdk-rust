@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTrustStoreInput {
+pub struct AssociateTrustStoreInput  {
     /// <p>The ARN of the web portal.</p>
     #[doc(hidden)]
     pub portal_arn: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct AssociateTrustStoreInput {
 }
 impl AssociateTrustStoreInput {
     /// <p>The ARN of the web portal.</p>
-    pub fn portal_arn(&self) -> std::option::Option<&str> {
+    pub fn portal_arn(&self) -> std::option::Option<& str> {
         self.portal_arn.as_deref()
     }
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
 }
 impl AssociateTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
-    pub fn builder(
-    ) -> crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
-        crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder {
+        crate::operation::associate_trust_store::builders::AssociateTrustStoreInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl AssociateTrustStoreInputBuilder {
     }
     /// <p>The ARN of the web portal.</p>
     pub fn set_portal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_arn = input;
-        self
+        self.portal_arn = input; self
     }
     /// <p>The ARN of the trust store.</p>
     pub fn trust_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl AssociateTrustStoreInputBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// Consumes the builder and constructs a [`AssociateTrustStoreInput`](crate::operation::associate_trust_store::AssociateTrustStoreInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_trust_store::AssociateTrustStoreInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_trust_store::AssociateTrustStoreInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_trust_store::AssociateTrustStoreInput {
-                portal_arn: self.portal_arn,
-                trust_store_arn: self.trust_store_arn,
-            },
+                portal_arn: self.portal_arn
+                ,
+                trust_store_arn: self.trust_store_arn
+                ,
+            }
         )
     }
 }
+

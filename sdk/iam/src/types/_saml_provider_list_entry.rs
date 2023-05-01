@@ -3,7 +3,7 @@
 /// <p>Contains the list of SAML providers for this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamlProviderListEntry {
+pub struct SamlProviderListEntry  {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SamlProviderListEntry {
 }
 impl SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>The date and time when the SAML provider was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl SamlProviderListEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The expiration date and time for the SAML provider.</p>
     pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -60,12 +59,8 @@ impl SamlProviderListEntryBuilder {
         self
     }
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub fn set_valid_until(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.valid_until = input;
-        self
+    pub fn set_valid_until(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.valid_until = input; self
     }
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -73,19 +68,19 @@ impl SamlProviderListEntryBuilder {
         self
     }
     /// <p>The date and time when the SAML provider was created.</p>
-    pub fn set_create_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_date = input;
-        self
+    pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_date = input; self
     }
     /// Consumes the builder and constructs a [`SamlProviderListEntry`](crate::types::SamlProviderListEntry).
     pub fn build(self) -> crate::types::SamlProviderListEntry {
         crate::types::SamlProviderListEntry {
-            arn: self.arn,
-            valid_until: self.valid_until,
-            create_date: self.create_date,
+            arn: self.arn
+            ,
+            valid_until: self.valid_until
+            ,
+            create_date: self.create_date
+            ,
         }
     }
 }
+

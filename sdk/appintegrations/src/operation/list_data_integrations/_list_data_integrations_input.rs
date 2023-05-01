@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataIntegrationsInput {
+pub struct ListDataIntegrationsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListDataIntegrationsInput {
 }
 impl ListDataIntegrationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -22,8 +22,7 @@ impl ListDataIntegrationsInput {
 }
 impl ListDataIntegrationsInput {
     /// Creates a new builder-style object to manufacture [`ListDataIntegrationsInput`](crate::operation::list_data_integrations::ListDataIntegrationsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_integrations::builders::ListDataIntegrationsInputBuilder {
+    pub fn builder() -> crate::operation::list_data_integrations::builders::ListDataIntegrationsInputBuilder {
         crate::operation::list_data_integrations::builders::ListDataIntegrationsInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListDataIntegrationsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl ListDataIntegrationsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListDataIntegrationsInput`](crate::operation::list_data_integrations::ListDataIntegrationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_data_integrations::ListDataIntegrationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_data_integrations::ListDataIntegrationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_data_integrations::ListDataIntegrationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

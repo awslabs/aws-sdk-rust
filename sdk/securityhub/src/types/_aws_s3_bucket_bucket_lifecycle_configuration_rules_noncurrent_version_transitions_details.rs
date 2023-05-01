@@ -3,7 +3,7 @@
 /// <p>A transition rule that describes when noncurrent objects transition to a specified storage class.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
+pub struct AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails  {
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
     #[doc(hidden)]
     pub days: i32,
@@ -17,13 +17,13 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
         self.days
     }
     /// <p>The class of storage to change the object to after the object is noncurrent for the specified number of days.</p>
-    pub fn storage_class(&self) -> std::option::Option<&str> {
+    pub fn storage_class(&self) -> std::option::Option<& str> {
         self.storage_class.as_deref()
     }
 }
 impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
-    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsBuilder {
         crate::types::builders::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
     }
     /// <p>The number of days that an object is noncurrent before Amazon S3 can perform the associated action.</p>
     pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.days = input;
-        self
+        self.days = input; self
     }
     /// <p>The class of storage to change the object to after the object is noncurrent for the specified number of days.</p>
     pub fn storage_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,10 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
     }
     /// <p>The class of storage to change the object to after the object is noncurrent for the specified number of days.</p>
     pub fn set_storage_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails`](crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails
-    {
+    pub fn build(self) -> crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
         crate::types::AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails {
             days: self.days
                 .unwrap_or_default()
@@ -70,3 +65,4 @@ impl AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDet
         }
     }
 }
+

@@ -2,31 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+pub struct ModifyDbClusterSnapshotAttributeOutput  {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes_result:
-        std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
+    pub db_cluster_snapshot_attributes_result: std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::types::DbClusterSnapshotAttributesResult> {
+    pub fn db_cluster_snapshot_attributes_result(&self) -> std::option::Option<& crate::types::DbClusterSnapshotAttributesResult> {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyDbClusterSnapshotAttributeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput).
-    pub fn builder() -> crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder{
+    pub fn builder() -> crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder {
         crate::operation::modify_db_cluster_snapshot_attribute::builders::ModifyDbClusterSnapshotAttributeOutputBuilder::default()
     }
 }
@@ -35,40 +32,32 @@ impl ModifyDbClusterSnapshotAttributeOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ModifyDbClusterSnapshotAttributeOutputBuilder {
-    pub(crate) db_cluster_snapshot_attributes_result:
-        std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
+    pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterSnapshotAttributeOutputBuilder {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        mut self,
-        input: crate::types::DbClusterSnapshotAttributesResult,
-    ) -> Self {
+    pub fn db_cluster_snapshot_attributes_result(mut self, input: crate::types::DbClusterSnapshotAttributesResult) -> Self {
         self.db_cluster_snapshot_attributes_result = Some(input);
         self
     }
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn set_db_cluster_snapshot_attributes_result(
-        mut self,
-        input: std::option::Option<crate::types::DbClusterSnapshotAttributesResult>,
-    ) -> Self {
-        self.db_cluster_snapshot_attributes_result = input;
-        self
+    pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::types::DbClusterSnapshotAttributesResult>) -> Self {
+        self.db_cluster_snapshot_attributes_result = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput).
-    pub fn build(self) -> crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput{
+    pub fn build(self) -> crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput {
         crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput {
             db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
             ,
@@ -76,3 +65,4 @@ impl ModifyDbClusterSnapshotAttributeOutputBuilder {
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>A transform operation that creates calculated columns. Columns created in one such operation form a lexical closure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateColumnsOperation {
+pub struct CreateColumnsOperation  {
     /// <p>Calculated columns to create.</p>
     #[doc(hidden)]
     pub columns: std::option::Option<std::vec::Vec<crate::types::CalculatedColumn>>,
 }
 impl CreateColumnsOperation {
     /// <p>Calculated columns to create.</p>
-    pub fn columns(&self) -> std::option::Option<&[crate::types::CalculatedColumn]> {
+    pub fn columns(&self) -> std::option::Option<& [crate::types::CalculatedColumn]> {
         self.columns.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl CreateColumnsOperationBuilder {
     /// <p>Calculated columns to create.</p>
     pub fn columns(mut self, input: crate::types::CalculatedColumn) -> Self {
         let mut v = self.columns.unwrap_or_default();
-        v.push(input);
-        self.columns = Some(v);
-        self
+                        v.push(input);
+                        self.columns = Some(v);
+                        self
     }
     /// <p>Calculated columns to create.</p>
-    pub fn set_columns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CalculatedColumn>>,
-    ) -> Self {
-        self.columns = input;
-        self
+    pub fn set_columns(mut self, input: std::option::Option<std::vec::Vec<crate::types::CalculatedColumn>>) -> Self {
+        self.columns = input; self
     }
     /// Consumes the builder and constructs a [`CreateColumnsOperation`](crate::types::CreateColumnsOperation).
     pub fn build(self) -> crate::types::CreateColumnsOperation {
         crate::types::CreateColumnsOperation {
-            columns: self.columns,
+            columns: self.columns
+            ,
         }
     }
 }
+

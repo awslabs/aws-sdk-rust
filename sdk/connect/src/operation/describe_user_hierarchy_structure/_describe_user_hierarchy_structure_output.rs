@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserHierarchyStructureOutput {
+pub struct DescribeUserHierarchyStructureOutput  {
     /// <p>Information about the hierarchy structure.</p>
     #[doc(hidden)]
     pub hierarchy_structure: std::option::Option<crate::types::HierarchyStructure>,
@@ -10,18 +10,18 @@ pub struct DescribeUserHierarchyStructureOutput {
 }
 impl DescribeUserHierarchyStructureOutput {
     /// <p>Information about the hierarchy structure.</p>
-    pub fn hierarchy_structure(&self) -> std::option::Option<&crate::types::HierarchyStructure> {
+    pub fn hierarchy_structure(&self) -> std::option::Option<& crate::types::HierarchyStructure> {
         self.hierarchy_structure.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUserHierarchyStructureOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeUserHierarchyStructureOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserHierarchyStructureOutput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput).
-    pub fn builder() -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder{
+    pub fn builder() -> crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder {
         crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureOutputBuilder::default()
     }
 }
@@ -40,30 +40,25 @@ impl DescribeUserHierarchyStructureOutputBuilder {
         self
     }
     /// <p>Information about the hierarchy structure.</p>
-    pub fn set_hierarchy_structure(
-        mut self,
-        input: std::option::Option<crate::types::HierarchyStructure>,
-    ) -> Self {
-        self.hierarchy_structure = input;
-        self
+    pub fn set_hierarchy_structure(mut self, input: std::option::Option<crate::types::HierarchyStructure>) -> Self {
+        self.hierarchy_structure = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeUserHierarchyStructureOutput`](crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput
-    {
+    pub fn build(self) -> crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput {
         crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructureOutput {
-            hierarchy_structure: self.hierarchy_structure,
+            hierarchy_structure: self.hierarchy_structure
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

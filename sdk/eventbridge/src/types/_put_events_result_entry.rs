@@ -3,7 +3,7 @@
 /// <p>Represents an event that failed to be submitted. For information about the errors that are common to all actions, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsResultEntry {
+pub struct PutEventsResultEntry  {
     /// <p>The ID of the event.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct PutEventsResultEntry {
 }
 impl PutEventsResultEntry {
     /// <p>The ID of the event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The error code that indicates why the event submission failed.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message that explains why the event submission failed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl PutEventsResultEntryBuilder {
     }
     /// <p>The ID of the event.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p>The error code that indicates why the event submission failed.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl PutEventsResultEntryBuilder {
     }
     /// <p>The error code that indicates why the event submission failed.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error message that explains why the event submission failed.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl PutEventsResultEntryBuilder {
     }
     /// <p>The error message that explains why the event submission failed.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Consumes the builder and constructs a [`PutEventsResultEntry`](crate::types::PutEventsResultEntry).
     pub fn build(self) -> crate::types::PutEventsResultEntry {
         crate::types::PutEventsResultEntry {
-            event_id: self.event_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            event_id: self.event_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

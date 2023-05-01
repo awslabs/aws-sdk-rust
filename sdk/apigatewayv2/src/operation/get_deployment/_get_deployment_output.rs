@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentOutput {
+pub struct GetDeploymentOutput  {
     /// <p>Specifies whether a deployment was automatically released.</p>
     #[doc(hidden)]
     pub auto_deployed: bool,
@@ -29,31 +29,31 @@ impl GetDeploymentOutput {
         self.auto_deployed
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The identifier for the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The description for the deployment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn builder() -> crate::operation::get_deployment::builders::GetDeploymentOutputBuilder {
@@ -81,8 +81,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>Specifies whether a deployment was automatically released.</p>
     pub fn set_auto_deployed(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_deployed = input;
-        self
+        self.auto_deployed = input; self
     }
     /// <p>The date and time when the Deployment resource was created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -90,12 +89,8 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_date = input;
-        self
+    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_date = input; self
     }
     /// <p>The identifier for the deployment.</p>
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +99,7 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The identifier for the deployment.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -113,12 +107,8 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
-        self.deployment_status = input;
-        self
+    pub fn set_deployment_status(mut self, input: std::option::Option<crate::types::DeploymentStatus>) -> Self {
+        self.deployment_status = input; self
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
     pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,12 +116,8 @@ impl GetDeploymentOutputBuilder {
         self
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
-    pub fn set_deployment_status_message(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deployment_status_message = input;
-        self
+    pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deployment_status_message = input; self
     }
     /// <p>The description for the deployment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,28 +126,35 @@ impl GetDeploymentOutputBuilder {
     }
     /// <p>The description for the deployment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput).
     pub fn build(self) -> crate::operation::get_deployment::GetDeploymentOutput {
         crate::operation::get_deployment::GetDeploymentOutput {
-            auto_deployed: self.auto_deployed.unwrap_or_default(),
-            created_date: self.created_date,
-            deployment_id: self.deployment_id,
-            deployment_status: self.deployment_status,
-            deployment_status_message: self.deployment_status_message,
-            description: self.description,
+            auto_deployed: self.auto_deployed
+                .unwrap_or_default()
+            ,
+            created_date: self.created_date
+            ,
+            deployment_id: self.deployment_id
+            ,
+            deployment_status: self.deployment_status
+            ,
+            deployment_status_message: self.deployment_status_message
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

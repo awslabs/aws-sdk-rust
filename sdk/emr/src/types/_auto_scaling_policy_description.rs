@@ -3,7 +3,7 @@
 /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoScalingPolicyDescription {
+pub struct AutoScalingPolicyDescription  {
     /// <p>The status of an automatic scaling policy. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AutoScalingPolicyStatus>,
@@ -16,15 +16,15 @@ pub struct AutoScalingPolicyDescription {
 }
 impl AutoScalingPolicyDescription {
     /// <p>The status of an automatic scaling policy. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AutoScalingPolicyStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AutoScalingPolicyStatus> {
         self.status.as_ref()
     }
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::types::ScalingConstraints> {
+    pub fn constraints(&self) -> std::option::Option<& crate::types::ScalingConstraints> {
         self.constraints.as_ref()
     }
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::ScalingRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::ScalingRule]> {
         self.rules.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl AutoScalingPolicyDescriptionBuilder {
         self
     }
     /// <p>The status of an automatic scaling policy. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingPolicyStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::AutoScalingPolicyStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
     pub fn constraints(mut self, input: crate::types::ScalingConstraints) -> Self {
@@ -63,12 +59,8 @@ impl AutoScalingPolicyDescriptionBuilder {
         self
     }
     /// <p>The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.</p>
-    pub fn set_constraints(
-        mut self,
-        input: std::option::Option<crate::types::ScalingConstraints>,
-    ) -> Self {
-        self.constraints = input;
-        self
+    pub fn set_constraints(mut self, input: std::option::Option<crate::types::ScalingConstraints>) -> Self {
+        self.constraints = input; self
     }
     /// Appends an item to `rules`.
     ///
@@ -77,24 +69,24 @@ impl AutoScalingPolicyDescriptionBuilder {
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
     pub fn rules(mut self, input: crate::types::ScalingRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>The scale-in and scale-out rules that comprise the automatic scaling policy.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScalingRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScalingRule>>) -> Self {
+        self.rules = input; self
     }
     /// Consumes the builder and constructs a [`AutoScalingPolicyDescription`](crate::types::AutoScalingPolicyDescription).
     pub fn build(self) -> crate::types::AutoScalingPolicyDescription {
         crate::types::AutoScalingPolicyDescription {
-            status: self.status,
-            constraints: self.constraints,
-            rules: self.rules,
+            status: self.status
+            ,
+            constraints: self.constraints
+            ,
+            rules: self.rules
+            ,
         }
     }
 }
+

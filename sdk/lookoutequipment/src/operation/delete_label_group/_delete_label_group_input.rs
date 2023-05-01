@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLabelGroupInput {
+pub struct DeleteLabelGroupInput  {
     /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteLabelGroupInput {
     /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
 }
 impl DeleteLabelGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteLabelGroupInput`](crate::operation::delete_label_group::DeleteLabelGroupInput).
-    pub fn builder() -> crate::operation::delete_label_group::builders::DeleteLabelGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_label_group::builders::DeleteLabelGroupInputBuilder {
         crate::operation::delete_label_group::builders::DeleteLabelGroupInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteLabelGroupInputBuilder {
     }
     /// <p> The name of the label group that you want to delete. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLabelGroupInput`](crate::operation::delete_label_group::DeleteLabelGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_label_group::DeleteLabelGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_label_group::DeleteLabelGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_label_group::DeleteLabelGroupInput {
-                label_group_name: self.label_group_name,
-            },
+                label_group_name: self.label_group_name
+                ,
+            }
         )
     }
 }
+

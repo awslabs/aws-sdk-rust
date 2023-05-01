@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportJobsOutput {
+pub struct GetExportJobsOutput  {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
     #[doc(hidden)]
     pub export_jobs_response: std::option::Option<crate::types::ExportJobsResponse>,
@@ -10,15 +10,15 @@ pub struct GetExportJobsOutput {
 }
 impl GetExportJobsOutput {
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-    pub fn export_jobs_response(&self) -> std::option::Option<&crate::types::ExportJobsResponse> {
+    pub fn export_jobs_response(&self) -> std::option::Option<& crate::types::ExportJobsResponse> {
         self.export_jobs_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetExportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetExportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetExportJobsOutput`](crate::operation::get_export_jobs::GetExportJobsOutput).
     pub fn builder() -> crate::operation::get_export_jobs::builders::GetExportJobsOutputBuilder {
@@ -40,27 +40,25 @@ impl GetExportJobsOutputBuilder {
         self
     }
     /// <p>Provides information about all the export jobs that are associated with an application or segment. An export job is a job that exports endpoint definitions to a file.</p>
-    pub fn set_export_jobs_response(
-        mut self,
-        input: std::option::Option<crate::types::ExportJobsResponse>,
-    ) -> Self {
-        self.export_jobs_response = input;
-        self
+    pub fn set_export_jobs_response(mut self, input: std::option::Option<crate::types::ExportJobsResponse>) -> Self {
+        self.export_jobs_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetExportJobsOutput`](crate::operation::get_export_jobs::GetExportJobsOutput).
     pub fn build(self) -> crate::operation::get_export_jobs::GetExportJobsOutput {
         crate::operation::get_export_jobs::GetExportJobsOutput {
-            export_jobs_response: self.export_jobs_response,
+            export_jobs_response: self.export_jobs_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

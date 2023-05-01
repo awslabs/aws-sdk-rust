@@ -3,17 +3,14 @@
 /// <p> Self-managed resources. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelfManageResources {
+pub struct SelfManageResources  {
     /// <p> Self-managed resources target destination. </p>
     #[doc(hidden)]
-    pub target_destination:
-        std::option::Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>,
+    pub target_destination: std::option::Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>,
 }
 impl SelfManageResources {
     /// <p> Self-managed resources target destination. </p>
-    pub fn target_destination(
-        &self,
-    ) -> std::option::Option<&[crate::types::SelfManageTargetDestination]> {
+    pub fn target_destination(&self) -> std::option::Option<& [crate::types::SelfManageTargetDestination]> {
         self.target_destination.as_deref()
     }
 }
@@ -28,8 +25,7 @@ impl SelfManageResources {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SelfManageResourcesBuilder {
-    pub(crate) target_destination:
-        std::option::Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>,
+    pub(crate) target_destination: std::option::Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>,
 }
 impl SelfManageResourcesBuilder {
     /// Appends an item to `target_destination`.
@@ -39,22 +35,20 @@ impl SelfManageResourcesBuilder {
     /// <p> Self-managed resources target destination. </p>
     pub fn target_destination(mut self, input: crate::types::SelfManageTargetDestination) -> Self {
         let mut v = self.target_destination.unwrap_or_default();
-        v.push(input);
-        self.target_destination = Some(v);
-        self
+                        v.push(input);
+                        self.target_destination = Some(v);
+                        self
     }
     /// <p> Self-managed resources target destination. </p>
-    pub fn set_target_destination(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>,
-    ) -> Self {
-        self.target_destination = input;
-        self
+    pub fn set_target_destination(mut self, input: std::option::Option<std::vec::Vec<crate::types::SelfManageTargetDestination>>) -> Self {
+        self.target_destination = input; self
     }
     /// Consumes the builder and constructs a [`SelfManageResources`](crate::types::SelfManageResources).
     pub fn build(self) -> crate::types::SelfManageResources {
         crate::types::SelfManageResources {
-            target_destination: self.target_destination,
+            target_destination: self.target_destination
+            ,
         }
     }
 }
+

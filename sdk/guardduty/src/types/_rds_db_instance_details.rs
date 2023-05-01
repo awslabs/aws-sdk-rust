@@ -3,7 +3,7 @@
 /// <p>Contains information about the resource type <code>RDSDBInstance</code> involved in a GuardDuty finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDbInstanceDetails {
+pub struct RdsDbInstanceDetails  {
     /// <p>The identifier associated to the database instance that was involved in the finding.</p>
     #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct RdsDbInstanceDetails {
 }
 impl RdsDbInstanceDetails {
     /// <p>The identifier associated to the database instance that was involved in the finding.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>The database engine of the database instance involved in the finding.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version of the database engine that was involved in the finding.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
-    pub fn db_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn db_instance_arn(&self) -> std::option::Option<& str> {
         self.db_instance_arn.as_deref()
     }
     /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -74,12 +74,8 @@ impl RdsDbInstanceDetailsBuilder {
         self
     }
     /// <p>The identifier associated to the database instance that was involved in the finding.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_instance_identifier = input;
-        self
+    pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_instance_identifier = input; self
     }
     /// <p>The database engine of the database instance involved in the finding.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +84,7 @@ impl RdsDbInstanceDetailsBuilder {
     }
     /// <p>The database engine of the database instance involved in the finding.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The version of the database engine that was involved in the finding.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl RdsDbInstanceDetailsBuilder {
     }
     /// <p>The version of the database engine that was involved in the finding.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,12 +101,8 @@ impl RdsDbInstanceDetailsBuilder {
         self
     }
     /// <p>The identifier of the database cluster that contains the database instance ID involved in the finding.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_identifier = input;
-        self
+    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_identifier = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
     pub fn db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +111,7 @@ impl RdsDbInstanceDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the database instance involved in the finding.</p>
     pub fn set_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_instance_arn = input;
-        self
+        self.db_instance_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -131,27 +120,30 @@ impl RdsDbInstanceDetailsBuilder {
     /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Instance tag key-value pairs associated with the database instance ID.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`RdsDbInstanceDetails`](crate::types::RdsDbInstanceDetails).
     pub fn build(self) -> crate::types::RdsDbInstanceDetails {
         crate::types::RdsDbInstanceDetails {
-            db_instance_identifier: self.db_instance_identifier,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            db_cluster_identifier: self.db_cluster_identifier,
-            db_instance_arn: self.db_instance_arn,
-            tags: self.tags,
+            db_instance_identifier: self.db_instance_identifier
+            ,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            db_instance_arn: self.db_instance_arn
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -231,3 +231,4 @@ pub mod update_repository_description;
 
 /// Types for the `UpdateRepositoryName` operation.
 pub mod update_repository_name;
+

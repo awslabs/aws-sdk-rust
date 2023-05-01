@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTagOptionInput {
+pub struct CreateTagOptionInput  {
     /// <p>The TagOption key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateTagOptionInput {
 }
 impl CreateTagOptionInput {
     /// <p>The TagOption key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The TagOption value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateTagOptionInputBuilder {
     }
     /// <p>The TagOption key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The TagOption value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl CreateTagOptionInputBuilder {
     }
     /// <p>The TagOption value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`CreateTagOptionInput`](crate::operation::create_tag_option::CreateTagOptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_tag_option::CreateTagOptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_tag_option::CreateTagOptionInput {
-            key: self.key,
-            value: self.value,
-        })
+    pub fn build(self) -> Result<crate::operation::create_tag_option::CreateTagOptionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_tag_option::CreateTagOptionInput {
+                key: self.key
+                ,
+                value: self.value
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a device pool compatibility result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevicePoolCompatibilityResult {
+pub struct DevicePoolCompatibilityResult  {
     /// <p>The device (phone or tablet) to return information about.</p>
     #[doc(hidden)]
     pub device: std::option::Option<crate::types::Device>,
@@ -12,12 +12,11 @@ pub struct DevicePoolCompatibilityResult {
     pub compatible: std::option::Option<bool>,
     /// <p>Information about the compatibility.</p>
     #[doc(hidden)]
-    pub incompatibility_messages:
-        std::option::Option<std::vec::Vec<crate::types::IncompatibilityMessage>>,
+    pub incompatibility_messages: std::option::Option<std::vec::Vec<crate::types::IncompatibilityMessage>>,
 }
 impl DevicePoolCompatibilityResult {
     /// <p>The device (phone or tablet) to return information about.</p>
-    pub fn device(&self) -> std::option::Option<&crate::types::Device> {
+    pub fn device(&self) -> std::option::Option<& crate::types::Device> {
         self.device.as_ref()
     }
     /// <p>Whether the result was compatible with the device pool.</p>
@@ -25,9 +24,7 @@ impl DevicePoolCompatibilityResult {
         self.compatible
     }
     /// <p>Information about the compatibility.</p>
-    pub fn incompatibility_messages(
-        &self,
-    ) -> std::option::Option<&[crate::types::IncompatibilityMessage]> {
+    pub fn incompatibility_messages(&self) -> std::option::Option<& [crate::types::IncompatibilityMessage]> {
         self.incompatibility_messages.as_deref()
     }
 }
@@ -44,8 +41,7 @@ impl DevicePoolCompatibilityResult {
 pub struct DevicePoolCompatibilityResultBuilder {
     pub(crate) device: std::option::Option<crate::types::Device>,
     pub(crate) compatible: std::option::Option<bool>,
-    pub(crate) incompatibility_messages:
-        std::option::Option<std::vec::Vec<crate::types::IncompatibilityMessage>>,
+    pub(crate) incompatibility_messages: std::option::Option<std::vec::Vec<crate::types::IncompatibilityMessage>>,
 }
 impl DevicePoolCompatibilityResultBuilder {
     /// <p>The device (phone or tablet) to return information about.</p>
@@ -55,8 +51,7 @@ impl DevicePoolCompatibilityResultBuilder {
     }
     /// <p>The device (phone or tablet) to return information about.</p>
     pub fn set_device(mut self, input: std::option::Option<crate::types::Device>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     /// <p>Whether the result was compatible with the device pool.</p>
     pub fn compatible(mut self, input: bool) -> Self {
@@ -65,8 +60,7 @@ impl DevicePoolCompatibilityResultBuilder {
     }
     /// <p>Whether the result was compatible with the device pool.</p>
     pub fn set_compatible(mut self, input: std::option::Option<bool>) -> Self {
-        self.compatible = input;
-        self
+        self.compatible = input; self
     }
     /// Appends an item to `incompatibility_messages`.
     ///
@@ -75,24 +69,24 @@ impl DevicePoolCompatibilityResultBuilder {
     /// <p>Information about the compatibility.</p>
     pub fn incompatibility_messages(mut self, input: crate::types::IncompatibilityMessage) -> Self {
         let mut v = self.incompatibility_messages.unwrap_or_default();
-        v.push(input);
-        self.incompatibility_messages = Some(v);
-        self
+                        v.push(input);
+                        self.incompatibility_messages = Some(v);
+                        self
     }
     /// <p>Information about the compatibility.</p>
-    pub fn set_incompatibility_messages(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IncompatibilityMessage>>,
-    ) -> Self {
-        self.incompatibility_messages = input;
-        self
+    pub fn set_incompatibility_messages(mut self, input: std::option::Option<std::vec::Vec<crate::types::IncompatibilityMessage>>) -> Self {
+        self.incompatibility_messages = input; self
     }
     /// Consumes the builder and constructs a [`DevicePoolCompatibilityResult`](crate::types::DevicePoolCompatibilityResult).
     pub fn build(self) -> crate::types::DevicePoolCompatibilityResult {
         crate::types::DevicePoolCompatibilityResult {
-            device: self.device,
-            compatible: self.compatible,
-            incompatibility_messages: self.incompatibility_messages,
+            device: self.device
+            ,
+            compatible: self.compatible
+            ,
+            incompatibility_messages: self.incompatibility_messages
+            ,
         }
     }
 }
+

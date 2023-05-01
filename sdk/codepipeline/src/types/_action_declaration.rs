@@ -3,7 +3,7 @@
 /// <p>Represents information about an action declaration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionDeclaration {
+pub struct ActionDeclaration  {
     /// <p>The action declaration's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,13 +13,12 @@ pub struct ActionDeclaration {
     /// <p>The order in which actions are run.</p>
     #[doc(hidden)]
     pub run_order: std::option::Option<i32>,
-    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+    /// <p> <i>JSON:</i> </p> 
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
     #[doc(hidden)]
-    pub configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::types::OutputArtifact>>,
@@ -38,45 +37,42 @@ pub struct ActionDeclaration {
 }
 impl ActionDeclaration {
     /// <p>The action declaration's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the action type and the provider of the action.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::types::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<& crate::types::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>The order in which actions are run.</p>
     pub fn run_order(&self) -> std::option::Option<i32> {
         self.run_order
     }
-    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+    /// <p> <i>JSON:</i> </p> 
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn configuration(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.configuration.as_ref()
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    pub fn output_artifacts(&self) -> std::option::Option<&[crate::types::OutputArtifact]> {
+    pub fn output_artifacts(&self) -> std::option::Option<& [crate::types::OutputArtifact]> {
         self.output_artifacts.as_deref()
     }
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    pub fn input_artifacts(&self) -> std::option::Option<&[crate::types::InputArtifact]> {
+    pub fn input_artifacts(&self) -> std::option::Option<& [crate::types::InputArtifact]> {
         self.input_artifacts.as_deref()
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The action declaration's AWS Region, such as us-east-1.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
@@ -94,8 +90,7 @@ pub struct ActionDeclarationBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) action_type_id: std::option::Option<crate::types::ActionTypeId>,
     pub(crate) run_order: std::option::Option<i32>,
-    pub(crate) configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) output_artifacts: std::option::Option<std::vec::Vec<crate::types::OutputArtifact>>,
     pub(crate) input_artifacts: std::option::Option<std::vec::Vec<crate::types::InputArtifact>>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -110,8 +105,7 @@ impl ActionDeclarationBuilder {
     }
     /// <p>The action declaration's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the action type and the provider of the action.</p>
     pub fn action_type_id(mut self, input: crate::types::ActionTypeId) -> Self {
@@ -119,12 +113,8 @@ impl ActionDeclarationBuilder {
         self
     }
     /// <p>Specifies the action type and the provider of the action.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
-        self.action_type_id = input;
-        self
+    pub fn set_action_type_id(mut self, input: std::option::Option<crate::types::ActionTypeId>) -> Self {
+        self.action_type_id = input; self
     }
     /// <p>The order in which actions are run.</p>
     pub fn run_order(mut self, input: i32) -> Self {
@@ -133,39 +123,28 @@ impl ActionDeclarationBuilder {
     }
     /// <p>The order in which actions are run.</p>
     pub fn set_run_order(mut self, input: std::option::Option<i32>) -> Self {
-        self.run_order = input;
-        self
+        self.run_order = input; self
     }
     /// Adds a key-value pair to `configuration`.
     ///
     /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
     ///
-    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+    /// <p> <i>JSON:</i> </p> 
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn configuration(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn configuration(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.configuration.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.configuration = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.configuration = Some(hash_map);
+                        self
     }
-    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+    /// <p> <i>JSON:</i> </p> 
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn set_configuration(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.configuration = input; self
     }
     /// Appends an item to `output_artifacts`.
     ///
@@ -174,17 +153,13 @@ impl ActionDeclarationBuilder {
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     pub fn output_artifacts(mut self, input: crate::types::OutputArtifact) -> Self {
         let mut v = self.output_artifacts.unwrap_or_default();
-        v.push(input);
-        self.output_artifacts = Some(v);
-        self
+                        v.push(input);
+                        self.output_artifacts = Some(v);
+                        self
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    pub fn set_output_artifacts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputArtifact>>,
-    ) -> Self {
-        self.output_artifacts = input;
-        self
+    pub fn set_output_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputArtifact>>) -> Self {
+        self.output_artifacts = input; self
     }
     /// Appends an item to `input_artifacts`.
     ///
@@ -193,17 +168,13 @@ impl ActionDeclarationBuilder {
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
     pub fn input_artifacts(mut self, input: crate::types::InputArtifact) -> Self {
         let mut v = self.input_artifacts.unwrap_or_default();
-        v.push(input);
-        self.input_artifacts = Some(v);
-        self
+                        v.push(input);
+                        self.input_artifacts = Some(v);
+                        self
     }
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    pub fn set_input_artifacts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputArtifact>>,
-    ) -> Self {
-        self.input_artifacts = input;
-        self
+    pub fn set_input_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputArtifact>>) -> Self {
+        self.input_artifacts = input; self
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,8 +183,7 @@ impl ActionDeclarationBuilder {
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The action declaration's AWS Region, such as us-east-1.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,8 +192,7 @@ impl ActionDeclarationBuilder {
     }
     /// <p>The action declaration's AWS Region, such as us-east-1.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -232,21 +201,30 @@ impl ActionDeclarationBuilder {
     }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// Consumes the builder and constructs a [`ActionDeclaration`](crate::types::ActionDeclaration).
     pub fn build(self) -> crate::types::ActionDeclaration {
         crate::types::ActionDeclaration {
-            name: self.name,
-            action_type_id: self.action_type_id,
-            run_order: self.run_order,
-            configuration: self.configuration,
-            output_artifacts: self.output_artifacts,
-            input_artifacts: self.input_artifacts,
-            role_arn: self.role_arn,
-            region: self.region,
-            namespace: self.namespace,
+            name: self.name
+            ,
+            action_type_id: self.action_type_id
+            ,
+            run_order: self.run_order
+            ,
+            configuration: self.configuration
+            ,
+            output_artifacts: self.output_artifacts
+            ,
+            input_artifacts: self.input_artifacts
+            ,
+            role_arn: self.role_arn
+            ,
+            region: self.region
+            ,
+            namespace: self.namespace
+            ,
         }
     }
 }
+

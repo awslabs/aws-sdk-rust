@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupsForCapacityReservationInput {
+pub struct GetGroupsForCapacityReservationInput  {
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     #[doc(hidden)]
     pub capacity_reservation_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct GetGroupsForCapacityReservationInput {
 }
 impl GetGroupsForCapacityReservationInput {
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
-    pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_id(&self) -> std::option::Option<& str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
@@ -36,7 +36,7 @@ impl GetGroupsForCapacityReservationInput {
 }
 impl GetGroupsForCapacityReservationInput {
     /// Creates a new builder-style object to manufacture [`GetGroupsForCapacityReservationInput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput).
-    pub fn builder() -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder{
+    pub fn builder() -> crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder {
         crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl GetGroupsForCapacityReservationInputBuilder {
         self
     }
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
-    pub fn set_capacity_reservation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capacity_reservation_id = input;
-        self
+    pub fn set_capacity_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capacity_reservation_id = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,8 +76,7 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -91,16 +85,10 @@ impl GetGroupsForCapacityReservationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`GetGroupsForCapacityReservationInput`](crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservationInput {
                 capacity_reservation_id: self.capacity_reservation_id
@@ -115,3 +103,4 @@ impl GetGroupsForCapacityReservationInputBuilder {
         )
     }
 }
+

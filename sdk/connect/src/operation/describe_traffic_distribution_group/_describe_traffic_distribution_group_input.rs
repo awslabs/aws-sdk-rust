@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrafficDistributionGroupInput {
+pub struct DescribeTrafficDistributionGroupInput  {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     #[doc(hidden)]
     pub traffic_distribution_group_id: std::option::Option<std::string::String>,
 }
 impl DescribeTrafficDistributionGroupInput {
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn traffic_distribution_group_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_distribution_group_id(&self) -> std::option::Option<& str> {
         self.traffic_distribution_group_id.as_deref()
     }
 }
 impl DescribeTrafficDistributionGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrafficDistributionGroupInput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput).
-    pub fn builder() -> crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupInputBuilder{
+    pub fn builder() -> crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupInputBuilder {
         crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl DescribeTrafficDistributionGroupInputBuilder {
         self
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn set_traffic_distribution_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.traffic_distribution_group_id = input;
-        self
+    pub fn set_traffic_distribution_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.traffic_distribution_group_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTrafficDistributionGroupInput`](crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupInput {
                 traffic_distribution_group_id: self.traffic_distribution_group_id
@@ -50,3 +46,4 @@ impl DescribeTrafficDistributionGroupInputBuilder {
         )
     }
 }
+

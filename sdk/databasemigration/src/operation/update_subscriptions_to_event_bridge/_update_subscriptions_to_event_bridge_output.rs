@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionsToEventBridgeOutput {
+pub struct UpdateSubscriptionsToEventBridgeOutput  {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
     #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
@@ -11,18 +11,18 @@ pub struct UpdateSubscriptionsToEventBridgeOutput {
 }
 impl UpdateSubscriptionsToEventBridgeOutput {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    pub fn result(&self) -> std::option::Option<&str> {
+    pub fn result(&self) -> std::option::Option<& str> {
         self.result.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSubscriptionsToEventBridgeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateSubscriptionsToEventBridgeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput).
-    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder{
+    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder {
         crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeOutputBuilder::default()
     }
 }
@@ -42,20 +42,19 @@ impl UpdateSubscriptionsToEventBridgeOutputBuilder {
     }
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
     pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput).
-    pub fn build(self) -> crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput{
+    pub fn build(self) -> crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput {
         crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput {
             result: self.result
             ,
@@ -63,3 +62,4 @@ impl UpdateSubscriptionsToEventBridgeOutputBuilder {
         }
     }
 }
+

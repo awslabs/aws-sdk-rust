@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aacaudiodescriptionbroadcastermix = unimplemented!();
 /// match aacaudiodescriptionbroadcastermix {
@@ -30,64 +30,55 @@
 /// Specifically, when `aacaudiodescriptionbroadcastermix` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AacAudioDescriptionBroadcasterMix::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AacAudioDescriptionBroadcasterMix {
     #[allow(missing_docs)] // documentation missing in model
     BroadcasterMixedAd,
     #[allow(missing_docs)] // documentation missing in model
     Normal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AacAudioDescriptionBroadcasterMix {
-    fn from(s: &str) -> Self {
-        match s {
-            "BROADCASTER_MIXED_AD" => AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd,
-            "NORMAL" => AacAudioDescriptionBroadcasterMix::Normal,
-            other => AacAudioDescriptionBroadcasterMix::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BROADCASTER_MIXED_AD" => AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd,
+"NORMAL" => AacAudioDescriptionBroadcasterMix::Normal,
+other => AacAudioDescriptionBroadcasterMix::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AacAudioDescriptionBroadcasterMix {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AacAudioDescriptionBroadcasterMix::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AacAudioDescriptionBroadcasterMix::from(s))
+                }
+            }
 impl AacAudioDescriptionBroadcasterMix {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd => "BROADCASTER_MIXED_AD",
-            AacAudioDescriptionBroadcasterMix::Normal => "NORMAL",
-            AacAudioDescriptionBroadcasterMix::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["BROADCASTER_MIXED_AD", "NORMAL"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd => "BROADCASTER_MIXED_AD",
+    AacAudioDescriptionBroadcasterMix::Normal => "NORMAL",
+    AacAudioDescriptionBroadcasterMix::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BROADCASTER_MIXED_AD", "NORMAL"]
+                }
+            }
 impl AsRef<str> for AacAudioDescriptionBroadcasterMix {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

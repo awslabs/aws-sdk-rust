@@ -3,7 +3,7 @@
 /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HoneycodeConnectorProfileCredentials {
+pub struct HoneycodeConnectorProfileCredentials  {
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct HoneycodeConnectorProfileCredentials {
 }
 impl HoneycodeConnectorProfileCredentials {
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn refresh_token(&self) -> std::option::Option<&str> {
+    pub fn refresh_token(&self) -> std::option::Option<& str> {
         self.refresh_token.as_deref()
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    pub fn o_auth_request(&self) -> std::option::Option<&crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> std::option::Option<& crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
 }
-impl std::fmt::Debug for HoneycodeConnectorProfileCredentials {
+impl  std::fmt::Debug for HoneycodeConnectorProfileCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HoneycodeConnectorProfileCredentials");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -60,8 +60,7 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
     }
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input;
-        self
+        self.access_token = input; self
     }
     /// <p> The credentials used to acquire new access tokens. </p>
     pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +69,7 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
     }
     /// <p> The credentials used to acquire new access tokens. </p>
     pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.refresh_token = input;
-        self
+        self.refresh_token = input; self
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
@@ -79,19 +77,18 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    pub fn set_o_auth_request(
-        mut self,
-        input: std::option::Option<crate::types::ConnectorOAuthRequest>,
-    ) -> Self {
-        self.o_auth_request = input;
-        self
+    pub fn set_o_auth_request(mut self, input: std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
+        self.o_auth_request = input; self
     }
     /// Consumes the builder and constructs a [`HoneycodeConnectorProfileCredentials`](crate::types::HoneycodeConnectorProfileCredentials).
     pub fn build(self) -> crate::types::HoneycodeConnectorProfileCredentials {
         crate::types::HoneycodeConnectorProfileCredentials {
-            access_token: self.access_token,
-            refresh_token: self.refresh_token,
-            o_auth_request: self.o_auth_request,
+            access_token: self.access_token
+            ,
+            refresh_token: self.refresh_token
+            ,
+            o_auth_request: self.o_auth_request
+            ,
         }
     }
 }
@@ -104,3 +101,4 @@ impl std::fmt::Debug for HoneycodeConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

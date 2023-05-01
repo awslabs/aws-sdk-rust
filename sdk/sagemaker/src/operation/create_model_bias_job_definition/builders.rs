@@ -4,113 +4,76 @@ pub use crate::operation::create_model_bias_job_definition::_create_model_bias_j
 pub use crate::operation::create_model_bias_job_definition::_create_model_bias_job_definition_input::CreateModelBiasJobDefinitionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateModelBiasJobDefinition`.
-///
+/// 
 /// <p>Creates the definition for a model bias job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateModelBiasJobDefinitionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder
             }
-impl CreateModelBiasJobDefinitionFluentBuilder {
+impl CreateModelBiasJobDefinitionFluentBuilder  {
     /// Creates a new `CreateModelBiasJobDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_definition_name(input.into());
         self
     }
     /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_job_definition_name(input);
         self
     }
     /// <p>The baseline configuration for a model bias job.</p>
-    pub fn model_bias_baseline_config(
-        mut self,
-        input: crate::types::ModelBiasBaselineConfig,
-    ) -> Self {
+    pub fn model_bias_baseline_config(mut self, input: crate::types::ModelBiasBaselineConfig) -> Self {
         self.inner = self.inner.model_bias_baseline_config(input);
         self
     }
     /// <p>The baseline configuration for a model bias job.</p>
-    pub fn set_model_bias_baseline_config(
-        mut self,
-        input: std::option::Option<crate::types::ModelBiasBaselineConfig>,
-    ) -> Self {
+    pub fn set_model_bias_baseline_config(mut self, input: std::option::Option<crate::types::ModelBiasBaselineConfig>) -> Self {
         self.inner = self.inner.set_model_bias_baseline_config(input);
         self
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
-    pub fn model_bias_app_specification(
-        mut self,
-        input: crate::types::ModelBiasAppSpecification,
-    ) -> Self {
+    pub fn model_bias_app_specification(mut self, input: crate::types::ModelBiasAppSpecification) -> Self {
         self.inner = self.inner.model_bias_app_specification(input);
         self
     }
     /// <p>Configures the model bias job to run a specified Docker container image.</p>
-    pub fn set_model_bias_app_specification(
-        mut self,
-        input: std::option::Option<crate::types::ModelBiasAppSpecification>,
-    ) -> Self {
+    pub fn set_model_bias_app_specification(mut self, input: std::option::Option<crate::types::ModelBiasAppSpecification>) -> Self {
         self.inner = self.inner.set_model_bias_app_specification(input);
         self
     }
@@ -120,26 +83,17 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>Inputs for the model bias job.</p>
-    pub fn set_model_bias_job_input(
-        mut self,
-        input: std::option::Option<crate::types::ModelBiasJobInput>,
-    ) -> Self {
+    pub fn set_model_bias_job_input(mut self, input: std::option::Option<crate::types::ModelBiasJobInput>) -> Self {
         self.inner = self.inner.set_model_bias_job_input(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn model_bias_job_output_config(
-        mut self,
-        input: crate::types::MonitoringOutputConfig,
-    ) -> Self {
+    pub fn model_bias_job_output_config(mut self, input: crate::types::MonitoringOutputConfig) -> Self {
         self.inner = self.inner.model_bias_job_output_config(input);
         self
     }
     /// <p>The output configuration for monitoring jobs.</p>
-    pub fn set_model_bias_job_output_config(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringOutputConfig>,
-    ) -> Self {
+    pub fn set_model_bias_job_output_config(mut self, input: std::option::Option<crate::types::MonitoringOutputConfig>) -> Self {
         self.inner = self.inner.set_model_bias_job_output_config(input);
         self
     }
@@ -149,10 +103,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
-    pub fn set_job_resources(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringResources>,
-    ) -> Self {
+    pub fn set_job_resources(mut self, input: std::option::Option<crate::types::MonitoringResources>) -> Self {
         self.inner = self.inner.set_job_resources(input);
         self
     }
@@ -162,10 +113,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>Networking options for a model bias job.</p>
-    pub fn set_network_config(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringNetworkConfig>,
-    ) -> Self {
+    pub fn set_network_config(mut self, input: std::option::Option<crate::types::MonitoringNetworkConfig>) -> Self {
         self.inner = self.inner.set_network_config(input);
         self
     }
@@ -185,10 +133,7 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
-    pub fn set_stopping_condition(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringStoppingCondition>,
-    ) -> Self {
+    pub fn set_stopping_condition(mut self, input: std::option::Option<crate::types::MonitoringStoppingCondition>) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
@@ -202,11 +147,9 @@ impl CreateModelBiasJobDefinitionFluentBuilder {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

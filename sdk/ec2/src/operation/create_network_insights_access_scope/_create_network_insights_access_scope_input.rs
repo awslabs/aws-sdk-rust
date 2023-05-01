@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkInsightsAccessScopeInput {
+pub struct CreateNetworkInsightsAccessScopeInput  {
     /// <p>The paths to match.</p>
     #[doc(hidden)]
     pub match_paths: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
@@ -21,19 +21,19 @@ pub struct CreateNetworkInsightsAccessScopeInput {
 }
 impl CreateNetworkInsightsAccessScopeInput {
     /// <p>The paths to match.</p>
-    pub fn match_paths(&self) -> std::option::Option<&[crate::types::AccessScopePathRequest]> {
+    pub fn match_paths(&self) -> std::option::Option<& [crate::types::AccessScopePathRequest]> {
         self.match_paths.as_deref()
     }
     /// <p>The paths to exclude.</p>
-    pub fn exclude_paths(&self) -> std::option::Option<&[crate::types::AccessScopePathRequest]> {
+    pub fn exclude_paths(&self) -> std::option::Option<& [crate::types::AccessScopePathRequest]> {
         self.exclude_paths.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The tags to apply.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -43,7 +43,7 @@ impl CreateNetworkInsightsAccessScopeInput {
 }
 impl CreateNetworkInsightsAccessScopeInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
-    pub fn builder() -> crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder{
+    pub fn builder() -> crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder {
         crate::operation::create_network_insights_access_scope::builders::CreateNetworkInsightsAccessScopeInputBuilder::default()
     }
 }
@@ -52,13 +52,10 @@ impl CreateNetworkInsightsAccessScopeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateNetworkInsightsAccessScopeInputBuilder {
-    pub(crate) match_paths:
-        std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
-    pub(crate) exclude_paths:
-        std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
+    pub(crate) match_paths: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
+    pub(crate) exclude_paths: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tag_specifications:
-        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl CreateNetworkInsightsAccessScopeInputBuilder {
@@ -69,17 +66,13 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     /// <p>The paths to match.</p>
     pub fn match_paths(mut self, input: crate::types::AccessScopePathRequest) -> Self {
         let mut v = self.match_paths.unwrap_or_default();
-        v.push(input);
-        self.match_paths = Some(v);
-        self
+                        v.push(input);
+                        self.match_paths = Some(v);
+                        self
     }
     /// <p>The paths to match.</p>
-    pub fn set_match_paths(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
-    ) -> Self {
-        self.match_paths = input;
-        self
+    pub fn set_match_paths(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>) -> Self {
+        self.match_paths = input; self
     }
     /// Appends an item to `exclude_paths`.
     ///
@@ -88,17 +81,13 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     /// <p>The paths to exclude.</p>
     pub fn exclude_paths(mut self, input: crate::types::AccessScopePathRequest) -> Self {
         let mut v = self.exclude_paths.unwrap_or_default();
-        v.push(input);
-        self.exclude_paths = Some(v);
-        self
+                        v.push(input);
+                        self.exclude_paths = Some(v);
+                        self
     }
     /// <p>The paths to exclude.</p>
-    pub fn set_exclude_paths(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>,
-    ) -> Self {
-        self.exclude_paths = input;
-        self
+    pub fn set_exclude_paths(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessScopePathRequest>>) -> Self {
+        self.exclude_paths = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +96,7 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -117,17 +105,13 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     /// <p>The tags to apply.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = Some(v);
+                        self
     }
     /// <p>The tags to apply.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -136,11 +120,10 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateNetworkInsightsAccessScopeInput`](crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput).
-    pub fn build(self) -> Result<crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_network_insights_access_scope::CreateNetworkInsightsAccessScopeInput {
                 match_paths: self.match_paths
@@ -157,3 +140,4 @@ impl CreateNetworkInsightsAccessScopeInputBuilder {
         )
     }
 }
+

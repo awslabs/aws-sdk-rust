@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateFleetInput {
+pub struct DisassociateFleetInput  {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DisassociateFleetInput {
 }
 impl DisassociateFleetInput {
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> std::option::Option<&str> {
+    pub fn fleet_name(&self) -> std::option::Option<& str> {
         self.fleet_name.as_deref()
     }
     /// <p>The name of the stack.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
 }
 impl DisassociateFleetInput {
     /// Creates a new builder-style object to manufacture [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
-    pub fn builder() -> crate::operation::disassociate_fleet::builders::DisassociateFleetInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_fleet::builders::DisassociateFleetInputBuilder {
         crate::operation::disassociate_fleet::builders::DisassociateFleetInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DisassociateFleetInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_name = input;
-        self
+        self.fleet_name = input; self
     }
     /// <p>The name of the stack.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DisassociateFleetInputBuilder {
     }
     /// <p>The name of the stack.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateFleetInput`](crate::operation::disassociate_fleet::DisassociateFleetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_fleet::DisassociateFleetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_fleet::DisassociateFleetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_fleet::DisassociateFleetInput {
-                fleet_name: self.fleet_name,
-                stack_name: self.stack_name,
-            },
+                fleet_name: self.fleet_name
+                ,
+                stack_name: self.stack_name
+                ,
+            }
         )
     }
 }
+

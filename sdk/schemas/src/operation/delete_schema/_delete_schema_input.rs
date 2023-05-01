@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSchemaInput {
+pub struct DeleteSchemaInput  {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteSchemaInput {
 }
 impl DeleteSchemaInput {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteSchemaInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteSchemaInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSchemaInput`](crate::operation::delete_schema::DeleteSchemaInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_schema::DeleteSchemaInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_schema::DeleteSchemaInput {
-            registry_name: self.registry_name,
-            schema_name: self.schema_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_schema::DeleteSchemaInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_schema::DeleteSchemaInput {
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+            }
+        )
     }
 }
+

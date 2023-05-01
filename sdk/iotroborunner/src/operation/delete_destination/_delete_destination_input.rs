@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDestinationInput {
+pub struct DeleteDestinationInput  {
     /// Destination ARN.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteDestinationInput {
     /// Destination ARN.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
-    pub fn builder() -> crate::operation::delete_destination::builders::DeleteDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_destination::builders::DeleteDestinationInputBuilder {
         crate::operation::delete_destination::builders::DeleteDestinationInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteDestinationInputBuilder {
     }
     /// Destination ARN.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDestinationInput`](crate::operation::delete_destination::DeleteDestinationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_destination::DeleteDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_destination::DeleteDestinationInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::delete_destination::DeleteDestinationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_destination::DeleteDestinationInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

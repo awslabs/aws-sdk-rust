@@ -110,3 +110,4 @@ pub use crate::types::_update_pipe_source_sqs_queue_parameters::UpdatePipeSource
 pub use crate::types::_update_pipe_source_dynamo_db_stream_parameters::UpdatePipeSourceDynamoDbStreamParametersBuilder;
 
 pub use crate::types::_update_pipe_source_kinesis_stream_parameters::UpdatePipeSourceKinesisStreamParametersBuilder;
+

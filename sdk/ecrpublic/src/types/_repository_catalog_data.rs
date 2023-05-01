@@ -3,17 +3,17 @@
 /// <p>The catalog data for a repository. This data is publicly visible in the Amazon ECR Public Gallery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryCatalogData {
+pub struct RepositoryCatalogData  {
     /// <p>The short description of the repository.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The architecture tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The architecture tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub architectures: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The operating system tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The operating system tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -32,31 +32,31 @@ pub struct RepositoryCatalogData {
 }
 impl RepositoryCatalogData {
     /// <p>The short description of the repository.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The architecture tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The architecture tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
-    pub fn architectures(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn architectures(&self) -> std::option::Option<& [std::string::String]> {
         self.architectures.as_deref()
     }
-    /// <p>The operating system tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The operating system tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
-    pub fn operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn operating_systems(&self) -> std::option::Option<& [std::string::String]> {
         self.operating_systems.as_deref()
     }
     /// <p>The URL that contains the logo that's associated with the repository.</p>
-    pub fn logo_url(&self) -> std::option::Option<&str> {
+    pub fn logo_url(&self) -> std::option::Option<& str> {
         self.logo_url.as_deref()
     }
     /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
-    pub fn about_text(&self) -> std::option::Option<&str> {
+    pub fn about_text(&self) -> std::option::Option<& str> {
         self.about_text.as_deref()
     }
     /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
-    pub fn usage_text(&self) -> std::option::Option<&str> {
+    pub fn usage_text(&self) -> std::option::Option<& str> {
         self.usage_text.as_deref()
     }
     /// <p>Indicates whether the repository is certified by Amazon Web Services Marketplace.</p>
@@ -91,54 +91,45 @@ impl RepositoryCatalogDataBuilder {
     }
     /// <p>The short description of the repository.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `architectures`.
     ///
     /// To override the contents of this collection use [`set_architectures`](Self::set_architectures).
     ///
-    /// <p>The architecture tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The architecture tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
     pub fn architectures(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-        v.push(input.into());
-        self.architectures = Some(v);
-        self
+                        v.push(input.into());
+                        self.architectures = Some(v);
+                        self
     }
-    /// <p>The architecture tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The architecture tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
-    pub fn set_architectures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.architectures = input;
-        self
+    pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.architectures = input; self
     }
     /// Appends an item to `operating_systems`.
     ///
     /// To override the contents of this collection use [`set_operating_systems`](Self::set_operating_systems).
     ///
-    /// <p>The operating system tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The operating system tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
     pub fn operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.operating_systems.unwrap_or_default();
-        v.push(input.into());
-        self.operating_systems = Some(v);
-        self
+                        v.push(input.into());
+                        self.operating_systems = Some(v);
+                        self
     }
-    /// <p>The operating system tags that are associated with the repository.</p> <note>
-    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p>
+    /// <p>The operating system tags that are associated with the repository.</p> <note> 
+    /// <p>Only supported operating system tags appear publicly in the Amazon ECR Public Gallery. For more information, see <code>RepositoryCatalogDataInput</code>.</p> 
     /// </note>
-    pub fn set_operating_systems(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.operating_systems = input;
-        self
+    pub fn set_operating_systems(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.operating_systems = input; self
     }
     /// <p>The URL that contains the logo that's associated with the repository.</p>
     pub fn logo_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +138,7 @@ impl RepositoryCatalogDataBuilder {
     }
     /// <p>The URL that contains the logo that's associated with the repository.</p>
     pub fn set_logo_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logo_url = input;
-        self
+        self.logo_url = input; self
     }
     /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
     pub fn about_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +147,7 @@ impl RepositoryCatalogDataBuilder {
     }
     /// <p>The longform description of the contents of the repository. This text appears in the repository details on the Amazon ECR Public Gallery.</p>
     pub fn set_about_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.about_text = input;
-        self
+        self.about_text = input; self
     }
     /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
     pub fn usage_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +156,7 @@ impl RepositoryCatalogDataBuilder {
     }
     /// <p>The longform usage details of the contents of the repository. The usage text provides context for users of the repository.</p>
     pub fn set_usage_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_text = input;
-        self
+        self.usage_text = input; self
     }
     /// <p>Indicates whether the repository is certified by Amazon Web Services Marketplace.</p>
     pub fn marketplace_certified(mut self, input: bool) -> Self {
@@ -177,19 +165,26 @@ impl RepositoryCatalogDataBuilder {
     }
     /// <p>Indicates whether the repository is certified by Amazon Web Services Marketplace.</p>
     pub fn set_marketplace_certified(mut self, input: std::option::Option<bool>) -> Self {
-        self.marketplace_certified = input;
-        self
+        self.marketplace_certified = input; self
     }
     /// Consumes the builder and constructs a [`RepositoryCatalogData`](crate::types::RepositoryCatalogData).
     pub fn build(self) -> crate::types::RepositoryCatalogData {
         crate::types::RepositoryCatalogData {
-            description: self.description,
-            architectures: self.architectures,
-            operating_systems: self.operating_systems,
-            logo_url: self.logo_url,
-            about_text: self.about_text,
-            usage_text: self.usage_text,
-            marketplace_certified: self.marketplace_certified,
+            description: self.description
+            ,
+            architectures: self.architectures
+            ,
+            operating_systems: self.operating_systems
+            ,
+            logo_url: self.logo_url
+            ,
+            about_text: self.about_text
+            ,
+            usage_text: self.usage_text
+            ,
+            marketplace_certified: self.marketplace_certified
+            ,
         }
     }
 }
+

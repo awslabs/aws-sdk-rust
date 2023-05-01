@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum MedicalTranscriptResultStream {
-    /// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p>
+    /// <p>The <code>MedicalTranscriptEvent</code> associated with a <code>MedicalTranscriptResultStream</code>.</p> 
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     TranscriptEvent(crate::types::MedicalTranscriptEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -21,14 +21,8 @@ impl MedicalTranscriptResultStream {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`TranscriptEvent`](crate::types::MedicalTranscriptResultStream::TranscriptEvent), extracting the inner [`MedicalTranscriptEvent`](crate::types::MedicalTranscriptEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_transcript_event(
-        &self,
-    ) -> std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
-        if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_transcript_event(&self) -> std::result::Result<&crate::types::MedicalTranscriptEvent, &Self> {
+        if let MedicalTranscriptResultStream::TranscriptEvent(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::types::MedicalTranscriptResultStream::TranscriptEvent).
     pub fn is_transcript_event(&self) -> bool {
@@ -39,3 +33,4 @@ impl MedicalTranscriptResultStream {
         matches!(self, Self::Unknown)
     }
 }
+

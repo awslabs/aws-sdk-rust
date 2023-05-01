@@ -180,3 +180,4 @@ pub mod builders;
 
 /// Error types that AWS Systems Manager Incident Manager can respond with.
 pub mod error;
+

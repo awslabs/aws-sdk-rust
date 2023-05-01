@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClientAuthenticationSettingsInput {
+pub struct DescribeClientAuthenticationSettingsInput  {
     /// <p>The identifier of the directory for which to retrieve information.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DescribeClientAuthenticationSettingsInput {
 }
 impl DescribeClientAuthenticationSettingsInput {
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ClientAuthenticationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ClientAuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
@@ -36,7 +36,7 @@ impl DescribeClientAuthenticationSettingsInput {
 }
 impl DescribeClientAuthenticationSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
-    pub fn builder() -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder {
         crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub fn r#type(mut self, input: crate::types::ClientAuthenticationType) -> Self {
@@ -67,12 +66,8 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         self
     }
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ClientAuthenticationType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ClientAuthenticationType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -91,11 +85,10 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`DescribeClientAuthenticationSettingsInput`](crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput).
-    pub fn build(self) -> Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsInput {
                 directory_id: self.directory_id
@@ -110,3 +103,4 @@ impl DescribeClientAuthenticationSettingsInputBuilder {
         )
     }
 }
+

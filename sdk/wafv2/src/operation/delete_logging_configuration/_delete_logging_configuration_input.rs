@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationInput {
+pub struct DeleteLoggingConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl DeleteLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder {
         crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeleteLoggingConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL from which you want to delete the <code>LoggingConfiguration</code>.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableSharingWithAwsOrganizationOutput {
+pub struct EnableSharingWithAwsOrganizationOutput  {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
@@ -15,13 +15,13 @@ impl EnableSharingWithAwsOrganizationOutput {
     }
 }
 impl aws_http::request_id::RequestId for EnableSharingWithAwsOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EnableSharingWithAwsOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`EnableSharingWithAwsOrganizationOutput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput).
-    pub fn builder() -> crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder {
         crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl EnableSharingWithAwsOrganizationOutputBuilder {
     }
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_value = input;
-        self
+        self.return_value = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationOutput`](crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput).
-    pub fn build(self) -> crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput{
+    pub fn build(self) -> crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput {
         crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput {
             return_value: self.return_value
             ,
@@ -62,3 +61,4 @@ impl EnableSharingWithAwsOrganizationOutputBuilder {
         }
     }
 }
+

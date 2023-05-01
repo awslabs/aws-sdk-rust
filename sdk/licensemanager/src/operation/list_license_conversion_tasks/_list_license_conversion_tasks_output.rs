@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLicenseConversionTasksOutput {
+pub struct ListLicenseConversionTasksOutput  {
     /// <p>Information about the license configuration tasks for your account.</p>
     #[doc(hidden)]
-    pub license_conversion_tasks:
-        std::option::Option<std::vec::Vec<crate::types::LicenseConversionTask>>,
+    pub license_conversion_tasks: std::option::Option<std::vec::Vec<crate::types::LicenseConversionTask>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListLicenseConversionTasksOutput {
 }
 impl ListLicenseConversionTasksOutput {
     /// <p>Information about the license configuration tasks for your account.</p>
-    pub fn license_conversion_tasks(
-        &self,
-    ) -> std::option::Option<&[crate::types::LicenseConversionTask]> {
+    pub fn license_conversion_tasks(&self) -> std::option::Option<& [crate::types::LicenseConversionTask]> {
         self.license_conversion_tasks.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLicenseConversionTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListLicenseConversionTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListLicenseConversionTasksOutput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput).
-    pub fn builder() -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksOutputBuilder {
         crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListLicenseConversionTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListLicenseConversionTasksOutputBuilder {
-    pub(crate) license_conversion_tasks:
-        std::option::Option<std::vec::Vec<crate::types::LicenseConversionTask>>,
+    pub(crate) license_conversion_tasks: std::option::Option<std::vec::Vec<crate::types::LicenseConversionTask>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl ListLicenseConversionTasksOutputBuilder {
     /// <p>Information about the license configuration tasks for your account.</p>
     pub fn license_conversion_tasks(mut self, input: crate::types::LicenseConversionTask) -> Self {
         let mut v = self.license_conversion_tasks.unwrap_or_default();
-        v.push(input);
-        self.license_conversion_tasks = Some(v);
-        self
+                        v.push(input);
+                        self.license_conversion_tasks = Some(v);
+                        self
     }
     /// <p>Information about the license configuration tasks for your account.</p>
-    pub fn set_license_conversion_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LicenseConversionTask>>,
-    ) -> Self {
-        self.license_conversion_tasks = input;
-        self
+    pub fn set_license_conversion_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::LicenseConversionTask>>) -> Self {
+        self.license_conversion_tasks = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl ListLicenseConversionTasksOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListLicenseConversionTasksOutput`](crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput {
+    pub fn build(self) -> crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput {
         crate::operation::list_license_conversion_tasks::ListLicenseConversionTasksOutput {
-            license_conversion_tasks: self.license_conversion_tasks,
-            next_token: self.next_token,
+            license_conversion_tasks: self.license_conversion_tasks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

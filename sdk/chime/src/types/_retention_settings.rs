@@ -3,26 +3,21 @@
 /// <p>The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat-room messages and chat-conversation messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetentionSettings {
+pub struct RetentionSettings  {
     /// <p>The chat room retention settings.</p>
     #[doc(hidden)]
     pub room_retention_settings: std::option::Option<crate::types::RoomRetentionSettings>,
     /// <p>The chat conversation retention settings.</p>
     #[doc(hidden)]
-    pub conversation_retention_settings:
-        std::option::Option<crate::types::ConversationRetentionSettings>,
+    pub conversation_retention_settings: std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettings {
     /// <p>The chat room retention settings.</p>
-    pub fn room_retention_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::RoomRetentionSettings> {
+    pub fn room_retention_settings(&self) -> std::option::Option<& crate::types::RoomRetentionSettings> {
         self.room_retention_settings.as_ref()
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn conversation_retention_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::ConversationRetentionSettings> {
+    pub fn conversation_retention_settings(&self) -> std::option::Option<& crate::types::ConversationRetentionSettings> {
         self.conversation_retention_settings.as_ref()
     }
 }
@@ -38,8 +33,7 @@ impl RetentionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RetentionSettingsBuilder {
     pub(crate) room_retention_settings: std::option::Option<crate::types::RoomRetentionSettings>,
-    pub(crate) conversation_retention_settings:
-        std::option::Option<crate::types::ConversationRetentionSettings>,
+    pub(crate) conversation_retention_settings: std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettingsBuilder {
     /// <p>The chat room retention settings.</p>
@@ -48,34 +42,26 @@ impl RetentionSettingsBuilder {
         self
     }
     /// <p>The chat room retention settings.</p>
-    pub fn set_room_retention_settings(
-        mut self,
-        input: std::option::Option<crate::types::RoomRetentionSettings>,
-    ) -> Self {
-        self.room_retention_settings = input;
-        self
+    pub fn set_room_retention_settings(mut self, input: std::option::Option<crate::types::RoomRetentionSettings>) -> Self {
+        self.room_retention_settings = input; self
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn conversation_retention_settings(
-        mut self,
-        input: crate::types::ConversationRetentionSettings,
-    ) -> Self {
+    pub fn conversation_retention_settings(mut self, input: crate::types::ConversationRetentionSettings) -> Self {
         self.conversation_retention_settings = Some(input);
         self
     }
     /// <p>The chat conversation retention settings.</p>
-    pub fn set_conversation_retention_settings(
-        mut self,
-        input: std::option::Option<crate::types::ConversationRetentionSettings>,
-    ) -> Self {
-        self.conversation_retention_settings = input;
-        self
+    pub fn set_conversation_retention_settings(mut self, input: std::option::Option<crate::types::ConversationRetentionSettings>) -> Self {
+        self.conversation_retention_settings = input; self
     }
     /// Consumes the builder and constructs a [`RetentionSettings`](crate::types::RetentionSettings).
     pub fn build(self) -> crate::types::RetentionSettings {
         crate::types::RetentionSettings {
-            room_retention_settings: self.room_retention_settings,
-            conversation_retention_settings: self.conversation_retention_settings,
+            room_retention_settings: self.room_retention_settings
+            ,
+            conversation_retention_settings: self.conversation_retention_settings
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WeightedTarget {
+pub struct WeightedTarget  {
     /// <p>The virtual node to associate with the weighted target.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct WeightedTarget {
 }
 impl WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
-    pub fn virtual_node(&self) -> std::option::Option<&str> {
+    pub fn virtual_node(&self) -> std::option::Option<& str> {
         self.virtual_node.as_deref()
     }
     /// <p>The relative weight of the weighted target.</p>
@@ -51,8 +51,7 @@ impl WeightedTargetBuilder {
     }
     /// <p>The virtual node to associate with the weighted target.</p>
     pub fn set_virtual_node(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_node = input;
-        self
+        self.virtual_node = input; self
     }
     /// <p>The relative weight of the weighted target.</p>
     pub fn weight(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl WeightedTargetBuilder {
     }
     /// <p>The relative weight of the weighted target.</p>
     pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// <p>The targeted port of the weighted object.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -71,15 +69,19 @@ impl WeightedTargetBuilder {
     }
     /// <p>The targeted port of the weighted object.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// Consumes the builder and constructs a [`WeightedTarget`](crate::types::WeightedTarget).
     pub fn build(self) -> crate::types::WeightedTarget {
         crate::types::WeightedTarget {
-            virtual_node: self.virtual_node,
-            weight: self.weight.unwrap_or_default(),
-            port: self.port,
+            virtual_node: self.virtual_node
+            ,
+            weight: self.weight
+                .unwrap_or_default()
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

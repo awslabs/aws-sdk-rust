@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopReplicationOutput {
+pub struct StopReplicationOutput  {
     /// <p>The Source Server that this action was targeted on.</p>
     #[doc(hidden)]
     pub source_server: std::option::Option<crate::types::SourceServer>,
@@ -10,15 +10,15 @@ pub struct StopReplicationOutput {
 }
 impl StopReplicationOutput {
     /// <p>The Source Server that this action was targeted on.</p>
-    pub fn source_server(&self) -> std::option::Option<&crate::types::SourceServer> {
+    pub fn source_server(&self) -> std::option::Option<& crate::types::SourceServer> {
         self.source_server.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput).
     pub fn builder() -> crate::operation::stop_replication::builders::StopReplicationOutputBuilder {
@@ -40,27 +40,25 @@ impl StopReplicationOutputBuilder {
         self
     }
     /// <p>The Source Server that this action was targeted on.</p>
-    pub fn set_source_server(
-        mut self,
-        input: std::option::Option<crate::types::SourceServer>,
-    ) -> Self {
-        self.source_server = input;
-        self
+    pub fn set_source_server(mut self, input: std::option::Option<crate::types::SourceServer>) -> Self {
+        self.source_server = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopReplicationOutput`](crate::operation::stop_replication::StopReplicationOutput).
     pub fn build(self) -> crate::operation::stop_replication::StopReplicationOutput {
         crate::operation::stop_replication::StopReplicationOutput {
-            source_server: self.source_server,
+            source_server: self.source_server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

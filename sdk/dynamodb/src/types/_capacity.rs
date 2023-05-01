@@ -3,7 +3,7 @@
 /// <p>Represents the amount of provisioned throughput capacity consumed on a table or an index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Capacity {
+pub struct Capacity  {
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
     #[doc(hidden)]
     pub read_capacity_units: std::option::Option<f64>,
@@ -51,8 +51,7 @@ impl CapacityBuilder {
     }
     /// <p>The total number of read capacity units consumed on a table or an index.</p>
     pub fn set_read_capacity_units(mut self, input: std::option::Option<f64>) -> Self {
-        self.read_capacity_units = input;
-        self
+        self.read_capacity_units = input; self
     }
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
     pub fn write_capacity_units(mut self, input: f64) -> Self {
@@ -61,8 +60,7 @@ impl CapacityBuilder {
     }
     /// <p>The total number of write capacity units consumed on a table or an index.</p>
     pub fn set_write_capacity_units(mut self, input: std::option::Option<f64>) -> Self {
-        self.write_capacity_units = input;
-        self
+        self.write_capacity_units = input; self
     }
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     pub fn capacity_units(mut self, input: f64) -> Self {
@@ -71,15 +69,18 @@ impl CapacityBuilder {
     }
     /// <p>The total number of capacity units consumed on a table or an index.</p>
     pub fn set_capacity_units(mut self, input: std::option::Option<f64>) -> Self {
-        self.capacity_units = input;
-        self
+        self.capacity_units = input; self
     }
     /// Consumes the builder and constructs a [`Capacity`](crate::types::Capacity).
     pub fn build(self) -> crate::types::Capacity {
         crate::types::Capacity {
-            read_capacity_units: self.read_capacity_units,
-            write_capacity_units: self.write_capacity_units,
-            capacity_units: self.capacity_units,
+            read_capacity_units: self.read_capacity_units
+            ,
+            write_capacity_units: self.write_capacity_units
+            ,
+            capacity_units: self.capacity_units
+            ,
         }
     }
 }
+

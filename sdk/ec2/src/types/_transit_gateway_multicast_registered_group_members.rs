@@ -3,7 +3,7 @@
 /// <p>Describes the registered transit gateway multicast group members.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayMulticastRegisteredGroupMembers {
+pub struct TransitGatewayMulticastRegisteredGroupMembers  {
     /// <p>The ID of the transit gateway multicast domain.</p>
     #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct TransitGatewayMulticastRegisteredGroupMembers {
 }
 impl TransitGatewayMulticastRegisteredGroupMembers {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The ID of the registered network interfaces.</p>
-    pub fn registered_network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn registered_network_interface_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.registered_network_interface_ids.as_deref()
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn group_ip_address(&self) -> std::option::Option<&str> {
+    pub fn group_ip_address(&self) -> std::option::Option<& str> {
         self.group_ip_address.as_deref()
     }
 }
 impl TransitGatewayMulticastRegisteredGroupMembers {
     /// Creates a new builder-style object to manufacture [`TransitGatewayMulticastRegisteredGroupMembers`](crate::types::TransitGatewayMulticastRegisteredGroupMembers).
-    pub fn builder() -> crate::types::builders::TransitGatewayMulticastRegisteredGroupMembersBuilder
-    {
+    pub fn builder() -> crate::types::builders::TransitGatewayMulticastRegisteredGroupMembersBuilder {
         crate::types::builders::TransitGatewayMulticastRegisteredGroupMembersBuilder::default()
     }
 }
@@ -41,48 +40,33 @@ impl TransitGatewayMulticastRegisteredGroupMembers {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TransitGatewayMulticastRegisteredGroupMembersBuilder {
     pub(crate) transit_gateway_multicast_domain_id: std::option::Option<std::string::String>,
-    pub(crate) registered_network_interface_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) registered_network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) group_ip_address: std::option::Option<std::string::String>,
 }
 impl TransitGatewayMulticastRegisteredGroupMembersBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn transit_gateway_multicast_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.transit_gateway_multicast_domain_id = Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_multicast_domain_id = input;
-        self
+    pub fn set_transit_gateway_multicast_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_multicast_domain_id = input; self
     }
     /// Appends an item to `registered_network_interface_ids`.
     ///
     /// To override the contents of this collection use [`set_registered_network_interface_ids`](Self::set_registered_network_interface_ids).
     ///
     /// <p>The ID of the registered network interfaces.</p>
-    pub fn registered_network_interface_ids(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn registered_network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.registered_network_interface_ids.unwrap_or_default();
-        v.push(input.into());
-        self.registered_network_interface_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.registered_network_interface_ids = Some(v);
+                        self
     }
     /// <p>The ID of the registered network interfaces.</p>
-    pub fn set_registered_network_interface_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.registered_network_interface_ids = input;
-        self
+    pub fn set_registered_network_interface_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.registered_network_interface_ids = input; self
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn group_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,15 +75,18 @@ impl TransitGatewayMulticastRegisteredGroupMembersBuilder {
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn set_group_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_ip_address = input;
-        self
+        self.group_ip_address = input; self
     }
     /// Consumes the builder and constructs a [`TransitGatewayMulticastRegisteredGroupMembers`](crate::types::TransitGatewayMulticastRegisteredGroupMembers).
     pub fn build(self) -> crate::types::TransitGatewayMulticastRegisteredGroupMembers {
         crate::types::TransitGatewayMulticastRegisteredGroupMembers {
-            transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id,
-            registered_network_interface_ids: self.registered_network_interface_ids,
-            group_ip_address: self.group_ip_address,
+            transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
+            ,
+            registered_network_interface_ids: self.registered_network_interface_ids
+            ,
+            group_ip_address: self.group_ip_address
+            ,
         }
     }
 }
+

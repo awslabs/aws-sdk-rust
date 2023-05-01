@@ -3,48 +3,48 @@
 /// <p>Information about a world export job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorldExportJobSummary {
+pub struct WorldExportJobSummary  {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The status of the world export job.</p>
-    /// <dl>
+    /// <p>The status of the world export job.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::WorldExportJobStatus>,
@@ -60,61 +60,61 @@ pub struct WorldExportJobSummary {
 }
 impl WorldExportJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The status of the world export job.</p>
-    /// <dl>
+    /// <p>The status of the world export job.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&crate::types::WorldExportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::WorldExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A list of worlds.</p>
-    pub fn worlds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn worlds(&self) -> std::option::Option<& [std::string::String]> {
         self.worlds.as_deref()
     }
     /// <p>The output location.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
 }
@@ -143,97 +143,92 @@ impl WorldExportJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the world export job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <p>The status of the world export job.</p>
-    /// <dl>
+    /// <p>The status of the world export job.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
     pub fn status(mut self, input: crate::types::WorldExportJobStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the world export job.</p>
-    /// <dl>
+    /// <p>The status of the world export job.</p> 
+    /// <dl> 
     /// <dt>
     /// Pending
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job request is pending.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job request is pending.</p> 
+    /// </dd> 
     /// <dt>
     /// Running
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is running. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is running. </p> 
+    /// </dd> 
     /// <dt>
     /// Completed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job completed. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job completed. </p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job failed. See <code>failureCode</code> for more information. </p> 
+    /// </dd> 
     /// <dt>
     /// Canceled
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job was cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job was cancelled.</p> 
+    /// </dd> 
     /// <dt>
     /// Canceling
-    /// </dt>
-    /// <dd>
-    /// <p>The world export job is being cancelled.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The world export job is being cancelled.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::WorldExportJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::WorldExportJobStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -241,12 +236,8 @@ impl WorldExportJobSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the world export job was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Appends an item to `worlds`.
     ///
@@ -255,17 +246,13 @@ impl WorldExportJobSummaryBuilder {
     /// <p>A list of worlds.</p>
     pub fn worlds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.worlds.unwrap_or_default();
-        v.push(input.into());
-        self.worlds = Some(v);
-        self
+                        v.push(input.into());
+                        self.worlds = Some(v);
+                        self
     }
     /// <p>A list of worlds.</p>
-    pub fn set_worlds(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.worlds = input;
-        self
+    pub fn set_worlds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.worlds = input; self
     }
     /// <p>The output location.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
@@ -273,21 +260,23 @@ impl WorldExportJobSummaryBuilder {
         self
     }
     /// <p>The output location.</p>
-    pub fn set_output_location(
-        mut self,
-        input: std::option::Option<crate::types::OutputLocation>,
-    ) -> Self {
-        self.output_location = input;
-        self
+    pub fn set_output_location(mut self, input: std::option::Option<crate::types::OutputLocation>) -> Self {
+        self.output_location = input; self
     }
     /// Consumes the builder and constructs a [`WorldExportJobSummary`](crate::types::WorldExportJobSummary).
     pub fn build(self) -> crate::types::WorldExportJobSummary {
         crate::types::WorldExportJobSummary {
-            arn: self.arn,
-            status: self.status,
-            created_at: self.created_at,
-            worlds: self.worlds,
-            output_location: self.output_location,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            worlds: self.worlds
+            ,
+            output_location: self.output_location
+            ,
         }
     }
 }
+

@@ -20,3 +20,4 @@ pub use crate::types::error::_serial_console_session_limit_exceeded_exception::S
 pub use crate::types::error::_serial_console_access_disabled_exception::SerialConsoleAccessDisabledExceptionBuilder;
 
 pub use crate::types::error::_ec2_instance_type_invalid_exception::Ec2InstanceTypeInvalidExceptionBuilder;
+

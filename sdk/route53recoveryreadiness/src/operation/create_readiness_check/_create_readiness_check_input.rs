@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReadinessCheckInput {
+pub struct CreateReadinessCheckInput  {
     /// <p>The name of the readiness check to create.</p>
     #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
@@ -11,30 +11,25 @@ pub struct CreateReadinessCheckInput {
     pub resource_set_name: std::option::Option<std::string::String>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReadinessCheckInput {
     /// <p>The name of the readiness check to create.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
+    pub fn readiness_check_name(&self) -> std::option::Option<& str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>The name of the resource set to check.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateReadinessCheckInput {
     /// Creates a new builder-style object to manufacture [`CreateReadinessCheckInput`](crate::operation::create_readiness_check::CreateReadinessCheckInput).
-    pub fn builder(
-    ) -> crate::operation::create_readiness_check::builders::CreateReadinessCheckInputBuilder {
+    pub fn builder() -> crate::operation::create_readiness_check::builders::CreateReadinessCheckInputBuilder {
         crate::operation::create_readiness_check::builders::CreateReadinessCheckInputBuilder::default()
     }
 }
@@ -45,8 +40,7 @@ impl CreateReadinessCheckInput {
 pub struct CreateReadinessCheckInputBuilder {
     pub(crate) readiness_check_name: std::option::Option<std::string::String>,
     pub(crate) resource_set_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateReadinessCheckInputBuilder {
     /// <p>The name of the readiness check to create.</p>
@@ -55,12 +49,8 @@ impl CreateReadinessCheckInputBuilder {
         self
     }
     /// <p>The name of the readiness check to create.</p>
-    pub fn set_readiness_check_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.readiness_check_name = input;
-        self
+    pub fn set_readiness_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.readiness_check_name = input; self
     }
     /// <p>The name of the resource set to check.</p>
     pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,51 +58,36 @@ impl CreateReadinessCheckInputBuilder {
         self
     }
     /// <p>The name of the resource set to check.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_set_name = input;
-        self
+    pub fn set_resource_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_set_name = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A collection of tags associated with a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateReadinessCheckInput`](crate::operation::create_readiness_check::CreateReadinessCheckInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_readiness_check::CreateReadinessCheckInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_readiness_check::CreateReadinessCheckInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_readiness_check::CreateReadinessCheckInput {
-                readiness_check_name: self.readiness_check_name,
-                resource_set_name: self.resource_set_name,
-                tags: self.tags,
-            },
+                readiness_check_name: self.readiness_check_name
+                ,
+                resource_set_name: self.resource_set_name
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

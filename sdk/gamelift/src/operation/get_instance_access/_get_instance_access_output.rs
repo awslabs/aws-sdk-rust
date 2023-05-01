@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceAccessOutput {
+pub struct GetInstanceAccessOutput  {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
     #[doc(hidden)]
     pub instance_access: std::option::Option<crate::types::InstanceAccess>,
@@ -10,19 +10,18 @@ pub struct GetInstanceAccessOutput {
 }
 impl GetInstanceAccessOutput {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
-    pub fn instance_access(&self) -> std::option::Option<&crate::types::InstanceAccess> {
+    pub fn instance_access(&self) -> std::option::Option<& crate::types::InstanceAccess> {
         self.instance_access.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetInstanceAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInstanceAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessOutput`](crate::operation::get_instance_access::GetInstanceAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_access::builders::GetInstanceAccessOutputBuilder {
+    pub fn builder() -> crate::operation::get_instance_access::builders::GetInstanceAccessOutputBuilder {
         crate::operation::get_instance_access::builders::GetInstanceAccessOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetInstanceAccessOutputBuilder {
         self
     }
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
-    pub fn set_instance_access(
-        mut self,
-        input: std::option::Option<crate::types::InstanceAccess>,
-    ) -> Self {
-        self.instance_access = input;
-        self
+    pub fn set_instance_access(mut self, input: std::option::Option<crate::types::InstanceAccess>) -> Self {
+        self.instance_access = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInstanceAccessOutput`](crate::operation::get_instance_access::GetInstanceAccessOutput).
     pub fn build(self) -> crate::operation::get_instance_access::GetInstanceAccessOutput {
         crate::operation::get_instance_access::GetInstanceAccessOutput {
-            instance_access: self.instance_access,
+            instance_access: self.instance_access
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

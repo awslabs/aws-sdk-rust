@@ -3,7 +3,7 @@
 /// <p>A control to display a text box that is used to enter multiple entries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterTextAreaControl {
+pub struct ParameterTextAreaControl  {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
     #[doc(hidden)]
     pub parameter_control_id: std::option::Option<std::string::String>,
@@ -22,25 +22,23 @@ pub struct ParameterTextAreaControl {
 }
 impl ParameterTextAreaControl {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn parameter_control_id(&self) -> std::option::Option<&str> {
+    pub fn parameter_control_id(&self) -> std::option::Option<& str> {
         self.parameter_control_id.as_deref()
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn source_parameter_name(&self) -> std::option::Option<&str> {
+    pub fn source_parameter_name(&self) -> std::option::Option<& str> {
         self.source_parameter_name.as_deref()
     }
     /// <p>The delimiter that is used to separate the lines in text.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>The display options of a control.</p>
-    pub fn display_options(
-        &self,
-    ) -> std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
+    pub fn display_options(&self) -> std::option::Option<& crate::types::TextAreaControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -68,12 +66,8 @@ impl ParameterTextAreaControlBuilder {
         self
     }
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn set_parameter_control_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parameter_control_id = input;
-        self
+    pub fn set_parameter_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parameter_control_id = input; self
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl ParameterTextAreaControlBuilder {
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
     pub fn source_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +84,8 @@ impl ParameterTextAreaControlBuilder {
         self
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn set_source_parameter_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_parameter_name = input;
-        self
+    pub fn set_source_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_parameter_name = input; self
     }
     /// <p>The delimiter that is used to separate the lines in text.</p>
     pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +94,7 @@ impl ParameterTextAreaControlBuilder {
     }
     /// <p>The delimiter that is used to separate the lines in text.</p>
     pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::TextAreaControlDisplayOptions) -> Self {
@@ -114,21 +102,23 @@ impl ParameterTextAreaControlBuilder {
         self
     }
     /// <p>The display options of a control.</p>
-    pub fn set_display_options(
-        mut self,
-        input: std::option::Option<crate::types::TextAreaControlDisplayOptions>,
-    ) -> Self {
-        self.display_options = input;
-        self
+    pub fn set_display_options(mut self, input: std::option::Option<crate::types::TextAreaControlDisplayOptions>) -> Self {
+        self.display_options = input; self
     }
     /// Consumes the builder and constructs a [`ParameterTextAreaControl`](crate::types::ParameterTextAreaControl).
     pub fn build(self) -> crate::types::ParameterTextAreaControl {
         crate::types::ParameterTextAreaControl {
-            parameter_control_id: self.parameter_control_id,
-            title: self.title,
-            source_parameter_name: self.source_parameter_name,
-            delimiter: self.delimiter,
-            display_options: self.display_options,
+            parameter_control_id: self.parameter_control_id
+            ,
+            title: self.title
+            ,
+            source_parameter_name: self.source_parameter_name
+            ,
+            delimiter: self.delimiter
+            ,
+            display_options: self.display_options
+            ,
         }
     }
 }
+

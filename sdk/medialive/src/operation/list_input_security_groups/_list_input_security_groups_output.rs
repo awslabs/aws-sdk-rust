@@ -3,7 +3,7 @@
 /// Placeholder documentation for ListInputSecurityGroupsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputSecurityGroupsOutput {
+pub struct ListInputSecurityGroupsOutput  {
     /// List of input security groups
     #[doc(hidden)]
     pub input_security_groups: std::option::Option<std::vec::Vec<crate::types::InputSecurityGroup>>,
@@ -14,26 +14,22 @@ pub struct ListInputSecurityGroupsOutput {
 }
 impl ListInputSecurityGroupsOutput {
     /// List of input security groups
-    pub fn input_security_groups(
-        &self,
-    ) -> std::option::Option<&[crate::types::InputSecurityGroup]> {
+    pub fn input_security_groups(&self) -> std::option::Option<& [crate::types::InputSecurityGroup]> {
         self.input_security_groups.as_deref()
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListInputSecurityGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListInputSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListInputSecurityGroupsOutput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsOutputBuilder {
         crate::operation::list_input_security_groups::builders::ListInputSecurityGroupsOutputBuilder::default()
     }
 }
@@ -42,8 +38,7 @@ impl ListInputSecurityGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListInputSecurityGroupsOutputBuilder {
-    pub(crate) input_security_groups:
-        std::option::Option<std::vec::Vec<crate::types::InputSecurityGroup>>,
+    pub(crate) input_security_groups: std::option::Option<std::vec::Vec<crate::types::InputSecurityGroup>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +50,13 @@ impl ListInputSecurityGroupsOutputBuilder {
     /// List of input security groups
     pub fn input_security_groups(mut self, input: crate::types::InputSecurityGroup) -> Self {
         let mut v = self.input_security_groups.unwrap_or_default();
-        v.push(input);
-        self.input_security_groups = Some(v);
-        self
+                        v.push(input);
+                        self.input_security_groups = Some(v);
+                        self
     }
     /// List of input security groups
-    pub fn set_input_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputSecurityGroup>>,
-    ) -> Self {
-        self.input_security_groups = input;
-        self
+    pub fn set_input_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputSecurityGroup>>) -> Self {
+        self.input_security_groups = input; self
     }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,26 +65,26 @@ impl ListInputSecurityGroupsOutputBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListInputSecurityGroupsOutput`](crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput {
+    pub fn build(self) -> crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput {
         crate::operation::list_input_security_groups::ListInputSecurityGroupsOutput {
-            input_security_groups: self.input_security_groups,
-            next_token: self.next_token,
+            input_security_groups: self.input_security_groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

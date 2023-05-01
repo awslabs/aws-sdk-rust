@@ -3,7 +3,7 @@
 /// <p>The sorting criteria that are used to sort the list of task runs for the machine learning transform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskRunSortCriteria {
+pub struct TaskRunSortCriteria  {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
     #[doc(hidden)]
     pub column: std::option::Option<crate::types::TaskRunSortColumnType>,
@@ -13,11 +13,11 @@ pub struct TaskRunSortCriteria {
 }
 impl TaskRunSortCriteria {
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::TaskRunSortColumnType> {
+    pub fn column(&self) -> std::option::Option<& crate::types::TaskRunSortColumnType> {
         self.column.as_ref()
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn sort_direction(&self) -> std::option::Option<&crate::types::SortDirectionType> {
+    pub fn sort_direction(&self) -> std::option::Option<& crate::types::SortDirectionType> {
         self.sort_direction.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl TaskRunSortCriteriaBuilder {
         self
     }
     /// <p>The column to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::TaskRunSortColumnType>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::TaskRunSortColumnType>) -> Self {
+        self.column = input; self
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
     pub fn sort_direction(mut self, input: crate::types::SortDirectionType) -> Self {
@@ -55,18 +51,17 @@ impl TaskRunSortCriteriaBuilder {
         self
     }
     /// <p>The sort direction to be used to sort the list of task runs for the machine learning transform.</p>
-    pub fn set_sort_direction(
-        mut self,
-        input: std::option::Option<crate::types::SortDirectionType>,
-    ) -> Self {
-        self.sort_direction = input;
-        self
+    pub fn set_sort_direction(mut self, input: std::option::Option<crate::types::SortDirectionType>) -> Self {
+        self.sort_direction = input; self
     }
     /// Consumes the builder and constructs a [`TaskRunSortCriteria`](crate::types::TaskRunSortCriteria).
     pub fn build(self) -> crate::types::TaskRunSortCriteria {
         crate::types::TaskRunSortCriteria {
-            column: self.column,
-            sort_direction: self.sort_direction,
+            column: self.column
+            ,
+            sort_direction: self.sort_direction
+            ,
         }
     }
 }
+

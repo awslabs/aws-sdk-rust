@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsInput {
+pub struct ListStreamsInput  {
     /// <p>Filters the stream list to match the specified criterion.</p>
     #[doc(hidden)]
     pub filter_by: std::option::Option<crate::types::StreamFilters>,
@@ -15,11 +15,11 @@ pub struct ListStreamsInput {
 }
 impl ListStreamsInput {
     /// <p>Filters the stream list to match the specified criterion.</p>
-    pub fn filter_by(&self) -> std::option::Option<&crate::types::StreamFilters> {
+    pub fn filter_by(&self) -> std::option::Option<& crate::types::StreamFilters> {
         self.filter_by.as_ref()
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
@@ -49,12 +49,8 @@ impl ListStreamsInputBuilder {
         self
     }
     /// <p>Filters the stream list to match the specified criterion.</p>
-    pub fn set_filter_by(
-        mut self,
-        input: std::option::Option<crate::types::StreamFilters>,
-    ) -> Self {
-        self.filter_by = input;
-        self
+    pub fn set_filter_by(mut self, input: std::option::Option<crate::types::StreamFilters>) -> Self {
+        self.filter_by = input; self
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl ListStreamsInputBuilder {
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,20 +68,21 @@ impl ListStreamsInputBuilder {
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListStreamsInput`](crate::operation::list_streams::ListStreamsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_streams::ListStreamsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_streams::ListStreamsInput {
-            filter_by: self.filter_by,
-            next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::list_streams::ListStreamsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_streams::ListStreamsInput {
+                filter_by: self.filter_by
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

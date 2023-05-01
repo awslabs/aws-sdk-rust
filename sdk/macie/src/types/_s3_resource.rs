@@ -3,7 +3,7 @@
 /// <p>(Discontinued) Contains information about the S3 resource. This data type is used as a request parameter in the <code>DisassociateS3Resources</code> action and can be used as a response parameter in the <code>AssociateS3Resources</code> and <code>UpdateS3Resources</code> actions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Resource {
+pub struct S3Resource  {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Resource {
 }
 impl S3Resource {
     /// <p>(Discontinued) The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3ResourceBuilder {
     }
     /// <p>(Discontinued) The name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3ResourceBuilder {
     }
     /// <p>(Discontinued) The prefix of the S3 bucket.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// Consumes the builder and constructs a [`S3Resource`](crate::types::S3Resource).
     pub fn build(self) -> crate::types::S3Resource {
         crate::types::S3Resource {
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

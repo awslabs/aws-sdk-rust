@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTokenInput {
+pub struct CreateTokenInput  {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct CreateTokenInput {
 }
 impl CreateTokenInput {
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn role_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn role_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.role_arns.as_deref()
     }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
@@ -33,11 +33,11 @@ impl CreateTokenInput {
         self.expiration_in_days
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn token_properties(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_properties(&self) -> std::option::Option<& [std::string::String]> {
         self.token_properties.as_deref()
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the JWT token.</p>
     pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// Appends an item to `role_arns`.
     ///
@@ -76,17 +75,13 @@ impl CreateTokenInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
     pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.role_arns.unwrap_or_default();
-        v.push(input.into());
-        self.role_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.role_arns = Some(v);
+                        self
     }
     /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token. License Manager does not check whether the roles are in use.</p>
-    pub fn set_role_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.role_arns = input;
-        self
+    pub fn set_role_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.role_arns = input; self
     }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
     pub fn expiration_in_days(mut self, input: i32) -> Self {
@@ -95,8 +90,7 @@ impl CreateTokenInputBuilder {
     }
     /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
     pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.expiration_in_days = input;
-        self
+        self.expiration_in_days = input; self
     }
     /// Appends an item to `token_properties`.
     ///
@@ -105,17 +99,13 @@ impl CreateTokenInputBuilder {
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
     pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.token_properties.unwrap_or_default();
-        v.push(input.into());
-        self.token_properties = Some(v);
-        self
+                        v.push(input.into());
+                        self.token_properties = Some(v);
+                        self
     }
     /// <p>Data specified by the caller to be included in the JWT token. The data is mapped to the amr claim of the JWT token.</p>
-    pub fn set_token_properties(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.token_properties = input;
-        self
+    pub fn set_token_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.token_properties = input; self
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,22 +114,24 @@ impl CreateTokenInputBuilder {
     }
     /// <p>Idempotency token, valid for 10 minutes.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_token::CreateTokenInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_token::CreateTokenInput {
-            license_arn: self.license_arn,
-            role_arns: self.role_arns,
-            expiration_in_days: self.expiration_in_days,
-            token_properties: self.token_properties,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> Result<crate::operation::create_token::CreateTokenInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_token::CreateTokenInput {
+                license_arn: self.license_arn
+                ,
+                role_arns: self.role_arns
+                ,
+                expiration_in_days: self.expiration_in_days
+                ,
+                token_properties: self.token_properties
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

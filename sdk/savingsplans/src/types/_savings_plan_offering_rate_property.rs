@@ -3,7 +3,7 @@
 /// <p>Information about a property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOfferingRateProperty {
+pub struct SavingsPlanOfferingRateProperty  {
     /// <p>The property name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SavingsPlanOfferingRateProperty {
 }
 impl SavingsPlanOfferingRateProperty {
     /// <p>The property name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The property value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SavingsPlanOfferingRatePropertyBuilder {
     }
     /// <p>The property name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The property value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SavingsPlanOfferingRatePropertyBuilder {
     }
     /// <p>The property value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`SavingsPlanOfferingRateProperty`](crate::types::SavingsPlanOfferingRateProperty).
     pub fn build(self) -> crate::types::SavingsPlanOfferingRateProperty {
         crate::types::SavingsPlanOfferingRateProperty {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

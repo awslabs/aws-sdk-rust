@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-    /// <p>The ARN is never reused if the connection is deleted.</p>
+pub struct CreateConnectionOutput  {
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+    /// <p>The ARN is never reused if the connection is deleted.</p> 
     /// </note>
     #[doc(hidden)]
     pub connection_arn: std::option::Option<std::string::String>,
@@ -14,26 +14,25 @@ pub struct CreateConnectionOutput {
     _request_id: Option<String>,
 }
 impl CreateConnectionOutput {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+    /// <p>The ARN is never reused if the connection is deleted.</p> 
     /// </note>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> std::option::Option<& str> {
         self.connection_arn.as_deref()
     }
     /// <p>Specifies the tags applied to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder {
         crate::operation::create_connection::builders::CreateConnectionOutputBuilder::default()
     }
 }
@@ -47,19 +46,18 @@ pub struct CreateConnectionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateConnectionOutputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+    /// <p>The ARN is never reused if the connection is deleted.</p> 
     /// </note>
     pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.connection_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note>
-    /// <p>The ARN is never reused if the connection is deleted.</p>
+    /// <p>The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when the connection is shared between AWS services.</p> <note> 
+    /// <p>The ARN is never reused if the connection is deleted.</p> 
     /// </note>
     pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_arn = input;
-        self
+        self.connection_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -68,33 +66,32 @@ impl CreateConnectionOutputBuilder {
     /// <p>Specifies the tags applied to the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Specifies the tags applied to the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
     pub fn build(self) -> crate::operation::create_connection::CreateConnectionOutput {
         crate::operation::create_connection::CreateConnectionOutput {
-            connection_arn: self.connection_arn,
-            tags: self.tags,
+            connection_arn: self.connection_arn
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

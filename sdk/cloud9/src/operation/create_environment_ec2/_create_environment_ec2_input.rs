@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateEnvironmentEc2Input {
-    /// <p>The name of the environment to create.</p>
+pub struct CreateEnvironmentEc2Input  {
+    /// <p>The name of the environment to create.</p> 
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the environment to create.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -20,20 +20,20 @@ pub struct CreateEnvironmentEc2Input {
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
-    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
-    /// <p> <b>AMI aliases </b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
-    /// </ul>
-    /// <p> <b>SSM paths</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> 
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p> 
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p> 
+    /// <p> <b>AMI aliases </b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> 
+    /// </ul> 
+    /// <p> <b>SSM paths</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
@@ -46,7 +46,7 @@ pub struct CreateEnvironmentEc2Input {
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
     #[doc(hidden)]
     pub connection_type: std::option::Option<crate::types::ConnectionType>,
@@ -55,44 +55,44 @@ pub struct CreateEnvironmentEc2Input {
     pub dry_run: std::option::Option<bool>,
 }
 impl CreateEnvironmentEc2Input {
-    /// <p>The name of the environment to create.</p>
+    /// <p>The name of the environment to create.</p> 
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment to create.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
-    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
-    /// <p> <b>AMI aliases </b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> 
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p> 
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p> 
+    /// <p> <b>AMI aliases </b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> 
+    /// </ul> 
+    /// <p> <b>SSM paths</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> 
     /// </ul>
-    /// <p> <b>SSM paths</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
-    /// </ul>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
@@ -100,16 +100,16 @@ impl CreateEnvironmentEc2Input {
         self.automatic_stop_time_minutes
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
-    pub fn owner_arn(&self) -> std::option::Option<&str> {
+    pub fn owner_arn(&self) -> std::option::Option<& str> {
         self.owner_arn.as_deref()
     }
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    pub fn connection_type(&self) -> std::option::Option<&crate::types::ConnectionType> {
+    pub fn connection_type(&self) -> std::option::Option<& crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -117,7 +117,7 @@ impl CreateEnvironmentEc2Input {
         self.dry_run
     }
 }
-impl std::fmt::Debug for CreateEnvironmentEc2Input {
+impl  std::fmt::Debug for CreateEnvironmentEc2Input  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateEnvironmentEc2Input");
         formatter.field("name", &self.name);
@@ -126,10 +126,7 @@ impl std::fmt::Debug for CreateEnvironmentEc2Input {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("image_id", &self.image_id);
-        formatter.field(
-            "automatic_stop_time_minutes",
-            &self.automatic_stop_time_minutes,
-        );
+        formatter.field("automatic_stop_time_minutes", &self.automatic_stop_time_minutes);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("connection_type", &self.connection_type);
@@ -139,8 +136,7 @@ impl std::fmt::Debug for CreateEnvironmentEc2Input {
 }
 impl CreateEnvironmentEc2Input {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentEc2Input`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Input).
-    pub fn builder(
-    ) -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
+    pub fn builder() -> crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder {
         crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder::default()
     }
 }
@@ -162,17 +158,16 @@ pub struct CreateEnvironmentEc2InputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl CreateEnvironmentEc2InputBuilder {
-    /// <p>The name of the environment to create.</p>
+    /// <p>The name of the environment to create.</p> 
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the environment to create.</p>
+    /// <p>The name of the environment to create.</p> 
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the environment to create.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,23 +176,18 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>The description of the environment to create.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,8 +196,7 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,46 +205,44 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon EC2 instance.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
-    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
-    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
-    /// <p> <b>AMI aliases </b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
-    /// </ul>
-    /// <p> <b>SSM paths</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> 
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p> 
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p> 
+    /// <p> <b>AMI aliases </b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> 
+    /// </ul> 
+    /// <p> <b>SSM paths</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> 
     /// </ul>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.image_id = Some(input.into());
         self
     }
-    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
-    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
-    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
-    /// <p> <b>AMI aliases </b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
-    /// </ul>
-    /// <p> <b>SSM paths</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
-    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
-    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> 
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p> 
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p> 
+    /// <p> <b>AMI aliases </b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> 
+    /// </ul> 
+    /// <p> <b>SSM paths</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li> 
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> 
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> 
     /// </ul>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
     pub fn automatic_stop_time_minutes(mut self, input: i32) -> Self {
@@ -264,8 +251,7 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>The number of minutes until the running instance is shut down after the environment has last been used.</p>
     pub fn set_automatic_stop_time_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.automatic_stop_time_minutes = input;
-        self
+        self.automatic_stop_time_minutes = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
     pub fn owner_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,8 +260,7 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any IAM principal. If this value is not specified, the ARN defaults to this environment's creator.</p>
     pub fn set_owner_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_arn = input;
-        self
+        self.owner_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -284,32 +269,24 @@ impl CreateEnvironmentEc2InputBuilder {
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
         self.connection_type = Some(input);
         self
     }
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionType>,
-    ) -> Self {
-        self.connection_type = input;
-        self
+    pub fn set_connection_type(mut self, input: std::option::Option<crate::types::ConnectionType>) -> Self {
+        self.connection_type = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -318,30 +295,35 @@ impl CreateEnvironmentEc2InputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentEc2Input`](crate::operation::create_environment_ec2::CreateEnvironmentEc2Input).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_environment_ec2::CreateEnvironmentEc2Input,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_environment_ec2::CreateEnvironmentEc2Input, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_environment_ec2::CreateEnvironmentEc2Input {
-                name: self.name,
-                description: self.description,
-                client_request_token: self.client_request_token,
-                instance_type: self.instance_type,
-                subnet_id: self.subnet_id,
-                image_id: self.image_id,
-                automatic_stop_time_minutes: self.automatic_stop_time_minutes,
-                owner_arn: self.owner_arn,
-                tags: self.tags,
-                connection_type: self.connection_type,
-                dry_run: self.dry_run,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+                client_request_token: self.client_request_token
+                ,
+                instance_type: self.instance_type
+                ,
+                subnet_id: self.subnet_id
+                ,
+                image_id: self.image_id
+                ,
+                automatic_stop_time_minutes: self.automatic_stop_time_minutes
+                ,
+                owner_arn: self.owner_arn
+                ,
+                tags: self.tags
+                ,
+                connection_type: self.connection_type
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
@@ -354,10 +336,7 @@ impl std::fmt::Debug for CreateEnvironmentEc2InputBuilder {
         formatter.field("instance_type", &self.instance_type);
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("image_id", &self.image_id);
-        formatter.field(
-            "automatic_stop_time_minutes",
-            &self.automatic_stop_time_minutes,
-        );
+        formatter.field("automatic_stop_time_minutes", &self.automatic_stop_time_minutes);
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("connection_type", &self.connection_type);
@@ -365,3 +344,4 @@ impl std::fmt::Debug for CreateEnvironmentEc2InputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>Defines which category of execution history events are logged.</p>
     #[doc(hidden)]
     pub level: std::option::Option<crate::types::LogLevel>,
@@ -16,7 +16,7 @@ pub struct LoggingConfiguration {
 }
 impl LoggingConfiguration {
     /// <p>Defines which category of execution history events are logged.</p>
-    pub fn level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn level(&self) -> std::option::Option<& crate::types::LogLevel> {
         self.level.as_ref()
     }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
@@ -24,7 +24,7 @@ impl LoggingConfiguration {
         self.include_execution_data
     }
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::LogDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::types::LogDestination]> {
         self.destinations.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>Defines which category of execution history events are logged.</p>
     pub fn set_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
     pub fn include_execution_data(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
     pub fn set_include_execution_data(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_execution_data = input;
-        self
+        self.include_execution_data = input; self
     }
     /// Appends an item to `destinations`.
     ///
@@ -71,24 +69,25 @@ impl LoggingConfigurationBuilder {
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
     pub fn destinations(mut self, input: crate::types::LogDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = Some(v);
-        self
+                        v.push(input);
+                        self.destinations = Some(v);
+                        self
     }
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
-    pub fn set_destinations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogDestination>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::LogDestination>>) -> Self {
+        self.destinations = input; self
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {
-            level: self.level,
-            include_execution_data: self.include_execution_data.unwrap_or_default(),
-            destinations: self.destinations,
+            level: self.level
+            ,
+            include_execution_data: self.include_execution_data
+                .unwrap_or_default()
+            ,
+            destinations: self.destinations
+            ,
         }
     }
 }
+

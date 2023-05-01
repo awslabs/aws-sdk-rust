@@ -3,7 +3,7 @@
 /// <p>Contains information about the grantee.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Grantee {
+pub struct Grantee  {
     /// <p>Type of grantee</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::Type>,
@@ -22,23 +22,23 @@ pub struct Grantee {
 }
 impl Grantee {
     /// <p>Type of grantee</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>Screen name of the grantee.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>URI of the grantee group.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The canonical user ID of the grantee.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Email address of the grantee.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl GranteeBuilder {
     }
     /// <p>Type of grantee</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Screen name of the grantee.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl GranteeBuilder {
     }
     /// <p>Screen name of the grantee.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>URI of the grantee group.</p>
     pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl GranteeBuilder {
     }
     /// <p>URI of the grantee group.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input;
-        self
+        self.uri = input; self
     }
     /// <p>The canonical user ID of the grantee.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl GranteeBuilder {
     }
     /// <p>The canonical user ID of the grantee.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Email address of the grantee.</p>
     pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,17 +103,22 @@ impl GranteeBuilder {
     }
     /// <p>Email address of the grantee.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// Consumes the builder and constructs a [`Grantee`](crate::types::Grantee).
     pub fn build(self) -> crate::types::Grantee {
         crate::types::Grantee {
-            r#type: self.r#type,
-            display_name: self.display_name,
-            uri: self.uri,
-            id: self.id,
-            email_address: self.email_address,
+            r#type: self.r#type
+            ,
+            display_name: self.display_name
+            ,
+            uri: self.uri
+            ,
+            id: self.id
+            ,
+            email_address: self.email_address
+            ,
         }
     }
 }
+

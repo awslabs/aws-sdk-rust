@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateTemplateInput {
+pub struct GenerateTemplateInput  {
     /// <p>The ID of the application associated with the CloudFormation template.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct GenerateTemplateInput {
 }
 impl GenerateTemplateInput {
     /// <p>The ID of the application associated with the CloudFormation template.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The format for generating the CloudFormation template.</p>
-    pub fn template_format(&self) -> std::option::Option<&crate::types::OutputFormat> {
+    pub fn template_format(&self) -> std::option::Option<& crate::types::OutputFormat> {
         self.template_format.as_ref()
     }
 }
 impl GenerateTemplateInput {
     /// Creates a new builder-style object to manufacture [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
-    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateInputBuilder {
         crate::operation::generate_template::builders::GenerateTemplateInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl GenerateTemplateInputBuilder {
     }
     /// <p>The ID of the application associated with the CloudFormation template.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The format for generating the CloudFormation template.</p>
     pub fn template_format(mut self, input: crate::types::OutputFormat) -> Self {
@@ -52,23 +50,19 @@ impl GenerateTemplateInputBuilder {
         self
     }
     /// <p>The format for generating the CloudFormation template.</p>
-    pub fn set_template_format(
-        mut self,
-        input: std::option::Option<crate::types::OutputFormat>,
-    ) -> Self {
-        self.template_format = input;
-        self
+    pub fn set_template_format(mut self, input: std::option::Option<crate::types::OutputFormat>) -> Self {
+        self.template_format = input; self
     }
     /// Consumes the builder and constructs a [`GenerateTemplateInput`](crate::operation::generate_template::GenerateTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::generate_template::GenerateTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::generate_template::GenerateTemplateInput {
-            app_id: self.app_id,
-            template_format: self.template_format,
-        })
+    pub fn build(self) -> Result<crate::operation::generate_template::GenerateTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::generate_template::GenerateTemplateInput {
+                app_id: self.app_id
+                ,
+                template_format: self.template_format
+                ,
+            }
+        )
     }
 }
+

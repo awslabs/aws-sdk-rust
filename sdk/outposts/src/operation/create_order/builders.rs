@@ -4,77 +4,56 @@ pub use crate::operation::create_order::_create_order_output::CreateOrderOutputB
 pub use crate::operation::create_order::_create_order_input::CreateOrderInputBuilder;
 
 /// Fluent builder constructing a request to `CreateOrder`.
-///
+/// 
 /// <p>Creates an order for an Outpost.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOrderFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_order::builders::CreateOrderInputBuilder,
-}
-impl CreateOrderFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_order::builders::CreateOrderInputBuilder
+            }
+impl CreateOrderFluentBuilder  {
     /// Creates a new `CreateOrder`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_order::CreateOrder,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_order::CreateOrderError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_order::CreateOrderOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_order::CreateOrderError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_order::CreateOrder, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_order::CreateOrderError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_order::CreateOrderOutput, aws_smithy_http::result::SdkError<crate::operation::create_order::CreateOrderError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.outpost_identifier(input.into());
         self
     }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
-    pub fn set_outpost_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_outpost_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_outpost_identifier(input);
         self
     }
@@ -88,10 +67,7 @@ impl CreateOrderFluentBuilder {
         self
     }
     /// <p>The line items that make up the order.</p>
-    pub fn set_line_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LineItemRequest>>,
-    ) -> Self {
+    pub fn set_line_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::LineItemRequest>>) -> Self {
         self.inner = self.inner.set_line_items(input);
         self
     }
@@ -101,10 +77,7 @@ impl CreateOrderFluentBuilder {
         self
     }
     /// <p>The payment option.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
+    pub fn set_payment_option(mut self, input: std::option::Option<crate::types::PaymentOption>) -> Self {
         self.inner = self.inner.set_payment_option(input);
         self
     }
@@ -114,11 +87,9 @@ impl CreateOrderFluentBuilder {
         self
     }
     /// <p>The payment terms.</p>
-    pub fn set_payment_term(
-        mut self,
-        input: std::option::Option<crate::types::PaymentTerm>,
-    ) -> Self {
+    pub fn set_payment_term(mut self, input: std::option::Option<crate::types::PaymentTerm>) -> Self {
         self.inner = self.inner.set_payment_term(input);
         self
     }
 }
+

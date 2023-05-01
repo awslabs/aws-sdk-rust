@@ -3,7 +3,7 @@
 /// <p>Represents a VM server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VmServer {
+pub struct VmServer  {
     /// <p>The VM server location.</p>
     #[doc(hidden)]
     pub vm_server_address: std::option::Option<crate::types::VmServerAddress>,
@@ -22,23 +22,23 @@ pub struct VmServer {
 }
 impl VmServer {
     /// <p>The VM server location.</p>
-    pub fn vm_server_address(&self) -> std::option::Option<&crate::types::VmServerAddress> {
+    pub fn vm_server_address(&self) -> std::option::Option<& crate::types::VmServerAddress> {
         self.vm_server_address.as_ref()
     }
     /// <p>The name of the VM.</p>
-    pub fn vm_name(&self) -> std::option::Option<&str> {
+    pub fn vm_name(&self) -> std::option::Option<& str> {
         self.vm_name.as_deref()
     }
     /// <p>The name of the VM manager.</p>
-    pub fn vm_manager_name(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_name(&self) -> std::option::Option<& str> {
         self.vm_manager_name.as_deref()
     }
     /// <p>The type of VM management product.</p>
-    pub fn vm_manager_type(&self) -> std::option::Option<&crate::types::VmManagerType> {
+    pub fn vm_manager_type(&self) -> std::option::Option<& crate::types::VmManagerType> {
         self.vm_manager_type.as_ref()
     }
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
-    pub fn vm_path(&self) -> std::option::Option<&str> {
+    pub fn vm_path(&self) -> std::option::Option<& str> {
         self.vm_path.as_deref()
     }
 }
@@ -66,12 +66,8 @@ impl VmServerBuilder {
         self
     }
     /// <p>The VM server location.</p>
-    pub fn set_vm_server_address(
-        mut self,
-        input: std::option::Option<crate::types::VmServerAddress>,
-    ) -> Self {
-        self.vm_server_address = input;
-        self
+    pub fn set_vm_server_address(mut self, input: std::option::Option<crate::types::VmServerAddress>) -> Self {
+        self.vm_server_address = input; self
     }
     /// <p>The name of the VM.</p>
     pub fn vm_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl VmServerBuilder {
     }
     /// <p>The name of the VM.</p>
     pub fn set_vm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_name = input;
-        self
+        self.vm_name = input; self
     }
     /// <p>The name of the VM manager.</p>
     pub fn vm_manager_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +85,7 @@ impl VmServerBuilder {
     }
     /// <p>The name of the VM manager.</p>
     pub fn set_vm_manager_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_manager_name = input;
-        self
+        self.vm_manager_name = input; self
     }
     /// <p>The type of VM management product.</p>
     pub fn vm_manager_type(mut self, input: crate::types::VmManagerType) -> Self {
@@ -99,12 +93,8 @@ impl VmServerBuilder {
         self
     }
     /// <p>The type of VM management product.</p>
-    pub fn set_vm_manager_type(
-        mut self,
-        input: std::option::Option<crate::types::VmManagerType>,
-    ) -> Self {
-        self.vm_manager_type = input;
-        self
+    pub fn set_vm_manager_type(mut self, input: std::option::Option<crate::types::VmManagerType>) -> Self {
+        self.vm_manager_type = input; self
     }
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
     pub fn vm_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,17 +103,22 @@ impl VmServerBuilder {
     }
     /// <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
     pub fn set_vm_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_path = input;
-        self
+        self.vm_path = input; self
     }
     /// Consumes the builder and constructs a [`VmServer`](crate::types::VmServer).
     pub fn build(self) -> crate::types::VmServer {
         crate::types::VmServer {
-            vm_server_address: self.vm_server_address,
-            vm_name: self.vm_name,
-            vm_manager_name: self.vm_manager_name,
-            vm_manager_type: self.vm_manager_type,
-            vm_path: self.vm_path,
+            vm_server_address: self.vm_server_address
+            ,
+            vm_name: self.vm_name
+            ,
+            vm_manager_name: self.vm_manager_name
+            ,
+            vm_manager_type: self.vm_manager_type
+            ,
+            vm_path: self.vm_path
+            ,
         }
     }
 }
+

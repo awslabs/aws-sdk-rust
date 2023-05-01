@@ -3,7 +3,7 @@
 /// <p>List export errors response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportErrorsOutput {
+pub struct ListExportErrorsOutput  {
     /// <p>List export errors response items.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::ExportTaskError>>,
@@ -14,23 +14,22 @@ pub struct ListExportErrorsOutput {
 }
 impl ListExportErrorsOutput {
     /// <p>List export errors response items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::ExportTaskError]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::ExportTaskError]> {
         self.items.as_deref()
     }
     /// <p>List export errors response next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListExportErrorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListExportErrorsOutput {
     /// Creates a new builder-style object to manufacture [`ListExportErrorsOutput`](crate::operation::list_export_errors::ListExportErrorsOutput).
-    pub fn builder() -> crate::operation::list_export_errors::builders::ListExportErrorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_export_errors::builders::ListExportErrorsOutputBuilder {
         crate::operation::list_export_errors::builders::ListExportErrorsOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListExportErrorsOutputBuilder {
     /// <p>List export errors response items.</p>
     pub fn items(mut self, input: crate::types::ExportTaskError) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>List export errors response items.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExportTaskError>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExportTaskError>>) -> Self {
+        self.items = input; self
     }
     /// <p>List export errors response next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListExportErrorsOutputBuilder {
     }
     /// <p>List export errors response next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListExportErrorsOutput`](crate::operation::list_export_errors::ListExportErrorsOutput).
     pub fn build(self) -> crate::operation::list_export_errors::ListExportErrorsOutput {
         crate::operation::list_export_errors::ListExportErrorsOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

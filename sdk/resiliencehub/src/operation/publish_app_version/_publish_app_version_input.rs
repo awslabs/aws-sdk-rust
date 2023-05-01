@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishAppVersionInput {
+pub struct PublishAppVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
 }
 impl PublishAppVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
 }
 impl PublishAppVersionInput {
     /// Creates a new builder-style object to manufacture [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
-    pub fn builder(
-    ) -> crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder {
+    pub fn builder() -> crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder {
         crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl PublishAppVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// Consumes the builder and constructs a [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::publish_app_version::PublishAppVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::publish_app_version::PublishAppVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::publish_app_version::PublishAppVersionInput {
-                app_arn: self.app_arn,
-            },
+                app_arn: self.app_arn
+                ,
+            }
         )
     }
 }
+

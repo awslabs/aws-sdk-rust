@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAssociationsOnceOutput {
+pub struct StartAssociationsOnceOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StartAssociationsOnceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartAssociationsOnceOutput {
     /// Creates a new builder-style object to manufacture [`StartAssociationsOnceOutput`](crate::operation::start_associations_once::StartAssociationsOnceOutput).
-    pub fn builder(
-    ) -> crate::operation::start_associations_once::builders::StartAssociationsOnceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_associations_once::builders::StartAssociationsOnceOutputBuilder {
         crate::operation::start_associations_once::builders::StartAssociationsOnceOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct StartAssociationsOnceOutputBuilder {
 }
 impl StartAssociationsOnceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartAssociationsOnceOutput`](crate::operation::start_associations_once::StartAssociationsOnceOutput).
     pub fn build(self) -> crate::operation::start_associations_once::StartAssociationsOnceOutput {
         crate::operation::start_associations_once::StartAssociationsOnceOutput {
@@ -42,3 +40,4 @@ impl StartAssociationsOnceOutputBuilder {
         }
     }
 }
+

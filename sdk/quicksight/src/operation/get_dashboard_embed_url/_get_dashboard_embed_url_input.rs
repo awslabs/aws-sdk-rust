@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardEmbedUrlInput {
+pub struct GetDashboardEmbedUrlInput  {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -24,12 +24,12 @@ pub struct GetDashboardEmbedUrlInput {
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     #[doc(hidden)]
     pub state_persistence_enabled: std::option::Option<bool>,
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
-    /// <ul>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
-    /// </ul>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Active Directory (AD) users or group members</p> </li> 
+    /// <li> <p>Invited nonfederated users</p> </li> 
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> 
+    /// </ul> 
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
@@ -42,15 +42,15 @@ pub struct GetDashboardEmbedUrlInput {
 }
 impl GetDashboardEmbedUrlInput {
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The authentication method that the user uses to sign in.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::types::EmbeddingIdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::types::EmbeddingIdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
@@ -69,29 +69,28 @@ impl GetDashboardEmbedUrlInput {
     pub fn state_persistence_enabled(&self) -> std::option::Option<bool> {
         self.state_persistence_enabled
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
-    /// <ul>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
-    /// </ul>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Active Directory (AD) users or group members</p> </li> 
+    /// <li> <p>Invited nonfederated users</p> </li> 
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> 
+    /// </ul> 
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn additional_dashboard_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_dashboard_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_dashboard_ids.as_deref()
     }
 }
 impl GetDashboardEmbedUrlInput {
     /// Creates a new builder-style object to manufacture [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder {
+    pub fn builder() -> crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder {
         crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder::default()
     }
 }
@@ -119,8 +118,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
     pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +127,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The authentication method that the user uses to sign in.</p>
     pub fn identity_type(mut self, input: crate::types::EmbeddingIdentityType) -> Self {
@@ -138,12 +135,8 @@ impl GetDashboardEmbedUrlInputBuilder {
         self
     }
     /// <p>The authentication method that the user uses to sign in.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: std::option::Option<crate::types::EmbeddingIdentityType>,
-    ) -> Self {
-        self.identity_type = input;
-        self
+    pub fn set_identity_type(mut self, input: std::option::Option<crate::types::EmbeddingIdentityType>) -> Self {
+        self.identity_type = input; self
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
@@ -152,8 +145,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
     pub fn set_session_lifetime_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
-        self.session_lifetime_in_minutes = input;
-        self
+        self.session_lifetime_in_minutes = input; self
     }
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
     pub fn undo_redo_disabled(mut self, input: bool) -> Self {
@@ -162,8 +154,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
     pub fn set_undo_redo_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.undo_redo_disabled = input;
-        self
+        self.undo_redo_disabled = input; self
     }
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
     pub fn reset_disabled(mut self, input: bool) -> Self {
@@ -172,8 +163,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
     pub fn set_reset_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.reset_disabled = input;
-        self
+        self.reset_disabled = input; self
     }
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub fn state_persistence_enabled(mut self, input: bool) -> Self {
@@ -182,30 +172,28 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
     pub fn set_state_persistence_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.state_persistence_enabled = input;
-        self
+        self.state_persistence_enabled = input; self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
-    /// <ul>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
-    /// </ul>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Active Directory (AD) users or group members</p> </li> 
+    /// <li> <p>Invited nonfederated users</p> </li> 
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> 
+    /// </ul> 
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p>
-    /// <ul>
-    /// <li> <p>Active Directory (AD) users or group members</p> </li>
-    /// <li> <p>Invited nonfederated users</p> </li>
-    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
-    /// </ul>
+    /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Active Directory (AD) users or group members</p> </li> 
+    /// <li> <p>Invited nonfederated users</p> </li> 
+    /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> 
+    /// </ul> 
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -214,8 +202,7 @@ impl GetDashboardEmbedUrlInputBuilder {
     }
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// Appends an item to `additional_dashboard_ids`.
     ///
@@ -224,38 +211,40 @@ impl GetDashboardEmbedUrlInputBuilder {
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     pub fn additional_dashboard_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.additional_dashboard_ids.unwrap_or_default();
-        v.push(input.into());
-        self.additional_dashboard_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.additional_dashboard_ids = Some(v);
+                        self
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn set_additional_dashboard_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.additional_dashboard_ids = input;
-        self
+    pub fn set_additional_dashboard_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.additional_dashboard_ids = input; self
     }
     /// Consumes the builder and constructs a [`GetDashboardEmbedUrlInput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlInput {
-                aws_account_id: self.aws_account_id,
-                dashboard_id: self.dashboard_id,
-                identity_type: self.identity_type,
-                session_lifetime_in_minutes: self.session_lifetime_in_minutes,
-                undo_redo_disabled: self.undo_redo_disabled,
-                reset_disabled: self.reset_disabled,
-                state_persistence_enabled: self.state_persistence_enabled,
-                user_arn: self.user_arn,
-                namespace: self.namespace,
-                additional_dashboard_ids: self.additional_dashboard_ids,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                dashboard_id: self.dashboard_id
+                ,
+                identity_type: self.identity_type
+                ,
+                session_lifetime_in_minutes: self.session_lifetime_in_minutes
+                ,
+                undo_redo_disabled: self.undo_redo_disabled
+                ,
+                reset_disabled: self.reset_disabled
+                ,
+                state_persistence_enabled: self.state_persistence_enabled
+                ,
+                user_arn: self.user_arn
+                ,
+                namespace: self.namespace
+                ,
+                additional_dashboard_ids: self.additional_dashboard_ids
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpsSummaryInput {
+pub struct GetOpsSummaryInput  {
     /// <p>Specify the name of a resource data sync to get.</p>
     #[doc(hidden)]
     pub sync_name: std::option::Option<std::string::String>,
@@ -24,23 +24,23 @@ pub struct GetOpsSummaryInput {
 }
 impl GetOpsSummaryInput {
     /// <p>Specify the name of a resource data sync to get.</p>
-    pub fn sync_name(&self) -> std::option::Option<&str> {
+    pub fn sync_name(&self) -> std::option::Option<& str> {
         self.sync_name.as_deref()
     }
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::OpsFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::OpsFilter]> {
         self.filters.as_deref()
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn aggregators(&self) -> std::option::Option<&[crate::types::OpsAggregator]> {
+    pub fn aggregators(&self) -> std::option::Option<& [crate::types::OpsAggregator]> {
         self.aggregators.as_deref()
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn result_attributes(&self) -> std::option::Option<&[crate::types::OpsResultAttribute]> {
+    pub fn result_attributes(&self) -> std::option::Option<& [crate::types::OpsResultAttribute]> {
         self.result_attributes.as_deref()
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -62,8 +62,7 @@ pub struct GetOpsSummaryInputBuilder {
     pub(crate) sync_name: std::option::Option<std::string::String>,
     pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>,
     pub(crate) aggregators: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>,
-    pub(crate) result_attributes:
-        std::option::Option<std::vec::Vec<crate::types::OpsResultAttribute>>,
+    pub(crate) result_attributes: std::option::Option<std::vec::Vec<crate::types::OpsResultAttribute>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -75,8 +74,7 @@ impl GetOpsSummaryInputBuilder {
     }
     /// <p>Specify the name of a resource data sync to get.</p>
     pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sync_name = input;
-        self
+        self.sync_name = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -85,17 +83,13 @@ impl GetOpsSummaryInputBuilder {
     /// <p>Optional filters used to scope down the returned OpsData. </p>
     pub fn filters(mut self, input: crate::types::OpsFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>) -> Self {
+        self.filters = input; self
     }
     /// Appends an item to `aggregators`.
     ///
@@ -104,17 +98,13 @@ impl GetOpsSummaryInputBuilder {
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
     pub fn aggregators(mut self, input: crate::types::OpsAggregator) -> Self {
         let mut v = self.aggregators.unwrap_or_default();
-        v.push(input);
-        self.aggregators = Some(v);
-        self
+                        v.push(input);
+                        self.aggregators = Some(v);
+                        self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>,
-    ) -> Self {
-        self.aggregators = input;
-        self
+    pub fn set_aggregators(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>) -> Self {
+        self.aggregators = input; self
     }
     /// Appends an item to `result_attributes`.
     ///
@@ -123,17 +113,13 @@ impl GetOpsSummaryInputBuilder {
     /// <p>The OpsData data type to return.</p>
     pub fn result_attributes(mut self, input: crate::types::OpsResultAttribute) -> Self {
         let mut v = self.result_attributes.unwrap_or_default();
-        v.push(input);
-        self.result_attributes = Some(v);
-        self
+                        v.push(input);
+                        self.result_attributes = Some(v);
+                        self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn set_result_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsResultAttribute>>,
-    ) -> Self {
-        self.result_attributes = input;
-        self
+    pub fn set_result_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsResultAttribute>>) -> Self {
+        self.result_attributes = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +128,7 @@ impl GetOpsSummaryInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -152,23 +137,26 @@ impl GetOpsSummaryInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetOpsSummaryInput`](crate::operation::get_ops_summary::GetOpsSummaryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_ops_summary::GetOpsSummaryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_ops_summary::GetOpsSummaryInput {
-            sync_name: self.sync_name,
-            filters: self.filters,
-            aggregators: self.aggregators,
-            result_attributes: self.result_attributes,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::get_ops_summary::GetOpsSummaryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_ops_summary::GetOpsSummaryInput {
+                sync_name: self.sync_name
+                ,
+                filters: self.filters
+                ,
+                aggregators: self.aggregators
+                ,
+                result_attributes: self.result_attributes
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Applications list filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsRequestFilters {
+pub struct ListApplicationsRequestFilters  {
     /// <p>Filter applications list by application ID.</p>
     #[doc(hidden)]
     pub application_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,7 +16,7 @@ pub struct ListApplicationsRequestFilters {
 }
 impl ListApplicationsRequestFilters {
     /// <p>Filter applications list by application ID.</p>
-    pub fn application_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn application_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.application_i_ds.as_deref()
     }
     /// <p>Filter applications list by archival status.</p>
@@ -24,7 +24,7 @@ impl ListApplicationsRequestFilters {
         self.is_archived
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn wave_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wave_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.wave_i_ds.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl ListApplicationsRequestFiltersBuilder {
     /// <p>Filter applications list by application ID.</p>
     pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.application_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.application_i_ds = Some(v);
-        self
+                        v.push(input.into());
+                        self.application_i_ds = Some(v);
+                        self
     }
     /// <p>Filter applications list by application ID.</p>
-    pub fn set_application_i_ds(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.application_i_ds = input;
-        self
+    pub fn set_application_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.application_i_ds = input; self
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
@@ -70,8 +66,7 @@ impl ListApplicationsRequestFiltersBuilder {
     }
     /// <p>Filter applications list by archival status.</p>
     pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_archived = input;
-        self
+        self.is_archived = input; self
     }
     /// Appends an item to `wave_i_ds`.
     ///
@@ -80,24 +75,24 @@ impl ListApplicationsRequestFiltersBuilder {
     /// <p>Filter applications list by wave ID.</p>
     pub fn wave_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.wave_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.wave_i_ds = Some(v);
-        self
+                        v.push(input.into());
+                        self.wave_i_ds = Some(v);
+                        self
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn set_wave_i_ds(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.wave_i_ds = input;
-        self
+    pub fn set_wave_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.wave_i_ds = input; self
     }
     /// Consumes the builder and constructs a [`ListApplicationsRequestFilters`](crate::types::ListApplicationsRequestFilters).
     pub fn build(self) -> crate::types::ListApplicationsRequestFilters {
         crate::types::ListApplicationsRequestFilters {
-            application_i_ds: self.application_i_ds,
-            is_archived: self.is_archived,
-            wave_i_ds: self.wave_i_ds,
+            application_i_ds: self.application_i_ds
+            ,
+            is_archived: self.is_archived
+            ,
+            wave_i_ds: self.wave_i_ds
+            ,
         }
     }
 }
+

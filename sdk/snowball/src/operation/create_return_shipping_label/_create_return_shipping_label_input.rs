@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReturnShippingLabelInput {
+pub struct CreateReturnShippingLabelInput  {
     /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct CreateReturnShippingLabelInput {
 }
 impl CreateReturnShippingLabelInput {
     /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    pub fn shipping_option(&self) -> std::option::Option<&crate::types::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<& crate::types::ShippingOption> {
         self.shipping_option.as_ref()
     }
 }
 impl CreateReturnShippingLabelInput {
     /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelInput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput).
-    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder{
+    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder {
         crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl CreateReturnShippingLabelInputBuilder {
     }
     /// <p>The ID for a job that you want to create the return shipping label for; for example, <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
@@ -51,25 +50,19 @@ impl CreateReturnShippingLabelInputBuilder {
         self
     }
     /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device is returned to Amazon Web Services. This speed represents how quickly it moves to its destination while in transit. Regional shipping speeds are as follows:</p>
-    pub fn set_shipping_option(
-        mut self,
-        input: std::option::Option<crate::types::ShippingOption>,
-    ) -> Self {
-        self.shipping_option = input;
-        self
+    pub fn set_shipping_option(mut self, input: std::option::Option<crate::types::ShippingOption>) -> Self {
+        self.shipping_option = input; self
     }
     /// Consumes the builder and constructs a [`CreateReturnShippingLabelInput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_return_shipping_label::CreateReturnShippingLabelInput {
-                job_id: self.job_id,
-                shipping_option: self.shipping_option,
-            },
+                job_id: self.job_id
+                ,
+                shipping_option: self.shipping_option
+                ,
+            }
         )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderbyfieldtype = unimplemented!();
 /// match orderbyfieldtype {
@@ -33,22 +33,14 @@
 /// Specifically, when `orderbyfieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderByFieldType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderByFieldType {
     #[allow(missing_docs)] // documentation missing in model
     CreatedTimestamp,
@@ -61,54 +53,47 @@ pub enum OrderByFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Size,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderByFieldType {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATED_TIMESTAMP" => OrderByFieldType::CreatedTimestamp,
-            "MODIFIED_TIMESTAMP" => OrderByFieldType::ModifiedTimestamp,
-            "NAME" => OrderByFieldType::Name,
-            "RELEVANCE" => OrderByFieldType::Relevance,
-            "SIZE" => OrderByFieldType::Size,
-            other => {
-                OrderByFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATED_TIMESTAMP" => OrderByFieldType::CreatedTimestamp,
+"MODIFIED_TIMESTAMP" => OrderByFieldType::ModifiedTimestamp,
+"NAME" => OrderByFieldType::Name,
+"RELEVANCE" => OrderByFieldType::Relevance,
+"SIZE" => OrderByFieldType::Size,
+other => OrderByFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for OrderByFieldType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderByFieldType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderByFieldType::from(s))
+                }
+            }
 impl OrderByFieldType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OrderByFieldType::CreatedTimestamp => "CREATED_TIMESTAMP",
-            OrderByFieldType::ModifiedTimestamp => "MODIFIED_TIMESTAMP",
-            OrderByFieldType::Name => "NAME",
-            OrderByFieldType::Relevance => "RELEVANCE",
-            OrderByFieldType::Size => "SIZE",
-            OrderByFieldType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATED_TIMESTAMP",
-            "MODIFIED_TIMESTAMP",
-            "NAME",
-            "RELEVANCE",
-            "SIZE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OrderByFieldType::CreatedTimestamp => "CREATED_TIMESTAMP",
+    OrderByFieldType::ModifiedTimestamp => "MODIFIED_TIMESTAMP",
+    OrderByFieldType::Name => "NAME",
+    OrderByFieldType::Relevance => "RELEVANCE",
+    OrderByFieldType::Size => "SIZE",
+    OrderByFieldType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATED_TIMESTAMP", "MODIFIED_TIMESTAMP", "NAME", "RELEVANCE", "SIZE"]
+                }
+            }
 impl AsRef<str> for OrderByFieldType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

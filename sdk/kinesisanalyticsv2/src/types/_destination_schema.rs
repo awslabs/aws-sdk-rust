@@ -3,14 +3,14 @@
 /// <p>Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationSchema {
+pub struct DestinationSchema  {
     /// <p>Specifies the format of the records on the output stream.</p>
     #[doc(hidden)]
     pub record_format_type: std::option::Option<crate::types::RecordFormatType>,
 }
 impl DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
-    pub fn record_format_type(&self) -> std::option::Option<&crate::types::RecordFormatType> {
+    pub fn record_format_type(&self) -> std::option::Option<& crate::types::RecordFormatType> {
         self.record_format_type.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl DestinationSchemaBuilder {
         self
     }
     /// <p>Specifies the format of the records on the output stream.</p>
-    pub fn set_record_format_type(
-        mut self,
-        input: std::option::Option<crate::types::RecordFormatType>,
-    ) -> Self {
-        self.record_format_type = input;
-        self
+    pub fn set_record_format_type(mut self, input: std::option::Option<crate::types::RecordFormatType>) -> Self {
+        self.record_format_type = input; self
     }
     /// Consumes the builder and constructs a [`DestinationSchema`](crate::types::DestinationSchema).
     pub fn build(self) -> crate::types::DestinationSchema {
         crate::types::DestinationSchema {
-            record_format_type: self.record_format_type,
+            record_format_type: self.record_format_type
+            ,
         }
     }
 }
+

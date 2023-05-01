@@ -3,7 +3,7 @@
 /// <p>Specifies information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointProperties {
+pub struct EndpointProperties  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
@@ -43,23 +43,23 @@ pub struct EndpointProperties {
 }
 impl EndpointProperties {
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status before making inference requests.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::EndpointStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
-    pub fn desired_model_arn(&self) -> std::option::Option<&str> {
+    pub fn desired_model_arn(&self) -> std::option::Option<& str> {
         self.desired_model_arn.as_deref()
     }
     /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
@@ -71,23 +71,23 @@ impl EndpointProperties {
         self.current_inference_units
     }
     /// <p>The creation date and time of the endpoint.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the endpoint was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
-    pub fn desired_data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn desired_data_access_role_arn(&self) -> std::option::Option<& str> {
         self.desired_data_access_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
 }
@@ -123,8 +123,7 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status before making inference requests.</p>
     pub fn status(mut self, input: crate::types::EndpointStatus) -> Self {
@@ -133,8 +132,7 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status before making inference requests.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::EndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +141,7 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +150,7 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
     pub fn desired_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,12 +158,8 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
-    pub fn set_desired_model_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.desired_model_arn = input;
-        self
+    pub fn set_desired_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.desired_model_arn = input; self
     }
     /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
@@ -176,8 +168,7 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-        self.desired_inference_units = input;
-        self
+        self.desired_inference_units = input; self
     }
     /// <p>The number of inference units currently used by the model using this endpoint.</p>
     pub fn current_inference_units(mut self, input: i32) -> Self {
@@ -186,8 +177,7 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>The number of inference units currently used by the model using this endpoint.</p>
     pub fn set_current_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-        self.current_inference_units = input;
-        self
+        self.current_inference_units = input; self
     }
     /// <p>The creation date and time of the endpoint.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -195,12 +185,8 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>The creation date and time of the endpoint.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The date and time that the endpoint was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -208,12 +194,8 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>The date and time that the endpoint was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,12 +203,8 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
     pub fn desired_data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,12 +212,8 @@ impl EndpointPropertiesBuilder {
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
-    pub fn set_desired_data_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.desired_data_access_role_arn = input;
-        self
+    pub fn set_desired_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.desired_data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,24 +222,36 @@ impl EndpointPropertiesBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// Consumes the builder and constructs a [`EndpointProperties`](crate::types::EndpointProperties).
     pub fn build(self) -> crate::types::EndpointProperties {
         crate::types::EndpointProperties {
-            endpoint_arn: self.endpoint_arn,
-            status: self.status,
-            message: self.message,
-            model_arn: self.model_arn,
-            desired_model_arn: self.desired_model_arn,
-            desired_inference_units: self.desired_inference_units,
-            current_inference_units: self.current_inference_units,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            data_access_role_arn: self.data_access_role_arn,
-            desired_data_access_role_arn: self.desired_data_access_role_arn,
-            flywheel_arn: self.flywheel_arn,
+            endpoint_arn: self.endpoint_arn
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
+            model_arn: self.model_arn
+            ,
+            desired_model_arn: self.desired_model_arn
+            ,
+            desired_inference_units: self.desired_inference_units
+            ,
+            current_inference_units: self.current_inference_units
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            data_access_role_arn: self.data_access_role_arn
+            ,
+            desired_data_access_role_arn: self.desired_data_access_role_arn
+            ,
+            flywheel_arn: self.flywheel_arn
+            ,
         }
     }
 }
+

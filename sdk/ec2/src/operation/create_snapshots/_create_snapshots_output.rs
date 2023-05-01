@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotsOutput {
+pub struct CreateSnapshotsOutput  {
     /// <p>List of snapshots.</p>
     #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::types::SnapshotInfo>>,
@@ -10,15 +10,15 @@ pub struct CreateSnapshotsOutput {
 }
 impl CreateSnapshotsOutput {
     /// <p>List of snapshots.</p>
-    pub fn snapshots(&self) -> std::option::Option<&[crate::types::SnapshotInfo]> {
+    pub fn snapshots(&self) -> std::option::Option<& [crate::types::SnapshotInfo]> {
         self.snapshots.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSnapshotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotsOutput`](crate::operation::create_snapshots::CreateSnapshotsOutput).
     pub fn builder() -> crate::operation::create_snapshots::builders::CreateSnapshotsOutputBuilder {
@@ -41,32 +41,30 @@ impl CreateSnapshotsOutputBuilder {
     /// <p>List of snapshots.</p>
     pub fn snapshots(mut self, input: crate::types::SnapshotInfo) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
-        v.push(input);
-        self.snapshots = Some(v);
-        self
+                        v.push(input);
+                        self.snapshots = Some(v);
+                        self
     }
     /// <p>List of snapshots.</p>
-    pub fn set_snapshots(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SnapshotInfo>>,
-    ) -> Self {
-        self.snapshots = input;
-        self
+    pub fn set_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::types::SnapshotInfo>>) -> Self {
+        self.snapshots = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSnapshotsOutput`](crate::operation::create_snapshots::CreateSnapshotsOutput).
     pub fn build(self) -> crate::operation::create_snapshots::CreateSnapshotsOutput {
         crate::operation::create_snapshots::CreateSnapshotsOutput {
-            snapshots: self.snapshots,
+            snapshots: self.snapshots
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

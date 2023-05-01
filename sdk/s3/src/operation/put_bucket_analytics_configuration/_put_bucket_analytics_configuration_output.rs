@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketAnalyticsConfigurationOutput {
+pub struct PutBucketAnalyticsConfigurationOutput  {
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl crate::s3_request_id::RequestIdExt for PutBucketAnalyticsConfigurationOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for PutBucketAnalyticsConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutBucketAnalyticsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketAnalyticsConfigurationOutput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput).
-    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationOutputBuilder {
         crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationOutputBuilder::default()
     }
 }
@@ -32,34 +32,29 @@ pub struct PutBucketAnalyticsConfigurationOutputBuilder {
 }
 impl PutBucketAnalyticsConfigurationOutputBuilder {
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutBucketAnalyticsConfigurationOutput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput {
         crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationOutput {
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

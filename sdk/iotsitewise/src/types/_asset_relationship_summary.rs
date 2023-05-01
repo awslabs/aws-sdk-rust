@@ -3,29 +3,29 @@
 /// <p>Contains information about assets that are related to one another.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetRelationshipSummary {
-    /// <p>The assets that are related through an asset hierarchy.</p>
+pub struct AssetRelationshipSummary  {
+    /// <p>The assets that are related through an asset hierarchy.</p> 
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
     #[doc(hidden)]
     pub hierarchy_info: std::option::Option<crate::types::AssetHierarchyInfo>,
-    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub relationship_type: std::option::Option<crate::types::AssetRelationshipType>,
 }
 impl AssetRelationshipSummary {
-    /// <p>The assets that are related through an asset hierarchy.</p>
+    /// <p>The assets that are related through an asset hierarchy.</p> 
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-    pub fn hierarchy_info(&self) -> std::option::Option<&crate::types::AssetHierarchyInfo> {
+    pub fn hierarchy_info(&self) -> std::option::Option<& crate::types::AssetHierarchyInfo> {
         self.hierarchy_info.as_ref()
     }
-    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
     /// </ul>
-    pub fn relationship_type(&self) -> std::option::Option<&crate::types::AssetRelationshipType> {
+    pub fn relationship_type(&self) -> std::option::Option<& crate::types::AssetRelationshipType> {
         self.relationship_type.as_ref()
     }
 }
@@ -44,45 +44,40 @@ pub struct AssetRelationshipSummaryBuilder {
     pub(crate) relationship_type: std::option::Option<crate::types::AssetRelationshipType>,
 }
 impl AssetRelationshipSummaryBuilder {
-    /// <p>The assets that are related through an asset hierarchy.</p>
+    /// <p>The assets that are related through an asset hierarchy.</p> 
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
     pub fn hierarchy_info(mut self, input: crate::types::AssetHierarchyInfo) -> Self {
         self.hierarchy_info = Some(input);
         self
     }
-    /// <p>The assets that are related through an asset hierarchy.</p>
+    /// <p>The assets that are related through an asset hierarchy.</p> 
     /// <p>This object is present if the <code>relationshipType</code> is <code>HIERARCHY</code>.</p>
-    pub fn set_hierarchy_info(
-        mut self,
-        input: std::option::Option<crate::types::AssetHierarchyInfo>,
-    ) -> Self {
-        self.hierarchy_info = input;
-        self
+    pub fn set_hierarchy_info(mut self, input: std::option::Option<crate::types::AssetHierarchyInfo>) -> Self {
+        self.hierarchy_info = input; self
     }
-    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
     /// </ul>
     pub fn relationship_type(mut self, input: crate::types::AssetRelationshipType) -> Self {
         self.relationship_type = Some(input);
         self
     }
-    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li>
+    /// <p>The relationship type of the assets in this relationship. This value is one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HIERARCHY</code> – The assets are related through an asset hierarchy. If you specify this relationship type, this asset relationship includes the <code>hierarchyInfo</code> object.</p> </li> 
     /// </ul>
-    pub fn set_relationship_type(
-        mut self,
-        input: std::option::Option<crate::types::AssetRelationshipType>,
-    ) -> Self {
-        self.relationship_type = input;
-        self
+    pub fn set_relationship_type(mut self, input: std::option::Option<crate::types::AssetRelationshipType>) -> Self {
+        self.relationship_type = input; self
     }
     /// Consumes the builder and constructs a [`AssetRelationshipSummary`](crate::types::AssetRelationshipSummary).
     pub fn build(self) -> crate::types::AssetRelationshipSummary {
         crate::types::AssetRelationshipSummary {
-            hierarchy_info: self.hierarchy_info,
-            relationship_type: self.relationship_type,
+            hierarchy_info: self.hierarchy_info
+            ,
+            relationship_type: self.relationship_type
+            ,
         }
     }
 }
+

@@ -6,125 +6,73 @@ impl ListTagsInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::list_tags::ListTags,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::list_tags::ListTags, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::list_tags::ListTagsInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::list_tags::ListTagsInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::list_tags::ListTagsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::list_tags::ListTagsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "CloudTrail_20131101.ListTags",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "CloudTrail_20131101.ListTags"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_list_tags::ser_list_tags_input(&self)?,
+            crate::protocol_serde::shape_list_tags::ser_list_tags_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::list_tags::ListTags::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTags",
-            "cloudtrail",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::list_tags::ListTags::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTags", "cloudtrail"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -141,35 +89,30 @@ impl ListTags {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for ListTags {
-    type Output = std::result::Result<
-        crate::operation::list_tags::ListTagsOutput,
-        crate::operation::list_tags::ListTagsError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::protocol_serde::shape_list_tags::de_list_tags_http_error(response)
-        } else {
-            crate::protocol_serde::shape_list_tags::de_list_tags_http_response(response)
-        }
-    }
-}
+                type Output = std::result::Result<crate::operation::list_tags::ListTagsOutput, crate::operation::list_tags::ListTagsError>;
+                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+                     if !response.status().is_success() && response.status().as_u16() != 200 {
+                        crate::protocol_serde::shape_list_tags::de_list_tags_http_error(response)
+                     } else {
+                        crate::protocol_serde::shape_list_tags::de_list_tags_http_response(response)
+                     }
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type ListTagsErrorKind = ListTagsError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type ListTagsErrorKind = ListTagsError;
 /// Error type for the `ListTagsError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListTagsError {
-    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p>
-    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p>
-    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
+    /// <p>This exception is thrown when an operation is called with a trail ARN that is not valid. The following is the format of a trail ARN.</p> 
+    /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> 
+    /// <p>This exception is also thrown when you call <code>AddTags</code> or <code>RemoveTags</code> on a trail, event data store, or channel with a resource ARN that is not valid.</p> 
+    /// <p>The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p> 
     /// <p>The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     CloudTrailArnInvalidException(crate::types::error::CloudTrailArnInvalidException),
     /// <p>The specified event data store was not found.</p>
@@ -178,19 +121,17 @@ pub enum ListTagsError {
     InactiveEventDataStoreException(crate::types::error::InactiveEventDataStoreException),
     /// <p>Reserved for future use.</p>
     InvalidTokenException(crate::types::error::InvalidTokenException),
-    /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p>
-    /// <ul>
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
-    /// <li> <p>Be between 3 and 128 characters</p> </li>
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// <p>This exception is thrown when the provided trail name is not valid. Trail names must meet the following requirements:</p> 
+    /// <ul> 
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> 
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li> 
+    /// <li> <p>Be between 3 and 128 characters</p> </li> 
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li> 
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> 
     /// </ul>
     InvalidTrailNameException(crate::types::error::InvalidTrailNameException),
     /// <p> This exception is thrown when the management account does not have a service-linked role. </p>
-    NoManagementAccountSlrExistsException(
-        crate::types::error::NoManagementAccountSlrExistsException,
-    ),
+    NoManagementAccountSlrExistsException(crate::types::error::NoManagementAccountSlrExistsException),
     /// <p>This exception is thrown when the requested operation is not permitted.</p>
     OperationNotPermittedException(crate::types::error::OperationNotPermittedException),
     /// <p>This exception is thrown when the specified resource is not found.</p>
@@ -200,70 +141,94 @@ pub enum ListTagsError {
     /// <p>This exception is thrown when the requested operation is not supported.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::CloudTrailArnInvalidException(_inner) => _inner.fmt(f),
-            Self::EventDataStoreNotFoundException(_inner) => _inner.fmt(f),
-            Self::InactiveEventDataStoreException(_inner) => _inner.fmt(f),
-            Self::InvalidTokenException(_inner) => _inner.fmt(f),
-            Self::InvalidTrailNameException(_inner) => _inner.fmt(f),
-            Self::NoManagementAccountSlrExistsException(_inner) => _inner.fmt(f),
-            Self::OperationNotPermittedException(_inner) => _inner.fmt(f),
-            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            Self::ResourceTypeNotSupportedException(_inner) => _inner.fmt(f),
-            Self::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::CloudTrailArnInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::EventDataStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InactiveEventDataStoreException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidTrailNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::NoManagementAccountSlrExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::OperationNotPermittedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ResourceTypeNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CloudTrailArnInvalidException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::EventDataStoreNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InactiveEventDataStoreException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTokenException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTrailNameException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::NoManagementAccountSlrExistsException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::OperationNotPermittedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ResourceTypeNotSupportedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnsupportedOperationException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::CloudTrailArnInvalidException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::EventDataStoreNotFoundException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InactiveEventDataStoreException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidTokenException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidTrailNameException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::NoManagementAccountSlrExistsException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::OperationNotPermittedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ResourceTypeNotSupportedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::UnsupportedOperationException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -271,10 +236,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsError {
     }
 }
 impl aws_http::request_id::RequestId for crate::operation::list_tags::ListTagsError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for ListTagsError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -285,27 +250,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsError {
 }
 impl ListTagsError {
     /// Creates the `ListTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `ListTagsError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `ListTagsError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -366,17 +322,39 @@ impl ListTagsError {
 impl std::error::Error for ListTagsError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::CloudTrailArnInvalidException(_inner) => Some(_inner),
-            Self::EventDataStoreNotFoundException(_inner) => Some(_inner),
-            Self::InactiveEventDataStoreException(_inner) => Some(_inner),
-            Self::InvalidTokenException(_inner) => Some(_inner),
-            Self::InvalidTrailNameException(_inner) => Some(_inner),
-            Self::NoManagementAccountSlrExistsException(_inner) => Some(_inner),
-            Self::OperationNotPermittedException(_inner) => Some(_inner),
-            Self::ResourceNotFoundException(_inner) => Some(_inner),
-            Self::ResourceTypeNotSupportedException(_inner) => Some(_inner),
-            Self::UnsupportedOperationException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::CloudTrailArnInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            Self::EventDataStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InactiveEventDataStoreException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidTokenException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidTrailNameException(_inner) =>
+            Some(_inner)
+            ,
+            Self::NoManagementAccountSlrExistsException(_inner) =>
+            Some(_inner)
+            ,
+            Self::OperationNotPermittedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ResourceTypeNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -394,3 +372,4 @@ pub mod builders;
 
 /// Paginator for this operation
 pub mod paginator;
+

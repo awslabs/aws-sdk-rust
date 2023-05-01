@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let monitoringstate = unimplemented!();
 /// match monitoringstate {
@@ -32,22 +32,14 @@
 /// Specifically, when `monitoringstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MonitoringState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MonitoringState {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -58,46 +50,45 @@ pub enum MonitoringState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MonitoringState {
-    fn from(s: &str) -> Self {
-        match s {
-            "disabled" => MonitoringState::Disabled,
-            "disabling" => MonitoringState::Disabling,
-            "enabled" => MonitoringState::Enabled,
-            "pending" => MonitoringState::Pending,
-            other => {
-                MonitoringState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "disabled" => MonitoringState::Disabled,
+"disabling" => MonitoringState::Disabling,
+"enabled" => MonitoringState::Enabled,
+"pending" => MonitoringState::Pending,
+other => MonitoringState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for MonitoringState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MonitoringState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MonitoringState::from(s))
+                }
+            }
 impl MonitoringState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MonitoringState::Disabled => "disabled",
-            MonitoringState::Disabling => "disabling",
-            MonitoringState::Enabled => "enabled",
-            MonitoringState::Pending => "pending",
-            MonitoringState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["disabled", "disabling", "enabled", "pending"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MonitoringState::Disabled => "disabled",
+    MonitoringState::Disabling => "disabling",
+    MonitoringState::Enabled => "enabled",
+    MonitoringState::Pending => "pending",
+    MonitoringState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["disabled", "disabling", "enabled", "pending"]
+                }
+            }
 impl AsRef<str> for MonitoringState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

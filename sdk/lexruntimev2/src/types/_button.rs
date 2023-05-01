@@ -3,7 +3,7 @@
 /// <p>A button that appears on a response card show to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Button {
+pub struct Button  {
     /// <p>The text that is displayed on the button.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Button {
 }
 impl Button {
     /// <p>The text that is displayed on the button.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ButtonBuilder {
     }
     /// <p>The text that is displayed on the button.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ButtonBuilder {
     }
     /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Button`](crate::types::Button).
     pub fn build(self) -> crate::types::Button {
         crate::types::Button {
-            text: self.text,
-            value: self.value,
+            text: self.text
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

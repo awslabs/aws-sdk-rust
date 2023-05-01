@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateParticipantRoleConfigInput {
+pub struct UpdateParticipantRoleConfigInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -11,28 +11,25 @@ pub struct UpdateParticipantRoleConfigInput {
     pub contact_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Connect channel you want to configure.</p>
     #[doc(hidden)]
-    pub channel_configuration:
-        std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
+    pub channel_configuration: std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
 }
 impl UpdateParticipantRoleConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn channel_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateParticipantRoleConfigChannelInfo> {
+    pub fn channel_configuration(&self) -> std::option::Option<& crate::types::UpdateParticipantRoleConfigChannelInfo> {
         self.channel_configuration.as_ref()
     }
 }
 impl UpdateParticipantRoleConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateParticipantRoleConfigInput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigInput).
-    pub fn builder() -> crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder{
+    pub fn builder() -> crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder {
         crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder::default()
     }
 }
@@ -43,8 +40,7 @@ impl UpdateParticipantRoleConfigInput {
 pub struct UpdateParticipantRoleConfigInputBuilder {
     pub(crate) instance_id: std::option::Option<std::string::String>,
     pub(crate) contact_id: std::option::Option<std::string::String>,
-    pub(crate) channel_configuration:
-        std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
+    pub(crate) channel_configuration: std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
 }
 impl UpdateParticipantRoleConfigInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -54,8 +50,7 @@ impl UpdateParticipantRoleConfigInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,38 +59,29 @@ impl UpdateParticipantRoleConfigInputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn channel_configuration(
-        mut self,
-        input: crate::types::UpdateParticipantRoleConfigChannelInfo,
-    ) -> Self {
+    pub fn channel_configuration(mut self, input: crate::types::UpdateParticipantRoleConfigChannelInfo) -> Self {
         self.channel_configuration = Some(input);
         self
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn set_channel_configuration(
-        mut self,
-        input: std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
-    ) -> Self {
-        self.channel_configuration = input;
-        self
+    pub fn set_channel_configuration(mut self, input: std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>) -> Self {
+        self.channel_configuration = input; self
     }
     /// Consumes the builder and constructs a [`UpdateParticipantRoleConfigInput`](crate::operation::update_participant_role_config::UpdateParticipantRoleConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_participant_role_config::UpdateParticipantRoleConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_participant_role_config::UpdateParticipantRoleConfigInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                channel_configuration: self.channel_configuration,
-            },
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                channel_configuration: self.channel_configuration
+                ,
+            }
         )
     }
 }
+

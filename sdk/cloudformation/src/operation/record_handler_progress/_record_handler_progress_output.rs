@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordHandlerProgressOutput {
+pub struct RecordHandlerProgressOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RecordHandlerProgressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RecordHandlerProgressOutput {
     /// Creates a new builder-style object to manufacture [`RecordHandlerProgressOutput`](crate::operation::record_handler_progress::RecordHandlerProgressOutput).
-    pub fn builder(
-    ) -> crate::operation::record_handler_progress::builders::RecordHandlerProgressOutputBuilder
-    {
+    pub fn builder() -> crate::operation::record_handler_progress::builders::RecordHandlerProgressOutputBuilder {
         crate::operation::record_handler_progress::builders::RecordHandlerProgressOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct RecordHandlerProgressOutputBuilder {
 }
 impl RecordHandlerProgressOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RecordHandlerProgressOutput`](crate::operation::record_handler_progress::RecordHandlerProgressOutput).
     pub fn build(self) -> crate::operation::record_handler_progress::RecordHandlerProgressOutput {
         crate::operation::record_handler_progress::RecordHandlerProgressOutput {
@@ -42,3 +40,4 @@ impl RecordHandlerProgressOutputBuilder {
         }
     }
 }
+

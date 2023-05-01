@@ -3,7 +3,7 @@
 /// <p>Describes the Amazon S3 bucket name and location for the grammar that is the source for the slot type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrammarSlotTypeSource {
+pub struct GrammarSlotTypeSource  {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct GrammarSlotTypeSource {
 }
 impl GrammarSlotTypeSource {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
-    pub fn s3_object_key(&self) -> std::option::Option<&str> {
+    pub fn s3_object_key(&self) -> std::option::Option<& str> {
         self.s3_object_key.as_deref()
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl GrammarSlotTypeSourceBuilder {
     }
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
     pub fn s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl GrammarSlotTypeSourceBuilder {
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
     pub fn set_s3_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_object_key = input;
-        self
+        self.s3_object_key = input; self
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl GrammarSlotTypeSourceBuilder {
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// Consumes the builder and constructs a [`GrammarSlotTypeSource`](crate::types::GrammarSlotTypeSource).
     pub fn build(self) -> crate::types::GrammarSlotTypeSource {
         crate::types::GrammarSlotTypeSource {
-            s3_bucket_name: self.s3_bucket_name,
-            s3_object_key: self.s3_object_key,
-            kms_key_arn: self.kms_key_arn,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_object_key: self.s3_object_key
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

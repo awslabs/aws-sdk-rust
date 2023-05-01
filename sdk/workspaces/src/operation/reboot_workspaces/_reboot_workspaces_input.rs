@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootWorkspacesInput {
+pub struct RebootWorkspacesInput  {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
     pub reboot_workspace_requests: std::option::Option<std::vec::Vec<crate::types::RebootRequest>>,
 }
 impl RebootWorkspacesInput {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn reboot_workspace_requests(&self) -> std::option::Option<&[crate::types::RebootRequest]> {
+    pub fn reboot_workspace_requests(&self) -> std::option::Option<& [crate::types::RebootRequest]> {
         self.reboot_workspace_requests.as_deref()
     }
 }
 impl RebootWorkspacesInput {
     /// Creates a new builder-style object to manufacture [`RebootWorkspacesInput`](crate::operation::reboot_workspaces::RebootWorkspacesInput).
-    pub fn builder() -> crate::operation::reboot_workspaces::builders::RebootWorkspacesInputBuilder
-    {
+    pub fn builder() -> crate::operation::reboot_workspaces::builders::RebootWorkspacesInputBuilder {
         crate::operation::reboot_workspaces::builders::RebootWorkspacesInputBuilder::default()
     }
 }
@@ -25,8 +24,7 @@ impl RebootWorkspacesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RebootWorkspacesInputBuilder {
-    pub(crate) reboot_workspace_requests:
-        std::option::Option<std::vec::Vec<crate::types::RebootRequest>>,
+    pub(crate) reboot_workspace_requests: std::option::Option<std::vec::Vec<crate::types::RebootRequest>>,
 }
 impl RebootWorkspacesInputBuilder {
     /// Appends an item to `reboot_workspace_requests`.
@@ -36,27 +34,22 @@ impl RebootWorkspacesInputBuilder {
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
     pub fn reboot_workspace_requests(mut self, input: crate::types::RebootRequest) -> Self {
         let mut v = self.reboot_workspace_requests.unwrap_or_default();
-        v.push(input);
-        self.reboot_workspace_requests = Some(v);
-        self
+                        v.push(input);
+                        self.reboot_workspace_requests = Some(v);
+                        self
     }
     /// <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_reboot_workspace_requests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RebootRequest>>,
-    ) -> Self {
-        self.reboot_workspace_requests = input;
-        self
+    pub fn set_reboot_workspace_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::RebootRequest>>) -> Self {
+        self.reboot_workspace_requests = input; self
     }
     /// Consumes the builder and constructs a [`RebootWorkspacesInput`](crate::operation::reboot_workspaces::RebootWorkspacesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reboot_workspaces::RebootWorkspacesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::reboot_workspaces::RebootWorkspacesInput {
-            reboot_workspace_requests: self.reboot_workspace_requests,
-        })
+    pub fn build(self) -> Result<crate::operation::reboot_workspaces::RebootWorkspacesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::reboot_workspaces::RebootWorkspacesInput {
+                reboot_workspace_requests: self.reboot_workspace_requests
+                ,
+            }
+        )
     }
 }
+

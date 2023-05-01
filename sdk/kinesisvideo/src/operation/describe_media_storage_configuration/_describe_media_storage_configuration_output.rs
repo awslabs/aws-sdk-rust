@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMediaStorageConfigurationOutput {
+pub struct DescribeMediaStorageConfigurationOutput  {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
     #[doc(hidden)]
     pub media_storage_configuration: std::option::Option<crate::types::MediaStorageConfiguration>,
@@ -10,20 +10,18 @@ pub struct DescribeMediaStorageConfigurationOutput {
 }
 impl DescribeMediaStorageConfigurationOutput {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::MediaStorageConfiguration> {
+    pub fn media_storage_configuration(&self) -> std::option::Option<& crate::types::MediaStorageConfiguration> {
         self.media_storage_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMediaStorageConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeMediaStorageConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationOutputBuilder {
         crate::operation::describe_media_storage_configuration::builders::DescribeMediaStorageConfigurationOutputBuilder::default()
     }
 }
@@ -32,38 +30,30 @@ impl DescribeMediaStorageConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeMediaStorageConfigurationOutputBuilder {
-    pub(crate) media_storage_configuration:
-        std::option::Option<crate::types::MediaStorageConfiguration>,
+    pub(crate) media_storage_configuration: std::option::Option<crate::types::MediaStorageConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeMediaStorageConfigurationOutputBuilder {
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn media_storage_configuration(
-        mut self,
-        input: crate::types::MediaStorageConfiguration,
-    ) -> Self {
+    pub fn media_storage_configuration(mut self, input: crate::types::MediaStorageConfiguration) -> Self {
         self.media_storage_configuration = Some(input);
         self
     }
     /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
-    pub fn set_media_storage_configuration(
-        mut self,
-        input: std::option::Option<crate::types::MediaStorageConfiguration>,
-    ) -> Self {
-        self.media_storage_configuration = input;
-        self
+    pub fn set_media_storage_configuration(mut self, input: std::option::Option<crate::types::MediaStorageConfiguration>) -> Self {
+        self.media_storage_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeMediaStorageConfigurationOutput`](crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput{
+    pub fn build(self) -> crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput {
         crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput {
             media_storage_configuration: self.media_storage_configuration
             ,
@@ -71,3 +61,4 @@ impl DescribeMediaStorageConfigurationOutputBuilder {
         }
     }
 }
+

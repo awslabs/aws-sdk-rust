@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPortfolioPreferencesInput {}
+pub struct GetPortfolioPreferencesInput  {
+}
 impl GetPortfolioPreferencesInput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioPreferencesInput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput).
-    pub fn builder(
-    ) -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesInputBuilder {
         crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl GetPortfolioPreferencesInput {
 /// A builder for [`GetPortfolioPreferencesInput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetPortfolioPreferencesInputBuilder {}
+pub struct GetPortfolioPreferencesInputBuilder {
+}
 impl GetPortfolioPreferencesInputBuilder {
     /// Consumes the builder and constructs a [`GetPortfolioPreferencesInput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput {})
+    pub fn build(self) -> Result<crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_portfolio_preferences::GetPortfolioPreferencesInput {
+            }
+        )
     }
 }
+

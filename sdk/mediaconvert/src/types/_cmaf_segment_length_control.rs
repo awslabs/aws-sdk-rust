@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cmafsegmentlengthcontrol = unimplemented!();
 /// match cmafsegmentlengthcontrol {
@@ -30,64 +30,55 @@
 /// Specifically, when `cmafsegmentlengthcontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CmafSegmentLengthControl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CmafSegmentLengthControl {
     #[allow(missing_docs)] // documentation missing in model
     Exact,
     #[allow(missing_docs)] // documentation missing in model
     GopMultiple,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CmafSegmentLengthControl {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXACT" => CmafSegmentLengthControl::Exact,
-            "GOP_MULTIPLE" => CmafSegmentLengthControl::GopMultiple,
-            other => CmafSegmentLengthControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXACT" => CmafSegmentLengthControl::Exact,
+"GOP_MULTIPLE" => CmafSegmentLengthControl::GopMultiple,
+other => CmafSegmentLengthControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CmafSegmentLengthControl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafSegmentLengthControl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CmafSegmentLengthControl::from(s))
+                }
+            }
 impl CmafSegmentLengthControl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CmafSegmentLengthControl::Exact => "EXACT",
-            CmafSegmentLengthControl::GopMultiple => "GOP_MULTIPLE",
-            CmafSegmentLengthControl::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EXACT", "GOP_MULTIPLE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CmafSegmentLengthControl::Exact => "EXACT",
+    CmafSegmentLengthControl::GopMultiple => "GOP_MULTIPLE",
+    CmafSegmentLengthControl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXACT", "GOP_MULTIPLE"]
+                }
+            }
 impl AsRef<str> for CmafSegmentLengthControl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

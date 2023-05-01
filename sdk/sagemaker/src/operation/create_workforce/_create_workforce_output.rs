@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkforceOutput {
+pub struct CreateWorkforceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
     #[doc(hidden)]
     pub workforce_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateWorkforceOutput {
 }
 impl CreateWorkforceOutput {
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
-    pub fn workforce_arn(&self) -> std::option::Option<&str> {
+    pub fn workforce_arn(&self) -> std::option::Option<& str> {
         self.workforce_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWorkforceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateWorkforceOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkforceOutput`](crate::operation::create_workforce::CreateWorkforceOutput).
     pub fn builder() -> crate::operation::create_workforce::builders::CreateWorkforceOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateWorkforceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the workforce.</p>
     pub fn set_workforce_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workforce_arn = input;
-        self
+        self.workforce_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateWorkforceOutput`](crate::operation::create_workforce::CreateWorkforceOutput).
     pub fn build(self) -> crate::operation::create_workforce::CreateWorkforceOutput {
         crate::operation::create_workforce::CreateWorkforceOutput {
-            workforce_arn: self.workforce_arn,
+            workforce_arn: self.workforce_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

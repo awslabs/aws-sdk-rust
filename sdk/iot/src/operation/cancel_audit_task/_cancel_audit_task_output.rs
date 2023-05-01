@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelAuditTaskOutput {
+pub struct CancelAuditTaskOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CancelAuditTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelAuditTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelAuditTaskOutput`](crate::operation::cancel_audit_task::CancelAuditTaskOutput).
-    pub fn builder() -> crate::operation::cancel_audit_task::builders::CancelAuditTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_audit_task::builders::CancelAuditTaskOutputBuilder {
         crate::operation::cancel_audit_task::builders::CancelAuditTaskOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct CancelAuditTaskOutputBuilder {
 }
 impl CancelAuditTaskOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelAuditTaskOutput`](crate::operation::cancel_audit_task::CancelAuditTaskOutput).
     pub fn build(self) -> crate::operation::cancel_audit_task::CancelAuditTaskOutput {
         crate::operation::cancel_audit_task::CancelAuditTaskOutput {
@@ -41,3 +40,4 @@ impl CancelAuditTaskOutputBuilder {
         }
     }
 }
+

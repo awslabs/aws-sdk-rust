@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceServersInput {
+pub struct ListResourceServersInput  {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListResourceServersInput {
 }
 impl ListResourceServersInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The maximum number of resource servers to return.</p>
@@ -23,16 +23,14 @@ impl ListResourceServersInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListResourceServersInput {
     /// Creates a new builder-style object to manufacture [`ListResourceServersInput`](crate::operation::list_resource_servers::ListResourceServersInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_servers::builders::ListResourceServersInputBuilder {
-        crate::operation::list_resource_servers::builders::ListResourceServersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_resource_servers::builders::ListResourceServersInputBuilder {
+        crate::operation::list_resource_servers::builders::ListResourceServersInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl ListResourceServersInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The maximum number of resource servers to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +59,7 @@ impl ListResourceServersInputBuilder {
     }
     /// <p>The maximum number of resource servers to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,21 @@ impl ListResourceServersInputBuilder {
     }
     /// <p>A pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListResourceServersInput`](crate::operation::list_resource_servers::ListResourceServersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_resource_servers::ListResourceServersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_resource_servers::ListResourceServersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_resource_servers::ListResourceServersInput {
-                user_pool_id: self.user_pool_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

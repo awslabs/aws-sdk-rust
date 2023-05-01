@@ -3,7 +3,7 @@
 /// <p>Output of a list workloads call.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkloadsOutput {
+pub struct ListWorkloadsOutput  {
     /// <p>A list of workload summaries.</p>
     #[doc(hidden)]
     pub workload_summaries: std::option::Option<std::vec::Vec<crate::types::WorkloadSummary>>,
@@ -14,19 +14,19 @@ pub struct ListWorkloadsOutput {
 }
 impl ListWorkloadsOutput {
     /// <p>A list of workload summaries.</p>
-    pub fn workload_summaries(&self) -> std::option::Option<&[crate::types::WorkloadSummary]> {
+    pub fn workload_summaries(&self) -> std::option::Option<& [crate::types::WorkloadSummary]> {
         self.workload_summaries.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkloadsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkloadsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput).
     pub fn builder() -> crate::operation::list_workloads::builders::ListWorkloadsOutputBuilder {
@@ -38,8 +38,7 @@ impl ListWorkloadsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkloadsOutputBuilder {
-    pub(crate) workload_summaries:
-        std::option::Option<std::vec::Vec<crate::types::WorkloadSummary>>,
+    pub(crate) workload_summaries: std::option::Option<std::vec::Vec<crate::types::WorkloadSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +50,13 @@ impl ListWorkloadsOutputBuilder {
     /// <p>A list of workload summaries.</p>
     pub fn workload_summaries(mut self, input: crate::types::WorkloadSummary) -> Self {
         let mut v = self.workload_summaries.unwrap_or_default();
-        v.push(input);
-        self.workload_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.workload_summaries = Some(v);
+                        self
     }
     /// <p>A list of workload summaries.</p>
-    pub fn set_workload_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkloadSummary>>,
-    ) -> Self {
-        self.workload_summaries = input;
-        self
+    pub fn set_workload_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkloadSummary>>) -> Self {
+        self.workload_summaries = input; self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListWorkloadsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkloadsOutput`](crate::operation::list_workloads::ListWorkloadsOutput).
     pub fn build(self) -> crate::operation::list_workloads::ListWorkloadsOutput {
         crate::operation::list_workloads::ListWorkloadsOutput {
-            workload_summaries: self.workload_summaries,
-            next_token: self.next_token,
+            workload_summaries: self.workload_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

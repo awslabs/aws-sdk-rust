@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketInventoryConfigurationInput {
+pub struct GetBucketInventoryConfigurationInput  {
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetBucketInventoryConfigurationInput {
 }
 impl GetBucketInventoryConfigurationInput {
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The ID used to identify the inventory configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl GetBucketInventoryConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketInventoryConfigurationInput`](crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationInput).
-    pub fn builder() -> crate::operation::get_bucket_inventory_configuration::builders::GetBucketInventoryConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_inventory_configuration::builders::GetBucketInventoryConfigurationInputBuilder {
         crate::operation::get_bucket_inventory_configuration::builders::GetBucketInventoryConfigurationInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetBucketInventoryConfigurationInputBuilder {
     }
     /// <p>The name of the bucket containing the inventory configuration to retrieve.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetBucketInventoryConfigurationInputBuilder {
     }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +67,11 @@ impl GetBucketInventoryConfigurationInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.expected_bucket_owner = input;
-        self
+    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.expected_bucket_owner = input; self
     }
     /// Consumes the builder and constructs a [`GetBucketInventoryConfigurationInput`](crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationInput {
                 bucket: self.bucket
@@ -95,3 +84,4 @@ impl GetBucketInventoryConfigurationInputBuilder {
         )
     }
 }
+

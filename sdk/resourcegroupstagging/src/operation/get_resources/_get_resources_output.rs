@@ -2,33 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcesOutput {
+pub struct GetResourcesOutput  {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     #[doc(hidden)]
     pub pagination_token: std::option::Option<std::string::String>,
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
     #[doc(hidden)]
-    pub resource_tag_mapping_list:
-        std::option::Option<std::vec::Vec<crate::types::ResourceTagMapping>>,
+    pub resource_tag_mapping_list: std::option::Option<std::vec::Vec<crate::types::ResourceTagMapping>>,
     _request_id: Option<String>,
 }
 impl GetResourcesOutput {
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
-    pub fn resource_tag_mapping_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::ResourceTagMapping]> {
+    pub fn resource_tag_mapping_list(&self) -> std::option::Option<& [crate::types::ResourceTagMapping]> {
         self.resource_tag_mapping_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
     pub fn builder() -> crate::operation::get_resources::builders::GetResourcesOutputBuilder {
@@ -41,8 +38,7 @@ impl GetResourcesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetResourcesOutputBuilder {
     pub(crate) pagination_token: std::option::Option<std::string::String>,
-    pub(crate) resource_tag_mapping_list:
-        std::option::Option<std::vec::Vec<crate::types::ResourceTagMapping>>,
+    pub(crate) resource_tag_mapping_list: std::option::Option<std::vec::Vec<crate::types::ResourceTagMapping>>,
     _request_id: Option<String>,
 }
 impl GetResourcesOutputBuilder {
@@ -53,8 +49,7 @@ impl GetResourcesOutputBuilder {
     }
     /// <p>A string that indicates that there is more data available than this response contains. To receive the next part of the response, specify this response value as the <code>PaginationToken</code> value in the request for the next page.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// Appends an item to `resource_tag_mapping_list`.
     ///
@@ -63,33 +58,32 @@ impl GetResourcesOutputBuilder {
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
     pub fn resource_tag_mapping_list(mut self, input: crate::types::ResourceTagMapping) -> Self {
         let mut v = self.resource_tag_mapping_list.unwrap_or_default();
-        v.push(input);
-        self.resource_tag_mapping_list = Some(v);
-        self
+                        v.push(input);
+                        self.resource_tag_mapping_list = Some(v);
+                        self
     }
     /// <p>A list of resource ARNs and the tags (keys and values) associated with each.</p>
-    pub fn set_resource_tag_mapping_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTagMapping>>,
-    ) -> Self {
-        self.resource_tag_mapping_list = input;
-        self
+    pub fn set_resource_tag_mapping_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceTagMapping>>) -> Self {
+        self.resource_tag_mapping_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResourcesOutput`](crate::operation::get_resources::GetResourcesOutput).
     pub fn build(self) -> crate::operation::get_resources::GetResourcesOutput {
         crate::operation::get_resources::GetResourcesOutput {
-            pagination_token: self.pagination_token,
-            resource_tag_mapping_list: self.resource_tag_mapping_list,
+            pagination_token: self.pagination_token
+            ,
+            resource_tag_mapping_list: self.resource_tag_mapping_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

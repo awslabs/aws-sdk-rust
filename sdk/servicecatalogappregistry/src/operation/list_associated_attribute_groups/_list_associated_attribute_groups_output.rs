@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedAttributeGroupsOutput {
+pub struct ListAssociatedAttributeGroupsOutput  {
     /// <p>A list of attribute group IDs.</p>
     #[doc(hidden)]
     pub attribute_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct ListAssociatedAttributeGroupsOutput {
 }
 impl ListAssociatedAttributeGroupsOutput {
     /// <p>A list of attribute group IDs.</p>
-    pub fn attribute_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_groups.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssociatedAttributeGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssociatedAttributeGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput).
-    pub fn builder() -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder {
         crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl ListAssociatedAttributeGroupsOutputBuilder {
     /// <p>A list of attribute group IDs.</p>
     pub fn attribute_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attribute_groups.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_groups = Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_groups = Some(v);
+                        self
     }
     /// <p>A list of attribute group IDs.</p>
-    pub fn set_attribute_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.attribute_groups = input;
-        self
+    pub fn set_attribute_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.attribute_groups = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,27 +64,26 @@ impl ListAssociatedAttributeGroupsOutputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssociatedAttributeGroupsOutput`](crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput
-    {
+    pub fn build(self) -> crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput {
         crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput {
-            attribute_groups: self.attribute_groups,
-            next_token: self.next_token,
+            attribute_groups: self.attribute_groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the result of a list suites request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSuitesOutput {
+pub struct ListSuitesOutput  {
     /// <p>Information about the suites.</p>
     #[doc(hidden)]
     pub suites: std::option::Option<std::vec::Vec<crate::types::Suite>>,
@@ -14,19 +14,19 @@ pub struct ListSuitesOutput {
 }
 impl ListSuitesOutput {
     /// <p>Information about the suites.</p>
-    pub fn suites(&self) -> std::option::Option<&[crate::types::Suite]> {
+    pub fn suites(&self) -> std::option::Option<& [crate::types::Suite]> {
         self.suites.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSuitesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSuitesOutput {
     /// Creates a new builder-style object to manufacture [`ListSuitesOutput`](crate::operation::list_suites::ListSuitesOutput).
     pub fn builder() -> crate::operation::list_suites::builders::ListSuitesOutputBuilder {
@@ -50,17 +50,13 @@ impl ListSuitesOutputBuilder {
     /// <p>Information about the suites.</p>
     pub fn suites(mut self, input: crate::types::Suite) -> Self {
         let mut v = self.suites.unwrap_or_default();
-        v.push(input);
-        self.suites = Some(v);
-        self
+                        v.push(input);
+                        self.suites = Some(v);
+                        self
     }
     /// <p>Information about the suites.</p>
-    pub fn set_suites(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Suite>>,
-    ) -> Self {
-        self.suites = input;
-        self
+    pub fn set_suites(mut self, input: std::option::Option<std::vec::Vec<crate::types::Suite>>) -> Self {
+        self.suites = input; self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +65,26 @@ impl ListSuitesOutputBuilder {
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSuitesOutput`](crate::operation::list_suites::ListSuitesOutput).
     pub fn build(self) -> crate::operation::list_suites::ListSuitesOutput {
         crate::operation::list_suites::ListSuitesOutput {
-            suites: self.suites,
-            next_token: self.next_token,
+            suites: self.suites
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

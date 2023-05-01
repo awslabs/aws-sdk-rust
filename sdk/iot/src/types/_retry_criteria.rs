@@ -3,7 +3,7 @@
 /// <p>The criteria that determines how many retries are allowed for each failure type for a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetryCriteria {
+pub struct RetryCriteria  {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
     #[doc(hidden)]
     pub failure_type: std::option::Option<crate::types::RetryableFailureType>,
@@ -13,7 +13,7 @@ pub struct RetryCriteria {
 }
 impl RetryCriteria {
     /// <p>The type of job execution failures that can initiate a job retry.</p>
-    pub fn failure_type(&self) -> std::option::Option<&crate::types::RetryableFailureType> {
+    pub fn failure_type(&self) -> std::option::Option<& crate::types::RetryableFailureType> {
         self.failure_type.as_ref()
     }
     /// <p>The number of retries allowed for a failure type for the job.</p>
@@ -42,12 +42,8 @@ impl RetryCriteriaBuilder {
         self
     }
     /// <p>The type of job execution failures that can initiate a job retry.</p>
-    pub fn set_failure_type(
-        mut self,
-        input: std::option::Option<crate::types::RetryableFailureType>,
-    ) -> Self {
-        self.failure_type = input;
-        self
+    pub fn set_failure_type(mut self, input: std::option::Option<crate::types::RetryableFailureType>) -> Self {
+        self.failure_type = input; self
     }
     /// <p>The number of retries allowed for a failure type for the job.</p>
     pub fn number_of_retries(mut self, input: i32) -> Self {
@@ -56,14 +52,16 @@ impl RetryCriteriaBuilder {
     }
     /// <p>The number of retries allowed for a failure type for the job.</p>
     pub fn set_number_of_retries(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_retries = input;
-        self
+        self.number_of_retries = input; self
     }
     /// Consumes the builder and constructs a [`RetryCriteria`](crate::types::RetryCriteria).
     pub fn build(self) -> crate::types::RetryCriteria {
         crate::types::RetryCriteria {
-            failure_type: self.failure_type,
-            number_of_retries: self.number_of_retries,
+            failure_type: self.failure_type
+            ,
+            number_of_retries: self.number_of_retries
+            ,
         }
     }
 }
+

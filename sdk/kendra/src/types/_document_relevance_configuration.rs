@@ -3,7 +3,7 @@
 /// <p>Overrides the document relevance properties of a custom index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentRelevanceConfiguration {
+pub struct DocumentRelevanceConfiguration  {
     /// <p>The name of the index field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DocumentRelevanceConfiguration {
 }
 impl DocumentRelevanceConfiguration {
     /// <p>The name of the index field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
-    pub fn relevance(&self) -> std::option::Option<&crate::types::Relevance> {
+    pub fn relevance(&self) -> std::option::Option<& crate::types::Relevance> {
         self.relevance.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DocumentRelevanceConfigurationBuilder {
     }
     /// <p>The name of the index field.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn relevance(mut self, input: crate::types::Relevance) -> Self {
@@ -53,14 +52,16 @@ impl DocumentRelevanceConfigurationBuilder {
     }
     /// <p>Provides information for tuning the relevance of a field in a search. When a query includes terms that match the field, the results are given a boost in the response based on these tuning parameters.</p>
     pub fn set_relevance(mut self, input: std::option::Option<crate::types::Relevance>) -> Self {
-        self.relevance = input;
-        self
+        self.relevance = input; self
     }
     /// Consumes the builder and constructs a [`DocumentRelevanceConfiguration`](crate::types::DocumentRelevanceConfiguration).
     pub fn build(self) -> crate::types::DocumentRelevanceConfiguration {
         crate::types::DocumentRelevanceConfiguration {
-            name: self.name,
-            relevance: self.relevance,
+            name: self.name
+            ,
+            relevance: self.relevance
+            ,
         }
     }
 }
+

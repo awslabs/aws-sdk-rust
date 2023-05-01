@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomalySubscriptionsOutput {
+pub struct GetAnomalySubscriptionsOutput  {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
     #[doc(hidden)]
-    pub anomaly_subscriptions:
-        std::option::Option<std::vec::Vec<crate::types::AnomalySubscription>>,
+    pub anomaly_subscriptions: std::option::Option<std::vec::Vec<crate::types::AnomalySubscription>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct GetAnomalySubscriptionsOutput {
 }
 impl GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-    pub fn anomaly_subscriptions(
-        &self,
-    ) -> std::option::Option<&[crate::types::AnomalySubscription]> {
+    pub fn anomaly_subscriptions(&self) -> std::option::Option<& [crate::types::AnomalySubscription]> {
         self.anomaly_subscriptions.as_deref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAnomalySubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAnomalySubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetAnomalySubscriptionsOutput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsOutputBuilder {
         crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl GetAnomalySubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsOutputBuilder {
-    pub(crate) anomaly_subscriptions:
-        std::option::Option<std::vec::Vec<crate::types::AnomalySubscription>>,
+    pub(crate) anomaly_subscriptions: std::option::Option<std::vec::Vec<crate::types::AnomalySubscription>>,
     pub(crate) next_page_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl GetAnomalySubscriptionsOutputBuilder {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
     pub fn anomaly_subscriptions(mut self, input: crate::types::AnomalySubscription) -> Self {
         let mut v = self.anomaly_subscriptions.unwrap_or_default();
-        v.push(input);
-        self.anomaly_subscriptions = Some(v);
-        self
+                        v.push(input);
+                        self.anomaly_subscriptions = Some(v);
+                        self
     }
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
-    pub fn set_anomaly_subscriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnomalySubscription>>,
-    ) -> Self {
-        self.anomaly_subscriptions = input;
-        self
+    pub fn set_anomaly_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnomalySubscription>>) -> Self {
+        self.anomaly_subscriptions = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,26 +64,26 @@ impl GetAnomalySubscriptionsOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAnomalySubscriptionsOutput`](crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput {
+    pub fn build(self) -> crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput {
         crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput {
-            anomaly_subscriptions: self.anomaly_subscriptions,
-            next_page_token: self.next_page_token,
+            anomaly_subscriptions: self.anomaly_subscriptions
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

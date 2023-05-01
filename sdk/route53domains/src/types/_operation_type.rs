@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operationtype = unimplemented!();
 /// match operationtype {
@@ -46,22 +46,14 @@
 /// Specifically, when `operationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     AddDnssec,
@@ -100,93 +92,73 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     UpdateNameserver,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ADD_DNSSEC" => OperationType::AddDnssec,
-            "CHANGE_DOMAIN_OWNER" => OperationType::ChangeDomainOwner,
-            "CHANGE_PRIVACY_PROTECTION" => OperationType::ChangePrivacyProtection,
-            "DELETE_DOMAIN" => OperationType::DeleteDomain,
-            "DISABLE_AUTORENEW" => OperationType::DisableAutorenew,
-            "DOMAIN_LOCK" => OperationType::DomainLock,
-            "ENABLE_AUTORENEW" => OperationType::EnableAutorenew,
-            "EXPIRE_DOMAIN" => OperationType::ExpireDomain,
-            "INTERNAL_TRANSFER_IN_DOMAIN" => OperationType::InternalTransferInDomain,
-            "INTERNAL_TRANSFER_OUT_DOMAIN" => OperationType::InternalTransferOutDomain,
-            "PUSH_DOMAIN" => OperationType::PushDomain,
-            "REGISTER_DOMAIN" => OperationType::RegisterDomain,
-            "REMOVE_DNSSEC" => OperationType::RemoveDnssec,
-            "RENEW_DOMAIN" => OperationType::RenewDomain,
-            "TRANSFER_IN_DOMAIN" => OperationType::TransferInDomain,
-            "TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
-            "UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
-            "UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
-            other => {
-                OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ADD_DNSSEC" => OperationType::AddDnssec,
+"CHANGE_DOMAIN_OWNER" => OperationType::ChangeDomainOwner,
+"CHANGE_PRIVACY_PROTECTION" => OperationType::ChangePrivacyProtection,
+"DELETE_DOMAIN" => OperationType::DeleteDomain,
+"DISABLE_AUTORENEW" => OperationType::DisableAutorenew,
+"DOMAIN_LOCK" => OperationType::DomainLock,
+"ENABLE_AUTORENEW" => OperationType::EnableAutorenew,
+"EXPIRE_DOMAIN" => OperationType::ExpireDomain,
+"INTERNAL_TRANSFER_IN_DOMAIN" => OperationType::InternalTransferInDomain,
+"INTERNAL_TRANSFER_OUT_DOMAIN" => OperationType::InternalTransferOutDomain,
+"PUSH_DOMAIN" => OperationType::PushDomain,
+"REGISTER_DOMAIN" => OperationType::RegisterDomain,
+"REMOVE_DNSSEC" => OperationType::RemoveDnssec,
+"RENEW_DOMAIN" => OperationType::RenewDomain,
+"TRANSFER_IN_DOMAIN" => OperationType::TransferInDomain,
+"TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
+"UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
+"UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
+other => OperationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for OperationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperationType::from(s))
+                }
+            }
 impl OperationType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OperationType::AddDnssec => "ADD_DNSSEC",
-            OperationType::ChangeDomainOwner => "CHANGE_DOMAIN_OWNER",
-            OperationType::ChangePrivacyProtection => "CHANGE_PRIVACY_PROTECTION",
-            OperationType::DeleteDomain => "DELETE_DOMAIN",
-            OperationType::DisableAutorenew => "DISABLE_AUTORENEW",
-            OperationType::DomainLock => "DOMAIN_LOCK",
-            OperationType::EnableAutorenew => "ENABLE_AUTORENEW",
-            OperationType::ExpireDomain => "EXPIRE_DOMAIN",
-            OperationType::InternalTransferInDomain => "INTERNAL_TRANSFER_IN_DOMAIN",
-            OperationType::InternalTransferOutDomain => "INTERNAL_TRANSFER_OUT_DOMAIN",
-            OperationType::PushDomain => "PUSH_DOMAIN",
-            OperationType::RegisterDomain => "REGISTER_DOMAIN",
-            OperationType::RemoveDnssec => "REMOVE_DNSSEC",
-            OperationType::RenewDomain => "RENEW_DOMAIN",
-            OperationType::TransferInDomain => "TRANSFER_IN_DOMAIN",
-            OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
-            OperationType::UpdateDomainContact => "UPDATE_DOMAIN_CONTACT",
-            OperationType::UpdateNameserver => "UPDATE_NAMESERVER",
-            OperationType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ADD_DNSSEC",
-            "CHANGE_DOMAIN_OWNER",
-            "CHANGE_PRIVACY_PROTECTION",
-            "DELETE_DOMAIN",
-            "DISABLE_AUTORENEW",
-            "DOMAIN_LOCK",
-            "ENABLE_AUTORENEW",
-            "EXPIRE_DOMAIN",
-            "INTERNAL_TRANSFER_IN_DOMAIN",
-            "INTERNAL_TRANSFER_OUT_DOMAIN",
-            "PUSH_DOMAIN",
-            "REGISTER_DOMAIN",
-            "REMOVE_DNSSEC",
-            "RENEW_DOMAIN",
-            "TRANSFER_IN_DOMAIN",
-            "TRANSFER_OUT_DOMAIN",
-            "UPDATE_DOMAIN_CONTACT",
-            "UPDATE_NAMESERVER",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OperationType::AddDnssec => "ADD_DNSSEC",
+    OperationType::ChangeDomainOwner => "CHANGE_DOMAIN_OWNER",
+    OperationType::ChangePrivacyProtection => "CHANGE_PRIVACY_PROTECTION",
+    OperationType::DeleteDomain => "DELETE_DOMAIN",
+    OperationType::DisableAutorenew => "DISABLE_AUTORENEW",
+    OperationType::DomainLock => "DOMAIN_LOCK",
+    OperationType::EnableAutorenew => "ENABLE_AUTORENEW",
+    OperationType::ExpireDomain => "EXPIRE_DOMAIN",
+    OperationType::InternalTransferInDomain => "INTERNAL_TRANSFER_IN_DOMAIN",
+    OperationType::InternalTransferOutDomain => "INTERNAL_TRANSFER_OUT_DOMAIN",
+    OperationType::PushDomain => "PUSH_DOMAIN",
+    OperationType::RegisterDomain => "REGISTER_DOMAIN",
+    OperationType::RemoveDnssec => "REMOVE_DNSSEC",
+    OperationType::RenewDomain => "RENEW_DOMAIN",
+    OperationType::TransferInDomain => "TRANSFER_IN_DOMAIN",
+    OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
+    OperationType::UpdateDomainContact => "UPDATE_DOMAIN_CONTACT",
+    OperationType::UpdateNameserver => "UPDATE_NAMESERVER",
+    OperationType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ADD_DNSSEC", "CHANGE_DOMAIN_OWNER", "CHANGE_PRIVACY_PROTECTION", "DELETE_DOMAIN", "DISABLE_AUTORENEW", "DOMAIN_LOCK", "ENABLE_AUTORENEW", "EXPIRE_DOMAIN", "INTERNAL_TRANSFER_IN_DOMAIN", "INTERNAL_TRANSFER_OUT_DOMAIN", "PUSH_DOMAIN", "REGISTER_DOMAIN", "REMOVE_DNSSEC", "RENEW_DOMAIN", "TRANSFER_IN_DOMAIN", "TRANSFER_OUT_DOMAIN", "UPDATE_DOMAIN_CONTACT", "UPDATE_NAMESERVER"]
+                }
+            }
 impl AsRef<str> for OperationType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

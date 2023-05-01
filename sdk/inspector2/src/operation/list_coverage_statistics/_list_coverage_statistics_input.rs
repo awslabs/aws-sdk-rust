@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoverageStatisticsInput {
+pub struct ListCoverageStatisticsInput  {
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::types::CoverageFilterCriteria>,
@@ -15,23 +15,21 @@ pub struct ListCoverageStatisticsInput {
 }
 impl ListCoverageStatisticsInput {
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::types::CoverageFilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::types::CoverageFilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The value to group the results by.</p>
-    pub fn group_by(&self) -> std::option::Option<&crate::types::GroupKey> {
+    pub fn group_by(&self) -> std::option::Option<& crate::types::GroupKey> {
         self.group_by.as_ref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListCoverageStatisticsInput {
     /// Creates a new builder-style object to manufacture [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
-    pub fn builder(
-    ) -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder {
         crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl ListCoverageStatisticsInputBuilder {
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: std::option::Option<crate::types::CoverageFilterCriteria>,
-    ) -> Self {
-        self.filter_criteria = input;
-        self
+    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
+        self.filter_criteria = input; self
     }
     /// <p>The value to group the results by.</p>
     pub fn group_by(mut self, input: crate::types::GroupKey) -> Self {
@@ -65,8 +59,7 @@ impl ListCoverageStatisticsInputBuilder {
     }
     /// <p>The value to group the results by.</p>
     pub fn set_group_by(mut self, input: std::option::Option<crate::types::GroupKey>) -> Self {
-        self.group_by = input;
-        self
+        self.group_by = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl ListCoverageStatisticsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListCoverageStatisticsInput`](crate::operation::list_coverage_statistics::ListCoverageStatisticsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_coverage_statistics::ListCoverageStatisticsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_coverage_statistics::ListCoverageStatisticsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_coverage_statistics::ListCoverageStatisticsInput {
-                filter_criteria: self.filter_criteria,
-                group_by: self.group_by,
-                next_token: self.next_token,
-            },
+                filter_criteria: self.filter_criteria
+                ,
+                group_by: self.group_by
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

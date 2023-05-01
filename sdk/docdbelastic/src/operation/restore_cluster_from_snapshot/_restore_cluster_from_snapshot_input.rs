@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreClusterFromSnapshotInput {
+pub struct RestoreClusterFromSnapshotInput  {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -15,50 +15,46 @@ pub struct RestoreClusterFromSnapshotInput {
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p> 
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p> 
     /// <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RestoreClusterFromSnapshotInput {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p> 
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p> 
     /// <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl RestoreClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
-    pub fn builder() -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder {
         crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder::default()
     }
 }
@@ -72,8 +68,7 @@ pub struct RestoreClusterFromSnapshotInputBuilder {
     pub(crate) vpc_security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RestoreClusterFromSnapshotInputBuilder {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
@@ -83,8 +78,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
     }
     /// <p>The name of the Elastic DocumentDB cluster.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
     pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +87,7 @@ impl RestoreClusterFromSnapshotInputBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_arn = input;
-        self
+        self.snapshot_arn = input; self
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -103,17 +96,13 @@ impl RestoreClusterFromSnapshotInputBuilder {
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
     pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = Some(v);
+                        self
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -122,73 +111,60 @@ impl RestoreClusterFromSnapshotInputBuilder {
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
-    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p> 
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p> 
     /// <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p> 
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p> 
     /// <p>If an encryption key is not specified here, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A list of the tag names to be assigned to the restored DB cluster, in the form of an array of key-value pairs in which the key is the tag name and the value is the key value.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput {
-                cluster_name: self.cluster_name,
-                snapshot_arn: self.snapshot_arn,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                subnet_ids: self.subnet_ids,
-                kms_key_id: self.kms_key_id,
-                tags: self.tags,
-            },
+                cluster_name: self.cluster_name
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

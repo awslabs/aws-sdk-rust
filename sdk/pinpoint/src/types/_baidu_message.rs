@@ -3,11 +3,11 @@
 /// <p>Specifies the settings for a one-time message that's sent directly to an endpoint through the Baidu (Baidu Cloud Push) channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BaiduMessage {
-    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
+pub struct BaiduMessage  {
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> 
     /// <ul>
-    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> 
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> 
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -17,8 +17,7 @@ pub struct BaiduMessage {
     pub body: std::option::Option<std::string::String>,
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
     #[doc(hidden)]
-    pub data:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub data: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The icon image name of the asset saved in your app.</p>
     #[doc(hidden)]
     pub icon_reference: std::option::Option<std::string::String>,
@@ -42,9 +41,7 @@ pub struct BaiduMessage {
     pub sound: std::option::Option<std::string::String>,
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub substitutions: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     /// <p>The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).</p>
     #[doc(hidden)]
     pub time_to_live: i32,
@@ -56,40 +53,37 @@ pub struct BaiduMessage {
     pub url: std::option::Option<std::string::String>,
 }
 impl BaiduMessage {
-    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> 
     /// <ul>
-    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> 
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> 
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>The body of the notification message.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn data(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.data.as_ref()
     }
     /// <p>The icon image name of the asset saved in your app.</p>
-    pub fn icon_reference(&self) -> std::option::Option<&str> {
+    pub fn icon_reference(&self) -> std::option::Option<& str> {
         self.icon_reference.as_deref()
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
-    pub fn image_icon_url(&self) -> std::option::Option<&str> {
+    pub fn image_icon_url(&self) -> std::option::Option<& str> {
         self.image_icon_url.as_deref()
     }
     /// <p>The URL of an image to display in the push notification.</p>
-    pub fn image_url(&self) -> std::option::Option<&str> {
+    pub fn image_url(&self) -> std::option::Option<& str> {
         self.image_url.as_deref()
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
-    pub fn raw_content(&self) -> std::option::Option<&str> {
+    pub fn raw_content(&self) -> std::option::Option<& str> {
         self.raw_content.as_deref()
     }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
@@ -97,19 +91,15 @@ impl BaiduMessage {
         self.silent_push
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    pub fn small_image_icon_url(&self) -> std::option::Option<&str> {
+    pub fn small_image_icon_url(&self) -> std::option::Option<& str> {
         self.small_image_icon_url.as_deref()
     }
     /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
-    pub fn sound(&self) -> std::option::Option<&str> {
+    pub fn sound(&self) -> std::option::Option<& str> {
         self.sound.as_deref()
     }
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn substitutions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.substitutions.as_ref()
     }
     /// <p>The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).</p>
@@ -117,11 +107,11 @@ impl BaiduMessage {
         self.time_to_live
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -138,8 +128,7 @@ impl BaiduMessage {
 pub struct BaiduMessageBuilder {
     pub(crate) action: std::option::Option<crate::types::Action>,
     pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) data:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) data: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) icon_reference: std::option::Option<std::string::String>,
     pub(crate) image_icon_url: std::option::Option<std::string::String>,
     pub(crate) image_url: std::option::Option<std::string::String>,
@@ -147,33 +136,30 @@ pub struct BaiduMessageBuilder {
     pub(crate) silent_push: std::option::Option<bool>,
     pub(crate) small_image_icon_url: std::option::Option<std::string::String>,
     pub(crate) sound: std::option::Option<std::string::String>,
-    pub(crate) substitutions: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub(crate) substitutions: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
     pub(crate) time_to_live: std::option::Option<i32>,
     pub(crate) title: std::option::Option<std::string::String>,
     pub(crate) url: std::option::Option<std::string::String>,
 }
 impl BaiduMessageBuilder {
-    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> 
     /// <ul>
-    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> 
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> 
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn action(mut self, input: crate::types::Action) -> Self {
         self.action = Some(input);
         self
     }
-    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p>
+    /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> 
     /// <ul>
-    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li>
-    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li>
+    /// <li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> 
+    /// <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> 
     /// <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li>
     /// </ul>
     pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The body of the notification message.</p>
     pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,33 +168,22 @@ impl BaiduMessageBuilder {
     }
     /// <p>The body of the notification message.</p>
     pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// Adds a key-value pair to `data`.
     ///
     /// To override the contents of this collection use [`set_data`](Self::set_data).
     ///
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn data(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn data(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.data.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.data = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.data = Some(hash_map);
+                        self
     }
     /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
-    pub fn set_data(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.data = input; self
     }
     /// <p>The icon image name of the asset saved in your app.</p>
     pub fn icon_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,8 +192,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>The icon image name of the asset saved in your app.</p>
     pub fn set_icon_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.icon_reference = input;
-        self
+        self.icon_reference = input; self
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
     pub fn image_icon_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,8 +201,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
     pub fn set_image_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_icon_url = input;
-        self
+        self.image_icon_url = input; self
     }
     /// <p>The URL of an image to display in the push notification.</p>
     pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -237,8 +210,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>The URL of an image to display in the push notification.</p>
     pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_url = input;
-        self
+        self.image_url = input; self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
     pub fn raw_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,8 +219,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
     pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raw_content = input;
-        self
+        self.raw_content = input; self
     }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
     pub fn silent_push(mut self, input: bool) -> Self {
@@ -257,8 +228,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
     pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
-        self.silent_push = input;
-        self
+        self.silent_push = input; self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
     pub fn small_image_icon_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,12 +236,8 @@ impl BaiduMessageBuilder {
         self
     }
     /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
-    pub fn set_small_image_icon_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.small_image_icon_url = input;
-        self
+    pub fn set_small_image_icon_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.small_image_icon_url = input; self
     }
     /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     pub fn sound(mut self, input: impl Into<std::string::String>) -> Self {
@@ -280,33 +246,22 @@ impl BaiduMessageBuilder {
     }
     /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
     pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sound = input;
-        self
+        self.sound = input; self
     }
     /// Adds a key-value pair to `substitutions`.
     ///
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
-    pub fn substitutions(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
-    ) -> Self {
+    pub fn substitutions(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.substitutions = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.substitutions = Some(hash_map);
+                        self
     }
     /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
-    pub fn set_substitutions(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-    ) -> Self {
-        self.substitutions = input;
-        self
+    pub fn set_substitutions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+        self.substitutions = input; self
     }
     /// <p>The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
@@ -315,8 +270,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).</p>
     pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-        self.time_to_live = input;
-        self
+        self.time_to_live = input; self
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -325,8 +279,7 @@ impl BaiduMessageBuilder {
     }
     /// <p>The title to display above the notification message on the recipient's device.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -335,26 +288,42 @@ impl BaiduMessageBuilder {
     }
     /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// Consumes the builder and constructs a [`BaiduMessage`](crate::types::BaiduMessage).
     pub fn build(self) -> crate::types::BaiduMessage {
         crate::types::BaiduMessage {
-            action: self.action,
-            body: self.body,
-            data: self.data,
-            icon_reference: self.icon_reference,
-            image_icon_url: self.image_icon_url,
-            image_url: self.image_url,
-            raw_content: self.raw_content,
-            silent_push: self.silent_push.unwrap_or_default(),
-            small_image_icon_url: self.small_image_icon_url,
-            sound: self.sound,
-            substitutions: self.substitutions,
-            time_to_live: self.time_to_live.unwrap_or_default(),
-            title: self.title,
-            url: self.url,
+            action: self.action
+            ,
+            body: self.body
+            ,
+            data: self.data
+            ,
+            icon_reference: self.icon_reference
+            ,
+            image_icon_url: self.image_icon_url
+            ,
+            image_url: self.image_url
+            ,
+            raw_content: self.raw_content
+            ,
+            silent_push: self.silent_push
+                .unwrap_or_default()
+            ,
+            small_image_icon_url: self.small_image_icon_url
+            ,
+            sound: self.sound
+            ,
+            substitutions: self.substitutions
+            ,
+            time_to_live: self.time_to_live
+                .unwrap_or_default()
+            ,
+            title: self.title
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// The settings for a MediaConnect Flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaConnectFlow {
+pub struct MediaConnectFlow  {
     /// The unique ARN of the MediaConnect Flow being used as a source.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl MediaConnectFlow {
     /// The unique ARN of the MediaConnect Flow being used as a source.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl MediaConnectFlowBuilder {
     }
     /// The unique ARN of the MediaConnect Flow being used as a source.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// Consumes the builder and constructs a [`MediaConnectFlow`](crate::types::MediaConnectFlow).
     pub fn build(self) -> crate::types::MediaConnectFlow {
         crate::types::MediaConnectFlow {
-            flow_arn: self.flow_arn,
+            flow_arn: self.flow_arn
+            ,
         }
     }
 }
+

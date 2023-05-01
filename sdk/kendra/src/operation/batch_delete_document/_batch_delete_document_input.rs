@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDocumentInput {
+pub struct BatchDeleteDocumentInput  {
     /// <p>The identifier of the index that contains the documents to delete.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -11,31 +11,26 @@ pub struct BatchDeleteDocumentInput {
     pub document_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Maps a particular data source sync job to a particular data source.</p>
     #[doc(hidden)]
-    pub data_source_sync_job_metric_target:
-        std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
+    pub data_source_sync_job_metric_target: std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
 }
 impl BatchDeleteDocumentInput {
     /// <p>The identifier of the index that contains the documents to delete.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn document_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn document_id_list(&self) -> std::option::Option<& [std::string::String]> {
         self.document_id_list.as_deref()
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn data_source_sync_job_metric_target(
-        &self,
-    ) -> std::option::Option<&crate::types::DataSourceSyncJobMetricTarget> {
+    pub fn data_source_sync_job_metric_target(&self) -> std::option::Option<& crate::types::DataSourceSyncJobMetricTarget> {
         self.data_source_sync_job_metric_target.as_ref()
     }
 }
 impl BatchDeleteDocumentInput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
-    pub fn builder(
-    ) -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
-        crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder {
+        crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder::default()
     }
 }
 
@@ -45,8 +40,7 @@ impl BatchDeleteDocumentInput {
 pub struct BatchDeleteDocumentInputBuilder {
     pub(crate) index_id: std::option::Option<std::string::String>,
     pub(crate) document_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) data_source_sync_job_metric_target:
-        std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
+    pub(crate) data_source_sync_job_metric_target: std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
 }
 impl BatchDeleteDocumentInputBuilder {
     /// <p>The identifier of the index that contains the documents to delete.</p>
@@ -56,8 +50,7 @@ impl BatchDeleteDocumentInputBuilder {
     }
     /// <p>The identifier of the index that contains the documents to delete.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// Appends an item to `document_id_list`.
     ///
@@ -66,47 +59,35 @@ impl BatchDeleteDocumentInputBuilder {
     /// <p>One or more identifiers for documents to delete from the index.</p>
     pub fn document_id_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.document_id_list.unwrap_or_default();
-        v.push(input.into());
-        self.document_id_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.document_id_list = Some(v);
+                        self
     }
     /// <p>One or more identifiers for documents to delete from the index.</p>
-    pub fn set_document_id_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.document_id_list = input;
-        self
+    pub fn set_document_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.document_id_list = input; self
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn data_source_sync_job_metric_target(
-        mut self,
-        input: crate::types::DataSourceSyncJobMetricTarget,
-    ) -> Self {
+    pub fn data_source_sync_job_metric_target(mut self, input: crate::types::DataSourceSyncJobMetricTarget) -> Self {
         self.data_source_sync_job_metric_target = Some(input);
         self
     }
     /// <p>Maps a particular data source sync job to a particular data source.</p>
-    pub fn set_data_source_sync_job_metric_target(
-        mut self,
-        input: std::option::Option<crate::types::DataSourceSyncJobMetricTarget>,
-    ) -> Self {
-        self.data_source_sync_job_metric_target = input;
-        self
+    pub fn set_data_source_sync_job_metric_target(mut self, input: std::option::Option<crate::types::DataSourceSyncJobMetricTarget>) -> Self {
+        self.data_source_sync_job_metric_target = input; self
     }
     /// Consumes the builder and constructs a [`BatchDeleteDocumentInput`](crate::operation::batch_delete_document::BatchDeleteDocumentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_delete_document::BatchDeleteDocumentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_delete_document::BatchDeleteDocumentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_delete_document::BatchDeleteDocumentInput {
-                index_id: self.index_id,
-                document_id_list: self.document_id_list,
-                data_source_sync_job_metric_target: self.data_source_sync_job_metric_target,
-            },
+                index_id: self.index_id
+                ,
+                document_id_list: self.document_id_list
+                ,
+                data_source_sync_job_metric_target: self.data_source_sync_job_metric_target
+                ,
+            }
         )
     }
 }
+

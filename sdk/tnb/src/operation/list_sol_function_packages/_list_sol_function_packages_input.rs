@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSolFunctionPackagesInput {
+pub struct ListSolFunctionPackagesInput  {
     /// <p>The maximum number of results to include in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,15 +16,13 @@ impl ListSolFunctionPackagesInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListSolFunctionPackagesInput {
     /// Creates a new builder-style object to manufacture [`ListSolFunctionPackagesInput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput).
-    pub fn builder(
-    ) -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder {
         crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl ListSolFunctionPackagesInputBuilder {
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl ListSolFunctionPackagesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListSolFunctionPackagesInput`](crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_sol_function_packages::ListSolFunctionPackagesInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

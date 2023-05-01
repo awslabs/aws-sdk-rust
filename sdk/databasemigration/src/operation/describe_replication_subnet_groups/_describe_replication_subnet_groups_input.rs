@@ -3,13 +3,13 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReplicationSubnetGroupsInput {
-    /// <p>Filters applied to replication subnet groups.</p>
+pub struct DescribeReplicationSubnetGroupsInput  {
+    /// <p>Filters applied to replication subnet groups.</p> 
     /// <p>Valid filter names: replication-subnet-group-id</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -18,25 +18,25 @@ pub struct DescribeReplicationSubnetGroupsInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeReplicationSubnetGroupsInput {
-    /// <p>Filters applied to replication subnet groups.</p>
+    /// <p>Filters applied to replication subnet groups.</p> 
     /// <p>Valid filter names: replication-subnet-group-id</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeReplicationSubnetGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReplicationSubnetGroupsInput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput).
-    pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsInputBuilder {
         crate::operation::describe_replication_subnet_groups::builders::DescribeReplicationSubnetGroupsInputBuilder::default()
     }
 }
@@ -54,36 +54,31 @@ impl DescribeReplicationSubnetGroupsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters applied to replication subnet groups.</p>
+    /// <p>Filters applied to replication subnet groups.</p> 
     /// <p>Valid filter names: replication-subnet-group-id</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Filters applied to replication subnet groups.</p>
+    /// <p>Filters applied to replication subnet groups.</p> 
     /// <p>Valid filter names: replication-subnet-group-id</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +87,10 @@ impl DescribeReplicationSubnetGroupsInputBuilder {
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReplicationSubnetGroupsInput`](crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_replication_subnet_groups::DescribeReplicationSubnetGroupsInput {
                 filters: self.filters
@@ -114,3 +103,4 @@ impl DescribeReplicationSubnetGroupsInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies either the application code, or the location of the application code, for a Flink-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeContent {
+pub struct CodeContent  {
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub text_content: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CodeContent {
 }
 impl CodeContent {
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn text_content(&self) -> std::option::Option<&str> {
+    pub fn text_content(&self) -> std::option::Option<& str> {
         self.text_content.as_deref()
     }
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn zip_file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn zip_file_content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.zip_file_content.as_ref()
     }
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
-    pub fn s3_content_location(&self) -> std::option::Option<&crate::types::S3ContentLocation> {
+    pub fn s3_content_location(&self) -> std::option::Option<& crate::types::S3ContentLocation> {
         self.s3_content_location.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl CodeContentBuilder {
     }
     /// <p>The text-format code for a Flink-based Kinesis Data Analytics application.</p>
     pub fn set_text_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text_content = input;
-        self
+        self.text_content = input; self
     }
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
     pub fn zip_file_content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -60,12 +59,8 @@ impl CodeContentBuilder {
         self
     }
     /// <p>The zip-format code for a Flink-based Kinesis Data Analytics application.</p>
-    pub fn set_zip_file_content(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.zip_file_content = input;
-        self
+    pub fn set_zip_file_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.zip_file_content = input; self
     }
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
     pub fn s3_content_location(mut self, input: crate::types::S3ContentLocation) -> Self {
@@ -73,19 +68,19 @@ impl CodeContentBuilder {
         self
     }
     /// <p>Information about the Amazon S3 bucket that contains the application code.</p>
-    pub fn set_s3_content_location(
-        mut self,
-        input: std::option::Option<crate::types::S3ContentLocation>,
-    ) -> Self {
-        self.s3_content_location = input;
-        self
+    pub fn set_s3_content_location(mut self, input: std::option::Option<crate::types::S3ContentLocation>) -> Self {
+        self.s3_content_location = input; self
     }
     /// Consumes the builder and constructs a [`CodeContent`](crate::types::CodeContent).
     pub fn build(self) -> crate::types::CodeContent {
         crate::types::CodeContent {
-            text_content: self.text_content,
-            zip_file_content: self.zip_file_content,
-            s3_content_location: self.s3_content_location,
+            text_content: self.text_content
+            ,
+            zip_file_content: self.zip_file_content
+            ,
+            s3_content_location: self.s3_content_location
+            ,
         }
     }
 }
+

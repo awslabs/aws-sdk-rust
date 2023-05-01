@@ -3,7 +3,7 @@
 /// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerManagedChannelS3Storage {
+pub struct CustomerManagedChannelS3Storage  {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CustomerManagedChannelS3Storage {
 }
 impl CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
-    pub fn key_prefix(&self) -> std::option::Option<&str> {
+    pub fn key_prefix(&self) -> std::option::Option<& str> {
         self.key_prefix.as_deref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CustomerManagedChannelS3StorageBuilder {
     }
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CustomerManagedChannelS3StorageBuilder {
     }
     /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_prefix = input;
-        self
+        self.key_prefix = input; self
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl CustomerManagedChannelS3StorageBuilder {
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`CustomerManagedChannelS3Storage`](crate::types::CustomerManagedChannelS3Storage).
     pub fn build(self) -> crate::types::CustomerManagedChannelS3Storage {
         crate::types::CustomerManagedChannelS3Storage {
-            bucket: self.bucket,
-            key_prefix: self.key_prefix,
-            role_arn: self.role_arn,
+            bucket: self.bucket
+            ,
+            key_prefix: self.key_prefix
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

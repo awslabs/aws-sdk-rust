@@ -3,7 +3,7 @@
 /// <p>Contains the output of PurchaseReservedInstancesOffering.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedInstancesOfferingOutput {
+pub struct PurchaseReservedInstancesOfferingOutput  {
     /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     #[doc(hidden)]
     pub reserved_instances_id: std::option::Option<std::string::String>,
@@ -11,18 +11,18 @@ pub struct PurchaseReservedInstancesOfferingOutput {
 }
 impl PurchaseReservedInstancesOfferingOutput {
     /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_id(&self) -> std::option::Option<& str> {
         self.reserved_instances_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PurchaseReservedInstancesOfferingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PurchaseReservedInstancesOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstancesOfferingOutput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingOutputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingOutputBuilder {
         crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingOutputBuilder::default()
     }
 }
@@ -41,24 +41,20 @@ impl PurchaseReservedInstancesOfferingOutputBuilder {
         self
     }
     /// <p>The IDs of the purchased Reserved Instances. If your purchase crosses into a discounted pricing tier, the final Reserved Instances IDs might change. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-reserved-instances-application.html#crossing-pricing-tiers">Crossing pricing tiers</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_reserved_instances_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.reserved_instances_id = input;
-        self
+    pub fn set_reserved_instances_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.reserved_instances_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PurchaseReservedInstancesOfferingOutput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput).
-    pub fn build(self) -> crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput{
+    pub fn build(self) -> crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput {
         crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingOutput {
             reserved_instances_id: self.reserved_instances_id
             ,
@@ -66,3 +62,4 @@ impl PurchaseReservedInstancesOfferingOutputBuilder {
         }
     }
 }
+

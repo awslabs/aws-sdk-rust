@@ -3,14 +3,14 @@
 /// <p>The filter that specifies the Amazon Resource Names (ARNs) of pricing plans, to retrieve pricing plan information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingPlansFilter {
+pub struct ListPricingPlansFilter  {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListPricingPlansFilter {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arns(&self) -> std::option::Option<& [std::string::String]> {
         self.arns.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl ListPricingPlansFilterBuilder {
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = Some(v);
+                        self
     }
     /// <p>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn set_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// Consumes the builder and constructs a [`ListPricingPlansFilter`](crate::types::ListPricingPlansFilter).
     pub fn build(self) -> crate::types::ListPricingPlansFilter {
-        crate::types::ListPricingPlansFilter { arns: self.arns }
+        crate::types::ListPricingPlansFilter {
+            arns: self.arns
+            ,
+        }
     }
 }
+

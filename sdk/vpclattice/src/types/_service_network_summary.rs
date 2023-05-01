@@ -3,7 +3,7 @@
 /// <p>Summary information about a service network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceNetworkSummary {
+pub struct ServiceNetworkSummary  {
     /// <p>The ID of the service network.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -28,23 +28,23 @@ pub struct ServiceNetworkSummary {
 }
 impl ServiceNetworkSummary {
     /// <p>The ID of the service network.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the service network.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The number of VPCs associated with the service network.</p>
@@ -83,8 +83,7 @@ impl ServiceNetworkSummaryBuilder {
     }
     /// <p>The ID of the service network.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the service network.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl ServiceNetworkSummaryBuilder {
     }
     /// <p>The name of the service network.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +101,7 @@ impl ServiceNetworkSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -112,12 +109,8 @@ impl ServiceNetworkSummaryBuilder {
         self
     }
     /// <p>The date and time that the service network was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,12 +118,8 @@ impl ServiceNetworkSummaryBuilder {
         self
     }
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p>The number of VPCs associated with the service network.</p>
     pub fn number_of_associated_vp_cs(mut self, input: i64) -> Self {
@@ -139,8 +128,7 @@ impl ServiceNetworkSummaryBuilder {
     }
     /// <p>The number of VPCs associated with the service network.</p>
     pub fn set_number_of_associated_vp_cs(mut self, input: std::option::Option<i64>) -> Self {
-        self.number_of_associated_vp_cs = input;
-        self
+        self.number_of_associated_vp_cs = input; self
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(mut self, input: i64) -> Self {
@@ -149,19 +137,26 @@ impl ServiceNetworkSummaryBuilder {
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn set_number_of_associated_services(mut self, input: std::option::Option<i64>) -> Self {
-        self.number_of_associated_services = input;
-        self
+        self.number_of_associated_services = input; self
     }
     /// Consumes the builder and constructs a [`ServiceNetworkSummary`](crate::types::ServiceNetworkSummary).
     pub fn build(self) -> crate::types::ServiceNetworkSummary {
         crate::types::ServiceNetworkSummary {
-            id: self.id,
-            name: self.name,
-            arn: self.arn,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            number_of_associated_vp_cs: self.number_of_associated_vp_cs,
-            number_of_associated_services: self.number_of_associated_services,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            number_of_associated_vp_cs: self.number_of_associated_vp_cs
+            ,
+            number_of_associated_services: self.number_of_associated_services
+            ,
         }
     }
 }
+

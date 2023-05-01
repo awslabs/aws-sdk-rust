@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProtectedResourceInput {
+pub struct DescribeProtectedResourceInput  {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProtectedResourceInput {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl DescribeProtectedResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectedResourceInput`](crate::operation::describe_protected_resource::DescribeProtectedResourceInput).
-    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder{
+    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder {
         crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeProtectedResourceInputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProtectedResourceInput`](crate::operation::describe_protected_resource::DescribeProtectedResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_protected_resource::DescribeProtectedResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_protected_resource::DescribeProtectedResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_protected_resource::DescribeProtectedResourceInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

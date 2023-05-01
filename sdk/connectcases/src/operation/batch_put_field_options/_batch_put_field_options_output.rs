@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutFieldOptionsOutput {
+pub struct BatchPutFieldOptionsOutput  {
     /// <p>A list of field errors. </p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::FieldOptionError>>,
@@ -10,20 +10,18 @@ pub struct BatchPutFieldOptionsOutput {
 }
 impl BatchPutFieldOptionsOutput {
     /// <p>A list of field errors. </p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::FieldOptionError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::FieldOptionError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchPutFieldOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchPutFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchPutFieldOptionsOutput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsOutputBuilder {
         crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsOutputBuilder::default()
     }
 }
@@ -43,32 +41,30 @@ impl BatchPutFieldOptionsOutputBuilder {
     /// <p>A list of field errors. </p>
     pub fn errors(mut self, input: crate::types::FieldOptionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>A list of field errors. </p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldOptionError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldOptionError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchPutFieldOptionsOutput`](crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput).
     pub fn build(self) -> crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput {
         crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when resolving conflicts during a merge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictResolution {
+pub struct ConflictResolution  {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
     #[doc(hidden)]
     pub replace_contents: std::option::Option<std::vec::Vec<crate::types::ReplaceContentEntry>>,
@@ -16,15 +16,15 @@ pub struct ConflictResolution {
 }
 impl ConflictResolution {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-    pub fn replace_contents(&self) -> std::option::Option<&[crate::types::ReplaceContentEntry]> {
+    pub fn replace_contents(&self) -> std::option::Option<& [crate::types::ReplaceContentEntry]> {
         self.replace_contents.as_deref()
     }
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-    pub fn delete_files(&self) -> std::option::Option<&[crate::types::DeleteFileEntry]> {
+    pub fn delete_files(&self) -> std::option::Option<& [crate::types::DeleteFileEntry]> {
         self.delete_files.as_deref()
     }
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
-    pub fn set_file_modes(&self) -> std::option::Option<&[crate::types::SetFileModeEntry]> {
+    pub fn set_file_modes(&self) -> std::option::Option<& [crate::types::SetFileModeEntry]> {
         self.set_file_modes.as_deref()
     }
 }
@@ -39,8 +39,7 @@ impl ConflictResolution {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConflictResolutionBuilder {
-    pub(crate) replace_contents:
-        std::option::Option<std::vec::Vec<crate::types::ReplaceContentEntry>>,
+    pub(crate) replace_contents: std::option::Option<std::vec::Vec<crate::types::ReplaceContentEntry>>,
     pub(crate) delete_files: std::option::Option<std::vec::Vec<crate::types::DeleteFileEntry>>,
     pub(crate) set_file_modes: std::option::Option<std::vec::Vec<crate::types::SetFileModeEntry>>,
 }
@@ -52,17 +51,13 @@ impl ConflictResolutionBuilder {
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
     pub fn replace_contents(mut self, input: crate::types::ReplaceContentEntry) -> Self {
         let mut v = self.replace_contents.unwrap_or_default();
-        v.push(input);
-        self.replace_contents = Some(v);
-        self
+                        v.push(input);
+                        self.replace_contents = Some(v);
+                        self
     }
     /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
-    pub fn set_replace_contents(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplaceContentEntry>>,
-    ) -> Self {
-        self.replace_contents = input;
-        self
+    pub fn set_replace_contents(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplaceContentEntry>>) -> Self {
+        self.replace_contents = input; self
     }
     /// Appends an item to `delete_files`.
     ///
@@ -71,17 +66,13 @@ impl ConflictResolutionBuilder {
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
     pub fn delete_files(mut self, input: crate::types::DeleteFileEntry) -> Self {
         let mut v = self.delete_files.unwrap_or_default();
-        v.push(input);
-        self.delete_files = Some(v);
-        self
+                        v.push(input);
+                        self.delete_files = Some(v);
+                        self
     }
     /// <p>Files to be deleted as part of the merge conflict resolution.</p>
-    pub fn set_delete_files(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeleteFileEntry>>,
-    ) -> Self {
-        self.delete_files = input;
-        self
+    pub fn set_delete_files(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeleteFileEntry>>) -> Self {
+        self.delete_files = input; self
     }
     /// Appends an item to `set_file_modes`.
     ///
@@ -90,24 +81,24 @@ impl ConflictResolutionBuilder {
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
     pub fn set_file_modes(mut self, input: crate::types::SetFileModeEntry) -> Self {
         let mut v = self.set_file_modes.unwrap_or_default();
-        v.push(input);
-        self.set_file_modes = Some(v);
-        self
+                        v.push(input);
+                        self.set_file_modes = Some(v);
+                        self
     }
     /// <p>File modes that are set as part of the merge conflict resolution.</p>
-    pub fn set_set_file_modes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SetFileModeEntry>>,
-    ) -> Self {
-        self.set_file_modes = input;
-        self
+    pub fn set_set_file_modes(mut self, input: std::option::Option<std::vec::Vec<crate::types::SetFileModeEntry>>) -> Self {
+        self.set_file_modes = input; self
     }
     /// Consumes the builder and constructs a [`ConflictResolution`](crate::types::ConflictResolution).
     pub fn build(self) -> crate::types::ConflictResolution {
         crate::types::ConflictResolution {
-            replace_contents: self.replace_contents,
-            delete_files: self.delete_files,
-            set_file_modes: self.set_file_modes,
+            replace_contents: self.replace_contents
+            ,
+            delete_files: self.delete_files
+            ,
+            set_file_modes: self.set_file_modes
+            ,
         }
     }
 }
+

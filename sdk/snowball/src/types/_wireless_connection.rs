@@ -3,7 +3,7 @@
 /// <p>Configures the wireless connection on an Snowcone device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WirelessConnection {
+pub struct WirelessConnection  {
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     #[doc(hidden)]
     pub is_wifi_enabled: bool,
@@ -35,13 +35,15 @@ impl WirelessConnectionBuilder {
     }
     /// <p>Enables the Wi-Fi adapter on an Snowcone device.</p>
     pub fn set_is_wifi_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_wifi_enabled = input;
-        self
+        self.is_wifi_enabled = input; self
     }
     /// Consumes the builder and constructs a [`WirelessConnection`](crate::types::WirelessConnection).
     pub fn build(self) -> crate::types::WirelessConnection {
         crate::types::WirelessConnection {
-            is_wifi_enabled: self.is_wifi_enabled.unwrap_or_default(),
+            is_wifi_enabled: self.is_wifi_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

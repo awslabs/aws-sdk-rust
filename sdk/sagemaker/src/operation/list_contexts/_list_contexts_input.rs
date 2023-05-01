@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContextsInput {
+pub struct ListContextsInput  {
     /// <p>A filter that returns only contexts with the specified source URI.</p>
     #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
@@ -30,31 +30,31 @@ pub struct ListContextsInput {
 }
 impl ListContextsInput {
     /// <p>A filter that returns only contexts with the specified source URI.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>A filter that returns only contexts of the specified type.</p>
-    pub fn context_type(&self) -> std::option::Option<&str> {
+    pub fn context_type(&self) -> std::option::Option<& str> {
         self.context_type.as_deref()
     }
     /// <p>A filter that returns only contexts created on or after the specified time.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>A filter that returns only contexts created on or before the specified time.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::SortContextsBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::SortContextsBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
@@ -90,8 +90,7 @@ impl ListContextsInputBuilder {
     }
     /// <p>A filter that returns only contexts with the specified source URI.</p>
     pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_uri = input;
-        self
+        self.source_uri = input; self
     }
     /// <p>A filter that returns only contexts of the specified type.</p>
     pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +99,7 @@ impl ListContextsInputBuilder {
     }
     /// <p>A filter that returns only contexts of the specified type.</p>
     pub fn set_context_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context_type = input;
-        self
+        self.context_type = input; self
     }
     /// <p>A filter that returns only contexts created on or after the specified time.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -109,12 +107,8 @@ impl ListContextsInputBuilder {
         self
     }
     /// <p>A filter that returns only contexts created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_after = input;
-        self
+    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_after = input; self
     }
     /// <p>A filter that returns only contexts created on or before the specified time.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,12 +116,8 @@ impl ListContextsInputBuilder {
         self
     }
     /// <p>A filter that returns only contexts created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_before = input;
-        self
+    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_before = input; self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortContextsBy) -> Self {
@@ -136,8 +126,7 @@ impl ListContextsInputBuilder {
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SortContextsBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -146,8 +135,7 @@ impl ListContextsInputBuilder {
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +144,7 @@ impl ListContextsInputBuilder {
     }
     /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts, the call returns a token for getting the next set of contexts.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -166,25 +153,30 @@ impl ListContextsInputBuilder {
     }
     /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListContextsInput`](crate::operation::list_contexts::ListContextsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_contexts::ListContextsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_contexts::ListContextsInput {
-            source_uri: self.source_uri,
-            context_type: self.context_type,
-            created_after: self.created_after,
-            created_before: self.created_before,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_contexts::ListContextsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_contexts::ListContextsInput {
+                source_uri: self.source_uri
+                ,
+                context_type: self.context_type
+                ,
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdatePartitionInput {
+pub struct BatchUpdatePartitionInput  {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,28 +18,25 @@ pub struct BatchUpdatePartitionInput {
 }
 impl BatchUpdatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub fn entries(
-        &self,
-    ) -> std::option::Option<&[crate::types::BatchUpdatePartitionRequestEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::types::BatchUpdatePartitionRequestEntry]> {
         self.entries.as_deref()
     }
 }
 impl BatchUpdatePartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdatePartitionInput`](crate::operation::batch_update_partition::BatchUpdatePartitionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_partition::builders::BatchUpdatePartitionInputBuilder {
+    pub fn builder() -> crate::operation::batch_update_partition::builders::BatchUpdatePartitionInputBuilder {
         crate::operation::batch_update_partition::builders::BatchUpdatePartitionInputBuilder::default()
     }
 }
@@ -51,8 +48,7 @@ pub struct BatchUpdatePartitionInputBuilder {
     pub(crate) catalog_id: std::option::Option<std::string::String>,
     pub(crate) database_name: std::option::Option<std::string::String>,
     pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) entries:
-        std::option::Option<std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>,
+    pub(crate) entries: std::option::Option<std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>,
 }
 impl BatchUpdatePartitionInputBuilder {
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
@@ -62,8 +58,7 @@ impl BatchUpdatePartitionInputBuilder {
     }
     /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +67,7 @@ impl BatchUpdatePartitionInputBuilder {
     }
     /// <p>The name of the metadata database in which the partition is to be updated.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl BatchUpdatePartitionInputBuilder {
     }
     /// <p>The name of the metadata table in which the partition is to be updated.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Appends an item to `entries`.
     ///
@@ -92,32 +85,28 @@ impl BatchUpdatePartitionInputBuilder {
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
     pub fn entries(mut self, input: crate::types::BatchUpdatePartitionRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = Some(v);
-        self
+                        v.push(input);
+                        self.entries = Some(v);
+                        self
     }
     /// <p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>
-    pub fn set_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchUpdatePartitionRequestEntry>>) -> Self {
+        self.entries = input; self
     }
     /// Consumes the builder and constructs a [`BatchUpdatePartitionInput`](crate::operation::batch_update_partition::BatchUpdatePartitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_update_partition::BatchUpdatePartitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_update_partition::BatchUpdatePartitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_update_partition::BatchUpdatePartitionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                entries: self.entries,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                entries: self.entries
+                ,
+            }
         )
     }
 }
+

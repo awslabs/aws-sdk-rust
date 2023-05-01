@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisableStandardsInput {
+pub struct BatchDisableStandardsInput  {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
     #[doc(hidden)]
     pub standards_subscription_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDisableStandardsInput {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn standards_subscription_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn standards_subscription_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.standards_subscription_arns.as_deref()
     }
 }
 impl BatchDisableStandardsInput {
     /// Creates a new builder-style object to manufacture [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder {
         crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder::default()
     }
 }
@@ -36,29 +34,22 @@ impl BatchDisableStandardsInputBuilder {
     /// <p>The ARNs of the standards subscriptions to disable.</p>
     pub fn standards_subscription_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.standards_subscription_arns.unwrap_or_default();
-        v.push(input.into());
-        self.standards_subscription_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.standards_subscription_arns = Some(v);
+                        self
     }
     /// <p>The ARNs of the standards subscriptions to disable.</p>
-    pub fn set_standards_subscription_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.standards_subscription_arns = input;
-        self
+    pub fn set_standards_subscription_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.standards_subscription_arns = input; self
     }
     /// Consumes the builder and constructs a [`BatchDisableStandardsInput`](crate::operation::batch_disable_standards::BatchDisableStandardsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_disable_standards::BatchDisableStandardsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_disable_standards::BatchDisableStandardsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_disable_standards::BatchDisableStandardsInput {
-                standards_subscription_arns: self.standards_subscription_arns,
-            },
+                standards_subscription_arns: self.standards_subscription_arns
+                ,
+            }
         )
     }
 }
+

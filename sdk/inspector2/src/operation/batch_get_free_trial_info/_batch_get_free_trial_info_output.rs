@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetFreeTrialInfoOutput {
+pub struct BatchGetFreeTrialInfoOutput  {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
@@ -13,24 +13,22 @@ pub struct BatchGetFreeTrialInfoOutput {
 }
 impl BatchGetFreeTrialInfoOutput {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::types::FreeTrialAccountInfo]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::types::FreeTrialAccountInfo]> {
         self.accounts.as_deref()
     }
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<&[crate::types::FreeTrialInfoError]> {
+    pub fn failed_accounts(&self) -> std::option::Option<& [crate::types::FreeTrialInfoError]> {
         self.failed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetFreeTrialInfoOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetFreeTrialInfoOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetFreeTrialInfoOutput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder {
         crate::operation::batch_get_free_trial_info::builders::BatchGetFreeTrialInfoOutputBuilder::default()
     }
 }
@@ -40,8 +38,7 @@ impl BatchGetFreeTrialInfoOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetFreeTrialInfoOutputBuilder {
     pub(crate) accounts: std::option::Option<std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
-    pub(crate) failed_accounts:
-        std::option::Option<std::vec::Vec<crate::types::FreeTrialInfoError>>,
+    pub(crate) failed_accounts: std::option::Option<std::vec::Vec<crate::types::FreeTrialInfoError>>,
     _request_id: Option<String>,
 }
 impl BatchGetFreeTrialInfoOutputBuilder {
@@ -52,17 +49,13 @@ impl BatchGetFreeTrialInfoOutputBuilder {
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
     pub fn accounts(mut self, input: crate::types::FreeTrialAccountInfo) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input);
-        self.accounts = Some(v);
-        self
+                        v.push(input);
+                        self.accounts = Some(v);
+                        self
     }
     /// <p>An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. </p>
-    pub fn set_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FreeTrialAccountInfo>>,
-    ) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::FreeTrialAccountInfo>>) -> Self {
+        self.accounts = input; self
     }
     /// Appends an item to `failed_accounts`.
     ///
@@ -71,33 +64,32 @@ impl BatchGetFreeTrialInfoOutputBuilder {
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
     pub fn failed_accounts(mut self, input: crate::types::FreeTrialInfoError) -> Self {
         let mut v = self.failed_accounts.unwrap_or_default();
-        v.push(input);
-        self.failed_accounts = Some(v);
-        self
+                        v.push(input);
+                        self.failed_accounts = Some(v);
+                        self
     }
     /// <p>An array of objects detailing any accounts that free trial data could not be returned for.</p>
-    pub fn set_failed_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FreeTrialInfoError>>,
-    ) -> Self {
-        self.failed_accounts = input;
-        self
+    pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::FreeTrialInfoError>>) -> Self {
+        self.failed_accounts = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetFreeTrialInfoOutput`](crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput).
     pub fn build(self) -> crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput {
         crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput {
-            accounts: self.accounts,
-            failed_accounts: self.failed_accounts,
+            accounts: self.accounts
+            ,
+            failed_accounts: self.failed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

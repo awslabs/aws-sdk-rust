@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLabelsOutput {
+pub struct ListLabelsOutput  {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListLabelsOutput {
 }
 impl ListLabelsOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> A summary of the items in the label group. </p>
-    pub fn label_summaries(&self) -> std::option::Option<&[crate::types::LabelSummary]> {
+    pub fn label_summaries(&self) -> std::option::Option<& [crate::types::LabelSummary]> {
         self.label_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListLabelsOutput {
     /// Creates a new builder-style object to manufacture [`ListLabelsOutput`](crate::operation::list_labels::ListLabelsOutput).
     pub fn builder() -> crate::operation::list_labels::builders::ListLabelsOutputBuilder {
@@ -49,8 +49,7 @@ impl ListLabelsOutputBuilder {
     }
     /// <p> An opaque pagination token indicating where to continue the listing of datasets. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `label_summaries`.
     ///
@@ -59,33 +58,32 @@ impl ListLabelsOutputBuilder {
     /// <p> A summary of the items in the label group. </p>
     pub fn label_summaries(mut self, input: crate::types::LabelSummary) -> Self {
         let mut v = self.label_summaries.unwrap_or_default();
-        v.push(input);
-        self.label_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.label_summaries = Some(v);
+                        self
     }
     /// <p> A summary of the items in the label group. </p>
-    pub fn set_label_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LabelSummary>>,
-    ) -> Self {
-        self.label_summaries = input;
-        self
+    pub fn set_label_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::LabelSummary>>) -> Self {
+        self.label_summaries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListLabelsOutput`](crate::operation::list_labels::ListLabelsOutput).
     pub fn build(self) -> crate::operation::list_labels::ListLabelsOutput {
         crate::operation::list_labels::ListLabelsOutput {
-            next_token: self.next_token,
-            label_summaries: self.label_summaries,
+            next_token: self.next_token
+            ,
+            label_summaries: self.label_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

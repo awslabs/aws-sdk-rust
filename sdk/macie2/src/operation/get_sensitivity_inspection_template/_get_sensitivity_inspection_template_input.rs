@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSensitivityInspectionTemplateInput {
+pub struct GetSensitivityInspectionTemplateInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSensitivityInspectionTemplateInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetSensitivityInspectionTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetSensitivityInspectionTemplateInput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput).
-    pub fn builder() -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateInputBuilder{
+    pub fn builder() -> crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateInputBuilder {
         crate::operation::get_sensitivity_inspection_template::builders::GetSensitivityInspectionTemplateInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl GetSensitivityInspectionTemplateInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetSensitivityInspectionTemplateInput`](crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput).
-    pub fn build(self) -> Result<crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_sensitivity_inspection_template::GetSensitivityInspectionTemplateInput {
                 id: self.id
@@ -47,3 +46,4 @@ impl GetSensitivityInspectionTemplateInputBuilder {
         )
     }
 }
+

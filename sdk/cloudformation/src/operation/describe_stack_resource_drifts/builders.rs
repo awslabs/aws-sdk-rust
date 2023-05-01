@@ -4,79 +4,57 @@ pub use crate::operation::describe_stack_resource_drifts::_describe_stack_resour
 pub use crate::operation::describe_stack_resource_drifts::_describe_stack_resource_drifts_input::DescribeStackResourceDriftsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeStackResourceDrifts`.
-///
-/// <p>Returns drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects configuration drift.</p>
-/// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that don't currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
+/// 
+/// <p>Returns drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects configuration drift.</p> 
+/// <p>For a given stack, there will be one <code>StackResourceDrift</code> for each stack resource that has been checked for drift. Resources that haven't yet been checked for drift aren't included. Resources that don't currently support drift detection aren't checked, and so not included. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p> 
 /// <p>Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <code>DetectStackDrift</code> to detect drift on all supported resources for a given stack.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder
             }
-impl DescribeStackResourceDriftsFluentBuilder {
+impl DescribeStackResourceDriftsFluentBuilder  {
     /// Creates a new `DescribeStackResourceDrifts`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDrifts,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDrifts, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator{
-        crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator {
+                            crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the stack for which you want drift information.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
@@ -91,31 +69,25 @@ impl DescribeStackResourceDriftsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_stack_resource_drift_status_filters`](Self::set_stack_resource_drift_status_filters).
     ///
-    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
-    /// <ul>
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li> 
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li> 
     /// </ul>
-    pub fn stack_resource_drift_status_filters(
-        mut self,
-        input: crate::types::StackResourceDriftStatus,
-    ) -> Self {
+    pub fn stack_resource_drift_status_filters(mut self, input: crate::types::StackResourceDriftStatus) -> Self {
         self.inner = self.inner.stack_resource_drift_status_filters(input);
         self
     }
-    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p>
-    /// <ul>
-    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li>
-    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li>
-    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li>
-    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li>
+    /// <p>The resource drift status values to use as filters for the resource drift results returned.</p> 
+    /// <ul> 
+    /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration in that the resource has been deleted.</p> </li> 
+    /// <li> <p> <code>MODIFIED</code>: One or more resource properties differ from their expected template values.</p> </li> 
+    /// <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its expected template configuration.</p> </li> 
+    /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.</p> </li> 
     /// </ul>
-    pub fn set_stack_resource_drift_status_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>,
-    ) -> Self {
+    pub fn set_stack_resource_drift_status_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::StackResourceDriftStatus>>) -> Self {
         self.inner = self.inner.set_stack_resource_drift_status_filters(input);
         self
     }
@@ -140,3 +112,4 @@ impl DescribeStackResourceDriftsFluentBuilder {
         self
     }
 }
+

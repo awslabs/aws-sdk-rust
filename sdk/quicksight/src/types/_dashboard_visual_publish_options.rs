@@ -3,16 +3,14 @@
 /// <p>The visual publish options of a visual in a dashboard</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashboardVisualPublishOptions {
+pub struct DashboardVisualPublishOptions  {
     /// <p>Determines if hidden fields are included in an exported dashboard.</p>
     #[doc(hidden)]
     pub export_hidden_fields_option: std::option::Option<crate::types::ExportHiddenFieldsOption>,
 }
 impl DashboardVisualPublishOptions {
     /// <p>Determines if hidden fields are included in an exported dashboard.</p>
-    pub fn export_hidden_fields_option(
-        &self,
-    ) -> std::option::Option<&crate::types::ExportHiddenFieldsOption> {
+    pub fn export_hidden_fields_option(&self) -> std::option::Option<& crate::types::ExportHiddenFieldsOption> {
         self.export_hidden_fields_option.as_ref()
     }
 }
@@ -27,30 +25,24 @@ impl DashboardVisualPublishOptions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DashboardVisualPublishOptionsBuilder {
-    pub(crate) export_hidden_fields_option:
-        std::option::Option<crate::types::ExportHiddenFieldsOption>,
+    pub(crate) export_hidden_fields_option: std::option::Option<crate::types::ExportHiddenFieldsOption>,
 }
 impl DashboardVisualPublishOptionsBuilder {
     /// <p>Determines if hidden fields are included in an exported dashboard.</p>
-    pub fn export_hidden_fields_option(
-        mut self,
-        input: crate::types::ExportHiddenFieldsOption,
-    ) -> Self {
+    pub fn export_hidden_fields_option(mut self, input: crate::types::ExportHiddenFieldsOption) -> Self {
         self.export_hidden_fields_option = Some(input);
         self
     }
     /// <p>Determines if hidden fields are included in an exported dashboard.</p>
-    pub fn set_export_hidden_fields_option(
-        mut self,
-        input: std::option::Option<crate::types::ExportHiddenFieldsOption>,
-    ) -> Self {
-        self.export_hidden_fields_option = input;
-        self
+    pub fn set_export_hidden_fields_option(mut self, input: std::option::Option<crate::types::ExportHiddenFieldsOption>) -> Self {
+        self.export_hidden_fields_option = input; self
     }
     /// Consumes the builder and constructs a [`DashboardVisualPublishOptions`](crate::types::DashboardVisualPublishOptions).
     pub fn build(self) -> crate::types::DashboardVisualPublishOptions {
         crate::types::DashboardVisualPublishOptions {
-            export_hidden_fields_option: self.export_hidden_fields_option,
+            export_hidden_fields_option: self.export_hidden_fields_option
+            ,
         }
     }
 }
+

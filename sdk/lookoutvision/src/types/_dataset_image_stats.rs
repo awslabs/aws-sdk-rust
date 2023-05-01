@@ -3,7 +3,7 @@
 /// <p>Statistics about the images in a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetImageStats {
+pub struct DatasetImageStats  {
     /// <p>The total number of images in the dataset.</p>
     #[doc(hidden)]
     pub total: std::option::Option<i32>,
@@ -59,8 +59,7 @@ impl DatasetImageStatsBuilder {
     }
     /// <p>The total number of images in the dataset.</p>
     pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// <p>The total number of labeled images.</p>
     pub fn labeled(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl DatasetImageStatsBuilder {
     }
     /// <p>The total number of labeled images.</p>
     pub fn set_labeled(mut self, input: std::option::Option<i32>) -> Self {
-        self.labeled = input;
-        self
+        self.labeled = input; self
     }
     /// <p>The total number of images labeled as normal.</p>
     pub fn normal(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl DatasetImageStatsBuilder {
     }
     /// <p>The total number of images labeled as normal.</p>
     pub fn set_normal(mut self, input: std::option::Option<i32>) -> Self {
-        self.normal = input;
-        self
+        self.normal = input; self
     }
     /// <p>the total number of images labeled as an anomaly.</p>
     pub fn anomaly(mut self, input: i32) -> Self {
@@ -89,16 +86,20 @@ impl DatasetImageStatsBuilder {
     }
     /// <p>the total number of images labeled as an anomaly.</p>
     pub fn set_anomaly(mut self, input: std::option::Option<i32>) -> Self {
-        self.anomaly = input;
-        self
+        self.anomaly = input; self
     }
     /// Consumes the builder and constructs a [`DatasetImageStats`](crate::types::DatasetImageStats).
     pub fn build(self) -> crate::types::DatasetImageStats {
         crate::types::DatasetImageStats {
-            total: self.total,
-            labeled: self.labeled,
-            normal: self.normal,
-            anomaly: self.anomaly,
+            total: self.total
+            ,
+            labeled: self.labeled
+            ,
+            normal: self.normal
+            ,
+            anomaly: self.anomaly
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDiscovererInput {
+pub struct UpdateDiscovererInput  {
     /// <p>The description of the discoverer to update.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateDiscovererInput {
 }
 impl UpdateDiscovererInput {
     /// <p>The description of the discoverer to update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<&str> {
+    pub fn discoverer_id(&self) -> std::option::Option<& str> {
         self.discoverer_id.as_deref()
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
@@ -29,8 +29,7 @@ impl UpdateDiscovererInput {
 }
 impl UpdateDiscovererInput {
     /// Creates a new builder-style object to manufacture [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
-    pub fn builder() -> crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder {
         crate::operation::update_discoverer::builders::UpdateDiscovererInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl UpdateDiscovererInputBuilder {
     }
     /// <p>The description of the discoverer to update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ID of the discoverer.</p>
     pub fn discoverer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl UpdateDiscovererInputBuilder {
     }
     /// <p>The ID of the discoverer.</p>
     pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discoverer_id = input;
-        self
+        self.discoverer_id = input; self
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     pub fn cross_account(mut self, input: bool) -> Self {
@@ -71,20 +68,21 @@ impl UpdateDiscovererInputBuilder {
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true)</p>
     pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
-        self.cross_account = input;
-        self
+        self.cross_account = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDiscovererInput`](crate::operation::update_discoverer::UpdateDiscovererInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_discoverer::UpdateDiscovererInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_discoverer::UpdateDiscovererInput {
-            description: self.description,
-            discoverer_id: self.discoverer_id,
-            cross_account: self.cross_account.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::update_discoverer::UpdateDiscovererInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_discoverer::UpdateDiscovererInput {
+                description: self.description
+                ,
+                discoverer_id: self.discoverer_id
+                ,
+                cross_account: self.cross_account
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

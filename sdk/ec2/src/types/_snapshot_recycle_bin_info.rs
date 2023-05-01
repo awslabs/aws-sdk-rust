@@ -3,7 +3,7 @@
 /// <p>Information about a snapshot that is currently in the Recycle Bin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotRecycleBinInfo {
+pub struct SnapshotRecycleBinInfo  {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct SnapshotRecycleBinInfo {
 }
 impl SnapshotRecycleBinInfo {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
-    pub fn recycle_bin_enter_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn recycle_bin_enter_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.recycle_bin_enter_time.as_ref()
     }
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
-    pub fn recycle_bin_exit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn recycle_bin_exit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.recycle_bin_exit_time.as_ref()
     }
     /// <p>The description for the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the volume from which the snapshot was created.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl SnapshotRecycleBinInfoBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
     pub fn recycle_bin_enter_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,12 +75,8 @@ impl SnapshotRecycleBinInfoBuilder {
         self
     }
     /// <p>The date and time when the snaphsot entered the Recycle Bin.</p>
-    pub fn set_recycle_bin_enter_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.recycle_bin_enter_time = input;
-        self
+    pub fn set_recycle_bin_enter_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.recycle_bin_enter_time = input; self
     }
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
     pub fn recycle_bin_exit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,12 +84,8 @@ impl SnapshotRecycleBinInfoBuilder {
         self
     }
     /// <p>The date and time when the snapshot is to be permanently deleted from the Recycle Bin.</p>
-    pub fn set_recycle_bin_exit_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.recycle_bin_exit_time = input;
-        self
+    pub fn set_recycle_bin_exit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.recycle_bin_exit_time = input; self
     }
     /// <p>The description for the snapshot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +94,7 @@ impl SnapshotRecycleBinInfoBuilder {
     }
     /// <p>The description for the snapshot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ID of the volume from which the snapshot was created.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,17 +103,22 @@ impl SnapshotRecycleBinInfoBuilder {
     }
     /// <p>The ID of the volume from which the snapshot was created.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input;
-        self
+        self.volume_id = input; self
     }
     /// Consumes the builder and constructs a [`SnapshotRecycleBinInfo`](crate::types::SnapshotRecycleBinInfo).
     pub fn build(self) -> crate::types::SnapshotRecycleBinInfo {
         crate::types::SnapshotRecycleBinInfo {
-            snapshot_id: self.snapshot_id,
-            recycle_bin_enter_time: self.recycle_bin_enter_time,
-            recycle_bin_exit_time: self.recycle_bin_exit_time,
-            description: self.description,
-            volume_id: self.volume_id,
+            snapshot_id: self.snapshot_id
+            ,
+            recycle_bin_enter_time: self.recycle_bin_enter_time
+            ,
+            recycle_bin_exit_time: self.recycle_bin_exit_time
+            ,
+            description: self.description
+            ,
+            volume_id: self.volume_id
+            ,
         }
     }
 }
+

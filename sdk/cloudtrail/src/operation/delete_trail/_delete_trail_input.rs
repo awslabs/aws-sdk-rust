@@ -3,14 +3,14 @@
 /// <p>The request that specifies the name of a trail to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrailInput {
+pub struct DeleteTrailInput  {
     /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteTrailInput {
     /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl DeleteTrailInputBuilder {
     }
     /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteTrailInput`](crate::operation::delete_trail::DeleteTrailInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_trail::DeleteTrailInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_trail::DeleteTrailInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_trail::DeleteTrailInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_trail::DeleteTrailInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

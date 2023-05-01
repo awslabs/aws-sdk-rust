@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetActivationJobsInput {
+pub struct ListReadSetActivationJobsInput  {
     /// <p>The read set's sequence store ID.</p>
     #[doc(hidden)]
     pub sequence_store_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListReadSetActivationJobsInput {
 }
 impl ListReadSetActivationJobsInput {
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
@@ -26,17 +26,17 @@ impl ListReadSetActivationJobsInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::ActivateReadSetFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::ActivateReadSetFilter> {
         self.filter.as_ref()
     }
 }
 impl ListReadSetActivationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListReadSetActivationJobsInput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput).
-    pub fn builder() -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder{
+    pub fn builder() -> crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder {
         crate::operation::list_read_set_activation_jobs::builders::ListReadSetActivationJobsInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl ListReadSetActivationJobsInputBuilder {
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sequence_store_id = input; self
     }
     /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,8 +67,7 @@ impl ListReadSetActivationJobsInputBuilder {
     }
     /// <p>The maximum number of read set activation jobs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl ListReadSetActivationJobsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ActivateReadSetFilter) -> Self {
@@ -90,27 +84,23 @@ impl ListReadSetActivationJobsInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::ActivateReadSetFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::ActivateReadSetFilter>) -> Self {
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`ListReadSetActivationJobsInput`](crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_read_set_activation_jobs::ListReadSetActivationJobsInput {
-                sequence_store_id: self.sequence_store_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filter: self.filter,
-            },
+                sequence_store_id: self.sequence_store_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter: self.filter
+                ,
+            }
         )
     }
 }
+

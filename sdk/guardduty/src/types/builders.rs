@@ -207,11 +207,17 @@ pub use crate::types::_domain_details::DomainDetailsBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;
 
+pub use crate::types::_lambda_details::LambdaDetailsBuilder;
+
+pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_vpc_config::VpcConfigBuilder;
+
+pub use crate::types::_security_group::SecurityGroupBuilder;
+
 pub use crate::types::_rds_db_user_details::RdsDbUserDetailsBuilder;
 
 pub use crate::types::_rds_db_instance_details::RdsDbInstanceDetailsBuilder;
-
-pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_container::ContainerBuilder;
 
@@ -244,8 +250,6 @@ pub use crate::types::_instance_details::InstanceDetailsBuilder;
 pub use crate::types::_product_code::ProductCodeBuilder;
 
 pub use crate::types::_network_interface::NetworkInterfaceBuilder;
-
-pub use crate::types::_security_group::SecurityGroupBuilder;
 
 pub use crate::types::_private_ip_address_details::PrivateIpAddressDetailsBuilder;
 
@@ -316,3 +320,4 @@ pub use crate::types::_filter_condition::FilterConditionBuilder;
 pub use crate::types::_account_detail::AccountDetailBuilder;
 
 pub use crate::types::_unprocessed_data_sources_result::UnprocessedDataSourcesResultBuilder;
+

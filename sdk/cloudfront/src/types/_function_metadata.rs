@@ -3,12 +3,12 @@
 /// <p>Contains metadata about a CloudFront function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionMetadata {
+pub struct FunctionMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
-    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> 
+    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p> 
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<crate::types::FunctionStage>,
@@ -21,21 +21,21 @@ pub struct FunctionMetadata {
 }
 impl FunctionMetadata {
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
-    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> 
+    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p> 
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
-    pub fn stage(&self) -> std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
     /// <p>The date and time when the function was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time when the function was most recently updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -63,22 +63,20 @@ impl FunctionMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the function.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
-    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> 
+    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p> 
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
         self.stage = Some(input);
         self
     }
-    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+    /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p> 
+    /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p> 
     /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache behavior, using the function's ARN.</p>
     pub fn set_stage(mut self, input: std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p>The date and time when the function was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,12 +84,8 @@ impl FunctionMetadataBuilder {
         self
     }
     /// <p>The date and time when the function was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The date and time when the function was most recently updated.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,20 +93,21 @@ impl FunctionMetadataBuilder {
         self
     }
     /// <p>The date and time when the function was most recently updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// Consumes the builder and constructs a [`FunctionMetadata`](crate::types::FunctionMetadata).
     pub fn build(self) -> crate::types::FunctionMetadata {
         crate::types::FunctionMetadata {
-            function_arn: self.function_arn,
-            stage: self.stage,
-            created_time: self.created_time,
-            last_modified_time: self.last_modified_time,
+            function_arn: self.function_arn
+            ,
+            stage: self.stage
+            ,
+            created_time: self.created_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

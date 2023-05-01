@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteCalculatorOutput {
+pub struct DeleteRouteCalculatorOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteRouteCalculatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRouteCalculatorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorOutputBuilder {
         crate::operation::delete_route_calculator::builders::DeleteRouteCalculatorOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteRouteCalculatorOutputBuilder {
 }
 impl DeleteRouteCalculatorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRouteCalculatorOutput`](crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput).
     pub fn build(self) -> crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput {
         crate::operation::delete_route_calculator::DeleteRouteCalculatorOutput {
@@ -42,3 +40,4 @@ impl DeleteRouteCalculatorOutputBuilder {
         }
     }
 }
+

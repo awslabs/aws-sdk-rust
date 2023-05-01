@@ -3,7 +3,7 @@
 /// <p>The status codes that cause an origin group to fail over.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
+pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes  {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<i32>>,
@@ -13,7 +13,7 @@ pub struct AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
-    pub fn items(&self) -> std::option::Option<&[i32]> {
+    pub fn items(&self) -> std::option::Option<& [i32]> {
         self.items.as_deref()
     }
     /// <p>The number of status codes that can cause a failover.</p>
@@ -23,9 +23,7 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
 }
 impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
     /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
-    pub fn builder(
-    ) -> crate::types::builders::AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
         crate::types::builders::AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder::default()
     }
 }
@@ -45,14 +43,13 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
     pub fn items(mut self, input: i32) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The list of status code values that can cause a failover to the next origin.</p>
     pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.items = input;
-        self
+        self.items = input; self
     }
     /// <p>The number of status codes that can cause a failover.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -61,14 +58,17 @@ impl AwsCloudFrontDistributionOriginGroupFailoverStatusCodesBuilder {
     }
     /// <p>The number of status codes that can cause a failover.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginGroupFailoverStatusCodes`](crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
         crate::types::AwsCloudFrontDistributionOriginGroupFailoverStatusCodes {
-            items: self.items,
-            quantity: self.quantity.unwrap_or_default(),
+            items: self.items
+            ,
+            quantity: self.quantity
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

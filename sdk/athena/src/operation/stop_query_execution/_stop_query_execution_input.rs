@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopQueryExecutionInput {
+pub struct StopQueryExecutionInput  {
     /// <p>The unique ID of the query execution to stop.</p>
     #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
 }
 impl StopQueryExecutionInput {
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> std::option::Option<& str> {
         self.query_execution_id.as_deref()
     }
 }
 impl StopQueryExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder {
+    pub fn builder() -> crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder {
         crate::operation::stop_query_execution::builders::StopQueryExecutionInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl StopQueryExecutionInputBuilder {
         self
     }
     /// <p>The unique ID of the query execution to stop.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.query_execution_id = input;
-        self
+    pub fn set_query_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.query_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`StopQueryExecutionInput`](crate::operation::stop_query_execution::StopQueryExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_query_execution::StopQueryExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_query_execution::StopQueryExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_query_execution::StopQueryExecutionInput {
-                query_execution_id: self.query_execution_id,
-            },
+                query_execution_id: self.query_execution_id
+                ,
+            }
         )
     }
 }
+

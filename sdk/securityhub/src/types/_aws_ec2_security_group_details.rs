@@ -3,7 +3,7 @@
 /// <p>Details about an Amazon EC2 security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2SecurityGroupDetails {
+pub struct AwsEc2SecurityGroupDetails  {
     /// <p>The name of the security group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -18,40 +18,34 @@ pub struct AwsEc2SecurityGroupDetails {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The inbound rules associated with the security group.</p>
     #[doc(hidden)]
-    pub ip_permissions:
-        std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
+    pub ip_permissions: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
     #[doc(hidden)]
-    pub ip_permissions_egress:
-        std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
+    pub ip_permissions_egress: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
 }
 impl AwsEc2SecurityGroupDetails {
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The inbound rules associated with the security group.</p>
-    pub fn ip_permissions(
-        &self,
-    ) -> std::option::Option<&[crate::types::AwsEc2SecurityGroupIpPermission]> {
+    pub fn ip_permissions(&self) -> std::option::Option<& [crate::types::AwsEc2SecurityGroupIpPermission]> {
         self.ip_permissions.as_deref()
     }
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    pub fn ip_permissions_egress(
-        &self,
-    ) -> std::option::Option<&[crate::types::AwsEc2SecurityGroupIpPermission]> {
+    pub fn ip_permissions_egress(&self) -> std::option::Option<& [crate::types::AwsEc2SecurityGroupIpPermission]> {
         self.ip_permissions_egress.as_deref()
     }
 }
@@ -70,10 +64,8 @@ pub struct AwsEc2SecurityGroupDetailsBuilder {
     pub(crate) group_id: std::option::Option<std::string::String>,
     pub(crate) owner_id: std::option::Option<std::string::String>,
     pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) ip_permissions:
-        std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
-    pub(crate) ip_permissions_egress:
-        std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
+    pub(crate) ip_permissions: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
+    pub(crate) ip_permissions_egress: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
 }
 impl AwsEc2SecurityGroupDetailsBuilder {
     /// <p>The name of the security group.</p>
@@ -83,8 +75,7 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     }
     /// <p>The name of the security group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +84,7 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     }
     /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +93,7 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +102,7 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Appends an item to `ip_permissions`.
     ///
@@ -123,49 +111,45 @@ impl AwsEc2SecurityGroupDetailsBuilder {
     /// <p>The inbound rules associated with the security group.</p>
     pub fn ip_permissions(mut self, input: crate::types::AwsEc2SecurityGroupIpPermission) -> Self {
         let mut v = self.ip_permissions.unwrap_or_default();
-        v.push(input);
-        self.ip_permissions = Some(v);
-        self
+                        v.push(input);
+                        self.ip_permissions = Some(v);
+                        self
     }
     /// <p>The inbound rules associated with the security group.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
-    ) -> Self {
-        self.ip_permissions = input;
-        self
+    pub fn set_ip_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>) -> Self {
+        self.ip_permissions = input; self
     }
     /// Appends an item to `ip_permissions_egress`.
     ///
     /// To override the contents of this collection use [`set_ip_permissions_egress`](Self::set_ip_permissions_egress).
     ///
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    pub fn ip_permissions_egress(
-        mut self,
-        input: crate::types::AwsEc2SecurityGroupIpPermission,
-    ) -> Self {
+    pub fn ip_permissions_egress(mut self, input: crate::types::AwsEc2SecurityGroupIpPermission) -> Self {
         let mut v = self.ip_permissions_egress.unwrap_or_default();
-        v.push(input);
-        self.ip_permissions_egress = Some(v);
-        self
+                        v.push(input);
+                        self.ip_permissions_egress = Some(v);
+                        self
     }
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    pub fn set_ip_permissions_egress(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>,
-    ) -> Self {
-        self.ip_permissions_egress = input;
-        self
+    pub fn set_ip_permissions_egress(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsEc2SecurityGroupIpPermission>>) -> Self {
+        self.ip_permissions_egress = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2SecurityGroupDetails`](crate::types::AwsEc2SecurityGroupDetails).
     pub fn build(self) -> crate::types::AwsEc2SecurityGroupDetails {
         crate::types::AwsEc2SecurityGroupDetails {
-            group_name: self.group_name,
-            group_id: self.group_id,
-            owner_id: self.owner_id,
-            vpc_id: self.vpc_id,
-            ip_permissions: self.ip_permissions,
-            ip_permissions_egress: self.ip_permissions_egress,
+            group_name: self.group_name
+            ,
+            group_id: self.group_id
+            ,
+            owner_id: self.owner_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            ip_permissions: self.ip_permissions
+            ,
+            ip_permissions_egress: self.ip_permissions_egress
+            ,
         }
     }
 }
+

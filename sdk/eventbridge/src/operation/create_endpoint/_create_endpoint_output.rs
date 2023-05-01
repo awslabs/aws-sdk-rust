@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointOutput {
+pub struct CreateEndpointOutput  {
     /// <p>The name of the endpoint that was created by this request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,39 +28,39 @@ pub struct CreateEndpointOutput {
 }
 impl CreateEndpointOutput {
     /// <p>The name of the endpoint that was created by this request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the endpoint that was created by this request.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The routing configuration defined by this request.</p>
-    pub fn routing_config(&self) -> std::option::Option<&crate::types::RoutingConfig> {
+    pub fn routing_config(&self) -> std::option::Option<& crate::types::RoutingConfig> {
         self.routing_config.as_ref()
     }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
-    pub fn replication_config(&self) -> std::option::Option<&crate::types::ReplicationConfig> {
+    pub fn replication_config(&self) -> std::option::Option<& crate::types::ReplicationConfig> {
         self.replication_config.as_ref()
     }
     /// <p>The event buses used by this request.</p>
-    pub fn event_buses(&self) -> std::option::Option<&[crate::types::EndpointEventBus]> {
+    pub fn event_buses(&self) -> std::option::Option<& [crate::types::EndpointEventBus]> {
         self.event_buses.as_deref()
     }
     /// <p>The ARN of the role used by event replication for this request.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The state of the endpoint that was created by this request.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::EndpointState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::EndpointState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::operation::create_endpoint::CreateEndpointOutput).
     pub fn builder() -> crate::operation::create_endpoint::builders::CreateEndpointOutputBuilder {
@@ -89,8 +89,7 @@ impl CreateEndpointOutputBuilder {
     }
     /// <p>The name of the endpoint that was created by this request.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ARN of the endpoint that was created by this request.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +98,7 @@ impl CreateEndpointOutputBuilder {
     }
     /// <p>The ARN of the endpoint that was created by this request.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The routing configuration defined by this request.</p>
     pub fn routing_config(mut self, input: crate::types::RoutingConfig) -> Self {
@@ -108,12 +106,8 @@ impl CreateEndpointOutputBuilder {
         self
     }
     /// <p>The routing configuration defined by this request.</p>
-    pub fn set_routing_config(
-        mut self,
-        input: std::option::Option<crate::types::RoutingConfig>,
-    ) -> Self {
-        self.routing_config = input;
-        self
+    pub fn set_routing_config(mut self, input: std::option::Option<crate::types::RoutingConfig>) -> Self {
+        self.routing_config = input; self
     }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
     pub fn replication_config(mut self, input: crate::types::ReplicationConfig) -> Self {
@@ -121,12 +115,8 @@ impl CreateEndpointOutputBuilder {
         self
     }
     /// <p>Whether event replication was enabled or disabled by this request.</p>
-    pub fn set_replication_config(
-        mut self,
-        input: std::option::Option<crate::types::ReplicationConfig>,
-    ) -> Self {
-        self.replication_config = input;
-        self
+    pub fn set_replication_config(mut self, input: std::option::Option<crate::types::ReplicationConfig>) -> Self {
+        self.replication_config = input; self
     }
     /// Appends an item to `event_buses`.
     ///
@@ -135,17 +125,13 @@ impl CreateEndpointOutputBuilder {
     /// <p>The event buses used by this request.</p>
     pub fn event_buses(mut self, input: crate::types::EndpointEventBus) -> Self {
         let mut v = self.event_buses.unwrap_or_default();
-        v.push(input);
-        self.event_buses = Some(v);
-        self
+                        v.push(input);
+                        self.event_buses = Some(v);
+                        self
     }
     /// <p>The event buses used by this request.</p>
-    pub fn set_event_buses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointEventBus>>,
-    ) -> Self {
-        self.event_buses = input;
-        self
+    pub fn set_event_buses(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointEventBus>>) -> Self {
+        self.event_buses = input; self
     }
     /// <p>The ARN of the role used by event replication for this request.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +140,7 @@ impl CreateEndpointOutputBuilder {
     }
     /// <p>The ARN of the role used by event replication for this request.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The state of the endpoint that was created by this request.</p>
     pub fn state(mut self, input: crate::types::EndpointState) -> Self {
@@ -164,29 +149,36 @@ impl CreateEndpointOutputBuilder {
     }
     /// <p>The state of the endpoint that was created by this request.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::EndpointState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::operation::create_endpoint::CreateEndpointOutput).
     pub fn build(self) -> crate::operation::create_endpoint::CreateEndpointOutput {
         crate::operation::create_endpoint::CreateEndpointOutput {
-            name: self.name,
-            arn: self.arn,
-            routing_config: self.routing_config,
-            replication_config: self.replication_config,
-            event_buses: self.event_buses,
-            role_arn: self.role_arn,
-            state: self.state,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            routing_config: self.routing_config
+            ,
+            replication_config: self.replication_config
+            ,
+            event_buses: self.event_buses
+            ,
+            role_arn: self.role_arn
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupInput {
+pub struct DeleteGroupInput  {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteGroupInput {
 }
 impl DeleteGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl DeleteGroupInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identity_store_id = input;
-        self
+    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identity_store_id = input; self
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,19 +51,18 @@ impl DeleteGroupInputBuilder {
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteGroupInput`](crate::operation::delete_group::DeleteGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_group::DeleteGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_group::DeleteGroupInput {
-            identity_store_id: self.identity_store_id,
-            group_id: self.group_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_group::DeleteGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_group::DeleteGroupInput {
+                identity_store_id: self.identity_store_id
+                ,
+                group_id: self.group_id
+                ,
+            }
+        )
     }
 }
+

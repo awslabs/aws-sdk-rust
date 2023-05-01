@@ -3,7 +3,7 @@
 /// <p>Starts a scan of the policies applied to the specified resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartResourceScanInput {
+pub struct StartResourceScanInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
     #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct StartResourceScanInput {
 }
 impl StartResourceScanInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The ARN of the resource to scan.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
 }
 impl StartResourceScanInput {
     /// Creates a new builder-style object to manufacture [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
-    pub fn builder(
-    ) -> crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
+    pub fn builder() -> crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder {
         crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl StartResourceScanInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to use to scan the policies applied to the specified resource.</p>
     pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The ARN of the resource to scan.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl StartResourceScanInputBuilder {
     }
     /// <p>The ARN of the resource to scan.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
     pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,26 +68,21 @@ impl StartResourceScanInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn set_resource_owner_account(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_owner_account = input;
-        self
+    pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_owner_account = input; self
     }
     /// Consumes the builder and constructs a [`StartResourceScanInput`](crate::operation::start_resource_scan::StartResourceScanInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_resource_scan::StartResourceScanInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_resource_scan::StartResourceScanInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_resource_scan::StartResourceScanInput {
-                analyzer_arn: self.analyzer_arn,
-                resource_arn: self.resource_arn,
-                resource_owner_account: self.resource_owner_account,
-            },
+                analyzer_arn: self.analyzer_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                resource_owner_account: self.resource_owner_account
+                ,
+            }
         )
     }
 }
+

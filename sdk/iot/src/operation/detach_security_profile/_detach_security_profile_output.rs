@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachSecurityProfileOutput {
+pub struct DetachSecurityProfileOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DetachSecurityProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetachSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`DetachSecurityProfileOutput`](crate::operation::detach_security_profile::DetachSecurityProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::detach_security_profile::builders::DetachSecurityProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detach_security_profile::builders::DetachSecurityProfileOutputBuilder {
         crate::operation::detach_security_profile::builders::DetachSecurityProfileOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DetachSecurityProfileOutputBuilder {
 }
 impl DetachSecurityProfileOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetachSecurityProfileOutput`](crate::operation::detach_security_profile::DetachSecurityProfileOutput).
     pub fn build(self) -> crate::operation::detach_security_profile::DetachSecurityProfileOutput {
         crate::operation::detach_security_profile::DetachSecurityProfileOutput {
@@ -42,3 +40,4 @@ impl DetachSecurityProfileOutputBuilder {
         }
     }
 }
+

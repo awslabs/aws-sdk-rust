@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContainerInstancesStateOutput {
+pub struct UpdateContainerInstancesStateOutput  {
     /// <p>The list of container instances.</p>
     #[doc(hidden)]
     pub container_instances: std::option::Option<std::vec::Vec<crate::types::ContainerInstance>>,
@@ -13,22 +13,22 @@ pub struct UpdateContainerInstancesStateOutput {
 }
 impl UpdateContainerInstancesStateOutput {
     /// <p>The list of container instances.</p>
-    pub fn container_instances(&self) -> std::option::Option<&[crate::types::ContainerInstance]> {
+    pub fn container_instances(&self) -> std::option::Option<& [crate::types::ContainerInstance]> {
         self.container_instances.as_deref()
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::Failure]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::types::Failure]> {
         self.failures.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateContainerInstancesStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateContainerInstancesStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContainerInstancesStateOutput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput).
-    pub fn builder() -> crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateOutputBuilder{
+    pub fn builder() -> crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateOutputBuilder {
         crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl UpdateContainerInstancesStateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateOutputBuilder {
-    pub(crate) container_instances:
-        std::option::Option<std::vec::Vec<crate::types::ContainerInstance>>,
+    pub(crate) container_instances: std::option::Option<std::vec::Vec<crate::types::ContainerInstance>>,
     pub(crate) failures: std::option::Option<std::vec::Vec<crate::types::Failure>>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl UpdateContainerInstancesStateOutputBuilder {
     /// <p>The list of container instances.</p>
     pub fn container_instances(mut self, input: crate::types::ContainerInstance) -> Self {
         let mut v = self.container_instances.unwrap_or_default();
-        v.push(input);
-        self.container_instances = Some(v);
-        self
+                        v.push(input);
+                        self.container_instances = Some(v);
+                        self
     }
     /// <p>The list of container instances.</p>
-    pub fn set_container_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContainerInstance>>,
-    ) -> Self {
-        self.container_instances = input;
-        self
+    pub fn set_container_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContainerInstance>>) -> Self {
+        self.container_instances = input; self
     }
     /// Appends an item to `failures`.
     ///
@@ -69,36 +64,32 @@ impl UpdateContainerInstancesStateOutputBuilder {
     /// <p>Any failures associated with the call.</p>
     pub fn failures(mut self, input: crate::types::Failure) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = Some(v);
-        self
+                        v.push(input);
+                        self.failures = Some(v);
+                        self
     }
     /// <p>Any failures associated with the call.</p>
-    pub fn set_failures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Failure>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::Failure>>) -> Self {
+        self.failures = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateContainerInstancesStateOutput`](crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput
-    {
+    pub fn build(self) -> crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput {
         crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput {
-            container_instances: self.container_instances,
-            failures: self.failures,
+            container_instances: self.container_instances
+            ,
+            failures: self.failures
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The network profile associated with a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NetworkProfile {
+pub struct NetworkProfile  {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
     pub network_profile_arn: std::option::Option<std::string::String>,
@@ -37,47 +37,47 @@ pub struct NetworkProfile {
 }
 impl NetworkProfile {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn network_profile_name(&self) -> std::option::Option<&str> {
+    pub fn network_profile_name(&self) -> std::option::Option<& str> {
         self.network_profile_name.as_deref()
     }
     /// <p>Detailed information about a device's network profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The SSID of the Wi-Fi network.</p>
-    pub fn ssid(&self) -> std::option::Option<&str> {
+    pub fn ssid(&self) -> std::option::Option<& str> {
         self.ssid.as_deref()
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn security_type(&self) -> std::option::Option<&crate::types::NetworkSecurityType> {
+    pub fn security_type(&self) -> std::option::Option<& crate::types::NetworkSecurityType> {
         self.security_type.as_ref()
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
-    pub fn eap_method(&self) -> std::option::Option<&crate::types::NetworkEapMethod> {
+    pub fn eap_method(&self) -> std::option::Option<& crate::types::NetworkEapMethod> {
         self.eap_method.as_ref()
     }
     /// <p>The current password of the Wi-Fi network.</p>
-    pub fn current_password(&self) -> std::option::Option<&str> {
+    pub fn current_password(&self) -> std::option::Option<& str> {
         self.current_password.as_deref()
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
-    pub fn next_password(&self) -> std::option::Option<&str> {
+    pub fn next_password(&self) -> std::option::Option<& str> {
         self.next_password.as_deref()
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    pub fn certificate_authority_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_authority_arn(&self) -> std::option::Option<& str> {
         self.certificate_authority_arn.as_deref()
     }
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    pub fn trust_anchors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn trust_anchors(&self) -> std::option::Option<& [std::string::String]> {
         self.trust_anchors.as_deref()
     }
 }
-impl std::fmt::Debug for NetworkProfile {
+impl  std::fmt::Debug for NetworkProfile  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NetworkProfile");
         formatter.field("network_profile_arn", &self.network_profile_arn);
@@ -122,12 +122,8 @@ impl NetworkProfileBuilder {
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_profile_arn = input;
-        self
+    pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_profile_arn = input; self
     }
     /// <p>The name of the network profile associated with a device.</p>
     pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,12 +131,8 @@ impl NetworkProfileBuilder {
         self
     }
     /// <p>The name of the network profile associated with a device.</p>
-    pub fn set_network_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_profile_name = input;
-        self
+    pub fn set_network_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_profile_name = input; self
     }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +141,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>Detailed information about a device's network profile.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The SSID of the Wi-Fi network.</p>
     pub fn ssid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +150,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The SSID of the Wi-Fi network.</p>
     pub fn set_ssid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssid = input;
-        self
+        self.ssid = input; self
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
     pub fn security_type(mut self, input: crate::types::NetworkSecurityType) -> Self {
@@ -168,12 +158,8 @@ impl NetworkProfileBuilder {
         self
     }
     /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK, WEP, or OPEN.</p>
-    pub fn set_security_type(
-        mut self,
-        input: std::option::Option<crate::types::NetworkSecurityType>,
-    ) -> Self {
-        self.security_type = input;
-        self
+    pub fn set_security_type(mut self, input: std::option::Option<crate::types::NetworkSecurityType>) -> Self {
+        self.security_type = input; self
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
     pub fn eap_method(mut self, input: crate::types::NetworkEapMethod) -> Self {
@@ -181,12 +167,8 @@ impl NetworkProfileBuilder {
         self
     }
     /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is supported. </p>
-    pub fn set_eap_method(
-        mut self,
-        input: std::option::Option<crate::types::NetworkEapMethod>,
-    ) -> Self {
-        self.eap_method = input;
-        self
+    pub fn set_eap_method(mut self, input: std::option::Option<crate::types::NetworkEapMethod>) -> Self {
+        self.eap_method = input; self
     }
     /// <p>The current password of the Wi-Fi network.</p>
     pub fn current_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +177,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The current password of the Wi-Fi network.</p>
     pub fn set_current_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_password = input;
-        self
+        self.current_password = input; self
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,8 +186,7 @@ impl NetworkProfileBuilder {
     }
     /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously transmitted to the device and is used when the password of the network changes to NextPassword. </p>
     pub fn set_next_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_password = input;
-        self
+        self.next_password = input; self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
     pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -214,12 +194,8 @@ impl NetworkProfileBuilder {
         self
     }
     /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager (ACM). This is used to issue certificates to the devices. </p>
-    pub fn set_certificate_authority_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_authority_arn = input;
-        self
+    pub fn set_certificate_authority_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_authority_arn = input; self
     }
     /// Appends an item to `trust_anchors`.
     ///
@@ -228,31 +204,37 @@ impl NetworkProfileBuilder {
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
     pub fn trust_anchors(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.trust_anchors.unwrap_or_default();
-        v.push(input.into());
-        self.trust_anchors = Some(v);
-        self
+                        v.push(input.into());
+                        self.trust_anchors = Some(v);
+                        self
     }
     /// <p>The root certificates of your authentication server, which is installed on your devices and used to trust your authentication server during EAP negotiation.</p>
-    pub fn set_trust_anchors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.trust_anchors = input;
-        self
+    pub fn set_trust_anchors(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.trust_anchors = input; self
     }
     /// Consumes the builder and constructs a [`NetworkProfile`](crate::types::NetworkProfile).
     pub fn build(self) -> crate::types::NetworkProfile {
         crate::types::NetworkProfile {
-            network_profile_arn: self.network_profile_arn,
-            network_profile_name: self.network_profile_name,
-            description: self.description,
-            ssid: self.ssid,
-            security_type: self.security_type,
-            eap_method: self.eap_method,
-            current_password: self.current_password,
-            next_password: self.next_password,
-            certificate_authority_arn: self.certificate_authority_arn,
-            trust_anchors: self.trust_anchors,
+            network_profile_arn: self.network_profile_arn
+            ,
+            network_profile_name: self.network_profile_name
+            ,
+            description: self.description
+            ,
+            ssid: self.ssid
+            ,
+            security_type: self.security_type
+            ,
+            eap_method: self.eap_method
+            ,
+            current_password: self.current_password
+            ,
+            next_password: self.next_password
+            ,
+            certificate_authority_arn: self.certificate_authority_arn
+            ,
+            trust_anchors: self.trust_anchors
+            ,
         }
     }
 }
@@ -272,3 +254,4 @@ impl std::fmt::Debug for NetworkProfileBuilder {
         formatter.finish()
     }
 }
+

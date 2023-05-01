@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeParametersInput {
+pub struct DescribeParametersInput  {
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::ParametersFilter>>,
@@ -18,11 +18,11 @@ pub struct DescribeParametersInput {
 }
 impl DescribeParametersInput {
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::ParametersFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::ParametersFilter]> {
         self.filters.as_deref()
     }
     /// <p>Filters to limit the request results.</p>
-    pub fn parameter_filters(&self) -> std::option::Option<&[crate::types::ParameterStringFilter]> {
+    pub fn parameter_filters(&self) -> std::option::Option<& [crate::types::ParameterStringFilter]> {
         self.parameter_filters.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -30,14 +30,13 @@ impl DescribeParametersInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
+    pub fn builder() -> crate::operation::describe_parameters::builders::DescribeParametersInputBuilder {
         crate::operation::describe_parameters::builders::DescribeParametersInputBuilder::default()
     }
 }
@@ -47,8 +46,7 @@ impl DescribeParametersInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeParametersInputBuilder {
     pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::ParametersFilter>>,
-    pub(crate) parameter_filters:
-        std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
+    pub(crate) parameter_filters: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
@@ -60,17 +58,13 @@ impl DescribeParametersInputBuilder {
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
     pub fn filters(mut self, input: crate::types::ParametersFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParametersFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParametersFilter>>) -> Self {
+        self.filters = input; self
     }
     /// Appends an item to `parameter_filters`.
     ///
@@ -79,17 +73,13 @@ impl DescribeParametersInputBuilder {
     /// <p>Filters to limit the request results.</p>
     pub fn parameter_filters(mut self, input: crate::types::ParameterStringFilter) -> Self {
         let mut v = self.parameter_filters.unwrap_or_default();
-        v.push(input);
-        self.parameter_filters = Some(v);
-        self
+                        v.push(input);
+                        self.parameter_filters = Some(v);
+                        self
     }
     /// <p>Filters to limit the request results.</p>
-    pub fn set_parameter_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
-    ) -> Self {
-        self.parameter_filters = input;
-        self
+    pub fn set_parameter_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>) -> Self {
+        self.parameter_filters = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -98,8 +88,7 @@ impl DescribeParametersInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,23 +97,22 @@ impl DescribeParametersInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeParametersInput`](crate::operation::describe_parameters::DescribeParametersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_parameters::DescribeParametersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_parameters::DescribeParametersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_parameters::DescribeParametersInput {
-                filters: self.filters,
-                parameter_filters: self.parameter_filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                parameter_filters: self.parameter_filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

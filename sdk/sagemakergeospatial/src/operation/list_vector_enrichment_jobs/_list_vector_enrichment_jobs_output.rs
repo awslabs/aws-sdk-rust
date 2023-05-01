@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListVectorEnrichmentJobsOutput {
+pub struct ListVectorEnrichmentJobsOutput  {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
     #[doc(hidden)]
-    pub vector_enrichment_job_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
+    pub vector_enrichment_job_summaries: std::option::Option<std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,36 +13,31 @@ pub struct ListVectorEnrichmentJobsOutput {
 }
 impl ListVectorEnrichmentJobsOutput {
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-    pub fn vector_enrichment_job_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::ListVectorEnrichmentJobOutputConfig]> {
+    pub fn vector_enrichment_job_summaries(&self) -> std::option::Option<& [crate::types::ListVectorEnrichmentJobOutputConfig]> {
         self.vector_enrichment_job_summaries.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListVectorEnrichmentJobsOutput {
+impl  std::fmt::Debug for ListVectorEnrichmentJobsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVectorEnrichmentJobsOutput");
-        formatter.field(
-            "vector_enrichment_job_summaries",
-            &self.vector_enrichment_job_summaries,
-        );
+        formatter.field("vector_enrichment_job_summaries", &self.vector_enrichment_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
 impl aws_http::request_id::RequestId for ListVectorEnrichmentJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVectorEnrichmentJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListVectorEnrichmentJobsOutput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput).
-    pub fn builder() -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsOutputBuilder {
         crate::operation::list_vector_enrichment_jobs::builders::ListVectorEnrichmentJobsOutputBuilder::default()
     }
 }
@@ -52,8 +46,7 @@ impl ListVectorEnrichmentJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ListVectorEnrichmentJobsOutputBuilder {
-    pub(crate) vector_enrichment_job_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
+    pub(crate) vector_enrichment_job_summaries: std::option::Option<std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -63,24 +56,15 @@ impl ListVectorEnrichmentJobsOutputBuilder {
     /// To override the contents of this collection use [`set_vector_enrichment_job_summaries`](Self::set_vector_enrichment_job_summaries).
     ///
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-    pub fn vector_enrichment_job_summaries(
-        mut self,
-        input: crate::types::ListVectorEnrichmentJobOutputConfig,
-    ) -> Self {
+    pub fn vector_enrichment_job_summaries(mut self, input: crate::types::ListVectorEnrichmentJobOutputConfig) -> Self {
         let mut v = self.vector_enrichment_job_summaries.unwrap_or_default();
-        v.push(input);
-        self.vector_enrichment_job_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.vector_enrichment_job_summaries = Some(v);
+                        self
     }
     /// <p>Contains summary information about the Vector Enrichment jobs.</p>
-    pub fn set_vector_enrichment_job_summaries(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>,
-        >,
-    ) -> Self {
-        self.vector_enrichment_job_summaries = input;
-        self
+    pub fn set_vector_enrichment_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListVectorEnrichmentJobOutputConfig>>) -> Self {
+        self.vector_enrichment_job_summaries = input; self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,25 +73,24 @@ impl ListVectorEnrichmentJobsOutputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVectorEnrichmentJobsOutput`](crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
+    pub fn build(self) -> crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
         crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput {
-            vector_enrichment_job_summaries: self.vector_enrichment_job_summaries,
-            next_token: self.next_token,
+            vector_enrichment_job_summaries: self.vector_enrichment_job_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -115,12 +98,10 @@ impl ListVectorEnrichmentJobsOutputBuilder {
 impl std::fmt::Debug for ListVectorEnrichmentJobsOutputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListVectorEnrichmentJobsOutputBuilder");
-        formatter.field(
-            "vector_enrichment_job_summaries",
-            &self.vector_enrichment_job_summaries,
-        );
+        formatter.field("vector_enrichment_job_summaries", &self.vector_enrichment_job_summaries);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
+

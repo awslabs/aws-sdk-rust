@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCrawlerInput {
+pub struct GetCrawlerInput  {
     /// <p>The name of the crawler to retrieve metadata for.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetCrawlerInput {
     /// <p>The name of the crawler to retrieve metadata for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetCrawlerInputBuilder {
     }
     /// <p>The name of the crawler to retrieve metadata for.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetCrawlerInput`](crate::operation::get_crawler::GetCrawlerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_crawler::GetCrawlerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_crawler::GetCrawlerInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_crawler::GetCrawlerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_crawler::GetCrawlerInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

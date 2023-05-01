@@ -3,7 +3,7 @@
 /// <p>Contains the instructions for one Grafana role permission update in a <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstruction {
+pub struct UpdateInstruction  {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::UpdateAction>,
@@ -16,15 +16,15 @@ pub struct UpdateInstruction {
 }
 impl UpdateInstruction {
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::UpdateAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::UpdateAction> {
         self.action.as_ref()
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> std::option::Option<& crate::types::Role> {
         self.role.as_ref()
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::types::User]> {
+    pub fn users(&self) -> std::option::Option<& [crate::types::User]> {
         self.users.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl UpdateInstructionBuilder {
     }
     /// <p>Specifies whether this update is to add or revoke role permissions.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::UpdateAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
@@ -61,8 +60,7 @@ impl UpdateInstructionBuilder {
     }
     /// <p>The role to add or revoke for the user or the group specified in <code>users</code>.</p>
     pub fn set_role(mut self, input: std::option::Option<crate::types::Role>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// Appends an item to `users`.
     ///
@@ -71,24 +69,24 @@ impl UpdateInstructionBuilder {
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
-        v.push(input);
-        self.users = Some(v);
-        self
+                        v.push(input);
+                        self.users = Some(v);
+                        self
     }
     /// <p>A structure that specifies the user or group to add or revoke the role for.</p>
-    pub fn set_users(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::User>>,
-    ) -> Self {
-        self.users = input;
-        self
+    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::User>>) -> Self {
+        self.users = input; self
     }
     /// Consumes the builder and constructs a [`UpdateInstruction`](crate::types::UpdateInstruction).
     pub fn build(self) -> crate::types::UpdateInstruction {
         crate::types::UpdateInstruction {
-            action: self.action,
-            role: self.role,
-            users: self.users,
+            action: self.action
+            ,
+            role: self.role
+            ,
+            users: self.users
+            ,
         }
     }
 }
+

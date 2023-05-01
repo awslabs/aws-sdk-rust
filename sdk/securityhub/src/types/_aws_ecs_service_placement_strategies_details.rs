@@ -3,35 +3,35 @@
 /// <p>A placement strategy that determines how to place the tasks for the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsServicePlacementStrategiesDetails {
-    /// <p>The field to apply the placement strategy against.</p>
-    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
-    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
+pub struct AwsEcsServicePlacementStrategiesDetails  {
+    /// <p>The field to apply the placement strategy against.</p> 
+    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p> 
+    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p> 
     /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
     #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
-    /// <p>The type of placement strategy.</p>
-    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
-    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
-    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
+    /// <p>The type of placement strategy.</p> 
+    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p> 
+    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p> 
+    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p> 
     /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsEcsServicePlacementStrategiesDetails {
-    /// <p>The field to apply the placement strategy against.</p>
-    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
-    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
+    /// <p>The field to apply the placement strategy against.</p> 
+    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p> 
+    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p> 
     /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
-    /// <p>The type of placement strategy.</p>
-    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
-    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
-    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
+    /// <p>The type of placement strategy.</p> 
+    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p> 
+    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p> 
+    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p> 
     /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -50,45 +50,46 @@ pub struct AwsEcsServicePlacementStrategiesDetailsBuilder {
     pub(crate) r#type: std::option::Option<std::string::String>,
 }
 impl AwsEcsServicePlacementStrategiesDetailsBuilder {
-    /// <p>The field to apply the placement strategy against.</p>
-    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
-    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
+    /// <p>The field to apply the placement strategy against.</p> 
+    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p> 
+    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p> 
     /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
     pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
         self.field = Some(input.into());
         self
     }
-    /// <p>The field to apply the placement strategy against.</p>
-    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
-    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
+    /// <p>The field to apply the placement strategy against.</p> 
+    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p> 
+    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p> 
     /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
     pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
-    /// <p>The type of placement strategy.</p>
-    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
-    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
-    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
+    /// <p>The type of placement strategy.</p> 
+    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p> 
+    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p> 
+    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p> 
     /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>The type of placement strategy.</p>
-    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
-    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
-    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
+    /// <p>The type of placement strategy.</p> 
+    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p> 
+    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p> 
+    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p> 
     /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsServicePlacementStrategiesDetails`](crate::types::AwsEcsServicePlacementStrategiesDetails).
     pub fn build(self) -> crate::types::AwsEcsServicePlacementStrategiesDetails {
         crate::types::AwsEcsServicePlacementStrategiesDetails {
-            field: self.field,
-            r#type: self.r#type,
+            field: self.field
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

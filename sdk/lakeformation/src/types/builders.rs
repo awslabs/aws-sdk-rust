@@ -86,3 +86,4 @@ pub use crate::types::_virtual_object::VirtualObjectBuilder;
 pub use crate::types::_batch_permissions_failure_entry::BatchPermissionsFailureEntryBuilder;
 
 pub use crate::types::_batch_permissions_request_entry::BatchPermissionsRequestEntryBuilder;
+

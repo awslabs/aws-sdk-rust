@@ -3,18 +3,18 @@
 /// <p>A search filter defines which resources can be part of a search query result set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchFilter {
+pub struct SearchFilter  {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
     #[doc(hidden)]
     pub filter_string: std::option::Option<std::string::String>,
 }
 impl SearchFilter {
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
-    pub fn filter_string(&self) -> std::option::Option<&str> {
+    pub fn filter_string(&self) -> std::option::Option<& str> {
         self.filter_string.as_deref()
     }
 }
-impl std::fmt::Debug for SearchFilter {
+impl  std::fmt::Debug for SearchFilter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchFilter");
         formatter.field("filter_string", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl SearchFilterBuilder {
     }
     /// <p>The string that contains the search keywords, prefixes, and operators to control the results that can be returned by a <code>Search</code> operation. For more details, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/APIReference/about-query-syntax.html">Search query syntax</a>.</p>
     pub fn set_filter_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_string = input;
-        self
+        self.filter_string = input; self
     }
     /// Consumes the builder and constructs a [`SearchFilter`](crate::types::SearchFilter).
     pub fn build(self) -> crate::types::SearchFilter {
         crate::types::SearchFilter {
-            filter_string: self.filter_string,
+            filter_string: self.filter_string
+            ,
         }
     }
 }
@@ -59,3 +59,4 @@ impl std::fmt::Debug for SearchFilterBuilder {
         formatter.finish()
     }
 }
+

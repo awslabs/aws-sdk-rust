@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnvironmentInput {
+pub struct GetEnvironmentInput  {
     /// <p>The name of the environment that you want to get the detailed data for.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEnvironmentInput {
     /// <p>The name of the environment that you want to get the detailed data for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetEnvironmentInputBuilder {
     }
     /// <p>The name of the environment that you want to get the detailed data for.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_environment::GetEnvironmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_environment::GetEnvironmentInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_environment::GetEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_environment::GetEnvironmentInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

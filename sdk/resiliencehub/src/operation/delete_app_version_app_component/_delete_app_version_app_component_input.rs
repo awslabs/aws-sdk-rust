@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppVersionAppComponentInput {
+pub struct DeleteAppVersionAppComponentInput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DeleteAppVersionAppComponentInput {
 }
 impl DeleteAppVersionAppComponentInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The identifier of the Application Component.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteAppVersionAppComponentInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppVersionAppComponentInput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput).
-    pub fn builder() -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder{
+    pub fn builder() -> crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder {
         crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DeleteAppVersionAppComponentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The identifier of the Application Component.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DeleteAppVersionAppComponentInputBuilder {
     }
     /// <p>The identifier of the Application Component.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,22 +68,20 @@ impl DeleteAppVersionAppComponentInputBuilder {
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAppVersionAppComponentInput`](crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponentInput {
-                app_arn: self.app_arn,
-                id: self.id,
-                client_token: self.client_token,
-            },
+                app_arn: self.app_arn
+                ,
+                id: self.id
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

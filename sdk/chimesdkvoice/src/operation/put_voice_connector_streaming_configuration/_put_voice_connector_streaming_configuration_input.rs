@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutVoiceConnectorStreamingConfigurationInput {
+pub struct PutVoiceConnectorStreamingConfigurationInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct PutVoiceConnectorStreamingConfigurationInput {
 }
 impl PutVoiceConnectorStreamingConfigurationInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The streaming settings being updated.</p>
-    pub fn streaming_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::StreamingConfiguration> {
+    pub fn streaming_configuration(&self) -> std::option::Option<& crate::types::StreamingConfiguration> {
         self.streaming_configuration.as_ref()
     }
 }
 impl PutVoiceConnectorStreamingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorStreamingConfigurationInput`](crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput).
-    pub fn builder() -> crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationInputBuilder {
         crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl PutVoiceConnectorStreamingConfigurationInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// <p>The streaming settings being updated.</p>
     pub fn streaming_configuration(mut self, input: crate::types::StreamingConfiguration) -> Self {
@@ -56,15 +50,11 @@ impl PutVoiceConnectorStreamingConfigurationInputBuilder {
         self
     }
     /// <p>The streaming settings being updated.</p>
-    pub fn set_streaming_configuration(
-        mut self,
-        input: std::option::Option<crate::types::StreamingConfiguration>,
-    ) -> Self {
-        self.streaming_configuration = input;
-        self
+    pub fn set_streaming_configuration(mut self, input: std::option::Option<crate::types::StreamingConfiguration>) -> Self {
+        self.streaming_configuration = input; self
     }
     /// Consumes the builder and constructs a [`PutVoiceConnectorStreamingConfigurationInput`](crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationInput {
                 voice_connector_id: self.voice_connector_id
@@ -75,3 +65,4 @@ impl PutVoiceConnectorStreamingConfigurationInputBuilder {
         )
     }
 }
+

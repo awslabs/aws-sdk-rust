@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDestinationInput {
+pub struct CreateDestinationInput  {
     /// <p>The name of the new resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -27,38 +27,37 @@ pub struct CreateDestinationInput {
 }
 impl CreateDestinationInput {
     /// <p>The name of the new resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn expression_type(&self) -> std::option::Option<&crate::types::ExpressionType> {
+    pub fn expression_type(&self) -> std::option::Option<& crate::types::ExpressionType> {
         self.expression_type.as_ref()
     }
     /// <p>The rule name or topic rule to send messages to.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl CreateDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
-    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationInputBuilder {
         crate::operation::create_destination::builders::CreateDestinationInputBuilder::default()
     }
 }
@@ -83,8 +82,7 @@ impl CreateDestinationInputBuilder {
     }
     /// <p>The name of the new resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of value in <code>Expression</code>.</p>
     pub fn expression_type(mut self, input: crate::types::ExpressionType) -> Self {
@@ -92,12 +90,8 @@ impl CreateDestinationInputBuilder {
         self
     }
     /// <p>The type of value in <code>Expression</code>.</p>
-    pub fn set_expression_type(
-        mut self,
-        input: std::option::Option<crate::types::ExpressionType>,
-    ) -> Self {
-        self.expression_type = input;
-        self
+    pub fn set_expression_type(mut self, input: std::option::Option<crate::types::ExpressionType>) -> Self {
+        self.expression_type = input; self
     }
     /// <p>The rule name or topic rule to send messages to.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl CreateDestinationInputBuilder {
     }
     /// <p>The rule name or topic rule to send messages to.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +109,7 @@ impl CreateDestinationInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +118,7 @@ impl CreateDestinationInputBuilder {
     }
     /// <p>The ARN of the IAM Role that authorizes the destination.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -136,17 +127,13 @@ impl CreateDestinationInputBuilder {
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,30 +141,29 @@ impl CreateDestinationInputBuilder {
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateDestinationInput`](crate::operation::create_destination::CreateDestinationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_destination::CreateDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_destination::CreateDestinationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_destination::CreateDestinationInput {
-                name: self.name,
-                expression_type: self.expression_type,
-                expression: self.expression,
-                description: self.description,
-                role_arn: self.role_arn,
-                tags: self.tags,
-                client_request_token: self.client_request_token,
-            },
+                name: self.name
+                ,
+                expression_type: self.expression_type
+                ,
+                expression: self.expression
+                ,
+                description: self.description
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

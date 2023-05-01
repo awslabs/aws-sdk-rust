@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisioningTemplateVersionInput {
+pub struct DescribeProvisioningTemplateVersionInput  {
     /// <p>The template name.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeProvisioningTemplateVersionInput {
 }
 impl DescribeProvisioningTemplateVersionInput {
     /// <p>The template name.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The provisioning template version ID.</p>
@@ -22,7 +22,7 @@ impl DescribeProvisioningTemplateVersionInput {
 }
 impl DescribeProvisioningTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
-    pub fn builder() -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder {
         crate::operation::describe_provisioning_template_version::builders::DescribeProvisioningTemplateVersionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The template name.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The provisioning template version ID.</p>
     pub fn version_id(mut self, input: i32) -> Self {
@@ -52,11 +51,10 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The provisioning template version ID.</p>
     pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProvisioningTemplateVersionInput`](crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput).
-    pub fn build(self) -> Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_provisioning_template_version::DescribeProvisioningTemplateVersionInput {
                 template_name: self.template_name
@@ -67,3 +65,4 @@ impl DescribeProvisioningTemplateVersionInputBuilder {
         )
     }
 }
+

@@ -3,24 +3,21 @@
 /// <p>Status information about the aggregated associations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceAggregatedAssociationOverview {
+pub struct InstanceAggregatedAssociationOverview  {
     /// <p>Detailed status information about the aggregated associations.</p>
     #[doc(hidden)]
     pub detailed_status: std::option::Option<std::string::String>,
     /// <p>The number of associations for the managed node(s).</p>
     #[doc(hidden)]
-    pub instance_association_status_aggregated_count:
-        std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+    pub instance_association_status_aggregated_count: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
 impl InstanceAggregatedAssociationOverview {
     /// <p>Detailed status information about the aggregated associations.</p>
-    pub fn detailed_status(&self) -> std::option::Option<&str> {
+    pub fn detailed_status(&self) -> std::option::Option<& str> {
         self.detailed_status.as_deref()
     }
     /// <p>The number of associations for the managed node(s).</p>
-    pub fn instance_association_status_aggregated_count(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+    pub fn instance_association_status_aggregated_count(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, i32>> {
         self.instance_association_status_aggregated_count.as_ref()
     }
 }
@@ -36,8 +33,7 @@ impl InstanceAggregatedAssociationOverview {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InstanceAggregatedAssociationOverviewBuilder {
     pub(crate) detailed_status: std::option::Option<std::string::String>,
-    pub(crate) instance_association_status_aggregated_count:
-        std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+    pub(crate) instance_association_status_aggregated_count: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
 }
 impl InstanceAggregatedAssociationOverviewBuilder {
     /// <p>Detailed status information about the aggregated associations.</p>
@@ -47,40 +43,31 @@ impl InstanceAggregatedAssociationOverviewBuilder {
     }
     /// <p>Detailed status information about the aggregated associations.</p>
     pub fn set_detailed_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detailed_status = input;
-        self
+        self.detailed_status = input; self
     }
     /// Adds a key-value pair to `instance_association_status_aggregated_count`.
     ///
     /// To override the contents of this collection use [`set_instance_association_status_aggregated_count`](Self::set_instance_association_status_aggregated_count).
     ///
     /// <p>The number of associations for the managed node(s).</p>
-    pub fn instance_association_status_aggregated_count(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: i32,
-    ) -> Self {
-        let mut hash_map = self
-            .instance_association_status_aggregated_count
-            .unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.instance_association_status_aggregated_count = Some(hash_map);
-        self
+    pub fn instance_association_status_aggregated_count(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
+        let mut hash_map = self.instance_association_status_aggregated_count.unwrap_or_default();
+                        hash_map.insert(k.into(), v);
+                        self.instance_association_status_aggregated_count = Some(hash_map);
+                        self
     }
     /// <p>The number of associations for the managed node(s).</p>
-    pub fn set_instance_association_status_aggregated_count(
-        mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
-    ) -> Self {
-        self.instance_association_status_aggregated_count = input;
-        self
+    pub fn set_instance_association_status_aggregated_count(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, i32>>) -> Self {
+        self.instance_association_status_aggregated_count = input; self
     }
     /// Consumes the builder and constructs a [`InstanceAggregatedAssociationOverview`](crate::types::InstanceAggregatedAssociationOverview).
     pub fn build(self) -> crate::types::InstanceAggregatedAssociationOverview {
         crate::types::InstanceAggregatedAssociationOverview {
-            detailed_status: self.detailed_status,
-            instance_association_status_aggregated_count: self
-                .instance_association_status_aggregated_count,
+            detailed_status: self.detailed_status
+            ,
+            instance_association_status_aggregated_count: self.instance_association_status_aggregated_count
+            ,
         }
     }
 }
+

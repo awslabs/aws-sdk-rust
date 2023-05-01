@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseOutput {
+pub struct CreateLicenseOutput  {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateLicenseOutput {
 }
 impl CreateLicenseOutput {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::LicenseStatus> {
         self.status.as_ref()
     }
     /// <p>License version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLicenseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLicenseOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseOutput`](crate::operation::create_license::CreateLicenseOutput).
     pub fn builder() -> crate::operation::create_license::builders::CreateLicenseOutputBuilder {
@@ -57,8 +57,7 @@ impl CreateLicenseOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>License status.</p>
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
@@ -67,8 +66,7 @@ impl CreateLicenseOutputBuilder {
     }
     /// <p>License status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::LicenseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>License version.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,25 +75,28 @@ impl CreateLicenseOutputBuilder {
     }
     /// <p>License version.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLicenseOutput`](crate::operation::create_license::CreateLicenseOutput).
     pub fn build(self) -> crate::operation::create_license::CreateLicenseOutput {
         crate::operation::create_license::CreateLicenseOutput {
-            license_arn: self.license_arn,
-            status: self.status,
-            version: self.version,
+            license_arn: self.license_arn
+            ,
+            status: self.status
+            ,
+            version: self.version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

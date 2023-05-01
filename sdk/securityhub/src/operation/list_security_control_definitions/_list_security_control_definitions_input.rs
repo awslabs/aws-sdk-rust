@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityControlDefinitionsInput {
+pub struct ListSecurityControlDefinitionsInput  {
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
     #[doc(hidden)]
     pub standards_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListSecurityControlDefinitionsInput {
 }
 impl ListSecurityControlDefinitionsInput {
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
-    pub fn standards_arn(&self) -> std::option::Option<&str> {
+    pub fn standards_arn(&self) -> std::option::Option<& str> {
         self.standards_arn.as_deref()
     }
     /// <p> Optional pagination parameter. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
@@ -29,7 +29,7 @@ impl ListSecurityControlDefinitionsInput {
 }
 impl ListSecurityControlDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityControlDefinitionsInput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput).
-    pub fn builder() -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder{
+    pub fn builder() -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder {
         crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListSecurityControlDefinitionsInputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
     pub fn set_standards_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.standards_arn = input;
-        self
+        self.standards_arn = input; self
     }
     /// <p> Optional pagination parameter. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListSecurityControlDefinitionsInputBuilder {
     }
     /// <p> Optional pagination parameter. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,16 +68,10 @@ impl ListSecurityControlDefinitionsInputBuilder {
     }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 security controls that apply to the specified standard. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 controls. This repeats until all controls for the standard are returned. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListSecurityControlDefinitionsInput`](crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsInput {
                 standards_arn: self.standards_arn
@@ -92,3 +84,4 @@ impl ListSecurityControlDefinitionsInputBuilder {
         )
     }
 }
+

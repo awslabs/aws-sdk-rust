@@ -3,7 +3,7 @@
 /// <p>No Amazon FSx snapshots were found based on the supplied parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotNotFound {
+pub struct SnapshotNotFound  {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct SnapshotNotFound {
 }
 impl SnapshotNotFound {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SnapshotNotFound {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotNotFound")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -34,9 +32,7 @@ impl aws_http::request_id::RequestId for crate::types::error::SnapshotNotFound {
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SnapshotNotFound {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl SnapshotNotFound {
     /// Creates a new builder-style object to manufacture [`SnapshotNotFound`](crate::types::error::SnapshotNotFound).
@@ -60,28 +56,26 @@ impl SnapshotNotFoundBuilder {
     }
     /// <p>A detailed error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`SnapshotNotFound`](crate::types::error::SnapshotNotFound).
     pub fn build(self) -> crate::types::error::SnapshotNotFound {
         crate::types::error::SnapshotNotFound {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApprovalRuleTemplatesInput {
+pub struct ListApprovalRuleTemplatesInput  {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListApprovalRuleTemplatesInput {
 }
 impl ListApprovalRuleTemplatesInput {
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -22,7 +22,7 @@ impl ListApprovalRuleTemplatesInput {
 }
 impl ListApprovalRuleTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListApprovalRuleTemplatesInput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput).
-    pub fn builder() -> crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder {
         crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl ListApprovalRuleTemplatesInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,21 +51,18 @@ impl ListApprovalRuleTemplatesInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListApprovalRuleTemplatesInput`](crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The details of a channel member.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelMembership {
+pub struct ChannelMembership  {
     /// <p>The identifier of the member who invited another member.</p>
     #[doc(hidden)]
     pub invited_by: std::option::Option<crate::types::Identity>,
@@ -28,31 +28,31 @@ pub struct ChannelMembership {
 }
 impl ChannelMembership {
     /// <p>The identifier of the member who invited another member.</p>
-    pub fn invited_by(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn invited_by(&self) -> std::option::Option<& crate::types::Identity> {
         self.invited_by.as_ref()
     }
     /// <p>The membership type set for the channel member.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMembershipType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
     /// <p>The data of the channel member.</p>
-    pub fn member(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn member(&self) -> std::option::Option<& crate::types::Identity> {
         self.member.as_ref()
     }
     /// <p>The ARN of the member's channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the channel membership was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a channel membership was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The ID of the SubChannel that a user belongs to.</p>
-    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> std::option::Option<& str> {
         self.sub_channel_id.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl ChannelMembershipBuilder {
     }
     /// <p>The identifier of the member who invited another member.</p>
     pub fn set_invited_by(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.invited_by = input;
-        self
+        self.invited_by = input; self
     }
     /// <p>The membership type set for the channel member.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
@@ -92,12 +91,8 @@ impl ChannelMembershipBuilder {
         self
     }
     /// <p>The membership type set for the channel member.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMembershipType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ChannelMembershipType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The data of the channel member.</p>
     pub fn member(mut self, input: crate::types::Identity) -> Self {
@@ -106,8 +101,7 @@ impl ChannelMembershipBuilder {
     }
     /// <p>The data of the channel member.</p>
     pub fn set_member(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     /// <p>The ARN of the member's channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +110,7 @@ impl ChannelMembershipBuilder {
     }
     /// <p>The ARN of the member's channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The time at which the channel membership was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,12 +118,8 @@ impl ChannelMembershipBuilder {
         self
     }
     /// <p>The time at which the channel membership was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The time at which a channel membership was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -138,12 +127,8 @@ impl ChannelMembershipBuilder {
         self
     }
     /// <p>The time at which a channel membership was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_timestamp = input;
-        self
+    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_timestamp = input; self
     }
     /// <p>The ID of the SubChannel that a user belongs to.</p>
     pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,19 +137,26 @@ impl ChannelMembershipBuilder {
     }
     /// <p>The ID of the SubChannel that a user belongs to.</p>
     pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sub_channel_id = input;
-        self
+        self.sub_channel_id = input; self
     }
     /// Consumes the builder and constructs a [`ChannelMembership`](crate::types::ChannelMembership).
     pub fn build(self) -> crate::types::ChannelMembership {
         crate::types::ChannelMembership {
-            invited_by: self.invited_by,
-            r#type: self.r#type,
-            member: self.member,
-            channel_arn: self.channel_arn,
-            created_timestamp: self.created_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
-            sub_channel_id: self.sub_channel_id,
+            invited_by: self.invited_by
+            ,
+            r#type: self.r#type
+            ,
+            member: self.member
+            ,
+            channel_arn: self.channel_arn
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            sub_channel_id: self.sub_channel_id
+            ,
         }
     }
 }
+

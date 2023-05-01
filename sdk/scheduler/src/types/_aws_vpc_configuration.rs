@@ -3,7 +3,7 @@
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the awsvpc network mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsVpcConfiguration {
+pub struct AwsVpcConfiguration  {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct AwsVpcConfiguration {
 }
 impl AwsVpcConfiguration {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
-    pub fn assign_public_ip(&self) -> std::option::Option<&crate::types::AssignPublicIp> {
+    pub fn assign_public_ip(&self) -> std::option::Option<& crate::types::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
 }
@@ -51,17 +51,13 @@ impl AwsVpcConfigurationBuilder {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = Some(v);
+                        self
     }
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn set_subnets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -70,17 +66,13 @@ impl AwsVpcConfigurationBuilder {
     /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
     pub fn assign_public_ip(mut self, input: crate::types::AssignPublicIp) -> Self {
@@ -88,19 +80,19 @@ impl AwsVpcConfigurationBuilder {
         self
     }
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
-    pub fn set_assign_public_ip(
-        mut self,
-        input: std::option::Option<crate::types::AssignPublicIp>,
-    ) -> Self {
-        self.assign_public_ip = input;
-        self
+    pub fn set_assign_public_ip(mut self, input: std::option::Option<crate::types::AssignPublicIp>) -> Self {
+        self.assign_public_ip = input; self
     }
     /// Consumes the builder and constructs a [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
     pub fn build(self) -> crate::types::AwsVpcConfiguration {
         crate::types::AwsVpcConfiguration {
-            subnets: self.subnets,
-            security_groups: self.security_groups,
-            assign_public_ip: self.assign_public_ip,
+            subnets: self.subnets
+            ,
+            security_groups: self.security_groups
+            ,
+            assign_public_ip: self.assign_public_ip
+            ,
         }
     }
 }
+

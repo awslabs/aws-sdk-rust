@@ -279,3 +279,4 @@ pub mod update_room;
 
 /// Types for the `UpdateSkillGroup` operation.
 pub mod update_skill_group;
+

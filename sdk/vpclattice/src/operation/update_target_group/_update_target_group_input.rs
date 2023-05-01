@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTargetGroupInput {
+pub struct UpdateTargetGroupInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_identifier: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct UpdateTargetGroupInput {
 }
 impl UpdateTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn target_group_identifier(&self) -> std::option::Option<& str> {
         self.target_group_identifier.as_deref()
     }
     /// <p>The health check configuration.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheckConfig> {
+    pub fn health_check(&self) -> std::option::Option<& crate::types::HealthCheckConfig> {
         self.health_check.as_ref()
     }
 }
 impl UpdateTargetGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_target_group::builders::UpdateTargetGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_target_group::builders::UpdateTargetGroupInputBuilder {
         crate::operation::update_target_group::builders::UpdateTargetGroupInputBuilder::default()
     }
 }
@@ -42,12 +41,8 @@ impl UpdateTargetGroupInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_group_identifier = input;
-        self
+    pub fn set_target_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_group_identifier = input; self
     }
     /// <p>The health check configuration.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
@@ -55,25 +50,19 @@ impl UpdateTargetGroupInputBuilder {
         self
     }
     /// <p>The health check configuration.</p>
-    pub fn set_health_check(
-        mut self,
-        input: std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
-        self.health_check = input;
-        self
+    pub fn set_health_check(mut self, input: std::option::Option<crate::types::HealthCheckConfig>) -> Self {
+        self.health_check = input; self
     }
     /// Consumes the builder and constructs a [`UpdateTargetGroupInput`](crate::operation::update_target_group::UpdateTargetGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_target_group::UpdateTargetGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_target_group::UpdateTargetGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_target_group::UpdateTargetGroupInput {
-                target_group_identifier: self.target_group_identifier,
-                health_check: self.health_check,
-            },
+                target_group_identifier: self.target_group_identifier
+                ,
+                health_check: self.health_check
+                ,
+            }
         )
     }
 }
+

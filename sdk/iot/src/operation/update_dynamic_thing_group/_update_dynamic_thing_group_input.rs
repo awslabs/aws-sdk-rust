@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDynamicThingGroupInput {
+pub struct UpdateDynamicThingGroupInput  {
     /// <p>The name of the dynamic thing group to update.</p>
     #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -12,57 +12,53 @@ pub struct UpdateDynamicThingGroupInput {
     /// <p>The expected version of the dynamic thing group to update.</p>
     #[doc(hidden)]
     pub expected_version: std::option::Option<i64>,
-    /// <p>The dynamic thing group index to update.</p> <note>
-    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// <p>The dynamic thing group index to update.</p> <note> 
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The dynamic thing group search query string to update.</p>
     #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
-    /// <p>The dynamic thing group query version to update.</p> <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note> 
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> 
     /// </note>
     #[doc(hidden)]
     pub query_version: std::option::Option<std::string::String>,
 }
 impl UpdateDynamicThingGroupInput {
     /// <p>The name of the dynamic thing group to update.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The dynamic thing group properties to update.</p>
-    pub fn thing_group_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::ThingGroupProperties> {
+    pub fn thing_group_properties(&self) -> std::option::Option<& crate::types::ThingGroupProperties> {
         self.thing_group_properties.as_ref()
     }
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub fn expected_version(&self) -> std::option::Option<i64> {
         self.expected_version
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
-    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// <p>The dynamic thing group index to update.</p> <note> 
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p> 
     /// </note>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The dynamic thing group search query string to update.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note> 
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> 
     /// </note>
-    pub fn query_version(&self) -> std::option::Option<&str> {
+    pub fn query_version(&self) -> std::option::Option<& str> {
         self.query_version.as_deref()
     }
 }
 impl UpdateDynamicThingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateDynamicThingGroupInput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupInputBuilder {
         crate::operation::update_dynamic_thing_group::builders::UpdateDynamicThingGroupInputBuilder::default()
     }
 }
@@ -86,8 +82,7 @@ impl UpdateDynamicThingGroupInputBuilder {
     }
     /// <p>The name of the dynamic thing group to update.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The dynamic thing group properties to update.</p>
     pub fn thing_group_properties(mut self, input: crate::types::ThingGroupProperties) -> Self {
@@ -95,12 +90,8 @@ impl UpdateDynamicThingGroupInputBuilder {
         self
     }
     /// <p>The dynamic thing group properties to update.</p>
-    pub fn set_thing_group_properties(
-        mut self,
-        input: std::option::Option<crate::types::ThingGroupProperties>,
-    ) -> Self {
-        self.thing_group_properties = input;
-        self
+    pub fn set_thing_group_properties(mut self, input: std::option::Option<crate::types::ThingGroupProperties>) -> Self {
+        self.thing_group_properties = input; self
     }
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -109,22 +100,20 @@ impl UpdateDynamicThingGroupInputBuilder {
     }
     /// <p>The expected version of the dynamic thing group to update.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
-    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// <p>The dynamic thing group index to update.</p> <note> 
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p> 
     /// </note>
     pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.index_name = Some(input.into());
         self
     }
-    /// <p>The dynamic thing group index to update.</p> <note>
-    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p>
+    /// <p>The dynamic thing group index to update.</p> <note> 
+    /// <p>Currently one index is supported: <code>AWS_Things</code>.</p> 
     /// </note>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The dynamic thing group search query string to update.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,39 +122,39 @@ impl UpdateDynamicThingGroupInputBuilder {
     }
     /// <p>The dynamic thing group search query string to update.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note> 
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> 
     /// </note>
     pub fn query_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.query_version = Some(input.into());
         self
     }
-    /// <p>The dynamic thing group query version to update.</p> <note>
-    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p>
+    /// <p>The dynamic thing group query version to update.</p> <note> 
+    /// <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> 
     /// </note>
     pub fn set_query_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_version = input;
-        self
+        self.query_version = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDynamicThingGroupInput`](crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_dynamic_thing_group::UpdateDynamicThingGroupInput {
-                thing_group_name: self.thing_group_name,
-                thing_group_properties: self.thing_group_properties,
-                expected_version: self.expected_version,
-                index_name: self.index_name,
-                query_string: self.query_string,
-                query_version: self.query_version,
-            },
+                thing_group_name: self.thing_group_name
+                ,
+                thing_group_properties: self.thing_group_properties
+                ,
+                expected_version: self.expected_version
+                ,
+                index_name: self.index_name
+                ,
+                query_string: self.query_string
+                ,
+                query_version: self.query_version
+                ,
+            }
         )
     }
 }
+

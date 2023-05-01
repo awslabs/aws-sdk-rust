@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatasetContentOutput {
+pub struct GetDatasetContentOutput  {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::DatasetEntry>>,
@@ -16,27 +16,26 @@ pub struct GetDatasetContentOutput {
 }
 impl GetDatasetContentOutput {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::types::DatasetEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::types::DatasetEntry]> {
         self.entries.as_deref()
     }
     /// <p>The time when the request was made.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The status of the dataset content.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DatasetContentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DatasetContentStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDatasetContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDatasetContentOutput {
     /// Creates a new builder-style object to manufacture [`GetDatasetContentOutput`](crate::operation::get_dataset_content::GetDatasetContentOutput).
-    pub fn builder(
-    ) -> crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder {
+    pub fn builder() -> crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder {
         crate::operation::get_dataset_content::builders::GetDatasetContentOutputBuilder::default()
     }
 }
@@ -58,17 +57,13 @@ impl GetDatasetContentOutputBuilder {
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
     pub fn entries(mut self, input: crate::types::DatasetEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = Some(v);
-        self
+                        v.push(input);
+                        self.entries = Some(v);
+                        self
     }
     /// <p>A list of <code>DatasetEntry</code> objects.</p>
-    pub fn set_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatasetEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>The time when the request was made.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -77,8 +72,7 @@ impl GetDatasetContentOutputBuilder {
     }
     /// <p>The time when the request was made.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The status of the dataset content.</p>
     pub fn status(mut self, input: crate::types::DatasetContentStatus) -> Self {
@@ -86,29 +80,29 @@ impl GetDatasetContentOutputBuilder {
         self
     }
     /// <p>The status of the dataset content.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DatasetContentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetContentStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDatasetContentOutput`](crate::operation::get_dataset_content::GetDatasetContentOutput).
     pub fn build(self) -> crate::operation::get_dataset_content::GetDatasetContentOutput {
         crate::operation::get_dataset_content::GetDatasetContentOutput {
-            entries: self.entries,
-            timestamp: self.timestamp,
-            status: self.status,
+            entries: self.entries
+            ,
+            timestamp: self.timestamp
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

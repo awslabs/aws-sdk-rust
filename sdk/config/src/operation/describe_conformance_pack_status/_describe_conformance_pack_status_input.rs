@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConformancePackStatusInput {
+pub struct DescribeConformancePackStatusInput  {
     /// <p>Comma-separated list of conformance pack names.</p>
     #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeConformancePackStatusInput {
 }
 impl DescribeConformancePackStatusInput {
     /// <p>Comma-separated list of conformance pack names.</p>
-    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn conformance_pack_names(&self) -> std::option::Option<& [std::string::String]> {
         self.conformance_pack_names.as_deref()
     }
     /// <p>The maximum number of conformance packs status returned on each page.</p>
@@ -23,13 +23,13 @@ impl DescribeConformancePackStatusInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeConformancePackStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeConformancePackStatusInput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusInput).
-    pub fn builder() -> crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder {
         crate::operation::describe_conformance_pack_status::builders::DescribeConformancePackStatusInputBuilder::default()
     }
 }
@@ -50,17 +50,13 @@ impl DescribeConformancePackStatusInputBuilder {
     /// <p>Comma-separated list of conformance pack names.</p>
     pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.conformance_pack_names.unwrap_or_default();
-        v.push(input.into());
-        self.conformance_pack_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.conformance_pack_names = Some(v);
+                        self
     }
     /// <p>Comma-separated list of conformance pack names.</p>
-    pub fn set_conformance_pack_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.conformance_pack_names = input;
-        self
+    pub fn set_conformance_pack_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.conformance_pack_names = input; self
     }
     /// <p>The maximum number of conformance packs status returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -69,8 +65,7 @@ impl DescribeConformancePackStatusInputBuilder {
     }
     /// <p>The maximum number of conformance packs status returned on each page.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,16 +74,10 @@ impl DescribeConformancePackStatusInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeConformancePackStatusInput`](crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusInput {
                 conformance_pack_names: self.conformance_pack_names
@@ -101,3 +90,4 @@ impl DescribeConformancePackStatusInputBuilder {
         )
     }
 }
+

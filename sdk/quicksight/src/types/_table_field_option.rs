@@ -3,7 +3,7 @@
 /// <p>The options for a table field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableFieldOption {
+pub struct TableFieldOption  {
     /// <p>The field ID for a table field.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct TableFieldOption {
 }
 impl TableFieldOption {
     /// <p>The field ID for a table field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The width for a table field.</p>
-    pub fn width(&self) -> std::option::Option<&str> {
+    pub fn width(&self) -> std::option::Option<& str> {
         self.width.as_deref()
     }
     /// <p>The custom label for a table field.</p>
-    pub fn custom_label(&self) -> std::option::Option<&str> {
+    pub fn custom_label(&self) -> std::option::Option<& str> {
         self.custom_label.as_deref()
     }
     /// <p>The visibility of a table field.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The URL configuration for a table field.</p>
-    pub fn url_styling(&self) -> std::option::Option<&crate::types::TableFieldUrlConfiguration> {
+    pub fn url_styling(&self) -> std::option::Option<& crate::types::TableFieldUrlConfiguration> {
         self.url_styling.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl TableFieldOptionBuilder {
     }
     /// <p>The field ID for a table field.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The width for a table field.</p>
     pub fn width(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl TableFieldOptionBuilder {
     }
     /// <p>The width for a table field.</p>
     pub fn set_width(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.width = input;
-        self
+        self.width = input; self
     }
     /// <p>The custom label for a table field.</p>
     pub fn custom_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl TableFieldOptionBuilder {
     }
     /// <p>The custom label for a table field.</p>
     pub fn set_custom_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_label = input;
-        self
+        self.custom_label = input; self
     }
     /// <p>The visibility of a table field.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -97,8 +94,7 @@ impl TableFieldOptionBuilder {
     }
     /// <p>The visibility of a table field.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// <p>The URL configuration for a table field.</p>
     pub fn url_styling(mut self, input: crate::types::TableFieldUrlConfiguration) -> Self {
@@ -106,21 +102,23 @@ impl TableFieldOptionBuilder {
         self
     }
     /// <p>The URL configuration for a table field.</p>
-    pub fn set_url_styling(
-        mut self,
-        input: std::option::Option<crate::types::TableFieldUrlConfiguration>,
-    ) -> Self {
-        self.url_styling = input;
-        self
+    pub fn set_url_styling(mut self, input: std::option::Option<crate::types::TableFieldUrlConfiguration>) -> Self {
+        self.url_styling = input; self
     }
     /// Consumes the builder and constructs a [`TableFieldOption`](crate::types::TableFieldOption).
     pub fn build(self) -> crate::types::TableFieldOption {
         crate::types::TableFieldOption {
-            field_id: self.field_id,
-            width: self.width,
-            custom_label: self.custom_label,
-            visibility: self.visibility,
-            url_styling: self.url_styling,
+            field_id: self.field_id
+            ,
+            width: self.width
+            ,
+            custom_label: self.custom_label
+            ,
+            visibility: self.visibility
+            ,
+            url_styling: self.url_styling
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Details about the ECR automated re-scan duration setting for your environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcrConfiguration {
+pub struct EcrConfiguration  {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     #[doc(hidden)]
     pub rescan_duration: std::option::Option<crate::types::EcrRescanDuration>,
 }
 impl EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    pub fn rescan_duration(&self) -> std::option::Option<&crate::types::EcrRescanDuration> {
+    pub fn rescan_duration(&self) -> std::option::Option<& crate::types::EcrRescanDuration> {
         self.rescan_duration.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl EcrConfigurationBuilder {
         self
     }
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    pub fn set_rescan_duration(
-        mut self,
-        input: std::option::Option<crate::types::EcrRescanDuration>,
-    ) -> Self {
-        self.rescan_duration = input;
-        self
+    pub fn set_rescan_duration(mut self, input: std::option::Option<crate::types::EcrRescanDuration>) -> Self {
+        self.rescan_duration = input; self
     }
     /// Consumes the builder and constructs a [`EcrConfiguration`](crate::types::EcrConfiguration).
     pub fn build(self) -> crate::types::EcrConfiguration {
         crate::types::EcrConfiguration {
-            rescan_duration: self.rescan_duration,
+            rescan_duration: self.rescan_duration
+            ,
         }
     }
 }
+

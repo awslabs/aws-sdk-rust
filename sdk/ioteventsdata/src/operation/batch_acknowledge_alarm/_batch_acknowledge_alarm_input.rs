@@ -2,25 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAcknowledgeAlarmInput {
+pub struct BatchAcknowledgeAlarmInput  {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
-    pub acknowledge_action_requests:
-        std::option::Option<std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
+    pub acknowledge_action_requests: std::option::Option<std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
 }
 impl BatchAcknowledgeAlarmInput {
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn acknowledge_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::types::AcknowledgeAlarmActionRequest]> {
+    pub fn acknowledge_action_requests(&self) -> std::option::Option<& [crate::types::AcknowledgeAlarmActionRequest]> {
         self.acknowledge_action_requests.as_deref()
     }
 }
 impl BatchAcknowledgeAlarmInput {
     /// Creates a new builder-style object to manufacture [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
-    pub fn builder(
-    ) -> crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmInputBuilder {
         crate::operation::batch_acknowledge_alarm::builders::BatchAcknowledgeAlarmInputBuilder::default()
     }
 }
@@ -29,8 +24,7 @@ impl BatchAcknowledgeAlarmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchAcknowledgeAlarmInputBuilder {
-    pub(crate) acknowledge_action_requests:
-        std::option::Option<std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
+    pub(crate) acknowledge_action_requests: std::option::Option<std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
 }
 impl BatchAcknowledgeAlarmInputBuilder {
     /// Appends an item to `acknowledge_action_requests`.
@@ -38,34 +32,24 @@ impl BatchAcknowledgeAlarmInputBuilder {
     /// To override the contents of this collection use [`set_acknowledge_action_requests`](Self::set_acknowledge_action_requests).
     ///
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn acknowledge_action_requests(
-        mut self,
-        input: crate::types::AcknowledgeAlarmActionRequest,
-    ) -> Self {
+    pub fn acknowledge_action_requests(mut self, input: crate::types::AcknowledgeAlarmActionRequest) -> Self {
         let mut v = self.acknowledge_action_requests.unwrap_or_default();
-        v.push(input);
-        self.acknowledge_action_requests = Some(v);
-        self
+                        v.push(input);
+                        self.acknowledge_action_requests = Some(v);
+                        self
     }
     /// <p>The list of acknowledge action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_acknowledge_action_requests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>,
-    ) -> Self {
-        self.acknowledge_action_requests = input;
-        self
+    pub fn set_acknowledge_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::AcknowledgeAlarmActionRequest>>) -> Self {
+        self.acknowledge_action_requests = input; self
     }
     /// Consumes the builder and constructs a [`BatchAcknowledgeAlarmInput`](crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmInput {
-                acknowledge_action_requests: self.acknowledge_action_requests,
-            },
+                acknowledge_action_requests: self.acknowledge_action_requests
+                ,
+            }
         )
     }
 }
+

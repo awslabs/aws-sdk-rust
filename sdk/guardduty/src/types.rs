@@ -267,11 +267,17 @@ pub use crate::types::_domain_details::DomainDetails;
 
 pub use crate::types::_resource::Resource;
 
+pub use crate::types::_lambda_details::LambdaDetails;
+
+pub use crate::types::_tag::Tag;
+
+pub use crate::types::_vpc_config::VpcConfig;
+
+pub use crate::types::_security_group::SecurityGroup;
+
 pub use crate::types::_rds_db_user_details::RdsDbUserDetails;
 
 pub use crate::types::_rds_db_instance_details::RdsDbInstanceDetails;
-
-pub use crate::types::_tag::Tag;
 
 pub use crate::types::_container::Container;
 
@@ -304,8 +310,6 @@ pub use crate::types::_instance_details::InstanceDetails;
 pub use crate::types::_product_code::ProductCode;
 
 pub use crate::types::_network_interface::NetworkInterface;
-
-pub use crate::types::_security_group::SecurityGroup;
 
 pub use crate::types::_private_ip_address_details::PrivateIpAddressDetails;
 
@@ -575,6 +579,8 @@ mod _kubernetes_user_details;
 
 mod _kubernetes_workload_details;
 
+mod _lambda_details;
+
 mod _lineage_object;
 
 mod _local_ip_details;
@@ -779,8 +785,11 @@ mod _volume_detail;
 
 mod _volume_mount;
 
+mod _vpc_config;
+
 /// Builders
 pub mod builders;
 
 /// Error types that Amazon GuardDuty can respond with.
 pub mod error;
+

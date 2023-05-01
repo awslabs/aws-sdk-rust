@@ -3,7 +3,7 @@
 /// <p>The structure representing the GetRecommendationsResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationsOutput {
+pub struct GetRecommendationsOutput  {
     /// <p>The name of the profiling group the analysis data is about.</p>
     #[doc(hidden)]
     pub profiling_group_name: std::option::Option<std::string::String>,
@@ -23,35 +23,34 @@ pub struct GetRecommendationsOutput {
 }
 impl GetRecommendationsOutput {
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub fn profiling_group_name(&self) -> std::option::Option<&str> {
+    pub fn profiling_group_name(&self) -> std::option::Option<& str> {
         self.profiling_group_name.as_deref()
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_start_time.as_ref()
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn profile_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn profile_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.profile_end_time.as_ref()
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::types::Recommendation]> {
+    pub fn recommendations(&self) -> std::option::Option<& [crate::types::Recommendation]> {
         self.recommendations.as_deref()
     }
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    pub fn anomalies(&self) -> std::option::Option<&[crate::types::Anomaly]> {
+    pub fn anomalies(&self) -> std::option::Option<& [crate::types::Anomaly]> {
         self.anomalies.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsOutputBuilder::default()
     }
 }
@@ -74,12 +73,8 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p>The name of the profiling group the analysis data is about.</p>
-    pub fn set_profiling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.profiling_group_name = input;
-        self
+    pub fn set_profiling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.profiling_group_name = input; self
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn profile_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -87,12 +82,8 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p> The start time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_profile_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.profile_start_time = input;
-        self
+    pub fn set_profile_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.profile_start_time = input; self
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn profile_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,12 +91,8 @@ impl GetRecommendationsOutputBuilder {
         self
     }
     /// <p> The end time of the profile the analysis data is about. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn set_profile_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.profile_end_time = input;
-        self
+    pub fn set_profile_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.profile_end_time = input; self
     }
     /// Appends an item to `recommendations`.
     ///
@@ -114,17 +101,13 @@ impl GetRecommendationsOutputBuilder {
     /// <p>The list of recommendations that the analysis found for this profile.</p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-        v.push(input);
-        self.recommendations = Some(v);
-        self
+                        v.push(input);
+                        self.recommendations = Some(v);
+                        self
     }
     /// <p>The list of recommendations that the analysis found for this profile.</p>
-    pub fn set_recommendations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
-    ) -> Self {
-        self.recommendations = input;
-        self
+    pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Recommendation>>) -> Self {
+        self.recommendations = input; self
     }
     /// Appends an item to `anomalies`.
     ///
@@ -133,36 +116,38 @@ impl GetRecommendationsOutputBuilder {
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
     pub fn anomalies(mut self, input: crate::types::Anomaly) -> Self {
         let mut v = self.anomalies.unwrap_or_default();
-        v.push(input);
-        self.anomalies = Some(v);
-        self
+                        v.push(input);
+                        self.anomalies = Some(v);
+                        self
     }
     /// <p> The list of anomalies that the analysis has found for this profile. </p>
-    pub fn set_anomalies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Anomaly>>,
-    ) -> Self {
-        self.anomalies = input;
-        self
+    pub fn set_anomalies(mut self, input: std::option::Option<std::vec::Vec<crate::types::Anomaly>>) -> Self {
+        self.anomalies = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRecommendationsOutput`](crate::operation::get_recommendations::GetRecommendationsOutput).
     pub fn build(self) -> crate::operation::get_recommendations::GetRecommendationsOutput {
         crate::operation::get_recommendations::GetRecommendationsOutput {
-            profiling_group_name: self.profiling_group_name,
-            profile_start_time: self.profile_start_time,
-            profile_end_time: self.profile_end_time,
-            recommendations: self.recommendations,
-            anomalies: self.anomalies,
+            profiling_group_name: self.profiling_group_name
+            ,
+            profile_start_time: self.profile_start_time
+            ,
+            profile_end_time: self.profile_end_time
+            ,
+            recommendations: self.recommendations
+            ,
+            anomalies: self.anomalies
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

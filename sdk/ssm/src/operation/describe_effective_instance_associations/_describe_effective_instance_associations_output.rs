@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectiveInstanceAssociationsOutput {
+pub struct DescribeEffectiveInstanceAssociationsOutput  {
     /// <p>The associations for the requested managed node.</p>
     #[doc(hidden)]
     pub associations: std::option::Option<std::vec::Vec<crate::types::InstanceAssociation>>,
@@ -13,22 +13,22 @@ pub struct DescribeEffectiveInstanceAssociationsOutput {
 }
 impl DescribeEffectiveInstanceAssociationsOutput {
     /// <p>The associations for the requested managed node.</p>
-    pub fn associations(&self) -> std::option::Option<&[crate::types::InstanceAssociation]> {
+    pub fn associations(&self) -> std::option::Option<& [crate::types::InstanceAssociation]> {
         self.associations.as_deref()
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEffectiveInstanceAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEffectiveInstanceAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput).
-    pub fn builder() -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsOutputBuilder {
         crate::operation::describe_effective_instance_associations::builders::DescribeEffectiveInstanceAssociationsOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl DescribeEffectiveInstanceAssociationsOutputBuilder {
     /// <p>The associations for the requested managed node.</p>
     pub fn associations(mut self, input: crate::types::InstanceAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
-        v.push(input);
-        self.associations = Some(v);
-        self
+                        v.push(input);
+                        self.associations = Some(v);
+                        self
     }
     /// <p>The associations for the requested managed node.</p>
-    pub fn set_associations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceAssociation>>,
-    ) -> Self {
-        self.associations = input;
-        self
+    pub fn set_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceAssociation>>) -> Self {
+        self.associations = input; self
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +64,19 @@ impl DescribeEffectiveInstanceAssociationsOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEffectiveInstanceAssociationsOutput`](crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput).
-    pub fn build(self) -> crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput{
+    pub fn build(self) -> crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput {
         crate::operation::describe_effective_instance_associations::DescribeEffectiveInstanceAssociationsOutput {
             associations: self.associations
             ,
@@ -91,3 +86,4 @@ impl DescribeEffectiveInstanceAssociationsOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPagesByEngagementOutput {
+pub struct ListPagesByEngagementOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct ListPagesByEngagementOutput {
 }
 impl ListPagesByEngagementOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn pages(&self) -> std::option::Option<&[crate::types::Page]> {
+    pub fn pages(&self) -> std::option::Option<& [crate::types::Page]> {
         self.pages.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPagesByEngagementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPagesByEngagementOutput {
     /// Creates a new builder-style object to manufacture [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
-    pub fn builder(
-    ) -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder {
         crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl ListPagesByEngagementOutputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `pages`.
     ///
@@ -61,33 +58,32 @@ impl ListPagesByEngagementOutputBuilder {
     /// <p>The list of engagements to contact channels.</p>
     pub fn pages(mut self, input: crate::types::Page) -> Self {
         let mut v = self.pages.unwrap_or_default();
-        v.push(input);
-        self.pages = Some(v);
-        self
+                        v.push(input);
+                        self.pages = Some(v);
+                        self
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn set_pages(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Page>>,
-    ) -> Self {
-        self.pages = input;
-        self
+    pub fn set_pages(mut self, input: std::option::Option<std::vec::Vec<crate::types::Page>>) -> Self {
+        self.pages = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPagesByEngagementOutput`](crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput).
     pub fn build(self) -> crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
         crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput {
-            next_token: self.next_token,
-            pages: self.pages,
+            next_token: self.next_token
+            ,
+            pages: self.pages
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

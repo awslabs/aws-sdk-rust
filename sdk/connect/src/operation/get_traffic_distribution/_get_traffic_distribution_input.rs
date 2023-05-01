@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTrafficDistributionInput {
+pub struct GetTrafficDistributionInput  {
     /// <p>The identifier of the traffic distribution group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetTrafficDistributionInput {
     /// <p>The identifier of the traffic distribution group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetTrafficDistributionInput {
     /// Creates a new builder-style object to manufacture [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
-    pub fn builder(
-    ) -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_traffic_distribution::builders::GetTrafficDistributionInputBuilder {
         crate::operation::get_traffic_distribution::builders::GetTrafficDistributionInputBuilder::default()
     }
 }
@@ -36,16 +34,16 @@ impl GetTrafficDistributionInputBuilder {
     }
     /// <p>The identifier of the traffic distribution group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetTrafficDistributionInput`](crate::operation::get_traffic_distribution::GetTrafficDistributionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_traffic_distribution::GetTrafficDistributionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_traffic_distribution::GetTrafficDistributionInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::get_traffic_distribution::GetTrafficDistributionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_traffic_distribution::GetTrafficDistributionInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

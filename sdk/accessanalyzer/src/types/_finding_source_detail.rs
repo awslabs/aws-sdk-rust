@@ -3,7 +3,7 @@
 /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingSourceDetail {
+pub struct FindingSourceDetail  {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FindingSourceDetail {
 }
 impl FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
-    pub fn access_point_account(&self) -> std::option::Option<&str> {
+    pub fn access_point_account(&self) -> std::option::Option<& str> {
         self.access_point_account.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FindingSourceDetailBuilder {
     }
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_point_arn = input;
-        self
+        self.access_point_arn = input; self
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
     pub fn access_point_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl FindingSourceDetailBuilder {
         self
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
-    pub fn set_access_point_account(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.access_point_account = input;
-        self
+    pub fn set_access_point_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.access_point_account = input; self
     }
     /// Consumes the builder and constructs a [`FindingSourceDetail`](crate::types::FindingSourceDetail).
     pub fn build(self) -> crate::types::FindingSourceDetail {
         crate::types::FindingSourceDetail {
-            access_point_arn: self.access_point_arn,
-            access_point_account: self.access_point_account,
+            access_point_arn: self.access_point_arn
+            ,
+            access_point_account: self.access_point_account
+            ,
         }
     }
 }
+

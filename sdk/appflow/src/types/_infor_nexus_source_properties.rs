@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when Infor Nexus is being used as a source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InforNexusSourceProperties {
+pub struct InforNexusSourceProperties  {
     /// <p> The object specified in the Infor Nexus flow source. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl InforNexusSourceProperties {
     /// <p> The object specified in the Infor Nexus flow source. </p>
-    pub fn object(&self) -> std::option::Option<&str> {
+    pub fn object(&self) -> std::option::Option<& str> {
         self.object.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl InforNexusSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Infor Nexus flow source. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// Consumes the builder and constructs a [`InforNexusSourceProperties`](crate::types::InforNexusSourceProperties).
     pub fn build(self) -> crate::types::InforNexusSourceProperties {
         crate::types::InforNexusSourceProperties {
-            object: self.object,
+            object: self.object
+            ,
         }
     }
 }
+

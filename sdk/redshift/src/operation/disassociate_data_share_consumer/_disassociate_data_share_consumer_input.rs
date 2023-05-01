@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDataShareConsumerInput {
+pub struct DisassociateDataShareConsumerInput  {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     #[doc(hidden)]
     pub data_share_arn: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct DisassociateDataShareConsumerInput {
 }
 impl DisassociateDataShareConsumerInput {
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-    pub fn data_share_arn(&self) -> std::option::Option<&str> {
+    pub fn data_share_arn(&self) -> std::option::Option<& str> {
         self.data_share_arn.as_deref()
     }
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
@@ -26,17 +26,17 @@ impl DisassociateDataShareConsumerInput {
         self.disassociate_entire_account
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
-    pub fn consumer_arn(&self) -> std::option::Option<&str> {
+    pub fn consumer_arn(&self) -> std::option::Option<& str> {
         self.consumer_arn.as_deref()
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
-    pub fn consumer_region(&self) -> std::option::Option<&str> {
+    pub fn consumer_region(&self) -> std::option::Option<& str> {
         self.consumer_region.as_deref()
     }
 }
 impl DisassociateDataShareConsumerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDataShareConsumerInput`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput).
-    pub fn builder() -> crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder {
         crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DisassociateDataShareConsumerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
     pub fn set_data_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_share_arn = input;
-        self
+        self.data_share_arn = input; self
     }
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
     pub fn disassociate_entire_account(mut self, input: bool) -> Self {
@@ -68,8 +67,7 @@ impl DisassociateDataShareConsumerInputBuilder {
     }
     /// <p>A value that specifies whether association for the datashare is removed from the entire account.</p>
     pub fn set_disassociate_entire_account(mut self, input: std::option::Option<bool>) -> Self {
-        self.disassociate_entire_account = input;
-        self
+        self.disassociate_entire_account = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
     pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl DisassociateDataShareConsumerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>
     pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_arn = input;
-        self
+        self.consumer_arn = input; self
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub fn consumer_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,16 +85,10 @@ impl DisassociateDataShareConsumerInputBuilder {
     }
     /// <p>From a datashare consumer account, removes association of a datashare from all the existing and future namespaces in the specified Amazon Web Services Region.</p>
     pub fn set_consumer_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_region = input;
-        self
+        self.consumer_region = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateDataShareConsumerInput`](crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerInput {
                 data_share_arn: self.data_share_arn
@@ -112,3 +103,4 @@ impl DisassociateDataShareConsumerInputBuilder {
         )
     }
 }
+

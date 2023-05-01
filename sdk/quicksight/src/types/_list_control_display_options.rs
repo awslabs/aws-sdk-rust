@@ -3,7 +3,7 @@
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListControlDisplayOptions {
+pub struct ListControlDisplayOptions  {
     /// <p>The configuration of the search options in a list control.</p>
     #[doc(hidden)]
     pub search_options: std::option::Option<crate::types::ListControlSearchOptions>,
@@ -16,17 +16,15 @@ pub struct ListControlDisplayOptions {
 }
 impl ListControlDisplayOptions {
     /// <p>The configuration of the search options in a list control.</p>
-    pub fn search_options(&self) -> std::option::Option<&crate::types::ListControlSearchOptions> {
+    pub fn search_options(&self) -> std::option::Option<& crate::types::ListControlSearchOptions> {
         self.search_options.as_ref()
     }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
-    pub fn select_all_options(
-        &self,
-    ) -> std::option::Option<&crate::types::ListControlSelectAllOptions> {
+    pub fn select_all_options(&self) -> std::option::Option<& crate::types::ListControlSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> std::option::Option<&crate::types::LabelOptions> {
+    pub fn title_options(&self) -> std::option::Option<& crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
 }
@@ -52,12 +50,8 @@ impl ListControlDisplayOptionsBuilder {
         self
     }
     /// <p>The configuration of the search options in a list control.</p>
-    pub fn set_search_options(
-        mut self,
-        input: std::option::Option<crate::types::ListControlSearchOptions>,
-    ) -> Self {
-        self.search_options = input;
-        self
+    pub fn set_search_options(mut self, input: std::option::Option<crate::types::ListControlSearchOptions>) -> Self {
+        self.search_options = input; self
     }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
     pub fn select_all_options(mut self, input: crate::types::ListControlSelectAllOptions) -> Self {
@@ -65,12 +59,8 @@ impl ListControlDisplayOptionsBuilder {
         self
     }
     /// <p>The configuration of the <code>Select all</code> options in a list control.</p>
-    pub fn set_select_all_options(
-        mut self,
-        input: std::option::Option<crate::types::ListControlSelectAllOptions>,
-    ) -> Self {
-        self.select_all_options = input;
-        self
+    pub fn set_select_all_options(mut self, input: std::option::Option<crate::types::ListControlSelectAllOptions>) -> Self {
+        self.select_all_options = input; self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn title_options(mut self, input: crate::types::LabelOptions) -> Self {
@@ -78,19 +68,19 @@ impl ListControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
-        self.title_options = input;
-        self
+    pub fn set_title_options(mut self, input: std::option::Option<crate::types::LabelOptions>) -> Self {
+        self.title_options = input; self
     }
     /// Consumes the builder and constructs a [`ListControlDisplayOptions`](crate::types::ListControlDisplayOptions).
     pub fn build(self) -> crate::types::ListControlDisplayOptions {
         crate::types::ListControlDisplayOptions {
-            search_options: self.search_options,
-            select_all_options: self.select_all_options,
-            title_options: self.title_options,
+            search_options: self.search_options
+            ,
+            select_all_options: self.select_all_options
+            ,
+            title_options: self.title_options
+            ,
         }
     }
 }
+

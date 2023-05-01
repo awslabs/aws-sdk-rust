@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverRuleInput {
+pub struct GetResolverRuleInput  {
     /// <p>The ID of the Resolver rule that you want to get information about.</p>
     #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
 }
 impl GetResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to get information about.</p>
-    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
+    pub fn resolver_rule_id(&self) -> std::option::Option<& str> {
         self.resolver_rule_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetResolverRuleInputBuilder {
     }
     /// <p>The ID of the Resolver rule that you want to get information about.</p>
     pub fn set_resolver_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolver_rule_id = input;
-        self
+        self.resolver_rule_id = input; self
     }
     /// Consumes the builder and constructs a [`GetResolverRuleInput`](crate::operation::get_resolver_rule::GetResolverRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resolver_rule::GetResolverRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_resolver_rule::GetResolverRuleInput {
-            resolver_rule_id: self.resolver_rule_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_resolver_rule::GetResolverRuleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_resolver_rule::GetResolverRuleInput {
+                resolver_rule_id: self.resolver_rule_id
+                ,
+            }
+        )
     }
 }
+

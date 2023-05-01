@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateFunctionCodeInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+pub struct UpdateFunctionCodeInput  {
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
@@ -42,35 +42,35 @@ pub struct UpdateFunctionCodeInput {
     pub architectures: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
 }
 impl UpdateFunctionCodeInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
-    pub fn zip_file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn zip_file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.zip_file.as_ref()
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> std::option::Option<& str> {
         self.s3_key.as_deref()
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(&self) -> std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> std::option::Option<& str> {
         self.s3_object_version.as_deref()
     }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
-    pub fn image_uri(&self) -> std::option::Option<&str> {
+    pub fn image_uri(&self) -> std::option::Option<& str> {
         self.image_uri.as_deref()
     }
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
@@ -82,15 +82,15 @@ impl UpdateFunctionCodeInput {
         self.dry_run
     }
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::types::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::types::Architecture]> {
         self.architectures.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateFunctionCodeInput {
+impl  std::fmt::Debug for UpdateFunctionCodeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateFunctionCodeInput");
         formatter.field("function_name", &self.function_name);
@@ -108,8 +108,7 @@ impl std::fmt::Debug for UpdateFunctionCodeInput {
 }
 impl UpdateFunctionCodeInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
-    pub fn builder(
-    ) -> crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder {
+    pub fn builder() -> crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder {
         crate::operation::update_function_code::builders::UpdateFunctionCodeInputBuilder::default()
     }
 }
@@ -130,29 +129,28 @@ pub struct UpdateFunctionCodeInputBuilder {
     pub(crate) architectures: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
 }
 impl UpdateFunctionCodeInputBuilder {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn zip_file(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -161,8 +159,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn set_zip_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.zip_file = input;
-        self
+        self.zip_file = input; self
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -171,8 +168,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,8 +177,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>The Amazon S3 key of the deployment package. Use only with a function defined with a .zip file archive deployment package.</p>
     pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key = input;
-        self
+        self.s3_key = input; self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub fn s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,12 +185,8 @@ impl UpdateFunctionCodeInputBuilder {
         self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn set_s3_object_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.s3_object_version = input;
-        self
+    pub fn set_s3_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.s3_object_version = input; self
     }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,8 +195,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>URI of a container image in the Amazon ECR registry. Do not use for a function defined with a .zip file archive.</p>
     pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_uri = input;
-        self
+        self.image_uri = input; self
     }
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub fn publish(mut self, input: bool) -> Self {
@@ -214,8 +204,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>Set to true to publish a new version of the function after updating the code. This has the same effect as calling <code>PublishVersion</code> separately.</p>
     pub fn set_publish(mut self, input: std::option::Option<bool>) -> Self {
-        self.publish = input;
-        self
+        self.publish = input; self
     }
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -224,8 +213,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>Set to true to validate the request parameters and access permissions without modifying the function code.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +222,7 @@ impl UpdateFunctionCodeInputBuilder {
     }
     /// <p>Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a function that has changed since you last read it.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// Appends an item to `architectures`.
     ///
@@ -244,38 +231,39 @@ impl UpdateFunctionCodeInputBuilder {
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub fn architectures(mut self, input: crate::types::Architecture) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-        v.push(input);
-        self.architectures = Some(v);
-        self
+                        v.push(input);
+                        self.architectures = Some(v);
+                        self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn set_architectures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
-        self.architectures = input;
-        self
+    pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::types::Architecture>>) -> Self {
+        self.architectures = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFunctionCodeInput`](crate::operation::update_function_code::UpdateFunctionCodeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_function_code::UpdateFunctionCodeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_function_code::UpdateFunctionCodeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_function_code::UpdateFunctionCodeInput {
-                function_name: self.function_name,
-                zip_file: self.zip_file,
-                s3_bucket: self.s3_bucket,
-                s3_key: self.s3_key,
-                s3_object_version: self.s3_object_version,
-                image_uri: self.image_uri,
-                publish: self.publish,
-                dry_run: self.dry_run,
-                revision_id: self.revision_id,
-                architectures: self.architectures,
-            },
+                function_name: self.function_name
+                ,
+                zip_file: self.zip_file
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_key: self.s3_key
+                ,
+                s3_object_version: self.s3_object_version
+                ,
+                image_uri: self.image_uri
+                ,
+                publish: self.publish
+                ,
+                dry_run: self.dry_run
+                ,
+                revision_id: self.revision_id
+                ,
+                architectures: self.architectures
+                ,
+            }
         )
     }
 }
@@ -295,3 +283,4 @@ impl std::fmt::Debug for UpdateFunctionCodeInputBuilder {
         formatter.finish()
     }
 }
+

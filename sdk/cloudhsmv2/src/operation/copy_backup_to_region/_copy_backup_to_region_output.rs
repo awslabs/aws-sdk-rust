@@ -2,31 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyBackupToRegionOutput {
-    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+pub struct CopyBackupToRegionOutput  {
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> 
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
     #[doc(hidden)]
     pub destination_backup: std::option::Option<crate::types::DestinationBackup>,
     _request_id: Option<String>,
 }
 impl CopyBackupToRegionOutput {
-    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> 
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
-    pub fn destination_backup(&self) -> std::option::Option<&crate::types::DestinationBackup> {
+    pub fn destination_backup(&self) -> std::option::Option<& crate::types::DestinationBackup> {
         self.destination_backup.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CopyBackupToRegionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CopyBackupToRegionOutput {
     /// Creates a new builder-style object to manufacture [`CopyBackupToRegionOutput`](crate::operation::copy_backup_to_region::CopyBackupToRegionOutput).
-    pub fn builder(
-    ) -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionOutputBuilder {
-        crate::operation::copy_backup_to_region::builders::CopyBackupToRegionOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionOutputBuilder {
+        crate::operation::copy_backup_to_region::builders::CopyBackupToRegionOutputBuilder::default()
     }
 }
 
@@ -38,35 +36,33 @@ pub struct CopyBackupToRegionOutputBuilder {
     _request_id: Option<String>,
 }
 impl CopyBackupToRegionOutputBuilder {
-    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> 
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
     pub fn destination_backup(mut self, input: crate::types::DestinationBackup) -> Self {
         self.destination_backup = Some(input);
         self
     }
-    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p>
+    /// <p>Information on the backup that will be copied to the destination region, including CreateTimestamp, SourceBackup, SourceCluster, and Source Region. CreateTimestamp of the destination backup will be the same as that of the source backup.</p> 
     /// <p>You will need to use the <code>sourceBackupID</code> returned in this operation to use the <code>DescribeBackups</code> operation on the backup that will be copied to the destination region.</p>
-    pub fn set_destination_backup(
-        mut self,
-        input: std::option::Option<crate::types::DestinationBackup>,
-    ) -> Self {
-        self.destination_backup = input;
-        self
+    pub fn set_destination_backup(mut self, input: std::option::Option<crate::types::DestinationBackup>) -> Self {
+        self.destination_backup = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CopyBackupToRegionOutput`](crate::operation::copy_backup_to_region::CopyBackupToRegionOutput).
     pub fn build(self) -> crate::operation::copy_backup_to_region::CopyBackupToRegionOutput {
         crate::operation::copy_backup_to_region::CopyBackupToRegionOutput {
-            destination_backup: self.destination_backup,
+            destination_backup: self.destination_backup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

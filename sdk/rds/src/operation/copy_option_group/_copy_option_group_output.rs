@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyOptionGroupOutput {
+pub struct CopyOptionGroupOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub option_group: std::option::Option<crate::types::OptionGroup>,
@@ -10,19 +10,18 @@ pub struct CopyOptionGroupOutput {
 }
 impl CopyOptionGroupOutput {
     /// <p></p>
-    pub fn option_group(&self) -> std::option::Option<&crate::types::OptionGroup> {
+    pub fn option_group(&self) -> std::option::Option<& crate::types::OptionGroup> {
         self.option_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CopyOptionGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CopyOptionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyOptionGroupOutput`](crate::operation::copy_option_group::CopyOptionGroupOutput).
-    pub fn builder() -> crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder {
         crate::operation::copy_option_group::builders::CopyOptionGroupOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CopyOptionGroupOutputBuilder {
         self
     }
     /// <p></p>
-    pub fn set_option_group(
-        mut self,
-        input: std::option::Option<crate::types::OptionGroup>,
-    ) -> Self {
-        self.option_group = input;
-        self
+    pub fn set_option_group(mut self, input: std::option::Option<crate::types::OptionGroup>) -> Self {
+        self.option_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CopyOptionGroupOutput`](crate::operation::copy_option_group::CopyOptionGroupOutput).
     pub fn build(self) -> crate::operation::copy_option_group::CopyOptionGroupOutput {
         crate::operation::copy_option_group::CopyOptionGroupOutput {
-            option_group: self.option_group,
+            option_group: self.option_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

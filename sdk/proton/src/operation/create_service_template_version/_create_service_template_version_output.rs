@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceTemplateVersionOutput {
+pub struct CreateServiceTemplateVersionOutput  {
     /// <p>The service template version summary of detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub service_template_version: std::option::Option<crate::types::ServiceTemplateVersion>,
@@ -10,20 +10,18 @@ pub struct CreateServiceTemplateVersionOutput {
 }
 impl CreateServiceTemplateVersionOutput {
     /// <p>The service template version summary of detail data that's returned by Proton.</p>
-    pub fn service_template_version(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceTemplateVersion> {
+    pub fn service_template_version(&self) -> std::option::Option<& crate::types::ServiceTemplateVersion> {
         self.service_template_version.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateServiceTemplateVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateServiceTemplateVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateServiceTemplateVersionOutput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput).
-    pub fn builder() -> crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionOutputBuilder {
         crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl CreateServiceTemplateVersionOutputBuilder {
         self
     }
     /// <p>The service template version summary of detail data that's returned by Proton.</p>
-    pub fn set_service_template_version(
-        mut self,
-        input: std::option::Option<crate::types::ServiceTemplateVersion>,
-    ) -> Self {
-        self.service_template_version = input;
-        self
+    pub fn set_service_template_version(mut self, input: std::option::Option<crate::types::ServiceTemplateVersion>) -> Self {
+        self.service_template_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateServiceTemplateVersionOutput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput {
+    pub fn build(self) -> crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput {
         crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput {
-            service_template_version: self.service_template_version,
+            service_template_version: self.service_template_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

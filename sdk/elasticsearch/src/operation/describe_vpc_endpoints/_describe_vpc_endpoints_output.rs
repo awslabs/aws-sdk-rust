@@ -3,7 +3,7 @@
 /// <p>Container for response parameters to the <code><code>DescribeVpcEndpoints</code></code> operation. Returns a list containing configuration details and status of the VPC Endpoints as well as a list containing error responses of the endpoints that could not be described</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointsOutput {
+pub struct DescribeVpcEndpointsOutput  {
     /// <p>Information about each requested VPC endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoints: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
@@ -14,23 +14,22 @@ pub struct DescribeVpcEndpointsOutput {
 }
 impl DescribeVpcEndpointsOutput {
     /// <p>Information about each requested VPC endpoint.</p>
-    pub fn vpc_endpoints(&self) -> std::option::Option<&[crate::types::VpcEndpoint]> {
+    pub fn vpc_endpoints(&self) -> std::option::Option<& [crate::types::VpcEndpoint]> {
         self.vpc_endpoints.as_deref()
     }
     /// <p>Any errors associated with the request.</p>
-    pub fn vpc_endpoint_errors(&self) -> std::option::Option<&[crate::types::VpcEndpointError]> {
+    pub fn vpc_endpoint_errors(&self) -> std::option::Option<& [crate::types::VpcEndpointError]> {
         self.vpc_endpoint_errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVpcEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeVpcEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder {
         crate::operation::describe_vpc_endpoints::builders::DescribeVpcEndpointsOutputBuilder::default()
     }
 }
@@ -40,8 +39,7 @@ impl DescribeVpcEndpointsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVpcEndpointsOutputBuilder {
     pub(crate) vpc_endpoints: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
-    pub(crate) vpc_endpoint_errors:
-        std::option::Option<std::vec::Vec<crate::types::VpcEndpointError>>,
+    pub(crate) vpc_endpoint_errors: std::option::Option<std::vec::Vec<crate::types::VpcEndpointError>>,
     _request_id: Option<String>,
 }
 impl DescribeVpcEndpointsOutputBuilder {
@@ -52,17 +50,13 @@ impl DescribeVpcEndpointsOutputBuilder {
     /// <p>Information about each requested VPC endpoint.</p>
     pub fn vpc_endpoints(mut self, input: crate::types::VpcEndpoint) -> Self {
         let mut v = self.vpc_endpoints.unwrap_or_default();
-        v.push(input);
-        self.vpc_endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.vpc_endpoints = Some(v);
+                        self
     }
     /// <p>Information about each requested VPC endpoint.</p>
-    pub fn set_vpc_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>,
-    ) -> Self {
-        self.vpc_endpoints = input;
-        self
+    pub fn set_vpc_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcEndpoint>>) -> Self {
+        self.vpc_endpoints = input; self
     }
     /// Appends an item to `vpc_endpoint_errors`.
     ///
@@ -71,33 +65,32 @@ impl DescribeVpcEndpointsOutputBuilder {
     /// <p>Any errors associated with the request.</p>
     pub fn vpc_endpoint_errors(mut self, input: crate::types::VpcEndpointError) -> Self {
         let mut v = self.vpc_endpoint_errors.unwrap_or_default();
-        v.push(input);
-        self.vpc_endpoint_errors = Some(v);
-        self
+                        v.push(input);
+                        self.vpc_endpoint_errors = Some(v);
+                        self
     }
     /// <p>Any errors associated with the request.</p>
-    pub fn set_vpc_endpoint_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcEndpointError>>,
-    ) -> Self {
-        self.vpc_endpoint_errors = input;
-        self
+    pub fn set_vpc_endpoint_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcEndpointError>>) -> Self {
+        self.vpc_endpoint_errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointsOutput`](crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput).
     pub fn build(self) -> crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
         crate::operation::describe_vpc_endpoints::DescribeVpcEndpointsOutput {
-            vpc_endpoints: self.vpc_endpoints,
-            vpc_endpoint_errors: self.vpc_endpoint_errors,
+            vpc_endpoints: self.vpc_endpoints
+            ,
+            vpc_endpoint_errors: self.vpc_endpoint_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

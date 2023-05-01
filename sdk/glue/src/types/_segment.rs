@@ -3,7 +3,7 @@
 /// <p>Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Segment {
+pub struct Segment  {
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     #[doc(hidden)]
     pub segment_number: i32,
@@ -43,8 +43,7 @@ impl SegmentBuilder {
     }
     /// <p>The zero-based index number of the segment. For example, if the total number of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
     pub fn set_segment_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.segment_number = input;
-        self
+        self.segment_number = input; self
     }
     /// <p>The total number of segments.</p>
     pub fn total_segments(mut self, input: i32) -> Self {
@@ -53,14 +52,18 @@ impl SegmentBuilder {
     }
     /// <p>The total number of segments.</p>
     pub fn set_total_segments(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_segments = input;
-        self
+        self.total_segments = input; self
     }
     /// Consumes the builder and constructs a [`Segment`](crate::types::Segment).
     pub fn build(self) -> crate::types::Segment {
         crate::types::Segment {
-            segment_number: self.segment_number.unwrap_or_default(),
-            total_segments: self.total_segments.unwrap_or_default(),
+            segment_number: self.segment_number
+                .unwrap_or_default()
+            ,
+            total_segments: self.total_segments
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

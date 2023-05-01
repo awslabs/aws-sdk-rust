@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultSenderIdOutput {
+pub struct SetDefaultSenderIdOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -16,29 +16,27 @@ pub struct SetDefaultSenderIdOutput {
 }
 impl SetDefaultSenderIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set that was updated.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The default sender ID to set for the ConfigurationSet.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> std::option::Option<& str> {
         self.sender_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SetDefaultSenderIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetDefaultSenderIdOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultSenderIdOutput`](crate::operation::set_default_sender_id::SetDefaultSenderIdOutput).
-    pub fn builder(
-    ) -> crate::operation::set_default_sender_id::builders::SetDefaultSenderIdOutputBuilder {
-        crate::operation::set_default_sender_id::builders::SetDefaultSenderIdOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::set_default_sender_id::builders::SetDefaultSenderIdOutputBuilder {
+        crate::operation::set_default_sender_id::builders::SetDefaultSenderIdOutputBuilder::default()
     }
 }
 
@@ -58,12 +56,8 @@ impl SetDefaultSenderIdOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-    pub fn set_configuration_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_arn = input;
-        self
+    pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_arn = input; self
     }
     /// <p>The name of the configuration set that was updated.</p>
     pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +65,8 @@ impl SetDefaultSenderIdOutputBuilder {
         self
     }
     /// <p>The name of the configuration set that was updated.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// <p>The default sender ID to set for the ConfigurationSet.</p>
     pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,25 +75,28 @@ impl SetDefaultSenderIdOutputBuilder {
     }
     /// <p>The default sender ID to set for the ConfigurationSet.</p>
     pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender_id = input;
-        self
+        self.sender_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetDefaultSenderIdOutput`](crate::operation::set_default_sender_id::SetDefaultSenderIdOutput).
     pub fn build(self) -> crate::operation::set_default_sender_id::SetDefaultSenderIdOutput {
         crate::operation::set_default_sender_id::SetDefaultSenderIdOutput {
-            configuration_set_arn: self.configuration_set_arn,
-            configuration_set_name: self.configuration_set_name,
-            sender_id: self.sender_id,
+            configuration_set_arn: self.configuration_set_arn
+            ,
+            configuration_set_name: self.configuration_set_name
+            ,
+            sender_id: self.sender_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeliveryStreamInput {
+pub struct DeleteDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
     /// <p>The default value is false.</p>
     #[doc(hidden)]
     pub allow_force_delete: std::option::Option<bool>,
 }
 impl DeleteDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
     /// <p>The default value is false.</p>
     pub fn allow_force_delete(&self) -> std::option::Option<bool> {
         self.allow_force_delete
@@ -24,8 +24,7 @@ impl DeleteDeliveryStreamInput {
 }
 impl DeleteDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeliveryStreamInput`](crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput).
-    pub fn builder(
-    ) -> crate::operation::delete_delivery_stream::builders::DeleteDeliveryStreamInputBuilder {
+    pub fn builder() -> crate::operation::delete_delivery_stream::builders::DeleteDeliveryStreamInputBuilder {
         crate::operation::delete_delivery_stream::builders::DeleteDeliveryStreamInputBuilder::default()
     }
 }
@@ -44,37 +43,30 @@ impl DeleteDeliveryStreamInputBuilder {
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
     }
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
     /// <p>The default value is false.</p>
     pub fn allow_force_delete(mut self, input: bool) -> Self {
         self.allow_force_delete = Some(input);
         self
     }
-    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p>
+    /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose is unable to retire the grant for the CMK. Kinesis Data Firehose might be unable to retire the grant due to a customer error, such as when the CMK or the grant are in an invalid state. If you force deletion, you can then use the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RevokeGrant.html">RevokeGrant</a> operation to revoke the grant you gave to Kinesis Data Firehose. If a failure to retire the grant happens due to an Amazon Web Services KMS issue, Kinesis Data Firehose keeps retrying the delete operation.</p> 
     /// <p>The default value is false.</p>
     pub fn set_allow_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_force_delete = input;
-        self
+        self.allow_force_delete = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDeliveryStreamInput`](crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_delivery_stream::DeleteDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                allow_force_delete: self.allow_force_delete,
-            },
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                allow_force_delete: self.allow_force_delete
+                ,
+            }
         )
     }
 }
+

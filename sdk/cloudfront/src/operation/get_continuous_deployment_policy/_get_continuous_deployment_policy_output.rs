@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContinuousDeploymentPolicyOutput {
+pub struct GetContinuousDeploymentPolicyOutput  {
     /// <p>A continuous deployment policy.</p>
     #[doc(hidden)]
     pub continuous_deployment_policy: std::option::Option<crate::types::ContinuousDeploymentPolicy>,
@@ -13,24 +13,22 @@ pub struct GetContinuousDeploymentPolicyOutput {
 }
 impl GetContinuousDeploymentPolicyOutput {
     /// <p>A continuous deployment policy.</p>
-    pub fn continuous_deployment_policy(
-        &self,
-    ) -> std::option::Option<&crate::types::ContinuousDeploymentPolicy> {
+    pub fn continuous_deployment_policy(&self) -> std::option::Option<& crate::types::ContinuousDeploymentPolicy> {
         self.continuous_deployment_policy.as_ref()
     }
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContinuousDeploymentPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetContinuousDeploymentPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContinuousDeploymentPolicyOutput`](crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyOutput).
-    pub fn builder() -> crate::operation::get_continuous_deployment_policy::builders::GetContinuousDeploymentPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_continuous_deployment_policy::builders::GetContinuousDeploymentPolicyOutputBuilder {
         crate::operation::get_continuous_deployment_policy::builders::GetContinuousDeploymentPolicyOutputBuilder::default()
     }
 }
@@ -39,27 +37,19 @@ impl GetContinuousDeploymentPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetContinuousDeploymentPolicyOutputBuilder {
-    pub(crate) continuous_deployment_policy:
-        std::option::Option<crate::types::ContinuousDeploymentPolicy>,
+    pub(crate) continuous_deployment_policy: std::option::Option<crate::types::ContinuousDeploymentPolicy>,
     pub(crate) e_tag: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl GetContinuousDeploymentPolicyOutputBuilder {
     /// <p>A continuous deployment policy.</p>
-    pub fn continuous_deployment_policy(
-        mut self,
-        input: crate::types::ContinuousDeploymentPolicy,
-    ) -> Self {
+    pub fn continuous_deployment_policy(mut self, input: crate::types::ContinuousDeploymentPolicy) -> Self {
         self.continuous_deployment_policy = Some(input);
         self
     }
     /// <p>A continuous deployment policy.</p>
-    pub fn set_continuous_deployment_policy(
-        mut self,
-        input: std::option::Option<crate::types::ContinuousDeploymentPolicy>,
-    ) -> Self {
-        self.continuous_deployment_policy = input;
-        self
+    pub fn set_continuous_deployment_policy(mut self, input: std::option::Option<crate::types::ContinuousDeploymentPolicy>) -> Self {
+        self.continuous_deployment_policy = input; self
     }
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,27 +58,26 @@ impl GetContinuousDeploymentPolicyOutputBuilder {
     }
     /// <p>The version identifier for the current version of the continuous deployment policy.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetContinuousDeploymentPolicyOutput`](crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyOutput
-    {
+    pub fn build(self) -> crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyOutput {
         crate::operation::get_continuous_deployment_policy::GetContinuousDeploymentPolicyOutput {
-            continuous_deployment_policy: self.continuous_deployment_policy,
-            e_tag: self.e_tag,
+            continuous_deployment_policy: self.continuous_deployment_policy
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

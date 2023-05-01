@@ -4,81 +4,59 @@ pub use crate::operation::put_snapshot_block::_put_snapshot_block_output::PutSna
 pub use crate::operation::put_snapshot_block::_put_snapshot_block_input::PutSnapshotBlockInputBuilder;
 
 /// Fluent builder constructing a request to `PutSnapshotBlock`.
-///
-/// <p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p>
+/// 
+/// <p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p> 
 /// <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p>
 #[derive(std::fmt::Debug)]
 pub struct PutSnapshotBlockFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_snapshot_block::builders::PutSnapshotBlockInputBuilder,
-}
-impl PutSnapshotBlockFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_snapshot_block::builders::PutSnapshotBlockInputBuilder
+            }
+impl PutSnapshotBlockFluentBuilder  {
     /// Creates a new `PutSnapshotBlock`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_snapshot_block::PutSnapshotBlock,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_snapshot_block::PutSnapshotBlockError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_snapshot_block::PutSnapshotBlockOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_snapshot_block::PutSnapshotBlockError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// <p>The ID of the snapshot.</p> <important>
-    /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_snapshot_block::PutSnapshotBlock, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_snapshot_block::PutSnapshotBlockError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_snapshot_block::PutSnapshotBlockOutput, aws_smithy_http::result::SdkError<crate::operation::put_snapshot_block::PutSnapshotBlockError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
+    /// <p>The ID of the snapshot.</p> <important> 
+    /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p> 
     /// </important>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
         self
     }
-    /// <p>The ID of the snapshot.</p> <important>
-    /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p>
+    /// <p>The ID of the snapshot.</p> <important> 
+    /// <p>If the specified snapshot is encrypted, you must have permission to use the KMS key that was used to encrypt the snapshot. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebsapis-using-encryption.html"> Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>..</p> 
     /// </important>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
@@ -94,28 +72,25 @@ impl PutSnapshotBlockFluentBuilder {
         self.inner = self.inner.set_block_index(input);
         self
     }
-    /// <p>The data to write to the block.</p>
+    /// <p>The data to write to the block.</p> 
     /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub fn block_data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.block_data(input);
         self
     }
-    /// <p>The data to write to the block.</p>
+    /// <p>The data to write to the block.</p> 
     /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a result, you must generate and provide a Base64-encoded SHA256 checksum for the block data using the <b>x-amz-Checksum</b> header. Also, you must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b> header. The checksum that you provide is part of the Signature Version 4 signing process. It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity of the data. If the checksums do not correspond, the request fails. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums"> Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_block_data(
-        mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-    ) -> Self {
+    pub fn set_block_data(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
         self.inner = self.inner.set_block_data(input);
         self
     }
-    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p> 
     /// <p>Valid values: <code>524288</code> </p>
     pub fn data_length(mut self, input: i32) -> Self {
         self.inner = self.inner.data_length(input);
         self
     }
-    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p>
+    /// <p>The size of the data to write to the block, in bytes. Currently, the only supported size is <code>524288</code> bytes.</p> 
     /// <p>Valid values: <code>524288</code> </p>
     pub fn set_data_length(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_data_length(input);
@@ -147,11 +122,9 @@ impl PutSnapshotBlockFluentBuilder {
         self
     }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
+    pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
         self.inner = self.inner.set_checksum_algorithm(input);
         self
     }
 }
+

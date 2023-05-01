@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionDefinitionInput {
+pub struct GetFunctionDefinitionInput  {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
 }
 impl GetFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> std::option::Option<&str> {
+    pub fn function_definition_id(&self) -> std::option::Option<& str> {
         self.function_definition_id.as_deref()
     }
 }
 impl GetFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder {
         crate::operation::get_function_definition::builders::GetFunctionDefinitionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl GetFunctionDefinitionInputBuilder {
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.function_definition_id = input;
-        self
+    pub fn set_function_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.function_definition_id = input; self
     }
     /// Consumes the builder and constructs a [`GetFunctionDefinitionInput`](crate::operation::get_function_definition::GetFunctionDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_function_definition::GetFunctionDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_function_definition::GetFunctionDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_function_definition::GetFunctionDefinitionInput {
-                function_definition_id: self.function_definition_id,
-            },
+                function_definition_id: self.function_definition_id
+                ,
+            }
         )
     }
 }
+

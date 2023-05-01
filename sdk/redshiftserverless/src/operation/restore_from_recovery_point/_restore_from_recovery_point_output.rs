@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreFromRecoveryPointOutput {
+pub struct RestoreFromRecoveryPointOutput  {
     /// <p>The unique identifier of the recovery point used for the restore.</p>
     #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct RestoreFromRecoveryPointOutput {
 }
 impl RestoreFromRecoveryPointOutput {
     /// <p>The unique identifier of the recovery point used for the restore.</p>
-    pub fn recovery_point_id(&self) -> std::option::Option<&str> {
+    pub fn recovery_point_id(&self) -> std::option::Option<& str> {
         self.recovery_point_id.as_deref()
     }
     /// <p>The namespace that data was restored into.</p>
-    pub fn namespace(&self) -> std::option::Option<&crate::types::Namespace> {
+    pub fn namespace(&self) -> std::option::Option<& crate::types::Namespace> {
         self.namespace.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RestoreFromRecoveryPointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RestoreFromRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`RestoreFromRecoveryPointOutput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput).
-    pub fn builder() -> crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointOutputBuilder{
+    pub fn builder() -> crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointOutputBuilder {
         crate::operation::restore_from_recovery_point::builders::RestoreFromRecoveryPointOutputBuilder::default()
     }
 }
@@ -48,12 +48,8 @@ impl RestoreFromRecoveryPointOutputBuilder {
         self
     }
     /// <p>The unique identifier of the recovery point used for the restore.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_point_id = input;
-        self
+    pub fn set_recovery_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_point_id = input; self
     }
     /// <p>The namespace that data was restored into.</p>
     pub fn namespace(mut self, input: crate::types::Namespace) -> Self {
@@ -62,26 +58,26 @@ impl RestoreFromRecoveryPointOutputBuilder {
     }
     /// <p>The namespace that data was restored into.</p>
     pub fn set_namespace(mut self, input: std::option::Option<crate::types::Namespace>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RestoreFromRecoveryPointOutput`](crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput {
+    pub fn build(self) -> crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput {
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput {
-            recovery_point_id: self.recovery_point_id,
-            namespace: self.namespace,
+            recovery_point_id: self.recovery_point_id
+            ,
+            namespace: self.namespace
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

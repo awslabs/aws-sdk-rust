@@ -3,7 +3,7 @@
 /// UpdateConfigurationSetEventDestinationRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationSetEventDestinationInput {
+pub struct UpdateConfigurationSetEventDestinationInput  {
     /// ConfigurationSetName
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -16,23 +16,21 @@ pub struct UpdateConfigurationSetEventDestinationInput {
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// ConfigurationSetName
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// An object that defines a single event destination.
-    pub fn event_destination(
-        &self,
-    ) -> std::option::Option<&crate::types::EventDestinationDefinition> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::types::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
     /// EventDestinationName
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
-    pub fn builder() -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder {
         crate::operation::update_configuration_set_event_destination::builders::UpdateConfigurationSetEventDestinationInputBuilder::default()
     }
 }
@@ -52,12 +50,8 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// ConfigurationSetName
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// An object that defines a single event destination.
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
@@ -65,12 +59,8 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// An object that defines a single event destination.
-    pub fn set_event_destination(
-        mut self,
-        input: std::option::Option<crate::types::EventDestinationDefinition>,
-    ) -> Self {
-        self.event_destination = input;
-        self
+    pub fn set_event_destination(mut self, input: std::option::Option<crate::types::EventDestinationDefinition>) -> Self {
+        self.event_destination = input; self
     }
     /// EventDestinationName
     pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,15 +68,11 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         self
     }
     /// EventDestinationName
-    pub fn set_event_destination_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.event_destination_name = input;
-        self
+    pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.event_destination_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
-    pub fn build(self) -> Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name
@@ -99,3 +85,4 @@ impl UpdateConfigurationSetEventDestinationInputBuilder {
         )
     }
 }
+

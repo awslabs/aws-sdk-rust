@@ -2,30 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOperationsInput {
+pub struct ListOperationsInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
     #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p> 
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListOperationsInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
-    pub fn service_arn(&self) -> std::option::Option<&str> {
+    pub fn service_arn(&self) -> std::option::Option<& str> {
         self.service_arn.as_deref()
     }
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p> 
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -54,44 +54,42 @@ impl ListOperationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p>
+    /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
-    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p> 
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
+    /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p> 
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_operations::ListOperationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_operations::ListOperationsInput {
-            service_arn: self.service_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_operations::ListOperationsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_operations::ListOperationsInput {
+                service_arn: self.service_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

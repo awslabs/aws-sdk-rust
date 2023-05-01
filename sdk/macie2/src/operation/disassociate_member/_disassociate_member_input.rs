@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMemberInput {
+pub struct DisassociateMemberInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateMemberInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DisassociateMemberInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_member::builders::DisassociateMemberInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_member::builders::DisassociateMemberInputBuilder {
         crate::operation::disassociate_member::builders::DisassociateMemberInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DisassociateMemberInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateMemberInput`](crate::operation::disassociate_member::DisassociateMemberInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_member::DisassociateMemberInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::disassociate_member::DisassociateMemberInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::disassociate_member::DisassociateMemberInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::disassociate_member::DisassociateMemberInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

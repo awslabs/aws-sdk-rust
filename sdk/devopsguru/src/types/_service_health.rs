@@ -3,7 +3,7 @@
 /// <p>Represents the health of an Amazon Web Services service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceHealth {
+pub struct ServiceHealth  {
     /// <p>The name of the Amazon Web Services service.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<crate::types::ServiceName>,
@@ -16,11 +16,11 @@ pub struct ServiceHealth {
 }
 impl ServiceHealth {
     /// <p>The name of the Amazon Web Services service.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::types::ServiceName> {
+    pub fn service_name(&self) -> std::option::Option<& crate::types::ServiceName> {
         self.service_name.as_ref()
     }
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
-    pub fn insight(&self) -> std::option::Option<&crate::types::ServiceInsightHealth> {
+    pub fn insight(&self) -> std::option::Option<& crate::types::ServiceInsightHealth> {
         self.insight.as_ref()
     }
     /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
@@ -50,12 +50,8 @@ impl ServiceHealthBuilder {
         self
     }
     /// <p>The name of the Amazon Web Services service.</p>
-    pub fn set_service_name(
-        mut self,
-        input: std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
-        self.service_name = input;
-        self
+    pub fn set_service_name(mut self, input: std::option::Option<crate::types::ServiceName>) -> Self {
+        self.service_name = input; self
     }
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
     pub fn insight(mut self, input: crate::types::ServiceInsightHealth) -> Self {
@@ -63,12 +59,8 @@ impl ServiceHealthBuilder {
         self
     }
     /// <p>Represents the health of an Amazon Web Services service. This is a <code>ServiceInsightHealth</code> that contains the number of open proactive and reactive insights for this service.</p>
-    pub fn set_insight(
-        mut self,
-        input: std::option::Option<crate::types::ServiceInsightHealth>,
-    ) -> Self {
-        self.insight = input;
-        self
+    pub fn set_insight(mut self, input: std::option::Option<crate::types::ServiceInsightHealth>) -> Self {
+        self.insight = input; self
     }
     /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub fn analyzed_resource_count(mut self, input: i64) -> Self {
@@ -77,15 +69,18 @@ impl ServiceHealthBuilder {
     }
     /// <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>
     pub fn set_analyzed_resource_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.analyzed_resource_count = input;
-        self
+        self.analyzed_resource_count = input; self
     }
     /// Consumes the builder and constructs a [`ServiceHealth`](crate::types::ServiceHealth).
     pub fn build(self) -> crate::types::ServiceHealth {
         crate::types::ServiceHealth {
-            service_name: self.service_name,
-            insight: self.insight,
-            analyzed_resource_count: self.analyzed_resource_count,
+            service_name: self.service_name
+            ,
+            insight: self.insight
+            ,
+            analyzed_resource_count: self.analyzed_resource_count
+            ,
         }
     }
 }
+

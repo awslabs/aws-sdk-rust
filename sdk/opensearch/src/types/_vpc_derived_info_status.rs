@@ -3,7 +3,7 @@
 /// <p>Status of the VPC options for a specified domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcDerivedInfoStatus {
+pub struct VpcDerivedInfoStatus  {
     /// <p>The VPC options for the specified domain.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::types::VpcDerivedInfo>,
@@ -13,11 +13,11 @@ pub struct VpcDerivedInfoStatus {
 }
 impl VpcDerivedInfoStatus {
     /// <p>The VPC options for the specified domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::VpcDerivedInfo> {
+    pub fn options(&self) -> std::option::Option<& crate::types::VpcDerivedInfo> {
         self.options.as_ref()
     }
     /// <p>The status of the VPC options for the specified domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl VpcDerivedInfoStatusBuilder {
     }
     /// <p>The VPC options for the specified domain.</p>
     pub fn set_options(mut self, input: std::option::Option<crate::types::VpcDerivedInfo>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The status of the VPC options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -53,14 +52,16 @@ impl VpcDerivedInfoStatusBuilder {
     }
     /// <p>The status of the VPC options for the specified domain.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`VpcDerivedInfoStatus`](crate::types::VpcDerivedInfoStatus).
     pub fn build(self) -> crate::types::VpcDerivedInfoStatus {
         crate::types::VpcDerivedInfoStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStageDevicesInput {
+pub struct ListStageDevicesInput  {
     /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListStageDevicesInput {
 }
 impl ListStageDevicesInput {
     /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of requests to select.</p>
@@ -29,7 +29,7 @@ impl ListStageDevicesInput {
         self.max_results
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>Toggle for excluding devices deployed in other stages.</p>
@@ -37,14 +37,13 @@ impl ListStageDevicesInput {
         self.exclude_devices_deployed_in_other_stage
     }
     /// <p>The name of the stage in the deployment.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
 impl ListStageDevicesInput {
     /// Creates a new builder-style object to manufacture [`ListStageDevicesInput`](crate::operation::list_stage_devices::ListStageDevicesInput).
-    pub fn builder() -> crate::operation::list_stage_devices::builders::ListStageDevicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_stage_devices::builders::ListStageDevicesInputBuilder {
         crate::operation::list_stage_devices::builders::ListStageDevicesInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl ListStageDevicesInputBuilder {
     }
     /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of requests to select.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -77,8 +75,7 @@ impl ListStageDevicesInputBuilder {
     }
     /// <p>The maximum number of requests to select.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The name of the edge deployment plan.</p>
     pub fn edge_deployment_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,12 +83,8 @@ impl ListStageDevicesInputBuilder {
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+    pub fn set_edge_deployment_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.edge_deployment_plan_name = input; self
     }
     /// <p>Toggle for excluding devices deployed in other stages.</p>
     pub fn exclude_devices_deployed_in_other_stage(mut self, input: bool) -> Self {
@@ -99,12 +92,8 @@ impl ListStageDevicesInputBuilder {
         self
     }
     /// <p>Toggle for excluding devices deployed in other stages.</p>
-    pub fn set_exclude_devices_deployed_in_other_stage(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.exclude_devices_deployed_in_other_stage = input;
-        self
+    pub fn set_exclude_devices_deployed_in_other_stage(mut self, input: std::option::Option<bool>) -> Self {
+        self.exclude_devices_deployed_in_other_stage = input; self
     }
     /// <p>The name of the stage in the deployment.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,25 +102,24 @@ impl ListStageDevicesInputBuilder {
     }
     /// <p>The name of the stage in the deployment.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// Consumes the builder and constructs a [`ListStageDevicesInput`](crate::operation::list_stage_devices::ListStageDevicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_stage_devices::ListStageDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_stage_devices::ListStageDevicesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_stage_devices::ListStageDevicesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-                exclude_devices_deployed_in_other_stage: self
-                    .exclude_devices_deployed_in_other_stage,
-                stage_name: self.stage_name,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                edge_deployment_plan_name: self.edge_deployment_plan_name
+                ,
+                exclude_devices_deployed_in_other_stage: self.exclude_devices_deployed_in_other_stage
+                ,
+                stage_name: self.stage_name
+                ,
+            }
         )
     }
 }
+

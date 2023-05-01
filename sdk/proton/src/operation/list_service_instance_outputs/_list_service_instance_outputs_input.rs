@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceInstanceOutputsInput {
+pub struct ListServiceInstanceOutputsInput  {
     /// <p>The name of the service instance whose outputs you want.</p>
     #[doc(hidden)]
     pub service_instance_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListServiceInstanceOutputsInput {
 }
 impl ListServiceInstanceOutputsInput {
     /// <p>The name of the service instance whose outputs you want.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListServiceInstanceOutputsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstanceOutputsInput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput).
-    pub fn builder() -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder{
+    pub fn builder() -> crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder {
         crate::operation::list_service_instance_outputs::builders::ListServiceInstanceOutputsInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl ListServiceInstanceOutputsInputBuilder {
         self
     }
     /// <p>The name of the service instance whose outputs you want.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_instance_name = input;
-        self
+    pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_instance_name = input; self
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl ListServiceInstanceOutputsInputBuilder {
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,22 +68,20 @@ impl ListServiceInstanceOutputsInputBuilder {
     }
     /// <p>A token that indicates the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceOutputsInput`](crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_service_instance_outputs::ListServiceInstanceOutputsInput {
-                service_instance_name: self.service_instance_name,
-                service_name: self.service_name,
-                next_token: self.next_token,
-            },
+                service_instance_name: self.service_instance_name
+                ,
+                service_name: self.service_name
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

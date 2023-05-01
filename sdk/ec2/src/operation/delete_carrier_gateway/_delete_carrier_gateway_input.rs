@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCarrierGatewayInput {
+pub struct DeleteCarrierGatewayInput  {
     /// <p>The ID of the carrier gateway.</p>
     #[doc(hidden)]
     pub carrier_gateway_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteCarrierGatewayInput {
 }
 impl DeleteCarrierGatewayInput {
     /// <p>The ID of the carrier gateway.</p>
-    pub fn carrier_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn carrier_gateway_id(&self) -> std::option::Option<& str> {
         self.carrier_gateway_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,8 +22,7 @@ impl DeleteCarrierGatewayInput {
 }
 impl DeleteCarrierGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteCarrierGatewayInput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder {
+    pub fn builder() -> crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder {
         crate::operation::delete_carrier_gateway::builders::DeleteCarrierGatewayInputBuilder::default()
     }
 }
@@ -42,12 +41,8 @@ impl DeleteCarrierGatewayInputBuilder {
         self
     }
     /// <p>The ID of the carrier gateway.</p>
-    pub fn set_carrier_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.carrier_gateway_id = input;
-        self
+    pub fn set_carrier_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.carrier_gateway_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -56,21 +51,18 @@ impl DeleteCarrierGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCarrierGatewayInput`](crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_carrier_gateway::DeleteCarrierGatewayInput {
-                carrier_gateway_id: self.carrier_gateway_id,
-                dry_run: self.dry_run,
-            },
+                carrier_gateway_id: self.carrier_gateway_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -18,3 +18,4 @@ pub mod list_available_resource_dimensions;
 
 /// Types for the `ListAvailableResourceMetrics` operation.
 pub mod list_available_resource_metrics;
+

@@ -3,7 +3,7 @@
 /// <p>The specified resource could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -15,38 +15,32 @@ pub struct ResourceNotFoundException {
     pub resource_type: std::option::Option<std::string::String>,
     /// <p>The specified resource could not be found.</p>
     #[doc(hidden)]
-    pub context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ResourceNotFoundException {
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The specified resource could not be found.</p>
-    pub fn context(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn context(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.context.as_ref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -61,9 +55,7 @@ impl aws_http::request_id::RequestId for crate::types::error::ResourceNotFoundEx
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ResourceNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
@@ -79,8 +71,7 @@ pub struct ResourceNotFoundExceptionBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
@@ -91,8 +82,7 @@ impl ResourceNotFoundExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +91,7 @@ impl ResourceNotFoundExceptionBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,56 +100,47 @@ impl ResourceNotFoundExceptionBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// Adds a key-value pair to `context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
     ///
     /// <p>The specified resource could not be found.</p>
-    pub fn context(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn context(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.context = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.context = Some(hash_map);
+                        self
     }
     /// <p>The specified resource could not be found.</p>
-    pub fn set_context(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.context = input;
-        self
+    pub fn set_context(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.context = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::types::error::ResourceNotFoundException).
     pub fn build(self) -> crate::types::error::ResourceNotFoundException {
         crate::types::error::ResourceNotFoundException {
-            message: self.message,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            context: self.context,
+            message: self.message
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            context: self.context
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

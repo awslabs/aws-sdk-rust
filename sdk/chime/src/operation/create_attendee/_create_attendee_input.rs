@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAttendeeInput {
+pub struct CreateAttendeeInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct CreateAttendeeInput {
 }
 impl CreateAttendeeInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-    pub fn external_user_id(&self) -> std::option::Option<&str> {
+    pub fn external_user_id(&self) -> std::option::Option<& str> {
         self.external_user_id.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for CreateAttendeeInput {
+impl  std::fmt::Debug for CreateAttendeeInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAttendeeInput");
         formatter.field("meeting_id", &self.meeting_id);
@@ -59,8 +59,7 @@ impl CreateAttendeeInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl CreateAttendeeInputBuilder {
     }
     /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
     pub fn set_external_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_user_id = input;
-        self
+        self.external_user_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -79,30 +77,26 @@ impl CreateAttendeeInputBuilder {
     /// <p>The tag key-value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateAttendeeInput`](crate::operation::create_attendee::CreateAttendeeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_attendee::CreateAttendeeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_attendee::CreateAttendeeInput {
-            meeting_id: self.meeting_id,
-            external_user_id: self.external_user_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_attendee::CreateAttendeeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_attendee::CreateAttendeeInput {
+                meeting_id: self.meeting_id
+                ,
+                external_user_id: self.external_user_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateAttendeeInputBuilder {
@@ -114,3 +108,4 @@ impl std::fmt::Debug for CreateAttendeeInputBuilder {
         formatter.finish()
     }
 }
+

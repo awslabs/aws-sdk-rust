@@ -3,7 +3,7 @@
 /// <p>Network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The MAC address of the network interface.</p>
     #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The MAC address of the network interface.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>Network interface IPs.</p>
-    pub fn ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ips(&self) -> std::option::Option<& [std::string::String]> {
         self.ips.as_deref()
     }
     /// <p>Whether this is the primary network interface.</p>
@@ -51,8 +51,7 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>The MAC address of the network interface.</p>
     pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// Appends an item to `ips`.
     ///
@@ -61,17 +60,13 @@ impl NetworkInterfaceBuilder {
     /// <p>Network interface IPs.</p>
     pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ips.unwrap_or_default();
-        v.push(input.into());
-        self.ips = Some(v);
-        self
+                        v.push(input.into());
+                        self.ips = Some(v);
+                        self
     }
     /// <p>Network interface IPs.</p>
-    pub fn set_ips(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ips = input;
-        self
+    pub fn set_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ips = input; self
     }
     /// <p>Whether this is the primary network interface.</p>
     pub fn is_primary(mut self, input: bool) -> Self {
@@ -80,15 +75,18 @@ impl NetworkInterfaceBuilder {
     }
     /// <p>Whether this is the primary network interface.</p>
     pub fn set_is_primary(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_primary = input;
-        self
+        self.is_primary = input; self
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
-            mac_address: self.mac_address,
-            ips: self.ips,
-            is_primary: self.is_primary,
+            mac_address: self.mac_address
+            ,
+            ips: self.ips
+            ,
+            is_primary: self.is_primary
+            ,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeValidDbInstanceModificationsInput {
+pub struct DescribeValidDbInstanceModificationsInput  {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
     #[doc(hidden)]
     pub db_instance_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeValidDbInstanceModificationsInput {
     /// <p>The customer identifier or the ARN of your DB instance.</p>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> std::option::Option<& str> {
         self.db_instance_identifier.as_deref()
     }
 }
 impl DescribeValidDbInstanceModificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsInput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput).
-    pub fn builder() -> crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsInputBuilder {
         crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl DescribeValidDbInstanceModificationsInputBuilder {
         self
     }
     /// <p>The customer identifier or the ARN of your DB instance.</p>
-    pub fn set_db_instance_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_instance_identifier = input;
-        self
+    pub fn set_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_instance_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsInput`](crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsInput {
                 db_instance_identifier: self.db_instance_identifier
@@ -50,3 +46,4 @@ impl DescribeValidDbInstanceModificationsInputBuilder {
         )
     }
 }
+

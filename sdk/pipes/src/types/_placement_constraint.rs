@@ -3,7 +3,7 @@
 /// <p>An object representing a constraint on task placement. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the Amazon Elastic Container Service Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlacementConstraint {
+pub struct PlacementConstraint  {
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::PlacementConstraintType>,
@@ -13,15 +13,15 @@ pub struct PlacementConstraint {
 }
 impl PlacementConstraint {
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PlacementConstraintType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PlacementConstraintType> {
         self.r#type.as_ref()
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for PlacementConstraint {
+impl  std::fmt::Debug for PlacementConstraint  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementConstraint");
         formatter.field("r#type", &self.r#type);
@@ -50,12 +50,8 @@ impl PlacementConstraintBuilder {
         self
     }
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::PlacementConstraintType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::PlacementConstraintType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,14 +60,15 @@ impl PlacementConstraintBuilder {
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// Consumes the builder and constructs a [`PlacementConstraint`](crate::types::PlacementConstraint).
     pub fn build(self) -> crate::types::PlacementConstraint {
         crate::types::PlacementConstraint {
-            r#type: self.r#type,
-            expression: self.expression,
+            r#type: self.r#type
+            ,
+            expression: self.expression
+            ,
         }
     }
 }
@@ -83,3 +80,4 @@ impl std::fmt::Debug for PlacementConstraintBuilder {
         formatter.finish()
     }
 }
+

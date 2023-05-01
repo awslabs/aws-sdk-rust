@@ -3,7 +3,7 @@
 /// <p>The fraud detection result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FraudDetectionResult {
+pub struct FraudDetectionResult  {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     #[doc(hidden)]
     pub fraud_detection_result_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct FraudDetectionResult {
 }
 impl FraudDetectionResult {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
-    pub fn fraud_detection_result_id(&self) -> std::option::Option<&str> {
+    pub fn fraud_detection_result_id(&self) -> std::option::Option<& str> {
         self.fraud_detection_result_id.as_deref()
     }
     /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
-    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn audio_aggregation_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
     /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
-    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::FraudDetectionConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::types::FraudDetectionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-    pub fn decision(&self) -> std::option::Option<&crate::types::FraudDetectionDecision> {
+    pub fn decision(&self) -> std::option::Option<& crate::types::FraudDetectionDecision> {
         self.decision.as_ref()
     }
     /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
-    pub fn reasons(&self) -> std::option::Option<&[crate::types::FraudDetectionReason]> {
+    pub fn reasons(&self) -> std::option::Option<& [crate::types::FraudDetectionReason]> {
         self.reasons.as_deref()
     }
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
-    pub fn risk_details(&self) -> std::option::Option<&crate::types::FraudRiskDetails> {
+    pub fn risk_details(&self) -> std::option::Option<& crate::types::FraudRiskDetails> {
         self.risk_details.as_ref()
     }
 }
@@ -82,12 +82,8 @@ impl FraudDetectionResultBuilder {
         self
     }
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
-    pub fn set_fraud_detection_result_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.fraud_detection_result_id = input;
-        self
+    pub fn set_fraud_detection_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.fraud_detection_result_id = input; self
     }
     /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
     pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -95,12 +91,8 @@ impl FraudDetectionResultBuilder {
         self
     }
     /// <p>A timestamp of when audio aggregation started for this fraud detection result.</p>
-    pub fn set_audio_aggregation_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.audio_aggregation_started_at = input;
-        self
+    pub fn set_audio_aggregation_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.audio_aggregation_started_at = input; self
     }
     /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
     pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,12 +100,8 @@ impl FraudDetectionResultBuilder {
         self
     }
     /// <p>A timestamp of when audio aggregation ended for this fraud detection result.</p>
-    pub fn set_audio_aggregation_ended_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.audio_aggregation_ended_at = input;
-        self
+    pub fn set_audio_aggregation_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.audio_aggregation_ended_at = input; self
     }
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
     pub fn configuration(mut self, input: crate::types::FraudDetectionConfiguration) -> Self {
@@ -121,12 +109,8 @@ impl FraudDetectionResultBuilder {
         self
     }
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
-    pub fn set_configuration(
-        mut self,
-        input: std::option::Option<crate::types::FraudDetectionConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: std::option::Option<crate::types::FraudDetectionConfiguration>) -> Self {
+        self.configuration = input; self
     }
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
     pub fn decision(mut self, input: crate::types::FraudDetectionDecision) -> Self {
@@ -134,12 +118,8 @@ impl FraudDetectionResultBuilder {
         self
     }
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-    pub fn set_decision(
-        mut self,
-        input: std::option::Option<crate::types::FraudDetectionDecision>,
-    ) -> Self {
-        self.decision = input;
-        self
+    pub fn set_decision(mut self, input: std::option::Option<crate::types::FraudDetectionDecision>) -> Self {
+        self.decision = input; self
     }
     /// Appends an item to `reasons`.
     ///
@@ -148,17 +128,13 @@ impl FraudDetectionResultBuilder {
     /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
     pub fn reasons(mut self, input: crate::types::FraudDetectionReason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
-        v.push(input);
-        self.reasons = Some(v);
-        self
+                        v.push(input);
+                        self.reasons = Some(v);
+                        self
     }
     /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
-    pub fn set_reasons(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FraudDetectionReason>>,
-    ) -> Self {
-        self.reasons = input;
-        self
+    pub fn set_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::types::FraudDetectionReason>>) -> Self {
+        self.reasons = input; self
     }
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
     pub fn risk_details(mut self, input: crate::types::FraudRiskDetails) -> Self {
@@ -166,23 +142,27 @@ impl FraudDetectionResultBuilder {
         self
     }
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
-    pub fn set_risk_details(
-        mut self,
-        input: std::option::Option<crate::types::FraudRiskDetails>,
-    ) -> Self {
-        self.risk_details = input;
-        self
+    pub fn set_risk_details(mut self, input: std::option::Option<crate::types::FraudRiskDetails>) -> Self {
+        self.risk_details = input; self
     }
     /// Consumes the builder and constructs a [`FraudDetectionResult`](crate::types::FraudDetectionResult).
     pub fn build(self) -> crate::types::FraudDetectionResult {
         crate::types::FraudDetectionResult {
-            fraud_detection_result_id: self.fraud_detection_result_id,
-            audio_aggregation_started_at: self.audio_aggregation_started_at,
-            audio_aggregation_ended_at: self.audio_aggregation_ended_at,
-            configuration: self.configuration,
-            decision: self.decision,
-            reasons: self.reasons,
-            risk_details: self.risk_details,
+            fraud_detection_result_id: self.fraud_detection_result_id
+            ,
+            audio_aggregation_started_at: self.audio_aggregation_started_at
+            ,
+            audio_aggregation_ended_at: self.audio_aggregation_ended_at
+            ,
+            configuration: self.configuration
+            ,
+            decision: self.decision
+            ,
+            reasons: self.reasons
+            ,
+            risk_details: self.risk_details
+            ,
         }
     }
 }
+

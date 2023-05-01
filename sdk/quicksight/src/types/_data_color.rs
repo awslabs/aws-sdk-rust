@@ -3,7 +3,7 @@
 /// <p>Determines the color that is applied to a particular data value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataColor {
+pub struct DataColor  {
     /// <p>The color that is applied to the data value.</p>
     #[doc(hidden)]
     pub color: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DataColor {
 }
 impl DataColor {
     /// <p>The color that is applied to the data value.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> std::option::Option<& str> {
         self.color.as_deref()
     }
     /// <p>The data value that the color is applied to.</p>
@@ -43,8 +43,7 @@ impl DataColorBuilder {
     }
     /// <p>The color that is applied to the data value.</p>
     pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The data value that the color is applied to.</p>
     pub fn data_value(mut self, input: f64) -> Self {
@@ -53,14 +52,16 @@ impl DataColorBuilder {
     }
     /// <p>The data value that the color is applied to.</p>
     pub fn set_data_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.data_value = input;
-        self
+        self.data_value = input; self
     }
     /// Consumes the builder and constructs a [`DataColor`](crate::types::DataColor).
     pub fn build(self) -> crate::types::DataColor {
         crate::types::DataColor {
-            color: self.color,
-            data_value: self.data_value,
+            color: self.color
+            ,
+            data_value: self.data_value
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopPhiDetectionJobOutput {
+pub struct StopPhiDetectionJobOutput  {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct StopPhiDetectionJobOutput {
 }
 impl StopPhiDetectionJobOutput {
     /// <p>The identifier of the PHI detection job that was stopped.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StopPhiDetectionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopPhiDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopPhiDetectionJobOutput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobOutputBuilder {
+    pub fn builder() -> crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobOutputBuilder {
         crate::operation::stop_phi_detection_job::builders::StopPhiDetectionJobOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl StopPhiDetectionJobOutputBuilder {
     }
     /// <p>The identifier of the PHI detection job that was stopped.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopPhiDetectionJobOutput`](crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput).
     pub fn build(self) -> crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput {
         crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput {
-            job_id: self.job_id,
+            job_id: self.job_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

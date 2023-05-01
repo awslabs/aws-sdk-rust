@@ -3,7 +3,7 @@
 /// Hls Basic Put Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsBasicPutSettings {
+pub struct HlsBasicPutSettings  {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
     pub connection_retry_interval: i32,
@@ -59,8 +59,7 @@ impl HlsBasicPutSettingsBuilder {
     }
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.connection_retry_interval = input;
-        self
+        self.connection_retry_interval = input; self
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn filecache_duration(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl HlsBasicPutSettingsBuilder {
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.filecache_duration = input;
-        self
+        self.filecache_duration = input; self
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl HlsBasicPutSettingsBuilder {
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_retries = input;
-        self
+        self.num_retries = input; self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
@@ -89,16 +86,24 @@ impl HlsBasicPutSettingsBuilder {
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
-        self.restart_delay = input;
-        self
+        self.restart_delay = input; self
     }
     /// Consumes the builder and constructs a [`HlsBasicPutSettings`](crate::types::HlsBasicPutSettings).
     pub fn build(self) -> crate::types::HlsBasicPutSettings {
         crate::types::HlsBasicPutSettings {
-            connection_retry_interval: self.connection_retry_interval.unwrap_or_default(),
-            filecache_duration: self.filecache_duration.unwrap_or_default(),
-            num_retries: self.num_retries.unwrap_or_default(),
-            restart_delay: self.restart_delay.unwrap_or_default(),
+            connection_retry_interval: self.connection_retry_interval
+                .unwrap_or_default()
+            ,
+            filecache_duration: self.filecache_duration
+                .unwrap_or_default()
+            ,
+            num_retries: self.num_retries
+                .unwrap_or_default()
+            ,
+            restart_delay: self.restart_delay
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

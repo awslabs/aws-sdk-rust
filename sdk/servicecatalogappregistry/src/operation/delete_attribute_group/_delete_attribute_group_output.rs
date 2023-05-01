@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAttributeGroupOutput {
+pub struct DeleteAttributeGroupOutput  {
     /// <p>Information about the deleted attribute group.</p>
     #[doc(hidden)]
     pub attribute_group: std::option::Option<crate::types::AttributeGroupSummary>,
@@ -10,19 +10,18 @@ pub struct DeleteAttributeGroupOutput {
 }
 impl DeleteAttributeGroupOutput {
     /// <p>Information about the deleted attribute group.</p>
-    pub fn attribute_group(&self) -> std::option::Option<&crate::types::AttributeGroupSummary> {
+    pub fn attribute_group(&self) -> std::option::Option<& crate::types::AttributeGroupSummary> {
         self.attribute_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteAttributeGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAttributeGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAttributeGroupOutput`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder {
         crate::operation::delete_attribute_group::builders::DeleteAttributeGroupOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DeleteAttributeGroupOutputBuilder {
         self
     }
     /// <p>Information about the deleted attribute group.</p>
-    pub fn set_attribute_group(
-        mut self,
-        input: std::option::Option<crate::types::AttributeGroupSummary>,
-    ) -> Self {
-        self.attribute_group = input;
-        self
+    pub fn set_attribute_group(mut self, input: std::option::Option<crate::types::AttributeGroupSummary>) -> Self {
+        self.attribute_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAttributeGroupOutput`](crate::operation::delete_attribute_group::DeleteAttributeGroupOutput).
     pub fn build(self) -> crate::operation::delete_attribute_group::DeleteAttributeGroupOutput {
         crate::operation::delete_attribute_group::DeleteAttributeGroupOutput {
-            attribute_group: self.attribute_group,
+            attribute_group: self.attribute_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

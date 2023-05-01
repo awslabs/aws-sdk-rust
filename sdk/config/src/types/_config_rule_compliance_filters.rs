@@ -3,11 +3,11 @@
 /// <p>Filters the compliance results based on account ID, region, compliance type, and rule name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigRuleComplianceFilters {
+pub struct ConfigRuleComplianceFilters  {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>The rule compliance status.</p>
+    /// <p>The rule compliance status.</p> 
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
     #[doc(hidden)]
     pub compliance_type: std::option::Option<crate::types::ComplianceType>,
@@ -20,20 +20,20 @@ pub struct ConfigRuleComplianceFilters {
 }
 impl ConfigRuleComplianceFilters {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>The rule compliance status.</p>
+    /// <p>The rule compliance status.</p> 
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
-    pub fn compliance_type(&self) -> std::option::Option<&crate::types::ComplianceType> {
+    pub fn compliance_type(&self) -> std::option::Option<& crate::types::ComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>The 12-digit account ID of the source account. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The source region where the data is aggregated. </p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
@@ -61,23 +61,18 @@ impl ConfigRuleComplianceFiltersBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
-    /// <p>The rule compliance status.</p>
+    /// <p>The rule compliance status.</p> 
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
         self.compliance_type = Some(input);
         self
     }
-    /// <p>The rule compliance status.</p>
+    /// <p>The rule compliance status.</p> 
     /// <p>For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code> and the <code>INSUFFICIENT_DATA</code> values.</p>
-    pub fn set_compliance_type(
-        mut self,
-        input: std::option::Option<crate::types::ComplianceType>,
-    ) -> Self {
-        self.compliance_type = input;
-        self
+    pub fn set_compliance_type(mut self, input: std::option::Option<crate::types::ComplianceType>) -> Self {
+        self.compliance_type = input; self
     }
     /// <p>The 12-digit account ID of the source account. </p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +81,7 @@ impl ConfigRuleComplianceFiltersBuilder {
     }
     /// <p>The 12-digit account ID of the source account. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The source region where the data is aggregated. </p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,16 +90,20 @@ impl ConfigRuleComplianceFiltersBuilder {
     }
     /// <p>The source region where the data is aggregated. </p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// Consumes the builder and constructs a [`ConfigRuleComplianceFilters`](crate::types::ConfigRuleComplianceFilters).
     pub fn build(self) -> crate::types::ConfigRuleComplianceFilters {
         crate::types::ConfigRuleComplianceFilters {
-            config_rule_name: self.config_rule_name,
-            compliance_type: self.compliance_type,
-            account_id: self.account_id,
-            aws_region: self.aws_region,
+            config_rule_name: self.config_rule_name
+            ,
+            compliance_type: self.compliance_type
+            ,
+            account_id: self.account_id
+            ,
+            aws_region: self.aws_region
+            ,
         }
     }
 }
+

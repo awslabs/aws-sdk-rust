@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotScheduleOutput {
+pub struct DescribeSnapshotScheduleOutput  {
     /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct DescribeSnapshotScheduleOutput {
 }
 impl DescribeSnapshotScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
@@ -37,28 +37,26 @@ impl DescribeSnapshotScheduleOutput {
         self.recurrence_in_hours
     }
     /// <p>The snapshot description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> std::option::Option<& str> {
         self.timezone.as_deref()
     }
     /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSnapshotScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotScheduleOutput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleOutputBuilder {
         crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleOutputBuilder::default()
     }
 }
@@ -83,8 +81,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume that was specified in the request.</p>
     pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn start_at(mut self, input: i32) -> Self {
@@ -93,8 +90,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
     }
     /// <p>The hour of the day at which the snapshot schedule begins represented as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the time zone of the gateway.</p>
     pub fn set_start_at(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_at = input;
-        self
+        self.start_at = input; self
     }
     /// <p>The number of hours between snapshots.</p>
     pub fn recurrence_in_hours(mut self, input: i32) -> Self {
@@ -103,8 +99,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
     }
     /// <p>The number of hours between snapshots.</p>
     pub fn set_recurrence_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.recurrence_in_hours = input;
-        self
+        self.recurrence_in_hours = input; self
     }
     /// <p>The snapshot description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +108,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
     }
     /// <p>The snapshot description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +117,7 @@ impl DescribeSnapshotScheduleOutputBuilder {
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timezone = input;
-        self
+        self.timezone = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -133,39 +126,40 @@ impl DescribeSnapshotScheduleOutputBuilder {
     /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned, you can view all tags using the <code>ListTagsForResource</code> API operation.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSnapshotScheduleOutput`](crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput {
+    pub fn build(self) -> crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput {
         crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput {
-            volume_arn: self.volume_arn,
-            start_at: self.start_at,
-            recurrence_in_hours: self.recurrence_in_hours,
-            description: self.description,
-            timezone: self.timezone,
-            tags: self.tags,
+            volume_arn: self.volume_arn
+            ,
+            start_at: self.start_at
+            ,
+            recurrence_in_hours: self.recurrence_in_hours
+            ,
+            description: self.description
+            ,
+            timezone: self.timezone
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

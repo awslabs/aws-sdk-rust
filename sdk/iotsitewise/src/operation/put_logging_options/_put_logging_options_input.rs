@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLoggingOptionsInput {
+pub struct PutLoggingOptionsInput  {
     /// <p>The logging options to set.</p>
     #[doc(hidden)]
     pub logging_options: std::option::Option<crate::types::LoggingOptions>,
 }
 impl PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
-    pub fn logging_options(&self) -> std::option::Option<&crate::types::LoggingOptions> {
+    pub fn logging_options(&self) -> std::option::Option<& crate::types::LoggingOptions> {
         self.logging_options.as_ref()
     }
 }
 impl PutLoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder {
+    pub fn builder() -> crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder {
         crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl PutLoggingOptionsInputBuilder {
         self
     }
     /// <p>The logging options to set.</p>
-    pub fn set_logging_options(
-        mut self,
-        input: std::option::Option<crate::types::LoggingOptions>,
-    ) -> Self {
-        self.logging_options = input;
-        self
+    pub fn set_logging_options(mut self, input: std::option::Option<crate::types::LoggingOptions>) -> Self {
+        self.logging_options = input; self
     }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_logging_options::PutLoggingOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_logging_options::PutLoggingOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_logging_options::PutLoggingOptionsInput {
-                logging_options: self.logging_options,
-            },
+                logging_options: self.logging_options
+                ,
+            }
         )
     }
 }
+

@@ -156,3 +156,4 @@ pub mod update_vpc_endpoint;
 
 /// Types for the `UpgradeDomain` operation.
 pub mod upgrade_domain;
+

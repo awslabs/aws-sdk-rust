@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>DescribeDomainEndpointOptions</code></code> operation. Specify the name of the domain you want to describe. To show the active configuration and exclude any pending changes, set the Deployed option to <code>true</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainEndpointOptionsInput {
+pub struct DescribeDomainEndpointOptionsInput  {
     /// <p>A string that represents the name of a domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DescribeDomainEndpointOptionsInput {
 }
 impl DescribeDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
@@ -23,7 +23,7 @@ impl DescribeDomainEndpointOptionsInput {
 }
 impl DescribeDomainEndpointOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainEndpointOptionsInput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput).
-    pub fn builder() -> crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder {
         crate::operation::describe_domain_endpoint_options::builders::DescribeDomainEndpointOptionsInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl DescribeDomainEndpointOptionsInputBuilder {
     }
     /// <p>A string that represents the name of a domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
@@ -53,16 +52,10 @@ impl DescribeDomainEndpointOptionsInputBuilder {
     }
     /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
     pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
-        self.deployed = input;
-        self
+        self.deployed = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDomainEndpointOptionsInput`](crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsInput {
                 domain_name: self.domain_name
@@ -73,3 +66,4 @@ impl DescribeDomainEndpointOptionsInputBuilder {
         )
     }
 }
+

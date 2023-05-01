@@ -3,7 +3,7 @@
 /// <p>Information about the columns in a query execution result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnInfo {
+pub struct ColumnInfo  {
     /// <p>The catalog to which the query results belong.</p>
     #[doc(hidden)]
     pub catalog_name: std::option::Option<std::string::String>,
@@ -37,27 +37,27 @@ pub struct ColumnInfo {
 }
 impl ColumnInfo {
     /// <p>The catalog to which the query results belong.</p>
-    pub fn catalog_name(&self) -> std::option::Option<&str> {
+    pub fn catalog_name(&self) -> std::option::Option<& str> {
         self.catalog_name.as_deref()
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The table name for the query results.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A column label.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
@@ -69,7 +69,7 @@ impl ColumnInfo {
         self.scale
     }
     /// <p>Indicates the column's nullable status.</p>
-    pub fn nullable(&self) -> std::option::Option<&crate::types::ColumnNullable> {
+    pub fn nullable(&self) -> std::option::Option<& crate::types::ColumnNullable> {
         self.nullable.as_ref()
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
@@ -107,8 +107,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The catalog to which the query results belong.</p>
     pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_name = input;
-        self
+        self.catalog_name = input; self
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +116,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The table name for the query results.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +125,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The table name for the query results.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +134,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A column label.</p>
     pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +143,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>A column label.</p>
     pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label = input;
-        self
+        self.label = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +152,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn precision(mut self, input: i32) -> Self {
@@ -167,8 +161,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn set_precision(mut self, input: std::option::Option<i32>) -> Self {
-        self.precision = input;
-        self
+        self.precision = input; self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
     pub fn scale(mut self, input: i32) -> Self {
@@ -177,8 +170,7 @@ impl ColumnInfoBuilder {
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
     pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
-        self.scale = input;
-        self
+        self.scale = input; self
     }
     /// <p>Indicates the column's nullable status.</p>
     pub fn nullable(mut self, input: crate::types::ColumnNullable) -> Self {
@@ -186,12 +178,8 @@ impl ColumnInfoBuilder {
         self
     }
     /// <p>Indicates the column's nullable status.</p>
-    pub fn set_nullable(
-        mut self,
-        input: std::option::Option<crate::types::ColumnNullable>,
-    ) -> Self {
-        self.nullable = input;
-        self
+    pub fn set_nullable(mut self, input: std::option::Option<crate::types::ColumnNullable>) -> Self {
+        self.nullable = input; self
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
@@ -200,22 +188,35 @@ impl ColumnInfoBuilder {
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub fn set_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
-        self.case_sensitive = input;
-        self
+        self.case_sensitive = input; self
     }
     /// Consumes the builder and constructs a [`ColumnInfo`](crate::types::ColumnInfo).
     pub fn build(self) -> crate::types::ColumnInfo {
         crate::types::ColumnInfo {
-            catalog_name: self.catalog_name,
-            schema_name: self.schema_name,
-            table_name: self.table_name,
-            name: self.name,
-            label: self.label,
-            r#type: self.r#type,
-            precision: self.precision.unwrap_or_default(),
-            scale: self.scale.unwrap_or_default(),
-            nullable: self.nullable,
-            case_sensitive: self.case_sensitive.unwrap_or_default(),
+            catalog_name: self.catalog_name
+            ,
+            schema_name: self.schema_name
+            ,
+            table_name: self.table_name
+            ,
+            name: self.name
+            ,
+            label: self.label
+            ,
+            r#type: self.r#type
+            ,
+            precision: self.precision
+                .unwrap_or_default()
+            ,
+            scale: self.scale
+                .unwrap_or_default()
+            ,
+            nullable: self.nullable
+            ,
+            case_sensitive: self.case_sensitive
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

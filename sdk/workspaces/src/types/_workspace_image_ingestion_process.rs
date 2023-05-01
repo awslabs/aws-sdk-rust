@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let workspaceimageingestionprocess = unimplemented!();
 /// match workspaceimageingestionprocess {
@@ -35,22 +35,14 @@
 /// Specifically, when `workspaceimageingestionprocess` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorkspaceImageIngestionProcess::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorkspaceImageIngestionProcess {
     #[allow(missing_docs)] // documentation missing in model
     ByolGraphics,
@@ -67,60 +59,51 @@ pub enum WorkspaceImageIngestionProcess {
     #[allow(missing_docs)] // documentation missing in model
     ByolRegularWsp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorkspaceImageIngestionProcess {
-    fn from(s: &str) -> Self {
-        match s {
-            "BYOL_GRAPHICS" => WorkspaceImageIngestionProcess::ByolGraphics,
-            "BYOL_GRAPHICSPRO" => WorkspaceImageIngestionProcess::ByolGraphicspro,
-            "BYOL_GRAPHICS_G4DN" => WorkspaceImageIngestionProcess::ByolGraphicsG4Dn,
-            "BYOL_GRAPHICS_G4DN_BYOP" => WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop,
-            "BYOL_REGULAR" => WorkspaceImageIngestionProcess::ByolRegular,
-            "BYOL_REGULAR_BYOP" => WorkspaceImageIngestionProcess::ByolRegularByop,
-            "BYOL_REGULAR_WSP" => WorkspaceImageIngestionProcess::ByolRegularWsp,
-            other => WorkspaceImageIngestionProcess::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BYOL_GRAPHICS" => WorkspaceImageIngestionProcess::ByolGraphics,
+"BYOL_GRAPHICSPRO" => WorkspaceImageIngestionProcess::ByolGraphicspro,
+"BYOL_GRAPHICS_G4DN" => WorkspaceImageIngestionProcess::ByolGraphicsG4Dn,
+"BYOL_GRAPHICS_G4DN_BYOP" => WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop,
+"BYOL_REGULAR" => WorkspaceImageIngestionProcess::ByolRegular,
+"BYOL_REGULAR_BYOP" => WorkspaceImageIngestionProcess::ByolRegularByop,
+"BYOL_REGULAR_WSP" => WorkspaceImageIngestionProcess::ByolRegularWsp,
+other => WorkspaceImageIngestionProcess::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorkspaceImageIngestionProcess {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkspaceImageIngestionProcess::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorkspaceImageIngestionProcess::from(s))
+                }
+            }
 impl WorkspaceImageIngestionProcess {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorkspaceImageIngestionProcess::ByolGraphics => "BYOL_GRAPHICS",
-            WorkspaceImageIngestionProcess::ByolGraphicspro => "BYOL_GRAPHICSPRO",
-            WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => "BYOL_GRAPHICS_G4DN",
-            WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => "BYOL_GRAPHICS_G4DN_BYOP",
-            WorkspaceImageIngestionProcess::ByolRegular => "BYOL_REGULAR",
-            WorkspaceImageIngestionProcess::ByolRegularByop => "BYOL_REGULAR_BYOP",
-            WorkspaceImageIngestionProcess::ByolRegularWsp => "BYOL_REGULAR_WSP",
-            WorkspaceImageIngestionProcess::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BYOL_GRAPHICS",
-            "BYOL_GRAPHICSPRO",
-            "BYOL_GRAPHICS_G4DN",
-            "BYOL_GRAPHICS_G4DN_BYOP",
-            "BYOL_REGULAR",
-            "BYOL_REGULAR_BYOP",
-            "BYOL_REGULAR_WSP",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorkspaceImageIngestionProcess::ByolGraphics => "BYOL_GRAPHICS",
+    WorkspaceImageIngestionProcess::ByolGraphicspro => "BYOL_GRAPHICSPRO",
+    WorkspaceImageIngestionProcess::ByolGraphicsG4Dn => "BYOL_GRAPHICS_G4DN",
+    WorkspaceImageIngestionProcess::ByolGraphicsG4DnByop => "BYOL_GRAPHICS_G4DN_BYOP",
+    WorkspaceImageIngestionProcess::ByolRegular => "BYOL_REGULAR",
+    WorkspaceImageIngestionProcess::ByolRegularByop => "BYOL_REGULAR_BYOP",
+    WorkspaceImageIngestionProcess::ByolRegularWsp => "BYOL_REGULAR_WSP",
+    WorkspaceImageIngestionProcess::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BYOL_GRAPHICS", "BYOL_GRAPHICSPRO", "BYOL_GRAPHICS_G4DN", "BYOL_GRAPHICS_G4DN_BYOP", "BYOL_REGULAR", "BYOL_REGULAR_BYOP", "BYOL_REGULAR_WSP"]
+                }
+            }
 impl AsRef<str> for WorkspaceImageIngestionProcess {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

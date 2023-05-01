@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedGroupsOutput {
+pub struct ListAssociatedGroupsOutput  {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::types::GroupSummary>>,
@@ -13,23 +13,22 @@ pub struct ListAssociatedGroupsOutput {
 }
 impl ListAssociatedGroupsOutput {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::GroupSummary]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::types::GroupSummary]> {
         self.groups.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssociatedGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssociatedGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_associated_groups::builders::ListAssociatedGroupsOutputBuilder {
         crate::operation::list_associated_groups::builders::ListAssociatedGroupsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListAssociatedGroupsOutputBuilder {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
     pub fn groups(mut self, input: crate::types::GroupSummary) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = Some(v);
-        self
+                        v.push(input);
+                        self.groups = Some(v);
+                        self
     }
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    pub fn set_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupSummary>>,
-    ) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupSummary>>) -> Self {
+        self.groups = input; self
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListAssociatedGroupsOutputBuilder {
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssociatedGroupsOutput`](crate::operation::list_associated_groups::ListAssociatedGroupsOutput).
     pub fn build(self) -> crate::operation::list_associated_groups::ListAssociatedGroupsOutput {
         crate::operation::list_associated_groups::ListAssociatedGroupsOutput {
-            groups: self.groups,
-            next_token: self.next_token,
+            groups: self.groups
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

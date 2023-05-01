@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRulesetInput {
+pub struct DescribeRulesetInput  {
     /// <p>The name of the ruleset to be described.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeRulesetInput {
     /// <p>The name of the ruleset to be described.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DescribeRulesetInputBuilder {
     }
     /// <p>The name of the ruleset to be described.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeRulesetInput`](crate::operation::describe_ruleset::DescribeRulesetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_ruleset::DescribeRulesetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_ruleset::DescribeRulesetInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::describe_ruleset::DescribeRulesetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_ruleset::DescribeRulesetInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

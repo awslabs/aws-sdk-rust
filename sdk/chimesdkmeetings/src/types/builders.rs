@@ -26,3 +26,4 @@ pub use crate::types::_create_attendee_request_item::CreateAttendeeRequestItemBu
 pub use crate::types::_notifications_configuration::NotificationsConfigurationBuilder;
 
 pub use crate::types::_attendee_id_item::AttendeeIdItemBuilder;
+

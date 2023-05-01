@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateAdminAccountInput {}
+pub struct DisassociateAdminAccountInput  {
+}
 impl DisassociateAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`DisassociateAdminAccountInput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder {
         crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl DisassociateAdminAccountInput {
 /// A builder for [`DisassociateAdminAccountInput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DisassociateAdminAccountInputBuilder {}
+pub struct DisassociateAdminAccountInputBuilder {
+}
 impl DisassociateAdminAccountInputBuilder {
     /// Consumes the builder and constructs a [`DisassociateAdminAccountInput`](crate::operation::disassociate_admin_account::DisassociateAdminAccountInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_admin_account::DisassociateAdminAccountInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::disassociate_admin_account::DisassociateAdminAccountInput {})
+    pub fn build(self) -> Result<crate::operation::disassociate_admin_account::DisassociateAdminAccountInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::disassociate_admin_account::DisassociateAdminAccountInput {
+            }
+        )
     }
 }
+

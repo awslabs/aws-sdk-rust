@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplicationTaskOutput {
+pub struct StartReplicationTaskOutput  {
     /// <p>The replication task started.</p>
     #[doc(hidden)]
     pub replication_task: std::option::Option<crate::types::ReplicationTask>,
@@ -11,19 +11,18 @@ pub struct StartReplicationTaskOutput {
 }
 impl StartReplicationTaskOutput {
     /// <p>The replication task started.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::types::ReplicationTask> {
+    pub fn replication_task(&self) -> std::option::Option<& crate::types::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartReplicationTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartReplicationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationTaskOutput`](crate::operation::start_replication_task::StartReplicationTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::start_replication_task::builders::StartReplicationTaskOutputBuilder {
+    pub fn builder() -> crate::operation::start_replication_task::builders::StartReplicationTaskOutputBuilder {
         crate::operation::start_replication_task::builders::StartReplicationTaskOutputBuilder::default()
     }
 }
@@ -42,27 +41,25 @@ impl StartReplicationTaskOutputBuilder {
         self
     }
     /// <p>The replication task started.</p>
-    pub fn set_replication_task(
-        mut self,
-        input: std::option::Option<crate::types::ReplicationTask>,
-    ) -> Self {
-        self.replication_task = input;
-        self
+    pub fn set_replication_task(mut self, input: std::option::Option<crate::types::ReplicationTask>) -> Self {
+        self.replication_task = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartReplicationTaskOutput`](crate::operation::start_replication_task::StartReplicationTaskOutput).
     pub fn build(self) -> crate::operation::start_replication_task::StartReplicationTaskOutput {
         crate::operation::start_replication_task::StartReplicationTaskOutput {
-            replication_task: self.replication_task,
+            replication_task: self.replication_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

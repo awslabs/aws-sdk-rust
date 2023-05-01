@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaybackKeyPairsInput {
+pub struct ListPlaybackKeyPairsInput  {
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListPlaybackKeyPairsInput {
 }
 impl ListPlaybackKeyPairsInput {
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
@@ -22,8 +22,7 @@ impl ListPlaybackKeyPairsInput {
 }
 impl ListPlaybackKeyPairsInput {
     /// Creates a new builder-style object to manufacture [`ListPlaybackKeyPairsInput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput).
-    pub fn builder(
-    ) -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder {
+    pub fn builder() -> crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder {
         crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListPlaybackKeyPairsInputBuilder {
     }
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,19 @@ impl ListPlaybackKeyPairsInputBuilder {
     }
     /// <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListPlaybackKeyPairsInput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

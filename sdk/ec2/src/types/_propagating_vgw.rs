@@ -3,14 +3,14 @@
 /// <p>Describes a virtual private gateway propagating route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropagatingVgw {
+pub struct PropagatingVgw  {
     /// <p>The ID of the virtual private gateway.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
 }
 impl PropagatingVgw {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> std::option::Option<& str> {
         self.gateway_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl PropagatingVgwBuilder {
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input;
-        self
+        self.gateway_id = input; self
     }
     /// Consumes the builder and constructs a [`PropagatingVgw`](crate::types::PropagatingVgw).
     pub fn build(self) -> crate::types::PropagatingVgw {
         crate::types::PropagatingVgw {
-            gateway_id: self.gateway_id,
+            gateway_id: self.gateway_id
+            ,
         }
     }
 }
+

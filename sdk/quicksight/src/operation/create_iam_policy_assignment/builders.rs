@@ -4,71 +4,49 @@ pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assig
 pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assignment_input::CreateIamPolicyAssignmentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateIAMPolicyAssignment`.
-///
+/// 
 /// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIAMPolicyAssignmentFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_iam_policy_assignment::builders::CreateIamPolicyAssignmentInputBuilder
             }
-impl CreateIAMPolicyAssignmentFluentBuilder {
+impl CreateIAMPolicyAssignmentFluentBuilder  {
     /// Creates a new `CreateIAMPolicyAssignment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignmentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignmentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignment, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignmentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentOutput, aws_smithy_http::result::SdkError<crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignmentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -89,26 +67,23 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
         self.inner = self.inner.set_assignment_name(input);
         self
     }
-    /// <p>The status of the assignment. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    /// <p>The status of the assignment. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
     /// </ul>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
         self.inner = self.inner.assignment_status(input);
         self
     }
-    /// <p>The status of the assignment. Possible values are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li>
-    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li>
-    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li>
+    /// <p>The status of the assignment. Possible values are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ENABLED</code> - Anything specified in this assignment is used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DISABLED</code> - This assignment isn't used when creating the data source.</p> </li> 
+    /// <li> <p> <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating the data source.</p> </li> 
     /// </ul>
-    pub fn set_assignment_status(
-        mut self,
-        input: std::option::Option<crate::types::AssignmentStatus>,
-    ) -> Self {
+    pub fn set_assignment_status(mut self, input: std::option::Option<crate::types::AssignmentStatus>) -> Self {
         self.inner = self.inner.set_assignment_status(input);
         self
     }
@@ -127,21 +102,12 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn identities(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
-    ) -> Self {
+    pub fn identities(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
         self.inner = self.inner.identities(k.into(), v);
         self
     }
     /// <p>The Amazon QuickSight users, groups, or both that you want to assign the policy to.</p>
-    pub fn set_identities(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-    ) -> Self {
+    pub fn set_identities(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
         self.inner = self.inner.set_identities(input);
         self
     }
@@ -156,3 +122,4 @@ impl CreateIAMPolicyAssignmentFluentBuilder {
         self
     }
 }
+

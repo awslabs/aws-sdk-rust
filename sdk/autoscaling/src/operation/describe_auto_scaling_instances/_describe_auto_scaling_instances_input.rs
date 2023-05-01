@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutoScalingInstancesInput {
-    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
+pub struct DescribeAutoScalingInstancesInput  {
+    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p> 
     /// <p>Array Members: Maximum number of 50 items.</p>
     #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,9 +15,9 @@ pub struct DescribeAutoScalingInstancesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingInstancesInput {
-    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
+    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p> 
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
@@ -25,13 +25,13 @@ impl DescribeAutoScalingInstancesInput {
         self.max_records
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeAutoScalingInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingInstancesInput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder{
+    pub fn builder() -> crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder {
         crate::operation::describe_auto_scaling_instances::builders::DescribeAutoScalingInstancesInputBuilder::default()
     }
 }
@@ -49,22 +49,18 @@ impl DescribeAutoScalingInstancesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
     ///
-    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
+    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p> 
     /// <p>Array Members: Maximum number of 50 items.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = Some(v);
+                        self
     }
-    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p>
+    /// <p>The IDs of the instances. If you omit this property, all Auto Scaling instances are described. If you specify an ID that does not exist, it is ignored with no error.</p> 
     /// <p>Array Members: Maximum number of 50 items.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -73,8 +69,7 @@ impl DescribeAutoScalingInstancesInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>50</code>.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,22 +78,20 @@ impl DescribeAutoScalingInstancesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingInstancesInput`](crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_auto_scaling_instances::DescribeAutoScalingInstancesInput {
-                instance_ids: self.instance_ids,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            },
+                instance_ids: self.instance_ids
+                ,
+                max_records: self.max_records
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

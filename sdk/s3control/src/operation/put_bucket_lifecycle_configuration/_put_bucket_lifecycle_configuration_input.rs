@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketLifecycleConfigurationInput {
+pub struct PutBucketLifecycleConfigurationInput  {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct PutBucketLifecycleConfigurationInput {
 }
 impl PutBucketLifecycleConfigurationInput {
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    pub fn lifecycle_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::LifecycleConfiguration> {
+    pub fn lifecycle_configuration(&self) -> std::option::Option<& crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
 }
 impl PutBucketLifecycleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
-    pub fn builder() -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder {
         crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl PutBucketLifecycleConfigurationInputBuilder {
     }
     /// <p>The name of the bucket for which to set the configuration.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
     pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
@@ -71,20 +67,11 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         self
     }
     /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
-    pub fn set_lifecycle_configuration(
-        mut self,
-        input: std::option::Option<crate::types::LifecycleConfiguration>,
-    ) -> Self {
-        self.lifecycle_configuration = input;
-        self
+    pub fn set_lifecycle_configuration(mut self, input: std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
+        self.lifecycle_configuration = input; self
     }
     /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationInput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationInput {
                 account_id: self.account_id
@@ -97,3 +84,4 @@ impl PutBucketLifecycleConfigurationInputBuilder {
         )
     }
 }
+

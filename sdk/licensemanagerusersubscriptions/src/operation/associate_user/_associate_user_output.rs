@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateUserOutput {
+pub struct AssociateUserOutput  {
     /// <p>Metadata that describes the associate user operation.</p>
     #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::types::InstanceUserSummary>,
@@ -10,15 +10,15 @@ pub struct AssociateUserOutput {
 }
 impl AssociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn instance_user_summary(&self) -> std::option::Option<&crate::types::InstanceUserSummary> {
+    pub fn instance_user_summary(&self) -> std::option::Option<& crate::types::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateUserOutput {
     /// Creates a new builder-style object to manufacture [`AssociateUserOutput`](crate::operation::associate_user::AssociateUserOutput).
     pub fn builder() -> crate::operation::associate_user::builders::AssociateUserOutputBuilder {
@@ -40,27 +40,25 @@ impl AssociateUserOutputBuilder {
         self
     }
     /// <p>Metadata that describes the associate user operation.</p>
-    pub fn set_instance_user_summary(
-        mut self,
-        input: std::option::Option<crate::types::InstanceUserSummary>,
-    ) -> Self {
-        self.instance_user_summary = input;
-        self
+    pub fn set_instance_user_summary(mut self, input: std::option::Option<crate::types::InstanceUserSummary>) -> Self {
+        self.instance_user_summary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateUserOutput`](crate::operation::associate_user::AssociateUserOutput).
     pub fn build(self) -> crate::operation::associate_user::AssociateUserOutput {
         crate::operation::associate_user::AssociateUserOutput {
-            instance_user_summary: self.instance_user_summary,
+            instance_user_summary: self.instance_user_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

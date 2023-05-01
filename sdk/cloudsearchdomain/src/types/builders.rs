@@ -18,3 +18,4 @@ pub use crate::types::_hits::HitsBuilder;
 pub use crate::types::_hit::HitBuilder;
 
 pub use crate::types::_search_status::SearchStatusBuilder;
+

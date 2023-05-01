@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSenderIdsInput {
+pub struct DescribeSenderIdsInput  {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
     #[doc(hidden)]
     pub sender_ids: std::option::Option<std::vec::Vec<crate::types::SenderIdAndCountry>>,
@@ -18,15 +18,15 @@ pub struct DescribeSenderIdsInput {
 }
 impl DescribeSenderIdsInput {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn sender_ids(&self) -> std::option::Option<&[crate::types::SenderIdAndCountry]> {
+    pub fn sender_ids(&self) -> std::option::Option<& [crate::types::SenderIdAndCountry]> {
         self.sender_ids.as_deref()
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::SenderIdFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::SenderIdFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -36,8 +36,7 @@ impl DescribeSenderIdsInput {
 }
 impl DescribeSenderIdsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder {
+    pub fn builder() -> crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder {
         crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder::default()
     }
 }
@@ -59,17 +58,13 @@ impl DescribeSenderIdsInputBuilder {
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
     pub fn sender_ids(mut self, input: crate::types::SenderIdAndCountry) -> Self {
         let mut v = self.sender_ids.unwrap_or_default();
-        v.push(input);
-        self.sender_ids = Some(v);
-        self
+                        v.push(input);
+                        self.sender_ids = Some(v);
+                        self
     }
     /// <p>An array of SenderIdAndCountry objects to search for.</p>
-    pub fn set_sender_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SenderIdAndCountry>>,
-    ) -> Self {
-        self.sender_ids = input;
-        self
+    pub fn set_sender_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::SenderIdAndCountry>>) -> Self {
+        self.sender_ids = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -78,17 +73,13 @@ impl DescribeSenderIdsInputBuilder {
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
     pub fn filters(mut self, input: crate::types::SenderIdFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>An array of SenderIdFilter objects to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SenderIdFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SenderIdFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +88,7 @@ impl DescribeSenderIdsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -107,23 +97,22 @@ impl DescribeSenderIdsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSenderIdsInput`](crate::operation::describe_sender_ids::DescribeSenderIdsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_sender_ids::DescribeSenderIdsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_sender_ids::DescribeSenderIdsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_sender_ids::DescribeSenderIdsInput {
-                sender_ids: self.sender_ids,
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                sender_ids: self.sender_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

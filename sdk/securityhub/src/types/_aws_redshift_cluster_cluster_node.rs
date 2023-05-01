@@ -3,7 +3,7 @@
 /// <p>A node in an Amazon Redshift cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRedshiftClusterClusterNode {
+pub struct AwsRedshiftClusterClusterNode  {
     /// <p>The role of the node. A node might be a leader node or a compute node.</p>
     #[doc(hidden)]
     pub node_role: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AwsRedshiftClusterClusterNode {
 }
 impl AwsRedshiftClusterClusterNode {
     /// <p>The role of the node. A node might be a leader node or a compute node.</p>
-    pub fn node_role(&self) -> std::option::Option<&str> {
+    pub fn node_role(&self) -> std::option::Option<& str> {
         self.node_role.as_deref()
     }
     /// <p>The private IP address of the node.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The public IP address of the node.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AwsRedshiftClusterClusterNodeBuilder {
     }
     /// <p>The role of the node. A node might be a leader node or a compute node.</p>
     pub fn set_node_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_role = input;
-        self
+        self.node_role = input; self
     }
     /// <p>The private IP address of the node.</p>
     pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl AwsRedshiftClusterClusterNodeBuilder {
         self
     }
     /// <p>The private IP address of the node.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.private_ip_address = input;
-        self
+    pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.private_ip_address = input; self
     }
     /// <p>The public IP address of the node.</p>
     pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,19 +68,19 @@ impl AwsRedshiftClusterClusterNodeBuilder {
         self
     }
     /// <p>The public IP address of the node.</p>
-    pub fn set_public_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.public_ip_address = input;
-        self
+    pub fn set_public_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.public_ip_address = input; self
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterClusterNode`](crate::types::AwsRedshiftClusterClusterNode).
     pub fn build(self) -> crate::types::AwsRedshiftClusterClusterNode {
         crate::types::AwsRedshiftClusterClusterNode {
-            node_role: self.node_role,
-            private_ip_address: self.private_ip_address,
-            public_ip_address: self.public_ip_address,
+            node_role: self.node_role
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            public_ip_address: self.public_ip_address
+            ,
         }
     }
 }
+

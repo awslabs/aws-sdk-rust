@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateIamInstanceProfileInput {
+pub struct DisassociateIamInstanceProfileInput  {
     /// <p>The ID of the IAM instance profile association.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
 }
 impl DisassociateIamInstanceProfileInput {
     /// <p>The ID of the IAM instance profile association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
 }
 impl DisassociateIamInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIamInstanceProfileInput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput).
-    pub fn builder() -> crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder {
         crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl DisassociateIamInstanceProfileInputBuilder {
     }
     /// <p>The ID of the IAM instance profile association.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateIamInstanceProfileInput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileInput {
                 association_id: self.association_id
@@ -52,3 +46,4 @@ impl DisassociateIamInstanceProfileInputBuilder {
         )
     }
 }
+

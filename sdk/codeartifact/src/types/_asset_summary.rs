@@ -3,7 +3,7 @@
 /// <p> Contains details about a package version asset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetSummary {
+pub struct AssetSummary  {
     /// <p> The name of the asset. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,13 +12,11 @@ pub struct AssetSummary {
     pub size: std::option::Option<i64>,
     /// <p> The hashes of the asset. </p>
     #[doc(hidden)]
-    pub hashes: std::option::Option<
-        std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
-    >,
+    pub hashes: std::option::Option<std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>>,
 }
 impl AssetSummary {
     /// <p> The name of the asset. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The size of the asset. </p>
@@ -26,11 +24,7 @@ impl AssetSummary {
         self.size
     }
     /// <p> The hashes of the asset. </p>
-    pub fn hashes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
-    > {
+    pub fn hashes(&self) -> std::option::Option<& std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>> {
         self.hashes.as_ref()
     }
 }
@@ -47,9 +41,7 @@ impl AssetSummary {
 pub struct AssetSummaryBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) size: std::option::Option<i64>,
-    pub(crate) hashes: std::option::Option<
-        std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
-    >,
+    pub(crate) hashes: std::option::Option<std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>>,
 }
 impl AssetSummaryBuilder {
     /// <p> The name of the asset. </p>
@@ -59,8 +51,7 @@ impl AssetSummaryBuilder {
     }
     /// <p> The name of the asset. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The size of the asset. </p>
     pub fn size(mut self, input: i64) -> Self {
@@ -69,40 +60,33 @@ impl AssetSummaryBuilder {
     }
     /// <p> The size of the asset. </p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// Adds a key-value pair to `hashes`.
     ///
     /// To override the contents of this collection use [`set_hashes`](Self::set_hashes).
     ///
     /// <p> The hashes of the asset. </p>
-    pub fn hashes(
-        mut self,
-        k: crate::types::HashAlgorithm,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn hashes(mut self, k: crate::types::HashAlgorithm, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.hashes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.hashes = Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.hashes = Some(hash_map);
+                        self
     }
     /// <p> The hashes of the asset. </p>
-    pub fn set_hashes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>,
-        >,
-    ) -> Self {
-        self.hashes = input;
-        self
+    pub fn set_hashes(mut self, input: std::option::Option<std::collections::HashMap<crate::types::HashAlgorithm, std::string::String>>) -> Self {
+        self.hashes = input; self
     }
     /// Consumes the builder and constructs a [`AssetSummary`](crate::types::AssetSummary).
     pub fn build(self) -> crate::types::AssetSummary {
         crate::types::AssetSummary {
-            name: self.name,
-            size: self.size,
-            hashes: self.hashes,
+            name: self.name
+            ,
+            size: self.size
+            ,
+            hashes: self.hashes
+            ,
         }
     }
 }
+

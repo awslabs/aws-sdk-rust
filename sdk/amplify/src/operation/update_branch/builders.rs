@@ -4,67 +4,49 @@ pub use crate::operation::update_branch::_update_branch_output::UpdateBranchOutp
 pub use crate::operation::update_branch::_update_branch_input::UpdateBranchInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateBranch`.
-///
+/// 
 /// <p> Updates a branch for an Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBranchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_branch::builders::UpdateBranchInputBuilder,
-}
-impl UpdateBranchFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_branch::builders::UpdateBranchInputBuilder
+            }
+impl UpdateBranchFluentBuilder  {
     /// Creates a new `UpdateBranch`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_branch::UpdateBranch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_branch::UpdateBranchError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_branch::UpdateBranchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_branch::UpdateBranchError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_branch::UpdateBranch, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_branch::UpdateBranchError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_branch::UpdateBranchOutput, aws_smithy_http::result::SdkError<crate::operation::update_branch::UpdateBranchError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
@@ -140,21 +122,12 @@ impl UpdateBranchFluentBuilder {
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p> The environment variables for the branch. </p>
-    pub fn environment_variables(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_variables(k.into(), v.into());
         self
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn set_environment_variables(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_environment_variables(input);
         self
     }
@@ -164,10 +137,7 @@ impl UpdateBranchFluentBuilder {
         self
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_basic_auth_credentials(input);
         self
     }
@@ -181,13 +151,13 @@ impl UpdateBranchFluentBuilder {
         self.inner = self.inner.set_enable_basic_auth(input);
         self
     }
-    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Enables performance mode for the branch.</p> 
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_performance_mode(input);
         self
     }
-    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Enables performance mode for the branch.</p> 
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_performance_mode(input);
@@ -239,10 +209,7 @@ impl UpdateBranchFluentBuilder {
         self
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn set_pull_request_environment_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_pull_request_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_pull_request_environment_name(input);
         self
     }
@@ -252,11 +219,9 @@ impl UpdateBranchFluentBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn set_backend_environment_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_backend_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_backend_environment_arn(input);
         self
     }
 }
+

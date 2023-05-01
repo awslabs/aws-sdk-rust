@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLifecyclePolicyInput {
+pub struct UpdateLifecyclePolicyInput  {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
@@ -21,31 +21,29 @@ pub struct UpdateLifecyclePolicyInput {
 }
 impl UpdateLifecyclePolicyInput {
     /// <p>The identifier of the lifecycle policy.</p>
-    pub fn policy_id(&self) -> std::option::Option<&str> {
+    pub fn policy_id(&self) -> std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::SettablePolicyStateValues> {
+    pub fn state(&self) -> std::option::Option<& crate::types::SettablePolicyStateValues> {
         self.state.as_ref()
     }
     /// <p>A description of the lifecycle policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-    pub fn policy_details(&self) -> std::option::Option<&crate::types::PolicyDetails> {
+    pub fn policy_details(&self) -> std::option::Option<& crate::types::PolicyDetails> {
         self.policy_details.as_ref()
     }
 }
 impl UpdateLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder {
         crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_id = input;
-        self
+        self.policy_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +74,8 @@ impl UpdateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_arn = input; self
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
     pub fn state(mut self, input: crate::types::SettablePolicyStateValues) -> Self {
@@ -90,12 +83,8 @@ impl UpdateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The desired activation state of the lifecycle policy after creation.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::SettablePolicyStateValues>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::SettablePolicyStateValues>) -> Self {
+        self.state = input; self
     }
     /// <p>A description of the lifecycle policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +93,7 @@ impl UpdateLifecyclePolicyInputBuilder {
     }
     /// <p>A description of the lifecycle policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
     pub fn policy_details(mut self, input: crate::types::PolicyDetails) -> Self {
@@ -113,28 +101,25 @@ impl UpdateLifecyclePolicyInputBuilder {
         self
     }
     /// <p>The configuration of the lifecycle policy. You cannot update the policy type or the resource type.</p>
-    pub fn set_policy_details(
-        mut self,
-        input: std::option::Option<crate::types::PolicyDetails>,
-    ) -> Self {
-        self.policy_details = input;
-        self
+    pub fn set_policy_details(mut self, input: std::option::Option<crate::types::PolicyDetails>) -> Self {
+        self.policy_details = input; self
     }
     /// Consumes the builder and constructs a [`UpdateLifecyclePolicyInput`](crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_lifecycle_policy::UpdateLifecyclePolicyInput {
-                policy_id: self.policy_id,
-                execution_role_arn: self.execution_role_arn,
-                state: self.state,
-                description: self.description,
-                policy_details: self.policy_details,
-            },
+                policy_id: self.policy_id
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                state: self.state
+                ,
+                description: self.description
+                ,
+                policy_details: self.policy_details
+                ,
+            }
         )
     }
 }
+

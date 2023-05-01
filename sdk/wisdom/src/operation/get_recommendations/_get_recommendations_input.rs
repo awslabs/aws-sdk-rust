@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationsInput {
+pub struct GetRecommendationsInput  {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct GetRecommendationsInput {
 }
 impl GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -36,8 +36,7 @@ impl GetRecommendationsInput {
 }
 impl GetRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
-    pub fn builder(
-    ) -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
+    pub fn builder() -> crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder {
         crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -79,8 +76,7 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub fn wait_time_seconds(mut self, input: i32) -> Self {
@@ -89,23 +85,23 @@ impl GetRecommendationsInputBuilder {
     }
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
     pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.wait_time_seconds = input;
-        self
+        self.wait_time_seconds = input; self
     }
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_recommendations::GetRecommendationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_recommendations::GetRecommendationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_recommendations::GetRecommendationsInput {
-                assistant_id: self.assistant_id,
-                session_id: self.session_id,
-                max_results: self.max_results,
-                wait_time_seconds: self.wait_time_seconds.unwrap_or_default(),
-            },
+                assistant_id: self.assistant_id
+                ,
+                session_id: self.session_id
+                ,
+                max_results: self.max_results
+                ,
+                wait_time_seconds: self.wait_time_seconds
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compliancequeryoperatortype = unimplemented!();
 /// match compliancequeryoperatortype {
@@ -33,22 +33,14 @@
 /// Specifically, when `compliancequeryoperatortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComplianceQueryOperatorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComplianceQueryOperatorType {
     #[allow(missing_docs)] // documentation missing in model
     BeginWith,
@@ -61,54 +53,47 @@ pub enum ComplianceQueryOperatorType {
     #[allow(missing_docs)] // documentation missing in model
     NotEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComplianceQueryOperatorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BEGIN_WITH" => ComplianceQueryOperatorType::BeginWith,
-            "EQUAL" => ComplianceQueryOperatorType::Equal,
-            "GREATER_THAN" => ComplianceQueryOperatorType::GreaterThan,
-            "LESS_THAN" => ComplianceQueryOperatorType::LessThan,
-            "NOT_EQUAL" => ComplianceQueryOperatorType::NotEqual,
-            other => ComplianceQueryOperatorType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BEGIN_WITH" => ComplianceQueryOperatorType::BeginWith,
+"EQUAL" => ComplianceQueryOperatorType::Equal,
+"GREATER_THAN" => ComplianceQueryOperatorType::GreaterThan,
+"LESS_THAN" => ComplianceQueryOperatorType::LessThan,
+"NOT_EQUAL" => ComplianceQueryOperatorType::NotEqual,
+other => ComplianceQueryOperatorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ComplianceQueryOperatorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComplianceQueryOperatorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComplianceQueryOperatorType::from(s))
+                }
+            }
 impl ComplianceQueryOperatorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ComplianceQueryOperatorType::BeginWith => "BEGIN_WITH",
-            ComplianceQueryOperatorType::Equal => "EQUAL",
-            ComplianceQueryOperatorType::GreaterThan => "GREATER_THAN",
-            ComplianceQueryOperatorType::LessThan => "LESS_THAN",
-            ComplianceQueryOperatorType::NotEqual => "NOT_EQUAL",
-            ComplianceQueryOperatorType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BEGIN_WITH",
-            "EQUAL",
-            "GREATER_THAN",
-            "LESS_THAN",
-            "NOT_EQUAL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ComplianceQueryOperatorType::BeginWith => "BEGIN_WITH",
+    ComplianceQueryOperatorType::Equal => "EQUAL",
+    ComplianceQueryOperatorType::GreaterThan => "GREATER_THAN",
+    ComplianceQueryOperatorType::LessThan => "LESS_THAN",
+    ComplianceQueryOperatorType::NotEqual => "NOT_EQUAL",
+    ComplianceQueryOperatorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BEGIN_WITH", "EQUAL", "GREATER_THAN", "LESS_THAN", "NOT_EQUAL"]
+                }
+            }
 impl AsRef<str> for ComplianceQueryOperatorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

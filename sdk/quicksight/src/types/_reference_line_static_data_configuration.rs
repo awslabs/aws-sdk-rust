@@ -3,7 +3,7 @@
 /// <p>The static data configuration of the reference line data configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReferenceLineStaticDataConfiguration {
+pub struct ReferenceLineStaticDataConfiguration  {
     /// <p>The double input of the static data.</p>
     #[doc(hidden)]
     pub value: f64,
@@ -14,7 +14,7 @@ impl ReferenceLineStaticDataConfiguration {
         self.value
     }
 }
-impl std::fmt::Debug for ReferenceLineStaticDataConfiguration {
+impl  std::fmt::Debug for ReferenceLineStaticDataConfiguration  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReferenceLineStaticDataConfiguration");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,14 @@ impl ReferenceLineStaticDataConfigurationBuilder {
     }
     /// <p>The double input of the static data.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`ReferenceLineStaticDataConfiguration`](crate::types::ReferenceLineStaticDataConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineStaticDataConfiguration {
         crate::types::ReferenceLineStaticDataConfiguration {
-            value: self.value.unwrap_or_default(),
+            value: self.value
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -59,3 +60,4 @@ impl std::fmt::Debug for ReferenceLineStaticDataConfigurationBuilder {
         formatter.finish()
     }
 }
+

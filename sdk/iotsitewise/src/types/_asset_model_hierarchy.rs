@@ -3,7 +3,7 @@
 /// <p>Describes an asset hierarchy that contains a hierarchy's name, ID, and child asset model ID that specifies the type of asset that can be in this hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelHierarchy {
+pub struct AssetModelHierarchy  {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AssetModelHierarchy {
 }
 impl AssetModelHierarchy {
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
-    pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
+    pub fn child_asset_model_id(&self) -> std::option::Option<& str> {
         self.child_asset_model_id.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AssetModelHierarchyBuilder {
     }
     /// <p>The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl AssetModelHierarchyBuilder {
     }
     /// <p>The name of the asset model hierarchy that you specify by using the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
     pub fn child_asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,19 +68,19 @@ impl AssetModelHierarchyBuilder {
         self
     }
     /// <p>The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code> asset model.</p>
-    pub fn set_child_asset_model_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.child_asset_model_id = input;
-        self
+    pub fn set_child_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.child_asset_model_id = input; self
     }
     /// Consumes the builder and constructs a [`AssetModelHierarchy`](crate::types::AssetModelHierarchy).
     pub fn build(self) -> crate::types::AssetModelHierarchy {
         crate::types::AssetModelHierarchy {
-            id: self.id,
-            name: self.name,
-            child_asset_model_id: self.child_asset_model_id,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            child_asset_model_id: self.child_asset_model_id
+            ,
         }
     }
 }
+

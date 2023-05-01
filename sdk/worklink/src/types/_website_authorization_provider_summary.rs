@@ -3,7 +3,7 @@
 /// <p>The summary of the website authorization provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebsiteAuthorizationProviderSummary {
+pub struct WebsiteAuthorizationProviderSummary  {
     /// <p>A unique identifier for the authorization provider.</p>
     #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
@@ -19,21 +19,19 @@ pub struct WebsiteAuthorizationProviderSummary {
 }
 impl WebsiteAuthorizationProviderSummary {
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+    pub fn authorization_provider_id(&self) -> std::option::Option<& str> {
         self.authorization_provider_id.as_deref()
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(
-        &self,
-    ) -> std::option::Option<&crate::types::AuthorizationProviderType> {
+    pub fn authorization_provider_type(&self) -> std::option::Option<& crate::types::AuthorizationProviderType> {
         self.authorization_provider_type.as_ref()
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The time of creation.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -49,8 +47,7 @@ impl WebsiteAuthorizationProviderSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct WebsiteAuthorizationProviderSummaryBuilder {
     pub(crate) authorization_provider_id: std::option::Option<std::string::String>,
-    pub(crate) authorization_provider_type:
-        std::option::Option<crate::types::AuthorizationProviderType>,
+    pub(crate) authorization_provider_type: std::option::Option<crate::types::AuthorizationProviderType>,
     pub(crate) domain_name: std::option::Option<std::string::String>,
     pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -61,28 +58,17 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         self
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn set_authorization_provider_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorization_provider_id = input;
-        self
+    pub fn set_authorization_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorization_provider_id = input; self
     }
     /// <p>The authorization provider type.</p>
-    pub fn authorization_provider_type(
-        mut self,
-        input: crate::types::AuthorizationProviderType,
-    ) -> Self {
+    pub fn authorization_provider_type(mut self, input: crate::types::AuthorizationProviderType) -> Self {
         self.authorization_provider_type = Some(input);
         self
     }
     /// <p>The authorization provider type.</p>
-    pub fn set_authorization_provider_type(
-        mut self,
-        input: std::option::Option<crate::types::AuthorizationProviderType>,
-    ) -> Self {
-        self.authorization_provider_type = input;
-        self
+    pub fn set_authorization_provider_type(mut self, input: std::option::Option<crate::types::AuthorizationProviderType>) -> Self {
+        self.authorization_provider_type = input; self
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +77,7 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
     }
     /// <p>The domain name of the authorization provider. This applies only to SAML-based authorization providers.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The time of creation.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,20 +85,21 @@ impl WebsiteAuthorizationProviderSummaryBuilder {
         self
     }
     /// <p>The time of creation.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// Consumes the builder and constructs a [`WebsiteAuthorizationProviderSummary`](crate::types::WebsiteAuthorizationProviderSummary).
     pub fn build(self) -> crate::types::WebsiteAuthorizationProviderSummary {
         crate::types::WebsiteAuthorizationProviderSummary {
-            authorization_provider_id: self.authorization_provider_id,
-            authorization_provider_type: self.authorization_provider_type,
-            domain_name: self.domain_name,
-            created_time: self.created_time,
+            authorization_provider_id: self.authorization_provider_id
+            ,
+            authorization_provider_type: self.authorization_provider_type
+            ,
+            domain_name: self.domain_name
+            ,
+            created_time: self.created_time
+            ,
         }
     }
 }
+

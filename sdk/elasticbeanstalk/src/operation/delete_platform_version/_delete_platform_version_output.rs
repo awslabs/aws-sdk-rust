@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlatformVersionOutput {
+pub struct DeletePlatformVersionOutput  {
     /// <p>Detailed information about the version of the custom platform.</p>
     #[doc(hidden)]
     pub platform_summary: std::option::Option<crate::types::PlatformSummary>,
@@ -10,20 +10,18 @@ pub struct DeletePlatformVersionOutput {
 }
 impl DeletePlatformVersionOutput {
     /// <p>Detailed information about the version of the custom platform.</p>
-    pub fn platform_summary(&self) -> std::option::Option<&crate::types::PlatformSummary> {
+    pub fn platform_summary(&self) -> std::option::Option<& crate::types::PlatformSummary> {
         self.platform_summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeletePlatformVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeletePlatformVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder {
         crate::operation::delete_platform_version::builders::DeletePlatformVersionOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl DeletePlatformVersionOutputBuilder {
         self
     }
     /// <p>Detailed information about the version of the custom platform.</p>
-    pub fn set_platform_summary(
-        mut self,
-        input: std::option::Option<crate::types::PlatformSummary>,
-    ) -> Self {
-        self.platform_summary = input;
-        self
+    pub fn set_platform_summary(mut self, input: std::option::Option<crate::types::PlatformSummary>) -> Self {
+        self.platform_summary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeletePlatformVersionOutput`](crate::operation::delete_platform_version::DeletePlatformVersionOutput).
     pub fn build(self) -> crate::operation::delete_platform_version::DeletePlatformVersionOutput {
         crate::operation::delete_platform_version::DeletePlatformVersionOutput {
-            platform_summary: self.platform_summary,
+            platform_summary: self.platform_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

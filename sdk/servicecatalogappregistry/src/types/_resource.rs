@@ -3,7 +3,7 @@
 /// <p> The information about the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Resource {
 }
 impl Resource {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time the resource was associated with the application.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>The service integration information about the resource. </p>
-    pub fn integrations(&self) -> std::option::Option<&crate::types::ResourceIntegrations> {
+    pub fn integrations(&self) -> std::option::Option<& crate::types::ResourceIntegrations> {
         self.integrations.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ResourceBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ResourceBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The time the resource was associated with the application.</p>
     pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl ResourceBuilder {
         self
     }
     /// <p>The time the resource was associated with the application.</p>
-    pub fn set_association_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.association_time = input;
-        self
+    pub fn set_association_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.association_time = input; self
     }
     /// <p>The service integration information about the resource. </p>
     pub fn integrations(mut self, input: crate::types::ResourceIntegrations) -> Self {
@@ -91,20 +85,21 @@ impl ResourceBuilder {
         self
     }
     /// <p>The service integration information about the resource. </p>
-    pub fn set_integrations(
-        mut self,
-        input: std::option::Option<crate::types::ResourceIntegrations>,
-    ) -> Self {
-        self.integrations = input;
-        self
+    pub fn set_integrations(mut self, input: std::option::Option<crate::types::ResourceIntegrations>) -> Self {
+        self.integrations = input; self
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            name: self.name,
-            arn: self.arn,
-            association_time: self.association_time,
-            integrations: self.integrations,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            association_time: self.association_time
+            ,
+            integrations: self.integrations
+            ,
         }
     }
 }
+

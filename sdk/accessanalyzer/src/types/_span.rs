@@ -3,7 +3,7 @@
 /// <p>A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Span {
+pub struct Span  {
     /// <p>The start position of the span (inclusive).</p>
     #[doc(hidden)]
     pub start: std::option::Option<crate::types::Position>,
@@ -13,11 +13,11 @@ pub struct Span {
 }
 impl Span {
     /// <p>The start position of the span (inclusive).</p>
-    pub fn start(&self) -> std::option::Option<&crate::types::Position> {
+    pub fn start(&self) -> std::option::Option<& crate::types::Position> {
         self.start.as_ref()
     }
     /// <p>The end position of the span (exclusive).</p>
-    pub fn end(&self) -> std::option::Option<&crate::types::Position> {
+    pub fn end(&self) -> std::option::Option<& crate::types::Position> {
         self.end.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SpanBuilder {
     }
     /// <p>The start position of the span (inclusive).</p>
     pub fn set_start(mut self, input: std::option::Option<crate::types::Position>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The end position of the span (exclusive).</p>
     pub fn end(mut self, input: crate::types::Position) -> Self {
@@ -53,14 +52,16 @@ impl SpanBuilder {
     }
     /// <p>The end position of the span (exclusive).</p>
     pub fn set_end(mut self, input: std::option::Option<crate::types::Position>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// Consumes the builder and constructs a [`Span`](crate::types::Span).
     pub fn build(self) -> crate::types::Span {
         crate::types::Span {
-            start: self.start,
-            end: self.end,
+            start: self.start
+            ,
+            end: self.end
+            ,
         }
     }
 }
+

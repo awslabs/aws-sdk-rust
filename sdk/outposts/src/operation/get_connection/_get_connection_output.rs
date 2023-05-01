@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectionOutput {
+pub struct GetConnectionOutput  {
     /// <p> The ID of the connection. </p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct GetConnectionOutput {
 }
 impl GetConnectionOutput {
     /// <p> The ID of the connection. </p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p> Information about the connection. </p>
-    pub fn connection_details(&self) -> std::option::Option<&crate::types::ConnectionDetails> {
+    pub fn connection_details(&self) -> std::option::Option<& crate::types::ConnectionDetails> {
         self.connection_details.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetConnectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetConnectionOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
     pub fn builder() -> crate::operation::get_connection::builders::GetConnectionOutputBuilder {
@@ -49,8 +49,7 @@ impl GetConnectionOutputBuilder {
     }
     /// <p> The ID of the connection. </p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// <p> Information about the connection. </p>
     pub fn connection_details(mut self, input: crate::types::ConnectionDetails) -> Self {
@@ -58,28 +57,27 @@ impl GetConnectionOutputBuilder {
         self
     }
     /// <p> Information about the connection. </p>
-    pub fn set_connection_details(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionDetails>,
-    ) -> Self {
-        self.connection_details = input;
-        self
+    pub fn set_connection_details(mut self, input: std::option::Option<crate::types::ConnectionDetails>) -> Self {
+        self.connection_details = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::operation::get_connection::GetConnectionOutput).
     pub fn build(self) -> crate::operation::get_connection::GetConnectionOutput {
         crate::operation::get_connection::GetConnectionOutput {
-            connection_id: self.connection_id,
-            connection_details: self.connection_details,
+            connection_id: self.connection_id
+            ,
+            connection_details: self.connection_details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

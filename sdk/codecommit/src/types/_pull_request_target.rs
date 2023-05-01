@@ -3,7 +3,7 @@
 /// <p>Returns information about a pull request target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PullRequestTarget {
+pub struct PullRequestTarget  {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct PullRequestTarget {
 }
 impl PullRequestTarget {
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
-    pub fn source_reference(&self) -> std::option::Option<&str> {
+    pub fn source_reference(&self) -> std::option::Option<& str> {
         self.source_reference.as_deref()
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-    pub fn destination_reference(&self) -> std::option::Option<&str> {
+    pub fn destination_reference(&self) -> std::option::Option<& str> {
         self.destination_reference.as_deref()
     }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-    pub fn destination_commit(&self) -> std::option::Option<&str> {
+    pub fn destination_commit(&self) -> std::option::Option<& str> {
         self.destination_commit.as_deref()
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
-    pub fn source_commit(&self) -> std::option::Option<&str> {
+    pub fn source_commit(&self) -> std::option::Option<& str> {
         self.source_commit.as_deref()
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
-    pub fn merge_base(&self) -> std::option::Option<&str> {
+    pub fn merge_base(&self) -> std::option::Option<& str> {
         self.merge_base.as_deref()
     }
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
-    pub fn merge_metadata(&self) -> std::option::Option<&crate::types::MergeMetadata> {
+    pub fn merge_metadata(&self) -> std::option::Option<& crate::types::MergeMetadata> {
         self.merge_metadata.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl PullRequestTargetBuilder {
     }
     /// <p>The name of the repository that contains the pull request source and destination branches.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub fn source_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl PullRequestTargetBuilder {
     }
     /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
     pub fn set_source_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_reference = input;
-        self
+        self.source_reference = input; self
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
     pub fn destination_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,12 +100,8 @@ impl PullRequestTargetBuilder {
         self
     }
     /// <p>The branch of the repository where the pull request changes are merged. Also known as the destination branch. </p>
-    pub fn set_destination_reference(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_reference = input;
-        self
+    pub fn set_destination_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_reference = input; self
     }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
     pub fn destination_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,12 +109,8 @@ impl PullRequestTargetBuilder {
         self
     }
     /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
-    pub fn set_destination_commit(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_commit = input;
-        self
+    pub fn set_destination_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_commit = input; self
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
     pub fn source_commit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +119,7 @@ impl PullRequestTargetBuilder {
     }
     /// <p>The full commit ID of the tip of the source branch used to create the pull request. If the pull request branch is updated by a push while the pull request is open, the commit ID changes to reflect the new tip of the branch.</p>
     pub fn set_source_commit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_commit = input;
-        self
+        self.source_commit = input; self
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn merge_base(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +128,7 @@ impl PullRequestTargetBuilder {
     }
     /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
     pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.merge_base = input;
-        self
+        self.merge_base = input; self
     }
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
     pub fn merge_metadata(mut self, input: crate::types::MergeMetadata) -> Self {
@@ -148,23 +136,27 @@ impl PullRequestTargetBuilder {
         self
     }
     /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
-    pub fn set_merge_metadata(
-        mut self,
-        input: std::option::Option<crate::types::MergeMetadata>,
-    ) -> Self {
-        self.merge_metadata = input;
-        self
+    pub fn set_merge_metadata(mut self, input: std::option::Option<crate::types::MergeMetadata>) -> Self {
+        self.merge_metadata = input; self
     }
     /// Consumes the builder and constructs a [`PullRequestTarget`](crate::types::PullRequestTarget).
     pub fn build(self) -> crate::types::PullRequestTarget {
         crate::types::PullRequestTarget {
-            repository_name: self.repository_name,
-            source_reference: self.source_reference,
-            destination_reference: self.destination_reference,
-            destination_commit: self.destination_commit,
-            source_commit: self.source_commit,
-            merge_base: self.merge_base,
-            merge_metadata: self.merge_metadata,
+            repository_name: self.repository_name
+            ,
+            source_reference: self.source_reference
+            ,
+            destination_reference: self.destination_reference
+            ,
+            destination_commit: self.destination_commit
+            ,
+            source_commit: self.source_commit
+            ,
+            merge_base: self.merge_base
+            ,
+            merge_metadata: self.merge_metadata
+            ,
         }
     }
 }
+

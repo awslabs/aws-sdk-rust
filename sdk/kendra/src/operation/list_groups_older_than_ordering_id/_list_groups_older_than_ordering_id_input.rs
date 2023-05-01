@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsOlderThanOrderingIdInput {
+pub struct ListGroupsOlderThanOrderingIdInput  {
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListGroupsOlderThanOrderingIdInput {
 }
 impl ListGroupsOlderThanOrderingIdInput {
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
@@ -33,7 +33,7 @@ impl ListGroupsOlderThanOrderingIdInput {
         self.ordering_id
     }
     /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
@@ -43,7 +43,7 @@ impl ListGroupsOlderThanOrderingIdInput {
 }
 impl ListGroupsOlderThanOrderingIdInput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOlderThanOrderingIdInput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput).
-    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder{
+    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder {
         crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
     }
     /// <p>The identifier of the index for getting a list of groups mapped to users before a given ordering or timestamp identifier.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
     pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
     }
     /// <p>The identifier of the data source for getting a list of groups mapped to users before a given ordering timestamp identifier.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn ordering_id(mut self, input: i64) -> Self {
@@ -86,8 +84,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.</p>
     pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.ordering_id = input;
-        self
+        self.ordering_id = input; self
     }
     /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +93,7 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
     }
     /// <p> If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -106,16 +102,10 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
     }
     /// <p> The maximum number of returned groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListGroupsOlderThanOrderingIdInput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdInput {
                 index_id: self.index_id
@@ -132,3 +122,4 @@ impl ListGroupsOlderThanOrderingIdInputBuilder {
         )
     }
 }
+

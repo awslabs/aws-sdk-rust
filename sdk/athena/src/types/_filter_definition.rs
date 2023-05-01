@@ -3,14 +3,14 @@
 /// <p>A string for searching notebook names.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterDefinition {
+pub struct FilterDefinition  {
     /// <p>The name of the notebook to search for.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl FilterDefinition {
     /// <p>The name of the notebook to search for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl FilterDefinitionBuilder {
     }
     /// <p>The name of the notebook to search for.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`FilterDefinition`](crate::types::FilterDefinition).
     pub fn build(self) -> crate::types::FilterDefinition {
-        crate::types::FilterDefinition { name: self.name }
+        crate::types::FilterDefinition {
+            name: self.name
+            ,
+        }
     }
 }
+

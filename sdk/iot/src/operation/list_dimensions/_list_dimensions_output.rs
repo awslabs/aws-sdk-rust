@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDimensionsOutput {
+pub struct ListDimensionsOutput  {
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
     #[doc(hidden)]
     pub dimension_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,19 +13,19 @@ pub struct ListDimensionsOutput {
 }
 impl ListDimensionsOutput {
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
-    pub fn dimension_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dimension_names(&self) -> std::option::Option<& [std::string::String]> {
         self.dimension_names.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDimensionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDimensionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDimensionsOutput`](crate::operation::list_dimensions::ListDimensionsOutput).
     pub fn builder() -> crate::operation::list_dimensions::builders::ListDimensionsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListDimensionsOutputBuilder {
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
     pub fn dimension_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dimension_names.unwrap_or_default();
-        v.push(input.into());
-        self.dimension_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.dimension_names = Some(v);
+                        self
     }
     /// <p>A list of the names of the defined dimensions. Use <code>DescribeDimension</code> to get details for a dimension.</p>
-    pub fn set_dimension_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.dimension_names = input;
-        self
+    pub fn set_dimension_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.dimension_names = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListDimensionsOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDimensionsOutput`](crate::operation::list_dimensions::ListDimensionsOutput).
     pub fn build(self) -> crate::operation::list_dimensions::ListDimensionsOutput {
         crate::operation::list_dimensions::ListDimensionsOutput {
-            dimension_names: self.dimension_names,
-            next_token: self.next_token,
+            dimension_names: self.dimension_names
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

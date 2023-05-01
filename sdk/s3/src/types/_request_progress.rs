@@ -3,7 +3,7 @@
 /// <p>Container for specifying if periodic <code>QueryProgress</code> messages should be sent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestProgress {
+pub struct RequestProgress  {
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -35,13 +35,15 @@ impl RequestProgressBuilder {
     }
     /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE, FALSE. Default value: FALSE.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`RequestProgress`](crate::types::RequestProgress).
     pub fn build(self) -> crate::types::RequestProgress {
         crate::types::RequestProgress {
-            enabled: self.enabled.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Describes the location where the restore job's output is stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputLocation {
+pub struct OutputLocation  {
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
     #[doc(hidden)]
     pub s3: std::option::Option<crate::types::S3Location>,
 }
 impl OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3(&self) -> std::option::Option<& crate::types::S3Location> {
         self.s3.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl OutputLocationBuilder {
     }
     /// <p>Describes an S3 location that will receive the results of the restore request.</p>
     pub fn set_s3(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// Consumes the builder and constructs a [`OutputLocation`](crate::types::OutputLocation).
     pub fn build(self) -> crate::types::OutputLocation {
-        crate::types::OutputLocation { s3: self.s3 }
+        crate::types::OutputLocation {
+            s3: self.s3
+            ,
+        }
     }
 }
+

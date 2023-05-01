@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobOutput {
+pub struct DescribeJobOutput  {
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
     #[doc(hidden)]
     pub job_metadata: std::option::Option<crate::types::JobMetadata>,
@@ -13,19 +13,19 @@ pub struct DescribeJobOutput {
 }
 impl DescribeJobOutput {
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
-    pub fn job_metadata(&self) -> std::option::Option<&crate::types::JobMetadata> {
+    pub fn job_metadata(&self) -> std::option::Option<& crate::types::JobMetadata> {
         self.job_metadata.as_ref()
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn sub_job_metadata(&self) -> std::option::Option<&[crate::types::JobMetadata]> {
+    pub fn sub_job_metadata(&self) -> std::option::Option<& [crate::types::JobMetadata]> {
         self.sub_job_metadata.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     pub fn builder() -> crate::operation::describe_job::builders::DescribeJobOutputBuilder {
@@ -48,12 +48,8 @@ impl DescribeJobOutputBuilder {
         self
     }
     /// <p>Information about a specific job, including shipping information, job status, and other important metadata.</p>
-    pub fn set_job_metadata(
-        mut self,
-        input: std::option::Option<crate::types::JobMetadata>,
-    ) -> Self {
-        self.job_metadata = input;
-        self
+    pub fn set_job_metadata(mut self, input: std::option::Option<crate::types::JobMetadata>) -> Self {
+        self.job_metadata = input; self
     }
     /// Appends an item to `sub_job_metadata`.
     ///
@@ -62,33 +58,32 @@ impl DescribeJobOutputBuilder {
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
     pub fn sub_job_metadata(mut self, input: crate::types::JobMetadata) -> Self {
         let mut v = self.sub_job_metadata.unwrap_or_default();
-        v.push(input);
-        self.sub_job_metadata = Some(v);
-        self
+                        v.push(input);
+                        self.sub_job_metadata = Some(v);
+                        self
     }
     /// <p>Information about a specific job part (in the case of an export job), including shipping information, job status, and other important metadata.</p>
-    pub fn set_sub_job_metadata(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobMetadata>>,
-    ) -> Self {
-        self.sub_job_metadata = input;
-        self
+    pub fn set_sub_job_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobMetadata>>) -> Self {
+        self.sub_job_metadata = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     pub fn build(self) -> crate::operation::describe_job::DescribeJobOutput {
         crate::operation::describe_job::DescribeJobOutput {
-            job_metadata: self.job_metadata,
-            sub_job_metadata: self.sub_job_metadata,
+            job_metadata: self.job_metadata
+            ,
+            sub_job_metadata: self.sub_job_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

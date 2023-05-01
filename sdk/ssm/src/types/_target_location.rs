@@ -3,7 +3,7 @@
 /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetLocation {
+pub struct TargetLocation  {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25,29 +25,27 @@ pub struct TargetLocation {
 }
 impl TargetLocation {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
-    pub fn accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.accounts.as_deref()
     }
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
     /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
-    pub fn target_location_max_concurrency(&self) -> std::option::Option<&str> {
+    pub fn target_location_max_concurrency(&self) -> std::option::Option<& str> {
         self.target_location_max_concurrency.as_deref()
     }
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
-    pub fn target_location_max_errors(&self) -> std::option::Option<&str> {
+    pub fn target_location_max_errors(&self) -> std::option::Option<& str> {
         self.target_location_max_errors.as_deref()
     }
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
-    pub fn execution_role_name(&self) -> std::option::Option<&str> {
+    pub fn execution_role_name(&self) -> std::option::Option<& str> {
         self.execution_role_name.as_deref()
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn target_location_alarm_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::AlarmConfiguration> {
+    pub fn target_location_alarm_configuration(&self) -> std::option::Option<& crate::types::AlarmConfiguration> {
         self.target_location_alarm_configuration.as_ref()
     }
 }
@@ -67,8 +65,7 @@ pub struct TargetLocationBuilder {
     pub(crate) target_location_max_concurrency: std::option::Option<std::string::String>,
     pub(crate) target_location_max_errors: std::option::Option<std::string::String>,
     pub(crate) execution_role_name: std::option::Option<std::string::String>,
-    pub(crate) target_location_alarm_configuration:
-        std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) target_location_alarm_configuration: std::option::Option<crate::types::AlarmConfiguration>,
 }
 impl TargetLocationBuilder {
     /// Appends an item to `accounts`.
@@ -78,17 +75,13 @@ impl TargetLocationBuilder {
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
     pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input.into());
-        self.accounts = Some(v);
-        self
+                        v.push(input.into());
+                        self.accounts = Some(v);
+                        self
     }
     /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
-    pub fn set_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.accounts = input; self
     }
     /// Appends an item to `regions`.
     ///
@@ -97,33 +90,22 @@ impl TargetLocationBuilder {
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
     pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = Some(v);
+                        self
     }
     /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
-    pub fn set_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.regions = input; self
     }
     /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
-    pub fn target_location_max_concurrency(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn target_location_max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_location_max_concurrency = Some(input.into());
         self
     }
     /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation concurrently.</p>
-    pub fn set_target_location_max_concurrency(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_location_max_concurrency = input;
-        self
+    pub fn set_target_location_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_location_max_concurrency = input; self
     }
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
     pub fn target_location_max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,12 +113,8 @@ impl TargetLocationBuilder {
         self
     }
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>
-    pub fn set_target_location_max_errors(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_location_max_errors = input;
-        self
+    pub fn set_target_location_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_location_max_errors = input; self
     }
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
     pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,38 +122,34 @@ impl TargetLocationBuilder {
         self
     }
     /// <p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>
-    pub fn set_execution_role_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_name = input;
-        self
+    pub fn set_execution_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_name = input; self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn target_location_alarm_configuration(
-        mut self,
-        input: crate::types::AlarmConfiguration,
-    ) -> Self {
+    pub fn target_location_alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
         self.target_location_alarm_configuration = Some(input);
         self
     }
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
-    pub fn set_target_location_alarm_configuration(
-        mut self,
-        input: std::option::Option<crate::types::AlarmConfiguration>,
-    ) -> Self {
-        self.target_location_alarm_configuration = input;
-        self
+    pub fn set_target_location_alarm_configuration(mut self, input: std::option::Option<crate::types::AlarmConfiguration>) -> Self {
+        self.target_location_alarm_configuration = input; self
     }
     /// Consumes the builder and constructs a [`TargetLocation`](crate::types::TargetLocation).
     pub fn build(self) -> crate::types::TargetLocation {
         crate::types::TargetLocation {
-            accounts: self.accounts,
-            regions: self.regions,
-            target_location_max_concurrency: self.target_location_max_concurrency,
-            target_location_max_errors: self.target_location_max_errors,
-            execution_role_name: self.execution_role_name,
-            target_location_alarm_configuration: self.target_location_alarm_configuration,
+            accounts: self.accounts
+            ,
+            regions: self.regions
+            ,
+            target_location_max_concurrency: self.target_location_max_concurrency
+            ,
+            target_location_max_errors: self.target_location_max_errors
+            ,
+            execution_role_name: self.execution_role_name
+            ,
+            target_location_alarm_configuration: self.target_location_alarm_configuration
+            ,
         }
     }
 }
+

@@ -3,32 +3,32 @@
 /// Configuration options for configure Cognito streams.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CognitoStreams {
+pub struct CognitoStreams  {
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// Status of the Cognito streams. Valid values are:
-    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// Status of the Cognito streams. Valid values are: 
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
     #[doc(hidden)]
     pub streaming_status: std::option::Option<crate::types::StreamingStatus>,
 }
 impl CognitoStreams {
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// Status of the Cognito streams. Valid values are:
-    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// Status of the Cognito streams. Valid values are: 
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
-    pub fn streaming_status(&self) -> std::option::Option<&crate::types::StreamingStatus> {
+    pub fn streaming_status(&self) -> std::option::Option<& crate::types::StreamingStatus> {
         self.streaming_status.as_ref()
     }
 }
@@ -55,8 +55,7 @@ impl CognitoStreamsBuilder {
     }
     /// The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,32 +64,31 @@ impl CognitoStreamsBuilder {
     }
     /// The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
-    /// Status of the Cognito streams. Valid values are:
-    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// Status of the Cognito streams. Valid values are: 
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
     pub fn streaming_status(mut self, input: crate::types::StreamingStatus) -> Self {
         self.streaming_status = Some(input);
         self
     }
-    /// Status of the Cognito streams. Valid values are:
-    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p>
+    /// Status of the Cognito streams. Valid values are: 
+    /// <p>ENABLED - Streaming of updates to identity pool is enabled.</p> 
     /// <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>
-    pub fn set_streaming_status(
-        mut self,
-        input: std::option::Option<crate::types::StreamingStatus>,
-    ) -> Self {
-        self.streaming_status = input;
-        self
+    pub fn set_streaming_status(mut self, input: std::option::Option<crate::types::StreamingStatus>) -> Self {
+        self.streaming_status = input; self
     }
     /// Consumes the builder and constructs a [`CognitoStreams`](crate::types::CognitoStreams).
     pub fn build(self) -> crate::types::CognitoStreams {
         crate::types::CognitoStreams {
-            stream_name: self.stream_name,
-            role_arn: self.role_arn,
-            streaming_status: self.streaming_status,
+            stream_name: self.stream_name
+            ,
+            role_arn: self.role_arn
+            ,
+            streaming_status: self.streaming_status
+            ,
         }
     }
 }
+

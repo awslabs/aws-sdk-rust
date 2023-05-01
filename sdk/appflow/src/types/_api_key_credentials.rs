@@ -3,7 +3,7 @@
 /// <p>The API key credentials required for API key authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ApiKeyCredentials {
+pub struct ApiKeyCredentials  {
     /// <p>The API key required for API key authentication.</p>
     #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ApiKeyCredentials {
 }
 impl ApiKeyCredentials {
     /// <p>The API key required for API key authentication.</p>
-    pub fn api_key(&self) -> std::option::Option<&str> {
+    pub fn api_key(&self) -> std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p>The API secret key required for API key authentication.</p>
-    pub fn api_secret_key(&self) -> std::option::Option<&str> {
+    pub fn api_secret_key(&self) -> std::option::Option<& str> {
         self.api_secret_key.as_deref()
     }
 }
-impl std::fmt::Debug for ApiKeyCredentials {
+impl  std::fmt::Debug for ApiKeyCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ApiKeyCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl ApiKeyCredentialsBuilder {
     }
     /// <p>The API key required for API key authentication.</p>
     pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p>The API secret key required for API key authentication.</p>
     pub fn api_secret_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl ApiKeyCredentialsBuilder {
     }
     /// <p>The API secret key required for API key authentication.</p>
     pub fn set_api_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_secret_key = input;
-        self
+        self.api_secret_key = input; self
     }
     /// Consumes the builder and constructs a [`ApiKeyCredentials`](crate::types::ApiKeyCredentials).
     pub fn build(self) -> crate::types::ApiKeyCredentials {
         crate::types::ApiKeyCredentials {
-            api_key: self.api_key,
-            api_secret_key: self.api_secret_key,
+            api_key: self.api_key
+            ,
+            api_secret_key: self.api_secret_key
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for ApiKeyCredentialsBuilder {
         formatter.finish()
     }
 }
+

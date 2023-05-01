@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlacementOutput {
+pub struct DescribePlacementOutput  {
     /// <p>An object describing the placement.</p>
     #[doc(hidden)]
     pub placement: std::option::Option<crate::types::PlacementDescription>,
@@ -10,19 +10,18 @@ pub struct DescribePlacementOutput {
 }
 impl DescribePlacementOutput {
     /// <p>An object describing the placement.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::types::PlacementDescription> {
+    pub fn placement(&self) -> std::option::Option<& crate::types::PlacementDescription> {
         self.placement.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePlacementOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribePlacementOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_placement::builders::DescribePlacementOutputBuilder {
+    pub fn builder() -> crate::operation::describe_placement::builders::DescribePlacementOutputBuilder {
         crate::operation::describe_placement::builders::DescribePlacementOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DescribePlacementOutputBuilder {
         self
     }
     /// <p>An object describing the placement.</p>
-    pub fn set_placement(
-        mut self,
-        input: std::option::Option<crate::types::PlacementDescription>,
-    ) -> Self {
-        self.placement = input;
-        self
+    pub fn set_placement(mut self, input: std::option::Option<crate::types::PlacementDescription>) -> Self {
+        self.placement = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribePlacementOutput`](crate::operation::describe_placement::DescribePlacementOutput).
     pub fn build(self) -> crate::operation::describe_placement::DescribePlacementOutput {
         crate::operation::describe_placement::DescribePlacementOutput {
-            placement: self.placement,
+            placement: self.placement
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

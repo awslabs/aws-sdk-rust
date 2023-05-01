@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProgramInput {
+pub struct DescribeProgramInput  {
     /// <p>The name of the channel associated with this Program.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeProgramInput {
 }
 impl DescribeProgramInput {
     /// <p>The name of the channel associated with this Program.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> std::option::Option<& str> {
         self.program_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeProgramInputBuilder {
     }
     /// <p>The name of the channel associated with this Program.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The name of the program.</p>
     pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeProgramInputBuilder {
     }
     /// <p>The name of the program.</p>
     pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProgramInput`](crate::operation::describe_program::DescribeProgramInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_program::DescribeProgramInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_program::DescribeProgramInput {
-            channel_name: self.channel_name,
-            program_name: self.program_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_program::DescribeProgramInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_program::DescribeProgramInput {
+                channel_name: self.channel_name
+                ,
+                program_name: self.program_name
+                ,
+            }
+        )
     }
 }
+

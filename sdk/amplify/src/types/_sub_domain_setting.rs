@@ -3,7 +3,7 @@
 /// <p> Describes the settings for the subdomain. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubDomainSetting {
+pub struct SubDomainSetting  {
     /// <p> The prefix setting for the subdomain. </p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SubDomainSetting {
 }
 impl SubDomainSetting {
     /// <p> The prefix setting for the subdomain. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p> The branch name setting for the subdomain. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SubDomainSettingBuilder {
     }
     /// <p> The prefix setting for the subdomain. </p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p> The branch name setting for the subdomain. </p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SubDomainSettingBuilder {
     }
     /// <p> The branch name setting for the subdomain. </p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// Consumes the builder and constructs a [`SubDomainSetting`](crate::types::SubDomainSetting).
     pub fn build(self) -> crate::types::SubDomainSetting {
         crate::types::SubDomainSetting {
-            prefix: self.prefix,
-            branch_name: self.branch_name,
+            prefix: self.prefix
+            ,
+            branch_name: self.branch_name
+            ,
         }
     }
 }
+

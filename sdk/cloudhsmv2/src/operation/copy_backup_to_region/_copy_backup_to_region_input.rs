@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyBackupToRegionInput {
+pub struct CopyBackupToRegionInput  {
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
     #[doc(hidden)]
     pub destination_region: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct CopyBackupToRegionInput {
 }
 impl CopyBackupToRegionInput {
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
-    pub fn destination_region(&self) -> std::option::Option<&str> {
+    pub fn destination_region(&self) -> std::option::Option<& str> {
         self.destination_region.as_deref()
     }
     /// <p>The ID of the backup that will be copied to the destination region. </p>
-    pub fn backup_id(&self) -> std::option::Option<&str> {
+    pub fn backup_id(&self) -> std::option::Option<& str> {
         self.backup_id.as_deref()
     }
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
 impl CopyBackupToRegionInput {
     /// Creates a new builder-style object to manufacture [`CopyBackupToRegionInput`](crate::operation::copy_backup_to_region::CopyBackupToRegionInput).
-    pub fn builder(
-    ) -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {
+    pub fn builder() -> crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder {
         crate::operation::copy_backup_to_region::builders::CopyBackupToRegionInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl CopyBackupToRegionInputBuilder {
         self
     }
     /// <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
-    pub fn set_destination_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_region = input;
-        self
+    pub fn set_destination_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_region = input; self
     }
     /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +59,7 @@ impl CopyBackupToRegionInputBuilder {
     }
     /// <p>The ID of the backup that will be copied to the destination region. </p>
     pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_id = input;
-        self
+        self.backup_id = input; self
     }
     /// Appends an item to `tag_list`.
     ///
@@ -74,31 +68,26 @@ impl CopyBackupToRegionInputBuilder {
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-        v.push(input);
-        self.tag_list = Some(v);
-        self
+                        v.push(input);
+                        self.tag_list = Some(v);
+                        self
     }
     /// <p>Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.</p>
-    pub fn set_tag_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tag_list = input;
-        self
+    pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tag_list = input; self
     }
     /// Consumes the builder and constructs a [`CopyBackupToRegionInput`](crate::operation::copy_backup_to_region::CopyBackupToRegionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::copy_backup_to_region::CopyBackupToRegionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::copy_backup_to_region::CopyBackupToRegionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::copy_backup_to_region::CopyBackupToRegionInput {
-                destination_region: self.destination_region,
-                backup_id: self.backup_id,
-                tag_list: self.tag_list,
-            },
+                destination_region: self.destination_region
+                ,
+                backup_id: self.backup_id
+                ,
+                tag_list: self.tag_list
+                ,
+            }
         )
     }
 }
+

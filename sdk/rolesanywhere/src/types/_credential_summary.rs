@@ -3,7 +3,7 @@
 /// <p>A record of a presented X509 credential to <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CredentialSummary {
+pub struct CredentialSummary  {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     #[doc(hidden)]
     pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -25,15 +25,15 @@ pub struct CredentialSummary {
 }
 impl CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
-    pub fn seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seen_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seen_at.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> std::option::Option<& str> {
         self.issuer.as_deref()
     }
     /// <p>Indicates whether the credential is enabled.</p>
@@ -41,7 +41,7 @@ impl CredentialSummary {
         self.enabled
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn x509_certificate_data(&self) -> std::option::Option<&str> {
+    pub fn x509_certificate_data(&self) -> std::option::Option<& str> {
         self.x509_certificate_data.as_deref()
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
@@ -75,8 +75,7 @@ impl CredentialSummaryBuilder {
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation.</p>
     pub fn set_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.seen_at = input;
-        self
+        self.seen_at = input; self
     }
     /// <p>The serial number of the certificate.</p>
     pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl CredentialSummaryBuilder {
     }
     /// <p>The serial number of the certificate.</p>
     pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.serial_number = input;
-        self
+        self.serial_number = input; self
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
     pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl CredentialSummaryBuilder {
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
     pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
     }
     /// <p>Indicates whether the credential is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -105,8 +102,7 @@ impl CredentialSummaryBuilder {
     }
     /// <p>Indicates whether the credential is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The PEM-encoded data of the certificate.</p>
     pub fn x509_certificate_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,12 +110,8 @@ impl CredentialSummaryBuilder {
         self
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn set_x509_certificate_data(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.x509_certificate_data = input;
-        self
+    pub fn set_x509_certificate_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.x509_certificate_data = input; self
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     pub fn failed(mut self, input: bool) -> Self {
@@ -128,18 +120,24 @@ impl CredentialSummaryBuilder {
     }
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a> operation was successful. </p>
     pub fn set_failed(mut self, input: std::option::Option<bool>) -> Self {
-        self.failed = input;
-        self
+        self.failed = input; self
     }
     /// Consumes the builder and constructs a [`CredentialSummary`](crate::types::CredentialSummary).
     pub fn build(self) -> crate::types::CredentialSummary {
         crate::types::CredentialSummary {
-            seen_at: self.seen_at,
-            serial_number: self.serial_number,
-            issuer: self.issuer,
-            enabled: self.enabled,
-            x509_certificate_data: self.x509_certificate_data,
-            failed: self.failed,
+            seen_at: self.seen_at
+            ,
+            serial_number: self.serial_number
+            ,
+            issuer: self.issuer
+            ,
+            enabled: self.enabled
+            ,
+            x509_certificate_data: self.x509_certificate_data
+            ,
+            failed: self.failed
+            ,
         }
     }
 }
+

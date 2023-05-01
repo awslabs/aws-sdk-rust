@@ -4,58 +4,49 @@ pub use crate::operation::list_virtual_interface_test_history::_list_virtual_int
 pub use crate::operation::list_virtual_interface_test_history::_list_virtual_interface_test_history_input::ListVirtualInterfaceTestHistoryInputBuilder;
 
 /// Fluent builder constructing a request to `ListVirtualInterfaceTestHistory`.
-///
+/// 
 /// <p>Lists the virtual interface failover test history.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_virtual_interface_test_history::builders::ListVirtualInterfaceTestHistoryInputBuilder
             }
-impl ListVirtualInterfaceTestHistoryFluentBuilder {
+impl ListVirtualInterfaceTestHistoryFluentBuilder  {
     /// Creates a new `ListVirtualInterfaceTestHistory`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistory, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput, aws_smithy_http::result::SdkError<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the virtual interface failover test.</p>
     pub fn test_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.test_id(input.into());
@@ -72,10 +63,7 @@ impl ListVirtualInterfaceTestHistoryFluentBuilder {
         self
     }
     /// <p>The ID of the virtual interface that was tested.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
     }
@@ -89,10 +77,7 @@ impl ListVirtualInterfaceTestHistoryFluentBuilder {
         self
     }
     /// <p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>
-    pub fn set_bgp_peers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_bgp_peers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_bgp_peers(input);
         self
     }
@@ -106,13 +91,13 @@ impl ListVirtualInterfaceTestHistoryFluentBuilder {
         self.inner = self.inner.set_status(input);
         self
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> 
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> 
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -129,3 +114,4 @@ impl ListVirtualInterfaceTestHistoryFluentBuilder {
         self
     }
 }
+

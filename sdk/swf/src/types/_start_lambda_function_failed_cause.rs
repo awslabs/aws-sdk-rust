@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let startlambdafunctionfailedcause = unimplemented!();
 /// match startlambdafunctionfailedcause {
@@ -29,60 +29,51 @@
 /// Specifically, when `startlambdafunctionfailedcause` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StartLambdaFunctionFailedCause::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StartLambdaFunctionFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     AssumeRoleFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StartLambdaFunctionFailedCause {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSUME_ROLE_FAILED" => StartLambdaFunctionFailedCause::AssumeRoleFailed,
-            other => StartLambdaFunctionFailedCause::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSUME_ROLE_FAILED" => StartLambdaFunctionFailedCause::AssumeRoleFailed,
+other => StartLambdaFunctionFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StartLambdaFunctionFailedCause {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StartLambdaFunctionFailedCause::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StartLambdaFunctionFailedCause::from(s))
+                }
+            }
 impl StartLambdaFunctionFailedCause {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StartLambdaFunctionFailedCause::AssumeRoleFailed => "ASSUME_ROLE_FAILED",
-            StartLambdaFunctionFailedCause::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ASSUME_ROLE_FAILED"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StartLambdaFunctionFailedCause::AssumeRoleFailed => "ASSUME_ROLE_FAILED",
+    StartLambdaFunctionFailedCause::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSUME_ROLE_FAILED"]
+                }
+            }
 impl AsRef<str> for StartLambdaFunctionFailedCause {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

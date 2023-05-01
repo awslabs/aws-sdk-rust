@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetLinkAttributesResponse {
+pub struct BatchGetLinkAttributesResponse  {
     /// <p>The attributes that are associated with the typed link.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::types::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl BatchGetLinkAttributesResponseBuilder {
     /// <p>The attributes that are associated with the typed link.</p>
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = Some(v);
-        self
+                        v.push(input);
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributesResponse`](crate::types::BatchGetLinkAttributesResponse).
     pub fn build(self) -> crate::types::BatchGetLinkAttributesResponse {
         crate::types::BatchGetLinkAttributesResponse {
-            attributes: self.attributes,
+            attributes: self.attributes
+            ,
         }
     }
 }
+

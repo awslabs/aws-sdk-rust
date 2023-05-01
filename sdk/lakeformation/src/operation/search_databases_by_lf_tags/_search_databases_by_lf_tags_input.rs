@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDatabasesByLfTagsInput {
+pub struct SearchDatabasesByLfTagsInput  {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct SearchDatabasesByLfTagsInput {
 }
 impl SearchDatabasesByLfTagsInput {
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -26,19 +26,17 @@ impl SearchDatabasesByLfTagsInput {
         self.max_results
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
-    pub fn expression(&self) -> std::option::Option<&[crate::types::LfTag]> {
+    pub fn expression(&self) -> std::option::Option<& [crate::types::LfTag]> {
         self.expression.as_deref()
     }
 }
 impl SearchDatabasesByLfTagsInput {
     /// Creates a new builder-style object to manufacture [`SearchDatabasesByLfTagsInput`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput).
-    pub fn builder(
-    ) -> crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsInputBuilder {
         crate::operation::search_databases_by_lf_tags::builders::SearchDatabasesByLfTagsInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl SearchDatabasesByLfTagsInputBuilder {
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,8 +67,7 @@ impl SearchDatabasesByLfTagsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl SearchDatabasesByLfTagsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// Appends an item to `expression`.
     ///
@@ -90,32 +85,28 @@ impl SearchDatabasesByLfTagsInputBuilder {
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
-        v.push(input);
-        self.expression = Some(v);
-        self
+                        v.push(input);
+                        self.expression = Some(v);
+                        self
     }
     /// <p>A list of conditions (<code>LFTag</code> structures) to search for in database resources.</p>
-    pub fn set_expression(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
-        self.expression = input;
-        self
+    pub fn set_expression(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTag>>) -> Self {
+        self.expression = input; self
     }
     /// Consumes the builder and constructs a [`SearchDatabasesByLfTagsInput`](crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                catalog_id: self.catalog_id,
-                expression: self.expression,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                catalog_id: self.catalog_id
+                ,
+                expression: self.expression
+                ,
+            }
         )
     }
 }
+

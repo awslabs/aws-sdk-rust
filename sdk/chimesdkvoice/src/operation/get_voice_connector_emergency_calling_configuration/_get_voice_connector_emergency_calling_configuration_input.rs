@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceConnectorEmergencyCallingConfigurationInput {
+pub struct GetVoiceConnectorEmergencyCallingConfigurationInput  {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl GetVoiceConnectorEmergencyCallingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn builder() -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         crate::operation::get_voice_connector_emergency_calling_configuration::builders::GetVoiceConnectorEmergencyCallingConfigurationInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorEmergencyCallingConfigurationInput`](crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_voice_connector_emergency_calling_configuration::GetVoiceConnectorEmergencyCallingConfigurationInput {
                 voice_connector_id: self.voice_connector_id
@@ -50,3 +46,4 @@ impl GetVoiceConnectorEmergencyCallingConfigurationInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the bot locale parameters required for importing a bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleImportSpecification {
+pub struct BotLocaleImportSpecification  {
     /// <p>The identifier of the bot to import the locale to.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct BotLocaleImportSpecification {
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-    /// <li> <p> <code>IntentA</code> </p> </li>
-    /// <li> <p> <code>IntentB</code> </p> </li>
-    /// <li> <p> <code>IntentC</code> </p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+    /// <li> <p> <code>IntentA</code> </p> </li> 
+    /// <li> <p> <code>IntentB</code> </p> </li> 
+    /// <li> <p> <code>IntentC</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub nlu_intent_confidence_threshold: std::option::Option<f64>,
@@ -29,30 +29,30 @@ pub struct BotLocaleImportSpecification {
 }
 impl BotLocaleImportSpecification {
     /// <p>The identifier of the bot to import the locale to.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-    /// <li> <p> <code>IntentA</code> </p> </li>
-    /// <li> <p> <code>IntentB</code> </p> </li>
-    /// <li> <p> <code>IntentC</code> </p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+    /// <li> <p> <code>IntentA</code> </p> </li> 
+    /// <li> <p> <code>IntentB</code> </p> </li> 
+    /// <li> <p> <code>IntentC</code> </p> </li> 
     /// </ul>
     pub fn nlu_intent_confidence_threshold(&self) -> std::option::Option<f64> {
         self.nlu_intent_confidence_threshold
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<&crate::types::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<& crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
 }
@@ -81,8 +81,7 @@ impl BotLocaleImportSpecificationBuilder {
     }
     /// <p>The identifier of the bot to import the locale to.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +90,7 @@ impl BotLocaleImportSpecificationBuilder {
     }
     /// <p>The version of the bot to import the locale to. This can only be the <code>DRAFT</code> version of the bot.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,32 +99,30 @@ impl BotLocaleImportSpecificationBuilder {
     }
     /// <p>The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-    /// <li> <p> <code>IntentA</code> </p> </li>
-    /// <li> <p> <code>IntentB</code> </p> </li>
-    /// <li> <p> <code>IntentC</code> </p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+    /// <li> <p> <code>IntentA</code> </p> </li> 
+    /// <li> <p> <code>IntentB</code> </p> </li> 
+    /// <li> <p> <code>IntentC</code> </p> </li> 
     /// </ul>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
         self.nlu_intent_confidence_threshold = Some(input);
         self
     }
-    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p>
-    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p>
-    /// <ul>
-    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li>
-    /// <li> <p> <code>IntentA</code> </p> </li>
-    /// <li> <p> <code>IntentB</code> </p> </li>
-    /// <li> <p> <code>IntentC</code> </p> </li>
+    /// <p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot. </p> 
+    /// <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AMAZON.FallbackIntent</code> </p> </li> 
+    /// <li> <p> <code>IntentA</code> </p> </li> 
+    /// <li> <p> <code>IntentB</code> </p> </li> 
+    /// <li> <p> <code>IntentC</code> </p> </li> 
     /// </ul>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.nlu_intent_confidence_threshold = input;
-        self
+        self.nlu_intent_confidence_threshold = input; self
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
@@ -134,21 +130,23 @@ impl BotLocaleImportSpecificationBuilder {
         self
     }
     /// <p>Defines settings for using an Amazon Polly voice to communicate with a user.</p>
-    pub fn set_voice_settings(
-        mut self,
-        input: std::option::Option<crate::types::VoiceSettings>,
-    ) -> Self {
-        self.voice_settings = input;
-        self
+    pub fn set_voice_settings(mut self, input: std::option::Option<crate::types::VoiceSettings>) -> Self {
+        self.voice_settings = input; self
     }
     /// Consumes the builder and constructs a [`BotLocaleImportSpecification`](crate::types::BotLocaleImportSpecification).
     pub fn build(self) -> crate::types::BotLocaleImportSpecification {
         crate::types::BotLocaleImportSpecification {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
-            voice_settings: self.voice_settings,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
+            ,
+            voice_settings: self.voice_settings
+            ,
         }
     }
 }
+

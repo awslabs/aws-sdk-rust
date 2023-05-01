@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLayerVersionInput {
+pub struct DeleteLayerVersionInput  {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
     pub layer_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteLayerVersionInput {
 }
 impl DeleteLayerVersionInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn layer_name(&self) -> std::option::Option<&str> {
+    pub fn layer_name(&self) -> std::option::Option<& str> {
         self.layer_name.as_deref()
     }
     /// <p>The version number.</p>
@@ -22,8 +22,7 @@ impl DeleteLayerVersionInput {
 }
 impl DeleteLayerVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_layer_version::builders::DeleteLayerVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_layer_version::builders::DeleteLayerVersionInputBuilder {
         crate::operation::delete_layer_version::builders::DeleteLayerVersionInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteLayerVersionInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_name = input;
-        self
+        self.layer_name = input; self
     }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -53,21 +51,18 @@ impl DeleteLayerVersionInputBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLayerVersionInput`](crate::operation::delete_layer_version::DeleteLayerVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_layer_version::DeleteLayerVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_layer_version::DeleteLayerVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_layer_version::DeleteLayerVersionInput {
-                layer_name: self.layer_name,
-                version_number: self.version_number,
-            },
+                layer_name: self.layer_name
+                ,
+                version_number: self.version_number
+                ,
+            }
         )
     }
 }
+

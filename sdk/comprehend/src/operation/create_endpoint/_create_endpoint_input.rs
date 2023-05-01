@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointInput {
+pub struct CreateEndpointInput  {
     /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
@@ -27,11 +27,11 @@ pub struct CreateEndpointInput {
 }
 impl CreateEndpointInput {
     /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
@@ -39,19 +39,19 @@ impl CreateEndpointInput {
         self.desired_inference_units
     }
     /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.</p>
-    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl CreateEndpointInputBuilder {
     }
     /// <p>This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used for all subsequent requests to this resource. </p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
     pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +91,7 @@ impl CreateEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint will be attached.</p>
     pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn desired_inference_units(mut self, input: i32) -> Self {
@@ -102,8 +100,7 @@ impl CreateEndpointInputBuilder {
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
     pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-        self.desired_inference_units = input;
-        self
+        self.desired_inference_units = input; self
     }
     /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,12 +108,8 @@ impl CreateEndpointInputBuilder {
         self
     }
     /// <p>An idempotency token provided by the customer. If this token matches a previous endpoint creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -125,17 +118,13 @@ impl CreateEndpointInputBuilder {
     /// <p>Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Tags to associate with the endpoint. A tag is a key-value pair that adds metadata to the endpoint. For example, a tag with "Sales" as the key might be added to an endpoint to indicate its use by the sales department. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,12 +132,8 @@ impl CreateEndpointInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.</p>
     pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,24 +142,28 @@ impl CreateEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel to which the endpoint will be attached.</p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::operation::create_endpoint::CreateEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_endpoint::CreateEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_endpoint::CreateEndpointInput {
-            endpoint_name: self.endpoint_name,
-            model_arn: self.model_arn,
-            desired_inference_units: self.desired_inference_units,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-            data_access_role_arn: self.data_access_role_arn,
-            flywheel_arn: self.flywheel_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::create_endpoint::CreateEndpointInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_endpoint::CreateEndpointInput {
+                endpoint_name: self.endpoint_name
+                ,
+                model_arn: self.model_arn
+                ,
+                desired_inference_units: self.desired_inference_units
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                flywheel_arn: self.flywheel_arn
+                ,
+            }
+        )
     }
 }
+

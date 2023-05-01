@@ -3,7 +3,7 @@
 /// <p>The new device metadata type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NewDeviceMetadataType {
+pub struct NewDeviceMetadataType  {
     /// <p>The device key.</p>
     #[doc(hidden)]
     pub device_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NewDeviceMetadataType {
 }
 impl NewDeviceMetadataType {
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> std::option::Option<&str> {
+    pub fn device_key(&self) -> std::option::Option<& str> {
         self.device_key.as_deref()
     }
     /// <p>The device group key.</p>
-    pub fn device_group_key(&self) -> std::option::Option<&str> {
+    pub fn device_group_key(&self) -> std::option::Option<& str> {
         self.device_group_key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl NewDeviceMetadataTypeBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_key = input;
-        self
+        self.device_key = input; self
     }
     /// <p>The device group key.</p>
     pub fn device_group_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl NewDeviceMetadataTypeBuilder {
     }
     /// <p>The device group key.</p>
     pub fn set_device_group_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_group_key = input;
-        self
+        self.device_group_key = input; self
     }
     /// Consumes the builder and constructs a [`NewDeviceMetadataType`](crate::types::NewDeviceMetadataType).
     pub fn build(self) -> crate::types::NewDeviceMetadataType {
         crate::types::NewDeviceMetadataType {
-            device_key: self.device_key,
-            device_group_key: self.device_group_key,
+            device_key: self.device_key
+            ,
+            device_group_key: self.device_group_key
+            ,
         }
     }
 }
+

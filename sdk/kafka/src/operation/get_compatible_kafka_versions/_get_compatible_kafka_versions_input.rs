@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCompatibleKafkaVersionsInput {
+pub struct GetCompatibleKafkaVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
 }
 impl GetCompatibleKafkaVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
 }
 impl GetCompatibleKafkaVersionsInput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleKafkaVersionsInput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput).
-    pub fn builder() -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder{
+    pub fn builder() -> crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder {
         crate::operation::get_compatible_kafka_versions::builders::GetCompatibleKafkaVersionsInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl GetCompatibleKafkaVersionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetCompatibleKafkaVersionsInput`](crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsInput {
-                cluster_arn: self.cluster_arn,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+            }
         )
     }
 }
+

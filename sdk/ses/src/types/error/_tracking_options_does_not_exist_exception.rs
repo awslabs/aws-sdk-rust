@@ -3,7 +3,7 @@
 /// <p>Indicates that the TrackingOptions object you specified does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrackingOptionsDoesNotExistException {
+pub struct TrackingOptionsDoesNotExistException  {
     /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -14,21 +14,19 @@ pub struct TrackingOptionsDoesNotExistException {
 }
 impl TrackingOptionsDoesNotExistException {
     /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
 impl TrackingOptionsDoesNotExistException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TrackingOptionsDoesNotExistException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TrackingOptionsDoesNotExistException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -42,12 +40,8 @@ impl aws_http::request_id::RequestId for crate::types::error::TrackingOptionsDoe
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for TrackingOptionsDoesNotExistException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TrackingOptionsDoesNotExistException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl TrackingOptionsDoesNotExistException {
     /// Creates a new builder-style object to manufacture [`TrackingOptionsDoesNotExistException`](crate::types::error::TrackingOptionsDoesNotExistException).
@@ -71,12 +65,8 @@ impl TrackingOptionsDoesNotExistExceptionBuilder {
         self
     }
     /// <p>Indicates that a TrackingOptions object does not exist in the specified configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,29 +75,28 @@ impl TrackingOptionsDoesNotExistExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`TrackingOptionsDoesNotExistException`](crate::types::error::TrackingOptionsDoesNotExistException).
     pub fn build(self) -> crate::types::error::TrackingOptionsDoesNotExistException {
         crate::types::error::TrackingOptionsDoesNotExistException {
-            configuration_set_name: self.configuration_set_name,
-            message: self.message,
+            configuration_set_name: self.configuration_set_name
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

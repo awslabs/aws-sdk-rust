@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableOutput {
+pub struct RestoreTableOutput  {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
     #[doc(hidden)]
     pub restored_table_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct RestoreTableOutput {
 }
 impl RestoreTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub fn restored_table_arn(&self) -> std::option::Option<&str> {
+    pub fn restored_table_arn(&self) -> std::option::Option<& str> {
         self.restored_table_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RestoreTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RestoreTableOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableOutput`](crate::operation::restore_table::RestoreTableOutput).
     pub fn builder() -> crate::operation::restore_table::builders::RestoreTableOutputBuilder {
@@ -40,27 +40,25 @@ impl RestoreTableOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub fn set_restored_table_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.restored_table_arn = input;
-        self
+    pub fn set_restored_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.restored_table_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RestoreTableOutput`](crate::operation::restore_table::RestoreTableOutput).
     pub fn build(self) -> crate::operation::restore_table::RestoreTableOutput {
         crate::operation::restore_table::RestoreTableOutput {
-            restored_table_arn: self.restored_table_arn,
+            restored_table_arn: self.restored_table_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

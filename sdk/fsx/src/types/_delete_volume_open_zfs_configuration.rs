@@ -3,14 +3,14 @@
 /// <p>A value that specifies whether to delete all child volumes and snapshots. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVolumeOpenZfsConfiguration {
+pub struct DeleteVolumeOpenZfsConfiguration  {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>>,
 }
 impl DeleteVolumeOpenZfsConfiguration {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::types::DeleteOpenZfsVolumeOption]> {
+    pub fn options(&self) -> std::option::Option<& [crate::types::DeleteOpenZfsVolumeOption]> {
         self.options.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl DeleteVolumeOpenZfsConfigurationBuilder {
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
     pub fn options(mut self, input: crate::types::DeleteOpenZfsVolumeOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = Some(v);
-        self
+                        v.push(input);
+                        self.options = Some(v);
+                        self
     }
     /// <p>To delete the volume's child volumes, snapshots, and clones, use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeleteOpenZfsVolumeOption>>) -> Self {
+        self.options = input; self
     }
     /// Consumes the builder and constructs a [`DeleteVolumeOpenZfsConfiguration`](crate::types::DeleteVolumeOpenZfsConfiguration).
     pub fn build(self) -> crate::types::DeleteVolumeOpenZfsConfiguration {
         crate::types::DeleteVolumeOpenZfsConfiguration {
-            options: self.options,
+            options: self.options
+            ,
         }
     }
 }
+

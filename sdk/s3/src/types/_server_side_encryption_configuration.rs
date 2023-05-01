@@ -3,14 +3,14 @@
 /// <p>Specifies the default server-side-encryption configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerSideEncryptionConfiguration {
+pub struct ServerSideEncryptionConfiguration  {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::ServerSideEncryptionRule>>,
 }
 impl ServerSideEncryptionConfiguration {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::ServerSideEncryptionRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::ServerSideEncryptionRule]> {
         self.rules.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl ServerSideEncryptionConfigurationBuilder {
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
     pub fn rules(mut self, input: crate::types::ServerSideEncryptionRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>Container for information about a particular server-side encryption configuration rule.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerSideEncryptionRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServerSideEncryptionRule>>) -> Self {
+        self.rules = input; self
     }
     /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::types::ServerSideEncryptionConfiguration).
     pub fn build(self) -> crate::types::ServerSideEncryptionConfiguration {
-        crate::types::ServerSideEncryptionConfiguration { rules: self.rules }
+        crate::types::ServerSideEncryptionConfiguration {
+            rules: self.rules
+            ,
+        }
     }
 }
+

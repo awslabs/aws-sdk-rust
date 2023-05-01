@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalClusterOutput {
+pub struct CreateGlobalClusterOutput  {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::types::GlobalCluster>,
@@ -10,21 +10,19 @@ pub struct CreateGlobalClusterOutput {
 }
 impl CreateGlobalClusterOutput {
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::types::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::types::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateGlobalClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder {
-        crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder {
+        crate::operation::create_global_cluster::builders::CreateGlobalClusterOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,25 @@ impl CreateGlobalClusterOutputBuilder {
         self
     }
     /// <p>A data type representing an Amazon DocumentDB global cluster.</p>
-    pub fn set_global_cluster(
-        mut self,
-        input: std::option::Option<crate::types::GlobalCluster>,
-    ) -> Self {
-        self.global_cluster = input;
-        self
+    pub fn set_global_cluster(mut self, input: std::option::Option<crate::types::GlobalCluster>) -> Self {
+        self.global_cluster = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::operation::create_global_cluster::CreateGlobalClusterOutput).
     pub fn build(self) -> crate::operation::create_global_cluster::CreateGlobalClusterOutput {
         crate::operation::create_global_cluster::CreateGlobalClusterOutput {
-            global_cluster: self.global_cluster,
+            global_cluster: self.global_cluster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

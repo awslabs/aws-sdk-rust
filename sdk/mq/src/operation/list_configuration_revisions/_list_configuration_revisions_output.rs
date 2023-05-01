@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationRevisionsOutput {
+pub struct ListConfigurationRevisionsOutput  {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct ListConfigurationRevisionsOutput {
 }
 impl ListConfigurationRevisionsOutput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_id(&self) -> std::option::Option<& str> {
         self.configuration_id.as_deref()
     }
     /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -27,22 +27,22 @@ impl ListConfigurationRevisionsOutput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::types::ConfigurationRevision]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::types::ConfigurationRevision]> {
         self.revisions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListConfigurationRevisionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListConfigurationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder {
         crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder::default()
     }
 }
@@ -65,8 +65,7 @@ impl ListConfigurationRevisionsOutputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_id = input;
-        self
+        self.configuration_id = input; self
     }
     /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,8 +74,7 @@ impl ListConfigurationRevisionsOutputBuilder {
     }
     /// <p>The maximum number of configuration revisions that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +83,7 @@ impl ListConfigurationRevisionsOutputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `revisions`.
     ///
@@ -95,37 +92,37 @@ impl ListConfigurationRevisionsOutputBuilder {
     /// <p>The list of all revisions for the specified configuration.</p>
     pub fn revisions(mut self, input: crate::types::ConfigurationRevision) -> Self {
         let mut v = self.revisions.unwrap_or_default();
-        v.push(input);
-        self.revisions = Some(v);
-        self
+                        v.push(input);
+                        self.revisions = Some(v);
+                        self
     }
     /// <p>The list of all revisions for the specified configuration.</p>
-    pub fn set_revisions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationRevision>>,
-    ) -> Self {
-        self.revisions = input;
-        self
+    pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigurationRevision>>) -> Self {
+        self.revisions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
+    pub fn build(self) -> crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
-            configuration_id: self.configuration_id,
-            max_results: self.max_results.unwrap_or_default(),
-            next_token: self.next_token,
-            revisions: self.revisions,
+            configuration_id: self.configuration_id
+            ,
+            max_results: self.max_results
+                .unwrap_or_default()
+            ,
+            next_token: self.next_token
+            ,
+            revisions: self.revisions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGeoMatchSetInput {
+pub struct CreateGeoMatchSetInput  {
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct CreateGeoMatchSetInput {
 }
 impl CreateGeoMatchSetInput {
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl CreateGeoMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateGeoMatchSetInput`](crate::operation::create_geo_match_set::CreateGeoMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetInputBuilder {
+    pub fn builder() -> crate::operation::create_geo_match_set::builders::CreateGeoMatchSetInputBuilder {
         crate::operation::create_geo_match_set::builders::CreateGeoMatchSetInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl CreateGeoMatchSetInputBuilder {
     }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change <code>Name</code> after you create the <code>GeoMatchSet</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl CreateGeoMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateGeoMatchSetInput`](crate::operation::create_geo_match_set::CreateGeoMatchSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_geo_match_set::CreateGeoMatchSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_geo_match_set::CreateGeoMatchSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_geo_match_set::CreateGeoMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
+                name: self.name
+                ,
+                change_token: self.change_token
+                ,
+            }
         )
     }
 }
+

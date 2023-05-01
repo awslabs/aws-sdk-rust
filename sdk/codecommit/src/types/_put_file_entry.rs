@@ -3,7 +3,7 @@
 /// <p>Information about a file added or updated as part of a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFileEntry {
+pub struct PutFileEntry  {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct PutFileEntry {
 }
 impl PutFileEntry {
     /// <p>The full path to the file in the repository, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> std::option::Option<& str> {
         self.file_path.as_deref()
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<& crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
     /// <p>The content of the file, if a source file is not specified.</p>
-    pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn file_content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-    pub fn source_file(&self) -> std::option::Option<&crate::types::SourceFileSpecifier> {
+    pub fn source_file(&self) -> std::option::Option<& crate::types::SourceFileSpecifier> {
         self.source_file.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl PutFileEntryBuilder {
     }
     /// <p>The full path to the file in the repository, including the name of the file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input;
-        self
+        self.file_path = input; self
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
@@ -68,12 +67,8 @@ impl PutFileEntryBuilder {
         self
     }
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
-    pub fn set_file_mode(
-        mut self,
-        input: std::option::Option<crate::types::FileModeTypeEnum>,
-    ) -> Self {
-        self.file_mode = input;
-        self
+    pub fn set_file_mode(mut self, input: std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
+        self.file_mode = input; self
     }
     /// <p>The content of the file, if a source file is not specified.</p>
     pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -82,8 +77,7 @@ impl PutFileEntryBuilder {
     }
     /// <p>The content of the file, if a source file is not specified.</p>
     pub fn set_file_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.file_content = input;
-        self
+        self.file_content = input; self
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
     pub fn source_file(mut self, input: crate::types::SourceFileSpecifier) -> Self {
@@ -91,20 +85,21 @@ impl PutFileEntryBuilder {
         self
     }
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit, if you are not providing the file content directly.</p>
-    pub fn set_source_file(
-        mut self,
-        input: std::option::Option<crate::types::SourceFileSpecifier>,
-    ) -> Self {
-        self.source_file = input;
-        self
+    pub fn set_source_file(mut self, input: std::option::Option<crate::types::SourceFileSpecifier>) -> Self {
+        self.source_file = input; self
     }
     /// Consumes the builder and constructs a [`PutFileEntry`](crate::types::PutFileEntry).
     pub fn build(self) -> crate::types::PutFileEntry {
         crate::types::PutFileEntry {
-            file_path: self.file_path,
-            file_mode: self.file_mode,
-            file_content: self.file_content,
-            source_file: self.source_file,
+            file_path: self.file_path
+            ,
+            file_mode: self.file_mode
+            ,
+            file_content: self.file_content
+            ,
+            source_file: self.source_file
+            ,
         }
     }
 }
+

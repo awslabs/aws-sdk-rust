@@ -144,3 +144,4 @@ pub mod builders;
 
 /// Error types that AWS Systems Manager Incident Manager Contacts can respond with.
 pub mod error;
+

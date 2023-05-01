@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MigrateWorkspaceOutput {
+pub struct MigrateWorkspaceOutput  {
     /// <p>The original identifier of the WorkSpace that is being migrated.</p>
     #[doc(hidden)]
     pub source_workspace_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct MigrateWorkspaceOutput {
 }
 impl MigrateWorkspaceOutput {
     /// <p>The original identifier of the WorkSpace that is being migrated.</p>
-    pub fn source_workspace_id(&self) -> std::option::Option<&str> {
+    pub fn source_workspace_id(&self) -> std::option::Option<& str> {
         self.source_workspace_id.as_deref()
     }
     /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
-    pub fn target_workspace_id(&self) -> std::option::Option<&str> {
+    pub fn target_workspace_id(&self) -> std::option::Option<& str> {
         self.target_workspace_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for MigrateWorkspaceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl MigrateWorkspaceOutput {
     /// Creates a new builder-style object to manufacture [`MigrateWorkspaceOutput`](crate::operation::migrate_workspace::MigrateWorkspaceOutput).
-    pub fn builder() -> crate::operation::migrate_workspace::builders::MigrateWorkspaceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::migrate_workspace::builders::MigrateWorkspaceOutputBuilder {
         crate::operation::migrate_workspace::builders::MigrateWorkspaceOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl MigrateWorkspaceOutputBuilder {
         self
     }
     /// <p>The original identifier of the WorkSpace that is being migrated.</p>
-    pub fn set_source_workspace_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_workspace_id = input;
-        self
+    pub fn set_source_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_workspace_id = input; self
     }
     /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
     pub fn target_workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,28 +57,27 @@ impl MigrateWorkspaceOutputBuilder {
         self
     }
     /// <p>The new identifier of the WorkSpace that is being migrated. If the migration does not succeed, the target WorkSpace ID will not be used, and the WorkSpace will still have the original WorkSpace ID.</p>
-    pub fn set_target_workspace_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_workspace_id = input;
-        self
+    pub fn set_target_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_workspace_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`MigrateWorkspaceOutput`](crate::operation::migrate_workspace::MigrateWorkspaceOutput).
     pub fn build(self) -> crate::operation::migrate_workspace::MigrateWorkspaceOutput {
         crate::operation::migrate_workspace::MigrateWorkspaceOutput {
-            source_workspace_id: self.source_workspace_id,
-            target_workspace_id: self.target_workspace_id,
+            source_workspace_id: self.source_workspace_id
+            ,
+            target_workspace_id: self.target_workspace_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

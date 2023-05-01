@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeBranchesByThreeWayOutput {
+pub struct MergeBranchesByThreeWayOutput  {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
     #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct MergeBranchesByThreeWayOutput {
 }
 impl MergeBranchesByThreeWayOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p>The tree ID of the merge in the destination or target branch.</p>
-    pub fn tree_id(&self) -> std::option::Option<&str> {
+    pub fn tree_id(&self) -> std::option::Option<& str> {
         self.tree_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for MergeBranchesByThreeWayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl MergeBranchesByThreeWayOutput {
     /// Creates a new builder-style object to manufacture [`MergeBranchesByThreeWayOutput`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput).
-    pub fn builder(
-    ) -> crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayOutputBuilder {
         crate::operation::merge_branches_by_three_way::builders::MergeBranchesByThreeWayOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl MergeBranchesByThreeWayOutputBuilder {
     }
     /// <p>The commit ID of the merge in the destination or target branch.</p>
     pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     pub fn tree_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,26 +58,26 @@ impl MergeBranchesByThreeWayOutputBuilder {
     }
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     pub fn set_tree_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tree_id = input;
-        self
+        self.tree_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`MergeBranchesByThreeWayOutput`](crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput {
+    pub fn build(self) -> crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput {
         crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput {
-            commit_id: self.commit_id,
-            tree_id: self.tree_id,
+            commit_id: self.commit_id
+            ,
+            tree_id: self.tree_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

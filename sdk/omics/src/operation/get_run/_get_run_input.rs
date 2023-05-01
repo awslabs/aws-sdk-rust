@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRunInput {
+pub struct GetRunInput  {
     /// <p>The run's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetRunInput {
 }
 impl GetRunInput {
     /// <p>The run's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The run's export format.</p>
-    pub fn export(&self) -> std::option::Option<&[crate::types::RunExport]> {
+    pub fn export(&self) -> std::option::Option<& [crate::types::RunExport]> {
         self.export.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetRunInputBuilder {
     }
     /// <p>The run's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Appends an item to `export`.
     ///
@@ -52,26 +51,24 @@ impl GetRunInputBuilder {
     /// <p>The run's export format.</p>
     pub fn export(mut self, input: crate::types::RunExport) -> Self {
         let mut v = self.export.unwrap_or_default();
-        v.push(input);
-        self.export = Some(v);
-        self
+                        v.push(input);
+                        self.export = Some(v);
+                        self
     }
     /// <p>The run's export format.</p>
-    pub fn set_export(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RunExport>>,
-    ) -> Self {
-        self.export = input;
-        self
+    pub fn set_export(mut self, input: std::option::Option<std::vec::Vec<crate::types::RunExport>>) -> Self {
+        self.export = input; self
     }
     /// Consumes the builder and constructs a [`GetRunInput`](crate::operation::get_run::GetRunInput).
-    pub fn build(
-        self,
-    ) -> Result<crate::operation::get_run::GetRunInput, aws_smithy_http::operation::error::BuildError>
-    {
-        Ok(crate::operation::get_run::GetRunInput {
-            id: self.id,
-            export: self.export,
-        })
+    pub fn build(self) -> Result<crate::operation::get_run::GetRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_run::GetRunInput {
+                id: self.id
+                ,
+                export: self.export
+                ,
+            }
+        )
     }
 }
+

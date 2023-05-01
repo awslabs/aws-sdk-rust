@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCalculationExecutionInput {
+pub struct GetCalculationExecutionInput  {
     /// <p>The calculation execution UUID.</p>
     #[doc(hidden)]
     pub calculation_execution_id: std::option::Option<std::string::String>,
 }
 impl GetCalculationExecutionInput {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+    pub fn calculation_execution_id(&self) -> std::option::Option<& str> {
         self.calculation_execution_id.as_deref()
     }
 }
 impl GetCalculationExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionInput`](crate::operation::get_calculation_execution::GetCalculationExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_calculation_execution::builders::GetCalculationExecutionInputBuilder {
         crate::operation::get_calculation_execution::builders::GetCalculationExecutionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl GetCalculationExecutionInputBuilder {
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.calculation_execution_id = input;
-        self
+    pub fn set_calculation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.calculation_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`GetCalculationExecutionInput`](crate::operation::get_calculation_execution::GetCalculationExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_calculation_execution::GetCalculationExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_calculation_execution::GetCalculationExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_calculation_execution::GetCalculationExecutionInput {
-                calculation_execution_id: self.calculation_execution_id,
-            },
+                calculation_execution_id: self.calculation_execution_id
+                ,
+            }
         )
     }
 }
+

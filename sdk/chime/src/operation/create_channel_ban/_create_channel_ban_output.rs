@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelBanOutput {
+pub struct CreateChannelBanOutput  {
     /// <p>The ARN of the response to the ban request.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct CreateChannelBanOutput {
 }
 impl CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
-    pub fn member(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn member(&self) -> std::option::Option<& crate::types::Identity> {
         self.member.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateChannelBanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateChannelBanOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelBanOutput`](crate::operation::create_channel_ban::CreateChannelBanOutput).
-    pub fn builder() -> crate::operation::create_channel_ban::builders::CreateChannelBanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_channel_ban::builders::CreateChannelBanOutputBuilder {
         crate::operation::create_channel_ban::builders::CreateChannelBanOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl CreateChannelBanOutputBuilder {
     }
     /// <p>The ARN of the response to the ban request.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub fn member(mut self, input: crate::types::Identity) -> Self {
@@ -60,24 +58,26 @@ impl CreateChannelBanOutputBuilder {
     }
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     pub fn set_member(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateChannelBanOutput`](crate::operation::create_channel_ban::CreateChannelBanOutput).
     pub fn build(self) -> crate::operation::create_channel_ban::CreateChannelBanOutput {
         crate::operation::create_channel_ban::CreateChannelBanOutput {
-            channel_arn: self.channel_arn,
-            member: self.member,
+            channel_arn: self.channel_arn
+            ,
+            member: self.member
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

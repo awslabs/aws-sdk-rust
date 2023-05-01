@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServicesInScopeOutput {
+pub struct GetServicesInScopeOutput  {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
     #[doc(hidden)]
     pub service_metadata: std::option::Option<std::vec::Vec<crate::types::ServiceMetadata>>,
@@ -10,21 +10,19 @@ pub struct GetServicesInScopeOutput {
 }
 impl GetServicesInScopeOutput {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
-    pub fn service_metadata(&self) -> std::option::Option<&[crate::types::ServiceMetadata]> {
+    pub fn service_metadata(&self) -> std::option::Option<& [crate::types::ServiceMetadata]> {
         self.service_metadata.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServicesInScopeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetServicesInScopeOutput {
     /// Creates a new builder-style object to manufacture [`GetServicesInScopeOutput`](crate::operation::get_services_in_scope::GetServicesInScopeOutput).
-    pub fn builder(
-    ) -> crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder {
-        crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder {
+        crate::operation::get_services_in_scope::builders::GetServicesInScopeOutputBuilder::default()
     }
 }
 
@@ -43,32 +41,30 @@ impl GetServicesInScopeOutputBuilder {
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
     pub fn service_metadata(mut self, input: crate::types::ServiceMetadata) -> Self {
         let mut v = self.service_metadata.unwrap_or_default();
-        v.push(input);
-        self.service_metadata = Some(v);
-        self
+                        v.push(input);
+                        self.service_metadata = Some(v);
+                        self
     }
     /// <p> The metadata that's associated with the Amazon Web Service. </p>
-    pub fn set_service_metadata(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceMetadata>>,
-    ) -> Self {
-        self.service_metadata = input;
-        self
+    pub fn set_service_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceMetadata>>) -> Self {
+        self.service_metadata = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetServicesInScopeOutput`](crate::operation::get_services_in_scope::GetServicesInScopeOutput).
     pub fn build(self) -> crate::operation::get_services_in_scope::GetServicesInScopeOutput {
         crate::operation::get_services_in_scope::GetServicesInScopeOutput {
-            service_metadata: self.service_metadata,
+            service_metadata: self.service_metadata
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

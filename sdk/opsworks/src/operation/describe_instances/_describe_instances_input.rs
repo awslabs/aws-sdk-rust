@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancesInput {
+pub struct DescribeInstancesInput  {
     /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct DescribeInstancesInput {
 }
 impl DescribeInstancesInput {
     /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> std::option::Option<& str> {
         self.layer_id.as_deref()
     }
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_ids.as_deref()
     }
 }
 impl DescribeInstancesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
-    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesInputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DescribeInstancesInputBuilder {
     }
     /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified stack.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
     pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl DescribeInstancesInputBuilder {
     }
     /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of the instances associated with the specified layer.</p>
     pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_id = input;
-        self
+        self.layer_id = input; self
     }
     /// Appends an item to `instance_ids`.
     ///
@@ -71,31 +68,26 @@ impl DescribeInstancesInputBuilder {
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = Some(v);
+                        self
     }
     /// <p>An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code> returns a description of the specified instances. Otherwise, it returns a description of every instance.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// Consumes the builder and constructs a [`DescribeInstancesInput`](crate::operation::describe_instances::DescribeInstancesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_instances::DescribeInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_instances::DescribeInstancesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_instances::DescribeInstancesInput {
-                stack_id: self.stack_id,
-                layer_id: self.layer_id,
-                instance_ids: self.instance_ids,
-            },
+                stack_id: self.stack_id
+                ,
+                layer_id: self.layer_id
+                ,
+                instance_ids: self.instance_ids
+                ,
+            }
         )
     }
 }
+

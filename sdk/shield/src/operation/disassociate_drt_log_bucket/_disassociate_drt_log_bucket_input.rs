@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDrtLogBucketInput {
+pub struct DisassociateDrtLogBucketInput  {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
     #[doc(hidden)]
     pub log_bucket: std::option::Option<std::string::String>,
 }
 impl DisassociateDrtLogBucketInput {
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-    pub fn log_bucket(&self) -> std::option::Option<&str> {
+    pub fn log_bucket(&self) -> std::option::Option<& str> {
         self.log_bucket.as_deref()
     }
 }
 impl DisassociateDrtLogBucketInput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketInput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder {
         crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DisassociateDrtLogBucketInputBuilder {
     }
     /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
     pub fn set_log_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_bucket = input;
-        self
+        self.log_bucket = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateDrtLogBucketInput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketInput {
-                log_bucket: self.log_bucket,
-            },
+                log_bucket: self.log_bucket
+                ,
+            }
         )
     }
 }
+

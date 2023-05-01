@@ -231,3 +231,4 @@ pub mod update_upload;
 
 /// Types for the `UpdateVPCEConfiguration` operation.
 pub mod update_vpce_configuration;
+

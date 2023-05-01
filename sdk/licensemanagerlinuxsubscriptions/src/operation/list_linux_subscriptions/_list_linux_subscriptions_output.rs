@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLinuxSubscriptionsOutput {
+pub struct ListLinuxSubscriptionsOutput  {
     /// <p>An array that contains subscription objects.</p>
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
@@ -13,24 +13,22 @@ pub struct ListLinuxSubscriptionsOutput {
 }
 impl ListLinuxSubscriptionsOutput {
     /// <p>An array that contains subscription objects.</p>
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::types::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<& [crate::types::Subscription]> {
         self.subscriptions.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLinuxSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListLinuxSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLinuxSubscriptionsOutput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder {
         crate::operation::list_linux_subscriptions::builders::ListLinuxSubscriptionsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListLinuxSubscriptionsOutputBuilder {
     /// <p>An array that contains subscription objects.</p>
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = Some(v);
+                        self
     }
     /// <p>An array that contains subscription objects.</p>
-    pub fn set_subscriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListLinuxSubscriptionsOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListLinuxSubscriptionsOutput`](crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput).
     pub fn build(self) -> crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput {
         crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput {
-            subscriptions: self.subscriptions,
-            next_token: self.next_token,
+            subscriptions: self.subscriptions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

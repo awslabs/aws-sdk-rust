@@ -3,7 +3,7 @@
 /// <p>Describes a security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityGroup {
+pub struct SecurityGroup  {
     /// <p>A description of the security group.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct SecurityGroup {
 }
 impl SecurityGroup {
     /// <p>A description of the security group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The inbound rules associated with the security group.</p>
-    pub fn ip_permissions(&self) -> std::option::Option<&[crate::types::IpPermission]> {
+    pub fn ip_permissions(&self) -> std::option::Option<& [crate::types::IpPermission]> {
         self.ip_permissions.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    pub fn ip_permissions_egress(&self) -> std::option::Option<&[crate::types::IpPermission]> {
+    pub fn ip_permissions_egress(&self) -> std::option::Option<& [crate::types::IpPermission]> {
         self.ip_permissions_egress.as_deref()
     }
     /// <p>Any tags assigned to the security group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
@@ -79,8 +79,7 @@ pub struct SecurityGroupBuilder {
     pub(crate) ip_permissions: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
     pub(crate) owner_id: std::option::Option<std::string::String>,
     pub(crate) group_id: std::option::Option<std::string::String>,
-    pub(crate) ip_permissions_egress:
-        std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    pub(crate) ip_permissions_egress: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_id: std::option::Option<std::string::String>,
 }
@@ -92,8 +91,7 @@ impl SecurityGroupBuilder {
     }
     /// <p>A description of the security group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the security group.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +100,7 @@ impl SecurityGroupBuilder {
     }
     /// <p>The name of the security group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// Appends an item to `ip_permissions`.
     ///
@@ -112,17 +109,13 @@ impl SecurityGroupBuilder {
     /// <p>The inbound rules associated with the security group.</p>
     pub fn ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.ip_permissions.unwrap_or_default();
-        v.push(input);
-        self.ip_permissions = Some(v);
-        self
+                        v.push(input);
+                        self.ip_permissions = Some(v);
+                        self
     }
     /// <p>The inbound rules associated with the security group.</p>
-    pub fn set_ip_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
-        self.ip_permissions = input;
-        self
+    pub fn set_ip_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
+        self.ip_permissions = input; self
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +124,7 @@ impl SecurityGroupBuilder {
     }
     /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the security group.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +133,7 @@ impl SecurityGroupBuilder {
     }
     /// <p>The ID of the security group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Appends an item to `ip_permissions_egress`.
     ///
@@ -151,17 +142,13 @@ impl SecurityGroupBuilder {
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
     pub fn ip_permissions_egress(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.ip_permissions_egress.unwrap_or_default();
-        v.push(input);
-        self.ip_permissions_egress = Some(v);
-        self
+                        v.push(input);
+                        self.ip_permissions_egress = Some(v);
+                        self
     }
     /// <p>[VPC only] The outbound rules associated with the security group.</p>
-    pub fn set_ip_permissions_egress(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
-    ) -> Self {
-        self.ip_permissions_egress = input;
-        self
+    pub fn set_ip_permissions_egress(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
+        self.ip_permissions_egress = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -170,17 +157,13 @@ impl SecurityGroupBuilder {
     /// <p>Any tags assigned to the security group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Any tags assigned to the security group.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,20 +172,28 @@ impl SecurityGroupBuilder {
     }
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Consumes the builder and constructs a [`SecurityGroup`](crate::types::SecurityGroup).
     pub fn build(self) -> crate::types::SecurityGroup {
         crate::types::SecurityGroup {
-            description: self.description,
-            group_name: self.group_name,
-            ip_permissions: self.ip_permissions,
-            owner_id: self.owner_id,
-            group_id: self.group_id,
-            ip_permissions_egress: self.ip_permissions_egress,
-            tags: self.tags,
-            vpc_id: self.vpc_id,
+            description: self.description
+            ,
+            group_name: self.group_name
+            ,
+            ip_permissions: self.ip_permissions
+            ,
+            owner_id: self.owner_id
+            ,
+            group_id: self.group_id
+            ,
+            ip_permissions_egress: self.ip_permissions_egress
+            ,
+            tags: self.tags
+            ,
+            vpc_id: self.vpc_id
+            ,
         }
     }
 }
+

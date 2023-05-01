@@ -4,82 +4,55 @@ pub use crate::operation::list_dataset_contents::_list_dataset_contents_output::
 pub use crate::operation::list_dataset_contents::_list_dataset_contents_input::ListDatasetContentsInputBuilder;
 
 /// Fluent builder constructing a request to `ListDatasetContents`.
-///
+/// 
 /// <p>Lists information about dataset contents that have been created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDatasetContentsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder,
-}
-impl ListDatasetContentsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_dataset_contents::builders::ListDatasetContentsInputBuilder
+            }
+impl ListDatasetContentsFluentBuilder  {
     /// Creates a new `ListDatasetContents`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_dataset_contents::ListDatasetContents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_contents::ListDatasetContentsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_dataset_contents::ListDatasetContentsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_contents::ListDatasetContentsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_dataset_contents::ListDatasetContents, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_dataset_contents::ListDatasetContentsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_dataset_contents::ListDatasetContentsOutput, aws_smithy_http::result::SdkError<crate::operation::list_dataset_contents::ListDatasetContentsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator {
-        crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator {
+                            crate::operation::list_dataset_contents::paginator::ListDatasetContentsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the dataset whose contents information you want to list.</p>
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
@@ -116,10 +89,7 @@ impl ListDatasetContentsFluentBuilder {
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn set_scheduled_on_or_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_on_or_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_on_or_after(input);
         self
     }
@@ -129,11 +99,9 @@ impl ListDatasetContentsFluentBuilder {
         self
     }
     /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</p>
-    pub fn set_scheduled_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_scheduled_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_scheduled_before(input);
         self
     }
 }
+

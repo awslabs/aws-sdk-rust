@@ -3,36 +3,35 @@
 /// <p>The <code>UpdatePipelineStatusRequest</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipelineStatusInput {
+pub struct UpdatePipelineStatusInput  {
     /// <p>The identifier of the pipeline to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The desired status of the pipeline:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <p>The desired status of the pipeline:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li> 
+    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl UpdatePipelineStatusInput {
     /// <p>The identifier of the pipeline to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The desired status of the pipeline:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <p>The desired status of the pipeline:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li> 
+    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 impl UpdatePipelineStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
-    pub fn builder(
-    ) -> crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
+    pub fn builder() -> crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder {
         crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder::default()
     }
 }
@@ -52,39 +51,35 @@ impl UpdatePipelineStatusInputBuilder {
     }
     /// <p>The identifier of the pipeline to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
-    /// <p>The desired status of the pipeline:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <p>The desired status of the pipeline:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li> 
+    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The desired status of the pipeline:</p>
-    /// <ul>
-    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
-    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
+    /// <p>The desired status of the pipeline:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li> 
+    /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_pipeline_status::UpdatePipelineStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_pipeline_status::UpdatePipelineStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_pipeline_status::UpdatePipelineStatusInput {
-                id: self.id,
-                status: self.status,
-            },
+                id: self.id
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

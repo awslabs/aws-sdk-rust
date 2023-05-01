@@ -104,3 +104,4 @@ pub mod builders;
 
 /// Error types that Amazon Kinesis Video Streams Archived Media can respond with.
 pub mod error;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackupOutput {
+pub struct CreateBackupOutput  {
     /// <p>Backup created by request.</p>
     #[doc(hidden)]
     pub backup: std::option::Option<crate::types::Backup>,
@@ -10,15 +10,15 @@ pub struct CreateBackupOutput {
 }
 impl CreateBackupOutput {
     /// <p>Backup created by request.</p>
-    pub fn backup(&self) -> std::option::Option<&crate::types::Backup> {
+    pub fn backup(&self) -> std::option::Option<& crate::types::Backup> {
         self.backup.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBackupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateBackupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupOutput`](crate::operation::create_backup::CreateBackupOutput).
     pub fn builder() -> crate::operation::create_backup::builders::CreateBackupOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateBackupOutputBuilder {
     }
     /// <p>Backup created by request.</p>
     pub fn set_backup(mut self, input: std::option::Option<crate::types::Backup>) -> Self {
-        self.backup = input;
-        self
+        self.backup = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateBackupOutput`](crate::operation::create_backup::CreateBackupOutput).
     pub fn build(self) -> crate::operation::create_backup::CreateBackupOutput {
         crate::operation::create_backup::CreateBackupOutput {
-            backup: self.backup,
+            backup: self.backup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

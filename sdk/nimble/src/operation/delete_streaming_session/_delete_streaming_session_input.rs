@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStreamingSessionInput {
+pub struct DeleteStreamingSessionInput  {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct DeleteStreamingSessionInput {
 }
 impl DeleteStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The streaming session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
 impl DeleteStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder {
         crate::operation::delete_streaming_session::builders::DeleteStreamingSessionInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl DeleteStreamingSessionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The streaming session ID.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DeleteStreamingSessionInputBuilder {
     }
     /// <p>The streaming session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DeleteStreamingSessionInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteStreamingSessionInput`](crate::operation::delete_streaming_session::DeleteStreamingSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_streaming_session::DeleteStreamingSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_streaming_session::DeleteStreamingSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_streaming_session::DeleteStreamingSessionInput {
-                client_token: self.client_token,
-                session_id: self.session_id,
-                studio_id: self.studio_id,
-            },
+                client_token: self.client_token
+                ,
+                session_id: self.session_id
+                ,
+                studio_id: self.studio_id
+                ,
+            }
         )
     }
 }
+

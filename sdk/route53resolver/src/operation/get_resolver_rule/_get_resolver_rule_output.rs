@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverRuleOutput {
+pub struct GetResolverRuleOutput  {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule: std::option::Option<crate::types::ResolverRule>,
@@ -10,19 +10,18 @@ pub struct GetResolverRuleOutput {
 }
 impl GetResolverRuleOutput {
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
-    pub fn resolver_rule(&self) -> std::option::Option<&crate::types::ResolverRule> {
+    pub fn resolver_rule(&self) -> std::option::Option<& crate::types::ResolverRule> {
         self.resolver_rule.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetResolverRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetResolverRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverRuleOutput`](crate::operation::get_resolver_rule::GetResolverRuleOutput).
-    pub fn builder() -> crate::operation::get_resolver_rule::builders::GetResolverRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_resolver_rule::builders::GetResolverRuleOutputBuilder {
         crate::operation::get_resolver_rule::builders::GetResolverRuleOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetResolverRuleOutputBuilder {
         self
     }
     /// <p>Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.</p>
-    pub fn set_resolver_rule(
-        mut self,
-        input: std::option::Option<crate::types::ResolverRule>,
-    ) -> Self {
-        self.resolver_rule = input;
-        self
+    pub fn set_resolver_rule(mut self, input: std::option::Option<crate::types::ResolverRule>) -> Self {
+        self.resolver_rule = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetResolverRuleOutput`](crate::operation::get_resolver_rule::GetResolverRuleOutput).
     pub fn build(self) -> crate::operation::get_resolver_rule::GetResolverRuleOutput {
         crate::operation::get_resolver_rule::GetResolverRuleOutput {
-            resolver_rule: self.resolver_rule,
+            resolver_rule: self.resolver_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

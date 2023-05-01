@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PreviewAgentsOutput {
+pub struct PreviewAgentsOutput  {
     /// <p>The resulting list of agents.</p>
     #[doc(hidden)]
     pub agent_previews: std::option::Option<std::vec::Vec<crate::types::AgentPreview>>,
@@ -13,19 +13,19 @@ pub struct PreviewAgentsOutput {
 }
 impl PreviewAgentsOutput {
     /// <p>The resulting list of agents.</p>
-    pub fn agent_previews(&self) -> std::option::Option<&[crate::types::AgentPreview]> {
+    pub fn agent_previews(&self) -> std::option::Option<& [crate::types::AgentPreview]> {
         self.agent_previews.as_deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PreviewAgentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PreviewAgentsOutput {
     /// Creates a new builder-style object to manufacture [`PreviewAgentsOutput`](crate::operation::preview_agents::PreviewAgentsOutput).
     pub fn builder() -> crate::operation::preview_agents::builders::PreviewAgentsOutputBuilder {
@@ -49,17 +49,13 @@ impl PreviewAgentsOutputBuilder {
     /// <p>The resulting list of agents.</p>
     pub fn agent_previews(mut self, input: crate::types::AgentPreview) -> Self {
         let mut v = self.agent_previews.unwrap_or_default();
-        v.push(input);
-        self.agent_previews = Some(v);
-        self
+                        v.push(input);
+                        self.agent_previews = Some(v);
+                        self
     }
     /// <p>The resulting list of agents.</p>
-    pub fn set_agent_previews(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AgentPreview>>,
-    ) -> Self {
-        self.agent_previews = input;
-        self
+    pub fn set_agent_previews(mut self, input: std::option::Option<std::vec::Vec<crate::types::AgentPreview>>) -> Self {
+        self.agent_previews = input; self
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl PreviewAgentsOutputBuilder {
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PreviewAgentsOutput`](crate::operation::preview_agents::PreviewAgentsOutput).
     pub fn build(self) -> crate::operation::preview_agents::PreviewAgentsOutput {
         crate::operation::preview_agents::PreviewAgentsOutput {
-            agent_previews: self.agent_previews,
-            next_token: self.next_token,
+            agent_previews: self.agent_previews
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

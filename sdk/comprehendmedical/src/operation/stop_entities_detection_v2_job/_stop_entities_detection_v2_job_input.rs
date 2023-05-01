@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEntitiesDetectionV2JobInput {
+pub struct StopEntitiesDetectionV2JobInput  {
     /// <p>The identifier of the medical entities job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopEntitiesDetectionV2JobInput {
     /// <p>The identifier of the medical entities job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl StopEntitiesDetectionV2JobInput {
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionV2JobInput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput).
-    pub fn builder() -> crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobInputBuilder{
+    pub fn builder() -> crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobInputBuilder {
         crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl StopEntitiesDetectionV2JobInputBuilder {
     }
     /// <p>The identifier of the medical entities job to stop.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`StopEntitiesDetectionV2JobInput`](crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2JobInput {
-                job_id: self.job_id,
-            },
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

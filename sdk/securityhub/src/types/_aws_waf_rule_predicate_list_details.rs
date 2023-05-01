@@ -3,7 +3,7 @@
 /// <p>Provides details about the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a rule and, for each object, indicates whether you want to negate the settings. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsWafRulePredicateListDetails {
+pub struct AwsWafRulePredicateListDetails  {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
     #[doc(hidden)]
     pub data_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AwsWafRulePredicateListDetails {
 }
 impl AwsWafRulePredicateListDetails {
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
-    pub fn data_id(&self) -> std::option::Option<&str> {
+    pub fn data_id(&self) -> std::option::Option<& str> {
         self.data_id.as_deref()
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
@@ -24,7 +24,7 @@ impl AwsWafRulePredicateListDetails {
         self.negated
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AwsWafRulePredicateListDetailsBuilder {
     }
     /// <p>A unique identifier for a predicate in a rule, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. </p>
     pub fn set_data_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_id = input;
-        self
+        self.data_id = input; self
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
     pub fn negated(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl AwsWafRulePredicateListDetailsBuilder {
     }
     /// <p>Specifies if you want WAF to allow, block, or count requests based on the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. </p>
     pub fn set_negated(mut self, input: std::option::Option<bool>) -> Self {
-        self.negated = input;
-        self
+        self.negated = input; self
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,19 @@ impl AwsWafRulePredicateListDetailsBuilder {
     }
     /// <p>The type of predicate in a rule, such as <code>ByteMatch</code> or <code>IPSet</code>. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsWafRulePredicateListDetails`](crate::types::AwsWafRulePredicateListDetails).
     pub fn build(self) -> crate::types::AwsWafRulePredicateListDetails {
         crate::types::AwsWafRulePredicateListDetails {
-            data_id: self.data_id,
-            negated: self.negated.unwrap_or_default(),
-            r#type: self.r#type,
+            data_id: self.data_id
+            ,
+            negated: self.negated
+                .unwrap_or_default()
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

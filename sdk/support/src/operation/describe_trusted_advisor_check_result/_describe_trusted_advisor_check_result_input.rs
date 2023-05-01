@@ -3,55 +3,55 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckResultInput {
+pub struct DescribeTrustedAdvisorCheckResultInput  {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
     pub check_id: std::option::Option<std::string::String>,
-    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> std::option::Option<&str> {
+    pub fn check_id(&self) -> std::option::Option<& str> {
         self.check_id.as_deref()
     }
-    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
 }
 impl DescribeTrustedAdvisorCheckResultInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder{
+    pub fn builder() -> crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder {
         crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder::default()
     }
 }
@@ -71,49 +71,47 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.check_id = input;
-        self
+        self.check_id = input; self
     }
-    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
     pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
         self.language = Some(input.into());
         self
     }
-    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
-    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
-    /// <ul>
-    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li>
-    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li>
-    /// <li> <p>English - <code>en</code> </p> </li>
-    /// <li> <p>French - <code>fr</code> </p> </li>
-    /// <li> <p>German - <code>de</code> </p> </li>
-    /// <li> <p>Indonesian - <code>id</code> </p> </li>
-    /// <li> <p>Italian - <code>it</code> </p> </li>
-    /// <li> <p>Japanese - <code>ja</code> </p> </li>
-    /// <li> <p>Korean - <code>ko</code> </p> </li>
-    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
-    /// <li> <p>Spanish - <code>es</code> </p> </li>
+    /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p> 
+    /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p> 
+    /// <ul> 
+    /// <li> <p>Chinese, Simplified - <code>zh</code> </p> </li> 
+    /// <li> <p>Chinese, Traditional - <code>zh_TW</code> </p> </li> 
+    /// <li> <p>English - <code>en</code> </p> </li> 
+    /// <li> <p>French - <code>fr</code> </p> </li> 
+    /// <li> <p>German - <code>de</code> </p> </li> 
+    /// <li> <p>Indonesian - <code>id</code> </p> </li> 
+    /// <li> <p>Italian - <code>it</code> </p> </li> 
+    /// <li> <p>Japanese - <code>ja</code> </p> </li> 
+    /// <li> <p>Korean - <code>ko</code> </p> </li> 
+    /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li> 
+    /// <li> <p>Spanish - <code>es</code> </p> </li> 
     /// </ul>
     pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language = input;
-        self
+        self.language = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
-    pub fn build(self) -> Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput {
                 check_id: self.check_id
@@ -124,3 +122,4 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
         )
     }
 }
+

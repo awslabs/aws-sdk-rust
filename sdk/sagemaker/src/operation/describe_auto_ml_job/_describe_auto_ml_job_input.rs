@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutoMlJobInput {
+pub struct DescribeAutoMlJobInput  {
     /// <p>Requests information about an AutoML job using its unique name.</p>
     #[doc(hidden)]
     pub auto_ml_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeAutoMlJobInput {
     /// <p>Requests information about an AutoML job using its unique name.</p>
-    pub fn auto_ml_job_name(&self) -> std::option::Option<&str> {
+    pub fn auto_ml_job_name(&self) -> std::option::Option<& str> {
         self.auto_ml_job_name.as_deref()
     }
 }
 impl DescribeAutoMlJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoMlJobInput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput).
-    pub fn builder(
-    ) -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder {
         crate::operation::describe_auto_ml_job::builders::DescribeAutoMlJobInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeAutoMlJobInputBuilder {
     }
     /// <p>Requests information about an AutoML job using its unique name.</p>
     pub fn set_auto_ml_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_ml_job_name = input;
-        self
+        self.auto_ml_job_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAutoMlJobInput`](crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_auto_ml_job::DescribeAutoMlJobInput {
-                auto_ml_job_name: self.auto_ml_job_name,
-            },
+                auto_ml_job_name: self.auto_ml_job_name
+                ,
+            }
         )
     }
 }
+

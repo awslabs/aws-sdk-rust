@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionsToEventBridgeInput {
+pub struct UpdateSubscriptionsToEventBridgeInput  {
     /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
     #[doc(hidden)]
     pub force_move: std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl UpdateSubscriptionsToEventBridgeInput {
 }
 impl UpdateSubscriptionsToEventBridgeInput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionsToEventBridgeInput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput).
-    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder{
+    pub fn builder() -> crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder {
         crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder::default()
     }
 }
@@ -35,11 +35,10 @@ impl UpdateSubscriptionsToEventBridgeInputBuilder {
     }
     /// <p>When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your replication instance version is. If not set or set to false, this operation runs only when all your replication instances are from DMS version 3.4.6 or higher. </p>
     pub fn set_force_move(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_move = input;
-        self
+        self.force_move = input; self
     }
     /// Consumes the builder and constructs a [`UpdateSubscriptionsToEventBridgeInput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput).
-    pub fn build(self) -> Result<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeInput {
                 force_move: self.force_move
@@ -48,3 +47,4 @@ impl UpdateSubscriptionsToEventBridgeInputBuilder {
         )
     }
 }
+

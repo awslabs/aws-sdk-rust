@@ -4,90 +4,65 @@ pub use crate::operation::modify_verified_access_instance::_modify_verified_acce
 pub use crate::operation::modify_verified_access_instance::_modify_verified_access_instance_input::ModifyVerifiedAccessInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyVerifiedAccessInstance`.
-///
-/// <p>Modifies the configuration of the specified Verified Access instance.</p>
+/// 
+/// <p>Modifies the configuration of the specified Amazon Web Services Verified Access instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::modify_verified_access_instance::builders::ModifyVerifiedAccessInstanceInputBuilder
             }
-impl ModifyVerifiedAccessInstanceFluentBuilder {
+impl ModifyVerifiedAccessInstanceFluentBuilder  {
     /// Creates a new `ModifyVerifiedAccessInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstance, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
+    /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn set_verified_access_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
-    /// <p>A description for the Amazon Web Services Verified Access instance.</p>
+    /// <p>A description for the Verified Access instance.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>A description for the Amazon Web Services Verified Access instance.</p>
+    /// <p>A description for the Verified Access instance.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
@@ -113,3 +88,4 @@ impl ModifyVerifiedAccessInstanceFluentBuilder {
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains error information for asset property value entries that are associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html">BatchPutAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutAssetPropertyErrorEntry {
+pub struct BatchPutAssetPropertyErrorEntry  {
     /// <p>The ID of the failed entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BatchPutAssetPropertyErrorEntry {
 }
 impl BatchPutAssetPropertyErrorEntry {
     /// <p>The ID of the failed entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> std::option::Option<& str> {
         self.entry_id.as_deref()
     }
     /// <p>The list of update property value errors.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchPutAssetPropertyError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchPutAssetPropertyError]> {
         self.errors.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
     }
     /// <p>The ID of the failed entry.</p>
     pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_id = input;
-        self
+        self.entry_id = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -53,23 +52,22 @@ impl BatchPutAssetPropertyErrorEntryBuilder {
     /// <p>The list of update property value errors.</p>
     pub fn errors(mut self, input: crate::types::BatchPutAssetPropertyError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>The list of update property value errors.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchPutAssetPropertyError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchPutAssetPropertyError>>) -> Self {
+        self.errors = input; self
     }
     /// Consumes the builder and constructs a [`BatchPutAssetPropertyErrorEntry`](crate::types::BatchPutAssetPropertyErrorEntry).
     pub fn build(self) -> crate::types::BatchPutAssetPropertyErrorEntry {
         crate::types::BatchPutAssetPropertyErrorEntry {
-            entry_id: self.entry_id,
-            errors: self.errors,
+            entry_id: self.entry_id
+            ,
+            errors: self.errors
+            ,
         }
     }
 }
+

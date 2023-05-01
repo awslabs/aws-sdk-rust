@@ -3,7 +3,7 @@
 /// <p>Information about a branch of a source repository returned in a list of branches.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceRepositoryBranchesItem {
+pub struct ListSourceRepositoryBranchesItem  {
     /// <p>The Git reference name of the branch.</p>
     #[doc(hidden)]
     pub r#ref: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ListSourceRepositoryBranchesItem {
 }
 impl ListSourceRepositoryBranchesItem {
     /// <p>The Git reference name of the branch.</p>
-    pub fn r#ref(&self) -> std::option::Option<&str> {
+    pub fn r#ref(&self) -> std::option::Option<& str> {
         self.r#ref.as_deref()
     }
     /// <p>The name of the branch.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
-    pub fn head_commit_id(&self) -> std::option::Option<&str> {
+    pub fn head_commit_id(&self) -> std::option::Option<& str> {
         self.head_commit_id.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ListSourceRepositoryBranchesItemBuilder {
     }
     /// <p>The Git reference name of the branch.</p>
     pub fn set_ref(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#ref = input;
-        self
+        self.r#ref = input; self
     }
     /// <p>The name of the branch.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ListSourceRepositoryBranchesItemBuilder {
     }
     /// <p>The name of the branch.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl ListSourceRepositoryBranchesItemBuilder {
         self
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
     pub fn head_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl ListSourceRepositoryBranchesItemBuilder {
     }
     /// <p>The commit ID of the tip of the branch at the time of the request, also known as the head commit.</p>
     pub fn set_head_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.head_commit_id = input;
-        self
+        self.head_commit_id = input; self
     }
     /// Consumes the builder and constructs a [`ListSourceRepositoryBranchesItem`](crate::types::ListSourceRepositoryBranchesItem).
     pub fn build(self) -> crate::types::ListSourceRepositoryBranchesItem {
         crate::types::ListSourceRepositoryBranchesItem {
-            r#ref: self.r#ref,
-            name: self.name,
-            last_updated_time: self.last_updated_time,
-            head_commit_id: self.head_commit_id,
+            r#ref: self.r#ref
+            ,
+            name: self.name
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            head_commit_id: self.head_commit_id
+            ,
         }
     }
 }
+

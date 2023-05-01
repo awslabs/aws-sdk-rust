@@ -28,3 +28,4 @@ pub mod builders;
 
 /// Error types that Amazon SageMaker Feature Store Runtime can respond with.
 pub mod error;
+

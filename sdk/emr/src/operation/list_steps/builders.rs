@@ -4,73 +4,55 @@ pub use crate::operation::list_steps::_list_steps_output::ListStepsOutputBuilder
 pub use crate::operation::list_steps::_list_steps_input::ListStepsInputBuilder;
 
 /// Fluent builder constructing a request to `ListSteps`.
-///
+/// 
 /// <p>Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStepsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_steps::builders::ListStepsInputBuilder,
-}
-impl ListStepsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_steps::builders::ListStepsInputBuilder
+            }
+impl ListStepsFluentBuilder  {
     /// Creates a new `ListSteps`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_steps::ListSteps,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_steps::ListStepsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_steps::ListSteps, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_steps::ListStepsOutput, aws_smithy_http::result::SdkError<crate::operation::list_steps::ListStepsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_steps::paginator::ListStepsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_steps::paginator::ListStepsPaginator {
-        crate::operation::list_steps::paginator::ListStepsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_steps::paginator::ListStepsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_steps::paginator::ListStepsPaginator {
+                            crate::operation::list_steps::paginator::ListStepsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The identifier of the cluster for which to list the steps.</p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
@@ -91,10 +73,7 @@ impl ListStepsFluentBuilder {
         self
     }
     /// <p>The filter to limit the step list based on certain states.</p>
-    pub fn set_step_states(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StepState>>,
-    ) -> Self {
+    pub fn set_step_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::StepState>>) -> Self {
         self.inner = self.inner.set_step_states(input);
         self
     }
@@ -108,10 +87,7 @@ impl ListStepsFluentBuilder {
         self
     }
     /// <p>The filter to limit the step list based on the identifier of the steps. You can specify a maximum of ten Step IDs. The character constraint applies to the overall length of the array.</p>
-    pub fn set_step_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_step_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_step_ids(input);
         self
     }
@@ -126,3 +102,4 @@ impl ListStepsFluentBuilder {
         self
     }
 }
+

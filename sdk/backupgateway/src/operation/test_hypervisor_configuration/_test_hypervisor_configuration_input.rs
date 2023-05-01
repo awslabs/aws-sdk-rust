@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TestHypervisorConfigurationInput {
+pub struct TestHypervisorConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -18,23 +18,23 @@ pub struct TestHypervisorConfigurationInput {
 }
 impl TestHypervisorConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The username for the hypervisor.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password for the hypervisor.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for TestHypervisorConfigurationInput {
+impl  std::fmt::Debug for TestHypervisorConfigurationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TestHypervisorConfigurationInput");
         formatter.field("gateway_arn", &self.gateway_arn);
@@ -46,7 +46,7 @@ impl std::fmt::Debug for TestHypervisorConfigurationInput {
 }
 impl TestHypervisorConfigurationInput {
     /// Creates a new builder-style object to manufacture [`TestHypervisorConfigurationInput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput).
-    pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder {
         crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder::default()
     }
 }
@@ -68,8 +68,7 @@ impl TestHypervisorConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +77,7 @@ impl TestHypervisorConfigurationInputBuilder {
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +86,7 @@ impl TestHypervisorConfigurationInputBuilder {
     }
     /// <p>The username for the hypervisor.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The password for the hypervisor.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,23 +95,21 @@ impl TestHypervisorConfigurationInputBuilder {
     }
     /// <p>The password for the hypervisor.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`TestHypervisorConfigurationInput`](crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput {
-                gateway_arn: self.gateway_arn,
-                host: self.host,
-                username: self.username,
-                password: self.password,
-            },
+                gateway_arn: self.gateway_arn
+                ,
+                host: self.host
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+            }
         )
     }
 }
@@ -128,3 +123,4 @@ impl std::fmt::Debug for TestHypervisorConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

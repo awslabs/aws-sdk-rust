@@ -3,7 +3,7 @@
 /// The transport parameters that you want to associate with an incoming media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputConfigurationRequest {
+pub struct InputConfigurationRequest  {
     /// The port that you want the flow to listen on for an incoming media stream.
     #[doc(hidden)]
     pub input_port: i32,
@@ -17,7 +17,7 @@ impl InputConfigurationRequest {
         self.input_port
     }
     /// The VPC interface that you want to use for the incoming media stream.
-    pub fn interface(&self) -> std::option::Option<&crate::types::InterfaceRequest> {
+    pub fn interface(&self) -> std::option::Option<& crate::types::InterfaceRequest> {
         self.interface.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl InputConfigurationRequestBuilder {
     }
     /// The port that you want the flow to listen on for an incoming media stream.
     pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.input_port = input;
-        self
+        self.input_port = input; self
     }
     /// The VPC interface that you want to use for the incoming media stream.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
@@ -52,18 +51,18 @@ impl InputConfigurationRequestBuilder {
         self
     }
     /// The VPC interface that you want to use for the incoming media stream.
-    pub fn set_interface(
-        mut self,
-        input: std::option::Option<crate::types::InterfaceRequest>,
-    ) -> Self {
-        self.interface = input;
-        self
+    pub fn set_interface(mut self, input: std::option::Option<crate::types::InterfaceRequest>) -> Self {
+        self.interface = input; self
     }
     /// Consumes the builder and constructs a [`InputConfigurationRequest`](crate::types::InputConfigurationRequest).
     pub fn build(self) -> crate::types::InputConfigurationRequest {
         crate::types::InputConfigurationRequest {
-            input_port: self.input_port.unwrap_or_default(),
-            interface: self.interface,
+            input_port: self.input_port
+                .unwrap_or_default()
+            ,
+            interface: self.interface
+            ,
         }
     }
 }
+

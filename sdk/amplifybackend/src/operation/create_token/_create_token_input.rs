@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTokenInput {
+pub struct CreateTokenInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl CreateTokenInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl CreateTokenInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateTokenInput`](crate::operation::create_token::CreateTokenInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_token::CreateTokenInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_token::CreateTokenInput {
-            app_id: self.app_id,
-        })
+    pub fn build(self) -> Result<crate::operation::create_token::CreateTokenInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_token::CreateTokenInput {
+                app_id: self.app_id
+                ,
+            }
+        )
     }
 }
+

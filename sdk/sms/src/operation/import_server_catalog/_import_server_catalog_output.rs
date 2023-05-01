@@ -2,20 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportServerCatalogOutput {
+pub struct ImportServerCatalogOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ImportServerCatalogOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportServerCatalogOutput {
     /// Creates a new builder-style object to manufacture [`ImportServerCatalogOutput`](crate::operation::import_server_catalog::ImportServerCatalogOutput).
-    pub fn builder(
-    ) -> crate::operation::import_server_catalog::builders::ImportServerCatalogOutputBuilder {
-        crate::operation::import_server_catalog::builders::ImportServerCatalogOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_server_catalog::builders::ImportServerCatalogOutputBuilder {
+        crate::operation::import_server_catalog::builders::ImportServerCatalogOutputBuilder::default()
     }
 }
 
@@ -27,14 +25,14 @@ pub struct ImportServerCatalogOutputBuilder {
 }
 impl ImportServerCatalogOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportServerCatalogOutput`](crate::operation::import_server_catalog::ImportServerCatalogOutput).
     pub fn build(self) -> crate::operation::import_server_catalog::ImportServerCatalogOutput {
         crate::operation::import_server_catalog::ImportServerCatalogOutput {
@@ -42,3 +40,4 @@ impl ImportServerCatalogOutputBuilder {
         }
     }
 }
+

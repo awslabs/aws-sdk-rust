@@ -3,7 +3,7 @@
 /// <p>An integer parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntegerParameter {
+pub struct IntegerParameter  {
     /// <p>The name of the integer parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IntegerParameter {
 }
 impl IntegerParameter {
     /// <p>The name of the integer parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The values for the integer parameter.</p>
-    pub fn values(&self) -> std::option::Option<&[i64]> {
+    pub fn values(&self) -> std::option::Option<& [i64]> {
         self.values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl IntegerParameterBuilder {
     }
     /// <p>The name of the integer parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -53,20 +52,22 @@ impl IntegerParameterBuilder {
     /// <p>The values for the integer parameter.</p>
     pub fn values(mut self, input: i64) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>The values for the integer parameter.</p>
     pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
-        self.values = input;
-        self
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`IntegerParameter`](crate::types::IntegerParameter).
     pub fn build(self) -> crate::types::IntegerParameter {
         crate::types::IntegerParameter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

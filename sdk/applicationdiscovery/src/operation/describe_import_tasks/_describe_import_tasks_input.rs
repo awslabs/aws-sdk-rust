@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImportTasksInput {
+pub struct DescribeImportTasksInput  {
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::ImportTaskFilter>>,
@@ -15,7 +15,7 @@ pub struct DescribeImportTasksInput {
 }
 impl DescribeImportTasksInput {
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::ImportTaskFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::ImportTaskFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
@@ -23,16 +23,14 @@ impl DescribeImportTasksInput {
         self.max_results
     }
     /// <p>The token to request a specific page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeImportTasksInput {
     /// Creates a new builder-style object to manufacture [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
-    pub fn builder(
-    ) -> crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder {
-        crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder {
+        crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder::default()
     }
 }
 
@@ -52,17 +50,13 @@ impl DescribeImportTasksInputBuilder {
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
     pub fn filters(mut self, input: crate::types::ImportTaskFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code> request to a specific subset of results. Currently, wildcard values aren't supported for filters.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportTaskFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportTaskFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -71,8 +65,7 @@ impl DescribeImportTasksInputBuilder {
     }
     /// <p>The maximum number of results that you want this request to return, up to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to request a specific page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +74,20 @@ impl DescribeImportTasksInputBuilder {
     }
     /// <p>The token to request a specific page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeImportTasksInput`](crate::operation::describe_import_tasks::DescribeImportTasksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_import_tasks::DescribeImportTasksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_import_tasks::DescribeImportTasksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_import_tasks::DescribeImportTasksInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

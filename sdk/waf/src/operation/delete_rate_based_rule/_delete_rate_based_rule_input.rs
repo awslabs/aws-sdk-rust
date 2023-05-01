@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRateBasedRuleInput {
+pub struct DeleteRateBasedRuleInput  {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct DeleteRateBasedRuleInput {
 }
 impl DeleteRateBasedRuleInput {
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl DeleteRateBasedRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteRateBasedRuleInput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder {
-        crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder {
+        crate::operation::delete_rate_based_rule::builders::DeleteRateBasedRuleInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl DeleteRateBasedRuleInputBuilder {
     }
     /// <p>The <code>RuleId</code> of the <code>RateBasedRule</code> that you want to delete. <code>RuleId</code> is returned by <code>CreateRateBasedRule</code> and by <code>ListRateBasedRules</code>.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DeleteRateBasedRuleInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRateBasedRuleInput`](crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_rate_based_rule::DeleteRateBasedRuleInput {
-                rule_id: self.rule_id,
-                change_token: self.change_token,
-            },
+                rule_id: self.rule_id
+                ,
+                change_token: self.change_token
+                ,
+            }
         )
     }
 }
+

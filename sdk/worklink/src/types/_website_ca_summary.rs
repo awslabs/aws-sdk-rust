@@ -3,7 +3,7 @@
 /// <p>The summary of the certificate authority (CA).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebsiteCaSummary {
+pub struct WebsiteCaSummary  {
     /// <p>A unique identifier for the CA.</p>
     #[doc(hidden)]
     pub website_ca_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct WebsiteCaSummary {
 }
 impl WebsiteCaSummary {
     /// <p>A unique identifier for the CA.</p>
-    pub fn website_ca_id(&self) -> std::option::Option<&str> {
+    pub fn website_ca_id(&self) -> std::option::Option<& str> {
         self.website_ca_id.as_deref()
     }
     /// <p>The time when the CA was added.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl WebsiteCaSummaryBuilder {
     }
     /// <p>A unique identifier for the CA.</p>
     pub fn set_website_ca_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.website_ca_id = input;
-        self
+        self.website_ca_id = input; self
     }
     /// <p>The time when the CA was added.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -60,12 +59,8 @@ impl WebsiteCaSummaryBuilder {
         self
     }
     /// <p>The time when the CA was added.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl WebsiteCaSummaryBuilder {
     }
     /// <p>The name to display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// Consumes the builder and constructs a [`WebsiteCaSummary`](crate::types::WebsiteCaSummary).
     pub fn build(self) -> crate::types::WebsiteCaSummary {
         crate::types::WebsiteCaSummary {
-            website_ca_id: self.website_ca_id,
-            created_time: self.created_time,
-            display_name: self.display_name,
+            website_ca_id: self.website_ca_id
+            ,
+            created_time: self.created_time
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

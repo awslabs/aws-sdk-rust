@@ -202,6 +202,15 @@ pub mod get_journey_execution_activity_metrics;
 /// Types for the `GetJourneyExecutionMetrics` operation.
 pub mod get_journey_execution_metrics;
 
+/// Types for the `GetJourneyRunExecutionActivityMetrics` operation.
+pub mod get_journey_run_execution_activity_metrics;
+
+/// Types for the `GetJourneyRunExecutionMetrics` operation.
+pub mod get_journey_run_execution_metrics;
+
+/// Types for the `GetJourneyRuns` operation.
+pub mod get_journey_runs;
+
 /// Types for the `GetPushTemplate` operation.
 pub mod get_push_template;
 
@@ -357,3 +366,4 @@ pub mod update_voice_template;
 
 /// Types for the `VerifyOTPMessage` operation.
 pub mod verify_otp_message;
+

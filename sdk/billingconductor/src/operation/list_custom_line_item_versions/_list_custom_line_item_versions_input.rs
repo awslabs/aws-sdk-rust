@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomLineItemVersionsInput {
+pub struct ListCustomLineItemVersionsInput  {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListCustomLineItemVersionsInput {
 }
 impl ListCustomLineItemVersionsInput {
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The maximum number of custom line item versions to retrieve.</p>
@@ -26,17 +26,17 @@ impl ListCustomLineItemVersionsInput {
         self.max_results
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ListCustomLineItemVersionsFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ListCustomLineItemVersionsFilter> {
         self.filters.as_ref()
     }
 }
 impl ListCustomLineItemVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemVersionsInput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput).
-    pub fn builder() -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder {
         crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListCustomLineItemVersionsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The maximum number of custom line item versions to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +67,7 @@ impl ListCustomLineItemVersionsInputBuilder {
     }
     /// <p>The maximum number of custom line item versions to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl ListCustomLineItemVersionsInputBuilder {
     }
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
     pub fn filters(mut self, input: crate::types::ListCustomLineItemVersionsFilter) -> Self {
@@ -87,27 +84,23 @@ impl ListCustomLineItemVersionsInputBuilder {
         self
     }
     /// <p>A <code>ListCustomLineItemVersionsFilter</code> that specifies the billing period range in which the custom line item versions are applied.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ListCustomLineItemVersionsFilter>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListCustomLineItemVersionsFilter>) -> Self {
+        self.filters = input; self
     }
     /// Consumes the builder and constructs a [`ListCustomLineItemVersionsInput`](crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsInput {
-                arn: self.arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                filters: self.filters,
-            },
+                arn: self.arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

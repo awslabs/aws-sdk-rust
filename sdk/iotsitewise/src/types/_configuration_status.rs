@@ -3,7 +3,7 @@
 /// <p>Contains current status information for the configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationStatus {
+pub struct ConfigurationStatus  {
     /// <p>The current state of the configuration.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::ConfigurationState>,
@@ -13,11 +13,11 @@ pub struct ConfigurationStatus {
 }
 impl ConfigurationStatus {
     /// <p>The current state of the configuration.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ConfigurationState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ConfigurationErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::types::ConfigurationErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ConfigurationStatusBuilder {
         self
     }
     /// <p>The current state of the configuration.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::ConfigurationState>) -> Self {
+        self.state = input; self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::ConfigurationErrorDetails) -> Self {
@@ -55,18 +51,17 @@ impl ConfigurationStatusBuilder {
         self
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn set_error(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationErrorDetails>,
-    ) -> Self {
-        self.error = input;
-        self
+    pub fn set_error(mut self, input: std::option::Option<crate::types::ConfigurationErrorDetails>) -> Self {
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`ConfigurationStatus`](crate::types::ConfigurationStatus).
     pub fn build(self) -> crate::types::ConfigurationStatus {
         crate::types::ConfigurationStatus {
-            state: self.state,
-            error: self.error,
+            state: self.state
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

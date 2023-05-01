@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPartnerAccountOutput {
+pub struct GetPartnerAccountOutput  {
     /// <p>The Sidewalk account credentials.</p>
     #[doc(hidden)]
     pub sidewalk: std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
@@ -13,9 +13,7 @@ pub struct GetPartnerAccountOutput {
 }
 impl GetPartnerAccountOutput {
     /// <p>The Sidewalk account credentials.</p>
-    pub fn sidewalk(
-        &self,
-    ) -> std::option::Option<&crate::types::SidewalkAccountInfoWithFingerprint> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::types::SidewalkAccountInfoWithFingerprint> {
         self.sidewalk.as_ref()
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
@@ -24,14 +22,13 @@ impl GetPartnerAccountOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetPartnerAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetPartnerAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder {
+    pub fn builder() -> crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder {
         crate::operation::get_partner_account::builders::GetPartnerAccountOutputBuilder::default()
     }
 }
@@ -51,12 +48,8 @@ impl GetPartnerAccountOutputBuilder {
         self
     }
     /// <p>The Sidewalk account credentials.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>,
-    ) -> Self {
-        self.sidewalk = input;
-        self
+    pub fn set_sidewalk(mut self, input: std::option::Option<crate::types::SidewalkAccountInfoWithFingerprint>) -> Self {
+        self.sidewalk = input; self
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub fn account_linked(mut self, input: bool) -> Self {
@@ -65,24 +58,27 @@ impl GetPartnerAccountOutputBuilder {
     }
     /// <p>Whether the partner account is linked to the AWS account.</p>
     pub fn set_account_linked(mut self, input: std::option::Option<bool>) -> Self {
-        self.account_linked = input;
-        self
+        self.account_linked = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetPartnerAccountOutput`](crate::operation::get_partner_account::GetPartnerAccountOutput).
     pub fn build(self) -> crate::operation::get_partner_account::GetPartnerAccountOutput {
         crate::operation::get_partner_account::GetPartnerAccountOutput {
-            sidewalk: self.sidewalk,
-            account_linked: self.account_linked.unwrap_or_default(),
+            sidewalk: self.sidewalk
+            ,
+            account_linked: self.account_linked
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

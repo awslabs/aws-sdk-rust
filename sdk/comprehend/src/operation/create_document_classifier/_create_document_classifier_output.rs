@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDocumentClassifierOutput {
+pub struct CreateDocumentClassifierOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
     #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateDocumentClassifierOutput {
 }
 impl CreateDocumentClassifierOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+    pub fn document_classifier_arn(&self) -> std::option::Option<& str> {
         self.document_classifier_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDocumentClassifierOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput).
-    pub fn builder(
-    ) -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_document_classifier::builders::CreateDocumentClassifierOutputBuilder {
         crate::operation::create_document_classifier::builders::CreateDocumentClassifierOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl CreateDocumentClassifierOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.document_classifier_arn = input;
-        self
+    pub fn set_document_classifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.document_classifier_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDocumentClassifierOutput`](crate::operation::create_document_classifier::CreateDocumentClassifierOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_document_classifier::CreateDocumentClassifierOutput {
+    pub fn build(self) -> crate::operation::create_document_classifier::CreateDocumentClassifierOutput {
         crate::operation::create_document_classifier::CreateDocumentClassifierOutput {
-            document_classifier_arn: self.document_classifier_arn,
+            document_classifier_arn: self.document_classifier_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

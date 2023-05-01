@@ -3,7 +3,7 @@
 /// <p>The response from the server for a registration request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignUpOutput {
+pub struct SignUpOutput  {
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     #[doc(hidden)]
     pub user_confirmed: bool,
@@ -21,21 +21,19 @@ impl SignUpOutput {
         self.user_confirmed
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    pub fn code_delivery_details(
-        &self,
-    ) -> std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    pub fn code_delivery_details(&self) -> std::option::Option<& crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
-    pub fn user_sub(&self) -> std::option::Option<&str> {
+    pub fn user_sub(&self) -> std::option::Option<& str> {
         self.user_sub.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SignUpOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SignUpOutput {
     /// Creates a new builder-style object to manufacture [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
     pub fn builder() -> crate::operation::sign_up::builders::SignUpOutputBuilder {
@@ -60,8 +58,7 @@ impl SignUpOutputBuilder {
     }
     /// <p>A response from the server indicating that a user registration has been confirmed.</p>
     pub fn set_user_confirmed(mut self, input: std::option::Option<bool>) -> Self {
-        self.user_confirmed = input;
-        self
+        self.user_confirmed = input; self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
@@ -69,12 +66,8 @@ impl SignUpOutputBuilder {
         self
     }
     /// <p>The code delivery details returned by the server response to the user registration request.</p>
-    pub fn set_code_delivery_details(
-        mut self,
-        input: std::option::Option<crate::types::CodeDeliveryDetailsType>,
-    ) -> Self {
-        self.code_delivery_details = input;
-        self
+    pub fn set_code_delivery_details(mut self, input: std::option::Option<crate::types::CodeDeliveryDetailsType>) -> Self {
+        self.code_delivery_details = input; self
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn user_sub(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,25 +76,29 @@ impl SignUpOutputBuilder {
     }
     /// <p>The UUID of the authenticated user. This isn't the same as <code>username</code>.</p>
     pub fn set_user_sub(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_sub = input;
-        self
+        self.user_sub = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SignUpOutput`](crate::operation::sign_up::SignUpOutput).
     pub fn build(self) -> crate::operation::sign_up::SignUpOutput {
         crate::operation::sign_up::SignUpOutput {
-            user_confirmed: self.user_confirmed.unwrap_or_default(),
-            code_delivery_details: self.code_delivery_details,
-            user_sub: self.user_sub,
+            user_confirmed: self.user_confirmed
+                .unwrap_or_default()
+            ,
+            code_delivery_details: self.code_delivery_details
+            ,
+            user_sub: self.user_sub
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

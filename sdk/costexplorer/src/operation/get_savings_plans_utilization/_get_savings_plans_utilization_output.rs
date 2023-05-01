@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansUtilizationOutput {
+pub struct GetSavingsPlansUtilizationOutput  {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
     #[doc(hidden)]
-    pub savings_plans_utilizations_by_time:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
+    pub savings_plans_utilizations_by_time: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
@@ -14,24 +13,22 @@ pub struct GetSavingsPlansUtilizationOutput {
 }
 impl GetSavingsPlansUtilizationOutput {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-    pub fn savings_plans_utilizations_by_time(
-        &self,
-    ) -> std::option::Option<&[crate::types::SavingsPlansUtilizationByTime]> {
+    pub fn savings_plans_utilizations_by_time(&self) -> std::option::Option<& [crate::types::SavingsPlansUtilizationByTime]> {
         self.savings_plans_utilizations_by_time.as_deref()
     }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
-    pub fn total(&self) -> std::option::Option<&crate::types::SavingsPlansUtilizationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::types::SavingsPlansUtilizationAggregates> {
         self.total.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSavingsPlansUtilizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSavingsPlansUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationOutput`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput).
-    pub fn builder() -> crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationOutputBuilder{
+    pub fn builder() -> crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationOutputBuilder {
         crate::operation::get_savings_plans_utilization::builders::GetSavingsPlansUtilizationOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl GetSavingsPlansUtilizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationOutputBuilder {
-    pub(crate) savings_plans_utilizations_by_time:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
+    pub(crate) savings_plans_utilizations_by_time: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
     pub(crate) total: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl GetSavingsPlansUtilizationOutputBuilder {
     /// To override the contents of this collection use [`set_savings_plans_utilizations_by_time`](Self::set_savings_plans_utilizations_by_time).
     ///
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-    pub fn savings_plans_utilizations_by_time(
-        mut self,
-        input: crate::types::SavingsPlansUtilizationByTime,
-    ) -> Self {
+    pub fn savings_plans_utilizations_by_time(mut self, input: crate::types::SavingsPlansUtilizationByTime) -> Self {
         let mut v = self.savings_plans_utilizations_by_time.unwrap_or_default();
-        v.push(input);
-        self.savings_plans_utilizations_by_time = Some(v);
-        self
+                        v.push(input);
+                        self.savings_plans_utilizations_by_time = Some(v);
+                        self
     }
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
-    pub fn set_savings_plans_utilizations_by_time(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>,
-    ) -> Self {
-        self.savings_plans_utilizations_by_time = input;
-        self
+    pub fn set_savings_plans_utilizations_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationByTime>>) -> Self {
+        self.savings_plans_utilizations_by_time = input; self
     }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     pub fn total(mut self, input: crate::types::SavingsPlansUtilizationAggregates) -> Self {
@@ -74,30 +63,27 @@ impl GetSavingsPlansUtilizationOutputBuilder {
         self
     }
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
-    pub fn set_total(
-        mut self,
-        input: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
-    ) -> Self {
-        self.total = input;
-        self
+    pub fn set_total(mut self, input: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>) -> Self {
+        self.total = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationOutput`](crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput {
+    pub fn build(self) -> crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput {
         crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput {
-            savings_plans_utilizations_by_time: self.savings_plans_utilizations_by_time,
-            total: self.total,
+            savings_plans_utilizations_by_time: self.savings_plans_utilizations_by_time
+            ,
+            total: self.total
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotLocaleOutput {
+pub struct DeleteBotLocaleOutput  {
     /// <p>The identifier of the bot that contained the deleted locale.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -19,31 +19,30 @@ pub struct DeleteBotLocaleOutput {
 }
 impl DeleteBotLocaleOutput {
     /// <p>The identifier of the bot that contained the deleted locale.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contained the deleted locale.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the deleted locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<&crate::types::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<& crate::types::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteBotLocaleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBotLocaleOutput`](crate::operation::delete_bot_locale::DeleteBotLocaleOutput).
-    pub fn builder() -> crate::operation::delete_bot_locale::builders::DeleteBotLocaleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_bot_locale::builders::DeleteBotLocaleOutputBuilder {
         crate::operation::delete_bot_locale::builders::DeleteBotLocaleOutputBuilder::default()
     }
 }
@@ -66,8 +65,7 @@ impl DeleteBotLocaleOutputBuilder {
     }
     /// <p>The identifier of the bot that contained the deleted locale.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot that contained the deleted locale.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +74,7 @@ impl DeleteBotLocaleOutputBuilder {
     }
     /// <p>The version of the bot that contained the deleted locale.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The language and locale of the deleted locale.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +83,7 @@ impl DeleteBotLocaleOutputBuilder {
     }
     /// <p>The language and locale of the deleted locale.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
@@ -95,30 +91,31 @@ impl DeleteBotLocaleOutputBuilder {
         self
     }
     /// <p>The status of deleting the bot locale. The locale first enters the <code>Deleting</code> status. Once the locale is deleted it no longer appears in the list of locales for the bot.</p>
-    pub fn set_bot_locale_status(
-        mut self,
-        input: std::option::Option<crate::types::BotLocaleStatus>,
-    ) -> Self {
-        self.bot_locale_status = input;
-        self
+    pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::types::BotLocaleStatus>) -> Self {
+        self.bot_locale_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteBotLocaleOutput`](crate::operation::delete_bot_locale::DeleteBotLocaleOutput).
     pub fn build(self) -> crate::operation::delete_bot_locale::DeleteBotLocaleOutput {
         crate::operation::delete_bot_locale::DeleteBotLocaleOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            bot_locale_status: self.bot_locale_status,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            bot_locale_status: self.bot_locale_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

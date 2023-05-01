@@ -2,20 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCaCertificateOutput {
+pub struct UpdateCaCertificateOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateCaCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateCaCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCaCertificateOutput`](crate::operation::update_ca_certificate::UpdateCaCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::update_ca_certificate::builders::UpdateCaCertificateOutputBuilder {
-        crate::operation::update_ca_certificate::builders::UpdateCaCertificateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_ca_certificate::builders::UpdateCaCertificateOutputBuilder {
+        crate::operation::update_ca_certificate::builders::UpdateCaCertificateOutputBuilder::default()
     }
 }
 
@@ -27,14 +25,14 @@ pub struct UpdateCaCertificateOutputBuilder {
 }
 impl UpdateCaCertificateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateCaCertificateOutput`](crate::operation::update_ca_certificate::UpdateCaCertificateOutput).
     pub fn build(self) -> crate::operation::update_ca_certificate::UpdateCaCertificateOutput {
         crate::operation::update_ca_certificate::UpdateCaCertificateOutput {
@@ -42,3 +40,4 @@ impl UpdateCaCertificateOutputBuilder {
         }
     }
 }
+

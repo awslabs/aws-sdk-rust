@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchRoomsOutput {
+pub struct SearchRoomsOutput  {
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
     #[doc(hidden)]
     pub rooms: std::option::Option<std::vec::Vec<crate::types::RoomData>>,
@@ -16,11 +16,11 @@ pub struct SearchRoomsOutput {
 }
 impl SearchRoomsOutput {
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
-    pub fn rooms(&self) -> std::option::Option<&[crate::types::RoomData]> {
+    pub fn rooms(&self) -> std::option::Option<& [crate::types::RoomData]> {
         self.rooms.as_deref()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of rooms returned.</p>
@@ -29,10 +29,10 @@ impl SearchRoomsOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchRoomsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchRoomsOutput {
     /// Creates a new builder-style object to manufacture [`SearchRoomsOutput`](crate::operation::search_rooms::SearchRoomsOutput).
     pub fn builder() -> crate::operation::search_rooms::builders::SearchRoomsOutputBuilder {
@@ -57,17 +57,13 @@ impl SearchRoomsOutputBuilder {
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
     pub fn rooms(mut self, input: crate::types::RoomData) -> Self {
         let mut v = self.rooms.unwrap_or_default();
-        v.push(input);
-        self.rooms = Some(v);
-        self
+                        v.push(input);
+                        self.rooms = Some(v);
+                        self
     }
     /// <p>The rooms that meet the specified set of filter criteria, in sort order.</p>
-    pub fn set_rooms(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoomData>>,
-    ) -> Self {
-        self.rooms = input;
-        self
+    pub fn set_rooms(mut self, input: std::option::Option<std::vec::Vec<crate::types::RoomData>>) -> Self {
+        self.rooms = input; self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +72,7 @@ impl SearchRoomsOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The total number of rooms returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -86,25 +81,28 @@ impl SearchRoomsOutputBuilder {
     }
     /// <p>The total number of rooms returned.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchRoomsOutput`](crate::operation::search_rooms::SearchRoomsOutput).
     pub fn build(self) -> crate::operation::search_rooms::SearchRoomsOutput {
         crate::operation::search_rooms::SearchRoomsOutput {
-            rooms: self.rooms,
-            next_token: self.next_token,
-            total_count: self.total_count,
+            rooms: self.rooms
+            ,
+            next_token: self.next_token
+            ,
+            total_count: self.total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

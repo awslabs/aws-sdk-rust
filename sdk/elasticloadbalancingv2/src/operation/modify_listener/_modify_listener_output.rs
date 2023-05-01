@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyListenerOutput {
+pub struct ModifyListenerOutput  {
     /// <p>Information about the modified listener.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::types::Listener>>,
@@ -10,15 +10,15 @@ pub struct ModifyListenerOutput {
 }
 impl ModifyListenerOutput {
     /// <p>Information about the modified listener.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::types::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::types::Listener]> {
         self.listeners.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyListenerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyListenerOutput {
     /// Creates a new builder-style object to manufacture [`ModifyListenerOutput`](crate::operation::modify_listener::ModifyListenerOutput).
     pub fn builder() -> crate::operation::modify_listener::builders::ModifyListenerOutputBuilder {
@@ -41,32 +41,30 @@ impl ModifyListenerOutputBuilder {
     /// <p>Information about the modified listener.</p>
     pub fn listeners(mut self, input: crate::types::Listener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
-        v.push(input);
-        self.listeners = Some(v);
-        self
+                        v.push(input);
+                        self.listeners = Some(v);
+                        self
     }
     /// <p>Information about the modified listener.</p>
-    pub fn set_listeners(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Listener>>,
-    ) -> Self {
-        self.listeners = input;
-        self
+    pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::types::Listener>>) -> Self {
+        self.listeners = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyListenerOutput`](crate::operation::modify_listener::ModifyListenerOutput).
     pub fn build(self) -> crate::operation::modify_listener::ModifyListenerOutput {
         crate::operation::modify_listener::ModifyListenerOutput {
-            listeners: self.listeners,
+            listeners: self.listeners
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

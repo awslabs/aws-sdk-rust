@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQuerySuggestionsInput {
+pub struct GetQuerySuggestionsInput  {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
-    /// <p>The text of a user's query to generate query suggestions.</p>
-    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>The text of a user's query to generate query suggestions.</p> 
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p> 
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     #[doc(hidden)]
     pub query_text: std::option::Option<std::string::String>,
@@ -17,13 +17,13 @@ pub struct GetQuerySuggestionsInput {
 }
 impl GetQuerySuggestionsInput {
     /// <p>The identifier of the index you want to get query suggestions from.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
-    /// <p>The text of a user's query to generate query suggestions.</p>
-    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>The text of a user's query to generate query suggestions.</p> 
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p> 
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
-    pub fn query_text(&self) -> std::option::Option<&str> {
+    pub fn query_text(&self) -> std::option::Option<& str> {
         self.query_text.as_deref()
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
@@ -33,10 +33,8 @@ impl GetQuerySuggestionsInput {
 }
 impl GetQuerySuggestionsInput {
     /// Creates a new builder-style object to manufacture [`GetQuerySuggestionsInput`](crate::operation::get_query_suggestions::GetQuerySuggestionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder {
-        crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder {
+        crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder::default()
     }
 }
 
@@ -56,22 +54,20 @@ impl GetQuerySuggestionsInputBuilder {
     }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
-    /// <p>The text of a user's query to generate query suggestions.</p>
-    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>The text of a user's query to generate query suggestions.</p> 
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p> 
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
         self.query_text = Some(input.into());
         self
     }
-    /// <p>The text of a user's query to generate query suggestions.</p>
-    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
+    /// <p>The text of a user's query to generate query suggestions.</p> 
+    /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p> 
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
     pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_text = input;
-        self
+        self.query_text = input; self
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn max_suggestions_count(mut self, input: i32) -> Self {
@@ -80,22 +76,20 @@ impl GetQuerySuggestionsInputBuilder {
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
     pub fn set_max_suggestions_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_suggestions_count = input;
-        self
+        self.max_suggestions_count = input; self
     }
     /// Consumes the builder and constructs a [`GetQuerySuggestionsInput`](crate::operation::get_query_suggestions::GetQuerySuggestionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_query_suggestions::GetQuerySuggestionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_query_suggestions::GetQuerySuggestionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_query_suggestions::GetQuerySuggestionsInput {
-                index_id: self.index_id,
-                query_text: self.query_text,
-                max_suggestions_count: self.max_suggestions_count,
-            },
+                index_id: self.index_id
+                ,
+                query_text: self.query_text
+                ,
+                max_suggestions_count: self.max_suggestions_count
+                ,
+            }
         )
     }
 }
+

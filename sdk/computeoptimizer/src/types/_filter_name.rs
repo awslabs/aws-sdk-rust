@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let filtername = unimplemented!();
 /// match filtername {
@@ -31,22 +31,14 @@
 /// Specifically, when `filtername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FilterName {
     #[allow(missing_docs)] // documentation missing in model
     Finding,
@@ -55,42 +47,43 @@ pub enum FilterName {
     #[allow(missing_docs)] // documentation missing in model
     RecommendationSourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FilterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "Finding" => FilterName::Finding,
-            "FindingReasonCodes" => FilterName::FindingReasonCodes,
-            "RecommendationSourceType" => FilterName::RecommendationSourceType,
-            other => FilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Finding" => FilterName::Finding,
+"FindingReasonCodes" => FilterName::FindingReasonCodes,
+"RecommendationSourceType" => FilterName::RecommendationSourceType,
+other => FilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FilterName::from(s))
+                }
+            }
 impl FilterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FilterName::Finding => "Finding",
-            FilterName::FindingReasonCodes => "FindingReasonCodes",
-            FilterName::RecommendationSourceType => "RecommendationSourceType",
-            FilterName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["Finding", "FindingReasonCodes", "RecommendationSourceType"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FilterName::Finding => "Finding",
+    FilterName::FindingReasonCodes => "FindingReasonCodes",
+    FilterName::RecommendationSourceType => "RecommendationSourceType",
+    FilterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Finding", "FindingReasonCodes", "RecommendationSourceType"]
+                }
+            }
 impl AsRef<str> for FilterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

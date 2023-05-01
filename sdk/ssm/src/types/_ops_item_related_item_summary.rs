@@ -3,7 +3,7 @@
 /// <p>Summary information about related-item resources for an OpsItem.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsItemRelatedItemSummary {
+pub struct OpsItemRelatedItemSummary  {
     /// <p>The OpsItem ID.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct OpsItemRelatedItemSummary {
 }
 impl OpsItemRelatedItemSummary {
     /// <p>The OpsItem ID.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The association ID.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The association type.</p>
-    pub fn association_type(&self) -> std::option::Option<&str> {
+    pub fn association_type(&self) -> std::option::Option<& str> {
         self.association_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
-    pub fn resource_uri(&self) -> std::option::Option<&str> {
+    pub fn resource_uri(&self) -> std::option::Option<& str> {
         self.resource_uri.as_deref()
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::OpsItemIdentity> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::OpsItemIdentity> {
         self.created_by.as_ref()
     }
     /// <p>The time the related-item association was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::OpsItemIdentity> {
+    pub fn last_modified_by(&self) -> std::option::Option<& crate::types::OpsItemIdentity> {
         self.last_modified_by.as_ref()
     }
     /// <p>The time the related-item association was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl OpsItemRelatedItemSummaryBuilder {
     }
     /// <p>The OpsItem ID.</p>
     pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>The association ID.</p>
     pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl OpsItemRelatedItemSummaryBuilder {
     }
     /// <p>The association ID.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl OpsItemRelatedItemSummaryBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The association type.</p>
     pub fn association_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +126,7 @@ impl OpsItemRelatedItemSummaryBuilder {
     }
     /// <p>The association type.</p>
     pub fn set_association_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_type = input;
-        self
+        self.association_type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
     pub fn resource_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +135,7 @@ impl OpsItemRelatedItemSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the related-item resource.</p>
     pub fn set_resource_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_uri = input;
-        self
+        self.resource_uri = input; self
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
     pub fn created_by(mut self, input: crate::types::OpsItemIdentity) -> Self {
@@ -148,12 +143,8 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    pub fn set_created_by(
-        mut self,
-        input: std::option::Option<crate::types::OpsItemIdentity>,
-    ) -> Self {
-        self.created_by = input;
-        self
+    pub fn set_created_by(mut self, input: std::option::Option<crate::types::OpsItemIdentity>) -> Self {
+        self.created_by = input; self
     }
     /// <p>The time the related-item association was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,12 +152,8 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>The time the related-item association was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
     pub fn last_modified_by(mut self, input: crate::types::OpsItemIdentity) -> Self {
@@ -174,12 +161,8 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>Information about the user or resource that created an OpsItem event.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: std::option::Option<crate::types::OpsItemIdentity>,
-    ) -> Self {
-        self.last_modified_by = input;
-        self
+    pub fn set_last_modified_by(mut self, input: std::option::Option<crate::types::OpsItemIdentity>) -> Self {
+        self.last_modified_by = input; self
     }
     /// <p>The time the related-item association was last updated.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -187,25 +170,31 @@ impl OpsItemRelatedItemSummaryBuilder {
         self
     }
     /// <p>The time the related-item association was last updated.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// Consumes the builder and constructs a [`OpsItemRelatedItemSummary`](crate::types::OpsItemRelatedItemSummary).
     pub fn build(self) -> crate::types::OpsItemRelatedItemSummary {
         crate::types::OpsItemRelatedItemSummary {
-            ops_item_id: self.ops_item_id,
-            association_id: self.association_id,
-            resource_type: self.resource_type,
-            association_type: self.association_type,
-            resource_uri: self.resource_uri,
-            created_by: self.created_by,
-            created_time: self.created_time,
-            last_modified_by: self.last_modified_by,
-            last_modified_time: self.last_modified_time,
+            ops_item_id: self.ops_item_id
+            ,
+            association_id: self.association_id
+            ,
+            resource_type: self.resource_type
+            ,
+            association_type: self.association_type
+            ,
+            resource_uri: self.resource_uri
+            ,
+            created_by: self.created_by
+            ,
+            created_time: self.created_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
         }
     }
 }
+

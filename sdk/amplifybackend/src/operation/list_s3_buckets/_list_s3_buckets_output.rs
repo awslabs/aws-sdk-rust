@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListS3BucketsOutput {
+pub struct ListS3BucketsOutput  {
     /// <p>The list of S3 buckets.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::types::S3BucketInfo>>,
@@ -13,19 +13,19 @@ pub struct ListS3BucketsOutput {
 }
 impl ListS3BucketsOutput {
     /// <p>The list of S3 buckets.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::types::S3BucketInfo]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::types::S3BucketInfo]> {
         self.buckets.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListS3BucketsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListS3BucketsOutput {
     /// Creates a new builder-style object to manufacture [`ListS3BucketsOutput`](crate::operation::list_s3_buckets::ListS3BucketsOutput).
     pub fn builder() -> crate::operation::list_s3_buckets::builders::ListS3BucketsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListS3BucketsOutputBuilder {
     /// <p>The list of S3 buckets.</p>
     pub fn buckets(mut self, input: crate::types::S3BucketInfo) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input);
-        self.buckets = Some(v);
-        self
+                        v.push(input);
+                        self.buckets = Some(v);
+                        self
     }
     /// <p>The list of S3 buckets.</p>
-    pub fn set_buckets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3BucketInfo>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::types::S3BucketInfo>>) -> Self {
+        self.buckets = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListS3BucketsOutputBuilder {
     }
     /// <p>Reserved for future use.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListS3BucketsOutput`](crate::operation::list_s3_buckets::ListS3BucketsOutput).
     pub fn build(self) -> crate::operation::list_s3_buckets::ListS3BucketsOutput {
         crate::operation::list_s3_buckets::ListS3BucketsOutput {
-            buckets: self.buckets,
-            next_token: self.next_token,
+            buckets: self.buckets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

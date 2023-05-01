@@ -2,24 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMigrationInput {
+pub struct StartMigrationInput  {
     /// <p>The ID of the replication group to which data should be migrated.</p>
     #[doc(hidden)]
     pub replication_group_id: std::option::Option<std::string::String>,
     /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
     #[doc(hidden)]
-    pub customer_node_endpoint_list:
-        std::option::Option<std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
+    pub customer_node_endpoint_list: std::option::Option<std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
 }
 impl StartMigrationInput {
     /// <p>The ID of the replication group to which data should be migrated.</p>
-    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> std::option::Option<& str> {
         self.replication_group_id.as_deref()
     }
     /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
-    pub fn customer_node_endpoint_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::CustomerNodeEndpoint]> {
+    pub fn customer_node_endpoint_list(&self) -> std::option::Option<& [crate::types::CustomerNodeEndpoint]> {
         self.customer_node_endpoint_list.as_deref()
     }
 }
@@ -35,8 +32,7 @@ impl StartMigrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StartMigrationInputBuilder {
     pub(crate) replication_group_id: std::option::Option<std::string::String>,
-    pub(crate) customer_node_endpoint_list:
-        std::option::Option<std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
+    pub(crate) customer_node_endpoint_list: std::option::Option<std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
 }
 impl StartMigrationInputBuilder {
     /// <p>The ID of the replication group to which data should be migrated.</p>
@@ -45,45 +41,34 @@ impl StartMigrationInputBuilder {
         self
     }
     /// <p>The ID of the replication group to which data should be migrated.</p>
-    pub fn set_replication_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_group_id = input;
-        self
+    pub fn set_replication_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_group_id = input; self
     }
     /// Appends an item to `customer_node_endpoint_list`.
     ///
     /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
     ///
     /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
-    pub fn customer_node_endpoint_list(
-        mut self,
-        input: crate::types::CustomerNodeEndpoint,
-    ) -> Self {
+    pub fn customer_node_endpoint_list(mut self, input: crate::types::CustomerNodeEndpoint) -> Self {
         let mut v = self.customer_node_endpoint_list.unwrap_or_default();
-        v.push(input);
-        self.customer_node_endpoint_list = Some(v);
-        self
+                        v.push(input);
+                        self.customer_node_endpoint_list = Some(v);
+                        self
     }
     /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
-    pub fn set_customer_node_endpoint_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomerNodeEndpoint>>,
-    ) -> Self {
-        self.customer_node_endpoint_list = input;
-        self
+    pub fn set_customer_node_endpoint_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomerNodeEndpoint>>) -> Self {
+        self.customer_node_endpoint_list = input; self
     }
     /// Consumes the builder and constructs a [`StartMigrationInput`](crate::operation::start_migration::StartMigrationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_migration::StartMigrationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_migration::StartMigrationInput {
-            replication_group_id: self.replication_group_id,
-            customer_node_endpoint_list: self.customer_node_endpoint_list,
-        })
+    pub fn build(self) -> Result<crate::operation::start_migration::StartMigrationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_migration::StartMigrationInput {
+                replication_group_id: self.replication_group_id
+                ,
+                customer_node_endpoint_list: self.customer_node_endpoint_list
+                ,
+            }
+        )
     }
 }
+

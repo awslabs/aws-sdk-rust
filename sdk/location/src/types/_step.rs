@@ -3,7 +3,7 @@
 /// <p> Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Step {
+pub struct Step  {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
     #[doc(hidden)]
     pub start_position: std::option::Option<std::vec::Vec<f64>>,
@@ -16,18 +16,18 @@ pub struct Step {
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
     #[doc(hidden)]
     pub duration_seconds: std::option::Option<f64>,
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     #[doc(hidden)]
     pub geometry_offset: std::option::Option<i32>,
 }
 impl Step {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
-    pub fn start_position(&self) -> std::option::Option<&[f64]> {
+    pub fn start_position(&self) -> std::option::Option<& [f64]> {
         self.start_position.as_deref()
     }
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
-    pub fn end_position(&self) -> std::option::Option<&[f64]> {
+    pub fn end_position(&self) -> std::option::Option<& [f64]> {
         self.end_position.as_deref()
     }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
@@ -38,13 +38,13 @@ impl Step {
     pub fn duration_seconds(&self) -> std::option::Option<f64> {
         self.duration_seconds
     }
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     pub fn geometry_offset(&self) -> std::option::Option<i32> {
         self.geometry_offset
     }
 }
-impl std::fmt::Debug for Step {
+impl  std::fmt::Debug for Step  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Step");
         formatter.field("start_position", &"*** Sensitive Data Redacted ***");
@@ -80,14 +80,13 @@ impl StepBuilder {
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
     pub fn start_position(mut self, input: f64) -> Self {
         let mut v = self.start_position.unwrap_or_default();
-        v.push(input);
-        self.start_position = Some(v);
-        self
+                        v.push(input);
+                        self.start_position = Some(v);
+                        self
     }
     /// <p>The starting position of a step. If the position is the first step in the leg, this position is the same as the start position of the leg.</p>
     pub fn set_start_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-        self.start_position = input;
-        self
+        self.start_position = input; self
     }
     /// Appends an item to `end_position`.
     ///
@@ -96,14 +95,13 @@ impl StepBuilder {
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
     pub fn end_position(mut self, input: f64) -> Self {
         let mut v = self.end_position.unwrap_or_default();
-        v.push(input);
-        self.end_position = Some(v);
-        self
+                        v.push(input);
+                        self.end_position = Some(v);
+                        self
     }
     /// <p>The end position of a step. If the position the last step in the leg, this position is the same as the end position of the leg.</p>
     pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-        self.end_position = input;
-        self
+        self.end_position = input; self
     }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
     pub fn distance(mut self, input: f64) -> Self {
@@ -112,8 +110,7 @@ impl StepBuilder {
     }
     /// <p>The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.</p>
     pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
-        self.distance = input;
-        self
+        self.distance = input; self
     }
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
     pub fn duration_seconds(mut self, input: f64) -> Self {
@@ -122,29 +119,32 @@ impl StepBuilder {
     }
     /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to the <code>EndPosition</code>. . The travel mode and departure time that you specify in the request determines the calculated time.</p>
     pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
-        self.duration_seconds = input;
-        self
+        self.duration_seconds = input; self
     }
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     pub fn geometry_offset(mut self, input: i32) -> Self {
         self.geometry_offset = Some(input);
         self
     }
-    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p>
+    /// <p>Represents the start position, or index, in a sequence of steps within the leg's line string geometry. For example, the index of the first step in a leg geometry is <code>0</code>. </p> 
     /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>. </p>
     pub fn set_geometry_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.geometry_offset = input;
-        self
+        self.geometry_offset = input; self
     }
     /// Consumes the builder and constructs a [`Step`](crate::types::Step).
     pub fn build(self) -> crate::types::Step {
         crate::types::Step {
-            start_position: self.start_position,
-            end_position: self.end_position,
-            distance: self.distance,
-            duration_seconds: self.duration_seconds,
-            geometry_offset: self.geometry_offset,
+            start_position: self.start_position
+            ,
+            end_position: self.end_position
+            ,
+            distance: self.distance
+            ,
+            duration_seconds: self.duration_seconds
+            ,
+            geometry_offset: self.geometry_offset
+            ,
         }
     }
 }
@@ -159,3 +159,4 @@ impl std::fmt::Debug for StepBuilder {
         formatter.finish()
     }
 }
+

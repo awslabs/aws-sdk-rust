@@ -3,7 +3,7 @@
 /// <p> The maximum number of targets that can be associated with an Amazon ECS or Lambda deployment was exceeded. The target list of both types of deployments must have exactly one item. This exception does not apply to EC2/On-premises deployments. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentTargetListSizeExceededException {
+pub struct DeploymentTargetListSizeExceededException  {
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct DeploymentTargetListSizeExceededException {
 }
 impl DeploymentTargetListSizeExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DeploymentTargetListSizeExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DeploymentTargetListSizeExceededException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,25 +25,18 @@ impl std::fmt::Display for DeploymentTargetListSizeExceededException {
     }
 }
 impl std::error::Error for DeploymentTargetListSizeExceededException {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::DeploymentTargetListSizeExceededException
-{
+impl aws_http::request_id::RequestId for crate::types::error::DeploymentTargetListSizeExceededException {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for DeploymentTargetListSizeExceededException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DeploymentTargetListSizeExceededException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl DeploymentTargetListSizeExceededException {
     /// Creates a new builder-style object to manufacture [`DeploymentTargetListSizeExceededException`](crate::types::error::DeploymentTargetListSizeExceededException).
-    pub fn builder(
-    ) -> crate::types::error::builders::DeploymentTargetListSizeExceededExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::DeploymentTargetListSizeExceededExceptionBuilder {
         crate::types::error::builders::DeploymentTargetListSizeExceededExceptionBuilder::default()
     }
 }
@@ -65,28 +56,26 @@ impl DeploymentTargetListSizeExceededExceptionBuilder {
     }
     /// <p>The message that corresponds to the exception thrown by CodeDeploy.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`DeploymentTargetListSizeExceededException`](crate::types::error::DeploymentTargetListSizeExceededException).
     pub fn build(self) -> crate::types::error::DeploymentTargetListSizeExceededException {
         crate::types::error::DeploymentTargetListSizeExceededException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

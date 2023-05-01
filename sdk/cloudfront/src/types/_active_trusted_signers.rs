@@ -3,7 +3,7 @@
 /// <p>A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActiveTrustedSigners {
+pub struct ActiveTrustedSigners  {
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl ActiveTrustedSigners {
         self.quantity
     }
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Signer]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::Signer]> {
         self.items.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ActiveTrustedSignersBuilder {
     }
     /// <p>This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl ActiveTrustedSignersBuilder {
     }
     /// <p>The number of Amazon Web Services accounts in the list.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -71,24 +69,24 @@ impl ActiveTrustedSignersBuilder {
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub fn items(mut self, input: crate::types::Signer) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>A list of Amazon Web Services accounts and the identifiers of active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Signer>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::Signer>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`ActiveTrustedSigners`](crate::types::ActiveTrustedSigners).
     pub fn build(self) -> crate::types::ActiveTrustedSigners {
         crate::types::ActiveTrustedSigners {
-            enabled: self.enabled,
-            quantity: self.quantity,
-            items: self.items,
+            enabled: self.enabled
+            ,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

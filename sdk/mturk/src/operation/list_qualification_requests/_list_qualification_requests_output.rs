@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQualificationRequestsOutput {
+pub struct ListQualificationRequestsOutput  {
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
     #[doc(hidden)]
     pub num_results: std::option::Option<i32>,
@@ -11,8 +11,7 @@ pub struct ListQualificationRequestsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     #[doc(hidden)]
-    pub qualification_requests:
-        std::option::Option<std::vec::Vec<crate::types::QualificationRequest>>,
+    pub qualification_requests: std::option::Option<std::vec::Vec<crate::types::QualificationRequest>>,
     _request_id: Option<String>,
 }
 impl ListQualificationRequestsOutput {
@@ -21,24 +20,22 @@ impl ListQualificationRequestsOutput {
         self.num_results
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn qualification_requests(
-        &self,
-    ) -> std::option::Option<&[crate::types::QualificationRequest]> {
+    pub fn qualification_requests(&self) -> std::option::Option<& [crate::types::QualificationRequest]> {
         self.qualification_requests.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListQualificationRequestsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListQualificationRequestsOutput {
     /// Creates a new builder-style object to manufacture [`ListQualificationRequestsOutput`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput).
-    pub fn builder() -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsOutputBuilder{
+    pub fn builder() -> crate::operation::list_qualification_requests::builders::ListQualificationRequestsOutputBuilder {
         crate::operation::list_qualification_requests::builders::ListQualificationRequestsOutputBuilder::default()
     }
 }
@@ -49,8 +46,7 @@ impl ListQualificationRequestsOutput {
 pub struct ListQualificationRequestsOutputBuilder {
     pub(crate) num_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) qualification_requests:
-        std::option::Option<std::vec::Vec<crate::types::QualificationRequest>>,
+    pub(crate) qualification_requests: std::option::Option<std::vec::Vec<crate::types::QualificationRequest>>,
     _request_id: Option<String>,
 }
 impl ListQualificationRequestsOutputBuilder {
@@ -61,8 +57,7 @@ impl ListQualificationRequestsOutputBuilder {
     }
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
     pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +66,7 @@ impl ListQualificationRequestsOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `qualification_requests`.
     ///
@@ -81,36 +75,34 @@ impl ListQualificationRequestsOutputBuilder {
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
     pub fn qualification_requests(mut self, input: crate::types::QualificationRequest) -> Self {
         let mut v = self.qualification_requests.unwrap_or_default();
-        v.push(input);
-        self.qualification_requests = Some(v);
-        self
+                        v.push(input);
+                        self.qualification_requests = Some(v);
+                        self
     }
     /// <p>The Qualification request. The response includes one QualificationRequest element for each Qualification request returned by the query.</p>
-    pub fn set_qualification_requests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QualificationRequest>>,
-    ) -> Self {
-        self.qualification_requests = input;
-        self
+    pub fn set_qualification_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::QualificationRequest>>) -> Self {
+        self.qualification_requests = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListQualificationRequestsOutput`](crate::operation::list_qualification_requests::ListQualificationRequestsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_qualification_requests::ListQualificationRequestsOutput {
+    pub fn build(self) -> crate::operation::list_qualification_requests::ListQualificationRequestsOutput {
         crate::operation::list_qualification_requests::ListQualificationRequestsOutput {
-            num_results: self.num_results,
-            next_token: self.next_token,
-            qualification_requests: self.qualification_requests,
+            num_results: self.num_results
+            ,
+            next_token: self.next_token
+            ,
+            qualification_requests: self.qualification_requests
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

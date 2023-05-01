@@ -21,11 +21,7 @@ impl EojDataSourceConfigInput {
     /// Tries to convert the enum instance into [`S3Data`](crate::types::EojDataSourceConfigInput::S3Data), extracting the inner [`S3DataInput`](crate::types::S3DataInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_data(&self) -> std::result::Result<&crate::types::S3DataInput, &Self> {
-        if let EojDataSourceConfigInput::S3Data(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let EojDataSourceConfigInput::S3Data(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3Data`](crate::types::EojDataSourceConfigInput::S3Data).
     pub fn is_s3_data(&self) -> bool {
@@ -36,3 +32,4 @@ impl EojDataSourceConfigInput {
         matches!(self, Self::Unknown)
     }
 }
+

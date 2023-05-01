@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBotRecommendationOutput {
+pub struct StartBotRecommendationOutput  {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct StartBotRecommendationOutput {
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     #[doc(hidden)]
     pub locale_id: std::option::Option<std::string::String>,
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
     #[doc(hidden)]
     pub bot_recommendation_status: std::option::Option<crate::types::BotRecommendationStatus>,
@@ -32,53 +32,47 @@ pub struct StartBotRecommendationOutput {
 }
 impl StartBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        &self,
-    ) -> std::option::Option<&crate::types::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::types::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
         self.bot_recommendation_id.as_deref()
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        &self,
-    ) -> std::option::Option<&crate::types::TranscriptSourceSetting> {
+    pub fn transcript_source_setting(&self) -> std::option::Option<& crate::types::TranscriptSourceSetting> {
         self.transcript_source_setting.as_ref()
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn encryption_setting(&self) -> std::option::Option<&crate::types::EncryptionSetting> {
+    pub fn encryption_setting(&self) -> std::option::Option<& crate::types::EncryptionSetting> {
         self.encryption_setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartBotRecommendationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`StartBotRecommendationOutput`](crate::operation::start_bot_recommendation::StartBotRecommendationOutput).
-    pub fn builder(
-    ) -> crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder {
         crate::operation::start_bot_recommendation::builders::StartBotRecommendationOutputBuilder::default()
     }
 }
@@ -90,12 +84,10 @@ pub struct StartBotRecommendationOutputBuilder {
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
     pub(crate) locale_id: std::option::Option<std::string::String>,
-    pub(crate) bot_recommendation_status:
-        std::option::Option<crate::types::BotRecommendationStatus>,
+    pub(crate) bot_recommendation_status: std::option::Option<crate::types::BotRecommendationStatus>,
     pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) transcript_source_setting:
-        std::option::Option<crate::types::TranscriptSourceSetting>,
+    pub(crate) transcript_source_setting: std::option::Option<crate::types::TranscriptSourceSetting>,
     pub(crate) encryption_setting: std::option::Option<crate::types::EncryptionSetting>,
     _request_id: Option<String>,
 }
@@ -107,8 +99,7 @@ impl StartBotRecommendationOutputBuilder {
     }
     /// <p>The unique identifier of the bot containing the bot recommendation.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +108,7 @@ impl StartBotRecommendationOutputBuilder {
     }
     /// <p>The version of the bot containing the bot recommendation.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,26 +117,18 @@ impl StartBotRecommendationOutputBuilder {
     }
     /// <p>The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn bot_recommendation_status(
-        mut self,
-        input: crate::types::BotRecommendationStatus,
-    ) -> Self {
+    pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
         self.bot_recommendation_status = Some(input);
         self
     }
-    /// <p>The status of the bot recommendation.</p>
+    /// <p>The status of the bot recommendation.</p> 
     /// <p>If the status is Failed, then the reasons for the failure are listed in the failureReasons field. </p>
-    pub fn set_bot_recommendation_status(
-        mut self,
-        input: std::option::Option<crate::types::BotRecommendationStatus>,
-    ) -> Self {
-        self.bot_recommendation_status = input;
-        self
+    pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
+        self.bot_recommendation_status = input; self
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
     pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,12 +136,8 @@ impl StartBotRecommendationOutputBuilder {
         self
     }
     /// <p>The identifier of the bot recommendation that you have created.</p>
-    pub fn set_bot_recommendation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.bot_recommendation_id = input;
-        self
+    pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.bot_recommendation_id = input; self
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,28 +145,17 @@ impl StartBotRecommendationOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the bot recommendation was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn transcript_source_setting(
-        mut self,
-        input: crate::types::TranscriptSourceSetting,
-    ) -> Self {
+    pub fn transcript_source_setting(mut self, input: crate::types::TranscriptSourceSetting) -> Self {
         self.transcript_source_setting = Some(input);
         self
     }
     /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
-    pub fn set_transcript_source_setting(
-        mut self,
-        input: std::option::Option<crate::types::TranscriptSourceSetting>,
-    ) -> Self {
-        self.transcript_source_setting = input;
-        self
+    pub fn set_transcript_source_setting(mut self, input: std::option::Option<crate::types::TranscriptSourceSetting>) -> Self {
+        self.transcript_source_setting = input; self
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
     pub fn encryption_setting(mut self, input: crate::types::EncryptionSetting) -> Self {
@@ -196,34 +163,39 @@ impl StartBotRecommendationOutputBuilder {
         self
     }
     /// <p>The object representing the passwords that were used to encrypt the data related to the bot recommendation results, as well as the KMS key ARN used to encrypt the associated metadata.</p>
-    pub fn set_encryption_setting(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionSetting>,
-    ) -> Self {
-        self.encryption_setting = input;
-        self
+    pub fn set_encryption_setting(mut self, input: std::option::Option<crate::types::EncryptionSetting>) -> Self {
+        self.encryption_setting = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartBotRecommendationOutput`](crate::operation::start_bot_recommendation::StartBotRecommendationOutput).
     pub fn build(self) -> crate::operation::start_bot_recommendation::StartBotRecommendationOutput {
         crate::operation::start_bot_recommendation::StartBotRecommendationOutput {
-            bot_id: self.bot_id,
-            bot_version: self.bot_version,
-            locale_id: self.locale_id,
-            bot_recommendation_status: self.bot_recommendation_status,
-            bot_recommendation_id: self.bot_recommendation_id,
-            creation_date_time: self.creation_date_time,
-            transcript_source_setting: self.transcript_source_setting,
-            encryption_setting: self.encryption_setting,
+            bot_id: self.bot_id
+            ,
+            bot_version: self.bot_version
+            ,
+            locale_id: self.locale_id
+            ,
+            bot_recommendation_status: self.bot_recommendation_status
+            ,
+            bot_recommendation_id: self.bot_recommendation_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            transcript_source_setting: self.transcript_source_setting
+            ,
+            encryption_setting: self.encryption_setting
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

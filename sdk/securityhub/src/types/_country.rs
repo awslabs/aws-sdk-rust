@@ -3,7 +3,7 @@
 /// <p>Information about a country.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Country {
+pub struct Country  {
     /// <p>The 2-letter ISO 3166 country code for the country.</p>
     #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Country {
 }
 impl Country {
     /// <p>The 2-letter ISO 3166 country code for the country.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// <p>The name of the country.</p>
-    pub fn country_name(&self) -> std::option::Option<&str> {
+    pub fn country_name(&self) -> std::option::Option<& str> {
         self.country_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CountryBuilder {
     }
     /// <p>The 2-letter ISO 3166 country code for the country.</p>
     pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country_code = input;
-        self
+        self.country_code = input; self
     }
     /// <p>The name of the country.</p>
     pub fn country_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CountryBuilder {
     }
     /// <p>The name of the country.</p>
     pub fn set_country_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country_name = input;
-        self
+        self.country_name = input; self
     }
     /// Consumes the builder and constructs a [`Country`](crate::types::Country).
     pub fn build(self) -> crate::types::Country {
         crate::types::Country {
-            country_code: self.country_code,
-            country_name: self.country_name,
+            country_code: self.country_code
+            ,
+            country_name: self.country_name
+            ,
         }
     }
 }
+

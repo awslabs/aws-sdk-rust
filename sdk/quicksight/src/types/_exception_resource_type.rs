@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exceptionresourcetype = unimplemented!();
 /// match exceptionresourcetype {
@@ -37,22 +37,14 @@
 /// Specifically, when `exceptionresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExceptionResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExceptionResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AccountSettings,
@@ -73,66 +65,55 @@ pub enum ExceptionResourceType {
     #[allow(missing_docs)] // documentation missing in model
     VpcConnection,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExceptionResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_SETTINGS" => ExceptionResourceType::AccountSettings,
-            "DATA_SET" => ExceptionResourceType::DataSet,
-            "DATA_SOURCE" => ExceptionResourceType::DataSource,
-            "GROUP" => ExceptionResourceType::Group,
-            "IAMPOLICY_ASSIGNMENT" => ExceptionResourceType::IampolicyAssignment,
-            "INGESTION" => ExceptionResourceType::Ingestion,
-            "NAMESPACE" => ExceptionResourceType::Namespace,
-            "USER" => ExceptionResourceType::User,
-            "VPC_CONNECTION" => ExceptionResourceType::VpcConnection,
-            other => ExceptionResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_SETTINGS" => ExceptionResourceType::AccountSettings,
+"DATA_SET" => ExceptionResourceType::DataSet,
+"DATA_SOURCE" => ExceptionResourceType::DataSource,
+"GROUP" => ExceptionResourceType::Group,
+"IAMPOLICY_ASSIGNMENT" => ExceptionResourceType::IampolicyAssignment,
+"INGESTION" => ExceptionResourceType::Ingestion,
+"NAMESPACE" => ExceptionResourceType::Namespace,
+"USER" => ExceptionResourceType::User,
+"VPC_CONNECTION" => ExceptionResourceType::VpcConnection,
+other => ExceptionResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ExceptionResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExceptionResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExceptionResourceType::from(s))
+                }
+            }
 impl ExceptionResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExceptionResourceType::AccountSettings => "ACCOUNT_SETTINGS",
-            ExceptionResourceType::DataSet => "DATA_SET",
-            ExceptionResourceType::DataSource => "DATA_SOURCE",
-            ExceptionResourceType::Group => "GROUP",
-            ExceptionResourceType::IampolicyAssignment => "IAMPOLICY_ASSIGNMENT",
-            ExceptionResourceType::Ingestion => "INGESTION",
-            ExceptionResourceType::Namespace => "NAMESPACE",
-            ExceptionResourceType::User => "USER",
-            ExceptionResourceType::VpcConnection => "VPC_CONNECTION",
-            ExceptionResourceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_SETTINGS",
-            "DATA_SET",
-            "DATA_SOURCE",
-            "GROUP",
-            "IAMPOLICY_ASSIGNMENT",
-            "INGESTION",
-            "NAMESPACE",
-            "USER",
-            "VPC_CONNECTION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ExceptionResourceType::AccountSettings => "ACCOUNT_SETTINGS",
+    ExceptionResourceType::DataSet => "DATA_SET",
+    ExceptionResourceType::DataSource => "DATA_SOURCE",
+    ExceptionResourceType::Group => "GROUP",
+    ExceptionResourceType::IampolicyAssignment => "IAMPOLICY_ASSIGNMENT",
+    ExceptionResourceType::Ingestion => "INGESTION",
+    ExceptionResourceType::Namespace => "NAMESPACE",
+    ExceptionResourceType::User => "USER",
+    ExceptionResourceType::VpcConnection => "VPC_CONNECTION",
+    ExceptionResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_SETTINGS", "DATA_SET", "DATA_SOURCE", "GROUP", "IAMPOLICY_ASSIGNMENT", "INGESTION", "NAMESPACE", "USER", "VPC_CONNECTION"]
+                }
+            }
 impl AsRef<str> for ExceptionResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

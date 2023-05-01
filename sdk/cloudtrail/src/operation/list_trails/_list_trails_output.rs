@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrailsOutput {
+pub struct ListTrailsOutput  {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
     #[doc(hidden)]
     pub trails: std::option::Option<std::vec::Vec<crate::types::TrailInfo>>,
@@ -13,19 +13,19 @@ pub struct ListTrailsOutput {
 }
 impl ListTrailsOutput {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
-    pub fn trails(&self) -> std::option::Option<&[crate::types::TrailInfo]> {
+    pub fn trails(&self) -> std::option::Option<& [crate::types::TrailInfo]> {
         self.trails.as_deref()
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTrailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTrailsOutput {
     /// Creates a new builder-style object to manufacture [`ListTrailsOutput`](crate::operation::list_trails::ListTrailsOutput).
     pub fn builder() -> crate::operation::list_trails::builders::ListTrailsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListTrailsOutputBuilder {
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
     pub fn trails(mut self, input: crate::types::TrailInfo) -> Self {
         let mut v = self.trails.unwrap_or_default();
-        v.push(input);
-        self.trails = Some(v);
-        self
+                        v.push(input);
+                        self.trails = Some(v);
+                        self
     }
     /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
-    pub fn set_trails(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TrailInfo>>,
-    ) -> Self {
-        self.trails = input;
-        self
+    pub fn set_trails(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrailInfo>>) -> Self {
+        self.trails = input; self
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListTrailsOutputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear, there are no more results to return. The token must be passed in with the same parameters as the previous call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTrailsOutput`](crate::operation::list_trails::ListTrailsOutput).
     pub fn build(self) -> crate::operation::list_trails::ListTrailsOutput {
         crate::operation::list_trails::ListTrailsOutput {
-            trails: self.trails,
-            next_token: self.next_token,
+            trails: self.trails
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

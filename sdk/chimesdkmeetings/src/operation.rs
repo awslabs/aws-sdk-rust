@@ -48,3 +48,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAttendeeCapabilities` operation.
 pub mod update_attendee_capabilities;
+

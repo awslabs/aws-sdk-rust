@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplaceTopicRuleOutput {
+pub struct ReplaceTopicRuleOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ReplaceTopicRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ReplaceTopicRuleOutput {
     /// Creates a new builder-style object to manufacture [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput).
-    pub fn builder() -> crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder {
         crate::operation::replace_topic_rule::builders::ReplaceTopicRuleOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct ReplaceTopicRuleOutputBuilder {
 }
 impl ReplaceTopicRuleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ReplaceTopicRuleOutput`](crate::operation::replace_topic_rule::ReplaceTopicRuleOutput).
     pub fn build(self) -> crate::operation::replace_topic_rule::ReplaceTopicRuleOutput {
         crate::operation::replace_topic_rule::ReplaceTopicRuleOutput {
@@ -41,3 +40,4 @@ impl ReplaceTopicRuleOutputBuilder {
         }
     }
 }
+

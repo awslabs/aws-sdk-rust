@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEulaAcceptancesInput {
+pub struct ListEulaAcceptancesInput  {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
     #[doc(hidden)]
     pub eula_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,24 +15,22 @@ pub struct ListEulaAcceptancesInput {
 }
 impl ListEulaAcceptancesInput {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn eula_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn eula_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.eula_ids.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> std::option::Option<& str> {
         self.studio_id.as_deref()
     }
 }
 impl ListEulaAcceptancesInput {
     /// Creates a new builder-style object to manufacture [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
-    pub fn builder(
-    ) -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
-        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder {
+        crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder::default()
     }
 }
 
@@ -52,17 +50,13 @@ impl ListEulaAcceptancesInputBuilder {
     /// <p>The list of EULA IDs that have been previously accepted.</p>
     pub fn eula_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.eula_ids.unwrap_or_default();
-        v.push(input.into());
-        self.eula_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.eula_ids = Some(v);
+                        self
     }
     /// <p>The list of EULA IDs that have been previously accepted.</p>
-    pub fn set_eula_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.eula_ids = input;
-        self
+    pub fn set_eula_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.eula_ids = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +65,7 @@ impl ListEulaAcceptancesInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +74,20 @@ impl ListEulaAcceptancesInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input;
-        self
+        self.studio_id = input; self
     }
     /// Consumes the builder and constructs a [`ListEulaAcceptancesInput`](crate::operation::list_eula_acceptances::ListEulaAcceptancesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_eula_acceptances::ListEulaAcceptancesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_eula_acceptances::ListEulaAcceptancesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_eula_acceptances::ListEulaAcceptancesInput {
-                eula_ids: self.eula_ids,
-                next_token: self.next_token,
-                studio_id: self.studio_id,
-            },
+                eula_ids: self.eula_ids
+                ,
+                next_token: self.next_token
+                ,
+                studio_id: self.studio_id
+                ,
+            }
         )
     }
 }
+

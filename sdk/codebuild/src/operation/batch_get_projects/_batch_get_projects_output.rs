@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetProjectsOutput {
+pub struct BatchGetProjectsOutput  {
     /// <p>Information about the requested build projects.</p>
     #[doc(hidden)]
     pub projects: std::option::Option<std::vec::Vec<crate::types::Project>>,
@@ -13,23 +13,22 @@ pub struct BatchGetProjectsOutput {
 }
 impl BatchGetProjectsOutput {
     /// <p>Information about the requested build projects.</p>
-    pub fn projects(&self) -> std::option::Option<&[crate::types::Project]> {
+    pub fn projects(&self) -> std::option::Option<& [crate::types::Project]> {
         self.projects.as_deref()
     }
     /// <p>The names of build projects for which information could not be found.</p>
-    pub fn projects_not_found(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn projects_not_found(&self) -> std::option::Option<& [std::string::String]> {
         self.projects_not_found.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetProjectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetProjectsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetProjectsOutput`](crate::operation::batch_get_projects::BatchGetProjectsOutput).
-    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_projects::builders::BatchGetProjectsOutputBuilder {
         crate::operation::batch_get_projects::builders::BatchGetProjectsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl BatchGetProjectsOutputBuilder {
     /// <p>Information about the requested build projects.</p>
     pub fn projects(mut self, input: crate::types::Project) -> Self {
         let mut v = self.projects.unwrap_or_default();
-        v.push(input);
-        self.projects = Some(v);
-        self
+                        v.push(input);
+                        self.projects = Some(v);
+                        self
     }
     /// <p>Information about the requested build projects.</p>
-    pub fn set_projects(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Project>>,
-    ) -> Self {
-        self.projects = input;
-        self
+    pub fn set_projects(mut self, input: std::option::Option<std::vec::Vec<crate::types::Project>>) -> Self {
+        self.projects = input; self
     }
     /// Appends an item to `projects_not_found`.
     ///
@@ -69,33 +64,32 @@ impl BatchGetProjectsOutputBuilder {
     /// <p>The names of build projects for which information could not be found.</p>
     pub fn projects_not_found(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.projects_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.projects_not_found = Some(v);
-        self
+                        v.push(input.into());
+                        self.projects_not_found = Some(v);
+                        self
     }
     /// <p>The names of build projects for which information could not be found.</p>
-    pub fn set_projects_not_found(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.projects_not_found = input;
-        self
+    pub fn set_projects_not_found(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.projects_not_found = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetProjectsOutput`](crate::operation::batch_get_projects::BatchGetProjectsOutput).
     pub fn build(self) -> crate::operation::batch_get_projects::BatchGetProjectsOutput {
         crate::operation::batch_get_projects::BatchGetProjectsOutput {
-            projects: self.projects,
-            projects_not_found: self.projects_not_found,
+            projects: self.projects
+            ,
+            projects_not_found: self.projects_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

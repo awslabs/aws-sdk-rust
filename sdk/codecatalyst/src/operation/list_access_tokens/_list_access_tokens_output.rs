@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessTokensOutput {
-    /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+pub struct ListAccessTokensOutput  {
+    /// <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::AccessTokenSummary>>,
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
@@ -12,24 +12,23 @@ pub struct ListAccessTokensOutput {
     _request_id: Option<String>,
 }
 impl ListAccessTokensOutput {
-    /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::AccessTokenSummary]> {
+    /// <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
+    pub fn items(&self) -> std::option::Option<& [crate::types::AccessTokenSummary]> {
         self.items.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccessTokensOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAccessTokensOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessTokensOutput`](crate::operation::list_access_tokens::ListAccessTokensOutput).
-    pub fn builder() -> crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder {
         crate::operation::list_access_tokens::builders::ListAccessTokensOutputBuilder::default()
     }
 }
@@ -47,20 +46,16 @@ impl ListAccessTokensOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+    /// <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
     pub fn items(mut self, input: crate::types::AccessTokenSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
-    /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccessTokenSummary>>,
-    ) -> Self {
-        self.items = input;
-        self
+    /// <p>A list of personal access tokens (PATs) associated with the calling user identity.</p>
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessTokenSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListAccessTokensOutputBuilder {
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAccessTokensOutput`](crate::operation::list_access_tokens::ListAccessTokensOutput).
     pub fn build(self) -> crate::operation::list_access_tokens::ListAccessTokensOutput {
         crate::operation::list_access_tokens::ListAccessTokensOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

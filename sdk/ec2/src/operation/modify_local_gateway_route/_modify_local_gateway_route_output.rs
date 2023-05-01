@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLocalGatewayRouteOutput {
+pub struct ModifyLocalGatewayRouteOutput  {
     /// <p>Information about the local gateway route table.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::types::LocalGatewayRoute>,
@@ -10,20 +10,18 @@ pub struct ModifyLocalGatewayRouteOutput {
 }
 impl ModifyLocalGatewayRouteOutput {
     /// <p>Information about the local gateway route table.</p>
-    pub fn route(&self) -> std::option::Option<&crate::types::LocalGatewayRoute> {
+    pub fn route(&self) -> std::option::Option<& crate::types::LocalGatewayRoute> {
         self.route.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyLocalGatewayRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyLocalGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`ModifyLocalGatewayRouteOutput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteOutputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteOutputBuilder {
         crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl ModifyLocalGatewayRouteOutputBuilder {
         self
     }
     /// <p>Information about the local gateway route table.</p>
-    pub fn set_route(
-        mut self,
-        input: std::option::Option<crate::types::LocalGatewayRoute>,
-    ) -> Self {
-        self.route = input;
-        self
+    pub fn set_route(mut self, input: std::option::Option<crate::types::LocalGatewayRoute>) -> Self {
+        self.route = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyLocalGatewayRouteOutput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput {
+    pub fn build(self) -> crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput {
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput {
-            route: self.route,
+            route: self.route
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

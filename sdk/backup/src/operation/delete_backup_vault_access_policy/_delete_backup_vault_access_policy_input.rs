@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupVaultAccessPolicyInput {
+pub struct DeleteBackupVaultAccessPolicyInput  {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackupVaultAccessPolicyInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
 }
 impl DeleteBackupVaultAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupVaultAccessPolicyInput`](crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyInput).
-    pub fn builder() -> crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder{
+    pub fn builder() -> crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder {
         crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl DeleteBackupVaultAccessPolicyInputBuilder {
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.backup_vault_name = input;
-        self
+    pub fn set_backup_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.backup_vault_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteBackupVaultAccessPolicyInput`](crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicyInput {
                 backup_vault_name: self.backup_vault_name
@@ -55,3 +46,4 @@ impl DeleteBackupVaultAccessPolicyInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateFraudsterOutput {
+pub struct AssociateFraudsterOutput  {
     /// <p>Contains all the information about a fraudster.</p>
     #[doc(hidden)]
     pub fraudster: std::option::Option<crate::types::Fraudster>,
@@ -10,19 +10,18 @@ pub struct AssociateFraudsterOutput {
 }
 impl AssociateFraudsterOutput {
     /// <p>Contains all the information about a fraudster.</p>
-    pub fn fraudster(&self) -> std::option::Option<&crate::types::Fraudster> {
+    pub fn fraudster(&self) -> std::option::Option<& crate::types::Fraudster> {
         self.fraudster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateFraudsterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateFraudsterOutput {
     /// Creates a new builder-style object to manufacture [`AssociateFraudsterOutput`](crate::operation::associate_fraudster::AssociateFraudsterOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_fraudster::builders::AssociateFraudsterOutputBuilder {
+    pub fn builder() -> crate::operation::associate_fraudster::builders::AssociateFraudsterOutputBuilder {
         crate::operation::associate_fraudster::builders::AssociateFraudsterOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl AssociateFraudsterOutputBuilder {
     }
     /// <p>Contains all the information about a fraudster.</p>
     pub fn set_fraudster(mut self, input: std::option::Option<crate::types::Fraudster>) -> Self {
-        self.fraudster = input;
-        self
+        self.fraudster = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateFraudsterOutput`](crate::operation::associate_fraudster::AssociateFraudsterOutput).
     pub fn build(self) -> crate::operation::associate_fraudster::AssociateFraudsterOutput {
         crate::operation::associate_fraudster::AssociateFraudsterOutput {
-            fraudster: self.fraudster,
+            fraudster: self.fraudster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

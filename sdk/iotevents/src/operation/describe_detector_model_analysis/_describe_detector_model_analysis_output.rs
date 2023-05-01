@@ -2,36 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorModelAnalysisOutput {
-    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+pub struct DescribeDetectorModelAnalysisOutput  {
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AnalysisStatus>,
     _request_id: Option<String>,
 }
 impl DescribeDetectorModelAnalysisOutput {
-    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::AnalysisStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AnalysisStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDetectorModelAnalysisOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDetectorModelAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput).
-    pub fn builder() -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder{
+    pub fn builder() -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder {
         crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisOutputBuilder::default()
     }
 }
@@ -44,43 +44,41 @@ pub struct DescribeDetectorModelAnalysisOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeDetectorModelAnalysisOutputBuilder {
-    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::AnalysisStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the analysis activity. The status can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li>
-    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li>
-    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li>
+    /// <p>The status of the analysis activity. The status can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process can take several minutes to complete.</p> </li> 
+    /// <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again later.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AnalysisStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDetectorModelAnalysisOutput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput
-    {
+    pub fn build(self) -> crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput {
         crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

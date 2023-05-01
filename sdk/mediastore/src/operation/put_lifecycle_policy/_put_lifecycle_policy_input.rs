@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLifecyclePolicyInput {
+pub struct PutLifecyclePolicyInput  {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct PutLifecyclePolicyInput {
 }
 impl PutLifecyclePolicyInput {
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> std::option::Option<& str> {
         self.container_name.as_deref()
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
-    pub fn lifecycle_policy(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_policy(&self) -> std::option::Option<& str> {
         self.lifecycle_policy.as_deref()
     }
 }
 impl PutLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutLifecyclePolicyInput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder {
         crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl PutLifecyclePolicyInputBuilder {
     }
     /// <p>The name of the container that you want to assign the object lifecycle policy to.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub fn lifecycle_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl PutLifecyclePolicyInputBuilder {
     }
     /// <p>The object lifecycle policy to apply to the container.</p>
     pub fn set_lifecycle_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lifecycle_policy = input;
-        self
+        self.lifecycle_policy = input; self
     }
     /// Consumes the builder and constructs a [`PutLifecyclePolicyInput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_lifecycle_policy::PutLifecyclePolicyInput {
-                container_name: self.container_name,
-                lifecycle_policy: self.lifecycle_policy,
-            },
+                container_name: self.container_name
+                ,
+                lifecycle_policy: self.lifecycle_policy
+                ,
+            }
         )
     }
 }
+

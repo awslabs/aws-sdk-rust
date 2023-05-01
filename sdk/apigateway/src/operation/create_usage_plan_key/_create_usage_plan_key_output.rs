@@ -3,7 +3,7 @@
 /// <p>Represents a usage plan key to identify a plan customer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUsagePlanKeyOutput {
+pub struct CreateUsagePlanKeyOutput  {
     /// <p>The Id of a usage plan key.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -20,33 +20,31 @@ pub struct CreateUsagePlanKeyOutput {
 }
 impl CreateUsagePlanKeyOutput {
     /// <p>The Id of a usage plan key.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The value of a usage plan key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The name of a usage plan key.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateUsagePlanKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateUsagePlanKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateUsagePlanKeyOutput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyOutputBuilder {
-        crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyOutputBuilder {
+        crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyOutputBuilder::default()
     }
 }
 
@@ -68,8 +66,7 @@ impl CreateUsagePlanKeyOutputBuilder {
     }
     /// <p>The Id of a usage plan key.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +75,7 @@ impl CreateUsagePlanKeyOutputBuilder {
     }
     /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The value of a usage plan key.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +84,7 @@ impl CreateUsagePlanKeyOutputBuilder {
     }
     /// <p>The value of a usage plan key.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The name of a usage plan key.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,26 +93,30 @@ impl CreateUsagePlanKeyOutputBuilder {
     }
     /// <p>The name of a usage plan key.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateUsagePlanKeyOutput`](crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput).
     pub fn build(self) -> crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput {
         crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput {
-            id: self.id,
-            r#type: self.r#type,
-            value: self.value,
-            name: self.name,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
+            name: self.name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

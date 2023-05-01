@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -43,22 +43,14 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -91,86 +83,67 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     VoiceConnectorGroupAssociationsExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => ErrorCode::AccessDenied,
-            "BadRequest" => ErrorCode::BadRequest,
-            "Conflict" => ErrorCode::Conflict,
-            "Forbidden" => ErrorCode::Forbidden,
-            "NotFound" => ErrorCode::NotFound,
-            "PhoneNumberAssociationsExist" => ErrorCode::PhoneNumberAssociationsExist,
-            "PreconditionFailed" => ErrorCode::PreconditionFailed,
-            "ResourceLimitExceeded" => ErrorCode::ResourceLimitExceeded,
-            "ServiceFailure" => ErrorCode::ServiceFailure,
-            "ServiceUnavailable" => ErrorCode::ServiceUnavailable,
-            "Throttled" => ErrorCode::Throttled,
-            "Throttling" => ErrorCode::Throttling,
-            "Unauthorized" => ErrorCode::Unauthorized,
-            "Unprocessable" => ErrorCode::Unprocessable,
-            "VoiceConnectorGroupAssociationsExist" => {
-                ErrorCode::VoiceConnectorGroupAssociationsExist
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => ErrorCode::AccessDenied,
+"BadRequest" => ErrorCode::BadRequest,
+"Conflict" => ErrorCode::Conflict,
+"Forbidden" => ErrorCode::Forbidden,
+"NotFound" => ErrorCode::NotFound,
+"PhoneNumberAssociationsExist" => ErrorCode::PhoneNumberAssociationsExist,
+"PreconditionFailed" => ErrorCode::PreconditionFailed,
+"ResourceLimitExceeded" => ErrorCode::ResourceLimitExceeded,
+"ServiceFailure" => ErrorCode::ServiceFailure,
+"ServiceUnavailable" => ErrorCode::ServiceUnavailable,
+"Throttled" => ErrorCode::Throttled,
+"Throttling" => ErrorCode::Throttling,
+"Unauthorized" => ErrorCode::Unauthorized,
+"Unprocessable" => ErrorCode::Unprocessable,
+"VoiceConnectorGroupAssociationsExist" => ErrorCode::VoiceConnectorGroupAssociationsExist,
+other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
-impl ErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ErrorCode::AccessDenied => "AccessDenied",
-            ErrorCode::BadRequest => "BadRequest",
-            ErrorCode::Conflict => "Conflict",
-            ErrorCode::Forbidden => "Forbidden",
-            ErrorCode::NotFound => "NotFound",
-            ErrorCode::PhoneNumberAssociationsExist => "PhoneNumberAssociationsExist",
-            ErrorCode::PreconditionFailed => "PreconditionFailed",
-            ErrorCode::ResourceLimitExceeded => "ResourceLimitExceeded",
-            ErrorCode::ServiceFailure => "ServiceFailure",
-            ErrorCode::ServiceUnavailable => "ServiceUnavailable",
-            ErrorCode::Throttled => "Throttled",
-            ErrorCode::Throttling => "Throttling",
-            ErrorCode::Unauthorized => "Unauthorized",
-            ErrorCode::Unprocessable => "Unprocessable",
-            ErrorCode::VoiceConnectorGroupAssociationsExist => {
-                "VoiceConnectorGroupAssociationsExist"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
             }
-            ErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied",
-            "BadRequest",
-            "Conflict",
-            "Forbidden",
-            "NotFound",
-            "PhoneNumberAssociationsExist",
-            "PreconditionFailed",
-            "ResourceLimitExceeded",
-            "ServiceFailure",
-            "ServiceUnavailable",
-            "Throttled",
-            "Throttling",
-            "Unauthorized",
-            "Unprocessable",
-            "VoiceConnectorGroupAssociationsExist",
-        ]
-    }
+impl ErrorCode {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ErrorCode::AccessDenied => "AccessDenied",
+    ErrorCode::BadRequest => "BadRequest",
+    ErrorCode::Conflict => "Conflict",
+    ErrorCode::Forbidden => "Forbidden",
+    ErrorCode::NotFound => "NotFound",
+    ErrorCode::PhoneNumberAssociationsExist => "PhoneNumberAssociationsExist",
+    ErrorCode::PreconditionFailed => "PreconditionFailed",
+    ErrorCode::ResourceLimitExceeded => "ResourceLimitExceeded",
+    ErrorCode::ServiceFailure => "ServiceFailure",
+    ErrorCode::ServiceUnavailable => "ServiceUnavailable",
+    ErrorCode::Throttled => "Throttled",
+    ErrorCode::Throttling => "Throttling",
+    ErrorCode::Unauthorized => "Unauthorized",
+    ErrorCode::Unprocessable => "Unprocessable",
+    ErrorCode::VoiceConnectorGroupAssociationsExist => "VoiceConnectorGroupAssociationsExist",
+    ErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "BadRequest", "Conflict", "Forbidden", "NotFound", "PhoneNumberAssociationsExist", "PreconditionFailed", "ResourceLimitExceeded", "ServiceFailure", "ServiceUnavailable", "Throttled", "Throttling", "Unauthorized", "Unprocessable", "VoiceConnectorGroupAssociationsExist"]
+                }
+            }
 impl AsRef<str> for ErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

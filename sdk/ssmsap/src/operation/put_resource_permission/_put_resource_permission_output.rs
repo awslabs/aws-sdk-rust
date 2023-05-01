@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePermissionOutput {
+pub struct PutResourcePermissionOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct PutResourcePermissionOutput {
 }
 impl PutResourcePermissionOutput {
     /// <p></p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutResourcePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutResourcePermissionOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePermissionOutput`](crate::operation::put_resource_permission::PutResourcePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_permission::builders::PutResourcePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_resource_permission::builders::PutResourcePermissionOutputBuilder {
         crate::operation::put_resource_permission::builders::PutResourcePermissionOutputBuilder::default()
     }
 }
@@ -43,23 +41,24 @@ impl PutResourcePermissionOutputBuilder {
     }
     /// <p></p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutResourcePermissionOutput`](crate::operation::put_resource_permission::PutResourcePermissionOutput).
     pub fn build(self) -> crate::operation::put_resource_permission::PutResourcePermissionOutput {
         crate::operation::put_resource_permission::PutResourcePermissionOutput {
-            policy: self.policy,
+            policy: self.policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

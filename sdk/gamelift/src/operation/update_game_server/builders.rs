@@ -4,91 +4,66 @@ pub use crate::operation::update_game_server::_update_game_server_output::Update
 pub use crate::operation::update_game_server::_update_game_server_input::UpdateGameServerInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateGameServer`.
-///
-/// <p> <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b> </p>
-/// <p>Updates information about a registered game server to help GameLift FleetIQ to track game server availability. This operation is called by a game server process that is running on an instance in a game server group. </p>
-/// <p>Use this operation to update the following types of game server information. You can make all three types of updates in the same request:</p>
-/// <ul>
-/// <li> <p>To update the game server's utilization status, identify the game server and game server group and specify the current utilization status. Use this status to identify when game servers are currently hosting games and when they are available to be claimed.</p> </li>
-/// <li> <p>To report health status, identify the game server and game server group and set health check to <code>HEALTHY</code>. If a game server does not report health status for a certain length of time, the game server is no longer considered healthy. As a result, it will be eventually deregistered from the game server group to avoid affecting utilization metrics. The best practice is to report health every 60 seconds.</p> </li>
-/// <li> <p>To change game server metadata, provide updated game server data.</p> </li>
-/// </ul>
-/// <p>Once a game server is successfully updated, the relevant statuses and timestamps are updated.</p>
-/// <p> <b>Learn more</b> </p>
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift FleetIQ Guide</a> </p>
+/// 
+/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p> 
+/// <p>Updates information about a registered game server to help Amazon GameLift FleetIQ to track game server availability. This operation is called by a game server process that is running on an instance in a game server group. </p> 
+/// <p>Use this operation to update the following types of game server information. You can make all three types of updates in the same request:</p> 
+/// <ul> 
+/// <li> <p>To update the game server's utilization status, identify the game server and game server group and specify the current utilization status. Use this status to identify when game servers are currently hosting games and when they are available to be claimed.</p> </li> 
+/// <li> <p>To report health status, identify the game server and game server group and set health check to <code>HEALTHY</code>. If a game server does not report health status for a certain length of time, the game server is no longer considered healthy. As a result, it will be eventually deregistered from the game server group to avoid affecting utilization metrics. The best practice is to report health every 60 seconds.</p> </li> 
+/// <li> <p>To change game server metadata, provide updated game server data.</p> </li> 
+/// </ul> 
+/// <p>Once a game server is successfully updated, the relevant statuses and timestamps are updated.</p> 
+/// <p> <b>Learn more</b> </p> 
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGameServerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_game_server::builders::UpdateGameServerInputBuilder,
-}
-impl UpdateGameServerFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_game_server::builders::UpdateGameServerInputBuilder
+            }
+impl UpdateGameServerFluentBuilder  {
     /// Creates a new `UpdateGameServer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_game_server::UpdateGameServer,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_game_server::UpdateGameServerOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_game_server::UpdateGameServerError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_game_server::UpdateGameServer, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_game_server::UpdateGameServerOutput, aws_smithy_http::result::SdkError<crate::operation::update_game_server::UpdateGameServerError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>A unique identifier for the game server group where the game server is running.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_game_server_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -118,10 +93,7 @@ impl UpdateGameServerFluentBuilder {
         self
     }
     /// <p>Indicates whether the game server is available or is currently hosting gameplay.</p>
-    pub fn set_utilization_status(
-        mut self,
-        input: std::option::Option<crate::types::GameServerUtilizationStatus>,
-    ) -> Self {
+    pub fn set_utilization_status(mut self, input: std::option::Option<crate::types::GameServerUtilizationStatus>) -> Self {
         self.inner = self.inner.set_utilization_status(input);
         self
     }
@@ -131,11 +103,9 @@ impl UpdateGameServerFluentBuilder {
         self
     }
     /// <p>Indicates health status of the game server. A request that includes this parameter updates the game server's <i>LastHealthCheckTime</i> timestamp. </p>
-    pub fn set_health_check(
-        mut self,
-        input: std::option::Option<crate::types::GameServerHealthCheck>,
-    ) -> Self {
+    pub fn set_health_check(mut self, input: std::option::Option<crate::types::GameServerHealthCheck>) -> Self {
         self.inner = self.inner.set_health_check(input);
         self
     }
 }
+

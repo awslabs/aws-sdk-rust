@@ -3,33 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClusterSnapshotInput {
-    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+pub struct DeleteClusterSnapshotInput  {
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
     /// <p>Constraints: Must be the name of valid cluster.</p>
     #[doc(hidden)]
     pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSnapshotInput {
-    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_cluster_identifier.as_deref()
     }
 }
 impl DeleteClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder {
         crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder::default()
     }
 }
@@ -42,48 +40,38 @@ pub struct DeleteClusterSnapshotInputBuilder {
     pub(crate) snapshot_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteClusterSnapshotInputBuilder {
-    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
     pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.snapshot_identifier = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the manual snapshot to be deleted.</p>
+    /// <p>The unique identifier of the manual snapshot to be deleted.</p> 
     /// <p>Constraints: Must be the name of an existing snapshot that is in the <code>available</code>, <code>failed</code>, or <code>cancelled</code> state.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.snapshot_identifier = input;
-        self
+    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.snapshot_identifier = input; self
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
     /// <p>Constraints: Must be the name of valid cluster.</p>
     pub fn snapshot_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.snapshot_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>The unique identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
     /// <p>Constraints: Must be the name of valid cluster.</p>
-    pub fn set_snapshot_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.snapshot_cluster_identifier = input;
-        self
+    pub fn set_snapshot_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.snapshot_cluster_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteClusterSnapshotInput`](crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_cluster_snapshot::DeleteClusterSnapshotInput {
-                snapshot_identifier: self.snapshot_identifier,
-                snapshot_cluster_identifier: self.snapshot_cluster_identifier,
-            },
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                snapshot_cluster_identifier: self.snapshot_cluster_identifier
+                ,
+            }
         )
     }
 }
+

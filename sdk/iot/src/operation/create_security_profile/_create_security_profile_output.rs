@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSecurityProfileOutput {
+pub struct CreateSecurityProfileOutput  {
     /// <p>The name you gave to the security profile.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct CreateSecurityProfileOutput {
 }
 impl CreateSecurityProfileOutput {
     /// <p>The name you gave to the security profile.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The ARN of the security profile.</p>
-    pub fn security_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn security_profile_arn(&self) -> std::option::Option<& str> {
         self.security_profile_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSecurityProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityProfileOutput`](crate::operation::create_security_profile::CreateSecurityProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_security_profile::builders::CreateSecurityProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_security_profile::builders::CreateSecurityProfileOutputBuilder {
         crate::operation::create_security_profile::builders::CreateSecurityProfileOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl CreateSecurityProfileOutputBuilder {
         self
     }
     /// <p>The name you gave to the security profile.</p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_profile_name = input;
-        self
+    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_profile_name = input; self
     }
     /// <p>The ARN of the security profile.</p>
     pub fn security_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,28 +57,27 @@ impl CreateSecurityProfileOutputBuilder {
         self
     }
     /// <p>The ARN of the security profile.</p>
-    pub fn set_security_profile_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_profile_arn = input;
-        self
+    pub fn set_security_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_profile_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSecurityProfileOutput`](crate::operation::create_security_profile::CreateSecurityProfileOutput).
     pub fn build(self) -> crate::operation::create_security_profile::CreateSecurityProfileOutput {
         crate::operation::create_security_profile::CreateSecurityProfileOutput {
-            security_profile_name: self.security_profile_name,
-            security_profile_arn: self.security_profile_arn,
+            security_profile_name: self.security_profile_name
+            ,
+            security_profile_arn: self.security_profile_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

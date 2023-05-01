@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggingConfigurationInput {
+pub struct GetLoggingConfigurationInput  {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be retrieved.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
 }
 impl GetLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder {
         crate::operation::get_logging_configuration::builders::GetLoggingConfigurationInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetLoggingConfigurationInputBuilder {
     }
     /// <p>Identifier of the logging configuration to be retrieved.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// Consumes the builder and constructs a [`GetLoggingConfigurationInput`](crate::operation::get_logging_configuration::GetLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_logging_configuration::GetLoggingConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_logging_configuration::GetLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_logging_configuration::GetLoggingConfigurationInput {
-                identifier: self.identifier,
-            },
+                identifier: self.identifier
+                ,
+            }
         )
     }
 }
+

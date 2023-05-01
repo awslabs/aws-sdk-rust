@@ -2,37 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppAssessmentsOutput {
+pub struct ListAppAssessmentsOutput  {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
     #[doc(hidden)]
-    pub assessment_summaries:
-        std::option::Option<std::vec::Vec<crate::types::AppAssessmentSummary>>,
+    pub assessment_summaries: std::option::Option<std::vec::Vec<crate::types::AppAssessmentSummary>>,
     _request_id: Option<String>,
 }
 impl ListAppAssessmentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
-    pub fn assessment_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::AppAssessmentSummary]> {
+    pub fn assessment_summaries(&self) -> std::option::Option<& [crate::types::AppAssessmentSummary]> {
         self.assessment_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAppAssessmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAppAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppAssessmentsOutput`](crate::operation::list_app_assessments::ListAppAssessmentsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_assessments::builders::ListAppAssessmentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_app_assessments::builders::ListAppAssessmentsOutputBuilder {
         crate::operation::list_app_assessments::builders::ListAppAssessmentsOutputBuilder::default()
     }
 }
@@ -42,8 +38,7 @@ impl ListAppAssessmentsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAppAssessmentsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) assessment_summaries:
-        std::option::Option<std::vec::Vec<crate::types::AppAssessmentSummary>>,
+    pub(crate) assessment_summaries: std::option::Option<std::vec::Vec<crate::types::AppAssessmentSummary>>,
     _request_id: Option<String>,
 }
 impl ListAppAssessmentsOutputBuilder {
@@ -54,8 +49,7 @@ impl ListAppAssessmentsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `assessment_summaries`.
     ///
@@ -64,33 +58,32 @@ impl ListAppAssessmentsOutputBuilder {
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
     pub fn assessment_summaries(mut self, input: crate::types::AppAssessmentSummary) -> Self {
         let mut v = self.assessment_summaries.unwrap_or_default();
-        v.push(input);
-        self.assessment_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.assessment_summaries = Some(v);
+                        self
     }
     /// <p>The summaries for the specified assessments, returned as an object. This object includes application versions, associated Amazon Resource Numbers (ARNs), cost, messages, resiliency scores, and more.</p>
-    pub fn set_assessment_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AppAssessmentSummary>>,
-    ) -> Self {
-        self.assessment_summaries = input;
-        self
+    pub fn set_assessment_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AppAssessmentSummary>>) -> Self {
+        self.assessment_summaries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAppAssessmentsOutput`](crate::operation::list_app_assessments::ListAppAssessmentsOutput).
     pub fn build(self) -> crate::operation::list_app_assessments::ListAppAssessmentsOutput {
         crate::operation::list_app_assessments::ListAppAssessmentsOutput {
-            next_token: self.next_token,
-            assessment_summaries: self.assessment_summaries,
+            next_token: self.next_token
+            ,
+            assessment_summaries: self.assessment_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

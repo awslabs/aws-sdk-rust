@@ -3,7 +3,7 @@
 /// <p>Details of the Semtech GNSS solver object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SemtechGnssDetail {
+pub struct SemtechGnssDetail  {
     /// <p>The vendor of the solver object.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::types::PositionSolverProvider>,
@@ -19,19 +19,19 @@ pub struct SemtechGnssDetail {
 }
 impl SemtechGnssDetail {
     /// <p>The vendor of the solver object.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::PositionSolverProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::types::PositionSolverProvider> {
         self.provider.as_ref()
     }
     /// <p>The type of positioning solver used.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PositionSolverType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PositionSolverType> {
         self.r#type.as_ref()
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PositionConfigurationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> std::option::Option<&crate::types::PositionConfigurationFec> {
+    pub fn fec(&self) -> std::option::Option<& crate::types::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>The vendor of the solver object.</p>
-    pub fn set_provider(
-        mut self,
-        input: std::option::Option<crate::types::PositionSolverProvider>,
-    ) -> Self {
-        self.provider = input;
-        self
+    pub fn set_provider(mut self, input: std::option::Option<crate::types::PositionSolverProvider>) -> Self {
+        self.provider = input; self
     }
     /// <p>The type of positioning solver used.</p>
     pub fn r#type(mut self, input: crate::types::PositionSolverType) -> Self {
@@ -71,12 +67,8 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>The type of positioning solver used.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::PositionSolverType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::PositionSolverType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn status(mut self, input: crate::types::PositionConfigurationStatus) -> Self {
@@ -84,12 +76,8 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::PositionConfigurationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::PositionConfigurationStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(mut self, input: crate::types::PositionConfigurationFec) -> Self {
@@ -97,20 +85,21 @@ impl SemtechGnssDetailBuilder {
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn set_fec(
-        mut self,
-        input: std::option::Option<crate::types::PositionConfigurationFec>,
-    ) -> Self {
-        self.fec = input;
-        self
+    pub fn set_fec(mut self, input: std::option::Option<crate::types::PositionConfigurationFec>) -> Self {
+        self.fec = input; self
     }
     /// Consumes the builder and constructs a [`SemtechGnssDetail`](crate::types::SemtechGnssDetail).
     pub fn build(self) -> crate::types::SemtechGnssDetail {
         crate::types::SemtechGnssDetail {
-            provider: self.provider,
-            r#type: self.r#type,
-            status: self.status,
-            fec: self.fec,
+            provider: self.provider
+            ,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            fec: self.fec
+            ,
         }
     }
 }
+

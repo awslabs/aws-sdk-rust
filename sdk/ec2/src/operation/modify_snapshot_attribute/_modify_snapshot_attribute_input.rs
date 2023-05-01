@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifySnapshotAttributeInput {
+pub struct ModifySnapshotAttributeInput  {
     /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::SnapshotAttributeName>,
     /// <p>A JSON representation of the snapshot attribute modification.</p>
     #[doc(hidden)]
-    pub create_volume_permission:
-        std::option::Option<crate::types::CreateVolumePermissionModifications>,
+    pub create_volume_permission: std::option::Option<crate::types::CreateVolumePermissionModifications>,
     /// <p>The group to modify for the snapshot.</p>
     #[doc(hidden)]
     pub group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28,29 +27,27 @@ pub struct ModifySnapshotAttributeInput {
 }
 impl ModifySnapshotAttributeInput {
     /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::SnapshotAttributeName> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::SnapshotAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    pub fn create_volume_permission(
-        &self,
-    ) -> std::option::Option<&crate::types::CreateVolumePermissionModifications> {
+    pub fn create_volume_permission(&self) -> std::option::Option<& crate::types::CreateVolumePermissionModifications> {
         self.create_volume_permission.as_ref()
     }
     /// <p>The group to modify for the snapshot.</p>
-    pub fn group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.group_names.as_deref()
     }
     /// <p>The type of operation to perform to the attribute.</p>
-    pub fn operation_type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn operation_type(&self) -> std::option::Option<& crate::types::OperationType> {
         self.operation_type.as_ref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The account ID to modify for the snapshot.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -60,9 +57,7 @@ impl ModifySnapshotAttributeInput {
 }
 impl ModifySnapshotAttributeInput {
     /// Creates a new builder-style object to manufacture [`ModifySnapshotAttributeInput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder {
         crate::operation::modify_snapshot_attribute::builders::ModifySnapshotAttributeInputBuilder::default()
     }
 }
@@ -72,8 +67,7 @@ impl ModifySnapshotAttributeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ModifySnapshotAttributeInputBuilder {
     pub(crate) attribute: std::option::Option<crate::types::SnapshotAttributeName>,
-    pub(crate) create_volume_permission:
-        std::option::Option<crate::types::CreateVolumePermissionModifications>,
+    pub(crate) create_volume_permission: std::option::Option<crate::types::CreateVolumePermissionModifications>,
     pub(crate) group_names: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) operation_type: std::option::Option<crate::types::OperationType>,
     pub(crate) snapshot_id: std::option::Option<std::string::String>,
@@ -87,28 +81,17 @@ impl ModifySnapshotAttributeInputBuilder {
         self
     }
     /// <p>The snapshot attribute to modify. Only volume creation permissions can be modified.</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::SnapshotAttributeName>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
+        self.attribute = input; self
     }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    pub fn create_volume_permission(
-        mut self,
-        input: crate::types::CreateVolumePermissionModifications,
-    ) -> Self {
+    pub fn create_volume_permission(mut self, input: crate::types::CreateVolumePermissionModifications) -> Self {
         self.create_volume_permission = Some(input);
         self
     }
     /// <p>A JSON representation of the snapshot attribute modification.</p>
-    pub fn set_create_volume_permission(
-        mut self,
-        input: std::option::Option<crate::types::CreateVolumePermissionModifications>,
-    ) -> Self {
-        self.create_volume_permission = input;
-        self
+    pub fn set_create_volume_permission(mut self, input: std::option::Option<crate::types::CreateVolumePermissionModifications>) -> Self {
+        self.create_volume_permission = input; self
     }
     /// Appends an item to `group_names`.
     ///
@@ -117,17 +100,13 @@ impl ModifySnapshotAttributeInputBuilder {
     /// <p>The group to modify for the snapshot.</p>
     pub fn group_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.group_names.unwrap_or_default();
-        v.push(input.into());
-        self.group_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.group_names = Some(v);
+                        self
     }
     /// <p>The group to modify for the snapshot.</p>
-    pub fn set_group_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.group_names = input;
-        self
+    pub fn set_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.group_names = input; self
     }
     /// <p>The type of operation to perform to the attribute.</p>
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
@@ -135,12 +114,8 @@ impl ModifySnapshotAttributeInputBuilder {
         self
     }
     /// <p>The type of operation to perform to the attribute.</p>
-    pub fn set_operation_type(
-        mut self,
-        input: std::option::Option<crate::types::OperationType>,
-    ) -> Self {
-        self.operation_type = input;
-        self
+    pub fn set_operation_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
+        self.operation_type = input; self
     }
     /// <p>The ID of the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +124,7 @@ impl ModifySnapshotAttributeInputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// Appends an item to `user_ids`.
     ///
@@ -159,17 +133,13 @@ impl ModifySnapshotAttributeInputBuilder {
     /// <p>The account ID to modify for the snapshot.</p>
     pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids = Some(v);
+                        self
     }
     /// <p>The account ID to modify for the snapshot.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.user_ids = input;
-        self
+    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.user_ids = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -178,26 +148,28 @@ impl ModifySnapshotAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`ModifySnapshotAttributeInput`](crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeInput {
-                attribute: self.attribute,
-                create_volume_permission: self.create_volume_permission,
-                group_names: self.group_names,
-                operation_type: self.operation_type,
-                snapshot_id: self.snapshot_id,
-                user_ids: self.user_ids,
-                dry_run: self.dry_run,
-            },
+                attribute: self.attribute
+                ,
+                create_volume_permission: self.create_volume_permission
+                ,
+                group_names: self.group_names
+                ,
+                operation_type: self.operation_type
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                user_ids: self.user_ids
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -3,24 +3,21 @@
 /// <p>The series axis configuration of a line chart.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LineSeriesAxisDisplayOptions {
+pub struct LineSeriesAxisDisplayOptions  {
     /// <p>The options that determine the presentation of the line series axis.</p>
     #[doc(hidden)]
     pub axis_options: std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
     #[doc(hidden)]
-    pub missing_data_configurations:
-        std::option::Option<std::vec::Vec<crate::types::MissingDataConfiguration>>,
+    pub missing_data_configurations: std::option::Option<std::vec::Vec<crate::types::MissingDataConfiguration>>,
 }
 impl LineSeriesAxisDisplayOptions {
     /// <p>The options that determine the presentation of the line series axis.</p>
-    pub fn axis_options(&self) -> std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn axis_options(&self) -> std::option::Option<& crate::types::AxisDisplayOptions> {
         self.axis_options.as_ref()
     }
     /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
-    pub fn missing_data_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::MissingDataConfiguration]> {
+    pub fn missing_data_configurations(&self) -> std::option::Option<& [crate::types::MissingDataConfiguration]> {
         self.missing_data_configurations.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl LineSeriesAxisDisplayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LineSeriesAxisDisplayOptionsBuilder {
     pub(crate) axis_options: std::option::Option<crate::types::AxisDisplayOptions>,
-    pub(crate) missing_data_configurations:
-        std::option::Option<std::vec::Vec<crate::types::MissingDataConfiguration>>,
+    pub(crate) missing_data_configurations: std::option::Option<std::vec::Vec<crate::types::MissingDataConfiguration>>,
 }
 impl LineSeriesAxisDisplayOptionsBuilder {
     /// <p>The options that determine the presentation of the line series axis.</p>
@@ -46,40 +42,32 @@ impl LineSeriesAxisDisplayOptionsBuilder {
         self
     }
     /// <p>The options that determine the presentation of the line series axis.</p>
-    pub fn set_axis_options(
-        mut self,
-        input: std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
-        self.axis_options = input;
-        self
+    pub fn set_axis_options(mut self, input: std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.axis_options = input; self
     }
     /// Appends an item to `missing_data_configurations`.
     ///
     /// To override the contents of this collection use [`set_missing_data_configurations`](Self::set_missing_data_configurations).
     ///
     /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
-    pub fn missing_data_configurations(
-        mut self,
-        input: crate::types::MissingDataConfiguration,
-    ) -> Self {
+    pub fn missing_data_configurations(mut self, input: crate::types::MissingDataConfiguration) -> Self {
         let mut v = self.missing_data_configurations.unwrap_or_default();
-        v.push(input);
-        self.missing_data_configurations = Some(v);
-        self
+                        v.push(input);
+                        self.missing_data_configurations = Some(v);
+                        self
     }
     /// <p>The configuration options that determine how missing data is treated during the rendering of a line chart.</p>
-    pub fn set_missing_data_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MissingDataConfiguration>>,
-    ) -> Self {
-        self.missing_data_configurations = input;
-        self
+    pub fn set_missing_data_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::MissingDataConfiguration>>) -> Self {
+        self.missing_data_configurations = input; self
     }
     /// Consumes the builder and constructs a [`LineSeriesAxisDisplayOptions`](crate::types::LineSeriesAxisDisplayOptions).
     pub fn build(self) -> crate::types::LineSeriesAxisDisplayOptions {
         crate::types::LineSeriesAxisDisplayOptions {
-            axis_options: self.axis_options,
-            missing_data_configurations: self.missing_data_configurations,
+            axis_options: self.axis_options
+            ,
+            missing_data_configurations: self.missing_data_configurations
+            ,
         }
     }
 }
+

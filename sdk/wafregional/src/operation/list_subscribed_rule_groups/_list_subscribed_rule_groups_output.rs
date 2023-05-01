@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscribedRuleGroupsOutput {
+pub struct ListSubscribedRuleGroupsOutput  {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct ListSubscribedRuleGroupsOutput {
 }
 impl ListSubscribedRuleGroupsOutput {
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn rule_groups(&self) -> std::option::Option<&[crate::types::SubscribedRuleGroupSummary]> {
+    pub fn rule_groups(&self) -> std::option::Option<& [crate::types::SubscribedRuleGroupSummary]> {
         self.rule_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSubscribedRuleGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSubscribedRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsOutput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput).
-    pub fn builder() -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsOutputBuilder {
         crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsOutputBuilder::default()
     }
 }
@@ -38,8 +38,7 @@ impl ListSubscribedRuleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSubscribedRuleGroupsOutputBuilder {
     pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) rule_groups:
-        std::option::Option<std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
+    pub(crate) rule_groups: std::option::Option<std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListSubscribedRuleGroupsOutputBuilder {
@@ -50,8 +49,7 @@ impl ListSubscribedRuleGroupsOutputBuilder {
     }
     /// <p>If you have more objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more objects, submit another <code>ListSubscribedRuleGroups</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// Appends an item to `rule_groups`.
     ///
@@ -60,35 +58,32 @@ impl ListSubscribedRuleGroupsOutputBuilder {
     /// <p>An array of <code>RuleGroup</code> objects.</p>
     pub fn rule_groups(mut self, input: crate::types::SubscribedRuleGroupSummary) -> Self {
         let mut v = self.rule_groups.unwrap_or_default();
-        v.push(input);
-        self.rule_groups = Some(v);
-        self
+                        v.push(input);
+                        self.rule_groups = Some(v);
+                        self
     }
     /// <p>An array of <code>RuleGroup</code> objects.</p>
-    pub fn set_rule_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>,
-    ) -> Self {
-        self.rule_groups = input;
-        self
+    pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SubscribedRuleGroupSummary>>) -> Self {
+        self.rule_groups = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSubscribedRuleGroupsOutput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput {
+    pub fn build(self) -> crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput {
         crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsOutput {
-            next_marker: self.next_marker,
-            rule_groups: self.rule_groups,
+            next_marker: self.next_marker
+            ,
+            rule_groups: self.rule_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

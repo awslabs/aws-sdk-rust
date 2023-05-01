@@ -2,31 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceInput {
+pub struct RemoveTagsFromResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The tag key or keys to remove.</p>
+    /// <p>The tag key or keys to remove.</p> 
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
     #[doc(hidden)]
     pub tag_key_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The tag key or keys to remove.</p>
+    /// <p>The tag key or keys to remove.</p> 
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn tag_key_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_key_list(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_key_list.as_deref()
     }
 }
 impl RemoveTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn builder(
-    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder::default()
     }
 }
@@ -46,42 +44,35 @@ impl RemoveTagsFromResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Appends an item to `tag_key_list`.
     ///
     /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
     ///
-    /// <p>The tag key or keys to remove.</p>
+    /// <p>The tag key or keys to remove.</p> 
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
     pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_key_list.unwrap_or_default();
-        v.push(input.into());
-        self.tag_key_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_key_list = Some(v);
+                        self
     }
-    /// <p>The tag key or keys to remove.</p>
+    /// <p>The tag key or keys to remove.</p> 
     /// <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <code>AddTagsToResource</code>.</p>
-    pub fn set_tag_key_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_key_list = input;
-        self
+    pub fn set_tag_key_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_key_list = input; self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-                resource_arn: self.resource_arn,
-                tag_key_list: self.tag_key_list,
-            },
+                resource_arn: self.resource_arn
+                ,
+                tag_key_list: self.tag_key_list
+                ,
+            }
         )
     }
 }
+

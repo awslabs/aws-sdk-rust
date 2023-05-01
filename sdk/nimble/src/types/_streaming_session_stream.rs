@@ -3,7 +3,7 @@
 /// <p>A stream is an active connection to a streaming session, enabling a studio user to control the streaming session using a compatible client. Streaming session streams are compatible with the NICE DCV web client, included in the Nimble Studio portal, or the NICE DCV desktop client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StreamingSessionStream {
+pub struct StreamingSessionStream  {
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -31,41 +31,39 @@ pub struct StreamingSessionStream {
 }
 impl StreamingSessionStream {
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The user ID of the user that created the streaming session stream.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The ISO timestamp in seconds for when the resource expires.</p>
-    pub fn expires_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expires_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expires_at.as_ref()
     }
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
-    pub fn owned_by(&self) -> std::option::Option<&str> {
+    pub fn owned_by(&self) -> std::option::Option<& str> {
         self.owned_by.as_deref()
     }
     /// <p>The current state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StreamingSessionStreamState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::StreamingSessionStreamState> {
         self.state.as_ref()
     }
     /// <p>The streaming session stream status code.</p>
-    pub fn status_code(
-        &self,
-    ) -> std::option::Option<&crate::types::StreamingSessionStreamStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::types::StreamingSessionStreamStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
     /// <p>The URL to connect to this stream using the DCV client.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for StreamingSessionStream {
+impl  std::fmt::Debug for StreamingSessionStream  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingSessionStream");
         formatter.field("created_at", &self.created_at);
@@ -106,12 +104,8 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The user ID of the user that created the streaming session stream.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +114,7 @@ impl StreamingSessionStreamBuilder {
     }
     /// <p>The user ID of the user that created the streaming session stream.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The ISO timestamp in seconds for when the resource expires.</p>
     pub fn expires_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -129,12 +122,8 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The ISO timestamp in seconds for when the resource expires.</p>
-    pub fn set_expires_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expires_at = input;
-        self
+    pub fn set_expires_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expires_at = input; self
     }
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +132,7 @@ impl StreamingSessionStreamBuilder {
     }
     /// <p>The user ID of the user that owns the streaming session. The user that owns the session will be logging into the session and interacting with the virtual workstation.</p>
     pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owned_by = input;
-        self
+        self.owned_by = input; self
     }
     /// <p>The current state.</p>
     pub fn state(mut self, input: crate::types::StreamingSessionStreamState) -> Self {
@@ -152,12 +140,8 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The current state.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::StreamingSessionStreamState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::StreamingSessionStreamState>) -> Self {
+        self.state = input; self
     }
     /// <p>The streaming session stream status code.</p>
     pub fn status_code(mut self, input: crate::types::StreamingSessionStreamStatusCode) -> Self {
@@ -165,12 +149,8 @@ impl StreamingSessionStreamBuilder {
         self
     }
     /// <p>The streaming session stream status code.</p>
-    pub fn set_status_code(
-        mut self,
-        input: std::option::Option<crate::types::StreamingSessionStreamStatusCode>,
-    ) -> Self {
-        self.status_code = input;
-        self
+    pub fn set_status_code(mut self, input: std::option::Option<crate::types::StreamingSessionStreamStatusCode>) -> Self {
+        self.status_code = input; self
     }
     /// <p>The stream ID.</p>
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,8 +159,7 @@ impl StreamingSessionStreamBuilder {
     }
     /// <p>The stream ID.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// <p>The URL to connect to this stream using the DCV client.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,20 +168,27 @@ impl StreamingSessionStreamBuilder {
     }
     /// <p>The URL to connect to this stream using the DCV client.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// Consumes the builder and constructs a [`StreamingSessionStream`](crate::types::StreamingSessionStream).
     pub fn build(self) -> crate::types::StreamingSessionStream {
         crate::types::StreamingSessionStream {
-            created_at: self.created_at,
-            created_by: self.created_by,
-            expires_at: self.expires_at,
-            owned_by: self.owned_by,
-            state: self.state,
-            status_code: self.status_code,
-            stream_id: self.stream_id,
-            url: self.url,
+            created_at: self.created_at
+            ,
+            created_by: self.created_by
+            ,
+            expires_at: self.expires_at
+            ,
+            owned_by: self.owned_by
+            ,
+            state: self.state
+            ,
+            status_code: self.status_code
+            ,
+            stream_id: self.stream_id
+            ,
+            url: self.url
+            ,
         }
     }
 }
@@ -220,3 +206,4 @@ impl std::fmt::Debug for StreamingSessionStreamBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagDescription {
+pub struct TagDescription  {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TagDescription {
 }
 impl TagDescription {
     /// <p>The tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl TagDescriptionBuilder {
     }
     /// <p>The tag key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl TagDescriptionBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -78,12 +76,8 @@ impl TagDescriptionBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The tag value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl TagDescriptionBuilder {
     }
     /// <p>The tag value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`TagDescription`](crate::types::TagDescription).
     pub fn build(self) -> crate::types::TagDescription {
         crate::types::TagDescription {
-            key: self.key,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            value: self.value,
+            key: self.key
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

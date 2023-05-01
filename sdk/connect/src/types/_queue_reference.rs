@@ -3,7 +3,7 @@
 /// <p>Contains information about a queue resource for which metrics are returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueueReference {
+pub struct QueueReference  {
     /// <p>The identifier of the queue.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct QueueReference {
 }
 impl QueueReference {
     /// <p>The identifier of the queue.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl QueueReferenceBuilder {
     }
     /// <p>The identifier of the queue.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl QueueReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the queue.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`QueueReference`](crate::types::QueueReference).
     pub fn build(self) -> crate::types::QueueReference {
         crate::types::QueueReference {
-            id: self.id,
-            arn: self.arn,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
         }
     }
 }
+

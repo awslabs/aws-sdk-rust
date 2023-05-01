@@ -3,7 +3,7 @@
 /// <p>Summary data of an Proton service resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceSummary {
+pub struct ServiceSummary  {
     /// <p>The name of the service.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -31,39 +31,39 @@ pub struct ServiceSummary {
 }
 impl ServiceSummary {
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the service.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The time when the service was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The status of the service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ServiceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ServiceStatus> {
         self.status.as_ref()
     }
     /// <p>A service status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceSummary {
+impl  std::fmt::Debug for ServiceSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSummary");
         formatter.field("name", &self.name);
@@ -105,8 +105,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the service.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +114,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>A description of the service.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +123,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the service template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,8 +132,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The time when the service was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,12 +140,8 @@ impl ServiceSummaryBuilder {
         self
     }
     /// <p>The time when the service was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The time when the service was last modified.</p>
     pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -157,12 +149,8 @@ impl ServiceSummaryBuilder {
         self
     }
     /// <p>The time when the service was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_at = input;
-        self
+    pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_at = input; self
     }
     /// <p>The status of the service.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
@@ -171,8 +159,7 @@ impl ServiceSummaryBuilder {
     }
     /// <p>The status of the service.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>A service status message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,20 +168,27 @@ impl ServiceSummaryBuilder {
     }
     /// <p>A service status message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// Consumes the builder and constructs a [`ServiceSummary`](crate::types::ServiceSummary).
     pub fn build(self) -> crate::types::ServiceSummary {
         crate::types::ServiceSummary {
-            name: self.name,
-            description: self.description,
-            arn: self.arn,
-            template_name: self.template_name,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
-            status: self.status,
-            status_message: self.status_message,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
+            template_name: self.template_name
+            ,
+            created_at: self.created_at
+            ,
+            last_modified_at: self.last_modified_at
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
@@ -212,3 +206,4 @@ impl std::fmt::Debug for ServiceSummaryBuilder {
         formatter.finish()
     }
 }
+

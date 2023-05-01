@@ -4,67 +4,49 @@ pub use crate::operation::update_list::_update_list_output::UpdateListOutputBuil
 pub use crate::operation::update_list::_update_list_input::UpdateListInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateList`.
-///
+/// 
 /// <p> Updates a list. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateListFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_list::builders::UpdateListInputBuilder,
-}
-impl UpdateListFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_list::builders::UpdateListInputBuilder
+            }
+impl UpdateListFluentBuilder  {
     /// Creates a new `UpdateList`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_list::UpdateList,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_list::UpdateListOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_list::UpdateList, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_list::UpdateListOutput, aws_smithy_http::result::SdkError<crate::operation::update_list::UpdateListError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The name of the list to update. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -79,18 +61,15 @@ impl UpdateListFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
     ///
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p> 
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
     pub fn elements(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.elements(input.into());
         self
     }
-    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p>
+    /// <p> One or more list elements to add or replace. If you are providing the elements, make sure to specify the <code>updateMode</code> to use. </p> 
     /// <p>If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code> and provide an empty list (0 elements).</p>
-    pub fn set_elements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_elements(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_elements(input);
         self
     }
@@ -104,41 +83,39 @@ impl UpdateListFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p> The update mode (type). </p>
-    /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <p> The update mode (type). </p> 
+    /// <ul> 
+    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li> 
+    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li> 
+    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li> 
     /// </ul>
     pub fn update_mode(mut self, input: crate::types::ListUpdateMode) -> Self {
         self.inner = self.inner.update_mode(input);
         self
     }
-    /// <p> The update mode (type). </p>
-    /// <ul>
-    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li>
-    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li>
-    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li>
+    /// <p> The update mode (type). </p> 
+    /// <ul> 
+    /// <li> <p>Use <code>APPEND</code> if you are adding elements to the list.</p> </li> 
+    /// <li> <p>Use <code>REPLACE</code> if you replacing existing elements in the list.</p> </li> 
+    /// <li> <p>Use <code>REMOVE</code> if you are removing elements from the list.</p> </li> 
     /// </ul>
-    pub fn set_update_mode(
-        mut self,
-        input: std::option::Option<crate::types::ListUpdateMode>,
-    ) -> Self {
+    pub fn set_update_mode(mut self, input: std::option::Option<crate::types::ListUpdateMode>) -> Self {
         self.inner = self.inner.set_update_mode(input);
         self
     }
-    /// <p> The variable type you want to assign to the list. </p> <note>
-    /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
+    /// <p> The variable type you want to assign to the list. </p> <note> 
+    /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p> 
     /// </note>
     pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.variable_type(input.into());
         self
     }
-    /// <p> The variable type you want to assign to the list. </p> <note>
-    /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p>
+    /// <p> The variable type you want to assign to the list. </p> <note> 
+    /// <p>You cannot update a variable type of a list that already has a variable type assigned to it. You can assign a variable type to a list only if the list does not already have a variable type.</p> 
     /// </note>
     pub fn set_variable_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_variable_type(input);
         self
     }
 }
+

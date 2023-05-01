@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCelebrityInfoOutput {
+pub struct GetCelebrityInfoOutput  {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
     #[doc(hidden)]
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,27 +16,26 @@ pub struct GetCelebrityInfoOutput {
 }
 impl GetCelebrityInfoOutput {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn urls(&self) -> std::option::Option<& [std::string::String]> {
         self.urls.as_deref()
     }
     /// <p>The name of the celebrity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
-    pub fn known_gender(&self) -> std::option::Option<&crate::types::KnownGender> {
+    pub fn known_gender(&self) -> std::option::Option<& crate::types::KnownGender> {
         self.known_gender.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCelebrityInfoOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCelebrityInfoOutput {
     /// Creates a new builder-style object to manufacture [`GetCelebrityInfoOutput`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput).
-    pub fn builder() -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_celebrity_info::builders::GetCelebrityInfoOutputBuilder {
         crate::operation::get_celebrity_info::builders::GetCelebrityInfoOutputBuilder::default()
     }
 }
@@ -58,17 +57,13 @@ impl GetCelebrityInfoOutputBuilder {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
     pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.urls.unwrap_or_default();
-        v.push(input.into());
-        self.urls = Some(v);
-        self
+                        v.push(input.into());
+                        self.urls = Some(v);
+                        self
     }
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn set_urls(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.urls = input;
-        self
+    pub fn set_urls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.urls = input; self
     }
     /// <p>The name of the celebrity.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +72,7 @@ impl GetCelebrityInfoOutputBuilder {
     }
     /// <p>The name of the celebrity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub fn known_gender(mut self, input: crate::types::KnownGender) -> Self {
@@ -86,29 +80,29 @@ impl GetCelebrityInfoOutputBuilder {
         self
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
-    pub fn set_known_gender(
-        mut self,
-        input: std::option::Option<crate::types::KnownGender>,
-    ) -> Self {
-        self.known_gender = input;
-        self
+    pub fn set_known_gender(mut self, input: std::option::Option<crate::types::KnownGender>) -> Self {
+        self.known_gender = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCelebrityInfoOutput`](crate::operation::get_celebrity_info::GetCelebrityInfoOutput).
     pub fn build(self) -> crate::operation::get_celebrity_info::GetCelebrityInfoOutput {
         crate::operation::get_celebrity_info::GetCelebrityInfoOutput {
-            urls: self.urls,
-            name: self.name,
-            known_gender: self.known_gender,
+            urls: self.urls
+            ,
+            name: self.name
+            ,
+            known_gender: self.known_gender
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

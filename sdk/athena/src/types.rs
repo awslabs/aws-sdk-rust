@@ -276,3 +276,4 @@ pub mod builders;
 
 /// Error types that Amazon Athena can respond with.
 pub mod error;
+

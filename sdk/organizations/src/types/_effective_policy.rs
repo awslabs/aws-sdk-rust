@@ -3,7 +3,7 @@
 /// <p>Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EffectivePolicy {
+pub struct EffectivePolicy  {
     /// <p>The text content of the policy.</p>
     #[doc(hidden)]
     pub policy_content: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct EffectivePolicy {
 }
 impl EffectivePolicy {
     /// <p>The text content of the policy.</p>
-    pub fn policy_content(&self) -> std::option::Option<&str> {
+    pub fn policy_content(&self) -> std::option::Option<& str> {
         self.policy_content.as_deref()
     }
     /// <p>The time of the last update to this policy.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The account ID of the policy target. </p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The policy type.</p>
-    pub fn policy_type(&self) -> std::option::Option<&crate::types::EffectivePolicyType> {
+    pub fn policy_type(&self) -> std::option::Option<& crate::types::EffectivePolicyType> {
         self.policy_type.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl EffectivePolicyBuilder {
     }
     /// <p>The text content of the policy.</p>
     pub fn set_policy_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_content = input;
-        self
+        self.policy_content = input; self
     }
     /// <p>The time of the last update to this policy.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,12 +67,8 @@ impl EffectivePolicyBuilder {
         self
     }
     /// <p>The time of the last update to this policy.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_timestamp = input;
-        self
+    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_timestamp = input; self
     }
     /// <p>The account ID of the policy target. </p>
     pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +77,7 @@ impl EffectivePolicyBuilder {
     }
     /// <p>The account ID of the policy target. </p>
     pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// <p>The policy type.</p>
     pub fn policy_type(mut self, input: crate::types::EffectivePolicyType) -> Self {
@@ -91,20 +85,21 @@ impl EffectivePolicyBuilder {
         self
     }
     /// <p>The policy type.</p>
-    pub fn set_policy_type(
-        mut self,
-        input: std::option::Option<crate::types::EffectivePolicyType>,
-    ) -> Self {
-        self.policy_type = input;
-        self
+    pub fn set_policy_type(mut self, input: std::option::Option<crate::types::EffectivePolicyType>) -> Self {
+        self.policy_type = input; self
     }
     /// Consumes the builder and constructs a [`EffectivePolicy`](crate::types::EffectivePolicy).
     pub fn build(self) -> crate::types::EffectivePolicy {
         crate::types::EffectivePolicy {
-            policy_content: self.policy_content,
-            last_updated_timestamp: self.last_updated_timestamp,
-            target_id: self.target_id,
-            policy_type: self.policy_type,
+            policy_content: self.policy_content
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            target_id: self.target_id
+            ,
+            policy_type: self.policy_type
+            ,
         }
     }
 }
+

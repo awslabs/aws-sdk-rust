@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLifecyclePolicyInput {
+pub struct GetLifecyclePolicyInput  {
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl GetLifecyclePolicyInput {
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> std::option::Option<& str> {
         self.container_name.as_deref()
     }
 }
 impl GetLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder {
         crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetLifecyclePolicyInputBuilder {
     }
     /// <p>The name of the container that the object lifecycle policy is assigned to.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input;
-        self
+        self.container_name = input; self
     }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyInput`](crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_lifecycle_policy::GetLifecyclePolicyInput {
-                container_name: self.container_name,
-            },
+                container_name: self.container_name
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an Availability Zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZone {
+pub struct AvailabilityZone  {
     /// <p>The name of the Availability Zone.</p>
     #[doc(hidden)]
     pub zone_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AvailabilityZone {
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone.</p>
-    pub fn zone_name(&self) -> std::option::Option<&str> {
+    pub fn zone_name(&self) -> std::option::Option<& str> {
         self.zone_name.as_deref()
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The name of the Availability Zone.</p>
     pub fn set_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.zone_name = input;
-        self
+        self.zone_name = input; self
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
-            zone_name: self.zone_name,
-            subnet_id: self.subnet_id,
+            zone_name: self.zone_name
+            ,
+            subnet_id: self.subnet_id
+            ,
         }
     }
 }
+

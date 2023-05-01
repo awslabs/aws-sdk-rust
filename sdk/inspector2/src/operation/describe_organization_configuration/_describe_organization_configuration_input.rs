@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationInput {}
+pub struct DescribeOrganizationConfigurationInput  {
+}
 impl DescribeOrganizationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder {
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder::default()
     }
 }
@@ -13,13 +14,15 @@ impl DescribeOrganizationConfigurationInput {
 /// A builder for [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationInputBuilder {}
+pub struct DescribeOrganizationConfigurationInputBuilder {
+}
 impl DescribeOrganizationConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationInput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationInput {
             }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the name of the schema and table to be reloaded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableToReload {
+pub struct TableToReload  {
     /// <p>The schema name of the table to be reloaded.</p>
     #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TableToReload {
 }
 impl TableToReload {
     /// <p>The schema name of the table to be reloaded.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The table name of the table to be reloaded.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl TableToReloadBuilder {
     }
     /// <p>The schema name of the table to be reloaded.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The table name of the table to be reloaded.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl TableToReloadBuilder {
     }
     /// <p>The table name of the table to be reloaded.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Consumes the builder and constructs a [`TableToReload`](crate::types::TableToReload).
     pub fn build(self) -> crate::types::TableToReload {
         crate::types::TableToReload {
-            schema_name: self.schema_name,
-            table_name: self.table_name,
+            schema_name: self.schema_name
+            ,
+            table_name: self.table_name
+            ,
         }
     }
 }
+

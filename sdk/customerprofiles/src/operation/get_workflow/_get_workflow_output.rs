@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowOutput {
+pub struct GetWorkflowOutput  {
     /// <p>Unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -31,43 +31,43 @@ pub struct GetWorkflowOutput {
 }
 impl GetWorkflowOutput {
     /// <p>Unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>Status of workflow execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Workflow error messages during execution (if any).</p>
-    pub fn error_description(&self) -> std::option::Option<&str> {
+    pub fn error_description(&self) -> std::option::Option<& str> {
         self.error_description.as_deref()
     }
     /// <p>The timestamp that represents when workflow execution started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The timestamp that represents when workflow execution last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>Attributes provided for workflow execution.</p>
-    pub fn attributes(&self) -> std::option::Option<&crate::types::WorkflowAttributes> {
+    pub fn attributes(&self) -> std::option::Option<& crate::types::WorkflowAttributes> {
         self.attributes.as_ref()
     }
     /// <p>Workflow specific execution metrics.</p>
-    pub fn metrics(&self) -> std::option::Option<&crate::types::WorkflowMetrics> {
+    pub fn metrics(&self) -> std::option::Option<& crate::types::WorkflowMetrics> {
         self.metrics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetWorkflowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn builder() -> crate::operation::get_workflow::builders::GetWorkflowOutputBuilder {
@@ -97,8 +97,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>Unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -106,12 +105,8 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The type of workflow. The only supported value is APPFLOW_INTEGRATION.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
     }
     /// <p>Status of workflow execution.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -120,8 +115,7 @@ impl GetWorkflowOutputBuilder {
     }
     /// <p>Status of workflow execution.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Workflow error messages during execution (if any).</p>
     pub fn error_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,12 +123,8 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>Workflow error messages during execution (if any).</p>
-    pub fn set_error_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.error_description = input;
-        self
+    pub fn set_error_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.error_description = input; self
     }
     /// <p>The timestamp that represents when workflow execution started.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,12 +132,8 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The timestamp that represents when workflow execution started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
     }
     /// <p>The timestamp that represents when workflow execution last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,12 +141,8 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>The timestamp that represents when workflow execution last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p>Attributes provided for workflow execution.</p>
     pub fn attributes(mut self, input: crate::types::WorkflowAttributes) -> Self {
@@ -168,12 +150,8 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>Attributes provided for workflow execution.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<crate::types::WorkflowAttributes>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<crate::types::WorkflowAttributes>) -> Self {
+        self.attributes = input; self
     }
     /// <p>Workflow specific execution metrics.</p>
     pub fn metrics(mut self, input: crate::types::WorkflowMetrics) -> Self {
@@ -181,34 +159,39 @@ impl GetWorkflowOutputBuilder {
         self
     }
     /// <p>Workflow specific execution metrics.</p>
-    pub fn set_metrics(
-        mut self,
-        input: std::option::Option<crate::types::WorkflowMetrics>,
-    ) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: std::option::Option<crate::types::WorkflowMetrics>) -> Self {
+        self.metrics = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::operation::get_workflow::GetWorkflowOutput).
     pub fn build(self) -> crate::operation::get_workflow::GetWorkflowOutput {
         crate::operation::get_workflow::GetWorkflowOutput {
-            workflow_id: self.workflow_id,
-            workflow_type: self.workflow_type,
-            status: self.status,
-            error_description: self.error_description,
-            start_date: self.start_date,
-            last_updated_at: self.last_updated_at,
-            attributes: self.attributes,
-            metrics: self.metrics,
+            workflow_id: self.workflow_id
+            ,
+            workflow_type: self.workflow_type
+            ,
+            status: self.status
+            ,
+            error_description: self.error_description
+            ,
+            start_date: self.start_date
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            attributes: self.attributes
+            ,
+            metrics: self.metrics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

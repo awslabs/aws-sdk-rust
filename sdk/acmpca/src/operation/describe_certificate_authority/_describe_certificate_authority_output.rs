@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificateAuthorityOutput {
+pub struct DescribeCertificateAuthorityOutput  {
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
     #[doc(hidden)]
     pub certificate_authority: std::option::Option<crate::types::CertificateAuthority>,
@@ -10,20 +10,18 @@ pub struct DescribeCertificateAuthorityOutput {
 }
 impl DescribeCertificateAuthorityOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    pub fn certificate_authority(
-        &self,
-    ) -> std::option::Option<&crate::types::CertificateAuthority> {
+    pub fn certificate_authority(&self) -> std::option::Option<& crate::types::CertificateAuthority> {
         self.certificate_authority.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCertificateAuthorityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCertificateAuthorityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput).
-    pub fn builder() -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityOutputBuilder{
+    pub fn builder() -> crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityOutputBuilder {
         crate::operation::describe_certificate_authority::builders::DescribeCertificateAuthorityOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DescribeCertificateAuthorityOutputBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CertificateAuthority.html">CertificateAuthority</a> structure that contains information about your private CA.</p>
-    pub fn set_certificate_authority(
-        mut self,
-        input: std::option::Option<crate::types::CertificateAuthority>,
-    ) -> Self {
-        self.certificate_authority = input;
-        self
+    pub fn set_certificate_authority(mut self, input: std::option::Option<crate::types::CertificateAuthority>) -> Self {
+        self.certificate_authority = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCertificateAuthorityOutput`](crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput {
+    pub fn build(self) -> crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput {
         crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput {
-            certificate_authority: self.certificate_authority,
+            certificate_authority: self.certificate_authority
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

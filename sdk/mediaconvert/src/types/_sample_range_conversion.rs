@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let samplerangeconversion = unimplemented!();
 /// match samplerangeconversion {
@@ -31,22 +31,14 @@
 /// Specifically, when `samplerangeconversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SampleRangeConversion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify how MediaConvert limits the color sample range for this output. To create a limited range output from a full range input: Choose Limited range squeeze. For full range inputs, MediaConvert performs a linear offset to color samples equally across all pixels and frames. Color samples in 10-bit outputs are limited to 64 through 940, and 8-bit outputs are limited to 16 through 235. Note: For limited range inputs, values for color samples are passed through to your output unchanged. MediaConvert does not limit the sample range. To correct pixels in your input that are out of range or out of gamut: Choose Limited range clip. Use for broadcast applications. MediaConvert conforms any pixels outside of the values that you specify under Minimum YUV and Maximum YUV to limited range bounds. MediaConvert also corrects any YUV values that, when converted to RGB, would be outside the bounds you specify under Minimum RGB tolerance and Maximum RGB tolerance. With either limited range conversion, MediaConvert writes the sample range metadata in the output.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SampleRangeConversion {
     #[allow(missing_docs)] // documentation missing in model
     LimitedRangeClip,
@@ -55,44 +47,43 @@ pub enum SampleRangeConversion {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SampleRangeConversion {
-    fn from(s: &str) -> Self {
-        match s {
-            "LIMITED_RANGE_CLIP" => SampleRangeConversion::LimitedRangeClip,
-            "LIMITED_RANGE_SQUEEZE" => SampleRangeConversion::LimitedRangeSqueeze,
-            "NONE" => SampleRangeConversion::None,
-            other => SampleRangeConversion::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "LIMITED_RANGE_CLIP" => SampleRangeConversion::LimitedRangeClip,
+"LIMITED_RANGE_SQUEEZE" => SampleRangeConversion::LimitedRangeSqueeze,
+"NONE" => SampleRangeConversion::None,
+other => SampleRangeConversion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for SampleRangeConversion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SampleRangeConversion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SampleRangeConversion::from(s))
+                }
+            }
 impl SampleRangeConversion {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SampleRangeConversion::LimitedRangeClip => "LIMITED_RANGE_CLIP",
-            SampleRangeConversion::LimitedRangeSqueeze => "LIMITED_RANGE_SQUEEZE",
-            SampleRangeConversion::None => "NONE",
-            SampleRangeConversion::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["LIMITED_RANGE_CLIP", "LIMITED_RANGE_SQUEEZE", "NONE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SampleRangeConversion::LimitedRangeClip => "LIMITED_RANGE_CLIP",
+    SampleRangeConversion::LimitedRangeSqueeze => "LIMITED_RANGE_SQUEEZE",
+    SampleRangeConversion::None => "NONE",
+    SampleRangeConversion::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["LIMITED_RANGE_CLIP", "LIMITED_RANGE_SQUEEZE", "NONE"]
+                }
+            }
 impl AsRef<str> for SampleRangeConversion {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

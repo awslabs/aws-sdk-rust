@@ -3,7 +3,7 @@
 /// <p>The summary of the cluster step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepSummary {
+pub struct StepSummary  {
     /// <p>The identifier of the cluster step.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct StepSummary {
 }
 impl StepSummary {
     /// <p>The identifier of the cluster step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the cluster step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
-    pub fn config(&self) -> std::option::Option<&crate::types::HadoopStepConfig> {
+    pub fn config(&self) -> std::option::Option<& crate::types::HadoopStepConfig> {
         self.config.as_ref()
     }
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
-    pub fn action_on_failure(&self) -> std::option::Option<&crate::types::ActionOnFailure> {
+    pub fn action_on_failure(&self) -> std::option::Option<& crate::types::ActionOnFailure> {
         self.action_on_failure.as_ref()
     }
     /// <p>The current execution status details of the cluster step.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StepStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::StepStatus> {
         self.status.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl StepSummaryBuilder {
     }
     /// <p>The identifier of the cluster step.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the cluster step.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl StepSummaryBuilder {
     }
     /// <p>The name of the cluster step.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
     pub fn config(mut self, input: crate::types::HadoopStepConfig) -> Self {
@@ -86,12 +84,8 @@ impl StepSummaryBuilder {
         self
     }
     /// <p>The Hadoop job configuration of the cluster step.</p>
-    pub fn set_config(
-        mut self,
-        input: std::option::Option<crate::types::HadoopStepConfig>,
-    ) -> Self {
-        self.config = input;
-        self
+    pub fn set_config(mut self, input: std::option::Option<crate::types::HadoopStepConfig>) -> Self {
+        self.config = input; self
     }
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
     pub fn action_on_failure(mut self, input: crate::types::ActionOnFailure) -> Self {
@@ -99,12 +93,8 @@ impl StepSummaryBuilder {
         self
     }
     /// <p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility.</p>
-    pub fn set_action_on_failure(
-        mut self,
-        input: std::option::Option<crate::types::ActionOnFailure>,
-    ) -> Self {
-        self.action_on_failure = input;
-        self
+    pub fn set_action_on_failure(mut self, input: std::option::Option<crate::types::ActionOnFailure>) -> Self {
+        self.action_on_failure = input; self
     }
     /// <p>The current execution status details of the cluster step.</p>
     pub fn status(mut self, input: crate::types::StepStatus) -> Self {
@@ -113,17 +103,22 @@ impl StepSummaryBuilder {
     }
     /// <p>The current execution status details of the cluster step.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::StepStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`StepSummary`](crate::types::StepSummary).
     pub fn build(self) -> crate::types::StepSummary {
         crate::types::StepSummary {
-            id: self.id,
-            name: self.name,
-            config: self.config,
-            action_on_failure: self.action_on_failure,
-            status: self.status,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            config: self.config
+            ,
+            action_on_failure: self.action_on_failure
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

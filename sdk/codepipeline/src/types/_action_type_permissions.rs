@@ -3,14 +3,14 @@
 /// <p>Details identifying the users with permissions to use the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypePermissions {
+pub struct ActionTypePermissions  {
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
     #[doc(hidden)]
     pub allowed_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ActionTypePermissions {
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
-    pub fn allowed_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_accounts.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl ActionTypePermissionsBuilder {
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
     pub fn allowed_accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.allowed_accounts = Some(v);
-        self
+                        v.push(input.into());
+                        self.allowed_accounts = Some(v);
+                        self
     }
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
-    pub fn set_allowed_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.allowed_accounts = input;
-        self
+    pub fn set_allowed_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.allowed_accounts = input; self
     }
     /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::types::ActionTypePermissions).
     pub fn build(self) -> crate::types::ActionTypePermissions {
         crate::types::ActionTypePermissions {
-            allowed_accounts: self.allowed_accounts,
+            allowed_accounts: self.allowed_accounts
+            ,
         }
     }
 }
+

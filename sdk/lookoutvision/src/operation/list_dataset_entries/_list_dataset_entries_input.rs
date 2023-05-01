@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetEntriesInput {
+pub struct ListDatasetEntriesInput  {
     /// <p>The name of the project that contains the dataset that you want to list.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -33,11 +33,11 @@ pub struct ListDatasetEntriesInput {
 }
 impl ListDatasetEntriesInput {
     /// <p>The name of the project that contains the dataset that you want to list.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
-    pub fn dataset_type(&self) -> std::option::Option<&str> {
+    pub fn dataset_type(&self) -> std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
     /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
@@ -45,19 +45,19 @@ impl ListDatasetEntriesInput {
         self.labeled
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
-    pub fn anomaly_class(&self) -> std::option::Option<&str> {
+    pub fn anomaly_class(&self) -> std::option::Option<& str> {
         self.anomaly_class.as_deref()
     }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn before_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn before_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.before_creation_date.as_ref()
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn after_creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn after_creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.after_creation_date.as_ref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
@@ -65,14 +65,13 @@ impl ListDatasetEntriesInput {
         self.max_results
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn source_ref_contains(&self) -> std::option::Option<&str> {
+    pub fn source_ref_contains(&self) -> std::option::Option<& str> {
         self.source_ref_contains.as_deref()
     }
 }
 impl ListDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-    pub fn builder(
-    ) -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
+    pub fn builder() -> crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder {
         crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder::default()
     }
 }
@@ -99,8 +98,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>The name of the project that contains the dataset that you want to list.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
     pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +107,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>The type of the dataset that you want to list. Specify <code>train</code> to list the training dataset. Specify <code>test</code> to list the test dataset. If you have a single dataset project, specify <code>train</code>.</p>
     pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
     pub fn labeled(mut self, input: bool) -> Self {
@@ -119,8 +116,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>. If you don't specify a value, Lookout for Vision returns all entries.</p>
     pub fn set_labeled(mut self, input: std::option::Option<bool>) -> Self {
-        self.labeled = input;
-        self
+        self.labeled = input; self
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
     pub fn anomaly_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +125,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code> to only include anomalous entries. If you don't specify a value, Amazon Lookout for Vision returns normal and anomalous images.</p>
     pub fn set_anomaly_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anomaly_class = input;
-        self
+        self.anomaly_class = input; self
     }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
     pub fn before_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -138,12 +133,8 @@ impl ListDatasetEntriesInputBuilder {
         self
     }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_before_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.before_creation_date = input;
-        self
+    pub fn set_before_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.before_creation_date = input; self
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
     pub fn after_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,12 +142,8 @@ impl ListDatasetEntriesInputBuilder {
         self
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_after_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.after_creation_date = input;
-        self
+    pub fn set_after_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.after_creation_date = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,8 +152,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Lookout for Vision returns a pagination token in the response. You can use this pagination token to retrieve the next set of dataset entries.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -175,8 +161,7 @@ impl ListDatasetEntriesInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
     pub fn source_ref_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,32 +169,33 @@ impl ListDatasetEntriesInputBuilder {
         self
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_ref_contains = input;
-        self
+    pub fn set_source_ref_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_ref_contains = input; self
     }
     /// Consumes the builder and constructs a [`ListDatasetEntriesInput`](crate::operation::list_dataset_entries::ListDatasetEntriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_dataset_entries::ListDatasetEntriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_dataset_entries::ListDatasetEntriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_dataset_entries::ListDatasetEntriesInput {
-                project_name: self.project_name,
-                dataset_type: self.dataset_type,
-                labeled: self.labeled,
-                anomaly_class: self.anomaly_class,
-                before_creation_date: self.before_creation_date,
-                after_creation_date: self.after_creation_date,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                source_ref_contains: self.source_ref_contains,
-            },
+                project_name: self.project_name
+                ,
+                dataset_type: self.dataset_type
+                ,
+                labeled: self.labeled
+                ,
+                anomaly_class: self.anomaly_class
+                ,
+                before_creation_date: self.before_creation_date
+                ,
+                after_creation_date: self.after_creation_date
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                source_ref_contains: self.source_ref_contains
+                ,
+            }
         )
     }
 }
+

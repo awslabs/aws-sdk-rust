@@ -3,7 +3,7 @@
 /// <p>The email address associated with the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Email {
+pub struct Email  {
     /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct Email {
 }
 impl Email {
     /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A string representing the type of address. For example, "Work."</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
@@ -28,7 +28,7 @@ impl Email {
         self.primary
     }
 }
-impl std::fmt::Debug for Email {
+impl  std::fmt::Debug for Email  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Email");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -60,8 +60,7 @@ impl EmailBuilder {
     }
     /// <p>A string containing an email address. For example, "johndoe@amazon.com."</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>A string representing the type of address. For example, "Work."</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +69,7 @@ impl EmailBuilder {
     }
     /// <p>A string representing the type of address. For example, "Work."</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
     pub fn primary(mut self, input: bool) -> Self {
@@ -80,15 +78,18 @@ impl EmailBuilder {
     }
     /// <p>A Boolean value representing whether this is the primary email address for the associated resource.</p>
     pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// Consumes the builder and constructs a [`Email`](crate::types::Email).
     pub fn build(self) -> crate::types::Email {
         crate::types::Email {
-            value: self.value,
-            r#type: self.r#type,
-            primary: self.primary.unwrap_or_default(),
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
+            primary: self.primary
+                .unwrap_or_default()
+            ,
         }
     }
 }
@@ -101,3 +102,4 @@ impl std::fmt::Debug for EmailBuilder {
         formatter.finish()
     }
 }
+

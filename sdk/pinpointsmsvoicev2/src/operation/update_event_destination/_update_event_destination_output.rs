@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventDestinationOutput {
+pub struct UpdateEventDestinationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -16,28 +16,26 @@ pub struct UpdateEventDestinationOutput {
 }
 impl UpdateEventDestinationOutput {
     /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An EventDestination object containing the details of where events will be logged. </p>
-    pub fn event_destination(&self) -> std::option::Option<&crate::types::EventDestination> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::types::EventDestination> {
         self.event_destination.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateEventDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventDestinationOutput`](crate::operation::update_event_destination::UpdateEventDestinationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_event_destination::builders::UpdateEventDestinationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_event_destination::builders::UpdateEventDestinationOutputBuilder {
         crate::operation::update_event_destination::builders::UpdateEventDestinationOutputBuilder::default()
     }
 }
@@ -58,12 +56,8 @@ impl UpdateEventDestinationOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
-    pub fn set_configuration_set_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_arn = input;
-        self
+    pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_arn = input; self
     }
     /// <p>The name of the configuration set.</p>
     pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +65,8 @@ impl UpdateEventDestinationOutputBuilder {
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// <p>An EventDestination object containing the details of where events will be logged. </p>
     pub fn event_destination(mut self, input: crate::types::EventDestination) -> Self {
@@ -84,29 +74,29 @@ impl UpdateEventDestinationOutputBuilder {
         self
     }
     /// <p>An EventDestination object containing the details of where events will be logged. </p>
-    pub fn set_event_destination(
-        mut self,
-        input: std::option::Option<crate::types::EventDestination>,
-    ) -> Self {
-        self.event_destination = input;
-        self
+    pub fn set_event_destination(mut self, input: std::option::Option<crate::types::EventDestination>) -> Self {
+        self.event_destination = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateEventDestinationOutput`](crate::operation::update_event_destination::UpdateEventDestinationOutput).
     pub fn build(self) -> crate::operation::update_event_destination::UpdateEventDestinationOutput {
         crate::operation::update_event_destination::UpdateEventDestinationOutput {
-            configuration_set_arn: self.configuration_set_arn,
-            configuration_set_name: self.configuration_set_name,
-            event_destination: self.event_destination,
+            configuration_set_arn: self.configuration_set_arn
+            ,
+            configuration_set_name: self.configuration_set_name
+            ,
+            event_destination: self.event_destination
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

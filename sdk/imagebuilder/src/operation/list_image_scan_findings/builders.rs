@@ -4,110 +4,80 @@ pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_ou
 pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_input::ListImageScanFindingsInputBuilder;
 
 /// Fluent builder constructing a request to `ListImageScanFindings`.
-///
+/// 
 /// <p>Returns a list of image scan findings for your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageScanFindingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder,
-}
-impl ListImageScanFindingsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_image_scan_findings::builders::ListImageScanFindingsInputBuilder
+            }
+impl ListImageScanFindingsFluentBuilder  {
     /// Creates a new `ListImageScanFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_image_scan_findings::ListImageScanFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_image_scan_findings::ListImageScanFindings, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_image_scan_findings::ListImageScanFindingsOutput, aws_smithy_http::result::SdkError<crate::operation::list_image_scan_findings::ListImageScanFindingsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator {
-        crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator {
+                            crate::operation::list_image_scan_findings::paginator::ListImageScanFindingsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
-    /// <li> <p> <code>imagePipelineArn</code> </p> </li>
-    /// <li> <p> <code>vulnerabilityId</code> </p> </li>
-    /// <li> <p> <code>severity</code> </p> </li>
-    /// </ul>
+    /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li> 
+    /// <li> <p> <code>imagePipelineArn</code> </p> </li> 
+    /// <li> <p> <code>vulnerabilityId</code> </p> </li> 
+    /// <li> <p> <code>severity</code> </p> </li> 
+    /// </ul> 
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
     pub fn filters(mut self, input: crate::types::ImageScanFindingsFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p>
-    /// <ul>
-    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li>
-    /// <li> <p> <code>imagePipelineArn</code> </p> </li>
-    /// <li> <p> <code>vulnerabilityId</code> </p> </li>
-    /// <li> <p> <code>severity</code> </p> </li>
-    /// </ul>
+    /// <p>An array of name value pairs that you can use to filter your results. You can use the following filters to streamline results:</p> 
+    /// <ul> 
+    /// <li> <p> <code>imageBuildVersionArn</code> </p> </li> 
+    /// <li> <p> <code>imagePipelineArn</code> </p> </li> 
+    /// <li> <p> <code>vulnerabilityId</code> </p> </li> 
+    /// <li> <p> <code>severity</code> </p> </li> 
+    /// </ul> 
     /// <p>If you don't request a filter, then all findings in your account are listed.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImageScanFindingsFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageScanFindingsFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -132,3 +102,4 @@ impl ListImageScanFindingsFluentBuilder {
         self
     }
 }
+

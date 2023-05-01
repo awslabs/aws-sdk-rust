@@ -3,7 +3,7 @@
 /// <p>Provides the numerical and qualitative representations of a finding's severity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Severity {
+pub struct Severity  {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
     #[doc(hidden)]
     pub description: std::option::Option<crate::types::SeverityDescription>,
@@ -13,7 +13,7 @@ pub struct Severity {
 }
 impl Severity {
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
-    pub fn description(&self) -> std::option::Option<&crate::types::SeverityDescription> {
+    pub fn description(&self) -> std::option::Option<& crate::types::SeverityDescription> {
         self.description.as_ref()
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
@@ -42,12 +42,8 @@ impl SeverityBuilder {
         self
     }
     /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
-    pub fn set_description(
-        mut self,
-        input: std::option::Option<crate::types::SeverityDescription>,
-    ) -> Self {
-        self.description = input;
-        self
+    pub fn set_description(mut self, input: std::option::Option<crate::types::SeverityDescription>) -> Self {
+        self.description = input; self
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
     pub fn score(mut self, input: i64) -> Self {
@@ -56,14 +52,17 @@ impl SeverityBuilder {
     }
     /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
     pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// Consumes the builder and constructs a [`Severity`](crate::types::Severity).
     pub fn build(self) -> crate::types::Severity {
         crate::types::Severity {
-            description: self.description,
-            score: self.score.unwrap_or_default(),
+            description: self.description
+            ,
+            score: self.score
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

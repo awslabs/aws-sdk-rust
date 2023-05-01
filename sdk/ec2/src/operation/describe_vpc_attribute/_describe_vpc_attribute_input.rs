@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcAttributeInput {
+pub struct DescribeVpcAttributeInput  {
     /// <p>The VPC attribute.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::VpcAttributeName>,
@@ -15,11 +15,11 @@ pub struct DescribeVpcAttributeInput {
 }
 impl DescribeVpcAttributeInput {
     /// <p>The VPC attribute.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::VpcAttributeName> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::VpcAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,8 +29,7 @@ impl DescribeVpcAttributeInput {
 }
 impl DescribeVpcAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder {
         crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl DescribeVpcAttributeInputBuilder {
         self
     }
     /// <p>The VPC attribute.</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::VpcAttributeName>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::VpcAttributeName>) -> Self {
+        self.attribute = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +59,7 @@ impl DescribeVpcAttributeInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -74,22 +68,20 @@ impl DescribeVpcAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DescribeVpcAttributeInput`](crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_vpc_attribute::DescribeVpcAttributeInput {
-                attribute: self.attribute,
-                vpc_id: self.vpc_id,
-                dry_run: self.dry_run,
-            },
+                attribute: self.attribute
+                ,
+                vpc_id: self.vpc_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

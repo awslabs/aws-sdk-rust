@@ -3,20 +3,18 @@
 /// <p> The details related to a specific AttributeGroup. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeGroupDetails {
+pub struct AttributeGroupDetails  {
     /// <p>The unique identifier of the attribute group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <important>
-    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-    /// </important>
+    /// <important> 
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+    /// </important> 
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The service principal that created the attribute group.</p>
@@ -25,25 +23,23 @@ pub struct AttributeGroupDetails {
 }
 impl AttributeGroupDetails {
     /// <p>The unique identifier of the attribute group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <important>
-    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-    /// </important>
+    /// <important> 
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+    /// </important> 
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
-    pub fn name(&self) -> std::option::Option<&str> {
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The service principal that created the attribute group.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
 }
@@ -71,8 +67,7 @@ impl AttributeGroupDetailsBuilder {
     }
     /// <p>The unique identifier of the attribute group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,30 +76,24 @@ impl AttributeGroupDetailsBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the attribute group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <important>
-    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-    /// </important>
+    /// <important> 
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+    /// </important> 
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <important>
-    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p>
-    /// </important>
+    /// <important> 
+    /// <p> This field is no longer supported. We recommend you don't use the field when using <code>ListAttributeGroupsForApplication</code>. </p> 
+    /// </important> 
     /// <p> The name of the attribute group. </p>
-    #[deprecated(
-        note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication."
-    )]
+    #[deprecated(note = "This field is deprecated. We recommend not using the field when using ListAttributeGroupsForApplication.")]
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The service principal that created the attribute group.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,16 +102,20 @@ impl AttributeGroupDetailsBuilder {
     }
     /// <p>The service principal that created the attribute group.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// Consumes the builder and constructs a [`AttributeGroupDetails`](crate::types::AttributeGroupDetails).
     pub fn build(self) -> crate::types::AttributeGroupDetails {
         crate::types::AttributeGroupDetails {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            created_by: self.created_by,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            created_by: self.created_by
+            ,
         }
     }
 }
+

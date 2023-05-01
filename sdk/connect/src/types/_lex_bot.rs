@@ -3,7 +3,7 @@
 /// <p>Configuration information of an Amazon Lex bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexBot {
+pub struct LexBot  {
     /// <p>The name of the Amazon Lex bot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LexBot {
 }
 impl LexBot {
     /// <p>The name of the Amazon Lex bot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
-    pub fn lex_region(&self) -> std::option::Option<&str> {
+    pub fn lex_region(&self) -> std::option::Option<& str> {
         self.lex_region.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl LexBotBuilder {
     }
     /// <p>The name of the Amazon Lex bot.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub fn lex_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl LexBotBuilder {
     }
     /// <p>The Amazon Web Services Region where the Amazon Lex bot was created.</p>
     pub fn set_lex_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lex_region = input;
-        self
+        self.lex_region = input; self
     }
     /// Consumes the builder and constructs a [`LexBot`](crate::types::LexBot).
     pub fn build(self) -> crate::types::LexBot {
         crate::types::LexBot {
-            name: self.name,
-            lex_region: self.lex_region,
+            name: self.name
+            ,
+            lex_region: self.lex_region
+            ,
         }
     }
 }
+

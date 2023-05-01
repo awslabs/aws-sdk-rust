@@ -3,7 +3,7 @@
 /// <p>Returns information about the template that created the approval rule for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginApprovalRuleTemplate {
+pub struct OriginApprovalRuleTemplate  {
     /// <p>The ID of the template that created the approval rule.</p>
     #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OriginApprovalRuleTemplate {
 }
 impl OriginApprovalRuleTemplate {
     /// <p>The ID of the template that created the approval rule.</p>
-    pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_id(&self) -> std::option::Option<& str> {
         self.approval_rule_template_id.as_deref()
     }
     /// <p>The name of the template that created the approval rule.</p>
-    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl OriginApprovalRuleTemplateBuilder {
         self
     }
     /// <p>The ID of the template that created the approval rule.</p>
-    pub fn set_approval_rule_template_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.approval_rule_template_id = input;
-        self
+    pub fn set_approval_rule_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.approval_rule_template_id = input; self
     }
     /// <p>The name of the template that created the approval rule.</p>
     pub fn approval_rule_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl OriginApprovalRuleTemplateBuilder {
         self
     }
     /// <p>The name of the template that created the approval rule.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.approval_rule_template_name = input;
-        self
+    pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.approval_rule_template_name = input; self
     }
     /// Consumes the builder and constructs a [`OriginApprovalRuleTemplate`](crate::types::OriginApprovalRuleTemplate).
     pub fn build(self) -> crate::types::OriginApprovalRuleTemplate {
         crate::types::OriginApprovalRuleTemplate {
-            approval_rule_template_id: self.approval_rule_template_id,
-            approval_rule_template_name: self.approval_rule_template_name,
+            approval_rule_template_id: self.approval_rule_template_id
+            ,
+            approval_rule_template_name: self.approval_rule_template_name
+            ,
         }
     }
 }
+

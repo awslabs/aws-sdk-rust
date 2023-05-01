@@ -3,23 +3,23 @@
 /// <p>This data type is used as a response element for queries on VPC security group membership.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcSecurityGroupMembership {
+pub struct VpcSecurityGroupMembership  {
     /// <p>The name of the VPC security group.</p>
     #[doc(hidden)]
     pub vpc_security_group_id: std::option::Option<std::string::String>,
-    /// <p>The membership status of the VPC security group.</p>
+    /// <p>The membership status of the VPC security group.</p> 
     /// <p>Currently, the only valid status is <code>active</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl VpcSecurityGroupMembership {
     /// <p>The name of the VPC security group.</p>
-    pub fn vpc_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_security_group_id(&self) -> std::option::Option<& str> {
         self.vpc_security_group_id.as_deref()
     }
-    /// <p>The membership status of the VPC security group.</p>
+    /// <p>The membership status of the VPC security group.</p> 
     /// <p>Currently, the only valid status is <code>active</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -44,30 +44,28 @@ impl VpcSecurityGroupMembershipBuilder {
         self
     }
     /// <p>The name of the VPC security group.</p>
-    pub fn set_vpc_security_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpc_security_group_id = input;
-        self
+    pub fn set_vpc_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpc_security_group_id = input; self
     }
-    /// <p>The membership status of the VPC security group.</p>
+    /// <p>The membership status of the VPC security group.</p> 
     /// <p>Currently, the only valid status is <code>active</code>.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The membership status of the VPC security group.</p>
+    /// <p>The membership status of the VPC security group.</p> 
     /// <p>Currently, the only valid status is <code>active</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`VpcSecurityGroupMembership`](crate::types::VpcSecurityGroupMembership).
     pub fn build(self) -> crate::types::VpcSecurityGroupMembership {
         crate::types::VpcSecurityGroupMembership {
-            vpc_security_group_id: self.vpc_security_group_id,
-            status: self.status,
+            vpc_security_group_id: self.vpc_security_group_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

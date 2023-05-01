@@ -3,21 +3,20 @@
 /// <p> The maintenance options of an Amazon EC2 instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
+pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetails  {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
     #[doc(hidden)]
     pub auto_recovery: std::option::Option<std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    pub fn auto_recovery(&self) -> std::option::Option<&str> {
+    pub fn auto_recovery(&self) -> std::option::Option<& str> {
         self.auto_recovery.as_deref()
     }
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder::default()
     }
 }
@@ -36,13 +35,14 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
     }
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
     pub fn set_auto_recovery(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_recovery = input;
-        self
+        self.auto_recovery = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
         crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
-            auto_recovery: self.auto_recovery,
+            auto_recovery: self.auto_recovery
+            ,
         }
     }
 }
+

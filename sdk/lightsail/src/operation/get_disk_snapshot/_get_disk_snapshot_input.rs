@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiskSnapshotInput {
+pub struct GetDiskSnapshotInput  {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
     #[doc(hidden)]
     pub disk_snapshot_name: std::option::Option<std::string::String>,
 }
 impl GetDiskSnapshotInput {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn disk_snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn disk_snapshot_name(&self) -> std::option::Option<& str> {
         self.disk_snapshot_name.as_deref()
     }
 }
@@ -33,22 +33,17 @@ impl GetDiskSnapshotInputBuilder {
         self
     }
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn set_disk_snapshot_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.disk_snapshot_name = input;
-        self
+    pub fn set_disk_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.disk_snapshot_name = input; self
     }
     /// Consumes the builder and constructs a [`GetDiskSnapshotInput`](crate::operation::get_disk_snapshot::GetDiskSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_disk_snapshot::GetDiskSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_disk_snapshot::GetDiskSnapshotInput {
-            disk_snapshot_name: self.disk_snapshot_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_disk_snapshot::GetDiskSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_disk_snapshot::GetDiskSnapshotInput {
+                disk_snapshot_name: self.disk_snapshot_name
+                ,
+            }
+        )
     }
 }
+

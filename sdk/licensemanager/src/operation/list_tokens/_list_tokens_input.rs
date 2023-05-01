@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTokensInput {
+pub struct ListTokensInput  {
     /// <p>Token IDs.</p>
     #[doc(hidden)]
     pub token_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Filters to scope the results. The following filter is supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// <p>Filters to scope the results. The following filter is supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArns</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -21,18 +21,18 @@ pub struct ListTokensInput {
 }
 impl ListTokensInput {
     /// <p>Token IDs.</p>
-    pub fn token_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn token_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.token_ids.as_deref()
     }
-    /// <p>Filters to scope the results. The following filter is supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// <p>Filters to scope the results. The following filter is supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArns</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -64,42 +64,34 @@ impl ListTokensInputBuilder {
     /// <p>Token IDs.</p>
     pub fn token_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.token_ids.unwrap_or_default();
-        v.push(input.into());
-        self.token_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.token_ids = Some(v);
+                        self
     }
     /// <p>Token IDs.</p>
-    pub fn set_token_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.token_ids = input;
-        self
+    pub fn set_token_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.token_ids = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filter is supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// <p>Filters to scope the results. The following filter is supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArns</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Filters to scope the results. The following filter is supported:</p>
-    /// <ul>
-    /// <li> <p> <code>LicenseArns</code> </p> </li>
+    /// <p>Filters to scope the results. The following filter is supported:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LicenseArns</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +100,7 @@ impl ListTokensInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -118,21 +109,22 @@ impl ListTokensInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListTokensInput`](crate::operation::list_tokens::ListTokensInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tokens::ListTokensInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_tokens::ListTokensInput {
-            token_ids: self.token_ids,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_tokens::ListTokensInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_tokens::ListTokensInput {
+                token_ids: self.token_ids
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

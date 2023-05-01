@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApiDestinationOutput {
+pub struct UpdateApiDestinationOutput  {
     /// <p>The ARN of the API destination that was updated.</p>
     #[doc(hidden)]
     pub api_destination_arn: std::option::Option<std::string::String>,
@@ -19,31 +19,30 @@ pub struct UpdateApiDestinationOutput {
 }
 impl UpdateApiDestinationOutput {
     /// <p>The ARN of the API destination that was updated.</p>
-    pub fn api_destination_arn(&self) -> std::option::Option<&str> {
+    pub fn api_destination_arn(&self) -> std::option::Option<& str> {
         self.api_destination_arn.as_deref()
     }
     /// <p>The state of the API destination that was updated.</p>
-    pub fn api_destination_state(&self) -> std::option::Option<&crate::types::ApiDestinationState> {
+    pub fn api_destination_state(&self) -> std::option::Option<& crate::types::ApiDestinationState> {
         self.api_destination_state.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateApiDestinationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateApiDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApiDestinationOutput`](crate::operation::update_api_destination::UpdateApiDestinationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_api_destination::builders::UpdateApiDestinationOutputBuilder {
+    pub fn builder() -> crate::operation::update_api_destination::builders::UpdateApiDestinationOutputBuilder {
         crate::operation::update_api_destination::builders::UpdateApiDestinationOutputBuilder::default()
     }
 }
@@ -65,12 +64,8 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>The ARN of the API destination that was updated.</p>
-    pub fn set_api_destination_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.api_destination_arn = input;
-        self
+    pub fn set_api_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.api_destination_arn = input; self
     }
     /// <p>The state of the API destination that was updated.</p>
     pub fn api_destination_state(mut self, input: crate::types::ApiDestinationState) -> Self {
@@ -78,12 +73,8 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>The state of the API destination that was updated.</p>
-    pub fn set_api_destination_state(
-        mut self,
-        input: std::option::Option<crate::types::ApiDestinationState>,
-    ) -> Self {
-        self.api_destination_state = input;
-        self
+    pub fn set_api_destination_state(mut self, input: std::option::Option<crate::types::ApiDestinationState>) -> Self {
+        self.api_destination_state = input; self
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,12 +82,8 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the API destination was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -104,30 +91,31 @@ impl UpdateApiDestinationOutputBuilder {
         self
     }
     /// <p>A time stamp for the time that the API destination was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateApiDestinationOutput`](crate::operation::update_api_destination::UpdateApiDestinationOutput).
     pub fn build(self) -> crate::operation::update_api_destination::UpdateApiDestinationOutput {
         crate::operation::update_api_destination::UpdateApiDestinationOutput {
-            api_destination_arn: self.api_destination_arn,
-            api_destination_state: self.api_destination_state,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
+            api_destination_arn: self.api_destination_arn
+            ,
+            api_destination_state: self.api_destination_state
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

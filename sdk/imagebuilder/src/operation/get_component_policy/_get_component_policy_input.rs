@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComponentPolicyInput {
+pub struct GetComponentPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
 }
 impl GetComponentPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
-    pub fn component_arn(&self) -> std::option::Option<&str> {
+    pub fn component_arn(&self) -> std::option::Option<& str> {
         self.component_arn.as_deref()
     }
 }
 impl GetComponentPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_component_policy::builders::GetComponentPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_component_policy::builders::GetComponentPolicyInputBuilder {
         crate::operation::get_component_policy::builders::GetComponentPolicyInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetComponentPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component whose policy you want to retrieve.</p>
     pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_arn = input;
-        self
+        self.component_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetComponentPolicyInput`](crate::operation::get_component_policy::GetComponentPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_component_policy::GetComponentPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_component_policy::GetComponentPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_component_policy::GetComponentPolicyInput {
-                component_arn: self.component_arn,
-            },
+                component_arn: self.component_arn
+                ,
+            }
         )
     }
 }
+

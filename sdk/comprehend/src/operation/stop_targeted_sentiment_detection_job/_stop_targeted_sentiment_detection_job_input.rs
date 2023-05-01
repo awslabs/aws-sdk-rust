@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTargetedSentimentDetectionJobInput {
+pub struct StopTargetedSentimentDetectionJobInput  {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopTargetedSentimentDetectionJobInput {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl StopTargetedSentimentDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
-    pub fn builder() -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder {
         crate::operation::stop_targeted_sentiment_detection_job::builders::StopTargetedSentimentDetectionJobInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl StopTargetedSentimentDetectionJobInputBuilder {
     }
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobInput`](crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_targeted_sentiment_detection_job::StopTargetedSentimentDetectionJobInput {
                 job_id: self.job_id
@@ -47,3 +46,4 @@ impl StopTargetedSentimentDetectionJobInputBuilder {
         )
     }
 }
+

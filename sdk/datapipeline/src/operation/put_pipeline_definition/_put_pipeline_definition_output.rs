@@ -3,7 +3,7 @@
 /// <p>Contains the output of PutPipelineDefinition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPipelineDefinitionOutput {
+pub struct PutPipelineDefinitionOutput  {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     #[doc(hidden)]
     pub validation_errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
@@ -17,11 +17,11 @@ pub struct PutPipelineDefinitionOutput {
 }
 impl PutPipelineDefinitionOutput {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::types::ValidationError]> {
+    pub fn validation_errors(&self) -> std::option::Option<& [crate::types::ValidationError]> {
         self.validation_errors.as_deref()
     }
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn validation_warnings(&self) -> std::option::Option<&[crate::types::ValidationWarning]> {
+    pub fn validation_warnings(&self) -> std::option::Option<& [crate::types::ValidationWarning]> {
         self.validation_warnings.as_deref()
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
@@ -30,15 +30,13 @@ impl PutPipelineDefinitionOutput {
     }
 }
 impl aws_http::request_id::RequestId for PutPipelineDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutPipelineDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`PutPipelineDefinitionOutput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput).
-    pub fn builder(
-    ) -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder {
         crate::operation::put_pipeline_definition::builders::PutPipelineDefinitionOutputBuilder::default()
     }
 }
@@ -48,8 +46,7 @@ impl PutPipelineDefinitionOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutPipelineDefinitionOutputBuilder {
     pub(crate) validation_errors: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
-    pub(crate) validation_warnings:
-        std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>,
+    pub(crate) validation_warnings: std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>,
     pub(crate) errored: std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -61,17 +58,13 @@ impl PutPipelineDefinitionOutputBuilder {
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     pub fn validation_errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
-        v.push(input);
-        self.validation_errors = Some(v);
-        self
+                        v.push(input);
+                        self.validation_errors = Some(v);
+                        self
     }
     /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn set_validation_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
-    ) -> Self {
-        self.validation_errors = input;
-        self
+    pub fn set_validation_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>) -> Self {
+        self.validation_errors = input; self
     }
     /// Appends an item to `validation_warnings`.
     ///
@@ -80,17 +73,13 @@ impl PutPipelineDefinitionOutputBuilder {
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
     pub fn validation_warnings(mut self, input: crate::types::ValidationWarning) -> Self {
         let mut v = self.validation_warnings.unwrap_or_default();
-        v.push(input);
-        self.validation_warnings = Some(v);
-        self
+                        v.push(input);
+                        self.validation_warnings = Some(v);
+                        self
     }
     /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
-    pub fn set_validation_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>,
-    ) -> Self {
-        self.validation_warnings = input;
-        self
+    pub fn set_validation_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationWarning>>) -> Self {
+        self.validation_warnings = input; self
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub fn errored(mut self, input: bool) -> Self {
@@ -99,25 +88,29 @@ impl PutPipelineDefinitionOutputBuilder {
     }
     /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
     pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
-        self.errored = input;
-        self
+        self.errored = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutPipelineDefinitionOutput`](crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput).
     pub fn build(self) -> crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput {
         crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput {
-            validation_errors: self.validation_errors,
-            validation_warnings: self.validation_warnings,
-            errored: self.errored.unwrap_or_default(),
+            validation_errors: self.validation_errors
+            ,
+            validation_warnings: self.validation_warnings
+            ,
+            errored: self.errored
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

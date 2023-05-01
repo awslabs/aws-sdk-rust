@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCrlInput {
+pub struct ImportCrlInput  {
     /// <p>The name of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ImportCrlInput {
 }
 impl ImportCrlInput {
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The x509 v3 specified certificate revocation list</p>
-    pub fn crl_data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn crl_data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.crl_data.as_ref()
     }
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
@@ -33,11 +33,11 @@ impl ImportCrlInput {
         self.enabled
     }
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
-    pub fn trust_anchor_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_arn(&self) -> std::option::Option<& str> {
         self.trust_anchor_arn.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl ImportCrlInputBuilder {
     }
     /// <p>The name of the certificate revocation list (CRL).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The x509 v3 specified certificate revocation list</p>
     pub fn crl_data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -76,8 +75,7 @@ impl ImportCrlInputBuilder {
     }
     /// <p>The x509 v3 specified certificate revocation list</p>
     pub fn set_crl_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.crl_data = input;
-        self
+        self.crl_data = input; self
     }
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -86,8 +84,7 @@ impl ImportCrlInputBuilder {
     }
     /// <p>Specifies whether the certificate revocation list (CRL) is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -96,17 +93,13 @@ impl ImportCrlInputBuilder {
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags to attach to the certificate revocation list (CRL).</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
     pub fn trust_anchor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,22 +108,24 @@ impl ImportCrlInputBuilder {
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.</p>
     pub fn set_trust_anchor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_anchor_arn = input;
-        self
+        self.trust_anchor_arn = input; self
     }
     /// Consumes the builder and constructs a [`ImportCrlInput`](crate::operation::import_crl::ImportCrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_crl::ImportCrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::import_crl::ImportCrlInput {
-            name: self.name,
-            crl_data: self.crl_data,
-            enabled: self.enabled,
-            tags: self.tags,
-            trust_anchor_arn: self.trust_anchor_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::import_crl::ImportCrlInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::import_crl::ImportCrlInput {
+                name: self.name
+                ,
+                crl_data: self.crl_data
+                ,
+                enabled: self.enabled
+                ,
+                tags: self.tags
+                ,
+                trust_anchor_arn: self.trust_anchor_arn
+                ,
+            }
+        )
     }
 }
+

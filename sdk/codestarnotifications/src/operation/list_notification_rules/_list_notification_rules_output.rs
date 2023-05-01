@@ -2,38 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotificationRulesOutput {
+pub struct ListNotificationRulesOutput  {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     #[doc(hidden)]
-    pub notification_rules:
-        std::option::Option<std::vec::Vec<crate::types::NotificationRuleSummary>>,
+    pub notification_rules: std::option::Option<std::vec::Vec<crate::types::NotificationRuleSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotificationRulesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn notification_rules(
-        &self,
-    ) -> std::option::Option<&[crate::types::NotificationRuleSummary]> {
+    pub fn notification_rules(&self) -> std::option::Option<& [crate::types::NotificationRuleSummary]> {
         self.notification_rules.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListNotificationRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListNotificationRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationRulesOutput`](crate::operation::list_notification_rules::ListNotificationRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notification_rules::builders::ListNotificationRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_notification_rules::builders::ListNotificationRulesOutputBuilder {
         crate::operation::list_notification_rules::builders::ListNotificationRulesOutputBuilder::default()
     }
 }
@@ -43,8 +38,7 @@ impl ListNotificationRulesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListNotificationRulesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) notification_rules:
-        std::option::Option<std::vec::Vec<crate::types::NotificationRuleSummary>>,
+    pub(crate) notification_rules: std::option::Option<std::vec::Vec<crate::types::NotificationRuleSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotificationRulesOutputBuilder {
@@ -55,8 +49,7 @@ impl ListNotificationRulesOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `notification_rules`.
     ///
@@ -65,33 +58,32 @@ impl ListNotificationRulesOutputBuilder {
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
     pub fn notification_rules(mut self, input: crate::types::NotificationRuleSummary) -> Self {
         let mut v = self.notification_rules.unwrap_or_default();
-        v.push(input);
-        self.notification_rules = Some(v);
-        self
+                        v.push(input);
+                        self.notification_rules = Some(v);
+                        self
     }
     /// <p>The list of notification rules for the Amazon Web Services account, by Amazon Resource Name (ARN) and ID. </p>
-    pub fn set_notification_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotificationRuleSummary>>,
-    ) -> Self {
-        self.notification_rules = input;
-        self
+    pub fn set_notification_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotificationRuleSummary>>) -> Self {
+        self.notification_rules = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListNotificationRulesOutput`](crate::operation::list_notification_rules::ListNotificationRulesOutput).
     pub fn build(self) -> crate::operation::list_notification_rules::ListNotificationRulesOutput {
         crate::operation::list_notification_rules::ListNotificationRulesOutput {
-            next_token: self.next_token,
-            notification_rules: self.notification_rules,
+            next_token: self.next_token
+            ,
+            notification_rules: self.notification_rules
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

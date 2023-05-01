@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProgramOutput {
+pub struct DescribeProgramOutput  {
     /// <p>The ad break configuration settings.</p>
     #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
@@ -40,43 +40,43 @@ pub struct DescribeProgramOutput {
 }
 impl DescribeProgramOutput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> std::option::Option<&[crate::types::AdBreak]> {
+    pub fn ad_breaks(&self) -> std::option::Option<& [crate::types::AdBreak]> {
         self.ad_breaks.as_deref()
     }
     /// <p>The ARN of the program.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the channel that the program belongs to.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>The timestamp of when the program was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
+    pub fn live_source_name(&self) -> std::option::Option<& str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> std::option::Option<& str> {
         self.program_name.as_deref()
     }
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub fn scheduled_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn scheduled_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.scheduled_start_time.as_ref()
     }
     /// <p>The source location name.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> std::option::Option<& str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> std::option::Option<& str> {
         self.vod_source_name.as_deref()
     }
     /// <p>The clip range configuration settings.</p>
-    pub fn clip_range(&self) -> std::option::Option<&crate::types::ClipRange> {
+    pub fn clip_range(&self) -> std::option::Option<& crate::types::ClipRange> {
         self.clip_range.as_ref()
     }
     /// <p>The duration of the live program in milliseconds.</p>
@@ -85,10 +85,10 @@ impl DescribeProgramOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeProgramOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeProgramOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProgramOutput`](crate::operation::describe_program::DescribeProgramOutput).
     pub fn builder() -> crate::operation::describe_program::builders::DescribeProgramOutputBuilder {
@@ -121,17 +121,13 @@ impl DescribeProgramOutputBuilder {
     /// <p>The ad break configuration settings.</p>
     pub fn ad_breaks(mut self, input: crate::types::AdBreak) -> Self {
         let mut v = self.ad_breaks.unwrap_or_default();
-        v.push(input);
-        self.ad_breaks = Some(v);
-        self
+                        v.push(input);
+                        self.ad_breaks = Some(v);
+                        self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
-    ) -> Self {
-        self.ad_breaks = input;
-        self
+    pub fn set_ad_breaks(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>) -> Self {
+        self.ad_breaks = input; self
     }
     /// <p>The ARN of the program.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +136,7 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The ARN of the program.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the channel that the program belongs to.</p>
     pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +145,7 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The name of the channel that the program belongs to.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>The timestamp of when the program was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -159,12 +153,8 @@ impl DescribeProgramOutputBuilder {
         self
     }
     /// <p>The timestamp of when the program was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The name of the LiveSource for this Program.</p>
     pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +163,7 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The name of the LiveSource for this Program.</p>
     pub fn set_live_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.live_source_name = input;
-        self
+        self.live_source_name = input; self
     }
     /// <p>The name of the program.</p>
     pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,8 +172,7 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The name of the program.</p>
     pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.program_name = input;
-        self
+        self.program_name = input; self
     }
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
     pub fn scheduled_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,12 +180,8 @@ impl DescribeProgramOutputBuilder {
         self
     }
     /// <p>The date and time that the program is scheduled to start in ISO 8601 format and Coordinated Universal Time (UTC). For example, the value 2021-03-27T17:48:16.751Z represents March 27, 2021 at 17:48:16.751 UTC.</p>
-    pub fn set_scheduled_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.scheduled_start_time = input;
-        self
+    pub fn set_scheduled_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.scheduled_start_time = input; self
     }
     /// <p>The source location name.</p>
     pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,12 +189,8 @@ impl DescribeProgramOutputBuilder {
         self
     }
     /// <p>The source location name.</p>
-    pub fn set_source_location_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_location_name = input;
-        self
+    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_location_name = input; self
     }
     /// <p>The name that's used to refer to a VOD source.</p>
     pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,8 +199,7 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The name that's used to refer to a VOD source.</p>
     pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vod_source_name = input;
-        self
+        self.vod_source_name = input; self
     }
     /// <p>The clip range configuration settings.</p>
     pub fn clip_range(mut self, input: crate::types::ClipRange) -> Self {
@@ -229,8 +208,7 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The clip range configuration settings.</p>
     pub fn set_clip_range(mut self, input: std::option::Option<crate::types::ClipRange>) -> Self {
-        self.clip_range = input;
-        self
+        self.clip_range = input; self
     }
     /// <p>The duration of the live program in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
@@ -239,33 +217,44 @@ impl DescribeProgramOutputBuilder {
     }
     /// <p>The duration of the live program in milliseconds.</p>
     pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.duration_millis = input;
-        self
+        self.duration_millis = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeProgramOutput`](crate::operation::describe_program::DescribeProgramOutput).
     pub fn build(self) -> crate::operation::describe_program::DescribeProgramOutput {
         crate::operation::describe_program::DescribeProgramOutput {
-            ad_breaks: self.ad_breaks,
-            arn: self.arn,
-            channel_name: self.channel_name,
-            creation_time: self.creation_time,
-            live_source_name: self.live_source_name,
-            program_name: self.program_name,
-            scheduled_start_time: self.scheduled_start_time,
-            source_location_name: self.source_location_name,
-            vod_source_name: self.vod_source_name,
-            clip_range: self.clip_range,
-            duration_millis: self.duration_millis,
+            ad_breaks: self.ad_breaks
+            ,
+            arn: self.arn
+            ,
+            channel_name: self.channel_name
+            ,
+            creation_time: self.creation_time
+            ,
+            live_source_name: self.live_source_name
+            ,
+            program_name: self.program_name
+            ,
+            scheduled_start_time: self.scheduled_start_time
+            ,
+            source_location_name: self.source_location_name
+            ,
+            vod_source_name: self.vod_source_name
+            ,
+            clip_range: self.clip_range
+            ,
+            duration_millis: self.duration_millis
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

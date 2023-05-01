@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelStatementInput {
+pub struct CancelStatementInput  {
     /// <p>The Session ID of the statement to be cancelled.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct CancelStatementInput {
 }
 impl CancelStatementInput {
     /// <p>The Session ID of the statement to be cancelled.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The ID of the statement to be cancelled.</p>
@@ -23,7 +23,7 @@ impl CancelStatementInput {
         self.id
     }
     /// <p>The origin of the request to cancel the statement.</p>
-    pub fn request_origin(&self) -> std::option::Option<&str> {
+    pub fn request_origin(&self) -> std::option::Option<& str> {
         self.request_origin.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl CancelStatementInputBuilder {
     }
     /// <p>The Session ID of the statement to be cancelled.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The ID of the statement to be cancelled.</p>
     pub fn id(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl CancelStatementInputBuilder {
     }
     /// <p>The ID of the statement to be cancelled.</p>
     pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The origin of the request to cancel the statement.</p>
     pub fn request_origin(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,20 @@ impl CancelStatementInputBuilder {
     }
     /// <p>The origin of the request to cancel the statement.</p>
     pub fn set_request_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_origin = input;
-        self
+        self.request_origin = input; self
     }
     /// Consumes the builder and constructs a [`CancelStatementInput`](crate::operation::cancel_statement::CancelStatementInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_statement::CancelStatementInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::cancel_statement::CancelStatementInput {
-            session_id: self.session_id,
-            id: self.id,
-            request_origin: self.request_origin,
-        })
+    pub fn build(self) -> Result<crate::operation::cancel_statement::CancelStatementInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::cancel_statement::CancelStatementInput {
+                session_id: self.session_id
+                ,
+                id: self.id
+                ,
+                request_origin: self.request_origin
+                ,
+            }
+        )
     }
 }
+

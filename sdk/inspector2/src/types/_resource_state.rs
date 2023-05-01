@@ -3,7 +3,7 @@
 /// <p>Details the state of Amazon Inspector for each resource type Amazon Inspector scans.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceState {
+pub struct ResourceState  {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
     #[doc(hidden)]
     pub ec2: std::option::Option<crate::types::State>,
@@ -16,15 +16,15 @@ pub struct ResourceState {
 }
 impl ResourceState {
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
-    pub fn ec2(&self) -> std::option::Option<&crate::types::State> {
+    pub fn ec2(&self) -> std::option::Option<& crate::types::State> {
         self.ec2.as_ref()
     }
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
-    pub fn ecr(&self) -> std::option::Option<&crate::types::State> {
+    pub fn ecr(&self) -> std::option::Option<& crate::types::State> {
         self.ecr.as_ref()
     }
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
-    pub fn lambda(&self) -> std::option::Option<&crate::types::State> {
+    pub fn lambda(&self) -> std::option::Option<& crate::types::State> {
         self.lambda.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ResourceStateBuilder {
     }
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.</p>
     pub fn set_ec2(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.ec2 = input;
-        self
+        self.ec2 = input; self
     }
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn ecr(mut self, input: crate::types::State) -> Self {
@@ -61,8 +60,7 @@ impl ResourceStateBuilder {
     }
     /// <p>An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.</p>
     pub fn set_ecr(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.ecr = input;
-        self
+        self.ecr = input; self
     }
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
     pub fn lambda(mut self, input: crate::types::State) -> Self {
@@ -71,15 +69,18 @@ impl ResourceStateBuilder {
     }
     /// <p>An object that described the state of Amazon Inspector scans for an account.</p>
     pub fn set_lambda(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.lambda = input;
-        self
+        self.lambda = input; self
     }
     /// Consumes the builder and constructs a [`ResourceState`](crate::types::ResourceState).
     pub fn build(self) -> crate::types::ResourceState {
         crate::types::ResourceState {
-            ec2: self.ec2,
-            ecr: self.ecr,
-            lambda: self.lambda,
+            ec2: self.ec2
+            ,
+            ecr: self.ecr
+            ,
+            lambda: self.lambda
+            ,
         }
     }
 }
+

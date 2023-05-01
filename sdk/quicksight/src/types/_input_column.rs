@@ -3,7 +3,7 @@
 /// <p>Metadata for a column that is used as the input of a transform operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputColumn {
+pub struct InputColumn  {
     /// <p>The name of this column in the underlying data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct InputColumn {
 }
 impl InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::InputColumnDataType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::InputColumnDataType> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl InputColumnBuilder {
     }
     /// <p>The name of this column in the underlying data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn r#type(mut self, input: crate::types::InputColumnDataType) -> Self {
@@ -52,18 +51,17 @@ impl InputColumnBuilder {
         self
     }
     /// <p>The data type of the column.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::InputColumnDataType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::InputColumnDataType>) -> Self {
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`InputColumn`](crate::types::InputColumn).
     pub fn build(self) -> crate::types::InputColumn {
         crate::types::InputColumn {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

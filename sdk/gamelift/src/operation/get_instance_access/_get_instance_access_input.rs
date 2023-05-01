@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceAccessInput {
+pub struct GetInstanceAccessInput  {
     /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct GetInstanceAccessInput {
 }
 impl GetInstanceAccessInput {
     /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl GetInstanceAccessInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder {
+    pub fn builder() -> crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder {
         crate::operation::get_instance_access::builders::GetInstanceAccessInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl GetInstanceAccessInputBuilder {
     }
     /// <p>A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are deleted.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl GetInstanceAccessInputBuilder {
     }
     /// <p>A unique identifier for the instance you want to get access to. You can access an instance in any status.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`GetInstanceAccessInput`](crate::operation::get_instance_access::GetInstanceAccessInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_instance_access::GetInstanceAccessInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_instance_access::GetInstanceAccessInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_instance_access::GetInstanceAccessInput {
-                fleet_id: self.fleet_id,
-                instance_id: self.instance_id,
-            },
+                fleet_id: self.fleet_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

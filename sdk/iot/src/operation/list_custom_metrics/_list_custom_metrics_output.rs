@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomMetricsOutput {
+pub struct ListCustomMetricsOutput  {
     /// <p> The name of the custom metric. </p>
     #[doc(hidden)]
     pub metric_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,23 +13,22 @@ pub struct ListCustomMetricsOutput {
 }
 impl ListCustomMetricsOutput {
     /// <p> The name of the custom metric. </p>
-    pub fn metric_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metric_names(&self) -> std::option::Option<& [std::string::String]> {
         self.metric_names.as_deref()
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCustomMetricsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCustomMetricsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_custom_metrics::builders::ListCustomMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_metrics::builders::ListCustomMetricsOutputBuilder {
         crate::operation::list_custom_metrics::builders::ListCustomMetricsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListCustomMetricsOutputBuilder {
     /// <p> The name of the custom metric. </p>
     pub fn metric_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.metric_names.unwrap_or_default();
-        v.push(input.into());
-        self.metric_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.metric_names = Some(v);
+                        self
     }
     /// <p> The name of the custom metric. </p>
-    pub fn set_metric_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.metric_names = input;
-        self
+    pub fn set_metric_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.metric_names = input; self
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListCustomMetricsOutputBuilder {
     }
     /// <p> A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCustomMetricsOutput`](crate::operation::list_custom_metrics::ListCustomMetricsOutput).
     pub fn build(self) -> crate::operation::list_custom_metrics::ListCustomMetricsOutput {
         crate::operation::list_custom_metrics::ListCustomMetricsOutput {
-            metric_names: self.metric_names,
-            next_token: self.next_token,
+            metric_names: self.metric_names
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

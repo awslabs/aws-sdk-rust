@@ -3,7 +3,7 @@
 /// <p> Describes an artifact. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Artifact {
+pub struct Artifact  {
     /// <p> The file name for the artifact. </p>
     #[doc(hidden)]
     pub artifact_file_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Artifact {
 }
 impl Artifact {
     /// <p> The file name for the artifact. </p>
-    pub fn artifact_file_name(&self) -> std::option::Option<&str> {
+    pub fn artifact_file_name(&self) -> std::option::Option<& str> {
         self.artifact_file_name.as_deref()
     }
     /// <p> The unique ID for the artifact. </p>
-    pub fn artifact_id(&self) -> std::option::Option<&str> {
+    pub fn artifact_id(&self) -> std::option::Option<& str> {
         self.artifact_id.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl ArtifactBuilder {
         self
     }
     /// <p> The file name for the artifact. </p>
-    pub fn set_artifact_file_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.artifact_file_name = input;
-        self
+    pub fn set_artifact_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.artifact_file_name = input; self
     }
     /// <p> The unique ID for the artifact. </p>
     pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl ArtifactBuilder {
     }
     /// <p> The unique ID for the artifact. </p>
     pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_id = input;
-        self
+        self.artifact_id = input; self
     }
     /// Consumes the builder and constructs a [`Artifact`](crate::types::Artifact).
     pub fn build(self) -> crate::types::Artifact {
         crate::types::Artifact {
-            artifact_file_name: self.artifact_file_name,
-            artifact_id: self.artifact_id,
+            artifact_file_name: self.artifact_file_name
+            ,
+            artifact_id: self.artifact_id
+            ,
         }
     }
 }
+

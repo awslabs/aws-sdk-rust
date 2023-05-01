@@ -31,7 +31,11 @@ pub use crate::types::error::_resource_share_invitation_already_rejected_excepti
 
 pub use crate::types::error::_resource_share_invitation_already_accepted_exception::ResourceShareInvitationAlreadyAcceptedException;
 
+pub use crate::types::error::_unmatched_policy_permission_exception::UnmatchedPolicyPermissionException;
+
 pub use crate::types::error::_resource_share_limit_exceeded_exception::ResourceShareLimitExceededException;
+
+pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionException;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenException;
 
@@ -39,7 +43,15 @@ pub use crate::types::error::_invalid_resource_type_exception::InvalidResourceTy
 
 pub use crate::types::error::_invalid_max_results_exception::InvalidMaxResultsException;
 
-pub use crate::types::error::_invalid_state_transition_exception::InvalidStateTransitionException;
+pub use crate::types::error::_permission_versions_limit_exceeded_exception::PermissionVersionsLimitExceededException;
+
+pub use crate::types::error::_malformed_policy_template_exception::MalformedPolicyTemplateException;
+
+pub use crate::types::error::_invalid_policy_exception::InvalidPolicyException;
+
+pub use crate::types::error::_permission_limit_exceeded_exception::PermissionLimitExceededException;
+
+pub use crate::types::error::_permission_already_exists_exception::PermissionAlreadyExistsException;
 
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
@@ -53,15 +65,25 @@ mod _invalid_next_token_exception;
 
 mod _invalid_parameter_exception;
 
+mod _invalid_policy_exception;
+
 mod _invalid_resource_type_exception;
 
 mod _invalid_state_transition_exception;
 
 mod _malformed_arn_exception;
 
+mod _malformed_policy_template_exception;
+
 mod _missing_required_parameter_exception;
 
 mod _operation_not_permitted_exception;
+
+mod _permission_already_exists_exception;
+
+mod _permission_limit_exceeded_exception;
+
+mod _permission_versions_limit_exceeded_exception;
 
 mod _resource_arn_not_found_exception;
 
@@ -87,5 +109,8 @@ mod _throttling_exception;
 
 mod _unknown_resource_exception;
 
+mod _unmatched_policy_permission_exception;
+
 /// Builders
 pub mod builders;
+

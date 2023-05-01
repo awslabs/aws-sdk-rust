@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateThirdPartyFirewallInput {
+pub struct DisassociateThirdPartyFirewallInput  {
     /// <p>The name of the third-party firewall vendor.</p>
     #[doc(hidden)]
     pub third_party_firewall: std::option::Option<crate::types::ThirdPartyFirewall>,
 }
 impl DisassociateThirdPartyFirewallInput {
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn third_party_firewall(&self) -> std::option::Option<&crate::types::ThirdPartyFirewall> {
+    pub fn third_party_firewall(&self) -> std::option::Option<& crate::types::ThirdPartyFirewall> {
         self.third_party_firewall.as_ref()
     }
 }
 impl DisassociateThirdPartyFirewallInput {
     /// Creates a new builder-style object to manufacture [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
-    pub fn builder() -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder {
         crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         self
     }
     /// <p>The name of the third-party firewall vendor.</p>
-    pub fn set_third_party_firewall(
-        mut self,
-        input: std::option::Option<crate::types::ThirdPartyFirewall>,
-    ) -> Self {
-        self.third_party_firewall = input;
-        self
+    pub fn set_third_party_firewall(mut self, input: std::option::Option<crate::types::ThirdPartyFirewall>) -> Self {
+        self.third_party_firewall = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateThirdPartyFirewallInput`](crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallInput {
                 third_party_firewall: self.third_party_firewall
@@ -55,3 +46,4 @@ impl DisassociateThirdPartyFirewallInputBuilder {
         )
     }
 }
+

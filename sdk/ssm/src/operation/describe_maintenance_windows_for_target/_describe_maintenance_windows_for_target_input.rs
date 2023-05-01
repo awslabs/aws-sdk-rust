@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowsForTargetInput {
+pub struct DescribeMaintenanceWindowsForTargetInput  {
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::types::Target>>,
@@ -18,13 +18,11 @@ pub struct DescribeMaintenanceWindowsForTargetInput {
 }
 impl DescribeMaintenanceWindowsForTargetInput {
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
         self.targets.as_deref()
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn resource_type(
-        &self,
-    ) -> std::option::Option<&crate::types::MaintenanceWindowResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::MaintenanceWindowResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -32,13 +30,13 @@ impl DescribeMaintenanceWindowsForTargetInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeMaintenanceWindowsForTargetInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowsForTargetInput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput).
-    pub fn builder() -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder {
         crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder::default()
     }
 }
@@ -60,17 +58,13 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = Some(v);
-        self
+                        v.push(input);
+                        self.targets = Some(v);
+                        self
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
     pub fn resource_type(mut self, input: crate::types::MaintenanceWindowResourceType) -> Self {
@@ -78,12 +72,8 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::MaintenanceWindowResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,8 +82,7 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,11 +91,10 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowsForTargetInput`](crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput).
-    pub fn build(self) -> Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTargetInput {
                 targets: self.targets
@@ -121,3 +109,4 @@ impl DescribeMaintenanceWindowsForTargetInputBuilder {
         )
     }
 }
+

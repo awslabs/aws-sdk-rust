@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackTestAnomalyDetectorInput {
+pub struct BackTestAnomalyDetectorInput  {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl BackTestAnomalyDetectorInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
 }
 impl BackTestAnomalyDetectorInput {
     /// Creates a new builder-style object to manufacture [`BackTestAnomalyDetectorInput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput).
-    pub fn builder(
-    ) -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder
-    {
+    pub fn builder() -> crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder {
         crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl BackTestAnomalyDetectorInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.anomaly_detector_arn = input; self
     }
     /// Consumes the builder and constructs a [`BackTestAnomalyDetectorInput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorInput {
-                anomaly_detector_arn: self.anomaly_detector_arn,
-            },
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+            }
         )
     }
 }
+

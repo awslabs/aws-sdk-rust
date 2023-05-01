@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageReplicationStatusInput {
+pub struct DescribeImageReplicationStatusInput  {
     /// <p>The name of the repository that the image is in.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DescribeImageReplicationStatusInput {
 }
 impl DescribeImageReplicationStatusInput {
     /// <p>The name of the repository that the image is in.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn image_id(&self) -> std::option::Option<&crate::types::ImageIdentifier> {
+    pub fn image_id(&self) -> std::option::Option<& crate::types::ImageIdentifier> {
         self.image_id.as_ref()
     }
     /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
 }
 impl DescribeImageReplicationStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageReplicationStatusInput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput).
-    pub fn builder() -> crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusInputBuilder {
         crate::operation::describe_image_replication_status::builders::DescribeImageReplicationStatusInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeImageReplicationStatusInputBuilder {
     }
     /// <p>The name of the repository that the image is in.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
     pub fn image_id(mut self, input: crate::types::ImageIdentifier) -> Self {
@@ -59,12 +58,8 @@ impl DescribeImageReplicationStatusInputBuilder {
         self
     }
     /// <p>An object with identifying information for an image in an Amazon ECR repository.</p>
-    pub fn set_image_id(
-        mut self,
-        input: std::option::Option<crate::types::ImageIdentifier>,
-    ) -> Self {
-        self.image_id = input;
-        self
+    pub fn set_image_id(mut self, input: std::option::Option<crate::types::ImageIdentifier>) -> Self {
+        self.image_id = input; self
     }
     /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,16 +68,10 @@ impl DescribeImageReplicationStatusInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeImageReplicationStatusInput`](crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_image_replication_status::DescribeImageReplicationStatusInput {
                 repository_name: self.repository_name
@@ -95,3 +84,4 @@ impl DescribeImageReplicationStatusInputBuilder {
         )
     }
 }
+

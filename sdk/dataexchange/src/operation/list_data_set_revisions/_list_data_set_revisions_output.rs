@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSetRevisionsOutput {
+pub struct ListDataSetRevisionsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct ListDataSetRevisionsOutput {
 }
 impl ListDataSetRevisionsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::types::RevisionEntry]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::types::RevisionEntry]> {
         self.revisions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDataSetRevisionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDataSetRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetRevisionsOutput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder {
         crate::operation::list_data_set_revisions::builders::ListDataSetRevisionsOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl ListDataSetRevisionsOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `revisions`.
     ///
@@ -61,33 +58,32 @@ impl ListDataSetRevisionsOutputBuilder {
     /// <p>The asset objects listed by the request.</p>
     pub fn revisions(mut self, input: crate::types::RevisionEntry) -> Self {
         let mut v = self.revisions.unwrap_or_default();
-        v.push(input);
-        self.revisions = Some(v);
-        self
+                        v.push(input);
+                        self.revisions = Some(v);
+                        self
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn set_revisions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RevisionEntry>>,
-    ) -> Self {
-        self.revisions = input;
-        self
+    pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RevisionEntry>>) -> Self {
+        self.revisions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDataSetRevisionsOutput`](crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput).
     pub fn build(self) -> crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput {
         crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput {
-            next_token: self.next_token,
-            revisions: self.revisions,
+            next_token: self.next_token
+            ,
+            revisions: self.revisions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detailed information about the agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentDetails {
+pub struct AgentDetails  {
     /// <p>Current agent version.</p>
     #[doc(hidden)]
     pub agent_version: std::option::Option<std::string::String>,
@@ -13,32 +13,45 @@ pub struct AgentDetails {
     /// <p>Type of EC2 instance agent is running on.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>Number of Cpu cores reserved for agent.</p>
+    /// <note> 
+    /// <p>This field should not be used. Use agentCpuCores instead.</p> 
+    /// </note> 
+    /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
     #[doc(hidden)]
     pub reserved_cpu_cores: std::option::Option<std::vec::Vec<i32>>,
+    /// <p>List of CPU cores reserved for the agent.</p>
+    #[doc(hidden)]
+    pub agent_cpu_cores: std::option::Option<std::vec::Vec<i32>>,
     /// <p>List of versions being used by agent components.</p>
     #[doc(hidden)]
     pub component_versions: std::option::Option<std::vec::Vec<crate::types::ComponentVersion>>,
 }
 impl AgentDetails {
     /// <p>Current agent version.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>ID of EC2 instance agent is running on.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>Type of EC2 instance agent is running on.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
-    /// <p>Number of Cpu cores reserved for agent.</p>
-    pub fn reserved_cpu_cores(&self) -> std::option::Option<&[i32]> {
+    /// <note> 
+    /// <p>This field should not be used. Use agentCpuCores instead.</p> 
+    /// </note> 
+    /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
+    pub fn reserved_cpu_cores(&self) -> std::option::Option<& [i32]> {
         self.reserved_cpu_cores.as_deref()
     }
+    /// <p>List of CPU cores reserved for the agent.</p>
+    pub fn agent_cpu_cores(&self) -> std::option::Option<& [i32]> {
+        self.agent_cpu_cores.as_deref()
+    }
     /// <p>List of versions being used by agent components.</p>
-    pub fn component_versions(&self) -> std::option::Option<&[crate::types::ComponentVersion]> {
+    pub fn component_versions(&self) -> std::option::Option<& [crate::types::ComponentVersion]> {
         self.component_versions.as_deref()
     }
 }
@@ -57,8 +70,8 @@ pub struct AgentDetailsBuilder {
     pub(crate) instance_id: std::option::Option<std::string::String>,
     pub(crate) instance_type: std::option::Option<std::string::String>,
     pub(crate) reserved_cpu_cores: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) component_versions:
-        std::option::Option<std::vec::Vec<crate::types::ComponentVersion>>,
+    pub(crate) agent_cpu_cores: std::option::Option<std::vec::Vec<i32>>,
+    pub(crate) component_versions: std::option::Option<std::vec::Vec<crate::types::ComponentVersion>>,
 }
 impl AgentDetailsBuilder {
     /// <p>Current agent version.</p>
@@ -68,8 +81,7 @@ impl AgentDetailsBuilder {
     }
     /// <p>Current agent version.</p>
     pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>ID of EC2 instance agent is running on.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +90,7 @@ impl AgentDetailsBuilder {
     }
     /// <p>ID of EC2 instance agent is running on.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>Type of EC2 instance agent is running on.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,27 +99,43 @@ impl AgentDetailsBuilder {
     }
     /// <p>Type of EC2 instance agent is running on.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// Appends an item to `reserved_cpu_cores`.
     ///
     /// To override the contents of this collection use [`set_reserved_cpu_cores`](Self::set_reserved_cpu_cores).
     ///
-    /// <p>Number of Cpu cores reserved for agent.</p>
+    /// <note> 
+    /// <p>This field should not be used. Use agentCpuCores instead.</p> 
+    /// </note> 
+    /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
     pub fn reserved_cpu_cores(mut self, input: i32) -> Self {
         let mut v = self.reserved_cpu_cores.unwrap_or_default();
-        v.push(input);
-        self.reserved_cpu_cores = Some(v);
-        self
+                        v.push(input);
+                        self.reserved_cpu_cores = Some(v);
+                        self
     }
-    /// <p>Number of Cpu cores reserved for agent.</p>
-    pub fn set_reserved_cpu_cores(
-        mut self,
-        input: std::option::Option<std::vec::Vec<i32>>,
-    ) -> Self {
-        self.reserved_cpu_cores = input;
-        self
+    /// <note> 
+    /// <p>This field should not be used. Use agentCpuCores instead.</p> 
+    /// </note> 
+    /// <p>List of CPU cores reserved for processes other than the agent running on the EC2 instance.</p>
+    pub fn set_reserved_cpu_cores(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+        self.reserved_cpu_cores = input; self
+    }
+    /// Appends an item to `agent_cpu_cores`.
+    ///
+    /// To override the contents of this collection use [`set_agent_cpu_cores`](Self::set_agent_cpu_cores).
+    ///
+    /// <p>List of CPU cores reserved for the agent.</p>
+    pub fn agent_cpu_cores(mut self, input: i32) -> Self {
+        let mut v = self.agent_cpu_cores.unwrap_or_default();
+                        v.push(input);
+                        self.agent_cpu_cores = Some(v);
+                        self
+    }
+    /// <p>List of CPU cores reserved for the agent.</p>
+    pub fn set_agent_cpu_cores(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+        self.agent_cpu_cores = input; self
     }
     /// Appends an item to `component_versions`.
     ///
@@ -117,26 +144,30 @@ impl AgentDetailsBuilder {
     /// <p>List of versions being used by agent components.</p>
     pub fn component_versions(mut self, input: crate::types::ComponentVersion) -> Self {
         let mut v = self.component_versions.unwrap_or_default();
-        v.push(input);
-        self.component_versions = Some(v);
-        self
+                        v.push(input);
+                        self.component_versions = Some(v);
+                        self
     }
     /// <p>List of versions being used by agent components.</p>
-    pub fn set_component_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentVersion>>,
-    ) -> Self {
-        self.component_versions = input;
-        self
+    pub fn set_component_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentVersion>>) -> Self {
+        self.component_versions = input; self
     }
     /// Consumes the builder and constructs a [`AgentDetails`](crate::types::AgentDetails).
     pub fn build(self) -> crate::types::AgentDetails {
         crate::types::AgentDetails {
-            agent_version: self.agent_version,
-            instance_id: self.instance_id,
-            instance_type: self.instance_type,
-            reserved_cpu_cores: self.reserved_cpu_cores,
-            component_versions: self.component_versions,
+            agent_version: self.agent_version
+            ,
+            instance_id: self.instance_id
+            ,
+            instance_type: self.instance_type
+            ,
+            reserved_cpu_cores: self.reserved_cpu_cores
+            ,
+            agent_cpu_cores: self.agent_cpu_cores
+            ,
+            component_versions: self.component_versions
+            ,
         }
     }
 }
+

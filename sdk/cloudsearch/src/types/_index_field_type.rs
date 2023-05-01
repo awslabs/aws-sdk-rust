@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let indexfieldtype = unimplemented!();
 /// match indexfieldtype {
@@ -39,22 +39,14 @@
 /// Specifically, when `indexfieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IndexFieldType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IndexFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Date,
@@ -79,72 +71,59 @@ pub enum IndexFieldType {
     #[allow(missing_docs)] // documentation missing in model
     TextArray,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IndexFieldType {
-    fn from(s: &str) -> Self {
-        match s {
-            "date" => IndexFieldType::Date,
-            "date-array" => IndexFieldType::DateArray,
-            "double" => IndexFieldType::Double,
-            "double-array" => IndexFieldType::DoubleArray,
-            "int" => IndexFieldType::Int,
-            "int-array" => IndexFieldType::IntArray,
-            "latlon" => IndexFieldType::Latlon,
-            "literal" => IndexFieldType::Literal,
-            "literal-array" => IndexFieldType::LiteralArray,
-            "text" => IndexFieldType::Text,
-            "text-array" => IndexFieldType::TextArray,
-            other => {
-                IndexFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "date" => IndexFieldType::Date,
+"date-array" => IndexFieldType::DateArray,
+"double" => IndexFieldType::Double,
+"double-array" => IndexFieldType::DoubleArray,
+"int" => IndexFieldType::Int,
+"int-array" => IndexFieldType::IntArray,
+"latlon" => IndexFieldType::Latlon,
+"literal" => IndexFieldType::Literal,
+"literal-array" => IndexFieldType::LiteralArray,
+"text" => IndexFieldType::Text,
+"text-array" => IndexFieldType::TextArray,
+other => IndexFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for IndexFieldType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IndexFieldType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IndexFieldType::from(s))
+                }
+            }
 impl IndexFieldType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            IndexFieldType::Date => "date",
-            IndexFieldType::DateArray => "date-array",
-            IndexFieldType::Double => "double",
-            IndexFieldType::DoubleArray => "double-array",
-            IndexFieldType::Int => "int",
-            IndexFieldType::IntArray => "int-array",
-            IndexFieldType::Latlon => "latlon",
-            IndexFieldType::Literal => "literal",
-            IndexFieldType::LiteralArray => "literal-array",
-            IndexFieldType::Text => "text",
-            IndexFieldType::TextArray => "text-array",
-            IndexFieldType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "date",
-            "date-array",
-            "double",
-            "double-array",
-            "int",
-            "int-array",
-            "latlon",
-            "literal",
-            "literal-array",
-            "text",
-            "text-array",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    IndexFieldType::Date => "date",
+    IndexFieldType::DateArray => "date-array",
+    IndexFieldType::Double => "double",
+    IndexFieldType::DoubleArray => "double-array",
+    IndexFieldType::Int => "int",
+    IndexFieldType::IntArray => "int-array",
+    IndexFieldType::Latlon => "latlon",
+    IndexFieldType::Literal => "literal",
+    IndexFieldType::LiteralArray => "literal-array",
+    IndexFieldType::Text => "text",
+    IndexFieldType::TextArray => "text-array",
+    IndexFieldType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["date", "date-array", "double", "double-array", "int", "int-array", "latlon", "literal", "literal-array", "text", "text-array"]
+                }
+            }
 impl AsRef<str> for IndexFieldType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

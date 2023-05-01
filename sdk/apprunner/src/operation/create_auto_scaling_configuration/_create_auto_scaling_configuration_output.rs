@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAutoScalingConfigurationOutput {
+pub struct CreateAutoScalingConfigurationOutput  {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration: std::option::Option<crate::types::AutoScalingConfiguration>,
@@ -10,20 +10,18 @@ pub struct CreateAutoScalingConfigurationOutput {
 }
 impl CreateAutoScalingConfigurationOutput {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
-    pub fn auto_scaling_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoScalingConfiguration> {
+    pub fn auto_scaling_configuration(&self) -> std::option::Option<& crate::types::AutoScalingConfiguration> {
         self.auto_scaling_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAutoScalingConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAutoScalingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateAutoScalingConfigurationOutput`](crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput).
-    pub fn builder() -> crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationOutputBuilder {
         crate::operation::create_auto_scaling_configuration::builders::CreateAutoScalingConfigurationOutputBuilder::default()
     }
 }
@@ -32,44 +30,35 @@ impl CreateAutoScalingConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateAutoScalingConfigurationOutputBuilder {
-    pub(crate) auto_scaling_configuration:
-        std::option::Option<crate::types::AutoScalingConfiguration>,
+    pub(crate) auto_scaling_configuration: std::option::Option<crate::types::AutoScalingConfiguration>,
     _request_id: Option<String>,
 }
 impl CreateAutoScalingConfigurationOutputBuilder {
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
-    pub fn auto_scaling_configuration(
-        mut self,
-        input: crate::types::AutoScalingConfiguration,
-    ) -> Self {
+    pub fn auto_scaling_configuration(mut self, input: crate::types::AutoScalingConfiguration) -> Self {
         self.auto_scaling_configuration = Some(input);
         self
     }
     /// <p>A description of the App Runner auto scaling configuration that's created by this request.</p>
-    pub fn set_auto_scaling_configuration(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingConfiguration>,
-    ) -> Self {
-        self.auto_scaling_configuration = input;
-        self
+    pub fn set_auto_scaling_configuration(mut self, input: std::option::Option<crate::types::AutoScalingConfiguration>) -> Self {
+        self.auto_scaling_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAutoScalingConfigurationOutput`](crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput {
         crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput {
-            auto_scaling_configuration: self.auto_scaling_configuration,
+            auto_scaling_configuration: self.auto_scaling_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

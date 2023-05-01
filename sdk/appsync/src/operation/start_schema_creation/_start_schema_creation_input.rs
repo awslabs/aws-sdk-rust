@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSchemaCreationInput {
+pub struct StartSchemaCreationInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct StartSchemaCreationInput {
 }
 impl StartSchemaCreationInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The schema definition, in GraphQL schema language format.</p>
-    pub fn definition(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn definition(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.definition.as_ref()
     }
 }
 impl StartSchemaCreationInput {
     /// Creates a new builder-style object to manufacture [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
-    pub fn builder(
-    ) -> crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
-        crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder {
+        crate::operation::start_schema_creation::builders::StartSchemaCreationInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl StartSchemaCreationInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The schema definition, in GraphQL schema language format.</p>
     pub fn definition(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -54,21 +51,18 @@ impl StartSchemaCreationInputBuilder {
     }
     /// <p>The schema definition, in GraphQL schema language format.</p>
     pub fn set_definition(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.definition = input;
-        self
+        self.definition = input; self
     }
     /// Consumes the builder and constructs a [`StartSchemaCreationInput`](crate::operation::start_schema_creation::StartSchemaCreationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_schema_creation::StartSchemaCreationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_schema_creation::StartSchemaCreationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_schema_creation::StartSchemaCreationInput {
-                api_id: self.api_id,
-                definition: self.definition,
-            },
+                api_id: self.api_id
+                ,
+                definition: self.definition
+                ,
+            }
         )
     }
 }
+

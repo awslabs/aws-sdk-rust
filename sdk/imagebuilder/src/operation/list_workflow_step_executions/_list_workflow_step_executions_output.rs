@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowStepExecutionsOutput {
+pub struct ListWorkflowStepExecutionsOutput  {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -28,42 +28,42 @@ pub struct ListWorkflowStepExecutionsOutput {
 }
 impl ListWorkflowStepExecutionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::types::WorkflowStepMetadata]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::types::WorkflowStepMetadata]> {
         self.steps.as_deref()
     }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
-    pub fn workflow_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn workflow_build_version_arn(&self) -> std::option::Option<& str> {
         self.workflow_build_version_arn.as_deref()
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn workflow_execution_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_execution_id(&self) -> std::option::Option<& str> {
         self.workflow_execution_id.as_deref()
     }
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>The output message from the list action, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkflowStepExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkflowStepExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput).
-    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsOutputBuilder {
         crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsOutputBuilder::default()
     }
 }
@@ -89,8 +89,7 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Appends an item to `steps`.
     ///
@@ -99,17 +98,13 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
     pub fn steps(mut self, input: crate::types::WorkflowStepMetadata) -> Self {
         let mut v = self.steps.unwrap_or_default();
-        v.push(input);
-        self.steps = Some(v);
-        self
+                        v.push(input);
+                        self.steps = Some(v);
+                        self
     }
     /// <p>Contains an array of runtime details that represents each step in this runtime instance of the workflow.</p>
-    pub fn set_steps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkflowStepMetadata>>,
-    ) -> Self {
-        self.steps = input;
-        self
+    pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkflowStepMetadata>>) -> Self {
+        self.steps = input; self
     }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
     pub fn workflow_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,12 +112,8 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self
     }
     /// <p>The build version ARN for the Image Builder workflow resource that defines the steps for this runtime instance of the workflow.</p>
-    pub fn set_workflow_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.workflow_build_version_arn = input;
-        self
+    pub fn set_workflow_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.workflow_build_version_arn = input; self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub fn workflow_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,12 +121,8 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn set_workflow_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.workflow_execution_id = input;
-        self
+    pub fn set_workflow_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.workflow_execution_id = input; self
     }
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,12 +130,8 @@ impl ListWorkflowStepExecutionsOutputBuilder {
         self
     }
     /// <p>The image build version resource ARN that's associated with the specified runtime instance of the workflow.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_build_version_arn = input;
-        self
+    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_build_version_arn = input; self
     }
     /// <p>The output message from the list action, if applicable.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +140,7 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     }
     /// <p>The output message from the list action, if applicable.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,31 +149,36 @@ impl ListWorkflowStepExecutionsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkflowStepExecutionsOutput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput {
+    pub fn build(self) -> crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput {
         crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsOutput {
-            request_id: self.request_id,
-            steps: self.steps,
-            workflow_build_version_arn: self.workflow_build_version_arn,
-            workflow_execution_id: self.workflow_execution_id,
-            image_build_version_arn: self.image_build_version_arn,
-            message: self.message,
-            next_token: self.next_token,
+            request_id: self.request_id
+            ,
+            steps: self.steps
+            ,
+            workflow_build_version_arn: self.workflow_build_version_arn
+            ,
+            workflow_execution_id: self.workflow_execution_id
+            ,
+            image_build_version_arn: self.image_build_version_arn
+            ,
+            message: self.message
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

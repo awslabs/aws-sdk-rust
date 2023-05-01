@@ -3,7 +3,7 @@
 /// <p>Describes a principal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddedPrincipal {
+pub struct AddedPrincipal  {
     /// <p>The type of principal.</p>
     #[doc(hidden)]
     pub principal_type: std::option::Option<crate::types::PrincipalType>,
@@ -19,19 +19,19 @@ pub struct AddedPrincipal {
 }
 impl AddedPrincipal {
     /// <p>The type of principal.</p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
-    pub fn principal(&self) -> std::option::Option<&str> {
+    pub fn principal(&self) -> std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The ID of the service permission.</p>
-    pub fn service_permission_id(&self) -> std::option::Option<&str> {
+    pub fn service_permission_id(&self) -> std::option::Option<& str> {
         self.service_permission_id.as_deref()
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl AddedPrincipalBuilder {
         self
     }
     /// <p>The type of principal.</p>
-    pub fn set_principal_type(
-        mut self,
-        input: std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
-        self.principal_type = input;
-        self
+    pub fn set_principal_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
+        self.principal_type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +68,7 @@ impl AddedPrincipalBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the principal.</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The ID of the service permission.</p>
     pub fn service_permission_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,12 +76,8 @@ impl AddedPrincipalBuilder {
         self
     }
     /// <p>The ID of the service permission.</p>
-    pub fn set_service_permission_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_permission_id = input;
-        self
+    pub fn set_service_permission_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_permission_id = input; self
     }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,16 +86,20 @@ impl AddedPrincipalBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// Consumes the builder and constructs a [`AddedPrincipal`](crate::types::AddedPrincipal).
     pub fn build(self) -> crate::types::AddedPrincipal {
         crate::types::AddedPrincipal {
-            principal_type: self.principal_type,
-            principal: self.principal,
-            service_permission_id: self.service_permission_id,
-            service_id: self.service_id,
+            principal_type: self.principal_type
+            ,
+            principal: self.principal
+            ,
+            service_permission_id: self.service_permission_id
+            ,
+            service_id: self.service_id
+            ,
         }
     }
 }
+

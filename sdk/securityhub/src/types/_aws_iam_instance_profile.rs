@@ -3,11 +3,11 @@
 /// <p>Information about an instance profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsIamInstanceProfile {
+pub struct AwsIamInstanceProfile  {
     /// <p>The ARN of the instance profile.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Indicates when the instance profile was created.</p>
+    /// <p>Indicates when the instance profile was created.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub create_date: std::option::Option<std::string::String>,
@@ -26,28 +26,28 @@ pub struct AwsIamInstanceProfile {
 }
 impl AwsIamInstanceProfile {
     /// <p>The ARN of the instance profile.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>Indicates when the instance profile was created.</p>
+    /// <p>Indicates when the instance profile was created.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_date(&self) -> std::option::Option<&str> {
+    pub fn create_date(&self) -> std::option::Option<& str> {
         self.create_date.as_deref()
     }
     /// <p>The identifier of the instance profile.</p>
-    pub fn instance_profile_id(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_id(&self) -> std::option::Option<& str> {
         self.instance_profile_id.as_deref()
     }
     /// <p>The name of the instance profile.</p>
-    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
+    pub fn instance_profile_name(&self) -> std::option::Option<& str> {
         self.instance_profile_name.as_deref()
     }
     /// <p>The path to the instance profile.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The roles associated with the instance profile.</p>
-    pub fn roles(&self) -> std::option::Option<&[crate::types::AwsIamInstanceProfileRole]> {
+    pub fn roles(&self) -> std::option::Option<& [crate::types::AwsIamInstanceProfileRole]> {
         self.roles.as_deref()
     }
 }
@@ -77,20 +77,18 @@ impl AwsIamInstanceProfileBuilder {
     }
     /// <p>The ARN of the instance profile.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <p>Indicates when the instance profile was created.</p>
+    /// <p>Indicates when the instance profile was created.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn create_date(mut self, input: impl Into<std::string::String>) -> Self {
         self.create_date = Some(input.into());
         self
     }
-    /// <p>Indicates when the instance profile was created.</p>
+    /// <p>Indicates when the instance profile was created.</p> 
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_create_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.create_date = input;
-        self
+        self.create_date = input; self
     }
     /// <p>The identifier of the instance profile.</p>
     pub fn instance_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,12 +96,8 @@ impl AwsIamInstanceProfileBuilder {
         self
     }
     /// <p>The identifier of the instance profile.</p>
-    pub fn set_instance_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_profile_id = input;
-        self
+    pub fn set_instance_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_profile_id = input; self
     }
     /// <p>The name of the instance profile.</p>
     pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,12 +105,8 @@ impl AwsIamInstanceProfileBuilder {
         self
     }
     /// <p>The name of the instance profile.</p>
-    pub fn set_instance_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_profile_name = input;
-        self
+    pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_profile_name = input; self
     }
     /// <p>The path to the instance profile.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +115,7 @@ impl AwsIamInstanceProfileBuilder {
     }
     /// <p>The path to the instance profile.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// Appends an item to `roles`.
     ///
@@ -135,27 +124,30 @@ impl AwsIamInstanceProfileBuilder {
     /// <p>The roles associated with the instance profile.</p>
     pub fn roles(mut self, input: crate::types::AwsIamInstanceProfileRole) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = Some(v);
-        self
+                        v.push(input);
+                        self.roles = Some(v);
+                        self
     }
     /// <p>The roles associated with the instance profile.</p>
-    pub fn set_roles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>,
-    ) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsIamInstanceProfileRole>>) -> Self {
+        self.roles = input; self
     }
     /// Consumes the builder and constructs a [`AwsIamInstanceProfile`](crate::types::AwsIamInstanceProfile).
     pub fn build(self) -> crate::types::AwsIamInstanceProfile {
         crate::types::AwsIamInstanceProfile {
-            arn: self.arn,
-            create_date: self.create_date,
-            instance_profile_id: self.instance_profile_id,
-            instance_profile_name: self.instance_profile_name,
-            path: self.path,
-            roles: self.roles,
+            arn: self.arn
+            ,
+            create_date: self.create_date
+            ,
+            instance_profile_id: self.instance_profile_id
+            ,
+            instance_profile_name: self.instance_profile_name
+            ,
+            path: self.path
+            ,
+            roles: self.roles
+            ,
         }
     }
 }
+

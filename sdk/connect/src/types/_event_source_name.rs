@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventsourcename = unimplemented!();
 /// match eventsourcename {
@@ -34,22 +34,14 @@
 /// Specifically, when `eventsourcename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventSourceName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnPostCallAnalysisAvailable,
@@ -64,57 +56,49 @@ pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
     OnZendeskTicketStatusUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventSourceName {
-    fn from(s: &str) -> Self {
-        match s {
-            "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
-            "OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
-            "OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
-            "OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
-            "OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
-            "OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
-            other => {
-                EventSourceName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "OnPostCallAnalysisAvailable" => EventSourceName::OnPostCallAnalysisAvailable,
+"OnPostChatAnalysisAvailable" => EventSourceName::OnPostChatAnalysisAvailable,
+"OnRealTimeCallAnalysisAvailable" => EventSourceName::OnRealTimeCallAnalysisAvailable,
+"OnSalesforceCaseCreate" => EventSourceName::OnSalesforceCaseCreate,
+"OnZendeskTicketCreate" => EventSourceName::OnZendeskTicketCreate,
+"OnZendeskTicketStatusUpdate" => EventSourceName::OnZendeskTicketStatusUpdate,
+other => EventSourceName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for EventSourceName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventSourceName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventSourceName::from(s))
+                }
+            }
 impl EventSourceName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
-            EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
-            EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
-            EventSourceName::OnSalesforceCaseCreate => "OnSalesforceCaseCreate",
-            EventSourceName::OnZendeskTicketCreate => "OnZendeskTicketCreate",
-            EventSourceName::OnZendeskTicketStatusUpdate => "OnZendeskTicketStatusUpdate",
-            EventSourceName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "OnPostCallAnalysisAvailable",
-            "OnPostChatAnalysisAvailable",
-            "OnRealTimeCallAnalysisAvailable",
-            "OnSalesforceCaseCreate",
-            "OnZendeskTicketCreate",
-            "OnZendeskTicketStatusUpdate",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EventSourceName::OnPostCallAnalysisAvailable => "OnPostCallAnalysisAvailable",
+    EventSourceName::OnPostChatAnalysisAvailable => "OnPostChatAnalysisAvailable",
+    EventSourceName::OnRealTimeCallAnalysisAvailable => "OnRealTimeCallAnalysisAvailable",
+    EventSourceName::OnSalesforceCaseCreate => "OnSalesforceCaseCreate",
+    EventSourceName::OnZendeskTicketCreate => "OnZendeskTicketCreate",
+    EventSourceName::OnZendeskTicketStatusUpdate => "OnZendeskTicketStatusUpdate",
+    EventSourceName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["OnPostCallAnalysisAvailable", "OnPostChatAnalysisAvailable", "OnRealTimeCallAnalysisAvailable", "OnSalesforceCaseCreate", "OnZendeskTicketCreate", "OnZendeskTicketStatusUpdate"]
+                }
+            }
 impl AsRef<str> for EventSourceName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

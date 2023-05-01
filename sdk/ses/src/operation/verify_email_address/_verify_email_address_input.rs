@@ -3,21 +3,20 @@
 /// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifyEmailAddressInput {
+pub struct VerifyEmailAddressInput  {
     /// <p>The email address to be verified.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
 }
 impl VerifyEmailAddressInput {
     /// <p>The email address to be verified.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
 impl VerifyEmailAddressInput {
     /// Creates a new builder-style object to manufacture [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
-    pub fn builder(
-    ) -> crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
+    pub fn builder() -> crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder {
         crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl VerifyEmailAddressInputBuilder {
     }
     /// <p>The email address to be verified.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// Consumes the builder and constructs a [`VerifyEmailAddressInput`](crate::operation::verify_email_address::VerifyEmailAddressInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::verify_email_address::VerifyEmailAddressInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::verify_email_address::VerifyEmailAddressInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::verify_email_address::VerifyEmailAddressInput {
-                email_address: self.email_address,
-            },
+                email_address: self.email_address
+                ,
+            }
         )
     }
 }
+

@@ -3,20 +3,18 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReceiptFilterOutput {
+pub struct CreateReceiptFilterOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateReceiptFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateReceiptFilterOutput {
     /// Creates a new builder-style object to manufacture [`CreateReceiptFilterOutput`](crate::operation::create_receipt_filter::CreateReceiptFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterOutputBuilder {
-        crate::operation::create_receipt_filter::builders::CreateReceiptFilterOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_receipt_filter::builders::CreateReceiptFilterOutputBuilder {
+        crate::operation::create_receipt_filter::builders::CreateReceiptFilterOutputBuilder::default()
     }
 }
 
@@ -28,14 +26,14 @@ pub struct CreateReceiptFilterOutputBuilder {
 }
 impl CreateReceiptFilterOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateReceiptFilterOutput`](crate::operation::create_receipt_filter::CreateReceiptFilterOutput).
     pub fn build(self) -> crate::operation::create_receipt_filter::CreateReceiptFilterOutput {
         crate::operation::create_receipt_filter::CreateReceiptFilterOutput {
@@ -43,3 +41,4 @@ impl CreateReceiptFilterOutputBuilder {
         }
     }
 }
+

@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecommenderInput {
+pub struct DeleteRecommenderInput  {
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
     #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl DeleteRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
-    pub fn recommender_arn(&self) -> std::option::Option<&str> {
+    pub fn recommender_arn(&self) -> std::option::Option<& str> {
         self.recommender_arn.as_deref()
     }
 }
 impl DeleteRecommenderInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
-    pub fn builder() -> crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder {
         crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteRecommenderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
     pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommender_arn = input;
-        self
+        self.recommender_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRecommenderInput`](crate::operation::delete_recommender::DeleteRecommenderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_recommender::DeleteRecommenderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_recommender::DeleteRecommenderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_recommender::DeleteRecommenderInput {
-                recommender_arn: self.recommender_arn,
-            },
+                recommender_arn: self.recommender_arn
+                ,
+            }
         )
     }
 }
+

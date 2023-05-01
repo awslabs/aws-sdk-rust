@@ -3,14 +3,14 @@
 /// <p>Information about the source of the data used by the Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource {
+pub struct DataSource  {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
     #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::types::S3DataSource>,
 }
 impl DataSource {
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::S3DataSource> {
+    pub fn s3_data_source(&self) -> std::option::Option<& crate::types::S3DataSource> {
         self.s3_data_source.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl DataSourceBuilder {
         self
     }
     /// <p>Information about the data stored in Amazon S3 used by the Amazon Braket job.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: std::option::Option<crate::types::S3DataSource>,
-    ) -> Self {
-        self.s3_data_source = input;
-        self
+    pub fn set_s3_data_source(mut self, input: std::option::Option<crate::types::S3DataSource>) -> Self {
+        self.s3_data_source = input; self
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            s3_data_source: self.s3_data_source,
+            s3_data_source: self.s3_data_source
+            ,
         }
     }
 }
+

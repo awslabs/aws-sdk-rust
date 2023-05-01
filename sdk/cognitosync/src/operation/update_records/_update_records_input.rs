@@ -3,7 +3,7 @@
 /// A request to post updates to records or add and delete records for a dataset and user.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecordsInput {
+pub struct UpdateRecordsInput  {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct UpdateRecordsInput {
 }
 impl UpdateRecordsInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
     /// A list of patch operations.
-    pub fn record_patches(&self) -> std::option::Option<&[crate::types::RecordPatch]> {
+    pub fn record_patches(&self) -> std::option::Option<& [crate::types::RecordPatch]> {
         self.record_patches.as_deref()
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    pub fn sync_session_token(&self) -> std::option::Option<&str> {
+    pub fn sync_session_token(&self) -> std::option::Option<& str> {
         self.sync_session_token.as_deref()
     }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
-    pub fn client_context(&self) -> std::option::Option<&str> {
+    pub fn client_context(&self) -> std::option::Option<& str> {
         self.client_context.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl UpdateRecordsInputBuilder {
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl UpdateRecordsInputBuilder {
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +101,7 @@ impl UpdateRecordsInputBuilder {
     }
     /// A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +110,7 @@ impl UpdateRecordsInputBuilder {
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// Appends an item to `record_patches`.
     ///
@@ -123,17 +119,13 @@ impl UpdateRecordsInputBuilder {
     /// A list of patch operations.
     pub fn record_patches(mut self, input: crate::types::RecordPatch) -> Self {
         let mut v = self.record_patches.unwrap_or_default();
-        v.push(input);
-        self.record_patches = Some(v);
-        self
+                        v.push(input);
+                        self.record_patches = Some(v);
+                        self
     }
     /// A list of patch operations.
-    pub fn set_record_patches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecordPatch>>,
-    ) -> Self {
-        self.record_patches = input;
-        self
+    pub fn set_record_patches(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecordPatch>>) -> Self {
+        self.record_patches = input; self
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
     pub fn sync_session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,12 +133,8 @@ impl UpdateRecordsInputBuilder {
         self
     }
     /// The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
-    pub fn set_sync_session_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sync_session_token = input;
-        self
+    pub fn set_sync_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sync_session_token = input; self
     }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,24 +143,28 @@ impl UpdateRecordsInputBuilder {
     }
     /// Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
     pub fn set_client_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_context = input;
-        self
+        self.client_context = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRecordsInput`](crate::operation::update_records::UpdateRecordsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_records::UpdateRecordsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_records::UpdateRecordsInput {
-            identity_pool_id: self.identity_pool_id,
-            identity_id: self.identity_id,
-            dataset_name: self.dataset_name,
-            device_id: self.device_id,
-            record_patches: self.record_patches,
-            sync_session_token: self.sync_session_token,
-            client_context: self.client_context,
-        })
+    pub fn build(self) -> Result<crate::operation::update_records::UpdateRecordsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_records::UpdateRecordsInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+                identity_id: self.identity_id
+                ,
+                dataset_name: self.dataset_name
+                ,
+                device_id: self.device_id
+                ,
+                record_patches: self.record_patches
+                ,
+                sync_session_token: self.sync_session_token
+                ,
+                client_context: self.client_context
+                ,
+            }
+        )
     }
 }
+

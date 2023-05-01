@@ -44,3 +44,4 @@ pub use crate::types::_harvest_job::HarvestJobBuilder;
 pub use crate::types::_s3_destination::S3DestinationBuilder;
 
 pub use crate::types::_channel::ChannelBuilder;
+

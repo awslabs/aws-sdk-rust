@@ -3,14 +3,14 @@
 /// <p>The properties of a billing group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BillingGroupProperties {
+pub struct BillingGroupProperties  {
     /// <p>The description of the billing group.</p>
     #[doc(hidden)]
     pub billing_group_description: std::option::Option<std::string::String>,
 }
 impl BillingGroupProperties {
     /// <p>The description of the billing group.</p>
-    pub fn billing_group_description(&self) -> std::option::Option<&str> {
+    pub fn billing_group_description(&self) -> std::option::Option<& str> {
         self.billing_group_description.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl BillingGroupPropertiesBuilder {
         self
     }
     /// <p>The description of the billing group.</p>
-    pub fn set_billing_group_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.billing_group_description = input;
-        self
+    pub fn set_billing_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.billing_group_description = input; self
     }
     /// Consumes the builder and constructs a [`BillingGroupProperties`](crate::types::BillingGroupProperties).
     pub fn build(self) -> crate::types::BillingGroupProperties {
         crate::types::BillingGroupProperties {
-            billing_group_description: self.billing_group_description,
+            billing_group_description: self.billing_group_description
+            ,
         }
     }
 }
+

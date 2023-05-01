@@ -3,7 +3,7 @@
 /// <p>The input parameters of a template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateInput {
+pub struct TemplateInput  {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct TemplateInput {
 }
 impl TemplateInput {
     /// <p>The name of the template.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>The data type of the template input.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::types::DataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::types::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an input is required from the template.</p>
@@ -51,8 +51,7 @@ impl TemplateInputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// <p>The data type of the template input.</p>
     pub fn data_type(mut self, input: crate::types::DataType) -> Self {
@@ -61,8 +60,7 @@ impl TemplateInputBuilder {
     }
     /// <p>The data type of the template input.</p>
     pub fn set_data_type(mut self, input: std::option::Option<crate::types::DataType>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// <p>Determine if an input is required from the template.</p>
     pub fn required(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl TemplateInputBuilder {
     }
     /// <p>Determine if an input is required from the template.</p>
     pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.required = input;
-        self
+        self.required = input; self
     }
     /// Consumes the builder and constructs a [`TemplateInput`](crate::types::TemplateInput).
     pub fn build(self) -> crate::types::TemplateInput {
         crate::types::TemplateInput {
-            input_name: self.input_name,
-            data_type: self.data_type,
-            required: self.required,
+            input_name: self.input_name
+            ,
+            data_type: self.data_type
+            ,
+            required: self.required
+            ,
         }
     }
 }
+

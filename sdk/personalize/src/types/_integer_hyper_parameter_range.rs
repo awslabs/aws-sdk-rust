@@ -3,7 +3,7 @@
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntegerHyperParameterRange {
+pub struct IntegerHyperParameterRange  {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct IntegerHyperParameterRange {
 }
 impl IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -51,8 +51,7 @@ impl IntegerHyperParameterRangeBuilder {
     }
     /// <p>The name of the hyperparameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn min_value(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl IntegerHyperParameterRangeBuilder {
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_value = input;
-        self
+        self.min_value = input; self
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(mut self, input: i32) -> Self {
@@ -71,15 +69,20 @@ impl IntegerHyperParameterRangeBuilder {
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_value = input;
-        self
+        self.max_value = input; self
     }
     /// Consumes the builder and constructs a [`IntegerHyperParameterRange`](crate::types::IntegerHyperParameterRange).
     pub fn build(self) -> crate::types::IntegerHyperParameterRange {
         crate::types::IntegerHyperParameterRange {
-            name: self.name,
-            min_value: self.min_value.unwrap_or_default(),
-            max_value: self.max_value.unwrap_or_default(),
+            name: self.name
+            ,
+            min_value: self.min_value
+                .unwrap_or_default()
+            ,
+            max_value: self.max_value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

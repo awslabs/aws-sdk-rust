@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLifecycleConfigurationInput {
+pub struct DescribeLifecycleConfigurationInput  {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeLifecycleConfigurationInput {
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
 impl DescribeLifecycleConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleConfigurationInput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput).
-    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder {
         crate::operation::describe_lifecycle_configuration::builders::DescribeLifecycleConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl DescribeLifecycleConfigurationInputBuilder {
     }
     /// <p>The ID of the file system whose <code>LifecycleConfiguration</code> object you want to retrieve (String).</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLifecycleConfigurationInput`](crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationInput {
                 file_system_id: self.file_system_id
@@ -52,3 +46,4 @@ impl DescribeLifecycleConfigurationInputBuilder {
         )
     }
 }
+

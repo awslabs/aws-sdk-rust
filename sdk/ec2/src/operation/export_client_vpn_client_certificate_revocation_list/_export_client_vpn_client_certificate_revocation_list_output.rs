@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportClientVpnClientCertificateRevocationListOutput {
+pub struct ExportClientVpnClientCertificateRevocationListOutput  {
     /// <p>Information about the client certificate revocation list.</p>
     #[doc(hidden)]
     pub certificate_revocation_list: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct ExportClientVpnClientCertificateRevocationListOutput {
 }
 impl ExportClientVpnClientCertificateRevocationListOutput {
     /// <p>Information about the client certificate revocation list.</p>
-    pub fn certificate_revocation_list(&self) -> std::option::Option<&str> {
+    pub fn certificate_revocation_list(&self) -> std::option::Option<& str> {
         self.certificate_revocation_list.as_deref()
     }
     /// <p>The current state of the client certificate revocation list.</p>
-    pub fn status(
-        &self,
-    ) -> std::option::Option<&crate::types::ClientCertificateRevocationListStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ClientCertificateRevocationListStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ExportClientVpnClientCertificateRevocationListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ExportClientVpnClientCertificateRevocationListOutput {
     /// Creates a new builder-style object to manufacture [`ExportClientVpnClientCertificateRevocationListOutput`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput).
-    pub fn builder() -> crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListOutputBuilder{
+    pub fn builder() -> crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListOutputBuilder {
         crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl ExportClientVpnClientCertificateRevocationListOutputBuilder {
         self
     }
     /// <p>Information about the client certificate revocation list.</p>
-    pub fn set_certificate_revocation_list(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_revocation_list = input;
-        self
+    pub fn set_certificate_revocation_list(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_revocation_list = input; self
     }
     /// <p>The current state of the client certificate revocation list.</p>
     pub fn status(mut self, input: crate::types::ClientCertificateRevocationListStatus) -> Self {
@@ -63,24 +57,20 @@ impl ExportClientVpnClientCertificateRevocationListOutputBuilder {
         self
     }
     /// <p>The current state of the client certificate revocation list.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ClientCertificateRevocationListStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ClientCertificateRevocationListStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ExportClientVpnClientCertificateRevocationListOutput`](crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput).
-    pub fn build(self) -> crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput{
+    pub fn build(self) -> crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput {
         crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationListOutput {
             certificate_revocation_list: self.certificate_revocation_list
             ,
@@ -90,3 +80,4 @@ impl ExportClientVpnClientCertificateRevocationListOutputBuilder {
         }
     }
 }
+

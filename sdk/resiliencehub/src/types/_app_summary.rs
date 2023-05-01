@@ -3,7 +3,7 @@
 /// <p>Defines an application summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppSummary {
+pub struct AppSummary  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -31,23 +31,23 @@ pub struct AppSummary {
 }
 impl AppSummary {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp for when the app was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::types::AppComplianceStatusType> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::types::AppComplianceStatusType> {
         self.compliance_status.as_ref()
     }
     /// <p>The current resiliency score for the application.</p>
@@ -55,13 +55,11 @@ impl AppSummary {
         self.resiliency_score
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn assessment_schedule(
-        &self,
-    ) -> std::option::Option<&crate::types::AppAssessmentScheduleType> {
+    pub fn assessment_schedule(&self) -> std::option::Option<& crate::types::AppAssessmentScheduleType> {
         self.assessment_schedule.as_ref()
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AppStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AppStatusType> {
         self.status.as_ref()
     }
 }
@@ -93,8 +91,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The name of the application.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +100,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The optional description for an app.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +109,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The optional description for an app.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The timestamp for when the app was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,12 +117,8 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the app was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::AppComplianceStatusType) -> Self {
@@ -135,12 +126,8 @@ impl AppSummaryBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: std::option::Option<crate::types::AppComplianceStatusType>,
-    ) -> Self {
-        self.compliance_status = input;
-        self
+    pub fn set_compliance_status(mut self, input: std::option::Option<crate::types::AppComplianceStatusType>) -> Self {
+        self.compliance_status = input; self
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn resiliency_score(mut self, input: f64) -> Self {
@@ -149,8 +136,7 @@ impl AppSummaryBuilder {
     }
     /// <p>The current resiliency score for the application.</p>
     pub fn set_resiliency_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.resiliency_score = input;
-        self
+        self.resiliency_score = input; self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
     pub fn assessment_schedule(mut self, input: crate::types::AppAssessmentScheduleType) -> Self {
@@ -158,12 +144,8 @@ impl AppSummaryBuilder {
         self
     }
     /// <p> Assessment execution schedule with 'Daily' or 'Disabled' values. </p>
-    pub fn set_assessment_schedule(
-        mut self,
-        input: std::option::Option<crate::types::AppAssessmentScheduleType>,
-    ) -> Self {
-        self.assessment_schedule = input;
-        self
+    pub fn set_assessment_schedule(mut self, input: std::option::Option<crate::types::AppAssessmentScheduleType>) -> Self {
+        self.assessment_schedule = input; self
     }
     /// <p>The status of the application.</p>
     pub fn status(mut self, input: crate::types::AppStatusType) -> Self {
@@ -172,20 +154,29 @@ impl AppSummaryBuilder {
     }
     /// <p>The status of the application.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AppStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AppSummary`](crate::types::AppSummary).
     pub fn build(self) -> crate::types::AppSummary {
         crate::types::AppSummary {
-            app_arn: self.app_arn,
-            name: self.name,
-            description: self.description,
-            creation_time: self.creation_time,
-            compliance_status: self.compliance_status,
-            resiliency_score: self.resiliency_score.unwrap_or_default(),
-            assessment_schedule: self.assessment_schedule,
-            status: self.status,
+            app_arn: self.app_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            creation_time: self.creation_time
+            ,
+            compliance_status: self.compliance_status
+            ,
+            resiliency_score: self.resiliency_score
+                .unwrap_or_default()
+            ,
+            assessment_schedule: self.assessment_schedule
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

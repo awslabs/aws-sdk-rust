@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightResultsInput {
+pub struct GetInsightResultsInput  {
     /// <p>The ARN of the insight for which to return results.</p>
     #[doc(hidden)]
     pub insight_arn: std::option::Option<std::string::String>,
 }
 impl GetInsightResultsInput {
     /// <p>The ARN of the insight for which to return results.</p>
-    pub fn insight_arn(&self) -> std::option::Option<&str> {
+    pub fn insight_arn(&self) -> std::option::Option<& str> {
         self.insight_arn.as_deref()
     }
 }
 impl GetInsightResultsInput {
     /// Creates a new builder-style object to manufacture [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
-    pub fn builder(
-    ) -> crate::operation::get_insight_results::builders::GetInsightResultsInputBuilder {
+    pub fn builder() -> crate::operation::get_insight_results::builders::GetInsightResultsInputBuilder {
         crate::operation::get_insight_results::builders::GetInsightResultsInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetInsightResultsInputBuilder {
     }
     /// <p>The ARN of the insight for which to return results.</p>
     pub fn set_insight_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_arn = input;
-        self
+        self.insight_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetInsightResultsInput`](crate::operation::get_insight_results::GetInsightResultsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_insight_results::GetInsightResultsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_insight_results::GetInsightResultsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_insight_results::GetInsightResultsInput {
-                insight_arn: self.insight_arn,
-            },
+                insight_arn: self.insight_arn
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectMitigationActionsTasksInput {
+pub struct ListDetectMitigationActionsTasksInput  {
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -22,21 +22,21 @@ impl ListDetectMitigationActionsTasksInput {
         self.max_results
     }
     /// <p> The token for the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 impl ListDetectMitigationActionsTasksInput {
     /// Creates a new builder-style object to manufacture [`ListDetectMitigationActionsTasksInput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput).
-    pub fn builder() -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksInputBuilder {
         crate::operation::list_detect_mitigation_actions_tasks::builders::ListDetectMitigationActionsTasksInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListDetectMitigationActionsTasksInputBuilder {
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> The token for the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ListDetectMitigationActionsTasksInputBuilder {
     }
     /// <p> The token for the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -77,12 +75,8 @@ impl ListDetectMitigationActionsTasksInputBuilder {
         self
     }
     /// <p> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,11 +85,10 @@ impl ListDetectMitigationActionsTasksInputBuilder {
     }
     /// <p> The end of the time period for which ML Detect mitigation actions tasks are returned. </p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// Consumes the builder and constructs a [`ListDetectMitigationActionsTasksInput`](crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput).
-    pub fn build(self) -> Result<crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_detect_mitigation_actions_tasks::ListDetectMitigationActionsTasksInput {
                 max_results: self.max_results
@@ -110,3 +103,4 @@ impl ListDetectMitigationActionsTasksInputBuilder {
         )
     }
 }
+

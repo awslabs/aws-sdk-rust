@@ -81,7 +81,31 @@ pub use crate::types::_hours_of_operation_config::HoursOfOperationConfigBuilder;
 
 pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSliceBuilder;
 
+pub use crate::types::_evaluation_form_scoring_strategy::EvaluationFormScoringStrategyBuilder;
+
+pub use crate::types::_evaluation_form_question::EvaluationFormQuestionBuilder;
+
+pub use crate::types::_evaluation_form_single_select_question_properties::EvaluationFormSingleSelectQuestionPropertiesBuilder;
+
+pub use crate::types::_evaluation_form_single_select_question_automation::EvaluationFormSingleSelectQuestionAutomationBuilder;
+
+pub use crate::types::_single_select_question_rule_category_automation::SingleSelectQuestionRuleCategoryAutomationBuilder;
+
+pub use crate::types::_evaluation_form_single_select_question_option::EvaluationFormSingleSelectQuestionOptionBuilder;
+
+pub use crate::types::_evaluation_form_numeric_question_properties::EvaluationFormNumericQuestionPropertiesBuilder;
+
+pub use crate::types::_numeric_question_property_value_automation::NumericQuestionPropertyValueAutomationBuilder;
+
+pub use crate::types::_evaluation_form_numeric_question_option::EvaluationFormNumericQuestionOptionBuilder;
+
+pub use crate::types::_evaluation_form_section::EvaluationFormSectionBuilder;
+
 pub use crate::types::_problem_detail::ProblemDetailBuilder;
+
+pub use crate::types::_evaluation_note::EvaluationNoteBuilder;
+
+pub use crate::types::_evaluation_answer_input::EvaluationAnswerInputBuilder;
 
 pub use crate::types::_answer_machine_detection_config::AnswerMachineDetectionConfigBuilder;
 
@@ -175,6 +199,10 @@ pub use crate::types::_attribute::AttributeBuilder;
 
 pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummaryBuilder;
 
+pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummaryBuilder;
+
+pub use crate::types::_evaluation_form_summary::EvaluationFormSummaryBuilder;
+
 pub use crate::types::_default_vocabulary::DefaultVocabularyBuilder;
 
 pub use crate::types::_email_reference::EmailReferenceBuilder;
@@ -192,6 +220,10 @@ pub use crate::types::_url_reference::UrlReferenceBuilder;
 pub use crate::types::_contact_flow_summary::ContactFlowSummaryBuilder;
 
 pub use crate::types::_contact_flow_module_summary::ContactFlowModuleSummaryBuilder;
+
+pub use crate::types::_evaluation_summary::EvaluationSummaryBuilder;
+
+pub use crate::types::_evaluation_score::EvaluationScoreBuilder;
 
 pub use crate::types::_lex_bot_config::LexBotConfigBuilder;
 
@@ -285,9 +317,19 @@ pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;
 
 pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
 
+pub use crate::types::_evaluation_form::EvaluationFormBuilder;
+
 pub use crate::types::_contact_flow_module::ContactFlowModuleBuilder;
 
 pub use crate::types::_contact_flow::ContactFlowBuilder;
+
+pub use crate::types::_evaluation_form_content::EvaluationFormContentBuilder;
+
+pub use crate::types::_evaluation::EvaluationBuilder;
+
+pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutputBuilder;
+
+pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
 
@@ -298,3 +340,8 @@ pub use crate::types::_agent_info::AgentInfoBuilder;
 pub use crate::types::_queue_info::QueueInfoBuilder;
 
 pub use crate::types::_agent_status::AgentStatusBuilder;
+
+pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
+
+pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
+

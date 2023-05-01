@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRepositoryCatalogDataOutput {
+pub struct PutRepositoryCatalogDataOutput  {
     /// <p>The catalog data for the repository.</p>
     #[doc(hidden)]
     pub catalog_data: std::option::Option<crate::types::RepositoryCatalogData>,
@@ -10,18 +10,18 @@ pub struct PutRepositoryCatalogDataOutput {
 }
 impl PutRepositoryCatalogDataOutput {
     /// <p>The catalog data for the repository.</p>
-    pub fn catalog_data(&self) -> std::option::Option<&crate::types::RepositoryCatalogData> {
+    pub fn catalog_data(&self) -> std::option::Option<& crate::types::RepositoryCatalogData> {
         self.catalog_data.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutRepositoryCatalogDataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutRepositoryCatalogDataOutput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput).
-    pub fn builder() -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataOutputBuilder{
+    pub fn builder() -> crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataOutputBuilder {
         crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl PutRepositoryCatalogDataOutputBuilder {
         self
     }
     /// <p>The catalog data for the repository.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: std::option::Option<crate::types::RepositoryCatalogData>,
-    ) -> Self {
-        self.catalog_data = input;
-        self
+    pub fn set_catalog_data(mut self, input: std::option::Option<crate::types::RepositoryCatalogData>) -> Self {
+        self.catalog_data = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutRepositoryCatalogDataOutput`](crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput {
+    pub fn build(self) -> crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput {
         crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput {
-            catalog_data: self.catalog_data,
+            catalog_data: self.catalog_data
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

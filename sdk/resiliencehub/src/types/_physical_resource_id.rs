@@ -3,24 +3,24 @@
 /// <p>Defines a physical resource identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhysicalResourceId {
+pub struct PhysicalResourceId  {
     /// <p>The identifier of the physical resource.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
-    /// <p>Specifies the type of physical resource identifier.</p>
-    /// <dl>
+    /// <p>Specifies the type of physical resource identifier.</p> 
+    /// <dl> 
     /// <dt>
     /// Arn
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+    /// </dd> 
     /// <dt>
     /// Native
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::PhysicalIdentifierType>,
@@ -33,33 +33,33 @@ pub struct PhysicalResourceId {
 }
 impl PhysicalResourceId {
     /// <p>The identifier of the physical resource.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
-    /// <p>Specifies the type of physical resource identifier.</p>
-    /// <dl>
+    /// <p>Specifies the type of physical resource identifier.</p> 
+    /// <dl> 
     /// <dt>
     /// Arn
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+    /// </dd> 
     /// <dt>
     /// Native
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PhysicalIdentifierType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PhysicalIdentifierType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
@@ -87,49 +87,44 @@ impl PhysicalResourceIdBuilder {
     }
     /// <p>The identifier of the physical resource.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
-    /// <p>Specifies the type of physical resource identifier.</p>
-    /// <dl>
+    /// <p>Specifies the type of physical resource identifier.</p> 
+    /// <dl> 
     /// <dt>
     /// Arn
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+    /// </dd> 
     /// <dt>
     /// Native
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p> 
+    /// </dd> 
     /// </dl>
     pub fn r#type(mut self, input: crate::types::PhysicalIdentifierType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>Specifies the type of physical resource identifier.</p>
-    /// <dl>
+    /// <p>Specifies the type of physical resource identifier.</p> 
+    /// <dl> 
     /// <dt>
     /// Arn
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Amazon Resource Name (ARN) .</p> 
+    /// </dd> 
     /// <dt>
     /// Native
-    /// </dt>
-    /// <dd>
-    /// <p>The resource identifier is an Resilience Hub-native identifier.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The resource identifier is an Resilience Hub-native identifier.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::PhysicalIdentifierType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::PhysicalIdentifierType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +133,7 @@ impl PhysicalResourceIdBuilder {
     }
     /// <p>The Amazon Web Services Region that the physical resource is located in.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,16 +142,20 @@ impl PhysicalResourceIdBuilder {
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// Consumes the builder and constructs a [`PhysicalResourceId`](crate::types::PhysicalResourceId).
     pub fn build(self) -> crate::types::PhysicalResourceId {
         crate::types::PhysicalResourceId {
-            identifier: self.identifier,
-            r#type: self.r#type,
-            aws_region: self.aws_region,
-            aws_account_id: self.aws_account_id,
+            identifier: self.identifier
+            ,
+            r#type: self.r#type
+            ,
+            aws_region: self.aws_region
+            ,
+            aws_account_id: self.aws_account_id
+            ,
         }
     }
 }
+

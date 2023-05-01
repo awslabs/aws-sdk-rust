@@ -3,14 +3,14 @@
 /// <p>Provides information about the IP address where the scanned port is located.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionLocalIpDetails {
+pub struct ActionLocalIpDetails  {
     /// <p>The IP address.</p>
     #[doc(hidden)]
     pub ip_address_v4: std::option::Option<std::string::String>,
 }
 impl ActionLocalIpDetails {
     /// <p>The IP address.</p>
-    pub fn ip_address_v4(&self) -> std::option::Option<&str> {
+    pub fn ip_address_v4(&self) -> std::option::Option<& str> {
         self.ip_address_v4.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ActionLocalIpDetailsBuilder {
     }
     /// <p>The IP address.</p>
     pub fn set_ip_address_v4(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address_v4 = input;
-        self
+        self.ip_address_v4 = input; self
     }
     /// Consumes the builder and constructs a [`ActionLocalIpDetails`](crate::types::ActionLocalIpDetails).
     pub fn build(self) -> crate::types::ActionLocalIpDetails {
         crate::types::ActionLocalIpDetails {
-            ip_address_v4: self.ip_address_v4,
+            ip_address_v4: self.ip_address_v4
+            ,
         }
     }
 }
+

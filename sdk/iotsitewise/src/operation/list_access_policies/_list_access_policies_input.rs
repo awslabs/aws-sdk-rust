@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPoliciesInput {
+pub struct ListAccessPoliciesInput  {
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::types::IdentityType>,
@@ -21,37 +21,37 @@ pub struct ListAccessPoliciesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p> 
     /// <p>Default: 50</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListAccessPoliciesInput {
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
-    pub fn iam_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_arn(&self) -> std::option::Option<& str> {
         self.iam_arn.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p> 
     /// <p>Default: 50</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -59,8 +59,7 @@ impl ListAccessPoliciesInput {
 }
 impl ListAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
         crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder::default()
     }
 }
@@ -84,12 +83,8 @@ impl ListAccessPoliciesInputBuilder {
         self
     }
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
-    pub fn set_identity_type(
-        mut self,
-        input: std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
-        self.identity_type = input;
-        self
+    pub fn set_identity_type(mut self, input: std::option::Option<crate::types::IdentityType>) -> Self {
+        self.identity_type = input; self
     }
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
     pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.</p>
     pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -107,12 +101,8 @@ impl ListAccessPoliciesInputBuilder {
         self
     }
     /// <p>The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +111,7 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>The ID of the resource. This parameter is required if you specify <code>resourceType</code>.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
     pub fn iam_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +120,7 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.</p>
     pub fn set_iam_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_arn = input;
-        self
+        self.iam_arn = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,38 +129,39 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
-    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p> 
     /// <p>Default: 50</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return for each paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p> 
     /// <p>Default: 50</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_access_policies::ListAccessPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_access_policies::ListAccessPoliciesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_access_policies::ListAccessPoliciesInput {
-                identity_type: self.identity_type,
-                identity_id: self.identity_id,
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                iam_arn: self.iam_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                identity_type: self.identity_type
+                ,
+                identity_id: self.identity_id
+                ,
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+                iam_arn: self.iam_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

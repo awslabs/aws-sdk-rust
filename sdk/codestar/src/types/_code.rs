@@ -3,7 +3,7 @@
 /// <p>Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Code {
+pub struct Code  {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::CodeSource>,
@@ -13,11 +13,11 @@ pub struct Code {
 }
 impl Code {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::CodeSource> {
+    pub fn source(&self) -> std::option::Option<& crate::types::CodeSource> {
         self.source.as_ref()
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::CodeDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::CodeDestination> {
         self.destination.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl CodeBuilder {
     }
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::CodeSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     pub fn destination(mut self, input: crate::types::CodeDestination) -> Self {
@@ -52,18 +51,17 @@ impl CodeBuilder {
         self
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::CodeDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::CodeDestination>) -> Self {
+        self.destination = input; self
     }
     /// Consumes the builder and constructs a [`Code`](crate::types::Code).
     pub fn build(self) -> crate::types::Code {
         crate::types::Code {
-            source: self.source,
-            destination: self.destination,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The measure type field with categorical type columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoricalMeasureField {
+pub struct CategoricalMeasureField  {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -19,23 +19,19 @@ pub struct CategoricalMeasureField {
 }
 impl CategoricalMeasureField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>CategoricalMeasureField</code>.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The aggregation function of the measure field.</p>
-    pub fn aggregation_function(
-        &self,
-    ) -> std::option::Option<&crate::types::CategoricalAggregationFunction> {
+    pub fn aggregation_function(&self) -> std::option::Option<& crate::types::CategoricalAggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::StringFormatConfiguration> {
+    pub fn format_configuration(&self) -> std::option::Option<& crate::types::StringFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -52,8 +48,7 @@ impl CategoricalMeasureField {
 pub struct CategoricalMeasureFieldBuilder {
     pub(crate) field_id: std::option::Option<std::string::String>,
     pub(crate) column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) aggregation_function:
-        std::option::Option<crate::types::CategoricalAggregationFunction>,
+    pub(crate) aggregation_function: std::option::Option<crate::types::CategoricalAggregationFunction>,
     pub(crate) format_configuration: std::option::Option<crate::types::StringFormatConfiguration>,
 }
 impl CategoricalMeasureFieldBuilder {
@@ -64,8 +59,7 @@ impl CategoricalMeasureFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The column that is used in the <code>CategoricalMeasureField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -73,28 +67,17 @@ impl CategoricalMeasureFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>CategoricalMeasureField</code>.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
     /// <p>The aggregation function of the measure field.</p>
-    pub fn aggregation_function(
-        mut self,
-        input: crate::types::CategoricalAggregationFunction,
-    ) -> Self {
+    pub fn aggregation_function(mut self, input: crate::types::CategoricalAggregationFunction) -> Self {
         self.aggregation_function = Some(input);
         self
     }
     /// <p>The aggregation function of the measure field.</p>
-    pub fn set_aggregation_function(
-        mut self,
-        input: std::option::Option<crate::types::CategoricalAggregationFunction>,
-    ) -> Self {
-        self.aggregation_function = input;
-        self
+    pub fn set_aggregation_function(mut self, input: std::option::Option<crate::types::CategoricalAggregationFunction>) -> Self {
+        self.aggregation_function = input; self
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(mut self, input: crate::types::StringFormatConfiguration) -> Self {
@@ -102,20 +85,21 @@ impl CategoricalMeasureFieldBuilder {
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: std::option::Option<crate::types::StringFormatConfiguration>,
-    ) -> Self {
-        self.format_configuration = input;
-        self
+    pub fn set_format_configuration(mut self, input: std::option::Option<crate::types::StringFormatConfiguration>) -> Self {
+        self.format_configuration = input; self
     }
     /// Consumes the builder and constructs a [`CategoricalMeasureField`](crate::types::CategoricalMeasureField).
     pub fn build(self) -> crate::types::CategoricalMeasureField {
         crate::types::CategoricalMeasureField {
-            field_id: self.field_id,
-            column: self.column,
-            aggregation_function: self.aggregation_function,
-            format_configuration: self.format_configuration,
+            field_id: self.field_id
+            ,
+            column: self.column
+            ,
+            aggregation_function: self.aggregation_function
+            ,
+            format_configuration: self.format_configuration
+            ,
         }
     }
 }
+

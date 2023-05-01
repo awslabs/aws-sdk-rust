@@ -3,7 +3,7 @@
 /// <p>Represents the response to list devices.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevicesOutput {
+pub struct ListDevicesOutput  {
     /// <p>The devices returned in the list devices response.</p>
     #[doc(hidden)]
     pub devices: std::option::Option<std::vec::Vec<crate::types::DeviceType>>,
@@ -14,19 +14,19 @@ pub struct ListDevicesOutput {
 }
 impl ListDevicesOutput {
     /// <p>The devices returned in the list devices response.</p>
-    pub fn devices(&self) -> std::option::Option<&[crate::types::DeviceType]> {
+    pub fn devices(&self) -> std::option::Option<& [crate::types::DeviceType]> {
         self.devices.as_deref()
     }
     /// <p>The pagination token for the list device response.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
     pub fn builder() -> crate::operation::list_devices::builders::ListDevicesOutputBuilder {
@@ -50,17 +50,13 @@ impl ListDevicesOutputBuilder {
     /// <p>The devices returned in the list devices response.</p>
     pub fn devices(mut self, input: crate::types::DeviceType) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = Some(v);
-        self
+                        v.push(input);
+                        self.devices = Some(v);
+                        self
     }
     /// <p>The devices returned in the list devices response.</p>
-    pub fn set_devices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceType>>,
-    ) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeviceType>>) -> Self {
+        self.devices = input; self
     }
     /// <p>The pagination token for the list device response.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +65,26 @@ impl ListDevicesOutputBuilder {
     }
     /// <p>The pagination token for the list device response.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
     pub fn build(self) -> crate::operation::list_devices::ListDevicesOutput {
         crate::operation::list_devices::ListDevicesOutput {
-            devices: self.devices,
-            pagination_token: self.pagination_token,
+            devices: self.devices
+            ,
+            pagination_token: self.pagination_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

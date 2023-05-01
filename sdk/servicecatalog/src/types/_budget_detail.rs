@@ -3,14 +3,14 @@
 /// <p>Information about a budget.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BudgetDetail {
+pub struct BudgetDetail  {
     /// <p>Name of the associated budget.</p>
     #[doc(hidden)]
     pub budget_name: std::option::Option<std::string::String>,
 }
 impl BudgetDetail {
     /// <p>Name of the associated budget.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl BudgetDetailBuilder {
     }
     /// <p>Name of the associated budget.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// Consumes the builder and constructs a [`BudgetDetail`](crate::types::BudgetDetail).
     pub fn build(self) -> crate::types::BudgetDetail {
         crate::types::BudgetDetail {
-            budget_name: self.budget_name,
+            budget_name: self.budget_name
+            ,
         }
     }
 }
+

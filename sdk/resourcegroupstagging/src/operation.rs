@@ -24,3 +24,4 @@ pub mod tag_resources;
 
 /// Types for the `UntagResources` operation.
 pub mod untag_resources;
+

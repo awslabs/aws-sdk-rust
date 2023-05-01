@@ -3,7 +3,7 @@
 /// <p>Container for request parameters to the <code>CreatePackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePackageInput {
+pub struct CreatePackageInput  {
     /// <p>Unique name for the package.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct CreatePackageInput {
 }
 impl CreatePackageInput {
     /// <p>Unique name for the package.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>Type of package.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>Description of the package.</p>
-    pub fn package_description(&self) -> std::option::Option<&str> {
+    pub fn package_description(&self) -> std::option::Option<& str> {
         self.package_description.as_deref()
     }
     /// <p>The Amazon S3 location from which to import the package.</p>
-    pub fn package_source(&self) -> std::option::Option<&crate::types::PackageSource> {
+    pub fn package_source(&self) -> std::option::Option<& crate::types::PackageSource> {
         self.package_source.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl CreatePackageInputBuilder {
     }
     /// <p>Unique name for the package.</p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>Type of package.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
@@ -68,12 +67,8 @@ impl CreatePackageInputBuilder {
         self
     }
     /// <p>Type of package.</p>
-    pub fn set_package_type(
-        mut self,
-        input: std::option::Option<crate::types::PackageType>,
-    ) -> Self {
-        self.package_type = input;
-        self
+    pub fn set_package_type(mut self, input: std::option::Option<crate::types::PackageType>) -> Self {
+        self.package_type = input; self
     }
     /// <p>Description of the package.</p>
     pub fn package_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,12 +76,8 @@ impl CreatePackageInputBuilder {
         self
     }
     /// <p>Description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.package_description = input;
-        self
+    pub fn set_package_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.package_description = input; self
     }
     /// <p>The Amazon S3 location from which to import the package.</p>
     pub fn package_source(mut self, input: crate::types::PackageSource) -> Self {
@@ -94,25 +85,23 @@ impl CreatePackageInputBuilder {
         self
     }
     /// <p>The Amazon S3 location from which to import the package.</p>
-    pub fn set_package_source(
-        mut self,
-        input: std::option::Option<crate::types::PackageSource>,
-    ) -> Self {
-        self.package_source = input;
-        self
+    pub fn set_package_source(mut self, input: std::option::Option<crate::types::PackageSource>) -> Self {
+        self.package_source = input; self
     }
     /// Consumes the builder and constructs a [`CreatePackageInput`](crate::operation::create_package::CreatePackageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_package::CreatePackageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_package::CreatePackageInput {
-            package_name: self.package_name,
-            package_type: self.package_type,
-            package_description: self.package_description,
-            package_source: self.package_source,
-        })
+    pub fn build(self) -> Result<crate::operation::create_package::CreatePackageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_package::CreatePackageInput {
+                package_name: self.package_name
+                ,
+                package_type: self.package_type
+                ,
+                package_description: self.package_description
+                ,
+                package_source: self.package_source
+                ,
+            }
+        )
     }
 }
+

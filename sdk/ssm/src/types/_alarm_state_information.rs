@@ -3,7 +3,7 @@
 /// <p>The details about the state of your CloudWatch alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmStateInformation {
+pub struct AlarmStateInformation  {
     /// <p>The name of your CloudWatch alarm.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AlarmStateInformation {
 }
 impl AlarmStateInformation {
     /// <p>The name of your CloudWatch alarm.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of your CloudWatch alarm.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ExternalAlarmState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ExternalAlarmState> {
         self.state.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AlarmStateInformationBuilder {
     }
     /// <p>The name of your CloudWatch alarm.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The state of your CloudWatch alarm.</p>
     pub fn state(mut self, input: crate::types::ExternalAlarmState) -> Self {
@@ -52,18 +51,17 @@ impl AlarmStateInformationBuilder {
         self
     }
     /// <p>The state of your CloudWatch alarm.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::ExternalAlarmState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::ExternalAlarmState>) -> Self {
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`AlarmStateInformation`](crate::types::AlarmStateInformation).
     pub fn build(self) -> crate::types::AlarmStateInformation {
         crate::types::AlarmStateInformation {
-            name: self.name,
-            state: self.state,
+            name: self.name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

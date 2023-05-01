@@ -3,23 +3,23 @@
 /// <p>[EC2-VPC only] Describes an IPv6 range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ipv6Range {
+pub struct Ipv6Range  {
     /// <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv6 address, use the /128 prefix length.</p>
     #[doc(hidden)]
     pub cidr_ipv6: std::option::Option<std::string::String>,
-    /// <p>A description for the security group rule that references this IPv6 address range.</p>
+    /// <p>A description for the security group rule that references this IPv6 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl Ipv6Range {
     /// <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv6 address, use the /128 prefix length.</p>
-    pub fn cidr_ipv6(&self) -> std::option::Option<&str> {
+    pub fn cidr_ipv6(&self) -> std::option::Option<& str> {
         self.cidr_ipv6.as_deref()
     }
-    /// <p>A description for the security group rule that references this IPv6 address range.</p>
+    /// <p>A description for the security group rule that references this IPv6 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -45,26 +45,27 @@ impl Ipv6RangeBuilder {
     }
     /// <p>The IPv6 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv6 address, use the /128 prefix length.</p>
     pub fn set_cidr_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_ipv6 = input;
-        self
+        self.cidr_ipv6 = input; self
     }
-    /// <p>A description for the security group rule that references this IPv6 address range.</p>
+    /// <p>A description for the security group rule that references this IPv6 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description for the security group rule that references this IPv6 address range.</p>
+    /// <p>A description for the security group rule that references this IPv6 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`Ipv6Range`](crate::types::Ipv6Range).
     pub fn build(self) -> crate::types::Ipv6Range {
         crate::types::Ipv6Range {
-            cidr_ipv6: self.cidr_ipv6,
-            description: self.description,
+            cidr_ipv6: self.cidr_ipv6
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

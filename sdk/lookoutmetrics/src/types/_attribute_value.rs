@@ -3,7 +3,7 @@
 /// <p>An attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>A string.</p>
     #[doc(hidden)]
     pub s: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct AttributeValue {
 }
 impl AttributeValue {
     /// <p>A string.</p>
-    pub fn s(&self) -> std::option::Option<&str> {
+    pub fn s(&self) -> std::option::Option<& str> {
         self.s.as_deref()
     }
     /// <p>A number.</p>
-    pub fn n(&self) -> std::option::Option<&str> {
+    pub fn n(&self) -> std::option::Option<& str> {
         self.n.as_deref()
     }
     /// <p>A binary value.</p>
-    pub fn b(&self) -> std::option::Option<&str> {
+    pub fn b(&self) -> std::option::Option<& str> {
         self.b.as_deref()
     }
     /// <p>A list of strings.</p>
-    pub fn ss(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ss(&self) -> std::option::Option<& [std::string::String]> {
         self.ss.as_deref()
     }
     /// <p>A list of numbers.</p>
-    pub fn ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ns(&self) -> std::option::Option<& [std::string::String]> {
         self.ns.as_deref()
     }
     /// <p>A list of binary values.</p>
-    pub fn bs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bs(&self) -> std::option::Option<& [std::string::String]> {
         self.bs.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl AttributeValueBuilder {
     }
     /// <p>A string.</p>
     pub fn set_s(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s = input;
-        self
+        self.s = input; self
     }
     /// <p>A number.</p>
     pub fn n(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl AttributeValueBuilder {
     }
     /// <p>A number.</p>
     pub fn set_n(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.n = input;
-        self
+        self.n = input; self
     }
     /// <p>A binary value.</p>
     pub fn b(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl AttributeValueBuilder {
     }
     /// <p>A binary value.</p>
     pub fn set_b(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.b = input;
-        self
+        self.b = input; self
     }
     /// Appends an item to `ss`.
     ///
@@ -105,17 +102,13 @@ impl AttributeValueBuilder {
     /// <p>A list of strings.</p>
     pub fn ss(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ss.unwrap_or_default();
-        v.push(input.into());
-        self.ss = Some(v);
-        self
+                        v.push(input.into());
+                        self.ss = Some(v);
+                        self
     }
     /// <p>A list of strings.</p>
-    pub fn set_ss(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ss = input;
-        self
+    pub fn set_ss(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ss = input; self
     }
     /// Appends an item to `ns`.
     ///
@@ -124,17 +117,13 @@ impl AttributeValueBuilder {
     /// <p>A list of numbers.</p>
     pub fn ns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ns.unwrap_or_default();
-        v.push(input.into());
-        self.ns = Some(v);
-        self
+                        v.push(input.into());
+                        self.ns = Some(v);
+                        self
     }
     /// <p>A list of numbers.</p>
-    pub fn set_ns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ns = input;
-        self
+    pub fn set_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ns = input; self
     }
     /// Appends an item to `bs`.
     ///
@@ -143,27 +132,30 @@ impl AttributeValueBuilder {
     /// <p>A list of binary values.</p>
     pub fn bs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.bs.unwrap_or_default();
-        v.push(input.into());
-        self.bs = Some(v);
-        self
+                        v.push(input.into());
+                        self.bs = Some(v);
+                        self
     }
     /// <p>A list of binary values.</p>
-    pub fn set_bs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.bs = input;
-        self
+    pub fn set_bs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.bs = input; self
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {
         crate::types::AttributeValue {
-            s: self.s,
-            n: self.n,
-            b: self.b,
-            ss: self.ss,
-            ns: self.ns,
-            bs: self.bs,
+            s: self.s
+            ,
+            n: self.n
+            ,
+            b: self.b
+            ,
+            ss: self.ss
+            ,
+            ns: self.ns
+            ,
+            bs: self.bs
+            ,
         }
     }
 }
+

@@ -40,3 +40,4 @@ pub use crate::types::_resource_endpoint_list_item::ResourceEndpointListItemBuil
 pub use crate::types::_single_master_channel_endpoint_configuration::SingleMasterChannelEndpointConfigurationBuilder;
 
 pub use crate::types::_mapped_resource_configuration_list_item::MappedResourceConfigurationListItemBuilder;
+

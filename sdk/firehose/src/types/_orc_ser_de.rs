@@ -3,7 +3,7 @@
 /// <p>A serializer to use for converting data to the ORC format before storing it in Amazon S3. For more information, see <a href="https://orc.apache.org/docs/">Apache ORC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrcSerDe {
+pub struct OrcSerDe  {
     /// <p>The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.</p>
     #[doc(hidden)]
     pub stripe_size_bytes: std::option::Option<i32>,
@@ -16,8 +16,8 @@ pub struct OrcSerDe {
     /// <p>Set this to <code>true</code> to indicate that you want stripes to be padded to the HDFS block boundaries. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is <code>false</code>.</p>
     #[doc(hidden)]
     pub enable_padding: std::option::Option<bool>,
-    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
-    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
+    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p> 
+    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p> 
     /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     #[doc(hidden)]
     pub padding_tolerance: std::option::Option<f64>,
@@ -54,18 +54,18 @@ impl OrcSerDe {
     pub fn enable_padding(&self) -> std::option::Option<bool> {
         self.enable_padding
     }
-    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
-    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
+    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p> 
+    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p> 
     /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn padding_tolerance(&self) -> std::option::Option<f64> {
         self.padding_tolerance
     }
     /// <p>The compression code to use over data blocks. The default is <code>SNAPPY</code>.</p>
-    pub fn compression(&self) -> std::option::Option<&crate::types::OrcCompression> {
+    pub fn compression(&self) -> std::option::Option<& crate::types::OrcCompression> {
         self.compression.as_ref()
     }
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
-    pub fn bloom_filter_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bloom_filter_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.bloom_filter_columns.as_deref()
     }
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
@@ -77,7 +77,7 @@ impl OrcSerDe {
         self.dictionary_key_threshold
     }
     /// <p>The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>. The default is <code>V0_12</code>.</p>
-    pub fn format_version(&self) -> std::option::Option<&crate::types::OrcFormatVersion> {
+    pub fn format_version(&self) -> std::option::Option<& crate::types::OrcFormatVersion> {
         self.format_version.as_ref()
     }
 }
@@ -111,8 +111,7 @@ impl OrcSerDeBuilder {
     }
     /// <p>The number of bytes in each stripe. The default is 64 MiB and the minimum is 8 MiB.</p>
     pub fn set_stripe_size_bytes(mut self, input: std::option::Option<i32>) -> Self {
-        self.stripe_size_bytes = input;
-        self
+        self.stripe_size_bytes = input; self
     }
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
     pub fn block_size_bytes(mut self, input: i32) -> Self {
@@ -121,8 +120,7 @@ impl OrcSerDeBuilder {
     }
     /// <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for padding calculations.</p>
     pub fn set_block_size_bytes(mut self, input: std::option::Option<i32>) -> Self {
-        self.block_size_bytes = input;
-        self
+        self.block_size_bytes = input; self
     }
     /// <p>The number of rows between index entries. The default is 10,000 and the minimum is 1,000.</p>
     pub fn row_index_stride(mut self, input: i32) -> Self {
@@ -131,8 +129,7 @@ impl OrcSerDeBuilder {
     }
     /// <p>The number of rows between index entries. The default is 10,000 and the minimum is 1,000.</p>
     pub fn set_row_index_stride(mut self, input: std::option::Option<i32>) -> Self {
-        self.row_index_stride = input;
-        self
+        self.row_index_stride = input; self
     }
     /// <p>Set this to <code>true</code> to indicate that you want stripes to be padded to the HDFS block boundaries. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is <code>false</code>.</p>
     pub fn enable_padding(mut self, input: bool) -> Self {
@@ -141,22 +138,20 @@ impl OrcSerDeBuilder {
     }
     /// <p>Set this to <code>true</code> to indicate that you want stripes to be padded to the HDFS block boundaries. This is useful if you intend to copy the data from Amazon S3 to HDFS before querying. The default is <code>false</code>.</p>
     pub fn set_enable_padding(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_padding = input;
-        self
+        self.enable_padding = input; self
     }
-    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
-    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
+    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p> 
+    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p> 
     /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn padding_tolerance(mut self, input: f64) -> Self {
         self.padding_tolerance = Some(input);
         self
     }
-    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p>
-    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p>
+    /// <p>A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe size. The default value is 0.05, which means 5 percent of stripe size.</p> 
+    /// <p>For the default values of 64 MiB ORC stripes and 256 MiB HDFS blocks, the default block padding tolerance of 5 percent reserves a maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the available size within the block is more than 3.2 MiB, a new, smaller stripe is inserted to fit within that space. This ensures that no stripe crosses block boundaries and causes remote reads within a node-local task.</p> 
     /// <p>Kinesis Data Firehose ignores this parameter when <code>OrcSerDe$EnablePadding</code> is <code>false</code>.</p>
     pub fn set_padding_tolerance(mut self, input: std::option::Option<f64>) -> Self {
-        self.padding_tolerance = input;
-        self
+        self.padding_tolerance = input; self
     }
     /// <p>The compression code to use over data blocks. The default is <code>SNAPPY</code>.</p>
     pub fn compression(mut self, input: crate::types::OrcCompression) -> Self {
@@ -164,12 +159,8 @@ impl OrcSerDeBuilder {
         self
     }
     /// <p>The compression code to use over data blocks. The default is <code>SNAPPY</code>.</p>
-    pub fn set_compression(
-        mut self,
-        input: std::option::Option<crate::types::OrcCompression>,
-    ) -> Self {
-        self.compression = input;
-        self
+    pub fn set_compression(mut self, input: std::option::Option<crate::types::OrcCompression>) -> Self {
+        self.compression = input; self
     }
     /// Appends an item to `bloom_filter_columns`.
     ///
@@ -178,17 +169,13 @@ impl OrcSerDeBuilder {
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
     pub fn bloom_filter_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.bloom_filter_columns.unwrap_or_default();
-        v.push(input.into());
-        self.bloom_filter_columns = Some(v);
-        self
+                        v.push(input.into());
+                        self.bloom_filter_columns = Some(v);
+                        self
     }
     /// <p>The column names for which you want Kinesis Data Firehose to create bloom filters. The default is <code>null</code>.</p>
-    pub fn set_bloom_filter_columns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.bloom_filter_columns = input;
-        self
+    pub fn set_bloom_filter_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.bloom_filter_columns = input; self
     }
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
     pub fn bloom_filter_false_positive_probability(mut self, input: f64) -> Self {
@@ -196,12 +183,8 @@ impl OrcSerDeBuilder {
         self
     }
     /// <p>The Bloom filter false positive probability (FPP). The lower the FPP, the bigger the Bloom filter. The default value is 0.05, the minimum is 0, and the maximum is 1.</p>
-    pub fn set_bloom_filter_false_positive_probability(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.bloom_filter_false_positive_probability = input;
-        self
+    pub fn set_bloom_filter_false_positive_probability(mut self, input: std::option::Option<f64>) -> Self {
+        self.bloom_filter_false_positive_probability = input; self
     }
     /// <p>Represents the fraction of the total number of non-null rows. To turn off dictionary encoding, set this fraction to a number that is less than the number of distinct keys in a dictionary. To always use dictionary encoding, set this threshold to 1.</p>
     pub fn dictionary_key_threshold(mut self, input: f64) -> Self {
@@ -210,8 +193,7 @@ impl OrcSerDeBuilder {
     }
     /// <p>Represents the fraction of the total number of non-null rows. To turn off dictionary encoding, set this fraction to a number that is less than the number of distinct keys in a dictionary. To always use dictionary encoding, set this threshold to 1.</p>
     pub fn set_dictionary_key_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.dictionary_key_threshold = input;
-        self
+        self.dictionary_key_threshold = input; self
     }
     /// <p>The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>. The default is <code>V0_12</code>.</p>
     pub fn format_version(mut self, input: crate::types::OrcFormatVersion) -> Self {
@@ -219,26 +201,33 @@ impl OrcSerDeBuilder {
         self
     }
     /// <p>The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>. The default is <code>V0_12</code>.</p>
-    pub fn set_format_version(
-        mut self,
-        input: std::option::Option<crate::types::OrcFormatVersion>,
-    ) -> Self {
-        self.format_version = input;
-        self
+    pub fn set_format_version(mut self, input: std::option::Option<crate::types::OrcFormatVersion>) -> Self {
+        self.format_version = input; self
     }
     /// Consumes the builder and constructs a [`OrcSerDe`](crate::types::OrcSerDe).
     pub fn build(self) -> crate::types::OrcSerDe {
         crate::types::OrcSerDe {
-            stripe_size_bytes: self.stripe_size_bytes,
-            block_size_bytes: self.block_size_bytes,
-            row_index_stride: self.row_index_stride,
-            enable_padding: self.enable_padding,
-            padding_tolerance: self.padding_tolerance,
-            compression: self.compression,
-            bloom_filter_columns: self.bloom_filter_columns,
-            bloom_filter_false_positive_probability: self.bloom_filter_false_positive_probability,
-            dictionary_key_threshold: self.dictionary_key_threshold,
-            format_version: self.format_version,
+            stripe_size_bytes: self.stripe_size_bytes
+            ,
+            block_size_bytes: self.block_size_bytes
+            ,
+            row_index_stride: self.row_index_stride
+            ,
+            enable_padding: self.enable_padding
+            ,
+            padding_tolerance: self.padding_tolerance
+            ,
+            compression: self.compression
+            ,
+            bloom_filter_columns: self.bloom_filter_columns
+            ,
+            bloom_filter_false_positive_probability: self.bloom_filter_false_positive_probability
+            ,
+            dictionary_key_threshold: self.dictionary_key_threshold
+            ,
+            format_version: self.format_version
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p> Evidence that's uploaded to Audit Manager manually. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManualEvidence {
+pub struct ManualEvidence  {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
     #[doc(hidden)]
     pub s3_resource_path: std::option::Option<std::string::String>,
 }
 impl ManualEvidence {
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
-    pub fn s3_resource_path(&self) -> std::option::Option<&str> {
+    pub fn s3_resource_path(&self) -> std::option::Option<& str> {
         self.s3_resource_path.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ManualEvidenceBuilder {
     }
     /// <p> The Amazon S3 URL that points to a manual evidence object. </p>
     pub fn set_s3_resource_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_resource_path = input;
-        self
+        self.s3_resource_path = input; self
     }
     /// Consumes the builder and constructs a [`ManualEvidence`](crate::types::ManualEvidence).
     pub fn build(self) -> crate::types::ManualEvidence {
         crate::types::ManualEvidence {
-            s3_resource_path: self.s3_resource_path,
+            s3_resource_path: self.s3_resource_path
+            ,
         }
     }
 }
+

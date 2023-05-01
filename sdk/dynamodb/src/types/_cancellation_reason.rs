@@ -3,12 +3,10 @@
 /// <p>An ordered list of errors for each item in the request which caused the transaction to get cancelled. The values of the list are ordered according to the ordering of the <code>TransactWriteItems</code> request parameter. If no error occurred for the associated item an error with a Null code and Null message will be present. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancellationReason {
+pub struct CancellationReason  {
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
     #[doc(hidden)]
-    pub item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub item: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     /// <p>Status code for the result of the cancelled transaction.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -18,19 +16,15 @@ pub struct CancellationReason {
 }
 impl CancellationReason {
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
-    pub fn item(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn item(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::AttributeValue>> {
         self.item.as_ref()
     }
     /// <p>Status code for the result of the cancelled transaction.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Cancellation reason message description.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -45,9 +39,7 @@ impl CancellationReason {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CancellationReasonBuilder {
-    pub(crate) item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub(crate) item: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     pub(crate) code: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
 }
@@ -57,25 +49,15 @@ impl CancellationReasonBuilder {
     /// To override the contents of this collection use [`set_item`](Self::set_item).
     ///
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
-    pub fn item(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn item(mut self, k: impl Into<std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.item.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.item = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.item = Some(hash_map);
+                        self
     }
     /// <p>Item in the request which caused the transaction to get cancelled.</p>
-    pub fn set_item(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-        >,
-    ) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.item = input; self
     }
     /// <p>Status code for the result of the cancelled transaction.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +66,7 @@ impl CancellationReasonBuilder {
     }
     /// <p>Status code for the result of the cancelled transaction.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>Cancellation reason message description.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,15 +75,18 @@ impl CancellationReasonBuilder {
     }
     /// <p>Cancellation reason message description.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`CancellationReason`](crate::types::CancellationReason).
     pub fn build(self) -> crate::types::CancellationReason {
         crate::types::CancellationReason {
-            item: self.item,
-            code: self.code,
-            message: self.message,
+            item: self.item
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

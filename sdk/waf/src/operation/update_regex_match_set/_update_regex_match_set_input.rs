@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegexMatchSetInput {
+pub struct UpdateRegexMatchSetInput  {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     #[doc(hidden)]
     pub regex_match_set_id: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct UpdateRegexMatchSetInput {
 }
 impl UpdateRegexMatchSetInput {
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_match_set_id(&self) -> std::option::Option<& str> {
         self.regex_match_set_id.as_deref()
     }
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn updates(&self) -> std::option::Option<&[crate::types::RegexMatchSetUpdate]> {
+    pub fn updates(&self) -> std::option::Option<& [crate::types::RegexMatchSetUpdate]> {
         self.updates.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl UpdateRegexMatchSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexMatchSetInput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetInput).
-    pub fn builder(
-    ) -> crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder {
-        crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder {
+        crate::operation::update_regex_match_set::builders::UpdateRegexMatchSetInputBuilder::default()
     }
 }
 
@@ -51,12 +49,8 @@ impl UpdateRegexMatchSetInputBuilder {
         self
     }
     /// <p>The <code>RegexMatchSetId</code> of the <code>RegexMatchSet</code> that you want to update. <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn set_regex_match_set_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.regex_match_set_id = input;
-        self
+    pub fn set_regex_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.regex_match_set_id = input; self
     }
     /// Appends an item to `updates`.
     ///
@@ -65,17 +59,13 @@ impl UpdateRegexMatchSetInputBuilder {
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
     pub fn updates(mut self, input: crate::types::RegexMatchSetUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-        v.push(input);
-        self.updates = Some(v);
-        self
+                        v.push(input);
+                        self.updates = Some(v);
+                        self
     }
     /// <p>An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into or delete from a <code>RegexMatchSet</code>. For more information, see <code>RegexMatchTuple</code>.</p>
-    pub fn set_updates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RegexMatchSetUpdate>>,
-    ) -> Self {
-        self.updates = input;
-        self
+    pub fn set_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::RegexMatchSetUpdate>>) -> Self {
+        self.updates = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,22 +74,20 @@ impl UpdateRegexMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRegexMatchSetInput`](crate::operation::update_regex_match_set::UpdateRegexMatchSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_regex_match_set::UpdateRegexMatchSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_regex_match_set::UpdateRegexMatchSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_regex_match_set::UpdateRegexMatchSetInput {
-                regex_match_set_id: self.regex_match_set_id,
-                updates: self.updates,
-                change_token: self.change_token,
-            },
+                regex_match_set_id: self.regex_match_set_id
+                ,
+                updates: self.updates
+                ,
+                change_token: self.change_token
+                ,
+            }
         )
     }
 }
+

@@ -4,89 +4,62 @@ pub use crate::operation::list_training_jobs::_list_training_jobs_output::ListTr
 pub use crate::operation::list_training_jobs::_list_training_jobs_input::ListTrainingJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListTrainingJobs`.
-///
-/// <p>Lists training jobs.</p> <note>
-/// <p>When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code> number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code> parameter, which is returned as a response.</p>
-/// <p>For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:</p>
-/// <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code> </p>
-/// <p>First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected (sorted according to the creation time, from the most current to the oldest). Next, those with a status of <code>InProgress</code> are returned.</p>
-/// <p>You can quickly test the API using the following Amazon Web Services CLI code.</p>
-/// <p> <code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code> </p>
+/// 
+/// <p>Lists training jobs.</p> <note> 
+/// <p>When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code> number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are filtered by the <code>StatusEquals</code> parameter, which is returned as a response.</p> 
+/// <p>For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:</p> 
+/// <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code> </p> 
+/// <p>First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected (sorted according to the creation time, from the most current to the oldest). Next, those with a status of <code>InProgress</code> are returned.</p> 
+/// <p>You can quickly test the API using the following Amazon Web Services CLI code.</p> 
+/// <p> <code>aws sagemaker list-training-jobs --max-results 100 --status-equals InProgress</code> </p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrainingJobsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_training_jobs::builders::ListTrainingJobsInputBuilder,
-}
-impl ListTrainingJobsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_training_jobs::builders::ListTrainingJobsInputBuilder
+            }
+impl ListTrainingJobsFluentBuilder  {
     /// Creates a new `ListTrainingJobs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_training_jobs::ListTrainingJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_training_jobs::ListTrainingJobsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_training_jobs::ListTrainingJobsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_training_jobs::ListTrainingJobsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_training_jobs::ListTrainingJobs, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_training_jobs::ListTrainingJobsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_training_jobs::ListTrainingJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_training_jobs::ListTrainingJobsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator {
-        crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator {
+                            crate::operation::list_training_jobs::paginator::ListTrainingJobsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of training jobs, use the token in the next request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -113,10 +86,7 @@ impl ListTrainingJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only training jobs created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -126,10 +96,7 @@ impl ListTrainingJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only training jobs created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -139,10 +106,7 @@ impl ListTrainingJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only training jobs modified after the specified time (timestamp).</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -152,10 +116,7 @@ impl ListTrainingJobsFluentBuilder {
         self
     }
     /// <p>A filter that returns only training jobs modified before the specified time (timestamp).</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -175,10 +136,7 @@ impl ListTrainingJobsFluentBuilder {
         self
     }
     /// <p>A filter that retrieves only training jobs with a specific status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: std::option::Option<crate::types::TrainingJobStatus>,
-    ) -> Self {
+    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::TrainingJobStatus>) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -208,11 +166,9 @@ impl ListTrainingJobsFluentBuilder {
         self
     }
     /// <p>A filter that retrieves only training jobs with a specific warm pool status.</p>
-    pub fn set_warm_pool_status_equals(
-        mut self,
-        input: std::option::Option<crate::types::WarmPoolResourceStatus>,
-    ) -> Self {
+    pub fn set_warm_pool_status_equals(mut self, input: std::option::Option<crate::types::WarmPoolResourceStatus>) -> Self {
         self.inner = self.inner.set_warm_pool_status_equals(input);
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a retention rule for cross-Region snapshot copies created by snapshot or event-based policies, or cross-Region AMI copies created by AMI policies. After the retention period expires, the cross-Region copy is deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CrossRegionCopyRetainRule {
+pub struct CrossRegionCopyRetainRule  {
     /// <p>The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     #[doc(hidden)]
     pub interval: i32,
@@ -17,7 +17,7 @@ impl CrossRegionCopyRetainRule {
         self.interval
     }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn interval_unit(&self) -> std::option::Option<&crate::types::RetentionIntervalUnitValues> {
+    pub fn interval_unit(&self) -> std::option::Option<& crate::types::RetentionIntervalUnitValues> {
         self.interval_unit.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl CrossRegionCopyRetainRuleBuilder {
     }
     /// <p>The amount of time to retain a cross-Region snapshot or AMI copy. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.</p>
     pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
     pub fn interval_unit(mut self, input: crate::types::RetentionIntervalUnitValues) -> Self {
@@ -52,18 +51,18 @@ impl CrossRegionCopyRetainRuleBuilder {
         self
     }
     /// <p>The unit of time for time-based retention. For example, to retain a cross-Region copy for 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.</p>
-    pub fn set_interval_unit(
-        mut self,
-        input: std::option::Option<crate::types::RetentionIntervalUnitValues>,
-    ) -> Self {
-        self.interval_unit = input;
-        self
+    pub fn set_interval_unit(mut self, input: std::option::Option<crate::types::RetentionIntervalUnitValues>) -> Self {
+        self.interval_unit = input; self
     }
     /// Consumes the builder and constructs a [`CrossRegionCopyRetainRule`](crate::types::CrossRegionCopyRetainRule).
     pub fn build(self) -> crate::types::CrossRegionCopyRetainRule {
         crate::types::CrossRegionCopyRetainRule {
-            interval: self.interval.unwrap_or_default(),
-            interval_unit: self.interval_unit,
+            interval: self.interval
+                .unwrap_or_default()
+            ,
+            interval_unit: self.interval_unit
+            ,
         }
     }
 }
+

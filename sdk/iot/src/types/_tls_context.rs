@@ -3,14 +3,14 @@
 /// <p>Specifies the TLS context to use for the test authorizer request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsContext {
+pub struct TlsContext  {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
 }
 impl TlsContext {
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> std::option::Option<& str> {
         self.server_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl TlsContextBuilder {
     }
     /// <p>The value of the <code>serverName</code> key in a TLS authorization request.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// Consumes the builder and constructs a [`TlsContext`](crate::types::TlsContext).
     pub fn build(self) -> crate::types::TlsContext {
         crate::types::TlsContext {
-            server_name: self.server_name,
+            server_name: self.server_name
+            ,
         }
     }
 }
+

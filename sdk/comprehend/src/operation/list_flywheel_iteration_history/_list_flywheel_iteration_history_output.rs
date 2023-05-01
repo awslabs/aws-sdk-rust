@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFlywheelIterationHistoryOutput {
+pub struct ListFlywheelIterationHistoryOutput  {
     /// <p>List of flywheel iteration properties</p>
     #[doc(hidden)]
-    pub flywheel_iteration_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::FlywheelIterationProperties>>,
+    pub flywheel_iteration_properties_list: std::option::Option<std::vec::Vec<crate::types::FlywheelIterationProperties>>,
     /// <p>Next token</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListFlywheelIterationHistoryOutput {
 }
 impl ListFlywheelIterationHistoryOutput {
     /// <p>List of flywheel iteration properties</p>
-    pub fn flywheel_iteration_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::FlywheelIterationProperties]> {
+    pub fn flywheel_iteration_properties_list(&self) -> std::option::Option<& [crate::types::FlywheelIterationProperties]> {
         self.flywheel_iteration_properties_list.as_deref()
     }
     /// <p>Next token</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFlywheelIterationHistoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFlywheelIterationHistoryOutput {
     /// Creates a new builder-style object to manufacture [`ListFlywheelIterationHistoryOutput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput).
-    pub fn builder() -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryOutputBuilder{
+    pub fn builder() -> crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryOutputBuilder {
         crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListFlywheelIterationHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryOutputBuilder {
-    pub(crate) flywheel_iteration_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::FlywheelIterationProperties>>,
+    pub(crate) flywheel_iteration_properties_list: std::option::Option<std::vec::Vec<crate::types::FlywheelIterationProperties>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListFlywheelIterationHistoryOutputBuilder {
     /// To override the contents of this collection use [`set_flywheel_iteration_properties_list`](Self::set_flywheel_iteration_properties_list).
     ///
     /// <p>List of flywheel iteration properties</p>
-    pub fn flywheel_iteration_properties_list(
-        mut self,
-        input: crate::types::FlywheelIterationProperties,
-    ) -> Self {
+    pub fn flywheel_iteration_properties_list(mut self, input: crate::types::FlywheelIterationProperties) -> Self {
         let mut v = self.flywheel_iteration_properties_list.unwrap_or_default();
-        v.push(input);
-        self.flywheel_iteration_properties_list = Some(v);
-        self
+                        v.push(input);
+                        self.flywheel_iteration_properties_list = Some(v);
+                        self
     }
     /// <p>List of flywheel iteration properties</p>
-    pub fn set_flywheel_iteration_properties_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FlywheelIterationProperties>>,
-    ) -> Self {
-        self.flywheel_iteration_properties_list = input;
-        self
+    pub fn set_flywheel_iteration_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::FlywheelIterationProperties>>) -> Self {
+        self.flywheel_iteration_properties_list = input; self
     }
     /// <p>Next token</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,26 +64,26 @@ impl ListFlywheelIterationHistoryOutputBuilder {
     }
     /// <p>Next token</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFlywheelIterationHistoryOutput`](crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput {
+    pub fn build(self) -> crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput {
         crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput {
-            flywheel_iteration_properties_list: self.flywheel_iteration_properties_list,
-            next_token: self.next_token,
+            flywheel_iteration_properties_list: self.flywheel_iteration_properties_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

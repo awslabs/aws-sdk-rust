@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>ListMFADevices</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMfaDevicesOutput {
+pub struct ListMfaDevicesOutput  {
     /// <p>A list of MFA devices.</p>
     #[doc(hidden)]
     pub mfa_devices: std::option::Option<std::vec::Vec<crate::types::MfaDevice>>,
@@ -17,7 +17,7 @@ pub struct ListMfaDevicesOutput {
 }
 impl ListMfaDevicesOutput {
     /// <p>A list of MFA devices.</p>
-    pub fn mfa_devices(&self) -> std::option::Option<&[crate::types::MfaDevice]> {
+    pub fn mfa_devices(&self) -> std::option::Option<& [crate::types::MfaDevice]> {
         self.mfa_devices.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -25,15 +25,15 @@ impl ListMfaDevicesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMfaDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMfaDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListMfaDevicesOutput`](crate::operation::list_mfa_devices::ListMfaDevicesOutput).
     pub fn builder() -> crate::operation::list_mfa_devices::builders::ListMfaDevicesOutputBuilder {
@@ -58,17 +58,13 @@ impl ListMfaDevicesOutputBuilder {
     /// <p>A list of MFA devices.</p>
     pub fn mfa_devices(mut self, input: crate::types::MfaDevice) -> Self {
         let mut v = self.mfa_devices.unwrap_or_default();
-        v.push(input);
-        self.mfa_devices = Some(v);
-        self
+                        v.push(input);
+                        self.mfa_devices = Some(v);
+                        self
     }
     /// <p>A list of MFA devices.</p>
-    pub fn set_mfa_devices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MfaDevice>>,
-    ) -> Self {
-        self.mfa_devices = input;
-        self
+    pub fn set_mfa_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::MfaDevice>>) -> Self {
+        self.mfa_devices = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -77,8 +73,7 @@ impl ListMfaDevicesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,25 +82,29 @@ impl ListMfaDevicesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMfaDevicesOutput`](crate::operation::list_mfa_devices::ListMfaDevicesOutput).
     pub fn build(self) -> crate::operation::list_mfa_devices::ListMfaDevicesOutput {
         crate::operation::list_mfa_devices::ListMfaDevicesOutput {
-            mfa_devices: self.mfa_devices,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
+            mfa_devices: self.mfa_devices
+            ,
+            is_truncated: self.is_truncated
+                .unwrap_or_default()
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

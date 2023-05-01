@@ -3,7 +3,7 @@
 /// <p>Information about an Automation failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureDetails {
+pub struct FailureDetails  {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
     #[doc(hidden)]
     pub failure_stage: std::option::Option<std::string::String>,
@@ -12,25 +12,19 @@ pub struct FailureDetails {
     pub failure_type: std::option::Option<std::string::String>,
     /// <p>Detailed information about the Automation step failure.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub details: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
 }
 impl FailureDetails {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
-    pub fn failure_stage(&self) -> std::option::Option<&str> {
+    pub fn failure_stage(&self) -> std::option::Option<& str> {
         self.failure_stage.as_deref()
     }
     /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
-    pub fn failure_type(&self) -> std::option::Option<&str> {
+    pub fn failure_type(&self) -> std::option::Option<& str> {
         self.failure_type.as_deref()
     }
     /// <p>Detailed information about the Automation step failure.</p>
-    pub fn details(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    > {
+    pub fn details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
         self.details.as_ref()
     }
 }
@@ -47,9 +41,7 @@ impl FailureDetails {
 pub struct FailureDetailsBuilder {
     pub(crate) failure_stage: std::option::Option<std::string::String>,
     pub(crate) failure_type: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    >,
+    pub(crate) details: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
 }
 impl FailureDetailsBuilder {
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
@@ -59,8 +51,7 @@ impl FailureDetailsBuilder {
     }
     /// <p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>
     pub fn set_failure_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_stage = input;
-        self
+        self.failure_stage = input; self
     }
     /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
     pub fn failure_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,40 +60,33 @@ impl FailureDetailsBuilder {
     }
     /// <p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>
     pub fn set_failure_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_type = input;
-        self
+        self.failure_type = input; self
     }
     /// Adds a key-value pair to `details`.
     ///
     /// To override the contents of this collection use [`set_details`](Self::set_details).
     ///
     /// <p>Detailed information about the Automation step failure.</p>
-    pub fn details(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
-    ) -> Self {
+    pub fn details(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
         let mut hash_map = self.details.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.details = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.details = Some(hash_map);
+                        self
     }
     /// <p>Detailed information about the Automation step failure.</p>
-    pub fn set_details(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-        >,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+        self.details = input; self
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {
         crate::types::FailureDetails {
-            failure_stage: self.failure_stage,
-            failure_type: self.failure_type,
-            details: self.details,
+            failure_stage: self.failure_stage
+            ,
+            failure_type: self.failure_type
+            ,
+            details: self.details
+            ,
         }
     }
 }
+

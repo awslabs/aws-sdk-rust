@@ -3,7 +3,7 @@
 /// <p>Represents the response from the server from a request to describe the user pool client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserPoolClientOutput {
+pub struct DescribeUserPoolClientOutput  {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
     #[doc(hidden)]
     pub user_pool_client: std::option::Option<crate::types::UserPoolClientType>,
@@ -11,20 +11,18 @@ pub struct DescribeUserPoolClientOutput {
 }
 impl DescribeUserPoolClientOutput {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
-    pub fn user_pool_client(&self) -> std::option::Option<&crate::types::UserPoolClientType> {
+    pub fn user_pool_client(&self) -> std::option::Option<& crate::types::UserPoolClientType> {
         self.user_pool_client.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeUserPoolClientOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeUserPoolClientOutput {
     /// Creates a new builder-style object to manufacture [`DescribeUserPoolClientOutput`](crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_user_pool_client::builders::DescribeUserPoolClientOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_user_pool_client::builders::DescribeUserPoolClientOutputBuilder {
         crate::operation::describe_user_pool_client::builders::DescribeUserPoolClientOutputBuilder::default()
     }
 }
@@ -43,29 +41,25 @@ impl DescribeUserPoolClientOutputBuilder {
         self
     }
     /// <p>The user pool client from a server response to describe the user pool client.</p>
-    pub fn set_user_pool_client(
-        mut self,
-        input: std::option::Option<crate::types::UserPoolClientType>,
-    ) -> Self {
-        self.user_pool_client = input;
-        self
+    pub fn set_user_pool_client(mut self, input: std::option::Option<crate::types::UserPoolClientType>) -> Self {
+        self.user_pool_client = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeUserPoolClientOutput`](crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput {
+    pub fn build(self) -> crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput {
         crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput {
-            user_pool_client: self.user_pool_client,
+            user_pool_client: self.user_pool_client
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

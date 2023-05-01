@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAppInstanceAdminInput {
+pub struct CreateAppInstanceAdminInput  {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_admin_arn: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct CreateAppInstanceAdminInput {
 }
 impl CreateAppInstanceAdminInput {
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-    pub fn app_instance_admin_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_admin_arn(&self) -> std::option::Option<& str> {
         self.app_instance_admin_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
 }
 impl CreateAppInstanceAdminInput {
     /// Creates a new builder-style object to manufacture [`CreateAppInstanceAdminInput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput).
-    pub fn builder(
-    ) -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder {
         crate::operation::create_app_instance_admin::builders::CreateAppInstanceAdminInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl CreateAppInstanceAdminInputBuilder {
         self
     }
     /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-    pub fn set_app_instance_admin_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_instance_admin_arn = input;
-        self
+    pub fn set_app_instance_admin_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_instance_admin_arn = input; self
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl CreateAppInstanceAdminInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// Consumes the builder and constructs a [`CreateAppInstanceAdminInput`](crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_app_instance_admin::CreateAppInstanceAdminInput {
-                app_instance_admin_arn: self.app_instance_admin_arn,
-                app_instance_arn: self.app_instance_arn,
-            },
+                app_instance_admin_arn: self.app_instance_admin_arn
+                ,
+                app_instance_arn: self.app_instance_arn
+                ,
+            }
         )
     }
 }
+

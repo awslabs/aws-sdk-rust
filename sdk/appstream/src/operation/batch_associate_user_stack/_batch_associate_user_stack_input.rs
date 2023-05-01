@@ -2,25 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateUserStackInput {
+pub struct BatchAssociateUserStackInput  {
     /// <p>The list of UserStackAssociation objects.</p>
     #[doc(hidden)]
-    pub user_stack_associations:
-        std::option::Option<std::vec::Vec<crate::types::UserStackAssociation>>,
+    pub user_stack_associations: std::option::Option<std::vec::Vec<crate::types::UserStackAssociation>>,
 }
 impl BatchAssociateUserStackInput {
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn user_stack_associations(
-        &self,
-    ) -> std::option::Option<&[crate::types::UserStackAssociation]> {
+    pub fn user_stack_associations(&self) -> std::option::Option<& [crate::types::UserStackAssociation]> {
         self.user_stack_associations.as_deref()
     }
 }
 impl BatchAssociateUserStackInput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateUserStackInput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput).
-    pub fn builder(
-    ) -> crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder {
         crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder::default()
     }
 }
@@ -29,8 +24,7 @@ impl BatchAssociateUserStackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchAssociateUserStackInputBuilder {
-    pub(crate) user_stack_associations:
-        std::option::Option<std::vec::Vec<crate::types::UserStackAssociation>>,
+    pub(crate) user_stack_associations: std::option::Option<std::vec::Vec<crate::types::UserStackAssociation>>,
 }
 impl BatchAssociateUserStackInputBuilder {
     /// Appends an item to `user_stack_associations`.
@@ -40,29 +34,22 @@ impl BatchAssociateUserStackInputBuilder {
     /// <p>The list of UserStackAssociation objects.</p>
     pub fn user_stack_associations(mut self, input: crate::types::UserStackAssociation) -> Self {
         let mut v = self.user_stack_associations.unwrap_or_default();
-        v.push(input);
-        self.user_stack_associations = Some(v);
-        self
+                        v.push(input);
+                        self.user_stack_associations = Some(v);
+                        self
     }
     /// <p>The list of UserStackAssociation objects.</p>
-    pub fn set_user_stack_associations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserStackAssociation>>,
-    ) -> Self {
-        self.user_stack_associations = input;
-        self
+    pub fn set_user_stack_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserStackAssociation>>) -> Self {
+        self.user_stack_associations = input; self
     }
     /// Consumes the builder and constructs a [`BatchAssociateUserStackInput`](crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_associate_user_stack::BatchAssociateUserStackInput {
-                user_stack_associations: self.user_stack_associations,
-            },
+                user_stack_associations: self.user_stack_associations
+                ,
+            }
         )
     }
 }
+

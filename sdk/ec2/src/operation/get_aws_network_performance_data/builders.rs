@@ -4,77 +4,55 @@ pub use crate::operation::get_aws_network_performance_data::_get_aws_network_per
 pub use crate::operation::get_aws_network_performance_data::_get_aws_network_performance_data_input::GetAwsNetworkPerformanceDataInputBuilder;
 
 /// Fluent builder constructing a request to `GetAwsNetworkPerformanceData`.
-///
+/// 
 /// <p>Gets network performance data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAwsNetworkPerformanceDataFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_aws_network_performance_data::builders::GetAwsNetworkPerformanceDataInputBuilder
             }
-impl GetAwsNetworkPerformanceDataFluentBuilder {
+impl GetAwsNetworkPerformanceDataFluentBuilder  {
     /// Creates a new `GetAwsNetworkPerformanceData`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceData,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceData, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput, aws_smithy_http::result::SdkError<crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator{
-        crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator {
+                            crate::operation::get_aws_network_performance_data::paginator::GetAwsNetworkPerformanceDataPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `DataQueries`.
     ///
     /// To override the contents of this collection use [`set_data_queries`](Self::set_data_queries).
@@ -85,10 +63,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self
     }
     /// <p>A list of network performance data queries.</p>
-    pub fn set_data_queries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataQuery>>,
-    ) -> Self {
+    pub fn set_data_queries(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataQuery>>) -> Self {
         self.inner = self.inner.set_data_queries(input);
         self
     }
@@ -98,10 +73,7 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self
     }
     /// <p>The starting time for the performance data request. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -146,3 +118,4 @@ impl GetAwsNetworkPerformanceDataFluentBuilder {
         self
     }
 }
+

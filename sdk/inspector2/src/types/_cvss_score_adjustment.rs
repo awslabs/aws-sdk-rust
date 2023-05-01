@@ -3,7 +3,7 @@
 /// <p>Details on adjustments Amazon Inspector made to the CVSS score for a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CvssScoreAdjustment {
+pub struct CvssScoreAdjustment  {
     /// <p>The metric used to adjust the CVSS score.</p>
     #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CvssScoreAdjustment {
 }
 impl CvssScoreAdjustment {
     /// <p>The metric used to adjust the CVSS score.</p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The reason the CVSS score has been adjustment.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CvssScoreAdjustmentBuilder {
     }
     /// <p>The metric used to adjust the CVSS score.</p>
     pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The reason the CVSS score has been adjustment.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CvssScoreAdjustmentBuilder {
     }
     /// <p>The reason the CVSS score has been adjustment.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`CvssScoreAdjustment`](crate::types::CvssScoreAdjustment).
     pub fn build(self) -> crate::types::CvssScoreAdjustment {
         crate::types::CvssScoreAdjustment {
-            metric: self.metric,
-            reason: self.reason,
+            metric: self.metric
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

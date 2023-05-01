@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRawMessageContentInput {
+pub struct GetRawMessageContentInput  {
     /// <p>The identifier of the email message to retrieve.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl GetRawMessageContentInput {
     /// <p>The identifier of the email message to retrieve.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 impl GetRawMessageContentInput {
     /// Creates a new builder-style object to manufacture [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
-    pub fn builder(
-    ) -> crate::operation::get_raw_message_content::builders::GetRawMessageContentInputBuilder {
+    pub fn builder() -> crate::operation::get_raw_message_content::builders::GetRawMessageContentInputBuilder {
         crate::operation::get_raw_message_content::builders::GetRawMessageContentInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetRawMessageContentInputBuilder {
     }
     /// <p>The identifier of the email message to retrieve.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// Consumes the builder and constructs a [`GetRawMessageContentInput`](crate::operation::get_raw_message_content::GetRawMessageContentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_raw_message_content::GetRawMessageContentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_raw_message_content::GetRawMessageContentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_raw_message_content::GetRawMessageContentInput {
-                message_id: self.message_id,
-            },
+                message_id: self.message_id
+                ,
+            }
         )
     }
 }
+

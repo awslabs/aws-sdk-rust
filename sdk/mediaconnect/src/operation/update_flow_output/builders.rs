@@ -4,71 +4,49 @@ pub use crate::operation::update_flow_output::_update_flow_output_output::Update
 pub use crate::operation::update_flow_output::_update_flow_output_input::UpdateFlowOutputInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFlowOutput`.
-///
+/// 
 /// Updates an existing flow output.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowOutputFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder,
-}
-impl UpdateFlowOutputFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_flow_output::builders::UpdateFlowOutputInputBuilder
+            }
+impl UpdateFlowOutputFluentBuilder  {
     /// Creates a new `UpdateFlowOutput`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_flow_output::UpdateFlowOutput,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_flow_output::UpdateFlowOutputOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_flow_output::UpdateFlowOutputError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_flow_output::UpdateFlowOutput, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_flow_output::UpdateFlowOutputOutput, aws_smithy_http::result::SdkError<crate::operation::update_flow_output::UpdateFlowOutputError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `CidrAllowList`.
     ///
     /// To override the contents of this collection use [`set_cidr_allow_list`](Self::set_cidr_allow_list).
@@ -79,10 +57,7 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_cidr_allow_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_cidr_allow_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_cidr_allow_list(input);
         self
     }
@@ -106,16 +81,13 @@ impl UpdateFlowOutputFluentBuilder {
         self.inner = self.inner.set_destination(input);
         self
     }
-    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
     pub fn encryption(mut self, input: crate::types::UpdateEncryption) -> Self {
         self.inner = self.inner.encryption(input);
         self
     }
-    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key).
-    pub fn set_encryption(
-        mut self,
-        input: std::option::Option<crate::types::UpdateEncryption>,
-    ) -> Self {
+    /// The type of key used for the encryption. If no keyType is provided, the service will use the default setting (static-key). Allowable encryption types: static-key.
+    pub fn set_encryption(mut self, input: std::option::Option<crate::types::UpdateEncryption>) -> Self {
         self.inner = self.inner.set_encryption(input);
         self
     }
@@ -144,20 +116,12 @@ impl UpdateFlowOutputFluentBuilder {
     /// To override the contents of this collection use [`set_media_stream_output_configurations`](Self::set_media_stream_output_configurations).
     ///
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn media_stream_output_configurations(
-        mut self,
-        input: crate::types::MediaStreamOutputConfigurationRequest,
-    ) -> Self {
+    pub fn media_stream_output_configurations(mut self, input: crate::types::MediaStreamOutputConfigurationRequest) -> Self {
         self.inner = self.inner.media_stream_output_configurations(input);
         self
     }
     /// The media streams that are associated with the output, and the parameters for those associations.
-    pub fn set_media_stream_output_configurations(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>,
-        >,
-    ) -> Self {
+    pub fn set_media_stream_output_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaStreamOutputConfigurationRequest>>) -> Self {
         self.inner = self.inner.set_media_stream_output_configurations(input);
         self
     }
@@ -227,10 +191,7 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sender_ip_address(input);
         self
     }
@@ -244,12 +205,12 @@ impl UpdateFlowOutputFluentBuilder {
         self.inner = self.inner.set_smoothing_latency(input);
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
         self
     }
-    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+    /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
@@ -260,11 +221,9 @@ impl UpdateFlowOutputFluentBuilder {
         self
     }
     /// The name of the VPC interface attachment to use for this output.
-    pub fn set_vpc_interface_attachment(
-        mut self,
-        input: std::option::Option<crate::types::VpcInterfaceAttachment>,
-    ) -> Self {
+    pub fn set_vpc_interface_attachment(mut self, input: std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
         self.inner = self.inner.set_vpc_interface_attachment(input);
         self
     }
 }
+

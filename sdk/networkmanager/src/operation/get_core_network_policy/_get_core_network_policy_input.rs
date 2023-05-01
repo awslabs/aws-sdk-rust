@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoreNetworkPolicyInput {
+pub struct GetCoreNetworkPolicyInput  {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct GetCoreNetworkPolicyInput {
 }
 impl GetCoreNetworkPolicyInput {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<&str> {
+    pub fn core_network_id(&self) -> std::option::Option<& str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of a core network policy version.</p>
@@ -23,14 +23,13 @@ impl GetCoreNetworkPolicyInput {
         self.policy_version_id
     }
     /// <p>The alias of a core network policy </p>
-    pub fn alias(&self) -> std::option::Option<&crate::types::CoreNetworkPolicyAlias> {
+    pub fn alias(&self) -> std::option::Option<& crate::types::CoreNetworkPolicyAlias> {
         self.alias.as_ref()
     }
 }
 impl GetCoreNetworkPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkPolicyInput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder {
         crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl GetCoreNetworkPolicyInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_id = input;
-        self
+        self.core_network_id = input; self
     }
     /// <p>The ID of a core network policy version.</p>
     pub fn policy_version_id(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl GetCoreNetworkPolicyInputBuilder {
     }
     /// <p>The ID of a core network policy version.</p>
     pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.policy_version_id = input;
-        self
+        self.policy_version_id = input; self
     }
     /// <p>The alias of a core network policy </p>
     pub fn alias(mut self, input: crate::types::CoreNetworkPolicyAlias) -> Self {
@@ -70,26 +67,21 @@ impl GetCoreNetworkPolicyInputBuilder {
         self
     }
     /// <p>The alias of a core network policy </p>
-    pub fn set_alias(
-        mut self,
-        input: std::option::Option<crate::types::CoreNetworkPolicyAlias>,
-    ) -> Self {
-        self.alias = input;
-        self
+    pub fn set_alias(mut self, input: std::option::Option<crate::types::CoreNetworkPolicyAlias>) -> Self {
+        self.alias = input; self
     }
     /// Consumes the builder and constructs a [`GetCoreNetworkPolicyInput`](crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_core_network_policy::GetCoreNetworkPolicyInput {
-                core_network_id: self.core_network_id,
-                policy_version_id: self.policy_version_id,
-                alias: self.alias,
-            },
+                core_network_id: self.core_network_id
+                ,
+                policy_version_id: self.policy_version_id
+                ,
+                alias: self.alias
+                ,
+            }
         )
     }
 }
+

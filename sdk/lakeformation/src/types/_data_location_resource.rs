@@ -3,7 +3,7 @@
 /// <p>A structure for a data location object where permissions are granted or revoked. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataLocationResource {
+pub struct DataLocationResource  {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DataLocationResource {
 }
 impl DataLocationResource {
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DataLocationResourceBuilder {
     }
     /// <p>The identifier for the Data Catalog where the location is registered with Lake Formation. By default, it is the account ID of the caller.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DataLocationResourceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the data location resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`DataLocationResource`](crate::types::DataLocationResource).
     pub fn build(self) -> crate::types::DataLocationResource {
         crate::types::DataLocationResource {
-            catalog_id: self.catalog_id,
-            resource_arn: self.resource_arn,
+            catalog_id: self.catalog_id
+            ,
+            resource_arn: self.resource_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// ListCampaignsResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCampaignsOutput {
+pub struct ListCampaignsOutput  {
     /// The token for the next set of results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct ListCampaignsOutput {
 }
 impl ListCampaignsOutput {
     /// The token for the next set of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of Amazon Connect campaigns.
-    pub fn campaign_summary_list(&self) -> std::option::Option<&[crate::types::CampaignSummary]> {
+    pub fn campaign_summary_list(&self) -> std::option::Option<& [crate::types::CampaignSummary]> {
         self.campaign_summary_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCampaignsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCampaignsOutput {
     /// Creates a new builder-style object to manufacture [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
     pub fn builder() -> crate::operation::list_campaigns::builders::ListCampaignsOutputBuilder {
@@ -39,8 +39,7 @@ impl ListCampaignsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListCampaignsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) campaign_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
+    pub(crate) campaign_summary_list: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
     _request_id: Option<String>,
 }
 impl ListCampaignsOutputBuilder {
@@ -51,8 +50,7 @@ impl ListCampaignsOutputBuilder {
     }
     /// The token for the next set of results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `campaign_summary_list`.
     ///
@@ -61,33 +59,32 @@ impl ListCampaignsOutputBuilder {
     /// A list of Amazon Connect campaigns.
     pub fn campaign_summary_list(mut self, input: crate::types::CampaignSummary) -> Self {
         let mut v = self.campaign_summary_list.unwrap_or_default();
-        v.push(input);
-        self.campaign_summary_list = Some(v);
-        self
+                        v.push(input);
+                        self.campaign_summary_list = Some(v);
+                        self
     }
     /// A list of Amazon Connect campaigns.
-    pub fn set_campaign_summary_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>,
-    ) -> Self {
-        self.campaign_summary_list = input;
-        self
+    pub fn set_campaign_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::CampaignSummary>>) -> Self {
+        self.campaign_summary_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCampaignsOutput`](crate::operation::list_campaigns::ListCampaignsOutput).
     pub fn build(self) -> crate::operation::list_campaigns::ListCampaignsOutput {
         crate::operation::list_campaigns::ListCampaignsOutput {
-            next_token: self.next_token,
-            campaign_summary_list: self.campaign_summary_list,
+            next_token: self.next_token
+            ,
+            campaign_summary_list: self.campaign_summary_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The Amazon Chime Voice Connector settings. Includes any Amazon S3 buckets designated for storing call detail records.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnectorSettings {
+pub struct VoiceConnectorSettings  {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
     #[doc(hidden)]
     pub cdr_bucket: std::option::Option<std::string::String>,
 }
 impl VoiceConnectorSettings {
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
-    pub fn cdr_bucket(&self) -> std::option::Option<&str> {
+    pub fn cdr_bucket(&self) -> std::option::Option<& str> {
         self.cdr_bucket.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl VoiceConnectorSettingsBuilder {
     }
     /// <p>The Amazon S3 bucket designated for call detail record storage.</p>
     pub fn set_cdr_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cdr_bucket = input;
-        self
+        self.cdr_bucket = input; self
     }
     /// Consumes the builder and constructs a [`VoiceConnectorSettings`](crate::types::VoiceConnectorSettings).
     pub fn build(self) -> crate::types::VoiceConnectorSettings {
         crate::types::VoiceConnectorSettings {
-            cdr_bucket: self.cdr_bucket,
+            cdr_bucket: self.cdr_bucket
+            ,
         }
     }
 }
+

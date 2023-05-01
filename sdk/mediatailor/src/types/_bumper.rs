@@ -3,7 +3,7 @@
 /// <p>The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an ad break. To learn more about bumpers, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Bumper {
+pub struct Bumper  {
     /// <p>The URL for the end bumper asset.</p>
     #[doc(hidden)]
     pub end_url: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Bumper {
 }
 impl Bumper {
     /// <p>The URL for the end bumper asset.</p>
-    pub fn end_url(&self) -> std::option::Option<&str> {
+    pub fn end_url(&self) -> std::option::Option<& str> {
         self.end_url.as_deref()
     }
     /// <p>The URL for the start bumper asset.</p>
-    pub fn start_url(&self) -> std::option::Option<&str> {
+    pub fn start_url(&self) -> std::option::Option<& str> {
         self.start_url.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl BumperBuilder {
     }
     /// <p>The URL for the end bumper asset.</p>
     pub fn set_end_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_url = input;
-        self
+        self.end_url = input; self
     }
     /// <p>The URL for the start bumper asset.</p>
     pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl BumperBuilder {
     }
     /// <p>The URL for the start bumper asset.</p>
     pub fn set_start_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_url = input;
-        self
+        self.start_url = input; self
     }
     /// Consumes the builder and constructs a [`Bumper`](crate::types::Bumper).
     pub fn build(self) -> crate::types::Bumper {
         crate::types::Bumper {
-            end_url: self.end_url,
-            start_url: self.start_url,
+            end_url: self.end_url
+            ,
+            start_url: self.start_url
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>In the response to an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverQueryLogConfigAssociation.html">GetResolverQueryLogConfigAssociation</a>, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverQueryLogConfigAssociations.html">ListResolverQueryLogConfigAssociations</a>, request, a complex type that contains settings for a specified association between an Amazon VPC and a query logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolverQueryLogConfigAssociation {
+pub struct ResolverQueryLogConfigAssociation  {
     /// <p>The ID of the query logging association.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,20 +13,20 @@ pub struct ResolverQueryLogConfigAssociation {
     /// <p>The ID of the Amazon VPC that is associated with the query logging configuration.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The status of the specified query logging association. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li>
+    /// <p>The status of the specified query logging association. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li> 
+    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus>,
-    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
-    /// <ul>
-    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul>
+    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
+    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li> 
+    /// </ul> 
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null. </p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::types::ResolverQueryLogConfigAssociationError>,
@@ -39,46 +39,42 @@ pub struct ResolverQueryLogConfigAssociation {
 }
 impl ResolverQueryLogConfigAssociation {
     /// <p>The ID of the query logging association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the query logging configuration that a VPC is associated with.</p>
-    pub fn resolver_query_log_config_id(&self) -> std::option::Option<&str> {
+    pub fn resolver_query_log_config_id(&self) -> std::option::Option<& str> {
         self.resolver_query_log_config_id.as_deref()
     }
     /// <p>The ID of the Amazon VPC that is associated with the query logging configuration.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
-    /// <p>The status of the specified query logging association. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li>
+    /// <p>The status of the specified query logging association. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li> 
+    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li> 
     /// </ul>
-    pub fn status(
-        &self,
-    ) -> std::option::Option<&crate::types::ResolverQueryLogConfigAssociationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ResolverQueryLogConfigAssociationStatus> {
         self.status.as_ref()
     }
-    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
-    /// <ul>
-    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul>
+    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
+    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li> 
+    /// </ul> 
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null. </p>
-    pub fn error(
-        &self,
-    ) -> std::option::Option<&crate::types::ResolverQueryLogConfigAssociationError> {
+    pub fn error(&self) -> std::option::Option<& crate::types::ResolverQueryLogConfigAssociationError> {
         self.error.as_ref()
     }
     /// <p>Contains additional information about the error. If the value or <code>Error</code> is null, the value of <code>ErrorMessage</code> also is null.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> std::option::Option<& str> {
         self.creation_time.as_deref()
     }
 }
@@ -109,8 +105,7 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>The ID of the query logging association.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the query logging configuration that a VPC is associated with.</p>
     pub fn resolver_query_log_config_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,12 +113,8 @@ impl ResolverQueryLogConfigAssociationBuilder {
         self
     }
     /// <p>The ID of the query logging configuration that a VPC is associated with.</p>
-    pub fn set_resolver_query_log_config_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resolver_query_log_config_id = input;
-        self
+    pub fn set_resolver_query_log_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resolver_query_log_config_id = input; self
     }
     /// <p>The ID of the Amazon VPC that is associated with the query logging configuration.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,56 +123,47 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>The ID of the Amazon VPC that is associated with the query logging configuration.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
-    /// <p>The status of the specified query logging association. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li>
+    /// <p>The status of the specified query logging association. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li> 
+    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverQueryLogConfigAssociationStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the specified query logging association. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li>
-    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li>
-    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li>
-    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li>
+    /// <p>The status of the specified query logging association. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATING</code>: Resolver is creating an association between an Amazon VPC and a query logging configuration.</p> </li> 
+    /// <li> <p> <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration was successfully created. Resolver is logging queries that originate in the specified VPC.</p> </li> 
+    /// <li> <p> <code>DELETING</code>: Resolver is deleting this query logging association.</p> </li> 
+    /// <li> <p> <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query logging association.</p> </li> 
     /// </ul>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ResolverQueryLogConfigAssociationStatus>) -> Self {
+        self.status = input; self
     }
-    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
-    /// <ul>
-    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul>
+    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
+    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li> 
+    /// </ul> 
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null. </p>
     pub fn error(mut self, input: crate::types::ResolverQueryLogConfigAssociationError) -> Self {
         self.error = Some(input);
         self
     }
-    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p>
-    /// <ul>
-    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li>
-    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li>
-    /// </ul>
+    /// <p>If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code> indicates the cause:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon S3 bucket) was deleted.</p> </li> 
+    /// <li> <p> <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.</p> </li> 
+    /// </ul> 
     /// <p>If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code> is null. </p>
-    pub fn set_error(
-        mut self,
-        input: std::option::Option<crate::types::ResolverQueryLogConfigAssociationError>,
-    ) -> Self {
-        self.error = input;
-        self
+    pub fn set_error(mut self, input: std::option::Option<crate::types::ResolverQueryLogConfigAssociationError>) -> Self {
+        self.error = input; self
     }
     /// <p>Contains additional information about the error. If the value or <code>Error</code> is null, the value of <code>ErrorMessage</code> also is null.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,8 +172,7 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>Contains additional information about the error. If the value or <code>Error</code> is null, the value of <code>ErrorMessage</code> also is null.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,19 +181,26 @@ impl ResolverQueryLogConfigAssociationBuilder {
     }
     /// <p>The date and time that the VPC was associated with the query logging configuration, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// Consumes the builder and constructs a [`ResolverQueryLogConfigAssociation`](crate::types::ResolverQueryLogConfigAssociation).
     pub fn build(self) -> crate::types::ResolverQueryLogConfigAssociation {
         crate::types::ResolverQueryLogConfigAssociation {
-            id: self.id,
-            resolver_query_log_config_id: self.resolver_query_log_config_id,
-            resource_id: self.resource_id,
-            status: self.status,
-            error: self.error,
-            error_message: self.error_message,
-            creation_time: self.creation_time,
+            id: self.id
+            ,
+            resolver_query_log_config_id: self.resolver_query_log_config_id
+            ,
+            resource_id: self.resource_id
+            ,
+            status: self.status
+            ,
+            error: self.error
+            ,
+            error_message: self.error_message
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateLambdaFunctionInput {
+pub struct DisassociateLambdaFunctionInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateLambdaFunctionInput {
 }
 impl DisassociateLambdaFunctionInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> std::option::Option<& str> {
         self.function_arn.as_deref()
     }
 }
 impl DisassociateLambdaFunctionInput {
     /// Creates a new builder-style object to manufacture [`DisassociateLambdaFunctionInput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput).
-    pub fn builder() -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder {
         crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DisassociateLambdaFunctionInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl DisassociateLambdaFunctionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input;
-        self
+        self.function_arn = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateLambdaFunctionInput`](crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionInput {
-                instance_id: self.instance_id,
-                function_arn: self.function_arn,
-            },
+                instance_id: self.instance_id
+                ,
+                function_arn: self.function_arn
+                ,
+            }
         )
     }
 }
+

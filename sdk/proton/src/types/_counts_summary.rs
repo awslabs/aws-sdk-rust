@@ -3,8 +3,8 @@
 /// <p>Summary counts of each Proton resource type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountsSummary {
-    /// <p>The total number of components in the Amazon Web Services account.</p>
+pub struct CountsSummary  {
+    /// <p>The total number of components in the Amazon Web Services account.</p> 
     /// <p>The semantics of the <code>components</code> field are different from the semantics of results for other infrastructure-provisioning resources. That's because at this time components don't have associated templates, therefore they don't have the concept of staleness. The <code>components</code> object will only contain <code>total</code> and <code>failed</code> members.</p>
     #[doc(hidden)]
     pub components: std::option::Option<crate::types::ResourceCountsSummary>,
@@ -28,35 +28,33 @@ pub struct CountsSummary {
     pub pipelines: std::option::Option<crate::types::ResourceCountsSummary>,
 }
 impl CountsSummary {
-    /// <p>The total number of components in the Amazon Web Services account.</p>
+    /// <p>The total number of components in the Amazon Web Services account.</p> 
     /// <p>The semantics of the <code>components</code> field are different from the semantics of results for other infrastructure-provisioning resources. That's because at this time components don't have associated templates, therefore they don't have the concept of staleness. The <code>components</code> object will only contain <code>total</code> and <code>failed</code> members.</p>
-    pub fn components(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn components(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.components.as_ref()
     }
     /// <p>The staleness counts for Proton environments in the Amazon Web Services account. The <code>environments</code> object will only contain <code>total</code> members.</p>
-    pub fn environments(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn environments(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.environments.as_ref()
     }
     /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
-    pub fn environment_templates(
-        &self,
-    ) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn environment_templates(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.environment_templates.as_ref()
     }
     /// <p>The staleness counts for Proton service instances in the Amazon Web Services account.</p>
-    pub fn service_instances(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn service_instances(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.service_instances.as_ref()
     }
     /// <p>The staleness counts for Proton services in the Amazon Web Services account.</p>
-    pub fn services(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn services(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.services.as_ref()
     }
     /// <p>The total number of service templates in the Amazon Web Services account. The <code>serviceTemplates</code> object will only contain <code>total</code> members.</p>
-    pub fn service_templates(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn service_templates(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.service_templates.as_ref()
     }
     /// <p>The staleness counts for Proton pipelines in the Amazon Web Services account.</p>
-    pub fn pipelines(&self) -> std::option::Option<&crate::types::ResourceCountsSummary> {
+    pub fn pipelines(&self) -> std::option::Option<& crate::types::ResourceCountsSummary> {
         self.pipelines.as_ref()
     }
 }
@@ -80,20 +78,16 @@ pub struct CountsSummaryBuilder {
     pub(crate) pipelines: std::option::Option<crate::types::ResourceCountsSummary>,
 }
 impl CountsSummaryBuilder {
-    /// <p>The total number of components in the Amazon Web Services account.</p>
+    /// <p>The total number of components in the Amazon Web Services account.</p> 
     /// <p>The semantics of the <code>components</code> field are different from the semantics of results for other infrastructure-provisioning resources. That's because at this time components don't have associated templates, therefore they don't have the concept of staleness. The <code>components</code> object will only contain <code>total</code> and <code>failed</code> members.</p>
     pub fn components(mut self, input: crate::types::ResourceCountsSummary) -> Self {
         self.components = Some(input);
         self
     }
-    /// <p>The total number of components in the Amazon Web Services account.</p>
+    /// <p>The total number of components in the Amazon Web Services account.</p> 
     /// <p>The semantics of the <code>components</code> field are different from the semantics of results for other infrastructure-provisioning resources. That's because at this time components don't have associated templates, therefore they don't have the concept of staleness. The <code>components</code> object will only contain <code>total</code> and <code>failed</code> members.</p>
-    pub fn set_components(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.components = input; self
     }
     /// <p>The staleness counts for Proton environments in the Amazon Web Services account. The <code>environments</code> object will only contain <code>total</code> members.</p>
     pub fn environments(mut self, input: crate::types::ResourceCountsSummary) -> Self {
@@ -101,12 +95,8 @@ impl CountsSummaryBuilder {
         self
     }
     /// <p>The staleness counts for Proton environments in the Amazon Web Services account. The <code>environments</code> object will only contain <code>total</code> members.</p>
-    pub fn set_environments(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.environments = input;
-        self
+    pub fn set_environments(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.environments = input; self
     }
     /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
     pub fn environment_templates(mut self, input: crate::types::ResourceCountsSummary) -> Self {
@@ -114,12 +104,8 @@ impl CountsSummaryBuilder {
         self
     }
     /// <p>The total number of environment templates in the Amazon Web Services account. The <code>environmentTemplates</code> object will only contain <code>total</code> members.</p>
-    pub fn set_environment_templates(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.environment_templates = input;
-        self
+    pub fn set_environment_templates(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.environment_templates = input; self
     }
     /// <p>The staleness counts for Proton service instances in the Amazon Web Services account.</p>
     pub fn service_instances(mut self, input: crate::types::ResourceCountsSummary) -> Self {
@@ -127,12 +113,8 @@ impl CountsSummaryBuilder {
         self
     }
     /// <p>The staleness counts for Proton service instances in the Amazon Web Services account.</p>
-    pub fn set_service_instances(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.service_instances = input;
-        self
+    pub fn set_service_instances(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.service_instances = input; self
     }
     /// <p>The staleness counts for Proton services in the Amazon Web Services account.</p>
     pub fn services(mut self, input: crate::types::ResourceCountsSummary) -> Self {
@@ -140,12 +122,8 @@ impl CountsSummaryBuilder {
         self
     }
     /// <p>The staleness counts for Proton services in the Amazon Web Services account.</p>
-    pub fn set_services(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.services = input;
-        self
+    pub fn set_services(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.services = input; self
     }
     /// <p>The total number of service templates in the Amazon Web Services account. The <code>serviceTemplates</code> object will only contain <code>total</code> members.</p>
     pub fn service_templates(mut self, input: crate::types::ResourceCountsSummary) -> Self {
@@ -153,12 +131,8 @@ impl CountsSummaryBuilder {
         self
     }
     /// <p>The total number of service templates in the Amazon Web Services account. The <code>serviceTemplates</code> object will only contain <code>total</code> members.</p>
-    pub fn set_service_templates(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.service_templates = input;
-        self
+    pub fn set_service_templates(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.service_templates = input; self
     }
     /// <p>The staleness counts for Proton pipelines in the Amazon Web Services account.</p>
     pub fn pipelines(mut self, input: crate::types::ResourceCountsSummary) -> Self {
@@ -166,23 +140,27 @@ impl CountsSummaryBuilder {
         self
     }
     /// <p>The staleness counts for Proton pipelines in the Amazon Web Services account.</p>
-    pub fn set_pipelines(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCountsSummary>,
-    ) -> Self {
-        self.pipelines = input;
-        self
+    pub fn set_pipelines(mut self, input: std::option::Option<crate::types::ResourceCountsSummary>) -> Self {
+        self.pipelines = input; self
     }
     /// Consumes the builder and constructs a [`CountsSummary`](crate::types::CountsSummary).
     pub fn build(self) -> crate::types::CountsSummary {
         crate::types::CountsSummary {
-            components: self.components,
-            environments: self.environments,
-            environment_templates: self.environment_templates,
-            service_instances: self.service_instances,
-            services: self.services,
-            service_templates: self.service_templates,
-            pipelines: self.pipelines,
+            components: self.components
+            ,
+            environments: self.environments
+            ,
+            environment_templates: self.environment_templates
+            ,
+            service_instances: self.service_instances
+            ,
+            services: self.services
+            ,
+            service_templates: self.service_templates
+            ,
+            pipelines: self.pipelines
+            ,
         }
     }
 }
+

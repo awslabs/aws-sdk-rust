@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFieldOptionsInput {
+pub struct ListFieldOptionsInput  {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListFieldOptionsInput {
 }
 impl ListFieldOptionsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -33,18 +33,17 @@ impl ListFieldOptionsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 impl ListFieldOptionsInput {
     /// Creates a new builder-style object to manufacture [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
-    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder {
         crate::operation::list_field_options::builders::ListFieldOptionsInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl ListFieldOptionsInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The unique identifier of a field.</p>
     pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +75,7 @@ impl ListFieldOptionsInputBuilder {
     }
     /// <p>The unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -87,8 +84,7 @@ impl ListFieldOptionsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +93,7 @@ impl ListFieldOptionsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -107,33 +102,30 @@ impl ListFieldOptionsInputBuilder {
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`ListFieldOptionsInput`](crate::operation::list_field_options::ListFieldOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_field_options::ListFieldOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_field_options::ListFieldOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_field_options::ListFieldOptionsInput {
-                domain_id: self.domain_id,
-                field_id: self.field_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                values: self.values,
-            },
+                domain_id: self.domain_id
+                ,
+                field_id: self.field_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                values: self.values
+                ,
+            }
         )
     }
 }
+

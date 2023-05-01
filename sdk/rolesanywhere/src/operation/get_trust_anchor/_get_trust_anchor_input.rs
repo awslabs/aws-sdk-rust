@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTrustAnchorInput {
+pub struct GetTrustAnchorInput  {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
 }
 impl GetTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_id(&self) -> std::option::Option<& str> {
         self.trust_anchor_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetTrustAnchorInputBuilder {
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn set_trust_anchor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_anchor_id = input;
-        self
+        self.trust_anchor_id = input; self
     }
     /// Consumes the builder and constructs a [`GetTrustAnchorInput`](crate::operation::get_trust_anchor::GetTrustAnchorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_trust_anchor::GetTrustAnchorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_trust_anchor::GetTrustAnchorInput {
-            trust_anchor_id: self.trust_anchor_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_trust_anchor::GetTrustAnchorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_trust_anchor::GetTrustAnchorInput {
+                trust_anchor_id: self.trust_anchor_id
+                ,
+            }
+        )
     }
 }
+

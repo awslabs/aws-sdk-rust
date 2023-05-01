@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitiateDeviceClaimInput {
+pub struct InitiateDeviceClaimInput  {
     /// <p>The unique identifier of the device.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
 }
 impl InitiateDeviceClaimInput {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
 impl InitiateDeviceClaimInput {
     /// Creates a new builder-style object to manufacture [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
-    pub fn builder(
-    ) -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder {
-        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder {
+        crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl InitiateDeviceClaimInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// Consumes the builder and constructs a [`InitiateDeviceClaimInput`](crate::operation::initiate_device_claim::InitiateDeviceClaimInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::initiate_device_claim::InitiateDeviceClaimInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::initiate_device_claim::InitiateDeviceClaimInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::initiate_device_claim::InitiateDeviceClaimInput {
-                device_id: self.device_id,
-            },
+                device_id: self.device_id
+                ,
+            }
         )
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRelationalDatabaseInput {
+pub struct StartRelationalDatabaseInput  {
     /// <p>The name of your database to start.</p>
     #[doc(hidden)]
     pub relational_database_name: std::option::Option<std::string::String>,
 }
 impl StartRelationalDatabaseInput {
     /// <p>The name of your database to start.</p>
-    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
 }
 impl StartRelationalDatabaseInput {
     /// Creates a new builder-style object to manufacture [`StartRelationalDatabaseInput`](crate::operation::start_relational_database::StartRelationalDatabaseInput).
-    pub fn builder(
-    ) -> crate::operation::start_relational_database::builders::StartRelationalDatabaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_relational_database::builders::StartRelationalDatabaseInputBuilder {
         crate::operation::start_relational_database::builders::StartRelationalDatabaseInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl StartRelationalDatabaseInputBuilder {
         self
     }
     /// <p>The name of your database to start.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relational_database_name = input;
-        self
+    pub fn set_relational_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relational_database_name = input; self
     }
     /// Consumes the builder and constructs a [`StartRelationalDatabaseInput`](crate::operation::start_relational_database::StartRelationalDatabaseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_relational_database::StartRelationalDatabaseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_relational_database::StartRelationalDatabaseInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_relational_database::StartRelationalDatabaseInput {
-                relational_database_name: self.relational_database_name,
-            },
+                relational_database_name: self.relational_database_name
+                ,
+            }
         )
     }
 }
+

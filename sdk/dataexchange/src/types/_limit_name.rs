@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let limitname = unimplemented!();
 /// match limitname {
@@ -56,22 +56,14 @@
 /// Specifically, when `limitname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LimitName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     AwsLakeFormationDataPermissionAssetsPerRevision,
@@ -130,11 +122,11 @@ pub enum LimitName {
     #[allow(missing_docs)] // documentation missing in model
     RevisionsPerDataSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LimitName {
-    fn from(s: &str) -> Self {
-        match s {
+                fn from(s: &str) -> Self {
+                    match s {
                         "AWS Lake Formation data permission assets per revision" => LimitName::AwsLakeFormationDataPermissionAssetsPerRevision,
 "Amazon API Gateway API assets per revision" => LimitName::AmazonApiGatewayApiAssetsPerRevision,
 "Amazon Redshift datashare assets per import job from Redshift" => LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift,
@@ -165,122 +157,58 @@ impl std::convert::From<&str> for LimitName {
 "Revisions per data set" => LimitName::RevisionsPerDataSet,
 other => LimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
                     }
-    }
-}
+                }
+            }
 impl std::str::FromStr for LimitName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LimitName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LimitName::from(s))
+                }
+            }
 impl LimitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => {
-                "AWS Lake Formation data permission assets per revision"
-            }
-            LimitName::AmazonApiGatewayApiAssetsPerRevision => {
-                "Amazon API Gateway API assets per revision"
-            }
-            LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => {
-                "Amazon Redshift datashare assets per import job from Redshift"
-            }
-            LimitName::AmazonRedshiftDatashareAssetsPerRevision => {
-                "Amazon Redshift datashare assets per revision"
-            }
-            LimitName::AmazonS3DataAccessAssetsPerRevision => {
-                "Amazon S3 data access assets per revision"
-            }
-            LimitName::AssetPerExportJobFromAmazonS3 => "Asset per export job from Amazon S3",
-            LimitName::AssetSizeInGb => "Asset size in GB",
-            LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
-            LimitName::AssetsPerRevision => "Assets per revision",
-            LimitName::AutoExportEventActionsPerDataSet => "Auto export event actions per data set",
-            LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => {
-                "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets"
-            }
-            LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => {
-                "Concurrent in progress jobs to export assets to Amazon S3"
-            }
-            LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => {
-                "Concurrent in progress jobs to export assets to a signed URL"
-            }
-            LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => {
-                "Concurrent in progress jobs to export revisions to Amazon S3"
-            }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares => {
-                "Concurrent in progress jobs to import assets from Amazon Redshift datashares"
-            }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => {
-                "Concurrent in progress jobs to import assets from Amazon S3"
-            }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => {
-                "Concurrent in progress jobs to import assets from a signed URL"
-            }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => {
-                "Concurrent in progress jobs to import assets from an API Gateway API"
-            }
-            LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => {
-                "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy"
-            }
-            LimitName::DataSetsPerAccount => "Data sets per account",
-            LimitName::DataSetsPerProduct => "Data sets per product",
-            LimitName::EventActionsPerAccount => "Event actions per account",
-            LimitName::ProductsPerAccount => "Products per account",
-            LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => {
-                "Revisions per AWS Lake Formation data permission data set"
-            }
-            LimitName::RevisionsPerAmazonApiGatewayApiDataSet => {
-                "Revisions per Amazon API Gateway API data set"
-            }
-            LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => {
-                "Revisions per Amazon Redshift datashare data set"
-            }
-            LimitName::RevisionsPerAmazonS3DataAccessDataSet => {
-                "Revisions per Amazon S3 data access data set"
-            }
-            LimitName::RevisionsPerDataSet => "Revisions per data set",
-            LimitName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AWS Lake Formation data permission assets per revision",
-            "Amazon API Gateway API assets per revision",
-            "Amazon Redshift datashare assets per import job from Redshift",
-            "Amazon Redshift datashare assets per revision",
-            "Amazon S3 data access assets per revision",
-            "Asset per export job from Amazon S3",
-            "Asset size in GB",
-            "Assets per import job from Amazon S3",
-            "Assets per revision",
-            "Auto export event actions per data set",
-            "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets",
-            "Concurrent in progress jobs to export assets to Amazon S3",
-            "Concurrent in progress jobs to export assets to a signed URL",
-            "Concurrent in progress jobs to export revisions to Amazon S3",
-            "Concurrent in progress jobs to import assets from Amazon Redshift datashares",
-            "Concurrent in progress jobs to import assets from Amazon S3",
-            "Concurrent in progress jobs to import assets from a signed URL",
-            "Concurrent in progress jobs to import assets from an API Gateway API",
-            "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy",
-            "Data sets per account",
-            "Data sets per product",
-            "Event actions per account",
-            "Products per account",
-            "Revisions per AWS Lake Formation data permission data set",
-            "Revisions per Amazon API Gateway API data set",
-            "Revisions per Amazon Redshift datashare data set",
-            "Revisions per Amazon S3 data access data set",
-            "Revisions per data set",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    LimitName::AwsLakeFormationDataPermissionAssetsPerRevision => "AWS Lake Formation data permission assets per revision",
+    LimitName::AmazonApiGatewayApiAssetsPerRevision => "Amazon API Gateway API assets per revision",
+    LimitName::AmazonRedshiftDatashareAssetsPerImportJobFromRedshift => "Amazon Redshift datashare assets per import job from Redshift",
+    LimitName::AmazonRedshiftDatashareAssetsPerRevision => "Amazon Redshift datashare assets per revision",
+    LimitName::AmazonS3DataAccessAssetsPerRevision => "Amazon S3 data access assets per revision",
+    LimitName::AssetPerExportJobFromAmazonS3 => "Asset per export job from Amazon S3",
+    LimitName::AssetSizeInGb => "Asset size in GB",
+    LimitName::AssetsPerImportJobFromAmazonS3 => "Assets per import job from Amazon S3",
+    LimitName::AssetsPerRevision => "Assets per revision",
+    LimitName::AutoExportEventActionsPerDataSet => "Auto export event actions per data set",
+    LimitName::ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets => "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets",
+    LimitName::ConcurrentInProgressJobsToExportAssetsToAmazonS3 => "Concurrent in progress jobs to export assets to Amazon S3",
+    LimitName::ConcurrentInProgressJobsToExportAssetsToASignedUrl => "Concurrent in progress jobs to export assets to a signed URL",
+    LimitName::ConcurrentInProgressJobsToExportRevisionsToAmazonS3 => "Concurrent in progress jobs to export revisions to Amazon S3",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonRedshiftDatashares => "Concurrent in progress jobs to import assets from Amazon Redshift datashares",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAmazonS3 => "Concurrent in progress jobs to import assets from Amazon S3",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromASignedUrl => "Concurrent in progress jobs to import assets from a signed URL",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAnApiGatewayApi => "Concurrent in progress jobs to import assets from an API Gateway API",
+    LimitName::ConcurrentInProgressJobsToImportAssetsFromAnAwsLakeFormationTagPolicy => "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy",
+    LimitName::DataSetsPerAccount => "Data sets per account",
+    LimitName::DataSetsPerProduct => "Data sets per product",
+    LimitName::EventActionsPerAccount => "Event actions per account",
+    LimitName::ProductsPerAccount => "Products per account",
+    LimitName::RevisionsPerAwsLakeFormationDataPermissionDataSet => "Revisions per AWS Lake Formation data permission data set",
+    LimitName::RevisionsPerAmazonApiGatewayApiDataSet => "Revisions per Amazon API Gateway API data set",
+    LimitName::RevisionsPerAmazonRedshiftDatashareDataSet => "Revisions per Amazon Redshift datashare data set",
+    LimitName::RevisionsPerAmazonS3DataAccessDataSet => "Revisions per Amazon S3 data access data set",
+    LimitName::RevisionsPerDataSet => "Revisions per data set",
+    LimitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AWS Lake Formation data permission assets per revision", "Amazon API Gateway API assets per revision", "Amazon Redshift datashare assets per import job from Redshift", "Amazon Redshift datashare assets per revision", "Amazon S3 data access assets per revision", "Asset per export job from Amazon S3", "Asset size in GB", "Assets per import job from Amazon S3", "Assets per revision", "Auto export event actions per data set", "Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets", "Concurrent in progress jobs to export assets to Amazon S3", "Concurrent in progress jobs to export assets to a signed URL", "Concurrent in progress jobs to export revisions to Amazon S3", "Concurrent in progress jobs to import assets from Amazon Redshift datashares", "Concurrent in progress jobs to import assets from Amazon S3", "Concurrent in progress jobs to import assets from a signed URL", "Concurrent in progress jobs to import assets from an API Gateway API", "Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy", "Data sets per account", "Data sets per product", "Event actions per account", "Products per account", "Revisions per AWS Lake Formation data permission data set", "Revisions per Amazon API Gateway API data set", "Revisions per Amazon Redshift datashare data set", "Revisions per Amazon S3 data access data set", "Revisions per data set"]
+                }
+            }
 impl AsRef<str> for LimitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

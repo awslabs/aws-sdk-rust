@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RotateIngestEndpointCredentialsOutput {
+pub struct RotateIngestEndpointCredentialsOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -26,55 +26,51 @@ pub struct RotateIngestEndpointCredentialsOutput {
     pub ingress_access_logs: std::option::Option<crate::types::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl RotateIngestEndpointCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The date and time the Channel was created.
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::types::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::types::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::types::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::types::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::types::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::types::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RotateIngestEndpointCredentialsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RotateIngestEndpointCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RotateIngestEndpointCredentialsOutput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput).
-    pub fn builder() -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder{
+    pub fn builder() -> crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder {
         crate::operation::rotate_ingest_endpoint_credentials::builders::RotateIngestEndpointCredentialsOutputBuilder::default()
     }
 }
@@ -90,8 +86,7 @@ pub struct RotateIngestEndpointCredentialsOutputBuilder {
     pub(crate) hls_ingest: std::option::Option<crate::types::HlsIngest>,
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) ingress_access_logs: std::option::Option<crate::types::IngressAccessLogs>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl RotateIngestEndpointCredentialsOutputBuilder {
@@ -102,8 +97,7 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
     }
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The date and time the Channel was created.
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +106,7 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
     }
     /// The date and time the Channel was created.
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// A short text description of the Channel.
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +115,7 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
     }
     /// A short text description of the Channel.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Configure egress access logging.
     pub fn egress_access_logs(mut self, input: crate::types::EgressAccessLogs) -> Self {
@@ -131,12 +123,8 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
         self
     }
     /// Configure egress access logging.
-    pub fn set_egress_access_logs(
-        mut self,
-        input: std::option::Option<crate::types::EgressAccessLogs>,
-    ) -> Self {
-        self.egress_access_logs = input;
-        self
+    pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::types::EgressAccessLogs>) -> Self {
+        self.egress_access_logs = input; self
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
     pub fn hls_ingest(mut self, input: crate::types::HlsIngest) -> Self {
@@ -145,8 +133,7 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
     pub fn set_hls_ingest(mut self, input: std::option::Option<crate::types::HlsIngest>) -> Self {
-        self.hls_ingest = input;
-        self
+        self.hls_ingest = input; self
     }
     /// The ID of the Channel.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,8 +142,7 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
     }
     /// The ID of the Channel.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Configure ingress access logging.
     pub fn ingress_access_logs(mut self, input: crate::types::IngressAccessLogs) -> Self {
@@ -164,52 +150,35 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
         self
     }
     /// Configure ingress access logging.
-    pub fn set_ingress_access_logs(
-        mut self,
-        input: std::option::Option<crate::types::IngressAccessLogs>,
-    ) -> Self {
-        self.ingress_access_logs = input;
-        self
+    pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::types::IngressAccessLogs>) -> Self {
+        self.ingress_access_logs = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of tags associated with a resource
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// A collection of tags associated with a resource
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RotateIngestEndpointCredentialsOutput`](crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput
-    {
+    pub fn build(self) -> crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput {
         crate::operation::rotate_ingest_endpoint_credentials::RotateIngestEndpointCredentialsOutput {
             arn: self.arn
             ,
@@ -231,3 +200,4 @@ impl RotateIngestEndpointCredentialsOutputBuilder {
         }
     }
 }
+

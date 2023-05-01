@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eac3dynamicrangecompressionrf = unimplemented!();
 /// match eac3dynamicrangecompressionrf {
@@ -34,22 +34,14 @@
 /// Specifically, when `eac3dynamicrangecompressionrf` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3DynamicRangeCompressionRf::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Eac3DynamicRangeCompressionRf {
     #[allow(missing_docs)] // documentation missing in model
     FilmLight,
@@ -64,57 +56,49 @@ pub enum Eac3DynamicRangeCompressionRf {
     #[allow(missing_docs)] // documentation missing in model
     Speech,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Eac3DynamicRangeCompressionRf {
-    fn from(s: &str) -> Self {
-        match s {
-            "FILM_LIGHT" => Eac3DynamicRangeCompressionRf::FilmLight,
-            "FILM_STANDARD" => Eac3DynamicRangeCompressionRf::FilmStandard,
-            "MUSIC_LIGHT" => Eac3DynamicRangeCompressionRf::MusicLight,
-            "MUSIC_STANDARD" => Eac3DynamicRangeCompressionRf::MusicStandard,
-            "NONE" => Eac3DynamicRangeCompressionRf::None,
-            "SPEECH" => Eac3DynamicRangeCompressionRf::Speech,
-            other => Eac3DynamicRangeCompressionRf::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FILM_LIGHT" => Eac3DynamicRangeCompressionRf::FilmLight,
+"FILM_STANDARD" => Eac3DynamicRangeCompressionRf::FilmStandard,
+"MUSIC_LIGHT" => Eac3DynamicRangeCompressionRf::MusicLight,
+"MUSIC_STANDARD" => Eac3DynamicRangeCompressionRf::MusicStandard,
+"NONE" => Eac3DynamicRangeCompressionRf::None,
+"SPEECH" => Eac3DynamicRangeCompressionRf::Speech,
+other => Eac3DynamicRangeCompressionRf::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Eac3DynamicRangeCompressionRf {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3DynamicRangeCompressionRf::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Eac3DynamicRangeCompressionRf::from(s))
+                }
+            }
 impl Eac3DynamicRangeCompressionRf {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Eac3DynamicRangeCompressionRf::FilmLight => "FILM_LIGHT",
-            Eac3DynamicRangeCompressionRf::FilmStandard => "FILM_STANDARD",
-            Eac3DynamicRangeCompressionRf::MusicLight => "MUSIC_LIGHT",
-            Eac3DynamicRangeCompressionRf::MusicStandard => "MUSIC_STANDARD",
-            Eac3DynamicRangeCompressionRf::None => "NONE",
-            Eac3DynamicRangeCompressionRf::Speech => "SPEECH",
-            Eac3DynamicRangeCompressionRf::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILM_LIGHT",
-            "FILM_STANDARD",
-            "MUSIC_LIGHT",
-            "MUSIC_STANDARD",
-            "NONE",
-            "SPEECH",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Eac3DynamicRangeCompressionRf::FilmLight => "FILM_LIGHT",
+    Eac3DynamicRangeCompressionRf::FilmStandard => "FILM_STANDARD",
+    Eac3DynamicRangeCompressionRf::MusicLight => "MUSIC_LIGHT",
+    Eac3DynamicRangeCompressionRf::MusicStandard => "MUSIC_STANDARD",
+    Eac3DynamicRangeCompressionRf::None => "NONE",
+    Eac3DynamicRangeCompressionRf::Speech => "SPEECH",
+    Eac3DynamicRangeCompressionRf::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FILM_LIGHT", "FILM_STANDARD", "MUSIC_LIGHT", "MUSIC_STANDARD", "NONE", "SPEECH"]
+                }
+            }
 impl AsRef<str> for Eac3DynamicRangeCompressionRf {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

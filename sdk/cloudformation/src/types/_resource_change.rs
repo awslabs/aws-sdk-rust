@@ -3,7 +3,7 @@
 /// <p>The <code>ResourceChange</code> structure describes the resource and the action that CloudFormation will perform on it if you execute this change set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceChange {
+pub struct ResourceChange  {
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::ChangeAction>,
@@ -16,7 +16,7 @@ pub struct ResourceChange {
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p> 
     /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
     #[doc(hidden)]
     pub replacement: std::option::Option<crate::types::Replacement>,
@@ -35,40 +35,40 @@ pub struct ResourceChange {
 }
 impl ResourceChange {
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> std::option::Option<& str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn physical_resource_id(&self) -> std::option::Option<& str> {
         self.physical_resource_id.as_deref()
     }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
-    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p> 
     /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
-    pub fn replacement(&self) -> std::option::Option<&crate::types::Replacement> {
+    pub fn replacement(&self) -> std::option::Option<& crate::types::Replacement> {
         self.replacement.as_ref()
     }
     /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
-    pub fn scope(&self) -> std::option::Option<&[crate::types::ResourceAttribute]> {
+    pub fn scope(&self) -> std::option::Option<& [crate::types::ResourceAttribute]> {
         self.scope.as_deref()
     }
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
-    pub fn details(&self) -> std::option::Option<&[crate::types::ResourceChangeDetail]> {
+    pub fn details(&self) -> std::option::Option<& [crate::types::ResourceChangeDetail]> {
         self.details.as_deref()
     }
     /// <p>The change set ID of the nested change set.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    pub fn module_info(&self) -> std::option::Option<&crate::types::ModuleInfo> {
+    pub fn module_info(&self) -> std::option::Option<& crate::types::ModuleInfo> {
         self.module_info.as_ref()
     }
 }
@@ -101,8 +101,7 @@ impl ResourceChangeBuilder {
     }
     /// <p>The action that CloudFormation takes on the resource, such as <code>Add</code> (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact action for the resource can't be determined).</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
     pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,12 +109,8 @@ impl ResourceChangeBuilder {
         self
     }
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-    pub fn set_logical_resource_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.logical_resource_id = input;
-        self
+    pub fn set_logical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.logical_resource_id = input; self
     }
     /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
     pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,12 +118,8 @@ impl ResourceChangeBuilder {
         self
     }
     /// <p>The resource's physical ID (resource name). Resources that you are adding don't have physical IDs because they haven't been created.</p>
-    pub fn set_physical_resource_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.physical_resource_id = input;
-        self
+    pub fn set_physical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.physical_resource_id = input; self
     }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,23 +128,18 @@ impl ResourceChangeBuilder {
     }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
-    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p> 
     /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
     pub fn replacement(mut self, input: crate::types::Replacement) -> Self {
         self.replacement = Some(input);
         self
     }
-    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p>
+    /// <p>For the <code>Modify</code> action, indicates whether CloudFormation will replace the resource by creating a new one and deleting the old one. This value depends on the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code> structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code> is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code> and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code> is <code>Conditionally</code>.</p> 
     /// <p>If you have multiple changes with different <code>RequiresRecreation</code> values, the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code> value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>, and then <code>Never</code>.</p>
-    pub fn set_replacement(
-        mut self,
-        input: std::option::Option<crate::types::Replacement>,
-    ) -> Self {
-        self.replacement = input;
-        self
+    pub fn set_replacement(mut self, input: std::option::Option<crate::types::Replacement>) -> Self {
+        self.replacement = input; self
     }
     /// Appends an item to `scope`.
     ///
@@ -162,17 +148,13 @@ impl ResourceChangeBuilder {
     /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
     pub fn scope(mut self, input: crate::types::ResourceAttribute) -> Self {
         let mut v = self.scope.unwrap_or_default();
-        v.push(input);
-        self.scope = Some(v);
-        self
+                        v.push(input);
+                        self.scope = Some(v);
+                        self
     }
     /// <p>For the <code>Modify</code> action, indicates which resource attribute is triggering this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
-    pub fn set_scope(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceAttribute>>,
-    ) -> Self {
-        self.scope = input;
-        self
+    pub fn set_scope(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceAttribute>>) -> Self {
+        self.scope = input; self
     }
     /// Appends an item to `details`.
     ///
@@ -181,17 +163,13 @@ impl ResourceChangeBuilder {
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
     pub fn details(mut self, input: crate::types::ResourceChangeDetail) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input);
-        self.details = Some(v);
-        self
+                        v.push(input);
+                        self.details = Some(v);
+                        self
     }
     /// <p>For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures that describes the changes that CloudFormation will make to the resource.</p>
-    pub fn set_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceChangeDetail>>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceChangeDetail>>) -> Self {
+        self.details = input; self
     }
     /// <p>The change set ID of the nested change set.</p>
     pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +178,7 @@ impl ResourceChangeBuilder {
     }
     /// <p>The change set ID of the nested change set.</p>
     pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_id = input;
-        self
+        self.change_set_id = input; self
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(mut self, input: crate::types::ModuleInfo) -> Self {
@@ -210,21 +187,30 @@ impl ResourceChangeBuilder {
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn set_module_info(mut self, input: std::option::Option<crate::types::ModuleInfo>) -> Self {
-        self.module_info = input;
-        self
+        self.module_info = input; self
     }
     /// Consumes the builder and constructs a [`ResourceChange`](crate::types::ResourceChange).
     pub fn build(self) -> crate::types::ResourceChange {
         crate::types::ResourceChange {
-            action: self.action,
-            logical_resource_id: self.logical_resource_id,
-            physical_resource_id: self.physical_resource_id,
-            resource_type: self.resource_type,
-            replacement: self.replacement,
-            scope: self.scope,
-            details: self.details,
-            change_set_id: self.change_set_id,
-            module_info: self.module_info,
+            action: self.action
+            ,
+            logical_resource_id: self.logical_resource_id
+            ,
+            physical_resource_id: self.physical_resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            replacement: self.replacement
+            ,
+            scope: self.scope
+            ,
+            details: self.details
+            ,
+            change_set_id: self.change_set_id
+            ,
+            module_info: self.module_info
+            ,
         }
     }
 }
+

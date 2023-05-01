@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let agentparameterfield = unimplemented!();
 /// match agentparameterfield {
@@ -33,22 +33,14 @@
 /// Specifically, when `agentparameterfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AgentParameterField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AgentParameterField {
     /// Maximum stack depth to be captured by the CodeGuru Profiler.
     MaxStackDepth,
@@ -61,62 +53,47 @@ pub enum AgentParameterField {
     /// Sampling interval in milliseconds used to sample profiles.
     SamplingIntervalInMilliseconds,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentParameterField {
-    fn from(s: &str) -> Self {
-        match s {
-            "MaxStackDepth" => AgentParameterField::MaxStackDepth,
-            "MemoryUsageLimitPercent" => AgentParameterField::MemoryUsageLimitPercent,
-            "MinimumTimeForReportingInMilliseconds" => {
-                AgentParameterField::MinimumTimeForReportingInMilliseconds
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MaxStackDepth" => AgentParameterField::MaxStackDepth,
+"MemoryUsageLimitPercent" => AgentParameterField::MemoryUsageLimitPercent,
+"MinimumTimeForReportingInMilliseconds" => AgentParameterField::MinimumTimeForReportingInMilliseconds,
+"ReportingIntervalInMilliseconds" => AgentParameterField::ReportingIntervalInMilliseconds,
+"SamplingIntervalInMilliseconds" => AgentParameterField::SamplingIntervalInMilliseconds,
+other => AgentParameterField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "ReportingIntervalInMilliseconds" => {
-                AgentParameterField::ReportingIntervalInMilliseconds
-            }
-            "SamplingIntervalInMilliseconds" => AgentParameterField::SamplingIntervalInMilliseconds,
-            other => AgentParameterField::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for AgentParameterField {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AgentParameterField::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AgentParameterField::from(s))
+                }
+            }
 impl AgentParameterField {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AgentParameterField::MaxStackDepth => "MaxStackDepth",
-            AgentParameterField::MemoryUsageLimitPercent => "MemoryUsageLimitPercent",
-            AgentParameterField::MinimumTimeForReportingInMilliseconds => {
-                "MinimumTimeForReportingInMilliseconds"
-            }
-            AgentParameterField::ReportingIntervalInMilliseconds => {
-                "ReportingIntervalInMilliseconds"
-            }
-            AgentParameterField::SamplingIntervalInMilliseconds => "SamplingIntervalInMilliseconds",
-            AgentParameterField::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "MaxStackDepth",
-            "MemoryUsageLimitPercent",
-            "MinimumTimeForReportingInMilliseconds",
-            "ReportingIntervalInMilliseconds",
-            "SamplingIntervalInMilliseconds",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AgentParameterField::MaxStackDepth => "MaxStackDepth",
+    AgentParameterField::MemoryUsageLimitPercent => "MemoryUsageLimitPercent",
+    AgentParameterField::MinimumTimeForReportingInMilliseconds => "MinimumTimeForReportingInMilliseconds",
+    AgentParameterField::ReportingIntervalInMilliseconds => "ReportingIntervalInMilliseconds",
+    AgentParameterField::SamplingIntervalInMilliseconds => "SamplingIntervalInMilliseconds",
+    AgentParameterField::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MaxStackDepth", "MemoryUsageLimitPercent", "MinimumTimeForReportingInMilliseconds", "ReportingIntervalInMilliseconds", "SamplingIntervalInMilliseconds"]
+                }
+            }
 impl AsRef<str> for AgentParameterField {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

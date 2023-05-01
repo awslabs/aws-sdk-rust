@@ -3,7 +3,7 @@
 /// <p>The upload storage root location (folder) on streaming workstations where files are uploaded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StreamingSessionStorageRoot {
+pub struct StreamingSessionStorageRoot  {
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
     #[doc(hidden)]
     pub linux: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct StreamingSessionStorageRoot {
 }
 impl StreamingSessionStorageRoot {
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
-    pub fn linux(&self) -> std::option::Option<&str> {
+    pub fn linux(&self) -> std::option::Option<& str> {
         self.linux.as_deref()
     }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
-    pub fn windows(&self) -> std::option::Option<&str> {
+    pub fn windows(&self) -> std::option::Option<& str> {
         self.windows.as_deref()
     }
 }
-impl std::fmt::Debug for StreamingSessionStorageRoot {
+impl  std::fmt::Debug for StreamingSessionStorageRoot  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingSessionStorageRoot");
         formatter.field("linux", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl StreamingSessionStorageRootBuilder {
     }
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
     pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.linux = input;
-        self
+        self.linux = input; self
     }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
     pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl StreamingSessionStorageRootBuilder {
     }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
     pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.windows = input;
-        self
+        self.windows = input; self
     }
     /// Consumes the builder and constructs a [`StreamingSessionStorageRoot`](crate::types::StreamingSessionStorageRoot).
     pub fn build(self) -> crate::types::StreamingSessionStorageRoot {
         crate::types::StreamingSessionStorageRoot {
-            linux: self.linux,
-            windows: self.windows,
+            linux: self.linux
+            ,
+            windows: self.windows
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for StreamingSessionStorageRootBuilder {
         formatter.finish()
     }
 }
+

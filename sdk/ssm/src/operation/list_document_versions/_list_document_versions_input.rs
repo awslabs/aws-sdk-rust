@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentVersionsInput {
+pub struct ListDocumentVersionsInput  {
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListDocumentVersionsInput {
 }
 impl ListDocumentVersionsInput {
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -23,14 +23,13 @@ impl ListDocumentVersionsInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListDocumentVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentVersionsInput`](crate::operation::list_document_versions::ListDocumentVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder {
         crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListDocumentVersionsInputBuilder {
     }
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl ListDocumentVersionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl ListDocumentVersionsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListDocumentVersionsInput`](crate::operation::list_document_versions::ListDocumentVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_document_versions::ListDocumentVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_document_versions::ListDocumentVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_document_versions::ListDocumentVersionsInput {
-                name: self.name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                name: self.name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

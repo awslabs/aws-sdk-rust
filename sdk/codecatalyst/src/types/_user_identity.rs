@@ -3,7 +3,7 @@
 /// <p>Information about a user whose activity is recorded in an event for a space.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserIdentity {
+pub struct UserIdentity  {
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
     #[doc(hidden)]
     pub user_type: std::option::Option<crate::types::UserType>,
@@ -19,19 +19,19 @@ pub struct UserIdentity {
 }
 impl UserIdentity {
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
-    pub fn user_type(&self) -> std::option::Option<&crate::types::UserType> {
+    pub fn user_type(&self) -> std::option::Option<& crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p></p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> std::option::Option<& str> {
         self.principal_id.as_deref()
     }
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl UserIdentityBuilder {
     }
     /// <p>The role assigned to the user in a Amazon CodeCatalyst space or project when the event occurred.</p>
     pub fn set_user_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input;
-        self
+        self.user_type = input; self
     }
     /// <p></p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl UserIdentityBuilder {
     }
     /// <p></p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input;
-        self
+        self.principal_id = input; self
     }
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl UserIdentityBuilder {
     }
     /// <p>The display name of the user in Amazon CodeCatalyst.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl UserIdentityBuilder {
     }
     /// <p>The Amazon Web Services account number of the user in Amazon Web Services, if any.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// Consumes the builder and constructs a [`UserIdentity`](crate::types::UserIdentity).
     pub fn build(self) -> crate::types::UserIdentity {
         crate::types::UserIdentity {
-            user_type: self.user_type,
-            principal_id: self.principal_id,
-            user_name: self.user_name,
-            aws_account_id: self.aws_account_id,
+            user_type: self.user_type
+            ,
+            principal_id: self.principal_id
+            ,
+            user_name: self.user_name
+            ,
+            aws_account_id: self.aws_account_id
+            ,
         }
     }
 }
+

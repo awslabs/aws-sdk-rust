@@ -3,14 +3,14 @@
 /// Placeholder documentation for StartChannelRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChannelInput {
+pub struct StartChannelInput  {
     /// A request to start a channel
     #[doc(hidden)]
     pub channel_id: std::option::Option<std::string::String>,
 }
 impl StartChannelInput {
     /// A request to start a channel
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl StartChannelInputBuilder {
     }
     /// A request to start a channel
     pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_id = input;
-        self
+        self.channel_id = input; self
     }
     /// Consumes the builder and constructs a [`StartChannelInput`](crate::operation::start_channel::StartChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_channel::StartChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_channel::StartChannelInput {
-            channel_id: self.channel_id,
-        })
+    pub fn build(self) -> Result<crate::operation::start_channel::StartChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_channel::StartChannelInput {
+                channel_id: self.channel_id
+                ,
+            }
+        )
     }
 }
+

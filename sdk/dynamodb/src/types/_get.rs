@@ -3,12 +3,10 @@
 /// <p>Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Get {
+pub struct Get  {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub key: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     /// <p>The name of the table from which to retrieve the specified item.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -17,31 +15,23 @@ pub struct Get {
     pub projection_expression: std::option::Option<std::string::String>,
     /// <p>One or more substitution tokens for attribute names in the ProjectionExpression parameter.</p>
     #[doc(hidden)]
-    pub expression_attribute_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub expression_attribute_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Get {
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
-    pub fn key(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    > {
+    pub fn key(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::AttributeValue>> {
         self.key.as_ref()
     }
     /// <p>The name of the table from which to retrieve the specified item.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
-    pub fn projection_expression(&self) -> std::option::Option<&str> {
+    pub fn projection_expression(&self) -> std::option::Option<& str> {
         self.projection_expression.as_deref()
     }
     /// <p>One or more substitution tokens for attribute names in the ProjectionExpression parameter.</p>
-    pub fn expression_attribute_names(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn expression_attribute_names(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.expression_attribute_names.as_ref()
     }
 }
@@ -56,13 +46,10 @@ impl Get {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetBuilder {
-    pub(crate) key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-    >,
+    pub(crate) key: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
     pub(crate) table_name: std::option::Option<std::string::String>,
     pub(crate) projection_expression: std::option::Option<std::string::String>,
-    pub(crate) expression_attribute_names:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) expression_attribute_names: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetBuilder {
     /// Adds a key-value pair to `key`.
@@ -70,25 +57,15 @@ impl GetBuilder {
     /// To override the contents of this collection use [`set_key`](Self::set_key).
     ///
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
-    pub fn key(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::AttributeValue,
-    ) -> Self {
+    pub fn key(mut self, k: impl Into<std::string::String>, v: crate::types::AttributeValue) -> Self {
         let mut hash_map = self.key.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.key = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.key = Some(hash_map);
+                        self
     }
     /// <p>A map of attribute names to <code>AttributeValue</code> objects that specifies the primary key of the item to retrieve.</p>
-    pub fn set_key(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
-        >,
-    ) -> Self {
-        self.key = input;
-        self
+    pub fn set_key(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>) -> Self {
+        self.key = input; self
     }
     /// <p>The name of the table from which to retrieve the specified item.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +74,7 @@ impl GetBuilder {
     }
     /// <p>The name of the table from which to retrieve the specified item.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
     pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,45 +82,36 @@ impl GetBuilder {
         self
     }
     /// <p>A string that identifies one or more attributes of the specified item to retrieve from the table. The attributes in the expression must be separated by commas. If no attribute names are specified, then all attributes of the specified item are returned. If any of the requested attributes are not found, they do not appear in the result.</p>
-    pub fn set_projection_expression(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.projection_expression = input;
-        self
+    pub fn set_projection_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.projection_expression = input; self
     }
     /// Adds a key-value pair to `expression_attribute_names`.
     ///
     /// To override the contents of this collection use [`set_expression_attribute_names`](Self::set_expression_attribute_names).
     ///
     /// <p>One or more substitution tokens for attribute names in the ProjectionExpression parameter.</p>
-    pub fn expression_attribute_names(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn expression_attribute_names(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.expression_attribute_names.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.expression_attribute_names = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.expression_attribute_names = Some(hash_map);
+                        self
     }
     /// <p>One or more substitution tokens for attribute names in the ProjectionExpression parameter.</p>
-    pub fn set_expression_attribute_names(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.expression_attribute_names = input;
-        self
+    pub fn set_expression_attribute_names(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.expression_attribute_names = input; self
     }
     /// Consumes the builder and constructs a [`Get`](crate::types::Get).
     pub fn build(self) -> crate::types::Get {
         crate::types::Get {
-            key: self.key,
-            table_name: self.table_name,
-            projection_expression: self.projection_expression,
-            expression_attribute_names: self.expression_attribute_names,
+            key: self.key
+            ,
+            table_name: self.table_name
+            ,
+            projection_expression: self.projection_expression
+            ,
+            expression_attribute_names: self.expression_attribute_names
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateImageVersionInput {
+pub struct UpdateImageVersionInput  {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
@@ -18,20 +18,20 @@ pub struct UpdateImageVersionInput {
     /// <p>A list of aliases to delete.</p>
     #[doc(hidden)]
     pub aliases_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The availability of the image version specified by the maintainer.</p>
-    /// <ul>
-    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
-    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
-    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// <p>The availability of the image version specified by the maintainer.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li> 
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li> 
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li> 
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub vendor_guidance: std::option::Option<crate::types::VendorGuidance>,
-    /// <p>Indicates SageMaker job type compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
-    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
-    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// <p>Indicates SageMaker job type compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li> 
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li> 
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_type: std::option::Option<crate::types::JobType>,
@@ -41,10 +41,10 @@ pub struct UpdateImageVersionInput {
     /// <p>The supported programming language and its version.</p>
     #[doc(hidden)]
     pub programming_lang: std::option::Option<std::string::String>,
-    /// <p>Indicates CPU or GPU compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
-    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// <p>Indicates CPU or GPU compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li> 
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub processor: std::option::Option<crate::types::Processor>,
@@ -57,11 +57,11 @@ pub struct UpdateImageVersionInput {
 }
 impl UpdateImageVersionInput {
     /// <p>The name of the image.</p>
-    pub fn image_name(&self) -> std::option::Option<&str> {
+    pub fn image_name(&self) -> std::option::Option<& str> {
         self.image_name.as_deref()
     }
     /// <p>The alias of the image version.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The version of the image.</p>
@@ -69,46 +69,46 @@ impl UpdateImageVersionInput {
         self.version
     }
     /// <p>A list of aliases to add.</p>
-    pub fn aliases_to_add(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn aliases_to_add(&self) -> std::option::Option<& [std::string::String]> {
         self.aliases_to_add.as_deref()
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn aliases_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn aliases_to_delete(&self) -> std::option::Option<& [std::string::String]> {
         self.aliases_to_delete.as_deref()
     }
-    /// <p>The availability of the image version specified by the maintainer.</p>
-    /// <ul>
-    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
-    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
-    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// <p>The availability of the image version specified by the maintainer.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li> 
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li> 
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li> 
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li> 
     /// </ul>
-    pub fn vendor_guidance(&self) -> std::option::Option<&crate::types::VendorGuidance> {
+    pub fn vendor_guidance(&self) -> std::option::Option<& crate::types::VendorGuidance> {
         self.vendor_guidance.as_ref()
     }
-    /// <p>Indicates SageMaker job type compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
-    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
-    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// <p>Indicates SageMaker job type compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li> 
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li> 
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li> 
     /// </ul>
-    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p>The machine learning framework vended in the image version.</p>
-    pub fn ml_framework(&self) -> std::option::Option<&str> {
+    pub fn ml_framework(&self) -> std::option::Option<& str> {
         self.ml_framework.as_deref()
     }
     /// <p>The supported programming language and its version.</p>
-    pub fn programming_lang(&self) -> std::option::Option<&str> {
+    pub fn programming_lang(&self) -> std::option::Option<& str> {
         self.programming_lang.as_deref()
     }
-    /// <p>Indicates CPU or GPU compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
-    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// <p>Indicates CPU or GPU compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li> 
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li> 
     /// </ul>
-    pub fn processor(&self) -> std::option::Option<&crate::types::Processor> {
+    pub fn processor(&self) -> std::option::Option<& crate::types::Processor> {
         self.processor.as_ref()
     }
     /// <p>Indicates Horovod compatibility.</p>
@@ -116,14 +116,13 @@ impl UpdateImageVersionInput {
         self.horovod
     }
     /// <p>The maintainer description of the image version.</p>
-    pub fn release_notes(&self) -> std::option::Option<&str> {
+    pub fn release_notes(&self) -> std::option::Option<& str> {
         self.release_notes.as_deref()
     }
 }
 impl UpdateImageVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder {
         crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder::default()
     }
 }
@@ -153,8 +152,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input;
-        self
+        self.image_name = input; self
     }
     /// <p>The alias of the image version.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,8 +161,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The alias of the image version.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The version of the image.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -173,8 +170,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The version of the image.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Appends an item to `aliases_to_add`.
     ///
@@ -183,17 +179,13 @@ impl UpdateImageVersionInputBuilder {
     /// <p>A list of aliases to add.</p>
     pub fn aliases_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.aliases_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.aliases_to_add = Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases_to_add = Some(v);
+                        self
     }
     /// <p>A list of aliases to add.</p>
-    pub fn set_aliases_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.aliases_to_add = input;
-        self
+    pub fn set_aliases_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.aliases_to_add = input; self
     }
     /// Appends an item to `aliases_to_delete`.
     ///
@@ -202,62 +194,53 @@ impl UpdateImageVersionInputBuilder {
     /// <p>A list of aliases to delete.</p>
     pub fn aliases_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.aliases_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.aliases_to_delete = Some(v);
-        self
+                        v.push(input.into());
+                        self.aliases_to_delete = Some(v);
+                        self
     }
     /// <p>A list of aliases to delete.</p>
-    pub fn set_aliases_to_delete(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.aliases_to_delete = input;
-        self
+    pub fn set_aliases_to_delete(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.aliases_to_delete = input; self
     }
-    /// <p>The availability of the image version specified by the maintainer.</p>
-    /// <ul>
-    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
-    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
-    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// <p>The availability of the image version specified by the maintainer.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li> 
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li> 
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li> 
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li> 
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
         self.vendor_guidance = Some(input);
         self
     }
-    /// <p>The availability of the image version specified by the maintainer.</p>
-    /// <ul>
-    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
-    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
-    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
-    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
+    /// <p>The availability of the image version specified by the maintainer.</p> 
+    /// <ul> 
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li> 
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li> 
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li> 
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li> 
     /// </ul>
-    pub fn set_vendor_guidance(
-        mut self,
-        input: std::option::Option<crate::types::VendorGuidance>,
-    ) -> Self {
-        self.vendor_guidance = input;
-        self
+    pub fn set_vendor_guidance(mut self, input: std::option::Option<crate::types::VendorGuidance>) -> Self {
+        self.vendor_guidance = input; self
     }
-    /// <p>Indicates SageMaker job type compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
-    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
-    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// <p>Indicates SageMaker job type compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li> 
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li> 
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li> 
     /// </ul>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.job_type = Some(input);
         self
     }
-    /// <p>Indicates SageMaker job type compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
-    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
-    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
+    /// <p>Indicates SageMaker job type compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li> 
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li> 
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li> 
     /// </ul>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn ml_framework(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +249,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The machine learning framework vended in the image version.</p>
     pub fn set_ml_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ml_framework = input;
-        self
+        self.ml_framework = input; self
     }
     /// <p>The supported programming language and its version.</p>
     pub fn programming_lang(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,26 +258,24 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The supported programming language and its version.</p>
     pub fn set_programming_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.programming_lang = input;
-        self
+        self.programming_lang = input; self
     }
-    /// <p>Indicates CPU or GPU compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
-    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// <p>Indicates CPU or GPU compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li> 
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li> 
     /// </ul>
     pub fn processor(mut self, input: crate::types::Processor) -> Self {
         self.processor = Some(input);
         self
     }
-    /// <p>Indicates CPU or GPU compatibility.</p>
-    /// <ul>
-    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
-    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
+    /// <p>Indicates CPU or GPU compatibility.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li> 
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li> 
     /// </ul>
     pub fn set_processor(mut self, input: std::option::Option<crate::types::Processor>) -> Self {
-        self.processor = input;
-        self
+        self.processor = input; self
     }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn horovod(mut self, input: bool) -> Self {
@@ -304,8 +284,7 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>Indicates Horovod compatibility.</p>
     pub fn set_horovod(mut self, input: std::option::Option<bool>) -> Self {
-        self.horovod = input;
-        self
+        self.horovod = input; self
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -314,31 +293,38 @@ impl UpdateImageVersionInputBuilder {
     }
     /// <p>The maintainer description of the image version.</p>
     pub fn set_release_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.release_notes = input;
-        self
+        self.release_notes = input; self
     }
     /// Consumes the builder and constructs a [`UpdateImageVersionInput`](crate::operation::update_image_version::UpdateImageVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_image_version::UpdateImageVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_image_version::UpdateImageVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_image_version::UpdateImageVersionInput {
-                image_name: self.image_name,
-                alias: self.alias,
-                version: self.version,
-                aliases_to_add: self.aliases_to_add,
-                aliases_to_delete: self.aliases_to_delete,
-                vendor_guidance: self.vendor_guidance,
-                job_type: self.job_type,
-                ml_framework: self.ml_framework,
-                programming_lang: self.programming_lang,
-                processor: self.processor,
-                horovod: self.horovod,
-                release_notes: self.release_notes,
-            },
+                image_name: self.image_name
+                ,
+                alias: self.alias
+                ,
+                version: self.version
+                ,
+                aliases_to_add: self.aliases_to_add
+                ,
+                aliases_to_delete: self.aliases_to_delete
+                ,
+                vendor_guidance: self.vendor_guidance
+                ,
+                job_type: self.job_type
+                ,
+                ml_framework: self.ml_framework
+                ,
+                programming_lang: self.programming_lang
+                ,
+                processor: self.processor
+                ,
+                horovod: self.horovod
+                ,
+                release_notes: self.release_notes
+                ,
+            }
         )
     }
 }
+

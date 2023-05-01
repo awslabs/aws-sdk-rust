@@ -4,84 +4,56 @@ pub use crate::operation::update_input_device::_update_input_device_output::Upda
 pub use crate::operation::update_input_device::_update_input_device_input::UpdateInputDeviceInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateInputDevice`.
-///
+/// 
 /// Updates the parameters for the input device.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInputDeviceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder,
-}
-impl UpdateInputDeviceFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_input_device::builders::UpdateInputDeviceInputBuilder
+            }
+impl UpdateInputDeviceFluentBuilder  {
     /// Creates a new `UpdateInputDevice`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_input_device::UpdateInputDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_input_device::UpdateInputDeviceOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_input_device::UpdateInputDeviceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_input_device::UpdateInputDevice, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_input_device::UpdateInputDeviceOutput, aws_smithy_http::result::SdkError<crate::operation::update_input_device::UpdateInputDeviceError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// The settings that you want to apply to the HD input device.
-    pub fn hd_device_settings(
-        mut self,
-        input: crate::types::InputDeviceConfigurableSettings,
-    ) -> Self {
+    pub fn hd_device_settings(mut self, input: crate::types::InputDeviceConfigurableSettings) -> Self {
         self.inner = self.inner.hd_device_settings(input);
         self
     }
     /// The settings that you want to apply to the HD input device.
-    pub fn set_hd_device_settings(
-        mut self,
-        input: std::option::Option<crate::types::InputDeviceConfigurableSettings>,
-    ) -> Self {
+    pub fn set_hd_device_settings(mut self, input: std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
         self.inner = self.inner.set_hd_device_settings(input);
         self
     }
@@ -106,19 +78,14 @@ impl UpdateInputDeviceFluentBuilder {
         self
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn uhd_device_settings(
-        mut self,
-        input: crate::types::InputDeviceConfigurableSettings,
-    ) -> Self {
+    pub fn uhd_device_settings(mut self, input: crate::types::InputDeviceConfigurableSettings) -> Self {
         self.inner = self.inner.uhd_device_settings(input);
         self
     }
     /// The settings that you want to apply to the UHD input device.
-    pub fn set_uhd_device_settings(
-        mut self,
-        input: std::option::Option<crate::types::InputDeviceConfigurableSettings>,
-    ) -> Self {
+    pub fn set_uhd_device_settings(mut self, input: std::option::Option<crate::types::InputDeviceConfigurableSettings>) -> Self {
         self.inner = self.inner.set_uhd_device_settings(input);
         self
     }
 }
+

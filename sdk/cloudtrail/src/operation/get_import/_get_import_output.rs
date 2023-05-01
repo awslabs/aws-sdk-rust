@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImportOutput {
+pub struct GetImportOutput  {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -34,47 +34,47 @@ pub struct GetImportOutput {
 }
 impl GetImportOutput {
     /// <p> The ID of the import. </p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p> The ARN of the destination event data store. </p>
-    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn destinations(&self) -> std::option::Option<& [std::string::String]> {
         self.destinations.as_deref()
     }
     /// <p> The source S3 bucket. </p>
-    pub fn import_source(&self) -> std::option::Option<&crate::types::ImportSource> {
+    pub fn import_source(&self) -> std::option::Option<& crate::types::ImportSource> {
         self.import_source.as_ref()
     }
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    pub fn start_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_event_time.as_ref()
     }
     /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    pub fn end_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_event_time.as_ref()
     }
     /// <p> The status of the import. </p>
-    pub fn import_status(&self) -> std::option::Option<&crate::types::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p> The timestamp of the import's creation. </p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p> The timestamp of when the import was updated. </p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
-    pub fn import_statistics(&self) -> std::option::Option<&crate::types::ImportStatistics> {
+    pub fn import_statistics(&self) -> std::option::Option<& crate::types::ImportStatistics> {
         self.import_statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetImportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetImportOutput {
     /// Creates a new builder-style object to manufacture [`GetImportOutput`](crate::operation::get_import::GetImportOutput).
     pub fn builder() -> crate::operation::get_import::builders::GetImportOutputBuilder {
@@ -105,8 +105,7 @@ impl GetImportOutputBuilder {
     }
     /// <p> The ID of the import. </p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// Appends an item to `destinations`.
     ///
@@ -115,17 +114,13 @@ impl GetImportOutputBuilder {
     /// <p> The ARN of the destination event data store. </p>
     pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input.into());
-        self.destinations = Some(v);
-        self
+                        v.push(input.into());
+                        self.destinations = Some(v);
+                        self
     }
     /// <p> The ARN of the destination event data store. </p>
-    pub fn set_destinations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.destinations = input; self
     }
     /// <p> The source S3 bucket. </p>
     pub fn import_source(mut self, input: crate::types::ImportSource) -> Self {
@@ -133,12 +128,8 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> The source S3 bucket. </p>
-    pub fn set_import_source(
-        mut self,
-        input: std::option::Option<crate::types::ImportSource>,
-    ) -> Self {
-        self.import_source = input;
-        self
+    pub fn set_import_source(mut self, input: std::option::Option<crate::types::ImportSource>) -> Self {
+        self.import_source = input; self
     }
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     pub fn start_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -146,12 +137,8 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    pub fn set_start_event_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_event_time = input;
-        self
+    pub fn set_start_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_event_time = input; self
     }
     /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
     pub fn end_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -159,12 +146,8 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events to only those events logged within a specified time period. </p>
-    pub fn set_end_event_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.end_event_time = input;
-        self
+    pub fn set_end_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.end_event_time = input; self
     }
     /// <p> The status of the import. </p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -172,12 +155,8 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> The status of the import. </p>
-    pub fn set_import_status(
-        mut self,
-        input: std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
-        self.import_status = input;
-        self
+    pub fn set_import_status(mut self, input: std::option::Option<crate::types::ImportStatus>) -> Self {
+        self.import_status = input; self
     }
     /// <p> The timestamp of the import's creation. </p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,12 +164,8 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> The timestamp of the import's creation. </p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p> The timestamp of when the import was updated. </p>
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -198,12 +173,8 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> The timestamp of when the import was updated. </p>
-    pub fn set_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_timestamp = input;
-        self
+    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_timestamp = input; self
     }
     /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
     pub fn import_statistics(mut self, input: crate::types::ImportStatistics) -> Self {
@@ -211,35 +182,41 @@ impl GetImportOutputBuilder {
         self
     }
     /// <p> Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
-    pub fn set_import_statistics(
-        mut self,
-        input: std::option::Option<crate::types::ImportStatistics>,
-    ) -> Self {
-        self.import_statistics = input;
-        self
+    pub fn set_import_statistics(mut self, input: std::option::Option<crate::types::ImportStatistics>) -> Self {
+        self.import_statistics = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetImportOutput`](crate::operation::get_import::GetImportOutput).
     pub fn build(self) -> crate::operation::get_import::GetImportOutput {
         crate::operation::get_import::GetImportOutput {
-            import_id: self.import_id,
-            destinations: self.destinations,
-            import_source: self.import_source,
-            start_event_time: self.start_event_time,
-            end_event_time: self.end_event_time,
-            import_status: self.import_status,
-            created_timestamp: self.created_timestamp,
-            updated_timestamp: self.updated_timestamp,
-            import_statistics: self.import_statistics,
+            import_id: self.import_id
+            ,
+            destinations: self.destinations
+            ,
+            import_source: self.import_source
+            ,
+            start_event_time: self.start_event_time
+            ,
+            end_event_time: self.end_event_time
+            ,
+            import_status: self.import_status
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            updated_timestamp: self.updated_timestamp
+            ,
+            import_statistics: self.import_statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

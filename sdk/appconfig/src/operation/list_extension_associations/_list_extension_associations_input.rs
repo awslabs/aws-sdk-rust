@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionAssociationsInput {
+pub struct ListExtensionAssociationsInput  {
     /// <p>The ARN of an application, configuration profile, or environment.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListExtensionAssociationsInput {
 }
 impl ListExtensionAssociationsInput {
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(&self) -> std::option::Option<&str> {
+    pub fn extension_identifier(&self) -> std::option::Option<& str> {
         self.extension_identifier.as_deref()
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -37,13 +37,13 @@ impl ListExtensionAssociationsInput {
         self.max_results
     }
     /// <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListExtensionAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListExtensionAssociationsInput`](crate::operation::list_extension_associations::ListExtensionAssociationsInput).
-    pub fn builder() -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder {
         crate::operation::list_extension_associations::builders::ListExtensionAssociationsInputBuilder::default()
     }
 }
@@ -65,12 +65,8 @@ impl ListExtensionAssociationsInputBuilder {
         self
     }
     /// <p>The ARN of an application, configuration profile, or environment.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_identifier = input; self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +74,8 @@ impl ListExtensionAssociationsInputBuilder {
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.extension_identifier = input;
-        self
+    pub fn set_extension_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.extension_identifier = input; self
     }
     /// <p>The version number for the extension defined in the association.</p>
     pub fn extension_version_number(mut self, input: i32) -> Self {
@@ -92,8 +84,7 @@ impl ListExtensionAssociationsInputBuilder {
     }
     /// <p>The version number for the extension defined in the association.</p>
     pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.extension_version_number = input;
-        self
+        self.extension_version_number = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,8 +93,7 @@ impl ListExtensionAssociationsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,24 +102,24 @@ impl ListExtensionAssociationsInputBuilder {
     }
     /// <p>A token to start the list. Use this token to get the next set of results or pass null to get the first set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListExtensionAssociationsInput`](crate::operation::list_extension_associations::ListExtensionAssociationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_extension_associations::ListExtensionAssociationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_extension_associations::ListExtensionAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_extension_associations::ListExtensionAssociationsInput {
-                resource_identifier: self.resource_identifier,
-                extension_identifier: self.extension_identifier,
-                extension_version_number: self.extension_version_number,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                resource_identifier: self.resource_identifier
+                ,
+                extension_identifier: self.extension_identifier
+                ,
+                extension_version_number: self.extension_version_number
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

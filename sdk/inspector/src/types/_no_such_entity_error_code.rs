@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nosuchentityerrorcode = unimplemented!();
 /// match nosuchentityerrorcode {
@@ -36,22 +36,14 @@
 /// Specifically, when `nosuchentityerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NoSuchEntityErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NoSuchEntityErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AssessmentRunDoesNotExist,
@@ -70,71 +62,53 @@ pub enum NoSuchEntityErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     SnsTopicDoesNotExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NoSuchEntityErrorCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ASSESSMENT_RUN_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentRunDoesNotExist,
-            "ASSESSMENT_TARGET_DOES_NOT_EXIST" => {
-                NoSuchEntityErrorCode::AssessmentTargetDoesNotExist
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ASSESSMENT_RUN_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentRunDoesNotExist,
+"ASSESSMENT_TARGET_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTargetDoesNotExist,
+"ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist,
+"FINDING_DOES_NOT_EXIST" => NoSuchEntityErrorCode::FindingDoesNotExist,
+"IAM_ROLE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::IamRoleDoesNotExist,
+"RESOURCE_GROUP_DOES_NOT_EXIST" => NoSuchEntityErrorCode::ResourceGroupDoesNotExist,
+"RULES_PACKAGE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::RulesPackageDoesNotExist,
+"SNS_TOPIC_DOES_NOT_EXIST" => NoSuchEntityErrorCode::SnsTopicDoesNotExist,
+other => NoSuchEntityErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => {
-                NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist
-            }
-            "FINDING_DOES_NOT_EXIST" => NoSuchEntityErrorCode::FindingDoesNotExist,
-            "IAM_ROLE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::IamRoleDoesNotExist,
-            "RESOURCE_GROUP_DOES_NOT_EXIST" => NoSuchEntityErrorCode::ResourceGroupDoesNotExist,
-            "RULES_PACKAGE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::RulesPackageDoesNotExist,
-            "SNS_TOPIC_DOES_NOT_EXIST" => NoSuchEntityErrorCode::SnsTopicDoesNotExist,
-            other => NoSuchEntityErrorCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for NoSuchEntityErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NoSuchEntityErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NoSuchEntityErrorCode::from(s))
+                }
+            }
 impl NoSuchEntityErrorCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NoSuchEntityErrorCode::AssessmentRunDoesNotExist => "ASSESSMENT_RUN_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => {
-                "ASSESSMENT_TARGET_DOES_NOT_EXIST"
-            }
-            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => {
-                "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST"
-            }
-            NoSuchEntityErrorCode::FindingDoesNotExist => "FINDING_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::IamRoleDoesNotExist => "IAM_ROLE_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::ResourceGroupDoesNotExist => "RESOURCE_GROUP_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::RulesPackageDoesNotExist => "RULES_PACKAGE_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::SnsTopicDoesNotExist => "SNS_TOPIC_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ASSESSMENT_RUN_DOES_NOT_EXIST",
-            "ASSESSMENT_TARGET_DOES_NOT_EXIST",
-            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
-            "FINDING_DOES_NOT_EXIST",
-            "IAM_ROLE_DOES_NOT_EXIST",
-            "RESOURCE_GROUP_DOES_NOT_EXIST",
-            "RULES_PACKAGE_DOES_NOT_EXIST",
-            "SNS_TOPIC_DOES_NOT_EXIST",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NoSuchEntityErrorCode::AssessmentRunDoesNotExist => "ASSESSMENT_RUN_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => "ASSESSMENT_TARGET_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::FindingDoesNotExist => "FINDING_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::IamRoleDoesNotExist => "IAM_ROLE_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::ResourceGroupDoesNotExist => "RESOURCE_GROUP_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::RulesPackageDoesNotExist => "RULES_PACKAGE_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::SnsTopicDoesNotExist => "SNS_TOPIC_DOES_NOT_EXIST",
+    NoSuchEntityErrorCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ASSESSMENT_RUN_DOES_NOT_EXIST", "ASSESSMENT_TARGET_DOES_NOT_EXIST", "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST", "FINDING_DOES_NOT_EXIST", "IAM_ROLE_DOES_NOT_EXIST", "RESOURCE_GROUP_DOES_NOT_EXIST", "RULES_PACKAGE_DOES_NOT_EXIST", "SNS_TOPIC_DOES_NOT_EXIST"]
+                }
+            }
 impl AsRef<str> for NoSuchEntityErrorCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

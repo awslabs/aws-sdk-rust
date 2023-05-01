@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateChannelInput {
 }
 impl UpdateChannelInput {
     /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
-    pub fn channel(&self) -> std::option::Option<&str> {
+    pub fn channel(&self) -> std::option::Option<& str> {
         self.channel.as_deref()
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::Destination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::types::Destination]> {
         self.destinations.as_deref()
     }
     /// <p> Changes the name of the channel. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The ARN or ID (the ARN suffix) of the channel that you want to update.</p>
     pub fn set_channel(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// Appends an item to `destinations`.
     ///
@@ -60,17 +59,13 @@ impl UpdateChannelInputBuilder {
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
     pub fn destinations(mut self, input: crate::types::Destination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = Some(v);
-        self
+                        v.push(input);
+                        self.destinations = Some(v);
+                        self
     }
     /// <p>The ARNs of event data stores that you want to log events arriving through the channel.</p>
-    pub fn set_destinations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Destination>>) -> Self {
+        self.destinations = input; self
     }
     /// <p> Changes the name of the channel. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,20 +74,20 @@ impl UpdateChannelInputBuilder {
     }
     /// <p> Changes the name of the channel. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_channel::UpdateChannelInput {
-            channel: self.channel,
-            destinations: self.destinations,
-            name: self.name,
-        })
+    pub fn build(self) -> Result<crate::operation::update_channel::UpdateChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                channel: self.channel
+                ,
+                destinations: self.destinations
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

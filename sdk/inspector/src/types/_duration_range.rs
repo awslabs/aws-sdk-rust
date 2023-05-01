@@ -3,7 +3,7 @@
 /// <p>This data type is used in the <code>AssessmentTemplateFilter</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DurationRange {
+pub struct DurationRange  {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     #[doc(hidden)]
     pub min_seconds: i32,
@@ -43,8 +43,7 @@ impl DurationRangeBuilder {
     }
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     pub fn set_min_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_seconds = input;
-        self
+        self.min_seconds = input; self
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn max_seconds(mut self, input: i32) -> Self {
@@ -53,14 +52,18 @@ impl DurationRangeBuilder {
     }
     /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
     pub fn set_max_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_seconds = input;
-        self
+        self.max_seconds = input; self
     }
     /// Consumes the builder and constructs a [`DurationRange`](crate::types::DurationRange).
     pub fn build(self) -> crate::types::DurationRange {
         crate::types::DurationRange {
-            min_seconds: self.min_seconds.unwrap_or_default(),
-            max_seconds: self.max_seconds.unwrap_or_default(),
+            min_seconds: self.min_seconds
+                .unwrap_or_default()
+            ,
+            max_seconds: self.max_seconds
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

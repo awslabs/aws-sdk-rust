@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWirelessGatewayOutput {
+pub struct GetWirelessGatewayOutput  {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,43 +28,42 @@ pub struct GetWirelessGatewayOutput {
 }
 impl GetWirelessGatewayOutput {
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the wireless gateway.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the wireless gateway.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanGateway> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanGateway> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetWirelessGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetWirelessGatewayOutput {
     /// Creates a new builder-style object to manufacture [`GetWirelessGatewayOutput`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::get_wireless_gateway::builders::GetWirelessGatewayOutputBuilder {
+    pub fn builder() -> crate::operation::get_wireless_gateway::builders::GetWirelessGatewayOutputBuilder {
         crate::operation::get_wireless_gateway::builders::GetWirelessGatewayOutputBuilder::default()
     }
 }
@@ -90,8 +89,7 @@ impl GetWirelessGatewayOutputBuilder {
     }
     /// <p>The name of the resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ID of the wireless gateway.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +98,7 @@ impl GetWirelessGatewayOutputBuilder {
     }
     /// <p>The ID of the wireless gateway.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The description of the resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +107,7 @@ impl GetWirelessGatewayOutputBuilder {
     }
     /// <p>The description of the resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Information about the wireless gateway.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanGateway) -> Self {
@@ -119,12 +115,8 @@ impl GetWirelessGatewayOutputBuilder {
         self
     }
     /// <p>Information about the wireless gateway.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: std::option::Option<crate::types::LoRaWanGateway>,
-    ) -> Self {
-        self.lo_ra_wan = input;
-        self
+    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanGateway>) -> Self {
+        self.lo_ra_wan = input; self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +125,7 @@ impl GetWirelessGatewayOutputBuilder {
     }
     /// <p>The Amazon Resource Name of the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +134,7 @@ impl GetWirelessGatewayOutputBuilder {
     }
     /// <p>The name of the thing associated with the wireless gateway. The value is empty if a thing isn't associated with the gateway.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
     pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,29 +143,36 @@ impl GetWirelessGatewayOutputBuilder {
     }
     /// <p>The ARN of the thing associated with the wireless gateway.</p>
     pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetWirelessGatewayOutput`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput).
     pub fn build(self) -> crate::operation::get_wireless_gateway::GetWirelessGatewayOutput {
         crate::operation::get_wireless_gateway::GetWirelessGatewayOutput {
-            name: self.name,
-            id: self.id,
-            description: self.description,
-            lo_ra_wan: self.lo_ra_wan,
-            arn: self.arn,
-            thing_name: self.thing_name,
-            thing_arn: self.thing_arn,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            description: self.description
+            ,
+            lo_ra_wan: self.lo_ra_wan
+            ,
+            arn: self.arn
+            ,
+            thing_name: self.thing_name
+            ,
+            thing_arn: self.thing_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

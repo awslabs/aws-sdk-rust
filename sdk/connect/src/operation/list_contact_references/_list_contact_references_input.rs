@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactReferencesInput {
+pub struct ListContactReferencesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,37 +12,35 @@ pub struct ListContactReferencesInput {
     /// <p>The type of reference.</p>
     #[doc(hidden)]
     pub reference_types: std::option::Option<std::vec::Vec<crate::types::ReferenceType>>,
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
-    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> 
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p> 
     /// </important>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListContactReferencesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the initial contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The type of reference.</p>
-    pub fn reference_types(&self) -> std::option::Option<&[crate::types::ReferenceType]> {
+    pub fn reference_types(&self) -> std::option::Option<& [crate::types::ReferenceType]> {
         self.reference_types.as_deref()
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
-    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> 
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p> 
     /// </important>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListContactReferencesInput {
     /// Creates a new builder-style object to manufacture [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder {
         crate::operation::list_contact_references::builders::ListContactReferencesInputBuilder::default()
     }
 }
@@ -64,8 +62,7 @@ impl ListContactReferencesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the initial contact.</p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +71,7 @@ impl ListContactReferencesInputBuilder {
     }
     /// <p>The identifier of the initial contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// Appends an item to `reference_types`.
     ///
@@ -84,46 +80,41 @@ impl ListContactReferencesInputBuilder {
     /// <p>The type of reference.</p>
     pub fn reference_types(mut self, input: crate::types::ReferenceType) -> Self {
         let mut v = self.reference_types.unwrap_or_default();
-        v.push(input);
-        self.reference_types = Some(v);
-        self
+                        v.push(input);
+                        self.reference_types = Some(v);
+                        self
     }
     /// <p>The type of reference.</p>
-    pub fn set_reference_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReferenceType>>,
-    ) -> Self {
-        self.reference_types = input;
-        self
+    pub fn set_reference_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReferenceType>>) -> Self {
+        self.reference_types = input; self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
-    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> 
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p> 
     /// </important>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important>
-    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p>
+    /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> 
+    /// <p>This is not expected to be set, because the value returned in the previous response is always null.</p> 
     /// </important>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListContactReferencesInput`](crate::operation::list_contact_references::ListContactReferencesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_contact_references::ListContactReferencesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_contact_references::ListContactReferencesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_contact_references::ListContactReferencesInput {
-                instance_id: self.instance_id,
-                contact_id: self.contact_id,
-                reference_types: self.reference_types,
-                next_token: self.next_token,
-            },
+                instance_id: self.instance_id
+                ,
+                contact_id: self.contact_id
+                ,
+                reference_types: self.reference_types
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

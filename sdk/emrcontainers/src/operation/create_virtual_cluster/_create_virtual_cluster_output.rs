@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVirtualClusterOutput {
+pub struct CreateVirtualClusterOutput  {
     /// <p>This output contains the virtual cluster ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct CreateVirtualClusterOutput {
 }
 impl CreateVirtualClusterOutput {
     /// <p>This output contains the virtual cluster ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>This output contains the name of the virtual cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>This output contains the ARN of virtual cluster.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVirtualClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualClusterOutput`](crate::operation::create_virtual_cluster::CreateVirtualClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterOutputBuilder {
+    pub fn builder() -> crate::operation::create_virtual_cluster::builders::CreateVirtualClusterOutputBuilder {
         crate::operation::create_virtual_cluster::builders::CreateVirtualClusterOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl CreateVirtualClusterOutputBuilder {
     }
     /// <p>This output contains the virtual cluster ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>This output contains the name of the virtual cluster.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +66,7 @@ impl CreateVirtualClusterOutputBuilder {
     }
     /// <p>This output contains the name of the virtual cluster.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>This output contains the ARN of virtual cluster.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,25 +75,28 @@ impl CreateVirtualClusterOutputBuilder {
     }
     /// <p>This output contains the ARN of virtual cluster.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVirtualClusterOutput`](crate::operation::create_virtual_cluster::CreateVirtualClusterOutput).
     pub fn build(self) -> crate::operation::create_virtual_cluster::CreateVirtualClusterOutput {
         crate::operation::create_virtual_cluster::CreateVirtualClusterOutput {
-            id: self.id,
-            name: self.name,
-            arn: self.arn,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

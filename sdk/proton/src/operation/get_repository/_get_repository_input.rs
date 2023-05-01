@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryInput {
+pub struct GetRepositoryInput  {
     /// <p>The repository provider.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::types::RepositoryProvider>,
@@ -12,11 +12,11 @@ pub struct GetRepositoryInput {
 }
 impl GetRepositoryInput {
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::types::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl GetRepositoryInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_provider(
-        mut self,
-        input: std::option::Option<crate::types::RepositoryProvider>,
-    ) -> Self {
-        self.provider = input;
-        self
+    pub fn set_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
+        self.provider = input; self
     }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,19 +51,18 @@ impl GetRepositoryInputBuilder {
     }
     /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_repository::GetRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_repository::GetRepositoryInput {
-            provider: self.provider,
-            name: self.name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_repository::GetRepositoryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_repository::GetRepositoryInput {
+                provider: self.provider
+                ,
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

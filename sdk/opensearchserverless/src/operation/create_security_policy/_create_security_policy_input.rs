@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSecurityPolicyInput {
+pub struct CreateSecurityPolicyInput  {
     /// <p>The type of security policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SecurityPolicyType>,
@@ -21,30 +21,29 @@ pub struct CreateSecurityPolicyInput {
 }
 impl CreateSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SecurityPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the new policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl CreateSecurityPolicyInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder {
+    pub fn builder() -> crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder {
         crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder::default()
     }
 }
@@ -66,12 +65,8 @@ impl CreateSecurityPolicyInputBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::SecurityPolicyType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +75,7 @@ impl CreateSecurityPolicyInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +84,7 @@ impl CreateSecurityPolicyInputBuilder {
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The JSON policy document to use as the content for the new policy.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +93,7 @@ impl CreateSecurityPolicyInputBuilder {
     }
     /// <p>The JSON policy document to use as the content for the new policy.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,24 +102,24 @@ impl CreateSecurityPolicyInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_security_policy::CreateSecurityPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_security_policy::CreateSecurityPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_security_policy::CreateSecurityPolicyInput {
-                r#type: self.r#type,
-                name: self.name,
-                description: self.description,
-                policy: self.policy,
-                client_token: self.client_token,
-            },
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                policy: self.policy
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetMetadataInput {
+pub struct DescribeFleetMetadataInput  {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFleetMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 impl DescribeFleetMetadataInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataInputBuilder {
         crate::operation::describe_fleet_metadata::builders::DescribeFleetMetadataInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DescribeFleetMetadataInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFleetMetadataInput`](crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_fleet_metadata::DescribeFleetMetadataInput {
-                fleet_arn: self.fleet_arn,
-            },
+                fleet_arn: self.fleet_arn
+                ,
+            }
         )
     }
 }
+

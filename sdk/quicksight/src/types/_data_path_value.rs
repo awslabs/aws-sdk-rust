@@ -3,7 +3,7 @@
 /// <p>The data path that needs to be sorted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataPathValue {
+pub struct DataPathValue  {
     /// <p>The field ID of the field that needs to be sorted.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct DataPathValue {
 }
 impl DataPathValue {
     /// <p>The field ID of the field that needs to be sorted.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> std::option::Option<& str> {
         self.field_id.as_deref()
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
-    pub fn field_value(&self) -> std::option::Option<&str> {
+    pub fn field_value(&self) -> std::option::Option<& str> {
         self.field_value.as_deref()
     }
 }
-impl std::fmt::Debug for DataPathValue {
+impl  std::fmt::Debug for DataPathValue  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathValue");
         formatter.field("field_id", &self.field_id);
@@ -51,8 +51,7 @@ impl DataPathValueBuilder {
     }
     /// <p>The field ID of the field that needs to be sorted.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input;
-        self
+        self.field_id = input; self
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
     pub fn field_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl DataPathValueBuilder {
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
     pub fn set_field_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_value = input;
-        self
+        self.field_value = input; self
     }
     /// Consumes the builder and constructs a [`DataPathValue`](crate::types::DataPathValue).
     pub fn build(self) -> crate::types::DataPathValue {
         crate::types::DataPathValue {
-            field_id: self.field_id,
-            field_value: self.field_value,
+            field_id: self.field_id
+            ,
+            field_value: self.field_value
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for DataPathValueBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceNetworkInterface {
+pub struct InstanceNetworkInterface  {
     /// <p>The association information for an Elastic IPv4 associated with the network interface.</p>
     #[doc(hidden)]
     pub association: std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
@@ -36,8 +36,7 @@ pub struct InstanceNetworkInterface {
     pub private_ip_address: std::option::Option<std::string::String>,
     /// <p>The private IPv4 addresses associated with the network interface.</p>
     #[doc(hidden)]
-    pub private_ip_addresses:
-        std::option::Option<std::vec::Vec<crate::types::InstancePrivateIpAddress>>,
+    pub private_ip_addresses: std::option::Option<std::vec::Vec<crate::types::InstancePrivateIpAddress>>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
     #[doc(hidden)]
     pub source_dest_check: std::option::Option<bool>,
@@ -50,7 +49,7 @@ pub struct InstanceNetworkInterface {
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The type of network interface.</p>
+    /// <p>The type of network interface.</p> 
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     #[doc(hidden)]
     pub interface_type: std::option::Option<std::string::String>,
@@ -63,53 +62,47 @@ pub struct InstanceNetworkInterface {
 }
 impl InstanceNetworkInterface {
     /// <p>The association information for an Elastic IPv4 associated with the network interface.</p>
-    pub fn association(
-        &self,
-    ) -> std::option::Option<&crate::types::InstanceNetworkInterfaceAssociation> {
+    pub fn association(&self) -> std::option::Option<& crate::types::InstanceNetworkInterfaceAssociation> {
         self.association.as_ref()
     }
     /// <p>The network interface attachment.</p>
-    pub fn attachment(
-        &self,
-    ) -> std::option::Option<&crate::types::InstanceNetworkInterfaceAttachment> {
+    pub fn attachment(&self) -> std::option::Option<& crate::types::InstanceNetworkInterfaceAttachment> {
         self.attachment.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The security groups.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::types::GroupIdentifier]> {
         self.groups.as_deref()
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn ipv6_addresses(&self) -> std::option::Option<&[crate::types::InstanceIpv6Address]> {
+    pub fn ipv6_addresses(&self) -> std::option::Option<& [crate::types::InstanceIpv6Address]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p>The MAC address.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that created the network interface.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The private DNS name.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn private_ip_addresses(
-        &self,
-    ) -> std::option::Option<&[crate::types::InstancePrivateIpAddress]> {
+    pub fn private_ip_addresses(&self) -> std::option::Option<& [crate::types::InstancePrivateIpAddress]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
@@ -117,28 +110,28 @@ impl InstanceNetworkInterface {
         self.source_dest_check
     }
     /// <p>The status of the network interface.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::NetworkInterfaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::NetworkInterfaceStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
-    /// <p>The type of network interface.</p>
+    /// <p>The type of network interface.</p> 
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
-    pub fn interface_type(&self) -> std::option::Option<&str> {
+    pub fn interface_type(&self) -> std::option::Option<& str> {
         self.interface_type.as_deref()
     }
     /// <p>The IPv4 delegated prefixes that are assigned to the network interface.</p>
-    pub fn ipv4_prefixes(&self) -> std::option::Option<&[crate::types::InstanceIpv4Prefix]> {
+    pub fn ipv4_prefixes(&self) -> std::option::Option<& [crate::types::InstanceIpv4Prefix]> {
         self.ipv4_prefixes.as_deref()
     }
     /// <p>The IPv6 delegated prefixes that are assigned to the network interface.</p>
-    pub fn ipv6_prefixes(&self) -> std::option::Option<&[crate::types::InstanceIpv6Prefix]> {
+    pub fn ipv6_prefixes(&self) -> std::option::Option<& [crate::types::InstanceIpv6Prefix]> {
         self.ipv6_prefixes.as_deref()
     }
 }
@@ -157,15 +150,13 @@ pub struct InstanceNetworkInterfaceBuilder {
     pub(crate) attachment: std::option::Option<crate::types::InstanceNetworkInterfaceAttachment>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
-    pub(crate) ipv6_addresses:
-        std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Address>>,
+    pub(crate) ipv6_addresses: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Address>>,
     pub(crate) mac_address: std::option::Option<std::string::String>,
     pub(crate) network_interface_id: std::option::Option<std::string::String>,
     pub(crate) owner_id: std::option::Option<std::string::String>,
     pub(crate) private_dns_name: std::option::Option<std::string::String>,
     pub(crate) private_ip_address: std::option::Option<std::string::String>,
-    pub(crate) private_ip_addresses:
-        std::option::Option<std::vec::Vec<crate::types::InstancePrivateIpAddress>>,
+    pub(crate) private_ip_addresses: std::option::Option<std::vec::Vec<crate::types::InstancePrivateIpAddress>>,
     pub(crate) source_dest_check: std::option::Option<bool>,
     pub(crate) status: std::option::Option<crate::types::NetworkInterfaceStatus>,
     pub(crate) subnet_id: std::option::Option<std::string::String>,
@@ -181,12 +172,8 @@ impl InstanceNetworkInterfaceBuilder {
         self
     }
     /// <p>The association information for an Elastic IPv4 associated with the network interface.</p>
-    pub fn set_association(
-        mut self,
-        input: std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>,
-    ) -> Self {
-        self.association = input;
-        self
+    pub fn set_association(mut self, input: std::option::Option<crate::types::InstanceNetworkInterfaceAssociation>) -> Self {
+        self.association = input; self
     }
     /// <p>The network interface attachment.</p>
     pub fn attachment(mut self, input: crate::types::InstanceNetworkInterfaceAttachment) -> Self {
@@ -194,12 +181,8 @@ impl InstanceNetworkInterfaceBuilder {
         self
     }
     /// <p>The network interface attachment.</p>
-    pub fn set_attachment(
-        mut self,
-        input: std::option::Option<crate::types::InstanceNetworkInterfaceAttachment>,
-    ) -> Self {
-        self.attachment = input;
-        self
+    pub fn set_attachment(mut self, input: std::option::Option<crate::types::InstanceNetworkInterfaceAttachment>) -> Self {
+        self.attachment = input; self
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,8 +191,7 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `groups`.
     ///
@@ -218,17 +200,13 @@ impl InstanceNetworkInterfaceBuilder {
     /// <p>The security groups.</p>
     pub fn groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = Some(v);
-        self
+                        v.push(input);
+                        self.groups = Some(v);
+                        self
     }
     /// <p>The security groups.</p>
-    pub fn set_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
-    ) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>) -> Self {
+        self.groups = input; self
     }
     /// Appends an item to `ipv6_addresses`.
     ///
@@ -237,17 +215,13 @@ impl InstanceNetworkInterfaceBuilder {
     /// <p>The IPv6 addresses associated with the network interface.</p>
     pub fn ipv6_addresses(mut self, input: crate::types::InstanceIpv6Address) -> Self {
         let mut v = self.ipv6_addresses.unwrap_or_default();
-        v.push(input);
-        self.ipv6_addresses = Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_addresses = Some(v);
+                        self
     }
     /// <p>The IPv6 addresses associated with the network interface.</p>
-    pub fn set_ipv6_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Address>>,
-    ) -> Self {
-        self.ipv6_addresses = input;
-        self
+    pub fn set_ipv6_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Address>>) -> Self {
+        self.ipv6_addresses = input; self
     }
     /// <p>The MAC address.</p>
     pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,8 +230,7 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>The MAC address.</p>
     pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,12 +238,8 @@ impl InstanceNetworkInterfaceBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_interface_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that created the network interface.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -279,8 +248,7 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that created the network interface.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The private DNS name.</p>
     pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,8 +257,7 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>The private DNS name.</p>
     pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_dns_name = input;
-        self
+        self.private_dns_name = input; self
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
     pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,12 +265,8 @@ impl InstanceNetworkInterfaceBuilder {
         self
     }
     /// <p>The IPv4 address of the network interface within the subnet.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.private_ip_address = input;
-        self
+    pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.private_ip_address = input; self
     }
     /// Appends an item to `private_ip_addresses`.
     ///
@@ -312,17 +275,13 @@ impl InstanceNetworkInterfaceBuilder {
     /// <p>The private IPv4 addresses associated with the network interface.</p>
     pub fn private_ip_addresses(mut self, input: crate::types::InstancePrivateIpAddress) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.private_ip_addresses = Some(v);
-        self
+                        v.push(input);
+                        self.private_ip_addresses = Some(v);
+                        self
     }
     /// <p>The private IPv4 addresses associated with the network interface.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstancePrivateIpAddress>>,
-    ) -> Self {
-        self.private_ip_addresses = input;
-        self
+    pub fn set_private_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstancePrivateIpAddress>>) -> Self {
+        self.private_ip_addresses = input; self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn source_dest_check(mut self, input: bool) -> Self {
@@ -331,8 +290,7 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn set_source_dest_check(mut self, input: std::option::Option<bool>) -> Self {
-        self.source_dest_check = input;
-        self
+        self.source_dest_check = input; self
     }
     /// <p>The status of the network interface.</p>
     pub fn status(mut self, input: crate::types::NetworkInterfaceStatus) -> Self {
@@ -340,12 +298,8 @@ impl InstanceNetworkInterfaceBuilder {
         self
     }
     /// <p>The status of the network interface.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::NetworkInterfaceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::NetworkInterfaceStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,8 +308,7 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -364,20 +317,18 @@ impl InstanceNetworkInterfaceBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
-    /// <p>The type of network interface.</p>
+    /// <p>The type of network interface.</p> 
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub fn interface_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.interface_type = Some(input.into());
         self
     }
-    /// <p>The type of network interface.</p>
+    /// <p>The type of network interface.</p> 
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
     pub fn set_interface_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.interface_type = input;
-        self
+        self.interface_type = input; self
     }
     /// Appends an item to `ipv4_prefixes`.
     ///
@@ -386,17 +337,13 @@ impl InstanceNetworkInterfaceBuilder {
     /// <p>The IPv4 delegated prefixes that are assigned to the network interface.</p>
     pub fn ipv4_prefixes(mut self, input: crate::types::InstanceIpv4Prefix) -> Self {
         let mut v = self.ipv4_prefixes.unwrap_or_default();
-        v.push(input);
-        self.ipv4_prefixes = Some(v);
-        self
+                        v.push(input);
+                        self.ipv4_prefixes = Some(v);
+                        self
     }
     /// <p>The IPv4 delegated prefixes that are assigned to the network interface.</p>
-    pub fn set_ipv4_prefixes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv4Prefix>>,
-    ) -> Self {
-        self.ipv4_prefixes = input;
-        self
+    pub fn set_ipv4_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv4Prefix>>) -> Self {
+        self.ipv4_prefixes = input; self
     }
     /// Appends an item to `ipv6_prefixes`.
     ///
@@ -405,39 +352,54 @@ impl InstanceNetworkInterfaceBuilder {
     /// <p>The IPv6 delegated prefixes that are assigned to the network interface.</p>
     pub fn ipv6_prefixes(mut self, input: crate::types::InstanceIpv6Prefix) -> Self {
         let mut v = self.ipv6_prefixes.unwrap_or_default();
-        v.push(input);
-        self.ipv6_prefixes = Some(v);
-        self
+                        v.push(input);
+                        self.ipv6_prefixes = Some(v);
+                        self
     }
     /// <p>The IPv6 delegated prefixes that are assigned to the network interface.</p>
-    pub fn set_ipv6_prefixes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Prefix>>,
-    ) -> Self {
-        self.ipv6_prefixes = input;
-        self
+    pub fn set_ipv6_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Prefix>>) -> Self {
+        self.ipv6_prefixes = input; self
     }
     /// Consumes the builder and constructs a [`InstanceNetworkInterface`](crate::types::InstanceNetworkInterface).
     pub fn build(self) -> crate::types::InstanceNetworkInterface {
         crate::types::InstanceNetworkInterface {
-            association: self.association,
-            attachment: self.attachment,
-            description: self.description,
-            groups: self.groups,
-            ipv6_addresses: self.ipv6_addresses,
-            mac_address: self.mac_address,
-            network_interface_id: self.network_interface_id,
-            owner_id: self.owner_id,
-            private_dns_name: self.private_dns_name,
-            private_ip_address: self.private_ip_address,
-            private_ip_addresses: self.private_ip_addresses,
-            source_dest_check: self.source_dest_check,
-            status: self.status,
-            subnet_id: self.subnet_id,
-            vpc_id: self.vpc_id,
-            interface_type: self.interface_type,
-            ipv4_prefixes: self.ipv4_prefixes,
-            ipv6_prefixes: self.ipv6_prefixes,
+            association: self.association
+            ,
+            attachment: self.attachment
+            ,
+            description: self.description
+            ,
+            groups: self.groups
+            ,
+            ipv6_addresses: self.ipv6_addresses
+            ,
+            mac_address: self.mac_address
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            owner_id: self.owner_id
+            ,
+            private_dns_name: self.private_dns_name
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            private_ip_addresses: self.private_ip_addresses
+            ,
+            source_dest_check: self.source_dest_check
+            ,
+            status: self.status
+            ,
+            subnet_id: self.subnet_id
+            ,
+            vpc_id: self.vpc_id
+            ,
+            interface_type: self.interface_type
+            ,
+            ipv4_prefixes: self.ipv4_prefixes
+            ,
+            ipv6_prefixes: self.ipv6_prefixes
+            ,
         }
     }
 }
+

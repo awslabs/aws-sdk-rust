@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingAggregatorOutput {
+pub struct GetFindingAggregatorOutput  {
     /// <p>The ARN of the finding aggregator.</p>
     #[doc(hidden)]
     pub finding_aggregator_arn: std::option::Option<std::string::String>,
@@ -19,31 +19,30 @@ pub struct GetFindingAggregatorOutput {
 }
 impl GetFindingAggregatorOutput {
     /// <p>The ARN of the finding aggregator.</p>
-    pub fn finding_aggregator_arn(&self) -> std::option::Option<&str> {
+    pub fn finding_aggregator_arn(&self) -> std::option::Option<& str> {
         self.finding_aggregator_arn.as_deref()
     }
     /// <p>The aggregation Region.</p>
-    pub fn finding_aggregation_region(&self) -> std::option::Option<&str> {
+    pub fn finding_aggregation_region(&self) -> std::option::Option<& str> {
         self.finding_aggregation_region.as_deref()
     }
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
-    pub fn region_linking_mode(&self) -> std::option::Option<&str> {
+    pub fn region_linking_mode(&self) -> std::option::Option<& str> {
         self.region_linking_mode.as_deref()
     }
     /// <p>The list of excluded Regions or included Regions.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetFindingAggregatorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFindingAggregatorOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingAggregatorOutput`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput).
-    pub fn builder(
-    ) -> crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder {
+    pub fn builder() -> crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder {
         crate::operation::get_finding_aggregator::builders::GetFindingAggregatorOutputBuilder::default()
     }
 }
@@ -65,12 +64,8 @@ impl GetFindingAggregatorOutputBuilder {
         self
     }
     /// <p>The ARN of the finding aggregator.</p>
-    pub fn set_finding_aggregator_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.finding_aggregator_arn = input;
-        self
+    pub fn set_finding_aggregator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.finding_aggregator_arn = input; self
     }
     /// <p>The aggregation Region.</p>
     pub fn finding_aggregation_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +73,8 @@ impl GetFindingAggregatorOutputBuilder {
         self
     }
     /// <p>The aggregation Region.</p>
-    pub fn set_finding_aggregation_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.finding_aggregation_region = input;
-        self
+    pub fn set_finding_aggregation_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.finding_aggregation_region = input; self
     }
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
     pub fn region_linking_mode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +82,8 @@ impl GetFindingAggregatorOutputBuilder {
         self
     }
     /// <p>Indicates whether to link all Regions, all Regions except for a list of excluded Regions, or a list of included Regions.</p>
-    pub fn set_region_linking_mode(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.region_linking_mode = input;
-        self
+    pub fn set_region_linking_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.region_linking_mode = input; self
     }
     /// Appends an item to `regions`.
     ///
@@ -105,35 +92,36 @@ impl GetFindingAggregatorOutputBuilder {
     /// <p>The list of excluded Regions or included Regions.</p>
     pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input.into());
-        self.regions = Some(v);
-        self
+                        v.push(input.into());
+                        self.regions = Some(v);
+                        self
     }
     /// <p>The list of excluded Regions or included Regions.</p>
-    pub fn set_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.regions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFindingAggregatorOutput`](crate::operation::get_finding_aggregator::GetFindingAggregatorOutput).
     pub fn build(self) -> crate::operation::get_finding_aggregator::GetFindingAggregatorOutput {
         crate::operation::get_finding_aggregator::GetFindingAggregatorOutput {
-            finding_aggregator_arn: self.finding_aggregator_arn,
-            finding_aggregation_region: self.finding_aggregation_region,
-            region_linking_mode: self.region_linking_mode,
-            regions: self.regions,
+            finding_aggregator_arn: self.finding_aggregator_arn
+            ,
+            finding_aggregation_region: self.finding_aggregation_region
+            ,
+            region_linking_mode: self.region_linking_mode
+            ,
+            regions: self.regions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

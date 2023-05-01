@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerServicesInput {
-    /// <p>The name of the container service for which to return information.</p>
+pub struct GetContainerServicesInput  {
+    /// <p>The name of the container service for which to return information.</p> 
     /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl GetContainerServicesInput {
-    /// <p>The name of the container service for which to return information.</p>
+    /// <p>The name of the container service for which to return information.</p> 
     /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
 impl GetContainerServicesInput {
     /// Creates a new builder-style object to manufacture [`GetContainerServicesInput`](crate::operation::get_container_services::GetContainerServicesInput).
-    pub fn builder(
-    ) -> crate::operation::get_container_services::builders::GetContainerServicesInputBuilder {
+    pub fn builder() -> crate::operation::get_container_services::builders::GetContainerServicesInputBuilder {
         crate::operation::get_container_services::builders::GetContainerServicesInputBuilder::default()
     }
 }
@@ -30,29 +29,25 @@ pub struct GetContainerServicesInputBuilder {
     pub(crate) service_name: std::option::Option<std::string::String>,
 }
 impl GetContainerServicesInputBuilder {
-    /// <p>The name of the container service for which to return information.</p>
+    /// <p>The name of the container service for which to return information.</p> 
     /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.service_name = Some(input.into());
         self
     }
-    /// <p>The name of the container service for which to return information.</p>
+    /// <p>The name of the container service for which to return information.</p> 
     /// <p>When omitted, the response includes all of your container services in the Amazon Web Services Region where the request is made.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// Consumes the builder and constructs a [`GetContainerServicesInput`](crate::operation::get_container_services::GetContainerServicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_container_services::GetContainerServicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_container_services::GetContainerServicesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_container_services::GetContainerServicesInput {
-                service_name: self.service_name,
-            },
+                service_name: self.service_name
+                ,
+            }
         )
     }
 }
+

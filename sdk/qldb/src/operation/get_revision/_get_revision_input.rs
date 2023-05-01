@@ -2,43 +2,43 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRevisionInput {
+pub struct GetRevisionInput  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     #[doc(hidden)]
     pub block_address: std::option::Option<crate::types::ValueHolder>,
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     #[doc(hidden)]
     pub digest_tip_address: std::option::Option<crate::types::ValueHolder>,
 }
 impl GetRevisionInput {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    pub fn block_address(&self) -> std::option::Option<&crate::types::ValueHolder> {
+    pub fn block_address(&self) -> std::option::Option<& crate::types::ValueHolder> {
         self.block_address.as_ref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
-    pub fn document_id(&self) -> std::option::Option<&str> {
+    pub fn document_id(&self) -> std::option::Option<& str> {
         self.document_id.as_deref()
     }
-    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    pub fn digest_tip_address(&self) -> std::option::Option<&crate::types::ValueHolder> {
+    pub fn digest_tip_address(&self) -> std::option::Option<& crate::types::ValueHolder> {
         self.digest_tip_address.as_ref()
     }
 }
-impl std::fmt::Debug for GetRevisionInput {
+impl  std::fmt::Debug for GetRevisionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRevisionInput");
         formatter.field("name", &self.name);
@@ -72,23 +72,18 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
     pub fn block_address(mut self, input: crate::types::ValueHolder) -> Self {
         self.block_address = Some(input);
         self
     }
-    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The block location of the document revision to be verified. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-    pub fn set_block_address(
-        mut self,
-        input: std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
-        self.block_address = input;
-        self
+    pub fn set_block_address(mut self, input: std::option::Option<crate::types::ValueHolder>) -> Self {
+        self.block_address = input; self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,37 +92,33 @@ impl GetRevisionInputBuilder {
     }
     /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input;
-        self
+        self.document_id = input; self
     }
-    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
     pub fn digest_tip_address(mut self, input: crate::types::ValueHolder) -> Self {
         self.digest_tip_address = Some(input);
         self
     }
-    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+    /// <p>The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p> 
     /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-    pub fn set_digest_tip_address(
-        mut self,
-        input: std::option::Option<crate::types::ValueHolder>,
-    ) -> Self {
-        self.digest_tip_address = input;
-        self
+    pub fn set_digest_tip_address(mut self, input: std::option::Option<crate::types::ValueHolder>) -> Self {
+        self.digest_tip_address = input; self
     }
     /// Consumes the builder and constructs a [`GetRevisionInput`](crate::operation::get_revision::GetRevisionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_revision::GetRevisionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_revision::GetRevisionInput {
-            name: self.name,
-            block_address: self.block_address,
-            document_id: self.document_id,
-            digest_tip_address: self.digest_tip_address,
-        })
+    pub fn build(self) -> Result<crate::operation::get_revision::GetRevisionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_revision::GetRevisionInput {
+                name: self.name
+                ,
+                block_address: self.block_address
+                ,
+                document_id: self.document_id
+                ,
+                digest_tip_address: self.digest_tip_address
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for GetRevisionInputBuilder {
@@ -140,3 +131,4 @@ impl std::fmt::Debug for GetRevisionInputBuilder {
         formatter.finish()
     }
 }
+

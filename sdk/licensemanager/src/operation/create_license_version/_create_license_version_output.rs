@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLicenseVersionOutput {
+pub struct CreateLicenseVersionOutput  {
     /// <p>License ARN.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct CreateLicenseVersionOutput {
 }
 impl CreateLicenseVersionOutput {
     /// <p>License ARN.</p>
-    pub fn license_arn(&self) -> std::option::Option<&str> {
+    pub fn license_arn(&self) -> std::option::Option<& str> {
         self.license_arn.as_deref()
     }
     /// <p>New version of the license.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>License status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::LicenseStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLicenseVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateLicenseVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLicenseVersionOutput`](crate::operation::create_license_version::CreateLicenseVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_license_version::builders::CreateLicenseVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_license_version::builders::CreateLicenseVersionOutputBuilder {
         crate::operation::create_license_version::builders::CreateLicenseVersionOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl CreateLicenseVersionOutputBuilder {
     }
     /// <p>License ARN.</p>
     pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_arn = input;
-        self
+        self.license_arn = input; self
     }
     /// <p>New version of the license.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +66,7 @@ impl CreateLicenseVersionOutputBuilder {
     }
     /// <p>New version of the license.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>License status.</p>
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
@@ -78,25 +75,28 @@ impl CreateLicenseVersionOutputBuilder {
     }
     /// <p>License status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::LicenseStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateLicenseVersionOutput`](crate::operation::create_license_version::CreateLicenseVersionOutput).
     pub fn build(self) -> crate::operation::create_license_version::CreateLicenseVersionOutput {
         crate::operation::create_license_version::CreateLicenseVersionOutput {
-            license_arn: self.license_arn,
-            version: self.version,
-            status: self.status,
+            license_arn: self.license_arn
+            ,
+            version: self.version
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

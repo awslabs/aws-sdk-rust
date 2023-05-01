@@ -3,14 +3,14 @@
 /// <p>Specifies the integrity algorithm for the VPN tunnel for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Phase2IntegrityAlgorithmsRequestListValue {
+pub struct Phase2IntegrityAlgorithmsRequestListValue  {
     /// <p>The integrity algorithm.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Phase2IntegrityAlgorithmsRequestListValue {
     /// <p>The integrity algorithm.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl Phase2IntegrityAlgorithmsRequestListValueBuilder {
     }
     /// <p>The integrity algorithm.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Phase2IntegrityAlgorithmsRequestListValue`](crate::types::Phase2IntegrityAlgorithmsRequestListValue).
     pub fn build(self) -> crate::types::Phase2IntegrityAlgorithmsRequestListValue {
-        crate::types::Phase2IntegrityAlgorithmsRequestListValue { value: self.value }
+        crate::types::Phase2IntegrityAlgorithmsRequestListValue {
+            value: self.value
+            ,
+        }
     }
 }
+

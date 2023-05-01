@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlacementGroupInput {
+pub struct CreatePlacementGroupInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p> 
     /// <p>Constraints: Up to 255 ASCII characters</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -19,10 +19,10 @@ pub struct CreatePlacementGroupInput {
     /// <p>The tags to apply to the new placement group.</p>
     #[doc(hidden)]
     pub tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>Determines how placement groups spread instances. </p>
-    /// <ul>
-    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
-    /// <li> <p>Rack – No usage restrictions.</p> </li>
+    /// <p>Determines how placement groups spread instances. </p> 
+    /// <ul> 
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li> 
+    /// <li> <p>Rack – No usage restrictions.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub spread_level: std::option::Option<crate::types::SpreadLevel>,
@@ -32,13 +32,13 @@ impl CreatePlacementGroupInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p> 
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The placement strategy.</p>
-    pub fn strategy(&self) -> std::option::Option<&crate::types::PlacementStrategy> {
+    pub fn strategy(&self) -> std::option::Option<& crate::types::PlacementStrategy> {
         self.strategy.as_ref()
     }
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
@@ -46,22 +46,21 @@ impl CreatePlacementGroupInput {
         self.partition_count
     }
     /// <p>The tags to apply to the new placement group.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
-    /// <p>Determines how placement groups spread instances. </p>
-    /// <ul>
-    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
-    /// <li> <p>Rack – No usage restrictions.</p> </li>
+    /// <p>Determines how placement groups spread instances. </p> 
+    /// <ul> 
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li> 
+    /// <li> <p>Rack – No usage restrictions.</p> </li> 
     /// </ul>
-    pub fn spread_level(&self) -> std::option::Option<&crate::types::SpreadLevel> {
+    pub fn spread_level(&self) -> std::option::Option<& crate::types::SpreadLevel> {
         self.spread_level.as_ref()
     }
 }
 impl CreatePlacementGroupInput {
     /// Creates a new builder-style object to manufacture [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
-    pub fn builder(
-    ) -> crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder {
         crate::operation::create_placement_group::builders::CreatePlacementGroupInputBuilder::default()
     }
 }
@@ -74,8 +73,7 @@ pub struct CreatePlacementGroupInputBuilder {
     pub(crate) group_name: std::option::Option<std::string::String>,
     pub(crate) strategy: std::option::Option<crate::types::PlacementStrategy>,
     pub(crate) partition_count: std::option::Option<i32>,
-    pub(crate) tag_specifications:
-        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) spread_level: std::option::Option<crate::types::SpreadLevel>,
 }
 impl CreatePlacementGroupInputBuilder {
@@ -86,20 +84,18 @@ impl CreatePlacementGroupInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p> 
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.group_name = Some(input.into());
         self
     }
-    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p>
+    /// <p>A name for the placement group. Must be unique within the scope of your account for the Region.</p> 
     /// <p>Constraints: Up to 255 ASCII characters</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The placement strategy.</p>
     pub fn strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
@@ -107,12 +103,8 @@ impl CreatePlacementGroupInputBuilder {
         self
     }
     /// <p>The placement strategy.</p>
-    pub fn set_strategy(
-        mut self,
-        input: std::option::Option<crate::types::PlacementStrategy>,
-    ) -> Self {
-        self.strategy = input;
-        self
+    pub fn set_strategy(mut self, input: std::option::Option<crate::types::PlacementStrategy>) -> Self {
+        self.strategy = input; self
     }
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
     pub fn partition_count(mut self, input: i32) -> Self {
@@ -121,8 +113,7 @@ impl CreatePlacementGroupInputBuilder {
     }
     /// <p>The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.</p>
     pub fn set_partition_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.partition_count = input;
-        self
+        self.partition_count = input; self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -131,55 +122,49 @@ impl CreatePlacementGroupInputBuilder {
     /// <p>The tags to apply to the new placement group.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = Some(v);
+                        self
     }
     /// <p>The tags to apply to the new placement group.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
-    /// <p>Determines how placement groups spread instances. </p>
-    /// <ul>
-    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
-    /// <li> <p>Rack – No usage restrictions.</p> </li>
+    /// <p>Determines how placement groups spread instances. </p> 
+    /// <ul> 
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li> 
+    /// <li> <p>Rack – No usage restrictions.</p> </li> 
     /// </ul>
     pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
         self.spread_level = Some(input);
         self
     }
-    /// <p>Determines how placement groups spread instances. </p>
-    /// <ul>
-    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li>
-    /// <li> <p>Rack – No usage restrictions.</p> </li>
+    /// <p>Determines how placement groups spread instances. </p> 
+    /// <ul> 
+    /// <li> <p>Host – You can use <code>host</code> only with Outpost placement groups.</p> </li> 
+    /// <li> <p>Rack – No usage restrictions.</p> </li> 
     /// </ul>
-    pub fn set_spread_level(
-        mut self,
-        input: std::option::Option<crate::types::SpreadLevel>,
-    ) -> Self {
-        self.spread_level = input;
-        self
+    pub fn set_spread_level(mut self, input: std::option::Option<crate::types::SpreadLevel>) -> Self {
+        self.spread_level = input; self
     }
     /// Consumes the builder and constructs a [`CreatePlacementGroupInput`](crate::operation::create_placement_group::CreatePlacementGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_placement_group::CreatePlacementGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_placement_group::CreatePlacementGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_placement_group::CreatePlacementGroupInput {
-                dry_run: self.dry_run,
-                group_name: self.group_name,
-                strategy: self.strategy,
-                partition_count: self.partition_count,
-                tag_specifications: self.tag_specifications,
-                spread_level: self.spread_level,
-            },
+                dry_run: self.dry_run
+                ,
+                group_name: self.group_name
+                ,
+                strategy: self.strategy
+                ,
+                partition_count: self.partition_count
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                spread_level: self.spread_level
+                ,
+            }
         )
     }
 }
+

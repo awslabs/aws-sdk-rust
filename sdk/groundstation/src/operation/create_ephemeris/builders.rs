@@ -4,67 +4,49 @@ pub use crate::operation::create_ephemeris::_create_ephemeris_output::CreateEphe
 pub use crate::operation::create_ephemeris::_create_ephemeris_input::CreateEphemerisInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEphemeris`.
-///
+/// 
 /// <p>Creates an Ephemeris with the specified <code>EphemerisData</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEphemerisFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder,
-}
-impl CreateEphemerisFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder
+            }
+impl CreateEphemerisFluentBuilder  {
     /// Creates a new `CreateEphemeris`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_ephemeris::CreateEphemeris,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_ephemeris::CreateEphemerisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_ephemeris::CreateEphemeris, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_ephemeris::CreateEphemerisOutput, aws_smithy_http::result::SdkError<crate::operation::create_ephemeris::CreateEphemerisError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
     pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.satellite_id(input.into());
@@ -75,27 +57,27 @@ impl CreateEphemerisFluentBuilder {
         self.inner = self.inner.set_satellite_id(input);
         self
     }
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p> 
     /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
+    /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p> 
     /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
     /// <p>Priority must be 1 or greater</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.inner = self.inner.priority(input);
         self
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
     /// <p>Priority must be 1 or greater</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
@@ -107,10 +89,7 @@ impl CreateEphemerisFluentBuilder {
         self
     }
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_expiration_time(input);
         self
     }
@@ -140,10 +119,7 @@ impl CreateEphemerisFluentBuilder {
         self
     }
     /// <p>Ephemeris data.</p>
-    pub fn set_ephemeris(
-        mut self,
-        input: std::option::Option<crate::types::EphemerisData>,
-    ) -> Self {
+    pub fn set_ephemeris(mut self, input: std::option::Option<crate::types::EphemerisData>) -> Self {
         self.inner = self.inner.set_ephemeris(input);
         self
     }
@@ -152,22 +128,14 @@ impl CreateEphemerisFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

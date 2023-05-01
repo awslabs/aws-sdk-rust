@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSourceRepositoryCloneUrlsInput {
+pub struct GetSourceRepositoryCloneUrlsInput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetSourceRepositoryCloneUrlsInput {
 }
 impl GetSourceRepositoryCloneUrlsInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the source repository.</p>
-    pub fn source_repository_name(&self) -> std::option::Option<&str> {
+    pub fn source_repository_name(&self) -> std::option::Option<& str> {
         self.source_repository_name.as_deref()
     }
 }
 impl GetSourceRepositoryCloneUrlsInput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryCloneUrlsInput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput).
-    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder{
+    pub fn builder() -> crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder {
         crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The name of the source repository.</p>
     pub fn source_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,26 +67,21 @@ impl GetSourceRepositoryCloneUrlsInputBuilder {
         self
     }
     /// <p>The name of the source repository.</p>
-    pub fn set_source_repository_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_repository_name = input;
-        self
+    pub fn set_source_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_repository_name = input; self
     }
     /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsInput`](crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrlsInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                source_repository_name: self.source_repository_name,
-            },
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                source_repository_name: self.source_repository_name
+                ,
+            }
         )
     }
 }
+

@@ -3,10 +3,10 @@
 /// <p>Data on the status of agent components.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentStatusData {
+pub struct ComponentStatusData  {
     /// <p>The Component type.</p>
     #[doc(hidden)]
-    pub component_type: std::option::Option<crate::types::ComponentType>,
+    pub component_type: std::option::Option<std::string::String>,
     /// <p>Capability ARN of the component.</p>
     #[doc(hidden)]
     pub capability_arn: std::option::Option<std::string::String>,
@@ -28,15 +28,15 @@ pub struct ComponentStatusData {
 }
 impl ComponentStatusData {
     /// <p>The Component type.</p>
-    pub fn component_type(&self) -> std::option::Option<&crate::types::ComponentType> {
-        self.component_type.as_ref()
+    pub fn component_type(&self) -> std::option::Option<& str> {
+        self.component_type.as_deref()
     }
     /// <p>Capability ARN of the component.</p>
-    pub fn capability_arn(&self) -> std::option::Option<&str> {
+    pub fn capability_arn(&self) -> std::option::Option<& str> {
         self.capability_arn.as_deref()
     }
     /// <p>Component status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AgentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AgentStatus> {
         self.status.as_ref()
     }
     /// <p>Bytes sent by the component.</p>
@@ -52,7 +52,7 @@ impl ComponentStatusData {
         self.packets_dropped
     }
     /// <p>Dataflow UUID associated with the component.</p>
-    pub fn dataflow_id(&self) -> std::option::Option<&str> {
+    pub fn dataflow_id(&self) -> std::option::Option<& str> {
         self.dataflow_id.as_deref()
     }
 }
@@ -67,7 +67,7 @@ impl ComponentStatusData {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ComponentStatusDataBuilder {
-    pub(crate) component_type: std::option::Option<crate::types::ComponentType>,
+    pub(crate) component_type: std::option::Option<std::string::String>,
     pub(crate) capability_arn: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::AgentStatus>,
     pub(crate) bytes_sent: std::option::Option<i64>,
@@ -77,17 +77,13 @@ pub struct ComponentStatusDataBuilder {
 }
 impl ComponentStatusDataBuilder {
     /// <p>The Component type.</p>
-    pub fn component_type(mut self, input: crate::types::ComponentType) -> Self {
-        self.component_type = Some(input);
+    pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
+        self.component_type = Some(input.into());
         self
     }
     /// <p>The Component type.</p>
-    pub fn set_component_type(
-        mut self,
-        input: std::option::Option<crate::types::ComponentType>,
-    ) -> Self {
-        self.component_type = input;
-        self
+    pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_type = input; self
     }
     /// <p>Capability ARN of the component.</p>
     pub fn capability_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +92,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Capability ARN of the component.</p>
     pub fn set_capability_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capability_arn = input;
-        self
+        self.capability_arn = input; self
     }
     /// <p>Component status.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
@@ -106,8 +101,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Component status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AgentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Bytes sent by the component.</p>
     pub fn bytes_sent(mut self, input: i64) -> Self {
@@ -116,8 +110,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Bytes sent by the component.</p>
     pub fn set_bytes_sent(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_sent = input;
-        self
+        self.bytes_sent = input; self
     }
     /// <p>Bytes received by the component.</p>
     pub fn bytes_received(mut self, input: i64) -> Self {
@@ -126,8 +119,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Bytes received by the component.</p>
     pub fn set_bytes_received(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_received = input;
-        self
+        self.bytes_received = input; self
     }
     /// <p>Packets dropped by component.</p>
     pub fn packets_dropped(mut self, input: i64) -> Self {
@@ -136,8 +128,7 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Packets dropped by component.</p>
     pub fn set_packets_dropped(mut self, input: std::option::Option<i64>) -> Self {
-        self.packets_dropped = input;
-        self
+        self.packets_dropped = input; self
     }
     /// <p>Dataflow UUID associated with the component.</p>
     pub fn dataflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,19 +137,26 @@ impl ComponentStatusDataBuilder {
     }
     /// <p>Dataflow UUID associated with the component.</p>
     pub fn set_dataflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataflow_id = input;
-        self
+        self.dataflow_id = input; self
     }
     /// Consumes the builder and constructs a [`ComponentStatusData`](crate::types::ComponentStatusData).
     pub fn build(self) -> crate::types::ComponentStatusData {
         crate::types::ComponentStatusData {
-            component_type: self.component_type,
-            capability_arn: self.capability_arn,
-            status: self.status,
-            bytes_sent: self.bytes_sent,
-            bytes_received: self.bytes_received,
-            packets_dropped: self.packets_dropped,
-            dataflow_id: self.dataflow_id,
+            component_type: self.component_type
+            ,
+            capability_arn: self.capability_arn
+            ,
+            status: self.status
+            ,
+            bytes_sent: self.bytes_sent
+            ,
+            bytes_received: self.bytes_received
+            ,
+            packets_dropped: self.packets_dropped
+            ,
+            dataflow_id: self.dataflow_id
+            ,
         }
     }
 }
+

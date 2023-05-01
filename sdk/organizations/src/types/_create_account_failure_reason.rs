@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let createaccountfailurereason = unimplemented!();
 /// match createaccountfailurereason {
@@ -43,22 +43,14 @@
 /// Specifically, when `createaccountfailurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CreateAccountFailureReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountLimitExceeded,
@@ -91,100 +83,67 @@ pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     UpdateExistingResourcePolicyWithTagsNotSupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CreateAccountFailureReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
-            "CONCURRENT_ACCOUNT_MODIFICATION" => {
-                CreateAccountFailureReason::ConcurrentAccountModification
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
+"CONCURRENT_ACCOUNT_MODIFICATION" => CreateAccountFailureReason::ConcurrentAccountModification,
+"EMAIL_ALREADY_EXISTS" => CreateAccountFailureReason::EmailAlreadyExists,
+"FAILED_BUSINESS_VALIDATION" => CreateAccountFailureReason::FailedBusinessValidation,
+"GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => CreateAccountFailureReason::GovcloudAccountAlreadyExists,
+"INTERNAL_FAILURE" => CreateAccountFailureReason::InternalFailure,
+"INVALID_ADDRESS" => CreateAccountFailureReason::InvalidAddress,
+"INVALID_EMAIL" => CreateAccountFailureReason::InvalidEmail,
+"INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => CreateAccountFailureReason::InvalidIdentityForBusinessValidation,
+"INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
+"MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
+"MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
+"PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
+"UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
+"UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported,
+other => CreateAccountFailureReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "EMAIL_ALREADY_EXISTS" => CreateAccountFailureReason::EmailAlreadyExists,
-            "FAILED_BUSINESS_VALIDATION" => CreateAccountFailureReason::FailedBusinessValidation,
-            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => {
-                CreateAccountFailureReason::GovcloudAccountAlreadyExists
-            }
-            "INTERNAL_FAILURE" => CreateAccountFailureReason::InternalFailure,
-            "INVALID_ADDRESS" => CreateAccountFailureReason::InvalidAddress,
-            "INVALID_EMAIL" => CreateAccountFailureReason::InvalidEmail,
-            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => {
-                CreateAccountFailureReason::InvalidIdentityForBusinessValidation
-            }
-            "INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
-            "MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
-            "MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
-            "PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
-            "UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
-            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => {
-                CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported
-            }
-            other => CreateAccountFailureReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for CreateAccountFailureReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CreateAccountFailureReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CreateAccountFailureReason::from(s))
+                }
+            }
 impl CreateAccountFailureReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CreateAccountFailureReason::AccountLimitExceeded => "ACCOUNT_LIMIT_EXCEEDED",
-            CreateAccountFailureReason::ConcurrentAccountModification => {
-                "CONCURRENT_ACCOUNT_MODIFICATION"
-            }
-            CreateAccountFailureReason::EmailAlreadyExists => "EMAIL_ALREADY_EXISTS",
-            CreateAccountFailureReason::FailedBusinessValidation => "FAILED_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::GovcloudAccountAlreadyExists => {
-                "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"
-            }
-            CreateAccountFailureReason::InternalFailure => "INTERNAL_FAILURE",
-            CreateAccountFailureReason::InvalidAddress => "INVALID_ADDRESS",
-            CreateAccountFailureReason::InvalidEmail => "INVALID_EMAIL",
-            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => {
-                "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"
-            }
-            CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
-            CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
-            CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => {
-                "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"
-            }
-            CreateAccountFailureReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCOUNT_LIMIT_EXCEEDED",
-            "CONCURRENT_ACCOUNT_MODIFICATION",
-            "EMAIL_ALREADY_EXISTS",
-            "FAILED_BUSINESS_VALIDATION",
-            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
-            "INTERNAL_FAILURE",
-            "INVALID_ADDRESS",
-            "INVALID_EMAIL",
-            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
-            "INVALID_PAYMENT_INSTRUMENT",
-            "MISSING_BUSINESS_VALIDATION",
-            "MISSING_PAYMENT_INSTRUMENT",
-            "PENDING_BUSINESS_VALIDATION",
-            "UNKNOWN_BUSINESS_VALIDATION",
-            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CreateAccountFailureReason::AccountLimitExceeded => "ACCOUNT_LIMIT_EXCEEDED",
+    CreateAccountFailureReason::ConcurrentAccountModification => "CONCURRENT_ACCOUNT_MODIFICATION",
+    CreateAccountFailureReason::EmailAlreadyExists => "EMAIL_ALREADY_EXISTS",
+    CreateAccountFailureReason::FailedBusinessValidation => "FAILED_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::GovcloudAccountAlreadyExists => "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
+    CreateAccountFailureReason::InternalFailure => "INTERNAL_FAILURE",
+    CreateAccountFailureReason::InvalidAddress => "INVALID_ADDRESS",
+    CreateAccountFailureReason::InvalidEmail => "INVALID_EMAIL",
+    CreateAccountFailureReason::InvalidIdentityForBusinessValidation => "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
+    CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
+    CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
+    CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
+    CreateAccountFailureReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCOUNT_LIMIT_EXCEEDED", "CONCURRENT_ACCOUNT_MODIFICATION", "EMAIL_ALREADY_EXISTS", "FAILED_BUSINESS_VALIDATION", "GOVCLOUD_ACCOUNT_ALREADY_EXISTS", "INTERNAL_FAILURE", "INVALID_ADDRESS", "INVALID_EMAIL", "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION", "INVALID_PAYMENT_INSTRUMENT", "MISSING_BUSINESS_VALIDATION", "MISSING_PAYMENT_INSTRUMENT", "PENDING_BUSINESS_VALIDATION", "UNKNOWN_BUSINESS_VALIDATION", "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"]
+                }
+            }
 impl AsRef<str> for CreateAccountFailureReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

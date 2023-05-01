@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelInput {
+pub struct CreateChannelInput  {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateChannelInput {
 }
 impl CreateChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
-    pub fn channel_storage(&self) -> std::option::Option<&crate::types::ChannelStorage> {
+    pub fn channel_storage(&self) -> std::option::Option<& crate::types::ChannelStorage> {
         self.channel_storage.as_ref()
     }
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    pub fn retention_period(&self) -> std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> std::option::Option<& crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>Metadata which can be used to manage the channel.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl CreateChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
     pub fn channel_storage(mut self, input: crate::types::ChannelStorage) -> Self {
@@ -67,12 +66,8 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You can't change this storage option after the channel is created.</p>
-    pub fn set_channel_storage(
-        mut self,
-        input: std::option::Option<crate::types::ChannelStorage>,
-    ) -> Self {
-        self.channel_storage = input;
-        self
+    pub fn set_channel_storage(mut self, input: std::option::Option<crate::types::ChannelStorage>) -> Self {
+        self.channel_storage = input; self
     }
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
@@ -80,12 +75,8 @@ impl CreateChannelInputBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the channel. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
-    pub fn set_retention_period(
-        mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
-    ) -> Self {
-        self.retention_period = input;
-        self
+    pub fn set_retention_period(mut self, input: std::option::Option<crate::types::RetentionPeriod>) -> Self {
+        self.retention_period = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -94,30 +85,28 @@ impl CreateChannelInputBuilder {
     /// <p>Metadata which can be used to manage the channel.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the channel.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateChannelInput`](crate::operation::create_channel::CreateChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_channel::CreateChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_channel::CreateChannelInput {
-            channel_name: self.channel_name,
-            channel_storage: self.channel_storage,
-            retention_period: self.retention_period,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_channel::CreateChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_channel::CreateChannelInput {
+                channel_name: self.channel_name
+                ,
+                channel_storage: self.channel_storage
+                ,
+                retention_period: self.retention_period
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

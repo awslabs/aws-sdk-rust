@@ -3,7 +3,7 @@
 /// <p>Configuration for Redshift Dataset Definition input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftDatasetDefinition {
+pub struct RedshiftDatasetDefinition  {
     /// <p>The Redshift cluster Identifier.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -34,41 +34,39 @@ pub struct RedshiftDatasetDefinition {
 }
 impl RedshiftDatasetDefinition {
     /// <p>The Redshift cluster Identifier.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The name of the Redshift database used in Redshift query execution.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The database user name used in Redshift query execution.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The SQL query statements to be executed.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
-    pub fn cluster_role_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_role_arn(&self) -> std::option::Option<& str> {
         self.cluster_role_arn.as_deref()
     }
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
-    pub fn output_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn output_s3_uri(&self) -> std::option::Option<& str> {
         self.output_s3_uri.as_deref()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data from a Redshift execution.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The data storage format for Redshift query results.</p>
-    pub fn output_format(&self) -> std::option::Option<&crate::types::RedshiftResultFormat> {
+    pub fn output_format(&self) -> std::option::Option<& crate::types::RedshiftResultFormat> {
         self.output_format.as_ref()
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn output_compression(
-        &self,
-    ) -> std::option::Option<&crate::types::RedshiftResultCompressionType> {
+    pub fn output_compression(&self) -> std::option::Option<& crate::types::RedshiftResultCompressionType> {
         self.output_compression.as_ref()
     }
 }
@@ -101,8 +99,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The Redshift cluster Identifier.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The name of the Redshift database used in Redshift query execution.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +108,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The name of the Redshift database used in Redshift query execution.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database user name used in Redshift query execution.</p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +117,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The database user name used in Redshift query execution.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The SQL query statements to be executed.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +126,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The SQL query statements to be executed.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
     pub fn cluster_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +135,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The IAM role attached to your Redshift cluster that Amazon SageMaker uses to generate datasets.</p>
     pub fn set_cluster_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_role_arn = input;
-        self
+        self.cluster_role_arn = input; self
     }
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
     pub fn output_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +144,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The location in Amazon S3 where the Redshift query results are stored.</p>
     pub fn set_output_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_s3_uri = input;
-        self
+        self.output_s3_uri = input; self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data from a Redshift execution.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,8 +153,7 @@ impl RedshiftDatasetDefinitionBuilder {
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data from a Redshift execution.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>The data storage format for Redshift query results.</p>
     pub fn output_format(mut self, input: crate::types::RedshiftResultFormat) -> Self {
@@ -170,41 +161,40 @@ impl RedshiftDatasetDefinitionBuilder {
         self
     }
     /// <p>The data storage format for Redshift query results.</p>
-    pub fn set_output_format(
-        mut self,
-        input: std::option::Option<crate::types::RedshiftResultFormat>,
-    ) -> Self {
-        self.output_format = input;
-        self
+    pub fn set_output_format(mut self, input: std::option::Option<crate::types::RedshiftResultFormat>) -> Self {
+        self.output_format = input; self
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn output_compression(
-        mut self,
-        input: crate::types::RedshiftResultCompressionType,
-    ) -> Self {
+    pub fn output_compression(mut self, input: crate::types::RedshiftResultCompressionType) -> Self {
         self.output_compression = Some(input);
         self
     }
     /// <p>The compression used for Redshift query results.</p>
-    pub fn set_output_compression(
-        mut self,
-        input: std::option::Option<crate::types::RedshiftResultCompressionType>,
-    ) -> Self {
-        self.output_compression = input;
-        self
+    pub fn set_output_compression(mut self, input: std::option::Option<crate::types::RedshiftResultCompressionType>) -> Self {
+        self.output_compression = input; self
     }
     /// Consumes the builder and constructs a [`RedshiftDatasetDefinition`](crate::types::RedshiftDatasetDefinition).
     pub fn build(self) -> crate::types::RedshiftDatasetDefinition {
         crate::types::RedshiftDatasetDefinition {
-            cluster_id: self.cluster_id,
-            database: self.database,
-            db_user: self.db_user,
-            query_string: self.query_string,
-            cluster_role_arn: self.cluster_role_arn,
-            output_s3_uri: self.output_s3_uri,
-            kms_key_id: self.kms_key_id,
-            output_format: self.output_format,
-            output_compression: self.output_compression,
+            cluster_id: self.cluster_id
+            ,
+            database: self.database
+            ,
+            db_user: self.db_user
+            ,
+            query_string: self.query_string
+            ,
+            cluster_role_arn: self.cluster_role_arn
+            ,
+            output_s3_uri: self.output_s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            output_format: self.output_format
+            ,
+            output_compression: self.output_compression
+            ,
         }
     }
 }
+

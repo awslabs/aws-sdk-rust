@@ -3,7 +3,7 @@
 /// <p>The message details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileValidationMessage {
+pub struct FileValidationMessage  {
     /// <p>The message title.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct FileValidationMessage {
 }
 impl FileValidationMessage {
     /// <p>The message title.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The message content.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The message type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl FileValidationMessageBuilder {
     }
     /// <p>The message title.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>The message content.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FileValidationMessageBuilder {
     }
     /// <p>The message content.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The message type.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl FileValidationMessageBuilder {
     }
     /// <p>The message type.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`FileValidationMessage`](crate::types::FileValidationMessage).
     pub fn build(self) -> crate::types::FileValidationMessage {
         crate::types::FileValidationMessage {
-            title: self.title,
-            content: self.content,
-            r#type: self.r#type,
+            title: self.title
+            ,
+            content: self.content
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

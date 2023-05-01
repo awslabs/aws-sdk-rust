@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCallAnalyticsCategoriesOutput {
+pub struct ListCallAnalyticsCategoriesOutput  {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct ListCallAnalyticsCategoriesOutput {
 }
 impl ListCallAnalyticsCategoriesOutput {
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
-    pub fn categories(&self) -> std::option::Option<&[crate::types::CategoryProperties]> {
+    pub fn categories(&self) -> std::option::Option<& [crate::types::CategoryProperties]> {
         self.categories.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCallAnalyticsCategoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCallAnalyticsCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesOutput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput).
-    pub fn builder() -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesOutputBuilder{
+    pub fn builder() -> crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesOutputBuilder {
         crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl ListCallAnalyticsCategoriesOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `categories`.
     ///
@@ -59,35 +58,32 @@ impl ListCallAnalyticsCategoriesOutputBuilder {
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
     pub fn categories(mut self, input: crate::types::CategoryProperties) -> Self {
         let mut v = self.categories.unwrap_or_default();
-        v.push(input);
-        self.categories = Some(v);
-        self
+                        v.push(input);
+                        self.categories = Some(v);
+                        self
     }
     /// <p>Provides detailed information about your Call Analytics categories, including all the rules associated with each category.</p>
-    pub fn set_categories(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CategoryProperties>>,
-    ) -> Self {
-        self.categories = input;
-        self
+    pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::types::CategoryProperties>>) -> Self {
+        self.categories = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCallAnalyticsCategoriesOutput`](crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput {
+    pub fn build(self) -> crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput {
         crate::operation::list_call_analytics_categories::ListCallAnalyticsCategoriesOutput {
-            next_token: self.next_token,
-            categories: self.categories,
+            next_token: self.next_token
+            ,
+            categories: self.categories
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

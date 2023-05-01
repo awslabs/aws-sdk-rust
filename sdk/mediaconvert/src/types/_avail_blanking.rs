@@ -3,14 +3,14 @@
 /// Use ad avail blanking settings to specify your output content during SCTE-35 triggered ad avails. You can blank your video or overlay it with an image. MediaConvert also removes any audio and embedded captions during the ad avail. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ad-avail-blanking.html.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailBlanking {
+pub struct AvailBlanking  {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
     #[doc(hidden)]
     pub avail_blanking_image: std::option::Option<std::string::String>,
 }
 impl AvailBlanking {
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn avail_blanking_image(&self) -> std::option::Option<&str> {
+    pub fn avail_blanking_image(&self) -> std::option::Option<& str> {
         self.avail_blanking_image.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl AvailBlankingBuilder {
         self
     }
     /// Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.
-    pub fn set_avail_blanking_image(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.avail_blanking_image = input;
-        self
+    pub fn set_avail_blanking_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.avail_blanking_image = input; self
     }
     /// Consumes the builder and constructs a [`AvailBlanking`](crate::types::AvailBlanking).
     pub fn build(self) -> crate::types::AvailBlanking {
         crate::types::AvailBlanking {
-            avail_blanking_image: self.avail_blanking_image,
+            avail_blanking_image: self.avail_blanking_image
+            ,
         }
     }
 }
+

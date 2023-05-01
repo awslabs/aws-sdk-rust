@@ -3,17 +3,14 @@
 /// <p>An output configuration for a package import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageImportJobOutputConfig {
+pub struct PackageImportJobOutputConfig  {
     /// <p>The package version's output configuration.</p>
     #[doc(hidden)]
-    pub package_version_output_config:
-        std::option::Option<crate::types::PackageVersionOutputConfig>,
+    pub package_version_output_config: std::option::Option<crate::types::PackageVersionOutputConfig>,
 }
 impl PackageImportJobOutputConfig {
     /// <p>The package version's output configuration.</p>
-    pub fn package_version_output_config(
-        &self,
-    ) -> std::option::Option<&crate::types::PackageVersionOutputConfig> {
+    pub fn package_version_output_config(&self) -> std::option::Option<& crate::types::PackageVersionOutputConfig> {
         self.package_version_output_config.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl PackageImportJobOutputConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PackageImportJobOutputConfigBuilder {
-    pub(crate) package_version_output_config:
-        std::option::Option<crate::types::PackageVersionOutputConfig>,
+    pub(crate) package_version_output_config: std::option::Option<crate::types::PackageVersionOutputConfig>,
 }
 impl PackageImportJobOutputConfigBuilder {
     /// <p>The package version's output configuration.</p>
-    pub fn package_version_output_config(
-        mut self,
-        input: crate::types::PackageVersionOutputConfig,
-    ) -> Self {
+    pub fn package_version_output_config(mut self, input: crate::types::PackageVersionOutputConfig) -> Self {
         self.package_version_output_config = Some(input);
         self
     }
     /// <p>The package version's output configuration.</p>
-    pub fn set_package_version_output_config(
-        mut self,
-        input: std::option::Option<crate::types::PackageVersionOutputConfig>,
-    ) -> Self {
-        self.package_version_output_config = input;
-        self
+    pub fn set_package_version_output_config(mut self, input: std::option::Option<crate::types::PackageVersionOutputConfig>) -> Self {
+        self.package_version_output_config = input; self
     }
     /// Consumes the builder and constructs a [`PackageImportJobOutputConfig`](crate::types::PackageImportJobOutputConfig).
     pub fn build(self) -> crate::types::PackageImportJobOutputConfig {
         crate::types::PackageImportJobOutputConfig {
-            package_version_output_config: self.package_version_output_config,
+            package_version_output_config: self.package_version_output_config
+            ,
         }
     }
 }
+

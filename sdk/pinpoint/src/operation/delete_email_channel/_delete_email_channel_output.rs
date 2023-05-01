@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailChannelOutput {
+pub struct DeleteEmailChannelOutput  {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
     #[doc(hidden)]
     pub email_channel_response: std::option::Option<crate::types::EmailChannelResponse>,
@@ -10,21 +10,18 @@ pub struct DeleteEmailChannelOutput {
 }
 impl DeleteEmailChannelOutput {
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn email_channel_response(
-        &self,
-    ) -> std::option::Option<&crate::types::EmailChannelResponse> {
+    pub fn email_channel_response(&self) -> std::option::Option<& crate::types::EmailChannelResponse> {
         self.email_channel_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteEmailChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteEmailChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailChannelOutput`](crate::operation::delete_email_channel::DeleteEmailChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_email_channel::builders::DeleteEmailChannelOutputBuilder {
+    pub fn builder() -> crate::operation::delete_email_channel::builders::DeleteEmailChannelOutputBuilder {
         crate::operation::delete_email_channel::builders::DeleteEmailChannelOutputBuilder::default()
     }
 }
@@ -43,27 +40,25 @@ impl DeleteEmailChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the email channel for an application.</p>
-    pub fn set_email_channel_response(
-        mut self,
-        input: std::option::Option<crate::types::EmailChannelResponse>,
-    ) -> Self {
-        self.email_channel_response = input;
-        self
+    pub fn set_email_channel_response(mut self, input: std::option::Option<crate::types::EmailChannelResponse>) -> Self {
+        self.email_channel_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteEmailChannelOutput`](crate::operation::delete_email_channel::DeleteEmailChannelOutput).
     pub fn build(self) -> crate::operation::delete_email_channel::DeleteEmailChannelOutput {
         crate::operation::delete_email_channel::DeleteEmailChannelOutput {
-            email_channel_response: self.email_channel_response,
+            email_channel_response: self.email_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

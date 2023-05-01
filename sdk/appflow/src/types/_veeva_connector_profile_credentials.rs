@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile credentials required when using Veeva. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VeevaConnectorProfileCredentials {
+pub struct VeevaConnectorProfileCredentials  {
     /// <p> The name of the user. </p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct VeevaConnectorProfileCredentials {
 }
 impl VeevaConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for VeevaConnectorProfileCredentials {
+impl  std::fmt::Debug for VeevaConnectorProfileCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VeevaConnectorProfileCredentials");
         formatter.field("username", &self.username);
@@ -51,8 +51,7 @@ impl VeevaConnectorProfileCredentialsBuilder {
     }
     /// <p> The name of the user. </p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p> The password that corresponds to the user name. </p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl VeevaConnectorProfileCredentialsBuilder {
     }
     /// <p> The password that corresponds to the user name. </p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`VeevaConnectorProfileCredentials`](crate::types::VeevaConnectorProfileCredentials).
     pub fn build(self) -> crate::types::VeevaConnectorProfileCredentials {
         crate::types::VeevaConnectorProfileCredentials {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for VeevaConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

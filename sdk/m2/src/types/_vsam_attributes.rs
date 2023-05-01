@@ -3,7 +3,7 @@
 /// <p>The attributes of a VSAM type data set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VsamAttributes {
+pub struct VsamAttributes  {
     /// <p>The record format of the data set.</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct VsamAttributes {
 }
 impl VsamAttributes {
     /// <p>The record format of the data set.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
-    pub fn encoding(&self) -> std::option::Option<&str> {
+    pub fn encoding(&self) -> std::option::Option<& str> {
         self.encoding.as_deref()
     }
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
@@ -34,11 +34,11 @@ impl VsamAttributes {
         self.compressed
     }
     /// <p>The primary key of the data set.</p>
-    pub fn primary_key(&self) -> std::option::Option<&crate::types::PrimaryKey> {
+    pub fn primary_key(&self) -> std::option::Option<& crate::types::PrimaryKey> {
         self.primary_key.as_ref()
     }
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    pub fn alternate_keys(&self) -> std::option::Option<&[crate::types::AlternateKey]> {
+    pub fn alternate_keys(&self) -> std::option::Option<& [crate::types::AlternateKey]> {
         self.alternate_keys.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl VsamAttributesBuilder {
     }
     /// <p>The record format of the data set.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
     pub fn encoding(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl VsamAttributesBuilder {
     }
     /// <p>The character set used by the data set. Can be ASCII, EBCDIC, or unknown.</p>
     pub fn set_encoding(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encoding = input;
-        self
+        self.encoding = input; self
     }
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
     pub fn compressed(mut self, input: bool) -> Self {
@@ -87,8 +85,7 @@ impl VsamAttributesBuilder {
     }
     /// <p>Indicates whether indexes for this dataset are stored as compressed values. If you have a large data set (typically &gt; 100 Mb), consider setting this flag to True.</p>
     pub fn set_compressed(mut self, input: std::option::Option<bool>) -> Self {
-        self.compressed = input;
-        self
+        self.compressed = input; self
     }
     /// <p>The primary key of the data set.</p>
     pub fn primary_key(mut self, input: crate::types::PrimaryKey) -> Self {
@@ -97,8 +94,7 @@ impl VsamAttributesBuilder {
     }
     /// <p>The primary key of the data set.</p>
     pub fn set_primary_key(mut self, input: std::option::Option<crate::types::PrimaryKey>) -> Self {
-        self.primary_key = input;
-        self
+        self.primary_key = input; self
     }
     /// Appends an item to `alternate_keys`.
     ///
@@ -107,26 +103,29 @@ impl VsamAttributesBuilder {
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
     pub fn alternate_keys(mut self, input: crate::types::AlternateKey) -> Self {
         let mut v = self.alternate_keys.unwrap_or_default();
-        v.push(input);
-        self.alternate_keys = Some(v);
-        self
+                        v.push(input);
+                        self.alternate_keys = Some(v);
+                        self
     }
     /// <p>The alternate key definitions, if any. A legacy dataset might not have any alternate key defined, but if those alternate keys definitions exist, provide them as some applications will make use of them.</p>
-    pub fn set_alternate_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AlternateKey>>,
-    ) -> Self {
-        self.alternate_keys = input;
-        self
+    pub fn set_alternate_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::AlternateKey>>) -> Self {
+        self.alternate_keys = input; self
     }
     /// Consumes the builder and constructs a [`VsamAttributes`](crate::types::VsamAttributes).
     pub fn build(self) -> crate::types::VsamAttributes {
         crate::types::VsamAttributes {
-            format: self.format,
-            encoding: self.encoding,
-            compressed: self.compressed.unwrap_or_default(),
-            primary_key: self.primary_key,
-            alternate_keys: self.alternate_keys,
+            format: self.format
+            ,
+            encoding: self.encoding
+            ,
+            compressed: self.compressed
+                .unwrap_or_default()
+            ,
+            primary_key: self.primary_key
+            ,
+            alternate_keys: self.alternate_keys
+            ,
         }
     }
 }
+

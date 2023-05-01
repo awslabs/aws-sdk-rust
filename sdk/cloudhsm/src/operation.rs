@@ -60,3 +60,4 @@ pub mod modify_luna_client;
 
 /// Types for the `RemoveTagsFromResource` operation.
 pub mod remove_tags_from_resource;
+

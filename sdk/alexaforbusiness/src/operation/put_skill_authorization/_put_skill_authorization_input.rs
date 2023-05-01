@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PutSkillAuthorizationInput {
+pub struct PutSkillAuthorizationInput  {
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
     #[doc(hidden)]
-    pub authorization_result:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub authorization_result: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique identifier of a skill.</p>
     #[doc(hidden)]
     pub skill_id: std::option::Option<std::string::String>,
@@ -16,22 +15,19 @@ pub struct PutSkillAuthorizationInput {
 }
 impl PutSkillAuthorizationInput {
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-    pub fn authorization_result(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn authorization_result(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.authorization_result.as_ref()
     }
     /// <p>The unique identifier of a skill.</p>
-    pub fn skill_id(&self) -> std::option::Option<&str> {
+    pub fn skill_id(&self) -> std::option::Option<& str> {
         self.skill_id.as_deref()
     }
     /// <p>The room that the skill is authorized for.</p>
-    pub fn room_arn(&self) -> std::option::Option<&str> {
+    pub fn room_arn(&self) -> std::option::Option<& str> {
         self.room_arn.as_deref()
     }
 }
-impl std::fmt::Debug for PutSkillAuthorizationInput {
+impl  std::fmt::Debug for PutSkillAuthorizationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PutSkillAuthorizationInput");
         formatter.field("authorization_result", &"*** Sensitive Data Redacted ***");
@@ -42,9 +38,7 @@ impl std::fmt::Debug for PutSkillAuthorizationInput {
 }
 impl PutSkillAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`PutSkillAuthorizationInput`](crate::operation::put_skill_authorization::PutSkillAuthorizationInput).
-    pub fn builder(
-    ) -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder {
         crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder::default()
     }
 }
@@ -53,8 +47,7 @@ impl PutSkillAuthorizationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct PutSkillAuthorizationInputBuilder {
-    pub(crate) authorization_result:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) authorization_result: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) skill_id: std::option::Option<std::string::String>,
     pub(crate) room_arn: std::option::Option<std::string::String>,
 }
@@ -64,25 +57,15 @@ impl PutSkillAuthorizationInputBuilder {
     /// To override the contents of this collection use [`set_authorization_result`](Self::set_authorization_result).
     ///
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-    pub fn authorization_result(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn authorization_result(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.authorization_result.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.authorization_result = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.authorization_result = Some(hash_map);
+                        self
     }
     /// <p>The authorization result specific to OAUTH code grant output. "Code” must be populated in the AuthorizationResult map to establish the authorization.</p>
-    pub fn set_authorization_result(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.authorization_result = input;
-        self
+    pub fn set_authorization_result(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.authorization_result = input; self
     }
     /// <p>The unique identifier of a skill.</p>
     pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +74,7 @@ impl PutSkillAuthorizationInputBuilder {
     }
     /// <p>The unique identifier of a skill.</p>
     pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_id = input;
-        self
+        self.skill_id = input; self
     }
     /// <p>The room that the skill is authorized for.</p>
     pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,22 +83,19 @@ impl PutSkillAuthorizationInputBuilder {
     }
     /// <p>The room that the skill is authorized for.</p>
     pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_arn = input;
-        self
+        self.room_arn = input; self
     }
     /// Consumes the builder and constructs a [`PutSkillAuthorizationInput`](crate::operation::put_skill_authorization::PutSkillAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_skill_authorization::PutSkillAuthorizationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_skill_authorization::PutSkillAuthorizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_skill_authorization::PutSkillAuthorizationInput {
-                authorization_result: self.authorization_result,
-                skill_id: self.skill_id,
-                room_arn: self.room_arn,
-            },
+                authorization_result: self.authorization_result
+                ,
+                skill_id: self.skill_id
+                ,
+                room_arn: self.room_arn
+                ,
+            }
         )
     }
 }
@@ -129,3 +108,4 @@ impl std::fmt::Debug for PutSkillAuthorizationInputBuilder {
         formatter.finish()
     }
 }
+

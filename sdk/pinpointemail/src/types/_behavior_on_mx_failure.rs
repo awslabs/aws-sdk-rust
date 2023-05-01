@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let behavioronmxfailure = unimplemented!();
 /// match behavioronmxfailure {
@@ -30,7 +30,7 @@
 /// Specifically, when `behavioronmxfailure` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BehaviorOnMxFailure::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -44,57 +44,48 @@
 /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
 /// states.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BehaviorOnMxFailure {
     #[allow(missing_docs)] // documentation missing in model
     RejectMessage,
     #[allow(missing_docs)] // documentation missing in model
     UseDefaultValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BehaviorOnMxFailure {
-    fn from(s: &str) -> Self {
-        match s {
-            "REJECT_MESSAGE" => BehaviorOnMxFailure::RejectMessage,
-            "USE_DEFAULT_VALUE" => BehaviorOnMxFailure::UseDefaultValue,
-            other => BehaviorOnMxFailure::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "REJECT_MESSAGE" => BehaviorOnMxFailure::RejectMessage,
+"USE_DEFAULT_VALUE" => BehaviorOnMxFailure::UseDefaultValue,
+other => BehaviorOnMxFailure::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for BehaviorOnMxFailure {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BehaviorOnMxFailure::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BehaviorOnMxFailure::from(s))
+                }
+            }
 impl BehaviorOnMxFailure {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BehaviorOnMxFailure::RejectMessage => "REJECT_MESSAGE",
-            BehaviorOnMxFailure::UseDefaultValue => "USE_DEFAULT_VALUE",
-            BehaviorOnMxFailure::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["REJECT_MESSAGE", "USE_DEFAULT_VALUE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BehaviorOnMxFailure::RejectMessage => "REJECT_MESSAGE",
+    BehaviorOnMxFailure::UseDefaultValue => "USE_DEFAULT_VALUE",
+    BehaviorOnMxFailure::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["REJECT_MESSAGE", "USE_DEFAULT_VALUE"]
+                }
+            }
 impl AsRef<str> for BehaviorOnMxFailure {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

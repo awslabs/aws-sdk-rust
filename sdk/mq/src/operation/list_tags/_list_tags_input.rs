@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsInput {
+pub struct ListTagsInput  {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsInput {
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl ListTagsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`ListTagsInput`](crate::operation::list_tags::ListTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tags::ListTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_tags::ListTagsInput {
-            resource_arn: self.resource_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::list_tags::ListTagsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_tags::ListTagsInput {
+                resource_arn: self.resource_arn
+                ,
+            }
+        )
     }
 }
+

@@ -4,86 +4,60 @@ pub use crate::operation::create_local_gateway_route::_create_local_gateway_rout
 pub use crate::operation::create_local_gateway_route::_create_local_gateway_route_input::CreateLocalGatewayRouteInputBuilder;
 
 /// Fluent builder constructing a request to `CreateLocalGatewayRoute`.
-///
-/// <p>Creates a static route for the specified local gateway route table. You must specify one of the following targets: </p>
-/// <ul>
-/// <li> <p> <code>LocalGatewayVirtualInterfaceGroupId</code> </p> </li>
-/// <li> <p> <code>NetworkInterfaceId</code> </p> </li>
+/// 
+/// <p>Creates a static route for the specified local gateway route table. You must specify one of the following targets: </p> 
+/// <ul> 
+/// <li> <p> <code>LocalGatewayVirtualInterfaceGroupId</code> </p> </li> 
+/// <li> <p> <code>NetworkInterfaceId</code> </p> </li> 
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteInputBuilder,
-}
-impl CreateLocalGatewayRouteFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_local_gateway_route::builders::CreateLocalGatewayRouteInputBuilder
+            }
+impl CreateLocalGatewayRouteFluentBuilder  {
     /// Creates a new `CreateLocalGatewayRoute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_local_gateway_route::CreateLocalGatewayRoute,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_local_gateway_route::CreateLocalGatewayRouteError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_local_gateway_route::CreateLocalGatewayRouteError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_local_gateway_route::CreateLocalGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route::CreateLocalGatewayRouteError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_local_gateway_route::CreateLocalGatewayRouteOutput, aws_smithy_http::result::SdkError<crate::operation::create_local_gateway_route::CreateLocalGatewayRouteError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
     pub fn destination_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The CIDR range used for destination matches. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -93,31 +67,18 @@ impl CreateLocalGatewayRouteFluentBuilder {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .local_gateway_virtual_interface_group_id(input.into());
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.local_gateway_virtual_interface_group_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_local_gateway_virtual_interface_group_id(input);
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_local_gateway_virtual_interface_group_id(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -136,10 +97,7 @@ impl CreateLocalGatewayRouteFluentBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -149,11 +107,9 @@ impl CreateLocalGatewayRouteFluentBuilder {
         self
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_destination_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
 }
+

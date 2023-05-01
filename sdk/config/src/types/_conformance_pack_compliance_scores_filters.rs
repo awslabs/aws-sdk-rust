@@ -3,14 +3,14 @@
 /// <p>A list of filters to apply to the conformance pack compliance score result set. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConformancePackComplianceScoresFilters {
+pub struct ConformancePackComplianceScoresFilters  {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
     #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ConformancePackComplianceScoresFilters {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
-    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn conformance_pack_names(&self) -> std::option::Option<& [std::string::String]> {
         self.conformance_pack_names.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl ConformancePackComplianceScoresFiltersBuilder {
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
     pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.conformance_pack_names.unwrap_or_default();
-        v.push(input.into());
-        self.conformance_pack_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.conformance_pack_names = Some(v);
+                        self
     }
     /// <p>The names of the conformance packs whose compliance scores you want to include in the conformance pack compliance score result set. You can include up to 25 conformance packs in the <code>ConformancePackNames</code> array of strings, each with a character limit of 256 characters for the conformance pack name.</p>
-    pub fn set_conformance_pack_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.conformance_pack_names = input;
-        self
+    pub fn set_conformance_pack_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.conformance_pack_names = input; self
     }
     /// Consumes the builder and constructs a [`ConformancePackComplianceScoresFilters`](crate::types::ConformancePackComplianceScoresFilters).
     pub fn build(self) -> crate::types::ConformancePackComplianceScoresFilters {
         crate::types::ConformancePackComplianceScoresFilters {
-            conformance_pack_names: self.conformance_pack_names,
+            conformance_pack_names: self.conformance_pack_names
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQuerySuggestionsBlockListInput {
+pub struct UpdateQuerySuggestionsBlockListInput  {
     /// <p>The identifier of the index for the block list.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -15,8 +15,8 @@ pub struct UpdateQuerySuggestionsBlockListInput {
     /// <p>A new description for the block list.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The S3 path where your block list text file sits in S3.</p>
-    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>The S3 path where your block list text file sits in S3.</p> 
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p> 
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
     #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::types::S3Path>,
@@ -26,35 +26,35 @@ pub struct UpdateQuerySuggestionsBlockListInput {
 }
 impl UpdateQuerySuggestionsBlockListInput {
     /// <p>The identifier of the index for the block list.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the block list you want to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A new name for the block list.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new description for the block list.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The S3 path where your block list text file sits in S3.</p>
-    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>The S3 path where your block list text file sits in S3.</p> 
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p> 
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
-    pub fn source_s3_path(&self) -> std::option::Option<&crate::types::S3Path> {
+    pub fn source_s3_path(&self) -> std::option::Option<& crate::types::S3Path> {
         self.source_s3_path.as_ref()
     }
     /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
 impl UpdateQuerySuggestionsBlockListInput {
     /// Creates a new builder-style object to manufacture [`UpdateQuerySuggestionsBlockListInput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput).
-    pub fn builder() -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder{
+    pub fn builder() -> crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder {
         crate::operation::update_query_suggestions_block_list::builders::UpdateQuerySuggestionsBlockListInputBuilder::default()
     }
 }
@@ -78,8 +78,7 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The identifier of the index for the block list.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the block list you want to update.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +87,7 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The identifier of the block list you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A new name for the block list.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +96,7 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>A new name for the block list.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new description for the block list.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,22 +105,20 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>A new description for the block list.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>The S3 path where your block list text file sits in S3.</p>
-    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>The S3 path where your block list text file sits in S3.</p> 
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p> 
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.source_s3_path = Some(input);
         self
     }
-    /// <p>The S3 path where your block list text file sits in S3.</p>
-    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p>
+    /// <p>The S3 path where your block list text file sits in S3.</p> 
+    /// <p>If you update your block list and provide the same path to the block list text file in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code> API to refresh you block list.</p> 
     /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes all query suggestions with the latest content in the S3 file. This means changes might not take effect immediately.</p>
     pub fn set_source_s3_path(mut self, input: std::option::Option<crate::types::S3Path>) -> Self {
-        self.source_s3_path = input;
-        self
+        self.source_s3_path = input; self
     }
     /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,16 +127,10 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
     }
     /// <p>The IAM (Identity and Access Management) role used to access the block list text file in S3.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`UpdateQuerySuggestionsBlockListInput`](crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_query_suggestions_block_list::UpdateQuerySuggestionsBlockListInput {
                 index_id: self.index_id
@@ -160,3 +149,4 @@ impl UpdateQuerySuggestionsBlockListInputBuilder {
         )
     }
 }
+

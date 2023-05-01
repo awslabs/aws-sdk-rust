@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancestorageresourcetype = unimplemented!();
 /// match instancestorageresourcetype {
@@ -37,22 +37,14 @@
 /// Specifically, when `instancestorageresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceStorageResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AgentEvents,
@@ -73,70 +65,55 @@ pub enum InstanceStorageResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ScheduledReports,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceStorageResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGENT_EVENTS" => InstanceStorageResourceType::AgentEvents,
-            "ATTACHMENTS" => InstanceStorageResourceType::Attachments,
-            "CALL_RECORDINGS" => InstanceStorageResourceType::CallRecordings,
-            "CHAT_TRANSCRIPTS" => InstanceStorageResourceType::ChatTranscripts,
-            "CONTACT_EVALUATIONS" => InstanceStorageResourceType::ContactEvaluations,
-            "CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
-            "MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
-            "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => {
-                InstanceStorageResourceType::RealTimeContactAnalysisSegments
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AGENT_EVENTS" => InstanceStorageResourceType::AgentEvents,
+"ATTACHMENTS" => InstanceStorageResourceType::Attachments,
+"CALL_RECORDINGS" => InstanceStorageResourceType::CallRecordings,
+"CHAT_TRANSCRIPTS" => InstanceStorageResourceType::ChatTranscripts,
+"CONTACT_EVALUATIONS" => InstanceStorageResourceType::ContactEvaluations,
+"CONTACT_TRACE_RECORDS" => InstanceStorageResourceType::ContactTraceRecords,
+"MEDIA_STREAMS" => InstanceStorageResourceType::MediaStreams,
+"REAL_TIME_CONTACT_ANALYSIS_SEGMENTS" => InstanceStorageResourceType::RealTimeContactAnalysisSegments,
+"SCHEDULED_REPORTS" => InstanceStorageResourceType::ScheduledReports,
+other => InstanceStorageResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "SCHEDULED_REPORTS" => InstanceStorageResourceType::ScheduledReports,
-            other => InstanceStorageResourceType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for InstanceStorageResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceStorageResourceType::from(s))
-    }
-}
-impl InstanceStorageResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceStorageResourceType::AgentEvents => "AGENT_EVENTS",
-            InstanceStorageResourceType::Attachments => "ATTACHMENTS",
-            InstanceStorageResourceType::CallRecordings => "CALL_RECORDINGS",
-            InstanceStorageResourceType::ChatTranscripts => "CHAT_TRANSCRIPTS",
-            InstanceStorageResourceType::ContactEvaluations => "CONTACT_EVALUATIONS",
-            InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
-            InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
-            InstanceStorageResourceType::RealTimeContactAnalysisSegments => {
-                "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceStorageResourceType::from(s))
+                }
             }
-            InstanceStorageResourceType::ScheduledReports => "SCHEDULED_REPORTS",
-            InstanceStorageResourceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGENT_EVENTS",
-            "ATTACHMENTS",
-            "CALL_RECORDINGS",
-            "CHAT_TRANSCRIPTS",
-            "CONTACT_EVALUATIONS",
-            "CONTACT_TRACE_RECORDS",
-            "MEDIA_STREAMS",
-            "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
-            "SCHEDULED_REPORTS",
-        ]
-    }
+impl InstanceStorageResourceType {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceStorageResourceType::AgentEvents => "AGENT_EVENTS",
+    InstanceStorageResourceType::Attachments => "ATTACHMENTS",
+    InstanceStorageResourceType::CallRecordings => "CALL_RECORDINGS",
+    InstanceStorageResourceType::ChatTranscripts => "CHAT_TRANSCRIPTS",
+    InstanceStorageResourceType::ContactEvaluations => "CONTACT_EVALUATIONS",
+    InstanceStorageResourceType::ContactTraceRecords => "CONTACT_TRACE_RECORDS",
+    InstanceStorageResourceType::MediaStreams => "MEDIA_STREAMS",
+    InstanceStorageResourceType::RealTimeContactAnalysisSegments => "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS",
+    InstanceStorageResourceType::ScheduledReports => "SCHEDULED_REPORTS",
+    InstanceStorageResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGENT_EVENTS", "ATTACHMENTS", "CALL_RECORDINGS", "CHAT_TRANSCRIPTS", "CONTACT_EVALUATIONS", "CONTACT_TRACE_RECORDS", "MEDIA_STREAMS", "REAL_TIME_CONTACT_ANALYSIS_SEGMENTS", "SCHEDULED_REPORTS"]
+                }
+            }
 impl AsRef<str> for InstanceStorageResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

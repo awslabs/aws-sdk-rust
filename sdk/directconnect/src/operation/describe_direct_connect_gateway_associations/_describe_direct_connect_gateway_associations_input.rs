@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAssociationsInput {
+pub struct DescribeDirectConnectGatewayAssociationsInput  {
     /// <p>The ID of the Direct Connect gateway association.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeDirectConnectGatewayAssociationsInput {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> 
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -25,34 +25,34 @@ pub struct DescribeDirectConnectGatewayAssociationsInput {
 }
 impl DescribeDirectConnectGatewayAssociationsInput {
     /// <p>The ID of the Direct Connect gateway association.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn associated_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn associated_gateway_id(&self) -> std::option::Option<& str> {
         self.associated_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> 
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
 }
 impl DescribeDirectConnectGatewayAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationsInput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder {
         crate::operation::describe_direct_connect_gateway_associations::builders::DescribeDirectConnectGatewayAssociationsInputBuilder::default()
     }
 }
@@ -76,8 +76,7 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
     }
     /// <p>The ID of the Direct Connect gateway association.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The ID of the associated gateway.</p>
     pub fn associated_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,12 +84,8 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         self
     }
     /// <p>The ID of the associated gateway.</p>
-    pub fn set_associated_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.associated_gateway_id = input;
-        self
+    pub fn set_associated_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.associated_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,24 +93,19 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+    pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.direct_connect_gateway_id = input; self
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> 
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
+    /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> 
     /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +114,7 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
     }
     /// <p>The token provided in the previous call to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
     pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,15 +122,11 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         self
     }
     /// <p>The ID of the virtual private gateway or transit gateway.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_id = input;
-        self
+    pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_gateway_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsInput`](crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsInput {
                 association_id: self.association_id
@@ -160,3 +145,4 @@ impl DescribeDirectConnectGatewayAssociationsInputBuilder {
         )
     }
 }
+

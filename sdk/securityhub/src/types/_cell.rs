@@ -3,7 +3,7 @@
 /// <p>An occurrence of sensitive data detected in a Microsoft Excel workbook, comma-separated value (CSV) file, or tab-separated value (TSV) file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cell {
+pub struct Cell  {
     /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, the column number corresponds to the alphabetical column identifiers. For example, a value of 1 for Column corresponds to the A column in the workbook.</p>
     #[doc(hidden)]
     pub column: i64,
@@ -27,11 +27,11 @@ impl Cell {
         self.row
     }
     /// <p>The name of the column that contains the data.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> std::option::Option<& str> {
         self.column_name.as_deref()
     }
     /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
-    pub fn cell_reference(&self) -> std::option::Option<&str> {
+    pub fn cell_reference(&self) -> std::option::Option<& str> {
         self.cell_reference.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl CellBuilder {
     }
     /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, the column number corresponds to the alphabetical column identifiers. For example, a value of 1 for Column corresponds to the A column in the workbook.</p>
     pub fn set_column(mut self, input: std::option::Option<i64>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>The row number of the row that contains the data.</p>
     pub fn row(mut self, input: i64) -> Self {
@@ -69,8 +68,7 @@ impl CellBuilder {
     }
     /// <p>The row number of the row that contains the data.</p>
     pub fn set_row(mut self, input: std::option::Option<i64>) -> Self {
-        self.row = input;
-        self
+        self.row = input; self
     }
     /// <p>The name of the column that contains the data.</p>
     pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl CellBuilder {
     }
     /// <p>The name of the column that contains the data.</p>
     pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
     pub fn cell_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,22 @@ impl CellBuilder {
     }
     /// <p>For a Microsoft Excel workbook, provides the location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2.</p>
     pub fn set_cell_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cell_reference = input;
-        self
+        self.cell_reference = input; self
     }
     /// Consumes the builder and constructs a [`Cell`](crate::types::Cell).
     pub fn build(self) -> crate::types::Cell {
         crate::types::Cell {
-            column: self.column.unwrap_or_default(),
-            row: self.row.unwrap_or_default(),
-            column_name: self.column_name,
-            cell_reference: self.cell_reference,
+            column: self.column
+                .unwrap_or_default()
+            ,
+            row: self.row
+                .unwrap_or_default()
+            ,
+            column_name: self.column_name
+            ,
+            cell_reference: self.cell_reference
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A set of filters to narrow the set of lineage entities connected to the <code>StartArn</code>(s) returned by the <code>QueryLineage</code> API action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryFilters {
+pub struct QueryFilters  {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
     #[doc(hidden)]
     pub types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -24,39 +24,35 @@ pub struct QueryFilters {
     pub modified_after: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl QueryFilters {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> std::option::Option<& [std::string::String]> {
         self.types.as_deref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-    pub fn lineage_types(&self) -> std::option::Option<&[crate::types::LineageType]> {
+    pub fn lineage_types(&self) -> std::option::Option<& [crate::types::LineageType]> {
         self.lineage_types.as_deref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
-    pub fn modified_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_before.as_ref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
-    pub fn modified_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_after.as_ref()
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
 }
@@ -77,8 +73,7 @@ pub struct QueryFiltersBuilder {
     pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) modified_before: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) modified_after: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl QueryFiltersBuilder {
     /// Appends an item to `types`.
@@ -88,17 +83,13 @@ impl QueryFiltersBuilder {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
     pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
-        v.push(input.into());
-        self.types = Some(v);
-        self
+                        v.push(input.into());
+                        self.types = Some(v);
+                        self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code> by type. For example: <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.</p>
-    pub fn set_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.types = input;
-        self
+    pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.types = input; self
     }
     /// Appends an item to `lineage_types`.
     ///
@@ -107,17 +98,13 @@ impl QueryFiltersBuilder {
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
     pub fn lineage_types(mut self, input: crate::types::LineageType) -> Self {
         let mut v = self.lineage_types.unwrap_or_default();
-        v.push(input);
-        self.lineage_types = Some(v);
-        self
+                        v.push(input);
+                        self.lineage_types = Some(v);
+                        self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by the type of the lineage entity.</p>
-    pub fn set_lineage_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LineageType>>,
-    ) -> Self {
-        self.lineage_types = input;
-        self
+    pub fn set_lineage_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::LineageType>>) -> Self {
+        self.lineage_types = input; self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,12 +112,8 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.</p>
-    pub fn set_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_before = input;
-        self
+    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_before = input; self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -138,12 +121,8 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the create date.</p>
-    pub fn set_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_after = input;
-        self
+    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_after = input; self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
     pub fn modified_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,12 +130,8 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) before the last modified date.</p>
-    pub fn set_modified_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_before = input;
-        self
+    pub fn set_modified_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.modified_before = input; self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
     pub fn modified_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -164,48 +139,42 @@ impl QueryFiltersBuilder {
         self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) after the last modified date.</p>
-    pub fn set_modified_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_after = input;
-        self
+    pub fn set_modified_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.modified_after = input; self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = Some(hash_map);
+                        self
     }
     /// <p>Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if property key value pairs. If multiple pairs are provided, an entity is included in the results if it matches any of the provided pairs.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// Consumes the builder and constructs a [`QueryFilters`](crate::types::QueryFilters).
     pub fn build(self) -> crate::types::QueryFilters {
         crate::types::QueryFilters {
-            types: self.types,
-            lineage_types: self.lineage_types,
-            created_before: self.created_before,
-            created_after: self.created_after,
-            modified_before: self.modified_before,
-            modified_after: self.modified_after,
-            properties: self.properties,
+            types: self.types
+            ,
+            lineage_types: self.lineage_types
+            ,
+            created_before: self.created_before
+            ,
+            created_after: self.created_after
+            ,
+            modified_before: self.modified_before
+            ,
+            modified_after: self.modified_after
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
+

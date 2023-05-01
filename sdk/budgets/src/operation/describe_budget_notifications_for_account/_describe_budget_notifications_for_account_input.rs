@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetNotificationsForAccountInput {
+pub struct DescribeBudgetNotificationsForAccountInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeBudgetNotificationsForAccountInput {
 }
 impl DescribeBudgetNotificationsForAccountInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
@@ -23,13 +23,13 @@ impl DescribeBudgetNotificationsForAccountInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeBudgetNotificationsForAccountInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetNotificationsForAccountInput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput).
-    pub fn builder() -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder {
         crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeBudgetNotificationsForAccountInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl DescribeBudgetNotificationsForAccountInputBuilder {
     }
     /// <p> An integer that shows how many budget name entries a paginated response contains. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,11 +68,10 @@ impl DescribeBudgetNotificationsForAccountInputBuilder {
     }
     /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountInput`](crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput).
-    pub fn build(self) -> Result<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccountInput {
                 account_id: self.account_id
@@ -87,3 +84,4 @@ impl DescribeBudgetNotificationsForAccountInputBuilder {
         )
     }
 }
+

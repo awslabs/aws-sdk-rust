@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTunnelsInput {
+pub struct ListTunnelsInput  {
     /// <p>The name of the IoT thing associated with the destination device.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListTunnelsInput {
 }
 impl ListTunnelsInput {
     /// <p>The name of the IoT thing associated with the destination device.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The maximum number of results to return at once.</p>
@@ -23,7 +23,7 @@ impl ListTunnelsInput {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ListTunnelsInputBuilder {
     }
     /// <p>The name of the IoT thing associated with the destination device.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The maximum number of results to return at once.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListTunnelsInputBuilder {
     }
     /// <p>The maximum number of results to return at once.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,20 @@ impl ListTunnelsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the nextToken value from a previous response; otherwise null to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListTunnelsInput`](crate::operation::list_tunnels::ListTunnelsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tunnels::ListTunnelsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_tunnels::ListTunnelsInput {
-            thing_name: self.thing_name,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_tunnels::ListTunnelsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_tunnels::ListTunnelsInput {
+                thing_name: self.thing_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

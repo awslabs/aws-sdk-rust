@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluatePullRequestApprovalRulesOutput {
+pub struct EvaluatePullRequestApprovalRulesOutput  {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     #[doc(hidden)]
     pub evaluation: std::option::Option<crate::types::Evaluation>,
@@ -10,18 +10,18 @@ pub struct EvaluatePullRequestApprovalRulesOutput {
 }
 impl EvaluatePullRequestApprovalRulesOutput {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
-    pub fn evaluation(&self) -> std::option::Option<&crate::types::Evaluation> {
+    pub fn evaluation(&self) -> std::option::Option<& crate::types::Evaluation> {
         self.evaluation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for EvaluatePullRequestApprovalRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EvaluatePullRequestApprovalRulesOutput {
     /// Creates a new builder-style object to manufacture [`EvaluatePullRequestApprovalRulesOutput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput).
-    pub fn builder() -> crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesOutputBuilder{
+    pub fn builder() -> crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesOutputBuilder {
         crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl EvaluatePullRequestApprovalRulesOutputBuilder {
     }
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub fn set_evaluation(mut self, input: std::option::Option<crate::types::Evaluation>) -> Self {
-        self.evaluation = input;
-        self
+        self.evaluation = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EvaluatePullRequestApprovalRulesOutput`](crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput).
-    pub fn build(self) -> crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput{
+    pub fn build(self) -> crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput {
         crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput {
             evaluation: self.evaluation
             ,
@@ -62,3 +61,4 @@ impl EvaluatePullRequestApprovalRulesOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetPartitionInput {
+pub struct BatchGetPartitionInput  {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct BatchGetPartitionInput {
 }
 impl BatchGetPartitionInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partitions' table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn partitions_to_get(&self) -> std::option::Option<&[crate::types::PartitionValueList]> {
+    pub fn partitions_to_get(&self) -> std::option::Option<& [crate::types::PartitionValueList]> {
         self.partitions_to_get.as_deref()
     }
 }
 impl BatchGetPartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder {
         crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ pub struct BatchGetPartitionInputBuilder {
     pub(crate) catalog_id: std::option::Option<std::string::String>,
     pub(crate) database_name: std::option::Option<std::string::String>,
     pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) partitions_to_get:
-        std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>,
+    pub(crate) partitions_to_get: std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>,
 }
 impl BatchGetPartitionInputBuilder {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
@@ -60,8 +58,7 @@ impl BatchGetPartitionInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl BatchGetPartitionInputBuilder {
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl BatchGetPartitionInputBuilder {
     }
     /// <p>The name of the partitions' table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Appends an item to `partitions_to_get`.
     ///
@@ -90,32 +85,28 @@ impl BatchGetPartitionInputBuilder {
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
     pub fn partitions_to_get(mut self, input: crate::types::PartitionValueList) -> Self {
         let mut v = self.partitions_to_get.unwrap_or_default();
-        v.push(input);
-        self.partitions_to_get = Some(v);
-        self
+                        v.push(input);
+                        self.partitions_to_get = Some(v);
+                        self
     }
     /// <p>A list of partition values identifying the partitions to retrieve.</p>
-    pub fn set_partitions_to_get(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>,
-    ) -> Self {
-        self.partitions_to_get = input;
-        self
+    pub fn set_partitions_to_get(mut self, input: std::option::Option<std::vec::Vec<crate::types::PartitionValueList>>) -> Self {
+        self.partitions_to_get = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetPartitionInput`](crate::operation::batch_get_partition::BatchGetPartitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_partition::BatchGetPartitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_partition::BatchGetPartitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_partition::BatchGetPartitionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                partitions_to_get: self.partitions_to_get,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                partitions_to_get: self.partitions_to_get
+                ,
+            }
         )
     }
 }
+

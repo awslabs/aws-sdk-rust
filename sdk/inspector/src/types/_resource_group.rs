@@ -3,7 +3,7 @@
 /// <p>Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <code>DescribeResourceGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceGroup {
+pub struct ResourceGroup  {
     /// <p>The ARN of the resource group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResourceGroup {
 }
 impl ResourceGroup {
     /// <p>The ARN of the resource group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::ResourceGroupTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::ResourceGroupTag]> {
         self.tags.as_deref()
     }
     /// <p>The time at which resource group is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ResourceGroupBuilder {
     }
     /// <p>The ARN of the resource group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -61,17 +60,13 @@ impl ResourceGroupBuilder {
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
     pub fn tags(mut self, input: crate::types::ResourceGroupTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceGroupTag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceGroupTag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The time at which resource group is created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -79,19 +74,19 @@ impl ResourceGroupBuilder {
         self
     }
     /// <p>The time at which resource group is created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Consumes the builder and constructs a [`ResourceGroup`](crate::types::ResourceGroup).
     pub fn build(self) -> crate::types::ResourceGroup {
         crate::types::ResourceGroup {
-            arn: self.arn,
-            tags: self.tags,
-            created_at: self.created_at,
+            arn: self.arn
+            ,
+            tags: self.tags
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

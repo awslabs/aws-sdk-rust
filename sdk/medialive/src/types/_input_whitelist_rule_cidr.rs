@@ -3,14 +3,14 @@
 /// An IPv4 CIDR to whitelist.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputWhitelistRuleCidr {
+pub struct InputWhitelistRuleCidr  {
     /// The IPv4 CIDR to whitelist.
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
 }
 impl InputWhitelistRuleCidr {
     /// The IPv4 CIDR to whitelist.
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl InputWhitelistRuleCidrBuilder {
     }
     /// The IPv4 CIDR to whitelist.
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// Consumes the builder and constructs a [`InputWhitelistRuleCidr`](crate::types::InputWhitelistRuleCidr).
     pub fn build(self) -> crate::types::InputWhitelistRuleCidr {
-        crate::types::InputWhitelistRuleCidr { cidr: self.cidr }
+        crate::types::InputWhitelistRuleCidr {
+            cidr: self.cidr
+            ,
+        }
     }
 }
+

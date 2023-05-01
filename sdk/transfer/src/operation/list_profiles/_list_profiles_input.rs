@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfilesInput {
+pub struct ListProfilesInput  {
     /// <p>The maximum number of profiles to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,11 +19,11 @@ impl ListProfilesInput {
         self.max_results
     }
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn profile_type(&self) -> std::option::Option<&crate::types::ProfileType> {
+    pub fn profile_type(&self) -> std::option::Option<& crate::types::ProfileType> {
         self.profile_type.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl ListProfilesInputBuilder {
     }
     /// <p>The maximum number of profiles to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListProfilesInputBuilder {
     }
     /// <p>When there are additional results that were not returned, a <code>NextToken</code> parameter is returned. You can use that value for a subsequent call to <code>ListProfiles</code> to continue listing results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
     pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
@@ -69,24 +67,21 @@ impl ListProfilesInputBuilder {
         self
     }
     /// <p>Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If not supplied in the request, the command lists all types of profiles.</p>
-    pub fn set_profile_type(
-        mut self,
-        input: std::option::Option<crate::types::ProfileType>,
-    ) -> Self {
-        self.profile_type = input;
-        self
+    pub fn set_profile_type(mut self, input: std::option::Option<crate::types::ProfileType>) -> Self {
+        self.profile_type = input; self
     }
     /// Consumes the builder and constructs a [`ListProfilesInput`](crate::operation::list_profiles::ListProfilesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_profiles::ListProfilesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_profiles::ListProfilesInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            profile_type: self.profile_type,
-        })
+    pub fn build(self) -> Result<crate::operation::list_profiles::ListProfilesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_profiles::ListProfilesInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                profile_type: self.profile_type
+                ,
+            }
+        )
     }
 }
+

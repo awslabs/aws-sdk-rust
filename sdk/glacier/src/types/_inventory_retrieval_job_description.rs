@@ -3,7 +3,7 @@
 /// <p>Describes the options for a range inventory retrieval job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryRetrievalJobDescription {
+pub struct InventoryRetrievalJobDescription  {
     /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct InventoryRetrievalJobDescription {
 }
 impl InventoryRetrievalJobDescription {
     /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> std::option::Option<& str> {
         self.end_date.as_deref()
     }
     /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
-    pub fn limit(&self) -> std::option::Option<&str> {
+    pub fn limit(&self) -> std::option::Option<& str> {
         self.limit.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl InventoryRetrievalJobDescriptionBuilder {
     }
     /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl InventoryRetrievalJobDescriptionBuilder {
     }
     /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_date = input;
-        self
+        self.start_date = input; self
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl InventoryRetrievalJobDescriptionBuilder {
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
     pub fn limit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl InventoryRetrievalJobDescriptionBuilder {
     }
     /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
     pub fn set_limit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,17 +103,22 @@ impl InventoryRetrievalJobDescriptionBuilder {
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`InventoryRetrievalJobDescription`](crate::types::InventoryRetrievalJobDescription).
     pub fn build(self) -> crate::types::InventoryRetrievalJobDescription {
         crate::types::InventoryRetrievalJobDescription {
-            format: self.format,
-            start_date: self.start_date,
-            end_date: self.end_date,
-            limit: self.limit,
-            marker: self.marker,
+            format: self.format
+            ,
+            start_date: self.start_date
+            ,
+            end_date: self.end_date
+            ,
+            limit: self.limit
+            ,
+            marker: self.marker
+            ,
         }
     }
 }
+

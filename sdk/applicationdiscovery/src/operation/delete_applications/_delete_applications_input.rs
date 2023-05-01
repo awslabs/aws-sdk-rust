@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationsInput {
+pub struct DeleteApplicationsInput  {
     /// <p>Configuration ID of an application to be deleted.</p>
     #[doc(hidden)]
     pub configuration_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteApplicationsInput {
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configuration_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.configuration_ids.as_deref()
     }
 }
 impl DeleteApplicationsInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
-    pub fn builder(
-    ) -> crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder {
+    pub fn builder() -> crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder {
         crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder::default()
     }
 }
@@ -35,29 +34,22 @@ impl DeleteApplicationsInputBuilder {
     /// <p>Configuration ID of an application to be deleted.</p>
     pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_ids = Some(v);
+                        self
     }
     /// <p>Configuration ID of an application to be deleted.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.configuration_ids = input;
-        self
+    pub fn set_configuration_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.configuration_ids = input; self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationsInput`](crate::operation::delete_applications::DeleteApplicationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_applications::DeleteApplicationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_applications::DeleteApplicationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_applications::DeleteApplicationsInput {
-                configuration_ids: self.configuration_ids,
-            },
+                configuration_ids: self.configuration_ids
+                ,
+            }
         )
     }
 }
+

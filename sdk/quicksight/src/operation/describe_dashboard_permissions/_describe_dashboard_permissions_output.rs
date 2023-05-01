@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardPermissionsOutput {
+pub struct DescribeDashboardPermissionsOutput  {
     /// <p>The ID for the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct DescribeDashboardPermissionsOutput {
 }
 impl DescribeDashboardPermissionsOutput {
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>A structure that contains the permissions for the dashboard.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -41,24 +41,22 @@ impl DescribeDashboardPermissionsOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn link_sharing_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::LinkSharingConfiguration> {
+    pub fn link_sharing_configuration(&self) -> std::option::Option<& crate::types::LinkSharingConfiguration> {
         self.link_sharing_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDashboardPermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDashboardPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardPermissionsOutput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput).
-    pub fn builder() -> crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder {
         crate::operation::describe_dashboard_permissions::builders::DescribeDashboardPermissionsOutputBuilder::default()
     }
 }
@@ -72,8 +70,7 @@ pub struct DescribeDashboardPermissionsOutputBuilder {
     pub(crate) permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
     pub(crate) status: std::option::Option<i32>,
     pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) link_sharing_configuration:
-        std::option::Option<crate::types::LinkSharingConfiguration>,
+    pub(crate) link_sharing_configuration: std::option::Option<crate::types::LinkSharingConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeDashboardPermissionsOutputBuilder {
@@ -84,8 +81,7 @@ impl DescribeDashboardPermissionsOutputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +90,7 @@ impl DescribeDashboardPermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_arn = input;
-        self
+        self.dashboard_arn = input; self
     }
     /// Appends an item to `permissions`.
     ///
@@ -104,17 +99,13 @@ impl DescribeDashboardPermissionsOutputBuilder {
     /// <p>A structure that contains the permissions for the dashboard.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>A structure that contains the permissions for the dashboard.</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -123,8 +114,7 @@ impl DescribeDashboardPermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,46 +123,44 @@ impl DescribeDashboardPermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn link_sharing_configuration(
-        mut self,
-        input: crate::types::LinkSharingConfiguration,
-    ) -> Self {
+    pub fn link_sharing_configuration(mut self, input: crate::types::LinkSharingConfiguration) -> Self {
         self.link_sharing_configuration = Some(input);
         self
     }
     /// <p>A structure that contains the configuration of a shareable link that grants access to the dashboard. Your users can use the link to view and interact with the dashboard, if the dashboard has been shared with them. For more information about sharing dashboards, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/sharing-a-dashboard.html">Sharing Dashboards</a>.</p>
-    pub fn set_link_sharing_configuration(
-        mut self,
-        input: std::option::Option<crate::types::LinkSharingConfiguration>,
-    ) -> Self {
-        self.link_sharing_configuration = input;
-        self
+    pub fn set_link_sharing_configuration(mut self, input: std::option::Option<crate::types::LinkSharingConfiguration>) -> Self {
+        self.link_sharing_configuration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDashboardPermissionsOutput`](crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput {
         crate::operation::describe_dashboard_permissions::DescribeDashboardPermissionsOutput {
-            dashboard_id: self.dashboard_id,
-            dashboard_arn: self.dashboard_arn,
-            permissions: self.permissions,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
-            link_sharing_configuration: self.link_sharing_configuration,
+            dashboard_id: self.dashboard_id
+            ,
+            dashboard_arn: self.dashboard_arn
+            ,
+            permissions: self.permissions
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
+            link_sharing_configuration: self.link_sharing_configuration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

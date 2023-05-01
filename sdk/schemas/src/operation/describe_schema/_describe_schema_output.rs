@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSchemaOutput {
+pub struct DescribeSchemaOutput  {
     /// <p>The source of the schema definition.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -23,8 +23,7 @@ pub struct DescribeSchemaOutput {
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of the schema.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -35,50 +34,47 @@ pub struct DescribeSchemaOutput {
 }
 impl DescribeSchemaOutput {
     /// <p>The source of the schema definition.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The description of the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>The version number of the schema</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of the schema.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The date the schema version was created.</p>
-    pub fn version_created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn version_created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.version_created_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSchemaOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSchemaOutput`](crate::operation::describe_schema::DescribeSchemaOutput).
     pub fn builder() -> crate::operation::describe_schema::builders::DescribeSchemaOutputBuilder {
@@ -96,8 +92,7 @@ pub struct DescribeSchemaOutputBuilder {
     pub(crate) schema_arn: std::option::Option<std::string::String>,
     pub(crate) schema_name: std::option::Option<std::string::String>,
     pub(crate) schema_version: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) r#type: std::option::Option<std::string::String>,
     pub(crate) version_created_date: std::option::Option<aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -110,8 +105,7 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The source of the schema definition.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The description of the schema.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +114,7 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The description of the schema.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The date and time that schema was modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -129,12 +122,8 @@ impl DescribeSchemaOutputBuilder {
         self
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     /// <p>The ARN of the schema.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +132,7 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The ARN of the schema.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +141,7 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>The version number of the schema</p>
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,33 +150,22 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The version number of the schema</p>
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The type of the schema.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,8 +174,7 @@ impl DescribeSchemaOutputBuilder {
     }
     /// <p>The type of the schema.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The date the schema version was created.</p>
     pub fn version_created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -207,35 +182,41 @@ impl DescribeSchemaOutputBuilder {
         self
     }
     /// <p>The date the schema version was created.</p>
-    pub fn set_version_created_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.version_created_date = input;
-        self
+    pub fn set_version_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.version_created_date = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSchemaOutput`](crate::operation::describe_schema::DescribeSchemaOutput).
     pub fn build(self) -> crate::operation::describe_schema::DescribeSchemaOutput {
         crate::operation::describe_schema::DescribeSchemaOutput {
-            content: self.content,
-            description: self.description,
-            last_modified: self.last_modified,
-            schema_arn: self.schema_arn,
-            schema_name: self.schema_name,
-            schema_version: self.schema_version,
-            tags: self.tags,
-            r#type: self.r#type,
-            version_created_date: self.version_created_date,
+            content: self.content
+            ,
+            description: self.description
+            ,
+            last_modified: self.last_modified
+            ,
+            schema_arn: self.schema_arn
+            ,
+            schema_name: self.schema_name
+            ,
+            schema_version: self.schema_version
+            ,
+            tags: self.tags
+            ,
+            r#type: self.r#type
+            ,
+            version_created_date: self.version_created_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

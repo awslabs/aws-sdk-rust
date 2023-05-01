@@ -3,7 +3,7 @@
 /// <p>Container distribution settings for encryption, licensing, and sharing in a specific Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainerDistributionConfiguration {
+pub struct ContainerDistributionConfiguration  {
     /// <p>The description of the container distribution configuration.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -16,17 +16,15 @@ pub struct ContainerDistributionConfiguration {
 }
 impl ContainerDistributionConfiguration {
     /// <p>The description of the container distribution configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub fn container_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn container_tags(&self) -> std::option::Option<& [std::string::String]> {
         self.container_tags.as_deref()
     }
     /// <p>The destination repository for the container distribution configuration.</p>
-    pub fn target_repository(
-        &self,
-    ) -> std::option::Option<&crate::types::TargetContainerRepository> {
+    pub fn target_repository(&self) -> std::option::Option<& crate::types::TargetContainerRepository> {
         self.target_repository.as_ref()
     }
 }
@@ -53,8 +51,7 @@ impl ContainerDistributionConfigurationBuilder {
     }
     /// <p>The description of the container distribution configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `container_tags`.
     ///
@@ -63,17 +60,13 @@ impl ContainerDistributionConfigurationBuilder {
     /// <p>Tags that are attached to the container distribution configuration.</p>
     pub fn container_tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.container_tags.unwrap_or_default();
-        v.push(input.into());
-        self.container_tags = Some(v);
-        self
+                        v.push(input.into());
+                        self.container_tags = Some(v);
+                        self
     }
     /// <p>Tags that are attached to the container distribution configuration.</p>
-    pub fn set_container_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.container_tags = input;
-        self
+    pub fn set_container_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.container_tags = input; self
     }
     /// <p>The destination repository for the container distribution configuration.</p>
     pub fn target_repository(mut self, input: crate::types::TargetContainerRepository) -> Self {
@@ -81,19 +74,19 @@ impl ContainerDistributionConfigurationBuilder {
         self
     }
     /// <p>The destination repository for the container distribution configuration.</p>
-    pub fn set_target_repository(
-        mut self,
-        input: std::option::Option<crate::types::TargetContainerRepository>,
-    ) -> Self {
-        self.target_repository = input;
-        self
+    pub fn set_target_repository(mut self, input: std::option::Option<crate::types::TargetContainerRepository>) -> Self {
+        self.target_repository = input; self
     }
     /// Consumes the builder and constructs a [`ContainerDistributionConfiguration`](crate::types::ContainerDistributionConfiguration).
     pub fn build(self) -> crate::types::ContainerDistributionConfiguration {
         crate::types::ContainerDistributionConfiguration {
-            description: self.description,
-            container_tags: self.container_tags,
-            target_repository: self.target_repository,
+            description: self.description
+            ,
+            container_tags: self.container_tags
+            ,
+            target_repository: self.target_repository
+            ,
         }
     }
 }
+

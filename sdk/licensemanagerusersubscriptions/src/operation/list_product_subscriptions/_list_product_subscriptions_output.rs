@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProductSubscriptionsOutput {
+pub struct ListProductSubscriptionsOutput  {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
     #[doc(hidden)]
-    pub product_user_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ProductUserSummary>>,
+    pub product_user_summaries: std::option::Option<std::vec::Vec<crate::types::ProductUserSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct ListProductSubscriptionsOutput {
 }
 impl ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn product_user_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::ProductUserSummary]> {
+    pub fn product_user_summaries(&self) -> std::option::Option<& [crate::types::ProductUserSummary]> {
         self.product_user_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListProductSubscriptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListProductSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsOutputBuilder {
         crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl ListProductSubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListProductSubscriptionsOutputBuilder {
-    pub(crate) product_user_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ProductUserSummary>>,
+    pub(crate) product_user_summaries: std::option::Option<std::vec::Vec<crate::types::ProductUserSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl ListProductSubscriptionsOutputBuilder {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
     pub fn product_user_summaries(mut self, input: crate::types::ProductUserSummary) -> Self {
         let mut v = self.product_user_summaries.unwrap_or_default();
-        v.push(input);
-        self.product_user_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.product_user_summaries = Some(v);
+                        self
     }
     /// <p>Metadata that describes the list product subscriptions operation.</p>
-    pub fn set_product_user_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductUserSummary>>,
-    ) -> Self {
-        self.product_user_summaries = input;
-        self
+    pub fn set_product_user_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProductUserSummary>>) -> Self {
+        self.product_user_summaries = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,26 +64,26 @@ impl ListProductSubscriptionsOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListProductSubscriptionsOutput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput {
+    pub fn build(self) -> crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput {
         crate::operation::list_product_subscriptions::ListProductSubscriptionsOutput {
-            product_user_summaries: self.product_user_summaries,
-            next_token: self.next_token,
+            product_user_summaries: self.product_user_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

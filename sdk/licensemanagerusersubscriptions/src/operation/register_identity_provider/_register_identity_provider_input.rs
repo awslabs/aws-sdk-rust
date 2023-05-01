@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterIdentityProviderInput {
+pub struct RegisterIdentityProviderInput  {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
     pub identity_provider: std::option::Option<crate::types::IdentityProvider>,
@@ -15,23 +15,21 @@ pub struct RegisterIdentityProviderInput {
 }
 impl RegisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<& crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> std::option::Option<& str> {
         self.product.as_deref()
     }
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::types::Settings> {
+    pub fn settings(&self) -> std::option::Option<& crate::types::Settings> {
         self.settings.as_ref()
     }
 }
 impl RegisterIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`RegisterIdentityProviderInput`](crate::operation::register_identity_provider::RegisterIdentityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder
-    {
+    pub fn builder() -> crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder {
         crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl RegisterIdentityProviderInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(
-        mut self,
-        input: std::option::Option<crate::types::IdentityProvider>,
-    ) -> Self {
-        self.identity_provider = input;
-        self
+    pub fn set_identity_provider(mut self, input: std::option::Option<crate::types::IdentityProvider>) -> Self {
+        self.identity_provider = input; self
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl RegisterIdentityProviderInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product = input;
-        self
+        self.product = input; self
     }
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
@@ -75,22 +68,20 @@ impl RegisterIdentityProviderInputBuilder {
     }
     /// <p>The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn set_settings(mut self, input: std::option::Option<crate::types::Settings>) -> Self {
-        self.settings = input;
-        self
+        self.settings = input; self
     }
     /// Consumes the builder and constructs a [`RegisterIdentityProviderInput`](crate::operation::register_identity_provider::RegisterIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_identity_provider::RegisterIdentityProviderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::register_identity_provider::RegisterIdentityProviderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::register_identity_provider::RegisterIdentityProviderInput {
-                identity_provider: self.identity_provider,
-                product: self.product,
-                settings: self.settings,
-            },
+                identity_provider: self.identity_provider
+                ,
+                product: self.product
+                ,
+                settings: self.settings
+                ,
+            }
         )
     }
 }
+

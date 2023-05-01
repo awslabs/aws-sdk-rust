@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePrincipalMappingOutput {
+pub struct DeletePrincipalMappingOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeletePrincipalMappingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeletePrincipalMappingOutput {
     /// Creates a new builder-style object to manufacture [`DeletePrincipalMappingOutput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingOutputBuilder {
         crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeletePrincipalMappingOutputBuilder {
 }
 impl DeletePrincipalMappingOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeletePrincipalMappingOutput`](crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput).
     pub fn build(self) -> crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput {
         crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput {
@@ -42,3 +40,4 @@ impl DeletePrincipalMappingOutputBuilder {
         }
     }
 }
+

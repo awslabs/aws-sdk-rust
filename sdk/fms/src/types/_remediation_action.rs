@@ -3,7 +3,7 @@
 /// <p>Information about an individual action you can take to remediate a violation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemediationAction {
+pub struct RemediationAction  {
     /// <p>A description of a remediation action.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -21,73 +21,53 @@ pub struct RemediationAction {
     pub ec2_copy_route_table_action: std::option::Option<crate::types::Ec2CopyRouteTableAction>,
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
     #[doc(hidden)]
-    pub ec2_replace_route_table_association_action:
-        std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
+    pub ec2_replace_route_table_association_action: std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
     #[doc(hidden)]
-    pub ec2_associate_route_table_action:
-        std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
+    pub ec2_associate_route_table_action: std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
     #[doc(hidden)]
     pub ec2_create_route_table_action: std::option::Option<crate::types::Ec2CreateRouteTableAction>,
     /// <p>The remedial action to take when updating a firewall configuration.</p>
     #[doc(hidden)]
-    pub fms_policy_update_firewall_creation_config_action:
-        std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
+    pub fms_policy_update_firewall_creation_config_action: std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
 }
 impl RemediationAction {
     /// <p>A description of a remediation action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
-    pub fn ec2_create_route_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2CreateRouteAction> {
+    pub fn ec2_create_route_action(&self) -> std::option::Option<& crate::types::Ec2CreateRouteAction> {
         self.ec2_create_route_action.as_ref()
     }
     /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
-    pub fn ec2_replace_route_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2ReplaceRouteAction> {
+    pub fn ec2_replace_route_action(&self) -> std::option::Option<& crate::types::Ec2ReplaceRouteAction> {
         self.ec2_replace_route_action.as_ref()
     }
     /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
-    pub fn ec2_delete_route_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2DeleteRouteAction> {
+    pub fn ec2_delete_route_action(&self) -> std::option::Option<& crate::types::Ec2DeleteRouteAction> {
         self.ec2_delete_route_action.as_ref()
     }
     /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
-    pub fn ec2_copy_route_table_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2CopyRouteTableAction> {
+    pub fn ec2_copy_route_table_action(&self) -> std::option::Option<& crate::types::Ec2CopyRouteTableAction> {
         self.ec2_copy_route_table_action.as_ref()
     }
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
-    pub fn ec2_replace_route_table_association_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2ReplaceRouteTableAssociationAction> {
+    pub fn ec2_replace_route_table_association_action(&self) -> std::option::Option<& crate::types::Ec2ReplaceRouteTableAssociationAction> {
         self.ec2_replace_route_table_association_action.as_ref()
     }
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
-    pub fn ec2_associate_route_table_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2AssociateRouteTableAction> {
+    pub fn ec2_associate_route_table_action(&self) -> std::option::Option<& crate::types::Ec2AssociateRouteTableAction> {
         self.ec2_associate_route_table_action.as_ref()
     }
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
-    pub fn ec2_create_route_table_action(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2CreateRouteTableAction> {
+    pub fn ec2_create_route_table_action(&self) -> std::option::Option<& crate::types::Ec2CreateRouteTableAction> {
         self.ec2_create_route_table_action.as_ref()
     }
     /// <p>The remedial action to take when updating a firewall configuration.</p>
-    pub fn fms_policy_update_firewall_creation_config_action(
-        &self,
-    ) -> std::option::Option<&crate::types::FmsPolicyUpdateFirewallCreationConfigAction> {
-        self.fms_policy_update_firewall_creation_config_action
-            .as_ref()
+    pub fn fms_policy_update_firewall_creation_config_action(&self) -> std::option::Option<& crate::types::FmsPolicyUpdateFirewallCreationConfigAction> {
+        self.fms_policy_update_firewall_creation_config_action.as_ref()
     }
 }
 impl RemediationAction {
@@ -105,16 +85,11 @@ pub struct RemediationActionBuilder {
     pub(crate) ec2_create_route_action: std::option::Option<crate::types::Ec2CreateRouteAction>,
     pub(crate) ec2_replace_route_action: std::option::Option<crate::types::Ec2ReplaceRouteAction>,
     pub(crate) ec2_delete_route_action: std::option::Option<crate::types::Ec2DeleteRouteAction>,
-    pub(crate) ec2_copy_route_table_action:
-        std::option::Option<crate::types::Ec2CopyRouteTableAction>,
-    pub(crate) ec2_replace_route_table_association_action:
-        std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
-    pub(crate) ec2_associate_route_table_action:
-        std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
-    pub(crate) ec2_create_route_table_action:
-        std::option::Option<crate::types::Ec2CreateRouteTableAction>,
-    pub(crate) fms_policy_update_firewall_creation_config_action:
-        std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
+    pub(crate) ec2_copy_route_table_action: std::option::Option<crate::types::Ec2CopyRouteTableAction>,
+    pub(crate) ec2_replace_route_table_association_action: std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
+    pub(crate) ec2_associate_route_table_action: std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
+    pub(crate) ec2_create_route_table_action: std::option::Option<crate::types::Ec2CreateRouteTableAction>,
+    pub(crate) fms_policy_update_firewall_creation_config_action: std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
 }
 impl RemediationActionBuilder {
     /// <p>A description of a remediation action.</p>
@@ -124,8 +99,7 @@ impl RemediationActionBuilder {
     }
     /// <p>A description of a remediation action.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
     pub fn ec2_create_route_action(mut self, input: crate::types::Ec2CreateRouteAction) -> Self {
@@ -133,12 +107,8 @@ impl RemediationActionBuilder {
         self
     }
     /// <p>Information about the CreateRoute action in the Amazon EC2 API.</p>
-    pub fn set_ec2_create_route_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2CreateRouteAction>,
-    ) -> Self {
-        self.ec2_create_route_action = input;
-        self
+    pub fn set_ec2_create_route_action(mut self, input: std::option::Option<crate::types::Ec2CreateRouteAction>) -> Self {
+        self.ec2_create_route_action = input; self
     }
     /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
     pub fn ec2_replace_route_action(mut self, input: crate::types::Ec2ReplaceRouteAction) -> Self {
@@ -146,12 +116,8 @@ impl RemediationActionBuilder {
         self
     }
     /// <p>Information about the ReplaceRoute action in the Amazon EC2 API.</p>
-    pub fn set_ec2_replace_route_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2ReplaceRouteAction>,
-    ) -> Self {
-        self.ec2_replace_route_action = input;
-        self
+    pub fn set_ec2_replace_route_action(mut self, input: std::option::Option<crate::types::Ec2ReplaceRouteAction>) -> Self {
+        self.ec2_replace_route_action = input; self
     }
     /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
     pub fn ec2_delete_route_action(mut self, input: crate::types::Ec2DeleteRouteAction) -> Self {
@@ -159,107 +125,76 @@ impl RemediationActionBuilder {
         self
     }
     /// <p>Information about the DeleteRoute action in the Amazon EC2 API.</p>
-    pub fn set_ec2_delete_route_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2DeleteRouteAction>,
-    ) -> Self {
-        self.ec2_delete_route_action = input;
-        self
+    pub fn set_ec2_delete_route_action(mut self, input: std::option::Option<crate::types::Ec2DeleteRouteAction>) -> Self {
+        self.ec2_delete_route_action = input; self
     }
     /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
-    pub fn ec2_copy_route_table_action(
-        mut self,
-        input: crate::types::Ec2CopyRouteTableAction,
-    ) -> Self {
+    pub fn ec2_copy_route_table_action(mut self, input: crate::types::Ec2CopyRouteTableAction) -> Self {
         self.ec2_copy_route_table_action = Some(input);
         self
     }
     /// <p>Information about the CopyRouteTable action in the Amazon EC2 API.</p>
-    pub fn set_ec2_copy_route_table_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2CopyRouteTableAction>,
-    ) -> Self {
-        self.ec2_copy_route_table_action = input;
-        self
+    pub fn set_ec2_copy_route_table_action(mut self, input: std::option::Option<crate::types::Ec2CopyRouteTableAction>) -> Self {
+        self.ec2_copy_route_table_action = input; self
     }
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
-    pub fn ec2_replace_route_table_association_action(
-        mut self,
-        input: crate::types::Ec2ReplaceRouteTableAssociationAction,
-    ) -> Self {
+    pub fn ec2_replace_route_table_association_action(mut self, input: crate::types::Ec2ReplaceRouteTableAssociationAction) -> Self {
         self.ec2_replace_route_table_association_action = Some(input);
         self
     }
     /// <p>Information about the ReplaceRouteTableAssociation action in the Amazon EC2 API.</p>
-    pub fn set_ec2_replace_route_table_association_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>,
-    ) -> Self {
-        self.ec2_replace_route_table_association_action = input;
-        self
+    pub fn set_ec2_replace_route_table_association_action(mut self, input: std::option::Option<crate::types::Ec2ReplaceRouteTableAssociationAction>) -> Self {
+        self.ec2_replace_route_table_association_action = input; self
     }
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
-    pub fn ec2_associate_route_table_action(
-        mut self,
-        input: crate::types::Ec2AssociateRouteTableAction,
-    ) -> Self {
+    pub fn ec2_associate_route_table_action(mut self, input: crate::types::Ec2AssociateRouteTableAction) -> Self {
         self.ec2_associate_route_table_action = Some(input);
         self
     }
     /// <p>Information about the AssociateRouteTable action in the Amazon EC2 API.</p>
-    pub fn set_ec2_associate_route_table_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2AssociateRouteTableAction>,
-    ) -> Self {
-        self.ec2_associate_route_table_action = input;
-        self
+    pub fn set_ec2_associate_route_table_action(mut self, input: std::option::Option<crate::types::Ec2AssociateRouteTableAction>) -> Self {
+        self.ec2_associate_route_table_action = input; self
     }
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
-    pub fn ec2_create_route_table_action(
-        mut self,
-        input: crate::types::Ec2CreateRouteTableAction,
-    ) -> Self {
+    pub fn ec2_create_route_table_action(mut self, input: crate::types::Ec2CreateRouteTableAction) -> Self {
         self.ec2_create_route_table_action = Some(input);
         self
     }
     /// <p>Information about the CreateRouteTable action in the Amazon EC2 API.</p>
-    pub fn set_ec2_create_route_table_action(
-        mut self,
-        input: std::option::Option<crate::types::Ec2CreateRouteTableAction>,
-    ) -> Self {
-        self.ec2_create_route_table_action = input;
-        self
+    pub fn set_ec2_create_route_table_action(mut self, input: std::option::Option<crate::types::Ec2CreateRouteTableAction>) -> Self {
+        self.ec2_create_route_table_action = input; self
     }
     /// <p>The remedial action to take when updating a firewall configuration.</p>
-    pub fn fms_policy_update_firewall_creation_config_action(
-        mut self,
-        input: crate::types::FmsPolicyUpdateFirewallCreationConfigAction,
-    ) -> Self {
+    pub fn fms_policy_update_firewall_creation_config_action(mut self, input: crate::types::FmsPolicyUpdateFirewallCreationConfigAction) -> Self {
         self.fms_policy_update_firewall_creation_config_action = Some(input);
         self
     }
     /// <p>The remedial action to take when updating a firewall configuration.</p>
-    pub fn set_fms_policy_update_firewall_creation_config_action(
-        mut self,
-        input: std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>,
-    ) -> Self {
-        self.fms_policy_update_firewall_creation_config_action = input;
-        self
+    pub fn set_fms_policy_update_firewall_creation_config_action(mut self, input: std::option::Option<crate::types::FmsPolicyUpdateFirewallCreationConfigAction>) -> Self {
+        self.fms_policy_update_firewall_creation_config_action = input; self
     }
     /// Consumes the builder and constructs a [`RemediationAction`](crate::types::RemediationAction).
     pub fn build(self) -> crate::types::RemediationAction {
         crate::types::RemediationAction {
-            description: self.description,
-            ec2_create_route_action: self.ec2_create_route_action,
-            ec2_replace_route_action: self.ec2_replace_route_action,
-            ec2_delete_route_action: self.ec2_delete_route_action,
-            ec2_copy_route_table_action: self.ec2_copy_route_table_action,
-            ec2_replace_route_table_association_action: self
-                .ec2_replace_route_table_association_action,
-            ec2_associate_route_table_action: self.ec2_associate_route_table_action,
-            ec2_create_route_table_action: self.ec2_create_route_table_action,
-            fms_policy_update_firewall_creation_config_action: self
-                .fms_policy_update_firewall_creation_config_action,
+            description: self.description
+            ,
+            ec2_create_route_action: self.ec2_create_route_action
+            ,
+            ec2_replace_route_action: self.ec2_replace_route_action
+            ,
+            ec2_delete_route_action: self.ec2_delete_route_action
+            ,
+            ec2_copy_route_table_action: self.ec2_copy_route_table_action
+            ,
+            ec2_replace_route_table_association_action: self.ec2_replace_route_table_association_action
+            ,
+            ec2_associate_route_table_action: self.ec2_associate_route_table_action
+            ,
+            ec2_create_route_table_action: self.ec2_create_route_table_action
+            ,
+            fms_policy_update_firewall_creation_config_action: self.fms_policy_update_firewall_creation_config_action
+            ,
         }
     }
 }
+

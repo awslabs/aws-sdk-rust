@@ -4,73 +4,50 @@ pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_
 pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_input::UpdateHoursOfOperationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateHoursOfOperation`.
-///
-/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// 
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p> 
 /// <p>Updates the hours of operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateHoursOfOperationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder,
-}
-impl UpdateHoursOfOperationFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_hours_of_operation::builders::UpdateHoursOfOperationInputBuilder
+            }
+impl UpdateHoursOfOperationFluentBuilder  {
     /// Creates a new `UpdateHoursOfOperation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_hours_of_operation::UpdateHoursOfOperation, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_hours_of_operation::UpdateHoursOfOperationError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput, aws_smithy_http::result::SdkError<crate::operation::update_hours_of_operation::UpdateHoursOfOperationError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -87,10 +64,7 @@ impl UpdateHoursOfOperationFluentBuilder {
         self
     }
     /// <p>The identifier of the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_hours_of_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_hours_of_operation_id(input);
         self
     }
@@ -134,11 +108,9 @@ impl UpdateHoursOfOperationFluentBuilder {
         self
     }
     /// <p>Configuration information of the hours of operation.</p>
-    pub fn set_config(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    ) -> Self {
+    pub fn set_config(mut self, input: std::option::Option<std::vec::Vec<crate::types::HoursOfOperationConfig>>) -> Self {
         self.inner = self.inner.set_config(input);
         self
     }
 }
+

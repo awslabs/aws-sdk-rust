@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAggregateComplianceDetailsByConfigRuleOutput {
+pub struct GetAggregateComplianceDetailsByConfigRuleOutput  {
     /// <p>Returns an AggregateEvaluationResults object.</p>
     #[doc(hidden)]
-    pub aggregate_evaluation_results:
-        std::option::Option<std::vec::Vec<crate::types::AggregateEvaluationResult>>,
+    pub aggregate_evaluation_results: std::option::Option<std::vec::Vec<crate::types::AggregateEvaluationResult>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct GetAggregateComplianceDetailsByConfigRuleOutput {
 }
 impl GetAggregateComplianceDetailsByConfigRuleOutput {
     /// <p>Returns an AggregateEvaluationResults object.</p>
-    pub fn aggregate_evaluation_results(
-        &self,
-    ) -> std::option::Option<&[crate::types::AggregateEvaluationResult]> {
+    pub fn aggregate_evaluation_results(&self) -> std::option::Option<& [crate::types::AggregateEvaluationResult]> {
         self.aggregate_evaluation_results.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAggregateComplianceDetailsByConfigRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAggregateComplianceDetailsByConfigRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetAggregateComplianceDetailsByConfigRuleOutput`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput).
-    pub fn builder() -> crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleOutputBuilder{
+    pub fn builder() -> crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleOutputBuilder {
         crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl GetAggregateComplianceDetailsByConfigRuleOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateComplianceDetailsByConfigRuleOutputBuilder {
-    pub(crate) aggregate_evaluation_results:
-        std::option::Option<std::vec::Vec<crate::types::AggregateEvaluationResult>>,
+    pub(crate) aggregate_evaluation_results: std::option::Option<std::vec::Vec<crate::types::AggregateEvaluationResult>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl GetAggregateComplianceDetailsByConfigRuleOutputBuilder {
     /// To override the contents of this collection use [`set_aggregate_evaluation_results`](Self::set_aggregate_evaluation_results).
     ///
     /// <p>Returns an AggregateEvaluationResults object.</p>
-    pub fn aggregate_evaluation_results(
-        mut self,
-        input: crate::types::AggregateEvaluationResult,
-    ) -> Self {
+    pub fn aggregate_evaluation_results(mut self, input: crate::types::AggregateEvaluationResult) -> Self {
         let mut v = self.aggregate_evaluation_results.unwrap_or_default();
-        v.push(input);
-        self.aggregate_evaluation_results = Some(v);
-        self
+                        v.push(input);
+                        self.aggregate_evaluation_results = Some(v);
+                        self
     }
     /// <p>Returns an AggregateEvaluationResults object.</p>
-    pub fn set_aggregate_evaluation_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AggregateEvaluationResult>>,
-    ) -> Self {
-        self.aggregate_evaluation_results = input;
-        self
+    pub fn set_aggregate_evaluation_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::AggregateEvaluationResult>>) -> Self {
+        self.aggregate_evaluation_results = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl GetAggregateComplianceDetailsByConfigRuleOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAggregateComplianceDetailsByConfigRuleOutput`](crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput).
-    pub fn build(self) -> crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput{
+    pub fn build(self) -> crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput {
         crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRuleOutput {
             aggregate_evaluation_results: self.aggregate_evaluation_results
             ,
@@ -98,3 +86,4 @@ impl GetAggregateComplianceDetailsByConfigRuleOutputBuilder {
         }
     }
 }
+

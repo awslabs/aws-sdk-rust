@@ -3,7 +3,7 @@
 /// <p>A list of all of the identities that you've attempted to verify for use with Amazon Pinpoint, regardless of whether or not those identities were successfully verified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEmailIdentitiesOutput {
+pub struct ListEmailIdentitiesOutput  {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub email_identities: std::option::Option<std::vec::Vec<crate::types::IdentityInfo>>,
@@ -14,25 +14,23 @@ pub struct ListEmailIdentitiesOutput {
 }
 impl ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
-    pub fn email_identities(&self) -> std::option::Option<&[crate::types::IdentityInfo]> {
+    pub fn email_identities(&self) -> std::option::Option<& [crate::types::IdentityInfo]> {
         self.email_identities.as_deref()
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEmailIdentitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListEmailIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListEmailIdentitiesOutput`](crate::operation::list_email_identities::ListEmailIdentitiesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_email_identities::builders::ListEmailIdentitiesOutputBuilder {
-        crate::operation::list_email_identities::builders::ListEmailIdentitiesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_email_identities::builders::ListEmailIdentitiesOutputBuilder {
+        crate::operation::list_email_identities::builders::ListEmailIdentitiesOutputBuilder::default()
     }
 }
 
@@ -52,17 +50,13 @@ impl ListEmailIdentitiesOutputBuilder {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
     pub fn email_identities(mut self, input: crate::types::IdentityInfo) -> Self {
         let mut v = self.email_identities.unwrap_or_default();
-        v.push(input);
-        self.email_identities = Some(v);
-        self
+                        v.push(input);
+                        self.email_identities = Some(v);
+                        self
     }
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
-    pub fn set_email_identities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IdentityInfo>>,
-    ) -> Self {
-        self.email_identities = input;
-        self
+    pub fn set_email_identities(mut self, input: std::option::Option<std::vec::Vec<crate::types::IdentityInfo>>) -> Self {
+        self.email_identities = input; self
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +65,26 @@ impl ListEmailIdentitiesOutputBuilder {
     }
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListEmailIdentitiesOutput`](crate::operation::list_email_identities::ListEmailIdentitiesOutput).
     pub fn build(self) -> crate::operation::list_email_identities::ListEmailIdentitiesOutput {
         crate::operation::list_email_identities::ListEmailIdentitiesOutput {
-            email_identities: self.email_identities,
-            next_token: self.next_token,
+            email_identities: self.email_identities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

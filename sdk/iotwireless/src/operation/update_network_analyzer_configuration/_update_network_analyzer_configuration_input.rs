@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNetworkAnalyzerConfigurationInput {
+pub struct UpdateNetworkAnalyzerConfigurationInput  {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
@@ -27,37 +27,37 @@ pub struct UpdateNetworkAnalyzerConfigurationInput {
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_name(&self) -> std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    pub fn trace_content(&self) -> std::option::Option<&crate::types::TraceContent> {
+    pub fn trace_content(&self) -> std::option::Option<& crate::types::TraceContent> {
         self.trace_content.as_ref()
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn wireless_devices_to_add(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wireless_devices_to_add(&self) -> std::option::Option<& [std::string::String]> {
         self.wireless_devices_to_add.as_deref()
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub fn wireless_devices_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wireless_devices_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.wireless_devices_to_remove.as_deref()
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn wireless_gateways_to_add(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wireless_gateways_to_add(&self) -> std::option::Option<& [std::string::String]> {
         self.wireless_gateways_to_add.as_deref()
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub fn wireless_gateways_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wireless_gateways_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.wireless_gateways_to_remove.as_deref()
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationInput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput).
-    pub fn builder() -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder {
         crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder::default()
     }
 }
@@ -81,12 +81,8 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
         self
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn set_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_name = input;
-        self
+    pub fn set_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_name = input; self
     }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
     pub fn trace_content(mut self, input: crate::types::TraceContent) -> Self {
@@ -94,12 +90,8 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
         self
     }
     /// <p>Trace content for your wireless gateway and wireless device resources.</p>
-    pub fn set_trace_content(
-        mut self,
-        input: std::option::Option<crate::types::TraceContent>,
-    ) -> Self {
-        self.trace_content = input;
-        self
+    pub fn set_trace_content(mut self, input: std::option::Option<crate::types::TraceContent>) -> Self {
+        self.trace_content = input; self
     }
     /// Appends an item to `wireless_devices_to_add`.
     ///
@@ -108,17 +100,13 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
     pub fn wireless_devices_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.wireless_devices_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_devices_to_add = Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_devices_to_add = Some(v);
+                        self
     }
     /// <p>Wireless device resources to add to the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_devices_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.wireless_devices_to_add = input;
-        self
+    pub fn set_wireless_devices_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.wireless_devices_to_add = input; self
     }
     /// Appends an item to `wireless_devices_to_remove`.
     ///
@@ -127,17 +115,13 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
     pub fn wireless_devices_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.wireless_devices_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_devices_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_devices_to_remove = Some(v);
+                        self
     }
     /// <p>Wireless device resources to remove from the network analyzer configuration. Provide the <code>WirelessDeviceId</code> of the resources to remove in the input array.</p>
-    pub fn set_wireless_devices_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.wireless_devices_to_remove = input;
-        self
+    pub fn set_wireless_devices_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.wireless_devices_to_remove = input; self
     }
     /// Appends an item to `wireless_gateways_to_add`.
     ///
@@ -146,17 +130,13 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
     pub fn wireless_gateways_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.wireless_gateways_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_gateways_to_add = Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_gateways_to_add = Some(v);
+                        self
     }
     /// <p>Wireless gateway resources to add to the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resource to add in the input array.</p>
-    pub fn set_wireless_gateways_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.wireless_gateways_to_add = input;
-        self
+    pub fn set_wireless_gateways_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.wireless_gateways_to_add = input; self
     }
     /// Appends an item to `wireless_gateways_to_remove`.
     ///
@@ -165,17 +145,13 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
     pub fn wireless_gateways_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.wireless_gateways_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.wireless_gateways_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.wireless_gateways_to_remove = Some(v);
+                        self
     }
     /// <p>Wireless gateway resources to remove from the network analyzer configuration. Provide the <code>WirelessGatewayId</code> of the resources to remove in the input array.</p>
-    pub fn set_wireless_gateways_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.wireless_gateways_to_remove = input;
-        self
+    pub fn set_wireless_gateways_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.wireless_gateways_to_remove = input; self
     }
     /// <p>The description of the new resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,11 +160,10 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
     }
     /// <p>The description of the new resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationInput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationInput {
                 configuration_name: self.configuration_name
@@ -209,3 +184,4 @@ impl UpdateNetworkAnalyzerConfigurationInputBuilder {
         )
     }
 }
+

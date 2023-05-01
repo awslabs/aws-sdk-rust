@@ -3,7 +3,7 @@
 /// <p>Set of credentials required to remotely access a fleet instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InstanceCredentials {
+pub struct InstanceCredentials  {
     /// <p>User login string.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct InstanceCredentials {
 }
 impl InstanceCredentials {
     /// <p>User login string.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-    pub fn secret(&self) -> std::option::Option<&str> {
+    pub fn secret(&self) -> std::option::Option<& str> {
         self.secret.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceCredentials {
+impl  std::fmt::Debug for InstanceCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceCredentials");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl InstanceCredentialsBuilder {
     }
     /// <p>User login string.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
     pub fn secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl InstanceCredentialsBuilder {
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
     pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret = input;
-        self
+        self.secret = input; self
     }
     /// Consumes the builder and constructs a [`InstanceCredentials`](crate::types::InstanceCredentials).
     pub fn build(self) -> crate::types::InstanceCredentials {
         crate::types::InstanceCredentials {
-            user_name: self.user_name,
-            secret: self.secret,
+            user_name: self.user_name
+            ,
+            secret: self.secret
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for InstanceCredentialsBuilder {
         formatter.finish()
     }
 }
+

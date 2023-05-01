@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTransitGatewayPolicyTableOutput {
+pub struct AssociateTransitGatewayPolicyTableOutput  {
     /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
     #[doc(hidden)]
     pub association: std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
@@ -10,20 +10,18 @@ pub struct AssociateTransitGatewayPolicyTableOutput {
 }
 impl AssociateTransitGatewayPolicyTableOutput {
     /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
-    pub fn association(
-        &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayPolicyTableAssociation> {
+    pub fn association(&self) -> std::option::Option<& crate::types::TransitGatewayPolicyTableAssociation> {
         self.association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateTransitGatewayPolicyTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateTransitGatewayPolicyTableOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayPolicyTableOutput`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput).
-    pub fn builder() -> crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableOutputBuilder{
+    pub fn builder() -> crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableOutputBuilder {
         crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableOutputBuilder::default()
     }
 }
@@ -37,32 +35,25 @@ pub struct AssociateTransitGatewayPolicyTableOutputBuilder {
 }
 impl AssociateTransitGatewayPolicyTableOutputBuilder {
     /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
-    pub fn association(
-        mut self,
-        input: crate::types::TransitGatewayPolicyTableAssociation,
-    ) -> Self {
+    pub fn association(mut self, input: crate::types::TransitGatewayPolicyTableAssociation) -> Self {
         self.association = Some(input);
         self
     }
     /// <p>Describes the association of a transit gateway and a transit gateway policy table.</p>
-    pub fn set_association(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>,
-    ) -> Self {
-        self.association = input;
-        self
+    pub fn set_association(mut self, input: std::option::Option<crate::types::TransitGatewayPolicyTableAssociation>) -> Self {
+        self.association = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayPolicyTableOutput`](crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput).
-    pub fn build(self) -> crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput{
+    pub fn build(self) -> crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput {
         crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTableOutput {
             association: self.association
             ,
@@ -70,3 +61,4 @@ impl AssociateTransitGatewayPolicyTableOutputBuilder {
         }
     }
 }
+

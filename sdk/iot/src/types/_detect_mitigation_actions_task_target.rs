@@ -3,7 +3,7 @@
 /// <p> The target of a mitigation action task. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectMitigationActionsTaskTarget {
+pub struct DetectMitigationActionsTaskTarget  {
     /// <p> The unique identifiers of the violations. </p>
     #[doc(hidden)]
     pub violation_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct DetectMitigationActionsTaskTarget {
 }
 impl DetectMitigationActionsTaskTarget {
     /// <p> The unique identifiers of the violations. </p>
-    pub fn violation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn violation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.violation_ids.as_deref()
     }
     /// <p> The name of the security profile. </p>
-    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> std::option::Option<& str> {
         self.security_profile_name.as_deref()
     }
     /// <p> The name of the behavior. </p>
-    pub fn behavior_name(&self) -> std::option::Option<&str> {
+    pub fn behavior_name(&self) -> std::option::Option<& str> {
         self.behavior_name.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl DetectMitigationActionsTaskTargetBuilder {
     /// <p> The unique identifiers of the violations. </p>
     pub fn violation_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.violation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.violation_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.violation_ids = Some(v);
+                        self
     }
     /// <p> The unique identifiers of the violations. </p>
-    pub fn set_violation_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.violation_ids = input;
-        self
+    pub fn set_violation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.violation_ids = input; self
     }
     /// <p> The name of the security profile. </p>
     pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +65,8 @@ impl DetectMitigationActionsTaskTargetBuilder {
         self
     }
     /// <p> The name of the security profile. </p>
-    pub fn set_security_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_profile_name = input;
-        self
+    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_profile_name = input; self
     }
     /// <p> The name of the behavior. </p>
     pub fn behavior_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,15 +75,18 @@ impl DetectMitigationActionsTaskTargetBuilder {
     }
     /// <p> The name of the behavior. </p>
     pub fn set_behavior_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.behavior_name = input;
-        self
+        self.behavior_name = input; self
     }
     /// Consumes the builder and constructs a [`DetectMitigationActionsTaskTarget`](crate::types::DetectMitigationActionsTaskTarget).
     pub fn build(self) -> crate::types::DetectMitigationActionsTaskTarget {
         crate::types::DetectMitigationActionsTaskTarget {
-            violation_ids: self.violation_ids,
-            security_profile_name: self.security_profile_name,
-            behavior_name: self.behavior_name,
+            violation_ids: self.violation_ids
+            ,
+            security_profile_name: self.security_profile_name
+            ,
+            behavior_name: self.behavior_name
+            ,
         }
     }
 }
+

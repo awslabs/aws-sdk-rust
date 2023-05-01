@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImagesInput {
+pub struct DescribeImagesInput  {
     /// <p>The names of the public or private images to describe.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21,19 +21,19 @@ pub struct DescribeImagesInput {
 }
 impl DescribeImagesInput {
     /// <p>The names of the public or private images to describe.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
-    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arns(&self) -> std::option::Option<& [std::string::String]> {
         self.arns.as_deref()
     }
     /// <p>The type of image (public, private, or shared) to describe. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::VisibilityType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::VisibilityType> {
         self.r#type.as_ref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -66,17 +66,13 @@ impl DescribeImagesInputBuilder {
     /// <p>The names of the public or private images to describe.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = Some(v);
-        self
+                        v.push(input.into());
+                        self.names = Some(v);
+                        self
     }
     /// <p>The names of the public or private images to describe.</p>
-    pub fn set_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// Appends an item to `arns`.
     ///
@@ -85,17 +81,13 @@ impl DescribeImagesInputBuilder {
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
     pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = Some(v);
+                        self
     }
     /// <p>The ARNs of the public, private, and shared images to describe.</p>
-    pub fn set_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn r#type(mut self, input: crate::types::VisibilityType) -> Self {
@@ -104,8 +96,7 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The type of image (public, private, or shared) to describe. </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::VisibilityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +105,7 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -124,22 +114,24 @@ impl DescribeImagesInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeImagesInput`](crate::operation::describe_images::DescribeImagesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_images::DescribeImagesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_images::DescribeImagesInput {
-            names: self.names,
-            arns: self.arns,
-            r#type: self.r#type,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_images::DescribeImagesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_images::DescribeImagesInput {
+                names: self.names
+                ,
+                arns: self.arns
+                ,
+                r#type: self.r#type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the request to list the user import jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserImportJobsInput {
+pub struct ListUserImportJobsInput  {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListUserImportJobsInput {
 }
 impl ListUserImportJobsInput {
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The maximum number of import jobs you want the request to return.</p>
@@ -24,14 +24,13 @@ impl ListUserImportJobsInput {
         self.max_results
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
 }
 impl ListUserImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder {
         crate::operation::list_user_import_jobs::builders::ListUserImportJobsInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl ListUserImportJobsInputBuilder {
     }
     /// <p>The user pool ID for the user pool that the users are being imported into.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The maximum number of import jobs you want the request to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +60,7 @@ impl ListUserImportJobsInputBuilder {
     }
     /// <p>The maximum number of import jobs you want the request to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +69,21 @@ impl ListUserImportJobsInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// Consumes the builder and constructs a [`ListUserImportJobsInput`](crate::operation::list_user_import_jobs::ListUserImportJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_user_import_jobs::ListUserImportJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_user_import_jobs::ListUserImportJobsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_user_import_jobs::ListUserImportJobsInput {
-                user_pool_id: self.user_pool_id,
-                max_results: self.max_results.unwrap_or_default(),
-                pagination_token: self.pagination_token,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                pagination_token: self.pagination_token
+                ,
+            }
         )
     }
 }
+

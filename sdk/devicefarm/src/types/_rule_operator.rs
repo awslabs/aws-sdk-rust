@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ruleoperator = unimplemented!();
 /// match ruleoperator {
@@ -36,22 +36,14 @@
 /// Specifically, when `ruleoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RuleOperator {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
@@ -70,63 +62,53 @@ pub enum RuleOperator {
     #[allow(missing_docs)] // documentation missing in model
     NotIn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleOperator {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONTAINS" => RuleOperator::Contains,
-            "EQUALS" => RuleOperator::Equals,
-            "GREATER_THAN" => RuleOperator::GreaterThan,
-            "GREATER_THAN_OR_EQUALS" => RuleOperator::GreaterThanOrEquals,
-            "IN" => RuleOperator::In,
-            "LESS_THAN" => RuleOperator::LessThan,
-            "LESS_THAN_OR_EQUALS" => RuleOperator::LessThanOrEquals,
-            "NOT_IN" => RuleOperator::NotIn,
-            other => {
-                RuleOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONTAINS" => RuleOperator::Contains,
+"EQUALS" => RuleOperator::Equals,
+"GREATER_THAN" => RuleOperator::GreaterThan,
+"GREATER_THAN_OR_EQUALS" => RuleOperator::GreaterThanOrEquals,
+"IN" => RuleOperator::In,
+"LESS_THAN" => RuleOperator::LessThan,
+"LESS_THAN_OR_EQUALS" => RuleOperator::LessThanOrEquals,
+"NOT_IN" => RuleOperator::NotIn,
+other => RuleOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for RuleOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuleOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RuleOperator::from(s))
+                }
+            }
 impl RuleOperator {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleOperator::Contains => "CONTAINS",
-            RuleOperator::Equals => "EQUALS",
-            RuleOperator::GreaterThan => "GREATER_THAN",
-            RuleOperator::GreaterThanOrEquals => "GREATER_THAN_OR_EQUALS",
-            RuleOperator::In => "IN",
-            RuleOperator::LessThan => "LESS_THAN",
-            RuleOperator::LessThanOrEquals => "LESS_THAN_OR_EQUALS",
-            RuleOperator::NotIn => "NOT_IN",
-            RuleOperator::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONTAINS",
-            "EQUALS",
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUALS",
-            "IN",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUALS",
-            "NOT_IN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleOperator::Contains => "CONTAINS",
+    RuleOperator::Equals => "EQUALS",
+    RuleOperator::GreaterThan => "GREATER_THAN",
+    RuleOperator::GreaterThanOrEquals => "GREATER_THAN_OR_EQUALS",
+    RuleOperator::In => "IN",
+    RuleOperator::LessThan => "LESS_THAN",
+    RuleOperator::LessThanOrEquals => "LESS_THAN_OR_EQUALS",
+    RuleOperator::NotIn => "NOT_IN",
+    RuleOperator::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONTAINS", "EQUALS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "IN", "LESS_THAN", "LESS_THAN_OR_EQUALS", "NOT_IN"]
+                }
+            }
 impl AsRef<str> for RuleOperator {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

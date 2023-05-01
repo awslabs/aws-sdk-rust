@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSnapshotOutput {
+pub struct GetSnapshotOutput  {
     /// <p>Properties that provide details of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::types::SnapshotDetails>,
@@ -10,15 +10,15 @@ pub struct GetSnapshotOutput {
 }
 impl GetSnapshotOutput {
     /// <p>Properties that provide details of the snapshot.</p>
-    pub fn snapshot(&self) -> std::option::Option<&crate::types::SnapshotDetails> {
+    pub fn snapshot(&self) -> std::option::Option<& crate::types::SnapshotDetails> {
         self.snapshot.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotOutput`](crate::operation::get_snapshot::GetSnapshotOutput).
     pub fn builder() -> crate::operation::get_snapshot::builders::GetSnapshotOutputBuilder {
@@ -40,27 +40,25 @@ impl GetSnapshotOutputBuilder {
         self
     }
     /// <p>Properties that provide details of the snapshot.</p>
-    pub fn set_snapshot(
-        mut self,
-        input: std::option::Option<crate::types::SnapshotDetails>,
-    ) -> Self {
-        self.snapshot = input;
-        self
+    pub fn set_snapshot(mut self, input: std::option::Option<crate::types::SnapshotDetails>) -> Self {
+        self.snapshot = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSnapshotOutput`](crate::operation::get_snapshot::GetSnapshotOutput).
     pub fn build(self) -> crate::operation::get_snapshot::GetSnapshotOutput {
         crate::operation::get_snapshot::GetSnapshotOutput {
-            snapshot: self.snapshot,
+            snapshot: self.snapshot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

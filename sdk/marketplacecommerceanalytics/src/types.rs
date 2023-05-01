@@ -9,3 +9,4 @@ mod _support_data_set_type;
 
 /// Error types that AWS Marketplace Commerce Analytics can respond with.
 pub mod error;
+

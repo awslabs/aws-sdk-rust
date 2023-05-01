@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMeetingInput {
+pub struct CreateMeetingInput  {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateMeetingInput {
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
-    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p> 
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
@@ -21,39 +21,36 @@ pub struct CreateMeetingInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
     #[doc(hidden)]
-    pub notifications_configuration:
-        std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    pub notifications_configuration: std::option::Option<crate::types::MeetingNotificationConfiguration>,
 }
 impl CreateMeetingInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The external meeting ID.</p>
-    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
+    pub fn external_meeting_id(&self) -> std::option::Option<& str> {
         self.external_meeting_id.as_deref()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_host_id(&self) -> std::option::Option<& str> {
         self.meeting_host_id.as_deref()
     }
-    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p> 
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
-    pub fn media_region(&self) -> std::option::Option<&str> {
+    pub fn media_region(&self) -> std::option::Option<& str> {
         self.media_region.as_deref()
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::MeetingNotificationConfiguration> {
+    pub fn notifications_configuration(&self) -> std::option::Option<& crate::types::MeetingNotificationConfiguration> {
         self.notifications_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for CreateMeetingInput {
+impl  std::fmt::Debug for CreateMeetingInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingInput");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
@@ -61,10 +58,7 @@ impl std::fmt::Debug for CreateMeetingInput {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.finish()
     }
 }
@@ -84,8 +78,7 @@ pub struct CreateMeetingInputBuilder {
     pub(crate) meeting_host_id: std::option::Option<std::string::String>,
     pub(crate) media_region: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) notifications_configuration:
-        std::option::Option<crate::types::MeetingNotificationConfiguration>,
+    pub(crate) notifications_configuration: std::option::Option<crate::types::MeetingNotificationConfiguration>,
 }
 impl CreateMeetingInputBuilder {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -94,12 +87,8 @@ impl CreateMeetingInputBuilder {
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The external meeting ID.</p>
     pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,12 +96,8 @@ impl CreateMeetingInputBuilder {
         self
     }
     /// <p>The external meeting ID.</p>
-    pub fn set_external_meeting_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.external_meeting_id = input;
-        self
+    pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.external_meeting_id = input; self
     }
     /// <p>Reserved.</p>
     pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,20 +106,18 @@ impl CreateMeetingInputBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_meeting_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_host_id = input;
-        self
+        self.meeting_host_id = input; self
     }
-    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p> 
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
         self.media_region = Some(input.into());
         self
     }
-    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p>
+    /// <p> The Region in which to create the meeting. Default: <code>us-east-1</code>. </p> 
     /// <p> Available values: <code>af-south-1</code> , <code>ap-northeast-1</code> , <code>ap-northeast-2</code> , <code>ap-south-1</code> , <code>ap-southeast-1</code> , <code>ap-southeast-2</code> , <code>ca-central-1</code> , <code>eu-central-1</code> , <code>eu-north-1</code> , <code>eu-south-1</code> , <code>eu-west-1</code> , <code>eu-west-2</code> , <code>eu-west-3</code> , <code>sa-east-1</code> , <code>us-east-1</code> , <code>us-east-2</code> , <code>us-west-1</code> , <code>us-west-2</code> . </p>
     pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_region = input;
-        self
+        self.media_region = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -143,49 +126,41 @@ impl CreateMeetingInputBuilder {
     /// <p>The tag key-value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tag key-value pairs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(
-        mut self,
-        input: crate::types::MeetingNotificationConfiguration,
-    ) -> Self {
+    pub fn notifications_configuration(mut self, input: crate::types::MeetingNotificationConfiguration) -> Self {
         self.notifications_configuration = Some(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn set_notifications_configuration(
-        mut self,
-        input: std::option::Option<crate::types::MeetingNotificationConfiguration>,
-    ) -> Self {
-        self.notifications_configuration = input;
-        self
+    pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::types::MeetingNotificationConfiguration>) -> Self {
+        self.notifications_configuration = input; self
     }
     /// Consumes the builder and constructs a [`CreateMeetingInput`](crate::operation::create_meeting::CreateMeetingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_meeting::CreateMeetingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_meeting::CreateMeetingInput {
-            client_request_token: self.client_request_token,
-            external_meeting_id: self.external_meeting_id,
-            meeting_host_id: self.meeting_host_id,
-            media_region: self.media_region,
-            tags: self.tags,
-            notifications_configuration: self.notifications_configuration,
-        })
+    pub fn build(self) -> Result<crate::operation::create_meeting::CreateMeetingInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_meeting::CreateMeetingInput {
+                client_request_token: self.client_request_token
+                ,
+                external_meeting_id: self.external_meeting_id
+                ,
+                meeting_host_id: self.meeting_host_id
+                ,
+                media_region: self.media_region
+                ,
+                tags: self.tags
+                ,
+                notifications_configuration: self.notifications_configuration
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateMeetingInputBuilder {
@@ -196,10 +171,8 @@ impl std::fmt::Debug for CreateMeetingInputBuilder {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("media_region", &self.media_region);
         formatter.field("tags", &self.tags);
-        formatter.field(
-            "notifications_configuration",
-            &self.notifications_configuration,
-        );
+        formatter.field("notifications_configuration", &self.notifications_configuration);
         formatter.finish()
     }
 }
+

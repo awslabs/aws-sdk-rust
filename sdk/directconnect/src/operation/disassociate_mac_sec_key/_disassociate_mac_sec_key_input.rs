@@ -2,33 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMacSecKeyInput {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+pub struct DisassociateMacSecKeyInput  {
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p> 
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     #[doc(hidden)]
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMacSecKeyInput {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p> 
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
 }
 impl DisassociateMacSecKeyInput {
     /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyInput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyInputBuilder {
         crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyInputBuilder::default()
     }
 }
@@ -41,42 +39,38 @@ pub struct DisassociateMacSecKeyInputBuilder {
     pub(crate) secret_arn: std::option::Option<std::string::String>,
 }
 impl DisassociateMacSecKeyInputBuilder {
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p> 
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.connection_id = Some(input.into());
         self
     }
-    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
+    /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p> 
     /// <p>You can use <code>DescribeConnections</code> or <code>DescribeLags</code> to retrieve connection ID.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.secret_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
+    /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p> 
     /// <p>You can use <code>DescribeConnections</code> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
     pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateMacSecKeyInput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyInput {
-                connection_id: self.connection_id,
-                secret_arn: self.secret_arn,
-            },
+                connection_id: self.connection_id
+                ,
+                secret_arn: self.secret_arn
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines an alternate key. This value is optional. A legacy data set might not have any alternate key defined but if those alternate keys definitions exist, provide them, as some applications will make use of them.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlternateKey {
+pub struct AlternateKey  {
     /// <p>The name of the alternate key.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct AlternateKey {
 }
 impl AlternateKey {
     /// <p>The name of the alternate key.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
@@ -59,8 +59,7 @@ impl AlternateKeyBuilder {
     }
     /// <p>The name of the alternate key.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
     pub fn offset(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl AlternateKeyBuilder {
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
     pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.offset = input;
-        self
+        self.offset = input; self
     }
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
     pub fn length(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl AlternateKeyBuilder {
     }
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
     pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
     pub fn allow_duplicates(mut self, input: bool) -> Self {
@@ -89,16 +86,23 @@ impl AlternateKeyBuilder {
     }
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
     pub fn set_allow_duplicates(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_duplicates = input;
-        self
+        self.allow_duplicates = input; self
     }
     /// Consumes the builder and constructs a [`AlternateKey`](crate::types::AlternateKey).
     pub fn build(self) -> crate::types::AlternateKey {
         crate::types::AlternateKey {
-            name: self.name,
-            offset: self.offset.unwrap_or_default(),
-            length: self.length.unwrap_or_default(),
-            allow_duplicates: self.allow_duplicates.unwrap_or_default(),
+            name: self.name
+            ,
+            offset: self.offset
+                .unwrap_or_default()
+            ,
+            length: self.length
+                .unwrap_or_default()
+            ,
+            allow_duplicates: self.allow_duplicates
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

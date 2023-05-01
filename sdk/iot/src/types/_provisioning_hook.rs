@@ -3,25 +3,25 @@
 /// <p>Structure that contains <code>payloadVersion</code> and <code>targetArn</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisioningHook {
-    /// <p>The payload that was sent to the target function.</p>
+pub struct ProvisioningHook  {
+    /// <p>The payload that was sent to the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     #[doc(hidden)]
     pub payload_version: std::option::Option<std::string::String>,
-    /// <p>The ARN of the target function.</p>
+    /// <p>The ARN of the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl ProvisioningHook {
-    /// <p>The payload that was sent to the target function.</p>
+    /// <p>The payload that was sent to the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn payload_version(&self) -> std::option::Option<&str> {
+    pub fn payload_version(&self) -> std::option::Option<& str> {
         self.payload_version.as_deref()
     }
-    /// <p>The ARN of the target function.</p>
+    /// <p>The ARN of the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
@@ -40,35 +40,36 @@ pub struct ProvisioningHookBuilder {
     pub(crate) target_arn: std::option::Option<std::string::String>,
 }
 impl ProvisioningHookBuilder {
-    /// <p>The payload that was sent to the target function.</p>
+    /// <p>The payload that was sent to the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn payload_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.payload_version = Some(input.into());
         self
     }
-    /// <p>The payload that was sent to the target function.</p>
+    /// <p>The payload that was sent to the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn set_payload_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.payload_version = input;
-        self
+        self.payload_version = input; self
     }
-    /// <p>The ARN of the target function.</p>
+    /// <p>The ARN of the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the target function.</p>
+    /// <p>The ARN of the target function.</p> 
     /// <p> <i>Note:</i> Only Lambda functions are currently supported.</p>
     pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_arn = input;
-        self
+        self.target_arn = input; self
     }
     /// Consumes the builder and constructs a [`ProvisioningHook`](crate::types::ProvisioningHook).
     pub fn build(self) -> crate::types::ProvisioningHook {
         crate::types::ProvisioningHook {
-            payload_version: self.payload_version,
-            target_arn: self.target_arn,
+            payload_version: self.payload_version
+            ,
+            target_arn: self.target_arn
+            ,
         }
     }
 }
+

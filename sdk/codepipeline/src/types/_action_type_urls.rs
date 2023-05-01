@@ -3,7 +3,7 @@
 /// <p>Returns information about URLs for web pages that display to customers as links on the pipeline view, such as an external configuration page for the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeUrls {
+pub struct ActionTypeUrls  {
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
     #[doc(hidden)]
     pub configuration_url: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ActionTypeUrls {
 }
 impl ActionTypeUrls {
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
-    pub fn configuration_url(&self) -> std::option::Option<&str> {
+    pub fn configuration_url(&self) -> std::option::Option<& str> {
         self.configuration_url.as_deref()
     }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
-    pub fn entity_url_template(&self) -> std::option::Option<&str> {
+    pub fn entity_url_template(&self) -> std::option::Option<& str> {
         self.entity_url_template.as_deref()
     }
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
-    pub fn execution_url_template(&self) -> std::option::Option<&str> {
+    pub fn execution_url_template(&self) -> std::option::Option<& str> {
         self.execution_url_template.as_deref()
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    pub fn revision_url_template(&self) -> std::option::Option<&str> {
+    pub fn revision_url_template(&self) -> std::option::Option<& str> {
         self.revision_url_template.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl ActionTypeUrlsBuilder {
         self
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
-    pub fn set_configuration_url(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_url = input;
-        self
+    pub fn set_configuration_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_url = input; self
     }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
     pub fn entity_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +67,8 @@ impl ActionTypeUrlsBuilder {
         self
     }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
-    pub fn set_entity_url_template(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.entity_url_template = input;
-        self
+    pub fn set_entity_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.entity_url_template = input; self
     }
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
     pub fn execution_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +76,8 @@ impl ActionTypeUrlsBuilder {
         self
     }
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
-    pub fn set_execution_url_template(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_url_template = input;
-        self
+    pub fn set_execution_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_url_template = input; self
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
     pub fn revision_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,20 +85,21 @@ impl ActionTypeUrlsBuilder {
         self
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    pub fn set_revision_url_template(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.revision_url_template = input;
-        self
+    pub fn set_revision_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.revision_url_template = input; self
     }
     /// Consumes the builder and constructs a [`ActionTypeUrls`](crate::types::ActionTypeUrls).
     pub fn build(self) -> crate::types::ActionTypeUrls {
         crate::types::ActionTypeUrls {
-            configuration_url: self.configuration_url,
-            entity_url_template: self.entity_url_template,
-            execution_url_template: self.execution_url_template,
-            revision_url_template: self.revision_url_template,
+            configuration_url: self.configuration_url
+            ,
+            entity_url_template: self.entity_url_template
+            ,
+            execution_url_template: self.execution_url_template
+            ,
+            revision_url_template: self.revision_url_template
+            ,
         }
     }
 }
+

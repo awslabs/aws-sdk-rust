@@ -2,36 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSlackChannelConfigurationsOutput {
+pub struct ListSlackChannelConfigurationsOutput  {
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The configurations for a Slack channel.</p>
     #[doc(hidden)]
-    pub slack_channel_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub slack_channel_configurations: std::option::Option<std::vec::Vec<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListSlackChannelConfigurationsOutput {
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The configurations for a Slack channel.</p>
-    pub fn slack_channel_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::SlackChannelConfiguration]> {
+    pub fn slack_channel_configurations(&self) -> std::option::Option<& [crate::types::SlackChannelConfiguration]> {
         self.slack_channel_configurations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSlackChannelConfigurationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSlackChannelConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder {
         crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsOutputBuilder::default()
     }
 }
@@ -41,8 +38,7 @@ impl ListSlackChannelConfigurationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) slack_channel_configurations:
-        std::option::Option<std::vec::Vec<crate::types::SlackChannelConfiguration>>,
+    pub(crate) slack_channel_configurations: std::option::Option<std::vec::Vec<crate::types::SlackChannelConfiguration>>,
     _request_id: Option<String>,
 }
 impl ListSlackChannelConfigurationsOutputBuilder {
@@ -53,49 +49,41 @@ impl ListSlackChannelConfigurationsOutputBuilder {
     }
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `slack_channel_configurations`.
     ///
     /// To override the contents of this collection use [`set_slack_channel_configurations`](Self::set_slack_channel_configurations).
     ///
     /// <p>The configurations for a Slack channel.</p>
-    pub fn slack_channel_configurations(
-        mut self,
-        input: crate::types::SlackChannelConfiguration,
-    ) -> Self {
+    pub fn slack_channel_configurations(mut self, input: crate::types::SlackChannelConfiguration) -> Self {
         let mut v = self.slack_channel_configurations.unwrap_or_default();
-        v.push(input);
-        self.slack_channel_configurations = Some(v);
-        self
+                        v.push(input);
+                        self.slack_channel_configurations = Some(v);
+                        self
     }
     /// <p>The configurations for a Slack channel.</p>
-    pub fn set_slack_channel_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SlackChannelConfiguration>>,
-    ) -> Self {
-        self.slack_channel_configurations = input;
-        self
+    pub fn set_slack_channel_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlackChannelConfiguration>>) -> Self {
+        self.slack_channel_configurations = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSlackChannelConfigurationsOutput`](crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
         crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurationsOutput {
-            next_token: self.next_token,
-            slack_channel_configurations: self.slack_channel_configurations,
+            next_token: self.next_token
+            ,
+            slack_channel_configurations: self.slack_channel_configurations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

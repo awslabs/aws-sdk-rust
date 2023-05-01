@@ -3,7 +3,7 @@
 /// <p>Provides information about the account-level and bucket-level permissions settings for an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketPermissionConfiguration {
+pub struct BucketPermissionConfiguration  {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
     #[doc(hidden)]
     pub account_level_permissions: std::option::Option<crate::types::AccountLevelPermissions>,
@@ -13,15 +13,11 @@ pub struct BucketPermissionConfiguration {
 }
 impl BucketPermissionConfiguration {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn account_level_permissions(
-        &self,
-    ) -> std::option::Option<&crate::types::AccountLevelPermissions> {
+    pub fn account_level_permissions(&self) -> std::option::Option<& crate::types::AccountLevelPermissions> {
         self.account_level_permissions.as_ref()
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
-    pub fn bucket_level_permissions(
-        &self,
-    ) -> std::option::Option<&crate::types::BucketLevelPermissions> {
+    pub fn bucket_level_permissions(&self) -> std::option::Option<& crate::types::BucketLevelPermissions> {
         self.bucket_level_permissions.as_ref()
     }
 }
@@ -36,26 +32,18 @@ impl BucketPermissionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BucketPermissionConfigurationBuilder {
-    pub(crate) account_level_permissions:
-        std::option::Option<crate::types::AccountLevelPermissions>,
+    pub(crate) account_level_permissions: std::option::Option<crate::types::AccountLevelPermissions>,
     pub(crate) bucket_level_permissions: std::option::Option<crate::types::BucketLevelPermissions>,
 }
 impl BucketPermissionConfigurationBuilder {
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn account_level_permissions(
-        mut self,
-        input: crate::types::AccountLevelPermissions,
-    ) -> Self {
+    pub fn account_level_permissions(mut self, input: crate::types::AccountLevelPermissions) -> Self {
         self.account_level_permissions = Some(input);
         self
     }
     /// <p>The account-level permissions settings that apply to the bucket.</p>
-    pub fn set_account_level_permissions(
-        mut self,
-        input: std::option::Option<crate::types::AccountLevelPermissions>,
-    ) -> Self {
-        self.account_level_permissions = input;
-        self
+    pub fn set_account_level_permissions(mut self, input: std::option::Option<crate::types::AccountLevelPermissions>) -> Self {
+        self.account_level_permissions = input; self
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
     pub fn bucket_level_permissions(mut self, input: crate::types::BucketLevelPermissions) -> Self {
@@ -63,18 +51,17 @@ impl BucketPermissionConfigurationBuilder {
         self
     }
     /// <p>The bucket-level permissions settings for the bucket.</p>
-    pub fn set_bucket_level_permissions(
-        mut self,
-        input: std::option::Option<crate::types::BucketLevelPermissions>,
-    ) -> Self {
-        self.bucket_level_permissions = input;
-        self
+    pub fn set_bucket_level_permissions(mut self, input: std::option::Option<crate::types::BucketLevelPermissions>) -> Self {
+        self.bucket_level_permissions = input; self
     }
     /// Consumes the builder and constructs a [`BucketPermissionConfiguration`](crate::types::BucketPermissionConfiguration).
     pub fn build(self) -> crate::types::BucketPermissionConfiguration {
         crate::types::BucketPermissionConfiguration {
-            account_level_permissions: self.account_level_permissions,
-            bucket_level_permissions: self.bucket_level_permissions,
+            account_level_permissions: self.account_level_permissions
+            ,
+            bucket_level_permissions: self.bucket_level_permissions
+            ,
         }
     }
 }
+

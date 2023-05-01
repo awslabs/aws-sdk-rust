@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdFormatOutput {
+pub struct DescribeIdFormatOutput  {
     /// <p>Information about the ID format for the resource.</p>
     #[doc(hidden)]
     pub statuses: std::option::Option<std::vec::Vec<crate::types::IdFormat>>,
@@ -10,19 +10,18 @@ pub struct DescribeIdFormatOutput {
 }
 impl DescribeIdFormatOutput {
     /// <p>Information about the ID format for the resource.</p>
-    pub fn statuses(&self) -> std::option::Option<&[crate::types::IdFormat]> {
+    pub fn statuses(&self) -> std::option::Option<& [crate::types::IdFormat]> {
         self.statuses.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeIdFormatOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIdFormatOutput`](crate::operation::describe_id_format::DescribeIdFormatOutput).
-    pub fn builder() -> crate::operation::describe_id_format::builders::DescribeIdFormatOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_id_format::builders::DescribeIdFormatOutputBuilder {
         crate::operation::describe_id_format::builders::DescribeIdFormatOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl DescribeIdFormatOutputBuilder {
     /// <p>Information about the ID format for the resource.</p>
     pub fn statuses(mut self, input: crate::types::IdFormat) -> Self {
         let mut v = self.statuses.unwrap_or_default();
-        v.push(input);
-        self.statuses = Some(v);
-        self
+                        v.push(input);
+                        self.statuses = Some(v);
+                        self
     }
     /// <p>Information about the ID format for the resource.</p>
-    pub fn set_statuses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IdFormat>>,
-    ) -> Self {
-        self.statuses = input;
-        self
+    pub fn set_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::IdFormat>>) -> Self {
+        self.statuses = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeIdFormatOutput`](crate::operation::describe_id_format::DescribeIdFormatOutput).
     pub fn build(self) -> crate::operation::describe_id_format::DescribeIdFormatOutput {
         crate::operation::describe_id_format::DescribeIdFormatOutput {
-            statuses: self.statuses,
+            statuses: self.statuses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

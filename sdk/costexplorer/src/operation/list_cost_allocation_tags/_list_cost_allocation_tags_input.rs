@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCostAllocationTagsInput {
+pub struct ListCostAllocationTagsInput  {
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::CostAllocationTagStatus>,
@@ -21,19 +21,19 @@ pub struct ListCostAllocationTagsInput {
 }
 impl ListCostAllocationTagsInput {
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CostAllocationTagStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::CostAllocationTagStatus> {
         self.status.as_ref()
     }
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::CostAllocationTagType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::CostAllocationTagType> {
         self.r#type.as_ref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
@@ -43,9 +43,7 @@ impl ListCostAllocationTagsInput {
 }
 impl ListCostAllocationTagsInput {
     /// Creates a new builder-style object to manufacture [`ListCostAllocationTagsInput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput).
-    pub fn builder(
-    ) -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder {
         crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder::default()
     }
 }
@@ -67,12 +65,8 @@ impl ListCostAllocationTagsInputBuilder {
         self
     }
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::CostAllocationTagStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -81,17 +75,13 @@ impl ListCostAllocationTagsInputBuilder {
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-        v.push(input.into());
-        self.tag_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.tag_keys = Some(v);
+                        self
     }
     /// <p>The list of cost allocation tag keys that are returned for this request. </p>
-    pub fn set_tag_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tag_keys = input;
-        self
+    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tag_keys = input; self
     }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
@@ -99,12 +89,8 @@ impl ListCostAllocationTagsInputBuilder {
         self
     }
     /// <p>The type of <code>CostAllocationTag</code> object that are returned for this request. The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. The <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::CostAllocationTagType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::CostAllocationTagType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +99,7 @@ impl ListCostAllocationTagsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -123,24 +108,24 @@ impl ListCostAllocationTagsInputBuilder {
     }
     /// <p>The maximum number of objects that are returned for this request. By default, the request returns 100 results. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListCostAllocationTagsInput`](crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_cost_allocation_tags::ListCostAllocationTagsInput {
-                status: self.status,
-                tag_keys: self.tag_keys,
-                r#type: self.r#type,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                status: self.status
+                ,
+                tag_keys: self.tag_keys
+                ,
+                r#type: self.r#type
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

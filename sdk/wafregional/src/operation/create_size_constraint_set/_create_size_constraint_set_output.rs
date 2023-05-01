@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSizeConstraintSetOutput {
+pub struct CreateSizeConstraintSetOutput  {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
     #[doc(hidden)]
     pub size_constraint_set: std::option::Option<crate::types::SizeConstraintSet>,
@@ -13,24 +13,22 @@ pub struct CreateSizeConstraintSetOutput {
 }
 impl CreateSizeConstraintSetOutput {
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
-    pub fn size_constraint_set(&self) -> std::option::Option<&crate::types::SizeConstraintSet> {
+    pub fn size_constraint_set(&self) -> std::option::Option<& crate::types::SizeConstraintSet> {
         self.size_constraint_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSizeConstraintSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSizeConstraintSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateSizeConstraintSetOutput`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetOutputBuilder {
         crate::operation::create_size_constraint_set::builders::CreateSizeConstraintSetOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl CreateSizeConstraintSetOutputBuilder {
         self
     }
     /// <p>A <code>SizeConstraintSet</code> that contains no <code>SizeConstraint</code> objects.</p>
-    pub fn set_size_constraint_set(
-        mut self,
-        input: std::option::Option<crate::types::SizeConstraintSet>,
-    ) -> Self {
-        self.size_constraint_set = input;
-        self
+    pub fn set_size_constraint_set(mut self, input: std::option::Option<crate::types::SizeConstraintSet>) -> Self {
+        self.size_constraint_set = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +58,26 @@ impl CreateSizeConstraintSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSizeConstraintSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSizeConstraintSetOutput`](crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput {
+    pub fn build(self) -> crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput {
         crate::operation::create_size_constraint_set::CreateSizeConstraintSetOutput {
-            size_constraint_set: self.size_constraint_set,
-            change_token: self.change_token,
+            size_constraint_set: self.size_constraint_set
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

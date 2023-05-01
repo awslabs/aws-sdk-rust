@@ -236,3 +236,4 @@ pub use crate::types::_input::InputBuilder;
 pub use crate::types::_kinesis_firehose_input::KinesisFirehoseInputBuilder;
 
 pub use crate::types::_kinesis_streams_input::KinesisStreamsInputBuilder;
+

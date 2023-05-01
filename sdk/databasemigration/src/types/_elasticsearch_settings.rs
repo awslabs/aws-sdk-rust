@@ -3,14 +3,14 @@
 /// <p>Provides information that defines an OpenSearch endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticsearchSettings {
+pub struct ElasticsearchSettings  {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     #[doc(hidden)]
     pub endpoint_uri: std::option::Option<std::string::String>,
-    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p> 
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     #[doc(hidden)]
     pub full_load_error_percentage: std::option::Option<i32>,
@@ -23,14 +23,14 @@ pub struct ElasticsearchSettings {
 }
 impl ElasticsearchSettings {
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
-    pub fn endpoint_uri(&self) -> std::option::Option<&str> {
+    pub fn endpoint_uri(&self) -> std::option::Option<& str> {
         self.endpoint_uri.as_deref()
     }
-    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p> 
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn full_load_error_percentage(&self) -> std::option::Option<i32> {
         self.full_load_error_percentage
@@ -68,12 +68,8 @@ impl ElasticsearchSettingsBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_access_role_arn = input;
-        self
+    pub fn set_service_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_access_role_arn = input; self
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     pub fn endpoint_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,20 +78,18 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport protocol (http/https) is not specified.</p>
     pub fn set_endpoint_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_uri = input;
-        self
+        self.endpoint_uri = input; self
     }
-    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p> 
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn full_load_error_percentage(mut self, input: i32) -> Self {
         self.full_load_error_percentage = Some(input);
         self
     }
-    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p>
+    /// <p>The maximum percentage of records that can fail to be written before a full load operation stops.</p> 
     /// <p>To avoid early failure, this counter is only effective after 1000 records are transferred. OpenSearch also has the concept of error monitoring during the last 10 minutes of an Observation Window. If transfer of all records fail in the last 10 minutes, the full load operation stops. </p>
     pub fn set_full_load_error_percentage(mut self, input: std::option::Option<i32>) -> Self {
-        self.full_load_error_percentage = input;
-        self
+        self.full_load_error_percentage = input; self
     }
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub fn error_retry_duration(mut self, input: i32) -> Self {
@@ -104,8 +98,7 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>The maximum number of seconds for which DMS retries failed API requests to the OpenSearch cluster.</p>
     pub fn set_error_retry_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.error_retry_duration = input;
-        self
+        self.error_retry_duration = input; self
     }
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub fn use_new_mapping_type(mut self, input: bool) -> Self {
@@ -114,17 +107,22 @@ impl ElasticsearchSettingsBuilder {
     }
     /// <p>Set this option to <code>true</code> for DMS to migrate documentation using the documentation type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc documentation type in versions 7. x and later. The default value is <code>false</code>.</p>
     pub fn set_use_new_mapping_type(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_new_mapping_type = input;
-        self
+        self.use_new_mapping_type = input; self
     }
     /// Consumes the builder and constructs a [`ElasticsearchSettings`](crate::types::ElasticsearchSettings).
     pub fn build(self) -> crate::types::ElasticsearchSettings {
         crate::types::ElasticsearchSettings {
-            service_access_role_arn: self.service_access_role_arn,
-            endpoint_uri: self.endpoint_uri,
-            full_load_error_percentage: self.full_load_error_percentage,
-            error_retry_duration: self.error_retry_duration,
-            use_new_mapping_type: self.use_new_mapping_type,
+            service_access_role_arn: self.service_access_role_arn
+            ,
+            endpoint_uri: self.endpoint_uri
+            ,
+            full_load_error_percentage: self.full_load_error_percentage
+            ,
+            error_retry_duration: self.error_retry_duration
+            ,
+            use_new_mapping_type: self.use_new_mapping_type
+            ,
         }
     }
 }
+

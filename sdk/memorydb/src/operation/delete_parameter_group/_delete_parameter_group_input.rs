@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteParameterGroupInput {
+pub struct DeleteParameterGroupInput  {
     /// <p>The name of the parameter group to delete.</p>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteParameterGroupInput {
     /// <p>The name of the parameter group to delete.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
 }
 impl DeleteParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteParameterGroupInput`](crate::operation::delete_parameter_group::DeleteParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_parameter_group::builders::DeleteParameterGroupInputBuilder {
         crate::operation::delete_parameter_group::builders::DeleteParameterGroupInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteParameterGroupInputBuilder {
         self
     }
     /// <p>The name of the parameter group to delete.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parameter_group_name = input;
-        self
+    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parameter_group_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteParameterGroupInput`](crate::operation::delete_parameter_group::DeleteParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_parameter_group::DeleteParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_parameter_group::DeleteParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_parameter_group::DeleteParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-            },
+                parameter_group_name: self.parameter_group_name
+                ,
+            }
         )
     }
 }
+

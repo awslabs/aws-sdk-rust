@@ -3,7 +3,7 @@
 /// <p>The description of and information about a monitor in Amazon CloudWatch Internet Monitor. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Monitor {
+pub struct Monitor  {
     /// <p>The name of the monitor.</p>
     #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
@@ -19,21 +19,19 @@ pub struct Monitor {
 }
 impl Monitor {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> std::option::Option<&str> {
+    pub fn monitor_name(&self) -> std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The status of a monitor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MonitorConfigState> {
+    pub fn status(&self) -> std::option::Option<& crate::types::MonitorConfigState> {
         self.status.as_ref()
     }
     /// <p>The health of data processing for the monitor.</p>
-    pub fn processing_status(
-        &self,
-    ) -> std::option::Option<&crate::types::MonitorProcessingStatusCode> {
+    pub fn processing_status(&self) -> std::option::Option<& crate::types::MonitorProcessingStatusCode> {
         self.processing_status.as_ref()
     }
 }
@@ -61,8 +59,7 @@ impl MonitorBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +68,7 @@ impl MonitorBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// <p>The status of a monitor.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
@@ -80,12 +76,8 @@ impl MonitorBuilder {
         self
     }
     /// <p>The status of a monitor.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::MonitorConfigState>) -> Self {
+        self.status = input; self
     }
     /// <p>The health of data processing for the monitor.</p>
     pub fn processing_status(mut self, input: crate::types::MonitorProcessingStatusCode) -> Self {
@@ -93,20 +85,21 @@ impl MonitorBuilder {
         self
     }
     /// <p>The health of data processing for the monitor.</p>
-    pub fn set_processing_status(
-        mut self,
-        input: std::option::Option<crate::types::MonitorProcessingStatusCode>,
-    ) -> Self {
-        self.processing_status = input;
-        self
+    pub fn set_processing_status(mut self, input: std::option::Option<crate::types::MonitorProcessingStatusCode>) -> Self {
+        self.processing_status = input; self
     }
     /// Consumes the builder and constructs a [`Monitor`](crate::types::Monitor).
     pub fn build(self) -> crate::types::Monitor {
         crate::types::Monitor {
-            monitor_name: self.monitor_name,
-            monitor_arn: self.monitor_arn,
-            status: self.status,
-            processing_status: self.processing_status,
+            monitor_name: self.monitor_name
+            ,
+            monitor_arn: self.monitor_arn
+            ,
+            status: self.status
+            ,
+            processing_status: self.processing_status
+            ,
         }
     }
 }
+

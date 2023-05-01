@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRunGroupInput {
+pub struct DeleteRunGroupInput  {
     /// <p>The run group's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteRunGroupInput {
     /// <p>The run group's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DeleteRunGroupInputBuilder {
     }
     /// <p>The run group's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRunGroupInput`](crate::operation::delete_run_group::DeleteRunGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_run_group::DeleteRunGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_run_group::DeleteRunGroupInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::delete_run_group::DeleteRunGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_run_group::DeleteRunGroupInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

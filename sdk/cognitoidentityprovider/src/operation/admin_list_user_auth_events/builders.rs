@@ -4,80 +4,55 @@ pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_eve
 pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_events_input::AdminListUserAuthEventsInputBuilder;
 
 /// Fluent builder constructing a request to `AdminListUserAuthEvents`.
-///
+/// 
 /// <p>A history of user activity and any risks detected as part of Amazon Cognito advanced security.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminListUserAuthEventsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::admin_list_user_auth_events::builders::AdminListUserAuthEventsInputBuilder
             }
-impl AdminListUserAuthEventsFluentBuilder {
+impl AdminListUserAuthEventsFluentBuilder  {
     /// Creates a new `AdminListUserAuthEvents`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEvents,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::admin_list_user_auth_events::AdminListUserAuthEvents, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput, aws_smithy_http::result::SdkError<crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator
-    {
-        crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator {
+                            crate::operation::admin_list_user_auth_events::paginator::AdminListUserAuthEventsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
@@ -119,3 +94,4 @@ impl AdminListUserAuthEventsFluentBuilder {
         self
     }
 }
+

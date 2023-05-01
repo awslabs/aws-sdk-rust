@@ -3,21 +3,20 @@
 /// <p>Provides details about the action to use in the place of the action that results from the rule group evaluation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsWafRegionalWebAclRulesListOverrideActionDetails {
+pub struct AwsWafRegionalWebAclRulesListOverrideActionDetails  {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
     /// Creates a new builder-style object to manufacture [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
         crate::types::builders::AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder::default()
     }
 }
@@ -36,13 +35,14 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
     }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
     pub fn build(self) -> crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
         crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

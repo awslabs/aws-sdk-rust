@@ -150,3 +150,4 @@ pub mod update_license_specifications_for_resource;
 
 /// Types for the `UpdateServiceSettings` operation.
 pub mod update_service_settings;
+

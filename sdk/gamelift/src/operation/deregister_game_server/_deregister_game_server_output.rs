@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterGameServerOutput {
+pub struct DeregisterGameServerOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterGameServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeregisterGameServerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterGameServerOutput`](crate::operation::deregister_game_server::DeregisterGameServerOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_game_server::builders::DeregisterGameServerOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_game_server::builders::DeregisterGameServerOutputBuilder {
         crate::operation::deregister_game_server::builders::DeregisterGameServerOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeregisterGameServerOutputBuilder {
 }
 impl DeregisterGameServerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeregisterGameServerOutput`](crate::operation::deregister_game_server::DeregisterGameServerOutput).
     pub fn build(self) -> crate::operation::deregister_game_server::DeregisterGameServerOutput {
         crate::operation::deregister_game_server::DeregisterGameServerOutput {
@@ -41,3 +40,4 @@ impl DeregisterGameServerOutputBuilder {
         }
     }
 }
+

@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkRoutesOutput {
+pub struct GetNetworkRoutesOutput  {
     /// <p>The ARN of the route table.</p>
     #[doc(hidden)]
     pub route_table_arn: std::option::Option<std::string::String>,
     /// <p>Describes a core network segment edge.</p>
     #[doc(hidden)]
-    pub core_network_segment_edge:
-        std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
+    pub core_network_segment_edge: std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
     /// <p>The route table type.</p>
     #[doc(hidden)]
     pub route_table_type: std::option::Option<crate::types::RouteTableType>,
@@ -23,37 +22,34 @@ pub struct GetNetworkRoutesOutput {
 }
 impl GetNetworkRoutesOutput {
     /// <p>The ARN of the route table.</p>
-    pub fn route_table_arn(&self) -> std::option::Option<&str> {
+    pub fn route_table_arn(&self) -> std::option::Option<& str> {
         self.route_table_arn.as_deref()
     }
     /// <p>Describes a core network segment edge.</p>
-    pub fn core_network_segment_edge(
-        &self,
-    ) -> std::option::Option<&crate::types::CoreNetworkSegmentEdgeIdentifier> {
+    pub fn core_network_segment_edge(&self) -> std::option::Option<& crate::types::CoreNetworkSegmentEdgeIdentifier> {
         self.core_network_segment_edge.as_ref()
     }
     /// <p>The route table type.</p>
-    pub fn route_table_type(&self) -> std::option::Option<&crate::types::RouteTableType> {
+    pub fn route_table_type(&self) -> std::option::Option<& crate::types::RouteTableType> {
         self.route_table_type.as_ref()
     }
     /// <p>The route table creation time.</p>
-    pub fn route_table_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn route_table_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.route_table_timestamp.as_ref()
     }
     /// <p>The network routes.</p>
-    pub fn network_routes(&self) -> std::option::Option<&[crate::types::NetworkRoute]> {
+    pub fn network_routes(&self) -> std::option::Option<& [crate::types::NetworkRoute]> {
         self.network_routes.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetNetworkRoutesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetNetworkRoutesOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkRoutesOutput`](crate::operation::get_network_routes::GetNetworkRoutesOutput).
-    pub fn builder() -> crate::operation::get_network_routes::builders::GetNetworkRoutesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_network_routes::builders::GetNetworkRoutesOutputBuilder {
         crate::operation::get_network_routes::builders::GetNetworkRoutesOutputBuilder::default()
     }
 }
@@ -63,8 +59,7 @@ impl GetNetworkRoutesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetNetworkRoutesOutputBuilder {
     pub(crate) route_table_arn: std::option::Option<std::string::String>,
-    pub(crate) core_network_segment_edge:
-        std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
+    pub(crate) core_network_segment_edge: std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
     pub(crate) route_table_type: std::option::Option<crate::types::RouteTableType>,
     pub(crate) route_table_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) network_routes: std::option::Option<std::vec::Vec<crate::types::NetworkRoute>>,
@@ -78,24 +73,16 @@ impl GetNetworkRoutesOutputBuilder {
     }
     /// <p>The ARN of the route table.</p>
     pub fn set_route_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_table_arn = input;
-        self
+        self.route_table_arn = input; self
     }
     /// <p>Describes a core network segment edge.</p>
-    pub fn core_network_segment_edge(
-        mut self,
-        input: crate::types::CoreNetworkSegmentEdgeIdentifier,
-    ) -> Self {
+    pub fn core_network_segment_edge(mut self, input: crate::types::CoreNetworkSegmentEdgeIdentifier) -> Self {
         self.core_network_segment_edge = Some(input);
         self
     }
     /// <p>Describes a core network segment edge.</p>
-    pub fn set_core_network_segment_edge(
-        mut self,
-        input: std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>,
-    ) -> Self {
-        self.core_network_segment_edge = input;
-        self
+    pub fn set_core_network_segment_edge(mut self, input: std::option::Option<crate::types::CoreNetworkSegmentEdgeIdentifier>) -> Self {
+        self.core_network_segment_edge = input; self
     }
     /// <p>The route table type.</p>
     pub fn route_table_type(mut self, input: crate::types::RouteTableType) -> Self {
@@ -103,12 +90,8 @@ impl GetNetworkRoutesOutputBuilder {
         self
     }
     /// <p>The route table type.</p>
-    pub fn set_route_table_type(
-        mut self,
-        input: std::option::Option<crate::types::RouteTableType>,
-    ) -> Self {
-        self.route_table_type = input;
-        self
+    pub fn set_route_table_type(mut self, input: std::option::Option<crate::types::RouteTableType>) -> Self {
+        self.route_table_type = input; self
     }
     /// <p>The route table creation time.</p>
     pub fn route_table_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,12 +99,8 @@ impl GetNetworkRoutesOutputBuilder {
         self
     }
     /// <p>The route table creation time.</p>
-    pub fn set_route_table_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.route_table_timestamp = input;
-        self
+    pub fn set_route_table_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.route_table_timestamp = input; self
     }
     /// Appends an item to `network_routes`.
     ///
@@ -130,36 +109,38 @@ impl GetNetworkRoutesOutputBuilder {
     /// <p>The network routes.</p>
     pub fn network_routes(mut self, input: crate::types::NetworkRoute) -> Self {
         let mut v = self.network_routes.unwrap_or_default();
-        v.push(input);
-        self.network_routes = Some(v);
-        self
+                        v.push(input);
+                        self.network_routes = Some(v);
+                        self
     }
     /// <p>The network routes.</p>
-    pub fn set_network_routes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkRoute>>,
-    ) -> Self {
-        self.network_routes = input;
-        self
+    pub fn set_network_routes(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkRoute>>) -> Self {
+        self.network_routes = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetNetworkRoutesOutput`](crate::operation::get_network_routes::GetNetworkRoutesOutput).
     pub fn build(self) -> crate::operation::get_network_routes::GetNetworkRoutesOutput {
         crate::operation::get_network_routes::GetNetworkRoutesOutput {
-            route_table_arn: self.route_table_arn,
-            core_network_segment_edge: self.core_network_segment_edge,
-            route_table_type: self.route_table_type,
-            route_table_timestamp: self.route_table_timestamp,
-            network_routes: self.network_routes,
+            route_table_arn: self.route_table_arn
+            ,
+            core_network_segment_edge: self.core_network_segment_edge
+            ,
+            route_table_type: self.route_table_type
+            ,
+            route_table_timestamp: self.route_table_timestamp
+            ,
+            network_routes: self.network_routes
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

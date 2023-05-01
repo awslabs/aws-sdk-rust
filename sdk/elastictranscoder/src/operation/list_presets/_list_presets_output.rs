@@ -3,7 +3,7 @@
 /// <p>The <code>ListPresetsResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPresetsOutput {
+pub struct ListPresetsOutput  {
     /// <p>An array of <code>Preset</code> objects.</p>
     #[doc(hidden)]
     pub presets: std::option::Option<std::vec::Vec<crate::types::Preset>>,
@@ -14,19 +14,19 @@ pub struct ListPresetsOutput {
 }
 impl ListPresetsOutput {
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub fn presets(&self) -> std::option::Option<&[crate::types::Preset]> {
+    pub fn presets(&self) -> std::option::Option<& [crate::types::Preset]> {
         self.presets.as_deref()
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPresetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPresetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
     pub fn builder() -> crate::operation::list_presets::builders::ListPresetsOutputBuilder {
@@ -50,17 +50,13 @@ impl ListPresetsOutputBuilder {
     /// <p>An array of <code>Preset</code> objects.</p>
     pub fn presets(mut self, input: crate::types::Preset) -> Self {
         let mut v = self.presets.unwrap_or_default();
-        v.push(input);
-        self.presets = Some(v);
-        self
+                        v.push(input);
+                        self.presets = Some(v);
+                        self
     }
     /// <p>An array of <code>Preset</code> objects.</p>
-    pub fn set_presets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Preset>>,
-    ) -> Self {
-        self.presets = input;
-        self
+    pub fn set_presets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Preset>>) -> Self {
+        self.presets = input; self
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +65,26 @@ impl ListPresetsOutputBuilder {
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the presets fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPresetsOutput`](crate::operation::list_presets::ListPresetsOutput).
     pub fn build(self) -> crate::operation::list_presets::ListPresetsOutput {
         crate::operation::list_presets::ListPresetsOutput {
-            presets: self.presets,
-            next_page_token: self.next_page_token,
+            presets: self.presets
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

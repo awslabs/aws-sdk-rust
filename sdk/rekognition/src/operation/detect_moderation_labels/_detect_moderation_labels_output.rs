@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectModerationLabelsOutput {
+pub struct DetectModerationLabelsOutput  {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
     #[doc(hidden)]
     pub moderation_labels: std::option::Option<std::vec::Vec<crate::types::ModerationLabel>>,
@@ -16,30 +16,26 @@ pub struct DetectModerationLabelsOutput {
 }
 impl DetectModerationLabelsOutput {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    pub fn moderation_labels(&self) -> std::option::Option<&[crate::types::ModerationLabel]> {
+    pub fn moderation_labels(&self) -> std::option::Option<& [crate::types::ModerationLabel]> {
         self.moderation_labels.as_deref()
     }
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
-    pub fn moderation_model_version(&self) -> std::option::Option<&str> {
+    pub fn moderation_model_version(&self) -> std::option::Option<& str> {
         self.moderation_model_version.as_deref()
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(
-        &self,
-    ) -> std::option::Option<&crate::types::HumanLoopActivationOutput> {
+    pub fn human_loop_activation_output(&self) -> std::option::Option<& crate::types::HumanLoopActivationOutput> {
         self.human_loop_activation_output.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DetectModerationLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectModerationLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DetectModerationLabelsOutput`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::detect_moderation_labels::builders::DetectModerationLabelsOutputBuilder {
         crate::operation::detect_moderation_labels::builders::DetectModerationLabelsOutputBuilder::default()
     }
 }
@@ -50,8 +46,7 @@ impl DetectModerationLabelsOutput {
 pub struct DetectModerationLabelsOutputBuilder {
     pub(crate) moderation_labels: std::option::Option<std::vec::Vec<crate::types::ModerationLabel>>,
     pub(crate) moderation_model_version: std::option::Option<std::string::String>,
-    pub(crate) human_loop_activation_output:
-        std::option::Option<crate::types::HumanLoopActivationOutput>,
+    pub(crate) human_loop_activation_output: std::option::Option<crate::types::HumanLoopActivationOutput>,
     _request_id: Option<String>,
 }
 impl DetectModerationLabelsOutputBuilder {
@@ -62,17 +57,13 @@ impl DetectModerationLabelsOutputBuilder {
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
     pub fn moderation_labels(mut self, input: crate::types::ModerationLabel) -> Self {
         let mut v = self.moderation_labels.unwrap_or_default();
-        v.push(input);
-        self.moderation_labels = Some(v);
-        self
+                        v.push(input);
+                        self.moderation_labels = Some(v);
+                        self
     }
     /// <p>Array of detected Moderation labels and the time, in milliseconds from the start of the video, they were detected.</p>
-    pub fn set_moderation_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModerationLabel>>,
-    ) -> Self {
-        self.moderation_labels = input;
-        self
+    pub fn set_moderation_labels(mut self, input: std::option::Option<std::vec::Vec<crate::types::ModerationLabel>>) -> Self {
+        self.moderation_labels = input; self
     }
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
     pub fn moderation_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,45 +71,38 @@ impl DetectModerationLabelsOutputBuilder {
         self
     }
     /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
-    pub fn set_moderation_model_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.moderation_model_version = input;
-        self
+    pub fn set_moderation_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.moderation_model_version = input; self
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn human_loop_activation_output(
-        mut self,
-        input: crate::types::HumanLoopActivationOutput,
-    ) -> Self {
+    pub fn human_loop_activation_output(mut self, input: crate::types::HumanLoopActivationOutput) -> Self {
         self.human_loop_activation_output = Some(input);
         self
     }
     /// <p>Shows the results of the human in the loop evaluation.</p>
-    pub fn set_human_loop_activation_output(
-        mut self,
-        input: std::option::Option<crate::types::HumanLoopActivationOutput>,
-    ) -> Self {
-        self.human_loop_activation_output = input;
-        self
+    pub fn set_human_loop_activation_output(mut self, input: std::option::Option<crate::types::HumanLoopActivationOutput>) -> Self {
+        self.human_loop_activation_output = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectModerationLabelsOutput`](crate::operation::detect_moderation_labels::DetectModerationLabelsOutput).
     pub fn build(self) -> crate::operation::detect_moderation_labels::DetectModerationLabelsOutput {
         crate::operation::detect_moderation_labels::DetectModerationLabelsOutput {
-            moderation_labels: self.moderation_labels,
-            moderation_model_version: self.moderation_model_version,
-            human_loop_activation_output: self.human_loop_activation_output,
+            moderation_labels: self.moderation_labels
+            ,
+            moderation_model_version: self.moderation_model_version
+            ,
+            human_loop_activation_output: self.human_loop_activation_output
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

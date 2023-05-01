@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInsightOutput {
+pub struct CreateInsightOutput  {
     /// <p>The ARN of the insight created.</p>
     #[doc(hidden)]
     pub insight_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateInsightOutput {
 }
 impl CreateInsightOutput {
     /// <p>The ARN of the insight created.</p>
-    pub fn insight_arn(&self) -> std::option::Option<&str> {
+    pub fn insight_arn(&self) -> std::option::Option<& str> {
         self.insight_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateInsightOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateInsightOutput {
     /// Creates a new builder-style object to manufacture [`CreateInsightOutput`](crate::operation::create_insight::CreateInsightOutput).
     pub fn builder() -> crate::operation::create_insight::builders::CreateInsightOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateInsightOutputBuilder {
     }
     /// <p>The ARN of the insight created.</p>
     pub fn set_insight_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_arn = input;
-        self
+        self.insight_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateInsightOutput`](crate::operation::create_insight::CreateInsightOutput).
     pub fn build(self) -> crate::operation::create_insight::CreateInsightOutput {
         crate::operation::create_insight::CreateInsightOutput {
-            insight_arn: self.insight_arn,
+            insight_arn: self.insight_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

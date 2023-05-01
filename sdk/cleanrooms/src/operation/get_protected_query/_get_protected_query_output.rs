@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProtectedQueryOutput {
+pub struct GetProtectedQueryOutput  {
     /// <p>The query processing metadata.</p>
     #[doc(hidden)]
     pub protected_query: std::option::Option<crate::types::ProtectedQuery>,
@@ -10,19 +10,18 @@ pub struct GetProtectedQueryOutput {
 }
 impl GetProtectedQueryOutput {
     /// <p>The query processing metadata.</p>
-    pub fn protected_query(&self) -> std::option::Option<&crate::types::ProtectedQuery> {
+    pub fn protected_query(&self) -> std::option::Option<& crate::types::ProtectedQuery> {
         self.protected_query.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetProtectedQueryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetProtectedQueryOutput {
     /// Creates a new builder-style object to manufacture [`GetProtectedQueryOutput`](crate::operation::get_protected_query::GetProtectedQueryOutput).
-    pub fn builder(
-    ) -> crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder {
+    pub fn builder() -> crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder {
         crate::operation::get_protected_query::builders::GetProtectedQueryOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetProtectedQueryOutputBuilder {
         self
     }
     /// <p>The query processing metadata.</p>
-    pub fn set_protected_query(
-        mut self,
-        input: std::option::Option<crate::types::ProtectedQuery>,
-    ) -> Self {
-        self.protected_query = input;
-        self
+    pub fn set_protected_query(mut self, input: std::option::Option<crate::types::ProtectedQuery>) -> Self {
+        self.protected_query = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetProtectedQueryOutput`](crate::operation::get_protected_query::GetProtectedQueryOutput).
     pub fn build(self) -> crate::operation::get_protected_query::GetProtectedQueryOutput {
         crate::operation::get_protected_query::GetProtectedQueryOutput {
-            protected_query: self.protected_query,
+            protected_query: self.protected_query
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

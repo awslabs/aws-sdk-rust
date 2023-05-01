@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecipesInput {
+pub struct ListRecipesInput  {
     /// <p>The default is <code>SERVICE</code>.</p>
     #[doc(hidden)]
     pub recipe_provider: std::option::Option<crate::types::RecipeProvider>,
@@ -18,11 +18,11 @@ pub struct ListRecipesInput {
 }
 impl ListRecipesInput {
     /// <p>The default is <code>SERVICE</code>.</p>
-    pub fn recipe_provider(&self) -> std::option::Option<&crate::types::RecipeProvider> {
+    pub fn recipe_provider(&self) -> std::option::Option<& crate::types::RecipeProvider> {
         self.recipe_provider.as_ref()
     }
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of recipes to return.</p>
@@ -30,7 +30,7 @@ impl ListRecipesInput {
         self.max_results
     }
     /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
-    pub fn domain(&self) -> std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> std::option::Option<& crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -57,12 +57,8 @@ impl ListRecipesInputBuilder {
         self
     }
     /// <p>The default is <code>SERVICE</code>.</p>
-    pub fn set_recipe_provider(
-        mut self,
-        input: std::option::Option<crate::types::RecipeProvider>,
-    ) -> Self {
-        self.recipe_provider = input;
-        self
+    pub fn set_recipe_provider(mut self, input: std::option::Option<crate::types::RecipeProvider>) -> Self {
+        self.recipe_provider = input; self
     }
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>A token returned from the previous call to <code>ListRecipes</code> for getting the next set of recipes (if they exist).</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of recipes to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,8 +76,7 @@ impl ListRecipesInputBuilder {
     }
     /// <p>The maximum number of recipes to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
@@ -91,21 +85,22 @@ impl ListRecipesInputBuilder {
     }
     /// <p> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned. </p>
     pub fn set_domain(mut self, input: std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// Consumes the builder and constructs a [`ListRecipesInput`](crate::operation::list_recipes::ListRecipesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_recipes::ListRecipesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_recipes::ListRecipesInput {
-            recipe_provider: self.recipe_provider,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            domain: self.domain,
-        })
+    pub fn build(self) -> Result<crate::operation::list_recipes::ListRecipesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_recipes::ListRecipesInput {
+                recipe_provider: self.recipe_provider
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                domain: self.domain
+                ,
+            }
+        )
     }
 }
+

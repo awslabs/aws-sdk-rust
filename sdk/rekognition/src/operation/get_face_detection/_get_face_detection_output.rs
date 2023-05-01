@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFaceDetectionOutput {
+pub struct GetFaceDetectionOutput  {
     /// <p>The current status of the face detection job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::VideoJobStatus>,
@@ -22,35 +22,34 @@ pub struct GetFaceDetectionOutput {
 }
 impl GetFaceDetectionOutput {
     /// <p>The current status of the face detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::VideoJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::types::VideoJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn video_metadata(&self) -> std::option::Option<&crate::types::VideoMetadata> {
+    pub fn video_metadata(&self) -> std::option::Option<& crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
-    pub fn faces(&self) -> std::option::Option<&[crate::types::FaceDetection]> {
+    pub fn faces(&self) -> std::option::Option<& [crate::types::FaceDetection]> {
         self.faces.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetFaceDetectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFaceDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetFaceDetectionOutput`](crate::operation::get_face_detection::GetFaceDetectionOutput).
-    pub fn builder() -> crate::operation::get_face_detection::builders::GetFaceDetectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_face_detection::builders::GetFaceDetectionOutputBuilder {
         crate::operation::get_face_detection::builders::GetFaceDetectionOutputBuilder::default()
     }
 }
@@ -73,12 +72,8 @@ impl GetFaceDetectionOutputBuilder {
         self
     }
     /// <p>The current status of the face detection job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: std::option::Option<crate::types::VideoJobStatus>,
-    ) -> Self {
-        self.job_status = input;
-        self
+    pub fn set_job_status(mut self, input: std::option::Option<crate::types::VideoJobStatus>) -> Self {
+        self.job_status = input; self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +82,7 @@ impl GetFaceDetectionOutputBuilder {
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub fn video_metadata(mut self, input: crate::types::VideoMetadata) -> Self {
@@ -96,12 +90,8 @@ impl GetFaceDetectionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn set_video_metadata(
-        mut self,
-        input: std::option::Option<crate::types::VideoMetadata>,
-    ) -> Self {
-        self.video_metadata = input;
-        self
+    pub fn set_video_metadata(mut self, input: std::option::Option<crate::types::VideoMetadata>) -> Self {
+        self.video_metadata = input; self
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +100,7 @@ impl GetFaceDetectionOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition returns this token that you can use in the subsequent request to retrieve the next set of faces. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `faces`.
     ///
@@ -120,36 +109,38 @@ impl GetFaceDetectionOutputBuilder {
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
     pub fn faces(mut self, input: crate::types::FaceDetection) -> Self {
         let mut v = self.faces.unwrap_or_default();
-        v.push(input);
-        self.faces = Some(v);
-        self
+                        v.push(input);
+                        self.faces = Some(v);
+                        self
     }
     /// <p>An array of faces detected in the video. Each element contains a detected face's details and the time, in milliseconds from the start of the video, the face was detected. </p>
-    pub fn set_faces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FaceDetection>>,
-    ) -> Self {
-        self.faces = input;
-        self
+    pub fn set_faces(mut self, input: std::option::Option<std::vec::Vec<crate::types::FaceDetection>>) -> Self {
+        self.faces = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFaceDetectionOutput`](crate::operation::get_face_detection::GetFaceDetectionOutput).
     pub fn build(self) -> crate::operation::get_face_detection::GetFaceDetectionOutput {
         crate::operation::get_face_detection::GetFaceDetectionOutput {
-            job_status: self.job_status,
-            status_message: self.status_message,
-            video_metadata: self.video_metadata,
-            next_token: self.next_token,
-            faces: self.faces,
+            job_status: self.job_status
+            ,
+            status_message: self.status_message
+            ,
+            video_metadata: self.video_metadata
+            ,
+            next_token: self.next_token
+            ,
+            faces: self.faces
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,85 +4,57 @@ pub use crate::operation::create_suite_definition::_create_suite_definition_outp
 pub use crate::operation::create_suite_definition::_create_suite_definition_input::CreateSuiteDefinitionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSuiteDefinition`.
-///
-/// <p>Creates a Device Advisor test suite.</p>
+/// 
+/// <p>Creates a Device Advisor test suite.</p> 
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSuiteDefinition</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSuiteDefinitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_suite_definition::builders::CreateSuiteDefinitionInputBuilder,
-}
-impl CreateSuiteDefinitionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_suite_definition::builders::CreateSuiteDefinitionInputBuilder
+            }
+impl CreateSuiteDefinitionFluentBuilder  {
     /// Creates a new `CreateSuiteDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_suite_definition::CreateSuiteDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_suite_definition::CreateSuiteDefinitionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_suite_definition::CreateSuiteDefinition, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_suite_definition::CreateSuiteDefinitionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_suite_definition::CreateSuiteDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::create_suite_definition::CreateSuiteDefinitionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn suite_definition_configuration(
-        mut self,
-        input: crate::types::SuiteDefinitionConfiguration,
-    ) -> Self {
+    pub fn suite_definition_configuration(mut self, input: crate::types::SuiteDefinitionConfiguration) -> Self {
         self.inner = self.inner.suite_definition_configuration(input);
         self
     }
     /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
-    pub fn set_suite_definition_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SuiteDefinitionConfiguration>,
-    ) -> Self {
+    pub fn set_suite_definition_configuration(mut self, input: std::option::Option<crate::types::SuiteDefinitionConfiguration>) -> Self {
         self.inner = self.inner.set_suite_definition_configuration(input);
         self
     }
@@ -91,22 +63,14 @@ impl CreateSuiteDefinitionFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be attached to the suite definition.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

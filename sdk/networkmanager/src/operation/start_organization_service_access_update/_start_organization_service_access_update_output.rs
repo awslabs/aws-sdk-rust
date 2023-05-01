@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartOrganizationServiceAccessUpdateOutput {
+pub struct StartOrganizationServiceAccessUpdateOutput  {
     /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
     #[doc(hidden)]
     pub organization_status: std::option::Option<crate::types::OrganizationStatus>,
@@ -10,18 +10,18 @@ pub struct StartOrganizationServiceAccessUpdateOutput {
 }
 impl StartOrganizationServiceAccessUpdateOutput {
     /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
-    pub fn organization_status(&self) -> std::option::Option<&crate::types::OrganizationStatus> {
+    pub fn organization_status(&self) -> std::option::Option<& crate::types::OrganizationStatus> {
         self.organization_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartOrganizationServiceAccessUpdateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartOrganizationServiceAccessUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartOrganizationServiceAccessUpdateOutput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput).
-    pub fn builder() -> crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateOutputBuilder{
+    pub fn builder() -> crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateOutputBuilder {
         crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl StartOrganizationServiceAccessUpdateOutputBuilder {
         self
     }
     /// <p>The status of the service access update request for an Amazon Web Services Organization.</p>
-    pub fn set_organization_status(
-        mut self,
-        input: std::option::Option<crate::types::OrganizationStatus>,
-    ) -> Self {
-        self.organization_status = input;
-        self
+    pub fn set_organization_status(mut self, input: std::option::Option<crate::types::OrganizationStatus>) -> Self {
+        self.organization_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartOrganizationServiceAccessUpdateOutput`](crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput).
-    pub fn build(self) -> crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput{
+    pub fn build(self) -> crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput {
         crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput {
             organization_status: self.organization_status
             ,
@@ -65,3 +61,4 @@ impl StartOrganizationServiceAccessUpdateOutputBuilder {
         }
     }
 }
+

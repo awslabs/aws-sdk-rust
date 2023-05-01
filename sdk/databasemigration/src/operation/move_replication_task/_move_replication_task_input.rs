@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MoveReplicationTaskInput {
+pub struct MoveReplicationTaskInput  {
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
     #[doc(hidden)]
     pub replication_task_arn: std::option::Option<std::string::String>,
@@ -13,20 +13,18 @@ pub struct MoveReplicationTaskInput {
 }
 impl MoveReplicationTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> std::option::Option<& str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    pub fn target_replication_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn target_replication_instance_arn(&self) -> std::option::Option<& str> {
         self.target_replication_instance_arn.as_deref()
     }
 }
 impl MoveReplicationTaskInput {
     /// Creates a new builder-style object to manufacture [`MoveReplicationTaskInput`](crate::operation::move_replication_task::MoveReplicationTaskInput).
-    pub fn builder(
-    ) -> crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder {
-        crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder {
+        crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder::default()
     }
 }
 
@@ -44,41 +42,28 @@ impl MoveReplicationTaskInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task that you want to move.</p>
-    pub fn set_replication_task_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_task_arn = input;
-        self
+    pub fn set_replication_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_task_arn = input; self
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    pub fn target_replication_instance_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn target_replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_replication_instance_arn = Some(input.into());
         self
     }
     /// <p>The ARN of the replication instance where you want to move the task to.</p>
-    pub fn set_target_replication_instance_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_replication_instance_arn = input;
-        self
+    pub fn set_target_replication_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_replication_instance_arn = input; self
     }
     /// Consumes the builder and constructs a [`MoveReplicationTaskInput`](crate::operation::move_replication_task::MoveReplicationTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::move_replication_task::MoveReplicationTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::move_replication_task::MoveReplicationTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::move_replication_task::MoveReplicationTaskInput {
-                replication_task_arn: self.replication_task_arn,
-                target_replication_instance_arn: self.target_replication_instance_arn,
-            },
+                replication_task_arn: self.replication_task_arn
+                ,
+                target_replication_instance_arn: self.target_replication_instance_arn
+                ,
+            }
         )
     }
 }
+

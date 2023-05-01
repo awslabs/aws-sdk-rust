@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRescoreExecutionPlansInput {
+pub struct ListRescoreExecutionPlansInput  {
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListRescoreExecutionPlansInput {
 }
 impl ListRescoreExecutionPlansInput {
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of rescore execution plans to return.</p>
@@ -22,7 +22,7 @@ impl ListRescoreExecutionPlansInput {
 }
 impl ListRescoreExecutionPlansInput {
     /// Creates a new builder-style object to manufacture [`ListRescoreExecutionPlansInput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput).
-    pub fn builder() -> crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder{
+    pub fn builder() -> crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder {
         crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl ListRescoreExecutionPlansInputBuilder {
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of rescore execution plans to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,21 +51,18 @@ impl ListRescoreExecutionPlansInputBuilder {
     }
     /// <p>The maximum number of rescore execution plans to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListRescoreExecutionPlansInput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

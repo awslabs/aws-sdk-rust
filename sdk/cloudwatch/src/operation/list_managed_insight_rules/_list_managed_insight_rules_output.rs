@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedInsightRulesOutput {
+pub struct ListManagedInsightRulesOutput  {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     #[doc(hidden)]
     pub managed_rules: std::option::Option<std::vec::Vec<crate::types::ManagedRuleDescription>>,
@@ -13,24 +13,22 @@ pub struct ListManagedInsightRulesOutput {
 }
 impl ListManagedInsightRulesOutput {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    pub fn managed_rules(&self) -> std::option::Option<&[crate::types::ManagedRuleDescription]> {
+    pub fn managed_rules(&self) -> std::option::Option<& [crate::types::ManagedRuleDescription]> {
         self.managed_rules.as_deref()
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListManagedInsightRulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListManagedInsightRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedInsightRulesOutput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder {
         crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesOutputBuilder::default()
     }
 }
@@ -39,8 +37,7 @@ impl ListManagedInsightRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListManagedInsightRulesOutputBuilder {
-    pub(crate) managed_rules:
-        std::option::Option<std::vec::Vec<crate::types::ManagedRuleDescription>>,
+    pub(crate) managed_rules: std::option::Option<std::vec::Vec<crate::types::ManagedRuleDescription>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl ListManagedInsightRulesOutputBuilder {
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
     pub fn managed_rules(mut self, input: crate::types::ManagedRuleDescription) -> Self {
         let mut v = self.managed_rules.unwrap_or_default();
-        v.push(input);
-        self.managed_rules = Some(v);
-        self
+                        v.push(input);
+                        self.managed_rules = Some(v);
+                        self
     }
     /// <p> The managed rules that are available for the specified Amazon Web Services resource. </p>
-    pub fn set_managed_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ManagedRuleDescription>>,
-    ) -> Self {
-        self.managed_rules = input;
-        self
+    pub fn set_managed_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ManagedRuleDescription>>) -> Self {
+        self.managed_rules = input; self
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,26 +64,26 @@ impl ListManagedInsightRulesOutputBuilder {
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListManagedInsightRulesOutput`](crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput {
+    pub fn build(self) -> crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput {
         crate::operation::list_managed_insight_rules::ListManagedInsightRulesOutput {
-            managed_rules: self.managed_rules,
-            next_token: self.next_token,
+            managed_rules: self.managed_rules
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

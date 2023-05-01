@@ -3,7 +3,7 @@
 /// <p>Total number of scanned files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScannedItemCount {
+pub struct ScannedItemCount  {
     /// <p>Total GB of files scanned for malware.</p>
     #[doc(hidden)]
     pub total_gb: i32,
@@ -51,8 +51,7 @@ impl ScannedItemCountBuilder {
     }
     /// <p>Total GB of files scanned for malware.</p>
     pub fn set_total_gb(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_gb = input;
-        self
+        self.total_gb = input; self
     }
     /// <p>Number of files scanned.</p>
     pub fn files(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl ScannedItemCountBuilder {
     }
     /// <p>Number of files scanned.</p>
     pub fn set_files(mut self, input: std::option::Option<i32>) -> Self {
-        self.files = input;
-        self
+        self.files = input; self
     }
     /// <p>Total number of scanned volumes.</p>
     pub fn volumes(mut self, input: i32) -> Self {
@@ -71,15 +69,21 @@ impl ScannedItemCountBuilder {
     }
     /// <p>Total number of scanned volumes.</p>
     pub fn set_volumes(mut self, input: std::option::Option<i32>) -> Self {
-        self.volumes = input;
-        self
+        self.volumes = input; self
     }
     /// Consumes the builder and constructs a [`ScannedItemCount`](crate::types::ScannedItemCount).
     pub fn build(self) -> crate::types::ScannedItemCount {
         crate::types::ScannedItemCount {
-            total_gb: self.total_gb.unwrap_or_default(),
-            files: self.files.unwrap_or_default(),
-            volumes: self.volumes.unwrap_or_default(),
+            total_gb: self.total_gb
+                .unwrap_or_default()
+            ,
+            files: self.files
+                .unwrap_or_default()
+            ,
+            volumes: self.volumes
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalApplicationInstanceNodeInstancesInput {
+pub struct SignalApplicationInstanceNodeInstancesInput  {
     /// <p>An application instance ID.</p>
     #[doc(hidden)]
     pub application_instance_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct SignalApplicationInstanceNodeInstancesInput {
 }
 impl SignalApplicationInstanceNodeInstancesInput {
     /// <p>An application instance ID.</p>
-    pub fn application_instance_id(&self) -> std::option::Option<&str> {
+    pub fn application_instance_id(&self) -> std::option::Option<& str> {
         self.application_instance_id.as_deref()
     }
     /// <p>A list of signals.</p>
-    pub fn node_signals(&self) -> std::option::Option<&[crate::types::NodeSignal]> {
+    pub fn node_signals(&self) -> std::option::Option<& [crate::types::NodeSignal]> {
         self.node_signals.as_deref()
     }
 }
 impl SignalApplicationInstanceNodeInstancesInput {
     /// Creates a new builder-style object to manufacture [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
-    pub fn builder() -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder{
+    pub fn builder() -> crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder {
         crate::operation::signal_application_instance_node_instances::builders::SignalApplicationInstanceNodeInstancesInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
         self
     }
     /// <p>An application instance ID.</p>
-    pub fn set_application_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_instance_id = input;
-        self
+    pub fn set_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_instance_id = input; self
     }
     /// Appends an item to `node_signals`.
     ///
@@ -55,20 +51,16 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
     /// <p>A list of signals.</p>
     pub fn node_signals(mut self, input: crate::types::NodeSignal) -> Self {
         let mut v = self.node_signals.unwrap_or_default();
-        v.push(input);
-        self.node_signals = Some(v);
-        self
+                        v.push(input);
+                        self.node_signals = Some(v);
+                        self
     }
     /// <p>A list of signals.</p>
-    pub fn set_node_signals(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NodeSignal>>,
-    ) -> Self {
-        self.node_signals = input;
-        self
+    pub fn set_node_signals(mut self, input: std::option::Option<std::vec::Vec<crate::types::NodeSignal>>) -> Self {
+        self.node_signals = input; self
     }
     /// Consumes the builder and constructs a [`SignalApplicationInstanceNodeInstancesInput`](crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput).
-    pub fn build(self) -> Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput {
                 application_instance_id: self.application_instance_id
@@ -79,3 +71,4 @@ impl SignalApplicationInstanceNodeInstancesInputBuilder {
         )
     }
 }
+

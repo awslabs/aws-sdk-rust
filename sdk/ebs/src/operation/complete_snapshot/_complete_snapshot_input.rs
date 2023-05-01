@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteSnapshotInput {
+pub struct CompleteSnapshotInput  {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The number of blocks that were written to the snapshot.</p>
     #[doc(hidden)]
     pub changed_blocks_count: std::option::Option<i32>,
-    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p> 
     /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
     #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
@@ -22,33 +22,30 @@ pub struct CompleteSnapshotInput {
 }
 impl CompleteSnapshotInput {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The number of blocks that were written to the snapshot.</p>
     pub fn changed_blocks_count(&self) -> std::option::Option<i32> {
         self.changed_blocks_count
     }
-    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p> 
     /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> std::option::Option<& str> {
         self.checksum.as_deref()
     }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::types::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    pub fn checksum_aggregation_method(
-        &self,
-    ) -> std::option::Option<&crate::types::ChecksumAggregationMethod> {
+    pub fn checksum_aggregation_method(&self) -> std::option::Option<& crate::types::ChecksumAggregationMethod> {
         self.checksum_aggregation_method.as_ref()
     }
 }
 impl CompleteSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CompleteSnapshotInput`](crate::operation::complete_snapshot::CompleteSnapshotInput).
-    pub fn builder() -> crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder {
         crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder::default()
     }
 }
@@ -61,8 +58,7 @@ pub struct CompleteSnapshotInputBuilder {
     pub(crate) changed_blocks_count: std::option::Option<i32>,
     pub(crate) checksum: std::option::Option<std::string::String>,
     pub(crate) checksum_algorithm: std::option::Option<crate::types::ChecksumAlgorithm>,
-    pub(crate) checksum_aggregation_method:
-        std::option::Option<crate::types::ChecksumAggregationMethod>,
+    pub(crate) checksum_aggregation_method: std::option::Option<crate::types::ChecksumAggregationMethod>,
 }
 impl CompleteSnapshotInputBuilder {
     /// <p>The ID of the snapshot.</p>
@@ -72,8 +68,7 @@ impl CompleteSnapshotInputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The number of blocks that were written to the snapshot.</p>
     pub fn changed_blocks_count(mut self, input: i32) -> Self {
@@ -82,20 +77,18 @@ impl CompleteSnapshotInputBuilder {
     }
     /// <p>The number of blocks that were written to the snapshot.</p>
     pub fn set_changed_blocks_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.changed_blocks_count = input;
-        self
+        self.changed_blocks_count = input; self
     }
-    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p> 
     /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
     pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
         self.checksum = Some(input.into());
         self
     }
-    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p>
+    /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written block.</p> 
     /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the checksums for each written block in ascending order of their block index, concatenate them to form a single string, and then generate the checksum on the entire string using the SHA256 algorithm.</p>
     pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
@@ -103,42 +96,34 @@ impl CompleteSnapshotInputBuilder {
         self
     }
     /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm is <code>SHA256</code>.</p>
-    pub fn set_checksum_algorithm(
-        mut self,
-        input: std::option::Option<crate::types::ChecksumAlgorithm>,
-    ) -> Self {
-        self.checksum_algorithm = input;
-        self
+    pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
+        self.checksum_algorithm = input; self
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    pub fn checksum_aggregation_method(
-        mut self,
-        input: crate::types::ChecksumAggregationMethod,
-    ) -> Self {
+    pub fn checksum_aggregation_method(mut self, input: crate::types::ChecksumAggregationMethod) -> Self {
         self.checksum_aggregation_method = Some(input);
         self
     }
     /// <p>The aggregation method used to generate the checksum. Currently, the only supported aggregation method is <code>LINEAR</code>.</p>
-    pub fn set_checksum_aggregation_method(
-        mut self,
-        input: std::option::Option<crate::types::ChecksumAggregationMethod>,
-    ) -> Self {
-        self.checksum_aggregation_method = input;
-        self
+    pub fn set_checksum_aggregation_method(mut self, input: std::option::Option<crate::types::ChecksumAggregationMethod>) -> Self {
+        self.checksum_aggregation_method = input; self
     }
     /// Consumes the builder and constructs a [`CompleteSnapshotInput`](crate::operation::complete_snapshot::CompleteSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::complete_snapshot::CompleteSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::complete_snapshot::CompleteSnapshotInput {
-            snapshot_id: self.snapshot_id,
-            changed_blocks_count: self.changed_blocks_count,
-            checksum: self.checksum,
-            checksum_algorithm: self.checksum_algorithm,
-            checksum_aggregation_method: self.checksum_aggregation_method,
-        })
+    pub fn build(self) -> Result<crate::operation::complete_snapshot::CompleteSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::complete_snapshot::CompleteSnapshotInput {
+                snapshot_id: self.snapshot_id
+                ,
+                changed_blocks_count: self.changed_blocks_count
+                ,
+                checksum: self.checksum
+                ,
+                checksum_algorithm: self.checksum_algorithm
+                ,
+                checksum_aggregation_method: self.checksum_aggregation_method
+                ,
+            }
+        )
     }
 }
+

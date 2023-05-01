@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserProfileInput {
+pub struct CreateUserProfileInput  {
     /// <p>The ID of the associated Domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct CreateUserProfileInput {
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     #[doc(hidden)]
     pub single_sign_on_user_value: std::option::Option<std::string::String>,
-    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p> 
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -25,35 +25,34 @@ pub struct CreateUserProfileInput {
 }
 impl CreateUserProfileInput {
     /// <p>The ID of the associated Domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
-    pub fn user_profile_name(&self) -> std::option::Option<&str> {
+    pub fn user_profile_name(&self) -> std::option::Option<& str> {
         self.user_profile_name.as_deref()
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn single_sign_on_user_identifier(&self) -> std::option::Option<&str> {
+    pub fn single_sign_on_user_identifier(&self) -> std::option::Option<& str> {
         self.single_sign_on_user_identifier.as_deref()
     }
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn single_sign_on_user_value(&self) -> std::option::Option<&str> {
+    pub fn single_sign_on_user_value(&self) -> std::option::Option<& str> {
         self.single_sign_on_user_value.as_deref()
     }
-    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p> 
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A collection of settings.</p>
-    pub fn user_settings(&self) -> std::option::Option<&crate::types::UserSettings> {
+    pub fn user_settings(&self) -> std::option::Option<& crate::types::UserSettings> {
         self.user_settings.as_ref()
     }
 }
 impl CreateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder {
         crate::operation::create_user_profile::builders::CreateUserProfileInputBuilder::default()
     }
 }
@@ -77,8 +76,7 @@ impl CreateUserProfileInputBuilder {
     }
     /// <p>The ID of the associated Domain.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
     pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,12 +84,8 @@ impl CreateUserProfileInputBuilder {
         self
     }
     /// <p>A name for the UserProfile. This value is not case sensitive.</p>
-    pub fn set_user_profile_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.user_profile_name = input;
-        self
+    pub fn set_user_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.user_profile_name = input; self
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     pub fn single_sign_on_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,12 +93,8 @@ impl CreateUserProfileInputBuilder {
         self
     }
     /// <p>A specifier for the type of value specified in SingleSignOnUserValue. Currently, the only supported value is "UserName". If the Domain's AuthMode is IAM Identity Center, this field is required. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn set_single_sign_on_user_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.single_sign_on_user_identifier = input;
-        self
+    pub fn set_single_sign_on_user_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.single_sign_on_user_identifier = input; self
     }
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
     pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,33 +102,25 @@ impl CreateUserProfileInputBuilder {
         self
     }
     /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile. If the Domain's AuthMode is IAM Identity Center, this field is required, and must match a valid username of a user in your directory. If the Domain's AuthMode is not IAM Identity Center, this field cannot be specified. </p>
-    pub fn set_single_sign_on_user_value(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.single_sign_on_user_value = input;
-        self
+    pub fn set_single_sign_on_user_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.single_sign_on_user_value = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p> 
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+    /// <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p> 
     /// <p>Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A collection of settings.</p>
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
@@ -146,29 +128,27 @@ impl CreateUserProfileInputBuilder {
         self
     }
     /// <p>A collection of settings.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
-        self.user_settings = input;
-        self
+    pub fn set_user_settings(mut self, input: std::option::Option<crate::types::UserSettings>) -> Self {
+        self.user_settings = input; self
     }
     /// Consumes the builder and constructs a [`CreateUserProfileInput`](crate::operation::create_user_profile::CreateUserProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_user_profile::CreateUserProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_user_profile::CreateUserProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_user_profile::CreateUserProfileInput {
-                domain_id: self.domain_id,
-                user_profile_name: self.user_profile_name,
-                single_sign_on_user_identifier: self.single_sign_on_user_identifier,
-                single_sign_on_user_value: self.single_sign_on_user_value,
-                tags: self.tags,
-                user_settings: self.user_settings,
-            },
+                domain_id: self.domain_id
+                ,
+                user_profile_name: self.user_profile_name
+                ,
+                single_sign_on_user_identifier: self.single_sign_on_user_identifier
+                ,
+                single_sign_on_user_value: self.single_sign_on_user_value
+                ,
+                tags: self.tags
+                ,
+                user_settings: self.user_settings
+                ,
+            }
         )
     }
 }
+

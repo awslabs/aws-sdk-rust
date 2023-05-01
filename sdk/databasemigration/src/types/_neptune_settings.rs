@@ -3,7 +3,7 @@
 /// <p>Provides information that defines an Amazon Neptune endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NeptuneSettings {
+pub struct NeptuneSettings  {
     /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
     #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
@@ -28,15 +28,15 @@ pub struct NeptuneSettings {
 }
 impl NeptuneSettings {
     /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_access_role_arn(&self) -> std::option::Option<& str> {
         self.service_access_role_arn.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in these .csv files.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
-    pub fn s3_bucket_folder(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_folder(&self) -> std::option::Option<& str> {
         self.s3_bucket_folder.as_deref()
     }
     /// <p>The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target database before raising an error. The default is 250.</p>
@@ -82,12 +82,8 @@ impl NeptuneSettingsBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune target endpoint. The role must allow the <code>iam:PassRole</code> action. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User Guide. </i> </p>
-    pub fn set_service_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_access_role_arn = input;
-        self
+    pub fn set_service_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_access_role_arn = input; self
     }
     /// <p>The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in these .csv files.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +92,7 @@ impl NeptuneSettingsBuilder {
     }
     /// <p>The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data in .csv files before bulk-loading it to the Neptune target database. DMS maps the SQL source data to graph data before storing it in these .csv files.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
     pub fn s3_bucket_folder(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +101,7 @@ impl NeptuneSettingsBuilder {
     }
     /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket specified by <code>S3BucketName</code> </p>
     pub fn set_s3_bucket_folder(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_folder = input;
-        self
+        self.s3_bucket_folder = input; self
     }
     /// <p>The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target database before raising an error. The default is 250.</p>
     pub fn error_retry_duration(mut self, input: i32) -> Self {
@@ -116,8 +110,7 @@ impl NeptuneSettingsBuilder {
     }
     /// <p>The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph data to the Neptune target database before raising an error. The default is 250.</p>
     pub fn set_error_retry_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.error_retry_duration = input;
-        self
+        self.error_retry_duration = input; self
     }
     /// <p>The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket, ready to store the next batch of migrated graph data.</p>
     pub fn max_file_size(mut self, input: i32) -> Self {
@@ -126,8 +119,7 @@ impl NeptuneSettingsBuilder {
     }
     /// <p>The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS bulk-loads the data to the Neptune target database. The default is 1,048,576 KB. If the bulk load is successful, DMS clears the bucket, ready to store the next batch of migrated graph data.</p>
     pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_file_size = input;
-        self
+        self.max_file_size = input; self
     }
     /// <p>The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before raising an error. The default is 5.</p>
     pub fn max_retry_count(mut self, input: i32) -> Self {
@@ -136,8 +128,7 @@ impl NeptuneSettingsBuilder {
     }
     /// <p>The number of times for DMS to retry a bulk load of migrated graph data to the Neptune target database before raising an error. The default is 5.</p>
     pub fn set_max_retry_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_retry_count = input;
-        self
+        self.max_retry_count = input; self
     }
     /// <p>If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.</p>
     pub fn iam_auth_enabled(mut self, input: bool) -> Self {
@@ -146,19 +137,26 @@ impl NeptuneSettingsBuilder {
     }
     /// <p>If you want Identity and Access Management (IAM) authorization enabled for this endpoint, set this parameter to <code>true</code>. Then attach the appropriate IAM policy document to your service role specified by <code>ServiceAccessRoleArn</code>. The default is <code>false</code>.</p>
     pub fn set_iam_auth_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.iam_auth_enabled = input;
-        self
+        self.iam_auth_enabled = input; self
     }
     /// Consumes the builder and constructs a [`NeptuneSettings`](crate::types::NeptuneSettings).
     pub fn build(self) -> crate::types::NeptuneSettings {
         crate::types::NeptuneSettings {
-            service_access_role_arn: self.service_access_role_arn,
-            s3_bucket_name: self.s3_bucket_name,
-            s3_bucket_folder: self.s3_bucket_folder,
-            error_retry_duration: self.error_retry_duration,
-            max_file_size: self.max_file_size,
-            max_retry_count: self.max_retry_count,
-            iam_auth_enabled: self.iam_auth_enabled,
+            service_access_role_arn: self.service_access_role_arn
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_bucket_folder: self.s3_bucket_folder
+            ,
+            error_retry_duration: self.error_retry_duration
+            ,
+            max_file_size: self.max_file_size
+            ,
+            max_retry_count: self.max_retry_count
+            ,
+            iam_auth_enabled: self.iam_auth_enabled
+            ,
         }
     }
 }
+

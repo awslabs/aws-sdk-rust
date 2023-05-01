@@ -3,7 +3,7 @@
 /// <p>A single EarthObservationJob output band.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputBand {
+pub struct OutputBand  {
     /// <p>The name of the band.</p>
     #[doc(hidden)]
     pub band_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OutputBand {
 }
 impl OutputBand {
     /// <p>The name of the band.</p>
-    pub fn band_name(&self) -> std::option::Option<&str> {
+    pub fn band_name(&self) -> std::option::Option<& str> {
         self.band_name.as_deref()
     }
     /// <p>The datatype of the output band.</p>
-    pub fn output_data_type(&self) -> std::option::Option<&crate::types::OutputType> {
+    pub fn output_data_type(&self) -> std::option::Option<& crate::types::OutputType> {
         self.output_data_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl OutputBandBuilder {
     }
     /// <p>The name of the band.</p>
     pub fn set_band_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.band_name = input;
-        self
+        self.band_name = input; self
     }
     /// <p>The datatype of the output band.</p>
     pub fn output_data_type(mut self, input: crate::types::OutputType) -> Self {
@@ -52,18 +51,17 @@ impl OutputBandBuilder {
         self
     }
     /// <p>The datatype of the output band.</p>
-    pub fn set_output_data_type(
-        mut self,
-        input: std::option::Option<crate::types::OutputType>,
-    ) -> Self {
-        self.output_data_type = input;
-        self
+    pub fn set_output_data_type(mut self, input: std::option::Option<crate::types::OutputType>) -> Self {
+        self.output_data_type = input; self
     }
     /// Consumes the builder and constructs a [`OutputBand`](crate::types::OutputBand).
     pub fn build(self) -> crate::types::OutputBand {
         crate::types::OutputBand {
-            band_name: self.band_name,
-            output_data_type: self.output_data_type,
+            band_name: self.band_name
+            ,
+            output_data_type: self.output_data_type
+            ,
         }
     }
 }
+

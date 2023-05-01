@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationHealthOutput {
+pub struct DescribeOrganizationHealthOutput  {
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub open_reactive_insights: i32,
@@ -36,13 +36,13 @@ impl DescribeOrganizationHealthOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeOrganizationHealthOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOrganizationHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
-    pub fn builder() -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder{
+    pub fn builder() -> crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder {
         crate::operation::describe_organization_health::builders::DescribeOrganizationHealthOutputBuilder::default()
     }
 }
@@ -65,8 +65,7 @@ impl DescribeOrganizationHealthOutputBuilder {
     }
     /// <p>An integer that specifies the number of open reactive insights in your Amazon Web Services account.</p>
     pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
-        self.open_reactive_insights = input;
-        self
+        self.open_reactive_insights = input; self
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn open_proactive_insights(mut self, input: i32) -> Self {
@@ -75,8 +74,7 @@ impl DescribeOrganizationHealthOutputBuilder {
     }
     /// <p>An integer that specifies the number of open proactive insights in your Amazon Web Services account.</p>
     pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
-        self.open_proactive_insights = input;
-        self
+        self.open_proactive_insights = input; self
     }
     /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
     pub fn metrics_analyzed(mut self, input: i32) -> Self {
@@ -85,8 +83,7 @@ impl DescribeOrganizationHealthOutputBuilder {
     }
     /// <p>An integer that specifies the number of metrics that have been analyzed in your organization.</p>
     pub fn set_metrics_analyzed(mut self, input: std::option::Option<i32>) -> Self {
-        self.metrics_analyzed = input;
-        self
+        self.metrics_analyzed = input; self
     }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub fn resource_hours(mut self, input: i64) -> Self {
@@ -95,28 +92,33 @@ impl DescribeOrganizationHealthOutputBuilder {
     }
     /// <p>The number of Amazon DevOps Guru resource analysis hours billed to the current Amazon Web Services account in the last hour. </p>
     pub fn set_resource_hours(mut self, input: std::option::Option<i64>) -> Self {
-        self.resource_hours = input;
-        self
+        self.resource_hours = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOrganizationHealthOutput`](crate::operation::describe_organization_health::DescribeOrganizationHealthOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
+    pub fn build(self) -> crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
         crate::operation::describe_organization_health::DescribeOrganizationHealthOutput {
-            open_reactive_insights: self.open_reactive_insights.unwrap_or_default(),
-            open_proactive_insights: self.open_proactive_insights.unwrap_or_default(),
-            metrics_analyzed: self.metrics_analyzed.unwrap_or_default(),
-            resource_hours: self.resource_hours,
+            open_reactive_insights: self.open_reactive_insights
+                .unwrap_or_default()
+            ,
+            open_proactive_insights: self.open_proactive_insights
+                .unwrap_or_default()
+            ,
+            metrics_analyzed: self.metrics_analyzed
+                .unwrap_or_default()
+            ,
+            resource_hours: self.resource_hours
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

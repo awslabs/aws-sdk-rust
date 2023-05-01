@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAvailablePhoneNumbersInput {
+pub struct SearchAvailablePhoneNumbersInput  {
     /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     #[doc(hidden)]
     pub area_code: std::option::Option<std::string::String>,
@@ -30,27 +30,27 @@ pub struct SearchAvailablePhoneNumbersInput {
 }
 impl SearchAvailablePhoneNumbersInput {
     /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
-    pub fn area_code(&self) -> std::option::Option<&str> {
+    pub fn area_code(&self) -> std::option::Option<& str> {
         self.area_code.as_deref()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
-    pub fn toll_free_prefix(&self) -> std::option::Option<&str> {
+    pub fn toll_free_prefix(&self) -> std::option::Option<& str> {
         self.toll_free_prefix.as_deref()
     }
     /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
-    pub fn phone_number_type(&self) -> std::option::Option<&crate::types::PhoneNumberType> {
+    pub fn phone_number_type(&self) -> std::option::Option<& crate::types::PhoneNumberType> {
         self.phone_number_type.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -58,13 +58,13 @@ impl SearchAvailablePhoneNumbersInput {
         self.max_results
     }
     /// <p>The token used to return the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl SearchAvailablePhoneNumbersInput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder{
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder {
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder::default()
     }
 }
@@ -90,8 +90,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>Confines a search to just the phone numbers associated with the specified area code.</p>
     pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.area_code = input;
-        self
+        self.area_code = input; self
     }
     /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +99,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>Confines a search to just the phone numbers associated with the specified city.</p>
     pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.city = input;
-        self
+        self.city = input; self
     }
     /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +108,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>Confines a search to just the phone numbers associated with the specified country.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +117,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>Confines a search to just the phone numbers associated with the specified state.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn toll_free_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +126,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>Confines a search to just the phone numbers associated with the specified toll-free prefix.</p>
     pub fn set_toll_free_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.toll_free_prefix = input;
-        self
+        self.toll_free_prefix = input; self
     }
     /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
     pub fn phone_number_type(mut self, input: crate::types::PhoneNumberType) -> Self {
@@ -139,12 +134,8 @@ impl SearchAvailablePhoneNumbersInputBuilder {
         self
     }
     /// <p>Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</p>
-    pub fn set_phone_number_type(
-        mut self,
-        input: std::option::Option<crate::types::PhoneNumberType>,
-    ) -> Self {
-        self.phone_number_type = input;
-        self
+    pub fn set_phone_number_type(mut self, input: std::option::Option<crate::types::PhoneNumberType>) -> Self {
+        self.phone_number_type = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -153,8 +144,7 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,27 +153,30 @@ impl SearchAvailablePhoneNumbersInputBuilder {
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersInput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersInput {
-                area_code: self.area_code,
-                city: self.city,
-                country: self.country,
-                state: self.state,
-                toll_free_prefix: self.toll_free_prefix,
-                phone_number_type: self.phone_number_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                area_code: self.area_code
+                ,
+                city: self.city
+                ,
+                country: self.country
+                ,
+                state: self.state
+                ,
+                toll_free_prefix: self.toll_free_prefix
+                ,
+                phone_number_type: self.phone_number_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

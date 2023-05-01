@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDetectorInput {
+pub struct CreateDetectorInput  {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
     #[doc(hidden)]
     pub enable: std::option::Option<bool>,
@@ -12,15 +12,14 @@ pub struct CreateDetectorInput {
     /// <p>A value that specifies how frequently updated findings are exported.</p>
     #[doc(hidden)]
     pub finding_publishing_frequency: std::option::Option<crate::types::FindingPublishingFrequency>,
-    /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>Describes which data sources will be enabled for the detector.</p> 
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
     pub data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
     /// <p>The tags to be added to a new detector resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of features that will be configured for the detector.</p>
     #[doc(hidden)]
     pub features: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
@@ -31,30 +30,25 @@ impl CreateDetectorInput {
         self.enable
     }
     /// <p>The idempotency token for the create request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
-    pub fn finding_publishing_frequency(
-        &self,
-    ) -> std::option::Option<&crate::types::FindingPublishingFrequency> {
+    pub fn finding_publishing_frequency(&self) -> std::option::Option<& crate::types::FindingPublishingFrequency> {
         self.finding_publishing_frequency.as_ref()
     }
-    /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>Describes which data sources will be enabled for the detector.</p> 
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(&self) -> std::option::Option<&crate::types::DataSourceConfigurations> {
+    pub fn data_sources(&self) -> std::option::Option<& crate::types::DataSourceConfigurations> {
         self.data_sources.as_ref()
     }
     /// <p>The tags to be added to a new detector resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of features that will be configured for the detector.</p>
-    pub fn features(&self) -> std::option::Option<&[crate::types::DetectorFeatureConfiguration]> {
+    pub fn features(&self) -> std::option::Option<& [crate::types::DetectorFeatureConfiguration]> {
         self.features.as_deref()
     }
 }
@@ -71,13 +65,10 @@ impl CreateDetectorInput {
 pub struct CreateDetectorInputBuilder {
     pub(crate) enable: std::option::Option<bool>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) finding_publishing_frequency:
-        std::option::Option<crate::types::FindingPublishingFrequency>,
+    pub(crate) finding_publishing_frequency: std::option::Option<crate::types::FindingPublishingFrequency>,
     pub(crate) data_sources: std::option::Option<crate::types::DataSourceConfigurations>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) features:
-        std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) features: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
 }
 impl CreateDetectorInputBuilder {
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
@@ -87,8 +78,7 @@ impl CreateDetectorInputBuilder {
     }
     /// <p>A Boolean value that specifies whether the detector is to be enabled.</p>
     pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable = input;
-        self
+        self.enable = input; self
     }
     /// <p>The idempotency token for the create request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,66 +87,44 @@ impl CreateDetectorInputBuilder {
     }
     /// <p>The idempotency token for the create request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
-    pub fn finding_publishing_frequency(
-        mut self,
-        input: crate::types::FindingPublishingFrequency,
-    ) -> Self {
+    pub fn finding_publishing_frequency(mut self, input: crate::types::FindingPublishingFrequency) -> Self {
         self.finding_publishing_frequency = Some(input);
         self
     }
     /// <p>A value that specifies how frequently updated findings are exported.</p>
-    pub fn set_finding_publishing_frequency(
-        mut self,
-        input: std::option::Option<crate::types::FindingPublishingFrequency>,
-    ) -> Self {
-        self.finding_publishing_frequency = input;
-        self
+    pub fn set_finding_publishing_frequency(mut self, input: std::option::Option<crate::types::FindingPublishingFrequency>) -> Self {
+        self.finding_publishing_frequency = input; self
     }
-    /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>Describes which data sources will be enabled for the detector.</p> 
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourceConfigurations) -> Self {
         self.data_sources = Some(input);
         self
     }
-    /// <p>Describes which data sources will be enabled for the detector.</p>
+    /// <p>Describes which data sources will be enabled for the detector.</p> 
     /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(
-        mut self,
-        input: std::option::Option<crate::types::DataSourceConfigurations>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::DataSourceConfigurations>) -> Self {
+        self.data_sources = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be added to a new detector resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags to be added to a new detector resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `features`.
     ///
@@ -165,32 +133,32 @@ impl CreateDetectorInputBuilder {
     /// <p>A list of features that will be configured for the detector.</p>
     pub fn features(mut self, input: crate::types::DetectorFeatureConfiguration) -> Self {
         let mut v = self.features.unwrap_or_default();
-        v.push(input);
-        self.features = Some(v);
-        self
+                        v.push(input);
+                        self.features = Some(v);
+                        self
     }
     /// <p>A list of features that will be configured for the detector.</p>
-    pub fn set_features(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>,
-    ) -> Self {
-        self.features = input;
-        self
+    pub fn set_features(mut self, input: std::option::Option<std::vec::Vec<crate::types::DetectorFeatureConfiguration>>) -> Self {
+        self.features = input; self
     }
     /// Consumes the builder and constructs a [`CreateDetectorInput`](crate::operation::create_detector::CreateDetectorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_detector::CreateDetectorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_detector::CreateDetectorInput {
-            enable: self.enable,
-            client_token: self.client_token,
-            finding_publishing_frequency: self.finding_publishing_frequency,
-            data_sources: self.data_sources,
-            tags: self.tags,
-            features: self.features,
-        })
+    pub fn build(self) -> Result<crate::operation::create_detector::CreateDetectorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_detector::CreateDetectorInput {
+                enable: self.enable
+                ,
+                client_token: self.client_token
+                ,
+                finding_publishing_frequency: self.finding_publishing_frequency
+                ,
+                data_sources: self.data_sources
+                ,
+                tags: self.tags
+                ,
+                features: self.features
+                ,
+            }
+        )
     }
 }
+

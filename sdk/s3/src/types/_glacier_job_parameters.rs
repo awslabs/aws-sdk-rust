@@ -3,14 +3,14 @@
 /// <p>Container for S3 Glacier job parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlacierJobParameters {
+pub struct GlacierJobParameters  {
     /// <p>Retrieval tier at which the restore will be processed.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<crate::types::Tier>,
 }
 impl GlacierJobParameters {
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> std::option::Option<& crate::types::Tier> {
         self.tier.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl GlacierJobParametersBuilder {
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn set_tier(mut self, input: std::option::Option<crate::types::Tier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// Consumes the builder and constructs a [`GlacierJobParameters`](crate::types::GlacierJobParameters).
     pub fn build(self) -> crate::types::GlacierJobParameters {
-        crate::types::GlacierJobParameters { tier: self.tier }
+        crate::types::GlacierJobParameters {
+            tier: self.tier
+            ,
+        }
     }
 }
+

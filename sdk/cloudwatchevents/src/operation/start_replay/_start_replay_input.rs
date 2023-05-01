@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplayInput {
+pub struct StartReplayInput  {
     /// <p>The name of the replay to start.</p>
     #[doc(hidden)]
     pub replay_name: std::option::Option<std::string::String>,
@@ -24,27 +24,27 @@ pub struct StartReplayInput {
 }
 impl StartReplayInput {
     /// <p>The name of the replay to start.</p>
-    pub fn replay_name(&self) -> std::option::Option<&str> {
+    pub fn replay_name(&self) -> std::option::Option<& str> {
         self.replay_name.as_deref()
     }
     /// <p>A description for the replay to start.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the archive to replay events from.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<&str> {
+    pub fn event_source_arn(&self) -> std::option::Option<& str> {
         self.event_source_arn.as_deref()
     }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn event_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_start_time.as_ref()
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn event_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_end_time.as_ref()
     }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::ReplayDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::ReplayDestination> {
         self.destination.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl StartReplayInputBuilder {
     }
     /// <p>The name of the replay to start.</p>
     pub fn set_replay_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replay_name = input;
-        self
+        self.replay_name = input; self
     }
     /// <p>A description for the replay to start.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl StartReplayInputBuilder {
     }
     /// <p>A description for the replay to start.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ARN of the archive to replay events from.</p>
     pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl StartReplayInputBuilder {
     }
     /// <p>The ARN of the archive to replay events from.</p>
     pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_source_arn = input;
-        self
+        self.event_source_arn = input; self
     }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -103,12 +100,8 @@ impl StartReplayInputBuilder {
         self
     }
     /// <p>A time stamp for the time to start replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn set_event_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.event_start_time = input;
-        self
+    pub fn set_event_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.event_start_time = input; self
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
     pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,12 +109,8 @@ impl StartReplayInputBuilder {
         self
     }
     /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-    pub fn set_event_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.event_end_time = input;
-        self
+    pub fn set_event_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.event_end_time = input; self
     }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
     pub fn destination(mut self, input: crate::types::ReplayDestination) -> Self {
@@ -129,27 +118,27 @@ impl StartReplayInputBuilder {
         self
     }
     /// <p>A <code>ReplayDestination</code> object that includes details about the destination for the replay.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::ReplayDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::ReplayDestination>) -> Self {
+        self.destination = input; self
     }
     /// Consumes the builder and constructs a [`StartReplayInput`](crate::operation::start_replay::StartReplayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_replay::StartReplayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_replay::StartReplayInput {
-            replay_name: self.replay_name,
-            description: self.description,
-            event_source_arn: self.event_source_arn,
-            event_start_time: self.event_start_time,
-            event_end_time: self.event_end_time,
-            destination: self.destination,
-        })
+    pub fn build(self) -> Result<crate::operation::start_replay::StartReplayInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_replay::StartReplayInput {
+                replay_name: self.replay_name
+                ,
+                description: self.description
+                ,
+                event_source_arn: self.event_source_arn
+                ,
+                event_start_time: self.event_start_time
+                ,
+                event_end_time: self.event_end_time
+                ,
+                destination: self.destination
+                ,
+            }
+        )
     }
 }
+

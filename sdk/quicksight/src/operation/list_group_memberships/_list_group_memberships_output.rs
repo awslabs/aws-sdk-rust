@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupMembershipsOutput {
+pub struct ListGroupMembershipsOutput  {
     /// <p>The list of the members of the group.</p>
     #[doc(hidden)]
     pub group_member_list: std::option::Option<std::vec::Vec<crate::types::GroupMember>>,
@@ -19,15 +19,15 @@ pub struct ListGroupMembershipsOutput {
 }
 impl ListGroupMembershipsOutput {
     /// <p>The list of the members of the group.</p>
-    pub fn group_member_list(&self) -> std::option::Option<&[crate::types::GroupMember]> {
+    pub fn group_member_list(&self) -> std::option::Option<& [crate::types::GroupMember]> {
         self.group_member_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -36,14 +36,13 @@ impl ListGroupMembershipsOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListGroupMembershipsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListGroupMembershipsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupMembershipsOutput`](crate::operation::list_group_memberships::ListGroupMembershipsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_group_memberships::builders::ListGroupMembershipsOutputBuilder {
+    pub fn builder() -> crate::operation::list_group_memberships::builders::ListGroupMembershipsOutputBuilder {
         crate::operation::list_group_memberships::builders::ListGroupMembershipsOutputBuilder::default()
     }
 }
@@ -66,17 +65,13 @@ impl ListGroupMembershipsOutputBuilder {
     /// <p>The list of the members of the group.</p>
     pub fn group_member_list(mut self, input: crate::types::GroupMember) -> Self {
         let mut v = self.group_member_list.unwrap_or_default();
-        v.push(input);
-        self.group_member_list = Some(v);
-        self
+                        v.push(input);
+                        self.group_member_list = Some(v);
+                        self
     }
     /// <p>The list of the members of the group.</p>
-    pub fn set_group_member_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupMember>>,
-    ) -> Self {
-        self.group_member_list = input;
-        self
+    pub fn set_group_member_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupMember>>) -> Self {
+        self.group_member_list = input; self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +80,7 @@ impl ListGroupMembershipsOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +89,7 @@ impl ListGroupMembershipsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -105,26 +98,31 @@ impl ListGroupMembershipsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListGroupMembershipsOutput`](crate::operation::list_group_memberships::ListGroupMembershipsOutput).
     pub fn build(self) -> crate::operation::list_group_memberships::ListGroupMembershipsOutput {
         crate::operation::list_group_memberships::ListGroupMembershipsOutput {
-            group_member_list: self.group_member_list,
-            next_token: self.next_token,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            group_member_list: self.group_member_list
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

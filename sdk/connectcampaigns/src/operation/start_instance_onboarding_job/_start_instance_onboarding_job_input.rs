@@ -3,7 +3,7 @@
 /// The request for StartInstanceOnboardingJob API.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartInstanceOnboardingJobInput {
+pub struct StartInstanceOnboardingJobInput  {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
     pub connect_instance_id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct StartInstanceOnboardingJobInput {
 }
 impl StartInstanceOnboardingJobInput {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> std::option::Option<& str> {
         self.connect_instance_id.as_deref()
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> std::option::Option<& crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
 impl StartInstanceOnboardingJobInput {
     /// Creates a new builder-style object to manufacture [`StartInstanceOnboardingJobInput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput).
-    pub fn builder() -> crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder{
+    pub fn builder() -> crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder {
         crate::operation::start_instance_onboarding_job::builders::StartInstanceOnboardingJobInputBuilder::default()
     }
 }
@@ -42,12 +42,8 @@ impl StartInstanceOnboardingJobInputBuilder {
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connect_instance_id = input;
-        self
+    pub fn set_connect_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connect_instance_id = input; self
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
@@ -55,25 +51,19 @@ impl StartInstanceOnboardingJobInputBuilder {
         self
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    pub fn set_encryption_config(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionConfig>,
-    ) -> Self {
-        self.encryption_config = input;
-        self
+    pub fn set_encryption_config(mut self, input: std::option::Option<crate::types::EncryptionConfig>) -> Self {
+        self.encryption_config = input; self
     }
     /// Consumes the builder and constructs a [`StartInstanceOnboardingJobInput`](crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobInput {
-                connect_instance_id: self.connect_instance_id,
-                encryption_config: self.encryption_config,
-            },
+                connect_instance_id: self.connect_instance_id
+                ,
+                encryption_config: self.encryption_config
+                ,
+            }
         )
     }
 }
+

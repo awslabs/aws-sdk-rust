@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchAlarmConfiguration {
+pub struct CloudWatchAlarmConfiguration  {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
     #[doc(hidden)]
     pub evaluation_periods: std::option::Option<i32>,
@@ -39,7 +39,7 @@ impl CloudWatchAlarmConfiguration {
         self.threshold
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
@@ -47,19 +47,19 @@ impl CloudWatchAlarmConfiguration {
         self.period
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::types::Statistic> {
+    pub fn statistic(&self) -> std::option::Option<& crate::types::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl CloudWatchAlarmConfigurationBuilder {
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
     pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
-        self.evaluation_periods = input;
-        self
+        self.evaluation_periods = input; self
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
     pub fn threshold(mut self, input: f64) -> Self {
@@ -101,8 +100,7 @@ impl CloudWatchAlarmConfigurationBuilder {
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
     pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.threshold = input;
-        self
+        self.threshold = input; self
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
@@ -110,12 +108,8 @@ impl CloudWatchAlarmConfigurationBuilder {
         self
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-    pub fn set_comparison_operator(
-        mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
-    ) -> Self {
-        self.comparison_operator = input;
-        self
+    pub fn set_comparison_operator(mut self, input: std::option::Option<crate::types::ComparisonOperator>) -> Self {
+        self.comparison_operator = input; self
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -124,8 +118,7 @@ impl CloudWatchAlarmConfigurationBuilder {
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
     pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.period = input;
-        self
+        self.period = input; self
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +127,7 @@ impl CloudWatchAlarmConfigurationBuilder {
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +136,7 @@ impl CloudWatchAlarmConfigurationBuilder {
     }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
     pub fn statistic(mut self, input: crate::types::Statistic) -> Self {
@@ -154,8 +145,7 @@ impl CloudWatchAlarmConfigurationBuilder {
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
     pub fn set_statistic(mut self, input: std::option::Option<crate::types::Statistic>) -> Self {
-        self.statistic = input;
-        self
+        self.statistic = input; self
     }
     /// Appends an item to `dimensions`.
     ///
@@ -164,29 +154,34 @@ impl CloudWatchAlarmConfigurationBuilder {
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-        v.push(input);
-        self.dimensions = Some(v);
-        self
+                        v.push(input);
+                        self.dimensions = Some(v);
+                        self
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn set_dimensions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
-    ) -> Self {
-        self.dimensions = input;
-        self
+    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Dimension>>) -> Self {
+        self.dimensions = input; self
     }
     /// Consumes the builder and constructs a [`CloudWatchAlarmConfiguration`](crate::types::CloudWatchAlarmConfiguration).
     pub fn build(self) -> crate::types::CloudWatchAlarmConfiguration {
         crate::types::CloudWatchAlarmConfiguration {
-            evaluation_periods: self.evaluation_periods,
-            threshold: self.threshold,
-            comparison_operator: self.comparison_operator,
-            period: self.period,
-            metric_name: self.metric_name,
-            namespace: self.namespace,
-            statistic: self.statistic,
-            dimensions: self.dimensions,
+            evaluation_periods: self.evaluation_periods
+            ,
+            threshold: self.threshold
+            ,
+            comparison_operator: self.comparison_operator
+            ,
+            period: self.period
+            ,
+            metric_name: self.metric_name
+            ,
+            namespace: self.namespace
+            ,
+            statistic: self.statistic
+            ,
+            dimensions: self.dimensions
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LockRuleInput {
+pub struct LockRuleInput  {
     /// <p>The unique ID of the retention rule.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct LockRuleInput {
 }
 impl LockRuleInput {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn lock_configuration(&self) -> std::option::Option<&crate::types::LockConfiguration> {
+    pub fn lock_configuration(&self) -> std::option::Option<& crate::types::LockConfiguration> {
         self.lock_configuration.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl LockRuleInputBuilder {
     }
     /// <p>The unique ID of the retention rule.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p>Information about the retention rule lock configuration.</p>
     pub fn lock_configuration(mut self, input: crate::types::LockConfiguration) -> Self {
@@ -51,23 +50,19 @@ impl LockRuleInputBuilder {
         self
     }
     /// <p>Information about the retention rule lock configuration.</p>
-    pub fn set_lock_configuration(
-        mut self,
-        input: std::option::Option<crate::types::LockConfiguration>,
-    ) -> Self {
-        self.lock_configuration = input;
-        self
+    pub fn set_lock_configuration(mut self, input: std::option::Option<crate::types::LockConfiguration>) -> Self {
+        self.lock_configuration = input; self
     }
     /// Consumes the builder and constructs a [`LockRuleInput`](crate::operation::lock_rule::LockRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::lock_rule::LockRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::lock_rule::LockRuleInput {
-            identifier: self.identifier,
-            lock_configuration: self.lock_configuration,
-        })
+    pub fn build(self) -> Result<crate::operation::lock_rule::LockRuleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::lock_rule::LockRuleInput {
+                identifier: self.identifier
+                ,
+                lock_configuration: self.lock_configuration
+                ,
+            }
+        )
     }
 }
+

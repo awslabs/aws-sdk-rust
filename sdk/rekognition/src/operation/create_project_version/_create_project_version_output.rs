@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectVersionOutput {
+pub struct CreateProjectVersionOutput  {
     /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
     #[doc(hidden)]
     pub project_version_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct CreateProjectVersionOutput {
 }
 impl CreateProjectVersionOutput {
     /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
-    pub fn project_version_arn(&self) -> std::option::Option<&str> {
+    pub fn project_version_arn(&self) -> std::option::Option<& str> {
         self.project_version_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateProjectVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectVersionOutput`](crate::operation::create_project_version::CreateProjectVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_project_version::builders::CreateProjectVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_project_version::builders::CreateProjectVersionOutputBuilder {
         crate::operation::create_project_version::builders::CreateProjectVersionOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateProjectVersionOutputBuilder {
         self
     }
     /// <p>The ARN of the model version that was created. Use <code>DescribeProjectVersion</code> to get the current status of the training operation.</p>
-    pub fn set_project_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.project_version_arn = input;
-        self
+    pub fn set_project_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.project_version_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateProjectVersionOutput`](crate::operation::create_project_version::CreateProjectVersionOutput).
     pub fn build(self) -> crate::operation::create_project_version::CreateProjectVersionOutput {
         crate::operation::create_project_version::CreateProjectVersionOutput {
-            project_version_arn: self.project_version_arn,
+            project_version_arn: self.project_version_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let enrollmentstatus = unimplemented!();
 /// match enrollmentstatus {
@@ -33,22 +33,14 @@
 /// Specifically, when `enrollmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnrollmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnrollmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deregistering,
@@ -61,54 +53,47 @@ pub enum EnrollmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnrollmentStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEREGISTERING" => EnrollmentStatus::Deregistering,
-            "DISASSOCIATING" => EnrollmentStatus::Disassociating,
-            "INITIALIZED" => EnrollmentStatus::Initialized,
-            "PENDING" => EnrollmentStatus::Pending,
-            "REGISTERED" => EnrollmentStatus::Registered,
-            other => {
-                EnrollmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEREGISTERING" => EnrollmentStatus::Deregistering,
+"DISASSOCIATING" => EnrollmentStatus::Disassociating,
+"INITIALIZED" => EnrollmentStatus::Initialized,
+"PENDING" => EnrollmentStatus::Pending,
+"REGISTERED" => EnrollmentStatus::Registered,
+other => EnrollmentStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for EnrollmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnrollmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnrollmentStatus::from(s))
+                }
+            }
 impl EnrollmentStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnrollmentStatus::Deregistering => "DEREGISTERING",
-            EnrollmentStatus::Disassociating => "DISASSOCIATING",
-            EnrollmentStatus::Initialized => "INITIALIZED",
-            EnrollmentStatus::Pending => "PENDING",
-            EnrollmentStatus::Registered => "REGISTERED",
-            EnrollmentStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DEREGISTERING",
-            "DISASSOCIATING",
-            "INITIALIZED",
-            "PENDING",
-            "REGISTERED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnrollmentStatus::Deregistering => "DEREGISTERING",
+    EnrollmentStatus::Disassociating => "DISASSOCIATING",
+    EnrollmentStatus::Initialized => "INITIALIZED",
+    EnrollmentStatus::Pending => "PENDING",
+    EnrollmentStatus::Registered => "REGISTERED",
+    EnrollmentStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEREGISTERING", "DISASSOCIATING", "INITIALIZED", "PENDING", "REGISTERED"]
+                }
+            }
 impl AsRef<str> for EnrollmentStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

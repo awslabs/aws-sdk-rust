@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAlarmsOutput {
+pub struct GetAlarmsOutput  {
     /// <p>An array of objects that describe the alarms.</p>
     #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetAlarmsOutput {
 }
 impl GetAlarmsOutput {
     /// <p>An array of objects that describe the alarms.</p>
-    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<& [crate::types::Alarm]> {
         self.alarms.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAlarmsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAlarmsOutput {
     /// Creates a new builder-style object to manufacture [`GetAlarmsOutput`](crate::operation::get_alarms::GetAlarmsOutput).
     pub fn builder() -> crate::operation::get_alarms::builders::GetAlarmsOutputBuilder {
@@ -53,47 +53,45 @@ impl GetAlarmsOutputBuilder {
     /// <p>An array of objects that describe the alarms.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-        v.push(input);
-        self.alarms = Some(v);
-        self
+                        v.push(input);
+                        self.alarms = Some(v);
+                        self
     }
     /// <p>An array of objects that describe the alarms.</p>
-    pub fn set_alarms(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
-    ) -> Self {
-        self.alarms = input;
-        self
+    pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::types::Alarm>>) -> Self {
+        self.alarms = input; self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_page_token = Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p>
-    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>A next page token is not returned if there are no more results to display.</p> 
     /// <p>To get the next page of results, perform another <code>GetAlarms</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAlarmsOutput`](crate::operation::get_alarms::GetAlarmsOutput).
     pub fn build(self) -> crate::operation::get_alarms::GetAlarmsOutput {
         crate::operation::get_alarms::GetAlarmsOutput {
-            alarms: self.alarms,
-            next_page_token: self.next_page_token,
+            alarms: self.alarms
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

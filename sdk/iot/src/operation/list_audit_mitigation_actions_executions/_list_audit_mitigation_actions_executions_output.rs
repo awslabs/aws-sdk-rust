@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAuditMitigationActionsExecutionsOutput {
+pub struct ListAuditMitigationActionsExecutionsOutput  {
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
     #[doc(hidden)]
-    pub actions_executions:
-        std::option::Option<std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>,
+    pub actions_executions: std::option::Option<std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>,
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListAuditMitigationActionsExecutionsOutput {
 }
 impl ListAuditMitigationActionsExecutionsOutput {
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
-    pub fn actions_executions(
-        &self,
-    ) -> std::option::Option<&[crate::types::AuditMitigationActionExecutionMetadata]> {
+    pub fn actions_executions(&self) -> std::option::Option<& [crate::types::AuditMitigationActionExecutionMetadata]> {
         self.actions_executions.as_deref()
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAuditMitigationActionsExecutionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAuditMitigationActionsExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAuditMitigationActionsExecutionsOutput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput).
-    pub fn builder() -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsOutputBuilder {
         crate::operation::list_audit_mitigation_actions_executions::builders::ListAuditMitigationActionsExecutionsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListAuditMitigationActionsExecutionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAuditMitigationActionsExecutionsOutputBuilder {
-    pub(crate) actions_executions:
-        std::option::Option<std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>,
+    pub(crate) actions_executions: std::option::Option<std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,24 +47,15 @@ impl ListAuditMitigationActionsExecutionsOutputBuilder {
     /// To override the contents of this collection use [`set_actions_executions`](Self::set_actions_executions).
     ///
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
-    pub fn actions_executions(
-        mut self,
-        input: crate::types::AuditMitigationActionExecutionMetadata,
-    ) -> Self {
+    pub fn actions_executions(mut self, input: crate::types::AuditMitigationActionExecutionMetadata) -> Self {
         let mut v = self.actions_executions.unwrap_or_default();
-        v.push(input);
-        self.actions_executions = Some(v);
-        self
+                        v.push(input);
+                        self.actions_executions = Some(v);
+                        self
     }
     /// <p>A set of task execution results based on the input parameters. Details include the mitigation action applied, start time, and task status.</p>
-    pub fn set_actions_executions(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>,
-        >,
-    ) -> Self {
-        self.actions_executions = input;
-        self
+    pub fn set_actions_executions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuditMitigationActionExecutionMetadata>>) -> Self {
+        self.actions_executions = input; self
     }
     /// <p>The token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +64,19 @@ impl ListAuditMitigationActionsExecutionsOutputBuilder {
     }
     /// <p>The token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAuditMitigationActionsExecutionsOutput`](crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput).
-    pub fn build(self) -> crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput{
+    pub fn build(self) -> crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput {
         crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput {
             actions_executions: self.actions_executions
             ,
@@ -100,3 +86,4 @@ impl ListAuditMitigationActionsExecutionsOutputBuilder {
         }
     }
 }
+

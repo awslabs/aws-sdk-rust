@@ -3,7 +3,7 @@
 /// <p>An object that represents a virtual service backend for a virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceBackend {
+pub struct VirtualServiceBackend  {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VirtualServiceBackend {
 }
 impl VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_service_name(&self) -> std::option::Option<& str> {
         self.virtual_service_name.as_deref()
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
-    pub fn client_policy(&self) -> std::option::Option<&crate::types::ClientPolicy> {
+    pub fn client_policy(&self) -> std::option::Option<& crate::types::ClientPolicy> {
         self.client_policy.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl VirtualServiceBackendBuilder {
         self
     }
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    pub fn set_virtual_service_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_service_name = input;
-        self
+    pub fn set_virtual_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_service_name = input; self
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
     pub fn client_policy(mut self, input: crate::types::ClientPolicy) -> Self {
@@ -55,18 +51,17 @@ impl VirtualServiceBackendBuilder {
         self
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
-    pub fn set_client_policy(
-        mut self,
-        input: std::option::Option<crate::types::ClientPolicy>,
-    ) -> Self {
-        self.client_policy = input;
-        self
+    pub fn set_client_policy(mut self, input: std::option::Option<crate::types::ClientPolicy>) -> Self {
+        self.client_policy = input; self
     }
     /// Consumes the builder and constructs a [`VirtualServiceBackend`](crate::types::VirtualServiceBackend).
     pub fn build(self) -> crate::types::VirtualServiceBackend {
         crate::types::VirtualServiceBackend {
-            virtual_service_name: self.virtual_service_name,
-            client_policy: self.client_policy,
+            virtual_service_name: self.virtual_service_name
+            ,
+            client_policy: self.client_policy
+            ,
         }
     }
 }
+

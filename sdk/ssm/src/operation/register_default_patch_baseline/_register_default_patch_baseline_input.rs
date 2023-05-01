@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDefaultPatchBaselineInput {
+pub struct RegisterDefaultPatchBaselineInput  {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl RegisterDefaultPatchBaselineInput {
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
 }
 impl RegisterDefaultPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
-    pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder{
+    pub fn builder() -> crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder {
         crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl RegisterDefaultPatchBaselineInputBuilder {
     }
     /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
     pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// Consumes the builder and constructs a [`RegisterDefaultPatchBaselineInput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineInput {
-                baseline_id: self.baseline_id,
-            },
+                baseline_id: self.baseline_id
+                ,
+            }
         )
     }
 }
+

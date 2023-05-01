@@ -2,46 +2,46 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRelationalDatabaseSnapshotInput {
+pub struct CreateRelationalDatabaseSnapshotInput  {
     /// <p>The name of the database on which to base your new snapshot.</p>
     #[doc(hidden)]
     pub relational_database_name: std::option::Option<std::string::String>,
-    /// <p>The name for your new database snapshot.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <p>The name for your new database snapshot.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li> 
+    /// <li> <p>The first and last character must be a letter or number.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub relational_database_snapshot_name: std::option::Option<std::string::String>,
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateRelationalDatabaseSnapshotInput {
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn relational_database_name(&self) -> std::option::Option<&str> {
+    pub fn relational_database_name(&self) -> std::option::Option<& str> {
         self.relational_database_name.as_deref()
     }
-    /// <p>The name for your new database snapshot.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <p>The name for your new database snapshot.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li> 
+    /// <li> <p>The first and last character must be a letter or number.</p> </li> 
     /// </ul>
-    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<& str> {
         self.relational_database_snapshot_name.as_deref()
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateRelationalDatabaseSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
-    pub fn builder() -> crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder{
+    pub fn builder() -> crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder {
         crate::operation::create_relational_database_snapshot::builders::CreateRelationalDatabaseSnapshotInputBuilder::default()
     }
 }
@@ -61,62 +61,47 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
         self
     }
     /// <p>The name of the database on which to base your new snapshot.</p>
-    pub fn set_relational_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relational_database_name = input;
-        self
+    pub fn set_relational_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relational_database_name = input; self
     }
-    /// <p>The name for your new database snapshot.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <p>The name for your new database snapshot.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li> 
+    /// <li> <p>The first and last character must be a letter or number.</p> </li> 
     /// </ul>
-    pub fn relational_database_snapshot_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn relational_database_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.relational_database_snapshot_name = Some(input.into());
         self
     }
-    /// <p>The name for your new database snapshot.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li>
-    /// <li> <p>The first and last character must be a letter or number.</p> </li>
+    /// <p>The name for your new database snapshot.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must contain from 2 to 255 alphanumeric characters, or hyphens.</p> </li> 
+    /// <li> <p>The first and last character must be a letter or number.</p> </li> 
     /// </ul>
-    pub fn set_relational_database_snapshot_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relational_database_snapshot_name = input;
-        self
+    pub fn set_relational_database_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relational_database_snapshot_name = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p>
+    /// <p>The tag keys and optional values to add to the resource during create.</p> 
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateRelationalDatabaseSnapshotInput`](crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_relational_database_snapshot::CreateRelationalDatabaseSnapshotInput {
                 relational_database_name: self.relational_database_name
@@ -129,3 +114,4 @@ impl CreateRelationalDatabaseSnapshotInputBuilder {
         )
     }
 }
+

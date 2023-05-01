@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegistryInput {
+pub struct DeleteRegistryInput  {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
 }
 impl DeleteRegistryInput {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteRegistryInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRegistryInput`](crate::operation::delete_registry::DeleteRegistryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_registry::DeleteRegistryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_registry::DeleteRegistryInput {
-            registry_name: self.registry_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_registry::DeleteRegistryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_registry::DeleteRegistryInput {
+                registry_name: self.registry_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetJobsInput {
+pub struct BatchGetJobsInput  {
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
     #[doc(hidden)]
     pub job_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetJobsInput {
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
-    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_names(&self) -> std::option::Option<& [std::string::String]> {
         self.job_names.as_deref()
     }
 }
@@ -34,27 +34,22 @@ impl BatchGetJobsInputBuilder {
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
     pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_names.unwrap_or_default();
-        v.push(input.into());
-        self.job_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_names = Some(v);
+                        self
     }
     /// <p>A list of job names, which might be the names returned from the <code>ListJobs</code> operation.</p>
-    pub fn set_job_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_names = input;
-        self
+    pub fn set_job_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_names = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetJobsInput`](crate::operation::batch_get_jobs::BatchGetJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_jobs::BatchGetJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::batch_get_jobs::BatchGetJobsInput {
-            job_names: self.job_names,
-        })
+    pub fn build(self) -> Result<crate::operation::batch_get_jobs::BatchGetJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::batch_get_jobs::BatchGetJobsInput {
+                job_names: self.job_names
+                ,
+            }
+        )
     }
 }
+

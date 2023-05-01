@@ -3,7 +3,7 @@
 /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionAtRest {
+pub struct EncryptionAtRest  {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
     #[doc(hidden)]
     pub catalog_encryption_mode: std::option::Option<crate::types::CatalogEncryptionMode>,
@@ -13,13 +13,11 @@ pub struct EncryptionAtRest {
 }
 impl EncryptionAtRest {
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub fn catalog_encryption_mode(
-        &self,
-    ) -> std::option::Option<&crate::types::CatalogEncryptionMode> {
+    pub fn catalog_encryption_mode(&self) -> std::option::Option<& crate::types::CatalogEncryptionMode> {
         self.catalog_encryption_mode.as_ref()
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
-    pub fn sse_aws_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn sse_aws_kms_key_id(&self) -> std::option::Option<& str> {
         self.sse_aws_kms_key_id.as_deref()
     }
 }
@@ -44,12 +42,8 @@ impl EncryptionAtRestBuilder {
         self
     }
     /// <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
-    pub fn set_catalog_encryption_mode(
-        mut self,
-        input: std::option::Option<crate::types::CatalogEncryptionMode>,
-    ) -> Self {
-        self.catalog_encryption_mode = input;
-        self
+    pub fn set_catalog_encryption_mode(mut self, input: std::option::Option<crate::types::CatalogEncryptionMode>) -> Self {
+        self.catalog_encryption_mode = input; self
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
     pub fn sse_aws_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,18 +51,17 @@ impl EncryptionAtRestBuilder {
         self
     }
     /// <p>The ID of the KMS key to use for encryption at rest.</p>
-    pub fn set_sse_aws_kms_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sse_aws_kms_key_id = input;
-        self
+    pub fn set_sse_aws_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sse_aws_kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`EncryptionAtRest`](crate::types::EncryptionAtRest).
     pub fn build(self) -> crate::types::EncryptionAtRest {
         crate::types::EncryptionAtRest {
-            catalog_encryption_mode: self.catalog_encryption_mode,
-            sse_aws_kms_key_id: self.sse_aws_kms_key_id,
+            catalog_encryption_mode: self.catalog_encryption_mode
+            ,
+            sse_aws_kms_key_id: self.sse_aws_kms_key_id
+            ,
         }
     }
 }
+

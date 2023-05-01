@@ -3,7 +3,7 @@
 /// <p>A list of possible alternative transcriptions for the input audio. Each alternative may contain one or more of <code>Items</code>, <code>Entities</code>, or <code>Transcript</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alternative {
+pub struct Alternative  {
     /// <p>Contains transcribed text.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Alternative {
 }
 impl Alternative {
     /// <p>Contains transcribed text.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> std::option::Option<& str> {
         self.transcript.as_deref()
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Item]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::Item]> {
         self.items.as_deref()
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::types::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::types::Entity]> {
         self.entities.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AlternativeBuilder {
     }
     /// <p>Contains transcribed text.</p>
     pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transcript = input;
-        self
+        self.transcript = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -61,17 +60,13 @@ impl AlternativeBuilder {
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
     pub fn items(mut self, input: crate::types::Item) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>Contains words, phrases, or punctuation marks in your transcription output.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::Item>>) -> Self {
+        self.items = input; self
     }
     /// Appends an item to `entities`.
     ///
@@ -80,24 +75,24 @@ impl AlternativeBuilder {
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
     pub fn entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = Some(v);
-        self
+                        v.push(input);
+                        self.entities = Some(v);
+                        self
     }
     /// <p>Contains entities identified as personally identifiable information (PII) in your transcription output.</p>
-    pub fn set_entities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entity>>) -> Self {
+        self.entities = input; self
     }
     /// Consumes the builder and constructs a [`Alternative`](crate::types::Alternative).
     pub fn build(self) -> crate::types::Alternative {
         crate::types::Alternative {
-            transcript: self.transcript,
-            items: self.items,
-            entities: self.entities,
+            transcript: self.transcript
+            ,
+            items: self.items
+            ,
+            entities: self.entities
+            ,
         }
     }
 }
+

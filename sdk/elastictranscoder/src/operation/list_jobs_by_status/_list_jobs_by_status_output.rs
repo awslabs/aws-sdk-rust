@@ -3,7 +3,7 @@
 /// <p> The <code>ListJobsByStatusResponse</code> structure. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsByStatusOutput {
+pub struct ListJobsByStatusOutput  {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::types::Job>>,
@@ -14,23 +14,22 @@ pub struct ListJobsByStatusOutput {
 }
 impl ListJobsByStatusOutput {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::types::Job]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::types::Job]> {
         self.jobs.as_deref()
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListJobsByStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListJobsByStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsByStatusOutput`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder {
+    pub fn builder() -> crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder {
         crate::operation::list_jobs_by_status::builders::ListJobsByStatusOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListJobsByStatusOutputBuilder {
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
     pub fn jobs(mut self, input: crate::types::Job) -> Self {
         let mut v = self.jobs.unwrap_or_default();
-        v.push(input);
-        self.jobs = Some(v);
-        self
+                        v.push(input);
+                        self.jobs = Some(v);
+                        self
     }
     /// <p>An array of <code>Job</code> objects that have the specified status.</p>
-    pub fn set_jobs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Job>>,
-    ) -> Self {
-        self.jobs = input;
-        self
+    pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Job>>) -> Self {
+        self.jobs = input; self
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListJobsByStatusOutputBuilder {
     }
     /// <p> A value that you use to access the second and subsequent pages of results, if any. When the jobs in the specified pipeline fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>. </p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListJobsByStatusOutput`](crate::operation::list_jobs_by_status::ListJobsByStatusOutput).
     pub fn build(self) -> crate::operation::list_jobs_by_status::ListJobsByStatusOutput {
         crate::operation::list_jobs_by_status::ListJobsByStatusOutput {
-            jobs: self.jobs,
-            next_page_token: self.next_page_token,
+            jobs: self.jobs
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

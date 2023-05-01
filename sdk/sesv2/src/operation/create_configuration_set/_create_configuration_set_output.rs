@@ -3,19 +3,17 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetOutput {
+pub struct CreateConfigurationSetOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateConfigurationSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder {
         crate::operation::create_configuration_set::builders::CreateConfigurationSetOutputBuilder::default()
     }
 }
@@ -28,14 +26,14 @@ pub struct CreateConfigurationSetOutputBuilder {
 }
 impl CreateConfigurationSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
     pub fn build(self) -> crate::operation::create_configuration_set::CreateConfigurationSetOutput {
         crate::operation::create_configuration_set::CreateConfigurationSetOutput {
@@ -43,3 +41,4 @@ impl CreateConfigurationSetOutputBuilder {
         }
     }
 }
+

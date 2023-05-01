@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExportOutput {
+pub struct UpdateExportOutput  {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -25,37 +25,35 @@ pub struct UpdateExportOutput {
 }
 impl UpdateExportOutput {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn resource_specification(
-        &self,
-    ) -> std::option::Option<&crate::types::ExportResourceSpecification> {
+    pub fn resource_specification(&self) -> std::option::Option<& crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
-    pub fn file_format(&self) -> std::option::Option<&crate::types::ImportExportFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<& crate::types::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::types::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<& crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateExportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateExportOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExportOutput`](crate::operation::update_export::UpdateExportOutput).
     pub fn builder() -> crate::operation::update_export::builders::UpdateExportOutputBuilder {
@@ -68,8 +66,7 @@ impl UpdateExportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateExportOutputBuilder {
     pub(crate) export_id: std::option::Option<std::string::String>,
-    pub(crate) resource_specification:
-        std::option::Option<crate::types::ExportResourceSpecification>,
+    pub(crate) resource_specification: std::option::Option<crate::types::ExportResourceSpecification>,
     pub(crate) file_format: std::option::Option<crate::types::ImportExportFileFormat>,
     pub(crate) export_status: std::option::Option<crate::types::ExportStatus>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -84,24 +81,16 @@ impl UpdateExportOutputBuilder {
     }
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn resource_specification(
-        mut self,
-        input: crate::types::ExportResourceSpecification,
-    ) -> Self {
+    pub fn resource_specification(mut self, input: crate::types::ExportResourceSpecification) -> Self {
         self.resource_specification = Some(input);
         self
     }
     /// <p>A description of the type of resource that was exported, either a bot or a bot locale.</p>
-    pub fn set_resource_specification(
-        mut self,
-        input: std::option::Option<crate::types::ExportResourceSpecification>,
-    ) -> Self {
-        self.resource_specification = input;
-        self
+    pub fn set_resource_specification(mut self, input: std::option::Option<crate::types::ExportResourceSpecification>) -> Self {
+        self.resource_specification = input; self
     }
     /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
@@ -109,12 +98,8 @@ impl UpdateExportOutputBuilder {
         self
     }
     /// <p>The file format used for the files that define the resource. The <code>TSV</code> format is required to export a custom vocabulary only; otherwise use <code>LexJson</code> format.</p>
-    pub fn set_file_format(
-        mut self,
-        input: std::option::Option<crate::types::ImportExportFileFormat>,
-    ) -> Self {
-        self.file_format = input;
-        self
+    pub fn set_file_format(mut self, input: std::option::Option<crate::types::ImportExportFileFormat>) -> Self {
+        self.file_format = input; self
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
@@ -122,12 +107,8 @@ impl UpdateExportOutputBuilder {
         self
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export archive is available for download.</p>
-    pub fn set_export_status(
-        mut self,
-        input: std::option::Option<crate::types::ExportStatus>,
-    ) -> Self {
-        self.export_status = input;
-        self
+    pub fn set_export_status(mut self, input: std::option::Option<crate::types::ExportStatus>) -> Self {
+        self.export_status = input; self
     }
     /// <p>The date and time that the export was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,12 +116,8 @@ impl UpdateExportOutputBuilder {
         self
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>The date and time that the export was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -148,32 +125,35 @@ impl UpdateExportOutputBuilder {
         self
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateExportOutput`](crate::operation::update_export::UpdateExportOutput).
     pub fn build(self) -> crate::operation::update_export::UpdateExportOutput {
         crate::operation::update_export::UpdateExportOutput {
-            export_id: self.export_id,
-            resource_specification: self.resource_specification,
-            file_format: self.file_format,
-            export_status: self.export_status,
-            creation_date_time: self.creation_date_time,
-            last_updated_date_time: self.last_updated_date_time,
+            export_id: self.export_id
+            ,
+            resource_specification: self.resource_specification
+            ,
+            file_format: self.file_format
+            ,
+            export_status: self.export_status
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

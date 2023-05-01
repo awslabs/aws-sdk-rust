@@ -12,3 +12,4 @@ pub mod builders;
 
 /// Error types that AWS IoT Fleet Hub can respond with.
 pub mod error;
+

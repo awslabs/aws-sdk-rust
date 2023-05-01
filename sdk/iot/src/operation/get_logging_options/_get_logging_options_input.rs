@@ -3,11 +3,11 @@
 /// <p>The input for the GetLoggingOptions operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggingOptionsInput {}
+pub struct GetLoggingOptionsInput  {
+}
 impl GetLoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`GetLoggingOptionsInput`](crate::operation::get_logging_options::GetLoggingOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsInputBuilder {
+    pub fn builder() -> crate::operation::get_logging_options::builders::GetLoggingOptionsInputBuilder {
         crate::operation::get_logging_options::builders::GetLoggingOptionsInputBuilder::default()
     }
 }
@@ -15,15 +15,15 @@ impl GetLoggingOptionsInput {
 /// A builder for [`GetLoggingOptionsInput`](crate::operation::get_logging_options::GetLoggingOptionsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetLoggingOptionsInputBuilder {}
+pub struct GetLoggingOptionsInputBuilder {
+}
 impl GetLoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`GetLoggingOptionsInput`](crate::operation::get_logging_options::GetLoggingOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_logging_options::GetLoggingOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_logging_options::GetLoggingOptionsInput {})
+    pub fn build(self) -> Result<crate::operation::get_logging_options::GetLoggingOptionsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_logging_options::GetLoggingOptionsInput {
+            }
+        )
     }
 }
+

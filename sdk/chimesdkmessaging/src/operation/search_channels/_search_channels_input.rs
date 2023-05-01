@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchChannelsInput {
+pub struct SearchChannelsInput  {
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     #[doc(hidden)]
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct SearchChannelsInput {
 }
 impl SearchChannelsInput {
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::SearchField]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::types::SearchField]> {
         self.fields.as_deref()
     }
     /// <p>The maximum number of channels that you want returned.</p>
@@ -30,11 +30,11 @@ impl SearchChannelsInput {
         self.max_results
     }
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for SearchChannelsInput {
+impl  std::fmt::Debug for SearchChannelsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchChannelsInput");
         formatter.field("chime_bearer", &self.chime_bearer);
@@ -68,8 +68,7 @@ impl SearchChannelsInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// Appends an item to `fields`.
     ///
@@ -78,17 +77,13 @@ impl SearchChannelsInputBuilder {
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
     pub fn fields(mut self, input: crate::types::SearchField) -> Self {
         let mut v = self.fields.unwrap_or_default();
-        v.push(input);
-        self.fields = Some(v);
-        self
+                        v.push(input);
+                        self.fields = Some(v);
+                        self
     }
     /// <p>A list of the <code>Field</code> objects in the channel being searched.</p>
-    pub fn set_fields(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SearchField>>,
-    ) -> Self {
-        self.fields = input;
-        self
+    pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::SearchField>>) -> Self {
+        self.fields = input; self
     }
     /// <p>The maximum number of channels that you want returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -97,8 +92,7 @@ impl SearchChannelsInputBuilder {
     }
     /// <p>The maximum number of channels that you want returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,22 +101,22 @@ impl SearchChannelsInputBuilder {
     }
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`SearchChannelsInput`](crate::operation::search_channels::SearchChannelsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_channels::SearchChannelsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::search_channels::SearchChannelsInput {
-            chime_bearer: self.chime_bearer,
-            fields: self.fields,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::search_channels::SearchChannelsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::search_channels::SearchChannelsInput {
+                chime_bearer: self.chime_bearer
+                ,
+                fields: self.fields
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for SearchChannelsInputBuilder {
@@ -135,3 +129,4 @@ impl std::fmt::Debug for SearchChannelsInputBuilder {
         formatter.finish()
     }
 }
+

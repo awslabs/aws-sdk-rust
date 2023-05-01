@@ -2,40 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddAssociationInput {
+pub struct AddAssociationInput  {
     /// <p>The ARN of the source.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
-    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
-    /// <ul>
-    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
-    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
-    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
-    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
+    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p> 
+    /// <ul> 
+    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li> 
+    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li> 
+    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li> 
+    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub association_type: std::option::Option<crate::types::AssociationEdgeType>,
 }
 impl AddAssociationInput {
     /// <p>The ARN of the source.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
-    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
-    /// <ul>
-    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
-    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
-    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
-    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
+    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p> 
+    /// <ul> 
+    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li> 
+    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li> 
+    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li> 
+    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li> 
     /// </ul>
-    pub fn association_type(&self) -> std::option::Option<&crate::types::AssociationEdgeType> {
+    pub fn association_type(&self) -> std::option::Option<& crate::types::AssociationEdgeType> {
         self.association_type.as_ref()
     }
 }
@@ -62,8 +62,7 @@ impl AddAssociationInputBuilder {
     }
     /// <p>The ARN of the source.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,45 +71,41 @@ impl AddAssociationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
-    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
-    /// <ul>
-    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
-    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
-    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
-    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
+    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p> 
+    /// <ul> 
+    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li> 
+    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li> 
+    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li> 
+    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li> 
     /// </ul>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
         self.association_type = Some(input);
         self
     }
-    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p>
-    /// <ul>
-    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li>
-    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li>
-    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li>
-    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li>
+    /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker places no restrictions on their use.</p> 
+    /// <ul> 
+    /// <li> <p>ContributedTo - The source contributed to the destination or had a part in enabling the destination. For example, the training data contributed to the training job.</p> </li> 
+    /// <li> <p>AssociatedWith - The source is connected to the destination. For example, an approval workflow is associated with a model deployment.</p> </li> 
+    /// <li> <p>DerivedFrom - The destination is a modification of the source. For example, a digest output of a channel input for a processing job is derived from the original inputs.</p> </li> 
+    /// <li> <p>Produced - The source generated the destination. For example, a training job produced a model artifact.</p> </li> 
     /// </ul>
-    pub fn set_association_type(
-        mut self,
-        input: std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
-        self.association_type = input;
-        self
+    pub fn set_association_type(mut self, input: std::option::Option<crate::types::AssociationEdgeType>) -> Self {
+        self.association_type = input; self
     }
     /// Consumes the builder and constructs a [`AddAssociationInput`](crate::operation::add_association::AddAssociationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_association::AddAssociationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::add_association::AddAssociationInput {
-            source_arn: self.source_arn,
-            destination_arn: self.destination_arn,
-            association_type: self.association_type,
-        })
+    pub fn build(self) -> Result<crate::operation::add_association::AddAssociationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::add_association::AddAssociationInput {
+                source_arn: self.source_arn
+                ,
+                destination_arn: self.destination_arn
+                ,
+                association_type: self.association_type
+                ,
+            }
+        )
     }
 }
+

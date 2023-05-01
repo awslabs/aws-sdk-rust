@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelMessageOutput {
+pub struct GetChannelMessageOutput  {
     /// <p>The details of and content in the message.</p>
     #[doc(hidden)]
     pub channel_message: std::option::Option<crate::types::ChannelMessage>,
@@ -10,19 +10,18 @@ pub struct GetChannelMessageOutput {
 }
 impl GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
-    pub fn channel_message(&self) -> std::option::Option<&crate::types::ChannelMessage> {
+    pub fn channel_message(&self) -> std::option::Option<& crate::types::ChannelMessage> {
         self.channel_message.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetChannelMessageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetChannelMessageOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelMessageOutput`](crate::operation::get_channel_message::GetChannelMessageOutput).
-    pub fn builder(
-    ) -> crate::operation::get_channel_message::builders::GetChannelMessageOutputBuilder {
+    pub fn builder() -> crate::operation::get_channel_message::builders::GetChannelMessageOutputBuilder {
         crate::operation::get_channel_message::builders::GetChannelMessageOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetChannelMessageOutputBuilder {
         self
     }
     /// <p>The details of and content in the message.</p>
-    pub fn set_channel_message(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMessage>,
-    ) -> Self {
-        self.channel_message = input;
-        self
+    pub fn set_channel_message(mut self, input: std::option::Option<crate::types::ChannelMessage>) -> Self {
+        self.channel_message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetChannelMessageOutput`](crate::operation::get_channel_message::GetChannelMessageOutput).
     pub fn build(self) -> crate::operation::get_channel_message::GetChannelMessageOutput {
         crate::operation::get_channel_message::GetChannelMessageOutput {
-            channel_message: self.channel_message,
+            channel_message: self.channel_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

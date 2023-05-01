@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCertificatesInput {
-    /// <p>The new default certificate identifier to override the current one with.</p>
+pub struct ModifyCertificatesInput  {
+    /// <p>The new default certificate identifier to override the current one with.</p> 
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
     #[doc(hidden)]
     pub certificate_identifier: std::option::Option<std::string::String>,
@@ -12,9 +12,9 @@ pub struct ModifyCertificatesInput {
     pub remove_customer_override: std::option::Option<bool>,
 }
 impl ModifyCertificatesInput {
-    /// <p>The new default certificate identifier to override the current one with.</p>
+    /// <p>The new default certificate identifier to override the current one with.</p> 
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    pub fn certificate_identifier(&self) -> std::option::Option<&str> {
+    pub fn certificate_identifier(&self) -> std::option::Option<& str> {
         self.certificate_identifier.as_deref()
     }
     /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
@@ -24,8 +24,7 @@ impl ModifyCertificatesInput {
 }
 impl ModifyCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
-    pub fn builder(
-    ) -> crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
+    pub fn builder() -> crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder {
         crate::operation::modify_certificates::builders::ModifyCertificatesInputBuilder::default()
     }
 }
@@ -38,20 +37,16 @@ pub struct ModifyCertificatesInputBuilder {
     pub(crate) remove_customer_override: std::option::Option<bool>,
 }
 impl ModifyCertificatesInputBuilder {
-    /// <p>The new default certificate identifier to override the current one with.</p>
+    /// <p>The new default certificate identifier to override the current one with.</p> 
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
     pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.certificate_identifier = Some(input.into());
         self
     }
-    /// <p>The new default certificate identifier to override the current one with.</p>
+    /// <p>The new default certificate identifier to override the current one with.</p> 
     /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI command or the <code>DescribeCertificates</code> API operation.</p>
-    pub fn set_certificate_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_identifier = input;
-        self
+    pub fn set_certificate_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_identifier = input; self
     }
     /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn remove_customer_override(mut self, input: bool) -> Self {
@@ -60,21 +55,18 @@ impl ModifyCertificatesInputBuilder {
     }
     /// <p>A value that indicates whether to remove the override for the default certificate. If the override is removed, the default certificate is the system default.</p>
     pub fn set_remove_customer_override(mut self, input: std::option::Option<bool>) -> Self {
-        self.remove_customer_override = input;
-        self
+        self.remove_customer_override = input; self
     }
     /// Consumes the builder and constructs a [`ModifyCertificatesInput`](crate::operation::modify_certificates::ModifyCertificatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_certificates::ModifyCertificatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_certificates::ModifyCertificatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_certificates::ModifyCertificatesInput {
-                certificate_identifier: self.certificate_identifier,
-                remove_customer_override: self.remove_customer_override,
-            },
+                certificate_identifier: self.certificate_identifier
+                ,
+                remove_customer_override: self.remove_customer_override
+                ,
+            }
         )
     }
 }
+

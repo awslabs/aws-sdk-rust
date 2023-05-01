@@ -3,7 +3,7 @@
 /// <p>Information about whether a file is binary or textual in a merge or pull request operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IsBinaryFile {
+pub struct IsBinaryFile  {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     #[doc(hidden)]
     pub source: std::option::Option<bool>,
@@ -51,8 +51,7 @@ impl IsBinaryFileBuilder {
     }
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     pub fn set_source(mut self, input: std::option::Option<bool>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl IsBinaryFileBuilder {
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     pub fn set_destination(mut self, input: std::option::Option<bool>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn base(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl IsBinaryFileBuilder {
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn set_base(mut self, input: std::option::Option<bool>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// Consumes the builder and constructs a [`IsBinaryFile`](crate::types::IsBinaryFile).
     pub fn build(self) -> crate::types::IsBinaryFile {
         crate::types::IsBinaryFile {
-            source: self.source,
-            destination: self.destination,
-            base: self.base,
+            source: self.source
+            ,
+            destination: self.destination
+            ,
+            base: self.base
+            ,
         }
     }
 }
+

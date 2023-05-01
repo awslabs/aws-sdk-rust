@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotsOutput {
+pub struct GetBotsOutput  {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     #[doc(hidden)]
     pub bots: std::option::Option<std::vec::Vec<crate::types::BotMetadata>>,
@@ -13,19 +13,19 @@ pub struct GetBotsOutput {
 }
 impl GetBotsOutput {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
-    pub fn bots(&self) -> std::option::Option<&[crate::types::BotMetadata]> {
+    pub fn bots(&self) -> std::option::Option<& [crate::types::BotMetadata]> {
         self.bots.as_deref()
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetBotsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBotsOutput {
     /// Creates a new builder-style object to manufacture [`GetBotsOutput`](crate::operation::get_bots::GetBotsOutput).
     pub fn builder() -> crate::operation::get_bots::builders::GetBotsOutputBuilder {
@@ -49,17 +49,13 @@ impl GetBotsOutputBuilder {
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
     pub fn bots(mut self, input: crate::types::BotMetadata) -> Self {
         let mut v = self.bots.unwrap_or_default();
-        v.push(input);
-        self.bots = Some(v);
-        self
+                        v.push(input);
+                        self.bots = Some(v);
+                        self
     }
     /// <p>An array of <code>botMetadata</code> objects, with one entry for each bot. </p>
-    pub fn set_bots(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BotMetadata>>,
-    ) -> Self {
-        self.bots = input;
-        self
+    pub fn set_bots(mut self, input: std::option::Option<std::vec::Vec<crate::types::BotMetadata>>) -> Self {
+        self.bots = input; self
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl GetBotsOutputBuilder {
     }
     /// <p>If the response is truncated, it includes a pagination token that you can specify in your next request to fetch the next page of bots. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBotsOutput`](crate::operation::get_bots::GetBotsOutput).
     pub fn build(self) -> crate::operation::get_bots::GetBotsOutput {
         crate::operation::get_bots::GetBotsOutput {
-            bots: self.bots,
-            next_token: self.next_token,
+            bots: self.bots
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyProjectVersionInput {
+pub struct CopyProjectVersionInput  {
     /// <p>The ARN of the source project in the trusting AWS account.</p>
     #[doc(hidden)]
     pub source_project_arn: std::option::Option<std::string::String>,
@@ -20,65 +20,60 @@ pub struct CopyProjectVersionInput {
     pub output_config: std::option::Option<crate::types::OutputConfig>,
     /// <p>The key-value tags to assign to the model version. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
-    /// <ul>
-    /// <li> <p>kms:CreateGrant</p> </li>
-    /// <li> <p>kms:DescribeKey</p> </li>
-    /// <li> <p>kms:GenerateDataKey</p> </li>
-    /// <li> <p>kms:Decrypt</p> </li>
-    /// </ul>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl CopyProjectVersionInput {
     /// <p>The ARN of the source project in the trusting AWS account.</p>
-    pub fn source_project_arn(&self) -> std::option::Option<&str> {
+    pub fn source_project_arn(&self) -> std::option::Option<& str> {
         self.source_project_arn.as_deref()
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
-    pub fn source_project_version_arn(&self) -> std::option::Option<&str> {
+    pub fn source_project_version_arn(&self) -> std::option::Option<& str> {
         self.source_project_version_arn.as_deref()
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
-    pub fn destination_project_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_project_arn(&self) -> std::option::Option<& str> {
         self.destination_project_arn.as_deref()
     }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::types::OutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
-    /// <ul>
-    /// <li> <p>kms:CreateGrant</p> </li>
-    /// <li> <p>kms:DescribeKey</p> </li>
-    /// <li> <p>kms:GenerateDataKey</p> </li>
-    /// <li> <p>kms:Decrypt</p> </li>
-    /// </ul>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 impl CopyProjectVersionInput {
     /// Creates a new builder-style object to manufacture [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
-    pub fn builder(
-    ) -> crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder {
+    pub fn builder() -> crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder {
         crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder::default()
     }
 }
@@ -92,8 +87,7 @@ pub struct CopyProjectVersionInputBuilder {
     pub(crate) destination_project_arn: std::option::Option<std::string::String>,
     pub(crate) version_name: std::option::Option<std::string::String>,
     pub(crate) output_config: std::option::Option<crate::types::OutputConfig>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
 }
 impl CopyProjectVersionInputBuilder {
@@ -103,12 +97,8 @@ impl CopyProjectVersionInputBuilder {
         self
     }
     /// <p>The ARN of the source project in the trusting AWS account.</p>
-    pub fn set_source_project_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_project_arn = input;
-        self
+    pub fn set_source_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_project_arn = input; self
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
     pub fn source_project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,12 +106,8 @@ impl CopyProjectVersionInputBuilder {
         self
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
-    pub fn set_source_project_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_project_version_arn = input;
-        self
+    pub fn set_source_project_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_project_version_arn = input; self
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
     pub fn destination_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,12 +115,8 @@ impl CopyProjectVersionInputBuilder {
         self
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
-    pub fn set_destination_project_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_project_arn = input;
-        self
+    pub fn set_destination_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_project_arn = input; self
     }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
     pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +125,7 @@ impl CopyProjectVersionInputBuilder {
     }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
     pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
@@ -152,81 +133,69 @@ impl CopyProjectVersionInputBuilder {
         self
     }
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
-    pub fn set_output_config(
-        mut self,
-        input: std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
-        self.output_config = input;
-        self
+    pub fn set_output_config(mut self, input: std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.output_config = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The key-value tags to assign to the model version. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
-    /// <ul>
-    /// <li> <p>kms:CreateGrant</p> </li>
-    /// <li> <p>kms:DescribeKey</p> </li>
-    /// <li> <p>kms:GenerateDataKey</p> </li>
-    /// <li> <p>kms:Decrypt</p> </li>
-    /// </ul>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
-    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p>
-    /// <ul>
-    /// <li> <p>kms:CreateGrant</p> </li>
-    /// <li> <p>kms:DescribeKey</p> </li>
-    /// <li> <p>kms:GenerateDataKey</p> </li>
-    /// <li> <p>kms:Decrypt</p> </li>
-    /// </ul>
+    /// <p>The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> 
+    /// <p>If you choose to use your own KMS key, you need the following permissions on the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>kms:CreateGrant</p> </li> 
+    /// <li> <p>kms:DescribeKey</p> </li> 
+    /// <li> <p>kms:GenerateDataKey</p> </li> 
+    /// <li> <p>kms:Decrypt</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`CopyProjectVersionInput`](crate::operation::copy_project_version::CopyProjectVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::copy_project_version::CopyProjectVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::copy_project_version::CopyProjectVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::copy_project_version::CopyProjectVersionInput {
-                source_project_arn: self.source_project_arn,
-                source_project_version_arn: self.source_project_version_arn,
-                destination_project_arn: self.destination_project_arn,
-                version_name: self.version_name,
-                output_config: self.output_config,
-                tags: self.tags,
-                kms_key_id: self.kms_key_id,
-            },
+                source_project_arn: self.source_project_arn
+                ,
+                source_project_version_arn: self.source_project_version_arn
+                ,
+                destination_project_arn: self.destination_project_arn
+                ,
+                version_name: self.version_name
+                ,
+                output_config: self.output_config
+                ,
+                tags: self.tags
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
         )
     }
 }
+

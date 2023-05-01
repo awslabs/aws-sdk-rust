@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectTextOutput {
+pub struct DetectTextOutput  {
     /// <p>An array of text that was detected in the input image.</p>
     #[doc(hidden)]
     pub text_detections: std::option::Option<std::vec::Vec<crate::types::TextDetection>>,
@@ -13,19 +13,19 @@ pub struct DetectTextOutput {
 }
 impl DetectTextOutput {
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn text_detections(&self) -> std::option::Option<&[crate::types::TextDetection]> {
+    pub fn text_detections(&self) -> std::option::Option<& [crate::types::TextDetection]> {
         self.text_detections.as_deref()
     }
     /// <p>The model version used to detect text.</p>
-    pub fn text_model_version(&self) -> std::option::Option<&str> {
+    pub fn text_model_version(&self) -> std::option::Option<& str> {
         self.text_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DetectTextOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectTextOutput {
     /// Creates a new builder-style object to manufacture [`DetectTextOutput`](crate::operation::detect_text::DetectTextOutput).
     pub fn builder() -> crate::operation::detect_text::builders::DetectTextOutputBuilder {
@@ -49,17 +49,13 @@ impl DetectTextOutputBuilder {
     /// <p>An array of text that was detected in the input image.</p>
     pub fn text_detections(mut self, input: crate::types::TextDetection) -> Self {
         let mut v = self.text_detections.unwrap_or_default();
-        v.push(input);
-        self.text_detections = Some(v);
-        self
+                        v.push(input);
+                        self.text_detections = Some(v);
+                        self
     }
     /// <p>An array of text that was detected in the input image.</p>
-    pub fn set_text_detections(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TextDetection>>,
-    ) -> Self {
-        self.text_detections = input;
-        self
+    pub fn set_text_detections(mut self, input: std::option::Option<std::vec::Vec<crate::types::TextDetection>>) -> Self {
+        self.text_detections = input; self
     }
     /// <p>The model version used to detect text.</p>
     pub fn text_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,28 +63,27 @@ impl DetectTextOutputBuilder {
         self
     }
     /// <p>The model version used to detect text.</p>
-    pub fn set_text_model_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.text_model_version = input;
-        self
+    pub fn set_text_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.text_model_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectTextOutput`](crate::operation::detect_text::DetectTextOutput).
     pub fn build(self) -> crate::operation::detect_text::DetectTextOutput {
         crate::operation::detect_text::DetectTextOutput {
-            text_detections: self.text_detections,
-            text_model_version: self.text_model_version,
+            text_detections: self.text_detections
+            ,
+            text_model_version: self.text_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

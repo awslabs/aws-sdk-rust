@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimPhoneNumberOutput {
+pub struct ClaimPhoneNumberOutput  {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ClaimPhoneNumberOutput {
 }
 impl ClaimPhoneNumberOutput {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
-    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ClaimPhoneNumberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ClaimPhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`ClaimPhoneNumberOutput`](crate::operation::claim_phone_number::ClaimPhoneNumberOutput).
-    pub fn builder() -> crate::operation::claim_phone_number::builders::ClaimPhoneNumberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::claim_phone_number::builders::ClaimPhoneNumberOutputBuilder {
         crate::operation::claim_phone_number::builders::ClaimPhoneNumberOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ClaimPhoneNumberOutputBuilder {
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn phone_number_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,24 +58,26 @@ impl ClaimPhoneNumberOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the phone number.</p>
     pub fn set_phone_number_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_arn = input;
-        self
+        self.phone_number_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ClaimPhoneNumberOutput`](crate::operation::claim_phone_number::ClaimPhoneNumberOutput).
     pub fn build(self) -> crate::operation::claim_phone_number::ClaimPhoneNumberOutput {
         crate::operation::claim_phone_number::ClaimPhoneNumberOutput {
-            phone_number_id: self.phone_number_id,
-            phone_number_arn: self.phone_number_arn,
+            phone_number_id: self.phone_number_id
+            ,
+            phone_number_arn: self.phone_number_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

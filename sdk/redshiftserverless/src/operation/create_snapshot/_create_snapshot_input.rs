@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotInput {
+pub struct CreateSnapshotInput  {
     /// <p>The namespace to create a snapshot for.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct CreateSnapshotInput {
 }
 impl CreateSnapshotInput {
     /// <p>The namespace to create a snapshot for.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>How long to retain the created snapshot.</p>
@@ -30,7 +30,7 @@ impl CreateSnapshotInput {
         self.retention_period
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The namespace to create a snapshot for.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the snapshot.</p>
     pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot.</p>
     pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_name = input;
-        self
+        self.snapshot_name = input; self
     }
     /// <p>How long to retain the created snapshot.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
@@ -78,8 +76,7 @@ impl CreateSnapshotInputBuilder {
     }
     /// <p>How long to retain the created snapshot.</p>
     pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_period = input;
-        self
+        self.retention_period = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -88,30 +85,28 @@ impl CreateSnapshotInputBuilder {
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a> to associate with the snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateSnapshotInput`](crate::operation::create_snapshot::CreateSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_snapshot::CreateSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_snapshot::CreateSnapshotInput {
-            namespace_name: self.namespace_name,
-            snapshot_name: self.snapshot_name,
-            retention_period: self.retention_period,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_snapshot::CreateSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_snapshot::CreateSnapshotInput {
+                namespace_name: self.namespace_name
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                retention_period: self.retention_period
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

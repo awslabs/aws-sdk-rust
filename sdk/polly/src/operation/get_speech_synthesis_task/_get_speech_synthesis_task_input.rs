@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSpeechSynthesisTaskInput {
+pub struct GetSpeechSynthesisTaskInput  {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl GetSpeechSynthesisTaskInput {
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl GetSpeechSynthesisTaskInput {
     /// Creates a new builder-style object to manufacture [`GetSpeechSynthesisTaskInput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput).
-    pub fn builder(
-    ) -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder {
         crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetSpeechSynthesisTaskInputBuilder {
     }
     /// <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskInput`](crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskInput {
-                task_id: self.task_id,
-            },
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

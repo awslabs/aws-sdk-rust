@@ -3,7 +3,7 @@
 /// <p>The details of a channel ban.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelBan {
+pub struct ChannelBan  {
     /// <p>The member being banned from the channel.</p>
     #[doc(hidden)]
     pub member: std::option::Option<crate::types::Identity>,
@@ -19,19 +19,19 @@ pub struct ChannelBan {
 }
 impl ChannelBan {
     /// <p>The member being banned from the channel.</p>
-    pub fn member(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn member(&self) -> std::option::Option<& crate::types::Identity> {
         self.member.as_ref()
     }
     /// <p>The ARN of the channel from which a member is being banned.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the ban was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::Identity> {
         self.created_by.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ChannelBanBuilder {
     }
     /// <p>The member being banned from the channel.</p>
     pub fn set_member(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     /// <p>The ARN of the channel from which a member is being banned.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ChannelBanBuilder {
     }
     /// <p>The ARN of the channel from which a member is being banned.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The time at which the ban was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl ChannelBanBuilder {
         self
     }
     /// <p>The time at which the ban was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub fn created_by(mut self, input: crate::types::Identity) -> Self {
@@ -92,16 +86,20 @@ impl ChannelBanBuilder {
     }
     /// <p>The <code>AppInstanceUser</code> who created the ban.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// Consumes the builder and constructs a [`ChannelBan`](crate::types::ChannelBan).
     pub fn build(self) -> crate::types::ChannelBan {
         crate::types::ChannelBan {
-            member: self.member,
-            channel_arn: self.channel_arn,
-            created_timestamp: self.created_timestamp,
-            created_by: self.created_by,
+            member: self.member
+            ,
+            channel_arn: self.channel_arn
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            created_by: self.created_by
+            ,
         }
     }
 }
+

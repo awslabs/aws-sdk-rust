@@ -3,7 +3,7 @@
 /// Video Codec Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoCodecSettings {
+pub struct VideoCodecSettings  {
     /// Frame Capture Settings
     #[doc(hidden)]
     pub frame_capture_settings: std::option::Option<crate::types::FrameCaptureSettings>,
@@ -19,21 +19,19 @@ pub struct VideoCodecSettings {
 }
 impl VideoCodecSettings {
     /// Frame Capture Settings
-    pub fn frame_capture_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::FrameCaptureSettings> {
+    pub fn frame_capture_settings(&self) -> std::option::Option<& crate::types::FrameCaptureSettings> {
         self.frame_capture_settings.as_ref()
     }
     /// H264 Settings
-    pub fn h264_settings(&self) -> std::option::Option<&crate::types::H264Settings> {
+    pub fn h264_settings(&self) -> std::option::Option<& crate::types::H264Settings> {
         self.h264_settings.as_ref()
     }
     /// H265 Settings
-    pub fn h265_settings(&self) -> std::option::Option<&crate::types::H265Settings> {
+    pub fn h265_settings(&self) -> std::option::Option<& crate::types::H265Settings> {
         self.h265_settings.as_ref()
     }
     /// Mpeg2 Settings
-    pub fn mpeg2_settings(&self) -> std::option::Option<&crate::types::Mpeg2Settings> {
+    pub fn mpeg2_settings(&self) -> std::option::Option<& crate::types::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
     }
 }
@@ -60,12 +58,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Frame Capture Settings
-    pub fn set_frame_capture_settings(
-        mut self,
-        input: std::option::Option<crate::types::FrameCaptureSettings>,
-    ) -> Self {
-        self.frame_capture_settings = input;
-        self
+    pub fn set_frame_capture_settings(mut self, input: std::option::Option<crate::types::FrameCaptureSettings>) -> Self {
+        self.frame_capture_settings = input; self
     }
     /// H264 Settings
     pub fn h264_settings(mut self, input: crate::types::H264Settings) -> Self {
@@ -73,12 +67,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// H264 Settings
-    pub fn set_h264_settings(
-        mut self,
-        input: std::option::Option<crate::types::H264Settings>,
-    ) -> Self {
-        self.h264_settings = input;
-        self
+    pub fn set_h264_settings(mut self, input: std::option::Option<crate::types::H264Settings>) -> Self {
+        self.h264_settings = input; self
     }
     /// H265 Settings
     pub fn h265_settings(mut self, input: crate::types::H265Settings) -> Self {
@@ -86,12 +76,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// H265 Settings
-    pub fn set_h265_settings(
-        mut self,
-        input: std::option::Option<crate::types::H265Settings>,
-    ) -> Self {
-        self.h265_settings = input;
-        self
+    pub fn set_h265_settings(mut self, input: std::option::Option<crate::types::H265Settings>) -> Self {
+        self.h265_settings = input; self
     }
     /// Mpeg2 Settings
     pub fn mpeg2_settings(mut self, input: crate::types::Mpeg2Settings) -> Self {
@@ -99,20 +85,21 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Mpeg2 Settings
-    pub fn set_mpeg2_settings(
-        mut self,
-        input: std::option::Option<crate::types::Mpeg2Settings>,
-    ) -> Self {
-        self.mpeg2_settings = input;
-        self
+    pub fn set_mpeg2_settings(mut self, input: std::option::Option<crate::types::Mpeg2Settings>) -> Self {
+        self.mpeg2_settings = input; self
     }
     /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::types::VideoCodecSettings).
     pub fn build(self) -> crate::types::VideoCodecSettings {
         crate::types::VideoCodecSettings {
-            frame_capture_settings: self.frame_capture_settings,
-            h264_settings: self.h264_settings,
-            h265_settings: self.h265_settings,
-            mpeg2_settings: self.mpeg2_settings,
+            frame_capture_settings: self.frame_capture_settings
+            ,
+            h264_settings: self.h264_settings
+            ,
+            h265_settings: self.h265_settings
+            ,
+            mpeg2_settings: self.mpeg2_settings
+            ,
         }
     }
 }
+

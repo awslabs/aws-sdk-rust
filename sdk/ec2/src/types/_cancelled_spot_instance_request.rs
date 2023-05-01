@@ -3,7 +3,7 @@
 /// <p>Describes a request to cancel a Spot Instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelledSpotInstanceRequest {
+pub struct CancelledSpotInstanceRequest  {
     /// <p>The ID of the Spot Instance request.</p>
     #[doc(hidden)]
     pub spot_instance_request_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CancelledSpotInstanceRequest {
 }
 impl CancelledSpotInstanceRequest {
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn spot_instance_request_id(&self) -> std::option::Option<&str> {
+    pub fn spot_instance_request_id(&self) -> std::option::Option<& str> {
         self.spot_instance_request_id.as_deref()
     }
     /// <p>The state of the Spot Instance request.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::CancelSpotInstanceRequestState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::CancelSpotInstanceRequestState> {
         self.state.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl CancelledSpotInstanceRequestBuilder {
         self
     }
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn set_spot_instance_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.spot_instance_request_id = input;
-        self
+    pub fn set_spot_instance_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.spot_instance_request_id = input; self
     }
     /// <p>The state of the Spot Instance request.</p>
     pub fn state(mut self, input: crate::types::CancelSpotInstanceRequestState) -> Self {
@@ -55,18 +51,17 @@ impl CancelledSpotInstanceRequestBuilder {
         self
     }
     /// <p>The state of the Spot Instance request.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::CancelSpotInstanceRequestState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::CancelSpotInstanceRequestState>) -> Self {
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`CancelledSpotInstanceRequest`](crate::types::CancelledSpotInstanceRequest).
     pub fn build(self) -> crate::types::CancelledSpotInstanceRequest {
         crate::types::CancelledSpotInstanceRequest {
-            spot_instance_request_id: self.spot_instance_request_id,
-            state: self.state,
+            spot_instance_request_id: self.spot_instance_request_id
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

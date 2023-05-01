@@ -2,42 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct SelectObjectContentOutput {
+pub struct SelectObjectContentOutput  {
     /// <p>The array of results.</p>
-    pub payload: aws_smithy_http::event_stream::Receiver<
-        crate::types::SelectObjectContentEventStream,
-        crate::types::error::SelectObjectContentEventStreamError,
-    >,
+    pub payload: aws_smithy_http::event_stream::Receiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl SelectObjectContentOutput {
     /// <p>The array of results.</p>
-    pub fn payload(
-        &self,
-    ) -> &aws_smithy_http::event_stream::Receiver<
-        crate::types::SelectObjectContentEventStream,
-        crate::types::error::SelectObjectContentEventStreamError,
-    > {
+    pub fn payload(&self) -> & aws_smithy_http::event_stream::Receiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError> {
         &self.payload
     }
 }
 impl crate::s3_request_id::RequestIdExt for SelectObjectContentOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for SelectObjectContentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SelectObjectContentOutput {
     /// Creates a new builder-style object to manufacture [`SelectObjectContentOutput`](crate::operation::select_object_content::SelectObjectContentOutput).
-    pub fn builder(
-    ) -> crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder {
-        crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder {
+        crate::operation::select_object_content::builders::SelectObjectContentOutputBuilder::default()
     }
 }
 
@@ -45,68 +35,40 @@ impl SelectObjectContentOutput {
 #[non_exhaustive]
 #[derive(std::default::Default, std::fmt::Debug)]
 pub struct SelectObjectContentOutputBuilder {
-    pub(crate) payload: std::option::Option<
-        aws_smithy_http::event_stream::Receiver<
-            crate::types::SelectObjectContentEventStream,
-            crate::types::error::SelectObjectContentEventStreamError,
-        >,
-    >,
+    pub(crate) payload: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
 impl SelectObjectContentOutputBuilder {
     /// <p>The array of results.</p>
-    pub fn payload(
-        mut self,
-        input: aws_smithy_http::event_stream::Receiver<
-            crate::types::SelectObjectContentEventStream,
-            crate::types::error::SelectObjectContentEventStreamError,
-        >,
-    ) -> Self {
+    pub fn payload(mut self, input: aws_smithy_http::event_stream::Receiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>) -> Self {
         self.payload = Some(input);
         self
     }
     /// <p>The array of results.</p>
-    pub fn set_payload(
-        mut self,
-        input: std::option::Option<
-            aws_smithy_http::event_stream::Receiver<
-                crate::types::SelectObjectContentEventStream,
-                crate::types::error::SelectObjectContentEventStreamError,
-            >,
-        >,
-    ) -> Self {
-        self.payload = input;
-        self
+    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::event_stream::Receiver<crate::types::SelectObjectContentEventStream, crate::types::error::SelectObjectContentEventStreamError>>) -> Self {
+        self.payload = input; self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SelectObjectContentOutput`](crate::operation::select_object_content::SelectObjectContentOutput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::select_object_content::SelectObjectContentOutput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::select_object_content::SelectObjectContentOutput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::select_object_content::SelectObjectContentOutput {
                 payload: self.payload
@@ -120,3 +82,4 @@ impl SelectObjectContentOutputBuilder {
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Configure the security settings to protect model card data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelCardSecurityConfig {
+pub struct ModelCardSecurityConfig  {
     /// <p>A Key Management Service <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key ID</a> to use for encrypting a model card.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ModelCardSecurityConfig {
     /// <p>A Key Management Service <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key ID</a> to use for encrypting a model card.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ModelCardSecurityConfigBuilder {
     }
     /// <p>A Key Management Service <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key ID</a> to use for encrypting a model card.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`ModelCardSecurityConfig`](crate::types::ModelCardSecurityConfig).
     pub fn build(self) -> crate::types::ModelCardSecurityConfig {
         crate::types::ModelCardSecurityConfig {
-            kms_key_id: self.kms_key_id,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

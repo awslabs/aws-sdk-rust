@@ -3,7 +3,7 @@
 /// <p>Details about a proactive insight. This object is returned by <code>ListInsights</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProactiveInsight {
+pub struct ProactiveInsight  {
     /// <p>The ID of the proactive insight. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct ProactiveInsight {
 }
 impl ProactiveInsight {
     /// <p>The ID of the proactive insight. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the proactive insight. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::types::InsightSeverity> {
+    pub fn severity(&self) -> std::option::Option<& crate::types::InsightSeverity> {
         self.severity.as_ref()
     }
     /// <p>The status of the proactive insight. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::InsightStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::InsightStatus> {
         self.status.as_ref()
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    pub fn insight_time_range(&self) -> std::option::Option<&crate::types::InsightTimeRange> {
+    pub fn insight_time_range(&self) -> std::option::Option<& crate::types::InsightTimeRange> {
         self.insight_time_range.as_ref()
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    pub fn prediction_time_range(&self) -> std::option::Option<&crate::types::PredictionTimeRange> {
+    pub fn prediction_time_range(&self) -> std::option::Option<& crate::types::PredictionTimeRange> {
         self.prediction_time_range.as_ref()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> std::option::Option<& crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
-    pub fn ssm_ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ssm_ops_item_id(&self) -> std::option::Option<& str> {
         self.ssm_ops_item_id.as_deref()
     }
     /// <p>Describes the proactive insight.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl ProactiveInsightBuilder {
     }
     /// <p>The ID of the proactive insight. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the proactive insight. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl ProactiveInsightBuilder {
     }
     /// <p>The name of the proactive insight. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
     pub fn severity(mut self, input: crate::types::InsightSeverity) -> Self {
@@ -118,12 +116,8 @@ impl ProactiveInsightBuilder {
         self
     }
     /// <p>The severity of the insight. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding insight severities</a> in the <i>Amazon DevOps Guru User Guide</i>.</p>
-    pub fn set_severity(
-        mut self,
-        input: std::option::Option<crate::types::InsightSeverity>,
-    ) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: std::option::Option<crate::types::InsightSeverity>) -> Self {
+        self.severity = input; self
     }
     /// <p>The status of the proactive insight. </p>
     pub fn status(mut self, input: crate::types::InsightStatus) -> Self {
@@ -132,8 +126,7 @@ impl ProactiveInsightBuilder {
     }
     /// <p>The status of the proactive insight. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::InsightStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
     pub fn insight_time_range(mut self, input: crate::types::InsightTimeRange) -> Self {
@@ -141,12 +134,8 @@ impl ProactiveInsightBuilder {
         self
     }
     /// <p> A time ranged that specifies when the observed behavior in an insight started and ended. </p>
-    pub fn set_insight_time_range(
-        mut self,
-        input: std::option::Option<crate::types::InsightTimeRange>,
-    ) -> Self {
-        self.insight_time_range = input;
-        self
+    pub fn set_insight_time_range(mut self, input: std::option::Option<crate::types::InsightTimeRange>) -> Self {
+        self.insight_time_range = input; self
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
     pub fn prediction_time_range(mut self, input: crate::types::PredictionTimeRange) -> Self {
@@ -154,12 +143,8 @@ impl ProactiveInsightBuilder {
         self
     }
     /// <p> The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur. </p>
-    pub fn set_prediction_time_range(
-        mut self,
-        input: std::option::Option<crate::types::PredictionTimeRange>,
-    ) -> Self {
-        self.prediction_time_range = input;
-        self
+    pub fn set_prediction_time_range(mut self, input: std::option::Option<crate::types::PredictionTimeRange>) -> Self {
+        self.prediction_time_range = input; self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
@@ -167,12 +152,8 @@ impl ProactiveInsightBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCollection>,
-    ) -> Self {
-        self.resource_collection = input;
-        self
+    pub fn set_resource_collection(mut self, input: std::option::Option<crate::types::ResourceCollection>) -> Self {
+        self.resource_collection = input; self
     }
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
     pub fn ssm_ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,8 +162,7 @@ impl ProactiveInsightBuilder {
     }
     /// <p> The ID of the Amazon Web Services System Manager OpsItem created for this insight. You must enable the creation of OpstItems insights before they are created for each insight. </p>
     pub fn set_ssm_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssm_ops_item_id = input;
-        self
+        self.ssm_ops_item_id = input; self
     }
     /// <p>Describes the proactive insight.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,21 +171,30 @@ impl ProactiveInsightBuilder {
     }
     /// <p>Describes the proactive insight.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`ProactiveInsight`](crate::types::ProactiveInsight).
     pub fn build(self) -> crate::types::ProactiveInsight {
         crate::types::ProactiveInsight {
-            id: self.id,
-            name: self.name,
-            severity: self.severity,
-            status: self.status,
-            insight_time_range: self.insight_time_range,
-            prediction_time_range: self.prediction_time_range,
-            resource_collection: self.resource_collection,
-            ssm_ops_item_id: self.ssm_ops_item_id,
-            description: self.description,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            severity: self.severity
+            ,
+            status: self.status
+            ,
+            insight_time_range: self.insight_time_range
+            ,
+            prediction_time_range: self.prediction_time_range
+            ,
+            resource_collection: self.resource_collection
+            ,
+            ssm_ops_item_id: self.ssm_ops_item_id
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

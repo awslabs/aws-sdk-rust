@@ -3,38 +3,38 @@
 /// <p>Information about an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityInfo {
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+pub struct IdentityInfo  {
+    /// <p>The email identity type. The identity type can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::types::IdentityType>,
     /// <p>The address or domain of the identity.</p>
     #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl IdentityInfo {
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+    /// <p>The email identity type. The identity type can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
     /// </ul>
-    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn identity_name(&self) -> std::option::Option<&str> {
+    pub fn identity_name(&self) -> std::option::Option<& str> {
         self.identity_name.as_deref()
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
@@ -56,28 +56,24 @@ pub struct IdentityInfoBuilder {
     pub(crate) sending_enabled: std::option::Option<bool>,
 }
 impl IdentityInfoBuilder {
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+    /// <p>The email identity type. The identity type can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
     /// </ul>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.identity_type = Some(input);
         self
     }
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+    /// <p>The email identity type. The identity type can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
     /// </ul>
-    pub fn set_identity_type(
-        mut self,
-        input: std::option::Option<crate::types::IdentityType>,
-    ) -> Self {
-        self.identity_type = input;
-        self
+    pub fn set_identity_type(mut self, input: std::option::Option<crate::types::IdentityType>) -> Self {
+        self.identity_type = input; self
     }
     /// <p>The address or domain of the identity.</p>
     pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,27 +82,30 @@ impl IdentityInfoBuilder {
     }
     /// <p>The address or domain of the identity.</p>
     pub fn set_identity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_name = input;
-        self
+        self.identity_name = input; self
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
         self.sending_enabled = Some(input);
         self
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.sending_enabled = input;
-        self
+        self.sending_enabled = input; self
     }
     /// Consumes the builder and constructs a [`IdentityInfo`](crate::types::IdentityInfo).
     pub fn build(self) -> crate::types::IdentityInfo {
         crate::types::IdentityInfo {
-            identity_type: self.identity_type,
-            identity_name: self.identity_name,
-            sending_enabled: self.sending_enabled.unwrap_or_default(),
+            identity_type: self.identity_type
+            ,
+            identity_name: self.identity_name
+            ,
+            sending_enabled: self.sending_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

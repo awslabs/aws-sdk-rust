@@ -36,3 +36,4 @@ pub use crate::types::error::_quick_sight_user_not_found_exception::QuickSightUs
 pub use crate::types::error::_identity_type_not_supported_exception::IdentityTypeNotSupportedExceptionBuilder;
 
 pub use crate::types::error::_domain_not_whitelisted_exception::DomainNotWhitelistedExceptionBuilder;
+

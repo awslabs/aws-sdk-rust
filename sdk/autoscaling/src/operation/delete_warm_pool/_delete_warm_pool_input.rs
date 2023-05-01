@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWarmPoolInput {
+pub struct DeleteWarmPoolInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteWarmPoolInput {
 }
 impl DeleteWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
@@ -41,12 +41,8 @@ impl DeleteWarmPoolInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
     }
     /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -55,19 +51,18 @@ impl DeleteWarmPoolInputBuilder {
     }
     /// <p>Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the warm pool instances.</p>
     pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_delete = input;
-        self
+        self.force_delete = input; self
     }
     /// Consumes the builder and constructs a [`DeleteWarmPoolInput`](crate::operation::delete_warm_pool::DeleteWarmPoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_warm_pool::DeleteWarmPoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_warm_pool::DeleteWarmPoolInput {
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            force_delete: self.force_delete,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_warm_pool::DeleteWarmPoolInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_warm_pool::DeleteWarmPoolInput {
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                force_delete: self.force_delete
+                ,
+            }
+        )
     }
 }
+

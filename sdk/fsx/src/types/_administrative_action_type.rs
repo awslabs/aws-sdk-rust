@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let administrativeactiontype = unimplemented!();
 /// match administrativeactiontype {
@@ -36,7 +36,7 @@
 /// Specifically, when `administrativeactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdministrativeActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -115,15 +115,7 @@
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     FileSystemAliasAssociation,
@@ -142,67 +134,53 @@ pub enum AdministrativeActionType {
     #[allow(missing_docs)] // documentation missing in model
     VolumeUpdate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdministrativeActionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FILE_SYSTEM_ALIAS_ASSOCIATION" => AdministrativeActionType::FileSystemAliasAssociation,
-            "FILE_SYSTEM_ALIAS_DISASSOCIATION" => {
-                AdministrativeActionType::FileSystemAliasDisassociation
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FILE_SYSTEM_ALIAS_ASSOCIATION" => AdministrativeActionType::FileSystemAliasAssociation,
+"FILE_SYSTEM_ALIAS_DISASSOCIATION" => AdministrativeActionType::FileSystemAliasDisassociation,
+"FILE_SYSTEM_UPDATE" => AdministrativeActionType::FileSystemUpdate,
+"RELEASE_NFS_V3_LOCKS" => AdministrativeActionType::ReleaseNfsV3Locks,
+"SNAPSHOT_UPDATE" => AdministrativeActionType::SnapshotUpdate,
+"STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
+"VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
+"VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
+other => AdministrativeActionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "FILE_SYSTEM_UPDATE" => AdministrativeActionType::FileSystemUpdate,
-            "RELEASE_NFS_V3_LOCKS" => AdministrativeActionType::ReleaseNfsV3Locks,
-            "SNAPSHOT_UPDATE" => AdministrativeActionType::SnapshotUpdate,
-            "STORAGE_OPTIMIZATION" => AdministrativeActionType::StorageOptimization,
-            "VOLUME_RESTORE" => AdministrativeActionType::VolumeRestore,
-            "VOLUME_UPDATE" => AdministrativeActionType::VolumeUpdate,
-            other => AdministrativeActionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for AdministrativeActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdministrativeActionType::from(s))
-    }
-}
-impl AdministrativeActionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AdministrativeActionType::FileSystemAliasAssociation => "FILE_SYSTEM_ALIAS_ASSOCIATION",
-            AdministrativeActionType::FileSystemAliasDisassociation => {
-                "FILE_SYSTEM_ALIAS_DISASSOCIATION"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AdministrativeActionType::from(s))
+                }
             }
-            AdministrativeActionType::FileSystemUpdate => "FILE_SYSTEM_UPDATE",
-            AdministrativeActionType::ReleaseNfsV3Locks => "RELEASE_NFS_V3_LOCKS",
-            AdministrativeActionType::SnapshotUpdate => "SNAPSHOT_UPDATE",
-            AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
-            AdministrativeActionType::VolumeRestore => "VOLUME_RESTORE",
-            AdministrativeActionType::VolumeUpdate => "VOLUME_UPDATE",
-            AdministrativeActionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "FILE_SYSTEM_ALIAS_ASSOCIATION",
-            "FILE_SYSTEM_ALIAS_DISASSOCIATION",
-            "FILE_SYSTEM_UPDATE",
-            "RELEASE_NFS_V3_LOCKS",
-            "SNAPSHOT_UPDATE",
-            "STORAGE_OPTIMIZATION",
-            "VOLUME_RESTORE",
-            "VOLUME_UPDATE",
-        ]
-    }
+impl AdministrativeActionType {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AdministrativeActionType::FileSystemAliasAssociation => "FILE_SYSTEM_ALIAS_ASSOCIATION",
+    AdministrativeActionType::FileSystemAliasDisassociation => "FILE_SYSTEM_ALIAS_DISASSOCIATION",
+    AdministrativeActionType::FileSystemUpdate => "FILE_SYSTEM_UPDATE",
+    AdministrativeActionType::ReleaseNfsV3Locks => "RELEASE_NFS_V3_LOCKS",
+    AdministrativeActionType::SnapshotUpdate => "SNAPSHOT_UPDATE",
+    AdministrativeActionType::StorageOptimization => "STORAGE_OPTIMIZATION",
+    AdministrativeActionType::VolumeRestore => "VOLUME_RESTORE",
+    AdministrativeActionType::VolumeUpdate => "VOLUME_UPDATE",
+    AdministrativeActionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FILE_SYSTEM_ALIAS_ASSOCIATION", "FILE_SYSTEM_ALIAS_DISASSOCIATION", "FILE_SYSTEM_UPDATE", "RELEASE_NFS_V3_LOCKS", "SNAPSHOT_UPDATE", "STORAGE_OPTIMIZATION", "VOLUME_RESTORE", "VOLUME_UPDATE"]
+                }
+            }
 impl AsRef<str> for AdministrativeActionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

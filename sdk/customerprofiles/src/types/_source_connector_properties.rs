@@ -3,7 +3,7 @@
 /// <p>Specifies the information that is required to query a particular Amazon AppFlow connector. Customer Profiles supports Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceConnectorProperties {
+pub struct SourceConnectorProperties  {
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
     #[doc(hidden)]
     pub marketo: std::option::Option<crate::types::MarketoSourceProperties>,
@@ -22,23 +22,23 @@ pub struct SourceConnectorProperties {
 }
 impl SourceConnectorProperties {
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
-    pub fn marketo(&self) -> std::option::Option<&crate::types::MarketoSourceProperties> {
+    pub fn marketo(&self) -> std::option::Option<& crate::types::MarketoSourceProperties> {
         self.marketo.as_ref()
     }
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3SourceProperties> {
+    pub fn s3(&self) -> std::option::Option<& crate::types::S3SourceProperties> {
         self.s3.as_ref()
     }
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
-    pub fn salesforce(&self) -> std::option::Option<&crate::types::SalesforceSourceProperties> {
+    pub fn salesforce(&self) -> std::option::Option<& crate::types::SalesforceSourceProperties> {
         self.salesforce.as_ref()
     }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
-    pub fn service_now(&self) -> std::option::Option<&crate::types::ServiceNowSourceProperties> {
+    pub fn service_now(&self) -> std::option::Option<& crate::types::ServiceNowSourceProperties> {
         self.service_now.as_ref()
     }
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
-    pub fn zendesk(&self) -> std::option::Option<&crate::types::ZendeskSourceProperties> {
+    pub fn zendesk(&self) -> std::option::Option<& crate::types::ZendeskSourceProperties> {
         self.zendesk.as_ref()
     }
 }
@@ -66,12 +66,8 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when Marketo is being used as a source.</p>
-    pub fn set_marketo(
-        mut self,
-        input: std::option::Option<crate::types::MarketoSourceProperties>,
-    ) -> Self {
-        self.marketo = input;
-        self
+    pub fn set_marketo(mut self, input: std::option::Option<crate::types::MarketoSourceProperties>) -> Self {
+        self.marketo = input; self
     }
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
     pub fn s3(mut self, input: crate::types::S3SourceProperties) -> Self {
@@ -80,8 +76,7 @@ impl SourceConnectorPropertiesBuilder {
     }
     /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
     pub fn set_s3(mut self, input: std::option::Option<crate::types::S3SourceProperties>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
     pub fn salesforce(mut self, input: crate::types::SalesforceSourceProperties) -> Self {
@@ -89,12 +84,8 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when Salesforce is being used as a source.</p>
-    pub fn set_salesforce(
-        mut self,
-        input: std::option::Option<crate::types::SalesforceSourceProperties>,
-    ) -> Self {
-        self.salesforce = input;
-        self
+    pub fn set_salesforce(mut self, input: std::option::Option<crate::types::SalesforceSourceProperties>) -> Self {
+        self.salesforce = input; self
     }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
     pub fn service_now(mut self, input: crate::types::ServiceNowSourceProperties) -> Self {
@@ -102,12 +93,8 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
-    pub fn set_service_now(
-        mut self,
-        input: std::option::Option<crate::types::ServiceNowSourceProperties>,
-    ) -> Self {
-        self.service_now = input;
-        self
+    pub fn set_service_now(mut self, input: std::option::Option<crate::types::ServiceNowSourceProperties>) -> Self {
+        self.service_now = input; self
     }
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
     pub fn zendesk(mut self, input: crate::types::ZendeskSourceProperties) -> Self {
@@ -115,21 +102,23 @@ impl SourceConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties that are applied when using Zendesk as a flow source.</p>
-    pub fn set_zendesk(
-        mut self,
-        input: std::option::Option<crate::types::ZendeskSourceProperties>,
-    ) -> Self {
-        self.zendesk = input;
-        self
+    pub fn set_zendesk(mut self, input: std::option::Option<crate::types::ZendeskSourceProperties>) -> Self {
+        self.zendesk = input; self
     }
     /// Consumes the builder and constructs a [`SourceConnectorProperties`](crate::types::SourceConnectorProperties).
     pub fn build(self) -> crate::types::SourceConnectorProperties {
         crate::types::SourceConnectorProperties {
-            marketo: self.marketo,
-            s3: self.s3,
-            salesforce: self.salesforce,
-            service_now: self.service_now,
-            zendesk: self.zendesk,
+            marketo: self.marketo
+            ,
+            s3: self.s3
+            ,
+            salesforce: self.salesforce
+            ,
+            service_now: self.service_now
+            ,
+            zendesk: self.zendesk
+            ,
         }
     }
 }
+

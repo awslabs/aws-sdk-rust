@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetInput {
+pub struct DeleteAssetInput  {
     /// <p>The ID of the asset to delete.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteAssetInput {
 }
 impl DeleteAssetInput {
     /// <p>The ID of the asset to delete.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteAssetInputBuilder {
     }
     /// <p>The ID of the asset to delete.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteAssetInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAssetInput`](crate::operation::delete_asset::DeleteAssetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_asset::DeleteAssetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_asset::DeleteAssetInput {
-            asset_id: self.asset_id,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_asset::DeleteAssetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_asset::DeleteAssetInput {
+                asset_id: self.asset_id
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

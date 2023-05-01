@@ -3,14 +3,14 @@
 /// <p>The <code>SuggestionTextWithHighlights</code> structure information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestionValue {
+pub struct SuggestionValue  {
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
     #[doc(hidden)]
     pub text: std::option::Option<crate::types::SuggestionTextWithHighlights>,
 }
 impl SuggestionValue {
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
-    pub fn text(&self) -> std::option::Option<&crate::types::SuggestionTextWithHighlights> {
+    pub fn text(&self) -> std::option::Option<& crate::types::SuggestionTextWithHighlights> {
         self.text.as_ref()
     }
 }
@@ -34,15 +34,15 @@ impl SuggestionValueBuilder {
         self
     }
     /// <p>The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion text and highlights.</p>
-    pub fn set_text(
-        mut self,
-        input: std::option::Option<crate::types::SuggestionTextWithHighlights>,
-    ) -> Self {
-        self.text = input;
-        self
+    pub fn set_text(mut self, input: std::option::Option<crate::types::SuggestionTextWithHighlights>) -> Self {
+        self.text = input; self
     }
     /// Consumes the builder and constructs a [`SuggestionValue`](crate::types::SuggestionValue).
     pub fn build(self) -> crate::types::SuggestionValue {
-        crate::types::SuggestionValue { text: self.text }
+        crate::types::SuggestionValue {
+            text: self.text
+            ,
+        }
     }
 }
+

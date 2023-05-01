@@ -2,26 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbEngineVersionsInput {
+pub struct DescribeDbEngineVersionsInput  {
     /// <p>The database engine to return.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
-    /// <p>The database engine version to return.</p>
+    /// <p>The database engine version to return.</p> 
     /// <p>Example: <code>5.1.49</code> </p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>The name of a specific DB parameter group family to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub db_parameter_group_family: std::option::Option<std::string::String>,
     /// <p>Not currently supported.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -40,34 +40,34 @@ pub struct DescribeDbEngineVersionsInput {
 }
 impl DescribeDbEngineVersionsInput {
     /// <p>The database engine to return.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>The database engine version to return.</p> 
     /// <p>Example: <code>5.1.49</code> </p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
-    /// <p>The name of a specific DB parameter group family to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
     /// </ul>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>Not currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
@@ -85,9 +85,7 @@ impl DescribeDbEngineVersionsInput {
 }
 impl DescribeDbEngineVersionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsInput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder {
         crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder::default()
     }
 }
@@ -114,41 +112,35 @@ impl DescribeDbEngineVersionsInputBuilder {
     }
     /// <p>The database engine to return.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>The database engine version to return.</p> 
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.engine_version = Some(input.into());
         self
     }
-    /// <p>The database engine version to return.</p>
+    /// <p>The database engine version to return.</p> 
     /// <p>Example: <code>5.1.49</code> </p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
-    /// <p>The name of a specific DB parameter group family to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
     /// </ul>
     pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_parameter_group_family = Some(input.into());
         self
     }
-    /// <p>The name of a specific DB parameter group family to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li>
+    /// <p>The name of a specific DB parameter group family to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If supplied, must match an existing DBParameterGroupFamily.</p> </li> 
     /// </ul>
-    pub fn set_db_parameter_group_family(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_parameter_group_family = input;
-        self
+    pub fn set_db_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_parameter_group_family = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -157,31 +149,26 @@ impl DescribeDbEngineVersionsInputBuilder {
     /// <p>Not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more than the <code>MaxRecords</code> value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,8 +177,7 @@ impl DescribeDbEngineVersionsInputBuilder {
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
     pub fn default_only(mut self, input: bool) -> Self {
@@ -200,8 +186,7 @@ impl DescribeDbEngineVersionsInputBuilder {
     }
     /// <p>Indicates that only the default version of the specified engine or engine and major version combination is returned.</p>
     pub fn set_default_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_only = input;
-        self
+        self.default_only = input; self
     }
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
     pub fn list_supported_character_sets(mut self, input: bool) -> Self {
@@ -210,8 +195,7 @@ impl DescribeDbEngineVersionsInputBuilder {
     }
     /// <p>If this parameter is specified and the requested engine supports the <code>CharacterSetName</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported character sets for each engine version.</p>
     pub fn set_list_supported_character_sets(mut self, input: std::option::Option<bool>) -> Self {
-        self.list_supported_character_sets = input;
-        self
+        self.list_supported_character_sets = input; self
     }
     /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
     pub fn list_supported_timezones(mut self, input: bool) -> Self {
@@ -220,28 +204,33 @@ impl DescribeDbEngineVersionsInputBuilder {
     }
     /// <p>If this parameter is specified and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, the response includes a list of supported time zones for each engine version.</p>
     pub fn set_list_supported_timezones(mut self, input: std::option::Option<bool>) -> Self {
-        self.list_supported_timezones = input;
-        self
+        self.list_supported_timezones = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDbEngineVersionsInput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                db_parameter_group_family: self.db_parameter_group_family,
-                filters: self.filters,
-                max_records: self.max_records,
-                marker: self.marker,
-                default_only: self.default_only.unwrap_or_default(),
-                list_supported_character_sets: self.list_supported_character_sets,
-                list_supported_timezones: self.list_supported_timezones,
-            },
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                db_parameter_group_family: self.db_parameter_group_family
+                ,
+                filters: self.filters
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                default_only: self.default_only
+                    .unwrap_or_default()
+                ,
+                list_supported_character_sets: self.list_supported_character_sets
+                ,
+                list_supported_timezones: self.list_supported_timezones
+                ,
+            }
         )
     }
 }
+

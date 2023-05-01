@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveProfilePermissionOutput {
+pub struct RemoveProfilePermissionOutput  {
     /// <p>An identifier for the current revision of the profile permissions.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct RemoveProfilePermissionOutput {
 }
 impl RemoveProfilePermissionOutput {
     /// <p>An identifier for the current revision of the profile permissions.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RemoveProfilePermissionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RemoveProfilePermissionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionOutput`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput).
-    pub fn builder(
-    ) -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder {
         crate::operation::remove_profile_permission::builders::RemoveProfilePermissionOutputBuilder::default()
     }
 }
@@ -43,25 +41,24 @@ impl RemoveProfilePermissionOutputBuilder {
     }
     /// <p>An identifier for the current revision of the profile permissions.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RemoveProfilePermissionOutput`](crate::operation::remove_profile_permission::RemoveProfilePermissionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::remove_profile_permission::RemoveProfilePermissionOutput {
+    pub fn build(self) -> crate::operation::remove_profile_permission::RemoveProfilePermissionOutput {
         crate::operation::remove_profile_permission::RemoveProfilePermissionOutput {
-            revision_id: self.revision_id,
+            revision_id: self.revision_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

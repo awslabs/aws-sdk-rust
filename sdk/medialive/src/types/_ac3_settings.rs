@@ -3,7 +3,7 @@
 /// Ac3 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ac3Settings {
+pub struct Ac3Settings  {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     #[doc(hidden)]
     pub bitrate: f64,
@@ -32,11 +32,11 @@ impl Ac3Settings {
         self.bitrate
     }
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
-    pub fn bitstream_mode(&self) -> std::option::Option<&crate::types::Ac3BitstreamMode> {
+    pub fn bitstream_mode(&self) -> std::option::Option<& crate::types::Ac3BitstreamMode> {
         self.bitstream_mode.as_ref()
     }
     /// Dolby Digital coding mode. Determines number of channels.
-    pub fn coding_mode(&self) -> std::option::Option<&crate::types::Ac3CodingMode> {
+    pub fn coding_mode(&self) -> std::option::Option<& crate::types::Ac3CodingMode> {
         self.coding_mode.as_ref()
     }
     /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
@@ -44,15 +44,15 @@ impl Ac3Settings {
         self.dialnorm
     }
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
-    pub fn drc_profile(&self) -> std::option::Option<&crate::types::Ac3DrcProfile> {
+    pub fn drc_profile(&self) -> std::option::Option<& crate::types::Ac3DrcProfile> {
         self.drc_profile.as_ref()
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
-    pub fn lfe_filter(&self) -> std::option::Option<&crate::types::Ac3LfeFilter> {
+    pub fn lfe_filter(&self) -> std::option::Option<& crate::types::Ac3LfeFilter> {
         self.lfe_filter.as_ref()
     }
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn metadata_control(&self) -> std::option::Option<&crate::types::Ac3MetadataControl> {
+    pub fn metadata_control(&self) -> std::option::Option<& crate::types::Ac3MetadataControl> {
         self.metadata_control.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl Ac3SettingsBuilder {
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
     pub fn bitstream_mode(mut self, input: crate::types::Ac3BitstreamMode) -> Self {
@@ -92,12 +91,8 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.
-    pub fn set_bitstream_mode(
-        mut self,
-        input: std::option::Option<crate::types::Ac3BitstreamMode>,
-    ) -> Self {
-        self.bitstream_mode = input;
-        self
+    pub fn set_bitstream_mode(mut self, input: std::option::Option<crate::types::Ac3BitstreamMode>) -> Self {
+        self.bitstream_mode = input; self
     }
     /// Dolby Digital coding mode. Determines number of channels.
     pub fn coding_mode(mut self, input: crate::types::Ac3CodingMode) -> Self {
@@ -105,12 +100,8 @@ impl Ac3SettingsBuilder {
         self
     }
     /// Dolby Digital coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: std::option::Option<crate::types::Ac3CodingMode>,
-    ) -> Self {
-        self.coding_mode = input;
-        self
+    pub fn set_coding_mode(mut self, input: std::option::Option<crate::types::Ac3CodingMode>) -> Self {
+        self.coding_mode = input; self
     }
     /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
     pub fn dialnorm(mut self, input: i32) -> Self {
@@ -119,8 +110,7 @@ impl Ac3SettingsBuilder {
     }
     /// Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.
     pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
-        self.dialnorm = input;
-        self
+        self.dialnorm = input; self
     }
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
     pub fn drc_profile(mut self, input: crate::types::Ac3DrcProfile) -> Self {
@@ -128,12 +118,8 @@ impl Ac3SettingsBuilder {
         self
     }
     /// If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.
-    pub fn set_drc_profile(
-        mut self,
-        input: std::option::Option<crate::types::Ac3DrcProfile>,
-    ) -> Self {
-        self.drc_profile = input;
-        self
+    pub fn set_drc_profile(mut self, input: std::option::Option<crate::types::Ac3DrcProfile>) -> Self {
+        self.drc_profile = input; self
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
     pub fn lfe_filter(mut self, input: crate::types::Ac3LfeFilter) -> Self {
@@ -141,12 +127,8 @@ impl Ac3SettingsBuilder {
         self
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.
-    pub fn set_lfe_filter(
-        mut self,
-        input: std::option::Option<crate::types::Ac3LfeFilter>,
-    ) -> Self {
-        self.lfe_filter = input;
-        self
+    pub fn set_lfe_filter(mut self, input: std::option::Option<crate::types::Ac3LfeFilter>) -> Self {
+        self.lfe_filter = input; self
     }
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     pub fn metadata_control(mut self, input: crate::types::Ac3MetadataControl) -> Self {
@@ -154,23 +136,29 @@ impl Ac3SettingsBuilder {
         self
     }
     /// When set to "followInput", encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn set_metadata_control(
-        mut self,
-        input: std::option::Option<crate::types::Ac3MetadataControl>,
-    ) -> Self {
-        self.metadata_control = input;
-        self
+    pub fn set_metadata_control(mut self, input: std::option::Option<crate::types::Ac3MetadataControl>) -> Self {
+        self.metadata_control = input; self
     }
     /// Consumes the builder and constructs a [`Ac3Settings`](crate::types::Ac3Settings).
     pub fn build(self) -> crate::types::Ac3Settings {
         crate::types::Ac3Settings {
-            bitrate: self.bitrate.unwrap_or_default(),
-            bitstream_mode: self.bitstream_mode,
-            coding_mode: self.coding_mode,
-            dialnorm: self.dialnorm.unwrap_or_default(),
-            drc_profile: self.drc_profile,
-            lfe_filter: self.lfe_filter,
-            metadata_control: self.metadata_control,
+            bitrate: self.bitrate
+                .unwrap_or_default()
+            ,
+            bitstream_mode: self.bitstream_mode
+            ,
+            coding_mode: self.coding_mode
+            ,
+            dialnorm: self.dialnorm
+                .unwrap_or_default()
+            ,
+            drc_profile: self.drc_profile
+            ,
+            lfe_filter: self.lfe_filter
+            ,
+            metadata_control: self.metadata_control
+            ,
         }
     }
 }
+

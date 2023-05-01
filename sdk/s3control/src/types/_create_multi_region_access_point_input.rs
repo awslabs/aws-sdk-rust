@@ -3,11 +3,11 @@
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMultiRegionAccessPointInput {
+pub struct CreateMultiRegionAccessPointInput  {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
     #[doc(hidden)]
     pub public_access_block: std::option::Option<crate::types::PublicAccessBlockConfiguration>,
@@ -17,18 +17,16 @@ pub struct CreateMultiRegionAccessPointInput {
 }
 impl CreateMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(
-        &self,
-    ) -> std::option::Option<&crate::types::PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> std::option::Option<& crate::types::PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-    pub fn regions(&self) -> std::option::Option<&[crate::types::Region]> {
+    pub fn regions(&self) -> std::option::Option<& [crate::types::Region]> {
         self.regions.as_deref()
     }
 }
@@ -44,8 +42,7 @@ impl CreateMultiRegionAccessPointInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateMultiRegionAccessPointInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) public_access_block:
-        std::option::Option<crate::types::PublicAccessBlockConfiguration>,
+    pub(crate) public_access_block: std::option::Option<crate::types::PublicAccessBlockConfiguration>,
     pub(crate) regions: std::option::Option<std::vec::Vec<crate::types::Region>>,
 }
 impl CreateMultiRegionAccessPointInputBuilder {
@@ -56,26 +53,18 @@ impl CreateMultiRegionAccessPointInputBuilder {
     }
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn public_access_block(
-        mut self,
-        input: crate::types::PublicAccessBlockConfiguration,
-    ) -> Self {
+    pub fn public_access_block(mut self, input: crate::types::PublicAccessBlockConfiguration) -> Self {
         self.public_access_block = Some(input);
         self
     }
-    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.</p> 
     /// <p>This data type is not supported for Amazon S3 on Outposts.</p>
-    pub fn set_public_access_block(
-        mut self,
-        input: std::option::Option<crate::types::PublicAccessBlockConfiguration>,
-    ) -> Self {
-        self.public_access_block = input;
-        self
+    pub fn set_public_access_block(mut self, input: std::option::Option<crate::types::PublicAccessBlockConfiguration>) -> Self {
+        self.public_access_block = input; self
     }
     /// Appends an item to `regions`.
     ///
@@ -84,24 +73,24 @@ impl CreateMultiRegionAccessPointInputBuilder {
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
     pub fn regions(mut self, input: crate::types::Region) -> Self {
         let mut v = self.regions.unwrap_or_default();
-        v.push(input);
-        self.regions = Some(v);
-        self
+                        v.push(input);
+                        self.regions = Some(v);
+                        self
     }
     /// <p>The buckets in different Regions that are associated with the Multi-Region Access Point.</p>
-    pub fn set_regions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Region>>,
-    ) -> Self {
-        self.regions = input;
-        self
+    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Region>>) -> Self {
+        self.regions = input; self
     }
     /// Consumes the builder and constructs a [`CreateMultiRegionAccessPointInput`](crate::types::CreateMultiRegionAccessPointInput).
     pub fn build(self) -> crate::types::CreateMultiRegionAccessPointInput {
         crate::types::CreateMultiRegionAccessPointInput {
-            name: self.name,
-            public_access_block: self.public_access_block,
-            regions: self.regions,
+            name: self.name
+            ,
+            public_access_block: self.public_access_block
+            ,
+            regions: self.regions
+            ,
         }
     }
 }
+

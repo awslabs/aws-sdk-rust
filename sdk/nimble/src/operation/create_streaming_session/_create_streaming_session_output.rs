@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStreamingSessionOutput {
+pub struct CreateStreamingSessionOutput  {
     /// <p>The session.</p>
     #[doc(hidden)]
     pub session: std::option::Option<crate::types::StreamingSession>,
@@ -10,20 +10,18 @@ pub struct CreateStreamingSessionOutput {
 }
 impl CreateStreamingSessionOutput {
     /// <p>The session.</p>
-    pub fn session(&self) -> std::option::Option<&crate::types::StreamingSession> {
+    pub fn session(&self) -> std::option::Option<& crate::types::StreamingSession> {
         self.session.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStreamingSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateStreamingSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamingSessionOutput`](crate::operation::create_streaming_session::CreateStreamingSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_streaming_session::builders::CreateStreamingSessionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_streaming_session::builders::CreateStreamingSessionOutputBuilder {
         crate::operation::create_streaming_session::builders::CreateStreamingSessionOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateStreamingSessionOutputBuilder {
         self
     }
     /// <p>The session.</p>
-    pub fn set_session(
-        mut self,
-        input: std::option::Option<crate::types::StreamingSession>,
-    ) -> Self {
-        self.session = input;
-        self
+    pub fn set_session(mut self, input: std::option::Option<crate::types::StreamingSession>) -> Self {
+        self.session = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateStreamingSessionOutput`](crate::operation::create_streaming_session::CreateStreamingSessionOutput).
     pub fn build(self) -> crate::operation::create_streaming_session::CreateStreamingSessionOutput {
         crate::operation::create_streaming_session::CreateStreamingSessionOutput {
-            session: self.session,
+            session: self.session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

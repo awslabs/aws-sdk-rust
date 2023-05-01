@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMeshesOutput {
+pub struct ListMeshesOutput  {
     /// <p>The list of existing service meshes.</p>
     #[doc(hidden)]
     pub meshes: std::option::Option<std::vec::Vec<crate::types::MeshRef>>,
@@ -13,19 +13,19 @@ pub struct ListMeshesOutput {
 }
 impl ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
-    pub fn meshes(&self) -> std::option::Option<&[crate::types::MeshRef]> {
+    pub fn meshes(&self) -> std::option::Option<& [crate::types::MeshRef]> {
         self.meshes.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMeshesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMeshesOutput {
     /// Creates a new builder-style object to manufacture [`ListMeshesOutput`](crate::operation::list_meshes::ListMeshesOutput).
     pub fn builder() -> crate::operation::list_meshes::builders::ListMeshesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListMeshesOutputBuilder {
     /// <p>The list of existing service meshes.</p>
     pub fn meshes(mut self, input: crate::types::MeshRef) -> Self {
         let mut v = self.meshes.unwrap_or_default();
-        v.push(input);
-        self.meshes = Some(v);
-        self
+                        v.push(input);
+                        self.meshes = Some(v);
+                        self
     }
     /// <p>The list of existing service meshes.</p>
-    pub fn set_meshes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeshRef>>,
-    ) -> Self {
-        self.meshes = input;
-        self
+    pub fn set_meshes(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeshRef>>) -> Self {
+        self.meshes = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListMeshesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMeshesOutput`](crate::operation::list_meshes::ListMeshesOutput).
     pub fn build(self) -> crate::operation::list_meshes::ListMeshesOutput {
         crate::operation::list_meshes::ListMeshesOutput {
-            meshes: self.meshes,
-            next_token: self.next_token,
+            meshes: self.meshes
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

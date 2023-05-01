@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAwsServiceAccessForOrganizationOutput {
+pub struct ListAwsServiceAccessForOrganizationOutput  {
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
     #[doc(hidden)]
-    pub enabled_service_principals:
-        std::option::Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>,
+    pub enabled_service_principals: std::option::Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListAwsServiceAccessForOrganizationOutput {
 }
 impl ListAwsServiceAccessForOrganizationOutput {
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
-    pub fn enabled_service_principals(
-        &self,
-    ) -> std::option::Option<&[crate::types::EnabledServicePrincipal]> {
+    pub fn enabled_service_principals(&self) -> std::option::Option<& [crate::types::EnabledServicePrincipal]> {
         self.enabled_service_principals.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAwsServiceAccessForOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAwsServiceAccessForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListAwsServiceAccessForOrganizationOutput`](crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput).
-    pub fn builder() -> crate::operation::list_aws_service_access_for_organization::builders::ListAwsServiceAccessForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::list_aws_service_access_for_organization::builders::ListAwsServiceAccessForOrganizationOutputBuilder {
         crate::operation::list_aws_service_access_for_organization::builders::ListAwsServiceAccessForOrganizationOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListAwsServiceAccessForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAwsServiceAccessForOrganizationOutputBuilder {
-    pub(crate) enabled_service_principals:
-        std::option::Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>,
+    pub(crate) enabled_service_principals: std::option::Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl ListAwsServiceAccessForOrganizationOutputBuilder {
     /// To override the contents of this collection use [`set_enabled_service_principals`](Self::set_enabled_service_principals).
     ///
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
-    pub fn enabled_service_principals(
-        mut self,
-        input: crate::types::EnabledServicePrincipal,
-    ) -> Self {
+    pub fn enabled_service_principals(mut self, input: crate::types::EnabledServicePrincipal) -> Self {
         let mut v = self.enabled_service_principals.unwrap_or_default();
-        v.push(input);
-        self.enabled_service_principals = Some(v);
-        self
+                        v.push(input);
+                        self.enabled_service_principals = Some(v);
+                        self
     }
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
-    pub fn set_enabled_service_principals(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>,
-    ) -> Self {
-        self.enabled_service_principals = input;
-        self
+    pub fn set_enabled_service_principals(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnabledServicePrincipal>>) -> Self {
+        self.enabled_service_principals = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl ListAwsServiceAccessForOrganizationOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAwsServiceAccessForOrganizationOutput`](crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput).
-    pub fn build(self) -> crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput{
+    pub fn build(self) -> crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput {
         crate::operation::list_aws_service_access_for_organization::ListAwsServiceAccessForOrganizationOutput {
             enabled_service_principals: self.enabled_service_principals
             ,
@@ -98,3 +86,4 @@ impl ListAwsServiceAccessForOrganizationOutputBuilder {
         }
     }
 }
+

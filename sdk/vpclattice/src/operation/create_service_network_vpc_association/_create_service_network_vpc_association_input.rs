@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceNetworkVpcAssociationInput {
+pub struct CreateServiceNetworkVpcAssociationInput  {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -17,37 +17,33 @@ pub struct CreateServiceNetworkVpcAssociationInput {
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The tags for the association.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateServiceNetworkVpcAssociationInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
-    pub fn service_network_identifier(&self) -> std::option::Option<&str> {
+    pub fn service_network_identifier(&self) -> std::option::Option<& str> {
         self.service_network_identifier.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_identifier(&self) -> std::option::Option<&str> {
+    pub fn vpc_identifier(&self) -> std::option::Option<& str> {
         self.vpc_identifier.as_deref()
     }
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The tags for the association.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateServiceNetworkVpcAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkVpcAssociationInput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput).
-    pub fn builder() -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder{
+    pub fn builder() -> crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder {
         crate::operation::create_service_network_vpc_association::builders::CreateServiceNetworkVpcAssociationInputBuilder::default()
     }
 }
@@ -60,8 +56,7 @@ pub struct CreateServiceNetworkVpcAssociationInputBuilder {
     pub(crate) service_network_identifier: std::option::Option<std::string::String>,
     pub(crate) vpc_identifier: std::option::Option<std::string::String>,
     pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateServiceNetworkVpcAssociationInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -71,8 +66,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
     pub fn service_network_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,12 +74,8 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_network_identifier = input;
-        self
+    pub fn set_service_network_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_network_identifier = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +84,7 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_identifier = input;
-        self
+        self.vpc_identifier = input; self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -104,45 +93,31 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Control traffic to resources using security groups</a> in the <i>Amazon VPC User Guide</i>.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the association.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags for the association.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkVpcAssociationInput`](crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput).
-    pub fn build(self) -> Result<crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationInput {
                 client_token: self.client_token
@@ -159,3 +134,4 @@ impl CreateServiceNetworkVpcAssociationInputBuilder {
         )
     }
 }
+

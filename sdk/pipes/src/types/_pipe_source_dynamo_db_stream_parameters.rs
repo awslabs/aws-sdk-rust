@@ -3,7 +3,7 @@
 /// <p>The parameters for using a DynamoDB stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeSourceDynamoDbStreamParameters {
+pub struct PipeSourceDynamoDbStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -12,8 +12,7 @@ pub struct PipeSourceDynamoDbStreamParameters {
     pub dead_letter_config: std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     #[doc(hidden)]
-    pub on_partial_batch_item_failure:
-        std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
+    pub on_partial_batch_item_failure: std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -36,13 +35,11 @@ impl PipeSourceDynamoDbStreamParameters {
         self.batch_size
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::types::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        &self,
-    ) -> std::option::Option<&crate::types::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> std::option::Option<& crate::types::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -62,9 +59,7 @@ impl PipeSourceDynamoDbStreamParameters {
         self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(
-        &self,
-    ) -> std::option::Option<&crate::types::DynamoDbStreamStartPosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::types::DynamoDbStreamStartPosition> {
         self.starting_position.as_ref()
     }
 }
@@ -81,8 +76,7 @@ impl PipeSourceDynamoDbStreamParameters {
 pub struct PipeSourceDynamoDbStreamParametersBuilder {
     pub(crate) batch_size: std::option::Option<i32>,
     pub(crate) dead_letter_config: std::option::Option<crate::types::DeadLetterConfig>,
-    pub(crate) on_partial_batch_item_failure:
-        std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
+    pub(crate) on_partial_batch_item_failure: std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
     pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
     pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
     pub(crate) maximum_retry_attempts: std::option::Option<i32>,
@@ -97,8 +91,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
@@ -106,28 +99,17 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         self
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn set_dead_letter_config(
-        mut self,
-        input: std::option::Option<crate::types::DeadLetterConfig>,
-    ) -> Self {
-        self.dead_letter_config = input;
-        self
+    pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::types::DeadLetterConfig>) -> Self {
+        self.dead_letter_config = input; self
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        mut self,
-        input: crate::types::OnPartialBatchItemFailureStreams,
-    ) -> Self {
+    pub fn on_partial_batch_item_failure(mut self, input: crate::types::OnPartialBatchItemFailureStreams) -> Self {
         self.on_partial_batch_item_failure = Some(input);
         self
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn set_on_partial_batch_item_failure(
-        mut self,
-        input: std::option::Option<crate::types::OnPartialBatchItemFailureStreams>,
-    ) -> Self {
-        self.on_partial_batch_item_failure = input;
-        self
+    pub fn set_on_partial_batch_item_failure(mut self, input: std::option::Option<crate::types::OnPartialBatchItemFailureStreams>) -> Self {
+        self.on_partial_batch_item_failure = input; self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -135,12 +117,8 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.maximum_batching_window_in_seconds = input;
-        self
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+        self.maximum_batching_window_in_seconds = input; self
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
     pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -149,8 +127,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
     }
     /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
     pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_record_age_in_seconds = input;
-        self
+        self.maximum_record_age_in_seconds = input; self
     }
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
     pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -159,8 +136,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
     }
     /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
     pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_retry_attempts = input;
-        self
+        self.maximum_retry_attempts = input; self
     }
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -169,8 +145,7 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
     }
     /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-        self.parallelization_factor = input;
-        self
+        self.parallelization_factor = input; self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
     pub fn starting_position(mut self, input: crate::types::DynamoDbStreamStartPosition) -> Self {
@@ -178,24 +153,29 @@ impl PipeSourceDynamoDbStreamParametersBuilder {
         self
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn set_starting_position(
-        mut self,
-        input: std::option::Option<crate::types::DynamoDbStreamStartPosition>,
-    ) -> Self {
-        self.starting_position = input;
-        self
+    pub fn set_starting_position(mut self, input: std::option::Option<crate::types::DynamoDbStreamStartPosition>) -> Self {
+        self.starting_position = input; self
     }
     /// Consumes the builder and constructs a [`PipeSourceDynamoDbStreamParameters`](crate::types::PipeSourceDynamoDbStreamParameters).
     pub fn build(self) -> crate::types::PipeSourceDynamoDbStreamParameters {
         crate::types::PipeSourceDynamoDbStreamParameters {
-            batch_size: self.batch_size,
-            dead_letter_config: self.dead_letter_config,
-            on_partial_batch_item_failure: self.on_partial_batch_item_failure,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-            maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-            maximum_retry_attempts: self.maximum_retry_attempts,
-            parallelization_factor: self.parallelization_factor,
-            starting_position: self.starting_position,
+            batch_size: self.batch_size
+            ,
+            dead_letter_config: self.dead_letter_config
+            ,
+            on_partial_batch_item_failure: self.on_partial_batch_item_failure
+            ,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+            ,
+            maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+            ,
+            maximum_retry_attempts: self.maximum_retry_attempts
+            ,
+            parallelization_factor: self.parallelization_factor
+            ,
+            starting_position: self.starting_position
+            ,
         }
     }
 }
+

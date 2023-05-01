@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceNetworkOutput {
+pub struct UpdateServiceNetworkOutput  {
     /// <p>The ID of the service network.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,31 +19,30 @@ pub struct UpdateServiceNetworkOutput {
 }
 impl UpdateServiceNetworkOutput {
     /// <p>The ID of the service network.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the service network.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of IAM policy.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::types::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::types::AuthType> {
         self.auth_type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateServiceNetworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateServiceNetworkOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceNetworkOutput`](crate::operation::update_service_network::UpdateServiceNetworkOutput).
-    pub fn builder(
-    ) -> crate::operation::update_service_network::builders::UpdateServiceNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::update_service_network::builders::UpdateServiceNetworkOutputBuilder {
         crate::operation::update_service_network::builders::UpdateServiceNetworkOutputBuilder::default()
     }
 }
@@ -66,8 +65,7 @@ impl UpdateServiceNetworkOutputBuilder {
     }
     /// <p>The ID of the service network.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the service network.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +74,7 @@ impl UpdateServiceNetworkOutputBuilder {
     }
     /// <p>The name of the service network.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +83,7 @@ impl UpdateServiceNetworkOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service network.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The type of IAM policy.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
@@ -96,26 +92,30 @@ impl UpdateServiceNetworkOutputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input;
-        self
+        self.auth_type = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkOutput`](crate::operation::update_service_network::UpdateServiceNetworkOutput).
     pub fn build(self) -> crate::operation::update_service_network::UpdateServiceNetworkOutput {
         crate::operation::update_service_network::UpdateServiceNetworkOutput {
-            id: self.id,
-            name: self.name,
-            arn: self.arn,
-            auth_type: self.auth_type,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            auth_type: self.auth_type
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

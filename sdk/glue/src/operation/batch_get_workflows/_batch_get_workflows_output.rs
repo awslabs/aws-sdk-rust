@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetWorkflowsOutput {
+pub struct BatchGetWorkflowsOutput  {
     /// <p>A list of workflow resource metadata.</p>
     #[doc(hidden)]
     pub workflows: std::option::Option<std::vec::Vec<crate::types::Workflow>>,
@@ -13,23 +13,22 @@ pub struct BatchGetWorkflowsOutput {
 }
 impl BatchGetWorkflowsOutput {
     /// <p>A list of workflow resource metadata.</p>
-    pub fn workflows(&self) -> std::option::Option<&[crate::types::Workflow]> {
+    pub fn workflows(&self) -> std::option::Option<& [crate::types::Workflow]> {
         self.workflows.as_deref()
     }
     /// <p>A list of names of workflows not found.</p>
-    pub fn missing_workflows(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn missing_workflows(&self) -> std::option::Option<& [std::string::String]> {
         self.missing_workflows.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetWorkflowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetWorkflowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetWorkflowsOutput`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsOutputBuilder {
         crate::operation::batch_get_workflows::builders::BatchGetWorkflowsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl BatchGetWorkflowsOutputBuilder {
     /// <p>A list of workflow resource metadata.</p>
     pub fn workflows(mut self, input: crate::types::Workflow) -> Self {
         let mut v = self.workflows.unwrap_or_default();
-        v.push(input);
-        self.workflows = Some(v);
-        self
+                        v.push(input);
+                        self.workflows = Some(v);
+                        self
     }
     /// <p>A list of workflow resource metadata.</p>
-    pub fn set_workflows(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Workflow>>,
-    ) -> Self {
-        self.workflows = input;
-        self
+    pub fn set_workflows(mut self, input: std::option::Option<std::vec::Vec<crate::types::Workflow>>) -> Self {
+        self.workflows = input; self
     }
     /// Appends an item to `missing_workflows`.
     ///
@@ -69,33 +64,32 @@ impl BatchGetWorkflowsOutputBuilder {
     /// <p>A list of names of workflows not found.</p>
     pub fn missing_workflows(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.missing_workflows.unwrap_or_default();
-        v.push(input.into());
-        self.missing_workflows = Some(v);
-        self
+                        v.push(input.into());
+                        self.missing_workflows = Some(v);
+                        self
     }
     /// <p>A list of names of workflows not found.</p>
-    pub fn set_missing_workflows(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.missing_workflows = input;
-        self
+    pub fn set_missing_workflows(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.missing_workflows = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetWorkflowsOutput`](crate::operation::batch_get_workflows::BatchGetWorkflowsOutput).
     pub fn build(self) -> crate::operation::batch_get_workflows::BatchGetWorkflowsOutput {
         crate::operation::batch_get_workflows::BatchGetWorkflowsOutput {
-            workflows: self.workflows,
-            missing_workflows: self.missing_workflows,
+            workflows: self.workflows
+            ,
+            missing_workflows: self.missing_workflows
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

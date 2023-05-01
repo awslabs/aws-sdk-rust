@@ -3,14 +3,14 @@
 /// <p>Container for the parameters to the <code>DescribeDomains</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainsInput {
+pub struct DescribeDomainsInput  {
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
     #[doc(hidden)]
     pub domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeDomainsInput {
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
-    pub fn domain_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domain_names(&self) -> std::option::Option<& [std::string::String]> {
         self.domain_names.as_deref()
     }
 }
@@ -35,27 +35,22 @@ impl DescribeDomainsInputBuilder {
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
     pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.domain_names.unwrap_or_default();
-        v.push(input.into());
-        self.domain_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.domain_names = Some(v);
+                        self
     }
     /// <p>Array of OpenSearch Service domain names that you want information about. If you don't specify any domains, OpenSearch Service returns information about all domains owned by the account.</p>
-    pub fn set_domain_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.domain_names = input;
-        self
+    pub fn set_domain_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.domain_names = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDomainsInput`](crate::operation::describe_domains::DescribeDomainsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_domains::DescribeDomainsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_domains::DescribeDomainsInput {
-            domain_names: self.domain_names,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_domains::DescribeDomainsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_domains::DescribeDomainsInput {
+                domain_names: self.domain_names
+                ,
+            }
+        )
     }
 }
+

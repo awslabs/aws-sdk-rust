@@ -3,7 +3,7 @@
 /// <p>Returns policies attached to an object in pagination fashion inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectPolicies</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectPolicies {
+pub struct BatchListObjectPolicies  {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::types::ObjectReference>,
@@ -16,11 +16,11 @@ pub struct BatchListObjectPolicies {
 }
 impl BatchListObjectPolicies {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -50,12 +50,8 @@ impl BatchListObjectPoliciesBuilder {
         self
     }
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl BatchListObjectPoliciesBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,15 +69,18 @@ impl BatchListObjectPoliciesBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`BatchListObjectPolicies`](crate::types::BatchListObjectPolicies).
     pub fn build(self) -> crate::types::BatchListObjectPolicies {
         crate::types::BatchListObjectPolicies {
-            object_reference: self.object_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
+            object_reference: self.object_reference
+            ,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
         }
     }
 }
+

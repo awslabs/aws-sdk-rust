@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprovisionIpamPoolCidrInput {
+pub struct DeprovisionIpamPoolCidrInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -19,19 +19,17 @@ impl DeprovisionIpamPoolCidrInput {
         self.dry_run
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
-    pub fn ipam_pool_id(&self) -> std::option::Option<&str> {
+    pub fn ipam_pool_id(&self) -> std::option::Option<& str> {
         self.ipam_pool_id.as_deref()
     }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> std::option::Option<& str> {
         self.cidr.as_deref()
     }
 }
 impl DeprovisionIpamPoolCidrInput {
     /// Creates a new builder-style object to manufacture [`DeprovisionIpamPoolCidrInput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput).
-    pub fn builder(
-    ) -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder
-    {
+    pub fn builder() -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder {
         crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
     pub fn ipam_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     }
     /// <p>The ID of the pool that has the CIDR you want to deprovision.</p>
     pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_pool_id = input;
-        self
+        self.ipam_pool_id = input; self
     }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DeprovisionIpamPoolCidrInputBuilder {
     }
     /// <p>The CIDR which you want to deprovision from the pool.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// Consumes the builder and constructs a [`DeprovisionIpamPoolCidrInput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrInput {
-                dry_run: self.dry_run,
-                ipam_pool_id: self.ipam_pool_id,
-                cidr: self.cidr,
-            },
+                dry_run: self.dry_run
+                ,
+                ipam_pool_id: self.ipam_pool_id
+                ,
+                cidr: self.cidr
+                ,
+            }
         )
     }
 }
+

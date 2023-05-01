@@ -3,7 +3,7 @@
 /// <p>The log delivery option to send data to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogDeliveryOptions {
+pub struct CloudWatchLogDeliveryOptions  {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub log_type: std::option::Option<crate::types::LogType>,
@@ -13,11 +13,11 @@ pub struct CloudWatchLogDeliveryOptions {
 }
 impl CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub fn log_type(&self) -> std::option::Option<&crate::types::LogType> {
+    pub fn log_type(&self) -> std::option::Option<& crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     }
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     pub fn set_log_type(mut self, input: std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input;
-        self
+        self.log_type = input; self
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CloudWatchLogDeliveryOptionsBuilder {
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// Consumes the builder and constructs a [`CloudWatchLogDeliveryOptions`](crate::types::CloudWatchLogDeliveryOptions).
     pub fn build(self) -> crate::types::CloudWatchLogDeliveryOptions {
         crate::types::CloudWatchLogDeliveryOptions {
-            log_type: self.log_type,
-            log_group_name: self.log_group_name,
+            log_type: self.log_type
+            ,
+            log_group_name: self.log_group_name
+            ,
         }
     }
 }
+

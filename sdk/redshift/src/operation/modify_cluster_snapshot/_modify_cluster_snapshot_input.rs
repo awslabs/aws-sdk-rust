@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterSnapshotInput {
+pub struct ModifyClusterSnapshotInput  {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
-    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> 
+    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
@@ -17,11 +17,11 @@ pub struct ModifyClusterSnapshotInput {
 }
 impl ModifyClusterSnapshotInput {
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
-    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> 
+    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
@@ -33,9 +33,7 @@ impl ModifyClusterSnapshotInput {
 }
 impl ModifyClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder {
         crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder::default()
     }
 }
@@ -55,26 +53,21 @@ impl ModifyClusterSnapshotInputBuilder {
         self
     }
     /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.snapshot_identifier = input;
-        self
+    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.snapshot_identifier = input; self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
-    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> 
+    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = Some(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p>
-    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely.</p> 
+    /// <p>If the manual snapshot falls outside of the new retention period, you can specify the force option to immediately delete the snapshot.</p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input;
-        self
+        self.manual_snapshot_retention_period = input; self
     }
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -83,22 +76,21 @@ impl ModifyClusterSnapshotInputBuilder {
     }
     /// <p>A Boolean option to override an exception if the retention period has already passed.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotInput`](crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_cluster_snapshot::ModifyClusterSnapshotInput {
-                snapshot_identifier: self.snapshot_identifier,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-                force: self.force.unwrap_or_default(),
-            },
+                snapshot_identifier: self.snapshot_identifier
+                ,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period
+                ,
+                force: self.force
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

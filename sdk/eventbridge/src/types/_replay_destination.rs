@@ -3,7 +3,7 @@
 /// <p>A <code>ReplayDestination</code> object that contains details about a replay.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplayDestination {
+pub struct ReplayDestination  {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReplayDestination {
 }
 impl ReplayDestination {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn filter_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.filter_arns.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ReplayDestinationBuilder {
     }
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Appends an item to `filter_arns`.
     ///
@@ -53,23 +52,22 @@ impl ReplayDestinationBuilder {
     /// <p>A list of ARNs for rules to replay events to.</p>
     pub fn filter_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.filter_arns.unwrap_or_default();
-        v.push(input.into());
-        self.filter_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.filter_arns = Some(v);
+                        self
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn set_filter_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.filter_arns = input;
-        self
+    pub fn set_filter_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.filter_arns = input; self
     }
     /// Consumes the builder and constructs a [`ReplayDestination`](crate::types::ReplayDestination).
     pub fn build(self) -> crate::types::ReplayDestination {
         crate::types::ReplayDestination {
-            arn: self.arn,
-            filter_arns: self.filter_arns,
+            arn: self.arn
+            ,
+            filter_arns: self.filter_arns
+            ,
         }
     }
 }
+

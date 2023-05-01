@@ -2,26 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartExecutionInput {
+pub struct StartExecutionInput  {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
-    /// </note>
+    /// <p>The string that contains the JSON input data for the execution, for example:</p> 
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note> 
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p> 
+    /// </note> 
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
     pub input: std::option::Option<std::string::String>,
@@ -31,36 +31,36 @@ pub struct StartExecutionInput {
 }
 impl StartExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
-    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
-    /// </note>
+    /// <p>The string that contains the JSON input data for the execution, for example:</p> 
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note> 
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p> 
+    /// </note> 
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    pub fn trace_header(&self) -> std::option::Option<&str> {
+    pub fn trace_header(&self) -> std::option::Option<& str> {
         self.trace_header.as_deref()
     }
 }
-impl std::fmt::Debug for StartExecutionInput {
+impl  std::fmt::Debug for StartExecutionInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartExecutionInput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -93,58 +93,52 @@ impl StartExecutionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.state_machine_arn = input;
-        self
+    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.state_machine_arn = input; self
     }
-    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
-    /// <p>A name must <i>not</i> contain:</p>
-    /// <ul>
-    /// <li> <p>white space</p> </li>
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
-    /// </ul>
+    /// <p>The name of the execution. This name must be unique for your Amazon Web Services account, region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p> 
+    /// <p>A name must <i>not</i> contain:</p> 
+    /// <ul> 
+    /// <li> <p>white space</p> </li> 
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
+    /// </ul> 
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
-    /// </note>
+    /// <p>The string that contains the JSON input data for the execution, for example:</p> 
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note> 
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p> 
+    /// </note> 
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
         self.input = Some(input.into());
         self
     }
-    /// <p>The string that contains the JSON input data for the execution, for example:</p>
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
-    /// </note>
+    /// <p>The string that contains the JSON input data for the execution, for example:</p> 
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note> 
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p> 
+    /// </note> 
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,22 +147,22 @@ impl StartExecutionInputBuilder {
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
     pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// Consumes the builder and constructs a [`StartExecutionInput`](crate::operation::start_execution::StartExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_execution::StartExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_execution::StartExecutionInput {
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            input: self.input,
-            trace_header: self.trace_header,
-        })
+    pub fn build(self) -> Result<crate::operation::start_execution::StartExecutionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_execution::StartExecutionInput {
+                state_machine_arn: self.state_machine_arn
+                ,
+                name: self.name
+                ,
+                input: self.input
+                ,
+                trace_header: self.trace_header
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for StartExecutionInputBuilder {
@@ -181,3 +175,4 @@ impl std::fmt::Debug for StartExecutionInputBuilder {
         formatter.finish()
     }
 }
+

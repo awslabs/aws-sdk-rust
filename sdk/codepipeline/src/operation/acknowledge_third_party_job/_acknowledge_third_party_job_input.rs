@@ -3,7 +3,7 @@
 /// <p>Represents the input of an AcknowledgeThirdPartyJob action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeThirdPartyJobInput {
+pub struct AcknowledgeThirdPartyJobInput  {
     /// <p>The unique system-generated ID of the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -16,23 +16,21 @@ pub struct AcknowledgeThirdPartyJobInput {
 }
 impl AcknowledgeThirdPartyJobInput {
     /// <p>The unique system-generated ID of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
-    pub fn nonce(&self) -> std::option::Option<&str> {
+    pub fn nonce(&self) -> std::option::Option<& str> {
         self.nonce.as_deref()
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl AcknowledgeThirdPartyJobInput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeThirdPartyJobInput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput).
-    pub fn builder(
-    ) -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder {
         crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder::default()
     }
 }
@@ -53,8 +51,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
     }
     /// <p>The unique system-generated ID of the job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +60,7 @@ impl AcknowledgeThirdPartyJobInputBuilder {
     }
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <code>GetThirdPartyJobDetails</code> request.</p>
     pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nonce = input;
-        self
+        self.nonce = input; self
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,22 +69,20 @@ impl AcknowledgeThirdPartyJobInputBuilder {
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`AcknowledgeThirdPartyJobInput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobInput {
-                job_id: self.job_id,
-                nonce: self.nonce,
-                client_token: self.client_token,
-            },
+                job_id: self.job_id
+                ,
+                nonce: self.nonce
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

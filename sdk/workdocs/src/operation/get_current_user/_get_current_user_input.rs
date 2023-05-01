@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetCurrentUserInput {
+pub struct GetCurrentUserInput  {
     /// <p>Amazon WorkDocs authentication token.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
 }
 impl GetCurrentUserInput {
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn authentication_token(&self) -> std::option::Option<&str> {
+    pub fn authentication_token(&self) -> std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetCurrentUserInput {
+impl  std::fmt::Debug for GetCurrentUserInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCurrentUserInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -40,23 +40,17 @@ impl GetCurrentUserInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_token = input; self
     }
     /// Consumes the builder and constructs a [`GetCurrentUserInput`](crate::operation::get_current_user::GetCurrentUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_current_user::GetCurrentUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_current_user::GetCurrentUserInput {
-            authentication_token: self.authentication_token,
-        })
+    pub fn build(self) -> Result<crate::operation::get_current_user::GetCurrentUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_current_user::GetCurrentUserInput {
+                authentication_token: self.authentication_token
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for GetCurrentUserInputBuilder {
@@ -66,3 +60,4 @@ impl std::fmt::Debug for GetCurrentUserInputBuilder {
         formatter.finish()
     }
 }
+

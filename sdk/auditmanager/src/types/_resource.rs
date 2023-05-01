@@ -3,38 +3,38 @@
 /// <p> A system asset that's evaluated in an Audit Manager assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resource {
+pub struct Resource  {
     /// <p> The Amazon Resource Name (ARN) for the resource. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p> The value of the resource. </p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
-    /// <ul>
-    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
-    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
-    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p> 
+    /// <ul> 
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li> 
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li> 
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub compliance_check: std::option::Option<std::string::String>,
 }
 impl Resource {
     /// <p> The Amazon Resource Name (ARN) for the resource. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The value of the resource. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
-    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
-    /// <ul>
-    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
-    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
-    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p> 
+    /// <ul> 
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li> 
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li> 
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li> 
     /// </ul>
-    pub fn compliance_check(&self) -> std::option::Option<&str> {
+    pub fn compliance_check(&self) -> std::option::Option<& str> {
         self.compliance_check.as_deref()
     }
 }
@@ -61,8 +61,7 @@ impl ResourceBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) for the resource. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p> The value of the resource. </p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,35 +70,37 @@ impl ResourceBuilder {
     }
     /// <p> The value of the resource. </p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
-    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
-    /// <ul>
-    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
-    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
-    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p> 
+    /// <ul> 
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li> 
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li> 
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li> 
     /// </ul>
     pub fn compliance_check(mut self, input: impl Into<std::string::String>) -> Self {
         self.compliance_check = Some(input.into());
         self
     }
-    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
-    /// <ul>
-    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li>
-    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li>
-    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li>
+    /// <p> The evaluation status for a resource that was assessed when collecting compliance check evidence. </p> 
+    /// <ul> 
+    /// <li> <p>Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config reports a <i>Non-compliant</i> result.</p> </li> 
+    /// <li> <p>Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a <i>Compliant</i> result.</p> </li> 
+    /// <li> <p>If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but those services aren't enabled. This is also the case if the resource assessment uses an underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail). </p> </li> 
     /// </ul>
     pub fn set_compliance_check(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compliance_check = input;
-        self
+        self.compliance_check = input; self
     }
     /// Consumes the builder and constructs a [`Resource`](crate::types::Resource).
     pub fn build(self) -> crate::types::Resource {
         crate::types::Resource {
-            arn: self.arn,
-            value: self.value,
-            compliance_check: self.compliance_check,
+            arn: self.arn
+            ,
+            value: self.value
+            ,
+            compliance_check: self.compliance_check
+            ,
         }
     }
 }
+

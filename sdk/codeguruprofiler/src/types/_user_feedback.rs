@@ -3,14 +3,14 @@
 /// <p>Feedback that can be submitted for each instance of an anomaly by the user. Feedback is be used for improvements in generating recommendations for the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserFeedback {
+pub struct UserFeedback  {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::FeedbackType>,
 }
 impl UserFeedback {
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::FeedbackType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::FeedbackType> {
         self.r#type.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl UserFeedbackBuilder {
     }
     /// <p>Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the user about whether the recommendation is useful or not.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::FeedbackType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`UserFeedback`](crate::types::UserFeedback).
     pub fn build(self) -> crate::types::UserFeedback {
         crate::types::UserFeedback {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

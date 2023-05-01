@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipestate = unimplemented!();
 /// match pipestate {
@@ -39,22 +39,14 @@
 /// Specifically, when `pipestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipeState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -79,70 +71,59 @@ pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PipeState {
-    fn from(s: &str) -> Self {
-        match s {
-            "CREATE_FAILED" => PipeState::CreateFailed,
-            "CREATING" => PipeState::Creating,
-            "DELETING" => PipeState::Deleting,
-            "RUNNING" => PipeState::Running,
-            "STARTING" => PipeState::Starting,
-            "START_FAILED" => PipeState::StartFailed,
-            "STOPPED" => PipeState::Stopped,
-            "STOPPING" => PipeState::Stopping,
-            "STOP_FAILED" => PipeState::StopFailed,
-            "UPDATE_FAILED" => PipeState::UpdateFailed,
-            "UPDATING" => PipeState::Updating,
-            other => PipeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CREATE_FAILED" => PipeState::CreateFailed,
+"CREATING" => PipeState::Creating,
+"DELETING" => PipeState::Deleting,
+"RUNNING" => PipeState::Running,
+"STARTING" => PipeState::Starting,
+"START_FAILED" => PipeState::StartFailed,
+"STOPPED" => PipeState::Stopped,
+"STOPPING" => PipeState::Stopping,
+"STOP_FAILED" => PipeState::StopFailed,
+"UPDATE_FAILED" => PipeState::UpdateFailed,
+"UPDATING" => PipeState::Updating,
+other => PipeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for PipeState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PipeState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PipeState::from(s))
+                }
+            }
 impl PipeState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            PipeState::CreateFailed => "CREATE_FAILED",
-            PipeState::Creating => "CREATING",
-            PipeState::Deleting => "DELETING",
-            PipeState::Running => "RUNNING",
-            PipeState::Starting => "STARTING",
-            PipeState::StartFailed => "START_FAILED",
-            PipeState::Stopped => "STOPPED",
-            PipeState::Stopping => "STOPPING",
-            PipeState::StopFailed => "STOP_FAILED",
-            PipeState::UpdateFailed => "UPDATE_FAILED",
-            PipeState::Updating => "UPDATING",
-            PipeState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETING",
-            "RUNNING",
-            "STARTING",
-            "START_FAILED",
-            "STOPPED",
-            "STOPPING",
-            "STOP_FAILED",
-            "UPDATE_FAILED",
-            "UPDATING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    PipeState::CreateFailed => "CREATE_FAILED",
+    PipeState::Creating => "CREATING",
+    PipeState::Deleting => "DELETING",
+    PipeState::Running => "RUNNING",
+    PipeState::Starting => "STARTING",
+    PipeState::StartFailed => "START_FAILED",
+    PipeState::Stopped => "STOPPED",
+    PipeState::Stopping => "STOPPING",
+    PipeState::StopFailed => "STOP_FAILED",
+    PipeState::UpdateFailed => "UPDATE_FAILED",
+    PipeState::Updating => "UPDATING",
+    PipeState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CREATE_FAILED", "CREATING", "DELETING", "RUNNING", "STARTING", "START_FAILED", "STOPPED", "STOPPING", "STOP_FAILED", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for PipeState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

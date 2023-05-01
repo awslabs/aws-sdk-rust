@@ -3,13 +3,13 @@
 /// <p>Results of a dry run performed in an update domain request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DryRunResults {
-    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
-    /// <ul>
-    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li>
-    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li>
-    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
-    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
+pub struct DryRunResults  {
+    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li> 
+    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li> 
+    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li> 
+    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub deployment_type: std::option::Option<std::string::String>,
@@ -18,18 +18,18 @@ pub struct DryRunResults {
     pub message: std::option::Option<std::string::String>,
 }
 impl DryRunResults {
-    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
-    /// <ul>
-    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li>
-    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li>
-    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
-    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
+    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li> 
+    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li> 
+    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li> 
+    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li> 
     /// </ul>
-    pub fn deployment_type(&self) -> std::option::Option<&str> {
+    pub fn deployment_type(&self) -> std::option::Option<& str> {
         self.deployment_type.as_deref()
     }
     /// <p>A message corresponding to the deployment type.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -48,27 +48,26 @@ pub struct DryRunResultsBuilder {
     pub(crate) message: std::option::Option<std::string::String>,
 }
 impl DryRunResultsBuilder {
-    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
-    /// <ul>
-    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li>
-    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li>
-    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
-    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
+    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li> 
+    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li> 
+    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li> 
+    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li> 
     /// </ul>
     pub fn deployment_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.deployment_type = Some(input.into());
         self
     }
-    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
-    /// <ul>
-    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li>
-    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li>
-    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li>
-    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li>
+    /// <p> Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Blue/Green</b> - The update requires a blue/green deployment.</p> </li> 
+    /// <li> <p> <b>DynamicUpdate</b> - No blue/green deployment required</p> </li> 
+    /// <li> <p> <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again after the update is complete.</p> </li> 
+    /// <li> <p> <b>None</b> - The request doesn't include any configuration changes.</p> </li> 
     /// </ul>
     pub fn set_deployment_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_type = input;
-        self
+        self.deployment_type = input; self
     }
     /// <p>A message corresponding to the deployment type.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,14 +76,16 @@ impl DryRunResultsBuilder {
     }
     /// <p>A message corresponding to the deployment type.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`DryRunResults`](crate::types::DryRunResults).
     pub fn build(self) -> crate::types::DryRunResults {
         crate::types::DryRunResults {
-            deployment_type: self.deployment_type,
-            message: self.message,
+            deployment_type: self.deployment_type
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

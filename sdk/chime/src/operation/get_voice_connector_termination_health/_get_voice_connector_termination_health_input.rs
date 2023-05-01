@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceConnectorTerminationHealthInput {
+pub struct GetVoiceConnectorTerminationHealthInput  {
     /// <p>The Amazon Chime Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceConnectorTerminationHealthInput {
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
 }
 impl GetVoiceConnectorTerminationHealthInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceConnectorTerminationHealthInput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput).
-    pub fn builder() -> crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder{
+    pub fn builder() -> crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder {
         crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl GetVoiceConnectorTerminationHealthInputBuilder {
         self
     }
     /// <p>The Amazon Chime Voice Connector ID.</p>
-    pub fn set_voice_connector_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_id = input;
-        self
+    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_id = input; self
     }
     /// Consumes the builder and constructs a [`GetVoiceConnectorTerminationHealthInput`](crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput).
-    pub fn build(self) -> Result<crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealthInput {
                 voice_connector_id: self.voice_connector_id
@@ -50,3 +46,4 @@ impl GetVoiceConnectorTerminationHealthInputBuilder {
         )
     }
 }
+

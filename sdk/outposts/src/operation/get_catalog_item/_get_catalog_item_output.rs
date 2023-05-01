@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCatalogItemOutput {
+pub struct GetCatalogItemOutput  {
     /// <p>Information about this catalog item.</p>
     #[doc(hidden)]
     pub catalog_item: std::option::Option<crate::types::CatalogItem>,
@@ -10,15 +10,15 @@ pub struct GetCatalogItemOutput {
 }
 impl GetCatalogItemOutput {
     /// <p>Information about this catalog item.</p>
-    pub fn catalog_item(&self) -> std::option::Option<&crate::types::CatalogItem> {
+    pub fn catalog_item(&self) -> std::option::Option<& crate::types::CatalogItem> {
         self.catalog_item.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCatalogItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCatalogItemOutput {
     /// Creates a new builder-style object to manufacture [`GetCatalogItemOutput`](crate::operation::get_catalog_item::GetCatalogItemOutput).
     pub fn builder() -> crate::operation::get_catalog_item::builders::GetCatalogItemOutputBuilder {
@@ -40,27 +40,25 @@ impl GetCatalogItemOutputBuilder {
         self
     }
     /// <p>Information about this catalog item.</p>
-    pub fn set_catalog_item(
-        mut self,
-        input: std::option::Option<crate::types::CatalogItem>,
-    ) -> Self {
-        self.catalog_item = input;
-        self
+    pub fn set_catalog_item(mut self, input: std::option::Option<crate::types::CatalogItem>) -> Self {
+        self.catalog_item = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCatalogItemOutput`](crate::operation::get_catalog_item::GetCatalogItemOutput).
     pub fn build(self) -> crate::operation::get_catalog_item::GetCatalogItemOutput {
         crate::operation::get_catalog_item::GetCatalogItemOutput {
-            catalog_item: self.catalog_item,
+            catalog_item: self.catalog_item
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

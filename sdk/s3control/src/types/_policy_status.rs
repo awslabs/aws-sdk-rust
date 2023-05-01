@@ -3,7 +3,7 @@
 /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyStatus {
+pub struct PolicyStatus  {
     /// <p></p>
     #[doc(hidden)]
     pub is_public: bool,
@@ -35,13 +35,15 @@ impl PolicyStatusBuilder {
     }
     /// <p></p>
     pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_public = input;
-        self
+        self.is_public = input; self
     }
     /// Consumes the builder and constructs a [`PolicyStatus`](crate::types::PolicyStatus).
     pub fn build(self) -> crate::types::PolicyStatus {
         crate::types::PolicyStatus {
-            is_public: self.is_public.unwrap_or_default(),
+            is_public: self.is_public
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

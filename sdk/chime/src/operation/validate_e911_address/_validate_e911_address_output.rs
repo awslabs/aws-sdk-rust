@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateE911AddressOutput {
+pub struct ValidateE911AddressOutput  {
     /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
     #[doc(hidden)]
     pub validation_result: i32,
@@ -23,29 +23,27 @@ impl ValidateE911AddressOutput {
         self.validation_result
     }
     /// <p>The ID that represents the address.</p>
-    pub fn address_external_id(&self) -> std::option::Option<&str> {
+    pub fn address_external_id(&self) -> std::option::Option<& str> {
         self.address_external_id.as_deref()
     }
     /// <p>The validated address.</p>
-    pub fn address(&self) -> std::option::Option<&crate::types::Address> {
+    pub fn address(&self) -> std::option::Option<& crate::types::Address> {
         self.address.as_ref()
     }
     /// <p>The list of address suggestions.</p>
-    pub fn candidate_address_list(&self) -> std::option::Option<&[crate::types::CandidateAddress]> {
+    pub fn candidate_address_list(&self) -> std::option::Option<& [crate::types::CandidateAddress]> {
         self.candidate_address_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ValidateE911AddressOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ValidateE911AddressOutput {
     /// Creates a new builder-style object to manufacture [`ValidateE911AddressOutput`](crate::operation::validate_e911_address::ValidateE911AddressOutput).
-    pub fn builder(
-    ) -> crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder {
-        crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder {
+        crate::operation::validate_e911_address::builders::ValidateE911AddressOutputBuilder::default()
     }
 }
 
@@ -56,8 +54,7 @@ pub struct ValidateE911AddressOutputBuilder {
     pub(crate) validation_result: std::option::Option<i32>,
     pub(crate) address_external_id: std::option::Option<std::string::String>,
     pub(crate) address: std::option::Option<crate::types::Address>,
-    pub(crate) candidate_address_list:
-        std::option::Option<std::vec::Vec<crate::types::CandidateAddress>>,
+    pub(crate) candidate_address_list: std::option::Option<std::vec::Vec<crate::types::CandidateAddress>>,
     _request_id: Option<String>,
 }
 impl ValidateE911AddressOutputBuilder {
@@ -68,8 +65,7 @@ impl ValidateE911AddressOutputBuilder {
     }
     /// <p>Number indicating the result of address validation. <code>0</code> means the address was perfect as is and successfully validated. <code>1</code> means the address was corrected. <code>2</code> means the address sent was not close enough and was not validated.</p>
     pub fn set_validation_result(mut self, input: std::option::Option<i32>) -> Self {
-        self.validation_result = input;
-        self
+        self.validation_result = input; self
     }
     /// <p>The ID that represents the address.</p>
     pub fn address_external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,12 +73,8 @@ impl ValidateE911AddressOutputBuilder {
         self
     }
     /// <p>The ID that represents the address.</p>
-    pub fn set_address_external_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.address_external_id = input;
-        self
+    pub fn set_address_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.address_external_id = input; self
     }
     /// <p>The validated address.</p>
     pub fn address(mut self, input: crate::types::Address) -> Self {
@@ -91,8 +83,7 @@ impl ValidateE911AddressOutputBuilder {
     }
     /// <p>The validated address.</p>
     pub fn set_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// Appends an item to `candidate_address_list`.
     ///
@@ -101,35 +92,37 @@ impl ValidateE911AddressOutputBuilder {
     /// <p>The list of address suggestions.</p>
     pub fn candidate_address_list(mut self, input: crate::types::CandidateAddress) -> Self {
         let mut v = self.candidate_address_list.unwrap_or_default();
-        v.push(input);
-        self.candidate_address_list = Some(v);
-        self
+                        v.push(input);
+                        self.candidate_address_list = Some(v);
+                        self
     }
     /// <p>The list of address suggestions.</p>
-    pub fn set_candidate_address_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CandidateAddress>>,
-    ) -> Self {
-        self.candidate_address_list = input;
-        self
+    pub fn set_candidate_address_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::CandidateAddress>>) -> Self {
+        self.candidate_address_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ValidateE911AddressOutput`](crate::operation::validate_e911_address::ValidateE911AddressOutput).
     pub fn build(self) -> crate::operation::validate_e911_address::ValidateE911AddressOutput {
         crate::operation::validate_e911_address::ValidateE911AddressOutput {
-            validation_result: self.validation_result.unwrap_or_default(),
-            address_external_id: self.address_external_id,
-            address: self.address,
-            candidate_address_list: self.candidate_address_list,
+            validation_result: self.validation_result
+                .unwrap_or_default()
+            ,
+            address_external_id: self.address_external_id
+            ,
+            address: self.address
+            ,
+            candidate_address_list: self.candidate_address_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

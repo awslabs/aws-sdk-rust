@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLifecycleHookOutput {
+pub struct PutLifecycleHookOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutLifecycleHookOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutLifecycleHookOutput {
     /// Creates a new builder-style object to manufacture [`PutLifecycleHookOutput`](crate::operation::put_lifecycle_hook::PutLifecycleHookOutput).
-    pub fn builder() -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_lifecycle_hook::builders::PutLifecycleHookOutputBuilder {
         crate::operation::put_lifecycle_hook::builders::PutLifecycleHookOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct PutLifecycleHookOutputBuilder {
 }
 impl PutLifecycleHookOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutLifecycleHookOutput`](crate::operation::put_lifecycle_hook::PutLifecycleHookOutput).
     pub fn build(self) -> crate::operation::put_lifecycle_hook::PutLifecycleHookOutput {
         crate::operation::put_lifecycle_hook::PutLifecycleHookOutput {
@@ -41,3 +40,4 @@ impl PutLifecycleHookOutputBuilder {
         }
     }
 }
+

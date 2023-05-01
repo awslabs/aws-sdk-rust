@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotificationConfigurationsInput {
+pub struct DescribeNotificationConfigurationsInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct DescribeNotificationConfigurationsInput {
 }
 impl DescribeNotificationConfigurationsInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_scaling_group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_scaling_group_names.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
@@ -29,7 +29,7 @@ impl DescribeNotificationConfigurationsInput {
 }
 impl DescribeNotificationConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotificationConfigurationsInput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput).
-    pub fn builder() -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder {
         crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder::default()
     }
 }
@@ -50,17 +50,13 @@ impl DescribeNotificationConfigurationsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.auto_scaling_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.auto_scaling_group_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_scaling_group_names = Some(v);
+                        self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.auto_scaling_group_names = input;
-        self
+    pub fn set_auto_scaling_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.auto_scaling_group_names = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +65,7 @@ impl DescribeNotificationConfigurationsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -79,11 +74,10 @@ impl DescribeNotificationConfigurationsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call. The default value is <code>50</code> and the maximum value is <code>100</code>.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// Consumes the builder and constructs a [`DescribeNotificationConfigurationsInput`](crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsInput {
                 auto_scaling_group_names: self.auto_scaling_group_names
@@ -96,3 +90,4 @@ impl DescribeNotificationConfigurationsInputBuilder {
         )
     }
 }
+

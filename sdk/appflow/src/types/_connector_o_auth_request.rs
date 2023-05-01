@@ -3,7 +3,7 @@
 /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorOAuthRequest {
+pub struct ConnectorOAuthRequest  {
     /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
     #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ConnectorOAuthRequest {
 }
 impl ConnectorOAuthRequest {
     /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
-    pub fn auth_code(&self) -> std::option::Option<&str> {
+    pub fn auth_code(&self) -> std::option::Option<& str> {
         self.auth_code.as_deref()
     }
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
-    pub fn redirect_uri(&self) -> std::option::Option<&str> {
+    pub fn redirect_uri(&self) -> std::option::Option<& str> {
         self.redirect_uri.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ConnectorOAuthRequestBuilder {
     }
     /// <p> The code provided by the connector when it has been authenticated via the connected app. </p>
     pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auth_code = input;
-        self
+        self.auth_code = input; self
     }
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
     pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ConnectorOAuthRequestBuilder {
     }
     /// <p> The URL to which the authentication server redirects the browser after authorization has been granted. </p>
     pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.redirect_uri = input;
-        self
+        self.redirect_uri = input; self
     }
     /// Consumes the builder and constructs a [`ConnectorOAuthRequest`](crate::types::ConnectorOAuthRequest).
     pub fn build(self) -> crate::types::ConnectorOAuthRequest {
         crate::types::ConnectorOAuthRequest {
-            auth_code: self.auth_code,
-            redirect_uri: self.redirect_uri,
+            auth_code: self.auth_code
+            ,
+            redirect_uri: self.redirect_uri
+            ,
         }
     }
 }
+

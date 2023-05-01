@@ -3,7 +3,7 @@
 /// <p>Updates an existing VpcLink of a specified identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVpcLinkInput {
+pub struct UpdateVpcLinkInput  {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateVpcLinkInput {
 }
 impl UpdateVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
-    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> std::option::Option<& [crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateVpcLinkInputBuilder {
     }
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -53,28 +52,24 @@ impl UpdateVpcLinkInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::operation::update_vpc_link::UpdateVpcLinkInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_vpc_link::UpdateVpcLinkInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_vpc_link::UpdateVpcLinkInput {
-            vpc_link_id: self.vpc_link_id,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> Result<crate::operation::update_vpc_link::UpdateVpcLinkInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_vpc_link::UpdateVpcLinkInput {
+                vpc_link_id: self.vpc_link_id
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

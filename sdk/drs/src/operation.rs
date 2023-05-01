@@ -4,11 +4,17 @@ pub use aws_http::request_id::RequestId;
 /// Types for the `CreateExtendedSourceServer` operation.
 pub mod create_extended_source_server;
 
+/// Types for the `CreateLaunchConfigurationTemplate` operation.
+pub mod create_launch_configuration_template;
+
 /// Types for the `CreateReplicationConfigurationTemplate` operation.
 pub mod create_replication_configuration_template;
 
 /// Types for the `DeleteJob` operation.
 pub mod delete_job;
+
+/// Types for the `DeleteLaunchConfigurationTemplate` operation.
+pub mod delete_launch_configuration_template;
 
 /// Types for the `DeleteRecoveryInstance` operation.
 pub mod delete_recovery_instance;
@@ -24,6 +30,9 @@ pub mod describe_job_log_items;
 
 /// Types for the `DescribeJobs` operation.
 pub mod describe_jobs;
+
+/// Types for the `DescribeLaunchConfigurationTemplates` operation.
+pub mod describe_launch_configuration_templates;
 
 /// Types for the `DescribeRecoveryInstances` operation.
 pub mod describe_recovery_instances;
@@ -100,8 +109,12 @@ pub mod update_failback_replication_configuration;
 /// Types for the `UpdateLaunchConfiguration` operation.
 pub mod update_launch_configuration;
 
+/// Types for the `UpdateLaunchConfigurationTemplate` operation.
+pub mod update_launch_configuration_template;
+
 /// Types for the `UpdateReplicationConfiguration` operation.
 pub mod update_replication_configuration;
 
 /// Types for the `UpdateReplicationConfigurationTemplate` operation.
 pub mod update_replication_configuration_template;
+

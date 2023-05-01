@@ -3,7 +3,7 @@
 /// <p>Details and type of a related item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ItemIdentifier {
+pub struct ItemIdentifier  {
     /// <p>Details about the related item.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::ItemValue>,
@@ -13,11 +13,11 @@ pub struct ItemIdentifier {
 }
 impl ItemIdentifier {
     /// <p>Details about the related item.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::ItemValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::ItemValue> {
         self.value.as_ref()
     }
     /// <p>The type of related item. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ItemType> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ItemIdentifierBuilder {
     }
     /// <p>Details about the related item.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::ItemValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The type of related item. </p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
@@ -53,14 +52,16 @@ impl ItemIdentifierBuilder {
     }
     /// <p>The type of related item. </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ItemType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`ItemIdentifier`](crate::types::ItemIdentifier).
     pub fn build(self) -> crate::types::ItemIdentifier {
         crate::types::ItemIdentifier {
-            value: self.value,
-            r#type: self.r#type,
+            value: self.value
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

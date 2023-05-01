@@ -3,7 +3,7 @@
 /// <p>Represents the output of a batch get repositories operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRepositoriesOutput {
+pub struct BatchGetRepositoriesOutput  {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
     #[doc(hidden)]
     pub repositories: std::option::Option<std::vec::Vec<crate::types::RepositoryMetadata>>,
@@ -14,23 +14,22 @@ pub struct BatchGetRepositoriesOutput {
 }
 impl BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    pub fn repositories(&self) -> std::option::Option<&[crate::types::RepositoryMetadata]> {
+    pub fn repositories(&self) -> std::option::Option<& [crate::types::RepositoryMetadata]> {
         self.repositories.as_deref()
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn repositories_not_found(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn repositories_not_found(&self) -> std::option::Option<& [std::string::String]> {
         self.repositories_not_found.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetRepositoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetRepositoriesOutput`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder {
         crate::operation::batch_get_repositories::builders::BatchGetRepositoriesOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl BatchGetRepositoriesOutputBuilder {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
     pub fn repositories(mut self, input: crate::types::RepositoryMetadata) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-        v.push(input);
-        self.repositories = Some(v);
-        self
+                        v.push(input);
+                        self.repositories = Some(v);
+                        self
     }
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
-    pub fn set_repositories(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositoryMetadata>>,
-    ) -> Self {
-        self.repositories = input;
-        self
+    pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::types::RepositoryMetadata>>) -> Self {
+        self.repositories = input; self
     }
     /// Appends an item to `repositories_not_found`.
     ///
@@ -70,33 +65,32 @@ impl BatchGetRepositoriesOutputBuilder {
     /// <p>Returns a list of repository names for which information could not be found.</p>
     pub fn repositories_not_found(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.repositories_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.repositories_not_found = Some(v);
-        self
+                        v.push(input.into());
+                        self.repositories_not_found = Some(v);
+                        self
     }
     /// <p>Returns a list of repository names for which information could not be found.</p>
-    pub fn set_repositories_not_found(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.repositories_not_found = input;
-        self
+    pub fn set_repositories_not_found(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.repositories_not_found = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetRepositoriesOutput`](crate::operation::batch_get_repositories::BatchGetRepositoriesOutput).
     pub fn build(self) -> crate::operation::batch_get_repositories::BatchGetRepositoriesOutput {
         crate::operation::batch_get_repositories::BatchGetRepositoriesOutput {
-            repositories: self.repositories,
-            repositories_not_found: self.repositories_not_found,
+            repositories: self.repositories
+            ,
+            repositories_not_found: self.repositories_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

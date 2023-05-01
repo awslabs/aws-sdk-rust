@@ -3,14 +3,14 @@
 /// <p>The container for the network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID for the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
 }
 impl NetworkInterface {
     /// <p>The ID for the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl NetworkInterfaceBuilder {
         self
     }
     /// <p>The ID for the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_interface_id = input; self
     }
     /// Consumes the builder and constructs a [`NetworkInterface`](crate::types::NetworkInterface).
     pub fn build(self) -> crate::types::NetworkInterface {
         crate::types::NetworkInterface {
-            network_interface_id: self.network_interface_id,
+            network_interface_id: self.network_interface_id
+            ,
         }
     }
 }
+

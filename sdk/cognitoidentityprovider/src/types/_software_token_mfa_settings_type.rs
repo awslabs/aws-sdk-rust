@@ -3,7 +3,7 @@
 /// <p>The type used for enabling software token MFA at the user level. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SoftwareTokenMfaSettingsType {
+pub struct SoftwareTokenMfaSettingsType  {
     /// <p>Specifies whether software token MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -43,8 +43,7 @@ impl SoftwareTokenMfaSettingsTypeBuilder {
     }
     /// <p>Specifies whether software token MFA is activated. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts, unless device tracking is turned on and the device has been trusted.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specifies whether software token MFA is the preferred MFA method.</p>
     pub fn preferred_mfa(mut self, input: bool) -> Self {
@@ -53,14 +52,18 @@ impl SoftwareTokenMfaSettingsTypeBuilder {
     }
     /// <p>Specifies whether software token MFA is the preferred MFA method.</p>
     pub fn set_preferred_mfa(mut self, input: std::option::Option<bool>) -> Self {
-        self.preferred_mfa = input;
-        self
+        self.preferred_mfa = input; self
     }
     /// Consumes the builder and constructs a [`SoftwareTokenMfaSettingsType`](crate::types::SoftwareTokenMfaSettingsType).
     pub fn build(self) -> crate::types::SoftwareTokenMfaSettingsType {
         crate::types::SoftwareTokenMfaSettingsType {
-            enabled: self.enabled.unwrap_or_default(),
-            preferred_mfa: self.preferred_mfa.unwrap_or_default(),
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            preferred_mfa: self.preferred_mfa
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

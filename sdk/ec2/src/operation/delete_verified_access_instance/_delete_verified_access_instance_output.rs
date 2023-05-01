@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVerifiedAccessInstanceOutput {
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+pub struct DeleteVerifiedAccessInstanceOutput  {
+    /// <p>The ID of the Verified Access instance.</p>
     #[doc(hidden)]
     pub verified_access_instance: std::option::Option<crate::types::VerifiedAccessInstance>,
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessInstanceOutput {
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance(
-        &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessInstance> {
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn verified_access_instance(&self) -> std::option::Option<& crate::types::VerifiedAccessInstance> {
         self.verified_access_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVerifiedAccessInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVerifiedAccessInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVerifiedAccessInstanceOutput`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput).
-    pub fn builder() -> crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceOutputBuilder {
         crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceOutputBuilder::default()
     }
 }
@@ -36,35 +34,31 @@ pub struct DeleteVerifiedAccessInstanceOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteVerifiedAccessInstanceOutputBuilder {
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance(mut self, input: crate::types::VerifiedAccessInstance) -> Self {
         self.verified_access_instance = Some(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance(
-        mut self,
-        input: std::option::Option<crate::types::VerifiedAccessInstance>,
-    ) -> Self {
-        self.verified_access_instance = input;
-        self
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn set_verified_access_instance(mut self, input: std::option::Option<crate::types::VerifiedAccessInstance>) -> Self {
+        self.verified_access_instance = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVerifiedAccessInstanceOutput`](crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput {
+    pub fn build(self) -> crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput {
         crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstanceOutput {
-            verified_access_instance: self.verified_access_instance,
+            verified_access_instance: self.verified_access_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

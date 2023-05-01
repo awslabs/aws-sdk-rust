@@ -3,7 +3,7 @@
 /// <p>Ingress address of AgentEndpoint with a port range and an optional mtu.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RangedConnectionDetails {
+pub struct RangedConnectionDetails  {
     /// <p>A ranged socket address.</p>
     #[doc(hidden)]
     pub socket_address: std::option::Option<crate::types::RangedSocketAddress>,
@@ -13,7 +13,7 @@ pub struct RangedConnectionDetails {
 }
 impl RangedConnectionDetails {
     /// <p>A ranged socket address.</p>
-    pub fn socket_address(&self) -> std::option::Option<&crate::types::RangedSocketAddress> {
+    pub fn socket_address(&self) -> std::option::Option<& crate::types::RangedSocketAddress> {
         self.socket_address.as_ref()
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
@@ -42,12 +42,8 @@ impl RangedConnectionDetailsBuilder {
         self
     }
     /// <p>A ranged socket address.</p>
-    pub fn set_socket_address(
-        mut self,
-        input: std::option::Option<crate::types::RangedSocketAddress>,
-    ) -> Self {
-        self.socket_address = input;
-        self
+    pub fn set_socket_address(mut self, input: std::option::Option<crate::types::RangedSocketAddress>) -> Self {
+        self.socket_address = input; self
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn mtu(mut self, input: i32) -> Self {
@@ -56,14 +52,16 @@ impl RangedConnectionDetailsBuilder {
     }
     /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
     pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-        self.mtu = input;
-        self
+        self.mtu = input; self
     }
     /// Consumes the builder and constructs a [`RangedConnectionDetails`](crate::types::RangedConnectionDetails).
     pub fn build(self) -> crate::types::RangedConnectionDetails {
         crate::types::RangedConnectionDetails {
-            socket_address: self.socket_address,
-            mtu: self.mtu,
+            socket_address: self.socket_address
+            ,
+            mtu: self.mtu
+            ,
         }
     }
 }
+

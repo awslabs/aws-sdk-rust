@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcEndpointsInput {
+pub struct ListVpcEndpointsInput  {
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
     #[doc(hidden)]
     pub vpc_endpoint_filters: std::option::Option<crate::types::VpcEndpointFilters>,
@@ -15,11 +15,11 @@ pub struct ListVpcEndpointsInput {
 }
 impl ListVpcEndpointsInput {
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
-    pub fn vpc_endpoint_filters(&self) -> std::option::Option<&crate::types::VpcEndpointFilters> {
+    pub fn vpc_endpoint_filters(&self) -> std::option::Option<& crate::types::VpcEndpointFilters> {
         self.vpc_endpoint_filters.as_ref()
     }
     /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
@@ -29,8 +29,7 @@ impl ListVpcEndpointsInput {
 }
 impl ListVpcEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
-    pub fn builder() -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder {
         crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl ListVpcEndpointsInputBuilder {
         self
     }
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
-    pub fn set_vpc_endpoint_filters(
-        mut self,
-        input: std::option::Option<crate::types::VpcEndpointFilters>,
-    ) -> Self {
-        self.vpc_endpoint_filters = input;
-        self
+    pub fn set_vpc_endpoint_filters(mut self, input: std::option::Option<crate::types::VpcEndpointFilters>) -> Self {
+        self.vpc_endpoint_filters = input; self
     }
     /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +59,7 @@ impl ListVpcEndpointsInputBuilder {
     }
     /// <p>If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code> operations, which returns results in the next page. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,22 +68,20 @@ impl ListVpcEndpointsInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListVpcEndpointsInput`](crate::operation::list_vpc_endpoints::ListVpcEndpointsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_vpc_endpoints::ListVpcEndpointsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_vpc_endpoints::ListVpcEndpointsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_vpc_endpoints::ListVpcEndpointsInput {
-                vpc_endpoint_filters: self.vpc_endpoint_filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                vpc_endpoint_filters: self.vpc_endpoint_filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

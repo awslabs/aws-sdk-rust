@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateTableRowsOutput {
+pub struct BatchUpdateTableRowsOutput  {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
@@ -17,20 +17,18 @@ impl BatchUpdateTableRowsOutput {
         self.workbook_cursor
     }
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    pub fn failed_batch_items(&self) -> std::option::Option<&[crate::types::FailedBatchItem]> {
+    pub fn failed_batch_items(&self) -> std::option::Option<& [crate::types::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchUpdateTableRowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchUpdateTableRowsOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateTableRowsOutput`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder {
         crate::operation::batch_update_table_rows::builders::BatchUpdateTableRowsOutputBuilder::default()
     }
 }
@@ -40,8 +38,7 @@ impl BatchUpdateTableRowsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateTableRowsOutputBuilder {
     pub(crate) workbook_cursor: std::option::Option<i64>,
-    pub(crate) failed_batch_items:
-        std::option::Option<std::vec::Vec<crate::types::FailedBatchItem>>,
+    pub(crate) failed_batch_items: std::option::Option<std::vec::Vec<crate::types::FailedBatchItem>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateTableRowsOutputBuilder {
@@ -52,8 +49,7 @@ impl BatchUpdateTableRowsOutputBuilder {
     }
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
     pub fn set_workbook_cursor(mut self, input: std::option::Option<i64>) -> Self {
-        self.workbook_cursor = input;
-        self
+        self.workbook_cursor = input; self
     }
     /// Appends an item to `failed_batch_items`.
     ///
@@ -62,33 +58,33 @@ impl BatchUpdateTableRowsOutputBuilder {
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
     pub fn failed_batch_items(mut self, input: crate::types::FailedBatchItem) -> Self {
         let mut v = self.failed_batch_items.unwrap_or_default();
-        v.push(input);
-        self.failed_batch_items = Some(v);
-        self
+                        v.push(input);
+                        self.failed_batch_items = Some(v);
+                        self
     }
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
-    pub fn set_failed_batch_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FailedBatchItem>>,
-    ) -> Self {
-        self.failed_batch_items = input;
-        self
+    pub fn set_failed_batch_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedBatchItem>>) -> Self {
+        self.failed_batch_items = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchUpdateTableRowsOutput`](crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput).
     pub fn build(self) -> crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput {
         crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput {
-            workbook_cursor: self.workbook_cursor.unwrap_or_default(),
-            failed_batch_items: self.failed_batch_items,
+            workbook_cursor: self.workbook_cursor
+                .unwrap_or_default()
+            ,
+            failed_batch_items: self.failed_batch_items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

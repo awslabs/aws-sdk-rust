@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMulticastGroupSessionOutput {
+pub struct GetMulticastGroupSessionOutput  {
     /// <p>The LoRaWAN information used with the multicast session.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::types::LoRaWanMulticastSession>,
@@ -10,18 +10,18 @@ pub struct GetMulticastGroupSessionOutput {
 }
 impl GetMulticastGroupSessionOutput {
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanMulticastSession> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanMulticastSession> {
         self.lo_ra_wan.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMulticastGroupSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMulticastGroupSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput).
-    pub fn builder() -> crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionOutputBuilder{
+    pub fn builder() -> crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionOutputBuilder {
         crate::operation::get_multicast_group_session::builders::GetMulticastGroupSessionOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl GetMulticastGroupSessionOutputBuilder {
         self
     }
     /// <p>The LoRaWAN information used with the multicast session.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: std::option::Option<crate::types::LoRaWanMulticastSession>,
-    ) -> Self {
-        self.lo_ra_wan = input;
-        self
+    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanMulticastSession>) -> Self {
+        self.lo_ra_wan = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMulticastGroupSessionOutput`](crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput {
+    pub fn build(self) -> crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput {
         crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput {
-            lo_ra_wan: self.lo_ra_wan,
+            lo_ra_wan: self.lo_ra_wan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

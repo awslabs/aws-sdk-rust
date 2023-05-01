@@ -4,81 +4,56 @@ pub use crate::operation::create_assessment_template::_create_assessment_templat
 pub use crate::operation::create_assessment_template::_create_assessment_template_input::CreateAssessmentTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAssessmentTemplate`.
-///
+/// 
 /// <p>Creates an assessment template for the assessment target that is specified by the ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked role</a> isn’t already registered, this action also creates and registers a service-linked role to grant Amazon Inspector access to AWS Services needed to perform security assessments.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssessmentTemplateFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_assessment_template::builders::CreateAssessmentTemplateInputBuilder
             }
-impl CreateAssessmentTemplateFluentBuilder {
+impl CreateAssessmentTemplateFluentBuilder  {
     /// Creates a new `CreateAssessmentTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_assessment_template::CreateAssessmentTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_assessment_template::CreateAssessmentTemplateOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_assessment_template::CreateAssessmentTemplateError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_assessment_template::CreateAssessmentTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_assessment_template::CreateAssessmentTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_assessment_template::CreateAssessmentTemplateError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
     pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_target_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment target for which you want to create the assessment template.</p>
-    pub fn set_assessment_target_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_target_arn(input);
         self
     }
@@ -88,10 +63,7 @@ impl CreateAssessmentTemplateFluentBuilder {
         self
     }
     /// <p>The user-defined name that identifies the assessment template that you want to create. You can create several assessment templates for an assessment target. The names of the assessment templates that correspond to a particular assessment target must be unique.</p>
-    pub fn set_assessment_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_assessment_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_assessment_template_name(input);
         self
     }
@@ -115,10 +87,7 @@ impl CreateAssessmentTemplateFluentBuilder {
         self
     }
     /// <p>The ARNs that specify the rules packages that you want to attach to the assessment template.</p>
-    pub fn set_rules_package_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_rules_package_arns(input);
         self
     }
@@ -132,11 +101,9 @@ impl CreateAssessmentTemplateFluentBuilder {
         self
     }
     /// <p>The user-defined attributes that are assigned to every finding that is generated by the assessment run that uses this assessment template. An attribute is a key and value pair (an <code>Attribute</code> object). Within an assessment template, each key must be unique.</p>
-    pub fn set_user_attributes_for_findings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_user_attributes_for_findings(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_user_attributes_for_findings(input);
         self
     }
 }
+

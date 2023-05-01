@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hlsiframeonlymanifest = unimplemented!();
 /// match hlsiframeonlymanifest {
@@ -30,64 +30,55 @@
 /// Specifically, when `hlsiframeonlymanifest` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsIFrameOnlyManifest::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose Include (INCLUDE) to have MediaConvert generate a child manifest that lists only the I-frames for this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and the regular child manifest to the parent manifest. When you don't need the I-frame only child manifest, keep the default value Exclude (EXCLUDE).
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HlsIFrameOnlyManifest {
     #[allow(missing_docs)] // documentation missing in model
     Exclude,
     #[allow(missing_docs)] // documentation missing in model
     Include,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HlsIFrameOnlyManifest {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXCLUDE" => HlsIFrameOnlyManifest::Exclude,
-            "INCLUDE" => HlsIFrameOnlyManifest::Include,
-            other => HlsIFrameOnlyManifest::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXCLUDE" => HlsIFrameOnlyManifest::Exclude,
+"INCLUDE" => HlsIFrameOnlyManifest::Include,
+other => HlsIFrameOnlyManifest::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for HlsIFrameOnlyManifest {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsIFrameOnlyManifest::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HlsIFrameOnlyManifest::from(s))
+                }
+            }
 impl HlsIFrameOnlyManifest {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            HlsIFrameOnlyManifest::Exclude => "EXCLUDE",
-            HlsIFrameOnlyManifest::Include => "INCLUDE",
-            HlsIFrameOnlyManifest::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EXCLUDE", "INCLUDE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    HlsIFrameOnlyManifest::Exclude => "EXCLUDE",
+    HlsIFrameOnlyManifest::Include => "INCLUDE",
+    HlsIFrameOnlyManifest::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXCLUDE", "INCLUDE"]
+                }
+            }
 impl AsRef<str> for HlsIFrameOnlyManifest {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

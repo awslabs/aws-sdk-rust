@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartVirtualMachinesMetadataSyncOutput {
+pub struct StartVirtualMachinesMetadataSyncOutput  {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct StartVirtualMachinesMetadataSyncOutput {
 }
 impl StartVirtualMachinesMetadataSyncOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
         self.hypervisor_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartVirtualMachinesMetadataSyncOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartVirtualMachinesMetadataSyncOutput {
     /// Creates a new builder-style object to manufacture [`StartVirtualMachinesMetadataSyncOutput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput).
-    pub fn builder() -> crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncOutputBuilder{
+    pub fn builder() -> crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncOutputBuilder {
         crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl StartVirtualMachinesMetadataSyncOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hypervisor_arn = input;
-        self
+        self.hypervisor_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartVirtualMachinesMetadataSyncOutput`](crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput).
-    pub fn build(self) -> crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput{
+    pub fn build(self) -> crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput {
         crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput {
             hypervisor_arn: self.hypervisor_arn
             ,
@@ -62,3 +61,4 @@ impl StartVirtualMachinesMetadataSyncOutputBuilder {
         }
     }
 }
+

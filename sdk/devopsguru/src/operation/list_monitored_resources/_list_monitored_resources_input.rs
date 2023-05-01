@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMonitoredResourcesInput {
+pub struct ListMonitoredResourcesInput  {
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::ListMonitoredResourcesFilters>,
@@ -15,7 +15,7 @@ pub struct ListMonitoredResourcesInput {
 }
 impl ListMonitoredResourcesInput {
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ListMonitoredResourcesFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ListMonitoredResourcesFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -23,15 +23,13 @@ impl ListMonitoredResourcesInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListMonitoredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListMonitoredResourcesInput`](crate::operation::list_monitored_resources::ListMonitoredResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder {
         crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl ListMonitoredResourcesInputBuilder {
         self
     }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ListMonitoredResourcesFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListMonitoredResourcesFilters>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -65,8 +59,7 @@ impl ListMonitoredResourcesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl ListMonitoredResourcesInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListMonitoredResourcesInput`](crate::operation::list_monitored_resources::ListMonitoredResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_monitored_resources::ListMonitoredResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_monitored_resources::ListMonitoredResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_monitored_resources::ListMonitoredResourcesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Describes an attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValueTarget {
+pub struct AttributeValueTarget  {
     /// <p>The value of the attribute.</p>
     #[doc(hidden)]
     pub attribute_value: std::option::Option<std::string::String>,
 }
 impl AttributeValueTarget {
     /// <p>The value of the attribute.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl AttributeValueTargetBuilder {
     }
     /// <p>The value of the attribute.</p>
     pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// Consumes the builder and constructs a [`AttributeValueTarget`](crate::types::AttributeValueTarget).
     pub fn build(self) -> crate::types::AttributeValueTarget {
         crate::types::AttributeValueTarget {
-            attribute_value: self.attribute_value,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
+

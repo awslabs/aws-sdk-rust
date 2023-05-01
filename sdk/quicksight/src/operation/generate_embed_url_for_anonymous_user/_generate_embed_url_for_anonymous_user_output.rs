@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GenerateEmbedUrlForAnonymousUserOutput {
+pub struct GenerateEmbedUrlForAnonymousUserOutput  {
     /// <p>The embed URL for the dashboard.</p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct GenerateEmbedUrlForAnonymousUserOutput {
 }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// <p>The embed URL for the dashboard.</p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> std::option::Option<& str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -27,15 +27,15 @@ impl GenerateEmbedUrlForAnonymousUserOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub fn anonymous_user_arn(&self) -> std::option::Option<&str> {
+    pub fn anonymous_user_arn(&self) -> std::option::Option<& str> {
         self.anonymous_user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
+impl  std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForAnonymousUserOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -47,13 +47,13 @@ impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutput {
     }
 }
 impl aws_http::request_id::RequestId for GenerateEmbedUrlForAnonymousUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GenerateEmbedUrlForAnonymousUserOutput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForAnonymousUserOutput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput).
-    pub fn builder() -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder{
+    pub fn builder() -> crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder {
         crate::operation::generate_embed_url_for_anonymous_user::builders::GenerateEmbedUrlForAnonymousUserOutputBuilder::default()
     }
 }
@@ -76,8 +76,7 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
     }
     /// <p>The embed URL for the dashboard.</p>
     pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.embed_url = input;
-        self
+        self.embed_url = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -86,8 +85,7 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +94,7 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
     pub fn anonymous_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,24 +102,20 @@ impl GenerateEmbedUrlForAnonymousUserOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>
-    pub fn set_anonymous_user_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.anonymous_user_arn = input;
-        self
+    pub fn set_anonymous_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.anonymous_user_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForAnonymousUserOutput`](crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput).
-    pub fn build(self) -> crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput{
+    pub fn build(self) -> crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
         crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput {
             embed_url: self.embed_url
             ,
@@ -148,3 +141,4 @@ impl std::fmt::Debug for GenerateEmbedUrlForAnonymousUserOutputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a conditional forwarder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConditionalForwardersInput {
+pub struct DescribeConditionalForwardersInput  {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct DescribeConditionalForwardersInput {
 }
 impl DescribeConditionalForwardersInput {
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    pub fn remote_domain_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remote_domain_names(&self) -> std::option::Option<& [std::string::String]> {
         self.remote_domain_names.as_deref()
     }
 }
 impl DescribeConditionalForwardersInput {
     /// Creates a new builder-style object to manufacture [`DescribeConditionalForwardersInput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput).
-    pub fn builder() -> crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder{
+    pub fn builder() -> crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder {
         crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl DescribeConditionalForwardersInputBuilder {
     }
     /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// Appends an item to `remote_domain_names`.
     ///
@@ -53,30 +52,24 @@ impl DescribeConditionalForwardersInputBuilder {
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
     pub fn remote_domain_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.remote_domain_names.unwrap_or_default();
-        v.push(input.into());
-        self.remote_domain_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.remote_domain_names = Some(v);
+                        self
     }
     /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
-    pub fn set_remote_domain_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.remote_domain_names = input;
-        self
+    pub fn set_remote_domain_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.remote_domain_names = input; self
     }
     /// Consumes the builder and constructs a [`DescribeConditionalForwardersInput`](crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersInput {
-                directory_id: self.directory_id,
-                remote_domain_names: self.remote_domain_names,
-            },
+                directory_id: self.directory_id
+                ,
+                remote_domain_names: self.remote_domain_names
+                ,
+            }
         )
     }
 }
+

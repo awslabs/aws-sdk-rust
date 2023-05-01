@@ -3,21 +3,20 @@
 /// <p>Information about an origin that is an Amazon S3 bucket that is not configured with static website hosting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOriginS3OriginConfig {
+pub struct AwsCloudFrontDistributionOriginS3OriginConfig  {
     /// <p>The CloudFront origin access identity to associate with the origin.</p>
     #[doc(hidden)]
     pub origin_access_identity: std::option::Option<std::string::String>,
 }
 impl AwsCloudFrontDistributionOriginS3OriginConfig {
     /// <p>The CloudFront origin access identity to associate with the origin.</p>
-    pub fn origin_access_identity(&self) -> std::option::Option<&str> {
+    pub fn origin_access_identity(&self) -> std::option::Option<& str> {
         self.origin_access_identity.as_deref()
     }
 }
 impl AwsCloudFrontDistributionOriginS3OriginConfig {
     /// Creates a new builder-style object to manufacture [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::types::AwsCloudFrontDistributionOriginS3OriginConfig).
-    pub fn builder() -> crate::types::builders::AwsCloudFrontDistributionOriginS3OriginConfigBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsCloudFrontDistributionOriginS3OriginConfigBuilder {
         crate::types::builders::AwsCloudFrontDistributionOriginS3OriginConfigBuilder::default()
     }
 }
@@ -35,17 +34,15 @@ impl AwsCloudFrontDistributionOriginS3OriginConfigBuilder {
         self
     }
     /// <p>The CloudFront origin access identity to associate with the origin.</p>
-    pub fn set_origin_access_identity(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.origin_access_identity = input;
-        self
+    pub fn set_origin_access_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.origin_access_identity = input; self
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOriginS3OriginConfig`](crate::types::AwsCloudFrontDistributionOriginS3OriginConfig).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOriginS3OriginConfig {
         crate::types::AwsCloudFrontDistributionOriginS3OriginConfig {
-            origin_access_identity: self.origin_access_identity,
+            origin_access_identity: self.origin_access_identity
+            ,
         }
     }
 }
+

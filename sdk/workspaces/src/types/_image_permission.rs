@@ -3,14 +3,14 @@
 /// <p>Describes the Amazon Web Services accounts that have been granted permission to use a shared image. For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html"> Share or Unshare a Custom WorkSpaces Image</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImagePermission {
+pub struct ImagePermission  {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
     #[doc(hidden)]
     pub shared_account_id: std::option::Option<std::string::String>,
 }
 impl ImagePermission {
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
-    pub fn shared_account_id(&self) -> std::option::Option<&str> {
+    pub fn shared_account_id(&self) -> std::option::Option<& str> {
         self.shared_account_id.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl ImagePermissionBuilder {
         self
     }
     /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
-    pub fn set_shared_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.shared_account_id = input;
-        self
+    pub fn set_shared_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.shared_account_id = input; self
     }
     /// Consumes the builder and constructs a [`ImagePermission`](crate::types::ImagePermission).
     pub fn build(self) -> crate::types::ImagePermission {
         crate::types::ImagePermission {
-            shared_account_id: self.shared_account_id,
+            shared_account_id: self.shared_account_id
+            ,
         }
     }
 }
+

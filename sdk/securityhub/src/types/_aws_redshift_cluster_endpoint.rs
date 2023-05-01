@@ -3,7 +3,7 @@
 /// <p>The connection endpoint for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRedshiftClusterEndpoint {
+pub struct AwsRedshiftClusterEndpoint  {
     /// <p>The DNS address of the cluster.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct AwsRedshiftClusterEndpoint {
 }
 impl AwsRedshiftClusterEndpoint {
     /// <p>The DNS address of the cluster.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The port that the database engine listens on.</p>
@@ -43,8 +43,7 @@ impl AwsRedshiftClusterEndpointBuilder {
     }
     /// <p>The DNS address of the cluster.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input;
-        self
+        self.address = input; self
     }
     /// <p>The port that the database engine listens on.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -53,14 +52,17 @@ impl AwsRedshiftClusterEndpointBuilder {
     }
     /// <p>The port that the database engine listens on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterEndpoint`](crate::types::AwsRedshiftClusterEndpoint).
     pub fn build(self) -> crate::types::AwsRedshiftClusterEndpoint {
         crate::types::AwsRedshiftClusterEndpoint {
-            address: self.address,
-            port: self.port.unwrap_or_default(),
+            address: self.address
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

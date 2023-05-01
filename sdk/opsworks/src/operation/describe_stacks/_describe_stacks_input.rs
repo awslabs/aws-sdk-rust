@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStacksInput {
+pub struct DescribeStacksInput  {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
     #[doc(hidden)]
     pub stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeStacksInput {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    pub fn stack_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn stack_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.stack_ids.as_deref()
     }
 }
@@ -34,27 +34,22 @@ impl DescribeStacksInputBuilder {
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
     pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.stack_ids.unwrap_or_default();
-        v.push(input.into());
-        self.stack_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.stack_ids = Some(v);
+                        self
     }
     /// <p>An array of stack IDs that specify the stacks to be described. If you omit this parameter, <code>DescribeStacks</code> returns a description of every stack.</p>
-    pub fn set_stack_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.stack_ids = input;
-        self
+    pub fn set_stack_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.stack_ids = input; self
     }
     /// Consumes the builder and constructs a [`DescribeStacksInput`](crate::operation::describe_stacks::DescribeStacksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_stacks::DescribeStacksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_stacks::DescribeStacksInput {
-            stack_ids: self.stack_ids,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_stacks::DescribeStacksInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_stacks::DescribeStacksInput {
+                stack_ids: self.stack_ids
+                ,
+            }
+        )
     }
 }
+

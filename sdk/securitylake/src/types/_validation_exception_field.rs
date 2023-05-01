@@ -3,7 +3,7 @@
 /// <p>The input fails to meet the constraints specified in Amazon Security Lake. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>Name of the validation exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>Name of the validation exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes the error encountered.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>Name of the validation exception.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Describes the error encountered.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>Describes the error encountered.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::types::ValidationExceptionField).
     pub fn build(self) -> crate::types::ValidationExceptionField {
         crate::types::ValidationExceptionField {
-            name: self.name,
-            message: self.message,
+            name: self.name
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

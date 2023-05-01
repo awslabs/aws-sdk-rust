@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppInstanceBotInput {
+pub struct DescribeAppInstanceBotInput  {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
     #[doc(hidden)]
     pub app_instance_bot_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceBotInput {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bot_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_bot_arn(&self) -> std::option::Option<& str> {
         self.app_instance_bot_arn.as_deref()
     }
 }
 impl DescribeAppInstanceBotInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceBotInput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder {
         crate::operation::describe_app_instance_bot::builders::DescribeAppInstanceBotInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DescribeAppInstanceBotInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bot_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_instance_bot_arn = input;
-        self
+    pub fn set_app_instance_bot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_instance_bot_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceBotInput`](crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_app_instance_bot::DescribeAppInstanceBotInput {
-                app_instance_bot_arn: self.app_instance_bot_arn,
-            },
+                app_instance_bot_arn: self.app_instance_bot_arn
+                ,
+            }
         )
     }
 }
+

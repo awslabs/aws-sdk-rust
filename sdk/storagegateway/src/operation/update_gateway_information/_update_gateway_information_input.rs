@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayInformationInput {
+pub struct UpdateGatewayInformationInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateGatewayInformationInput {
     /// <p>A value that indicates the time zone of the gateway.</p>
     #[doc(hidden)]
     pub gateway_timezone: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
     #[doc(hidden)]
     pub cloud_watch_log_group_arn: std::option::Option<std::string::String>,
@@ -22,32 +22,30 @@ pub struct UpdateGatewayInformationInput {
 }
 impl UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The name you configured for your gateway.</p>
-    pub fn gateway_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_name(&self) -> std::option::Option<& str> {
         self.gateway_name.as_deref()
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
-    pub fn gateway_timezone(&self) -> std::option::Option<&str> {
+    pub fn gateway_timezone(&self) -> std::option::Option<& str> {
         self.gateway_timezone.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
-    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
-    pub fn gateway_capacity(&self) -> std::option::Option<&crate::types::GatewayCapacity> {
+    pub fn gateway_capacity(&self) -> std::option::Option<& crate::types::GatewayCapacity> {
         self.gateway_capacity.as_ref()
     }
 }
 impl UpdateGatewayInformationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
-    pub fn builder(
-    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder::default()
     }
 }
@@ -70,8 +68,7 @@ impl UpdateGatewayInformationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// <p>The name you configured for your gateway.</p>
     pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +77,7 @@ impl UpdateGatewayInformationInputBuilder {
     }
     /// <p>The name you configured for your gateway.</p>
     pub fn set_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_name = input;
-        self
+        self.gateway_name = input; self
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn gateway_timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,23 +86,18 @@ impl UpdateGatewayInformationInputBuilder {
     }
     /// <p>A value that indicates the time zone of the gateway.</p>
     pub fn set_gateway_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_timezone = input;
-        self
+        self.gateway_timezone = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.cloud_watch_log_group_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log events in the gateway.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon CloudWatch Logs?</a> </p>
-    pub fn set_cloud_watch_log_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cloud_watch_log_group_arn = input;
-        self
+    pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cloud_watch_log_group_arn = input; self
     }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
     pub fn gateway_capacity(mut self, input: crate::types::GatewayCapacity) -> Self {
@@ -114,28 +105,25 @@ impl UpdateGatewayInformationInputBuilder {
         self
     }
     /// <p>Specifies the size of the gateway's metadata cache.</p>
-    pub fn set_gateway_capacity(
-        mut self,
-        input: std::option::Option<crate::types::GatewayCapacity>,
-    ) -> Self {
-        self.gateway_capacity = input;
-        self
+    pub fn set_gateway_capacity(mut self, input: std::option::Option<crate::types::GatewayCapacity>) -> Self {
+        self.gateway_capacity = input; self
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_gateway_information::UpdateGatewayInformationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_gateway_information::UpdateGatewayInformationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_gateway_information::UpdateGatewayInformationInput {
-                gateway_arn: self.gateway_arn,
-                gateway_name: self.gateway_name,
-                gateway_timezone: self.gateway_timezone,
-                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
-                gateway_capacity: self.gateway_capacity,
-            },
+                gateway_arn: self.gateway_arn
+                ,
+                gateway_name: self.gateway_name
+                ,
+                gateway_timezone: self.gateway_timezone
+                ,
+                cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
+                ,
+                gateway_capacity: self.gateway_capacity
+                ,
+            }
         )
     }
 }
+

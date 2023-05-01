@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEdgeDeploymentPlansInput {
+pub struct ListEdgeDeploymentPlansInput  {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -36,7 +36,7 @@ pub struct ListEdgeDeploymentPlansInput {
 }
 impl ListEdgeDeploymentPlansInput {
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to select (50 by default).</p>
@@ -44,43 +44,41 @@ impl ListEdgeDeploymentPlansInput {
         self.max_results
     }
     /// <p>Selects edge deployment plans created after this time.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Selects edge deployment plans created before this time.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
-    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
-    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p>Selects edge deployment plans with names containing this name.</p>
-    pub fn name_contains(&self) -> std::option::Option<&str> {
+    pub fn name_contains(&self) -> std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
-    pub fn device_fleet_name_contains(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name_contains(&self) -> std::option::Option<& str> {
         self.device_fleet_name_contains.as_deref()
     }
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::ListEdgeDeploymentPlansSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::ListEdgeDeploymentPlansSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The direction of the sorting (ascending or descending).</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 impl ListEdgeDeploymentPlansInput {
     /// Creates a new builder-style object to manufacture [`ListEdgeDeploymentPlansInput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput).
-    pub fn builder(
-    ) -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder {
         crate::operation::list_edge_deployment_plans::builders::ListEdgeDeploymentPlansInputBuilder::default()
     }
 }
@@ -108,8 +106,7 @@ impl ListEdgeDeploymentPlansInputBuilder {
     }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to select (50 by default).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -118,8 +115,7 @@ impl ListEdgeDeploymentPlansInputBuilder {
     }
     /// <p>The maximum number of results to select (50 by default).</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Selects edge deployment plans created after this time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,12 +123,8 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self
     }
     /// <p>Selects edge deployment plans created after this time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
     }
     /// <p>Selects edge deployment plans created before this time.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,12 +132,8 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self
     }
     /// <p>Selects edge deployment plans created before this time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
     }
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
     pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,12 +141,8 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self
     }
     /// <p>Selects edge deployment plans that were last updated after this time.</p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time_after = input;
-        self
+    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time_after = input; self
     }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
     pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -166,12 +150,8 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self
     }
     /// <p>Selects edge deployment plans that were last updated before this time.</p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time_before = input;
-        self
+    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time_before = input; self
     }
     /// <p>Selects edge deployment plans with names containing this name.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,8 +160,7 @@ impl ListEdgeDeploymentPlansInputBuilder {
     }
     /// <p>Selects edge deployment plans with names containing this name.</p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
     pub fn device_fleet_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,12 +168,8 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self
     }
     /// <p>Selects edge deployment plans with a device fleet name containing this name.</p>
-    pub fn set_device_fleet_name_contains(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_fleet_name_contains = input;
-        self
+    pub fn set_device_fleet_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_fleet_name_contains = input; self
     }
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ListEdgeDeploymentPlansSortBy) -> Self {
@@ -202,12 +177,8 @@ impl ListEdgeDeploymentPlansInputBuilder {
         self
     }
     /// <p>The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>, <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ListEdgeDeploymentPlansSortBy>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The direction of the sorting (ascending or descending).</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -216,29 +187,34 @@ impl ListEdgeDeploymentPlansInputBuilder {
     }
     /// <p>The direction of the sorting (ascending or descending).</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// Consumes the builder and constructs a [`ListEdgeDeploymentPlansInput`](crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_edge_deployment_plans::ListEdgeDeploymentPlansInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                last_modified_time_after: self.last_modified_time_after,
-                last_modified_time_before: self.last_modified_time_before,
-                name_contains: self.name_contains,
-                device_fleet_name_contains: self.device_fleet_name_contains,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                name_contains: self.name_contains
+                ,
+                device_fleet_name_contains: self.device_fleet_name_contains
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
         )
     }
 }
+

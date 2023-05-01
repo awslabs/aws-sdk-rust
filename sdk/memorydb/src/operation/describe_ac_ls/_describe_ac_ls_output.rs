@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAcLsOutput {
+pub struct DescribeAcLsOutput  {
     /// <p>The list of ACLs</p>
     #[doc(hidden)]
     pub ac_ls: std::option::Option<std::vec::Vec<crate::types::Acl>>,
@@ -13,19 +13,19 @@ pub struct DescribeAcLsOutput {
 }
 impl DescribeAcLsOutput {
     /// <p>The list of ACLs</p>
-    pub fn ac_ls(&self) -> std::option::Option<&[crate::types::Acl]> {
+    pub fn ac_ls(&self) -> std::option::Option<& [crate::types::Acl]> {
         self.ac_ls.as_deref()
     }
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAcLsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAcLsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcLsOutput`](crate::operation::describe_ac_ls::DescribeAcLsOutput).
     pub fn builder() -> crate::operation::describe_ac_ls::builders::DescribeAcLsOutputBuilder {
@@ -49,17 +49,13 @@ impl DescribeAcLsOutputBuilder {
     /// <p>The list of ACLs</p>
     pub fn ac_ls(mut self, input: crate::types::Acl) -> Self {
         let mut v = self.ac_ls.unwrap_or_default();
-        v.push(input);
-        self.ac_ls = Some(v);
-        self
+                        v.push(input);
+                        self.ac_ls = Some(v);
+                        self
     }
     /// <p>The list of ACLs</p>
-    pub fn set_ac_ls(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Acl>>,
-    ) -> Self {
-        self.ac_ls = input;
-        self
+    pub fn set_ac_ls(mut self, input: std::option::Option<std::vec::Vec<crate::types::Acl>>) -> Self {
+        self.ac_ls = input; self
     }
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl DescribeAcLsOutputBuilder {
     }
     /// <p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAcLsOutput`](crate::operation::describe_ac_ls::DescribeAcLsOutput).
     pub fn build(self) -> crate::operation::describe_ac_ls::DescribeAcLsOutput {
         crate::operation::describe_ac_ls::DescribeAcLsOutput {
-            ac_ls: self.ac_ls,
-            next_token: self.next_token,
+            ac_ls: self.ac_ls
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

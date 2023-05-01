@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigInput {
+pub struct UpdateConfigInput  {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct UpdateConfigInput {
 }
 impl UpdateConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<& crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>Parameters of a <code>Config</code>.</p>
-    pub fn config_data(&self) -> std::option::Option<&crate::types::ConfigTypeData> {
+    pub fn config_data(&self) -> std::option::Option<& crate::types::ConfigTypeData> {
         self.config_data.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl UpdateConfigInputBuilder {
     }
     /// <p>UUID of a <code>Config</code>.</p>
     pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_id = input;
-        self
+        self.config_id = input; self
     }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl UpdateConfigInputBuilder {
     }
     /// <p>Name of a <code>Config</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
@@ -78,12 +76,8 @@ impl UpdateConfigInputBuilder {
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn set_config_type(
-        mut self,
-        input: std::option::Option<crate::types::ConfigCapabilityType>,
-    ) -> Self {
-        self.config_type = input;
-        self
+    pub fn set_config_type(mut self, input: std::option::Option<crate::types::ConfigCapabilityType>) -> Self {
+        self.config_type = input; self
     }
     /// <p>Parameters of a <code>Config</code>.</p>
     pub fn config_data(mut self, input: crate::types::ConfigTypeData) -> Self {
@@ -91,25 +85,23 @@ impl UpdateConfigInputBuilder {
         self
     }
     /// <p>Parameters of a <code>Config</code>.</p>
-    pub fn set_config_data(
-        mut self,
-        input: std::option::Option<crate::types::ConfigTypeData>,
-    ) -> Self {
-        self.config_data = input;
-        self
+    pub fn set_config_data(mut self, input: std::option::Option<crate::types::ConfigTypeData>) -> Self {
+        self.config_data = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConfigInput`](crate::operation::update_config::UpdateConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_config::UpdateConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_config::UpdateConfigInput {
-            config_id: self.config_id,
-            name: self.name,
-            config_type: self.config_type,
-            config_data: self.config_data,
-        })
+    pub fn build(self) -> Result<crate::operation::update_config::UpdateConfigInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_config::UpdateConfigInput {
+                config_id: self.config_id
+                ,
+                name: self.name
+                ,
+                config_type: self.config_type
+                ,
+                config_data: self.config_data
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains an image file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageFile {
+pub struct ImageFile  {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
@@ -13,11 +13,11 @@ pub struct ImageFile {
 }
 impl ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>The file type of the image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ImageFileType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ImageFileType> {
         self.r#type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ImageFileBuilder {
     }
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// <p>The file type of the image.</p>
     pub fn r#type(mut self, input: crate::types::ImageFileType) -> Self {
@@ -53,14 +52,16 @@ impl ImageFileBuilder {
     }
     /// <p>The file type of the image.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ImageFileType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`ImageFile`](crate::types::ImageFile).
     pub fn build(self) -> crate::types::ImageFile {
         crate::types::ImageFile {
-            data: self.data,
-            r#type: self.r#type,
+            data: self.data
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

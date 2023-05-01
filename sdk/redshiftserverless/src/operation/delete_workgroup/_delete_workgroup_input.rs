@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkgroupInput {
+pub struct DeleteWorkgroupInput  {
     /// <p>The name of the workgroup to be deleted.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
 }
 impl DeleteWorkgroupInput {
     /// <p>The name of the workgroup to be deleted.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteWorkgroupInputBuilder {
     }
     /// <p>The name of the workgroup to be deleted.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteWorkgroupInput`](crate::operation::delete_workgroup::DeleteWorkgroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_workgroup::DeleteWorkgroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_workgroup::DeleteWorkgroupInput {
-            workgroup_name: self.workgroup_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_workgroup::DeleteWorkgroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_workgroup::DeleteWorkgroupInput {
+                workgroup_name: self.workgroup_name
+                ,
+            }
+        )
     }
 }
+

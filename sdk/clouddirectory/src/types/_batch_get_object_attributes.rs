@@ -3,7 +3,7 @@
 /// <p>Retrieves attributes within a facet that are associated with an object inside an <code>BatchRead</code> operation. For more information, see <code>GetObjectAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectAttributes {
+pub struct BatchGetObjectAttributes  {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::types::ObjectReference>,
@@ -16,15 +16,15 @@ pub struct BatchGetObjectAttributes {
 }
 impl BatchGetObjectAttributes {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl BatchGetObjectAttributesBuilder {
         self
     }
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
@@ -63,12 +59,8 @@ impl BatchGetObjectAttributesBuilder {
         self
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
-        self.schema_facet = input;
-        self
+    pub fn set_schema_facet(mut self, input: std::option::Option<crate::types::SchemaFacet>) -> Self {
+        self.schema_facet = input; self
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -77,24 +69,24 @@ impl BatchGetObjectAttributesBuilder {
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-        v.push(input.into());
-        self.attribute_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.attribute_names = Some(v);
+                        self
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.attribute_names = input;
-        self
+    pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.attribute_names = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::types::BatchGetObjectAttributes).
     pub fn build(self) -> crate::types::BatchGetObjectAttributes {
         crate::types::BatchGetObjectAttributes {
-            object_reference: self.object_reference,
-            schema_facet: self.schema_facet,
-            attribute_names: self.attribute_names,
+            object_reference: self.object_reference
+            ,
+            schema_facet: self.schema_facet
+            ,
+            attribute_names: self.attribute_names
+            ,
         }
     }
 }
+

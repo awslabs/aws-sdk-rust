@@ -3,7 +3,7 @@
 /// <p>The summary of the detector version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorVersionSummary {
+pub struct DetectorVersionSummary  {
     /// <p>The detector version ID. </p>
     #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DetectorVersionSummary {
 }
 impl DetectorVersionSummary {
     /// <p>The detector version ID. </p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The detector version status. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DetectorVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DetectorVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The detector version description. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Timestamp of when the detector version was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl DetectorVersionSummaryBuilder {
         self
     }
     /// <p>The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.detector_version_id = input;
-        self
+    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.detector_version_id = input; self
     }
     /// <p>The detector version status. </p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
@@ -71,12 +67,8 @@ impl DetectorVersionSummaryBuilder {
         self
     }
     /// <p>The detector version status. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DetectorVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The detector version description. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +77,7 @@ impl DetectorVersionSummaryBuilder {
     }
     /// <p>The detector version description. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Timestamp of when the detector version was last updated.</p>
     pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,20 +85,21 @@ impl DetectorVersionSummaryBuilder {
         self
     }
     /// <p>Timestamp of when the detector version was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.last_updated_time = input; self
     }
     /// Consumes the builder and constructs a [`DetectorVersionSummary`](crate::types::DetectorVersionSummary).
     pub fn build(self) -> crate::types::DetectorVersionSummary {
         crate::types::DetectorVersionSummary {
-            detector_version_id: self.detector_version_id,
-            status: self.status,
-            description: self.description,
-            last_updated_time: self.last_updated_time,
+            detector_version_id: self.detector_version_id
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            last_updated_time: self.last_updated_time
+            ,
         }
     }
 }
+

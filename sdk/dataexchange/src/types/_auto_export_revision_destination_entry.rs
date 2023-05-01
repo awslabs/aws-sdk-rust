@@ -3,7 +3,7 @@
 /// <p>A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoExportRevisionDestinationEntry {
+pub struct AutoExportRevisionDestinationEntry  {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AutoExportRevisionDestinationEntry {
 }
 impl AutoExportRevisionDestinationEntry {
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
-    pub fn key_pattern(&self) -> std::option::Option<&str> {
+    pub fn key_pattern(&self) -> std::option::Option<& str> {
         self.key_pattern.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AutoExportRevisionDestinationEntryBuilder {
     }
     /// <p>The Amazon S3 bucket that is the destination for the event action.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub fn key_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AutoExportRevisionDestinationEntryBuilder {
     }
     /// <p>A string representing the pattern for generated names of the individual assets in the revision. For more information about key patterns, see <a href="https://docs.aws.amazon.com/data-exchange/latest/userguide/jobs.html#revision-export-keypatterns">Key patterns when exporting revisions</a>.</p>
     pub fn set_key_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_pattern = input;
-        self
+        self.key_pattern = input; self
     }
     /// Consumes the builder and constructs a [`AutoExportRevisionDestinationEntry`](crate::types::AutoExportRevisionDestinationEntry).
     pub fn build(self) -> crate::types::AutoExportRevisionDestinationEntry {
         crate::types::AutoExportRevisionDestinationEntry {
-            bucket: self.bucket,
-            key_pattern: self.key_pattern,
+            bucket: self.bucket
+            ,
+            key_pattern: self.key_pattern
+            ,
         }
     }
 }
+

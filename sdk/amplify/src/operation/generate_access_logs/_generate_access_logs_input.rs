@@ -3,7 +3,7 @@
 /// <p> The request structure for the generate access logs request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateAccessLogsInput {
+pub struct GenerateAccessLogsInput  {
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,26 +19,25 @@ pub struct GenerateAccessLogsInput {
 }
 impl GenerateAccessLogsInput {
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> The name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
 impl GenerateAccessLogsInput {
     /// Creates a new builder-style object to manufacture [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
-    pub fn builder(
-    ) -> crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder {
+    pub fn builder() -> crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder {
         crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder::default()
     }
 }
@@ -59,12 +58,8 @@ impl GenerateAccessLogsInputBuilder {
         self
     }
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -73,8 +68,7 @@ impl GenerateAccessLogsInputBuilder {
     }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p> The name of the domain. </p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +77,7 @@ impl GenerateAccessLogsInputBuilder {
     }
     /// <p> The name of the domain. </p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,23 +86,22 @@ impl GenerateAccessLogsInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// Consumes the builder and constructs a [`GenerateAccessLogsInput`](crate::operation::generate_access_logs::GenerateAccessLogsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::generate_access_logs::GenerateAccessLogsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::generate_access_logs::GenerateAccessLogsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::generate_access_logs::GenerateAccessLogsInput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                domain_name: self.domain_name,
-                app_id: self.app_id,
-            },
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                domain_name: self.domain_name
+                ,
+                app_id: self.app_id
+                ,
+            }
         )
     }
 }
+

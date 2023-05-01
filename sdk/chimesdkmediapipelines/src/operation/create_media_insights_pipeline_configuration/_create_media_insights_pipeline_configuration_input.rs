@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMediaInsightsPipelineConfigurationInput {
+pub struct CreateMediaInsightsPipelineConfigurationInput  {
     /// <p>The name of the media insights pipeline configuration.</p>
     #[doc(hidden)]
     pub media_insights_pipeline_configuration_name: std::option::Option<std::string::String>,
@@ -11,12 +11,10 @@ pub struct CreateMediaInsightsPipelineConfigurationInput {
     pub resource_access_role_arn: std::option::Option<std::string::String>,
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
     #[doc(hidden)]
-    pub real_time_alert_configuration:
-        std::option::Option<crate::types::RealTimeAlertConfiguration>,
+    pub real_time_alert_configuration: std::option::Option<crate::types::RealTimeAlertConfiguration>,
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
     #[doc(hidden)]
-    pub elements:
-        std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
+    pub elements: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -26,49 +24,36 @@ pub struct CreateMediaInsightsPipelineConfigurationInput {
 }
 impl CreateMediaInsightsPipelineConfigurationInput {
     /// <p>The name of the media insights pipeline configuration.</p>
-    pub fn media_insights_pipeline_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn media_insights_pipeline_configuration_name(&self) -> std::option::Option<& str> {
         self.media_insights_pipeline_configuration_name.as_deref()
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
-    pub fn resource_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_access_role_arn(&self) -> std::option::Option<& str> {
         self.resource_access_role_arn.as_deref()
     }
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
-    pub fn real_time_alert_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::RealTimeAlertConfiguration> {
+    pub fn real_time_alert_configuration(&self) -> std::option::Option<& crate::types::RealTimeAlertConfiguration> {
         self.real_time_alert_configuration.as_ref()
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    pub fn elements(
-        &self,
-    ) -> std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationElement]> {
+    pub fn elements(&self) -> std::option::Option<& [crate::types::MediaInsightsPipelineConfigurationElement]> {
         self.elements.as_deref()
     }
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateMediaInsightsPipelineConfigurationInput {
+impl  std::fmt::Debug for CreateMediaInsightsPipelineConfigurationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaInsightsPipelineConfigurationInput");
-        formatter.field(
-            "media_insights_pipeline_configuration_name",
-            &self.media_insights_pipeline_configuration_name,
-        );
-        formatter.field(
-            "resource_access_role_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "real_time_alert_configuration",
-            &self.real_time_alert_configuration,
-        );
+        formatter.field("media_insights_pipeline_configuration_name", &self.media_insights_pipeline_configuration_name);
+        formatter.field("resource_access_role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("real_time_alert_configuration", &self.real_time_alert_configuration);
         formatter.field("elements", &self.elements);
         formatter.field("tags", &self.tags);
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
@@ -77,7 +62,7 @@ impl std::fmt::Debug for CreateMediaInsightsPipelineConfigurationInput {
 }
 impl CreateMediaInsightsPipelineConfigurationInput {
     /// Creates a new builder-style object to manufacture [`CreateMediaInsightsPipelineConfigurationInput`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput).
-    pub fn builder() -> crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationInputBuilder {
         crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationInputBuilder::default()
     }
 }
@@ -88,29 +73,20 @@ impl CreateMediaInsightsPipelineConfigurationInput {
 pub struct CreateMediaInsightsPipelineConfigurationInputBuilder {
     pub(crate) media_insights_pipeline_configuration_name: std::option::Option<std::string::String>,
     pub(crate) resource_access_role_arn: std::option::Option<std::string::String>,
-    pub(crate) real_time_alert_configuration:
-        std::option::Option<crate::types::RealTimeAlertConfiguration>,
-    pub(crate) elements:
-        std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
+    pub(crate) real_time_alert_configuration: std::option::Option<crate::types::RealTimeAlertConfiguration>,
+    pub(crate) elements: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The name of the media insights pipeline configuration.</p>
-    pub fn media_insights_pipeline_configuration_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn media_insights_pipeline_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.media_insights_pipeline_configuration_name = Some(input.into());
         self
     }
     /// <p>The name of the media insights pipeline configuration.</p>
-    pub fn set_media_insights_pipeline_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.media_insights_pipeline_configuration_name = input;
-        self
+    pub fn set_media_insights_pipeline_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.media_insights_pipeline_configuration_name = input; self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
     pub fn resource_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,52 +94,32 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
-    pub fn set_resource_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_access_role_arn = input;
-        self
+    pub fn set_resource_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_access_role_arn = input; self
     }
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
-    pub fn real_time_alert_configuration(
-        mut self,
-        input: crate::types::RealTimeAlertConfiguration,
-    ) -> Self {
+    pub fn real_time_alert_configuration(mut self, input: crate::types::RealTimeAlertConfiguration) -> Self {
         self.real_time_alert_configuration = Some(input);
         self
     }
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
-    pub fn set_real_time_alert_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RealTimeAlertConfiguration>,
-    ) -> Self {
-        self.real_time_alert_configuration = input;
-        self
+    pub fn set_real_time_alert_configuration(mut self, input: std::option::Option<crate::types::RealTimeAlertConfiguration>) -> Self {
+        self.real_time_alert_configuration = input; self
     }
     /// Appends an item to `elements`.
     ///
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
     ///
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    pub fn elements(
-        mut self,
-        input: crate::types::MediaInsightsPipelineConfigurationElement,
-    ) -> Self {
+    pub fn elements(mut self, input: crate::types::MediaInsightsPipelineConfigurationElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
-        v.push(input);
-        self.elements = Some(v);
-        self
+                        v.push(input);
+                        self.elements = Some(v);
+                        self
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    pub fn set_elements(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
-        >,
-    ) -> Self {
-        self.elements = input;
-        self
+    pub fn set_elements(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>) -> Self {
+        self.elements = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -172,17 +128,13 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,15 +142,11 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
         self
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateMediaInsightsPipelineConfigurationInput`](crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationInput {
                 media_insights_pipeline_configuration_name: self.media_insights_pipeline_configuration_name
@@ -220,21 +168,13 @@ impl CreateMediaInsightsPipelineConfigurationInputBuilder {
 impl std::fmt::Debug for CreateMediaInsightsPipelineConfigurationInputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMediaInsightsPipelineConfigurationInputBuilder");
-        formatter.field(
-            "media_insights_pipeline_configuration_name",
-            &self.media_insights_pipeline_configuration_name,
-        );
-        formatter.field(
-            "resource_access_role_arn",
-            &"*** Sensitive Data Redacted ***",
-        );
-        formatter.field(
-            "real_time_alert_configuration",
-            &self.real_time_alert_configuration,
-        );
+        formatter.field("media_insights_pipeline_configuration_name", &self.media_insights_pipeline_configuration_name);
+        formatter.field("resource_access_role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field("real_time_alert_configuration", &self.real_time_alert_configuration);
         formatter.field("elements", &self.elements);
         formatter.field("tags", &self.tags);
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
+

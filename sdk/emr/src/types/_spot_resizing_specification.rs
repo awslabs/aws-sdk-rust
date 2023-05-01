@@ -3,7 +3,7 @@
 /// <p>The resize specification for Spot Instances in the instance fleet, which contains the resize timeout period. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpotResizingSpecification {
+pub struct SpotResizingSpecification  {
     /// <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within this time, the resize workflow will stop provisioning of Spot instances. Minimum value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     #[doc(hidden)]
     pub timeout_duration_minutes: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl SpotResizingSpecificationBuilder {
     }
     /// <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within this time, the resize workflow will stop provisioning of Spot instances. Minimum value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     pub fn set_timeout_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_duration_minutes = input;
-        self
+        self.timeout_duration_minutes = input; self
     }
     /// Consumes the builder and constructs a [`SpotResizingSpecification`](crate::types::SpotResizingSpecification).
     pub fn build(self) -> crate::types::SpotResizingSpecification {
         crate::types::SpotResizingSpecification {
-            timeout_duration_minutes: self.timeout_duration_minutes,
+            timeout_duration_minutes: self.timeout_duration_minutes
+            ,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelMaintenanceWindowExecutionInput {
+pub struct CancelMaintenanceWindowExecutionInput  {
     /// <p>The ID of the maintenance window execution to stop.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
 }
 impl CancelMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution to stop.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<&str> {
+    pub fn window_execution_id(&self) -> std::option::Option<& str> {
         self.window_execution_id.as_deref()
     }
 }
 impl CancelMaintenanceWindowExecutionInput {
     /// Creates a new builder-style object to manufacture [`CancelMaintenanceWindowExecutionInput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput).
-    pub fn builder() -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionInputBuilder{
+    pub fn builder() -> crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionInputBuilder {
         crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl CancelMaintenanceWindowExecutionInputBuilder {
         self
     }
     /// <p>The ID of the maintenance window execution to stop.</p>
-    pub fn set_window_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.window_execution_id = input;
-        self
+    pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.window_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelMaintenanceWindowExecutionInput`](crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput).
-    pub fn build(self) -> Result<crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecutionInput {
                 window_execution_id: self.window_execution_id
@@ -50,3 +46,4 @@ impl CancelMaintenanceWindowExecutionInputBuilder {
         )
     }
 }
+

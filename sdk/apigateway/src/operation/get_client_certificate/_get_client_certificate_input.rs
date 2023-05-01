@@ -3,21 +3,20 @@
 /// <p>A request to get information about the current ClientCertificate resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClientCertificateInput {
+pub struct GetClientCertificateInput  {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
     #[doc(hidden)]
     pub client_certificate_id: std::option::Option<std::string::String>,
 }
 impl GetClientCertificateInput {
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
-    pub fn client_certificate_id(&self) -> std::option::Option<&str> {
+    pub fn client_certificate_id(&self) -> std::option::Option<& str> {
         self.client_certificate_id.as_deref()
     }
 }
 impl GetClientCertificateInput {
     /// Creates a new builder-style object to manufacture [`GetClientCertificateInput`](crate::operation::get_client_certificate::GetClientCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::get_client_certificate::builders::GetClientCertificateInputBuilder {
+    pub fn builder() -> crate::operation::get_client_certificate::builders::GetClientCertificateInputBuilder {
         crate::operation::get_client_certificate::builders::GetClientCertificateInputBuilder::default()
     }
 }
@@ -35,24 +34,17 @@ impl GetClientCertificateInputBuilder {
         self
     }
     /// <p>The identifier of the ClientCertificate resource to be described.</p>
-    pub fn set_client_certificate_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_certificate_id = input;
-        self
+    pub fn set_client_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_certificate_id = input; self
     }
     /// Consumes the builder and constructs a [`GetClientCertificateInput`](crate::operation::get_client_certificate::GetClientCertificateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_client_certificate::GetClientCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_client_certificate::GetClientCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_client_certificate::GetClientCertificateInput {
-                client_certificate_id: self.client_certificate_id,
-            },
+                client_certificate_id: self.client_certificate_id
+                ,
+            }
         )
     }
 }
+

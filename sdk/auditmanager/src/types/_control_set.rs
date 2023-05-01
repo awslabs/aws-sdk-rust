@@ -3,7 +3,7 @@
 /// <p> A set of controls in Audit Manager. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ControlSet {
+pub struct ControlSet  {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ControlSet {
 }
 impl ControlSet {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The name of the control set. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The list of controls within the control set. </p>
-    pub fn controls(&self) -> std::option::Option<&[crate::types::Control]> {
+    pub fn controls(&self) -> std::option::Option<& [crate::types::Control]> {
         self.controls.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ControlSetBuilder {
     }
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p> The name of the control set. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ControlSetBuilder {
     }
     /// <p> The name of the control set. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `controls`.
     ///
@@ -71,24 +69,24 @@ impl ControlSetBuilder {
     /// <p> The list of controls within the control set. </p>
     pub fn controls(mut self, input: crate::types::Control) -> Self {
         let mut v = self.controls.unwrap_or_default();
-        v.push(input);
-        self.controls = Some(v);
-        self
+                        v.push(input);
+                        self.controls = Some(v);
+                        self
     }
     /// <p> The list of controls within the control set. </p>
-    pub fn set_controls(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Control>>,
-    ) -> Self {
-        self.controls = input;
-        self
+    pub fn set_controls(mut self, input: std::option::Option<std::vec::Vec<crate::types::Control>>) -> Self {
+        self.controls = input; self
     }
     /// Consumes the builder and constructs a [`ControlSet`](crate::types::ControlSet).
     pub fn build(self) -> crate::types::ControlSet {
         crate::types::ControlSet {
-            id: self.id,
-            name: self.name,
-            controls: self.controls,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            controls: self.controls
+            ,
         }
     }
 }
+

@@ -21,14 +21,8 @@ pub enum VirtualGatewayClientTlsCertificate {
 impl VirtualGatewayClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::types::VirtualGatewayClientTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::types::VirtualGatewayListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
-        if let VirtualGatewayClientTlsCertificate::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
+        if let VirtualGatewayClientTlsCertificate::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayClientTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -36,14 +30,8 @@ impl VirtualGatewayClientTlsCertificate {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::VirtualGatewayClientTlsCertificate::Sds), extracting the inner [`VirtualGatewayListenerTlsSdsCertificate`](crate::types::VirtualGatewayListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
-        if let VirtualGatewayClientTlsCertificate::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+        if let VirtualGatewayClientTlsCertificate::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayClientTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -54,3 +42,4 @@ impl VirtualGatewayClientTlsCertificate {
         matches!(self, Self::Unknown)
     }
 }
+

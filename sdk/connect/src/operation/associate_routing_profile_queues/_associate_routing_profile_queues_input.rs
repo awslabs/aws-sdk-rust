@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateRoutingProfileQueuesInput {
+pub struct AssociateRoutingProfileQueuesInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct AssociateRoutingProfileQueuesInput {
 }
 impl AssociateRoutingProfileQueuesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The queues to associate with this routing profile.</p>
-    pub fn queue_configs(&self) -> std::option::Option<&[crate::types::RoutingProfileQueueConfig]> {
+    pub fn queue_configs(&self) -> std::option::Option<& [crate::types::RoutingProfileQueueConfig]> {
         self.queue_configs.as_deref()
     }
 }
 impl AssociateRoutingProfileQueuesInput {
     /// Creates a new builder-style object to manufacture [`AssociateRoutingProfileQueuesInput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput).
-    pub fn builder() -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesInputBuilder{
+    pub fn builder() -> crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesInputBuilder {
         crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesInputBuilder::default()
     }
 }
@@ -40,8 +40,7 @@ impl AssociateRoutingProfileQueuesInput {
 pub struct AssociateRoutingProfileQueuesInputBuilder {
     pub(crate) instance_id: std::option::Option<std::string::String>,
     pub(crate) routing_profile_id: std::option::Option<std::string::String>,
-    pub(crate) queue_configs:
-        std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
+    pub(crate) queue_configs: std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
 }
 impl AssociateRoutingProfileQueuesInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -51,8 +50,7 @@ impl AssociateRoutingProfileQueuesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +58,8 @@ impl AssociateRoutingProfileQueuesInputBuilder {
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.routing_profile_id = input;
-        self
+    pub fn set_routing_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.routing_profile_id = input; self
     }
     /// Appends an item to `queue_configs`.
     ///
@@ -74,25 +68,16 @@ impl AssociateRoutingProfileQueuesInputBuilder {
     /// <p>The queues to associate with this routing profile.</p>
     pub fn queue_configs(mut self, input: crate::types::RoutingProfileQueueConfig) -> Self {
         let mut v = self.queue_configs.unwrap_or_default();
-        v.push(input);
-        self.queue_configs = Some(v);
-        self
+                        v.push(input);
+                        self.queue_configs = Some(v);
+                        self
     }
     /// <p>The queues to associate with this routing profile.</p>
-    pub fn set_queue_configs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    ) -> Self {
-        self.queue_configs = input;
-        self
+    pub fn set_queue_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::RoutingProfileQueueConfig>>) -> Self {
+        self.queue_configs = input; self
     }
     /// Consumes the builder and constructs a [`AssociateRoutingProfileQueuesInput`](crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesInput {
                 instance_id: self.instance_id
@@ -105,3 +90,4 @@ impl AssociateRoutingProfileQueuesInputBuilder {
         )
     }
 }
+

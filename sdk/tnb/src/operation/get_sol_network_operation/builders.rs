@@ -4,73 +4,50 @@ pub use crate::operation::get_sol_network_operation::_get_sol_network_operation_
 pub use crate::operation::get_sol_network_operation::_get_sol_network_operation_input::GetSolNetworkOperationInputBuilder;
 
 /// Fluent builder constructing a request to `GetSolNetworkOperation`.
-///
-/// <p>Gets the details of a network operation, including the tasks involved in the network operation and the status of the tasks.</p>
+/// 
+/// <p>Gets the details of a network operation, including the tasks involved in the network operation and the status of the tasks.</p> 
 /// <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSolNetworkOperationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationInputBuilder,
-}
-impl GetSolNetworkOperationFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationInputBuilder
+            }
+impl GetSolNetworkOperationFluentBuilder  {
     /// Creates a new `GetSolNetworkOperation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_sol_network_operation::GetSolNetworkOperation, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_sol_network_operation::GetSolNetworkOperationError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_sol_network_operation::GetSolNetworkOperationOutput, aws_smithy_http::result::SdkError<crate::operation::get_sol_network_operation::GetSolNetworkOperationError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the network operation.</p>
     pub fn ns_lcm_op_occ_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ns_lcm_op_occ_id(input.into());
@@ -82,3 +59,4 @@ impl GetSolNetworkOperationFluentBuilder {
         self
     }
 }
+

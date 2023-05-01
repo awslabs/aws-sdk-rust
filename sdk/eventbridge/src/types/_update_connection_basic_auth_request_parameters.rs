@@ -3,7 +3,7 @@
 /// <p>Contains the Basic authorization parameters for the connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectionBasicAuthRequestParameters {
+pub struct UpdateConnectionBasicAuthRequestParameters  {
     /// <p>The user name to use for Basic authorization.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateConnectionBasicAuthRequestParameters {
 }
 impl UpdateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateConnectionBasicAuthRequestParametersBuilder {
     }
     /// <p>The user name to use for Basic authorization.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl UpdateConnectionBasicAuthRequestParametersBuilder {
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConnectionBasicAuthRequestParameters`](crate::types::UpdateConnectionBasicAuthRequestParameters).
     pub fn build(self) -> crate::types::UpdateConnectionBasicAuthRequestParameters {
         crate::types::UpdateConnectionBasicAuthRequestParameters {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
+

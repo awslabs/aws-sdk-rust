@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGameSessionLogUrlInput {
+pub struct GetGameSessionLogUrlInput  {
     /// <p>A unique identifier for the game session to get logs for. </p>
     #[doc(hidden)]
     pub game_session_id: std::option::Option<std::string::String>,
 }
 impl GetGameSessionLogUrlInput {
     /// <p>A unique identifier for the game session to get logs for. </p>
-    pub fn game_session_id(&self) -> std::option::Option<&str> {
+    pub fn game_session_id(&self) -> std::option::Option<& str> {
         self.game_session_id.as_deref()
     }
 }
 impl GetGameSessionLogUrlInput {
     /// Creates a new builder-style object to manufacture [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder {
         crate::operation::get_game_session_log_url::builders::GetGameSessionLogUrlInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetGameSessionLogUrlInputBuilder {
     }
     /// <p>A unique identifier for the game session to get logs for. </p>
     pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_session_id = input;
-        self
+        self.game_session_id = input; self
     }
     /// Consumes the builder and constructs a [`GetGameSessionLogUrlInput`](crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_game_session_log_url::GetGameSessionLogUrlInput {
-                game_session_id: self.game_session_id,
-            },
+                game_session_id: self.game_session_id
+                ,
+            }
         )
     }
 }
+

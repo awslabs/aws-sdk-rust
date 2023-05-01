@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSyncResourcesInput {
+pub struct ListSyncResourcesInput  {
     /// <p>The ID of the workspace that contains the sync job.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub sync_source: std::option::Option<std::string::String>,
-    /// <p>A list of objects that filter the request.</p>
-    /// <p>The following filter combinations are supported:</p>
-    /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <p>A list of objects that filter the request.</p> 
+    /// <p>The following filter combinations are supported:</p> 
+    /// <ul> 
+    /// <li> <p>Filter with state</p> </li> 
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li> 
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::SyncResourceFilter>>,
-    /// <p>The maximum number of results to return at one time. The default is 50.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p> 
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -30,39 +30,38 @@ pub struct ListSyncResourcesInput {
 }
 impl ListSyncResourcesInput {
     /// <p>The ID of the workspace that contains the sync job.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
-    pub fn sync_source(&self) -> std::option::Option<&str> {
+    pub fn sync_source(&self) -> std::option::Option<& str> {
         self.sync_source.as_deref()
     }
-    /// <p>A list of objects that filter the request.</p>
-    /// <p>The following filter combinations are supported:</p>
-    /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <p>A list of objects that filter the request.</p> 
+    /// <p>The following filter combinations are supported:</p> 
+    /// <ul> 
+    /// <li> <p>Filter with state</p> </li> 
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li> 
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::SyncResourceFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::SyncResourceFilter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 50.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p> 
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListSyncResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder {
         crate::operation::list_sync_resources::builders::ListSyncResourcesInputBuilder::default()
     }
 }
@@ -85,65 +84,58 @@ impl ListSyncResourcesInputBuilder {
     }
     /// <p>The ID of the workspace that contains the sync job.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
     pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.sync_source = Some(input.into());
         self
     }
-    /// <p>The sync source.</p> <note>
-    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
+    /// <p>The sync source.</p> <note> 
+    /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> 
     /// </note>
     pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sync_source = input;
-        self
+        self.sync_source = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>A list of objects that filter the request.</p>
-    /// <p>The following filter combinations are supported:</p>
-    /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <p>A list of objects that filter the request.</p> 
+    /// <p>The following filter combinations are supported:</p> 
+    /// <ul> 
+    /// <li> <p>Filter with state</p> </li> 
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li> 
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::SyncResourceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>A list of objects that filter the request.</p>
-    /// <p>The following filter combinations are supported:</p>
-    /// <ul>
-    /// <li> <p>Filter with state</p> </li>
-    /// <li> <p>Filter with ResourceType and ResourceId</p> </li>
-    /// <li> <p>Filter with ResourceType and ExternalId</p> </li>
+    /// <p>A list of objects that filter the request.</p> 
+    /// <p>The following filter combinations are supported:</p> 
+    /// <ul> 
+    /// <li> <p>Filter with state</p> </li> 
+    /// <li> <p>Filter with ResourceType and ResourceId</p> </li> 
+    /// <li> <p>Filter with ResourceType and ExternalId</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SyncResourceFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SyncResourceFilter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p>The maximum number of results to return at one time. The default is 50.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p> 
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 50.</p>
+    /// <p>The maximum number of results to return at one time. The default is 50.</p> 
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,24 +144,24 @@ impl ListSyncResourcesInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListSyncResourcesInput`](crate::operation::list_sync_resources::ListSyncResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_sync_resources::ListSyncResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_sync_resources::ListSyncResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_sync_resources::ListSyncResourcesInput {
-                workspace_id: self.workspace_id,
-                sync_source: self.sync_source,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                workspace_id: self.workspace_id
+                ,
+                sync_source: self.sync_source
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

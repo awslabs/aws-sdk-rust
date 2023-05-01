@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceNetworkServiceAssociationsInput {
+pub struct ListServiceNetworkServiceAssociationsInput  {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     #[doc(hidden)]
     pub service_network_identifier: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListServiceNetworkServiceAssociationsInput {
 }
 impl ListServiceNetworkServiceAssociationsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(&self) -> std::option::Option<&str> {
+    pub fn service_network_identifier(&self) -> std::option::Option<& str> {
         self.service_network_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> std::option::Option<&str> {
+    pub fn service_identifier(&self) -> std::option::Option<& str> {
         self.service_identifier.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -30,13 +30,13 @@ impl ListServiceNetworkServiceAssociationsInput {
         self.max_results
     }
     /// <p>A pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListServiceNetworkServiceAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListServiceNetworkServiceAssociationsInput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput).
-    pub fn builder() -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder {
         crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_network_identifier = input;
-        self
+    pub fn set_service_network_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_network_identifier = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,12 +66,8 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_identifier = input;
-        self
+    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_identifier = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,8 +76,7 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,11 +85,10 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListServiceNetworkServiceAssociationsInput`](crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsInput {
                 service_network_identifier: self.service_network_identifier
@@ -113,3 +103,4 @@ impl ListServiceNetworkServiceAssociationsInputBuilder {
         )
     }
 }
+

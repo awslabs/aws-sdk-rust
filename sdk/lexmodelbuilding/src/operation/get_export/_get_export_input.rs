@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportInput {
+pub struct GetExportInput  {
     /// <p>The name of the bot to export.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct GetExportInput {
 }
 impl GetExportInput {
     /// <p>The name of the bot to export.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the bot to export.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The type of resource to export. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The format of the exported data.</p>
-    pub fn export_type(&self) -> std::option::Option<&crate::types::ExportType> {
+    pub fn export_type(&self) -> std::option::Option<& crate::types::ExportType> {
         self.export_type.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl GetExportInputBuilder {
     }
     /// <p>The name of the bot to export.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the bot to export.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl GetExportInputBuilder {
     }
     /// <p>The version of the bot to export.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The type of resource to export. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -77,12 +75,8 @@ impl GetExportInputBuilder {
         self
     }
     /// <p>The type of resource to export. </p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The format of the exported data.</p>
     pub fn export_type(mut self, input: crate::types::ExportType) -> Self {
@@ -91,21 +85,22 @@ impl GetExportInputBuilder {
     }
     /// <p>The format of the exported data.</p>
     pub fn set_export_type(mut self, input: std::option::Option<crate::types::ExportType>) -> Self {
-        self.export_type = input;
-        self
+        self.export_type = input; self
     }
     /// Consumes the builder and constructs a [`GetExportInput`](crate::operation::get_export::GetExportInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_export::GetExportInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_export::GetExportInput {
-            name: self.name,
-            version: self.version,
-            resource_type: self.resource_type,
-            export_type: self.export_type,
-        })
+    pub fn build(self) -> Result<crate::operation::get_export::GetExportInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_export::GetExportInput {
+                name: self.name
+                ,
+                version: self.version
+                ,
+                resource_type: self.resource_type
+                ,
+                export_type: self.export_type
+                ,
+            }
+        )
     }
 }
+

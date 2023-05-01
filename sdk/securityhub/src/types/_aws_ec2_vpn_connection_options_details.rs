@@ -3,15 +3,13 @@
 /// <p>VPN connection options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2VpnConnectionOptionsDetails {
+pub struct AwsEc2VpnConnectionOptionsDetails  {
     /// <p>Whether the VPN connection uses static routes only.</p>
     #[doc(hidden)]
     pub static_routes_only: bool,
     /// <p>The VPN tunnel options.</p>
     #[doc(hidden)]
-    pub tunnel_options: std::option::Option<
-        std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
-    >,
+    pub tunnel_options: std::option::Option<std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
 }
 impl AwsEc2VpnConnectionOptionsDetails {
     /// <p>Whether the VPN connection uses static routes only.</p>
@@ -19,9 +17,7 @@ impl AwsEc2VpnConnectionOptionsDetails {
         self.static_routes_only
     }
     /// <p>The VPN tunnel options.</p>
-    pub fn tunnel_options(
-        &self,
-    ) -> std::option::Option<&[crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails]> {
+    pub fn tunnel_options(&self) -> std::option::Option<& [crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails]> {
         self.tunnel_options.as_deref()
     }
 }
@@ -37,9 +33,7 @@ impl AwsEc2VpnConnectionOptionsDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsEc2VpnConnectionOptionsDetailsBuilder {
     pub(crate) static_routes_only: std::option::Option<bool>,
-    pub(crate) tunnel_options: std::option::Option<
-        std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
-    >,
+    pub(crate) tunnel_options: std::option::Option<std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>,
 }
 impl AwsEc2VpnConnectionOptionsDetailsBuilder {
     /// <p>Whether the VPN connection uses static routes only.</p>
@@ -49,38 +43,32 @@ impl AwsEc2VpnConnectionOptionsDetailsBuilder {
     }
     /// <p>Whether the VPN connection uses static routes only.</p>
     pub fn set_static_routes_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.static_routes_only = input;
-        self
+        self.static_routes_only = input; self
     }
     /// Appends an item to `tunnel_options`.
     ///
     /// To override the contents of this collection use [`set_tunnel_options`](Self::set_tunnel_options).
     ///
     /// <p>The VPN tunnel options.</p>
-    pub fn tunnel_options(
-        mut self,
-        input: crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails,
-    ) -> Self {
+    pub fn tunnel_options(mut self, input: crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails) -> Self {
         let mut v = self.tunnel_options.unwrap_or_default();
-        v.push(input);
-        self.tunnel_options = Some(v);
-        self
+                        v.push(input);
+                        self.tunnel_options = Some(v);
+                        self
     }
     /// <p>The VPN tunnel options.</p>
-    pub fn set_tunnel_options(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>,
-        >,
-    ) -> Self {
-        self.tunnel_options = input;
-        self
+    pub fn set_tunnel_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsEc2VpnConnectionOptionsTunnelOptionsDetails>>) -> Self {
+        self.tunnel_options = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionOptionsDetails`](crate::types::AwsEc2VpnConnectionOptionsDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionOptionsDetails {
         crate::types::AwsEc2VpnConnectionOptionsDetails {
-            static_routes_only: self.static_routes_only.unwrap_or_default(),
-            tunnel_options: self.tunnel_options,
+            static_routes_only: self.static_routes_only
+                .unwrap_or_default()
+            ,
+            tunnel_options: self.tunnel_options
+            ,
         }
     }
 }
+

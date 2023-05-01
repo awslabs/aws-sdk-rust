@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPoliciesInput {
+pub struct ListAccessPoliciesInput  {
     /// <p>The type of access policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::AccessPolicyType>,
@@ -18,15 +18,15 @@ pub struct ListAccessPoliciesInput {
 }
 impl ListAccessPoliciesInput {
     /// <p>The type of access policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AccessPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
-    pub fn resource(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource(&self) -> std::option::Option<& [std::string::String]> {
         self.resource.as_deref()
     }
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
@@ -36,8 +36,7 @@ impl ListAccessPoliciesInput {
 }
 impl ListAccessPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    pub fn builder(
-    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
+    pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder {
         crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>The type of access policy.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::AccessPolicyType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Appends an item to `resource`.
     ///
@@ -69,17 +67,13 @@ impl ListAccessPoliciesInputBuilder {
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource.unwrap_or_default();
-        v.push(input.into());
-        self.resource = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource = Some(v);
+                        self
     }
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
-    pub fn set_resource(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource = input;
-        self
+    pub fn set_resource(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource = input; self
     }
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +82,7 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -98,23 +91,22 @@ impl ListAccessPoliciesInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_access_policies::ListAccessPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_access_policies::ListAccessPoliciesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_access_policies::ListAccessPoliciesInput {
-                r#type: self.r#type,
-                resource: self.resource,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                r#type: self.r#type
+                ,
+                resource: self.resource
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

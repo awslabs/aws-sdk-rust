@@ -3,7 +3,7 @@
 /// <p>Indicates whether an Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComplianceByConfigRule {
+pub struct ComplianceByConfigRule  {
     /// <p>The name of the Config rule.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ComplianceByConfigRule {
 }
 impl ComplianceByConfigRule {
     /// <p>The name of the Config rule.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>Indicates whether the Config rule is compliant.</p>
-    pub fn compliance(&self) -> std::option::Option<&crate::types::Compliance> {
+    pub fn compliance(&self) -> std::option::Option<& crate::types::Compliance> {
         self.compliance.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ComplianceByConfigRuleBuilder {
     }
     /// <p>The name of the Config rule.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// <p>Indicates whether the Config rule is compliant.</p>
     pub fn compliance(mut self, input: crate::types::Compliance) -> Self {
@@ -53,14 +52,16 @@ impl ComplianceByConfigRuleBuilder {
     }
     /// <p>Indicates whether the Config rule is compliant.</p>
     pub fn set_compliance(mut self, input: std::option::Option<crate::types::Compliance>) -> Self {
-        self.compliance = input;
-        self
+        self.compliance = input; self
     }
     /// Consumes the builder and constructs a [`ComplianceByConfigRule`](crate::types::ComplianceByConfigRule).
     pub fn build(self) -> crate::types::ComplianceByConfigRule {
         crate::types::ComplianceByConfigRule {
-            config_rule_name: self.config_rule_name,
-            compliance: self.compliance,
+            config_rule_name: self.config_rule_name
+            ,
+            compliance: self.compliance
+            ,
         }
     }
 }
+

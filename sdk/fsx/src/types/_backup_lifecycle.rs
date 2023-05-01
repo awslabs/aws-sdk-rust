@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let backuplifecycle = unimplemented!();
 /// match backuplifecycle {
@@ -35,7 +35,7 @@
 /// Specifically, when `backuplifecycle` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BackupLifecycle::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -74,15 +74,7 @@
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BackupLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -99,60 +91,51 @@ pub enum BackupLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Transferring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BackupLifecycle {
-    fn from(s: &str) -> Self {
-        match s {
-            "AVAILABLE" => BackupLifecycle::Available,
-            "COPYING" => BackupLifecycle::Copying,
-            "CREATING" => BackupLifecycle::Creating,
-            "DELETED" => BackupLifecycle::Deleted,
-            "FAILED" => BackupLifecycle::Failed,
-            "PENDING" => BackupLifecycle::Pending,
-            "TRANSFERRING" => BackupLifecycle::Transferring,
-            other => {
-                BackupLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AVAILABLE" => BackupLifecycle::Available,
+"COPYING" => BackupLifecycle::Copying,
+"CREATING" => BackupLifecycle::Creating,
+"DELETED" => BackupLifecycle::Deleted,
+"FAILED" => BackupLifecycle::Failed,
+"PENDING" => BackupLifecycle::Pending,
+"TRANSFERRING" => BackupLifecycle::Transferring,
+other => BackupLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for BackupLifecycle {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BackupLifecycle::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BackupLifecycle::from(s))
+                }
+            }
 impl BackupLifecycle {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BackupLifecycle::Available => "AVAILABLE",
-            BackupLifecycle::Copying => "COPYING",
-            BackupLifecycle::Creating => "CREATING",
-            BackupLifecycle::Deleted => "DELETED",
-            BackupLifecycle::Failed => "FAILED",
-            BackupLifecycle::Pending => "PENDING",
-            BackupLifecycle::Transferring => "TRANSFERRING",
-            BackupLifecycle::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AVAILABLE",
-            "COPYING",
-            "CREATING",
-            "DELETED",
-            "FAILED",
-            "PENDING",
-            "TRANSFERRING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BackupLifecycle::Available => "AVAILABLE",
+    BackupLifecycle::Copying => "COPYING",
+    BackupLifecycle::Creating => "CREATING",
+    BackupLifecycle::Deleted => "DELETED",
+    BackupLifecycle::Failed => "FAILED",
+    BackupLifecycle::Pending => "PENDING",
+    BackupLifecycle::Transferring => "TRANSFERRING",
+    BackupLifecycle::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AVAILABLE", "COPYING", "CREATING", "DELETED", "FAILED", "PENDING", "TRANSFERRING"]
+                }
+            }
 impl AsRef<str> for BackupLifecycle {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

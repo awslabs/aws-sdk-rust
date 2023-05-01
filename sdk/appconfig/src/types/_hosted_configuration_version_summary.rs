@@ -3,7 +3,7 @@
 /// <p>Information about the configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostedConfigurationVersionSummary {
+pub struct HostedConfigurationVersionSummary  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct HostedConfigurationVersionSummary {
 }
 impl HostedConfigurationVersionSummary {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The configuration version.</p>
@@ -37,15 +37,15 @@ impl HostedConfigurationVersionSummary {
         self.version_number
     }
     /// <p>A description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> std::option::Option<& str> {
         self.version_label.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl HostedConfigurationVersionSummaryBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +83,8 @@ impl HostedConfigurationVersionSummaryBuilder {
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_profile_id = input;
-        self
+    pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_profile_id = input; self
     }
     /// <p>The configuration version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
@@ -98,8 +93,7 @@ impl HostedConfigurationVersionSummaryBuilder {
     }
     /// <p>The configuration version.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>A description of the configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +102,7 @@ impl HostedConfigurationVersionSummaryBuilder {
     }
     /// <p>A description of the configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +111,7 @@ impl HostedConfigurationVersionSummaryBuilder {
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,18 +120,25 @@ impl HostedConfigurationVersionSummaryBuilder {
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_label = input;
-        self
+        self.version_label = input; self
     }
     /// Consumes the builder and constructs a [`HostedConfigurationVersionSummary`](crate::types::HostedConfigurationVersionSummary).
     pub fn build(self) -> crate::types::HostedConfigurationVersionSummary {
         crate::types::HostedConfigurationVersionSummary {
-            application_id: self.application_id,
-            configuration_profile_id: self.configuration_profile_id,
-            version_number: self.version_number.unwrap_or_default(),
-            description: self.description,
-            content_type: self.content_type,
-            version_label: self.version_label,
+            application_id: self.application_id
+            ,
+            configuration_profile_id: self.configuration_profile_id
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
+            content_type: self.content_type
+            ,
+            version_label: self.version_label
+            ,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoadBalancerTlsCertificatesInput {
+pub struct GetLoadBalancerTlsCertificatesInput  {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
 }
 impl GetLoadBalancerTlsCertificatesInput {
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
         self.load_balancer_name.as_deref()
     }
 }
 impl GetLoadBalancerTlsCertificatesInput {
     /// Creates a new builder-style object to manufacture [`GetLoadBalancerTlsCertificatesInput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput).
-    pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder{
+    pub fn builder() -> crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder {
         crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl GetLoadBalancerTlsCertificatesInputBuilder {
         self
     }
     /// <p>The name of the load balancer you associated with your SSL/TLS certificate.</p>
-    pub fn set_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_name = input;
-        self
+    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_name = input; self
     }
     /// Consumes the builder and constructs a [`GetLoadBalancerTlsCertificatesInput`](crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificatesInput {
                 load_balancer_name: self.load_balancer_name
@@ -55,3 +46,4 @@ impl GetLoadBalancerTlsCertificatesInputBuilder {
         )
     }
 }
+

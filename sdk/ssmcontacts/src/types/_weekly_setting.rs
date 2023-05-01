@@ -3,7 +3,7 @@
 /// <p>Information about rotations that recur weekly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WeeklySetting {
+pub struct WeeklySetting  {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
     #[doc(hidden)]
     pub day_of_week: std::option::Option<crate::types::DayOfWeek>,
@@ -13,11 +13,11 @@ pub struct WeeklySetting {
 }
 impl WeeklySetting {
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
-    pub fn day_of_week(&self) -> std::option::Option<&crate::types::DayOfWeek> {
+    pub fn day_of_week(&self) -> std::option::Option<& crate::types::DayOfWeek> {
         self.day_of_week.as_ref()
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
-    pub fn hand_off_time(&self) -> std::option::Option<&crate::types::HandOffTime> {
+    pub fn hand_off_time(&self) -> std::option::Option<& crate::types::HandOffTime> {
         self.hand_off_time.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl WeeklySettingBuilder {
     }
     /// <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
     pub fn set_day_of_week(mut self, input: std::option::Option<crate::types::DayOfWeek>) -> Self {
-        self.day_of_week = input;
-        self
+        self.day_of_week = input; self
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
     pub fn hand_off_time(mut self, input: crate::types::HandOffTime) -> Self {
@@ -52,18 +51,17 @@ impl WeeklySettingBuilder {
         self
     }
     /// <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
-    pub fn set_hand_off_time(
-        mut self,
-        input: std::option::Option<crate::types::HandOffTime>,
-    ) -> Self {
-        self.hand_off_time = input;
-        self
+    pub fn set_hand_off_time(mut self, input: std::option::Option<crate::types::HandOffTime>) -> Self {
+        self.hand_off_time = input; self
     }
     /// Consumes the builder and constructs a [`WeeklySetting`](crate::types::WeeklySetting).
     pub fn build(self) -> crate::types::WeeklySetting {
         crate::types::WeeklySetting {
-            day_of_week: self.day_of_week,
-            hand_off_time: self.hand_off_time,
+            day_of_week: self.day_of_week
+            ,
+            hand_off_time: self.hand_off_time
+            ,
         }
     }
 }
+

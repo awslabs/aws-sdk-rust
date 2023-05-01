@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GenerateEmbedUrlForRegisteredUserOutput {
+pub struct GenerateEmbedUrlForRegisteredUserOutput  {
     /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
     #[doc(hidden)]
     pub embed_url: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct GenerateEmbedUrlForRegisteredUserOutput {
 }
 impl GenerateEmbedUrlForRegisteredUserOutput {
     /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> std::option::Option<& str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,11 +24,11 @@ impl GenerateEmbedUrlForRegisteredUserOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput {
+impl  std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateEmbedUrlForRegisteredUserOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
@@ -39,13 +39,13 @@ impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutput {
     }
 }
 impl aws_http::request_id::RequestId for GenerateEmbedUrlForRegisteredUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GenerateEmbedUrlForRegisteredUserOutput {
     /// Creates a new builder-style object to manufacture [`GenerateEmbedUrlForRegisteredUserOutput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput).
-    pub fn builder() -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder{
+    pub fn builder() -> crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder {
         crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserOutputBuilder::default()
     }
 }
@@ -67,8 +67,7 @@ impl GenerateEmbedUrlForRegisteredUserOutputBuilder {
     }
     /// <p>The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.</p>
     pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.embed_url = input;
-        self
+        self.embed_url = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -77,8 +76,7 @@ impl GenerateEmbedUrlForRegisteredUserOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,20 +85,19 @@ impl GenerateEmbedUrlForRegisteredUserOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GenerateEmbedUrlForRegisteredUserOutput`](crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput).
-    pub fn build(self) -> crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput{
+    pub fn build(self) -> crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput {
         crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput {
             embed_url: self.embed_url
             ,
@@ -123,3 +120,4 @@ impl std::fmt::Debug for GenerateEmbedUrlForRegisteredUserOutputBuilder {
         formatter.finish()
     }
 }
+

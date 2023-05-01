@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMaintenanceWindowOutput {
+pub struct DeleteMaintenanceWindowOutput  {
     /// <p>The ID of the deleted maintenance window.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct DeleteMaintenanceWindowOutput {
 }
 impl DeleteMaintenanceWindowOutput {
     /// <p>The ID of the deleted maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteMaintenanceWindowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMaintenanceWindowOutput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowOutputBuilder {
         crate::operation::delete_maintenance_window::builders::DeleteMaintenanceWindowOutputBuilder::default()
     }
 }
@@ -43,25 +41,24 @@ impl DeleteMaintenanceWindowOutputBuilder {
     }
     /// <p>The ID of the deleted maintenance window.</p>
     pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteMaintenanceWindowOutput`](crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput {
+    pub fn build(self) -> crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput {
         crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput {
-            window_id: self.window_id,
+            window_id: self.window_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

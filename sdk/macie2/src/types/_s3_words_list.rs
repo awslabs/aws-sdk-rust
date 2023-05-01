@@ -3,7 +3,7 @@
 /// <p>Provides information about an S3 object that lists specific text to ignore.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3WordsList {
+pub struct S3WordsList  {
     /// <p>The full name of the S3 bucket that contains the object.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3WordsList {
 }
 impl S3WordsList {
     /// <p>The full name of the S3 bucket that contains the object.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The full name (key) of the object.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3WordsListBuilder {
     }
     /// <p>The full name of the S3 bucket that contains the object.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The full name (key) of the object.</p>
     pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl S3WordsListBuilder {
     }
     /// <p>The full name (key) of the object.</p>
     pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_key = input;
-        self
+        self.object_key = input; self
     }
     /// Consumes the builder and constructs a [`S3WordsList`](crate::types::S3WordsList).
     pub fn build(self) -> crate::types::S3WordsList {
         crate::types::S3WordsList {
-            bucket_name: self.bucket_name,
-            object_key: self.object_key,
+            bucket_name: self.bucket_name
+            ,
+            object_key: self.object_key
+            ,
         }
     }
 }
+

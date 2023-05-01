@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionInput {
+pub struct GetExtensionInput  {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     #[doc(hidden)]
     pub extension_identifier: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetExtensionInput {
 }
 impl GetExtensionInput {
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(&self) -> std::option::Option<&str> {
+    pub fn extension_identifier(&self) -> std::option::Option<& str> {
         self.extension_identifier.as_deref()
     }
     /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
@@ -41,12 +41,8 @@ impl GetExtensionInputBuilder {
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn set_extension_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.extension_identifier = input;
-        self
+    pub fn set_extension_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.extension_identifier = input; self
     }
     /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
@@ -55,19 +51,18 @@ impl GetExtensionInputBuilder {
     }
     /// <p>The extension version number. If no version number was defined, AppConfig uses the highest version.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// Consumes the builder and constructs a [`GetExtensionInput`](crate::operation::get_extension::GetExtensionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_extension::GetExtensionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_extension::GetExtensionInput {
-            extension_identifier: self.extension_identifier,
-            version_number: self.version_number,
-        })
+    pub fn build(self) -> Result<crate::operation::get_extension::GetExtensionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_extension::GetExtensionInput {
+                extension_identifier: self.extension_identifier
+                ,
+                version_number: self.version_number
+                ,
+            }
+        )
     }
 }
+

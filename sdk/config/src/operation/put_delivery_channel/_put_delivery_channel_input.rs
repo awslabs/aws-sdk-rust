@@ -3,21 +3,20 @@
 /// <p>The input for the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDeliveryChannelInput {
+pub struct PutDeliveryChannelInput  {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     #[doc(hidden)]
     pub delivery_channel: std::option::Option<crate::types::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-    pub fn delivery_channel(&self) -> std::option::Option<&crate::types::DeliveryChannel> {
+    pub fn delivery_channel(&self) -> std::option::Option<& crate::types::DeliveryChannel> {
         self.delivery_channel.as_ref()
     }
 }
 impl PutDeliveryChannelInput {
     /// Creates a new builder-style object to manufacture [`PutDeliveryChannelInput`](crate::operation::put_delivery_channel::PutDeliveryChannelInput).
-    pub fn builder(
-    ) -> crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBuilder {
+    pub fn builder() -> crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBuilder {
         crate::operation::put_delivery_channel::builders::PutDeliveryChannelInputBuilder::default()
     }
 }
@@ -35,24 +34,17 @@ impl PutDeliveryChannelInputBuilder {
         self
     }
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-    pub fn set_delivery_channel(
-        mut self,
-        input: std::option::Option<crate::types::DeliveryChannel>,
-    ) -> Self {
-        self.delivery_channel = input;
-        self
+    pub fn set_delivery_channel(mut self, input: std::option::Option<crate::types::DeliveryChannel>) -> Self {
+        self.delivery_channel = input; self
     }
     /// Consumes the builder and constructs a [`PutDeliveryChannelInput`](crate::operation::put_delivery_channel::PutDeliveryChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_delivery_channel::PutDeliveryChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_delivery_channel::PutDeliveryChannelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_delivery_channel::PutDeliveryChannelInput {
-                delivery_channel: self.delivery_channel,
-            },
+                delivery_channel: self.delivery_channel
+                ,
+            }
         )
     }
 }
+

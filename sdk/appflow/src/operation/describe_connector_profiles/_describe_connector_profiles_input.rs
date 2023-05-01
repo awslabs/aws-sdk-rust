@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorProfilesInput {
+pub struct DescribeConnectorProfilesInput  {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     #[doc(hidden)]
     pub connector_profile_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21,15 +21,15 @@ pub struct DescribeConnectorProfilesInput {
 }
 impl DescribeConnectorProfilesInput {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn connector_profile_names(&self) -> std::option::Option<& [std::string::String]> {
         self.connector_profile_names.as_deref()
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<&crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<& crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
-    pub fn connector_label(&self) -> std::option::Option<&str> {
+    pub fn connector_label(&self) -> std::option::Option<& str> {
         self.connector_label.as_deref()
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
@@ -37,13 +37,13 @@ impl DescribeConnectorProfilesInput {
         self.max_results
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeConnectorProfilesInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesInput`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput).
-    pub fn builder() -> crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder{
+    pub fn builder() -> crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder {
         crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder::default()
     }
 }
@@ -66,17 +66,13 @@ impl DescribeConnectorProfilesInputBuilder {
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.connector_profile_names.unwrap_or_default();
-        v.push(input.into());
-        self.connector_profile_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.connector_profile_names = Some(v);
+                        self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.connector_profile_names = input;
-        self
+    pub fn set_connector_profile_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.connector_profile_names = input; self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
@@ -84,12 +80,8 @@ impl DescribeConnectorProfilesInputBuilder {
         self
     }
     /// <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
-        self.connector_type = input;
-        self
+    pub fn set_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
+        self.connector_type = input; self
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn connector_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +90,7 @@ impl DescribeConnectorProfilesInputBuilder {
     }
     /// <p>The name of the connector. The name is unique for each <code>ConnectorRegistration</code> in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector type/.</p>
     pub fn set_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_label = input;
-        self
+        self.connector_label = input; self
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -108,8 +99,7 @@ impl DescribeConnectorProfilesInputBuilder {
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations). </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,24 +108,24 @@ impl DescribeConnectorProfilesInputBuilder {
     }
     /// <p> The pagination token for the next page of data. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeConnectorProfilesInput`](crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_connector_profiles::DescribeConnectorProfilesInput {
-                connector_profile_names: self.connector_profile_names,
-                connector_type: self.connector_type,
-                connector_label: self.connector_label,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                connector_profile_names: self.connector_profile_names
+                ,
+                connector_type: self.connector_type
+                ,
+                connector_label: self.connector_label
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

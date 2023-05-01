@@ -3,7 +3,7 @@
 /// <p>Summarizes the number of layers, instances, and apps in a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StackSummary {
+pub struct StackSummary  {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct StackSummary {
 }
 impl StackSummary {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The stack name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The stack's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The number of layers.</p>
@@ -45,7 +45,7 @@ impl StackSummary {
         self.apps_count
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-    pub fn instances_count(&self) -> std::option::Option<&crate::types::InstancesCount> {
+    pub fn instances_count(&self) -> std::option::Option<& crate::types::InstancesCount> {
         self.instances_count.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl StackSummaryBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The stack name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl StackSummaryBuilder {
     }
     /// <p>The stack name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The stack's ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl StackSummaryBuilder {
     }
     /// <p>The stack's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The number of layers.</p>
     pub fn layers_count(mut self, input: i32) -> Self {
@@ -105,8 +102,7 @@ impl StackSummaryBuilder {
     }
     /// <p>The number of layers.</p>
     pub fn set_layers_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.layers_count = input;
-        self
+        self.layers_count = input; self
     }
     /// <p>The number of apps.</p>
     pub fn apps_count(mut self, input: i32) -> Self {
@@ -115,8 +111,7 @@ impl StackSummaryBuilder {
     }
     /// <p>The number of apps.</p>
     pub fn set_apps_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.apps_count = input;
-        self
+        self.apps_count = input; self
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
     pub fn instances_count(mut self, input: crate::types::InstancesCount) -> Self {
@@ -124,22 +119,25 @@ impl StackSummaryBuilder {
         self
     }
     /// <p>An <code>InstancesCount</code> object with the number of instances in each status.</p>
-    pub fn set_instances_count(
-        mut self,
-        input: std::option::Option<crate::types::InstancesCount>,
-    ) -> Self {
-        self.instances_count = input;
-        self
+    pub fn set_instances_count(mut self, input: std::option::Option<crate::types::InstancesCount>) -> Self {
+        self.instances_count = input; self
     }
     /// Consumes the builder and constructs a [`StackSummary`](crate::types::StackSummary).
     pub fn build(self) -> crate::types::StackSummary {
         crate::types::StackSummary {
-            stack_id: self.stack_id,
-            name: self.name,
-            arn: self.arn,
-            layers_count: self.layers_count,
-            apps_count: self.apps_count,
-            instances_count: self.instances_count,
+            stack_id: self.stack_id
+            ,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            layers_count: self.layers_count
+            ,
+            apps_count: self.apps_count
+            ,
+            instances_count: self.instances_count
+            ,
         }
     }
 }
+

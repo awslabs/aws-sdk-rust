@@ -3,7 +3,7 @@
 /// <p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <code>GetTelemetryMetadata</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TelemetryMetadata {
+pub struct TelemetryMetadata  {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
     #[doc(hidden)]
     pub message_type: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct TelemetryMetadata {
 }
 impl TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub fn message_type(&self) -> std::option::Option<&str> {
+    pub fn message_type(&self) -> std::option::Option<& str> {
         self.message_type.as_deref()
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
@@ -51,8 +51,7 @@ impl TelemetryMetadataBuilder {
     }
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
     pub fn set_message_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_type = input;
-        self
+        self.message_type = input; self
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn count(mut self, input: i64) -> Self {
@@ -61,8 +60,7 @@ impl TelemetryMetadataBuilder {
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn data_size(mut self, input: i64) -> Self {
@@ -71,15 +69,18 @@ impl TelemetryMetadataBuilder {
     }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn set_data_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.data_size = input;
-        self
+        self.data_size = input; self
     }
     /// Consumes the builder and constructs a [`TelemetryMetadata`](crate::types::TelemetryMetadata).
     pub fn build(self) -> crate::types::TelemetryMetadata {
         crate::types::TelemetryMetadata {
-            message_type: self.message_type,
-            count: self.count,
-            data_size: self.data_size,
+            message_type: self.message_type
+            ,
+            count: self.count
+            ,
+            data_size: self.data_size
+            ,
         }
     }
 }
+

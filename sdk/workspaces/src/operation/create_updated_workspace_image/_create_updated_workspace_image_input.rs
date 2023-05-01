@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUpdatedWorkspaceImageInput {
+pub struct CreateUpdatedWorkspaceImageInput  {
     /// <p>The name of the new updated WorkSpace image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,35 +12,35 @@ pub struct CreateUpdatedWorkspaceImageInput {
     /// <p>The identifier of the source WorkSpace image.</p>
     #[doc(hidden)]
     pub source_image_id: std::option::Option<std::string::String>,
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
     /// </note>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateUpdatedWorkspaceImageInput {
     /// <p>The name of the new updated WorkSpace image.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The identifier of the source WorkSpace image.</p>
-    pub fn source_image_id(&self) -> std::option::Option<&str> {
+    pub fn source_image_id(&self) -> std::option::Option<& str> {
         self.source_image_id.as_deref()
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
     /// </note>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateUpdatedWorkspaceImageInput {
     /// Creates a new builder-style object to manufacture [`CreateUpdatedWorkspaceImageInput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput).
-    pub fn builder() -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder{
+    pub fn builder() -> crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder {
         crate::operation::create_updated_workspace_image::builders::CreateUpdatedWorkspaceImageInputBuilder::default()
     }
 }
@@ -62,8 +62,7 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     }
     /// <p>The name of the new updated WorkSpace image.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +71,7 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     }
     /// <p>A description of whether updates for the WorkSpace image are available.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The identifier of the source WorkSpace image.</p>
     pub fn source_image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,46 +80,41 @@ impl CreateUpdatedWorkspaceImageInputBuilder {
     }
     /// <p>The identifier of the source WorkSpace image.</p>
     pub fn set_source_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_image_id = input;
-        self
+        self.source_image_id = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note>
-    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
+    /// <p>The tags that you want to add to the new updated WorkSpace image.</p> <note> 
+    /// <p>To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use <code>workspaces:CreateTags</code>. </p> 
     /// </note>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateUpdatedWorkspaceImageInput`](crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_updated_workspace_image::CreateUpdatedWorkspaceImageInput {
-                name: self.name,
-                description: self.description,
-                source_image_id: self.source_image_id,
-                tags: self.tags,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+                source_image_id: self.source_image_id
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

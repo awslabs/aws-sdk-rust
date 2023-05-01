@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyGlobalReplicationGroupInput {
+pub struct ModifyGlobalReplicationGroupInput  {
     /// <p>The name of the Global datastore</p>
     #[doc(hidden)]
     pub global_replication_group_id: std::option::Option<std::string::String>,
@@ -27,7 +27,7 @@ pub struct ModifyGlobalReplicationGroupInput {
 }
 impl ModifyGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
+    pub fn global_replication_group_id(&self) -> std::option::Option<& str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
@@ -35,19 +35,19 @@ impl ModifyGlobalReplicationGroupInput {
         self.apply_immediately
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
-    pub fn cache_node_type(&self) -> std::option::Option<&str> {
+    pub fn cache_node_type(&self) -> std::option::Option<& str> {
         self.cache_node_type.as_deref()
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> std::option::Option<& str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>A description of the Global datastore</p>
-    pub fn global_replication_group_description(&self) -> std::option::Option<&str> {
+    pub fn global_replication_group_description(&self) -> std::option::Option<& str> {
         self.global_replication_group_description.as_deref()
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
@@ -57,7 +57,7 @@ impl ModifyGlobalReplicationGroupInput {
 }
 impl ModifyGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalReplicationGroupInput`](crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder{
+    pub fn builder() -> crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder {
         crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder::default()
     }
 }
@@ -81,12 +81,8 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_replication_group_id = input;
-        self
+    pub fn set_global_replication_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_replication_group_id = input; self
     }
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
@@ -95,8 +91,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     }
     /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global Replication Groups cannot be requested to be applied in PreferredMaintenceWindow. </p>
     pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
-        self.apply_immediately = input;
-        self
+        self.apply_immediately = input; self
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
     pub fn cache_node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +100,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     }
     /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
     pub fn set_cache_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_node_type = input;
-        self
+        self.cache_node_type = input; self
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +109,7 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     }
     /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
     pub fn cache_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,28 +117,17 @@ impl ModifyGlobalReplicationGroupInputBuilder {
         self
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn set_cache_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cache_parameter_group_name = input;
-        self
+    pub fn set_cache_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cache_parameter_group_name = input; self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn global_replication_group_description(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn global_replication_group_description(mut self, input: impl Into<std::string::String>) -> Self {
         self.global_replication_group_description = Some(input.into());
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn set_global_replication_group_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_replication_group_description = input;
-        self
+    pub fn set_global_replication_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_replication_group_description = input; self
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
     pub fn automatic_failover_enabled(mut self, input: bool) -> Self {
@@ -154,26 +136,29 @@ impl ModifyGlobalReplicationGroupInputBuilder {
     }
     /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
     pub fn set_automatic_failover_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.automatic_failover_enabled = input;
-        self
+        self.automatic_failover_enabled = input; self
     }
     /// Consumes the builder and constructs a [`ModifyGlobalReplicationGroupInput`](crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupInput {
-                global_replication_group_id: self.global_replication_group_id,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
-                cache_node_type: self.cache_node_type,
-                engine_version: self.engine_version,
-                cache_parameter_group_name: self.cache_parameter_group_name,
-                global_replication_group_description: self.global_replication_group_description,
-                automatic_failover_enabled: self.automatic_failover_enabled,
-            },
+                global_replication_group_id: self.global_replication_group_id
+                ,
+                apply_immediately: self.apply_immediately
+                    .unwrap_or_default()
+                ,
+                cache_node_type: self.cache_node_type
+                ,
+                engine_version: self.engine_version
+                ,
+                cache_parameter_group_name: self.cache_parameter_group_name
+                ,
+                global_replication_group_description: self.global_replication_group_description
+                ,
+                automatic_failover_enabled: self.automatic_failover_enabled
+                ,
+            }
         )
     }
 }
+

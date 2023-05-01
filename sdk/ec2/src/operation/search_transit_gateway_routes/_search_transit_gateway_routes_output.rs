@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchTransitGatewayRoutesOutput {
+pub struct SearchTransitGatewayRoutesOutput  {
     /// <p>Information about the routes.</p>
     #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRoute>>,
@@ -13,7 +13,7 @@ pub struct SearchTransitGatewayRoutesOutput {
 }
 impl SearchTransitGatewayRoutesOutput {
     /// <p>Information about the routes.</p>
-    pub fn routes(&self) -> std::option::Option<&[crate::types::TransitGatewayRoute]> {
+    pub fn routes(&self) -> std::option::Option<& [crate::types::TransitGatewayRoute]> {
         self.routes.as_deref()
     }
     /// <p>Indicates whether there are additional routes available.</p>
@@ -22,13 +22,13 @@ impl SearchTransitGatewayRoutesOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchTransitGatewayRoutesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchTransitGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
-    pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder{
+    pub fn builder() -> crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder {
         crate::operation::search_transit_gateway_routes::builders::SearchTransitGatewayRoutesOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl SearchTransitGatewayRoutesOutputBuilder {
     /// <p>Information about the routes.</p>
     pub fn routes(mut self, input: crate::types::TransitGatewayRoute) -> Self {
         let mut v = self.routes.unwrap_or_default();
-        v.push(input);
-        self.routes = Some(v);
-        self
+                        v.push(input);
+                        self.routes = Some(v);
+                        self
     }
     /// <p>Information about the routes.</p>
-    pub fn set_routes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRoute>>,
-    ) -> Self {
-        self.routes = input;
-        self
+    pub fn set_routes(mut self, input: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRoute>>) -> Self {
+        self.routes = input; self
     }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn additional_routes_available(mut self, input: bool) -> Self {
@@ -68,26 +64,26 @@ impl SearchTransitGatewayRoutesOutputBuilder {
     }
     /// <p>Indicates whether there are additional routes available.</p>
     pub fn set_additional_routes_available(mut self, input: std::option::Option<bool>) -> Self {
-        self.additional_routes_available = input;
-        self
+        self.additional_routes_available = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchTransitGatewayRoutesOutput`](crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
+    pub fn build(self) -> crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
         crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput {
-            routes: self.routes,
-            additional_routes_available: self.additional_routes_available,
+            routes: self.routes
+            ,
+            additional_routes_available: self.additional_routes_available
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

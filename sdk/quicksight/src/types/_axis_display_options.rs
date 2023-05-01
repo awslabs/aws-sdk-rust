@@ -3,7 +3,7 @@
 /// <p>The display options for the axis label.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AxisDisplayOptions {
+pub struct AxisDisplayOptions  {
     /// <p>The tick label options of an axis.</p>
     #[doc(hidden)]
     pub tick_label_options: std::option::Option<crate::types::AxisTickLabelOptions>,
@@ -25,27 +25,27 @@ pub struct AxisDisplayOptions {
 }
 impl AxisDisplayOptions {
     /// <p>The tick label options of an axis.</p>
-    pub fn tick_label_options(&self) -> std::option::Option<&crate::types::AxisTickLabelOptions> {
+    pub fn tick_label_options(&self) -> std::option::Option<& crate::types::AxisTickLabelOptions> {
         self.tick_label_options.as_ref()
     }
     /// <p>Determines whether or not the axis line is visible.</p>
-    pub fn axis_line_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn axis_line_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.axis_line_visibility.as_ref()
     }
     /// <p>Determines whether or not the grid line is visible.</p>
-    pub fn grid_line_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn grid_line_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.grid_line_visibility.as_ref()
     }
     /// <p>The data options for an axis.</p>
-    pub fn data_options(&self) -> std::option::Option<&crate::types::AxisDataOptions> {
+    pub fn data_options(&self) -> std::option::Option<& crate::types::AxisDataOptions> {
         self.data_options.as_ref()
     }
     /// <p>The scroll bar options for an axis.</p>
-    pub fn scrollbar_options(&self) -> std::option::Option<&crate::types::ScrollBarOptions> {
+    pub fn scrollbar_options(&self) -> std::option::Option<& crate::types::ScrollBarOptions> {
         self.scrollbar_options.as_ref()
     }
     /// <p>The offset value that determines the starting placement of the axis within a visual's bounds.</p>
-    pub fn axis_offset(&self) -> std::option::Option<&str> {
+    pub fn axis_offset(&self) -> std::option::Option<& str> {
         self.axis_offset.as_deref()
     }
 }
@@ -74,12 +74,8 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>The tick label options of an axis.</p>
-    pub fn set_tick_label_options(
-        mut self,
-        input: std::option::Option<crate::types::AxisTickLabelOptions>,
-    ) -> Self {
-        self.tick_label_options = input;
-        self
+    pub fn set_tick_label_options(mut self, input: std::option::Option<crate::types::AxisTickLabelOptions>) -> Self {
+        self.tick_label_options = input; self
     }
     /// <p>Determines whether or not the axis line is visible.</p>
     pub fn axis_line_visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -87,12 +83,8 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the axis line is visible.</p>
-    pub fn set_axis_line_visibility(
-        mut self,
-        input: std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.axis_line_visibility = input;
-        self
+    pub fn set_axis_line_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+        self.axis_line_visibility = input; self
     }
     /// <p>Determines whether or not the grid line is visible.</p>
     pub fn grid_line_visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -100,12 +92,8 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>Determines whether or not the grid line is visible.</p>
-    pub fn set_grid_line_visibility(
-        mut self,
-        input: std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.grid_line_visibility = input;
-        self
+    pub fn set_grid_line_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+        self.grid_line_visibility = input; self
     }
     /// <p>The data options for an axis.</p>
     pub fn data_options(mut self, input: crate::types::AxisDataOptions) -> Self {
@@ -113,12 +101,8 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>The data options for an axis.</p>
-    pub fn set_data_options(
-        mut self,
-        input: std::option::Option<crate::types::AxisDataOptions>,
-    ) -> Self {
-        self.data_options = input;
-        self
+    pub fn set_data_options(mut self, input: std::option::Option<crate::types::AxisDataOptions>) -> Self {
+        self.data_options = input; self
     }
     /// <p>The scroll bar options for an axis.</p>
     pub fn scrollbar_options(mut self, input: crate::types::ScrollBarOptions) -> Self {
@@ -126,12 +110,8 @@ impl AxisDisplayOptionsBuilder {
         self
     }
     /// <p>The scroll bar options for an axis.</p>
-    pub fn set_scrollbar_options(
-        mut self,
-        input: std::option::Option<crate::types::ScrollBarOptions>,
-    ) -> Self {
-        self.scrollbar_options = input;
-        self
+    pub fn set_scrollbar_options(mut self, input: std::option::Option<crate::types::ScrollBarOptions>) -> Self {
+        self.scrollbar_options = input; self
     }
     /// <p>The offset value that determines the starting placement of the axis within a visual's bounds.</p>
     pub fn axis_offset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,18 +120,24 @@ impl AxisDisplayOptionsBuilder {
     }
     /// <p>The offset value that determines the starting placement of the axis within a visual's bounds.</p>
     pub fn set_axis_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.axis_offset = input;
-        self
+        self.axis_offset = input; self
     }
     /// Consumes the builder and constructs a [`AxisDisplayOptions`](crate::types::AxisDisplayOptions).
     pub fn build(self) -> crate::types::AxisDisplayOptions {
         crate::types::AxisDisplayOptions {
-            tick_label_options: self.tick_label_options,
-            axis_line_visibility: self.axis_line_visibility,
-            grid_line_visibility: self.grid_line_visibility,
-            data_options: self.data_options,
-            scrollbar_options: self.scrollbar_options,
-            axis_offset: self.axis_offset,
+            tick_label_options: self.tick_label_options
+            ,
+            axis_line_visibility: self.axis_line_visibility
+            ,
+            grid_line_visibility: self.grid_line_visibility
+            ,
+            data_options: self.data_options
+            ,
+            scrollbar_options: self.scrollbar_options
+            ,
+            axis_offset: self.axis_offset
+            ,
         }
     }
 }
+

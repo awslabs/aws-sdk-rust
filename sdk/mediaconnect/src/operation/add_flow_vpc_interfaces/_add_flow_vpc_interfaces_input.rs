@@ -3,7 +3,7 @@
 /// A request to add VPC interfaces to the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowVpcInterfacesInput {
+pub struct AddFlowVpcInterfacesInput  {
     /// The flow that you want to mutate.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -13,18 +13,17 @@ pub struct AddFlowVpcInterfacesInput {
 }
 impl AddFlowVpcInterfacesInput {
     /// The flow that you want to mutate.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::types::VpcInterfaceRequest]> {
+    pub fn vpc_interfaces(&self) -> std::option::Option<& [crate::types::VpcInterfaceRequest]> {
         self.vpc_interfaces.as_deref()
     }
 }
 impl AddFlowVpcInterfacesInput {
     /// Creates a new builder-style object to manufacture [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
-    pub fn builder(
-    ) -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder {
+    pub fn builder() -> crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder {
         crate::operation::add_flow_vpc_interfaces::builders::AddFlowVpcInterfacesInputBuilder::default()
     }
 }
@@ -34,8 +33,7 @@ impl AddFlowVpcInterfacesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AddFlowVpcInterfacesInputBuilder {
     pub(crate) flow_arn: std::option::Option<std::string::String>,
-    pub(crate) vpc_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>,
+    pub(crate) vpc_interfaces: std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>,
 }
 impl AddFlowVpcInterfacesInputBuilder {
     /// The flow that you want to mutate.
@@ -45,8 +43,7 @@ impl AddFlowVpcInterfacesInputBuilder {
     }
     /// The flow that you want to mutate.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// Appends an item to `vpc_interfaces`.
     ///
@@ -55,30 +52,24 @@ impl AddFlowVpcInterfacesInputBuilder {
     /// A list of VPC interfaces that you want to add.
     pub fn vpc_interfaces(mut self, input: crate::types::VpcInterfaceRequest) -> Self {
         let mut v = self.vpc_interfaces.unwrap_or_default();
-        v.push(input);
-        self.vpc_interfaces = Some(v);
-        self
+                        v.push(input);
+                        self.vpc_interfaces = Some(v);
+                        self
     }
     /// A list of VPC interfaces that you want to add.
-    pub fn set_vpc_interfaces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>,
-    ) -> Self {
-        self.vpc_interfaces = input;
-        self
+    pub fn set_vpc_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
+        self.vpc_interfaces = input; self
     }
     /// Consumes the builder and constructs a [`AddFlowVpcInterfacesInput`](crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesInput {
-                flow_arn: self.flow_arn,
-                vpc_interfaces: self.vpc_interfaces,
-            },
+                flow_arn: self.flow_arn
+                ,
+                vpc_interfaces: self.vpc_interfaces
+                ,
+            }
         )
     }
 }
+

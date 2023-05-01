@@ -3,7 +3,7 @@
 /// <p>An object that contains information about a component type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentTypeSummary {
+pub struct ComponentTypeSummary  {
     /// <p>The ARN of the component type.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct ComponentTypeSummary {
 }
 impl ComponentTypeSummary {
     /// <p>The ARN of the component type.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> std::option::Option<&str> {
+    pub fn component_type_id(&self) -> std::option::Option<& str> {
         self.component_type_id.as_deref()
     }
     /// <p>The date and time when the component type was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the component type was last updated.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
     /// <p>The description of the component type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the component type.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The component type name.</p>
-    pub fn component_type_name(&self) -> std::option::Option<&str> {
+    pub fn component_type_name(&self) -> std::option::Option<& str> {
         self.component_type_name.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl ComponentTypeSummaryBuilder {
     }
     /// <p>The ARN of the component type.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,12 +91,8 @@ impl ComponentTypeSummaryBuilder {
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.component_type_id = input;
-        self
+    pub fn set_component_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_type_id = input; self
     }
     /// <p>The date and time when the component type was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -105,12 +100,8 @@ impl ComponentTypeSummaryBuilder {
         self
     }
     /// <p>The date and time when the component type was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>The date and time when the component type was last updated.</p>
     pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,12 +109,8 @@ impl ComponentTypeSummaryBuilder {
         self
     }
     /// <p>The date and time when the component type was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date_time = input;
-        self
+    pub fn set_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_date_time = input; self
     }
     /// <p>The description of the component type.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +119,7 @@ impl ComponentTypeSummaryBuilder {
     }
     /// <p>The description of the component type.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The current status of the component type.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -142,8 +128,7 @@ impl ComponentTypeSummaryBuilder {
     }
     /// <p>The current status of the component type.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The component type name.</p>
     pub fn component_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,23 +136,27 @@ impl ComponentTypeSummaryBuilder {
         self
     }
     /// <p>The component type name.</p>
-    pub fn set_component_type_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.component_type_name = input;
-        self
+    pub fn set_component_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_type_name = input; self
     }
     /// Consumes the builder and constructs a [`ComponentTypeSummary`](crate::types::ComponentTypeSummary).
     pub fn build(self) -> crate::types::ComponentTypeSummary {
         crate::types::ComponentTypeSummary {
-            arn: self.arn,
-            component_type_id: self.component_type_id,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
-            description: self.description,
-            status: self.status,
-            component_type_name: self.component_type_name,
+            arn: self.arn
+            ,
+            component_type_id: self.component_type_id
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            update_date_time: self.update_date_time
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            component_type_name: self.component_type_name
+            ,
         }
     }
 }
+

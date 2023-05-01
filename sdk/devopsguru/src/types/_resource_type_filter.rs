@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetypefilter = unimplemented!();
 /// match resourcetypefilter {
@@ -55,22 +55,14 @@
 /// Specifically, when `resourcetypefilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceTypeFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
     CloudfrontDistribution,
@@ -127,132 +119,91 @@ pub enum ResourceTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
     StepFunctionsStateMachine,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceTypeFilter {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLOUDFRONT_DISTRIBUTION" => ResourceTypeFilter::CloudfrontDistribution,
-            "DYNAMODB_TABLE" => ResourceTypeFilter::DynamodbTable,
-            "EC2_NAT_GATEWAY" => ResourceTypeFilter::Ec2NatGateway,
-            "ECS_CLUSTER" => ResourceTypeFilter::EcsCluster,
-            "ECS_SERVICE" => ResourceTypeFilter::EcsService,
-            "EKS_CLUSTER" => ResourceTypeFilter::EksCluster,
-            "ELASTICACHE_CACHE_CLUSTER" => ResourceTypeFilter::ElasticacheCacheCluster,
-            "ELASTICSEARCH_DOMAIN" => ResourceTypeFilter::ElasticsearchDomain,
-            "ELASTIC_BEANSTALK_ENVIRONMENT" => ResourceTypeFilter::ElasticBeanstalkEnvironment,
-            "ELASTIC_LOAD_BALANCER_LOAD_BALANCER" => {
-                ResourceTypeFilter::ElasticLoadBalancerLoadBalancer
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLOUDFRONT_DISTRIBUTION" => ResourceTypeFilter::CloudfrontDistribution,
+"DYNAMODB_TABLE" => ResourceTypeFilter::DynamodbTable,
+"EC2_NAT_GATEWAY" => ResourceTypeFilter::Ec2NatGateway,
+"ECS_CLUSTER" => ResourceTypeFilter::EcsCluster,
+"ECS_SERVICE" => ResourceTypeFilter::EcsService,
+"EKS_CLUSTER" => ResourceTypeFilter::EksCluster,
+"ELASTICACHE_CACHE_CLUSTER" => ResourceTypeFilter::ElasticacheCacheCluster,
+"ELASTICSEARCH_DOMAIN" => ResourceTypeFilter::ElasticsearchDomain,
+"ELASTIC_BEANSTALK_ENVIRONMENT" => ResourceTypeFilter::ElasticBeanstalkEnvironment,
+"ELASTIC_LOAD_BALANCER_LOAD_BALANCER" => ResourceTypeFilter::ElasticLoadBalancerLoadBalancer,
+"ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER" => ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer,
+"ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP" => ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup,
+"KINESIS_STREAM" => ResourceTypeFilter::KinesisStream,
+"LAMBDA_FUNCTION" => ResourceTypeFilter::LambdaFunction,
+"LOG_GROUPS" => ResourceTypeFilter::LogGroups,
+"OPEN_SEARCH_SERVICE_DOMAIN" => ResourceTypeFilter::OpenSearchServiceDomain,
+"RDS_DB_CLUSTER" => ResourceTypeFilter::RdsDbCluster,
+"RDS_DB_INSTANCE" => ResourceTypeFilter::RdsDbInstance,
+"REDSHIFT_CLUSTER" => ResourceTypeFilter::RedshiftCluster,
+"ROUTE53_HEALTH_CHECK" => ResourceTypeFilter::Route53HealthCheck,
+"ROUTE53_HOSTED_ZONE" => ResourceTypeFilter::Route53HostedZone,
+"S3_BUCKET" => ResourceTypeFilter::S3Bucket,
+"SAGEMAKER_ENDPOINT" => ResourceTypeFilter::SagemakerEndpoint,
+"SNS_TOPIC" => ResourceTypeFilter::SnsTopic,
+"SQS_QUEUE" => ResourceTypeFilter::SqsQueue,
+"STEP_FUNCTIONS_ACTIVITY" => ResourceTypeFilter::StepFunctionsActivity,
+"STEP_FUNCTIONS_STATE_MACHINE" => ResourceTypeFilter::StepFunctionsStateMachine,
+other => ResourceTypeFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER" => {
-                ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer
-            }
-            "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP" => {
-                ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup
-            }
-            "KINESIS_STREAM" => ResourceTypeFilter::KinesisStream,
-            "LAMBDA_FUNCTION" => ResourceTypeFilter::LambdaFunction,
-            "LOG_GROUPS" => ResourceTypeFilter::LogGroups,
-            "OPEN_SEARCH_SERVICE_DOMAIN" => ResourceTypeFilter::OpenSearchServiceDomain,
-            "RDS_DB_CLUSTER" => ResourceTypeFilter::RdsDbCluster,
-            "RDS_DB_INSTANCE" => ResourceTypeFilter::RdsDbInstance,
-            "REDSHIFT_CLUSTER" => ResourceTypeFilter::RedshiftCluster,
-            "ROUTE53_HEALTH_CHECK" => ResourceTypeFilter::Route53HealthCheck,
-            "ROUTE53_HOSTED_ZONE" => ResourceTypeFilter::Route53HostedZone,
-            "S3_BUCKET" => ResourceTypeFilter::S3Bucket,
-            "SAGEMAKER_ENDPOINT" => ResourceTypeFilter::SagemakerEndpoint,
-            "SNS_TOPIC" => ResourceTypeFilter::SnsTopic,
-            "SQS_QUEUE" => ResourceTypeFilter::SqsQueue,
-            "STEP_FUNCTIONS_ACTIVITY" => ResourceTypeFilter::StepFunctionsActivity,
-            "STEP_FUNCTIONS_STATE_MACHINE" => ResourceTypeFilter::StepFunctionsStateMachine,
-            other => ResourceTypeFilter::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for ResourceTypeFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceTypeFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceTypeFilter::from(s))
+                }
+            }
 impl ResourceTypeFilter {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceTypeFilter::CloudfrontDistribution => "CLOUDFRONT_DISTRIBUTION",
-            ResourceTypeFilter::DynamodbTable => "DYNAMODB_TABLE",
-            ResourceTypeFilter::Ec2NatGateway => "EC2_NAT_GATEWAY",
-            ResourceTypeFilter::EcsCluster => "ECS_CLUSTER",
-            ResourceTypeFilter::EcsService => "ECS_SERVICE",
-            ResourceTypeFilter::EksCluster => "EKS_CLUSTER",
-            ResourceTypeFilter::ElasticacheCacheCluster => "ELASTICACHE_CACHE_CLUSTER",
-            ResourceTypeFilter::ElasticsearchDomain => "ELASTICSEARCH_DOMAIN",
-            ResourceTypeFilter::ElasticBeanstalkEnvironment => "ELASTIC_BEANSTALK_ENVIRONMENT",
-            ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => {
-                "ELASTIC_LOAD_BALANCER_LOAD_BALANCER"
-            }
-            ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => {
-                "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER"
-            }
-            ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => {
-                "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP"
-            }
-            ResourceTypeFilter::KinesisStream => "KINESIS_STREAM",
-            ResourceTypeFilter::LambdaFunction => "LAMBDA_FUNCTION",
-            ResourceTypeFilter::LogGroups => "LOG_GROUPS",
-            ResourceTypeFilter::OpenSearchServiceDomain => "OPEN_SEARCH_SERVICE_DOMAIN",
-            ResourceTypeFilter::RdsDbCluster => "RDS_DB_CLUSTER",
-            ResourceTypeFilter::RdsDbInstance => "RDS_DB_INSTANCE",
-            ResourceTypeFilter::RedshiftCluster => "REDSHIFT_CLUSTER",
-            ResourceTypeFilter::Route53HealthCheck => "ROUTE53_HEALTH_CHECK",
-            ResourceTypeFilter::Route53HostedZone => "ROUTE53_HOSTED_ZONE",
-            ResourceTypeFilter::S3Bucket => "S3_BUCKET",
-            ResourceTypeFilter::SagemakerEndpoint => "SAGEMAKER_ENDPOINT",
-            ResourceTypeFilter::SnsTopic => "SNS_TOPIC",
-            ResourceTypeFilter::SqsQueue => "SQS_QUEUE",
-            ResourceTypeFilter::StepFunctionsActivity => "STEP_FUNCTIONS_ACTIVITY",
-            ResourceTypeFilter::StepFunctionsStateMachine => "STEP_FUNCTIONS_STATE_MACHINE",
-            ResourceTypeFilter::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLOUDFRONT_DISTRIBUTION",
-            "DYNAMODB_TABLE",
-            "EC2_NAT_GATEWAY",
-            "ECS_CLUSTER",
-            "ECS_SERVICE",
-            "EKS_CLUSTER",
-            "ELASTICACHE_CACHE_CLUSTER",
-            "ELASTICSEARCH_DOMAIN",
-            "ELASTIC_BEANSTALK_ENVIRONMENT",
-            "ELASTIC_LOAD_BALANCER_LOAD_BALANCER",
-            "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER",
-            "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP",
-            "KINESIS_STREAM",
-            "LAMBDA_FUNCTION",
-            "LOG_GROUPS",
-            "OPEN_SEARCH_SERVICE_DOMAIN",
-            "RDS_DB_CLUSTER",
-            "RDS_DB_INSTANCE",
-            "REDSHIFT_CLUSTER",
-            "ROUTE53_HEALTH_CHECK",
-            "ROUTE53_HOSTED_ZONE",
-            "S3_BUCKET",
-            "SAGEMAKER_ENDPOINT",
-            "SNS_TOPIC",
-            "SQS_QUEUE",
-            "STEP_FUNCTIONS_ACTIVITY",
-            "STEP_FUNCTIONS_STATE_MACHINE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceTypeFilter::CloudfrontDistribution => "CLOUDFRONT_DISTRIBUTION",
+    ResourceTypeFilter::DynamodbTable => "DYNAMODB_TABLE",
+    ResourceTypeFilter::Ec2NatGateway => "EC2_NAT_GATEWAY",
+    ResourceTypeFilter::EcsCluster => "ECS_CLUSTER",
+    ResourceTypeFilter::EcsService => "ECS_SERVICE",
+    ResourceTypeFilter::EksCluster => "EKS_CLUSTER",
+    ResourceTypeFilter::ElasticacheCacheCluster => "ELASTICACHE_CACHE_CLUSTER",
+    ResourceTypeFilter::ElasticsearchDomain => "ELASTICSEARCH_DOMAIN",
+    ResourceTypeFilter::ElasticBeanstalkEnvironment => "ELASTIC_BEANSTALK_ENVIRONMENT",
+    ResourceTypeFilter::ElasticLoadBalancerLoadBalancer => "ELASTIC_LOAD_BALANCER_LOAD_BALANCER",
+    ResourceTypeFilter::ElasticLoadBalancingV2LoadBalancer => "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER",
+    ResourceTypeFilter::ElasticLoadBalancingV2TargetGroup => "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP",
+    ResourceTypeFilter::KinesisStream => "KINESIS_STREAM",
+    ResourceTypeFilter::LambdaFunction => "LAMBDA_FUNCTION",
+    ResourceTypeFilter::LogGroups => "LOG_GROUPS",
+    ResourceTypeFilter::OpenSearchServiceDomain => "OPEN_SEARCH_SERVICE_DOMAIN",
+    ResourceTypeFilter::RdsDbCluster => "RDS_DB_CLUSTER",
+    ResourceTypeFilter::RdsDbInstance => "RDS_DB_INSTANCE",
+    ResourceTypeFilter::RedshiftCluster => "REDSHIFT_CLUSTER",
+    ResourceTypeFilter::Route53HealthCheck => "ROUTE53_HEALTH_CHECK",
+    ResourceTypeFilter::Route53HostedZone => "ROUTE53_HOSTED_ZONE",
+    ResourceTypeFilter::S3Bucket => "S3_BUCKET",
+    ResourceTypeFilter::SagemakerEndpoint => "SAGEMAKER_ENDPOINT",
+    ResourceTypeFilter::SnsTopic => "SNS_TOPIC",
+    ResourceTypeFilter::SqsQueue => "SQS_QUEUE",
+    ResourceTypeFilter::StepFunctionsActivity => "STEP_FUNCTIONS_ACTIVITY",
+    ResourceTypeFilter::StepFunctionsStateMachine => "STEP_FUNCTIONS_STATE_MACHINE",
+    ResourceTypeFilter::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLOUDFRONT_DISTRIBUTION", "DYNAMODB_TABLE", "EC2_NAT_GATEWAY", "ECS_CLUSTER", "ECS_SERVICE", "EKS_CLUSTER", "ELASTICACHE_CACHE_CLUSTER", "ELASTICSEARCH_DOMAIN", "ELASTIC_BEANSTALK_ENVIRONMENT", "ELASTIC_LOAD_BALANCER_LOAD_BALANCER", "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER", "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP", "KINESIS_STREAM", "LAMBDA_FUNCTION", "LOG_GROUPS", "OPEN_SEARCH_SERVICE_DOMAIN", "RDS_DB_CLUSTER", "RDS_DB_INSTANCE", "REDSHIFT_CLUSTER", "ROUTE53_HEALTH_CHECK", "ROUTE53_HOSTED_ZONE", "S3_BUCKET", "SAGEMAKER_ENDPOINT", "SNS_TOPIC", "SQS_QUEUE", "STEP_FUNCTIONS_ACTIVITY", "STEP_FUNCTIONS_STATE_MACHINE"]
+                }
+            }
 impl AsRef<str> for ResourceTypeFilter {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

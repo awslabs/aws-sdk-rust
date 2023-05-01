@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendPipelineExecutionStepSuccessOutput {
+pub struct SendPipelineExecutionStepSuccessOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct SendPipelineExecutionStepSuccessOutput {
 }
 impl SendPipelineExecutionStepSuccessOutput {
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn pipeline_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_arn(&self) -> std::option::Option<& str> {
         self.pipeline_execution_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SendPipelineExecutionStepSuccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SendPipelineExecutionStepSuccessOutput {
     /// Creates a new builder-style object to manufacture [`SendPipelineExecutionStepSuccessOutput`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput).
-    pub fn builder() -> crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessOutputBuilder{
+    pub fn builder() -> crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessOutputBuilder {
         crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl SendPipelineExecutionStepSuccessOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-    pub fn set_pipeline_execution_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.pipeline_execution_arn = input;
-        self
+    pub fn set_pipeline_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.pipeline_execution_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SendPipelineExecutionStepSuccessOutput`](crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput).
-    pub fn build(self) -> crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput{
+    pub fn build(self) -> crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput {
         crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccessOutput {
             pipeline_execution_arn: self.pipeline_execution_arn
             ,
@@ -65,3 +61,4 @@ impl SendPipelineExecutionStepSuccessOutputBuilder {
         }
     }
 }
+

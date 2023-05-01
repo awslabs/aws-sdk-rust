@@ -3,16 +3,16 @@
 /// <p> Details about a package version. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionDescription {
+pub struct PackageVersionDescription  {
     /// <p> The format of the package version. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -52,61 +52,61 @@ pub struct PackageVersionDescription {
 }
 impl PackageVersionDescription {
     /// <p> The format of the package version. </p>
-    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the requested package. </p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p> The version of the package. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p> The homepage associated with the package. </p>
-    pub fn home_page(&self) -> std::option::Option<&str> {
+    pub fn home_page(&self) -> std::option::Option<& str> {
         self.home_page.as_deref()
     }
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-    pub fn source_code_repository(&self) -> std::option::Option<&str> {
+    pub fn source_code_repository(&self) -> std::option::Option<& str> {
         self.source_code_repository.as_deref()
     }
     /// <p> A timestamp that contains the date and time the package version was published. </p>
-    pub fn published_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn published_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.published_time.as_ref()
     }
     /// <p> Information about licenses associated with the package version. </p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::types::LicenseInfo]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::types::LicenseInfo]> {
         self.licenses.as_deref()
     }
     /// <p> The revision of the package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p> A string that contains the status of the package version. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn origin(&self) -> std::option::Option<&crate::types::PackageVersionOrigin> {
+    pub fn origin(&self) -> std::option::Option<& crate::types::PackageVersionOrigin> {
         self.origin.as_ref()
     }
 }
@@ -143,30 +143,28 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> The format of the package version. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
-    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p> The name of the requested package. </p>
     pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,8 +173,7 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> The name of the requested package. </p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,8 +182,7 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p> The version of the package. </p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +191,7 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> The version of the package. </p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
     pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,8 +200,7 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
     pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// <p> The homepage associated with the package. </p>
     pub fn home_page(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,8 +209,7 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> The homepage associated with the package. </p>
     pub fn set_home_page(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.home_page = input;
-        self
+        self.home_page = input; self
     }
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
     pub fn source_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,12 +217,8 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-    pub fn set_source_code_repository(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_code_repository = input;
-        self
+    pub fn set_source_code_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_code_repository = input; self
     }
     /// <p> A timestamp that contains the date and time the package version was published. </p>
     pub fn published_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -237,12 +226,8 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p> A timestamp that contains the date and time the package version was published. </p>
-    pub fn set_published_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.published_time = input;
-        self
+    pub fn set_published_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.published_time = input; self
     }
     /// Appends an item to `licenses`.
     ///
@@ -251,17 +236,13 @@ impl PackageVersionDescriptionBuilder {
     /// <p> Information about licenses associated with the package version. </p>
     pub fn licenses(mut self, input: crate::types::LicenseInfo) -> Self {
         let mut v = self.licenses.unwrap_or_default();
-        v.push(input);
-        self.licenses = Some(v);
-        self
+                        v.push(input);
+                        self.licenses = Some(v);
+                        self
     }
     /// <p> Information about licenses associated with the package version. </p>
-    pub fn set_licenses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LicenseInfo>>,
-    ) -> Self {
-        self.licenses = input;
-        self
+    pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::types::LicenseInfo>>) -> Self {
+        self.licenses = input; self
     }
     /// <p> The revision of the package version. </p>
     pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,8 +251,7 @@ impl PackageVersionDescriptionBuilder {
     }
     /// <p> The revision of the package version. </p>
     pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision = input;
-        self
+        self.revision = input; self
     }
     /// <p> A string that contains the status of the package version. </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
@@ -279,12 +259,8 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p> A string that contains the status of the package version. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::PackageVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::PackageVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn origin(mut self, input: crate::types::PackageVersionOrigin) -> Self {
@@ -292,29 +268,39 @@ impl PackageVersionDescriptionBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn set_origin(
-        mut self,
-        input: std::option::Option<crate::types::PackageVersionOrigin>,
-    ) -> Self {
-        self.origin = input;
-        self
+    pub fn set_origin(mut self, input: std::option::Option<crate::types::PackageVersionOrigin>) -> Self {
+        self.origin = input; self
     }
     /// Consumes the builder and constructs a [`PackageVersionDescription`](crate::types::PackageVersionDescription).
     pub fn build(self) -> crate::types::PackageVersionDescription {
         crate::types::PackageVersionDescription {
-            format: self.format,
-            namespace: self.namespace,
-            package_name: self.package_name,
-            display_name: self.display_name,
-            version: self.version,
-            summary: self.summary,
-            home_page: self.home_page,
-            source_code_repository: self.source_code_repository,
-            published_time: self.published_time,
-            licenses: self.licenses,
-            revision: self.revision,
-            status: self.status,
-            origin: self.origin,
+            format: self.format
+            ,
+            namespace: self.namespace
+            ,
+            package_name: self.package_name
+            ,
+            display_name: self.display_name
+            ,
+            version: self.version
+            ,
+            summary: self.summary
+            ,
+            home_page: self.home_page
+            ,
+            source_code_repository: self.source_code_repository
+            ,
+            published_time: self.published_time
+            ,
+            licenses: self.licenses
+            ,
+            revision: self.revision
+            ,
+            status: self.status
+            ,
+            origin: self.origin
+            ,
         }
     }
 }
+

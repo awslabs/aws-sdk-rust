@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsOutput {
+pub struct ListEnvironmentsOutput  {
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of environment identifiers.</p>
-    pub fn environment_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn environment_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.environment_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEnvironmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ListEnvironmentsOutputBuilder {
     }
     /// <p>If there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `environment_ids`.
     ///
@@ -60,33 +58,32 @@ impl ListEnvironmentsOutputBuilder {
     /// <p>The list of environment identifiers.</p>
     pub fn environment_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.environment_ids.unwrap_or_default();
-        v.push(input.into());
-        self.environment_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.environment_ids = Some(v);
+                        self
     }
     /// <p>The list of environment identifiers.</p>
-    pub fn set_environment_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.environment_ids = input;
-        self
+    pub fn set_environment_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.environment_ids = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
     pub fn build(self) -> crate::operation::list_environments::ListEnvironmentsOutput {
         crate::operation::list_environments::ListEnvironmentsOutput {
-            next_token: self.next_token,
-            environment_ids: self.environment_ids,
+            next_token: self.next_token
+            ,
+            environment_ids: self.environment_ids
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

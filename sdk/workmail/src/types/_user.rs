@@ -3,7 +3,7 @@
 /// <p>The representation of an WorkMail user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct User {
+pub struct User  {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct User {
 }
 impl User {
     /// <p>The identifier of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The email of the user.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>The role of the user.</p>
-    pub fn user_role(&self) -> std::option::Option<&crate::types::UserRole> {
+    pub fn user_role(&self) -> std::option::Option<& crate::types::UserRole> {
         self.user_role.as_ref()
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl UserBuilder {
     }
     /// <p>The identifier of the user.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The email of the user.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl UserBuilder {
     }
     /// <p>The email of the user.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
     /// <p>The name of the user.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +109,7 @@ impl UserBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The display name of the user.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +118,7 @@ impl UserBuilder {
     }
     /// <p>The display name of the user.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
@@ -131,8 +127,7 @@ impl UserBuilder {
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::EntityState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The role of the user.</p>
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
@@ -141,8 +136,7 @@ impl UserBuilder {
     }
     /// <p>The role of the user.</p>
     pub fn set_user_role(mut self, input: std::option::Option<crate::types::UserRole>) -> Self {
-        self.user_role = input;
-        self
+        self.user_role = input; self
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
     pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,12 +144,8 @@ impl UserBuilder {
         self
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    pub fn set_enabled_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.enabled_date = input;
-        self
+    pub fn set_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.enabled_date = input; self
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -163,24 +153,29 @@ impl UserBuilder {
         self
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    pub fn set_disabled_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.disabled_date = input;
-        self
+    pub fn set_disabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.disabled_date = input; self
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            id: self.id,
-            email: self.email,
-            name: self.name,
-            display_name: self.display_name,
-            state: self.state,
-            user_role: self.user_role,
-            enabled_date: self.enabled_date,
-            disabled_date: self.disabled_date,
+            id: self.id
+            ,
+            email: self.email
+            ,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
+            state: self.state
+            ,
+            user_role: self.user_role
+            ,
+            enabled_date: self.enabled_date
+            ,
+            disabled_date: self.disabled_date
+            ,
         }
     }
 }
+

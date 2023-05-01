@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMobileDeviceAccessOverridesOutput {
+pub struct ListMobileDeviceAccessOverridesOutput  {
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
     #[doc(hidden)]
     pub overrides: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
@@ -13,22 +13,22 @@ pub struct ListMobileDeviceAccessOverridesOutput {
 }
 impl ListMobileDeviceAccessOverridesOutput {
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::types::MobileDeviceAccessOverride]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::types::MobileDeviceAccessOverride]> {
         self.overrides.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMobileDeviceAccessOverridesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMobileDeviceAccessOverridesOutput {
     /// Creates a new builder-style object to manufacture [`ListMobileDeviceAccessOverridesOutput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput).
-    pub fn builder() -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesOutputBuilder{
+    pub fn builder() -> crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesOutputBuilder {
         crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl ListMobileDeviceAccessOverridesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesOutputBuilder {
-    pub(crate) overrides:
-        std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
+    pub(crate) overrides: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListMobileDeviceAccessOverridesOutputBuilder {
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
     pub fn overrides(mut self, input: crate::types::MobileDeviceAccessOverride) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-        v.push(input);
-        self.overrides = Some(v);
-        self
+                        v.push(input);
+                        self.overrides = Some(v);
+                        self
     }
     /// <p>The list of mobile device access overrides that exist for the specified WorkMail organization and user.</p>
-    pub fn set_overrides(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessOverride>>,
-    ) -> Self {
-        self.overrides = input;
-        self
+    pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::MobileDeviceAccessOverride>>) -> Self {
+        self.overrides = input; self
     }
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,23 +64,19 @@ impl ListMobileDeviceAccessOverridesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. The value is “null” when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMobileDeviceAccessOverridesOutput`](crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput
-    {
+    pub fn build(self) -> crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput {
         crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput {
             overrides: self.overrides
             ,
@@ -95,3 +86,4 @@ impl ListMobileDeviceAccessOverridesOutputBuilder {
         }
     }
 }
+

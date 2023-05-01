@@ -3,7 +3,7 @@
 /// <p>Contains all the information about a fraudster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Fraudster {
+pub struct Fraudster  {
     /// <p>The identifier of the domain that contains the fraudster.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Fraudster {
 }
 impl Fraudster {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The service-generated identifier for the fraudster.</p>
-    pub fn generated_fraudster_id(&self) -> std::option::Option<&str> {
+    pub fn generated_fraudster_id(&self) -> std::option::Option<& str> {
         self.generated_fraudster_id.as_deref()
     }
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    pub fn watchlist_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn watchlist_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.watchlist_ids.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl FraudsterBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The service-generated identifier for the fraudster.</p>
     pub fn generated_fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,12 +67,8 @@ impl FraudsterBuilder {
         self
     }
     /// <p>The service-generated identifier for the fraudster.</p>
-    pub fn set_generated_fraudster_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.generated_fraudster_id = input;
-        self
+    pub fn set_generated_fraudster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.generated_fraudster_id = input; self
     }
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,12 +76,8 @@ impl FraudsterBuilder {
         self
     }
     /// <p>The timestamp of when Voice ID identified the fraudster.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Appends an item to `watchlist_ids`.
     ///
@@ -95,25 +86,26 @@ impl FraudsterBuilder {
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
     pub fn watchlist_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
-        v.push(input.into());
-        self.watchlist_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.watchlist_ids = Some(v);
+                        self
     }
     /// <p>The identifier of the watchlists the fraudster is a part of.</p>
-    pub fn set_watchlist_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.watchlist_ids = input;
-        self
+    pub fn set_watchlist_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.watchlist_ids = input; self
     }
     /// Consumes the builder and constructs a [`Fraudster`](crate::types::Fraudster).
     pub fn build(self) -> crate::types::Fraudster {
         crate::types::Fraudster {
-            domain_id: self.domain_id,
-            generated_fraudster_id: self.generated_fraudster_id,
-            created_at: self.created_at,
-            watchlist_ids: self.watchlist_ids,
+            domain_id: self.domain_id
+            ,
+            generated_fraudster_id: self.generated_fraudster_id
+            ,
+            created_at: self.created_at
+            ,
+            watchlist_ids: self.watchlist_ids
+            ,
         }
     }
 }
+

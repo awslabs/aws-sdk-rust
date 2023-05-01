@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let processorparametername = unimplemented!();
 /// match processorparametername {
@@ -37,22 +37,14 @@
 /// Specifically, when `processorparametername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProcessorParameterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProcessorParameterName {
     #[allow(missing_docs)] // documentation missing in model
     BufferIntervalInSeconds,
@@ -73,66 +65,55 @@ pub enum ProcessorParameterName {
     #[allow(missing_docs)] // documentation missing in model
     SubRecordType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProcessorParameterName {
-    fn from(s: &str) -> Self {
-        match s {
-            "BufferIntervalInSeconds" => ProcessorParameterName::BufferIntervalInSeconds,
-            "BufferSizeInMBs" => ProcessorParameterName::BufferSizeInMb,
-            "Delimiter" => ProcessorParameterName::Delimiter,
-            "JsonParsingEngine" => ProcessorParameterName::JsonParsingEngine,
-            "LambdaArn" => ProcessorParameterName::LambdaArn,
-            "MetadataExtractionQuery" => ProcessorParameterName::MetadataExtractionQuery,
-            "NumberOfRetries" => ProcessorParameterName::LambdaNumberOfRetries,
-            "RoleArn" => ProcessorParameterName::RoleArn,
-            "SubRecordType" => ProcessorParameterName::SubRecordType,
-            other => ProcessorParameterName::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BufferIntervalInSeconds" => ProcessorParameterName::BufferIntervalInSeconds,
+"BufferSizeInMBs" => ProcessorParameterName::BufferSizeInMb,
+"Delimiter" => ProcessorParameterName::Delimiter,
+"JsonParsingEngine" => ProcessorParameterName::JsonParsingEngine,
+"LambdaArn" => ProcessorParameterName::LambdaArn,
+"MetadataExtractionQuery" => ProcessorParameterName::MetadataExtractionQuery,
+"NumberOfRetries" => ProcessorParameterName::LambdaNumberOfRetries,
+"RoleArn" => ProcessorParameterName::RoleArn,
+"SubRecordType" => ProcessorParameterName::SubRecordType,
+other => ProcessorParameterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ProcessorParameterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProcessorParameterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProcessorParameterName::from(s))
+                }
+            }
 impl ProcessorParameterName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProcessorParameterName::BufferIntervalInSeconds => "BufferIntervalInSeconds",
-            ProcessorParameterName::BufferSizeInMb => "BufferSizeInMBs",
-            ProcessorParameterName::Delimiter => "Delimiter",
-            ProcessorParameterName::JsonParsingEngine => "JsonParsingEngine",
-            ProcessorParameterName::LambdaArn => "LambdaArn",
-            ProcessorParameterName::MetadataExtractionQuery => "MetadataExtractionQuery",
-            ProcessorParameterName::LambdaNumberOfRetries => "NumberOfRetries",
-            ProcessorParameterName::RoleArn => "RoleArn",
-            ProcessorParameterName::SubRecordType => "SubRecordType",
-            ProcessorParameterName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BufferIntervalInSeconds",
-            "BufferSizeInMBs",
-            "Delimiter",
-            "JsonParsingEngine",
-            "LambdaArn",
-            "MetadataExtractionQuery",
-            "NumberOfRetries",
-            "RoleArn",
-            "SubRecordType",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProcessorParameterName::BufferIntervalInSeconds => "BufferIntervalInSeconds",
+    ProcessorParameterName::BufferSizeInMb => "BufferSizeInMBs",
+    ProcessorParameterName::Delimiter => "Delimiter",
+    ProcessorParameterName::JsonParsingEngine => "JsonParsingEngine",
+    ProcessorParameterName::LambdaArn => "LambdaArn",
+    ProcessorParameterName::MetadataExtractionQuery => "MetadataExtractionQuery",
+    ProcessorParameterName::LambdaNumberOfRetries => "NumberOfRetries",
+    ProcessorParameterName::RoleArn => "RoleArn",
+    ProcessorParameterName::SubRecordType => "SubRecordType",
+    ProcessorParameterName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BufferIntervalInSeconds", "BufferSizeInMBs", "Delimiter", "JsonParsingEngine", "LambdaArn", "MetadataExtractionQuery", "NumberOfRetries", "RoleArn", "SubRecordType"]
+                }
+            }
 impl AsRef<str> for ProcessorParameterName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

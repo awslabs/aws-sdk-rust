@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMapGlyphsOutput {
+pub struct GetMapGlyphsOutput  {
     /// <p>The glyph, as binary blob.</p>
     #[doc(hidden)]
     pub blob: std::option::Option<aws_smithy_types::Blob>,
@@ -16,23 +16,23 @@ pub struct GetMapGlyphsOutput {
 }
 impl GetMapGlyphsOutput {
     /// <p>The glyph, as binary blob.</p>
-    pub fn blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.blob.as_ref()
     }
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
-    pub fn cache_control(&self) -> std::option::Option<&str> {
+    pub fn cache_control(&self) -> std::option::Option<& str> {
         self.cache_control.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMapGlyphsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMapGlyphsOutput {
     /// Creates a new builder-style object to manufacture [`GetMapGlyphsOutput`](crate::operation::get_map_glyphs::GetMapGlyphsOutput).
     pub fn builder() -> crate::operation::get_map_glyphs::builders::GetMapGlyphsOutputBuilder {
@@ -57,8 +57,7 @@ impl GetMapGlyphsOutputBuilder {
     }
     /// <p>The glyph, as binary blob.</p>
     pub fn set_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.blob = input;
-        self
+        self.blob = input; self
     }
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl GetMapGlyphsOutputBuilder {
     }
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
     pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,25 +75,28 @@ impl GetMapGlyphsOutputBuilder {
     }
     /// <p>The HTTP Cache-Control directive for the value.</p>
     pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_control = input;
-        self
+        self.cache_control = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMapGlyphsOutput`](crate::operation::get_map_glyphs::GetMapGlyphsOutput).
     pub fn build(self) -> crate::operation::get_map_glyphs::GetMapGlyphsOutput {
         crate::operation::get_map_glyphs::GetMapGlyphsOutput {
-            blob: self.blob,
-            content_type: self.content_type,
-            cache_control: self.cache_control,
+            blob: self.blob
+            ,
+            content_type: self.content_type
+            ,
+            cache_control: self.cache_control
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

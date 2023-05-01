@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMetricStreamsOutput {
+pub struct ListMetricStreamsOutput  {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListMetricStreamsOutput {
 }
 impl ListMetricStreamsOutput {
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The array of metric stream information.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::types::MetricStreamEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::types::MetricStreamEntry]> {
         self.entries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMetricStreamsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMetricStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder {
+    pub fn builder() -> crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder {
         crate::operation::list_metric_streams::builders::ListMetricStreamsOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ListMetricStreamsOutputBuilder {
     }
     /// <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `entries`.
     ///
@@ -60,33 +58,32 @@ impl ListMetricStreamsOutputBuilder {
     /// <p>The array of metric stream information.</p>
     pub fn entries(mut self, input: crate::types::MetricStreamEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = Some(v);
-        self
+                        v.push(input);
+                        self.entries = Some(v);
+                        self
     }
     /// <p>The array of metric stream information.</p>
-    pub fn set_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricStreamEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricStreamEntry>>) -> Self {
+        self.entries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput).
     pub fn build(self) -> crate::operation::list_metric_streams::ListMetricStreamsOutput {
         crate::operation::list_metric_streams::ListMetricStreamsOutput {
-            next_token: self.next_token,
-            entries: self.entries,
+            next_token: self.next_token
+            ,
+            entries: self.entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

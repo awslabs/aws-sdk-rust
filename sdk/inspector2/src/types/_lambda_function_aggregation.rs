@@ -3,7 +3,7 @@
 /// <p>The details that define a findings aggregation based on AWS Lambda functions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaFunctionAggregation {
+pub struct LambdaFunctionAggregation  {
     /// <p>The resource IDs to include in the aggregation results.</p>
     #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -25,27 +25,27 @@ pub struct LambdaFunctionAggregation {
 }
 impl LambdaFunctionAggregation {
     /// <p>The resource IDs to include in the aggregation results.</p>
-    pub fn resource_ids(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn resource_ids(&self) -> std::option::Option<& [crate::types::StringFilter]> {
         self.resource_ids.as_deref()
     }
     /// <p>The AWS Lambda function names to include in the aggregation results.</p>
-    pub fn function_names(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn function_names(&self) -> std::option::Option<& [crate::types::StringFilter]> {
         self.function_names.as_deref()
     }
     /// <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
-    pub fn runtimes(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn runtimes(&self) -> std::option::Option<& [crate::types::StringFilter]> {
         self.runtimes.as_deref()
     }
     /// <p>The tags to include in the aggregation results.</p>
-    pub fn function_tags(&self) -> std::option::Option<&[crate::types::MapFilter]> {
+    pub fn function_tags(&self) -> std::option::Option<& [crate::types::MapFilter]> {
         self.function_tags.as_deref()
     }
     /// <p>The order to use for sorting the results.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The finding severity to use for sorting the results.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::LambdaFunctionSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::LambdaFunctionSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -75,17 +75,13 @@ impl LambdaFunctionAggregationBuilder {
     /// <p>The resource IDs to include in the aggregation results.</p>
     pub fn resource_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input);
-        self.resource_ids = Some(v);
-        self
+                        v.push(input);
+                        self.resource_ids = Some(v);
+                        self
     }
     /// <p>The resource IDs to include in the aggregation results.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.resource_ids = input; self
     }
     /// Appends an item to `function_names`.
     ///
@@ -94,17 +90,13 @@ impl LambdaFunctionAggregationBuilder {
     /// <p>The AWS Lambda function names to include in the aggregation results.</p>
     pub fn function_names(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.function_names.unwrap_or_default();
-        v.push(input);
-        self.function_names = Some(v);
-        self
+                        v.push(input);
+                        self.function_names = Some(v);
+                        self
     }
     /// <p>The AWS Lambda function names to include in the aggregation results.</p>
-    pub fn set_function_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
-        self.function_names = input;
-        self
+    pub fn set_function_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.function_names = input; self
     }
     /// Appends an item to `runtimes`.
     ///
@@ -113,17 +105,13 @@ impl LambdaFunctionAggregationBuilder {
     /// <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
     pub fn runtimes(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.runtimes.unwrap_or_default();
-        v.push(input);
-        self.runtimes = Some(v);
-        self
+                        v.push(input);
+                        self.runtimes = Some(v);
+                        self
     }
     /// <p>Returns findings aggregated by AWS Lambda function runtime environments.</p>
-    pub fn set_runtimes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
-        self.runtimes = input;
-        self
+    pub fn set_runtimes(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.runtimes = input; self
     }
     /// Appends an item to `function_tags`.
     ///
@@ -132,17 +120,13 @@ impl LambdaFunctionAggregationBuilder {
     /// <p>The tags to include in the aggregation results.</p>
     pub fn function_tags(mut self, input: crate::types::MapFilter) -> Self {
         let mut v = self.function_tags.unwrap_or_default();
-        v.push(input);
-        self.function_tags = Some(v);
-        self
+                        v.push(input);
+                        self.function_tags = Some(v);
+                        self
     }
     /// <p>The tags to include in the aggregation results.</p>
-    pub fn set_function_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MapFilter>>,
-    ) -> Self {
-        self.function_tags = input;
-        self
+    pub fn set_function_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::MapFilter>>) -> Self {
+        self.function_tags = input; self
     }
     /// <p>The order to use for sorting the results.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -151,8 +135,7 @@ impl LambdaFunctionAggregationBuilder {
     }
     /// <p>The order to use for sorting the results.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The finding severity to use for sorting the results.</p>
     pub fn sort_by(mut self, input: crate::types::LambdaFunctionSortBy) -> Self {
@@ -160,22 +143,25 @@ impl LambdaFunctionAggregationBuilder {
         self
     }
     /// <p>The finding severity to use for sorting the results.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::LambdaFunctionSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::LambdaFunctionSortBy>) -> Self {
+        self.sort_by = input; self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionAggregation`](crate::types::LambdaFunctionAggregation).
     pub fn build(self) -> crate::types::LambdaFunctionAggregation {
         crate::types::LambdaFunctionAggregation {
-            resource_ids: self.resource_ids,
-            function_names: self.function_names,
-            runtimes: self.runtimes,
-            function_tags: self.function_tags,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            resource_ids: self.resource_ids
+            ,
+            function_names: self.function_names
+            ,
+            runtimes: self.runtimes
+            ,
+            function_tags: self.function_tags
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

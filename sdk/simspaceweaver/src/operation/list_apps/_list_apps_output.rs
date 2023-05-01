@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsOutput {
+pub struct ListAppsOutput  {
     /// <p>The list of apps for the given simulation and domain.</p>
     #[doc(hidden)]
     pub apps: std::option::Option<std::vec::Vec<crate::types::SimulationAppMetadata>>,
@@ -13,19 +13,19 @@ pub struct ListAppsOutput {
 }
 impl ListAppsOutput {
     /// <p>The list of apps for the given simulation and domain.</p>
-    pub fn apps(&self) -> std::option::Option<&[crate::types::SimulationAppMetadata]> {
+    pub fn apps(&self) -> std::option::Option<& [crate::types::SimulationAppMetadata]> {
         self.apps.as_deref()
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAppsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAppsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn builder() -> crate::operation::list_apps::builders::ListAppsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListAppsOutputBuilder {
     /// <p>The list of apps for the given simulation and domain.</p>
     pub fn apps(mut self, input: crate::types::SimulationAppMetadata) -> Self {
         let mut v = self.apps.unwrap_or_default();
-        v.push(input);
-        self.apps = Some(v);
-        self
+                        v.push(input);
+                        self.apps = Some(v);
+                        self
     }
     /// <p>The list of apps for the given simulation and domain.</p>
-    pub fn set_apps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SimulationAppMetadata>>,
-    ) -> Self {
-        self.apps = input;
-        self
+    pub fn set_apps(mut self, input: std::option::Option<std::vec::Vec<crate::types::SimulationAppMetadata>>) -> Self {
+        self.apps = input; self
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListAppsOutputBuilder {
     }
     /// <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput).
     pub fn build(self) -> crate::operation::list_apps::ListAppsOutput {
         crate::operation::list_apps::ListAppsOutput {
-            apps: self.apps,
-            next_token: self.next_token,
+            apps: self.apps
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

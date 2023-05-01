@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNatGatewayInput {
+pub struct DeleteNatGatewayInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,14 +16,13 @@ impl DeleteNatGatewayInput {
         self.dry_run
     }
     /// <p>The ID of the NAT gateway.</p>
-    pub fn nat_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> std::option::Option<& str> {
         self.nat_gateway_id.as_deref()
     }
 }
 impl DeleteNatGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteNatGatewayInput`](crate::operation::delete_nat_gateway::DeleteNatGatewayInput).
-    pub fn builder() -> crate::operation::delete_nat_gateway::builders::DeleteNatGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_nat_gateway::builders::DeleteNatGatewayInputBuilder {
         crate::operation::delete_nat_gateway::builders::DeleteNatGatewayInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteNatGatewayInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the NAT gateway.</p>
     pub fn nat_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DeleteNatGatewayInputBuilder {
     }
     /// <p>The ID of the NAT gateway.</p>
     pub fn set_nat_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nat_gateway_id = input;
-        self
+        self.nat_gateway_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteNatGatewayInput`](crate::operation::delete_nat_gateway::DeleteNatGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_nat_gateway::DeleteNatGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_nat_gateway::DeleteNatGatewayInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_nat_gateway::DeleteNatGatewayInput {
-                dry_run: self.dry_run,
-                nat_gateway_id: self.nat_gateway_id,
-            },
+                dry_run: self.dry_run
+                ,
+                nat_gateway_id: self.nat_gateway_id
+                ,
+            }
         )
     }
 }
+

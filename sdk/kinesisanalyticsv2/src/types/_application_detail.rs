@@ -3,7 +3,7 @@
 /// <p>Describes the application, including the application Amazon Resource Name (ARN), status, latest version, and input and output configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationDetail {
+pub struct ApplicationDetail  {
     /// <p>The ARN of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -33,16 +33,13 @@ pub struct ApplicationDetail {
     pub last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
     #[doc(hidden)]
-    pub application_configuration_description:
-        std::option::Option<crate::types::ApplicationConfigurationDescription>,
+    pub application_configuration_description: std::option::Option<crate::types::ApplicationConfigurationDescription>,
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
+    pub cloud_watch_logging_option_descriptions: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
     /// <p>The details of the maintenance configuration for the application.</p>
     #[doc(hidden)]
-    pub application_maintenance_configuration_description:
-        std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
+    pub application_maintenance_configuration_description: std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
     #[doc(hidden)]
     pub application_version_updated_from: std::option::Option<i64>,
@@ -61,27 +58,27 @@ pub struct ApplicationDetail {
 }
 impl ApplicationDetail {
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn application_description(&self) -> std::option::Option<&str> {
+    pub fn application_description(&self) -> std::option::Option<& str> {
         self.application_description.as_deref()
     }
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn runtime_environment(&self) -> std::option::Option<&crate::types::RuntimeEnvironment> {
+    pub fn runtime_environment(&self) -> std::option::Option<& crate::types::RuntimeEnvironment> {
         self.runtime_environment.as_ref()
     }
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
-    pub fn service_execution_role(&self) -> std::option::Option<&str> {
+    pub fn service_execution_role(&self) -> std::option::Option<& str> {
         self.service_execution_role.as_deref()
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn application_status(&self) -> std::option::Option<& crate::types::ApplicationStatus> {
         self.application_status.as_ref()
     }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
@@ -89,31 +86,24 @@ impl ApplicationDetail {
         self.application_version_id
     }
     /// <p>The current timestamp when the application was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The current timestamp when the application was last updated.</p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
-    pub fn application_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::types::ApplicationConfigurationDescription> {
+    pub fn application_configuration_description(&self) -> std::option::Option<& crate::types::ApplicationConfigurationDescription> {
         self.application_configuration_description.as_ref()
     }
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
-    pub fn cloud_watch_logging_option_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::types::CloudWatchLoggingOptionDescription]> {
+    pub fn cloud_watch_logging_option_descriptions(&self) -> std::option::Option<& [crate::types::CloudWatchLoggingOptionDescription]> {
         self.cloud_watch_logging_option_descriptions.as_deref()
     }
     /// <p>The details of the maintenance configuration for the application.</p>
-    pub fn application_maintenance_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::types::ApplicationMaintenanceConfigurationDescription> {
-        self.application_maintenance_configuration_description
-            .as_ref()
+    pub fn application_maintenance_configuration_description(&self) -> std::option::Option<& crate::types::ApplicationMaintenanceConfigurationDescription> {
+        self.application_maintenance_configuration_description.as_ref()
     }
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
     pub fn application_version_updated_from(&self) -> std::option::Option<i64> {
@@ -124,7 +114,7 @@ impl ApplicationDetail {
         self.application_version_rolled_back_from
     }
     /// <p>A value you use to implement strong concurrency for application updates.</p>
-    pub fn conditional_token(&self) -> std::option::Option<&str> {
+    pub fn conditional_token(&self) -> std::option::Option<& str> {
         self.conditional_token.as_deref()
     }
     /// <p>The version to which you want to roll back the application.</p>
@@ -132,7 +122,7 @@ impl ApplicationDetail {
         self.application_version_rolled_back_to
     }
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
-    pub fn application_mode(&self) -> std::option::Option<&crate::types::ApplicationMode> {
+    pub fn application_mode(&self) -> std::option::Option<& crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
 }
@@ -156,12 +146,9 @@ pub struct ApplicationDetailBuilder {
     pub(crate) application_version_id: std::option::Option<i64>,
     pub(crate) create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_update_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) application_configuration_description:
-        std::option::Option<crate::types::ApplicationConfigurationDescription>,
-    pub(crate) cloud_watch_logging_option_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
-    pub(crate) application_maintenance_configuration_description:
-        std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
+    pub(crate) application_configuration_description: std::option::Option<crate::types::ApplicationConfigurationDescription>,
+    pub(crate) cloud_watch_logging_option_descriptions: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
+    pub(crate) application_maintenance_configuration_description: std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
     pub(crate) application_version_updated_from: std::option::Option<i64>,
     pub(crate) application_version_rolled_back_from: std::option::Option<i64>,
     pub(crate) conditional_token: std::option::Option<std::string::String>,
@@ -176,8 +163,7 @@ impl ApplicationDetailBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The description of the application.</p>
     pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,12 +171,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>The description of the application.</p>
-    pub fn set_application_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_description = input;
-        self
+    pub fn set_application_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_description = input; self
     }
     /// <p>The name of the application.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,8 +181,7 @@ impl ApplicationDetailBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The runtime environment for the application.</p>
     pub fn runtime_environment(mut self, input: crate::types::RuntimeEnvironment) -> Self {
@@ -208,12 +189,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>The runtime environment for the application.</p>
-    pub fn set_runtime_environment(
-        mut self,
-        input: std::option::Option<crate::types::RuntimeEnvironment>,
-    ) -> Self {
-        self.runtime_environment = input;
-        self
+    pub fn set_runtime_environment(mut self, input: std::option::Option<crate::types::RuntimeEnvironment>) -> Self {
+        self.runtime_environment = input; self
     }
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
     pub fn service_execution_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,12 +198,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>Specifies the IAM role that the application uses to access external resources.</p>
-    pub fn set_service_execution_role(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_execution_role = input;
-        self
+    pub fn set_service_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_execution_role = input; self
     }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
@@ -234,12 +207,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>The status of the application.</p>
-    pub fn set_application_status(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationStatus>,
-    ) -> Self {
-        self.application_status = input;
-        self
+    pub fn set_application_status(mut self, input: std::option::Option<crate::types::ApplicationStatus>) -> Self {
+        self.application_status = input; self
     }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
@@ -248,8 +217,7 @@ impl ApplicationDetailBuilder {
     }
     /// <p>Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     /// <p>The current timestamp when the application was created.</p>
     pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -257,12 +225,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>The current timestamp when the application was created.</p>
-    pub fn set_create_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_timestamp = input;
-        self
+    pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_timestamp = input; self
     }
     /// <p>The current timestamp when the application was last updated.</p>
     pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -270,68 +234,41 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>The current timestamp when the application was last updated.</p>
-    pub fn set_last_update_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_timestamp = input;
-        self
+    pub fn set_last_update_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_update_timestamp = input; self
     }
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
-    pub fn application_configuration_description(
-        mut self,
-        input: crate::types::ApplicationConfigurationDescription,
-    ) -> Self {
+    pub fn application_configuration_description(mut self, input: crate::types::ApplicationConfigurationDescription) -> Self {
         self.application_configuration_description = Some(input);
         self
     }
     /// <p>Describes details about the application code and starting parameters for a Kinesis Data Analytics application.</p>
-    pub fn set_application_configuration_description(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationConfigurationDescription>,
-    ) -> Self {
-        self.application_configuration_description = input;
-        self
+    pub fn set_application_configuration_description(mut self, input: std::option::Option<crate::types::ApplicationConfigurationDescription>) -> Self {
+        self.application_configuration_description = input; self
     }
     /// Appends an item to `cloud_watch_logging_option_descriptions`.
     ///
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_descriptions`](Self::set_cloud_watch_logging_option_descriptions).
     ///
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
-    pub fn cloud_watch_logging_option_descriptions(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptionDescription,
-    ) -> Self {
-        let mut v = self
-            .cloud_watch_logging_option_descriptions
-            .unwrap_or_default();
-        v.push(input);
-        self.cloud_watch_logging_option_descriptions = Some(v);
-        self
+    pub fn cloud_watch_logging_option_descriptions(mut self, input: crate::types::CloudWatchLoggingOptionDescription) -> Self {
+        let mut v = self.cloud_watch_logging_option_descriptions.unwrap_or_default();
+                        v.push(input);
+                        self.cloud_watch_logging_option_descriptions = Some(v);
+                        self
     }
     /// <p>Describes the application Amazon CloudWatch logging options.</p>
-    pub fn set_cloud_watch_logging_option_descriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>,
-    ) -> Self {
-        self.cloud_watch_logging_option_descriptions = input;
-        self
+    pub fn set_cloud_watch_logging_option_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionDescription>>) -> Self {
+        self.cloud_watch_logging_option_descriptions = input; self
     }
     /// <p>The details of the maintenance configuration for the application.</p>
-    pub fn application_maintenance_configuration_description(
-        mut self,
-        input: crate::types::ApplicationMaintenanceConfigurationDescription,
-    ) -> Self {
+    pub fn application_maintenance_configuration_description(mut self, input: crate::types::ApplicationMaintenanceConfigurationDescription) -> Self {
         self.application_maintenance_configuration_description = Some(input);
         self
     }
     /// <p>The details of the maintenance configuration for the application.</p>
-    pub fn set_application_maintenance_configuration_description(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>,
-    ) -> Self {
-        self.application_maintenance_configuration_description = input;
-        self
+    pub fn set_application_maintenance_configuration_description(mut self, input: std::option::Option<crate::types::ApplicationMaintenanceConfigurationDescription>) -> Self {
+        self.application_maintenance_configuration_description = input; self
     }
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
     pub fn application_version_updated_from(mut self, input: i64) -> Self {
@@ -340,8 +277,7 @@ impl ApplicationDetailBuilder {
     }
     /// <p>The previous application version before the latest application update. <code>RollbackApplication</code> reverts the application to this version.</p>
     pub fn set_application_version_updated_from(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_updated_from = input;
-        self
+        self.application_version_updated_from = input; self
     }
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
     pub fn application_version_rolled_back_from(mut self, input: i64) -> Self {
@@ -349,12 +285,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>If you reverted the application using <code>RollbackApplication</code>, the application version when <code>RollbackApplication</code> was called.</p>
-    pub fn set_application_version_rolled_back_from(
-        mut self,
-        input: std::option::Option<i64>,
-    ) -> Self {
-        self.application_version_rolled_back_from = input;
-        self
+    pub fn set_application_version_rolled_back_from(mut self, input: std::option::Option<i64>) -> Self {
+        self.application_version_rolled_back_from = input; self
     }
     /// <p>A value you use to implement strong concurrency for application updates.</p>
     pub fn conditional_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -362,12 +294,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.conditional_token = input;
-        self
+    pub fn set_conditional_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.conditional_token = input; self
     }
     /// <p>The version to which you want to roll back the application.</p>
     pub fn application_version_rolled_back_to(mut self, input: i64) -> Self {
@@ -375,12 +303,8 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>The version to which you want to roll back the application.</p>
-    pub fn set_application_version_rolled_back_to(
-        mut self,
-        input: std::option::Option<i64>,
-    ) -> Self {
-        self.application_version_rolled_back_to = input;
-        self
+    pub fn set_application_version_rolled_back_to(mut self, input: std::option::Option<i64>) -> Self {
+        self.application_version_rolled_back_to = input; self
     }
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
@@ -388,34 +312,47 @@ impl ApplicationDetailBuilder {
         self
     }
     /// <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.</p>
-    pub fn set_application_mode(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationMode>,
-    ) -> Self {
-        self.application_mode = input;
-        self
+    pub fn set_application_mode(mut self, input: std::option::Option<crate::types::ApplicationMode>) -> Self {
+        self.application_mode = input; self
     }
     /// Consumes the builder and constructs a [`ApplicationDetail`](crate::types::ApplicationDetail).
     pub fn build(self) -> crate::types::ApplicationDetail {
         crate::types::ApplicationDetail {
-            application_arn: self.application_arn,
-            application_description: self.application_description,
-            application_name: self.application_name,
-            runtime_environment: self.runtime_environment,
-            service_execution_role: self.service_execution_role,
-            application_status: self.application_status,
-            application_version_id: self.application_version_id,
-            create_timestamp: self.create_timestamp,
-            last_update_timestamp: self.last_update_timestamp,
-            application_configuration_description: self.application_configuration_description,
-            cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions,
-            application_maintenance_configuration_description: self
-                .application_maintenance_configuration_description,
-            application_version_updated_from: self.application_version_updated_from,
-            application_version_rolled_back_from: self.application_version_rolled_back_from,
-            conditional_token: self.conditional_token,
-            application_version_rolled_back_to: self.application_version_rolled_back_to,
-            application_mode: self.application_mode,
+            application_arn: self.application_arn
+            ,
+            application_description: self.application_description
+            ,
+            application_name: self.application_name
+            ,
+            runtime_environment: self.runtime_environment
+            ,
+            service_execution_role: self.service_execution_role
+            ,
+            application_status: self.application_status
+            ,
+            application_version_id: self.application_version_id
+            ,
+            create_timestamp: self.create_timestamp
+            ,
+            last_update_timestamp: self.last_update_timestamp
+            ,
+            application_configuration_description: self.application_configuration_description
+            ,
+            cloud_watch_logging_option_descriptions: self.cloud_watch_logging_option_descriptions
+            ,
+            application_maintenance_configuration_description: self.application_maintenance_configuration_description
+            ,
+            application_version_updated_from: self.application_version_updated_from
+            ,
+            application_version_rolled_back_from: self.application_version_rolled_back_from
+            ,
+            conditional_token: self.conditional_token
+            ,
+            application_version_rolled_back_to: self.application_version_rolled_back_to
+            ,
+            application_mode: self.application_mode
+            ,
         }
     }
 }
+

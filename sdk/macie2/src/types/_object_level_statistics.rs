@@ -3,7 +3,7 @@
 /// <p>Provides information about the total storage size (in bytes) or number of objects that Amazon Macie can't analyze in one or more S3 buckets. In a BucketMetadata or MatchingBucket object, this data is for a specific bucket. In a GetBucketStatisticsResponse object, this data is aggregated for all the buckets in the query results. If versioning is enabled for a bucket, storage size values are based on the size of the latest version of each applicable object in the bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLevelStatistics {
+pub struct ObjectLevelStatistics  {
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     #[doc(hidden)]
     pub file_type: i64,
@@ -51,8 +51,7 @@ impl ObjectLevelStatisticsBuilder {
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
     pub fn set_file_type(mut self, input: std::option::Option<i64>) -> Self {
-        self.file_type = input;
-        self
+        self.file_type = input; self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     pub fn storage_class(mut self, input: i64) -> Self {
@@ -61,8 +60,7 @@ impl ObjectLevelStatisticsBuilder {
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
     pub fn set_storage_class(mut self, input: std::option::Option<i64>) -> Self {
-        self.storage_class = input;
-        self
+        self.storage_class = input; self
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn total(mut self, input: i64) -> Self {
@@ -71,15 +69,21 @@ impl ObjectLevelStatisticsBuilder {
     }
     /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
     pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// Consumes the builder and constructs a [`ObjectLevelStatistics`](crate::types::ObjectLevelStatistics).
     pub fn build(self) -> crate::types::ObjectLevelStatistics {
         crate::types::ObjectLevelStatistics {
-            file_type: self.file_type.unwrap_or_default(),
-            storage_class: self.storage_class.unwrap_or_default(),
-            total: self.total.unwrap_or_default(),
+            file_type: self.file_type
+                .unwrap_or_default()
+            ,
+            storage_class: self.storage_class
+                .unwrap_or_default()
+            ,
+            total: self.total
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

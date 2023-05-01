@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCallAnalyticsCategoryInput {
+pub struct DeleteCallAnalyticsCategoryInput  {
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
     #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
 }
 impl DeleteCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
-    pub fn category_name(&self) -> std::option::Option<&str> {
+    pub fn category_name(&self) -> std::option::Option<& str> {
         self.category_name.as_deref()
     }
 }
 impl DeleteCallAnalyticsCategoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryInput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput).
-    pub fn builder() -> crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder{
+    pub fn builder() -> crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder {
         crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeleteCallAnalyticsCategoryInputBuilder {
     }
     /// <p>The name of the Call Analytics category you want to delete. Category names are case sensitive.</p>
     pub fn set_category_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category_name = input;
-        self
+        self.category_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCallAnalyticsCategoryInput`](crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryInput {
-                category_name: self.category_name,
-            },
+                category_name: self.category_name
+                ,
+            }
         )
     }
 }
+

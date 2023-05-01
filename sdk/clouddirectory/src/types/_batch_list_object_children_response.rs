@@ -3,25 +3,21 @@
 /// <p>Represents the output of a <code>ListObjectChildren</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectChildrenResponse {
+pub struct BatchListObjectChildrenResponse  {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     #[doc(hidden)]
-    pub children:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub children: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectChildrenResponse {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn children(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn children(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.children.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -36,8 +32,7 @@ impl BatchListObjectChildrenResponse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchListObjectChildrenResponseBuilder {
-    pub(crate) children:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) children: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectChildrenResponseBuilder {
@@ -46,25 +41,15 @@ impl BatchListObjectChildrenResponseBuilder {
     /// To override the contents of this collection use [`set_children`](Self::set_children).
     ///
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn children(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn children(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.children.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.children = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.children = Some(hash_map);
+                        self
     }
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn set_children(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.children = input;
-        self
+    pub fn set_children(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.children = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,14 +58,16 @@ impl BatchListObjectChildrenResponseBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`BatchListObjectChildrenResponse`](crate::types::BatchListObjectChildrenResponse).
     pub fn build(self) -> crate::types::BatchListObjectChildrenResponse {
         crate::types::BatchListObjectChildrenResponse {
-            children: self.children,
-            next_token: self.next_token,
+            children: self.children
+            ,
+            next_token: self.next_token
+            ,
         }
     }
 }
+

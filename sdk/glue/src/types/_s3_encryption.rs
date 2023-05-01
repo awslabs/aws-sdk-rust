@@ -3,7 +3,7 @@
 /// <p>Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Encryption {
+pub struct S3Encryption  {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
     #[doc(hidden)]
     pub s3_encryption_mode: std::option::Option<crate::types::S3EncryptionMode>,
@@ -13,11 +13,11 @@ pub struct S3Encryption {
 }
 impl S3Encryption {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
-    pub fn s3_encryption_mode(&self) -> std::option::Option<&crate::types::S3EncryptionMode> {
+    pub fn s3_encryption_mode(&self) -> std::option::Option<& crate::types::S3EncryptionMode> {
         self.s3_encryption_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl S3EncryptionBuilder {
         self
     }
     /// <p>The encryption mode to use for Amazon S3 data.</p>
-    pub fn set_s3_encryption_mode(
-        mut self,
-        input: std::option::Option<crate::types::S3EncryptionMode>,
-    ) -> Self {
-        self.s3_encryption_mode = input;
-        self
+    pub fn set_s3_encryption_mode(mut self, input: std::option::Option<crate::types::S3EncryptionMode>) -> Self {
+        self.s3_encryption_mode = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl S3EncryptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// Consumes the builder and constructs a [`S3Encryption`](crate::types::S3Encryption).
     pub fn build(self) -> crate::types::S3Encryption {
         crate::types::S3Encryption {
-            s3_encryption_mode: self.s3_encryption_mode,
-            kms_key_arn: self.kms_key_arn,
+            s3_encryption_mode: self.s3_encryption_mode
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
         }
     }
 }
+

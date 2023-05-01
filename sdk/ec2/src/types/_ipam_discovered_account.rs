@@ -3,7 +3,7 @@
 /// <p>An IPAM discovered account. A discovered account is an Amazon Web Services account that is monitored under a resource discovery. If you have integrated IPAM with Amazon Web Services Organizations, all accounts in the organization are discovered accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpamDiscoveredAccount {
+pub struct IpamDiscoveredAccount  {
     /// <p>The account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -22,27 +22,23 @@ pub struct IpamDiscoveredAccount {
 }
 impl IpamDiscoveredAccount {
     /// <p>The account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services Region that the account information is returned from. An account can be discovered in multiple regions and will have a separate discovered account for each Region.</p>
-    pub fn discovery_region(&self) -> std::option::Option<&str> {
+    pub fn discovery_region(&self) -> std::option::Option<& str> {
         self.discovery_region.as_deref()
     }
     /// <p>The resource discovery failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&crate::types::IpamDiscoveryFailureReason> {
+    pub fn failure_reason(&self) -> std::option::Option<& crate::types::IpamDiscoveryFailureReason> {
         self.failure_reason.as_ref()
     }
     /// <p>The last attempted resource discovery time.</p>
-    pub fn last_attempted_discovery_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_attempted_discovery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_attempted_discovery_time.as_ref()
     }
     /// <p>The last successful resource discovery time.</p>
-    pub fn last_successful_discovery_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_successful_discovery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_successful_discovery_time.as_ref()
     }
 }
@@ -71,8 +67,7 @@ impl IpamDiscoveredAccountBuilder {
     }
     /// <p>The account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The Amazon Web Services Region that the account information is returned from. An account can be discovered in multiple regions and will have a separate discovered account for each Region.</p>
     pub fn discovery_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +76,7 @@ impl IpamDiscoveredAccountBuilder {
     }
     /// <p>The Amazon Web Services Region that the account information is returned from. An account can be discovered in multiple regions and will have a separate discovered account for each Region.</p>
     pub fn set_discovery_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discovery_region = input;
-        self
+        self.discovery_region = input; self
     }
     /// <p>The resource discovery failure reason.</p>
     pub fn failure_reason(mut self, input: crate::types::IpamDiscoveryFailureReason) -> Self {
@@ -90,12 +84,8 @@ impl IpamDiscoveredAccountBuilder {
         self
     }
     /// <p>The resource discovery failure reason.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: std::option::Option<crate::types::IpamDiscoveryFailureReason>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: std::option::Option<crate::types::IpamDiscoveryFailureReason>) -> Self {
+        self.failure_reason = input; self
     }
     /// <p>The last attempted resource discovery time.</p>
     pub fn last_attempted_discovery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -103,12 +93,8 @@ impl IpamDiscoveredAccountBuilder {
         self
     }
     /// <p>The last attempted resource discovery time.</p>
-    pub fn set_last_attempted_discovery_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_attempted_discovery_time = input;
-        self
+    pub fn set_last_attempted_discovery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_attempted_discovery_time = input; self
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn last_successful_discovery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,21 +102,23 @@ impl IpamDiscoveredAccountBuilder {
         self
     }
     /// <p>The last successful resource discovery time.</p>
-    pub fn set_last_successful_discovery_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_successful_discovery_time = input;
-        self
+    pub fn set_last_successful_discovery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_successful_discovery_time = input; self
     }
     /// Consumes the builder and constructs a [`IpamDiscoveredAccount`](crate::types::IpamDiscoveredAccount).
     pub fn build(self) -> crate::types::IpamDiscoveredAccount {
         crate::types::IpamDiscoveredAccount {
-            account_id: self.account_id,
-            discovery_region: self.discovery_region,
-            failure_reason: self.failure_reason,
-            last_attempted_discovery_time: self.last_attempted_discovery_time,
-            last_successful_discovery_time: self.last_successful_discovery_time,
+            account_id: self.account_id
+            ,
+            discovery_region: self.discovery_region
+            ,
+            failure_reason: self.failure_reason
+            ,
+            last_attempted_discovery_time: self.last_attempted_discovery_time
+            ,
+            last_successful_discovery_time: self.last_successful_discovery_time
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when Dynatrace is being used as a source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynatraceSourceProperties {
+pub struct DynatraceSourceProperties  {
     /// <p> The object specified in the Dynatrace flow source. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl DynatraceSourceProperties {
     /// <p> The object specified in the Dynatrace flow source. </p>
-    pub fn object(&self) -> std::option::Option<&str> {
+    pub fn object(&self) -> std::option::Option<& str> {
         self.object.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl DynatraceSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Dynatrace flow source. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input;
-        self
+        self.object = input; self
     }
     /// Consumes the builder and constructs a [`DynatraceSourceProperties`](crate::types::DynatraceSourceProperties).
     pub fn build(self) -> crate::types::DynatraceSourceProperties {
         crate::types::DynatraceSourceProperties {
-            object: self.object,
+            object: self.object
+            ,
         }
     }
 }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSuiteDefinitionInput {
+pub struct DeleteSuiteDefinitionInput  {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
 }
 impl DeleteSuiteDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder {
         crate::operation::delete_suite_definition::builders::DeleteSuiteDefinitionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteSuiteDefinitionInputBuilder {
         self
     }
     /// <p>Suite definition ID of the test suite to be deleted.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.suite_definition_id = input;
-        self
+    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.suite_definition_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSuiteDefinitionInput`](crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_suite_definition::DeleteSuiteDefinitionInput {
-                suite_definition_id: self.suite_definition_id,
-            },
+                suite_definition_id: self.suite_definition_id
+                ,
+            }
         )
     }
 }
+

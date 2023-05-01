@@ -4,78 +4,56 @@ pub use crate::operation::approve_assignment::_approve_assignment_output::Approv
 pub use crate::operation::approve_assignment::_approve_assignment_input::ApproveAssignmentInputBuilder;
 
 /// Fluent builder constructing a request to `ApproveAssignment`.
-///
-/// <p> The <code>ApproveAssignment</code> operation approves the results of a completed assignment. </p>
-/// <p> Approving an assignment initiates two payments from the Requester's Amazon.com account </p>
-/// <ul>
-/// <li> <p> The Worker who submitted the results is paid the reward specified in the HIT. </p> </li>
-/// <li> <p> Amazon Mechanical Turk fees are debited. </p> </li>
-/// </ul>
-/// <p> If the Requester's account does not have adequate funds for these payments, the call to ApproveAssignment returns an exception, and the approval is not processed. You can include an optional feedback message with the approval, which the Worker can see in the Status section of the web site. </p>
+/// 
+/// <p> The <code>ApproveAssignment</code> operation approves the results of a completed assignment. </p> 
+/// <p> Approving an assignment initiates two payments from the Requester's Amazon.com account </p> 
+/// <ul> 
+/// <li> <p> The Worker who submitted the results is paid the reward specified in the HIT. </p> </li> 
+/// <li> <p> Amazon Mechanical Turk fees are debited. </p> </li> 
+/// </ul> 
+/// <p> If the Requester's account does not have adequate funds for these payments, the call to ApproveAssignment returns an exception, and the approval is not processed. You can include an optional feedback message with the approval, which the Worker can see in the Status section of the web site. </p> 
 /// <p> You can also call this operation for assignments that were previous rejected and approve them by explicitly overriding the previous rejection. This only works on rejected assignments that were submitted within the previous 30 days and only if the assignment's related HIT has not been deleted. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApproveAssignmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder,
-}
-impl ApproveAssignmentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder
+            }
+impl ApproveAssignmentFluentBuilder  {
     /// Creates a new `ApproveAssignment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::approve_assignment::ApproveAssignment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::approve_assignment::ApproveAssignmentOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::approve_assignment::ApproveAssignmentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::approve_assignment::ApproveAssignment, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::approve_assignment::ApproveAssignmentOutput, aws_smithy_http::result::SdkError<crate::operation::approve_assignment::ApproveAssignmentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assignment_id(input.into());
@@ -92,10 +70,7 @@ impl ApproveAssignmentFluentBuilder {
         self
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn set_requester_feedback(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_requester_feedback(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_requester_feedback(input);
         self
     }
@@ -110,3 +85,4 @@ impl ApproveAssignmentFluentBuilder {
         self
     }
 }
+

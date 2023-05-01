@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainNameInput {
+pub struct CreateDomainNameInput  {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct CreateDomainNameInput {
 }
 impl CreateDomainNameInput {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>A description of the <code>DomainName</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl CreateDomainNameInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
-    pub fn builder() -> crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder {
         crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl CreateDomainNameInputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl CreateDomainNameInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager (ACM) certificate or an Identity and Access Management (IAM) server certificate.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>A description of the <code>DomainName</code>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl CreateDomainNameInputBuilder {
     }
     /// <p>A description of the <code>DomainName</code>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::operation::create_domain_name::CreateDomainNameInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_domain_name::CreateDomainNameInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_domain_name::CreateDomainNameInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_domain_name::CreateDomainNameInput {
-                domain_name: self.domain_name,
-                certificate_arn: self.certificate_arn,
-                description: self.description,
-            },
+                domain_name: self.domain_name
+                ,
+                certificate_arn: self.certificate_arn
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

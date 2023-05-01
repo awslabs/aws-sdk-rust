@@ -3,32 +3,32 @@
 /// <p>Strategy item for the capacity provider strategy that the service uses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsServiceCapacityProviderStrategyDetails {
-    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
+pub struct AwsEcsServiceCapacityProviderStrategyDetails  {
+    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p> 
     /// <p>The value must be between 0 and 100000.</p>
     #[doc(hidden)]
     pub base: i32,
     /// <p>The short name of the capacity provider.</p>
     #[doc(hidden)]
     pub capacity_provider: std::option::Option<std::string::String>,
-    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
-    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
+    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p> 
+    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p> 
     /// <p>The value can be between 0 and 1000.</p>
     #[doc(hidden)]
     pub weight: i32,
 }
 impl AwsEcsServiceCapacityProviderStrategyDetails {
-    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
+    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p> 
     /// <p>The value must be between 0 and 100000.</p>
     pub fn base(&self) -> i32 {
         self.base
     }
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+    pub fn capacity_provider(&self) -> std::option::Option<& str> {
         self.capacity_provider.as_deref()
     }
-    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
-    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
+    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p> 
+    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p> 
     /// <p>The value can be between 0 and 1000.</p>
     pub fn weight(&self) -> i32 {
         self.weight
@@ -36,8 +36,7 @@ impl AwsEcsServiceCapacityProviderStrategyDetails {
 }
 impl AwsEcsServiceCapacityProviderStrategyDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::types::AwsEcsServiceCapacityProviderStrategyDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsServiceCapacityProviderStrategyDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
         crate::types::builders::AwsEcsServiceCapacityProviderStrategyDetailsBuilder::default()
     }
 }
@@ -51,17 +50,16 @@ pub struct AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
     pub(crate) weight: std::option::Option<i32>,
 }
 impl AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
-    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
+    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p> 
     /// <p>The value must be between 0 and 100000.</p>
     pub fn base(mut self, input: i32) -> Self {
         self.base = Some(input);
         self
     }
-    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
+    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p> 
     /// <p>The value must be between 0 and 100000.</p>
     pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
-        self.base = input;
-        self
+        self.base = input; self
     }
     /// <p>The short name of the capacity provider.</p>
     pub fn capacity_provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,33 +67,34 @@ impl AwsEcsServiceCapacityProviderStrategyDetailsBuilder {
         self
     }
     /// <p>The short name of the capacity provider.</p>
-    pub fn set_capacity_provider(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.capacity_provider = input;
-        self
+    pub fn set_capacity_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.capacity_provider = input; self
     }
-    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
-    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
+    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p> 
+    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p> 
     /// <p>The value can be between 0 and 1000.</p>
     pub fn weight(mut self, input: i32) -> Self {
         self.weight = Some(input);
         self
     }
-    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
-    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
+    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p> 
+    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p> 
     /// <p>The value can be between 0 and 1000.</p>
     pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-        self.weight = input;
-        self
+        self.weight = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::types::AwsEcsServiceCapacityProviderStrategyDetails).
     pub fn build(self) -> crate::types::AwsEcsServiceCapacityProviderStrategyDetails {
         crate::types::AwsEcsServiceCapacityProviderStrategyDetails {
-            base: self.base.unwrap_or_default(),
-            capacity_provider: self.capacity_provider,
-            weight: self.weight.unwrap_or_default(),
+            base: self.base
+                .unwrap_or_default()
+            ,
+            capacity_provider: self.capacity_provider
+            ,
+            weight: self.weight
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

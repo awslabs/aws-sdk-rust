@@ -3,20 +3,20 @@
 /// <p>The private repository authentication credentials to use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails  {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
     #[doc(hidden)]
     pub credentials_parameter: std::option::Option<std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
-    pub fn credentials_parameter(&self) -> std::option::Option<&str> {
+    pub fn credentials_parameter(&self) -> std::option::Option<& str> {
         self.credentials_parameter.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder{
+    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder::default()
     }
 }
@@ -34,19 +34,15 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder
         self
     }
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
-    pub fn set_credentials_parameter(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.credentials_parameter = input;
-        self
+    pub fn set_credentials_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.credentials_parameter = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
-    pub fn build(
-        self,
-    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
+    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
-            credentials_parameter: self.credentials_parameter,
+            credentials_parameter: self.credentials_parameter
+            ,
         }
     }
 }
+

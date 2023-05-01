@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigsInput {
+pub struct ListConfigsInput  {
     /// <p>Maximum number of <code>Configs</code> returned.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ListConfigsInput {
         self.max_results
     }
     /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ListConfigsInputBuilder {
     }
     /// <p>Maximum number of <code>Configs</code> returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +52,18 @@ impl ListConfigsInputBuilder {
     }
     /// <p>Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListConfigsInput`](crate::operation::list_configs::ListConfigsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_configs::ListConfigsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_configs::ListConfigsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_configs::ListConfigsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_configs::ListConfigsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateComponentOutput {
+pub struct UpdateComponentOutput  {
     /// <p>The detailed data of the updated component.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::types::Component>,
@@ -10,15 +10,15 @@ pub struct UpdateComponentOutput {
 }
 impl UpdateComponentOutput {
     /// <p>The detailed data of the updated component.</p>
-    pub fn component(&self) -> std::option::Option<&crate::types::Component> {
+    pub fn component(&self) -> std::option::Option<& crate::types::Component> {
         self.component.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateComponentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentOutput`](crate::operation::update_component::UpdateComponentOutput).
     pub fn builder() -> crate::operation::update_component::builders::UpdateComponentOutputBuilder {
@@ -41,23 +41,24 @@ impl UpdateComponentOutputBuilder {
     }
     /// <p>The detailed data of the updated component.</p>
     pub fn set_component(mut self, input: std::option::Option<crate::types::Component>) -> Self {
-        self.component = input;
-        self
+        self.component = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateComponentOutput`](crate::operation::update_component::UpdateComponentOutput).
     pub fn build(self) -> crate::operation::update_component::UpdateComponentOutput {
         crate::operation::update_component::UpdateComponentOutput {
-            component: self.component,
+            component: self.component
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

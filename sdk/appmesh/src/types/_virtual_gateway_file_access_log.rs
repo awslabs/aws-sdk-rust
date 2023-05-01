@@ -3,7 +3,7 @@
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayFileAccessLog {
+pub struct VirtualGatewayFileAccessLog  {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VirtualGatewayFileAccessLog {
 }
 impl VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::LoggingFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::LoggingFormat> {
         self.format.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl VirtualGatewayFileAccessLogBuilder {
     }
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn format(mut self, input: crate::types::LoggingFormat) -> Self {
@@ -53,14 +52,16 @@ impl VirtualGatewayFileAccessLogBuilder {
     }
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::LoggingFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayFileAccessLog`](crate::types::VirtualGatewayFileAccessLog).
     pub fn build(self) -> crate::types::VirtualGatewayFileAccessLog {
         crate::types::VirtualGatewayFileAccessLog {
-            path: self.path,
-            format: self.format,
+            path: self.path
+            ,
+            format: self.format
+            ,
         }
     }
 }
+

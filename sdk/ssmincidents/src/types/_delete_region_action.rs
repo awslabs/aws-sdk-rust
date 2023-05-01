@@ -3,14 +3,14 @@
 /// <p>Defines the information about the Amazon Web Services Region you're deleting from your replication set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegionAction {
+pub struct DeleteRegionAction  {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl DeleteRegionAction {
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl DeleteRegionActionBuilder {
     }
     /// <p>The name of the Amazon Web Services Region you're deleting from the replication set.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRegionAction`](crate::types::DeleteRegionAction).
     pub fn build(self) -> crate::types::DeleteRegionAction {
         crate::types::DeleteRegionAction {
-            region_name: self.region_name,
+            region_name: self.region_name
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTrustStoreCertificateOutput {
+pub struct GetTrustStoreCertificateOutput  {
     /// <p>The ARN of the trust store certificate.</p>
     #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct GetTrustStoreCertificateOutput {
 }
 impl GetTrustStoreCertificateOutput {
     /// <p>The ARN of the trust store certificate.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
         self.trust_store_arn.as_deref()
     }
     /// <p>The certificate of the trust store certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::types::Certificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::types::Certificate> {
         self.certificate.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetTrustStoreCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTrustStoreCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetTrustStoreCertificateOutput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput).
-    pub fn builder() -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder{
+    pub fn builder() -> crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder {
         crate::operation::get_trust_store_certificate::builders::GetTrustStoreCertificateOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl GetTrustStoreCertificateOutputBuilder {
     }
     /// <p>The ARN of the trust store certificate.</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input;
-        self
+        self.trust_store_arn = input; self
     }
     /// <p>The certificate of the trust store certificate.</p>
     pub fn certificate(mut self, input: crate::types::Certificate) -> Self {
@@ -58,30 +57,27 @@ impl GetTrustStoreCertificateOutputBuilder {
         self
     }
     /// <p>The certificate of the trust store certificate.</p>
-    pub fn set_certificate(
-        mut self,
-        input: std::option::Option<crate::types::Certificate>,
-    ) -> Self {
-        self.certificate = input;
-        self
+    pub fn set_certificate(mut self, input: std::option::Option<crate::types::Certificate>) -> Self {
+        self.certificate = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTrustStoreCertificateOutput`](crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
+    pub fn build(self) -> crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
         crate::operation::get_trust_store_certificate::GetTrustStoreCertificateOutput {
-            trust_store_arn: self.trust_store_arn,
-            certificate: self.certificate,
+            trust_store_arn: self.trust_store_arn
+            ,
+            certificate: self.certificate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

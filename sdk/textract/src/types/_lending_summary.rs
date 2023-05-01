@@ -3,7 +3,7 @@
 /// <p>Contains information regarding DocumentGroups and UndetectedDocumentTypes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LendingSummary {
+pub struct LendingSummary  {
     /// <p>Contains an array of all DocumentGroup objects.</p>
     #[doc(hidden)]
     pub document_groups: std::option::Option<std::vec::Vec<crate::types::DocumentGroup>>,
@@ -13,11 +13,11 @@ pub struct LendingSummary {
 }
 impl LendingSummary {
     /// <p>Contains an array of all DocumentGroup objects.</p>
-    pub fn document_groups(&self) -> std::option::Option<&[crate::types::DocumentGroup]> {
+    pub fn document_groups(&self) -> std::option::Option<& [crate::types::DocumentGroup]> {
         self.document_groups.as_deref()
     }
     /// <p>UndetectedDocumentTypes.</p>
-    pub fn undetected_document_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn undetected_document_types(&self) -> std::option::Option<& [std::string::String]> {
         self.undetected_document_types.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl LendingSummaryBuilder {
     /// <p>Contains an array of all DocumentGroup objects.</p>
     pub fn document_groups(mut self, input: crate::types::DocumentGroup) -> Self {
         let mut v = self.document_groups.unwrap_or_default();
-        v.push(input);
-        self.document_groups = Some(v);
-        self
+                        v.push(input);
+                        self.document_groups = Some(v);
+                        self
     }
     /// <p>Contains an array of all DocumentGroup objects.</p>
-    pub fn set_document_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentGroup>>,
-    ) -> Self {
-        self.document_groups = input;
-        self
+    pub fn set_document_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentGroup>>) -> Self {
+        self.document_groups = input; self
     }
     /// Appends an item to `undetected_document_types`.
     ///
@@ -62,23 +58,22 @@ impl LendingSummaryBuilder {
     /// <p>UndetectedDocumentTypes.</p>
     pub fn undetected_document_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.undetected_document_types.unwrap_or_default();
-        v.push(input.into());
-        self.undetected_document_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.undetected_document_types = Some(v);
+                        self
     }
     /// <p>UndetectedDocumentTypes.</p>
-    pub fn set_undetected_document_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.undetected_document_types = input;
-        self
+    pub fn set_undetected_document_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.undetected_document_types = input; self
     }
     /// Consumes the builder and constructs a [`LendingSummary`](crate::types::LendingSummary).
     pub fn build(self) -> crate::types::LendingSummary {
         crate::types::LendingSummary {
-            document_groups: self.document_groups,
-            undetected_document_types: self.undetected_document_types,
+            document_groups: self.document_groups
+            ,
+            undetected_document_types: self.undetected_document_types
+            ,
         }
     }
 }
+

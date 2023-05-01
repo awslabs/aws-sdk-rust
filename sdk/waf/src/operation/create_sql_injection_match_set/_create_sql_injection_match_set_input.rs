@@ -3,7 +3,7 @@
 /// <p>A request to create a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSqlInjectionMatchSetInput {
+pub struct CreateSqlInjectionMatchSetInput  {
     /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct CreateSqlInjectionMatchSetInput {
 }
 impl CreateSqlInjectionMatchSetInput {
     /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl CreateSqlInjectionMatchSetInput {
     /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetInput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput).
-    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetInputBuilder{
+    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetInputBuilder {
         crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetInputBuilder::default()
     }
 }
@@ -43,8 +43,7 @@ impl CreateSqlInjectionMatchSetInputBuilder {
     }
     /// <p>A friendly name or description for the <code>SqlInjectionMatchSet</code> that you're creating. You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +52,18 @@ impl CreateSqlInjectionMatchSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateSqlInjectionMatchSetInput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetInput {
-                name: self.name,
-                change_token: self.change_token,
-            },
+                name: self.name
+                ,
+                change_token: self.change_token
+                ,
+            }
         )
     }
 }
+

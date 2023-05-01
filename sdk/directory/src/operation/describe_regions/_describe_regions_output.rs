@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRegionsOutput {
+pub struct DescribeRegionsOutput  {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
     #[doc(hidden)]
     pub regions_description: std::option::Option<std::vec::Vec<crate::types::RegionDescription>>,
@@ -13,19 +13,19 @@ pub struct DescribeRegionsOutput {
 }
 impl DescribeRegionsOutput {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
-    pub fn regions_description(&self) -> std::option::Option<&[crate::types::RegionDescription]> {
+    pub fn regions_description(&self) -> std::option::Option<& [crate::types::RegionDescription]> {
         self.regions_description.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRegionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeRegionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
     pub fn builder() -> crate::operation::describe_regions::builders::DescribeRegionsOutputBuilder {
@@ -37,8 +37,7 @@ impl DescribeRegionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRegionsOutputBuilder {
-    pub(crate) regions_description:
-        std::option::Option<std::vec::Vec<crate::types::RegionDescription>>,
+    pub(crate) regions_description: std::option::Option<std::vec::Vec<crate::types::RegionDescription>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl DescribeRegionsOutputBuilder {
     /// <p>List of Region information related to the directory for each replicated Region.</p>
     pub fn regions_description(mut self, input: crate::types::RegionDescription) -> Self {
         let mut v = self.regions_description.unwrap_or_default();
-        v.push(input);
-        self.regions_description = Some(v);
-        self
+                        v.push(input);
+                        self.regions_description = Some(v);
+                        self
     }
     /// <p>List of Region information related to the directory for each replicated Region.</p>
-    pub fn set_regions_description(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RegionDescription>>,
-    ) -> Self {
-        self.regions_description = input;
-        self
+    pub fn set_regions_description(mut self, input: std::option::Option<std::vec::Vec<crate::types::RegionDescription>>) -> Self {
+        self.regions_description = input; self
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl DescribeRegionsOutputBuilder {
     }
     /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>DescribeRegions</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeRegionsOutput`](crate::operation::describe_regions::DescribeRegionsOutput).
     pub fn build(self) -> crate::operation::describe_regions::DescribeRegionsOutput {
         crate::operation::describe_regions::DescribeRegionsOutput {
-            regions_description: self.regions_description,
-            next_token: self.next_token,
+            regions_description: self.regions_description
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

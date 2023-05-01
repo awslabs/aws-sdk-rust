@@ -6,125 +6,73 @@ impl PutInventoryInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::put_inventory::PutInventory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::put_inventory::PutInventory, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::put_inventory::PutInventoryInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::put_inventory::PutInventoryInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::put_inventory::PutInventoryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::put_inventory::PutInventoryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AmazonSSM.PutInventory",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AmazonSSM.PutInventory"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_put_inventory::ser_put_inventory_input(&self)?,
+            crate::protocol_serde::shape_put_inventory::ser_put_inventory_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::put_inventory::PutInventory::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutInventory",
-            "ssm",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::put_inventory::PutInventory::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutInventory", "ssm"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -141,43 +89,36 @@ impl PutInventory {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for PutInventory {
-    type Output = std::result::Result<
-        crate::operation::put_inventory::PutInventoryOutput,
-        crate::operation::put_inventory::PutInventoryError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::protocol_serde::shape_put_inventory::de_put_inventory_http_error(response)
-        } else {
-            crate::protocol_serde::shape_put_inventory::de_put_inventory_http_response(response)
-        }
-    }
-}
+                type Output = std::result::Result<crate::operation::put_inventory::PutInventoryOutput, crate::operation::put_inventory::PutInventoryError>;
+                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+                     if !response.status().is_success() && response.status().as_u16() != 200 {
+                        crate::protocol_serde::shape_put_inventory::de_put_inventory_http_error(response)
+                     } else {
+                        crate::protocol_serde::shape_put_inventory::de_put_inventory_http_response(response)
+                     }
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type PutInventoryErrorKind = PutInventoryError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type PutInventoryErrorKind = PutInventoryError;
 /// Error type for the `PutInventoryError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum PutInventoryError {
     /// <p>You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.</p>
-    CustomSchemaCountLimitExceededException(
-        crate::types::error::CustomSchemaCountLimitExceededException,
-    ),
+    CustomSchemaCountLimitExceededException(crate::types::error::CustomSchemaCountLimitExceededException),
     /// <p>An error occurred on the server side.</p>
     InternalServerError(crate::types::error::InternalServerError),
-    /// <p>The following problems can cause this exception:</p>
-    /// <ul>
-    /// <li> <p>You don't have permission to access the managed node.</p> </li>
-    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li>
-    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li>
-    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li>
+    /// <p>The following problems can cause this exception:</p> 
+    /// <ul> 
+    /// <li> <p>You don't have permission to access the managed node.</p> </li> 
+    /// <li> <p>Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.</p> </li> 
+    /// <li> <p>SSM Agent isn't registered with the SSM endpoint. Try reinstalling SSM Agent.</p> </li> 
+    /// <li> <p>The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>, <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and <code>Terminated</code>.</p> </li> 
     /// </ul>
     InvalidInstanceId(crate::types::error::InvalidInstanceId),
     /// <p>You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>. Verify the keys and values, and try again.</p>
@@ -195,86 +136,110 @@ pub enum PutInventoryError {
     /// <p>The size of inventory data has exceeded the total size limit for the resource.</p>
     TotalSizeLimitExceededException(crate::types::error::TotalSizeLimitExceededException),
     /// <p>The <code>Context</code> attribute that you specified for the <code>InventoryItem</code> isn't allowed for this inventory type. You can only use the <code>Context</code> attribute with inventory types like <code>AWS:ComplianceItem</code>.</p>
-    UnsupportedInventoryItemContextException(
-        crate::types::error::UnsupportedInventoryItemContextException,
-    ),
+    UnsupportedInventoryItemContextException(crate::types::error::UnsupportedInventoryItemContextException),
     /// <p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>
-    UnsupportedInventorySchemaVersionException(
-        crate::types::error::UnsupportedInventorySchemaVersionException,
-    ),
+    UnsupportedInventorySchemaVersionException(crate::types::error::UnsupportedInventorySchemaVersionException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutInventoryError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for PutInventoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::CustomSchemaCountLimitExceededException(_inner) => _inner.fmt(f),
-            Self::InternalServerError(_inner) => _inner.fmt(f),
-            Self::InvalidInstanceId(_inner) => _inner.fmt(f),
-            Self::InvalidInventoryItemContextException(_inner) => _inner.fmt(f),
-            Self::InvalidItemContentException(_inner) => _inner.fmt(f),
-            Self::InvalidTypeNameException(_inner) => _inner.fmt(f),
-            Self::ItemContentMismatchException(_inner) => _inner.fmt(f),
-            Self::ItemSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::SubTypeCountLimitExceededException(_inner) => _inner.fmt(f),
-            Self::TotalSizeLimitExceededException(_inner) => _inner.fmt(f),
-            Self::UnsupportedInventoryItemContextException(_inner) => _inner.fmt(f),
-            Self::UnsupportedInventorySchemaVersionException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::CustomSchemaCountLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InternalServerError(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidInstanceId(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidInventoryItemContextException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidItemContentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidTypeNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ItemContentMismatchException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ItemSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::SubTypeCountLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TotalSizeLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::UnsupportedInventoryItemContextException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::UnsupportedInventorySchemaVersionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PutInventoryError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::CustomSchemaCountLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InternalServerError(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidInstanceId(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidInventoryItemContextException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidItemContentException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidTypeNameException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ItemContentMismatchException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ItemSizeLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SubTypeCountLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TotalSizeLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnsupportedInventoryItemContextException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::UnsupportedInventorySchemaVersionException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::CustomSchemaCountLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InternalServerError(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidInstanceId(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidInventoryItemContextException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidItemContentException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidTypeNameException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ItemContentMismatchException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ItemSizeLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::SubTypeCountLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TotalSizeLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::UnsupportedInventoryItemContextException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::UnsupportedInventorySchemaVersionException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -282,10 +247,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for PutInventoryErr
     }
 }
 impl aws_http::request_id::RequestId for crate::operation::put_inventory::PutInventoryError {
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for PutInventoryError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -296,27 +261,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutInventoryError {
 }
 impl PutInventoryError {
     /// Creates the `PutInventoryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `PutInventoryError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `PutInventoryError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -387,19 +343,45 @@ impl PutInventoryError {
 impl std::error::Error for PutInventoryError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::CustomSchemaCountLimitExceededException(_inner) => Some(_inner),
-            Self::InternalServerError(_inner) => Some(_inner),
-            Self::InvalidInstanceId(_inner) => Some(_inner),
-            Self::InvalidInventoryItemContextException(_inner) => Some(_inner),
-            Self::InvalidItemContentException(_inner) => Some(_inner),
-            Self::InvalidTypeNameException(_inner) => Some(_inner),
-            Self::ItemContentMismatchException(_inner) => Some(_inner),
-            Self::ItemSizeLimitExceededException(_inner) => Some(_inner),
-            Self::SubTypeCountLimitExceededException(_inner) => Some(_inner),
-            Self::TotalSizeLimitExceededException(_inner) => Some(_inner),
-            Self::UnsupportedInventoryItemContextException(_inner) => Some(_inner),
-            Self::UnsupportedInventorySchemaVersionException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::CustomSchemaCountLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InternalServerError(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidInstanceId(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidInventoryItemContextException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidItemContentException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidTypeNameException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ItemContentMismatchException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ItemSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::SubTypeCountLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::TotalSizeLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::UnsupportedInventoryItemContextException(_inner) =>
+            Some(_inner)
+            ,
+            Self::UnsupportedInventorySchemaVersionException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -414,3 +396,4 @@ mod _put_inventory_output;
 
 /// Builders
 pub mod builders;
+

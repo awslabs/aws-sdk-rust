@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRunGroupInput {
+pub struct UpdateRunGroupInput  {
     /// <p>The group's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct UpdateRunGroupInput {
 }
 impl UpdateRunGroupInput {
     /// <p>The group's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A name for the group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of CPUs to use.</p>
@@ -66,8 +66,7 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>The group's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A name for the group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>A name for the group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The maximum number of CPUs to use.</p>
     pub fn max_cpus(mut self, input: i32) -> Self {
@@ -86,8 +84,7 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>The maximum number of CPUs to use.</p>
     pub fn set_max_cpus(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_cpus = input;
-        self
+        self.max_cpus = input; self
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn max_runs(mut self, input: i32) -> Self {
@@ -96,8 +93,7 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>The maximum number of concurrent runs for the group.</p>
     pub fn set_max_runs(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_runs = input;
-        self
+        self.max_runs = input; self
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn max_duration(mut self, input: i32) -> Self {
@@ -106,22 +102,24 @@ impl UpdateRunGroupInputBuilder {
     }
     /// <p>A maximum run time for the group in minutes.</p>
     pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_duration = input;
-        self
+        self.max_duration = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRunGroupInput`](crate::operation::update_run_group::UpdateRunGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_run_group::UpdateRunGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_run_group::UpdateRunGroupInput {
-            id: self.id,
-            name: self.name,
-            max_cpus: self.max_cpus,
-            max_runs: self.max_runs,
-            max_duration: self.max_duration,
-        })
+    pub fn build(self) -> Result<crate::operation::update_run_group::UpdateRunGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_run_group::UpdateRunGroupInput {
+                id: self.id
+                ,
+                name: self.name
+                ,
+                max_cpus: self.max_cpus
+                ,
+                max_runs: self.max_runs
+                ,
+                max_duration: self.max_duration
+                ,
+            }
+        )
     }
 }
+

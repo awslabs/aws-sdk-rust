@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectSentimentInput {
+pub struct BatchDetectSentimentInput  {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,15 +12,15 @@ pub struct BatchDetectSentimentInput {
 }
 impl BatchDetectSentimentInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
-    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn text_list(&self) -> std::option::Option<& [std::string::String]> {
         self.text_list.as_deref()
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
 }
-impl std::fmt::Debug for BatchDetectSentimentInput {
+impl  std::fmt::Debug for BatchDetectSentimentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSentimentInput");
         formatter.field("text_list", &"*** Sensitive Data Redacted ***");
@@ -30,8 +30,7 @@ impl std::fmt::Debug for BatchDetectSentimentInput {
 }
 impl BatchDetectSentimentInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSentimentInput`](crate::operation::batch_detect_sentiment::BatchDetectSentimentInput).
-    pub fn builder(
-    ) -> crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder {
+    pub fn builder() -> crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder {
         crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl BatchDetectSentimentInputBuilder {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
     pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.text_list.unwrap_or_default();
-        v.push(input.into());
-        self.text_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.text_list = Some(v);
+                        self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB. </p>
-    pub fn set_text_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.text_list = input;
-        self
+    pub fn set_text_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.text_list = input; self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -69,25 +64,18 @@ impl BatchDetectSentimentInputBuilder {
         self
     }
     /// <p>The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.</p>
-    pub fn set_language_code(
-        mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
     }
     /// Consumes the builder and constructs a [`BatchDetectSentimentInput`](crate::operation::batch_detect_sentiment::BatchDetectSentimentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_detect_sentiment::BatchDetectSentimentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_detect_sentiment::BatchDetectSentimentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_detect_sentiment::BatchDetectSentimentInput {
-                text_list: self.text_list,
-                language_code: self.language_code,
-            },
+                text_list: self.text_list
+                ,
+                language_code: self.language_code
+                ,
+            }
         )
     }
 }
@@ -99,3 +87,4 @@ impl std::fmt::Debug for BatchDetectSentimentInputBuilder {
         formatter.finish()
     }
 }
+

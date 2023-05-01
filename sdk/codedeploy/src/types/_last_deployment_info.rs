@@ -3,7 +3,7 @@
 /// <p>Information about the most recent attempted or successful deployment to a deployment group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LastDeploymentInfo {
+pub struct LastDeploymentInfo  {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct LastDeploymentInfo {
 }
 impl LastDeploymentInfo {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The status of the most recent deployment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl LastDeploymentInfoBuilder {
     }
     /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The status of the most recent deployment.</p>
     pub fn status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -68,12 +67,8 @@ impl LastDeploymentInfoBuilder {
         self
     }
     /// <p>The status of the most recent deployment.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DeploymentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +77,7 @@ impl LastDeploymentInfoBuilder {
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group was complete.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,20 +85,21 @@ impl LastDeploymentInfoBuilder {
         self
     }
     /// <p>A timestamp that indicates when the most recent deployment to the deployment group started.</p>
-    pub fn set_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
     }
     /// Consumes the builder and constructs a [`LastDeploymentInfo`](crate::types::LastDeploymentInfo).
     pub fn build(self) -> crate::types::LastDeploymentInfo {
         crate::types::LastDeploymentInfo {
-            deployment_id: self.deployment_id,
-            status: self.status,
-            end_time: self.end_time,
-            create_time: self.create_time,
+            deployment_id: self.deployment_id
+            ,
+            status: self.status
+            ,
+            end_time: self.end_time
+            ,
+            create_time: self.create_time
+            ,
         }
     }
 }
+

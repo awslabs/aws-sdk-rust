@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectOutput {
+pub struct CreateProjectOutput  {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct CreateProjectOutput {
 }
 impl CreateProjectOutput {
     /// <p>The ID of the project.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn project_template_id(&self) -> std::option::Option<&str> {
+    pub fn project_template_id(&self) -> std::option::Option<& str> {
         self.project_template_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
     pub fn builder() -> crate::operation::create_project::builders::CreateProjectOutputBuilder {
@@ -65,8 +65,7 @@ impl CreateProjectOutputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +74,7 @@ impl CreateProjectOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the created project.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +82,8 @@ impl CreateProjectOutputBuilder {
         self
     }
     /// <p>A user- or system-generated token that identifies the entity that requested project creation.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>Reserved for future use.</p>
     pub fn project_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,30 +91,31 @@ impl CreateProjectOutputBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_project_template_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.project_template_id = input;
-        self
+    pub fn set_project_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.project_template_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
     pub fn build(self) -> crate::operation::create_project::CreateProjectOutput {
         crate::operation::create_project::CreateProjectOutput {
-            id: self.id,
-            arn: self.arn,
-            client_request_token: self.client_request_token,
-            project_template_id: self.project_template_id,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            client_request_token: self.client_request_token
+            ,
+            project_template_id: self.project_template_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

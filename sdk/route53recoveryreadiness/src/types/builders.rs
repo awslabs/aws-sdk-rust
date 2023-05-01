@@ -28,3 +28,4 @@ pub use crate::types::_message::MessageBuilder;
 pub use crate::types::_rule_result::RuleResultBuilder;
 
 pub use crate::types::_recommendation::RecommendationBuilder;
+

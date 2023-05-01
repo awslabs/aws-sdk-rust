@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateKeyDescriptionInput {
-    /// <p>Updates the description of the specified KMS key.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+pub struct UpdateKeyDescriptionInput  {
+    /// <p>Updates the description of the specified KMS key.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct UpdateKeyDescriptionInput {
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateKeyDescriptionInput {
-    /// <p>Updates the description of the specified KMS key.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+    /// <p>Updates the description of the specified KMS key.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>New description for the KMS key.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateKeyDescriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateKeyDescriptionInput`](crate::operation::update_key_description::UpdateKeyDescriptionInput).
-    pub fn builder(
-    ) -> crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder {
+    pub fn builder() -> crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder {
         crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder::default()
     }
 }
@@ -50,29 +49,28 @@ pub struct UpdateKeyDescriptionInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
 }
 impl UpdateKeyDescriptionInputBuilder {
-    /// <p>Updates the description of the specified KMS key.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+    /// <p>Updates the description of the specified KMS key.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.key_id = Some(input.into());
         self
     }
-    /// <p>Updates the description of the specified KMS key.</p>
-    /// <p>Specify the key ID or key ARN of the KMS key.</p>
-    /// <p>For example:</p>
-    /// <ul>
-    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-    /// </ul>
+    /// <p>Updates the description of the specified KMS key.</p> 
+    /// <p>Specify the key ID or key ARN of the KMS key.</p> 
+    /// <p>For example:</p> 
+    /// <ul> 
+    /// <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// <li> <p>Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> 
+    /// </ul> 
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>New description for the KMS key.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,21 +79,18 @@ impl UpdateKeyDescriptionInputBuilder {
     }
     /// <p>New description for the KMS key.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateKeyDescriptionInput`](crate::operation::update_key_description::UpdateKeyDescriptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_key_description::UpdateKeyDescriptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_key_description::UpdateKeyDescriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_key_description::UpdateKeyDescriptionInput {
-                key_id: self.key_id,
-                description: self.description,
-            },
+                key_id: self.key_id
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

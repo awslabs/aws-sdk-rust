@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePrivateDnsNamespaceInput {
+pub struct CreatePrivateDnsNamespaceInput  {
     /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -24,33 +24,33 @@ pub struct CreatePrivateDnsNamespaceInput {
 }
 impl CreatePrivateDnsNamespaceInput {
     /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> std::option::Option<& str> {
         self.creator_request_id.as_deref()
     }
     /// <p>A description for the namespace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
-    pub fn vpc(&self) -> std::option::Option<&str> {
+    pub fn vpc(&self) -> std::option::Option<& str> {
         self.vpc.as_deref()
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn properties(&self) -> std::option::Option<&crate::types::PrivateDnsNamespaceProperties> {
+    pub fn properties(&self) -> std::option::Option<& crate::types::PrivateDnsNamespaceProperties> {
         self.properties.as_ref()
     }
 }
 impl CreatePrivateDnsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`CreatePrivateDnsNamespaceInput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput).
-    pub fn builder() -> crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder {
         crate::operation::create_private_dns_namespace::builders::CreatePrivateDnsNamespaceInputBuilder::default()
     }
 }
@@ -74,8 +74,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
     }
     /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route&nbsp;53 private hosted zone that has the same name as the namespace.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
     pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,12 +82,8 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code> requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a date/timestamp).</p>
-    pub fn set_creator_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.creator_request_id = input;
-        self
+    pub fn set_creator_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.creator_request_id = input; self
     }
     /// <p>A description for the namespace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +92,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
     }
     /// <p>A description for the namespace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
     pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +101,7 @@ impl CreatePrivateDnsNamespaceInputBuilder {
     }
     /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
     pub fn set_vpc(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -117,17 +110,13 @@ impl CreatePrivateDnsNamespaceInputBuilder {
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Properties for the private DNS namespace.</p>
     pub fn properties(mut self, input: crate::types::PrivateDnsNamespaceProperties) -> Self {
@@ -135,29 +124,27 @@ impl CreatePrivateDnsNamespaceInputBuilder {
         self
     }
     /// <p>Properties for the private DNS namespace.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<crate::types::PrivateDnsNamespaceProperties>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<crate::types::PrivateDnsNamespaceProperties>) -> Self {
+        self.properties = input; self
     }
     /// Consumes the builder and constructs a [`CreatePrivateDnsNamespaceInput`](crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceInput {
-                name: self.name,
-                creator_request_id: self.creator_request_id,
-                description: self.description,
-                vpc: self.vpc,
-                tags: self.tags,
-                properties: self.properties,
-            },
+                name: self.name
+                ,
+                creator_request_id: self.creator_request_id
+                ,
+                description: self.description
+                ,
+                vpc: self.vpc
+                ,
+                tags: self.tags
+                ,
+                properties: self.properties
+                ,
+            }
         )
     }
 }
+

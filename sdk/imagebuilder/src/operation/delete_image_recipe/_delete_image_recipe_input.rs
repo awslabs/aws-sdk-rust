@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageRecipeInput {
+pub struct DeleteImageRecipeInput  {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl DeleteImageRecipeInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
         self.image_recipe_arn.as_deref()
     }
 }
 impl DeleteImageRecipeInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_recipe::builders::DeleteImageRecipeInputBuilder {
+    pub fn builder() -> crate::operation::delete_image_recipe::builders::DeleteImageRecipeInputBuilder {
         crate::operation::delete_image_recipe::builders::DeleteImageRecipeInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteImageRecipeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
     pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_recipe_arn = input;
-        self
+        self.image_recipe_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteImageRecipeInput`](crate::operation::delete_image_recipe::DeleteImageRecipeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_image_recipe::DeleteImageRecipeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_image_recipe::DeleteImageRecipeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_image_recipe::DeleteImageRecipeInput {
-                image_recipe_arn: self.image_recipe_arn,
-            },
+                image_recipe_arn: self.image_recipe_arn
+                ,
+            }
         )
     }
 }
+

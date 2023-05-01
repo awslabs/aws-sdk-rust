@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThingGroupOutput {
+pub struct CreateThingGroupOutput  {
     /// <p>The thing group name.</p>
     #[doc(hidden)]
     pub thing_group_name: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct CreateThingGroupOutput {
 }
 impl CreateThingGroupOutput {
     /// <p>The thing group name.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>The thing group ARN.</p>
-    pub fn thing_group_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_group_arn(&self) -> std::option::Option<& str> {
         self.thing_group_arn.as_deref()
     }
     /// <p>The thing group ID.</p>
-    pub fn thing_group_id(&self) -> std::option::Option<&str> {
+    pub fn thing_group_id(&self) -> std::option::Option<& str> {
         self.thing_group_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateThingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateThingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateThingGroupOutput`](crate::operation::create_thing_group::CreateThingGroupOutput).
-    pub fn builder() -> crate::operation::create_thing_group::builders::CreateThingGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_thing_group::builders::CreateThingGroupOutputBuilder {
         crate::operation::create_thing_group::builders::CreateThingGroupOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl CreateThingGroupOutputBuilder {
     }
     /// <p>The thing group name.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>The thing group ARN.</p>
     pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +66,7 @@ impl CreateThingGroupOutputBuilder {
     }
     /// <p>The thing group ARN.</p>
     pub fn set_thing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_arn = input;
-        self
+        self.thing_group_arn = input; self
     }
     /// <p>The thing group ID.</p>
     pub fn thing_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,25 +75,28 @@ impl CreateThingGroupOutputBuilder {
     }
     /// <p>The thing group ID.</p>
     pub fn set_thing_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_id = input;
-        self
+        self.thing_group_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateThingGroupOutput`](crate::operation::create_thing_group::CreateThingGroupOutput).
     pub fn build(self) -> crate::operation::create_thing_group::CreateThingGroupOutput {
         crate::operation::create_thing_group::CreateThingGroupOutput {
-            thing_group_name: self.thing_group_name,
-            thing_group_arn: self.thing_group_arn,
-            thing_group_id: self.thing_group_id,
+            thing_group_name: self.thing_group_name
+            ,
+            thing_group_arn: self.thing_group_arn
+            ,
+            thing_group_id: self.thing_group_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The summary for the Lambda endpoint type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaEndpointSummary {
+pub struct LambdaEndpointSummary  {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl LambdaEndpointSummary {
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl LambdaEndpointSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda endpoint. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`LambdaEndpointSummary`](crate::types::LambdaEndpointSummary).
     pub fn build(self) -> crate::types::LambdaEndpointSummary {
-        crate::types::LambdaEndpointSummary { arn: self.arn }
+        crate::types::LambdaEndpointSummary {
+            arn: self.arn
+            ,
+        }
     }
 }
+

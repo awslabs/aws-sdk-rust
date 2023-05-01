@@ -36,3 +36,4 @@ pub mod builders;
 
 /// Error types that Amazon DocumentDB Elastic Clusters can respond with.
 pub mod error;
+

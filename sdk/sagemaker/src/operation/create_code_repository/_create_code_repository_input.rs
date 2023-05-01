@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCodeRepositoryInput {
+pub struct CreateCodeRepositoryInput  {
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub code_repository_name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct CreateCodeRepositoryInput {
 }
 impl CreateCodeRepositoryInput {
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn code_repository_name(&self) -> std::option::Option<&str> {
+    pub fn code_repository_name(&self) -> std::option::Option<& str> {
         self.code_repository_name.as_deref()
     }
     /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
-    pub fn git_config(&self) -> std::option::Option<&crate::types::GitConfig> {
+    pub fn git_config(&self) -> std::option::Option<& crate::types::GitConfig> {
         self.git_config.as_ref()
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateCodeRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateCodeRepositoryInput`](crate::operation::create_code_repository::CreateCodeRepositoryInput).
-    pub fn builder(
-    ) -> crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder {
         crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl CreateCodeRepositoryInputBuilder {
         self
     }
     /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn set_code_repository_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_repository_name = input;
-        self
+    pub fn set_code_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_repository_name = input; self
     }
     /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
     pub fn git_config(mut self, input: crate::types::GitConfig) -> Self {
@@ -64,8 +59,7 @@ impl CreateCodeRepositoryInputBuilder {
     }
     /// <p>Specifies details about the repository, including the URL where the repository is located, the default branch, and credentials to use to access the repository.</p>
     pub fn set_git_config(mut self, input: std::option::Option<crate::types::GitConfig>) -> Self {
-        self.git_config = input;
-        self
+        self.git_config = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -74,31 +68,26 @@ impl CreateCodeRepositoryInputBuilder {
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateCodeRepositoryInput`](crate::operation::create_code_repository::CreateCodeRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_code_repository::CreateCodeRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_code_repository::CreateCodeRepositoryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_code_repository::CreateCodeRepositoryInput {
-                code_repository_name: self.code_repository_name,
-                git_config: self.git_config,
-                tags: self.tags,
-            },
+                code_repository_name: self.code_repository_name
+                ,
+                git_config: self.git_config
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

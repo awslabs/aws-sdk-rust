@@ -3,7 +3,7 @@
 /// <p>The detector model and the specific detectors (instances) for which the logging level is given.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorDebugOption {
+pub struct DetectorDebugOption  {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DetectorDebugOption {
 }
 impl DetectorDebugOption {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<&str> {
+    pub fn detector_model_name(&self) -> std::option::Option<& str> {
         self.detector_model_name.as_deref()
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
-    pub fn key_value(&self) -> std::option::Option<&str> {
+    pub fn key_value(&self) -> std::option::Option<& str> {
         self.key_value.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl DetectorDebugOptionBuilder {
         self
     }
     /// <p>The name of the detector model.</p>
-    pub fn set_detector_model_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.detector_model_name = input;
-        self
+    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.detector_model_name = input; self
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl DetectorDebugOptionBuilder {
     }
     /// <p>The value of the input attribute key used to create the detector (the instance of the detector model).</p>
     pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_value = input;
-        self
+        self.key_value = input; self
     }
     /// Consumes the builder and constructs a [`DetectorDebugOption`](crate::types::DetectorDebugOption).
     pub fn build(self) -> crate::types::DetectorDebugOption {
         crate::types::DetectorDebugOption {
-            detector_model_name: self.detector_model_name,
-            key_value: self.key_value,
+            detector_model_name: self.detector_model_name
+            ,
+            key_value: self.key_value
+            ,
         }
     }
 }
+

@@ -3,23 +3,23 @@
 /// <p>Describes an IPv4 range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpRange {
+pub struct IpRange  {
     /// <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv4 address, use the /32 prefix length.</p>
     #[doc(hidden)]
     pub cidr_ip: std::option::Option<std::string::String>,
-    /// <p>A description for the security group rule that references this IPv4 address range.</p>
+    /// <p>A description for the security group rule that references this IPv4 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
 }
 impl IpRange {
     /// <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv4 address, use the /32 prefix length.</p>
-    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> std::option::Option<& str> {
         self.cidr_ip.as_deref()
     }
-    /// <p>A description for the security group rule that references this IPv4 address range.</p>
+    /// <p>A description for the security group rule that references this IPv4 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -45,26 +45,27 @@ impl IpRangeBuilder {
     }
     /// <p>The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a single IPv4 address, use the /32 prefix length.</p>
     pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_ip = input;
-        self
+        self.cidr_ip = input; self
     }
-    /// <p>A description for the security group rule that references this IPv4 address range.</p>
+    /// <p>A description for the security group rule that references this IPv4 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description for the security group rule that references this IPv4 address range.</p>
+    /// <p>A description for the security group rule that references this IPv4 address range.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`IpRange`](crate::types::IpRange).
     pub fn build(self) -> crate::types::IpRange {
         crate::types::IpRange {
-            cidr_ip: self.cidr_ip,
-            description: self.description,
+            cidr_ip: self.cidr_ip
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

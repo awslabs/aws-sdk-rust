@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>SimulatePrincipalPolicy</code> or <code>SimulateCustomPolicy</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulatePrincipalPolicyOutput {
+pub struct SimulatePrincipalPolicyOutput  {
     /// <p>The results of the simulation.</p>
     #[doc(hidden)]
     pub evaluation_results: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
@@ -17,7 +17,7 @@ pub struct SimulatePrincipalPolicyOutput {
 }
 impl SimulatePrincipalPolicyOutput {
     /// <p>The results of the simulation.</p>
-    pub fn evaluation_results(&self) -> std::option::Option<&[crate::types::EvaluationResult]> {
+    pub fn evaluation_results(&self) -> std::option::Option<& [crate::types::EvaluationResult]> {
         self.evaluation_results.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -25,20 +25,18 @@ impl SimulatePrincipalPolicyOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SimulatePrincipalPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SimulatePrincipalPolicyOutput {
     /// Creates a new builder-style object to manufacture [`SimulatePrincipalPolicyOutput`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder {
         crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyOutputBuilder::default()
     }
 }
@@ -47,8 +45,7 @@ impl SimulatePrincipalPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SimulatePrincipalPolicyOutputBuilder {
-    pub(crate) evaluation_results:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
+    pub(crate) evaluation_results: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
     pub(crate) is_truncated: std::option::Option<bool>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -61,17 +58,13 @@ impl SimulatePrincipalPolicyOutputBuilder {
     /// <p>The results of the simulation.</p>
     pub fn evaluation_results(mut self, input: crate::types::EvaluationResult) -> Self {
         let mut v = self.evaluation_results.unwrap_or_default();
-        v.push(input);
-        self.evaluation_results = Some(v);
-        self
+                        v.push(input);
+                        self.evaluation_results = Some(v);
+                        self
     }
     /// <p>The results of the simulation.</p>
-    pub fn set_evaluation_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>,
-    ) -> Self {
-        self.evaluation_results = input;
-        self
+    pub fn set_evaluation_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::EvaluationResult>>) -> Self {
+        self.evaluation_results = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -80,8 +73,7 @@ impl SimulatePrincipalPolicyOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,27 +82,29 @@ impl SimulatePrincipalPolicyOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SimulatePrincipalPolicyOutput`](crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput {
+    pub fn build(self) -> crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput {
         crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput {
-            evaluation_results: self.evaluation_results,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
+            evaluation_results: self.evaluation_results
+            ,
+            is_truncated: self.is_truncated
+                .unwrap_or_default()
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignOutUserInput {
+pub struct SignOutUserInput  {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct SignOutUserInput {
 }
 impl SignOutUserInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl SignOutUserInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input;
-        self
+        self.fleet_arn = input; self
     }
     /// <p>The name of the user.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl SignOutUserInputBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Consumes the builder and constructs a [`SignOutUserInput`](crate::operation::sign_out_user::SignOutUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::sign_out_user::SignOutUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::sign_out_user::SignOutUserInput {
-            fleet_arn: self.fleet_arn,
-            username: self.username,
-        })
+    pub fn build(self) -> Result<crate::operation::sign_out_user::SignOutUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::sign_out_user::SignOutUserInput {
+                fleet_arn: self.fleet_arn
+                ,
+                username: self.username
+                ,
+            }
+        )
     }
 }
+

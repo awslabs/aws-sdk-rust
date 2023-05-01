@@ -3,7 +3,7 @@
 /// <p>Attributes of an Ethereum node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeEthereumAttributes {
+pub struct NodeEthereumAttributes  {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     #[doc(hidden)]
     pub http_endpoint: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NodeEthereumAttributes {
 }
 impl NodeEthereumAttributes {
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn http_endpoint(&self) -> std::option::Option<&str> {
+    pub fn http_endpoint(&self) -> std::option::Option<& str> {
         self.http_endpoint.as_deref()
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn web_socket_endpoint(&self) -> std::option::Option<&str> {
+    pub fn web_socket_endpoint(&self) -> std::option::Option<& str> {
         self.web_socket_endpoint.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl NodeEthereumAttributesBuilder {
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum API methods over HTTP connections from a client. Use this endpoint in client code for smart contracts when using an HTTP connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     pub fn set_http_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_endpoint = input;
-        self
+        self.http_endpoint = input; self
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
     pub fn web_socket_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl NodeEthereumAttributesBuilder {
         self
     }
     /// <p>The endpoint on which the Ethereum node listens to run Ethereum JSON-RPC methods over WebSocket connections from a client. Use this endpoint in client code for smart contracts when using a WebSocket connection. Connections to this endpoint are authenticated using <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
-    pub fn set_web_socket_endpoint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.web_socket_endpoint = input;
-        self
+    pub fn set_web_socket_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.web_socket_endpoint = input; self
     }
     /// Consumes the builder and constructs a [`NodeEthereumAttributes`](crate::types::NodeEthereumAttributes).
     pub fn build(self) -> crate::types::NodeEthereumAttributes {
         crate::types::NodeEthereumAttributes {
-            http_endpoint: self.http_endpoint,
-            web_socket_endpoint: self.web_socket_endpoint,
+            http_endpoint: self.http_endpoint
+            ,
+            web_socket_endpoint: self.web_socket_endpoint
+            ,
         }
     }
 }
+

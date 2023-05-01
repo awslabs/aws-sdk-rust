@@ -208,3 +208,4 @@ pub mod builders;
 
 /// Error types that Amazon Textract can respond with.
 pub mod error;
+

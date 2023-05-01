@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCoreNetworkPolicyOutput {
+pub struct PutCoreNetworkPolicyOutput  {
     /// <p>Describes the changed core network policy.</p>
     #[doc(hidden)]
     pub core_network_policy: std::option::Option<crate::types::CoreNetworkPolicy>,
@@ -10,20 +10,18 @@ pub struct PutCoreNetworkPolicyOutput {
 }
 impl PutCoreNetworkPolicyOutput {
     /// <p>Describes the changed core network policy.</p>
-    pub fn core_network_policy(&self) -> std::option::Option<&crate::types::CoreNetworkPolicy> {
+    pub fn core_network_policy(&self) -> std::option::Option<& crate::types::CoreNetworkPolicy> {
         self.core_network_policy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutCoreNetworkPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutCoreNetworkPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutCoreNetworkPolicyOutput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyOutputBuilder {
         crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl PutCoreNetworkPolicyOutputBuilder {
         self
     }
     /// <p>Describes the changed core network policy.</p>
-    pub fn set_core_network_policy(
-        mut self,
-        input: std::option::Option<crate::types::CoreNetworkPolicy>,
-    ) -> Self {
-        self.core_network_policy = input;
-        self
+    pub fn set_core_network_policy(mut self, input: std::option::Option<crate::types::CoreNetworkPolicy>) -> Self {
+        self.core_network_policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutCoreNetworkPolicyOutput`](crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput).
     pub fn build(self) -> crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput {
         crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput {
-            core_network_policy: self.core_network_policy,
+            core_network_policy: self.core_network_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

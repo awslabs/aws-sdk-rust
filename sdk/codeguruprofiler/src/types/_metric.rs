@@ -3,7 +3,7 @@
 /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric what is analyzed to create recommendations. It includes the name of the frame that was analyzed and the type and thread states used to derive the metric value for that frame. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metric {
+pub struct Metric  {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
     #[doc(hidden)]
     pub frame_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Metric {
 }
 impl Metric {
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
-    pub fn frame_name(&self) -> std::option::Option<&str> {
+    pub fn frame_name(&self) -> std::option::Option<& str> {
         self.frame_name.as_deref()
     }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::MetricType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::MetricType> {
         self.r#type.as_ref()
     }
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-    pub fn thread_states(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn thread_states(&self) -> std::option::Option<& [std::string::String]> {
         self.thread_states.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl MetricBuilder {
     }
     /// <p> The name of the method that appears as a frame in any stack in a profile. </p>
     pub fn set_frame_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.frame_name = input;
-        self
+        self.frame_name = input; self
     }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
     pub fn r#type(mut self, input: crate::types::MetricType) -> Self {
@@ -61,8 +60,7 @@ impl MetricBuilder {
     }
     /// <p> A type that specifies how a metric for a frame is analyzed. The supported value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value for one frame that is calculated across the occurences of all frames in a profile.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::MetricType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Appends an item to `thread_states`.
     ///
@@ -71,24 +69,24 @@ impl MetricBuilder {
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
     pub fn thread_states(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.thread_states.unwrap_or_default();
-        v.push(input.into());
-        self.thread_states = Some(v);
-        self
+                        v.push(input.into());
+                        self.thread_states = Some(v);
+                        self
     }
     /// <p> The list of application runtime thread states that is used to calculate the metric value for the frame. </p>
-    pub fn set_thread_states(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.thread_states = input;
-        self
+    pub fn set_thread_states(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.thread_states = input; self
     }
     /// Consumes the builder and constructs a [`Metric`](crate::types::Metric).
     pub fn build(self) -> crate::types::Metric {
         crate::types::Metric {
-            frame_name: self.frame_name,
-            r#type: self.r#type,
-            thread_states: self.thread_states,
+            frame_name: self.frame_name
+            ,
+            r#type: self.r#type
+            ,
+            thread_states: self.thread_states
+            ,
         }
     }
 }
+

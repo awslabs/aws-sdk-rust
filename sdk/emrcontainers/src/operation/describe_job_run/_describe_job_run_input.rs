@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobRunInput {
+pub struct DescribeJobRunInput  {
     /// <p>The ID of the job run request. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeJobRunInput {
 }
 impl DescribeJobRunInput {
     /// <p>The ID of the job run request. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-    pub fn virtual_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_cluster_id(&self) -> std::option::Option<& str> {
         self.virtual_cluster_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeJobRunInputBuilder {
     }
     /// <p>The ID of the job run request. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
     pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,23 +50,19 @@ impl DescribeJobRunInputBuilder {
         self
     }
     /// <p>The ID of the virtual cluster for which the job run is submitted.</p>
-    pub fn set_virtual_cluster_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_cluster_id = input;
-        self
+    pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_cluster_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeJobRunInput`](crate::operation::describe_job_run::DescribeJobRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_job_run::DescribeJobRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_job_run::DescribeJobRunInput {
-            id: self.id,
-            virtual_cluster_id: self.virtual_cluster_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_job_run::DescribeJobRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_job_run::DescribeJobRunInput {
+                id: self.id
+                ,
+                virtual_cluster_id: self.virtual_cluster_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIntegrationsInput {
+pub struct ListIntegrationsInput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListIntegrationsInput {
 }
 impl ListIntegrationsInput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
@@ -36,8 +36,7 @@ impl ListIntegrationsInput {
 }
 impl ListIntegrationsInput {
     /// Creates a new builder-style object to manufacture [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
-    pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_integrations::builders::ListIntegrationsInputBuilder {
         crate::operation::list_integrations::builders::ListIntegrationsInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListIntegrationsInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl ListIntegrationsInputBuilder {
     }
     /// <p>The pagination token from the previous ListIntegrations API call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -79,8 +76,7 @@ impl ListIntegrationsInputBuilder {
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     pub fn include_hidden(mut self, input: bool) -> Self {
@@ -89,21 +85,22 @@ impl ListIntegrationsInputBuilder {
     }
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     pub fn set_include_hidden(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_hidden = input;
-        self
+        self.include_hidden = input; self
     }
     /// Consumes the builder and constructs a [`ListIntegrationsInput`](crate::operation::list_integrations::ListIntegrationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_integrations::ListIntegrationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_integrations::ListIntegrationsInput {
-            domain_name: self.domain_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            include_hidden: self.include_hidden,
-        })
+    pub fn build(self) -> Result<crate::operation::list_integrations::ListIntegrationsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_integrations::ListIntegrationsInput {
+                domain_name: self.domain_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                include_hidden: self.include_hidden
+                ,
+            }
+        )
     }
 }
+

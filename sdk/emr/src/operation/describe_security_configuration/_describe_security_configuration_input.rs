@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSecurityConfigurationInput {
+pub struct DescribeSecurityConfigurationInput  {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityConfigurationInput {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DescribeSecurityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityConfigurationInput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationInput).
-    pub fn builder() -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationInputBuilder {
         crate::operation::describe_security_configuration::builders::DescribeSecurityConfigurationInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeSecurityConfigurationInputBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSecurityConfigurationInput`](crate::operation::describe_security_configuration::DescribeSecurityConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_security_configuration::DescribeSecurityConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_security_configuration::DescribeSecurityConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_security_configuration::DescribeSecurityConfigurationInput {
-                name: self.name,
-            },
+                name: self.name
+                ,
+            }
         )
     }
 }
+

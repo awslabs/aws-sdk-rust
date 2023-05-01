@@ -3,7 +3,7 @@
 /// <p>The SSML message. For more information, see <a href="https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html">SSML Reference</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ssml {
+pub struct Ssml  {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::types::Locale>,
@@ -13,11 +13,11 @@ pub struct Ssml {
 }
 impl Ssml {
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> std::option::Option<& crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SsmlBuilder {
     }
     /// <p>The locale of the SSML message. Currently, en-US is supported.</p>
     pub fn set_locale(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SsmlBuilder {
     }
     /// <p>The value of the SSML message in the correct SSML format. The audio tag is not supported.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Ssml`](crate::types::Ssml).
     pub fn build(self) -> crate::types::Ssml {
         crate::types::Ssml {
-            locale: self.locale,
-            value: self.value,
+            locale: self.locale
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

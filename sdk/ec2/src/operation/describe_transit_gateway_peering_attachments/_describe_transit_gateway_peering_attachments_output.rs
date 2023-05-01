@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTransitGatewayPeeringAttachmentsOutput {
+pub struct DescribeTransitGatewayPeeringAttachmentsOutput  {
     /// <p>The transit gateway peering attachments.</p>
     #[doc(hidden)]
-    pub transit_gateway_peering_attachments:
-        std::option::Option<std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>,
+    pub transit_gateway_peering_attachments: std::option::Option<std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeTransitGatewayPeeringAttachmentsOutput {
 }
 impl DescribeTransitGatewayPeeringAttachmentsOutput {
     /// <p>The transit gateway peering attachments.</p>
-    pub fn transit_gateway_peering_attachments(
-        &self,
-    ) -> std::option::Option<&[crate::types::TransitGatewayPeeringAttachment]> {
+    pub fn transit_gateway_peering_attachments(&self) -> std::option::Option<& [crate::types::TransitGatewayPeeringAttachment]> {
         self.transit_gateway_peering_attachments.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTransitGatewayPeeringAttachmentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeTransitGatewayPeeringAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayPeeringAttachmentsOutput`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsOutputBuilder {
         crate::operation::describe_transit_gateway_peering_attachments::builders::DescribeTransitGatewayPeeringAttachmentsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeTransitGatewayPeeringAttachmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTransitGatewayPeeringAttachmentsOutputBuilder {
-    pub(crate) transit_gateway_peering_attachments:
-        std::option::Option<std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>,
+    pub(crate) transit_gateway_peering_attachments: std::option::Option<std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl DescribeTransitGatewayPeeringAttachmentsOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_peering_attachments`](Self::set_transit_gateway_peering_attachments).
     ///
     /// <p>The transit gateway peering attachments.</p>
-    pub fn transit_gateway_peering_attachments(
-        mut self,
-        input: crate::types::TransitGatewayPeeringAttachment,
-    ) -> Self {
+    pub fn transit_gateway_peering_attachments(mut self, input: crate::types::TransitGatewayPeeringAttachment) -> Self {
         let mut v = self.transit_gateway_peering_attachments.unwrap_or_default();
-        v.push(input);
-        self.transit_gateway_peering_attachments = Some(v);
-        self
+                        v.push(input);
+                        self.transit_gateway_peering_attachments = Some(v);
+                        self
     }
     /// <p>The transit gateway peering attachments.</p>
-    pub fn set_transit_gateway_peering_attachments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>,
-    ) -> Self {
-        self.transit_gateway_peering_attachments = input;
-        self
+    pub fn set_transit_gateway_peering_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::types::TransitGatewayPeeringAttachment>>) -> Self {
+        self.transit_gateway_peering_attachments = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl DescribeTransitGatewayPeeringAttachmentsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayPeeringAttachmentsOutput`](crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput{
+    pub fn build(self) -> crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput {
         crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput {
             transit_gateway_peering_attachments: self.transit_gateway_peering_attachments
             ,
@@ -98,3 +86,4 @@ impl DescribeTransitGatewayPeeringAttachmentsOutputBuilder {
         }
     }
 }
+

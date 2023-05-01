@@ -3,7 +3,7 @@
 /// <p>Request to create a new platform version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlatformVersionInput {
+pub struct CreatePlatformVersionInput  {
     /// <p>The name of your custom platform.</p>
     #[doc(hidden)]
     pub platform_name: std::option::Option<std::string::String>,
@@ -18,47 +18,42 @@ pub struct CreatePlatformVersionInput {
     pub environment_name: std::option::Option<std::string::String>,
     /// <p>The configuration option settings to apply to the builder environment.</p>
     #[doc(hidden)]
-    pub option_settings:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    /// <p>Specifies the tags applied to the new platform version.</p>
+    pub option_settings: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    /// <p>Specifies the tags applied to the new platform version.</p> 
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreatePlatformVersionInput {
     /// <p>The name of your custom platform.</p>
-    pub fn platform_name(&self) -> std::option::Option<&str> {
+    pub fn platform_name(&self) -> std::option::Option<& str> {
         self.platform_name.as_deref()
     }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
-    pub fn platform_definition_bundle(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn platform_definition_bundle(&self) -> std::option::Option<& crate::types::S3Location> {
         self.platform_definition_bundle.as_ref()
     }
     /// <p>The name of the builder environment.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The configuration option settings to apply to the builder environment.</p>
-    pub fn option_settings(
-        &self,
-    ) -> std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
+    pub fn option_settings(&self) -> std::option::Option<& [crate::types::ConfigurationOptionSetting]> {
         self.option_settings.as_deref()
     }
-    /// <p>Specifies the tags applied to the new platform version.</p>
+    /// <p>Specifies the tags applied to the new platform version.</p> 
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreatePlatformVersionInput {
     /// Creates a new builder-style object to manufacture [`CreatePlatformVersionInput`](crate::operation::create_platform_version::CreatePlatformVersionInput).
-    pub fn builder(
-    ) -> crate::operation::create_platform_version::builders::CreatePlatformVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_platform_version::builders::CreatePlatformVersionInputBuilder {
         crate::operation::create_platform_version::builders::CreatePlatformVersionInputBuilder::default()
     }
 }
@@ -71,8 +66,7 @@ pub struct CreatePlatformVersionInputBuilder {
     pub(crate) platform_version: std::option::Option<std::string::String>,
     pub(crate) platform_definition_bundle: std::option::Option<crate::types::S3Location>,
     pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) option_settings:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+    pub(crate) option_settings: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreatePlatformVersionInputBuilder {
@@ -83,8 +77,7 @@ impl CreatePlatformVersionInputBuilder {
     }
     /// <p>The name of your custom platform.</p>
     pub fn set_platform_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_name = input;
-        self
+        self.platform_name = input; self
     }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
     pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +86,7 @@ impl CreatePlatformVersionInputBuilder {
     }
     /// <p>The number, such as 1.0.2, for the new platform version.</p>
     pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_version = input;
-        self
+        self.platform_version = input; self
     }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
     pub fn platform_definition_bundle(mut self, input: crate::types::S3Location) -> Self {
@@ -102,12 +94,8 @@ impl CreatePlatformVersionInputBuilder {
         self
     }
     /// <p>The location of the platform definition archive in Amazon S3.</p>
-    pub fn set_platform_definition_bundle(
-        mut self,
-        input: std::option::Option<crate::types::S3Location>,
-    ) -> Self {
-        self.platform_definition_bundle = input;
-        self
+    pub fn set_platform_definition_bundle(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+        self.platform_definition_bundle = input; self
     }
     /// <p>The name of the builder environment.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +104,7 @@ impl CreatePlatformVersionInputBuilder {
     }
     /// <p>The name of the builder environment.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// Appends an item to `option_settings`.
     ///
@@ -126,55 +113,49 @@ impl CreatePlatformVersionInputBuilder {
     /// <p>The configuration option settings to apply to the builder environment.</p>
     pub fn option_settings(mut self, input: crate::types::ConfigurationOptionSetting) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
-        v.push(input);
-        self.option_settings = Some(v);
-        self
+                        v.push(input);
+                        self.option_settings = Some(v);
+                        self
     }
     /// <p>The configuration option settings to apply to the builder environment.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
-        self.option_settings = input;
-        self
+    pub fn set_option_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
+        self.option_settings = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Specifies the tags applied to the new platform version.</p>
+    /// <p>Specifies the tags applied to the new platform version.</p> 
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>Specifies the tags applied to the new platform version.</p>
+    /// <p>Specifies the tags applied to the new platform version.</p> 
     /// <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreatePlatformVersionInput`](crate::operation::create_platform_version::CreatePlatformVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_platform_version::CreatePlatformVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_platform_version::CreatePlatformVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_platform_version::CreatePlatformVersionInput {
-                platform_name: self.platform_name,
-                platform_version: self.platform_version,
-                platform_definition_bundle: self.platform_definition_bundle,
-                environment_name: self.environment_name,
-                option_settings: self.option_settings,
-                tags: self.tags,
-            },
+                platform_name: self.platform_name
+                ,
+                platform_version: self.platform_version
+                ,
+                platform_definition_bundle: self.platform_definition_bundle
+                ,
+                environment_name: self.environment_name
+                ,
+                option_settings: self.option_settings
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

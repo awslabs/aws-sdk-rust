@@ -3,14 +3,14 @@
 /// <p>Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueDataCatalogConfigurationUpdate {
+pub struct GlueDataCatalogConfigurationUpdate  {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
     #[doc(hidden)]
     pub database_arn_update: std::option::Option<std::string::String>,
 }
 impl GlueDataCatalogConfigurationUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn database_arn_update(&self) -> std::option::Option<&str> {
+    pub fn database_arn_update(&self) -> std::option::Option<& str> {
         self.database_arn_update.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl GlueDataCatalogConfigurationUpdateBuilder {
         self
     }
     /// <p>The updated Amazon Resource Name (ARN) of the database.</p>
-    pub fn set_database_arn_update(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.database_arn_update = input;
-        self
+    pub fn set_database_arn_update(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.database_arn_update = input; self
     }
     /// Consumes the builder and constructs a [`GlueDataCatalogConfigurationUpdate`](crate::types::GlueDataCatalogConfigurationUpdate).
     pub fn build(self) -> crate::types::GlueDataCatalogConfigurationUpdate {
         crate::types::GlueDataCatalogConfigurationUpdate {
-            database_arn_update: self.database_arn_update,
+            database_arn_update: self.database_arn_update
+            ,
         }
     }
 }
+

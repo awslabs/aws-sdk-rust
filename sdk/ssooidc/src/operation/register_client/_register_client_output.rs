@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterClientOutput {
+pub struct RegisterClientOutput  {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct RegisterClientOutput {
 }
 impl RegisterClientOutput {
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
-    pub fn client_secret(&self) -> std::option::Option<&str> {
+    pub fn client_secret(&self) -> std::option::Option<& str> {
         self.client_secret.as_deref()
     }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
@@ -41,19 +41,19 @@ impl RegisterClientOutput {
         self.client_secret_expires_at
     }
     /// <p>The endpoint where the client can request authorization.</p>
-    pub fn authorization_endpoint(&self) -> std::option::Option<&str> {
+    pub fn authorization_endpoint(&self) -> std::option::Option<& str> {
         self.authorization_endpoint.as_deref()
     }
     /// <p>The endpoint where the client can get an access token.</p>
-    pub fn token_endpoint(&self) -> std::option::Option<&str> {
+    pub fn token_endpoint(&self) -> std::option::Option<& str> {
         self.token_endpoint.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterClientOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterClientOutput {
     /// Creates a new builder-style object to manufacture [`RegisterClientOutput`](crate::operation::register_client::RegisterClientOutput).
     pub fn builder() -> crate::operation::register_client::builders::RegisterClientOutputBuilder {
@@ -81,8 +81,7 @@ impl RegisterClientOutputBuilder {
     }
     /// <p>The unique identifier string for each client. This client uses this identifier to get authenticated by the service in subsequent calls.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
     pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +90,7 @@ impl RegisterClientOutputBuilder {
     }
     /// <p>A secret string generated for the client. The client will use this string to get authenticated by the service in subsequent calls.</p>
     pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_secret = input;
-        self
+        self.client_secret = input; self
     }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
     pub fn client_id_issued_at(mut self, input: i64) -> Self {
@@ -101,8 +99,7 @@ impl RegisterClientOutputBuilder {
     }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> were issued.</p>
     pub fn set_client_id_issued_at(mut self, input: std::option::Option<i64>) -> Self {
-        self.client_id_issued_at = input;
-        self
+        self.client_id_issued_at = input; self
     }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
     pub fn client_secret_expires_at(mut self, input: i64) -> Self {
@@ -111,8 +108,7 @@ impl RegisterClientOutputBuilder {
     }
     /// <p>Indicates the time at which the <code>clientId</code> and <code>clientSecret</code> will become invalid.</p>
     pub fn set_client_secret_expires_at(mut self, input: std::option::Option<i64>) -> Self {
-        self.client_secret_expires_at = input;
-        self
+        self.client_secret_expires_at = input; self
     }
     /// <p>The endpoint where the client can request authorization.</p>
     pub fn authorization_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,12 +116,8 @@ impl RegisterClientOutputBuilder {
         self
     }
     /// <p>The endpoint where the client can request authorization.</p>
-    pub fn set_authorization_endpoint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorization_endpoint = input;
-        self
+    pub fn set_authorization_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorization_endpoint = input; self
     }
     /// <p>The endpoint where the client can get an access token.</p>
     pub fn token_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,28 +126,36 @@ impl RegisterClientOutputBuilder {
     }
     /// <p>The endpoint where the client can get an access token.</p>
     pub fn set_token_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token_endpoint = input;
-        self
+        self.token_endpoint = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterClientOutput`](crate::operation::register_client::RegisterClientOutput).
     pub fn build(self) -> crate::operation::register_client::RegisterClientOutput {
         crate::operation::register_client::RegisterClientOutput {
-            client_id: self.client_id,
-            client_secret: self.client_secret,
-            client_id_issued_at: self.client_id_issued_at.unwrap_or_default(),
-            client_secret_expires_at: self.client_secret_expires_at.unwrap_or_default(),
-            authorization_endpoint: self.authorization_endpoint,
-            token_endpoint: self.token_endpoint,
+            client_id: self.client_id
+            ,
+            client_secret: self.client_secret
+            ,
+            client_id_issued_at: self.client_id_issued_at
+                .unwrap_or_default()
+            ,
+            client_secret_expires_at: self.client_secret_expires_at
+                .unwrap_or_default()
+            ,
+            authorization_endpoint: self.authorization_endpoint
+            ,
+            token_endpoint: self.token_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

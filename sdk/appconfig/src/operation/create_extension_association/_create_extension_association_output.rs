@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExtensionAssociationOutput {
+pub struct CreateExtensionAssociationOutput  {
     /// <p>The system-generated ID for the association.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -17,8 +17,7 @@ pub struct CreateExtensionAssociationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The parameter names and values defined in the association.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version number for the extension defined in the association.</p>
     #[doc(hidden)]
     pub extension_version_number: i32,
@@ -26,26 +25,23 @@ pub struct CreateExtensionAssociationOutput {
 }
 impl CreateExtensionAssociationOutput {
     /// <p>The system-generated ID for the association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the extension defined in the association.</p>
-    pub fn extension_arn(&self) -> std::option::Option<&str> {
+    pub fn extension_arn(&self) -> std::option::Option<& str> {
         self.extension_arn.as_deref()
     }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -54,13 +50,13 @@ impl CreateExtensionAssociationOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreateExtensionAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateExtensionAssociationOutput`](crate::operation::create_extension_association::CreateExtensionAssociationOutput).
-    pub fn builder() -> crate::operation::create_extension_association::builders::CreateExtensionAssociationOutputBuilder{
+    pub fn builder() -> crate::operation::create_extension_association::builders::CreateExtensionAssociationOutputBuilder {
         crate::operation::create_extension_association::builders::CreateExtensionAssociationOutputBuilder::default()
     }
 }
@@ -73,8 +69,7 @@ pub struct CreateExtensionAssociationOutputBuilder {
     pub(crate) extension_arn: std::option::Option<std::string::String>,
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) extension_version_number: std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -86,8 +81,7 @@ impl CreateExtensionAssociationOutputBuilder {
     }
     /// <p>The system-generated ID for the association.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ARN of the extension defined in the association.</p>
     pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +90,7 @@ impl CreateExtensionAssociationOutputBuilder {
     }
     /// <p>The ARN of the extension defined in the association.</p>
     pub fn set_extension_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extension_arn = input;
-        self
+        self.extension_arn = input; self
     }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +99,7 @@ impl CreateExtensionAssociationOutputBuilder {
     }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,33 +108,22 @@ impl CreateExtensionAssociationOutputBuilder {
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.parameters = Some(hash_map);
+                        self
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The version number for the extension defined in the association.</p>
     pub fn extension_version_number(mut self, input: i32) -> Self {
@@ -151,30 +132,35 @@ impl CreateExtensionAssociationOutputBuilder {
     }
     /// <p>The version number for the extension defined in the association.</p>
     pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.extension_version_number = input;
-        self
+        self.extension_version_number = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateExtensionAssociationOutput`](crate::operation::create_extension_association::CreateExtensionAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_extension_association::CreateExtensionAssociationOutput {
+    pub fn build(self) -> crate::operation::create_extension_association::CreateExtensionAssociationOutput {
         crate::operation::create_extension_association::CreateExtensionAssociationOutput {
-            id: self.id,
-            extension_arn: self.extension_arn,
-            resource_arn: self.resource_arn,
-            arn: self.arn,
-            parameters: self.parameters,
-            extension_version_number: self.extension_version_number.unwrap_or_default(),
+            id: self.id
+            ,
+            extension_arn: self.extension_arn
+            ,
+            resource_arn: self.resource_arn
+            ,
+            arn: self.arn
+            ,
+            parameters: self.parameters
+            ,
+            extension_version_number: self.extension_version_number
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

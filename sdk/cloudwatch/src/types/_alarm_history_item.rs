@@ -3,7 +3,7 @@
 /// <p>Represents the history of a specific alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmHistoryItem {
+pub struct AlarmHistoryItem  {
     /// <p>The descriptive name for the alarm.</p>
     #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct AlarmHistoryItem {
 }
 impl AlarmHistoryItem {
     /// <p>The descriptive name for the alarm.</p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
-    pub fn alarm_type(&self) -> std::option::Option<&crate::types::AlarmType> {
+    pub fn alarm_type(&self) -> std::option::Option<& crate::types::AlarmType> {
         self.alarm_type.as_ref()
     }
     /// <p>The time stamp for the alarm history item.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The type of alarm history item.</p>
-    pub fn history_item_type(&self) -> std::option::Option<&crate::types::HistoryItemType> {
+    pub fn history_item_type(&self) -> std::option::Option<& crate::types::HistoryItemType> {
         self.history_item_type.as_ref()
     }
     /// <p>A summary of the alarm history, in text format.</p>
-    pub fn history_summary(&self) -> std::option::Option<&str> {
+    pub fn history_summary(&self) -> std::option::Option<& str> {
         self.history_summary.as_deref()
     }
     /// <p>Data about the alarm, in JSON format.</p>
-    pub fn history_data(&self) -> std::option::Option<&str> {
+    pub fn history_data(&self) -> std::option::Option<& str> {
         self.history_data.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl AlarmHistoryItemBuilder {
     }
     /// <p>The descriptive name for the alarm.</p>
     pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub fn alarm_type(mut self, input: crate::types::AlarmType) -> Self {
@@ -85,8 +84,7 @@ impl AlarmHistoryItemBuilder {
     }
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub fn set_alarm_type(mut self, input: std::option::Option<crate::types::AlarmType>) -> Self {
-        self.alarm_type = input;
-        self
+        self.alarm_type = input; self
     }
     /// <p>The time stamp for the alarm history item.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -95,8 +93,7 @@ impl AlarmHistoryItemBuilder {
     }
     /// <p>The time stamp for the alarm history item.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The type of alarm history item.</p>
     pub fn history_item_type(mut self, input: crate::types::HistoryItemType) -> Self {
@@ -104,12 +101,8 @@ impl AlarmHistoryItemBuilder {
         self
     }
     /// <p>The type of alarm history item.</p>
-    pub fn set_history_item_type(
-        mut self,
-        input: std::option::Option<crate::types::HistoryItemType>,
-    ) -> Self {
-        self.history_item_type = input;
-        self
+    pub fn set_history_item_type(mut self, input: std::option::Option<crate::types::HistoryItemType>) -> Self {
+        self.history_item_type = input; self
     }
     /// <p>A summary of the alarm history, in text format.</p>
     pub fn history_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +111,7 @@ impl AlarmHistoryItemBuilder {
     }
     /// <p>A summary of the alarm history, in text format.</p>
     pub fn set_history_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.history_summary = input;
-        self
+        self.history_summary = input; self
     }
     /// <p>Data about the alarm, in JSON format.</p>
     pub fn history_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,18 +120,24 @@ impl AlarmHistoryItemBuilder {
     }
     /// <p>Data about the alarm, in JSON format.</p>
     pub fn set_history_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.history_data = input;
-        self
+        self.history_data = input; self
     }
     /// Consumes the builder and constructs a [`AlarmHistoryItem`](crate::types::AlarmHistoryItem).
     pub fn build(self) -> crate::types::AlarmHistoryItem {
         crate::types::AlarmHistoryItem {
-            alarm_name: self.alarm_name,
-            alarm_type: self.alarm_type,
-            timestamp: self.timestamp,
-            history_item_type: self.history_item_type,
-            history_summary: self.history_summary,
-            history_data: self.history_data,
+            alarm_name: self.alarm_name
+            ,
+            alarm_type: self.alarm_type
+            ,
+            timestamp: self.timestamp
+            ,
+            history_item_type: self.history_item_type
+            ,
+            history_summary: self.history_summary
+            ,
+            history_data: self.history_data
+            ,
         }
     }
 }
+

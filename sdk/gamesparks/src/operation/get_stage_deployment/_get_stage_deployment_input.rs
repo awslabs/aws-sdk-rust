@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStageDeploymentInput {
+pub struct GetStageDeploymentInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct GetStageDeploymentInput {
 }
 impl GetStageDeploymentInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 impl GetStageDeploymentInput {
     /// Creates a new builder-style object to manufacture [`GetStageDeploymentInput`](crate::operation::get_stage_deployment::GetStageDeploymentInput).
-    pub fn builder(
-    ) -> crate::operation::get_stage_deployment::builders::GetStageDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::get_stage_deployment::builders::GetStageDeploymentInputBuilder {
         crate::operation::get_stage_deployment::builders::GetStageDeploymentInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl GetStageDeploymentInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl GetStageDeploymentInputBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl GetStageDeploymentInputBuilder {
     }
     /// <p> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. </p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// Consumes the builder and constructs a [`GetStageDeploymentInput`](crate::operation::get_stage_deployment::GetStageDeploymentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_stage_deployment::GetStageDeploymentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_stage_deployment::GetStageDeploymentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_stage_deployment::GetStageDeploymentInput {
-                game_name: self.game_name,
-                stage_name: self.stage_name,
-                deployment_id: self.deployment_id,
-            },
+                game_name: self.game_name
+                ,
+                stage_name: self.stage_name
+                ,
+                deployment_id: self.deployment_id
+                ,
+            }
         )
     }
 }
+

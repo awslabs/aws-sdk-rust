@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSchemaInput {
+pub struct ExportSchemaInput  {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct ExportSchemaInput {
 }
 impl ExportSchemaInput {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl ExportSchemaInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ExportSchemaInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl ExportSchemaInputBuilder {
     }
     /// <p>Specifying this limits the results to only this schema version.</p>
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,21 +85,22 @@ impl ExportSchemaInputBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`ExportSchemaInput`](crate::operation::export_schema::ExportSchemaInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::export_schema::ExportSchemaInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::export_schema::ExportSchemaInput {
-            registry_name: self.registry_name,
-            schema_name: self.schema_name,
-            schema_version: self.schema_version,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> Result<crate::operation::export_schema::ExportSchemaInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::export_schema::ExportSchemaInput {
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

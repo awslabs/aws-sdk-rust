@@ -3,7 +3,7 @@
 /// <p>Describes the VPC attachment options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayVpcAttachmentOptions {
+pub struct TransitGatewayVpcAttachmentOptions  {
     /// <p>Indicates whether DNS support is enabled.</p>
     #[doc(hidden)]
     pub dns_support: std::option::Option<crate::types::DnsSupportValue>,
@@ -16,17 +16,15 @@ pub struct TransitGatewayVpcAttachmentOptions {
 }
 impl TransitGatewayVpcAttachmentOptions {
     /// <p>Indicates whether DNS support is enabled.</p>
-    pub fn dns_support(&self) -> std::option::Option<&crate::types::DnsSupportValue> {
+    pub fn dns_support(&self) -> std::option::Option<& crate::types::DnsSupportValue> {
         self.dns_support.as_ref()
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
-    pub fn ipv6_support(&self) -> std::option::Option<&crate::types::Ipv6SupportValue> {
+    pub fn ipv6_support(&self) -> std::option::Option<& crate::types::Ipv6SupportValue> {
         self.ipv6_support.as_ref()
     }
     /// <p>Indicates whether appliance mode support is enabled.</p>
-    pub fn appliance_mode_support(
-        &self,
-    ) -> std::option::Option<&crate::types::ApplianceModeSupportValue> {
+    pub fn appliance_mode_support(&self) -> std::option::Option<& crate::types::ApplianceModeSupportValue> {
         self.appliance_mode_support.as_ref()
     }
 }
@@ -52,12 +50,8 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
         self
     }
     /// <p>Indicates whether DNS support is enabled.</p>
-    pub fn set_dns_support(
-        mut self,
-        input: std::option::Option<crate::types::DnsSupportValue>,
-    ) -> Self {
-        self.dns_support = input;
-        self
+    pub fn set_dns_support(mut self, input: std::option::Option<crate::types::DnsSupportValue>) -> Self {
+        self.dns_support = input; self
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
     pub fn ipv6_support(mut self, input: crate::types::Ipv6SupportValue) -> Self {
@@ -65,35 +59,28 @@ impl TransitGatewayVpcAttachmentOptionsBuilder {
         self
     }
     /// <p>Indicates whether IPv6 support is disabled.</p>
-    pub fn set_ipv6_support(
-        mut self,
-        input: std::option::Option<crate::types::Ipv6SupportValue>,
-    ) -> Self {
-        self.ipv6_support = input;
-        self
+    pub fn set_ipv6_support(mut self, input: std::option::Option<crate::types::Ipv6SupportValue>) -> Self {
+        self.ipv6_support = input; self
     }
     /// <p>Indicates whether appliance mode support is enabled.</p>
-    pub fn appliance_mode_support(
-        mut self,
-        input: crate::types::ApplianceModeSupportValue,
-    ) -> Self {
+    pub fn appliance_mode_support(mut self, input: crate::types::ApplianceModeSupportValue) -> Self {
         self.appliance_mode_support = Some(input);
         self
     }
     /// <p>Indicates whether appliance mode support is enabled.</p>
-    pub fn set_appliance_mode_support(
-        mut self,
-        input: std::option::Option<crate::types::ApplianceModeSupportValue>,
-    ) -> Self {
-        self.appliance_mode_support = input;
-        self
+    pub fn set_appliance_mode_support(mut self, input: std::option::Option<crate::types::ApplianceModeSupportValue>) -> Self {
+        self.appliance_mode_support = input; self
     }
     /// Consumes the builder and constructs a [`TransitGatewayVpcAttachmentOptions`](crate::types::TransitGatewayVpcAttachmentOptions).
     pub fn build(self) -> crate::types::TransitGatewayVpcAttachmentOptions {
         crate::types::TransitGatewayVpcAttachmentOptions {
-            dns_support: self.dns_support,
-            ipv6_support: self.ipv6_support,
-            appliance_mode_support: self.appliance_mode_support,
+            dns_support: self.dns_support
+            ,
+            ipv6_support: self.ipv6_support
+            ,
+            appliance_mode_support: self.appliance_mode_support
+            ,
         }
     }
 }
+

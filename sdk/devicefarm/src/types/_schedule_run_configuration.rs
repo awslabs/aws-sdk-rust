@@ -3,7 +3,7 @@
 /// <p>Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleRunConfiguration {
+pub struct ScheduleRunConfiguration  {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
     #[doc(hidden)]
     pub extra_data_package_arn: std::option::Option<std::string::String>,
@@ -28,51 +28,49 @@ pub struct ScheduleRunConfiguration {
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
     #[doc(hidden)]
     pub auxiliary_apps: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
-    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note> 
+    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p> 
     /// </note>
     #[doc(hidden)]
     pub billing_method: std::option::Option<crate::types::BillingMethod>,
 }
 impl ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
-    pub fn extra_data_package_arn(&self) -> std::option::Option<&str> {
+    pub fn extra_data_package_arn(&self) -> std::option::Option<& str> {
         self.extra_data_package_arn.as_deref()
     }
     /// <p>Reserved for internal use.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> std::option::Option<& str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>Information about the locale that is used for the run.</p>
-    pub fn locale(&self) -> std::option::Option<&str> {
+    pub fn locale(&self) -> std::option::Option<& str> {
         self.locale.as_deref()
     }
     /// <p>Information about the location that is used for the run.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
-    pub fn vpce_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpce_configuration_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.vpce_configuration_arns.as_deref()
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
-    pub fn customer_artifact_paths(
-        &self,
-    ) -> std::option::Option<&crate::types::CustomerArtifactPaths> {
+    pub fn customer_artifact_paths(&self) -> std::option::Option<& crate::types::CustomerArtifactPaths> {
         self.customer_artifact_paths.as_ref()
     }
     /// <p>Information about the radio states for the run.</p>
-    pub fn radios(&self) -> std::option::Option<&crate::types::Radios> {
+    pub fn radios(&self) -> std::option::Option<& crate::types::Radios> {
         self.radios.as_ref()
     }
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
-    pub fn auxiliary_apps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auxiliary_apps(&self) -> std::option::Option<& [std::string::String]> {
         self.auxiliary_apps.as_deref()
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
-    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note> 
+    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p> 
     /// </note>
-    pub fn billing_method(&self) -> std::option::Option<&crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> std::option::Option<& crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
 }
@@ -104,12 +102,8 @@ impl ScheduleRunConfigurationBuilder {
         self
     }
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
-    pub fn set_extra_data_package_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.extra_data_package_arn = input;
-        self
+    pub fn set_extra_data_package_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.extra_data_package_arn = input; self
     }
     /// <p>Reserved for internal use.</p>
     pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,12 +111,8 @@ impl ScheduleRunConfigurationBuilder {
         self
     }
     /// <p>Reserved for internal use.</p>
-    pub fn set_network_profile_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_profile_arn = input;
-        self
+    pub fn set_network_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_profile_arn = input; self
     }
     /// <p>Information about the locale that is used for the run.</p>
     pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +121,7 @@ impl ScheduleRunConfigurationBuilder {
     }
     /// <p>Information about the locale that is used for the run.</p>
     pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale = input;
-        self
+        self.locale = input; self
     }
     /// <p>Information about the location that is used for the run.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
@@ -141,8 +130,7 @@ impl ScheduleRunConfigurationBuilder {
     }
     /// <p>Information about the location that is used for the run.</p>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// Appends an item to `vpce_configuration_arns`.
     ///
@@ -151,17 +139,13 @@ impl ScheduleRunConfigurationBuilder {
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
     pub fn vpce_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpce_configuration_arns.unwrap_or_default();
-        v.push(input.into());
-        self.vpce_configuration_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.vpce_configuration_arns = Some(v);
+                        self
     }
     /// <p>An array of ARNs for your VPC endpoint configurations.</p>
-    pub fn set_vpce_configuration_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.vpce_configuration_arns = input;
-        self
+    pub fn set_vpce_configuration_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.vpce_configuration_arns = input; self
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
     pub fn customer_artifact_paths(mut self, input: crate::types::CustomerArtifactPaths) -> Self {
@@ -169,12 +153,8 @@ impl ScheduleRunConfigurationBuilder {
         self
     }
     /// <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.</p>
-    pub fn set_customer_artifact_paths(
-        mut self,
-        input: std::option::Option<crate::types::CustomerArtifactPaths>,
-    ) -> Self {
-        self.customer_artifact_paths = input;
-        self
+    pub fn set_customer_artifact_paths(mut self, input: std::option::Option<crate::types::CustomerArtifactPaths>) -> Self {
+        self.customer_artifact_paths = input; self
     }
     /// <p>Information about the radio states for the run.</p>
     pub fn radios(mut self, input: crate::types::Radios) -> Self {
@@ -183,8 +163,7 @@ impl ScheduleRunConfigurationBuilder {
     }
     /// <p>Information about the radio states for the run.</p>
     pub fn set_radios(mut self, input: std::option::Option<crate::types::Radios>) -> Self {
-        self.radios = input;
-        self
+        self.radios = input; self
     }
     /// Appends an item to `auxiliary_apps`.
     ///
@@ -193,47 +172,49 @@ impl ScheduleRunConfigurationBuilder {
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
     pub fn auxiliary_apps(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.auxiliary_apps.unwrap_or_default();
-        v.push(input.into());
-        self.auxiliary_apps = Some(v);
-        self
+                        v.push(input.into());
+                        self.auxiliary_apps = Some(v);
+                        self
     }
     /// <p>A list of upload ARNs for app packages to be installed with your app.</p>
-    pub fn set_auxiliary_apps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.auxiliary_apps = input;
-        self
+    pub fn set_auxiliary_apps(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.auxiliary_apps = input; self
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
-    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note> 
+    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p> 
     /// </note>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
         self.billing_method = Some(input);
         self
     }
-    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note>
-    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p>
+    /// <p>Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>. If the parameter is not specified, the default value is <code>metered</code>.</p> <note> 
+    /// <p>If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code> to make use of them. Otherwise, your run counts against your metered time.</p> 
     /// </note>
-    pub fn set_billing_method(
-        mut self,
-        input: std::option::Option<crate::types::BillingMethod>,
-    ) -> Self {
-        self.billing_method = input;
-        self
+    pub fn set_billing_method(mut self, input: std::option::Option<crate::types::BillingMethod>) -> Self {
+        self.billing_method = input; self
     }
     /// Consumes the builder and constructs a [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
     pub fn build(self) -> crate::types::ScheduleRunConfiguration {
         crate::types::ScheduleRunConfiguration {
-            extra_data_package_arn: self.extra_data_package_arn,
-            network_profile_arn: self.network_profile_arn,
-            locale: self.locale,
-            location: self.location,
-            vpce_configuration_arns: self.vpce_configuration_arns,
-            customer_artifact_paths: self.customer_artifact_paths,
-            radios: self.radios,
-            auxiliary_apps: self.auxiliary_apps,
-            billing_method: self.billing_method,
+            extra_data_package_arn: self.extra_data_package_arn
+            ,
+            network_profile_arn: self.network_profile_arn
+            ,
+            locale: self.locale
+            ,
+            location: self.location
+            ,
+            vpce_configuration_arns: self.vpce_configuration_arns
+            ,
+            customer_artifact_paths: self.customer_artifact_paths
+            ,
+            radios: self.radios
+            ,
+            auxiliary_apps: self.auxiliary_apps
+            ,
+            billing_method: self.billing_method
+            ,
         }
     }
 }
+

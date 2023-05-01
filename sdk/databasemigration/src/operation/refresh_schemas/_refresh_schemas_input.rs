@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefreshSchemasInput {
+pub struct RefreshSchemasInput  {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RefreshSchemasInput {
 }
 impl RefreshSchemasInput {
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> std::option::Option<& str> {
         self.replication_instance_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RefreshSchemasInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,23 +51,19 @@ impl RefreshSchemasInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_instance_arn = input;
-        self
+    pub fn set_replication_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_instance_arn = input; self
     }
     /// Consumes the builder and constructs a [`RefreshSchemasInput`](crate::operation::refresh_schemas::RefreshSchemasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::refresh_schemas::RefreshSchemasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::refresh_schemas::RefreshSchemasInput {
-            endpoint_arn: self.endpoint_arn,
-            replication_instance_arn: self.replication_instance_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::refresh_schemas::RefreshSchemasInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::refresh_schemas::RefreshSchemasInput {
+                endpoint_arn: self.endpoint_arn
+                ,
+                replication_instance_arn: self.replication_instance_arn
+                ,
+            }
+        )
     }
 }
+

@@ -4,76 +4,58 @@ pub use crate::operation::update_project::_update_project_output::UpdateProjectO
 pub use crate::operation::update_project::_update_project_input::UpdateProjectInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateProject`.
-///
+/// 
 /// <p>Changes the settings of a build project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProjectFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_project::builders::UpdateProjectInputBuilder,
-}
-impl UpdateProjectFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_project::builders::UpdateProjectInputBuilder
+            }
+impl UpdateProjectFluentBuilder  {
     /// Creates a new `UpdateProject`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_project::UpdateProject,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_project::UpdateProjectOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// <p>The name of the build project.</p> <note>
-    /// <p>You cannot change a build project's name.</p>
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_project::UpdateProject, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_project::UpdateProjectOutput, aws_smithy_http::result::SdkError<crate::operation::update_project::UpdateProjectError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
+    /// <p>The name of the build project.</p> <note> 
+    /// <p>You cannot change a build project's name.</p> 
     /// </note>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the build project.</p> <note>
-    /// <p>You cannot change a build project's name.</p>
+    /// <p>The name of the build project.</p> <note> 
+    /// <p>You cannot change a build project's name.</p> 
     /// </note>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
@@ -109,34 +91,31 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectSource</code> objects. </p>
-    pub fn set_secondary_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectSource>>,
-    ) -> Self {
+    pub fn set_secondary_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProjectSource>>) -> Self {
         self.inner = self.inner.set_secondary_sources(input);
         self
     }
-    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-    /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-    /// </ul>
-    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+    /// <ul> 
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+    /// </ul> 
+    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
-    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p>
-    /// <ul>
-    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li>
-    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li>
-    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li>
-    /// </ul>
-    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+    /// <p> A version of the build input to be built for this project. If not specified, the latest version is used. If specified, it must be one of: </p> 
+    /// <ul> 
+    /// <li> <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> 
+    /// <li> <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.</p> </li> 
+    /// <li> <p>For Amazon S3: the version ID of the object that represents the build input ZIP file to use.</p> </li> 
+    /// </ul> 
+    /// <p> If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p> 
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_version(input);
@@ -152,10 +131,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take over these <code>secondarySourceVersions</code> (at the project level). </p>
-    pub fn set_secondary_source_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectSourceVersion>>,
-    ) -> Self {
+    pub fn set_secondary_source_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProjectSourceVersion>>) -> Self {
         self.inner = self.inner.set_secondary_source_versions(input);
         self
     }
@@ -165,10 +141,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>Information to be changed about the build output artifacts for the build project.</p>
-    pub fn set_artifacts(
-        mut self,
-        input: std::option::Option<crate::types::ProjectArtifacts>,
-    ) -> Self {
+    pub fn set_artifacts(mut self, input: std::option::Option<crate::types::ProjectArtifacts>) -> Self {
         self.inner = self.inner.set_artifacts(input);
         self
     }
@@ -182,10 +155,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectArtifact</code> objects. </p>
-    pub fn set_secondary_artifacts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectArtifacts>>,
-    ) -> Self {
+    pub fn set_secondary_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProjectArtifacts>>) -> Self {
         self.inner = self.inner.set_secondary_artifacts(input);
         self
     }
@@ -205,10 +175,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>Information to be changed about the build environment for the build project.</p>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<crate::types::ProjectEnvironment>,
-    ) -> Self {
+    pub fn set_environment(mut self, input: std::option::Option<crate::types::ProjectEnvironment>) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -242,18 +209,18 @@ impl UpdateProjectFluentBuilder {
         self.inner = self.inner.set_queued_timeout_in_minutes(input);
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
     pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
-    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note>
-    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p>
-    /// </note>
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output artifacts.</p> <note> 
+    /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to that key. </p> 
+    /// </note> 
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
     pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
@@ -264,18 +231,15 @@ impl UpdateProjectFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+    /// <p>An updated list of tag key and value pairs associated with this build project.</p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>An updated list of tag key and value pairs associated with this build project.</p>
+    /// <p>An updated list of tag key and value pairs associated with this build project.</p> 
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -319,10 +283,7 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
-    pub fn set_file_system_locations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
-    ) -> Self {
+    pub fn set_file_system_locations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProjectFileSystemLocation>>) -> Self {
         self.inner = self.inner.set_file_system_locations(input);
         self
     }
@@ -332,25 +293,23 @@ impl UpdateProjectFluentBuilder {
         self
     }
     /// <p>Contains configuration information about a batch build project.</p>
-    pub fn set_build_batch_config(
-        mut self,
-        input: std::option::Option<crate::types::ProjectBuildBatchConfig>,
-    ) -> Self {
+    pub fn set_build_batch_config(mut self, input: std::option::Option<crate::types::ProjectBuildBatchConfig>) -> Self {
         self.inner = self.inner.set_build_batch_config(input);
         self
     }
-    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p> 
     /// <p>To remove this limit, set this value to -1.</p>
     pub fn concurrent_build_limit(mut self, input: i32) -> Self {
         self.inner = self.inner.concurrent_build_limit(input);
         self
     }
-    /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
-    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
+    /// <p>The maximum number of concurrent builds that are allowed for this project.</p> 
+    /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p> 
     /// <p>To remove this limit, set this value to -1.</p>
     pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_concurrent_build_limit(input);
         self
     }
 }
+

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeObservabilityConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+pub struct DescribeObservabilityConfigurationInput  {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p> 
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
     #[doc(hidden)]
     pub observability_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeObservabilityConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p> 
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
-    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn observability_configuration_arn(&self) -> std::option::Option<& str> {
         self.observability_configuration_arn.as_deref()
     }
 }
 impl DescribeObservabilityConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeObservabilityConfigurationInput`](crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput).
-    pub fn builder() -> crate::operation::describe_observability_configuration::builders::DescribeObservabilityConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_observability_configuration::builders::DescribeObservabilityConfigurationInputBuilder {
         crate::operation::describe_observability_configuration::builders::DescribeObservabilityConfigurationInputBuilder::default()
     }
 }
@@ -29,26 +29,19 @@ pub struct DescribeObservabilityConfigurationInputBuilder {
     pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeObservabilityConfigurationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p> 
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
-    pub fn observability_configuration_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn observability_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.observability_configuration_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner observability configuration that you want a description for.</p> 
     /// <p>The ARN can be a full observability configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
-    pub fn set_observability_configuration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.observability_configuration_arn = input;
-        self
+    pub fn set_observability_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.observability_configuration_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeObservabilityConfigurationInput`](crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationInput {
                 observability_configuration_arn: self.observability_configuration_arn
@@ -57,3 +50,4 @@ impl DescribeObservabilityConfigurationInputBuilder {
         )
     }
 }
+

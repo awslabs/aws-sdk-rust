@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile credentials required when using ServiceNow. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceNowConnectorProfileCredentials {
+pub struct ServiceNowConnectorProfileCredentials  {
     /// <p> The name of the user. </p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ServiceNowConnectorProfileCredentials {
 }
 impl ServiceNowConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceNowConnectorProfileCredentials {
+impl  std::fmt::Debug for ServiceNowConnectorProfileCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceNowConnectorProfileCredentials");
         formatter.field("username", &self.username);
@@ -51,8 +51,7 @@ impl ServiceNowConnectorProfileCredentialsBuilder {
     }
     /// <p> The name of the user. </p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p> The password that corresponds to the user name. </p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl ServiceNowConnectorProfileCredentialsBuilder {
     }
     /// <p> The password that corresponds to the user name. </p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`ServiceNowConnectorProfileCredentials`](crate::types::ServiceNowConnectorProfileCredentials).
     pub fn build(self) -> crate::types::ServiceNowConnectorProfileCredentials {
         crate::types::ServiceNowConnectorProfileCredentials {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for ServiceNowConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

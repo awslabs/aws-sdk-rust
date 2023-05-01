@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkGroupInput {
+pub struct UpdateWorkGroupInput  {
     /// <p>The specified workgroup that will be updated.</p>
     #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
@@ -18,21 +18,19 @@ pub struct UpdateWorkGroupInput {
 }
 impl UpdateWorkGroupInput {
     /// <p>The specified workgroup that will be updated.</p>
-    pub fn work_group(&self) -> std::option::Option<&str> {
+    pub fn work_group(&self) -> std::option::Option<& str> {
         self.work_group.as_deref()
     }
     /// <p>The workgroup description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn configuration_updates(
-        &self,
-    ) -> std::option::Option<&crate::types::WorkGroupConfigurationUpdates> {
+    pub fn configuration_updates(&self) -> std::option::Option<& crate::types::WorkGroupConfigurationUpdates> {
         self.configuration_updates.as_ref()
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::WorkGroupState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::WorkGroupState> {
         self.state.as_ref()
     }
 }
@@ -49,8 +47,7 @@ impl UpdateWorkGroupInput {
 pub struct UpdateWorkGroupInputBuilder {
     pub(crate) work_group: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) configuration_updates:
-        std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
+    pub(crate) configuration_updates: std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
     pub(crate) state: std::option::Option<crate::types::WorkGroupState>,
 }
 impl UpdateWorkGroupInputBuilder {
@@ -61,8 +58,7 @@ impl UpdateWorkGroupInputBuilder {
     }
     /// <p>The specified workgroup that will be updated.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input;
-        self
+        self.work_group = input; self
     }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +67,16 @@ impl UpdateWorkGroupInputBuilder {
     }
     /// <p>The workgroup description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn configuration_updates(
-        mut self,
-        input: crate::types::WorkGroupConfigurationUpdates,
-    ) -> Self {
+    pub fn configuration_updates(mut self, input: crate::types::WorkGroupConfigurationUpdates) -> Self {
         self.configuration_updates = Some(input);
         self
     }
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
-    pub fn set_configuration_updates(
-        mut self,
-        input: std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
-    ) -> Self {
-        self.configuration_updates = input;
-        self
+    pub fn set_configuration_updates(mut self, input: std::option::Option<crate::types::WorkGroupConfigurationUpdates>) -> Self {
+        self.configuration_updates = input; self
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
     pub fn state(mut self, input: crate::types::WorkGroupState) -> Self {
@@ -97,21 +85,22 @@ impl UpdateWorkGroupInputBuilder {
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::WorkGroupState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`UpdateWorkGroupInput`](crate::operation::update_work_group::UpdateWorkGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_work_group::UpdateWorkGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_work_group::UpdateWorkGroupInput {
-            work_group: self.work_group,
-            description: self.description,
-            configuration_updates: self.configuration_updates,
-            state: self.state,
-        })
+    pub fn build(self) -> Result<crate::operation::update_work_group::UpdateWorkGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_work_group::UpdateWorkGroupInput {
+                work_group: self.work_group
+                ,
+                description: self.description
+                ,
+                configuration_updates: self.configuration_updates
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

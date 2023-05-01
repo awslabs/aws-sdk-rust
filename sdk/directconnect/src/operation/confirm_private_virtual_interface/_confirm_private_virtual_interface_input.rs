@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmPrivateVirtualInterfaceInput {
+pub struct ConfirmPrivateVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ConfirmPrivateVirtualInterfaceInput {
 }
 impl ConfirmPrivateVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> std::option::Option<& str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
 }
 impl ConfirmPrivateVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`ConfirmPrivateVirtualInterfaceInput`](crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder{
+    pub fn builder() -> crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder {
         crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_interface_id = input;
-        self
+    pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_interface_id = input; self
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,12 +58,8 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_virtual_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_gateway_id = input;
-        self
+    pub fn set_virtual_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_gateway_id = input; self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
     pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +67,11 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+    pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.direct_connect_gateway_id = input; self
     }
     /// Consumes the builder and constructs a [`ConfirmPrivateVirtualInterfaceInput`](crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id
@@ -101,3 +84,4 @@ impl ConfirmPrivateVirtualInterfaceInputBuilder {
         )
     }
 }
+

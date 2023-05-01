@@ -2,35 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDataProtectionPolicyInput {
-    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+pub struct PutDataProtectionPolicyInput  {
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
-    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p> 
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p> 
     /// <p>Length Constraints: Maximum length of 30,720.</p>
     #[doc(hidden)]
     pub data_protection_policy: std::option::Option<std::string::String>,
 }
 impl PutDataProtectionPolicyInput {
-    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
-    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p> 
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p> 
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    pub fn data_protection_policy(&self) -> std::option::Option<&str> {
+    pub fn data_protection_policy(&self) -> std::option::Option<& str> {
         self.data_protection_policy.as_deref()
     }
 }
 impl PutDataProtectionPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutDataProtectionPolicyInput`](crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder {
         crate::operation::put_data_protection_policy::builders::PutDataProtectionPolicyInputBuilder::default()
     }
 }
@@ -43,47 +41,40 @@ pub struct PutDataProtectionPolicyInputBuilder {
     pub(crate) data_protection_policy: std::option::Option<std::string::String>,
 }
 impl PutDataProtectionPolicyInputBuilder {
-    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p>
+    /// <p>The ARN of the topic whose <code>DataProtectionPolicy</code> you want to add or update.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the Amazon Web Services General Reference.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
-    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
-    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p> 
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p> 
     /// <p>Length Constraints: Maximum length of 30,720.</p>
     pub fn data_protection_policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_protection_policy = Some(input.into());
         self
     }
-    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p>
-    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p>
+    /// <p>The JSON serialization of the topic's <code>DataProtectionPolicy</code>.</p> 
+    /// <p>The <code>DataProtectionPolicy</code> must be in JSON string format.</p> 
     /// <p>Length Constraints: Maximum length of 30,720.</p>
-    pub fn set_data_protection_policy(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_protection_policy = input;
-        self
+    pub fn set_data_protection_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_protection_policy = input; self
     }
     /// Consumes the builder and constructs a [`PutDataProtectionPolicyInput`](crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_data_protection_policy::PutDataProtectionPolicyInput {
-                resource_arn: self.resource_arn,
-                data_protection_policy: self.data_protection_policy,
-            },
+                resource_arn: self.resource_arn
+                ,
+                data_protection_policy: self.data_protection_policy
+                ,
+            }
         )
     }
 }
+

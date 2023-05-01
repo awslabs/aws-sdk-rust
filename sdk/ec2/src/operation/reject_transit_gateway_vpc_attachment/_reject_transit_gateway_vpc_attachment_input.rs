@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectTransitGatewayVpcAttachmentInput {
+pub struct RejectTransitGatewayVpcAttachmentInput  {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct RejectTransitGatewayVpcAttachmentInput {
 }
 impl RejectTransitGatewayVpcAttachmentInput {
     /// <p>The ID of the attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl RejectTransitGatewayVpcAttachmentInput {
 }
 impl RejectTransitGatewayVpcAttachmentInput {
     /// Creates a new builder-style object to manufacture [`RejectTransitGatewayVpcAttachmentInput`](crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput).
-    pub fn builder() -> crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentInputBuilder{
+    pub fn builder() -> crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentInputBuilder {
         crate::operation::reject_transit_gateway_vpc_attachment::builders::RejectTransitGatewayVpcAttachmentInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl RejectTransitGatewayVpcAttachmentInputBuilder {
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_transit_gateway_attachment_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_attachment_id = input;
-        self
+    pub fn set_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -55,11 +51,10 @@ impl RejectTransitGatewayVpcAttachmentInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`RejectTransitGatewayVpcAttachmentInput`](crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput).
-    pub fn build(self) -> Result<crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reject_transit_gateway_vpc_attachment::RejectTransitGatewayVpcAttachmentInput {
                 transit_gateway_attachment_id: self.transit_gateway_attachment_id
@@ -70,3 +65,4 @@ impl RejectTransitGatewayVpcAttachmentInputBuilder {
         )
     }
 }
+

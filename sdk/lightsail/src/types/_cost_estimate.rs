@@ -3,7 +3,7 @@
 /// <p>Describes the estimated cost for resources in your Lightsail for Research account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostEstimate {
+pub struct CostEstimate  {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
     #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CostEstimate {
 }
 impl CostEstimate {
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn results_by_time(&self) -> std::option::Option<&[crate::types::EstimateByTime]> {
+    pub fn results_by_time(&self) -> std::option::Option<& [crate::types::EstimateByTime]> {
         self.results_by_time.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CostEstimateBuilder {
     }
     /// <p>The types of usage that are included in the estimate, such as costs, usage, or data transfer.</p>
     pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
     }
     /// Appends an item to `results_by_time`.
     ///
@@ -53,23 +52,22 @@ impl CostEstimateBuilder {
     /// <p>The cost estimate result that's associated with a time period.</p>
     pub fn results_by_time(mut self, input: crate::types::EstimateByTime) -> Self {
         let mut v = self.results_by_time.unwrap_or_default();
-        v.push(input);
-        self.results_by_time = Some(v);
-        self
+                        v.push(input);
+                        self.results_by_time = Some(v);
+                        self
     }
     /// <p>The cost estimate result that's associated with a time period.</p>
-    pub fn set_results_by_time(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EstimateByTime>>,
-    ) -> Self {
-        self.results_by_time = input;
-        self
+    pub fn set_results_by_time(mut self, input: std::option::Option<std::vec::Vec<crate::types::EstimateByTime>>) -> Self {
+        self.results_by_time = input; self
     }
     /// Consumes the builder and constructs a [`CostEstimate`](crate::types::CostEstimate).
     pub fn build(self) -> crate::types::CostEstimate {
         crate::types::CostEstimate {
-            usage_type: self.usage_type,
-            results_by_time: self.results_by_time,
+            usage_type: self.usage_type
+            ,
+            results_by_time: self.results_by_time
+            ,
         }
     }
 }
+

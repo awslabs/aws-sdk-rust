@@ -4,73 +4,50 @@ pub use crate::operation::create_impersonation_role::_create_impersonation_role_
 pub use crate::operation::create_impersonation_role::_create_impersonation_role_input::CreateImpersonationRoleInputBuilder;
 
 /// Fluent builder constructing a request to `CreateImpersonationRole`.
-///
-/// <p>Creates an impersonation role for the given WorkMail organization.</p>
+/// 
+/// <p>Creates an impersonation role for the given WorkMail organization.</p> 
 /// <p> <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries also complete successfully without performing any further actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImpersonationRoleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder,
-}
-impl CreateImpersonationRoleFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder
+            }
+impl CreateImpersonationRoleFluentBuilder  {
     /// Creates a new `CreateImpersonationRole`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_impersonation_role::CreateImpersonationRole,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_impersonation_role::CreateImpersonationRoleOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_impersonation_role::CreateImpersonationRoleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_impersonation_role::CreateImpersonationRole, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_impersonation_role::CreateImpersonationRoleOutput, aws_smithy_http::result::SdkError<crate::operation::create_impersonation_role::CreateImpersonationRoleError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The idempotency token for the client request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -107,10 +84,7 @@ impl CreateImpersonationRoleFluentBuilder {
         self
     }
     /// <p>The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code> or <code>FULL_ACCESS</code>.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ImpersonationRoleType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ImpersonationRoleType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -134,11 +108,9 @@ impl CreateImpersonationRoleFluentBuilder {
         self
     }
     /// <p>The list of rules for the impersonation role.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImpersonationRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImpersonationRule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
 }
+

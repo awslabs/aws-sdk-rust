@@ -51,3 +51,4 @@ pub mod notify_migration_task_state;
 
 /// Types for the `PutResourceAttributes` operation.
 pub mod put_resource_attributes;
+

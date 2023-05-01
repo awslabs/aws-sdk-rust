@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DownloadDefaultKeyPairOutput {
+pub struct DownloadDefaultKeyPairOutput  {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     #[doc(hidden)]
     pub public_key_base64: std::option::Option<std::string::String>,
@@ -16,28 +16,26 @@ pub struct DownloadDefaultKeyPairOutput {
 }
 impl DownloadDefaultKeyPairOutput {
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(&self) -> std::option::Option<&str> {
+    pub fn public_key_base64(&self) -> std::option::Option<& str> {
         self.public_key_base64.as_deref()
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn private_key_base64(&self) -> std::option::Option<&str> {
+    pub fn private_key_base64(&self) -> std::option::Option<& str> {
         self.private_key_base64.as_deref()
     }
     /// <p>The timestamp when the default key pair was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DownloadDefaultKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DownloadDefaultKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DownloadDefaultKeyPairOutput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder
-    {
+    pub fn builder() -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder {
         crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairOutputBuilder::default()
     }
 }
@@ -58,12 +56,8 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn set_public_key_base64(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.public_key_base64 = input;
-        self
+    pub fn set_public_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.public_key_base64 = input; self
     }
     /// <p>A base64-encoded RSA private key.</p>
     pub fn private_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +65,8 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self
     }
     /// <p>A base64-encoded RSA private key.</p>
-    pub fn set_private_key_base64(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.private_key_base64 = input;
-        self
+    pub fn set_private_key_base64(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.private_key_base64 = input; self
     }
     /// <p>The timestamp when the default key pair was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,31 +74,29 @@ impl DownloadDefaultKeyPairOutputBuilder {
         self
     }
     /// <p>The timestamp when the default key pair was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DownloadDefaultKeyPairOutput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput {
+    pub fn build(self) -> crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput {
         crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput {
-            public_key_base64: self.public_key_base64,
-            private_key_base64: self.private_key_base64,
-            created_at: self.created_at,
+            public_key_base64: self.public_key_base64
+            ,
+            private_key_base64: self.private_key_base64
+            ,
+            created_at: self.created_at
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

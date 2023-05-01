@@ -3,7 +3,7 @@
 /// <p>This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackConfiguration {
+pub struct RollbackConfiguration  {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     #[doc(hidden)]
     pub monitoring_time_in_minutes: i32,
@@ -17,7 +17,7 @@ impl RollbackConfiguration {
         self.monitoring_time_in_minutes
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn rollback_triggers(&self) -> std::option::Option<&[crate::types::RollbackTrigger]> {
+    pub fn rollback_triggers(&self) -> std::option::Option<& [crate::types::RollbackTrigger]> {
         self.rollback_triggers.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RollbackConfigurationBuilder {
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn set_monitoring_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.monitoring_time_in_minutes = input;
-        self
+        self.monitoring_time_in_minutes = input; self
     }
     /// Appends an item to `rollback_triggers`.
     ///
@@ -53,23 +52,23 @@ impl RollbackConfigurationBuilder {
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
     pub fn rollback_triggers(mut self, input: crate::types::RollbackTrigger) -> Self {
         let mut v = self.rollback_triggers.unwrap_or_default();
-        v.push(input);
-        self.rollback_triggers = Some(v);
-        self
+                        v.push(input);
+                        self.rollback_triggers = Some(v);
+                        self
     }
     /// <p>This property corresponds to the content of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a> </i> Data Type.</p>
-    pub fn set_rollback_triggers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RollbackTrigger>>,
-    ) -> Self {
-        self.rollback_triggers = input;
-        self
+    pub fn set_rollback_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::types::RollbackTrigger>>) -> Self {
+        self.rollback_triggers = input; self
     }
     /// Consumes the builder and constructs a [`RollbackConfiguration`](crate::types::RollbackConfiguration).
     pub fn build(self) -> crate::types::RollbackConfiguration {
         crate::types::RollbackConfiguration {
-            monitoring_time_in_minutes: self.monitoring_time_in_minutes.unwrap_or_default(),
-            rollback_triggers: self.rollback_triggers,
+            monitoring_time_in_minutes: self.monitoring_time_in_minutes
+                .unwrap_or_default()
+            ,
+            rollback_triggers: self.rollback_triggers
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines the level of certainty of the position.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PositionalAccuracy {
+pub struct PositionalAccuracy  {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     #[doc(hidden)]
     pub horizontal: std::option::Option<f64>,
@@ -35,13 +35,14 @@ impl PositionalAccuracyBuilder {
     }
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub fn set_horizontal(mut self, input: std::option::Option<f64>) -> Self {
-        self.horizontal = input;
-        self
+        self.horizontal = input; self
     }
     /// Consumes the builder and constructs a [`PositionalAccuracy`](crate::types::PositionalAccuracy).
     pub fn build(self) -> crate::types::PositionalAccuracy {
         crate::types::PositionalAccuracy {
-            horizontal: self.horizontal,
+            horizontal: self.horizontal
+            ,
         }
     }
 }
+

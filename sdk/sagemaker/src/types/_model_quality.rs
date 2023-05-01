@@ -3,7 +3,7 @@
 /// <p>Model quality statistics and constraints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelQuality {
+pub struct ModelQuality  {
     /// <p>Model quality statistics.</p>
     #[doc(hidden)]
     pub statistics: std::option::Option<crate::types::MetricsSource>,
@@ -13,11 +13,11 @@ pub struct ModelQuality {
 }
 impl ModelQuality {
     /// <p>Model quality statistics.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::types::MetricsSource> {
+    pub fn statistics(&self) -> std::option::Option<& crate::types::MetricsSource> {
         self.statistics.as_ref()
     }
     /// <p>Model quality constraints.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::types::MetricsSource> {
+    pub fn constraints(&self) -> std::option::Option<& crate::types::MetricsSource> {
         self.constraints.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ModelQualityBuilder {
         self
     }
     /// <p>Model quality statistics.</p>
-    pub fn set_statistics(
-        mut self,
-        input: std::option::Option<crate::types::MetricsSource>,
-    ) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: std::option::Option<crate::types::MetricsSource>) -> Self {
+        self.statistics = input; self
     }
     /// <p>Model quality constraints.</p>
     pub fn constraints(mut self, input: crate::types::MetricsSource) -> Self {
@@ -55,18 +51,17 @@ impl ModelQualityBuilder {
         self
     }
     /// <p>Model quality constraints.</p>
-    pub fn set_constraints(
-        mut self,
-        input: std::option::Option<crate::types::MetricsSource>,
-    ) -> Self {
-        self.constraints = input;
-        self
+    pub fn set_constraints(mut self, input: std::option::Option<crate::types::MetricsSource>) -> Self {
+        self.constraints = input; self
     }
     /// Consumes the builder and constructs a [`ModelQuality`](crate::types::ModelQuality).
     pub fn build(self) -> crate::types::ModelQuality {
         crate::types::ModelQuality {
-            statistics: self.statistics,
-            constraints: self.constraints,
+            statistics: self.statistics
+            ,
+            constraints: self.constraints
+            ,
         }
     }
 }
+

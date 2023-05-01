@@ -3,7 +3,7 @@
 /// <p>A complex type that contains settings for a traffic policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficPolicy {
+pub struct TrafficPolicy  {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct TrafficPolicy {
 }
 impl TrafficPolicy {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
@@ -33,19 +33,19 @@ impl TrafficPolicy {
         self.version
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RrType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::RrType> {
         self.r#type.as_ref()
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -85,8 +84,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn r#type(mut self, input: crate::types::RrType) -> Self {
@@ -105,8 +102,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RrType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +111,7 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,18 +120,24 @@ impl TrafficPolicyBuilder {
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// Consumes the builder and constructs a [`TrafficPolicy`](crate::types::TrafficPolicy).
     pub fn build(self) -> crate::types::TrafficPolicy {
         crate::types::TrafficPolicy {
-            id: self.id,
-            version: self.version,
-            name: self.name,
-            r#type: self.r#type,
-            document: self.document,
-            comment: self.comment,
+            id: self.id
+            ,
+            version: self.version
+            ,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            document: self.document
+            ,
+            comment: self.comment
+            ,
         }
     }
 }
+

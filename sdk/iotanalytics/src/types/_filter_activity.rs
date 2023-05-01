@@ -3,7 +3,7 @@
 /// <p>An activity that filters a message based on its attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterActivity {
+pub struct FilterActivity  {
     /// <p>The name of the filter activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct FilterActivity {
 }
 impl FilterActivity {
     /// <p>The name of the filter activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
-    pub fn filter(&self) -> std::option::Option<&str> {
+    pub fn filter(&self) -> std::option::Option<& str> {
         self.filter.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl FilterActivityBuilder {
     }
     /// <p>The name of the filter activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
     pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FilterActivityBuilder {
     }
     /// <p>An expression that looks like a SQL WHERE clause that must return a Boolean value. Messages that satisfy the condition are passed to the next activity. </p>
     pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl FilterActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// Consumes the builder and constructs a [`FilterActivity`](crate::types::FilterActivity).
     pub fn build(self) -> crate::types::FilterActivity {
         crate::types::FilterActivity {
-            name: self.name,
-            filter: self.filter,
-            next: self.next,
+            name: self.name
+            ,
+            filter: self.filter
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

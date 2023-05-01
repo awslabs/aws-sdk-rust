@@ -3,7 +3,7 @@
 /// <p>Object for field Options errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldOptionError {
+pub struct FieldOptionError  {
     /// <p>Error message from creating or updating field option.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct FieldOptionError {
 }
 impl FieldOptionError {
     /// <p>Error message from creating or updating field option.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Error code from creating or updating field option.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The field option value that caused the error.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl FieldOptionErrorBuilder {
     }
     /// <p>Error message from creating or updating field option.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>Error code from creating or updating field option.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FieldOptionErrorBuilder {
     }
     /// <p>Error code from creating or updating field option.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The field option value that caused the error.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl FieldOptionErrorBuilder {
     }
     /// <p>The field option value that caused the error.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`FieldOptionError`](crate::types::FieldOptionError).
     pub fn build(self) -> crate::types::FieldOptionError {
         crate::types::FieldOptionError {
-            message: self.message,
-            error_code: self.error_code,
-            value: self.value,
+            message: self.message
+            ,
+            error_code: self.error_code
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

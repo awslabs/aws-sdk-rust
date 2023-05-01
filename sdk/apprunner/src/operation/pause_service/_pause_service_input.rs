@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PauseServiceInput {
+pub struct PauseServiceInput  {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
     #[doc(hidden)]
     pub service_arn: std::option::Option<std::string::String>,
 }
 impl PauseServiceInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
-    pub fn service_arn(&self) -> std::option::Option<&str> {
+    pub fn service_arn(&self) -> std::option::Option<& str> {
         self.service_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl PauseServiceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_arn = input;
-        self
+        self.service_arn = input; self
     }
     /// Consumes the builder and constructs a [`PauseServiceInput`](crate::operation::pause_service::PauseServiceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::pause_service::PauseServiceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::pause_service::PauseServiceInput {
-            service_arn: self.service_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::pause_service::PauseServiceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::pause_service::PauseServiceInput {
+                service_arn: self.service_arn
+                ,
+            }
+        )
     }
 }
+

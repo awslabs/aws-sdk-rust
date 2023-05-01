@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationConfigurationInput {
+pub struct DeleteReplicationConfigurationInput  {
     /// <p>The ID of the source file system in the replication configuration.</p>
     #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationConfigurationInput {
     /// <p>The ID of the source file system in the replication configuration.</p>
-    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_id(&self) -> std::option::Option<& str> {
         self.source_file_system_id.as_deref()
     }
 }
 impl DeleteReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationConfigurationInput`](crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder {
         crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl DeleteReplicationConfigurationInputBuilder {
         self
     }
     /// <p>The ID of the source file system in the replication configuration.</p>
-    pub fn set_source_file_system_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_file_system_id = input;
-        self
+    pub fn set_source_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_file_system_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteReplicationConfigurationInput`](crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_replication_configuration::DeleteReplicationConfigurationInput {
                 source_file_system_id: self.source_file_system_id
@@ -55,3 +46,4 @@ impl DeleteReplicationConfigurationInputBuilder {
         )
     }
 }
+

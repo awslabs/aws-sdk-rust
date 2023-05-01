@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssessmentFrameworkShareInput {
+pub struct UpdateAssessmentFrameworkShareInput  {
     /// <p> The unique identifier for the share request. </p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdateAssessmentFrameworkShareInput {
 }
 impl UpdateAssessmentFrameworkShareInput {
     /// <p> The unique identifier for the share request. </p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    pub fn request_type(&self) -> std::option::Option<&crate::types::ShareRequestType> {
+    pub fn request_type(&self) -> std::option::Option<& crate::types::ShareRequestType> {
         self.request_type.as_ref()
     }
     /// <p>Specifies the update action for the share request.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ShareRequestAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::ShareRequestAction> {
         self.action.as_ref()
     }
 }
 impl UpdateAssessmentFrameworkShareInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkShareInput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput).
-    pub fn builder() -> crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareInputBuilder{
+    pub fn builder() -> crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareInputBuilder {
         crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
     }
     /// <p> The unique identifier for the share request. </p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
@@ -59,12 +58,8 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         self
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    pub fn set_request_type(
-        mut self,
-        input: std::option::Option<crate::types::ShareRequestType>,
-    ) -> Self {
-        self.request_type = input;
-        self
+    pub fn set_request_type(mut self, input: std::option::Option<crate::types::ShareRequestType>) -> Self {
+        self.request_type = input; self
     }
     /// <p>Specifies the update action for the share request.</p>
     pub fn action(mut self, input: crate::types::ShareRequestAction) -> Self {
@@ -72,20 +67,11 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         self
     }
     /// <p>Specifies the update action for the share request.</p>
-    pub fn set_action(
-        mut self,
-        input: std::option::Option<crate::types::ShareRequestAction>,
-    ) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: std::option::Option<crate::types::ShareRequestAction>) -> Self {
+        self.action = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkShareInput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareInput {
                 request_id: self.request_id
@@ -98,3 +84,4 @@ impl UpdateAssessmentFrameworkShareInputBuilder {
         )
     }
 }
+

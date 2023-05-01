@@ -3,7 +3,7 @@
 /// <p>Describes an import volume task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportVolumeTaskDetails {
+pub struct ImportVolumeTaskDetails  {
     /// <p>The Availability Zone where the resulting volume will reside.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct ImportVolumeTaskDetails {
 }
 impl ImportVolumeTaskDetails {
     /// <p>The Availability Zone where the resulting volume will reside.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The number of bytes converted so far.</p>
@@ -30,15 +30,15 @@ impl ImportVolumeTaskDetails {
         self.bytes_converted
     }
     /// <p>The description you provided when starting the import volume task.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The image.</p>
-    pub fn image(&self) -> std::option::Option<&crate::types::DiskImageDescription> {
+    pub fn image(&self) -> std::option::Option<& crate::types::DiskImageDescription> {
         self.image.as_ref()
     }
     /// <p>The volume.</p>
-    pub fn volume(&self) -> std::option::Option<&crate::types::DiskImageVolumeDescription> {
+    pub fn volume(&self) -> std::option::Option<& crate::types::DiskImageVolumeDescription> {
         self.volume.as_ref()
     }
 }
@@ -66,12 +66,8 @@ impl ImportVolumeTaskDetailsBuilder {
         self
     }
     /// <p>The Availability Zone where the resulting volume will reside.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
     /// <p>The number of bytes converted so far.</p>
     pub fn bytes_converted(mut self, input: i64) -> Self {
@@ -80,8 +76,7 @@ impl ImportVolumeTaskDetailsBuilder {
     }
     /// <p>The number of bytes converted so far.</p>
     pub fn set_bytes_converted(mut self, input: std::option::Option<i64>) -> Self {
-        self.bytes_converted = input;
-        self
+        self.bytes_converted = input; self
     }
     /// <p>The description you provided when starting the import volume task.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +85,7 @@ impl ImportVolumeTaskDetailsBuilder {
     }
     /// <p>The description you provided when starting the import volume task.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The image.</p>
     pub fn image(mut self, input: crate::types::DiskImageDescription) -> Self {
@@ -99,12 +93,8 @@ impl ImportVolumeTaskDetailsBuilder {
         self
     }
     /// <p>The image.</p>
-    pub fn set_image(
-        mut self,
-        input: std::option::Option<crate::types::DiskImageDescription>,
-    ) -> Self {
-        self.image = input;
-        self
+    pub fn set_image(mut self, input: std::option::Option<crate::types::DiskImageDescription>) -> Self {
+        self.image = input; self
     }
     /// <p>The volume.</p>
     pub fn volume(mut self, input: crate::types::DiskImageVolumeDescription) -> Self {
@@ -112,21 +102,23 @@ impl ImportVolumeTaskDetailsBuilder {
         self
     }
     /// <p>The volume.</p>
-    pub fn set_volume(
-        mut self,
-        input: std::option::Option<crate::types::DiskImageVolumeDescription>,
-    ) -> Self {
-        self.volume = input;
-        self
+    pub fn set_volume(mut self, input: std::option::Option<crate::types::DiskImageVolumeDescription>) -> Self {
+        self.volume = input; self
     }
     /// Consumes the builder and constructs a [`ImportVolumeTaskDetails`](crate::types::ImportVolumeTaskDetails).
     pub fn build(self) -> crate::types::ImportVolumeTaskDetails {
         crate::types::ImportVolumeTaskDetails {
-            availability_zone: self.availability_zone,
-            bytes_converted: self.bytes_converted,
-            description: self.description,
-            image: self.image,
-            volume: self.volume,
+            availability_zone: self.availability_zone
+            ,
+            bytes_converted: self.bytes_converted
+            ,
+            description: self.description
+            ,
+            image: self.image
+            ,
+            volume: self.volume
+            ,
         }
     }
 }
+

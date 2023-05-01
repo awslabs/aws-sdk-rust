@@ -3,41 +3,33 @@
 /// <p>Contains the output of CancelSpotFleetRequests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSpotFleetRequestsOutput {
+pub struct CancelSpotFleetRequestsOutput  {
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
     #[doc(hidden)]
-    pub successful_fleet_requests:
-        std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
+    pub successful_fleet_requests: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
     #[doc(hidden)]
-    pub unsuccessful_fleet_requests:
-        std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,
+    pub unsuccessful_fleet_requests: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,
     _request_id: Option<String>,
 }
 impl CancelSpotFleetRequestsOutput {
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
-    pub fn successful_fleet_requests(
-        &self,
-    ) -> std::option::Option<&[crate::types::CancelSpotFleetRequestsSuccessItem]> {
+    pub fn successful_fleet_requests(&self) -> std::option::Option<& [crate::types::CancelSpotFleetRequestsSuccessItem]> {
         self.successful_fleet_requests.as_deref()
     }
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
-    pub fn unsuccessful_fleet_requests(
-        &self,
-    ) -> std::option::Option<&[crate::types::CancelSpotFleetRequestsErrorItem]> {
+    pub fn unsuccessful_fleet_requests(&self) -> std::option::Option<& [crate::types::CancelSpotFleetRequestsErrorItem]> {
         self.unsuccessful_fleet_requests.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CancelSpotFleetRequestsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelSpotFleetRequestsOutput {
     /// Creates a new builder-style object to manufacture [`CancelSpotFleetRequestsOutput`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsOutputBuilder {
         crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsOutputBuilder::default()
     }
 }
@@ -46,10 +38,8 @@ impl CancelSpotFleetRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsOutputBuilder {
-    pub(crate) successful_fleet_requests:
-        std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
-    pub(crate) unsuccessful_fleet_requests:
-        std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,
+    pub(crate) successful_fleet_requests: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
+    pub(crate) unsuccessful_fleet_requests: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,
     _request_id: Option<String>,
 }
 impl CancelSpotFleetRequestsOutputBuilder {
@@ -58,62 +48,49 @@ impl CancelSpotFleetRequestsOutputBuilder {
     /// To override the contents of this collection use [`set_successful_fleet_requests`](Self::set_successful_fleet_requests).
     ///
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
-    pub fn successful_fleet_requests(
-        mut self,
-        input: crate::types::CancelSpotFleetRequestsSuccessItem,
-    ) -> Self {
+    pub fn successful_fleet_requests(mut self, input: crate::types::CancelSpotFleetRequestsSuccessItem) -> Self {
         let mut v = self.successful_fleet_requests.unwrap_or_default();
-        v.push(input);
-        self.successful_fleet_requests = Some(v);
-        self
+                        v.push(input);
+                        self.successful_fleet_requests = Some(v);
+                        self
     }
     /// <p>Information about the Spot Fleet requests that are successfully canceled.</p>
-    pub fn set_successful_fleet_requests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>,
-    ) -> Self {
-        self.successful_fleet_requests = input;
-        self
+    pub fn set_successful_fleet_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsSuccessItem>>) -> Self {
+        self.successful_fleet_requests = input; self
     }
     /// Appends an item to `unsuccessful_fleet_requests`.
     ///
     /// To override the contents of this collection use [`set_unsuccessful_fleet_requests`](Self::set_unsuccessful_fleet_requests).
     ///
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
-    pub fn unsuccessful_fleet_requests(
-        mut self,
-        input: crate::types::CancelSpotFleetRequestsErrorItem,
-    ) -> Self {
+    pub fn unsuccessful_fleet_requests(mut self, input: crate::types::CancelSpotFleetRequestsErrorItem) -> Self {
         let mut v = self.unsuccessful_fleet_requests.unwrap_or_default();
-        v.push(input);
-        self.unsuccessful_fleet_requests = Some(v);
-        self
+                        v.push(input);
+                        self.unsuccessful_fleet_requests = Some(v);
+                        self
     }
     /// <p>Information about the Spot Fleet requests that are not successfully canceled.</p>
-    pub fn set_unsuccessful_fleet_requests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>,
-    ) -> Self {
-        self.unsuccessful_fleet_requests = input;
-        self
+    pub fn set_unsuccessful_fleet_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::CancelSpotFleetRequestsErrorItem>>) -> Self {
+        self.unsuccessful_fleet_requests = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelSpotFleetRequestsOutput`](crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput {
+    pub fn build(self) -> crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput {
         crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequestsOutput {
-            successful_fleet_requests: self.successful_fleet_requests,
-            unsuccessful_fleet_requests: self.unsuccessful_fleet_requests,
+            successful_fleet_requests: self.successful_fleet_requests
+            ,
+            unsuccessful_fleet_requests: self.unsuccessful_fleet_requests
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

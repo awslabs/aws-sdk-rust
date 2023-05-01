@@ -3,16 +3,16 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQueueInput {
-    /// <p>The URL of the Amazon SQS queue to delete.</p>
+pub struct DeleteQueueInput  {
+    /// <p>The URL of the Amazon SQS queue to delete.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
 }
 impl DeleteQueueInput {
-    /// <p>The URL of the Amazon SQS queue to delete.</p>
+    /// <p>The URL of the Amazon SQS queue to delete.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> std::option::Option<& str> {
         self.queue_url.as_deref()
     }
 }
@@ -30,27 +30,25 @@ pub struct DeleteQueueInputBuilder {
     pub(crate) queue_url: std::option::Option<std::string::String>,
 }
 impl DeleteQueueInputBuilder {
-    /// <p>The URL of the Amazon SQS queue to delete.</p>
+    /// <p>The URL of the Amazon SQS queue to delete.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.queue_url = Some(input.into());
         self
     }
-    /// <p>The URL of the Amazon SQS queue to delete.</p>
+    /// <p>The URL of the Amazon SQS queue to delete.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_url = input;
-        self
+        self.queue_url = input; self
     }
     /// Consumes the builder and constructs a [`DeleteQueueInput`](crate::operation::delete_queue::DeleteQueueInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_queue::DeleteQueueInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_queue::DeleteQueueInput {
-            queue_url: self.queue_url,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_queue::DeleteQueueInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_queue::DeleteQueueInput {
+                queue_url: self.queue_url
+                ,
+            }
+        )
     }
 }
+

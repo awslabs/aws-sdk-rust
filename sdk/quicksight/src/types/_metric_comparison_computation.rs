@@ -3,7 +3,7 @@
 /// <p>The metric comparison computation configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricComparisonComputation {
+pub struct MetricComparisonComputation  {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
     pub computation_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct MetricComparisonComputation {
 }
 impl MetricComparisonComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> std::option::Option<& str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> std::option::Option<& crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The field that is used in a metric comparison from value setup.</p>
-    pub fn from_value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn from_value(&self) -> std::option::Option<& crate::types::MeasureField> {
         self.from_value.as_ref()
     }
     /// <p>The field that is used in a metric comparison to value setup.</p>
-    pub fn target_value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn target_value(&self) -> std::option::Option<& crate::types::MeasureField> {
         self.target_value.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl MetricComparisonComputationBuilder {
     }
     /// <p>The ID for a computation.</p>
     pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.computation_id = input;
-        self
+        self.computation_id = input; self
     }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl MetricComparisonComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -87,8 +85,7 @@ impl MetricComparisonComputationBuilder {
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn set_time(mut self, input: std::option::Option<crate::types::DimensionField>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The field that is used in a metric comparison from value setup.</p>
     pub fn from_value(mut self, input: crate::types::MeasureField) -> Self {
@@ -96,12 +93,8 @@ impl MetricComparisonComputationBuilder {
         self
     }
     /// <p>The field that is used in a metric comparison from value setup.</p>
-    pub fn set_from_value(
-        mut self,
-        input: std::option::Option<crate::types::MeasureField>,
-    ) -> Self {
-        self.from_value = input;
-        self
+    pub fn set_from_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
+        self.from_value = input; self
     }
     /// <p>The field that is used in a metric comparison to value setup.</p>
     pub fn target_value(mut self, input: crate::types::MeasureField) -> Self {
@@ -109,21 +102,23 @@ impl MetricComparisonComputationBuilder {
         self
     }
     /// <p>The field that is used in a metric comparison to value setup.</p>
-    pub fn set_target_value(
-        mut self,
-        input: std::option::Option<crate::types::MeasureField>,
-    ) -> Self {
-        self.target_value = input;
-        self
+    pub fn set_target_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
+        self.target_value = input; self
     }
     /// Consumes the builder and constructs a [`MetricComparisonComputation`](crate::types::MetricComparisonComputation).
     pub fn build(self) -> crate::types::MetricComparisonComputation {
         crate::types::MetricComparisonComputation {
-            computation_id: self.computation_id,
-            name: self.name,
-            time: self.time,
-            from_value: self.from_value,
-            target_value: self.target_value,
+            computation_id: self.computation_id
+            ,
+            name: self.name
+            ,
+            time: self.time
+            ,
+            from_value: self.from_value
+            ,
+            target_value: self.target_value
+            ,
         }
     }
 }
+

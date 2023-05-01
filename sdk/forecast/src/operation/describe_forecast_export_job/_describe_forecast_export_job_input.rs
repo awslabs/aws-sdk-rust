@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeForecastExportJobInput {
+pub struct DescribeForecastExportJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
     #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeForecastExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn forecast_export_job_arn(&self) -> std::option::Option<& str> {
         self.forecast_export_job_arn.as_deref()
     }
 }
 impl DescribeForecastExportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeForecastExportJobInput`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput).
-    pub fn builder() -> crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder {
         crate::operation::describe_forecast_export_job::builders::DescribeForecastExportJobInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DescribeForecastExportJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-    pub fn set_forecast_export_job_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.forecast_export_job_arn = input;
-        self
+    pub fn set_forecast_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.forecast_export_job_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeForecastExportJobInput`](crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_forecast_export_job::DescribeForecastExportJobInput {
-                forecast_export_job_arn: self.forecast_export_job_arn,
-            },
+                forecast_export_job_arn: self.forecast_export_job_arn
+                ,
+            }
         )
     }
 }
+

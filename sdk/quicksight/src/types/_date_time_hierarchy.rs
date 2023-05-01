@@ -3,7 +3,7 @@
 /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateTimeHierarchy {
+pub struct DateTimeHierarchy  {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
     #[doc(hidden)]
     pub hierarchy_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DateTimeHierarchy {
 }
 impl DateTimeHierarchy {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
-    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> std::option::Option<& str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
-    pub fn drill_down_filters(&self) -> std::option::Option<&[crate::types::DrillDownFilter]> {
+    pub fn drill_down_filters(&self) -> std::option::Option<& [crate::types::DrillDownFilter]> {
         self.drill_down_filters.as_deref()
     }
 }
@@ -33,8 +33,7 @@ impl DateTimeHierarchy {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DateTimeHierarchyBuilder {
     pub(crate) hierarchy_id: std::option::Option<std::string::String>,
-    pub(crate) drill_down_filters:
-        std::option::Option<std::vec::Vec<crate::types::DrillDownFilter>>,
+    pub(crate) drill_down_filters: std::option::Option<std::vec::Vec<crate::types::DrillDownFilter>>,
 }
 impl DateTimeHierarchyBuilder {
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
@@ -44,8 +43,7 @@ impl DateTimeHierarchyBuilder {
     }
     /// <p>The hierarchy ID of the <code>DateTime</code> hierarchy.</p>
     pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hierarchy_id = input;
-        self
+        self.hierarchy_id = input; self
     }
     /// Appends an item to `drill_down_filters`.
     ///
@@ -54,23 +52,22 @@ impl DateTimeHierarchyBuilder {
     /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
     pub fn drill_down_filters(mut self, input: crate::types::DrillDownFilter) -> Self {
         let mut v = self.drill_down_filters.unwrap_or_default();
-        v.push(input);
-        self.drill_down_filters = Some(v);
-        self
+                        v.push(input);
+                        self.drill_down_filters = Some(v);
+                        self
     }
     /// <p>The option that determines the drill down filters for the <code>DateTime</code> hierarchy.</p>
-    pub fn set_drill_down_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DrillDownFilter>>,
-    ) -> Self {
-        self.drill_down_filters = input;
-        self
+    pub fn set_drill_down_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::DrillDownFilter>>) -> Self {
+        self.drill_down_filters = input; self
     }
     /// Consumes the builder and constructs a [`DateTimeHierarchy`](crate::types::DateTimeHierarchy).
     pub fn build(self) -> crate::types::DateTimeHierarchy {
         crate::types::DateTimeHierarchy {
-            hierarchy_id: self.hierarchy_id,
-            drill_down_filters: self.drill_down_filters,
+            hierarchy_id: self.hierarchy_id
+            ,
+            drill_down_filters: self.drill_down_filters
+            ,
         }
     }
 }
+

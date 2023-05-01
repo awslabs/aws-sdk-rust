@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreAddressToClassicOutput {
+pub struct RestoreAddressToClassicOutput  {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct RestoreAddressToClassicOutput {
 }
 impl RestoreAddressToClassicOutput {
     /// <p>The Elastic IP address.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>The move status for the IP address.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RestoreAddressToClassicOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RestoreAddressToClassicOutput {
     /// Creates a new builder-style object to manufacture [`RestoreAddressToClassicOutput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput).
-    pub fn builder(
-    ) -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder
-    {
+    pub fn builder() -> crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder {
         crate::operation::restore_address_to_classic::builders::RestoreAddressToClassicOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl RestoreAddressToClassicOutputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_ip = input;
-        self
+        self.public_ip = input; self
     }
     /// <p>The move status for the IP address.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -61,26 +58,26 @@ impl RestoreAddressToClassicOutputBuilder {
     }
     /// <p>The move status for the IP address.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RestoreAddressToClassicOutput`](crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput {
+    pub fn build(self) -> crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput {
         crate::operation::restore_address_to_classic::RestoreAddressToClassicOutput {
-            public_ip: self.public_ip,
-            status: self.status,
+            public_ip: self.public_ip
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

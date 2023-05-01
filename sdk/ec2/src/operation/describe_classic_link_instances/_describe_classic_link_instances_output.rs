@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClassicLinkInstancesOutput {
+pub struct DescribeClassicLinkInstancesOutput  {
     /// <p>Information about one or more linked EC2-Classic instances.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::types::ClassicLinkInstance>>,
@@ -13,22 +13,22 @@ pub struct DescribeClassicLinkInstancesOutput {
 }
 impl DescribeClassicLinkInstancesOutput {
     /// <p>Information about one or more linked EC2-Classic instances.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::ClassicLinkInstance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::types::ClassicLinkInstance]> {
         self.instances.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClassicLinkInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeClassicLinkInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClassicLinkInstancesOutput`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput).
-    pub fn builder() -> crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder {
         crate::operation::describe_classic_link_instances::builders::DescribeClassicLinkInstancesOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl DescribeClassicLinkInstancesOutputBuilder {
     /// <p>Information about one or more linked EC2-Classic instances.</p>
     pub fn instances(mut self, input: crate::types::ClassicLinkInstance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = Some(v);
-        self
+                        v.push(input);
+                        self.instances = Some(v);
+                        self
     }
     /// <p>Information about one or more linked EC2-Classic instances.</p>
-    pub fn set_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClassicLinkInstance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClassicLinkInstance>>) -> Self {
+        self.instances = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,26 +64,26 @@ impl DescribeClassicLinkInstancesOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeClassicLinkInstancesOutput`](crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput {
         crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput {
-            instances: self.instances,
-            next_token: self.next_token,
+            instances: self.instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

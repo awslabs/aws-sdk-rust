@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applaunchstatus = unimplemented!();
 /// match applaunchstatus {
@@ -43,22 +43,14 @@
 /// Specifically, when `applaunchstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppLaunchStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppLaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationInvalid,
@@ -91,84 +83,67 @@ pub enum AppLaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
     ValidationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppLaunchStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFIGURATION_INVALID" => AppLaunchStatus::ConfigurationInvalid,
-            "CONFIGURATION_IN_PROGRESS" => AppLaunchStatus::ConfigurationInProgress,
-            "DELTA_LAUNCH_FAILED" => AppLaunchStatus::DeltaLaunchFailed,
-            "DELTA_LAUNCH_IN_PROGRESS" => AppLaunchStatus::DeltaLaunchInProgress,
-            "LAUNCHED" => AppLaunchStatus::Launched,
-            "LAUNCH_FAILED" => AppLaunchStatus::LaunchFailed,
-            "LAUNCH_IN_PROGRESS" => AppLaunchStatus::LaunchInProgress,
-            "LAUNCH_PENDING" => AppLaunchStatus::LaunchPending,
-            "PARTIALLY_LAUNCHED" => AppLaunchStatus::PartiallyLaunched,
-            "READY_FOR_CONFIGURATION" => AppLaunchStatus::ReadyForConfiguration,
-            "READY_FOR_LAUNCH" => AppLaunchStatus::ReadyForLaunch,
-            "TERMINATED" => AppLaunchStatus::Terminated,
-            "TERMINATE_FAILED" => AppLaunchStatus::TerminateFailed,
-            "TERMINATE_IN_PROGRESS" => AppLaunchStatus::TerminateInProgress,
-            "VALIDATION_IN_PROGRESS" => AppLaunchStatus::ValidationInProgress,
-            other => {
-                AppLaunchStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONFIGURATION_INVALID" => AppLaunchStatus::ConfigurationInvalid,
+"CONFIGURATION_IN_PROGRESS" => AppLaunchStatus::ConfigurationInProgress,
+"DELTA_LAUNCH_FAILED" => AppLaunchStatus::DeltaLaunchFailed,
+"DELTA_LAUNCH_IN_PROGRESS" => AppLaunchStatus::DeltaLaunchInProgress,
+"LAUNCHED" => AppLaunchStatus::Launched,
+"LAUNCH_FAILED" => AppLaunchStatus::LaunchFailed,
+"LAUNCH_IN_PROGRESS" => AppLaunchStatus::LaunchInProgress,
+"LAUNCH_PENDING" => AppLaunchStatus::LaunchPending,
+"PARTIALLY_LAUNCHED" => AppLaunchStatus::PartiallyLaunched,
+"READY_FOR_CONFIGURATION" => AppLaunchStatus::ReadyForConfiguration,
+"READY_FOR_LAUNCH" => AppLaunchStatus::ReadyForLaunch,
+"TERMINATED" => AppLaunchStatus::Terminated,
+"TERMINATE_FAILED" => AppLaunchStatus::TerminateFailed,
+"TERMINATE_IN_PROGRESS" => AppLaunchStatus::TerminateInProgress,
+"VALIDATION_IN_PROGRESS" => AppLaunchStatus::ValidationInProgress,
+other => AppLaunchStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AppLaunchStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppLaunchStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppLaunchStatus::from(s))
+                }
+            }
 impl AppLaunchStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppLaunchStatus::ConfigurationInvalid => "CONFIGURATION_INVALID",
-            AppLaunchStatus::ConfigurationInProgress => "CONFIGURATION_IN_PROGRESS",
-            AppLaunchStatus::DeltaLaunchFailed => "DELTA_LAUNCH_FAILED",
-            AppLaunchStatus::DeltaLaunchInProgress => "DELTA_LAUNCH_IN_PROGRESS",
-            AppLaunchStatus::Launched => "LAUNCHED",
-            AppLaunchStatus::LaunchFailed => "LAUNCH_FAILED",
-            AppLaunchStatus::LaunchInProgress => "LAUNCH_IN_PROGRESS",
-            AppLaunchStatus::LaunchPending => "LAUNCH_PENDING",
-            AppLaunchStatus::PartiallyLaunched => "PARTIALLY_LAUNCHED",
-            AppLaunchStatus::ReadyForConfiguration => "READY_FOR_CONFIGURATION",
-            AppLaunchStatus::ReadyForLaunch => "READY_FOR_LAUNCH",
-            AppLaunchStatus::Terminated => "TERMINATED",
-            AppLaunchStatus::TerminateFailed => "TERMINATE_FAILED",
-            AppLaunchStatus::TerminateInProgress => "TERMINATE_IN_PROGRESS",
-            AppLaunchStatus::ValidationInProgress => "VALIDATION_IN_PROGRESS",
-            AppLaunchStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CONFIGURATION_INVALID",
-            "CONFIGURATION_IN_PROGRESS",
-            "DELTA_LAUNCH_FAILED",
-            "DELTA_LAUNCH_IN_PROGRESS",
-            "LAUNCHED",
-            "LAUNCH_FAILED",
-            "LAUNCH_IN_PROGRESS",
-            "LAUNCH_PENDING",
-            "PARTIALLY_LAUNCHED",
-            "READY_FOR_CONFIGURATION",
-            "READY_FOR_LAUNCH",
-            "TERMINATED",
-            "TERMINATE_FAILED",
-            "TERMINATE_IN_PROGRESS",
-            "VALIDATION_IN_PROGRESS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppLaunchStatus::ConfigurationInvalid => "CONFIGURATION_INVALID",
+    AppLaunchStatus::ConfigurationInProgress => "CONFIGURATION_IN_PROGRESS",
+    AppLaunchStatus::DeltaLaunchFailed => "DELTA_LAUNCH_FAILED",
+    AppLaunchStatus::DeltaLaunchInProgress => "DELTA_LAUNCH_IN_PROGRESS",
+    AppLaunchStatus::Launched => "LAUNCHED",
+    AppLaunchStatus::LaunchFailed => "LAUNCH_FAILED",
+    AppLaunchStatus::LaunchInProgress => "LAUNCH_IN_PROGRESS",
+    AppLaunchStatus::LaunchPending => "LAUNCH_PENDING",
+    AppLaunchStatus::PartiallyLaunched => "PARTIALLY_LAUNCHED",
+    AppLaunchStatus::ReadyForConfiguration => "READY_FOR_CONFIGURATION",
+    AppLaunchStatus::ReadyForLaunch => "READY_FOR_LAUNCH",
+    AppLaunchStatus::Terminated => "TERMINATED",
+    AppLaunchStatus::TerminateFailed => "TERMINATE_FAILED",
+    AppLaunchStatus::TerminateInProgress => "TERMINATE_IN_PROGRESS",
+    AppLaunchStatus::ValidationInProgress => "VALIDATION_IN_PROGRESS",
+    AppLaunchStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFIGURATION_INVALID", "CONFIGURATION_IN_PROGRESS", "DELTA_LAUNCH_FAILED", "DELTA_LAUNCH_IN_PROGRESS", "LAUNCHED", "LAUNCH_FAILED", "LAUNCH_IN_PROGRESS", "LAUNCH_PENDING", "PARTIALLY_LAUNCHED", "READY_FOR_CONFIGURATION", "READY_FOR_LAUNCH", "TERMINATED", "TERMINATE_FAILED", "TERMINATE_IN_PROGRESS", "VALIDATION_IN_PROGRESS"]
+                }
+            }
 impl AsRef<str> for AppLaunchStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

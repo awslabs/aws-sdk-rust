@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePatchBaselinesInput {
-    /// <p>Each element in the array is a structure containing a key-value pair.</p>
-    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+pub struct DescribePatchBaselinesInput  {
+    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li> 
+    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li> 
+    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
@@ -20,14 +20,14 @@ pub struct DescribePatchBaselinesInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribePatchBaselinesInput {
-    /// <p>Each element in the array is a structure containing a key-value pair.</p>
-    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li> 
+    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li> 
+    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::PatchOrchestratorFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::PatchOrchestratorFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of patch baselines to return (per page).</p>
@@ -35,15 +35,13 @@ impl DescribePatchBaselinesInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribePatchBaselinesInput {
     /// Creates a new builder-style object to manufacture [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder {
         crate::operation::describe_patch_baselines::builders::DescribePatchBaselinesInputBuilder::default()
     }
 }
@@ -61,32 +59,28 @@ impl DescribePatchBaselinesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Each element in the array is a structure containing a key-value pair.</p>
-    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li> 
+    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li> 
+    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::PatchOrchestratorFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>Each element in the array is a structure containing a key-value pair.</p>
-    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li>
-    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li>
-    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p> 
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>NAME_PREFIX</code> </b> </p> <p>Sample values: <code>AWS-</code> | <code>My-</code> </p> </li> 
+    /// <li> <p> <b> <code>OWNER</code> </b> </p> <p>Sample values: <code>AWS</code> | <code>Self</code> </p> </li> 
+    /// <li> <p> <b> <code>OPERATING_SYSTEM</code> </b> </p> <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code> </p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of patch baselines to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -95,8 +89,7 @@ impl DescribePatchBaselinesInputBuilder {
     }
     /// <p>The maximum number of patch baselines to return (per page).</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,22 +98,20 @@ impl DescribePatchBaselinesInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribePatchBaselinesInput`](crate::operation::describe_patch_baselines::DescribePatchBaselinesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_patch_baselines::DescribePatchBaselinesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_patch_baselines::DescribePatchBaselinesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_patch_baselines::DescribePatchBaselinesInput {
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

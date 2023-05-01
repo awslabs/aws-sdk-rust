@@ -4,71 +4,49 @@ pub use crate::operation::create_cost_category_definition::_create_cost_category
 pub use crate::operation::create_cost_category_definition::_create_cost_category_definition_input::CreateCostCategoryDefinitionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCostCategoryDefinition`.
-///
+/// 
 /// <p>Creates a new Cost Category with the requested name and rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder
             }
-impl CreateCostCategoryDefinitionFluentBuilder {
+impl CreateCostCategoryDefinitionFluentBuilder  {
     /// Creates a new `CreateCostCategoryDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinition,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_cost_category_definition::CreateCostCategoryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The unique name of the Cost Category.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -95,10 +73,7 @@ impl CreateCostCategoryDefinitionFluentBuilder {
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn set_rule_version(
-        mut self,
-        input: std::option::Option<crate::types::CostCategoryRuleVersion>,
-    ) -> Self {
+    pub fn set_rule_version(mut self, input: std::option::Option<crate::types::CostCategoryRuleVersion>) -> Self {
         self.inner = self.inner.set_rule_version(input);
         self
     }
@@ -112,10 +87,7 @@ impl CreateCostCategoryDefinitionFluentBuilder {
         self
     }
     /// <p>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
-    ) -> Self {
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -139,10 +111,7 @@ impl CreateCostCategoryDefinitionFluentBuilder {
         self
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn set_split_charge_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
-    ) -> Self {
+    pub fn set_split_charge_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
         self.inner = self.inner.set_split_charge_rules(input);
         self
     }
@@ -150,37 +119,35 @@ impl CreateCostCategoryDefinitionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
-    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
-    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
-    /// <ul>
-    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
-    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
-    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
-    /// <li> <p>Keys and values are case sensitive</p> </li>
-    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
-    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
     /// </ul>
     pub fn resource_tags(mut self, input: crate::types::ResourceTag) -> Self {
         self.inner = self.inner.resource_tags(input);
         self
     }
-    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p>
-    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p>
-    /// <ul>
-    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li>
-    /// <li> <p>The maximum length of a key is 128 characters</p> </li>
-    /// <li> <p>The maximum length of a value is 256 characters</p> </li>
-    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li>
-    /// <li> <p>Keys and values are case sensitive</p> </li>
-    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li>
-    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li>
+    /// <p>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"> <code>CostCategory</code> </a>. You can use resource tags to control access to your <code>cost category</code> using IAM policies.</p> 
+    /// <p>Each tag consists of a key and a value, and each key must be unique for the resource. The following restrictions apply to resource tags:</p> 
+    /// <ul> 
+    /// <li> <p>Although the maximum number of array members is 200, you can assign a maximum of 50 user-tags to one resource. The remaining are reserved for Amazon Web Services use</p> </li> 
+    /// <li> <p>The maximum length of a key is 128 characters</p> </li> 
+    /// <li> <p>The maximum length of a value is 256 characters</p> </li> 
+    /// <li> <p>Keys and values can only contain alphanumeric characters, spaces, and any of the following: <code>_.:/=+@-</code> </p> </li> 
+    /// <li> <p>Keys and values are case sensitive</p> </li> 
+    /// <li> <p>Keys and values are trimmed for any leading or trailing whitespaces</p> </li> 
+    /// <li> <p>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for Amazon Web Services use</p> </li> 
     /// </ul>
-    pub fn set_resource_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
-    ) -> Self {
+    pub fn set_resource_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
     }
 }
+

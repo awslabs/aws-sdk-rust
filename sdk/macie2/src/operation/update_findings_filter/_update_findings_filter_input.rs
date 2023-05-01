@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFindingsFilterInput {
+pub struct UpdateFindingsFilterInput  {
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::FindingsFilterAction>,
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct UpdateFindingsFilterInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -29,29 +29,29 @@ pub struct UpdateFindingsFilterInput {
 }
 impl UpdateFindingsFilterInput {
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::FindingsFilterAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::FindingsFilterAction> {
         self.action.as_ref()
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The criteria to use to filter findings.</p>
-    pub fn finding_criteria(&self) -> std::option::Option<&crate::types::FindingCriteria> {
+    pub fn finding_criteria(&self) -> std::option::Option<& crate::types::FindingCriteria> {
         self.finding_criteria.as_ref()
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
@@ -61,8 +61,7 @@ impl UpdateFindingsFilterInput {
 }
 impl UpdateFindingsFilterInput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
-    pub fn builder(
-    ) -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder {
+    pub fn builder() -> crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder {
         crate::operation::update_findings_filter::builders::UpdateFindingsFilterInputBuilder::default()
     }
 }
@@ -86,12 +85,8 @@ impl UpdateFindingsFilterInputBuilder {
         self
     }
     /// <p>The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
-    pub fn set_action(
-        mut self,
-        input: std::option::Option<crate::types::FindingsFilterAction>,
-    ) -> Self {
-        self.action = input;
-        self
+    pub fn set_action(mut self, input: std::option::Option<crate::types::FindingsFilterAction>) -> Self {
+        self.action = input; self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,20 +95,18 @@ impl UpdateFindingsFilterInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p>
+    /// <p>A custom description of the filter. The description can contain as many as 512 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of your account might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The criteria to use to filter findings.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
@@ -121,12 +114,8 @@ impl UpdateFindingsFilterInputBuilder {
         self
     }
     /// <p>The criteria to use to filter findings.</p>
-    pub fn set_finding_criteria(
-        mut self,
-        input: std::option::Option<crate::types::FindingCriteria>,
-    ) -> Self {
-        self.finding_criteria = input;
-        self
+    pub fn set_finding_criteria(mut self, input: std::option::Option<crate::types::FindingCriteria>) -> Self {
+        self.finding_criteria = input; self
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,20 +124,18 @@ impl UpdateFindingsFilterInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p>
+    /// <p>A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64 characters.</p> 
     /// <p>We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub fn position(mut self, input: i32) -> Self {
@@ -157,26 +144,28 @@ impl UpdateFindingsFilterInputBuilder {
     }
     /// <p>The position of the filter in the list of saved filters on the Amazon Macie console. This value also determines the order in which the filter is applied to findings, relative to other filters that are also applied to the findings.</p>
     pub fn set_position(mut self, input: std::option::Option<i32>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFindingsFilterInput`](crate::operation::update_findings_filter::UpdateFindingsFilterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_findings_filter::UpdateFindingsFilterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_findings_filter::UpdateFindingsFilterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_findings_filter::UpdateFindingsFilterInput {
-                action: self.action,
-                client_token: self.client_token,
-                description: self.description,
-                finding_criteria: self.finding_criteria,
-                id: self.id,
-                name: self.name,
-                position: self.position,
-            },
+                action: self.action
+                ,
+                client_token: self.client_token
+                ,
+                description: self.description
+                ,
+                finding_criteria: self.finding_criteria
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                position: self.position
+                ,
+            }
         )
     }
 }
+

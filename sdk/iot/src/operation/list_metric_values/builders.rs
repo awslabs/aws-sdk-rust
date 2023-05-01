@@ -4,82 +4,55 @@ pub use crate::operation::list_metric_values::_list_metric_values_output::ListMe
 pub use crate::operation::list_metric_values::_list_metric_values_input::ListMetricValuesInputBuilder;
 
 /// Fluent builder constructing a request to `ListMetricValues`.
-///
+/// 
 /// <p>Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side metric, or custom metric) by the given thing during the specified time period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMetricValuesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder,
-}
-impl ListMetricValuesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_metric_values::builders::ListMetricValuesInputBuilder
+            }
+impl ListMetricValuesFluentBuilder  {
     /// Creates a new `ListMetricValues`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_metric_values::ListMetricValues,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_metric_values::ListMetricValuesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_metric_values::ListMetricValuesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_metric_values::ListMetricValues, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_metric_values::ListMetricValuesOutput, aws_smithy_http::result::SdkError<crate::operation::list_metric_values::ListMetricValuesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_metric_values::paginator::ListMetricValuesPaginator {
-        crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_metric_values::paginator::ListMetricValuesPaginator {
+                            crate::operation::list_metric_values::paginator::ListMetricValuesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the thing for which security profile metric values are returned.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
@@ -116,10 +89,7 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The dimension value operator.</p>
-    pub fn set_dimension_value_operator(
-        mut self,
-        input: std::option::Option<crate::types::DimensionValueOperator>,
-    ) -> Self {
+    pub fn set_dimension_value_operator(mut self, input: std::option::Option<crate::types::DimensionValueOperator>) -> Self {
         self.inner = self.inner.set_dimension_value_operator(input);
         self
     }
@@ -129,10 +99,7 @@ impl ListMetricValuesFluentBuilder {
         self
     }
     /// <p>The start of the time period for which metric values are returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -167,3 +134,4 @@ impl ListMetricValuesFluentBuilder {
         self
     }
 }
+

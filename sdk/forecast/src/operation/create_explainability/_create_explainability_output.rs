@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExplainabilityOutput {
+pub struct CreateExplainabilityOutput  {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct CreateExplainabilityOutput {
 }
 impl CreateExplainabilityOutput {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn explainability_arn(&self) -> std::option::Option<&str> {
+    pub fn explainability_arn(&self) -> std::option::Option<& str> {
         self.explainability_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateExplainabilityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateExplainabilityOutput {
     /// Creates a new builder-style object to manufacture [`CreateExplainabilityOutput`](crate::operation::create_explainability::CreateExplainabilityOutput).
-    pub fn builder(
-    ) -> crate::operation::create_explainability::builders::CreateExplainabilityOutputBuilder {
+    pub fn builder() -> crate::operation::create_explainability::builders::CreateExplainabilityOutputBuilder {
         crate::operation::create_explainability::builders::CreateExplainabilityOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateExplainabilityOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn set_explainability_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.explainability_arn = input;
-        self
+    pub fn set_explainability_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.explainability_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateExplainabilityOutput`](crate::operation::create_explainability::CreateExplainabilityOutput).
     pub fn build(self) -> crate::operation::create_explainability::CreateExplainabilityOutput {
         crate::operation::create_explainability::CreateExplainabilityOutput {
-            explainability_arn: self.explainability_arn,
+            explainability_arn: self.explainability_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

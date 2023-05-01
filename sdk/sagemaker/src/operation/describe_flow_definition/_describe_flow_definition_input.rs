@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlowDefinitionInput {
+pub struct DescribeFlowDefinitionInput  {
     /// <p>The name of the flow definition.</p>
     #[doc(hidden)]
     pub flow_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeFlowDefinitionInput {
     /// <p>The name of the flow definition.</p>
-    pub fn flow_definition_name(&self) -> std::option::Option<&str> {
+    pub fn flow_definition_name(&self) -> std::option::Option<& str> {
         self.flow_definition_name.as_deref()
     }
 }
 impl DescribeFlowDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder {
         crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DescribeFlowDefinitionInputBuilder {
         self
     }
     /// <p>The name of the flow definition.</p>
-    pub fn set_flow_definition_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.flow_definition_name = input;
-        self
+    pub fn set_flow_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.flow_definition_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFlowDefinitionInput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_flow_definition::DescribeFlowDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_flow_definition::DescribeFlowDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_flow_definition::DescribeFlowDefinitionInput {
-                flow_definition_name: self.flow_definition_name,
-            },
+                flow_definition_name: self.flow_definition_name
+                ,
+            }
         )
     }
 }
+

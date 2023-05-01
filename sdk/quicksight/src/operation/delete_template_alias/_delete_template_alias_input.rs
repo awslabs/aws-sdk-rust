@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTemplateAliasInput {
+pub struct DeleteTemplateAliasInput  {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct DeleteTemplateAliasInput {
 }
 impl DeleteTemplateAliasInput {
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the template that the specified alias is for.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
 impl DeleteTemplateAliasInput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
-    pub fn builder(
-    ) -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder {
-        crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder {
+        crate::operation::delete_template_alias::builders::DeleteTemplateAliasInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl DeleteTemplateAliasInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the template that the specified alias is for.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DeleteTemplateAliasInputBuilder {
     }
     /// <p>The ID for the template that the specified alias is for.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
     pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DeleteTemplateAliasInputBuilder {
     }
     /// <p>The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. </p>
     pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteTemplateAliasInput`](crate::operation::delete_template_alias::DeleteTemplateAliasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_template_alias::DeleteTemplateAliasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_template_alias::DeleteTemplateAliasInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_template_alias::DeleteTemplateAliasInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                alias_name: self.alias_name,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                template_id: self.template_id
+                ,
+                alias_name: self.alias_name
+                ,
+            }
         )
     }
 }
+

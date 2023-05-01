@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTopicsDetectionJobOutput {
+pub struct StartTopicsDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -17,17 +17,17 @@ pub struct StartTopicsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job: </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+    /// <p>The status of the job: </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::JobStatus>,
@@ -35,10 +35,10 @@ pub struct StartTopicsDetectionJobOutput {
 }
 impl StartTopicsDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -49,33 +49,31 @@ impl StartTopicsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job: </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+    /// <p>The status of the job: </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartTopicsDetectionJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobOutput`](crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_topics_detection_job::builders::StartTopicsDetectionJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_topics_detection_job::builders::StartTopicsDetectionJobOutputBuilder {
         crate::operation::start_topics_detection_job::builders::StartTopicsDetectionJobOutputBuilder::default()
     }
 }
@@ -97,10 +95,9 @@ impl StartTopicsDetectionJobOutputBuilder {
     }
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -111,14 +108,14 @@ impl StartTopicsDetectionJobOutputBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -129,53 +126,53 @@ impl StartTopicsDetectionJobOutputBuilder {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
-    /// <p>The status of the job: </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+    /// <p>The status of the job: </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
     /// </ul>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = Some(input);
         self
     }
-    /// <p>The status of the job: </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+    /// <p>The status of the job: </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
     /// </ul>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartTopicsDetectionJobOutput`](crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput {
+    pub fn build(self) -> crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput {
         crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput {
-            job_id: self.job_id,
-            job_arn: self.job_arn,
-            job_status: self.job_status,
+            job_id: self.job_id
+            ,
+            job_arn: self.job_arn
+            ,
+            job_status: self.job_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelInput {
+pub struct DescribeChannelInput  {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeChannelInput {
 }
 impl DescribeChannelInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeChannelInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeChannelInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_channel::DescribeChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_channel::DescribeChannelInput {
-            channel_arn: self.channel_arn,
-            chime_bearer: self.chime_bearer,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_channel::DescribeChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_channel::DescribeChannelInput {
+                channel_arn: self.channel_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
+        )
     }
 }
+

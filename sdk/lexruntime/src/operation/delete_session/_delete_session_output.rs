@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSessionOutput {
+pub struct DeleteSessionOutput  {
     /// <p>The name of the bot associated with the session data.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct DeleteSessionOutput {
 }
 impl DeleteSessionOutput {
     /// <p>The name of the bot associated with the session data.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>The alias in use for the bot associated with the session data.</p>
-    pub fn bot_alias(&self) -> std::option::Option<&str> {
+    pub fn bot_alias(&self) -> std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
     /// <p>The ID of the client application user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The unique identifier for the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteSessionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput).
     pub fn builder() -> crate::operation::delete_session::builders::DeleteSessionOutputBuilder {
@@ -65,8 +65,7 @@ impl DeleteSessionOutputBuilder {
     }
     /// <p>The name of the bot associated with the session data.</p>
     pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>The alias in use for the bot associated with the session data.</p>
     pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +74,7 @@ impl DeleteSessionOutputBuilder {
     }
     /// <p>The alias in use for the bot associated with the session data.</p>
     pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias = input;
-        self
+        self.bot_alias = input; self
     }
     /// <p>The ID of the client application user.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +83,7 @@ impl DeleteSessionOutputBuilder {
     }
     /// <p>The ID of the client application user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The unique identifier for the session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,26 +92,30 @@ impl DeleteSessionOutputBuilder {
     }
     /// <p>The unique identifier for the session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::operation::delete_session::DeleteSessionOutput).
     pub fn build(self) -> crate::operation::delete_session::DeleteSessionOutput {
         crate::operation::delete_session::DeleteSessionOutput {
-            bot_name: self.bot_name,
-            bot_alias: self.bot_alias,
-            user_id: self.user_id,
-            session_id: self.session_id,
+            bot_name: self.bot_name
+            ,
+            bot_alias: self.bot_alias
+            ,
+            user_id: self.user_id
+            ,
+            session_id: self.session_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

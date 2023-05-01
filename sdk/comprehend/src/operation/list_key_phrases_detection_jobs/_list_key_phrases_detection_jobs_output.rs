@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeyPhrasesDetectionJobsOutput {
+pub struct ListKeyPhrasesDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub key_phrases_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>,
+    pub key_phrases_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListKeyPhrasesDetectionJobsOutput {
 }
 impl ListKeyPhrasesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn key_phrases_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::KeyPhrasesDetectionJobProperties]> {
+    pub fn key_phrases_detection_job_properties_list(&self) -> std::option::Option<& [crate::types::KeyPhrasesDetectionJobProperties]> {
         self.key_phrases_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListKeyPhrasesDetectionJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListKeyPhrasesDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsOutput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput).
-    pub fn builder() -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsOutputBuilder {
         crate::operation::list_key_phrases_detection_jobs::builders::ListKeyPhrasesDetectionJobsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListKeyPhrasesDetectionJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListKeyPhrasesDetectionJobsOutputBuilder {
-    pub(crate) key_phrases_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>,
+    pub(crate) key_phrases_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,24 +47,15 @@ impl ListKeyPhrasesDetectionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_key_phrases_detection_job_properties_list`](Self::set_key_phrases_detection_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn key_phrases_detection_job_properties_list(
-        mut self,
-        input: crate::types::KeyPhrasesDetectionJobProperties,
-    ) -> Self {
-        let mut v = self
-            .key_phrases_detection_job_properties_list
-            .unwrap_or_default();
-        v.push(input);
-        self.key_phrases_detection_job_properties_list = Some(v);
-        self
+    pub fn key_phrases_detection_job_properties_list(mut self, input: crate::types::KeyPhrasesDetectionJobProperties) -> Self {
+        let mut v = self.key_phrases_detection_job_properties_list.unwrap_or_default();
+                        v.push(input);
+                        self.key_phrases_detection_job_properties_list = Some(v);
+                        self
     }
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn set_key_phrases_detection_job_properties_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>,
-    ) -> Self {
-        self.key_phrases_detection_job_properties_list = input;
-        self
+    pub fn set_key_phrases_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyPhrasesDetectionJobProperties>>) -> Self {
+        self.key_phrases_detection_job_properties_list = input; self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,27 +64,26 @@ impl ListKeyPhrasesDetectionJobsOutputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListKeyPhrasesDetectionJobsOutput`](crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput {
+    pub fn build(self) -> crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput {
         crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput {
-            key_phrases_detection_job_properties_list: self
-                .key_phrases_detection_job_properties_list,
-            next_token: self.next_token,
+            key_phrases_detection_job_properties_list: self.key_phrases_detection_job_properties_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

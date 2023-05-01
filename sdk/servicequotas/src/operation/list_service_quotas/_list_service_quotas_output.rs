@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceQuotasOutput {
+pub struct ListServiceQuotasOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListServiceQuotasOutput {
 }
 impl ListServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the quotas.</p>
-    pub fn quotas(&self) -> std::option::Option<&[crate::types::ServiceQuota]> {
+    pub fn quotas(&self) -> std::option::Option<& [crate::types::ServiceQuota]> {
         self.quotas.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListServiceQuotasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListServiceQuotasOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceQuotasOutput`](crate::operation::list_service_quotas::ListServiceQuotasOutput).
-    pub fn builder(
-    ) -> crate::operation::list_service_quotas::builders::ListServiceQuotasOutputBuilder {
+    pub fn builder() -> crate::operation::list_service_quotas::builders::ListServiceQuotasOutputBuilder {
         crate::operation::list_service_quotas::builders::ListServiceQuotasOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ListServiceQuotasOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `quotas`.
     ///
@@ -60,33 +58,32 @@ impl ListServiceQuotasOutputBuilder {
     /// <p>Information about the quotas.</p>
     pub fn quotas(mut self, input: crate::types::ServiceQuota) -> Self {
         let mut v = self.quotas.unwrap_or_default();
-        v.push(input);
-        self.quotas = Some(v);
-        self
+                        v.push(input);
+                        self.quotas = Some(v);
+                        self
     }
     /// <p>Information about the quotas.</p>
-    pub fn set_quotas(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceQuota>>,
-    ) -> Self {
-        self.quotas = input;
-        self
+    pub fn set_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceQuota>>) -> Self {
+        self.quotas = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListServiceQuotasOutput`](crate::operation::list_service_quotas::ListServiceQuotasOutput).
     pub fn build(self) -> crate::operation::list_service_quotas::ListServiceQuotasOutput {
         crate::operation::list_service_quotas::ListServiceQuotasOutput {
-            next_token: self.next_token,
-            quotas: self.quotas,
+            next_token: self.next_token
+            ,
+            quotas: self.quotas
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

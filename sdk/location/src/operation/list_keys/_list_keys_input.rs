@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeysInput {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+pub struct ListKeysInput  {
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,18 +16,18 @@ pub struct ListKeysInput {
     pub filter: std::option::Option<crate::types::ApiKeyFilter>,
 }
 impl ListKeysInput {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::ApiKeyFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::ApiKeyFilter> {
         self.filter.as_ref()
     }
 }
@@ -47,29 +47,27 @@ pub struct ListKeysInputBuilder {
     pub(crate) filter: std::option::Option<crate::types::ApiKeyFilter>,
 }
 impl ListKeysInputBuilder {
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>An optional limit for the number of resources returned in a single call. </p>
+    /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p>
+    /// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> 
     /// <p>Default value: <code>null</code> </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
     pub fn filter(mut self, input: crate::types::ApiKeyFilter) -> Self {
@@ -78,20 +76,20 @@ impl ListKeysInputBuilder {
     }
     /// <p>Optionally filter the list to only <code>Active</code> or <code>Expired</code> API keys.</p>
     pub fn set_filter(mut self, input: std::option::Option<crate::types::ApiKeyFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_keys::ListKeysInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_keys::ListKeysInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filter: self.filter,
-        })
+    pub fn build(self) -> Result<crate::operation::list_keys::ListKeysInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_keys::ListKeysInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter: self.filter
+                ,
+            }
+        )
     }
 }
+

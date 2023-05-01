@@ -3,7 +3,7 @@
 /// <p>Provides lexicon name and lexicon content in string format. For more information, see <a href="https://www.w3.org/TR/pronunciation-lexicon/">Pronunciation Lexicon Specification (PLS) Version 1.0</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Lexicon {
+pub struct Lexicon  {
     /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct Lexicon {
 }
 impl Lexicon {
     /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>Name of the lexicon.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for Lexicon {
+impl  std::fmt::Debug for Lexicon  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Lexicon");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl LexiconBuilder {
     }
     /// <p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>Name of the lexicon.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl LexiconBuilder {
     }
     /// <p>Name of the lexicon.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`Lexicon`](crate::types::Lexicon).
     pub fn build(self) -> crate::types::Lexicon {
         crate::types::Lexicon {
-            content: self.content,
-            name: self.name,
+            content: self.content
+            ,
+            name: self.name
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for LexiconBuilder {
         formatter.finish()
     }
 }
+

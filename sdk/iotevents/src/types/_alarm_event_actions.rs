@@ -3,14 +3,14 @@
 /// <p>Contains information about one or more alarm actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmEventActions {
+pub struct AlarmEventActions  {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
     #[doc(hidden)]
     pub alarm_actions: std::option::Option<std::vec::Vec<crate::types::AlarmAction>>,
 }
 impl AlarmEventActions {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn alarm_actions(&self) -> std::option::Option<&[crate::types::AlarmAction]> {
+    pub fn alarm_actions(&self) -> std::option::Option<& [crate::types::AlarmAction]> {
         self.alarm_actions.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl AlarmEventActionsBuilder {
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
     pub fn alarm_actions(mut self, input: crate::types::AlarmAction) -> Self {
         let mut v = self.alarm_actions.unwrap_or_default();
-        v.push(input);
-        self.alarm_actions = Some(v);
-        self
+                        v.push(input);
+                        self.alarm_actions = Some(v);
+                        self
     }
     /// <p>Specifies one or more supported actions to receive notifications when the alarm state changes.</p>
-    pub fn set_alarm_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AlarmAction>>,
-    ) -> Self {
-        self.alarm_actions = input;
-        self
+    pub fn set_alarm_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AlarmAction>>) -> Self {
+        self.alarm_actions = input; self
     }
     /// Consumes the builder and constructs a [`AlarmEventActions`](crate::types::AlarmEventActions).
     pub fn build(self) -> crate::types::AlarmEventActions {
         crate::types::AlarmEventActions {
-            alarm_actions: self.alarm_actions,
+            alarm_actions: self.alarm_actions
+            ,
         }
     }
 }
+

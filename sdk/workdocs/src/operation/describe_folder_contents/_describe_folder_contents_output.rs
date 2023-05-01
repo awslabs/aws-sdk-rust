@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFolderContentsOutput {
+pub struct DescribeFolderContentsOutput  {
     /// <p>The subfolders in the specified folder.</p>
     #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::types::FolderMetadata>>,
@@ -16,28 +16,26 @@ pub struct DescribeFolderContentsOutput {
 }
 impl DescribeFolderContentsOutput {
     /// <p>The subfolders in the specified folder.</p>
-    pub fn folders(&self) -> std::option::Option<&[crate::types::FolderMetadata]> {
+    pub fn folders(&self) -> std::option::Option<& [crate::types::FolderMetadata]> {
         self.folders.as_deref()
     }
     /// <p>The documents in the specified folder.</p>
-    pub fn documents(&self) -> std::option::Option<&[crate::types::DocumentMetadata]> {
+    pub fn documents(&self) -> std::option::Option<& [crate::types::DocumentMetadata]> {
         self.documents.as_deref()
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFolderContentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeFolderContentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFolderContentsOutput`](crate::operation::describe_folder_contents::DescribeFolderContentsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_folder_contents::builders::DescribeFolderContentsOutputBuilder {
         crate::operation::describe_folder_contents::builders::DescribeFolderContentsOutputBuilder::default()
     }
 }
@@ -59,17 +57,13 @@ impl DescribeFolderContentsOutputBuilder {
     /// <p>The subfolders in the specified folder.</p>
     pub fn folders(mut self, input: crate::types::FolderMetadata) -> Self {
         let mut v = self.folders.unwrap_or_default();
-        v.push(input);
-        self.folders = Some(v);
-        self
+                        v.push(input);
+                        self.folders = Some(v);
+                        self
     }
     /// <p>The subfolders in the specified folder.</p>
-    pub fn set_folders(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FolderMetadata>>,
-    ) -> Self {
-        self.folders = input;
-        self
+    pub fn set_folders(mut self, input: std::option::Option<std::vec::Vec<crate::types::FolderMetadata>>) -> Self {
+        self.folders = input; self
     }
     /// Appends an item to `documents`.
     ///
@@ -78,17 +72,13 @@ impl DescribeFolderContentsOutputBuilder {
     /// <p>The documents in the specified folder.</p>
     pub fn documents(mut self, input: crate::types::DocumentMetadata) -> Self {
         let mut v = self.documents.unwrap_or_default();
-        v.push(input);
-        self.documents = Some(v);
-        self
+                        v.push(input);
+                        self.documents = Some(v);
+                        self
     }
     /// <p>The documents in the specified folder.</p>
-    pub fn set_documents(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentMetadata>>,
-    ) -> Self {
-        self.documents = input;
-        self
+    pub fn set_documents(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentMetadata>>) -> Self {
+        self.documents = input; self
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,25 +87,28 @@ impl DescribeFolderContentsOutputBuilder {
     }
     /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeFolderContentsOutput`](crate::operation::describe_folder_contents::DescribeFolderContentsOutput).
     pub fn build(self) -> crate::operation::describe_folder_contents::DescribeFolderContentsOutput {
         crate::operation::describe_folder_contents::DescribeFolderContentsOutput {
-            folders: self.folders,
-            documents: self.documents,
-            marker: self.marker,
+            folders: self.folders
+            ,
+            documents: self.documents
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

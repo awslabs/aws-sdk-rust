@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueryRuntimeStatisticsInput {
+pub struct GetQueryRuntimeStatisticsInput  {
     /// <p>The unique ID of the query execution.</p>
     #[doc(hidden)]
     pub query_execution_id: std::option::Option<std::string::String>,
 }
 impl GetQueryRuntimeStatisticsInput {
     /// <p>The unique ID of the query execution.</p>
-    pub fn query_execution_id(&self) -> std::option::Option<&str> {
+    pub fn query_execution_id(&self) -> std::option::Option<& str> {
         self.query_execution_id.as_deref()
     }
 }
 impl GetQueryRuntimeStatisticsInput {
     /// Creates a new builder-style object to manufacture [`GetQueryRuntimeStatisticsInput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput).
-    pub fn builder() -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder{
+    pub fn builder() -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder {
         crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl GetQueryRuntimeStatisticsInputBuilder {
         self
     }
     /// <p>The unique ID of the query execution.</p>
-    pub fn set_query_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.query_execution_id = input;
-        self
+    pub fn set_query_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.query_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`GetQueryRuntimeStatisticsInput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsInput {
-                query_execution_id: self.query_execution_id,
-            },
+                query_execution_id: self.query_execution_id
+                ,
+            }
         )
     }
 }
+

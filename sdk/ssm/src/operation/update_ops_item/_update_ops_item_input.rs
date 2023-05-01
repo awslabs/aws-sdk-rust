@@ -2,20 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOpsItemInput {
+pub struct UpdateOpsItemInput  {
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
-    /// </important>
-    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p> 
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important> 
+    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p> 
+    /// </important> 
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p> 
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
-    pub operational_data: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
-    >,
+    pub operational_data: std::option::Option<std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>>,
     /// <p>Keys that you want to remove from the OperationalData map.</p>
     #[doc(hidden)]
     pub operational_data_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -61,28 +59,24 @@ pub struct UpdateOpsItemInput {
 }
 impl UpdateOpsItemInput {
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
-    /// </important>
-    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p> 
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important> 
+    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p> 
+    /// </important> 
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p> 
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn operational_data(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
-    > {
+    pub fn operational_data(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>> {
         self.operational_data.as_ref()
     }
     /// <p>Keys that you want to remove from the OperationalData map.</p>
-    pub fn operational_data_to_delete(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn operational_data_to_delete(&self) -> std::option::Option<& [std::string::String]> {
         self.operational_data_to_delete.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::types::OpsItemNotification]> {
+    pub fn notifications(&self) -> std::option::Option<& [crate::types::OpsItemNotification]> {
         self.notifications.as_deref()
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
@@ -90,47 +84,47 @@ impl UpdateOpsItemInput {
         self.priority
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn related_ops_items(&self) -> std::option::Option<&[crate::types::RelatedOpsItem]> {
+    pub fn related_ops_items(&self) -> std::option::Option<& [crate::types::RelatedOpsItem]> {
         self.related_ops_items.as_deref()
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OpsItemStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OpsItemStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>Specify a new category for an OpsItem.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// <p>Specify a new severity for an OpsItem.</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn actual_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.actual_start_time.as_ref()
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn actual_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.actual_end_time.as_ref()
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn planned_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.planned_start_time.as_ref()
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn planned_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.planned_end_time.as_ref()
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_item_arn(&self) -> std::option::Option<& str> {
         self.ops_item_arn.as_deref()
     }
 }
@@ -146,9 +140,7 @@ impl UpdateOpsItemInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateOpsItemInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) operational_data: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
-    >,
+    pub(crate) operational_data: std::option::Option<std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>>,
     pub(crate) operational_data_to_delete: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) notifications: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>,
     pub(crate) priority: std::option::Option<i32>,
@@ -172,43 +164,32 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Adds a key-value pair to `operational_data`.
     ///
     /// To override the contents of this collection use [`set_operational_data`](Self::set_operational_data).
     ///
-    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
-    /// </important>
-    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p> 
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important> 
+    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p> 
+    /// </important> 
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p> 
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn operational_data(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::OpsItemDataValue,
-    ) -> Self {
+    pub fn operational_data(mut self, k: impl Into<std::string::String>, v: crate::types::OpsItemDataValue) -> Self {
         let mut hash_map = self.operational_data.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.operational_data = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.operational_data = Some(hash_map);
+                        self
     }
-    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p>
-    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
-    /// </important>
-    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p>
+    /// <p>Add new keys or edit existing key-value pairs of the OperationalData map in the OpsItem object.</p> 
+    /// <p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important> 
+    /// <p>Operational data keys <i>can't</i> begin with the following: <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p> 
+    /// </important> 
+    /// <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <code>DescribeOpsItems</code> API operation) can view and search on the specified data. Operational data that isn't searchable is only viewable by users who have access to the OpsItem (as provided by the <code>GetOpsItem</code> API operation).</p> 
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_operational_data(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
-        >,
-    ) -> Self {
-        self.operational_data = input;
-        self
+    pub fn set_operational_data(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>>) -> Self {
+        self.operational_data = input; self
     }
     /// Appends an item to `operational_data_to_delete`.
     ///
@@ -217,17 +198,13 @@ impl UpdateOpsItemInputBuilder {
     /// <p>Keys that you want to remove from the OperationalData map.</p>
     pub fn operational_data_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.operational_data_to_delete.unwrap_or_default();
-        v.push(input.into());
-        self.operational_data_to_delete = Some(v);
-        self
+                        v.push(input.into());
+                        self.operational_data_to_delete = Some(v);
+                        self
     }
     /// <p>Keys that you want to remove from the OperationalData map.</p>
-    pub fn set_operational_data_to_delete(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.operational_data_to_delete = input;
-        self
+    pub fn set_operational_data_to_delete(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.operational_data_to_delete = input; self
     }
     /// Appends an item to `notifications`.
     ///
@@ -236,17 +213,13 @@ impl UpdateOpsItemInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
     pub fn notifications(mut self, input: crate::types::OpsItemNotification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
-        v.push(input);
-        self.notifications = Some(v);
-        self
+                        v.push(input);
+                        self.notifications = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
-    pub fn set_notifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>,
-    ) -> Self {
-        self.notifications = input;
-        self
+    pub fn set_notifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>) -> Self {
+        self.notifications = input; self
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -255,8 +228,7 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// Appends an item to `related_ops_items`.
     ///
@@ -265,17 +237,13 @@ impl UpdateOpsItemInputBuilder {
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
     pub fn related_ops_items(mut self, input: crate::types::RelatedOpsItem) -> Self {
         let mut v = self.related_ops_items.unwrap_or_default();
-        v.push(input);
-        self.related_ops_items = Some(v);
-        self
+                        v.push(input);
+                        self.related_ops_items = Some(v);
+                        self
     }
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
-    pub fn set_related_ops_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelatedOpsItem>>,
-    ) -> Self {
-        self.related_ops_items = input;
-        self
+    pub fn set_related_ops_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RelatedOpsItem>>) -> Self {
+        self.related_ops_items = input; self
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn status(mut self, input: crate::types::OpsItemStatus) -> Self {
@@ -284,8 +252,7 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OpsItemStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The ID of the OpsItem.</p>
     pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -294,8 +261,7 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>The ID of the OpsItem.</p>
     pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -304,8 +270,7 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input;
-        self
+        self.title = input; self
     }
     /// <p>Specify a new category for an OpsItem.</p>
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -314,8 +279,7 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>Specify a new category for an OpsItem.</p>
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// <p>Specify a new severity for an OpsItem.</p>
     pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -324,8 +288,7 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>Specify a new severity for an OpsItem.</p>
     pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -333,12 +296,8 @@ impl UpdateOpsItemInputBuilder {
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_actual_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.actual_start_time = input;
-        self
+    pub fn set_actual_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.actual_start_time = input; self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -346,12 +305,8 @@ impl UpdateOpsItemInputBuilder {
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_actual_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.actual_end_time = input;
-        self
+    pub fn set_actual_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.actual_end_time = input; self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -359,12 +314,8 @@ impl UpdateOpsItemInputBuilder {
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_planned_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.planned_start_time = input;
-        self
+    pub fn set_planned_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.planned_start_time = input; self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -372,12 +323,8 @@ impl UpdateOpsItemInputBuilder {
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn set_planned_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.planned_end_time = input;
-        self
+    pub fn set_planned_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.planned_end_time = input; self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -386,33 +333,46 @@ impl UpdateOpsItemInputBuilder {
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_arn = input;
-        self
+        self.ops_item_arn = input; self
     }
     /// Consumes the builder and constructs a [`UpdateOpsItemInput`](crate::operation::update_ops_item::UpdateOpsItemInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_ops_item::UpdateOpsItemInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_ops_item::UpdateOpsItemInput {
-            description: self.description,
-            operational_data: self.operational_data,
-            operational_data_to_delete: self.operational_data_to_delete,
-            notifications: self.notifications,
-            priority: self.priority,
-            related_ops_items: self.related_ops_items,
-            status: self.status,
-            ops_item_id: self.ops_item_id,
-            title: self.title,
-            category: self.category,
-            severity: self.severity,
-            actual_start_time: self.actual_start_time,
-            actual_end_time: self.actual_end_time,
-            planned_start_time: self.planned_start_time,
-            planned_end_time: self.planned_end_time,
-            ops_item_arn: self.ops_item_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::update_ops_item::UpdateOpsItemInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_ops_item::UpdateOpsItemInput {
+                description: self.description
+                ,
+                operational_data: self.operational_data
+                ,
+                operational_data_to_delete: self.operational_data_to_delete
+                ,
+                notifications: self.notifications
+                ,
+                priority: self.priority
+                ,
+                related_ops_items: self.related_ops_items
+                ,
+                status: self.status
+                ,
+                ops_item_id: self.ops_item_id
+                ,
+                title: self.title
+                ,
+                category: self.category
+                ,
+                severity: self.severity
+                ,
+                actual_start_time: self.actual_start_time
+                ,
+                actual_end_time: self.actual_end_time
+                ,
+                planned_start_time: self.planned_start_time
+                ,
+                planned_end_time: self.planned_end_time
+                ,
+                ops_item_arn: self.ops_item_arn
+                ,
+            }
+        )
     }
 }
+

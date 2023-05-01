@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteObjectOutput {
+pub struct DeleteObjectOutput  {
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
     #[doc(hidden)]
     pub delete_marker: bool,
@@ -21,24 +21,24 @@ impl DeleteObjectOutput {
         self.delete_marker
     }
     /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn request_charged(&self) -> std::option::Option<&crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> std::option::Option<& crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for DeleteObjectOutput {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for DeleteObjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteObjectOutput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
     pub fn builder() -> crate::operation::delete_object::builders::DeleteObjectOutputBuilder {
@@ -64,8 +64,7 @@ impl DeleteObjectOutputBuilder {
     }
     /// <p>Specifies whether the versioned object that was permanently deleted was (true) or was not (false) a delete marker.</p>
     pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_marker = input;
-        self
+        self.delete_marker = input; self
     }
     /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +73,7 @@ impl DeleteObjectOutputBuilder {
     }
     /// <p>Returns the version ID of the delete marker created as a result of the DELETE operation.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
@@ -83,42 +81,40 @@ impl DeleteObjectOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(
-        mut self,
-        input: std::option::Option<crate::types::RequestCharged>,
-    ) -> Self {
-        self.request_charged = input;
-        self
+    pub fn set_request_charged(mut self, input: std::option::Option<crate::types::RequestCharged>) -> Self {
+        self.request_charged = input; self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteObjectOutput`](crate::operation::delete_object::DeleteObjectOutput).
     pub fn build(self) -> crate::operation::delete_object::DeleteObjectOutput {
         crate::operation::delete_object::DeleteObjectOutput {
-            delete_marker: self.delete_marker.unwrap_or_default(),
-            version_id: self.version_id,
-            request_charged: self.request_charged,
+            delete_marker: self.delete_marker
+                .unwrap_or_default()
+            ,
+            version_id: self.version_id
+            ,
+            request_charged: self.request_charged
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

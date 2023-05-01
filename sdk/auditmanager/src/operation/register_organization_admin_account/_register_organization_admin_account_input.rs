@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterOrganizationAdminAccountInput {
+pub struct RegisterOrganizationAdminAccountInput  {
     /// <p> The identifier for the delegated administrator account. </p>
     #[doc(hidden)]
     pub admin_account_id: std::option::Option<std::string::String>,
 }
 impl RegisterOrganizationAdminAccountInput {
     /// <p> The identifier for the delegated administrator account. </p>
-    pub fn admin_account_id(&self) -> std::option::Option<&str> {
+    pub fn admin_account_id(&self) -> std::option::Option<& str> {
         self.admin_account_id.as_deref()
     }
 }
 impl RegisterOrganizationAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`RegisterOrganizationAdminAccountInput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput).
-    pub fn builder() -> crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountInputBuilder{
+    pub fn builder() -> crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountInputBuilder {
         crate::operation::register_organization_admin_account::builders::RegisterOrganizationAdminAccountInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl RegisterOrganizationAdminAccountInputBuilder {
     }
     /// <p> The identifier for the delegated administrator account. </p>
     pub fn set_admin_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.admin_account_id = input;
-        self
+        self.admin_account_id = input; self
     }
     /// Consumes the builder and constructs a [`RegisterOrganizationAdminAccountInput`](crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput).
-    pub fn build(self) -> Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountInput {
                 admin_account_id: self.admin_account_id
@@ -47,3 +46,4 @@ impl RegisterOrganizationAdminAccountInputBuilder {
         )
     }
 }
+

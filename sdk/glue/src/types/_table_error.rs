@@ -3,7 +3,7 @@
 /// <p>An error record for table operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableError {
+pub struct TableError  {
     /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TableError {
 }
 impl TableError {
     /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The details about the error.</p>
-    pub fn error_detail(&self) -> std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> std::option::Option<& crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl TableErrorBuilder {
     }
     /// <p>The name of the table. For Hive compatibility, this must be entirely lowercase.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The details about the error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -52,18 +51,17 @@ impl TableErrorBuilder {
         self
     }
     /// <p>The details about the error.</p>
-    pub fn set_error_detail(
-        mut self,
-        input: std::option::Option<crate::types::ErrorDetail>,
-    ) -> Self {
-        self.error_detail = input;
-        self
+    pub fn set_error_detail(mut self, input: std::option::Option<crate::types::ErrorDetail>) -> Self {
+        self.error_detail = input; self
     }
     /// Consumes the builder and constructs a [`TableError`](crate::types::TableError).
     pub fn build(self) -> crate::types::TableError {
         crate::types::TableError {
-            table_name: self.table_name,
-            error_detail: self.error_detail,
+            table_name: self.table_name
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

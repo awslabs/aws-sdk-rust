@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFhirImportJobsOutput {
+pub struct ListFhirImportJobsOutput  {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
     #[doc(hidden)]
-    pub import_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::ImportJobProperties>>,
+    pub import_job_properties_list: std::option::Option<std::vec::Vec<crate::types::ImportJobProperties>>,
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,27 +13,23 @@ pub struct ListFhirImportJobsOutput {
 }
 impl ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn import_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::ImportJobProperties]> {
+    pub fn import_job_properties_list(&self) -> std::option::Option<& [crate::types::ImportJobProperties]> {
         self.import_job_properties_list.as_deref()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFhirImportJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFhirImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder {
-        crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder {
+        crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsOutputBuilder::default()
     }
 }
 
@@ -42,8 +37,7 @@ impl ListFhirImportJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFhirImportJobsOutputBuilder {
-    pub(crate) import_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::ImportJobProperties>>,
+    pub(crate) import_job_properties_list: std::option::Option<std::vec::Vec<crate::types::ImportJobProperties>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -55,17 +49,13 @@ impl ListFhirImportJobsOutputBuilder {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
     pub fn import_job_properties_list(mut self, input: crate::types::ImportJobProperties) -> Self {
         let mut v = self.import_job_properties_list.unwrap_or_default();
-        v.push(input);
-        self.import_job_properties_list = Some(v);
-        self
+                        v.push(input);
+                        self.import_job_properties_list = Some(v);
+                        self
     }
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
-    pub fn set_import_job_properties_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportJobProperties>>,
-    ) -> Self {
-        self.import_job_properties_list = input;
-        self
+    pub fn set_import_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportJobProperties>>) -> Self {
+        self.import_job_properties_list = input; self
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,24 +64,26 @@ impl ListFhirImportJobsOutputBuilder {
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFhirImportJobsOutput`](crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput).
     pub fn build(self) -> crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput {
         crate::operation::list_fhir_import_jobs::ListFhirImportJobsOutput {
-            import_job_properties_list: self.import_job_properties_list,
-            next_token: self.next_token,
+            import_job_properties_list: self.import_job_properties_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

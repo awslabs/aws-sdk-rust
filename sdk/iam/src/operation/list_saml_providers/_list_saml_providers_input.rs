@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSamlProvidersInput {}
+pub struct ListSamlProvidersInput  {
+}
 impl ListSamlProvidersInput {
     /// Creates a new builder-style object to manufacture [`ListSamlProvidersInput`](crate::operation::list_saml_providers::ListSamlProvidersInput).
-    pub fn builder(
-    ) -> crate::operation::list_saml_providers::builders::ListSamlProvidersInputBuilder {
+    pub fn builder() -> crate::operation::list_saml_providers::builders::ListSamlProvidersInputBuilder {
         crate::operation::list_saml_providers::builders::ListSamlProvidersInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl ListSamlProvidersInput {
 /// A builder for [`ListSamlProvidersInput`](crate::operation::list_saml_providers::ListSamlProvidersInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct ListSamlProvidersInputBuilder {}
+pub struct ListSamlProvidersInputBuilder {
+}
 impl ListSamlProvidersInputBuilder {
     /// Consumes the builder and constructs a [`ListSamlProvidersInput`](crate::operation::list_saml_providers::ListSamlProvidersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_saml_providers::ListSamlProvidersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_saml_providers::ListSamlProvidersInput {})
+    pub fn build(self) -> Result<crate::operation::list_saml_providers::ListSamlProvidersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_saml_providers::ListSamlProvidersInput {
+            }
+        )
     }
 }
+

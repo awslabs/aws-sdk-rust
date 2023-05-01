@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterWebhookWithThirdPartyInput {
+pub struct RegisterWebhookWithThirdPartyInput  {
     /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     #[doc(hidden)]
     pub webhook_name: std::option::Option<std::string::String>,
 }
 impl RegisterWebhookWithThirdPartyInput {
     /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
-    pub fn webhook_name(&self) -> std::option::Option<&str> {
+    pub fn webhook_name(&self) -> std::option::Option<& str> {
         self.webhook_name.as_deref()
     }
 }
 impl RegisterWebhookWithThirdPartyInput {
     /// Creates a new builder-style object to manufacture [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
-    pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder{
+    pub fn builder() -> crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder {
         crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl RegisterWebhookWithThirdPartyInputBuilder {
     }
     /// <p>The name of an existing webhook created with PutWebhook to register with a supported third party. </p>
     pub fn set_webhook_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.webhook_name = input;
-        self
+        self.webhook_name = input; self
     }
     /// Consumes the builder and constructs a [`RegisterWebhookWithThirdPartyInput`](crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyInput {
                 webhook_name: self.webhook_name
@@ -52,3 +46,4 @@ impl RegisterWebhookWithThirdPartyInputBuilder {
         )
     }
 }
+

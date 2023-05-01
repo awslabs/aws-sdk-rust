@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMetricAttributionInput {
+pub struct DescribeMetricAttributionInput  {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub metric_attribution_arn: std::option::Option<std::string::String>,
 }
 impl DescribeMetricAttributionInput {
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn metric_attribution_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_attribution_arn(&self) -> std::option::Option<& str> {
         self.metric_attribution_arn.as_deref()
     }
 }
 impl DescribeMetricAttributionInput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricAttributionInput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionInput).
-    pub fn builder() -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder{
+    pub fn builder() -> crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder {
         crate::operation::describe_metric_attribution::builders::DescribeMetricAttributionInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DescribeMetricAttributionInputBuilder {
         self
     }
     /// <p>The metric attribution's Amazon Resource Name (ARN).</p>
-    pub fn set_metric_attribution_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.metric_attribution_arn = input;
-        self
+    pub fn set_metric_attribution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.metric_attribution_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeMetricAttributionInput`](crate::operation::describe_metric_attribution::DescribeMetricAttributionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_metric_attribution::DescribeMetricAttributionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_metric_attribution::DescribeMetricAttributionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_metric_attribution::DescribeMetricAttributionInput {
-                metric_attribution_arn: self.metric_attribution_arn,
-            },
+                metric_attribution_arn: self.metric_attribution_arn
+                ,
+            }
         )
     }
 }
+

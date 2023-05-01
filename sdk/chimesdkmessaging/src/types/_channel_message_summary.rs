@@ -3,7 +3,7 @@
 /// <p>Summary of the messages in a <code>Channel</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChannelMessageSummary {
+pub struct ChannelMessageSummary  {
     /// <p>The ID of the message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -36,44 +36,42 @@ pub struct ChannelMessageSummary {
     pub status: std::option::Option<crate::types::ChannelMessageStatusStructure>,
     /// <p>The message attribues listed in a the summary of a channel message.</p>
     #[doc(hidden)]
-    pub message_attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
-    >,
+    pub message_attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>>,
     /// <p>The content type of the channel messsage listed in the summary.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageSummary {
     /// <p>The ID of the message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The content of the message.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The metadata of the message.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The type of message.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMessageType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ChannelMessageType> {
         self.r#type.as_ref()
     }
     /// <p>The time at which the message summary was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a message was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The time at which a message was last edited.</p>
-    pub fn last_edited_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_edited_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_edited_timestamp.as_ref()
     }
     /// <p>The message sender.</p>
-    pub fn sender(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn sender(&self) -> std::option::Option<& crate::types::Identity> {
         self.sender.as_ref()
     }
     /// <p>Indicates whether a message was redacted.</p>
@@ -81,23 +79,19 @@ impl ChannelMessageSummary {
         self.redacted
     }
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ChannelMessageStatusStructure> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ChannelMessageStatusStructure> {
         self.status.as_ref()
     }
     /// <p>The message attribues listed in a the summary of a channel message.</p>
-    pub fn message_attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
-    > {
+    pub fn message_attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>> {
         self.message_attributes.as_ref()
     }
     /// <p>The content type of the channel messsage listed in the summary.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for ChannelMessageSummary {
+impl  std::fmt::Debug for ChannelMessageSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessageSummary");
         formatter.field("message_id", &self.message_id);
@@ -136,9 +130,7 @@ pub struct ChannelMessageSummaryBuilder {
     pub(crate) sender: std::option::Option<crate::types::Identity>,
     pub(crate) redacted: std::option::Option<bool>,
     pub(crate) status: std::option::Option<crate::types::ChannelMessageStatusStructure>,
-    pub(crate) message_attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
-    >,
+    pub(crate) message_attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>>,
     pub(crate) content_type: std::option::Option<std::string::String>,
 }
 impl ChannelMessageSummaryBuilder {
@@ -149,8 +141,7 @@ impl ChannelMessageSummaryBuilder {
     }
     /// <p>The ID of the message.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// <p>The content of the message.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +150,7 @@ impl ChannelMessageSummaryBuilder {
     }
     /// <p>The content of the message.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>The metadata of the message.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +159,7 @@ impl ChannelMessageSummaryBuilder {
     }
     /// <p>The metadata of the message.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The type of message.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMessageType) -> Self {
@@ -178,12 +167,8 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The type of message.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMessageType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::ChannelMessageType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The time at which the message summary was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -191,12 +176,8 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The time at which the message summary was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The time at which a message was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -204,12 +185,8 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The time at which a message was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_timestamp = input;
-        self
+    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_timestamp = input; self
     }
     /// <p>The time at which a message was last edited.</p>
     pub fn last_edited_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -217,12 +194,8 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The time at which a message was last edited.</p>
-    pub fn set_last_edited_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_edited_timestamp = input;
-        self
+    pub fn set_last_edited_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_edited_timestamp = input; self
     }
     /// <p>The message sender.</p>
     pub fn sender(mut self, input: crate::types::Identity) -> Self {
@@ -231,8 +204,7 @@ impl ChannelMessageSummaryBuilder {
     }
     /// <p>The message sender.</p>
     pub fn set_sender(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.sender = input;
-        self
+        self.sender = input; self
     }
     /// <p>Indicates whether a message was redacted.</p>
     pub fn redacted(mut self, input: bool) -> Self {
@@ -241,8 +213,7 @@ impl ChannelMessageSummaryBuilder {
     }
     /// <p>Indicates whether a message was redacted.</p>
     pub fn set_redacted(mut self, input: std::option::Option<bool>) -> Self {
-        self.redacted = input;
-        self
+        self.redacted = input; self
     }
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
     pub fn status(mut self, input: crate::types::ChannelMessageStatusStructure) -> Self {
@@ -250,37 +221,23 @@ impl ChannelMessageSummaryBuilder {
         self
     }
     /// <p>The message status. The status value is <code>SENT</code> for messages sent to a channel without a channel flow. For channels associated with channel flow, the value determines the processing stage.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMessageStatusStructure>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ChannelMessageStatusStructure>) -> Self {
+        self.status = input; self
     }
     /// Adds a key-value pair to `message_attributes`.
     ///
     /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
     ///
     /// <p>The message attribues listed in a the summary of a channel message.</p>
-    pub fn message_attributes(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::MessageAttributeValue,
-    ) -> Self {
+    pub fn message_attributes(mut self, k: impl Into<std::string::String>, v: crate::types::MessageAttributeValue) -> Self {
         let mut hash_map = self.message_attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.message_attributes = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.message_attributes = Some(hash_map);
+                        self
     }
     /// <p>The message attribues listed in a the summary of a channel message.</p>
-    pub fn set_message_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
-        >,
-    ) -> Self {
-        self.message_attributes = input;
-        self
+    pub fn set_message_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>>) -> Self {
+        self.message_attributes = input; self
     }
     /// <p>The content type of the channel messsage listed in the summary.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -289,24 +246,36 @@ impl ChannelMessageSummaryBuilder {
     }
     /// <p>The content type of the channel messsage listed in the summary.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// Consumes the builder and constructs a [`ChannelMessageSummary`](crate::types::ChannelMessageSummary).
     pub fn build(self) -> crate::types::ChannelMessageSummary {
         crate::types::ChannelMessageSummary {
-            message_id: self.message_id,
-            content: self.content,
-            metadata: self.metadata,
-            r#type: self.r#type,
-            created_timestamp: self.created_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
-            last_edited_timestamp: self.last_edited_timestamp,
-            sender: self.sender,
-            redacted: self.redacted.unwrap_or_default(),
-            status: self.status,
-            message_attributes: self.message_attributes,
-            content_type: self.content_type,
+            message_id: self.message_id
+            ,
+            content: self.content
+            ,
+            metadata: self.metadata
+            ,
+            r#type: self.r#type
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            last_edited_timestamp: self.last_edited_timestamp
+            ,
+            sender: self.sender
+            ,
+            redacted: self.redacted
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            message_attributes: self.message_attributes
+            ,
+            content_type: self.content_type
+            ,
         }
     }
 }
@@ -328,3 +297,4 @@ impl std::fmt::Debug for ChannelMessageSummaryBuilder {
         formatter.finish()
     }
 }
+

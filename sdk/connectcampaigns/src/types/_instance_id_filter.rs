@@ -3,7 +3,7 @@
 /// Connect instance identifier filter
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdFilter {
+pub struct InstanceIdFilter  {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct InstanceIdFilter {
 }
 impl InstanceIdFilter {
     /// Amazon Connect Instance Id
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// Operators for Connect instance identifier filter
-    pub fn operator(&self) -> std::option::Option<&crate::types::InstanceIdFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<& crate::types::InstanceIdFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl InstanceIdFilterBuilder {
     }
     /// Amazon Connect Instance Id
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Operators for Connect instance identifier filter
     pub fn operator(mut self, input: crate::types::InstanceIdFilterOperator) -> Self {
@@ -52,18 +51,17 @@ impl InstanceIdFilterBuilder {
         self
     }
     /// Operators for Connect instance identifier filter
-    pub fn set_operator(
-        mut self,
-        input: std::option::Option<crate::types::InstanceIdFilterOperator>,
-    ) -> Self {
-        self.operator = input;
-        self
+    pub fn set_operator(mut self, input: std::option::Option<crate::types::InstanceIdFilterOperator>) -> Self {
+        self.operator = input; self
     }
     /// Consumes the builder and constructs a [`InstanceIdFilter`](crate::types::InstanceIdFilter).
     pub fn build(self) -> crate::types::InstanceIdFilter {
         crate::types::InstanceIdFilter {
-            value: self.value,
-            operator: self.operator,
+            value: self.value
+            ,
+            operator: self.operator
+            ,
         }
     }
 }
+

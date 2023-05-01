@@ -4,78 +4,55 @@ pub use crate::operation::get_inventory::_get_inventory_output::GetInventoryOutp
 pub use crate::operation::get_inventory::_get_inventory_input::GetInventoryInputBuilder;
 
 /// Fluent builder constructing a request to `GetInventory`.
-///
+/// 
 /// <p>Query inventory information. This includes managed node status, such as <code>Stopped</code> or <code>Terminated</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInventoryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_inventory::builders::GetInventoryInputBuilder,
-}
-impl GetInventoryFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_inventory::builders::GetInventoryInputBuilder
+            }
+impl GetInventoryFluentBuilder  {
     /// Creates a new `GetInventory`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_inventory::GetInventory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_inventory::GetInventoryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_inventory::GetInventory, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_inventory::GetInventoryOutput, aws_smithy_http::result::SdkError<crate::operation::get_inventory::GetInventoryError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_inventory::paginator::GetInventoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_inventory::paginator::GetInventoryPaginator {
-        crate::operation::get_inventory::paginator::GetInventoryPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_inventory::paginator::GetInventoryPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_inventory::paginator::GetInventoryPaginator {
+                            crate::operation::get_inventory::paginator::GetInventoryPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -86,10 +63,7 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -103,10 +77,7 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code> type, you can see a count of how many Windows and Linux managed nodes exist in your inventoried fleet.</p>
-    pub fn set_aggregators(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InventoryAggregator>>,
-    ) -> Self {
+    pub fn set_aggregators(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryAggregator>>) -> Self {
         self.inner = self.inner.set_aggregators(input);
         self
     }
@@ -120,10 +91,7 @@ impl GetInventoryFluentBuilder {
         self
     }
     /// <p>The list of inventory item types to return.</p>
-    pub fn set_result_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResultAttribute>>,
-    ) -> Self {
+    pub fn set_result_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResultAttribute>>) -> Self {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
@@ -148,3 +116,4 @@ impl GetInventoryFluentBuilder {
         self
     }
 }
+

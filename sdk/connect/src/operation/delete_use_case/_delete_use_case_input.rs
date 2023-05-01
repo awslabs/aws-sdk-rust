@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUseCaseInput {
+pub struct DeleteUseCaseInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DeleteUseCaseInput {
 }
 impl DeleteUseCaseInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn integration_association_id(&self) -> std::option::Option<&str> {
+    pub fn integration_association_id(&self) -> std::option::Option<& str> {
         self.integration_association_id.as_deref()
     }
     /// <p>The identifier for the use case.</p>
-    pub fn use_case_id(&self) -> std::option::Option<&str> {
+    pub fn use_case_id(&self) -> std::option::Option<& str> {
         self.use_case_id.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl DeleteUseCaseInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier for the integration association.</p>
     pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,12 +58,8 @@ impl DeleteUseCaseInputBuilder {
         self
     }
     /// <p>The identifier for the integration association.</p>
-    pub fn set_integration_association_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.integration_association_id = input;
-        self
+    pub fn set_integration_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.integration_association_id = input; self
     }
     /// <p>The identifier for the use case.</p>
     pub fn use_case_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,20 +68,20 @@ impl DeleteUseCaseInputBuilder {
     }
     /// <p>The identifier for the use case.</p>
     pub fn set_use_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.use_case_id = input;
-        self
+        self.use_case_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteUseCaseInput`](crate::operation::delete_use_case::DeleteUseCaseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_use_case::DeleteUseCaseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_use_case::DeleteUseCaseInput {
-            instance_id: self.instance_id,
-            integration_association_id: self.integration_association_id,
-            use_case_id: self.use_case_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_use_case::DeleteUseCaseInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_use_case::DeleteUseCaseInput {
+                instance_id: self.instance_id
+                ,
+                integration_association_id: self.integration_association_id
+                ,
+                use_case_id: self.use_case_id
+                ,
+            }
+        )
     }
 }
+

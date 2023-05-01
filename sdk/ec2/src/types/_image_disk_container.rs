@@ -3,14 +3,14 @@
 /// <p>Describes the disk container object for an import image task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageDiskContainer {
+pub struct ImageDiskContainer  {
     /// <p>The description of the disk image.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The block device mapping for the disk.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
-    /// <p>The format of the disk image being imported.</p>
+    /// <p>The format of the disk image being imported.</p> 
     /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -26,28 +26,28 @@ pub struct ImageDiskContainer {
 }
 impl ImageDiskContainer {
     /// <p>The description of the disk image.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The block device mapping for the disk.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
-    /// <p>The format of the disk image being imported.</p>
+    /// <p>The format of the disk image being imported.</p> 
     /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The S3 bucket for the disk image.</p>
-    pub fn user_bucket(&self) -> std::option::Option<&crate::types::UserBucket> {
+    pub fn user_bucket(&self) -> std::option::Option<& crate::types::UserBucket> {
         self.user_bucket.as_ref()
     }
 }
@@ -77,8 +77,7 @@ impl ImageDiskContainerBuilder {
     }
     /// <p>The description of the disk image.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The block device mapping for the disk.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,20 +86,18 @@ impl ImageDiskContainerBuilder {
     }
     /// <p>The block device mapping for the disk.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
-    /// <p>The format of the disk image being imported.</p>
+    /// <p>The format of the disk image being imported.</p> 
     /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
         self.format = Some(input.into());
         self
     }
-    /// <p>The format of the disk image being imported.</p>
+    /// <p>The format of the disk image being imported.</p> 
     /// <p>Valid values: <code>OVA</code> | <code>VHD</code> | <code>VHDX</code> | <code>VMDK</code> | <code>RAW</code> </p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +106,7 @@ impl ImageDiskContainerBuilder {
     }
     /// <p>The ID of the EBS snapshot to be used for importing the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +115,7 @@ impl ImageDiskContainerBuilder {
     }
     /// <p>The URL to the Amazon S3-based disk image being imported. The URL can either be a https URL (https://..) or an Amazon S3 URL (s3://..)</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The S3 bucket for the disk image.</p>
     pub fn user_bucket(mut self, input: crate::types::UserBucket) -> Self {
@@ -129,18 +124,24 @@ impl ImageDiskContainerBuilder {
     }
     /// <p>The S3 bucket for the disk image.</p>
     pub fn set_user_bucket(mut self, input: std::option::Option<crate::types::UserBucket>) -> Self {
-        self.user_bucket = input;
-        self
+        self.user_bucket = input; self
     }
     /// Consumes the builder and constructs a [`ImageDiskContainer`](crate::types::ImageDiskContainer).
     pub fn build(self) -> crate::types::ImageDiskContainer {
         crate::types::ImageDiskContainer {
-            description: self.description,
-            device_name: self.device_name,
-            format: self.format,
-            snapshot_id: self.snapshot_id,
-            url: self.url,
-            user_bucket: self.user_bucket,
+            description: self.description
+            ,
+            device_name: self.device_name
+            ,
+            format: self.format
+            ,
+            snapshot_id: self.snapshot_id
+            ,
+            url: self.url
+            ,
+            user_bucket: self.user_bucket
+            ,
         }
     }
 }
+

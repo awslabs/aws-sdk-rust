@@ -3,7 +3,7 @@
 /// <p>Contains the batch request error details associated with the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchItemError {
+pub struct BatchItemError  {
     /// <p>The error code associated with the batch request error.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::BatchItemErrorCode>,
@@ -13,11 +13,11 @@ pub struct BatchItemError {
 }
 impl BatchItemError {
     /// <p>The error code associated with the batch request error.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::BatchItemErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::BatchItemErrorCode> {
         self.code.as_ref()
     }
     /// <p>A message with the reason for the batch request error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl BatchItemErrorBuilder {
         self
     }
     /// <p>The error code associated with the batch request error.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::BatchItemErrorCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::BatchItemErrorCode>) -> Self {
+        self.code = input; self
     }
     /// <p>A message with the reason for the batch request error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl BatchItemErrorBuilder {
     }
     /// <p>A message with the reason for the batch request error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`BatchItemError`](crate::types::BatchItemError).
     pub fn build(self) -> crate::types::BatchItemError {
         crate::types::BatchItemError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

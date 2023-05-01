@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreManagedPrefixListVersionInput {
+pub struct RestoreManagedPrefixListVersionInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl RestoreManagedPrefixListVersionInput {
         self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The version to restore.</p>
@@ -36,7 +36,7 @@ impl RestoreManagedPrefixListVersionInput {
 }
 impl RestoreManagedPrefixListVersionInput {
     /// Creates a new builder-style object to manufacture [`RestoreManagedPrefixListVersionInput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput).
-    pub fn builder() -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder{
+    pub fn builder() -> crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder {
         crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The version to restore.</p>
     pub fn previous_version(mut self, input: i64) -> Self {
@@ -78,8 +76,7 @@ impl RestoreManagedPrefixListVersionInputBuilder {
     }
     /// <p>The version to restore.</p>
     pub fn set_previous_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.previous_version = input;
-        self
+        self.previous_version = input; self
     }
     /// <p>The current version number for the prefix list.</p>
     pub fn current_version(mut self, input: i64) -> Self {
@@ -88,16 +85,10 @@ impl RestoreManagedPrefixListVersionInputBuilder {
     }
     /// <p>The current version number for the prefix list.</p>
     pub fn set_current_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// Consumes the builder and constructs a [`RestoreManagedPrefixListVersionInput`](crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionInput {
                 dry_run: self.dry_run
@@ -112,3 +103,4 @@ impl RestoreManagedPrefixListVersionInputBuilder {
         )
     }
 }
+

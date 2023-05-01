@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointAuthorizationInput {
+pub struct DescribeEndpointAuthorizationInput  {
     /// <p>The cluster identifier of the cluster to access.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct DescribeEndpointAuthorizationInput {
 }
 impl DescribeEndpointAuthorizationInput {
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
-    pub fn account(&self) -> std::option::Option<&str> {
+    pub fn account(&self) -> std::option::Option<& str> {
         self.account.as_deref()
     }
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
@@ -37,13 +37,13 @@ impl DescribeEndpointAuthorizationInput {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeEndpointAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointAuthorizationInput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput).
-    pub fn builder() -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder{
+    pub fn builder() -> crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder {
         crate::operation::describe_endpoint_authorization::builders::DescribeEndpointAuthorizationInputBuilder::default()
     }
 }
@@ -65,12 +65,8 @@ impl DescribeEndpointAuthorizationInputBuilder {
         self
     }
     /// <p>The cluster identifier of the cluster to access.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +75,7 @@ impl DescribeEndpointAuthorizationInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
     pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
     pub fn grantee(mut self, input: bool) -> Self {
@@ -89,8 +84,7 @@ impl DescribeEndpointAuthorizationInputBuilder {
     }
     /// <p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>
     pub fn set_grantee(mut self, input: std::option::Option<bool>) -> Self {
-        self.grantee = input;
-        self
+        self.grantee = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -99,8 +93,7 @@ impl DescribeEndpointAuthorizationInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,24 +102,24 @@ impl DescribeEndpointAuthorizationInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeEndpointAuthorizationInput`](crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationInput {
-                cluster_identifier: self.cluster_identifier,
-                account: self.account,
-                grantee: self.grantee,
-                max_records: self.max_records,
-                marker: self.marker,
-            },
+                cluster_identifier: self.cluster_identifier
+                ,
+                account: self.account
+                ,
+                grantee: self.grantee
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+            }
         )
     }
 }
+

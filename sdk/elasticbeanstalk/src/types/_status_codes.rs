@@ -3,7 +3,7 @@
 /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatusCodes {
+pub struct StatusCodes  {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     #[doc(hidden)]
     pub status2xx: std::option::Option<i32>,
@@ -59,8 +59,7 @@ impl StatusCodesBuilder {
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     pub fn set_status2xx(mut self, input: std::option::Option<i32>) -> Self {
-        self.status2xx = input;
-        self
+        self.status2xx = input; self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     pub fn status3xx(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl StatusCodesBuilder {
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     pub fn set_status3xx(mut self, input: std::option::Option<i32>) -> Self {
-        self.status3xx = input;
-        self
+        self.status3xx = input; self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     pub fn status4xx(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl StatusCodesBuilder {
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     pub fn set_status4xx(mut self, input: std::option::Option<i32>) -> Self {
-        self.status4xx = input;
-        self
+        self.status4xx = input; self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     pub fn status5xx(mut self, input: i32) -> Self {
@@ -89,16 +86,20 @@ impl StatusCodesBuilder {
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     pub fn set_status5xx(mut self, input: std::option::Option<i32>) -> Self {
-        self.status5xx = input;
-        self
+        self.status5xx = input; self
     }
     /// Consumes the builder and constructs a [`StatusCodes`](crate::types::StatusCodes).
     pub fn build(self) -> crate::types::StatusCodes {
         crate::types::StatusCodes {
-            status2xx: self.status2xx,
-            status3xx: self.status3xx,
-            status4xx: self.status4xx,
-            status5xx: self.status5xx,
+            status2xx: self.status2xx
+            ,
+            status3xx: self.status3xx
+            ,
+            status4xx: self.status4xx
+            ,
+            status5xx: self.status5xx
+            ,
         }
     }
 }
+

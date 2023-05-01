@@ -3,7 +3,7 @@
 /// <p>Describes a VPC endpoint connection to a service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointConnection {
+pub struct VpcEndpointConnection  {
     /// <p>The ID of the service to which the endpoint is connected.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
@@ -40,47 +40,47 @@ pub struct VpcEndpointConnection {
 }
 impl VpcEndpointConnection {
     /// <p>The ID of the service to which the endpoint is connected.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the VPC endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
-    pub fn vpc_endpoint_owner(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_owner(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_owner.as_deref()
     }
     /// <p>The state of the VPC endpoint.</p>
-    pub fn vpc_endpoint_state(&self) -> std::option::Option<&crate::types::State> {
+    pub fn vpc_endpoint_state(&self) -> std::option::Option<& crate::types::State> {
         self.vpc_endpoint_state.as_ref()
     }
     /// <p>The date and time that the VPC endpoint was created.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The DNS entries for the VPC endpoint.</p>
-    pub fn dns_entries(&self) -> std::option::Option<&[crate::types::DnsEntry]> {
+    pub fn dns_entries(&self) -> std::option::Option<& [crate::types::DnsEntry]> {
         self.dns_entries.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the network load balancers for the service.</p>
-    pub fn network_load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn network_load_balancer_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.network_load_balancer_arns.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    pub fn gateway_load_balancer_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn gateway_load_balancer_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.gateway_load_balancer_arns.as_deref()
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The ID of the VPC endpoint connection.</p>
-    pub fn vpc_endpoint_connection_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_connection_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_connection_id.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -115,8 +115,7 @@ impl VpcEndpointConnectionBuilder {
     }
     /// <p>The ID of the service to which the endpoint is connected.</p>
     pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the VPC endpoint.</p>
     pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +124,7 @@ impl VpcEndpointConnectionBuilder {
     }
     /// <p>The ID of the VPC endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
     pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,12 +132,8 @@ impl VpcEndpointConnectionBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the VPC endpoint.</p>
-    pub fn set_vpc_endpoint_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpc_endpoint_owner = input;
-        self
+    pub fn set_vpc_endpoint_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpc_endpoint_owner = input; self
     }
     /// <p>The state of the VPC endpoint.</p>
     pub fn vpc_endpoint_state(mut self, input: crate::types::State) -> Self {
@@ -147,12 +141,8 @@ impl VpcEndpointConnectionBuilder {
         self
     }
     /// <p>The state of the VPC endpoint.</p>
-    pub fn set_vpc_endpoint_state(
-        mut self,
-        input: std::option::Option<crate::types::State>,
-    ) -> Self {
-        self.vpc_endpoint_state = input;
-        self
+    pub fn set_vpc_endpoint_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
+        self.vpc_endpoint_state = input; self
     }
     /// <p>The date and time that the VPC endpoint was created.</p>
     pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -160,12 +150,8 @@ impl VpcEndpointConnectionBuilder {
         self
     }
     /// <p>The date and time that the VPC endpoint was created.</p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_timestamp = input;
-        self
+    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_timestamp = input; self
     }
     /// Appends an item to `dns_entries`.
     ///
@@ -174,17 +160,13 @@ impl VpcEndpointConnectionBuilder {
     /// <p>The DNS entries for the VPC endpoint.</p>
     pub fn dns_entries(mut self, input: crate::types::DnsEntry) -> Self {
         let mut v = self.dns_entries.unwrap_or_default();
-        v.push(input);
-        self.dns_entries = Some(v);
-        self
+                        v.push(input);
+                        self.dns_entries = Some(v);
+                        self
     }
     /// <p>The DNS entries for the VPC endpoint.</p>
-    pub fn set_dns_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DnsEntry>>,
-    ) -> Self {
-        self.dns_entries = input;
-        self
+    pub fn set_dns_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::DnsEntry>>) -> Self {
+        self.dns_entries = input; self
     }
     /// Appends an item to `network_load_balancer_arns`.
     ///
@@ -193,17 +175,13 @@ impl VpcEndpointConnectionBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the network load balancers for the service.</p>
     pub fn network_load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.network_load_balancer_arns.unwrap_or_default();
-        v.push(input.into());
-        self.network_load_balancer_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.network_load_balancer_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the network load balancers for the service.</p>
-    pub fn set_network_load_balancer_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.network_load_balancer_arns = input;
-        self
+    pub fn set_network_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.network_load_balancer_arns = input; self
     }
     /// Appends an item to `gateway_load_balancer_arns`.
     ///
@@ -212,17 +190,13 @@ impl VpcEndpointConnectionBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
     pub fn gateway_load_balancer_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.gateway_load_balancer_arns.unwrap_or_default();
-        v.push(input.into());
-        self.gateway_load_balancer_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.gateway_load_balancer_arns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.</p>
-    pub fn set_gateway_load_balancer_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.gateway_load_balancer_arns = input;
-        self
+    pub fn set_gateway_load_balancer_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.gateway_load_balancer_arns = input; self
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -230,12 +204,8 @@ impl VpcEndpointConnectionBuilder {
         self
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
-        self.ip_address_type = input;
-        self
+    pub fn set_ip_address_type(mut self, input: std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input; self
     }
     /// <p>The ID of the VPC endpoint connection.</p>
     pub fn vpc_endpoint_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,12 +213,8 @@ impl VpcEndpointConnectionBuilder {
         self
     }
     /// <p>The ID of the VPC endpoint connection.</p>
-    pub fn set_vpc_endpoint_connection_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpc_endpoint_connection_id = input;
-        self
+    pub fn set_vpc_endpoint_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpc_endpoint_connection_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -257,32 +223,40 @@ impl VpcEndpointConnectionBuilder {
     /// <p>The tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
     pub fn build(self) -> crate::types::VpcEndpointConnection {
         crate::types::VpcEndpointConnection {
-            service_id: self.service_id,
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            vpc_endpoint_owner: self.vpc_endpoint_owner,
-            vpc_endpoint_state: self.vpc_endpoint_state,
-            creation_timestamp: self.creation_timestamp,
-            dns_entries: self.dns_entries,
-            network_load_balancer_arns: self.network_load_balancer_arns,
-            gateway_load_balancer_arns: self.gateway_load_balancer_arns,
-            ip_address_type: self.ip_address_type,
-            vpc_endpoint_connection_id: self.vpc_endpoint_connection_id,
-            tags: self.tags,
+            service_id: self.service_id
+            ,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            vpc_endpoint_owner: self.vpc_endpoint_owner
+            ,
+            vpc_endpoint_state: self.vpc_endpoint_state
+            ,
+            creation_timestamp: self.creation_timestamp
+            ,
+            dns_entries: self.dns_entries
+            ,
+            network_load_balancer_arns: self.network_load_balancer_arns
+            ,
+            gateway_load_balancer_arns: self.gateway_load_balancer_arns
+            ,
+            ip_address_type: self.ip_address_type
+            ,
+            vpc_endpoint_connection_id: self.vpc_endpoint_connection_id
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

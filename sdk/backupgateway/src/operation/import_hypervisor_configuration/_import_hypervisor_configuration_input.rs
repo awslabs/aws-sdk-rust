@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportHypervisorConfigurationInput {
+pub struct ImportHypervisorConfigurationInput  {
     /// <p>The name of the hypervisor.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -24,31 +24,31 @@ pub struct ImportHypervisorConfigurationInput {
 }
 impl ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>The username for the hypervisor.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The password for the hypervisor.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
     /// <p>The Key Management Service for the hypervisor.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The tags of the hypervisor configuration to import.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ImportHypervisorConfigurationInput {
+impl  std::fmt::Debug for ImportHypervisorConfigurationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportHypervisorConfigurationInput");
         formatter.field("name", &self.name);
@@ -62,7 +62,7 @@ impl std::fmt::Debug for ImportHypervisorConfigurationInput {
 }
 impl ImportHypervisorConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ImportHypervisorConfigurationInput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput).
-    pub fn builder() -> crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder {
         crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder::default()
     }
 }
@@ -86,8 +86,7 @@ impl ImportHypervisorConfigurationInputBuilder {
     }
     /// <p>The name of the hypervisor.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +95,7 @@ impl ImportHypervisorConfigurationInputBuilder {
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input;
-        self
+        self.host = input; self
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +104,7 @@ impl ImportHypervisorConfigurationInputBuilder {
     }
     /// <p>The username for the hypervisor.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The password for the hypervisor.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +113,7 @@ impl ImportHypervisorConfigurationInputBuilder {
     }
     /// <p>The password for the hypervisor.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// <p>The Key Management Service for the hypervisor.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +122,7 @@ impl ImportHypervisorConfigurationInputBuilder {
     }
     /// <p>The Key Management Service for the hypervisor.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -136,34 +131,31 @@ impl ImportHypervisorConfigurationInputBuilder {
     /// <p>The tags of the hypervisor configuration to import.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags of the hypervisor configuration to import.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`ImportHypervisorConfigurationInput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput {
-                name: self.name,
-                host: self.host,
-                username: self.username,
-                password: self.password,
-                kms_key_arn: self.kms_key_arn,
-                tags: self.tags,
-            },
+                name: self.name
+                ,
+                host: self.host
+                ,
+                username: self.username
+                ,
+                password: self.password
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -179,3 +171,4 @@ impl std::fmt::Debug for ImportHypervisorConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

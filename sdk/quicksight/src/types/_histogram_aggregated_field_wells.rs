@@ -3,14 +3,14 @@
 /// <p>The field well configuration of a histogram.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HistogramAggregatedFieldWells {
+pub struct HistogramAggregatedFieldWells  {
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
 }
 impl HistogramAggregatedFieldWells {
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl HistogramAggregatedFieldWellsBuilder {
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>The value field wells of a histogram. Values are aggregated by <code>COUNT</code> or <code>DISTINCT_COUNT</code>.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`HistogramAggregatedFieldWells`](crate::types::HistogramAggregatedFieldWells).
     pub fn build(self) -> crate::types::HistogramAggregatedFieldWells {
         crate::types::HistogramAggregatedFieldWells {
-            values: self.values,
+            values: self.values
+            ,
         }
     }
 }
+

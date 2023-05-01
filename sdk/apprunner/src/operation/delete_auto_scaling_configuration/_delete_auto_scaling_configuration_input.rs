@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAutoScalingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
+pub struct DeleteAutoScalingConfigurationInput  {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p> 
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutoScalingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p> 
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<& str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
 }
 impl DeleteAutoScalingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingConfigurationInput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder {
         crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder::default()
     }
 }
@@ -29,28 +29,19 @@ pub struct DeleteAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutoScalingConfigurationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p> 
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
     pub fn auto_scaling_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p> 
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is deleted.</p>
-    pub fn set_auto_scaling_configuration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_configuration_arn = input;
-        self
+    pub fn set_auto_scaling_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_configuration_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAutoScalingConfigurationInput`](crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationInput {
                 auto_scaling_configuration_arn: self.auto_scaling_configuration_arn
@@ -59,3 +50,4 @@ impl DeleteAutoScalingConfigurationInputBuilder {
         )
     }
 }
+

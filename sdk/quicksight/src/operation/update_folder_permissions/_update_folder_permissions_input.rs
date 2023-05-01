@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFolderPermissionsInput {
+pub struct UpdateFolderPermissionsInput  {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct UpdateFolderPermissionsInput {
 }
 impl UpdateFolderPermissionsInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<&str> {
+    pub fn folder_id(&self) -> std::option::Option<& str> {
         self.folder_id.as_deref()
     }
     /// <p>The permissions that you want to grant on a resource.</p>
-    pub fn grant_permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn grant_permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.grant_permissions.as_deref()
     }
     /// <p>The permissions that you want to revoke from a resource.</p>
-    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn revoke_permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.revoke_permissions.as_deref()
     }
 }
 impl UpdateFolderPermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateFolderPermissionsInput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder {
         crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder::default()
     }
 }
@@ -49,10 +47,8 @@ impl UpdateFolderPermissionsInput {
 pub struct UpdateFolderPermissionsInputBuilder {
     pub(crate) aws_account_id: std::option::Option<std::string::String>,
     pub(crate) folder_id: std::option::Option<std::string::String>,
-    pub(crate) grant_permissions:
-        std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_permissions:
-        std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) revoke_permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateFolderPermissionsInputBuilder {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
@@ -62,8 +58,7 @@ impl UpdateFolderPermissionsInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +67,7 @@ impl UpdateFolderPermissionsInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input;
-        self
+        self.folder_id = input; self
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -82,17 +76,13 @@ impl UpdateFolderPermissionsInputBuilder {
     /// <p>The permissions that you want to grant on a resource.</p>
     pub fn grant_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.grant_permissions.unwrap_or_default();
-        v.push(input);
-        self.grant_permissions = Some(v);
-        self
+                        v.push(input);
+                        self.grant_permissions = Some(v);
+                        self
     }
     /// <p>The permissions that you want to grant on a resource.</p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.grant_permissions = input;
-        self
+    pub fn set_grant_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.grant_permissions = input; self
     }
     /// Appends an item to `revoke_permissions`.
     ///
@@ -101,32 +91,28 @@ impl UpdateFolderPermissionsInputBuilder {
     /// <p>The permissions that you want to revoke from a resource.</p>
     pub fn revoke_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.revoke_permissions.unwrap_or_default();
-        v.push(input);
-        self.revoke_permissions = Some(v);
-        self
+                        v.push(input);
+                        self.revoke_permissions = Some(v);
+                        self
     }
     /// <p>The permissions that you want to revoke from a resource.</p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.revoke_permissions = input;
-        self
+    pub fn set_revoke_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.revoke_permissions = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFolderPermissionsInput`](crate::operation::update_folder_permissions::UpdateFolderPermissionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_folder_permissions::UpdateFolderPermissionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_folder_permissions::UpdateFolderPermissionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_folder_permissions::UpdateFolderPermissionsInput {
-                aws_account_id: self.aws_account_id,
-                folder_id: self.folder_id,
-                grant_permissions: self.grant_permissions,
-                revoke_permissions: self.revoke_permissions,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                folder_id: self.folder_id
+                ,
+                grant_permissions: self.grant_permissions
+                ,
+                revoke_permissions: self.revoke_permissions
+                ,
+            }
         )
     }
 }
+

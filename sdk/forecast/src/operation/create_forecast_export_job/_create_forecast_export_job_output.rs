@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateForecastExportJobOutput {
+pub struct CreateForecastExportJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the export job.</p>
     #[doc(hidden)]
     pub forecast_export_job_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateForecastExportJobOutput {
 }
 impl CreateForecastExportJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the export job.</p>
-    pub fn forecast_export_job_arn(&self) -> std::option::Option<&str> {
+    pub fn forecast_export_job_arn(&self) -> std::option::Option<& str> {
         self.forecast_export_job_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateForecastExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateForecastExportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateForecastExportJobOutput`](crate::operation::create_forecast_export_job::CreateForecastExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobOutputBuilder {
         crate::operation::create_forecast_export_job::builders::CreateForecastExportJobOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl CreateForecastExportJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the export job.</p>
-    pub fn set_forecast_export_job_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.forecast_export_job_arn = input;
-        self
+    pub fn set_forecast_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.forecast_export_job_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateForecastExportJobOutput`](crate::operation::create_forecast_export_job::CreateForecastExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_forecast_export_job::CreateForecastExportJobOutput {
+    pub fn build(self) -> crate::operation::create_forecast_export_job::CreateForecastExportJobOutput {
         crate::operation::create_forecast_export_job::CreateForecastExportJobOutput {
-            forecast_export_job_arn: self.forecast_export_job_arn,
+            forecast_export_job_arn: self.forecast_export_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

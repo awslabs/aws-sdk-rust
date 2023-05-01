@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ocsfeventclass = unimplemented!();
 /// match ocsfeventclass {
@@ -61,22 +61,14 @@
 /// Specifically, when `ocsfeventclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OcsfEventClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OcsfEventClass {
     #[allow(missing_docs)] // documentation missing in model
     AccessActivity,
@@ -145,138 +137,103 @@ pub enum OcsfEventClass {
     #[allow(missing_docs)] // documentation missing in model
     VirtualMachineActivity,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OcsfEventClass {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_ACTIVITY" => OcsfEventClass::AccessActivity,
-            "ACCOUNT_CHANGE" => OcsfEventClass::AccountChange,
-            "AUTHENTICATION" => OcsfEventClass::Authentication,
-            "AUTHORIZATION" => OcsfEventClass::Authorization,
-            "CLOUD_API" => OcsfEventClass::CloudApi,
-            "CLOUD_STORAGE" => OcsfEventClass::CloudStorage,
-            "CONFIG_STATE" => OcsfEventClass::ConfigState,
-            "CONTAINER_LIFECYCLE" => OcsfEventClass::ContainerLifecycle,
-            "DATABASE_LIFECYCLE" => OcsfEventClass::DatabaseLifecycle,
-            "DHCP_ACTIVITY" => OcsfEventClass::DhcpActivity,
-            "DNS_ACTIVITY" => OcsfEventClass::DnsActivity,
-            "ENTITY_MANAGEMENT_AUDIT" => OcsfEventClass::EntityManagementAudit,
-            "FILE_ACTIVITY" => OcsfEventClass::FileActivity,
-            "FTP_ACTIVITY" => OcsfEventClass::FtpActivity,
-            "HTTP_ACTIVITY" => OcsfEventClass::HttpActivity,
-            "INVENTORY_INFO" => OcsfEventClass::InventoryInfo,
-            "KERNEL_ACTIVITY" => OcsfEventClass::KernelActivity,
-            "KERNEL_EXTENSION" => OcsfEventClass::KernelExtension,
-            "MEMORY_ACTIVITY" => OcsfEventClass::MemoryActivity,
-            "MODULE_ACTIVITY" => OcsfEventClass::ModuleActivity,
-            "NETWORK_ACTIVITY" => OcsfEventClass::NetworkActivity,
-            "PROCESS_ACTIVITY" => OcsfEventClass::ProcessActivity,
-            "RDP_ACTIVITY" => OcsfEventClass::RdpActivity,
-            "REGISTRY_KEY_ACTIVITY" => OcsfEventClass::RegistryKeyActivity,
-            "REGISTRY_VALUE_ACTIVITY" => OcsfEventClass::RegistryValueActivity,
-            "RESOURCE_ACTIVITY" => OcsfEventClass::ResourceActivity,
-            "RFB_ACTIVITY" => OcsfEventClass::RfbActivity,
-            "SCHEDULED_JOB_ACTIVITY" => OcsfEventClass::ScheduledJobActivity,
-            "SECURITY_FINDING" => OcsfEventClass::SecurityFinding,
-            "SMB_ACTIVITY" => OcsfEventClass::SmbActivity,
-            "SMTP_ACTIVITY" => OcsfEventClass::SmtpActivity,
-            "SSH_ACTIVITY" => OcsfEventClass::SshActivity,
-            "VIRTUAL_MACHINE_ACTIVITY" => OcsfEventClass::VirtualMachineActivity,
-            other => {
-                OcsfEventClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_ACTIVITY" => OcsfEventClass::AccessActivity,
+"ACCOUNT_CHANGE" => OcsfEventClass::AccountChange,
+"AUTHENTICATION" => OcsfEventClass::Authentication,
+"AUTHORIZATION" => OcsfEventClass::Authorization,
+"CLOUD_API" => OcsfEventClass::CloudApi,
+"CLOUD_STORAGE" => OcsfEventClass::CloudStorage,
+"CONFIG_STATE" => OcsfEventClass::ConfigState,
+"CONTAINER_LIFECYCLE" => OcsfEventClass::ContainerLifecycle,
+"DATABASE_LIFECYCLE" => OcsfEventClass::DatabaseLifecycle,
+"DHCP_ACTIVITY" => OcsfEventClass::DhcpActivity,
+"DNS_ACTIVITY" => OcsfEventClass::DnsActivity,
+"ENTITY_MANAGEMENT_AUDIT" => OcsfEventClass::EntityManagementAudit,
+"FILE_ACTIVITY" => OcsfEventClass::FileActivity,
+"FTP_ACTIVITY" => OcsfEventClass::FtpActivity,
+"HTTP_ACTIVITY" => OcsfEventClass::HttpActivity,
+"INVENTORY_INFO" => OcsfEventClass::InventoryInfo,
+"KERNEL_ACTIVITY" => OcsfEventClass::KernelActivity,
+"KERNEL_EXTENSION" => OcsfEventClass::KernelExtension,
+"MEMORY_ACTIVITY" => OcsfEventClass::MemoryActivity,
+"MODULE_ACTIVITY" => OcsfEventClass::ModuleActivity,
+"NETWORK_ACTIVITY" => OcsfEventClass::NetworkActivity,
+"PROCESS_ACTIVITY" => OcsfEventClass::ProcessActivity,
+"RDP_ACTIVITY" => OcsfEventClass::RdpActivity,
+"REGISTRY_KEY_ACTIVITY" => OcsfEventClass::RegistryKeyActivity,
+"REGISTRY_VALUE_ACTIVITY" => OcsfEventClass::RegistryValueActivity,
+"RESOURCE_ACTIVITY" => OcsfEventClass::ResourceActivity,
+"RFB_ACTIVITY" => OcsfEventClass::RfbActivity,
+"SCHEDULED_JOB_ACTIVITY" => OcsfEventClass::ScheduledJobActivity,
+"SECURITY_FINDING" => OcsfEventClass::SecurityFinding,
+"SMB_ACTIVITY" => OcsfEventClass::SmbActivity,
+"SMTP_ACTIVITY" => OcsfEventClass::SmtpActivity,
+"SSH_ACTIVITY" => OcsfEventClass::SshActivity,
+"VIRTUAL_MACHINE_ACTIVITY" => OcsfEventClass::VirtualMachineActivity,
+other => OcsfEventClass::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for OcsfEventClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OcsfEventClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OcsfEventClass::from(s))
+                }
+            }
 impl OcsfEventClass {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            OcsfEventClass::AccessActivity => "ACCESS_ACTIVITY",
-            OcsfEventClass::AccountChange => "ACCOUNT_CHANGE",
-            OcsfEventClass::Authentication => "AUTHENTICATION",
-            OcsfEventClass::Authorization => "AUTHORIZATION",
-            OcsfEventClass::CloudApi => "CLOUD_API",
-            OcsfEventClass::CloudStorage => "CLOUD_STORAGE",
-            OcsfEventClass::ConfigState => "CONFIG_STATE",
-            OcsfEventClass::ContainerLifecycle => "CONTAINER_LIFECYCLE",
-            OcsfEventClass::DatabaseLifecycle => "DATABASE_LIFECYCLE",
-            OcsfEventClass::DhcpActivity => "DHCP_ACTIVITY",
-            OcsfEventClass::DnsActivity => "DNS_ACTIVITY",
-            OcsfEventClass::EntityManagementAudit => "ENTITY_MANAGEMENT_AUDIT",
-            OcsfEventClass::FileActivity => "FILE_ACTIVITY",
-            OcsfEventClass::FtpActivity => "FTP_ACTIVITY",
-            OcsfEventClass::HttpActivity => "HTTP_ACTIVITY",
-            OcsfEventClass::InventoryInfo => "INVENTORY_INFO",
-            OcsfEventClass::KernelActivity => "KERNEL_ACTIVITY",
-            OcsfEventClass::KernelExtension => "KERNEL_EXTENSION",
-            OcsfEventClass::MemoryActivity => "MEMORY_ACTIVITY",
-            OcsfEventClass::ModuleActivity => "MODULE_ACTIVITY",
-            OcsfEventClass::NetworkActivity => "NETWORK_ACTIVITY",
-            OcsfEventClass::ProcessActivity => "PROCESS_ACTIVITY",
-            OcsfEventClass::RdpActivity => "RDP_ACTIVITY",
-            OcsfEventClass::RegistryKeyActivity => "REGISTRY_KEY_ACTIVITY",
-            OcsfEventClass::RegistryValueActivity => "REGISTRY_VALUE_ACTIVITY",
-            OcsfEventClass::ResourceActivity => "RESOURCE_ACTIVITY",
-            OcsfEventClass::RfbActivity => "RFB_ACTIVITY",
-            OcsfEventClass::ScheduledJobActivity => "SCHEDULED_JOB_ACTIVITY",
-            OcsfEventClass::SecurityFinding => "SECURITY_FINDING",
-            OcsfEventClass::SmbActivity => "SMB_ACTIVITY",
-            OcsfEventClass::SmtpActivity => "SMTP_ACTIVITY",
-            OcsfEventClass::SshActivity => "SSH_ACTIVITY",
-            OcsfEventClass::VirtualMachineActivity => "VIRTUAL_MACHINE_ACTIVITY",
-            OcsfEventClass::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_ACTIVITY",
-            "ACCOUNT_CHANGE",
-            "AUTHENTICATION",
-            "AUTHORIZATION",
-            "CLOUD_API",
-            "CLOUD_STORAGE",
-            "CONFIG_STATE",
-            "CONTAINER_LIFECYCLE",
-            "DATABASE_LIFECYCLE",
-            "DHCP_ACTIVITY",
-            "DNS_ACTIVITY",
-            "ENTITY_MANAGEMENT_AUDIT",
-            "FILE_ACTIVITY",
-            "FTP_ACTIVITY",
-            "HTTP_ACTIVITY",
-            "INVENTORY_INFO",
-            "KERNEL_ACTIVITY",
-            "KERNEL_EXTENSION",
-            "MEMORY_ACTIVITY",
-            "MODULE_ACTIVITY",
-            "NETWORK_ACTIVITY",
-            "PROCESS_ACTIVITY",
-            "RDP_ACTIVITY",
-            "REGISTRY_KEY_ACTIVITY",
-            "REGISTRY_VALUE_ACTIVITY",
-            "RESOURCE_ACTIVITY",
-            "RFB_ACTIVITY",
-            "SCHEDULED_JOB_ACTIVITY",
-            "SECURITY_FINDING",
-            "SMB_ACTIVITY",
-            "SMTP_ACTIVITY",
-            "SSH_ACTIVITY",
-            "VIRTUAL_MACHINE_ACTIVITY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    OcsfEventClass::AccessActivity => "ACCESS_ACTIVITY",
+    OcsfEventClass::AccountChange => "ACCOUNT_CHANGE",
+    OcsfEventClass::Authentication => "AUTHENTICATION",
+    OcsfEventClass::Authorization => "AUTHORIZATION",
+    OcsfEventClass::CloudApi => "CLOUD_API",
+    OcsfEventClass::CloudStorage => "CLOUD_STORAGE",
+    OcsfEventClass::ConfigState => "CONFIG_STATE",
+    OcsfEventClass::ContainerLifecycle => "CONTAINER_LIFECYCLE",
+    OcsfEventClass::DatabaseLifecycle => "DATABASE_LIFECYCLE",
+    OcsfEventClass::DhcpActivity => "DHCP_ACTIVITY",
+    OcsfEventClass::DnsActivity => "DNS_ACTIVITY",
+    OcsfEventClass::EntityManagementAudit => "ENTITY_MANAGEMENT_AUDIT",
+    OcsfEventClass::FileActivity => "FILE_ACTIVITY",
+    OcsfEventClass::FtpActivity => "FTP_ACTIVITY",
+    OcsfEventClass::HttpActivity => "HTTP_ACTIVITY",
+    OcsfEventClass::InventoryInfo => "INVENTORY_INFO",
+    OcsfEventClass::KernelActivity => "KERNEL_ACTIVITY",
+    OcsfEventClass::KernelExtension => "KERNEL_EXTENSION",
+    OcsfEventClass::MemoryActivity => "MEMORY_ACTIVITY",
+    OcsfEventClass::ModuleActivity => "MODULE_ACTIVITY",
+    OcsfEventClass::NetworkActivity => "NETWORK_ACTIVITY",
+    OcsfEventClass::ProcessActivity => "PROCESS_ACTIVITY",
+    OcsfEventClass::RdpActivity => "RDP_ACTIVITY",
+    OcsfEventClass::RegistryKeyActivity => "REGISTRY_KEY_ACTIVITY",
+    OcsfEventClass::RegistryValueActivity => "REGISTRY_VALUE_ACTIVITY",
+    OcsfEventClass::ResourceActivity => "RESOURCE_ACTIVITY",
+    OcsfEventClass::RfbActivity => "RFB_ACTIVITY",
+    OcsfEventClass::ScheduledJobActivity => "SCHEDULED_JOB_ACTIVITY",
+    OcsfEventClass::SecurityFinding => "SECURITY_FINDING",
+    OcsfEventClass::SmbActivity => "SMB_ACTIVITY",
+    OcsfEventClass::SmtpActivity => "SMTP_ACTIVITY",
+    OcsfEventClass::SshActivity => "SSH_ACTIVITY",
+    OcsfEventClass::VirtualMachineActivity => "VIRTUAL_MACHINE_ACTIVITY",
+    OcsfEventClass::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_ACTIVITY", "ACCOUNT_CHANGE", "AUTHENTICATION", "AUTHORIZATION", "CLOUD_API", "CLOUD_STORAGE", "CONFIG_STATE", "CONTAINER_LIFECYCLE", "DATABASE_LIFECYCLE", "DHCP_ACTIVITY", "DNS_ACTIVITY", "ENTITY_MANAGEMENT_AUDIT", "FILE_ACTIVITY", "FTP_ACTIVITY", "HTTP_ACTIVITY", "INVENTORY_INFO", "KERNEL_ACTIVITY", "KERNEL_EXTENSION", "MEMORY_ACTIVITY", "MODULE_ACTIVITY", "NETWORK_ACTIVITY", "PROCESS_ACTIVITY", "RDP_ACTIVITY", "REGISTRY_KEY_ACTIVITY", "REGISTRY_VALUE_ACTIVITY", "RESOURCE_ACTIVITY", "RFB_ACTIVITY", "SCHEDULED_JOB_ACTIVITY", "SECURITY_FINDING", "SMB_ACTIVITY", "SMTP_ACTIVITY", "SSH_ACTIVITY", "VIRTUAL_MACHINE_ACTIVITY"]
+                }
+            }
 impl AsRef<str> for OcsfEventClass {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

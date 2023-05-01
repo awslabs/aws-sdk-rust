@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsInput {
+pub struct ListFindingsInput  {
     /// <p>The maximum number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -22,15 +22,15 @@ impl ListFindingsInput {
         self.max_results
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Details on the filters to apply to your finding results.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::types::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>Details on the sort criteria to apply to your finding results.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<&crate::types::SortCriteria> {
+    pub fn sort_criteria(&self) -> std::option::Option<& crate::types::SortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl ListFindingsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ListFindingsInputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Details on the filters to apply to your finding results.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -77,12 +75,8 @@ impl ListFindingsInputBuilder {
         self
     }
     /// <p>Details on the filters to apply to your finding results.</p>
-    pub fn set_filter_criteria(
-        mut self,
-        input: std::option::Option<crate::types::FilterCriteria>,
-    ) -> Self {
-        self.filter_criteria = input;
-        self
+    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::FilterCriteria>) -> Self {
+        self.filter_criteria = input; self
     }
     /// <p>Details on the sort criteria to apply to your finding results.</p>
     pub fn sort_criteria(mut self, input: crate::types::SortCriteria) -> Self {
@@ -90,25 +84,23 @@ impl ListFindingsInputBuilder {
         self
     }
     /// <p>Details on the sort criteria to apply to your finding results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: std::option::Option<crate::types::SortCriteria>,
-    ) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::SortCriteria>) -> Self {
+        self.sort_criteria = input; self
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_findings::ListFindingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_findings::ListFindingsInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            filter_criteria: self.filter_criteria,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> Result<crate::operation::list_findings::ListFindingsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_findings::ListFindingsInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                filter_criteria: self.filter_criteria
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

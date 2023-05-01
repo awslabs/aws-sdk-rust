@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualRouterInput {
+pub struct DeleteVirtualRouterInput  {
     /// <p>The name of the virtual router to delete.</p>
     #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct DeleteVirtualRouterInput {
 }
 impl DeleteVirtualRouterInput {
     /// <p>The name of the virtual router to delete.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The name of the service mesh to delete the virtual router in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
 }
 impl DeleteVirtualRouterInput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualRouterInput`](crate::operation::delete_virtual_router::DeleteVirtualRouterInput).
-    pub fn builder(
-    ) -> crate::operation::delete_virtual_router::builders::DeleteVirtualRouterInputBuilder {
-        crate::operation::delete_virtual_router::builders::DeleteVirtualRouterInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_virtual_router::builders::DeleteVirtualRouterInputBuilder {
+        crate::operation::delete_virtual_router::builders::DeleteVirtualRouterInputBuilder::default()
     }
 }
 
@@ -51,12 +49,8 @@ impl DeleteVirtualRouterInputBuilder {
         self
     }
     /// <p>The name of the virtual router to delete.</p>
-    pub fn set_virtual_router_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_router_name = input;
-        self
+    pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_router_name = input; self
     }
     /// <p>The name of the service mesh to delete the virtual router in.</p>
     pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl DeleteVirtualRouterInputBuilder {
     }
     /// <p>The name of the service mesh to delete the virtual router in.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl DeleteVirtualRouterInputBuilder {
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_owner = input;
-        self
+        self.mesh_owner = input; self
     }
     /// Consumes the builder and constructs a [`DeleteVirtualRouterInput`](crate::operation::delete_virtual_router::DeleteVirtualRouterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_virtual_router::DeleteVirtualRouterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_virtual_router::DeleteVirtualRouterInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_virtual_router::DeleteVirtualRouterInput {
-                virtual_router_name: self.virtual_router_name,
-                mesh_name: self.mesh_name,
-                mesh_owner: self.mesh_owner,
-            },
+                virtual_router_name: self.virtual_router_name
+                ,
+                mesh_name: self.mesh_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+            }
         )
     }
 }
+

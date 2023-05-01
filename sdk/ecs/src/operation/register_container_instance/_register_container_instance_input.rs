@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterContainerInstanceInput {
+pub struct RegisterContainerInstanceInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -27,71 +27,71 @@ pub struct RegisterContainerInstanceInput {
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
     #[doc(hidden)]
     pub platform_devices: std::option::Option<std::vec::Vec<crate::types::PlatformDevice>>,
-    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl RegisterContainerInstanceInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> std::option::Option<&str> {
+    pub fn cluster(&self) -> std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
-    pub fn instance_identity_document(&self) -> std::option::Option<&str> {
+    pub fn instance_identity_document(&self) -> std::option::Option<& str> {
         self.instance_identity_document.as_deref()
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
-    pub fn instance_identity_document_signature(&self) -> std::option::Option<&str> {
+    pub fn instance_identity_document_signature(&self) -> std::option::Option<& str> {
         self.instance_identity_document_signature.as_deref()
     }
     /// <p>The resources available on the instance.</p>
-    pub fn total_resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn total_resources(&self) -> std::option::Option<& [crate::types::Resource]> {
         self.total_resources.as_deref()
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
-    pub fn version_info(&self) -> std::option::Option<&crate::types::VersionInfo> {
+    pub fn version_info(&self) -> std::option::Option<& crate::types::VersionInfo> {
         self.version_info.as_ref()
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    pub fn container_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn container_instance_arn(&self) -> std::option::Option<& str> {
         self.container_instance_arn.as_deref()
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::types::Attribute]> {
         self.attributes.as_deref()
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub fn platform_devices(&self) -> std::option::Option<&[crate::types::PlatformDevice]> {
+    pub fn platform_devices(&self) -> std::option::Option<& [crate::types::PlatformDevice]> {
         self.platform_devices.as_deref()
     }
-    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
     /// </ul>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl RegisterContainerInstanceInput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerInstanceInput`](crate::operation::register_container_instance::RegisterContainerInstanceInput).
-    pub fn builder() -> crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder{
+    pub fn builder() -> crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder {
         crate::operation::register_container_instance::builders::RegisterContainerInstanceInputBuilder::default()
     }
 }
@@ -118,8 +118,7 @@ impl RegisterContainerInstanceInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to register your container instance with. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
     pub fn instance_identity_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,28 +126,17 @@ impl RegisterContainerInstanceInputBuilder {
         self
     }
     /// <p>The instance identity document for the EC2 instance to register. This document can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
-    pub fn set_instance_identity_document(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_identity_document = input;
-        self
+    pub fn set_instance_identity_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_identity_document = input; self
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
-    pub fn instance_identity_document_signature(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn instance_identity_document_signature(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_identity_document_signature = Some(input.into());
         self
     }
     /// <p>The instance identity document signature for the EC2 instance to register. This signature can be found by running the following command from the instance: <code>curl http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
-    pub fn set_instance_identity_document_signature(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_identity_document_signature = input;
-        self
+    pub fn set_instance_identity_document_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_identity_document_signature = input; self
     }
     /// Appends an item to `total_resources`.
     ///
@@ -157,17 +145,13 @@ impl RegisterContainerInstanceInputBuilder {
     /// <p>The resources available on the instance.</p>
     pub fn total_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.total_resources.unwrap_or_default();
-        v.push(input);
-        self.total_resources = Some(v);
-        self
+                        v.push(input);
+                        self.total_resources = Some(v);
+                        self
     }
     /// <p>The resources available on the instance.</p>
-    pub fn set_total_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
-        self.total_resources = input;
-        self
+    pub fn set_total_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Resource>>) -> Self {
+        self.total_resources = input; self
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
     pub fn version_info(mut self, input: crate::types::VersionInfo) -> Self {
@@ -175,12 +159,8 @@ impl RegisterContainerInstanceInputBuilder {
         self
     }
     /// <p>The version information for the Amazon ECS container agent and Docker daemon that runs on the container instance.</p>
-    pub fn set_version_info(
-        mut self,
-        input: std::option::Option<crate::types::VersionInfo>,
-    ) -> Self {
-        self.version_info = input;
-        self
+    pub fn set_version_info(mut self, input: std::option::Option<crate::types::VersionInfo>) -> Self {
+        self.version_info = input; self
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
     pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,12 +168,8 @@ impl RegisterContainerInstanceInputBuilder {
         self
     }
     /// <p>The ARN of the container instance (if it was previously registered).</p>
-    pub fn set_container_instance_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.container_instance_arn = input;
-        self
+    pub fn set_container_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.container_instance_arn = input; self
     }
     /// Appends an item to `attributes`.
     ///
@@ -202,17 +178,13 @@ impl RegisterContainerInstanceInputBuilder {
     /// <p>The container instance attributes that this container instance supports.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = Some(v);
-        self
+                        v.push(input);
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>The container instance attributes that this container instance supports.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// Appends an item to `platform_devices`.
     ///
@@ -221,76 +193,73 @@ impl RegisterContainerInstanceInputBuilder {
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
     pub fn platform_devices(mut self, input: crate::types::PlatformDevice) -> Self {
         let mut v = self.platform_devices.unwrap_or_default();
-        v.push(input);
-        self.platform_devices = Some(v);
-        self
+                        v.push(input);
+                        self.platform_devices = Some(v);
+                        self
     }
     /// <p>The devices that are available on the container instance. The only supported device type is a GPU.</p>
-    pub fn set_platform_devices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlatformDevice>>,
-    ) -> Self {
-        self.platform_devices = input;
-        self
+    pub fn set_platform_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlatformDevice>>) -> Self {
+        self.platform_devices = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
+    /// <p>The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists of a key and an optional value. You define both.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`RegisterContainerInstanceInput`](crate::operation::register_container_instance::RegisterContainerInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_container_instance::RegisterContainerInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::register_container_instance::RegisterContainerInstanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::register_container_instance::RegisterContainerInstanceInput {
-                cluster: self.cluster,
-                instance_identity_document: self.instance_identity_document,
-                instance_identity_document_signature: self.instance_identity_document_signature,
-                total_resources: self.total_resources,
-                version_info: self.version_info,
-                container_instance_arn: self.container_instance_arn,
-                attributes: self.attributes,
-                platform_devices: self.platform_devices,
-                tags: self.tags,
-            },
+                cluster: self.cluster
+                ,
+                instance_identity_document: self.instance_identity_document
+                ,
+                instance_identity_document_signature: self.instance_identity_document_signature
+                ,
+                total_resources: self.total_resources
+                ,
+                version_info: self.version_info
+                ,
+                container_instance_arn: self.container_instance_arn
+                ,
+                attributes: self.attributes
+                ,
+                platform_devices: self.platform_devices
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about one of this monitoring account's sinks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSinksItem {
+pub struct ListSinksItem  {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ListSinksItem {
 }
 impl ListSinksItem {
     /// <p>The ARN of the sink.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the sink.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ListSinksItemBuilder {
     }
     /// <p>The ARN of the sink.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ListSinksItemBuilder {
     }
     /// <p>The random ID string that Amazon Web Services generated as part of the sink ARN.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the sink.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ListSinksItemBuilder {
     }
     /// <p>The name of the sink.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`ListSinksItem`](crate::types::ListSinksItem).
     pub fn build(self) -> crate::types::ListSinksItem {
         crate::types::ListSinksItem {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

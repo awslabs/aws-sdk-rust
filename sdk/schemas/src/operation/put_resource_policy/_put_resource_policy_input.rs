@@ -3,7 +3,7 @@
 /// <p>The name of the policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>The resource-based policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct PutResourcePolicyInput {
 }
 impl PutResourcePolicyInput {
     /// <p>The resource-based policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The revision ID of the policy.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl PutResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
         crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The resource-based policy.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input;
-        self
+        self.policy = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The revision ID of the policy.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +69,20 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>The revision ID of the policy.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_resource_policy::PutResourcePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_resource_policy::PutResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_resource_policy::PutResourcePolicyInput {
-                policy: self.policy,
-                registry_name: self.registry_name,
-                revision_id: self.revision_id,
-            },
+                policy: self.policy
+                ,
+                registry_name: self.registry_name
+                ,
+                revision_id: self.revision_id
+                ,
+            }
         )
     }
 }
+

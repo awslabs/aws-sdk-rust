@@ -3,17 +3,17 @@
 /// <p>Contains the parameters for DescribeNetworkInterfacePermissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNetworkInterfacePermissionsInput {
+pub struct DescribeNetworkInterfacePermissionsInput  {
     /// <p>The network interface permission IDs.</p>
     #[doc(hidden)]
     pub network_interface_permission_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li>
-    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
-    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -26,22 +26,22 @@ pub struct DescribeNetworkInterfacePermissionsInput {
 }
 impl DescribeNetworkInterfacePermissionsInput {
     /// <p>The network interface permission IDs.</p>
-    pub fn network_interface_permission_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn network_interface_permission_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.network_interface_permission_ids.as_deref()
     }
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li>
-    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
-    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -51,7 +51,7 @@ impl DescribeNetworkInterfacePermissionsInput {
 }
 impl DescribeNetworkInterfacePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
-    pub fn builder() -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder {
         crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder::default()
     }
 }
@@ -60,8 +60,7 @@ impl DescribeNetworkInterfacePermissionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsInputBuilder {
-    pub(crate) network_interface_permission_ids:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) network_interface_permission_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
@@ -72,55 +71,44 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     /// To override the contents of this collection use [`set_network_interface_permission_ids`](Self::set_network_interface_permission_ids).
     ///
     /// <p>The network interface permission IDs.</p>
-    pub fn network_interface_permission_ids(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn network_interface_permission_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.network_interface_permission_ids.unwrap_or_default();
-        v.push(input.into());
-        self.network_interface_permission_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.network_interface_permission_ids = Some(v);
+                        self
     }
     /// <p>The network interface permission IDs.</p>
-    pub fn set_network_interface_permission_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.network_interface_permission_ids = input;
-        self
+    pub fn set_network_interface_permission_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.network_interface_permission_ids = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li>
-    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
-    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>One or more filters.</p>
-    /// <ul>
-    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li>
-    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li>
-    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li>
-    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li>
+    /// <p>One or more filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>network-interface-permission.network-interface-permission-id</code> - The ID of the permission.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.network-interface-id</code> - The ID of the network interface.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services account ID.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.aws-service</code> - The Amazon Web Service.</p> </li> 
+    /// <li> <p> <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +117,7 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -139,11 +126,10 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. If this parameter is not specified, up to 50 results are returned by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeNetworkInterfacePermissionsInput`](crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissionsInput {
                 network_interface_permission_ids: self.network_interface_permission_ids
@@ -158,3 +144,4 @@ impl DescribeNetworkInterfacePermissionsInputBuilder {
         )
     }
 }
+

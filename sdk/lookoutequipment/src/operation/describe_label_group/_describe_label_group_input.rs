@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLabelGroupInput {
+pub struct DescribeLabelGroupInput  {
     /// <p> Returns the name of the label group. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeLabelGroupInput {
     /// <p> Returns the name of the label group. </p>
-    pub fn label_group_name(&self) -> std::option::Option<&str> {
+    pub fn label_group_name(&self) -> std::option::Option<& str> {
         self.label_group_name.as_deref()
     }
 }
 impl DescribeLabelGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
-    pub fn builder(
-    ) -> crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder {
         crate::operation::describe_label_group::builders::DescribeLabelGroupInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeLabelGroupInputBuilder {
     }
     /// <p> Returns the name of the label group. </p>
     pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_name = input;
-        self
+        self.label_group_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLabelGroupInput`](crate::operation::describe_label_group::DescribeLabelGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_label_group::DescribeLabelGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_label_group::DescribeLabelGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_label_group::DescribeLabelGroupInput {
-                label_group_name: self.label_group_name,
-            },
+                label_group_name: self.label_group_name
+                ,
+            }
         )
     }
 }
+

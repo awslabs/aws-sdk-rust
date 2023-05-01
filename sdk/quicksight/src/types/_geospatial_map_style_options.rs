@@ -3,14 +3,14 @@
 /// <p>The map style options of the geospatial map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeospatialMapStyleOptions {
+pub struct GeospatialMapStyleOptions  {
     /// <p>The base map style of the geospatial map.</p>
     #[doc(hidden)]
     pub base_map_style: std::option::Option<crate::types::BaseMapStyleType>,
 }
 impl GeospatialMapStyleOptions {
     /// <p>The base map style of the geospatial map.</p>
-    pub fn base_map_style(&self) -> std::option::Option<&crate::types::BaseMapStyleType> {
+    pub fn base_map_style(&self) -> std::option::Option<& crate::types::BaseMapStyleType> {
         self.base_map_style.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl GeospatialMapStyleOptionsBuilder {
         self
     }
     /// <p>The base map style of the geospatial map.</p>
-    pub fn set_base_map_style(
-        mut self,
-        input: std::option::Option<crate::types::BaseMapStyleType>,
-    ) -> Self {
-        self.base_map_style = input;
-        self
+    pub fn set_base_map_style(mut self, input: std::option::Option<crate::types::BaseMapStyleType>) -> Self {
+        self.base_map_style = input; self
     }
     /// Consumes the builder and constructs a [`GeospatialMapStyleOptions`](crate::types::GeospatialMapStyleOptions).
     pub fn build(self) -> crate::types::GeospatialMapStyleOptions {
         crate::types::GeospatialMapStyleOptions {
-            base_map_style: self.base_map_style,
+            base_map_style: self.base_map_style
+            ,
         }
     }
 }
+

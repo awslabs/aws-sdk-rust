@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprovisionIpamPoolCidrOutput {
+pub struct DeprovisionIpamPoolCidrOutput  {
     /// <p>The deprovisioned pool CIDR.</p>
     #[doc(hidden)]
     pub ipam_pool_cidr: std::option::Option<crate::types::IpamPoolCidr>,
@@ -10,20 +10,18 @@ pub struct DeprovisionIpamPoolCidrOutput {
 }
 impl DeprovisionIpamPoolCidrOutput {
     /// <p>The deprovisioned pool CIDR.</p>
-    pub fn ipam_pool_cidr(&self) -> std::option::Option<&crate::types::IpamPoolCidr> {
+    pub fn ipam_pool_cidr(&self) -> std::option::Option<& crate::types::IpamPoolCidr> {
         self.ipam_pool_cidr.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeprovisionIpamPoolCidrOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeprovisionIpamPoolCidrOutput {
     /// Creates a new builder-style object to manufacture [`DeprovisionIpamPoolCidrOutput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput).
-    pub fn builder(
-    ) -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrOutputBuilder {
         crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DeprovisionIpamPoolCidrOutputBuilder {
         self
     }
     /// <p>The deprovisioned pool CIDR.</p>
-    pub fn set_ipam_pool_cidr(
-        mut self,
-        input: std::option::Option<crate::types::IpamPoolCidr>,
-    ) -> Self {
-        self.ipam_pool_cidr = input;
-        self
+    pub fn set_ipam_pool_cidr(mut self, input: std::option::Option<crate::types::IpamPoolCidr>) -> Self {
+        self.ipam_pool_cidr = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeprovisionIpamPoolCidrOutput`](crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput {
+    pub fn build(self) -> crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput {
         crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput {
-            ipam_pool_cidr: self.ipam_pool_cidr,
+            ipam_pool_cidr: self.ipam_pool_cidr
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

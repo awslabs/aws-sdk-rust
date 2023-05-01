@@ -3,7 +3,7 @@
 /// <p>An object that represents an Batch array job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArrayProperties {
+pub struct ArrayProperties  {
     /// <p>The size of the array job.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
@@ -35,11 +35,14 @@ impl ArrayPropertiesBuilder {
     }
     /// <p>The size of the array job.</p>
     pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// Consumes the builder and constructs a [`ArrayProperties`](crate::types::ArrayProperties).
     pub fn build(self) -> crate::types::ArrayProperties {
-        crate::types::ArrayProperties { size: self.size }
+        crate::types::ArrayProperties {
+            size: self.size
+            ,
+        }
     }
 }
+

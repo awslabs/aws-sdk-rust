@@ -3,7 +3,7 @@
 /// <p>Specifies the sort order of a sorted column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Order {
+pub struct Order  {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
     pub column: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct Order {
 }
 impl Order {
     /// <p>The name of the column.</p>
-    pub fn column(&self) -> std::option::Option<&str> {
+    pub fn column(&self) -> std::option::Option<& str> {
         self.column.as_deref()
     }
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
@@ -43,8 +43,7 @@ impl OrderBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_column(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column = input;
-        self
+        self.column = input; self
     }
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub fn sort_order(mut self, input: i32) -> Self {
@@ -53,14 +52,17 @@ impl OrderBuilder {
     }
     /// <p>Indicates that the column is sorted in ascending order (<code>== 1</code>), or in descending order (<code>==0</code>).</p>
     pub fn set_sort_order(mut self, input: std::option::Option<i32>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {
         crate::types::Order {
-            column: self.column,
-            sort_order: self.sort_order.unwrap_or_default(),
+            column: self.column
+            ,
+            sort_order: self.sort_order
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

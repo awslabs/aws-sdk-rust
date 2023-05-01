@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheSubnetGroupsOutput {
+pub struct DescribeCacheSubnetGroupsOutput  {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,22 +14,22 @@ pub struct DescribeCacheSubnetGroupsOutput {
 }
 impl DescribeCacheSubnetGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn cache_subnet_groups(&self) -> std::option::Option<&[crate::types::CacheSubnetGroup]> {
+    pub fn cache_subnet_groups(&self) -> std::option::Option<& [crate::types::CacheSubnetGroup]> {
         self.cache_subnet_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCacheSubnetGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCacheSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheSubnetGroupsOutput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput).
-    pub fn builder() -> crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsOutputBuilder {
         crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsOutputBuilder::default()
     }
 }
@@ -39,8 +39,7 @@ impl DescribeCacheSubnetGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) cache_subnet_groups:
-        std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>,
+    pub(crate) cache_subnet_groups: std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheSubnetGroupsOutputBuilder {
@@ -51,8 +50,7 @@ impl DescribeCacheSubnetGroupsOutputBuilder {
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Appends an item to `cache_subnet_groups`.
     ///
@@ -61,35 +59,32 @@ impl DescribeCacheSubnetGroupsOutputBuilder {
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
     pub fn cache_subnet_groups(mut self, input: crate::types::CacheSubnetGroup) -> Self {
         let mut v = self.cache_subnet_groups.unwrap_or_default();
-        v.push(input);
-        self.cache_subnet_groups = Some(v);
-        self
+                        v.push(input);
+                        self.cache_subnet_groups = Some(v);
+                        self
     }
     /// <p>A list of cache subnet groups. Each element in the list contains detailed information about one group.</p>
-    pub fn set_cache_subnet_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>,
-    ) -> Self {
-        self.cache_subnet_groups = input;
-        self
+    pub fn set_cache_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::CacheSubnetGroup>>) -> Self {
+        self.cache_subnet_groups = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCacheSubnetGroupsOutput`](crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput {
+    pub fn build(self) -> crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput {
         crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput {
-            marker: self.marker,
-            cache_subnet_groups: self.cache_subnet_groups,
+            marker: self.marker
+            ,
+            cache_subnet_groups: self.cache_subnet_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

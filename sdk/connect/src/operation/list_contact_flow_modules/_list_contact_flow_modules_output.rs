@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactFlowModulesOutput {
+pub struct ListContactFlowModulesOutput  {
     /// <p>Information about the flow module.</p>
     #[doc(hidden)]
-    pub contact_flow_modules_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
+    pub contact_flow_modules_summary_list: std::option::Option<std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,26 +13,22 @@ pub struct ListContactFlowModulesOutput {
 }
 impl ListContactFlowModulesOutput {
     /// <p>Information about the flow module.</p>
-    pub fn contact_flow_modules_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::ContactFlowModuleSummary]> {
+    pub fn contact_flow_modules_summary_list(&self) -> std::option::Option<& [crate::types::ContactFlowModuleSummary]> {
         self.contact_flow_modules_summary_list.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContactFlowModulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListContactFlowModulesOutput {
     /// Creates a new builder-style object to manufacture [`ListContactFlowModulesOutput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder {
         crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesOutputBuilder::default()
     }
 }
@@ -42,8 +37,7 @@ impl ListContactFlowModulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListContactFlowModulesOutputBuilder {
-    pub(crate) contact_flow_modules_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
+    pub(crate) contact_flow_modules_summary_list: std::option::Option<std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,22 +47,15 @@ impl ListContactFlowModulesOutputBuilder {
     /// To override the contents of this collection use [`set_contact_flow_modules_summary_list`](Self::set_contact_flow_modules_summary_list).
     ///
     /// <p>Information about the flow module.</p>
-    pub fn contact_flow_modules_summary_list(
-        mut self,
-        input: crate::types::ContactFlowModuleSummary,
-    ) -> Self {
+    pub fn contact_flow_modules_summary_list(mut self, input: crate::types::ContactFlowModuleSummary) -> Self {
         let mut v = self.contact_flow_modules_summary_list.unwrap_or_default();
-        v.push(input);
-        self.contact_flow_modules_summary_list = Some(v);
-        self
+                        v.push(input);
+                        self.contact_flow_modules_summary_list = Some(v);
+                        self
     }
     /// <p>Information about the flow module.</p>
-    pub fn set_contact_flow_modules_summary_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactFlowModuleSummary>>,
-    ) -> Self {
-        self.contact_flow_modules_summary_list = input;
-        self
+    pub fn set_contact_flow_modules_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContactFlowModuleSummary>>) -> Self {
+        self.contact_flow_modules_summary_list = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,26 +64,26 @@ impl ListContactFlowModulesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListContactFlowModulesOutput`](crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput {
+    pub fn build(self) -> crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput {
         crate::operation::list_contact_flow_modules::ListContactFlowModulesOutput {
-            contact_flow_modules_summary_list: self.contact_flow_modules_summary_list,
-            next_token: self.next_token,
+            contact_flow_modules_summary_list: self.contact_flow_modules_summary_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

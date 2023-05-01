@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBuildBatchOutput {
+pub struct DeleteBuildBatchOutput  {
     /// <p>The status code.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct DeleteBuildBatchOutput {
 }
 impl DeleteBuildBatchOutput {
     /// <p>The status code.</p>
-    pub fn status_code(&self) -> std::option::Option<&str> {
+    pub fn status_code(&self) -> std::option::Option<& str> {
         self.status_code.as_deref()
     }
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
-    pub fn builds_deleted(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn builds_deleted(&self) -> std::option::Option<& [std::string::String]> {
         self.builds_deleted.as_deref()
     }
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
-    pub fn builds_not_deleted(&self) -> std::option::Option<&[crate::types::BuildNotDeleted]> {
+    pub fn builds_not_deleted(&self) -> std::option::Option<& [crate::types::BuildNotDeleted]> {
         self.builds_not_deleted.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteBuildBatchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteBuildBatchOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBuildBatchOutput`](crate::operation::delete_build_batch::DeleteBuildBatchOutput).
-    pub fn builder() -> crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder {
         crate::operation::delete_build_batch::builders::DeleteBuildBatchOutputBuilder::default()
     }
 }
@@ -47,8 +46,7 @@ impl DeleteBuildBatchOutput {
 pub struct DeleteBuildBatchOutputBuilder {
     pub(crate) status_code: std::option::Option<std::string::String>,
     pub(crate) builds_deleted: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) builds_not_deleted:
-        std::option::Option<std::vec::Vec<crate::types::BuildNotDeleted>>,
+    pub(crate) builds_not_deleted: std::option::Option<std::vec::Vec<crate::types::BuildNotDeleted>>,
     _request_id: Option<String>,
 }
 impl DeleteBuildBatchOutputBuilder {
@@ -59,8 +57,7 @@ impl DeleteBuildBatchOutputBuilder {
     }
     /// <p>The status code.</p>
     pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// Appends an item to `builds_deleted`.
     ///
@@ -69,17 +66,13 @@ impl DeleteBuildBatchOutputBuilder {
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
     pub fn builds_deleted(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.builds_deleted.unwrap_or_default();
-        v.push(input.into());
-        self.builds_deleted = Some(v);
-        self
+                        v.push(input.into());
+                        self.builds_deleted = Some(v);
+                        self
     }
     /// <p>An array of strings that contain the identifiers of the builds that were deleted.</p>
-    pub fn set_builds_deleted(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.builds_deleted = input;
-        self
+    pub fn set_builds_deleted(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.builds_deleted = input; self
     }
     /// Appends an item to `builds_not_deleted`.
     ///
@@ -88,34 +81,34 @@ impl DeleteBuildBatchOutputBuilder {
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
     pub fn builds_not_deleted(mut self, input: crate::types::BuildNotDeleted) -> Self {
         let mut v = self.builds_not_deleted.unwrap_or_default();
-        v.push(input);
-        self.builds_not_deleted = Some(v);
-        self
+                        v.push(input);
+                        self.builds_not_deleted = Some(v);
+                        self
     }
     /// <p>An array of <code>BuildNotDeleted</code> objects that specify the builds that could not be deleted.</p>
-    pub fn set_builds_not_deleted(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BuildNotDeleted>>,
-    ) -> Self {
-        self.builds_not_deleted = input;
-        self
+    pub fn set_builds_not_deleted(mut self, input: std::option::Option<std::vec::Vec<crate::types::BuildNotDeleted>>) -> Self {
+        self.builds_not_deleted = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteBuildBatchOutput`](crate::operation::delete_build_batch::DeleteBuildBatchOutput).
     pub fn build(self) -> crate::operation::delete_build_batch::DeleteBuildBatchOutput {
         crate::operation::delete_build_batch::DeleteBuildBatchOutput {
-            status_code: self.status_code,
-            builds_deleted: self.builds_deleted,
-            builds_not_deleted: self.builds_not_deleted,
+            status_code: self.status_code
+            ,
+            builds_deleted: self.builds_deleted
+            ,
+            builds_not_deleted: self.builds_not_deleted
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

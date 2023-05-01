@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayAssociationProposalInput {
+pub struct DeleteDirectConnectGatewayAssociationProposalInput  {
     /// <p>The ID of the proposal.</p>
     #[doc(hidden)]
     pub proposal_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectConnectGatewayAssociationProposalInput {
     /// <p>The ID of the proposal.</p>
-    pub fn proposal_id(&self) -> std::option::Option<&str> {
+    pub fn proposal_id(&self) -> std::option::Option<& str> {
         self.proposal_id.as_deref()
     }
 }
 impl DeleteDirectConnectGatewayAssociationProposalInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalInputBuilder{
+    pub fn builder() -> crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalInputBuilder {
         crate::operation::delete_direct_connect_gateway_association_proposal::builders::DeleteDirectConnectGatewayAssociationProposalInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
     }
     /// <p>The ID of the proposal.</p>
     pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.proposal_id = input;
-        self
+        self.proposal_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalInput`](crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput).
-    pub fn build(self) -> Result<crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalInput {
                 proposal_id: self.proposal_id
@@ -47,3 +46,4 @@ impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>PollForJobs</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForJobsInput {
+pub struct PollForJobsInput  {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::types::ActionTypeId>,
@@ -12,12 +12,11 @@ pub struct PollForJobsInput {
     pub max_batch_size: std::option::Option<i32>,
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
     #[doc(hidden)]
-    pub query_param:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub query_param: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PollForJobsInput {
     /// <p>Represents information about an action type.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::types::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<& crate::types::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -25,10 +24,7 @@ impl PollForJobsInput {
         self.max_batch_size
     }
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
-    pub fn query_param(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn query_param(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.query_param.as_ref()
     }
 }
@@ -45,8 +41,7 @@ impl PollForJobsInput {
 pub struct PollForJobsInputBuilder {
     pub(crate) action_type_id: std::option::Option<crate::types::ActionTypeId>,
     pub(crate) max_batch_size: std::option::Option<i32>,
-    pub(crate) query_param:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) query_param: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PollForJobsInputBuilder {
     /// <p>Represents information about an action type.</p>
@@ -55,12 +50,8 @@ impl PollForJobsInputBuilder {
         self
     }
     /// <p>Represents information about an action type.</p>
-    pub fn set_action_type_id(
-        mut self,
-        input: std::option::Option<crate::types::ActionTypeId>,
-    ) -> Self {
-        self.action_type_id = input;
-        self
+    pub fn set_action_type_id(mut self, input: std::option::Option<crate::types::ActionTypeId>) -> Self {
+        self.action_type_id = input; self
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
@@ -69,45 +60,35 @@ impl PollForJobsInputBuilder {
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_batch_size = input;
-        self
+        self.max_batch_size = input; self
     }
     /// Adds a key-value pair to `query_param`.
     ///
     /// To override the contents of this collection use [`set_query_param`](Self::set_query_param).
     ///
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
-    pub fn query_param(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn query_param(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.query_param.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.query_param = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.query_param = Some(hash_map);
+                        self
     }
     /// <p>A map of property names and values. For an action type with no queryable properties, this value must be null or an empty map. For an action type with a queryable property, you must supply that property as a key in the map. Only jobs whose action configuration matches the mapped value are returned.</p>
-    pub fn set_query_param(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.query_param = input;
-        self
+    pub fn set_query_param(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.query_param = input; self
     }
     /// Consumes the builder and constructs a [`PollForJobsInput`](crate::operation::poll_for_jobs::PollForJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::poll_for_jobs::PollForJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::poll_for_jobs::PollForJobsInput {
-            action_type_id: self.action_type_id,
-            max_batch_size: self.max_batch_size,
-            query_param: self.query_param,
-        })
+    pub fn build(self) -> Result<crate::operation::poll_for_jobs::PollForJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::poll_for_jobs::PollForJobsInput {
+                action_type_id: self.action_type_id
+                ,
+                max_batch_size: self.max_batch_size
+                ,
+                query_param: self.query_param
+                ,
+            }
+        )
     }
 }
+

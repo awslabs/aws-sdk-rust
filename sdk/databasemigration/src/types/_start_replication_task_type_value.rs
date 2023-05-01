@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let startreplicationtasktypevalue = unimplemented!();
 /// match startreplicationtasktypevalue {
@@ -31,22 +31,14 @@
 /// Specifically, when `startreplicationtasktypevalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StartReplicationTaskTypeValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StartReplicationTaskTypeValue {
     #[allow(missing_docs)] // documentation missing in model
     ReloadTarget,
@@ -55,44 +47,43 @@ pub enum StartReplicationTaskTypeValue {
     #[allow(missing_docs)] // documentation missing in model
     StartReplication,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StartReplicationTaskTypeValue {
-    fn from(s: &str) -> Self {
-        match s {
-            "reload-target" => StartReplicationTaskTypeValue::ReloadTarget,
-            "resume-processing" => StartReplicationTaskTypeValue::ResumeProcessing,
-            "start-replication" => StartReplicationTaskTypeValue::StartReplication,
-            other => StartReplicationTaskTypeValue::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "reload-target" => StartReplicationTaskTypeValue::ReloadTarget,
+"resume-processing" => StartReplicationTaskTypeValue::ResumeProcessing,
+"start-replication" => StartReplicationTaskTypeValue::StartReplication,
+other => StartReplicationTaskTypeValue::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for StartReplicationTaskTypeValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StartReplicationTaskTypeValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StartReplicationTaskTypeValue::from(s))
+                }
+            }
 impl StartReplicationTaskTypeValue {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            StartReplicationTaskTypeValue::ReloadTarget => "reload-target",
-            StartReplicationTaskTypeValue::ResumeProcessing => "resume-processing",
-            StartReplicationTaskTypeValue::StartReplication => "start-replication",
-            StartReplicationTaskTypeValue::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["reload-target", "resume-processing", "start-replication"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    StartReplicationTaskTypeValue::ReloadTarget => "reload-target",
+    StartReplicationTaskTypeValue::ResumeProcessing => "resume-processing",
+    StartReplicationTaskTypeValue::StartReplication => "start-replication",
+    StartReplicationTaskTypeValue::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["reload-target", "resume-processing", "start-replication"]
+                }
+            }
 impl AsRef<str> for StartReplicationTaskTypeValue {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

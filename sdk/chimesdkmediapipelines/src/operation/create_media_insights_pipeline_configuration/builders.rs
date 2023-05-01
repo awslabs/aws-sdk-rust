@@ -4,76 +4,57 @@ pub use crate::operation::create_media_insights_pipeline_configuration::_create_
 pub use crate::operation::create_media_insights_pipeline_configuration::_create_media_insights_pipeline_configuration_input::CreateMediaInsightsPipelineConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateMediaInsightsPipelineConfiguration`.
-///
+/// 
 /// <p>A structure that contains the static configurations for a media insights pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMediaInsightsPipelineConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_media_insights_pipeline_configuration::builders::CreateMediaInsightsPipelineConfigurationInputBuilder
             }
-impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
+impl CreateMediaInsightsPipelineConfigurationFluentBuilder  {
     /// Creates a new `CreateMediaInsightsPipelineConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_media_insights_pipeline_configuration::CreateMediaInsightsPipelineConfigurationError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the media insights pipeline configuration.</p>
-    pub fn media_insights_pipeline_configuration_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .media_insights_pipeline_configuration_name(input.into());
+    pub fn media_insights_pipeline_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+        self.inner = self.inner.media_insights_pipeline_configuration_name(input.into());
         self
     }
     /// <p>The name of the media insights pipeline configuration.</p>
-    pub fn set_media_insights_pipeline_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_media_insights_pipeline_configuration_name(input);
+    pub fn set_media_insights_pipeline_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inner = self.inner.set_media_insights_pipeline_configuration_name(input);
         self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
@@ -82,26 +63,17 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
         self
     }
     /// <p>The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.</p>
-    pub fn set_resource_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_resource_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_access_role_arn(input);
         self
     }
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
-    pub fn real_time_alert_configuration(
-        mut self,
-        input: crate::types::RealTimeAlertConfiguration,
-    ) -> Self {
+    pub fn real_time_alert_configuration(mut self, input: crate::types::RealTimeAlertConfiguration) -> Self {
         self.inner = self.inner.real_time_alert_configuration(input);
         self
     }
     /// <p>The configuration settings for the real-time alerts in a media insights pipeline configuration.</p>
-    pub fn set_real_time_alert_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RealTimeAlertConfiguration>,
-    ) -> Self {
+    pub fn set_real_time_alert_configuration(mut self, input: std::option::Option<crate::types::RealTimeAlertConfiguration>) -> Self {
         self.inner = self.inner.set_real_time_alert_configuration(input);
         self
     }
@@ -110,20 +82,12 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_elements`](Self::set_elements).
     ///
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    pub fn elements(
-        mut self,
-        input: crate::types::MediaInsightsPipelineConfigurationElement,
-    ) -> Self {
+    pub fn elements(mut self, input: crate::types::MediaInsightsPipelineConfigurationElement) -> Self {
         self.inner = self.inner.elements(input);
         self
     }
     /// <p>The elements in the request, such as a processor for Amazon Transcribe or a sink for a Kinesis Data Stream.</p>
-    pub fn set_elements(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>,
-        >,
-    ) -> Self {
+    pub fn set_elements(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationElement>>) -> Self {
         self.inner = self.inner.set_elements(input);
         self
     }
@@ -137,10 +101,7 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
         self
     }
     /// <p>The tags assigned to the media insights pipeline configuration.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -150,11 +111,9 @@ impl CreateMediaInsightsPipelineConfigurationFluentBuilder {
         self
     }
     /// <p>The unique identifier for the media insights pipeline configuration request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
 }
+

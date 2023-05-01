@@ -3,14 +3,14 @@
 /// The VPC interface that you want to designate where the media stream is coming from or going to.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InterfaceRequest {
+pub struct InterfaceRequest  {
     /// The name of the VPC interface.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InterfaceRequest {
     /// The name of the VPC interface.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl InterfaceRequestBuilder {
     }
     /// The name of the VPC interface.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`InterfaceRequest`](crate::types::InterfaceRequest).
     pub fn build(self) -> crate::types::InterfaceRequest {
-        crate::types::InterfaceRequest { name: self.name }
+        crate::types::InterfaceRequest {
+            name: self.name
+            ,
+        }
     }
 }
+

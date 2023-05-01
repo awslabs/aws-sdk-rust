@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestAuthorizationInput {
+pub struct TestAuthorizationInput  {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
@@ -24,34 +24,33 @@ pub struct TestAuthorizationInput {
 }
 impl TestAuthorizationInput {
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> std::option::Option<&str> {
+    pub fn principal(&self) -> std::option::Option<& str> {
         self.principal.as_deref()
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn cognito_identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn cognito_identity_pool_id(&self) -> std::option::Option<& str> {
         self.cognito_identity_pool_id.as_deref()
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn auth_infos(&self) -> std::option::Option<&[crate::types::AuthInfo]> {
+    pub fn auth_infos(&self) -> std::option::Option<& [crate::types::AuthInfo]> {
         self.auth_infos.as_deref()
     }
     /// <p>The MQTT client ID.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn policy_names_to_add(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names_to_add(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names_to_add.as_deref()
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn policy_names_to_skip(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names_to_skip(&self) -> std::option::Option<& [std::string::String]> {
         self.policy_names_to_skip.as_deref()
     }
 }
 impl TestAuthorizationInput {
     /// Creates a new builder-style object to manufacture [`TestAuthorizationInput`](crate::operation::test_authorization::TestAuthorizationInput).
-    pub fn builder() -> crate::operation::test_authorization::builders::TestAuthorizationInputBuilder
-    {
+    pub fn builder() -> crate::operation::test_authorization::builders::TestAuthorizationInputBuilder {
         crate::operation::test_authorization::builders::TestAuthorizationInputBuilder::default()
     }
 }
@@ -75,8 +74,7 @@ impl TestAuthorizationInputBuilder {
     }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input;
-        self
+        self.principal = input; self
     }
     /// <p>The Cognito identity pool ID.</p>
     pub fn cognito_identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +82,8 @@ impl TestAuthorizationInputBuilder {
         self
     }
     /// <p>The Cognito identity pool ID.</p>
-    pub fn set_cognito_identity_pool_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cognito_identity_pool_id = input;
-        self
+    pub fn set_cognito_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cognito_identity_pool_id = input; self
     }
     /// Appends an item to `auth_infos`.
     ///
@@ -98,17 +92,13 @@ impl TestAuthorizationInputBuilder {
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
     pub fn auth_infos(mut self, input: crate::types::AuthInfo) -> Self {
         let mut v = self.auth_infos.unwrap_or_default();
-        v.push(input);
-        self.auth_infos = Some(v);
-        self
+                        v.push(input);
+                        self.auth_infos = Some(v);
+                        self
     }
     /// <p>A list of authorization info objects. Simulating authorization will create a response for each <code>authInfo</code> object in the list.</p>
-    pub fn set_auth_infos(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AuthInfo>>,
-    ) -> Self {
-        self.auth_infos = input;
-        self
+    pub fn set_auth_infos(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuthInfo>>) -> Self {
+        self.auth_infos = input; self
     }
     /// <p>The MQTT client ID.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +107,7 @@ impl TestAuthorizationInputBuilder {
     }
     /// <p>The MQTT client ID.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Appends an item to `policy_names_to_add`.
     ///
@@ -127,17 +116,13 @@ impl TestAuthorizationInputBuilder {
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
     pub fn policy_names_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.policy_names_to_add.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names_to_add = Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names_to_add = Some(v);
+                        self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_add(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.policy_names_to_add = input;
-        self
+    pub fn set_policy_names_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.policy_names_to_add = input; self
     }
     /// Appends an item to `policy_names_to_skip`.
     ///
@@ -146,34 +131,32 @@ impl TestAuthorizationInputBuilder {
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
     pub fn policy_names_to_skip(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.policy_names_to_skip.unwrap_or_default();
-        v.push(input.into());
-        self.policy_names_to_skip = Some(v);
-        self
+                        v.push(input.into());
+                        self.policy_names_to_skip = Some(v);
+                        self
     }
     /// <p>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</p>
-    pub fn set_policy_names_to_skip(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.policy_names_to_skip = input;
-        self
+    pub fn set_policy_names_to_skip(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.policy_names_to_skip = input; self
     }
     /// Consumes the builder and constructs a [`TestAuthorizationInput`](crate::operation::test_authorization::TestAuthorizationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::test_authorization::TestAuthorizationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::test_authorization::TestAuthorizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::test_authorization::TestAuthorizationInput {
-                principal: self.principal,
-                cognito_identity_pool_id: self.cognito_identity_pool_id,
-                auth_infos: self.auth_infos,
-                client_id: self.client_id,
-                policy_names_to_add: self.policy_names_to_add,
-                policy_names_to_skip: self.policy_names_to_skip,
-            },
+                principal: self.principal
+                ,
+                cognito_identity_pool_id: self.cognito_identity_pool_id
+                ,
+                auth_infos: self.auth_infos
+                ,
+                client_id: self.client_id
+                ,
+                policy_names_to_add: self.policy_names_to_add
+                ,
+                policy_names_to_skip: self.policy_names_to_skip
+                ,
+            }
         )
     }
 }
+

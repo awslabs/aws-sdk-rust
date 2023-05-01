@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsOutput {
+pub struct PutEventsOutput  {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
     #[doc(hidden)]
     pub events_response: std::option::Option<crate::types::EventsResponse>,
@@ -10,15 +10,15 @@ pub struct PutEventsOutput {
 }
 impl PutEventsOutput {
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
-    pub fn events_response(&self) -> std::option::Option<&crate::types::EventsResponse> {
+    pub fn events_response(&self) -> std::option::Option<& crate::types::EventsResponse> {
         self.events_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutEventsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutEventsOutput {
     /// Creates a new builder-style object to manufacture [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
     pub fn builder() -> crate::operation::put_events::builders::PutEventsOutputBuilder {
@@ -40,27 +40,25 @@ impl PutEventsOutputBuilder {
         self
     }
     /// <p>Provides information about endpoints and the events that they're associated with.</p>
-    pub fn set_events_response(
-        mut self,
-        input: std::option::Option<crate::types::EventsResponse>,
-    ) -> Self {
-        self.events_response = input;
-        self
+    pub fn set_events_response(mut self, input: std::option::Option<crate::types::EventsResponse>) -> Self {
+        self.events_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutEventsOutput`](crate::operation::put_events::PutEventsOutput).
     pub fn build(self) -> crate::operation::put_events::PutEventsOutput {
         crate::operation::put_events::PutEventsOutput {
-            events_response: self.events_response,
+            events_response: self.events_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

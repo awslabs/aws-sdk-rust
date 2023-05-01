@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataSetImportTaskOutput {
+pub struct CreateDataSetImportTaskOutput  {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateDataSetImportTaskOutput {
 }
 impl CreateDataSetImportTaskOutput {
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDataSetImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDataSetImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder {
         crate::operation::create_data_set_import_task::builders::CreateDataSetImportTaskOutputBuilder::default()
     }
 }
@@ -43,25 +41,24 @@ impl CreateDataSetImportTaskOutputBuilder {
     }
     /// <p>The task identifier. This operation is asynchronous. Use this identifier with the <code>GetDataSetImportTask</code> operation to obtain the status of this task.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDataSetImportTaskOutput`](crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
+    pub fn build(self) -> crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
         crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput {
-            task_id: self.task_id,
+            task_id: self.task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

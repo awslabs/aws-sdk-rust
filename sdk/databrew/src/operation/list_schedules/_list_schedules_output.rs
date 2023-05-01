@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSchedulesOutput {
+pub struct ListSchedulesOutput  {
     /// <p>A list of schedules that are defined.</p>
     #[doc(hidden)]
     pub schedules: std::option::Option<std::vec::Vec<crate::types::Schedule>>,
@@ -13,19 +13,19 @@ pub struct ListSchedulesOutput {
 }
 impl ListSchedulesOutput {
     /// <p>A list of schedules that are defined.</p>
-    pub fn schedules(&self) -> std::option::Option<&[crate::types::Schedule]> {
+    pub fn schedules(&self) -> std::option::Option<& [crate::types::Schedule]> {
         self.schedules.as_deref()
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSchedulesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
     pub fn builder() -> crate::operation::list_schedules::builders::ListSchedulesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListSchedulesOutputBuilder {
     /// <p>A list of schedules that are defined.</p>
     pub fn schedules(mut self, input: crate::types::Schedule) -> Self {
         let mut v = self.schedules.unwrap_or_default();
-        v.push(input);
-        self.schedules = Some(v);
-        self
+                        v.push(input);
+                        self.schedules = Some(v);
+                        self
     }
     /// <p>A list of schedules that are defined.</p>
-    pub fn set_schedules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Schedule>>,
-    ) -> Self {
-        self.schedules = input;
-        self
+    pub fn set_schedules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Schedule>>) -> Self {
+        self.schedules = input; self
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListSchedulesOutputBuilder {
     }
     /// <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSchedulesOutput`](crate::operation::list_schedules::ListSchedulesOutput).
     pub fn build(self) -> crate::operation::list_schedules::ListSchedulesOutput {
         crate::operation::list_schedules::ListSchedulesOutput {
-            schedules: self.schedules,
-            next_token: self.next_token,
+            schedules: self.schedules
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,48 +3,39 @@
 /// <p>Specifies the format and location of the input data for the dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetInputDataConfig {
+pub struct DatasetInputDataConfig  {
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth. </p>
     #[doc(hidden)]
-    pub augmented_manifests:
-        std::option::Option<std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
-    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p>
+    pub augmented_manifests: std::option::Option<std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
+    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p> 
     /// <p> <code>AUGMENTED_MANIFEST</code>: The data format </p>
     #[doc(hidden)]
     pub data_format: std::option::Option<crate::types::DatasetDataFormat>,
-    /// <p>The input properties for training a document classifier model. </p>
+    /// <p>The input properties for training a document classifier model. </p> 
     /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
-    pub document_classifier_input_data_config:
-        std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>,
+    pub document_classifier_input_data_config: std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>,
     /// <p>The input properties for training an entity recognizer model.</p>
     #[doc(hidden)]
-    pub entity_recognizer_input_data_config:
-        std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>,
+    pub entity_recognizer_input_data_config: std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>,
 }
 impl DatasetInputDataConfig {
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth. </p>
-    pub fn augmented_manifests(
-        &self,
-    ) -> std::option::Option<&[crate::types::DatasetAugmentedManifestsListItem]> {
+    pub fn augmented_manifests(&self) -> std::option::Option<& [crate::types::DatasetAugmentedManifestsListItem]> {
         self.augmented_manifests.as_deref()
     }
-    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p>
+    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p> 
     /// <p> <code>AUGMENTED_MANIFEST</code>: The data format </p>
-    pub fn data_format(&self) -> std::option::Option<&crate::types::DatasetDataFormat> {
+    pub fn data_format(&self) -> std::option::Option<& crate::types::DatasetDataFormat> {
         self.data_format.as_ref()
     }
-    /// <p>The input properties for training a document classifier model. </p>
+    /// <p>The input properties for training a document classifier model. </p> 
     /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
-    pub fn document_classifier_input_data_config(
-        &self,
-    ) -> std::option::Option<&crate::types::DatasetDocumentClassifierInputDataConfig> {
+    pub fn document_classifier_input_data_config(&self) -> std::option::Option<& crate::types::DatasetDocumentClassifierInputDataConfig> {
         self.document_classifier_input_data_config.as_ref()
     }
     /// <p>The input properties for training an entity recognizer model.</p>
-    pub fn entity_recognizer_input_data_config(
-        &self,
-    ) -> std::option::Option<&crate::types::DatasetEntityRecognizerInputDataConfig> {
+    pub fn entity_recognizer_input_data_config(&self) -> std::option::Option<& crate::types::DatasetEntityRecognizerInputDataConfig> {
         self.entity_recognizer_input_data_config.as_ref()
     }
 }
@@ -59,13 +50,10 @@ impl DatasetInputDataConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DatasetInputDataConfigBuilder {
-    pub(crate) augmented_manifests:
-        std::option::Option<std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
+    pub(crate) augmented_manifests: std::option::Option<std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
     pub(crate) data_format: std::option::Option<crate::types::DatasetDataFormat>,
-    pub(crate) document_classifier_input_data_config:
-        std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>,
-    pub(crate) entity_recognizer_input_data_config:
-        std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>,
+    pub(crate) document_classifier_input_data_config: std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>,
+    pub(crate) entity_recognizer_input_data_config: std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>,
 }
 impl DatasetInputDataConfigBuilder {
     /// Appends an item to `augmented_manifests`.
@@ -73,79 +61,59 @@ impl DatasetInputDataConfigBuilder {
     /// To override the contents of this collection use [`set_augmented_manifests`](Self::set_augmented_manifests).
     ///
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth. </p>
-    pub fn augmented_manifests(
-        mut self,
-        input: crate::types::DatasetAugmentedManifestsListItem,
-    ) -> Self {
+    pub fn augmented_manifests(mut self, input: crate::types::DatasetAugmentedManifestsListItem) -> Self {
         let mut v = self.augmented_manifests.unwrap_or_default();
-        v.push(input);
-        self.augmented_manifests = Some(v);
-        self
+                        v.push(input);
+                        self.augmented_manifests = Some(v);
+                        self
     }
     /// <p>A list of augmented manifest files that provide training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth. </p>
-    pub fn set_augmented_manifests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>,
-    ) -> Self {
-        self.augmented_manifests = input;
-        self
+    pub fn set_augmented_manifests(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatasetAugmentedManifestsListItem>>) -> Self {
+        self.augmented_manifests = input; self
     }
-    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p>
+    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p> 
     /// <p> <code>AUGMENTED_MANIFEST</code>: The data format </p>
     pub fn data_format(mut self, input: crate::types::DatasetDataFormat) -> Self {
         self.data_format = Some(input);
         self
     }
-    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p>
+    /// <p> <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the first column contains labels and the second column contains documents.</p> 
     /// <p> <code>AUGMENTED_MANIFEST</code>: The data format </p>
-    pub fn set_data_format(
-        mut self,
-        input: std::option::Option<crate::types::DatasetDataFormat>,
-    ) -> Self {
-        self.data_format = input;
-        self
+    pub fn set_data_format(mut self, input: std::option::Option<crate::types::DatasetDataFormat>) -> Self {
+        self.data_format = input; self
     }
-    /// <p>The input properties for training a document classifier model. </p>
+    /// <p>The input properties for training a document classifier model. </p> 
     /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
-    pub fn document_classifier_input_data_config(
-        mut self,
-        input: crate::types::DatasetDocumentClassifierInputDataConfig,
-    ) -> Self {
+    pub fn document_classifier_input_data_config(mut self, input: crate::types::DatasetDocumentClassifierInputDataConfig) -> Self {
         self.document_classifier_input_data_config = Some(input);
         self
     }
-    /// <p>The input properties for training a document classifier model. </p>
+    /// <p>The input properties for training a document classifier model. </p> 
     /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
-    pub fn set_document_classifier_input_data_config(
-        mut self,
-        input: std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>,
-    ) -> Self {
-        self.document_classifier_input_data_config = input;
-        self
+    pub fn set_document_classifier_input_data_config(mut self, input: std::option::Option<crate::types::DatasetDocumentClassifierInputDataConfig>) -> Self {
+        self.document_classifier_input_data_config = input; self
     }
     /// <p>The input properties for training an entity recognizer model.</p>
-    pub fn entity_recognizer_input_data_config(
-        mut self,
-        input: crate::types::DatasetEntityRecognizerInputDataConfig,
-    ) -> Self {
+    pub fn entity_recognizer_input_data_config(mut self, input: crate::types::DatasetEntityRecognizerInputDataConfig) -> Self {
         self.entity_recognizer_input_data_config = Some(input);
         self
     }
     /// <p>The input properties for training an entity recognizer model.</p>
-    pub fn set_entity_recognizer_input_data_config(
-        mut self,
-        input: std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>,
-    ) -> Self {
-        self.entity_recognizer_input_data_config = input;
-        self
+    pub fn set_entity_recognizer_input_data_config(mut self, input: std::option::Option<crate::types::DatasetEntityRecognizerInputDataConfig>) -> Self {
+        self.entity_recognizer_input_data_config = input; self
     }
     /// Consumes the builder and constructs a [`DatasetInputDataConfig`](crate::types::DatasetInputDataConfig).
     pub fn build(self) -> crate::types::DatasetInputDataConfig {
         crate::types::DatasetInputDataConfig {
-            augmented_manifests: self.augmented_manifests,
-            data_format: self.data_format,
-            document_classifier_input_data_config: self.document_classifier_input_data_config,
-            entity_recognizer_input_data_config: self.entity_recognizer_input_data_config,
+            augmented_manifests: self.augmented_manifests
+            ,
+            data_format: self.data_format
+            ,
+            document_classifier_input_data_config: self.document_classifier_input_data_config
+            ,
+            entity_recognizer_input_data_config: self.entity_recognizer_input_data_config
+            ,
         }
     }
 }
+

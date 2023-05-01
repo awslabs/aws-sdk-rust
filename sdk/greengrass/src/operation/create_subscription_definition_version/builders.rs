@@ -4,68 +4,56 @@ pub use crate::operation::create_subscription_definition_version::_create_subscr
 pub use crate::operation::create_subscription_definition_version::_create_subscription_definition_version_input::CreateSubscriptionDefinitionVersionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSubscriptionDefinitionVersion`.
-///
+/// 
 /// Creates a version of a subscription definition which has already been defined.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionVersionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_subscription_definition_version::builders::CreateSubscriptionDefinitionVersionInputBuilder
             }
-impl CreateSubscriptionDefinitionVersionFluentBuilder {
+impl CreateSubscriptionDefinitionVersionFluentBuilder  {
     /// Creates a new `CreateSubscriptionDefinitionVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersion, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput, aws_smithy_http::result::SdkError<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// A client token used to correlate requests and responses.
     pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
@@ -75,10 +63,7 @@ impl CreateSubscriptionDefinitionVersionFluentBuilder {
         self
     }
     /// The ID of the subscription definition.
-    pub fn set_subscription_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_subscription_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_subscription_definition_id(input);
         self
     }
@@ -92,11 +77,9 @@ impl CreateSubscriptionDefinitionVersionFluentBuilder {
         self
     }
     /// A list of subscriptions.
-    pub fn set_subscriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
+    pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscription>>) -> Self {
         self.inner = self.inner.set_subscriptions(input);
         self
     }
 }
+

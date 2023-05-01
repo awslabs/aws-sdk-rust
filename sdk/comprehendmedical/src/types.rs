@@ -172,3 +172,4 @@ pub mod builders;
 
 /// Error types that AWS Comprehend Medical can respond with.
 pub mod error;
+

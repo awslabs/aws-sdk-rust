@@ -3,7 +3,7 @@
 /// <p>The name, Arn, <code>CreationTime</code>, <code>FeatureGroup</code> values, <code>LastUpdatedTime</code> and <code>EnableOnlineStorage</code> status of a <code>FeatureGroup</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FeatureGroupSummary {
+pub struct FeatureGroupSummary  {
     /// <p>The name of <code>FeatureGroup</code>.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct FeatureGroupSummary {
 }
 impl FeatureGroupSummary {
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> std::option::Option<& str> {
         self.feature_group_name.as_deref()
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+    pub fn feature_group_arn(&self) -> std::option::Option<& str> {
         self.feature_group_arn.as_deref()
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
-    pub fn feature_group_status(&self) -> std::option::Option<&crate::types::FeatureGroupStatus> {
+    pub fn feature_group_status(&self) -> std::option::Option<& crate::types::FeatureGroupStatus> {
         self.feature_group_status.as_ref()
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
-    pub fn offline_store_status(&self) -> std::option::Option<&crate::types::OfflineStoreStatus> {
+    pub fn offline_store_status(&self) -> std::option::Option<& crate::types::OfflineStoreStatus> {
         self.offline_store_status.as_ref()
     }
 }
@@ -66,12 +66,8 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    pub fn set_feature_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.feature_group_name = input;
-        self
+    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.feature_group_name = input; self
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
     pub fn feature_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,12 +75,8 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    pub fn set_feature_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.feature_group_arn = input;
-        self
+    pub fn set_feature_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.feature_group_arn = input; self
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,12 +84,8 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
     pub fn feature_group_status(mut self, input: crate::types::FeatureGroupStatus) -> Self {
@@ -105,12 +93,8 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
-    pub fn set_feature_group_status(
-        mut self,
-        input: std::option::Option<crate::types::FeatureGroupStatus>,
-    ) -> Self {
-        self.feature_group_status = input;
-        self
+    pub fn set_feature_group_status(mut self, input: std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
+        self.feature_group_status = input; self
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
     pub fn offline_store_status(mut self, input: crate::types::OfflineStoreStatus) -> Self {
@@ -118,21 +102,23 @@ impl FeatureGroupSummaryBuilder {
         self
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
-    pub fn set_offline_store_status(
-        mut self,
-        input: std::option::Option<crate::types::OfflineStoreStatus>,
-    ) -> Self {
-        self.offline_store_status = input;
-        self
+    pub fn set_offline_store_status(mut self, input: std::option::Option<crate::types::OfflineStoreStatus>) -> Self {
+        self.offline_store_status = input; self
     }
     /// Consumes the builder and constructs a [`FeatureGroupSummary`](crate::types::FeatureGroupSummary).
     pub fn build(self) -> crate::types::FeatureGroupSummary {
         crate::types::FeatureGroupSummary {
-            feature_group_name: self.feature_group_name,
-            feature_group_arn: self.feature_group_arn,
-            creation_time: self.creation_time,
-            feature_group_status: self.feature_group_status,
-            offline_store_status: self.offline_store_status,
+            feature_group_name: self.feature_group_name
+            ,
+            feature_group_arn: self.feature_group_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            feature_group_status: self.feature_group_status
+            ,
+            offline_store_status: self.offline_store_status
+            ,
         }
     }
 }
+

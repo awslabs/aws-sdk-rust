@@ -3,7 +3,7 @@
 /// <p>Provides details about an error in a core network policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoreNetworkPolicyError {
+pub struct CoreNetworkPolicyError  {
     /// <p>The error code associated with a core network policy error.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CoreNetworkPolicyError {
 }
 impl CoreNetworkPolicyError {
     /// <p>The error code associated with a core network policy error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The message associated with a core network policy error code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CoreNetworkPolicyErrorBuilder {
     }
     /// <p>The error code associated with a core network policy error.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The message associated with a core network policy error code.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CoreNetworkPolicyErrorBuilder {
     }
     /// <p>The message associated with a core network policy error code.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl CoreNetworkPolicyErrorBuilder {
     }
     /// <p>The JSON path where the error was discovered in the policy document.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// Consumes the builder and constructs a [`CoreNetworkPolicyError`](crate::types::CoreNetworkPolicyError).
     pub fn build(self) -> crate::types::CoreNetworkPolicyError {
         crate::types::CoreNetworkPolicyError {
-            error_code: self.error_code,
-            message: self.message,
-            path: self.path,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
+            path: self.path
+            ,
         }
     }
 }
+

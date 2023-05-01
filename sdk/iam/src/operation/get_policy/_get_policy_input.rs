@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
+pub struct GetPolicyInput  {
+    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl GetPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
@@ -29,27 +29,25 @@ pub struct GetPolicyInputBuilder {
     pub(crate) policy_arn: std::option::Option<std::string::String>,
 }
 impl GetPolicyInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.policy_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p>
+    /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information about.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_policy::GetPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_policy::GetPolicyInput {
-            policy_arn: self.policy_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_policy::GetPolicyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_policy::GetPolicyInput {
+                policy_arn: self.policy_arn
+                ,
+            }
+        )
     }
 }
+

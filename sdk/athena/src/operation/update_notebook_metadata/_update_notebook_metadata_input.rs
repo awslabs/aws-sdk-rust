@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotebookMetadataInput {
+pub struct UpdateNotebookMetadataInput  {
     /// <p>The ID of the notebook to update the metadata for.</p>
     #[doc(hidden)]
     pub notebook_id: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -17,25 +17,23 @@ pub struct UpdateNotebookMetadataInput {
 }
 impl UpdateNotebookMetadataInput {
     /// <p>The ID of the notebook to update the metadata for.</p>
-    pub fn notebook_id(&self) -> std::option::Option<&str> {
+    pub fn notebook_id(&self) -> std::option::Option<& str> {
         self.notebook_id.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name to update the notebook to.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl UpdateNotebookMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookMetadataInput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput).
-    pub fn builder(
-    ) -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataInputBuilder {
         crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataInputBuilder::default()
     }
 }
@@ -56,25 +54,20 @@ impl UpdateNotebookMetadataInputBuilder {
     }
     /// <p>The ID of the notebook to update the metadata for.</p>
     pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_id = input;
-        self
+        self.notebook_id = input; self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important>
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
+    /// <p>A unique case-sensitive string used to ensure the request to create the notebook is idempotent (executes only once).</p> <important> 
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
     /// </important>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The name to update the notebook to.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,22 +76,20 @@ impl UpdateNotebookMetadataInputBuilder {
     }
     /// <p>The name to update the notebook to.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateNotebookMetadataInput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_notebook_metadata::UpdateNotebookMetadataInput {
-                notebook_id: self.notebook_id,
-                client_request_token: self.client_request_token,
-                name: self.name,
-            },
+                notebook_id: self.notebook_id
+                ,
+                client_request_token: self.client_request_token
+                ,
+                name: self.name
+                ,
+            }
         )
     }
 }
+

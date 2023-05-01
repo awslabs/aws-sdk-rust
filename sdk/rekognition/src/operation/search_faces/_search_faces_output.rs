@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchFacesOutput {
+pub struct SearchFacesOutput  {
     /// <p>ID of the face that was searched for matches in a collection.</p>
     #[doc(hidden)]
     pub searched_face_id: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct SearchFacesOutput {
 }
 impl SearchFacesOutput {
     /// <p>ID of the face that was searched for matches in a collection.</p>
-    pub fn searched_face_id(&self) -> std::option::Option<&str> {
+    pub fn searched_face_id(&self) -> std::option::Option<& str> {
         self.searched_face_id.as_deref()
     }
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    pub fn face_matches(&self) -> std::option::Option<&[crate::types::FaceMatch]> {
+    pub fn face_matches(&self) -> std::option::Option<& [crate::types::FaceMatch]> {
         self.face_matches.as_deref()
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn face_model_version(&self) -> std::option::Option<&str> {
+    pub fn face_model_version(&self) -> std::option::Option<& str> {
         self.face_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchFacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchFacesOutput {
     /// Creates a new builder-style object to manufacture [`SearchFacesOutput`](crate::operation::search_faces::SearchFacesOutput).
     pub fn builder() -> crate::operation::search_faces::builders::SearchFacesOutputBuilder {
@@ -57,8 +57,7 @@ impl SearchFacesOutputBuilder {
     }
     /// <p>ID of the face that was searched for matches in a collection.</p>
     pub fn set_searched_face_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.searched_face_id = input;
-        self
+        self.searched_face_id = input; self
     }
     /// Appends an item to `face_matches`.
     ///
@@ -67,17 +66,13 @@ impl SearchFacesOutputBuilder {
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
     pub fn face_matches(mut self, input: crate::types::FaceMatch) -> Self {
         let mut v = self.face_matches.unwrap_or_default();
-        v.push(input);
-        self.face_matches = Some(v);
-        self
+                        v.push(input);
+                        self.face_matches = Some(v);
+                        self
     }
     /// <p>An array of faces that matched the input face, along with the confidence in the match.</p>
-    pub fn set_face_matches(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FaceMatch>>,
-    ) -> Self {
-        self.face_matches = input;
-        self
+    pub fn set_face_matches(mut self, input: std::option::Option<std::vec::Vec<crate::types::FaceMatch>>) -> Self {
+        self.face_matches = input; self
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
     pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,29 +80,29 @@ impl SearchFacesOutputBuilder {
         self
     }
     /// <p>Version number of the face detection model associated with the input collection (<code>CollectionId</code>).</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.face_model_version = input;
-        self
+    pub fn set_face_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.face_model_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchFacesOutput`](crate::operation::search_faces::SearchFacesOutput).
     pub fn build(self) -> crate::operation::search_faces::SearchFacesOutput {
         crate::operation::search_faces::SearchFacesOutput {
-            searched_face_id: self.searched_face_id,
-            face_matches: self.face_matches,
-            face_model_version: self.face_model_version,
+            searched_face_id: self.searched_face_id
+            ,
+            face_matches: self.face_matches
+            ,
+            face_model_version: self.face_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

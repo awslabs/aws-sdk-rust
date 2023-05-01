@@ -30,3 +30,4 @@ pub mod register_slack_workspace_for_organization;
 
 /// Types for the `UpdateSlackChannelConfiguration` operation.
 pub mod update_slack_channel_configuration;
+

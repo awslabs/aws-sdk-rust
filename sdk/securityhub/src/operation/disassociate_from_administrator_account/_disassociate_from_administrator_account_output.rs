@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateFromAdministratorAccountOutput {
+pub struct DisassociateFromAdministratorAccountOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateFromAdministratorAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateFromAdministratorAccountOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateFromAdministratorAccountOutput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput).
-    pub fn builder() -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountOutputBuilder {
         crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountOutputBuilder::default()
     }
 }
@@ -25,18 +25,19 @@ pub struct DisassociateFromAdministratorAccountOutputBuilder {
 }
 impl DisassociateFromAdministratorAccountOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateFromAdministratorAccountOutput`](crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput).
-    pub fn build(self) -> crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput{
+    pub fn build(self) -> crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput {
         crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput {
             _request_id: self._request_id,
         }
     }
 }
+

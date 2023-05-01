@@ -3,7 +3,7 @@
 /// <p> Object containing source code information that is linked to an application component. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceCodeRepository {
+pub struct SourceCodeRepository  {
     /// <p> The repository name for the source code. </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SourceCodeRepository {
 }
 impl SourceCodeRepository {
     /// <p> The repository name for the source code. </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p> The branch of the source code. </p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> std::option::Option<& str> {
         self.branch.as_deref()
     }
     /// <p> The type of repository to use for the source code. </p>
-    pub fn version_control_type(&self) -> std::option::Option<&str> {
+    pub fn version_control_type(&self) -> std::option::Option<& str> {
         self.version_control_type.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl SourceCodeRepositoryBuilder {
     }
     /// <p> The repository name for the source code. </p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p> The branch of the source code. </p>
     pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl SourceCodeRepositoryBuilder {
     }
     /// <p> The branch of the source code. </p>
     pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch = input;
-        self
+        self.branch = input; self
     }
     /// <p> The type of repository to use for the source code. </p>
     pub fn version_control_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +76,8 @@ impl SourceCodeRepositoryBuilder {
         self
     }
     /// <p> The type of repository to use for the source code. </p>
-    pub fn set_version_control_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.version_control_type = input;
-        self
+    pub fn set_version_control_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_control_type = input; self
     }
     /// <p>The name of the project.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl SourceCodeRepositoryBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// Consumes the builder and constructs a [`SourceCodeRepository`](crate::types::SourceCodeRepository).
     pub fn build(self) -> crate::types::SourceCodeRepository {
         crate::types::SourceCodeRepository {
-            repository: self.repository,
-            branch: self.branch,
-            version_control_type: self.version_control_type,
-            project_name: self.project_name,
+            repository: self.repository
+            ,
+            branch: self.branch
+            ,
+            version_control_type: self.version_control_type
+            ,
+            project_name: self.project_name
+            ,
         }
     }
 }
+

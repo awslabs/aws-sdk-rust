@@ -133,6 +133,8 @@ pub use crate::types::_ec2_instance_state::Ec2InstanceState;
 
 pub use crate::types::_describe_recovery_instances_request_filters::DescribeRecoveryInstancesRequestFilters;
 
+pub use crate::types::_launch_configuration_template::LaunchConfigurationTemplate;
+
 pub use crate::types::_job_log::JobLog;
 
 pub use crate::types::_job_log_event_data::JobLogEventData;
@@ -210,6 +212,8 @@ mod _job_type;
 mod _last_launch_result;
 
 mod _last_launch_type;
+
+mod _launch_configuration_template;
 
 mod _launch_disposition;
 
@@ -300,3 +304,4 @@ pub mod builders;
 
 /// Error types that Elastic Disaster Recovery Service can respond with.
 pub mod error;
+

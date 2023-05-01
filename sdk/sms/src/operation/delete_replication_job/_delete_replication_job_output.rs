@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationJobOutput {
+pub struct DeleteReplicationJobOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteReplicationJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteReplicationJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationJobOutput`](crate::operation::delete_replication_job::DeleteReplicationJobOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_replication_job::builders::DeleteReplicationJobOutputBuilder {
+    pub fn builder() -> crate::operation::delete_replication_job::builders::DeleteReplicationJobOutputBuilder {
         crate::operation::delete_replication_job::builders::DeleteReplicationJobOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteReplicationJobOutputBuilder {
 }
 impl DeleteReplicationJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteReplicationJobOutput`](crate::operation::delete_replication_job::DeleteReplicationJobOutput).
     pub fn build(self) -> crate::operation::delete_replication_job::DeleteReplicationJobOutput {
         crate::operation::delete_replication_job::DeleteReplicationJobOutput {
@@ -41,3 +40,4 @@ impl DeleteReplicationJobOutputBuilder {
         }
     }
 }
+

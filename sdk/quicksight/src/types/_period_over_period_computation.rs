@@ -3,7 +3,7 @@
 /// <p>The period over period computation configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PeriodOverPeriodComputation {
+pub struct PeriodOverPeriodComputation  {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
     pub computation_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct PeriodOverPeriodComputation {
 }
 impl PeriodOverPeriodComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> std::option::Option<& str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time field that is used in a computation.</p>
-    pub fn time(&self) -> std::option::Option<&crate::types::DimensionField> {
+    pub fn time(&self) -> std::option::Option<& crate::types::DimensionField> {
         self.time.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> std::option::Option<& crate::types::MeasureField> {
         self.value.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl PeriodOverPeriodComputationBuilder {
     }
     /// <p>The ID for a computation.</p>
     pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.computation_id = input;
-        self
+        self.computation_id = input; self
     }
     /// <p>The name of a computation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl PeriodOverPeriodComputationBuilder {
     }
     /// <p>The name of a computation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn time(mut self, input: crate::types::DimensionField) -> Self {
@@ -79,8 +77,7 @@ impl PeriodOverPeriodComputationBuilder {
     }
     /// <p>The time field that is used in a computation.</p>
     pub fn set_time(mut self, input: std::option::Option<crate::types::DimensionField>) -> Self {
-        self.time = input;
-        self
+        self.time = input; self
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
@@ -89,16 +86,20 @@ impl PeriodOverPeriodComputationBuilder {
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`PeriodOverPeriodComputation`](crate::types::PeriodOverPeriodComputation).
     pub fn build(self) -> crate::types::PeriodOverPeriodComputation {
         crate::types::PeriodOverPeriodComputation {
-            computation_id: self.computation_id,
-            name: self.name,
-            time: self.time,
-            value: self.value,
+            computation_id: self.computation_id
+            ,
+            name: self.name
+            ,
+            time: self.time
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

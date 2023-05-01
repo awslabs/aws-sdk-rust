@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MarkAsArchivedInput {
+pub struct MarkAsArchivedInput  {
     /// <p>Mark as archived by Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
 }
 impl MarkAsArchivedInput {
     /// <p>Mark as archived by Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl MarkAsArchivedInputBuilder {
     }
     /// <p>Mark as archived by Source Server ID.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input;
-        self
+        self.source_server_id = input; self
     }
     /// Consumes the builder and constructs a [`MarkAsArchivedInput`](crate::operation::mark_as_archived::MarkAsArchivedInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::mark_as_archived::MarkAsArchivedInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::mark_as_archived::MarkAsArchivedInput {
-            source_server_id: self.source_server_id,
-        })
+    pub fn build(self) -> Result<crate::operation::mark_as_archived::MarkAsArchivedInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::mark_as_archived::MarkAsArchivedInput {
+                source_server_id: self.source_server_id
+                ,
+            }
+        )
     }
 }
+

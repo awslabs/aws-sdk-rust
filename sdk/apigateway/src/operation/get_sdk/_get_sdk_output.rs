@@ -3,7 +3,7 @@
 /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSdkOutput {
+pub struct GetSdkOutput  {
     /// <p>The content-type header value in the HTTP response.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
@@ -17,23 +17,23 @@ pub struct GetSdkOutput {
 }
 impl GetSdkOutput {
     /// <p>The content-type header value in the HTTP response.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
-    pub fn content_disposition(&self) -> std::option::Option<&str> {
+    pub fn content_disposition(&self) -> std::option::Option<& str> {
         self.content_disposition.as_deref()
     }
     /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
-    pub fn body(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn body(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.body.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSdkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSdkOutput {
     /// Creates a new builder-style object to manufacture [`GetSdkOutput`](crate::operation::get_sdk::GetSdkOutput).
     pub fn builder() -> crate::operation::get_sdk::builders::GetSdkOutputBuilder {
@@ -58,8 +58,7 @@ impl GetSdkOutputBuilder {
     }
     /// <p>The content-type header value in the HTTP response.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
     pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl GetSdkOutputBuilder {
         self
     }
     /// <p>The content-disposition header value in the HTTP response.</p>
-    pub fn set_content_disposition(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.content_disposition = input;
-        self
+    pub fn set_content_disposition(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.content_disposition = input; self
     }
     /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
     pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -81,25 +76,28 @@ impl GetSdkOutputBuilder {
     }
     /// <p>The binary blob response to GetSdk, which contains the generated SDK.</p>
     pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSdkOutput`](crate::operation::get_sdk::GetSdkOutput).
     pub fn build(self) -> crate::operation::get_sdk::GetSdkOutput {
         crate::operation::get_sdk::GetSdkOutput {
-            content_type: self.content_type,
-            content_disposition: self.content_disposition,
-            body: self.body,
+            content_type: self.content_type
+            ,
+            content_disposition: self.content_disposition
+            ,
+            body: self.body
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

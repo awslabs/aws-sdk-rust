@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfiguredTableAnalysisRuleInput {
+pub struct DeleteConfiguredTableAnalysisRuleInput  {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DeleteConfiguredTableAnalysisRuleInput {
 }
 impl DeleteConfiguredTableAnalysisRuleInput {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn analysis_rule_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ConfiguredTableAnalysisRuleType> {
+    pub fn analysis_rule_type(&self) -> std::option::Option<& crate::types::ConfiguredTableAnalysisRuleType> {
         self.analysis_rule_type.as_ref()
     }
 }
 impl DeleteConfiguredTableAnalysisRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteConfiguredTableAnalysisRuleInput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleInput).
-    pub fn builder() -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleInputBuilder{
+    pub fn builder() -> crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleInputBuilder {
         crate::operation::delete_configured_table_analysis_rule::builders::DeleteConfiguredTableAnalysisRuleInputBuilder::default()
     }
 }
@@ -34,8 +32,7 @@ impl DeleteConfiguredTableAnalysisRuleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteConfiguredTableAnalysisRuleInputBuilder {
     pub(crate) configured_table_identifier: std::option::Option<std::string::String>,
-    pub(crate) analysis_rule_type:
-        std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
+    pub(crate) analysis_rule_type: std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
 }
 impl DeleteConfiguredTableAnalysisRuleInputBuilder {
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
@@ -44,31 +41,20 @@ impl DeleteConfiguredTableAnalysisRuleInputBuilder {
         self
     }
     /// <p>The unique identifier for the configured table that the analysis rule applies to. Currently accepts the configured table ID.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configured_table_identifier = input;
-        self
+    pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configured_table_identifier = input; self
     }
     /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn analysis_rule_type(
-        mut self,
-        input: crate::types::ConfiguredTableAnalysisRuleType,
-    ) -> Self {
+    pub fn analysis_rule_type(mut self, input: crate::types::ConfiguredTableAnalysisRuleType) -> Self {
         self.analysis_rule_type = Some(input);
         self
     }
     /// <p>The analysis rule type to be deleted. Configured table analysis rules are uniquely identified by their configured table identifier and analysis rule type.</p>
-    pub fn set_analysis_rule_type(
-        mut self,
-        input: std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>,
-    ) -> Self {
-        self.analysis_rule_type = input;
-        self
+    pub fn set_analysis_rule_type(mut self, input: std::option::Option<crate::types::ConfiguredTableAnalysisRuleType>) -> Self {
+        self.analysis_rule_type = input; self
     }
     /// Consumes the builder and constructs a [`DeleteConfiguredTableAnalysisRuleInput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleInput).
-    pub fn build(self) -> Result<crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleInput {
                 configured_table_identifier: self.configured_table_identifier
@@ -79,3 +65,4 @@ impl DeleteConfiguredTableAnalysisRuleInputBuilder {
         )
     }
 }
+

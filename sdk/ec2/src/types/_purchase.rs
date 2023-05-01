@@ -3,7 +3,7 @@
 /// <p>Describes the result of the purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Purchase {
+pub struct Purchase  {
     /// <p>The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
     #[doc(hidden)]
     pub currency_code: std::option::Option<crate::types::CurrencyCodeValues>,
@@ -31,7 +31,7 @@ pub struct Purchase {
 }
 impl Purchase {
     /// <p>The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn currency_code(&self) -> std::option::Option<&crate::types::CurrencyCodeValues> {
+    pub fn currency_code(&self) -> std::option::Option<& crate::types::CurrencyCodeValues> {
         self.currency_code.as_ref()
     }
     /// <p>The duration of the reservation's term in seconds.</p>
@@ -39,27 +39,27 @@ impl Purchase {
         self.duration
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn host_id_set(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn host_id_set(&self) -> std::option::Option<& [std::string::String]> {
         self.host_id_set.as_deref()
     }
     /// <p>The ID of the reservation.</p>
-    pub fn host_reservation_id(&self) -> std::option::Option<&str> {
+    pub fn host_reservation_id(&self) -> std::option::Option<& str> {
         self.host_reservation_id.as_deref()
     }
     /// <p>The hourly price of the reservation per hour.</p>
-    pub fn hourly_price(&self) -> std::option::Option<&str> {
+    pub fn hourly_price(&self) -> std::option::Option<& str> {
         self.hourly_price.as_deref()
     }
     /// <p>The instance family on the Dedicated Host that the reservation can be associated with.</p>
-    pub fn instance_family(&self) -> std::option::Option<&str> {
+    pub fn instance_family(&self) -> std::option::Option<& str> {
         self.instance_family.as_deref()
     }
     /// <p>The payment option for the reservation.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::types::PaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::types::PaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The upfront price of the reservation.</p>
-    pub fn upfront_price(&self) -> std::option::Option<&str> {
+    pub fn upfront_price(&self) -> std::option::Option<& str> {
         self.upfront_price.as_deref()
     }
 }
@@ -90,12 +90,8 @@ impl PurchaseBuilder {
         self
     }
     /// <p>The currency in which the <code>UpfrontPrice</code> and <code>HourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(
-        mut self,
-        input: std::option::Option<crate::types::CurrencyCodeValues>,
-    ) -> Self {
-        self.currency_code = input;
-        self
+    pub fn set_currency_code(mut self, input: std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
+        self.currency_code = input; self
     }
     /// <p>The duration of the reservation's term in seconds.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -104,8 +100,7 @@ impl PurchaseBuilder {
     }
     /// <p>The duration of the reservation's term in seconds.</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// Appends an item to `host_id_set`.
     ///
@@ -114,17 +109,13 @@ impl PurchaseBuilder {
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
     pub fn host_id_set(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.host_id_set.unwrap_or_default();
-        v.push(input.into());
-        self.host_id_set = Some(v);
-        self
+                        v.push(input.into());
+                        self.host_id_set = Some(v);
+                        self
     }
     /// <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
-    pub fn set_host_id_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.host_id_set = input;
-        self
+    pub fn set_host_id_set(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.host_id_set = input; self
     }
     /// <p>The ID of the reservation.</p>
     pub fn host_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,12 +123,8 @@ impl PurchaseBuilder {
         self
     }
     /// <p>The ID of the reservation.</p>
-    pub fn set_host_reservation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.host_reservation_id = input;
-        self
+    pub fn set_host_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.host_reservation_id = input; self
     }
     /// <p>The hourly price of the reservation per hour.</p>
     pub fn hourly_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,8 +133,7 @@ impl PurchaseBuilder {
     }
     /// <p>The hourly price of the reservation per hour.</p>
     pub fn set_hourly_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hourly_price = input;
-        self
+        self.hourly_price = input; self
     }
     /// <p>The instance family on the Dedicated Host that the reservation can be associated with.</p>
     pub fn instance_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +142,7 @@ impl PurchaseBuilder {
     }
     /// <p>The instance family on the Dedicated Host that the reservation can be associated with.</p>
     pub fn set_instance_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_family = input;
-        self
+        self.instance_family = input; self
     }
     /// <p>The payment option for the reservation.</p>
     pub fn payment_option(mut self, input: crate::types::PaymentOption) -> Self {
@@ -165,12 +150,8 @@ impl PurchaseBuilder {
         self
     }
     /// <p>The payment option for the reservation.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: std::option::Option<crate::types::PaymentOption>,
-    ) -> Self {
-        self.payment_option = input;
-        self
+    pub fn set_payment_option(mut self, input: std::option::Option<crate::types::PaymentOption>) -> Self {
+        self.payment_option = input; self
     }
     /// <p>The upfront price of the reservation.</p>
     pub fn upfront_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,20 +160,28 @@ impl PurchaseBuilder {
     }
     /// <p>The upfront price of the reservation.</p>
     pub fn set_upfront_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.upfront_price = input;
-        self
+        self.upfront_price = input; self
     }
     /// Consumes the builder and constructs a [`Purchase`](crate::types::Purchase).
     pub fn build(self) -> crate::types::Purchase {
         crate::types::Purchase {
-            currency_code: self.currency_code,
-            duration: self.duration,
-            host_id_set: self.host_id_set,
-            host_reservation_id: self.host_reservation_id,
-            hourly_price: self.hourly_price,
-            instance_family: self.instance_family,
-            payment_option: self.payment_option,
-            upfront_price: self.upfront_price,
+            currency_code: self.currency_code
+            ,
+            duration: self.duration
+            ,
+            host_id_set: self.host_id_set
+            ,
+            host_reservation_id: self.host_reservation_id
+            ,
+            hourly_price: self.hourly_price
+            ,
+            instance_family: self.instance_family
+            ,
+            payment_option: self.payment_option
+            ,
+            upfront_price: self.upfront_price
+            ,
         }
     }
 }
+

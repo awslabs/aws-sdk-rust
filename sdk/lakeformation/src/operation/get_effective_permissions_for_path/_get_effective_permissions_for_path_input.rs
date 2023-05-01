@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEffectivePermissionsForPathInput {
+pub struct GetEffectivePermissionsForPathInput  {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct GetEffectivePermissionsForPathInput {
 }
 impl GetEffectivePermissionsForPathInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -36,7 +36,7 @@ impl GetEffectivePermissionsForPathInput {
 }
 impl GetEffectivePermissionsForPathInput {
     /// Creates a new builder-style object to manufacture [`GetEffectivePermissionsForPathInput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput).
-    pub fn builder() -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder{
+    pub fn builder() -> crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder {
         crate::operation::get_effective_permissions_for_path::builders::GetEffectivePermissionsForPathInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl GetEffectivePermissionsForPathInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl GetEffectivePermissionsForPathInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get permissions.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl GetEffectivePermissionsForPathInputBuilder {
     }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -88,16 +85,10 @@ impl GetEffectivePermissionsForPathInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetEffectivePermissionsForPathInput`](crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathInput {
                 catalog_id: self.catalog_id
@@ -112,3 +103,4 @@ impl GetEffectivePermissionsForPathInputBuilder {
         )
     }
 }
+

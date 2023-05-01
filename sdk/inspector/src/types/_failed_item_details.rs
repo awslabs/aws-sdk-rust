@@ -3,7 +3,7 @@
 /// <p>Includes details about the failed items.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedItemDetails {
+pub struct FailedItemDetails  {
     /// <p>The status code of a failed item.</p>
     #[doc(hidden)]
     pub failure_code: std::option::Option<crate::types::FailedItemErrorCode>,
@@ -13,7 +13,7 @@ pub struct FailedItemDetails {
 }
 impl FailedItemDetails {
     /// <p>The status code of a failed item.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::FailedItemErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::types::FailedItemErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
@@ -42,12 +42,8 @@ impl FailedItemDetailsBuilder {
         self
     }
     /// <p>The status code of a failed item.</p>
-    pub fn set_failure_code(
-        mut self,
-        input: std::option::Option<crate::types::FailedItemErrorCode>,
-    ) -> Self {
-        self.failure_code = input;
-        self
+    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::FailedItemErrorCode>) -> Self {
+        self.failure_code = input; self
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
     pub fn retryable(mut self, input: bool) -> Self {
@@ -56,14 +52,16 @@ impl FailedItemDetailsBuilder {
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
     pub fn set_retryable(mut self, input: std::option::Option<bool>) -> Self {
-        self.retryable = input;
-        self
+        self.retryable = input; self
     }
     /// Consumes the builder and constructs a [`FailedItemDetails`](crate::types::FailedItemDetails).
     pub fn build(self) -> crate::types::FailedItemDetails {
         crate::types::FailedItemDetails {
-            failure_code: self.failure_code,
-            retryable: self.retryable,
+            failure_code: self.failure_code
+            ,
+            retryable: self.retryable
+            ,
         }
     }
 }
+

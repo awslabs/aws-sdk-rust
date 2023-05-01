@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportInstanceInput {
+pub struct ImportInstanceInput  {
     /// <p>A description for the instance being imported.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ImportInstanceInput {
 }
 impl ImportInstanceInput {
     /// <p>A description for the instance being imported.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The disk image.</p>
-    pub fn disk_images(&self) -> std::option::Option<&[crate::types::DiskImage]> {
+    pub fn disk_images(&self) -> std::option::Option<& [crate::types::DiskImage]> {
         self.disk_images.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -33,13 +33,11 @@ impl ImportInstanceInput {
         self.dry_run
     }
     /// <p>The launch specification.</p>
-    pub fn launch_specification(
-        &self,
-    ) -> std::option::Option<&crate::types::ImportInstanceLaunchSpecification> {
+    pub fn launch_specification(&self) -> std::option::Option<& crate::types::ImportInstanceLaunchSpecification> {
         self.launch_specification.as_ref()
     }
     /// <p>The instance operating system.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::PlatformValues> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::PlatformValues> {
         self.platform.as_ref()
     }
 }
@@ -57,8 +55,7 @@ pub struct ImportInstanceInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) disk_images: std::option::Option<std::vec::Vec<crate::types::DiskImage>>,
     pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) launch_specification:
-        std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
+    pub(crate) launch_specification: std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
     pub(crate) platform: std::option::Option<crate::types::PlatformValues>,
 }
 impl ImportInstanceInputBuilder {
@@ -69,8 +66,7 @@ impl ImportInstanceInputBuilder {
     }
     /// <p>A description for the instance being imported.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `disk_images`.
     ///
@@ -79,17 +75,13 @@ impl ImportInstanceInputBuilder {
     /// <p>The disk image.</p>
     pub fn disk_images(mut self, input: crate::types::DiskImage) -> Self {
         let mut v = self.disk_images.unwrap_or_default();
-        v.push(input);
-        self.disk_images = Some(v);
-        self
+                        v.push(input);
+                        self.disk_images = Some(v);
+                        self
     }
     /// <p>The disk image.</p>
-    pub fn set_disk_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DiskImage>>,
-    ) -> Self {
-        self.disk_images = input;
-        self
+    pub fn set_disk_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::DiskImage>>) -> Self {
+        self.disk_images = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -98,24 +90,16 @@ impl ImportInstanceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The launch specification.</p>
-    pub fn launch_specification(
-        mut self,
-        input: crate::types::ImportInstanceLaunchSpecification,
-    ) -> Self {
+    pub fn launch_specification(mut self, input: crate::types::ImportInstanceLaunchSpecification) -> Self {
         self.launch_specification = Some(input);
         self
     }
     /// <p>The launch specification.</p>
-    pub fn set_launch_specification(
-        mut self,
-        input: std::option::Option<crate::types::ImportInstanceLaunchSpecification>,
-    ) -> Self {
-        self.launch_specification = input;
-        self
+    pub fn set_launch_specification(mut self, input: std::option::Option<crate::types::ImportInstanceLaunchSpecification>) -> Self {
+        self.launch_specification = input; self
     }
     /// <p>The instance operating system.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
@@ -123,26 +107,25 @@ impl ImportInstanceInputBuilder {
         self
     }
     /// <p>The instance operating system.</p>
-    pub fn set_platform(
-        mut self,
-        input: std::option::Option<crate::types::PlatformValues>,
-    ) -> Self {
-        self.platform = input;
-        self
+    pub fn set_platform(mut self, input: std::option::Option<crate::types::PlatformValues>) -> Self {
+        self.platform = input; self
     }
     /// Consumes the builder and constructs a [`ImportInstanceInput`](crate::operation::import_instance::ImportInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_instance::ImportInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::import_instance::ImportInstanceInput {
-            description: self.description,
-            disk_images: self.disk_images,
-            dry_run: self.dry_run,
-            launch_specification: self.launch_specification,
-            platform: self.platform,
-        })
+    pub fn build(self) -> Result<crate::operation::import_instance::ImportInstanceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::import_instance::ImportInstanceInput {
+                description: self.description
+                ,
+                disk_images: self.disk_images
+                ,
+                dry_run: self.dry_run
+                ,
+                launch_specification: self.launch_specification
+                ,
+                platform: self.platform
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains a summary of information about a fraudster registration job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FraudsterRegistrationJobSummary {
+pub struct FraudsterRegistrationJobSummary  {
     /// <p>The client-provided name for the fraudster registration job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -31,39 +31,39 @@ pub struct FraudsterRegistrationJobSummary {
 }
 impl FraudsterRegistrationJobSummary {
     /// <p>The client-provided name for the fraudster registration job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The service-generated identifier for the fraudster registration job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::types::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A timestamp of when the fraudster registration job was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp of when the fraudster registration job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::types::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::types::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn job_progress(&self) -> std::option::Option<&crate::types::JobProgress> {
+    pub fn job_progress(&self) -> std::option::Option<& crate::types::JobProgress> {
         self.job_progress.as_ref()
     }
 }
-impl std::fmt::Debug for FraudsterRegistrationJobSummary {
+impl  std::fmt::Debug for FraudsterRegistrationJobSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FraudsterRegistrationJobSummary");
         formatter.field("job_name", &"*** Sensitive Data Redacted ***");
@@ -105,8 +105,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
     }
     /// <p>The client-provided name for the fraudster registration job.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// <p>The service-generated identifier for the fraudster registration job.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +114,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
     }
     /// <p>The service-generated identifier for the fraudster registration job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The current status of the fraudster registration job.</p>
     pub fn job_status(mut self, input: crate::types::FraudsterRegistrationJobStatus) -> Self {
@@ -124,12 +122,8 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn set_job_status(
-        mut self,
-        input: std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
-    ) -> Self {
-        self.job_status = input;
-        self
+    pub fn set_job_status(mut self, input: std::option::Option<crate::types::FraudsterRegistrationJobStatus>) -> Self {
+        self.job_status = input; self
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +132,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>A timestamp of when the fraudster registration job was created. </p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -147,12 +140,8 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>A timestamp of when the fraudster registration job was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>A timestamp of when the fraudster registration job ended.</p>
     pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,8 +150,7 @@ impl FraudsterRegistrationJobSummaryBuilder {
     }
     /// <p>A timestamp of when the fraudster registration job ended.</p>
     pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.ended_at = input;
-        self
+        self.ended_at = input; self
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -170,12 +158,8 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn set_failure_details(
-        mut self,
-        input: std::option::Option<crate::types::FailureDetails>,
-    ) -> Self {
-        self.failure_details = input;
-        self
+    pub fn set_failure_details(mut self, input: std::option::Option<crate::types::FailureDetails>) -> Self {
+        self.failure_details = input; self
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
     pub fn job_progress(mut self, input: crate::types::JobProgress) -> Self {
@@ -183,24 +167,28 @@ impl FraudsterRegistrationJobSummaryBuilder {
         self
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn set_job_progress(
-        mut self,
-        input: std::option::Option<crate::types::JobProgress>,
-    ) -> Self {
-        self.job_progress = input;
-        self
+    pub fn set_job_progress(mut self, input: std::option::Option<crate::types::JobProgress>) -> Self {
+        self.job_progress = input; self
     }
     /// Consumes the builder and constructs a [`FraudsterRegistrationJobSummary`](crate::types::FraudsterRegistrationJobSummary).
     pub fn build(self) -> crate::types::FraudsterRegistrationJobSummary {
         crate::types::FraudsterRegistrationJobSummary {
-            job_name: self.job_name,
-            job_id: self.job_id,
-            job_status: self.job_status,
-            domain_id: self.domain_id,
-            created_at: self.created_at,
-            ended_at: self.ended_at,
-            failure_details: self.failure_details,
-            job_progress: self.job_progress,
+            job_name: self.job_name
+            ,
+            job_id: self.job_id
+            ,
+            job_status: self.job_status
+            ,
+            domain_id: self.domain_id
+            ,
+            created_at: self.created_at
+            ,
+            ended_at: self.ended_at
+            ,
+            failure_details: self.failure_details
+            ,
+            job_progress: self.job_progress
+            ,
         }
     }
 }
@@ -218,3 +206,4 @@ impl std::fmt::Debug for FraudsterRegistrationJobSummaryBuilder {
         formatter.finish()
     }
 }
+

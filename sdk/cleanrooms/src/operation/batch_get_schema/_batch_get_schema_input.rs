@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetSchemaInput {
+pub struct BatchGetSchemaInput  {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct BatchGetSchemaInput {
 }
 impl BatchGetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl BatchGetSchemaInputBuilder {
         self
     }
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.collaboration_identifier = input;
-        self
+    pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.collaboration_identifier = input; self
     }
     /// Appends an item to `names`.
     ///
@@ -55,28 +51,24 @@ impl BatchGetSchemaInputBuilder {
     /// <p>The names for the schema objects to retrieve.&gt;</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = Some(v);
-        self
+                        v.push(input.into());
+                        self.names = Some(v);
+                        self
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub fn set_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_schema::BatchGetSchemaInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::batch_get_schema::BatchGetSchemaInput {
-            collaboration_identifier: self.collaboration_identifier,
-            names: self.names,
-        })
+    pub fn build(self) -> Result<crate::operation::batch_get_schema::BatchGetSchemaInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::batch_get_schema::BatchGetSchemaInput {
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                names: self.names
+                ,
+            }
+        )
     }
 }
+

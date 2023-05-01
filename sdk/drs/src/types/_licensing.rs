@@ -3,7 +3,7 @@
 /// <p>Configuration of a machine's license.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Licensing {
+pub struct Licensing  {
     /// <p>Whether to enable "Bring your own license" or not.</p>
     #[doc(hidden)]
     pub os_byol: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl LicensingBuilder {
     }
     /// <p>Whether to enable "Bring your own license" or not.</p>
     pub fn set_os_byol(mut self, input: std::option::Option<bool>) -> Self {
-        self.os_byol = input;
-        self
+        self.os_byol = input; self
     }
     /// Consumes the builder and constructs a [`Licensing`](crate::types::Licensing).
     pub fn build(self) -> crate::types::Licensing {
         crate::types::Licensing {
-            os_byol: self.os_byol,
+            os_byol: self.os_byol
+            ,
         }
     }
 }
+

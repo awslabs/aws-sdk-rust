@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancestatechangereasoncode = unimplemented!();
 /// match instancestatechangereasoncode {
@@ -33,22 +33,14 @@
 /// Specifically, when `instancestatechangereasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceStateChangeReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     BootstrapFailure,
@@ -61,54 +53,47 @@ pub enum InstanceStateChangeReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceStateChangeReasonCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOOTSTRAP_FAILURE" => InstanceStateChangeReasonCode::BootstrapFailure,
-            "CLUSTER_TERMINATED" => InstanceStateChangeReasonCode::ClusterTerminated,
-            "INSTANCE_FAILURE" => InstanceStateChangeReasonCode::InstanceFailure,
-            "INTERNAL_ERROR" => InstanceStateChangeReasonCode::InternalError,
-            "VALIDATION_ERROR" => InstanceStateChangeReasonCode::ValidationError,
-            other => InstanceStateChangeReasonCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BOOTSTRAP_FAILURE" => InstanceStateChangeReasonCode::BootstrapFailure,
+"CLUSTER_TERMINATED" => InstanceStateChangeReasonCode::ClusterTerminated,
+"INSTANCE_FAILURE" => InstanceStateChangeReasonCode::InstanceFailure,
+"INTERNAL_ERROR" => InstanceStateChangeReasonCode::InternalError,
+"VALIDATION_ERROR" => InstanceStateChangeReasonCode::ValidationError,
+other => InstanceStateChangeReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for InstanceStateChangeReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceStateChangeReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceStateChangeReasonCode::from(s))
+                }
+            }
 impl InstanceStateChangeReasonCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InstanceStateChangeReasonCode::BootstrapFailure => "BOOTSTRAP_FAILURE",
-            InstanceStateChangeReasonCode::ClusterTerminated => "CLUSTER_TERMINATED",
-            InstanceStateChangeReasonCode::InstanceFailure => "INSTANCE_FAILURE",
-            InstanceStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
-            InstanceStateChangeReasonCode::ValidationError => "VALIDATION_ERROR",
-            InstanceStateChangeReasonCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOOTSTRAP_FAILURE",
-            "CLUSTER_TERMINATED",
-            "INSTANCE_FAILURE",
-            "INTERNAL_ERROR",
-            "VALIDATION_ERROR",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InstanceStateChangeReasonCode::BootstrapFailure => "BOOTSTRAP_FAILURE",
+    InstanceStateChangeReasonCode::ClusterTerminated => "CLUSTER_TERMINATED",
+    InstanceStateChangeReasonCode::InstanceFailure => "INSTANCE_FAILURE",
+    InstanceStateChangeReasonCode::InternalError => "INTERNAL_ERROR",
+    InstanceStateChangeReasonCode::ValidationError => "VALIDATION_ERROR",
+    InstanceStateChangeReasonCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOOTSTRAP_FAILURE", "CLUSTER_TERMINATED", "INSTANCE_FAILURE", "INTERNAL_ERROR", "VALIDATION_ERROR"]
+                }
+            }
 impl AsRef<str> for InstanceStateChangeReasonCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

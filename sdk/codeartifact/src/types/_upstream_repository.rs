@@ -3,14 +3,14 @@
 /// <p> Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">CreateRepository</a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">UpdateRepository</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpstreamRepository {
+pub struct UpstreamRepository  {
     /// <p> The name of an upstream repository. </p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl UpstreamRepositoryBuilder {
     }
     /// <p> The name of an upstream repository. </p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// Consumes the builder and constructs a [`UpstreamRepository`](crate::types::UpstreamRepository).
     pub fn build(self) -> crate::types::UpstreamRepository {
         crate::types::UpstreamRepository {
-            repository_name: self.repository_name,
+            repository_name: self.repository_name
+            ,
         }
     }
 }
+

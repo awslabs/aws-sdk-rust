@@ -3,14 +3,14 @@
 /// <p>Gets a specified VPC link under the caller's account in a region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVpcLinkInput {
+pub struct GetVpcLinkInput  {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl GetVpcLinkInput {
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
-    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> std::option::Option<& str> {
         self.vpc_link_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl GetVpcLinkInputBuilder {
     }
     /// <p>The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.</p>
     pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_link_id = input;
-        self
+        self.vpc_link_id = input; self
     }
     /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::operation::get_vpc_link::GetVpcLinkInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_vpc_link::GetVpcLinkInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_vpc_link::GetVpcLinkInput {
-            vpc_link_id: self.vpc_link_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_vpc_link::GetVpcLinkInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_vpc_link::GetVpcLinkInput {
+                vpc_link_id: self.vpc_link_id
+                ,
+            }
+        )
     }
 }
+

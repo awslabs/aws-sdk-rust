@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStudioComponentOutput {
+pub struct CreateStudioComponentOutput  {
     /// <p>Information about the studio component.</p>
     #[doc(hidden)]
     pub studio_component: std::option::Option<crate::types::StudioComponent>,
@@ -10,20 +10,18 @@ pub struct CreateStudioComponentOutput {
 }
 impl CreateStudioComponentOutput {
     /// <p>Information about the studio component.</p>
-    pub fn studio_component(&self) -> std::option::Option<&crate::types::StudioComponent> {
+    pub fn studio_component(&self) -> std::option::Option<& crate::types::StudioComponent> {
         self.studio_component.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStudioComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateStudioComponentOutput {
     /// Creates a new builder-style object to manufacture [`CreateStudioComponentOutput`](crate::operation::create_studio_component::CreateStudioComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_studio_component::builders::CreateStudioComponentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_studio_component::builders::CreateStudioComponentOutputBuilder {
         crate::operation::create_studio_component::builders::CreateStudioComponentOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateStudioComponentOutputBuilder {
         self
     }
     /// <p>Information about the studio component.</p>
-    pub fn set_studio_component(
-        mut self,
-        input: std::option::Option<crate::types::StudioComponent>,
-    ) -> Self {
-        self.studio_component = input;
-        self
+    pub fn set_studio_component(mut self, input: std::option::Option<crate::types::StudioComponent>) -> Self {
+        self.studio_component = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateStudioComponentOutput`](crate::operation::create_studio_component::CreateStudioComponentOutput).
     pub fn build(self) -> crate::operation::create_studio_component::CreateStudioComponentOutput {
         crate::operation::create_studio_component::CreateStudioComponentOutput {
-            studio_component: self.studio_component,
+            studio_component: self.studio_component
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

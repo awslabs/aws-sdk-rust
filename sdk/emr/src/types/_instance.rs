@@ -3,7 +3,7 @@
 /// <p>Represents an EC2 instance provisioned as part of cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -43,51 +43,51 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>The public DNS name of the instance.</p>
-    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn public_dns_name(&self) -> std::option::Option<& str> {
         self.public_dns_name.as_deref()
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
     /// <p>The private DNS name of the instance.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The current status of the instance.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::InstanceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::InstanceStatus> {
         self.status.as_ref()
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
-    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
-    pub fn instance_fleet_id(&self) -> std::option::Option<&str> {
+    pub fn instance_fleet_id(&self) -> std::option::Option<& str> {
         self.instance_fleet_id.as_deref()
     }
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
-    pub fn market(&self) -> std::option::Option<&crate::types::MarketType> {
+    pub fn market(&self) -> std::option::Option<& crate::types::MarketType> {
         self.market.as_ref()
     }
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    pub fn ebs_volumes(&self) -> std::option::Option<&[crate::types::EbsVolume]> {
+    pub fn ebs_volumes(&self) -> std::option::Option<& [crate::types::EbsVolume]> {
         self.ebs_volumes.as_deref()
     }
 }
@@ -123,8 +123,7 @@ impl InstanceBuilder {
     }
     /// <p>The unique identifier for the instance in Amazon EMR.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
     pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +132,7 @@ impl InstanceBuilder {
     }
     /// <p>The unique identifier of the instance in Amazon EC2.</p>
     pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_instance_id = input;
-        self
+        self.ec2_instance_id = input; self
     }
     /// <p>The public DNS name of the instance.</p>
     pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +141,7 @@ impl InstanceBuilder {
     }
     /// <p>The public DNS name of the instance.</p>
     pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_dns_name = input;
-        self
+        self.public_dns_name = input; self
     }
     /// <p>The public IP address of the instance.</p>
     pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,12 +149,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The public IP address of the instance.</p>
-    pub fn set_public_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.public_ip_address = input;
-        self
+    pub fn set_public_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.public_ip_address = input; self
     }
     /// <p>The private DNS name of the instance.</p>
     pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,8 +159,7 @@ impl InstanceBuilder {
     }
     /// <p>The private DNS name of the instance.</p>
     pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_dns_name = input;
-        self
+        self.private_dns_name = input; self
     }
     /// <p>The private IP address of the instance.</p>
     pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,12 +167,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The private IP address of the instance.</p>
-    pub fn set_private_ip_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.private_ip_address = input;
-        self
+    pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.private_ip_address = input; self
     }
     /// <p>The current status of the instance.</p>
     pub fn status(mut self, input: crate::types::InstanceStatus) -> Self {
@@ -189,8 +177,7 @@ impl InstanceBuilder {
     }
     /// <p>The current status of the instance.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::InstanceStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
     pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,12 +185,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The identifier of the instance group to which this instance belongs.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_group_id = input;
-        self
+    pub fn set_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_group_id = input; self
     }
     /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
     pub fn instance_fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,12 +194,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The unique identifier of the instance fleet to which an EC2 instance belongs.</p>
-    pub fn set_instance_fleet_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_fleet_id = input;
-        self
+    pub fn set_instance_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_fleet_id = input; self
     }
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
@@ -225,8 +204,7 @@ impl InstanceBuilder {
     }
     /// <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>. </p>
     pub fn set_market(mut self, input: std::option::Option<crate::types::MarketType>) -> Self {
-        self.market = input;
-        self
+        self.market = input; self
     }
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,8 +213,7 @@ impl InstanceBuilder {
     }
     /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// Appends an item to `ebs_volumes`.
     ///
@@ -245,33 +222,42 @@ impl InstanceBuilder {
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
     pub fn ebs_volumes(mut self, input: crate::types::EbsVolume) -> Self {
         let mut v = self.ebs_volumes.unwrap_or_default();
-        v.push(input);
-        self.ebs_volumes = Some(v);
-        self
+                        v.push(input);
+                        self.ebs_volumes = Some(v);
+                        self
     }
     /// <p>The list of Amazon EBS volumes that are attached to this instance.</p>
-    pub fn set_ebs_volumes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EbsVolume>>,
-    ) -> Self {
-        self.ebs_volumes = input;
-        self
+    pub fn set_ebs_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::types::EbsVolume>>) -> Self {
+        self.ebs_volumes = input; self
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            id: self.id,
-            ec2_instance_id: self.ec2_instance_id,
-            public_dns_name: self.public_dns_name,
-            public_ip_address: self.public_ip_address,
-            private_dns_name: self.private_dns_name,
-            private_ip_address: self.private_ip_address,
-            status: self.status,
-            instance_group_id: self.instance_group_id,
-            instance_fleet_id: self.instance_fleet_id,
-            market: self.market,
-            instance_type: self.instance_type,
-            ebs_volumes: self.ebs_volumes,
+            id: self.id
+            ,
+            ec2_instance_id: self.ec2_instance_id
+            ,
+            public_dns_name: self.public_dns_name
+            ,
+            public_ip_address: self.public_ip_address
+            ,
+            private_dns_name: self.private_dns_name
+            ,
+            private_ip_address: self.private_ip_address
+            ,
+            status: self.status
+            ,
+            instance_group_id: self.instance_group_id
+            ,
+            instance_fleet_id: self.instance_fleet_id
+            ,
+            market: self.market
+            ,
+            instance_type: self.instance_type
+            ,
+            ebs_volumes: self.ebs_volumes
+            ,
         }
     }
 }
+

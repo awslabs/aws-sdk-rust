@@ -3,7 +3,7 @@
 /// <p>Represents a workflow execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowExecution {
+pub struct WorkflowExecution  {
     /// <p>The user defined identifier associated with the workflow execution.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct WorkflowExecution {
 }
 impl WorkflowExecution {
     /// <p>The user defined identifier associated with the workflow execution.</p>
-    pub fn workflow_id(&self) -> std::option::Option<&str> {
+    pub fn workflow_id(&self) -> std::option::Option<& str> {
         self.workflow_id.as_deref()
     }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl WorkflowExecutionBuilder {
     }
     /// <p>The user defined identifier associated with the workflow execution.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input;
-        self
+        self.workflow_id = input; self
     }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl WorkflowExecutionBuilder {
     }
     /// <p>A system-generated unique identifier for the workflow execution.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// Consumes the builder and constructs a [`WorkflowExecution`](crate::types::WorkflowExecution).
     pub fn build(self) -> crate::types::WorkflowExecution {
         crate::types::WorkflowExecution {
-            workflow_id: self.workflow_id,
-            run_id: self.run_id,
+            workflow_id: self.workflow_id
+            ,
+            run_id: self.run_id
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionData {
+pub struct SessionData  {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     #[doc(hidden)]
     pub session_arn: std::option::Option<std::string::String>,
@@ -18,31 +18,27 @@ pub struct SessionData {
     pub description: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SessionData {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> std::option::Option<&str> {
+    pub fn session_arn(&self) -> std::option::Option<& str> {
         self.session_arn.as_deref()
     }
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The name of the session.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the session.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -61,8 +57,7 @@ pub struct SessionDataBuilder {
     pub(crate) session_id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SessionDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
@@ -72,8 +67,7 @@ impl SessionDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_arn = input;
-        self
+        self.session_arn = input; self
     }
     /// <p>The identifier of the session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl SessionDataBuilder {
     }
     /// <p>The identifier of the session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// <p>The name of the session.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +85,7 @@ impl SessionDataBuilder {
     }
     /// <p>The name of the session.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the session.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,42 +94,37 @@ impl SessionDataBuilder {
     }
     /// <p>The description of the session.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`SessionData`](crate::types::SessionData).
     pub fn build(self) -> crate::types::SessionData {
         crate::types::SessionData {
-            session_arn: self.session_arn,
-            session_id: self.session_id,
-            name: self.name,
-            description: self.description,
-            tags: self.tags,
+            session_arn: self.session_arn
+            ,
+            session_id: self.session_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

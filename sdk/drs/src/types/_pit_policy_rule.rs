@@ -3,7 +3,7 @@
 /// <p>A rule in the Point in Time (PIT) policy representing when to take snapshots and how long to retain them for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PitPolicyRule {
+pub struct PitPolicyRule  {
     /// <p>The ID of the rule.</p>
     #[doc(hidden)]
     pub rule_id: i64,
@@ -26,7 +26,7 @@ impl PitPolicyRule {
         self.rule_id
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    pub fn units(&self) -> std::option::Option<&crate::types::PitPolicyRuleUnits> {
+    pub fn units(&self) -> std::option::Option<& crate::types::PitPolicyRuleUnits> {
         self.units.as_ref()
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
@@ -67,8 +67,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>The ID of the rule.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
     pub fn units(mut self, input: crate::types::PitPolicyRuleUnits) -> Self {
@@ -76,12 +75,8 @@ impl PitPolicyRuleBuilder {
         self
     }
     /// <p>The units used to measure the interval and retentionDuration.</p>
-    pub fn set_units(
-        mut self,
-        input: std::option::Option<crate::types::PitPolicyRuleUnits>,
-    ) -> Self {
-        self.units = input;
-        self
+    pub fn set_units(mut self, input: std::option::Option<crate::types::PitPolicyRuleUnits>) -> Self {
+        self.units = input; self
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub fn interval(mut self, input: i32) -> Self {
@@ -90,8 +85,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>How often, in the chosen units, a snapshot should be taken.</p>
     pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.interval = input;
-        self
+        self.interval = input; self
     }
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
     pub fn retention_duration(mut self, input: i32) -> Self {
@@ -100,8 +94,7 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>The duration to retain a snapshot for, in the chosen units.</p>
     pub fn set_retention_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_duration = input;
-        self
+        self.retention_duration = input; self
     }
     /// <p>Whether this rule is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -110,17 +103,25 @@ impl PitPolicyRuleBuilder {
     }
     /// <p>Whether this rule is enabled or not.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`PitPolicyRule`](crate::types::PitPolicyRule).
     pub fn build(self) -> crate::types::PitPolicyRule {
         crate::types::PitPolicyRule {
-            rule_id: self.rule_id.unwrap_or_default(),
-            units: self.units,
-            interval: self.interval.unwrap_or_default(),
-            retention_duration: self.retention_duration.unwrap_or_default(),
-            enabled: self.enabled,
+            rule_id: self.rule_id
+                .unwrap_or_default()
+            ,
+            units: self.units
+            ,
+            interval: self.interval
+                .unwrap_or_default()
+            ,
+            retention_duration: self.retention_duration
+                .unwrap_or_default()
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

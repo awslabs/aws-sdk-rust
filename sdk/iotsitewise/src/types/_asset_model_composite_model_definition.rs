@@ -3,7 +3,7 @@
 /// <p>Contains a composite model definition in an asset model. This composite model definition is applied to all assets created from the asset model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelCompositeModelDefinition {
+pub struct AssetModelCompositeModelDefinition  {
     /// <p>The name of the composite model.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct AssetModelCompositeModelDefinition {
 }
 impl AssetModelCompositeModelDefinition {
     /// <p>The name of the composite model.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the composite model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::types::AssetModelPropertyDefinition]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::types::AssetModelPropertyDefinition]> {
         self.properties.as_deref()
     }
 }
@@ -49,8 +49,7 @@ pub struct AssetModelCompositeModelDefinitionBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) properties:
-        std::option::Option<std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
+    pub(crate) properties: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
 }
 impl AssetModelCompositeModelDefinitionBuilder {
     /// <p>The name of the composite model.</p>
@@ -60,8 +59,7 @@ impl AssetModelCompositeModelDefinitionBuilder {
     }
     /// <p>The name of the composite model.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the composite model.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +68,7 @@ impl AssetModelCompositeModelDefinitionBuilder {
     }
     /// <p>The description of the composite model.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +77,7 @@ impl AssetModelCompositeModelDefinitionBuilder {
     }
     /// <p>The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Appends an item to `properties`.
     ///
@@ -90,25 +86,26 @@ impl AssetModelCompositeModelDefinitionBuilder {
     /// <p>The asset property definitions for this composite model.</p>
     pub fn properties(mut self, input: crate::types::AssetModelPropertyDefinition) -> Self {
         let mut v = self.properties.unwrap_or_default();
-        v.push(input);
-        self.properties = Some(v);
-        self
+                        v.push(input);
+                        self.properties = Some(v);
+                        self
     }
     /// <p>The asset property definitions for this composite model.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertyDefinition>>,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssetModelPropertyDefinition>>) -> Self {
+        self.properties = input; self
     }
     /// Consumes the builder and constructs a [`AssetModelCompositeModelDefinition`](crate::types::AssetModelCompositeModelDefinition).
     pub fn build(self) -> crate::types::AssetModelCompositeModelDefinition {
         crate::types::AssetModelCompositeModelDefinition {
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            properties: self.properties,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            properties: self.properties
+            ,
         }
     }
 }
+

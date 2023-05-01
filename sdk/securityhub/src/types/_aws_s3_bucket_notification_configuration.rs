@@ -3,18 +3,14 @@
 /// <p>The notification configuration for the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsS3BucketNotificationConfiguration {
+pub struct AwsS3BucketNotificationConfiguration  {
     /// <p>Configurations for S3 bucket notifications.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<
-        std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
-    >,
+    pub configurations: std::option::Option<std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>>,
 }
 impl AwsS3BucketNotificationConfiguration {
     /// <p>Configurations for S3 bucket notifications.</p>
-    pub fn configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::AwsS3BucketNotificationConfigurationDetail]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::types::AwsS3BucketNotificationConfigurationDetail]> {
         self.configurations.as_deref()
     }
 }
@@ -29,9 +25,7 @@ impl AwsS3BucketNotificationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationBuilder {
-    pub(crate) configurations: std::option::Option<
-        std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
-    >,
+    pub(crate) configurations: std::option::Option<std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>>,
 }
 impl AwsS3BucketNotificationConfigurationBuilder {
     /// Appends an item to `configurations`.
@@ -39,29 +33,22 @@ impl AwsS3BucketNotificationConfigurationBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>Configurations for S3 bucket notifications.</p>
-    pub fn configurations(
-        mut self,
-        input: crate::types::AwsS3BucketNotificationConfigurationDetail,
-    ) -> Self {
+    pub fn configurations(mut self, input: crate::types::AwsS3BucketNotificationConfigurationDetail) -> Self {
         let mut v = self.configurations.unwrap_or_default();
-        v.push(input);
-        self.configurations = Some(v);
-        self
+                        v.push(input);
+                        self.configurations = Some(v);
+                        self
     }
     /// <p>Configurations for S3 bucket notifications.</p>
-    pub fn set_configurations(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>,
-        >,
-    ) -> Self {
-        self.configurations = input;
-        self
+    pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsS3BucketNotificationConfigurationDetail>>) -> Self {
+        self.configurations = input; self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfiguration`](crate::types::AwsS3BucketNotificationConfiguration).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfiguration {
         crate::types::AwsS3BucketNotificationConfiguration {
-            configurations: self.configurations,
+            configurations: self.configurations
+            ,
         }
     }
 }
+

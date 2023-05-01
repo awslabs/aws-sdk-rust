@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListChannelsAssociatedWithChannelFlowInput {
+pub struct ListChannelsAssociatedWithChannelFlowInput  {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListChannelsAssociatedWithChannelFlowInput {
 }
 impl ListChannelsAssociatedWithChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_flow_arn(&self) -> std::option::Option<& str> {
         self.channel_flow_arn.as_deref()
     }
     /// <p>The maximum number of channels that you want to return.</p>
@@ -23,11 +23,11 @@ impl ListChannelsAssociatedWithChannelFlowInput {
         self.max_results
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput {
+impl  std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsAssociatedWithChannelFlowInput");
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
@@ -38,7 +38,7 @@ impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInput {
 }
 impl ListChannelsAssociatedWithChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`ListChannelsAssociatedWithChannelFlowInput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput).
-    pub fn builder() -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowInputBuilder{
+    pub fn builder() -> crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowInputBuilder {
         crate::operation::list_channels_associated_with_channel_flow::builders::ListChannelsAssociatedWithChannelFlowInputBuilder::default()
     }
 }
@@ -59,8 +59,7 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
     }
     /// <p>The ARN of the channel flow.</p>
     pub fn set_channel_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_flow_arn = input;
-        self
+        self.channel_flow_arn = input; self
     }
     /// <p>The maximum number of channels that you want to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
     }
     /// <p>The maximum number of channels that you want to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,11 +77,10 @@ impl ListChannelsAssociatedWithChannelFlowInputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListChannelsAssociatedWithChannelFlowInput`](crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput).
-    pub fn build(self) -> Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowInput {
                 channel_flow_arn: self.channel_flow_arn
@@ -105,3 +102,4 @@ impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowInputBuilder {
         formatter.finish()
     }
 }
+

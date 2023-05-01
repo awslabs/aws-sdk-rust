@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scanstatusreason = unimplemented!();
 /// match scanstatusreason {
@@ -46,22 +46,14 @@
 /// Specifically, when `scanstatusreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScanStatusReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -100,93 +92,73 @@ pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedRuntime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScanStatusReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
-            "EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
-            "EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
-            "IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
-            "INTERNAL_ERROR" => ScanStatusReason::InternalError,
-            "NO_INVENTORY" => ScanStatusReason::NoInventory,
-            "NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
-            "PENDING_DISABLE" => ScanStatusReason::PendingDisable,
-            "PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
-            "RESOURCE_TERMINATED" => ScanStatusReason::ResourceTerminated,
-            "SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
-            "SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
-            "SCAN_FREQUENCY_SCAN_ON_PUSH" => ScanStatusReason::ScanFrequencyScanOnPush,
-            "STALE_INVENTORY" => ScanStatusReason::StaleInventory,
-            "SUCCESSFUL" => ScanStatusReason::Successful,
-            "UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
-            "UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
-            "UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
-            other => {
-                ScanStatusReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
+"EC2_INSTANCE_STOPPED" => ScanStatusReason::Ec2InstanceStopped,
+"EXCLUDED_BY_TAG" => ScanStatusReason::ExcludedByTag,
+"IMAGE_SIZE_EXCEEDED" => ScanStatusReason::ImageSizeExceeded,
+"INTERNAL_ERROR" => ScanStatusReason::InternalError,
+"NO_INVENTORY" => ScanStatusReason::NoInventory,
+"NO_RESOURCES_FOUND" => ScanStatusReason::NoResourcesFound,
+"PENDING_DISABLE" => ScanStatusReason::PendingDisable,
+"PENDING_INITIAL_SCAN" => ScanStatusReason::PendingInitialScan,
+"RESOURCE_TERMINATED" => ScanStatusReason::ResourceTerminated,
+"SCAN_ELIGIBILITY_EXPIRED" => ScanStatusReason::ScanEligibilityExpired,
+"SCAN_FREQUENCY_MANUAL" => ScanStatusReason::ScanFrequencyManual,
+"SCAN_FREQUENCY_SCAN_ON_PUSH" => ScanStatusReason::ScanFrequencyScanOnPush,
+"STALE_INVENTORY" => ScanStatusReason::StaleInventory,
+"SUCCESSFUL" => ScanStatusReason::Successful,
+"UNMANAGED_EC2_INSTANCE" => ScanStatusReason::UnmanagedEc2Instance,
+"UNSUPPORTED_OS" => ScanStatusReason::UnsupportedOs,
+"UNSUPPORTED_RUNTIME" => ScanStatusReason::UnsupportedRuntime,
+other => ScanStatusReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ScanStatusReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScanStatusReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScanStatusReason::from(s))
+                }
+            }
 impl ScanStatusReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ScanStatusReason::AccessDenied => "ACCESS_DENIED",
-            ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
-            ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
-            ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
-            ScanStatusReason::InternalError => "INTERNAL_ERROR",
-            ScanStatusReason::NoInventory => "NO_INVENTORY",
-            ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
-            ScanStatusReason::PendingDisable => "PENDING_DISABLE",
-            ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
-            ScanStatusReason::ResourceTerminated => "RESOURCE_TERMINATED",
-            ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
-            ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
-            ScanStatusReason::ScanFrequencyScanOnPush => "SCAN_FREQUENCY_SCAN_ON_PUSH",
-            ScanStatusReason::StaleInventory => "STALE_INVENTORY",
-            ScanStatusReason::Successful => "SUCCESSFUL",
-            ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
-            ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
-            ScanStatusReason::UnsupportedRuntime => "UNSUPPORTED_RUNTIME",
-            ScanStatusReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "EC2_INSTANCE_STOPPED",
-            "EXCLUDED_BY_TAG",
-            "IMAGE_SIZE_EXCEEDED",
-            "INTERNAL_ERROR",
-            "NO_INVENTORY",
-            "NO_RESOURCES_FOUND",
-            "PENDING_DISABLE",
-            "PENDING_INITIAL_SCAN",
-            "RESOURCE_TERMINATED",
-            "SCAN_ELIGIBILITY_EXPIRED",
-            "SCAN_FREQUENCY_MANUAL",
-            "SCAN_FREQUENCY_SCAN_ON_PUSH",
-            "STALE_INVENTORY",
-            "SUCCESSFUL",
-            "UNMANAGED_EC2_INSTANCE",
-            "UNSUPPORTED_OS",
-            "UNSUPPORTED_RUNTIME",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ScanStatusReason::AccessDenied => "ACCESS_DENIED",
+    ScanStatusReason::Ec2InstanceStopped => "EC2_INSTANCE_STOPPED",
+    ScanStatusReason::ExcludedByTag => "EXCLUDED_BY_TAG",
+    ScanStatusReason::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
+    ScanStatusReason::InternalError => "INTERNAL_ERROR",
+    ScanStatusReason::NoInventory => "NO_INVENTORY",
+    ScanStatusReason::NoResourcesFound => "NO_RESOURCES_FOUND",
+    ScanStatusReason::PendingDisable => "PENDING_DISABLE",
+    ScanStatusReason::PendingInitialScan => "PENDING_INITIAL_SCAN",
+    ScanStatusReason::ResourceTerminated => "RESOURCE_TERMINATED",
+    ScanStatusReason::ScanEligibilityExpired => "SCAN_ELIGIBILITY_EXPIRED",
+    ScanStatusReason::ScanFrequencyManual => "SCAN_FREQUENCY_MANUAL",
+    ScanStatusReason::ScanFrequencyScanOnPush => "SCAN_FREQUENCY_SCAN_ON_PUSH",
+    ScanStatusReason::StaleInventory => "STALE_INVENTORY",
+    ScanStatusReason::Successful => "SUCCESSFUL",
+    ScanStatusReason::UnmanagedEc2Instance => "UNMANAGED_EC2_INSTANCE",
+    ScanStatusReason::UnsupportedOs => "UNSUPPORTED_OS",
+    ScanStatusReason::UnsupportedRuntime => "UNSUPPORTED_RUNTIME",
+    ScanStatusReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "EC2_INSTANCE_STOPPED", "EXCLUDED_BY_TAG", "IMAGE_SIZE_EXCEEDED", "INTERNAL_ERROR", "NO_INVENTORY", "NO_RESOURCES_FOUND", "PENDING_DISABLE", "PENDING_INITIAL_SCAN", "RESOURCE_TERMINATED", "SCAN_ELIGIBILITY_EXPIRED", "SCAN_FREQUENCY_MANUAL", "SCAN_FREQUENCY_SCAN_ON_PUSH", "STALE_INVENTORY", "SUCCESSFUL", "UNMANAGED_EC2_INSTANCE", "UNSUPPORTED_OS", "UNSUPPORTED_RUNTIME"]
+                }
+            }
 impl AsRef<str> for ScanStatusReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

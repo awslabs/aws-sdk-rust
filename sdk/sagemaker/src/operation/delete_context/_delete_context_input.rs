@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContextInput {
+pub struct DeleteContextInput  {
     /// <p>The name of the context to delete.</p>
     #[doc(hidden)]
     pub context_name: std::option::Option<std::string::String>,
 }
 impl DeleteContextInput {
     /// <p>The name of the context to delete.</p>
-    pub fn context_name(&self) -> std::option::Option<&str> {
+    pub fn context_name(&self) -> std::option::Option<& str> {
         self.context_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteContextInputBuilder {
     }
     /// <p>The name of the context to delete.</p>
     pub fn set_context_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context_name = input;
-        self
+        self.context_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteContextInput`](crate::operation::delete_context::DeleteContextInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_context::DeleteContextInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_context::DeleteContextInput {
-            context_name: self.context_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_context::DeleteContextInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_context::DeleteContextInput {
+                context_name: self.context_name
+                ,
+            }
+        )
     }
 }
+

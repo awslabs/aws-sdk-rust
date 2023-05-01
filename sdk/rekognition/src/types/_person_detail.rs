@@ -3,7 +3,7 @@
 /// <p>Details about a person detected in a video analysis request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PersonDetail {
+pub struct PersonDetail  {
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
     #[doc(hidden)]
     pub index: i64,
@@ -20,11 +20,11 @@ impl PersonDetail {
         self.index
     }
     /// <p>Bounding box around the detected person.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Face details for the detected person.</p>
-    pub fn face(&self) -> std::option::Option<&crate::types::FaceDetail> {
+    pub fn face(&self) -> std::option::Option<& crate::types::FaceDetail> {
         self.face.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl PersonDetailBuilder {
     }
     /// <p>Identifier for the person detected person within a video. Use to keep track of the person throughout the video. The identifier is not stored by Amazon Rekognition.</p>
     pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
-        self.index = input;
-        self
+        self.index = input; self
     }
     /// <p>Bounding box around the detected person.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
@@ -60,12 +59,8 @@ impl PersonDetailBuilder {
         self
     }
     /// <p>Bounding box around the detected person.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
-        self.bounding_box = input;
-        self
+    pub fn set_bounding_box(mut self, input: std::option::Option<crate::types::BoundingBox>) -> Self {
+        self.bounding_box = input; self
     }
     /// <p>Face details for the detected person.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
@@ -74,15 +69,19 @@ impl PersonDetailBuilder {
     }
     /// <p>Face details for the detected person.</p>
     pub fn set_face(mut self, input: std::option::Option<crate::types::FaceDetail>) -> Self {
-        self.face = input;
-        self
+        self.face = input; self
     }
     /// Consumes the builder and constructs a [`PersonDetail`](crate::types::PersonDetail).
     pub fn build(self) -> crate::types::PersonDetail {
         crate::types::PersonDetail {
-            index: self.index.unwrap_or_default(),
-            bounding_box: self.bounding_box,
-            face: self.face,
+            index: self.index
+                .unwrap_or_default()
+            ,
+            bounding_box: self.bounding_box
+            ,
+            face: self.face
+            ,
         }
     }
 }
+

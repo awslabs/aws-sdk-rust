@@ -4,71 +4,49 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
 /// Fluent builder constructing a request to `CreateEnvironment`.
-///
+/// 
 /// <p>Launches an AWS Elastic Beanstalk environment for the specified application using the specified configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder,
-}
-impl CreateEnvironmentFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder
+            }
+impl CreateEnvironmentFluentBuilder  {
     /// Creates a new `CreateEnvironment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_environment::CreateEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_environment::CreateEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_environment::CreateEnvironmentError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_environment::CreateEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_environment::CreateEnvironmentOutput, aws_smithy_http::result::SdkError<crate::operation::create_environment::CreateEnvironmentError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the application that is associated with this environment.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -79,15 +57,15 @@ impl CreateEnvironmentFluentBuilder {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>A unique name for the environment.</p>
-    /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>A unique name for the environment.</p> 
+    /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> 
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
-    /// <p>A unique name for the environment.</p>
-    /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+    /// <p>A unique name for the environment.</p> 
+    /// <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> 
     /// <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
@@ -143,65 +121,59 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>Specifies the tags applied to resources in the environment.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The name of the application version to deploy.</p>
+    /// <p>The name of the application version to deploy.</p> 
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
-    /// <p>The name of the application version to deploy.</p>
+    /// <p>The name of the application version to deploy.</p> 
     /// <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }
-    /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
-    /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
+    /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note> 
+    /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p> 
     /// </note>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
-    /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note>
-    /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p>
+    /// <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note> 
+    /// <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p> 
     /// </note>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
-    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
-    /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note> 
+    /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
     /// </note>
     pub fn solution_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.solution_stack_name(input.into());
         self
     }
-    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note>
-    /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note> 
+    /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
     /// </note>
-    pub fn set_solution_stack_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_solution_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
-    /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> 
+    /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p> 
     /// </note>
     pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.platform_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note>
-    /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> 
+    /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p> 
     /// </note>
     pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_platform_arn(input);
@@ -217,10 +189,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
-    pub fn set_option_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
-    ) -> Self {
+    pub fn set_option_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
@@ -234,10 +203,7 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>
-    pub fn set_options_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>,
-    ) -> Self {
+    pub fn set_options_to_remove(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
@@ -252,3 +218,4 @@ impl CreateEnvironmentFluentBuilder {
         self
     }
 }
+

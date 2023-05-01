@@ -3,17 +3,17 @@
 /// <p>Represents the input of a <code>CreateDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentConfigInput {
+pub struct CreateDeploymentConfigInput  {
     /// <p>The name of the deployment configuration to create.</p>
     #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
-    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
-    /// <p>The type parameter takes either of the following values:</p>
-    /// <ul>
-    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
-    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
-    /// </ul>
-    /// <p>The value parameter takes an integer.</p>
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p> 
+    /// <p>The type parameter takes either of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li> 
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li> 
+    /// </ul> 
+    /// <p>The value parameter takes an integer.</p> 
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     #[doc(hidden)]
     pub minimum_healthy_hosts: std::option::Option<crate::types::MinimumHealthyHosts>,
@@ -26,36 +26,32 @@ pub struct CreateDeploymentConfigInput {
 }
 impl CreateDeploymentConfigInput {
     /// <p>The name of the deployment configuration to create.</p>
-    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
+    pub fn deployment_config_name(&self) -> std::option::Option<& str> {
         self.deployment_config_name.as_deref()
     }
-    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
-    /// <p>The type parameter takes either of the following values:</p>
-    /// <ul>
-    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
-    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
-    /// </ul>
-    /// <p>The value parameter takes an integer.</p>
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p> 
+    /// <p>The type parameter takes either of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li> 
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li> 
+    /// </ul> 
+    /// <p>The value parameter takes an integer.</p> 
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
-    pub fn minimum_healthy_hosts(&self) -> std::option::Option<&crate::types::MinimumHealthyHosts> {
+    pub fn minimum_healthy_hosts(&self) -> std::option::Option<& crate::types::MinimumHealthyHosts> {
         self.minimum_healthy_hosts.as_ref()
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-    pub fn traffic_routing_config(
-        &self,
-    ) -> std::option::Option<&crate::types::TrafficRoutingConfig> {
+    pub fn traffic_routing_config(&self) -> std::option::Option<& crate::types::TrafficRoutingConfig> {
         self.traffic_routing_config.as_ref()
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn compute_platform(&self) -> std::option::Option<&crate::types::ComputePlatform> {
+    pub fn compute_platform(&self) -> std::option::Option<& crate::types::ComputePlatform> {
         self.compute_platform.as_ref()
     }
 }
 impl CreateDeploymentConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
-    pub fn builder(
-    ) -> crate::operation::create_deployment_config::builders::CreateDeploymentConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment_config::builders::CreateDeploymentConfigInputBuilder {
         crate::operation::create_deployment_config::builders::CreateDeploymentConfigInputBuilder::default()
     }
 }
@@ -76,39 +72,31 @@ impl CreateDeploymentConfigInputBuilder {
         self
     }
     /// <p>The name of the deployment configuration to create.</p>
-    pub fn set_deployment_config_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deployment_config_name = input;
-        self
+    pub fn set_deployment_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deployment_config_name = input; self
     }
-    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
-    /// <p>The type parameter takes either of the following values:</p>
-    /// <ul>
-    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
-    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
-    /// </ul>
-    /// <p>The value parameter takes an integer.</p>
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p> 
+    /// <p>The type parameter takes either of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li> 
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li> 
+    /// </ul> 
+    /// <p>The value parameter takes an integer.</p> 
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
     pub fn minimum_healthy_hosts(mut self, input: crate::types::MinimumHealthyHosts) -> Self {
         self.minimum_healthy_hosts = Some(input);
         self
     }
-    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p>
-    /// <p>The type parameter takes either of the following values:</p>
-    /// <ul>
-    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li>
-    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li>
-    /// </ul>
-    /// <p>The value parameter takes an integer.</p>
+    /// <p>The minimum number of healthy instances that should be available at any time during the deployment. There are two parameters expected in the input: type and value.</p> 
+    /// <p>The type parameter takes either of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>HOST_COUNT: The value parameter represents the minimum number of healthy instances as an absolute value.</p> </li> 
+    /// <li> <p>FLEET_PERCENT: The value parameter represents the minimum number of healthy instances as a percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, CodeDeploy converts the percentage to the equivalent number of instances and rounds up fractional instances.</p> </li> 
+    /// </ul> 
+    /// <p>The value parameter takes an integer.</p> 
     /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT and a value of 95.</p>
-    pub fn set_minimum_healthy_hosts(
-        mut self,
-        input: std::option::Option<crate::types::MinimumHealthyHosts>,
-    ) -> Self {
-        self.minimum_healthy_hosts = input;
-        self
+    pub fn set_minimum_healthy_hosts(mut self, input: std::option::Option<crate::types::MinimumHealthyHosts>) -> Self {
+        self.minimum_healthy_hosts = input; self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
     pub fn traffic_routing_config(mut self, input: crate::types::TrafficRoutingConfig) -> Self {
@@ -116,12 +104,8 @@ impl CreateDeploymentConfigInputBuilder {
         self
     }
     /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-    pub fn set_traffic_routing_config(
-        mut self,
-        input: std::option::Option<crate::types::TrafficRoutingConfig>,
-    ) -> Self {
-        self.traffic_routing_config = input;
-        self
+    pub fn set_traffic_routing_config(mut self, input: std::option::Option<crate::types::TrafficRoutingConfig>) -> Self {
+        self.traffic_routing_config = input; self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
     pub fn compute_platform(mut self, input: crate::types::ComputePlatform) -> Self {
@@ -129,27 +113,23 @@ impl CreateDeploymentConfigInputBuilder {
         self
     }
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
-    pub fn set_compute_platform(
-        mut self,
-        input: std::option::Option<crate::types::ComputePlatform>,
-    ) -> Self {
-        self.compute_platform = input;
-        self
+    pub fn set_compute_platform(mut self, input: std::option::Option<crate::types::ComputePlatform>) -> Self {
+        self.compute_platform = input; self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentConfigInput`](crate::operation::create_deployment_config::CreateDeploymentConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_deployment_config::CreateDeploymentConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_deployment_config::CreateDeploymentConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_deployment_config::CreateDeploymentConfigInput {
-                deployment_config_name: self.deployment_config_name,
-                minimum_healthy_hosts: self.minimum_healthy_hosts,
-                traffic_routing_config: self.traffic_routing_config,
-                compute_platform: self.compute_platform,
-            },
+                deployment_config_name: self.deployment_config_name
+                ,
+                minimum_healthy_hosts: self.minimum_healthy_hosts
+                ,
+                traffic_routing_config: self.traffic_routing_config
+                ,
+                compute_platform: self.compute_platform
+                ,
+            }
         )
     }
 }
+

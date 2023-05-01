@@ -16,7 +16,7 @@ pub enum Error {
     /// <p>Unable to process the request because the client provided input failed to satisfy request constraints.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -27,47 +27,25 @@ impl std::fmt::Display for Error {
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError>
-    for Error
-{
-    fn from(
-        err: crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError,
-    ) -> Self {
+impl From<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError> for Error {
+    fn from(err: crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError) -> Self {
         match err {
             crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::cancel_sol_network_operation::CancelSolNetworkOperationError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -78,41 +56,21 @@ impl From<crate::operation::cancel_sol_network_operation::CancelSolNetworkOperat
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_sol_function_package::CreateSolFunctionPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_sol_function_package::CreateSolFunctionPackageError> for Error {
-    fn from(
-        err: crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::create_sol_function_package::CreateSolFunctionPackageError) -> Self {
         match err {
             crate::operation::create_sol_function_package::CreateSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_sol_function_package::CreateSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -123,41 +81,21 @@ impl From<crate::operation::create_sol_function_package::CreateSolFunctionPackag
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError> for Error {
-    fn from(
-        err: crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError) -> Self {
         match err {
             crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_sol_network_instance::CreateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -169,41 +107,21 @@ impl From<crate::operation::create_sol_network_instance::CreateSolNetworkInstanc
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_sol_network_package::CreateSolNetworkPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_sol_network_package::CreateSolNetworkPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::create_sol_network_package::CreateSolNetworkPackageError> for Error {
-    fn from(
-        err: crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::create_sol_network_package::CreateSolNetworkPackageError) -> Self {
         match err {
             crate::operation::create_sol_network_package::CreateSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::create_sol_network_package::CreateSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -214,41 +132,21 @@ impl From<crate::operation::create_sol_network_package::CreateSolNetworkPackageE
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError> for Error {
-    fn from(
-        err: crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError) -> Self {
         match err {
             crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -259,41 +157,21 @@ impl From<crate::operation::delete_sol_function_package::DeleteSolFunctionPackag
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError> for Error {
-    fn from(
-        err: crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError) -> Self {
         match err {
             crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -304,41 +182,21 @@ impl From<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanc
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError> for Error {
-    fn from(
-        err: crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError) -> Self {
         match err {
             crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_sol_network_package::DeleteSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -349,34 +207,16 @@ impl From<crate::operation::delete_sol_network_package::DeleteSolNetworkPackageE
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_function_instance::GetSolFunctionInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -392,34 +232,16 @@ impl From<crate::operation::get_sol_function_instance::GetSolFunctionInstanceErr
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package::GetSolFunctionPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -435,43 +257,21 @@ impl From<crate::operation::get_sol_function_package::GetSolFunctionPackageError
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError,
-    ) -> Self {
+impl From<crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError> for Error {
+    fn from(err: crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError) -> Self {
         match err {
             crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_sol_function_package_content::GetSolFunctionPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -495,14 +295,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_functio
         }
     }
 }
-impl
-    From<
-        crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError,
-    > for Error
-{
-    fn from(
-        err: crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError,
-    ) -> Self {
+impl From<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError> for Error {
+    fn from(err: crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError) -> Self {
         match err {
             crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -513,34 +307,16 @@ impl
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_instance::GetSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_network_instance::GetSolNetworkInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_network_instance::GetSolNetworkInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -556,34 +332,16 @@ impl From<crate::operation::get_sol_network_instance::GetSolNetworkInstanceError
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_operation::GetSolNetworkOperationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_network_operation::GetSolNetworkOperationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_network_operation::GetSolNetworkOperationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -599,34 +357,16 @@ impl From<crate::operation::get_sol_network_operation::GetSolNetworkOperationErr
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package::GetSolNetworkPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package::GetSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package::GetSolNetworkPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package::GetSolNetworkPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -642,43 +382,21 @@ impl From<crate::operation::get_sol_network_package::GetSolNetworkPackageError> 
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError,
-    ) -> Self {
+impl From<crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError> for Error {
+    fn from(err: crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError) -> Self {
         match err {
             crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_sol_network_package_content::GetSolNetworkPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -702,12 +420,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_sol_network
         }
     }
 }
-impl From<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError>
-    for Error
-{
-    fn from(
-        err: crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError,
-    ) -> Self {
+impl From<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError> for Error {
+    fn from(err: crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError) -> Self {
         match err {
             crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -718,43 +432,21 @@ impl From<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPac
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError>
-    for Error
-{
-    fn from(
-        err: crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
-    ) -> Self {
+impl From<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError> for Error {
+    fn from(err: crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError) -> Self {
         match err {
             crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -766,41 +458,21 @@ impl From<crate::operation::instantiate_sol_network_instance::InstantiateSolNetw
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_instances::ListSolFunctionInstancesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_sol_function_instances::ListSolFunctionInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_sol_function_instances::ListSolFunctionInstancesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_sol_function_instances::ListSolFunctionInstancesError> for Error {
-    fn from(
-        err: crate::operation::list_sol_function_instances::ListSolFunctionInstancesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_function_instances::ListSolFunctionInstancesError) -> Self {
         match err {
             crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_sol_function_instances::ListSolFunctionInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -810,41 +482,21 @@ impl From<crate::operation::list_sol_function_instances::ListSolFunctionInstance
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_sol_function_packages::ListSolFunctionPackagesError> for Error {
-    fn from(
-        err: crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_function_packages::ListSolFunctionPackagesError) -> Self {
         match err {
             crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_sol_function_packages::ListSolFunctionPackagesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -854,41 +506,21 @@ impl From<crate::operation::list_sol_function_packages::ListSolFunctionPackagesE
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_instances::ListSolNetworkInstancesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_sol_network_instances::ListSolNetworkInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_sol_network_instances::ListSolNetworkInstancesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_sol_network_instances::ListSolNetworkInstancesError> for Error {
-    fn from(
-        err: crate::operation::list_sol_network_instances::ListSolNetworkInstancesError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_network_instances::ListSolNetworkInstancesError) -> Self {
         match err {
             crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_sol_network_instances::ListSolNetworkInstancesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -898,41 +530,21 @@ impl From<crate::operation::list_sol_network_instances::ListSolNetworkInstancesE
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_operations::ListSolNetworkOperationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_sol_network_operations::ListSolNetworkOperationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_sol_network_operations::ListSolNetworkOperationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::list_sol_network_operations::ListSolNetworkOperationsError> for Error {
-    fn from(
-        err: crate::operation::list_sol_network_operations::ListSolNetworkOperationsError,
-    ) -> Self {
+    fn from(err: crate::operation::list_sol_network_operations::ListSolNetworkOperationsError) -> Self {
         match err {
             crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_sol_network_operations::ListSolNetworkOperationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -942,34 +554,16 @@ impl From<crate::operation::list_sol_network_operations::ListSolNetworkOperation
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_sol_network_packages::ListSolNetworkPackagesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -984,34 +578,16 @@ impl From<crate::operation::list_sol_network_packages::ListSolNetworkPackagesErr
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::list_tags_for_resource::ListTagsForResourceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -1027,43 +603,21 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
-    ) -> Self {
+impl From<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError> for Error {
+    fn from(err: crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError) -> Self {
         match err {
             crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -1074,43 +628,21 @@ impl From<crate::operation::put_sol_function_package_content::PutSolFunctionPack
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError>
-    for Error
-{
-    fn from(
-        err: crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError,
-    ) -> Self {
+impl From<crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError> for Error {
+    fn from(err: crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError) -> Self {
         match err {
             crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_sol_network_package_content::PutSolNetworkPackageContentError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -1121,90 +653,46 @@ impl From<crate::operation::put_sol_network_package_content::PutSolNetworkPackag
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::tag_resource::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
-            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => {
-                Error::InternalServerException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => {
-                Error::ResourceNotFoundException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
-impl From<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError>
-    for Error
-{
-    fn from(
-        err: crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
-    ) -> Self {
+impl From<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError> for Error {
+    fn from(err: crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError) -> Self {
         match err {
             crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -1216,92 +704,46 @@ impl From<crate::operation::terminate_sol_network_instance::TerminateSolNetworkI
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::untag_resource::UntagResourceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
-            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(
-                inner,
-            ) => Error::ResourceNotFoundException(inner),
-            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => {
-                Error::ValidationException(inner)
-            }
-            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_sol_function_package::UpdateSolFunctionPackageError> for Error {
-    fn from(
-        err: crate::operation::update_sol_function_package::UpdateSolFunctionPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::update_sol_function_package::UpdateSolFunctionPackageError) -> Self {
         match err {
             crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_sol_function_package::UpdateSolFunctionPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -1312,41 +754,21 @@ impl From<crate::operation::update_sol_function_package::UpdateSolFunctionPackag
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError> for Error {
-    fn from(
-        err: crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
-    ) -> Self {
+    fn from(err: crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError) -> Self {
         match err {
             crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -1358,41 +780,21 @@ impl From<crate::operation::update_sol_network_instance::UpdateSolNetworkInstanc
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::update_sol_network_package::UpdateSolNetworkPackageError> for Error {
-    fn from(
-        err: crate::operation::update_sol_network_package::UpdateSolNetworkPackageError,
-    ) -> Self {
+    fn from(err: crate::operation::update_sol_network_package::UpdateSolNetworkPackageError) -> Self {
         match err {
             crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::update_sol_network_package::UpdateSolNetworkPackageError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -1467,3 +869,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

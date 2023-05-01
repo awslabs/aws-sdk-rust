@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchResourcesOutput {
+pub struct SearchResourcesOutput  {
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     #[doc(hidden)]
     pub matching_resources: std::option::Option<std::vec::Vec<crate::types::MatchingResource>>,
@@ -13,19 +13,19 @@ pub struct SearchResourcesOutput {
 }
 impl SearchResourcesOutput {
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-    pub fn matching_resources(&self) -> std::option::Option<&[crate::types::MatchingResource]> {
+    pub fn matching_resources(&self) -> std::option::Option<& [crate::types::MatchingResource]> {
         self.matching_resources.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchResourcesOutput {
     /// Creates a new builder-style object to manufacture [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
     pub fn builder() -> crate::operation::search_resources::builders::SearchResourcesOutputBuilder {
@@ -37,8 +37,7 @@ impl SearchResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SearchResourcesOutputBuilder {
-    pub(crate) matching_resources:
-        std::option::Option<std::vec::Vec<crate::types::MatchingResource>>,
+    pub(crate) matching_resources: std::option::Option<std::vec::Vec<crate::types::MatchingResource>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl SearchResourcesOutputBuilder {
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
     pub fn matching_resources(mut self, input: crate::types::MatchingResource) -> Self {
         let mut v = self.matching_resources.unwrap_or_default();
-        v.push(input);
-        self.matching_resources = Some(v);
-        self
+                        v.push(input);
+                        self.matching_resources = Some(v);
+                        self
     }
     /// <p>An array of objects, one for each resource that matches the filter criteria specified in the request.</p>
-    pub fn set_matching_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MatchingResource>>,
-    ) -> Self {
-        self.matching_resources = input;
-        self
+    pub fn set_matching_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::MatchingResource>>) -> Self {
+        self.matching_resources = input; self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl SearchResourcesOutputBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchResourcesOutput`](crate::operation::search_resources::SearchResourcesOutput).
     pub fn build(self) -> crate::operation::search_resources::SearchResourcesOutput {
         crate::operation::search_resources::SearchResourcesOutput {
-            matching_resources: self.matching_resources,
-            next_token: self.next_token,
+            matching_resources: self.matching_resources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

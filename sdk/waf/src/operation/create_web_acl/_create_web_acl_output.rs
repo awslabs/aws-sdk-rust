@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebAclOutput {
+pub struct CreateWebAclOutput  {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::types::WebAcl>,
@@ -13,19 +13,19 @@ pub struct CreateWebAclOutput {
 }
 impl CreateWebAclOutput {
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
-    pub fn web_acl(&self) -> std::option::Option<&crate::types::WebAcl> {
+    pub fn web_acl(&self) -> std::option::Option<& crate::types::WebAcl> {
         self.web_acl.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWebAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput).
     pub fn builder() -> crate::operation::create_web_acl::builders::CreateWebAclOutputBuilder {
@@ -49,8 +49,7 @@ impl CreateWebAclOutputBuilder {
     }
     /// <p>The <code>WebACL</code> returned in the <code>CreateWebACL</code> response.</p>
     pub fn set_web_acl(mut self, input: std::option::Option<crate::types::WebAcl>) -> Self {
-        self.web_acl = input;
-        self
+        self.web_acl = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl CreateWebAclOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateWebACL</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput).
     pub fn build(self) -> crate::operation::create_web_acl::CreateWebAclOutput {
         crate::operation::create_web_acl::CreateWebAclOutput {
-            web_acl: self.web_acl,
-            change_token: self.change_token,
+            web_acl: self.web_acl
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

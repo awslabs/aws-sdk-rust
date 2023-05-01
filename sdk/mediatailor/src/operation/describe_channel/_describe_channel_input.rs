@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelInput {
+pub struct DescribeChannelInput  {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
 }
 impl DescribeChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input;
-        self
+        self.channel_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_channel::DescribeChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_channel::DescribeChannelInput {
-            channel_name: self.channel_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_channel::DescribeChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_channel::DescribeChannelInput {
+                channel_name: self.channel_name
+                ,
+            }
+        )
     }
 }
+

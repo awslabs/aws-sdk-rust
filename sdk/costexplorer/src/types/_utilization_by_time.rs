@@ -3,7 +3,7 @@
 /// <p>The amount of utilization, in hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UtilizationByTime {
+pub struct UtilizationByTime  {
     /// <p>The period of time that this utilization was used for.</p>
     #[doc(hidden)]
     pub time_period: std::option::Option<crate::types::DateInterval>,
@@ -16,15 +16,15 @@ pub struct UtilizationByTime {
 }
 impl UtilizationByTime {
     /// <p>The period of time that this utilization was used for.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::ReservationUtilizationGroup]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::types::ReservationUtilizationGroup]> {
         self.groups.as_deref()
     }
     /// <p>The total number of reservation hours that were used.</p>
-    pub fn total(&self) -> std::option::Option<&crate::types::ReservationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::types::ReservationAggregates> {
         self.total.as_ref()
     }
 }
@@ -40,8 +40,7 @@ impl UtilizationByTime {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UtilizationByTimeBuilder {
     pub(crate) time_period: std::option::Option<crate::types::DateInterval>,
-    pub(crate) groups:
-        std::option::Option<std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
+    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
     pub(crate) total: std::option::Option<crate::types::ReservationAggregates>,
 }
 impl UtilizationByTimeBuilder {
@@ -51,12 +50,8 @@ impl UtilizationByTimeBuilder {
         self
     }
     /// <p>The period of time that this utilization was used for.</p>
-    pub fn set_time_period(
-        mut self,
-        input: std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
-        self.time_period = input;
-        self
+    pub fn set_time_period(mut self, input: std::option::Option<crate::types::DateInterval>) -> Self {
+        self.time_period = input; self
     }
     /// Appends an item to `groups`.
     ///
@@ -65,17 +60,13 @@ impl UtilizationByTimeBuilder {
     /// <p>The groups that this utilization result uses.</p>
     pub fn groups(mut self, input: crate::types::ReservationUtilizationGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
-        v.push(input);
-        self.groups = Some(v);
-        self
+                        v.push(input);
+                        self.groups = Some(v);
+                        self
     }
     /// <p>The groups that this utilization result uses.</p>
-    pub fn set_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservationUtilizationGroup>>,
-    ) -> Self {
-        self.groups = input;
-        self
+    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReservationUtilizationGroup>>) -> Self {
+        self.groups = input; self
     }
     /// <p>The total number of reservation hours that were used.</p>
     pub fn total(mut self, input: crate::types::ReservationAggregates) -> Self {
@@ -83,19 +74,19 @@ impl UtilizationByTimeBuilder {
         self
     }
     /// <p>The total number of reservation hours that were used.</p>
-    pub fn set_total(
-        mut self,
-        input: std::option::Option<crate::types::ReservationAggregates>,
-    ) -> Self {
-        self.total = input;
-        self
+    pub fn set_total(mut self, input: std::option::Option<crate::types::ReservationAggregates>) -> Self {
+        self.total = input; self
     }
     /// Consumes the builder and constructs a [`UtilizationByTime`](crate::types::UtilizationByTime).
     pub fn build(self) -> crate::types::UtilizationByTime {
         crate::types::UtilizationByTime {
-            time_period: self.time_period,
-            groups: self.groups,
-            total: self.total,
+            time_period: self.time_period
+            ,
+            groups: self.groups
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

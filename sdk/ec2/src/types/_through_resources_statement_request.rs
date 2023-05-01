@@ -3,16 +3,14 @@
 /// <p>Describes a through resource statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThroughResourcesStatementRequest {
+pub struct ThroughResourcesStatementRequest  {
     /// <p>The resource statement.</p>
     #[doc(hidden)]
     pub resource_statement: std::option::Option<crate::types::ResourceStatementRequest>,
 }
 impl ThroughResourcesStatementRequest {
     /// <p>The resource statement.</p>
-    pub fn resource_statement(
-        &self,
-    ) -> std::option::Option<&crate::types::ResourceStatementRequest> {
+    pub fn resource_statement(&self) -> std::option::Option<& crate::types::ResourceStatementRequest> {
         self.resource_statement.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl ThroughResourcesStatementRequestBuilder {
         self
     }
     /// <p>The resource statement.</p>
-    pub fn set_resource_statement(
-        mut self,
-        input: std::option::Option<crate::types::ResourceStatementRequest>,
-    ) -> Self {
-        self.resource_statement = input;
-        self
+    pub fn set_resource_statement(mut self, input: std::option::Option<crate::types::ResourceStatementRequest>) -> Self {
+        self.resource_statement = input; self
     }
     /// Consumes the builder and constructs a [`ThroughResourcesStatementRequest`](crate::types::ThroughResourcesStatementRequest).
     pub fn build(self) -> crate::types::ThroughResourcesStatementRequest {
         crate::types::ThroughResourcesStatementRequest {
-            resource_statement: self.resource_statement,
+            resource_statement: self.resource_statement
+            ,
         }
     }
 }
+

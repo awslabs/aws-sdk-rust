@@ -3,7 +3,7 @@
 /// <p>Information about an inappropriate, unwanted, or offensive content label detection in a stored video.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentModerationDetection {
+pub struct ContentModerationDetection  {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
@@ -17,7 +17,7 @@ impl ContentModerationDetection {
         self.timestamp
     }
     /// <p>The content moderation label detected by in the stored video.</p>
-    pub fn moderation_label(&self) -> std::option::Option<&crate::types::ModerationLabel> {
+    pub fn moderation_label(&self) -> std::option::Option<& crate::types::ModerationLabel> {
         self.moderation_label.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ContentModerationDetectionBuilder {
     }
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// <p>The content moderation label detected by in the stored video.</p>
     pub fn moderation_label(mut self, input: crate::types::ModerationLabel) -> Self {
@@ -52,18 +51,18 @@ impl ContentModerationDetectionBuilder {
         self
     }
     /// <p>The content moderation label detected by in the stored video.</p>
-    pub fn set_moderation_label(
-        mut self,
-        input: std::option::Option<crate::types::ModerationLabel>,
-    ) -> Self {
-        self.moderation_label = input;
-        self
+    pub fn set_moderation_label(mut self, input: std::option::Option<crate::types::ModerationLabel>) -> Self {
+        self.moderation_label = input; self
     }
     /// Consumes the builder and constructs a [`ContentModerationDetection`](crate::types::ContentModerationDetection).
     pub fn build(self) -> crate::types::ContentModerationDetection {
         crate::types::ContentModerationDetection {
-            timestamp: self.timestamp.unwrap_or_default(),
-            moderation_label: self.moderation_label,
+            timestamp: self.timestamp
+                .unwrap_or_default()
+            ,
+            moderation_label: self.moderation_label
+            ,
         }
     }
 }
+

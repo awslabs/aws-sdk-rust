@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+pub struct CreateFunctionInput  {
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p> 
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<crate::types::Runtime>,
@@ -58,8 +58,7 @@ pub struct CreateFunctionInput {
     pub tracing_config: std::option::Option<crate::types::TracingConfig>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -83,36 +82,36 @@ pub struct CreateFunctionInput {
     pub snap_start: std::option::Option<crate::types::SnapStart>,
 }
 impl CreateFunctionInput {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p> 
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::types::Runtime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::types::Runtime> {
         self.runtime.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The name of the method within your code that Lambda calls to run your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.</p>
-    pub fn handler(&self) -> std::option::Option<&str> {
+    pub fn handler(&self) -> std::option::Option<& str> {
         self.handler.as_deref()
     }
     /// <p>The code for the function.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::FunctionCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::FunctionCode> {
         self.code.as_ref()
     }
     /// <p>A description of the function.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
@@ -128,62 +127,59 @@ impl CreateFunctionInput {
         self.publish
     }
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for .zip file archive.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::types::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>Environment variables that are accessible from function code during execution.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::types::Environment> {
+    pub fn environment(&self) -> std::option::Option<& crate::types::Environment> {
         self.environment.as_ref()
     }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
-    pub fn tracing_config(&self) -> std::option::Option<&crate::types::TracingConfig> {
+    pub fn tracing_config(&self) -> std::option::Option<& crate::types::TracingConfig> {
         self.tracing_config.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    pub fn layers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn layers(&self) -> std::option::Option<& [std::string::String]> {
         self.layers.as_deref()
     }
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    pub fn file_system_configs(&self) -> std::option::Option<&[crate::types::FileSystemConfig]> {
+    pub fn file_system_configs(&self) -> std::option::Option<& [crate::types::FileSystemConfig]> {
         self.file_system_configs.as_deref()
     }
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
-    pub fn image_config(&self) -> std::option::Option<&crate::types::ImageConfig> {
+    pub fn image_config(&self) -> std::option::Option<& crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn architectures(&self) -> std::option::Option<&[crate::types::Architecture]> {
+    pub fn architectures(&self) -> std::option::Option<& [crate::types::Architecture]> {
         self.architectures.as_deref()
     }
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::types::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
-    pub fn snap_start(&self) -> std::option::Option<&crate::types::SnapStart> {
+    pub fn snap_start(&self) -> std::option::Option<& crate::types::SnapStart> {
         self.snap_start.as_ref()
     }
 }
@@ -213,11 +209,9 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) environment: std::option::Option<crate::types::Environment>,
     pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     pub(crate) tracing_config: std::option::Option<crate::types::TracingConfig>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) layers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) file_system_configs:
-        std::option::Option<std::vec::Vec<crate::types::FileSystemConfig>>,
+    pub(crate) file_system_configs: std::option::Option<std::vec::Vec<crate::types::FileSystemConfig>>,
     pub(crate) image_config: std::option::Option<crate::types::ImageConfig>,
     pub(crate) code_signing_config_arn: std::option::Option<std::string::String>,
     pub(crate) architectures: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
@@ -225,41 +219,39 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) snap_start: std::option::Option<crate::types::SnapStart>,
 }
 impl CreateFunctionInputBuilder {
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p> 
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn runtime(mut self, input: crate::types::Runtime) -> Self {
         self.runtime = Some(input);
         self
     }
-    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p>
+    /// <p>The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the deployment package is a .zip file archive.</p> 
     /// <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p>
     pub fn set_runtime(mut self, input: std::option::Option<crate::types::Runtime>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,8 +260,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The name of the method within your code that Lambda calls to run your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.</p>
     pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,8 +269,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The name of the method within your code that Lambda calls to run your function. Handler is required if the deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and other qualifiers, depending on the runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.</p>
     pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.handler = input;
-        self
+        self.handler = input; self
     }
     /// <p>The code for the function.</p>
     pub fn code(mut self, input: crate::types::FunctionCode) -> Self {
@@ -288,8 +278,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The code for the function.</p>
     pub fn set_code(mut self, input: std::option::Option<crate::types::FunctionCode>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>A description of the function.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,8 +287,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>A description of the function.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -308,8 +296,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3 seconds. The maximum allowed value is 900 seconds. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
     pub fn memory_size(mut self, input: i32) -> Self {
@@ -318,8 +305,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console">memory available to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
     pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory_size = input;
-        self
+        self.memory_size = input; self
     }
     /// <p>Set to true to publish the first version of the function during creation.</p>
     pub fn publish(mut self, input: bool) -> Self {
@@ -328,8 +314,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>Set to true to publish the first version of the function during creation.</p>
     pub fn set_publish(mut self, input: std::option::Option<bool>) -> Self {
-        self.publish = input;
-        self
+        self.publish = input; self
     }
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -338,8 +323,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access resources in a VPC</a>.</p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input;
-        self
+        self.vpc_config = input; self
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for .zip file archive.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
@@ -347,12 +331,8 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for .zip file archive.</p>
-    pub fn set_package_type(
-        mut self,
-        input: std::option::Option<crate::types::PackageType>,
-    ) -> Self {
-        self.package_type = input;
-        self
+    pub fn set_package_type(mut self, input: std::option::Option<crate::types::PackageType>) -> Self {
+        self.package_type = input; self
     }
     /// <p>A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
@@ -360,12 +340,8 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.</p>
-    pub fn set_dead_letter_config(
-        mut self,
-        input: std::option::Option<crate::types::DeadLetterConfig>,
-    ) -> Self {
-        self.dead_letter_config = input;
-        self
+    pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::types::DeadLetterConfig>) -> Self {
+        self.dead_letter_config = input; self
     }
     /// <p>Environment variables that are accessible from function code during execution.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
@@ -373,12 +349,8 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>Environment variables that are accessible from function code during execution.</p>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<crate::types::Environment>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input; self
     }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,8 +359,7 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda uses a default service key.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
     pub fn tracing_config(mut self, input: crate::types::TracingConfig) -> Self {
@@ -396,37 +367,23 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
-    pub fn set_tracing_config(
-        mut self,
-        input: std::option::Option<crate::types::TracingConfig>,
-    ) -> Self {
-        self.tracing_config = input;
-        self
+    pub fn set_tracing_config(mut self, input: std::option::Option<crate::types::TracingConfig>) -> Self {
+        self.tracing_config = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to apply to the function.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `layers`.
     ///
@@ -435,17 +392,13 @@ impl CreateFunctionInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
     pub fn layers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.layers.unwrap_or_default();
-        v.push(input.into());
-        self.layers = Some(v);
-        self
+                        v.push(input.into());
+                        self.layers = Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a> to add to the function's execution environment. Specify each layer by its ARN, including the version.</p>
-    pub fn set_layers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.layers = input;
-        self
+    pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.layers = input; self
     }
     /// Appends an item to `file_system_configs`.
     ///
@@ -454,17 +407,13 @@ impl CreateFunctionInputBuilder {
     /// <p>Connection settings for an Amazon EFS file system.</p>
     pub fn file_system_configs(mut self, input: crate::types::FileSystemConfig) -> Self {
         let mut v = self.file_system_configs.unwrap_or_default();
-        v.push(input);
-        self.file_system_configs = Some(v);
-        self
+                        v.push(input);
+                        self.file_system_configs = Some(v);
+                        self
     }
     /// <p>Connection settings for an Amazon EFS file system.</p>
-    pub fn set_file_system_configs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FileSystemConfig>>,
-    ) -> Self {
-        self.file_system_configs = input;
-        self
+    pub fn set_file_system_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::FileSystemConfig>>) -> Self {
+        self.file_system_configs = input; self
     }
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
     pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
@@ -472,12 +421,8 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration values</a> that override the values in the container image Dockerfile.</p>
-    pub fn set_image_config(
-        mut self,
-        input: std::option::Option<crate::types::ImageConfig>,
-    ) -> Self {
-        self.image_config = input;
-        self
+    pub fn set_image_config(mut self, input: std::option::Option<crate::types::ImageConfig>) -> Self {
+        self.image_config = input; self
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
     pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -485,12 +430,8 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>To enable code signing for this function, specify the ARN of a code-signing configuration. A code-signing configuration includes a set of signing profiles, which define the trusted publishers for this function.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_signing_config_arn = input;
-        self
+    pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_signing_config_arn = input; self
     }
     /// Appends an item to `architectures`.
     ///
@@ -499,17 +440,13 @@ impl CreateFunctionInputBuilder {
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
     pub fn architectures(mut self, input: crate::types::Architecture) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-        v.push(input);
-        self.architectures = Some(v);
-        self
+                        v.push(input);
+                        self.architectures = Some(v);
+                        self
     }
     /// <p>The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.</p>
-    pub fn set_architectures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
-    ) -> Self {
-        self.architectures = input;
-        self
+    pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::types::Architecture>>) -> Self {
+        self.architectures = input; self
     }
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
@@ -517,12 +454,8 @@ impl CreateFunctionInputBuilder {
         self
     }
     /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB.</p>
-    pub fn set_ephemeral_storage(
-        mut self,
-        input: std::option::Option<crate::types::EphemeralStorage>,
-    ) -> Self {
-        self.ephemeral_storage = input;
-        self
+    pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::types::EphemeralStorage>) -> Self {
+        self.ephemeral_storage = input; self
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub fn snap_start(mut self, input: crate::types::SnapStart) -> Self {
@@ -531,40 +464,60 @@ impl CreateFunctionInputBuilder {
     }
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub fn set_snap_start(mut self, input: std::option::Option<crate::types::SnapStart>) -> Self {
-        self.snap_start = input;
-        self
+        self.snap_start = input; self
     }
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_function::CreateFunctionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_function::CreateFunctionInput {
-            function_name: self.function_name,
-            runtime: self.runtime,
-            role: self.role,
-            handler: self.handler,
-            code: self.code,
-            description: self.description,
-            timeout: self.timeout,
-            memory_size: self.memory_size,
-            publish: self.publish,
-            vpc_config: self.vpc_config,
-            package_type: self.package_type,
-            dead_letter_config: self.dead_letter_config,
-            environment: self.environment,
-            kms_key_arn: self.kms_key_arn,
-            tracing_config: self.tracing_config,
-            tags: self.tags,
-            layers: self.layers,
-            file_system_configs: self.file_system_configs,
-            image_config: self.image_config,
-            code_signing_config_arn: self.code_signing_config_arn,
-            architectures: self.architectures,
-            ephemeral_storage: self.ephemeral_storage,
-            snap_start: self.snap_start,
-        })
+    pub fn build(self) -> Result<crate::operation::create_function::CreateFunctionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_function::CreateFunctionInput {
+                function_name: self.function_name
+                ,
+                runtime: self.runtime
+                ,
+                role: self.role
+                ,
+                handler: self.handler
+                ,
+                code: self.code
+                ,
+                description: self.description
+                ,
+                timeout: self.timeout
+                ,
+                memory_size: self.memory_size
+                ,
+                publish: self.publish
+                ,
+                vpc_config: self.vpc_config
+                ,
+                package_type: self.package_type
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                environment: self.environment
+                ,
+                kms_key_arn: self.kms_key_arn
+                ,
+                tracing_config: self.tracing_config
+                ,
+                tags: self.tags
+                ,
+                layers: self.layers
+                ,
+                file_system_configs: self.file_system_configs
+                ,
+                image_config: self.image_config
+                ,
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+                architectures: self.architectures
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                snap_start: self.snap_start
+                ,
+            }
+        )
     }
 }
+

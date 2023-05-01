@@ -3,7 +3,7 @@
 /// <p>The following element is returned by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRenderEmailTemplateOutput {
+pub struct TestRenderEmailTemplateOutput  {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
     #[doc(hidden)]
     pub rendered_template: std::option::Option<std::string::String>,
@@ -11,20 +11,18 @@ pub struct TestRenderEmailTemplateOutput {
 }
 impl TestRenderEmailTemplateOutput {
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
-    pub fn rendered_template(&self) -> std::option::Option<&str> {
+    pub fn rendered_template(&self) -> std::option::Option<& str> {
         self.rendered_template.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for TestRenderEmailTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TestRenderEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`TestRenderEmailTemplateOutput`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder {
         crate::operation::test_render_email_template::builders::TestRenderEmailTemplateOutputBuilder::default()
     }
 }
@@ -43,29 +41,25 @@ impl TestRenderEmailTemplateOutputBuilder {
         self
     }
     /// <p>The complete MIME message rendered by applying the data in the <code>TemplateData</code> parameter to the template specified in the TemplateName parameter.</p>
-    pub fn set_rendered_template(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.rendered_template = input;
-        self
+    pub fn set_rendered_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.rendered_template = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TestRenderEmailTemplateOutput`](crate::operation::test_render_email_template::TestRenderEmailTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::test_render_email_template::TestRenderEmailTemplateOutput {
+    pub fn build(self) -> crate::operation::test_render_email_template::TestRenderEmailTemplateOutput {
         crate::operation::test_render_email_template::TestRenderEmailTemplateOutput {
-            rendered_template: self.rendered_template,
+            rendered_template: self.rendered_template
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

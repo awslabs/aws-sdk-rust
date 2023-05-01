@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetGroupsInput {
+pub struct ListTargetGroupsInput  {
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -22,22 +22,21 @@ impl ListTargetGroupsInput {
         self.max_results
     }
     /// <p>A pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn vpc_identifier(&self) -> std::option::Option<&str> {
+    pub fn vpc_identifier(&self) -> std::option::Option<& str> {
         self.vpc_identifier.as_deref()
     }
     /// <p>The target group type.</p>
-    pub fn target_group_type(&self) -> std::option::Option<&crate::types::TargetGroupType> {
+    pub fn target_group_type(&self) -> std::option::Option<& crate::types::TargetGroupType> {
         self.target_group_type.as_ref()
     }
 }
 impl ListTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListTargetGroupsInput`](crate::operation::list_target_groups::ListTargetGroupsInput).
-    pub fn builder() -> crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder {
         crate::operation::list_target_groups::builders::ListTargetGroupsInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListTargetGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl ListTargetGroupsInputBuilder {
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn vpc_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl ListTargetGroupsInputBuilder {
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn set_vpc_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_identifier = input;
-        self
+        self.vpc_identifier = input; self
     }
     /// <p>The target group type.</p>
     pub fn target_group_type(mut self, input: crate::types::TargetGroupType) -> Self {
@@ -88,27 +84,23 @@ impl ListTargetGroupsInputBuilder {
         self
     }
     /// <p>The target group type.</p>
-    pub fn set_target_group_type(
-        mut self,
-        input: std::option::Option<crate::types::TargetGroupType>,
-    ) -> Self {
-        self.target_group_type = input;
-        self
+    pub fn set_target_group_type(mut self, input: std::option::Option<crate::types::TargetGroupType>) -> Self {
+        self.target_group_type = input; self
     }
     /// Consumes the builder and constructs a [`ListTargetGroupsInput`](crate::operation::list_target_groups::ListTargetGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_target_groups::ListTargetGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_target_groups::ListTargetGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_target_groups::ListTargetGroupsInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                vpc_identifier: self.vpc_identifier,
-                target_group_type: self.target_group_type,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                vpc_identifier: self.vpc_identifier
+                ,
+                target_group_type: self.target_group_type
+                ,
+            }
         )
     }
 }
+

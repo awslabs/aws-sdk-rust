@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableHostedZoneDnssecInput {
+pub struct DisableHostedZoneDnssecInput  {
     /// <p>A unique string used to identify a hosted zone.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
 }
 impl DisableHostedZoneDnssecInput {
     /// <p>A unique string used to identify a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
 }
 impl DisableHostedZoneDnssecInput {
     /// Creates a new builder-style object to manufacture [`DisableHostedZoneDnssecInput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecInput).
-    pub fn builder(
-    ) -> crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder
-    {
+    pub fn builder() -> crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder {
         crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DisableHostedZoneDnssecInputBuilder {
     }
     /// <p>A unique string used to identify a hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// Consumes the builder and constructs a [`DisableHostedZoneDnssecInput`](crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecInput {
-                hosted_zone_id: self.hosted_zone_id,
-            },
+                hosted_zone_id: self.hosted_zone_id
+                ,
+            }
         )
     }
 }
+

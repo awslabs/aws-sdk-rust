@@ -3,7 +3,7 @@
 /// <p>Information about a rendering engine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenderingEngine {
+pub struct RenderingEngine  {
     /// <p>The name of the rendering engine.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::RenderingEngineType>,
@@ -13,11 +13,11 @@ pub struct RenderingEngine {
 }
 impl RenderingEngine {
     /// <p>The name of the rendering engine.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::RenderingEngineType> {
+    pub fn name(&self) -> std::option::Option<& crate::types::RenderingEngineType> {
         self.name.as_ref()
     }
     /// <p>The version of the rendering engine.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl RenderingEngineBuilder {
         self
     }
     /// <p>The name of the rendering engine.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::RenderingEngineType>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::RenderingEngineType>) -> Self {
+        self.name = input; self
     }
     /// <p>The version of the rendering engine.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl RenderingEngineBuilder {
     }
     /// <p>The version of the rendering engine.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`RenderingEngine`](crate::types::RenderingEngine).
     pub fn build(self) -> crate::types::RenderingEngine {
         crate::types::RenderingEngine {
-            name: self.name,
-            version: self.version,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

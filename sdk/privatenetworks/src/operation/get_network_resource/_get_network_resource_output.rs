@@ -2,30 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetNetworkResourceOutput {
+pub struct GetNetworkResourceOutput  {
     /// <p>Information about the network resource.</p>
     #[doc(hidden)]
     pub network_resource: std::option::Option<crate::types::NetworkResource>,
     /// <p> The network resource tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkResourceOutput {
     /// <p>Information about the network resource.</p>
-    pub fn network_resource(&self) -> std::option::Option<&crate::types::NetworkResource> {
+    pub fn network_resource(&self) -> std::option::Option<& crate::types::NetworkResource> {
         self.network_resource.as_ref()
     }
     /// <p> The network resource tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetNetworkResourceOutput {
+impl  std::fmt::Debug for GetNetworkResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourceOutput");
         formatter.field("network_resource", &self.network_resource);
@@ -35,14 +31,13 @@ impl std::fmt::Debug for GetNetworkResourceOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetNetworkResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetNetworkResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceOutput`](crate::operation::get_network_resource::GetNetworkResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder {
+    pub fn builder() -> crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder {
         crate::operation::get_network_resource::builders::GetNetworkResourceOutputBuilder::default()
     }
 }
@@ -52,8 +47,7 @@ impl GetNetworkResourceOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct GetNetworkResourceOutputBuilder {
     pub(crate) network_resource: std::option::Option<crate::types::NetworkResource>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkResourceOutputBuilder {
@@ -63,52 +57,40 @@ impl GetNetworkResourceOutputBuilder {
         self
     }
     /// <p>Information about the network resource.</p>
-    pub fn set_network_resource(
-        mut self,
-        input: std::option::Option<crate::types::NetworkResource>,
-    ) -> Self {
-        self.network_resource = input;
-        self
+    pub fn set_network_resource(mut self, input: std::option::Option<crate::types::NetworkResource>) -> Self {
+        self.network_resource = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The network resource tags. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p> The network resource tags. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetNetworkResourceOutput`](crate::operation::get_network_resource::GetNetworkResourceOutput).
     pub fn build(self) -> crate::operation::get_network_resource::GetNetworkResourceOutput {
         crate::operation::get_network_resource::GetNetworkResourceOutput {
-            network_resource: self.network_resource,
-            tags: self.tags,
+            network_resource: self.network_resource
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
@@ -122,3 +104,4 @@ impl std::fmt::Debug for GetNetworkResourceOutputBuilder {
         formatter.finish()
     }
 }
+

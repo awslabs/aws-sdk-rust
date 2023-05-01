@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaVersionInput {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+pub struct GetSchemaVersionInput  {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub schema_id: std::option::Option<crate::types::SchemaId>,
@@ -18,27 +18,26 @@ pub struct GetSchemaVersionInput {
     pub schema_version_number: std::option::Option<crate::types::SchemaVersionNumber>,
 }
 impl GetSchemaVersionInput {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
     /// </ul>
-    pub fn schema_id(&self) -> std::option::Option<&crate::types::SchemaId> {
+    pub fn schema_id(&self) -> std::option::Option<& crate::types::SchemaId> {
         self.schema_id.as_ref()
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> std::option::Option<& str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The version number of the schema.</p>
-    pub fn schema_version_number(&self) -> std::option::Option<&crate::types::SchemaVersionNumber> {
+    pub fn schema_version_number(&self) -> std::option::Option<& crate::types::SchemaVersionNumber> {
         self.schema_version_number.as_ref()
     }
 }
 impl GetSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
-    pub fn builder() -> crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder {
         crate::operation::get_schema_version::builders::GetSchemaVersionInputBuilder::default()
     }
 }
@@ -52,23 +51,22 @@ pub struct GetSchemaVersionInputBuilder {
     pub(crate) schema_version_number: std::option::Option<crate::types::SchemaVersionNumber>,
 }
 impl GetSchemaVersionInputBuilder {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
     /// </ul>
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = Some(input);
         self
     }
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
-    /// <ul>
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li>
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
+    /// <ul> 
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 
     /// </ul>
     pub fn set_schema_id(mut self, input: std::option::Option<crate::types::SchemaId>) -> Self {
-        self.schema_id = input;
-        self
+        self.schema_id = input; self
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
     pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,12 +74,8 @@ impl GetSchemaVersionInputBuilder {
         self
     }
     /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-    pub fn set_schema_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.schema_version_id = input;
-        self
+    pub fn set_schema_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.schema_version_id = input; self
     }
     /// <p>The version number of the schema.</p>
     pub fn schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
@@ -89,26 +83,21 @@ impl GetSchemaVersionInputBuilder {
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_schema_version_number(
-        mut self,
-        input: std::option::Option<crate::types::SchemaVersionNumber>,
-    ) -> Self {
-        self.schema_version_number = input;
-        self
+    pub fn set_schema_version_number(mut self, input: std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
+        self.schema_version_number = input; self
     }
     /// Consumes the builder and constructs a [`GetSchemaVersionInput`](crate::operation::get_schema_version::GetSchemaVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_schema_version::GetSchemaVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_schema_version::GetSchemaVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_schema_version::GetSchemaVersionInput {
-                schema_id: self.schema_id,
-                schema_version_id: self.schema_version_id,
-                schema_version_number: self.schema_version_number,
-            },
+                schema_id: self.schema_id
+                ,
+                schema_version_id: self.schema_version_id
+                ,
+                schema_version_number: self.schema_version_number
+                ,
+            }
         )
     }
 }
+

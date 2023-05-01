@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsOfResourceInput {
+pub struct ListTagsOfResourceInput  {
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct ListTagsOfResourceInput {
 }
 impl ListTagsOfResourceInput {
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListTagsOfResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsOfResourceInput`](crate::operation::list_tags_of_resource::ListTagsOfResourceInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_of_resource::builders::ListTagsOfResourceInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_of_resource::builders::ListTagsOfResourceInputBuilder {
         crate::operation::list_tags_of_resource::builders::ListTagsOfResourceInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListTagsOfResourceInputBuilder {
     }
     /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl ListTagsOfResourceInputBuilder {
     }
     /// <p>An optional string that, if supplied, must be copied from the output of a previous call to ListTagOfResource. When provided in this manner, this API fetches the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListTagsOfResourceInput`](crate::operation::list_tags_of_resource::ListTagsOfResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tags_of_resource::ListTagsOfResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_tags_of_resource::ListTagsOfResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_tags_of_resource::ListTagsOfResourceInput {
-                resource_arn: self.resource_arn,
-                next_token: self.next_token,
-            },
+                resource_arn: self.resource_arn
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

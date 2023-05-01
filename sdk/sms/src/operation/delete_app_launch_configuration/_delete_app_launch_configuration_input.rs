@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppLaunchConfigurationInput {
+pub struct DeleteAppLaunchConfigurationInput  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
 impl DeleteAppLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAppLaunchConfigurationInput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput).
-    pub fn builder() -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder {
         crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeleteAppLaunchConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAppLaunchConfigurationInput`](crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfigurationInput {
-                app_id: self.app_id,
-            },
+                app_id: self.app_id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The identifier of an ApiKey used in a UsagePlan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportApiKeysOutput {
+pub struct ImportApiKeysOutput  {
     /// <p>A list of all the ApiKey identifiers.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14,19 +14,19 @@ pub struct ImportApiKeysOutput {
 }
 impl ImportApiKeysOutput {
     /// <p>A list of all the ApiKey identifiers.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>A list of warning messages.</p>
-    pub fn warnings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn warnings(&self) -> std::option::Option<& [std::string::String]> {
         self.warnings.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportApiKeysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportApiKeysOutput {
     /// Creates a new builder-style object to manufacture [`ImportApiKeysOutput`](crate::operation::import_api_keys::ImportApiKeysOutput).
     pub fn builder() -> crate::operation::import_api_keys::builders::ImportApiKeysOutputBuilder {
@@ -50,17 +50,13 @@ impl ImportApiKeysOutputBuilder {
     /// <p>A list of all the ApiKey identifiers.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
     /// <p>A list of all the ApiKey identifiers.</p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// Appends an item to `warnings`.
     ///
@@ -69,33 +65,32 @@ impl ImportApiKeysOutputBuilder {
     /// <p>A list of warning messages.</p>
     pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input.into());
-        self.warnings = Some(v);
-        self
+                        v.push(input.into());
+                        self.warnings = Some(v);
+                        self
     }
     /// <p>A list of warning messages.</p>
-    pub fn set_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.warnings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportApiKeysOutput`](crate::operation::import_api_keys::ImportApiKeysOutput).
     pub fn build(self) -> crate::operation::import_api_keys::ImportApiKeysOutput {
         crate::operation::import_api_keys::ImportApiKeysOutput {
-            ids: self.ids,
-            warnings: self.warnings,
+            ids: self.ids
+            ,
+            warnings: self.warnings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

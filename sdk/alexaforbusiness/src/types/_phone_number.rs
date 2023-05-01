@@ -3,7 +3,7 @@
 /// <p>The phone number for the contact containing the raw number and phone number type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PhoneNumber {
+pub struct PhoneNumber  {
     /// <p>The raw value of the phone number.</p>
     #[doc(hidden)]
     pub number: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct PhoneNumber {
 }
 impl PhoneNumber {
     /// <p>The raw value of the phone number.</p>
-    pub fn number(&self) -> std::option::Option<&str> {
+    pub fn number(&self) -> std::option::Option<& str> {
         self.number.as_deref()
     }
     /// <p>The type of the phone number.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PhoneNumberType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PhoneNumberType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for PhoneNumber {
+impl  std::fmt::Debug for PhoneNumber  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("number", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl PhoneNumberBuilder {
     }
     /// <p>The raw value of the phone number.</p>
     pub fn set_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.number = input;
-        self
+        self.number = input; self
     }
     /// <p>The type of the phone number.</p>
     pub fn r#type(mut self, input: crate::types::PhoneNumberType) -> Self {
@@ -61,14 +60,15 @@ impl PhoneNumberBuilder {
     }
     /// <p>The type of the phone number.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PhoneNumberType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`PhoneNumber`](crate::types::PhoneNumber).
     pub fn build(self) -> crate::types::PhoneNumber {
         crate::types::PhoneNumber {
-            number: self.number,
-            r#type: self.r#type,
+            number: self.number
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for PhoneNumberBuilder {
         formatter.finish()
     }
 }
+

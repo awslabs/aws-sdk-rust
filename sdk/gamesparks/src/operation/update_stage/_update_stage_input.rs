@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStageInput {
+pub struct UpdateStageInput  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateStageInput {
 }
 impl UpdateStageInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<&str> {
+    pub fn game_name(&self) -> std::option::Option<& str> {
         self.game_name.as_deref()
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input;
-        self
+        self.game_name = input; self
     }
     /// <p>The name of the stage.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The description of the stage.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,21 +85,22 @@ impl UpdateStageInputBuilder {
     }
     /// <p>The description of the stage.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateStageInput`](crate::operation::update_stage::UpdateStageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_stage::UpdateStageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_stage::UpdateStageInput {
-            game_name: self.game_name,
-            stage_name: self.stage_name,
-            role: self.role,
-            description: self.description,
-        })
+    pub fn build(self) -> Result<crate::operation::update_stage::UpdateStageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_stage::UpdateStageInput {
+                game_name: self.game_name
+                ,
+                stage_name: self.stage_name
+                ,
+                role: self.role
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

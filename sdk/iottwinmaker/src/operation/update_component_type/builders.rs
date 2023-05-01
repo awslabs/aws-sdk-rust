@@ -4,71 +4,49 @@ pub use crate::operation::update_component_type::_update_component_type_output::
 pub use crate::operation::update_component_type::_update_component_type_input::UpdateComponentTypeInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateComponentType`.
-///
+/// 
 /// <p>Updates information in a component type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateComponentTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder,
-}
-impl UpdateComponentTypeFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_component_type::builders::UpdateComponentTypeInputBuilder
+            }
+impl UpdateComponentTypeFluentBuilder  {
     /// Creates a new `UpdateComponentType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_component_type::UpdateComponentType,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_component_type::UpdateComponentTypeError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_component_type::UpdateComponentTypeOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_component_type::UpdateComponentTypeError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_component_type::UpdateComponentType, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_component_type::UpdateComponentTypeError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_component_type::UpdateComponentTypeOutput, aws_smithy_http::result::SdkError<crate::operation::update_component_type::UpdateComponentTypeError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the workspace.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());
@@ -95,10 +73,7 @@ impl UpdateComponentTypeFluentBuilder {
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_component_type_id(input);
         self
     }
@@ -117,21 +92,12 @@ impl UpdateComponentTypeFluentBuilder {
     /// To override the contents of this collection use [`set_property_definitions`](Self::set_property_definitions).
     ///
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn property_definitions(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::PropertyDefinitionRequest,
-    ) -> Self {
+    pub fn property_definitions(mut self, k: impl Into<std::string::String>, v: crate::types::PropertyDefinitionRequest) -> Self {
         self.inner = self.inner.property_definitions(k.into(), v);
         self
     }
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn set_property_definitions(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PropertyDefinitionRequest>,
-        >,
-    ) -> Self {
+    pub fn set_property_definitions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::PropertyDefinitionRequest>>) -> Self {
         self.inner = self.inner.set_property_definitions(input);
         self
     }
@@ -145,10 +111,7 @@ impl UpdateComponentTypeFluentBuilder {
         self
     }
     /// <p>Specifies the component type that this component type extends.</p>
-    pub fn set_extends_from(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_extends_from(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_extends_from(input);
         self
     }
@@ -157,21 +120,12 @@ impl UpdateComponentTypeFluentBuilder {
     /// To override the contents of this collection use [`set_functions`](Self::set_functions).
     ///
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn functions(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::FunctionRequest,
-    ) -> Self {
+    pub fn functions(mut self, k: impl Into<std::string::String>, v: crate::types::FunctionRequest) -> Self {
         self.inner = self.inner.functions(k.into(), v);
         self
     }
     /// <p>An object that maps strings to the functions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn set_functions(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::FunctionRequest>,
-        >,
-    ) -> Self {
+    pub fn set_functions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FunctionRequest>>) -> Self {
         self.inner = self.inner.set_functions(input);
         self
     }
@@ -180,21 +134,12 @@ impl UpdateComponentTypeFluentBuilder {
     /// To override the contents of this collection use [`set_property_groups`](Self::set_property_groups).
     ///
     /// <p>The property groups.</p>
-    pub fn property_groups(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::PropertyGroupRequest,
-    ) -> Self {
+    pub fn property_groups(mut self, k: impl Into<std::string::String>, v: crate::types::PropertyGroupRequest) -> Self {
         self.inner = self.inner.property_groups(k.into(), v);
         self
     }
     /// <p>The property groups.</p>
-    pub fn set_property_groups(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PropertyGroupRequest>,
-        >,
-    ) -> Self {
+    pub fn set_property_groups(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::PropertyGroupRequest>>) -> Self {
         self.inner = self.inner.set_property_groups(input);
         self
     }
@@ -204,11 +149,9 @@ impl UpdateComponentTypeFluentBuilder {
         self
     }
     /// <p>The component type name.</p>
-    pub fn set_component_type_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_component_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_component_type_name(input);
         self
     }
 }
+

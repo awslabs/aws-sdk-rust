@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDefaultVocabularyOutput {
+pub struct AssociateDefaultVocabularyOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssociateDefaultVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateDefaultVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDefaultVocabularyOutput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput).
-    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyOutputBuilder{
+    pub fn builder() -> crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyOutputBuilder {
         crate::operation::associate_default_vocabulary::builders::AssociateDefaultVocabularyOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct AssociateDefaultVocabularyOutputBuilder {
 }
 impl AssociateDefaultVocabularyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateDefaultVocabularyOutput`](crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput {
+    pub fn build(self) -> crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput {
         crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput {
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProjectInput {
+pub struct DeleteProjectInput  {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
 }
 impl DeleteProjectInput {
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> std::option::Option<& str> {
         self.project_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteProjectInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project that you want to delete.</p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input;
-        self
+        self.project_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteProjectInput`](crate::operation::delete_project::DeleteProjectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_project::DeleteProjectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_project::DeleteProjectInput {
-            project_arn: self.project_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_project::DeleteProjectInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_project::DeleteProjectInput {
+                project_arn: self.project_arn
+                ,
+            }
+        )
     }
 }
+

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMapOutput {
+pub struct CreateMapOutput  {
     /// <p>The name of the map resource.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub map_arn: std::option::Option<std::string::String>,
@@ -19,26 +19,26 @@ pub struct CreateMapOutput {
 }
 impl CreateMapOutput {
     /// <p>The name of the map resource.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> std::option::Option<& str> {
         self.map_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
-    pub fn map_arn(&self) -> std::option::Option<&str> {
+    pub fn map_arn(&self) -> std::option::Option<& str> {
         self.map_arn.as_deref()
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateMapOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateMapOutput {
     /// Creates a new builder-style object to manufacture [`CreateMapOutput`](crate::operation::create_map::CreateMapOutput).
     pub fn builder() -> crate::operation::create_map::builders::CreateMapOutputBuilder {
@@ -63,24 +63,22 @@ impl CreateMapOutputBuilder {
     }
     /// <p>The name of the map resource.</p>
     pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
     pub fn map_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.map_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p>
-    /// <ul>
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li>
+    /// <p>The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.</p> 
+    /// <ul> 
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> 
     /// </ul>
     pub fn set_map_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_arn = input;
-        self
+        self.map_arn = input; self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -88,29 +86,29 @@ impl CreateMapOutputBuilder {
         self
     }
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub fn set_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateMapOutput`](crate::operation::create_map::CreateMapOutput).
     pub fn build(self) -> crate::operation::create_map::CreateMapOutput {
         crate::operation::create_map::CreateMapOutput {
-            map_name: self.map_name,
-            map_arn: self.map_arn,
-            create_time: self.create_time,
+            map_name: self.map_name
+            ,
+            map_arn: self.map_arn
+            ,
+            create_time: self.create_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

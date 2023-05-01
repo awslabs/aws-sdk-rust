@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMonitorOutput {
+pub struct GetMonitorOutput  {
     /// <p>The name of the monitor.</p>
     #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
@@ -29,77 +29,75 @@ pub struct GetMonitorOutput {
     pub processing_status_info: std::option::Option<std::string::String>,
     /// <p>The tags that have been added to monitor.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p> 
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
     pub max_city_networks_to_monitor: i32,
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub internet_measurements_log_delivery:
-        std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub internet_measurements_log_delivery: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    #[doc(hidden)]
+    pub traffic_percentage_to_monitor: i32,
     _request_id: Option<String>,
 }
 impl GetMonitorOutput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> std::option::Option<&str> {
+    pub fn monitor_name(&self) -> std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
     /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
-    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>The status of the monitor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MonitorConfigState> {
+    pub fn status(&self) -> std::option::Option<& crate::types::MonitorConfigState> {
         self.status.as_ref()
     }
     /// <p>The time when the monitor was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The last time that the monitor was modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>The health of the data processing for the monitor.</p>
-    pub fn processing_status(
-        &self,
-    ) -> std::option::Option<&crate::types::MonitorProcessingStatusCode> {
+    pub fn processing_status(&self) -> std::option::Option<& crate::types::MonitorProcessingStatusCode> {
         self.processing_status.as_ref()
     }
     /// <p>Additional information about the health of the data processing for the monitor.</p>
-    pub fn processing_status_info(&self) -> std::option::Option<&str> {
+    pub fn processing_status_info(&self) -> std::option::Option<& str> {
         self.processing_status_info.as_deref()
     }
     /// <p>The tags that have been added to monitor.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p> 
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn max_city_networks_to_monitor(&self) -> i32 {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        &self,
-    ) -> std::option::Option<&crate::types::InternetMeasurementsLogDelivery> {
+    pub fn internet_measurements_log_delivery(&self) -> std::option::Option<& crate::types::InternetMeasurementsLogDelivery> {
         self.internet_measurements_log_delivery.as_ref()
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn traffic_percentage_to_monitor(&self) -> i32 {
+        self.traffic_percentage_to_monitor
     }
 }
 impl aws_http::request_id::RequestId for GetMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMonitorOutput {
     /// Creates a new builder-style object to manufacture [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput).
     pub fn builder() -> crate::operation::get_monitor::builders::GetMonitorOutputBuilder {
@@ -119,11 +117,10 @@ pub struct GetMonitorOutputBuilder {
     pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) processing_status: std::option::Option<crate::types::MonitorProcessingStatusCode>,
     pub(crate) processing_status_info: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) max_city_networks_to_monitor: std::option::Option<i32>,
-    pub(crate) internet_measurements_log_delivery:
-        std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub(crate) internet_measurements_log_delivery: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
+    pub(crate) traffic_percentage_to_monitor: std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetMonitorOutputBuilder {
@@ -134,8 +131,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +140,7 @@ impl GetMonitorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the monitor.</p>
     pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     /// Appends an item to `resources`.
     ///
@@ -154,17 +149,13 @@ impl GetMonitorOutputBuilder {
     /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
     pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input.into());
-        self.resources = Some(v);
-        self
+                        v.push(input.into());
+                        self.resources = Some(v);
+                        self
     }
     /// <p>The resources that have been added for the monitor. Resources are listed by their Amazon Resource Names (ARNs).</p>
-    pub fn set_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resources = input; self
     }
     /// <p>The status of the monitor.</p>
     pub fn status(mut self, input: crate::types::MonitorConfigState) -> Self {
@@ -172,12 +163,8 @@ impl GetMonitorOutputBuilder {
         self
     }
     /// <p>The status of the monitor.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::MonitorConfigState>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::MonitorConfigState>) -> Self {
+        self.status = input; self
     }
     /// <p>The time when the monitor was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,12 +172,8 @@ impl GetMonitorOutputBuilder {
         self
     }
     /// <p>The time when the monitor was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The last time that the monitor was modified.</p>
     pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -198,12 +181,8 @@ impl GetMonitorOutputBuilder {
         self
     }
     /// <p>The last time that the monitor was modified.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_at = input;
-        self
+    pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input; self
     }
     /// <p>The health of the data processing for the monitor.</p>
     pub fn processing_status(mut self, input: crate::types::MonitorProcessingStatusCode) -> Self {
@@ -211,12 +190,8 @@ impl GetMonitorOutputBuilder {
         self
     }
     /// <p>The health of the data processing for the monitor.</p>
-    pub fn set_processing_status(
-        mut self,
-        input: std::option::Option<crate::types::MonitorProcessingStatusCode>,
-    ) -> Self {
-        self.processing_status = input;
-        self
+    pub fn set_processing_status(mut self, input: std::option::Option<crate::types::MonitorProcessingStatusCode>) -> Self {
+        self.processing_status = input; self
     }
     /// <p>Additional information about the health of the data processing for the monitor.</p>
     pub fn processing_status_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,90 +199,93 @@ impl GetMonitorOutputBuilder {
         self
     }
     /// <p>Additional information about the health of the data processing for the monitor.</p>
-    pub fn set_processing_status_info(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.processing_status_info = input;
-        self
+    pub fn set_processing_status_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.processing_status_info = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that have been added to monitor.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags that have been added to monitor.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p> 
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn max_city_networks_to_monitor(mut self, input: i32) -> Self {
         self.max_city_networks_to_monitor = Some(input);
         self
     }
-    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p>
+    /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the network or ASN, such as an internet service provider (ISP), that clients access the resources through. This limit helps control billing costs.</p> 
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
     pub fn set_max_city_networks_to_monitor(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_city_networks_to_monitor = input;
-        self
+        self.max_city_networks_to_monitor = input; self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn internet_measurements_log_delivery(
-        mut self,
-        input: crate::types::InternetMeasurementsLogDelivery,
-    ) -> Self {
+    pub fn internet_measurements_log_delivery(mut self, input: crate::types::InternetMeasurementsLogDelivery) -> Self {
         self.internet_measurements_log_delivery = Some(input);
         self
     }
     /// <p>Publish internet measurements for Internet Monitor to another location, such as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch Logs.</p>
-    pub fn set_internet_measurements_log_delivery(
-        mut self,
-        input: std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
-    ) -> Self {
-        self.internet_measurements_log_delivery = input;
+    pub fn set_internet_measurements_log_delivery(mut self, input: std::option::Option<crate::types::InternetMeasurementsLogDelivery>) -> Self {
+        self.internet_measurements_log_delivery = input; self
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn traffic_percentage_to_monitor(mut self, input: i32) -> Self {
+        self.traffic_percentage_to_monitor = Some(input);
         self
+    }
+    /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor.</p>
+    pub fn set_traffic_percentage_to_monitor(mut self, input: std::option::Option<i32>) -> Self {
+        self.traffic_percentage_to_monitor = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput).
     pub fn build(self) -> crate::operation::get_monitor::GetMonitorOutput {
         crate::operation::get_monitor::GetMonitorOutput {
-            monitor_name: self.monitor_name,
-            monitor_arn: self.monitor_arn,
-            resources: self.resources,
-            status: self.status,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-            processing_status: self.processing_status,
-            processing_status_info: self.processing_status_info,
-            tags: self.tags,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
-            internet_measurements_log_delivery: self.internet_measurements_log_delivery,
+            monitor_name: self.monitor_name
+            ,
+            monitor_arn: self.monitor_arn
+            ,
+            resources: self.resources
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
+            modified_at: self.modified_at
+            ,
+            processing_status: self.processing_status
+            ,
+            processing_status_info: self.processing_status_info
+            ,
+            tags: self.tags
+            ,
+            max_city_networks_to_monitor: self.max_city_networks_to_monitor
+                .unwrap_or_default()
+            ,
+            internet_measurements_log_delivery: self.internet_measurements_log_delivery
+            ,
+            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

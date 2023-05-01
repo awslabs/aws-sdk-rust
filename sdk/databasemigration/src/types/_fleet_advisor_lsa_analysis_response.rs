@@ -3,7 +3,7 @@
 /// <p>Describes a large-scale assessment (LSA) analysis run by a Fleet Advisor collector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FleetAdvisorLsaAnalysisResponse {
+pub struct FleetAdvisorLsaAnalysisResponse  {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
     #[doc(hidden)]
     pub lsa_analysis_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FleetAdvisorLsaAnalysisResponse {
 }
 impl FleetAdvisorLsaAnalysisResponse {
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn lsa_analysis_id(&self) -> std::option::Option<&str> {
+    pub fn lsa_analysis_id(&self) -> std::option::Option<& str> {
         self.lsa_analysis_id.as_deref()
     }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl FleetAdvisorLsaAnalysisResponseBuilder {
     }
     /// <p>The ID of an LSA analysis run by a Fleet Advisor collector.</p>
     pub fn set_lsa_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lsa_analysis_id = input;
-        self
+        self.lsa_analysis_id = input; self
     }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl FleetAdvisorLsaAnalysisResponseBuilder {
     }
     /// <p>The status of an LSA analysis run by a Fleet Advisor collector.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`FleetAdvisorLsaAnalysisResponse`](crate::types::FleetAdvisorLsaAnalysisResponse).
     pub fn build(self) -> crate::types::FleetAdvisorLsaAnalysisResponse {
         crate::types::FleetAdvisorLsaAnalysisResponse {
-            lsa_analysis_id: self.lsa_analysis_id,
-            status: self.status,
+            lsa_analysis_id: self.lsa_analysis_id
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageOutput {
+pub struct DeleteImageOutput  {
     /// <p>Information about the image.</p>
     #[doc(hidden)]
     pub image: std::option::Option<crate::types::Image>,
@@ -10,15 +10,15 @@ pub struct DeleteImageOutput {
 }
 impl DeleteImageOutput {
     /// <p>Information about the image.</p>
-    pub fn image(&self) -> std::option::Option<&crate::types::Image> {
+    pub fn image(&self) -> std::option::Option<& crate::types::Image> {
         self.image.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteImageOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput).
     pub fn builder() -> crate::operation::delete_image::builders::DeleteImageOutputBuilder {
@@ -41,23 +41,24 @@ impl DeleteImageOutputBuilder {
     }
     /// <p>Information about the image.</p>
     pub fn set_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
-        self.image = input;
-        self
+        self.image = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteImageOutput`](crate::operation::delete_image::DeleteImageOutput).
     pub fn build(self) -> crate::operation::delete_image::DeleteImageOutput {
         crate::operation::delete_image::DeleteImageOutput {
-            image: self.image,
+            image: self.image
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

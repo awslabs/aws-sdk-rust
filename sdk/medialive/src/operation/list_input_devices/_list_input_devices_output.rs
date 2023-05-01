@@ -3,7 +3,7 @@
 /// Placeholder documentation for ListInputDevicesResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputDevicesOutput {
+pub struct ListInputDevicesOutput  {
     /// The list of input devices.
     #[doc(hidden)]
     pub input_devices: std::option::Option<std::vec::Vec<crate::types::InputDeviceSummary>>,
@@ -14,23 +14,22 @@ pub struct ListInputDevicesOutput {
 }
 impl ListInputDevicesOutput {
     /// The list of input devices.
-    pub fn input_devices(&self) -> std::option::Option<&[crate::types::InputDeviceSummary]> {
+    pub fn input_devices(&self) -> std::option::Option<& [crate::types::InputDeviceSummary]> {
         self.input_devices.as_deref()
     }
     /// A token to get additional list results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListInputDevicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListInputDevicesOutput {
     /// Creates a new builder-style object to manufacture [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput).
-    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder {
         crate::operation::list_input_devices::builders::ListInputDevicesOutputBuilder::default()
     }
 }
@@ -51,17 +50,13 @@ impl ListInputDevicesOutputBuilder {
     /// The list of input devices.
     pub fn input_devices(mut self, input: crate::types::InputDeviceSummary) -> Self {
         let mut v = self.input_devices.unwrap_or_default();
-        v.push(input);
-        self.input_devices = Some(v);
-        self
+                        v.push(input);
+                        self.input_devices = Some(v);
+                        self
     }
     /// The list of input devices.
-    pub fn set_input_devices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputDeviceSummary>>,
-    ) -> Self {
-        self.input_devices = input;
-        self
+    pub fn set_input_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputDeviceSummary>>) -> Self {
+        self.input_devices = input; self
     }
     /// A token to get additional list results.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +65,26 @@ impl ListInputDevicesOutputBuilder {
     }
     /// A token to get additional list results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListInputDevicesOutput`](crate::operation::list_input_devices::ListInputDevicesOutput).
     pub fn build(self) -> crate::operation::list_input_devices::ListInputDevicesOutput {
         crate::operation::list_input_devices::ListInputDevicesOutput {
-            input_devices: self.input_devices,
-            next_token: self.next_token,
+            input_devices: self.input_devices
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

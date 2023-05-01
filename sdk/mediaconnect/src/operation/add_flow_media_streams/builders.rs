@@ -4,71 +4,49 @@ pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_output
 pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_input::AddFlowMediaStreamsInputBuilder;
 
 /// Fluent builder constructing a request to `AddFlowMediaStreams`.
-///
+/// 
 /// Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddFlowMediaStreamsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder,
-}
-impl AddFlowMediaStreamsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder
+            }
+impl AddFlowMediaStreamsFluentBuilder  {
     /// Creates a new `AddFlowMediaStreams`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreams,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::add_flow_media_streams::AddFlowMediaStreams, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::add_flow_media_streams::AddFlowMediaStreamsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput, aws_smithy_http::result::SdkError<crate::operation::add_flow_media_streams::AddFlowMediaStreamsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flow_arn(input.into());
@@ -89,11 +67,9 @@ impl AddFlowMediaStreamsFluentBuilder {
         self
     }
     /// The media streams that you want to add to the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
-    ) -> Self {
+    pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
 }
+

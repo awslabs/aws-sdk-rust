@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSnapshotFromVolumeRecoveryPointOutput {
+pub struct CreateSnapshotFromVolumeRecoveryPointOutput  {
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct CreateSnapshotFromVolumeRecoveryPointOutput {
 }
 impl CreateSnapshotFromVolumeRecoveryPointOutput {
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> std::option::Option<& str> {
         self.volume_arn.as_deref()
     }
     /// <p>The time the volume was created from the recovery point.</p>
-    pub fn volume_recovery_point_time(&self) -> std::option::Option<&str> {
+    pub fn volume_recovery_point_time(&self) -> std::option::Option<& str> {
         self.volume_recovery_point_time.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSnapshotFromVolumeRecoveryPointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSnapshotFromVolumeRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput).
-    pub fn builder() -> crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointOutputBuilder{
+    pub fn builder() -> crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
         crate::operation::create_snapshot_from_volume_recovery_point::builders::CreateSnapshotFromVolumeRecoveryPointOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
     }
     /// <p>The ID of the snapshot.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input;
-        self
+        self.snapshot_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the <code>DescribeStorediSCSIVolumes</code> operation to return to retrieve the TargetARN for specified VolumeARN.</p>
     pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_arn = input;
-        self
+        self.volume_arn = input; self
     }
     /// <p>The time the volume was created from the recovery point.</p>
     pub fn volume_recovery_point_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,24 +74,20 @@ impl CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
         self
     }
     /// <p>The time the volume was created from the recovery point.</p>
-    pub fn set_volume_recovery_point_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.volume_recovery_point_time = input;
-        self
+    pub fn set_volume_recovery_point_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.volume_recovery_point_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSnapshotFromVolumeRecoveryPointOutput`](crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput).
-    pub fn build(self) -> crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput{
+    pub fn build(self) -> crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput {
         crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput {
             snapshot_id: self.snapshot_id
             ,
@@ -105,3 +99,4 @@ impl CreateSnapshotFromVolumeRecoveryPointOutputBuilder {
         }
     }
 }
+

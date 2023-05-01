@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobExecutionInput {
+pub struct CancelJobExecutionInput  {
     /// <p>The ID of the job to be canceled.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The name of the thing whose execution of the job will be canceled.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> 
     /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     #[doc(hidden)]
     pub force: std::option::Option<bool>,
@@ -18,19 +18,18 @@ pub struct CancelJobExecutionInput {
     pub expected_version: std::option::Option<i64>,
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
     #[doc(hidden)]
-    pub status_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub status_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CancelJobExecutionInput {
     /// <p>The ID of the job to be canceled.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the thing whose execution of the job will be canceled.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> 
     /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
@@ -40,17 +39,13 @@ impl CancelJobExecutionInput {
         self.expected_version
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
-    pub fn status_details(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn status_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.status_details.as_ref()
     }
 }
 impl CancelJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`CancelJobExecutionInput`](crate::operation::cancel_job_execution::CancelJobExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder {
+    pub fn builder() -> crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder {
         crate::operation::cancel_job_execution::builders::CancelJobExecutionInputBuilder::default()
     }
 }
@@ -63,8 +58,7 @@ pub struct CancelJobExecutionInputBuilder {
     pub(crate) thing_name: std::option::Option<std::string::String>,
     pub(crate) force: std::option::Option<bool>,
     pub(crate) expected_version: std::option::Option<i64>,
-    pub(crate) status_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) status_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CancelJobExecutionInputBuilder {
     /// <p>The ID of the job to be canceled.</p>
@@ -74,8 +68,7 @@ impl CancelJobExecutionInputBuilder {
     }
     /// <p>The ID of the job to be canceled.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The name of the thing whose execution of the job will be canceled.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,20 +77,18 @@ impl CancelJobExecutionInputBuilder {
     }
     /// <p>The name of the thing whose execution of the job will be canceled.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> 
     /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = Some(input);
         self
     }
-    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p>
+    /// <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> 
     /// <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -106,49 +97,39 @@ impl CancelJobExecutionInputBuilder {
     }
     /// <p>(Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// Adds a key-value pair to `status_details`.
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
-    pub fn status_details(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.status_details.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.status_details = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.status_details = Some(hash_map);
+                        self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs.</p>
-    pub fn set_status_details(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.status_details = input;
-        self
+    pub fn set_status_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.status_details = input; self
     }
     /// Consumes the builder and constructs a [`CancelJobExecutionInput`](crate::operation::cancel_job_execution::CancelJobExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_job_execution::CancelJobExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_job_execution::CancelJobExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_job_execution::CancelJobExecutionInput {
-                job_id: self.job_id,
-                thing_name: self.thing_name,
-                force: self.force,
-                expected_version: self.expected_version,
-                status_details: self.status_details,
-            },
+                job_id: self.job_id
+                ,
+                thing_name: self.thing_name
+                ,
+                force: self.force
+                ,
+                expected_version: self.expected_version
+                ,
+                status_details: self.status_details
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about parameter usage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ParameterHistory {
+pub struct ParameterHistory  {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,7 +25,7 @@ pub struct ParameterHistory {
     /// <p>The parameter value.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>Parameter names can include the following letters and symbols.</p>
+    /// <p>Parameter names can include the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
     #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
@@ -38,7 +38,7 @@ pub struct ParameterHistory {
     /// <p>The parameter tier.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<crate::types::ParameterTier>,
-    /// <p>Information about the policies assigned to a parameter.</p>
+    /// <p>Information about the policies assigned to a parameter.</p> 
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::types::ParameterInlinePolicy>>,
@@ -48,36 +48,36 @@ pub struct ParameterHistory {
 }
 impl ParameterHistory {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of parameter used.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ParameterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the query key used for this parameter.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>Date the parameter was last changed or updated.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn last_modified_user(&self) -> std::option::Option<&str> {
+    pub fn last_modified_user(&self) -> std::option::Option<& str> {
         self.last_modified_user.as_deref()
     }
     /// <p>Information about the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The parameter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
-    /// <p>Parameter names can include the following letters and symbols.</p>
+    /// <p>Parameter names can include the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
-    pub fn allowed_pattern(&self) -> std::option::Option<&str> {
+    pub fn allowed_pattern(&self) -> std::option::Option<& str> {
         self.allowed_pattern.as_deref()
     }
     /// <p>The parameter version.</p>
@@ -85,24 +85,24 @@ impl ParameterHistory {
         self.version
     }
     /// <p>Labels assigned to the parameter version.</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>The parameter tier.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::types::ParameterTier> {
+    pub fn tier(&self) -> std::option::Option<& crate::types::ParameterTier> {
         self.tier.as_ref()
     }
-    /// <p>Information about the policies assigned to a parameter.</p>
+    /// <p>Information about the policies assigned to a parameter.</p> 
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::types::ParameterInlinePolicy]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::types::ParameterInlinePolicy]> {
         self.policies.as_deref()
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
-    pub fn data_type(&self) -> std::option::Option<&str> {
+    pub fn data_type(&self) -> std::option::Option<& str> {
         self.data_type.as_deref()
     }
 }
-impl std::fmt::Debug for ParameterHistory {
+impl  std::fmt::Debug for ParameterHistory  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ParameterHistory");
         formatter.field("name", &self.name);
@@ -154,8 +154,7 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of parameter used.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
@@ -164,8 +163,7 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The type of parameter used.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ParameterType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The ID of the query key used for this parameter.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,8 +172,7 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The ID of the query key used for this parameter.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>Date the parameter was last changed or updated.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -183,12 +180,8 @@ impl ParameterHistoryBuilder {
         self
     }
     /// <p>Date the parameter was last changed or updated.</p>
-    pub fn set_last_modified_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_date = input;
-        self
+    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_date = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
     pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,12 +189,8 @@ impl ParameterHistoryBuilder {
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
-    pub fn set_last_modified_user(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.last_modified_user = input;
-        self
+    pub fn set_last_modified_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.last_modified_user = input; self
     }
     /// <p>Information about the parameter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,8 +199,7 @@ impl ParameterHistoryBuilder {
     }
     /// <p>Information about the parameter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The parameter value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,20 +208,18 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The parameter value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
-    /// <p>Parameter names can include the following letters and symbols.</p>
+    /// <p>Parameter names can include the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
     pub fn allowed_pattern(mut self, input: impl Into<std::string::String>) -> Self {
         self.allowed_pattern = Some(input.into());
         self
     }
-    /// <p>Parameter names can include the following letters and symbols.</p>
+    /// <p>Parameter names can include the following letters and symbols.</p> 
     /// <p>a-zA-Z0-9_.-</p>
     pub fn set_allowed_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allowed_pattern = input;
-        self
+        self.allowed_pattern = input; self
     }
     /// <p>The parameter version.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -242,8 +228,7 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The parameter version.</p>
     pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Appends an item to `labels`.
     ///
@@ -252,17 +237,13 @@ impl ParameterHistoryBuilder {
     /// <p>Labels assigned to the parameter version.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = Some(v);
+                        self
     }
     /// <p>Labels assigned to the parameter version.</p>
-    pub fn set_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>The parameter tier.</p>
     pub fn tier(mut self, input: crate::types::ParameterTier) -> Self {
@@ -271,29 +252,24 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The parameter tier.</p>
     pub fn set_tier(mut self, input: std::option::Option<crate::types::ParameterTier>) -> Self {
-        self.tier = input;
-        self
+        self.tier = input; self
     }
     /// Appends an item to `policies`.
     ///
     /// To override the contents of this collection use [`set_policies`](Self::set_policies).
     ///
-    /// <p>Information about the policies assigned to a parameter.</p>
+    /// <p>Information about the policies assigned to a parameter.</p> 
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn policies(mut self, input: crate::types::ParameterInlinePolicy) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = Some(v);
-        self
+                        v.push(input);
+                        self.policies = Some(v);
+                        self
     }
-    /// <p>Information about the policies assigned to a parameter.</p>
+    /// <p>Information about the policies assigned to a parameter.</p> 
     /// <p> <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_policies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterInlinePolicy>>,
-    ) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterInlinePolicy>>) -> Self {
+        self.policies = input; self
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -302,25 +278,38 @@ impl ParameterHistoryBuilder {
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type = input;
-        self
+        self.data_type = input; self
     }
     /// Consumes the builder and constructs a [`ParameterHistory`](crate::types::ParameterHistory).
     pub fn build(self) -> crate::types::ParameterHistory {
         crate::types::ParameterHistory {
-            name: self.name,
-            r#type: self.r#type,
-            key_id: self.key_id,
-            last_modified_date: self.last_modified_date,
-            last_modified_user: self.last_modified_user,
-            description: self.description,
-            value: self.value,
-            allowed_pattern: self.allowed_pattern,
-            version: self.version.unwrap_or_default(),
-            labels: self.labels,
-            tier: self.tier,
-            policies: self.policies,
-            data_type: self.data_type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            key_id: self.key_id
+            ,
+            last_modified_date: self.last_modified_date
+            ,
+            last_modified_user: self.last_modified_user
+            ,
+            description: self.description
+            ,
+            value: self.value
+            ,
+            allowed_pattern: self.allowed_pattern
+            ,
+            version: self.version
+                .unwrap_or_default()
+            ,
+            labels: self.labels
+            ,
+            tier: self.tier
+            ,
+            policies: self.policies
+            ,
+            data_type: self.data_type
+            ,
         }
     }
 }
@@ -343,3 +332,4 @@ impl std::fmt::Debug for ParameterHistoryBuilder {
         formatter.finish()
     }
 }
+

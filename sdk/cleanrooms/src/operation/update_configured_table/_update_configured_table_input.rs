@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfiguredTableInput {
+pub struct UpdateConfiguredTableInput  {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
     #[doc(hidden)]
     pub configured_table_identifier: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct UpdateConfiguredTableInput {
 }
 impl UpdateConfiguredTableInput {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> std::option::Option<&str> {
+    pub fn configured_table_identifier(&self) -> std::option::Option<& str> {
         self.configured_table_identifier.as_deref()
     }
     /// <p>A new name for the configured table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new description for the configured table.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateConfiguredTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
-    pub fn builder(
-    ) -> crate::operation::update_configured_table::builders::UpdateConfiguredTableInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_configured_table::builders::UpdateConfiguredTableInputBuilder {
         crate::operation::update_configured_table::builders::UpdateConfiguredTableInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl UpdateConfiguredTableInputBuilder {
         self
     }
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn set_configured_table_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configured_table_identifier = input;
-        self
+    pub fn set_configured_table_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configured_table_identifier = input; self
     }
     /// <p>A new name for the configured table.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl UpdateConfiguredTableInputBuilder {
     }
     /// <p>A new name for the configured table.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new description for the configured table.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl UpdateConfiguredTableInputBuilder {
     }
     /// <p>A new description for the configured table.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_configured_table::UpdateConfiguredTableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_configured_table::UpdateConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_configured_table::UpdateConfiguredTableInput {
-                configured_table_identifier: self.configured_table_identifier,
-                name: self.name,
-                description: self.description,
-            },
+                configured_table_identifier: self.configured_table_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportModelOutput {
+pub struct ImportModelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct ImportModelOutput {
 }
 impl ImportModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportModelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportModelOutput {
     /// Creates a new builder-style object to manufacture [`ImportModelOutput`](crate::operation::import_model::ImportModelOutput).
     pub fn builder() -> crate::operation::import_model::builders::ImportModelOutputBuilder {
@@ -41,23 +41,24 @@ impl ImportModelOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
     pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportModelOutput`](crate::operation::import_model::ImportModelOutput).
     pub fn build(self) -> crate::operation::import_model::ImportModelOutput {
         crate::operation::import_model::ImportModelOutput {
-            model_arn: self.model_arn,
+            model_arn: self.model_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

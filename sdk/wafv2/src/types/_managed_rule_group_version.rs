@@ -3,7 +3,7 @@
 /// <p>Describes a single version of a managed rule group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedRuleGroupVersion {
+pub struct ManagedRuleGroupVersion  {
     /// <p>The version name. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ManagedRuleGroupVersion {
 }
 impl ManagedRuleGroupVersion {
     /// <p>The version name. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
-    pub fn last_update_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_timestamp.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ManagedRuleGroupVersionBuilder {
     }
     /// <p>The version name. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
     pub fn last_update_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -52,18 +51,17 @@ impl ManagedRuleGroupVersionBuilder {
         self
     }
     /// <p>The date and time that the managed rule group owner updated the rule group version information. </p>
-    pub fn set_last_update_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_update_timestamp = input;
-        self
+    pub fn set_last_update_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_update_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`ManagedRuleGroupVersion`](crate::types::ManagedRuleGroupVersion).
     pub fn build(self) -> crate::types::ManagedRuleGroupVersion {
         crate::types::ManagedRuleGroupVersion {
-            name: self.name,
-            last_update_timestamp: self.last_update_timestamp,
+            name: self.name
+            ,
+            last_update_timestamp: self.last_update_timestamp
+            ,
         }
     }
 }
+

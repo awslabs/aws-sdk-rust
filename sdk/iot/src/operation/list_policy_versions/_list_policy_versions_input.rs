@@ -3,21 +3,20 @@
 /// <p>The input for the ListPolicyVersions operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyVersionsInput {
+pub struct ListPolicyVersionsInput  {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl ListPolicyVersionsInput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
 }
 impl ListPolicyVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder {
         crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl ListPolicyVersionsInputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// Consumes the builder and constructs a [`ListPolicyVersionsInput`](crate::operation::list_policy_versions::ListPolicyVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_policy_versions::ListPolicyVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_policy_versions::ListPolicyVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_policy_versions::ListPolicyVersionsInput {
-                policy_name: self.policy_name,
-            },
+                policy_name: self.policy_name
+                ,
+            }
         )
     }
 }
+

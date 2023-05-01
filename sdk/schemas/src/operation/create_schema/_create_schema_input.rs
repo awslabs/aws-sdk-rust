@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSchemaInput {
+pub struct CreateSchemaInput  {
     /// <p>The source of the schema definition.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
@@ -17,38 +17,34 @@ pub struct CreateSchemaInput {
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the schema.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The type of schema.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::Type>,
 }
 impl CreateSchemaInput {
     /// <p>The source of the schema definition.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>A description of the schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>Tags associated with the schema.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The type of schema.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::Type> {
         self.r#type.as_ref()
     }
 }
@@ -67,8 +63,7 @@ pub struct CreateSchemaInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) registry_name: std::option::Option<std::string::String>,
     pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) r#type: std::option::Option<crate::types::Type>,
 }
 impl CreateSchemaInputBuilder {
@@ -79,8 +74,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The source of the schema definition.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input;
-        self
+        self.content = input; self
     }
     /// <p>A description of the schema.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +83,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>A description of the schema.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +92,7 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,33 +101,22 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the schema.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the schema.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The type of schema.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -144,23 +125,26 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The type of schema.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_schema::CreateSchemaInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_schema::CreateSchemaInput {
-            content: self.content,
-            description: self.description,
-            registry_name: self.registry_name,
-            schema_name: self.schema_name,
-            tags: self.tags,
-            r#type: self.r#type,
-        })
+    pub fn build(self) -> Result<crate::operation::create_schema::CreateSchemaInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_schema::CreateSchemaInput {
+                content: self.content
+                ,
+                description: self.description
+                ,
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+                tags: self.tags
+                ,
+                r#type: self.r#type
+                ,
+            }
+        )
     }
 }
+

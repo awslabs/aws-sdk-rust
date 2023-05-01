@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendJobInput {
+pub struct GetBackendJobInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetBackendJobInput {
 }
 impl GetBackendJobInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl GetBackendJobInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,12 +58,8 @@ impl GetBackendJobInputBuilder {
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.backend_environment_name = input;
-        self
+    pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.backend_environment_name = input; self
     }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,20 +68,20 @@ impl GetBackendJobInputBuilder {
     }
     /// <p>The ID for the job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`GetBackendJobInput`](crate::operation::get_backend_job::GetBackendJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_backend_job::GetBackendJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_backend_job::GetBackendJobInput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            job_id: self.job_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_backend_job::GetBackendJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_backend_job::GetBackendJobInput {
+                app_id: self.app_id
+                ,
+                backend_environment_name: self.backend_environment_name
+                ,
+                job_id: self.job_id
+                ,
+            }
+        )
     }
 }
+

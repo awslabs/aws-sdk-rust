@@ -3,7 +3,7 @@
 /// <p>The configured access rules for the domain's search endpoint, and the current status of those rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPoliciesStatus {
+pub struct AccessPoliciesStatus  {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccessPoliciesStatus {
 }
 impl AccessPoliciesStatus {
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
-    pub fn options(&self) -> std::option::Option<&str> {
+    pub fn options(&self) -> std::option::Option<& str> {
         self.options.as_deref()
     }
     /// <p>The status of the access policy for the domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>.</p>
     pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.options = input;
-        self
+        self.options = input; self
     }
     /// <p>The status of the access policy for the domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -53,14 +52,16 @@ impl AccessPoliciesStatusBuilder {
     }
     /// <p>The status of the access policy for the domain.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AccessPoliciesStatus`](crate::types::AccessPoliciesStatus).
     pub fn build(self) -> crate::types::AccessPoliciesStatus {
         crate::types::AccessPoliciesStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

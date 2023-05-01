@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let m2tssegmentationmarkers = unimplemented!();
 /// match m2tssegmentationmarkers {
@@ -34,22 +34,14 @@
 /// Specifically, when `m2tssegmentationmarkers` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `M2tsSegmentationMarkers::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum M2tsSegmentationMarkers {
     #[allow(missing_docs)] // documentation missing in model
     Ebp,
@@ -64,57 +56,49 @@ pub enum M2tsSegmentationMarkers {
     #[allow(missing_docs)] // documentation missing in model
     RaiSegstart,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for M2tsSegmentationMarkers {
-    fn from(s: &str) -> Self {
-        match s {
-            "EBP" => M2tsSegmentationMarkers::Ebp,
-            "EBP_LEGACY" => M2tsSegmentationMarkers::EbpLegacy,
-            "NONE" => M2tsSegmentationMarkers::None,
-            "PSI_SEGSTART" => M2tsSegmentationMarkers::PsiSegstart,
-            "RAI_ADAPT" => M2tsSegmentationMarkers::RaiAdapt,
-            "RAI_SEGSTART" => M2tsSegmentationMarkers::RaiSegstart,
-            other => M2tsSegmentationMarkers::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EBP" => M2tsSegmentationMarkers::Ebp,
+"EBP_LEGACY" => M2tsSegmentationMarkers::EbpLegacy,
+"NONE" => M2tsSegmentationMarkers::None,
+"PSI_SEGSTART" => M2tsSegmentationMarkers::PsiSegstart,
+"RAI_ADAPT" => M2tsSegmentationMarkers::RaiAdapt,
+"RAI_SEGSTART" => M2tsSegmentationMarkers::RaiSegstart,
+other => M2tsSegmentationMarkers::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for M2tsSegmentationMarkers {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsSegmentationMarkers::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(M2tsSegmentationMarkers::from(s))
+                }
+            }
 impl M2tsSegmentationMarkers {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            M2tsSegmentationMarkers::Ebp => "EBP",
-            M2tsSegmentationMarkers::EbpLegacy => "EBP_LEGACY",
-            M2tsSegmentationMarkers::None => "NONE",
-            M2tsSegmentationMarkers::PsiSegstart => "PSI_SEGSTART",
-            M2tsSegmentationMarkers::RaiAdapt => "RAI_ADAPT",
-            M2tsSegmentationMarkers::RaiSegstart => "RAI_SEGSTART",
-            M2tsSegmentationMarkers::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "EBP",
-            "EBP_LEGACY",
-            "NONE",
-            "PSI_SEGSTART",
-            "RAI_ADAPT",
-            "RAI_SEGSTART",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    M2tsSegmentationMarkers::Ebp => "EBP",
+    M2tsSegmentationMarkers::EbpLegacy => "EBP_LEGACY",
+    M2tsSegmentationMarkers::None => "NONE",
+    M2tsSegmentationMarkers::PsiSegstart => "PSI_SEGSTART",
+    M2tsSegmentationMarkers::RaiAdapt => "RAI_ADAPT",
+    M2tsSegmentationMarkers::RaiSegstart => "RAI_SEGSTART",
+    M2tsSegmentationMarkers::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EBP", "EBP_LEGACY", "NONE", "PSI_SEGSTART", "RAI_ADAPT", "RAI_SEGSTART"]
+                }
+            }
 impl AsRef<str> for M2tsSegmentationMarkers {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

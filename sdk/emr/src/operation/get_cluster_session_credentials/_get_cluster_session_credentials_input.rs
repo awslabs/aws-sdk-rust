@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClusterSessionCredentialsInput {
+pub struct GetClusterSessionCredentialsInput  {
     /// <p>The unique identifier of the cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetClusterSessionCredentialsInput {
 }
 impl GetClusterSessionCredentialsInput {
     /// <p>The unique identifier of the cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
 }
 impl GetClusterSessionCredentialsInput {
     /// Creates a new builder-style object to manufacture [`GetClusterSessionCredentialsInput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput).
-    pub fn builder() -> crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder{
+    pub fn builder() -> crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder {
         crate::operation::get_cluster_session_credentials::builders::GetClusterSessionCredentialsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl GetClusterSessionCredentialsInputBuilder {
     }
     /// <p>The unique identifier of the cluster.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,25 +50,19 @@ impl GetClusterSessionCredentialsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the runtime role for interactive workload submission on the cluster. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetClusterSessionCredentialsInput`](crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsInput {
-                cluster_id: self.cluster_id,
-                execution_role_arn: self.execution_role_arn,
-            },
+                cluster_id: self.cluster_id
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+            }
         )
     }
 }
+

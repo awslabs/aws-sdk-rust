@@ -3,7 +3,7 @@
 /// <p>A directed edge connecting two lineage entities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Edge {
+pub struct Edge  {
     /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Edge {
 }
 impl Edge {
     /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
-    pub fn association_type(&self) -> std::option::Option<&crate::types::AssociationEdgeType> {
+    pub fn association_type(&self) -> std::option::Option<& crate::types::AssociationEdgeType> {
         self.association_type.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl EdgeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source lineage entity of the directed edge.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl EdgeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination lineage entity of the directed edge.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
@@ -70,19 +68,19 @@ impl EdgeBuilder {
         self
     }
     /// <p>The type of the Association(Edge) between the source and destination. For example <code>ContributedTo</code>, <code>Produced</code>, or <code>DerivedFrom</code>.</p>
-    pub fn set_association_type(
-        mut self,
-        input: std::option::Option<crate::types::AssociationEdgeType>,
-    ) -> Self {
-        self.association_type = input;
-        self
+    pub fn set_association_type(mut self, input: std::option::Option<crate::types::AssociationEdgeType>) -> Self {
+        self.association_type = input; self
     }
     /// Consumes the builder and constructs a [`Edge`](crate::types::Edge).
     pub fn build(self) -> crate::types::Edge {
         crate::types::Edge {
-            source_arn: self.source_arn,
-            destination_arn: self.destination_arn,
-            association_type: self.association_type,
+            source_arn: self.source_arn
+            ,
+            destination_arn: self.destination_arn
+            ,
+            association_type: self.association_type
+            ,
         }
     }
 }
+

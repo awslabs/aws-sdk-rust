@@ -4,73 +4,51 @@ pub use crate::operation::disassociate_resolver_rule::_disassociate_resolver_rul
 pub use crate::operation::disassociate_resolver_rule::_disassociate_resolver_rule_input::DisassociateResolverRuleInputBuilder;
 
 /// Fluent builder constructing a request to `DisassociateResolverRule`.
-///
-/// <p>Removes the association between a specified Resolver rule and a specified VPC.</p> <important>
-/// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule. </p>
+/// 
+/// <p>Removes the association between a specified Resolver rule and a specified VPC.</p> <important> 
+/// <p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that you specified in the Resolver rule. </p> 
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateResolverRuleFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder
             }
-impl DisassociateResolverRuleFluentBuilder {
+impl DisassociateResolverRuleFluentBuilder  {
     /// Creates a new `DisassociateResolverRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::disassociate_resolver_rule::DisassociateResolverRule, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
@@ -92,3 +70,4 @@ impl DisassociateResolverRuleFluentBuilder {
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelPackageGroupPolicyOutput {
+pub struct GetModelPackageGroupPolicyOutput  {
     /// <p>The resource policy for the model group.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct GetModelPackageGroupPolicyOutput {
 }
 impl GetModelPackageGroupPolicyOutput {
     /// <p>The resource policy for the model group.</p>
-    pub fn resource_policy(&self) -> std::option::Option<&str> {
+    pub fn resource_policy(&self) -> std::option::Option<& str> {
         self.resource_policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetModelPackageGroupPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetModelPackageGroupPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput).
-    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyOutputBuilder{
+    pub fn builder() -> crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyOutputBuilder {
         crate::operation::get_model_package_group_policy::builders::GetModelPackageGroupPolicyOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl GetModelPackageGroupPolicyOutputBuilder {
     }
     /// <p>The resource policy for the model group.</p>
     pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_policy = input;
-        self
+        self.resource_policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetModelPackageGroupPolicyOutput`](crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput {
+    pub fn build(self) -> crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput {
         crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput {
-            resource_policy: self.resource_policy,
+            resource_policy: self.resource_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

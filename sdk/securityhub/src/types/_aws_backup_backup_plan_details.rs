@@ -3,7 +3,7 @@
 /// <p>Provides details about an Backup backup plan and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsBackupBackupPlanDetails {
+pub struct AwsBackupBackupPlanDetails  {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
     #[doc(hidden)]
     pub backup_plan: std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
@@ -19,21 +19,19 @@ pub struct AwsBackupBackupPlanDetails {
 }
 impl AwsBackupBackupPlanDetails {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn backup_plan(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsBackupBackupPlanBackupPlanDetails> {
+    pub fn backup_plan(&self) -> std::option::Option<& crate::types::AwsBackupBackupPlanBackupPlanDetails> {
         self.backup_plan.as_ref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
-    pub fn backup_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn backup_plan_arn(&self) -> std::option::Option<& str> {
         self.backup_plan_arn.as_deref()
     }
     /// <p>A unique ID for the backup plan. </p>
-    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -55,20 +53,13 @@ pub struct AwsBackupBackupPlanDetailsBuilder {
 }
 impl AwsBackupBackupPlanDetailsBuilder {
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn backup_plan(
-        mut self,
-        input: crate::types::AwsBackupBackupPlanBackupPlanDetails,
-    ) -> Self {
+    pub fn backup_plan(mut self, input: crate::types::AwsBackupBackupPlanBackupPlanDetails) -> Self {
         self.backup_plan = Some(input);
         self
     }
     /// <p>Uniquely identifies the backup plan to be associated with the selection of resources. </p>
-    pub fn set_backup_plan(
-        mut self,
-        input: std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>,
-    ) -> Self {
-        self.backup_plan = input;
-        self
+    pub fn set_backup_plan(mut self, input: std::option::Option<crate::types::AwsBackupBackupPlanBackupPlanDetails>) -> Self {
+        self.backup_plan = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
     pub fn backup_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +68,7 @@ impl AwsBackupBackupPlanDetailsBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
     pub fn set_backup_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_arn = input;
-        self
+        self.backup_plan_arn = input; self
     }
     /// <p>A unique ID for the backup plan. </p>
     pub fn backup_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +77,7 @@ impl AwsBackupBackupPlanDetailsBuilder {
     }
     /// <p>A unique ID for the backup plan. </p>
     pub fn set_backup_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,16 +86,20 @@ impl AwsBackupBackupPlanDetailsBuilder {
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs cannot be edited. </p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanDetails`](crate::types::AwsBackupBackupPlanDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupPlanDetails {
         crate::types::AwsBackupBackupPlanDetails {
-            backup_plan: self.backup_plan,
-            backup_plan_arn: self.backup_plan_arn,
-            backup_plan_id: self.backup_plan_id,
-            version_id: self.version_id,
+            backup_plan: self.backup_plan
+            ,
+            backup_plan_arn: self.backup_plan_arn
+            ,
+            backup_plan_id: self.backup_plan_id
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

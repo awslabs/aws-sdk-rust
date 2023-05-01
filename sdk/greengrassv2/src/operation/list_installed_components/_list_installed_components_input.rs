@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstalledComponentsInput {
+pub struct ListInstalledComponentsInput  {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     #[doc(hidden)]
     pub core_device_thing_name: std::option::Option<std::string::String>,
@@ -12,18 +12,18 @@ pub struct ListInstalledComponentsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The filter for the list of components. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
-    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
-    /// </ul>
+    /// <p>The filter for the list of components. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li> 
+    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li> 
+    /// </ul> 
     /// <p>Default: <code>ROOT</code> </p>
     #[doc(hidden)]
     pub topology_filter: std::option::Option<crate::types::InstalledComponentTopologyFilter>,
 }
 impl ListInstalledComponentsInput {
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+    pub fn core_device_thing_name(&self) -> std::option::Option<& str> {
         self.core_device_thing_name.as_deref()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -31,26 +31,22 @@ impl ListInstalledComponentsInput {
         self.max_results
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The filter for the list of components. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
-    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
-    /// </ul>
+    /// <p>The filter for the list of components. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li> 
+    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li> 
+    /// </ul> 
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn topology_filter(
-        &self,
-    ) -> std::option::Option<&crate::types::InstalledComponentTopologyFilter> {
+    pub fn topology_filter(&self) -> std::option::Option<& crate::types::InstalledComponentTopologyFilter> {
         self.topology_filter.as_ref()
     }
 }
 impl ListInstalledComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListInstalledComponentsInput`](crate::operation::list_installed_components::ListInstalledComponentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder {
         crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder::default()
     }
 }
@@ -71,12 +67,8 @@ impl ListInstalledComponentsInputBuilder {
         self
     }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
-    pub fn set_core_device_thing_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.core_device_thing_name = input;
-        self
+    pub fn set_core_device_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.core_device_thing_name = input; self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,8 +77,7 @@ impl ListInstalledComponentsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,49 +86,41 @@ impl ListInstalledComponentsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
-    /// <p>The filter for the list of components. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
-    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
-    /// </ul>
+    /// <p>The filter for the list of components. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li> 
+    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li> 
+    /// </ul> 
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn topology_filter(
-        mut self,
-        input: crate::types::InstalledComponentTopologyFilter,
-    ) -> Self {
+    pub fn topology_filter(mut self, input: crate::types::InstalledComponentTopologyFilter) -> Self {
         self.topology_filter = Some(input);
         self
     }
-    /// <p>The filter for the list of components. Choose from the following options:</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li>
-    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li>
-    /// </ul>
+    /// <p>The filter for the list of components. Choose from the following options:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – The list includes all components installed on the core device.</p> </li> 
+    /// <li> <p> <code>ROOT</code> – The list includes only <i>root</i> components, which are components that you specify in a deployment. When you choose this option, the list doesn't include components that the core device installs as dependencies of other components.</p> </li> 
+    /// </ul> 
     /// <p>Default: <code>ROOT</code> </p>
-    pub fn set_topology_filter(
-        mut self,
-        input: std::option::Option<crate::types::InstalledComponentTopologyFilter>,
-    ) -> Self {
-        self.topology_filter = input;
-        self
+    pub fn set_topology_filter(mut self, input: std::option::Option<crate::types::InstalledComponentTopologyFilter>) -> Self {
+        self.topology_filter = input; self
     }
     /// Consumes the builder and constructs a [`ListInstalledComponentsInput`](crate::operation::list_installed_components::ListInstalledComponentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_installed_components::ListInstalledComponentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_installed_components::ListInstalledComponentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_installed_components::ListInstalledComponentsInput {
-                core_device_thing_name: self.core_device_thing_name,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                topology_filter: self.topology_filter,
-            },
+                core_device_thing_name: self.core_device_thing_name
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                topology_filter: self.topology_filter
+                ,
+            }
         )
     }
 }
+

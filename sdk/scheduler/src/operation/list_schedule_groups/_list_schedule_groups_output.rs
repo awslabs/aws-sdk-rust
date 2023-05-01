@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScheduleGroupsOutput {
+pub struct ListScheduleGroupsOutput  {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListScheduleGroupsOutput {
 }
 impl ListScheduleGroupsOutput {
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn schedule_groups(&self) -> std::option::Option<&[crate::types::ScheduleGroupSummary]> {
+    pub fn schedule_groups(&self) -> std::option::Option<& [crate::types::ScheduleGroupSummary]> {
         self.schedule_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListScheduleGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListScheduleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder {
         crate::operation::list_schedule_groups::builders::ListScheduleGroupsOutputBuilder::default()
     }
 }
@@ -39,8 +38,7 @@ impl ListScheduleGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListScheduleGroupsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) schedule_groups:
-        std::option::Option<std::vec::Vec<crate::types::ScheduleGroupSummary>>,
+    pub(crate) schedule_groups: std::option::Option<std::vec::Vec<crate::types::ScheduleGroupSummary>>,
     _request_id: Option<String>,
 }
 impl ListScheduleGroupsOutputBuilder {
@@ -51,8 +49,7 @@ impl ListScheduleGroupsOutputBuilder {
     }
     /// <p>Indicates whether there are additional results to retrieve. If the value is null, there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `schedule_groups`.
     ///
@@ -61,33 +58,32 @@ impl ListScheduleGroupsOutputBuilder {
     /// <p>The schedule groups that match the specified criteria.</p>
     pub fn schedule_groups(mut self, input: crate::types::ScheduleGroupSummary) -> Self {
         let mut v = self.schedule_groups.unwrap_or_default();
-        v.push(input);
-        self.schedule_groups = Some(v);
-        self
+                        v.push(input);
+                        self.schedule_groups = Some(v);
+                        self
     }
     /// <p>The schedule groups that match the specified criteria.</p>
-    pub fn set_schedule_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduleGroupSummary>>,
-    ) -> Self {
-        self.schedule_groups = input;
-        self
+    pub fn set_schedule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduleGroupSummary>>) -> Self {
+        self.schedule_groups = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListScheduleGroupsOutput`](crate::operation::list_schedule_groups::ListScheduleGroupsOutput).
     pub fn build(self) -> crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
         crate::operation::list_schedule_groups::ListScheduleGroupsOutput {
-            next_token: self.next_token,
-            schedule_groups: self.schedule_groups,
+            next_token: self.next_token
+            ,
+            schedule_groups: self.schedule_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,67 +4,49 @@ pub use crate::operation::create_package::_create_package_output::CreatePackageO
 pub use crate::operation::create_package::_create_package_input::CreatePackageInputBuilder;
 
 /// Fluent builder constructing a request to `CreatePackage`.
-///
+/// 
 /// <p>Create a package for use with Amazon ES domains.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePackageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_package::builders::CreatePackageInputBuilder,
-}
-impl CreatePackageFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_package::builders::CreatePackageInputBuilder
+            }
+impl CreatePackageFluentBuilder  {
     /// Creates a new `CreatePackage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_package::CreatePackage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_package::CreatePackageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_package::CreatePackage, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_package::CreatePackageOutput, aws_smithy_http::result::SdkError<crate::operation::create_package::CreatePackageError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Unique identifier for the package.</p>
     pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.package_name(input.into());
@@ -81,10 +63,7 @@ impl CreatePackageFluentBuilder {
         self
     }
     /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
-    pub fn set_package_type(
-        mut self,
-        input: std::option::Option<crate::types::PackageType>,
-    ) -> Self {
+    pub fn set_package_type(mut self, input: std::option::Option<crate::types::PackageType>) -> Self {
         self.inner = self.inner.set_package_type(input);
         self
     }
@@ -94,10 +73,7 @@ impl CreatePackageFluentBuilder {
         self
     }
     /// <p>Description of the package.</p>
-    pub fn set_package_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_package_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_package_description(input);
         self
     }
@@ -107,11 +83,9 @@ impl CreatePackageFluentBuilder {
         self
     }
     /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
-    pub fn set_package_source(
-        mut self,
-        input: std::option::Option<crate::types::PackageSource>,
-    ) -> Self {
+    pub fn set_package_source(mut self, input: std::option::Option<crate::types::PackageSource>) -> Self {
         self.inner = self.inner.set_package_source(input);
         self
     }
 }
+

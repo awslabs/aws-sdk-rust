@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSimulationInput {
+pub struct DeleteSimulationInput  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub simulation: std::option::Option<std::string::String>,
 }
 impl DeleteSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> std::option::Option<&str> {
+    pub fn simulation(&self) -> std::option::Option<& str> {
         self.simulation.as_deref()
     }
 }
 impl DeleteSimulationInput {
     /// Creates a new builder-style object to manufacture [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
-    pub fn builder() -> crate::operation::delete_simulation::builders::DeleteSimulationInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_simulation::builders::DeleteSimulationInputBuilder {
         crate::operation::delete_simulation::builders::DeleteSimulationInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl DeleteSimulationInputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.simulation = input;
-        self
+        self.simulation = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_simulation::DeleteSimulationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_simulation::DeleteSimulationInput {
-            simulation: self.simulation,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_simulation::DeleteSimulationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_simulation::DeleteSimulationInput {
+                simulation: self.simulation
+                ,
+            }
+        )
     }
 }
+

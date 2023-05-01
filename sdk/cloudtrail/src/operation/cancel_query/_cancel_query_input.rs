@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelQueryInput {
+pub struct CancelQueryInput  {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
     #[doc(hidden)]
@@ -14,11 +14,11 @@ pub struct CancelQueryInput {
 impl CancelQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
-    pub fn event_data_store(&self) -> std::option::Option<&str> {
+    pub fn event_data_store(&self) -> std::option::Option<& str> {
         self.event_data_store.as_deref()
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
-    pub fn query_id(&self) -> std::option::Option<&str> {
+    pub fn query_id(&self) -> std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -46,8 +46,7 @@ impl CancelQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.</p>
     #[deprecated(note = "EventDataStore is no longer required by CancelQueryRequest")]
     pub fn set_event_data_store(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_data_store = input;
-        self
+        self.event_data_store = input; self
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,19 +55,18 @@ impl CancelQueryInputBuilder {
     }
     /// <p>The ID of the query that you want to cancel. The <code>QueryId</code> comes from the response of a <code>StartQuery</code> operation.</p>
     pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelQueryInput`](crate::operation::cancel_query::CancelQueryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_query::CancelQueryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::cancel_query::CancelQueryInput {
-            event_data_store: self.event_data_store,
-            query_id: self.query_id,
-        })
+    pub fn build(self) -> Result<crate::operation::cancel_query::CancelQueryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::cancel_query::CancelQueryInput {
+                event_data_store: self.event_data_store
+                ,
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

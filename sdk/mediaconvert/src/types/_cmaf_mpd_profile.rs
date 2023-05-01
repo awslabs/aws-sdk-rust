@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cmafmpdprofile = unimplemented!();
 /// match cmafmpdprofile {
@@ -30,64 +30,55 @@
 /// Specifically, when `cmafmpdprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CmafMpdProfile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CmafMpdProfile {
     #[allow(missing_docs)] // documentation missing in model
     MainProfile,
     #[allow(missing_docs)] // documentation missing in model
     OnDemandProfile,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CmafMpdProfile {
-    fn from(s: &str) -> Self {
-        match s {
-            "MAIN_PROFILE" => CmafMpdProfile::MainProfile,
-            "ON_DEMAND_PROFILE" => CmafMpdProfile::OnDemandProfile,
-            other => {
-                CmafMpdProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "MAIN_PROFILE" => CmafMpdProfile::MainProfile,
+"ON_DEMAND_PROFILE" => CmafMpdProfile::OnDemandProfile,
+other => CmafMpdProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for CmafMpdProfile {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafMpdProfile::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CmafMpdProfile::from(s))
+                }
+            }
 impl CmafMpdProfile {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CmafMpdProfile::MainProfile => "MAIN_PROFILE",
-            CmafMpdProfile::OnDemandProfile => "ON_DEMAND_PROFILE",
-            CmafMpdProfile::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["MAIN_PROFILE", "ON_DEMAND_PROFILE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CmafMpdProfile::MainProfile => "MAIN_PROFILE",
+    CmafMpdProfile::OnDemandProfile => "ON_DEMAND_PROFILE",
+    CmafMpdProfile::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["MAIN_PROFILE", "ON_DEMAND_PROFILE"]
+                }
+            }
 impl AsRef<str> for CmafMpdProfile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

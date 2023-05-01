@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAppReplicationInput {
+pub struct StartAppReplicationInput  {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl StartAppReplicationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
 impl StartAppReplicationInput {
     /// Creates a new builder-style object to manufacture [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
-    pub fn builder(
-    ) -> crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder {
-        crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder {
+        crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl StartAppReplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// Consumes the builder and constructs a [`StartAppReplicationInput`](crate::operation::start_app_replication::StartAppReplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_app_replication::StartAppReplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_app_replication::StartAppReplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_app_replication::StartAppReplicationInput {
-                app_id: self.app_id,
-            },
+                app_id: self.app_id
+                ,
+            }
         )
     }
 }
+

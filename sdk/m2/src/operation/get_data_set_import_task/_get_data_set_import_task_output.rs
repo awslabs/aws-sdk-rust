@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataSetImportTaskOutput {
+pub struct GetDataSetImportTaskOutput  {
     /// <p>The task identifier.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -16,28 +16,26 @@ pub struct GetDataSetImportTaskOutput {
 }
 impl GetDataSetImportTaskOutput {
     /// <p>The task identifier.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataSetTaskLifecycle> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DataSetTaskLifecycle> {
         self.status.as_ref()
     }
     /// <p>A summary of the status of the task.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::DataSetImportSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::types::DataSetImportSummary> {
         self.summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataSetImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDataSetImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSetImportTaskOutput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder {
         crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskOutputBuilder::default()
     }
 }
@@ -59,8 +57,7 @@ impl GetDataSetImportTaskOutputBuilder {
     }
     /// <p>The task identifier.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The status of the task.</p>
     pub fn status(mut self, input: crate::types::DataSetTaskLifecycle) -> Self {
@@ -68,12 +65,8 @@ impl GetDataSetImportTaskOutputBuilder {
         self
     }
     /// <p>The status of the task.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DataSetTaskLifecycle>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DataSetTaskLifecycle>) -> Self {
+        self.status = input; self
     }
     /// <p>A summary of the status of the task.</p>
     pub fn summary(mut self, input: crate::types::DataSetImportSummary) -> Self {
@@ -81,29 +74,29 @@ impl GetDataSetImportTaskOutputBuilder {
         self
     }
     /// <p>A summary of the status of the task.</p>
-    pub fn set_summary(
-        mut self,
-        input: std::option::Option<crate::types::DataSetImportSummary>,
-    ) -> Self {
-        self.summary = input;
-        self
+    pub fn set_summary(mut self, input: std::option::Option<crate::types::DataSetImportSummary>) -> Self {
+        self.summary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDataSetImportTaskOutput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput).
     pub fn build(self) -> crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput {
         crate::operation::get_data_set_import_task::GetDataSetImportTaskOutput {
-            task_id: self.task_id,
-            status: self.status,
-            summary: self.summary,
+            task_id: self.task_id
+            ,
+            status: self.status
+            ,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

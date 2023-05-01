@@ -3,7 +3,7 @@
 /// <p>Summary information for your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperiencesSummary {
+pub struct ExperiencesSummary  {
     /// <p>The name of your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ExperiencesSummary {
 }
 impl ExperiencesSummary {
     /// <p>The name of your Amazon Kendra experience.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The processing status of your Amazon Kendra experience.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExperienceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ExperienceStatus> {
         self.status.as_ref()
     }
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::ExperienceEndpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::types::ExperienceEndpoint]> {
         self.endpoints.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl ExperiencesSummaryBuilder {
     }
     /// <p>The name of your Amazon Kendra experience.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl ExperiencesSummaryBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,12 +84,8 @@ impl ExperiencesSummaryBuilder {
         self
     }
     /// <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The processing status of your Amazon Kendra experience.</p>
     pub fn status(mut self, input: crate::types::ExperienceStatus) -> Self {
@@ -99,12 +93,8 @@ impl ExperiencesSummaryBuilder {
         self
     }
     /// <p>The processing status of your Amazon Kendra experience.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ExperienceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ExperienceStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `endpoints`.
     ///
@@ -113,26 +103,28 @@ impl ExperiencesSummaryBuilder {
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
     pub fn endpoints(mut self, input: crate::types::ExperienceEndpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = Some(v);
+                        self
     }
     /// <p>The endpoint URLs for your Amazon Kendra experiences. The URLs are unique and fully hosted by Amazon Web Services.</p>
-    pub fn set_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExperienceEndpoint>>,
-    ) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperienceEndpoint>>) -> Self {
+        self.endpoints = input; self
     }
     /// Consumes the builder and constructs a [`ExperiencesSummary`](crate::types::ExperiencesSummary).
     pub fn build(self) -> crate::types::ExperiencesSummary {
         crate::types::ExperiencesSummary {
-            name: self.name,
-            id: self.id,
-            created_at: self.created_at,
-            status: self.status,
-            endpoints: self.endpoints,
+            name: self.name
+            ,
+            id: self.id
+            ,
+            created_at: self.created_at
+            ,
+            status: self.status
+            ,
+            endpoints: self.endpoints
+            ,
         }
     }
 }
+

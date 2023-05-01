@@ -3,7 +3,7 @@
 /// A dial request for a campaign.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DialRequest {
+pub struct DialRequest  {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -15,31 +15,27 @@ pub struct DialRequest {
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DialRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// The phone number of the customer, in E.164 format.
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// Timestamp with no UTC offset or timezone
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
-impl std::fmt::Debug for DialRequest {
+impl  std::fmt::Debug for DialRequest  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DialRequest");
         formatter.field("client_token", &self.client_token);
@@ -63,8 +59,7 @@ pub struct DialRequestBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) phone_number: std::option::Option<std::string::String>,
     pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DialRequestBuilder {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
@@ -74,8 +69,7 @@ impl DialRequestBuilder {
     }
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// The phone number of the customer, in E.164 format.
     pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +78,7 @@ impl DialRequestBuilder {
     }
     /// The phone number of the customer, in E.164 format.
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// Timestamp with no UTC offset or timezone
     pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,45 +86,35 @@ impl DialRequestBuilder {
         self
     }
     /// Timestamp with no UTC offset or timezone
-    pub fn set_expiration_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration_time = input;
-        self
+    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration_time = input; self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
-    pub fn attributes(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = Some(hash_map);
+                        self
     }
     /// A custom key-value pair using an attribute map. The attributes are standard Amazon Connect attributes, and can be accessed in contact flows just like any other contact attributes.
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`DialRequest`](crate::types::DialRequest).
     pub fn build(self) -> crate::types::DialRequest {
         crate::types::DialRequest {
-            client_token: self.client_token,
-            phone_number: self.phone_number,
-            expiration_time: self.expiration_time,
-            attributes: self.attributes,
+            client_token: self.client_token
+            ,
+            phone_number: self.phone_number
+            ,
+            expiration_time: self.expiration_time
+            ,
+            attributes: self.attributes
+            ,
         }
     }
 }
@@ -145,3 +128,4 @@ impl std::fmt::Debug for DialRequestBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssistantAssociationsInput {
+pub struct ListAssistantAssociationsInput  {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAssistantAssociationsInput {
 }
 impl ListAssistantAssociationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -23,13 +23,13 @@ impl ListAssistantAssociationsInput {
         self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> std::option::Option<& str> {
         self.assistant_id.as_deref()
     }
 }
 impl ListAssistantAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListAssistantAssociationsInput`](crate::operation::list_assistant_associations::ListAssistantAssociationsInput).
-    pub fn builder() -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder {
         crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListAssistantAssociationsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListAssistantAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,22 +68,20 @@ impl ListAssistantAssociationsInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input;
-        self
+        self.assistant_id = input; self
     }
     /// Consumes the builder and constructs a [`ListAssistantAssociationsInput`](crate::operation::list_assistant_associations::ListAssistantAssociationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_assistant_associations::ListAssistantAssociationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_assistant_associations::ListAssistantAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_assistant_associations::ListAssistantAssociationsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                assistant_id: self.assistant_id,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                assistant_id: self.assistant_id
+                ,
+            }
         )
     }
 }
+

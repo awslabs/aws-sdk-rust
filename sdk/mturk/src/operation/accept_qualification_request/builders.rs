@@ -4,83 +4,58 @@ pub use crate::operation::accept_qualification_request::_accept_qualification_re
 pub use crate::operation::accept_qualification_request::_accept_qualification_request_input::AcceptQualificationRequestInputBuilder;
 
 /// Fluent builder constructing a request to `AcceptQualificationRequest`.
-///
-/// <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification. </p>
-/// <p> Only the owner of the Qualification type can grant a Qualification request for that type. </p>
+/// 
+/// <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification. </p> 
+/// <p> Only the owner of the Qualification type can grant a Qualification request for that type. </p> 
 /// <p> A successful request for the <code>AcceptQualificationRequest</code> operation returns with no errors and an empty body. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptQualificationRequestFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder
             }
-impl AcceptQualificationRequestFluentBuilder {
+impl AcceptQualificationRequestFluentBuilder  {
     /// Creates a new `AcceptQualificationRequest`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::accept_qualification_request::AcceptQualificationRequest,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::accept_qualification_request::AcceptQualificationRequestError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::accept_qualification_request::AcceptQualificationRequestOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::accept_qualification_request::AcceptQualificationRequestError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::accept_qualification_request::AcceptQualificationRequest, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::accept_qualification_request::AcceptQualificationRequestError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::accept_qualification_request::AcceptQualificationRequestOutput, aws_smithy_http::result::SdkError<crate::operation::accept_qualification_request::AcceptQualificationRequestError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
     pub fn qualification_request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.qualification_request_id(input.into());
         self
     }
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-    pub fn set_qualification_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_qualification_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_qualification_request_id(input);
         self
     }
@@ -95,3 +70,4 @@ impl AcceptQualificationRequestFluentBuilder {
         self
     }
 }
+

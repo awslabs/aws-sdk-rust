@@ -3,7 +3,7 @@
 /// <p>Input for Update Workload Share</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkloadShareOutput {
+pub struct UpdateWorkloadShareOutput  {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
@@ -14,25 +14,23 @@ pub struct UpdateWorkloadShareOutput {
 }
 impl UpdateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> std::option::Option<& str> {
         self.workload_id.as_deref()
     }
     /// <p>A workload share return object.</p>
-    pub fn workload_share(&self) -> std::option::Option<&crate::types::WorkloadShare> {
+    pub fn workload_share(&self) -> std::option::Option<& crate::types::WorkloadShare> {
         self.workload_share.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateWorkloadShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateWorkloadShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkloadShareOutput`](crate::operation::update_workload_share::UpdateWorkloadShareOutput).
-    pub fn builder(
-    ) -> crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder {
-        crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder {
+        crate::operation::update_workload_share::builders::UpdateWorkloadShareOutputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl UpdateWorkloadShareOutputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input;
-        self
+        self.workload_id = input; self
     }
     /// <p>A workload share return object.</p>
     pub fn workload_share(mut self, input: crate::types::WorkloadShare) -> Self {
@@ -61,28 +58,27 @@ impl UpdateWorkloadShareOutputBuilder {
         self
     }
     /// <p>A workload share return object.</p>
-    pub fn set_workload_share(
-        mut self,
-        input: std::option::Option<crate::types::WorkloadShare>,
-    ) -> Self {
-        self.workload_share = input;
-        self
+    pub fn set_workload_share(mut self, input: std::option::Option<crate::types::WorkloadShare>) -> Self {
+        self.workload_share = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateWorkloadShareOutput`](crate::operation::update_workload_share::UpdateWorkloadShareOutput).
     pub fn build(self) -> crate::operation::update_workload_share::UpdateWorkloadShareOutput {
         crate::operation::update_workload_share::UpdateWorkloadShareOutput {
-            workload_id: self.workload_id,
-            workload_share: self.workload_share,
+            workload_id: self.workload_id
+            ,
+            workload_share: self.workload_share
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

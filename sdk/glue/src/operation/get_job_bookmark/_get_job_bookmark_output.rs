@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobBookmarkOutput {
+pub struct GetJobBookmarkOutput  {
     /// <p>A structure that defines a point that a job can resume processing.</p>
     #[doc(hidden)]
     pub job_bookmark_entry: std::option::Option<crate::types::JobBookmarkEntry>,
@@ -10,15 +10,15 @@ pub struct GetJobBookmarkOutput {
 }
 impl GetJobBookmarkOutput {
     /// <p>A structure that defines a point that a job can resume processing.</p>
-    pub fn job_bookmark_entry(&self) -> std::option::Option<&crate::types::JobBookmarkEntry> {
+    pub fn job_bookmark_entry(&self) -> std::option::Option<& crate::types::JobBookmarkEntry> {
         self.job_bookmark_entry.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetJobBookmarkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetJobBookmarkOutput {
     /// Creates a new builder-style object to manufacture [`GetJobBookmarkOutput`](crate::operation::get_job_bookmark::GetJobBookmarkOutput).
     pub fn builder() -> crate::operation::get_job_bookmark::builders::GetJobBookmarkOutputBuilder {
@@ -40,27 +40,25 @@ impl GetJobBookmarkOutputBuilder {
         self
     }
     /// <p>A structure that defines a point that a job can resume processing.</p>
-    pub fn set_job_bookmark_entry(
-        mut self,
-        input: std::option::Option<crate::types::JobBookmarkEntry>,
-    ) -> Self {
-        self.job_bookmark_entry = input;
-        self
+    pub fn set_job_bookmark_entry(mut self, input: std::option::Option<crate::types::JobBookmarkEntry>) -> Self {
+        self.job_bookmark_entry = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetJobBookmarkOutput`](crate::operation::get_job_bookmark::GetJobBookmarkOutput).
     pub fn build(self) -> crate::operation::get_job_bookmark::GetJobBookmarkOutput {
         crate::operation::get_job_bookmark::GetJobBookmarkOutput {
-            job_bookmark_entry: self.job_bookmark_entry,
+            job_bookmark_entry: self.job_bookmark_entry
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachPolicyInput {
+pub struct AttachPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct AttachPolicyInput {
 }
 impl AttachPolicyInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The reference that is associated with the policy object.</p>
-    pub fn policy_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn policy_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl AttachPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where both objects reside. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The reference that is associated with the policy object.</p>
     pub fn policy_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -59,12 +58,8 @@ impl AttachPolicyInputBuilder {
         self
     }
     /// <p>The reference that is associated with the policy object.</p>
-    pub fn set_policy_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.policy_reference = input;
-        self
+    pub fn set_policy_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.policy_reference = input; self
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -72,24 +67,21 @@ impl AttachPolicyInputBuilder {
         self
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// Consumes the builder and constructs a [`AttachPolicyInput`](crate::operation::attach_policy::AttachPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::attach_policy::AttachPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::attach_policy::AttachPolicyInput {
-            directory_arn: self.directory_arn,
-            policy_reference: self.policy_reference,
-            object_reference: self.object_reference,
-        })
+    pub fn build(self) -> Result<crate::operation::attach_policy::AttachPolicyInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::attach_policy::AttachPolicyInput {
+                directory_arn: self.directory_arn
+                ,
+                policy_reference: self.policy_reference
+                ,
+                object_reference: self.object_reference
+                ,
+            }
+        )
     }
 }
+

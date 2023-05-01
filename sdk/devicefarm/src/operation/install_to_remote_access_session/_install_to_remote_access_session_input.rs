@@ -3,7 +3,7 @@
 /// <p>Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstallToRemoteAccessSessionInput {
+pub struct InstallToRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
     #[doc(hidden)]
     pub remote_access_session_arn: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct InstallToRemoteAccessSessionInput {
 }
 impl InstallToRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    pub fn remote_access_session_arn(&self) -> std::option::Option<&str> {
+    pub fn remote_access_session_arn(&self) -> std::option::Option<& str> {
         self.remote_access_session_arn.as_deref()
     }
     /// <p>The ARN of the app about which you are requesting information.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
 }
 impl InstallToRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`InstallToRemoteAccessSessionInput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput).
-    pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder{
+    pub fn builder() -> crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder {
         crate::operation::install_to_remote_access_session::builders::InstallToRemoteAccessSessionInputBuilder::default()
     }
 }
@@ -42,12 +42,8 @@ impl InstallToRemoteAccessSessionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are requesting information.</p>
-    pub fn set_remote_access_session_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.remote_access_session_arn = input;
-        self
+    pub fn set_remote_access_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.remote_access_session_arn = input; self
     }
     /// <p>The ARN of the app about which you are requesting information.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,21 +52,18 @@ impl InstallToRemoteAccessSessionInputBuilder {
     }
     /// <p>The ARN of the app about which you are requesting information.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// Consumes the builder and constructs a [`InstallToRemoteAccessSessionInput`](crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::install_to_remote_access_session::InstallToRemoteAccessSessionInput {
-                remote_access_session_arn: self.remote_access_session_arn,
-                app_arn: self.app_arn,
-            },
+                remote_access_session_arn: self.remote_access_session_arn
+                ,
+                app_arn: self.app_arn
+                ,
+            }
         )
     }
 }
+

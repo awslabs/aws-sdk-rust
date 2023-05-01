@@ -3,7 +3,7 @@
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sasl {
+pub struct Sasl  {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     #[doc(hidden)]
     pub scram: std::option::Option<crate::types::Scram>,
@@ -13,11 +13,11 @@ pub struct Sasl {
 }
 impl Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
-    pub fn scram(&self) -> std::option::Option<&crate::types::Scram> {
+    pub fn scram(&self) -> std::option::Option<& crate::types::Scram> {
         self.scram.as_ref()
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
-    pub fn iam(&self) -> std::option::Option<&crate::types::Iam> {
+    pub fn iam(&self) -> std::option::Option<& crate::types::Iam> {
         self.iam.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SaslBuilder {
     }
     /// <p>Details for SASL/SCRAM client authentication.</p>
     pub fn set_scram(mut self, input: std::option::Option<crate::types::Scram>) -> Self {
-        self.scram = input;
-        self
+        self.scram = input; self
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn iam(mut self, input: crate::types::Iam) -> Self {
@@ -53,14 +52,16 @@ impl SaslBuilder {
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn set_iam(mut self, input: std::option::Option<crate::types::Iam>) -> Self {
-        self.iam = input;
-        self
+        self.iam = input; self
     }
     /// Consumes the builder and constructs a [`Sasl`](crate::types::Sasl).
     pub fn build(self) -> crate::types::Sasl {
         crate::types::Sasl {
-            scram: self.scram,
-            iam: self.iam,
+            scram: self.scram
+            ,
+            iam: self.iam
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterApplicationOutput {
+pub struct RegisterApplicationOutput  {
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::types::Application>,
@@ -13,25 +13,23 @@ pub struct RegisterApplicationOutput {
 }
 impl RegisterApplicationOutput {
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
-    pub fn application(&self) -> std::option::Option<&crate::types::Application> {
+    pub fn application(&self) -> std::option::Option<& crate::types::Application> {
         self.application.as_ref()
     }
     /// <p>The ID of the operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterApplicationOutput {
     /// Creates a new builder-style object to manufacture [`RegisterApplicationOutput`](crate::operation::register_application::RegisterApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::register_application::builders::RegisterApplicationOutputBuilder {
-        crate::operation::register_application::builders::RegisterApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::register_application::builders::RegisterApplicationOutputBuilder {
+        crate::operation::register_application::builders::RegisterApplicationOutputBuilder::default()
     }
 }
 
@@ -50,12 +48,8 @@ impl RegisterApplicationOutputBuilder {
         self
     }
     /// <p>The application registered with AWS Systems Manager for SAP.</p>
-    pub fn set_application(
-        mut self,
-        input: std::option::Option<crate::types::Application>,
-    ) -> Self {
-        self.application = input;
-        self
+    pub fn set_application(mut self, input: std::option::Option<crate::types::Application>) -> Self {
+        self.application = input; self
     }
     /// <p>The ID of the operation.</p>
     pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,24 +58,26 @@ impl RegisterApplicationOutputBuilder {
     }
     /// <p>The ID of the operation.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterApplicationOutput`](crate::operation::register_application::RegisterApplicationOutput).
     pub fn build(self) -> crate::operation::register_application::RegisterApplicationOutput {
         crate::operation::register_application::RegisterApplicationOutput {
-            application: self.application,
-            operation_id: self.operation_id,
+            application: self.application
+            ,
+            operation_id: self.operation_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

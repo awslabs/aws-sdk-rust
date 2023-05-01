@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetCrawlersOutput {
+pub struct BatchGetCrawlersOutput  {
     /// <p>A list of crawler definitions.</p>
     #[doc(hidden)]
     pub crawlers: std::option::Option<std::vec::Vec<crate::types::Crawler>>,
@@ -13,23 +13,22 @@ pub struct BatchGetCrawlersOutput {
 }
 impl BatchGetCrawlersOutput {
     /// <p>A list of crawler definitions.</p>
-    pub fn crawlers(&self) -> std::option::Option<&[crate::types::Crawler]> {
+    pub fn crawlers(&self) -> std::option::Option<& [crate::types::Crawler]> {
         self.crawlers.as_deref()
     }
     /// <p>A list of names of crawlers that were not found.</p>
-    pub fn crawlers_not_found(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn crawlers_not_found(&self) -> std::option::Option<& [std::string::String]> {
         self.crawlers_not_found.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetCrawlersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetCrawlersOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetCrawlersOutput`](crate::operation::batch_get_crawlers::BatchGetCrawlersOutput).
-    pub fn builder() -> crate::operation::batch_get_crawlers::builders::BatchGetCrawlersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_crawlers::builders::BatchGetCrawlersOutputBuilder {
         crate::operation::batch_get_crawlers::builders::BatchGetCrawlersOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl BatchGetCrawlersOutputBuilder {
     /// <p>A list of crawler definitions.</p>
     pub fn crawlers(mut self, input: crate::types::Crawler) -> Self {
         let mut v = self.crawlers.unwrap_or_default();
-        v.push(input);
-        self.crawlers = Some(v);
-        self
+                        v.push(input);
+                        self.crawlers = Some(v);
+                        self
     }
     /// <p>A list of crawler definitions.</p>
-    pub fn set_crawlers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Crawler>>,
-    ) -> Self {
-        self.crawlers = input;
-        self
+    pub fn set_crawlers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Crawler>>) -> Self {
+        self.crawlers = input; self
     }
     /// Appends an item to `crawlers_not_found`.
     ///
@@ -69,33 +64,32 @@ impl BatchGetCrawlersOutputBuilder {
     /// <p>A list of names of crawlers that were not found.</p>
     pub fn crawlers_not_found(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.crawlers_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.crawlers_not_found = Some(v);
-        self
+                        v.push(input.into());
+                        self.crawlers_not_found = Some(v);
+                        self
     }
     /// <p>A list of names of crawlers that were not found.</p>
-    pub fn set_crawlers_not_found(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.crawlers_not_found = input;
-        self
+    pub fn set_crawlers_not_found(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.crawlers_not_found = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetCrawlersOutput`](crate::operation::batch_get_crawlers::BatchGetCrawlersOutput).
     pub fn build(self) -> crate::operation::batch_get_crawlers::BatchGetCrawlersOutput {
         crate::operation::batch_get_crawlers::BatchGetCrawlersOutput {
-            crawlers: self.crawlers,
-            crawlers_not_found: self.crawlers_not_found,
+            crawlers: self.crawlers
+            ,
+            crawlers_not_found: self.crawlers_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

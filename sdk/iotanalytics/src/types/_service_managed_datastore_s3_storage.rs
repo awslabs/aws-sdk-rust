@@ -3,7 +3,8 @@
 /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceManagedDatastoreS3Storage {}
+pub struct ServiceManagedDatastoreS3Storage  {
+}
 impl ServiceManagedDatastoreS3Storage {
     /// Creates a new builder-style object to manufacture [`ServiceManagedDatastoreS3Storage`](crate::types::ServiceManagedDatastoreS3Storage).
     pub fn builder() -> crate::types::builders::ServiceManagedDatastoreS3StorageBuilder {
@@ -14,10 +15,13 @@ impl ServiceManagedDatastoreS3Storage {
 /// A builder for [`ServiceManagedDatastoreS3Storage`](crate::types::ServiceManagedDatastoreS3Storage).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct ServiceManagedDatastoreS3StorageBuilder {}
+pub struct ServiceManagedDatastoreS3StorageBuilder {
+}
 impl ServiceManagedDatastoreS3StorageBuilder {
     /// Consumes the builder and constructs a [`ServiceManagedDatastoreS3Storage`](crate::types::ServiceManagedDatastoreS3Storage).
     pub fn build(self) -> crate::types::ServiceManagedDatastoreS3Storage {
-        crate::types::ServiceManagedDatastoreS3Storage {}
+        crate::types::ServiceManagedDatastoreS3Storage {
+        }
     }
 }
+

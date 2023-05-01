@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubnetGroupInput {
+pub struct DeleteSubnetGroupInput  {
     /// <p>The name of the subnet group to delete.</p>
     #[doc(hidden)]
     pub subnet_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteSubnetGroupInput {
     /// <p>The name of the subnet group to delete.</p>
-    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn subnet_group_name(&self) -> std::option::Option<& str> {
         self.subnet_group_name.as_deref()
     }
 }
 impl DeleteSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubnetGroupInput`](crate::operation::delete_subnet_group::DeleteSubnetGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_subnet_group::builders::DeleteSubnetGroupInputBuilder {
         crate::operation::delete_subnet_group::builders::DeleteSubnetGroupInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteSubnetGroupInputBuilder {
         self
     }
     /// <p>The name of the subnet group to delete.</p>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.subnet_group_name = input;
-        self
+    pub fn set_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.subnet_group_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSubnetGroupInput`](crate::operation::delete_subnet_group::DeleteSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_subnet_group::DeleteSubnetGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_subnet_group::DeleteSubnetGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_subnet_group::DeleteSubnetGroupInput {
-                subnet_group_name: self.subnet_group_name,
-            },
+                subnet_group_name: self.subnet_group_name
+                ,
+            }
         )
     }
 }
+

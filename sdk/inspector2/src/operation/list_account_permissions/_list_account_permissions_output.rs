@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountPermissionsOutput {
+pub struct ListAccountPermissionsOutput  {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::types::Permission>>,
@@ -13,24 +13,22 @@ pub struct ListAccountPermissionsOutput {
 }
 impl ListAccountPermissionsOutput {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccountPermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAccountPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder {
         crate::operation::list_account_permissions::builders::ListAccountPermissionsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListAccountPermissionsOutputBuilder {
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>Contains details on the permissions an account has to configure Amazon Inspector.</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Permission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListAccountPermissionsOutputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAccountPermissionsOutput`](crate::operation::list_account_permissions::ListAccountPermissionsOutput).
     pub fn build(self) -> crate::operation::list_account_permissions::ListAccountPermissionsOutput {
         crate::operation::list_account_permissions::ListAccountPermissionsOutput {
-            permissions: self.permissions,
-            next_token: self.next_token,
+            permissions: self.permissions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

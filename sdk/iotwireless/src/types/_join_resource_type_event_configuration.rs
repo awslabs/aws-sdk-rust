@@ -3,16 +3,14 @@
 /// <p>Join resource type event configuration object for enabling or disabling topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinResourceTypeEventConfiguration {
+pub struct JoinResourceTypeEventConfiguration  {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
     #[doc(hidden)]
     pub lo_ra_wan: std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
 }
 impl JoinResourceTypeEventConfiguration {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(
-        &self,
-    ) -> std::option::Option<&crate::types::LoRaWanJoinResourceTypeEventConfiguration> {
+    pub fn lo_ra_wan(&self) -> std::option::Option<& crate::types::LoRaWanJoinResourceTypeEventConfiguration> {
         self.lo_ra_wan.as_ref()
     }
 }
@@ -27,30 +25,24 @@ impl JoinResourceTypeEventConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct JoinResourceTypeEventConfigurationBuilder {
-    pub(crate) lo_ra_wan:
-        std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
+    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
 }
 impl JoinResourceTypeEventConfigurationBuilder {
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn lo_ra_wan(
-        mut self,
-        input: crate::types::LoRaWanJoinResourceTypeEventConfiguration,
-    ) -> Self {
+    pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanJoinResourceTypeEventConfiguration) -> Self {
         self.lo_ra_wan = Some(input);
         self
     }
     /// <p>Join resource type event configuration object for enabling or disabling LoRaWAN related event topics.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>,
-    ) -> Self {
-        self.lo_ra_wan = input;
-        self
+    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanJoinResourceTypeEventConfiguration>) -> Self {
+        self.lo_ra_wan = input; self
     }
     /// Consumes the builder and constructs a [`JoinResourceTypeEventConfiguration`](crate::types::JoinResourceTypeEventConfiguration).
     pub fn build(self) -> crate::types::JoinResourceTypeEventConfiguration {
         crate::types::JoinResourceTypeEventConfiguration {
-            lo_ra_wan: self.lo_ra_wan,
+            lo_ra_wan: self.lo_ra_wan
+            ,
         }
     }
 }
+

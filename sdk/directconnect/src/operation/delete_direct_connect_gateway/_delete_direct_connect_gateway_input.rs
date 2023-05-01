@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDirectConnectGatewayInput {
+pub struct DeleteDirectConnectGatewayInput  {
     /// <p>The ID of the Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway_id: std::option::Option<std::string::String>,
 }
 impl DeleteDirectConnectGatewayInput {
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn direct_connect_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn direct_connect_gateway_id(&self) -> std::option::Option<& str> {
         self.direct_connect_gateway_id.as_deref()
     }
 }
 impl DeleteDirectConnectGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeleteDirectConnectGatewayInput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput).
-    pub fn builder() -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder{
+    pub fn builder() -> crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder {
         crate::operation::delete_direct_connect_gateway::builders::DeleteDirectConnectGatewayInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteDirectConnectGatewayInputBuilder {
         self
     }
     /// <p>The ID of the Direct Connect gateway.</p>
-    pub fn set_direct_connect_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.direct_connect_gateway_id = input;
-        self
+    pub fn set_direct_connect_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.direct_connect_gateway_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayInput`](crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayInput {
-                direct_connect_gateway_id: self.direct_connect_gateway_id,
-            },
+                direct_connect_gateway_id: self.direct_connect_gateway_id
+                ,
+            }
         )
     }
 }
+

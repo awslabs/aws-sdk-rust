@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartServiceSoftwareUpdateOutput {
+pub struct StartServiceSoftwareUpdateOutput  {
     /// <p>The current status of the OpenSearch Service software update.</p>
     #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
@@ -11,20 +11,18 @@ pub struct StartServiceSoftwareUpdateOutput {
 }
 impl StartServiceSoftwareUpdateOutput {
     /// <p>The current status of the OpenSearch Service software update.</p>
-    pub fn service_software_options(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceSoftwareOptions> {
+    pub fn service_software_options(&self) -> std::option::Option<& crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartServiceSoftwareUpdateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartServiceSoftwareUpdateOutput {
     /// Creates a new builder-style object to manufacture [`StartServiceSoftwareUpdateOutput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput).
-    pub fn builder() -> crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateOutputBuilder{
+    pub fn builder() -> crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateOutputBuilder {
         crate::operation::start_service_software_update::builders::StartServiceSoftwareUpdateOutputBuilder::default()
     }
 }
@@ -43,29 +41,25 @@ impl StartServiceSoftwareUpdateOutputBuilder {
         self
     }
     /// <p>The current status of the OpenSearch Service software update.</p>
-    pub fn set_service_software_options(
-        mut self,
-        input: std::option::Option<crate::types::ServiceSoftwareOptions>,
-    ) -> Self {
-        self.service_software_options = input;
-        self
+    pub fn set_service_software_options(mut self, input: std::option::Option<crate::types::ServiceSoftwareOptions>) -> Self {
+        self.service_software_options = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartServiceSoftwareUpdateOutput`](crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput {
+    pub fn build(self) -> crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput {
         crate::operation::start_service_software_update::StartServiceSoftwareUpdateOutput {
-            service_software_options: self.service_software_options,
+            service_software_options: self.service_software_options
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

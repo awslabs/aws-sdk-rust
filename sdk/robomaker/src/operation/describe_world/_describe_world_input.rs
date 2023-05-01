@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorldInput {
+pub struct DescribeWorldInput  {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
     #[doc(hidden)]
     pub world: std::option::Option<std::string::String>,
 }
 impl DescribeWorldInput {
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
-    pub fn world(&self) -> std::option::Option<&str> {
+    pub fn world(&self) -> std::option::Option<& str> {
         self.world.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DescribeWorldInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
     pub fn set_world(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.world = input;
-        self
+        self.world = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorldInput`](crate::operation::describe_world::DescribeWorldInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_world::DescribeWorldInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_world::DescribeWorldInput { world: self.world })
+    pub fn build(self) -> Result<crate::operation::describe_world::DescribeWorldInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_world::DescribeWorldInput {
+                world: self.world
+                ,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Container for the Stats Event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatsEvent {
+pub struct StatsEvent  {
     /// <p>The Stats event details.</p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::types::Stats>,
 }
 impl StatsEvent {
     /// <p>The Stats event details.</p>
-    pub fn details(&self) -> std::option::Option<&crate::types::Stats> {
+    pub fn details(&self) -> std::option::Option<& crate::types::Stats> {
         self.details.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl StatsEventBuilder {
     }
     /// <p>The Stats event details.</p>
     pub fn set_details(mut self, input: std::option::Option<crate::types::Stats>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// Consumes the builder and constructs a [`StatsEvent`](crate::types::StatsEvent).
     pub fn build(self) -> crate::types::StatsEvent {
         crate::types::StatsEvent {
-            details: self.details,
+            details: self.details
+            ,
         }
     }
 }
+

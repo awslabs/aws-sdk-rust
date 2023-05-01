@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRobotApplicationVersionInput {
+pub struct CreateRobotApplicationVersionInput  {
     /// <p>The application information for the robot application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct CreateRobotApplicationVersionInput {
 }
 impl CreateRobotApplicationVersionInput {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<&str> {
+    pub fn current_revision_id(&self) -> std::option::Option<& str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn s3_etags(&self) -> std::option::Option<& [std::string::String]> {
         self.s3_etags.as_deref()
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
+    pub fn image_digest(&self) -> std::option::Option<& str> {
         self.image_digest.as_deref()
     }
 }
 impl CreateRobotApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateRobotApplicationVersionInput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput).
-    pub fn builder() -> crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder {
         crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl CreateRobotApplicationVersionInputBuilder {
     }
     /// <p>The application information for the robot application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl CreateRobotApplicationVersionInputBuilder {
         self
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn set_current_revision_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.current_revision_id = input;
-        self
+    pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.current_revision_id = input; self
     }
     /// Appends an item to `s3_etags`.
     ///
@@ -81,17 +76,13 @@ impl CreateRobotApplicationVersionInputBuilder {
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
     pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.s3_etags.unwrap_or_default();
-        v.push(input.into());
-        self.s3_etags = Some(v);
-        self
+                        v.push(input.into());
+                        self.s3_etags = Some(v);
+                        self
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn set_s3_etags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.s3_etags = input;
-        self
+    pub fn set_s3_etags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.s3_etags = input; self
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,16 +91,10 @@ impl CreateRobotApplicationVersionInputBuilder {
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
     pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// Consumes the builder and constructs a [`CreateRobotApplicationVersionInput`](crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_robot_application_version::CreateRobotApplicationVersionInput {
                 application: self.application
@@ -124,3 +109,4 @@ impl CreateRobotApplicationVersionInputBuilder {
         )
     }
 }
+

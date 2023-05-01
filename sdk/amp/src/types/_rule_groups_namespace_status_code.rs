@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rulegroupsnamespacestatuscode = unimplemented!();
 /// match rulegroupsnamespacestatuscode {
@@ -34,22 +34,14 @@
 /// Specifically, when `rulegroupsnamespacestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleGroupsNamespaceStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// State of a namespace.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RuleGroupsNamespaceStatusCode {
     /// Namespace has been created/updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
     Active,
@@ -64,57 +56,49 @@ pub enum RuleGroupsNamespaceStatusCode {
     /// Namespace is being updated. Update/Deletion is disallowed until namespace is ACTIVE and workspace status is ACTIVE.
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleGroupsNamespaceStatusCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACTIVE" => RuleGroupsNamespaceStatusCode::Active,
-            "CREATING" => RuleGroupsNamespaceStatusCode::Creating,
-            "CREATION_FAILED" => RuleGroupsNamespaceStatusCode::CreationFailed,
-            "DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
-            "UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
-            "UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
-            other => RuleGroupsNamespaceStatusCode::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACTIVE" => RuleGroupsNamespaceStatusCode::Active,
+"CREATING" => RuleGroupsNamespaceStatusCode::Creating,
+"CREATION_FAILED" => RuleGroupsNamespaceStatusCode::CreationFailed,
+"DELETING" => RuleGroupsNamespaceStatusCode::Deleting,
+"UPDATE_FAILED" => RuleGroupsNamespaceStatusCode::UpdateFailed,
+"UPDATING" => RuleGroupsNamespaceStatusCode::Updating,
+other => RuleGroupsNamespaceStatusCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RuleGroupsNamespaceStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuleGroupsNamespaceStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RuleGroupsNamespaceStatusCode::from(s))
+                }
+            }
 impl RuleGroupsNamespaceStatusCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RuleGroupsNamespaceStatusCode::Active => "ACTIVE",
-            RuleGroupsNamespaceStatusCode::Creating => "CREATING",
-            RuleGroupsNamespaceStatusCode::CreationFailed => "CREATION_FAILED",
-            RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
-            RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
-            RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
-            RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACTIVE",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETING",
-            "UPDATE_FAILED",
-            "UPDATING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RuleGroupsNamespaceStatusCode::Active => "ACTIVE",
+    RuleGroupsNamespaceStatusCode::Creating => "CREATING",
+    RuleGroupsNamespaceStatusCode::CreationFailed => "CREATION_FAILED",
+    RuleGroupsNamespaceStatusCode::Deleting => "DELETING",
+    RuleGroupsNamespaceStatusCode::UpdateFailed => "UPDATE_FAILED",
+    RuleGroupsNamespaceStatusCode::Updating => "UPDATING",
+    RuleGroupsNamespaceStatusCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACTIVE", "CREATING", "CREATION_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
+                }
+            }
 impl AsRef<str> for RuleGroupsNamespaceStatusCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartInferenceSchedulerInput {
+pub struct StartInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler to be started. </p>
     #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl StartInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be started. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
 }
 impl StartInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`StartInferenceSchedulerInput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerInput).
-    pub fn builder(
-    ) -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerInputBuilder {
         crate::operation::start_inference_scheduler::builders::StartInferenceSchedulerInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl StartInferenceSchedulerInputBuilder {
         self
     }
     /// <p>The name of the inference scheduler to be started. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_name = input;
-        self
+    pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inference_scheduler_name = input; self
     }
     /// Consumes the builder and constructs a [`StartInferenceSchedulerInput`](crate::operation::start_inference_scheduler::StartInferenceSchedulerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_inference_scheduler::StartInferenceSchedulerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_inference_scheduler::StartInferenceSchedulerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_inference_scheduler::StartInferenceSchedulerInput {
-                inference_scheduler_name: self.inference_scheduler_name,
-            },
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+            }
         )
     }
 }
+

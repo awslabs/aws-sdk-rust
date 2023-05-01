@@ -3,7 +3,7 @@
 /// <p>Settings for logging audio of conversations between Amazon Lex and a user. You specify whether to log audio and the Amazon S3 bucket where the audio file is stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioLogSetting {
+pub struct AudioLogSetting  {
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,7 +17,7 @@ impl AudioLogSetting {
         self.enabled
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::AudioLogDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::AudioLogDestination> {
         self.destination.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AudioLogSettingBuilder {
     }
     /// <p>Determines whether audio logging in enabled for the bot.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
     pub fn destination(mut self, input: crate::types::AudioLogDestination) -> Self {
@@ -52,18 +51,18 @@ impl AudioLogSettingBuilder {
         self
     }
     /// <p>The location of audio log files collected when conversation logging is enabled for a bot.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::AudioLogDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::AudioLogDestination>) -> Self {
+        self.destination = input; self
     }
     /// Consumes the builder and constructs a [`AudioLogSetting`](crate::types::AudioLogSetting).
     pub fn build(self) -> crate::types::AudioLogSetting {
         crate::types::AudioLogSetting {
-            enabled: self.enabled.unwrap_or_default(),
-            destination: self.destination,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            destination: self.destination
+            ,
         }
     }
 }
+

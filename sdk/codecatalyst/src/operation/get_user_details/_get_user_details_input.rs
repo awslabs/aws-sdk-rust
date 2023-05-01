@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserDetailsInput {
+pub struct GetUserDetailsInput  {
     /// <p>The system-generated unique ID of the user. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetUserDetailsInput {
 }
 impl GetUserDetailsInput {
     /// <p>The system-generated unique ID of the user. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetUserDetailsInputBuilder {
     }
     /// <p>The system-generated unique ID of the user. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetUserDetailsInputBuilder {
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// Consumes the builder and constructs a [`GetUserDetailsInput`](crate::operation::get_user_details::GetUserDetailsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_user_details::GetUserDetailsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_user_details::GetUserDetailsInput {
-            id: self.id,
-            user_name: self.user_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_user_details::GetUserDetailsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_user_details::GetUserDetailsInput {
+                id: self.id
+                ,
+                user_name: self.user_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterAccountOutput {
+pub struct RegisterAccountOutput  {
     /// <p> The status of the account registration request. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AccountStatus>,
@@ -10,15 +10,15 @@ pub struct RegisterAccountOutput {
 }
 impl RegisterAccountOutput {
     /// <p> The status of the account registration request. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AccountStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AccountStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterAccountOutput {
     /// Creates a new builder-style object to manufacture [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput).
     pub fn builder() -> crate::operation::register_account::builders::RegisterAccountOutputBuilder {
@@ -41,23 +41,24 @@ impl RegisterAccountOutputBuilder {
     }
     /// <p> The status of the account registration request. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AccountStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterAccountOutput`](crate::operation::register_account::RegisterAccountOutput).
     pub fn build(self) -> crate::operation::register_account::RegisterAccountOutput {
         crate::operation::register_account::RegisterAccountOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Settings for the DetectLabels request. Settings can include filters for both GENERAL_LABELS and IMAGE_PROPERTIES. GENERAL_LABELS filters can be inclusive or exclusive and applied to individual labels or label categories. IMAGE_PROPERTIES filters allow specification of a maximum number of dominant colors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsSettings {
+pub struct DetectLabelsSettings  {
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
     #[doc(hidden)]
     pub general_labels: std::option::Option<crate::types::GeneralLabelsSettings>,
@@ -13,13 +13,11 @@ pub struct DetectLabelsSettings {
 }
 impl DetectLabelsSettings {
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
-    pub fn general_labels(&self) -> std::option::Option<&crate::types::GeneralLabelsSettings> {
+    pub fn general_labels(&self) -> std::option::Option<& crate::types::GeneralLabelsSettings> {
         self.general_labels.as_ref()
     }
     /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-    pub fn image_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::DetectLabelsImagePropertiesSettings> {
+    pub fn image_properties(&self) -> std::option::Option<& crate::types::DetectLabelsImagePropertiesSettings> {
         self.image_properties.as_ref()
     }
 }
@@ -35,8 +33,7 @@ impl DetectLabelsSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DetectLabelsSettingsBuilder {
     pub(crate) general_labels: std::option::Option<crate::types::GeneralLabelsSettings>,
-    pub(crate) image_properties:
-        std::option::Option<crate::types::DetectLabelsImagePropertiesSettings>,
+    pub(crate) image_properties: std::option::Option<crate::types::DetectLabelsImagePropertiesSettings>,
 }
 impl DetectLabelsSettingsBuilder {
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
@@ -45,34 +42,26 @@ impl DetectLabelsSettingsBuilder {
         self
     }
     /// <p>Contains the specified filters for GENERAL_LABELS.</p>
-    pub fn set_general_labels(
-        mut self,
-        input: std::option::Option<crate::types::GeneralLabelsSettings>,
-    ) -> Self {
-        self.general_labels = input;
-        self
+    pub fn set_general_labels(mut self, input: std::option::Option<crate::types::GeneralLabelsSettings>) -> Self {
+        self.general_labels = input; self
     }
     /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-    pub fn image_properties(
-        mut self,
-        input: crate::types::DetectLabelsImagePropertiesSettings,
-    ) -> Self {
+    pub fn image_properties(mut self, input: crate::types::DetectLabelsImagePropertiesSettings) -> Self {
         self.image_properties = Some(input);
         self
     }
     /// <p>Contains the chosen number of maximum dominant colors in an image.</p>
-    pub fn set_image_properties(
-        mut self,
-        input: std::option::Option<crate::types::DetectLabelsImagePropertiesSettings>,
-    ) -> Self {
-        self.image_properties = input;
-        self
+    pub fn set_image_properties(mut self, input: std::option::Option<crate::types::DetectLabelsImagePropertiesSettings>) -> Self {
+        self.image_properties = input; self
     }
     /// Consumes the builder and constructs a [`DetectLabelsSettings`](crate::types::DetectLabelsSettings).
     pub fn build(self) -> crate::types::DetectLabelsSettings {
         crate::types::DetectLabelsSettings {
-            general_labels: self.general_labels,
-            image_properties: self.image_properties,
+            general_labels: self.general_labels
+            ,
+            image_properties: self.image_properties
+            ,
         }
     }
 }
+

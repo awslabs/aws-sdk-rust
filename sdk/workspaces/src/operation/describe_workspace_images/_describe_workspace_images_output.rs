@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceImagesOutput {
+pub struct DescribeWorkspaceImagesOutput  {
     /// <p>Information about the images.</p>
     #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::types::WorkspaceImage>>,
@@ -13,24 +13,22 @@ pub struct DescribeWorkspaceImagesOutput {
 }
 impl DescribeWorkspaceImagesOutput {
     /// <p>Information about the images.</p>
-    pub fn images(&self) -> std::option::Option<&[crate::types::WorkspaceImage]> {
+    pub fn images(&self) -> std::option::Option<& [crate::types::WorkspaceImage]> {
         self.images.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeWorkspaceImagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeWorkspaceImagesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceImagesOutput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesOutputBuilder {
         crate::operation::describe_workspace_images::builders::DescribeWorkspaceImagesOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl DescribeWorkspaceImagesOutputBuilder {
     /// <p>Information about the images.</p>
     pub fn images(mut self, input: crate::types::WorkspaceImage) -> Self {
         let mut v = self.images.unwrap_or_default();
-        v.push(input);
-        self.images = Some(v);
-        self
+                        v.push(input);
+                        self.images = Some(v);
+                        self
     }
     /// <p>Information about the images.</p>
-    pub fn set_images(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkspaceImage>>,
-    ) -> Self {
-        self.images = input;
-        self
+    pub fn set_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkspaceImage>>) -> Self {
+        self.images = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl DescribeWorkspaceImagesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeWorkspaceImagesOutput`](crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput {
+    pub fn build(self) -> crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput {
         crate::operation::describe_workspace_images::DescribeWorkspaceImagesOutput {
-            images: self.images,
-            next_token: self.next_token,
+            images: self.images
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

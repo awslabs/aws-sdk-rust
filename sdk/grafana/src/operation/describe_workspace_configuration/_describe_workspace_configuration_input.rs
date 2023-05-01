@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceConfigurationInput {
+pub struct DescribeWorkspaceConfigurationInput  {
     /// <p>The ID of the workspace to get configuration information for.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeWorkspaceConfigurationInput {
     /// <p>The ID of the workspace to get configuration information for.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
 impl DescribeWorkspaceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationInput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput).
-    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder {
         crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl DescribeWorkspaceConfigurationInputBuilder {
     }
     /// <p>The ID of the workspace to get configuration information for.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationInput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationInput {
                 workspace_id: self.workspace_id
@@ -52,3 +46,4 @@ impl DescribeWorkspaceConfigurationInputBuilder {
         )
     }
 }
+

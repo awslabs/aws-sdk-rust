@@ -3,7 +3,7 @@
 /// <p>A structure that defines one launch group in a launch. A launch group is a variation of the feature that you are including in the launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchGroup {
+pub struct LaunchGroup  {
     /// <p>The name of the launch group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,23 +12,19 @@ pub struct LaunchGroup {
     pub description: std::option::Option<std::string::String>,
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
     #[doc(hidden)]
-    pub feature_variations:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub feature_variations: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl LaunchGroup {
     /// <p>The name of the launch group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the launch group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn feature_variations(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn feature_variations(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.feature_variations.as_ref()
     }
 }
@@ -45,8 +41,7 @@ impl LaunchGroup {
 pub struct LaunchGroupBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) feature_variations:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) feature_variations: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl LaunchGroupBuilder {
     /// <p>The name of the launch group.</p>
@@ -56,8 +51,7 @@ impl LaunchGroupBuilder {
     }
     /// <p>The name of the launch group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the launch group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,40 +60,33 @@ impl LaunchGroupBuilder {
     }
     /// <p>A description of the launch group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Adds a key-value pair to `feature_variations`.
     ///
     /// To override the contents of this collection use [`set_feature_variations`](Self::set_feature_variations).
     ///
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn feature_variations(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn feature_variations(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.feature_variations.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.feature_variations = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.feature_variations = Some(hash_map);
+                        self
     }
     /// <p>The feature variation for this launch group. This is a key-value pair.</p>
-    pub fn set_feature_variations(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.feature_variations = input;
-        self
+    pub fn set_feature_variations(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.feature_variations = input; self
     }
     /// Consumes the builder and constructs a [`LaunchGroup`](crate::types::LaunchGroup).
     pub fn build(self) -> crate::types::LaunchGroup {
         crate::types::LaunchGroup {
-            name: self.name,
-            description: self.description,
-            feature_variations: self.feature_variations,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            feature_variations: self.feature_variations
+            ,
         }
     }
 }
+

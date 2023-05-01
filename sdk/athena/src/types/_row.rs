@@ -3,14 +3,14 @@
 /// <p>The rows that make up a query result table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Row {
+pub struct Row  {
     /// <p>The data that populates a row in a query result table.</p>
     #[doc(hidden)]
     pub data: std::option::Option<std::vec::Vec<crate::types::Datum>>,
 }
 impl Row {
     /// <p>The data that populates a row in a query result table.</p>
-    pub fn data(&self) -> std::option::Option<&[crate::types::Datum]> {
+    pub fn data(&self) -> std::option::Option<& [crate::types::Datum]> {
         self.data.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl RowBuilder {
     /// <p>The data that populates a row in a query result table.</p>
     pub fn data(mut self, input: crate::types::Datum) -> Self {
         let mut v = self.data.unwrap_or_default();
-        v.push(input);
-        self.data = Some(v);
-        self
+                        v.push(input);
+                        self.data = Some(v);
+                        self
     }
     /// <p>The data that populates a row in a query result table.</p>
-    pub fn set_data(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Datum>>,
-    ) -> Self {
-        self.data = input;
-        self
+    pub fn set_data(mut self, input: std::option::Option<std::vec::Vec<crate::types::Datum>>) -> Self {
+        self.data = input; self
     }
     /// Consumes the builder and constructs a [`Row`](crate::types::Row).
     pub fn build(self) -> crate::types::Row {
-        crate::types::Row { data: self.data }
+        crate::types::Row {
+            data: self.data
+            ,
+        }
     }
 }
+

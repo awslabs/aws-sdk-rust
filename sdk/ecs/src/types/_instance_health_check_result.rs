@@ -3,7 +3,7 @@
 /// <p>An object representing the result of a container instance health status check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceHealthCheckResult {
+pub struct InstanceHealthCheckResult  {
     /// <p>The type of container instance health status that was verified.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::InstanceHealthCheckType>,
@@ -19,19 +19,19 @@ pub struct InstanceHealthCheckResult {
 }
 impl InstanceHealthCheckResult {
     /// <p>The type of container instance health status that was verified.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::InstanceHealthCheckType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::InstanceHealthCheckType> {
         self.r#type.as_ref()
     }
     /// <p>The container instance health status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::InstanceHealthCheckState> {
+    pub fn status(&self) -> std::option::Option<& crate::types::InstanceHealthCheckState> {
         self.status.as_ref()
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
-    pub fn last_status_change(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_status_change(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_status_change.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The type of container instance health status that was verified.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::InstanceHealthCheckType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::InstanceHealthCheckType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The container instance health status.</p>
     pub fn status(mut self, input: crate::types::InstanceHealthCheckState) -> Self {
@@ -71,12 +67,8 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The container instance health status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::InstanceHealthCheckState>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::InstanceHealthCheckState>) -> Self {
+        self.status = input; self
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,12 +76,8 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The Unix timestamp for when the container instance health status was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
     pub fn last_status_change(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -97,20 +85,21 @@ impl InstanceHealthCheckResultBuilder {
         self
     }
     /// <p>The Unix timestamp for when the container instance health status last changed.</p>
-    pub fn set_last_status_change(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_status_change = input;
-        self
+    pub fn set_last_status_change(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_status_change = input; self
     }
     /// Consumes the builder and constructs a [`InstanceHealthCheckResult`](crate::types::InstanceHealthCheckResult).
     pub fn build(self) -> crate::types::InstanceHealthCheckResult {
         crate::types::InstanceHealthCheckResult {
-            r#type: self.r#type,
-            status: self.status,
-            last_updated: self.last_updated,
-            last_status_change: self.last_status_change,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            last_updated: self.last_updated
+            ,
+            last_status_change: self.last_status_change
+            ,
         }
     }
 }
+

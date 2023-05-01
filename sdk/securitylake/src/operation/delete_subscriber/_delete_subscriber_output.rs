@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberOutput {
+pub struct DeleteSubscriberOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSubscriberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberOutput`](crate::operation::delete_subscriber::DeleteSubscriberOutput).
-    pub fn builder() -> crate::operation::delete_subscriber::builders::DeleteSubscriberOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_subscriber::builders::DeleteSubscriberOutputBuilder {
         crate::operation::delete_subscriber::builders::DeleteSubscriberOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteSubscriberOutputBuilder {
 }
 impl DeleteSubscriberOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::operation::delete_subscriber::DeleteSubscriberOutput).
     pub fn build(self) -> crate::operation::delete_subscriber::DeleteSubscriberOutput {
         crate::operation::delete_subscriber::DeleteSubscriberOutput {
@@ -41,3 +40,4 @@ impl DeleteSubscriberOutputBuilder {
         }
     }
 }
+

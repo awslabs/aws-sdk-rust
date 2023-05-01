@@ -3,7 +3,7 @@
 /// <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIndexFieldsOutput {
+pub struct DescribeIndexFieldsOutput  {
     /// <p>The index fields configured for the domain.</p>
     #[doc(hidden)]
     pub index_fields: std::option::Option<std::vec::Vec<crate::types::IndexFieldStatus>>,
@@ -11,21 +11,19 @@ pub struct DescribeIndexFieldsOutput {
 }
 impl DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
-    pub fn index_fields(&self) -> std::option::Option<&[crate::types::IndexFieldStatus]> {
+    pub fn index_fields(&self) -> std::option::Option<& [crate::types::IndexFieldStatus]> {
         self.index_fields.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeIndexFieldsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder {
-        crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder {
+        crate::operation::describe_index_fields::builders::DescribeIndexFieldsOutputBuilder::default()
     }
 }
 
@@ -44,32 +42,30 @@ impl DescribeIndexFieldsOutputBuilder {
     /// <p>The index fields configured for the domain.</p>
     pub fn index_fields(mut self, input: crate::types::IndexFieldStatus) -> Self {
         let mut v = self.index_fields.unwrap_or_default();
-        v.push(input);
-        self.index_fields = Some(v);
-        self
+                        v.push(input);
+                        self.index_fields = Some(v);
+                        self
     }
     /// <p>The index fields configured for the domain.</p>
-    pub fn set_index_fields(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IndexFieldStatus>>,
-    ) -> Self {
-        self.index_fields = input;
-        self
+    pub fn set_index_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::IndexFieldStatus>>) -> Self {
+        self.index_fields = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
     pub fn build(self) -> crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
         crate::operation::describe_index_fields::DescribeIndexFieldsOutput {
-            index_fields: self.index_fields,
+            index_fields: self.index_fields
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

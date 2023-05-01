@@ -90,3 +90,4 @@ pub mod update_subscriber;
 
 /// Types for the `UpdateSubscriptionNotificationConfiguration` operation.
 pub mod update_subscription_notification_configuration;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoolOriginationIdentitiesOutput {
+pub struct ListPoolOriginationIdentitiesOutput  {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -11,8 +11,7 @@ pub struct ListPoolOriginationIdentitiesOutput {
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
     #[doc(hidden)]
-    pub origination_identities:
-        std::option::Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
+    pub origination_identities: std::option::Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,32 +19,30 @@ pub struct ListPoolOriginationIdentitiesOutput {
 }
 impl ListPoolOriginationIdentitiesOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique PoolId of the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
-    pub fn origination_identities(
-        &self,
-    ) -> std::option::Option<&[crate::types::OriginationIdentityMetadata]> {
+    pub fn origination_identities(&self) -> std::option::Option<& [crate::types::OriginationIdentityMetadata]> {
         self.origination_identities.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPoolOriginationIdentitiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPoolOriginationIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListPoolOriginationIdentitiesOutput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput).
-    pub fn builder() -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesOutputBuilder{
+    pub fn builder() -> crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesOutputBuilder {
         crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesOutputBuilder::default()
     }
 }
@@ -56,8 +53,7 @@ impl ListPoolOriginationIdentitiesOutput {
 pub struct ListPoolOriginationIdentitiesOutputBuilder {
     pub(crate) pool_arn: std::option::Option<std::string::String>,
     pub(crate) pool_id: std::option::Option<std::string::String>,
-    pub(crate) origination_identities:
-        std::option::Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
+    pub(crate) origination_identities: std::option::Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -69,8 +65,7 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_arn = input;
-        self
+        self.pool_arn = input; self
     }
     /// <p>The unique PoolId of the pool.</p>
     pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,30 +74,22 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
     }
     /// <p>The unique PoolId of the pool.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
     /// Appends an item to `origination_identities`.
     ///
     /// To override the contents of this collection use [`set_origination_identities`](Self::set_origination_identities).
     ///
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
-    pub fn origination_identities(
-        mut self,
-        input: crate::types::OriginationIdentityMetadata,
-    ) -> Self {
+    pub fn origination_identities(mut self, input: crate::types::OriginationIdentityMetadata) -> Self {
         let mut v = self.origination_identities.unwrap_or_default();
-        v.push(input);
-        self.origination_identities = Some(v);
-        self
+                        v.push(input);
+                        self.origination_identities = Some(v);
+                        self
     }
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
-    pub fn set_origination_identities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>,
-    ) -> Self {
-        self.origination_identities = input;
-        self
+    pub fn set_origination_identities(mut self, input: std::option::Option<std::vec::Vec<crate::types::OriginationIdentityMetadata>>) -> Self {
+        self.origination_identities = input; self
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,29 +98,30 @@ impl ListPoolOriginationIdentitiesOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPoolOriginationIdentitiesOutput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput
-    {
+    pub fn build(self) -> crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput {
         crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput {
-            pool_arn: self.pool_arn,
-            pool_id: self.pool_id,
-            origination_identities: self.origination_identities,
-            next_token: self.next_token,
+            pool_arn: self.pool_arn
+            ,
+            pool_id: self.pool_id
+            ,
+            origination_identities: self.origination_identities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

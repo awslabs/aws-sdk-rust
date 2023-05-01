@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTimelineEventOutput {
+pub struct CreateTimelineEventOutput  {
     /// <p>The ARN of the incident record that you added the event to.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
@@ -13,25 +13,23 @@ pub struct CreateTimelineEventOutput {
 }
 impl CreateTimelineEventOutput {
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the event for easy reference later. </p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTimelineEventOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTimelineEventOutput {
     /// Creates a new builder-style object to manufacture [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
-    pub fn builder(
-    ) -> crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder {
-        crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder {
+        crate::operation::create_timeline_event::builders::CreateTimelineEventOutputBuilder::default()
     }
 }
 
@@ -50,12 +48,8 @@ impl CreateTimelineEventOutputBuilder {
         self
     }
     /// <p>The ARN of the incident record that you added the event to.</p>
-    pub fn set_incident_record_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.incident_record_arn = input;
-        self
+    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.incident_record_arn = input; self
     }
     /// <p>The ID of the event for easy reference later. </p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,24 +58,26 @@ impl CreateTimelineEventOutputBuilder {
     }
     /// <p>The ID of the event for easy reference later. </p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTimelineEventOutput`](crate::operation::create_timeline_event::CreateTimelineEventOutput).
     pub fn build(self) -> crate::operation::create_timeline_event::CreateTimelineEventOutput {
         crate::operation::create_timeline_event::CreateTimelineEventOutput {
-            incident_record_arn: self.incident_record_arn,
-            event_id: self.event_id,
+            incident_record_arn: self.incident_record_arn
+            ,
+            event_id: self.event_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

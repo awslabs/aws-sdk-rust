@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTrialOutput {
+pub struct UpdateTrialOutput  {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     #[doc(hidden)]
     pub trial_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct UpdateTrialOutput {
 }
 impl UpdateTrialOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    pub fn trial_arn(&self) -> std::option::Option<&str> {
+    pub fn trial_arn(&self) -> std::option::Option<& str> {
         self.trial_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTrialOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateTrialOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTrialOutput`](crate::operation::update_trial::UpdateTrialOutput).
     pub fn builder() -> crate::operation::update_trial::builders::UpdateTrialOutputBuilder {
@@ -41,23 +41,24 @@ impl UpdateTrialOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn set_trial_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_arn = input;
-        self
+        self.trial_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateTrialOutput`](crate::operation::update_trial::UpdateTrialOutput).
     pub fn build(self) -> crate::operation::update_trial::UpdateTrialOutput {
         crate::operation::update_trial::UpdateTrialOutput {
-            trial_arn: self.trial_arn,
+            trial_arn: self.trial_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

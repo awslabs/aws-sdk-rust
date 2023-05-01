@@ -4,67 +4,49 @@ pub use crate::operation::confirm_device::_confirm_device_output::ConfirmDeviceO
 pub use crate::operation::confirm_device::_confirm_device_input::ConfirmDeviceInputBuilder;
 
 /// Fluent builder constructing a request to `ConfirmDevice`.
-///
+/// 
 /// <p>Confirms tracking of the device. This API call is the call that begins device tracking.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmDeviceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder,
-}
-impl ConfirmDeviceFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder
+            }
+impl ConfirmDeviceFluentBuilder  {
     /// Creates a new `ConfirmDevice`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::confirm_device::ConfirmDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::confirm_device::ConfirmDeviceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::confirm_device::ConfirmDevice, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::confirm_device::ConfirmDeviceOutput, aws_smithy_http::result::SdkError<crate::operation::confirm_device::ConfirmDeviceError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>A valid access token that Amazon Cognito issued to the user whose device you want to confirm.</p>
     pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
@@ -86,18 +68,12 @@ impl ConfirmDeviceFluentBuilder {
         self
     }
     /// <p>The configuration of the device secret verifier.</p>
-    pub fn device_secret_verifier_config(
-        mut self,
-        input: crate::types::DeviceSecretVerifierConfigType,
-    ) -> Self {
+    pub fn device_secret_verifier_config(mut self, input: crate::types::DeviceSecretVerifierConfigType) -> Self {
         self.inner = self.inner.device_secret_verifier_config(input);
         self
     }
     /// <p>The configuration of the device secret verifier.</p>
-    pub fn set_device_secret_verifier_config(
-        mut self,
-        input: std::option::Option<crate::types::DeviceSecretVerifierConfigType>,
-    ) -> Self {
+    pub fn set_device_secret_verifier_config(mut self, input: std::option::Option<crate::types::DeviceSecretVerifierConfigType>) -> Self {
         self.inner = self.inner.set_device_secret_verifier_config(input);
         self
     }
@@ -112,3 +88,4 @@ impl ConfirmDeviceFluentBuilder {
         self
     }
 }
+

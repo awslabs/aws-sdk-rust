@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIamPolicyAssignmentsInput {
+pub struct ListIamPolicyAssignmentsInput  {
     /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct ListIamPolicyAssignmentsInput {
 }
 impl ListIamPolicyAssignmentsInput {
     /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The status of the assignments.</p>
-    pub fn assignment_status(&self) -> std::option::Option<&crate::types::AssignmentStatus> {
+    pub fn assignment_status(&self) -> std::option::Option<& crate::types::AssignmentStatus> {
         self.assignment_status.as_ref()
     }
     /// <p>The namespace for the assignments.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -43,9 +43,7 @@ impl ListIamPolicyAssignmentsInput {
 }
 impl ListIamPolicyAssignmentsInput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsInput`](crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssignmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssignmentsInputBuilder {
         crate::operation::list_iam_policy_assignments::builders::ListIamPolicyAssignmentsInputBuilder::default()
     }
 }
@@ -68,8 +66,7 @@ impl ListIamPolicyAssignmentsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The status of the assignments.</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatus) -> Self {
@@ -77,12 +74,8 @@ impl ListIamPolicyAssignmentsInputBuilder {
         self
     }
     /// <p>The status of the assignments.</p>
-    pub fn set_assignment_status(
-        mut self,
-        input: std::option::Option<crate::types::AssignmentStatus>,
-    ) -> Self {
-        self.assignment_status = input;
-        self
+    pub fn set_assignment_status(mut self, input: std::option::Option<crate::types::AssignmentStatus>) -> Self {
+        self.assignment_status = input; self
     }
     /// <p>The namespace for the assignments.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +84,7 @@ impl ListIamPolicyAssignmentsInputBuilder {
     }
     /// <p>The namespace for the assignments.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +93,7 @@ impl ListIamPolicyAssignmentsInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -111,24 +102,24 @@ impl ListIamPolicyAssignmentsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsInput`](crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsInput {
-                aws_account_id: self.aws_account_id,
-                assignment_status: self.assignment_status,
-                namespace: self.namespace,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                assignment_status: self.assignment_status
+                ,
+                namespace: self.namespace
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

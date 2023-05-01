@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoutingProfileConcurrencyInput {
+pub struct UpdateRoutingProfileConcurrencyInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdateRoutingProfileConcurrencyInput {
 }
 impl UpdateRoutingProfileConcurrencyInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn routing_profile_id(&self) -> std::option::Option<&str> {
+    pub fn routing_profile_id(&self) -> std::option::Option<& str> {
         self.routing_profile_id.as_deref()
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn media_concurrencies(&self) -> std::option::Option<&[crate::types::MediaConcurrency]> {
+    pub fn media_concurrencies(&self) -> std::option::Option<& [crate::types::MediaConcurrency]> {
         self.media_concurrencies.as_deref()
     }
 }
 impl UpdateRoutingProfileConcurrencyInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileConcurrencyInput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyInput).
-    pub fn builder() -> crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyInputBuilder{
+    pub fn builder() -> crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyInputBuilder {
         crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyInputBuilder::default()
     }
 }
@@ -40,8 +40,7 @@ impl UpdateRoutingProfileConcurrencyInput {
 pub struct UpdateRoutingProfileConcurrencyInputBuilder {
     pub(crate) instance_id: std::option::Option<std::string::String>,
     pub(crate) routing_profile_id: std::option::Option<std::string::String>,
-    pub(crate) media_concurrencies:
-        std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
+    pub(crate) media_concurrencies: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
 }
 impl UpdateRoutingProfileConcurrencyInputBuilder {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -51,8 +50,7 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier of the routing profile.</p>
     pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +58,8 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
         self
     }
     /// <p>The identifier of the routing profile.</p>
-    pub fn set_routing_profile_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.routing_profile_id = input;
-        self
+    pub fn set_routing_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.routing_profile_id = input; self
     }
     /// Appends an item to `media_concurrencies`.
     ///
@@ -74,25 +68,16 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
     pub fn media_concurrencies(mut self, input: crate::types::MediaConcurrency) -> Self {
         let mut v = self.media_concurrencies.unwrap_or_default();
-        v.push(input);
-        self.media_concurrencies = Some(v);
-        self
+                        v.push(input);
+                        self.media_concurrencies = Some(v);
+                        self
     }
     /// <p>The channels that agents can handle in the Contact Control Panel (CCP).</p>
-    pub fn set_media_concurrencies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>,
-    ) -> Self {
-        self.media_concurrencies = input;
-        self
+    pub fn set_media_concurrencies(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaConcurrency>>) -> Self {
+        self.media_concurrencies = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileConcurrencyInput`](crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrencyInput {
                 instance_id: self.instance_id
@@ -105,3 +90,4 @@ impl UpdateRoutingProfileConcurrencyInputBuilder {
         )
     }
 }
+

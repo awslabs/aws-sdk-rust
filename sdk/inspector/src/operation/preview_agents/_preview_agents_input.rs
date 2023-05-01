@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PreviewAgentsInput {
+pub struct PreviewAgentsInput  {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
     #[doc(hidden)]
     pub preview_agents_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct PreviewAgentsInput {
 }
 impl PreviewAgentsInput {
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn preview_agents_arn(&self) -> std::option::Option<&str> {
+    pub fn preview_agents_arn(&self) -> std::option::Option<& str> {
         self.preview_agents_arn.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -49,12 +49,8 @@ impl PreviewAgentsInputBuilder {
         self
     }
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-    pub fn set_preview_agents_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.preview_agents_arn = input;
-        self
+    pub fn set_preview_agents_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.preview_agents_arn = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl PreviewAgentsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,20 +68,20 @@ impl PreviewAgentsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`PreviewAgentsInput`](crate::operation::preview_agents::PreviewAgentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::preview_agents::PreviewAgentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::preview_agents::PreviewAgentsInput {
-            preview_agents_arn: self.preview_agents_arn,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::preview_agents::PreviewAgentsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::preview_agents::PreviewAgentsInput {
+                preview_agents_arn: self.preview_agents_arn
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

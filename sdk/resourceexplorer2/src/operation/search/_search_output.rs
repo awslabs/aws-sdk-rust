@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchOutput {
+pub struct SearchOutput  {
     /// <p>The list of structures that describe the resources that match the query.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
@@ -19,27 +19,27 @@ pub struct SearchOutput {
 }
 impl SearchOutput {
     /// <p>The list of structures that describe the resources that match the query.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::types::Resource]> {
         self.resources.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
-    pub fn view_arn(&self) -> std::option::Option<&str> {
+    pub fn view_arn(&self) -> std::option::Option<& str> {
         self.view_arn.as_deref()
     }
     /// <p>The number of resources that match the query.</p>
-    pub fn count(&self) -> std::option::Option<&crate::types::ResourceCount> {
+    pub fn count(&self) -> std::option::Option<& crate::types::ResourceCount> {
         self.count.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for SearchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchOutput {
     /// Creates a new builder-style object to manufacture [`SearchOutput`](crate::operation::search::SearchOutput).
     pub fn builder() -> crate::operation::search::builders::SearchOutputBuilder {
@@ -65,17 +65,13 @@ impl SearchOutputBuilder {
     /// <p>The list of structures that describe the resources that match the query.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = Some(v);
-        self
+                        v.push(input);
+                        self.resources = Some(v);
+                        self
     }
     /// <p>The list of structures that describe the resources that match the query.</p>
-    pub fn set_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +80,7 @@ impl SearchOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
     pub fn view_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +89,7 @@ impl SearchOutputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that this operation used to perform the search.</p>
     pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.view_arn = input;
-        self
+        self.view_arn = input; self
     }
     /// <p>The number of resources that match the query.</p>
     pub fn count(mut self, input: crate::types::ResourceCount) -> Self {
@@ -104,26 +98,30 @@ impl SearchOutputBuilder {
     }
     /// <p>The number of resources that match the query.</p>
     pub fn set_count(mut self, input: std::option::Option<crate::types::ResourceCount>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchOutput`](crate::operation::search::SearchOutput).
     pub fn build(self) -> crate::operation::search::SearchOutput {
         crate::operation::search::SearchOutput {
-            resources: self.resources,
-            next_token: self.next_token,
-            view_arn: self.view_arn,
-            count: self.count,
+            resources: self.resources
+            ,
+            next_token: self.next_token
+            ,
+            view_arn: self.view_arn
+            ,
+            count: self.count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

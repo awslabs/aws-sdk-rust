@@ -4,58 +4,49 @@ pub use crate::operation::disassociate_skill_group_from_room::_disassociate_skil
 pub use crate::operation::disassociate_skill_group_from_room::_disassociate_skill_group_from_room_input::DisassociateSkillGroupFromRoomInputBuilder;
 
 /// Fluent builder constructing a request to `DisassociateSkillGroupFromRoom`.
-///
+/// 
 /// <p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateSkillGroupFromRoomFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder
             }
-impl DisassociateSkillGroupFromRoomFluentBuilder {
+impl DisassociateSkillGroupFromRoomFluentBuilder  {
     /// Creates a new `DisassociateSkillGroupFromRoom`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoom, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
     pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.skill_group_arn(input.into());
@@ -77,3 +68,4 @@ impl DisassociateSkillGroupFromRoomFluentBuilder {
         self
     }
 }
+

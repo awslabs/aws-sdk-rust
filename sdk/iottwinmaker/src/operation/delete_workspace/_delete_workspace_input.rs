@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceInput {
+pub struct DeleteWorkspaceInput  {
     /// <p>The ID of the workspace to delete.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkspaceInput {
     /// <p>The ID of the workspace to delete.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteWorkspaceInputBuilder {
     }
     /// <p>The ID of the workspace to delete.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteWorkspaceInput`](crate::operation::delete_workspace::DeleteWorkspaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_workspace::DeleteWorkspaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_workspace::DeleteWorkspaceInput {
-            workspace_id: self.workspace_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_workspace::DeleteWorkspaceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_workspace::DeleteWorkspaceInput {
+                workspace_id: self.workspace_id
+                ,
+            }
+        )
     }
 }
+

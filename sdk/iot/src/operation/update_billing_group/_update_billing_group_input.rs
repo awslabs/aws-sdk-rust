@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBillingGroupInput {
+pub struct UpdateBillingGroupInput  {
     /// <p>The name of the billing group.</p>
     #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
@@ -15,13 +15,11 @@ pub struct UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// <p>The name of the billing group.</p>
-    pub fn billing_group_name(&self) -> std::option::Option<&str> {
+    pub fn billing_group_name(&self) -> std::option::Option<& str> {
         self.billing_group_name.as_deref()
     }
     /// <p>The properties of the billing group.</p>
-    pub fn billing_group_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::BillingGroupProperties> {
+    pub fn billing_group_properties(&self) -> std::option::Option<& crate::types::BillingGroupProperties> {
         self.billing_group_properties.as_ref()
     }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
@@ -31,8 +29,7 @@ impl UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
         crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder::default()
     }
 }
@@ -52,12 +49,8 @@ impl UpdateBillingGroupInputBuilder {
         self
     }
     /// <p>The name of the billing group.</p>
-    pub fn set_billing_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.billing_group_name = input;
-        self
+    pub fn set_billing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.billing_group_name = input; self
     }
     /// <p>The properties of the billing group.</p>
     pub fn billing_group_properties(mut self, input: crate::types::BillingGroupProperties) -> Self {
@@ -65,12 +58,8 @@ impl UpdateBillingGroupInputBuilder {
         self
     }
     /// <p>The properties of the billing group.</p>
-    pub fn set_billing_group_properties(
-        mut self,
-        input: std::option::Option<crate::types::BillingGroupProperties>,
-    ) -> Self {
-        self.billing_group_properties = input;
-        self
+    pub fn set_billing_group_properties(mut self, input: std::option::Option<crate::types::BillingGroupProperties>) -> Self {
+        self.billing_group_properties = input; self
     }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn expected_version(mut self, input: i64) -> Self {
@@ -79,22 +68,20 @@ impl UpdateBillingGroupInputBuilder {
     }
     /// <p>The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</p>
     pub fn set_expected_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.expected_version = input;
-        self
+        self.expected_version = input; self
     }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_billing_group::UpdateBillingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_billing_group::UpdateBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_billing_group::UpdateBillingGroupInput {
-                billing_group_name: self.billing_group_name,
-                billing_group_properties: self.billing_group_properties,
-                expected_version: self.expected_version,
-            },
+                billing_group_name: self.billing_group_name
+                ,
+                billing_group_properties: self.billing_group_properties
+                ,
+                expected_version: self.expected_version
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnalysisPermissionsOutput {
+pub struct UpdateAnalysisPermissionsOutput  {
     /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
     #[doc(hidden)]
     pub analysis_arn: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct UpdateAnalysisPermissionsOutput {
 }
 impl UpdateAnalysisPermissionsOutput {
     /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
-    pub fn analysis_arn(&self) -> std::option::Option<&str> {
+    pub fn analysis_arn(&self) -> std::option::Option<& str> {
         self.analysis_arn.as_deref()
     }
     /// <p>The ID of the analysis that you updated permissions for.</p>
-    pub fn analysis_id(&self) -> std::option::Option<&str> {
+    pub fn analysis_id(&self) -> std::option::Option<& str> {
         self.analysis_id.as_deref()
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -43,13 +43,13 @@ impl UpdateAnalysisPermissionsOutput {
     }
 }
 impl aws_http::request_id::RequestId for UpdateAnalysisPermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAnalysisPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisPermissionsOutput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput).
-    pub fn builder() -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsOutputBuilder{
+    pub fn builder() -> crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsOutputBuilder {
         crate::operation::update_analysis_permissions::builders::UpdateAnalysisPermissionsOutputBuilder::default()
     }
 }
@@ -73,8 +73,7 @@ impl UpdateAnalysisPermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the analysis that you updated.</p>
     pub fn set_analysis_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_arn = input;
-        self
+        self.analysis_arn = input; self
     }
     /// <p>The ID of the analysis that you updated permissions for.</p>
     pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +82,7 @@ impl UpdateAnalysisPermissionsOutputBuilder {
     }
     /// <p>The ID of the analysis that you updated permissions for.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input;
-        self
+        self.analysis_id = input; self
     }
     /// Appends an item to `permissions`.
     ///
@@ -93,17 +91,13 @@ impl UpdateAnalysisPermissionsOutputBuilder {
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>A structure that describes the principals and the resource-level permissions on an analysis.</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +106,7 @@ impl UpdateAnalysisPermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -122,29 +115,33 @@ impl UpdateAnalysisPermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAnalysisPermissionsOutput`](crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput {
+    pub fn build(self) -> crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput {
         crate::operation::update_analysis_permissions::UpdateAnalysisPermissionsOutput {
-            analysis_arn: self.analysis_arn,
-            analysis_id: self.analysis_id,
-            permissions: self.permissions,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            analysis_arn: self.analysis_arn
+            ,
+            analysis_id: self.analysis_id
+            ,
+            permissions: self.permissions
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

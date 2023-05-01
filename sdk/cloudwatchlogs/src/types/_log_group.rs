@@ -3,14 +3,14 @@
 /// <p>Represents a log group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogGroup {
+pub struct LogGroup  {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     #[doc(hidden)]
     pub retention_in_days: std::option::Option<i32>,
@@ -32,14 +32,14 @@ pub struct LogGroup {
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(&self) -> std::option::Option<i32> {
         self.retention_in_days
@@ -49,7 +49,7 @@ impl LogGroup {
         self.metric_filter_count
     }
     /// <p>The Amazon Resource Name (ARN) of the log group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The number of bytes stored.</p>
@@ -57,13 +57,11 @@ impl LogGroup {
         self.stored_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    pub fn data_protection_status(
-        &self,
-    ) -> std::option::Option<&crate::types::DataProtectionStatus> {
+    pub fn data_protection_status(&self) -> std::option::Option<& crate::types::DataProtectionStatus> {
         self.data_protection_status.as_ref()
     }
 }
@@ -95,8 +93,7 @@ impl LogGroupBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input;
-        self
+        self.log_group_name = input; self
     }
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn creation_time(mut self, input: i64) -> Self {
@@ -105,20 +102,18 @@ impl LogGroupBuilder {
     }
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(mut self, input: i32) -> Self {
         self.retention_in_days = Some(input);
         self
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.retention_in_days = input;
-        self
+        self.retention_in_days = input; self
     }
     /// <p>The number of metric filters.</p>
     pub fn metric_filter_count(mut self, input: i32) -> Self {
@@ -127,8 +122,7 @@ impl LogGroupBuilder {
     }
     /// <p>The number of metric filters.</p>
     pub fn set_metric_filter_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.metric_filter_count = input;
-        self
+        self.metric_filter_count = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the log group.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +131,7 @@ impl LogGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the log group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The number of bytes stored.</p>
     pub fn stored_bytes(mut self, input: i64) -> Self {
@@ -147,8 +140,7 @@ impl LogGroupBuilder {
     }
     /// <p>The number of bytes stored.</p>
     pub fn set_stored_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.stored_bytes = input;
-        self
+        self.stored_bytes = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +149,7 @@ impl LogGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
     pub fn data_protection_status(mut self, input: crate::types::DataProtectionStatus) -> Self {
@@ -166,24 +157,29 @@ impl LogGroupBuilder {
         self
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    pub fn set_data_protection_status(
-        mut self,
-        input: std::option::Option<crate::types::DataProtectionStatus>,
-    ) -> Self {
-        self.data_protection_status = input;
-        self
+    pub fn set_data_protection_status(mut self, input: std::option::Option<crate::types::DataProtectionStatus>) -> Self {
+        self.data_protection_status = input; self
     }
     /// Consumes the builder and constructs a [`LogGroup`](crate::types::LogGroup).
     pub fn build(self) -> crate::types::LogGroup {
         crate::types::LogGroup {
-            log_group_name: self.log_group_name,
-            creation_time: self.creation_time,
-            retention_in_days: self.retention_in_days,
-            metric_filter_count: self.metric_filter_count,
-            arn: self.arn,
-            stored_bytes: self.stored_bytes,
-            kms_key_id: self.kms_key_id,
-            data_protection_status: self.data_protection_status,
+            log_group_name: self.log_group_name
+            ,
+            creation_time: self.creation_time
+            ,
+            retention_in_days: self.retention_in_days
+            ,
+            metric_filter_count: self.metric_filter_count
+            ,
+            arn: self.arn
+            ,
+            stored_bytes: self.stored_bytes
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            data_protection_status: self.data_protection_status
+            ,
         }
     }
 }
+

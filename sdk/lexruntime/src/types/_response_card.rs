@@ -3,7 +3,7 @@
 /// <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseCard {
+pub struct ResponseCard  {
     /// <p>The version of the response card format.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResponseCard {
 }
 impl ResponseCard {
     /// <p>The version of the response card format.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The content type of the response.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> std::option::Option<& crate::types::ContentType> {
         self.content_type.as_ref()
     }
     /// <p>An array of attachment objects representing options.</p>
-    pub fn generic_attachments(&self) -> std::option::Option<&[crate::types::GenericAttachment]> {
+    pub fn generic_attachments(&self) -> std::option::Option<& [crate::types::GenericAttachment]> {
         self.generic_attachments.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl ResponseCard {
 pub struct ResponseCardBuilder {
     pub(crate) version: std::option::Option<std::string::String>,
     pub(crate) content_type: std::option::Option<crate::types::ContentType>,
-    pub(crate) generic_attachments:
-        std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>,
+    pub(crate) generic_attachments: std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>,
 }
 impl ResponseCardBuilder {
     /// <p>The version of the response card format.</p>
@@ -52,8 +51,7 @@ impl ResponseCardBuilder {
     }
     /// <p>The version of the response card format.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The content type of the response.</p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
@@ -61,12 +59,8 @@ impl ResponseCardBuilder {
         self
     }
     /// <p>The content type of the response.</p>
-    pub fn set_content_type(
-        mut self,
-        input: std::option::Option<crate::types::ContentType>,
-    ) -> Self {
-        self.content_type = input;
-        self
+    pub fn set_content_type(mut self, input: std::option::Option<crate::types::ContentType>) -> Self {
+        self.content_type = input; self
     }
     /// Appends an item to `generic_attachments`.
     ///
@@ -75,24 +69,24 @@ impl ResponseCardBuilder {
     /// <p>An array of attachment objects representing options.</p>
     pub fn generic_attachments(mut self, input: crate::types::GenericAttachment) -> Self {
         let mut v = self.generic_attachments.unwrap_or_default();
-        v.push(input);
-        self.generic_attachments = Some(v);
-        self
+                        v.push(input);
+                        self.generic_attachments = Some(v);
+                        self
     }
     /// <p>An array of attachment objects representing options.</p>
-    pub fn set_generic_attachments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>,
-    ) -> Self {
-        self.generic_attachments = input;
-        self
+    pub fn set_generic_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>) -> Self {
+        self.generic_attachments = input; self
     }
     /// Consumes the builder and constructs a [`ResponseCard`](crate::types::ResponseCard).
     pub fn build(self) -> crate::types::ResponseCard {
         crate::types::ResponseCard {
-            version: self.version,
-            content_type: self.content_type,
-            generic_attachments: self.generic_attachments,
+            version: self.version
+            ,
+            content_type: self.content_type
+            ,
+            generic_attachments: self.generic_attachments
+            ,
         }
     }
 }
+

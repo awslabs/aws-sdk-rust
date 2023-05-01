@@ -12,3 +12,4 @@ pub mod modify_report_definition;
 
 /// Types for the `PutReportDefinition` operation.
 pub mod put_report_definition;
+

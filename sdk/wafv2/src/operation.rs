@@ -7,6 +7,9 @@ pub mod associate_web_acl;
 /// Types for the `CheckCapacity` operation.
 pub mod check_capacity;
 
+/// Types for the `CreateAPIKey` operation.
+pub mod create_api_key;
+
 /// Types for the `CreateIPSet` operation.
 pub mod create_ip_set;
 
@@ -49,6 +52,9 @@ pub mod disassociate_web_acl;
 /// Types for the `GenerateMobileSdkReleaseUrl` operation.
 pub mod generate_mobile_sdk_release_url;
 
+/// Types for the `GetDecryptedAPIKey` operation.
+pub mod get_decrypted_api_key;
+
 /// Types for the `GetIPSet` operation.
 pub mod get_ip_set;
 
@@ -81,6 +87,9 @@ pub mod get_web_acl;
 
 /// Types for the `GetWebACLForResource` operation.
 pub mod get_web_acl_for_resource;
+
+/// Types for the `ListAPIKeys` operation.
+pub mod list_api_keys;
 
 /// Types for the `ListAvailableManagedRuleGroupVersions` operation.
 pub mod list_available_managed_rule_group_versions;
@@ -144,3 +153,4 @@ pub mod update_rule_group;
 
 /// Types for the `UpdateWebACL` operation.
 pub mod update_web_acl;
+

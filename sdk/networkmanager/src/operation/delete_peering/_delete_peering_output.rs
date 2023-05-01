@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePeeringOutput {
+pub struct DeletePeeringOutput  {
     /// <p>Information about a deleted peering connection.</p>
     #[doc(hidden)]
     pub peering: std::option::Option<crate::types::Peering>,
@@ -10,15 +10,15 @@ pub struct DeletePeeringOutput {
 }
 impl DeletePeeringOutput {
     /// <p>Information about a deleted peering connection.</p>
-    pub fn peering(&self) -> std::option::Option<&crate::types::Peering> {
+    pub fn peering(&self) -> std::option::Option<& crate::types::Peering> {
         self.peering.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeletePeeringOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeletePeeringOutput {
     /// Creates a new builder-style object to manufacture [`DeletePeeringOutput`](crate::operation::delete_peering::DeletePeeringOutput).
     pub fn builder() -> crate::operation::delete_peering::builders::DeletePeeringOutputBuilder {
@@ -41,23 +41,24 @@ impl DeletePeeringOutputBuilder {
     }
     /// <p>Information about a deleted peering connection.</p>
     pub fn set_peering(mut self, input: std::option::Option<crate::types::Peering>) -> Self {
-        self.peering = input;
-        self
+        self.peering = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeletePeeringOutput`](crate::operation::delete_peering::DeletePeeringOutput).
     pub fn build(self) -> crate::operation::delete_peering::DeletePeeringOutput {
         crate::operation::delete_peering::DeletePeeringOutput {
-            peering: self.peering,
+            peering: self.peering
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

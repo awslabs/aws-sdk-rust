@@ -3,7 +3,7 @@
 /// <p>The video streams to capture for a specified media capture pipeline. The total number of video streams can't exceed 25.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelectedVideoStreams {
+pub struct SelectedVideoStreams  {
     /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
     #[doc(hidden)]
     pub attendee_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct SelectedVideoStreams {
 }
 impl SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
-    pub fn attendee_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attendee_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.attendee_ids.as_deref()
     }
     /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
-    pub fn external_user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn external_user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.external_user_ids.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl SelectedVideoStreamsBuilder {
     /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
     pub fn attendee_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attendee_ids.unwrap_or_default();
-        v.push(input.into());
-        self.attendee_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.attendee_ids = Some(v);
+                        self
     }
     /// <p>The attendee IDs of the streams selected for a media capture pipeline. </p>
-    pub fn set_attendee_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.attendee_ids = input;
-        self
+    pub fn set_attendee_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.attendee_ids = input; self
     }
     /// Appends an item to `external_user_ids`.
     ///
@@ -62,23 +58,22 @@ impl SelectedVideoStreamsBuilder {
     /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
     pub fn external_user_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.external_user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.external_user_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.external_user_ids = Some(v);
+                        self
     }
     /// <p>The external user IDs of the streams selected for a media capture pipeline.</p>
-    pub fn set_external_user_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.external_user_ids = input;
-        self
+    pub fn set_external_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.external_user_ids = input; self
     }
     /// Consumes the builder and constructs a [`SelectedVideoStreams`](crate::types::SelectedVideoStreams).
     pub fn build(self) -> crate::types::SelectedVideoStreams {
         crate::types::SelectedVideoStreams {
-            attendee_ids: self.attendee_ids,
-            external_user_ids: self.external_user_ids,
+            attendee_ids: self.attendee_ids
+            ,
+            external_user_ids: self.external_user_ids
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteColumnStatisticsForTableInput {
+pub struct DeleteColumnStatisticsForTableInput  {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct DeleteColumnStatisticsForTableInput {
 }
 impl DeleteColumnStatisticsForTableInput {
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partitions' table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the column.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> std::option::Option<& str> {
         self.column_name.as_deref()
     }
 }
 impl DeleteColumnStatisticsForTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteColumnStatisticsForTableInput`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput).
-    pub fn builder() -> crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder{
+    pub fn builder() -> crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder {
         crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the partitions' table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl DeleteColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the partitions' table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the column.</p>
     pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,16 +85,10 @@ impl DeleteColumnStatisticsForTableInputBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.column_name = input;
-        self
+        self.column_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteColumnStatisticsForTableInput`](crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableInput {
                 catalog_id: self.catalog_id
@@ -112,3 +103,4 @@ impl DeleteColumnStatisticsForTableInputBuilder {
         )
     }
 }
+

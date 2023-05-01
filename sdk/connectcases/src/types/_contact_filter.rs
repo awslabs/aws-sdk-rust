@@ -3,7 +3,7 @@
 /// <p>A filter for related items of type <code>Contact</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContactFilter {
+pub struct ContactFilter  {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct ContactFilter {
 }
 impl ContactFilter {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn channel(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn channel(&self) -> std::option::Option<& [std::string::String]> {
         self.channel.as_deref()
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl ContactFilterBuilder {
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
     pub fn channel(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.channel.unwrap_or_default();
-        v.push(input.into());
-        self.channel = Some(v);
-        self
+                        v.push(input.into());
+                        self.channel = Some(v);
+                        self
     }
     /// <p>A list of channels to filter on for related items of type <code>Contact</code>.</p>
-    pub fn set_channel(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.channel = input;
-        self
+    pub fn set_channel(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.channel = input; self
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,14 +58,16 @@ impl ContactFilterBuilder {
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input;
-        self
+        self.contact_arn = input; self
     }
     /// Consumes the builder and constructs a [`ContactFilter`](crate::types::ContactFilter).
     pub fn build(self) -> crate::types::ContactFilter {
         crate::types::ContactFilter {
-            channel: self.channel,
-            contact_arn: self.contact_arn,
+            channel: self.channel
+            ,
+            contact_arn: self.contact_arn
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The specific constituent sub slot of the composite slot to elicit in dialog action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElicitSubSlot {
+pub struct ElicitSubSlot  {
     /// <p>The name of the slot that should be elicited from the user.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ElicitSubSlot {
 }
 impl ElicitSubSlot {
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The field is not supported.</p>
-    pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::types::ElicitSubSlot> {
+    pub fn sub_slot_to_elicit(&self) -> std::option::Option<& crate::types::ElicitSubSlot> {
         self.sub_slot_to_elicit.as_deref()
     }
 }
@@ -33,8 +33,7 @@ impl ElicitSubSlot {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ElicitSubSlotBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) sub_slot_to_elicit:
-        std::option::Option<std::boxed::Box<crate::types::ElicitSubSlot>>,
+    pub(crate) sub_slot_to_elicit: std::option::Option<std::boxed::Box<crate::types::ElicitSubSlot>>,
 }
 impl ElicitSubSlotBuilder {
     /// <p>The name of the slot that should be elicited from the user.</p>
@@ -44,30 +43,25 @@ impl ElicitSubSlotBuilder {
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The field is not supported.</p>
-    pub fn sub_slot_to_elicit(
-        mut self,
-        input: impl Into<std::boxed::Box<crate::types::ElicitSubSlot>>,
-    ) -> Self {
+    pub fn sub_slot_to_elicit(mut self, input: impl Into<std::boxed::Box<crate::types::ElicitSubSlot>>) -> Self {
         self.sub_slot_to_elicit = Some(input.into());
         self
     }
     /// <p>The field is not supported.</p>
-    pub fn set_sub_slot_to_elicit(
-        mut self,
-        input: std::option::Option<std::boxed::Box<crate::types::ElicitSubSlot>>,
-    ) -> Self {
-        self.sub_slot_to_elicit = input;
-        self
+    pub fn set_sub_slot_to_elicit(mut self, input: std::option::Option<std::boxed::Box<crate::types::ElicitSubSlot>>) -> Self {
+        self.sub_slot_to_elicit = input; self
     }
     /// Consumes the builder and constructs a [`ElicitSubSlot`](crate::types::ElicitSubSlot).
     pub fn build(self) -> crate::types::ElicitSubSlot {
         crate::types::ElicitSubSlot {
-            name: self.name,
-            sub_slot_to_elicit: self.sub_slot_to_elicit,
+            name: self.name
+            ,
+            sub_slot_to_elicit: self.sub_slot_to_elicit
+            ,
         }
     }
 }
+

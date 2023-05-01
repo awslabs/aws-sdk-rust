@@ -3,23 +3,23 @@
 /// <p>A request to set the attributes that control how bounce and complaint events are processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityFeedbackAttributesInput {
+pub struct PutEmailIdentityFeedbackAttributesInput  {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
     #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
-    /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     #[doc(hidden)]
     pub email_forwarding_enabled: bool,
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> std::option::Option<& str> {
         self.email_identity.as_deref()
     }
-    /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     pub fn email_forwarding_enabled(&self) -> bool {
         self.email_forwarding_enabled
@@ -27,7 +27,7 @@ impl PutEmailIdentityFeedbackAttributesInput {
 }
 impl PutEmailIdentityFeedbackAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
-    pub fn builder() -> crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder{
+    pub fn builder() -> crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder {
         crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder::default()
     }
 }
@@ -47,25 +47,23 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
     }
     /// <p>The email identity that you want to configure bounce and complaint feedback forwarding for.</p>
     pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_identity = input;
-        self
+        self.email_identity = input; self
     }
-    /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     pub fn email_forwarding_enabled(mut self, input: bool) -> Self {
         self.email_forwarding_enabled = Some(input);
         self
     }
-    /// <p>Sets the feedback forwarding configuration for the identity.</p>
-    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
+    /// <p>Sets the feedback forwarding configuration for the identity.</p> 
+    /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p> 
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     pub fn set_email_forwarding_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.email_forwarding_enabled = input;
-        self
+        self.email_forwarding_enabled = input; self
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesInput`](crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput).
-    pub fn build(self) -> Result<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributesInput {
                 email_identity: self.email_identity
@@ -77,3 +75,4 @@ impl PutEmailIdentityFeedbackAttributesInputBuilder {
         )
     }
 }
+

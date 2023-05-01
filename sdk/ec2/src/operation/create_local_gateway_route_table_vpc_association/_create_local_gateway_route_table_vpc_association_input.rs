@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocalGatewayRouteTableVpcAssociationInput {
+pub struct CreateLocalGatewayRouteTableVpcAssociationInput  {
     /// <p>The ID of the local gateway route table.</p>
     #[doc(hidden)]
     pub local_gateway_route_table_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct CreateLocalGatewayRouteTableVpcAssociationInput {
 }
 impl CreateLocalGatewayRouteTableVpcAssociationInput {
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The tags to assign to the local gateway route table VPC association.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,7 +36,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationInput {
 }
 impl CreateLocalGatewayRouteTableVpcAssociationInput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableVpcAssociationInput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput).
-    pub fn builder() -> crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationInputBuilder{
+    pub fn builder() -> crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
         crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationInputBuilder::default()
     }
 }
@@ -47,8 +47,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationInput {
 pub struct CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
     pub(crate) local_gateway_route_table_id: std::option::Option<std::string::String>,
     pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) tag_specifications:
-        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
@@ -58,12 +57,8 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_route_table_id = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +67,7 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -82,17 +76,13 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
     /// <p>The tags to assign to the local gateway route table VPC association.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = Some(v);
+                        self
     }
     /// <p>The tags to assign to the local gateway route table VPC association.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -101,11 +91,10 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableVpcAssociationInput`](crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput).
-    pub fn build(self) -> Result<crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociationInput {
                 local_gateway_route_table_id: self.local_gateway_route_table_id
@@ -120,3 +109,4 @@ impl CreateLocalGatewayRouteTableVpcAssociationInputBuilder {
         )
     }
 }
+

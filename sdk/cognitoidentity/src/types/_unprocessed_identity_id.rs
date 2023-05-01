@@ -3,7 +3,7 @@
 /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedIdentityId {
+pub struct UnprocessedIdentityId  {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UnprocessedIdentityId {
 }
 impl UnprocessedIdentityId {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The error code indicating the type of error that occurred.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UnprocessedIdentityIdBuilder {
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>The error code indicating the type of error that occurred.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
@@ -53,14 +52,16 @@ impl UnprocessedIdentityIdBuilder {
     }
     /// <p>The error code indicating the type of error that occurred.</p>
     pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// Consumes the builder and constructs a [`UnprocessedIdentityId`](crate::types::UnprocessedIdentityId).
     pub fn build(self) -> crate::types::UnprocessedIdentityId {
         crate::types::UnprocessedIdentityId {
-            identity_id: self.identity_id,
-            error_code: self.error_code,
+            identity_id: self.identity_id
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

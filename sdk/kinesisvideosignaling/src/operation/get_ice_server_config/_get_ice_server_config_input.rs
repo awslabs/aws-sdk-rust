@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIceServerConfigInput {
+pub struct GetIceServerConfigInput  {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct GetIceServerConfigInput {
 }
 impl GetIceServerConfigInput {
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
-    pub fn service(&self) -> std::option::Option<&crate::types::Service> {
+    pub fn service(&self) -> std::option::Option<& crate::types::Service> {
         self.service.as_ref()
     }
     /// <p>An optional user ID to be associated with the credentials.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
 impl GetIceServerConfigInput {
     /// Creates a new builder-style object to manufacture [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
+    pub fn builder() -> crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder {
         crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl GetIceServerConfigInputBuilder {
     }
     /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl GetIceServerConfigInputBuilder {
     }
     /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
     pub fn service(mut self, input: crate::types::Service) -> Self {
@@ -79,8 +76,7 @@ impl GetIceServerConfigInputBuilder {
     }
     /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>
     pub fn set_service(mut self, input: std::option::Option<crate::types::Service>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,23 +85,22 @@ impl GetIceServerConfigInputBuilder {
     }
     /// <p>An optional user ID to be associated with the credentials.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Consumes the builder and constructs a [`GetIceServerConfigInput`](crate::operation::get_ice_server_config::GetIceServerConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_ice_server_config::GetIceServerConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_ice_server_config::GetIceServerConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_ice_server_config::GetIceServerConfigInput {
-                channel_arn: self.channel_arn,
-                client_id: self.client_id,
-                service: self.service,
-                username: self.username,
-            },
+                channel_arn: self.channel_arn
+                ,
+                client_id: self.client_id
+                ,
+                service: self.service
+                ,
+                username: self.username
+                ,
+            }
         )
     }
 }
+

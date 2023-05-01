@@ -3,9 +3,9 @@
 /// <p>The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
-    /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+pub struct S3Location  {
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> 
+    /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> 
     /// </note>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -20,22 +20,22 @@ pub struct S3Location {
     pub object_version: std::option::Option<std::string::String>,
 }
 impl S3Location {
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
-    /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> 
+    /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> 
     /// </note>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The name of the zip file that contains the build files or script files. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
-    pub fn object_version(&self) -> std::option::Option<&str> {
+    pub fn object_version(&self) -> std::option::Option<& str> {
         self.object_version.as_deref()
     }
 }
@@ -56,19 +56,18 @@ pub struct S3LocationBuilder {
     pub(crate) object_version: std::option::Option<std::string::String>,
 }
 impl S3LocationBuilder {
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
-    /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> 
+    /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> 
     /// </note>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket = Some(input.into());
         self
     }
-    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note>
-    /// <p>GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p>
+    /// <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p> <note> 
+    /// <p>Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain a dot (.).</p> 
     /// </note>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The name of the zip file that contains the build files or script files. </p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl S3LocationBuilder {
     }
     /// <p>The name of the zip file that contains the build files or script files. </p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl S3LocationBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) for an IAM role that allows Amazon GameLift to access the S3 bucket.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub fn object_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,16 +94,20 @@ impl S3LocationBuilder {
     }
     /// <p>The version of the file, if object versioning is turned on for the bucket. Amazon GameLift uses this information when retrieving files from an S3 bucket that you own. Use this parameter to specify a specific version of the file. If not set, the latest version of the file is retrieved. </p>
     pub fn set_object_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_version = input;
-        self
+        self.object_version = input; self
     }
     /// Consumes the builder and constructs a [`S3Location`](crate::types::S3Location).
     pub fn build(self) -> crate::types::S3Location {
         crate::types::S3Location {
-            bucket: self.bucket,
-            key: self.key,
-            role_arn: self.role_arn,
-            object_version: self.object_version,
+            bucket: self.bucket
+            ,
+            key: self.key
+            ,
+            role_arn: self.role_arn
+            ,
+            object_version: self.object_version
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceShareOutput {
+pub struct CreateResourceShareOutput  {
     /// <p>An object with information about the new resource share.</p>
     #[doc(hidden)]
     pub resource_share: std::option::Option<crate::types::ResourceShare>,
@@ -13,25 +13,23 @@ pub struct CreateResourceShareOutput {
 }
 impl CreateResourceShareOutput {
     /// <p>An object with information about the new resource share.</p>
-    pub fn resource_share(&self) -> std::option::Option<&crate::types::ResourceShare> {
+    pub fn resource_share(&self) -> std::option::Option<& crate::types::ResourceShare> {
         self.resource_share.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateResourceShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateResourceShareOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceShareOutput`](crate::operation::create_resource_share::CreateResourceShareOutput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_share::builders::CreateResourceShareOutputBuilder {
-        crate::operation::create_resource_share::builders::CreateResourceShareOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_resource_share::builders::CreateResourceShareOutputBuilder {
+        crate::operation::create_resource_share::builders::CreateResourceShareOutputBuilder::default()
     }
 }
 
@@ -50,12 +48,8 @@ impl CreateResourceShareOutputBuilder {
         self
     }
     /// <p>An object with information about the new resource share.</p>
-    pub fn set_resource_share(
-        mut self,
-        input: std::option::Option<crate::types::ResourceShare>,
-    ) -> Self {
-        self.resource_share = input;
-        self
+    pub fn set_resource_share(mut self, input: std::option::Option<crate::types::ResourceShare>) -> Self {
+        self.resource_share = input; self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,24 +58,26 @@ impl CreateResourceShareOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateResourceShareOutput`](crate::operation::create_resource_share::CreateResourceShareOutput).
     pub fn build(self) -> crate::operation::create_resource_share::CreateResourceShareOutput {
         crate::operation::create_resource_share::CreateResourceShareOutput {
-            resource_share: self.resource_share,
-            client_token: self.client_token,
+            resource_share: self.resource_share
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

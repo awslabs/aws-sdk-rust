@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHoursOfOperationInput {
+pub struct DescribeHoursOfOperationInput  {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DescribeHoursOfOperationInput {
 }
 impl DescribeHoursOfOperationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> std::option::Option<& str> {
         self.hours_of_operation_id.as_deref()
     }
 }
 impl DescribeHoursOfOperationInput {
     /// Creates a new builder-style object to manufacture [`DescribeHoursOfOperationInput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder {
         crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DescribeHoursOfOperationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The identifier for the hours of operation.</p>
     pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,25 +50,19 @@ impl DescribeHoursOfOperationInputBuilder {
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hours_of_operation_id = input;
-        self
+    pub fn set_hours_of_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hours_of_operation_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeHoursOfOperationInput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_hours_of_operation::DescribeHoursOfOperationInput {
-                instance_id: self.instance_id,
-                hours_of_operation_id: self.hours_of_operation_id,
-            },
+                instance_id: self.instance_id
+                ,
+                hours_of_operation_id: self.hours_of_operation_id
+                ,
+            }
         )
     }
 }
+

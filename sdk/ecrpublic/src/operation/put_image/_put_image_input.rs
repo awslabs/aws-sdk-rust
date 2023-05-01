@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutImageInput {
+pub struct PutImageInput  {
     /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -24,27 +24,27 @@ pub struct PutImageInput {
 }
 impl PutImageInput {
     /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository where the image is put.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
-    pub fn image_manifest(&self) -> std::option::Option<&str> {
+    pub fn image_manifest(&self) -> std::option::Option<& str> {
         self.image_manifest.as_deref()
     }
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+    pub fn image_manifest_media_type(&self) -> std::option::Option<& str> {
         self.image_manifest_media_type.as_deref()
     }
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
-    pub fn image_tag(&self) -> std::option::Option<&str> {
+    pub fn image_tag(&self) -> std::option::Option<& str> {
         self.image_tag.as_deref()
     }
     /// <p>The image digest of the image manifest that corresponds to the image.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
+    pub fn image_digest(&self) -> std::option::Option<& str> {
         self.image_digest.as_deref()
     }
 }
@@ -74,8 +74,7 @@ impl PutImageInputBuilder {
     }
     /// <p>The Amazon Web Services account ID, or registry alias, that's associated with the public registry that contains the repository where the image is put. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The name of the repository where the image is put.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl PutImageInputBuilder {
     }
     /// <p>The name of the repository where the image is put.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
     pub fn image_manifest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl PutImageInputBuilder {
     }
     /// <p>The image manifest that corresponds to the image to be uploaded.</p>
     pub fn set_image_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_manifest = input;
-        self
+        self.image_manifest = input; self
     }
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
     pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,12 +100,8 @@ impl PutImageInputBuilder {
         self
     }
     /// <p>The media type of the image manifest. If you push an image manifest that doesn't contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code> in the request.</p>
-    pub fn set_image_manifest_media_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_manifest_media_type = input;
-        self
+    pub fn set_image_manifest_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_manifest_media_type = input; self
     }
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub fn image_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +110,7 @@ impl PutImageInputBuilder {
     }
     /// <p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>
     pub fn set_image_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_tag = input;
-        self
+        self.image_tag = input; self
     }
     /// <p>The image digest of the image manifest that corresponds to the image.</p>
     pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,23 +119,26 @@ impl PutImageInputBuilder {
     }
     /// <p>The image digest of the image manifest that corresponds to the image.</p>
     pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// Consumes the builder and constructs a [`PutImageInput`](crate::operation::put_image::PutImageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_image::PutImageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_image::PutImageInput {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_manifest: self.image_manifest,
-            image_manifest_media_type: self.image_manifest_media_type,
-            image_tag: self.image_tag,
-            image_digest: self.image_digest,
-        })
+    pub fn build(self) -> Result<crate::operation::put_image::PutImageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_image::PutImageInput {
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                image_manifest: self.image_manifest
+                ,
+                image_manifest_media_type: self.image_manifest_media_type
+                ,
+                image_tag: self.image_tag
+                ,
+                image_digest: self.image_digest
+                ,
+            }
+        )
     }
 }
+

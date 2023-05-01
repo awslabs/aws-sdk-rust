@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDhcpOptionsInput {
+pub struct CreateDhcpOptionsInput  {
     /// <p>A DHCP configuration option.</p>
     #[doc(hidden)]
     pub dhcp_configurations: std::option::Option<std::vec::Vec<crate::types::NewDhcpConfiguration>>,
@@ -15,13 +15,11 @@ pub struct CreateDhcpOptionsInput {
 }
 impl CreateDhcpOptionsInput {
     /// <p>A DHCP configuration option.</p>
-    pub fn dhcp_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::types::NewDhcpConfiguration]> {
+    pub fn dhcp_configurations(&self) -> std::option::Option<& [crate::types::NewDhcpConfiguration]> {
         self.dhcp_configurations.as_deref()
     }
     /// <p>The tags to assign to the DHCP option.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -31,8 +29,7 @@ impl CreateDhcpOptionsInput {
 }
 impl CreateDhcpOptionsInput {
     /// Creates a new builder-style object to manufacture [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
-    pub fn builder(
-    ) -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuilder {
+    pub fn builder() -> crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuilder {
         crate::operation::create_dhcp_options::builders::CreateDhcpOptionsInputBuilder::default()
     }
 }
@@ -41,10 +38,8 @@ impl CreateDhcpOptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateDhcpOptionsInputBuilder {
-    pub(crate) dhcp_configurations:
-        std::option::Option<std::vec::Vec<crate::types::NewDhcpConfiguration>>,
-    pub(crate) tag_specifications:
-        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) dhcp_configurations: std::option::Option<std::vec::Vec<crate::types::NewDhcpConfiguration>>,
+    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl CreateDhcpOptionsInputBuilder {
@@ -55,17 +50,13 @@ impl CreateDhcpOptionsInputBuilder {
     /// <p>A DHCP configuration option.</p>
     pub fn dhcp_configurations(mut self, input: crate::types::NewDhcpConfiguration) -> Self {
         let mut v = self.dhcp_configurations.unwrap_or_default();
-        v.push(input);
-        self.dhcp_configurations = Some(v);
-        self
+                        v.push(input);
+                        self.dhcp_configurations = Some(v);
+                        self
     }
     /// <p>A DHCP configuration option.</p>
-    pub fn set_dhcp_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NewDhcpConfiguration>>,
-    ) -> Self {
-        self.dhcp_configurations = input;
-        self
+    pub fn set_dhcp_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::NewDhcpConfiguration>>) -> Self {
+        self.dhcp_configurations = input; self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -74,17 +65,13 @@ impl CreateDhcpOptionsInputBuilder {
     /// <p>The tags to assign to the DHCP option.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = Some(v);
+                        self
     }
     /// <p>The tags to assign to the DHCP option.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -93,22 +80,20 @@ impl CreateDhcpOptionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateDhcpOptionsInput`](crate::operation::create_dhcp_options::CreateDhcpOptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_dhcp_options::CreateDhcpOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_dhcp_options::CreateDhcpOptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_dhcp_options::CreateDhcpOptionsInput {
-                dhcp_configurations: self.dhcp_configurations,
-                tag_specifications: self.tag_specifications,
-                dry_run: self.dry_run,
-            },
+                dhcp_configurations: self.dhcp_configurations
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

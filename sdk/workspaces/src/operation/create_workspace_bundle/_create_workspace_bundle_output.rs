@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkspaceBundleOutput {
+pub struct CreateWorkspaceBundleOutput  {
     /// <p>Describes a WorkSpace bundle.</p>
     #[doc(hidden)]
     pub workspace_bundle: std::option::Option<crate::types::WorkspaceBundle>,
@@ -10,20 +10,18 @@ pub struct CreateWorkspaceBundleOutput {
 }
 impl CreateWorkspaceBundleOutput {
     /// <p>Describes a WorkSpace bundle.</p>
-    pub fn workspace_bundle(&self) -> std::option::Option<&crate::types::WorkspaceBundle> {
+    pub fn workspace_bundle(&self) -> std::option::Option<& crate::types::WorkspaceBundle> {
         self.workspace_bundle.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWorkspaceBundleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateWorkspaceBundleOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceBundleOutput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleOutputBuilder {
         crate::operation::create_workspace_bundle::builders::CreateWorkspaceBundleOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateWorkspaceBundleOutputBuilder {
         self
     }
     /// <p>Describes a WorkSpace bundle.</p>
-    pub fn set_workspace_bundle(
-        mut self,
-        input: std::option::Option<crate::types::WorkspaceBundle>,
-    ) -> Self {
-        self.workspace_bundle = input;
-        self
+    pub fn set_workspace_bundle(mut self, input: std::option::Option<crate::types::WorkspaceBundle>) -> Self {
+        self.workspace_bundle = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateWorkspaceBundleOutput`](crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput).
     pub fn build(self) -> crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput {
         crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput {
-            workspace_bundle: self.workspace_bundle,
+            workspace_bundle: self.workspace_bundle
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

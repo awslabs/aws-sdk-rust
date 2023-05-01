@@ -3,7 +3,7 @@
 /// <p>A summary of information about a fleet provision template version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisioningTemplateVersionSummary {
+pub struct ProvisioningTemplateVersionSummary  {
     /// <p>The ID of the fleet provisioning template version.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<i32>,
@@ -20,7 +20,7 @@ impl ProvisioningTemplateVersionSummary {
         self.version_id
     }
     /// <p>The date when the provisioning template version was created</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
@@ -51,8 +51,7 @@ impl ProvisioningTemplateVersionSummaryBuilder {
     }
     /// <p>The ID of the fleet provisioning template version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// <p>The date when the provisioning template version was created</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -60,12 +59,8 @@ impl ProvisioningTemplateVersionSummaryBuilder {
         self
     }
     /// <p>The date when the provisioning template version was created</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
@@ -74,15 +69,19 @@ impl ProvisioningTemplateVersionSummaryBuilder {
     }
     /// <p>True if the provisioning template version is the default version, otherwise false.</p>
     pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_default_version = input;
-        self
+        self.is_default_version = input; self
     }
     /// Consumes the builder and constructs a [`ProvisioningTemplateVersionSummary`](crate::types::ProvisioningTemplateVersionSummary).
     pub fn build(self) -> crate::types::ProvisioningTemplateVersionSummary {
         crate::types::ProvisioningTemplateVersionSummary {
-            version_id: self.version_id,
-            creation_date: self.creation_date,
-            is_default_version: self.is_default_version.unwrap_or_default(),
+            version_id: self.version_id
+            ,
+            creation_date: self.creation_date
+            ,
+            is_default_version: self.is_default_version
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrafficMirrorSessionOutput {
+pub struct CreateTrafficMirrorSessionOutput  {
     /// <p>Information about the Traffic Mirror session.</p>
     #[doc(hidden)]
     pub traffic_mirror_session: std::option::Option<crate::types::TrafficMirrorSession>,
@@ -13,24 +13,22 @@ pub struct CreateTrafficMirrorSessionOutput {
 }
 impl CreateTrafficMirrorSessionOutput {
     /// <p>Information about the Traffic Mirror session.</p>
-    pub fn traffic_mirror_session(
-        &self,
-    ) -> std::option::Option<&crate::types::TrafficMirrorSession> {
+    pub fn traffic_mirror_session(&self) -> std::option::Option<& crate::types::TrafficMirrorSession> {
         self.traffic_mirror_session.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrafficMirrorSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTrafficMirrorSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficMirrorSessionOutput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput).
-    pub fn builder() -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder {
         crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl CreateTrafficMirrorSessionOutputBuilder {
         self
     }
     /// <p>Information about the Traffic Mirror session.</p>
-    pub fn set_traffic_mirror_session(
-        mut self,
-        input: std::option::Option<crate::types::TrafficMirrorSession>,
-    ) -> Self {
-        self.traffic_mirror_session = input;
-        self
+    pub fn set_traffic_mirror_session(mut self, input: std::option::Option<crate::types::TrafficMirrorSession>) -> Self {
+        self.traffic_mirror_session = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +58,26 @@ impl CreateTrafficMirrorSessionOutputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTrafficMirrorSessionOutput`](crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput {
+    pub fn build(self) -> crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput {
         crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSessionOutput {
-            traffic_mirror_session: self.traffic_mirror_session,
-            client_token: self.client_token,
+            traffic_mirror_session: self.traffic_mirror_session
+            ,
+            client_token: self.client_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

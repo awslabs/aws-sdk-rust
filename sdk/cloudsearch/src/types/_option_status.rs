@@ -3,7 +3,7 @@
 /// <p>The status of domain configuration option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionStatus {
+pub struct OptionStatus  {
     /// <p>A timestamp for when this option was created.</p>
     #[doc(hidden)]
     pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -14,11 +14,11 @@ pub struct OptionStatus {
     #[doc(hidden)]
     pub update_version: i32,
     /// <p>The state of processing a change to an option. Possible values:</p>
-    /// <ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// <ul> 
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::OptionState>,
@@ -28,11 +28,11 @@ pub struct OptionStatus {
 }
 impl OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>A timestamp for when this option was last updated.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
     /// <p>A unique integer that indicates when this option was last updated.</p>
@@ -40,13 +40,13 @@ impl OptionStatus {
         self.update_version
     }
     /// <p>The state of processing a change to an option. Possible values:</p>
-    /// <ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// <ul> 
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::OptionState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::OptionState> {
         self.state.as_ref()
     }
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
@@ -78,12 +78,8 @@ impl OptionStatusBuilder {
         self
     }
     /// <p>A timestamp for when this option was created.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// <p>A timestamp for when this option was last updated.</p>
     pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,12 +87,8 @@ impl OptionStatusBuilder {
         self
     }
     /// <p>A timestamp for when this option was last updated.</p>
-    pub fn set_update_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date = input;
-        self
+    pub fn set_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_date = input; self
     }
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub fn update_version(mut self, input: i32) -> Self {
@@ -105,30 +97,28 @@ impl OptionStatusBuilder {
     }
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub fn set_update_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.update_version = input;
-        self
+        self.update_version = input; self
     }
     /// <p>The state of processing a change to an option. Possible values:</p>
-    /// <ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// <ul> 
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
     /// </ul>
     pub fn state(mut self, input: crate::types::OptionState) -> Self {
         self.state = Some(input);
         self
     }
     /// <p>The state of processing a change to an option. Possible values:</p>
-    /// <ul>
-    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li>
-    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li>
-    /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
-    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+    /// <ul> 
+    /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until <code>IndexDocuments</code> has been called and indexing is complete.</li> 
+    /// <li><code>Processing</code>: the option's latest value is in the process of being activated. </li> 
+    /// <li><code>Active</code>: the option's latest value is completely deployed.</li> 
+    /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li> 
     /// </ul>
     pub fn set_state(mut self, input: std::option::Option<crate::types::OptionState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub fn pending_deletion(mut self, input: bool) -> Self {
@@ -137,17 +127,23 @@ impl OptionStatusBuilder {
     }
     /// <p>Indicates that the option will be deleted once processing is complete.</p>
     pub fn set_pending_deletion(mut self, input: std::option::Option<bool>) -> Self {
-        self.pending_deletion = input;
-        self
+        self.pending_deletion = input; self
     }
     /// Consumes the builder and constructs a [`OptionStatus`](crate::types::OptionStatus).
     pub fn build(self) -> crate::types::OptionStatus {
         crate::types::OptionStatus {
-            creation_date: self.creation_date,
-            update_date: self.update_date,
-            update_version: self.update_version.unwrap_or_default(),
-            state: self.state,
-            pending_deletion: self.pending_deletion,
+            creation_date: self.creation_date
+            ,
+            update_date: self.update_date
+            ,
+            update_version: self.update_version
+                .unwrap_or_default()
+            ,
+            state: self.state
+            ,
+            pending_deletion: self.pending_deletion
+            ,
         }
     }
 }
+

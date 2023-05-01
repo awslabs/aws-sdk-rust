@@ -3,9 +3,9 @@
 /// <p>Describes a filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociationFilter {
-    /// <p>The name of the filter.</p> <note>
-    /// <p> <code>InstanceId</code> has been deprecated.</p>
+pub struct AssociationFilter  {
+    /// <p>The name of the filter.</p> <note> 
+    /// <p> <code>InstanceId</code> has been deprecated.</p> 
     /// </note>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::AssociationFilterKey>,
@@ -14,14 +14,14 @@ pub struct AssociationFilter {
     pub value: std::option::Option<std::string::String>,
 }
 impl AssociationFilter {
-    /// <p>The name of the filter.</p> <note>
-    /// <p> <code>InstanceId</code> has been deprecated.</p>
+    /// <p>The name of the filter.</p> <note> 
+    /// <p> <code>InstanceId</code> has been deprecated.</p> 
     /// </note>
-    pub fn key(&self) -> std::option::Option<&crate::types::AssociationFilterKey> {
+    pub fn key(&self) -> std::option::Option<& crate::types::AssociationFilterKey> {
         self.key.as_ref()
     }
     /// <p>The filter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -40,22 +40,18 @@ pub struct AssociationFilterBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl AssociationFilterBuilder {
-    /// <p>The name of the filter.</p> <note>
-    /// <p> <code>InstanceId</code> has been deprecated.</p>
+    /// <p>The name of the filter.</p> <note> 
+    /// <p> <code>InstanceId</code> has been deprecated.</p> 
     /// </note>
     pub fn key(mut self, input: crate::types::AssociationFilterKey) -> Self {
         self.key = Some(input);
         self
     }
-    /// <p>The name of the filter.</p> <note>
-    /// <p> <code>InstanceId</code> has been deprecated.</p>
+    /// <p>The name of the filter.</p> <note> 
+    /// <p> <code>InstanceId</code> has been deprecated.</p> 
     /// </note>
-    pub fn set_key(
-        mut self,
-        input: std::option::Option<crate::types::AssociationFilterKey>,
-    ) -> Self {
-        self.key = input;
-        self
+    pub fn set_key(mut self, input: std::option::Option<crate::types::AssociationFilterKey>) -> Self {
+        self.key = input; self
     }
     /// <p>The filter value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,14 +60,16 @@ impl AssociationFilterBuilder {
     }
     /// <p>The filter value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`AssociationFilter`](crate::types::AssociationFilter).
     pub fn build(self) -> crate::types::AssociationFilter {
         crate::types::AssociationFilter {
-            key: self.key,
-            value: self.value,
+            key: self.key
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

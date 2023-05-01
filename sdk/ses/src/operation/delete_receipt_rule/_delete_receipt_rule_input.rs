@@ -3,7 +3,7 @@
 /// <p>Represents a request to delete a receipt rule. You use receipt rules to receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReceiptRuleInput {
+pub struct DeleteReceiptRuleInput  {
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
     #[doc(hidden)]
     pub rule_set_name: std::option::Option<std::string::String>,
@@ -13,18 +13,17 @@ pub struct DeleteReceiptRuleInput {
 }
 impl DeleteReceiptRuleInput {
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
-    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> std::option::Option<& str> {
         self.rule_set_name.as_deref()
     }
     /// <p>The name of the receipt rule to delete.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
 }
 impl DeleteReceiptRuleInput {
     /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleInput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder {
+    pub fn builder() -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder {
         crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleInputBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl DeleteReceiptRuleInputBuilder {
     }
     /// <p>The name of the receipt rule set that contains the receipt rule to delete.</p>
     pub fn set_rule_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_set_name = input;
-        self
+        self.rule_set_name = input; self
     }
     /// <p>The name of the receipt rule to delete.</p>
     pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +52,18 @@ impl DeleteReceiptRuleInputBuilder {
     }
     /// <p>The name of the receipt rule to delete.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteReceiptRuleInput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_receipt_rule::DeleteReceiptRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_receipt_rule::DeleteReceiptRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_receipt_rule::DeleteReceiptRuleInput {
-                rule_set_name: self.rule_set_name,
-                rule_name: self.rule_name,
-            },
+                rule_set_name: self.rule_set_name
+                ,
+                rule_name: self.rule_name
+                ,
+            }
         )
     }
 }
+

@@ -3,16 +3,14 @@
 /// <p>Details of how to connect to the Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaClusterDescription {
+pub struct KafkaClusterDescription  {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
     #[doc(hidden)]
     pub apache_kafka_cluster: std::option::Option<crate::types::ApacheKafkaClusterDescription>,
 }
 impl KafkaClusterDescription {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(
-        &self,
-    ) -> std::option::Option<&crate::types::ApacheKafkaClusterDescription> {
+    pub fn apache_kafka_cluster(&self) -> std::option::Option<& crate::types::ApacheKafkaClusterDescription> {
         self.apache_kafka_cluster.as_ref()
     }
 }
@@ -27,30 +25,24 @@ impl KafkaClusterDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct KafkaClusterDescriptionBuilder {
-    pub(crate) apache_kafka_cluster:
-        std::option::Option<crate::types::ApacheKafkaClusterDescription>,
+    pub(crate) apache_kafka_cluster: std::option::Option<crate::types::ApacheKafkaClusterDescription>,
 }
 impl KafkaClusterDescriptionBuilder {
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn apache_kafka_cluster(
-        mut self,
-        input: crate::types::ApacheKafkaClusterDescription,
-    ) -> Self {
+    pub fn apache_kafka_cluster(mut self, input: crate::types::ApacheKafkaClusterDescription) -> Self {
         self.apache_kafka_cluster = Some(input);
         self
     }
     /// <p>The Apache Kafka cluster to which the connector is connected.</p>
-    pub fn set_apache_kafka_cluster(
-        mut self,
-        input: std::option::Option<crate::types::ApacheKafkaClusterDescription>,
-    ) -> Self {
-        self.apache_kafka_cluster = input;
-        self
+    pub fn set_apache_kafka_cluster(mut self, input: std::option::Option<crate::types::ApacheKafkaClusterDescription>) -> Self {
+        self.apache_kafka_cluster = input; self
     }
     /// Consumes the builder and constructs a [`KafkaClusterDescription`](crate::types::KafkaClusterDescription).
     pub fn build(self) -> crate::types::KafkaClusterDescription {
         crate::types::KafkaClusterDescription {
-            apache_kafka_cluster: self.apache_kafka_cluster,
+            apache_kafka_cluster: self.apache_kafka_cluster
+            ,
         }
     }
 }
+

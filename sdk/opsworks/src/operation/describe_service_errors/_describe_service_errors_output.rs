@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServiceErrorsOutput {
+pub struct DescribeServiceErrorsOutput  {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     #[doc(hidden)]
     pub service_errors: std::option::Option<std::vec::Vec<crate::types::ServiceError>>,
@@ -11,20 +11,18 @@ pub struct DescribeServiceErrorsOutput {
 }
 impl DescribeServiceErrorsOutput {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn service_errors(&self) -> std::option::Option<&[crate::types::ServiceError]> {
+    pub fn service_errors(&self) -> std::option::Option<& [crate::types::ServiceError]> {
         self.service_errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeServiceErrorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeServiceErrorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder {
         crate::operation::describe_service_errors::builders::DescribeServiceErrorsOutputBuilder::default()
     }
 }
@@ -44,32 +42,30 @@ impl DescribeServiceErrorsOutputBuilder {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     pub fn service_errors(mut self, input: crate::types::ServiceError) -> Self {
         let mut v = self.service_errors.unwrap_or_default();
-        v.push(input);
-        self.service_errors = Some(v);
-        self
+                        v.push(input);
+                        self.service_errors = Some(v);
+                        self
     }
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn set_service_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceError>>,
-    ) -> Self {
-        self.service_errors = input;
-        self
+    pub fn set_service_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceError>>) -> Self {
+        self.service_errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
     pub fn build(self) -> crate::operation::describe_service_errors::DescribeServiceErrorsOutput {
         crate::operation::describe_service_errors::DescribeServiceErrorsOutput {
-            service_errors: self.service_errors,
+            service_errors: self.service_errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

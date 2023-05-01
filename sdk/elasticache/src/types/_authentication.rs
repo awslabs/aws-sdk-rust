@@ -3,7 +3,7 @@
 /// <p>Indicates whether the user requires a password to authenticate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Authentication {
+pub struct Authentication  {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::AuthenticationType>,
@@ -13,7 +13,7 @@ pub struct Authentication {
 }
 impl Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::AuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
@@ -42,12 +42,8 @@ impl AuthenticationBuilder {
         self
     }
     /// <p>Indicates whether the user requires a password to authenticate.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn password_count(mut self, input: i32) -> Self {
@@ -56,14 +52,16 @@ impl AuthenticationBuilder {
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn set_password_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.password_count = input;
-        self
+        self.password_count = input; self
     }
     /// Consumes the builder and constructs a [`Authentication`](crate::types::Authentication).
     pub fn build(self) -> crate::types::Authentication {
         crate::types::Authentication {
-            r#type: self.r#type,
-            password_count: self.password_count,
+            r#type: self.r#type
+            ,
+            password_count: self.password_count
+            ,
         }
     }
 }
+

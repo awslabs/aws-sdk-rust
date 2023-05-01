@@ -3,14 +3,14 @@
 /// Settings for a SCTE-35 time_signal.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scte35TimeSignalScheduleActionSettings {
+pub struct Scte35TimeSignalScheduleActionSettings  {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
     #[doc(hidden)]
     pub scte35_descriptors: std::option::Option<std::vec::Vec<crate::types::Scte35Descriptor>>,
 }
 impl Scte35TimeSignalScheduleActionSettings {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
-    pub fn scte35_descriptors(&self) -> std::option::Option<&[crate::types::Scte35Descriptor]> {
+    pub fn scte35_descriptors(&self) -> std::option::Option<& [crate::types::Scte35Descriptor]> {
         self.scte35_descriptors.as_deref()
     }
 }
@@ -25,8 +25,7 @@ impl Scte35TimeSignalScheduleActionSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct Scte35TimeSignalScheduleActionSettingsBuilder {
-    pub(crate) scte35_descriptors:
-        std::option::Option<std::vec::Vec<crate::types::Scte35Descriptor>>,
+    pub(crate) scte35_descriptors: std::option::Option<std::vec::Vec<crate::types::Scte35Descriptor>>,
 }
 impl Scte35TimeSignalScheduleActionSettingsBuilder {
     /// Appends an item to `scte35_descriptors`.
@@ -36,22 +35,20 @@ impl Scte35TimeSignalScheduleActionSettingsBuilder {
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
     pub fn scte35_descriptors(mut self, input: crate::types::Scte35Descriptor) -> Self {
         let mut v = self.scte35_descriptors.unwrap_or_default();
-        v.push(input);
-        self.scte35_descriptors = Some(v);
-        self
+                        v.push(input);
+                        self.scte35_descriptors = Some(v);
+                        self
     }
     /// The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
-    pub fn set_scte35_descriptors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Scte35Descriptor>>,
-    ) -> Self {
-        self.scte35_descriptors = input;
-        self
+    pub fn set_scte35_descriptors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Scte35Descriptor>>) -> Self {
+        self.scte35_descriptors = input; self
     }
     /// Consumes the builder and constructs a [`Scte35TimeSignalScheduleActionSettings`](crate::types::Scte35TimeSignalScheduleActionSettings).
     pub fn build(self) -> crate::types::Scte35TimeSignalScheduleActionSettings {
         crate::types::Scte35TimeSignalScheduleActionSettings {
-            scte35_descriptors: self.scte35_descriptors,
+            scte35_descriptors: self.scte35_descriptors
+            ,
         }
     }
 }
+

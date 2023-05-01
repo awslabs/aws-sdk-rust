@@ -52,3 +52,4 @@ pub mod builders;
 
 /// Error types that AWSServerlessApplicationRepository can respond with.
 pub mod error;
+

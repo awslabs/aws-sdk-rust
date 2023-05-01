@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateChannelInput {
+pub struct UpdateChannelInput  {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -21,27 +21,27 @@ pub struct UpdateChannelInput {
 }
 impl UpdateChannelInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The name of the channel.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The mode of the update request.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::ChannelMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::types::ChannelMode> {
         self.mode.as_ref()
     }
     /// <p>The metadata for the update request.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateChannelInput {
+impl  std::fmt::Debug for UpdateChannelInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelInput");
         formatter.field("channel_arn", &self.channel_arn);
@@ -77,8 +77,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The name of the channel.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +86,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The mode of the update request.</p>
     pub fn mode(mut self, input: crate::types::ChannelMode) -> Self {
@@ -97,8 +95,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The mode of the update request.</p>
     pub fn set_mode(mut self, input: std::option::Option<crate::types::ChannelMode>) -> Self {
-        self.mode = input;
-        self
+        self.mode = input; self
     }
     /// <p>The metadata for the update request.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +104,7 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The metadata for the update request.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,23 +113,24 @@ impl UpdateChannelInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_channel::UpdateChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_channel::UpdateChannelInput {
-            channel_arn: self.channel_arn,
-            name: self.name,
-            mode: self.mode,
-            metadata: self.metadata,
-            chime_bearer: self.chime_bearer,
-        })
+    pub fn build(self) -> Result<crate::operation::update_channel::UpdateChannelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_channel::UpdateChannelInput {
+                channel_arn: self.channel_arn
+                ,
+                name: self.name
+                ,
+                mode: self.mode
+                ,
+                metadata: self.metadata
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for UpdateChannelInputBuilder {
@@ -147,3 +144,4 @@ impl std::fmt::Debug for UpdateChannelInputBuilder {
         formatter.finish()
     }
 }
+

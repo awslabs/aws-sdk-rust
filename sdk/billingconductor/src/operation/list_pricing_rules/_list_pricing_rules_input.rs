@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesInput {
+pub struct ListPricingRulesInput  {
     /// <p> The preferred billing period to get the pricing plan. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListPricingRulesInput {
 }
 impl ListPricingRulesInput {
     /// <p> The preferred billing period to get the pricing plan. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ListPricingRulesFilter> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ListPricingRulesFilter> {
         self.filters.as_ref()
     }
     /// <p> The maximum number of pricing rules to retrieve. </p>
@@ -30,14 +30,13 @@ impl ListPricingRulesInput {
         self.max_results
     }
     /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListPricingRulesInput {
     /// Creates a new builder-style object to manufacture [`ListPricingRulesInput`](crate::operation::list_pricing_rules::ListPricingRulesInput).
-    pub fn builder() -> crate::operation::list_pricing_rules::builders::ListPricingRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_pricing_rules::builders::ListPricingRulesInputBuilder {
         crate::operation::list_pricing_rules::builders::ListPricingRulesInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListPricingRulesInputBuilder {
     }
     /// <p> The preferred billing period to get the pricing plan. </p>
     pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
     pub fn filters(mut self, input: crate::types::ListPricingRulesFilter) -> Self {
@@ -68,12 +66,8 @@ impl ListPricingRulesInputBuilder {
         self
     }
     /// <p> A <code>DescribePricingRuleFilter</code> that specifies the Amazon Resource Name (ARNs) of pricing rules to retrieve pricing rules information. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ListPricingRulesFilter>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListPricingRulesFilter>) -> Self {
+        self.filters = input; self
     }
     /// <p> The maximum number of pricing rules to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,8 +76,7 @@ impl ListPricingRulesInputBuilder {
     }
     /// <p> The maximum number of pricing rules to retrieve. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,23 +85,22 @@ impl ListPricingRulesInputBuilder {
     }
     /// <p> The pagination token that's used on subsequent call to get pricing rules. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListPricingRulesInput`](crate::operation::list_pricing_rules::ListPricingRulesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_pricing_rules::ListPricingRulesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_pricing_rules::ListPricingRulesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_pricing_rules::ListPricingRulesInput {
-                billing_period: self.billing_period,
-                filters: self.filters,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                billing_period: self.billing_period
+                ,
+                filters: self.filters
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

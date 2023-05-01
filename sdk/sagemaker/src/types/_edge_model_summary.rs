@@ -3,7 +3,7 @@
 /// <p>Summary of model on edge device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeModelSummary {
+pub struct EdgeModelSummary  {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EdgeModelSummary {
 }
 impl EdgeModelSummary {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p>The version model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl EdgeModelSummaryBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p>The version model.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl EdgeModelSummaryBuilder {
     }
     /// <p>The version model.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// Consumes the builder and constructs a [`EdgeModelSummary`](crate::types::EdgeModelSummary).
     pub fn build(self) -> crate::types::EdgeModelSummary {
         crate::types::EdgeModelSummary {
-            model_name: self.model_name,
-            model_version: self.model_version,
+            model_name: self.model_name
+            ,
+            model_version: self.model_version
+            ,
         }
     }
 }
+

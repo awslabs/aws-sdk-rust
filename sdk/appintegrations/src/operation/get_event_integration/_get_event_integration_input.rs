@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventIntegrationInput {
+pub struct GetEventIntegrationInput  {
     /// <p>The name of the event integration. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetEventIntegrationInput {
     /// <p>The name of the event integration. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetEventIntegrationInput {
     /// Creates a new builder-style object to manufacture [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
-    pub fn builder(
-    ) -> crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder {
-        crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder {
+        crate::operation::get_event_integration::builders::GetEventIntegrationInputBuilder::default()
     }
 }
 
@@ -36,16 +34,16 @@ impl GetEventIntegrationInputBuilder {
     }
     /// <p>The name of the event integration. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetEventIntegrationInput`](crate::operation::get_event_integration::GetEventIntegrationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_event_integration::GetEventIntegrationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_event_integration::GetEventIntegrationInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_event_integration::GetEventIntegrationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_event_integration::GetEventIntegrationInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachInstancesInput {
+pub struct DetachInstancesInput  {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct DetachInstancesInput {
 }
 impl DetachInstancesInput {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
@@ -50,17 +50,13 @@ impl DetachInstancesInputBuilder {
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-        v.push(input.into());
-        self.instance_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.instance_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
-    pub fn set_instance_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.instance_ids = input;
-        self
+    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.instance_ids = input; self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,12 +64,8 @@ impl DetachInstancesInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
     }
     /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {
@@ -81,24 +73,21 @@ impl DetachInstancesInputBuilder {
         self
     }
     /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number of instances detached.</p>
-    pub fn set_should_decrement_desired_capacity(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.should_decrement_desired_capacity = input;
-        self
+    pub fn set_should_decrement_desired_capacity(mut self, input: std::option::Option<bool>) -> Self {
+        self.should_decrement_desired_capacity = input; self
     }
     /// Consumes the builder and constructs a [`DetachInstancesInput`](crate::operation::detach_instances::DetachInstancesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::detach_instances::DetachInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::detach_instances::DetachInstancesInput {
-            instance_ids: self.instance_ids,
-            auto_scaling_group_name: self.auto_scaling_group_name,
-            should_decrement_desired_capacity: self.should_decrement_desired_capacity,
-        })
+    pub fn build(self) -> Result<crate::operation::detach_instances::DetachInstancesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::detach_instances::DetachInstancesInput {
+                instance_ids: self.instance_ids
+                ,
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                should_decrement_desired_capacity: self.should_decrement_desired_capacity
+                ,
+            }
+        )
     }
 }
+

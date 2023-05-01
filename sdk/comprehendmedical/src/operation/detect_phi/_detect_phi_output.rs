@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectPhiOutput {
+pub struct DetectPhiOutput  {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::types::Entity>>,
@@ -16,23 +16,23 @@ pub struct DetectPhiOutput {
 }
 impl DetectPhiOutput {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
-    pub fn entities(&self) -> std::option::Option<&[crate::types::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::types::Entity]> {
         self.entities.as_deref()
     }
     /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DetectPhiOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectPhiOutput {
     /// Creates a new builder-style object to manufacture [`DetectPhiOutput`](crate::operation::detect_phi::DetectPhiOutput).
     pub fn builder() -> crate::operation::detect_phi::builders::DetectPhiOutputBuilder {
@@ -57,17 +57,13 @@ impl DetectPhiOutputBuilder {
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
     pub fn entities(mut self, input: crate::types::Entity) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = Some(v);
-        self
+                        v.push(input);
+                        self.entities = Some(v);
+                        self
     }
     /// <p> The collection of PHI entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Comprehend Medical; has in its detection. </p>
-    pub fn set_entities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entity>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entity>>) -> Self {
+        self.entities = input; self
     }
     /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +72,7 @@ impl DetectPhiOutputBuilder {
     }
     /// <p> If the result of the previous request to <code>DetectPHI</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of PHI entities. </p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,25 +81,28 @@ impl DetectPhiOutputBuilder {
     }
     /// <p>The version of the model used to analyze the documents. The version number looks like X.X.X. You can use this information to track the model used for a particular batch of documents.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectPhiOutput`](crate::operation::detect_phi::DetectPhiOutput).
     pub fn build(self) -> crate::operation::detect_phi::DetectPhiOutput {
         crate::operation::detect_phi::DetectPhiOutput {
-            entities: self.entities,
-            pagination_token: self.pagination_token,
-            model_version: self.model_version,
+            entities: self.entities
+            ,
+            pagination_token: self.pagination_token
+            ,
+            model_version: self.model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

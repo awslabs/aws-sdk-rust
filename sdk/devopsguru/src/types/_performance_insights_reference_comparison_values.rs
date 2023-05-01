@@ -3,7 +3,7 @@
 /// <p>Reference scalar values and other metrics that DevOps Guru displays on a graph in its console along with the actual metrics it analyzed. Compare these reference values to your actual metrics to help you understand anomalous behavior that DevOps Guru detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PerformanceInsightsReferenceComparisonValues {
+pub struct PerformanceInsightsReferenceComparisonValues  {
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
     #[doc(hidden)]
     pub reference_scalar: std::option::Option<crate::types::PerformanceInsightsReferenceScalar>,
@@ -13,22 +13,17 @@ pub struct PerformanceInsightsReferenceComparisonValues {
 }
 impl PerformanceInsightsReferenceComparisonValues {
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
-    pub fn reference_scalar(
-        &self,
-    ) -> std::option::Option<&crate::types::PerformanceInsightsReferenceScalar> {
+    pub fn reference_scalar(&self) -> std::option::Option<& crate::types::PerformanceInsightsReferenceScalar> {
         self.reference_scalar.as_ref()
     }
     /// <p>A metric that DevOps Guru compares to actual metric values. This reference metric is used to determine if an actual metric should be considered anomalous.</p>
-    pub fn reference_metric(
-        &self,
-    ) -> std::option::Option<&crate::types::PerformanceInsightsReferenceMetric> {
+    pub fn reference_metric(&self) -> std::option::Option<& crate::types::PerformanceInsightsReferenceMetric> {
         self.reference_metric.as_ref()
     }
 }
 impl PerformanceInsightsReferenceComparisonValues {
     /// Creates a new builder-style object to manufacture [`PerformanceInsightsReferenceComparisonValues`](crate::types::PerformanceInsightsReferenceComparisonValues).
-    pub fn builder() -> crate::types::builders::PerformanceInsightsReferenceComparisonValuesBuilder
-    {
+    pub fn builder() -> crate::types::builders::PerformanceInsightsReferenceComparisonValuesBuilder {
         crate::types::builders::PerformanceInsightsReferenceComparisonValuesBuilder::default()
     }
 }
@@ -37,49 +32,36 @@ impl PerformanceInsightsReferenceComparisonValues {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceComparisonValuesBuilder {
-    pub(crate) reference_scalar:
-        std::option::Option<crate::types::PerformanceInsightsReferenceScalar>,
-    pub(crate) reference_metric:
-        std::option::Option<crate::types::PerformanceInsightsReferenceMetric>,
+    pub(crate) reference_scalar: std::option::Option<crate::types::PerformanceInsightsReferenceScalar>,
+    pub(crate) reference_metric: std::option::Option<crate::types::PerformanceInsightsReferenceMetric>,
 }
 impl PerformanceInsightsReferenceComparisonValuesBuilder {
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
-    pub fn reference_scalar(
-        mut self,
-        input: crate::types::PerformanceInsightsReferenceScalar,
-    ) -> Self {
+    pub fn reference_scalar(mut self, input: crate::types::PerformanceInsightsReferenceScalar) -> Self {
         self.reference_scalar = Some(input);
         self
     }
     /// <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual metric values. This reference value is used to determine if an actual metric value should be considered anomalous.</p>
-    pub fn set_reference_scalar(
-        mut self,
-        input: std::option::Option<crate::types::PerformanceInsightsReferenceScalar>,
-    ) -> Self {
-        self.reference_scalar = input;
-        self
+    pub fn set_reference_scalar(mut self, input: std::option::Option<crate::types::PerformanceInsightsReferenceScalar>) -> Self {
+        self.reference_scalar = input; self
     }
     /// <p>A metric that DevOps Guru compares to actual metric values. This reference metric is used to determine if an actual metric should be considered anomalous.</p>
-    pub fn reference_metric(
-        mut self,
-        input: crate::types::PerformanceInsightsReferenceMetric,
-    ) -> Self {
+    pub fn reference_metric(mut self, input: crate::types::PerformanceInsightsReferenceMetric) -> Self {
         self.reference_metric = Some(input);
         self
     }
     /// <p>A metric that DevOps Guru compares to actual metric values. This reference metric is used to determine if an actual metric should be considered anomalous.</p>
-    pub fn set_reference_metric(
-        mut self,
-        input: std::option::Option<crate::types::PerformanceInsightsReferenceMetric>,
-    ) -> Self {
-        self.reference_metric = input;
-        self
+    pub fn set_reference_metric(mut self, input: std::option::Option<crate::types::PerformanceInsightsReferenceMetric>) -> Self {
+        self.reference_metric = input; self
     }
     /// Consumes the builder and constructs a [`PerformanceInsightsReferenceComparisonValues`](crate::types::PerformanceInsightsReferenceComparisonValues).
     pub fn build(self) -> crate::types::PerformanceInsightsReferenceComparisonValues {
         crate::types::PerformanceInsightsReferenceComparisonValues {
-            reference_scalar: self.reference_scalar,
-            reference_metric: self.reference_metric,
+            reference_scalar: self.reference_scalar
+            ,
+            reference_metric: self.reference_metric
+            ,
         }
     }
 }
+

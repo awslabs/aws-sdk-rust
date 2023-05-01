@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelOutput {
+pub struct DescribeChannelOutput  {
     /// <p>An object that contains information about the channel.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::types::Channel>,
@@ -13,19 +13,19 @@ pub struct DescribeChannelOutput {
 }
 impl DescribeChannelOutput {
     /// <p>An object that contains information about the channel.</p>
-    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::types::Channel> {
         self.channel.as_ref()
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    pub fn statistics(&self) -> std::option::Option<&crate::types::ChannelStatistics> {
+    pub fn statistics(&self) -> std::option::Option<& crate::types::ChannelStatistics> {
         self.statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
     pub fn builder() -> crate::operation::describe_channel::builders::DescribeChannelOutputBuilder {
@@ -49,8 +49,7 @@ impl DescribeChannelOutputBuilder {
     }
     /// <p>An object that contains information about the channel.</p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input;
-        self
+        self.channel = input; self
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
     pub fn statistics(mut self, input: crate::types::ChannelStatistics) -> Self {
@@ -58,28 +57,27 @@ impl DescribeChannelOutputBuilder {
         self
     }
     /// <p>Statistics about the channel. Included if the <code>includeStatistics</code> parameter is set to <code>true</code> in the request.</p>
-    pub fn set_statistics(
-        mut self,
-        input: std::option::Option<crate::types::ChannelStatistics>,
-    ) -> Self {
-        self.statistics = input;
-        self
+    pub fn set_statistics(mut self, input: std::option::Option<crate::types::ChannelStatistics>) -> Self {
+        self.statistics = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::operation::describe_channel::DescribeChannelOutput).
     pub fn build(self) -> crate::operation::describe_channel::DescribeChannelOutput {
         crate::operation::describe_channel::DescribeChannelOutput {
-            channel: self.channel,
-            statistics: self.statistics,
+            channel: self.channel
+            ,
+            statistics: self.statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

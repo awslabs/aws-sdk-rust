@@ -3,14 +3,14 @@
 /// <p>A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Timezone {
+pub struct Timezone  {
     /// <p>The name of the time zone.</p>
     #[doc(hidden)]
     pub timezone_name: std::option::Option<std::string::String>,
 }
 impl Timezone {
     /// <p>The name of the time zone.</p>
-    pub fn timezone_name(&self) -> std::option::Option<&str> {
+    pub fn timezone_name(&self) -> std::option::Option<& str> {
         self.timezone_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl TimezoneBuilder {
     }
     /// <p>The name of the time zone.</p>
     pub fn set_timezone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timezone_name = input;
-        self
+        self.timezone_name = input; self
     }
     /// Consumes the builder and constructs a [`Timezone`](crate::types::Timezone).
     pub fn build(self) -> crate::types::Timezone {
         crate::types::Timezone {
-            timezone_name: self.timezone_name,
+            timezone_name: self.timezone_name
+            ,
         }
     }
 }
+

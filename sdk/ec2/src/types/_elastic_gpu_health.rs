@@ -3,14 +3,14 @@
 /// <p>Describes the status of an Elastic Graphics accelerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ElasticGpuHealth {
+pub struct ElasticGpuHealth  {
     /// <p>The health status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ElasticGpuStatus>,
 }
 impl ElasticGpuHealth {
     /// <p>The health status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ElasticGpuStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ElasticGpuStatus> {
         self.status.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl ElasticGpuHealthBuilder {
         self
     }
     /// <p>The health status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ElasticGpuStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ElasticGpuStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ElasticGpuHealth`](crate::types::ElasticGpuHealth).
     pub fn build(self) -> crate::types::ElasticGpuHealth {
         crate::types::ElasticGpuHealth {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

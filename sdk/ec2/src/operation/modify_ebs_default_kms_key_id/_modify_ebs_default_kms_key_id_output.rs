@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyEbsDefaultKmsKeyIdOutput {
+pub struct ModifyEbsDefaultKmsKeyIdOutput  {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct ModifyEbsDefaultKmsKeyIdOutput {
 }
 impl ModifyEbsDefaultKmsKeyIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyEbsDefaultKmsKeyIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyEbsDefaultKmsKeyIdOutput {
     /// Creates a new builder-style object to manufacture [`ModifyEbsDefaultKmsKeyIdOutput`](crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput).
-    pub fn builder() -> crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdOutputBuilder{
+    pub fn builder() -> crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdOutputBuilder {
         crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl ModifyEbsDefaultKmsKeyIdOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyEbsDefaultKmsKeyIdOutput`](crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput {
+    pub fn build(self) -> crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput {
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput {
-            kms_key_id: self.kms_key_id,
+            kms_key_id: self.kms_key_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

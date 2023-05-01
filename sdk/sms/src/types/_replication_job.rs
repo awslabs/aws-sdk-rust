@@ -3,7 +3,7 @@
 /// <p>Represents a replication job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationJob {
+pub struct ReplicationJob  {
     /// <p>The ID of the replication job.</p>
     #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
@@ -52,13 +52,13 @@ pub struct ReplicationJob {
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
     #[doc(hidden)]
     pub encrypted: std::option::Option<bool>,
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -68,23 +68,23 @@ pub struct ReplicationJob {
 }
 impl ReplicationJob {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+    pub fn replication_job_id(&self) -> std::option::Option<& str> {
         self.replication_job_id.as_deref()
     }
     /// <p>The ID of the server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>The type of server.</p>
-    pub fn server_type(&self) -> std::option::Option<&crate::types::ServerType> {
+    pub fn server_type(&self) -> std::option::Option<& crate::types::ServerType> {
         self.server_type.as_ref()
     }
     /// <p>Information about the VM server.</p>
-    pub fn vm_server(&self) -> std::option::Option<&crate::types::VmServer> {
+    pub fn vm_server(&self) -> std::option::Option<& crate::types::VmServer> {
         self.vm_server.as_ref()
     }
     /// <p>The seed replication time.</p>
-    pub fn seed_replication_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seed_replication_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.seed_replication_time.as_ref()
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
@@ -96,33 +96,31 @@ impl ReplicationJob {
         self.run_once
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn next_replication_run_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn next_replication_run_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.next_replication_run_start_time.as_ref()
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn license_type(&self) -> std::option::Option<&crate::types::LicenseType> {
+    pub fn license_type(&self) -> std::option::Option<& crate::types::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> std::option::Option<& str> {
         self.role_name.as_deref()
     }
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
-    pub fn latest_ami_id(&self) -> std::option::Option<&str> {
+    pub fn latest_ami_id(&self) -> std::option::Option<& str> {
         self.latest_ami_id.as_deref()
     }
     /// <p>The state of the replication job.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ReplicationJobState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ReplicationJobState> {
         self.state.as_ref()
     }
     /// <p>The description of the current status of the replication job.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The description of the replication job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
@@ -133,19 +131,19 @@ impl ReplicationJob {
     pub fn encrypted(&self) -> std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Information about the replication runs.</p>
-    pub fn replication_run_list(&self) -> std::option::Option<&[crate::types::ReplicationRun]> {
+    pub fn replication_run_list(&self) -> std::option::Option<& [crate::types::ReplicationRun]> {
         self.replication_run_list.as_deref()
     }
 }
@@ -177,8 +175,7 @@ pub struct ReplicationJobBuilder {
     pub(crate) number_of_recent_amis_to_keep: std::option::Option<i32>,
     pub(crate) encrypted: std::option::Option<bool>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) replication_run_list:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationRun>>,
+    pub(crate) replication_run_list: std::option::Option<std::vec::Vec<crate::types::ReplicationRun>>,
 }
 impl ReplicationJobBuilder {
     /// <p>The ID of the replication job.</p>
@@ -187,12 +184,8 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_job_id = input;
-        self
+    pub fn set_replication_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_job_id = input; self
     }
     /// <p>The ID of the server.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,8 +194,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The ID of the server.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>The type of server.</p>
     pub fn server_type(mut self, input: crate::types::ServerType) -> Self {
@@ -211,8 +203,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The type of server.</p>
     pub fn set_server_type(mut self, input: std::option::Option<crate::types::ServerType>) -> Self {
-        self.server_type = input;
-        self
+        self.server_type = input; self
     }
     /// <p>Information about the VM server.</p>
     pub fn vm_server(mut self, input: crate::types::VmServer) -> Self {
@@ -221,8 +212,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>Information about the VM server.</p>
     pub fn set_vm_server(mut self, input: std::option::Option<crate::types::VmServer>) -> Self {
-        self.vm_server = input;
-        self
+        self.vm_server = input; self
     }
     /// <p>The seed replication time.</p>
     pub fn seed_replication_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -230,12 +220,8 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The seed replication time.</p>
-    pub fn set_seed_replication_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.seed_replication_time = input;
-        self
+    pub fn set_seed_replication_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.seed_replication_time = input; self
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
     pub fn frequency(mut self, input: i32) -> Self {
@@ -244,8 +230,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
     pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
-        self.frequency = input;
-        self
+        self.frequency = input; self
     }
     /// <p>Indicates whether to run the replication job one time.</p>
     pub fn run_once(mut self, input: bool) -> Self {
@@ -254,8 +239,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>Indicates whether to run the replication job one time.</p>
     pub fn set_run_once(mut self, input: std::option::Option<bool>) -> Self {
-        self.run_once = input;
-        self
+        self.run_once = input; self
     }
     /// <p>The start time of the next replication run.</p>
     pub fn next_replication_run_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -263,12 +247,8 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn set_next_replication_run_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.next_replication_run_start_time = input;
-        self
+    pub fn set_next_replication_run_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.next_replication_run_start_time = input; self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
@@ -276,12 +256,8 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(
-        mut self,
-        input: std::option::Option<crate::types::LicenseType>,
-    ) -> Self {
-        self.license_type = input;
-        self
+    pub fn set_license_type(mut self, input: std::option::Option<crate::types::LicenseType>) -> Self {
+        self.license_type = input; self
     }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
     pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -290,8 +266,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
     pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_name = input;
-        self
+        self.role_name = input; self
     }
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
     pub fn latest_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -300,8 +275,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The ID of the latest Amazon Machine Image (AMI).</p>
     pub fn set_latest_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.latest_ami_id = input;
-        self
+        self.latest_ami_id = input; self
     }
     /// <p>The state of the replication job.</p>
     pub fn state(mut self, input: crate::types::ReplicationJobState) -> Self {
@@ -309,12 +283,8 @@ impl ReplicationJobBuilder {
         self
     }
     /// <p>The state of the replication job.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::ReplicationJobState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::ReplicationJobState>) -> Self {
+        self.state = input; self
     }
     /// <p>The description of the current status of the replication job.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -323,8 +293,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The description of the current status of the replication job.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The description of the replication job.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -333,8 +302,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The description of the replication job.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
     pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
@@ -343,8 +311,7 @@ impl ReplicationJobBuilder {
     }
     /// <p>The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set to zero, meaning that all AMIs are kept.</p>
     pub fn set_number_of_recent_amis_to_keep(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_recent_amis_to_keep = input;
-        self
+        self.number_of_recent_amis_to_keep = input; self
     }
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -353,32 +320,30 @@ impl ReplicationJobBuilder {
     }
     /// <p>Indicates whether the replication job should produce encrypted AMIs.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.kms_key_id = Some(input.into());
         self
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p>
-    /// <ul>
-    /// <li> <p>KMS key ID</p> </li>
-    /// <li> <p>KMS key alias</p> </li>
-    /// <li> <p>ARN referring to the KMS key ID</p> </li>
-    /// <li> <p>ARN referring to the KMS key alias</p> </li>
-    /// </ul>
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following: </p> 
+    /// <ul> 
+    /// <li> <p>KMS key ID</p> </li> 
+    /// <li> <p>KMS key alias</p> </li> 
+    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
+    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
+    /// </ul> 
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Appends an item to `replication_run_list`.
     ///
@@ -387,39 +352,54 @@ impl ReplicationJobBuilder {
     /// <p>Information about the replication runs.</p>
     pub fn replication_run_list(mut self, input: crate::types::ReplicationRun) -> Self {
         let mut v = self.replication_run_list.unwrap_or_default();
-        v.push(input);
-        self.replication_run_list = Some(v);
-        self
+                        v.push(input);
+                        self.replication_run_list = Some(v);
+                        self
     }
     /// <p>Information about the replication runs.</p>
-    pub fn set_replication_run_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationRun>>,
-    ) -> Self {
-        self.replication_run_list = input;
-        self
+    pub fn set_replication_run_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplicationRun>>) -> Self {
+        self.replication_run_list = input; self
     }
     /// Consumes the builder and constructs a [`ReplicationJob`](crate::types::ReplicationJob).
     pub fn build(self) -> crate::types::ReplicationJob {
         crate::types::ReplicationJob {
-            replication_job_id: self.replication_job_id,
-            server_id: self.server_id,
-            server_type: self.server_type,
-            vm_server: self.vm_server,
-            seed_replication_time: self.seed_replication_time,
-            frequency: self.frequency,
-            run_once: self.run_once,
-            next_replication_run_start_time: self.next_replication_run_start_time,
-            license_type: self.license_type,
-            role_name: self.role_name,
-            latest_ami_id: self.latest_ami_id,
-            state: self.state,
-            status_message: self.status_message,
-            description: self.description,
-            number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep,
-            encrypted: self.encrypted,
-            kms_key_id: self.kms_key_id,
-            replication_run_list: self.replication_run_list,
+            replication_job_id: self.replication_job_id
+            ,
+            server_id: self.server_id
+            ,
+            server_type: self.server_type
+            ,
+            vm_server: self.vm_server
+            ,
+            seed_replication_time: self.seed_replication_time
+            ,
+            frequency: self.frequency
+            ,
+            run_once: self.run_once
+            ,
+            next_replication_run_start_time: self.next_replication_run_start_time
+            ,
+            license_type: self.license_type
+            ,
+            role_name: self.role_name
+            ,
+            latest_ami_id: self.latest_ami_id
+            ,
+            state: self.state
+            ,
+            status_message: self.status_message
+            ,
+            description: self.description
+            ,
+            number_of_recent_amis_to_keep: self.number_of_recent_amis_to_keep
+            ,
+            encrypted: self.encrypted
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            replication_run_list: self.replication_run_list
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsChannelOutput {
+pub struct UpdateApnsChannelOutput  {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_response: std::option::Option<crate::types::ApnsChannelResponse>,
@@ -10,19 +10,18 @@ pub struct UpdateApnsChannelOutput {
 }
 impl UpdateApnsChannelOutput {
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_response(&self) -> std::option::Option<&crate::types::ApnsChannelResponse> {
+    pub fn apns_channel_response(&self) -> std::option::Option<& crate::types::ApnsChannelResponse> {
         self.apns_channel_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateApnsChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateApnsChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsChannelOutput`](crate::operation::update_apns_channel::UpdateApnsChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::update_apns_channel::builders::UpdateApnsChannelOutputBuilder {
+    pub fn builder() -> crate::operation::update_apns_channel::builders::UpdateApnsChannelOutputBuilder {
         crate::operation::update_apns_channel::builders::UpdateApnsChannelOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateApnsChannelOutputBuilder {
         self
     }
     /// <p>Provides information about the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn set_apns_channel_response(
-        mut self,
-        input: std::option::Option<crate::types::ApnsChannelResponse>,
-    ) -> Self {
-        self.apns_channel_response = input;
-        self
+    pub fn set_apns_channel_response(mut self, input: std::option::Option<crate::types::ApnsChannelResponse>) -> Self {
+        self.apns_channel_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateApnsChannelOutput`](crate::operation::update_apns_channel::UpdateApnsChannelOutput).
     pub fn build(self) -> crate::operation::update_apns_channel::UpdateApnsChannelOutput {
         crate::operation::update_apns_channel::UpdateApnsChannelOutput {
-            apns_channel_response: self.apns_channel_response,
+            apns_channel_response: self.apns_channel_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

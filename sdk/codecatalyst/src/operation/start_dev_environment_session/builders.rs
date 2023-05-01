@@ -4,71 +4,49 @@ pub use crate::operation::start_dev_environment_session::_start_dev_environment_
 pub use crate::operation::start_dev_environment_session::_start_dev_environment_session_input::StartDevEnvironmentSessionInputBuilder;
 
 /// Fluent builder constructing a request to `StartDevEnvironmentSession`.
-///
+/// 
 /// <p>Starts a session for a specified Dev Environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDevEnvironmentSessionFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder
             }
-impl StartDevEnvironmentSessionFluentBuilder {
+impl StartDevEnvironmentSessionFluentBuilder  {
     /// Creates a new `StartDevEnvironmentSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSession,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::start_dev_environment_session::StartDevEnvironmentSession, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput, aws_smithy_http::result::SdkError<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());
@@ -100,19 +78,14 @@ impl StartDevEnvironmentSessionFluentBuilder {
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn session_configuration(
-        mut self,
-        input: crate::types::DevEnvironmentSessionConfiguration,
-    ) -> Self {
+    pub fn session_configuration(mut self, input: crate::types::DevEnvironmentSessionConfiguration) -> Self {
         self.inner = self.inner.session_configuration(input);
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn set_session_configuration(
-        mut self,
-        input: std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
-    ) -> Self {
+    pub fn set_session_configuration(mut self, input: std::option::Option<crate::types::DevEnvironmentSessionConfiguration>) -> Self {
         self.inner = self.inner.set_session_configuration(input);
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Settings that control the interval after which a channel is deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpirationSettings {
+pub struct ExpirationSettings  {
     /// <p>The period in days after which the system automatically deletes a channel.</p>
     #[doc(hidden)]
     pub expiration_days: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ExpirationSettings {
         self.expiration_days
     }
     /// <p>The conditions that must be met for a channel to expire.</p>
-    pub fn expiration_criterion(&self) -> std::option::Option<&crate::types::ExpirationCriterion> {
+    pub fn expiration_criterion(&self) -> std::option::Option<& crate::types::ExpirationCriterion> {
         self.expiration_criterion.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ExpirationSettingsBuilder {
     }
     /// <p>The period in days after which the system automatically deletes a channel.</p>
     pub fn set_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.expiration_days = input;
-        self
+        self.expiration_days = input; self
     }
     /// <p>The conditions that must be met for a channel to expire.</p>
     pub fn expiration_criterion(mut self, input: crate::types::ExpirationCriterion) -> Self {
@@ -52,18 +51,17 @@ impl ExpirationSettingsBuilder {
         self
     }
     /// <p>The conditions that must be met for a channel to expire.</p>
-    pub fn set_expiration_criterion(
-        mut self,
-        input: std::option::Option<crate::types::ExpirationCriterion>,
-    ) -> Self {
-        self.expiration_criterion = input;
-        self
+    pub fn set_expiration_criterion(mut self, input: std::option::Option<crate::types::ExpirationCriterion>) -> Self {
+        self.expiration_criterion = input; self
     }
     /// Consumes the builder and constructs a [`ExpirationSettings`](crate::types::ExpirationSettings).
     pub fn build(self) -> crate::types::ExpirationSettings {
         crate::types::ExpirationSettings {
-            expiration_days: self.expiration_days,
-            expiration_criterion: self.expiration_criterion,
+            expiration_days: self.expiration_days
+            ,
+            expiration_criterion: self.expiration_criterion
+            ,
         }
     }
 }
+

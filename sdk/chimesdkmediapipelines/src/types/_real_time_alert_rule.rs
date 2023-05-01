@@ -3,7 +3,7 @@
 /// <p>Specifies the words or phrases that trigger an alert.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RealTimeAlertRule {
+pub struct RealTimeAlertRule  {
     /// <p>The type of alert rule.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::RealTimeAlertRuleType>,
@@ -15,30 +15,23 @@ pub struct RealTimeAlertRule {
     pub sentiment_configuration: std::option::Option<crate::types::SentimentConfiguration>,
     /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
     #[doc(hidden)]
-    pub issue_detection_configuration:
-        std::option::Option<crate::types::IssueDetectionConfiguration>,
+    pub issue_detection_configuration: std::option::Option<crate::types::IssueDetectionConfiguration>,
 }
 impl RealTimeAlertRule {
     /// <p>The type of alert rule.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RealTimeAlertRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::RealTimeAlertRuleType> {
         self.r#type.as_ref()
     }
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
-    pub fn keyword_match_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::KeywordMatchConfiguration> {
+    pub fn keyword_match_configuration(&self) -> std::option::Option<& crate::types::KeywordMatchConfiguration> {
         self.keyword_match_configuration.as_ref()
     }
     /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
-    pub fn sentiment_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::SentimentConfiguration> {
+    pub fn sentiment_configuration(&self) -> std::option::Option<& crate::types::SentimentConfiguration> {
         self.sentiment_configuration.as_ref()
     }
     /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
-    pub fn issue_detection_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::IssueDetectionConfiguration> {
+    pub fn issue_detection_configuration(&self) -> std::option::Option<& crate::types::IssueDetectionConfiguration> {
         self.issue_detection_configuration.as_ref()
     }
 }
@@ -54,11 +47,9 @@ impl RealTimeAlertRule {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RealTimeAlertRuleBuilder {
     pub(crate) r#type: std::option::Option<crate::types::RealTimeAlertRuleType>,
-    pub(crate) keyword_match_configuration:
-        std::option::Option<crate::types::KeywordMatchConfiguration>,
+    pub(crate) keyword_match_configuration: std::option::Option<crate::types::KeywordMatchConfiguration>,
     pub(crate) sentiment_configuration: std::option::Option<crate::types::SentimentConfiguration>,
-    pub(crate) issue_detection_configuration:
-        std::option::Option<crate::types::IssueDetectionConfiguration>,
+    pub(crate) issue_detection_configuration: std::option::Option<crate::types::IssueDetectionConfiguration>,
 }
 impl RealTimeAlertRuleBuilder {
     /// <p>The type of alert rule.</p>
@@ -67,28 +58,17 @@ impl RealTimeAlertRuleBuilder {
         self
     }
     /// <p>The type of alert rule.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::RealTimeAlertRuleType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::RealTimeAlertRuleType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
-    pub fn keyword_match_configuration(
-        mut self,
-        input: crate::types::KeywordMatchConfiguration,
-    ) -> Self {
+    pub fn keyword_match_configuration(mut self, input: crate::types::KeywordMatchConfiguration) -> Self {
         self.keyword_match_configuration = Some(input);
         self
     }
     /// <p>Specifies the settings for matching the keywords in a real-time alert rule.</p>
-    pub fn set_keyword_match_configuration(
-        mut self,
-        input: std::option::Option<crate::types::KeywordMatchConfiguration>,
-    ) -> Self {
-        self.keyword_match_configuration = input;
-        self
+    pub fn set_keyword_match_configuration(mut self, input: std::option::Option<crate::types::KeywordMatchConfiguration>) -> Self {
+        self.keyword_match_configuration = input; self
     }
     /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
     pub fn sentiment_configuration(mut self, input: crate::types::SentimentConfiguration) -> Self {
@@ -96,36 +76,30 @@ impl RealTimeAlertRuleBuilder {
         self
     }
     /// <p>Specifies the settings for predicting sentiment in a real-time alert rule.</p>
-    pub fn set_sentiment_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SentimentConfiguration>,
-    ) -> Self {
-        self.sentiment_configuration = input;
-        self
+    pub fn set_sentiment_configuration(mut self, input: std::option::Option<crate::types::SentimentConfiguration>) -> Self {
+        self.sentiment_configuration = input; self
     }
     /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
-    pub fn issue_detection_configuration(
-        mut self,
-        input: crate::types::IssueDetectionConfiguration,
-    ) -> Self {
+    pub fn issue_detection_configuration(mut self, input: crate::types::IssueDetectionConfiguration) -> Self {
         self.issue_detection_configuration = Some(input);
         self
     }
     /// <p>Specifies the issue detection settings for a real-time alert rule.</p>
-    pub fn set_issue_detection_configuration(
-        mut self,
-        input: std::option::Option<crate::types::IssueDetectionConfiguration>,
-    ) -> Self {
-        self.issue_detection_configuration = input;
-        self
+    pub fn set_issue_detection_configuration(mut self, input: std::option::Option<crate::types::IssueDetectionConfiguration>) -> Self {
+        self.issue_detection_configuration = input; self
     }
     /// Consumes the builder and constructs a [`RealTimeAlertRule`](crate::types::RealTimeAlertRule).
     pub fn build(self) -> crate::types::RealTimeAlertRule {
         crate::types::RealTimeAlertRule {
-            r#type: self.r#type,
-            keyword_match_configuration: self.keyword_match_configuration,
-            sentiment_configuration: self.sentiment_configuration,
-            issue_detection_configuration: self.issue_detection_configuration,
+            r#type: self.r#type
+            ,
+            keyword_match_configuration: self.keyword_match_configuration
+            ,
+            sentiment_configuration: self.sentiment_configuration
+            ,
+            issue_detection_configuration: self.issue_detection_configuration
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheOutput {
+pub struct DescribeCacheOutput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -28,11 +28,11 @@ pub struct DescribeCacheOutput {
 }
 impl DescribeCacheOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn disk_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn disk_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.disk_ids.as_deref()
     }
     /// <p>The amount of cache in bytes allocated to a gateway.</p>
@@ -57,10 +57,10 @@ impl DescribeCacheOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeCacheOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeCacheOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheOutput`](crate::operation::describe_cache::DescribeCacheOutput).
     pub fn builder() -> crate::operation::describe_cache::builders::DescribeCacheOutputBuilder {
@@ -89,8 +89,7 @@ impl DescribeCacheOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// Appends an item to `disk_ids`.
     ///
@@ -99,17 +98,13 @@ impl DescribeCacheOutputBuilder {
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
     pub fn disk_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.disk_ids.unwrap_or_default();
-        v.push(input.into());
-        self.disk_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.disk_ids = Some(v);
+                        self
     }
     /// <p>An array of strings that identify disks that are to be configured as working storage. Each string has a minimum length of 1 and maximum length of 300. You can get the disk IDs from the <code>ListLocalDisks</code> API.</p>
-    pub fn set_disk_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.disk_ids = input;
-        self
+    pub fn set_disk_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.disk_ids = input; self
     }
     /// <p>The amount of cache in bytes allocated to a gateway.</p>
     pub fn cache_allocated_in_bytes(mut self, input: i64) -> Self {
@@ -118,8 +113,7 @@ impl DescribeCacheOutputBuilder {
     }
     /// <p>The amount of cache in bytes allocated to a gateway.</p>
     pub fn set_cache_allocated_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.cache_allocated_in_bytes = input;
-        self
+        self.cache_allocated_in_bytes = input; self
     }
     /// <p>Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
     pub fn cache_used_percentage(mut self, input: f64) -> Self {
@@ -128,8 +122,7 @@ impl DescribeCacheOutputBuilder {
     }
     /// <p>Percent use of the gateway's cache storage. This metric applies only to the gateway-cached volume setup. The sample is taken at the end of the reporting period.</p>
     pub fn set_cache_used_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.cache_used_percentage = input;
-        self
+        self.cache_used_percentage = input; self
     }
     /// <p>The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting period.</p>
     pub fn cache_dirty_percentage(mut self, input: f64) -> Self {
@@ -138,8 +131,7 @@ impl DescribeCacheOutputBuilder {
     }
     /// <p>The file share's contribution to the overall percentage of the gateway's cache that has not been persisted to Amazon Web Services. The sample is taken at the end of the reporting period.</p>
     pub fn set_cache_dirty_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.cache_dirty_percentage = input;
-        self
+        self.cache_dirty_percentage = input; self
     }
     /// <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
     pub fn cache_hit_percentage(mut self, input: f64) -> Self {
@@ -148,8 +140,7 @@ impl DescribeCacheOutputBuilder {
     }
     /// <p>Percent of application read operations from the file shares that are served from cache. The sample is taken at the end of the reporting period.</p>
     pub fn set_cache_hit_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.cache_hit_percentage = input;
-        self
+        self.cache_hit_percentage = input; self
     }
     /// <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
     pub fn cache_miss_percentage(mut self, input: f64) -> Self {
@@ -158,29 +149,41 @@ impl DescribeCacheOutputBuilder {
     }
     /// <p>Percent of application read operations from the file shares that are not served from cache. The sample is taken at the end of the reporting period.</p>
     pub fn set_cache_miss_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.cache_miss_percentage = input;
-        self
+        self.cache_miss_percentage = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeCacheOutput`](crate::operation::describe_cache::DescribeCacheOutput).
     pub fn build(self) -> crate::operation::describe_cache::DescribeCacheOutput {
         crate::operation::describe_cache::DescribeCacheOutput {
-            gateway_arn: self.gateway_arn,
-            disk_ids: self.disk_ids,
-            cache_allocated_in_bytes: self.cache_allocated_in_bytes.unwrap_or_default(),
-            cache_used_percentage: self.cache_used_percentage.unwrap_or_default(),
-            cache_dirty_percentage: self.cache_dirty_percentage.unwrap_or_default(),
-            cache_hit_percentage: self.cache_hit_percentage.unwrap_or_default(),
-            cache_miss_percentage: self.cache_miss_percentage.unwrap_or_default(),
+            gateway_arn: self.gateway_arn
+            ,
+            disk_ids: self.disk_ids
+            ,
+            cache_allocated_in_bytes: self.cache_allocated_in_bytes
+                .unwrap_or_default()
+            ,
+            cache_used_percentage: self.cache_used_percentage
+                .unwrap_or_default()
+            ,
+            cache_dirty_percentage: self.cache_dirty_percentage
+                .unwrap_or_default()
+            ,
+            cache_hit_percentage: self.cache_hit_percentage
+                .unwrap_or_default()
+            ,
+            cache_miss_percentage: self.cache_miss_percentage
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

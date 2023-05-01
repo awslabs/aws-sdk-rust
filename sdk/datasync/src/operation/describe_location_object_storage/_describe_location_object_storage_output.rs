@@ -3,7 +3,7 @@
 /// <p>DescribeLocationObjectStorageResponse</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationObjectStorageOutput {
+pub struct DescribeLocationObjectStorageOutput  {
     /// <p>The ARN of the object storage system location.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -32,15 +32,15 @@ pub struct DescribeLocationObjectStorageOutput {
 }
 impl DescribeLocationObjectStorageOutput {
     /// <p>The ARN of the object storage system location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the object storage system location.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
-    pub fn access_key(&self) -> std::option::Option<&str> {
+    pub fn access_key(&self) -> std::option::Option<& str> {
         self.access_key.as_deref()
     }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
@@ -48,32 +48,30 @@ impl DescribeLocationObjectStorageOutput {
         self.server_port
     }
     /// <p>The protocol that your object storage system uses to communicate.</p>
-    pub fn server_protocol(
-        &self,
-    ) -> std::option::Option<&crate::types::ObjectStorageServerProtocol> {
+    pub fn server_protocol(&self) -> std::option::Option<& crate::types::ObjectStorageServerProtocol> {
         self.server_protocol.as_ref()
     }
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The time that the location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
-    pub fn server_certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn server_certificate(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.server_certificate.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLocationObjectStorageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeLocationObjectStorageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationObjectStorageOutput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput).
-    pub fn builder() -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageOutputBuilder{
+    pub fn builder() -> crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageOutputBuilder {
         crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageOutputBuilder::default()
     }
 }
@@ -100,8 +98,7 @@ impl DescribeLocationObjectStorageOutputBuilder {
     }
     /// <p>The ARN of the object storage system location.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// <p>The URL of the object storage system location.</p>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +107,7 @@ impl DescribeLocationObjectStorageOutputBuilder {
     }
     /// <p>The URL of the object storage system location.</p>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_uri = input;
-        self
+        self.location_uri = input; self
     }
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +116,7 @@ impl DescribeLocationObjectStorageOutputBuilder {
     }
     /// <p>The access key (for example, a user name) required to authenticate with the object storage system.</p>
     pub fn set_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key = input;
-        self
+        self.access_key = input; self
     }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn server_port(mut self, input: i32) -> Self {
@@ -130,8 +125,7 @@ impl DescribeLocationObjectStorageOutputBuilder {
     }
     /// <p>The port that your object storage server accepts inbound network traffic on (for example, port 443).</p>
     pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.server_port = input;
-        self
+        self.server_port = input; self
     }
     /// <p>The protocol that your object storage system uses to communicate.</p>
     pub fn server_protocol(mut self, input: crate::types::ObjectStorageServerProtocol) -> Self {
@@ -139,12 +133,8 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self
     }
     /// <p>The protocol that your object storage system uses to communicate.</p>
-    pub fn set_server_protocol(
-        mut self,
-        input: std::option::Option<crate::types::ObjectStorageServerProtocol>,
-    ) -> Self {
-        self.server_protocol = input;
-        self
+    pub fn set_server_protocol(mut self, input: std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
+        self.server_protocol = input; self
     }
     /// Appends an item to `agent_arns`.
     ///
@@ -153,17 +143,13 @@ impl DescribeLocationObjectStorageOutputBuilder {
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
     pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
-        v.push(input.into());
-        self.agent_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.agent_arns = Some(v);
+                        self
     }
     /// <p>The ARNs of the DataSync agents that can securely connect with your location.</p>
-    pub fn set_agent_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.agent_arns = input;
-        self
+    pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.agent_arns = input; self
     }
     /// <p>The time that the location was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -171,12 +157,8 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self
     }
     /// <p>The time that the location was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
     pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -184,37 +166,39 @@ impl DescribeLocationObjectStorageOutputBuilder {
         self
     }
     /// <p>The self-signed certificate that DataSync uses to securely authenticate with your object storage system.</p>
-    pub fn set_server_certificate(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.server_certificate = input;
-        self
+    pub fn set_server_certificate(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.server_certificate = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeLocationObjectStorageOutput`](crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput
-    {
+    pub fn build(self) -> crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput {
         crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput {
-            location_arn: self.location_arn,
-            location_uri: self.location_uri,
-            access_key: self.access_key,
-            server_port: self.server_port,
-            server_protocol: self.server_protocol,
-            agent_arns: self.agent_arns,
-            creation_time: self.creation_time,
-            server_certificate: self.server_certificate,
+            location_arn: self.location_arn
+            ,
+            location_uri: self.location_uri
+            ,
+            access_key: self.access_key
+            ,
+            server_port: self.server_port
+            ,
+            server_protocol: self.server_protocol
+            ,
+            agent_arns: self.agent_arns
+            ,
+            creation_time: self.creation_time
+            ,
+            server_certificate: self.server_certificate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

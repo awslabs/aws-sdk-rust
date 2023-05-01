@@ -2,14 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIndexInput {
+pub struct CreateIndexInput  {
     /// <p>The ARN of the directory where the index should be created.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     #[doc(hidden)]
-    pub ordered_indexed_attribute_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeKey>>,
+    pub ordered_indexed_attribute_list: std::option::Option<std::vec::Vec<crate::types::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     #[doc(hidden)]
     pub is_unique: std::option::Option<bool>,
@@ -22,13 +21,11 @@ pub struct CreateIndexInput {
 }
 impl CreateIndexInput {
     /// <p>The ARN of the directory where the index should be created.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn ordered_indexed_attribute_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::AttributeKey]> {
+    pub fn ordered_indexed_attribute_list(&self) -> std::option::Option<& [crate::types::AttributeKey]> {
         self.ordered_indexed_attribute_list.as_deref()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
@@ -36,11 +33,11 @@ impl CreateIndexInput {
         self.is_unique
     }
     /// <p>A reference to the parent object that contains the index object.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of the link between the parent object and the index object.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
 }
@@ -56,8 +53,7 @@ impl CreateIndexInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateIndexInputBuilder {
     pub(crate) directory_arn: std::option::Option<std::string::String>,
-    pub(crate) ordered_indexed_attribute_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeKey>>,
+    pub(crate) ordered_indexed_attribute_list: std::option::Option<std::vec::Vec<crate::types::AttributeKey>>,
     pub(crate) is_unique: std::option::Option<bool>,
     pub(crate) parent_reference: std::option::Option<crate::types::ObjectReference>,
     pub(crate) link_name: std::option::Option<std::string::String>,
@@ -70,8 +66,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>The ARN of the directory where the index should be created.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// Appends an item to `ordered_indexed_attribute_list`.
     ///
@@ -80,17 +75,13 @@ impl CreateIndexInputBuilder {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     pub fn ordered_indexed_attribute_list(mut self, input: crate::types::AttributeKey) -> Self {
         let mut v = self.ordered_indexed_attribute_list.unwrap_or_default();
-        v.push(input);
-        self.ordered_indexed_attribute_list = Some(v);
-        self
+                        v.push(input);
+                        self.ordered_indexed_attribute_list = Some(v);
+                        self
     }
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn set_ordered_indexed_attribute_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeKey>>,
-    ) -> Self {
-        self.ordered_indexed_attribute_list = input;
-        self
+    pub fn set_ordered_indexed_attribute_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeKey>>) -> Self {
+        self.ordered_indexed_attribute_list = input; self
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub fn is_unique(mut self, input: bool) -> Self {
@@ -99,8 +90,7 @@ impl CreateIndexInputBuilder {
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     pub fn set_is_unique(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_unique = input;
-        self
+        self.is_unique = input; self
     }
     /// <p>A reference to the parent object that contains the index object.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -108,12 +98,8 @@ impl CreateIndexInputBuilder {
         self
     }
     /// <p>A reference to the parent object that contains the index object.</p>
-    pub fn set_parent_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.parent_reference = input;
-        self
+    pub fn set_parent_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.parent_reference = input; self
     }
     /// <p>The name of the link between the parent object and the index object.</p>
     pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,22 +108,24 @@ impl CreateIndexInputBuilder {
     }
     /// <p>The name of the link between the parent object and the index object.</p>
     pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.link_name = input;
-        self
+        self.link_name = input; self
     }
     /// Consumes the builder and constructs a [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_index::CreateIndexInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_index::CreateIndexInput {
-            directory_arn: self.directory_arn,
-            ordered_indexed_attribute_list: self.ordered_indexed_attribute_list,
-            is_unique: self.is_unique,
-            parent_reference: self.parent_reference,
-            link_name: self.link_name,
-        })
+    pub fn build(self) -> Result<crate::operation::create_index::CreateIndexInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_index::CreateIndexInput {
+                directory_arn: self.directory_arn
+                ,
+                ordered_indexed_attribute_list: self.ordered_indexed_attribute_list
+                ,
+                is_unique: self.is_unique
+                ,
+                parent_reference: self.parent_reference
+                ,
+                link_name: self.link_name
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInsightRulesInput {
+pub struct DescribeInsightRulesInput  {
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeInsightRulesInput {
 }
 impl DescribeInsightRulesInput {
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
@@ -22,8 +22,7 @@ impl DescribeInsightRulesInput {
 }
 impl DescribeInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`DescribeInsightRulesInput`](crate::operation::describe_insight_rules::DescribeInsightRulesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
+    pub fn builder() -> crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder {
         crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeInsightRulesInputBuilder {
     }
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl DescribeInsightRulesInputBuilder {
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeInsightRulesInput`](crate::operation::describe_insight_rules::DescribeInsightRulesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_insight_rules::DescribeInsightRulesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_insight_rules::DescribeInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_insight_rules::DescribeInsightRulesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

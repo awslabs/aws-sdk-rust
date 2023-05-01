@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssignTapePoolInput {
+pub struct AssignTapePoolInput  {
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
     #[doc(hidden)]
     pub tape_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
-    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
+    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p> 
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     #[doc(hidden)]
     pub bypass_governance_retention: bool,
 }
 impl AssignTapePoolInput {
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> std::option::Option<& str> {
         self.tape_arn.as_deref()
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
-    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
+    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p> 
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn bypass_governance_retention(&self) -> bool {
         self.bypass_governance_retention
@@ -52,8 +52,7 @@ impl AssignTapePoolInputBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) of the virtual tape that you want to add to the tape pool.</p>
     pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tape_arn = input;
-        self
+        self.tape_arn = input; self
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,32 +61,32 @@ impl AssignTapePoolInputBuilder {
     }
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input;
-        self
+        self.pool_id = input; self
     }
-    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
+    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p> 
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
         self.bypass_governance_retention = Some(input);
         self
     }
-    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p>
+    /// <p>Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This parameter is set to true by default for calls from the console.</p> 
     /// <p>Valid values: <code>TRUE</code> | <code>FALSE</code> </p>
     pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
-        self.bypass_governance_retention = input;
-        self
+        self.bypass_governance_retention = input; self
     }
     /// Consumes the builder and constructs a [`AssignTapePoolInput`](crate::operation::assign_tape_pool::AssignTapePoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::assign_tape_pool::AssignTapePoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::assign_tape_pool::AssignTapePoolInput {
-            tape_arn: self.tape_arn,
-            pool_id: self.pool_id,
-            bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::assign_tape_pool::AssignTapePoolInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::assign_tape_pool::AssignTapePoolInput {
+                tape_arn: self.tape_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                bypass_governance_retention: self.bypass_governance_retention
+                    .unwrap_or_default()
+                ,
+            }
+        )
     }
 }
+

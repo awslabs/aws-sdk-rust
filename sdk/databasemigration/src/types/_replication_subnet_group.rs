@@ -3,7 +3,7 @@
 /// <p>Describes a subnet group in response to a request by the <code>DescribeReplicationSubnetGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationSubnetGroup {
+pub struct ReplicationSubnetGroup  {
     /// <p>The identifier of the replication instance subnet group.</p>
     #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ReplicationSubnetGroup {
 }
 impl ReplicationSubnetGroup {
     /// <p>The identifier of the replication instance subnet group.</p>
-    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<& str> {
         self.replication_subnet_group_identifier.as_deref()
     }
     /// <p>A description for the replication subnet group.</p>
-    pub fn replication_subnet_group_description(&self) -> std::option::Option<&str> {
+    pub fn replication_subnet_group_description(&self) -> std::option::Option<& str> {
         self.replication_subnet_group_description.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The status of the subnet group.</p>
-    pub fn subnet_group_status(&self) -> std::option::Option<&str> {
+    pub fn subnet_group_status(&self) -> std::option::Option<& str> {
         self.subnet_group_status.as_deref()
     }
     /// <p>The subnets that are in the subnet group.</p>
-    pub fn subnets(&self) -> std::option::Option<&[crate::types::Subnet]> {
+    pub fn subnets(&self) -> std::option::Option<& [crate::types::Subnet]> {
         self.subnets.as_deref()
     }
     /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    pub fn supported_network_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_network_types(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_network_types.as_deref()
     }
 }
@@ -69,36 +69,22 @@ pub struct ReplicationSubnetGroupBuilder {
 }
 impl ReplicationSubnetGroupBuilder {
     /// <p>The identifier of the replication instance subnet group.</p>
-    pub fn replication_subnet_group_identifier(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.replication_subnet_group_identifier = Some(input.into());
         self
     }
     /// <p>The identifier of the replication instance subnet group.</p>
-    pub fn set_replication_subnet_group_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_subnet_group_identifier = input;
-        self
+    pub fn set_replication_subnet_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_subnet_group_identifier = input; self
     }
     /// <p>A description for the replication subnet group.</p>
-    pub fn replication_subnet_group_description(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_description(mut self, input: impl Into<std::string::String>) -> Self {
         self.replication_subnet_group_description = Some(input.into());
         self
     }
     /// <p>A description for the replication subnet group.</p>
-    pub fn set_replication_subnet_group_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_subnet_group_description = input;
-        self
+    pub fn set_replication_subnet_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_subnet_group_description = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +93,7 @@ impl ReplicationSubnetGroupBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The status of the subnet group.</p>
     pub fn subnet_group_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,12 +101,8 @@ impl ReplicationSubnetGroupBuilder {
         self
     }
     /// <p>The status of the subnet group.</p>
-    pub fn set_subnet_group_status(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.subnet_group_status = input;
-        self
+    pub fn set_subnet_group_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.subnet_group_status = input; self
     }
     /// Appends an item to `subnets`.
     ///
@@ -130,17 +111,13 @@ impl ReplicationSubnetGroupBuilder {
     /// <p>The subnets that are in the subnet group.</p>
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input);
-        self.subnets = Some(v);
-        self
+                        v.push(input);
+                        self.subnets = Some(v);
+                        self
     }
     /// <p>The subnets that are in the subnet group.</p>
-    pub fn set_subnets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subnet>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subnet>>) -> Self {
+        self.subnets = input; self
     }
     /// Appends an item to `supported_network_types`.
     ///
@@ -149,27 +126,30 @@ impl ReplicationSubnetGroupBuilder {
     /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
     pub fn supported_network_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
-        v.push(input.into());
-        self.supported_network_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.supported_network_types = Some(v);
+                        self
     }
     /// <p>The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.</p>
-    pub fn set_supported_network_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.supported_network_types = input;
-        self
+    pub fn set_supported_network_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.supported_network_types = input; self
     }
     /// Consumes the builder and constructs a [`ReplicationSubnetGroup`](crate::types::ReplicationSubnetGroup).
     pub fn build(self) -> crate::types::ReplicationSubnetGroup {
         crate::types::ReplicationSubnetGroup {
-            replication_subnet_group_identifier: self.replication_subnet_group_identifier,
-            replication_subnet_group_description: self.replication_subnet_group_description,
-            vpc_id: self.vpc_id,
-            subnet_group_status: self.subnet_group_status,
-            subnets: self.subnets,
-            supported_network_types: self.supported_network_types,
+            replication_subnet_group_identifier: self.replication_subnet_group_identifier
+            ,
+            replication_subnet_group_description: self.replication_subnet_group_description
+            ,
+            vpc_id: self.vpc_id
+            ,
+            subnet_group_status: self.subnet_group_status
+            ,
+            subnets: self.subnets
+            ,
+            supported_network_types: self.supported_network_types
+            ,
         }
     }
 }
+

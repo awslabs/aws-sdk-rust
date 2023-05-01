@@ -3,7 +3,7 @@
 /// <p>A statistical summary of the bot recommendation results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotRecommendationResultStatistics {
+pub struct BotRecommendationResultStatistics  {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
     #[doc(hidden)]
     pub intents: std::option::Option<crate::types::IntentStatistics>,
@@ -13,11 +13,11 @@ pub struct BotRecommendationResultStatistics {
 }
 impl BotRecommendationResultStatistics {
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
-    pub fn intents(&self) -> std::option::Option<&crate::types::IntentStatistics> {
+    pub fn intents(&self) -> std::option::Option<& crate::types::IntentStatistics> {
         self.intents.as_ref()
     }
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
-    pub fn slot_types(&self) -> std::option::Option<&crate::types::SlotTypeStatistics> {
+    pub fn slot_types(&self) -> std::option::Option<& crate::types::SlotTypeStatistics> {
         self.slot_types.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl BotRecommendationResultStatisticsBuilder {
         self
     }
     /// <p>Statistical information about about the intents associated with the bot recommendation results.</p>
-    pub fn set_intents(
-        mut self,
-        input: std::option::Option<crate::types::IntentStatistics>,
-    ) -> Self {
-        self.intents = input;
-        self
+    pub fn set_intents(mut self, input: std::option::Option<crate::types::IntentStatistics>) -> Self {
+        self.intents = input; self
     }
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
     pub fn slot_types(mut self, input: crate::types::SlotTypeStatistics) -> Self {
@@ -55,18 +51,17 @@ impl BotRecommendationResultStatisticsBuilder {
         self
     }
     /// <p>Statistical information about the slot types associated with the bot recommendation results.</p>
-    pub fn set_slot_types(
-        mut self,
-        input: std::option::Option<crate::types::SlotTypeStatistics>,
-    ) -> Self {
-        self.slot_types = input;
-        self
+    pub fn set_slot_types(mut self, input: std::option::Option<crate::types::SlotTypeStatistics>) -> Self {
+        self.slot_types = input; self
     }
     /// Consumes the builder and constructs a [`BotRecommendationResultStatistics`](crate::types::BotRecommendationResultStatistics).
     pub fn build(self) -> crate::types::BotRecommendationResultStatistics {
         crate::types::BotRecommendationResultStatistics {
-            intents: self.intents,
-            slot_types: self.slot_types,
+            intents: self.intents
+            ,
+            slot_types: self.slot_types
+            ,
         }
     }
 }
+

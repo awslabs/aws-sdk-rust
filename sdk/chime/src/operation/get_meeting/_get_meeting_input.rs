@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMeetingInput {
+pub struct GetMeetingInput  {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
 }
 impl GetMeetingInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<&str> {
+    pub fn meeting_id(&self) -> std::option::Option<& str> {
         self.meeting_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetMeetingInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_id = input;
-        self
+        self.meeting_id = input; self
     }
     /// Consumes the builder and constructs a [`GetMeetingInput`](crate::operation::get_meeting::GetMeetingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_meeting::GetMeetingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_meeting::GetMeetingInput {
-            meeting_id: self.meeting_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_meeting::GetMeetingInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_meeting::GetMeetingInput {
+                meeting_id: self.meeting_id
+                ,
+            }
+        )
     }
 }
+

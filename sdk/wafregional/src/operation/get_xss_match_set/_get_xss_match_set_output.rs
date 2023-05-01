@@ -3,33 +3,33 @@
 /// <p>The response to a <code>GetXssMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetXssMatchSetOutput {
-    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+pub struct GetXssMatchSetOutput  {
+    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub xss_match_set: std::option::Option<crate::types::XssMatchSet>,
     _request_id: Option<String>,
 }
 impl GetXssMatchSetOutput {
-    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn xss_match_set(&self) -> std::option::Option<&crate::types::XssMatchSet> {
+    pub fn xss_match_set(&self) -> std::option::Option<& crate::types::XssMatchSet> {
         self.xss_match_set.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetXssMatchSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetXssMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`GetXssMatchSetOutput`](crate::operation::get_xss_match_set::GetXssMatchSetOutput).
     pub fn builder() -> crate::operation::get_xss_match_set::builders::GetXssMatchSetOutputBuilder {
@@ -45,43 +45,41 @@ pub struct GetXssMatchSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetXssMatchSetOutputBuilder {
-    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
     pub fn xss_match_set(mut self, input: crate::types::XssMatchSet) -> Self {
         self.xss_match_set = Some(input);
         self
     }
-    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
-    /// <ul>
-    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li>
-    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
-    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
+    /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>XssMatchSet</code>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code> objects</p> </li> 
+    /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li> 
+    /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li> 
     /// </ul>
-    pub fn set_xss_match_set(
-        mut self,
-        input: std::option::Option<crate::types::XssMatchSet>,
-    ) -> Self {
-        self.xss_match_set = input;
-        self
+    pub fn set_xss_match_set(mut self, input: std::option::Option<crate::types::XssMatchSet>) -> Self {
+        self.xss_match_set = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetXssMatchSetOutput`](crate::operation::get_xss_match_set::GetXssMatchSetOutput).
     pub fn build(self) -> crate::operation::get_xss_match_set::GetXssMatchSetOutput {
         crate::operation::get_xss_match_set::GetXssMatchSetOutput {
-            xss_match_set: self.xss_match_set,
+            xss_match_set: self.xss_match_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

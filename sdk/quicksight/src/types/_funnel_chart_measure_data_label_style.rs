@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let funnelchartmeasuredatalabelstyle = unimplemented!();
 /// match funnelchartmeasuredatalabelstyle {
@@ -33,22 +33,14 @@
 /// Specifically, when `funnelchartmeasuredatalabelstyle` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FunnelChartMeasureDataLabelStyle::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FunnelChartMeasureDataLabelStyle {
     #[allow(missing_docs)] // documentation missing in model
     PercentageByFirstStage,
@@ -61,66 +53,47 @@ pub enum FunnelChartMeasureDataLabelStyle {
     #[allow(missing_docs)] // documentation missing in model
     ValueOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FunnelChartMeasureDataLabelStyle {
-    fn from(s: &str) -> Self {
-        match s {
-            "PERCENTAGE_BY_FIRST_STAGE" => FunnelChartMeasureDataLabelStyle::PercentageByFirstStage,
-            "PERCENTAGE_BY_PREVIOUS_STAGE" => {
-                FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage
+                fn from(s: &str) -> Self {
+                    match s {
+                        "PERCENTAGE_BY_FIRST_STAGE" => FunnelChartMeasureDataLabelStyle::PercentageByFirstStage,
+"PERCENTAGE_BY_PREVIOUS_STAGE" => FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage,
+"VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" => FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage,
+"VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE" => FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage,
+"VALUE_ONLY" => FunnelChartMeasureDataLabelStyle::ValueOnly,
+other => FunnelChartMeasureDataLabelStyle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE" => {
-                FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage
-            }
-            "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE" => {
-                FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage
-            }
-            "VALUE_ONLY" => FunnelChartMeasureDataLabelStyle::ValueOnly,
-            other => FunnelChartMeasureDataLabelStyle::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
 impl std::str::FromStr for FunnelChartMeasureDataLabelStyle {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunnelChartMeasureDataLabelStyle::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FunnelChartMeasureDataLabelStyle::from(s))
+                }
+            }
 impl FunnelChartMeasureDataLabelStyle {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FunnelChartMeasureDataLabelStyle::PercentageByFirstStage => "PERCENTAGE_BY_FIRST_STAGE",
-            FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage => {
-                "PERCENTAGE_BY_PREVIOUS_STAGE"
-            }
-            FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage => {
-                "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE"
-            }
-            FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage => {
-                "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE"
-            }
-            FunnelChartMeasureDataLabelStyle::ValueOnly => "VALUE_ONLY",
-            FunnelChartMeasureDataLabelStyle::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "PERCENTAGE_BY_FIRST_STAGE",
-            "PERCENTAGE_BY_PREVIOUS_STAGE",
-            "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE",
-            "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE",
-            "VALUE_ONLY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FunnelChartMeasureDataLabelStyle::PercentageByFirstStage => "PERCENTAGE_BY_FIRST_STAGE",
+    FunnelChartMeasureDataLabelStyle::PercentageByPreviousStage => "PERCENTAGE_BY_PREVIOUS_STAGE",
+    FunnelChartMeasureDataLabelStyle::ValueAndPercentageByFirstStage => "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE",
+    FunnelChartMeasureDataLabelStyle::ValueAndPercentageByPreviousStage => "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE",
+    FunnelChartMeasureDataLabelStyle::ValueOnly => "VALUE_ONLY",
+    FunnelChartMeasureDataLabelStyle::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["PERCENTAGE_BY_FIRST_STAGE", "PERCENTAGE_BY_PREVIOUS_STAGE", "VALUE_AND_PERCENTAGE_BY_FIRST_STAGE", "VALUE_AND_PERCENTAGE_BY_PREVIOUS_STAGE", "VALUE_ONLY"]
+                }
+            }
 impl AsRef<str> for FunnelChartMeasureDataLabelStyle {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

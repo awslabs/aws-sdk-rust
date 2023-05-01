@@ -3,21 +3,21 @@
 /// <p>Represents a request to list the existing custom verification email templates for your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomVerificationEmailTemplatesInput {
+pub struct ListCustomVerificationEmailTemplatesInput  {
     /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
 }
 impl ListCustomVerificationEmailTemplatesInput {
     /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     pub fn page_size(&self) -> std::option::Option<i32> {
         self.page_size
@@ -25,7 +25,7 @@ impl ListCustomVerificationEmailTemplatesInput {
 }
 impl ListCustomVerificationEmailTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
-    pub fn builder() -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesInputBuilder{
+    pub fn builder() -> crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesInputBuilder {
         crate::operation::list_custom_verification_email_templates::builders::ListCustomVerificationEmailTemplatesInputBuilder::default()
     }
 }
@@ -45,23 +45,21 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListCustomVerificationEmailTemplates</code> to indicate the position in the list of custom verification email templates.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
-    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.page_size = Some(input);
         self
     }
-    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
+    /// <p>The number of results to show in a single call to <code>ListCustomVerificationEmailTemplates</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p> 
     /// <p>The value you specify has to be at least 1, and can be no more than 50.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// Consumes the builder and constructs a [`ListCustomVerificationEmailTemplatesInput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput).
-    pub fn build(self) -> Result<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesInput {
                 next_token: self.next_token
@@ -72,3 +70,4 @@ impl ListCustomVerificationEmailTemplatesInputBuilder {
         )
     }
 }
+

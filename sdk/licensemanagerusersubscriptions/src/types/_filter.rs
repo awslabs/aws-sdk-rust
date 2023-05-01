@@ -3,7 +3,7 @@
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The name of an attribute to use as a filter.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of an attribute to use as a filter.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> std::option::Option<& str> {
         self.attribute.as_deref()
     }
     /// <p>The type of search (For example, eq, geq, leq)</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>Value of the filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl FilterBuilder {
     }
     /// <p>The name of an attribute to use as a filter.</p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The type of search (For example, eq, geq, leq)</p>
     pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FilterBuilder {
     }
     /// <p>The type of search (For example, eq, geq, leq)</p>
     pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>Value of the filter.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl FilterBuilder {
     }
     /// <p>Value of the filter.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            attribute: self.attribute,
-            operation: self.operation,
-            value: self.value,
+            attribute: self.attribute
+            ,
+            operation: self.operation
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

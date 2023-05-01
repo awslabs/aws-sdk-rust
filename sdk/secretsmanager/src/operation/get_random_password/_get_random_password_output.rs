@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetRandomPasswordOutput {
+pub struct GetRandomPasswordOutput  {
     /// <p>A string with the password.</p>
     #[doc(hidden)]
     pub random_password: std::option::Option<std::string::String>,
@@ -10,11 +10,11 @@ pub struct GetRandomPasswordOutput {
 }
 impl GetRandomPasswordOutput {
     /// <p>A string with the password.</p>
-    pub fn random_password(&self) -> std::option::Option<&str> {
+    pub fn random_password(&self) -> std::option::Option<& str> {
         self.random_password.as_deref()
     }
 }
-impl std::fmt::Debug for GetRandomPasswordOutput {
+impl  std::fmt::Debug for GetRandomPasswordOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetRandomPasswordOutput");
         formatter.field("random_password", &"*** Sensitive Data Redacted ***");
@@ -23,14 +23,13 @@ impl std::fmt::Debug for GetRandomPasswordOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetRandomPasswordOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRandomPasswordOutput {
     /// Creates a new builder-style object to manufacture [`GetRandomPasswordOutput`](crate::operation::get_random_password::GetRandomPasswordOutput).
-    pub fn builder(
-    ) -> crate::operation::get_random_password::builders::GetRandomPasswordOutputBuilder {
+    pub fn builder() -> crate::operation::get_random_password::builders::GetRandomPasswordOutputBuilder {
         crate::operation::get_random_password::builders::GetRandomPasswordOutputBuilder::default()
     }
 }
@@ -50,22 +49,22 @@ impl GetRandomPasswordOutputBuilder {
     }
     /// <p>A string with the password.</p>
     pub fn set_random_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.random_password = input;
-        self
+        self.random_password = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRandomPasswordOutput`](crate::operation::get_random_password::GetRandomPasswordOutput).
     pub fn build(self) -> crate::operation::get_random_password::GetRandomPasswordOutput {
         crate::operation::get_random_password::GetRandomPasswordOutput {
-            random_password: self.random_password,
+            random_password: self.random_password
+            ,
             _request_id: self._request_id,
         }
     }
@@ -78,3 +77,4 @@ impl std::fmt::Debug for GetRandomPasswordOutputBuilder {
         formatter.finish()
     }
 }
+

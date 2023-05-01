@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFeatureGroupsInput {
+pub struct ListFeatureGroupsInput  {
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
     #[doc(hidden)]
     pub name_contains: std::option::Option<std::string::String>,
@@ -33,35 +33,31 @@ pub struct ListFeatureGroupsInput {
 }
 impl ListFeatureGroupsInput {
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
-    pub fn name_contains(&self) -> std::option::Option<&str> {
+    pub fn name_contains(&self) -> std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    pub fn feature_group_status_equals(
-        &self,
-    ) -> std::option::Option<&crate::types::FeatureGroupStatus> {
+    pub fn feature_group_status_equals(&self) -> std::option::Option<& crate::types::FeatureGroupStatus> {
         self.feature_group_status_equals.as_ref()
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn offline_store_status_equals(
-        &self,
-    ) -> std::option::Option<&crate::types::OfflineStoreStatusValue> {
+    pub fn offline_store_status_equals(&self) -> std::option::Option<& crate::types::OfflineStoreStatusValue> {
         self.offline_store_status_equals.as_ref()
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The order in which feature groups are listed.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::FeatureGroupSortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::FeatureGroupSortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value on which the feature group list is sorted.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::FeatureGroupSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::FeatureGroupSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
@@ -69,14 +65,13 @@ impl ListFeatureGroupsInput {
         self.max_results
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListFeatureGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListFeatureGroupsInput`](crate::operation::list_feature_groups::ListFeatureGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {
+    pub fn builder() -> crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder {
         crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder::default()
     }
 }
@@ -87,8 +82,7 @@ impl ListFeatureGroupsInput {
 pub struct ListFeatureGroupsInputBuilder {
     pub(crate) name_contains: std::option::Option<std::string::String>,
     pub(crate) feature_group_status_equals: std::option::Option<crate::types::FeatureGroupStatus>,
-    pub(crate) offline_store_status_equals:
-        std::option::Option<crate::types::OfflineStoreStatusValue>,
+    pub(crate) offline_store_status_equals: std::option::Option<crate::types::OfflineStoreStatusValue>,
     pub(crate) creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) creation_time_before: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) sort_order: std::option::Option<crate::types::FeatureGroupSortOrder>,
@@ -104,8 +98,7 @@ impl ListFeatureGroupsInputBuilder {
     }
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
     pub fn feature_group_status_equals(mut self, input: crate::types::FeatureGroupStatus) -> Self {
@@ -113,28 +106,17 @@ impl ListFeatureGroupsInputBuilder {
         self
     }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    pub fn set_feature_group_status_equals(
-        mut self,
-        input: std::option::Option<crate::types::FeatureGroupStatus>,
-    ) -> Self {
-        self.feature_group_status_equals = input;
-        self
+    pub fn set_feature_group_status_equals(mut self, input: std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
+        self.feature_group_status_equals = input; self
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn offline_store_status_equals(
-        mut self,
-        input: crate::types::OfflineStoreStatusValue,
-    ) -> Self {
+    pub fn offline_store_status_equals(mut self, input: crate::types::OfflineStoreStatusValue) -> Self {
         self.offline_store_status_equals = Some(input);
         self
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn set_offline_store_status_equals(
-        mut self,
-        input: std::option::Option<crate::types::OfflineStoreStatusValue>,
-    ) -> Self {
-        self.offline_store_status_equals = input;
-        self
+    pub fn set_offline_store_status_equals(mut self, input: std::option::Option<crate::types::OfflineStoreStatusValue>) -> Self {
+        self.offline_store_status_equals = input; self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,12 +124,8 @@ impl ListFeatureGroupsInputBuilder {
         self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,12 +133,8 @@ impl ListFeatureGroupsInputBuilder {
         self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
     }
     /// <p>The order in which feature groups are listed.</p>
     pub fn sort_order(mut self, input: crate::types::FeatureGroupSortOrder) -> Self {
@@ -168,12 +142,8 @@ impl ListFeatureGroupsInputBuilder {
         self
     }
     /// <p>The order in which feature groups are listed.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: std::option::Option<crate::types::FeatureGroupSortOrder>,
-    ) -> Self {
-        self.sort_order = input;
-        self
+    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::FeatureGroupSortOrder>) -> Self {
+        self.sort_order = input; self
     }
     /// <p>The value on which the feature group list is sorted.</p>
     pub fn sort_by(mut self, input: crate::types::FeatureGroupSortBy) -> Self {
@@ -181,12 +151,8 @@ impl ListFeatureGroupsInputBuilder {
         self
     }
     /// <p>The value on which the feature group list is sorted.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::FeatureGroupSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::FeatureGroupSortBy>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -195,8 +161,7 @@ impl ListFeatureGroupsInputBuilder {
     }
     /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,28 +170,32 @@ impl ListFeatureGroupsInputBuilder {
     }
     /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListFeatureGroupsInput`](crate::operation::list_feature_groups::ListFeatureGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_feature_groups::ListFeatureGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_feature_groups::ListFeatureGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_feature_groups::ListFeatureGroupsInput {
-                name_contains: self.name_contains,
-                feature_group_status_equals: self.feature_group_status_equals,
-                offline_store_status_equals: self.offline_store_status_equals,
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                sort_order: self.sort_order,
-                sort_by: self.sort_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                name_contains: self.name_contains
+                ,
+                feature_group_status_equals: self.feature_group_status_equals
+                ,
+                offline_store_status_equals: self.offline_store_status_equals
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                sort_order: self.sort_order
+                ,
+                sort_by: self.sort_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

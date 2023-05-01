@@ -3,7 +3,7 @@
 /// <p>The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynamicPartitioningConfiguration {
+pub struct DynamicPartitioningConfiguration  {
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
     #[doc(hidden)]
     pub retry_options: std::option::Option<crate::types::RetryOptions>,
@@ -13,7 +13,7 @@ pub struct DynamicPartitioningConfiguration {
 }
 impl DynamicPartitioningConfiguration {
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
-    pub fn retry_options(&self) -> std::option::Option<&crate::types::RetryOptions> {
+    pub fn retry_options(&self) -> std::option::Option<& crate::types::RetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
@@ -42,12 +42,8 @@ impl DynamicPartitioningConfigurationBuilder {
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
-    pub fn set_retry_options(
-        mut self,
-        input: std::option::Option<crate::types::RetryOptions>,
-    ) -> Self {
-        self.retry_options = input;
-        self
+    pub fn set_retry_options(mut self, input: std::option::Option<crate::types::RetryOptions>) -> Self {
+        self.retry_options = input; self
     }
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -56,14 +52,16 @@ impl DynamicPartitioningConfigurationBuilder {
     }
     /// <p>Specifies that the dynamic partitioning is enabled for this Kinesis Data Firehose delivery stream.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`DynamicPartitioningConfiguration`](crate::types::DynamicPartitioningConfiguration).
     pub fn build(self) -> crate::types::DynamicPartitioningConfiguration {
         crate::types::DynamicPartitioningConfiguration {
-            retry_options: self.retry_options,
-            enabled: self.enabled,
+            retry_options: self.retry_options
+            ,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

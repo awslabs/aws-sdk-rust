@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteParallelDataInput {
+pub struct DeleteParallelDataInput  {
     /// <p>The name of the parallel data resource that is being deleted.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteParallelDataInput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteParallelDataInput {
     /// Creates a new builder-style object to manufacture [`DeleteParallelDataInput`](crate::operation::delete_parallel_data::DeleteParallelDataInput).
-    pub fn builder(
-    ) -> crate::operation::delete_parallel_data::builders::DeleteParallelDataInputBuilder {
+    pub fn builder() -> crate::operation::delete_parallel_data::builders::DeleteParallelDataInputBuilder {
         crate::operation::delete_parallel_data::builders::DeleteParallelDataInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteParallelDataInputBuilder {
     }
     /// <p>The name of the parallel data resource that is being deleted.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteParallelDataInput`](crate::operation::delete_parallel_data::DeleteParallelDataInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_parallel_data::DeleteParallelDataInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_parallel_data::DeleteParallelDataInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_parallel_data::DeleteParallelDataInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_parallel_data::DeleteParallelDataInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Snapshot {
+pub struct Snapshot  {
     /// <p>The snapshot identifier that is provided in the request.</p>
     #[doc(hidden)]
     pub snapshot_identifier: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Snapshot {
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
     #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-    /// <ul>
-    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -65,8 +65,7 @@ pub struct Snapshot {
     pub encrypted_with_hsm: bool,
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
     #[doc(hidden)]
-    pub accounts_with_restore_access:
-        std::option::Option<std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
+    pub accounts_with_restore_access: std::option::Option<std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -97,15 +96,15 @@ pub struct Snapshot {
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
     #[doc(hidden)]
     pub restorable_node_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>The name of the maintenance track for the snapshot.</p>
     #[doc(hidden)]
     pub maintenance_track_name: std::option::Option<std::string::String>,
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
@@ -118,24 +117,24 @@ pub struct Snapshot {
 }
 impl Snapshot {
     /// <p>The snapshot identifier that is provided in the request.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> std::option::Option<& str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
-    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-    /// <ul>
-    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The port that the cluster is listening on.</p>
@@ -143,31 +142,31 @@ impl Snapshot {
         self.port
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn cluster_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>The admin user name for the cluster.</p>
-    pub fn master_username(&self) -> std::option::Option<&str> {
+    pub fn master_username(&self) -> std::option::Option<& str> {
         self.master_username.as_deref()
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-    pub fn engine_full_version(&self) -> std::option::Option<&str> {
+    pub fn engine_full_version(&self) -> std::option::Option<& str> {
         self.engine_full_version.as_deref()
     }
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
-    pub fn snapshot_type(&self) -> std::option::Option<&str> {
+    pub fn snapshot_type(&self) -> std::option::Option<& str> {
         self.snapshot_type.as_deref()
     }
     /// <p>The node type of the nodes in the cluster.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The number of nodes in the cluster.</p>
@@ -175,11 +174,11 @@ impl Snapshot {
         self.number_of_nodes
     }
     /// <p>The name of the database that was created when the cluster was created.</p>
-    pub fn db_name(&self) -> std::option::Option<&str> {
+    pub fn db_name(&self) -> std::option::Option<& str> {
         self.db_name.as_deref()
     }
     /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
@@ -187,7 +186,7 @@ impl Snapshot {
         self.encrypted
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
@@ -195,13 +194,11 @@ impl Snapshot {
         self.encrypted_with_hsm
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn accounts_with_restore_access(
-        &self,
-    ) -> std::option::Option<&[crate::types::AccountWithRestoreAccess]> {
+    pub fn accounts_with_restore_access(&self) -> std::option::Option<& [crate::types::AccountWithRestoreAccess]> {
         self.accounts_with_restore_access.as_deref()
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
@@ -229,28 +226,28 @@ impl Snapshot {
         self.elapsed_time_in_seconds
     }
     /// <p>The source region from which the snapshot was copied.</p>
-    pub fn source_region(&self) -> std::option::Option<&str> {
+    pub fn source_region(&self) -> std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The list of tags for the cluster snapshot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn restorable_node_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn restorable_node_types(&self) -> std::option::Option<& [std::string::String]> {
         self.restorable_node_types.as_deref()
     }
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(&self) -> bool {
         self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> std::option::Option<& str> {
         self.maintenance_track_name.as_deref()
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
@@ -260,9 +257,7 @@ impl Snapshot {
         self.manual_snapshot_remaining_days
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn snapshot_retention_start_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_retention_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
     }
 }
@@ -295,8 +290,7 @@ pub struct SnapshotBuilder {
     pub(crate) encrypted: std::option::Option<bool>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
     pub(crate) encrypted_with_hsm: std::option::Option<bool>,
-    pub(crate) accounts_with_restore_access:
-        std::option::Option<std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
+    pub(crate) accounts_with_restore_access: std::option::Option<std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
     pub(crate) owner_account: std::option::Option<std::string::String>,
     pub(crate) total_backup_size_in_mega_bytes: std::option::Option<f64>,
     pub(crate) actual_incremental_backup_size_in_mega_bytes: std::option::Option<f64>,
@@ -320,12 +314,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The snapshot identifier that is provided in the request.</p>
-    pub fn set_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.snapshot_identifier = input;
-        self
+    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.snapshot_identifier = input; self
     }
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -333,12 +323,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The identifier of the cluster for which the snapshot was taken.</p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
     pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -346,32 +332,27 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains a copy of the cluster data as of this exact time.</p>
-    pub fn set_snapshot_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.snapshot_create_time = input;
-        self
+    pub fn set_snapshot_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.snapshot_create_time = input; self
     }
-    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-    /// <ul>
-    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The snapshot status. The value of the status depends on the API operation used: </p>
-    /// <ul>
-    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li>
-    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li>
-    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li>
+    /// <p>The snapshot status. The value of the status depends on the API operation used: </p> 
+    /// <ul> 
+    /// <li> <p> <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> returns status as "creating". </p> </li> 
+    /// <li> <p> <code>DescribeClusterSnapshots</code> returns status as "creating", "available", "final snapshot", or "failed".</p> </li> 
+    /// <li> <p> <code>DeleteClusterSnapshot</code> returns status as "deleted".</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The port that the cluster is listening on.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -380,8 +361,7 @@ impl SnapshotBuilder {
     }
     /// <p>The port that the cluster is listening on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -389,12 +369,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The Availability Zone in which the cluster was created.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
     /// <p>The time (UTC) when the cluster was originally created.</p>
     pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -402,12 +378,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The time (UTC) when the cluster was originally created.</p>
-    pub fn set_cluster_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.cluster_create_time = input;
-        self
+    pub fn set_cluster_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.cluster_create_time = input; self
     }
     /// <p>The admin user name for the cluster.</p>
     pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -416,8 +388,7 @@ impl SnapshotBuilder {
     }
     /// <p>The admin user name for the cluster.</p>
     pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_username = input;
-        self
+        self.master_username = input; self
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
     pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -426,8 +397,7 @@ impl SnapshotBuilder {
     }
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
     pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_version = input;
-        self
+        self.cluster_version = input; self
     }
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
     pub fn engine_full_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -435,12 +405,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>
-    pub fn set_engine_full_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.engine_full_version = input;
-        self
+    pub fn set_engine_full_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.engine_full_version = input; self
     }
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
     pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -449,8 +415,7 @@ impl SnapshotBuilder {
     }
     /// <p>The snapshot type. Snapshots created using <code>CreateClusterSnapshot</code> and <code>CopyClusterSnapshot</code> are of type "manual". </p>
     pub fn set_snapshot_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_type = input;
-        self
+        self.snapshot_type = input; self
     }
     /// <p>The node type of the nodes in the cluster.</p>
     pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -459,8 +424,7 @@ impl SnapshotBuilder {
     }
     /// <p>The node type of the nodes in the cluster.</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The number of nodes in the cluster.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
@@ -469,8 +433,7 @@ impl SnapshotBuilder {
     }
     /// <p>The number of nodes in the cluster.</p>
     pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_nodes = input;
-        self
+        self.number_of_nodes = input; self
     }
     /// <p>The name of the database that was created when the cluster was created.</p>
     pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -479,8 +442,7 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the database that was created when the cluster was created.</p>
     pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_name = input;
-        self
+        self.db_name = input; self
     }
     /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -489,8 +451,7 @@ impl SnapshotBuilder {
     }
     /// <p>The VPC identifier of the cluster if the snapshot is from a cluster in a VPC. Otherwise, this field is not in the output.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
@@ -499,8 +460,7 @@ impl SnapshotBuilder {
     }
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
     pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted = input;
-        self
+        self.encrypted = input; self
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -509,8 +469,7 @@ impl SnapshotBuilder {
     }
     /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to encrypt data in the cluster from which the snapshot was taken.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
     pub fn encrypted_with_hsm(mut self, input: bool) -> Self {
@@ -519,30 +478,22 @@ impl SnapshotBuilder {
     }
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys of the source cluster. <code>true</code> indicates that the data is encrypted using HSM keys.</p>
     pub fn set_encrypted_with_hsm(mut self, input: std::option::Option<bool>) -> Self {
-        self.encrypted_with_hsm = input;
-        self
+        self.encrypted_with_hsm = input; self
     }
     /// Appends an item to `accounts_with_restore_access`.
     ///
     /// To override the contents of this collection use [`set_accounts_with_restore_access`](Self::set_accounts_with_restore_access).
     ///
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn accounts_with_restore_access(
-        mut self,
-        input: crate::types::AccountWithRestoreAccess,
-    ) -> Self {
+    pub fn accounts_with_restore_access(mut self, input: crate::types::AccountWithRestoreAccess) -> Self {
         let mut v = self.accounts_with_restore_access.unwrap_or_default();
-        v.push(input);
-        self.accounts_with_restore_access = Some(v);
-        self
+                        v.push(input);
+                        self.accounts_with_restore_access = Some(v);
+                        self
     }
     /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns <code>null</code> if no accounts are authorized. Visible only to the snapshot owner. </p>
-    pub fn set_accounts_with_restore_access(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccountWithRestoreAccess>>,
-    ) -> Self {
-        self.accounts_with_restore_access = input;
-        self
+    pub fn set_accounts_with_restore_access(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountWithRestoreAccess>>) -> Self {
+        self.accounts_with_restore_access = input; self
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,8 +502,7 @@ impl SnapshotBuilder {
     }
     /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot. For automatic snapshots, the owner of the cluster. The owner can perform all snapshot actions, such as sharing a manual snapshot.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
     pub fn total_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -561,8 +511,7 @@ impl SnapshotBuilder {
     }
     /// <p>The size of the complete set of backup data that would be used to restore the cluster.</p>
     pub fn set_total_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.total_backup_size_in_mega_bytes = input;
-        self
+        self.total_backup_size_in_mega_bytes = input; self
     }
     /// <p>The size of the incremental backup.</p>
     pub fn actual_incremental_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -570,12 +519,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The size of the incremental backup.</p>
-    pub fn set_actual_incremental_backup_size_in_mega_bytes(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.actual_incremental_backup_size_in_mega_bytes = input;
-        self
+    pub fn set_actual_incremental_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
+        self.actual_incremental_backup_size_in_mega_bytes = input; self
     }
     /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
     pub fn backup_progress_in_mega_bytes(mut self, input: f64) -> Self {
@@ -584,8 +529,7 @@ impl SnapshotBuilder {
     }
     /// <p>The number of megabytes that have been transferred to the snapshot backup.</p>
     pub fn set_backup_progress_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.backup_progress_in_mega_bytes = input;
-        self
+        self.backup_progress_in_mega_bytes = input; self
     }
     /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
     pub fn current_backup_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -593,12 +537,8 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The number of megabytes per second being transferred to the snapshot backup. Returns <code>0</code> for a completed backup. </p>
-    pub fn set_current_backup_rate_in_mega_bytes_per_second(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.current_backup_rate_in_mega_bytes_per_second = input;
-        self
+    pub fn set_current_backup_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
+        self.current_backup_rate_in_mega_bytes_per_second = input; self
     }
     /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
     pub fn estimated_seconds_to_completion(mut self, input: i64) -> Self {
@@ -607,8 +547,7 @@ impl SnapshotBuilder {
     }
     /// <p>The estimate of the time remaining before the snapshot backup will complete. Returns <code>0</code> for a completed backup. </p>
     pub fn set_estimated_seconds_to_completion(mut self, input: std::option::Option<i64>) -> Self {
-        self.estimated_seconds_to_completion = input;
-        self
+        self.estimated_seconds_to_completion = input; self
     }
     /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
     pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -617,8 +556,7 @@ impl SnapshotBuilder {
     }
     /// <p>The amount of time an in-progress snapshot backup has been running, or the amount of time it took a completed backup to finish.</p>
     pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.elapsed_time_in_seconds = input;
-        self
+        self.elapsed_time_in_seconds = input; self
     }
     /// <p>The source region from which the snapshot was copied.</p>
     pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -627,8 +565,7 @@ impl SnapshotBuilder {
     }
     /// <p>The source region from which the snapshot was copied.</p>
     pub fn set_source_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -637,17 +574,13 @@ impl SnapshotBuilder {
     /// <p>The list of tags for the cluster snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The list of tags for the cluster snapshot.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `restorable_node_types`.
     ///
@@ -656,31 +589,26 @@ impl SnapshotBuilder {
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
     pub fn restorable_node_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.restorable_node_types.unwrap_or_default();
-        v.push(input.into());
-        self.restorable_node_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.restorable_node_types = Some(v);
+                        self
     }
     /// <p>The list of node types that this cluster snapshot is able to restore into.</p>
-    pub fn set_restorable_node_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.restorable_node_types = input;
-        self
+    pub fn set_restorable_node_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.restorable_node_types = input; self
     }
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
         self.enhanced_vpc_routing = Some(input);
         self
     }
-    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p>
-    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
+    /// <p>An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced VPC Routing</a> in the Amazon Redshift Cluster Management Guide.</p> 
+    /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p> 
     /// <p>Default: false</p>
     pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
-        self.enhanced_vpc_routing = input;
-        self
+        self.enhanced_vpc_routing = input; self
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
     pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -688,24 +616,19 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The name of the maintenance track for the snapshot.</p>
-    pub fn set_maintenance_track_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.maintenance_track_name = input;
-        self
+    pub fn set_maintenance_track_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.maintenance_track_name = input; self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = Some(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input;
-        self
+        self.manual_snapshot_retention_period = input; self
     }
     /// <p>The number of days until a manual snapshot will pass its retention period.</p>
     pub fn manual_snapshot_remaining_days(mut self, input: i32) -> Self {
@@ -714,8 +637,7 @@ impl SnapshotBuilder {
     }
     /// <p>The number of days until a manual snapshot will pass its retention period.</p>
     pub fn set_manual_snapshot_remaining_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshot_remaining_days = input;
-        self
+        self.manual_snapshot_remaining_days = input; self
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
     pub fn snapshot_retention_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -723,58 +645,92 @@ impl SnapshotBuilder {
         self
     }
     /// <p>A timestamp representing the start of the retention period for the snapshot.</p>
-    pub fn set_snapshot_retention_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.snapshot_retention_start_time = input;
-        self
+    pub fn set_snapshot_retention_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.snapshot_retention_start_time = input; self
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
-            snapshot_identifier: self.snapshot_identifier,
-            cluster_identifier: self.cluster_identifier,
-            snapshot_create_time: self.snapshot_create_time,
-            status: self.status,
-            port: self.port.unwrap_or_default(),
-            availability_zone: self.availability_zone,
-            cluster_create_time: self.cluster_create_time,
-            master_username: self.master_username,
-            cluster_version: self.cluster_version,
-            engine_full_version: self.engine_full_version,
-            snapshot_type: self.snapshot_type,
-            node_type: self.node_type,
-            number_of_nodes: self.number_of_nodes.unwrap_or_default(),
-            db_name: self.db_name,
-            vpc_id: self.vpc_id,
-            encrypted: self.encrypted.unwrap_or_default(),
-            kms_key_id: self.kms_key_id,
-            encrypted_with_hsm: self.encrypted_with_hsm.unwrap_or_default(),
-            accounts_with_restore_access: self.accounts_with_restore_access,
-            owner_account: self.owner_account,
-            total_backup_size_in_mega_bytes: self
-                .total_backup_size_in_mega_bytes
-                .unwrap_or_default(),
-            actual_incremental_backup_size_in_mega_bytes: self
-                .actual_incremental_backup_size_in_mega_bytes
-                .unwrap_or_default(),
-            backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes.unwrap_or_default(),
-            current_backup_rate_in_mega_bytes_per_second: self
-                .current_backup_rate_in_mega_bytes_per_second
-                .unwrap_or_default(),
-            estimated_seconds_to_completion: self
-                .estimated_seconds_to_completion
-                .unwrap_or_default(),
-            elapsed_time_in_seconds: self.elapsed_time_in_seconds.unwrap_or_default(),
-            source_region: self.source_region,
-            tags: self.tags,
-            restorable_node_types: self.restorable_node_types,
-            enhanced_vpc_routing: self.enhanced_vpc_routing.unwrap_or_default(),
-            maintenance_track_name: self.maintenance_track_name,
-            manual_snapshot_retention_period: self.manual_snapshot_retention_period,
-            manual_snapshot_remaining_days: self.manual_snapshot_remaining_days,
-            snapshot_retention_start_time: self.snapshot_retention_start_time,
+            snapshot_identifier: self.snapshot_identifier
+            ,
+            cluster_identifier: self.cluster_identifier
+            ,
+            snapshot_create_time: self.snapshot_create_time
+            ,
+            status: self.status
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            availability_zone: self.availability_zone
+            ,
+            cluster_create_time: self.cluster_create_time
+            ,
+            master_username: self.master_username
+            ,
+            cluster_version: self.cluster_version
+            ,
+            engine_full_version: self.engine_full_version
+            ,
+            snapshot_type: self.snapshot_type
+            ,
+            node_type: self.node_type
+            ,
+            number_of_nodes: self.number_of_nodes
+                .unwrap_or_default()
+            ,
+            db_name: self.db_name
+            ,
+            vpc_id: self.vpc_id
+            ,
+            encrypted: self.encrypted
+                .unwrap_or_default()
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            encrypted_with_hsm: self.encrypted_with_hsm
+                .unwrap_or_default()
+            ,
+            accounts_with_restore_access: self.accounts_with_restore_access
+            ,
+            owner_account: self.owner_account
+            ,
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes
+                .unwrap_or_default()
+            ,
+            actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes
+                .unwrap_or_default()
+            ,
+            backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes
+                .unwrap_or_default()
+            ,
+            current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second
+                .unwrap_or_default()
+            ,
+            estimated_seconds_to_completion: self.estimated_seconds_to_completion
+                .unwrap_or_default()
+            ,
+            elapsed_time_in_seconds: self.elapsed_time_in_seconds
+                .unwrap_or_default()
+            ,
+            source_region: self.source_region
+            ,
+            tags: self.tags
+            ,
+            restorable_node_types: self.restorable_node_types
+            ,
+            enhanced_vpc_routing: self.enhanced_vpc_routing
+                .unwrap_or_default()
+            ,
+            maintenance_track_name: self.maintenance_track_name
+            ,
+            manual_snapshot_retention_period: self.manual_snapshot_retention_period
+            ,
+            manual_snapshot_remaining_days: self.manual_snapshot_remaining_days
+            ,
+            snapshot_retention_start_time: self.snapshot_retention_start_time
+            ,
         }
     }
 }
+

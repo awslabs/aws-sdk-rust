@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachElasticLoadBalancerInput {
+pub struct AttachElasticLoadBalancerInput  {
     /// <p>The Elastic Load Balancing instance's name.</p>
     #[doc(hidden)]
     pub elastic_load_balancer_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AttachElasticLoadBalancerInput {
 }
 impl AttachElasticLoadBalancerInput {
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn elastic_load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn elastic_load_balancer_name(&self) -> std::option::Option<& str> {
         self.elastic_load_balancer_name.as_deref()
     }
     /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
-    pub fn layer_id(&self) -> std::option::Option<&str> {
+    pub fn layer_id(&self) -> std::option::Option<& str> {
         self.layer_id.as_deref()
     }
 }
 impl AttachElasticLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`AttachElasticLoadBalancerInput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput).
-    pub fn builder() -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder{
+    pub fn builder() -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder {
         crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl AttachElasticLoadBalancerInputBuilder {
         self
     }
     /// <p>The Elastic Load Balancing instance's name.</p>
-    pub fn set_elastic_load_balancer_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.elastic_load_balancer_name = input;
-        self
+    pub fn set_elastic_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.elastic_load_balancer_name = input; self
     }
     /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
     pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,21 +51,18 @@ impl AttachElasticLoadBalancerInputBuilder {
     }
     /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
     pub fn set_layer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_id = input;
-        self
+        self.layer_id = input; self
     }
     /// Consumes the builder and constructs a [`AttachElasticLoadBalancerInput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerInput {
-                elastic_load_balancer_name: self.elastic_load_balancer_name,
-                layer_id: self.layer_id,
-            },
+                elastic_load_balancer_name: self.elastic_load_balancer_name
+                ,
+                layer_id: self.layer_id
+                ,
+            }
         )
     }
 }
+

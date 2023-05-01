@@ -3,7 +3,7 @@
 /// <p>Defines a test recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRecommendation {
+pub struct TestRecommendation  {
     /// <p>Identifier for the test recommendation.</p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -40,47 +40,47 @@ pub struct TestRecommendation {
 }
 impl TestRecommendation {
     /// <p>Identifier for the test recommendation.</p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>The reference identifier for the test recommendation.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> std::option::Option<& str> {
         self.app_component_name.as_deref()
     }
     /// <p>The name of the test recommendation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The intent of the test recommendation.</p>
-    pub fn intent(&self) -> std::option::Option<&str> {
+    pub fn intent(&self) -> std::option::Option<& str> {
         self.intent.as_deref()
     }
     /// <p>The level of risk for this test recommendation.</p>
-    pub fn risk(&self) -> std::option::Option<&crate::types::TestRisk> {
+    pub fn risk(&self) -> std::option::Option<& crate::types::TestRisk> {
         self.risk.as_ref()
     }
     /// <p>The type of test recommendation.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TestType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>The description for the test recommendation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The test recommendation items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::RecommendationItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::RecommendationItem]> {
         self.items.as_deref()
     }
     /// <p>The prerequisite of the test recommendation.</p>
-    pub fn prerequisite(&self) -> std::option::Option<&str> {
+    pub fn prerequisite(&self) -> std::option::Option<& str> {
         self.prerequisite.as_deref()
     }
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn depends_on_alarms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn depends_on_alarms(&self) -> std::option::Option<& [std::string::String]> {
         self.depends_on_alarms.as_deref()
     }
 }
@@ -114,12 +114,8 @@ impl TestRecommendationBuilder {
         self
     }
     /// <p>Identifier for the test recommendation.</p>
-    pub fn set_recommendation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recommendation_id = input;
-        self
+    pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recommendation_id = input; self
     }
     /// <p>The reference identifier for the test recommendation.</p>
     pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,8 +124,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The reference identifier for the test recommendation.</p>
     pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_id = input;
-        self
+        self.reference_id = input; self
     }
     /// <p>The name of the Application Component.</p>
     pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,12 +132,8 @@ impl TestRecommendationBuilder {
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn set_app_component_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_component_name = input;
-        self
+    pub fn set_app_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_component_name = input; self
     }
     /// <p>The name of the test recommendation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +142,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The name of the test recommendation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The intent of the test recommendation.</p>
     pub fn intent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,8 +151,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The intent of the test recommendation.</p>
     pub fn set_intent(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent = input;
-        self
+        self.intent = input; self
     }
     /// <p>The level of risk for this test recommendation.</p>
     pub fn risk(mut self, input: crate::types::TestRisk) -> Self {
@@ -171,8 +160,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The level of risk for this test recommendation.</p>
     pub fn set_risk(mut self, input: std::option::Option<crate::types::TestRisk>) -> Self {
-        self.risk = input;
-        self
+        self.risk = input; self
     }
     /// <p>The type of test recommendation.</p>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
@@ -181,8 +169,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The type of test recommendation.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::TestType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The description for the test recommendation.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,8 +178,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The description for the test recommendation.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -201,17 +187,13 @@ impl TestRecommendationBuilder {
     /// <p>The test recommendation items.</p>
     pub fn items(mut self, input: crate::types::RecommendationItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The test recommendation items.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationItem>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationItem>>) -> Self {
+        self.items = input; self
     }
     /// <p>The prerequisite of the test recommendation.</p>
     pub fn prerequisite(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,8 +202,7 @@ impl TestRecommendationBuilder {
     }
     /// <p>The prerequisite of the test recommendation.</p>
     pub fn set_prerequisite(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prerequisite = input;
-        self
+        self.prerequisite = input; self
     }
     /// Appends an item to `depends_on_alarms`.
     ///
@@ -230,32 +211,40 @@ impl TestRecommendationBuilder {
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
     pub fn depends_on_alarms(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.depends_on_alarms.unwrap_or_default();
-        v.push(input.into());
-        self.depends_on_alarms = Some(v);
-        self
+                        v.push(input.into());
+                        self.depends_on_alarms = Some(v);
+                        self
     }
     /// <p> A list of recommended alarms that are used in the test and must be exported before or with the test. </p>
-    pub fn set_depends_on_alarms(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.depends_on_alarms = input;
-        self
+    pub fn set_depends_on_alarms(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.depends_on_alarms = input; self
     }
     /// Consumes the builder and constructs a [`TestRecommendation`](crate::types::TestRecommendation).
     pub fn build(self) -> crate::types::TestRecommendation {
         crate::types::TestRecommendation {
-            recommendation_id: self.recommendation_id,
-            reference_id: self.reference_id,
-            app_component_name: self.app_component_name,
-            name: self.name,
-            intent: self.intent,
-            risk: self.risk,
-            r#type: self.r#type,
-            description: self.description,
-            items: self.items,
-            prerequisite: self.prerequisite,
-            depends_on_alarms: self.depends_on_alarms,
+            recommendation_id: self.recommendation_id
+            ,
+            reference_id: self.reference_id
+            ,
+            app_component_name: self.app_component_name
+            ,
+            name: self.name
+            ,
+            intent: self.intent
+            ,
+            risk: self.risk
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
+            items: self.items
+            ,
+            prerequisite: self.prerequisite
+            ,
+            depends_on_alarms: self.depends_on_alarms
+            ,
         }
     }
 }
+

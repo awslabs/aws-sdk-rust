@@ -3,14 +3,14 @@
 /// Specific settings for this type of output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputSettings {
+pub struct OutputSettings  {
     /// Settings for HLS output groups
     #[doc(hidden)]
     pub hls_settings: std::option::Option<crate::types::HlsSettings>,
 }
 impl OutputSettings {
     /// Settings for HLS output groups
-    pub fn hls_settings(&self) -> std::option::Option<&crate::types::HlsSettings> {
+    pub fn hls_settings(&self) -> std::option::Option<& crate::types::HlsSettings> {
         self.hls_settings.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl OutputSettingsBuilder {
         self
     }
     /// Settings for HLS output groups
-    pub fn set_hls_settings(
-        mut self,
-        input: std::option::Option<crate::types::HlsSettings>,
-    ) -> Self {
-        self.hls_settings = input;
-        self
+    pub fn set_hls_settings(mut self, input: std::option::Option<crate::types::HlsSettings>) -> Self {
+        self.hls_settings = input; self
     }
     /// Consumes the builder and constructs a [`OutputSettings`](crate::types::OutputSettings).
     pub fn build(self) -> crate::types::OutputSettings {
         crate::types::OutputSettings {
-            hls_settings: self.hls_settings,
+            hls_settings: self.hls_settings
+            ,
         }
     }
 }
+

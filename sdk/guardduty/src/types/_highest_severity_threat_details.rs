@@ -3,7 +3,7 @@
 /// <p>Contains details of the highest severity threat detected during scan and number of infected files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HighestSeverityThreatDetails {
+pub struct HighestSeverityThreatDetails  {
     /// <p>Severity level of the highest severity threat detected.</p>
     #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct HighestSeverityThreatDetails {
 }
 impl HighestSeverityThreatDetails {
     /// <p>Severity level of the highest severity threat detected.</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> std::option::Option<& str> {
         self.severity.as_deref()
     }
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
-    pub fn threat_name(&self) -> std::option::Option<&str> {
+    pub fn threat_name(&self) -> std::option::Option<& str> {
         self.threat_name.as_deref()
     }
     /// <p>Total number of infected files with the highest severity threat detected.</p>
@@ -51,8 +51,7 @@ impl HighestSeverityThreatDetailsBuilder {
     }
     /// <p>Severity level of the highest severity threat detected.</p>
     pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.severity = input;
-        self
+        self.severity = input; self
     }
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
     pub fn threat_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl HighestSeverityThreatDetailsBuilder {
     }
     /// <p>Threat name of the highest severity threat detected as part of the malware scan.</p>
     pub fn set_threat_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.threat_name = input;
-        self
+        self.threat_name = input; self
     }
     /// <p>Total number of infected files with the highest severity threat detected.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -71,15 +69,19 @@ impl HighestSeverityThreatDetailsBuilder {
     }
     /// <p>Total number of infected files with the highest severity threat detected.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// Consumes the builder and constructs a [`HighestSeverityThreatDetails`](crate::types::HighestSeverityThreatDetails).
     pub fn build(self) -> crate::types::HighestSeverityThreatDetails {
         crate::types::HighestSeverityThreatDetails {
-            severity: self.severity,
-            threat_name: self.threat_name,
-            count: self.count.unwrap_or_default(),
+            severity: self.severity
+            ,
+            threat_name: self.threat_name
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

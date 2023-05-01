@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomalyGroupInput {
+pub struct GetAnomalyGroupInput  {
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
     pub anomaly_group_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetAnomalyGroupInput {
 }
 impl GetAnomalyGroupInput {
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> std::option::Option<& str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
         self.anomaly_detector_arn.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetAnomalyGroupInputBuilder {
     }
     /// <p>The ID of the anomaly group.</p>
     pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anomaly_group_id = input;
-        self
+        self.anomaly_group_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,23 +50,19 @@ impl GetAnomalyGroupInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.anomaly_detector_arn = input;
-        self
+    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.anomaly_detector_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetAnomalyGroupInput`](crate::operation::get_anomaly_group::GetAnomalyGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_anomaly_group::GetAnomalyGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_anomaly_group::GetAnomalyGroupInput {
-            anomaly_group_id: self.anomaly_group_id,
-            anomaly_detector_arn: self.anomaly_detector_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_anomaly_group::GetAnomalyGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_anomaly_group::GetAnomalyGroupInput {
+                anomaly_group_id: self.anomaly_group_id
+                ,
+                anomaly_detector_arn: self.anomaly_detector_arn
+                ,
+            }
+        )
     }
 }
+

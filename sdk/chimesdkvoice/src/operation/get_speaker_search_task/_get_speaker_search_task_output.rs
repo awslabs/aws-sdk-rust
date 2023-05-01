@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSpeakerSearchTaskOutput {
+pub struct GetSpeakerSearchTaskOutput  {
     /// <p>The details of the speaker search task.</p>
     #[doc(hidden)]
     pub speaker_search_task: std::option::Option<crate::types::SpeakerSearchTask>,
@@ -10,20 +10,18 @@ pub struct GetSpeakerSearchTaskOutput {
 }
 impl GetSpeakerSearchTaskOutput {
     /// <p>The details of the speaker search task.</p>
-    pub fn speaker_search_task(&self) -> std::option::Option<&crate::types::SpeakerSearchTask> {
+    pub fn speaker_search_task(&self) -> std::option::Option<& crate::types::SpeakerSearchTask> {
         self.speaker_search_task.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSpeakerSearchTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSpeakerSearchTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetSpeakerSearchTaskOutput`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskOutputBuilder {
         crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl GetSpeakerSearchTaskOutputBuilder {
         self
     }
     /// <p>The details of the speaker search task.</p>
-    pub fn set_speaker_search_task(
-        mut self,
-        input: std::option::Option<crate::types::SpeakerSearchTask>,
-    ) -> Self {
-        self.speaker_search_task = input;
-        self
+    pub fn set_speaker_search_task(mut self, input: std::option::Option<crate::types::SpeakerSearchTask>) -> Self {
+        self.speaker_search_task = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSpeakerSearchTaskOutput`](crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput).
     pub fn build(self) -> crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput {
         crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput {
-            speaker_search_task: self.speaker_search_task,
+            speaker_search_task: self.speaker_search_task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

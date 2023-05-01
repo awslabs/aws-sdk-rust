@@ -3,7 +3,7 @@
 /// <p>Task object encapsulating task information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Task {
+pub struct Task  {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
@@ -16,11 +16,11 @@ pub struct Task {
 }
 impl Task {
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
-    pub fn status_detail(&self) -> std::option::Option<&str> {
+    pub fn status_detail(&self) -> std::option::Option<& str> {
         self.status_detail.as_deref()
     }
     /// <p>Indication of the percentage completion of the task.</p>
@@ -51,8 +51,7 @@ impl TaskBuilder {
     }
     /// <p>Status of the task - Not Started, In-Progress, Complete.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl TaskBuilder {
     }
     /// <p>Details of task status as notified by a migration tool. A tool might use this field to provide clarifying information about the status that is unique to that tool or that explains an error state.</p>
     pub fn set_status_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_detail = input;
-        self
+        self.status_detail = input; self
     }
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn progress_percent(mut self, input: i32) -> Self {
@@ -71,15 +69,18 @@ impl TaskBuilder {
     }
     /// <p>Indication of the percentage completion of the task.</p>
     pub fn set_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.progress_percent = input;
-        self
+        self.progress_percent = input; self
     }
     /// Consumes the builder and constructs a [`Task`](crate::types::Task).
     pub fn build(self) -> crate::types::Task {
         crate::types::Task {
-            status: self.status,
-            status_detail: self.status_detail,
-            progress_percent: self.progress_percent,
+            status: self.status
+            ,
+            status_detail: self.status_detail
+            ,
+            progress_percent: self.progress_percent
+            ,
         }
     }
 }
+

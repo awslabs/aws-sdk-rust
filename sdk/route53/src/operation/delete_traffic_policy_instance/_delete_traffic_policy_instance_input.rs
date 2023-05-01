@@ -3,24 +3,24 @@
 /// <p>A request to delete a specified traffic policy instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrafficPolicyInstanceInput {
-    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
-    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
+pub struct DeleteTrafficPolicyInstanceInput  {
+    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important> 
+    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p> 
     /// </important>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficPolicyInstanceInput {
-    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
-    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
+    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important> 
+    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p> 
     /// </important>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteTrafficPolicyInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyInstanceInput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput).
-    pub fn builder() -> crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder{
+    pub fn builder() -> crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder {
         crate::operation::delete_traffic_policy_instance::builders::DeleteTrafficPolicyInstanceInputBuilder::default()
     }
 }
@@ -32,31 +32,27 @@ pub struct DeleteTrafficPolicyInstanceInputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
 }
 impl DeleteTrafficPolicyInstanceInputBuilder {
-    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
-    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
+    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important> 
+    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p> 
     /// </important>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important>
-    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p>
+    /// <p>The ID of the traffic policy instance that you want to delete. </p> <important> 
+    /// <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p> 
     /// </important>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteTrafficPolicyInstanceInput`](crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceInput {
-                id: self.id,
-            },
+                id: self.id
+                ,
+            }
         )
     }
 }
+

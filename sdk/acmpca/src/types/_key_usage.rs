@@ -3,7 +3,7 @@
 /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyUsage {
+pub struct KeyUsage  {
     /// <p> Key can be used for digital signing.</p>
     #[doc(hidden)]
     pub digital_signature: bool,
@@ -99,8 +99,7 @@ impl KeyUsageBuilder {
     }
     /// <p> Key can be used for digital signing.</p>
     pub fn set_digital_signature(mut self, input: std::option::Option<bool>) -> Self {
-        self.digital_signature = input;
-        self
+        self.digital_signature = input; self
     }
     /// <p>Key can be used for non-repudiation.</p>
     pub fn non_repudiation(mut self, input: bool) -> Self {
@@ -109,8 +108,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used for non-repudiation.</p>
     pub fn set_non_repudiation(mut self, input: std::option::Option<bool>) -> Self {
-        self.non_repudiation = input;
-        self
+        self.non_repudiation = input; self
     }
     /// <p>Key can be used to encipher data.</p>
     pub fn key_encipherment(mut self, input: bool) -> Self {
@@ -119,8 +117,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used to encipher data.</p>
     pub fn set_key_encipherment(mut self, input: std::option::Option<bool>) -> Self {
-        self.key_encipherment = input;
-        self
+        self.key_encipherment = input; self
     }
     /// <p>Key can be used to decipher data.</p>
     pub fn data_encipherment(mut self, input: bool) -> Self {
@@ -129,8 +126,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used to decipher data.</p>
     pub fn set_data_encipherment(mut self, input: std::option::Option<bool>) -> Self {
-        self.data_encipherment = input;
-        self
+        self.data_encipherment = input; self
     }
     /// <p>Key can be used in a key-agreement protocol.</p>
     pub fn key_agreement(mut self, input: bool) -> Self {
@@ -139,8 +135,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used in a key-agreement protocol.</p>
     pub fn set_key_agreement(mut self, input: std::option::Option<bool>) -> Self {
-        self.key_agreement = input;
-        self
+        self.key_agreement = input; self
     }
     /// <p>Key can be used to sign certificates.</p>
     pub fn key_cert_sign(mut self, input: bool) -> Self {
@@ -149,8 +144,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used to sign certificates.</p>
     pub fn set_key_cert_sign(mut self, input: std::option::Option<bool>) -> Self {
-        self.key_cert_sign = input;
-        self
+        self.key_cert_sign = input; self
     }
     /// <p>Key can be used to sign CRLs.</p>
     pub fn crl_sign(mut self, input: bool) -> Self {
@@ -159,8 +153,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used to sign CRLs.</p>
     pub fn set_crl_sign(mut self, input: std::option::Option<bool>) -> Self {
-        self.crl_sign = input;
-        self
+        self.crl_sign = input; self
     }
     /// <p>Key can be used only to encipher data.</p>
     pub fn encipher_only(mut self, input: bool) -> Self {
@@ -169,8 +162,7 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used only to encipher data.</p>
     pub fn set_encipher_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.encipher_only = input;
-        self
+        self.encipher_only = input; self
     }
     /// <p>Key can be used only to decipher data.</p>
     pub fn decipher_only(mut self, input: bool) -> Self {
@@ -179,21 +171,39 @@ impl KeyUsageBuilder {
     }
     /// <p>Key can be used only to decipher data.</p>
     pub fn set_decipher_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.decipher_only = input;
-        self
+        self.decipher_only = input; self
     }
     /// Consumes the builder and constructs a [`KeyUsage`](crate::types::KeyUsage).
     pub fn build(self) -> crate::types::KeyUsage {
         crate::types::KeyUsage {
-            digital_signature: self.digital_signature.unwrap_or_default(),
-            non_repudiation: self.non_repudiation.unwrap_or_default(),
-            key_encipherment: self.key_encipherment.unwrap_or_default(),
-            data_encipherment: self.data_encipherment.unwrap_or_default(),
-            key_agreement: self.key_agreement.unwrap_or_default(),
-            key_cert_sign: self.key_cert_sign.unwrap_or_default(),
-            crl_sign: self.crl_sign.unwrap_or_default(),
-            encipher_only: self.encipher_only.unwrap_or_default(),
-            decipher_only: self.decipher_only.unwrap_or_default(),
+            digital_signature: self.digital_signature
+                .unwrap_or_default()
+            ,
+            non_repudiation: self.non_repudiation
+                .unwrap_or_default()
+            ,
+            key_encipherment: self.key_encipherment
+                .unwrap_or_default()
+            ,
+            data_encipherment: self.data_encipherment
+                .unwrap_or_default()
+            ,
+            key_agreement: self.key_agreement
+                .unwrap_or_default()
+            ,
+            key_cert_sign: self.key_cert_sign
+                .unwrap_or_default()
+            ,
+            crl_sign: self.crl_sign
+                .unwrap_or_default()
+            ,
+            encipher_only: self.encipher_only
+                .unwrap_or_default()
+            ,
+            decipher_only: self.decipher_only
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

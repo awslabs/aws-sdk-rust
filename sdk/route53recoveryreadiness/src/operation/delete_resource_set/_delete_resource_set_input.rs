@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourceSetInput {
+pub struct DeleteResourceSetInput  {
     /// <p>Name of a resource set.</p>
     #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
 }
 impl DeleteResourceSetInput {
     /// <p>Name of a resource set.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> std::option::Option<& str> {
         self.resource_set_name.as_deref()
     }
 }
 impl DeleteResourceSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder {
         crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl DeleteResourceSetInputBuilder {
         self
     }
     /// <p>Name of a resource set.</p>
-    pub fn set_resource_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_set_name = input;
-        self
+    pub fn set_resource_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_set_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteResourceSetInput`](crate::operation::delete_resource_set::DeleteResourceSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_resource_set::DeleteResourceSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_resource_set::DeleteResourceSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_resource_set::DeleteResourceSetInput {
-                resource_set_name: self.resource_set_name,
-            },
+                resource_set_name: self.resource_set_name
+                ,
+            }
         )
     }
 }
+

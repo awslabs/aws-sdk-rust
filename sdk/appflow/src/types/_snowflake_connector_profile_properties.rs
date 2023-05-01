@@ -3,12 +3,12 @@
 /// <p> The connector-specific profile properties required when using Snowflake. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnowflakeConnectorProfileProperties {
+pub struct SnowflakeConnectorProfileProperties  {
     /// <p> The name of the Snowflake warehouse. </p>
     #[doc(hidden)]
     pub warehouse: std::option::Option<std::string::String>,
     /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
-    /// .
+    /// . 
     /// </stage></p>
     #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
@@ -30,33 +30,33 @@ pub struct SnowflakeConnectorProfileProperties {
 }
 impl SnowflakeConnectorProfileProperties {
     /// <p> The name of the Snowflake warehouse. </p>
-    pub fn warehouse(&self) -> std::option::Option<&str> {
+    pub fn warehouse(&self) -> std::option::Option<& str> {
         self.warehouse.as_deref()
     }
     /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
-    /// .
+    /// . 
     /// </stage></p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> std::option::Option<& str> {
         self.stage.as_deref()
     }
     /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p> The bucket path that refers to the Amazon S3 bucket associated with Snowflake. </p>
-    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> std::option::Option<& str> {
         self.bucket_prefix.as_deref()
     }
     /// <p> The Snowflake Private Link service name to be used for private data transfers. </p>
-    pub fn private_link_service_name(&self) -> std::option::Option<&str> {
+    pub fn private_link_service_name(&self) -> std::option::Option<& str> {
         self.private_link_service_name.as_deref()
     }
     /// <p> The name of the account. </p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
 }
@@ -87,22 +87,20 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p> The name of the Snowflake warehouse. </p>
     pub fn set_warehouse(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.warehouse = input;
-        self
+        self.warehouse = input; self
     }
     /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
-    /// .
+    /// . 
     /// </stage></p>
     pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
         self.stage = Some(input.into());
         self
     }
     /// <p> The name of the Amazon S3 stage that was created while setting up an Amazon S3 stage in the Snowflake account. This is written in the following format: &lt; Database&gt;&lt; Schema&gt;<stage name>
-    /// .
+    /// . 
     /// </stage></p>
     pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +109,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p> The name of the Amazon S3 bucket associated with Snowflake. </p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p> The bucket path that refers to the Amazon S3 bucket associated with Snowflake. </p>
     pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +118,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p> The bucket path that refers to the Amazon S3 bucket associated with Snowflake. </p>
     pub fn set_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_prefix = input;
-        self
+        self.bucket_prefix = input; self
     }
     /// <p> The Snowflake Private Link service name to be used for private data transfers. </p>
     pub fn private_link_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,12 +126,8 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
         self
     }
     /// <p> The Snowflake Private Link service name to be used for private data transfers. </p>
-    pub fn set_private_link_service_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.private_link_service_name = input;
-        self
+    pub fn set_private_link_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.private_link_service_name = input; self
     }
     /// <p> The name of the account. </p>
     pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +136,7 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p> The name of the account. </p>
     pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_name = input;
-        self
+        self.account_name = input; self
     }
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,19 +145,26 @@ impl SnowflakeConnectorProfilePropertiesBuilder {
     }
     /// <p> The Amazon Web Services Region of the Snowflake account. </p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// Consumes the builder and constructs a [`SnowflakeConnectorProfileProperties`](crate::types::SnowflakeConnectorProfileProperties).
     pub fn build(self) -> crate::types::SnowflakeConnectorProfileProperties {
         crate::types::SnowflakeConnectorProfileProperties {
-            warehouse: self.warehouse,
-            stage: self.stage,
-            bucket_name: self.bucket_name,
-            bucket_prefix: self.bucket_prefix,
-            private_link_service_name: self.private_link_service_name,
-            account_name: self.account_name,
-            region: self.region,
+            warehouse: self.warehouse
+            ,
+            stage: self.stage
+            ,
+            bucket_name: self.bucket_name
+            ,
+            bucket_prefix: self.bucket_prefix
+            ,
+            private_link_service_name: self.private_link_service_name
+            ,
+            account_name: self.account_name
+            ,
+            region: self.region
+            ,
         }
     }
 }
+

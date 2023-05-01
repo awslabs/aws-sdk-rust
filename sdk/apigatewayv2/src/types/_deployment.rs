@@ -3,7 +3,7 @@
 /// <p>An immutable representation of an API that can be called by users. A Deployment must be associated with a Stage for it to be callable over the internet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Deployment {
+pub struct Deployment  {
     /// <p>Specifies whether a deployment was automatically released.</p>
     #[doc(hidden)]
     pub auto_deployed: bool,
@@ -29,23 +29,23 @@ impl Deployment {
         self.auto_deployed
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The identifier for the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<& crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The description for the deployment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl DeploymentBuilder {
     }
     /// <p>Specifies whether a deployment was automatically released.</p>
     pub fn set_auto_deployed(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_deployed = input;
-        self
+        self.auto_deployed = input; self
     }
     /// <p>The date and time when the Deployment resource was created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,12 +83,8 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub fn set_created_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_date = input;
-        self
+    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_date = input; self
     }
     /// <p>The identifier for the deployment.</p>
     pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl DeploymentBuilder {
     }
     /// <p>The identifier for the deployment.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -107,12 +101,8 @@ impl DeploymentBuilder {
         self
     }
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
-    pub fn set_deployment_status(
-        mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
-    ) -> Self {
-        self.deployment_status = input;
-        self
+    pub fn set_deployment_status(mut self, input: std::option::Option<crate::types::DeploymentStatus>) -> Self {
+        self.deployment_status = input; self
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
     pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,12 +110,8 @@ impl DeploymentBuilder {
         self
     }
     /// <p>May contain additional feedback on the status of an API deployment.</p>
-    pub fn set_deployment_status_message(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.deployment_status_message = input;
-        self
+    pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.deployment_status_message = input; self
     }
     /// <p>The description for the deployment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,18 +120,25 @@ impl DeploymentBuilder {
     }
     /// <p>The description for the deployment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`Deployment`](crate::types::Deployment).
     pub fn build(self) -> crate::types::Deployment {
         crate::types::Deployment {
-            auto_deployed: self.auto_deployed.unwrap_or_default(),
-            created_date: self.created_date,
-            deployment_id: self.deployment_id,
-            deployment_status: self.deployment_status,
-            deployment_status_message: self.deployment_status_message,
-            description: self.description,
+            auto_deployed: self.auto_deployed
+                .unwrap_or_default()
+            ,
+            created_date: self.created_date
+            ,
+            deployment_id: self.deployment_id
+            ,
+            deployment_status: self.deployment_status
+            ,
+            deployment_status_message: self.deployment_status_message
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsSsmPatchComplianceDetails {
+pub struct AwsSsmPatchComplianceDetails  {
     /// <p>Information about the status of a patch.</p>
     #[doc(hidden)]
     pub patch: std::option::Option<crate::types::AwsSsmPatch>,
 }
 impl AwsSsmPatchComplianceDetails {
     /// <p>Information about the status of a patch.</p>
-    pub fn patch(&self) -> std::option::Option<&crate::types::AwsSsmPatch> {
+    pub fn patch(&self) -> std::option::Option<& crate::types::AwsSsmPatch> {
         self.patch.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl AwsSsmPatchComplianceDetailsBuilder {
     }
     /// <p>Information about the status of a patch.</p>
     pub fn set_patch(mut self, input: std::option::Option<crate::types::AwsSsmPatch>) -> Self {
-        self.patch = input;
-        self
+        self.patch = input; self
     }
     /// Consumes the builder and constructs a [`AwsSsmPatchComplianceDetails`](crate::types::AwsSsmPatchComplianceDetails).
     pub fn build(self) -> crate::types::AwsSsmPatchComplianceDetails {
-        crate::types::AwsSsmPatchComplianceDetails { patch: self.patch }
+        crate::types::AwsSsmPatchComplianceDetails {
+            patch: self.patch
+            ,
+        }
     }
 }
+

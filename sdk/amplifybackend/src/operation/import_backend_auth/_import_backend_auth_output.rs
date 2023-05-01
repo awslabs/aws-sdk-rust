@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportBackendAuthOutput {
+pub struct ImportBackendAuthOutput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -25,39 +25,38 @@ pub struct ImportBackendAuthOutput {
 }
 impl ImportBackendAuthOutput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment.</p>
-    pub fn backend_environment_name(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_name(&self) -> std::option::Option<& str> {
         self.backend_environment_name.as_deref()
     }
     /// <p>If the request fails, this error is returned.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the operation.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportBackendAuthOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportBackendAuthOutput {
     /// Creates a new builder-style object to manufacture [`ImportBackendAuthOutput`](crate::operation::import_backend_auth::ImportBackendAuthOutput).
-    pub fn builder(
-    ) -> crate::operation::import_backend_auth::builders::ImportBackendAuthOutputBuilder {
+    pub fn builder() -> crate::operation::import_backend_auth::builders::ImportBackendAuthOutputBuilder {
         crate::operation::import_backend_auth::builders::ImportBackendAuthOutputBuilder::default()
     }
 }
@@ -82,8 +81,7 @@ impl ImportBackendAuthOutputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The name of the backend environment.</p>
     pub fn backend_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +89,8 @@ impl ImportBackendAuthOutputBuilder {
         self
     }
     /// <p>The name of the backend environment.</p>
-    pub fn set_backend_environment_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.backend_environment_name = input;
-        self
+    pub fn set_backend_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.backend_environment_name = input; self
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +99,7 @@ impl ImportBackendAuthOutputBuilder {
     }
     /// <p>If the request fails, this error is returned.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>The ID for the job.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +108,7 @@ impl ImportBackendAuthOutputBuilder {
     }
     /// <p>The ID for the job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The name of the operation.</p>
     pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +117,7 @@ impl ImportBackendAuthOutputBuilder {
     }
     /// <p>The name of the operation.</p>
     pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,28 +126,34 @@ impl ImportBackendAuthOutputBuilder {
     }
     /// <p>The current status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportBackendAuthOutput`](crate::operation::import_backend_auth::ImportBackendAuthOutput).
     pub fn build(self) -> crate::operation::import_backend_auth::ImportBackendAuthOutput {
         crate::operation::import_backend_auth::ImportBackendAuthOutput {
-            app_id: self.app_id,
-            backend_environment_name: self.backend_environment_name,
-            error: self.error,
-            job_id: self.job_id,
-            operation: self.operation,
-            status: self.status,
+            app_id: self.app_id
+            ,
+            backend_environment_name: self.backend_environment_name
+            ,
+            error: self.error
+            ,
+            job_id: self.job_id
+            ,
+            operation: self.operation
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

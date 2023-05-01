@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMembersInput {
+pub struct ListMembersInput  {
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,11 +19,11 @@ impl ListMembersInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
-    pub fn only_associated(&self) -> std::option::Option<&str> {
+    pub fn only_associated(&self) -> std::option::Option<& str> {
         self.only_associated.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListMembersInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
     pub fn only_associated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,20 @@ impl ListMembersInputBuilder {
     }
     /// <p>Specifies which accounts to include in the response, based on the status of an account's relationship with the administrator account. By default, the response includes only current member accounts. To include all accounts, set this value to false.</p>
     pub fn set_only_associated(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.only_associated = input;
-        self
+        self.only_associated = input; self
     }
     /// Consumes the builder and constructs a [`ListMembersInput`](crate::operation::list_members::ListMembersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_members::ListMembersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_members::ListMembersInput {
-            max_results: self.max_results,
-            next_token: self.next_token,
-            only_associated: self.only_associated,
-        })
+    pub fn build(self) -> Result<crate::operation::list_members::ListMembersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_members::ListMembersInput {
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                only_associated: self.only_associated
+                ,
+            }
+        )
     }
 }
+

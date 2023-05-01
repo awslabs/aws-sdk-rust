@@ -3,7 +3,7 @@
 /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to TELETEXT.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TeletextDestinationSettings {
+pub struct TeletextDestinationSettings  {
     /// Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a three-digit hexadecimal string; strings ending in -FF are invalid. If you are passing through the entire set of Teletext data, do not use this field.
     #[doc(hidden)]
     pub page_number: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TeletextDestinationSettings {
 }
 impl TeletextDestinationSettings {
     /// Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a three-digit hexadecimal string; strings ending in -FF are invalid. If you are passing through the entire set of Teletext data, do not use this field.
-    pub fn page_number(&self) -> std::option::Option<&str> {
+    pub fn page_number(&self) -> std::option::Option<& str> {
         self.page_number.as_deref()
     }
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-    pub fn page_types(&self) -> std::option::Option<&[crate::types::TeletextPageType]> {
+    pub fn page_types(&self) -> std::option::Option<& [crate::types::TeletextPageType]> {
         self.page_types.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl TeletextDestinationSettingsBuilder {
     }
     /// Set pageNumber to the Teletext page number for the destination captions for this output. This value must be a three-digit hexadecimal string; strings ending in -FF are invalid. If you are passing through the entire set of Teletext data, do not use this field.
     pub fn set_page_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_number = input;
-        self
+        self.page_number = input; self
     }
     /// Appends an item to `page_types`.
     ///
@@ -53,23 +52,22 @@ impl TeletextDestinationSettingsBuilder {
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
     pub fn page_types(mut self, input: crate::types::TeletextPageType) -> Self {
         let mut v = self.page_types.unwrap_or_default();
-        v.push(input);
-        self.page_types = Some(v);
-        self
+                        v.push(input);
+                        self.page_types = Some(v);
+                        self
     }
     /// Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
-    pub fn set_page_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TeletextPageType>>,
-    ) -> Self {
-        self.page_types = input;
-        self
+    pub fn set_page_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::TeletextPageType>>) -> Self {
+        self.page_types = input; self
     }
     /// Consumes the builder and constructs a [`TeletextDestinationSettings`](crate::types::TeletextDestinationSettings).
     pub fn build(self) -> crate::types::TeletextDestinationSettings {
         crate::types::TeletextDestinationSettings {
-            page_number: self.page_number,
-            page_types: self.page_types,
+            page_number: self.page_number
+            ,
+            page_types: self.page_types
+            ,
         }
     }
 }
+

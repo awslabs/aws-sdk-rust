@@ -3,7 +3,7 @@
 /// <p>A complex type that contains change information for the resource record set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeResourceRecordSetsInput {
+pub struct ChangeResourceRecordSetsInput  {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -13,19 +13,17 @@ pub struct ChangeResourceRecordSetsInput {
 }
 impl ChangeResourceRecordSetsInput {
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
-    pub fn change_batch(&self) -> std::option::Option<&crate::types::ChangeBatch> {
+    pub fn change_batch(&self) -> std::option::Option<& crate::types::ChangeBatch> {
         self.change_batch.as_ref()
     }
 }
 impl ChangeResourceRecordSetsInput {
     /// Creates a new builder-style object to manufacture [`ChangeResourceRecordSetsInput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput).
-    pub fn builder(
-    ) -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder {
         crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder::default()
     }
 }
@@ -45,8 +43,7 @@ impl ChangeResourceRecordSetsInputBuilder {
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input;
-        self
+        self.hosted_zone_id = input; self
     }
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
     pub fn change_batch(mut self, input: crate::types::ChangeBatch) -> Self {
@@ -54,25 +51,19 @@ impl ChangeResourceRecordSetsInputBuilder {
         self
     }
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
-    pub fn set_change_batch(
-        mut self,
-        input: std::option::Option<crate::types::ChangeBatch>,
-    ) -> Self {
-        self.change_batch = input;
-        self
+    pub fn set_change_batch(mut self, input: std::option::Option<crate::types::ChangeBatch>) -> Self {
+        self.change_batch = input; self
     }
     /// Consumes the builder and constructs a [`ChangeResourceRecordSetsInput`](crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::change_resource_record_sets::ChangeResourceRecordSetsInput {
-                hosted_zone_id: self.hosted_zone_id,
-                change_batch: self.change_batch,
-            },
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                change_batch: self.change_batch
+                ,
+            }
         )
     }
 }
+

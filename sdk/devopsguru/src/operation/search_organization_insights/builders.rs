@@ -4,78 +4,56 @@ pub use crate::operation::search_organization_insights::_search_organization_ins
 pub use crate::operation::search_organization_insights::_search_organization_insights_input::SearchOrganizationInsightsInputBuilder;
 
 /// Fluent builder constructing a request to `SearchOrganizationInsights`.
-///
-/// <p> Returns a list of insights in your organization. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>
+/// 
+/// <p> Returns a list of insights in your organization. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p> 
 /// <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchOrganizationInsightsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder
             }
-impl SearchOrganizationInsightsFluentBuilder {
+impl SearchOrganizationInsightsFluentBuilder  {
     /// Creates a new `SearchOrganizationInsights`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::search_organization_insights::SearchOrganizationInsights,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::search_organization_insights::SearchOrganizationInsightsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::search_organization_insights::SearchOrganizationInsights, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::search_organization_insights::SearchOrganizationInsightsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::search_organization_insights::SearchOrganizationInsightsOutput, aws_smithy_http::result::SdkError<crate::operation::search_organization_insights::SearchOrganizationInsightsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator{
-        crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator {
+                            crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
@@ -86,10 +64,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn set_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
@@ -99,10 +74,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
     /// <p> A time range used to specify when the behavior of an insight or anomaly started. </p>
-    pub fn set_start_time_range(
-        mut self,
-        input: std::option::Option<crate::types::StartTimeRange>,
-    ) -> Self {
+    pub fn set_start_time_range(mut self, input: std::option::Option<crate::types::StartTimeRange>) -> Self {
         self.inner = self.inner.set_start_time_range(input);
         self
     }
@@ -112,10 +84,7 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
     /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the severity and status filters on your insight search. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::SearchOrganizationInsightsFilters>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::SearchOrganizationInsightsFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -150,3 +119,4 @@ impl SearchOrganizationInsightsFluentBuilder {
         self
     }
 }
+

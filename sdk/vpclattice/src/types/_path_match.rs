@@ -3,7 +3,7 @@
 /// <p>Describes the conditions that can be applied when matching a path for incoming requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PathMatch {
+pub struct PathMatch  {
     /// <p>The type of path match.</p>
     #[doc(hidden)]
     pub r#match: std::option::Option<crate::types::PathMatchType>,
@@ -13,7 +13,7 @@ pub struct PathMatch {
 }
 impl PathMatch {
     /// <p>The type of path match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::PathMatchType> {
+    pub fn r#match(&self) -> std::option::Option<& crate::types::PathMatchType> {
         self.r#match.as_ref()
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
@@ -43,8 +43,7 @@ impl PathMatchBuilder {
     }
     /// <p>The type of path match.</p>
     pub fn set_match(mut self, input: std::option::Option<crate::types::PathMatchType>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
@@ -53,14 +52,16 @@ impl PathMatchBuilder {
     }
     /// <p>Indicates whether the match is case sensitive. Defaults to false.</p>
     pub fn set_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
-        self.case_sensitive = input;
-        self
+        self.case_sensitive = input; self
     }
     /// Consumes the builder and constructs a [`PathMatch`](crate::types::PathMatch).
     pub fn build(self) -> crate::types::PathMatch {
         crate::types::PathMatch {
-            r#match: self.r#match,
-            case_sensitive: self.case_sensitive,
+            r#match: self.r#match
+            ,
+            case_sensitive: self.case_sensitive
+            ,
         }
     }
 }
+

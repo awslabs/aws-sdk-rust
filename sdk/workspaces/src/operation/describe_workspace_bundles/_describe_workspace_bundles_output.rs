@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceBundlesOutput {
+pub struct DescribeWorkspaceBundlesOutput  {
     /// <p>Information about the bundles.</p>
     #[doc(hidden)]
     pub bundles: std::option::Option<std::vec::Vec<crate::types::WorkspaceBundle>>,
@@ -13,24 +13,22 @@ pub struct DescribeWorkspaceBundlesOutput {
 }
 impl DescribeWorkspaceBundlesOutput {
     /// <p>Information about the bundles.</p>
-    pub fn bundles(&self) -> std::option::Option<&[crate::types::WorkspaceBundle]> {
+    pub fn bundles(&self) -> std::option::Option<& [crate::types::WorkspaceBundle]> {
         self.bundles.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeWorkspaceBundlesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeWorkspaceBundlesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceBundlesOutput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesOutputBuilder {
         crate::operation::describe_workspace_bundles::builders::DescribeWorkspaceBundlesOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl DescribeWorkspaceBundlesOutputBuilder {
     /// <p>Information about the bundles.</p>
     pub fn bundles(mut self, input: crate::types::WorkspaceBundle) -> Self {
         let mut v = self.bundles.unwrap_or_default();
-        v.push(input);
-        self.bundles = Some(v);
-        self
+                        v.push(input);
+                        self.bundles = Some(v);
+                        self
     }
     /// <p>Information about the bundles.</p>
-    pub fn set_bundles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkspaceBundle>>,
-    ) -> Self {
-        self.bundles = input;
-        self
+    pub fn set_bundles(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkspaceBundle>>) -> Self {
+        self.bundles = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl DescribeWorkspaceBundlesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. This token is valid for one day and must be used within that time frame.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeWorkspaceBundlesOutput`](crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput {
+    pub fn build(self) -> crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput {
         crate::operation::describe_workspace_bundles::DescribeWorkspaceBundlesOutput {
-            bundles: self.bundles,
-            next_token: self.next_token,
+            bundles: self.bundles
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

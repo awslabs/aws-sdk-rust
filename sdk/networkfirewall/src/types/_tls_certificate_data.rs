@@ -3,7 +3,7 @@
 /// <p>Contains metadata about an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsCertificateData {
+pub struct TlsCertificateData  {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TlsCertificateData {
 }
 impl TlsCertificateData {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn certificate_serial(&self) -> std::option::Option<&str> {
+    pub fn certificate_serial(&self) -> std::option::Option<& str> {
         self.certificate_serial.as_deref()
     }
     /// <p>The status of the certificate.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl TlsCertificateDataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The serial number of the certificate.</p>
     pub fn certificate_serial(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,12 +67,8 @@ impl TlsCertificateDataBuilder {
         self
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn set_certificate_serial(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_serial = input;
-        self
+    pub fn set_certificate_serial(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_serial = input; self
     }
     /// <p>The status of the certificate.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +77,7 @@ impl TlsCertificateDataBuilder {
     }
     /// <p>The status of the certificate.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl TlsCertificateDataBuilder {
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// Consumes the builder and constructs a [`TlsCertificateData`](crate::types::TlsCertificateData).
     pub fn build(self) -> crate::types::TlsCertificateData {
         crate::types::TlsCertificateData {
-            certificate_arn: self.certificate_arn,
-            certificate_serial: self.certificate_serial,
-            status: self.status,
-            status_message: self.status_message,
+            certificate_arn: self.certificate_arn
+            ,
+            certificate_serial: self.certificate_serial
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

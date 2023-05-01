@@ -3,29 +3,25 @@
 /// <p>The results of an operation to update or read environment variables. If the operation succeeds, the response contains the environment variables. If it fails, the response contains details about the error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EnvironmentResponse {
+pub struct EnvironmentResponse  {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
     #[doc(hidden)]
-    pub variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Error messages for environment variables that couldn't be applied.</p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::types::EnvironmentError>,
 }
 impl EnvironmentResponse {
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.variables.as_ref()
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::EnvironmentError> {
+    pub fn error(&self) -> std::option::Option<& crate::types::EnvironmentError> {
         self.error.as_ref()
     }
 }
-impl std::fmt::Debug for EnvironmentResponse {
+impl  std::fmt::Debug for EnvironmentResponse  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentResponse");
         formatter.field("variables", &"*** Sensitive Data Redacted ***");
@@ -44,8 +40,7 @@ impl EnvironmentResponse {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct EnvironmentResponseBuilder {
-    pub(crate) variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) error: std::option::Option<crate::types::EnvironmentError>,
 }
 impl EnvironmentResponseBuilder {
@@ -54,25 +49,15 @@ impl EnvironmentResponseBuilder {
     /// To override the contents of this collection use [`set_variables`](Self::set_variables).
     ///
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn variables(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.variables = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.variables = Some(hash_map);
+                        self
     }
     /// <p>Environment variable key-value pairs. Omitted from CloudTrail logs.</p>
-    pub fn set_variables(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.variables = input;
-        self
+    pub fn set_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.variables = input; self
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
     pub fn error(mut self, input: crate::types::EnvironmentError) -> Self {
@@ -81,14 +66,15 @@ impl EnvironmentResponseBuilder {
     }
     /// <p>Error messages for environment variables that couldn't be applied.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::EnvironmentError>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`EnvironmentResponse`](crate::types::EnvironmentResponse).
     pub fn build(self) -> crate::types::EnvironmentResponse {
         crate::types::EnvironmentResponse {
-            variables: self.variables,
-            error: self.error,
+            variables: self.variables
+            ,
+            error: self.error
+            ,
         }
     }
 }
@@ -100,3 +86,4 @@ impl std::fmt::Debug for EnvironmentResponseBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectPeerOutput {
+pub struct GetConnectPeerOutput  {
     /// <p>Returns information about a core network Connect peer.</p>
     #[doc(hidden)]
     pub connect_peer: std::option::Option<crate::types::ConnectPeer>,
@@ -10,15 +10,15 @@ pub struct GetConnectPeerOutput {
 }
 impl GetConnectPeerOutput {
     /// <p>Returns information about a core network Connect peer.</p>
-    pub fn connect_peer(&self) -> std::option::Option<&crate::types::ConnectPeer> {
+    pub fn connect_peer(&self) -> std::option::Option<& crate::types::ConnectPeer> {
         self.connect_peer.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetConnectPeerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectPeerOutput`](crate::operation::get_connect_peer::GetConnectPeerOutput).
     pub fn builder() -> crate::operation::get_connect_peer::builders::GetConnectPeerOutputBuilder {
@@ -40,27 +40,25 @@ impl GetConnectPeerOutputBuilder {
         self
     }
     /// <p>Returns information about a core network Connect peer.</p>
-    pub fn set_connect_peer(
-        mut self,
-        input: std::option::Option<crate::types::ConnectPeer>,
-    ) -> Self {
-        self.connect_peer = input;
-        self
+    pub fn set_connect_peer(mut self, input: std::option::Option<crate::types::ConnectPeer>) -> Self {
+        self.connect_peer = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetConnectPeerOutput`](crate::operation::get_connect_peer::GetConnectPeerOutput).
     pub fn build(self) -> crate::operation::get_connect_peer::GetConnectPeerOutput {
         crate::operation::get_connect_peer::GetConnectPeerOutput {
-            connect_peer: self.connect_peer,
+            connect_peer: self.connect_peer
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

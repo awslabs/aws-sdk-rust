@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMulticastGroupFromFuotaTaskOutput {
+pub struct DisassociateMulticastGroupFromFuotaTaskOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateMulticastGroupFromFuotaTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateMulticastGroupFromFuotaTaskOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput).
-    pub fn builder() -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskOutputBuilder{
+    pub fn builder() -> crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskOutputBuilder {
         crate::operation::disassociate_multicast_group_from_fuota_task::builders::DisassociateMulticastGroupFromFuotaTaskOutputBuilder::default()
     }
 }
@@ -25,18 +25,19 @@ pub struct DisassociateMulticastGroupFromFuotaTaskOutputBuilder {
 }
 impl DisassociateMulticastGroupFromFuotaTaskOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateMulticastGroupFromFuotaTaskOutput`](crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput).
-    pub fn build(self) -> crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput{
+    pub fn build(self) -> crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput {
         crate::operation::disassociate_multicast_group_from_fuota_task::DisassociateMulticastGroupFromFuotaTaskOutput {
             _request_id: self._request_id,
         }
     }
 }
+

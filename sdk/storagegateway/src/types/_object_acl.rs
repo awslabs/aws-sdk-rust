@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectacl = unimplemented!();
 /// match objectacl {
@@ -35,7 +35,7 @@
 /// Specifically, when `objectacl` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectAcl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -44,15 +44,7 @@
 /// that an S3 File Gateway puts objects into. The default value is
 /// <code>private</code>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectAcl {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -69,58 +61,51 @@ pub enum ObjectAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectAcl {
-    fn from(s: &str) -> Self {
-        match s {
-            "authenticated-read" => ObjectAcl::AuthenticatedRead,
-            "aws-exec-read" => ObjectAcl::AwsExecRead,
-            "bucket-owner-full-control" => ObjectAcl::BucketOwnerFullControl,
-            "bucket-owner-read" => ObjectAcl::BucketOwnerRead,
-            "private" => ObjectAcl::Private,
-            "public-read" => ObjectAcl::PublicRead,
-            "public-read-write" => ObjectAcl::PublicReadWrite,
-            other => ObjectAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "authenticated-read" => ObjectAcl::AuthenticatedRead,
+"aws-exec-read" => ObjectAcl::AwsExecRead,
+"bucket-owner-full-control" => ObjectAcl::BucketOwnerFullControl,
+"bucket-owner-read" => ObjectAcl::BucketOwnerRead,
+"private" => ObjectAcl::Private,
+"public-read" => ObjectAcl::PublicRead,
+"public-read-write" => ObjectAcl::PublicReadWrite,
+other => ObjectAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for ObjectAcl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectAcl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectAcl::from(s))
+                }
+            }
 impl ObjectAcl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectAcl::AuthenticatedRead => "authenticated-read",
-            ObjectAcl::AwsExecRead => "aws-exec-read",
-            ObjectAcl::BucketOwnerFullControl => "bucket-owner-full-control",
-            ObjectAcl::BucketOwnerRead => "bucket-owner-read",
-            ObjectAcl::Private => "private",
-            ObjectAcl::PublicRead => "public-read",
-            ObjectAcl::PublicReadWrite => "public-read-write",
-            ObjectAcl::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "authenticated-read",
-            "aws-exec-read",
-            "bucket-owner-full-control",
-            "bucket-owner-read",
-            "private",
-            "public-read",
-            "public-read-write",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectAcl::AuthenticatedRead => "authenticated-read",
+    ObjectAcl::AwsExecRead => "aws-exec-read",
+    ObjectAcl::BucketOwnerFullControl => "bucket-owner-full-control",
+    ObjectAcl::BucketOwnerRead => "bucket-owner-read",
+    ObjectAcl::Private => "private",
+    ObjectAcl::PublicRead => "public-read",
+    ObjectAcl::PublicReadWrite => "public-read-write",
+    ObjectAcl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"]
+                }
+            }
 impl AsRef<str> for ObjectAcl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

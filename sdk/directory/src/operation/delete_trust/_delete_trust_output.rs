@@ -3,7 +3,7 @@
 /// <p>The result of a DeleteTrust request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrustOutput {
+pub struct DeleteTrustOutput  {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
     #[doc(hidden)]
     pub trust_id: std::option::Option<std::string::String>,
@@ -11,15 +11,15 @@ pub struct DeleteTrustOutput {
 }
 impl DeleteTrustOutput {
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> std::option::Option<& str> {
         self.trust_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTrustOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteTrustOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrustOutput`](crate::operation::delete_trust::DeleteTrustOutput).
     pub fn builder() -> crate::operation::delete_trust::builders::DeleteTrustOutputBuilder {
@@ -42,23 +42,24 @@ impl DeleteTrustOutputBuilder {
     }
     /// <p>The Trust ID of the trust relationship that was deleted.</p>
     pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_id = input;
-        self
+        self.trust_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteTrustOutput`](crate::operation::delete_trust::DeleteTrustOutput).
     pub fn build(self) -> crate::operation::delete_trust::DeleteTrustOutput {
         crate::operation::delete_trust::DeleteTrustOutput {
-            trust_id: self.trust_id,
+            trust_id: self.trust_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

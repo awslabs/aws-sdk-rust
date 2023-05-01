@@ -3,7 +3,7 @@
 /// <p>Defines an object to add to or delete from a governed table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WriteOperation {
+pub struct WriteOperation  {
     /// <p>A new object to add to the governed table.</p>
     #[doc(hidden)]
     pub add_object: std::option::Option<crate::types::AddObjectInput>,
@@ -13,11 +13,11 @@ pub struct WriteOperation {
 }
 impl WriteOperation {
     /// <p>A new object to add to the governed table.</p>
-    pub fn add_object(&self) -> std::option::Option<&crate::types::AddObjectInput> {
+    pub fn add_object(&self) -> std::option::Option<& crate::types::AddObjectInput> {
         self.add_object.as_ref()
     }
     /// <p>An object to delete from the governed table.</p>
-    pub fn delete_object(&self) -> std::option::Option<&crate::types::DeleteObjectInput> {
+    pub fn delete_object(&self) -> std::option::Option<& crate::types::DeleteObjectInput> {
         self.delete_object.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl WriteOperationBuilder {
         self
     }
     /// <p>A new object to add to the governed table.</p>
-    pub fn set_add_object(
-        mut self,
-        input: std::option::Option<crate::types::AddObjectInput>,
-    ) -> Self {
-        self.add_object = input;
-        self
+    pub fn set_add_object(mut self, input: std::option::Option<crate::types::AddObjectInput>) -> Self {
+        self.add_object = input; self
     }
     /// <p>An object to delete from the governed table.</p>
     pub fn delete_object(mut self, input: crate::types::DeleteObjectInput) -> Self {
@@ -55,18 +51,17 @@ impl WriteOperationBuilder {
         self
     }
     /// <p>An object to delete from the governed table.</p>
-    pub fn set_delete_object(
-        mut self,
-        input: std::option::Option<crate::types::DeleteObjectInput>,
-    ) -> Self {
-        self.delete_object = input;
-        self
+    pub fn set_delete_object(mut self, input: std::option::Option<crate::types::DeleteObjectInput>) -> Self {
+        self.delete_object = input; self
     }
     /// Consumes the builder and constructs a [`WriteOperation`](crate::types::WriteOperation).
     pub fn build(self) -> crate::types::WriteOperation {
         crate::types::WriteOperation {
-            add_object: self.add_object,
-            delete_object: self.delete_object,
+            add_object: self.add_object
+            ,
+            delete_object: self.delete_object
+            ,
         }
     }
 }
+

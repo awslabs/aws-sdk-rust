@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for PurchaseReservedInstancesOffering.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedInstancesOfferingInput {
+pub struct PurchaseReservedInstancesOfferingInput  {
     /// <p>The number of Reserved Instances to purchase.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
@@ -26,7 +26,7 @@ impl PurchaseReservedInstancesOfferingInput {
         self.instance_count
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instances_offering_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_offering_id(&self) -> std::option::Option<& str> {
         self.reserved_instances_offering_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -34,17 +34,17 @@ impl PurchaseReservedInstancesOfferingInput {
         self.dry_run
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
-    pub fn limit_price(&self) -> std::option::Option<&crate::types::ReservedInstanceLimitPrice> {
+    pub fn limit_price(&self) -> std::option::Option<& crate::types::ReservedInstanceLimitPrice> {
         self.limit_price.as_ref()
     }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn purchase_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn purchase_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.purchase_time.as_ref()
     }
 }
 impl PurchaseReservedInstancesOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstancesOfferingInput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder{
+    pub fn builder() -> crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder {
         crate::operation::purchase_reserved_instances_offering::builders::PurchaseReservedInstancesOfferingInputBuilder::default()
     }
 }
@@ -67,8 +67,7 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
     }
     /// <p>The number of Reserved Instances to purchase.</p>
     pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     pub fn reserved_instances_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,12 +75,8 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn set_reserved_instances_offering_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.reserved_instances_offering_id = input;
-        self
+    pub fn set_reserved_instances_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.reserved_instances_offering_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -90,8 +85,7 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
     pub fn limit_price(mut self, input: crate::types::ReservedInstanceLimitPrice) -> Self {
@@ -99,12 +93,8 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self
     }
     /// <p>Specified for Reserved Instance Marketplace offerings to limit the total order and ensure that the Reserved Instances are not purchased at unexpected prices.</p>
-    pub fn set_limit_price(
-        mut self,
-        input: std::option::Option<crate::types::ReservedInstanceLimitPrice>,
-    ) -> Self {
-        self.limit_price = input;
-        self
+    pub fn set_limit_price(mut self, input: std::option::Option<crate::types::ReservedInstanceLimitPrice>) -> Self {
+        self.limit_price = input; self
     }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn purchase_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -112,15 +102,11 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         self
     }
     /// <p>The time at which to purchase the Reserved Instance, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_purchase_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.purchase_time = input;
-        self
+    pub fn set_purchase_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.purchase_time = input; self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstancesOfferingInput`](crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput).
-    pub fn build(self) -> Result<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::purchase_reserved_instances_offering::PurchaseReservedInstancesOfferingInput {
                 instance_count: self.instance_count
@@ -137,3 +123,4 @@ impl PurchaseReservedInstancesOfferingInputBuilder {
         )
     }
 }
+

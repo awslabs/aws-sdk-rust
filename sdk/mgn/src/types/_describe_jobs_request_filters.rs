@@ -3,7 +3,7 @@
 /// <p>Request to describe Job log filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobsRequestFilters {
+pub struct DescribeJobsRequestFilters  {
     /// <p>Request to describe Job log filters by job ID.</p>
     #[doc(hidden)]
     pub job_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct DescribeJobsRequestFilters {
 }
 impl DescribeJobsRequestFilters {
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn job_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.job_i_ds.as_deref()
     }
     /// <p>Request to describe Job log filters by date.</p>
-    pub fn from_date(&self) -> std::option::Option<&str> {
+    pub fn from_date(&self) -> std::option::Option<& str> {
         self.from_date.as_deref()
     }
     /// <p>Request to describe job log items by last date.</p>
-    pub fn to_date(&self) -> std::option::Option<&str> {
+    pub fn to_date(&self) -> std::option::Option<& str> {
         self.to_date.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl DescribeJobsRequestFiltersBuilder {
     /// <p>Request to describe Job log filters by job ID.</p>
     pub fn job_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_i_ds.unwrap_or_default();
-        v.push(input.into());
-        self.job_i_ds = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_i_ds = Some(v);
+                        self
     }
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn set_job_i_ds(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_i_ds = input;
-        self
+    pub fn set_job_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_i_ds = input; self
     }
     /// <p>Request to describe Job log filters by date.</p>
     pub fn from_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +66,7 @@ impl DescribeJobsRequestFiltersBuilder {
     }
     /// <p>Request to describe Job log filters by date.</p>
     pub fn set_from_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.from_date = input;
-        self
+        self.from_date = input; self
     }
     /// <p>Request to describe job log items by last date.</p>
     pub fn to_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,15 +75,18 @@ impl DescribeJobsRequestFiltersBuilder {
     }
     /// <p>Request to describe job log items by last date.</p>
     pub fn set_to_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.to_date = input;
-        self
+        self.to_date = input; self
     }
     /// Consumes the builder and constructs a [`DescribeJobsRequestFilters`](crate::types::DescribeJobsRequestFilters).
     pub fn build(self) -> crate::types::DescribeJobsRequestFilters {
         crate::types::DescribeJobsRequestFilters {
-            job_i_ds: self.job_i_ds,
-            from_date: self.from_date,
-            to_date: self.to_date,
+            job_i_ds: self.job_i_ds
+            ,
+            from_date: self.from_date
+            ,
+            to_date: self.to_date
+            ,
         }
     }
 }
+

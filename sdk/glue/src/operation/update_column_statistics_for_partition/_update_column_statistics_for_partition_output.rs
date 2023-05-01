@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateColumnStatisticsForPartitionOutput {
+pub struct UpdateColumnStatisticsForPartitionOutput  {
     /// <p>Error occurred during updating column statistics data.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::ColumnStatisticsError>>,
@@ -10,18 +10,18 @@ pub struct UpdateColumnStatisticsForPartitionOutput {
 }
 impl UpdateColumnStatisticsForPartitionOutput {
     /// <p>Error occurred during updating column statistics data.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::ColumnStatisticsError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::ColumnStatisticsError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateColumnStatisticsForPartitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateColumnStatisticsForPartitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput).
-    pub fn builder() -> crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionOutputBuilder{
+    pub fn builder() -> crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionOutputBuilder {
         crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionOutputBuilder::default()
     }
 }
@@ -41,29 +41,25 @@ impl UpdateColumnStatisticsForPartitionOutputBuilder {
     /// <p>Error occurred during updating column statistics data.</p>
     pub fn errors(mut self, input: crate::types::ColumnStatisticsError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>Error occurred during updating column statistics data.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnStatisticsError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnStatisticsError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateColumnStatisticsForPartitionOutput`](crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput).
-    pub fn build(self) -> crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput{
+    pub fn build(self) -> crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput {
         crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput {
             errors: self.errors
             ,
@@ -71,3 +67,4 @@ impl UpdateColumnStatisticsForPartitionOutputBuilder {
         }
     }
 }
+

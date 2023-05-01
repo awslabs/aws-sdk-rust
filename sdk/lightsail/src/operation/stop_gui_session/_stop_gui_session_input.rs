@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopGuiSessionInput {
+pub struct StopGuiSessionInput  {
     /// <p>The resource name.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl StopGuiSessionInput {
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl StopGuiSessionInputBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// Consumes the builder and constructs a [`StopGuiSessionInput`](crate::operation::stop_gui_session::StopGuiSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_gui_session::StopGuiSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_gui_session::StopGuiSessionInput {
-            resource_name: self.resource_name,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_gui_session::StopGuiSessionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_gui_session::StopGuiSessionInput {
+                resource_name: self.resource_name
+                ,
+            }
+        )
     }
 }
+

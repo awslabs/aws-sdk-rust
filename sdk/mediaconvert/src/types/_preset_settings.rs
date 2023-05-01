@@ -3,14 +3,13 @@
 /// Settings for preset
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PresetSettings {
+pub struct PresetSettings  {
     /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
     #[doc(hidden)]
     pub audio_descriptions: std::option::Option<std::vec::Vec<crate::types::AudioDescription>>,
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
     #[doc(hidden)]
-    pub caption_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
+    pub caption_descriptions: std::option::Option<std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
     /// Container specific settings.
     #[doc(hidden)]
     pub container_settings: std::option::Option<crate::types::ContainerSettings>,
@@ -20,21 +19,19 @@ pub struct PresetSettings {
 }
 impl PresetSettings {
     /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
-    pub fn audio_descriptions(&self) -> std::option::Option<&[crate::types::AudioDescription]> {
+    pub fn audio_descriptions(&self) -> std::option::Option<& [crate::types::AudioDescription]> {
         self.audio_descriptions.as_deref()
     }
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
-    pub fn caption_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::types::CaptionDescriptionPreset]> {
+    pub fn caption_descriptions(&self) -> std::option::Option<& [crate::types::CaptionDescriptionPreset]> {
         self.caption_descriptions.as_deref()
     }
     /// Container specific settings.
-    pub fn container_settings(&self) -> std::option::Option<&crate::types::ContainerSettings> {
+    pub fn container_settings(&self) -> std::option::Option<& crate::types::ContainerSettings> {
         self.container_settings.as_ref()
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
-    pub fn video_description(&self) -> std::option::Option<&crate::types::VideoDescription> {
+    pub fn video_description(&self) -> std::option::Option<& crate::types::VideoDescription> {
         self.video_description.as_ref()
     }
 }
@@ -49,10 +46,8 @@ impl PresetSettings {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PresetSettingsBuilder {
-    pub(crate) audio_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::AudioDescription>>,
-    pub(crate) caption_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
+    pub(crate) audio_descriptions: std::option::Option<std::vec::Vec<crate::types::AudioDescription>>,
+    pub(crate) caption_descriptions: std::option::Option<std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
     pub(crate) container_settings: std::option::Option<crate::types::ContainerSettings>,
     pub(crate) video_description: std::option::Option<crate::types::VideoDescription>,
 }
@@ -64,17 +59,13 @@ impl PresetSettingsBuilder {
     /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
     pub fn audio_descriptions(mut self, input: crate::types::AudioDescription) -> Self {
         let mut v = self.audio_descriptions.unwrap_or_default();
-        v.push(input);
-        self.audio_descriptions = Some(v);
-        self
+                        v.push(input);
+                        self.audio_descriptions = Some(v);
+                        self
     }
     /// (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
-    pub fn set_audio_descriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AudioDescription>>,
-    ) -> Self {
-        self.audio_descriptions = input;
-        self
+    pub fn set_audio_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AudioDescription>>) -> Self {
+        self.audio_descriptions = input; self
     }
     /// Appends an item to `caption_descriptions`.
     ///
@@ -83,17 +74,13 @@ impl PresetSettingsBuilder {
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
     pub fn caption_descriptions(mut self, input: crate::types::CaptionDescriptionPreset) -> Self {
         let mut v = self.caption_descriptions.unwrap_or_default();
-        v.push(input);
-        self.caption_descriptions = Some(v);
-        self
+                        v.push(input);
+                        self.caption_descriptions = Some(v);
+                        self
     }
     /// This object holds groups of settings related to captions for one output. For each output that has captions, include one instance of CaptionDescriptions.
-    pub fn set_caption_descriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CaptionDescriptionPreset>>,
-    ) -> Self {
-        self.caption_descriptions = input;
-        self
+    pub fn set_caption_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::CaptionDescriptionPreset>>) -> Self {
+        self.caption_descriptions = input; self
     }
     /// Container specific settings.
     pub fn container_settings(mut self, input: crate::types::ContainerSettings) -> Self {
@@ -101,12 +88,8 @@ impl PresetSettingsBuilder {
         self
     }
     /// Container specific settings.
-    pub fn set_container_settings(
-        mut self,
-        input: std::option::Option<crate::types::ContainerSettings>,
-    ) -> Self {
-        self.container_settings = input;
-        self
+    pub fn set_container_settings(mut self, input: std::option::Option<crate::types::ContainerSettings>) -> Self {
+        self.container_settings = input; self
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
     pub fn video_description(mut self, input: crate::types::VideoDescription) -> Self {
@@ -114,20 +97,21 @@ impl PresetSettingsBuilder {
         self
     }
     /// VideoDescription contains a group of video encoding settings. The specific video settings depend on the video codec that you choose for the property codec. Include one instance of VideoDescription per output.
-    pub fn set_video_description(
-        mut self,
-        input: std::option::Option<crate::types::VideoDescription>,
-    ) -> Self {
-        self.video_description = input;
-        self
+    pub fn set_video_description(mut self, input: std::option::Option<crate::types::VideoDescription>) -> Self {
+        self.video_description = input; self
     }
     /// Consumes the builder and constructs a [`PresetSettings`](crate::types::PresetSettings).
     pub fn build(self) -> crate::types::PresetSettings {
         crate::types::PresetSettings {
-            audio_descriptions: self.audio_descriptions,
-            caption_descriptions: self.caption_descriptions,
-            container_settings: self.container_settings,
-            video_description: self.video_description,
+            audio_descriptions: self.audio_descriptions
+            ,
+            caption_descriptions: self.caption_descriptions
+            ,
+            container_settings: self.container_settings
+            ,
+            video_description: self.video_description
+            ,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appinstancetype = unimplemented!();
 /// match appinstancetype {
@@ -86,22 +86,14 @@
 /// Specifically, when `appinstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppInstanceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC512Xlarge,
@@ -220,213 +212,153 @@ pub enum AppInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     System,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppInstanceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ml.c5.12xlarge" => AppInstanceType::MlC512Xlarge,
-            "ml.c5.18xlarge" => AppInstanceType::MlC518Xlarge,
-            "ml.c5.24xlarge" => AppInstanceType::MlC524Xlarge,
-            "ml.c5.2xlarge" => AppInstanceType::MlC52Xlarge,
-            "ml.c5.4xlarge" => AppInstanceType::MlC54Xlarge,
-            "ml.c5.9xlarge" => AppInstanceType::MlC59Xlarge,
-            "ml.c5.large" => AppInstanceType::MlC5Large,
-            "ml.c5.xlarge" => AppInstanceType::MlC5Xlarge,
-            "ml.g4dn.12xlarge" => AppInstanceType::MlG4Dn12Xlarge,
-            "ml.g4dn.16xlarge" => AppInstanceType::MlG4Dn16Xlarge,
-            "ml.g4dn.2xlarge" => AppInstanceType::MlG4Dn2Xlarge,
-            "ml.g4dn.4xlarge" => AppInstanceType::MlG4Dn4Xlarge,
-            "ml.g4dn.8xlarge" => AppInstanceType::MlG4Dn8Xlarge,
-            "ml.g4dn.xlarge" => AppInstanceType::MlG4DnXlarge,
-            "ml.g5.12xlarge" => AppInstanceType::MlG512Xlarge,
-            "ml.g5.16xlarge" => AppInstanceType::MlG516Xlarge,
-            "ml.g5.24xlarge" => AppInstanceType::MlG524Xlarge,
-            "ml.g5.2xlarge" => AppInstanceType::MlG52Xlarge,
-            "ml.g5.48xlarge" => AppInstanceType::MlG548Xlarge,
-            "ml.g5.4xlarge" => AppInstanceType::MlG54Xlarge,
-            "ml.g5.8xlarge" => AppInstanceType::MlG58Xlarge,
-            "ml.g5.xlarge" => AppInstanceType::MlG5Xlarge,
-            "ml.geospatial.interactive" => AppInstanceType::MlGeospatialInteractive,
-            "ml.m5.12xlarge" => AppInstanceType::MlM512Xlarge,
-            "ml.m5.16xlarge" => AppInstanceType::MlM516Xlarge,
-            "ml.m5.24xlarge" => AppInstanceType::MlM524Xlarge,
-            "ml.m5.2xlarge" => AppInstanceType::MlM52Xlarge,
-            "ml.m5.4xlarge" => AppInstanceType::MlM54Xlarge,
-            "ml.m5.8xlarge" => AppInstanceType::MlM58Xlarge,
-            "ml.m5.large" => AppInstanceType::MlM5Large,
-            "ml.m5.xlarge" => AppInstanceType::MlM5Xlarge,
-            "ml.m5d.12xlarge" => AppInstanceType::MlM5D12Xlarge,
-            "ml.m5d.16xlarge" => AppInstanceType::MlM5D16Xlarge,
-            "ml.m5d.24xlarge" => AppInstanceType::MlM5D24Xlarge,
-            "ml.m5d.2xlarge" => AppInstanceType::MlM5D2Xlarge,
-            "ml.m5d.4xlarge" => AppInstanceType::MlM5D4Xlarge,
-            "ml.m5d.8xlarge" => AppInstanceType::MlM5D8Xlarge,
-            "ml.m5d.large" => AppInstanceType::MlM5DLarge,
-            "ml.m5d.xlarge" => AppInstanceType::MlM5DXlarge,
-            "ml.p3.16xlarge" => AppInstanceType::MlP316Xlarge,
-            "ml.p3.2xlarge" => AppInstanceType::MlP32Xlarge,
-            "ml.p3.8xlarge" => AppInstanceType::MlP38Xlarge,
-            "ml.p3dn.24xlarge" => AppInstanceType::MlP3Dn24Xlarge,
-            "ml.r5.12xlarge" => AppInstanceType::MlR512Xlarge,
-            "ml.r5.16xlarge" => AppInstanceType::MlR516Xlarge,
-            "ml.r5.24xlarge" => AppInstanceType::MlR524Xlarge,
-            "ml.r5.2xlarge" => AppInstanceType::MlR52Xlarge,
-            "ml.r5.4xlarge" => AppInstanceType::MlR54Xlarge,
-            "ml.r5.8xlarge" => AppInstanceType::MlR58Xlarge,
-            "ml.r5.large" => AppInstanceType::MlR5Large,
-            "ml.r5.xlarge" => AppInstanceType::MlR5Xlarge,
-            "ml.t3.2xlarge" => AppInstanceType::MlT32Xlarge,
-            "ml.t3.large" => AppInstanceType::MlT3Large,
-            "ml.t3.medium" => AppInstanceType::MlT3Medium,
-            "ml.t3.micro" => AppInstanceType::MlT3Micro,
-            "ml.t3.small" => AppInstanceType::MlT3Small,
-            "ml.t3.xlarge" => AppInstanceType::MlT3Xlarge,
-            "system" => AppInstanceType::System,
-            other => {
-                AppInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ml.c5.12xlarge" => AppInstanceType::MlC512Xlarge,
+"ml.c5.18xlarge" => AppInstanceType::MlC518Xlarge,
+"ml.c5.24xlarge" => AppInstanceType::MlC524Xlarge,
+"ml.c5.2xlarge" => AppInstanceType::MlC52Xlarge,
+"ml.c5.4xlarge" => AppInstanceType::MlC54Xlarge,
+"ml.c5.9xlarge" => AppInstanceType::MlC59Xlarge,
+"ml.c5.large" => AppInstanceType::MlC5Large,
+"ml.c5.xlarge" => AppInstanceType::MlC5Xlarge,
+"ml.g4dn.12xlarge" => AppInstanceType::MlG4Dn12Xlarge,
+"ml.g4dn.16xlarge" => AppInstanceType::MlG4Dn16Xlarge,
+"ml.g4dn.2xlarge" => AppInstanceType::MlG4Dn2Xlarge,
+"ml.g4dn.4xlarge" => AppInstanceType::MlG4Dn4Xlarge,
+"ml.g4dn.8xlarge" => AppInstanceType::MlG4Dn8Xlarge,
+"ml.g4dn.xlarge" => AppInstanceType::MlG4DnXlarge,
+"ml.g5.12xlarge" => AppInstanceType::MlG512Xlarge,
+"ml.g5.16xlarge" => AppInstanceType::MlG516Xlarge,
+"ml.g5.24xlarge" => AppInstanceType::MlG524Xlarge,
+"ml.g5.2xlarge" => AppInstanceType::MlG52Xlarge,
+"ml.g5.48xlarge" => AppInstanceType::MlG548Xlarge,
+"ml.g5.4xlarge" => AppInstanceType::MlG54Xlarge,
+"ml.g5.8xlarge" => AppInstanceType::MlG58Xlarge,
+"ml.g5.xlarge" => AppInstanceType::MlG5Xlarge,
+"ml.geospatial.interactive" => AppInstanceType::MlGeospatialInteractive,
+"ml.m5.12xlarge" => AppInstanceType::MlM512Xlarge,
+"ml.m5.16xlarge" => AppInstanceType::MlM516Xlarge,
+"ml.m5.24xlarge" => AppInstanceType::MlM524Xlarge,
+"ml.m5.2xlarge" => AppInstanceType::MlM52Xlarge,
+"ml.m5.4xlarge" => AppInstanceType::MlM54Xlarge,
+"ml.m5.8xlarge" => AppInstanceType::MlM58Xlarge,
+"ml.m5.large" => AppInstanceType::MlM5Large,
+"ml.m5.xlarge" => AppInstanceType::MlM5Xlarge,
+"ml.m5d.12xlarge" => AppInstanceType::MlM5D12Xlarge,
+"ml.m5d.16xlarge" => AppInstanceType::MlM5D16Xlarge,
+"ml.m5d.24xlarge" => AppInstanceType::MlM5D24Xlarge,
+"ml.m5d.2xlarge" => AppInstanceType::MlM5D2Xlarge,
+"ml.m5d.4xlarge" => AppInstanceType::MlM5D4Xlarge,
+"ml.m5d.8xlarge" => AppInstanceType::MlM5D8Xlarge,
+"ml.m5d.large" => AppInstanceType::MlM5DLarge,
+"ml.m5d.xlarge" => AppInstanceType::MlM5DXlarge,
+"ml.p3.16xlarge" => AppInstanceType::MlP316Xlarge,
+"ml.p3.2xlarge" => AppInstanceType::MlP32Xlarge,
+"ml.p3.8xlarge" => AppInstanceType::MlP38Xlarge,
+"ml.p3dn.24xlarge" => AppInstanceType::MlP3Dn24Xlarge,
+"ml.r5.12xlarge" => AppInstanceType::MlR512Xlarge,
+"ml.r5.16xlarge" => AppInstanceType::MlR516Xlarge,
+"ml.r5.24xlarge" => AppInstanceType::MlR524Xlarge,
+"ml.r5.2xlarge" => AppInstanceType::MlR52Xlarge,
+"ml.r5.4xlarge" => AppInstanceType::MlR54Xlarge,
+"ml.r5.8xlarge" => AppInstanceType::MlR58Xlarge,
+"ml.r5.large" => AppInstanceType::MlR5Large,
+"ml.r5.xlarge" => AppInstanceType::MlR5Xlarge,
+"ml.t3.2xlarge" => AppInstanceType::MlT32Xlarge,
+"ml.t3.large" => AppInstanceType::MlT3Large,
+"ml.t3.medium" => AppInstanceType::MlT3Medium,
+"ml.t3.micro" => AppInstanceType::MlT3Micro,
+"ml.t3.small" => AppInstanceType::MlT3Small,
+"ml.t3.xlarge" => AppInstanceType::MlT3Xlarge,
+"system" => AppInstanceType::System,
+other => AppInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AppInstanceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppInstanceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppInstanceType::from(s))
+                }
+            }
 impl AppInstanceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AppInstanceType::MlC512Xlarge => "ml.c5.12xlarge",
-            AppInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-            AppInstanceType::MlC524Xlarge => "ml.c5.24xlarge",
-            AppInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-            AppInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-            AppInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-            AppInstanceType::MlC5Large => "ml.c5.large",
-            AppInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-            AppInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-            AppInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-            AppInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-            AppInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-            AppInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-            AppInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-            AppInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
-            AppInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
-            AppInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
-            AppInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
-            AppInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
-            AppInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
-            AppInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
-            AppInstanceType::MlG5Xlarge => "ml.g5.xlarge",
-            AppInstanceType::MlGeospatialInteractive => "ml.geospatial.interactive",
-            AppInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-            AppInstanceType::MlM516Xlarge => "ml.m5.16xlarge",
-            AppInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-            AppInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-            AppInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-            AppInstanceType::MlM58Xlarge => "ml.m5.8xlarge",
-            AppInstanceType::MlM5Large => "ml.m5.large",
-            AppInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-            AppInstanceType::MlM5D12Xlarge => "ml.m5d.12xlarge",
-            AppInstanceType::MlM5D16Xlarge => "ml.m5d.16xlarge",
-            AppInstanceType::MlM5D24Xlarge => "ml.m5d.24xlarge",
-            AppInstanceType::MlM5D2Xlarge => "ml.m5d.2xlarge",
-            AppInstanceType::MlM5D4Xlarge => "ml.m5d.4xlarge",
-            AppInstanceType::MlM5D8Xlarge => "ml.m5d.8xlarge",
-            AppInstanceType::MlM5DLarge => "ml.m5d.large",
-            AppInstanceType::MlM5DXlarge => "ml.m5d.xlarge",
-            AppInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-            AppInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-            AppInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-            AppInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
-            AppInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
-            AppInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
-            AppInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
-            AppInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
-            AppInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
-            AppInstanceType::MlR58Xlarge => "ml.r5.8xlarge",
-            AppInstanceType::MlR5Large => "ml.r5.large",
-            AppInstanceType::MlR5Xlarge => "ml.r5.xlarge",
-            AppInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
-            AppInstanceType::MlT3Large => "ml.t3.large",
-            AppInstanceType::MlT3Medium => "ml.t3.medium",
-            AppInstanceType::MlT3Micro => "ml.t3.micro",
-            AppInstanceType::MlT3Small => "ml.t3.small",
-            AppInstanceType::MlT3Xlarge => "ml.t3.xlarge",
-            AppInstanceType::System => "system",
-            AppInstanceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ml.c5.12xlarge",
-            "ml.c5.18xlarge",
-            "ml.c5.24xlarge",
-            "ml.c5.2xlarge",
-            "ml.c5.4xlarge",
-            "ml.c5.9xlarge",
-            "ml.c5.large",
-            "ml.c5.xlarge",
-            "ml.g4dn.12xlarge",
-            "ml.g4dn.16xlarge",
-            "ml.g4dn.2xlarge",
-            "ml.g4dn.4xlarge",
-            "ml.g4dn.8xlarge",
-            "ml.g4dn.xlarge",
-            "ml.g5.12xlarge",
-            "ml.g5.16xlarge",
-            "ml.g5.24xlarge",
-            "ml.g5.2xlarge",
-            "ml.g5.48xlarge",
-            "ml.g5.4xlarge",
-            "ml.g5.8xlarge",
-            "ml.g5.xlarge",
-            "ml.geospatial.interactive",
-            "ml.m5.12xlarge",
-            "ml.m5.16xlarge",
-            "ml.m5.24xlarge",
-            "ml.m5.2xlarge",
-            "ml.m5.4xlarge",
-            "ml.m5.8xlarge",
-            "ml.m5.large",
-            "ml.m5.xlarge",
-            "ml.m5d.12xlarge",
-            "ml.m5d.16xlarge",
-            "ml.m5d.24xlarge",
-            "ml.m5d.2xlarge",
-            "ml.m5d.4xlarge",
-            "ml.m5d.8xlarge",
-            "ml.m5d.large",
-            "ml.m5d.xlarge",
-            "ml.p3.16xlarge",
-            "ml.p3.2xlarge",
-            "ml.p3.8xlarge",
-            "ml.p3dn.24xlarge",
-            "ml.r5.12xlarge",
-            "ml.r5.16xlarge",
-            "ml.r5.24xlarge",
-            "ml.r5.2xlarge",
-            "ml.r5.4xlarge",
-            "ml.r5.8xlarge",
-            "ml.r5.large",
-            "ml.r5.xlarge",
-            "ml.t3.2xlarge",
-            "ml.t3.large",
-            "ml.t3.medium",
-            "ml.t3.micro",
-            "ml.t3.small",
-            "ml.t3.xlarge",
-            "system",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AppInstanceType::MlC512Xlarge => "ml.c5.12xlarge",
+    AppInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+    AppInstanceType::MlC524Xlarge => "ml.c5.24xlarge",
+    AppInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+    AppInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+    AppInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+    AppInstanceType::MlC5Large => "ml.c5.large",
+    AppInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+    AppInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+    AppInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+    AppInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+    AppInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+    AppInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+    AppInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+    AppInstanceType::MlG512Xlarge => "ml.g5.12xlarge",
+    AppInstanceType::MlG516Xlarge => "ml.g5.16xlarge",
+    AppInstanceType::MlG524Xlarge => "ml.g5.24xlarge",
+    AppInstanceType::MlG52Xlarge => "ml.g5.2xlarge",
+    AppInstanceType::MlG548Xlarge => "ml.g5.48xlarge",
+    AppInstanceType::MlG54Xlarge => "ml.g5.4xlarge",
+    AppInstanceType::MlG58Xlarge => "ml.g5.8xlarge",
+    AppInstanceType::MlG5Xlarge => "ml.g5.xlarge",
+    AppInstanceType::MlGeospatialInteractive => "ml.geospatial.interactive",
+    AppInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+    AppInstanceType::MlM516Xlarge => "ml.m5.16xlarge",
+    AppInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+    AppInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+    AppInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+    AppInstanceType::MlM58Xlarge => "ml.m5.8xlarge",
+    AppInstanceType::MlM5Large => "ml.m5.large",
+    AppInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+    AppInstanceType::MlM5D12Xlarge => "ml.m5d.12xlarge",
+    AppInstanceType::MlM5D16Xlarge => "ml.m5d.16xlarge",
+    AppInstanceType::MlM5D24Xlarge => "ml.m5d.24xlarge",
+    AppInstanceType::MlM5D2Xlarge => "ml.m5d.2xlarge",
+    AppInstanceType::MlM5D4Xlarge => "ml.m5d.4xlarge",
+    AppInstanceType::MlM5D8Xlarge => "ml.m5d.8xlarge",
+    AppInstanceType::MlM5DLarge => "ml.m5d.large",
+    AppInstanceType::MlM5DXlarge => "ml.m5d.xlarge",
+    AppInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+    AppInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+    AppInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+    AppInstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+    AppInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
+    AppInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
+    AppInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
+    AppInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
+    AppInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
+    AppInstanceType::MlR58Xlarge => "ml.r5.8xlarge",
+    AppInstanceType::MlR5Large => "ml.r5.large",
+    AppInstanceType::MlR5Xlarge => "ml.r5.xlarge",
+    AppInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
+    AppInstanceType::MlT3Large => "ml.t3.large",
+    AppInstanceType::MlT3Medium => "ml.t3.medium",
+    AppInstanceType::MlT3Micro => "ml.t3.micro",
+    AppInstanceType::MlT3Small => "ml.t3.small",
+    AppInstanceType::MlT3Xlarge => "ml.t3.xlarge",
+    AppInstanceType::System => "system",
+    AppInstanceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ml.c5.12xlarge", "ml.c5.18xlarge", "ml.c5.24xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.large", "ml.c5.xlarge", "ml.g4dn.12xlarge", "ml.g4dn.16xlarge", "ml.g4dn.2xlarge", "ml.g4dn.4xlarge", "ml.g4dn.8xlarge", "ml.g4dn.xlarge", "ml.g5.12xlarge", "ml.g5.16xlarge", "ml.g5.24xlarge", "ml.g5.2xlarge", "ml.g5.48xlarge", "ml.g5.4xlarge", "ml.g5.8xlarge", "ml.g5.xlarge", "ml.geospatial.interactive", "ml.m5.12xlarge", "ml.m5.16xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.8xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.m5d.12xlarge", "ml.m5d.16xlarge", "ml.m5d.24xlarge", "ml.m5d.2xlarge", "ml.m5d.4xlarge", "ml.m5d.8xlarge", "ml.m5d.large", "ml.m5d.xlarge", "ml.p3.16xlarge", "ml.p3.2xlarge", "ml.p3.8xlarge", "ml.p3dn.24xlarge", "ml.r5.12xlarge", "ml.r5.16xlarge", "ml.r5.24xlarge", "ml.r5.2xlarge", "ml.r5.4xlarge", "ml.r5.8xlarge", "ml.r5.large", "ml.r5.xlarge", "ml.t3.2xlarge", "ml.t3.large", "ml.t3.medium", "ml.t3.micro", "ml.t3.small", "ml.t3.xlarge", "system"]
+                }
+            }
 impl AsRef<str> for AppInstanceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -3,7 +3,7 @@
 /// <p>When you configure a SQL-based Kinesis Data Analytics application's input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MappingParameters {
+pub struct MappingParameters  {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
     #[doc(hidden)]
     pub json_mapping_parameters: std::option::Option<crate::types::JsonMappingParameters>,
@@ -13,15 +13,11 @@ pub struct MappingParameters {
 }
 impl MappingParameters {
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
-    pub fn json_mapping_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::JsonMappingParameters> {
+    pub fn json_mapping_parameters(&self) -> std::option::Option<& crate::types::JsonMappingParameters> {
         self.json_mapping_parameters.as_ref()
     }
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
-    pub fn csv_mapping_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::CsvMappingParameters> {
+    pub fn csv_mapping_parameters(&self) -> std::option::Option<& crate::types::CsvMappingParameters> {
         self.csv_mapping_parameters.as_ref()
     }
 }
@@ -46,12 +42,8 @@ impl MappingParametersBuilder {
         self
     }
     /// <p>Provides additional mapping information when JSON is the record format on the streaming source.</p>
-    pub fn set_json_mapping_parameters(
-        mut self,
-        input: std::option::Option<crate::types::JsonMappingParameters>,
-    ) -> Self {
-        self.json_mapping_parameters = input;
-        self
+    pub fn set_json_mapping_parameters(mut self, input: std::option::Option<crate::types::JsonMappingParameters>) -> Self {
+        self.json_mapping_parameters = input; self
     }
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
     pub fn csv_mapping_parameters(mut self, input: crate::types::CsvMappingParameters) -> Self {
@@ -59,18 +51,17 @@ impl MappingParametersBuilder {
         self
     }
     /// <p>Provides additional mapping information when the record format uses delimiters (for example, CSV).</p>
-    pub fn set_csv_mapping_parameters(
-        mut self,
-        input: std::option::Option<crate::types::CsvMappingParameters>,
-    ) -> Self {
-        self.csv_mapping_parameters = input;
-        self
+    pub fn set_csv_mapping_parameters(mut self, input: std::option::Option<crate::types::CsvMappingParameters>) -> Self {
+        self.csv_mapping_parameters = input; self
     }
     /// Consumes the builder and constructs a [`MappingParameters`](crate::types::MappingParameters).
     pub fn build(self) -> crate::types::MappingParameters {
         crate::types::MappingParameters {
-            json_mapping_parameters: self.json_mapping_parameters,
-            csv_mapping_parameters: self.csv_mapping_parameters,
+            json_mapping_parameters: self.json_mapping_parameters
+            ,
+            csv_mapping_parameters: self.csv_mapping_parameters
+            ,
         }
     }
 }
+

@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStandardsControlAssociationsOutput {
+pub struct ListStandardsControlAssociationsOutput  {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
     #[doc(hidden)]
-    pub standards_control_association_summaries:
-        std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
+    pub standards_control_association_summaries: std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListStandardsControlAssociationsOutput {
 }
 impl ListStandardsControlAssociationsOutput {
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
-    pub fn standards_control_association_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::StandardsControlAssociationSummary]> {
+    pub fn standards_control_association_summaries(&self) -> std::option::Option<& [crate::types::StandardsControlAssociationSummary]> {
         self.standards_control_association_summaries.as_deref()
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListStandardsControlAssociationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListStandardsControlAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListStandardsControlAssociationsOutput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput).
-    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder{
+    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder {
         crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListStandardsControlAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListStandardsControlAssociationsOutputBuilder {
-    pub(crate) standards_control_association_summaries:
-        std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
+    pub(crate) standards_control_association_summaries: std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,24 +47,15 @@ impl ListStandardsControlAssociationsOutputBuilder {
     /// To override the contents of this collection use [`set_standards_control_association_summaries`](Self::set_standards_control_association_summaries).
     ///
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
-    pub fn standards_control_association_summaries(
-        mut self,
-        input: crate::types::StandardsControlAssociationSummary,
-    ) -> Self {
-        let mut v = self
-            .standards_control_association_summaries
-            .unwrap_or_default();
-        v.push(input);
-        self.standards_control_association_summaries = Some(v);
-        self
+    pub fn standards_control_association_summaries(mut self, input: crate::types::StandardsControlAssociationSummary) -> Self {
+        let mut v = self.standards_control_association_summaries.unwrap_or_default();
+                        v.push(input);
+                        self.standards_control_association_summaries = Some(v);
+                        self
     }
     /// <p> An array that provides the enablement status and other details for each security control that applies to each enabled standard. </p>
-    pub fn set_standards_control_association_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>>,
-    ) -> Self {
-        self.standards_control_association_summaries = input;
-        self
+    pub fn set_standards_control_association_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationSummary>>) -> Self {
+        self.standards_control_association_summaries = input; self
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,23 +64,19 @@ impl ListStandardsControlAssociationsOutputBuilder {
     }
     /// <p> A pagination parameter that's included in the response only if it was included in the request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListStandardsControlAssociationsOutput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput
-    {
+    pub fn build(self) -> crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput {
         crate::operation::list_standards_control_associations::ListStandardsControlAssociationsOutput {
             standards_control_association_summaries: self.standards_control_association_summaries
             ,
@@ -103,3 +86,4 @@ impl ListStandardsControlAssociationsOutputBuilder {
         }
     }
 }
+

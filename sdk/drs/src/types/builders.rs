@@ -75,6 +75,8 @@ pub use crate::types::_recovery_instance_failback::RecoveryInstanceFailbackBuild
 
 pub use crate::types::_describe_recovery_instances_request_filters::DescribeRecoveryInstancesRequestFiltersBuilder;
 
+pub use crate::types::_launch_configuration_template::LaunchConfigurationTemplateBuilder;
+
 pub use crate::types::_job_log::JobLogBuilder;
 
 pub use crate::types::_job_log_event_data::JobLogEventDataBuilder;
@@ -86,3 +88,4 @@ pub use crate::types::_describe_jobs_request_filters::DescribeJobsRequestFilters
 pub use crate::types::_account::AccountBuilder;
 
 pub use crate::types::_staging_source_server::StagingSourceServerBuilder;
+

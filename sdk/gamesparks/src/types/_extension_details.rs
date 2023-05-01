@@ -3,7 +3,7 @@
 /// <p>Details about the extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtensionDetails {
+pub struct ExtensionDetails  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ExtensionDetails {
 }
 impl ExtensionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ExtensionDetailsBuilder {
     }
     /// <p>The namespace (qualifier) of the extension.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ExtensionDetailsBuilder {
     }
     /// <p>The name of the extension.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the extension.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ExtensionDetailsBuilder {
     }
     /// <p>The description of the extension.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`ExtensionDetails`](crate::types::ExtensionDetails).
     pub fn build(self) -> crate::types::ExtensionDetails {
         crate::types::ExtensionDetails {
-            namespace: self.namespace,
-            name: self.name,
-            description: self.description,
+            namespace: self.namespace
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

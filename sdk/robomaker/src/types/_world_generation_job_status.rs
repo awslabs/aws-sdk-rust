@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let worldgenerationjobstatus = unimplemented!();
 /// match worldgenerationjobstatus {
@@ -35,22 +35,14 @@
 /// Specifically, when `worldgenerationjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WorldGenerationJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WorldGenerationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -67,60 +59,51 @@ pub enum WorldGenerationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WorldGenerationJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Canceled" => WorldGenerationJobStatus::Canceled,
-            "Canceling" => WorldGenerationJobStatus::Canceling,
-            "Completed" => WorldGenerationJobStatus::Completed,
-            "Failed" => WorldGenerationJobStatus::Failed,
-            "PartialFailed" => WorldGenerationJobStatus::PartialFailed,
-            "Pending" => WorldGenerationJobStatus::Pending,
-            "Running" => WorldGenerationJobStatus::Running,
-            other => WorldGenerationJobStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Canceled" => WorldGenerationJobStatus::Canceled,
+"Canceling" => WorldGenerationJobStatus::Canceling,
+"Completed" => WorldGenerationJobStatus::Completed,
+"Failed" => WorldGenerationJobStatus::Failed,
+"PartialFailed" => WorldGenerationJobStatus::PartialFailed,
+"Pending" => WorldGenerationJobStatus::Pending,
+"Running" => WorldGenerationJobStatus::Running,
+other => WorldGenerationJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WorldGenerationJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorldGenerationJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WorldGenerationJobStatus::from(s))
+                }
+            }
 impl WorldGenerationJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WorldGenerationJobStatus::Canceled => "Canceled",
-            WorldGenerationJobStatus::Canceling => "Canceling",
-            WorldGenerationJobStatus::Completed => "Completed",
-            WorldGenerationJobStatus::Failed => "Failed",
-            WorldGenerationJobStatus::PartialFailed => "PartialFailed",
-            WorldGenerationJobStatus::Pending => "Pending",
-            WorldGenerationJobStatus::Running => "Running",
-            WorldGenerationJobStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Canceled",
-            "Canceling",
-            "Completed",
-            "Failed",
-            "PartialFailed",
-            "Pending",
-            "Running",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WorldGenerationJobStatus::Canceled => "Canceled",
+    WorldGenerationJobStatus::Canceling => "Canceling",
+    WorldGenerationJobStatus::Completed => "Completed",
+    WorldGenerationJobStatus::Failed => "Failed",
+    WorldGenerationJobStatus::PartialFailed => "PartialFailed",
+    WorldGenerationJobStatus::Pending => "Pending",
+    WorldGenerationJobStatus::Running => "Running",
+    WorldGenerationJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Canceled", "Canceling", "Completed", "Failed", "PartialFailed", "Pending", "Running"]
+                }
+            }
 impl AsRef<str> for WorldGenerationJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -144,3 +144,4 @@ pub use crate::types::_compute_environment_detail::ComputeEnvironmentDetailBuild
 pub use crate::types::_eks_configuration::EksConfigurationBuilder;
 
 pub use crate::types::_compute_resource::ComputeResourceBuilder;
+

@@ -3,7 +3,7 @@
 /// <p>A validation failure that occurred as the result of a pre-update validation check (verbose dry run) on a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationFailure {
+pub struct ValidationFailure  {
     /// <p>The error code of the failure.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ValidationFailure {
 }
 impl ValidationFailure {
     /// <p>The error code of the failure.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message corresponding to the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ValidationFailureBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>A message corresponding to the failure.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ValidationFailureBuilder {
     }
     /// <p>A message corresponding to the failure.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`ValidationFailure`](crate::types::ValidationFailure).
     pub fn build(self) -> crate::types::ValidationFailure {
         crate::types::ValidationFailure {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

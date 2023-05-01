@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScheduledActionsOutput {
+pub struct ListScheduledActionsOutput  {
     /// <p>A list of actions that are scheduled for the domain.</p>
     #[doc(hidden)]
     pub scheduled_actions: std::option::Option<std::vec::Vec<crate::types::ScheduledAction>>,
@@ -13,23 +13,22 @@ pub struct ListScheduledActionsOutput {
 }
 impl ListScheduledActionsOutput {
     /// <p>A list of actions that are scheduled for the domain.</p>
-    pub fn scheduled_actions(&self) -> std::option::Option<&[crate::types::ScheduledAction]> {
+    pub fn scheduled_actions(&self) -> std::option::Option<& [crate::types::ScheduledAction]> {
         self.scheduled_actions.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListScheduledActionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListScheduledActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListScheduledActionsOutput`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsOutputBuilder {
         crate::operation::list_scheduled_actions::builders::ListScheduledActionsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListScheduledActionsOutputBuilder {
     /// <p>A list of actions that are scheduled for the domain.</p>
     pub fn scheduled_actions(mut self, input: crate::types::ScheduledAction) -> Self {
         let mut v = self.scheduled_actions.unwrap_or_default();
-        v.push(input);
-        self.scheduled_actions = Some(v);
-        self
+                        v.push(input);
+                        self.scheduled_actions = Some(v);
+                        self
     }
     /// <p>A list of actions that are scheduled for the domain.</p>
-    pub fn set_scheduled_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduledAction>>,
-    ) -> Self {
-        self.scheduled_actions = input;
-        self
+    pub fn set_scheduled_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduledAction>>) -> Self {
+        self.scheduled_actions = input; self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListScheduledActionsOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListScheduledActionsOutput`](crate::operation::list_scheduled_actions::ListScheduledActionsOutput).
     pub fn build(self) -> crate::operation::list_scheduled_actions::ListScheduledActionsOutput {
         crate::operation::list_scheduled_actions::ListScheduledActionsOutput {
-            scheduled_actions: self.scheduled_actions,
-            next_token: self.next_token,
+            scheduled_actions: self.scheduled_actions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

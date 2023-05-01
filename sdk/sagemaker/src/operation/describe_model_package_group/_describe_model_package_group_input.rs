@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelPackageGroupInput {
+pub struct DescribeModelPackageGroupInput  {
     /// <p>The name of gthe model group to describe.</p>
     #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelPackageGroupInput {
     /// <p>The name of gthe model group to describe.</p>
-    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
 }
 impl DescribeModelPackageGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageGroupInput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupInput).
-    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder{
+    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder {
         crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DescribeModelPackageGroupInputBuilder {
         self
     }
     /// <p>The name of gthe model group to describe.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_group_name = input;
-        self
+    pub fn set_model_package_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_group_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeModelPackageGroupInput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_model_package_group::DescribeModelPackageGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_model_package_group::DescribeModelPackageGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_model_package_group::DescribeModelPackageGroupInput {
-                model_package_group_name: self.model_package_group_name,
-            },
+                model_package_group_name: self.model_package_group_name
+                ,
+            }
         )
     }
 }
+

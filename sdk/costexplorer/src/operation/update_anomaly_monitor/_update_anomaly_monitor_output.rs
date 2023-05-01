@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnomalyMonitorOutput {
+pub struct UpdateAnomalyMonitorOutput  {
     /// <p>A cost anomaly monitor ARN. </p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct UpdateAnomalyMonitorOutput {
 }
 impl UpdateAnomalyMonitorOutput {
     /// <p>A cost anomaly monitor ARN. </p>
-    pub fn monitor_arn(&self) -> std::option::Option<&str> {
+    pub fn monitor_arn(&self) -> std::option::Option<& str> {
         self.monitor_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAnomalyMonitorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAnomalyMonitorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnomalyMonitorOutput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput).
-    pub fn builder(
-    ) -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorOutputBuilder {
+    pub fn builder() -> crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorOutputBuilder {
         crate::operation::update_anomaly_monitor::builders::UpdateAnomalyMonitorOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl UpdateAnomalyMonitorOutputBuilder {
     }
     /// <p>A cost anomaly monitor ARN. </p>
     pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_arn = input;
-        self
+        self.monitor_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAnomalyMonitorOutput`](crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput).
     pub fn build(self) -> crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput {
         crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput {
-            monitor_arn: self.monitor_arn,
+            monitor_arn: self.monitor_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

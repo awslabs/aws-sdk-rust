@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelPackageInput {
-    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+pub struct DescribeModelPackageInput  {
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p> 
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub model_package_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelPackageInput {
-    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p> 
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn model_package_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_name(&self) -> std::option::Option<& str> {
         self.model_package_name.as_deref()
     }
 }
 impl DescribeModelPackageInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageInput`](crate::operation::describe_model_package::DescribeModelPackageInput).
-    pub fn builder(
-    ) -> crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder {
+    pub fn builder() -> crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder {
         crate::operation::describe_model_package::builders::DescribeModelPackageInputBuilder::default()
     }
 }
@@ -30,32 +29,25 @@ pub struct DescribeModelPackageInputBuilder {
     pub(crate) model_package_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelPackageInputBuilder {
-    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p> 
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
     pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.model_package_name = Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
+    /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p> 
     /// <p>When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-    pub fn set_model_package_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_name = input;
-        self
+    pub fn set_model_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeModelPackageInput`](crate::operation::describe_model_package::DescribeModelPackageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_model_package::DescribeModelPackageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_model_package::DescribeModelPackageInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_model_package::DescribeModelPackageInput {
-                model_package_name: self.model_package_name,
-            },
+                model_package_name: self.model_package_name
+                ,
+            }
         )
     }
 }
+

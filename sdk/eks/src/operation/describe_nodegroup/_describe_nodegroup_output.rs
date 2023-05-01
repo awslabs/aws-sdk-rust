@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNodegroupOutput {
+pub struct DescribeNodegroupOutput  {
     /// <p>The full description of your node group.</p>
     #[doc(hidden)]
     pub nodegroup: std::option::Option<crate::types::Nodegroup>,
@@ -10,19 +10,18 @@ pub struct DescribeNodegroupOutput {
 }
 impl DescribeNodegroupOutput {
     /// <p>The full description of your node group.</p>
-    pub fn nodegroup(&self) -> std::option::Option<&crate::types::Nodegroup> {
+    pub fn nodegroup(&self) -> std::option::Option<& crate::types::Nodegroup> {
         self.nodegroup.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeNodegroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeNodegroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_nodegroup::builders::DescribeNodegroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_nodegroup::builders::DescribeNodegroupOutputBuilder {
         crate::operation::describe_nodegroup::builders::DescribeNodegroupOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl DescribeNodegroupOutputBuilder {
     }
     /// <p>The full description of your node group.</p>
     pub fn set_nodegroup(mut self, input: std::option::Option<crate::types::Nodegroup>) -> Self {
-        self.nodegroup = input;
-        self
+        self.nodegroup = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeNodegroupOutput`](crate::operation::describe_nodegroup::DescribeNodegroupOutput).
     pub fn build(self) -> crate::operation::describe_nodegroup::DescribeNodegroupOutput {
         crate::operation::describe_nodegroup::DescribeNodegroupOutput {
-            nodegroup: self.nodegroup,
+            nodegroup: self.nodegroup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectsInput {
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+pub struct ListProjectsInput  {
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::types::ProjectSortByType>,
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::types::SortOrderType>,
@@ -25,27 +25,27 @@ pub struct ListProjectsInput {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInput {
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::ProjectSortByType> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::ProjectSortByType> {
         self.sort_by.as_ref()
     }
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -65,53 +65,45 @@ pub struct ListProjectsInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListProjectsInputBuilder {
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn sort_by(mut self, input: crate::types::ProjectSortByType) -> Self {
         self.sort_by = Some(input);
         self
     }
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::ProjectSortByType>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ProjectSortByType>) -> Self {
+        self.sort_by = input; self
     }
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = Some(input);
         self
     }
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
-        self.sort_order = input;
-        self
+    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
+        self.sort_order = input; self
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,20 +112,20 @@ impl ListProjectsInputBuilder {
     }
     /// <p>During a previous call, if there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a <i>nextToken</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_projects::ListProjectsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_projects::ListProjectsInput {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_projects::ListProjectsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_projects::ListProjectsInput {
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

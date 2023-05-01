@@ -3,18 +3,18 @@
 /// <p>The input variables to the app to be used by the InvokeScreenAutomation action request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VariableValue {
+pub struct VariableValue  {
     /// <p>Raw value of the variable.</p>
     #[doc(hidden)]
     pub raw_value: std::option::Option<std::string::String>,
 }
 impl VariableValue {
     /// <p>Raw value of the variable.</p>
-    pub fn raw_value(&self) -> std::option::Option<&str> {
+    pub fn raw_value(&self) -> std::option::Option<& str> {
         self.raw_value.as_deref()
     }
 }
-impl std::fmt::Debug for VariableValue {
+impl  std::fmt::Debug for VariableValue  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValue");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl VariableValueBuilder {
     }
     /// <p>Raw value of the variable.</p>
     pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raw_value = input;
-        self
+        self.raw_value = input; self
     }
     /// Consumes the builder and constructs a [`VariableValue`](crate::types::VariableValue).
     pub fn build(self) -> crate::types::VariableValue {
         crate::types::VariableValue {
-            raw_value: self.raw_value,
+            raw_value: self.raw_value
+            ,
         }
     }
 }
@@ -59,3 +59,4 @@ impl std::fmt::Debug for VariableValueBuilder {
         formatter.finish()
     }
 }
+

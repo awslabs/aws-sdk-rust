@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelBanOutput {
+pub struct DeleteChannelBanOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteChannelBanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteChannelBanOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput).
-    pub fn builder() -> crate::operation::delete_channel_ban::builders::DeleteChannelBanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_channel_ban::builders::DeleteChannelBanOutputBuilder {
         crate::operation::delete_channel_ban::builders::DeleteChannelBanOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteChannelBanOutputBuilder {
 }
 impl DeleteChannelBanOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteChannelBanOutput`](crate::operation::delete_channel_ban::DeleteChannelBanOutput).
     pub fn build(self) -> crate::operation::delete_channel_ban::DeleteChannelBanOutput {
         crate::operation::delete_channel_ban::DeleteChannelBanOutput {
@@ -41,3 +40,4 @@ impl DeleteChannelBanOutputBuilder {
         }
     }
 }
+

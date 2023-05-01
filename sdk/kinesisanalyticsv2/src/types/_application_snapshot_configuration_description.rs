@@ -3,7 +3,7 @@
 /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationSnapshotConfigurationDescription {
+pub struct ApplicationSnapshotConfigurationDescription  {
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub snapshots_enabled: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl ApplicationSnapshotConfigurationDescriptionBuilder {
     }
     /// <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.</p>
     pub fn set_snapshots_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.snapshots_enabled = input;
-        self
+        self.snapshots_enabled = input; self
     }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationDescription`](crate::types::ApplicationSnapshotConfigurationDescription).
     pub fn build(self) -> crate::types::ApplicationSnapshotConfigurationDescription {
         crate::types::ApplicationSnapshotConfigurationDescription {
-            snapshots_enabled: self.snapshots_enabled,
+            snapshots_enabled: self.snapshots_enabled
+            ,
         }
     }
 }
+

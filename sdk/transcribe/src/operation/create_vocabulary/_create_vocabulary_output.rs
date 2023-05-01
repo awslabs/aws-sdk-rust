@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVocabularyOutput {
+pub struct CreateVocabularyOutput  {
     /// <p>The name you chose for your custom vocabulary.</p>
     #[doc(hidden)]
     pub vocabulary_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CreateVocabularyOutput {
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     #[doc(hidden)]
     pub vocabulary_state: std::option::Option<crate::types::VocabularyState>,
-    /// <p>The date and time you created your custom vocabulary.</p>
+    /// <p>The date and time you created your custom vocabulary.</p> 
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -23,36 +23,35 @@ pub struct CreateVocabularyOutput {
 }
 impl CreateVocabularyOutput {
     /// <p>The name you chose for your custom vocabulary.</p>
-    pub fn vocabulary_name(&self) -> std::option::Option<&str> {
+    pub fn vocabulary_name(&self) -> std::option::Option<& str> {
         self.vocabulary_name.as_deref()
     }
     /// <p>The language code you selected for your custom vocabulary.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
-    pub fn vocabulary_state(&self) -> std::option::Option<&crate::types::VocabularyState> {
+    pub fn vocabulary_state(&self) -> std::option::Option<& crate::types::VocabularyState> {
         self.vocabulary_state.as_ref()
     }
-    /// <p>The date and time you created your custom vocabulary.</p>
+    /// <p>The date and time you created your custom vocabulary.</p> 
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVocabularyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVocabularyOutput {
     /// Creates a new builder-style object to manufacture [`CreateVocabularyOutput`](crate::operation::create_vocabulary::CreateVocabularyOutput).
-    pub fn builder() -> crate::operation::create_vocabulary::builders::CreateVocabularyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_vocabulary::builders::CreateVocabularyOutputBuilder {
         crate::operation::create_vocabulary::builders::CreateVocabularyOutputBuilder::default()
     }
 }
@@ -76,8 +75,7 @@ impl CreateVocabularyOutputBuilder {
     }
     /// <p>The name you chose for your custom vocabulary.</p>
     pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vocabulary_name = input;
-        self
+        self.vocabulary_name = input; self
     }
     /// <p>The language code you selected for your custom vocabulary.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -85,12 +83,8 @@ impl CreateVocabularyOutputBuilder {
         self
     }
     /// <p>The language code you selected for your custom vocabulary.</p>
-    pub fn set_language_code(
-        mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
-    ) -> Self {
-        self.language_code = input;
-        self
+    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+        self.language_code = input; self
     }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
     pub fn vocabulary_state(mut self, input: crate::types::VocabularyState) -> Self {
@@ -98,27 +92,19 @@ impl CreateVocabularyOutputBuilder {
         self
     }
     /// <p>The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.</p>
-    pub fn set_vocabulary_state(
-        mut self,
-        input: std::option::Option<crate::types::VocabularyState>,
-    ) -> Self {
-        self.vocabulary_state = input;
-        self
+    pub fn set_vocabulary_state(mut self, input: std::option::Option<crate::types::VocabularyState>) -> Self {
+        self.vocabulary_state = input; self
     }
-    /// <p>The date and time you created your custom vocabulary.</p>
+    /// <p>The date and time you created your custom vocabulary.</p> 
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = Some(input);
         self
     }
-    /// <p>The date and time you created your custom vocabulary.</p>
+    /// <p>The date and time you created your custom vocabulary.</p> 
     /// <p>Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,27 +113,32 @@ impl CreateVocabularyOutputBuilder {
     }
     /// <p>If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVocabularyOutput`](crate::operation::create_vocabulary::CreateVocabularyOutput).
     pub fn build(self) -> crate::operation::create_vocabulary::CreateVocabularyOutput {
         crate::operation::create_vocabulary::CreateVocabularyOutput {
-            vocabulary_name: self.vocabulary_name,
-            language_code: self.language_code,
-            vocabulary_state: self.vocabulary_state,
-            last_modified_time: self.last_modified_time,
-            failure_reason: self.failure_reason,
+            vocabulary_name: self.vocabulary_name
+            ,
+            language_code: self.language_code
+            ,
+            vocabulary_state: self.vocabulary_state
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            failure_reason: self.failure_reason
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

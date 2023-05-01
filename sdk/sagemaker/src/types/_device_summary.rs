@@ -3,7 +3,7 @@
 /// <p>Summary of the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceSummary {
+pub struct DeviceSummary  {
     /// <p>The unique identifier of the device.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct DeviceSummary {
 }
 impl DeviceSummary {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the device.</p>
-    pub fn device_arn(&self) -> std::option::Option<&str> {
+    pub fn device_arn(&self) -> std::option::Option<& str> {
         self.device_arn.as_deref()
     }
     /// <p>A description of the device.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the fleet the device belongs to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
-    pub fn iot_thing_name(&self) -> std::option::Option<&str> {
+    pub fn iot_thing_name(&self) -> std::option::Option<& str> {
         self.iot_thing_name.as_deref()
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
-    pub fn registration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn registration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.registration_time.as_ref()
     }
     /// <p>The last heartbeat received from the device.</p>
-    pub fn latest_heartbeat(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_heartbeat(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_heartbeat.as_ref()
     }
     /// <p>Models on the device.</p>
-    pub fn models(&self) -> std::option::Option<&[crate::types::EdgeModelSummary]> {
+    pub fn models(&self) -> std::option::Option<& [crate::types::EdgeModelSummary]> {
         self.models.as_deref()
     }
     /// <p>Edge Manager agent version.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the device.</p>
     pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the device.</p>
     pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_arn = input;
-        self
+        self.device_arn = input; self
     }
     /// <p>A description of the device.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>A description of the device.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the fleet the device belongs to.</p>
     pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,12 +125,8 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The name of the fleet the device belongs to.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_fleet_name = input;
-        self
+    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_fleet_name = input; self
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
     pub fn iot_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +135,7 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The Amazon Web Services Internet of Things (IoT) object thing name associated with the device..</p>
     pub fn set_iot_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iot_thing_name = input;
-        self
+        self.iot_thing_name = input; self
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
     pub fn registration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,12 +143,8 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The timestamp of the last registration or de-reregistration.</p>
-    pub fn set_registration_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.registration_time = input;
-        self
+    pub fn set_registration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.registration_time = input; self
     }
     /// <p>The last heartbeat received from the device.</p>
     pub fn latest_heartbeat(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -164,12 +152,8 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The last heartbeat received from the device.</p>
-    pub fn set_latest_heartbeat(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.latest_heartbeat = input;
-        self
+    pub fn set_latest_heartbeat(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.latest_heartbeat = input; self
     }
     /// Appends an item to `models`.
     ///
@@ -178,17 +162,13 @@ impl DeviceSummaryBuilder {
     /// <p>Models on the device.</p>
     pub fn models(mut self, input: crate::types::EdgeModelSummary) -> Self {
         let mut v = self.models.unwrap_or_default();
-        v.push(input);
-        self.models = Some(v);
-        self
+                        v.push(input);
+                        self.models = Some(v);
+                        self
     }
     /// <p>Models on the device.</p>
-    pub fn set_models(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EdgeModelSummary>>,
-    ) -> Self {
-        self.models = input;
-        self
+    pub fn set_models(mut self, input: std::option::Option<std::vec::Vec<crate::types::EdgeModelSummary>>) -> Self {
+        self.models = input; self
     }
     /// <p>Edge Manager agent version.</p>
     pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,21 +177,30 @@ impl DeviceSummaryBuilder {
     }
     /// <p>Edge Manager agent version.</p>
     pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {
         crate::types::DeviceSummary {
-            device_name: self.device_name,
-            device_arn: self.device_arn,
-            description: self.description,
-            device_fleet_name: self.device_fleet_name,
-            iot_thing_name: self.iot_thing_name,
-            registration_time: self.registration_time,
-            latest_heartbeat: self.latest_heartbeat,
-            models: self.models,
-            agent_version: self.agent_version,
+            device_name: self.device_name
+            ,
+            device_arn: self.device_arn
+            ,
+            description: self.description
+            ,
+            device_fleet_name: self.device_fleet_name
+            ,
+            iot_thing_name: self.iot_thing_name
+            ,
+            registration_time: self.registration_time
+            ,
+            latest_heartbeat: self.latest_heartbeat
+            ,
+            models: self.models
+            ,
+            agent_version: self.agent_version
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueryStateInput {
+pub struct GetQueryStateInput  {
     /// <p>The ID of the plan query operation.</p>
     #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
 }
 impl GetQueryStateInput {
     /// <p>The ID of the plan query operation.</p>
-    pub fn query_id(&self) -> std::option::Option<&str> {
+    pub fn query_id(&self) -> std::option::Option<& str> {
         self.query_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetQueryStateInputBuilder {
     }
     /// <p>The ID of the plan query operation.</p>
     pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_id = input;
-        self
+        self.query_id = input; self
     }
     /// Consumes the builder and constructs a [`GetQueryStateInput`](crate::operation::get_query_state::GetQueryStateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_query_state::GetQueryStateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_query_state::GetQueryStateInput {
-            query_id: self.query_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_query_state::GetQueryStateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_query_state::GetQueryStateInput {
+                query_id: self.query_id
+                ,
+            }
+        )
     }
 }
+

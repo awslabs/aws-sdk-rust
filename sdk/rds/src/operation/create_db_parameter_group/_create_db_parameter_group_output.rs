@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+pub struct CreateDbParameterGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::types::DbParameterGroup>,
     _request_id: Option<String>,
 }
 impl CreateDbParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-    pub fn db_parameter_group(&self) -> std::option::Option<&crate::types::DbParameterGroup> {
+    pub fn db_parameter_group(&self) -> std::option::Option<& crate::types::DbParameterGroup> {
         self.db_parameter_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDbParameterGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder {
         crate::operation::create_db_parameter_group::builders::CreateDbParameterGroupOutputBuilder::default()
     }
 }
@@ -38,37 +36,33 @@ pub struct CreateDbParameterGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateDbParameterGroupOutputBuilder {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     pub fn db_parameter_group(mut self, input: crate::types::DbParameterGroup) -> Self {
         self.db_parameter_group = Some(input);
         self
     }
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-    pub fn set_db_parameter_group(
-        mut self,
-        input: std::option::Option<crate::types::DbParameterGroup>,
-    ) -> Self {
-        self.db_parameter_group = input;
-        self
+    pub fn set_db_parameter_group(mut self, input: std::option::Option<crate::types::DbParameterGroup>) -> Self {
+        self.db_parameter_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDbParameterGroupOutput`](crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput {
+    pub fn build(self) -> crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput {
         crate::operation::create_db_parameter_group::CreateDbParameterGroupOutput {
-            db_parameter_group: self.db_parameter_group,
+            db_parameter_group: self.db_parameter_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

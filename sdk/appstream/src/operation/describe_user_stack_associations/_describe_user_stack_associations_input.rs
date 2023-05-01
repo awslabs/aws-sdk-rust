@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeUserStackAssociationsInput {
+pub struct DescribeUserStackAssociationsInput  {
     /// <p>The name of the stack that is associated with the user.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user who is associated with the stack.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -23,17 +23,17 @@ pub struct DescribeUserStackAssociationsInput {
 }
 impl DescribeUserStackAssociationsInput {
     /// <p>The name of the stack that is associated with the user.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user who is associated with the stack.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<& crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The maximum size of each page of results.</p>
@@ -41,11 +41,11 @@ impl DescribeUserStackAssociationsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserStackAssociationsInput {
+impl  std::fmt::Debug for DescribeUserStackAssociationsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserStackAssociationsInput");
         formatter.field("stack_name", &self.stack_name);
@@ -58,7 +58,7 @@ impl std::fmt::Debug for DescribeUserStackAssociationsInput {
 }
 impl DescribeUserStackAssociationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserStackAssociationsInput`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput).
-    pub fn builder() -> crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder {
         crate::operation::describe_user_stack_associations::builders::DescribeUserStackAssociationsInputBuilder::default()
     }
 }
@@ -81,22 +81,20 @@ impl DescribeUserStackAssociationsInputBuilder {
     }
     /// <p>The name of the stack that is associated with the user.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user who is associated with the stack.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The email address of the user who is associated with the stack.</p> <note>
-    /// <p>Users' email addresses are case-sensitive.</p>
+    /// <p>The email address of the user who is associated with the stack.</p> <note> 
+    /// <p>Users' email addresses are case-sensitive.</p> 
     /// </note>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
@@ -104,12 +102,8 @@ impl DescribeUserStackAssociationsInputBuilder {
         self
     }
     /// <p>The authentication type for the user who is associated with the stack. You must specify USERPOOL.</p>
-    pub fn set_authentication_type(
-        mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
-    ) -> Self {
-        self.authentication_type = input;
-        self
+    pub fn set_authentication_type(mut self, input: std::option::Option<crate::types::AuthenticationType>) -> Self {
+        self.authentication_type = input; self
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -118,8 +112,7 @@ impl DescribeUserStackAssociationsInputBuilder {
     }
     /// <p>The maximum size of each page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,16 +121,10 @@ impl DescribeUserStackAssociationsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeUserStackAssociationsInput`](crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsInput {
                 stack_name: self.stack_name
@@ -165,3 +152,4 @@ impl std::fmt::Debug for DescribeUserStackAssociationsInputBuilder {
         formatter.finish()
     }
 }
+

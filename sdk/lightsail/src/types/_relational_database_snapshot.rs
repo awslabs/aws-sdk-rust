@@ -3,7 +3,7 @@
 /// <p>Describes a database snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelationalDatabaseSnapshot {
+pub struct RelationalDatabaseSnapshot  {
     /// <p>The name of the database snapshot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -52,39 +52,39 @@ pub struct RelationalDatabaseSnapshot {
 }
 impl RelationalDatabaseSnapshot {
     /// <p>The name of the database snapshot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The support code for the database snapshot. Include this code in your email to support when you have questions about a database snapshot in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> std::option::Option<&str> {
+    pub fn support_code(&self) -> std::option::Option<& str> {
         self.support_code.as_deref()
     }
     /// <p>The timestamp when the database snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The Lightsail resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The database engine version for the database snapshot (for example, <code>5.7.23</code>).</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The size of the disk in GB (for example, <code>32</code>) for the database snapshot.</p>
@@ -92,23 +92,23 @@ impl RelationalDatabaseSnapshot {
         self.size_in_gb
     }
     /// <p>The state of the database snapshot.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The name of the source database from which the database snapshot was created.</p>
-    pub fn from_relational_database_name(&self) -> std::option::Option<&str> {
+    pub fn from_relational_database_name(&self) -> std::option::Option<& str> {
         self.from_relational_database_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the database from which the database snapshot was created.</p>
-    pub fn from_relational_database_arn(&self) -> std::option::Option<&str> {
+    pub fn from_relational_database_arn(&self) -> std::option::Option<& str> {
         self.from_relational_database_arn.as_deref()
     }
     /// <p>The bundle ID of the database from which the database snapshot was created.</p>
-    pub fn from_relational_database_bundle_id(&self) -> std::option::Option<&str> {
+    pub fn from_relational_database_bundle_id(&self) -> std::option::Option<& str> {
         self.from_relational_database_bundle_id.as_deref()
     }
     /// <p>The blueprint ID of the database from which the database snapshot was created. A blueprint describes the major engine version of a database.</p>
-    pub fn from_relational_database_blueprint_id(&self) -> std::option::Option<&str> {
+    pub fn from_relational_database_blueprint_id(&self) -> std::option::Option<& str> {
         self.from_relational_database_blueprint_id.as_deref()
     }
 }
@@ -147,8 +147,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The name of the database snapshot.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +156,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The support code for the database snapshot. Include this code in your email to support when you have questions about a database snapshot in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn support_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +165,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The support code for the database snapshot. Include this code in your email to support when you have questions about a database snapshot in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.support_code = input;
-        self
+        self.support_code = input; self
     }
     /// <p>The timestamp when the database snapshot was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,12 +173,8 @@ impl RelationalDatabaseSnapshotBuilder {
         self
     }
     /// <p>The timestamp when the database snapshot was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
@@ -189,12 +182,8 @@ impl RelationalDatabaseSnapshotBuilder {
         self
     }
     /// <p>The Region name and Availability Zone where the database snapshot is located.</p>
-    pub fn set_location(
-        mut self,
-        input: std::option::Option<crate::types::ResourceLocation>,
-    ) -> Self {
-        self.location = input;
-        self
+    pub fn set_location(mut self, input: std::option::Option<crate::types::ResourceLocation>) -> Self {
+        self.location = input; self
     }
     /// <p>The Lightsail resource type.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -202,12 +191,8 @@ impl RelationalDatabaseSnapshotBuilder {
         self
     }
     /// <p>The Lightsail resource type.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -216,17 +201,13 @@ impl RelationalDatabaseSnapshotBuilder {
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -235,8 +216,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The database engine version for the database snapshot (for example, <code>5.7.23</code>).</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,8 +225,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The database engine version for the database snapshot (for example, <code>5.7.23</code>).</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The size of the disk in GB (for example, <code>32</code>) for the database snapshot.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
@@ -255,8 +234,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The size of the disk in GB (for example, <code>32</code>) for the database snapshot.</p>
     pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-        self.size_in_gb = input;
-        self
+        self.size_in_gb = input; self
     }
     /// <p>The state of the database snapshot.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -265,8 +243,7 @@ impl RelationalDatabaseSnapshotBuilder {
     }
     /// <p>The state of the database snapshot.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The name of the source database from which the database snapshot was created.</p>
     pub fn from_relational_database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,12 +251,8 @@ impl RelationalDatabaseSnapshotBuilder {
         self
     }
     /// <p>The name of the source database from which the database snapshot was created.</p>
-    pub fn set_from_relational_database_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_relational_database_name = input;
-        self
+    pub fn set_from_relational_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_relational_database_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the database from which the database snapshot was created.</p>
     pub fn from_relational_database_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -287,63 +260,61 @@ impl RelationalDatabaseSnapshotBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the database from which the database snapshot was created.</p>
-    pub fn set_from_relational_database_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_relational_database_arn = input;
-        self
+    pub fn set_from_relational_database_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_relational_database_arn = input; self
     }
     /// <p>The bundle ID of the database from which the database snapshot was created.</p>
-    pub fn from_relational_database_bundle_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn from_relational_database_bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.from_relational_database_bundle_id = Some(input.into());
         self
     }
     /// <p>The bundle ID of the database from which the database snapshot was created.</p>
-    pub fn set_from_relational_database_bundle_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_relational_database_bundle_id = input;
-        self
+    pub fn set_from_relational_database_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_relational_database_bundle_id = input; self
     }
     /// <p>The blueprint ID of the database from which the database snapshot was created. A blueprint describes the major engine version of a database.</p>
-    pub fn from_relational_database_blueprint_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn from_relational_database_blueprint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.from_relational_database_blueprint_id = Some(input.into());
         self
     }
     /// <p>The blueprint ID of the database from which the database snapshot was created. A blueprint describes the major engine version of a database.</p>
-    pub fn set_from_relational_database_blueprint_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_relational_database_blueprint_id = input;
-        self
+    pub fn set_from_relational_database_blueprint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_relational_database_blueprint_id = input; self
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseSnapshot`](crate::types::RelationalDatabaseSnapshot).
     pub fn build(self) -> crate::types::RelationalDatabaseSnapshot {
         crate::types::RelationalDatabaseSnapshot {
-            name: self.name,
-            arn: self.arn,
-            support_code: self.support_code,
-            created_at: self.created_at,
-            location: self.location,
-            resource_type: self.resource_type,
-            tags: self.tags,
-            engine: self.engine,
-            engine_version: self.engine_version,
-            size_in_gb: self.size_in_gb,
-            state: self.state,
-            from_relational_database_name: self.from_relational_database_name,
-            from_relational_database_arn: self.from_relational_database_arn,
-            from_relational_database_bundle_id: self.from_relational_database_bundle_id,
-            from_relational_database_blueprint_id: self.from_relational_database_blueprint_id,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            support_code: self.support_code
+            ,
+            created_at: self.created_at
+            ,
+            location: self.location
+            ,
+            resource_type: self.resource_type
+            ,
+            tags: self.tags
+            ,
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            size_in_gb: self.size_in_gb
+            ,
+            state: self.state
+            ,
+            from_relational_database_name: self.from_relational_database_name
+            ,
+            from_relational_database_arn: self.from_relational_database_arn
+            ,
+            from_relational_database_bundle_id: self.from_relational_database_bundle_id
+            ,
+            from_relational_database_blueprint_id: self.from_relational_database_blueprint_id
+            ,
         }
     }
 }
+

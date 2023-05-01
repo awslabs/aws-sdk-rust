@@ -3,22 +3,20 @@
 /// <p>Represents the request to get information about the specified remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRemoteAccessSessionInput {
+pub struct GetRemoteAccessSessionInput  {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetRemoteAccessSessionInput {
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl GetRemoteAccessSessionInput {
     /// Creates a new builder-style object to manufacture [`GetRemoteAccessSessionInput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionInput).
-    pub fn builder(
-    ) -> crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionInputBuilder {
         crate::operation::get_remote_access_session::builders::GetRemoteAccessSessionInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl GetRemoteAccessSessionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to get session information.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`GetRemoteAccessSessionInput`](crate::operation::get_remote_access_session::GetRemoteAccessSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_remote_access_session::GetRemoteAccessSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_remote_access_session::GetRemoteAccessSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_remote_access_session::GetRemoteAccessSessionInput {
-                arn: self.arn,
-            },
+                arn: self.arn
+                ,
+            }
         )
     }
 }
+

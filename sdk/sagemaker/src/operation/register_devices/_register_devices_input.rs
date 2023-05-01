@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDevicesInput {
+pub struct RegisterDevicesInput  {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub device_fleet_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct RegisterDevicesInput {
 }
 impl RegisterDevicesInput {
     /// <p>The name of the fleet.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
         self.device_fleet_name.as_deref()
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn devices(&self) -> std::option::Option<&[crate::types::Device]> {
+    pub fn devices(&self) -> std::option::Option<& [crate::types::Device]> {
         self.devices.as_deref()
     }
     /// <p>The tags associated with devices.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -49,12 +49,8 @@ impl RegisterDevicesInputBuilder {
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_device_fleet_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_fleet_name = input;
-        self
+    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_fleet_name = input; self
     }
     /// Appends an item to `devices`.
     ///
@@ -63,17 +59,13 @@ impl RegisterDevicesInputBuilder {
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
-        v.push(input);
-        self.devices = Some(v);
-        self
+                        v.push(input);
+                        self.devices = Some(v);
+                        self
     }
     /// <p>A list of devices to register with SageMaker Edge Manager.</p>
-    pub fn set_devices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Device>>,
-    ) -> Self {
-        self.devices = input;
-        self
+    pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::Device>>) -> Self {
+        self.devices = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -82,29 +74,26 @@ impl RegisterDevicesInputBuilder {
     /// <p>The tags associated with devices.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags associated with devices.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`RegisterDevicesInput`](crate::operation::register_devices::RegisterDevicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_devices::RegisterDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::register_devices::RegisterDevicesInput {
-            device_fleet_name: self.device_fleet_name,
-            devices: self.devices,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::register_devices::RegisterDevicesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::register_devices::RegisterDevicesInput {
+                device_fleet_name: self.device_fleet_name
+                ,
+                devices: self.devices
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

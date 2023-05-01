@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchQueuesOutput {
+pub struct SearchQueuesOutput  {
     /// <p>Information about the queues.</p>
     #[doc(hidden)]
     pub queues: std::option::Option<std::vec::Vec<crate::types::Queue>>,
@@ -16,11 +16,11 @@ pub struct SearchQueuesOutput {
 }
 impl SearchQueuesOutput {
     /// <p>Information about the queues.</p>
-    pub fn queues(&self) -> std::option::Option<&[crate::types::Queue]> {
+    pub fn queues(&self) -> std::option::Option<& [crate::types::Queue]> {
         self.queues.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of queues which matched your search query.</p>
@@ -29,10 +29,10 @@ impl SearchQueuesOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchQueuesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchQueuesOutput {
     /// Creates a new builder-style object to manufacture [`SearchQueuesOutput`](crate::operation::search_queues::SearchQueuesOutput).
     pub fn builder() -> crate::operation::search_queues::builders::SearchQueuesOutputBuilder {
@@ -57,17 +57,13 @@ impl SearchQueuesOutputBuilder {
     /// <p>Information about the queues.</p>
     pub fn queues(mut self, input: crate::types::Queue) -> Self {
         let mut v = self.queues.unwrap_or_default();
-        v.push(input);
-        self.queues = Some(v);
-        self
+                        v.push(input);
+                        self.queues = Some(v);
+                        self
     }
     /// <p>Information about the queues.</p>
-    pub fn set_queues(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Queue>>,
-    ) -> Self {
-        self.queues = input;
-        self
+    pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<crate::types::Queue>>) -> Self {
+        self.queues = input; self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +72,7 @@ impl SearchQueuesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The total number of queues which matched your search query.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
@@ -86,25 +81,28 @@ impl SearchQueuesOutputBuilder {
     }
     /// <p>The total number of queues which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input;
-        self
+        self.approximate_total_count = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchQueuesOutput`](crate::operation::search_queues::SearchQueuesOutput).
     pub fn build(self) -> crate::operation::search_queues::SearchQueuesOutput {
         crate::operation::search_queues::SearchQueuesOutput {
-            queues: self.queues,
-            next_token: self.next_token,
-            approximate_total_count: self.approximate_total_count,
+            queues: self.queues
+            ,
+            next_token: self.next_token
+            ,
+            approximate_total_count: self.approximate_total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

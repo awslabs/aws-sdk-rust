@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAgreementsOutput {
+pub struct ListAgreementsOutput  {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListAgreementsOutput {
 }
 impl ListAgreementsOutput {
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn agreements(&self) -> std::option::Option<&[crate::types::ListedAgreement]> {
+    pub fn agreements(&self) -> std::option::Option<& [crate::types::ListedAgreement]> {
         self.agreements.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAgreementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAgreementsOutput {
     /// Creates a new builder-style object to manufacture [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
     pub fn builder() -> crate::operation::list_agreements::builders::ListAgreementsOutputBuilder {
@@ -49,8 +49,7 @@ impl ListAgreementsOutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListAgreements</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `agreements`.
     ///
@@ -59,33 +58,32 @@ impl ListAgreementsOutputBuilder {
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
     pub fn agreements(mut self, input: crate::types::ListedAgreement) -> Self {
         let mut v = self.agreements.unwrap_or_default();
-        v.push(input);
-        self.agreements = Some(v);
-        self
+                        v.push(input);
+                        self.agreements = Some(v);
+                        self
     }
     /// <p>Returns an array, where each item contains the details of an agreement.</p>
-    pub fn set_agreements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ListedAgreement>>,
-    ) -> Self {
-        self.agreements = input;
-        self
+    pub fn set_agreements(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListedAgreement>>) -> Self {
+        self.agreements = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAgreementsOutput`](crate::operation::list_agreements::ListAgreementsOutput).
     pub fn build(self) -> crate::operation::list_agreements::ListAgreementsOutput {
         crate::operation::list_agreements::ListAgreementsOutput {
-            next_token: self.next_token,
-            agreements: self.agreements,
+            next_token: self.next_token
+            ,
+            agreements: self.agreements
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

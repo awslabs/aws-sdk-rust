@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpamDiscoveredAccountsOutput {
+pub struct GetIpamDiscoveredAccountsOutput  {
     /// <p>Discovered accounts.</p>
     #[doc(hidden)]
-    pub ipam_discovered_accounts:
-        std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
+    pub ipam_discovered_accounts: std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct GetIpamDiscoveredAccountsOutput {
 }
 impl GetIpamDiscoveredAccountsOutput {
     /// <p>Discovered accounts.</p>
-    pub fn ipam_discovered_accounts(
-        &self,
-    ) -> std::option::Option<&[crate::types::IpamDiscoveredAccount]> {
+    pub fn ipam_discovered_accounts(&self) -> std::option::Option<& [crate::types::IpamDiscoveredAccount]> {
         self.ipam_discovered_accounts.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetIpamDiscoveredAccountsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetIpamDiscoveredAccountsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput).
-    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder{
+    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder {
         crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl GetIpamDiscoveredAccountsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetIpamDiscoveredAccountsOutputBuilder {
-    pub(crate) ipam_discovered_accounts:
-        std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
+    pub(crate) ipam_discovered_accounts: std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl GetIpamDiscoveredAccountsOutputBuilder {
     /// <p>Discovered accounts.</p>
     pub fn ipam_discovered_accounts(mut self, input: crate::types::IpamDiscoveredAccount) -> Self {
         let mut v = self.ipam_discovered_accounts.unwrap_or_default();
-        v.push(input);
-        self.ipam_discovered_accounts = Some(v);
-        self
+                        v.push(input);
+                        self.ipam_discovered_accounts = Some(v);
+                        self
     }
     /// <p>Discovered accounts.</p>
-    pub fn set_ipam_discovered_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>>,
-    ) -> Self {
-        self.ipam_discovered_accounts = input;
-        self
+    pub fn set_ipam_discovered_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpamDiscoveredAccount>>) -> Self {
+        self.ipam_discovered_accounts = input; self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl GetIpamDiscoveredAccountsOutputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetIpamDiscoveredAccountsOutput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput {
+    pub fn build(self) -> crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput {
         crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput {
-            ipam_discovered_accounts: self.ipam_discovered_accounts,
-            next_token: self.next_token,
+            ipam_discovered_accounts: self.ipam_discovered_accounts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

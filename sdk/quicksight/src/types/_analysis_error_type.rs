@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analysiserrortype = unimplemented!();
 /// match analysiserrortype {
@@ -38,22 +38,14 @@
 /// Specifically, when `analysiserrortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalysisErrorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalysisErrorType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -76,69 +68,57 @@ pub enum AnalysisErrorType {
     #[allow(missing_docs)] // documentation missing in model
     SourceNotFound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalysisErrorType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED" => AnalysisErrorType::AccessDenied,
-            "COLUMN_GEOGRAPHIC_ROLE_MISMATCH" => AnalysisErrorType::ColumnGeographicRoleMismatch,
-            "COLUMN_REPLACEMENT_MISSING" => AnalysisErrorType::ColumnReplacementMissing,
-            "COLUMN_TYPE_MISMATCH" => AnalysisErrorType::ColumnTypeMismatch,
-            "DATA_SET_NOT_FOUND" => AnalysisErrorType::DataSetNotFound,
-            "INTERNAL_FAILURE" => AnalysisErrorType::InternalFailure,
-            "PARAMETER_NOT_FOUND" => AnalysisErrorType::ParameterNotFound,
-            "PARAMETER_TYPE_INVALID" => AnalysisErrorType::ParameterTypeInvalid,
-            "PARAMETER_VALUE_INCOMPATIBLE" => AnalysisErrorType::ParameterValueIncompatible,
-            "SOURCE_NOT_FOUND" => AnalysisErrorType::SourceNotFound,
-            other => {
-                AnalysisErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED" => AnalysisErrorType::AccessDenied,
+"COLUMN_GEOGRAPHIC_ROLE_MISMATCH" => AnalysisErrorType::ColumnGeographicRoleMismatch,
+"COLUMN_REPLACEMENT_MISSING" => AnalysisErrorType::ColumnReplacementMissing,
+"COLUMN_TYPE_MISMATCH" => AnalysisErrorType::ColumnTypeMismatch,
+"DATA_SET_NOT_FOUND" => AnalysisErrorType::DataSetNotFound,
+"INTERNAL_FAILURE" => AnalysisErrorType::InternalFailure,
+"PARAMETER_NOT_FOUND" => AnalysisErrorType::ParameterNotFound,
+"PARAMETER_TYPE_INVALID" => AnalysisErrorType::ParameterTypeInvalid,
+"PARAMETER_VALUE_INCOMPATIBLE" => AnalysisErrorType::ParameterValueIncompatible,
+"SOURCE_NOT_FOUND" => AnalysisErrorType::SourceNotFound,
+other => AnalysisErrorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AnalysisErrorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalysisErrorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalysisErrorType::from(s))
+                }
+            }
 impl AnalysisErrorType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AnalysisErrorType::AccessDenied => "ACCESS_DENIED",
-            AnalysisErrorType::ColumnGeographicRoleMismatch => "COLUMN_GEOGRAPHIC_ROLE_MISMATCH",
-            AnalysisErrorType::ColumnReplacementMissing => "COLUMN_REPLACEMENT_MISSING",
-            AnalysisErrorType::ColumnTypeMismatch => "COLUMN_TYPE_MISMATCH",
-            AnalysisErrorType::DataSetNotFound => "DATA_SET_NOT_FOUND",
-            AnalysisErrorType::InternalFailure => "INTERNAL_FAILURE",
-            AnalysisErrorType::ParameterNotFound => "PARAMETER_NOT_FOUND",
-            AnalysisErrorType::ParameterTypeInvalid => "PARAMETER_TYPE_INVALID",
-            AnalysisErrorType::ParameterValueIncompatible => "PARAMETER_VALUE_INCOMPATIBLE",
-            AnalysisErrorType::SourceNotFound => "SOURCE_NOT_FOUND",
-            AnalysisErrorType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED",
-            "COLUMN_GEOGRAPHIC_ROLE_MISMATCH",
-            "COLUMN_REPLACEMENT_MISSING",
-            "COLUMN_TYPE_MISMATCH",
-            "DATA_SET_NOT_FOUND",
-            "INTERNAL_FAILURE",
-            "PARAMETER_NOT_FOUND",
-            "PARAMETER_TYPE_INVALID",
-            "PARAMETER_VALUE_INCOMPATIBLE",
-            "SOURCE_NOT_FOUND",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AnalysisErrorType::AccessDenied => "ACCESS_DENIED",
+    AnalysisErrorType::ColumnGeographicRoleMismatch => "COLUMN_GEOGRAPHIC_ROLE_MISMATCH",
+    AnalysisErrorType::ColumnReplacementMissing => "COLUMN_REPLACEMENT_MISSING",
+    AnalysisErrorType::ColumnTypeMismatch => "COLUMN_TYPE_MISMATCH",
+    AnalysisErrorType::DataSetNotFound => "DATA_SET_NOT_FOUND",
+    AnalysisErrorType::InternalFailure => "INTERNAL_FAILURE",
+    AnalysisErrorType::ParameterNotFound => "PARAMETER_NOT_FOUND",
+    AnalysisErrorType::ParameterTypeInvalid => "PARAMETER_TYPE_INVALID",
+    AnalysisErrorType::ParameterValueIncompatible => "PARAMETER_VALUE_INCOMPATIBLE",
+    AnalysisErrorType::SourceNotFound => "SOURCE_NOT_FOUND",
+    AnalysisErrorType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED", "COLUMN_GEOGRAPHIC_ROLE_MISMATCH", "COLUMN_REPLACEMENT_MISSING", "COLUMN_TYPE_MISMATCH", "DATA_SET_NOT_FOUND", "INTERNAL_FAILURE", "PARAMETER_NOT_FOUND", "PARAMETER_TYPE_INVALID", "PARAMETER_VALUE_INCOMPATIBLE", "SOURCE_NOT_FOUND"]
+                }
+            }
 impl AsRef<str> for AnalysisErrorType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

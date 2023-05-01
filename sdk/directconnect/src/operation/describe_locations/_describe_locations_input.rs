@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationsInput {}
+pub struct DescribeLocationsInput  {
+}
 impl DescribeLocationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationsInput`](crate::operation::describe_locations::DescribeLocationsInput).
-    pub fn builder() -> crate::operation::describe_locations::builders::DescribeLocationsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_locations::builders::DescribeLocationsInputBuilder {
         crate::operation::describe_locations::builders::DescribeLocationsInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl DescribeLocationsInput {
 /// A builder for [`DescribeLocationsInput`](crate::operation::describe_locations::DescribeLocationsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeLocationsInputBuilder {}
+pub struct DescribeLocationsInputBuilder {
+}
 impl DescribeLocationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLocationsInput`](crate::operation::describe_locations::DescribeLocationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_locations::DescribeLocationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_locations::DescribeLocationsInput {})
+    pub fn build(self) -> Result<crate::operation::describe_locations::DescribeLocationsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_locations::DescribeLocationsInput {
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Contains any warning codes and their count for the job.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WarningGroup {
+pub struct WarningGroup  {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     #[doc(hidden)]
     pub code: i32,
@@ -43,8 +43,7 @@ impl WarningGroupBuilder {
     }
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// The number of times this warning occurred in the job.
     pub fn count(mut self, input: i32) -> Self {
@@ -53,14 +52,18 @@ impl WarningGroupBuilder {
     }
     /// The number of times this warning occurred in the job.
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// Consumes the builder and constructs a [`WarningGroup`](crate::types::WarningGroup).
     pub fn build(self) -> crate::types::WarningGroup {
         crate::types::WarningGroup {
-            code: self.code.unwrap_or_default(),
-            count: self.count.unwrap_or_default(),
+            code: self.code
+                .unwrap_or_default()
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

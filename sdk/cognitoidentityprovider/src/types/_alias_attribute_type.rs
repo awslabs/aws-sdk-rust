@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aliasattributetype = unimplemented!();
 /// match aliasattributetype {
@@ -31,22 +31,14 @@
 /// Specifically, when `aliasattributetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AliasAttributeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AliasAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     Email,
@@ -55,44 +47,43 @@ pub enum AliasAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     PreferredUsername,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AliasAttributeType {
-    fn from(s: &str) -> Self {
-        match s {
-            "email" => AliasAttributeType::Email,
-            "phone_number" => AliasAttributeType::PhoneNumber,
-            "preferred_username" => AliasAttributeType::PreferredUsername,
-            other => AliasAttributeType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "email" => AliasAttributeType::Email,
+"phone_number" => AliasAttributeType::PhoneNumber,
+"preferred_username" => AliasAttributeType::PreferredUsername,
+other => AliasAttributeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AliasAttributeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AliasAttributeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AliasAttributeType::from(s))
+                }
+            }
 impl AliasAttributeType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AliasAttributeType::Email => "email",
-            AliasAttributeType::PhoneNumber => "phone_number",
-            AliasAttributeType::PreferredUsername => "preferred_username",
-            AliasAttributeType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["email", "phone_number", "preferred_username"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AliasAttributeType::Email => "email",
+    AliasAttributeType::PhoneNumber => "phone_number",
+    AliasAttributeType::PreferredUsername => "preferred_username",
+    AliasAttributeType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["email", "phone_number", "preferred_username"]
+                }
+            }
 impl AsRef<str> for AliasAttributeType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

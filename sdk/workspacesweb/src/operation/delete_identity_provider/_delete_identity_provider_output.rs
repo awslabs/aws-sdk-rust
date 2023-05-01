@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentityProviderOutput {
+pub struct DeleteIdentityProviderOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteIdentityProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderOutput`](crate::operation::delete_identity_provider::DeleteIdentityProviderOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderOutputBuilder {
         crate::operation::delete_identity_provider::builders::DeleteIdentityProviderOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteIdentityProviderOutputBuilder {
 }
 impl DeleteIdentityProviderOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteIdentityProviderOutput`](crate::operation::delete_identity_provider::DeleteIdentityProviderOutput).
     pub fn build(self) -> crate::operation::delete_identity_provider::DeleteIdentityProviderOutput {
         crate::operation::delete_identity_provider::DeleteIdentityProviderOutput {
@@ -42,3 +40,4 @@ impl DeleteIdentityProviderOutputBuilder {
         }
     }
 }
+

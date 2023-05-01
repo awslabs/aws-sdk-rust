@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelPackageGroupOutput {
+pub struct DescribeModelPackageGroupOutput  {
     /// <p>The name of the model group.</p>
     #[doc(hidden)]
     pub model_package_group_name: std::option::Option<std::string::String>,
@@ -25,40 +25,38 @@ pub struct DescribeModelPackageGroupOutput {
 }
 impl DescribeModelPackageGroupOutput {
     /// <p>The name of the model group.</p>
-    pub fn model_package_group_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_name(&self) -> std::option::Option<& str> {
         self.model_package_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn model_package_group_arn(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_arn(&self) -> std::option::Option<& str> {
         self.model_package_group_arn.as_deref()
     }
     /// <p>A description of the model group.</p>
-    pub fn model_package_group_description(&self) -> std::option::Option<&str> {
+    pub fn model_package_group_description(&self) -> std::option::Option<& str> {
         self.model_package_group_description.as_deref()
     }
     /// <p>The time that the model group was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>The status of the model group.</p>
-    pub fn model_package_group_status(
-        &self,
-    ) -> std::option::Option<&crate::types::ModelPackageGroupStatus> {
+    pub fn model_package_group_status(&self) -> std::option::Option<& crate::types::ModelPackageGroupStatus> {
         self.model_package_group_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeModelPackageGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeModelPackageGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackageGroupOutput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput).
-    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupOutputBuilder{
+    pub fn builder() -> crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupOutputBuilder {
         crate::operation::describe_model_package_group::builders::DescribeModelPackageGroupOutputBuilder::default()
     }
 }
@@ -72,8 +70,7 @@ pub struct DescribeModelPackageGroupOutputBuilder {
     pub(crate) model_package_group_description: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) created_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) model_package_group_status:
-        std::option::Option<crate::types::ModelPackageGroupStatus>,
+    pub(crate) model_package_group_status: std::option::Option<crate::types::ModelPackageGroupStatus>,
     _request_id: Option<String>,
 }
 impl DescribeModelPackageGroupOutputBuilder {
@@ -83,12 +80,8 @@ impl DescribeModelPackageGroupOutputBuilder {
         self
     }
     /// <p>The name of the model group.</p>
-    pub fn set_model_package_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_group_name = input;
-        self
+    pub fn set_model_package_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_group_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
     pub fn model_package_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,28 +89,17 @@ impl DescribeModelPackageGroupOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the model group.</p>
-    pub fn set_model_package_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_group_arn = input;
-        self
+    pub fn set_model_package_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_group_arn = input; self
     }
     /// <p>A description of the model group.</p>
-    pub fn model_package_group_description(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn model_package_group_description(mut self, input: impl Into<std::string::String>) -> Self {
         self.model_package_group_description = Some(input.into());
         self
     }
     /// <p>A description of the model group.</p>
-    pub fn set_model_package_group_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.model_package_group_description = input;
-        self
+    pub fn set_model_package_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.model_package_group_description = input; self
     }
     /// <p>The time that the model group was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,12 +107,8 @@ impl DescribeModelPackageGroupOutputBuilder {
         self
     }
     /// <p>The time that the model group was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -139,46 +117,43 @@ impl DescribeModelPackageGroupOutputBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The status of the model group.</p>
-    pub fn model_package_group_status(
-        mut self,
-        input: crate::types::ModelPackageGroupStatus,
-    ) -> Self {
+    pub fn model_package_group_status(mut self, input: crate::types::ModelPackageGroupStatus) -> Self {
         self.model_package_group_status = Some(input);
         self
     }
     /// <p>The status of the model group.</p>
-    pub fn set_model_package_group_status(
-        mut self,
-        input: std::option::Option<crate::types::ModelPackageGroupStatus>,
-    ) -> Self {
-        self.model_package_group_status = input;
-        self
+    pub fn set_model_package_group_status(mut self, input: std::option::Option<crate::types::ModelPackageGroupStatus>) -> Self {
+        self.model_package_group_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeModelPackageGroupOutput`](crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput {
+    pub fn build(self) -> crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput {
         crate::operation::describe_model_package_group::DescribeModelPackageGroupOutput {
-            model_package_group_name: self.model_package_group_name,
-            model_package_group_arn: self.model_package_group_arn,
-            model_package_group_description: self.model_package_group_description,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            model_package_group_status: self.model_package_group_status,
+            model_package_group_name: self.model_package_group_name
+            ,
+            model_package_group_arn: self.model_package_group_arn
+            ,
+            model_package_group_description: self.model_package_group_description
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            model_package_group_status: self.model_package_group_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

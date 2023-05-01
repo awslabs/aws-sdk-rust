@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptedOutNumbersOutput {
+pub struct DescribeOptedOutNumbersOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -11,8 +11,7 @@ pub struct DescribeOptedOutNumbersOutput {
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
     #[doc(hidden)]
-    pub opted_out_numbers:
-        std::option::Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>,
+    pub opted_out_numbers: std::option::Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -20,34 +19,30 @@ pub struct DescribeOptedOutNumbersOutput {
 }
 impl DescribeOptedOutNumbersOutput {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn opted_out_numbers(
-        &self,
-    ) -> std::option::Option<&[crate::types::OptedOutNumberInformation]> {
+    pub fn opted_out_numbers(&self) -> std::option::Option<& [crate::types::OptedOutNumberInformation]> {
         self.opted_out_numbers.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOptedOutNumbersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOptedOutNumbersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder {
         crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersOutputBuilder::default()
     }
 }
@@ -58,8 +53,7 @@ impl DescribeOptedOutNumbersOutput {
 pub struct DescribeOptedOutNumbersOutputBuilder {
     pub(crate) opt_out_list_arn: std::option::Option<std::string::String>,
     pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
-    pub(crate) opted_out_numbers:
-        std::option::Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>,
+    pub(crate) opted_out_numbers: std::option::Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -71,8 +65,7 @@ impl DescribeOptedOutNumbersOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opt_out_list_arn = input;
-        self
+        self.opt_out_list_arn = input; self
     }
     /// <p>The name of the OptOutList.</p>
     pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,12 +73,8 @@ impl DescribeOptedOutNumbersOutputBuilder {
         self
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn set_opt_out_list_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.opt_out_list_name = input;
-        self
+    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.opt_out_list_name = input; self
     }
     /// Appends an item to `opted_out_numbers`.
     ///
@@ -94,17 +83,13 @@ impl DescribeOptedOutNumbersOutputBuilder {
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
     pub fn opted_out_numbers(mut self, input: crate::types::OptedOutNumberInformation) -> Self {
         let mut v = self.opted_out_numbers.unwrap_or_default();
-        v.push(input);
-        self.opted_out_numbers = Some(v);
-        self
+                        v.push(input);
+                        self.opted_out_numbers = Some(v);
+                        self
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn set_opted_out_numbers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>,
-    ) -> Self {
-        self.opted_out_numbers = input;
-        self
+    pub fn set_opted_out_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptedOutNumberInformation>>) -> Self {
+        self.opted_out_numbers = input; self
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,28 +98,30 @@ impl DescribeOptedOutNumbersOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOptedOutNumbersOutput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput {
+    pub fn build(self) -> crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput {
         crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput {
-            opt_out_list_arn: self.opt_out_list_arn,
-            opt_out_list_name: self.opt_out_list_name,
-            opted_out_numbers: self.opted_out_numbers,
-            next_token: self.next_token,
+            opt_out_list_arn: self.opt_out_list_arn
+            ,
+            opt_out_list_name: self.opt_out_list_name
+            ,
+            opted_out_numbers: self.opted_out_numbers
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

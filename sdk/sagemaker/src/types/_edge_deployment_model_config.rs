@@ -3,7 +3,7 @@
 /// <p>Contains information about the configuration of a model in a deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeDeploymentModelConfig {
+pub struct EdgeDeploymentModelConfig  {
     /// <p>The name the device application uses to reference this model.</p>
     #[doc(hidden)]
     pub model_handle: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EdgeDeploymentModelConfig {
 }
 impl EdgeDeploymentModelConfig {
     /// <p>The name the device application uses to reference this model.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> std::option::Option<& str> {
         self.model_handle.as_deref()
     }
     /// <p>The edge packaging job associated with this deployment.</p>
-    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<& str> {
         self.edge_packaging_job_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl EdgeDeploymentModelConfigBuilder {
     }
     /// <p>The name the device application uses to reference this model.</p>
     pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_handle = input;
-        self
+        self.model_handle = input; self
     }
     /// <p>The edge packaging job associated with this deployment.</p>
     pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl EdgeDeploymentModelConfigBuilder {
         self
     }
     /// <p>The edge packaging job associated with this deployment.</p>
-    pub fn set_edge_packaging_job_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.edge_packaging_job_name = input;
-        self
+    pub fn set_edge_packaging_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.edge_packaging_job_name = input; self
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentModelConfig`](crate::types::EdgeDeploymentModelConfig).
     pub fn build(self) -> crate::types::EdgeDeploymentModelConfig {
         crate::types::EdgeDeploymentModelConfig {
-            model_handle: self.model_handle,
-            edge_packaging_job_name: self.edge_packaging_job_name,
+            model_handle: self.model_handle
+            ,
+            edge_packaging_job_name: self.edge_packaging_job_name
+            ,
         }
     }
 }
+

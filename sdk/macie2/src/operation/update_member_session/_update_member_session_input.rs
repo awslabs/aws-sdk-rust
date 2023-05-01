@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMemberSessionInput {
+pub struct UpdateMemberSessionInput  {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct UpdateMemberSessionInput {
 }
 impl UpdateMemberSessionInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MacieStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::MacieStatus> {
         self.status.as_ref()
     }
 }
 impl UpdateMemberSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberSessionInput`](crate::operation::update_member_session::UpdateMemberSessionInput).
-    pub fn builder(
-    ) -> crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder {
-        crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder {
+        crate::operation::update_member_session::builders::UpdateMemberSessionInputBuilder::default()
     }
 }
 
@@ -44,8 +42,7 @@ impl UpdateMemberSessionInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub fn status(mut self, input: crate::types::MacieStatus) -> Self {
@@ -54,21 +51,18 @@ impl UpdateMemberSessionInputBuilder {
     }
     /// <p>Specifies the new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the account; and, PAUSED, suspend all Macie activities for the account.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::MacieStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`UpdateMemberSessionInput`](crate::operation::update_member_session::UpdateMemberSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_member_session::UpdateMemberSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_member_session::UpdateMemberSessionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_member_session::UpdateMemberSessionInput {
-                id: self.id,
-                status: self.status,
-            },
+                id: self.id
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

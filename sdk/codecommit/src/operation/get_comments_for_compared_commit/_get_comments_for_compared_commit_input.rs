@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCommentsForComparedCommitInput {
+pub struct GetCommentsForComparedCommitInput  {
     /// <p>The name of the repository where you want to compare commits.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct GetCommentsForComparedCommitInput {
 }
 impl GetCommentsForComparedCommitInput {
     /// <p>The name of the repository where you want to compare commits.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
-    pub fn before_commit_id(&self) -> std::option::Option<&str> {
+    pub fn before_commit_id(&self) -> std::option::Option<& str> {
         self.before_commit_id.as_deref()
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
-    pub fn after_commit_id(&self) -> std::option::Option<&str> {
+    pub fn after_commit_id(&self) -> std::option::Option<& str> {
         self.after_commit_id.as_deref()
     }
     /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
@@ -43,7 +43,7 @@ impl GetCommentsForComparedCommitInput {
 }
 impl GetCommentsForComparedCommitInput {
     /// Creates a new builder-style object to manufacture [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
-    pub fn builder() -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder{
+    pub fn builder() -> crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder {
         crate::operation::get_comments_for_compared_commit::builders::GetCommentsForComparedCommitInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl GetCommentsForComparedCommitInputBuilder {
     }
     /// <p>The name of the repository where you want to compare commits.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
     pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl GetCommentsForComparedCommitInputBuilder {
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the before commit.</p>
     pub fn set_before_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_commit_id = input;
-        self
+        self.before_commit_id = input; self
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl GetCommentsForComparedCommitInputBuilder {
     }
     /// <p>To establish the directionality of the comparison, the full commit ID of the after commit.</p>
     pub fn set_after_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_commit_id = input;
-        self
+        self.after_commit_id = input; self
     }
     /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +93,7 @@ impl GetCommentsForComparedCommitInputBuilder {
     }
     /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -106,24 +102,24 @@ impl GetCommentsForComparedCommitInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments, but you can configure up to 500.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetCommentsForComparedCommitInput`](crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitInput {
-                repository_name: self.repository_name,
-                before_commit_id: self.before_commit_id,
-                after_commit_id: self.after_commit_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                repository_name: self.repository_name
+                ,
+                before_commit_id: self.before_commit_id
+                ,
+                after_commit_id: self.after_commit_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

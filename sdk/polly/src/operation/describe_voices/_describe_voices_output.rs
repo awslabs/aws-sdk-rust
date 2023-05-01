@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVoicesOutput {
+pub struct DescribeVoicesOutput  {
     /// <p>A list of voices with their properties.</p>
     #[doc(hidden)]
     pub voices: std::option::Option<std::vec::Vec<crate::types::Voice>>,
@@ -13,19 +13,19 @@ pub struct DescribeVoicesOutput {
 }
 impl DescribeVoicesOutput {
     /// <p>A list of voices with their properties.</p>
-    pub fn voices(&self) -> std::option::Option<&[crate::types::Voice]> {
+    pub fn voices(&self) -> std::option::Option<& [crate::types::Voice]> {
         self.voices.as_deref()
     }
     /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVoicesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeVoicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVoicesOutput`](crate::operation::describe_voices::DescribeVoicesOutput).
     pub fn builder() -> crate::operation::describe_voices::builders::DescribeVoicesOutputBuilder {
@@ -49,17 +49,13 @@ impl DescribeVoicesOutputBuilder {
     /// <p>A list of voices with their properties.</p>
     pub fn voices(mut self, input: crate::types::Voice) -> Self {
         let mut v = self.voices.unwrap_or_default();
-        v.push(input);
-        self.voices = Some(v);
-        self
+                        v.push(input);
+                        self.voices = Some(v);
+                        self
     }
     /// <p>A list of voices with their properties.</p>
-    pub fn set_voices(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Voice>>,
-    ) -> Self {
-        self.voices = input;
-        self
+    pub fn set_voices(mut self, input: std::option::Option<std::vec::Vec<crate::types::Voice>>) -> Self {
+        self.voices = input; self
     }
     /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl DescribeVoicesOutputBuilder {
     }
     /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeVoicesOutput`](crate::operation::describe_voices::DescribeVoicesOutput).
     pub fn build(self) -> crate::operation::describe_voices::DescribeVoicesOutput {
         crate::operation::describe_voices::DescribeVoicesOutput {
-            voices: self.voices,
-            next_token: self.next_token,
+            voices: self.voices
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

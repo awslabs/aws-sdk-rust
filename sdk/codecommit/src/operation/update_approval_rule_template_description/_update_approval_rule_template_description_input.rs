@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApprovalRuleTemplateDescriptionInput {
+pub struct UpdateApprovalRuleTemplateDescriptionInput  {
     /// <p>The name of the template for which you want to update the description.</p>
     #[doc(hidden)]
     pub approval_rule_template_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateApprovalRuleTemplateDescriptionInput {
 }
 impl UpdateApprovalRuleTemplateDescriptionInput {
     /// <p>The name of the template for which you want to update the description.</p>
-    pub fn approval_rule_template_name(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_name(&self) -> std::option::Option<& str> {
         self.approval_rule_template_name.as_deref()
     }
     /// <p>The updated description of the approval rule template.</p>
-    pub fn approval_rule_template_description(&self) -> std::option::Option<&str> {
+    pub fn approval_rule_template_description(&self) -> std::option::Option<& str> {
         self.approval_rule_template_description.as_deref()
     }
 }
 impl UpdateApprovalRuleTemplateDescriptionInput {
     /// Creates a new builder-style object to manufacture [`UpdateApprovalRuleTemplateDescriptionInput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput).
-    pub fn builder() -> crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder{
+    pub fn builder() -> crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder {
         crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder::default()
     }
 }
@@ -41,31 +41,20 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
         self
     }
     /// <p>The name of the template for which you want to update the description.</p>
-    pub fn set_approval_rule_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.approval_rule_template_name = input;
-        self
+    pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.approval_rule_template_name = input; self
     }
     /// <p>The updated description of the approval rule template.</p>
-    pub fn approval_rule_template_description(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn approval_rule_template_description(mut self, input: impl Into<std::string::String>) -> Self {
         self.approval_rule_template_description = Some(input.into());
         self
     }
     /// <p>The updated description of the approval rule template.</p>
-    pub fn set_approval_rule_template_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.approval_rule_template_description = input;
-        self
+    pub fn set_approval_rule_template_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.approval_rule_template_description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateDescriptionInput`](crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput).
-    pub fn build(self) -> Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescriptionInput {
                 approval_rule_template_name: self.approval_rule_template_name
@@ -76,3 +65,4 @@ impl UpdateApprovalRuleTemplateDescriptionInputBuilder {
         )
     }
 }
+

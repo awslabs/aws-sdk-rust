@@ -3,7 +3,7 @@
 /// <p>The output for the <code>DeliverConfigSnapshot</code> action, in JSON format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeliverConfigSnapshotOutput {
+pub struct DeliverConfigSnapshotOutput  {
     /// <p>The ID of the snapshot that is being created.</p>
     #[doc(hidden)]
     pub config_snapshot_id: std::option::Option<std::string::String>,
@@ -11,20 +11,18 @@ pub struct DeliverConfigSnapshotOutput {
 }
 impl DeliverConfigSnapshotOutput {
     /// <p>The ID of the snapshot that is being created.</p>
-    pub fn config_snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn config_snapshot_id(&self) -> std::option::Option<& str> {
         self.config_snapshot_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeliverConfigSnapshotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeliverConfigSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeliverConfigSnapshotOutput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput).
-    pub fn builder(
-    ) -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotOutputBuilder
-    {
+    pub fn builder() -> crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotOutputBuilder {
         crate::operation::deliver_config_snapshot::builders::DeliverConfigSnapshotOutputBuilder::default()
     }
 }
@@ -43,27 +41,25 @@ impl DeliverConfigSnapshotOutputBuilder {
         self
     }
     /// <p>The ID of the snapshot that is being created.</p>
-    pub fn set_config_snapshot_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.config_snapshot_id = input;
-        self
+    pub fn set_config_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.config_snapshot_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeliverConfigSnapshotOutput`](crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput).
     pub fn build(self) -> crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput {
         crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput {
-            config_snapshot_id: self.config_snapshot_id,
+            config_snapshot_id: self.config_snapshot_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

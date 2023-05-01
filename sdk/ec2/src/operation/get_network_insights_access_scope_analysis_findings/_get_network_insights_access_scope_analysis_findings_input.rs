@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkInsightsAccessScopeAnalysisFindingsInput {
+pub struct GetNetworkInsightsAccessScopeAnalysisFindingsInput  {
     /// <p>The ID of the Network Access Scope analysis.</p>
     #[doc(hidden)]
     pub network_insights_access_scope_analysis_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct GetNetworkInsightsAccessScopeAnalysisFindingsInput {
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsInput {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_access_scope_analysis_id(&self) -> std::option::Option<& str> {
         self.network_insights_access_scope_analysis_id.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -26,7 +26,7 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,7 +36,7 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInput {
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkInsightsAccessScopeAnalysisFindingsInput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput).
-    pub fn builder() -> crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder{
+    pub fn builder() -> crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
         crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder::default()
     }
 }
@@ -52,20 +52,13 @@ pub struct GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
 }
 impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn network_insights_access_scope_analysis_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.network_insights_access_scope_analysis_id = Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope analysis.</p>
-    pub fn set_network_insights_access_scope_analysis_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_insights_access_scope_analysis_id = input;
-        self
+    pub fn set_network_insights_access_scope_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_insights_access_scope_analysis_id = input; self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,8 +67,7 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +76,7 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -94,11 +85,10 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`GetNetworkInsightsAccessScopeAnalysisFindingsInput`](crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput).
-    pub fn build(self) -> Result<crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsInput {
                 network_insights_access_scope_analysis_id: self.network_insights_access_scope_analysis_id
@@ -113,3 +103,4 @@ impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSignalingChannelOutput {
+pub struct DescribeSignalingChannelOutput  {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
     #[doc(hidden)]
     pub channel_info: std::option::Option<crate::types::ChannelInfo>,
@@ -10,20 +10,18 @@ pub struct DescribeSignalingChannelOutput {
 }
 impl DescribeSignalingChannelOutput {
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-    pub fn channel_info(&self) -> std::option::Option<&crate::types::ChannelInfo> {
+    pub fn channel_info(&self) -> std::option::Option<& crate::types::ChannelInfo> {
         self.channel_info.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSignalingChannelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSignalingChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelOutputBuilder {
         crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DescribeSignalingChannelOutputBuilder {
         self
     }
     /// <p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>
-    pub fn set_channel_info(
-        mut self,
-        input: std::option::Option<crate::types::ChannelInfo>,
-    ) -> Self {
-        self.channel_info = input;
-        self
+    pub fn set_channel_info(mut self, input: std::option::Option<crate::types::ChannelInfo>) -> Self {
+        self.channel_info = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSignalingChannelOutput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput {
+    pub fn build(self) -> crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput {
         crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput {
-            channel_info: self.channel_info,
+            channel_info: self.channel_info
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a scheduled configuration change for an OpenSearch Service domain. This actions can be a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancement</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledAction {
+pub struct ScheduledAction  {
     /// <p>The unique identifier of the scheduled action.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -34,15 +34,15 @@ pub struct ScheduledAction {
 }
 impl ScheduledAction {
     /// <p>The unique identifier of the scheduled action.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of action that will be taken on the domain.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ActionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ActionType> {
         self.r#type.as_ref()
     }
     /// <p>The severity of the action.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::types::ActionSeverity> {
+    pub fn severity(&self) -> std::option::Option<& crate::types::ActionSeverity> {
         self.severity.as_ref()
     }
     /// <p>The time when the change is scheduled to happen.</p>
@@ -50,15 +50,15 @@ impl ScheduledAction {
         self.scheduled_time
     }
     /// <p>A description of the action to be taken.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
-    pub fn scheduled_by(&self) -> std::option::Option<&crate::types::ScheduledBy> {
+    pub fn scheduled_by(&self) -> std::option::Option<& crate::types::ScheduledBy> {
         self.scheduled_by.as_ref()
     }
     /// <p>The current status of the scheduled action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ActionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ActionStatus> {
         self.status.as_ref()
     }
     /// <p>Whether the action is required or optional.</p>
@@ -99,8 +99,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The unique identifier of the scheduled action.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The type of action that will be taken on the domain.</p>
     pub fn r#type(mut self, input: crate::types::ActionType) -> Self {
@@ -109,8 +108,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The type of action that will be taken on the domain.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The severity of the action.</p>
     pub fn severity(mut self, input: crate::types::ActionSeverity) -> Self {
@@ -118,12 +116,8 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>The severity of the action.</p>
-    pub fn set_severity(
-        mut self,
-        input: std::option::Option<crate::types::ActionSeverity>,
-    ) -> Self {
-        self.severity = input;
-        self
+    pub fn set_severity(mut self, input: std::option::Option<crate::types::ActionSeverity>) -> Self {
+        self.severity = input; self
     }
     /// <p>The time when the change is scheduled to happen.</p>
     pub fn scheduled_time(mut self, input: i64) -> Self {
@@ -132,8 +126,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The time when the change is scheduled to happen.</p>
     pub fn set_scheduled_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.scheduled_time = input;
-        self
+        self.scheduled_time = input; self
     }
     /// <p>A description of the action to be taken.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +135,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>A description of the action to be taken.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
     pub fn scheduled_by(mut self, input: crate::types::ScheduledBy) -> Self {
@@ -151,12 +143,8 @@ impl ScheduledActionBuilder {
         self
     }
     /// <p>Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch Service automatically (<code>SYSTEM</code>).</p>
-    pub fn set_scheduled_by(
-        mut self,
-        input: std::option::Option<crate::types::ScheduledBy>,
-    ) -> Self {
-        self.scheduled_by = input;
-        self
+    pub fn set_scheduled_by(mut self, input: std::option::Option<crate::types::ScheduledBy>) -> Self {
+        self.scheduled_by = input; self
     }
     /// <p>The current status of the scheduled action.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
@@ -165,8 +153,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>The current status of the scheduled action.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Whether the action is required or optional.</p>
     pub fn mandatory(mut self, input: bool) -> Self {
@@ -175,8 +162,7 @@ impl ScheduledActionBuilder {
     }
     /// <p>Whether the action is required or optional.</p>
     pub fn set_mandatory(mut self, input: std::option::Option<bool>) -> Self {
-        self.mandatory = input;
-        self
+        self.mandatory = input; self
     }
     /// <p>Whether or not the scheduled action is cancellable.</p>
     pub fn cancellable(mut self, input: bool) -> Self {
@@ -185,21 +171,30 @@ impl ScheduledActionBuilder {
     }
     /// <p>Whether or not the scheduled action is cancellable.</p>
     pub fn set_cancellable(mut self, input: std::option::Option<bool>) -> Self {
-        self.cancellable = input;
-        self
+        self.cancellable = input; self
     }
     /// Consumes the builder and constructs a [`ScheduledAction`](crate::types::ScheduledAction).
     pub fn build(self) -> crate::types::ScheduledAction {
         crate::types::ScheduledAction {
-            id: self.id,
-            r#type: self.r#type,
-            severity: self.severity,
-            scheduled_time: self.scheduled_time,
-            description: self.description,
-            scheduled_by: self.scheduled_by,
-            status: self.status,
-            mandatory: self.mandatory,
-            cancellable: self.cancellable,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
+            severity: self.severity
+            ,
+            scheduled_time: self.scheduled_time
+            ,
+            description: self.description
+            ,
+            scheduled_by: self.scheduled_by
+            ,
+            status: self.status
+            ,
+            mandatory: self.mandatory
+            ,
+            cancellable: self.cancellable
+            ,
         }
     }
 }
+

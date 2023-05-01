@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBrowserSettingsInput {
+pub struct GetBrowserSettingsInput  {
     /// <p>The ARN of the browser settings.</p>
     #[doc(hidden)]
     pub browser_settings_arn: std::option::Option<std::string::String>,
 }
 impl GetBrowserSettingsInput {
     /// <p>The ARN of the browser settings.</p>
-    pub fn browser_settings_arn(&self) -> std::option::Option<&str> {
+    pub fn browser_settings_arn(&self) -> std::option::Option<& str> {
         self.browser_settings_arn.as_deref()
     }
 }
 impl GetBrowserSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_browser_settings::builders::GetBrowserSettingsInputBuilder {
+    pub fn builder() -> crate::operation::get_browser_settings::builders::GetBrowserSettingsInputBuilder {
         crate::operation::get_browser_settings::builders::GetBrowserSettingsInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetBrowserSettingsInputBuilder {
         self
     }
     /// <p>The ARN of the browser settings.</p>
-    pub fn set_browser_settings_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.browser_settings_arn = input;
-        self
+    pub fn set_browser_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.browser_settings_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetBrowserSettingsInput`](crate::operation::get_browser_settings::GetBrowserSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_browser_settings::GetBrowserSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_browser_settings::GetBrowserSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_browser_settings::GetBrowserSettingsInput {
-                browser_settings_arn: self.browser_settings_arn,
-            },
+                browser_settings_arn: self.browser_settings_arn
+                ,
+            }
         )
     }
 }
+

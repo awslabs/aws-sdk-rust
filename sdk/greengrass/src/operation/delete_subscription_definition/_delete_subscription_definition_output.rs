@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriptionDefinitionOutput {
+pub struct DeleteSubscriptionDefinitionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSubscriptionDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteSubscriptionDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionOutputBuilder {
         crate::operation::delete_subscription_definition::builders::DeleteSubscriptionDefinitionOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeleteSubscriptionDefinitionOutputBuilder {
 }
 impl DeleteSubscriptionDefinitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteSubscriptionDefinitionOutput`](crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput {
+    pub fn build(self) -> crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput {
         crate::operation::delete_subscription_definition::DeleteSubscriptionDefinitionOutput {
             _request_id: self._request_id,
         }
     }
 }
+

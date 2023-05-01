@@ -3,14 +3,14 @@
 /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentsMetadataConfiguration {
+pub struct DocumentsMetadataConfiguration  {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
     #[doc(hidden)]
     pub s3_prefix: std::option::Option<std::string::String>,
 }
 impl DocumentsMetadataConfiguration {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl DocumentsMetadataConfigurationBuilder {
     }
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
     pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// Consumes the builder and constructs a [`DocumentsMetadataConfiguration`](crate::types::DocumentsMetadataConfiguration).
     pub fn build(self) -> crate::types::DocumentsMetadataConfiguration {
         crate::types::DocumentsMetadataConfiguration {
-            s3_prefix: self.s3_prefix,
+            s3_prefix: self.s3_prefix
+            ,
         }
     }
 }
+

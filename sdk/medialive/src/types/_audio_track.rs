@@ -3,7 +3,7 @@
 /// Audio Track
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioTrack {
+pub struct AudioTrack  {
     /// 1-based integer value that maps to a specific audio track
     #[doc(hidden)]
     pub track: i32,
@@ -35,13 +35,15 @@ impl AudioTrackBuilder {
     }
     /// 1-based integer value that maps to a specific audio track
     pub fn set_track(mut self, input: std::option::Option<i32>) -> Self {
-        self.track = input;
-        self
+        self.track = input; self
     }
     /// Consumes the builder and constructs a [`AudioTrack`](crate::types::AudioTrack).
     pub fn build(self) -> crate::types::AudioTrack {
         crate::types::AudioTrack {
-            track: self.track.unwrap_or_default(),
+            track: self.track
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

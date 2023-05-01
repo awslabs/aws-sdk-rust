@@ -3,7 +3,7 @@
 /// <p>Information about a rotation in an on-call schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Rotation {
+pub struct Rotation  {
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
     #[doc(hidden)]
     pub rotation_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct Rotation {
 }
 impl Rotation {
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
-    pub fn rotation_arn(&self) -> std::option::Option<&str> {
+    pub fn rotation_arn(&self) -> std::option::Option<& str> {
         self.rotation_arn.as_deref()
     }
     /// <p>The name of the rotation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
-    pub fn contact_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn contact_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.contact_ids.as_deref()
     }
     /// <p>The date and time the rotation becomes active.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time zone the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
-    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+    pub fn time_zone_id(&self) -> std::option::Option<& str> {
         self.time_zone_id.as_deref()
     }
     /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
-    pub fn recurrence(&self) -> std::option::Option<&crate::types::RecurrenceSettings> {
+    pub fn recurrence(&self) -> std::option::Option<& crate::types::RecurrenceSettings> {
         self.recurrence.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl RotationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation.</p>
     pub fn set_rotation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_arn = input;
-        self
+        self.rotation_arn = input; self
     }
     /// <p>The name of the rotation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl RotationBuilder {
     }
     /// <p>The name of the rotation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `contact_ids`.
     ///
@@ -95,17 +93,13 @@ impl RotationBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
     pub fn contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
-        v.push(input.into());
-        self.contact_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.contact_ids = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the rotation team.</p>
-    pub fn set_contact_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.contact_ids = input;
-        self
+    pub fn set_contact_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.contact_ids = input; self
     }
     /// <p>The date and time the rotation becomes active.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -113,12 +107,8 @@ impl RotationBuilder {
         self
     }
     /// <p>The date and time the rotation becomes active.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The time zone the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +117,7 @@ impl RotationBuilder {
     }
     /// <p>The time zone the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". </p>
     pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone_id = input;
-        self
+        self.time_zone_id = input; self
     }
     /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
@@ -136,22 +125,25 @@ impl RotationBuilder {
         self
     }
     /// <p>Information about when an on-call rotation is in effect and how long the rotation period lasts.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
-        self.recurrence = input;
-        self
+    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::RecurrenceSettings>) -> Self {
+        self.recurrence = input; self
     }
     /// Consumes the builder and constructs a [`Rotation`](crate::types::Rotation).
     pub fn build(self) -> crate::types::Rotation {
         crate::types::Rotation {
-            rotation_arn: self.rotation_arn,
-            name: self.name,
-            contact_ids: self.contact_ids,
-            start_time: self.start_time,
-            time_zone_id: self.time_zone_id,
-            recurrence: self.recurrence,
+            rotation_arn: self.rotation_arn
+            ,
+            name: self.name
+            ,
+            contact_ids: self.contact_ids
+            ,
+            start_time: self.start_time
+            ,
+            time_zone_id: self.time_zone_id
+            ,
+            recurrence: self.recurrence
+            ,
         }
     }
 }
+

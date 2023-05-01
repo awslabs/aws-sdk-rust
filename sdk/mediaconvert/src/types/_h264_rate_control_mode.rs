@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h264ratecontrolmode = unimplemented!();
 /// match h264ratecontrolmode {
@@ -31,22 +31,14 @@
 /// Specifically, when `h264ratecontrolmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264RateControlMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum H264RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
     Cbr,
@@ -55,44 +47,43 @@ pub enum H264RateControlMode {
     #[allow(missing_docs)] // documentation missing in model
     Vbr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for H264RateControlMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CBR" => H264RateControlMode::Cbr,
-            "QVBR" => H264RateControlMode::Qvbr,
-            "VBR" => H264RateControlMode::Vbr,
-            other => H264RateControlMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CBR" => H264RateControlMode::Cbr,
+"QVBR" => H264RateControlMode::Qvbr,
+"VBR" => H264RateControlMode::Vbr,
+other => H264RateControlMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for H264RateControlMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264RateControlMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(H264RateControlMode::from(s))
+                }
+            }
 impl H264RateControlMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H264RateControlMode::Cbr => "CBR",
-            H264RateControlMode::Qvbr => "QVBR",
-            H264RateControlMode::Vbr => "VBR",
-            H264RateControlMode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CBR", "QVBR", "VBR"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H264RateControlMode::Cbr => "CBR",
+    H264RateControlMode::Qvbr => "QVBR",
+    H264RateControlMode::Vbr => "VBR",
+    H264RateControlMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CBR", "QVBR", "VBR"]
+                }
+            }
 impl AsRef<str> for H264RateControlMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

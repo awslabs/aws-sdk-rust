@@ -3,7 +3,7 @@
 /// <p>The list of detected instances of sensitive data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SensitiveDataDetections {
+pub struct SensitiveDataDetections  {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
     #[doc(hidden)]
     pub count: i64,
@@ -20,11 +20,11 @@ impl SensitiveDataDetections {
         self.count
     }
     /// <p>The type of sensitive data that was detected. For example, the type might indicate that the data is an email address.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Details about the sensitive data that was detected.</p>
-    pub fn occurrences(&self) -> std::option::Option<&crate::types::Occurrences> {
+    pub fn occurrences(&self) -> std::option::Option<& crate::types::Occurrences> {
         self.occurrences.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl SensitiveDataDetectionsBuilder {
     }
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The type of sensitive data that was detected. For example, the type might indicate that the data is an email address.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl SensitiveDataDetectionsBuilder {
     }
     /// <p>The type of sensitive data that was detected. For example, the type might indicate that the data is an email address.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Details about the sensitive data that was detected.</p>
     pub fn occurrences(mut self, input: crate::types::Occurrences) -> Self {
@@ -70,19 +68,20 @@ impl SensitiveDataDetectionsBuilder {
         self
     }
     /// <p>Details about the sensitive data that was detected.</p>
-    pub fn set_occurrences(
-        mut self,
-        input: std::option::Option<crate::types::Occurrences>,
-    ) -> Self {
-        self.occurrences = input;
-        self
+    pub fn set_occurrences(mut self, input: std::option::Option<crate::types::Occurrences>) -> Self {
+        self.occurrences = input; self
     }
     /// Consumes the builder and constructs a [`SensitiveDataDetections`](crate::types::SensitiveDataDetections).
     pub fn build(self) -> crate::types::SensitiveDataDetections {
         crate::types::SensitiveDataDetections {
-            count: self.count.unwrap_or_default(),
-            r#type: self.r#type,
-            occurrences: self.occurrences,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            r#type: self.r#type
+            ,
+            occurrences: self.occurrences
+            ,
         }
     }
 }
+

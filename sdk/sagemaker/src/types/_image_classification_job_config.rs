@@ -3,16 +3,14 @@
 /// <p>Stores the configuration information for the image classification problem of an AutoML job using the V2 API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageClassificationJobConfig {
+pub struct ImageClassificationJobConfig  {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     #[doc(hidden)]
     pub completion_criteria: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ImageClassificationJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn completion_criteria(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    pub fn completion_criteria(&self) -> std::option::Option<& crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl ImageClassificationJobConfigBuilder {
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
-    pub fn set_completion_criteria(
-        mut self,
-        input: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
-    ) -> Self {
-        self.completion_criteria = input;
-        self
+    pub fn set_completion_criteria(mut self, input: std::option::Option<crate::types::AutoMlJobCompletionCriteria>) -> Self {
+        self.completion_criteria = input; self
     }
     /// Consumes the builder and constructs a [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
     pub fn build(self) -> crate::types::ImageClassificationJobConfig {
         crate::types::ImageClassificationJobConfig {
-            completion_criteria: self.completion_criteria,
+            completion_criteria: self.completion_criteria
+            ,
         }
     }
 }
+

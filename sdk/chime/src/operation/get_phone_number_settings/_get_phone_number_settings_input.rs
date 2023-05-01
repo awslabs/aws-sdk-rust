@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPhoneNumberSettingsInput {}
+pub struct GetPhoneNumberSettingsInput  {
+}
 impl GetPhoneNumberSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder {
         crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl GetPhoneNumberSettingsInput {
 /// A builder for [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetPhoneNumberSettingsInputBuilder {}
+pub struct GetPhoneNumberSettingsInputBuilder {
+}
 impl GetPhoneNumberSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetPhoneNumberSettingsInput`](crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput {})
+    pub fn build(self) -> Result<crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_phone_number_settings::GetPhoneNumberSettingsInput {
+            }
+        )
     }
 }
+

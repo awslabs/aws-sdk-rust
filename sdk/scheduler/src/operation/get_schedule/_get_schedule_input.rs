@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScheduleInput {
+pub struct GetScheduleInput  {
     /// <p>The name of the schedule to retrieve.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetScheduleInput {
 }
 impl GetScheduleInput {
     /// <p>The name of the schedule to retrieve.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetScheduleInputBuilder {
     }
     /// <p>The name of the schedule to retrieve.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetScheduleInputBuilder {
     }
     /// <p>The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// Consumes the builder and constructs a [`GetScheduleInput`](crate::operation::get_schedule::GetScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_schedule::GetScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_schedule::GetScheduleInput {
-            name: self.name,
-            group_name: self.group_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_schedule::GetScheduleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_schedule::GetScheduleInput {
+                name: self.name
+                ,
+                group_name: self.group_name
+                ,
+            }
+        )
     }
 }
+

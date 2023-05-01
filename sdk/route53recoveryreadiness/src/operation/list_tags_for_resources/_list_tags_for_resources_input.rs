@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourcesInput {
+pub struct ListTagsForResourcesInput  {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourcesInput {
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl ListTagsForResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder {
+    pub fn builder() -> crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder {
         crate::operation::list_tags_for_resources::builders::ListTagsForResourcesInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl ListTagsForResourcesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for a resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourcesInput`](crate::operation::list_tags_for_resources::ListTagsForResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_tags_for_resources::ListTagsForResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_tags_for_resources::ListTagsForResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_tags_for_resources::ListTagsForResourcesInput {
-                resource_arn: self.resource_arn,
-            },
+                resource_arn: self.resource_arn
+                ,
+            }
         )
     }
 }
+

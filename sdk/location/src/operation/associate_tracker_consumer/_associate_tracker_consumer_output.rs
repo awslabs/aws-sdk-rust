@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTrackerConsumerOutput {
+pub struct AssociateTrackerConsumerOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssociateTrackerConsumerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateTrackerConsumerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateTrackerConsumerOutput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput).
-    pub fn builder(
-    ) -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerOutputBuilder {
         crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct AssociateTrackerConsumerOutputBuilder {
 }
 impl AssociateTrackerConsumerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateTrackerConsumerOutput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput {
+    pub fn build(self) -> crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput {
         crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput {
             _request_id: self._request_id,
         }
     }
 }
+

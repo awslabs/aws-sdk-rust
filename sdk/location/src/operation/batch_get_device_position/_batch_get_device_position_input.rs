@@ -2,35 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDevicePositionInput {
+pub struct BatchGetDevicePositionInput  {
     /// <p>The tracker resource retrieving the device position.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>Devices whose position you want to retrieve.</p>
-    /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <p>Devices whose position you want to retrieve.</p> 
+    /// <ul> 
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetDevicePositionInput {
     /// <p>The tracker resource retrieving the device position.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
-    /// <p>Devices whose position you want to retrieve.</p>
-    /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <p>Devices whose position you want to retrieve.</p> 
+    /// <ul> 
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li> 
     /// </ul>
-    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.device_ids.as_deref()
     }
 }
 impl BatchGetDevicePositionInput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder {
         crate::operation::batch_get_device_position::builders::BatchGetDevicePositionInputBuilder::default()
     }
 }
@@ -50,46 +48,39 @@ impl BatchGetDevicePositionInputBuilder {
     }
     /// <p>The tracker resource retrieving the device position.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// Appends an item to `device_ids`.
     ///
     /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
     ///
-    /// <p>Devices whose position you want to retrieve.</p>
-    /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <p>Devices whose position you want to retrieve.</p> 
+    /// <ul> 
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li> 
     /// </ul>
     pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.device_ids.unwrap_or_default();
-        v.push(input.into());
-        self.device_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.device_ids = Some(v);
+                        self
     }
-    /// <p>Devices whose position you want to retrieve.</p>
-    /// <ul>
-    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li>
+    /// <p>Devices whose position you want to retrieve.</p> 
+    /// <ul> 
+    /// <li> <p>For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code> </p> </li> 
     /// </ul>
-    pub fn set_device_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.device_ids = input;
-        self
+    pub fn set_device_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.device_ids = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetDevicePositionInput`](crate::operation::batch_get_device_position::BatchGetDevicePositionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_device_position::BatchGetDevicePositionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_device_position::BatchGetDevicePositionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_device_position::BatchGetDevicePositionInput {
-                tracker_name: self.tracker_name,
-                device_ids: self.device_ids,
-            },
+                tracker_name: self.tracker_name
+                ,
+                device_ids: self.device_ids
+                ,
+            }
         )
     }
 }
+

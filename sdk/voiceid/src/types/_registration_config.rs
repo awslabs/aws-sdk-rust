@@ -3,11 +3,10 @@
 /// <p>The registration configuration to be used during the batch fraudster registration job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegistrationConfig {
+pub struct RegistrationConfig  {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
     #[doc(hidden)]
-    pub duplicate_registration_action:
-        std::option::Option<crate::types::DuplicateRegistrationAction>,
+    pub duplicate_registration_action: std::option::Option<crate::types::DuplicateRegistrationAction>,
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     #[doc(hidden)]
     pub fraudster_similarity_threshold: std::option::Option<i32>,
@@ -17,9 +16,7 @@ pub struct RegistrationConfig {
 }
 impl RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn duplicate_registration_action(
-        &self,
-    ) -> std::option::Option<&crate::types::DuplicateRegistrationAction> {
+    pub fn duplicate_registration_action(&self) -> std::option::Option<& crate::types::DuplicateRegistrationAction> {
         self.duplicate_registration_action.as_ref()
     }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
@@ -27,7 +24,7 @@ impl RegistrationConfig {
         self.fraudster_similarity_threshold
     }
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
-    pub fn watchlist_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn watchlist_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.watchlist_ids.as_deref()
     }
 }
@@ -42,27 +39,19 @@ impl RegistrationConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegistrationConfigBuilder {
-    pub(crate) duplicate_registration_action:
-        std::option::Option<crate::types::DuplicateRegistrationAction>,
+    pub(crate) duplicate_registration_action: std::option::Option<crate::types::DuplicateRegistrationAction>,
     pub(crate) fraudster_similarity_threshold: std::option::Option<i32>,
     pub(crate) watchlist_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RegistrationConfigBuilder {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn duplicate_registration_action(
-        mut self,
-        input: crate::types::DuplicateRegistrationAction,
-    ) -> Self {
+    pub fn duplicate_registration_action(mut self, input: crate::types::DuplicateRegistrationAction) -> Self {
         self.duplicate_registration_action = Some(input);
         self
     }
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn set_duplicate_registration_action(
-        mut self,
-        input: std::option::Option<crate::types::DuplicateRegistrationAction>,
-    ) -> Self {
-        self.duplicate_registration_action = input;
-        self
+    pub fn set_duplicate_registration_action(mut self, input: std::option::Option<crate::types::DuplicateRegistrationAction>) -> Self {
+        self.duplicate_registration_action = input; self
     }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fn fraudster_similarity_threshold(mut self, input: i32) -> Self {
@@ -71,8 +60,7 @@ impl RegistrationConfigBuilder {
     }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     pub fn set_fraudster_similarity_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.fraudster_similarity_threshold = input;
-        self
+        self.fraudster_similarity_threshold = input; self
     }
     /// Appends an item to `watchlist_ids`.
     ///
@@ -81,24 +69,24 @@ impl RegistrationConfigBuilder {
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
     pub fn watchlist_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
-        v.push(input.into());
-        self.watchlist_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.watchlist_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't provided, the fraudsters are registered to the default watchlist. </p>
-    pub fn set_watchlist_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.watchlist_ids = input;
-        self
+    pub fn set_watchlist_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.watchlist_ids = input; self
     }
     /// Consumes the builder and constructs a [`RegistrationConfig`](crate::types::RegistrationConfig).
     pub fn build(self) -> crate::types::RegistrationConfig {
         crate::types::RegistrationConfig {
-            duplicate_registration_action: self.duplicate_registration_action,
-            fraudster_similarity_threshold: self.fraudster_similarity_threshold,
-            watchlist_ids: self.watchlist_ids,
+            duplicate_registration_action: self.duplicate_registration_action
+            ,
+            fraudster_similarity_threshold: self.fraudster_similarity_threshold
+            ,
+            watchlist_ids: self.watchlist_ids
+            ,
         }
     }
 }
+

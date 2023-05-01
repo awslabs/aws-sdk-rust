@@ -4,81 +4,56 @@ pub use crate::operation::list_service_versions::_list_service_versions_output::
 pub use crate::operation::list_service_versions::_list_service_versions_input::ListServiceVersionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListServiceVersions`.
-///
+/// 
 /// <p>Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object containing the supported versions for a particular service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceVersionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder,
-}
-impl ListServiceVersionsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder
+            }
+impl ListServiceVersionsFluentBuilder  {
     /// Creates a new `ListServiceVersions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_service_versions::ListServiceVersions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_service_versions::ListServiceVersionsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_service_versions::ListServiceVersionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_service_versions::ListServiceVersions, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_service_versions::ListServiceVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_service_versions::ListServiceVersionsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the service for which you're requesting supported versions.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
         self.inner = self.inner.service_name(input);
         self
     }
     /// <p>The name of the service for which you're requesting supported versions.</p>
-    pub fn set_service_name(
-        mut self,
-        input: std::option::Option<crate::types::ServiceName>,
-    ) -> Self {
+    pub fn set_service_name(mut self, input: std::option::Option<crate::types::ServiceName>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }
@@ -92,10 +67,7 @@ impl ListServiceVersionsFluentBuilder {
         self
     }
     /// <p>A list of names and versions of dependant services of the requested service.</p>
-    pub fn set_dependent_services(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DependentService>>,
-    ) -> Self {
+    pub fn set_dependent_services(mut self, input: std::option::Option<std::vec::Vec<crate::types::DependentService>>) -> Self {
         self.inner = self.inner.set_dependent_services(input);
         self
     }
@@ -120,3 +92,4 @@ impl ListServiceVersionsFluentBuilder {
         self
     }
 }
+

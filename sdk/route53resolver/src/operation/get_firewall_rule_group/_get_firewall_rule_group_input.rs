@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallRuleGroupInput {
+pub struct GetFirewallRuleGroupInput  {
     /// <p>The unique identifier of the firewall rule group. </p>
     #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
 }
 impl GetFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<& str> {
         self.firewall_rule_group_id.as_deref()
     }
 }
 impl GetFirewallRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder {
         crate::operation::get_firewall_rule_group::builders::GetFirewallRuleGroupInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetFirewallRuleGroupInputBuilder {
         self
     }
     /// <p>The unique identifier of the firewall rule group. </p>
-    pub fn set_firewall_rule_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.firewall_rule_group_id = input;
-        self
+    pub fn set_firewall_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.firewall_rule_group_id = input; self
     }
     /// Consumes the builder and constructs a [`GetFirewallRuleGroupInput`](crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_firewall_rule_group::GetFirewallRuleGroupInput {
-                firewall_rule_group_id: self.firewall_rule_group_id,
-            },
+                firewall_rule_group_id: self.firewall_rule_group_id
+                ,
+            }
         )
     }
 }
+

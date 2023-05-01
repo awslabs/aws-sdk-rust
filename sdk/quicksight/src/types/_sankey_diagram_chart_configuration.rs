@@ -3,7 +3,7 @@
 /// <p>The configuration of a sankey diagram.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SankeyDiagramChartConfiguration {
+pub struct SankeyDiagramChartConfiguration  {
     /// <p>The field well configuration of a sankey diagram.</p>
     #[doc(hidden)]
     pub field_wells: std::option::Option<crate::types::SankeyDiagramFieldWells>,
@@ -16,17 +16,15 @@ pub struct SankeyDiagramChartConfiguration {
 }
 impl SankeyDiagramChartConfiguration {
     /// <p>The field well configuration of a sankey diagram.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::SankeyDiagramFieldWells> {
+    pub fn field_wells(&self) -> std::option::Option<& crate::types::SankeyDiagramFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a sankey diagram.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::SankeyDiagramSortConfiguration> {
+    pub fn sort_configuration(&self) -> std::option::Option<& crate::types::SankeyDiagramSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The data label configuration of a sankey diagram.</p>
-    pub fn data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> std::option::Option<& crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
 }
@@ -42,8 +40,7 @@ impl SankeyDiagramChartConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SankeyDiagramChartConfigurationBuilder {
     pub(crate) field_wells: std::option::Option<crate::types::SankeyDiagramFieldWells>,
-    pub(crate) sort_configuration:
-        std::option::Option<crate::types::SankeyDiagramSortConfiguration>,
+    pub(crate) sort_configuration: std::option::Option<crate::types::SankeyDiagramSortConfiguration>,
     pub(crate) data_labels: std::option::Option<crate::types::DataLabelOptions>,
 }
 impl SankeyDiagramChartConfigurationBuilder {
@@ -53,28 +50,17 @@ impl SankeyDiagramChartConfigurationBuilder {
         self
     }
     /// <p>The field well configuration of a sankey diagram.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: std::option::Option<crate::types::SankeyDiagramFieldWells>,
-    ) -> Self {
-        self.field_wells = input;
-        self
+    pub fn set_field_wells(mut self, input: std::option::Option<crate::types::SankeyDiagramFieldWells>) -> Self {
+        self.field_wells = input; self
     }
     /// <p>The sort configuration of a sankey diagram.</p>
-    pub fn sort_configuration(
-        mut self,
-        input: crate::types::SankeyDiagramSortConfiguration,
-    ) -> Self {
+    pub fn sort_configuration(mut self, input: crate::types::SankeyDiagramSortConfiguration) -> Self {
         self.sort_configuration = Some(input);
         self
     }
     /// <p>The sort configuration of a sankey diagram.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SankeyDiagramSortConfiguration>,
-    ) -> Self {
-        self.sort_configuration = input;
-        self
+    pub fn set_sort_configuration(mut self, input: std::option::Option<crate::types::SankeyDiagramSortConfiguration>) -> Self {
+        self.sort_configuration = input; self
     }
     /// <p>The data label configuration of a sankey diagram.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
@@ -82,19 +68,19 @@ impl SankeyDiagramChartConfigurationBuilder {
         self
     }
     /// <p>The data label configuration of a sankey diagram.</p>
-    pub fn set_data_labels(
-        mut self,
-        input: std::option::Option<crate::types::DataLabelOptions>,
-    ) -> Self {
-        self.data_labels = input;
-        self
+    pub fn set_data_labels(mut self, input: std::option::Option<crate::types::DataLabelOptions>) -> Self {
+        self.data_labels = input; self
     }
     /// Consumes the builder and constructs a [`SankeyDiagramChartConfiguration`](crate::types::SankeyDiagramChartConfiguration).
     pub fn build(self) -> crate::types::SankeyDiagramChartConfiguration {
         crate::types::SankeyDiagramChartConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            data_labels: self.data_labels,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            data_labels: self.data_labels
+            ,
         }
     }
 }
+

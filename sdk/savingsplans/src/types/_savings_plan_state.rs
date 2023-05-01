@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanstate = unimplemented!();
 /// match savingsplanstate {
@@ -34,22 +34,14 @@
 /// Specifically, when `savingsplanstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -64,57 +56,49 @@ pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
     Retired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanState {
-    fn from(s: &str) -> Self {
-        match s {
-            "active" => SavingsPlanState::Active,
-            "payment-failed" => SavingsPlanState::PaymentFailed,
-            "payment-pending" => SavingsPlanState::PaymentPending,
-            "queued" => SavingsPlanState::Queued,
-            "queued-deleted" => SavingsPlanState::QueuedDeleted,
-            "retired" => SavingsPlanState::Retired,
-            other => {
-                SavingsPlanState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "active" => SavingsPlanState::Active,
+"payment-failed" => SavingsPlanState::PaymentFailed,
+"payment-pending" => SavingsPlanState::PaymentPending,
+"queued" => SavingsPlanState::Queued,
+"queued-deleted" => SavingsPlanState::QueuedDeleted,
+"retired" => SavingsPlanState::Retired,
+other => SavingsPlanState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for SavingsPlanState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanState::from(s))
+                }
+            }
 impl SavingsPlanState {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            SavingsPlanState::Active => "active",
-            SavingsPlanState::PaymentFailed => "payment-failed",
-            SavingsPlanState::PaymentPending => "payment-pending",
-            SavingsPlanState::Queued => "queued",
-            SavingsPlanState::QueuedDeleted => "queued-deleted",
-            SavingsPlanState::Retired => "retired",
-            SavingsPlanState::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "active",
-            "payment-failed",
-            "payment-pending",
-            "queued",
-            "queued-deleted",
-            "retired",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    SavingsPlanState::Active => "active",
+    SavingsPlanState::PaymentFailed => "payment-failed",
+    SavingsPlanState::PaymentPending => "payment-pending",
+    SavingsPlanState::Queued => "queued",
+    SavingsPlanState::QueuedDeleted => "queued-deleted",
+    SavingsPlanState::Retired => "retired",
+    SavingsPlanState::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"]
+                }
+            }
 impl AsRef<str> for SavingsPlanState {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

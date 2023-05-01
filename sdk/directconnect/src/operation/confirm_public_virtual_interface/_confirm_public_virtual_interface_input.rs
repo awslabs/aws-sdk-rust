@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmPublicVirtualInterfaceInput {
+pub struct ConfirmPublicVirtualInterfaceInput  {
     /// <p>The ID of the virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
 }
 impl ConfirmPublicVirtualInterfaceInput {
     /// <p>The ID of the virtual interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
         self.virtual_interface_id.as_deref()
     }
 }
 impl ConfirmPublicVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`ConfirmPublicVirtualInterfaceInput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder{
+    pub fn builder() -> crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder {
         crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl ConfirmPublicVirtualInterfaceInputBuilder {
         self
     }
     /// <p>The ID of the virtual interface.</p>
-    pub fn set_virtual_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.virtual_interface_id = input;
-        self
+    pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.virtual_interface_id = input; self
     }
     /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceInput`](crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterfaceInput {
                 virtual_interface_id: self.virtual_interface_id
@@ -55,3 +46,4 @@ impl ConfirmPublicVirtualInterfaceInputBuilder {
         )
     }
 }
+

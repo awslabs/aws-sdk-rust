@@ -3,7 +3,7 @@
 /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct App {
+pub struct App  {
     /// <p> The unique ID of the Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -15,8 +15,7 @@ pub struct App {
     pub name: std::option::Option<std::string::String>,
     /// <p> The tag for the Amplify app. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The description for the Amplify app. </p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -37,8 +36,7 @@ pub struct App {
     pub iam_service_role_arn: std::option::Option<std::string::String>,
     /// <p> The environment variables for the Amplify app. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The default domain for the Amplify app. </p>
     #[doc(hidden)]
     pub default_domain: std::option::Option<std::string::String>,
@@ -75,66 +73,60 @@ pub struct App {
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
     #[doc(hidden)]
     pub auto_branch_creation_config: std::option::Option<crate::types::AutoBranchCreationConfig>,
-    /// <note>
-    /// <p>This is for internal use.</p>
-    /// </note>
+    /// <note> 
+    /// <p>This is for internal use.</p> 
+    /// </note> 
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
     #[doc(hidden)]
     pub repository_clone_method: std::option::Option<crate::types::RepositoryCloneMethod>,
 }
 impl App {
     /// <p> The unique ID of the Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p> The name for the Amplify app. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The tag for the Amplify app. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The description for the Amplify app. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The Git repository for the Amplify app. </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p> Creates a date and time for the Amplify app. </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p> Updates the date and time for the Amplify app. </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
-    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_service_role_arn(&self) -> std::option::Option<& str> {
         self.iam_service_role_arn.as_deref()
     }
     /// <p> The environment variables for the Amplify app. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> The default domain for the Amplify app. </p>
-    pub fn default_domain(&self) -> std::option::Option<&str> {
+    pub fn default_domain(&self) -> std::option::Option<& str> {
         self.default_domain.as_deref()
     }
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
@@ -150,23 +142,23 @@ impl App {
         self.enable_basic_auth
     }
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> std::option::Option<& str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
-    pub fn custom_rules(&self) -> std::option::Option<&[crate::types::CustomRule]> {
+    pub fn custom_rules(&self) -> std::option::Option<& [crate::types::CustomRule]> {
         self.custom_rules.as_deref()
     }
     /// <p> Describes the information about a production branch of the Amplify app. </p>
-    pub fn production_branch(&self) -> std::option::Option<&crate::types::ProductionBranch> {
+    pub fn production_branch(&self) -> std::option::Option<& crate::types::ProductionBranch> {
         self.production_branch.as_ref()
     }
     /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> std::option::Option<& str> {
         self.build_spec.as_deref()
     }
     /// <p>Describes the custom HTTP headers for the Amplify app.</p>
-    pub fn custom_headers(&self) -> std::option::Option<&str> {
+    pub fn custom_headers(&self) -> std::option::Option<& str> {
         self.custom_headers.as_deref()
     }
     /// <p> Enables automated branch creation for the Amplify app. </p>
@@ -174,26 +166,22 @@ impl App {
         self.enable_auto_branch_creation
     }
     /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
-    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_branch_creation_patterns.as_deref()
     }
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        &self,
-    ) -> std::option::Option<&crate::types::AutoBranchCreationConfig> {
+    pub fn auto_branch_creation_config(&self) -> std::option::Option<& crate::types::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
-    /// <note>
-    /// <p>This is for internal use.</p>
-    /// </note>
+    /// <note> 
+    /// <p>This is for internal use.</p> 
+    /// </note> 
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
-    pub fn repository_clone_method(
-        &self,
-    ) -> std::option::Option<&crate::types::RepositoryCloneMethod> {
+    pub fn repository_clone_method(&self) -> std::option::Option<& crate::types::RepositoryCloneMethod> {
         self.repository_clone_method.as_ref()
     }
 }
-impl std::fmt::Debug for App {
+impl  std::fmt::Debug for App  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("App");
         formatter.field("app_id", &self.app_id);
@@ -209,28 +197,16 @@ impl std::fmt::Debug for App {
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("default_domain", &self.default_domain);
         formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-        formatter.field(
-            "enable_branch_auto_deletion",
-            &self.enable_branch_auto_deletion,
-        );
+        formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("production_branch", &self.production_branch);
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
-        formatter.field(
-            "enable_auto_branch_creation",
-            &self.enable_auto_branch_creation,
-        );
-        formatter.field(
-            "auto_branch_creation_patterns",
-            &self.auto_branch_creation_patterns,
-        );
-        formatter.field(
-            "auto_branch_creation_config",
-            &self.auto_branch_creation_config,
-        );
+        formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+        formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+        formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository_clone_method", &self.repository_clone_method);
         formatter.finish()
     }
@@ -249,16 +225,14 @@ pub struct AppBuilder {
     pub(crate) app_id: std::option::Option<std::string::String>,
     pub(crate) app_arn: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) repository: std::option::Option<std::string::String>,
     pub(crate) platform: std::option::Option<crate::types::Platform>,
     pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) iam_service_role_arn: std::option::Option<std::string::String>,
-    pub(crate) environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) default_domain: std::option::Option<std::string::String>,
     pub(crate) enable_branch_auto_build: std::option::Option<bool>,
     pub(crate) enable_branch_auto_deletion: std::option::Option<bool>,
@@ -269,10 +243,8 @@ pub struct AppBuilder {
     pub(crate) build_spec: std::option::Option<std::string::String>,
     pub(crate) custom_headers: std::option::Option<std::string::String>,
     pub(crate) enable_auto_branch_creation: std::option::Option<bool>,
-    pub(crate) auto_branch_creation_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) auto_branch_creation_config:
-        std::option::Option<crate::types::AutoBranchCreationConfig>,
+    pub(crate) auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) auto_branch_creation_config: std::option::Option<crate::types::AutoBranchCreationConfig>,
     pub(crate) repository_clone_method: std::option::Option<crate::types::RepositoryCloneMethod>,
 }
 impl AppBuilder {
@@ -283,8 +255,7 @@ impl AppBuilder {
     }
     /// <p> The unique ID of the Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,8 +264,7 @@ impl AppBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the Amplify app. </p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p> The name for the Amplify app. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,33 +273,22 @@ impl AppBuilder {
     }
     /// <p> The name for the Amplify app. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tag for the Amplify app. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p> The tag for the Amplify app. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p> The description for the Amplify app. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -338,8 +297,7 @@ impl AppBuilder {
     }
     /// <p> The description for the Amplify app. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The Git repository for the Amplify app. </p>
     pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -348,8 +306,7 @@ impl AppBuilder {
     }
     /// <p> The Git repository for the Amplify app. </p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -358,8 +315,7 @@ impl AppBuilder {
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p> Creates a date and time for the Amplify app. </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -367,12 +323,8 @@ impl AppBuilder {
         self
     }
     /// <p> Creates a date and time for the Amplify app. </p>
-    pub fn set_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
     }
     /// <p> Updates the date and time for the Amplify app. </p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -380,12 +332,8 @@ impl AppBuilder {
         self
     }
     /// <p> Updates the date and time for the Amplify app. </p>
-    pub fn set_update_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
     pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,37 +341,23 @@ impl AppBuilder {
         self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) of the Amplify app. </p>
-    pub fn set_iam_service_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.iam_service_role_arn = input;
-        self
+    pub fn set_iam_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.iam_service_role_arn = input; self
     }
     /// Adds a key-value pair to `environment_variables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p> The environment variables for the Amplify app. </p>
-    pub fn environment_variables(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.environment_variables = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.environment_variables = Some(hash_map);
+                        self
     }
     /// <p> The environment variables for the Amplify app. </p>
-    pub fn set_environment_variables(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.environment_variables = input;
-        self
+    pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.environment_variables = input; self
     }
     /// <p> The default domain for the Amplify app. </p>
     pub fn default_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -432,8 +366,7 @@ impl AppBuilder {
     }
     /// <p> The default domain for the Amplify app. </p>
     pub fn set_default_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_domain = input;
-        self
+        self.default_domain = input; self
     }
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
     pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
@@ -442,8 +375,7 @@ impl AppBuilder {
     }
     /// <p> Enables the auto-building of branches for the Amplify app. </p>
     pub fn set_enable_branch_auto_build(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_branch_auto_build = input;
-        self
+        self.enable_branch_auto_build = input; self
     }
     /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
@@ -452,8 +384,7 @@ impl AppBuilder {
     }
     /// <p> Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_branch_auto_deletion = input;
-        self
+        self.enable_branch_auto_deletion = input; self
     }
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
@@ -462,8 +393,7 @@ impl AppBuilder {
     }
     /// <p> Enables basic authorization for the Amplify app's branches. </p>
     pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_basic_auth = input;
-        self
+        self.enable_basic_auth = input; self
     }
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
@@ -471,12 +401,8 @@ impl AppBuilder {
         self
     }
     /// <p> The basic authorization credentials for branches for the Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.basic_auth_credentials = input;
-        self
+    pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.basic_auth_credentials = input; self
     }
     /// Appends an item to `custom_rules`.
     ///
@@ -485,17 +411,13 @@ impl AppBuilder {
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
     pub fn custom_rules(mut self, input: crate::types::CustomRule) -> Self {
         let mut v = self.custom_rules.unwrap_or_default();
-        v.push(input);
-        self.custom_rules = Some(v);
-        self
+                        v.push(input);
+                        self.custom_rules = Some(v);
+                        self
     }
     /// <p> Describes the custom redirect and rewrite rules for the Amplify app. </p>
-    pub fn set_custom_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomRule>>,
-    ) -> Self {
-        self.custom_rules = input;
-        self
+    pub fn set_custom_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomRule>>) -> Self {
+        self.custom_rules = input; self
     }
     /// <p> Describes the information about a production branch of the Amplify app. </p>
     pub fn production_branch(mut self, input: crate::types::ProductionBranch) -> Self {
@@ -503,12 +425,8 @@ impl AppBuilder {
         self
     }
     /// <p> Describes the information about a production branch of the Amplify app. </p>
-    pub fn set_production_branch(
-        mut self,
-        input: std::option::Option<crate::types::ProductionBranch>,
-    ) -> Self {
-        self.production_branch = input;
-        self
+    pub fn set_production_branch(mut self, input: std::option::Option<crate::types::ProductionBranch>) -> Self {
+        self.production_branch = input; self
     }
     /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
     pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,8 +435,7 @@ impl AppBuilder {
     }
     /// <p> Describes the content of the build specification (build spec) for the Amplify app. </p>
     pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.build_spec = input;
-        self
+        self.build_spec = input; self
     }
     /// <p>Describes the custom HTTP headers for the Amplify app.</p>
     pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,8 +444,7 @@ impl AppBuilder {
     }
     /// <p>Describes the custom HTTP headers for the Amplify app.</p>
     pub fn set_custom_headers(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_headers = input;
-        self
+        self.custom_headers = input; self
     }
     /// <p> Enables automated branch creation for the Amplify app. </p>
     pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
@@ -537,8 +453,7 @@ impl AppBuilder {
     }
     /// <p> Enables automated branch creation for the Amplify app. </p>
     pub fn set_enable_auto_branch_creation(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_auto_branch_creation = input;
-        self
+        self.enable_auto_branch_creation = input; self
     }
     /// Appends an item to `auto_branch_creation_patterns`.
     ///
@@ -547,80 +462,89 @@ impl AppBuilder {
     /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
     pub fn auto_branch_creation_patterns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.auto_branch_creation_patterns.unwrap_or_default();
-        v.push(input.into());
-        self.auto_branch_creation_patterns = Some(v);
-        self
+                        v.push(input.into());
+                        self.auto_branch_creation_patterns = Some(v);
+                        self
     }
     /// <p> Describes the automated branch creation glob patterns for the Amplify app. </p>
-    pub fn set_auto_branch_creation_patterns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.auto_branch_creation_patterns = input;
-        self
+    pub fn set_auto_branch_creation_patterns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.auto_branch_creation_patterns = input; self
     }
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        mut self,
-        input: crate::types::AutoBranchCreationConfig,
-    ) -> Self {
+    pub fn auto_branch_creation_config(mut self, input: crate::types::AutoBranchCreationConfig) -> Self {
         self.auto_branch_creation_config = Some(input);
         self
     }
     /// <p> Describes the automated branch creation configuration for the Amplify app. </p>
-    pub fn set_auto_branch_creation_config(
-        mut self,
-        input: std::option::Option<crate::types::AutoBranchCreationConfig>,
-    ) -> Self {
-        self.auto_branch_creation_config = input;
-        self
+    pub fn set_auto_branch_creation_config(mut self, input: std::option::Option<crate::types::AutoBranchCreationConfig>) -> Self {
+        self.auto_branch_creation_config = input; self
     }
-    /// <note>
-    /// <p>This is for internal use.</p>
-    /// </note>
+    /// <note> 
+    /// <p>This is for internal use.</p> 
+    /// </note> 
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
     pub fn repository_clone_method(mut self, input: crate::types::RepositoryCloneMethod) -> Self {
         self.repository_clone_method = Some(input);
         self
     }
-    /// <note>
-    /// <p>This is for internal use.</p>
-    /// </note>
+    /// <note> 
+    /// <p>This is for internal use.</p> 
+    /// </note> 
     /// <p>The Amplify service uses this parameter to specify the authentication protocol to use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code> for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit repository, and <code>SSH</code> for GitLab and Bitbucket repositories.</p>
-    pub fn set_repository_clone_method(
-        mut self,
-        input: std::option::Option<crate::types::RepositoryCloneMethod>,
-    ) -> Self {
-        self.repository_clone_method = input;
-        self
+    pub fn set_repository_clone_method(mut self, input: std::option::Option<crate::types::RepositoryCloneMethod>) -> Self {
+        self.repository_clone_method = input; self
     }
     /// Consumes the builder and constructs a [`App`](crate::types::App).
     pub fn build(self) -> crate::types::App {
         crate::types::App {
-            app_id: self.app_id,
-            app_arn: self.app_arn,
-            name: self.name,
-            tags: self.tags,
-            description: self.description,
-            repository: self.repository,
-            platform: self.platform,
-            create_time: self.create_time,
-            update_time: self.update_time,
-            iam_service_role_arn: self.iam_service_role_arn,
-            environment_variables: self.environment_variables,
-            default_domain: self.default_domain,
-            enable_branch_auto_build: self.enable_branch_auto_build,
-            enable_branch_auto_deletion: self.enable_branch_auto_deletion,
-            enable_basic_auth: self.enable_basic_auth,
-            basic_auth_credentials: self.basic_auth_credentials,
-            custom_rules: self.custom_rules,
-            production_branch: self.production_branch,
-            build_spec: self.build_spec,
-            custom_headers: self.custom_headers,
-            enable_auto_branch_creation: self.enable_auto_branch_creation,
-            auto_branch_creation_patterns: self.auto_branch_creation_patterns,
-            auto_branch_creation_config: self.auto_branch_creation_config,
-            repository_clone_method: self.repository_clone_method,
+            app_id: self.app_id
+            ,
+            app_arn: self.app_arn
+            ,
+            name: self.name
+            ,
+            tags: self.tags
+            ,
+            description: self.description
+            ,
+            repository: self.repository
+            ,
+            platform: self.platform
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
+            iam_service_role_arn: self.iam_service_role_arn
+            ,
+            environment_variables: self.environment_variables
+            ,
+            default_domain: self.default_domain
+            ,
+            enable_branch_auto_build: self.enable_branch_auto_build
+            ,
+            enable_branch_auto_deletion: self.enable_branch_auto_deletion
+            ,
+            enable_basic_auth: self.enable_basic_auth
+            ,
+            basic_auth_credentials: self.basic_auth_credentials
+            ,
+            custom_rules: self.custom_rules
+            ,
+            production_branch: self.production_branch
+            ,
+            build_spec: self.build_spec
+            ,
+            custom_headers: self.custom_headers
+            ,
+            enable_auto_branch_creation: self.enable_auto_branch_creation
+            ,
+            auto_branch_creation_patterns: self.auto_branch_creation_patterns
+            ,
+            auto_branch_creation_config: self.auto_branch_creation_config
+            ,
+            repository_clone_method: self.repository_clone_method
+            ,
         }
     }
 }
@@ -640,29 +564,18 @@ impl std::fmt::Debug for AppBuilder {
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("default_domain", &self.default_domain);
         formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-        formatter.field(
-            "enable_branch_auto_deletion",
-            &self.enable_branch_auto_deletion,
-        );
+        formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("production_branch", &self.production_branch);
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
-        formatter.field(
-            "enable_auto_branch_creation",
-            &self.enable_auto_branch_creation,
-        );
-        formatter.field(
-            "auto_branch_creation_patterns",
-            &self.auto_branch_creation_patterns,
-        );
-        formatter.field(
-            "auto_branch_creation_config",
-            &self.auto_branch_creation_config,
-        );
+        formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+        formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+        formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository_clone_method", &self.repository_clone_method);
         formatter.finish()
     }
 }
+

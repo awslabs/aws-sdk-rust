@@ -3,7 +3,7 @@
 /// <p> The QualificationType data structure represents a Qualification type, a description of a property of a Worker that must match the requirements of a HIT for the Worker to be able to accept the HIT. The type also describes how a Worker can obtain a Qualification of that type, such as through a Qualification test. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QualificationType {
+pub struct QualificationType  {
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
@@ -46,33 +46,31 @@ pub struct QualificationType {
 }
 impl QualificationType {
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
-    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p> The date and time the Qualification type was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The name of the Qualification type. The type name is used to identify the type, and to find the type using a Qualification type search. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> A long description for the Qualification type. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> One or more words or phrases that describe theQualification type, separated by commas. The Keywords make the type easier to find using a search. </p>
-    pub fn keywords(&self) -> std::option::Option<&str> {
+    pub fn keywords(&self) -> std::option::Option<& str> {
         self.keywords.as_deref()
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn qualification_type_status(
-        &self,
-    ) -> std::option::Option<&crate::types::QualificationTypeStatus> {
+    pub fn qualification_type_status(&self) -> std::option::Option<& crate::types::QualificationTypeStatus> {
         self.qualification_type_status.as_ref()
     }
     /// <p> The questions for a Qualification test associated with this Qualification type that a user can take to obtain a Qualification of this type. This parameter must be specified if AnswerKey is present. A Qualification type cannot have both a specified Test parameter and an AutoGranted value of true. </p>
-    pub fn test(&self) -> std::option::Option<&str> {
+    pub fn test(&self) -> std::option::Option<& str> {
         self.test.as_deref()
     }
     /// <p> The amount of time, in seconds, given to a Worker to complete the Qualification test, beginning from the time the Worker requests the Qualification. </p>
@@ -80,7 +78,7 @@ impl QualificationType {
         self.test_duration_in_seconds
     }
     /// <p>The answers to the Qualification test specified in the Test parameter.</p>
-    pub fn answer_key(&self) -> std::option::Option<&str> {
+    pub fn answer_key(&self) -> std::option::Option<& str> {
         self.answer_key.as_deref()
     }
     /// <p> The amount of time, in seconds, Workers must wait after taking the Qualification test before they can take it again. Workers can take a Qualification test multiple times if they were not granted the Qualification from a previous attempt, or if the test offers a gradient score and they want a better score. If not specified, retries are disabled and Workers can request a Qualification only once. </p>
@@ -116,8 +114,7 @@ pub struct QualificationTypeBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) keywords: std::option::Option<std::string::String>,
-    pub(crate) qualification_type_status:
-        std::option::Option<crate::types::QualificationTypeStatus>,
+    pub(crate) qualification_type_status: std::option::Option<crate::types::QualificationTypeStatus>,
     pub(crate) test: std::option::Option<std::string::String>,
     pub(crate) test_duration_in_seconds: std::option::Option<i64>,
     pub(crate) answer_key: std::option::Option<std::string::String>,
@@ -133,12 +130,8 @@ impl QualificationTypeBuilder {
         self
     }
     /// <p> A unique identifier for the Qualification type. A Qualification type is given a Qualification type ID when you call the CreateQualificationType operation. </p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.qualification_type_id = input;
-        self
+    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.qualification_type_id = input; self
     }
     /// <p> The date and time the Qualification type was created. </p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -146,12 +139,8 @@ impl QualificationTypeBuilder {
         self
     }
     /// <p> The date and time the Qualification type was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p> The name of the Qualification type. The type name is used to identify the type, and to find the type using a Qualification type search. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,8 +149,7 @@ impl QualificationTypeBuilder {
     }
     /// <p> The name of the Qualification type. The type name is used to identify the type, and to find the type using a Qualification type search. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> A long description for the Qualification type. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,8 +158,7 @@ impl QualificationTypeBuilder {
     }
     /// <p> A long description for the Qualification type. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> One or more words or phrases that describe theQualification type, separated by commas. The Keywords make the type easier to find using a search. </p>
     pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,24 +167,16 @@ impl QualificationTypeBuilder {
     }
     /// <p> One or more words or phrases that describe theQualification type, separated by commas. The Keywords make the type easier to find using a search. </p>
     pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keywords = input;
-        self
+        self.keywords = input; self
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn qualification_type_status(
-        mut self,
-        input: crate::types::QualificationTypeStatus,
-    ) -> Self {
+    pub fn qualification_type_status(mut self, input: crate::types::QualificationTypeStatus) -> Self {
         self.qualification_type_status = Some(input);
         self
     }
     /// <p> The status of the Qualification type. A Qualification type's status determines if users can apply to receive a Qualification of this type, and if HITs can be created with requirements based on this type. Valid values are Active | Inactive. </p>
-    pub fn set_qualification_type_status(
-        mut self,
-        input: std::option::Option<crate::types::QualificationTypeStatus>,
-    ) -> Self {
-        self.qualification_type_status = input;
-        self
+    pub fn set_qualification_type_status(mut self, input: std::option::Option<crate::types::QualificationTypeStatus>) -> Self {
+        self.qualification_type_status = input; self
     }
     /// <p> The questions for a Qualification test associated with this Qualification type that a user can take to obtain a Qualification of this type. This parameter must be specified if AnswerKey is present. A Qualification type cannot have both a specified Test parameter and an AutoGranted value of true. </p>
     pub fn test(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,8 +185,7 @@ impl QualificationTypeBuilder {
     }
     /// <p> The questions for a Qualification test associated with this Qualification type that a user can take to obtain a Qualification of this type. This parameter must be specified if AnswerKey is present. A Qualification type cannot have both a specified Test parameter and an AutoGranted value of true. </p>
     pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.test = input;
-        self
+        self.test = input; self
     }
     /// <p> The amount of time, in seconds, given to a Worker to complete the Qualification test, beginning from the time the Worker requests the Qualification. </p>
     pub fn test_duration_in_seconds(mut self, input: i64) -> Self {
@@ -216,8 +194,7 @@ impl QualificationTypeBuilder {
     }
     /// <p> The amount of time, in seconds, given to a Worker to complete the Qualification test, beginning from the time the Worker requests the Qualification. </p>
     pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.test_duration_in_seconds = input;
-        self
+        self.test_duration_in_seconds = input; self
     }
     /// <p>The answers to the Qualification test specified in the Test parameter.</p>
     pub fn answer_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,8 +203,7 @@ impl QualificationTypeBuilder {
     }
     /// <p>The answers to the Qualification test specified in the Test parameter.</p>
     pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.answer_key = input;
-        self
+        self.answer_key = input; self
     }
     /// <p> The amount of time, in seconds, Workers must wait after taking the Qualification test before they can take it again. Workers can take a Qualification test multiple times if they were not granted the Qualification from a previous attempt, or if the test offers a gradient score and they want a better score. If not specified, retries are disabled and Workers can request a Qualification only once. </p>
     pub fn retry_delay_in_seconds(mut self, input: i64) -> Self {
@@ -236,8 +212,7 @@ impl QualificationTypeBuilder {
     }
     /// <p> The amount of time, in seconds, Workers must wait after taking the Qualification test before they can take it again. Workers can take a Qualification test multiple times if they were not granted the Qualification from a previous attempt, or if the test offers a gradient score and they want a better score. If not specified, retries are disabled and Workers can request a Qualification only once. </p>
     pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.retry_delay_in_seconds = input;
-        self
+        self.retry_delay_in_seconds = input; self
     }
     /// <p> Specifies whether the Qualification type is one that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test. This value is False for Qualifications assigned automatically by the system. Valid values are True | False. </p>
     pub fn is_requestable(mut self, input: bool) -> Self {
@@ -246,8 +221,7 @@ impl QualificationTypeBuilder {
     }
     /// <p> Specifies whether the Qualification type is one that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test. This value is False for Qualifications assigned automatically by the system. Valid values are True | False. </p>
     pub fn set_is_requestable(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_requestable = input;
-        self
+        self.is_requestable = input; self
     }
     /// <p>Specifies that requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test. Valid values are True | False.</p>
     pub fn auto_granted(mut self, input: bool) -> Self {
@@ -256,8 +230,7 @@ impl QualificationTypeBuilder {
     }
     /// <p>Specifies that requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test. Valid values are True | False.</p>
     pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_granted = input;
-        self
+        self.auto_granted = input; self
     }
     /// <p> The Qualification integer value to use for automatically granted Qualifications, if AutoGranted is true. This is 1 by default. </p>
     pub fn auto_granted_value(mut self, input: i32) -> Self {
@@ -266,25 +239,38 @@ impl QualificationTypeBuilder {
     }
     /// <p> The Qualification integer value to use for automatically granted Qualifications, if AutoGranted is true. This is 1 by default. </p>
     pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.auto_granted_value = input;
-        self
+        self.auto_granted_value = input; self
     }
     /// Consumes the builder and constructs a [`QualificationType`](crate::types::QualificationType).
     pub fn build(self) -> crate::types::QualificationType {
         crate::types::QualificationType {
-            qualification_type_id: self.qualification_type_id,
-            creation_time: self.creation_time,
-            name: self.name,
-            description: self.description,
-            keywords: self.keywords,
-            qualification_type_status: self.qualification_type_status,
-            test: self.test,
-            test_duration_in_seconds: self.test_duration_in_seconds,
-            answer_key: self.answer_key,
-            retry_delay_in_seconds: self.retry_delay_in_seconds,
-            is_requestable: self.is_requestable,
-            auto_granted: self.auto_granted,
-            auto_granted_value: self.auto_granted_value,
+            qualification_type_id: self.qualification_type_id
+            ,
+            creation_time: self.creation_time
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            keywords: self.keywords
+            ,
+            qualification_type_status: self.qualification_type_status
+            ,
+            test: self.test
+            ,
+            test_duration_in_seconds: self.test_duration_in_seconds
+            ,
+            answer_key: self.answer_key
+            ,
+            retry_delay_in_seconds: self.retry_delay_in_seconds
+            ,
+            is_requestable: self.is_requestable
+            ,
+            auto_granted: self.auto_granted
+            ,
+            auto_granted_value: self.auto_granted_value
+            ,
         }
     }
 }
+

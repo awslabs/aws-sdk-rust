@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartConnectionInput {
+pub struct StartConnectionInput  {
     /// <p> The serial number of the dongle. </p>
     #[doc(hidden)]
     pub device_serial_number: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct StartConnectionInput {
 }
 impl StartConnectionInput {
     /// <p> The serial number of the dongle. </p>
-    pub fn device_serial_number(&self) -> std::option::Option<&str> {
+    pub fn device_serial_number(&self) -> std::option::Option<& str> {
         self.device_serial_number.as_deref()
     }
     /// <p> The ID of the Outpost server. </p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p> The public key of the client. </p>
-    pub fn client_public_key(&self) -> std::option::Option<&str> {
+    pub fn client_public_key(&self) -> std::option::Option<& str> {
         self.client_public_key.as_deref()
     }
     /// <p> The device index of the network interface on the Outpost server. </p>
@@ -57,12 +57,8 @@ impl StartConnectionInputBuilder {
         self
     }
     /// <p> The serial number of the dongle. </p>
-    pub fn set_device_serial_number(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.device_serial_number = input;
-        self
+    pub fn set_device_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.device_serial_number = input; self
     }
     /// <p> The ID of the Outpost server. </p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl StartConnectionInputBuilder {
     }
     /// <p> The ID of the Outpost server. </p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p> The public key of the client. </p>
     pub fn client_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,12 +75,8 @@ impl StartConnectionInputBuilder {
         self
     }
     /// <p> The public key of the client. </p>
-    pub fn set_client_public_key(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_public_key = input;
-        self
+    pub fn set_client_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_public_key = input; self
     }
     /// <p> The device index of the network interface on the Outpost server. </p>
     pub fn network_interface_device_index(mut self, input: i32) -> Self {
@@ -94,21 +85,22 @@ impl StartConnectionInputBuilder {
     }
     /// <p> The device index of the network interface on the Outpost server. </p>
     pub fn set_network_interface_device_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.network_interface_device_index = input;
-        self
+        self.network_interface_device_index = input; self
     }
     /// Consumes the builder and constructs a [`StartConnectionInput`](crate::operation::start_connection::StartConnectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_connection::StartConnectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_connection::StartConnectionInput {
-            device_serial_number: self.device_serial_number,
-            asset_id: self.asset_id,
-            client_public_key: self.client_public_key,
-            network_interface_device_index: self.network_interface_device_index,
-        })
+    pub fn build(self) -> Result<crate::operation::start_connection::StartConnectionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_connection::StartConnectionInput {
+                device_serial_number: self.device_serial_number
+                ,
+                asset_id: self.asset_id
+                ,
+                client_public_key: self.client_public_key
+                ,
+                network_interface_device_index: self.network_interface_device_index
+                ,
+            }
+        )
     }
 }
+

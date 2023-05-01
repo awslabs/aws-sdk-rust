@@ -3,19 +3,14 @@
 /// <p> Contains an array of <code>RecommendationRelatedCloudWatchMetricsSourceDetail</code> objects that contain the name and namespace of an Amazon CloudWatch metric. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecommendationRelatedAnomalySourceDetail {
+pub struct RecommendationRelatedAnomalySourceDetail  {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     #[doc(hidden)]
-    pub cloud_watch_metrics: std::option::Option<
-        std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-    >,
+    pub cloud_watch_metrics: std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
 impl RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    pub fn cloud_watch_metrics(
-        &self,
-    ) -> std::option::Option<&[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]>
-    {
+    pub fn cloud_watch_metrics(&self) -> std::option::Option<& [crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]> {
         self.cloud_watch_metrics.as_deref()
     }
 }
@@ -30,9 +25,7 @@ impl RecommendationRelatedAnomalySourceDetail {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalySourceDetailBuilder {
-    pub(crate) cloud_watch_metrics: std::option::Option<
-        std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-    >,
+    pub(crate) cloud_watch_metrics: std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>,
 }
 impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// Appends an item to `cloud_watch_metrics`.
@@ -40,29 +33,22 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_metrics`](Self::set_cloud_watch_metrics).
     ///
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    pub fn cloud_watch_metrics(
-        mut self,
-        input: crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail,
-    ) -> Self {
+    pub fn cloud_watch_metrics(mut self, input: crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail) -> Self {
         let mut v = self.cloud_watch_metrics.unwrap_or_default();
-        v.push(input);
-        self.cloud_watch_metrics = Some(v);
-        self
+                        v.push(input);
+                        self.cloud_watch_metrics = Some(v);
+                        self
     }
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
-    pub fn set_cloud_watch_metrics(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
-        >,
-    ) -> Self {
-        self.cloud_watch_metrics = input;
-        self
+    pub fn set_cloud_watch_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>>) -> Self {
+        self.cloud_watch_metrics = input; self
     }
     /// Consumes the builder and constructs a [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).
     pub fn build(self) -> crate::types::RecommendationRelatedAnomalySourceDetail {
         crate::types::RecommendationRelatedAnomalySourceDetail {
-            cloud_watch_metrics: self.cloud_watch_metrics,
+            cloud_watch_metrics: self.cloud_watch_metrics
+            ,
         }
     }
 }
+

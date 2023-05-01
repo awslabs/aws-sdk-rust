@@ -3,14 +3,14 @@
 /// <p>A <code>Call</code> instance for a SIP media application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplicationCall {
+pub struct SipMediaApplicationCall  {
     /// <p>The call's transaction ID.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl SipMediaApplicationCall {
     /// <p>The call's transaction ID.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl SipMediaApplicationCallBuilder {
     }
     /// <p>The call's transaction ID.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationCall`](crate::types::SipMediaApplicationCall).
     pub fn build(self) -> crate::types::SipMediaApplicationCall {
         crate::types::SipMediaApplicationCall {
-            transaction_id: self.transaction_id,
+            transaction_id: self.transaction_id
+            ,
         }
     }
 }
+

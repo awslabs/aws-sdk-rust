@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConnectivityInfoOutput {
+pub struct GetConnectivityInfoOutput  {
     /// <p>The connectivity information for the core device.</p>
     #[doc(hidden)]
     pub connectivity_info: std::option::Option<std::vec::Vec<crate::types::ConnectivityInfo>>,
@@ -13,25 +13,23 @@ pub struct GetConnectivityInfoOutput {
 }
 impl GetConnectivityInfoOutput {
     /// <p>The connectivity information for the core device.</p>
-    pub fn connectivity_info(&self) -> std::option::Option<&[crate::types::ConnectivityInfo]> {
+    pub fn connectivity_info(&self) -> std::option::Option<& [crate::types::ConnectivityInfo]> {
         self.connectivity_info.as_deref()
     }
     /// <p>A message about the connectivity information request.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetConnectivityInfoOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetConnectivityInfoOutput {
     /// Creates a new builder-style object to manufacture [`GetConnectivityInfoOutput`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput).
-    pub fn builder(
-    ) -> crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder {
-        crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder {
+        crate::operation::get_connectivity_info::builders::GetConnectivityInfoOutputBuilder::default()
     }
 }
 
@@ -39,8 +37,7 @@ impl GetConnectivityInfoOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetConnectivityInfoOutputBuilder {
-    pub(crate) connectivity_info:
-        std::option::Option<std::vec::Vec<crate::types::ConnectivityInfo>>,
+    pub(crate) connectivity_info: std::option::Option<std::vec::Vec<crate::types::ConnectivityInfo>>,
     pub(crate) message: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl GetConnectivityInfoOutputBuilder {
     /// <p>The connectivity information for the core device.</p>
     pub fn connectivity_info(mut self, input: crate::types::ConnectivityInfo) -> Self {
         let mut v = self.connectivity_info.unwrap_or_default();
-        v.push(input);
-        self.connectivity_info = Some(v);
-        self
+                        v.push(input);
+                        self.connectivity_info = Some(v);
+                        self
     }
     /// <p>The connectivity information for the core device.</p>
-    pub fn set_connectivity_info(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConnectivityInfo>>,
-    ) -> Self {
-        self.connectivity_info = input;
-        self
+    pub fn set_connectivity_info(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectivityInfo>>) -> Self {
+        self.connectivity_info = input; self
     }
     /// <p>A message about the connectivity information request.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +64,26 @@ impl GetConnectivityInfoOutputBuilder {
     }
     /// <p>A message about the connectivity information request.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetConnectivityInfoOutput`](crate::operation::get_connectivity_info::GetConnectivityInfoOutput).
     pub fn build(self) -> crate::operation::get_connectivity_info::GetConnectivityInfoOutput {
         crate::operation::get_connectivity_info::GetConnectivityInfoOutput {
-            connectivity_info: self.connectivity_info,
-            message: self.message,
+            connectivity_info: self.connectivity_info
+            ,
+            message: self.message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

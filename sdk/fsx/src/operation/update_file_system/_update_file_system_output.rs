@@ -3,7 +3,7 @@
 /// <p>The response object for the <code>UpdateFileSystem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFileSystemOutput {
+pub struct UpdateFileSystemOutput  {
     /// <p>A description of the file system that was updated.</p>
     #[doc(hidden)]
     pub file_system: std::option::Option<crate::types::FileSystem>,
@@ -11,19 +11,18 @@ pub struct UpdateFileSystemOutput {
 }
 impl UpdateFileSystemOutput {
     /// <p>A description of the file system that was updated.</p>
-    pub fn file_system(&self) -> std::option::Option<&crate::types::FileSystem> {
+    pub fn file_system(&self) -> std::option::Option<& crate::types::FileSystem> {
         self.file_system.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFileSystemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateFileSystemOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFileSystemOutput`](crate::operation::update_file_system::UpdateFileSystemOutput).
-    pub fn builder() -> crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder {
         crate::operation::update_file_system::builders::UpdateFileSystemOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl UpdateFileSystemOutputBuilder {
     }
     /// <p>A description of the file system that was updated.</p>
     pub fn set_file_system(mut self, input: std::option::Option<crate::types::FileSystem>) -> Self {
-        self.file_system = input;
-        self
+        self.file_system = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateFileSystemOutput`](crate::operation::update_file_system::UpdateFileSystemOutput).
     pub fn build(self) -> crate::operation::update_file_system::UpdateFileSystemOutput {
         crate::operation::update_file_system::UpdateFileSystemOutput {
-            file_system: self.file_system,
+            file_system: self.file_system
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

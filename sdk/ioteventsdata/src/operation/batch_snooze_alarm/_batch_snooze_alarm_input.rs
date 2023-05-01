@@ -2,24 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchSnoozeAlarmInput {
+pub struct BatchSnoozeAlarmInput  {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
     #[doc(hidden)]
-    pub snooze_action_requests:
-        std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
+    pub snooze_action_requests: std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
 }
 impl BatchSnoozeAlarmInput {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn snooze_action_requests(
-        &self,
-    ) -> std::option::Option<&[crate::types::SnoozeAlarmActionRequest]> {
+    pub fn snooze_action_requests(&self) -> std::option::Option<& [crate::types::SnoozeAlarmActionRequest]> {
         self.snooze_action_requests.as_deref()
     }
 }
 impl BatchSnoozeAlarmInput {
     /// Creates a new builder-style object to manufacture [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
-    pub fn builder() -> crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder {
         crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder::default()
     }
 }
@@ -28,8 +24,7 @@ impl BatchSnoozeAlarmInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchSnoozeAlarmInputBuilder {
-    pub(crate) snooze_action_requests:
-        std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
+    pub(crate) snooze_action_requests: std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
 }
 impl BatchSnoozeAlarmInputBuilder {
     /// Appends an item to `snooze_action_requests`.
@@ -39,29 +34,22 @@ impl BatchSnoozeAlarmInputBuilder {
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
     pub fn snooze_action_requests(mut self, input: crate::types::SnoozeAlarmActionRequest) -> Self {
         let mut v = self.snooze_action_requests.unwrap_or_default();
-        v.push(input);
-        self.snooze_action_requests = Some(v);
-        self
+                        v.push(input);
+                        self.snooze_action_requests = Some(v);
+                        self
     }
     /// <p>The list of snooze action requests. You can specify up to 10 requests per operation.</p>
-    pub fn set_snooze_action_requests(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>,
-    ) -> Self {
-        self.snooze_action_requests = input;
-        self
+    pub fn set_snooze_action_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::SnoozeAlarmActionRequest>>) -> Self {
+        self.snooze_action_requests = input; self
     }
     /// Consumes the builder and constructs a [`BatchSnoozeAlarmInput`](crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_snooze_alarm::BatchSnoozeAlarmInput {
-                snooze_action_requests: self.snooze_action_requests,
-            },
+                snooze_action_requests: self.snooze_action_requests
+                ,
+            }
         )
     }
 }
+

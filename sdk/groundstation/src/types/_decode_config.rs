@@ -3,14 +3,14 @@
 /// <p>Information about the decode <code>Config</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecodeConfig {
+pub struct DecodeConfig  {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     #[doc(hidden)]
     pub unvalidated_json: std::option::Option<std::string::String>,
 }
 impl DecodeConfig {
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-    pub fn unvalidated_json(&self) -> std::option::Option<&str> {
+    pub fn unvalidated_json(&self) -> std::option::Option<& str> {
         self.unvalidated_json.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl DecodeConfigBuilder {
     }
     /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
     pub fn set_unvalidated_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unvalidated_json = input;
-        self
+        self.unvalidated_json = input; self
     }
     /// Consumes the builder and constructs a [`DecodeConfig`](crate::types::DecodeConfig).
     pub fn build(self) -> crate::types::DecodeConfig {
         crate::types::DecodeConfig {
-            unvalidated_json: self.unvalidated_json,
+            unvalidated_json: self.unvalidated_json
+            ,
         }
     }
 }
+

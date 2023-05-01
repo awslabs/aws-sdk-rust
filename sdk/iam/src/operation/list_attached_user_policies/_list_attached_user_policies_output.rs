@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>ListAttachedUserPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedUserPoliciesOutput {
+pub struct ListAttachedUserPoliciesOutput  {
     /// <p>A list of the attached policies.</p>
     #[doc(hidden)]
     pub attached_policies: std::option::Option<std::vec::Vec<crate::types::AttachedPolicy>>,
@@ -17,7 +17,7 @@ pub struct ListAttachedUserPoliciesOutput {
 }
 impl ListAttachedUserPoliciesOutput {
     /// <p>A list of the attached policies.</p>
-    pub fn attached_policies(&self) -> std::option::Option<&[crate::types::AttachedPolicy]> {
+    pub fn attached_policies(&self) -> std::option::Option<& [crate::types::AttachedPolicy]> {
         self.attached_policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -25,18 +25,18 @@ impl ListAttachedUserPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAttachedUserPoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAttachedUserPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAttachedUserPoliciesOutput`](crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput).
-    pub fn builder() -> crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesOutputBuilder{
+    pub fn builder() -> crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesOutputBuilder {
         crate::operation::list_attached_user_policies::builders::ListAttachedUserPoliciesOutputBuilder::default()
     }
 }
@@ -58,17 +58,13 @@ impl ListAttachedUserPoliciesOutputBuilder {
     /// <p>A list of the attached policies.</p>
     pub fn attached_policies(mut self, input: crate::types::AttachedPolicy) -> Self {
         let mut v = self.attached_policies.unwrap_or_default();
-        v.push(input);
-        self.attached_policies = Some(v);
-        self
+                        v.push(input);
+                        self.attached_policies = Some(v);
+                        self
     }
     /// <p>A list of the attached policies.</p>
-    pub fn set_attached_policies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttachedPolicy>>,
-    ) -> Self {
-        self.attached_policies = input;
-        self
+    pub fn set_attached_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttachedPolicy>>) -> Self {
+        self.attached_policies = input; self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -77,8 +73,7 @@ impl ListAttachedUserPoliciesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,27 +82,29 @@ impl ListAttachedUserPoliciesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAttachedUserPoliciesOutput`](crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput {
+    pub fn build(self) -> crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput {
         crate::operation::list_attached_user_policies::ListAttachedUserPoliciesOutput {
-            attached_policies: self.attached_policies,
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            marker: self.marker,
+            attached_policies: self.attached_policies
+            ,
+            is_truncated: self.is_truncated
+                .unwrap_or_default()
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

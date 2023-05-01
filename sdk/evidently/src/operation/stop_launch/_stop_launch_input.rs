@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopLaunchInput {
+pub struct StopLaunchInput  {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
     #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct StopLaunchInput {
 }
 impl StopLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-    pub fn project(&self) -> std::option::Option<&str> {
+    pub fn project(&self) -> std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The name of the launch to stop.</p>
-    pub fn launch(&self) -> std::option::Option<&str> {
+    pub fn launch(&self) -> std::option::Option<& str> {
         self.launch.as_deref()
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::LaunchStopDesiredState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::types::LaunchStopDesiredState> {
         self.desired_state.as_ref()
     }
     /// <p>A string that describes why you are stopping the launch.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl StopLaunchInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The name of the launch to stop.</p>
     pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl StopLaunchInputBuilder {
     }
     /// <p>The name of the launch to stop.</p>
     pub fn set_launch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch = input;
-        self
+        self.launch = input; self
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
     pub fn desired_state(mut self, input: crate::types::LaunchStopDesiredState) -> Self {
@@ -77,12 +75,8 @@ impl StopLaunchInputBuilder {
         self
     }
     /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code> after it stops.</p>
-    pub fn set_desired_state(
-        mut self,
-        input: std::option::Option<crate::types::LaunchStopDesiredState>,
-    ) -> Self {
-        self.desired_state = input;
-        self
+    pub fn set_desired_state(mut self, input: std::option::Option<crate::types::LaunchStopDesiredState>) -> Self {
+        self.desired_state = input; self
     }
     /// <p>A string that describes why you are stopping the launch.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,21 +85,22 @@ impl StopLaunchInputBuilder {
     }
     /// <p>A string that describes why you are stopping the launch.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`StopLaunchInput`](crate::operation::stop_launch::StopLaunchInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_launch::StopLaunchInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_launch::StopLaunchInput {
-            project: self.project,
-            launch: self.launch,
-            desired_state: self.desired_state,
-            reason: self.reason,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_launch::StopLaunchInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_launch::StopLaunchInput {
+                project: self.project
+                ,
+                launch: self.launch
+                ,
+                desired_state: self.desired_state
+                ,
+                reason: self.reason
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmergencyContact {
+pub struct EmergencyContact  {
     /// <p>The email address for the contact.</p>
     #[doc(hidden)]
     pub email_address: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct EmergencyContact {
 }
 impl EmergencyContact {
     /// <p>The email address for the contact.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The phone number for the contact.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>Additional notes regarding the contact. </p>
-    pub fn contact_notes(&self) -> std::option::Option<&str> {
+    pub fn contact_notes(&self) -> std::option::Option<& str> {
         self.contact_notes.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl EmergencyContactBuilder {
     }
     /// <p>The email address for the contact.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// <p>The phone number for the contact.</p>
     pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl EmergencyContactBuilder {
     }
     /// <p>The phone number for the contact.</p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input;
-        self
+        self.phone_number = input; self
     }
     /// <p>Additional notes regarding the contact. </p>
     pub fn contact_notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl EmergencyContactBuilder {
     }
     /// <p>Additional notes regarding the contact. </p>
     pub fn set_contact_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_notes = input;
-        self
+        self.contact_notes = input; self
     }
     /// Consumes the builder and constructs a [`EmergencyContact`](crate::types::EmergencyContact).
     pub fn build(self) -> crate::types::EmergencyContact {
         crate::types::EmergencyContact {
-            email_address: self.email_address,
-            phone_number: self.phone_number,
-            contact_notes: self.contact_notes,
+            email_address: self.email_address
+            ,
+            phone_number: self.phone_number
+            ,
+            contact_notes: self.contact_notes
+            ,
         }
     }
 }
+

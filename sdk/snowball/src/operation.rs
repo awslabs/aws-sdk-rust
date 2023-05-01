@@ -78,3 +78,4 @@ pub mod update_job_shipment_state;
 
 /// Types for the `UpdateLongTermPricing` operation.
 pub mod update_long_term_pricing;
+

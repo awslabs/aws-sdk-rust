@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDocumentMetadataOutput {
+pub struct UpdateDocumentMetadataOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateDocumentMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDocumentMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentMetadataOutput`](crate::operation::update_document_metadata::UpdateDocumentMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataOutputBuilder {
         crate::operation::update_document_metadata::builders::UpdateDocumentMetadataOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct UpdateDocumentMetadataOutputBuilder {
 }
 impl UpdateDocumentMetadataOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDocumentMetadataOutput`](crate::operation::update_document_metadata::UpdateDocumentMetadataOutput).
     pub fn build(self) -> crate::operation::update_document_metadata::UpdateDocumentMetadataOutput {
         crate::operation::update_document_metadata::UpdateDocumentMetadataOutput {
@@ -42,3 +40,4 @@ impl UpdateDocumentMetadataOutputBuilder {
         }
     }
 }
+

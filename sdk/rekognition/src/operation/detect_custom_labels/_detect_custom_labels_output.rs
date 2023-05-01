@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectCustomLabelsOutput {
+pub struct DetectCustomLabelsOutput  {
     /// <p>An array of custom labels detected in the input image.</p>
     #[doc(hidden)]
     pub custom_labels: std::option::Option<std::vec::Vec<crate::types::CustomLabel>>,
@@ -10,19 +10,18 @@ pub struct DetectCustomLabelsOutput {
 }
 impl DetectCustomLabelsOutput {
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn custom_labels(&self) -> std::option::Option<&[crate::types::CustomLabel]> {
+    pub fn custom_labels(&self) -> std::option::Option<& [crate::types::CustomLabel]> {
         self.custom_labels.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DetectCustomLabelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectCustomLabelsOutput {
     /// Creates a new builder-style object to manufacture [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
-    pub fn builder(
-    ) -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder {
+    pub fn builder() -> crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder {
         crate::operation::detect_custom_labels::builders::DetectCustomLabelsOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl DetectCustomLabelsOutputBuilder {
     /// <p>An array of custom labels detected in the input image.</p>
     pub fn custom_labels(mut self, input: crate::types::CustomLabel) -> Self {
         let mut v = self.custom_labels.unwrap_or_default();
-        v.push(input);
-        self.custom_labels = Some(v);
-        self
+                        v.push(input);
+                        self.custom_labels = Some(v);
+                        self
     }
     /// <p>An array of custom labels detected in the input image.</p>
-    pub fn set_custom_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomLabel>>,
-    ) -> Self {
-        self.custom_labels = input;
-        self
+    pub fn set_custom_labels(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomLabel>>) -> Self {
+        self.custom_labels = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectCustomLabelsOutput`](crate::operation::detect_custom_labels::DetectCustomLabelsOutput).
     pub fn build(self) -> crate::operation::detect_custom_labels::DetectCustomLabelsOutput {
         crate::operation::detect_custom_labels::DetectCustomLabelsOutput {
-            custom_labels: self.custom_labels,
+            custom_labels: self.custom_labels
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

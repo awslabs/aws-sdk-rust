@@ -3,7 +3,7 @@
 /// <p>The client request token is not valid. Either the token is not in a valid format, or the token has been used in a previous request and cannot be reused.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdempotencyParameterMismatchException {
+pub struct IdempotencyParameterMismatchException  {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct IdempotencyParameterMismatchException {
 }
 impl IdempotencyParameterMismatchException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IdempotencyParameterMismatchException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdempotencyParameterMismatchException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,25 +25,18 @@ impl std::fmt::Display for IdempotencyParameterMismatchException {
     }
 }
 impl std::error::Error for IdempotencyParameterMismatchException {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::IdempotencyParameterMismatchException
-{
+impl aws_http::request_id::RequestId for crate::types::error::IdempotencyParameterMismatchException {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for IdempotencyParameterMismatchException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for IdempotencyParameterMismatchException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl IdempotencyParameterMismatchException {
     /// Creates a new builder-style object to manufacture [`IdempotencyParameterMismatchException`](crate::types::error::IdempotencyParameterMismatchException).
-    pub fn builder() -> crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder {
         crate::types::error::builders::IdempotencyParameterMismatchExceptionBuilder::default()
     }
 }
@@ -65,28 +56,26 @@ impl IdempotencyParameterMismatchExceptionBuilder {
     }
     /// <p>Any message associated with the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`IdempotencyParameterMismatchException`](crate::types::error::IdempotencyParameterMismatchException).
     pub fn build(self) -> crate::types::error::IdempotencyParameterMismatchException {
         crate::types::error::IdempotencyParameterMismatchException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

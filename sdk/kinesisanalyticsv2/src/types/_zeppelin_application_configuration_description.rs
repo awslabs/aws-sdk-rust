@@ -3,48 +3,35 @@
 /// <p>The configuration of a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ZeppelinApplicationConfigurationDescription {
+pub struct ZeppelinApplicationConfigurationDescription  {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
-    pub monitoring_configuration_description:
-        std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription>,
+    pub monitoring_configuration_description: std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription>,
     /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
-    pub catalog_configuration_description:
-        std::option::Option<crate::types::CatalogConfigurationDescription>,
+    pub catalog_configuration_description: std::option::Option<crate::types::CatalogConfigurationDescription>,
     /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
     #[doc(hidden)]
-    pub deploy_as_application_configuration_description:
-        std::option::Option<crate::types::DeployAsApplicationConfigurationDescription>,
+    pub deploy_as_application_configuration_description: std::option::Option<crate::types::DeployAsApplicationConfigurationDescription>,
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
     #[doc(hidden)]
-    pub custom_artifacts_configuration_description:
-        std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>,
+    pub custom_artifacts_configuration_description: std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>,
 }
 impl ZeppelinApplicationConfigurationDescription {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
-    pub fn monitoring_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::types::ZeppelinMonitoringConfigurationDescription> {
+    pub fn monitoring_configuration_description(&self) -> std::option::Option<& crate::types::ZeppelinMonitoringConfigurationDescription> {
         self.monitoring_configuration_description.as_ref()
     }
     /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
-    pub fn catalog_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::types::CatalogConfigurationDescription> {
+    pub fn catalog_configuration_description(&self) -> std::option::Option<& crate::types::CatalogConfigurationDescription> {
         self.catalog_configuration_description.as_ref()
     }
     /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
-    pub fn deploy_as_application_configuration_description(
-        &self,
-    ) -> std::option::Option<&crate::types::DeployAsApplicationConfigurationDescription> {
-        self.deploy_as_application_configuration_description
-            .as_ref()
+    pub fn deploy_as_application_configuration_description(&self) -> std::option::Option<& crate::types::DeployAsApplicationConfigurationDescription> {
+        self.deploy_as_application_configuration_description.as_ref()
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn custom_artifacts_configuration_description(
-        &self,
-    ) -> std::option::Option<&[crate::types::CustomArtifactConfigurationDescription]> {
+    pub fn custom_artifacts_configuration_description(&self) -> std::option::Option<& [crate::types::CustomArtifactConfigurationDescription]> {
         self.custom_artifacts_configuration_description.as_deref()
     }
 }
@@ -59,99 +46,66 @@ impl ZeppelinApplicationConfigurationDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ZeppelinApplicationConfigurationDescriptionBuilder {
-    pub(crate) monitoring_configuration_description:
-        std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription>,
-    pub(crate) catalog_configuration_description:
-        std::option::Option<crate::types::CatalogConfigurationDescription>,
-    pub(crate) deploy_as_application_configuration_description:
-        std::option::Option<crate::types::DeployAsApplicationConfigurationDescription>,
-    pub(crate) custom_artifacts_configuration_description:
-        std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>,
+    pub(crate) monitoring_configuration_description: std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription>,
+    pub(crate) catalog_configuration_description: std::option::Option<crate::types::CatalogConfigurationDescription>,
+    pub(crate) deploy_as_application_configuration_description: std::option::Option<crate::types::DeployAsApplicationConfigurationDescription>,
+    pub(crate) custom_artifacts_configuration_description: std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>,
 }
 impl ZeppelinApplicationConfigurationDescriptionBuilder {
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
-    pub fn monitoring_configuration_description(
-        mut self,
-        input: crate::types::ZeppelinMonitoringConfigurationDescription,
-    ) -> Self {
+    pub fn monitoring_configuration_description(mut self, input: crate::types::ZeppelinMonitoringConfigurationDescription) -> Self {
         self.monitoring_configuration_description = Some(input);
         self
     }
     /// <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
-    pub fn set_monitoring_configuration_description(
-        mut self,
-        input: std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription>,
-    ) -> Self {
-        self.monitoring_configuration_description = input;
-        self
+    pub fn set_monitoring_configuration_description(mut self, input: std::option::Option<crate::types::ZeppelinMonitoringConfigurationDescription>) -> Self {
+        self.monitoring_configuration_description = input; self
     }
     /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
-    pub fn catalog_configuration_description(
-        mut self,
-        input: crate::types::CatalogConfigurationDescription,
-    ) -> Self {
+    pub fn catalog_configuration_description(mut self, input: crate::types::CatalogConfigurationDescription) -> Self {
         self.catalog_configuration_description = Some(input);
         self
     }
     /// <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.</p>
-    pub fn set_catalog_configuration_description(
-        mut self,
-        input: std::option::Option<crate::types::CatalogConfigurationDescription>,
-    ) -> Self {
-        self.catalog_configuration_description = input;
-        self
+    pub fn set_catalog_configuration_description(mut self, input: std::option::Option<crate::types::CatalogConfigurationDescription>) -> Self {
+        self.catalog_configuration_description = input; self
     }
     /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
-    pub fn deploy_as_application_configuration_description(
-        mut self,
-        input: crate::types::DeployAsApplicationConfigurationDescription,
-    ) -> Self {
+    pub fn deploy_as_application_configuration_description(mut self, input: crate::types::DeployAsApplicationConfigurationDescription) -> Self {
         self.deploy_as_application_configuration_description = Some(input);
         self
     }
     /// <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.</p>
-    pub fn set_deploy_as_application_configuration_description(
-        mut self,
-        input: std::option::Option<crate::types::DeployAsApplicationConfigurationDescription>,
-    ) -> Self {
-        self.deploy_as_application_configuration_description = input;
-        self
+    pub fn set_deploy_as_application_configuration_description(mut self, input: std::option::Option<crate::types::DeployAsApplicationConfigurationDescription>) -> Self {
+        self.deploy_as_application_configuration_description = input; self
     }
     /// Appends an item to `custom_artifacts_configuration_description`.
     ///
     /// To override the contents of this collection use [`set_custom_artifacts_configuration_description`](Self::set_custom_artifacts_configuration_description).
     ///
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn custom_artifacts_configuration_description(
-        mut self,
-        input: crate::types::CustomArtifactConfigurationDescription,
-    ) -> Self {
-        let mut v = self
-            .custom_artifacts_configuration_description
-            .unwrap_or_default();
-        v.push(input);
-        self.custom_artifacts_configuration_description = Some(v);
-        self
+    pub fn custom_artifacts_configuration_description(mut self, input: crate::types::CustomArtifactConfigurationDescription) -> Self {
+        let mut v = self.custom_artifacts_configuration_description.unwrap_or_default();
+                        v.push(input);
+                        self.custom_artifacts_configuration_description = Some(v);
+                        self
     }
     /// <p>Custom artifacts are dependency JARs and user-defined functions (UDF).</p>
-    pub fn set_custom_artifacts_configuration_description(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>,
-        >,
-    ) -> Self {
-        self.custom_artifacts_configuration_description = input;
-        self
+    pub fn set_custom_artifacts_configuration_description(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomArtifactConfigurationDescription>>) -> Self {
+        self.custom_artifacts_configuration_description = input; self
     }
     /// Consumes the builder and constructs a [`ZeppelinApplicationConfigurationDescription`](crate::types::ZeppelinApplicationConfigurationDescription).
     pub fn build(self) -> crate::types::ZeppelinApplicationConfigurationDescription {
         crate::types::ZeppelinApplicationConfigurationDescription {
-            monitoring_configuration_description: self.monitoring_configuration_description,
-            catalog_configuration_description: self.catalog_configuration_description,
-            deploy_as_application_configuration_description: self
-                .deploy_as_application_configuration_description,
-            custom_artifacts_configuration_description: self
-                .custom_artifacts_configuration_description,
+            monitoring_configuration_description: self.monitoring_configuration_description
+            ,
+            catalog_configuration_description: self.catalog_configuration_description
+            ,
+            deploy_as_application_configuration_description: self.deploy_as_application_configuration_description
+            ,
+            custom_artifacts_configuration_description: self.custom_artifacts_configuration_description
+            ,
         }
     }
 }
+

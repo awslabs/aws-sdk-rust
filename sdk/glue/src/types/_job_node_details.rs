@@ -3,14 +3,14 @@
 /// <p>The details of a Job node present in the workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobNodeDetails {
+pub struct JobNodeDetails  {
     /// <p>The information for the job runs represented by the job node.</p>
     #[doc(hidden)]
     pub job_runs: std::option::Option<std::vec::Vec<crate::types::JobRun>>,
 }
 impl JobNodeDetails {
     /// <p>The information for the job runs represented by the job node.</p>
-    pub fn job_runs(&self) -> std::option::Option<&[crate::types::JobRun]> {
+    pub fn job_runs(&self) -> std::option::Option<& [crate::types::JobRun]> {
         self.job_runs.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl JobNodeDetailsBuilder {
     /// <p>The information for the job runs represented by the job node.</p>
     pub fn job_runs(mut self, input: crate::types::JobRun) -> Self {
         let mut v = self.job_runs.unwrap_or_default();
-        v.push(input);
-        self.job_runs = Some(v);
-        self
+                        v.push(input);
+                        self.job_runs = Some(v);
+                        self
     }
     /// <p>The information for the job runs represented by the job node.</p>
-    pub fn set_job_runs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobRun>>,
-    ) -> Self {
-        self.job_runs = input;
-        self
+    pub fn set_job_runs(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobRun>>) -> Self {
+        self.job_runs = input; self
     }
     /// Consumes the builder and constructs a [`JobNodeDetails`](crate::types::JobNodeDetails).
     pub fn build(self) -> crate::types::JobNodeDetails {
         crate::types::JobNodeDetails {
-            job_runs: self.job_runs,
+            job_runs: self.job_runs
+            ,
         }
     }
 }
+

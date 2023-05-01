@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReportGroupInput {
+pub struct DeleteReportGroupInput  {
     /// <p>The ARN of the report group to delete. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
     #[doc(hidden)]
     pub delete_reports: bool,
 }
 impl DeleteReportGroupInput {
     /// <p>The ARN of the report group to delete. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
     pub fn delete_reports(&self) -> bool {
         self.delete_reports
@@ -24,8 +24,7 @@ impl DeleteReportGroupInput {
 }
 impl DeleteReportGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteReportGroupInput`](crate::operation::delete_report_group::DeleteReportGroupInput).
-    pub fn builder(
-    ) -> crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder {
         crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder::default()
     }
 }
@@ -45,33 +44,30 @@ impl DeleteReportGroupInputBuilder {
     }
     /// <p>The ARN of the report group to delete. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
-    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
     pub fn delete_reports(mut self, input: bool) -> Self {
         self.delete_reports = Some(input);
         self
     }
-    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p>
+    /// <p>If <code>true</code>, deletes any reports that belong to a report group before deleting the report group. </p> 
     /// <p>If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a> to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an exception is thrown. </p>
     pub fn set_delete_reports(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_reports = input;
-        self
+        self.delete_reports = input; self
     }
     /// Consumes the builder and constructs a [`DeleteReportGroupInput`](crate::operation::delete_report_group::DeleteReportGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_report_group::DeleteReportGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_report_group::DeleteReportGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_report_group::DeleteReportGroupInput {
-                arn: self.arn,
-                delete_reports: self.delete_reports.unwrap_or_default(),
-            },
+                arn: self.arn
+                ,
+                delete_reports: self.delete_reports
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

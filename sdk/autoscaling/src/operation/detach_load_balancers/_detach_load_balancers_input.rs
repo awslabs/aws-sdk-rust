@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachLoadBalancersInput {
+pub struct DetachLoadBalancersInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct DetachLoadBalancersInput {
 }
 impl DetachLoadBalancersInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
         self.load_balancer_names.as_deref()
     }
 }
 impl DetachLoadBalancersInput {
     /// Creates a new builder-style object to manufacture [`DetachLoadBalancersInput`](crate::operation::detach_load_balancers::DetachLoadBalancersInput).
-    pub fn builder(
-    ) -> crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder {
-        crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder {
+        crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder::default()
     }
 }
 
@@ -43,12 +41,8 @@ impl DetachLoadBalancersInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
     }
     /// Appends an item to `load_balancer_names`.
     ///
@@ -57,30 +51,24 @@ impl DetachLoadBalancersInputBuilder {
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
     pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-        v.push(input.into());
-        self.load_balancer_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.load_balancer_names = Some(v);
+                        self
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub fn set_load_balancer_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.load_balancer_names = input;
-        self
+    pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.load_balancer_names = input; self
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancersInput`](crate::operation::detach_load_balancers::DetachLoadBalancersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::detach_load_balancers::DetachLoadBalancersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::detach_load_balancers::DetachLoadBalancersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::detach_load_balancers::DetachLoadBalancersInput {
-                auto_scaling_group_name: self.auto_scaling_group_name,
-                load_balancer_names: self.load_balancer_names,
-            },
+                auto_scaling_group_name: self.auto_scaling_group_name
+                ,
+                load_balancer_names: self.load_balancer_names
+                ,
+            }
         )
     }
 }
+

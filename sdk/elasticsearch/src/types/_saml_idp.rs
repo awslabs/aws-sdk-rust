@@ -3,7 +3,7 @@
 /// <p>Specifies the SAML Identity Provider's information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamlIdp {
+pub struct SamlIdp  {
     /// <p>The Metadata of the SAML application in xml format.</p>
     #[doc(hidden)]
     pub metadata_content: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SamlIdp {
 }
 impl SamlIdp {
     /// <p>The Metadata of the SAML application in xml format.</p>
-    pub fn metadata_content(&self) -> std::option::Option<&str> {
+    pub fn metadata_content(&self) -> std::option::Option<& str> {
         self.metadata_content.as_deref()
     }
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SamlIdpBuilder {
     }
     /// <p>The Metadata of the SAML application in xml format.</p>
     pub fn set_metadata_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata_content = input;
-        self
+        self.metadata_content = input; self
     }
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SamlIdpBuilder {
     }
     /// <p>The unique Entity ID of the application in SAML Identity Provider.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// Consumes the builder and constructs a [`SamlIdp`](crate::types::SamlIdp).
     pub fn build(self) -> crate::types::SamlIdp {
         crate::types::SamlIdp {
-            metadata_content: self.metadata_content,
-            entity_id: self.entity_id,
+            metadata_content: self.metadata_content
+            ,
+            entity_id: self.entity_id
+            ,
         }
     }
 }
+

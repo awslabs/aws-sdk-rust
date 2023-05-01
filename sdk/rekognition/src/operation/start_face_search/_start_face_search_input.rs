@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFaceSearchInput {
+pub struct StartFaceSearchInput  {
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     #[doc(hidden)]
     pub video: std::option::Option<crate::types::Video>,
@@ -24,11 +24,11 @@ pub struct StartFaceSearchInput {
 }
 impl StartFaceSearchInput {
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
-    pub fn video(&self) -> std::option::Option<&crate::types::Video> {
+    pub fn video(&self) -> std::option::Option<& crate::types::Video> {
         self.video.as_ref()
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
@@ -36,15 +36,15 @@ impl StartFaceSearchInput {
         self.face_match_threshold
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn notification_channel(&self) -> std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> std::option::Option<& crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
-    pub fn job_tag(&self) -> std::option::Option<&str> {
+    pub fn job_tag(&self) -> std::option::Option<& str> {
         self.job_tag.as_deref()
     }
 }
@@ -74,8 +74,7 @@ impl StartFaceSearchInputBuilder {
     }
     /// <p>The video you want to search. The video must be stored in an Amazon S3 bucket. </p>
     pub fn set_video(mut self, input: std::option::Option<crate::types::Video>) -> Self {
-        self.video = input;
-        self
+        self.video = input; self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,12 +82,8 @@ impl StartFaceSearchInputBuilder {
         self
     }
     /// <p>Idempotent token used to identify the start request. If you use the same token with multiple <code>StartFaceSearch</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently started more than once. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn face_match_threshold(mut self, input: f32) -> Self {
@@ -97,8 +92,7 @@ impl StartFaceSearchInputBuilder {
     }
     /// <p>The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.</p>
     pub fn set_face_match_threshold(mut self, input: std::option::Option<f32>) -> Self {
-        self.face_match_threshold = input;
-        self
+        self.face_match_threshold = input; self
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
     pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +101,7 @@ impl StartFaceSearchInputBuilder {
     }
     /// <p>ID of the collection that contains the faces you want to search for.</p>
     pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
@@ -116,12 +109,8 @@ impl StartFaceSearchInputBuilder {
         self
     }
     /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
-    pub fn set_notification_channel(
-        mut self,
-        input: std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
-        self.notification_channel = input;
-        self
+    pub fn set_notification_channel(mut self, input: std::option::Option<crate::types::NotificationChannel>) -> Self {
+        self.notification_channel = input; self
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,23 +119,26 @@ impl StartFaceSearchInputBuilder {
     }
     /// <p>An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them in the completion notification.</p>
     pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// Consumes the builder and constructs a [`StartFaceSearchInput`](crate::operation::start_face_search::StartFaceSearchInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_face_search::StartFaceSearchInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_face_search::StartFaceSearchInput {
-            video: self.video,
-            client_request_token: self.client_request_token,
-            face_match_threshold: self.face_match_threshold,
-            collection_id: self.collection_id,
-            notification_channel: self.notification_channel,
-            job_tag: self.job_tag,
-        })
+    pub fn build(self) -> Result<crate::operation::start_face_search::StartFaceSearchInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_face_search::StartFaceSearchInput {
+                video: self.video
+                ,
+                client_request_token: self.client_request_token
+                ,
+                face_match_threshold: self.face_match_threshold
+                ,
+                collection_id: self.collection_id
+                ,
+                notification_channel: self.notification_channel
+                ,
+                job_tag: self.job_tag
+                ,
+            }
+        )
     }
 }
+

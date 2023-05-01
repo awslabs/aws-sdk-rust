@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupCertificateConfigurationInput {
+pub struct GetGroupCertificateConfigurationInput  {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetGroupCertificateConfigurationInput {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 impl GetGroupCertificateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
-    pub fn builder() -> crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder {
         crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl GetGroupCertificateConfigurationInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Consumes the builder and constructs a [`GetGroupCertificateConfigurationInput`](crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationInput {
                 group_id: self.group_id
@@ -47,3 +46,4 @@ impl GetGroupCertificateConfigurationInputBuilder {
         )
     }
 }
+

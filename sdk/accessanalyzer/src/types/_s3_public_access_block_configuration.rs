@@ -3,7 +3,7 @@
 /// <p>The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3PublicAccessBlockConfiguration {
+pub struct S3PublicAccessBlockConfiguration  {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
     #[doc(hidden)]
     pub ignore_public_acls: std::option::Option<bool>,
@@ -43,8 +43,7 @@ impl S3PublicAccessBlockConfigurationBuilder {
     }
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
     pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
-        self.ignore_public_acls = input;
-        self
+        self.ignore_public_acls = input; self
     }
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
     pub fn restrict_public_buckets(mut self, input: bool) -> Self {
@@ -53,14 +52,16 @@ impl S3PublicAccessBlockConfigurationBuilder {
     }
     /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
     pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
-        self.restrict_public_buckets = input;
-        self
+        self.restrict_public_buckets = input; self
     }
     /// Consumes the builder and constructs a [`S3PublicAccessBlockConfiguration`](crate::types::S3PublicAccessBlockConfiguration).
     pub fn build(self) -> crate::types::S3PublicAccessBlockConfiguration {
         crate::types::S3PublicAccessBlockConfiguration {
-            ignore_public_acls: self.ignore_public_acls,
-            restrict_public_buckets: self.restrict_public_buckets,
+            ignore_public_acls: self.ignore_public_acls
+            ,
+            restrict_public_buckets: self.restrict_public_buckets
+            ,
         }
     }
 }
+

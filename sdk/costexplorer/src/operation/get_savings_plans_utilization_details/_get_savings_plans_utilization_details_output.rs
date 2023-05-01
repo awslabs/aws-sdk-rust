@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSavingsPlansUtilizationDetailsOutput {
+pub struct GetSavingsPlansUtilizationDetailsOutput  {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
     #[doc(hidden)]
-    pub savings_plans_utilization_details:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
+    pub savings_plans_utilization_details: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
@@ -20,32 +19,30 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
 }
 impl GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    pub fn savings_plans_utilization_details(
-        &self,
-    ) -> std::option::Option<&[crate::types::SavingsPlansUtilizationDetail]> {
+    pub fn savings_plans_utilization_details(&self) -> std::option::Option<& [crate::types::SavingsPlansUtilizationDetail]> {
         self.savings_plans_utilization_details.as_deref()
     }
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
-    pub fn total(&self) -> std::option::Option<&crate::types::SavingsPlansUtilizationAggregates> {
+    pub fn total(&self) -> std::option::Option<& crate::types::SavingsPlansUtilizationAggregates> {
         self.total.as_ref()
     }
     /// <p>The time period of the request. </p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::DateInterval> {
+    pub fn time_period(&self) -> std::option::Option<& crate::types::DateInterval> {
         self.time_period.as_ref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetSavingsPlansUtilizationDetailsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSavingsPlansUtilizationDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetSavingsPlansUtilizationDetailsOutput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput).
-    pub fn builder() -> crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsOutputBuilder{
+    pub fn builder() -> crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsOutputBuilder {
         crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsOutputBuilder::default()
     }
 }
@@ -54,8 +51,7 @@ impl GetSavingsPlansUtilizationDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsOutputBuilder {
-    pub(crate) savings_plans_utilization_details:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
+    pub(crate) savings_plans_utilization_details: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
     pub(crate) total: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
     pub(crate) time_period: std::option::Option<crate::types::DateInterval>,
     pub(crate) next_token: std::option::Option<std::string::String>,
@@ -67,22 +63,15 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
     /// To override the contents of this collection use [`set_savings_plans_utilization_details`](Self::set_savings_plans_utilization_details).
     ///
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    pub fn savings_plans_utilization_details(
-        mut self,
-        input: crate::types::SavingsPlansUtilizationDetail,
-    ) -> Self {
+    pub fn savings_plans_utilization_details(mut self, input: crate::types::SavingsPlansUtilizationDetail) -> Self {
         let mut v = self.savings_plans_utilization_details.unwrap_or_default();
-        v.push(input);
-        self.savings_plans_utilization_details = Some(v);
-        self
+                        v.push(input);
+                        self.savings_plans_utilization_details = Some(v);
+                        self
     }
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
-    pub fn set_savings_plans_utilization_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>,
-    ) -> Self {
-        self.savings_plans_utilization_details = input;
-        self
+    pub fn set_savings_plans_utilization_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlansUtilizationDetail>>) -> Self {
+        self.savings_plans_utilization_details = input; self
     }
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     pub fn total(mut self, input: crate::types::SavingsPlansUtilizationAggregates) -> Self {
@@ -90,12 +79,8 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         self
     }
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
-    pub fn set_total(
-        mut self,
-        input: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>,
-    ) -> Self {
-        self.total = input;
-        self
+    pub fn set_total(mut self, input: std::option::Option<crate::types::SavingsPlansUtilizationAggregates>) -> Self {
+        self.total = input; self
     }
     /// <p>The time period of the request. </p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
@@ -103,12 +88,8 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         self
     }
     /// <p>The time period of the request. </p>
-    pub fn set_time_period(
-        mut self,
-        input: std::option::Option<crate::types::DateInterval>,
-    ) -> Self {
-        self.time_period = input;
-        self
+    pub fn set_time_period(mut self, input: std::option::Option<crate::types::DateInterval>) -> Self {
+        self.time_period = input; self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,20 +98,19 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsOutput`](crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput).
-    pub fn build(self) -> crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput{
+    pub fn build(self) -> crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput {
         crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput {
             savings_plans_utilization_details: self.savings_plans_utilization_details
             ,
@@ -144,3 +124,4 @@ impl GetSavingsPlansUtilizationDetailsOutputBuilder {
         }
     }
 }
+

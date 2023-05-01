@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExperimentInput {
+pub struct DescribeExperimentInput  {
     /// <p>The name of the experiment to describe.</p>
     #[doc(hidden)]
     pub experiment_name: std::option::Option<std::string::String>,
 }
 impl DescribeExperimentInput {
     /// <p>The name of the experiment to describe.</p>
-    pub fn experiment_name(&self) -> std::option::Option<&str> {
+    pub fn experiment_name(&self) -> std::option::Option<& str> {
         self.experiment_name.as_deref()
     }
 }
 impl DescribeExperimentInput {
     /// Creates a new builder-style object to manufacture [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
-    pub fn builder(
-    ) -> crate::operation::describe_experiment::builders::DescribeExperimentInputBuilder {
+    pub fn builder() -> crate::operation::describe_experiment::builders::DescribeExperimentInputBuilder {
         crate::operation::describe_experiment::builders::DescribeExperimentInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeExperimentInputBuilder {
     }
     /// <p>The name of the experiment to describe.</p>
     pub fn set_experiment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.experiment_name = input;
-        self
+        self.experiment_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeExperimentInput`](crate::operation::describe_experiment::DescribeExperimentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_experiment::DescribeExperimentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_experiment::DescribeExperimentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_experiment::DescribeExperimentInput {
-                experiment_name: self.experiment_name,
-            },
+                experiment_name: self.experiment_name
+                ,
+            }
         )
     }
 }
+

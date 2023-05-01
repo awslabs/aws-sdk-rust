@@ -3,7 +3,7 @@
 /// <p>Backups have not yet been enabled for this table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousBackupsUnavailableException {
+pub struct ContinuousBackupsUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct ContinuousBackupsUnavailableException {
 }
 impl ContinuousBackupsUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ContinuousBackupsUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContinuousBackupsUnavailableException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,25 +25,18 @@ impl std::fmt::Display for ContinuousBackupsUnavailableException {
     }
 }
 impl std::error::Error for ContinuousBackupsUnavailableException {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::ContinuousBackupsUnavailableException
-{
+impl aws_http::request_id::RequestId for crate::types::error::ContinuousBackupsUnavailableException {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ContinuousBackupsUnavailableException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ContinuousBackupsUnavailableException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ContinuousBackupsUnavailableException {
     /// Creates a new builder-style object to manufacture [`ContinuousBackupsUnavailableException`](crate::types::error::ContinuousBackupsUnavailableException).
-    pub fn builder() -> crate::types::error::builders::ContinuousBackupsUnavailableExceptionBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::ContinuousBackupsUnavailableExceptionBuilder {
         crate::types::error::builders::ContinuousBackupsUnavailableExceptionBuilder::default()
     }
 }
@@ -65,28 +56,26 @@ impl ContinuousBackupsUnavailableExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ContinuousBackupsUnavailableException`](crate::types::error::ContinuousBackupsUnavailableException).
     pub fn build(self) -> crate::types::error::ContinuousBackupsUnavailableException {
         crate::types::error::ContinuousBackupsUnavailableException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

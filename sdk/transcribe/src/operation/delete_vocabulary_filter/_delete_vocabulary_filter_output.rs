@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVocabularyFilterOutput {
+pub struct DeleteVocabularyFilterOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteVocabularyFilterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVocabularyFilterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVocabularyFilterOutput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterOutputBuilder {
         crate::operation::delete_vocabulary_filter::builders::DeleteVocabularyFilterOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteVocabularyFilterOutputBuilder {
 }
 impl DeleteVocabularyFilterOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVocabularyFilterOutput`](crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput).
     pub fn build(self) -> crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput {
         crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput {
@@ -42,3 +40,4 @@ impl DeleteVocabularyFilterOutputBuilder {
         }
     }
 }
+

@@ -4,123 +4,94 @@ pub use crate::operation::list_projects::_list_projects_output::ListProjectsOutp
 pub use crate::operation::list_projects::_list_projects_input::ListProjectsInputBuilder;
 
 /// Fluent builder constructing a request to `ListProjects`.
-///
+/// 
 /// <p>Gets a list of build project names, with each build project name representing a single build project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProjectsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_projects::builders::ListProjectsInputBuilder,
-}
-impl ListProjectsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_projects::builders::ListProjectsInputBuilder
+            }
+impl ListProjectsFluentBuilder  {
     /// Creates a new `ListProjects`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_projects::ListProjects,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_projects::ListProjectsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_projects::ListProjects, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_projects::ListProjectsOutput, aws_smithy_http::result::SdkError<crate::operation::list_projects::ListProjectsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_projects::paginator::ListProjectsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_projects::paginator::ListProjectsPaginator {
-        crate::operation::list_projects::paginator::ListProjectsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_projects::paginator::ListProjectsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_projects::paginator::ListProjectsPaginator {
+                            crate::operation::list_projects::paginator::ListProjectsPaginator::new(self.handle, self.inner)
+                        }
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
     pub fn sort_by(mut self, input: crate::types::ProjectSortByType) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p>The criterion to be used to list build project names. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li>
-    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li>
-    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li>
-    /// </ul>
+    /// <p>The criterion to be used to list build project names. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATED_TIME</code>: List based on when each build project was created.</p> </li> 
+    /// <li> <p> <code>LAST_MODIFIED_TIME</code>: List based on when information about each build project was last changed.</p> </li> 
+    /// <li> <p> <code>NAME</code>: List based on each build project's name.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortOrder</code> to specify in what order to list the build project names based on the preceding criteria.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::ProjectSortByType>,
-    ) -> Self {
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ProjectSortByType>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The order in which to list build projects. Valid values include:</p>
-    /// <ul>
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
-    /// </ul>
+    /// <p>The order in which to list build projects. Valid values include:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// </ul> 
     /// <p>Use <code>sortBy</code> to specify the criterion to be used to list build project names.</p>
-    pub fn set_sort_order(
-        mut self,
-        input: std::option::Option<crate::types::SortOrderType>,
-    ) -> Self {
+    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -135,3 +106,4 @@ impl ListProjectsFluentBuilder {
         self
     }
 }
+

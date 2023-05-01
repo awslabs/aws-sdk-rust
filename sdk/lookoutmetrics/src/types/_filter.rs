@@ -3,7 +3,7 @@
 /// <p>Describes a filter for choosing a subset of dimension values. Each filter consists of the dimension that you want to include and the condition statement. The condition statement is specified in the <code>FilterOperation</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The value that you want to include in the filter.</p>
     #[doc(hidden)]
     pub dimension_value: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The value that you want to include in the filter.</p>
-    pub fn dimension_value(&self) -> std::option::Option<&str> {
+    pub fn dimension_value(&self) -> std::option::Option<& str> {
         self.dimension_value.as_deref()
     }
     /// <p>The condition to apply.</p>
-    pub fn filter_operation(&self) -> std::option::Option<&crate::types::FilterOperation> {
+    pub fn filter_operation(&self) -> std::option::Option<& crate::types::FilterOperation> {
         self.filter_operation.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl FilterBuilder {
     }
     /// <p>The value that you want to include in the filter.</p>
     pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dimension_value = input;
-        self
+        self.dimension_value = input; self
     }
     /// <p>The condition to apply.</p>
     pub fn filter_operation(mut self, input: crate::types::FilterOperation) -> Self {
@@ -52,18 +51,17 @@ impl FilterBuilder {
         self
     }
     /// <p>The condition to apply.</p>
-    pub fn set_filter_operation(
-        mut self,
-        input: std::option::Option<crate::types::FilterOperation>,
-    ) -> Self {
-        self.filter_operation = input;
-        self
+    pub fn set_filter_operation(mut self, input: std::option::Option<crate::types::FilterOperation>) -> Self {
+        self.filter_operation = input; self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            dimension_value: self.dimension_value,
-            filter_operation: self.filter_operation,
+            dimension_value: self.dimension_value
+            ,
+            filter_operation: self.filter_operation
+            ,
         }
     }
 }
+

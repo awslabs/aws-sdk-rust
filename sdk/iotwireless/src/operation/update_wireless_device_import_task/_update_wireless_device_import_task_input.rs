@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWirelessDeviceImportTaskInput {
+pub struct UpdateWirelessDeviceImportTaskInput  {
     /// <p>The identifier of the import task to be updated.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateWirelessDeviceImportTaskInput {
 }
 impl UpdateWirelessDeviceImportTaskInput {
     /// <p>The identifier of the import task to be updated.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::types::SidewalkUpdateImportInfo> {
+    pub fn sidewalk(&self) -> std::option::Option<& crate::types::SidewalkUpdateImportInfo> {
         self.sidewalk.as_ref()
     }
 }
 impl UpdateWirelessDeviceImportTaskInput {
     /// Creates a new builder-style object to manufacture [`UpdateWirelessDeviceImportTaskInput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput).
-    pub fn builder() -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder{
+    pub fn builder() -> crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder {
         crate::operation::update_wireless_device_import_task::builders::UpdateWirelessDeviceImportTaskInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
     }
     /// <p>The identifier of the import task to be updated.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkUpdateImportInfo) -> Self {
@@ -51,20 +50,11 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
         self
     }
     /// <p>The Sidewalk-related parameters of the import task to be updated.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: std::option::Option<crate::types::SidewalkUpdateImportInfo>,
-    ) -> Self {
-        self.sidewalk = input;
-        self
+    pub fn set_sidewalk(mut self, input: std::option::Option<crate::types::SidewalkUpdateImportInfo>) -> Self {
+        self.sidewalk = input; self
     }
     /// Consumes the builder and constructs a [`UpdateWirelessDeviceImportTaskInput`](crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_wireless_device_import_task::UpdateWirelessDeviceImportTaskInput {
                 id: self.id
@@ -75,3 +65,4 @@ impl UpdateWirelessDeviceImportTaskInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>DeleteExpression</code></code> operation. Specifies the name of the domain you want to update and the name of the expression you want to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExpressionInput {
+pub struct DeleteExpressionInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,18 +13,17 @@ pub struct DeleteExpressionInput {
 }
 impl DeleteExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
-    pub fn expression_name(&self) -> std::option::Option<&str> {
+    pub fn expression_name(&self) -> std::option::Option<& str> {
         self.expression_name.as_deref()
     }
 }
 impl DeleteExpressionInput {
     /// Creates a new builder-style object to manufacture [`DeleteExpressionInput`](crate::operation::delete_expression::DeleteExpressionInput).
-    pub fn builder() -> crate::operation::delete_expression::builders::DeleteExpressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_expression::builders::DeleteExpressionInputBuilder {
         crate::operation::delete_expression::builders::DeleteExpressionInputBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl DeleteExpressionInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,19 +52,18 @@ impl DeleteExpressionInputBuilder {
     }
     /// <p>The name of the <code><code>Expression</code></code> to delete.</p>
     pub fn set_expression_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression_name = input;
-        self
+        self.expression_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteExpressionInput`](crate::operation::delete_expression::DeleteExpressionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_expression::DeleteExpressionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_expression::DeleteExpressionInput {
-            domain_name: self.domain_name,
-            expression_name: self.expression_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_expression::DeleteExpressionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_expression::DeleteExpressionInput {
+                domain_name: self.domain_name
+                ,
+                expression_name: self.expression_name
+                ,
+            }
+        )
     }
 }
+

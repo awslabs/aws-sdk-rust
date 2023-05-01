@@ -39,14 +39,8 @@ pub enum Configuration {
 impl Configuration {
     /// Tries to convert the enum instance into [`EbsSnapshot`](crate::types::Configuration::EbsSnapshot), extracting the inner [`EbsSnapshotConfiguration`](crate::types::EbsSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ebs_snapshot(
-        &self,
-    ) -> std::result::Result<&crate::types::EbsSnapshotConfiguration, &Self> {
-        if let Configuration::EbsSnapshot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_ebs_snapshot(&self) -> std::result::Result<&crate::types::EbsSnapshotConfiguration, &Self> {
+        if let Configuration::EbsSnapshot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EbsSnapshot`](crate::types::Configuration::EbsSnapshot).
     pub fn is_ebs_snapshot(&self) -> bool {
@@ -54,14 +48,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`EcrRepository`](crate::types::Configuration::EcrRepository), extracting the inner [`EcrRepositoryConfiguration`](crate::types::EcrRepositoryConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ecr_repository(
-        &self,
-    ) -> std::result::Result<&crate::types::EcrRepositoryConfiguration, &Self> {
-        if let Configuration::EcrRepository(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_ecr_repository(&self) -> std::result::Result<&crate::types::EcrRepositoryConfiguration, &Self> {
+        if let Configuration::EcrRepository(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EcrRepository`](crate::types::Configuration::EcrRepository).
     pub fn is_ecr_repository(&self) -> bool {
@@ -69,14 +57,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`EfsFileSystem`](crate::types::Configuration::EfsFileSystem), extracting the inner [`EfsFileSystemConfiguration`](crate::types::EfsFileSystemConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_efs_file_system(
-        &self,
-    ) -> std::result::Result<&crate::types::EfsFileSystemConfiguration, &Self> {
-        if let Configuration::EfsFileSystem(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_efs_file_system(&self) -> std::result::Result<&crate::types::EfsFileSystemConfiguration, &Self> {
+        if let Configuration::EfsFileSystem(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EfsFileSystem`](crate::types::Configuration::EfsFileSystem).
     pub fn is_efs_file_system(&self) -> bool {
@@ -85,11 +67,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`IamRole`](crate::types::Configuration::IamRole), extracting the inner [`IamRoleConfiguration`](crate::types::IamRoleConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iam_role(&self) -> std::result::Result<&crate::types::IamRoleConfiguration, &Self> {
-        if let Configuration::IamRole(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::IamRole(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IamRole`](crate::types::Configuration::IamRole).
     pub fn is_iam_role(&self) -> bool {
@@ -98,11 +76,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`KmsKey`](crate::types::Configuration::KmsKey), extracting the inner [`KmsKeyConfiguration`](crate::types::KmsKeyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_kms_key(&self) -> std::result::Result<&crate::types::KmsKeyConfiguration, &Self> {
-        if let Configuration::KmsKey(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::KmsKey(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`KmsKey`](crate::types::Configuration::KmsKey).
     pub fn is_kms_key(&self) -> bool {
@@ -110,14 +84,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`RdsDbClusterSnapshot`](crate::types::Configuration::RdsDbClusterSnapshot), extracting the inner [`RdsDbClusterSnapshotConfiguration`](crate::types::RdsDbClusterSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_db_cluster_snapshot(
-        &self,
-    ) -> std::result::Result<&crate::types::RdsDbClusterSnapshotConfiguration, &Self> {
-        if let Configuration::RdsDbClusterSnapshot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_rds_db_cluster_snapshot(&self) -> std::result::Result<&crate::types::RdsDbClusterSnapshotConfiguration, &Self> {
+        if let Configuration::RdsDbClusterSnapshot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RdsDbClusterSnapshot`](crate::types::Configuration::RdsDbClusterSnapshot).
     pub fn is_rds_db_cluster_snapshot(&self) -> bool {
@@ -125,14 +93,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`RdsDbSnapshot`](crate::types::Configuration::RdsDbSnapshot), extracting the inner [`RdsDbSnapshotConfiguration`](crate::types::RdsDbSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_db_snapshot(
-        &self,
-    ) -> std::result::Result<&crate::types::RdsDbSnapshotConfiguration, &Self> {
-        if let Configuration::RdsDbSnapshot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_rds_db_snapshot(&self) -> std::result::Result<&crate::types::RdsDbSnapshotConfiguration, &Self> {
+        if let Configuration::RdsDbSnapshot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RdsDbSnapshot`](crate::types::Configuration::RdsDbSnapshot).
     pub fn is_rds_db_snapshot(&self) -> bool {
@@ -141,11 +103,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`S3Bucket`](crate::types::Configuration::S3Bucket), extracting the inner [`S3BucketConfiguration`](crate::types::S3BucketConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_bucket(&self) -> std::result::Result<&crate::types::S3BucketConfiguration, &Self> {
-        if let Configuration::S3Bucket(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::S3Bucket(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3Bucket`](crate::types::Configuration::S3Bucket).
     pub fn is_s3_bucket(&self) -> bool {
@@ -153,14 +111,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`SecretsManagerSecret`](crate::types::Configuration::SecretsManagerSecret), extracting the inner [`SecretsManagerSecretConfiguration`](crate::types::SecretsManagerSecretConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_secrets_manager_secret(
-        &self,
-    ) -> std::result::Result<&crate::types::SecretsManagerSecretConfiguration, &Self> {
-        if let Configuration::SecretsManagerSecret(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_secrets_manager_secret(&self) -> std::result::Result<&crate::types::SecretsManagerSecretConfiguration, &Self> {
+        if let Configuration::SecretsManagerSecret(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SecretsManagerSecret`](crate::types::Configuration::SecretsManagerSecret).
     pub fn is_secrets_manager_secret(&self) -> bool {
@@ -169,11 +121,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`SnsTopic`](crate::types::Configuration::SnsTopic), extracting the inner [`SnsTopicConfiguration`](crate::types::SnsTopicConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sns_topic(&self) -> std::result::Result<&crate::types::SnsTopicConfiguration, &Self> {
-        if let Configuration::SnsTopic(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::SnsTopic(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SnsTopic`](crate::types::Configuration::SnsTopic).
     pub fn is_sns_topic(&self) -> bool {
@@ -182,11 +130,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`SqsQueue`](crate::types::Configuration::SqsQueue), extracting the inner [`SqsQueueConfiguration`](crate::types::SqsQueueConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sqs_queue(&self) -> std::result::Result<&crate::types::SqsQueueConfiguration, &Self> {
-        if let Configuration::SqsQueue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::SqsQueue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SqsQueue`](crate::types::Configuration::SqsQueue).
     pub fn is_sqs_queue(&self) -> bool {
@@ -197,3 +141,4 @@ impl Configuration {
         matches!(self, Self::Unknown)
     }
 }
+

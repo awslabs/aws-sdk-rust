@@ -3,7 +3,7 @@
 /// <p>Describes the basic information about a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeSummary {
+pub struct ThemeSummary  {
     /// <p>The unique ID for the app associated with the theme summary.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ThemeSummary {
 }
 impl ThemeSummary {
     /// <p>The unique ID for the app associated with the theme summary.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The ID of the theme.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The unique ID for the app associated with the theme summary.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The ID of the theme.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The ID of the theme.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the theme.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl ThemeSummaryBuilder {
     }
     /// <p>The name of the theme.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`ThemeSummary`](crate::types::ThemeSummary).
     pub fn build(self) -> crate::types::ThemeSummary {
         crate::types::ThemeSummary {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            name: self.name,
+            app_id: self.app_id
+            ,
+            environment_name: self.environment_name
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

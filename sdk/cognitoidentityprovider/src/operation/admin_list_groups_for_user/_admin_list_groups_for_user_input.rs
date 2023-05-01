@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminListGroupsForUserInput {
+pub struct AdminListGroupsForUserInput  {
     /// <p>The username for the user.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct AdminListGroupsForUserInput {
 }
 impl AdminListGroupsForUserInput {
     /// <p>The username for the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The limit of the request to list groups.</p>
@@ -30,11 +30,11 @@ impl AdminListGroupsForUserInput {
         self.limit
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for AdminListGroupsForUserInput {
+impl  std::fmt::Debug for AdminListGroupsForUserInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminListGroupsForUserInput");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -46,9 +46,7 @@ impl std::fmt::Debug for AdminListGroupsForUserInput {
 }
 impl AdminListGroupsForUserInput {
     /// Creates a new builder-style object to manufacture [`AdminListGroupsForUserInput`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput).
-    pub fn builder(
-    ) -> crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder {
         crate::operation::admin_list_groups_for_user::builders::AdminListGroupsForUserInputBuilder::default()
     }
 }
@@ -70,8 +68,7 @@ impl AdminListGroupsForUserInputBuilder {
     }
     /// <p>The username for the user.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +77,7 @@ impl AdminListGroupsForUserInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The limit of the request to list groups.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -90,8 +86,7 @@ impl AdminListGroupsForUserInputBuilder {
     }
     /// <p>The limit of the request to list groups.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,23 +95,21 @@ impl AdminListGroupsForUserInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`AdminListGroupsForUserInput`](crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_list_groups_for_user::AdminListGroupsForUserInput {
-                username: self.username,
-                user_pool_id: self.user_pool_id,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                username: self.username
+                ,
+                user_pool_id: self.user_pool_id
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
@@ -130,3 +123,4 @@ impl std::fmt::Debug for AdminListGroupsForUserInputBuilder {
         formatter.finish()
     }
 }
+

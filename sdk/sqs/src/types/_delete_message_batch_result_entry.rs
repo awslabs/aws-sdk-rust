@@ -3,14 +3,14 @@
 /// <p>Encloses the <code>Id</code> of an entry in <code> <code>DeleteMessageBatch</code>.</code> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMessageBatchResultEntry {
+pub struct DeleteMessageBatchResultEntry  {
     /// <p>Represents a successfully deleted message.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteMessageBatchResultEntry {
     /// <p>Represents a successfully deleted message.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl DeleteMessageBatchResultEntryBuilder {
     }
     /// <p>Represents a successfully deleted message.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMessageBatchResultEntry`](crate::types::DeleteMessageBatchResultEntry).
     pub fn build(self) -> crate::types::DeleteMessageBatchResultEntry {
-        crate::types::DeleteMessageBatchResultEntry { id: self.id }
+        crate::types::DeleteMessageBatchResultEntry {
+            id: self.id
+            ,
+        }
     }
 }
+

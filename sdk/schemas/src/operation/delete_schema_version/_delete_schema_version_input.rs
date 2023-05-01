@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSchemaVersionInput {
+pub struct DeleteSchemaVersionInput  {
     /// <p>The name of the registry.</p>
     #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct DeleteSchemaVersionInput {
 }
 impl DeleteSchemaVersionInput {
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// The version number of the schema
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
 }
 impl DeleteSchemaVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteSchemaVersionInput`](crate::operation::delete_schema_version::DeleteSchemaVersionInput).
-    pub fn builder(
-    ) -> crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder {
-        crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder {
+        crate::operation::delete_schema_version::builders::DeleteSchemaVersionInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl DeleteSchemaVersionInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DeleteSchemaVersionInputBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// The version number of the schema
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DeleteSchemaVersionInputBuilder {
     }
     /// The version number of the schema
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input;
-        self
+        self.schema_version = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSchemaVersionInput`](crate::operation::delete_schema_version::DeleteSchemaVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_schema_version::DeleteSchemaVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_schema_version::DeleteSchemaVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_schema_version::DeleteSchemaVersionInput {
-                registry_name: self.registry_name,
-                schema_name: self.schema_name,
-                schema_version: self.schema_version,
-            },
+                registry_name: self.registry_name
+                ,
+                schema_name: self.schema_name
+                ,
+                schema_version: self.schema_version
+                ,
+            }
         )
     }
 }
+

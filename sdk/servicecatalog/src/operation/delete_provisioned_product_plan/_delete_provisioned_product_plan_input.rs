@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisionedProductPlanInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+pub struct DeleteProvisionedProductPlanInput  {
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -18,16 +18,16 @@ pub struct DeleteProvisionedProductPlanInput {
     pub ignore_errors: std::option::Option<bool>,
 }
 impl DeleteProvisionedProductPlanInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<&str> {
+    pub fn accept_language(&self) -> std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The plan identifier.</p>
-    pub fn plan_id(&self) -> std::option::Option<&str> {
+    pub fn plan_id(&self) -> std::option::Option<& str> {
         self.plan_id.as_deref()
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
@@ -37,7 +37,7 @@ impl DeleteProvisionedProductPlanInput {
 }
 impl DeleteProvisionedProductPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisionedProductPlanInput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput).
-    pub fn builder() -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder {
         crate::operation::delete_provisioned_product_plan::builders::DeleteProvisionedProductPlanInputBuilder::default()
     }
 }
@@ -51,23 +51,22 @@ pub struct DeleteProvisionedProductPlanInputBuilder {
     pub(crate) ignore_errors: std::option::Option<bool>,
 }
 impl DeleteProvisionedProductPlanInputBuilder {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The plan identifier.</p>
     pub fn plan_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl DeleteProvisionedProductPlanInputBuilder {
     }
     /// <p>The plan identifier.</p>
     pub fn set_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.plan_id = input;
-        self
+        self.plan_id = input; self
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn ignore_errors(mut self, input: bool) -> Self {
@@ -86,22 +84,20 @@ impl DeleteProvisionedProductPlanInputBuilder {
     }
     /// <p>If set to true, Service Catalog stops managing the specified provisioned product even if it cannot delete the underlying resources.</p>
     pub fn set_ignore_errors(mut self, input: std::option::Option<bool>) -> Self {
-        self.ignore_errors = input;
-        self
+        self.ignore_errors = input; self
     }
     /// Consumes the builder and constructs a [`DeleteProvisionedProductPlanInput`](crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_provisioned_product_plan::DeleteProvisionedProductPlanInput {
-                accept_language: self.accept_language,
-                plan_id: self.plan_id,
-                ignore_errors: self.ignore_errors,
-            },
+                accept_language: self.accept_language
+                ,
+                plan_id: self.plan_id
+                ,
+                ignore_errors: self.ignore_errors
+                ,
+            }
         )
     }
 }
+

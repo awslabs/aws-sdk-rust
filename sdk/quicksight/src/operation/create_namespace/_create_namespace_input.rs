@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNamespaceInput {
+pub struct CreateNamespaceInput  {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateNamespaceInput {
 }
 impl CreateNamespaceInput {
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name that you want to use to describe the new namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn identity_store(&self) -> std::option::Option<&crate::types::IdentityStore> {
+    pub fn identity_store(&self) -> std::option::Option<& crate::types::IdentityStore> {
         self.identity_store.as_ref()
     }
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl CreateNamespaceInputBuilder {
     }
     /// <p>The name that you want to use to describe the new namespace.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
     pub fn identity_store(mut self, input: crate::types::IdentityStore) -> Self {
@@ -77,12 +75,8 @@ impl CreateNamespaceInputBuilder {
         self
     }
     /// <p>Specifies the type of your user identity directory. Currently, this supports users with an identity type of <code>QUICKSIGHT</code>.</p>
-    pub fn set_identity_store(
-        mut self,
-        input: std::option::Option<crate::types::IdentityStore>,
-    ) -> Self {
-        self.identity_store = input;
-        self
+    pub fn set_identity_store(mut self, input: std::option::Option<crate::types::IdentityStore>) -> Self {
+        self.identity_store = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -91,30 +85,28 @@ impl CreateNamespaceInputBuilder {
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags that you want to associate with the namespace that you're creating.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateNamespaceInput`](crate::operation::create_namespace::CreateNamespaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_namespace::CreateNamespaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_namespace::CreateNamespaceInput {
-            aws_account_id: self.aws_account_id,
-            namespace: self.namespace,
-            identity_store: self.identity_store,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_namespace::CreateNamespaceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_namespace::CreateNamespaceInput {
+                aws_account_id: self.aws_account_id
+                ,
+                namespace: self.namespace
+                ,
+                identity_store: self.identity_store
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

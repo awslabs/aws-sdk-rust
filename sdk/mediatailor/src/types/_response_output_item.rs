@@ -3,7 +3,7 @@
 /// <p>The output item response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseOutputItem {
+pub struct ResponseOutputItem  {
     /// <p>DASH manifest configuration settings.</p>
     #[doc(hidden)]
     pub dash_playlist_settings: std::option::Option<crate::types::DashPlaylistSettings>,
@@ -22,25 +22,23 @@ pub struct ResponseOutputItem {
 }
 impl ResponseOutputItem {
     /// <p>DASH manifest configuration settings.</p>
-    pub fn dash_playlist_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::DashPlaylistSettings> {
+    pub fn dash_playlist_settings(&self) -> std::option::Option<& crate::types::DashPlaylistSettings> {
         self.dash_playlist_settings.as_ref()
     }
     /// <p>HLS manifest configuration settings.</p>
-    pub fn hls_playlist_settings(&self) -> std::option::Option<&crate::types::HlsPlaylistSettings> {
+    pub fn hls_playlist_settings(&self) -> std::option::Option<& crate::types::HlsPlaylistSettings> {
         self.hls_playlist_settings.as_ref()
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// <p>The URL used for playback by content players.</p>
-    pub fn playback_url(&self) -> std::option::Option<&str> {
+    pub fn playback_url(&self) -> std::option::Option<& str> {
         self.playback_url.as_deref()
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
-    pub fn source_group(&self) -> std::option::Option<&str> {
+    pub fn source_group(&self) -> std::option::Option<& str> {
         self.source_group.as_deref()
     }
 }
@@ -68,12 +66,8 @@ impl ResponseOutputItemBuilder {
         self
     }
     /// <p>DASH manifest configuration settings.</p>
-    pub fn set_dash_playlist_settings(
-        mut self,
-        input: std::option::Option<crate::types::DashPlaylistSettings>,
-    ) -> Self {
-        self.dash_playlist_settings = input;
-        self
+    pub fn set_dash_playlist_settings(mut self, input: std::option::Option<crate::types::DashPlaylistSettings>) -> Self {
+        self.dash_playlist_settings = input; self
     }
     /// <p>HLS manifest configuration settings.</p>
     pub fn hls_playlist_settings(mut self, input: crate::types::HlsPlaylistSettings) -> Self {
@@ -81,12 +75,8 @@ impl ResponseOutputItemBuilder {
         self
     }
     /// <p>HLS manifest configuration settings.</p>
-    pub fn set_hls_playlist_settings(
-        mut self,
-        input: std::option::Option<crate::types::HlsPlaylistSettings>,
-    ) -> Self {
-        self.hls_playlist_settings = input;
-        self
+    pub fn set_hls_playlist_settings(mut self, input: std::option::Option<crate::types::HlsPlaylistSettings>) -> Self {
+        self.hls_playlist_settings = input; self
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
     pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +85,7 @@ impl ResponseOutputItemBuilder {
     }
     /// <p>The name of the manifest for the channel that will appear in the channel output's playback URL.</p>
     pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manifest_name = input;
-        self
+        self.manifest_name = input; self
     }
     /// <p>The URL used for playback by content players.</p>
     pub fn playback_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +94,7 @@ impl ResponseOutputItemBuilder {
     }
     /// <p>The URL used for playback by content players.</p>
     pub fn set_playback_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.playback_url = input;
-        self
+        self.playback_url = input; self
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     pub fn source_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,17 +103,22 @@ impl ResponseOutputItemBuilder {
     }
     /// <p>A string used to associate a package configuration source group with a channel output.</p>
     pub fn set_source_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_group = input;
-        self
+        self.source_group = input; self
     }
     /// Consumes the builder and constructs a [`ResponseOutputItem`](crate::types::ResponseOutputItem).
     pub fn build(self) -> crate::types::ResponseOutputItem {
         crate::types::ResponseOutputItem {
-            dash_playlist_settings: self.dash_playlist_settings,
-            hls_playlist_settings: self.hls_playlist_settings,
-            manifest_name: self.manifest_name,
-            playback_url: self.playback_url,
-            source_group: self.source_group,
+            dash_playlist_settings: self.dash_playlist_settings
+            ,
+            hls_playlist_settings: self.hls_playlist_settings
+            ,
+            manifest_name: self.manifest_name
+            ,
+            playback_url: self.playback_url
+            ,
+            source_group: self.source_group
+            ,
         }
     }
 }
+

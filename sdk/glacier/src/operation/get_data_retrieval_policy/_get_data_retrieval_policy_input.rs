@@ -3,22 +3,20 @@
 /// <p>Input for GetDataRetrievalPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataRetrievalPolicyInput {
+pub struct GetDataRetrievalPolicyInput  {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetDataRetrievalPolicyInput {
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 impl GetDataRetrievalPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDataRetrievalPolicyInput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder {
         crate::operation::get_data_retrieval_policy::builders::GetDataRetrievalPolicyInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl GetDataRetrievalPolicyInputBuilder {
     }
     /// <p>The <code>AccountId</code> value is the AWS account ID. This value must match the AWS account ID associated with the credentials used to sign the request. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you specify your account ID, do not include any hyphens ('-') in the ID. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Consumes the builder and constructs a [`GetDataRetrievalPolicyInput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyInput {
-                account_id: self.account_id,
-            },
+                account_id: self.account_id
+                ,
+            }
         )
     }
 }
+

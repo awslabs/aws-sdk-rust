@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateEnclaveCertificateIamRoleOutput {
+pub struct AssociateEnclaveCertificateIamRoleOutput  {
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
     #[doc(hidden)]
     pub certificate_s3_bucket_name: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct AssociateEnclaveCertificateIamRoleOutput {
 }
 impl AssociateEnclaveCertificateIamRoleOutput {
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
-    pub fn certificate_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn certificate_s3_bucket_name(&self) -> std::option::Option<& str> {
         self.certificate_s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
-    pub fn certificate_s3_object_key(&self) -> std::option::Option<&str> {
+    pub fn certificate_s3_object_key(&self) -> std::option::Option<& str> {
         self.certificate_s3_object_key.as_deref()
     }
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
-    pub fn encryption_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn encryption_kms_key_id(&self) -> std::option::Option<& str> {
         self.encryption_kms_key_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateEnclaveCertificateIamRoleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateEnclaveCertificateIamRoleOutput {
     /// Creates a new builder-style object to manufacture [`AssociateEnclaveCertificateIamRoleOutput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput).
-    pub fn builder() -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleOutputBuilder{
+    pub fn builder() -> crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleOutputBuilder {
         crate::operation::associate_enclave_certificate_iam_role::builders::AssociateEnclaveCertificateIamRoleOutputBuilder::default()
     }
 }
@@ -56,12 +56,8 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
         self
     }
     /// <p>The name of the Amazon S3 bucket to which the certificate was uploaded.</p>
-    pub fn set_certificate_s3_bucket_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_s3_bucket_name = input;
-        self
+    pub fn set_certificate_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_s3_bucket_name = input; self
     }
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
     pub fn certificate_s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,12 +65,8 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
         self
     }
     /// <p>The Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored. The object key is formatted as follows: <code>role_arn</code>/<code>certificate_arn</code>.</p>
-    pub fn set_certificate_s3_object_key(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_s3_object_key = input;
-        self
+    pub fn set_certificate_s3_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_s3_object_key = input; self
     }
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
     pub fn encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,24 +74,20 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
         self
     }
     /// <p>The ID of the KMS key used to encrypt the private key of the certificate.</p>
-    pub fn set_encryption_kms_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.encryption_kms_key_id = input;
-        self
+    pub fn set_encryption_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.encryption_kms_key_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateEnclaveCertificateIamRoleOutput`](crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput).
-    pub fn build(self) -> crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput{
+    pub fn build(self) -> crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput {
         crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput {
             certificate_s3_bucket_name: self.certificate_s3_bucket_name
             ,
@@ -111,3 +99,4 @@ impl AssociateEnclaveCertificateIamRoleOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about an anomaly type found on an image by an image segmentation model. For more information, see <code>DetectAnomalies</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Anomaly {
+pub struct Anomaly  {
     /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Anomaly {
 }
 impl Anomaly {
     /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
-    pub fn pixel_anomaly(&self) -> std::option::Option<&crate::types::PixelAnomaly> {
+    pub fn pixel_anomaly(&self) -> std::option::Option<& crate::types::PixelAnomaly> {
         self.pixel_anomaly.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AnomalyBuilder {
     }
     /// <p>The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly type in the training dataset, apart from the anomaly type <code>background</code>. The service automatically inserts the <code>background</code> anomaly type into the response from <code>DetectAnomalies</code>. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
     pub fn pixel_anomaly(mut self, input: crate::types::PixelAnomaly) -> Self {
@@ -52,18 +51,17 @@ impl AnomalyBuilder {
         self
     }
     /// <p>Information about the pixel mask that covers an anomaly type.</p>
-    pub fn set_pixel_anomaly(
-        mut self,
-        input: std::option::Option<crate::types::PixelAnomaly>,
-    ) -> Self {
-        self.pixel_anomaly = input;
-        self
+    pub fn set_pixel_anomaly(mut self, input: std::option::Option<crate::types::PixelAnomaly>) -> Self {
+        self.pixel_anomaly = input; self
     }
     /// Consumes the builder and constructs a [`Anomaly`](crate::types::Anomaly).
     pub fn build(self) -> crate::types::Anomaly {
         crate::types::Anomaly {
-            name: self.name,
-            pixel_anomaly: self.pixel_anomaly,
+            name: self.name
+            ,
+            pixel_anomaly: self.pixel_anomaly
+            ,
         }
     }
 }
+

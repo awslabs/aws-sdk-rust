@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainOutput {
+pub struct DescribeDomainOutput  {
     /// <p>The domain's Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
@@ -36,10 +36,10 @@ pub struct DescribeDomainOutput {
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile. </p>
     #[doc(hidden)]
     pub default_user_settings: std::option::Option<crate::types::UserSettings>,
-    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li> 
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub app_network_access_type: std::option::Option<crate::types::AppNetworkAccessType>,
@@ -64,8 +64,7 @@ pub struct DescribeDomainOutput {
     pub domain_settings: std::option::Option<crate::types::DomainSettings>,
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
     #[doc(hidden)]
-    pub app_security_group_management:
-        std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub app_security_group_management: std::option::Option<crate::types::AppSecurityGroupManagement>,
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
     #[doc(hidden)]
     pub security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
@@ -76,107 +75,100 @@ pub struct DescribeDomainOutput {
 }
 impl DescribeDomainOutput {
     /// <p>The domain's Amazon Resource Name (ARN).</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
-    pub fn home_efs_file_system_id(&self) -> std::option::Option<&str> {
+    pub fn home_efs_file_system_id(&self) -> std::option::Option<& str> {
         self.home_efs_file_system_id.as_deref()
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    pub fn single_sign_on_managed_application_instance_id(&self) -> std::option::Option<&str> {
-        self.single_sign_on_managed_application_instance_id
-            .as_deref()
+    pub fn single_sign_on_managed_application_instance_id(&self) -> std::option::Option<& str> {
+        self.single_sign_on_managed_application_instance_id.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DomainStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DomainStatus> {
         self.status.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last modified time.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
     /// <p>The domain's authentication mode.</p>
-    pub fn auth_mode(&self) -> std::option::Option<&crate::types::AuthMode> {
+    pub fn auth_mode(&self) -> std::option::Option<& crate::types::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile. </p>
-    pub fn default_user_settings(&self) -> std::option::Option<&crate::types::UserSettings> {
+    pub fn default_user_settings(&self) -> std::option::Option<& crate::types::UserSettings> {
         self.default_user_settings.as_ref()
     }
-    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li> 
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li> 
     /// </ul>
-    pub fn app_network_access_type(
-        &self,
-    ) -> std::option::Option<&crate::types::AppNetworkAccessType> {
+    pub fn app_network_access_type(&self) -> std::option::Option<& crate::types::AppNetworkAccessType> {
         self.app_network_access_type.as_ref()
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn home_efs_file_system_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn home_efs_file_system_kms_key_id(&self) -> std::option::Option<& str> {
         self.home_efs_file_system_kms_key_id.as_deref()
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The domain's URL.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached to the domain.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn domain_settings(&self) -> std::option::Option<&crate::types::DomainSettings> {
+    pub fn domain_settings(&self) -> std::option::Option<& crate::types::DomainSettings> {
         self.domain_settings.as_ref()
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn app_security_group_management(
-        &self,
-    ) -> std::option::Option<&crate::types::AppSecurityGroupManagement> {
+    pub fn app_security_group_management(&self) -> std::option::Option<& crate::types::AppSecurityGroupManagement> {
         self.app_security_group_management.as_ref()
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn security_group_id_for_domain_boundary(&self) -> std::option::Option<&str> {
+    pub fn security_group_id_for_domain_boundary(&self) -> std::option::Option<& str> {
         self.security_group_id_for_domain_boundary.as_deref()
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn default_space_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::DefaultSpaceSettings> {
+    pub fn default_space_settings(&self) -> std::option::Option<& crate::types::DefaultSpaceSettings> {
         self.default_space_settings.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
     pub fn builder() -> crate::operation::describe_domain::builders::DescribeDomainOutputBuilder {
@@ -192,8 +184,7 @@ pub struct DescribeDomainOutputBuilder {
     pub(crate) domain_id: std::option::Option<std::string::String>,
     pub(crate) domain_name: std::option::Option<std::string::String>,
     pub(crate) home_efs_file_system_id: std::option::Option<std::string::String>,
-    pub(crate) single_sign_on_managed_application_instance_id:
-        std::option::Option<std::string::String>,
+    pub(crate) single_sign_on_managed_application_instance_id: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::DomainStatus>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -207,8 +198,7 @@ pub struct DescribeDomainOutputBuilder {
     pub(crate) vpc_id: std::option::Option<std::string::String>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
     pub(crate) domain_settings: std::option::Option<crate::types::DomainSettings>,
-    pub(crate) app_security_group_management:
-        std::option::Option<crate::types::AppSecurityGroupManagement>,
+    pub(crate) app_security_group_management: std::option::Option<crate::types::AppSecurityGroupManagement>,
     pub(crate) security_group_id_for_domain_boundary: std::option::Option<std::string::String>,
     pub(crate) default_space_settings: std::option::Option<crate::types::DefaultSpaceSettings>,
     _request_id: Option<String>,
@@ -221,8 +211,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The domain's Amazon Resource Name (ARN).</p>
     pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>The domain ID.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +220,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The domain name.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,8 +229,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
     pub fn home_efs_file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -250,28 +237,17 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The ID of the Amazon Elastic File System (EFS) managed by this Domain.</p>
-    pub fn set_home_efs_file_system_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.home_efs_file_system_id = input;
-        self
+    pub fn set_home_efs_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.home_efs_file_system_id = input; self
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    pub fn single_sign_on_managed_application_instance_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn single_sign_on_managed_application_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.single_sign_on_managed_application_instance_id = Some(input.into());
         self
     }
     /// <p>The IAM Identity Center managed application instance ID.</p>
-    pub fn set_single_sign_on_managed_application_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.single_sign_on_managed_application_instance_id = input;
-        self
+    pub fn set_single_sign_on_managed_application_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.single_sign_on_managed_application_instance_id = input; self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
@@ -280,8 +256,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -289,12 +264,8 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The last modified time.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -302,12 +273,8 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The last modified time.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>The failure reason.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -316,8 +283,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The failure reason.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// <p>The domain's authentication mode.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
@@ -326,8 +292,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The domain's authentication mode.</p>
     pub fn set_auth_mode(mut self, input: std::option::Option<crate::types::AuthMode>) -> Self {
-        self.auth_mode = input;
-        self
+        self.auth_mode = input; self
     }
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile. </p>
     pub fn default_user_settings(mut self, input: crate::types::UserSettings) -> Self {
@@ -335,51 +300,36 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given UserProfile. </p>
-    pub fn set_default_user_settings(
-        mut self,
-        input: std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
-        self.default_user_settings = input;
-        self
+    pub fn set_default_user_settings(mut self, input: std::option::Option<crate::types::UserSettings>) -> Self {
+        self.default_user_settings = input; self
     }
-    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li> 
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li> 
     /// </ul>
     pub fn app_network_access_type(mut self, input: crate::types::AppNetworkAccessType) -> Self {
         self.app_network_access_type = Some(input);
         self
     }
-    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
-    /// <ul>
-    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li>
-    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li>
+    /// <p>Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p> 
+    /// <ul> 
+    /// <li> <p> <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows direct internet access</p> </li> 
+    /// <li> <p> <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets</p> </li> 
     /// </ul>
-    pub fn set_app_network_access_type(
-        mut self,
-        input: std::option::Option<crate::types::AppNetworkAccessType>,
-    ) -> Self {
-        self.app_network_access_type = input;
-        self
+    pub fn set_app_network_access_type(mut self, input: std::option::Option<crate::types::AppNetworkAccessType>) -> Self {
+        self.app_network_access_type = input; self
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn home_efs_file_system_kms_key_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn home_efs_file_system_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.home_efs_file_system_kms_key_id = Some(input.into());
         self
     }
     /// <p>Use <code>KmsKeyId</code>.</p>
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
-    pub fn set_home_efs_file_system_kms_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.home_efs_file_system_kms_key_id = input;
-        self
+    pub fn set_home_efs_file_system_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.home_efs_file_system_kms_key_id = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -388,17 +338,13 @@ impl DescribeDomainOutputBuilder {
     /// <p>The VPC subnets that Studio uses for communication.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The domain's URL.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -407,8 +353,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The domain's URL.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -417,8 +362,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// <p>The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached to the domain.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -427,8 +371,7 @@ impl DescribeDomainOutputBuilder {
     }
     /// <p>The Amazon Web Services KMS customer managed key used to encrypt the EFS volume attached to the domain.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
     pub fn domain_settings(mut self, input: crate::types::DomainSettings) -> Self {
@@ -436,44 +379,26 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>A collection of <code>Domain</code> settings.</p>
-    pub fn set_domain_settings(
-        mut self,
-        input: std::option::Option<crate::types::DomainSettings>,
-    ) -> Self {
-        self.domain_settings = input;
-        self
+    pub fn set_domain_settings(mut self, input: std::option::Option<crate::types::DomainSettings>) -> Self {
+        self.domain_settings = input; self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn app_security_group_management(
-        mut self,
-        input: crate::types::AppSecurityGroupManagement,
-    ) -> Self {
+    pub fn app_security_group_management(mut self, input: crate::types::AppSecurityGroupManagement) -> Self {
         self.app_security_group_management = Some(input);
         self
     }
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.</p>
-    pub fn set_app_security_group_management(
-        mut self,
-        input: std::option::Option<crate::types::AppSecurityGroupManagement>,
-    ) -> Self {
-        self.app_security_group_management = input;
-        self
+    pub fn set_app_security_group_management(mut self, input: std::option::Option<crate::types::AppSecurityGroupManagement>) -> Self {
+        self.app_security_group_management = input; self
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn security_group_id_for_domain_boundary(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn security_group_id_for_domain_boundary(mut self, input: impl Into<std::string::String>) -> Self {
         self.security_group_id_for_domain_boundary = Some(input.into());
         self
     }
     /// <p>The ID of the security group that authorizes traffic between the <code>RSessionGateway</code> apps and the <code>RStudioServerPro</code> app.</p>
-    pub fn set_security_group_id_for_domain_boundary(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_group_id_for_domain_boundary = input;
-        self
+    pub fn set_security_group_id_for_domain_boundary(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_group_id_for_domain_boundary = input; self
     }
     /// <p>The default settings used to create a space.</p>
     pub fn default_space_settings(mut self, input: crate::types::DefaultSpaceSettings) -> Self {
@@ -481,48 +406,65 @@ impl DescribeDomainOutputBuilder {
         self
     }
     /// <p>The default settings used to create a space.</p>
-    pub fn set_default_space_settings(
-        mut self,
-        input: std::option::Option<crate::types::DefaultSpaceSettings>,
-    ) -> Self {
-        self.default_space_settings = input;
-        self
+    pub fn set_default_space_settings(mut self, input: std::option::Option<crate::types::DefaultSpaceSettings>) -> Self {
+        self.default_space_settings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput).
     pub fn build(self) -> crate::operation::describe_domain::DescribeDomainOutput {
         crate::operation::describe_domain::DescribeDomainOutput {
-            domain_arn: self.domain_arn,
-            domain_id: self.domain_id,
-            domain_name: self.domain_name,
-            home_efs_file_system_id: self.home_efs_file_system_id,
-            single_sign_on_managed_application_instance_id: self
-                .single_sign_on_managed_application_instance_id,
-            status: self.status,
-            creation_time: self.creation_time,
-            last_modified_time: self.last_modified_time,
-            failure_reason: self.failure_reason,
-            auth_mode: self.auth_mode,
-            default_user_settings: self.default_user_settings,
-            app_network_access_type: self.app_network_access_type,
-            home_efs_file_system_kms_key_id: self.home_efs_file_system_kms_key_id,
-            subnet_ids: self.subnet_ids,
-            url: self.url,
-            vpc_id: self.vpc_id,
-            kms_key_id: self.kms_key_id,
-            domain_settings: self.domain_settings,
-            app_security_group_management: self.app_security_group_management,
-            security_group_id_for_domain_boundary: self.security_group_id_for_domain_boundary,
-            default_space_settings: self.default_space_settings,
+            domain_arn: self.domain_arn
+            ,
+            domain_id: self.domain_id
+            ,
+            domain_name: self.domain_name
+            ,
+            home_efs_file_system_id: self.home_efs_file_system_id
+            ,
+            single_sign_on_managed_application_instance_id: self.single_sign_on_managed_application_instance_id
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            failure_reason: self.failure_reason
+            ,
+            auth_mode: self.auth_mode
+            ,
+            default_user_settings: self.default_user_settings
+            ,
+            app_network_access_type: self.app_network_access_type
+            ,
+            home_efs_file_system_kms_key_id: self.home_efs_file_system_kms_key_id
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            url: self.url
+            ,
+            vpc_id: self.vpc_id
+            ,
+            kms_key_id: self.kms_key_id
+            ,
+            domain_settings: self.domain_settings
+            ,
+            app_security_group_management: self.app_security_group_management
+            ,
+            security_group_id_for_domain_boundary: self.security_group_id_for_domain_boundary
+            ,
+            default_space_settings: self.default_space_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

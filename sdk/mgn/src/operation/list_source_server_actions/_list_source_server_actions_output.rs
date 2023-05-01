@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceServerActionsOutput {
+pub struct ListSourceServerActionsOutput  {
     /// <p>List of source server post migration custom actions.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::SourceServerActionDocument>>,
@@ -13,24 +13,22 @@ pub struct ListSourceServerActionsOutput {
 }
 impl ListSourceServerActionsOutput {
     /// <p>List of source server post migration custom actions.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::SourceServerActionDocument]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::SourceServerActionDocument]> {
         self.items.as_deref()
     }
     /// <p>Next token returned when listing source server post migration custom actions.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSourceServerActionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSourceServerActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceServerActionsOutput`](crate::operation::list_source_server_actions::ListSourceServerActionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_source_server_actions::builders::ListSourceServerActionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_source_server_actions::builders::ListSourceServerActionsOutputBuilder {
         crate::operation::list_source_server_actions::builders::ListSourceServerActionsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListSourceServerActionsOutputBuilder {
     /// <p>List of source server post migration custom actions.</p>
     pub fn items(mut self, input: crate::types::SourceServerActionDocument) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>List of source server post migration custom actions.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceServerActionDocument>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceServerActionDocument>>) -> Self {
+        self.items = input; self
     }
     /// <p>Next token returned when listing source server post migration custom actions.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl ListSourceServerActionsOutputBuilder {
     }
     /// <p>Next token returned when listing source server post migration custom actions.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSourceServerActionsOutput`](crate::operation::list_source_server_actions::ListSourceServerActionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_source_server_actions::ListSourceServerActionsOutput {
+    pub fn build(self) -> crate::operation::list_source_server_actions::ListSourceServerActionsOutput {
         crate::operation::list_source_server_actions::ListSourceServerActionsOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

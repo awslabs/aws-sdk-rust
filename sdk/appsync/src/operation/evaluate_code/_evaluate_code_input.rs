@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateCodeInput {
+pub struct EvaluateCodeInput  {
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
     #[doc(hidden)]
     pub runtime: std::option::Option<crate::types::AppSyncRuntime>,
@@ -18,19 +18,19 @@ pub struct EvaluateCodeInput {
 }
 impl EvaluateCodeInput {
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::types::AppSyncRuntime> {
+    pub fn runtime(&self) -> std::option::Option<& crate::types::AppSyncRuntime> {
         self.runtime.as_ref()
     }
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
-    pub fn context(&self) -> std::option::Option<&str> {
+    pub fn context(&self) -> std::option::Option<& str> {
         self.context.as_deref()
     }
     /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
-    pub fn function(&self) -> std::option::Option<&str> {
+    pub fn function(&self) -> std::option::Option<& str> {
         self.function.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl EvaluateCodeInputBuilder {
     }
     /// <p>The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code> runtime is supported.</p>
     pub fn set_runtime(mut self, input: std::option::Option<crate::types::AppSyncRuntime>) -> Self {
-        self.runtime = input;
-        self
+        self.runtime = input; self
     }
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl EvaluateCodeInputBuilder {
     }
     /// <p>The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code> are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl EvaluateCodeInputBuilder {
     }
     /// <p>The map that holds all of the contextual information for your resolver invocation. A <code>context</code> is required for this action.</p>
     pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.context = input;
-        self
+        self.context = input; self
     }
     /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
     pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,21 +85,22 @@ impl EvaluateCodeInputBuilder {
     }
     /// <p>The function within the code to be evaluated. If provided, the valid values are <code>request</code> and <code>response</code>.</p>
     pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function = input;
-        self
+        self.function = input; self
     }
     /// Consumes the builder and constructs a [`EvaluateCodeInput`](crate::operation::evaluate_code::EvaluateCodeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::evaluate_code::EvaluateCodeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::evaluate_code::EvaluateCodeInput {
-            runtime: self.runtime,
-            code: self.code,
-            context: self.context,
-            function: self.function,
-        })
+    pub fn build(self) -> Result<crate::operation::evaluate_code::EvaluateCodeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::evaluate_code::EvaluateCodeInput {
+                runtime: self.runtime
+                ,
+                code: self.code
+                ,
+                context: self.context
+                ,
+                function: self.function
+                ,
+            }
+        )
     }
 }
+

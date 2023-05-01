@@ -2,32 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateDetectorOutput {
+pub struct BatchUpdateDetectorOutput  {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
     #[doc(hidden)]
-    pub batch_update_detector_error_entries:
-        std::option::Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
+    pub batch_update_detector_error_entries: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDetectorOutput {
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    pub fn batch_update_detector_error_entries(
-        &self,
-    ) -> std::option::Option<&[crate::types::BatchUpdateDetectorErrorEntry]> {
+    pub fn batch_update_detector_error_entries(&self) -> std::option::Option<& [crate::types::BatchUpdateDetectorErrorEntry]> {
         self.batch_update_detector_error_entries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchUpdateDetectorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchUpdateDetectorOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDetectorOutput`](crate::operation::batch_update_detector::BatchUpdateDetectorOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_update_detector::builders::BatchUpdateDetectorOutputBuilder {
-        crate::operation::batch_update_detector::builders::BatchUpdateDetectorOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::batch_update_detector::builders::BatchUpdateDetectorOutputBuilder {
+        crate::operation::batch_update_detector::builders::BatchUpdateDetectorOutputBuilder::default()
     }
 }
 
@@ -35,8 +30,7 @@ impl BatchUpdateDetectorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateDetectorOutputBuilder {
-    pub(crate) batch_update_detector_error_entries:
-        std::option::Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
+    pub(crate) batch_update_detector_error_entries: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDetectorOutputBuilder {
@@ -45,37 +39,32 @@ impl BatchUpdateDetectorOutputBuilder {
     /// To override the contents of this collection use [`set_batch_update_detector_error_entries`](Self::set_batch_update_detector_error_entries).
     ///
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    pub fn batch_update_detector_error_entries(
-        mut self,
-        input: crate::types::BatchUpdateDetectorErrorEntry,
-    ) -> Self {
+    pub fn batch_update_detector_error_entries(mut self, input: crate::types::BatchUpdateDetectorErrorEntry) -> Self {
         let mut v = self.batch_update_detector_error_entries.unwrap_or_default();
-        v.push(input);
-        self.batch_update_detector_error_entries = Some(v);
-        self
+                        v.push(input);
+                        self.batch_update_detector_error_entries = Some(v);
+                        self
     }
     /// <p>A list of those detector updates that resulted in errors. (If an error is listed here, the specific update did not occur.)</p>
-    pub fn set_batch_update_detector_error_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>,
-    ) -> Self {
-        self.batch_update_detector_error_entries = input;
-        self
+    pub fn set_batch_update_detector_error_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDetectorErrorEntry>>) -> Self {
+        self.batch_update_detector_error_entries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchUpdateDetectorOutput`](crate::operation::batch_update_detector::BatchUpdateDetectorOutput).
     pub fn build(self) -> crate::operation::batch_update_detector::BatchUpdateDetectorOutput {
         crate::operation::batch_update_detector::BatchUpdateDetectorOutput {
-            batch_update_detector_error_entries: self.batch_update_detector_error_entries,
+            batch_update_detector_error_entries: self.batch_update_detector_error_entries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines the criteria of assessment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTarget {
+pub struct AssessmentTarget  {
     /// <p>Condition of an assessment.</p>
     #[doc(hidden)]
     pub condition: std::option::Option<crate::types::Condition>,
@@ -16,15 +16,15 @@ pub struct AssessmentTarget {
 }
 impl AssessmentTarget {
     /// <p>Condition of an assessment.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> std::option::Option<& crate::types::Condition> {
         self.condition.as_ref()
     }
     /// <p>Name of an assessment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Values of an assessment.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>Condition of an assessment.</p>
     pub fn set_condition(mut self, input: std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input;
-        self
+        self.condition = input; self
     }
     /// <p>Name of an assessment.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl AssessmentTargetBuilder {
     }
     /// <p>Name of an assessment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -71,24 +69,24 @@ impl AssessmentTargetBuilder {
     /// <p>Values of an assessment.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>Values of an assessment.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`AssessmentTarget`](crate::types::AssessmentTarget).
     pub fn build(self) -> crate::types::AssessmentTarget {
         crate::types::AssessmentTarget {
-            condition: self.condition,
-            name: self.name,
-            values: self.values,
+            condition: self.condition
+            ,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

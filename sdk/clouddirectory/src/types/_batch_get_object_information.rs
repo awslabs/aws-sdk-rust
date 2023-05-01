@@ -3,14 +3,14 @@
 /// <p>Retrieves metadata about an object inside a <code>BatchRead</code> operation. For more information, see <code>GetObjectInformation</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectInformation {
+pub struct BatchGetObjectInformation  {
     /// <p>A reference to the object.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl BatchGetObjectInformationBuilder {
         self
     }
     /// <p>A reference to the object.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetObjectInformation`](crate::types::BatchGetObjectInformation).
     pub fn build(self) -> crate::types::BatchGetObjectInformation {
         crate::types::BatchGetObjectInformation {
-            object_reference: self.object_reference,
+            object_reference: self.object_reference
+            ,
         }
     }
 }
+

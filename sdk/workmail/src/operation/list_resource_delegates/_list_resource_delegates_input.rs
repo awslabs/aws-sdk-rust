@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceDelegatesInput {
+pub struct ListResourceDelegatesInput  {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListResourceDelegatesInput {
 }
 impl ListResourceDelegatesInput {
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier for the resource whose delegates are listed.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The number of maximum results in a page.</p>
@@ -36,9 +36,7 @@ impl ListResourceDelegatesInput {
 }
 impl ListResourceDelegatesInput {
     /// Creates a new builder-style object to manufacture [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_resource_delegates::builders::ListResourceDelegatesInputBuilder {
         crate::operation::list_resource_delegates::builders::ListResourceDelegatesInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The identifier for the organization that contains the resource for which delegates are listed.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier for the resource whose delegates are listed.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The identifier for the resource whose delegates are listed.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The token used to paginate through the delegates associated with a resource.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The number of maximum results in a page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -90,23 +85,22 @@ impl ListResourceDelegatesInputBuilder {
     }
     /// <p>The number of maximum results in a page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListResourceDelegatesInput`](crate::operation::list_resource_delegates::ListResourceDelegatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_resource_delegates::ListResourceDelegatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_resource_delegates::ListResourceDelegatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_resource_delegates::ListResourceDelegatesInput {
-                organization_id: self.organization_id,
-                resource_id: self.resource_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                organization_id: self.organization_id
+                ,
+                resource_id: self.resource_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

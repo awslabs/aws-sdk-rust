@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the traffic policy that you want to create a new version for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrafficPolicyVersionInput {
+pub struct CreateTrafficPolicyVersionInput  {
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct CreateTrafficPolicyVersionInput {
 }
 impl CreateTrafficPolicyVersionInput {
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
 impl CreateTrafficPolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateTrafficPolicyVersionInput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput).
-    pub fn builder() -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder{
+    pub fn builder() -> crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder {
         crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder::default()
     }
 }
@@ -51,8 +51,7 @@ impl CreateTrafficPolicyVersionInputBuilder {
     }
     /// <p>The ID of the traffic policy for which you want to create a new version.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
     pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CreateTrafficPolicyVersionInputBuilder {
     }
     /// <p>The definition of this version of the traffic policy, in JSON format. You specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateTrafficPolicy.html">CreateTrafficPolicy</a>.</p>
     pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +69,20 @@ impl CreateTrafficPolicyVersionInputBuilder {
     }
     /// <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code> request, if any.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyVersionInput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionInput {
-                id: self.id,
-                document: self.document,
-                comment: self.comment,
-            },
+                id: self.id
+                ,
+                document: self.document
+                ,
+                comment: self.comment
+                ,
+            }
         )
     }
 }
+

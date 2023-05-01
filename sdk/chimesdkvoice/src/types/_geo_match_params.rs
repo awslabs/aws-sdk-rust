@@ -3,8 +3,8 @@
 /// <p>The country and area code for a proxy phone number in a proxy phone session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchParams {
-    /// <p>The country. </p>
+pub struct GeoMatchParams  {
+    /// <p>The country.</p>
     #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
     /// <p>The area code.</p>
@@ -12,12 +12,12 @@ pub struct GeoMatchParams {
     pub area_code: std::option::Option<std::string::String>,
 }
 impl GeoMatchParams {
-    /// <p>The country. </p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    /// <p>The country.</p>
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The area code.</p>
-    pub fn area_code(&self) -> std::option::Option<&str> {
+    pub fn area_code(&self) -> std::option::Option<& str> {
         self.area_code.as_deref()
     }
 }
@@ -36,15 +36,14 @@ pub struct GeoMatchParamsBuilder {
     pub(crate) area_code: std::option::Option<std::string::String>,
 }
 impl GeoMatchParamsBuilder {
-    /// <p>The country. </p>
+    /// <p>The country.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
         self.country = Some(input.into());
         self
     }
-    /// <p>The country. </p>
+    /// <p>The country.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country = input;
-        self
+        self.country = input; self
     }
     /// <p>The area code.</p>
     pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl GeoMatchParamsBuilder {
     }
     /// <p>The area code.</p>
     pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.area_code = input;
-        self
+        self.area_code = input; self
     }
     /// Consumes the builder and constructs a [`GeoMatchParams`](crate::types::GeoMatchParams).
     pub fn build(self) -> crate::types::GeoMatchParams {
         crate::types::GeoMatchParams {
-            country: self.country,
-            area_code: self.area_code,
+            country: self.country
+            ,
+            area_code: self.area_code
+            ,
         }
     }
 }
+

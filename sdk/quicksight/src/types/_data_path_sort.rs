@@ -3,7 +3,7 @@
 /// <p>Allows data paths to be sorted by a specific data value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataPathSort {
+pub struct DataPathSort  {
     /// <p>Determines the sort direction.</p>
     #[doc(hidden)]
     pub direction: std::option::Option<crate::types::SortDirection>,
@@ -13,11 +13,11 @@ pub struct DataPathSort {
 }
 impl DataPathSort {
     /// <p>Determines the sort direction.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::types::SortDirection> {
+    pub fn direction(&self) -> std::option::Option<& crate::types::SortDirection> {
         self.direction.as_ref()
     }
     /// <p>The list of data paths that need to be sorted.</p>
-    pub fn sort_paths(&self) -> std::option::Option<&[crate::types::DataPathValue]> {
+    pub fn sort_paths(&self) -> std::option::Option<& [crate::types::DataPathValue]> {
         self.sort_paths.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl DataPathSortBuilder {
         self
     }
     /// <p>Determines the sort direction.</p>
-    pub fn set_direction(
-        mut self,
-        input: std::option::Option<crate::types::SortDirection>,
-    ) -> Self {
-        self.direction = input;
-        self
+    pub fn set_direction(mut self, input: std::option::Option<crate::types::SortDirection>) -> Self {
+        self.direction = input; self
     }
     /// Appends an item to `sort_paths`.
     ///
@@ -56,23 +52,22 @@ impl DataPathSortBuilder {
     /// <p>The list of data paths that need to be sorted.</p>
     pub fn sort_paths(mut self, input: crate::types::DataPathValue) -> Self {
         let mut v = self.sort_paths.unwrap_or_default();
-        v.push(input);
-        self.sort_paths = Some(v);
-        self
+                        v.push(input);
+                        self.sort_paths = Some(v);
+                        self
     }
     /// <p>The list of data paths that need to be sorted.</p>
-    pub fn set_sort_paths(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataPathValue>>,
-    ) -> Self {
-        self.sort_paths = input;
-        self
+    pub fn set_sort_paths(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataPathValue>>) -> Self {
+        self.sort_paths = input; self
     }
     /// Consumes the builder and constructs a [`DataPathSort`](crate::types::DataPathSort).
     pub fn build(self) -> crate::types::DataPathSort {
         crate::types::DataPathSort {
-            direction: self.direction,
-            sort_paths: self.sort_paths,
+            direction: self.direction
+            ,
+            sort_paths: self.sort_paths
+            ,
         }
     }
 }
+

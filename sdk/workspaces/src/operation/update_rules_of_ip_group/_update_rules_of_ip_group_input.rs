@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRulesOfIpGroupInput {
+pub struct UpdateRulesOfIpGroupInput  {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UpdateRulesOfIpGroupInput {
 }
 impl UpdateRulesOfIpGroupInput {
     /// <p>The identifier of the group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>One or more rules.</p>
-    pub fn user_rules(&self) -> std::option::Option<&[crate::types::IpRuleItem]> {
+    pub fn user_rules(&self) -> std::option::Option<& [crate::types::IpRuleItem]> {
         self.user_rules.as_deref()
     }
 }
 impl UpdateRulesOfIpGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder {
         crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl UpdateRulesOfIpGroupInputBuilder {
     }
     /// <p>The identifier of the group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Appends an item to `user_rules`.
     ///
@@ -54,30 +51,24 @@ impl UpdateRulesOfIpGroupInputBuilder {
     /// <p>One or more rules.</p>
     pub fn user_rules(mut self, input: crate::types::IpRuleItem) -> Self {
         let mut v = self.user_rules.unwrap_or_default();
-        v.push(input);
-        self.user_rules = Some(v);
-        self
+                        v.push(input);
+                        self.user_rules = Some(v);
+                        self
     }
     /// <p>One or more rules.</p>
-    pub fn set_user_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpRuleItem>>,
-    ) -> Self {
-        self.user_rules = input;
-        self
+    pub fn set_user_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
+        self.user_rules = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRulesOfIpGroupInput`](crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroupInput {
-                group_id: self.group_id,
-                user_rules: self.user_rules,
-            },
+                group_id: self.group_id
+                ,
+                user_rules: self.user_rules
+                ,
+            }
         )
     }
 }
+

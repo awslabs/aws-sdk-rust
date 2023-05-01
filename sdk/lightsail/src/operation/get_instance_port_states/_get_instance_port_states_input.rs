@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstancePortStatesInput {
+pub struct GetInstancePortStatesInput  {
     /// <p>The name of the instance for which to return firewall port states.</p>
     #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
 }
 impl GetInstancePortStatesInput {
     /// <p>The name of the instance for which to return firewall port states.</p>
-    pub fn instance_name(&self) -> std::option::Option<&str> {
+    pub fn instance_name(&self) -> std::option::Option<& str> {
         self.instance_name.as_deref()
     }
 }
 impl GetInstancePortStatesInput {
     /// Creates a new builder-style object to manufacture [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder {
         crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetInstancePortStatesInputBuilder {
     }
     /// <p>The name of the instance for which to return firewall port states.</p>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
     /// Consumes the builder and constructs a [`GetInstancePortStatesInput`](crate::operation::get_instance_port_states::GetInstancePortStatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_instance_port_states::GetInstancePortStatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_instance_port_states::GetInstancePortStatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_instance_port_states::GetInstancePortStatesInput {
-                instance_name: self.instance_name,
-            },
+                instance_name: self.instance_name
+                ,
+            }
         )
     }
 }
+

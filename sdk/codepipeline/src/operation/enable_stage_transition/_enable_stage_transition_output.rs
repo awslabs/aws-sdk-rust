@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableStageTransitionOutput {
+pub struct EnableStageTransitionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for EnableStageTransitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EnableStageTransitionOutput {
     /// Creates a new builder-style object to manufacture [`EnableStageTransitionOutput`](crate::operation::enable_stage_transition::EnableStageTransitionOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_stage_transition::builders::EnableStageTransitionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_stage_transition::builders::EnableStageTransitionOutputBuilder {
         crate::operation::enable_stage_transition::builders::EnableStageTransitionOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct EnableStageTransitionOutputBuilder {
 }
 impl EnableStageTransitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EnableStageTransitionOutput`](crate::operation::enable_stage_transition::EnableStageTransitionOutput).
     pub fn build(self) -> crate::operation::enable_stage_transition::EnableStageTransitionOutput {
         crate::operation::enable_stage_transition::EnableStageTransitionOutput {
@@ -42,3 +40,4 @@ impl EnableStageTransitionOutputBuilder {
         }
     }
 }
+

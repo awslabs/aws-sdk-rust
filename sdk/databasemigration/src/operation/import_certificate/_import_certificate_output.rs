@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCertificateOutput {
+pub struct ImportCertificateOutput  {
     /// <p>The certificate to be uploaded.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::types::Certificate>,
@@ -10,19 +10,18 @@ pub struct ImportCertificateOutput {
 }
 impl ImportCertificateOutput {
     /// <p>The certificate to be uploaded.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::types::Certificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::types::Certificate> {
         self.certificate.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ImportCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportCertificateOutput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateOutputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl ImportCertificateOutputBuilder {
         self
     }
     /// <p>The certificate to be uploaded.</p>
-    pub fn set_certificate(
-        mut self,
-        input: std::option::Option<crate::types::Certificate>,
-    ) -> Self {
-        self.certificate = input;
-        self
+    pub fn set_certificate(mut self, input: std::option::Option<crate::types::Certificate>) -> Self {
+        self.certificate = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportCertificateOutput`](crate::operation::import_certificate::ImportCertificateOutput).
     pub fn build(self) -> crate::operation::import_certificate::ImportCertificateOutput {
         crate::operation::import_certificate::ImportCertificateOutput {
-            certificate: self.certificate,
+            certificate: self.certificate
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

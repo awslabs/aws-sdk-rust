@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserInput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_user::DeleteUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_user::DeleteUserInput {
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_user::DeleteUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagMfaDeviceOutput {
+pub struct TagMfaDeviceOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for TagMfaDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TagMfaDeviceOutput {
     /// Creates a new builder-style object to manufacture [`TagMfaDeviceOutput`](crate::operation::tag_mfa_device::TagMfaDeviceOutput).
     pub fn builder() -> crate::operation::tag_mfa_device::builders::TagMfaDeviceOutputBuilder {
@@ -25,14 +25,14 @@ pub struct TagMfaDeviceOutputBuilder {
 }
 impl TagMfaDeviceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TagMfaDeviceOutput`](crate::operation::tag_mfa_device::TagMfaDeviceOutput).
     pub fn build(self) -> crate::operation::tag_mfa_device::TagMfaDeviceOutput {
         crate::operation::tag_mfa_device::TagMfaDeviceOutput {
@@ -40,3 +40,4 @@ impl TagMfaDeviceOutputBuilder {
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The CPU options for the instance. Both the core count and threads per core must be specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateCpuOptionsRequest {
+pub struct LaunchTemplateCpuOptionsRequest  {
     /// <p>The number of CPU cores for the instance.</p>
     #[doc(hidden)]
     pub core_count: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl LaunchTemplateCpuOptionsRequestBuilder {
     }
     /// <p>The number of CPU cores for the instance.</p>
     pub fn set_core_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.core_count = input;
-        self
+        self.core_count = input; self
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl LaunchTemplateCpuOptionsRequestBuilder {
     }
     /// <p>The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.</p>
     pub fn set_threads_per_core(mut self, input: std::option::Option<i32>) -> Self {
-        self.threads_per_core = input;
-        self
+        self.threads_per_core = input; self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateCpuOptionsRequest`](crate::types::LaunchTemplateCpuOptionsRequest).
     pub fn build(self) -> crate::types::LaunchTemplateCpuOptionsRequest {
         crate::types::LaunchTemplateCpuOptionsRequest {
-            core_count: self.core_count,
-            threads_per_core: self.threads_per_core,
+            core_count: self.core_count
+            ,
+            threads_per_core: self.threads_per_core
+            ,
         }
     }
 }
+

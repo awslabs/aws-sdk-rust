@@ -3,7 +3,7 @@
 /// <p>Details about a related finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedFinding {
+pub struct RelatedFinding  {
     /// <p>The ARN of the product that generated a related finding.</p>
     #[doc(hidden)]
     pub product_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RelatedFinding {
 }
 impl RelatedFinding {
     /// <p>The ARN of the product that generated a related finding.</p>
-    pub fn product_arn(&self) -> std::option::Option<&str> {
+    pub fn product_arn(&self) -> std::option::Option<& str> {
         self.product_arn.as_deref()
     }
     /// <p>The product-generated identifier for a related finding.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RelatedFindingBuilder {
     }
     /// <p>The ARN of the product that generated a related finding.</p>
     pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_arn = input;
-        self
+        self.product_arn = input; self
     }
     /// <p>The product-generated identifier for a related finding.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl RelatedFindingBuilder {
     }
     /// <p>The product-generated identifier for a related finding.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`RelatedFinding`](crate::types::RelatedFinding).
     pub fn build(self) -> crate::types::RelatedFinding {
         crate::types::RelatedFinding {
-            product_arn: self.product_arn,
-            id: self.id,
+            product_arn: self.product_arn
+            ,
+            id: self.id
+            ,
         }
     }
 }
+

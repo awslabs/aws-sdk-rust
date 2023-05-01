@@ -3,7 +3,7 @@
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetRedshiftDataParameters {
+pub struct PipeTargetRedshiftDataParameters  {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
     #[doc(hidden)]
     pub secret_manager_arn: std::option::Option<std::string::String>,
@@ -25,19 +25,19 @@ pub struct PipeTargetRedshiftDataParameters {
 }
 impl PipeTargetRedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(&self) -> std::option::Option<&str> {
+    pub fn statement_name(&self) -> std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
@@ -45,11 +45,11 @@ impl PipeTargetRedshiftDataParameters {
         self.with_event
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sqls(&self) -> std::option::Option<& [std::string::String]> {
         self.sqls.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetRedshiftDataParameters {
+impl  std::fmt::Debug for PipeTargetRedshiftDataParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetRedshiftDataParameters");
         formatter.field("secret_manager_arn", &self.secret_manager_arn);
@@ -86,12 +86,8 @@ impl PipeTargetRedshiftDataParametersBuilder {
         self
     }
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
-    pub fn set_secret_manager_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.secret_manager_arn = input;
-        self
+    pub fn set_secret_manager_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.secret_manager_arn = input; self
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +96,7 @@ impl PipeTargetRedshiftDataParametersBuilder {
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +105,7 @@ impl PipeTargetRedshiftDataParametersBuilder {
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +114,7 @@ impl PipeTargetRedshiftDataParametersBuilder {
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
     pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement_name = input;
-        self
+        self.statement_name = input; self
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn with_event(mut self, input: bool) -> Self {
@@ -130,8 +123,7 @@ impl PipeTargetRedshiftDataParametersBuilder {
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
     pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
-        self.with_event = input;
-        self
+        self.with_event = input; self
     }
     /// Appends an item to `sqls`.
     ///
@@ -140,27 +132,30 @@ impl PipeTargetRedshiftDataParametersBuilder {
     /// <p>The SQL statement text to run.</p>
     pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sqls.unwrap_or_default();
-        v.push(input.into());
-        self.sqls = Some(v);
-        self
+                        v.push(input.into());
+                        self.sqls = Some(v);
+                        self
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn set_sqls(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.sqls = input;
-        self
+    pub fn set_sqls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.sqls = input; self
     }
     /// Consumes the builder and constructs a [`PipeTargetRedshiftDataParameters`](crate::types::PipeTargetRedshiftDataParameters).
     pub fn build(self) -> crate::types::PipeTargetRedshiftDataParameters {
         crate::types::PipeTargetRedshiftDataParameters {
-            secret_manager_arn: self.secret_manager_arn,
-            database: self.database,
-            db_user: self.db_user,
-            statement_name: self.statement_name,
-            with_event: self.with_event.unwrap_or_default(),
-            sqls: self.sqls,
+            secret_manager_arn: self.secret_manager_arn
+            ,
+            database: self.database
+            ,
+            db_user: self.db_user
+            ,
+            statement_name: self.statement_name
+            ,
+            with_event: self.with_event
+                .unwrap_or_default()
+            ,
+            sqls: self.sqls
+            ,
         }
     }
 }
@@ -176,3 +171,4 @@ impl std::fmt::Debug for PipeTargetRedshiftDataParametersBuilder {
         formatter.finish()
     }
 }
+

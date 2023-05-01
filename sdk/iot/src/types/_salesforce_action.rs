@@ -3,7 +3,7 @@
 /// <p>Describes an action to write a message to a Salesforce IoT Cloud Input Stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SalesforceAction {
+pub struct SalesforceAction  {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SalesforceAction {
 }
 impl SalesforceAction {
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SalesforceActionBuilder {
     }
     /// <p>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SalesforceActionBuilder {
     }
     /// <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// Consumes the builder and constructs a [`SalesforceAction`](crate::types::SalesforceAction).
     pub fn build(self) -> crate::types::SalesforceAction {
         crate::types::SalesforceAction {
-            token: self.token,
-            url: self.url,
+            token: self.token
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

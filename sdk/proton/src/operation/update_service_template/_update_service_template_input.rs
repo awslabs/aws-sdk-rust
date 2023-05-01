@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateServiceTemplateInput {
+pub struct UpdateServiceTemplateInput  {
     /// <p>The name of the service template to update.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdateServiceTemplateInput {
 }
 impl UpdateServiceTemplateInput {
     /// <p>The name of the service template to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the service template to update that's displayed in the developer interface.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>A description of the service template update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateServiceTemplateInput {
+impl  std::fmt::Debug for UpdateServiceTemplateInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceTemplateInput");
         formatter.field("name", &self.name);
@@ -38,9 +38,7 @@ impl std::fmt::Debug for UpdateServiceTemplateInput {
 }
 impl UpdateServiceTemplateInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceTemplateInput`](crate::operation::update_service_template::UpdateServiceTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::update_service_template::builders::UpdateServiceTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_service_template::builders::UpdateServiceTemplateInputBuilder {
         crate::operation::update_service_template::builders::UpdateServiceTemplateInputBuilder::default()
     }
 }
@@ -61,8 +59,7 @@ impl UpdateServiceTemplateInputBuilder {
     }
     /// <p>The name of the service template to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the service template to update that's displayed in the developer interface.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +68,7 @@ impl UpdateServiceTemplateInputBuilder {
     }
     /// <p>The name of the service template to update that's displayed in the developer interface.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>A description of the service template update.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +77,19 @@ impl UpdateServiceTemplateInputBuilder {
     }
     /// <p>A description of the service template update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateServiceTemplateInput`](crate::operation::update_service_template::UpdateServiceTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_service_template::UpdateServiceTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_service_template::UpdateServiceTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_service_template::UpdateServiceTemplateInput {
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
-            },
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
@@ -109,3 +102,4 @@ impl std::fmt::Debug for UpdateServiceTemplateInputBuilder {
         formatter.finish()
     }
 }
+

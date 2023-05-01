@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServersInput {
+pub struct DescribeServersInput  {
     /// <p>Describes the server with the specified ServerName.</p>
     #[doc(hidden)]
     pub server_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DescribeServersInput {
 }
 impl DescribeServersInput {
     /// <p>Describes the server with the specified ServerName.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> std::option::Option<& str> {
         self.server_name.as_deref()
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
@@ -50,8 +50,7 @@ impl DescribeServersInputBuilder {
     }
     /// <p>Describes the server with the specified ServerName.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input;
-        self
+        self.server_name = input; self
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DescribeServersInputBuilder {
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl DescribeServersInputBuilder {
     }
     /// <p>This is not currently implemented for <code>DescribeServers</code> requests. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeServersInput`](crate::operation::describe_servers::DescribeServersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_servers::DescribeServersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_servers::DescribeServersInput {
-            server_name: self.server_name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_servers::DescribeServersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_servers::DescribeServersInput {
+                server_name: self.server_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

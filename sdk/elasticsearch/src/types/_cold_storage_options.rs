@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration for cold storage options such as enabled</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColdStorageOptions {
+pub struct ColdStorageOptions  {
     /// <p>Enable cold storage option. Accepted values true or false</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl ColdStorageOptionsBuilder {
     }
     /// <p>Enable cold storage option. Accepted values true or false</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`ColdStorageOptions`](crate::types::ColdStorageOptions).
     pub fn build(self) -> crate::types::ColdStorageOptions {
         crate::types::ColdStorageOptions {
-            enabled: self.enabled,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

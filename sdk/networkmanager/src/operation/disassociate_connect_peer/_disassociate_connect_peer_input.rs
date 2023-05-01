@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateConnectPeerInput {
+pub struct DisassociateConnectPeerInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DisassociateConnectPeerInput {
 }
 impl DisassociateConnectPeerInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
-    pub fn connect_peer_id(&self) -> std::option::Option<&str> {
+    pub fn connect_peer_id(&self) -> std::option::Option<& str> {
         self.connect_peer_id.as_deref()
     }
 }
 impl DisassociateConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConnectPeerInput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder {
         crate::operation::disassociate_connect_peer::builders::DisassociateConnectPeerInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl DisassociateConnectPeerInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
     pub fn connect_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl DisassociateConnectPeerInputBuilder {
     }
     /// <p>The ID of the Connect peer to disassociate from a device.</p>
     pub fn set_connect_peer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connect_peer_id = input;
-        self
+        self.connect_peer_id = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateConnectPeerInput`](crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_connect_peer::DisassociateConnectPeerInput {
-                global_network_id: self.global_network_id,
-                connect_peer_id: self.connect_peer_id,
-            },
+                global_network_id: self.global_network_id
+                ,
+                connect_peer_id: self.connect_peer_id
+                ,
+            }
         )
     }
 }
+

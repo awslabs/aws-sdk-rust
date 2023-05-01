@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -52,22 +52,14 @@
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotAddOptedOutNumber,
@@ -118,139 +110,85 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANNOT_ADD_OPTED_OUT_NUMBER" => ValidationExceptionReason::CannotAddOptedOutNumber,
-            "CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
-            "COUNTRY_CODE_MISMATCH" => ValidationExceptionReason::CountryCodeMismatch,
-            "DESTINATION_COUNTRY_BLOCKED" => ValidationExceptionReason::DestinationCountryBlocked,
-            "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
-            "INVALID_ARN" => ValidationExceptionReason::InvalidArn,
-            "INVALID_FILTER_VALUES" => ValidationExceptionReason::InvalidFilterValues,
-            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => {
-                ValidationExceptionReason::InvalidIdentityForDestinationCountry
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANNOT_ADD_OPTED_OUT_NUMBER" => ValidationExceptionReason::CannotAddOptedOutNumber,
+"CANNOT_PARSE" => ValidationExceptionReason::CannotParse,
+"COUNTRY_CODE_MISMATCH" => ValidationExceptionReason::CountryCodeMismatch,
+"DESTINATION_COUNTRY_BLOCKED" => ValidationExceptionReason::DestinationCountryBlocked,
+"FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
+"INVALID_ARN" => ValidationExceptionReason::InvalidArn,
+"INVALID_FILTER_VALUES" => ValidationExceptionReason::InvalidFilterValues,
+"INVALID_IDENTITY_FOR_DESTINATION_COUNTRY" => ValidationExceptionReason::InvalidIdentityForDestinationCountry,
+"INVALID_NEXT_TOKEN" => ValidationExceptionReason::InvalidNextToken,
+"INVALID_PARAMETER" => ValidationExceptionReason::InvalidParameter,
+"MISSING_PARAMETER" => ValidationExceptionReason::MissingParameter,
+"OTHER" => ValidationExceptionReason::Other,
+"PARAMETERS_CANNOT_BE_USED_TOGETHER" => ValidationExceptionReason::ParametersCannotBeUsedTogether,
+"PHONE_NUMBER_CANNOT_BE_OPTED_IN" => ValidationExceptionReason::PhoneNumberCannotBeOptedIn,
+"PHONE_NUMBER_CANNOT_BE_RELEASED" => ValidationExceptionReason::PhoneNumberCannotBeReleased,
+"PRICE_OVER_THRESHOLD" => ValidationExceptionReason::PriceOverThreshold,
+"REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit,
+"SENDER_ID_NOT_REGISTERED" => ValidationExceptionReason::SenderIdNotRegistered,
+"SENDER_ID_NOT_SUPPORTED" => ValidationExceptionReason::SenderIdNotSupported,
+"TWO_WAY_NOT_ENABLED" => ValidationExceptionReason::TwoWayNotEnabled,
+"TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => ValidationExceptionReason::TwoWayNotSupportedInCountry,
+"TWO_WAY_NOT_SUPPORTED_IN_REGION" => ValidationExceptionReason::TwoWayNotSupportedInRegion,
+"TWO_WAY_TOPIC_NOT_PRESENT" => ValidationExceptionReason::TwoWayTopicNotPresent,
+"UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
+other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "INVALID_NEXT_TOKEN" => ValidationExceptionReason::InvalidNextToken,
-            "INVALID_PARAMETER" => ValidationExceptionReason::InvalidParameter,
-            "MISSING_PARAMETER" => ValidationExceptionReason::MissingParameter,
-            "OTHER" => ValidationExceptionReason::Other,
-            "PARAMETERS_CANNOT_BE_USED_TOGETHER" => {
-                ValidationExceptionReason::ParametersCannotBeUsedTogether
-            }
-            "PHONE_NUMBER_CANNOT_BE_OPTED_IN" => {
-                ValidationExceptionReason::PhoneNumberCannotBeOptedIn
-            }
-            "PHONE_NUMBER_CANNOT_BE_RELEASED" => {
-                ValidationExceptionReason::PhoneNumberCannotBeReleased
-            }
-            "PRICE_OVER_THRESHOLD" => ValidationExceptionReason::PriceOverThreshold,
-            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT" => {
-                ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit
-            }
-            "SENDER_ID_NOT_REGISTERED" => ValidationExceptionReason::SenderIdNotRegistered,
-            "SENDER_ID_NOT_SUPPORTED" => ValidationExceptionReason::SenderIdNotSupported,
-            "TWO_WAY_NOT_ENABLED" => ValidationExceptionReason::TwoWayNotEnabled,
-            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY" => {
-                ValidationExceptionReason::TwoWayNotSupportedInCountry
-            }
-            "TWO_WAY_NOT_SUPPORTED_IN_REGION" => {
-                ValidationExceptionReason::TwoWayNotSupportedInRegion
-            }
-            "TWO_WAY_TOPIC_NOT_PRESENT" => ValidationExceptionReason::TwoWayTopicNotPresent,
-            "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ValidationExceptionReason::CannotAddOptedOutNumber => "CANNOT_ADD_OPTED_OUT_NUMBER",
-            ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
-            ValidationExceptionReason::CountryCodeMismatch => "COUNTRY_CODE_MISMATCH",
-            ValidationExceptionReason::DestinationCountryBlocked => "DESTINATION_COUNTRY_BLOCKED",
-            ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
-            ValidationExceptionReason::InvalidArn => "INVALID_ARN",
-            ValidationExceptionReason::InvalidFilterValues => "INVALID_FILTER_VALUES",
-            ValidationExceptionReason::InvalidIdentityForDestinationCountry => {
-                "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY"
-            }
-            ValidationExceptionReason::InvalidNextToken => "INVALID_NEXT_TOKEN",
-            ValidationExceptionReason::InvalidParameter => "INVALID_PARAMETER",
-            ValidationExceptionReason::MissingParameter => "MISSING_PARAMETER",
-            ValidationExceptionReason::Other => "OTHER",
-            ValidationExceptionReason::ParametersCannotBeUsedTogether => {
-                "PARAMETERS_CANNOT_BE_USED_TOGETHER"
-            }
-            ValidationExceptionReason::PhoneNumberCannotBeOptedIn => {
-                "PHONE_NUMBER_CANNOT_BE_OPTED_IN"
-            }
-            ValidationExceptionReason::PhoneNumberCannotBeReleased => {
-                "PHONE_NUMBER_CANNOT_BE_RELEASED"
-            }
-            ValidationExceptionReason::PriceOverThreshold => "PRICE_OVER_THRESHOLD",
-            ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => {
-                "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT"
-            }
-            ValidationExceptionReason::SenderIdNotRegistered => "SENDER_ID_NOT_REGISTERED",
-            ValidationExceptionReason::SenderIdNotSupported => "SENDER_ID_NOT_SUPPORTED",
-            ValidationExceptionReason::TwoWayNotEnabled => "TWO_WAY_NOT_ENABLED",
-            ValidationExceptionReason::TwoWayNotSupportedInCountry => {
-                "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY"
-            }
-            ValidationExceptionReason::TwoWayNotSupportedInRegion => {
-                "TWO_WAY_NOT_SUPPORTED_IN_REGION"
-            }
-            ValidationExceptionReason::TwoWayTopicNotPresent => "TWO_WAY_TOPIC_NOT_PRESENT",
-            ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANNOT_ADD_OPTED_OUT_NUMBER",
-            "CANNOT_PARSE",
-            "COUNTRY_CODE_MISMATCH",
-            "DESTINATION_COUNTRY_BLOCKED",
-            "FIELD_VALIDATION_FAILED",
-            "INVALID_ARN",
-            "INVALID_FILTER_VALUES",
-            "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
-            "INVALID_NEXT_TOKEN",
-            "INVALID_PARAMETER",
-            "MISSING_PARAMETER",
-            "OTHER",
-            "PARAMETERS_CANNOT_BE_USED_TOGETHER",
-            "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
-            "PHONE_NUMBER_CANNOT_BE_RELEASED",
-            "PRICE_OVER_THRESHOLD",
-            "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
-            "SENDER_ID_NOT_REGISTERED",
-            "SENDER_ID_NOT_SUPPORTED",
-            "TWO_WAY_NOT_ENABLED",
-            "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
-            "TWO_WAY_NOT_SUPPORTED_IN_REGION",
-            "TWO_WAY_TOPIC_NOT_PRESENT",
-            "UNKNOWN_OPERATION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ValidationExceptionReason::CannotAddOptedOutNumber => "CANNOT_ADD_OPTED_OUT_NUMBER",
+    ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
+    ValidationExceptionReason::CountryCodeMismatch => "COUNTRY_CODE_MISMATCH",
+    ValidationExceptionReason::DestinationCountryBlocked => "DESTINATION_COUNTRY_BLOCKED",
+    ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
+    ValidationExceptionReason::InvalidArn => "INVALID_ARN",
+    ValidationExceptionReason::InvalidFilterValues => "INVALID_FILTER_VALUES",
+    ValidationExceptionReason::InvalidIdentityForDestinationCountry => "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY",
+    ValidationExceptionReason::InvalidNextToken => "INVALID_NEXT_TOKEN",
+    ValidationExceptionReason::InvalidParameter => "INVALID_PARAMETER",
+    ValidationExceptionReason::MissingParameter => "MISSING_PARAMETER",
+    ValidationExceptionReason::Other => "OTHER",
+    ValidationExceptionReason::ParametersCannotBeUsedTogether => "PARAMETERS_CANNOT_BE_USED_TOGETHER",
+    ValidationExceptionReason::PhoneNumberCannotBeOptedIn => "PHONE_NUMBER_CANNOT_BE_OPTED_IN",
+    ValidationExceptionReason::PhoneNumberCannotBeReleased => "PHONE_NUMBER_CANNOT_BE_RELEASED",
+    ValidationExceptionReason::PriceOverThreshold => "PRICE_OVER_THRESHOLD",
+    ValidationExceptionReason::RequestedSpendLimitHigherThanServiceLimit => "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT",
+    ValidationExceptionReason::SenderIdNotRegistered => "SENDER_ID_NOT_REGISTERED",
+    ValidationExceptionReason::SenderIdNotSupported => "SENDER_ID_NOT_SUPPORTED",
+    ValidationExceptionReason::TwoWayNotEnabled => "TWO_WAY_NOT_ENABLED",
+    ValidationExceptionReason::TwoWayNotSupportedInCountry => "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY",
+    ValidationExceptionReason::TwoWayNotSupportedInRegion => "TWO_WAY_NOT_SUPPORTED_IN_REGION",
+    ValidationExceptionReason::TwoWayTopicNotPresent => "TWO_WAY_TOPIC_NOT_PRESENT",
+    ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
+    ValidationExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANNOT_ADD_OPTED_OUT_NUMBER", "CANNOT_PARSE", "COUNTRY_CODE_MISMATCH", "DESTINATION_COUNTRY_BLOCKED", "FIELD_VALIDATION_FAILED", "INVALID_ARN", "INVALID_FILTER_VALUES", "INVALID_IDENTITY_FOR_DESTINATION_COUNTRY", "INVALID_NEXT_TOKEN", "INVALID_PARAMETER", "MISSING_PARAMETER", "OTHER", "PARAMETERS_CANNOT_BE_USED_TOGETHER", "PHONE_NUMBER_CANNOT_BE_OPTED_IN", "PHONE_NUMBER_CANNOT_BE_RELEASED", "PRICE_OVER_THRESHOLD", "REQUESTED_SPEND_LIMIT_HIGHER_THAN_SERVICE_LIMIT", "SENDER_ID_NOT_REGISTERED", "SENDER_ID_NOT_SUPPORTED", "TWO_WAY_NOT_ENABLED", "TWO_WAY_NOT_SUPPORTED_IN_COUNTRY", "TWO_WAY_NOT_SUPPORTED_IN_REGION", "TWO_WAY_TOPIC_NOT_PRESENT", "UNKNOWN_OPERATION"]
+                }
+            }
 impl AsRef<str> for ValidationExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

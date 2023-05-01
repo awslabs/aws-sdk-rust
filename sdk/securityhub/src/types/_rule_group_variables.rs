@@ -3,7 +3,7 @@
 /// <p>Additional settings to use in the specified rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupVariables {
+pub struct RuleGroupVariables  {
     /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
     #[doc(hidden)]
     pub ip_sets: std::option::Option<crate::types::RuleGroupVariablesIpSetsDetails>,
@@ -13,13 +13,11 @@ pub struct RuleGroupVariables {
 }
 impl RuleGroupVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-    pub fn ip_sets(&self) -> std::option::Option<&crate::types::RuleGroupVariablesIpSetsDetails> {
+    pub fn ip_sets(&self) -> std::option::Option<& crate::types::RuleGroupVariablesIpSetsDetails> {
         self.ip_sets.as_ref()
     }
     /// <p>A list of port ranges.</p>
-    pub fn port_sets(
-        &self,
-    ) -> std::option::Option<&crate::types::RuleGroupVariablesPortSetsDetails> {
+    pub fn port_sets(&self) -> std::option::Option<& crate::types::RuleGroupVariablesPortSetsDetails> {
         self.port_sets.as_ref()
     }
 }
@@ -44,12 +42,8 @@ impl RuleGroupVariablesBuilder {
         self
     }
     /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
-    pub fn set_ip_sets(
-        mut self,
-        input: std::option::Option<crate::types::RuleGroupVariablesIpSetsDetails>,
-    ) -> Self {
-        self.ip_sets = input;
-        self
+    pub fn set_ip_sets(mut self, input: std::option::Option<crate::types::RuleGroupVariablesIpSetsDetails>) -> Self {
+        self.ip_sets = input; self
     }
     /// <p>A list of port ranges.</p>
     pub fn port_sets(mut self, input: crate::types::RuleGroupVariablesPortSetsDetails) -> Self {
@@ -57,18 +51,17 @@ impl RuleGroupVariablesBuilder {
         self
     }
     /// <p>A list of port ranges.</p>
-    pub fn set_port_sets(
-        mut self,
-        input: std::option::Option<crate::types::RuleGroupVariablesPortSetsDetails>,
-    ) -> Self {
-        self.port_sets = input;
-        self
+    pub fn set_port_sets(mut self, input: std::option::Option<crate::types::RuleGroupVariablesPortSetsDetails>) -> Self {
+        self.port_sets = input; self
     }
     /// Consumes the builder and constructs a [`RuleGroupVariables`](crate::types::RuleGroupVariables).
     pub fn build(self) -> crate::types::RuleGroupVariables {
         crate::types::RuleGroupVariables {
-            ip_sets: self.ip_sets,
-            port_sets: self.port_sets,
+            ip_sets: self.ip_sets
+            ,
+            port_sets: self.port_sets
+            ,
         }
     }
 }
+

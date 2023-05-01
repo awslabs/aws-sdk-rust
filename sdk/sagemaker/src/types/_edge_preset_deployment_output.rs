@@ -3,7 +3,7 @@
 /// <p>The output of a SageMaker Edge Manager deployable resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgePresetDeploymentOutput {
+pub struct EdgePresetDeploymentOutput  {
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EdgePresetDeploymentType>,
@@ -19,19 +19,19 @@ pub struct EdgePresetDeploymentOutput {
 }
 impl EdgePresetDeploymentOutput {
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EdgePresetDeploymentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::EdgePresetDeploymentType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
-    pub fn artifact(&self) -> std::option::Option<&str> {
+    pub fn artifact(&self) -> std::option::Option<& str> {
         self.artifact.as_deref()
     }
     /// <p>The status of the deployable resource.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EdgePresetDeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::EdgePresetDeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>Returns a message describing the status of the deployed resource.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl EdgePresetDeploymentOutputBuilder {
         self
     }
     /// <p>The deployment type created by SageMaker Edge Manager. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::EdgePresetDeploymentType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::EdgePresetDeploymentType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
     pub fn artifact(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +68,7 @@ impl EdgePresetDeploymentOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the generated deployable resource.</p>
     pub fn set_artifact(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact = input;
-        self
+        self.artifact = input; self
     }
     /// <p>The status of the deployable resource.</p>
     pub fn status(mut self, input: crate::types::EdgePresetDeploymentStatus) -> Self {
@@ -81,12 +76,8 @@ impl EdgePresetDeploymentOutputBuilder {
         self
     }
     /// <p>The status of the deployable resource.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::EdgePresetDeploymentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::EdgePresetDeploymentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>Returns a message describing the status of the deployed resource.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,16 +86,20 @@ impl EdgePresetDeploymentOutputBuilder {
     }
     /// <p>Returns a message describing the status of the deployed resource.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// Consumes the builder and constructs a [`EdgePresetDeploymentOutput`](crate::types::EdgePresetDeploymentOutput).
     pub fn build(self) -> crate::types::EdgePresetDeploymentOutput {
         crate::types::EdgePresetDeploymentOutput {
-            r#type: self.r#type,
-            artifact: self.artifact,
-            status: self.status,
-            status_message: self.status_message,
+            r#type: self.r#type
+            ,
+            artifact: self.artifact
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
         }
     }
 }
+

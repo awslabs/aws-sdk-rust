@@ -24,3 +24,4 @@ pub use crate::types::_scaling_plan::ScalingPlanBuilder;
 pub use crate::types::_scaling_plan_resource::ScalingPlanResourceBuilder;
 
 pub use crate::types::_scaling_policy::ScalingPolicyBuilder;
+

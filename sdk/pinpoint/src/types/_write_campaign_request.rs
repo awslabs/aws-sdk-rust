@@ -3,15 +3,13 @@
 /// <p>Specifies the configuration and other settings for a campaign.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WriteCampaignRequest {
+pub struct WriteCampaignRequest  {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
     #[doc(hidden)]
-    pub additional_treatments:
-        std::option::Option<std::vec::Vec<crate::types::WriteTreatmentResource>>,
+    pub additional_treatments: std::option::Option<std::vec::Vec<crate::types::WriteTreatmentResource>>,
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
     #[doc(hidden)]
-    pub custom_delivery_configuration:
-        std::option::Option<crate::types::CustomDeliveryConfiguration>,
+    pub custom_delivery_configuration: std::option::Option<crate::types::CustomDeliveryConfiguration>,
     /// <p>A custom description of the campaign.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -44,8 +42,7 @@ pub struct WriteCampaignRequest {
     pub segment_version: i32,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The message template to use for the campaign.</p>
     #[doc(hidden)]
     pub template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
@@ -61,19 +58,15 @@ pub struct WriteCampaignRequest {
 }
 impl WriteCampaignRequest {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    pub fn additional_treatments(
-        &self,
-    ) -> std::option::Option<&[crate::types::WriteTreatmentResource]> {
+    pub fn additional_treatments(&self) -> std::option::Option<& [crate::types::WriteTreatmentResource]> {
         self.additional_treatments.as_deref()
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn custom_delivery_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::CustomDeliveryConfiguration> {
+    pub fn custom_delivery_configuration(&self) -> std::option::Option<& crate::types::CustomDeliveryConfiguration> {
         self.custom_delivery_configuration.as_ref()
     }
     /// <p>A custom description of the campaign.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
@@ -81,7 +74,7 @@ impl WriteCampaignRequest {
         self.holdout_percent
     }
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
-    pub fn hook(&self) -> std::option::Option<&crate::types::CampaignHook> {
+    pub fn hook(&self) -> std::option::Option<& crate::types::CampaignHook> {
         self.hook.as_ref()
     }
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
@@ -89,25 +82,23 @@ impl WriteCampaignRequest {
         self.is_paused
     }
     /// <p>The messaging limits for the campaign.</p>
-    pub fn limits(&self) -> std::option::Option<&crate::types::CampaignLimits> {
+    pub fn limits(&self) -> std::option::Option<& crate::types::CampaignLimits> {
         self.limits.as_ref()
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn message_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::MessageConfiguration> {
+    pub fn message_configuration(&self) -> std::option::Option<& crate::types::MessageConfiguration> {
         self.message_configuration.as_ref()
     }
     /// <p>A custom name for the campaign.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The schedule settings for the campaign.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::Schedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::types::Schedule> {
         self.schedule.as_ref()
     }
     /// <p>The unique identifier for the segment to associate with the campaign.</p>
-    pub fn segment_id(&self) -> std::option::Option<&str> {
+    pub fn segment_id(&self) -> std::option::Option<& str> {
         self.segment_id.as_deref()
     }
     /// <p>The version of the segment to associate with the campaign.</p>
@@ -115,24 +106,19 @@ impl WriteCampaignRequest {
         self.segment_version
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The message template to use for the campaign.</p>
-    pub fn template_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::TemplateConfiguration> {
+    pub fn template_configuration(&self) -> std::option::Option<& crate::types::TemplateConfiguration> {
         self.template_configuration.as_ref()
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
-    pub fn treatment_description(&self) -> std::option::Option<&str> {
+    pub fn treatment_description(&self) -> std::option::Option<& str> {
         self.treatment_description.as_deref()
     }
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
-    pub fn treatment_name(&self) -> std::option::Option<&str> {
+    pub fn treatment_name(&self) -> std::option::Option<& str> {
         self.treatment_name.as_deref()
     }
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
@@ -151,10 +137,8 @@ impl WriteCampaignRequest {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct WriteCampaignRequestBuilder {
-    pub(crate) additional_treatments:
-        std::option::Option<std::vec::Vec<crate::types::WriteTreatmentResource>>,
-    pub(crate) custom_delivery_configuration:
-        std::option::Option<crate::types::CustomDeliveryConfiguration>,
+    pub(crate) additional_treatments: std::option::Option<std::vec::Vec<crate::types::WriteTreatmentResource>>,
+    pub(crate) custom_delivery_configuration: std::option::Option<crate::types::CustomDeliveryConfiguration>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) holdout_percent: std::option::Option<i32>,
     pub(crate) hook: std::option::Option<crate::types::CampaignHook>,
@@ -165,8 +149,7 @@ pub struct WriteCampaignRequestBuilder {
     pub(crate) schedule: std::option::Option<crate::types::Schedule>,
     pub(crate) segment_id: std::option::Option<std::string::String>,
     pub(crate) segment_version: std::option::Option<i32>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) template_configuration: std::option::Option<crate::types::TemplateConfiguration>,
     pub(crate) treatment_description: std::option::Option<std::string::String>,
     pub(crate) treatment_name: std::option::Option<std::string::String>,
@@ -180,33 +163,22 @@ impl WriteCampaignRequestBuilder {
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
     pub fn additional_treatments(mut self, input: crate::types::WriteTreatmentResource) -> Self {
         let mut v = self.additional_treatments.unwrap_or_default();
-        v.push(input);
-        self.additional_treatments = Some(v);
-        self
+                        v.push(input);
+                        self.additional_treatments = Some(v);
+                        self
     }
     /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
-    pub fn set_additional_treatments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WriteTreatmentResource>>,
-    ) -> Self {
-        self.additional_treatments = input;
-        self
+    pub fn set_additional_treatments(mut self, input: std::option::Option<std::vec::Vec<crate::types::WriteTreatmentResource>>) -> Self {
+        self.additional_treatments = input; self
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn custom_delivery_configuration(
-        mut self,
-        input: crate::types::CustomDeliveryConfiguration,
-    ) -> Self {
+    pub fn custom_delivery_configuration(mut self, input: crate::types::CustomDeliveryConfiguration) -> Self {
         self.custom_delivery_configuration = Some(input);
         self
     }
     /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
-    pub fn set_custom_delivery_configuration(
-        mut self,
-        input: std::option::Option<crate::types::CustomDeliveryConfiguration>,
-    ) -> Self {
-        self.custom_delivery_configuration = input;
-        self
+    pub fn set_custom_delivery_configuration(mut self, input: std::option::Option<crate::types::CustomDeliveryConfiguration>) -> Self {
+        self.custom_delivery_configuration = input; self
     }
     /// <p>A custom description of the campaign.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,8 +187,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>A custom description of the campaign.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
     pub fn holdout_percent(mut self, input: i32) -> Self {
@@ -225,8 +196,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
     pub fn set_holdout_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.holdout_percent = input;
-        self
+        self.holdout_percent = input; self
     }
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
     pub fn hook(mut self, input: crate::types::CampaignHook) -> Self {
@@ -235,8 +205,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
     pub fn set_hook(mut self, input: std::option::Option<crate::types::CampaignHook>) -> Self {
-        self.hook = input;
-        self
+        self.hook = input; self
     }
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
     pub fn is_paused(mut self, input: bool) -> Self {
@@ -245,8 +214,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
     pub fn set_is_paused(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_paused = input;
-        self
+        self.is_paused = input; self
     }
     /// <p>The messaging limits for the campaign.</p>
     pub fn limits(mut self, input: crate::types::CampaignLimits) -> Self {
@@ -255,8 +223,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>The messaging limits for the campaign.</p>
     pub fn set_limits(mut self, input: std::option::Option<crate::types::CampaignLimits>) -> Self {
-        self.limits = input;
-        self
+        self.limits = input; self
     }
     /// <p>The message configuration settings for the campaign.</p>
     pub fn message_configuration(mut self, input: crate::types::MessageConfiguration) -> Self {
@@ -264,12 +231,8 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>The message configuration settings for the campaign.</p>
-    pub fn set_message_configuration(
-        mut self,
-        input: std::option::Option<crate::types::MessageConfiguration>,
-    ) -> Self {
-        self.message_configuration = input;
-        self
+    pub fn set_message_configuration(mut self, input: std::option::Option<crate::types::MessageConfiguration>) -> Self {
+        self.message_configuration = input; self
     }
     /// <p>A custom name for the campaign.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,8 +241,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>A custom name for the campaign.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The schedule settings for the campaign.</p>
     pub fn schedule(mut self, input: crate::types::Schedule) -> Self {
@@ -288,8 +250,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>The schedule settings for the campaign.</p>
     pub fn set_schedule(mut self, input: std::option::Option<crate::types::Schedule>) -> Self {
-        self.schedule = input;
-        self
+        self.schedule = input; self
     }
     /// <p>The unique identifier for the segment to associate with the campaign.</p>
     pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -298,8 +259,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>The unique identifier for the segment to associate with the campaign.</p>
     pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.segment_id = input;
-        self
+        self.segment_id = input; self
     }
     /// <p>The version of the segment to associate with the campaign.</p>
     pub fn segment_version(mut self, input: i32) -> Self {
@@ -308,33 +268,22 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>The version of the segment to associate with the campaign.</p>
     pub fn set_segment_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.segment_version = input;
-        self
+        self.segment_version = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The message template to use for the campaign.</p>
     pub fn template_configuration(mut self, input: crate::types::TemplateConfiguration) -> Self {
@@ -342,12 +291,8 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>The message template to use for the campaign.</p>
-    pub fn set_template_configuration(
-        mut self,
-        input: std::option::Option<crate::types::TemplateConfiguration>,
-    ) -> Self {
-        self.template_configuration = input;
-        self
+    pub fn set_template_configuration(mut self, input: std::option::Option<crate::types::TemplateConfiguration>) -> Self {
+        self.template_configuration = input; self
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
     pub fn treatment_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -355,12 +300,8 @@ impl WriteCampaignRequestBuilder {
         self
     }
     /// <p>A custom description of the default treatment for the campaign.</p>
-    pub fn set_treatment_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.treatment_description = input;
-        self
+    pub fn set_treatment_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.treatment_description = input; self
     }
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
     pub fn treatment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -369,8 +310,7 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
     pub fn set_treatment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.treatment_name = input;
-        self
+        self.treatment_name = input; self
     }
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -379,29 +319,50 @@ impl WriteCampaignRequestBuilder {
     }
     /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// Consumes the builder and constructs a [`WriteCampaignRequest`](crate::types::WriteCampaignRequest).
     pub fn build(self) -> crate::types::WriteCampaignRequest {
         crate::types::WriteCampaignRequest {
-            additional_treatments: self.additional_treatments,
-            custom_delivery_configuration: self.custom_delivery_configuration,
-            description: self.description,
-            holdout_percent: self.holdout_percent.unwrap_or_default(),
-            hook: self.hook,
-            is_paused: self.is_paused.unwrap_or_default(),
-            limits: self.limits,
-            message_configuration: self.message_configuration,
-            name: self.name,
-            schedule: self.schedule,
-            segment_id: self.segment_id,
-            segment_version: self.segment_version.unwrap_or_default(),
-            tags: self.tags,
-            template_configuration: self.template_configuration,
-            treatment_description: self.treatment_description,
-            treatment_name: self.treatment_name,
-            priority: self.priority.unwrap_or_default(),
+            additional_treatments: self.additional_treatments
+            ,
+            custom_delivery_configuration: self.custom_delivery_configuration
+            ,
+            description: self.description
+            ,
+            holdout_percent: self.holdout_percent
+                .unwrap_or_default()
+            ,
+            hook: self.hook
+            ,
+            is_paused: self.is_paused
+                .unwrap_or_default()
+            ,
+            limits: self.limits
+            ,
+            message_configuration: self.message_configuration
+            ,
+            name: self.name
+            ,
+            schedule: self.schedule
+            ,
+            segment_id: self.segment_id
+            ,
+            segment_version: self.segment_version
+                .unwrap_or_default()
+            ,
+            tags: self.tags
+            ,
+            template_configuration: self.template_configuration
+            ,
+            treatment_description: self.treatment_description
+            ,
+            treatment_name: self.treatment_name
+            ,
+            priority: self.priority
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

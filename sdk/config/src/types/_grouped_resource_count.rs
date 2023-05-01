@@ -3,7 +3,7 @@
 /// <p>The count of resources that are grouped by the group name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupedResourceCount {
+pub struct GroupedResourceCount  {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct GroupedResourceCount {
 }
 impl GroupedResourceCount {
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The number of resources in the group.</p>
@@ -43,8 +43,7 @@ impl GroupedResourceCountBuilder {
     }
     /// <p>The name of the group that can be region, account ID, or resource type. For example, region1, region2 if the region was chosen as <code>GroupByKey</code>.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The number of resources in the group.</p>
     pub fn resource_count(mut self, input: i64) -> Self {
@@ -53,14 +52,17 @@ impl GroupedResourceCountBuilder {
     }
     /// <p>The number of resources in the group.</p>
     pub fn set_resource_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.resource_count = input;
-        self
+        self.resource_count = input; self
     }
     /// Consumes the builder and constructs a [`GroupedResourceCount`](crate::types::GroupedResourceCount).
     pub fn build(self) -> crate::types::GroupedResourceCount {
         crate::types::GroupedResourceCount {
-            group_name: self.group_name,
-            resource_count: self.resource_count.unwrap_or_default(),
+            group_name: self.group_name
+            ,
+            resource_count: self.resource_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

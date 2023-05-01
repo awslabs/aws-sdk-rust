@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendSerialConsoleSshPublicKeyInput {
+pub struct SendSerialConsoleSshPublicKeyInput  {
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p> 
     /// <p>Default: 0</p>
     #[doc(hidden)]
     pub serial_port: i32,
@@ -16,22 +16,22 @@ pub struct SendSerialConsoleSshPublicKeyInput {
 }
 impl SendSerialConsoleSshPublicKeyInput {
     /// <p>The ID of the EC2 instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
-    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p> 
     /// <p>Default: 0</p>
     pub fn serial_port(&self) -> i32 {
         self.serial_port
     }
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
         self.ssh_public_key.as_deref()
     }
 }
 impl SendSerialConsoleSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyInput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput).
-    pub fn builder() -> crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyInputBuilder{
+    pub fn builder() -> crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyInputBuilder {
         crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyInputBuilder::default()
     }
 }
@@ -52,20 +52,18 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
     }
     /// <p>The ID of the EC2 instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
-    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p> 
     /// <p>Default: 0</p>
     pub fn serial_port(mut self, input: i32) -> Self {
         self.serial_port = Some(input);
         self
     }
-    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
+    /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p> 
     /// <p>Default: 0</p>
     pub fn set_serial_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.serial_port = input;
-        self
+        self.serial_port = input; self
     }
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,16 +72,10 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
     }
     /// <p>The public key material. To use the public key, you must have the matching private key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_public_key = input;
-        self
+        self.ssh_public_key = input; self
     }
     /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyInput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput {
                 instance_id: self.instance_id
@@ -97,3 +89,4 @@ impl SendSerialConsoleSshPublicKeyInputBuilder {
         )
     }
 }
+

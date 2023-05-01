@@ -3,7 +3,8 @@
 /// <p> The connector metadata specific to Singular. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SingularMetadata {}
+pub struct SingularMetadata  {
+}
 impl SingularMetadata {
     /// Creates a new builder-style object to manufacture [`SingularMetadata`](crate::types::SingularMetadata).
     pub fn builder() -> crate::types::builders::SingularMetadataBuilder {
@@ -14,10 +15,13 @@ impl SingularMetadata {
 /// A builder for [`SingularMetadata`](crate::types::SingularMetadata).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct SingularMetadataBuilder {}
+pub struct SingularMetadataBuilder {
+}
 impl SingularMetadataBuilder {
     /// Consumes the builder and constructs a [`SingularMetadata`](crate::types::SingularMetadata).
     pub fn build(self) -> crate::types::SingularMetadata {
-        crate::types::SingularMetadata {}
+        crate::types::SingularMetadata {
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBrokersInput {
+pub struct ListBrokersInput  {
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,7 +16,7 @@ impl ListBrokersInput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl ListBrokersInputBuilder {
     }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,19 @@ impl ListBrokersInputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListBrokersInput`](crate::operation::list_brokers::ListBrokersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_brokers::ListBrokersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_brokers::ListBrokersInput {
-            max_results: self.max_results.unwrap_or_default(),
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_brokers::ListBrokersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_brokers::ListBrokersInput {
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

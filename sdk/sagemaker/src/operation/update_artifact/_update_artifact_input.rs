@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateArtifactInput {
+pub struct UpdateArtifactInput  {
     /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
     #[doc(hidden)]
     pub artifact_arn: std::option::Option<std::string::String>,
@@ -11,30 +11,26 @@ pub struct UpdateArtifactInput {
     pub artifact_name: std::option::Option<std::string::String>,
     /// <p>The new list of properties. Overwrites the current property list.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of properties to remove.</p>
     #[doc(hidden)]
     pub properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateArtifactInput {
     /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
-    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+    pub fn artifact_arn(&self) -> std::option::Option<& str> {
         self.artifact_arn.as_deref()
     }
     /// <p>The new name for the artifact.</p>
-    pub fn artifact_name(&self) -> std::option::Option<&str> {
+    pub fn artifact_name(&self) -> std::option::Option<& str> {
         self.artifact_name.as_deref()
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>A list of properties to remove.</p>
-    pub fn properties_to_remove(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn properties_to_remove(&self) -> std::option::Option<& [std::string::String]> {
         self.properties_to_remove.as_deref()
     }
 }
@@ -51,8 +47,7 @@ impl UpdateArtifactInput {
 pub struct UpdateArtifactInputBuilder {
     pub(crate) artifact_arn: std::option::Option<std::string::String>,
     pub(crate) artifact_name: std::option::Option<std::string::String>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) properties_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateArtifactInputBuilder {
@@ -63,8 +58,7 @@ impl UpdateArtifactInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
     pub fn set_artifact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_arn = input;
-        self
+        self.artifact_arn = input; self
     }
     /// <p>The new name for the artifact.</p>
     pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,33 +67,22 @@ impl UpdateArtifactInputBuilder {
     }
     /// <p>The new name for the artifact.</p>
     pub fn set_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_name = input;
-        self
+        self.artifact_name = input; self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = Some(hash_map);
+                        self
     }
     /// <p>The new list of properties. Overwrites the current property list.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// Appends an item to `properties_to_remove`.
     ///
@@ -108,30 +91,28 @@ impl UpdateArtifactInputBuilder {
     /// <p>A list of properties to remove.</p>
     pub fn properties_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.properties_to_remove.unwrap_or_default();
-        v.push(input.into());
-        self.properties_to_remove = Some(v);
-        self
+                        v.push(input.into());
+                        self.properties_to_remove = Some(v);
+                        self
     }
     /// <p>A list of properties to remove.</p>
-    pub fn set_properties_to_remove(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.properties_to_remove = input;
-        self
+    pub fn set_properties_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.properties_to_remove = input; self
     }
     /// Consumes the builder and constructs a [`UpdateArtifactInput`](crate::operation::update_artifact::UpdateArtifactInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_artifact::UpdateArtifactInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_artifact::UpdateArtifactInput {
-            artifact_arn: self.artifact_arn,
-            artifact_name: self.artifact_name,
-            properties: self.properties,
-            properties_to_remove: self.properties_to_remove,
-        })
+    pub fn build(self) -> Result<crate::operation::update_artifact::UpdateArtifactInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_artifact::UpdateArtifactInput {
+                artifact_arn: self.artifact_arn
+                ,
+                artifact_name: self.artifact_name
+                ,
+                properties: self.properties
+                ,
+                properties_to_remove: self.properties_to_remove
+                ,
+            }
+        )
     }
 }
+

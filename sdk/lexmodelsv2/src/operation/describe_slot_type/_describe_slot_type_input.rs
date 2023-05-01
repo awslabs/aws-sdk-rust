@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSlotTypeInput {
+pub struct DescribeSlotTypeInput  {
     /// <p>The identifier of the slot type.</p>
     #[doc(hidden)]
     pub slot_type_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct DescribeSlotTypeInput {
 }
 impl DescribeSlotTypeInput {
     /// <p>The identifier of the slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<&str> {
+    pub fn slot_type_id(&self) -> std::option::Option<& str> {
         self.slot_type_id.as_deref()
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> std::option::Option<& str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot associated with the slot type.</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> std::option::Option<& str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> std::option::Option<& str> {
         self.locale_id.as_deref()
     }
 }
 impl DescribeSlotTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
-    pub fn builder() -> crate::operation::describe_slot_type::builders::DescribeSlotTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_slot_type::builders::DescribeSlotTypeInputBuilder {
         crate::operation::describe_slot_type::builders::DescribeSlotTypeInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl DescribeSlotTypeInputBuilder {
     }
     /// <p>The identifier of the slot type.</p>
     pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_id = input;
-        self
+        self.slot_type_id = input; self
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl DescribeSlotTypeInputBuilder {
     }
     /// <p>The identifier of the bot associated with the slot type.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input;
-        self
+        self.bot_id = input; self
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl DescribeSlotTypeInputBuilder {
     }
     /// <p>The version of the bot associated with the slot type.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input;
-        self
+        self.bot_version = input; self
     }
     /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,23 +85,22 @@ impl DescribeSlotTypeInputBuilder {
     }
     /// <p>The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input;
-        self
+        self.locale_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSlotTypeInput`](crate::operation::describe_slot_type::DescribeSlotTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_slot_type::DescribeSlotTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_slot_type::DescribeSlotTypeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_slot_type::DescribeSlotTypeInput {
-                slot_type_id: self.slot_type_id,
-                bot_id: self.bot_id,
-                bot_version: self.bot_version,
-                locale_id: self.locale_id,
-            },
+                slot_type_id: self.slot_type_id
+                ,
+                bot_id: self.bot_id
+                ,
+                bot_version: self.bot_version
+                ,
+                locale_id: self.locale_id
+                ,
+            }
         )
     }
 }
+

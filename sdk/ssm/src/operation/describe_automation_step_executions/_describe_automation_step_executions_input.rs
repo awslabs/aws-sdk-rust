@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutomationStepExecutionsInput {
+pub struct DescribeAutomationStepExecutionsInput  {
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
     #[doc(hidden)]
     pub automation_execution_id: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct DescribeAutomationStepExecutionsInput {
 }
 impl DescribeAutomationStepExecutionsInput {
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
-    pub fn automation_execution_id(&self) -> std::option::Option<&str> {
+    pub fn automation_execution_id(&self) -> std::option::Option<& str> {
         self.automation_execution_id.as_deref()
     }
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::StepExecutionFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::StepExecutionFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -43,7 +43,7 @@ impl DescribeAutomationStepExecutionsInput {
 }
 impl DescribeAutomationStepExecutionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
-    pub fn builder() -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsInputBuilder{
+    pub fn builder() -> crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsInputBuilder {
         crate::operation::describe_automation_step_executions::builders::DescribeAutomationStepExecutionsInputBuilder::default()
     }
 }
@@ -65,12 +65,8 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         self
     }
     /// <p>The Automation execution ID for which you want step execution descriptions.</p>
-    pub fn set_automation_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.automation_execution_id = input;
-        self
+    pub fn set_automation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.automation_execution_id = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -79,17 +75,13 @@ impl DescribeAutomationStepExecutionsInputBuilder {
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
     pub fn filters(mut self, input: crate::types::StepExecutionFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>One or more filters to limit the number of step executions returned by the request.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StepExecutionFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::StepExecutionFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +90,7 @@ impl DescribeAutomationStepExecutionsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -108,8 +99,7 @@ impl DescribeAutomationStepExecutionsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
     pub fn reverse_order(mut self, input: bool) -> Self {
@@ -118,11 +108,10 @@ impl DescribeAutomationStepExecutionsInputBuilder {
     }
     /// <p>Indicates whether to list step executions in reverse order by start time. The default value is 'false'.</p>
     pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
-        self.reverse_order = input;
-        self
+        self.reverse_order = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAutomationStepExecutionsInput`](crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsInput {
                 automation_execution_id: self.automation_execution_id
@@ -139,3 +128,4 @@ impl DescribeAutomationStepExecutionsInputBuilder {
         )
     }
 }
+

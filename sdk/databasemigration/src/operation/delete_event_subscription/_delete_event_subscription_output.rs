@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventSubscriptionOutput {
+pub struct DeleteEventSubscriptionOutput  {
     /// <p>The event subscription that was deleted.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::types::EventSubscription>,
@@ -11,20 +11,18 @@ pub struct DeleteEventSubscriptionOutput {
 }
 impl DeleteEventSubscriptionOutput {
     /// <p>The event subscription that was deleted.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::types::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::types::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteEventSubscriptionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder {
         crate::operation::delete_event_subscription::builders::DeleteEventSubscriptionOutputBuilder::default()
     }
 }
@@ -43,29 +41,25 @@ impl DeleteEventSubscriptionOutputBuilder {
         self
     }
     /// <p>The event subscription that was deleted.</p>
-    pub fn set_event_subscription(
-        mut self,
-        input: std::option::Option<crate::types::EventSubscription>,
-    ) -> Self {
-        self.event_subscription = input;
-        self
+    pub fn set_event_subscription(mut self, input: std::option::Option<crate::types::EventSubscription>) -> Self {
+        self.event_subscription = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput {
+    pub fn build(self) -> crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput {
         crate::operation::delete_event_subscription::DeleteEventSubscriptionOutput {
-            event_subscription: self.event_subscription,
+            event_subscription: self.event_subscription
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

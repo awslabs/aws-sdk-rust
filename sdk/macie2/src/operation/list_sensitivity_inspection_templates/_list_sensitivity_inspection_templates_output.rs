@@ -2,36 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSensitivityInspectionTemplatesOutput {
+pub struct ListSensitivityInspectionTemplatesOutput  {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
     #[doc(hidden)]
-    pub sensitivity_inspection_templates:
-        std::option::Option<std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
+    pub sensitivity_inspection_templates: std::option::Option<std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
     _request_id: Option<String>,
 }
 impl ListSensitivityInspectionTemplatesOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn sensitivity_inspection_templates(
-        &self,
-    ) -> std::option::Option<&[crate::types::SensitivityInspectionTemplatesEntry]> {
+    pub fn sensitivity_inspection_templates(&self) -> std::option::Option<& [crate::types::SensitivityInspectionTemplatesEntry]> {
         self.sensitivity_inspection_templates.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSensitivityInspectionTemplatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSensitivityInspectionTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput).
-    pub fn builder() -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder{
+    pub fn builder() -> crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder {
         crate::operation::list_sensitivity_inspection_templates::builders::ListSensitivityInspectionTemplatesOutputBuilder::default()
     }
 }
@@ -41,8 +38,7 @@ impl ListSensitivityInspectionTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSensitivityInspectionTemplatesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) sensitivity_inspection_templates:
-        std::option::Option<std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
+    pub(crate) sensitivity_inspection_templates: std::option::Option<std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>,
     _request_id: Option<String>,
 }
 impl ListSensitivityInspectionTemplatesOutputBuilder {
@@ -53,44 +49,34 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `sensitivity_inspection_templates`.
     ///
     /// To override the contents of this collection use [`set_sensitivity_inspection_templates`](Self::set_sensitivity_inspection_templates).
     ///
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn sensitivity_inspection_templates(
-        mut self,
-        input: crate::types::SensitivityInspectionTemplatesEntry,
-    ) -> Self {
+    pub fn sensitivity_inspection_templates(mut self, input: crate::types::SensitivityInspectionTemplatesEntry) -> Self {
         let mut v = self.sensitivity_inspection_templates.unwrap_or_default();
-        v.push(input);
-        self.sensitivity_inspection_templates = Some(v);
-        self
+                        v.push(input);
+                        self.sensitivity_inspection_templates = Some(v);
+                        self
     }
     /// <p>An array that specifies the unique identifier and name of the sensitivity inspection template for the account.</p>
-    pub fn set_sensitivity_inspection_templates(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>,
-        >,
-    ) -> Self {
-        self.sensitivity_inspection_templates = input;
-        self
+    pub fn set_sensitivity_inspection_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::SensitivityInspectionTemplatesEntry>>) -> Self {
+        self.sensitivity_inspection_templates = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSensitivityInspectionTemplatesOutput`](crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput{
+    pub fn build(self) -> crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput {
         crate::operation::list_sensitivity_inspection_templates::ListSensitivityInspectionTemplatesOutput {
             next_token: self.next_token
             ,
@@ -100,3 +86,4 @@ impl ListSensitivityInspectionTemplatesOutputBuilder {
         }
     }
 }
+

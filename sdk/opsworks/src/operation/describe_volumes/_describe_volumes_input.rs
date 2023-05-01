@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVolumesInput {
+pub struct DescribeVolumesInput  {
     /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct DescribeVolumesInput {
 }
 impl DescribeVolumesInput {
     /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
-    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+    pub fn raid_array_id(&self) -> std::option::Option<& str> {
         self.raid_array_id.as_deref()
     }
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
-    pub fn volume_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn volume_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.volume_ids.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl DescribeVolumesInputBuilder {
     }
     /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl DescribeVolumesInputBuilder {
     }
     /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
     pub fn raid_array_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl DescribeVolumesInputBuilder {
     }
     /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the volumes associated with the specified RAID array.</p>
     pub fn set_raid_array_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raid_array_id = input;
-        self
+        self.raid_array_id = input; self
     }
     /// Appends an item to `volume_ids`.
     ///
@@ -88,30 +85,28 @@ impl DescribeVolumesInputBuilder {
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
     pub fn volume_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.volume_ids.unwrap_or_default();
-        v.push(input.into());
-        self.volume_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.volume_ids = Some(v);
+                        self
     }
     /// <p>Am array of volume IDs. If you use this parameter, <code>DescribeVolumes</code> returns descriptions of the specified volumes. Otherwise, it returns a description of every volume.</p>
-    pub fn set_volume_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.volume_ids = input;
-        self
+    pub fn set_volume_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.volume_ids = input; self
     }
     /// Consumes the builder and constructs a [`DescribeVolumesInput`](crate::operation::describe_volumes::DescribeVolumesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_volumes::DescribeVolumesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_volumes::DescribeVolumesInput {
-            instance_id: self.instance_id,
-            stack_id: self.stack_id,
-            raid_array_id: self.raid_array_id,
-            volume_ids: self.volume_ids,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_volumes::DescribeVolumesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_volumes::DescribeVolumesInput {
+                instance_id: self.instance_id
+                ,
+                stack_id: self.stack_id
+                ,
+                raid_array_id: self.raid_array_id
+                ,
+                volume_ids: self.volume_ids
+                ,
+            }
+        )
     }
 }
+

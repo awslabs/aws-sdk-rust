@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAppInstanceBotInput {
+pub struct UpdateAppInstanceBotInput  {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
     #[doc(hidden)]
     pub app_instance_bot_arn: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdateAppInstanceBotInput {
 }
 impl UpdateAppInstanceBotInput {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bot_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_bot_arn(&self) -> std::option::Option<& str> {
         self.app_instance_bot_arn.as_deref()
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInstanceBotInput {
+impl  std::fmt::Debug for UpdateAppInstanceBotInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceBotInput");
         formatter.field("app_instance_bot_arn", &self.app_instance_bot_arn);
@@ -38,8 +38,7 @@ impl std::fmt::Debug for UpdateAppInstanceBotInput {
 }
 impl UpdateAppInstanceBotInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
-    pub fn builder(
-    ) -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotInputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotInputBuilder {
         crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotInputBuilder::default()
     }
 }
@@ -59,12 +58,8 @@ impl UpdateAppInstanceBotInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bot_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_instance_bot_arn = input;
-        self
+    pub fn set_app_instance_bot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_instance_bot_arn = input; self
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,8 +68,7 @@ impl UpdateAppInstanceBotInputBuilder {
     }
     /// <p>The name of the <code>AppInstanceBot</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,22 +77,19 @@ impl UpdateAppInstanceBotInputBuilder {
     }
     /// <p>The metadata of the <code>AppInstanceBot</code>.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotInput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_app_instance_bot::UpdateAppInstanceBotInput {
-                app_instance_bot_arn: self.app_instance_bot_arn,
-                name: self.name,
-                metadata: self.metadata,
-            },
+                app_instance_bot_arn: self.app_instance_bot_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+            }
         )
     }
 }
@@ -111,3 +102,4 @@ impl std::fmt::Debug for UpdateAppInstanceBotInputBuilder {
         formatter.finish()
     }
 }
+

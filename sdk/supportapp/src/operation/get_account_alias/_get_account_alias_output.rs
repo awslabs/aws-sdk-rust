@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountAliasOutput {
+pub struct GetAccountAliasOutput  {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_alias: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct GetAccountAliasOutput {
 }
 impl GetAccountAliasOutput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub fn account_alias(&self) -> std::option::Option<&str> {
+    pub fn account_alias(&self) -> std::option::Option<& str> {
         self.account_alias.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccountAliasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAccountAliasOutput {
     /// Creates a new builder-style object to manufacture [`GetAccountAliasOutput`](crate::operation::get_account_alias::GetAccountAliasOutput).
-    pub fn builder() -> crate::operation::get_account_alias::builders::GetAccountAliasOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_account_alias::builders::GetAccountAliasOutputBuilder {
         crate::operation::get_account_alias::builders::GetAccountAliasOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl GetAccountAliasOutputBuilder {
     }
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     pub fn set_account_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_alias = input;
-        self
+        self.account_alias = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAccountAliasOutput`](crate::operation::get_account_alias::GetAccountAliasOutput).
     pub fn build(self) -> crate::operation::get_account_alias::GetAccountAliasOutput {
         crate::operation::get_account_alias::GetAccountAliasOutput {
-            account_alias: self.account_alias,
+            account_alias: self.account_alias
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

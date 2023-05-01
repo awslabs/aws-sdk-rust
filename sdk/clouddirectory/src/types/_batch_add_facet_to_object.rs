@@ -3,31 +3,28 @@
 /// <p>Represents the output of a batch add facet to object operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAddFacetToObject {
+pub struct BatchAddFacetToObject  {
     /// <p>Represents the facet being added to the object.</p>
     #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::types::SchemaFacet>,
     /// <p>The attributes to set on the object.</p>
     #[doc(hidden)]
-    pub object_attribute_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub object_attribute_list: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>A reference to the object being mutated.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn object_attribute_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    pub fn object_attribute_list(&self) -> std::option::Option<& [crate::types::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>A reference to the object being mutated.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -43,8 +40,7 @@ impl BatchAddFacetToObject {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchAddFacetToObjectBuilder {
     pub(crate) schema_facet: std::option::Option<crate::types::SchemaFacet>,
-    pub(crate) object_attribute_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) object_attribute_list: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     pub(crate) object_reference: std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchAddFacetToObjectBuilder {
@@ -54,12 +50,8 @@ impl BatchAddFacetToObjectBuilder {
         self
     }
     /// <p>Represents the facet being added to the object.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
-        self.schema_facet = input;
-        self
+    pub fn set_schema_facet(mut self, input: std::option::Option<crate::types::SchemaFacet>) -> Self {
+        self.schema_facet = input; self
     }
     /// Appends an item to `object_attribute_list`.
     ///
@@ -68,17 +60,13 @@ impl BatchAddFacetToObjectBuilder {
     /// <p>The attributes to set on the object.</p>
     pub fn object_attribute_list(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.object_attribute_list.unwrap_or_default();
-        v.push(input);
-        self.object_attribute_list = Some(v);
-        self
+                        v.push(input);
+                        self.object_attribute_list = Some(v);
+                        self
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn set_object_attribute_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    ) -> Self {
-        self.object_attribute_list = input;
-        self
+    pub fn set_object_attribute_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
+        self.object_attribute_list = input; self
     }
     /// <p>A reference to the object being mutated.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -86,19 +74,19 @@ impl BatchAddFacetToObjectBuilder {
         self
     }
     /// <p>A reference to the object being mutated.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::types::BatchAddFacetToObject).
     pub fn build(self) -> crate::types::BatchAddFacetToObject {
         crate::types::BatchAddFacetToObject {
-            schema_facet: self.schema_facet,
-            object_attribute_list: self.object_attribute_list,
-            object_reference: self.object_reference,
+            schema_facet: self.schema_facet
+            ,
+            object_attribute_list: self.object_attribute_list
+            ,
+            object_reference: self.object_reference
+            ,
         }
     }
 }
+

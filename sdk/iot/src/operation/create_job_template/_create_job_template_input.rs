@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateInput {
+pub struct CreateJobTemplateInput  {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
     #[doc(hidden)]
     pub job_template_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
     #[doc(hidden)]
     pub document_source: std::option::Option<std::string::String>,
@@ -28,8 +28,7 @@ pub struct CreateJobTemplateInput {
     pub presigned_url_config: std::option::Option<crate::types::PresignedUrlConfig>,
     /// <p>Allows you to create a staged rollout of a job.</p>
     #[doc(hidden)]
-    pub job_executions_rollout_config:
-        std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub job_executions_rollout_config: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     #[doc(hidden)]
     pub abort_config: std::option::Option<crate::types::AbortConfig>,
@@ -48,67 +47,62 @@ pub struct CreateJobTemplateInput {
 }
 impl CreateJobTemplateInput {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
-    pub fn job_template_id(&self) -> std::option::Option<&str> {
+    pub fn job_template_id(&self) -> std::option::Option<& str> {
         self.job_template_id.as_deref()
     }
     /// <p>The ARN of the job to use as the basis for the job template.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
-    pub fn document_source(&self) -> std::option::Option<&str> {
+    pub fn document_source(&self) -> std::option::Option<& str> {
         self.document_source.as_deref()
     }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>A description of the job document.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    pub fn presigned_url_config(&self) -> std::option::Option<&crate::types::PresignedUrlConfig> {
+    pub fn presigned_url_config(&self) -> std::option::Option<& crate::types::PresignedUrlConfig> {
         self.presigned_url_config.as_ref()
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn job_executions_rollout_config(
-        &self,
-    ) -> std::option::Option<&crate::types::JobExecutionsRolloutConfig> {
+    pub fn job_executions_rollout_config(&self) -> std::option::Option<& crate::types::JobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
-    pub fn abort_config(&self) -> std::option::Option<&crate::types::AbortConfig> {
+    pub fn abort_config(&self) -> std::option::Option<& crate::types::AbortConfig> {
         self.abort_config.as_ref()
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn timeout_config(&self) -> std::option::Option<&crate::types::TimeoutConfig> {
+    pub fn timeout_config(&self) -> std::option::Option<& crate::types::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>Metadata that can be used to manage the job template.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        &self,
-    ) -> std::option::Option<&crate::types::JobExecutionsRetryConfig> {
+    pub fn job_executions_retry_config(&self) -> std::option::Option<& crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    pub fn maintenance_windows(&self) -> std::option::Option<&[crate::types::MaintenanceWindow]> {
+    pub fn maintenance_windows(&self) -> std::option::Option<& [crate::types::MaintenanceWindow]> {
         self.maintenance_windows.as_deref()
     }
 }
 impl CreateJobTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateInputBuilder::default()
     }
 }
@@ -123,15 +117,12 @@ pub struct CreateJobTemplateInputBuilder {
     pub(crate) document: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) presigned_url_config: std::option::Option<crate::types::PresignedUrlConfig>,
-    pub(crate) job_executions_rollout_config:
-        std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub(crate) job_executions_rollout_config: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     pub(crate) abort_config: std::option::Option<crate::types::AbortConfig>,
     pub(crate) timeout_config: std::option::Option<crate::types::TimeoutConfig>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) job_executions_retry_config:
-        std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    pub(crate) maintenance_windows:
-        std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+    pub(crate) job_executions_retry_config: std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    pub(crate) maintenance_windows: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl CreateJobTemplateInputBuilder {
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
@@ -141,8 +132,7 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.</p>
     pub fn set_job_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_template_id = input;
-        self
+        self.job_template_id = input; self
     }
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,28 +141,26 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>The ARN of the job to use as the basis for the job template.</p>
     pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
     pub fn document_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.document_source = Some(input.into());
         self
     }
-    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
     pub fn set_document_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_source = input;
-        self
+        self.document_source = input; self
     }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,8 +169,7 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>A description of the job document.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,8 +178,7 @@ impl CreateJobTemplateInputBuilder {
     }
     /// <p>A description of the job document.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
@@ -200,28 +186,17 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// <p>Configuration for pre-signed S3 URLs.</p>
-    pub fn set_presigned_url_config(
-        mut self,
-        input: std::option::Option<crate::types::PresignedUrlConfig>,
-    ) -> Self {
-        self.presigned_url_config = input;
-        self
+    pub fn set_presigned_url_config(mut self, input: std::option::Option<crate::types::PresignedUrlConfig>) -> Self {
+        self.presigned_url_config = input; self
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::JobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::JobExecutionsRolloutConfig) -> Self {
         self.job_executions_rollout_config = Some(input);
         self
     }
     /// <p>Allows you to create a staged rollout of a job.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
-    ) -> Self {
-        self.job_executions_rollout_config = input;
-        self
+    pub fn set_job_executions_rollout_config(mut self, input: std::option::Option<crate::types::JobExecutionsRolloutConfig>) -> Self {
+        self.job_executions_rollout_config = input; self
     }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
@@ -229,12 +204,8 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// <p>The criteria that determine when and how a job abort takes place.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: std::option::Option<crate::types::AbortConfig>,
-    ) -> Self {
-        self.abort_config = input;
-        self
+    pub fn set_abort_config(mut self, input: std::option::Option<crate::types::AbortConfig>) -> Self {
+        self.abort_config = input; self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
@@ -242,12 +213,8 @@ impl CreateJobTemplateInputBuilder {
         self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
-        self.timeout_config = input;
-        self
+    pub fn set_timeout_config(mut self, input: std::option::Option<crate::types::TimeoutConfig>) -> Self {
+        self.timeout_config = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -256,33 +223,22 @@ impl CreateJobTemplateInputBuilder {
     /// <p>Metadata that can be used to manage the job template.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the job template.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        mut self,
-        input: crate::types::JobExecutionsRetryConfig,
-    ) -> Self {
+    pub fn job_executions_retry_config(mut self, input: crate::types::JobExecutionsRetryConfig) -> Self {
         self.job_executions_retry_config = Some(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn set_job_executions_retry_config(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    ) -> Self {
-        self.job_executions_retry_config = input;
-        self
+    pub fn set_job_executions_retry_config(mut self, input: std::option::Option<crate::types::JobExecutionsRetryConfig>) -> Self {
+        self.job_executions_retry_config = input; self
     }
     /// Appends an item to `maintenance_windows`.
     ///
@@ -291,40 +247,44 @@ impl CreateJobTemplateInputBuilder {
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
     pub fn maintenance_windows(mut self, input: crate::types::MaintenanceWindow) -> Self {
         let mut v = self.maintenance_windows.unwrap_or_default();
-        v.push(input);
-        self.maintenance_windows = Some(v);
-        self
+                        v.push(input);
+                        self.maintenance_windows = Some(v);
+                        self
     }
     /// <p>Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the target group for a job.</p>
-    pub fn set_maintenance_windows(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
-    ) -> Self {
-        self.maintenance_windows = input;
-        self
+    pub fn set_maintenance_windows(mut self, input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>) -> Self {
+        self.maintenance_windows = input; self
     }
     /// Consumes the builder and constructs a [`CreateJobTemplateInput`](crate::operation::create_job_template::CreateJobTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_job_template::CreateJobTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_job_template::CreateJobTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_job_template::CreateJobTemplateInput {
-                job_template_id: self.job_template_id,
-                job_arn: self.job_arn,
-                document_source: self.document_source,
-                document: self.document,
-                description: self.description,
-                presigned_url_config: self.presigned_url_config,
-                job_executions_rollout_config: self.job_executions_rollout_config,
-                abort_config: self.abort_config,
-                timeout_config: self.timeout_config,
-                tags: self.tags,
-                job_executions_retry_config: self.job_executions_retry_config,
-                maintenance_windows: self.maintenance_windows,
-            },
+                job_template_id: self.job_template_id
+                ,
+                job_arn: self.job_arn
+                ,
+                document_source: self.document_source
+                ,
+                document: self.document
+                ,
+                description: self.description
+                ,
+                presigned_url_config: self.presigned_url_config
+                ,
+                job_executions_rollout_config: self.job_executions_rollout_config
+                ,
+                abort_config: self.abort_config
+                ,
+                timeout_config: self.timeout_config
+                ,
+                tags: self.tags
+                ,
+                job_executions_retry_config: self.job_executions_retry_config
+                ,
+                maintenance_windows: self.maintenance_windows
+                ,
+            }
         )
     }
 }
+

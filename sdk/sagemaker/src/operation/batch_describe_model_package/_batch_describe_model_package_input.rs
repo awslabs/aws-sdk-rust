@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDescribeModelPackageInput {
+pub struct BatchDescribeModelPackageInput  {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
     #[doc(hidden)]
     pub model_package_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDescribeModelPackageInput {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn model_package_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn model_package_arn_list(&self) -> std::option::Option<& [std::string::String]> {
         self.model_package_arn_list.as_deref()
     }
 }
 impl BatchDescribeModelPackageInput {
     /// Creates a new builder-style object to manufacture [`BatchDescribeModelPackageInput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput).
-    pub fn builder() -> crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder{
+    pub fn builder() -> crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder {
         crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder::default()
     }
 }
@@ -34,29 +34,22 @@ impl BatchDescribeModelPackageInputBuilder {
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
     pub fn model_package_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.model_package_arn_list.unwrap_or_default();
-        v.push(input.into());
-        self.model_package_arn_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.model_package_arn_list = Some(v);
+                        self
     }
     /// <p>The list of Amazon Resource Name (ARN) of the model package groups.</p>
-    pub fn set_model_package_arn_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.model_package_arn_list = input;
-        self
+    pub fn set_model_package_arn_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.model_package_arn_list = input; self
     }
     /// Consumes the builder and constructs a [`BatchDescribeModelPackageInput`](crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_describe_model_package::BatchDescribeModelPackageInput {
-                model_package_arn_list: self.model_package_arn_list,
-            },
+                model_package_arn_list: self.model_package_arn_list
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDevEndpointsOutput {
+pub struct BatchGetDevEndpointsOutput  {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
     #[doc(hidden)]
     pub dev_endpoints: std::option::Option<std::vec::Vec<crate::types::DevEndpoint>>,
@@ -13,24 +13,22 @@ pub struct BatchGetDevEndpointsOutput {
 }
 impl BatchGetDevEndpointsOutput {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn dev_endpoints(&self) -> std::option::Option<&[crate::types::DevEndpoint]> {
+    pub fn dev_endpoints(&self) -> std::option::Option<& [crate::types::DevEndpoint]> {
         self.dev_endpoints.as_deref()
     }
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
-    pub fn dev_endpoints_not_found(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dev_endpoints_not_found(&self) -> std::option::Option<& [std::string::String]> {
         self.dev_endpoints_not_found.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetDevEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetDevEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDevEndpointsOutput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsOutputBuilder {
         crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl BatchGetDevEndpointsOutputBuilder {
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
     pub fn dev_endpoints(mut self, input: crate::types::DevEndpoint) -> Self {
         let mut v = self.dev_endpoints.unwrap_or_default();
-        v.push(input);
-        self.dev_endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.dev_endpoints = Some(v);
+                        self
     }
     /// <p>A list of <code>DevEndpoint</code> definitions.</p>
-    pub fn set_dev_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DevEndpoint>>,
-    ) -> Self {
-        self.dev_endpoints = input;
-        self
+    pub fn set_dev_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::DevEndpoint>>) -> Self {
+        self.dev_endpoints = input; self
     }
     /// Appends an item to `dev_endpoints_not_found`.
     ///
@@ -70,33 +64,32 @@ impl BatchGetDevEndpointsOutputBuilder {
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
     pub fn dev_endpoints_not_found(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dev_endpoints_not_found.unwrap_or_default();
-        v.push(input.into());
-        self.dev_endpoints_not_found = Some(v);
-        self
+                        v.push(input.into());
+                        self.dev_endpoints_not_found = Some(v);
+                        self
     }
     /// <p>A list of <code>DevEndpoints</code> not found.</p>
-    pub fn set_dev_endpoints_not_found(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.dev_endpoints_not_found = input;
-        self
+    pub fn set_dev_endpoints_not_found(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.dev_endpoints_not_found = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetDevEndpointsOutput`](crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput).
     pub fn build(self) -> crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput {
         crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput {
-            dev_endpoints: self.dev_endpoints,
-            dev_endpoints_not_found: self.dev_endpoints_not_found,
+            dev_endpoints: self.dev_endpoints
+            ,
+            dev_endpoints_not_found: self.dev_endpoints_not_found
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

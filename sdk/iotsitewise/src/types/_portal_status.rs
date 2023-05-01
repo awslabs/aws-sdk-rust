@@ -3,7 +3,7 @@
 /// <p>Contains information about the current status of a portal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortalStatus {
+pub struct PortalStatus  {
     /// <p>The current state of the portal.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::PortalState>,
@@ -13,11 +13,11 @@ pub struct PortalStatus {
 }
 impl PortalStatus {
     /// <p>The current state of the portal.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::PortalState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::PortalState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::MonitorErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::types::MonitorErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl PortalStatusBuilder {
     }
     /// <p>The current state of the portal.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::PortalState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::MonitorErrorDetails) -> Self {
@@ -52,18 +51,17 @@ impl PortalStatusBuilder {
         self
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn set_error(
-        mut self,
-        input: std::option::Option<crate::types::MonitorErrorDetails>,
-    ) -> Self {
-        self.error = input;
-        self
+    pub fn set_error(mut self, input: std::option::Option<crate::types::MonitorErrorDetails>) -> Self {
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`PortalStatus`](crate::types::PortalStatus).
     pub fn build(self) -> crate::types::PortalStatus {
         crate::types::PortalStatus {
-            state: self.state,
-            error: self.error,
+            state: self.state
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

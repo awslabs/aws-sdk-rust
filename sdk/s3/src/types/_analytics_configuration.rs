@@ -3,7 +3,7 @@
 /// <p>Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyticsConfiguration {
+pub struct AnalyticsConfiguration  {
     /// <p>The ID that identifies the analytics configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,17 +16,15 @@ pub struct AnalyticsConfiguration {
 }
 impl AnalyticsConfiguration {
     /// <p>The ID that identifies the analytics configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::AnalyticsFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::AnalyticsFilter> {
         self.filter.as_ref()
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
-    pub fn storage_class_analysis(
-        &self,
-    ) -> std::option::Option<&crate::types::StorageClassAnalysis> {
+    pub fn storage_class_analysis(&self) -> std::option::Option<& crate::types::StorageClassAnalysis> {
         self.storage_class_analysis.as_ref()
     }
 }
@@ -53,8 +51,7 @@ impl AnalyticsConfigurationBuilder {
     }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub fn filter(mut self, input: crate::types::AnalyticsFilter) -> Self {
@@ -63,8 +60,7 @@ impl AnalyticsConfigurationBuilder {
     }
     /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
     pub fn set_filter(mut self, input: std::option::Option<crate::types::AnalyticsFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
     pub fn storage_class_analysis(mut self, input: crate::types::StorageClassAnalysis) -> Self {
@@ -72,19 +68,19 @@ impl AnalyticsConfigurationBuilder {
         self
     }
     /// <p> Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes. </p>
-    pub fn set_storage_class_analysis(
-        mut self,
-        input: std::option::Option<crate::types::StorageClassAnalysis>,
-    ) -> Self {
-        self.storage_class_analysis = input;
-        self
+    pub fn set_storage_class_analysis(mut self, input: std::option::Option<crate::types::StorageClassAnalysis>) -> Self {
+        self.storage_class_analysis = input; self
     }
     /// Consumes the builder and constructs a [`AnalyticsConfiguration`](crate::types::AnalyticsConfiguration).
     pub fn build(self) -> crate::types::AnalyticsConfiguration {
         crate::types::AnalyticsConfiguration {
-            id: self.id,
-            filter: self.filter,
-            storage_class_analysis: self.storage_class_analysis,
+            id: self.id
+            ,
+            filter: self.filter
+            ,
+            storage_class_analysis: self.storage_class_analysis
+            ,
         }
     }
 }
+

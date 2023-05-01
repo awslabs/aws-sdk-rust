@@ -3,7 +3,7 @@
 /// <p>The input structure for specifying ViewOffNadir property filter. ViewOffNadir refers to the angle from the sensor between nadir (straight down) and the scene center. Measured in degrees (0-90).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ViewOffNadirInput {
+pub struct ViewOffNadirInput  {
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     #[doc(hidden)]
     pub lower_bound: std::option::Option<f32>,
@@ -43,8 +43,7 @@ impl ViewOffNadirInputBuilder {
     }
     /// <p>The minimum value for ViewOffNadir property filter. This filters items having ViewOffNadir greater than or equal to this value. </p>
     pub fn set_lower_bound(mut self, input: std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
@@ -53,14 +52,16 @@ impl ViewOffNadirInputBuilder {
     }
     /// <p>The maximum value for ViewOffNadir property filter. This filters items having ViewOffNadir lesser than or equal to this value.</p>
     pub fn set_upper_bound(mut self, input: std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// Consumes the builder and constructs a [`ViewOffNadirInput`](crate::types::ViewOffNadirInput).
     pub fn build(self) -> crate::types::ViewOffNadirInput {
         crate::types::ViewOffNadirInput {
-            lower_bound: self.lower_bound,
-            upper_bound: self.upper_bound,
+            lower_bound: self.lower_bound
+            ,
+            upper_bound: self.upper_bound
+            ,
         }
     }
 }
+

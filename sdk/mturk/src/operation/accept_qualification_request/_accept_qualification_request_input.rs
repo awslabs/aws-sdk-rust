@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptQualificationRequestInput {
+pub struct AcceptQualificationRequestInput  {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
     #[doc(hidden)]
     pub qualification_request_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct AcceptQualificationRequestInput {
 }
 impl AcceptQualificationRequestInput {
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-    pub fn qualification_request_id(&self) -> std::option::Option<&str> {
+    pub fn qualification_request_id(&self) -> std::option::Option<& str> {
         self.qualification_request_id.as_deref()
     }
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
@@ -22,7 +22,7 @@ impl AcceptQualificationRequestInput {
 }
 impl AcceptQualificationRequestInput {
     /// Creates a new builder-style object to manufacture [`AcceptQualificationRequestInput`](crate::operation::accept_qualification_request::AcceptQualificationRequestInput).
-    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder{
+    pub fn builder() -> crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder {
         crate::operation::accept_qualification_request::builders::AcceptQualificationRequestInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl AcceptQualificationRequestInputBuilder {
         self
     }
     /// <p>The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code> operation.</p>
-    pub fn set_qualification_request_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.qualification_request_id = input;
-        self
+    pub fn set_qualification_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.qualification_request_id = input; self
     }
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     pub fn integer_value(mut self, input: i32) -> Self {
@@ -55,21 +51,18 @@ impl AcceptQualificationRequestInputBuilder {
     }
     /// <p> The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement. </p>
     pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.integer_value = input;
-        self
+        self.integer_value = input; self
     }
     /// Consumes the builder and constructs a [`AcceptQualificationRequestInput`](crate::operation::accept_qualification_request::AcceptQualificationRequestInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::accept_qualification_request::AcceptQualificationRequestInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::accept_qualification_request::AcceptQualificationRequestInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::accept_qualification_request::AcceptQualificationRequestInput {
-                qualification_request_id: self.qualification_request_id,
-                integer_value: self.integer_value,
-            },
+                qualification_request_id: self.qualification_request_id
+                ,
+                integer_value: self.integer_value
+                ,
+            }
         )
     }
 }
+

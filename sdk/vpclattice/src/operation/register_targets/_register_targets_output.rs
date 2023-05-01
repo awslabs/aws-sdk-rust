@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterTargetsOutput {
+pub struct RegisterTargetsOutput  {
     /// <p>The targets that were successfully registered.</p>
     #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::types::Target>>,
@@ -13,19 +13,19 @@ pub struct RegisterTargetsOutput {
 }
 impl RegisterTargetsOutput {
     /// <p>The targets that were successfully registered.</p>
-    pub fn successful(&self) -> std::option::Option<&[crate::types::Target]> {
+    pub fn successful(&self) -> std::option::Option<& [crate::types::Target]> {
         self.successful.as_deref()
     }
     /// <p>The targets that were not registered.</p>
-    pub fn unsuccessful(&self) -> std::option::Option<&[crate::types::TargetFailure]> {
+    pub fn unsuccessful(&self) -> std::option::Option<& [crate::types::TargetFailure]> {
         self.unsuccessful.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterTargetsOutput {
     /// Creates a new builder-style object to manufacture [`RegisterTargetsOutput`](crate::operation::register_targets::RegisterTargetsOutput).
     pub fn builder() -> crate::operation::register_targets::builders::RegisterTargetsOutputBuilder {
@@ -49,17 +49,13 @@ impl RegisterTargetsOutputBuilder {
     /// <p>The targets that were successfully registered.</p>
     pub fn successful(mut self, input: crate::types::Target) -> Self {
         let mut v = self.successful.unwrap_or_default();
-        v.push(input);
-        self.successful = Some(v);
-        self
+                        v.push(input);
+                        self.successful = Some(v);
+                        self
     }
     /// <p>The targets that were successfully registered.</p>
-    pub fn set_successful(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
-        self.successful = input;
-        self
+    pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+        self.successful = input; self
     }
     /// Appends an item to `unsuccessful`.
     ///
@@ -68,33 +64,32 @@ impl RegisterTargetsOutputBuilder {
     /// <p>The targets that were not registered.</p>
     pub fn unsuccessful(mut self, input: crate::types::TargetFailure) -> Self {
         let mut v = self.unsuccessful.unwrap_or_default();
-        v.push(input);
-        self.unsuccessful = Some(v);
-        self
+                        v.push(input);
+                        self.unsuccessful = Some(v);
+                        self
     }
     /// <p>The targets that were not registered.</p>
-    pub fn set_unsuccessful(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetFailure>>,
-    ) -> Self {
-        self.unsuccessful = input;
-        self
+    pub fn set_unsuccessful(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetFailure>>) -> Self {
+        self.unsuccessful = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterTargetsOutput`](crate::operation::register_targets::RegisterTargetsOutput).
     pub fn build(self) -> crate::operation::register_targets::RegisterTargetsOutput {
         crate::operation::register_targets::RegisterTargetsOutput {
-            successful: self.successful,
-            unsuccessful: self.unsuccessful,
+            successful: self.successful
+            ,
+            unsuccessful: self.unsuccessful
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

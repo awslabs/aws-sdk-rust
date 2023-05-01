@@ -3,7 +3,7 @@
 /// <p>Describes the hardware of a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelationalDatabaseHardware {
+pub struct RelationalDatabaseHardware  {
     /// <p>The number of vCPUs for the database.</p>
     #[doc(hidden)]
     pub cpu_count: std::option::Option<i32>,
@@ -51,8 +51,7 @@ impl RelationalDatabaseHardwareBuilder {
     }
     /// <p>The number of vCPUs for the database.</p>
     pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.cpu_count = input;
-        self
+        self.cpu_count = input; self
     }
     /// <p>The size of the disk for the database.</p>
     pub fn disk_size_in_gb(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl RelationalDatabaseHardwareBuilder {
     }
     /// <p>The size of the disk for the database.</p>
     pub fn set_disk_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-        self.disk_size_in_gb = input;
-        self
+        self.disk_size_in_gb = input; self
     }
     /// <p>The amount of RAM in GB for the database.</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
@@ -71,15 +69,18 @@ impl RelationalDatabaseHardwareBuilder {
     }
     /// <p>The amount of RAM in GB for the database.</p>
     pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
-        self.ram_size_in_gb = input;
-        self
+        self.ram_size_in_gb = input; self
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseHardware`](crate::types::RelationalDatabaseHardware).
     pub fn build(self) -> crate::types::RelationalDatabaseHardware {
         crate::types::RelationalDatabaseHardware {
-            cpu_count: self.cpu_count,
-            disk_size_in_gb: self.disk_size_in_gb,
-            ram_size_in_gb: self.ram_size_in_gb,
+            cpu_count: self.cpu_count
+            ,
+            disk_size_in_gb: self.disk_size_in_gb
+            ,
+            ram_size_in_gb: self.ram_size_in_gb
+            ,
         }
     }
 }
+

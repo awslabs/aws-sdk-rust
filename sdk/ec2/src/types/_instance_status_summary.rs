@@ -3,7 +3,7 @@
 /// <p>Describes the status of an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceStatusSummary {
+pub struct InstanceStatusSummary  {
     /// <p>The system instance health or application instance health.</p>
     #[doc(hidden)]
     pub details: std::option::Option<std::vec::Vec<crate::types::InstanceStatusDetails>>,
@@ -13,11 +13,11 @@ pub struct InstanceStatusSummary {
 }
 impl InstanceStatusSummary {
     /// <p>The system instance health or application instance health.</p>
-    pub fn details(&self) -> std::option::Option<&[crate::types::InstanceStatusDetails]> {
+    pub fn details(&self) -> std::option::Option<& [crate::types::InstanceStatusDetails]> {
         self.details.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SummaryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::SummaryStatus> {
         self.status.as_ref()
     }
 }
@@ -43,17 +43,13 @@ impl InstanceStatusSummaryBuilder {
     /// <p>The system instance health or application instance health.</p>
     pub fn details(mut self, input: crate::types::InstanceStatusDetails) -> Self {
         let mut v = self.details.unwrap_or_default();
-        v.push(input);
-        self.details = Some(v);
-        self
+                        v.push(input);
+                        self.details = Some(v);
+                        self
     }
     /// <p>The system instance health or application instance health.</p>
-    pub fn set_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceStatusDetails>>,
-    ) -> Self {
-        self.details = input;
-        self
+    pub fn set_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceStatusDetails>>) -> Self {
+        self.details = input; self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::SummaryStatus) -> Self {
@@ -62,14 +58,16 @@ impl InstanceStatusSummaryBuilder {
     }
     /// <p>The status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::SummaryStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`InstanceStatusSummary`](crate::types::InstanceStatusSummary).
     pub fn build(self) -> crate::types::InstanceStatusSummary {
         crate::types::InstanceStatusSummary {
-            details: self.details,
-            status: self.status,
+            details: self.details
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

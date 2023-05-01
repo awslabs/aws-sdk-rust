@@ -3,7 +3,7 @@
 /// <p>Information about of the hours of operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HoursOfOperation {
+pub struct HoursOfOperation  {
     /// <p>The identifier for the hours of operation.</p>
     #[doc(hidden)]
     pub hours_of_operation_id: std::option::Option<std::string::String>,
@@ -24,39 +24,35 @@ pub struct HoursOfOperation {
     pub config: std::option::Option<std::vec::Vec<crate::types::HoursOfOperationConfig>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl HoursOfOperation {
     /// <p>The identifier for the hours of operation.</p>
-    pub fn hours_of_operation_id(&self) -> std::option::Option<&str> {
+    pub fn hours_of_operation_id(&self) -> std::option::Option<& str> {
         self.hours_of_operation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
-    pub fn hours_of_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn hours_of_operation_arn(&self) -> std::option::Option<& str> {
         self.hours_of_operation_arn.as_deref()
     }
     /// <p>The name for the hours of operation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description for the hours of operation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The time zone for the hours of operation.</p>
-    pub fn time_zone(&self) -> std::option::Option<&str> {
+    pub fn time_zone(&self) -> std::option::Option<& str> {
         self.time_zone.as_deref()
     }
     /// <p>Configuration information for the hours of operation.</p>
-    pub fn config(&self) -> std::option::Option<&[crate::types::HoursOfOperationConfig]> {
+    pub fn config(&self) -> std::option::Option<& [crate::types::HoursOfOperationConfig]> {
         self.config.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -77,8 +73,7 @@ pub struct HoursOfOperationBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) time_zone: std::option::Option<std::string::String>,
     pub(crate) config: std::option::Option<std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl HoursOfOperationBuilder {
     /// <p>The identifier for the hours of operation.</p>
@@ -87,12 +82,8 @@ impl HoursOfOperationBuilder {
         self
     }
     /// <p>The identifier for the hours of operation.</p>
-    pub fn set_hours_of_operation_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hours_of_operation_id = input;
-        self
+    pub fn set_hours_of_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hours_of_operation_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
     pub fn hours_of_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,12 +91,8 @@ impl HoursOfOperationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
-    pub fn set_hours_of_operation_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hours_of_operation_arn = input;
-        self
+    pub fn set_hours_of_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hours_of_operation_arn = input; self
     }
     /// <p>The name for the hours of operation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +101,7 @@ impl HoursOfOperationBuilder {
     }
     /// <p>The name for the hours of operation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description for the hours of operation.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +110,7 @@ impl HoursOfOperationBuilder {
     }
     /// <p>The description for the hours of operation.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The time zone for the hours of operation.</p>
     pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +119,7 @@ impl HoursOfOperationBuilder {
     }
     /// <p>The time zone for the hours of operation.</p>
     pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone = input;
-        self
+        self.time_zone = input; self
     }
     /// Appends an item to `config`.
     ///
@@ -144,53 +128,47 @@ impl HoursOfOperationBuilder {
     /// <p>Configuration information for the hours of operation.</p>
     pub fn config(mut self, input: crate::types::HoursOfOperationConfig) -> Self {
         let mut v = self.config.unwrap_or_default();
-        v.push(input);
-        self.config = Some(v);
-        self
+                        v.push(input);
+                        self.config = Some(v);
+                        self
     }
     /// <p>Configuration information for the hours of operation.</p>
-    pub fn set_config(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HoursOfOperationConfig>>,
-    ) -> Self {
-        self.config = input;
-        self
+    pub fn set_config(mut self, input: std::option::Option<std::vec::Vec<crate::types::HoursOfOperationConfig>>) -> Self {
+        self.config = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`HoursOfOperation`](crate::types::HoursOfOperation).
     pub fn build(self) -> crate::types::HoursOfOperation {
         crate::types::HoursOfOperation {
-            hours_of_operation_id: self.hours_of_operation_id,
-            hours_of_operation_arn: self.hours_of_operation_arn,
-            name: self.name,
-            description: self.description,
-            time_zone: self.time_zone,
-            config: self.config,
-            tags: self.tags,
+            hours_of_operation_id: self.hours_of_operation_id
+            ,
+            hours_of_operation_arn: self.hours_of_operation_arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            time_zone: self.time_zone
+            ,
+            config: self.config
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

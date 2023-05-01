@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArtifactsInput {
+pub struct ListArtifactsInput  {
     /// <p>A filter that returns only artifacts with the specified source URI.</p>
     #[doc(hidden)]
     pub source_uri: std::option::Option<std::string::String>,
@@ -30,31 +30,31 @@ pub struct ListArtifactsInput {
 }
 impl ListArtifactsInput {
     /// <p>A filter that returns only artifacts with the specified source URI.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
-    pub fn artifact_type(&self) -> std::option::Option<&str> {
+    pub fn artifact_type(&self) -> std::option::Option<& str> {
         self.artifact_type.as_deref()
     }
     /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::SortArtifactsBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::SortArtifactsBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
@@ -90,8 +90,7 @@ impl ListArtifactsInputBuilder {
     }
     /// <p>A filter that returns only artifacts with the specified source URI.</p>
     pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_uri = input;
-        self
+        self.source_uri = input; self
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
     pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +99,7 @@ impl ListArtifactsInputBuilder {
     }
     /// <p>A filter that returns only artifacts of the specified type.</p>
     pub fn set_artifact_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_type = input;
-        self
+        self.artifact_type = input; self
     }
     /// <p>A filter that returns only artifacts created on or after the specified time.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -109,12 +107,8 @@ impl ListArtifactsInputBuilder {
         self
     }
     /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-    pub fn set_created_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_after = input;
-        self
+    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_after = input; self
     }
     /// <p>A filter that returns only artifacts created on or before the specified time.</p>
     pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,12 +116,8 @@ impl ListArtifactsInputBuilder {
         self
     }
     /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-    pub fn set_created_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_before = input;
-        self
+    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_before = input; self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::SortArtifactsBy) -> Self {
@@ -135,12 +125,8 @@ impl ListArtifactsInputBuilder {
         self
     }
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::SortArtifactsBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SortArtifactsBy>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -149,8 +135,7 @@ impl ListArtifactsInputBuilder {
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +144,7 @@ impl ListArtifactsInputBuilder {
     }
     /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -169,25 +153,30 @@ impl ListArtifactsInputBuilder {
     }
     /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_artifacts::ListArtifactsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_artifacts::ListArtifactsInput {
-            source_uri: self.source_uri,
-            artifact_type: self.artifact_type,
-            created_after: self.created_after,
-            created_before: self.created_before,
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_artifacts::ListArtifactsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_artifacts::ListArtifactsInput {
+                source_uri: self.source_uri
+                ,
+                artifact_type: self.artifact_type
+                ,
+                created_after: self.created_after
+                ,
+                created_before: self.created_before
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

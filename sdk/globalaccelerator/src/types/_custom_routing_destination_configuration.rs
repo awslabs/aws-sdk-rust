@@ -3,7 +3,7 @@
 /// <p>For a custom routing accelerator, sets the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomRoutingDestinationConfiguration {
+pub struct CustomRoutingDestinationConfiguration  {
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     #[doc(hidden)]
     pub from_port: std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl CustomRoutingDestinationConfiguration {
         self.to_port
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn protocols(&self) -> std::option::Option<&[crate::types::CustomRoutingProtocol]> {
+    pub fn protocols(&self) -> std::option::Option<& [crate::types::CustomRoutingProtocol]> {
         self.protocols.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CustomRoutingDestinationConfigurationBuilder {
     }
     /// <p>The first port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.from_port = input;
-        self
+        self.from_port = input; self
     }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn to_port(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl CustomRoutingDestinationConfigurationBuilder {
     }
     /// <p>The last port, inclusive, in the range of ports for the endpoint group that is associated with a custom routing accelerator.</p>
     pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.to_port = input;
-        self
+        self.to_port = input; self
     }
     /// Appends an item to `protocols`.
     ///
@@ -71,24 +69,24 @@ impl CustomRoutingDestinationConfigurationBuilder {
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
     pub fn protocols(mut self, input: crate::types::CustomRoutingProtocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = Some(v);
-        self
+                        v.push(input);
+                        self.protocols = Some(v);
+                        self
     }
     /// <p>The protocol for the endpoint group that is associated with a custom routing accelerator. The protocol can be either TCP or UDP.</p>
-    pub fn set_protocols(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomRoutingProtocol>>,
-    ) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomRoutingProtocol>>) -> Self {
+        self.protocols = input; self
     }
     /// Consumes the builder and constructs a [`CustomRoutingDestinationConfiguration`](crate::types::CustomRoutingDestinationConfiguration).
     pub fn build(self) -> crate::types::CustomRoutingDestinationConfiguration {
         crate::types::CustomRoutingDestinationConfiguration {
-            from_port: self.from_port,
-            to_port: self.to_port,
-            protocols: self.protocols,
+            from_port: self.from_port
+            ,
+            to_port: self.to_port
+            ,
+            protocols: self.protocols
+            ,
         }
     }
 }
+

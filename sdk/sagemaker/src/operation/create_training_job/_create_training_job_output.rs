@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrainingJobOutput {
+pub struct CreateTrainingJobOutput  {
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     #[doc(hidden)]
     pub training_job_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct CreateTrainingJobOutput {
 }
 impl CreateTrainingJobOutput {
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(&self) -> std::option::Option<&str> {
+    pub fn training_job_arn(&self) -> std::option::Option<& str> {
         self.training_job_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrainingJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTrainingJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrainingJobOutput`](crate::operation::create_training_job::CreateTrainingJobOutput).
-    pub fn builder(
-    ) -> crate::operation::create_training_job::builders::CreateTrainingJobOutputBuilder {
+    pub fn builder() -> crate::operation::create_training_job::builders::CreateTrainingJobOutputBuilder {
         crate::operation::create_training_job::builders::CreateTrainingJobOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl CreateTrainingJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     pub fn set_training_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.training_job_arn = input;
-        self
+        self.training_job_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTrainingJobOutput`](crate::operation::create_training_job::CreateTrainingJobOutput).
     pub fn build(self) -> crate::operation::create_training_job::CreateTrainingJobOutput {
         crate::operation::create_training_job::CreateTrainingJobOutput {
-            training_job_arn: self.training_job_arn,
+            training_job_arn: self.training_job_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

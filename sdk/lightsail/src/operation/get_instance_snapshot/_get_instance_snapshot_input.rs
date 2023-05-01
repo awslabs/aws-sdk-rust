@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceSnapshotInput {
+pub struct GetInstanceSnapshotInput  {
     /// <p>The name of the snapshot for which you are requesting information.</p>
     #[doc(hidden)]
     pub instance_snapshot_name: std::option::Option<std::string::String>,
 }
 impl GetInstanceSnapshotInput {
     /// <p>The name of the snapshot for which you are requesting information.</p>
-    pub fn instance_snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn instance_snapshot_name(&self) -> std::option::Option<& str> {
         self.instance_snapshot_name.as_deref()
     }
 }
 impl GetInstanceSnapshotInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
-    pub fn builder(
-    ) -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder {
-        crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder {
+        crate::operation::get_instance_snapshot::builders::GetInstanceSnapshotInputBuilder::default()
     }
 }
 
@@ -35,24 +33,17 @@ impl GetInstanceSnapshotInputBuilder {
         self
     }
     /// <p>The name of the snapshot for which you are requesting information.</p>
-    pub fn set_instance_snapshot_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_snapshot_name = input;
-        self
+    pub fn set_instance_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_snapshot_name = input; self
     }
     /// Consumes the builder and constructs a [`GetInstanceSnapshotInput`](crate::operation::get_instance_snapshot::GetInstanceSnapshotInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_instance_snapshot::GetInstanceSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_instance_snapshot::GetInstanceSnapshotInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_instance_snapshot::GetInstanceSnapshotInput {
-                instance_snapshot_name: self.instance_snapshot_name,
-            },
+                instance_snapshot_name: self.instance_snapshot_name
+                ,
+            }
         )
     }
 }
+

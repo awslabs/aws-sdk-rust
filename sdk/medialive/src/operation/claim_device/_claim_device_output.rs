@@ -3,14 +3,14 @@
 /// Placeholder documentation for ClaimDeviceResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimDeviceOutput {
+pub struct ClaimDeviceOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ClaimDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ClaimDeviceOutput {
     /// Creates a new builder-style object to manufacture [`ClaimDeviceOutput`](crate::operation::claim_device::ClaimDeviceOutput).
     pub fn builder() -> crate::operation::claim_device::builders::ClaimDeviceOutputBuilder {
@@ -26,14 +26,14 @@ pub struct ClaimDeviceOutputBuilder {
 }
 impl ClaimDeviceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ClaimDeviceOutput`](crate::operation::claim_device::ClaimDeviceOutput).
     pub fn build(self) -> crate::operation::claim_device::ClaimDeviceOutput {
         crate::operation::claim_device::ClaimDeviceOutput {
@@ -41,3 +41,4 @@ impl ClaimDeviceOutputBuilder {
         }
     }
 }
+

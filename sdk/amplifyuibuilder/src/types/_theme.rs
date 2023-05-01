@@ -3,7 +3,7 @@
 /// <p>A theme is a collection of style settings that apply globally to the components associated with an Amplify application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Theme {
+pub struct Theme  {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -30,47 +30,43 @@ pub struct Theme {
     pub overrides: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Theme {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The ID for the theme.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time that the theme was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time that the theme was modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>A list of key-value pairs that defines the properties of the theme.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
+    pub fn values(&self) -> std::option::Option<& [crate::types::ThemeValues]> {
         self.values.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize a theme.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::types::ThemeValues]> {
         self.overrides.as_deref()
     }
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -93,8 +89,7 @@ pub struct ThemeBuilder {
     pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) values: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
     pub(crate) overrides: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ThemeBuilder {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
@@ -104,8 +99,7 @@ impl ThemeBuilder {
     }
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +108,7 @@ impl ThemeBuilder {
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input;
-        self
+        self.environment_name = input; self
     }
     /// <p>The ID for the theme.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +117,7 @@ impl ThemeBuilder {
     }
     /// <p>The ID for the theme.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the theme.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +126,7 @@ impl ThemeBuilder {
     }
     /// <p>The name of the theme.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The time that the theme was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,12 +134,8 @@ impl ThemeBuilder {
         self
     }
     /// <p>The time that the theme was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The time that the theme was modified.</p>
     pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -156,12 +143,8 @@ impl ThemeBuilder {
         self
     }
     /// <p>The time that the theme was modified.</p>
-    pub fn set_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_at = input;
-        self
+    pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -170,17 +153,13 @@ impl ThemeBuilder {
     /// <p>A list of key-value pairs that defines the properties of the theme.</p>
     pub fn values(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>A list of key-value pairs that defines the properties of the theme.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>) -> Self {
+        self.values = input; self
     }
     /// Appends an item to `overrides`.
     ///
@@ -189,55 +168,51 @@ impl ThemeBuilder {
     /// <p>Describes the properties that can be overriden to customize a theme.</p>
     pub fn overrides(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-        v.push(input);
-        self.overrides = Some(v);
-        self
+                        v.push(input);
+                        self.overrides = Some(v);
+                        self
     }
     /// <p>Describes the properties that can be overriden to customize a theme.</p>
-    pub fn set_overrides(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
-    ) -> Self {
-        self.overrides = input;
-        self
+    pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>) -> Self {
+        self.overrides = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`Theme`](crate::types::Theme).
     pub fn build(self) -> crate::types::Theme {
         crate::types::Theme {
-            app_id: self.app_id,
-            environment_name: self.environment_name,
-            id: self.id,
-            name: self.name,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-            values: self.values,
-            overrides: self.overrides,
-            tags: self.tags,
+            app_id: self.app_id
+            ,
+            environment_name: self.environment_name
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            created_at: self.created_at
+            ,
+            modified_at: self.modified_at
+            ,
+            values: self.values
+            ,
+            overrides: self.overrides
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

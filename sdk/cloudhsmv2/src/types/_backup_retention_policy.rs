@@ -3,7 +3,7 @@
 /// <p>A policy that defines the number of days to retain backups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackupRetentionPolicy {
+pub struct BackupRetentionPolicy  {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::BackupRetentionType>,
@@ -13,11 +13,11 @@ pub struct BackupRetentionPolicy {
 }
 impl BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::BackupRetentionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::BackupRetentionType> {
         self.r#type.as_ref()
     }
     /// <p>Use a value between 7 - 379.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl BackupRetentionPolicyBuilder {
         self
     }
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::BackupRetentionType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::BackupRetentionType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>Use a value between 7 - 379.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl BackupRetentionPolicyBuilder {
     }
     /// <p>Use a value between 7 - 379.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`BackupRetentionPolicy`](crate::types::BackupRetentionPolicy).
     pub fn build(self) -> crate::types::BackupRetentionPolicy {
         crate::types::BackupRetentionPolicy {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThingRegistrationTasksInput {
+pub struct ListThingRegistrationTasksInput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListThingRegistrationTasksInput {
 }
 impl ListThingRegistrationTasksInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -23,13 +23,13 @@ impl ListThingRegistrationTasksInput {
         self.max_results
     }
     /// <p>The status of the bulk thing provisioning task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl ListThingRegistrationTasksInput {
     /// Creates a new builder-style object to manufacture [`ListThingRegistrationTasksInput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput).
-    pub fn builder() -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder {
         crate::operation::list_thing_registration_tasks::builders::ListThingRegistrationTasksInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListThingRegistrationTasksInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListThingRegistrationTasksInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The status of the bulk thing provisioning task.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -70,22 +68,20 @@ impl ListThingRegistrationTasksInputBuilder {
     }
     /// <p>The status of the bulk thing provisioning task.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ListThingRegistrationTasksInput`](crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_thing_registration_tasks::ListThingRegistrationTasksInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                status: self.status,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

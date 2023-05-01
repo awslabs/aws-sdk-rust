@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotOutput {
+pub struct UpdateBotOutput  {
     /// <p>The updated bot details.</p>
     #[doc(hidden)]
     pub bot: std::option::Option<crate::types::Bot>,
@@ -10,15 +10,15 @@ pub struct UpdateBotOutput {
 }
 impl UpdateBotOutput {
     /// <p>The updated bot details.</p>
-    pub fn bot(&self) -> std::option::Option<&crate::types::Bot> {
+    pub fn bot(&self) -> std::option::Option<& crate::types::Bot> {
         self.bot.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateBotOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateBotOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotOutput`](crate::operation::update_bot::UpdateBotOutput).
     pub fn builder() -> crate::operation::update_bot::builders::UpdateBotOutputBuilder {
@@ -41,23 +41,24 @@ impl UpdateBotOutputBuilder {
     }
     /// <p>The updated bot details.</p>
     pub fn set_bot(mut self, input: std::option::Option<crate::types::Bot>) -> Self {
-        self.bot = input;
-        self
+        self.bot = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateBotOutput`](crate::operation::update_bot::UpdateBotOutput).
     pub fn build(self) -> crate::operation::update_bot::UpdateBotOutput {
         crate::operation::update_bot::UpdateBotOutput {
-            bot: self.bot,
+            bot: self.bot
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

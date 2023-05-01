@@ -3,7 +3,7 @@
 /// <p> Represents a share request for a custom framework in Audit Manager. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentFrameworkShareRequest {
+pub struct AssessmentFrameworkShareRequest  {
     /// <p> The unique identifier for the share request. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -52,51 +52,51 @@ pub struct AssessmentFrameworkShareRequest {
 }
 impl AssessmentFrameworkShareRequest {
     /// <p> The unique identifier for the share request. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The unique identifier for the shared custom framework. </p>
-    pub fn framework_id(&self) -> std::option::Option<&str> {
+    pub fn framework_id(&self) -> std::option::Option<& str> {
         self.framework_id.as_deref()
     }
     /// <p> The name of the custom framework that the share request is for. </p>
-    pub fn framework_name(&self) -> std::option::Option<&str> {
+    pub fn framework_name(&self) -> std::option::Option<& str> {
         self.framework_name.as_deref()
     }
     /// <p>The description of the shared custom framework.</p>
-    pub fn framework_description(&self) -> std::option::Option<&str> {
+    pub fn framework_description(&self) -> std::option::Option<& str> {
         self.framework_description.as_deref()
     }
     /// <p> The status of the share request. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ShareRequestStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ShareRequestStatus> {
         self.status.as_ref()
     }
     /// <p> The Amazon Web Services account of the sender. </p>
-    pub fn source_account(&self) -> std::option::Option<&str> {
+    pub fn source_account(&self) -> std::option::Option<& str> {
         self.source_account.as_deref()
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn destination_account(&self) -> std::option::Option<&str> {
+    pub fn destination_account(&self) -> std::option::Option<& str> {
         self.destination_account.as_deref()
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn destination_region(&self) -> std::option::Option<&str> {
+    pub fn destination_region(&self) -> std::option::Option<& str> {
         self.destination_region.as_deref()
     }
     /// <p> The time when the share request expires. </p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p> The time when the share request was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Specifies when the share request was last updated. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p> An optional comment from the sender about the share request. </p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The number of standard controls that are part of the shared custom framework. </p>
@@ -108,7 +108,7 @@ impl AssessmentFrameworkShareRequest {
         self.custom_controls_count
     }
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
-    pub fn compliance_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_type(&self) -> std::option::Option<& str> {
         self.compliance_type.as_deref()
     }
 }
@@ -147,8 +147,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p> The unique identifier for the share request. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The unique identifier for the shared custom framework. </p>
     pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +156,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p>The unique identifier for the shared custom framework. </p>
     pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_id = input;
-        self
+        self.framework_id = input; self
     }
     /// <p> The name of the custom framework that the share request is for. </p>
     pub fn framework_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +165,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p> The name of the custom framework that the share request is for. </p>
     pub fn set_framework_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_name = input;
-        self
+        self.framework_name = input; self
     }
     /// <p>The description of the shared custom framework.</p>
     pub fn framework_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,12 +173,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p>The description of the shared custom framework.</p>
-    pub fn set_framework_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.framework_description = input;
-        self
+    pub fn set_framework_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.framework_description = input; self
     }
     /// <p> The status of the share request. </p>
     pub fn status(mut self, input: crate::types::ShareRequestStatus) -> Self {
@@ -189,12 +182,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The status of the share request. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ShareRequestStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ShareRequestStatus>) -> Self {
+        self.status = input; self
     }
     /// <p> The Amazon Web Services account of the sender. </p>
     pub fn source_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,8 +192,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p> The Amazon Web Services account of the sender. </p>
     pub fn set_source_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_account = input;
-        self
+        self.source_account = input; self
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
     pub fn destination_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,12 +200,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The Amazon Web Services account of the recipient. </p>
-    pub fn set_destination_account(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_account = input;
-        self
+    pub fn set_destination_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_account = input; self
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
     pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,12 +209,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The Amazon Web Services Region of the recipient. </p>
-    pub fn set_destination_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_region = input;
-        self
+    pub fn set_destination_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_region = input; self
     }
     /// <p> The time when the share request expires. </p>
     pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -238,12 +218,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The time when the share request expires. </p>
-    pub fn set_expiration_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration_time = input;
-        self
+    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration_time = input; self
     }
     /// <p> The time when the share request was created. </p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -251,12 +227,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> The time when the share request was created. </p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p> Specifies when the share request was last updated. </p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -264,12 +236,8 @@ impl AssessmentFrameworkShareRequestBuilder {
         self
     }
     /// <p> Specifies when the share request was last updated. </p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// <p> An optional comment from the sender about the share request. </p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,8 +246,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p> An optional comment from the sender about the share request. </p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// <p>The number of standard controls that are part of the shared custom framework. </p>
     pub fn standard_controls_count(mut self, input: i32) -> Self {
@@ -288,8 +255,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p>The number of standard controls that are part of the shared custom framework. </p>
     pub fn set_standard_controls_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.standard_controls_count = input;
-        self
+        self.standard_controls_count = input; self
     }
     /// <p>The number of custom controls that are part of the shared custom framework.</p>
     pub fn custom_controls_count(mut self, input: i32) -> Self {
@@ -298,8 +264,7 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p>The number of custom controls that are part of the shared custom framework.</p>
     pub fn set_custom_controls_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.custom_controls_count = input;
-        self
+        self.custom_controls_count = input; self
     }
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
     pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -308,27 +273,42 @@ impl AssessmentFrameworkShareRequestBuilder {
     }
     /// <p>The compliance type that the shared custom framework supports, such as CIS or HIPAA.</p>
     pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compliance_type = input;
-        self
+        self.compliance_type = input; self
     }
     /// Consumes the builder and constructs a [`AssessmentFrameworkShareRequest`](crate::types::AssessmentFrameworkShareRequest).
     pub fn build(self) -> crate::types::AssessmentFrameworkShareRequest {
         crate::types::AssessmentFrameworkShareRequest {
-            id: self.id,
-            framework_id: self.framework_id,
-            framework_name: self.framework_name,
-            framework_description: self.framework_description,
-            status: self.status,
-            source_account: self.source_account,
-            destination_account: self.destination_account,
-            destination_region: self.destination_region,
-            expiration_time: self.expiration_time,
-            creation_time: self.creation_time,
-            last_updated: self.last_updated,
-            comment: self.comment,
-            standard_controls_count: self.standard_controls_count,
-            custom_controls_count: self.custom_controls_count,
-            compliance_type: self.compliance_type,
+            id: self.id
+            ,
+            framework_id: self.framework_id
+            ,
+            framework_name: self.framework_name
+            ,
+            framework_description: self.framework_description
+            ,
+            status: self.status
+            ,
+            source_account: self.source_account
+            ,
+            destination_account: self.destination_account
+            ,
+            destination_region: self.destination_region
+            ,
+            expiration_time: self.expiration_time
+            ,
+            creation_time: self.creation_time
+            ,
+            last_updated: self.last_updated
+            ,
+            comment: self.comment
+            ,
+            standard_controls_count: self.standard_controls_count
+            ,
+            custom_controls_count: self.custom_controls_count
+            ,
+            compliance_type: self.compliance_type
+            ,
         }
     }
 }
+

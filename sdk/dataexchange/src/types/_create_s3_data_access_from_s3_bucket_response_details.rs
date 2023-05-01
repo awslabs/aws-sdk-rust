@@ -3,7 +3,7 @@
 /// <p>Details about the response of the operation to create an S3 data access from an S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateS3DataAccessFromS3BucketResponseDetails {
+pub struct CreateS3DataAccessFromS3BucketResponseDetails  {
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub asset_source: std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
@@ -16,22 +16,21 @@ pub struct CreateS3DataAccessFromS3BucketResponseDetails {
 }
 impl CreateS3DataAccessFromS3BucketResponseDetails {
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
-    pub fn asset_source(&self) -> std::option::Option<&crate::types::S3DataAccessAssetSourceEntry> {
+    pub fn asset_source(&self) -> std::option::Option<& crate::types::S3DataAccessAssetSourceEntry> {
         self.asset_source.as_ref()
     }
     /// <p>The unique identifier for this data set.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
 impl CreateS3DataAccessFromS3BucketResponseDetails {
     /// Creates a new builder-style object to manufacture [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::types::CreateS3DataAccessFromS3BucketResponseDetails).
-    pub fn builder() -> crate::types::builders::CreateS3DataAccessFromS3BucketResponseDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
         crate::types::builders::CreateS3DataAccessFromS3BucketResponseDetailsBuilder::default()
     }
 }
@@ -51,12 +50,8 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
         self
     }
     /// <p>Details about the asset source from an Amazon S3 bucket.</p>
-    pub fn set_asset_source(
-        mut self,
-        input: std::option::Option<crate::types::S3DataAccessAssetSourceEntry>,
-    ) -> Self {
-        self.asset_source = input;
-        self
+    pub fn set_asset_source(mut self, input: std::option::Option<crate::types::S3DataAccessAssetSourceEntry>) -> Self {
+        self.asset_source = input; self
     }
     /// <p>The unique identifier for this data set.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +60,7 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     }
     /// <p>The unique identifier for this data set.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,15 +69,18 @@ impl CreateS3DataAccessFromS3BucketResponseDetailsBuilder {
     }
     /// <p>The unique identifier for the revision.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateS3DataAccessFromS3BucketResponseDetails`](crate::types::CreateS3DataAccessFromS3BucketResponseDetails).
     pub fn build(self) -> crate::types::CreateS3DataAccessFromS3BucketResponseDetails {
         crate::types::CreateS3DataAccessFromS3BucketResponseDetails {
-            asset_source: self.asset_source,
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
+            asset_source: self.asset_source
+            ,
+            data_set_id: self.data_set_id
+            ,
+            revision_id: self.revision_id
+            ,
         }
     }
 }
+

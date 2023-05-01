@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContainersInput {
+pub struct ListContainersInput  {
     /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListContainersInput {
 }
 impl ListContainersInput {
     /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
@@ -42,8 +42,7 @@ impl ListContainersInputBuilder {
     }
     /// <p>Only if you used <code>MaxResults</code> in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -52,19 +51,18 @@ impl ListContainersInputBuilder {
     }
     /// <p>Enter the maximum number of containers in the response. Use from 1 to 255 characters. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListContainersInput`](crate::operation::list_containers::ListContainersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_containers::ListContainersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_containers::ListContainersInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_containers::ListContainersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_containers::ListContainersInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

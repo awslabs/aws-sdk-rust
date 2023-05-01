@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectSentimentOutput {
+pub struct DetectSentimentOutput  {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
     #[doc(hidden)]
     pub sentiment: std::option::Option<crate::types::SentimentType>,
@@ -13,15 +13,15 @@ pub struct DetectSentimentOutput {
 }
 impl DetectSentimentOutput {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
-    pub fn sentiment(&self) -> std::option::Option<&crate::types::SentimentType> {
+    pub fn sentiment(&self) -> std::option::Option<& crate::types::SentimentType> {
         self.sentiment.as_ref()
     }
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
-    pub fn sentiment_score(&self) -> std::option::Option<&crate::types::SentimentScore> {
+    pub fn sentiment_score(&self) -> std::option::Option<& crate::types::SentimentScore> {
         self.sentiment_score.as_ref()
     }
 }
-impl std::fmt::Debug for DetectSentimentOutput {
+impl  std::fmt::Debug for DetectSentimentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSentimentOutput");
         formatter.field("sentiment", &"*** Sensitive Data Redacted ***");
@@ -31,10 +31,10 @@ impl std::fmt::Debug for DetectSentimentOutput {
     }
 }
 impl aws_http::request_id::RequestId for DetectSentimentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DetectSentimentOutput {
     /// Creates a new builder-style object to manufacture [`DetectSentimentOutput`](crate::operation::detect_sentiment::DetectSentimentOutput).
     pub fn builder() -> crate::operation::detect_sentiment::builders::DetectSentimentOutputBuilder {
@@ -57,12 +57,8 @@ impl DetectSentimentOutputBuilder {
         self
     }
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
-    pub fn set_sentiment(
-        mut self,
-        input: std::option::Option<crate::types::SentimentType>,
-    ) -> Self {
-        self.sentiment = input;
-        self
+    pub fn set_sentiment(mut self, input: std::option::Option<crate::types::SentimentType>) -> Self {
+        self.sentiment = input; self
     }
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
     pub fn sentiment_score(mut self, input: crate::types::SentimentScore) -> Self {
@@ -70,27 +66,25 @@ impl DetectSentimentOutputBuilder {
         self
     }
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
-    pub fn set_sentiment_score(
-        mut self,
-        input: std::option::Option<crate::types::SentimentScore>,
-    ) -> Self {
-        self.sentiment_score = input;
-        self
+    pub fn set_sentiment_score(mut self, input: std::option::Option<crate::types::SentimentScore>) -> Self {
+        self.sentiment_score = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DetectSentimentOutput`](crate::operation::detect_sentiment::DetectSentimentOutput).
     pub fn build(self) -> crate::operation::detect_sentiment::DetectSentimentOutput {
         crate::operation::detect_sentiment::DetectSentimentOutput {
-            sentiment: self.sentiment,
-            sentiment_score: self.sentiment_score,
+            sentiment: self.sentiment
+            ,
+            sentiment_score: self.sentiment_score
+            ,
             _request_id: self._request_id,
         }
     }
@@ -104,3 +98,4 @@ impl std::fmt::Debug for DetectSentimentOutputBuilder {
         formatter.finish()
     }
 }
+

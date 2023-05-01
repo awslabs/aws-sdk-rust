@@ -3,7 +3,7 @@
 /// <p>The output from the CreatePolicy operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePolicyOutput {
+pub struct CreatePolicyOutput  {
     /// <p>The policy name.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -20,27 +20,27 @@ pub struct CreatePolicyOutput {
 }
 impl CreatePolicyOutput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+    pub fn policy_version_id(&self) -> std::option::Option<& str> {
         self.policy_version_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreatePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreatePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyOutput`](crate::operation::create_policy::CreatePolicyOutput).
     pub fn builder() -> crate::operation::create_policy::builders::CreatePolicyOutputBuilder {
@@ -66,8 +66,7 @@ impl CreatePolicyOutputBuilder {
     }
     /// <p>The policy name.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input;
-        self
+        self.policy_name = input; self
     }
     /// <p>The policy ARN.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl CreatePolicyOutputBuilder {
     }
     /// <p>The policy ARN.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// <p>The JSON document that describes the policy.</p>
     pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl CreatePolicyOutputBuilder {
     }
     /// <p>The JSON document that describes the policy.</p>
     pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_document = input;
-        self
+        self.policy_document = input; self
     }
     /// <p>The policy version ID.</p>
     pub fn policy_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,30 +92,31 @@ impl CreatePolicyOutputBuilder {
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn set_policy_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.policy_version_id = input;
-        self
+    pub fn set_policy_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.policy_version_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreatePolicyOutput`](crate::operation::create_policy::CreatePolicyOutput).
     pub fn build(self) -> crate::operation::create_policy::CreatePolicyOutput {
         crate::operation::create_policy::CreatePolicyOutput {
-            policy_name: self.policy_name,
-            policy_arn: self.policy_arn,
-            policy_document: self.policy_document,
-            policy_version_id: self.policy_version_id,
+            policy_name: self.policy_name
+            ,
+            policy_arn: self.policy_arn
+            ,
+            policy_document: self.policy_document
+            ,
+            policy_version_id: self.policy_version_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure for a partition index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartitionIndex {
+pub struct PartitionIndex  {
     /// <p>The keys for the partition index.</p>
     #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct PartitionIndex {
 }
 impl PartitionIndex {
     /// <p>The keys for the partition index.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> std::option::Option<& [std::string::String]> {
         self.keys.as_deref()
     }
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl PartitionIndexBuilder {
     /// <p>The keys for the partition index.</p>
     pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = Some(v);
+                        self
     }
     /// <p>The keys for the partition index.</p>
-    pub fn set_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// <p>The name of the partition index.</p>
     pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,14 +58,16 @@ impl PartitionIndexBuilder {
     }
     /// <p>The name of the partition index.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// Consumes the builder and constructs a [`PartitionIndex`](crate::types::PartitionIndex).
     pub fn build(self) -> crate::types::PartitionIndex {
         crate::types::PartitionIndex {
-            keys: self.keys,
-            index_name: self.index_name,
+            keys: self.keys
+            ,
+            index_name: self.index_name
+            ,
         }
     }
 }
+

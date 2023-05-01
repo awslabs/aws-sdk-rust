@@ -3,7 +3,7 @@
 /// <p>Describes the meta data tags associated with a transit gateway policy rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayPolicyRuleMetaData {
+pub struct TransitGatewayPolicyRuleMetaData  {
     /// <p>The key name for the transit gateway policy rule meta data tag.</p>
     #[doc(hidden)]
     pub meta_data_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TransitGatewayPolicyRuleMetaData {
 }
 impl TransitGatewayPolicyRuleMetaData {
     /// <p>The key name for the transit gateway policy rule meta data tag.</p>
-    pub fn meta_data_key(&self) -> std::option::Option<&str> {
+    pub fn meta_data_key(&self) -> std::option::Option<& str> {
         self.meta_data_key.as_deref()
     }
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
-    pub fn meta_data_value(&self) -> std::option::Option<&str> {
+    pub fn meta_data_value(&self) -> std::option::Option<& str> {
         self.meta_data_value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl TransitGatewayPolicyRuleMetaDataBuilder {
     }
     /// <p>The key name for the transit gateway policy rule meta data tag.</p>
     pub fn set_meta_data_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meta_data_key = input;
-        self
+        self.meta_data_key = input; self
     }
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
     pub fn meta_data_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl TransitGatewayPolicyRuleMetaDataBuilder {
     }
     /// <p>The value of the key for the transit gateway policy rule meta data tag.</p>
     pub fn set_meta_data_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meta_data_value = input;
-        self
+        self.meta_data_value = input; self
     }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyRuleMetaData`](crate::types::TransitGatewayPolicyRuleMetaData).
     pub fn build(self) -> crate::types::TransitGatewayPolicyRuleMetaData {
         crate::types::TransitGatewayPolicyRuleMetaData {
-            meta_data_key: self.meta_data_key,
-            meta_data_value: self.meta_data_value,
+            meta_data_key: self.meta_data_key
+            ,
+            meta_data_value: self.meta_data_value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes the properties of a security policy that was specified. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribedSecurityPolicy {
+pub struct DescribedSecurityPolicy  {
     /// <p>Specifies whether this policy enables Federal Information Processing Standards (FIPS).</p>
     #[doc(hidden)]
     pub fips: std::option::Option<bool>,
@@ -29,23 +29,23 @@ impl DescribedSecurityPolicy {
         self.fips
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(&self) -> std::option::Option<&str> {
+    pub fn security_policy_name(&self) -> std::option::Option<& str> {
         self.security_policy_name.as_deref()
     }
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn ssh_ciphers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ssh_ciphers(&self) -> std::option::Option<& [std::string::String]> {
         self.ssh_ciphers.as_deref()
     }
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn ssh_kexs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ssh_kexs(&self) -> std::option::Option<& [std::string::String]> {
         self.ssh_kexs.as_deref()
     }
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn ssh_macs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ssh_macs(&self) -> std::option::Option<& [std::string::String]> {
         self.ssh_macs.as_deref()
     }
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn tls_ciphers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tls_ciphers(&self) -> std::option::Option<& [std::string::String]> {
         self.tls_ciphers.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl DescribedSecurityPolicyBuilder {
     }
     /// <p>Specifies whether this policy enables Federal Information Processing Standards (FIPS).</p>
     pub fn set_fips(mut self, input: std::option::Option<bool>) -> Self {
-        self.fips = input;
-        self
+        self.fips = input; self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn security_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +83,8 @@ impl DescribedSecurityPolicyBuilder {
         self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn set_security_policy_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.security_policy_name = input;
-        self
+    pub fn set_security_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.security_policy_name = input; self
     }
     /// Appends an item to `ssh_ciphers`.
     ///
@@ -98,17 +93,13 @@ impl DescribedSecurityPolicyBuilder {
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
     pub fn ssh_ciphers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ssh_ciphers.unwrap_or_default();
-        v.push(input.into());
-        self.ssh_ciphers = Some(v);
-        self
+                        v.push(input.into());
+                        self.ssh_ciphers = Some(v);
+                        self
     }
     /// <p>Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_ssh_ciphers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ssh_ciphers = input;
-        self
+    pub fn set_ssh_ciphers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ssh_ciphers = input; self
     }
     /// Appends an item to `ssh_kexs`.
     ///
@@ -117,17 +108,13 @@ impl DescribedSecurityPolicyBuilder {
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
     pub fn ssh_kexs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ssh_kexs.unwrap_or_default();
-        v.push(input.into());
-        self.ssh_kexs = Some(v);
-        self
+                        v.push(input.into());
+                        self.ssh_kexs = Some(v);
+                        self
     }
     /// <p>Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_ssh_kexs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ssh_kexs = input;
-        self
+    pub fn set_ssh_kexs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ssh_kexs = input; self
     }
     /// Appends an item to `ssh_macs`.
     ///
@@ -136,17 +123,13 @@ impl DescribedSecurityPolicyBuilder {
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
     pub fn ssh_macs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ssh_macs.unwrap_or_default();
-        v.push(input.into());
-        self.ssh_macs = Some(v);
-        self
+                        v.push(input.into());
+                        self.ssh_macs = Some(v);
+                        self
     }
     /// <p>Specifies the enabled SSH message authentication code (MAC) encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_ssh_macs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ssh_macs = input;
-        self
+    pub fn set_ssh_macs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ssh_macs = input; self
     }
     /// Appends an item to `tls_ciphers`.
     ///
@@ -155,27 +138,30 @@ impl DescribedSecurityPolicyBuilder {
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
     pub fn tls_ciphers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tls_ciphers.unwrap_or_default();
-        v.push(input.into());
-        self.tls_ciphers = Some(v);
-        self
+                        v.push(input.into());
+                        self.tls_ciphers = Some(v);
+                        self
     }
     /// <p>Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms in the security policy that is attached to the server.</p>
-    pub fn set_tls_ciphers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tls_ciphers = input;
-        self
+    pub fn set_tls_ciphers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tls_ciphers = input; self
     }
     /// Consumes the builder and constructs a [`DescribedSecurityPolicy`](crate::types::DescribedSecurityPolicy).
     pub fn build(self) -> crate::types::DescribedSecurityPolicy {
         crate::types::DescribedSecurityPolicy {
-            fips: self.fips,
-            security_policy_name: self.security_policy_name,
-            ssh_ciphers: self.ssh_ciphers,
-            ssh_kexs: self.ssh_kexs,
-            ssh_macs: self.ssh_macs,
-            tls_ciphers: self.tls_ciphers,
+            fips: self.fips
+            ,
+            security_policy_name: self.security_policy_name
+            ,
+            ssh_ciphers: self.ssh_ciphers
+            ,
+            ssh_kexs: self.ssh_kexs
+            ,
+            ssh_macs: self.ssh_macs
+            ,
+            tls_ciphers: self.tls_ciphers
+            ,
         }
     }
 }
+

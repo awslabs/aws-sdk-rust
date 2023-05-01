@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceInput {
+pub struct GetInstanceInput  {
     /// <p>The ID of the service that the instance is associated with.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetInstanceInput {
 }
 impl GetInstanceInput {
     /// <p>The ID of the service that the instance is associated with.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> std::option::Option<& str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the instance that you want to get information about.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetInstanceInputBuilder {
     }
     /// <p>The ID of the service that the instance is associated with.</p>
     pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_id = input;
-        self
+        self.service_id = input; self
     }
     /// <p>The ID of the instance that you want to get information about.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetInstanceInputBuilder {
     }
     /// <p>The ID of the instance that you want to get information about.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`GetInstanceInput`](crate::operation::get_instance::GetInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_instance::GetInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_instance::GetInstanceInput {
-            service_id: self.service_id,
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_instance::GetInstanceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_instance::GetInstanceInput {
+                service_id: self.service_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

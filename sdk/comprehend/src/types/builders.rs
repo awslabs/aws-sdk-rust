@@ -113,6 +113,8 @@ pub use crate::types::_document_classifier_output_data_config::DocumentClassifie
 
 pub use crate::types::_document_classifier_input_data_config::DocumentClassifierInputDataConfigBuilder;
 
+pub use crate::types::_document_classifier_documents::DocumentClassifierDocumentsBuilder;
+
 pub use crate::types::_document_classifier_filter::DocumentClassifierFilterBuilder;
 
 pub use crate::types::_document_classification_job_properties::DocumentClassificationJobPropertiesBuilder;
@@ -181,6 +183,8 @@ pub use crate::types::_dataset_augmented_manifests_list_item::DatasetAugmentedMa
 
 pub use crate::types::_entity_label::EntityLabelBuilder;
 
+pub use crate::types::_warnings_list_item::WarningsListItemBuilder;
+
 pub use crate::types::_document_label::DocumentLabelBuilder;
 
 pub use crate::types::_document_class::DocumentClassBuilder;
@@ -198,3 +202,4 @@ pub use crate::types::_batch_detect_key_phrases_item_result::BatchDetectKeyPhras
 pub use crate::types::_batch_detect_entities_item_result::BatchDetectEntitiesItemResultBuilder;
 
 pub use crate::types::_batch_detect_dominant_language_item_result::BatchDetectDominantLanguageItemResultBuilder;
+

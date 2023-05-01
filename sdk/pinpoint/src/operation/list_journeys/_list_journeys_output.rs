@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJourneysOutput {
+pub struct ListJourneysOutput  {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
     #[doc(hidden)]
     pub journeys_response: std::option::Option<crate::types::JourneysResponse>,
@@ -10,15 +10,15 @@ pub struct ListJourneysOutput {
 }
 impl ListJourneysOutput {
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
-    pub fn journeys_response(&self) -> std::option::Option<&crate::types::JourneysResponse> {
+    pub fn journeys_response(&self) -> std::option::Option<& crate::types::JourneysResponse> {
         self.journeys_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListJourneysOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListJourneysOutput {
     /// Creates a new builder-style object to manufacture [`ListJourneysOutput`](crate::operation::list_journeys::ListJourneysOutput).
     pub fn builder() -> crate::operation::list_journeys::builders::ListJourneysOutputBuilder {
@@ -40,27 +40,25 @@ impl ListJourneysOutputBuilder {
         self
     }
     /// <p>Provides information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>
-    pub fn set_journeys_response(
-        mut self,
-        input: std::option::Option<crate::types::JourneysResponse>,
-    ) -> Self {
-        self.journeys_response = input;
-        self
+    pub fn set_journeys_response(mut self, input: std::option::Option<crate::types::JourneysResponse>) -> Self {
+        self.journeys_response = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListJourneysOutput`](crate::operation::list_journeys::ListJourneysOutput).
     pub fn build(self) -> crate::operation::list_journeys::ListJourneysOutput {
         crate::operation::list_journeys::ListJourneysOutput {
-            journeys_response: self.journeys_response,
+            journeys_response: self.journeys_response
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

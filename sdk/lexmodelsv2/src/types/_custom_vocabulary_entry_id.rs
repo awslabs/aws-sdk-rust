@@ -3,14 +3,14 @@
 /// <p>The unique entry identifier for the custom vocabulary items.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomVocabularyEntryId {
+pub struct CustomVocabularyEntryId  {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
 }
 impl CustomVocabularyEntryId {
     /// <p>The unique item identifier for the custom vocabulary items.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl CustomVocabularyEntryIdBuilder {
     }
     /// <p>The unique item identifier for the custom vocabulary items.</p>
     pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.item_id = input;
-        self
+        self.item_id = input; self
     }
     /// Consumes the builder and constructs a [`CustomVocabularyEntryId`](crate::types::CustomVocabularyEntryId).
     pub fn build(self) -> crate::types::CustomVocabularyEntryId {
         crate::types::CustomVocabularyEntryId {
-            item_id: self.item_id,
+            item_id: self.item_id
+            ,
         }
     }
 }
+

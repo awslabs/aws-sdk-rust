@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAutoMergingPreviewInput {
+pub struct GetAutoMergingPreviewInput  {
     /// <p>The unique name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct GetAutoMergingPreviewInput {
 }
 impl GetAutoMergingPreviewInput {
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A list of matching attributes that represent matching criteria.</p>
-    pub fn consolidation(&self) -> std::option::Option<&crate::types::Consolidation> {
+    pub fn consolidation(&self) -> std::option::Option<& crate::types::Consolidation> {
         self.consolidation.as_ref()
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn conflict_resolution(&self) -> std::option::Option<&crate::types::ConflictResolution> {
+    pub fn conflict_resolution(&self) -> std::option::Option<& crate::types::ConflictResolution> {
         self.conflict_resolution.as_ref()
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
@@ -36,9 +36,7 @@ impl GetAutoMergingPreviewInput {
 }
 impl GetAutoMergingPreviewInput {
     /// Creates a new builder-style object to manufacture [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
-    pub fn builder(
-    ) -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder {
         crate::operation::get_auto_merging_preview::builders::GetAutoMergingPreviewInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl GetAutoMergingPreviewInputBuilder {
     }
     /// <p>The unique name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A list of matching attributes that represent matching criteria.</p>
     pub fn consolidation(mut self, input: crate::types::Consolidation) -> Self {
@@ -69,12 +66,8 @@ impl GetAutoMergingPreviewInputBuilder {
         self
     }
     /// <p>A list of matching attributes that represent matching criteria.</p>
-    pub fn set_consolidation(
-        mut self,
-        input: std::option::Option<crate::types::Consolidation>,
-    ) -> Self {
-        self.consolidation = input;
-        self
+    pub fn set_consolidation(mut self, input: std::option::Option<crate::types::Consolidation>) -> Self {
+        self.consolidation = input; self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     pub fn conflict_resolution(mut self, input: crate::types::ConflictResolution) -> Self {
@@ -82,12 +75,8 @@ impl GetAutoMergingPreviewInputBuilder {
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
-    pub fn set_conflict_resolution(
-        mut self,
-        input: std::option::Option<crate::types::ConflictResolution>,
-    ) -> Self {
-        self.conflict_resolution = input;
-        self
+    pub fn set_conflict_resolution(mut self, input: std::option::Option<crate::types::ConflictResolution>) -> Self {
+        self.conflict_resolution = input; self
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
     pub fn min_allowed_confidence_score_for_merging(mut self, input: f64) -> Self {
@@ -95,28 +84,23 @@ impl GetAutoMergingPreviewInputBuilder {
         self
     }
     /// <p>Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.</p>
-    pub fn set_min_allowed_confidence_score_for_merging(
-        mut self,
-        input: std::option::Option<f64>,
-    ) -> Self {
-        self.min_allowed_confidence_score_for_merging = input;
-        self
+    pub fn set_min_allowed_confidence_score_for_merging(mut self, input: std::option::Option<f64>) -> Self {
+        self.min_allowed_confidence_score_for_merging = input; self
     }
     /// Consumes the builder and constructs a [`GetAutoMergingPreviewInput`](crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_auto_merging_preview::GetAutoMergingPreviewInput {
-                domain_name: self.domain_name,
-                consolidation: self.consolidation,
-                conflict_resolution: self.conflict_resolution,
-                min_allowed_confidence_score_for_merging: self
-                    .min_allowed_confidence_score_for_merging,
-            },
+                domain_name: self.domain_name
+                ,
+                consolidation: self.consolidation
+                ,
+                conflict_resolution: self.conflict_resolution
+                ,
+                min_allowed_confidence_score_for_merging: self.min_allowed_confidence_score_for_merging
+                ,
+            }
         )
     }
 }
+

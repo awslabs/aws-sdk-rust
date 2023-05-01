@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerBlockInput {
+pub struct DeleteWorkerBlockInput  {
     /// <p>The ID of the Worker to unblock.</p>
     #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DeleteWorkerBlockInput {
 }
 impl DeleteWorkerBlockInput {
     /// <p>The ID of the Worker to unblock.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 impl DeleteWorkerBlockInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerBlockInput`](crate::operation::delete_worker_block::DeleteWorkerBlockInput).
-    pub fn builder(
-    ) -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockInputBuilder {
+    pub fn builder() -> crate::operation::delete_worker_block::builders::DeleteWorkerBlockInputBuilder {
         crate::operation::delete_worker_block::builders::DeleteWorkerBlockInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteWorkerBlockInputBuilder {
     }
     /// <p>The ID of the Worker to unblock.</p>
     pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DeleteWorkerBlockInputBuilder {
     }
     /// <p>A message that explains the reason for unblocking the Worker. The Worker does not see this message.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`DeleteWorkerBlockInput`](crate::operation::delete_worker_block::DeleteWorkerBlockInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_worker_block::DeleteWorkerBlockInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_worker_block::DeleteWorkerBlockInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_worker_block::DeleteWorkerBlockInput {
-                worker_id: self.worker_id,
-                reason: self.reason,
-            },
+                worker_id: self.worker_id
+                ,
+                reason: self.reason
+                ,
+            }
         )
     }
 }
+

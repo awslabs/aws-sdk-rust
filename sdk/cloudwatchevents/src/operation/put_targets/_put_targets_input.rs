@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTargetsInput {
+pub struct PutTargetsInput  {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct PutTargetsInput {
 }
 impl PutTargetsInput {
     /// <p>The name of the rule.</p>
-    pub fn rule(&self) -> std::option::Option<&str> {
+    pub fn rule(&self) -> std::option::Option<& str> {
         self.rule.as_deref()
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(&self) -> std::option::Option<&str> {
+    pub fn event_bus_name(&self) -> std::option::Option<& str> {
         self.event_bus_name.as_deref()
     }
     /// <p>The targets to update or add to the rule.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
         self.targets.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl PutTargetsInputBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule = input;
-        self
+        self.rule = input; self
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl PutTargetsInputBuilder {
     }
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     pub fn set_event_bus_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_bus_name = input;
-        self
+        self.event_bus_name = input; self
     }
     /// Appends an item to `targets`.
     ///
@@ -70,29 +68,26 @@ impl PutTargetsInputBuilder {
     /// <p>The targets to update or add to the rule.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = Some(v);
-        self
+                        v.push(input);
+                        self.targets = Some(v);
+                        self
     }
     /// <p>The targets to update or add to the rule.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// Consumes the builder and constructs a [`PutTargetsInput`](crate::operation::put_targets::PutTargetsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_targets::PutTargetsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_targets::PutTargetsInput {
-            rule: self.rule,
-            event_bus_name: self.event_bus_name,
-            targets: self.targets,
-        })
+    pub fn build(self) -> Result<crate::operation::put_targets::PutTargetsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_targets::PutTargetsInput {
+                rule: self.rule
+                ,
+                event_bus_name: self.event_bus_name
+                ,
+                targets: self.targets
+                ,
+            }
+        )
     }
 }
+

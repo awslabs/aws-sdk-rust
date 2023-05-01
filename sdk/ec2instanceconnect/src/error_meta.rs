@@ -18,19 +18,15 @@ pub enum Error {
     /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
     SerialConsoleAccessDisabledException(crate::types::error::SerialConsoleAccessDisabledException),
     /// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
-    SerialConsoleSessionLimitExceededException(
-        crate::types::error::SerialConsoleSessionLimitExceededException,
-    ),
+    SerialConsoleSessionLimitExceededException(crate::types::error::SerialConsoleSessionLimitExceededException),
     /// <p>Unable to start a serial console session. Please try again.</p>
-    SerialConsoleSessionUnavailableException(
-        crate::types::error::SerialConsoleSessionUnavailableException,
-    ),
+    SerialConsoleSessionUnavailableException(crate::types::error::SerialConsoleSessionUnavailableException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -46,7 +42,7 @@ impl std::fmt::Display for Error {
             Error::SerialConsoleSessionUnavailableException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
@@ -63,12 +59,8 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_serial_con
         }
     }
 }
-impl From<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError>
-    for Error
-{
-    fn from(
-        err: crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError,
-    ) -> Self {
+impl From<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError> for Error {
+    fn from(err: crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError) -> Self {
         match err {
             crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::AuthException(inner) => Error::AuthException(inner),
             crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError::Ec2InstanceNotFoundException(inner) => Error::Ec2InstanceNotFoundException(inner),
@@ -85,34 +77,16 @@ impl From<crate::operation::send_serial_console_ssh_public_key::SendSerialConsol
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::send_ssh_public_key::SendSSHPublicKeyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -149,3 +123,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

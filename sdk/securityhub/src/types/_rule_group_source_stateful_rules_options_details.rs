@@ -3,7 +3,7 @@
 /// <p>A rule option for a stateful rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupSourceStatefulRulesOptionsDetails {
+pub struct RuleGroupSourceStatefulRulesOptionsDetails  {
     /// <p>A keyword to look for.</p>
     #[doc(hidden)]
     pub keyword: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RuleGroupSourceStatefulRulesOptionsDetails {
 }
 impl RuleGroupSourceStatefulRulesOptionsDetails {
     /// <p>A keyword to look for.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>A list of settings.</p>
-    pub fn settings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn settings(&self) -> std::option::Option<& [std::string::String]> {
         self.settings.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
     }
     /// <p>A keyword to look for.</p>
     pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keyword = input;
-        self
+        self.keyword = input; self
     }
     /// Appends an item to `settings`.
     ///
@@ -53,23 +52,22 @@ impl RuleGroupSourceStatefulRulesOptionsDetailsBuilder {
     /// <p>A list of settings.</p>
     pub fn settings(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.settings.unwrap_or_default();
-        v.push(input.into());
-        self.settings = Some(v);
-        self
+                        v.push(input.into());
+                        self.settings = Some(v);
+                        self
     }
     /// <p>A list of settings.</p>
-    pub fn set_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.settings = input; self
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatefulRulesOptionsDetails`](crate::types::RuleGroupSourceStatefulRulesOptionsDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceStatefulRulesOptionsDetails {
         crate::types::RuleGroupSourceStatefulRulesOptionsDetails {
-            keyword: self.keyword,
-            settings: self.settings,
+            keyword: self.keyword
+            ,
+            settings: self.settings
+            ,
         }
     }
 }
+

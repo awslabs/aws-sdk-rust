@@ -3,7 +3,7 @@
 /// <p>Describes an anomaly or error with the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Observation {
+pub struct Observation  {
     /// <p>The ID of the observation type.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -142,51 +142,51 @@ pub struct Observation {
 }
 impl Observation {
     /// <p>The ID of the observation type.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the observation ended, in epoch seconds.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The source type of the observation.</p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>The source resource ARN of the observation.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>The log group name.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> std::option::Option<& str> {
         self.log_group.as_deref()
     }
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
-    pub fn line_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn line_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.line_time.as_ref()
     }
     /// <p>The log text of the observation.</p>
-    pub fn log_text(&self) -> std::option::Option<&str> {
+    pub fn log_text(&self) -> std::option::Option<& str> {
         self.log_text.as_deref()
     }
     /// <p>The log filter of the observation.</p>
-    pub fn log_filter(&self) -> std::option::Option<&crate::types::LogFilter> {
+    pub fn log_filter(&self) -> std::option::Option<& crate::types::LogFilter> {
         self.log_filter.as_ref()
     }
     /// <p>The namespace of the observation metric.</p>
-    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+    pub fn metric_namespace(&self) -> std::option::Option<& str> {
         self.metric_namespace.as_deref()
     }
     /// <p>The name of the observation metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The unit of the source observation metric.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The value of the source observation metric.</p>
@@ -194,105 +194,103 @@ impl Observation {
         self.value
     }
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-    pub fn cloud_watch_event_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_event_id(&self) -> std::option::Option<& str> {
         self.cloud_watch_event_id.as_deref()
     }
     /// <p> The source of the CloudWatch Event. </p>
-    pub fn cloud_watch_event_source(
-        &self,
-    ) -> std::option::Option<&crate::types::CloudWatchEventSource> {
+    pub fn cloud_watch_event_source(&self) -> std::option::Option<& crate::types::CloudWatchEventSource> {
         self.cloud_watch_event_source.as_ref()
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    pub fn cloud_watch_event_detail_type(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_event_detail_type(&self) -> std::option::Option<& str> {
         self.cloud_watch_event_detail_type.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
-    pub fn health_event_arn(&self) -> std::option::Option<&str> {
+    pub fn health_event_arn(&self) -> std::option::Option<& str> {
         self.health_event_arn.as_deref()
     }
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
-    pub fn health_service(&self) -> std::option::Option<&str> {
+    pub fn health_service(&self) -> std::option::Option<& str> {
         self.health_service.as_deref()
     }
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-    pub fn health_event_type_code(&self) -> std::option::Option<&str> {
+    pub fn health_event_type_code(&self) -> std::option::Option<& str> {
         self.health_event_type_code.as_deref()
     }
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-    pub fn health_event_type_category(&self) -> std::option::Option<&str> {
+    pub fn health_event_type_category(&self) -> std::option::Option<& str> {
         self.health_event_type_category.as_deref()
     }
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-    pub fn health_event_description(&self) -> std::option::Option<&str> {
+    pub fn health_event_description(&self) -> std::option::Option<& str> {
         self.health_event_description.as_deref()
     }
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-    pub fn code_deploy_deployment_id(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_deployment_id(&self) -> std::option::Option<& str> {
         self.code_deploy_deployment_id.as_deref()
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    pub fn code_deploy_deployment_group(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_deployment_group(&self) -> std::option::Option<& str> {
         self.code_deploy_deployment_group.as_deref()
     }
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-    pub fn code_deploy_state(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_state(&self) -> std::option::Option<& str> {
         self.code_deploy_state.as_deref()
     }
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
-    pub fn code_deploy_application(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_application(&self) -> std::option::Option<& str> {
         self.code_deploy_application.as_deref()
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    pub fn code_deploy_instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn code_deploy_instance_group_id(&self) -> std::option::Option<& str> {
         self.code_deploy_instance_group_id.as_deref()
     }
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
-    pub fn ec2_state(&self) -> std::option::Option<&str> {
+    pub fn ec2_state(&self) -> std::option::Option<& str> {
         self.ec2_state.as_deref()
     }
     /// <p> The category of an RDS event. </p>
-    pub fn rds_event_categories(&self) -> std::option::Option<&str> {
+    pub fn rds_event_categories(&self) -> std::option::Option<& str> {
         self.rds_event_categories.as_deref()
     }
     /// <p> The message of an RDS event. </p>
-    pub fn rds_event_message(&self) -> std::option::Option<&str> {
+    pub fn rds_event_message(&self) -> std::option::Option<& str> {
         self.rds_event_message.as_deref()
     }
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
-    pub fn s3_event_name(&self) -> std::option::Option<&str> {
+    pub fn s3_event_name(&self) -> std::option::Option<& str> {
         self.s3_event_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-    pub fn states_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn states_execution_arn(&self) -> std::option::Option<& str> {
         self.states_execution_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
-    pub fn states_arn(&self) -> std::option::Option<&str> {
+    pub fn states_arn(&self) -> std::option::Option<& str> {
         self.states_arn.as_deref()
     }
     /// <p> The status of the step function-related observation. </p>
-    pub fn states_status(&self) -> std::option::Option<&str> {
+    pub fn states_status(&self) -> std::option::Option<& str> {
         self.states_status.as_deref()
     }
     /// <p> The input to the step function-based observation. </p>
-    pub fn states_input(&self) -> std::option::Option<&str> {
+    pub fn states_input(&self) -> std::option::Option<& str> {
         self.states_input.as_deref()
     }
     /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
-    pub fn ebs_event(&self) -> std::option::Option<&str> {
+    pub fn ebs_event(&self) -> std::option::Option<& str> {
         self.ebs_event.as_deref()
     }
     /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
-    pub fn ebs_result(&self) -> std::option::Option<&str> {
+    pub fn ebs_result(&self) -> std::option::Option<& str> {
         self.ebs_result.as_deref()
     }
     /// <p> The cause of an EBS CloudWatch event. </p>
-    pub fn ebs_cause(&self) -> std::option::Option<&str> {
+    pub fn ebs_cause(&self) -> std::option::Option<& str> {
         self.ebs_cause.as_deref()
     }
     /// <p> The request ID of an EBS CloudWatch event. </p>
-    pub fn ebs_request_id(&self) -> std::option::Option<&str> {
+    pub fn ebs_request_id(&self) -> std::option::Option<& str> {
         self.ebs_request_id.as_deref()
     }
     /// <p> The X-Ray request fault percentage for this node. </p>
@@ -316,11 +314,11 @@ impl Observation {
         self.x_ray_request_average_latency
     }
     /// <p> The name of the X-Ray node. </p>
-    pub fn x_ray_node_name(&self) -> std::option::Option<&str> {
+    pub fn x_ray_node_name(&self) -> std::option::Option<& str> {
         self.x_ray_node_name.as_deref()
     }
     /// <p> The type of the X-Ray node. </p>
-    pub fn x_ray_node_type(&self) -> std::option::Option<&str> {
+    pub fn x_ray_node_type(&self) -> std::option::Option<& str> {
         self.x_ray_node_type.as_deref()
     }
 }
@@ -389,8 +387,7 @@ impl ObservationBuilder {
     }
     /// <p>The ID of the observation type.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -398,12 +395,8 @@ impl ObservationBuilder {
         self
     }
     /// <p>The time when the observation was first detected, in epoch seconds.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The time when the observation ended, in epoch seconds.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -412,8 +405,7 @@ impl ObservationBuilder {
     }
     /// <p>The time when the observation ended, in epoch seconds.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The source type of the observation.</p>
     pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -422,8 +414,7 @@ impl ObservationBuilder {
     }
     /// <p>The source type of the observation.</p>
     pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// <p>The source resource ARN of the observation.</p>
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -432,8 +423,7 @@ impl ObservationBuilder {
     }
     /// <p>The source resource ARN of the observation.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>The log group name.</p>
     pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -442,8 +432,7 @@ impl ObservationBuilder {
     }
     /// <p>The log group name.</p>
     pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group = input;
-        self
+        self.log_group = input; self
     }
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
     pub fn line_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -452,8 +441,7 @@ impl ObservationBuilder {
     }
     /// <p>The timestamp in the CloudWatch Logs that specifies when the matched line occurred.</p>
     pub fn set_line_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.line_time = input;
-        self
+        self.line_time = input; self
     }
     /// <p>The log text of the observation.</p>
     pub fn log_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -462,8 +450,7 @@ impl ObservationBuilder {
     }
     /// <p>The log text of the observation.</p>
     pub fn set_log_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_text = input;
-        self
+        self.log_text = input; self
     }
     /// <p>The log filter of the observation.</p>
     pub fn log_filter(mut self, input: crate::types::LogFilter) -> Self {
@@ -472,8 +459,7 @@ impl ObservationBuilder {
     }
     /// <p>The log filter of the observation.</p>
     pub fn set_log_filter(mut self, input: std::option::Option<crate::types::LogFilter>) -> Self {
-        self.log_filter = input;
-        self
+        self.log_filter = input; self
     }
     /// <p>The namespace of the observation metric.</p>
     pub fn metric_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -482,8 +468,7 @@ impl ObservationBuilder {
     }
     /// <p>The namespace of the observation metric.</p>
     pub fn set_metric_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_namespace = input;
-        self
+        self.metric_namespace = input; self
     }
     /// <p>The name of the observation metric.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -492,8 +477,7 @@ impl ObservationBuilder {
     }
     /// <p>The name of the observation metric.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input;
-        self
+        self.metric_name = input; self
     }
     /// <p>The unit of the source observation metric.</p>
     pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,8 +486,7 @@ impl ObservationBuilder {
     }
     /// <p>The unit of the source observation metric.</p>
     pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.unit = input;
-        self
+        self.unit = input; self
     }
     /// <p>The value of the source observation metric.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -512,8 +495,7 @@ impl ObservationBuilder {
     }
     /// <p>The value of the source observation metric.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
     pub fn cloud_watch_event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -521,12 +503,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The ID of the CloudWatch Event-based observation related to the detected problem. </p>
-    pub fn set_cloud_watch_event_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cloud_watch_event_id = input;
-        self
+    pub fn set_cloud_watch_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cloud_watch_event_id = input; self
     }
     /// <p> The source of the CloudWatch Event. </p>
     pub fn cloud_watch_event_source(mut self, input: crate::types::CloudWatchEventSource) -> Self {
@@ -534,12 +512,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The source of the CloudWatch Event. </p>
-    pub fn set_cloud_watch_event_source(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchEventSource>,
-    ) -> Self {
-        self.cloud_watch_event_source = input;
-        self
+    pub fn set_cloud_watch_event_source(mut self, input: std::option::Option<crate::types::CloudWatchEventSource>) -> Self {
+        self.cloud_watch_event_source = input; self
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
     pub fn cloud_watch_event_detail_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -547,12 +521,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The detail type of the CloudWatch Event-based observation, for example, <code>EC2 Instance State-change Notification</code>. </p>
-    pub fn set_cloud_watch_event_detail_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cloud_watch_event_detail_type = input;
-        self
+    pub fn set_cloud_watch_event_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cloud_watch_event_detail_type = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
     pub fn health_event_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -561,8 +531,7 @@ impl ObservationBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the AWS Health Event-based observation.</p>
     pub fn set_health_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.health_event_arn = input;
-        self
+        self.health_event_arn = input; self
     }
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
     pub fn health_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -571,8 +540,7 @@ impl ObservationBuilder {
     }
     /// <p> The service to which the AWS Health Event belongs, such as EC2. </p>
     pub fn set_health_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.health_service = input;
-        self
+        self.health_service = input; self
     }
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
     pub fn health_event_type_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -580,12 +548,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The type of the AWS Health event, for example, <code>AWS_EC2_POWER_CONNECTIVITY_ISSUE</code>. </p>
-    pub fn set_health_event_type_code(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.health_event_type_code = input;
-        self
+    pub fn set_health_event_type_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.health_event_type_code = input; self
     }
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
     pub fn health_event_type_category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,12 +557,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The category of the AWS Health event, such as <code>issue</code>. </p>
-    pub fn set_health_event_type_category(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.health_event_type_category = input;
-        self
+    pub fn set_health_event_type_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.health_event_type_category = input; self
     }
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
     pub fn health_event_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -606,12 +566,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The description of the AWS Health event provided by the service, such as Amazon EC2. </p>
-    pub fn set_health_event_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.health_event_description = input;
-        self
+    pub fn set_health_event_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.health_event_description = input; self
     }
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
     pub fn code_deploy_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -619,12 +575,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The deployment ID of the CodeDeploy-based observation related to the detected problem. </p>
-    pub fn set_code_deploy_deployment_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_deploy_deployment_id = input;
-        self
+    pub fn set_code_deploy_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_deploy_deployment_id = input; self
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
     pub fn code_deploy_deployment_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -632,12 +584,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The deployment group to which the CodeDeploy deployment belongs. </p>
-    pub fn set_code_deploy_deployment_group(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_deploy_deployment_group = input;
-        self
+    pub fn set_code_deploy_deployment_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_deploy_deployment_group = input; self
     }
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
     pub fn code_deploy_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -645,12 +593,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The status of the CodeDeploy deployment, for example <code>SUCCESS</code> or <code> FAILURE</code>. </p>
-    pub fn set_code_deploy_state(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_deploy_state = input;
-        self
+    pub fn set_code_deploy_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_deploy_state = input; self
     }
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
     pub fn code_deploy_application(mut self, input: impl Into<std::string::String>) -> Self {
@@ -658,12 +602,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The CodeDeploy application to which the deployment belongs. </p>
-    pub fn set_code_deploy_application(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_deploy_application = input;
-        self
+    pub fn set_code_deploy_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_deploy_application = input; self
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
     pub fn code_deploy_instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -671,12 +611,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The instance group to which the CodeDeploy instance belongs. </p>
-    pub fn set_code_deploy_instance_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_deploy_instance_group_id = input;
-        self
+    pub fn set_code_deploy_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_deploy_instance_group_id = input; self
     }
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
     pub fn ec2_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -685,8 +621,7 @@ impl ObservationBuilder {
     }
     /// <p> The state of the instance, such as <code>STOPPING</code> or <code>TERMINATING</code>. </p>
     pub fn set_ec2_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_state = input;
-        self
+        self.ec2_state = input; self
     }
     /// <p> The category of an RDS event. </p>
     pub fn rds_event_categories(mut self, input: impl Into<std::string::String>) -> Self {
@@ -694,12 +629,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The category of an RDS event. </p>
-    pub fn set_rds_event_categories(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.rds_event_categories = input;
-        self
+    pub fn set_rds_event_categories(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.rds_event_categories = input; self
     }
     /// <p> The message of an RDS event. </p>
     pub fn rds_event_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -707,12 +638,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The message of an RDS event. </p>
-    pub fn set_rds_event_message(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.rds_event_message = input;
-        self
+    pub fn set_rds_event_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.rds_event_message = input; self
     }
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
     pub fn s3_event_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -721,8 +648,7 @@ impl ObservationBuilder {
     }
     /// <p> The name of the S3 CloudWatch Event-based observation. </p>
     pub fn set_s3_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_event_name = input;
-        self
+        self.s3_event_name = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
     pub fn states_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -730,12 +656,8 @@ impl ObservationBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the step function execution-based observation. </p>
-    pub fn set_states_execution_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.states_execution_arn = input;
-        self
+    pub fn set_states_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.states_execution_arn = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
     pub fn states_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -744,8 +666,7 @@ impl ObservationBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the step function-based observation. </p>
     pub fn set_states_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.states_arn = input;
-        self
+        self.states_arn = input; self
     }
     /// <p> The status of the step function-related observation. </p>
     pub fn states_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -754,8 +675,7 @@ impl ObservationBuilder {
     }
     /// <p> The status of the step function-related observation. </p>
     pub fn set_states_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.states_status = input;
-        self
+        self.states_status = input; self
     }
     /// <p> The input to the step function-based observation. </p>
     pub fn states_input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -764,8 +684,7 @@ impl ObservationBuilder {
     }
     /// <p> The input to the step function-based observation. </p>
     pub fn set_states_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.states_input = input;
-        self
+        self.states_input = input; self
     }
     /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
     pub fn ebs_event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -774,8 +693,7 @@ impl ObservationBuilder {
     }
     /// <p> The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or <code>attachVolume</code>. </p>
     pub fn set_ebs_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ebs_event = input;
-        self
+        self.ebs_event = input; self
     }
     /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
     pub fn ebs_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -784,8 +702,7 @@ impl ObservationBuilder {
     }
     /// <p> The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>. </p>
     pub fn set_ebs_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ebs_result = input;
-        self
+        self.ebs_result = input; self
     }
     /// <p> The cause of an EBS CloudWatch event. </p>
     pub fn ebs_cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -794,8 +711,7 @@ impl ObservationBuilder {
     }
     /// <p> The cause of an EBS CloudWatch event. </p>
     pub fn set_ebs_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ebs_cause = input;
-        self
+        self.ebs_cause = input; self
     }
     /// <p> The request ID of an EBS CloudWatch event. </p>
     pub fn ebs_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -804,8 +720,7 @@ impl ObservationBuilder {
     }
     /// <p> The request ID of an EBS CloudWatch event. </p>
     pub fn set_ebs_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ebs_request_id = input;
-        self
+        self.ebs_request_id = input; self
     }
     /// <p> The X-Ray request fault percentage for this node. </p>
     pub fn x_ray_fault_percent(mut self, input: i32) -> Self {
@@ -814,8 +729,7 @@ impl ObservationBuilder {
     }
     /// <p> The X-Ray request fault percentage for this node. </p>
     pub fn set_x_ray_fault_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.x_ray_fault_percent = input;
-        self
+        self.x_ray_fault_percent = input; self
     }
     /// <p> The X-Ray request throttle percentage for this node. </p>
     pub fn x_ray_throttle_percent(mut self, input: i32) -> Self {
@@ -824,8 +738,7 @@ impl ObservationBuilder {
     }
     /// <p> The X-Ray request throttle percentage for this node. </p>
     pub fn set_x_ray_throttle_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.x_ray_throttle_percent = input;
-        self
+        self.x_ray_throttle_percent = input; self
     }
     /// <p> The X-Ray request error percentage for this node. </p>
     pub fn x_ray_error_percent(mut self, input: i32) -> Self {
@@ -834,8 +747,7 @@ impl ObservationBuilder {
     }
     /// <p> The X-Ray request error percentage for this node. </p>
     pub fn set_x_ray_error_percent(mut self, input: std::option::Option<i32>) -> Self {
-        self.x_ray_error_percent = input;
-        self
+        self.x_ray_error_percent = input; self
     }
     /// <p> The X-Ray request count for this node. </p>
     pub fn x_ray_request_count(mut self, input: i32) -> Self {
@@ -844,8 +756,7 @@ impl ObservationBuilder {
     }
     /// <p> The X-Ray request count for this node. </p>
     pub fn set_x_ray_request_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.x_ray_request_count = input;
-        self
+        self.x_ray_request_count = input; self
     }
     /// <p> The X-Ray node request average latency for this node. </p>
     pub fn x_ray_request_average_latency(mut self, input: i64) -> Self {
@@ -854,8 +765,7 @@ impl ObservationBuilder {
     }
     /// <p> The X-Ray node request average latency for this node. </p>
     pub fn set_x_ray_request_average_latency(mut self, input: std::option::Option<i64>) -> Self {
-        self.x_ray_request_average_latency = input;
-        self
+        self.x_ray_request_average_latency = input; self
     }
     /// <p> The name of the X-Ray node. </p>
     pub fn x_ray_node_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -864,8 +774,7 @@ impl ObservationBuilder {
     }
     /// <p> The name of the X-Ray node. </p>
     pub fn set_x_ray_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.x_ray_node_name = input;
-        self
+        self.x_ray_node_name = input; self
     }
     /// <p> The type of the X-Ray node. </p>
     pub fn x_ray_node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -874,57 +783,102 @@ impl ObservationBuilder {
     }
     /// <p> The type of the X-Ray node. </p>
     pub fn set_x_ray_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.x_ray_node_type = input;
-        self
+        self.x_ray_node_type = input; self
     }
     /// Consumes the builder and constructs a [`Observation`](crate::types::Observation).
     pub fn build(self) -> crate::types::Observation {
         crate::types::Observation {
-            id: self.id,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            source_type: self.source_type,
-            source_arn: self.source_arn,
-            log_group: self.log_group,
-            line_time: self.line_time,
-            log_text: self.log_text,
-            log_filter: self.log_filter,
-            metric_namespace: self.metric_namespace,
-            metric_name: self.metric_name,
-            unit: self.unit,
-            value: self.value,
-            cloud_watch_event_id: self.cloud_watch_event_id,
-            cloud_watch_event_source: self.cloud_watch_event_source,
-            cloud_watch_event_detail_type: self.cloud_watch_event_detail_type,
-            health_event_arn: self.health_event_arn,
-            health_service: self.health_service,
-            health_event_type_code: self.health_event_type_code,
-            health_event_type_category: self.health_event_type_category,
-            health_event_description: self.health_event_description,
-            code_deploy_deployment_id: self.code_deploy_deployment_id,
-            code_deploy_deployment_group: self.code_deploy_deployment_group,
-            code_deploy_state: self.code_deploy_state,
-            code_deploy_application: self.code_deploy_application,
-            code_deploy_instance_group_id: self.code_deploy_instance_group_id,
-            ec2_state: self.ec2_state,
-            rds_event_categories: self.rds_event_categories,
-            rds_event_message: self.rds_event_message,
-            s3_event_name: self.s3_event_name,
-            states_execution_arn: self.states_execution_arn,
-            states_arn: self.states_arn,
-            states_status: self.states_status,
-            states_input: self.states_input,
-            ebs_event: self.ebs_event,
-            ebs_result: self.ebs_result,
-            ebs_cause: self.ebs_cause,
-            ebs_request_id: self.ebs_request_id,
-            x_ray_fault_percent: self.x_ray_fault_percent,
-            x_ray_throttle_percent: self.x_ray_throttle_percent,
-            x_ray_error_percent: self.x_ray_error_percent,
-            x_ray_request_count: self.x_ray_request_count,
-            x_ray_request_average_latency: self.x_ray_request_average_latency,
-            x_ray_node_name: self.x_ray_node_name,
-            x_ray_node_type: self.x_ray_node_type,
+            id: self.id
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            source_type: self.source_type
+            ,
+            source_arn: self.source_arn
+            ,
+            log_group: self.log_group
+            ,
+            line_time: self.line_time
+            ,
+            log_text: self.log_text
+            ,
+            log_filter: self.log_filter
+            ,
+            metric_namespace: self.metric_namespace
+            ,
+            metric_name: self.metric_name
+            ,
+            unit: self.unit
+            ,
+            value: self.value
+            ,
+            cloud_watch_event_id: self.cloud_watch_event_id
+            ,
+            cloud_watch_event_source: self.cloud_watch_event_source
+            ,
+            cloud_watch_event_detail_type: self.cloud_watch_event_detail_type
+            ,
+            health_event_arn: self.health_event_arn
+            ,
+            health_service: self.health_service
+            ,
+            health_event_type_code: self.health_event_type_code
+            ,
+            health_event_type_category: self.health_event_type_category
+            ,
+            health_event_description: self.health_event_description
+            ,
+            code_deploy_deployment_id: self.code_deploy_deployment_id
+            ,
+            code_deploy_deployment_group: self.code_deploy_deployment_group
+            ,
+            code_deploy_state: self.code_deploy_state
+            ,
+            code_deploy_application: self.code_deploy_application
+            ,
+            code_deploy_instance_group_id: self.code_deploy_instance_group_id
+            ,
+            ec2_state: self.ec2_state
+            ,
+            rds_event_categories: self.rds_event_categories
+            ,
+            rds_event_message: self.rds_event_message
+            ,
+            s3_event_name: self.s3_event_name
+            ,
+            states_execution_arn: self.states_execution_arn
+            ,
+            states_arn: self.states_arn
+            ,
+            states_status: self.states_status
+            ,
+            states_input: self.states_input
+            ,
+            ebs_event: self.ebs_event
+            ,
+            ebs_result: self.ebs_result
+            ,
+            ebs_cause: self.ebs_cause
+            ,
+            ebs_request_id: self.ebs_request_id
+            ,
+            x_ray_fault_percent: self.x_ray_fault_percent
+            ,
+            x_ray_throttle_percent: self.x_ray_throttle_percent
+            ,
+            x_ray_error_percent: self.x_ray_error_percent
+            ,
+            x_ray_request_count: self.x_ray_request_count
+            ,
+            x_ray_request_average_latency: self.x_ray_request_average_latency
+            ,
+            x_ray_node_name: self.x_ray_node_name
+            ,
+            x_ray_node_type: self.x_ray_node_type
+            ,
         }
     }
 }
+

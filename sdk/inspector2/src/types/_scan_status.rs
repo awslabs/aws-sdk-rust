@@ -3,7 +3,7 @@
 /// <p>The status of the scan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanStatus {
+pub struct ScanStatus  {
     /// <p>The status code of the scan.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<crate::types::ScanStatusCode>,
@@ -13,11 +13,11 @@ pub struct ScanStatus {
 }
 impl ScanStatus {
     /// <p>The status code of the scan.</p>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::ScanStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::types::ScanStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>The reason for the scan.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::ScanStatusReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::types::ScanStatusReason> {
         self.reason.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ScanStatusBuilder {
         self
     }
     /// <p>The status code of the scan.</p>
-    pub fn set_status_code(
-        mut self,
-        input: std::option::Option<crate::types::ScanStatusCode>,
-    ) -> Self {
-        self.status_code = input;
-        self
+    pub fn set_status_code(mut self, input: std::option::Option<crate::types::ScanStatusCode>) -> Self {
+        self.status_code = input; self
     }
     /// <p>The reason for the scan.</p>
     pub fn reason(mut self, input: crate::types::ScanStatusReason) -> Self {
@@ -55,18 +51,17 @@ impl ScanStatusBuilder {
         self
     }
     /// <p>The reason for the scan.</p>
-    pub fn set_reason(
-        mut self,
-        input: std::option::Option<crate::types::ScanStatusReason>,
-    ) -> Self {
-        self.reason = input;
-        self
+    pub fn set_reason(mut self, input: std::option::Option<crate::types::ScanStatusReason>) -> Self {
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`ScanStatus`](crate::types::ScanStatus).
     pub fn build(self) -> crate::types::ScanStatus {
         crate::types::ScanStatus {
-            status_code: self.status_code,
-            reason: self.reason,
+            status_code: self.status_code
+            ,
+            reason: self.reason
+            ,
         }
     }
 }
+

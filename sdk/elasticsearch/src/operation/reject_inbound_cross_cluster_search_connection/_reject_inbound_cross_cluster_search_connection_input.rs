@@ -3,20 +3,20 @@
 /// <p>Container for the parameters to the <code><code>RejectInboundCrossClusterSearchConnection</code></code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectInboundCrossClusterSearchConnectionInput {
+pub struct RejectInboundCrossClusterSearchConnectionInput  {
     /// <p>The id of the inbound connection that you want to reject.</p>
     #[doc(hidden)]
     pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
 }
 impl RejectInboundCrossClusterSearchConnectionInput {
     /// <p>The id of the inbound connection that you want to reject.</p>
-    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<& str> {
         self.cross_cluster_search_connection_id.as_deref()
     }
 }
 impl RejectInboundCrossClusterSearchConnectionInput {
     /// Creates a new builder-style object to manufacture [`RejectInboundCrossClusterSearchConnectionInput`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput).
-    pub fn builder() -> crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionInputBuilder{
+    pub fn builder() -> crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionInputBuilder {
         crate::operation::reject_inbound_cross_cluster_search_connection::builders::RejectInboundCrossClusterSearchConnectionInputBuilder::default()
     }
 }
@@ -29,23 +29,16 @@ pub struct RejectInboundCrossClusterSearchConnectionInputBuilder {
 }
 impl RejectInboundCrossClusterSearchConnectionInputBuilder {
     /// <p>The id of the inbound connection that you want to reject.</p>
-    pub fn cross_cluster_search_connection_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn cross_cluster_search_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.cross_cluster_search_connection_id = Some(input.into());
         self
     }
     /// <p>The id of the inbound connection that you want to reject.</p>
-    pub fn set_cross_cluster_search_connection_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cross_cluster_search_connection_id = input;
-        self
+    pub fn set_cross_cluster_search_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cross_cluster_search_connection_id = input; self
     }
     /// Consumes the builder and constructs a [`RejectInboundCrossClusterSearchConnectionInput`](crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput).
-    pub fn build(self) -> Result<crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionInput {
                 cross_cluster_search_connection_id: self.cross_cluster_search_connection_id
@@ -54,3 +47,4 @@ impl RejectInboundCrossClusterSearchConnectionInputBuilder {
         )
     }
 }
+

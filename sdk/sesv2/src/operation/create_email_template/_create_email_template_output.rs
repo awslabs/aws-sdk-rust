@@ -3,20 +3,18 @@
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEmailTemplateOutput {
+pub struct CreateEmailTemplateOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateEmailTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateEmailTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
-    pub fn builder(
-    ) -> crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder {
-        crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder {
+        crate::operation::create_email_template::builders::CreateEmailTemplateOutputBuilder::default()
     }
 }
 
@@ -28,14 +26,14 @@ pub struct CreateEmailTemplateOutputBuilder {
 }
 impl CreateEmailTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
     pub fn build(self) -> crate::operation::create_email_template::CreateEmailTemplateOutput {
         crate::operation::create_email_template::CreateEmailTemplateOutput {
@@ -43,3 +41,4 @@ impl CreateEmailTemplateOutputBuilder {
         }
     }
 }
+

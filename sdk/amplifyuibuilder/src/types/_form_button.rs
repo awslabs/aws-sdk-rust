@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for a button UI element that is a part of a form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormButton {
+pub struct FormButton  {
     /// <p>Specifies whether the button is visible on the form.</p>
     #[doc(hidden)]
     pub excluded: std::option::Option<bool>,
@@ -20,11 +20,11 @@ impl FormButton {
         self.excluded
     }
     /// <p>Describes the button's properties.</p>
-    pub fn children(&self) -> std::option::Option<&str> {
+    pub fn children(&self) -> std::option::Option<& str> {
         self.children.as_deref()
     }
     /// <p>The position of the button.</p>
-    pub fn position(&self) -> std::option::Option<&crate::types::FieldPosition> {
+    pub fn position(&self) -> std::option::Option<& crate::types::FieldPosition> {
         self.position.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl FormButtonBuilder {
     }
     /// <p>Specifies whether the button is visible on the form.</p>
     pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
-        self.excluded = input;
-        self
+        self.excluded = input; self
     }
     /// <p>Describes the button's properties.</p>
     pub fn children(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FormButtonBuilder {
     }
     /// <p>Describes the button's properties.</p>
     pub fn set_children(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.children = input;
-        self
+        self.children = input; self
     }
     /// <p>The position of the button.</p>
     pub fn position(mut self, input: crate::types::FieldPosition) -> Self {
@@ -71,15 +69,18 @@ impl FormButtonBuilder {
     }
     /// <p>The position of the button.</p>
     pub fn set_position(mut self, input: std::option::Option<crate::types::FieldPosition>) -> Self {
-        self.position = input;
-        self
+        self.position = input; self
     }
     /// Consumes the builder and constructs a [`FormButton`](crate::types::FormButton).
     pub fn build(self) -> crate::types::FormButton {
         crate::types::FormButton {
-            excluded: self.excluded,
-            children: self.children,
-            position: self.position,
+            excluded: self.excluded
+            ,
+            children: self.children
+            ,
+            position: self.position
+            ,
         }
     }
 }
+

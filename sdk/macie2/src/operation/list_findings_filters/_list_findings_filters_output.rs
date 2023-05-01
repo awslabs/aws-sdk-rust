@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsFiltersOutput {
+pub struct ListFindingsFiltersOutput  {
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
     #[doc(hidden)]
-    pub findings_filter_list_items:
-        std::option::Option<std::vec::Vec<crate::types::FindingsFilterListItem>>,
+    pub findings_filter_list_items: std::option::Option<std::vec::Vec<crate::types::FindingsFilterListItem>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,27 +13,23 @@ pub struct ListFindingsFiltersOutput {
 }
 impl ListFindingsFiltersOutput {
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
-    pub fn findings_filter_list_items(
-        &self,
-    ) -> std::option::Option<&[crate::types::FindingsFilterListItem]> {
+    pub fn findings_filter_list_items(&self) -> std::option::Option<& [crate::types::FindingsFilterListItem]> {
         self.findings_filter_list_items.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFindingsFiltersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFindingsFiltersOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsFiltersOutput`](crate::operation::list_findings_filters::ListFindingsFiltersOutput).
-    pub fn builder(
-    ) -> crate::operation::list_findings_filters::builders::ListFindingsFiltersOutputBuilder {
-        crate::operation::list_findings_filters::builders::ListFindingsFiltersOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_findings_filters::builders::ListFindingsFiltersOutputBuilder {
+        crate::operation::list_findings_filters::builders::ListFindingsFiltersOutputBuilder::default()
     }
 }
 
@@ -42,8 +37,7 @@ impl ListFindingsFiltersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFindingsFiltersOutputBuilder {
-    pub(crate) findings_filter_list_items:
-        std::option::Option<std::vec::Vec<crate::types::FindingsFilterListItem>>,
+    pub(crate) findings_filter_list_items: std::option::Option<std::vec::Vec<crate::types::FindingsFilterListItem>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,22 +47,15 @@ impl ListFindingsFiltersOutputBuilder {
     /// To override the contents of this collection use [`set_findings_filter_list_items`](Self::set_findings_filter_list_items).
     ///
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
-    pub fn findings_filter_list_items(
-        mut self,
-        input: crate::types::FindingsFilterListItem,
-    ) -> Self {
+    pub fn findings_filter_list_items(mut self, input: crate::types::FindingsFilterListItem) -> Self {
         let mut v = self.findings_filter_list_items.unwrap_or_default();
-        v.push(input);
-        self.findings_filter_list_items = Some(v);
-        self
+                        v.push(input);
+                        self.findings_filter_list_items = Some(v);
+                        self
     }
     /// <p>An array of objects, one for each filter that's associated with the account.</p>
-    pub fn set_findings_filter_list_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FindingsFilterListItem>>,
-    ) -> Self {
-        self.findings_filter_list_items = input;
-        self
+    pub fn set_findings_filter_list_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::FindingsFilterListItem>>) -> Self {
+        self.findings_filter_list_items = input; self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,24 +64,26 @@ impl ListFindingsFiltersOutputBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFindingsFiltersOutput`](crate::operation::list_findings_filters::ListFindingsFiltersOutput).
     pub fn build(self) -> crate::operation::list_findings_filters::ListFindingsFiltersOutput {
         crate::operation::list_findings_filters::ListFindingsFiltersOutput {
-            findings_filter_list_items: self.findings_filter_list_items,
-            next_token: self.next_token,
+            findings_filter_list_items: self.findings_filter_list_items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

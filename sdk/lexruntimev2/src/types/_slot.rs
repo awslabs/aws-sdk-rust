@@ -3,7 +3,7 @@
 /// <p>A value that Amazon Lex V2 uses to fulfill an intent. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Slot {
+pub struct Slot  {
     /// <p>The current value of the slot.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::Value>,
@@ -15,27 +15,23 @@ pub struct Slot {
     pub values: std::option::Option<std::vec::Vec<crate::types::Slot>>,
     /// <p>The constituent sub slots of a composite slot.</p>
     #[doc(hidden)]
-    pub sub_slots:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Slot>>,
+    pub sub_slots: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Slot>>,
 }
 impl Slot {
     /// <p>The current value of the slot.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::Value> {
+    pub fn value(&self) -> std::option::Option<& crate::types::Value> {
         self.value.as_ref()
     }
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
-    pub fn shape(&self) -> std::option::Option<&crate::types::Shape> {
+    pub fn shape(&self) -> std::option::Option<& crate::types::Shape> {
         self.shape.as_ref()
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::Slot]> {
+    pub fn values(&self) -> std::option::Option<& [crate::types::Slot]> {
         self.values.as_deref()
     }
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn sub_slots(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Slot>>
-    {
+    pub fn sub_slots(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::Slot>> {
         self.sub_slots.as_ref()
     }
 }
@@ -53,8 +49,7 @@ pub struct SlotBuilder {
     pub(crate) value: std::option::Option<crate::types::Value>,
     pub(crate) shape: std::option::Option<crate::types::Shape>,
     pub(crate) values: std::option::Option<std::vec::Vec<crate::types::Slot>>,
-    pub(crate) sub_slots:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Slot>>,
+    pub(crate) sub_slots: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Slot>>,
 }
 impl SlotBuilder {
     /// <p>The current value of the slot.</p>
@@ -64,8 +59,7 @@ impl SlotBuilder {
     }
     /// <p>The current value of the slot.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::Value>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     pub fn shape(mut self, input: crate::types::Shape) -> Self {
@@ -74,8 +68,7 @@ impl SlotBuilder {
     }
     /// <p>When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code> field contains a list of slot values. When the value is <code>Scalar</code>, it indicates that the <code>value</code> field contains a single value.</p>
     pub fn set_shape(mut self, input: std::option::Option<crate::types::Shape>) -> Self {
-        self.shape = input;
-        self
+        self.shape = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -84,17 +77,13 @@ impl SlotBuilder {
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
     pub fn values(mut self, input: crate::types::Slot) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>A list of one or more values that the user provided for the slot. For example, if a for a slot that elicits pizza toppings, the values might be "pepperoni" and "pineapple." </p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Slot>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::Slot>>) -> Self {
+        self.values = input; self
     }
     /// Adds a key-value pair to `sub_slots`.
     ///
@@ -103,27 +92,26 @@ impl SlotBuilder {
     /// <p>The constituent sub slots of a composite slot.</p>
     pub fn sub_slots(mut self, k: impl Into<std::string::String>, v: crate::types::Slot) -> Self {
         let mut hash_map = self.sub_slots.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.sub_slots = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.sub_slots = Some(hash_map);
+                        self
     }
     /// <p>The constituent sub slots of a composite slot.</p>
-    pub fn set_sub_slots(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Slot>,
-        >,
-    ) -> Self {
-        self.sub_slots = input;
-        self
+    pub fn set_sub_slots(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Slot>>) -> Self {
+        self.sub_slots = input; self
     }
     /// Consumes the builder and constructs a [`Slot`](crate::types::Slot).
     pub fn build(self) -> crate::types::Slot {
         crate::types::Slot {
-            value: self.value,
-            shape: self.shape,
-            values: self.values,
-            sub_slots: self.sub_slots,
+            value: self.value
+            ,
+            shape: self.shape
+            ,
+            values: self.values
+            ,
+            sub_slots: self.sub_slots
+            ,
         }
     }
 }
+

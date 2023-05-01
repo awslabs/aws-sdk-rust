@@ -3,14 +3,14 @@
 /// <p>The reason for a partial failure of an AutoML job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlPartialFailureReason {
+pub struct AutoMlPartialFailureReason  {
     /// <p>The message containing the reason for a partial failure of an AutoML job.</p>
     #[doc(hidden)]
     pub partial_failure_message: std::option::Option<std::string::String>,
 }
 impl AutoMlPartialFailureReason {
     /// <p>The message containing the reason for a partial failure of an AutoML job.</p>
-    pub fn partial_failure_message(&self) -> std::option::Option<&str> {
+    pub fn partial_failure_message(&self) -> std::option::Option<& str> {
         self.partial_failure_message.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl AutoMlPartialFailureReasonBuilder {
         self
     }
     /// <p>The message containing the reason for a partial failure of an AutoML job.</p>
-    pub fn set_partial_failure_message(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.partial_failure_message = input;
-        self
+    pub fn set_partial_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.partial_failure_message = input; self
     }
     /// Consumes the builder and constructs a [`AutoMlPartialFailureReason`](crate::types::AutoMlPartialFailureReason).
     pub fn build(self) -> crate::types::AutoMlPartialFailureReason {
         crate::types::AutoMlPartialFailureReason {
-            partial_failure_message: self.partial_failure_message,
+            partial_failure_message: self.partial_failure_message
+            ,
         }
     }
 }
+

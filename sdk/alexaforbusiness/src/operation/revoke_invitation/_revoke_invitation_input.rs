@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeInvitationInput {
+pub struct RevokeInvitationInput  {
     /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct RevokeInvitationInput {
 }
 impl RevokeInvitationInput {
     /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> std::option::Option<& str> {
         self.user_arn.as_deref()
     }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-    pub fn enrollment_id(&self) -> std::option::Option<&str> {
+    pub fn enrollment_id(&self) -> std::option::Option<& str> {
         self.enrollment_id.as_deref()
     }
 }
 impl RevokeInvitationInput {
     /// Creates a new builder-style object to manufacture [`RevokeInvitationInput`](crate::operation::revoke_invitation::RevokeInvitationInput).
-    pub fn builder() -> crate::operation::revoke_invitation::builders::RevokeInvitationInputBuilder
-    {
+    pub fn builder() -> crate::operation::revoke_invitation::builders::RevokeInvitationInputBuilder {
         crate::operation::revoke_invitation::builders::RevokeInvitationInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl RevokeInvitationInputBuilder {
     }
     /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input;
-        self
+        self.user_arn = input; self
     }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
     pub fn enrollment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +51,18 @@ impl RevokeInvitationInputBuilder {
     }
     /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
     pub fn set_enrollment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.enrollment_id = input;
-        self
+        self.enrollment_id = input; self
     }
     /// Consumes the builder and constructs a [`RevokeInvitationInput`](crate::operation::revoke_invitation::RevokeInvitationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::revoke_invitation::RevokeInvitationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::revoke_invitation::RevokeInvitationInput {
-            user_arn: self.user_arn,
-            enrollment_id: self.enrollment_id,
-        })
+    pub fn build(self) -> Result<crate::operation::revoke_invitation::RevokeInvitationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::revoke_invitation::RevokeInvitationInput {
+                user_arn: self.user_arn
+                ,
+                enrollment_id: self.enrollment_id
+                ,
+            }
+        )
     }
 }
+

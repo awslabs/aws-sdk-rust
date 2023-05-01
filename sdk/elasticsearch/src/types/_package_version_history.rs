@@ -3,7 +3,7 @@
 /// <p>Details of a package version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionHistory {
+pub struct PackageVersionHistory  {
     /// <p>Version of the package.</p>
     #[doc(hidden)]
     pub package_version: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct PackageVersionHistory {
 }
 impl PackageVersionHistory {
     /// <p>Version of the package.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>A message associated with the version.</p>
-    pub fn commit_message(&self) -> std::option::Option<&str> {
+    pub fn commit_message(&self) -> std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p>Timestamp which tells creation time of the package version.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl PackageVersionHistoryBuilder {
     }
     /// <p>Version of the package.</p>
     pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>A message associated with the version.</p>
     pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl PackageVersionHistoryBuilder {
     }
     /// <p>A message associated with the version.</p>
     pub fn set_commit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p>Timestamp which tells creation time of the package version.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -70,19 +68,19 @@ impl PackageVersionHistoryBuilder {
         self
     }
     /// <p>Timestamp which tells creation time of the package version.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Consumes the builder and constructs a [`PackageVersionHistory`](crate::types::PackageVersionHistory).
     pub fn build(self) -> crate::types::PackageVersionHistory {
         crate::types::PackageVersionHistory {
-            package_version: self.package_version,
-            commit_message: self.commit_message,
-            created_at: self.created_at,
+            package_version: self.package_version
+            ,
+            commit_message: self.commit_message
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

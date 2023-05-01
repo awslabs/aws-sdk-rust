@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKeywordsInput {
+pub struct DescribeKeywordsInput  {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     #[doc(hidden)]
     pub origination_identity: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct DescribeKeywordsInput {
 }
 impl DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>An array of keywords to search for.</p>
-    pub fn keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keywords(&self) -> std::option::Option<& [std::string::String]> {
         self.keywords.as_deref()
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::KeywordFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::KeywordFilter]> {
         self.filters.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -43,8 +43,7 @@ impl DescribeKeywordsInput {
 }
 impl DescribeKeywordsInput {
     /// Creates a new builder-style object to manufacture [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
-    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder {
         crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder::default()
     }
 }
@@ -66,12 +65,8 @@ impl DescribeKeywordsInputBuilder {
         self
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn set_origination_identity(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.origination_identity = input;
-        self
+    pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.origination_identity = input; self
     }
     /// Appends an item to `keywords`.
     ///
@@ -80,17 +75,13 @@ impl DescribeKeywordsInputBuilder {
     /// <p>An array of keywords to search for.</p>
     pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keywords.unwrap_or_default();
-        v.push(input.into());
-        self.keywords = Some(v);
-        self
+                        v.push(input.into());
+                        self.keywords = Some(v);
+                        self
     }
     /// <p>An array of keywords to search for.</p>
-    pub fn set_keywords(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.keywords = input;
-        self
+    pub fn set_keywords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.keywords = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -99,17 +90,13 @@ impl DescribeKeywordsInputBuilder {
     /// <p>An array of keyword filters to filter the results.</p>
     pub fn filters(mut self, input: crate::types::KeywordFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>An array of keyword filters to filter the results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeywordFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeywordFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +105,7 @@ impl DescribeKeywordsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -128,22 +114,24 @@ impl DescribeKeywordsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_keywords::DescribeKeywordsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_keywords::DescribeKeywordsInput {
-            origination_identity: self.origination_identity,
-            keywords: self.keywords,
-            filters: self.filters,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_keywords::DescribeKeywordsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_keywords::DescribeKeywordsInput {
+                origination_identity: self.origination_identity
+                ,
+                keywords: self.keywords
+                ,
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

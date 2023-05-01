@@ -3,7 +3,7 @@
 /// <p>Object for errors on fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldError {
+pub struct FieldError  {
     /// <p>The field identifier that caused the error.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct FieldError {
 }
 impl FieldError {
     /// <p>The field identifier that caused the error.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The error code from getting a field.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message from getting a field.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl FieldErrorBuilder {
     }
     /// <p>The field identifier that caused the error.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The error code from getting a field.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl FieldErrorBuilder {
     }
     /// <p>The error code from getting a field.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>The error message from getting a field.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl FieldErrorBuilder {
     }
     /// <p>The error message from getting a field.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`FieldError`](crate::types::FieldError).
     pub fn build(self) -> crate::types::FieldError {
         crate::types::FieldError {
-            id: self.id,
-            error_code: self.error_code,
-            message: self.message,
+            id: self.id
+            ,
+            error_code: self.error_code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

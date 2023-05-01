@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupMembershipOutput {
+pub struct CreateGroupMembershipOutput  {
     /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
     #[doc(hidden)]
     pub membership_id: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct CreateGroupMembershipOutput {
 }
 impl CreateGroupMembershipOutput {
     /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
-    pub fn membership_id(&self) -> std::option::Option<&str> {
+    pub fn membership_id(&self) -> std::option::Option<& str> {
         self.membership_id.as_deref()
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> std::option::Option<& str> {
         self.identity_store_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateGroupMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateGroupMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupMembershipOutput`](crate::operation::create_group_membership::CreateGroupMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder {
         crate::operation::create_group_membership::builders::CreateGroupMembershipOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl CreateGroupMembershipOutputBuilder {
     }
     /// <p>The identifier for a newly created <code>GroupMembership</code> in an identity store.</p>
     pub fn set_membership_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.membership_id = input;
-        self
+        self.membership_id = input; self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,28 +57,27 @@ impl CreateGroupMembershipOutputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identity_store_id = input;
-        self
+    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identity_store_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateGroupMembershipOutput`](crate::operation::create_group_membership::CreateGroupMembershipOutput).
     pub fn build(self) -> crate::operation::create_group_membership::CreateGroupMembershipOutput {
         crate::operation::create_group_membership::CreateGroupMembershipOutput {
-            membership_id: self.membership_id,
-            identity_store_id: self.identity_store_id,
+            membership_id: self.membership_id
+            ,
+            identity_store_id: self.identity_store_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

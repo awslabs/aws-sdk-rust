@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSystemInstanceInput {
+pub struct DeleteSystemInstanceInput  {
     /// <p>The ID of the system instance to be deleted.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSystemInstanceInput {
     /// <p>The ID of the system instance to be deleted.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteSystemInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
-    pub fn builder(
-    ) -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceInputBuilder {
+    pub fn builder() -> crate::operation::delete_system_instance::builders::DeleteSystemInstanceInputBuilder {
         crate::operation::delete_system_instance::builders::DeleteSystemInstanceInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteSystemInstanceInputBuilder {
     }
     /// <p>The ID of the system instance to be deleted.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSystemInstanceInput`](crate::operation::delete_system_instance::DeleteSystemInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_system_instance::DeleteSystemInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_system_instance::DeleteSystemInstanceInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::delete_system_instance::DeleteSystemInstanceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_system_instance::DeleteSystemInstanceInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

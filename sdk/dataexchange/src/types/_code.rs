@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let code = unimplemented!();
 /// match code {
@@ -35,22 +35,14 @@
 /// Specifically, when `code` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Code::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Code {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -67,58 +59,51 @@ pub enum Code {
     #[allow(missing_docs)] // documentation missing in model
     ValidationException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Code {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACCESS_DENIED_EXCEPTION" => Code::AccessDeniedException,
-            "INTERNAL_SERVER_EXCEPTION" => Code::InternalServerException,
-            "MALWARE_DETECTED" => Code::MalwareDetected,
-            "MALWARE_SCAN_ENCRYPTED_FILE" => Code::MalwareScanEncryptedFile,
-            "RESOURCE_NOT_FOUND_EXCEPTION" => Code::ResourceNotFoundException,
-            "SERVICE_QUOTA_EXCEEDED_EXCEPTION" => Code::ServiceQuotaExceededException,
-            "VALIDATION_EXCEPTION" => Code::ValidationException,
-            other => Code::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACCESS_DENIED_EXCEPTION" => Code::AccessDeniedException,
+"INTERNAL_SERVER_EXCEPTION" => Code::InternalServerException,
+"MALWARE_DETECTED" => Code::MalwareDetected,
+"MALWARE_SCAN_ENCRYPTED_FILE" => Code::MalwareScanEncryptedFile,
+"RESOURCE_NOT_FOUND_EXCEPTION" => Code::ResourceNotFoundException,
+"SERVICE_QUOTA_EXCEEDED_EXCEPTION" => Code::ServiceQuotaExceededException,
+"VALIDATION_EXCEPTION" => Code::ValidationException,
+other => Code::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Code {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Code::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Code::from(s))
+                }
+            }
 impl Code {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Code::AccessDeniedException => "ACCESS_DENIED_EXCEPTION",
-            Code::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
-            Code::MalwareDetected => "MALWARE_DETECTED",
-            Code::MalwareScanEncryptedFile => "MALWARE_SCAN_ENCRYPTED_FILE",
-            Code::ResourceNotFoundException => "RESOURCE_NOT_FOUND_EXCEPTION",
-            Code::ServiceQuotaExceededException => "SERVICE_QUOTA_EXCEEDED_EXCEPTION",
-            Code::ValidationException => "VALIDATION_EXCEPTION",
-            Code::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACCESS_DENIED_EXCEPTION",
-            "INTERNAL_SERVER_EXCEPTION",
-            "MALWARE_DETECTED",
-            "MALWARE_SCAN_ENCRYPTED_FILE",
-            "RESOURCE_NOT_FOUND_EXCEPTION",
-            "SERVICE_QUOTA_EXCEEDED_EXCEPTION",
-            "VALIDATION_EXCEPTION",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Code::AccessDeniedException => "ACCESS_DENIED_EXCEPTION",
+    Code::InternalServerException => "INTERNAL_SERVER_EXCEPTION",
+    Code::MalwareDetected => "MALWARE_DETECTED",
+    Code::MalwareScanEncryptedFile => "MALWARE_SCAN_ENCRYPTED_FILE",
+    Code::ResourceNotFoundException => "RESOURCE_NOT_FOUND_EXCEPTION",
+    Code::ServiceQuotaExceededException => "SERVICE_QUOTA_EXCEEDED_EXCEPTION",
+    Code::ValidationException => "VALIDATION_EXCEPTION",
+    Code::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACCESS_DENIED_EXCEPTION", "INTERNAL_SERVER_EXCEPTION", "MALWARE_DETECTED", "MALWARE_SCAN_ENCRYPTED_FILE", "RESOURCE_NOT_FOUND_EXCEPTION", "SERVICE_QUOTA_EXCEEDED_EXCEPTION", "VALIDATION_EXCEPTION"]
+                }
+            }
 impl AsRef<str> for Code {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

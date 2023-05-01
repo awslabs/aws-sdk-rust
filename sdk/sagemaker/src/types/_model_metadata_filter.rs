@@ -3,7 +3,7 @@
 /// <p>Part of the search expression. You can specify the name and value (domain, task, framework, framework version, task, and model).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelMetadataFilter {
+pub struct ModelMetadataFilter  {
     /// <p>The name of the of the model to filter by.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ModelMetadataFilterType>,
@@ -13,11 +13,11 @@ pub struct ModelMetadataFilter {
 }
 impl ModelMetadataFilter {
     /// <p>The name of the of the model to filter by.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::ModelMetadataFilterType> {
+    pub fn name(&self) -> std::option::Option<& crate::types::ModelMetadataFilterType> {
         self.name.as_ref()
     }
     /// <p>The value to filter the model metadata.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl ModelMetadataFilterBuilder {
         self
     }
     /// <p>The name of the of the model to filter by.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::ModelMetadataFilterType>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::ModelMetadataFilterType>) -> Self {
+        self.name = input; self
     }
     /// <p>The value to filter the model metadata.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl ModelMetadataFilterBuilder {
     }
     /// <p>The value to filter the model metadata.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`ModelMetadataFilter`](crate::types::ModelMetadataFilter).
     pub fn build(self) -> crate::types::ModelMetadataFilter {
         crate::types::ModelMetadataFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

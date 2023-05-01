@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSuiteDefinitionInput {
+pub struct GetSuiteDefinitionInput  {
     /// <p>Suite definition ID of the test suite to get.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct GetSuiteDefinitionInput {
 }
 impl GetSuiteDefinitionInput {
     /// <p>Suite definition ID of the test suite to get.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite definition version of the test suite to get.</p>
-    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
+    pub fn suite_definition_version(&self) -> std::option::Option<& str> {
         self.suite_definition_version.as_deref()
     }
 }
 impl GetSuiteDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetSuiteDefinitionInput`](crate::operation::get_suite_definition::GetSuiteDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::get_suite_definition::builders::GetSuiteDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::get_suite_definition::builders::GetSuiteDefinitionInputBuilder {
         crate::operation::get_suite_definition::builders::GetSuiteDefinitionInputBuilder::default()
     }
 }
@@ -42,12 +41,8 @@ impl GetSuiteDefinitionInputBuilder {
         self
     }
     /// <p>Suite definition ID of the test suite to get.</p>
-    pub fn set_suite_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.suite_definition_id = input;
-        self
+    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.suite_definition_id = input; self
     }
     /// <p>Suite definition version of the test suite to get.</p>
     pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,25 +50,19 @@ impl GetSuiteDefinitionInputBuilder {
         self
     }
     /// <p>Suite definition version of the test suite to get.</p>
-    pub fn set_suite_definition_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.suite_definition_version = input;
-        self
+    pub fn set_suite_definition_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.suite_definition_version = input; self
     }
     /// Consumes the builder and constructs a [`GetSuiteDefinitionInput`](crate::operation::get_suite_definition::GetSuiteDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_suite_definition::GetSuiteDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_suite_definition::GetSuiteDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_suite_definition::GetSuiteDefinitionInput {
-                suite_definition_id: self.suite_definition_id,
-                suite_definition_version: self.suite_definition_version,
-            },
+                suite_definition_id: self.suite_definition_id
+                ,
+                suite_definition_version: self.suite_definition_version
+                ,
+            }
         )
     }
 }
+

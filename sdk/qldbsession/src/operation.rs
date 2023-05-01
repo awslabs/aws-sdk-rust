@@ -3,3 +3,4 @@ pub use aws_http::request_id::RequestId;
 
 /// Types for the `SendCommand` operation.
 pub mod send_command;
+

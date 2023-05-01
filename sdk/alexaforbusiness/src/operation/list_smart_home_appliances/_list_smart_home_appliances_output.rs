@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSmartHomeAppliancesOutput {
+pub struct ListSmartHomeAppliancesOutput  {
     /// <p>The smart home appliances.</p>
     #[doc(hidden)]
     pub smart_home_appliances: std::option::Option<std::vec::Vec<crate::types::SmartHomeAppliance>>,
@@ -13,26 +13,22 @@ pub struct ListSmartHomeAppliancesOutput {
 }
 impl ListSmartHomeAppliancesOutput {
     /// <p>The smart home appliances.</p>
-    pub fn smart_home_appliances(
-        &self,
-    ) -> std::option::Option<&[crate::types::SmartHomeAppliance]> {
+    pub fn smart_home_appliances(&self) -> std::option::Option<& [crate::types::SmartHomeAppliance]> {
         self.smart_home_appliances.as_deref()
     }
     /// <p>The tokens used for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSmartHomeAppliancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSmartHomeAppliancesOutput {
     /// Creates a new builder-style object to manufacture [`ListSmartHomeAppliancesOutput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesOutputBuilder {
         crate::operation::list_smart_home_appliances::builders::ListSmartHomeAppliancesOutputBuilder::default()
     }
 }
@@ -41,8 +37,7 @@ impl ListSmartHomeAppliancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSmartHomeAppliancesOutputBuilder {
-    pub(crate) smart_home_appliances:
-        std::option::Option<std::vec::Vec<crate::types::SmartHomeAppliance>>,
+    pub(crate) smart_home_appliances: std::option::Option<std::vec::Vec<crate::types::SmartHomeAppliance>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +49,13 @@ impl ListSmartHomeAppliancesOutputBuilder {
     /// <p>The smart home appliances.</p>
     pub fn smart_home_appliances(mut self, input: crate::types::SmartHomeAppliance) -> Self {
         let mut v = self.smart_home_appliances.unwrap_or_default();
-        v.push(input);
-        self.smart_home_appliances = Some(v);
-        self
+                        v.push(input);
+                        self.smart_home_appliances = Some(v);
+                        self
     }
     /// <p>The smart home appliances.</p>
-    pub fn set_smart_home_appliances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SmartHomeAppliance>>,
-    ) -> Self {
-        self.smart_home_appliances = input;
-        self
+    pub fn set_smart_home_appliances(mut self, input: std::option::Option<std::vec::Vec<crate::types::SmartHomeAppliance>>) -> Self {
+        self.smart_home_appliances = input; self
     }
     /// <p>The tokens used for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,26 +64,26 @@ impl ListSmartHomeAppliancesOutputBuilder {
     }
     /// <p>The tokens used for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSmartHomeAppliancesOutput`](crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput {
+    pub fn build(self) -> crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput {
         crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput {
-            smart_home_appliances: self.smart_home_appliances,
-            next_token: self.next_token,
+            smart_home_appliances: self.smart_home_appliances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

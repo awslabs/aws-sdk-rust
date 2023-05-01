@@ -3,7 +3,7 @@
 /// <p>The input for the TransferCertificate operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransferCertificateInput {
+pub struct TransferCertificateInput  {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     #[doc(hidden)]
     pub certificate_id: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct TransferCertificateInput {
 }
 impl TransferCertificateInput {
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn target_aws_account(&self) -> std::option::Option<&str> {
+    pub fn target_aws_account(&self) -> std::option::Option<& str> {
         self.target_aws_account.as_deref()
     }
     /// <p>The transfer message.</p>
-    pub fn transfer_message(&self) -> std::option::Option<&str> {
+    pub fn transfer_message(&self) -> std::option::Option<& str> {
         self.transfer_message.as_deref()
     }
 }
 impl TransferCertificateInput {
     /// Creates a new builder-style object to manufacture [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
-    pub fn builder(
-    ) -> crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
+    pub fn builder() -> crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder {
         crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl TransferCertificateInputBuilder {
     }
     /// <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>The Amazon Web Services account.</p>
     pub fn target_aws_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,12 +59,8 @@ impl TransferCertificateInputBuilder {
         self
     }
     /// <p>The Amazon Web Services account.</p>
-    pub fn set_target_aws_account(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.target_aws_account = input;
-        self
+    pub fn set_target_aws_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.target_aws_account = input; self
     }
     /// <p>The transfer message.</p>
     pub fn transfer_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +69,20 @@ impl TransferCertificateInputBuilder {
     }
     /// <p>The transfer message.</p>
     pub fn set_transfer_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transfer_message = input;
-        self
+        self.transfer_message = input; self
     }
     /// Consumes the builder and constructs a [`TransferCertificateInput`](crate::operation::transfer_certificate::TransferCertificateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::transfer_certificate::TransferCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::transfer_certificate::TransferCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::transfer_certificate::TransferCertificateInput {
-                certificate_id: self.certificate_id,
-                target_aws_account: self.target_aws_account,
-                transfer_message: self.transfer_message,
-            },
+                certificate_id: self.certificate_id
+                ,
+                target_aws_account: self.target_aws_account
+                ,
+                transfer_message: self.transfer_message
+                ,
+            }
         )
     }
 }
+

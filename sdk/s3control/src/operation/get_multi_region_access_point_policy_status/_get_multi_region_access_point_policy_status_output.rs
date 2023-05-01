@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMultiRegionAccessPointPolicyStatusOutput {
+pub struct GetMultiRegionAccessPointPolicyStatusOutput  {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
     #[doc(hidden)]
     pub established: std::option::Option<crate::types::PolicyStatus>,
@@ -10,18 +10,18 @@ pub struct GetMultiRegionAccessPointPolicyStatusOutput {
 }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn established(&self) -> std::option::Option<&crate::types::PolicyStatus> {
+    pub fn established(&self) -> std::option::Option<& crate::types::PolicyStatus> {
         self.established.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMultiRegionAccessPointPolicyStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMultiRegionAccessPointPolicyStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput).
-    pub fn builder() -> crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusOutputBuilder{
+    pub fn builder() -> crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusOutputBuilder {
         crate::operation::get_multi_region_access_point_policy_status::builders::GetMultiRegionAccessPointPolicyStatusOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl GetMultiRegionAccessPointPolicyStatusOutputBuilder {
         self
     }
     /// <p>Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>. </p>
-    pub fn set_established(
-        mut self,
-        input: std::option::Option<crate::types::PolicyStatus>,
-    ) -> Self {
-        self.established = input;
-        self
+    pub fn set_established(mut self, input: std::option::Option<crate::types::PolicyStatus>) -> Self {
+        self.established = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMultiRegionAccessPointPolicyStatusOutput`](crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput).
-    pub fn build(self) -> crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput{
+    pub fn build(self) -> crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput {
         crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput {
             established: self.established
             ,
@@ -65,3 +61,4 @@ impl GetMultiRegionAccessPointPolicyStatusOutputBuilder {
         }
     }
 }
+

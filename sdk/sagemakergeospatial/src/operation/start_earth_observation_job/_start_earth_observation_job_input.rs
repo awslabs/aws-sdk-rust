@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEarthObservationJobInput {
+pub struct StartEarthObservationJobInput  {
     /// <p>The name of the Earth Observation job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -23,47 +23,41 @@ pub struct StartEarthObservationJobInput {
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartEarthObservationJobInput {
     /// <p>The name of the Earth Observation job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input configuration information for the Earth Observation job.</p>
-    pub fn input_config(&self) -> std::option::Option<&crate::types::InputConfigInput> {
+    pub fn input_config(&self) -> std::option::Option<& crate::types::InputConfigInput> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> std::option::Option<&crate::types::JobConfigInput> {
+    pub fn job_config(&self) -> std::option::Option<& crate::types::JobConfigInput> {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl StartEarthObservationJobInput {
     /// Creates a new builder-style object to manufacture [`StartEarthObservationJobInput`](crate::operation::start_earth_observation_job::StartEarthObservationJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_earth_observation_job::builders::StartEarthObservationJobInputBuilder {
         crate::operation::start_earth_observation_job::builders::StartEarthObservationJobInputBuilder::default()
     }
 }
@@ -78,8 +72,7 @@ pub struct StartEarthObservationJobInputBuilder {
     pub(crate) input_config: std::option::Option<crate::types::InputConfigInput>,
     pub(crate) job_config: std::option::Option<crate::types::JobConfigInput>,
     pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StartEarthObservationJobInputBuilder {
     /// <p>The name of the Earth Observation job.</p>
@@ -89,8 +82,7 @@ impl StartEarthObservationJobInputBuilder {
     }
     /// <p>The name of the Earth Observation job.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +91,7 @@ impl StartEarthObservationJobInputBuilder {
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +100,7 @@ impl StartEarthObservationJobInputBuilder {
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// <p>Input configuration information for the Earth Observation job.</p>
     pub fn input_config(mut self, input: crate::types::InputConfigInput) -> Self {
@@ -118,12 +108,8 @@ impl StartEarthObservationJobInputBuilder {
         self
     }
     /// <p>Input configuration information for the Earth Observation job.</p>
-    pub fn set_input_config(
-        mut self,
-        input: std::option::Option<crate::types::InputConfigInput>,
-    ) -> Self {
-        self.input_config = input;
-        self
+    pub fn set_input_config(mut self, input: std::option::Option<crate::types::InputConfigInput>) -> Self {
+        self.input_config = input; self
     }
     /// <p>An object containing information about the job configuration.</p>
     pub fn job_config(mut self, input: crate::types::JobConfigInput) -> Self {
@@ -131,12 +117,8 @@ impl StartEarthObservationJobInputBuilder {
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn set_job_config(
-        mut self,
-        input: std::option::Option<crate::types::JobConfigInput>,
-    ) -> Self {
-        self.job_config = input;
-        self
+    pub fn set_job_config(mut self, input: std::option::Option<crate::types::JobConfigInput>) -> Self {
+        self.job_config = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,55 +126,44 @@ impl StartEarthObservationJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_arn = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`StartEarthObservationJobInput`](crate::operation::start_earth_observation_job::StartEarthObservationJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_earth_observation_job::StartEarthObservationJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_earth_observation_job::StartEarthObservationJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_earth_observation_job::StartEarthObservationJobInput {
-                name: self.name,
-                client_token: self.client_token,
-                kms_key_id: self.kms_key_id,
-                input_config: self.input_config,
-                job_config: self.job_config,
-                execution_role_arn: self.execution_role_arn,
-                tags: self.tags,
-            },
+                name: self.name
+                ,
+                client_token: self.client_token
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                input_config: self.input_config
+                ,
+                job_config: self.job_config
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

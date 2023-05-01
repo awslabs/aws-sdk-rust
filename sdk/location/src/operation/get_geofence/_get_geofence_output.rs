@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGeofenceOutput {
+pub struct GetGeofenceOutput  {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
     pub geometry: std::option::Option<crate::types::GeofenceGeometry>,
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -29,38 +29,38 @@ pub struct GetGeofenceOutput {
 }
 impl GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> std::option::Option<& str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::types::GeofenceGeometry> {
+    pub fn geometry(&self) -> std::option::Option<& crate::types::GeofenceGeometry> {
         self.geometry.as_ref()
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetGeofenceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetGeofenceOutput {
     /// Creates a new builder-style object to manufacture [`GetGeofenceOutput`](crate::operation::get_geofence::GetGeofenceOutput).
     pub fn builder() -> crate::operation::get_geofence::builders::GetGeofenceOutputBuilder {
@@ -87,8 +87,7 @@ impl GetGeofenceOutputBuilder {
     }
     /// <p>The geofence identifier.</p>
     pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.geofence_id = input;
-        self
+        self.geofence_id = input; self
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
@@ -96,36 +95,31 @@ impl GetGeofenceOutputBuilder {
         self
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn set_geometry(
-        mut self,
-        input: std::option::Option<crate::types::GeofenceGeometry>,
-    ) -> Self {
-        self.geometry = input;
-        self
+    pub fn set_geometry(mut self, input: std::option::Option<crate::types::GeofenceGeometry>) -> Self {
+        self.geometry = input; self
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
-    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li>
-    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li>
-    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
-    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
+    /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li> 
+    /// <li> <p> <code>PENDING</code> — The geofence is being processed by the system.</p> </li> 
+    /// <li> <p> <code>FAILED</code> — The geofence failed to be indexed by the system.</p> </li> 
+    /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li> 
+    /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,12 +127,8 @@ impl GetGeofenceOutputBuilder {
         self
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.create_time = input;
-        self
+    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.create_time = input; self
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -146,31 +136,33 @@ impl GetGeofenceOutputBuilder {
         self
     }
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_update_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_time = input;
-        self
+    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetGeofenceOutput`](crate::operation::get_geofence::GetGeofenceOutput).
     pub fn build(self) -> crate::operation::get_geofence::GetGeofenceOutput {
         crate::operation::get_geofence::GetGeofenceOutput {
-            geofence_id: self.geofence_id,
-            geometry: self.geometry,
-            status: self.status,
-            create_time: self.create_time,
-            update_time: self.update_time,
+            geofence_id: self.geofence_id
+            ,
+            geometry: self.geometry
+            ,
+            status: self.status
+            ,
+            create_time: self.create_time
+            ,
+            update_time: self.update_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

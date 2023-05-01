@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCollectionInput {
+pub struct DeleteCollectionInput  {
     /// <p>ID of the collection to delete.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
 }
 impl DeleteCollectionInput {
     /// <p>ID of the collection to delete.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> std::option::Option<& str> {
         self.collection_id.as_deref()
     }
 }
 impl DeleteCollectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
-    pub fn builder() -> crate::operation::delete_collection::builders::DeleteCollectionInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_collection::builders::DeleteCollectionInputBuilder {
         crate::operation::delete_collection::builders::DeleteCollectionInputBuilder::default()
     }
 }
@@ -35,18 +34,16 @@ impl DeleteCollectionInputBuilder {
     }
     /// <p>ID of the collection to delete.</p>
     pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_id = input;
-        self
+        self.collection_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteCollectionInput`](crate::operation::delete_collection::DeleteCollectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_collection::DeleteCollectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_collection::DeleteCollectionInput {
-            collection_id: self.collection_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_collection::DeleteCollectionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_collection::DeleteCollectionInput {
+                collection_id: self.collection_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The time period of the request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateInterval {
+pub struct DateInterval  {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     #[doc(hidden)]
     pub start: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DateInterval {
 }
 impl DateInterval {
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DateIntervalBuilder {
     }
     /// <p>The beginning of the time period. The start date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and usage data starting at <code>2017-01-01</code> up to the end date. The start date must be equal to or no later than the current date to avoid a validation error.</p>
     pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DateIntervalBuilder {
     }
     /// <p>The end of the time period. The end date is exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
     pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// Consumes the builder and constructs a [`DateInterval`](crate::types::DateInterval).
     pub fn build(self) -> crate::types::DateInterval {
         crate::types::DateInterval {
-            start: self.start,
-            end: self.end,
+            start: self.start
+            ,
+            end: self.end
+            ,
         }
     }
 }
+

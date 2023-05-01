@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateResourceGroupOutput {
+pub struct CreateResourceGroupOutput  {
     /// <p>The ARN that specifies the resource group that is created.</p>
     #[doc(hidden)]
     pub resource_group_arn: std::option::Option<std::string::String>,
@@ -10,21 +10,19 @@ pub struct CreateResourceGroupOutput {
 }
 impl CreateResourceGroupOutput {
     /// <p>The ARN that specifies the resource group that is created.</p>
-    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateResourceGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateResourceGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder {
-        crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder {
+        crate::operation::create_resource_group::builders::CreateResourceGroupOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,25 @@ impl CreateResourceGroupOutputBuilder {
         self
     }
     /// <p>The ARN that specifies the resource group that is created.</p>
-    pub fn set_resource_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_group_arn = input;
-        self
+    pub fn set_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_group_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateResourceGroupOutput`](crate::operation::create_resource_group::CreateResourceGroupOutput).
     pub fn build(self) -> crate::operation::create_resource_group::CreateResourceGroupOutput {
         crate::operation::create_resource_group::CreateResourceGroupOutput {
-            resource_group_arn: self.resource_group_arn,
+            resource_group_arn: self.resource_group_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

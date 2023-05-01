@@ -3,11 +3,11 @@
 /// <p>Information about the resize operation for the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRedshiftClusterResizeInfo {
+pub struct AwsRedshiftClusterResizeInfo  {
     /// <p>Indicates whether the resize operation can be canceled.</p>
     #[doc(hidden)]
     pub allow_cancel_resize: bool,
-    /// <p>The type of resize operation.</p>
+    /// <p>The type of resize operation.</p> 
     /// <p>Valid values: <code>ClassicResize</code> </p>
     #[doc(hidden)]
     pub resize_type: std::option::Option<std::string::String>,
@@ -17,9 +17,9 @@ impl AwsRedshiftClusterResizeInfo {
     pub fn allow_cancel_resize(&self) -> bool {
         self.allow_cancel_resize
     }
-    /// <p>The type of resize operation.</p>
+    /// <p>The type of resize operation.</p> 
     /// <p>Valid values: <code>ClassicResize</code> </p>
-    pub fn resize_type(&self) -> std::option::Option<&str> {
+    pub fn resize_type(&self) -> std::option::Option<& str> {
         self.resize_type.as_deref()
     }
 }
@@ -45,26 +45,28 @@ impl AwsRedshiftClusterResizeInfoBuilder {
     }
     /// <p>Indicates whether the resize operation can be canceled.</p>
     pub fn set_allow_cancel_resize(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_cancel_resize = input;
-        self
+        self.allow_cancel_resize = input; self
     }
-    /// <p>The type of resize operation.</p>
+    /// <p>The type of resize operation.</p> 
     /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn resize_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.resize_type = Some(input.into());
         self
     }
-    /// <p>The type of resize operation.</p>
+    /// <p>The type of resize operation.</p> 
     /// <p>Valid values: <code>ClassicResize</code> </p>
     pub fn set_resize_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resize_type = input;
-        self
+        self.resize_type = input; self
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterResizeInfo`](crate::types::AwsRedshiftClusterResizeInfo).
     pub fn build(self) -> crate::types::AwsRedshiftClusterResizeInfo {
         crate::types::AwsRedshiftClusterResizeInfo {
-            allow_cancel_resize: self.allow_cancel_resize.unwrap_or_default(),
-            resize_type: self.resize_type,
+            allow_cancel_resize: self.allow_cancel_resize
+                .unwrap_or_default()
+            ,
+            resize_type: self.resize_type
+            ,
         }
     }
 }
+

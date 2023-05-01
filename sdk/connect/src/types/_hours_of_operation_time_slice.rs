@@ -3,7 +3,7 @@
 /// <p>The start time or end time for an hours of operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HoursOfOperationTimeSlice {
+pub struct HoursOfOperationTimeSlice  {
     /// <p>The hours.</p>
     #[doc(hidden)]
     pub hours: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl HoursOfOperationTimeSliceBuilder {
     }
     /// <p>The hours.</p>
     pub fn set_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.hours = input;
-        self
+        self.hours = input; self
     }
     /// <p>The minutes.</p>
     pub fn minutes(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl HoursOfOperationTimeSliceBuilder {
     }
     /// <p>The minutes.</p>
     pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.minutes = input;
-        self
+        self.minutes = input; self
     }
     /// Consumes the builder and constructs a [`HoursOfOperationTimeSlice`](crate::types::HoursOfOperationTimeSlice).
     pub fn build(self) -> crate::types::HoursOfOperationTimeSlice {
         crate::types::HoursOfOperationTimeSlice {
-            hours: self.hours,
-            minutes: self.minutes,
+            hours: self.hours
+            ,
+            minutes: self.minutes
+            ,
         }
     }
 }
+

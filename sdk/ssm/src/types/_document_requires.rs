@@ -3,7 +3,7 @@
 /// <p>An SSM document required by the current document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentRequires {
+pub struct DocumentRequires  {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DocumentRequires {
 }
 impl DocumentRequires {
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The document version required by the current document.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The document type of the required SSM document.</p>
-    pub fn require_type(&self) -> std::option::Option<&str> {
+    pub fn require_type(&self) -> std::option::Option<& str> {
         self.require_type.as_deref()
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> std::option::Option<& str> {
         self.version_name.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>The name of the required SSM document. The name can be an Amazon Resource Name (ARN).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The document version required by the current document.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>The document version required by the current document.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The document type of the required SSM document.</p>
     pub fn require_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl DocumentRequiresBuilder {
     }
     /// <p>The document type of the required SSM document.</p>
     pub fn set_require_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.require_type = input;
-        self
+        self.require_type = input; self
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl DocumentRequiresBuilder {
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_name = input;
-        self
+        self.version_name = input; self
     }
     /// Consumes the builder and constructs a [`DocumentRequires`](crate::types::DocumentRequires).
     pub fn build(self) -> crate::types::DocumentRequires {
         crate::types::DocumentRequires {
-            name: self.name,
-            version: self.version,
-            require_type: self.require_type,
-            version_name: self.version_name,
+            name: self.name
+            ,
+            version: self.version
+            ,
+            require_type: self.require_type
+            ,
+            version_name: self.version_name
+            ,
         }
     }
 }
+

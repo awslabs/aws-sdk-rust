@@ -3,7 +3,7 @@
 /// <p>Contains information about an agent status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentStatus {
+pub struct AgentStatus  {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
     #[doc(hidden)]
     pub agent_status_arn: std::option::Option<std::string::String>,
@@ -27,28 +27,27 @@ pub struct AgentStatus {
     pub state: std::option::Option<crate::types::AgentStatusState>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AgentStatus {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
-    pub fn agent_status_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_status_arn(&self) -> std::option::Option<& str> {
         self.agent_status_arn.as_deref()
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(&self) -> std::option::Option<&str> {
+    pub fn agent_status_id(&self) -> std::option::Option<& str> {
         self.agent_status_id.as_deref()
     }
     /// <p>The name of the agent status.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the agent status.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of agent status.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AgentStatusType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::AgentStatusType> {
         self.r#type.as_ref()
     }
     /// <p>The display order of the agent status.</p>
@@ -56,14 +55,11 @@ impl AgentStatus {
         self.display_order
     }
     /// <p>The state of the agent status.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AgentStatusState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::AgentStatusState> {
         self.state.as_ref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -85,8 +81,7 @@ pub struct AgentStatusBuilder {
     pub(crate) r#type: std::option::Option<crate::types::AgentStatusType>,
     pub(crate) display_order: std::option::Option<i32>,
     pub(crate) state: std::option::Option<crate::types::AgentStatusState>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AgentStatusBuilder {
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
@@ -96,8 +91,7 @@ impl AgentStatusBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
     pub fn set_agent_status_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_status_arn = input;
-        self
+        self.agent_status_arn = input; self
     }
     /// <p>The identifier of the agent status.</p>
     pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl AgentStatusBuilder {
     }
     /// <p>The identifier of the agent status.</p>
     pub fn set_agent_status_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_status_id = input;
-        self
+        self.agent_status_id = input; self
     }
     /// <p>The name of the agent status.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +109,7 @@ impl AgentStatusBuilder {
     }
     /// <p>The name of the agent status.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the agent status.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +118,7 @@ impl AgentStatusBuilder {
     }
     /// <p>The description of the agent status.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The type of agent status.</p>
     pub fn r#type(mut self, input: crate::types::AgentStatusType) -> Self {
@@ -136,8 +127,7 @@ impl AgentStatusBuilder {
     }
     /// <p>The type of agent status.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::AgentStatusType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The display order of the agent status.</p>
     pub fn display_order(mut self, input: i32) -> Self {
@@ -146,8 +136,7 @@ impl AgentStatusBuilder {
     }
     /// <p>The display order of the agent status.</p>
     pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
-        self.display_order = input;
-        self
+        self.display_order = input; self
     }
     /// <p>The state of the agent status.</p>
     pub fn state(mut self, input: crate::types::AgentStatusState) -> Self {
@@ -156,45 +145,43 @@ impl AgentStatusBuilder {
     }
     /// <p>The state of the agent status.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::AgentStatusState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`AgentStatus`](crate::types::AgentStatus).
     pub fn build(self) -> crate::types::AgentStatus {
         crate::types::AgentStatus {
-            agent_status_arn: self.agent_status_arn,
-            agent_status_id: self.agent_status_id,
-            name: self.name,
-            description: self.description,
-            r#type: self.r#type,
-            display_order: self.display_order,
-            state: self.state,
-            tags: self.tags,
+            agent_status_arn: self.agent_status_arn
+            ,
+            agent_status_id: self.agent_status_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            r#type: self.r#type
+            ,
+            display_order: self.display_order
+            ,
+            state: self.state
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

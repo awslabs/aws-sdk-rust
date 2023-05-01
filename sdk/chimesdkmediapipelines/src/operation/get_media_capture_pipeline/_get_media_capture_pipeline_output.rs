@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMediaCapturePipelineOutput {
+pub struct GetMediaCapturePipelineOutput  {
     /// <p>The media pipeline object.</p>
     #[doc(hidden)]
     pub media_capture_pipeline: std::option::Option<crate::types::MediaCapturePipeline>,
@@ -10,22 +10,18 @@ pub struct GetMediaCapturePipelineOutput {
 }
 impl GetMediaCapturePipelineOutput {
     /// <p>The media pipeline object.</p>
-    pub fn media_capture_pipeline(
-        &self,
-    ) -> std::option::Option<&crate::types::MediaCapturePipeline> {
+    pub fn media_capture_pipeline(&self) -> std::option::Option<& crate::types::MediaCapturePipeline> {
         self.media_capture_pipeline.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMediaCapturePipelineOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMediaCapturePipelineOutput {
     /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineOutput`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput).
-    pub fn builder(
-    ) -> crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineOutputBuilder {
         crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineOutputBuilder::default()
     }
 }
@@ -44,29 +40,25 @@ impl GetMediaCapturePipelineOutputBuilder {
         self
     }
     /// <p>The media pipeline object.</p>
-    pub fn set_media_capture_pipeline(
-        mut self,
-        input: std::option::Option<crate::types::MediaCapturePipeline>,
-    ) -> Self {
-        self.media_capture_pipeline = input;
-        self
+    pub fn set_media_capture_pipeline(mut self, input: std::option::Option<crate::types::MediaCapturePipeline>) -> Self {
+        self.media_capture_pipeline = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMediaCapturePipelineOutput`](crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput {
+    pub fn build(self) -> crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput {
         crate::operation::get_media_capture_pipeline::GetMediaCapturePipelineOutput {
-            media_capture_pipeline: self.media_capture_pipeline,
+            media_capture_pipeline: self.media_capture_pipeline
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

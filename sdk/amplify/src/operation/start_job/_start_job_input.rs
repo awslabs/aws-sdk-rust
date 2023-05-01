@@ -3,7 +3,7 @@
 /// <p> The request structure for the start job request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartJobInput {
+pub struct StartJobInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct StartJobInput {
 }
 impl StartJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The branch name for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
-    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
     /// <p> A descriptive reason for starting this job. </p>
-    pub fn job_reason(&self) -> std::option::Option<&str> {
+    pub fn job_reason(&self) -> std::option::Option<& str> {
         self.job_reason.as_deref()
     }
     /// <p> The commit ID from a third-party repository provider for the job. </p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    pub fn commit_message(&self) -> std::option::Option<&str> {
+    pub fn commit_message(&self) -> std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p> The commit date and time for the job. </p>
-    pub fn commit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn commit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.commit_time.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl StartJobInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p> The branch name for the job. </p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl StartJobInputBuilder {
     }
     /// <p> The branch name for the job. </p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input;
-        self
+        self.branch_name = input; self
     }
     /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +109,7 @@ impl StartJobInputBuilder {
     }
     /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
@@ -121,8 +118,7 @@ impl StartJobInputBuilder {
     }
     /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// <p> A descriptive reason for starting this job. </p>
     pub fn job_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +127,7 @@ impl StartJobInputBuilder {
     }
     /// <p> A descriptive reason for starting this job. </p>
     pub fn set_job_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_reason = input;
-        self
+        self.job_reason = input; self
     }
     /// <p> The commit ID from a third-party repository provider for the job. </p>
     pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +136,7 @@ impl StartJobInputBuilder {
     }
     /// <p> The commit ID from a third-party repository provider for the job. </p>
     pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_id = input;
-        self
+        self.commit_id = input; self
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
     pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +145,7 @@ impl StartJobInputBuilder {
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
     pub fn set_commit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_message = input;
-        self
+        self.commit_message = input; self
     }
     /// <p> The commit date and time for the job. </p>
     pub fn commit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -160,29 +153,31 @@ impl StartJobInputBuilder {
         self
     }
     /// <p> The commit date and time for the job. </p>
-    pub fn set_commit_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.commit_time = input;
-        self
+    pub fn set_commit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.commit_time = input; self
     }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_job::StartJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_job::StartJobInput {
-            app_id: self.app_id,
-            branch_name: self.branch_name,
-            job_id: self.job_id,
-            job_type: self.job_type,
-            job_reason: self.job_reason,
-            commit_id: self.commit_id,
-            commit_message: self.commit_message,
-            commit_time: self.commit_time,
-        })
+    pub fn build(self) -> Result<crate::operation::start_job::StartJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_job::StartJobInput {
+                app_id: self.app_id
+                ,
+                branch_name: self.branch_name
+                ,
+                job_id: self.job_id
+                ,
+                job_type: self.job_type
+                ,
+                job_reason: self.job_reason
+                ,
+                commit_id: self.commit_id
+                ,
+                commit_message: self.commit_message
+                ,
+                commit_time: self.commit_time
+                ,
+            }
+        )
     }
 }
+

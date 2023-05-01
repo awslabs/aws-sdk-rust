@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>DeleteGitHubAccountToken</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGitHubAccountTokenOutput {
+pub struct DeleteGitHubAccountTokenOutput  {
     /// <p>The name of the GitHub account connection that was deleted.</p>
     #[doc(hidden)]
     pub token_name: std::option::Option<std::string::String>,
@@ -11,18 +11,18 @@ pub struct DeleteGitHubAccountTokenOutput {
 }
 impl DeleteGitHubAccountTokenOutput {
     /// <p>The name of the GitHub account connection that was deleted.</p>
-    pub fn token_name(&self) -> std::option::Option<&str> {
+    pub fn token_name(&self) -> std::option::Option<& str> {
         self.token_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteGitHubAccountTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteGitHubAccountTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput).
-    pub fn builder() -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenOutputBuilder{
+    pub fn builder() -> crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenOutputBuilder {
         crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenOutputBuilder::default()
     }
 }
@@ -42,25 +42,24 @@ impl DeleteGitHubAccountTokenOutputBuilder {
     }
     /// <p>The name of the GitHub account connection that was deleted.</p>
     pub fn set_token_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token_name = input;
-        self
+        self.token_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteGitHubAccountTokenOutput`](crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput {
+    pub fn build(self) -> crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput {
         crate::operation::delete_git_hub_account_token::DeleteGitHubAccountTokenOutput {
-            token_name: self.token_name,
+            token_name: self.token_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileSystemInput {
+pub struct DeleteFileSystemInput  {
     /// <p>The ID of the file system you want to delete.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DeleteFileSystemInput {
     /// <p>The ID of the file system you want to delete.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
 }
 impl DeleteFileSystemInput {
     /// Creates a new builder-style object to manufacture [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
-    pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder {
         crate::operation::delete_file_system::builders::DeleteFileSystemInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl DeleteFileSystemInputBuilder {
     }
     /// <p>The ID of the file system you want to delete.</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteFileSystemInput`](crate::operation::delete_file_system::DeleteFileSystemInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_file_system::DeleteFileSystemInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_file_system::DeleteFileSystemInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_file_system::DeleteFileSystemInput {
-                file_system_id: self.file_system_id,
-            },
+                file_system_id: self.file_system_id
+                ,
+            }
         )
     }
 }
+

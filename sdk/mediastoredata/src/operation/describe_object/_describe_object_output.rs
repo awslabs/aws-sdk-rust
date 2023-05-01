@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeObjectOutput {
+pub struct DescribeObjectOutput  {
     /// <p>The ETag that represents a unique instance of the object.</p>
     #[doc(hidden)]
     pub e_tag: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeObjectOutput {
     /// <p>The length of the object in bytes.</p>
     #[doc(hidden)]
     pub content_length: std::option::Option<i64>,
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     #[doc(hidden)]
     pub cache_control: std::option::Option<std::string::String>,
@@ -23,32 +23,32 @@ pub struct DescribeObjectOutput {
 }
 impl DescribeObjectOutput {
     /// <p>The ETag that represents a unique instance of the object.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The content type of the object.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The length of the object in bytes.</p>
     pub fn content_length(&self) -> std::option::Option<i64> {
         self.content_length
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
-    pub fn cache_control(&self) -> std::option::Option<&str> {
+    pub fn cache_control(&self) -> std::option::Option<& str> {
         self.cache_control.as_deref()
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeObjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeObjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeObjectOutput`](crate::operation::describe_object::DescribeObjectOutput).
     pub fn builder() -> crate::operation::describe_object::builders::DescribeObjectOutputBuilder {
@@ -75,8 +75,7 @@ impl DescribeObjectOutputBuilder {
     }
     /// <p>The ETag that represents a unique instance of the object.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     /// <p>The content type of the object.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl DescribeObjectOutputBuilder {
     }
     /// <p>The content type of the object.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input;
-        self
+        self.content_type = input; self
     }
     /// <p>The length of the object in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
@@ -95,20 +93,18 @@ impl DescribeObjectOutputBuilder {
     }
     /// <p>The length of the object in bytes.</p>
     pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-        self.content_length = input;
-        self
+        self.content_length = input; self
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
         self.cache_control = Some(input.into());
         self
     }
-    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+    /// <p>An optional <code>CacheControl</code> header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p> 
     /// <p>Headers with a custom user-defined value are also accepted.</p>
     pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_control = input;
-        self
+        self.cache_control = input; self
     }
     /// <p>The date and time that the object was last modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,31 +112,33 @@ impl DescribeObjectOutputBuilder {
         self
     }
     /// <p>The date and time that the object was last modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeObjectOutput`](crate::operation::describe_object::DescribeObjectOutput).
     pub fn build(self) -> crate::operation::describe_object::DescribeObjectOutput {
         crate::operation::describe_object::DescribeObjectOutput {
-            e_tag: self.e_tag,
-            content_type: self.content_type,
-            content_length: self.content_length,
-            cache_control: self.cache_control,
-            last_modified: self.last_modified,
+            e_tag: self.e_tag
+            ,
+            content_type: self.content_type
+            ,
+            content_length: self.content_length
+            ,
+            cache_control: self.cache_control
+            ,
+            last_modified: self.last_modified
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

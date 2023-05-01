@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotebookMetadataOutput {
+pub struct UpdateNotebookMetadataOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateNotebookMetadataOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateNotebookMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNotebookMetadataOutput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput).
-    pub fn builder(
-    ) -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataOutputBuilder {
         crate::operation::update_notebook_metadata::builders::UpdateNotebookMetadataOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct UpdateNotebookMetadataOutputBuilder {
 }
 impl UpdateNotebookMetadataOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateNotebookMetadataOutput`](crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput).
     pub fn build(self) -> crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput {
         crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput {
@@ -42,3 +40,4 @@ impl UpdateNotebookMetadataOutputBuilder {
         }
     }
 }
+

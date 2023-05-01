@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateWorkflowExecutionOutput {
+pub struct TerminateWorkflowExecutionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for TerminateWorkflowExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TerminateWorkflowExecutionOutput {
     /// Creates a new builder-style object to manufacture [`TerminateWorkflowExecutionOutput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput).
-    pub fn builder() -> crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionOutputBuilder{
+    pub fn builder() -> crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionOutputBuilder {
         crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct TerminateWorkflowExecutionOutputBuilder {
 }
 impl TerminateWorkflowExecutionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TerminateWorkflowExecutionOutput`](crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput {
+    pub fn build(self) -> crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput {
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput {
             _request_id: self._request_id,
         }
     }
 }
+

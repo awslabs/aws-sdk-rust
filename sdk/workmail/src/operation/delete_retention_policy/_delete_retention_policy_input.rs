@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRetentionPolicyInput {
+pub struct DeleteRetentionPolicyInput  {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DeleteRetentionPolicyInput {
 }
 impl DeleteRetentionPolicyInput {
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The retention policy ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteRetentionPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder {
         crate::operation::delete_retention_policy::builders::DeleteRetentionPolicyInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DeleteRetentionPolicyInputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The retention policy ID.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DeleteRetentionPolicyInputBuilder {
     }
     /// <p>The retention policy ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRetentionPolicyInput`](crate::operation::delete_retention_policy::DeleteRetentionPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_retention_policy::DeleteRetentionPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_retention_policy::DeleteRetentionPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_retention_policy::DeleteRetentionPolicyInput {
-                organization_id: self.organization_id,
-                id: self.id,
-            },
+                organization_id: self.organization_id
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

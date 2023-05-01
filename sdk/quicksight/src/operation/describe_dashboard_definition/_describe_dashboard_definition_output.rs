@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDashboardDefinitionOutput {
+pub struct DescribeDashboardDefinitionOutput  {
     /// <p>The ID of the dashboard described.</p>
     #[doc(hidden)]
     pub dashboard_id: std::option::Option<std::string::String>,
@@ -12,22 +12,22 @@ pub struct DescribeDashboardDefinitionOutput {
     /// <p>The display name of the dashboard.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Status associated with the dashboard version.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the dashboard version.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_status: std::option::Option<crate::types::ResourceStatus>,
     /// <p>The ARN of the theme of the dashboard.</p>
     #[doc(hidden)]
     pub theme_arn: std::option::Option<std::string::String>,
-    /// <p>The definition of a dashboard.</p>
+    /// <p>The definition of a dashboard.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::types::DashboardVersionDefinition>,
@@ -37,11 +37,11 @@ pub struct DescribeDashboardDefinitionOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
-    /// <p>Options for publishing the dashboard:</p>
-    /// <ul>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
+    /// <p>Options for publishing the dashboard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dashboard_publish_options: std::option::Option<crate::types::DashboardPublishOptions>,
@@ -49,37 +49,37 @@ pub struct DescribeDashboardDefinitionOutput {
 }
 impl DescribeDashboardDefinitionOutput {
     /// <p>The ID of the dashboard described.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<&str> {
+    pub fn dashboard_id(&self) -> std::option::Option<& str> {
         self.dashboard_id.as_deref()
     }
     /// <p>Errors associated with this dashboard version.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::DashboardError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::DashboardError]> {
         self.errors.as_deref()
     }
     /// <p>The display name of the dashboard.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>Status associated with the dashboard version.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the dashboard version.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
-    pub fn resource_status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> std::option::Option<& crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The ARN of the theme of the dashboard.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
-    /// <p>The definition of a dashboard.</p>
+    /// <p>The definition of a dashboard.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::DashboardVersionDefinition> {
+    pub fn definition(&self) -> std::option::Option<& crate::types::DashboardVersionDefinition> {
         self.definition.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -87,29 +87,27 @@ impl DescribeDashboardDefinitionOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
-    /// <p>Options for publishing the dashboard:</p>
-    /// <ul>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
+    /// <p>Options for publishing the dashboard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li> 
     /// </ul>
-    pub fn dashboard_publish_options(
-        &self,
-    ) -> std::option::Option<&crate::types::DashboardPublishOptions> {
+    pub fn dashboard_publish_options(&self) -> std::option::Option<& crate::types::DashboardPublishOptions> {
         self.dashboard_publish_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDashboardDefinitionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDashboardDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDashboardDefinitionOutput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput).
-    pub fn builder() -> crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionOutputBuilder{
+    pub fn builder() -> crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionOutputBuilder {
         crate::operation::describe_dashboard_definition::builders::DescribeDashboardDefinitionOutputBuilder::default()
     }
 }
@@ -126,8 +124,7 @@ pub struct DescribeDashboardDefinitionOutputBuilder {
     pub(crate) definition: std::option::Option<crate::types::DashboardVersionDefinition>,
     pub(crate) status: std::option::Option<i32>,
     pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) dashboard_publish_options:
-        std::option::Option<crate::types::DashboardPublishOptions>,
+    pub(crate) dashboard_publish_options: std::option::Option<crate::types::DashboardPublishOptions>,
     _request_id: Option<String>,
 }
 impl DescribeDashboardDefinitionOutputBuilder {
@@ -138,8 +135,7 @@ impl DescribeDashboardDefinitionOutputBuilder {
     }
     /// <p>The ID of the dashboard described.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input;
-        self
+        self.dashboard_id = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -148,17 +144,13 @@ impl DescribeDashboardDefinitionOutputBuilder {
     /// <p>Errors associated with this dashboard version.</p>
     pub fn errors(mut self, input: crate::types::DashboardError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>Errors associated with this dashboard version.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DashboardError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::DashboardError>>) -> Self {
+        self.errors = input; self
     }
     /// <p>The display name of the dashboard.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,39 +159,34 @@ impl DescribeDashboardDefinitionOutputBuilder {
     }
     /// <p>The display name of the dashboard.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>Status associated with the dashboard version.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the dashboard version.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
         self.resource_status = Some(input);
         self
     }
-    /// <p>Status associated with the dashboard version.</p>
-    /// <ul>
-    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>CREATION_FAILED</code> </p> </li>
-    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li>
-    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li>
-    /// <li> <p> <code>DELETED</code> </p> </li>
+    /// <p>Status associated with the dashboard version.</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATION_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>CREATION_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>CREATION_FAILED</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_SUCCESSFUL</code> </p> </li> 
+    /// <li> <p> <code>UPDATE_FAILED</code> </p> </li> 
+    /// <li> <p> <code>DELETED</code> </p> </li> 
     /// </ul>
-    pub fn set_resource_status(
-        mut self,
-        input: std::option::Option<crate::types::ResourceStatus>,
-    ) -> Self {
-        self.resource_status = input;
-        self
+    pub fn set_resource_status(mut self, input: std::option::Option<crate::types::ResourceStatus>) -> Self {
+        self.resource_status = input; self
     }
     /// <p>The ARN of the theme of the dashboard.</p>
     pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,23 +195,18 @@ impl DescribeDashboardDefinitionOutputBuilder {
     }
     /// <p>The ARN of the theme of the dashboard.</p>
     pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_arn = input;
-        self
+        self.theme_arn = input; self
     }
-    /// <p>The definition of a dashboard.</p>
+    /// <p>The definition of a dashboard.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     pub fn definition(mut self, input: crate::types::DashboardVersionDefinition) -> Self {
         self.definition = Some(input);
         self
     }
-    /// <p>The definition of a dashboard.</p>
+    /// <p>The definition of a dashboard.</p> 
     /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
-    pub fn set_definition(
-        mut self,
-        input: std::option::Option<crate::types::DashboardVersionDefinition>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: std::option::Option<crate::types::DashboardVersionDefinition>) -> Self {
+        self.definition = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -233,8 +215,7 @@ impl DescribeDashboardDefinitionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,59 +224,60 @@ impl DescribeDashboardDefinitionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
-    /// <p>Options for publishing the dashboard:</p>
-    /// <ul>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
+    /// <p>Options for publishing the dashboard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li> 
     /// </ul>
-    pub fn dashboard_publish_options(
-        mut self,
-        input: crate::types::DashboardPublishOptions,
-    ) -> Self {
+    pub fn dashboard_publish_options(mut self, input: crate::types::DashboardPublishOptions) -> Self {
         self.dashboard_publish_options = Some(input);
         self
     }
-    /// <p>Options for publishing the dashboard:</p>
-    /// <ul>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
-    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
+    /// <p>Options for publishing the dashboard:</p> 
+    /// <ul> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li> 
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li> 
     /// </ul>
-    pub fn set_dashboard_publish_options(
-        mut self,
-        input: std::option::Option<crate::types::DashboardPublishOptions>,
-    ) -> Self {
-        self.dashboard_publish_options = input;
-        self
+    pub fn set_dashboard_publish_options(mut self, input: std::option::Option<crate::types::DashboardPublishOptions>) -> Self {
+        self.dashboard_publish_options = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDashboardDefinitionOutput`](crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput {
+    pub fn build(self) -> crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput {
         crate::operation::describe_dashboard_definition::DescribeDashboardDefinitionOutput {
-            dashboard_id: self.dashboard_id,
-            errors: self.errors,
-            name: self.name,
-            resource_status: self.resource_status,
-            theme_arn: self.theme_arn,
-            definition: self.definition,
-            status: self.status.unwrap_or_default(),
-            request_id: self.request_id,
-            dashboard_publish_options: self.dashboard_publish_options,
+            dashboard_id: self.dashboard_id
+            ,
+            errors: self.errors
+            ,
+            name: self.name
+            ,
+            resource_status: self.resource_status
+            ,
+            theme_arn: self.theme_arn
+            ,
+            definition: self.definition
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
+            request_id: self.request_id
+            ,
+            dashboard_publish_options: self.dashboard_publish_options
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,89 +4,67 @@ pub use crate::operation::put_compliance_items::_put_compliance_items_output::Pu
 pub use crate::operation::put_compliance_items::_put_compliance_items_input::PutComplianceItemsInputBuilder;
 
 /// Fluent builder constructing a request to `PutComplianceItems`.
-///
-/// <p>Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p>
-/// <p>ComplianceType can be one of the following:</p>
-/// <ul>
-/// <li> <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p> </li>
-/// <li> <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p> </li>
-/// <li> <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.</p> </li>
-/// <li> <p>Id: The patch, association, or custom compliance ID.</p> </li>
-/// <li> <p>Title: A title.</p> </li>
-/// <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li>
-/// <li> <p>Severity: A patch severity. For example, <code>Critical</code>.</p> </li>
-/// <li> <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li>
-/// <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li>
-/// <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li>
-/// <li> <p>PatchBaselineId: A patch baseline ID.</p> </li>
-/// <li> <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p> </li>
-/// <li> <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p> </li>
-/// <li> <p>PatchGroup: The name of a patch group.</p> </li>
-/// <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
+/// 
+/// <p>Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p> 
+/// <p>ComplianceType can be one of the following:</p> 
+/// <ul> 
+/// <li> <p>ExecutionId: The execution ID when the patch, association, or custom compliance item was applied.</p> </li> 
+/// <li> <p>ExecutionType: Specify patch, association, or Custom:<code>string</code>.</p> </li> 
+/// <li> <p>ExecutionTime. The time the patch, association, or custom compliance item was applied to the managed node.</p> </li> 
+/// <li> <p>Id: The patch, association, or custom compliance ID.</p> </li> 
+/// <li> <p>Title: A title.</p> </li> 
+/// <li> <p>Status: The status of the compliance item. For example, <code>approved</code> for patches, or <code>Failed</code> for associations.</p> </li> 
+/// <li> <p>Severity: A patch severity. For example, <code>Critical</code>.</p> </li> 
+/// <li> <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p> </li> 
+/// <li> <p>DocumentVersion: An SSM document version number. For example, 4.</p> </li> 
+/// <li> <p>Classification: A patch classification. For example, <code>security updates</code>.</p> </li> 
+/// <li> <p>PatchBaselineId: A patch baseline ID.</p> </li> 
+/// <li> <p>PatchSeverity: A patch severity. For example, <code>Critical</code>.</p> </li> 
+/// <li> <p>PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.</p> </li> 
+/// <li> <p>PatchGroup: The name of a patch group.</p> </li> 
+/// <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li> 
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutComplianceItemsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder,
-}
-impl PutComplianceItemsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder
+            }
+impl PutComplianceItemsFluentBuilder  {
     /// Creates a new `PutComplianceItems`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_compliance_items::PutComplianceItems,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_compliance_items::PutComplianceItemsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::put_compliance_items::PutComplianceItemsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::put_compliance_items::PutComplianceItemsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_compliance_items::PutComplianceItems, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::put_compliance_items::PutComplianceItemsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::put_compliance_items::PutComplianceItemsOutput, aws_smithy_http::result::SdkError<crate::operation::put_compliance_items::PutComplianceItemsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
@@ -123,10 +101,7 @@ impl PutComplianceItemsFluentBuilder {
         self
     }
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn set_execution_summary(
-        mut self,
-        input: std::option::Option<crate::types::ComplianceExecutionSummary>,
-    ) -> Self {
+    pub fn set_execution_summary(mut self, input: std::option::Option<crate::types::ComplianceExecutionSummary>) -> Self {
         self.inner = self.inner.set_execution_summary(input);
         self
     }
@@ -140,10 +115,7 @@ impl PutComplianceItemsFluentBuilder {
         self
     }
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComplianceItemEntry>>,
-    ) -> Self {
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComplianceItemEntry>>) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
@@ -153,30 +125,25 @@ impl PutComplianceItemsFluentBuilder {
         self
     }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
-    pub fn set_item_content_hash(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_item_content_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_item_content_hash(input);
         self
     }
-    /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
-    /// <p>This attribute is only valid for association compliance.</p>
+    /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p> 
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note> 
+    /// <p>This attribute is only valid for association compliance.</p> 
     /// </note>
     pub fn upload_type(mut self, input: crate::types::ComplianceUploadType) -> Self {
         self.inner = self.inner.upload_type(input);
         self
     }
-    /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p>
-    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note>
-    /// <p>This attribute is only valid for association compliance.</p>
+    /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing compliance information for the resource. You must provide a full list of compliance items each time you send the request.</p> 
+    /// <p>In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific association. The association must be configured with <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.</p> <note> 
+    /// <p>This attribute is only valid for association compliance.</p> 
     /// </note>
-    pub fn set_upload_type(
-        mut self,
-        input: std::option::Option<crate::types::ComplianceUploadType>,
-    ) -> Self {
+    pub fn set_upload_type(mut self, input: std::option::Option<crate::types::ComplianceUploadType>) -> Self {
         self.inner = self.inner.set_upload_type(input);
         self
     }
 }
+

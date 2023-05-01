@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDetectMitigationActionsTaskOutput {
+pub struct StartDetectMitigationActionsTaskOutput  {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct StartDetectMitigationActionsTaskOutput {
 }
 impl StartDetectMitigationActionsTaskOutput {
     /// <p> The unique identifier of the task. </p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartDetectMitigationActionsTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartDetectMitigationActionsTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartDetectMitigationActionsTaskOutput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput).
-    pub fn builder() -> crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskOutputBuilder{
+    pub fn builder() -> crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskOutputBuilder {
         crate::operation::start_detect_mitigation_actions_task::builders::StartDetectMitigationActionsTaskOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl StartDetectMitigationActionsTaskOutputBuilder {
     }
     /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartDetectMitigationActionsTaskOutput`](crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput).
-    pub fn build(self) -> crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput{
+    pub fn build(self) -> crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput {
         crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput {
             task_id: self.task_id
             ,
@@ -62,3 +61,4 @@ impl StartDetectMitigationActionsTaskOutputBuilder {
         }
     }
 }
+

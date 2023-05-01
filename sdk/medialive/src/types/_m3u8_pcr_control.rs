@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let m3u8pcrcontrol = unimplemented!();
 /// match m3u8pcrcontrol {
@@ -30,64 +30,55 @@
 /// Specifically, when `m3u8pcrcontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `M3u8PcrControl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// M3u8 Pcr Control
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum M3u8PcrControl {
     #[allow(missing_docs)] // documentation missing in model
     ConfiguredPcrPeriod,
     #[allow(missing_docs)] // documentation missing in model
     PcrEveryPesPacket,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for M3u8PcrControl {
-    fn from(s: &str) -> Self {
-        match s {
-            "CONFIGURED_PCR_PERIOD" => M3u8PcrControl::ConfiguredPcrPeriod,
-            "PCR_EVERY_PES_PACKET" => M3u8PcrControl::PcrEveryPesPacket,
-            other => {
-                M3u8PcrControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CONFIGURED_PCR_PERIOD" => M3u8PcrControl::ConfiguredPcrPeriod,
+"PCR_EVERY_PES_PACKET" => M3u8PcrControl::PcrEveryPesPacket,
+other => M3u8PcrControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for M3u8PcrControl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M3u8PcrControl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(M3u8PcrControl::from(s))
+                }
+            }
 impl M3u8PcrControl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            M3u8PcrControl::ConfiguredPcrPeriod => "CONFIGURED_PCR_PERIOD",
-            M3u8PcrControl::PcrEveryPesPacket => "PCR_EVERY_PES_PACKET",
-            M3u8PcrControl::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    M3u8PcrControl::ConfiguredPcrPeriod => "CONFIGURED_PCR_PERIOD",
+    M3u8PcrControl::PcrEveryPesPacket => "PCR_EVERY_PES_PACKET",
+    M3u8PcrControl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
+                }
+            }
 impl AsRef<str> for M3u8PcrControl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

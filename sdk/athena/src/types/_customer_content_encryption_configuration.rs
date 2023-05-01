@@ -3,14 +3,14 @@
 /// <p>Specifies the KMS key that is used to encrypt the user's data stores in Athena.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerContentEncryptionConfiguration {
+pub struct CustomerContentEncryptionConfiguration  {
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
     #[doc(hidden)]
     pub kms_key: std::option::Option<std::string::String>,
 }
 impl CustomerContentEncryptionConfiguration {
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl CustomerContentEncryptionConfigurationBuilder {
     }
     /// <p>The KMS key that is used to encrypt the user's data stores in Athena.</p>
     pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key = input;
-        self
+        self.kms_key = input; self
     }
     /// Consumes the builder and constructs a [`CustomerContentEncryptionConfiguration`](crate::types::CustomerContentEncryptionConfiguration).
     pub fn build(self) -> crate::types::CustomerContentEncryptionConfiguration {
         crate::types::CustomerContentEncryptionConfiguration {
-            kms_key: self.kms_key,
+            kms_key: self.kms_key
+            ,
         }
     }
 }
+

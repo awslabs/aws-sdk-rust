@@ -3,22 +3,20 @@
 /// <p>Input for GetEndpointAttributes action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEndpointAttributesInput {
+pub struct GetEndpointAttributesInput  {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl GetEndpointAttributesInput {
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
 impl GetEndpointAttributesInput {
     /// Creates a new builder-style object to manufacture [`GetEndpointAttributesInput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesInput).
-    pub fn builder(
-    ) -> crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder {
         crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl GetEndpointAttributesInputBuilder {
     }
     /// <p>EndpointArn for GetEndpointAttributes input.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetEndpointAttributesInput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_endpoint_attributes::GetEndpointAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_endpoint_attributes::GetEndpointAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_endpoint_attributes::GetEndpointAttributesInput {
-                endpoint_arn: self.endpoint_arn,
-            },
+                endpoint_arn: self.endpoint_arn
+                ,
+            }
         )
     }
 }
+

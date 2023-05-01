@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketLifecycleConfigurationOutput {
+pub struct PutBucketLifecycleConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutBucketLifecycleConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutBucketLifecycleConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBucketLifecycleConfigurationOutput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput).
-    pub fn builder() -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationOutputBuilder {
         crate::operation::put_bucket_lifecycle_configuration::builders::PutBucketLifecycleConfigurationOutputBuilder::default()
     }
 }
@@ -25,21 +25,19 @@ pub struct PutBucketLifecycleConfigurationOutputBuilder {
 }
 impl PutBucketLifecycleConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutBucketLifecycleConfigurationOutput`](crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput {
         crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

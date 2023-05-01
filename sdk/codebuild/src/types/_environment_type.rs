@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let environmenttype = unimplemented!();
 /// match environmenttype {
@@ -33,22 +33,14 @@
 /// Specifically, when `environmenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EnvironmentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EnvironmentType {
     #[allow(missing_docs)] // documentation missing in model
     ArmContainer,
@@ -61,54 +53,47 @@ pub enum EnvironmentType {
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019Container,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EnvironmentType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ARM_CONTAINER" => EnvironmentType::ArmContainer,
-            "LINUX_CONTAINER" => EnvironmentType::LinuxContainer,
-            "LINUX_GPU_CONTAINER" => EnvironmentType::LinuxGpuContainer,
-            "WINDOWS_CONTAINER" => EnvironmentType::WindowsContainer,
-            "WINDOWS_SERVER_2019_CONTAINER" => EnvironmentType::WindowsServer2019Container,
-            other => {
-                EnvironmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ARM_CONTAINER" => EnvironmentType::ArmContainer,
+"LINUX_CONTAINER" => EnvironmentType::LinuxContainer,
+"LINUX_GPU_CONTAINER" => EnvironmentType::LinuxGpuContainer,
+"WINDOWS_CONTAINER" => EnvironmentType::WindowsContainer,
+"WINDOWS_SERVER_2019_CONTAINER" => EnvironmentType::WindowsServer2019Container,
+other => EnvironmentType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for EnvironmentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EnvironmentType::from(s))
+                }
+            }
 impl EnvironmentType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            EnvironmentType::ArmContainer => "ARM_CONTAINER",
-            EnvironmentType::LinuxContainer => "LINUX_CONTAINER",
-            EnvironmentType::LinuxGpuContainer => "LINUX_GPU_CONTAINER",
-            EnvironmentType::WindowsContainer => "WINDOWS_CONTAINER",
-            EnvironmentType::WindowsServer2019Container => "WINDOWS_SERVER_2019_CONTAINER",
-            EnvironmentType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ARM_CONTAINER",
-            "LINUX_CONTAINER",
-            "LINUX_GPU_CONTAINER",
-            "WINDOWS_CONTAINER",
-            "WINDOWS_SERVER_2019_CONTAINER",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    EnvironmentType::ArmContainer => "ARM_CONTAINER",
+    EnvironmentType::LinuxContainer => "LINUX_CONTAINER",
+    EnvironmentType::LinuxGpuContainer => "LINUX_GPU_CONTAINER",
+    EnvironmentType::WindowsContainer => "WINDOWS_CONTAINER",
+    EnvironmentType::WindowsServer2019Container => "WINDOWS_SERVER_2019_CONTAINER",
+    EnvironmentType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ARM_CONTAINER", "LINUX_CONTAINER", "LINUX_GPU_CONTAINER", "WINDOWS_CONTAINER", "WINDOWS_SERVER_2019_CONTAINER"]
+                }
+            }
 impl AsRef<str> for EnvironmentType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

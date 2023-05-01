@@ -3,7 +3,7 @@
 /// <p>Specifies the byte range of the object to get the records from. A record is processed when its first byte is contained by the range. This parameter is optional, but when specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the start and end of the range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanRange {
+pub struct ScanRange  {
     /// <p>Specifies the start of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is 0. If only <code>start</code> is supplied, it means scan from that point to the end of the file. For example, <code>
     /// <scanrange>
     /// <start>
@@ -73,8 +73,7 @@ impl ScanRangeBuilder {
     /// </start>
     /// </scanrange></code> means scan from byte 50 until the end of the file.</p>
     pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>Specifies the end of the byte range. This parameter is optional. Valid values: non-negative integers. The default value is one less than the size of the object being queried. If only the End parameter is supplied, it is interpreted to mean scan the last N bytes of the file. For example, <code>
     /// <scanrange>
@@ -93,14 +92,18 @@ impl ScanRangeBuilder {
     /// </end>
     /// </scanrange></code> means scan the last 50 bytes.</p>
     pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// Consumes the builder and constructs a [`ScanRange`](crate::types::ScanRange).
     pub fn build(self) -> crate::types::ScanRange {
         crate::types::ScanRange {
-            start: self.start.unwrap_or_default(),
-            end: self.end.unwrap_or_default(),
+            start: self.start
+                .unwrap_or_default()
+            ,
+            end: self.end
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

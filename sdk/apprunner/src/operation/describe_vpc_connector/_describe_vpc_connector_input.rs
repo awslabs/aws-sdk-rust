@@ -2,23 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcConnectorInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+pub struct DescribeVpcConnectorInput  {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p> 
     /// <p>The ARN must be a full VPC connector ARN.</p>
     #[doc(hidden)]
     pub vpc_connector_arn: std::option::Option<std::string::String>,
 }
 impl DescribeVpcConnectorInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p> 
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
+    pub fn vpc_connector_arn(&self) -> std::option::Option<& str> {
         self.vpc_connector_arn.as_deref()
     }
 }
 impl DescribeVpcConnectorInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcConnectorInput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorInputBuilder {
         crate::operation::describe_vpc_connector::builders::DescribeVpcConnectorInputBuilder::default()
     }
 }
@@ -30,32 +29,25 @@ pub struct DescribeVpcConnectorInputBuilder {
     pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
 }
 impl DescribeVpcConnectorInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p> 
     /// <p>The ARN must be a full VPC connector ARN.</p>
     pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.vpc_connector_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p>
+    /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want a description for.</p> 
     /// <p>The ARN must be a full VPC connector ARN.</p>
-    pub fn set_vpc_connector_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpc_connector_arn = input;
-        self
+    pub fn set_vpc_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpc_connector_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeVpcConnectorInput`](crate::operation::describe_vpc_connector::DescribeVpcConnectorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_vpc_connector::DescribeVpcConnectorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_vpc_connector::DescribeVpcConnectorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_vpc_connector::DescribeVpcConnectorInput {
-                vpc_connector_arn: self.vpc_connector_arn,
-            },
+                vpc_connector_arn: self.vpc_connector_arn
+                ,
+            }
         )
     }
 }
+

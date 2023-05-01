@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantAccessInput {
+pub struct GrantAccessInput  {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct GrantAccessInput {
 }
 impl GrantAccessInput {
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
@@ -42,8 +42,7 @@ impl GrantAccessInputBuilder {
     }
     /// <p>The instance's AWS OpsWorks Stacks ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
@@ -52,19 +51,18 @@ impl GrantAccessInputBuilder {
     }
     /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
     pub fn set_valid_for_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.valid_for_in_minutes = input;
-        self
+        self.valid_for_in_minutes = input; self
     }
     /// Consumes the builder and constructs a [`GrantAccessInput`](crate::operation::grant_access::GrantAccessInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::grant_access::GrantAccessInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::grant_access::GrantAccessInput {
-            instance_id: self.instance_id,
-            valid_for_in_minutes: self.valid_for_in_minutes,
-        })
+    pub fn build(self) -> Result<crate::operation::grant_access::GrantAccessInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::grant_access::GrantAccessInput {
+                instance_id: self.instance_id
+                ,
+                valid_for_in_minutes: self.valid_for_in_minutes
+                ,
+            }
+        )
     }
 }
+

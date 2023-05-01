@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the amount of email that was delivered to recipients.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeStatistics {
+pub struct VolumeStatistics  {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
     #[doc(hidden)]
     pub inbox_raw_count: std::option::Option<i64>,
@@ -59,8 +59,7 @@ impl VolumeStatisticsBuilder {
     }
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
     pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.inbox_raw_count = input;
-        self
+        self.inbox_raw_count = input; self
     }
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
     pub fn spam_raw_count(mut self, input: i64) -> Self {
@@ -69,8 +68,7 @@ impl VolumeStatisticsBuilder {
     }
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
     pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.spam_raw_count = input;
-        self
+        self.spam_raw_count = input; self
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
     pub fn projected_inbox(mut self, input: i64) -> Self {
@@ -79,8 +77,7 @@ impl VolumeStatisticsBuilder {
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
     pub fn set_projected_inbox(mut self, input: std::option::Option<i64>) -> Self {
-        self.projected_inbox = input;
-        self
+        self.projected_inbox = input; self
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
     pub fn projected_spam(mut self, input: i64) -> Self {
@@ -89,16 +86,20 @@ impl VolumeStatisticsBuilder {
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
     pub fn set_projected_spam(mut self, input: std::option::Option<i64>) -> Self {
-        self.projected_spam = input;
-        self
+        self.projected_spam = input; self
     }
     /// Consumes the builder and constructs a [`VolumeStatistics`](crate::types::VolumeStatistics).
     pub fn build(self) -> crate::types::VolumeStatistics {
         crate::types::VolumeStatistics {
-            inbox_raw_count: self.inbox_raw_count,
-            spam_raw_count: self.spam_raw_count,
-            projected_inbox: self.projected_inbox,
-            projected_spam: self.projected_spam,
+            inbox_raw_count: self.inbox_raw_count
+            ,
+            spam_raw_count: self.spam_raw_count
+            ,
+            projected_inbox: self.projected_inbox
+            ,
+            projected_spam: self.projected_spam
+            ,
         }
     }
 }
+

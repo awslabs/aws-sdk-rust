@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMaintenanceWindowTargetsInput {
+pub struct DescribeMaintenanceWindowTargetsInput  {
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeMaintenanceWindowTargetsInput {
 }
 impl DescribeMaintenanceWindowTargetsInput {
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
-    pub fn window_id(&self) -> std::option::Option<&str> {
+    pub fn window_id(&self) -> std::option::Option<& str> {
         self.window_id.as_deref()
     }
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::MaintenanceWindowFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::MaintenanceWindowFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
@@ -30,13 +30,13 @@ impl DescribeMaintenanceWindowTargetsInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeMaintenanceWindowTargetsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowTargetsInput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput).
-    pub fn builder() -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder{
+    pub fn builder() -> crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder {
         crate::operation::describe_maintenance_window_targets::builders::DescribeMaintenanceWindowTargetsInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
     }
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
     pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_id = input;
-        self
+        self.window_id = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -68,17 +67,13 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
     pub fn filters(mut self, input: crate::types::MaintenanceWindowFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and <code>OwnerInformation</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -87,8 +82,7 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,11 +91,10 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeMaintenanceWindowTargetsInput`](crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput).
-    pub fn build(self) -> Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_maintenance_window_targets::DescribeMaintenanceWindowTargetsInput {
                 window_id: self.window_id
@@ -116,3 +109,4 @@ impl DescribeMaintenanceWindowTargetsInputBuilder {
         )
     }
 }
+

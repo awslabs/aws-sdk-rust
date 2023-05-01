@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataProtectionPolicyInput {
+pub struct GetDataProtectionPolicyInput  {
     /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
     #[doc(hidden)]
     pub log_group_identifier: std::option::Option<std::string::String>,
 }
 impl GetDataProtectionPolicyInput {
     /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
-    pub fn log_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn log_group_identifier(&self) -> std::option::Option<& str> {
         self.log_group_identifier.as_deref()
     }
 }
 impl GetDataProtectionPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetDataProtectionPolicyInput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder {
         crate::operation::get_data_protection_policy::builders::GetDataProtectionPolicyInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl GetDataProtectionPolicyInputBuilder {
         self
     }
     /// <p>The name or ARN of the log group that contains the data protection policy that you want to see.</p>
-    pub fn set_log_group_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.log_group_identifier = input;
-        self
+    pub fn set_log_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.log_group_identifier = input; self
     }
     /// Consumes the builder and constructs a [`GetDataProtectionPolicyInput`](crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_data_protection_policy::GetDataProtectionPolicyInput {
-                log_group_identifier: self.log_group_identifier,
-            },
+                log_group_identifier: self.log_group_identifier
+                ,
+            }
         )
     }
 }
+

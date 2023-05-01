@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMlTransformsOutput {
+pub struct GetMlTransformsOutput  {
     /// <p>A list of machine learning transforms.</p>
     #[doc(hidden)]
     pub transforms: std::option::Option<std::vec::Vec<crate::types::MlTransform>>,
@@ -13,23 +13,22 @@ pub struct GetMlTransformsOutput {
 }
 impl GetMlTransformsOutput {
     /// <p>A list of machine learning transforms.</p>
-    pub fn transforms(&self) -> std::option::Option<&[crate::types::MlTransform]> {
+    pub fn transforms(&self) -> std::option::Option<& [crate::types::MlTransform]> {
         self.transforms.as_deref()
     }
     /// <p>A pagination token, if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMlTransformsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMlTransformsOutput {
     /// Creates a new builder-style object to manufacture [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput).
-    pub fn builder() -> crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder {
         crate::operation::get_ml_transforms::builders::GetMlTransformsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl GetMlTransformsOutputBuilder {
     /// <p>A list of machine learning transforms.</p>
     pub fn transforms(mut self, input: crate::types::MlTransform) -> Self {
         let mut v = self.transforms.unwrap_or_default();
-        v.push(input);
-        self.transforms = Some(v);
-        self
+                        v.push(input);
+                        self.transforms = Some(v);
+                        self
     }
     /// <p>A list of machine learning transforms.</p>
-    pub fn set_transforms(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MlTransform>>,
-    ) -> Self {
-        self.transforms = input;
-        self
+    pub fn set_transforms(mut self, input: std::option::Option<std::vec::Vec<crate::types::MlTransform>>) -> Self {
+        self.transforms = input; self
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl GetMlTransformsOutputBuilder {
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMlTransformsOutput`](crate::operation::get_ml_transforms::GetMlTransformsOutput).
     pub fn build(self) -> crate::operation::get_ml_transforms::GetMlTransformsOutput {
         crate::operation::get_ml_transforms::GetMlTransformsOutput {
-            transforms: self.transforms,
-            next_token: self.next_token,
+            transforms: self.transforms
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserHierarchyInput {
+pub struct UpdateUserHierarchyInput  {
     /// <p>The identifier of the hierarchy group.</p>
     #[doc(hidden)]
     pub hierarchy_group_id: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct UpdateUserHierarchyInput {
 }
 impl UpdateUserHierarchyInput {
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn hierarchy_group_id(&self) -> std::option::Option<&str> {
+    pub fn hierarchy_group_id(&self) -> std::option::Option<& str> {
         self.hierarchy_group_id.as_deref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl UpdateUserHierarchyInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserHierarchyInput`](crate::operation::update_user_hierarchy::UpdateUserHierarchyInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyInputBuilder {
-        crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyInputBuilder {
+        crate::operation::update_user_hierarchy::builders::UpdateUserHierarchyInputBuilder::default()
     }
 }
 
@@ -51,12 +49,8 @@ impl UpdateUserHierarchyInputBuilder {
         self
     }
     /// <p>The identifier of the hierarchy group.</p>
-    pub fn set_hierarchy_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.hierarchy_group_id = input;
-        self
+    pub fn set_hierarchy_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.hierarchy_group_id = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl UpdateUserHierarchyInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl UpdateUserHierarchyInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateUserHierarchyInput`](crate::operation::update_user_hierarchy::UpdateUserHierarchyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_user_hierarchy::UpdateUserHierarchyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_user_hierarchy::UpdateUserHierarchyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_user_hierarchy::UpdateUserHierarchyInput {
-                hierarchy_group_id: self.hierarchy_group_id,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
+                hierarchy_group_id: self.hierarchy_group_id
+                ,
+                user_id: self.user_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

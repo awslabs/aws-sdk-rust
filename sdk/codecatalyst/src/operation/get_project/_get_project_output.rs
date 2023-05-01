@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProjectOutput {
+pub struct GetProjectOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct GetProjectOutput {
 }
 impl GetProjectOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetProjectOutput {
     /// Creates a new builder-style object to manufacture [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput).
     pub fn builder() -> crate::operation::get_project::builders::GetProjectOutputBuilder {
@@ -65,8 +65,7 @@ impl GetProjectOutputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +74,7 @@ impl GetProjectOutputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +83,7 @@ impl GetProjectOutputBuilder {
     }
     /// <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// <p>The description of the project.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,26 +92,30 @@ impl GetProjectOutputBuilder {
     }
     /// <p>The description of the project.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput).
     pub fn build(self) -> crate::operation::get_project::GetProjectOutput {
         crate::operation::get_project::GetProjectOutput {
-            space_name: self.space_name,
-            name: self.name,
-            display_name: self.display_name,
-            description: self.description,
+            space_name: self.space_name
+            ,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
+            description: self.description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

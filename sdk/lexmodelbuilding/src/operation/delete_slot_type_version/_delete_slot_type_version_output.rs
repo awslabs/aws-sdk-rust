@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlotTypeVersionOutput {
+pub struct DeleteSlotTypeVersionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSlotTypeVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteSlotTypeVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionOutputBuilder {
         crate::operation::delete_slot_type_version::builders::DeleteSlotTypeVersionOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteSlotTypeVersionOutputBuilder {
 }
 impl DeleteSlotTypeVersionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteSlotTypeVersionOutput`](crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput).
     pub fn build(self) -> crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput {
         crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput {
@@ -42,3 +40,4 @@ impl DeleteSlotTypeVersionOutputBuilder {
         }
     }
 }
+

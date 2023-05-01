@@ -3,7 +3,8 @@
 /// <p> The connector-specific profile properties required by Google Analytics. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GoogleAnalyticsConnectorProfileProperties {}
+pub struct GoogleAnalyticsConnectorProfileProperties  {
+}
 impl GoogleAnalyticsConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`GoogleAnalyticsConnectorProfileProperties`](crate::types::GoogleAnalyticsConnectorProfileProperties).
     pub fn builder() -> crate::types::builders::GoogleAnalyticsConnectorProfilePropertiesBuilder {
@@ -14,10 +15,13 @@ impl GoogleAnalyticsConnectorProfileProperties {
 /// A builder for [`GoogleAnalyticsConnectorProfileProperties`](crate::types::GoogleAnalyticsConnectorProfileProperties).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GoogleAnalyticsConnectorProfilePropertiesBuilder {}
+pub struct GoogleAnalyticsConnectorProfilePropertiesBuilder {
+}
 impl GoogleAnalyticsConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`GoogleAnalyticsConnectorProfileProperties`](crate::types::GoogleAnalyticsConnectorProfileProperties).
     pub fn build(self) -> crate::types::GoogleAnalyticsConnectorProfileProperties {
-        crate::types::GoogleAnalyticsConnectorProfileProperties {}
+        crate::types::GoogleAnalyticsConnectorProfileProperties {
+        }
     }
 }
+

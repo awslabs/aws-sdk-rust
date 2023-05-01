@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLongTermPricingInput {
+pub struct UpdateLongTermPricingInput  {
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateLongTermPricingInput {
 }
 impl UpdateLongTermPricingInput {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
-    pub fn replacement_job(&self) -> std::option::Option<&str> {
+    pub fn replacement_job(&self) -> std::option::Option<& str> {
         self.replacement_job.as_deref()
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
@@ -29,9 +29,7 @@ impl UpdateLongTermPricingInput {
 }
 impl UpdateLongTermPricingInput {
     /// Creates a new builder-style object to manufacture [`UpdateLongTermPricingInput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingInput).
-    pub fn builder(
-    ) -> crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingInputBuilder {
         crate::operation::update_long_term_pricing::builders::UpdateLongTermPricingInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl UpdateLongTermPricingInputBuilder {
         self
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn set_long_term_pricing_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.long_term_pricing_id = input;
-        self
+    pub fn set_long_term_pricing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.long_term_pricing_id = input; self
     }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
     pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl UpdateLongTermPricingInputBuilder {
     }
     /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a new device.</p>
     pub fn set_replacement_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replacement_job = input;
-        self
+        self.replacement_job = input; self
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
@@ -75,22 +68,20 @@ impl UpdateLongTermPricingInputBuilder {
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_long_term_pricing_auto_renew = input;
-        self
+        self.is_long_term_pricing_auto_renew = input; self
     }
     /// Consumes the builder and constructs a [`UpdateLongTermPricingInput`](crate::operation::update_long_term_pricing::UpdateLongTermPricingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_long_term_pricing::UpdateLongTermPricingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_long_term_pricing::UpdateLongTermPricingInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_long_term_pricing::UpdateLongTermPricingInput {
-                long_term_pricing_id: self.long_term_pricing_id,
-                replacement_job: self.replacement_job,
-                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
-            },
+                long_term_pricing_id: self.long_term_pricing_id
+                ,
+                replacement_job: self.replacement_job
+                ,
+                is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew
+                ,
+            }
         )
     }
 }
+

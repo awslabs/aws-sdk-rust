@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResponsePlanInput {
+pub struct DeleteResponsePlanInput  {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeleteResponsePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DeleteResponsePlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteResponsePlanInput`](crate::operation::delete_response_plan::DeleteResponsePlanInput).
-    pub fn builder(
-    ) -> crate::operation::delete_response_plan::builders::DeleteResponsePlanInputBuilder {
+    pub fn builder() -> crate::operation::delete_response_plan::builders::DeleteResponsePlanInputBuilder {
         crate::operation::delete_response_plan::builders::DeleteResponsePlanInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteResponsePlanInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteResponsePlanInput`](crate::operation::delete_response_plan::DeleteResponsePlanInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_response_plan::DeleteResponsePlanInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_response_plan::DeleteResponsePlanInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::delete_response_plan::DeleteResponsePlanInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_response_plan::DeleteResponsePlanInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

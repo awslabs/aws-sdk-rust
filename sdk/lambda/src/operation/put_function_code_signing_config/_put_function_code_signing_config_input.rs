@@ -2,41 +2,41 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFunctionCodeSigningConfigInput {
+pub struct PutFunctionCodeSigningConfigInput  {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
 }
 impl PutFunctionCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
         self.code_signing_config_arn.as_deref()
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> std::option::Option<& str> {
         self.function_name.as_deref()
     }
 }
 impl PutFunctionCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`PutFunctionCodeSigningConfigInput`](crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput).
-    pub fn builder() -> crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder{
+    pub fn builder() -> crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder {
         crate::operation::put_function_code_signing_config::builders::PutFunctionCodeSigningConfigInputBuilder::default()
     }
 }
@@ -55,49 +55,42 @@ impl PutFunctionCodeSigningConfigInputBuilder {
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn set_code_signing_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.code_signing_config_arn = input;
-        self
+    pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.code_signing_config_arn = input; self
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function.</p>
-    /// <p class="title"> <b>Name formats</b> </p>
-    /// <ul>
-    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li>
-    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li>
-    /// </ul>
+    /// <p>The name of the Lambda function.</p> 
+    /// <p class="title"> <b>Name formats</b> </p> 
+    /// <ul> 
+    /// <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> 
+    /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> 
+    /// </ul> 
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input;
-        self
+        self.function_name = input; self
     }
     /// Consumes the builder and constructs a [`PutFunctionCodeSigningConfigInput`](crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigInput {
-                code_signing_config_arn: self.code_signing_config_arn,
-                function_name: self.function_name,
-            },
+                code_signing_config_arn: self.code_signing_config_arn
+                ,
+                function_name: self.function_name
+                ,
+            }
         )
     }
 }
+

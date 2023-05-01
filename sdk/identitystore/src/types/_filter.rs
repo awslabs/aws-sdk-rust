@@ -3,7 +3,7 @@
 /// <p>A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter object provides the attribute name and attribute value to search users or groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     #[doc(hidden)]
     pub attribute_path: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
-    pub fn attribute_path(&self) -> std::option::Option<&str> {
+    pub fn attribute_path(&self) -> std::option::Option<& str> {
         self.attribute_path.as_deref()
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> std::option::Option<& str> {
         self.attribute_value.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
+impl  std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("attribute_path", &self.attribute_path);
@@ -51,8 +51,7 @@ impl FilterBuilder {
     }
     /// <p>The attribute path that is used to specify which attribute name to search. Length limit is 255 characters. For example, <code>UserName</code> is a valid attribute path for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute path for the <code>ListGroups</code> API.</p>
     pub fn set_attribute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_path = input;
-        self
+        self.attribute_path = input; self
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl FilterBuilder {
     }
     /// <p>Represents the data for an attribute. Each attribute value is described as a name-value pair. </p>
     pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_value = input;
-        self
+        self.attribute_value = input; self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            attribute_path: self.attribute_path,
-            attribute_value: self.attribute_value,
+            attribute_path: self.attribute_path
+            ,
+            attribute_value: self.attribute_value
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for FilterBuilder {
         formatter.finish()
     }
 }
+

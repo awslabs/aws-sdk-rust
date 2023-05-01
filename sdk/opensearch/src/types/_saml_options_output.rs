@@ -3,7 +3,7 @@
 /// <p>Describes the SAML application configured for the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamlOptionsOutput {
+pub struct SamlOptionsOutput  {
     /// <p>True if SAML is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -26,15 +26,15 @@ impl SamlOptionsOutput {
         self.enabled
     }
     /// <p>Describes the SAML identity provider's information.</p>
-    pub fn idp(&self) -> std::option::Option<&crate::types::SamlIdp> {
+    pub fn idp(&self) -> std::option::Option<& crate::types::SamlIdp> {
         self.idp.as_ref()
     }
     /// <p>The key used for matching the SAML subject attribute.</p>
-    pub fn subject_key(&self) -> std::option::Option<&str> {
+    pub fn subject_key(&self) -> std::option::Option<& str> {
         self.subject_key.as_deref()
     }
     /// <p>The key used for matching the SAML roles attribute.</p>
-    pub fn roles_key(&self) -> std::option::Option<&str> {
+    pub fn roles_key(&self) -> std::option::Option<& str> {
         self.roles_key.as_deref()
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
@@ -67,8 +67,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>True if SAML is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Describes the SAML identity provider's information.</p>
     pub fn idp(mut self, input: crate::types::SamlIdp) -> Self {
@@ -77,8 +76,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>Describes the SAML identity provider's information.</p>
     pub fn set_idp(mut self, input: std::option::Option<crate::types::SamlIdp>) -> Self {
-        self.idp = input;
-        self
+        self.idp = input; self
     }
     /// <p>The key used for matching the SAML subject attribute.</p>
     pub fn subject_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>The key used for matching the SAML subject attribute.</p>
     pub fn set_subject_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subject_key = input;
-        self
+        self.subject_key = input; self
     }
     /// <p>The key used for matching the SAML roles attribute.</p>
     pub fn roles_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>The key used for matching the SAML roles attribute.</p>
     pub fn set_roles_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.roles_key = input;
-        self
+        self.roles_key = input; self
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub fn session_timeout_minutes(mut self, input: i32) -> Self {
@@ -107,17 +103,22 @@ impl SamlOptionsOutputBuilder {
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub fn set_session_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.session_timeout_minutes = input;
-        self
+        self.session_timeout_minutes = input; self
     }
     /// Consumes the builder and constructs a [`SamlOptionsOutput`](crate::types::SamlOptionsOutput).
     pub fn build(self) -> crate::types::SamlOptionsOutput {
         crate::types::SamlOptionsOutput {
-            enabled: self.enabled,
-            idp: self.idp,
-            subject_key: self.subject_key,
-            roles_key: self.roles_key,
-            session_timeout_minutes: self.session_timeout_minutes,
+            enabled: self.enabled
+            ,
+            idp: self.idp
+            ,
+            subject_key: self.subject_key
+            ,
+            roles_key: self.roles_key
+            ,
+            session_timeout_minutes: self.session_timeout_minutes
+            ,
         }
     }
 }
+

@@ -4,58 +4,49 @@ pub use crate::operation::update_slack_channel_configuration::_update_slack_chan
 pub use crate::operation::update_slack_channel_configuration::_update_slack_channel_configuration_input::UpdateSlackChannelConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateSlackChannelConfiguration`.
-///
+/// 
 /// <p>Updates the configuration for a Slack channel, such as case update notifications.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_slack_channel_configuration::builders::UpdateSlackChannelConfigurationInputBuilder
             }
-impl UpdateSlackChannelConfigurationFluentBuilder {
+impl UpdateSlackChannelConfigurationFluentBuilder  {
     /// Creates a new `UpdateSlackChannelConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_slack_channel_configuration::UpdateSlackChannelConfigurationError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.team_id(input.into());
@@ -102,10 +93,7 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self
     }
     /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-    pub fn set_notify_on_add_correspondence_to_case(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
+    pub fn set_notify_on_add_correspondence_to_case(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notify_on_add_correspondence_to_case(input);
         self
     }
@@ -119,47 +107,41 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self.inner = self.inner.set_notify_on_resolve_case(input);
         self
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
-    pub fn notify_on_case_severity(
-        mut self,
-        input: crate::types::NotificationSeverityLevel,
-    ) -> Self {
+    pub fn notify_on_case_severity(mut self, input: crate::types::NotificationSeverityLevel) -> Self {
         self.inner = self.inner.notify_on_case_severity(input);
         self
     }
-    /// <p>The case severity for a support case that you want to receive notifications.</p>
-    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul>
-    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li>
-    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li>
-    /// </ul> <note>
-    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p>
+    /// <p>The case severity for a support case that you want to receive notifications.</p> 
+    /// <p>If you specify <code>high</code> or <code>all</code>, at least one of the following parameters must be <code>true</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> 
+    /// <p>If you specify <code>none</code>, any of the following parameters that you specify in your request must be <code>false</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnCreateOrReopenCase</code> </p> </li> 
+    /// <li> <p> <code>notifyOnResolveCase</code> </p> </li> 
+    /// </ul> <note> 
+    /// <p>If you don't specify these parameters in your request, the Amazon Web Services Support App uses the current values by default.</p> 
     /// </note>
-    pub fn set_notify_on_case_severity(
-        mut self,
-        input: std::option::Option<crate::types::NotificationSeverityLevel>,
-    ) -> Self {
+    pub fn set_notify_on_case_severity(mut self, input: std::option::Option<crate::types::NotificationSeverityLevel>) -> Self {
         self.inner = self.inner.set_notify_on_case_severity(input);
         self
     }
@@ -174,3 +156,4 @@ impl UpdateSlackChannelConfigurationFluentBuilder {
         self
     }
 }
+

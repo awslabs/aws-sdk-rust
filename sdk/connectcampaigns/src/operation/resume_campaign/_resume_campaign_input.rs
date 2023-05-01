@@ -3,14 +3,14 @@
 /// ResumeCampaignRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeCampaignInput {
+pub struct ResumeCampaignInput  {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl ResumeCampaignInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl ResumeCampaignInputBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`ResumeCampaignInput`](crate::operation::resume_campaign::ResumeCampaignInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::resume_campaign::ResumeCampaignInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::resume_campaign::ResumeCampaignInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::resume_campaign::ResumeCampaignInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::resume_campaign::ResumeCampaignInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

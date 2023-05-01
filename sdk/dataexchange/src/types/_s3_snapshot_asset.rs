@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 object that is the asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3SnapshotAsset {
+pub struct S3SnapshotAsset  {
     /// <p>The size of the Amazon S3 object that is the object.</p>
     #[doc(hidden)]
     pub size: f64,
@@ -35,13 +35,15 @@ impl S3SnapshotAssetBuilder {
     }
     /// <p>The size of the Amazon S3 object that is the object.</p>
     pub fn set_size(mut self, input: std::option::Option<f64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// Consumes the builder and constructs a [`S3SnapshotAsset`](crate::types::S3SnapshotAsset).
     pub fn build(self) -> crate::types::S3SnapshotAsset {
         crate::types::S3SnapshotAsset {
-            size: self.size.unwrap_or_default(),
+            size: self.size
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

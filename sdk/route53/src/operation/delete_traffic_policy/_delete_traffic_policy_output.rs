@@ -3,20 +3,18 @@
 /// <p>An empty element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrafficPolicyOutput {
+pub struct DeleteTrafficPolicyOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteTrafficPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteTrafficPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder {
-        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder {
+        crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyOutputBuilder::default()
     }
 }
 
@@ -28,14 +26,14 @@ pub struct DeleteTrafficPolicyOutputBuilder {
 }
 impl DeleteTrafficPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput).
     pub fn build(self) -> crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput {
         crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput {
@@ -43,3 +41,4 @@ impl DeleteTrafficPolicyOutputBuilder {
         }
     }
 }
+

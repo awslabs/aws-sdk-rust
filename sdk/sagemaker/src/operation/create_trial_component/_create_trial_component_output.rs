@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrialComponentOutput {
+pub struct CreateTrialComponentOutput  {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
     #[doc(hidden)]
     pub trial_component_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct CreateTrialComponentOutput {
 }
 impl CreateTrialComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn trial_component_arn(&self) -> std::option::Option<&str> {
+    pub fn trial_component_arn(&self) -> std::option::Option<& str> {
         self.trial_component_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTrialComponentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTrialComponentOutput {
     /// Creates a new builder-style object to manufacture [`CreateTrialComponentOutput`](crate::operation::create_trial_component::CreateTrialComponentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_trial_component::builders::CreateTrialComponentOutputBuilder {
+    pub fn builder() -> crate::operation::create_trial_component::builders::CreateTrialComponentOutputBuilder {
         crate::operation::create_trial_component::builders::CreateTrialComponentOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateTrialComponentOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the trial component.</p>
-    pub fn set_trial_component_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.trial_component_arn = input;
-        self
+    pub fn set_trial_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.trial_component_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTrialComponentOutput`](crate::operation::create_trial_component::CreateTrialComponentOutput).
     pub fn build(self) -> crate::operation::create_trial_component::CreateTrialComponentOutput {
         crate::operation::create_trial_component::CreateTrialComponentOutput {
-            trial_component_arn: self.trial_component_arn,
+            trial_component_arn: self.trial_component_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

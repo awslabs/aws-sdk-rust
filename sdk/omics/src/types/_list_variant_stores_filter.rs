@@ -3,14 +3,14 @@
 /// <p>A filter for variant stores.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVariantStoresFilter {
+pub struct ListVariantStoresFilter  {
     /// <p>A status to filter on.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::StoreStatus>,
 }
 impl ListVariantStoresFilter {
     /// <p>A status to filter on.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::StoreStatus> {
         self.status.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl ListVariantStoresFilterBuilder {
     }
     /// <p>A status to filter on.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ListVariantStoresFilter`](crate::types::ListVariantStoresFilter).
     pub fn build(self) -> crate::types::ListVariantStoresFilter {
         crate::types::ListVariantStoresFilter {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

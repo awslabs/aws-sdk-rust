@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserPoolMfaConfigInput {
+pub struct GetUserPoolMfaConfigInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
 }
 impl GetUserPoolMfaConfigInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
 }
 impl GetUserPoolMfaConfigInput {
     /// Creates a new builder-style object to manufacture [`GetUserPoolMfaConfigInput`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigInput).
-    pub fn builder(
-    ) -> crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigInputBuilder {
         crate::operation::get_user_pool_mfa_config::builders::GetUserPoolMfaConfigInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetUserPoolMfaConfigInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// Consumes the builder and constructs a [`GetUserPoolMfaConfigInput`](crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigInput {
-                user_pool_id: self.user_pool_id,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+            }
         )
     }
 }
+

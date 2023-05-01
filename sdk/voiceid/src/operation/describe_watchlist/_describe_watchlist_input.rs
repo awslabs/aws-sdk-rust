@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWatchlistInput {
+pub struct DescribeWatchlistInput  {
     /// <p>The identifier of the domain that contains the watchlist.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DescribeWatchlistInput {
 }
 impl DescribeWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the watchlist that you are describing.</p>
-    pub fn watchlist_id(&self) -> std::option::Option<&str> {
+    pub fn watchlist_id(&self) -> std::option::Option<& str> {
         self.watchlist_id.as_deref()
     }
 }
 impl DescribeWatchlistInput {
     /// Creates a new builder-style object to manufacture [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
-    pub fn builder() -> crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder {
         crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeWatchlistInputBuilder {
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input;
-        self
+        self.domain_id = input; self
     }
     /// <p>The identifier of the watchlist that you are describing.</p>
     pub fn watchlist_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DescribeWatchlistInputBuilder {
     }
     /// <p>The identifier of the watchlist that you are describing.</p>
     pub fn set_watchlist_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.watchlist_id = input;
-        self
+        self.watchlist_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWatchlistInput`](crate::operation::describe_watchlist::DescribeWatchlistInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_watchlist::DescribeWatchlistInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_watchlist::DescribeWatchlistInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_watchlist::DescribeWatchlistInput {
-                domain_id: self.domain_id,
-                watchlist_id: self.watchlist_id,
-            },
+                domain_id: self.domain_id
+                ,
+                watchlist_id: self.watchlist_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNamespaceInput {}
+pub struct DeleteNamespaceInput  {
+}
 impl DeleteNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
     pub fn builder() -> crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder {
@@ -13,15 +14,15 @@ impl DeleteNamespaceInput {
 /// A builder for [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteNamespaceInputBuilder {}
+pub struct DeleteNamespaceInputBuilder {
+}
 impl DeleteNamespaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNamespaceInput`](crate::operation::delete_namespace::DeleteNamespaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_namespace::DeleteNamespaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_namespace::DeleteNamespaceInput {})
+    pub fn build(self) -> Result<crate::operation::delete_namespace::DeleteNamespaceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_namespace::DeleteNamespaceInput {
+            }
+        )
     }
 }
+

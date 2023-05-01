@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCustomerGatewayAssociationsInput {
+pub struct GetCustomerGatewayAssociationsInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct GetCustomerGatewayAssociationsInput {
 }
 impl GetCustomerGatewayAssociationsInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
-    pub fn customer_gateway_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn customer_gateway_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.customer_gateway_arns.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -30,13 +30,13 @@ impl GetCustomerGatewayAssociationsInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl GetCustomerGatewayAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetCustomerGatewayAssociationsInput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput).
-    pub fn builder() -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder {
         crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl GetCustomerGatewayAssociationsInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// Appends an item to `customer_gateway_arns`.
     ///
@@ -71,17 +67,13 @@ impl GetCustomerGatewayAssociationsInputBuilder {
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
     pub fn customer_gateway_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.customer_gateway_arns.unwrap_or_default();
-        v.push(input.into());
-        self.customer_gateway_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.customer_gateway_arns = Some(v);
+                        self
     }
     /// <p>One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.</p>
-    pub fn set_customer_gateway_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.customer_gateway_arns = input;
-        self
+    pub fn set_customer_gateway_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.customer_gateway_arns = input; self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -90,8 +82,7 @@ impl GetCustomerGatewayAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,16 +91,10 @@ impl GetCustomerGatewayAssociationsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetCustomerGatewayAssociationsInput`](crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociationsInput {
                 global_network_id: self.global_network_id
@@ -124,3 +109,4 @@ impl GetCustomerGatewayAssociationsInputBuilder {
         )
     }
 }
+

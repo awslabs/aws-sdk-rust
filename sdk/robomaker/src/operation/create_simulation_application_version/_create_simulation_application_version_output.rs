@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSimulationApplicationVersionOutput {
+pub struct CreateSimulationApplicationVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -37,56 +37,54 @@ pub struct CreateSimulationApplicationVersionOutput {
 }
 impl CreateSimulationApplicationVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the simulation application.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the simulation application.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::types::Source]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::types::Source]> {
         self.sources.as_deref()
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        &self,
-    ) -> std::option::Option<&crate::types::SimulationSoftwareSuite> {
+    pub fn simulation_software_suite(&self) -> std::option::Option<& crate::types::SimulationSoftwareSuite> {
         self.simulation_software_suite.as_ref()
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<&crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<& crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn rendering_engine(&self) -> std::option::Option<&crate::types::RenderingEngine> {
+    pub fn rendering_engine(&self) -> std::option::Option<& crate::types::RenderingEngine> {
         self.rendering_engine.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The revision ID of the simulation application.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::types::Environment> {
+    pub fn environment(&self) -> std::option::Option<& crate::types::Environment> {
         self.environment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSimulationApplicationVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSimulationApplicationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationVersionOutput`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput).
-    pub fn builder() -> crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionOutputBuilder{
+    pub fn builder() -> crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionOutputBuilder {
         crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionOutputBuilder::default()
     }
 }
@@ -99,8 +97,7 @@ pub struct CreateSimulationApplicationVersionOutputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) version: std::option::Option<std::string::String>,
     pub(crate) sources: std::option::Option<std::vec::Vec<crate::types::Source>>,
-    pub(crate) simulation_software_suite:
-        std::option::Option<crate::types::SimulationSoftwareSuite>,
+    pub(crate) simulation_software_suite: std::option::Option<crate::types::SimulationSoftwareSuite>,
     pub(crate) robot_software_suite: std::option::Option<crate::types::RobotSoftwareSuite>,
     pub(crate) rendering_engine: std::option::Option<crate::types::RenderingEngine>,
     pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -116,8 +113,7 @@ impl CreateSimulationApplicationVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation application.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the simulation application.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +122,7 @@ impl CreateSimulationApplicationVersionOutputBuilder {
     }
     /// <p>The name of the simulation application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the simulation application.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +131,7 @@ impl CreateSimulationApplicationVersionOutputBuilder {
     }
     /// <p>The version of the simulation application.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Appends an item to `sources`.
     ///
@@ -146,33 +140,22 @@ impl CreateSimulationApplicationVersionOutputBuilder {
     /// <p>The sources of the simulation application.</p>
     pub fn sources(mut self, input: crate::types::Source) -> Self {
         let mut v = self.sources.unwrap_or_default();
-        v.push(input);
-        self.sources = Some(v);
-        self
+                        v.push(input);
+                        self.sources = Some(v);
+                        self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn set_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Source>>,
-    ) -> Self {
-        self.sources = input;
-        self
+    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Source>>) -> Self {
+        self.sources = input; self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(
-        mut self,
-        input: crate::types::SimulationSoftwareSuite,
-    ) -> Self {
+    pub fn simulation_software_suite(mut self, input: crate::types::SimulationSoftwareSuite) -> Self {
         self.simulation_software_suite = Some(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn set_simulation_software_suite(
-        mut self,
-        input: std::option::Option<crate::types::SimulationSoftwareSuite>,
-    ) -> Self {
-        self.simulation_software_suite = input;
-        self
+    pub fn set_simulation_software_suite(mut self, input: std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
+        self.simulation_software_suite = input; self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
@@ -180,12 +163,8 @@ impl CreateSimulationApplicationVersionOutputBuilder {
         self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn set_robot_software_suite(
-        mut self,
-        input: std::option::Option<crate::types::RobotSoftwareSuite>,
-    ) -> Self {
-        self.robot_software_suite = input;
-        self
+    pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
+        self.robot_software_suite = input; self
     }
     /// <p>The rendering engine for the simulation application.</p>
     pub fn rendering_engine(mut self, input: crate::types::RenderingEngine) -> Self {
@@ -193,12 +172,8 @@ impl CreateSimulationApplicationVersionOutputBuilder {
         self
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn set_rendering_engine(
-        mut self,
-        input: std::option::Option<crate::types::RenderingEngine>,
-    ) -> Self {
-        self.rendering_engine = input;
-        self
+    pub fn set_rendering_engine(mut self, input: std::option::Option<crate::types::RenderingEngine>) -> Self {
+        self.rendering_engine = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -206,12 +181,8 @@ impl CreateSimulationApplicationVersionOutputBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation application was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p>The revision ID of the simulation application.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,8 +191,7 @@ impl CreateSimulationApplicationVersionOutputBuilder {
     }
     /// <p>The revision ID of the simulation application.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
@@ -229,24 +199,20 @@ impl CreateSimulationApplicationVersionOutputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI used to create the simulation application.</p>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<crate::types::Environment>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionOutput`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput).
-    pub fn build(self) -> crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput{
+    pub fn build(self) -> crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput {
         crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionOutput {
             arn: self.arn
             ,
@@ -272,3 +238,4 @@ impl CreateSimulationApplicationVersionOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMailboxExportJobOutput {
+pub struct DescribeMailboxExportJobOutput  {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
@@ -43,31 +43,31 @@ pub struct DescribeMailboxExportJobOutput {
 }
 impl DescribeMailboxExportJobOutput {
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The mailbox export job description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 bucket prefix.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
-    pub fn s3_path(&self) -> std::option::Option<&str> {
+    pub fn s3_path(&self) -> std::option::Option<& str> {
         self.s3_path.as_deref()
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
@@ -75,30 +75,30 @@ impl DescribeMailboxExportJobOutput {
         self.estimated_progress
     }
     /// <p>The state of the mailbox export job.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::MailboxExportJobState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::MailboxExportJobState> {
         self.state.as_ref()
     }
     /// <p>Error information for failed mailbox export jobs.</p>
-    pub fn error_info(&self) -> std::option::Option<&str> {
+    pub fn error_info(&self) -> std::option::Option<& str> {
         self.error_info.as_deref()
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The mailbox export job end timestamp.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMailboxExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeMailboxExportJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMailboxExportJobOutput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput).
-    pub fn builder() -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobOutputBuilder{
+    pub fn builder() -> crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobOutputBuilder {
         crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobOutputBuilder::default()
     }
 }
@@ -129,8 +129,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The mailbox export job description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +138,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The mailbox export job description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +147,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The ARN of the AWS Identity and Access Management (IAM) role that grants write permission to the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +156,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the symmetric AWS Key Management Service (AWS KMS) key that encrypts the exported mailbox content.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input;
-        self
+        self.kms_key_arn = input; self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +165,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input;
-        self
+        self.s3_bucket_name = input; self
     }
     /// <p>The S3 bucket prefix.</p>
     pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -179,8 +174,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The S3 bucket prefix.</p>
     pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_prefix = input;
-        self
+        self.s3_prefix = input; self
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
     pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,8 +183,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job is exporting to.</p>
     pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_path = input;
-        self
+        self.s3_path = input; self
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
     pub fn estimated_progress(mut self, input: i32) -> Self {
@@ -199,8 +192,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
     pub fn set_estimated_progress(mut self, input: std::option::Option<i32>) -> Self {
-        self.estimated_progress = input;
-        self
+        self.estimated_progress = input; self
     }
     /// <p>The state of the mailbox export job.</p>
     pub fn state(mut self, input: crate::types::MailboxExportJobState) -> Self {
@@ -208,12 +200,8 @@ impl DescribeMailboxExportJobOutputBuilder {
         self
     }
     /// <p>The state of the mailbox export job.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::MailboxExportJobState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::MailboxExportJobState>) -> Self {
+        self.state = input; self
     }
     /// <p>Error information for failed mailbox export jobs.</p>
     pub fn error_info(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,8 +210,7 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>Error information for failed mailbox export jobs.</p>
     pub fn set_error_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_info = input;
-        self
+        self.error_info = input; self
     }
     /// <p>The mailbox export job start timestamp.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -231,12 +218,8 @@ impl DescribeMailboxExportJobOutputBuilder {
         self
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The mailbox export job end timestamp.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -245,36 +228,47 @@ impl DescribeMailboxExportJobOutputBuilder {
     }
     /// <p>The mailbox export job end timestamp.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeMailboxExportJobOutput`](crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput {
+    pub fn build(self) -> crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput {
         crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput {
-            entity_id: self.entity_id,
-            description: self.description,
-            role_arn: self.role_arn,
-            kms_key_arn: self.kms_key_arn,
-            s3_bucket_name: self.s3_bucket_name,
-            s3_prefix: self.s3_prefix,
-            s3_path: self.s3_path,
-            estimated_progress: self.estimated_progress.unwrap_or_default(),
-            state: self.state,
-            error_info: self.error_info,
-            start_time: self.start_time,
-            end_time: self.end_time,
+            entity_id: self.entity_id
+            ,
+            description: self.description
+            ,
+            role_arn: self.role_arn
+            ,
+            kms_key_arn: self.kms_key_arn
+            ,
+            s3_bucket_name: self.s3_bucket_name
+            ,
+            s3_prefix: self.s3_prefix
+            ,
+            s3_path: self.s3_path
+            ,
+            estimated_progress: self.estimated_progress
+                .unwrap_or_default()
+            ,
+            state: self.state
+            ,
+            error_info: self.error_info
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

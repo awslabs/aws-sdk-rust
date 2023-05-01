@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStackInput {
+pub struct DeleteStackInput  {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteStackInput {
     /// <p>The name of the stack.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DeleteStackInputBuilder {
     }
     /// <p>The name of the stack.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteStackInput`](crate::operation::delete_stack::DeleteStackInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_stack::DeleteStackInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_stack::DeleteStackInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_stack::DeleteStackInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_stack::DeleteStackInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

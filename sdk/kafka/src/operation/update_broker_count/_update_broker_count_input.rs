@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerCountInput {
+pub struct UpdateBrokerCountInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateBrokerCountInput {
 }
 impl UpdateBrokerCountInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> std::option::Option<& str> {
         self.current_version.as_deref()
     }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
@@ -29,8 +29,7 @@ impl UpdateBrokerCountInput {
 }
 impl UpdateBrokerCountInput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
-    pub fn builder(
-    ) -> crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
+    pub fn builder() -> crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder {
         crate::operation::update_broker_count::builders::UpdateBrokerCountInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl UpdateBrokerCountInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl UpdateBrokerCountInputBuilder {
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     pub fn target_number_of_broker_nodes(mut self, input: i32) -> Self {
@@ -71,22 +68,20 @@ impl UpdateBrokerCountInputBuilder {
     }
     /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
     pub fn set_target_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.target_number_of_broker_nodes = input;
-        self
+        self.target_number_of_broker_nodes = input; self
     }
     /// Consumes the builder and constructs a [`UpdateBrokerCountInput`](crate::operation::update_broker_count::UpdateBrokerCountInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_broker_count::UpdateBrokerCountInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_broker_count::UpdateBrokerCountInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_broker_count::UpdateBrokerCountInput {
-                cluster_arn: self.cluster_arn,
-                current_version: self.current_version,
-                target_number_of_broker_nodes: self.target_number_of_broker_nodes,
-            },
+                cluster_arn: self.cluster_arn
+                ,
+                current_version: self.current_version
+                ,
+                target_number_of_broker_nodes: self.target_number_of_broker_nodes
+                ,
+            }
         )
     }
 }
+

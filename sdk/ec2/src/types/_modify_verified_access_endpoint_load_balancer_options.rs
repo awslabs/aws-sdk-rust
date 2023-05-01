@@ -3,7 +3,7 @@
 /// <p>Describes a load balancer when creating an Amazon Web Services Verified Access endpoint using the <code>load-balancer</code> type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVerifiedAccessEndpointLoadBalancerOptions {
+pub struct ModifyVerifiedAccessEndpointLoadBalancerOptions  {
     /// <p>The IDs of the subnets.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,11 +16,11 @@ pub struct ModifyVerifiedAccessEndpointLoadBalancerOptions {
 }
 impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The IDs of the subnets.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
@@ -30,8 +30,7 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
 }
 impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessEndpointLoadBalancerOptions`](crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions).
-    pub fn builder(
-    ) -> crate::types::builders::ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
+    pub fn builder() -> crate::types::builders::ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         crate::types::builders::ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder::default()
     }
 }
@@ -52,17 +51,13 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     /// <p>The IDs of the subnets.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the subnets.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The IP protocol.</p>
     pub fn protocol(mut self, input: crate::types::VerifiedAccessEndpointProtocol) -> Self {
@@ -70,12 +65,8 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
         self
     }
     /// <p>The IP protocol.</p>
-    pub fn set_protocol(
-        mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>) -> Self {
+        self.protocol = input; self
     }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -84,15 +75,18 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     }
     /// <p>The IP port number.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessEndpointLoadBalancerOptions`](crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions).
     pub fn build(self) -> crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions {
         crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions {
-            subnet_ids: self.subnet_ids,
-            protocol: self.protocol,
-            port: self.port,
+            subnet_ids: self.subnet_ids
+            ,
+            protocol: self.protocol
+            ,
+            port: self.port
+            ,
         }
     }
 }
+

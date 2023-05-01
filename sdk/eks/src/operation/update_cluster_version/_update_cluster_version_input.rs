@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClusterVersionInput {
+pub struct UpdateClusterVersionInput  {
     /// <p>The name of the Amazon EKS cluster to update.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct UpdateClusterVersionInput {
 }
 impl UpdateClusterVersionInput {
     /// <p>The name of the Amazon EKS cluster to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl UpdateClusterVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder {
         crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl UpdateClusterVersionInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl UpdateClusterVersionInputBuilder {
     }
     /// <p>The desired Kubernetes version following a successful update.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +67,21 @@ impl UpdateClusterVersionInputBuilder {
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`UpdateClusterVersionInput`](crate::operation::update_cluster_version::UpdateClusterVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_cluster_version::UpdateClusterVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_cluster_version::UpdateClusterVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_cluster_version::UpdateClusterVersionInput {
-                name: self.name,
-                version: self.version,
-                client_request_token: self.client_request_token,
-            },
+                name: self.name
+                ,
+                version: self.version
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAdministratorAccountOutput {
+pub struct GetAdministratorAccountOutput  {
     /// <p>Details about an invitation.</p>
     #[doc(hidden)]
     pub administrator: std::option::Option<crate::types::Invitation>,
@@ -10,20 +10,18 @@ pub struct GetAdministratorAccountOutput {
 }
 impl GetAdministratorAccountOutput {
     /// <p>Details about an invitation.</p>
-    pub fn administrator(&self) -> std::option::Option<&crate::types::Invitation> {
+    pub fn administrator(&self) -> std::option::Option<& crate::types::Invitation> {
         self.administrator.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAdministratorAccountOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAdministratorAccountOutput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
-    pub fn builder(
-    ) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder {
         crate::operation::get_administrator_account::builders::GetAdministratorAccountOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl GetAdministratorAccountOutputBuilder {
         self
     }
     /// <p>Details about an invitation.</p>
-    pub fn set_administrator(
-        mut self,
-        input: std::option::Option<crate::types::Invitation>,
-    ) -> Self {
-        self.administrator = input;
-        self
+    pub fn set_administrator(mut self, input: std::option::Option<crate::types::Invitation>) -> Self {
+        self.administrator = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAdministratorAccountOutput`](crate::operation::get_administrator_account::GetAdministratorAccountOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_administrator_account::GetAdministratorAccountOutput {
+    pub fn build(self) -> crate::operation::get_administrator_account::GetAdministratorAccountOutput {
         crate::operation::get_administrator_account::GetAdministratorAccountOutput {
-            administrator: self.administrator,
+            administrator: self.administrator
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

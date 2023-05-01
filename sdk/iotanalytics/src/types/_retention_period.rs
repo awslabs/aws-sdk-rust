@@ -3,7 +3,7 @@
 /// <p>How long, in days, message data is kept.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetentionPeriod {
+pub struct RetentionPeriod  {
     /// <p>If true, message data is kept indefinitely.</p>
     #[doc(hidden)]
     pub unlimited: bool,
@@ -43,8 +43,7 @@ impl RetentionPeriodBuilder {
     }
     /// <p>If true, message data is kept indefinitely.</p>
     pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
-        self.unlimited = input;
-        self
+        self.unlimited = input; self
     }
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     pub fn number_of_days(mut self, input: i32) -> Self {
@@ -53,14 +52,17 @@ impl RetentionPeriodBuilder {
     }
     /// <p>The number of days that message data is kept. The <code>unlimited</code> parameter must be false.</p>
     pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_days = input;
-        self
+        self.number_of_days = input; self
     }
     /// Consumes the builder and constructs a [`RetentionPeriod`](crate::types::RetentionPeriod).
     pub fn build(self) -> crate::types::RetentionPeriod {
         crate::types::RetentionPeriod {
-            unlimited: self.unlimited.unwrap_or_default(),
-            number_of_days: self.number_of_days,
+            unlimited: self.unlimited
+                .unwrap_or_default()
+            ,
+            number_of_days: self.number_of_days
+            ,
         }
     }
 }
+

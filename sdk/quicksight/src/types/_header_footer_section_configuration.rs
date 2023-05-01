@@ -3,7 +3,7 @@
 /// <p>The configuration of a header or footer section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HeaderFooterSectionConfiguration {
+pub struct HeaderFooterSectionConfiguration  {
     /// <p>The unique identifier of the header or footer section.</p>
     #[doc(hidden)]
     pub section_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct HeaderFooterSectionConfiguration {
 }
 impl HeaderFooterSectionConfiguration {
     /// <p>The unique identifier of the header or footer section.</p>
-    pub fn section_id(&self) -> std::option::Option<&str> {
+    pub fn section_id(&self) -> std::option::Option<& str> {
         self.section_id.as_deref()
     }
     /// <p>The layout configuration of the header or footer section.</p>
-    pub fn layout(&self) -> std::option::Option<&crate::types::SectionLayoutConfiguration> {
+    pub fn layout(&self) -> std::option::Option<& crate::types::SectionLayoutConfiguration> {
         self.layout.as_ref()
     }
     /// <p>The style options of a header or footer section.</p>
-    pub fn style(&self) -> std::option::Option<&crate::types::SectionStyle> {
+    pub fn style(&self) -> std::option::Option<& crate::types::SectionStyle> {
         self.style.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl HeaderFooterSectionConfigurationBuilder {
     }
     /// <p>The unique identifier of the header or footer section.</p>
     pub fn set_section_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.section_id = input;
-        self
+        self.section_id = input; self
     }
     /// <p>The layout configuration of the header or footer section.</p>
     pub fn layout(mut self, input: crate::types::SectionLayoutConfiguration) -> Self {
@@ -60,12 +59,8 @@ impl HeaderFooterSectionConfigurationBuilder {
         self
     }
     /// <p>The layout configuration of the header or footer section.</p>
-    pub fn set_layout(
-        mut self,
-        input: std::option::Option<crate::types::SectionLayoutConfiguration>,
-    ) -> Self {
-        self.layout = input;
-        self
+    pub fn set_layout(mut self, input: std::option::Option<crate::types::SectionLayoutConfiguration>) -> Self {
+        self.layout = input; self
     }
     /// <p>The style options of a header or footer section.</p>
     pub fn style(mut self, input: crate::types::SectionStyle) -> Self {
@@ -74,15 +69,18 @@ impl HeaderFooterSectionConfigurationBuilder {
     }
     /// <p>The style options of a header or footer section.</p>
     pub fn set_style(mut self, input: std::option::Option<crate::types::SectionStyle>) -> Self {
-        self.style = input;
-        self
+        self.style = input; self
     }
     /// Consumes the builder and constructs a [`HeaderFooterSectionConfiguration`](crate::types::HeaderFooterSectionConfiguration).
     pub fn build(self) -> crate::types::HeaderFooterSectionConfiguration {
         crate::types::HeaderFooterSectionConfiguration {
-            section_id: self.section_id,
-            layout: self.layout,
-            style: self.style,
+            section_id: self.section_id
+            ,
+            layout: self.layout
+            ,
+            style: self.style
+            ,
         }
     }
 }
+

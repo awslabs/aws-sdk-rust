@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceTemplatesInput {
+pub struct ListServiceTemplatesInput  {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListServiceTemplatesInput {
 }
 impl ListServiceTemplatesInput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of service templates to list.</p>
@@ -22,8 +22,7 @@ impl ListServiceTemplatesInput {
 }
 impl ListServiceTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListServiceTemplatesInput`](crate::operation::list_service_templates::ListServiceTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::list_service_templates::builders::ListServiceTemplatesInputBuilder {
+    pub fn builder() -> crate::operation::list_service_templates::builders::ListServiceTemplatesInputBuilder {
         crate::operation::list_service_templates::builders::ListServiceTemplatesInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListServiceTemplatesInputBuilder {
     }
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the list of service templates previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of service templates to list.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl ListServiceTemplatesInputBuilder {
     }
     /// <p>The maximum number of service templates to list.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListServiceTemplatesInput`](crate::operation::list_service_templates::ListServiceTemplatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_service_templates::ListServiceTemplatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_service_templates::ListServiceTemplatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_service_templates::ListServiceTemplatesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -4,85 +4,67 @@ pub use crate::operation::create_transit_gateway_multicast_domain::_create_trans
 pub use crate::operation::create_transit_gateway_multicast_domain::_create_transit_gateway_multicast_domain_input::CreateTransitGatewayMulticastDomainInputBuilder;
 
 /// Fluent builder constructing a request to `CreateTransitGatewayMulticastDomain`.
-///
-/// <p>Creates a multicast domain using the specified transit gateway.</p>
+/// 
+/// <p>Creates a multicast domain using the specified transit gateway.</p> 
 /// <p>The transit gateway must be in the available state before you create a domain. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a> to see the state of transit gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayMulticastDomainFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainInputBuilder
             }
-impl CreateTransitGatewayMulticastDomainFluentBuilder {
+impl CreateTransitGatewayMulticastDomainFluentBuilder  {
     /// Creates a new `CreateTransitGatewayMulticastDomain`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomain, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainOutput, aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomainError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of the transit gateway.</p>
     pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn set_transit_gateway_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn options(
-        mut self,
-        input: crate::types::CreateTransitGatewayMulticastDomainRequestOptions,
-    ) -> Self {
+    pub fn options(mut self, input: crate::types::CreateTransitGatewayMulticastDomainRequestOptions) -> Self {
         self.inner = self.inner.options(input);
         self
     }
     /// <p>The options for the transit gateway multicast domain.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions>,
-    ) -> Self {
+    pub fn set_options(mut self, input: std::option::Option<crate::types::CreateTransitGatewayMulticastDomainRequestOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
@@ -96,10 +78,7 @@ impl CreateTransitGatewayMulticastDomainFluentBuilder {
         self
     }
     /// <p>The tags for the transit gateway multicast domain.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -114,3 +93,4 @@ impl CreateTransitGatewayMulticastDomainFluentBuilder {
         self
     }
 }
+

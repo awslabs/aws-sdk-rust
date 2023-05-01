@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDirectoriesInput {
+pub struct ListDirectoriesInput  {
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListDirectoriesInput {
 }
 impl ListDirectoriesInput {
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -23,7 +23,7 @@ impl ListDirectoriesInput {
         self.max_results
     }
     /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::DirectoryState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::DirectoryState> {
         self.state.as_ref()
     }
 }
@@ -50,8 +50,7 @@ impl ListDirectoriesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListDirectoriesInputBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     pub fn state(mut self, input: crate::types::DirectoryState) -> Self {
@@ -70,20 +68,20 @@ impl ListDirectoriesInputBuilder {
     }
     /// <p>The state of the directories in the list. Can be either Enabled, Disabled, or Deleted.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::DirectoryState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`ListDirectoriesInput`](crate::operation::list_directories::ListDirectoriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_directories::ListDirectoriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_directories::ListDirectoriesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            state: self.state,
-        })
+    pub fn build(self) -> Result<crate::operation::list_directories::ListDirectoriesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_directories::ListDirectoriesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                state: self.state
+                ,
+            }
+        )
     }
 }
+

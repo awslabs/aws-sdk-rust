@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMembersOutput {
+pub struct GetMembersOutput  {
     /// <p>The list of details about the Security Hub member accounts.</p>
     #[doc(hidden)]
     pub members: std::option::Option<std::vec::Vec<crate::types::Member>>,
@@ -13,19 +13,19 @@ pub struct GetMembersOutput {
 }
 impl GetMembersOutput {
     /// <p>The list of details about the Security Hub member accounts.</p>
-    pub fn members(&self) -> std::option::Option<&[crate::types::Member]> {
+    pub fn members(&self) -> std::option::Option<& [crate::types::Member]> {
         self.members.as_deref()
     }
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::types::Result]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::types::Result]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMembersOutput {
     /// Creates a new builder-style object to manufacture [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput).
     pub fn builder() -> crate::operation::get_members::builders::GetMembersOutputBuilder {
@@ -49,17 +49,13 @@ impl GetMembersOutputBuilder {
     /// <p>The list of details about the Security Hub member accounts.</p>
     pub fn members(mut self, input: crate::types::Member) -> Self {
         let mut v = self.members.unwrap_or_default();
-        v.push(input);
-        self.members = Some(v);
-        self
+                        v.push(input);
+                        self.members = Some(v);
+                        self
     }
     /// <p>The list of details about the Security Hub member accounts.</p>
-    pub fn set_members(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Member>>,
-    ) -> Self {
-        self.members = input;
-        self
+    pub fn set_members(mut self, input: std::option::Option<std::vec::Vec<crate::types::Member>>) -> Self {
+        self.members = input; self
     }
     /// Appends an item to `unprocessed_accounts`.
     ///
@@ -68,33 +64,32 @@ impl GetMembersOutputBuilder {
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::Result) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_accounts = Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_accounts = Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Result>>,
-    ) -> Self {
-        self.unprocessed_accounts = input;
-        self
+    pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Result>>) -> Self {
+        self.unprocessed_accounts = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput).
     pub fn build(self) -> crate::operation::get_members::GetMembersOutput {
         crate::operation::get_members::GetMembersOutput {
-            members: self.members,
-            unprocessed_accounts: self.unprocessed_accounts,
+            members: self.members
+            ,
+            unprocessed_accounts: self.unprocessed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

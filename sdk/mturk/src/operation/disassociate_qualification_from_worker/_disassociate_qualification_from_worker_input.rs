@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateQualificationFromWorkerInput {
+pub struct DisassociateQualificationFromWorkerInput  {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
     #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DisassociateQualificationFromWorkerInput {
 }
 impl DisassociateQualificationFromWorkerInput {
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> std::option::Option<& str> {
         self.worker_id.as_deref()
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
         self.qualification_type_id.as_deref()
     }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 impl DisassociateQualificationFromWorkerInput {
     /// Creates a new builder-style object to manufacture [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
-    pub fn builder() -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerInputBuilder {
         crate::operation::disassociate_qualification_from_worker::builders::DisassociateQualificationFromWorkerInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DisassociateQualificationFromWorkerInputBuilder {
     }
     /// <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
     pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_id = input;
-        self
+        self.worker_id = input; self
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
     pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,12 +58,8 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         self
     }
     /// <p>The ID of the Qualification type of the Qualification to be revoked.</p>
-    pub fn set_qualification_type_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.qualification_type_id = input;
-        self
+    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.qualification_type_id = input; self
     }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,11 +68,10 @@ impl DisassociateQualificationFromWorkerInputBuilder {
     }
     /// <p>A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input;
-        self
+        self.reason = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerInput`](crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerInput {
                 worker_id: self.worker_id
@@ -90,3 +84,4 @@ impl DisassociateQualificationFromWorkerInputBuilder {
         )
     }
 }
+

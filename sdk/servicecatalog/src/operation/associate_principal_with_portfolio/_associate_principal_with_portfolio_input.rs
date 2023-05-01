@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePrincipalWithPortfolioInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+pub struct AssociatePrincipalWithPortfolioInput  {
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The portfolio identifier.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p> 
     /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct AssociatePrincipalWithPortfolioInput {
     pub principal_type: std::option::Option<crate::types::PrincipalType>,
 }
 impl AssociatePrincipalWithPortfolioInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<&str> {
+    pub fn accept_language(&self) -> std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p> 
     /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
-    pub fn principal_arn(&self) -> std::option::Option<&str> {
+    pub fn principal_arn(&self) -> std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
-    pub fn principal_type(&self) -> std::option::Option<&crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<& crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
 }
 impl AssociatePrincipalWithPortfolioInput {
     /// Creates a new builder-style object to manufacture [`AssociatePrincipalWithPortfolioInput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioInput).
-    pub fn builder() -> crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder {
         crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder::default()
     }
 }
@@ -61,23 +61,22 @@ pub struct AssociatePrincipalWithPortfolioInputBuilder {
     pub(crate) principal_type: std::option::Option<crate::types::PrincipalType>,
 }
 impl AssociatePrincipalWithPortfolioInputBuilder {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +85,18 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p> 
     /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+    /// <p>The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p> 
     /// <p>You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns the portfolio. </p>
     pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_arn = input;
-        self
+        self.principal_arn = input; self
     }
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
     pub fn principal_type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -107,20 +104,11 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
         self
     }
     /// <p>The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>. </p>
-    pub fn set_principal_type(
-        mut self,
-        input: std::option::Option<crate::types::PrincipalType>,
-    ) -> Self {
-        self.principal_type = input;
-        self
+    pub fn set_principal_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
+        self.principal_type = input; self
     }
     /// Consumes the builder and constructs a [`AssociatePrincipalWithPortfolioInput`](crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolioInput {
                 accept_language: self.accept_language
@@ -135,3 +123,4 @@ impl AssociatePrincipalWithPortfolioInputBuilder {
         )
     }
 }
+

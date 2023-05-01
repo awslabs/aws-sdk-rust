@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateDevicePositionOutput {
+pub struct BatchUpdateDevicePositionOutput  {
     /// <p>Contains error details for each device that failed to update its position.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
@@ -10,18 +10,18 @@ pub struct BatchUpdateDevicePositionOutput {
 }
 impl BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchUpdateDevicePositionError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchUpdateDevicePositionError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchUpdateDevicePositionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchUpdateDevicePositionOutput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
-    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder{
+    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder {
         crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionOutputBuilder::default()
     }
 }
@@ -30,8 +30,7 @@ impl BatchUpdateDevicePositionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchUpdateDevicePositionOutputBuilder {
-    pub(crate) errors:
-        std::option::Option<std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
+    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
     _request_id: Option<String>,
 }
 impl BatchUpdateDevicePositionOutputBuilder {
@@ -42,34 +41,30 @@ impl BatchUpdateDevicePositionOutputBuilder {
     /// <p>Contains error details for each device that failed to update its position.</p>
     pub fn errors(mut self, input: crate::types::BatchUpdateDevicePositionError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>Contains error details for each device that failed to update its position.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchUpdateDevicePositionError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionOutput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
+    pub fn build(self) -> crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
         crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput {
-            errors: self.errors,
+            errors: self.errors
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

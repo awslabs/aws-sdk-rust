@@ -3,7 +3,7 @@
 /// <p>Contains information about a partition error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartitionError {
+pub struct PartitionError  {
     /// <p>The values that define the partition.</p>
     #[doc(hidden)]
     pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct PartitionError {
 }
 impl PartitionError {
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_values(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_values.as_deref()
     }
     /// <p>The details about the partition error.</p>
-    pub fn error_detail(&self) -> std::option::Option<&crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> std::option::Option<& crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -43,17 +43,13 @@ impl PartitionErrorBuilder {
     /// <p>The values that define the partition.</p>
     pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
-        v.push(input.into());
-        self.partition_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_values = Some(v);
+                        self
     }
     /// <p>The values that define the partition.</p>
-    pub fn set_partition_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.partition_values = input;
-        self
+    pub fn set_partition_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.partition_values = input; self
     }
     /// <p>The details about the partition error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -61,18 +57,17 @@ impl PartitionErrorBuilder {
         self
     }
     /// <p>The details about the partition error.</p>
-    pub fn set_error_detail(
-        mut self,
-        input: std::option::Option<crate::types::ErrorDetail>,
-    ) -> Self {
-        self.error_detail = input;
-        self
+    pub fn set_error_detail(mut self, input: std::option::Option<crate::types::ErrorDetail>) -> Self {
+        self.error_detail = input; self
     }
     /// Consumes the builder and constructs a [`PartitionError`](crate::types::PartitionError).
     pub fn build(self) -> crate::types::PartitionError {
         crate::types::PartitionError {
-            partition_values: self.partition_values,
-            error_detail: self.error_detail,
+            partition_values: self.partition_values
+            ,
+            error_detail: self.error_detail
+            ,
         }
     }
 }
+

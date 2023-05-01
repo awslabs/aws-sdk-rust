@@ -3,7 +3,7 @@
 /// <p>The percent range in the visible range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PercentVisibleRange {
+pub struct PercentVisibleRange  {
     /// <p>The lower bound of the range.</p>
     #[doc(hidden)]
     pub from: std::option::Option<f64>,
@@ -43,8 +43,7 @@ impl PercentVisibleRangeBuilder {
     }
     /// <p>The lower bound of the range.</p>
     pub fn set_from(mut self, input: std::option::Option<f64>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The top bound of the range.</p>
     pub fn to(mut self, input: f64) -> Self {
@@ -53,14 +52,16 @@ impl PercentVisibleRangeBuilder {
     }
     /// <p>The top bound of the range.</p>
     pub fn set_to(mut self, input: std::option::Option<f64>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
     }
     /// Consumes the builder and constructs a [`PercentVisibleRange`](crate::types::PercentVisibleRange).
     pub fn build(self) -> crate::types::PercentVisibleRange {
         crate::types::PercentVisibleRange {
-            from: self.from,
-            to: self.to,
+            from: self.from
+            ,
+            to: self.to
+            ,
         }
     }
 }
+

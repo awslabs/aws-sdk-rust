@@ -3,7 +3,7 @@
 /// <p>The details of network-related information about a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Network {
+pub struct Network  {
     /// <p>The direction of network traffic associated with a finding.</p>
     #[doc(hidden)]
     pub direction: std::option::Option<crate::types::NetworkDirection>,
@@ -43,23 +43,23 @@ pub struct Network {
 }
 impl Network {
     /// <p>The direction of network traffic associated with a finding.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::types::NetworkDirection> {
+    pub fn direction(&self) -> std::option::Option<& crate::types::NetworkDirection> {
         self.direction.as_ref()
     }
     /// <p>The protocol of network-related information about a finding.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> std::option::Option<& str> {
         self.protocol.as_deref()
     }
     /// <p>The range of open ports that is present on the network.</p>
-    pub fn open_port_range(&self) -> std::option::Option<&crate::types::PortRange> {
+    pub fn open_port_range(&self) -> std::option::Option<& crate::types::PortRange> {
         self.open_port_range.as_ref()
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub fn source_ip_v4(&self) -> std::option::Option<&str> {
+    pub fn source_ip_v4(&self) -> std::option::Option<& str> {
         self.source_ip_v4.as_deref()
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub fn source_ip_v6(&self) -> std::option::Option<&str> {
+    pub fn source_ip_v6(&self) -> std::option::Option<& str> {
         self.source_ip_v6.as_deref()
     }
     /// <p>The source port of network-related information about a finding.</p>
@@ -67,19 +67,19 @@ impl Network {
         self.source_port
     }
     /// <p>The source domain of network-related information about a finding.</p>
-    pub fn source_domain(&self) -> std::option::Option<&str> {
+    pub fn source_domain(&self) -> std::option::Option<& str> {
         self.source_domain.as_deref()
     }
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
-    pub fn source_mac(&self) -> std::option::Option<&str> {
+    pub fn source_mac(&self) -> std::option::Option<& str> {
         self.source_mac.as_deref()
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn destination_ip_v4(&self) -> std::option::Option<&str> {
+    pub fn destination_ip_v4(&self) -> std::option::Option<& str> {
         self.destination_ip_v4.as_deref()
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn destination_ip_v6(&self) -> std::option::Option<&str> {
+    pub fn destination_ip_v6(&self) -> std::option::Option<& str> {
         self.destination_ip_v6.as_deref()
     }
     /// <p>The destination port of network-related information about a finding.</p>
@@ -87,7 +87,7 @@ impl Network {
         self.destination_port
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn destination_domain(&self) -> std::option::Option<&str> {
+    pub fn destination_domain(&self) -> std::option::Option<& str> {
         self.destination_domain.as_deref()
     }
 }
@@ -122,12 +122,8 @@ impl NetworkBuilder {
         self
     }
     /// <p>The direction of network traffic associated with a finding.</p>
-    pub fn set_direction(
-        mut self,
-        input: std::option::Option<crate::types::NetworkDirection>,
-    ) -> Self {
-        self.direction = input;
-        self
+    pub fn set_direction(mut self, input: std::option::Option<crate::types::NetworkDirection>) -> Self {
+        self.direction = input; self
     }
     /// <p>The protocol of network-related information about a finding.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +132,7 @@ impl NetworkBuilder {
     }
     /// <p>The protocol of network-related information about a finding.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// <p>The range of open ports that is present on the network.</p>
     pub fn open_port_range(mut self, input: crate::types::PortRange) -> Self {
@@ -145,12 +140,8 @@ impl NetworkBuilder {
         self
     }
     /// <p>The range of open ports that is present on the network.</p>
-    pub fn set_open_port_range(
-        mut self,
-        input: std::option::Option<crate::types::PortRange>,
-    ) -> Self {
-        self.open_port_range = input;
-        self
+    pub fn set_open_port_range(mut self, input: std::option::Option<crate::types::PortRange>) -> Self {
+        self.open_port_range = input; self
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
     pub fn source_ip_v4(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +150,7 @@ impl NetworkBuilder {
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
     pub fn set_source_ip_v4(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_ip_v4 = input;
-        self
+        self.source_ip_v4 = input; self
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
     pub fn source_ip_v6(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +159,7 @@ impl NetworkBuilder {
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
     pub fn set_source_ip_v6(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_ip_v6 = input;
-        self
+        self.source_ip_v6 = input; self
     }
     /// <p>The source port of network-related information about a finding.</p>
     pub fn source_port(mut self, input: i32) -> Self {
@@ -179,8 +168,7 @@ impl NetworkBuilder {
     }
     /// <p>The source port of network-related information about a finding.</p>
     pub fn set_source_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.source_port = input;
-        self
+        self.source_port = input; self
     }
     /// <p>The source domain of network-related information about a finding.</p>
     pub fn source_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,8 +177,7 @@ impl NetworkBuilder {
     }
     /// <p>The source domain of network-related information about a finding.</p>
     pub fn set_source_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_domain = input;
-        self
+        self.source_domain = input; self
     }
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
     pub fn source_mac(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,8 +186,7 @@ impl NetworkBuilder {
     }
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
     pub fn set_source_mac(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_mac = input;
-        self
+        self.source_mac = input; self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
     pub fn destination_ip_v4(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,12 +194,8 @@ impl NetworkBuilder {
         self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn set_destination_ip_v4(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_ip_v4 = input;
-        self
+    pub fn set_destination_ip_v4(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_ip_v4 = input; self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
     pub fn destination_ip_v6(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,12 +203,8 @@ impl NetworkBuilder {
         self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn set_destination_ip_v6(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_ip_v6 = input;
-        self
+    pub fn set_destination_ip_v6(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_ip_v6 = input; self
     }
     /// <p>The destination port of network-related information about a finding.</p>
     pub fn destination_port(mut self, input: i32) -> Self {
@@ -235,8 +213,7 @@ impl NetworkBuilder {
     }
     /// <p>The destination port of network-related information about a finding.</p>
     pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.destination_port = input;
-        self
+        self.destination_port = input; self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
     pub fn destination_domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,28 +221,39 @@ impl NetworkBuilder {
         self
     }
     /// <p>The destination domain of network-related information about a finding.</p>
-    pub fn set_destination_domain(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_domain = input;
-        self
+    pub fn set_destination_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_domain = input; self
     }
     /// Consumes the builder and constructs a [`Network`](crate::types::Network).
     pub fn build(self) -> crate::types::Network {
         crate::types::Network {
-            direction: self.direction,
-            protocol: self.protocol,
-            open_port_range: self.open_port_range,
-            source_ip_v4: self.source_ip_v4,
-            source_ip_v6: self.source_ip_v6,
-            source_port: self.source_port.unwrap_or_default(),
-            source_domain: self.source_domain,
-            source_mac: self.source_mac,
-            destination_ip_v4: self.destination_ip_v4,
-            destination_ip_v6: self.destination_ip_v6,
-            destination_port: self.destination_port.unwrap_or_default(),
-            destination_domain: self.destination_domain,
+            direction: self.direction
+            ,
+            protocol: self.protocol
+            ,
+            open_port_range: self.open_port_range
+            ,
+            source_ip_v4: self.source_ip_v4
+            ,
+            source_ip_v6: self.source_ip_v6
+            ,
+            source_port: self.source_port
+                .unwrap_or_default()
+            ,
+            source_domain: self.source_domain
+            ,
+            source_mac: self.source_mac
+            ,
+            destination_ip_v4: self.destination_ip_v4
+            ,
+            destination_ip_v6: self.destination_ip_v6
+            ,
+            destination_port: self.destination_port
+                .unwrap_or_default()
+            ,
+            destination_domain: self.destination_domain
+            ,
         }
     }
 }
+

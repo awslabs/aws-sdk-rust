@@ -2,30 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComputeAuthTokenInput {
+pub struct GetComputeAuthTokenInput  {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
-    /// <p>The name of the compute resource you are requesting the authorization token for.</p>
+    /// <p>The name of the compute resource you are requesting the authentication token for.</p>
     #[doc(hidden)]
     pub compute_name: std::option::Option<std::string::String>,
 }
 impl GetComputeAuthTokenInput {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
-    /// <p>The name of the compute resource you are requesting the authorization token for.</p>
-    pub fn compute_name(&self) -> std::option::Option<&str> {
+    /// <p>The name of the compute resource you are requesting the authentication token for.</p>
+    pub fn compute_name(&self) -> std::option::Option<& str> {
         self.compute_name.as_deref()
     }
 }
 impl GetComputeAuthTokenInput {
     /// Creates a new builder-style object to manufacture [`GetComputeAuthTokenInput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenInput).
-    pub fn builder(
-    ) -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder {
-        crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder {
+        crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder::default()
     }
 }
 
@@ -44,31 +42,27 @@ impl GetComputeAuthTokenInputBuilder {
     }
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
-    /// <p>The name of the compute resource you are requesting the authorization token for.</p>
+    /// <p>The name of the compute resource you are requesting the authentication token for.</p>
     pub fn compute_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.compute_name = Some(input.into());
         self
     }
-    /// <p>The name of the compute resource you are requesting the authorization token for.</p>
+    /// <p>The name of the compute resource you are requesting the authentication token for.</p>
     pub fn set_compute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_name = input;
-        self
+        self.compute_name = input; self
     }
     /// Consumes the builder and constructs a [`GetComputeAuthTokenInput`](crate::operation::get_compute_auth_token::GetComputeAuthTokenInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_compute_auth_token::GetComputeAuthTokenInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_compute_auth_token::GetComputeAuthTokenInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_compute_auth_token::GetComputeAuthTokenInput {
-                fleet_id: self.fleet_id,
-                compute_name: self.compute_name,
-            },
+                fleet_id: self.fleet_id
+                ,
+                compute_name: self.compute_name
+                ,
+            }
         )
     }
 }
+

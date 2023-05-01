@@ -3,7 +3,7 @@
 /// <p>Defines block device mappings for the instance used to configure your image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceBlockDeviceMapping {
+pub struct InstanceBlockDeviceMapping  {
     /// <p>The device to which these mappings apply.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct InstanceBlockDeviceMapping {
 }
 impl InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-    pub fn ebs(&self) -> std::option::Option<&crate::types::EbsInstanceBlockDeviceSpecification> {
+    pub fn ebs(&self) -> std::option::Option<& crate::types::EbsInstanceBlockDeviceSpecification> {
         self.ebs.as_ref()
     }
     /// <p>Use to manage instance ephemeral devices.</p>
-    pub fn virtual_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_name(&self) -> std::option::Option<& str> {
         self.virtual_name.as_deref()
     }
     /// <p>Use to remove a mapping from the base image.</p>
-    pub fn no_device(&self) -> std::option::Option<&str> {
+    pub fn no_device(&self) -> std::option::Option<& str> {
         self.no_device.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl InstanceBlockDeviceMappingBuilder {
     }
     /// <p>The device to which these mappings apply.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input;
-        self
+        self.device_name = input; self
     }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
     pub fn ebs(mut self, input: crate::types::EbsInstanceBlockDeviceSpecification) -> Self {
@@ -68,12 +67,8 @@ impl InstanceBlockDeviceMappingBuilder {
         self
     }
     /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
-    pub fn set_ebs(
-        mut self,
-        input: std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
-    ) -> Self {
-        self.ebs = input;
-        self
+    pub fn set_ebs(mut self, input: std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>) -> Self {
+        self.ebs = input; self
     }
     /// <p>Use to manage instance ephemeral devices.</p>
     pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +77,7 @@ impl InstanceBlockDeviceMappingBuilder {
     }
     /// <p>Use to manage instance ephemeral devices.</p>
     pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_name = input;
-        self
+        self.virtual_name = input; self
     }
     /// <p>Use to remove a mapping from the base image.</p>
     pub fn no_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl InstanceBlockDeviceMappingBuilder {
     }
     /// <p>Use to remove a mapping from the base image.</p>
     pub fn set_no_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.no_device = input;
-        self
+        self.no_device = input; self
     }
     /// Consumes the builder and constructs a [`InstanceBlockDeviceMapping`](crate::types::InstanceBlockDeviceMapping).
     pub fn build(self) -> crate::types::InstanceBlockDeviceMapping {
         crate::types::InstanceBlockDeviceMapping {
-            device_name: self.device_name,
-            ebs: self.ebs,
-            virtual_name: self.virtual_name,
-            no_device: self.no_device,
+            device_name: self.device_name
+            ,
+            ebs: self.ebs
+            ,
+            virtual_name: self.virtual_name
+            ,
+            no_device: self.no_device
+            ,
         }
     }
 }
+

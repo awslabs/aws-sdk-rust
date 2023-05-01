@@ -4,89 +4,63 @@ pub use crate::operation::describe_users::_describe_users_output::DescribeUsersO
 pub use crate::operation::describe_users::_describe_users_input::DescribeUsersInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeUsers`.
-///
-/// <p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p>
+/// 
+/// <p>Describes the specified users. You can describe all users or filter the results (for example, by status or organization).</p> 
 /// <p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUsersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_users::builders::DescribeUsersInputBuilder,
-}
-impl DescribeUsersFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_users::builders::DescribeUsersInputBuilder
+            }
+impl DescribeUsersFluentBuilder  {
     /// Creates a new `DescribeUsers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_users::DescribeUsers,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_users::DescribeUsersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_users::DescribeUsers, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_users::DescribeUsersOutput, aws_smithy_http::result::SdkError<crate::operation::describe_users::DescribeUsersError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_users::paginator::DescribeUsersPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
-        crate::operation::describe_users::paginator::DescribeUsersPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_users::paginator::DescribeUsersPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
+                            crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
+                        }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -110,23 +84,23 @@ impl DescribeUsersFluentBuilder {
         self.inner = self.inner.set_user_ids(input);
         self
     }
-    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
-    /// <ul>
-    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
-    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
-    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
-    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> 
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> 
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> 
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> 
     /// </ul>
     pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.query(input.into());
         self
     }
-    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
-    /// <ul>
-    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
-    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
-    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
-    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> 
+    /// <ul> 
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> 
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> 
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> 
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> 
     /// </ul>
     pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_query(input);
@@ -193,3 +167,4 @@ impl DescribeUsersFluentBuilder {
         self
     }
 }
+

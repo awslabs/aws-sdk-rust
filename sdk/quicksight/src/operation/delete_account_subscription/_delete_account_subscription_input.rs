@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountSubscriptionInput {
+pub struct DeleteAccountSubscriptionInput  {
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
 }
 impl DeleteAccountSubscriptionInput {
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
 }
 impl DeleteAccountSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountSubscriptionInput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder{
+    pub fn builder() -> crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder {
         crate::operation::delete_account_subscription::builders::DeleteAccountSubscriptionInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeleteAccountSubscriptionInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the account that you want to delete.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAccountSubscriptionInput`](crate::operation::delete_account_subscription::DeleteAccountSubscriptionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_account_subscription::DeleteAccountSubscriptionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_account_subscription::DeleteAccountSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_account_subscription::DeleteAccountSubscriptionInput {
-                aws_account_id: self.aws_account_id,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+            }
         )
     }
 }
+

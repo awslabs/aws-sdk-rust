@@ -3,7 +3,7 @@
 /// <p>Describes a core network Connect attachment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectAttachment {
+pub struct ConnectAttachment  {
     /// <p>The attachment details.</p>
     #[doc(hidden)]
     pub attachment: std::option::Option<crate::types::Attachment>,
@@ -16,15 +16,15 @@ pub struct ConnectAttachment {
 }
 impl ConnectAttachment {
     /// <p>The attachment details.</p>
-    pub fn attachment(&self) -> std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> std::option::Option<& crate::types::Attachment> {
         self.attachment.as_ref()
     }
     /// <p>The ID of the transport attachment.</p>
-    pub fn transport_attachment_id(&self) -> std::option::Option<&str> {
+    pub fn transport_attachment_id(&self) -> std::option::Option<& str> {
         self.transport_attachment_id.as_deref()
     }
     /// <p>Options for connecting an attachment.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::ConnectAttachmentOptions> {
+    pub fn options(&self) -> std::option::Option<& crate::types::ConnectAttachmentOptions> {
         self.options.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ConnectAttachmentBuilder {
     }
     /// <p>The attachment details.</p>
     pub fn set_attachment(mut self, input: std::option::Option<crate::types::Attachment>) -> Self {
-        self.attachment = input;
-        self
+        self.attachment = input; self
     }
     /// <p>The ID of the transport attachment.</p>
     pub fn transport_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl ConnectAttachmentBuilder {
         self
     }
     /// <p>The ID of the transport attachment.</p>
-    pub fn set_transport_attachment_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transport_attachment_id = input;
-        self
+    pub fn set_transport_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transport_attachment_id = input; self
     }
     /// <p>Options for connecting an attachment.</p>
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
@@ -73,19 +68,19 @@ impl ConnectAttachmentBuilder {
         self
     }
     /// <p>Options for connecting an attachment.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<crate::types::ConnectAttachmentOptions>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<crate::types::ConnectAttachmentOptions>) -> Self {
+        self.options = input; self
     }
     /// Consumes the builder and constructs a [`ConnectAttachment`](crate::types::ConnectAttachment).
     pub fn build(self) -> crate::types::ConnectAttachment {
         crate::types::ConnectAttachment {
-            attachment: self.attachment,
-            transport_attachment_id: self.transport_attachment_id,
-            options: self.options,
+            attachment: self.attachment
+            ,
+            transport_attachment_id: self.transport_attachment_id
+            ,
+            options: self.options
+            ,
         }
     }
 }
+

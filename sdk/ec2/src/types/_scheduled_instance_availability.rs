@@ -3,7 +3,7 @@
 /// <p>Describes a schedule that is available for your Scheduled Instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledInstanceAvailability {
+pub struct ScheduledInstanceAvailability  {
     /// <p>The Availability Zone.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -46,7 +46,7 @@ pub struct ScheduledInstanceAvailability {
 }
 impl ScheduledInstanceAvailability {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p>The number of available instances.</p>
@@ -54,15 +54,15 @@ impl ScheduledInstanceAvailability {
         self.available_instance_count
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn first_slot_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn first_slot_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.first_slot_start_time.as_ref()
     }
     /// <p>The hourly price for a single instance.</p>
-    pub fn hourly_price(&self) -> std::option::Option<&str> {
+    pub fn hourly_price(&self) -> std::option::Option<& str> {
         self.hourly_price.as_deref()
     }
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The maximum term. The only possible value is 365 days.</p>
@@ -74,19 +74,19 @@ impl ScheduledInstanceAvailability {
         self.min_term_duration_in_days
     }
     /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
-    pub fn network_platform(&self) -> std::option::Option<&str> {
+    pub fn network_platform(&self) -> std::option::Option<& str> {
         self.network_platform.as_deref()
     }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> std::option::Option<& str> {
         self.platform.as_deref()
     }
     /// <p>The purchase token. This token expires in two hours.</p>
-    pub fn purchase_token(&self) -> std::option::Option<&str> {
+    pub fn purchase_token(&self) -> std::option::Option<& str> {
         self.purchase_token.as_deref()
     }
     /// <p>The schedule recurrence.</p>
-    pub fn recurrence(&self) -> std::option::Option<&crate::types::ScheduledInstanceRecurrence> {
+    pub fn recurrence(&self) -> std::option::Option<& crate::types::ScheduledInstanceRecurrence> {
         self.recurrence.as_ref()
     }
     /// <p>The number of hours in the schedule.</p>
@@ -130,12 +130,8 @@ impl ScheduledInstanceAvailabilityBuilder {
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.availability_zone = input;
-        self
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.availability_zone = input; self
     }
     /// <p>The number of available instances.</p>
     pub fn available_instance_count(mut self, input: i32) -> Self {
@@ -144,8 +140,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The number of available instances.</p>
     pub fn set_available_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.available_instance_count = input;
-        self
+        self.available_instance_count = input; self
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn first_slot_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,12 +148,8 @@ impl ScheduledInstanceAvailabilityBuilder {
         self
     }
     /// <p>The time period for the first schedule to start.</p>
-    pub fn set_first_slot_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.first_slot_start_time = input;
-        self
+    pub fn set_first_slot_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.first_slot_start_time = input; self
     }
     /// <p>The hourly price for a single instance.</p>
     pub fn hourly_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +158,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The hourly price for a single instance.</p>
     pub fn set_hourly_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hourly_price = input;
-        self
+        self.hourly_price = input; self
     }
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,8 +167,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The instance type. You can specify one of the C3, C4, M4, or R3 instance types.</p>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input;
-        self
+        self.instance_type = input; self
     }
     /// <p>The maximum term. The only possible value is 365 days.</p>
     pub fn max_term_duration_in_days(mut self, input: i32) -> Self {
@@ -187,8 +176,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The maximum term. The only possible value is 365 days.</p>
     pub fn set_max_term_duration_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_term_duration_in_days = input;
-        self
+        self.max_term_duration_in_days = input; self
     }
     /// <p>The minimum term. The only possible value is 365 days.</p>
     pub fn min_term_duration_in_days(mut self, input: i32) -> Self {
@@ -197,8 +185,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The minimum term. The only possible value is 365 days.</p>
     pub fn set_min_term_duration_in_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_term_duration_in_days = input;
-        self
+        self.min_term_duration_in_days = input; self
     }
     /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
     pub fn network_platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,8 +194,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
     pub fn set_network_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_platform = input;
-        self
+        self.network_platform = input; self
     }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,8 +203,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The purchase token. This token expires in two hours.</p>
     pub fn purchase_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,8 +212,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The purchase token. This token expires in two hours.</p>
     pub fn set_purchase_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.purchase_token = input;
-        self
+        self.purchase_token = input; self
     }
     /// <p>The schedule recurrence.</p>
     pub fn recurrence(mut self, input: crate::types::ScheduledInstanceRecurrence) -> Self {
@@ -236,12 +220,8 @@ impl ScheduledInstanceAvailabilityBuilder {
         self
     }
     /// <p>The schedule recurrence.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: std::option::Option<crate::types::ScheduledInstanceRecurrence>,
-    ) -> Self {
-        self.recurrence = input;
-        self
+    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::ScheduledInstanceRecurrence>) -> Self {
+        self.recurrence = input; self
     }
     /// <p>The number of hours in the schedule.</p>
     pub fn slot_duration_in_hours(mut self, input: i32) -> Self {
@@ -250,8 +230,7 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The number of hours in the schedule.</p>
     pub fn set_slot_duration_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.slot_duration_in_hours = input;
-        self
+        self.slot_duration_in_hours = input; self
     }
     /// <p>The total number of hours for a single instance for the entire term.</p>
     pub fn total_scheduled_instance_hours(mut self, input: i32) -> Self {
@@ -260,25 +239,38 @@ impl ScheduledInstanceAvailabilityBuilder {
     }
     /// <p>The total number of hours for a single instance for the entire term.</p>
     pub fn set_total_scheduled_instance_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_scheduled_instance_hours = input;
-        self
+        self.total_scheduled_instance_hours = input; self
     }
     /// Consumes the builder and constructs a [`ScheduledInstanceAvailability`](crate::types::ScheduledInstanceAvailability).
     pub fn build(self) -> crate::types::ScheduledInstanceAvailability {
         crate::types::ScheduledInstanceAvailability {
-            availability_zone: self.availability_zone,
-            available_instance_count: self.available_instance_count,
-            first_slot_start_time: self.first_slot_start_time,
-            hourly_price: self.hourly_price,
-            instance_type: self.instance_type,
-            max_term_duration_in_days: self.max_term_duration_in_days,
-            min_term_duration_in_days: self.min_term_duration_in_days,
-            network_platform: self.network_platform,
-            platform: self.platform,
-            purchase_token: self.purchase_token,
-            recurrence: self.recurrence,
-            slot_duration_in_hours: self.slot_duration_in_hours,
-            total_scheduled_instance_hours: self.total_scheduled_instance_hours,
+            availability_zone: self.availability_zone
+            ,
+            available_instance_count: self.available_instance_count
+            ,
+            first_slot_start_time: self.first_slot_start_time
+            ,
+            hourly_price: self.hourly_price
+            ,
+            instance_type: self.instance_type
+            ,
+            max_term_duration_in_days: self.max_term_duration_in_days
+            ,
+            min_term_duration_in_days: self.min_term_duration_in_days
+            ,
+            network_platform: self.network_platform
+            ,
+            platform: self.platform
+            ,
+            purchase_token: self.purchase_token
+            ,
+            recurrence: self.recurrence
+            ,
+            slot_duration_in_hours: self.slot_duration_in_hours
+            ,
+            total_scheduled_instance_hours: self.total_scheduled_instance_hours
+            ,
         }
     }
 }
+

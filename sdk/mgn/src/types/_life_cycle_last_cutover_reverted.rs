@@ -3,14 +3,14 @@
 /// <p>Lifecycle last Cutover reverted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastCutoverReverted {
+pub struct LifeCycleLastCutoverReverted  {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl LifeCycleLastCutoverRevertedBuilder {
         self
     }
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
-    pub fn set_api_call_date_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.api_call_date_time = input;
-        self
+    pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.api_call_date_time = input; self
     }
     /// Consumes the builder and constructs a [`LifeCycleLastCutoverReverted`](crate::types::LifeCycleLastCutoverReverted).
     pub fn build(self) -> crate::types::LifeCycleLastCutoverReverted {
         crate::types::LifeCycleLastCutoverReverted {
-            api_call_date_time: self.api_call_date_time,
+            api_call_date_time: self.api_call_date_time
+            ,
         }
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTrainingDocumentClassifierInput {
+pub struct StopTrainingDocumentClassifierInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
     #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl StopTrainingDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
-    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+    pub fn document_classifier_arn(&self) -> std::option::Option<& str> {
         self.document_classifier_arn.as_deref()
     }
 }
 impl StopTrainingDocumentClassifierInput {
     /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierInput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput).
-    pub fn builder() -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder{
+    pub fn builder() -> crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder {
         crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder::default()
     }
 }
@@ -33,20 +33,11 @@ impl StopTrainingDocumentClassifierInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.document_classifier_arn = input;
-        self
+    pub fn set_document_classifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.document_classifier_arn = input; self
     }
     /// Consumes the builder and constructs a [`StopTrainingDocumentClassifierInput`](crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierInput {
                 document_classifier_arn: self.document_classifier_arn
@@ -55,3 +46,4 @@ impl StopTrainingDocumentClassifierInputBuilder {
         )
     }
 }
+

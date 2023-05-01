@@ -2,27 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateForecastExportJobInput {
+pub struct CreateForecastExportJobInput  {
     /// <p>The name for the forecast export job.</p>
     #[doc(hidden)]
     pub forecast_export_job_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     #[doc(hidden)]
     pub forecast_arn: std::option::Option<std::string::String>,
-    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p> 
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::DataDestination>,
-    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -32,42 +32,40 @@ pub struct CreateForecastExportJobInput {
 }
 impl CreateForecastExportJobInput {
     /// <p>The name for the forecast export job.</p>
-    pub fn forecast_export_job_name(&self) -> std::option::Option<&str> {
+    pub fn forecast_export_job_name(&self) -> std::option::Option<& str> {
         self.forecast_export_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> std::option::Option<& str> {
         self.forecast_arn.as_deref()
     }
-    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p> 
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::DataDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::DataDestination> {
         self.destination.as_ref()
     }
-    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li> 
     /// </ul>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
 }
 impl CreateForecastExportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateForecastExportJobInput`](crate::operation::create_forecast_export_job::CreateForecastExportJobInput).
-    pub fn builder(
-    ) -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder {
         crate::operation::create_forecast_export_job::builders::CreateForecastExportJobInputBuilder::default()
     }
 }
@@ -89,12 +87,8 @@ impl CreateForecastExportJobInputBuilder {
         self
     }
     /// <p>The name for the forecast export job.</p>
-    pub fn set_forecast_export_job_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.forecast_export_job_name = input;
-        self
+    pub fn set_forecast_export_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.forecast_export_job_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,62 +97,53 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
     pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.forecast_arn = input;
-        self
+        self.forecast_arn = input; self
     }
-    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p> 
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
         self.destination = Some(input);
         self
     }
-    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p>
+    /// <p>The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.</p> 
     /// <p>If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::DataDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::DataDestination>) -> Self {
+        self.destination = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li> 
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
-    /// <p>The following basic restrictions apply to tags:</p>
-    /// <ul>
-    /// <li> <p>Maximum number of tags per resource - 50.</p> </li>
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li>
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
-    /// <li> <p>Tag keys and values are case sensitive.</p> </li>
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li>
+    /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
+    /// <p>The following basic restrictions apply to tags:</p> 
+    /// <ul> 
+    /// <li> <p>Maximum number of tags per resource - 50.</p> </li> 
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8.</p> </li> 
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
+    /// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p> </li> 
     /// </ul>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,24 +152,24 @@ impl CreateForecastExportJobInputBuilder {
     }
     /// <p>The format of the exported data, CSV or PARQUET. The default value is CSV.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// Consumes the builder and constructs a [`CreateForecastExportJobInput`](crate::operation::create_forecast_export_job::CreateForecastExportJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_forecast_export_job::CreateForecastExportJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_forecast_export_job::CreateForecastExportJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_forecast_export_job::CreateForecastExportJobInput {
-                forecast_export_job_name: self.forecast_export_job_name,
-                forecast_arn: self.forecast_arn,
-                destination: self.destination,
-                tags: self.tags,
-                format: self.format,
-            },
+                forecast_export_job_name: self.forecast_export_job_name
+                ,
+                forecast_arn: self.forecast_arn
+                ,
+                destination: self.destination
+                ,
+                tags: self.tags
+                ,
+                format: self.format
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Grantee {
+pub struct S3Grantee  {
     /// <p></p>
     #[doc(hidden)]
     pub type_identifier: std::option::Option<crate::types::S3GranteeTypeIdentifier>,
@@ -16,15 +16,15 @@ pub struct S3Grantee {
 }
 impl S3Grantee {
     /// <p></p>
-    pub fn type_identifier(&self) -> std::option::Option<&crate::types::S3GranteeTypeIdentifier> {
+    pub fn type_identifier(&self) -> std::option::Option<& crate::types::S3GranteeTypeIdentifier> {
         self.type_identifier.as_ref()
     }
     /// <p></p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> std::option::Option<& str> {
         self.identifier.as_deref()
     }
     /// <p></p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl S3GranteeBuilder {
         self
     }
     /// <p></p>
-    pub fn set_type_identifier(
-        mut self,
-        input: std::option::Option<crate::types::S3GranteeTypeIdentifier>,
-    ) -> Self {
-        self.type_identifier = input;
-        self
+    pub fn set_type_identifier(mut self, input: std::option::Option<crate::types::S3GranteeTypeIdentifier>) -> Self {
+        self.type_identifier = input; self
     }
     /// <p></p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl S3GranteeBuilder {
     }
     /// <p></p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input;
-        self
+        self.identifier = input; self
     }
     /// <p></p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl S3GranteeBuilder {
     }
     /// <p></p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// Consumes the builder and constructs a [`S3Grantee`](crate::types::S3Grantee).
     pub fn build(self) -> crate::types::S3Grantee {
         crate::types::S3Grantee {
-            type_identifier: self.type_identifier,
-            identifier: self.identifier,
-            display_name: self.display_name,
+            type_identifier: self.type_identifier
+            ,
+            identifier: self.identifier
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

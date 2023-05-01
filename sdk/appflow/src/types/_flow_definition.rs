@@ -3,7 +3,7 @@
 /// <p> The properties of the flow, such as its source, destination, trigger type, and so on. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowDefinition {
+pub struct FlowDefinition  {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -45,76 +45,70 @@ pub struct FlowDefinition {
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Describes the details of the most recent flow run. </p>
     #[doc(hidden)]
     pub last_run_execution_details: std::option::Option<crate::types::ExecutionDetails>,
 }
 impl FlowDefinition {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p> A user-entered description of the flow. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<&str> {
+    pub fn flow_name(&self) -> std::option::Option<& str> {
         self.flow_name.as_deref()
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> std::option::Option<&crate::types::FlowStatus> {
+    pub fn flow_status(&self) -> std::option::Option<& crate::types::FlowStatus> {
         self.flow_status.as_ref()
     }
     /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
-    pub fn source_connector_type(&self) -> std::option::Option<&crate::types::ConnectorType> {
+    pub fn source_connector_type(&self) -> std::option::Option<& crate::types::ConnectorType> {
         self.source_connector_type.as_ref()
     }
     /// <p>The label of the source connector in the flow.</p>
-    pub fn source_connector_label(&self) -> std::option::Option<&str> {
+    pub fn source_connector_label(&self) -> std::option::Option<& str> {
         self.source_connector_label.as_deref()
     }
     /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
-    pub fn destination_connector_type(&self) -> std::option::Option<&crate::types::ConnectorType> {
+    pub fn destination_connector_type(&self) -> std::option::Option<& crate::types::ConnectorType> {
         self.destination_connector_type.as_ref()
     }
     /// <p>The label of the destination connector in the flow.</p>
-    pub fn destination_connector_label(&self) -> std::option::Option<&str> {
+    pub fn destination_connector_label(&self) -> std::option::Option<& str> {
         self.destination_connector_label.as_deref()
     }
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
-    pub fn trigger_type(&self) -> std::option::Option<&crate::types::TriggerType> {
+    pub fn trigger_type(&self) -> std::option::Option<& crate::types::TriggerType> {
         self.trigger_type.as_ref()
     }
     /// <p> Specifies when the flow was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the flow was last updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The ARN of the user who created the flow. </p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p> Specifies the account user name that most recently updated the flow. </p>
-    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> Describes the details of the most recent flow run. </p>
-    pub fn last_run_execution_details(
-        &self,
-    ) -> std::option::Option<&crate::types::ExecutionDetails> {
+    pub fn last_run_execution_details(&self) -> std::option::Option<& crate::types::ExecutionDetails> {
         self.last_run_execution_details.as_ref()
     }
 }
@@ -142,8 +136,7 @@ pub struct FlowDefinitionBuilder {
     pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) created_by: std::option::Option<std::string::String>,
     pub(crate) last_updated_by: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) last_run_execution_details: std::option::Option<crate::types::ExecutionDetails>,
 }
 impl FlowDefinitionBuilder {
@@ -154,8 +147,7 @@ impl FlowDefinitionBuilder {
     }
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// <p> A user-entered description of the flow. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,8 +156,7 @@ impl FlowDefinitionBuilder {
     }
     /// <p> A user-entered description of the flow. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,8 +165,7 @@ impl FlowDefinitionBuilder {
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_name = input;
-        self
+        self.flow_name = input; self
     }
     /// <p> Indicates the current status of the flow. </p>
     pub fn flow_status(mut self, input: crate::types::FlowStatus) -> Self {
@@ -184,8 +174,7 @@ impl FlowDefinitionBuilder {
     }
     /// <p> Indicates the current status of the flow. </p>
     pub fn set_flow_status(mut self, input: std::option::Option<crate::types::FlowStatus>) -> Self {
-        self.flow_status = input;
-        self
+        self.flow_status = input; self
     }
     /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
     pub fn source_connector_type(mut self, input: crate::types::ConnectorType) -> Self {
@@ -193,12 +182,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p> Specifies the source connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
-    pub fn set_source_connector_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
-        self.source_connector_type = input;
-        self
+    pub fn set_source_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
+        self.source_connector_type = input; self
     }
     /// <p>The label of the source connector in the flow.</p>
     pub fn source_connector_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,12 +191,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p>The label of the source connector in the flow.</p>
-    pub fn set_source_connector_label(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_connector_label = input;
-        self
+    pub fn set_source_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_connector_label = input; self
     }
     /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
     pub fn destination_connector_type(mut self, input: crate::types::ConnectorType) -> Self {
@@ -219,12 +200,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p> Specifies the destination connector type, such as Salesforce, Amazon S3, Amplitude, and so on. </p>
-    pub fn set_destination_connector_type(
-        mut self,
-        input: std::option::Option<crate::types::ConnectorType>,
-    ) -> Self {
-        self.destination_connector_type = input;
-        self
+    pub fn set_destination_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
+        self.destination_connector_type = input; self
     }
     /// <p>The label of the destination connector in the flow.</p>
     pub fn destination_connector_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -232,12 +209,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p>The label of the destination connector in the flow.</p>
-    pub fn set_destination_connector_label(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_connector_label = input;
-        self
+    pub fn set_destination_connector_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_connector_label = input; self
     }
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
     pub fn trigger_type(mut self, input: crate::types::TriggerType) -> Self {
@@ -245,12 +218,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>, or <code>Event</code>. </p>
-    pub fn set_trigger_type(
-        mut self,
-        input: std::option::Option<crate::types::TriggerType>,
-    ) -> Self {
-        self.trigger_type = input;
-        self
+    pub fn set_trigger_type(mut self, input: std::option::Option<crate::types::TriggerType>) -> Self {
+        self.trigger_type = input; self
     }
     /// <p> Specifies when the flow was created. </p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -258,12 +227,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p> Specifies when the flow was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p> Specifies when the flow was last updated. </p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -271,12 +236,8 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p> Specifies when the flow was last updated. </p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p> The ARN of the user who created the flow. </p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -285,8 +246,7 @@ impl FlowDefinitionBuilder {
     }
     /// <p> The ARN of the user who created the flow. </p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p> Specifies the account user name that most recently updated the flow. </p>
     pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,33 +255,22 @@ impl FlowDefinitionBuilder {
     }
     /// <p> Specifies the account user name that most recently updated the flow. </p>
     pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_by = input;
-        self
+        self.last_updated_by = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p> Describes the details of the most recent flow run. </p>
     pub fn last_run_execution_details(mut self, input: crate::types::ExecutionDetails) -> Self {
@@ -329,31 +278,43 @@ impl FlowDefinitionBuilder {
         self
     }
     /// <p> Describes the details of the most recent flow run. </p>
-    pub fn set_last_run_execution_details(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionDetails>,
-    ) -> Self {
-        self.last_run_execution_details = input;
-        self
+    pub fn set_last_run_execution_details(mut self, input: std::option::Option<crate::types::ExecutionDetails>) -> Self {
+        self.last_run_execution_details = input; self
     }
     /// Consumes the builder and constructs a [`FlowDefinition`](crate::types::FlowDefinition).
     pub fn build(self) -> crate::types::FlowDefinition {
         crate::types::FlowDefinition {
-            flow_arn: self.flow_arn,
-            description: self.description,
-            flow_name: self.flow_name,
-            flow_status: self.flow_status,
-            source_connector_type: self.source_connector_type,
-            source_connector_label: self.source_connector_label,
-            destination_connector_type: self.destination_connector_type,
-            destination_connector_label: self.destination_connector_label,
-            trigger_type: self.trigger_type,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            created_by: self.created_by,
-            last_updated_by: self.last_updated_by,
-            tags: self.tags,
-            last_run_execution_details: self.last_run_execution_details,
+            flow_arn: self.flow_arn
+            ,
+            description: self.description
+            ,
+            flow_name: self.flow_name
+            ,
+            flow_status: self.flow_status
+            ,
+            source_connector_type: self.source_connector_type
+            ,
+            source_connector_label: self.source_connector_label
+            ,
+            destination_connector_type: self.destination_connector_type
+            ,
+            destination_connector_label: self.destination_connector_label
+            ,
+            trigger_type: self.trigger_type
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            created_by: self.created_by
+            ,
+            last_updated_by: self.last_updated_by
+            ,
+            tags: self.tags
+            ,
+            last_run_execution_details: self.last_run_execution_details
+            ,
         }
     }
 }
+

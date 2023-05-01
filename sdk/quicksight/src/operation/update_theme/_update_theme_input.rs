@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeInput {
+pub struct UpdateThemeInput  {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -24,27 +24,27 @@ pub struct UpdateThemeInput {
 }
 impl UpdateThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The name for the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
-    pub fn base_theme_id(&self) -> std::option::Option<&str> {
+    pub fn base_theme_id(&self) -> std::option::Option<& str> {
         self.base_theme_id.as_deref()
     }
     /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
-    pub fn version_description(&self) -> std::option::Option<&str> {
+    pub fn version_description(&self) -> std::option::Option<& str> {
         self.version_description.as_deref()
     }
     /// <p>The theme configuration, which contains the theme display properties.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::ThemeConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::types::ThemeConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The ID for the theme.</p>
     pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>The name for the theme.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The name for the theme.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +101,7 @@ impl UpdateThemeInputBuilder {
     }
     /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.</p>
     pub fn set_base_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_theme_id = input;
-        self
+        self.base_theme_id = input; self
     }
     /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
     pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,12 +109,8 @@ impl UpdateThemeInputBuilder {
         self
     }
     /// <p>A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.</p>
-    pub fn set_version_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.version_description = input;
-        self
+    pub fn set_version_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.version_description = input; self
     }
     /// <p>The theme configuration, which contains the theme display properties.</p>
     pub fn configuration(mut self, input: crate::types::ThemeConfiguration) -> Self {
@@ -126,27 +118,27 @@ impl UpdateThemeInputBuilder {
         self
     }
     /// <p>The theme configuration, which contains the theme display properties.</p>
-    pub fn set_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ThemeConfiguration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: std::option::Option<crate::types::ThemeConfiguration>) -> Self {
+        self.configuration = input; self
     }
     /// Consumes the builder and constructs a [`UpdateThemeInput`](crate::operation::update_theme::UpdateThemeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_theme::UpdateThemeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_theme::UpdateThemeInput {
-            aws_account_id: self.aws_account_id,
-            theme_id: self.theme_id,
-            name: self.name,
-            base_theme_id: self.base_theme_id,
-            version_description: self.version_description,
-            configuration: self.configuration,
-        })
+    pub fn build(self) -> Result<crate::operation::update_theme::UpdateThemeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_theme::UpdateThemeInput {
+                aws_account_id: self.aws_account_id
+                ,
+                theme_id: self.theme_id
+                ,
+                name: self.name
+                ,
+                base_theme_id: self.base_theme_id
+                ,
+                version_description: self.version_description
+                ,
+                configuration: self.configuration
+                ,
+            }
+        )
     }
 }
+

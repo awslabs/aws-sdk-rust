@@ -3,7 +3,7 @@
 /// <p>Details about the recommended course of action to remediate the finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemediationRecommendation {
+pub struct RemediationRecommendation  {
     /// <p>The recommended course of action to remediate the finding.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RemediationRecommendation {
 }
 impl RemediationRecommendation {
     /// <p>The recommended course of action to remediate the finding.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>A link to more information about the recommended remediation for this vulnerability.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RemediationRecommendationBuilder {
     }
     /// <p>The recommended course of action to remediate the finding.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>A link to more information about the recommended remediation for this vulnerability.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl RemediationRecommendationBuilder {
     }
     /// <p>A link to more information about the recommended remediation for this vulnerability.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// Consumes the builder and constructs a [`RemediationRecommendation`](crate::types::RemediationRecommendation).
     pub fn build(self) -> crate::types::RemediationRecommendation {
         crate::types::RemediationRecommendation {
-            text: self.text,
-            url: self.url,
+            text: self.text
+            ,
+            url: self.url
+            ,
         }
     }
 }
+

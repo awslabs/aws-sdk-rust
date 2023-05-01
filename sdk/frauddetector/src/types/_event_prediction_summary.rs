@@ -3,7 +3,7 @@
 /// <p> Information about the summary of an event prediction. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventPredictionSummary {
+pub struct EventPredictionSummary  {
     /// <p> The event ID. </p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct EventPredictionSummary {
 }
 impl EventPredictionSummary {
     /// <p> The event ID. </p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p> The event type. </p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p> The timestamp of the event. </p>
-    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+    pub fn event_timestamp(&self) -> std::option::Option<& str> {
         self.event_timestamp.as_deref()
     }
     /// <p> The timestamp when the prediction was generated. </p>
-    pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
+    pub fn prediction_timestamp(&self) -> std::option::Option<& str> {
         self.prediction_timestamp.as_deref()
     }
     /// <p> The detector ID. </p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p> The detector version ID. </p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl EventPredictionSummaryBuilder {
     }
     /// <p> The event ID. </p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input;
-        self
+        self.event_id = input; self
     }
     /// <p> The event type. </p>
     pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl EventPredictionSummaryBuilder {
     }
     /// <p> The event type. </p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input;
-        self
+        self.event_type_name = input; self
     }
     /// <p> The timestamp of the event. </p>
     pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl EventPredictionSummaryBuilder {
     }
     /// <p> The timestamp of the event. </p>
     pub fn set_event_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_timestamp = input;
-        self
+        self.event_timestamp = input; self
     }
     /// <p> The timestamp when the prediction was generated. </p>
     pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,12 +101,8 @@ impl EventPredictionSummaryBuilder {
         self
     }
     /// <p> The timestamp when the prediction was generated. </p>
-    pub fn set_prediction_timestamp(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.prediction_timestamp = input;
-        self
+    pub fn set_prediction_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.prediction_timestamp = input; self
     }
     /// <p> The detector ID. </p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +111,7 @@ impl EventPredictionSummaryBuilder {
     }
     /// <p> The detector ID. </p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p> The detector version ID. </p>
     pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,22 +119,25 @@ impl EventPredictionSummaryBuilder {
         self
     }
     /// <p> The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.detector_version_id = input;
-        self
+    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.detector_version_id = input; self
     }
     /// Consumes the builder and constructs a [`EventPredictionSummary`](crate::types::EventPredictionSummary).
     pub fn build(self) -> crate::types::EventPredictionSummary {
         crate::types::EventPredictionSummary {
-            event_id: self.event_id,
-            event_type_name: self.event_type_name,
-            event_timestamp: self.event_timestamp,
-            prediction_timestamp: self.prediction_timestamp,
-            detector_id: self.detector_id,
-            detector_version_id: self.detector_version_id,
+            event_id: self.event_id
+            ,
+            event_type_name: self.event_type_name
+            ,
+            event_timestamp: self.event_timestamp
+            ,
+            prediction_timestamp: self.prediction_timestamp
+            ,
+            detector_id: self.detector_id
+            ,
+            detector_version_id: self.detector_version_id
+            ,
         }
     }
 }
+

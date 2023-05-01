@@ -3,35 +3,35 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterParameterGroupInput {
+pub struct ModifyDbClusterParameterGroupInput  {
     /// <p>The name of the DB cluster parameter group to modify.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
-    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
-    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p> 
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note> 
+    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p> 
+    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p> 
     /// </note>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
 }
 impl ModifyDbClusterParameterGroupInput {
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
-    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
-    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
-    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p> 
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note> 
+    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p> 
+    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p> 
     /// </note>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
 impl ModifyDbClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupInput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder {
         crate::operation::modify_db_cluster_parameter_group::builders::ModifyDbClusterParameterGroupInputBuilder::default()
     }
 }
@@ -45,55 +45,39 @@ pub struct ModifyDbClusterParameterGroupInputBuilder {
 }
 impl ModifyDbClusterParameterGroupInputBuilder {
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = Some(input.into());
         self
     }
     /// <p>The name of the DB cluster parameter group to modify.</p>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
+    pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_parameter_group_name = input; self
     }
     /// Appends an item to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
-    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
-    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
-    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p> 
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note> 
+    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p> 
+    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p> 
     /// </note>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = Some(v);
-        self
+                        v.push(input);
+                        self.parameters = Some(v);
+                        self
     }
-    /// <p>A list of parameters in the DB cluster parameter group to modify.</p>
-    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note>
-    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p>
-    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p>
+    /// <p>A list of parameters in the DB cluster parameter group to modify.</p> 
+    /// <p>Valid Values (for the application method): <code>immediate | pending-reboot</code> </p> <note> 
+    /// <p>You can use the <code>immediate</code> value with dynamic parameters only. You can use the <code>pending-reboot</code> value for both dynamic and static parameters.</p> 
+    /// <p>When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters associated with the parameter group.</p> 
     /// </note>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
+        self.parameters = input; self
     }
     /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupInput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupInput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
@@ -104,3 +88,4 @@ impl ModifyDbClusterParameterGroupInputBuilder {
         )
     }
 }
+

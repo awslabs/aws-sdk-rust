@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspacesConnectionStatusInput {
+pub struct DescribeWorkspacesConnectionStatusInput  {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
     #[doc(hidden)]
     pub workspace_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,17 +12,17 @@ pub struct DescribeWorkspacesConnectionStatusInput {
 }
 impl DescribeWorkspacesConnectionStatusInput {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-    pub fn workspace_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn workspace_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.workspace_ids.as_deref()
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeWorkspacesConnectionStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspacesConnectionStatusInput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput).
-    pub fn builder() -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder{
+    pub fn builder() -> crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder {
         crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder::default()
     }
 }
@@ -42,17 +42,13 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
     pub fn workspace_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.workspace_ids.unwrap_or_default();
-        v.push(input.into());
-        self.workspace_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.workspace_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.</p>
-    pub fn set_workspace_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.workspace_ids = input;
-        self
+    pub fn set_workspace_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.workspace_ids = input; self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,11 +57,10 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspacesConnectionStatusInput`](crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusInput {
                 workspace_ids: self.workspace_ids
@@ -76,3 +71,4 @@ impl DescribeWorkspacesConnectionStatusInputBuilder {
         )
     }
 }
+

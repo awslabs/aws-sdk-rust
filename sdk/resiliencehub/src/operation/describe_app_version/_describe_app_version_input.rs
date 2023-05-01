@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppVersionInput {
+pub struct DescribeAppVersionInput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DescribeAppVersionInput {
 }
 impl DescribeAppVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The Resilience Hub application version.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> std::option::Option<& str> {
         self.app_version.as_deref()
     }
 }
 impl DescribeAppVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
-    pub fn builder(
-    ) -> crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder {
+    pub fn builder() -> crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder {
         crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeAppVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// <p>The Resilience Hub application version.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DescribeAppVersionInputBuilder {
     }
     /// <p>The Resilience Hub application version.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input;
-        self
+        self.app_version = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionInput`](crate::operation::describe_app_version::DescribeAppVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_app_version::DescribeAppVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_app_version::DescribeAppVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_app_version::DescribeAppVersionInput {
-                app_arn: self.app_arn,
-                app_version: self.app_version,
-            },
+                app_arn: self.app_arn
+                ,
+                app_version: self.app_version
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSharedProjectsOutput {
+pub struct ListSharedProjectsOutput  {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListSharedProjectsOutput {
 }
 impl ListSharedProjectsOutput {
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
-    pub fn projects(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn projects(&self) -> std::option::Option<& [std::string::String]> {
         self.projects.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSharedProjectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSharedProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListSharedProjectsOutput`](crate::operation::list_shared_projects::ListSharedProjectsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_projects::builders::ListSharedProjectsOutputBuilder {
+    pub fn builder() -> crate::operation::list_shared_projects::builders::ListSharedProjectsOutputBuilder {
         crate::operation::list_shared_projects::builders::ListSharedProjectsOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ListSharedProjectsOutputBuilder {
     }
     /// <p> During a previous call, the maximum number of items that can be returned is the value specified in <code>maxResults</code>. If there more items in the list, then a unique string called a <i>nextToken</i> is returned. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `projects`.
     ///
@@ -60,33 +58,32 @@ impl ListSharedProjectsOutputBuilder {
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
     pub fn projects(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.projects.unwrap_or_default();
-        v.push(input.into());
-        self.projects = Some(v);
-        self
+                        v.push(input.into());
+                        self.projects = Some(v);
+                        self
     }
     /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user. </p>
-    pub fn set_projects(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.projects = input;
-        self
+    pub fn set_projects(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.projects = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSharedProjectsOutput`](crate::operation::list_shared_projects::ListSharedProjectsOutput).
     pub fn build(self) -> crate::operation::list_shared_projects::ListSharedProjectsOutput {
         crate::operation::list_shared_projects::ListSharedProjectsOutput {
-            next_token: self.next_token,
-            projects: self.projects,
+            next_token: self.next_token
+            ,
+            projects: self.projects
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

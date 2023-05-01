@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerTypeOutput {
+pub struct UpdateBrokerTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct UpdateBrokerTypeOutput {
 }
 impl UpdateBrokerTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateBrokerTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateBrokerTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerTypeOutput`](crate::operation::update_broker_type::UpdateBrokerTypeOutput).
-    pub fn builder() -> crate::operation::update_broker_type::builders::UpdateBrokerTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_broker_type::builders::UpdateBrokerTypeOutputBuilder {
         crate::operation::update_broker_type::builders::UpdateBrokerTypeOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl UpdateBrokerTypeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,28 +57,27 @@ impl UpdateBrokerTypeOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_operation_arn = input;
-        self
+    pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_operation_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateBrokerTypeOutput`](crate::operation::update_broker_type::UpdateBrokerTypeOutput).
     pub fn build(self) -> crate::operation::update_broker_type::UpdateBrokerTypeOutput {
         crate::operation::update_broker_type::UpdateBrokerTypeOutput {
-            cluster_arn: self.cluster_arn,
-            cluster_operation_arn: self.cluster_operation_arn,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_operation_arn: self.cluster_operation_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAuthorizerOutput {
+pub struct UpdateAuthorizerOutput  {
     /// <p>The authorizer name.</p>
     #[doc(hidden)]
     pub authorizer_name: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct UpdateAuthorizerOutput {
 }
 impl UpdateAuthorizerOutput {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> std::option::Option<& str> {
         self.authorizer_name.as_deref()
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(&self) -> std::option::Option<&str> {
+    pub fn authorizer_arn(&self) -> std::option::Option<& str> {
         self.authorizer_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAuthorizerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAuthorizerOutput`](crate::operation::update_authorizer::UpdateAuthorizerOutput).
-    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_authorizer::builders::UpdateAuthorizerOutputBuilder {
         crate::operation::update_authorizer::builders::UpdateAuthorizerOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl UpdateAuthorizerOutputBuilder {
     }
     /// <p>The authorizer name.</p>
     pub fn set_authorizer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authorizer_name = input;
-        self
+        self.authorizer_name = input; self
     }
     /// <p>The authorizer ARN.</p>
     pub fn authorizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,24 +58,26 @@ impl UpdateAuthorizerOutputBuilder {
     }
     /// <p>The authorizer ARN.</p>
     pub fn set_authorizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authorizer_arn = input;
-        self
+        self.authorizer_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAuthorizerOutput`](crate::operation::update_authorizer::UpdateAuthorizerOutput).
     pub fn build(self) -> crate::operation::update_authorizer::UpdateAuthorizerOutput {
         crate::operation::update_authorizer::UpdateAuthorizerOutput {
-            authorizer_name: self.authorizer_name,
-            authorizer_arn: self.authorizer_arn,
+            authorizer_name: self.authorizer_name
+            ,
+            authorizer_arn: self.authorizer_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

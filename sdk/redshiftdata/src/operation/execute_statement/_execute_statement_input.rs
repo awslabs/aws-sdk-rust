@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteStatementInput {
+pub struct ExecuteStatementInput  {
     /// <p>The SQL statement text to run. </p>
     #[doc(hidden)]
     pub sql: std::option::Option<std::string::String>,
@@ -36,23 +36,23 @@ pub struct ExecuteStatementInput {
 }
 impl ExecuteStatementInput {
     /// <p>The SQL statement text to run. </p>
-    pub fn sql(&self) -> std::option::Option<&str> {
+    pub fn sql(&self) -> std::option::Option<& str> {
         self.sql.as_deref()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
@@ -60,26 +60,25 @@ impl ExecuteStatementInput {
         self.with_event
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
-    pub fn statement_name(&self) -> std::option::Option<&str> {
+    pub fn statement_name(&self) -> std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::SqlParameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::types::SqlParameter]> {
         self.parameters.as_deref()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
-    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementInputBuilder
-    {
+    pub fn builder() -> crate::operation::execute_statement::builders::ExecuteStatementInputBuilder {
         crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::default()
     }
 }
@@ -107,8 +106,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The SQL statement text to run. </p>
     pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sql = input;
-        self
+        self.sql = input; self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,12 +114,8 @@ impl ExecuteStatementInputBuilder {
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +124,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +133,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +142,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
     pub fn with_event(mut self, input: bool) -> Self {
@@ -160,8 +151,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs. </p>
     pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
-        self.with_event = input;
-        self
+        self.with_event = input; self
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
     pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,8 +160,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query. </p>
     pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement_name = input;
-        self
+        self.statement_name = input; self
     }
     /// Appends an item to `parameters`.
     ///
@@ -180,17 +169,13 @@ impl ExecuteStatementInputBuilder {
     /// <p>The parameters for the SQL statement.</p>
     pub fn parameters(mut self, input: crate::types::SqlParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = Some(v);
-        self
+                        v.push(input);
+                        self.parameters = Some(v);
+                        self
     }
     /// <p>The parameters for the SQL statement.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SqlParameter>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SqlParameter>>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,8 +184,7 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,27 +193,34 @@ impl ExecuteStatementInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::execute_statement::ExecuteStatementInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::execute_statement::ExecuteStatementInput {
-            sql: self.sql,
-            cluster_identifier: self.cluster_identifier,
-            secret_arn: self.secret_arn,
-            db_user: self.db_user,
-            database: self.database,
-            with_event: self.with_event,
-            statement_name: self.statement_name,
-            parameters: self.parameters,
-            workgroup_name: self.workgroup_name,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> Result<crate::operation::execute_statement::ExecuteStatementInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::execute_statement::ExecuteStatementInput {
+                sql: self.sql
+                ,
+                cluster_identifier: self.cluster_identifier
+                ,
+                secret_arn: self.secret_arn
+                ,
+                db_user: self.db_user
+                ,
+                database: self.database
+                ,
+                with_event: self.with_event
+                ,
+                statement_name: self.statement_name
+                ,
+                parameters: self.parameters
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

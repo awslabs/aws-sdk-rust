@@ -3,7 +3,7 @@
 /// <p>Describes an EWS based availability provider when returned from the service. It does not contain the password of the endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedactedEwsAvailabilityProvider {
+pub struct RedactedEwsAvailabilityProvider  {
     /// <p>The endpoint of the remote EWS server.</p>
     #[doc(hidden)]
     pub ews_endpoint: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RedactedEwsAvailabilityProvider {
 }
 impl RedactedEwsAvailabilityProvider {
     /// <p>The endpoint of the remote EWS server.</p>
-    pub fn ews_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ews_endpoint(&self) -> std::option::Option<& str> {
         self.ews_endpoint.as_deref()
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
-    pub fn ews_username(&self) -> std::option::Option<&str> {
+    pub fn ews_username(&self) -> std::option::Option<& str> {
         self.ews_username.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl RedactedEwsAvailabilityProviderBuilder {
     }
     /// <p>The endpoint of the remote EWS server.</p>
     pub fn set_ews_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ews_endpoint = input;
-        self
+        self.ews_endpoint = input; self
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
     pub fn ews_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl RedactedEwsAvailabilityProviderBuilder {
     }
     /// <p>The username used to authenticate the remote EWS server.</p>
     pub fn set_ews_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ews_username = input;
-        self
+        self.ews_username = input; self
     }
     /// Consumes the builder and constructs a [`RedactedEwsAvailabilityProvider`](crate::types::RedactedEwsAvailabilityProvider).
     pub fn build(self) -> crate::types::RedactedEwsAvailabilityProvider {
         crate::types::RedactedEwsAvailabilityProvider {
-            ews_endpoint: self.ews_endpoint,
-            ews_username: self.ews_username,
+            ews_endpoint: self.ews_endpoint
+            ,
+            ews_username: self.ews_username
+            ,
         }
     }
 }
+

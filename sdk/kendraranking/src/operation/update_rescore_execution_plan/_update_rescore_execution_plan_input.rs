@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRescoreExecutionPlanInput {
+pub struct UpdateRescoreExecutionPlanInput  {
     /// <p>The identifier of the rescore execution plan that you want to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct UpdateRescoreExecutionPlanInput {
 }
 impl UpdateRescoreExecutionPlanInput {
     /// <p>The identifier of the rescore execution plan that you want to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A new name for the rescore execution plan.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A new description for the rescore execution plan.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn capacity_units(&self) -> std::option::Option<&crate::types::CapacityUnitsConfiguration> {
+    pub fn capacity_units(&self) -> std::option::Option<& crate::types::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
 }
 impl UpdateRescoreExecutionPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateRescoreExecutionPlanInput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput).
-    pub fn builder() -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder{
+    pub fn builder() -> crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder {
         crate::operation::update_rescore_execution_plan::builders::UpdateRescoreExecutionPlanInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl UpdateRescoreExecutionPlanInputBuilder {
     }
     /// <p>The identifier of the rescore execution plan that you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>A new name for the rescore execution plan.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl UpdateRescoreExecutionPlanInputBuilder {
     }
     /// <p>A new name for the rescore execution plan.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A new description for the rescore execution plan.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl UpdateRescoreExecutionPlanInputBuilder {
     }
     /// <p>A new description for the rescore execution plan.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -87,27 +84,23 @@ impl UpdateRescoreExecutionPlanInputBuilder {
         self
     }
     /// <p>You can set additional capacity units to meet the needs of your rescore execution plan. You are given a single capacity unit by default. If you want to use the default capacity, you don't set additional capacity units. For more information on the default capacity and additional capacity units, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(
-        mut self,
-        input: std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    ) -> Self {
-        self.capacity_units = input;
-        self
+    pub fn set_capacity_units(mut self, input: std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
+        self.capacity_units = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRescoreExecutionPlanInput`](crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_rescore_execution_plan::UpdateRescoreExecutionPlanInput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                capacity_units: self.capacity_units,
-            },
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                capacity_units: self.capacity_units
+                ,
+            }
         )
     }
 }
+

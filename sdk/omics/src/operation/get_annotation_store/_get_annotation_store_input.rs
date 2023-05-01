@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnnotationStoreInput {
+pub struct GetAnnotationStoreInput  {
     /// <p>The store's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetAnnotationStoreInput {
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetAnnotationStoreInput {
     /// Creates a new builder-style object to manufacture [`GetAnnotationStoreInput`](crate::operation::get_annotation_store::GetAnnotationStoreInput).
-    pub fn builder(
-    ) -> crate::operation::get_annotation_store::builders::GetAnnotationStoreInputBuilder {
+    pub fn builder() -> crate::operation::get_annotation_store::builders::GetAnnotationStoreInputBuilder {
         crate::operation::get_annotation_store::builders::GetAnnotationStoreInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetAnnotationStoreInputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetAnnotationStoreInput`](crate::operation::get_annotation_store::GetAnnotationStoreInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_annotation_store::GetAnnotationStoreInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_annotation_store::GetAnnotationStoreInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_annotation_store::GetAnnotationStoreInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_annotation_store::GetAnnotationStoreInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

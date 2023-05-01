@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetParameterGroupInput {
+pub struct ResetParameterGroupInput  {
     /// <p>The name of the parameter group to reset.</p>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ResetParameterGroupInput {
 }
 impl ResetParameterGroupInput {
     /// <p>The name of the parameter group to reset.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
@@ -23,16 +23,14 @@ impl ResetParameterGroupInput {
         self.all_parameters
     }
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
-    pub fn parameter_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parameter_names(&self) -> std::option::Option<& [std::string::String]> {
         self.parameter_names.as_deref()
     }
 }
 impl ResetParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`ResetParameterGroupInput`](crate::operation::reset_parameter_group::ResetParameterGroupInput).
-    pub fn builder(
-    ) -> crate::operation::reset_parameter_group::builders::ResetParameterGroupInputBuilder {
-        crate::operation::reset_parameter_group::builders::ResetParameterGroupInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::reset_parameter_group::builders::ResetParameterGroupInputBuilder {
+        crate::operation::reset_parameter_group::builders::ResetParameterGroupInputBuilder::default()
     }
 }
 
@@ -51,12 +49,8 @@ impl ResetParameterGroupInputBuilder {
         self
     }
     /// <p>The name of the parameter group to reset.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parameter_group_name = input;
-        self
+    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parameter_group_name = input; self
     }
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
     pub fn all_parameters(mut self, input: bool) -> Self {
@@ -65,8 +59,7 @@ impl ResetParameterGroupInputBuilder {
     }
     /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
     pub fn set_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
-        self.all_parameters = input;
-        self
+        self.all_parameters = input; self
     }
     /// Appends an item to `parameter_names`.
     ///
@@ -75,31 +68,27 @@ impl ResetParameterGroupInputBuilder {
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
     pub fn parameter_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.parameter_names.unwrap_or_default();
-        v.push(input.into());
-        self.parameter_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.parameter_names = Some(v);
+                        self
     }
     /// <p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>
-    pub fn set_parameter_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.parameter_names = input;
-        self
+    pub fn set_parameter_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.parameter_names = input; self
     }
     /// Consumes the builder and constructs a [`ResetParameterGroupInput`](crate::operation::reset_parameter_group::ResetParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reset_parameter_group::ResetParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::reset_parameter_group::ResetParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reset_parameter_group::ResetParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                all_parameters: self.all_parameters.unwrap_or_default(),
-                parameter_names: self.parameter_names,
-            },
+                parameter_group_name: self.parameter_group_name
+                ,
+                all_parameters: self.all_parameters
+                    .unwrap_or_default()
+                ,
+                parameter_names: self.parameter_names
+                ,
+            }
         )
     }
 }
+

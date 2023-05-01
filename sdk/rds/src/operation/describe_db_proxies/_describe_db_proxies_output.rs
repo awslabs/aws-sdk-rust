@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxiesOutput {
+pub struct DescribeDbProxiesOutput  {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
     #[doc(hidden)]
     pub db_proxies: std::option::Option<std::vec::Vec<crate::types::DbProxy>>,
@@ -13,23 +13,22 @@ pub struct DescribeDbProxiesOutput {
 }
 impl DescribeDbProxiesOutput {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-    pub fn db_proxies(&self) -> std::option::Option<&[crate::types::DbProxy]> {
+    pub fn db_proxies(&self) -> std::option::Option<& [crate::types::DbProxy]> {
         self.db_proxies.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbProxiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDbProxiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxiesOutput`](crate::operation::describe_db_proxies::DescribeDbProxiesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_db_proxies::builders::DescribeDbProxiesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_proxies::builders::DescribeDbProxiesOutputBuilder {
         crate::operation::describe_db_proxies::builders::DescribeDbProxiesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl DescribeDbProxiesOutputBuilder {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
     pub fn db_proxies(mut self, input: crate::types::DbProxy) -> Self {
         let mut v = self.db_proxies.unwrap_or_default();
-        v.push(input);
-        self.db_proxies = Some(v);
-        self
+                        v.push(input);
+                        self.db_proxies = Some(v);
+                        self
     }
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-    pub fn set_db_proxies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbProxy>>,
-    ) -> Self {
-        self.db_proxies = input;
-        self
+    pub fn set_db_proxies(mut self, input: std::option::Option<std::vec::Vec<crate::types::DbProxy>>) -> Self {
+        self.db_proxies = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl DescribeDbProxiesOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDbProxiesOutput`](crate::operation::describe_db_proxies::DescribeDbProxiesOutput).
     pub fn build(self) -> crate::operation::describe_db_proxies::DescribeDbProxiesOutput {
         crate::operation::describe_db_proxies::DescribeDbProxiesOutput {
-            db_proxies: self.db_proxies,
-            marker: self.marker,
+            db_proxies: self.db_proxies
+            ,
+            marker: self.marker
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

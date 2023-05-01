@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let flowexecutioneventtype = unimplemented!();
 /// match flowexecutioneventtype {
@@ -45,22 +45,14 @@
 /// Specifically, when `flowexecutioneventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FlowExecutionEventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FlowExecutionEventType {
     #[allow(missing_docs)] // documentation missing in model
     AcknowledgeTaskMessage,
@@ -97,90 +89,71 @@ pub enum FlowExecutionEventType {
     #[allow(missing_docs)] // documentation missing in model
     ThingActionTaskSucceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlowExecutionEventType {
-    fn from(s: &str) -> Self {
-        match s {
-            "ACKNOWLEDGE_TASK_MESSAGE" => FlowExecutionEventType::AcknowledgeTaskMessage,
-            "ACTIVITY_FAILED" => FlowExecutionEventType::ActivityFailed,
-            "ACTIVITY_SCHEDULED" => FlowExecutionEventType::ActivityScheduled,
-            "ACTIVITY_STARTED" => FlowExecutionEventType::ActivityStarted,
-            "ACTIVITY_SUCCEEDED" => FlowExecutionEventType::ActivitySucceeded,
-            "EXECUTION_ABORTED" => FlowExecutionEventType::ExecutionAborted,
-            "EXECUTION_FAILED" => FlowExecutionEventType::ExecutionFailed,
-            "EXECUTION_STARTED" => FlowExecutionEventType::ExecutionStarted,
-            "EXECUTION_SUCCEEDED" => FlowExecutionEventType::ExecutionSucceeded,
-            "SCHEDULE_NEXT_READY_STEPS_TASK" => FlowExecutionEventType::ScheduleNextReadyStepsTask,
-            "START_FLOW_EXECUTION_TASK" => FlowExecutionEventType::StartFlowExecutionTask,
-            "STEP_FAILED" => FlowExecutionEventType::StepFailed,
-            "STEP_STARTED" => FlowExecutionEventType::StepStarted,
-            "STEP_SUCCEEDED" => FlowExecutionEventType::StepSucceeded,
-            "THING_ACTION_TASK" => FlowExecutionEventType::ThingActionTask,
-            "THING_ACTION_TASK_FAILED" => FlowExecutionEventType::ThingActionTaskFailed,
-            "THING_ACTION_TASK_SUCCEEDED" => FlowExecutionEventType::ThingActionTaskSucceeded,
-            other => FlowExecutionEventType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ACKNOWLEDGE_TASK_MESSAGE" => FlowExecutionEventType::AcknowledgeTaskMessage,
+"ACTIVITY_FAILED" => FlowExecutionEventType::ActivityFailed,
+"ACTIVITY_SCHEDULED" => FlowExecutionEventType::ActivityScheduled,
+"ACTIVITY_STARTED" => FlowExecutionEventType::ActivityStarted,
+"ACTIVITY_SUCCEEDED" => FlowExecutionEventType::ActivitySucceeded,
+"EXECUTION_ABORTED" => FlowExecutionEventType::ExecutionAborted,
+"EXECUTION_FAILED" => FlowExecutionEventType::ExecutionFailed,
+"EXECUTION_STARTED" => FlowExecutionEventType::ExecutionStarted,
+"EXECUTION_SUCCEEDED" => FlowExecutionEventType::ExecutionSucceeded,
+"SCHEDULE_NEXT_READY_STEPS_TASK" => FlowExecutionEventType::ScheduleNextReadyStepsTask,
+"START_FLOW_EXECUTION_TASK" => FlowExecutionEventType::StartFlowExecutionTask,
+"STEP_FAILED" => FlowExecutionEventType::StepFailed,
+"STEP_STARTED" => FlowExecutionEventType::StepStarted,
+"STEP_SUCCEEDED" => FlowExecutionEventType::StepSucceeded,
+"THING_ACTION_TASK" => FlowExecutionEventType::ThingActionTask,
+"THING_ACTION_TASK_FAILED" => FlowExecutionEventType::ThingActionTaskFailed,
+"THING_ACTION_TASK_SUCCEEDED" => FlowExecutionEventType::ThingActionTaskSucceeded,
+other => FlowExecutionEventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FlowExecutionEventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlowExecutionEventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FlowExecutionEventType::from(s))
+                }
+            }
 impl FlowExecutionEventType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FlowExecutionEventType::AcknowledgeTaskMessage => "ACKNOWLEDGE_TASK_MESSAGE",
-            FlowExecutionEventType::ActivityFailed => "ACTIVITY_FAILED",
-            FlowExecutionEventType::ActivityScheduled => "ACTIVITY_SCHEDULED",
-            FlowExecutionEventType::ActivityStarted => "ACTIVITY_STARTED",
-            FlowExecutionEventType::ActivitySucceeded => "ACTIVITY_SUCCEEDED",
-            FlowExecutionEventType::ExecutionAborted => "EXECUTION_ABORTED",
-            FlowExecutionEventType::ExecutionFailed => "EXECUTION_FAILED",
-            FlowExecutionEventType::ExecutionStarted => "EXECUTION_STARTED",
-            FlowExecutionEventType::ExecutionSucceeded => "EXECUTION_SUCCEEDED",
-            FlowExecutionEventType::ScheduleNextReadyStepsTask => "SCHEDULE_NEXT_READY_STEPS_TASK",
-            FlowExecutionEventType::StartFlowExecutionTask => "START_FLOW_EXECUTION_TASK",
-            FlowExecutionEventType::StepFailed => "STEP_FAILED",
-            FlowExecutionEventType::StepStarted => "STEP_STARTED",
-            FlowExecutionEventType::StepSucceeded => "STEP_SUCCEEDED",
-            FlowExecutionEventType::ThingActionTask => "THING_ACTION_TASK",
-            FlowExecutionEventType::ThingActionTaskFailed => "THING_ACTION_TASK_FAILED",
-            FlowExecutionEventType::ThingActionTaskSucceeded => "THING_ACTION_TASK_SUCCEEDED",
-            FlowExecutionEventType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "ACKNOWLEDGE_TASK_MESSAGE",
-            "ACTIVITY_FAILED",
-            "ACTIVITY_SCHEDULED",
-            "ACTIVITY_STARTED",
-            "ACTIVITY_SUCCEEDED",
-            "EXECUTION_ABORTED",
-            "EXECUTION_FAILED",
-            "EXECUTION_STARTED",
-            "EXECUTION_SUCCEEDED",
-            "SCHEDULE_NEXT_READY_STEPS_TASK",
-            "START_FLOW_EXECUTION_TASK",
-            "STEP_FAILED",
-            "STEP_STARTED",
-            "STEP_SUCCEEDED",
-            "THING_ACTION_TASK",
-            "THING_ACTION_TASK_FAILED",
-            "THING_ACTION_TASK_SUCCEEDED",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FlowExecutionEventType::AcknowledgeTaskMessage => "ACKNOWLEDGE_TASK_MESSAGE",
+    FlowExecutionEventType::ActivityFailed => "ACTIVITY_FAILED",
+    FlowExecutionEventType::ActivityScheduled => "ACTIVITY_SCHEDULED",
+    FlowExecutionEventType::ActivityStarted => "ACTIVITY_STARTED",
+    FlowExecutionEventType::ActivitySucceeded => "ACTIVITY_SUCCEEDED",
+    FlowExecutionEventType::ExecutionAborted => "EXECUTION_ABORTED",
+    FlowExecutionEventType::ExecutionFailed => "EXECUTION_FAILED",
+    FlowExecutionEventType::ExecutionStarted => "EXECUTION_STARTED",
+    FlowExecutionEventType::ExecutionSucceeded => "EXECUTION_SUCCEEDED",
+    FlowExecutionEventType::ScheduleNextReadyStepsTask => "SCHEDULE_NEXT_READY_STEPS_TASK",
+    FlowExecutionEventType::StartFlowExecutionTask => "START_FLOW_EXECUTION_TASK",
+    FlowExecutionEventType::StepFailed => "STEP_FAILED",
+    FlowExecutionEventType::StepStarted => "STEP_STARTED",
+    FlowExecutionEventType::StepSucceeded => "STEP_SUCCEEDED",
+    FlowExecutionEventType::ThingActionTask => "THING_ACTION_TASK",
+    FlowExecutionEventType::ThingActionTaskFailed => "THING_ACTION_TASK_FAILED",
+    FlowExecutionEventType::ThingActionTaskSucceeded => "THING_ACTION_TASK_SUCCEEDED",
+    FlowExecutionEventType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ACKNOWLEDGE_TASK_MESSAGE", "ACTIVITY_FAILED", "ACTIVITY_SCHEDULED", "ACTIVITY_STARTED", "ACTIVITY_SUCCEEDED", "EXECUTION_ABORTED", "EXECUTION_FAILED", "EXECUTION_STARTED", "EXECUTION_SUCCEEDED", "SCHEDULE_NEXT_READY_STEPS_TASK", "START_FLOW_EXECUTION_TASK", "STEP_FAILED", "STEP_STARTED", "STEP_SUCCEEDED", "THING_ACTION_TASK", "THING_ACTION_TASK_FAILED", "THING_ACTION_TASK_SUCCEEDED"]
+                }
+            }
 impl AsRef<str> for FlowExecutionEventType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

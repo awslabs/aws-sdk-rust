@@ -3,23 +3,21 @@
 /// <p>DescribeLocationNfsRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationNfsInput {
+pub struct DescribeLocationNfsInput  {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
 }
 impl DescribeLocationNfsInput {
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> std::option::Option<& str> {
         self.location_arn.as_deref()
     }
 }
 impl DescribeLocationNfsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationNfsInput`](crate::operation::describe_location_nfs::DescribeLocationNfsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_location_nfs::builders::DescribeLocationNfsInputBuilder {
-        crate::operation::describe_location_nfs::builders::DescribeLocationNfsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_location_nfs::builders::DescribeLocationNfsInputBuilder {
+        crate::operation::describe_location_nfs::builders::DescribeLocationNfsInputBuilder::default()
     }
 }
 
@@ -37,20 +35,16 @@ impl DescribeLocationNfsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input;
-        self
+        self.location_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLocationNfsInput`](crate::operation::describe_location_nfs::DescribeLocationNfsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_location_nfs::DescribeLocationNfsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_location_nfs::DescribeLocationNfsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_location_nfs::DescribeLocationNfsInput {
-                location_arn: self.location_arn,
-            },
+                location_arn: self.location_arn
+                ,
+            }
         )
     }
 }
+

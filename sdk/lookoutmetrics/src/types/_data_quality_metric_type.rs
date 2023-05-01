@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dataqualitymetrictype = unimplemented!();
 /// match dataqualitymetrictype {
@@ -38,22 +38,14 @@
 /// Specifically, when `dataqualitymetrictype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataQualityMetricType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataQualityMetricType {
     #[allow(missing_docs)] // documentation missing in model
     BacktestInferenceDataEndTimeStamp,
@@ -76,85 +68,57 @@ pub enum DataQualityMetricType {
     #[allow(missing_docs)] // documentation missing in model
     TimeSeriesCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataQualityMetricType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => {
-                DataQualityMetricType::BacktestInferenceDataEndTimeStamp
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BACKTEST_INFERENCE_DATA_END_TIME_STAMP" => DataQualityMetricType::BacktestInferenceDataEndTimeStamp,
+"BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => DataQualityMetricType::BacktestInferenceDataStartTimeStamp,
+"BACKTEST_TRAINING_DATA_END_TIME_STAMP" => DataQualityMetricType::BacktestTrainingDataEndTimeStamp,
+"BACKTEST_TRAINING_DATA_START_TIME_STAMP" => DataQualityMetricType::BacktestTrainingDataStartTimeStamp,
+"COLUMN_COMPLETENESS" => DataQualityMetricType::ColumnCompleteness,
+"DIMENSION_UNIQUENESS" => DataQualityMetricType::DimensionUniqueness,
+"INVALID_ROWS_COMPLIANCE" => DataQualityMetricType::InvalidRowsCompliance,
+"ROWS_PARTIAL_COMPLIANCE" => DataQualityMetricType::RowsPartialCompliance,
+"ROWS_PROCESSED" => DataQualityMetricType::RowsProcessed,
+"TIME_SERIES_COUNT" => DataQualityMetricType::TimeSeriesCount,
+other => DataQualityMetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP" => {
-                DataQualityMetricType::BacktestInferenceDataStartTimeStamp
-            }
-            "BACKTEST_TRAINING_DATA_END_TIME_STAMP" => {
-                DataQualityMetricType::BacktestTrainingDataEndTimeStamp
-            }
-            "BACKTEST_TRAINING_DATA_START_TIME_STAMP" => {
-                DataQualityMetricType::BacktestTrainingDataStartTimeStamp
-            }
-            "COLUMN_COMPLETENESS" => DataQualityMetricType::ColumnCompleteness,
-            "DIMENSION_UNIQUENESS" => DataQualityMetricType::DimensionUniqueness,
-            "INVALID_ROWS_COMPLIANCE" => DataQualityMetricType::InvalidRowsCompliance,
-            "ROWS_PARTIAL_COMPLIANCE" => DataQualityMetricType::RowsPartialCompliance,
-            "ROWS_PROCESSED" => DataQualityMetricType::RowsProcessed,
-            "TIME_SERIES_COUNT" => DataQualityMetricType::TimeSeriesCount,
-            other => DataQualityMetricType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for DataQualityMetricType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataQualityMetricType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataQualityMetricType::from(s))
+                }
+            }
 impl DataQualityMetricType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DataQualityMetricType::BacktestInferenceDataEndTimeStamp => {
-                "BACKTEST_INFERENCE_DATA_END_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestInferenceDataStartTimeStamp => {
-                "BACKTEST_INFERENCE_DATA_START_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestTrainingDataEndTimeStamp => {
-                "BACKTEST_TRAINING_DATA_END_TIME_STAMP"
-            }
-            DataQualityMetricType::BacktestTrainingDataStartTimeStamp => {
-                "BACKTEST_TRAINING_DATA_START_TIME_STAMP"
-            }
-            DataQualityMetricType::ColumnCompleteness => "COLUMN_COMPLETENESS",
-            DataQualityMetricType::DimensionUniqueness => "DIMENSION_UNIQUENESS",
-            DataQualityMetricType::InvalidRowsCompliance => "INVALID_ROWS_COMPLIANCE",
-            DataQualityMetricType::RowsPartialCompliance => "ROWS_PARTIAL_COMPLIANCE",
-            DataQualityMetricType::RowsProcessed => "ROWS_PROCESSED",
-            DataQualityMetricType::TimeSeriesCount => "TIME_SERIES_COUNT",
-            DataQualityMetricType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
-            "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
-            "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
-            "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
-            "COLUMN_COMPLETENESS",
-            "DIMENSION_UNIQUENESS",
-            "INVALID_ROWS_COMPLIANCE",
-            "ROWS_PARTIAL_COMPLIANCE",
-            "ROWS_PROCESSED",
-            "TIME_SERIES_COUNT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DataQualityMetricType::BacktestInferenceDataEndTimeStamp => "BACKTEST_INFERENCE_DATA_END_TIME_STAMP",
+    DataQualityMetricType::BacktestInferenceDataStartTimeStamp => "BACKTEST_INFERENCE_DATA_START_TIME_STAMP",
+    DataQualityMetricType::BacktestTrainingDataEndTimeStamp => "BACKTEST_TRAINING_DATA_END_TIME_STAMP",
+    DataQualityMetricType::BacktestTrainingDataStartTimeStamp => "BACKTEST_TRAINING_DATA_START_TIME_STAMP",
+    DataQualityMetricType::ColumnCompleteness => "COLUMN_COMPLETENESS",
+    DataQualityMetricType::DimensionUniqueness => "DIMENSION_UNIQUENESS",
+    DataQualityMetricType::InvalidRowsCompliance => "INVALID_ROWS_COMPLIANCE",
+    DataQualityMetricType::RowsPartialCompliance => "ROWS_PARTIAL_COMPLIANCE",
+    DataQualityMetricType::RowsProcessed => "ROWS_PROCESSED",
+    DataQualityMetricType::TimeSeriesCount => "TIME_SERIES_COUNT",
+    DataQualityMetricType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BACKTEST_INFERENCE_DATA_END_TIME_STAMP", "BACKTEST_INFERENCE_DATA_START_TIME_STAMP", "BACKTEST_TRAINING_DATA_END_TIME_STAMP", "BACKTEST_TRAINING_DATA_START_TIME_STAMP", "COLUMN_COMPLETENESS", "DIMENSION_UNIQUENESS", "INVALID_ROWS_COMPLIANCE", "ROWS_PARTIAL_COMPLIANCE", "ROWS_PROCESSED", "TIME_SERIES_COUNT"]
+                }
+            }
 impl AsRef<str> for DataQualityMetricType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

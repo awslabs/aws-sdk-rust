@@ -3,7 +3,7 @@
 /// <p>Information about the detector model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorModel {
+pub struct DetectorModel  {
     /// <p>Information that defines how a detector operates.</p>
     #[doc(hidden)]
     pub detector_model_definition: std::option::Option<crate::types::DetectorModelDefinition>,
@@ -13,15 +13,11 @@ pub struct DetectorModel {
 }
 impl DetectorModel {
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(
-        &self,
-    ) -> std::option::Option<&crate::types::DetectorModelDefinition> {
+    pub fn detector_model_definition(&self) -> std::option::Option<& crate::types::DetectorModelDefinition> {
         self.detector_model_definition.as_ref()
     }
     /// <p>Information about how the detector is configured.</p>
-    pub fn detector_model_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::DetectorModelConfiguration> {
+    pub fn detector_model_configuration(&self) -> std::option::Option<& crate::types::DetectorModelConfiguration> {
         self.detector_model_configuration.as_ref()
     }
 }
@@ -36,49 +32,36 @@ impl DetectorModel {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DetectorModelBuilder {
-    pub(crate) detector_model_definition:
-        std::option::Option<crate::types::DetectorModelDefinition>,
-    pub(crate) detector_model_configuration:
-        std::option::Option<crate::types::DetectorModelConfiguration>,
+    pub(crate) detector_model_definition: std::option::Option<crate::types::DetectorModelDefinition>,
+    pub(crate) detector_model_configuration: std::option::Option<crate::types::DetectorModelConfiguration>,
 }
 impl DetectorModelBuilder {
     /// <p>Information that defines how a detector operates.</p>
-    pub fn detector_model_definition(
-        mut self,
-        input: crate::types::DetectorModelDefinition,
-    ) -> Self {
+    pub fn detector_model_definition(mut self, input: crate::types::DetectorModelDefinition) -> Self {
         self.detector_model_definition = Some(input);
         self
     }
     /// <p>Information that defines how a detector operates.</p>
-    pub fn set_detector_model_definition(
-        mut self,
-        input: std::option::Option<crate::types::DetectorModelDefinition>,
-    ) -> Self {
-        self.detector_model_definition = input;
-        self
+    pub fn set_detector_model_definition(mut self, input: std::option::Option<crate::types::DetectorModelDefinition>) -> Self {
+        self.detector_model_definition = input; self
     }
     /// <p>Information about how the detector is configured.</p>
-    pub fn detector_model_configuration(
-        mut self,
-        input: crate::types::DetectorModelConfiguration,
-    ) -> Self {
+    pub fn detector_model_configuration(mut self, input: crate::types::DetectorModelConfiguration) -> Self {
         self.detector_model_configuration = Some(input);
         self
     }
     /// <p>Information about how the detector is configured.</p>
-    pub fn set_detector_model_configuration(
-        mut self,
-        input: std::option::Option<crate::types::DetectorModelConfiguration>,
-    ) -> Self {
-        self.detector_model_configuration = input;
-        self
+    pub fn set_detector_model_configuration(mut self, input: std::option::Option<crate::types::DetectorModelConfiguration>) -> Self {
+        self.detector_model_configuration = input; self
     }
     /// Consumes the builder and constructs a [`DetectorModel`](crate::types::DetectorModel).
     pub fn build(self) -> crate::types::DetectorModel {
         crate::types::DetectorModel {
-            detector_model_definition: self.detector_model_definition,
-            detector_model_configuration: self.detector_model_configuration,
+            detector_model_definition: self.detector_model_definition
+            ,
+            detector_model_configuration: self.detector_model_configuration
+            ,
         }
     }
 }
+

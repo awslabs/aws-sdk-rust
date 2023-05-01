@@ -3,21 +3,20 @@
 /// <p>Input to the DescribeIdentityPool action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdentityPoolInput {
+pub struct DescribeIdentityPoolInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DescribeIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
 impl DescribeIdentityPoolInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
-    pub fn builder(
-    ) -> crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInputBuilder {
+    pub fn builder() -> crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInputBuilder {
         crate::operation::describe_identity_pool::builders::DescribeIdentityPoolInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl DescribeIdentityPoolInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeIdentityPoolInput`](crate::operation::describe_identity_pool::DescribeIdentityPoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_identity_pool::DescribeIdentityPoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_identity_pool::DescribeIdentityPoolInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_identity_pool::DescribeIdentityPoolInput {
-                identity_pool_id: self.identity_pool_id,
-            },
+                identity_pool_id: self.identity_pool_id
+                ,
+            }
         )
     }
 }
+

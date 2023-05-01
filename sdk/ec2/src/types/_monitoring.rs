@@ -3,14 +3,14 @@
 /// <p>Describes the monitoring of an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Monitoring {
+pub struct Monitoring  {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::MonitoringState>,
 }
 impl Monitoring {
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::MonitoringState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::MonitoringState> {
         self.state.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl MonitoringBuilder {
     }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::MonitoringState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`Monitoring`](crate::types::Monitoring).
     pub fn build(self) -> crate::types::Monitoring {
-        crate::types::Monitoring { state: self.state }
+        crate::types::Monitoring {
+            state: self.state
+            ,
+        }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeywordsForDataSourceInput {
+pub struct ListKeywordsForDataSourceInput  {
     /// <p> The control mapping data source that the keywords apply to. </p>
     #[doc(hidden)]
     pub source: std::option::Option<crate::types::SourceType>,
@@ -15,11 +15,11 @@ pub struct ListKeywordsForDataSourceInput {
 }
 impl ListKeywordsForDataSourceInput {
     /// <p> The control mapping data source that the keywords apply to. </p>
-    pub fn source(&self) -> std::option::Option<&crate::types::SourceType> {
+    pub fn source(&self) -> std::option::Option<& crate::types::SourceType> {
         self.source.as_ref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -29,7 +29,7 @@ impl ListKeywordsForDataSourceInput {
 }
 impl ListKeywordsForDataSourceInput {
     /// Creates a new builder-style object to manufacture [`ListKeywordsForDataSourceInput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput).
-    pub fn builder() -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder{
+    pub fn builder() -> crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder {
         crate::operation::list_keywords_for_data_source::builders::ListKeywordsForDataSourceInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListKeywordsForDataSourceInputBuilder {
     }
     /// <p> The control mapping data source that the keywords apply to. </p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::SourceType>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListKeywordsForDataSourceInputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,22 +68,20 @@ impl ListKeywordsForDataSourceInputBuilder {
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListKeywordsForDataSourceInput`](crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceInput {
-                source: self.source,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                source: self.source
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

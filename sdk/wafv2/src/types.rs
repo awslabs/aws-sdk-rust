@@ -221,6 +221,8 @@ pub use crate::types::_managed_rule_group_version::ManagedRuleGroupVersion;
 
 pub use crate::types::_managed_rule_group_summary::ManagedRuleGroupSummary;
 
+pub use crate::types::_api_key_summary::ApiKeySummary;
+
 pub use crate::types::_web_acl::WebAcl;
 
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroup;
@@ -272,6 +274,8 @@ mod _all_query_arguments;
 mod _allow_action;
 
 mod _and_statement;
+
+mod _api_key_summary;
 
 mod _associated_resource_type;
 
@@ -528,3 +532,4 @@ pub mod builders;
 
 /// Error types that AWS WAFV2 can respond with.
 pub mod error;
+

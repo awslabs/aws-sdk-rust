@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMergeConflictsOutput {
+pub struct GetMergeConflictsOutput  {
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
     #[doc(hidden)]
     pub mergeable: bool,
@@ -29,35 +29,34 @@ impl GetMergeConflictsOutput {
         self.mergeable
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn destination_commit_id(&self) -> std::option::Option<&str> {
+    pub fn destination_commit_id(&self) -> std::option::Option<& str> {
         self.destination_commit_id.as_deref()
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
-    pub fn source_commit_id(&self) -> std::option::Option<&str> {
+    pub fn source_commit_id(&self) -> std::option::Option<& str> {
         self.source_commit_id.as_deref()
     }
     /// <p>The commit ID of the merge base.</p>
-    pub fn base_commit_id(&self) -> std::option::Option<&str> {
+    pub fn base_commit_id(&self) -> std::option::Option<& str> {
         self.base_commit_id.as_deref()
     }
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
-    pub fn conflict_metadata_list(&self) -> std::option::Option<&[crate::types::ConflictMetadata]> {
+    pub fn conflict_metadata_list(&self) -> std::option::Option<& [crate::types::ConflictMetadata]> {
         self.conflict_metadata_list.as_deref()
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetMergeConflictsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMergeConflictsOutput {
     /// Creates a new builder-style object to manufacture [`GetMergeConflictsOutput`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder {
+    pub fn builder() -> crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder {
         crate::operation::get_merge_conflicts::builders::GetMergeConflictsOutputBuilder::default()
     }
 }
@@ -70,8 +69,7 @@ pub struct GetMergeConflictsOutputBuilder {
     pub(crate) destination_commit_id: std::option::Option<std::string::String>,
     pub(crate) source_commit_id: std::option::Option<std::string::String>,
     pub(crate) base_commit_id: std::option::Option<std::string::String>,
-    pub(crate) conflict_metadata_list:
-        std::option::Option<std::vec::Vec<crate::types::ConflictMetadata>>,
+    pub(crate) conflict_metadata_list: std::option::Option<std::vec::Vec<crate::types::ConflictMetadata>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -83,8 +81,7 @@ impl GetMergeConflictsOutputBuilder {
     }
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
     pub fn set_mergeable(mut self, input: std::option::Option<bool>) -> Self {
-        self.mergeable = input;
-        self
+        self.mergeable = input; self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
     pub fn destination_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,12 +89,8 @@ impl GetMergeConflictsOutputBuilder {
         self
     }
     /// <p>The commit ID of the destination commit specifier that was used in the merge evaluation.</p>
-    pub fn set_destination_commit_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_commit_id = input;
-        self
+    pub fn set_destination_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_commit_id = input; self
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +99,7 @@ impl GetMergeConflictsOutputBuilder {
     }
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
     pub fn set_source_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_commit_id = input;
-        self
+        self.source_commit_id = input; self
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn base_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +108,7 @@ impl GetMergeConflictsOutputBuilder {
     }
     /// <p>The commit ID of the merge base.</p>
     pub fn set_base_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_commit_id = input;
-        self
+        self.base_commit_id = input; self
     }
     /// Appends an item to `conflict_metadata_list`.
     ///
@@ -126,17 +117,13 @@ impl GetMergeConflictsOutputBuilder {
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
     pub fn conflict_metadata_list(mut self, input: crate::types::ConflictMetadata) -> Self {
         let mut v = self.conflict_metadata_list.unwrap_or_default();
-        v.push(input);
-        self.conflict_metadata_list = Some(v);
-        self
+                        v.push(input);
+                        self.conflict_metadata_list = Some(v);
+                        self
     }
     /// <p>A list of metadata for any conflicting files. If the specified merge strategy is FAST_FORWARD_MERGE, this list is always empty.</p>
-    pub fn set_conflict_metadata_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConflictMetadata>>,
-    ) -> Self {
-        self.conflict_metadata_list = input;
-        self
+    pub fn set_conflict_metadata_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConflictMetadata>>) -> Self {
+        self.conflict_metadata_list = input; self
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,28 +132,35 @@ impl GetMergeConflictsOutputBuilder {
     }
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMergeConflictsOutput`](crate::operation::get_merge_conflicts::GetMergeConflictsOutput).
     pub fn build(self) -> crate::operation::get_merge_conflicts::GetMergeConflictsOutput {
         crate::operation::get_merge_conflicts::GetMergeConflictsOutput {
-            mergeable: self.mergeable.unwrap_or_default(),
-            destination_commit_id: self.destination_commit_id,
-            source_commit_id: self.source_commit_id,
-            base_commit_id: self.base_commit_id,
-            conflict_metadata_list: self.conflict_metadata_list,
-            next_token: self.next_token,
+            mergeable: self.mergeable
+                .unwrap_or_default()
+            ,
+            destination_commit_id: self.destination_commit_id
+            ,
+            source_commit_id: self.source_commit_id
+            ,
+            base_commit_id: self.base_commit_id
+            ,
+            conflict_metadata_list: self.conflict_metadata_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

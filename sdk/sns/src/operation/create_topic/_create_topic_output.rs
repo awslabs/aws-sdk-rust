@@ -3,7 +3,7 @@
 /// <p>Response from CreateTopic action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTopicOutput {
+pub struct CreateTopicOutput  {
     /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
@@ -11,15 +11,15 @@ pub struct CreateTopicOutput {
 }
 impl CreateTopicOutput {
     /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTopicOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTopicOutput {
     /// Creates a new builder-style object to manufacture [`CreateTopicOutput`](crate::operation::create_topic::CreateTopicOutput).
     pub fn builder() -> crate::operation::create_topic::builders::CreateTopicOutputBuilder {
@@ -42,23 +42,24 @@ impl CreateTopicOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) assigned to the created topic.</p>
     pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_arn = input;
-        self
+        self.topic_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTopicOutput`](crate::operation::create_topic::CreateTopicOutput).
     pub fn build(self) -> crate::operation::create_topic::CreateTopicOutput {
         crate::operation::create_topic::CreateTopicOutput {
-            topic_arn: self.topic_arn,
+            topic_arn: self.topic_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

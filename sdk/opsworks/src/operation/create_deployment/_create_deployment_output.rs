@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>CreateDeployment</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentOutput {
+pub struct CreateDeploymentOutput  {
     /// <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -11,19 +11,18 @@ pub struct CreateDeploymentOutput {
 }
 impl CreateDeploymentOutput {
     /// <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDeploymentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder {
         crate::operation::create_deployment::builders::CreateDeploymentOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl CreateDeploymentOutputBuilder {
     }
     /// <p>The deployment ID, which can be used with other requests to identify the deployment.</p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input;
-        self
+        self.deployment_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::operation::create_deployment::CreateDeploymentOutput).
     pub fn build(self) -> crate::operation::create_deployment::CreateDeploymentOutput {
         crate::operation::create_deployment::CreateDeploymentOutput {
-            deployment_id: self.deployment_id,
+            deployment_id: self.deployment_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

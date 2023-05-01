@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateManagedPrefixListOutput {
+pub struct CreateManagedPrefixListOutput  {
     /// <p>Information about the prefix list.</p>
     #[doc(hidden)]
     pub prefix_list: std::option::Option<crate::types::ManagedPrefixList>,
@@ -10,20 +10,18 @@ pub struct CreateManagedPrefixListOutput {
 }
 impl CreateManagedPrefixListOutput {
     /// <p>Information about the prefix list.</p>
-    pub fn prefix_list(&self) -> std::option::Option<&crate::types::ManagedPrefixList> {
+    pub fn prefix_list(&self) -> std::option::Option<& crate::types::ManagedPrefixList> {
         self.prefix_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateManagedPrefixListOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateManagedPrefixListOutput {
     /// Creates a new builder-style object to manufacture [`CreateManagedPrefixListOutput`](crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput).
-    pub fn builder(
-    ) -> crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListOutputBuilder {
         crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl CreateManagedPrefixListOutputBuilder {
         self
     }
     /// <p>Information about the prefix list.</p>
-    pub fn set_prefix_list(
-        mut self,
-        input: std::option::Option<crate::types::ManagedPrefixList>,
-    ) -> Self {
-        self.prefix_list = input;
-        self
+    pub fn set_prefix_list(mut self, input: std::option::Option<crate::types::ManagedPrefixList>) -> Self {
+        self.prefix_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateManagedPrefixListOutput`](crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput {
+    pub fn build(self) -> crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput {
         crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput {
-            prefix_list: self.prefix_list,
+            prefix_list: self.prefix_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The <code>Export</code> structure describes the exported output values for a stack.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Export {
+pub struct Export  {
     /// <p>The stack that contains the exported output name and value.</p>
     #[doc(hidden)]
     pub exporting_stack_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Export {
 }
 impl Export {
     /// <p>The stack that contains the exported output name and value.</p>
-    pub fn exporting_stack_id(&self) -> std::option::Option<&str> {
+    pub fn exporting_stack_id(&self) -> std::option::Option<& str> {
         self.exporting_stack_id.as_deref()
     }
     /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl ExportBuilder {
         self
     }
     /// <p>The stack that contains the exported output name and value.</p>
-    pub fn set_exporting_stack_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.exporting_stack_id = input;
-        self
+    pub fn set_exporting_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.exporting_stack_id = input; self
     }
     /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl ExportBuilder {
     }
     /// <p>The name of exported output value. Use this name and the <code>Fn::ImportValue</code> function to import the associated value into other stacks. The name is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl ExportBuilder {
     }
     /// <p>The value of the exported output, such as a resource physical ID. This value is defined in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`Export`](crate::types::Export).
     pub fn build(self) -> crate::types::Export {
         crate::types::Export {
-            exporting_stack_id: self.exporting_stack_id,
-            name: self.name,
-            value: self.value,
+            exporting_stack_id: self.exporting_stack_id
+            ,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

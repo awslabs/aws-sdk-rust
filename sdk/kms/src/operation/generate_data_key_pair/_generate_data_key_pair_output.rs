@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GenerateDataKeyPairOutput {
+pub struct GenerateDataKeyPairOutput  {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     #[doc(hidden)]
     pub private_key_ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -22,33 +22,30 @@ pub struct GenerateDataKeyPairOutput {
 }
 impl GenerateDataKeyPairOutput {
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn private_key_ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn private_key_ciphertext_blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.private_key_ciphertext_blob.as_ref()
     }
     /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn private_key_plaintext(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn private_key_plaintext(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.private_key_plaintext.as_ref()
     }
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn public_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn public_key(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.public_key.as_ref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The type of data key pair that was generated.</p>
-    pub fn key_pair_spec(&self) -> std::option::Option<&crate::types::DataKeyPairSpec> {
+    pub fn key_pair_spec(&self) -> std::option::Option<& crate::types::DataKeyPairSpec> {
         self.key_pair_spec.as_ref()
     }
 }
-impl std::fmt::Debug for GenerateDataKeyPairOutput {
+impl  std::fmt::Debug for GenerateDataKeyPairOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyPairOutput");
-        formatter.field(
-            "private_key_ciphertext_blob",
-            &self.private_key_ciphertext_blob,
-        );
+        formatter.field("private_key_ciphertext_blob", &self.private_key_ciphertext_blob);
         formatter.field("private_key_plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("public_key", &self.public_key);
         formatter.field("key_id", &self.key_id);
@@ -58,14 +55,13 @@ impl std::fmt::Debug for GenerateDataKeyPairOutput {
     }
 }
 impl aws_http::request_id::RequestId for GenerateDataKeyPairOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GenerateDataKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`GenerateDataKeyPairOutput`](crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput).
-    pub fn builder(
-    ) -> crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairOutputBuilder {
+    pub fn builder() -> crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairOutputBuilder {
         crate::operation::generate_data_key_pair::builders::GenerateDataKeyPairOutputBuilder::default()
     }
 }
@@ -88,12 +84,8 @@ impl GenerateDataKeyPairOutputBuilder {
         self
     }
     /// <p>The encrypted copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_private_key_ciphertext_blob(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.private_key_ciphertext_blob = input;
-        self
+    pub fn set_private_key_ciphertext_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.private_key_ciphertext_blob = input; self
     }
     /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn private_key_plaintext(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -101,12 +93,8 @@ impl GenerateDataKeyPairOutputBuilder {
         self
     }
     /// <p>The plaintext copy of the private key. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_private_key_plaintext(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.private_key_plaintext = input;
-        self
+    pub fn set_private_key_plaintext(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.private_key_plaintext = input; self
     }
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn public_key(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -115,8 +103,7 @@ impl GenerateDataKeyPairOutputBuilder {
     }
     /// <p>The public key (in plaintext). When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     pub fn set_public_key(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.public_key = input;
-        self
+        self.public_key = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +112,7 @@ impl GenerateDataKeyPairOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that encrypted the private key.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The type of data key pair that was generated.</p>
     pub fn key_pair_spec(mut self, input: crate::types::DataKeyPairSpec) -> Self {
@@ -134,30 +120,31 @@ impl GenerateDataKeyPairOutputBuilder {
         self
     }
     /// <p>The type of data key pair that was generated.</p>
-    pub fn set_key_pair_spec(
-        mut self,
-        input: std::option::Option<crate::types::DataKeyPairSpec>,
-    ) -> Self {
-        self.key_pair_spec = input;
-        self
+    pub fn set_key_pair_spec(mut self, input: std::option::Option<crate::types::DataKeyPairSpec>) -> Self {
+        self.key_pair_spec = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GenerateDataKeyPairOutput`](crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput).
     pub fn build(self) -> crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput {
         crate::operation::generate_data_key_pair::GenerateDataKeyPairOutput {
-            private_key_ciphertext_blob: self.private_key_ciphertext_blob,
-            private_key_plaintext: self.private_key_plaintext,
-            public_key: self.public_key,
-            key_id: self.key_id,
-            key_pair_spec: self.key_pair_spec,
+            private_key_ciphertext_blob: self.private_key_ciphertext_blob
+            ,
+            private_key_plaintext: self.private_key_plaintext
+            ,
+            public_key: self.public_key
+            ,
+            key_id: self.key_id
+            ,
+            key_pair_spec: self.key_pair_spec
+            ,
             _request_id: self._request_id,
         }
     }
@@ -165,10 +152,7 @@ impl GenerateDataKeyPairOutputBuilder {
 impl std::fmt::Debug for GenerateDataKeyPairOutputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GenerateDataKeyPairOutputBuilder");
-        formatter.field(
-            "private_key_ciphertext_blob",
-            &self.private_key_ciphertext_blob,
-        );
+        formatter.field("private_key_ciphertext_blob", &self.private_key_ciphertext_blob);
         formatter.field("private_key_plaintext", &"*** Sensitive Data Redacted ***");
         formatter.field("public_key", &self.public_key);
         formatter.field("key_id", &self.key_id);
@@ -177,3 +161,4 @@ impl std::fmt::Debug for GenerateDataKeyPairOutputBuilder {
         formatter.finish()
     }
 }
+

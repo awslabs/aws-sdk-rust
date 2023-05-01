@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssetsOutput {
+pub struct ListAssetsOutput  {
     /// <p>A list that summarizes each asset.</p>
     #[doc(hidden)]
     pub asset_summaries: std::option::Option<std::vec::Vec<crate::types::AssetSummary>>,
@@ -13,19 +13,19 @@ pub struct ListAssetsOutput {
 }
 impl ListAssetsOutput {
     /// <p>A list that summarizes each asset.</p>
-    pub fn asset_summaries(&self) -> std::option::Option<&[crate::types::AssetSummary]> {
+    pub fn asset_summaries(&self) -> std::option::Option<& [crate::types::AssetSummary]> {
         self.asset_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput).
     pub fn builder() -> crate::operation::list_assets::builders::ListAssetsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListAssetsOutputBuilder {
     /// <p>A list that summarizes each asset.</p>
     pub fn asset_summaries(mut self, input: crate::types::AssetSummary) -> Self {
         let mut v = self.asset_summaries.unwrap_or_default();
-        v.push(input);
-        self.asset_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.asset_summaries = Some(v);
+                        self
     }
     /// <p>A list that summarizes each asset.</p>
-    pub fn set_asset_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetSummary>>,
-    ) -> Self {
-        self.asset_summaries = input;
-        self
+    pub fn set_asset_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssetSummary>>) -> Self {
+        self.asset_summaries = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListAssetsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAssetsOutput`](crate::operation::list_assets::ListAssetsOutput).
     pub fn build(self) -> crate::operation::list_assets::ListAssetsOutput {
         crate::operation::list_assets::ListAssetsOutput {
-            asset_summaries: self.asset_summaries,
-            next_token: self.next_token,
+            asset_summaries: self.asset_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

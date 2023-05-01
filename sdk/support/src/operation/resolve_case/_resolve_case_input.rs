@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolveCaseInput {
+pub struct ResolveCaseInput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
 }
 impl ResolveCaseInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl ResolveCaseInputBuilder {
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.case_id = input;
-        self
+        self.case_id = input; self
     }
     /// Consumes the builder and constructs a [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::resolve_case::ResolveCaseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::resolve_case::ResolveCaseInput {
-            case_id: self.case_id,
-        })
+    pub fn build(self) -> Result<crate::operation::resolve_case::ResolveCaseInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::resolve_case::ResolveCaseInput {
+                case_id: self.case_id
+                ,
+            }
+        )
     }
 }
+

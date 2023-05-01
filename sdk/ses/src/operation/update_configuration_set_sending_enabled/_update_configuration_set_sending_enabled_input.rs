@@ -3,7 +3,7 @@
 /// <p>Represents a request to enable or disable the email sending capabilities for a specific configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationSetSendingEnabledInput {
+pub struct UpdateConfigurationSetSendingEnabledInput  {
     /// <p>The name of the configuration set that you want to update.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct UpdateConfigurationSetSendingEnabledInput {
 }
 impl UpdateConfigurationSetSendingEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
@@ -23,7 +23,7 @@ impl UpdateConfigurationSetSendingEnabledInput {
 }
 impl UpdateConfigurationSetSendingEnabledInput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationSetSendingEnabledInput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput).
-    pub fn builder() -> crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledInputBuilder{
+    pub fn builder() -> crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledInputBuilder {
         crate::operation::update_configuration_set_sending_enabled::builders::UpdateConfigurationSetSendingEnabledInputBuilder::default()
     }
 }
@@ -42,12 +42,8 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         self
     }
     /// <p>The name of the configuration set that you want to update.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -56,11 +52,10 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetSendingEnabledInput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput).
-    pub fn build(self) -> Result<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput {
                 configuration_set_name: self.configuration_set_name
@@ -72,3 +67,4 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         )
     }
 }
+

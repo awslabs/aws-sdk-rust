@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestServiceQuotaIncreaseOutput {
+pub struct RequestServiceQuotaIncreaseOutput  {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::types::RequestedServiceQuotaChange>,
@@ -10,20 +10,18 @@ pub struct RequestServiceQuotaIncreaseOutput {
 }
 impl RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
-    pub fn requested_quota(
-        &self,
-    ) -> std::option::Option<&crate::types::RequestedServiceQuotaChange> {
+    pub fn requested_quota(&self) -> std::option::Option<& crate::types::RequestedServiceQuotaChange> {
         self.requested_quota.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RequestServiceQuotaIncreaseOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RequestServiceQuotaIncreaseOutput {
     /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseOutput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput).
-    pub fn builder() -> crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseOutputBuilder{
+    pub fn builder() -> crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseOutputBuilder {
         crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl RequestServiceQuotaIncreaseOutputBuilder {
         self
     }
     /// <p>Information about the quota increase request.</p>
-    pub fn set_requested_quota(
-        mut self,
-        input: std::option::Option<crate::types::RequestedServiceQuotaChange>,
-    ) -> Self {
-        self.requested_quota = input;
-        self
+    pub fn set_requested_quota(mut self, input: std::option::Option<crate::types::RequestedServiceQuotaChange>) -> Self {
+        self.requested_quota = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RequestServiceQuotaIncreaseOutput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput {
+    pub fn build(self) -> crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput {
         crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput {
-            requested_quota: self.requested_quota,
+            requested_quota: self.requested_quota
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

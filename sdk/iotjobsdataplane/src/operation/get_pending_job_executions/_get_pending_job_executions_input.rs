@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPendingJobExecutionsInput {
+pub struct GetPendingJobExecutionsInput  {
     /// <p>The name of the thing that is executing the job.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
 }
 impl GetPendingJobExecutionsInput {
     /// <p>The name of the thing that is executing the job.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
 impl GetPendingJobExecutionsInput {
     /// Creates a new builder-style object to manufacture [`GetPendingJobExecutionsInput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput).
-    pub fn builder(
-    ) -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder {
         crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetPendingJobExecutionsInputBuilder {
     }
     /// <p>The name of the thing that is executing the job.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// Consumes the builder and constructs a [`GetPendingJobExecutionsInput`](crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_pending_job_executions::GetPendingJobExecutionsInput {
-                thing_name: self.thing_name,
-            },
+                thing_name: self.thing_name
+                ,
+            }
         )
     }
 }
+

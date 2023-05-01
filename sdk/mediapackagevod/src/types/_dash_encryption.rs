@@ -3,14 +3,14 @@
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashEncryption {
+pub struct DashEncryption  {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
     pub speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::types::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> std::option::Option<& crate::types::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl DashEncryptionBuilder {
         self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn set_speke_key_provider(
-        mut self,
-        input: std::option::Option<crate::types::SpekeKeyProvider>,
-    ) -> Self {
-        self.speke_key_provider = input;
-        self
+    pub fn set_speke_key_provider(mut self, input: std::option::Option<crate::types::SpekeKeyProvider>) -> Self {
+        self.speke_key_provider = input; self
     }
     /// Consumes the builder and constructs a [`DashEncryption`](crate::types::DashEncryption).
     pub fn build(self) -> crate::types::DashEncryption {
         crate::types::DashEncryption {
-            speke_key_provider: self.speke_key_provider,
+            speke_key_provider: self.speke_key_provider
+            ,
         }
     }
 }
+

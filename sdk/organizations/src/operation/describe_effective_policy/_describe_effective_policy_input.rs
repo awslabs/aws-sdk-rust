@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectivePolicyInput {
-    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
+pub struct DescribeEffectivePolicyInput  {
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub policy_type: std::option::Option<crate::types::EffectivePolicyType>,
@@ -16,25 +16,23 @@ pub struct DescribeEffectivePolicyInput {
     pub target_id: std::option::Option<std::string::String>,
 }
 impl DescribeEffectivePolicyInput {
-    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li> 
     /// </ul>
-    pub fn policy_type(&self) -> std::option::Option<&crate::types::EffectivePolicyType> {
+    pub fn policy_type(&self) -> std::option::Option<& crate::types::EffectivePolicyType> {
         self.policy_type.as_ref()
     }
     /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
 }
 impl DescribeEffectivePolicyInput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyInput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder {
         crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyInputBuilder::default()
     }
 }
@@ -47,28 +45,24 @@ pub struct DescribeEffectivePolicyInputBuilder {
     pub(crate) target_id: std::option::Option<std::string::String>,
 }
 impl DescribeEffectivePolicyInputBuilder {
-    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li> 
     /// </ul>
     pub fn policy_type(mut self, input: crate::types::EffectivePolicyType) -> Self {
         self.policy_type = Some(input);
         self
     }
-    /// <p>The type of policy that you want information about. You can specify one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li>
+    /// <p>The type of policy that you want information about. You can specify one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a> </p> </li> 
     /// </ul>
-    pub fn set_policy_type(
-        mut self,
-        input: std::option::Option<crate::types::EffectivePolicyType>,
-    ) -> Self {
-        self.policy_type = input;
-        self
+    pub fn set_policy_type(mut self, input: std::option::Option<crate::types::EffectivePolicyType>) -> Self {
+        self.policy_type = input; self
     }
     /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
     pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,21 +71,18 @@ impl DescribeEffectivePolicyInputBuilder {
     }
     /// <p>When you're signed in as the management account, specify the ID of the account that you want details about. Specifying an organization root or organizational unit (OU) as the target is not supported.</p>
     pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_id = input;
-        self
+        self.target_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePolicyInput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_effective_policy::DescribeEffectivePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_effective_policy::DescribeEffectivePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_effective_policy::DescribeEffectivePolicyInput {
-                policy_type: self.policy_type,
-                target_id: self.target_id,
-            },
+                policy_type: self.policy_type
+                ,
+                target_id: self.target_id
+                ,
+            }
         )
     }
 }
+

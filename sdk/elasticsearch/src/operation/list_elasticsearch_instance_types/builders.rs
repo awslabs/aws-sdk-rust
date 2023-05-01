@@ -4,74 +4,62 @@ pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch
 pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch_instance_types_input::ListElasticsearchInstanceTypesInputBuilder;
 
 /// Fluent builder constructing a request to `ListElasticsearchInstanceTypes`.
-///
+/// 
 /// <p>List all Elasticsearch instance types that are supported for given ElasticsearchVersion</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_elasticsearch_instance_types::builders::ListElasticsearchInstanceTypesInputBuilder
             }
-impl ListElasticsearchInstanceTypesFluentBuilder {
+impl ListElasticsearchInstanceTypesFluentBuilder  {
     /// Creates a new `ListElasticsearchInstanceTypes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypes, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput, aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator{
-        crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator {
+                            crate::operation::list_elasticsearch_instance_types::paginator::ListElasticsearchInstanceTypesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
     pub fn elasticsearch_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.elasticsearch_version(input.into());
         self
     }
     /// <p>Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </p>
-    pub fn set_elasticsearch_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_elasticsearch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_elasticsearch_version(input);
         self
     }
@@ -106,3 +94,4 @@ impl ListElasticsearchInstanceTypesFluentBuilder {
         self
     }
 }
+

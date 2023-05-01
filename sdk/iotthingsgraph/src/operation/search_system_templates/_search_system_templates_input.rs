@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchSystemTemplatesInput {
+pub struct SearchSystemTemplatesInput  {
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::SystemTemplateFilter>>,
@@ -15,11 +15,11 @@ pub struct SearchSystemTemplatesInput {
 }
 impl SearchSystemTemplatesInput {
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::SystemTemplateFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::SystemTemplateFilter]> {
         self.filters.as_deref()
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -29,9 +29,7 @@ impl SearchSystemTemplatesInput {
 }
 impl SearchSystemTemplatesInput {
     /// Creates a new builder-style object to manufacture [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
-    pub fn builder(
-    ) -> crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder {
         crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder::default()
     }
 }
@@ -52,17 +50,13 @@ impl SearchSystemTemplatesInputBuilder {
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
     pub fn filters(mut self, input: crate::types::SystemTemplateFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SystemTemplateFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SystemTemplateFilter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +65,7 @@ impl SearchSystemTemplatesInputBuilder {
     }
     /// <p>The string that specifies the next page of results. Use this when you're paginating results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -81,22 +74,20 @@ impl SearchSystemTemplatesInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`SearchSystemTemplatesInput`](crate::operation::search_system_templates::SearchSystemTemplatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_system_templates::SearchSystemTemplatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::search_system_templates::SearchSystemTemplatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::search_system_templates::SearchSystemTemplatesInput {
-                filters: self.filters,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                filters: self.filters
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Describes an IPv6 address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledInstancesIpv6Address {
+pub struct ScheduledInstancesIpv6Address  {
     /// <p>The IPv6 address.</p>
     #[doc(hidden)]
     pub ipv6_address: std::option::Option<std::string::String>,
 }
 impl ScheduledInstancesIpv6Address {
     /// <p>The IPv6 address.</p>
-    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> std::option::Option<& str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ScheduledInstancesIpv6AddressBuilder {
     }
     /// <p>The IPv6 address.</p>
     pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipv6_address = input;
-        self
+        self.ipv6_address = input; self
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesIpv6Address`](crate::types::ScheduledInstancesIpv6Address).
     pub fn build(self) -> crate::types::ScheduledInstancesIpv6Address {
         crate::types::ScheduledInstancesIpv6Address {
-            ipv6_address: self.ipv6_address,
+            ipv6_address: self.ipv6_address
+            ,
         }
     }
 }
+

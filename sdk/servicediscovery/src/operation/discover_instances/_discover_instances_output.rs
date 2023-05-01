@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoverInstancesOutput {
+pub struct DiscoverInstancesOutput  {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::types::HttpInstanceSummary>>,
@@ -10,19 +10,18 @@ pub struct DiscoverInstancesOutput {
 }
 impl DiscoverInstancesOutput {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::HttpInstanceSummary]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::types::HttpInstanceSummary]> {
         self.instances.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DiscoverInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DiscoverInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverInstancesOutput`](crate::operation::discover_instances::DiscoverInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::discover_instances::builders::DiscoverInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::discover_instances::builders::DiscoverInstancesOutputBuilder {
         crate::operation::discover_instances::builders::DiscoverInstancesOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl DiscoverInstancesOutputBuilder {
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
     pub fn instances(mut self, input: crate::types::HttpInstanceSummary) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = Some(v);
-        self
+                        v.push(input);
+                        self.instances = Some(v);
+                        self
     }
     /// <p>A complex type that contains one <code>HttpInstanceSummary</code> for each registered instance.</p>
-    pub fn set_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HttpInstanceSummary>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::HttpInstanceSummary>>) -> Self {
+        self.instances = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DiscoverInstancesOutput`](crate::operation::discover_instances::DiscoverInstancesOutput).
     pub fn build(self) -> crate::operation::discover_instances::DiscoverInstancesOutput {
         crate::operation::discover_instances::DiscoverInstancesOutput {
-            instances: self.instances,
+            instances: self.instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

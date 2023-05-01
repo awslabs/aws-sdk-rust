@@ -3,7 +3,7 @@
 /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppSyncRuntime {
+pub struct AppSyncRuntime  {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::RuntimeName>,
@@ -13,11 +13,11 @@ pub struct AppSyncRuntime {
 }
 impl AppSyncRuntime {
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::RuntimeName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::RuntimeName> {
         self.name.as_ref()
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
-    pub fn runtime_version(&self) -> std::option::Option<&str> {
+    pub fn runtime_version(&self) -> std::option::Option<& str> {
         self.runtime_version.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AppSyncRuntimeBuilder {
     }
     /// <p>The <code>name</code> of the runtime to use. Currently, the only allowed value is <code>APPSYNC_JS</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::RuntimeName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
     pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AppSyncRuntimeBuilder {
     }
     /// <p>The <code>version</code> of the runtime to use. Currently, the only allowed version is <code>1.0.0</code>.</p>
     pub fn set_runtime_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime_version = input;
-        self
+        self.runtime_version = input; self
     }
     /// Consumes the builder and constructs a [`AppSyncRuntime`](crate::types::AppSyncRuntime).
     pub fn build(self) -> crate::types::AppSyncRuntime {
         crate::types::AppSyncRuntime {
-            name: self.name,
-            runtime_version: self.runtime_version,
+            name: self.name
+            ,
+            runtime_version: self.runtime_version
+            ,
         }
     }
 }
+

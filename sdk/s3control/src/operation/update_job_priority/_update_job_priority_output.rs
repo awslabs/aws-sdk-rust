@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobPriorityOutput {
+pub struct UpdateJobPriorityOutput  {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct UpdateJobPriorityOutput {
 }
 impl UpdateJobPriorityOutput {
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The new priority assigned to the specified job.</p>
@@ -22,14 +22,13 @@ impl UpdateJobPriorityOutput {
     }
 }
 impl aws_http::request_id::RequestId for UpdateJobPriorityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateJobPriorityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobPriorityOutput`](crate::operation::update_job_priority::UpdateJobPriorityOutput).
-    pub fn builder(
-    ) -> crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder {
+    pub fn builder() -> crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder {
         crate::operation::update_job_priority::builders::UpdateJobPriorityOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl UpdateJobPriorityOutputBuilder {
     }
     /// <p>The ID for the job whose priority Amazon S3 updated.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The new priority assigned to the specified job.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -60,24 +58,27 @@ impl UpdateJobPriorityOutputBuilder {
     }
     /// <p>The new priority assigned to the specified job.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateJobPriorityOutput`](crate::operation::update_job_priority::UpdateJobPriorityOutput).
     pub fn build(self) -> crate::operation::update_job_priority::UpdateJobPriorityOutput {
         crate::operation::update_job_priority::UpdateJobPriorityOutput {
-            job_id: self.job_id,
-            priority: self.priority.unwrap_or_default(),
+            job_id: self.job_id
+            ,
+            priority: self.priority
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSimulationJobBatchOutput {
+pub struct CancelSimulationJobBatchOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CancelSimulationJobBatchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelSimulationJobBatchOutput {
     /// Creates a new builder-style object to manufacture [`CancelSimulationJobBatchOutput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput).
-    pub fn builder() -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchOutputBuilder {
         crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct CancelSimulationJobBatchOutputBuilder {
 }
 impl CancelSimulationJobBatchOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelSimulationJobBatchOutput`](crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput {
+    pub fn build(self) -> crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput {
         crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput {
             _request_id: self._request_id,
         }
     }
 }
+

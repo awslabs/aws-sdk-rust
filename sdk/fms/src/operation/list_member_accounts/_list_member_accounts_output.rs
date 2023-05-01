@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMemberAccountsOutput {
+pub struct ListMemberAccountsOutput  {
     /// <p>An array of account IDs.</p>
     #[doc(hidden)]
     pub member_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,23 +13,22 @@ pub struct ListMemberAccountsOutput {
 }
 impl ListMemberAccountsOutput {
     /// <p>An array of account IDs.</p>
-    pub fn member_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn member_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.member_accounts.as_deref()
     }
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMemberAccountsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMemberAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
+    pub fn builder() -> crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder {
         crate::operation::list_member_accounts::builders::ListMemberAccountsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListMemberAccountsOutputBuilder {
     /// <p>An array of account IDs.</p>
     pub fn member_accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.member_accounts.unwrap_or_default();
-        v.push(input.into());
-        self.member_accounts = Some(v);
-        self
+                        v.push(input.into());
+                        self.member_accounts = Some(v);
+                        self
     }
     /// <p>An array of account IDs.</p>
-    pub fn set_member_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.member_accounts = input;
-        self
+    pub fn set_member_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.member_accounts = input; self
     }
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListMemberAccountsOutputBuilder {
     }
     /// <p>If you have more member account IDs than the number that you specified for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code> value. To list more IDs, submit another <code>ListMemberAccounts</code> request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code> value in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMemberAccountsOutput`](crate::operation::list_member_accounts::ListMemberAccountsOutput).
     pub fn build(self) -> crate::operation::list_member_accounts::ListMemberAccountsOutput {
         crate::operation::list_member_accounts::ListMemberAccountsOutput {
-            member_accounts: self.member_accounts,
-            next_token: self.next_token,
+            member_accounts: self.member_accounts
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

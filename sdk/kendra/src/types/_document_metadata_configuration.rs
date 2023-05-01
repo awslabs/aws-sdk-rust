@@ -3,7 +3,7 @@
 /// <p>Specifies the properties, such as relevance tuning and searchability, of an index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentMetadataConfiguration {
+pub struct DocumentMetadataConfiguration  {
     /// <p>The name of the index field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DocumentMetadataConfiguration {
 }
 impl DocumentMetadataConfiguration {
     /// <p>The name of the index field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the index field. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DocumentAttributeValueType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::DocumentAttributeValueType> {
         self.r#type.as_ref()
     }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
-    pub fn relevance(&self) -> std::option::Option<&crate::types::Relevance> {
+    pub fn relevance(&self) -> std::option::Option<& crate::types::Relevance> {
         self.relevance.as_ref()
     }
     /// <p>Provides information about how the field is used during a search.</p>
-    pub fn search(&self) -> std::option::Option<&crate::types::Search> {
+    pub fn search(&self) -> std::option::Option<& crate::types::Search> {
         self.search.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl DocumentMetadataConfigurationBuilder {
     }
     /// <p>The name of the index field.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The data type of the index field. </p>
     pub fn r#type(mut self, input: crate::types::DocumentAttributeValueType) -> Self {
@@ -68,12 +67,8 @@ impl DocumentMetadataConfigurationBuilder {
         self
     }
     /// <p>The data type of the index field. </p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::DocumentAttributeValueType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::DocumentAttributeValueType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub fn relevance(mut self, input: crate::types::Relevance) -> Self {
@@ -82,8 +77,7 @@ impl DocumentMetadataConfigurationBuilder {
     }
     /// <p>Provides tuning parameters to determine how the field affects the search results.</p>
     pub fn set_relevance(mut self, input: std::option::Option<crate::types::Relevance>) -> Self {
-        self.relevance = input;
-        self
+        self.relevance = input; self
     }
     /// <p>Provides information about how the field is used during a search.</p>
     pub fn search(mut self, input: crate::types::Search) -> Self {
@@ -92,16 +86,20 @@ impl DocumentMetadataConfigurationBuilder {
     }
     /// <p>Provides information about how the field is used during a search.</p>
     pub fn set_search(mut self, input: std::option::Option<crate::types::Search>) -> Self {
-        self.search = input;
-        self
+        self.search = input; self
     }
     /// Consumes the builder and constructs a [`DocumentMetadataConfiguration`](crate::types::DocumentMetadataConfiguration).
     pub fn build(self) -> crate::types::DocumentMetadataConfiguration {
         crate::types::DocumentMetadataConfiguration {
-            name: self.name,
-            r#type: self.r#type,
-            relevance: self.relevance,
-            search: self.search,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            relevance: self.relevance
+            ,
+            search: self.search
+            ,
         }
     }
 }
+

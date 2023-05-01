@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAcceleratorAttributesInput {
+pub struct DescribeAcceleratorAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
     #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> std::option::Option<& str> {
         self.accelerator_arn.as_deref()
     }
 }
 impl DescribeAcceleratorAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesInput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput).
-    pub fn builder() -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesInputBuilder {
         crate::operation::describe_accelerator_attributes::builders::DescribeAcceleratorAttributesInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeAcceleratorAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
     pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_arn = input;
-        self
+        self.accelerator_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorAttributesInput`](crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesInput {
-                accelerator_arn: self.accelerator_arn,
-            },
+                accelerator_arn: self.accelerator_arn
+                ,
+            }
         )
     }
 }
+

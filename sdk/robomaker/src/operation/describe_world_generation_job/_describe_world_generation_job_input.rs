@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorldGenerationJobInput {
+pub struct DescribeWorldGenerationJobInput  {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
     #[doc(hidden)]
     pub job: std::option::Option<std::string::String>,
 }
 impl DescribeWorldGenerationJobInput {
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
-    pub fn job(&self) -> std::option::Option<&str> {
+    pub fn job(&self) -> std::option::Option<& str> {
         self.job.as_deref()
     }
 }
 impl DescribeWorldGenerationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldGenerationJobInput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput).
-    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder {
         crate::operation::describe_world_generation_job::builders::DescribeWorldGenerationJobInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeWorldGenerationJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
     pub fn set_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorldGenerationJobInput`](crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_world_generation_job::DescribeWorldGenerationJobInput {
-                job: self.job,
-            },
+                job: self.job
+                ,
+            }
         )
     }
 }
+

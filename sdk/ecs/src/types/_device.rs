@@ -3,7 +3,7 @@
 /// <p>An object representing a container instance host device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Device {
+pub struct Device  {
     /// <p>The path for the device on the host container instance.</p>
     #[doc(hidden)]
     pub host_path: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Device {
 }
 impl Device {
     /// <p>The path for the device on the host container instance.</p>
-    pub fn host_path(&self) -> std::option::Option<&str> {
+    pub fn host_path(&self) -> std::option::Option<& str> {
         self.host_path.as_deref()
     }
     /// <p>The path inside the container at which to expose the host device.</p>
-    pub fn container_path(&self) -> std::option::Option<&str> {
+    pub fn container_path(&self) -> std::option::Option<& str> {
         self.container_path.as_deref()
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::DeviceCgroupPermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::DeviceCgroupPermission]> {
         self.permissions.as_deref()
     }
 }
@@ -41,8 +41,7 @@ impl Device {
 pub struct DeviceBuilder {
     pub(crate) host_path: std::option::Option<std::string::String>,
     pub(crate) container_path: std::option::Option<std::string::String>,
-    pub(crate) permissions:
-        std::option::Option<std::vec::Vec<crate::types::DeviceCgroupPermission>>,
+    pub(crate) permissions: std::option::Option<std::vec::Vec<crate::types::DeviceCgroupPermission>>,
 }
 impl DeviceBuilder {
     /// <p>The path for the device on the host container instance.</p>
@@ -52,8 +51,7 @@ impl DeviceBuilder {
     }
     /// <p>The path for the device on the host container instance.</p>
     pub fn set_host_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_path = input;
-        self
+        self.host_path = input; self
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn container_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl DeviceBuilder {
     }
     /// <p>The path inside the container at which to expose the host device.</p>
     pub fn set_container_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_path = input;
-        self
+        self.container_path = input; self
     }
     /// Appends an item to `permissions`.
     ///
@@ -72,24 +69,24 @@ impl DeviceBuilder {
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
     pub fn permissions(mut self, input: crate::types::DeviceCgroupPermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>The explicit permissions to provide to the container for the device. By default, the container has permissions for <code>read</code>, <code>write</code>, and <code>mknod</code> for the device.</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceCgroupPermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeviceCgroupPermission>>) -> Self {
+        self.permissions = input; self
     }
     /// Consumes the builder and constructs a [`Device`](crate::types::Device).
     pub fn build(self) -> crate::types::Device {
         crate::types::Device {
-            host_path: self.host_path,
-            container_path: self.container_path,
-            permissions: self.permissions,
+            host_path: self.host_path
+            ,
+            container_path: self.container_path
+            ,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResourceInput {
+pub struct DisassociateResourceInput  {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -15,24 +15,22 @@ pub struct DisassociateResourceInput {
 }
 impl DisassociateResourceInput {
     /// <p>The name or ID of the application.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>The type of the resource that is being disassociated.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name or ID of the resource.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
 }
 impl DisassociateResourceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
-        crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder {
+        crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder::default()
     }
 }
 
@@ -52,8 +50,7 @@ impl DisassociateResourceInputBuilder {
     }
     /// <p>The name or ID of the application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>The type of the resource that is being disassociated.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -61,12 +58,8 @@ impl DisassociateResourceInputBuilder {
         self
     }
     /// <p>The type of the resource that is being disassociated.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The name or ID of the resource.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl DisassociateResourceInputBuilder {
     }
     /// <p>The name or ID of the resource.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input;
-        self
+        self.resource = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateResourceInput`](crate::operation::disassociate_resource::DisassociateResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_resource::DisassociateResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_resource::DisassociateResourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_resource::DisassociateResourceInput {
-                application: self.application,
-                resource_type: self.resource_type,
-                resource: self.resource,
-            },
+                application: self.application
+                ,
+                resource_type: self.resource_type
+                ,
+                resource: self.resource
+                ,
+            }
         )
     }
 }
+

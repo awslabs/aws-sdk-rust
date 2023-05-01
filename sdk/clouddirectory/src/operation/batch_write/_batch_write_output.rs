@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchWriteOutput {
+pub struct BatchWriteOutput  {
     /// <p>A list of all the responses for each batch write.</p>
     #[doc(hidden)]
     pub responses: std::option::Option<std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
@@ -10,15 +10,15 @@ pub struct BatchWriteOutput {
 }
 impl BatchWriteOutput {
     /// <p>A list of all the responses for each batch write.</p>
-    pub fn responses(&self) -> std::option::Option<&[crate::types::BatchWriteOperationResponse]> {
+    pub fn responses(&self) -> std::option::Option<& [crate::types::BatchWriteOperationResponse]> {
         self.responses.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchWriteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchWriteOutput {
     /// Creates a new builder-style object to manufacture [`BatchWriteOutput`](crate::operation::batch_write::BatchWriteOutput).
     pub fn builder() -> crate::operation::batch_write::builders::BatchWriteOutputBuilder {
@@ -30,8 +30,7 @@ impl BatchWriteOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchWriteOutputBuilder {
-    pub(crate) responses:
-        std::option::Option<std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
+    pub(crate) responses: std::option::Option<std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
     _request_id: Option<String>,
 }
 impl BatchWriteOutputBuilder {
@@ -42,32 +41,30 @@ impl BatchWriteOutputBuilder {
     /// <p>A list of all the responses for each batch write.</p>
     pub fn responses(mut self, input: crate::types::BatchWriteOperationResponse) -> Self {
         let mut v = self.responses.unwrap_or_default();
-        v.push(input);
-        self.responses = Some(v);
-        self
+                        v.push(input);
+                        self.responses = Some(v);
+                        self
     }
     /// <p>A list of all the responses for each batch write.</p>
-    pub fn set_responses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchWriteOperationResponse>>,
-    ) -> Self {
-        self.responses = input;
-        self
+    pub fn set_responses(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchWriteOperationResponse>>) -> Self {
+        self.responses = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchWriteOutput`](crate::operation::batch_write::BatchWriteOutput).
     pub fn build(self) -> crate::operation::batch_write::BatchWriteOutput {
         crate::operation::batch_write::BatchWriteOutput {
-            responses: self.responses,
+            responses: self.responses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

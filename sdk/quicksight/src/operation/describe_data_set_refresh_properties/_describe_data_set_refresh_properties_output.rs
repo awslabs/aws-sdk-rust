@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSetRefreshPropertiesOutput {
+pub struct DescribeDataSetRefreshPropertiesOutput  {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DescribeDataSetRefreshPropertiesOutput {
 }
 impl DescribeDataSetRefreshPropertiesOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,20 +24,18 @@ impl DescribeDataSetRefreshPropertiesOutput {
         self.status
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        &self,
-    ) -> std::option::Option<&crate::types::DataSetRefreshProperties> {
+    pub fn data_set_refresh_properties(&self) -> std::option::Option<& crate::types::DataSetRefreshProperties> {
         self.data_set_refresh_properties.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDataSetRefreshPropertiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDataSetRefreshPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSetRefreshPropertiesOutput`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput).
-    pub fn builder() -> crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder {
         crate::operation::describe_data_set_refresh_properties::builders::DescribeDataSetRefreshPropertiesOutputBuilder::default()
     }
 }
@@ -48,8 +46,7 @@ impl DescribeDataSetRefreshPropertiesOutput {
 pub struct DescribeDataSetRefreshPropertiesOutputBuilder {
     pub(crate) request_id: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<i32>,
-    pub(crate) data_set_refresh_properties:
-        std::option::Option<crate::types::DataSetRefreshProperties>,
+    pub(crate) data_set_refresh_properties: std::option::Option<crate::types::DataSetRefreshProperties>,
     _request_id: Option<String>,
 }
 impl DescribeDataSetRefreshPropertiesOutputBuilder {
@@ -60,8 +57,7 @@ impl DescribeDataSetRefreshPropertiesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -70,36 +66,28 @@ impl DescribeDataSetRefreshPropertiesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn data_set_refresh_properties(
-        mut self,
-        input: crate::types::DataSetRefreshProperties,
-    ) -> Self {
+    pub fn data_set_refresh_properties(mut self, input: crate::types::DataSetRefreshProperties) -> Self {
         self.data_set_refresh_properties = Some(input);
         self
     }
     /// <p>The dataset refresh properties.</p>
-    pub fn set_data_set_refresh_properties(
-        mut self,
-        input: std::option::Option<crate::types::DataSetRefreshProperties>,
-    ) -> Self {
-        self.data_set_refresh_properties = input;
-        self
+    pub fn set_data_set_refresh_properties(mut self, input: std::option::Option<crate::types::DataSetRefreshProperties>) -> Self {
+        self.data_set_refresh_properties = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDataSetRefreshPropertiesOutput`](crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput).
-    pub fn build(self) -> crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput{
+    pub fn build(self) -> crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput {
         crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput {
             request_id: self.request_id
             ,
@@ -112,3 +100,4 @@ impl DescribeDataSetRefreshPropertiesOutputBuilder {
         }
     }
 }
+

@@ -3,16 +3,16 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceRegionsInput {
-    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
+pub struct DescribeSourceRegionsInput  {
+    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -24,34 +24,32 @@ pub struct DescribeSourceRegionsInput {
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeSourceRegionsInput {
-    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
+    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li> 
     /// </ul>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
 impl DescribeSourceRegionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder {
         crate::operation::describe_source_regions::builders::DescribeSourceRegionsInputBuilder::default()
     }
 }
@@ -66,37 +64,35 @@ pub struct DescribeSourceRegionsInputBuilder {
     pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
 }
 impl DescribeSourceRegionsInputBuilder {
-    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
+    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li> 
     /// </ul>
     pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.region_name = Some(input.into());
         self
     }
-    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li>
+    /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must specify a valid Amazon Web Services Region name.</p> </li> 
     /// </ul>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input;
-        self
+        self.region_name = input; self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +101,7 @@ impl DescribeSourceRegionsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -115,32 +110,28 @@ impl DescribeSourceRegionsInputBuilder {
     /// <p>This parameter isn't currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSourceRegionsInput`](crate::operation::describe_source_regions::DescribeSourceRegionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_source_regions::DescribeSourceRegionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_source_regions::DescribeSourceRegionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_source_regions::DescribeSourceRegionsInput {
-                region_name: self.region_name,
-                max_records: self.max_records,
-                marker: self.marker,
-                filters: self.filters,
-            },
+                region_name: self.region_name
+                ,
+                max_records: self.max_records
+                ,
+                marker: self.marker
+                ,
+                filters: self.filters
+                ,
+            }
         )
     }
 }
+

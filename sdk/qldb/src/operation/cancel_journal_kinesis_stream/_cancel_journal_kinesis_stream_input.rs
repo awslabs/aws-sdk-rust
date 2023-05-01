@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJournalKinesisStreamInput {
+pub struct CancelJournalKinesisStreamInput  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct CancelJournalKinesisStreamInput {
 }
 impl CancelJournalKinesisStreamInput {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> std::option::Option<& str> {
         self.ledger_name.as_deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
 }
 impl CancelJournalKinesisStreamInput {
     /// Creates a new builder-style object to manufacture [`CancelJournalKinesisStreamInput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput).
-    pub fn builder() -> crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder{
+    pub fn builder() -> crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder {
         crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl CancelJournalKinesisStreamInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ledger_name = input;
-        self
+        self.ledger_name = input; self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl CancelJournalKinesisStreamInputBuilder {
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelJournalKinesisStreamInput`](crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamInput {
-                ledger_name: self.ledger_name,
-                stream_id: self.stream_id,
-            },
+                ledger_name: self.ledger_name
+                ,
+                stream_id: self.stream_id
+                ,
+            }
         )
     }
 }
+

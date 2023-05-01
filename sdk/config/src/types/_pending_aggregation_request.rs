@@ -3,7 +3,7 @@
 /// <p>An object that represents the account ID and region of an aggregator account that is requesting authorization but is not yet authorized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingAggregationRequest {
+pub struct PendingAggregationRequest  {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     #[doc(hidden)]
     pub requester_account_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PendingAggregationRequest {
 }
 impl PendingAggregationRequest {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn requester_account_id(&self) -> std::option::Option<&str> {
+    pub fn requester_account_id(&self) -> std::option::Option<& str> {
         self.requester_account_id.as_deref()
     }
     /// <p>The region requesting to aggregate data. </p>
-    pub fn requester_aws_region(&self) -> std::option::Option<&str> {
+    pub fn requester_aws_region(&self) -> std::option::Option<& str> {
         self.requester_aws_region.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl PendingAggregationRequestBuilder {
         self
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn set_requester_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.requester_account_id = input;
-        self
+    pub fn set_requester_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.requester_account_id = input; self
     }
     /// <p>The region requesting to aggregate data. </p>
     pub fn requester_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl PendingAggregationRequestBuilder {
         self
     }
     /// <p>The region requesting to aggregate data. </p>
-    pub fn set_requester_aws_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.requester_aws_region = input;
-        self
+    pub fn set_requester_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.requester_aws_region = input; self
     }
     /// Consumes the builder and constructs a [`PendingAggregationRequest`](crate::types::PendingAggregationRequest).
     pub fn build(self) -> crate::types::PendingAggregationRequest {
         crate::types::PendingAggregationRequest {
-            requester_account_id: self.requester_account_id,
-            requester_aws_region: self.requester_aws_region,
+            requester_account_id: self.requester_account_id
+            ,
+            requester_aws_region: self.requester_aws_region
+            ,
         }
     }
 }
+

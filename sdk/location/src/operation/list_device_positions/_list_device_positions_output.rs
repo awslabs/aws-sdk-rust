@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevicePositionsOutput {
+pub struct ListDevicePositionsOutput  {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     #[doc(hidden)]
     pub entries: std::option::Option<std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
@@ -13,27 +13,23 @@ pub struct ListDevicePositionsOutput {
 }
 impl ListDevicePositionsOutput {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    pub fn entries(
-        &self,
-    ) -> std::option::Option<&[crate::types::ListDevicePositionsResponseEntry]> {
+    pub fn entries(&self) -> std::option::Option<& [crate::types::ListDevicePositionsResponseEntry]> {
         self.entries.as_deref()
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDevicePositionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDevicePositionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicePositionsOutput`](crate::operation::list_device_positions::ListDevicePositionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder {
-        crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder {
+        crate::operation::list_device_positions::builders::ListDevicePositionsOutputBuilder::default()
     }
 }
 
@@ -41,8 +37,7 @@ impl ListDevicePositionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDevicePositionsOutputBuilder {
-    pub(crate) entries:
-        std::option::Option<std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
+    pub(crate) entries: std::option::Option<std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +49,13 @@ impl ListDevicePositionsOutputBuilder {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
     pub fn entries(mut self, input: crate::types::ListDevicePositionsResponseEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-        v.push(input);
-        self.entries = Some(v);
-        self
+                        v.push(input);
+                        self.entries = Some(v);
+                        self
     }
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
-    pub fn set_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>,
-    ) -> Self {
-        self.entries = input;
-        self
+    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListDevicePositionsResponseEntry>>) -> Self {
+        self.entries = input; self
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,24 +64,26 @@ impl ListDevicePositionsOutputBuilder {
     }
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDevicePositionsOutput`](crate::operation::list_device_positions::ListDevicePositionsOutput).
     pub fn build(self) -> crate::operation::list_device_positions::ListDevicePositionsOutput {
         crate::operation::list_device_positions::ListDevicePositionsOutput {
-            entries: self.entries,
-            next_token: self.next_token,
+            entries: self.entries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

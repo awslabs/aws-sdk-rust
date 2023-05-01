@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon Lookout for Vision model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelMetadata {
+pub struct ModelMetadata  {
     /// <p>The unix timestamp for the date and time that the model was created. </p>
     #[doc(hidden)]
     pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -28,31 +28,31 @@ pub struct ModelMetadata {
 }
 impl ModelMetadata {
     /// <p>The unix timestamp for the date and time that the model was created. </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> std::option::Option<& str> {
         self.model_version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The description for the model.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the model.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ModelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>The status message for the model.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
-    pub fn performance(&self) -> std::option::Option<&crate::types::ModelPerformance> {
+    pub fn performance(&self) -> std::option::Option<& crate::types::ModelPerformance> {
         self.performance.as_ref()
     }
 }
@@ -82,12 +82,8 @@ impl ModelMetadataBuilder {
         self
     }
     /// <p>The unix timestamp for the date and time that the model was created. </p>
-    pub fn set_creation_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_timestamp = input;
-        self
+    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_timestamp = input; self
     }
     /// <p>The version of the model.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +92,7 @@ impl ModelMetadataBuilder {
     }
     /// <p>The version of the model.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input;
-        self
+        self.model_version = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +101,7 @@ impl ModelMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the model.</p>
     pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The description for the model.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +110,7 @@ impl ModelMetadataBuilder {
     }
     /// <p>The description for the model.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The status of the model.</p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
@@ -126,8 +119,7 @@ impl ModelMetadataBuilder {
     }
     /// <p>The status of the model.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The status message for the model.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +128,7 @@ impl ModelMetadataBuilder {
     }
     /// <p>The status message for the model.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
     pub fn performance(mut self, input: crate::types::ModelPerformance) -> Self {
@@ -145,23 +136,27 @@ impl ModelMetadataBuilder {
         self
     }
     /// <p>Performance metrics for the model. Not available until training has successfully completed.</p>
-    pub fn set_performance(
-        mut self,
-        input: std::option::Option<crate::types::ModelPerformance>,
-    ) -> Self {
-        self.performance = input;
-        self
+    pub fn set_performance(mut self, input: std::option::Option<crate::types::ModelPerformance>) -> Self {
+        self.performance = input; self
     }
     /// Consumes the builder and constructs a [`ModelMetadata`](crate::types::ModelMetadata).
     pub fn build(self) -> crate::types::ModelMetadata {
         crate::types::ModelMetadata {
-            creation_timestamp: self.creation_timestamp,
-            model_version: self.model_version,
-            model_arn: self.model_arn,
-            description: self.description,
-            status: self.status,
-            status_message: self.status_message,
-            performance: self.performance,
+            creation_timestamp: self.creation_timestamp
+            ,
+            model_version: self.model_version
+            ,
+            model_arn: self.model_arn
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            performance: self.performance
+            ,
         }
     }
 }
+

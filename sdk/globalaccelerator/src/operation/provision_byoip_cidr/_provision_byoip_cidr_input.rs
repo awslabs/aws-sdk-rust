@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionByoipCidrInput {
+pub struct ProvisionByoipCidrInput  {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
@@ -12,20 +12,17 @@ pub struct ProvisionByoipCidrInput {
 }
 impl ProvisionByoipCidrInput {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> std::option::Option<& str> {
         self.cidr.as_deref()
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
-    pub fn cidr_authorization_context(
-        &self,
-    ) -> std::option::Option<&crate::types::CidrAuthorizationContext> {
+    pub fn cidr_authorization_context(&self) -> std::option::Option<& crate::types::CidrAuthorizationContext> {
         self.cidr_authorization_context.as_ref()
     }
 }
 impl ProvisionByoipCidrInput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
-    pub fn builder(
-    ) -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
+    pub fn builder() -> crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder {
         crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder::default()
     }
 }
@@ -35,8 +32,7 @@ impl ProvisionByoipCidrInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ProvisionByoipCidrInputBuilder {
     pub(crate) cidr: std::option::Option<std::string::String>,
-    pub(crate) cidr_authorization_context:
-        std::option::Option<crate::types::CidrAuthorizationContext>,
+    pub(crate) cidr_authorization_context: std::option::Option<crate::types::CidrAuthorizationContext>,
 }
 impl ProvisionByoipCidrInputBuilder {
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
@@ -46,37 +42,27 @@ impl ProvisionByoipCidrInputBuilder {
     }
     /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this or another Region.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input;
-        self
+        self.cidr = input; self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
-    pub fn cidr_authorization_context(
-        mut self,
-        input: crate::types::CidrAuthorizationContext,
-    ) -> Self {
+    pub fn cidr_authorization_context(mut self, input: crate::types::CidrAuthorizationContext) -> Self {
         self.cidr_authorization_context = Some(input);
         self
     }
     /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP. </p>
-    pub fn set_cidr_authorization_context(
-        mut self,
-        input: std::option::Option<crate::types::CidrAuthorizationContext>,
-    ) -> Self {
-        self.cidr_authorization_context = input;
-        self
+    pub fn set_cidr_authorization_context(mut self, input: std::option::Option<crate::types::CidrAuthorizationContext>) -> Self {
+        self.cidr_authorization_context = input; self
     }
     /// Consumes the builder and constructs a [`ProvisionByoipCidrInput`](crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::provision_byoip_cidr::ProvisionByoipCidrInput {
-                cidr: self.cidr,
-                cidr_authorization_context: self.cidr_authorization_context,
-            },
+                cidr: self.cidr
+                ,
+                cidr_authorization_context: self.cidr_authorization_context
+                ,
+            }
         )
     }
 }
+

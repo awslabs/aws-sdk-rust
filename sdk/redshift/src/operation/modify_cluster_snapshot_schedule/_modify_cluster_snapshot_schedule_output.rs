@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterSnapshotScheduleOutput {
+pub struct ModifyClusterSnapshotScheduleOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ModifyClusterSnapshotScheduleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyClusterSnapshotScheduleOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput).
-    pub fn builder() -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleOutputBuilder{
+    pub fn builder() -> crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleOutputBuilder {
         crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleOutputBuilder::default()
     }
 }
@@ -25,21 +25,19 @@ pub struct ModifyClusterSnapshotScheduleOutputBuilder {
 }
 impl ModifyClusterSnapshotScheduleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyClusterSnapshotScheduleOutput`](crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput
-    {
+    pub fn build(self) -> crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput {
         crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotScheduleOutput {
             _request_id: self._request_id,
         }
     }
 }
+

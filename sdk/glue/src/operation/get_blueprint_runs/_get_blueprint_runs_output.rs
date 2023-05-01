@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBlueprintRunsOutput {
+pub struct GetBlueprintRunsOutput  {
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
     #[doc(hidden)]
     pub blueprint_runs: std::option::Option<std::vec::Vec<crate::types::BlueprintRun>>,
@@ -13,23 +13,22 @@ pub struct GetBlueprintRunsOutput {
 }
 impl GetBlueprintRunsOutput {
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-    pub fn blueprint_runs(&self) -> std::option::Option<&[crate::types::BlueprintRun]> {
+    pub fn blueprint_runs(&self) -> std::option::Option<& [crate::types::BlueprintRun]> {
         self.blueprint_runs.as_deref()
     }
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetBlueprintRunsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetBlueprintRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetBlueprintRunsOutput`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput).
-    pub fn builder() -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_blueprint_runs::builders::GetBlueprintRunsOutputBuilder {
         crate::operation::get_blueprint_runs::builders::GetBlueprintRunsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl GetBlueprintRunsOutputBuilder {
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
     pub fn blueprint_runs(mut self, input: crate::types::BlueprintRun) -> Self {
         let mut v = self.blueprint_runs.unwrap_or_default();
-        v.push(input);
-        self.blueprint_runs = Some(v);
-        self
+                        v.push(input);
+                        self.blueprint_runs = Some(v);
+                        self
     }
     /// <p>Returns a list of <code>BlueprintRun</code> objects.</p>
-    pub fn set_blueprint_runs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlueprintRun>>,
-    ) -> Self {
-        self.blueprint_runs = input;
-        self
+    pub fn set_blueprint_runs(mut self, input: std::option::Option<std::vec::Vec<crate::types::BlueprintRun>>) -> Self {
+        self.blueprint_runs = input; self
     }
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl GetBlueprintRunsOutputBuilder {
     }
     /// <p>A continuation token, if not all blueprint runs have been returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetBlueprintRunsOutput`](crate::operation::get_blueprint_runs::GetBlueprintRunsOutput).
     pub fn build(self) -> crate::operation::get_blueprint_runs::GetBlueprintRunsOutput {
         crate::operation::get_blueprint_runs::GetBlueprintRunsOutput {
-            blueprint_runs: self.blueprint_runs,
-            next_token: self.next_token,
+            blueprint_runs: self.blueprint_runs
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

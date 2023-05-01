@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IsMemberInGroupsOutput {
+pub struct IsMemberInGroupsOutput  {
     /// <p>A list containing the results of membership existence checks.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
@@ -10,19 +10,18 @@ pub struct IsMemberInGroupsOutput {
 }
 impl IsMemberInGroupsOutput {
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::GroupMembershipExistenceResult]> {
+    pub fn results(&self) -> std::option::Option<& [crate::types::GroupMembershipExistenceResult]> {
         self.results.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for IsMemberInGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl IsMemberInGroupsOutput {
     /// Creates a new builder-style object to manufacture [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder {
         crate::operation::is_member_in_groups::builders::IsMemberInGroupsOutputBuilder::default()
     }
 }
@@ -31,8 +30,7 @@ impl IsMemberInGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct IsMemberInGroupsOutputBuilder {
-    pub(crate) results:
-        std::option::Option<std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
+    pub(crate) results: std::option::Option<std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
     _request_id: Option<String>,
 }
 impl IsMemberInGroupsOutputBuilder {
@@ -43,32 +41,30 @@ impl IsMemberInGroupsOutputBuilder {
     /// <p>A list containing the results of membership existence checks.</p>
     pub fn results(mut self, input: crate::types::GroupMembershipExistenceResult) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = Some(v);
-        self
+                        v.push(input);
+                        self.results = Some(v);
+                        self
     }
     /// <p>A list containing the results of membership existence checks.</p>
-    pub fn set_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupMembershipExistenceResult>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupMembershipExistenceResult>>) -> Self {
+        self.results = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput).
     pub fn build(self) -> crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
         crate::operation::is_member_in_groups::IsMemberInGroupsOutput {
-            results: self.results,
+            results: self.results
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

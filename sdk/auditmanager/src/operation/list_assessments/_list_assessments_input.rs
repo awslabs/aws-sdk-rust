@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssessmentsInput {
+pub struct ListAssessmentsInput  {
     /// <p> The current status of the assessment.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AssessmentStatus>,
@@ -15,11 +15,11 @@ pub struct ListAssessmentsInput {
 }
 impl ListAssessmentsInput {
     /// <p> The current status of the assessment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AssessmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::AssessmentStatus> {
         self.status.as_ref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -49,12 +49,8 @@ impl ListAssessmentsInputBuilder {
         self
     }
     /// <p> The current status of the assessment.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::AssessmentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::AssessmentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,8 +59,7 @@ impl ListAssessmentsInputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,20 +68,20 @@ impl ListAssessmentsInputBuilder {
     }
     /// <p> Represents the maximum number of results on a page or for an API request call. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAssessmentsInput`](crate::operation::list_assessments::ListAssessmentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_assessments::ListAssessmentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_assessments::ListAssessmentsInput {
-            status: self.status,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_assessments::ListAssessmentsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_assessments::ListAssessmentsInput {
+                status: self.status
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

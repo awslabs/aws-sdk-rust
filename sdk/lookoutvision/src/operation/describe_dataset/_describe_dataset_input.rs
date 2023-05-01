@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetInput {
+pub struct DescribeDatasetInput  {
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeDatasetInput {
 }
 impl DescribeDatasetInput {
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
-    pub fn dataset_type(&self) -> std::option::Option<&str> {
+    pub fn dataset_type(&self) -> std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeDatasetInputBuilder {
     }
     /// <p>The name of the project that contains the dataset that you want to describe.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
     pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DescribeDatasetInputBuilder {
     }
     /// <p>The type of the dataset to describe. Specify <code>train</code> to describe the training dataset. Specify <code>test</code> to describe the test dataset. If you have a single dataset project, specify <code>train</code> </p>
     pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_dataset::DescribeDatasetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_dataset::DescribeDatasetInput {
-            project_name: self.project_name,
-            dataset_type: self.dataset_type,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_dataset::DescribeDatasetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_dataset::DescribeDatasetInput {
+                project_name: self.project_name
+                ,
+                dataset_type: self.dataset_type
+                ,
+            }
+        )
     }
 }
+

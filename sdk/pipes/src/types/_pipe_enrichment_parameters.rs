@@ -3,29 +3,27 @@
 /// <p>The parameters required to set up enrichment on your pipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeEnrichmentParameters {
+pub struct PipeEnrichmentParameters  {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     #[doc(hidden)]
     pub input_template: std::option::Option<std::string::String>,
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     #[doc(hidden)]
     pub http_parameters: std::option::Option<crate::types::PipeEnrichmentHttpParameters>,
 }
 impl PipeEnrichmentParameters {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn input_template(&self) -> std::option::Option<&str> {
+    pub fn input_template(&self) -> std::option::Option<& str> {
         self.input_template.as_deref()
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn http_parameters(
-        &self,
-    ) -> std::option::Option<&crate::types::PipeEnrichmentHttpParameters> {
+    pub fn http_parameters(&self) -> std::option::Option<& crate::types::PipeEnrichmentHttpParameters> {
         self.http_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for PipeEnrichmentParameters {
+impl  std::fmt::Debug for PipeEnrichmentParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeEnrichmentParameters");
         formatter.field("input_template", &"*** Sensitive Data Redacted ***");
@@ -55,29 +53,26 @@ impl PipeEnrichmentParametersBuilder {
     }
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub fn set_input_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_template = input;
-        self
+        self.input_template = input; self
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     pub fn http_parameters(mut self, input: crate::types::PipeEnrichmentHttpParameters) -> Self {
         self.http_parameters = Some(input);
         self
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn set_http_parameters(
-        mut self,
-        input: std::option::Option<crate::types::PipeEnrichmentHttpParameters>,
-    ) -> Self {
-        self.http_parameters = input;
-        self
+    pub fn set_http_parameters(mut self, input: std::option::Option<crate::types::PipeEnrichmentHttpParameters>) -> Self {
+        self.http_parameters = input; self
     }
     /// Consumes the builder and constructs a [`PipeEnrichmentParameters`](crate::types::PipeEnrichmentParameters).
     pub fn build(self) -> crate::types::PipeEnrichmentParameters {
         crate::types::PipeEnrichmentParameters {
-            input_template: self.input_template,
-            http_parameters: self.http_parameters,
+            input_template: self.input_template
+            ,
+            http_parameters: self.http_parameters
+            ,
         }
     }
 }
@@ -89,3 +84,4 @@ impl std::fmt::Debug for PipeEnrichmentParametersBuilder {
         formatter.finish()
     }
 }
+

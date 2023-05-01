@@ -3,7 +3,7 @@
 /// <p>Status information about an activity task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordActivityTaskHeartbeatOutput {
+pub struct RecordActivityTaskHeartbeatOutput  {
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     #[doc(hidden)]
     pub cancel_requested: bool,
@@ -16,13 +16,13 @@ impl RecordActivityTaskHeartbeatOutput {
     }
 }
 impl aws_http::request_id::RequestId for RecordActivityTaskHeartbeatOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RecordActivityTaskHeartbeatOutput {
     /// Creates a new builder-style object to manufacture [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
-    pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder{
+    pub fn builder() -> crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder {
         crate::operation::record_activity_task_heartbeat::builders::RecordActivityTaskHeartbeatOutputBuilder::default()
     }
 }
@@ -42,25 +42,25 @@ impl RecordActivityTaskHeartbeatOutputBuilder {
     }
     /// <p>Set to <code>true</code> if cancellation of the task is requested.</p>
     pub fn set_cancel_requested(mut self, input: std::option::Option<bool>) -> Self {
-        self.cancel_requested = input;
-        self
+        self.cancel_requested = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RecordActivityTaskHeartbeatOutput`](crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput {
+    pub fn build(self) -> crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput {
         crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput {
-            cancel_requested: self.cancel_requested.unwrap_or_default(),
+            cancel_requested: self.cancel_requested
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

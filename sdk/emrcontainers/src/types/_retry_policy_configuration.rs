@@ -3,7 +3,7 @@
 /// <p>The configuration of the retry policy that the job runs on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetryPolicyConfiguration {
+pub struct RetryPolicyConfiguration  {
     /// <p>The maximum number of attempts on the job's driver.</p>
     #[doc(hidden)]
     pub max_attempts: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl RetryPolicyConfigurationBuilder {
     }
     /// <p>The maximum number of attempts on the job's driver.</p>
     pub fn set_max_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_attempts = input;
-        self
+        self.max_attempts = input; self
     }
     /// Consumes the builder and constructs a [`RetryPolicyConfiguration`](crate::types::RetryPolicyConfiguration).
     pub fn build(self) -> crate::types::RetryPolicyConfiguration {
         crate::types::RetryPolicyConfiguration {
-            max_attempts: self.max_attempts,
+            max_attempts: self.max_attempts
+            ,
         }
     }
 }
+

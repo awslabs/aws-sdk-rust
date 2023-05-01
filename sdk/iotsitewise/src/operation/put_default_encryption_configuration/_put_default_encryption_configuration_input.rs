@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDefaultEncryptionConfigurationInput {
+pub struct PutDefaultEncryptionConfigurationInput  {
     /// <p>The type of encryption used for the encryption configuration.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::types::EncryptionType>,
@@ -12,17 +12,17 @@ pub struct PutDefaultEncryptionConfigurationInput {
 }
 impl PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 impl PutDefaultEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
-    pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder {
         crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         self
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn set_encryption_type(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionType>,
-    ) -> Self {
-        self.encryption_type = input;
-        self
+    pub fn set_encryption_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
+        self.encryption_type = input; self
     }
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,11 +51,10 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
     }
     /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationInput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationInput {
                 encryption_type: self.encryption_type
@@ -70,3 +65,4 @@ impl PutDefaultEncryptionConfigurationInputBuilder {
         )
     }
 }
+

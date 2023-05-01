@@ -3,7 +3,7 @@
 /// <p>A workflow run task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskListItem {
+pub struct TaskListItem  {
     /// <p>The task's ID.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -31,15 +31,15 @@ pub struct TaskListItem {
 }
 impl TaskListItem {
     /// <p>The task's ID.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The task's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TaskStatus> {
         self.status.as_ref()
     }
     /// <p>The task's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The task's CPU count.</p>
@@ -51,15 +51,15 @@ impl TaskListItem {
         self.memory
     }
     /// <p>When the task was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the task started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the task stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl TaskListItemBuilder {
     }
     /// <p>The task's ID.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// <p>The task's status.</p>
     pub fn status(mut self, input: crate::types::TaskStatus) -> Self {
@@ -101,8 +100,7 @@ impl TaskListItemBuilder {
     }
     /// <p>The task's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The task's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +109,7 @@ impl TaskListItemBuilder {
     }
     /// <p>The task's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The task's CPU count.</p>
     pub fn cpus(mut self, input: i32) -> Self {
@@ -121,8 +118,7 @@ impl TaskListItemBuilder {
     }
     /// <p>The task's CPU count.</p>
     pub fn set_cpus(mut self, input: std::option::Option<i32>) -> Self {
-        self.cpus = input;
-        self
+        self.cpus = input; self
     }
     /// <p>The task's memory use in gigabyes.</p>
     pub fn memory(mut self, input: i32) -> Self {
@@ -131,8 +127,7 @@ impl TaskListItemBuilder {
     }
     /// <p>The task's memory use in gigabyes.</p>
     pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory = input;
-        self
+        self.memory = input; self
     }
     /// <p>When the task was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,12 +135,8 @@ impl TaskListItemBuilder {
         self
     }
     /// <p>When the task was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>When the task started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,12 +144,8 @@ impl TaskListItemBuilder {
         self
     }
     /// <p>When the task started.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>When the task stopped.</p>
     pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,20 +154,28 @@ impl TaskListItemBuilder {
     }
     /// <p>When the task stopped.</p>
     pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input;
-        self
+        self.stop_time = input; self
     }
     /// Consumes the builder and constructs a [`TaskListItem`](crate::types::TaskListItem).
     pub fn build(self) -> crate::types::TaskListItem {
         crate::types::TaskListItem {
-            task_id: self.task_id,
-            status: self.status,
-            name: self.name,
-            cpus: self.cpus,
-            memory: self.memory,
-            creation_time: self.creation_time,
-            start_time: self.start_time,
-            stop_time: self.stop_time,
+            task_id: self.task_id
+            ,
+            status: self.status
+            ,
+            name: self.name
+            ,
+            cpus: self.cpus
+            ,
+            memory: self.memory
+            ,
+            creation_time: self.creation_time
+            ,
+            start_time: self.start_time
+            ,
+            stop_time: self.stop_time
+            ,
         }
     }
 }
+

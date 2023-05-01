@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDocumentClassifierInput {
+pub struct DeleteDocumentClassifierInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl DeleteDocumentClassifierInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+    pub fn document_classifier_arn(&self) -> std::option::Option<& str> {
         self.document_classifier_arn.as_deref()
     }
 }
 impl DeleteDocumentClassifierInput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierInput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierInput).
-    pub fn builder(
-    ) -> crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder {
         crate::operation::delete_document_classifier::builders::DeleteDocumentClassifierInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteDocumentClassifierInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-    pub fn set_document_classifier_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.document_classifier_arn = input;
-        self
+    pub fn set_document_classifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.document_classifier_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDocumentClassifierInput`](crate::operation::delete_document_classifier::DeleteDocumentClassifierInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_document_classifier::DeleteDocumentClassifierInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_document_classifier::DeleteDocumentClassifierInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_document_classifier::DeleteDocumentClassifierInput {
-                document_classifier_arn: self.document_classifier_arn,
-            },
+                document_classifier_arn: self.document_classifier_arn
+                ,
+            }
         )
     }
 }
+

@@ -3,20 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbSnapshotAttributesInput {
+pub struct DescribeDbSnapshotAttributesInput  {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     #[doc(hidden)]
     pub db_snapshot_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeDbSnapshotAttributesInput {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-    pub fn db_snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_snapshot_identifier(&self) -> std::option::Option<& str> {
         self.db_snapshot_identifier.as_deref()
     }
 }
 impl DescribeDbSnapshotAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotAttributesInput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput).
-    pub fn builder() -> crate::operation::describe_db_snapshot_attributes::builders::DescribeDbSnapshotAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_snapshot_attributes::builders::DescribeDbSnapshotAttributesInputBuilder {
         crate::operation::describe_db_snapshot_attributes::builders::DescribeDbSnapshotAttributesInputBuilder::default()
     }
 }
@@ -34,24 +34,17 @@ impl DescribeDbSnapshotAttributesInputBuilder {
         self
     }
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-    pub fn set_db_snapshot_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_snapshot_identifier = input;
-        self
+    pub fn set_db_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_snapshot_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDbSnapshotAttributesInput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput {
-                db_snapshot_identifier: self.db_snapshot_identifier,
-            },
+                db_snapshot_identifier: self.db_snapshot_identifier
+                ,
+            }
         )
     }
 }
+

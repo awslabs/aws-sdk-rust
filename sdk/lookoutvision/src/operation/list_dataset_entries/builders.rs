@@ -4,83 +4,56 @@ pub use crate::operation::list_dataset_entries::_list_dataset_entries_output::Li
 pub use crate::operation::list_dataset_entries::_list_dataset_entries_input::ListDatasetEntriesInputBuilder;
 
 /// Fluent builder constructing a request to `ListDatasetEntries`.
-///
-/// <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information for a single image, including the image location and the assigned label.</p>
+/// 
+/// <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information for a single image, including the image location and the assigned label.</p> 
 /// <p>This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDatasetEntriesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder,
-}
-impl ListDatasetEntriesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_dataset_entries::builders::ListDatasetEntriesInputBuilder
+            }
+impl ListDatasetEntriesFluentBuilder  {
     /// Creates a new `ListDatasetEntries`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_dataset_entries::ListDatasetEntries,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_dataset_entries::ListDatasetEntriesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_dataset_entries::ListDatasetEntries, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_dataset_entries::ListDatasetEntriesOutput, aws_smithy_http::result::SdkError<crate::operation::list_dataset_entries::ListDatasetEntriesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
-        crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator {
+                            crate::operation::list_dataset_entries::paginator::ListDatasetEntriesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The name of the project that contains the dataset that you want to list.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -127,10 +100,7 @@ impl ListDatasetEntriesFluentBuilder {
         self
     }
     /// <p>Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_before_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_before_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_before_creation_date(input);
         self
     }
@@ -140,10 +110,7 @@ impl ListDatasetEntriesFluentBuilder {
         self
     }
     /// <p>Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.</p>
-    pub fn set_after_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_after_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_after_creation_date(input);
         self
     }
@@ -173,11 +140,9 @@ impl ListDatasetEntriesFluentBuilder {
         self
     }
     /// <p>Perform a "contains" search on the values of the <code>source-ref</code> key within the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code> key value matches <i>*IMG_17*</i>.</p>
-    pub fn set_source_ref_contains(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_source_ref_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source_ref_contains(input);
         self
     }
 }
+

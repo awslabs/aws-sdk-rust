@@ -3,7 +3,7 @@
 /// <p>Summary information about a managed resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedResourceSummary {
+pub struct ManagedResourceSummary  {
     /// <p>Type of resource associated with a license.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
@@ -13,7 +13,7 @@ pub struct ManagedResourceSummary {
 }
 impl ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Number of resources associated with licenses.</p>
@@ -42,12 +42,8 @@ impl ManagedResourceSummaryBuilder {
         self
     }
     /// <p>Type of resource associated with a license.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>Number of resources associated with licenses.</p>
     pub fn association_count(mut self, input: i64) -> Self {
@@ -56,14 +52,16 @@ impl ManagedResourceSummaryBuilder {
     }
     /// <p>Number of resources associated with licenses.</p>
     pub fn set_association_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.association_count = input;
-        self
+        self.association_count = input; self
     }
     /// Consumes the builder and constructs a [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
     pub fn build(self) -> crate::types::ManagedResourceSummary {
         crate::types::ManagedResourceSummary {
-            resource_type: self.resource_type,
-            association_count: self.association_count,
+            resource_type: self.resource_type
+            ,
+            association_count: self.association_count
+            ,
         }
     }
 }
+

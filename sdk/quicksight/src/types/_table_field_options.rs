@@ -3,7 +3,7 @@
 /// <p>The field options for a table visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableFieldOptions {
+pub struct TableFieldOptions  {
     /// <p>The selected field options for the table field options.</p>
     #[doc(hidden)]
     pub selected_field_options: std::option::Option<std::vec::Vec<crate::types::TableFieldOption>>,
@@ -13,11 +13,11 @@ pub struct TableFieldOptions {
 }
 impl TableFieldOptions {
     /// <p>The selected field options for the table field options.</p>
-    pub fn selected_field_options(&self) -> std::option::Option<&[crate::types::TableFieldOption]> {
+    pub fn selected_field_options(&self) -> std::option::Option<& [crate::types::TableFieldOption]> {
         self.selected_field_options.as_deref()
     }
     /// <p>The order of field IDs of the field options for a table visual.</p>
-    pub fn order(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn order(&self) -> std::option::Option<& [std::string::String]> {
         self.order.as_deref()
     }
 }
@@ -32,8 +32,7 @@ impl TableFieldOptions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TableFieldOptionsBuilder {
-    pub(crate) selected_field_options:
-        std::option::Option<std::vec::Vec<crate::types::TableFieldOption>>,
+    pub(crate) selected_field_options: std::option::Option<std::vec::Vec<crate::types::TableFieldOption>>,
     pub(crate) order: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TableFieldOptionsBuilder {
@@ -44,17 +43,13 @@ impl TableFieldOptionsBuilder {
     /// <p>The selected field options for the table field options.</p>
     pub fn selected_field_options(mut self, input: crate::types::TableFieldOption) -> Self {
         let mut v = self.selected_field_options.unwrap_or_default();
-        v.push(input);
-        self.selected_field_options = Some(v);
-        self
+                        v.push(input);
+                        self.selected_field_options = Some(v);
+                        self
     }
     /// <p>The selected field options for the table field options.</p>
-    pub fn set_selected_field_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TableFieldOption>>,
-    ) -> Self {
-        self.selected_field_options = input;
-        self
+    pub fn set_selected_field_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::TableFieldOption>>) -> Self {
+        self.selected_field_options = input; self
     }
     /// Appends an item to `order`.
     ///
@@ -63,23 +58,22 @@ impl TableFieldOptionsBuilder {
     /// <p>The order of field IDs of the field options for a table visual.</p>
     pub fn order(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.order.unwrap_or_default();
-        v.push(input.into());
-        self.order = Some(v);
-        self
+                        v.push(input.into());
+                        self.order = Some(v);
+                        self
     }
     /// <p>The order of field IDs of the field options for a table visual.</p>
-    pub fn set_order(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.order = input;
-        self
+    pub fn set_order(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.order = input; self
     }
     /// Consumes the builder and constructs a [`TableFieldOptions`](crate::types::TableFieldOptions).
     pub fn build(self) -> crate::types::TableFieldOptions {
         crate::types::TableFieldOptions {
-            selected_field_options: self.selected_field_options,
-            order: self.order,
+            selected_field_options: self.selected_field_options
+            ,
+            order: self.order
+            ,
         }
     }
 }
+

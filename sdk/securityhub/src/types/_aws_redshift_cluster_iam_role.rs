@@ -3,8 +3,8 @@
 /// <p>An IAM role that the cluster can use to access other Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRedshiftClusterIamRole {
-    /// <p>The status of the IAM role's association with the cluster.</p>
+pub struct AwsRedshiftClusterIamRole  {
+    /// <p>The status of the IAM role's association with the cluster.</p> 
     /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     #[doc(hidden)]
     pub apply_status: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct AwsRedshiftClusterIamRole {
     pub iam_role_arn: std::option::Option<std::string::String>,
 }
 impl AwsRedshiftClusterIamRole {
-    /// <p>The status of the IAM role's association with the cluster.</p>
+    /// <p>The status of the IAM role's association with the cluster.</p> 
     /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
-    pub fn apply_status(&self) -> std::option::Option<&str> {
+    pub fn apply_status(&self) -> std::option::Option<& str> {
         self.apply_status.as_deref()
     }
     /// <p>The ARN of the IAM role.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
@@ -38,17 +38,16 @@ pub struct AwsRedshiftClusterIamRoleBuilder {
     pub(crate) iam_role_arn: std::option::Option<std::string::String>,
 }
 impl AwsRedshiftClusterIamRoleBuilder {
-    /// <p>The status of the IAM role's association with the cluster.</p>
+    /// <p>The status of the IAM role's association with the cluster.</p> 
     /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub fn apply_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.apply_status = Some(input.into());
         self
     }
-    /// <p>The status of the IAM role's association with the cluster.</p>
+    /// <p>The status of the IAM role's association with the cluster.</p> 
     /// <p>Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> </p>
     pub fn set_apply_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.apply_status = input;
-        self
+        self.apply_status = input; self
     }
     /// <p>The ARN of the IAM role.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,14 +56,16 @@ impl AwsRedshiftClusterIamRoleBuilder {
     }
     /// <p>The ARN of the IAM role.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// Consumes the builder and constructs a [`AwsRedshiftClusterIamRole`](crate::types::AwsRedshiftClusterIamRole).
     pub fn build(self) -> crate::types::AwsRedshiftClusterIamRole {
         crate::types::AwsRedshiftClusterIamRole {
-            apply_status: self.apply_status,
-            iam_role_arn: self.iam_role_arn,
+            apply_status: self.apply_status
+            ,
+            iam_role_arn: self.iam_role_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetWorkflowsInput {
+pub struct BatchGetWorkflowsInput  {
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12,7 +12,7 @@ pub struct BatchGetWorkflowsInput {
 }
 impl BatchGetWorkflowsInput {
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
@@ -22,8 +22,7 @@ impl BatchGetWorkflowsInput {
 }
 impl BatchGetWorkflowsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder {
         crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder::default()
     }
 }
@@ -43,17 +42,13 @@ impl BatchGetWorkflowsInputBuilder {
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = Some(v);
-        self
+                        v.push(input.into());
+                        self.names = Some(v);
+                        self
     }
     /// <p>A list of workflow names, which may be the names returned from the <code>ListWorkflows</code> operation.</p>
-    pub fn set_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
@@ -62,21 +57,18 @@ impl BatchGetWorkflowsInputBuilder {
     }
     /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
     pub fn set_include_graph(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_graph = input;
-        self
+        self.include_graph = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetWorkflowsInput`](crate::operation::batch_get_workflows::BatchGetWorkflowsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_workflows::BatchGetWorkflowsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_get_workflows::BatchGetWorkflowsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_get_workflows::BatchGetWorkflowsInput {
-                names: self.names,
-                include_graph: self.include_graph,
-            },
+                names: self.names
+                ,
+                include_graph: self.include_graph
+                ,
+            }
         )
     }
 }
+

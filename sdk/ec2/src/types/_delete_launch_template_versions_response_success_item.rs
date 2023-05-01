@@ -3,7 +3,7 @@
 /// <p>Describes a launch template version that was successfully deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchTemplateVersionsResponseSuccessItem {
+pub struct DeleteLaunchTemplateVersionsResponseSuccessItem  {
     /// <p>The ID of the launch template.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct DeleteLaunchTemplateVersionsResponseSuccessItem {
 }
 impl DeleteLaunchTemplateVersionsResponseSuccessItem {
     /// <p>The ID of the launch template.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version number of the launch template.</p>
@@ -30,8 +30,7 @@ impl DeleteLaunchTemplateVersionsResponseSuccessItem {
 }
 impl DeleteLaunchTemplateVersionsResponseSuccessItem {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateVersionsResponseSuccessItem`](crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem).
-    pub fn builder(
-    ) -> crate::types::builders::DeleteLaunchTemplateVersionsResponseSuccessItemBuilder {
+    pub fn builder() -> crate::types::builders::DeleteLaunchTemplateVersionsResponseSuccessItemBuilder {
         crate::types::builders::DeleteLaunchTemplateVersionsResponseSuccessItemBuilder::default()
     }
 }
@@ -51,12 +50,8 @@ impl DeleteLaunchTemplateVersionsResponseSuccessItemBuilder {
         self
     }
     /// <p>The ID of the launch template.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_id = input;
-        self
+    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_id = input; self
     }
     /// <p>The name of the launch template.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,12 +59,8 @@ impl DeleteLaunchTemplateVersionsResponseSuccessItemBuilder {
         self
     }
     /// <p>The name of the launch template.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_name = input;
-        self
+    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_name = input; self
     }
     /// <p>The version number of the launch template.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -78,15 +69,18 @@ impl DeleteLaunchTemplateVersionsResponseSuccessItemBuilder {
     }
     /// <p>The version number of the launch template.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateVersionsResponseSuccessItem`](crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem).
     pub fn build(self) -> crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem {
         crate::types::DeleteLaunchTemplateVersionsResponseSuccessItem {
-            launch_template_id: self.launch_template_id,
-            launch_template_name: self.launch_template_name,
-            version_number: self.version_number,
+            launch_template_id: self.launch_template_id
+            ,
+            launch_template_name: self.launch_template_name
+            ,
+            version_number: self.version_number
+            ,
         }
     }
 }
+

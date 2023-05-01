@@ -20,14 +20,8 @@ impl PositionCoordinates {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CartesianCoordinates`](crate::types::PositionCoordinates::CartesianCoordinates), extracting the inner [`CartesianCoordinates`](crate::types::CartesianCoordinates).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_cartesian_coordinates(
-        &self,
-    ) -> std::result::Result<&crate::types::CartesianCoordinates, &Self> {
-        if let PositionCoordinates::CartesianCoordinates(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_cartesian_coordinates(&self) -> std::result::Result<&crate::types::CartesianCoordinates, &Self> {
+        if let PositionCoordinates::CartesianCoordinates(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`CartesianCoordinates`](crate::types::PositionCoordinates::CartesianCoordinates).
     pub fn is_cartesian_coordinates(&self) -> bool {
@@ -38,3 +32,4 @@ impl PositionCoordinates {
         matches!(self, Self::Unknown)
     }
 }
+

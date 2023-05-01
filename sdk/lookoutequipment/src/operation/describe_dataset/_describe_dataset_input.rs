@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetInput {
+pub struct DescribeDatasetInput  {
     /// <p>The name of the dataset to be described. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetInput {
     /// <p>The name of the dataset to be described. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeDatasetInputBuilder {
     }
     /// <p>The name of the dataset to be described. </p>
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_dataset::DescribeDatasetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_dataset::DescribeDatasetInput {
-            dataset_name: self.dataset_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_dataset::DescribeDatasetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_dataset::DescribeDatasetInput {
+                dataset_name: self.dataset_name
+                ,
+            }
+        )
     }
 }
+

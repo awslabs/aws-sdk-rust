@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopInstanceInput {
+pub struct StopInstanceInput  {
     /// <p>The name of the instance (a virtual private server) to stop.</p>
     #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
-    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
-    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important> 
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p> 
     /// </important>
     #[doc(hidden)]
     pub force: std::option::Option<bool>,
 }
 impl StopInstanceInput {
     /// <p>The name of the instance (a virtual private server) to stop.</p>
-    pub fn instance_name(&self) -> std::option::Option<&str> {
+    pub fn instance_name(&self) -> std::option::Option<& str> {
         self.instance_name.as_deref()
     }
-    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
-    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important> 
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p> 
     /// </important>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
@@ -46,33 +46,31 @@ impl StopInstanceInputBuilder {
     }
     /// <p>The name of the instance (a virtual private server) to stop.</p>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input;
-        self
+        self.instance_name = input; self
     }
-    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
-    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important> 
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p> 
     /// </important>
     pub fn force(mut self, input: bool) -> Self {
         self.force = Some(input);
         self
     }
-    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important>
-    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p>
+    /// <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a <code>stopping</code> state to stop.</p> <important> 
+    /// <p>Only use the <code>force</code> parameter if your instance is stuck in the <code>stopping</code> state. In any other state, your instance should stop normally without adding this parameter to your API request.</p> 
     /// </important>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input;
-        self
+        self.force = input; self
     }
     /// Consumes the builder and constructs a [`StopInstanceInput`](crate::operation::stop_instance::StopInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_instance::StopInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_instance::StopInstanceInput {
-            instance_name: self.instance_name,
-            force: self.force,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_instance::StopInstanceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_instance::StopInstanceInput {
+                instance_name: self.instance_name
+                ,
+                force: self.force
+                ,
+            }
+        )
     }
 }
+

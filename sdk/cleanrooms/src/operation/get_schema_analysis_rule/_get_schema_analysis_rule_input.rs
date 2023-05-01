@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaAnalysisRuleInput {
+pub struct GetSchemaAnalysisRuleInput  {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct GetSchemaAnalysisRuleInput {
 }
 impl GetSchemaAnalysisRuleInput {
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AnalysisRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::AnalysisRuleType> {
         self.r#type.as_ref()
     }
 }
 impl GetSchemaAnalysisRuleInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
-    pub fn builder(
-    ) -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder {
         crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl GetSchemaAnalysisRuleInputBuilder {
         self
     }
     /// <p>A unique identifier for the collaboration that the schema belongs to. Currently accepts a collaboration ID.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.collaboration_identifier = input;
-        self
+    pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.collaboration_identifier = input; self
     }
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl GetSchemaAnalysisRuleInputBuilder {
     }
     /// <p>The name of the schema to retrieve the analysis rule for.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
     pub fn r#type(mut self, input: crate::types::AnalysisRuleType) -> Self {
@@ -75,22 +68,20 @@ impl GetSchemaAnalysisRuleInputBuilder {
     }
     /// <p>The type of the schema analysis rule to retrieve. Schema analysis rules are uniquely identified by a combination of the collaboration, the schema name, and their type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::AnalysisRuleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`GetSchemaAnalysisRuleInput`](crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleInput {
-                collaboration_identifier: self.collaboration_identifier,
-                name: self.name,
-                r#type: self.r#type,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+            }
         )
     }
 }
+

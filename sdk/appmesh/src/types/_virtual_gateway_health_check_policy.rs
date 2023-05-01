@@ -3,7 +3,7 @@
 /// <p>An object that represents the health check policy for a virtual gateway's listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayHealthCheckPolicy {
+pub struct VirtualGatewayHealthCheckPolicy  {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
     pub timeout_millis: std::option::Option<i64>,
@@ -36,7 +36,7 @@ impl VirtualGatewayHealthCheckPolicy {
         self.interval_millis
     }
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::VirtualGatewayPortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::VirtualGatewayPortProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
@@ -44,7 +44,7 @@ impl VirtualGatewayHealthCheckPolicy {
         self.port
     }
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
@@ -83,8 +83,7 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     }
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     pub fn set_timeout_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.timeout_millis = input;
-        self
+        self.timeout_millis = input; self
     }
     /// <p>The time period in milliseconds between each health check execution.</p>
     pub fn interval_millis(mut self, input: i64) -> Self {
@@ -93,8 +92,7 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     }
     /// <p>The time period in milliseconds between each health check execution.</p>
     pub fn set_interval_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.interval_millis = input;
-        self
+        self.interval_millis = input; self
     }
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
     pub fn protocol(mut self, input: crate::types::VirtualGatewayPortProtocol) -> Self {
@@ -102,12 +100,8 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
         self
     }
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-    pub fn set_protocol(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayPortProtocol>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: std::option::Option<crate::types::VirtualGatewayPortProtocol>) -> Self {
+        self.protocol = input; self
     }
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -116,8 +110,7 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     }
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +119,7 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     }
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input;
-        self
+        self.path = input; self
     }
     /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
     pub fn healthy_threshold(mut self, input: i32) -> Self {
@@ -136,8 +128,7 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     }
     /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
     pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.healthy_threshold = input;
-        self
+        self.healthy_threshold = input; self
     }
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
     pub fn unhealthy_threshold(mut self, input: i32) -> Self {
@@ -146,19 +137,29 @@ impl VirtualGatewayHealthCheckPolicyBuilder {
     }
     /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
     pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.unhealthy_threshold = input;
-        self
+        self.unhealthy_threshold = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayHealthCheckPolicy`](crate::types::VirtualGatewayHealthCheckPolicy).
     pub fn build(self) -> crate::types::VirtualGatewayHealthCheckPolicy {
         crate::types::VirtualGatewayHealthCheckPolicy {
-            timeout_millis: self.timeout_millis,
-            interval_millis: self.interval_millis,
-            protocol: self.protocol,
-            port: self.port.unwrap_or_default(),
-            path: self.path,
-            healthy_threshold: self.healthy_threshold.unwrap_or_default(),
-            unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
+            timeout_millis: self.timeout_millis
+            ,
+            interval_millis: self.interval_millis
+            ,
+            protocol: self.protocol
+            ,
+            port: self.port
+                .unwrap_or_default()
+            ,
+            path: self.path
+            ,
+            healthy_threshold: self.healthy_threshold
+                .unwrap_or_default()
+            ,
+            unhealthy_threshold: self.unhealthy_threshold
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

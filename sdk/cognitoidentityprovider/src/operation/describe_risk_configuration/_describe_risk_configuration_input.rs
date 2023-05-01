@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeRiskConfigurationInput {
+pub struct DescribeRiskConfigurationInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DescribeRiskConfigurationInput {
 }
 impl DescribeRiskConfigurationInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The app client ID.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeRiskConfigurationInput {
+impl  std::fmt::Debug for DescribeRiskConfigurationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeRiskConfigurationInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -30,7 +30,7 @@ impl std::fmt::Debug for DescribeRiskConfigurationInput {
 }
 impl DescribeRiskConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeRiskConfigurationInput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput).
-    pub fn builder() -> crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder {
         crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeRiskConfigurationInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The app client ID.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,21 +59,17 @@ impl DescribeRiskConfigurationInputBuilder {
     }
     /// <p>The app client ID.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeRiskConfigurationInput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_risk_configuration::DescribeRiskConfigurationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                client_id: self.client_id
+                ,
+            }
         )
     }
 }
@@ -86,3 +81,4 @@ impl std::fmt::Debug for DescribeRiskConfigurationInputBuilder {
         formatter.finish()
     }
 }
+

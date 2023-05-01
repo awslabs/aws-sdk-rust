@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSensitiveDataOccurrencesInput {
+pub struct GetSensitiveDataOccurrencesInput  {
     /// <p>The unique identifier for the finding.</p>
     #[doc(hidden)]
     pub finding_id: std::option::Option<std::string::String>,
 }
 impl GetSensitiveDataOccurrencesInput {
     /// <p>The unique identifier for the finding.</p>
-    pub fn finding_id(&self) -> std::option::Option<&str> {
+    pub fn finding_id(&self) -> std::option::Option<& str> {
         self.finding_id.as_deref()
     }
 }
 impl GetSensitiveDataOccurrencesInput {
     /// Creates a new builder-style object to manufacture [`GetSensitiveDataOccurrencesInput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput).
-    pub fn builder() -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder{
+    pub fn builder() -> crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder {
         crate::operation::get_sensitive_data_occurrences::builders::GetSensitiveDataOccurrencesInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl GetSensitiveDataOccurrencesInputBuilder {
     }
     /// <p>The unique identifier for the finding.</p>
     pub fn set_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.finding_id = input;
-        self
+        self.finding_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSensitiveDataOccurrencesInput`](crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_sensitive_data_occurrences::GetSensitiveDataOccurrencesInput {
-                finding_id: self.finding_id,
-            },
+                finding_id: self.finding_id
+                ,
+            }
         )
     }
 }
+

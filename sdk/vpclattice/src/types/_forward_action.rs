@@ -3,16 +3,16 @@
 /// <p>Describes a forward action. You can use forward actions to route requests to one or more target groups. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForwardAction {
-    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p>
+pub struct ForwardAction  {
+    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p> 
     /// <p>The default value is 1. This means that if only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.</p>
     #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::types::WeightedTargetGroup>>,
 }
 impl ForwardAction {
-    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p>
+    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p> 
     /// <p>The default value is 1. This means that if only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.</p>
-    pub fn target_groups(&self) -> std::option::Option<&[crate::types::WeightedTargetGroup]> {
+    pub fn target_groups(&self) -> std::option::Option<& [crate::types::WeightedTargetGroup]> {
         self.target_groups.as_deref()
     }
 }
@@ -34,27 +34,25 @@ impl ForwardActionBuilder {
     ///
     /// To override the contents of this collection use [`set_target_groups`](Self::set_target_groups).
     ///
-    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p>
+    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p> 
     /// <p>The default value is 1. This means that if only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.</p>
     pub fn target_groups(mut self, input: crate::types::WeightedTargetGroup) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
-        v.push(input);
-        self.target_groups = Some(v);
-        self
+                        v.push(input);
+                        self.target_groups = Some(v);
+                        self
     }
-    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p>
+    /// <p>The target groups. Traffic matching the rule is forwarded to the specified target groups. With forward actions, you can assign a weight that controls the prioritization and selection of each target group. This means that requests are distributed to individual target groups based on their weights. For example, if two target groups have the same weight, each target group receives half of the traffic.</p> 
     /// <p>The default value is 1. This means that if only one target group is provided, there is no need to set the weight; 100% of traffic will go to that target group.</p>
-    pub fn set_target_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WeightedTargetGroup>>,
-    ) -> Self {
-        self.target_groups = input;
-        self
+    pub fn set_target_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::WeightedTargetGroup>>) -> Self {
+        self.target_groups = input; self
     }
     /// Consumes the builder and constructs a [`ForwardAction`](crate::types::ForwardAction).
     pub fn build(self) -> crate::types::ForwardAction {
         crate::types::ForwardAction {
-            target_groups: self.target_groups,
+            target_groups: self.target_groups
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersOutput {
+pub struct ListClustersOutput  {
     /// <p>Information on each of the MSK clusters in the response.</p>
     #[doc(hidden)]
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::types::ClusterInfo>>,
@@ -13,19 +13,19 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn cluster_info_list(&self) -> std::option::Option<&[crate::types::ClusterInfo]> {
+    pub fn cluster_info_list(&self) -> std::option::Option<& [crate::types::ClusterInfo]> {
         self.cluster_info_list.as_deref()
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListClustersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListClustersOutput {
     /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
     pub fn builder() -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
@@ -49,17 +49,13 @@ impl ListClustersOutputBuilder {
     /// <p>Information on each of the MSK clusters in the response.</p>
     pub fn cluster_info_list(mut self, input: crate::types::ClusterInfo) -> Self {
         let mut v = self.cluster_info_list.unwrap_or_default();
-        v.push(input);
-        self.cluster_info_list = Some(v);
-        self
+                        v.push(input);
+                        self.cluster_info_list = Some(v);
+                        self
     }
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn set_cluster_info_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterInfo>>,
-    ) -> Self {
-        self.cluster_info_list = input;
-        self
+    pub fn set_cluster_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClusterInfo>>) -> Self {
+        self.cluster_info_list = input; self
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListClustersOutputBuilder {
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
     pub fn build(self) -> crate::operation::list_clusters::ListClustersOutput {
         crate::operation::list_clusters::ListClustersOutput {
-            cluster_info_list: self.cluster_info_list,
-            next_token: self.next_token,
+            cluster_info_list: self.cluster_info_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

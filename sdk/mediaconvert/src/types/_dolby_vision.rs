@@ -3,7 +3,7 @@
 /// Create Dolby Vision Profile 5 or Profile 8.1 compatible video output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DolbyVision {
+pub struct DolbyVision  {
     /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
     #[doc(hidden)]
     pub l6_metadata: std::option::Option<crate::types::DolbyVisionLevel6Metadata>,
@@ -19,19 +19,19 @@ pub struct DolbyVision {
 }
 impl DolbyVision {
     /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
-    pub fn l6_metadata(&self) -> std::option::Option<&crate::types::DolbyVisionLevel6Metadata> {
+    pub fn l6_metadata(&self) -> std::option::Option<& crate::types::DolbyVisionLevel6Metadata> {
         self.l6_metadata.as_ref()
     }
     /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
-    pub fn l6_mode(&self) -> std::option::Option<&crate::types::DolbyVisionLevel6Mode> {
+    pub fn l6_mode(&self) -> std::option::Option<& crate::types::DolbyVisionLevel6Mode> {
         self.l6_mode.as_ref()
     }
     /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
-    pub fn mapping(&self) -> std::option::Option<&crate::types::DolbyVisionMapping> {
+    pub fn mapping(&self) -> std::option::Option<& crate::types::DolbyVisionMapping> {
         self.mapping.as_ref()
     }
     /// Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision metadata.
-    pub fn profile(&self) -> std::option::Option<&crate::types::DolbyVisionProfile> {
+    pub fn profile(&self) -> std::option::Option<& crate::types::DolbyVisionProfile> {
         self.profile.as_ref()
     }
 }
@@ -58,12 +58,8 @@ impl DolbyVisionBuilder {
         self
     }
     /// Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values.
-    pub fn set_l6_metadata(
-        mut self,
-        input: std::option::Option<crate::types::DolbyVisionLevel6Metadata>,
-    ) -> Self {
-        self.l6_metadata = input;
-        self
+    pub fn set_l6_metadata(mut self, input: std::option::Option<crate::types::DolbyVisionLevel6Metadata>) -> Self {
+        self.l6_metadata = input; self
     }
     /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
     pub fn l6_mode(mut self, input: crate::types::DolbyVisionLevel6Mode) -> Self {
@@ -71,12 +67,8 @@ impl DolbyVisionBuilder {
         self
     }
     /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
-    pub fn set_l6_mode(
-        mut self,
-        input: std::option::Option<crate::types::DolbyVisionLevel6Mode>,
-    ) -> Self {
-        self.l6_mode = input;
-        self
+    pub fn set_l6_mode(mut self, input: std::option::Option<crate::types::DolbyVisionLevel6Mode>) -> Self {
+        self.l6_mode = input; self
     }
     /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
     pub fn mapping(mut self, input: crate::types::DolbyVisionMapping) -> Self {
@@ -84,12 +76,8 @@ impl DolbyVisionBuilder {
         self
     }
     /// Required when you set Dolby Vision Profile to Profile 8.1. When you set Content mapping to None, content mapping is not applied to the HDR10-compatible signal. Depending on the source peak nit level, clipping might occur on HDR devices without Dolby Vision. When you set Content mapping to HDR10 1000, the transcoder creates a 1,000 nits peak HDR10-compatible signal by applying static content mapping to the source. This mode is speed-optimized for PQ10 sources with metadata that is created from analysis. For graded Dolby Vision content, be aware that creative intent might not be guaranteed with extreme 1,000 nits trims.
-    pub fn set_mapping(
-        mut self,
-        input: std::option::Option<crate::types::DolbyVisionMapping>,
-    ) -> Self {
-        self.mapping = input;
-        self
+    pub fn set_mapping(mut self, input: std::option::Option<crate::types::DolbyVisionMapping>) -> Self {
+        self.mapping = input; self
     }
     /// Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision metadata.
     pub fn profile(mut self, input: crate::types::DolbyVisionProfile) -> Self {
@@ -97,20 +85,21 @@ impl DolbyVisionBuilder {
         self
     }
     /// Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision metadata.
-    pub fn set_profile(
-        mut self,
-        input: std::option::Option<crate::types::DolbyVisionProfile>,
-    ) -> Self {
-        self.profile = input;
-        self
+    pub fn set_profile(mut self, input: std::option::Option<crate::types::DolbyVisionProfile>) -> Self {
+        self.profile = input; self
     }
     /// Consumes the builder and constructs a [`DolbyVision`](crate::types::DolbyVision).
     pub fn build(self) -> crate::types::DolbyVision {
         crate::types::DolbyVision {
-            l6_metadata: self.l6_metadata,
-            l6_mode: self.l6_mode,
-            mapping: self.mapping,
-            profile: self.profile,
+            l6_metadata: self.l6_metadata
+            ,
+            l6_mode: self.l6_mode
+            ,
+            mapping: self.mapping
+            ,
+            profile: self.profile
+            ,
         }
     }
 }
+

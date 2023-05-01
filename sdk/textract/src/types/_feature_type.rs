@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let featuretype = unimplemented!();
 /// match featuretype {
@@ -32,22 +32,14 @@
 /// Specifically, when `featuretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FeatureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FeatureType {
     #[allow(missing_docs)] // documentation missing in model
     Forms,
@@ -58,44 +50,45 @@ pub enum FeatureType {
     #[allow(missing_docs)] // documentation missing in model
     Tables,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FeatureType {
-    fn from(s: &str) -> Self {
-        match s {
-            "FORMS" => FeatureType::Forms,
-            "QUERIES" => FeatureType::Queries,
-            "SIGNATURES" => FeatureType::Signatures,
-            "TABLES" => FeatureType::Tables,
-            other => FeatureType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "FORMS" => FeatureType::Forms,
+"QUERIES" => FeatureType::Queries,
+"SIGNATURES" => FeatureType::Signatures,
+"TABLES" => FeatureType::Tables,
+other => FeatureType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for FeatureType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FeatureType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FeatureType::from(s))
+                }
+            }
 impl FeatureType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FeatureType::Forms => "FORMS",
-            FeatureType::Queries => "QUERIES",
-            FeatureType::Signatures => "SIGNATURES",
-            FeatureType::Tables => "TABLES",
-            FeatureType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["FORMS", "QUERIES", "SIGNATURES", "TABLES"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FeatureType::Forms => "FORMS",
+    FeatureType::Queries => "QUERIES",
+    FeatureType::Signatures => "SIGNATURES",
+    FeatureType::Tables => "TABLES",
+    FeatureType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["FORMS", "QUERIES", "SIGNATURES", "TABLES"]
+                }
+            }
 impl AsRef<str> for FeatureType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

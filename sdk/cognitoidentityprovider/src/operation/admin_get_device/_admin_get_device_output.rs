@@ -3,7 +3,7 @@
 /// <p>Gets the device response, as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdminGetDeviceOutput {
+pub struct AdminGetDeviceOutput  {
     /// <p>The device.</p>
     #[doc(hidden)]
     pub device: std::option::Option<crate::types::DeviceType>,
@@ -11,15 +11,15 @@ pub struct AdminGetDeviceOutput {
 }
 impl AdminGetDeviceOutput {
     /// <p>The device.</p>
-    pub fn device(&self) -> std::option::Option<&crate::types::DeviceType> {
+    pub fn device(&self) -> std::option::Option<& crate::types::DeviceType> {
         self.device.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AdminGetDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AdminGetDeviceOutput {
     /// Creates a new builder-style object to manufacture [`AdminGetDeviceOutput`](crate::operation::admin_get_device::AdminGetDeviceOutput).
     pub fn builder() -> crate::operation::admin_get_device::builders::AdminGetDeviceOutputBuilder {
@@ -42,23 +42,24 @@ impl AdminGetDeviceOutputBuilder {
     }
     /// <p>The device.</p>
     pub fn set_device(mut self, input: std::option::Option<crate::types::DeviceType>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AdminGetDeviceOutput`](crate::operation::admin_get_device::AdminGetDeviceOutput).
     pub fn build(self) -> crate::operation::admin_get_device::AdminGetDeviceOutput {
         crate::operation::admin_get_device::AdminGetDeviceOutput {
-            device: self.device,
+            device: self.device
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

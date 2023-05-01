@@ -3,7 +3,7 @@
 /// <p>Information about the user entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EntityDisplayData {
+pub struct EntityDisplayData  {
     /// <p>The name of the user.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -22,27 +22,27 @@ pub struct EntityDisplayData {
 }
 impl EntityDisplayData {
     /// <p>The name of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The user name of the user.</p>
-    pub fn identified_user_name(&self) -> std::option::Option<&str> {
+    pub fn identified_user_name(&self) -> std::option::Option<& str> {
         self.identified_user_name.as_deref()
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
 }
-impl std::fmt::Debug for EntityDisplayData {
+impl  std::fmt::Debug for EntityDisplayData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EntityDisplayData");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -78,8 +78,7 @@ impl EntityDisplayDataBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The name of the group.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +87,7 @@ impl EntityDisplayDataBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The user name of the user.</p>
     pub fn identified_user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,12 +95,8 @@ impl EntityDisplayDataBuilder {
         self
     }
     /// <p>The user name of the user.</p>
-    pub fn set_identified_user_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.identified_user_name = input;
-        self
+    pub fn set_identified_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.identified_user_name = input; self
     }
     /// <p>The first name of the user.</p>
     pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +105,7 @@ impl EntityDisplayDataBuilder {
     }
     /// <p>The first name of the user.</p>
     pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.first_name = input;
-        self
+        self.first_name = input; self
     }
     /// <p>The last name of the user.</p>
     pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,17 +114,21 @@ impl EntityDisplayDataBuilder {
     }
     /// <p>The last name of the user.</p>
     pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_name = input;
-        self
+        self.last_name = input; self
     }
     /// Consumes the builder and constructs a [`EntityDisplayData`](crate::types::EntityDisplayData).
     pub fn build(self) -> crate::types::EntityDisplayData {
         crate::types::EntityDisplayData {
-            user_name: self.user_name,
-            group_name: self.group_name,
-            identified_user_name: self.identified_user_name,
-            first_name: self.first_name,
-            last_name: self.last_name,
+            user_name: self.user_name
+            ,
+            group_name: self.group_name
+            ,
+            identified_user_name: self.identified_user_name
+            ,
+            first_name: self.first_name
+            ,
+            last_name: self.last_name
+            ,
         }
     }
 }
@@ -146,3 +143,4 @@ impl std::fmt::Debug for EntityDisplayDataBuilder {
         formatter.finish()
     }
 }
+

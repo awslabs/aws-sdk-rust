@@ -20,14 +20,8 @@ impl ProtectedQueryOutputConfiguration {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3`](crate::types::ProtectedQueryOutputConfiguration::S3), extracting the inner [`ProtectedQueryS3OutputConfiguration`](crate::types::ProtectedQueryS3OutputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3(
-        &self,
-    ) -> std::result::Result<&crate::types::ProtectedQueryS3OutputConfiguration, &Self> {
-        if let ProtectedQueryOutputConfiguration::S3(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_s3(&self) -> std::result::Result<&crate::types::ProtectedQueryS3OutputConfiguration, &Self> {
+        if let ProtectedQueryOutputConfiguration::S3(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3`](crate::types::ProtectedQueryOutputConfiguration::S3).
     pub fn is_s3(&self) -> bool {
@@ -38,3 +32,4 @@ impl ProtectedQueryOutputConfiguration {
         matches!(self, Self::Unknown)
     }
 }
+

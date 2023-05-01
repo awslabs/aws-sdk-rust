@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInvitationConfigurationInput {}
+pub struct GetInvitationConfigurationInput  {
+}
 impl GetInvitationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetInvitationConfigurationInput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationInput).
-    pub fn builder() -> crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationInputBuilder {
         crate::operation::get_invitation_configuration::builders::GetInvitationConfigurationInputBuilder::default()
     }
 }
@@ -13,15 +14,15 @@ impl GetInvitationConfigurationInput {
 /// A builder for [`GetInvitationConfigurationInput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetInvitationConfigurationInputBuilder {}
+pub struct GetInvitationConfigurationInputBuilder {
+}
 impl GetInvitationConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetInvitationConfigurationInput`](crate::operation::get_invitation_configuration::GetInvitationConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_invitation_configuration::GetInvitationConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_invitation_configuration::GetInvitationConfigurationInput {})
+    pub fn build(self) -> Result<crate::operation::get_invitation_configuration::GetInvitationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_invitation_configuration::GetInvitationConfigurationInput {
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventStreamInput {
+pub struct PutEventStreamInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutEventStreamInput {
 }
 impl PutEventStreamInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
-    pub fn write_event_stream(&self) -> std::option::Option<&crate::types::WriteEventStream> {
+    pub fn write_event_stream(&self) -> std::option::Option<& crate::types::WriteEventStream> {
         self.write_event_stream.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl PutEventStreamInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
     pub fn write_event_stream(mut self, input: crate::types::WriteEventStream) -> Self {
@@ -51,23 +50,19 @@ impl PutEventStreamInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
-    pub fn set_write_event_stream(
-        mut self,
-        input: std::option::Option<crate::types::WriteEventStream>,
-    ) -> Self {
-        self.write_event_stream = input;
-        self
+    pub fn set_write_event_stream(mut self, input: std::option::Option<crate::types::WriteEventStream>) -> Self {
+        self.write_event_stream = input; self
     }
     /// Consumes the builder and constructs a [`PutEventStreamInput`](crate::operation::put_event_stream::PutEventStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_event_stream::PutEventStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_event_stream::PutEventStreamInput {
-            application_id: self.application_id,
-            write_event_stream: self.write_event_stream,
-        })
+    pub fn build(self) -> Result<crate::operation::put_event_stream::PutEventStreamInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_event_stream::PutEventStreamInput {
+                application_id: self.application_id
+                ,
+                write_event_stream: self.write_event_stream
+                ,
+            }
+        )
     }
 }
+

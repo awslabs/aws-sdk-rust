@@ -3,7 +3,7 @@
 /// <p>Summary information for a template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateSummary {
+pub struct TemplateSummary  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct TemplateSummary {
 }
 impl TemplateSummary {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the template that you're using.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,12 +75,8 @@ impl TemplateSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -89,12 +84,8 @@ impl TemplateSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the template was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p>The name of the template.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +94,7 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the template that you're using.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,17 +103,22 @@ impl TemplateSummaryBuilder {
     }
     /// <p>The version of the template that you're using.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`TemplateSummary`](crate::types::TemplateSummary).
     pub fn build(self) -> crate::types::TemplateSummary {
         crate::types::TemplateSummary {
-            arn: self.arn,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            name: self.name,
-            version: self.version,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            name: self.name
+            ,
+            version: self.version
+            ,
         }
     }
 }
+

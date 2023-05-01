@@ -4,84 +4,66 @@ pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterO
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCluster`.
-///
+/// 
 /// <p>Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
-}
-impl CreateClusterFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder
+            }
+impl CreateClusterFluentBuilder  {
     /// Creates a new `CreateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_cluster::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
-    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p> <b>Constraints:</b> </p>
-    /// <ul>
-    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_cluster::CreateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_cluster::CreateClusterOutput, aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
+    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p> 
+    /// <p> <b>Constraints:</b> </p> 
+    /// <ul> 
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>The first character must be a letter.</p> </li> 
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
     /// </ul>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
-    /// <p> <b>Constraints:</b> </p>
-    /// <ul>
-    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li>
-    /// <li> <p>The first character must be a letter.</p> </li>
-    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p> 
+    /// <p> <b>Constraints:</b> </p> 
+    /// <ul> 
+    /// <li> <p>A name must contain from 1 to 20 alphanumeric characters or hyphens.</p> </li> 
+    /// <li> <p>The first character must be a letter.</p> </li> 
+    /// <li> <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
     /// </ul>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
@@ -107,15 +89,15 @@ impl CreateClusterFluentBuilder {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> 
+    /// <p>AWS recommends that you have at least two read replicas per cluster.</p> 
     /// </note>
     pub fn replication_factor(mut self, input: i32) -> Self {
         self.inner = self.inner.replication_factor(input);
         self
     }
-    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note>
-    /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
+    /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code> to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). <code>If the AvailabilityZones</code> parameter is provided, its length must equal the <code>ReplicationFactor</code>.</p> <note> 
+    /// <p>AWS recommends that you have at least two read replicas per cluster.</p> 
     /// </note>
     pub fn set_replication_factor(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_replication_factor(input);
@@ -131,27 +113,21 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code> parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
-    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
-    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important> 
+    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p> 
     /// </important>
     pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
-    /// <p>The name of the subnet group to be used for the replication group.</p> <important>
-    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p>
+    /// <p>The name of the subnet group to be used for the replication group.</p> <important> 
+    /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.</p> 
     /// </important>
-    pub fn set_subnet_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }
@@ -159,72 +135,63 @@ impl CreateClusterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
-    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p> 
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
-    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p>
+    /// <p>A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)</p> 
     /// <p>If this parameter is not specified, DAX assigns the default VPC security group to each node.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
-    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
-    /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
-    /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
-    /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sun</code> </p> </li> 
+    /// <li> <p> <code>mon</code> </p> </li> 
+    /// <li> <p> <code>tue</code> </p> </li> 
+    /// <li> <p> <code>wed</code> </p> </li> 
+    /// <li> <p> <code>thu</code> </p> </li> 
+    /// <li> <p> <code>fri</code> </p> </li> 
+    /// <li> <p> <code>sat</code> </p> </li> 
+    /// </ul> 
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> 
+    /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p> 
     /// </note>
     pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p>
-    /// <ul>
-    /// <li> <p> <code>sun</code> </p> </li>
-    /// <li> <p> <code>mon</code> </p> </li>
-    /// <li> <p> <code>tue</code> </p> </li>
-    /// <li> <p> <code>wed</code> </p> </li>
-    /// <li> <p> <code>thu</code> </p> </li>
-    /// <li> <p> <code>fri</code> </p> </li>
-    /// <li> <p> <code>sat</code> </p> </li>
-    /// </ul>
-    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note>
-    /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p>
+    /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code> are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>sun</code> </p> </li> 
+    /// <li> <p> <code>mon</code> </p> </li> 
+    /// <li> <p> <code>tue</code> </p> </li> 
+    /// <li> <p> <code>wed</code> </p> </li> 
+    /// <li> <p> <code>thu</code> </p> </li> 
+    /// <li> <p> <code>fri</code> </p> </li> 
+    /// <li> <p> <code>sat</code> </p> </li> 
+    /// </ul> 
+    /// <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> 
+    /// <p>If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.</p> 
     /// </note>
-    pub fn set_preferred_maintenance_window(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note> 
+    /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p> 
     /// </note>
     pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.notification_topic_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note>
-    /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.</p> <note> 
+    /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p> 
     /// </note>
-    pub fn set_notification_topic_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_notification_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_notification_topic_arn(input);
         self
     }
@@ -244,10 +211,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The parameter group to be associated with the DAX cluster.</p>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -261,10 +225,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>A set of tags to associate with the DAX cluster. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -274,35 +235,27 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
-    pub fn set_sse_specification(
-        mut self,
-        input: std::option::Option<crate::types::SseSpecification>,
-    ) -> Self {
+    pub fn set_sse_specification(mut self, input: std::option::Option<crate::types::SseSpecification>) -> Self {
         self.inner = self.inner.set_sse_specification(input);
         self
     }
-    /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
-    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <p>The type of encryption the cluster's endpoint should support. Values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li> 
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li> 
     /// </ul>
-    pub fn cluster_endpoint_encryption_type(
-        mut self,
-        input: crate::types::ClusterEndpointEncryptionType,
-    ) -> Self {
+    pub fn cluster_endpoint_encryption_type(mut self, input: crate::types::ClusterEndpointEncryptionType) -> Self {
         self.inner = self.inner.cluster_endpoint_encryption_type(input);
         self
     }
-    /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
-    /// <ul>
-    /// <li> <p> <code>NONE</code> for no encryption</p> </li>
-    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li>
+    /// <p>The type of encryption the cluster's endpoint should support. Values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>NONE</code> for no encryption</p> </li> 
+    /// <li> <p> <code>TLS</code> for Transport Layer Security</p> </li> 
     /// </ul>
-    pub fn set_cluster_endpoint_encryption_type(
-        mut self,
-        input: std::option::Option<crate::types::ClusterEndpointEncryptionType>,
-    ) -> Self {
+    pub fn set_cluster_endpoint_encryption_type(mut self, input: std::option::Option<crate::types::ClusterEndpointEncryptionType>) -> Self {
         self.inner = self.inner.set_cluster_endpoint_encryption_type(input);
         self
     }
 }
+

@@ -2,29 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelMembershipForAppInstanceUserOutput {
+pub struct DescribeChannelMembershipForAppInstanceUserOutput  {
     /// <p>The channel to which a user belongs.</p>
     #[doc(hidden)]
-    pub channel_membership:
-        std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>,
+    pub channel_membership: std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>,
     _request_id: Option<String>,
 }
 impl DescribeChannelMembershipForAppInstanceUserOutput {
     /// <p>The channel to which a user belongs.</p>
-    pub fn channel_membership(
-        &self,
-    ) -> std::option::Option<&crate::types::ChannelMembershipForAppInstanceUserSummary> {
+    pub fn channel_membership(&self) -> std::option::Option<& crate::types::ChannelMembershipForAppInstanceUserSummary> {
         self.channel_membership.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeChannelMembershipForAppInstanceUserOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeChannelMembershipForAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput).
-    pub fn builder() -> crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserOutputBuilder{
+    pub fn builder() -> crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserOutputBuilder {
         crate::operation::describe_channel_membership_for_app_instance_user::builders::DescribeChannelMembershipForAppInstanceUserOutputBuilder::default()
     }
 }
@@ -33,38 +30,30 @@ impl DescribeChannelMembershipForAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeChannelMembershipForAppInstanceUserOutputBuilder {
-    pub(crate) channel_membership:
-        std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>,
+    pub(crate) channel_membership: std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>,
     _request_id: Option<String>,
 }
 impl DescribeChannelMembershipForAppInstanceUserOutputBuilder {
     /// <p>The channel to which a user belongs.</p>
-    pub fn channel_membership(
-        mut self,
-        input: crate::types::ChannelMembershipForAppInstanceUserSummary,
-    ) -> Self {
+    pub fn channel_membership(mut self, input: crate::types::ChannelMembershipForAppInstanceUserSummary) -> Self {
         self.channel_membership = Some(input);
         self
     }
     /// <p>The channel to which a user belongs.</p>
-    pub fn set_channel_membership(
-        mut self,
-        input: std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>,
-    ) -> Self {
-        self.channel_membership = input;
-        self
+    pub fn set_channel_membership(mut self, input: std::option::Option<crate::types::ChannelMembershipForAppInstanceUserSummary>) -> Self {
+        self.channel_membership = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput).
-    pub fn build(self) -> crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput{
+    pub fn build(self) -> crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput {
         crate::operation::describe_channel_membership_for_app_instance_user::DescribeChannelMembershipForAppInstanceUserOutput {
             channel_membership: self.channel_membership
             ,
@@ -72,3 +61,4 @@ impl DescribeChannelMembershipForAppInstanceUserOutputBuilder {
         }
     }
 }
+

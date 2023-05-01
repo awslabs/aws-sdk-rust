@@ -3,7 +3,7 @@
 /// <p>Provides details about a task in a cluster. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDetails {
+pub struct AwsEcsTaskDetails  {
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the task. </p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct AwsEcsTaskDetails {
 }
 impl AwsEcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the task. </p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The ARN of the task definition that creates the task. </p>
-    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn task_definition_arn(&self) -> std::option::Option<& str> {
         self.task_definition_arn.as_deref()
     }
     /// <p>The version counter for the task. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state. </p>
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state. </p>
-    pub fn started_at(&self) -> std::option::Option<&str> {
+    pub fn started_at(&self) -> std::option::Option<& str> {
         self.started_at.as_deref()
     }
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service. </p>
-    pub fn started_by(&self) -> std::option::Option<&str> {
+    pub fn started_by(&self) -> std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>The name of the task group that's associated with the task. </p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> std::option::Option<& str> {
         self.group.as_deref()
     }
     /// <p>Details about the data volume that is used in a task definition. </p>
-    pub fn volumes(&self) -> std::option::Option<&[crate::types::AwsEcsTaskVolumeDetails]> {
+    pub fn volumes(&self) -> std::option::Option<& [crate::types::AwsEcsTaskVolumeDetails]> {
         self.volumes.as_deref()
     }
     /// <p>The containers that are associated with the task. </p>
-    pub fn containers(&self) -> std::option::Option<&[crate::types::AwsEcsContainerDetails]> {
+    pub fn containers(&self) -> std::option::Option<& [crate::types::AwsEcsContainerDetails]> {
         self.containers.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl AwsEcsTaskDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that hosts the task. </p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The ARN of the task definition that creates the task. </p>
     pub fn task_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,12 +107,8 @@ impl AwsEcsTaskDetailsBuilder {
         self
     }
     /// <p>The ARN of the task definition that creates the task. </p>
-    pub fn set_task_definition_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.task_definition_arn = input;
-        self
+    pub fn set_task_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.task_definition_arn = input; self
     }
     /// <p>The version counter for the task. </p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +117,7 @@ impl AwsEcsTaskDetailsBuilder {
     }
     /// <p>The version counter for the task. </p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state. </p>
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +126,7 @@ impl AwsEcsTaskDetailsBuilder {
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state. </p>
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_at = input;
-        self
+        self.created_at = input; self
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state. </p>
     pub fn started_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +135,7 @@ impl AwsEcsTaskDetailsBuilder {
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state. </p>
     pub fn set_started_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service. </p>
     pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +144,7 @@ impl AwsEcsTaskDetailsBuilder {
     }
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service. </p>
     pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.started_by = input;
-        self
+        self.started_by = input; self
     }
     /// <p>The name of the task group that's associated with the task. </p>
     pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +153,7 @@ impl AwsEcsTaskDetailsBuilder {
     }
     /// <p>The name of the task group that's associated with the task. </p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// Appends an item to `volumes`.
     ///
@@ -172,17 +162,13 @@ impl AwsEcsTaskDetailsBuilder {
     /// <p>Details about the data volume that is used in a task definition. </p>
     pub fn volumes(mut self, input: crate::types::AwsEcsTaskVolumeDetails) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-        v.push(input);
-        self.volumes = Some(v);
-        self
+                        v.push(input);
+                        self.volumes = Some(v);
+                        self
     }
     /// <p>Details about the data volume that is used in a task definition. </p>
-    pub fn set_volumes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>,
-    ) -> Self {
-        self.volumes = input;
-        self
+    pub fn set_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsEcsTaskVolumeDetails>>) -> Self {
+        self.volumes = input; self
     }
     /// Appends an item to `containers`.
     ///
@@ -191,30 +177,36 @@ impl AwsEcsTaskDetailsBuilder {
     /// <p>The containers that are associated with the task. </p>
     pub fn containers(mut self, input: crate::types::AwsEcsContainerDetails) -> Self {
         let mut v = self.containers.unwrap_or_default();
-        v.push(input);
-        self.containers = Some(v);
-        self
+                        v.push(input);
+                        self.containers = Some(v);
+                        self
     }
     /// <p>The containers that are associated with the task. </p>
-    pub fn set_containers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsEcsContainerDetails>>,
-    ) -> Self {
-        self.containers = input;
-        self
+    pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsEcsContainerDetails>>) -> Self {
+        self.containers = input; self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDetails`](crate::types::AwsEcsTaskDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDetails {
         crate::types::AwsEcsTaskDetails {
-            cluster_arn: self.cluster_arn,
-            task_definition_arn: self.task_definition_arn,
-            version: self.version,
-            created_at: self.created_at,
-            started_at: self.started_at,
-            started_by: self.started_by,
-            group: self.group,
-            volumes: self.volumes,
-            containers: self.containers,
+            cluster_arn: self.cluster_arn
+            ,
+            task_definition_arn: self.task_definition_arn
+            ,
+            version: self.version
+            ,
+            created_at: self.created_at
+            ,
+            started_at: self.started_at
+            ,
+            started_by: self.started_by
+            ,
+            group: self.group
+            ,
+            volumes: self.volumes
+            ,
+            containers: self.containers
+            ,
         }
     }
 }
+

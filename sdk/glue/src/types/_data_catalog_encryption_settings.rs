@@ -3,24 +3,21 @@
 /// <p>Contains configuration information for maintaining Data Catalog security.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCatalogEncryptionSettings {
+pub struct DataCatalogEncryptionSettings  {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
     #[doc(hidden)]
     pub encryption_at_rest: std::option::Option<crate::types::EncryptionAtRest>,
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
     #[doc(hidden)]
-    pub connection_password_encryption:
-        std::option::Option<crate::types::ConnectionPasswordEncryption>,
+    pub connection_password_encryption: std::option::Option<crate::types::ConnectionPasswordEncryption>,
 }
 impl DataCatalogEncryptionSettings {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
-    pub fn encryption_at_rest(&self) -> std::option::Option<&crate::types::EncryptionAtRest> {
+    pub fn encryption_at_rest(&self) -> std::option::Option<& crate::types::EncryptionAtRest> {
         self.encryption_at_rest.as_ref()
     }
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
-    pub fn connection_password_encryption(
-        &self,
-    ) -> std::option::Option<&crate::types::ConnectionPasswordEncryption> {
+    pub fn connection_password_encryption(&self) -> std::option::Option<& crate::types::ConnectionPasswordEncryption> {
         self.connection_password_encryption.as_ref()
     }
 }
@@ -36,8 +33,7 @@ impl DataCatalogEncryptionSettings {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DataCatalogEncryptionSettingsBuilder {
     pub(crate) encryption_at_rest: std::option::Option<crate::types::EncryptionAtRest>,
-    pub(crate) connection_password_encryption:
-        std::option::Option<crate::types::ConnectionPasswordEncryption>,
+    pub(crate) connection_password_encryption: std::option::Option<crate::types::ConnectionPasswordEncryption>,
 }
 impl DataCatalogEncryptionSettingsBuilder {
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
@@ -46,34 +42,26 @@ impl DataCatalogEncryptionSettingsBuilder {
         self
     }
     /// <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
-    pub fn set_encryption_at_rest(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionAtRest>,
-    ) -> Self {
-        self.encryption_at_rest = input;
-        self
+    pub fn set_encryption_at_rest(mut self, input: std::option::Option<crate::types::EncryptionAtRest>) -> Self {
+        self.encryption_at_rest = input; self
     }
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
-    pub fn connection_password_encryption(
-        mut self,
-        input: crate::types::ConnectionPasswordEncryption,
-    ) -> Self {
+    pub fn connection_password_encryption(mut self, input: crate::types::ConnectionPasswordEncryption) -> Self {
         self.connection_password_encryption = Some(input);
         self
     }
     /// <p>When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p>
-    pub fn set_connection_password_encryption(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionPasswordEncryption>,
-    ) -> Self {
-        self.connection_password_encryption = input;
-        self
+    pub fn set_connection_password_encryption(mut self, input: std::option::Option<crate::types::ConnectionPasswordEncryption>) -> Self {
+        self.connection_password_encryption = input; self
     }
     /// Consumes the builder and constructs a [`DataCatalogEncryptionSettings`](crate::types::DataCatalogEncryptionSettings).
     pub fn build(self) -> crate::types::DataCatalogEncryptionSettings {
         crate::types::DataCatalogEncryptionSettings {
-            encryption_at_rest: self.encryption_at_rest,
-            connection_password_encryption: self.connection_password_encryption,
+            encryption_at_rest: self.encryption_at_rest
+            ,
+            connection_password_encryption: self.connection_password_encryption
+            ,
         }
     }
 }
+

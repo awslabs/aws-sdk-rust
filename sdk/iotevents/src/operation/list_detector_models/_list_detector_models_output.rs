@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectorModelsOutput {
+pub struct ListDetectorModelsOutput  {
     /// <p>Summary information about the detector models.</p>
     #[doc(hidden)]
-    pub detector_model_summaries:
-        std::option::Option<std::vec::Vec<crate::types::DetectorModelSummary>>,
+    pub detector_model_summaries: std::option::Option<std::vec::Vec<crate::types::DetectorModelSummary>>,
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,25 +13,22 @@ pub struct ListDetectorModelsOutput {
 }
 impl ListDetectorModelsOutput {
     /// <p>Summary information about the detector models.</p>
-    pub fn detector_model_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::DetectorModelSummary]> {
+    pub fn detector_model_summaries(&self) -> std::option::Option<& [crate::types::DetectorModelSummary]> {
         self.detector_model_summaries.as_deref()
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDetectorModelsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDetectorModelsOutput {
     /// Creates a new builder-style object to manufacture [`ListDetectorModelsOutput`](crate::operation::list_detector_models::ListDetectorModelsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_detector_models::builders::ListDetectorModelsOutputBuilder {
+    pub fn builder() -> crate::operation::list_detector_models::builders::ListDetectorModelsOutputBuilder {
         crate::operation::list_detector_models::builders::ListDetectorModelsOutputBuilder::default()
     }
 }
@@ -41,8 +37,7 @@ impl ListDetectorModelsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDetectorModelsOutputBuilder {
-    pub(crate) detector_model_summaries:
-        std::option::Option<std::vec::Vec<crate::types::DetectorModelSummary>>,
+    pub(crate) detector_model_summaries: std::option::Option<std::vec::Vec<crate::types::DetectorModelSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +49,13 @@ impl ListDetectorModelsOutputBuilder {
     /// <p>Summary information about the detector models.</p>
     pub fn detector_model_summaries(mut self, input: crate::types::DetectorModelSummary) -> Self {
         let mut v = self.detector_model_summaries.unwrap_or_default();
-        v.push(input);
-        self.detector_model_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.detector_model_summaries = Some(v);
+                        self
     }
     /// <p>Summary information about the detector models.</p>
-    pub fn set_detector_model_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DetectorModelSummary>>,
-    ) -> Self {
-        self.detector_model_summaries = input;
-        self
+    pub fn set_detector_model_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::DetectorModelSummary>>) -> Self {
+        self.detector_model_summaries = input; self
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,24 +64,26 @@ impl ListDetectorModelsOutputBuilder {
     }
     /// <p>The token that you can use to return the next set of results, or <code>null</code> if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDetectorModelsOutput`](crate::operation::list_detector_models::ListDetectorModelsOutput).
     pub fn build(self) -> crate::operation::list_detector_models::ListDetectorModelsOutput {
         crate::operation::list_detector_models::ListDetectorModelsOutput {
-            detector_model_summaries: self.detector_model_summaries,
-            next_token: self.next_token,
+            detector_model_summaries: self.detector_model_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a duration or a date and time that indicates when Amazon Pinpoint determines whether an activity's conditions have been met or an activity moves participants to the next activity in a journey.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WaitTime {
+pub struct WaitTime  {
     /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
     #[doc(hidden)]
     pub wait_for: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct WaitTime {
 }
 impl WaitTime {
     /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
-    pub fn wait_for(&self) -> std::option::Option<&str> {
+    pub fn wait_for(&self) -> std::option::Option<& str> {
         self.wait_for.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
-    pub fn wait_until(&self) -> std::option::Option<&str> {
+    pub fn wait_until(&self) -> std::option::Option<& str> {
         self.wait_until.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl WaitTimeBuilder {
     }
     /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
     pub fn set_wait_for(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.wait_for = input;
-        self
+        self.wait_for = input; self
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
     pub fn wait_until(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl WaitTimeBuilder {
     }
     /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
     pub fn set_wait_until(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.wait_until = input;
-        self
+        self.wait_until = input; self
     }
     /// Consumes the builder and constructs a [`WaitTime`](crate::types::WaitTime).
     pub fn build(self) -> crate::types::WaitTime {
         crate::types::WaitTime {
-            wait_for: self.wait_for,
-            wait_until: self.wait_until,
+            wait_for: self.wait_for
+            ,
+            wait_until: self.wait_until
+            ,
         }
     }
 }
+

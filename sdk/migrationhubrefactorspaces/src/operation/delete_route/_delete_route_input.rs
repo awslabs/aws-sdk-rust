@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteInput {
+pub struct DeleteRouteInput  {
     /// <p>The ID of the environment to delete the route from.</p>
     #[doc(hidden)]
     pub environment_identifier: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DeleteRouteInput {
 }
 impl DeleteRouteInput {
     /// <p>The ID of the environment to delete the route from.</p>
-    pub fn environment_identifier(&self) -> std::option::Option<&str> {
+    pub fn environment_identifier(&self) -> std::option::Option<& str> {
         self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application to delete the route from.</p>
-    pub fn application_identifier(&self) -> std::option::Option<&str> {
+    pub fn application_identifier(&self) -> std::option::Option<& str> {
         self.application_identifier.as_deref()
     }
     /// <p>The ID of the route to delete.</p>
-    pub fn route_identifier(&self) -> std::option::Option<&str> {
+    pub fn route_identifier(&self) -> std::option::Option<& str> {
         self.route_identifier.as_deref()
     }
 }
@@ -49,12 +49,8 @@ impl DeleteRouteInputBuilder {
         self
     }
     /// <p>The ID of the environment to delete the route from.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.environment_identifier = input;
-        self
+    pub fn set_environment_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.environment_identifier = input; self
     }
     /// <p>The ID of the application to delete the route from.</p>
     pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,12 +58,8 @@ impl DeleteRouteInputBuilder {
         self
     }
     /// <p>The ID of the application to delete the route from.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_identifier = input;
-        self
+    pub fn set_application_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_identifier = input; self
     }
     /// <p>The ID of the route to delete.</p>
     pub fn route_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,20 +68,20 @@ impl DeleteRouteInputBuilder {
     }
     /// <p>The ID of the route to delete.</p>
     pub fn set_route_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_identifier = input;
-        self
+        self.route_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::operation::delete_route::DeleteRouteInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_route::DeleteRouteInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_route::DeleteRouteInput {
-            environment_identifier: self.environment_identifier,
-            application_identifier: self.application_identifier,
-            route_identifier: self.route_identifier,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_route::DeleteRouteInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_route::DeleteRouteInput {
+                environment_identifier: self.environment_identifier
+                ,
+                application_identifier: self.application_identifier
+                ,
+                route_identifier: self.route_identifier
+                ,
+            }
+        )
     }
 }
+

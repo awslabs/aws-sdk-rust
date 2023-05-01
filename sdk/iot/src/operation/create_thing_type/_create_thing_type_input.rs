@@ -3,7 +3,7 @@
 /// <p>The input for the CreateThingType operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThingTypeInput {
+pub struct CreateThingTypeInput  {
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CreateThingTypeInput {
 }
 impl CreateThingTypeInput {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    pub fn thing_type_properties(&self) -> std::option::Option<&crate::types::ThingTypeProperties> {
+    pub fn thing_type_properties(&self) -> std::option::Option<& crate::types::ThingTypeProperties> {
         self.thing_type_properties.as_ref()
     }
     /// <p>Metadata which can be used to manage the thing type.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CreateThingTypeInputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
     pub fn thing_type_properties(mut self, input: crate::types::ThingTypeProperties) -> Self {
@@ -60,12 +59,8 @@ impl CreateThingTypeInputBuilder {
         self
     }
     /// <p>The ThingTypeProperties for the thing type to create. It contains information about the new thing type including a description, and a list of searchable thing attribute names.</p>
-    pub fn set_thing_type_properties(
-        mut self,
-        input: std::option::Option<crate::types::ThingTypeProperties>,
-    ) -> Self {
-        self.thing_type_properties = input;
-        self
+    pub fn set_thing_type_properties(mut self, input: std::option::Option<crate::types::ThingTypeProperties>) -> Self {
+        self.thing_type_properties = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -74,29 +69,26 @@ impl CreateThingTypeInputBuilder {
     /// <p>Metadata which can be used to manage the thing type.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the thing type.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateThingTypeInput`](crate::operation::create_thing_type::CreateThingTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_thing_type::CreateThingTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_thing_type::CreateThingTypeInput {
-            thing_type_name: self.thing_type_name,
-            thing_type_properties: self.thing_type_properties,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_thing_type::CreateThingTypeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_thing_type::CreateThingTypeInput {
+                thing_type_name: self.thing_type_name
+                ,
+                thing_type_properties: self.thing_type_properties
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

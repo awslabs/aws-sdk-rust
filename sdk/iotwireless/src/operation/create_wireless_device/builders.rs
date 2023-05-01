@@ -4,81 +4,56 @@ pub use crate::operation::create_wireless_device::_create_wireless_device_output
 pub use crate::operation::create_wireless_device::_create_wireless_device_input::CreateWirelessDeviceInputBuilder;
 
 /// Fluent builder constructing a request to `CreateWirelessDevice`.
-///
+/// 
 /// <p>Provisions a wireless device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWirelessDeviceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_wireless_device::builders::CreateWirelessDeviceInputBuilder,
-}
-impl CreateWirelessDeviceFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_wireless_device::builders::CreateWirelessDeviceInputBuilder
+            }
+impl CreateWirelessDeviceFluentBuilder  {
     /// Creates a new `CreateWirelessDevice`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_wireless_device::CreateWirelessDevice,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_wireless_device::CreateWirelessDeviceError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_wireless_device::CreateWirelessDeviceOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_wireless_device::CreateWirelessDeviceError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_wireless_device::CreateWirelessDevice, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_wireless_device::CreateWirelessDeviceError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_wireless_device::CreateWirelessDeviceOutput, aws_smithy_http::result::SdkError<crate::operation::create_wireless_device::CreateWirelessDeviceError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The wireless device type.</p>
     pub fn r#type(mut self, input: crate::types::WirelessDeviceType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
     /// <p>The wireless device type.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::WirelessDeviceType>,
-    ) -> Self {
+    pub fn set_type(mut self, input: std::option::Option<crate::types::WirelessDeviceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -118,10 +93,7 @@ impl CreateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request. </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -131,10 +103,7 @@ impl CreateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>The device configuration information to use to create the wireless device.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: std::option::Option<crate::types::LoRaWanDevice>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanDevice>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
@@ -148,10 +117,7 @@ impl CreateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -161,10 +127,7 @@ impl CreateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>FPort values for the GNSS, stream, and ClockSync functions of the positioning information.</p>
-    pub fn set_positioning(
-        mut self,
-        input: std::option::Option<crate::types::PositioningConfigStatus>,
-    ) -> Self {
+    pub fn set_positioning(mut self, input: std::option::Option<crate::types::PositioningConfigStatus>) -> Self {
         self.inner = self.inner.set_positioning(input);
         self
     }
@@ -174,11 +137,9 @@ impl CreateWirelessDeviceFluentBuilder {
         self
     }
     /// <p>The device configuration information to use to create the Sidewalk device.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: std::option::Option<crate::types::SidewalkCreateWirelessDevice>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: std::option::Option<crate::types::SidewalkCreateWirelessDevice>) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
     }
 }
+

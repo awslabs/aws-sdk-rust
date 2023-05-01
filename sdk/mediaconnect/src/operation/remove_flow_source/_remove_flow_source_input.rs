@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowSourceInput {
+pub struct RemoveFlowSourceInput  {
     /// The flow that you want to remove a source from.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct RemoveFlowSourceInput {
 }
 impl RemoveFlowSourceInput {
     /// The flow that you want to remove a source from.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the source that you want to remove.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
 }
 impl RemoveFlowSourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
-    pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder {
         crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl RemoveFlowSourceInputBuilder {
     }
     /// The flow that you want to remove a source from.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// The ARN of the source that you want to remove.
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl RemoveFlowSourceInputBuilder {
     }
     /// The ARN of the source that you want to remove.
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// Consumes the builder and constructs a [`RemoveFlowSourceInput`](crate::operation::remove_flow_source::RemoveFlowSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::remove_flow_source::RemoveFlowSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::remove_flow_source::RemoveFlowSourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::remove_flow_source::RemoveFlowSourceInput {
-                flow_arn: self.flow_arn,
-                source_arn: self.source_arn,
-            },
+                flow_arn: self.flow_arn
+                ,
+                source_arn: self.source_arn
+                ,
+            }
         )
     }
 }
+

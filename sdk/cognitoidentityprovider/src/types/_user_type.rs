@@ -3,7 +3,7 @@
 /// <p>A user profile in a Amazon Cognito user pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UserType {
+pub struct UserType  {
     /// <p>The user name of the user you want to describe.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct UserType {
     /// <p>Specifies whether the user is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
-    /// <p>The user status. This can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <p>The user status. This can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> 
+    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li> 
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li> 
+    /// <li> <p>ARCHIVED - User is no longer active.</p> </li> 
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li> 
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li> 
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub user_status: std::option::Option<crate::types::UserStatusType>,
@@ -37,44 +37,44 @@ pub struct UserType {
 }
 impl UserType {
     /// <p>The user name of the user you want to describe.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>A container with information about the user type attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::AttributeType]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::types::AttributeType]> {
         self.attributes.as_deref()
     }
     /// <p>The creation date of the user.</p>
-    pub fn user_create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn user_create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.user_create_date.as_ref()
     }
     /// <p>The last modified date of the user.</p>
-    pub fn user_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn user_last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.user_last_modified_date.as_ref()
     }
     /// <p>Specifies whether the user is enabled.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
-    /// <p>The user status. This can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <p>The user status. This can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> 
+    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li> 
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li> 
+    /// <li> <p>ARCHIVED - User is no longer active.</p> </li> 
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li> 
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li> 
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li> 
     /// </ul>
-    pub fn user_status(&self) -> std::option::Option<&crate::types::UserStatusType> {
+    pub fn user_status(&self) -> std::option::Option<& crate::types::UserStatusType> {
         self.user_status.as_ref()
     }
     /// <p>The MFA options for the user.</p>
-    pub fn mfa_options(&self) -> std::option::Option<&[crate::types::MfaOptionType]> {
+    pub fn mfa_options(&self) -> std::option::Option<& [crate::types::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
 }
-impl std::fmt::Debug for UserType {
+impl  std::fmt::Debug for UserType  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserType");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -114,8 +114,7 @@ impl UserTypeBuilder {
     }
     /// <p>The user name of the user you want to describe.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Appends an item to `attributes`.
     ///
@@ -124,17 +123,13 @@ impl UserTypeBuilder {
     /// <p>A container with information about the user type attributes.</p>
     pub fn attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = Some(v);
-        self
+                        v.push(input);
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>A container with information about the user type attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>) -> Self {
+        self.attributes = input; self
     }
     /// <p>The creation date of the user.</p>
     pub fn user_create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,12 +137,8 @@ impl UserTypeBuilder {
         self
     }
     /// <p>The creation date of the user.</p>
-    pub fn set_user_create_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.user_create_date = input;
-        self
+    pub fn set_user_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.user_create_date = input; self
     }
     /// <p>The last modified date of the user.</p>
     pub fn user_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,12 +146,8 @@ impl UserTypeBuilder {
         self
     }
     /// <p>The last modified date of the user.</p>
-    pub fn set_user_last_modified_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.user_last_modified_date = input;
-        self
+    pub fn set_user_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.user_last_modified_date = input; self
     }
     /// <p>Specifies whether the user is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -169,39 +156,34 @@ impl UserTypeBuilder {
     }
     /// <p>Specifies whether the user is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
-    /// <p>The user status. This can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <p>The user status. This can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> 
+    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li> 
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li> 
+    /// <li> <p>ARCHIVED - User is no longer active.</p> </li> 
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li> 
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li> 
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li> 
     /// </ul>
     pub fn user_status(mut self, input: crate::types::UserStatusType) -> Self {
         self.user_status = Some(input);
         self
     }
-    /// <p>The user status. This can be one of the following:</p>
-    /// <ul>
-    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li>
-    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li>
-    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li>
-    /// <li> <p>ARCHIVED - User is no longer active.</p> </li>
-    /// <li> <p>UNKNOWN - User status isn't known.</p> </li>
-    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li>
-    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li>
+    /// <p>The user status. This can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>UNCONFIRMED - User has been created but not confirmed.</p> </li> 
+    /// <li> <p>CONFIRMED - User has been confirmed.</p> </li> 
+    /// <li> <p>EXTERNAL_PROVIDER - User signed in with a third-party IdP.</p> </li> 
+    /// <li> <p>ARCHIVED - User is no longer active.</p> </li> 
+    /// <li> <p>UNKNOWN - User status isn't known.</p> </li> 
+    /// <li> <p>RESET_REQUIRED - User is confirmed, but the user must request a code and reset their password before they can sign in.</p> </li> 
+    /// <li> <p>FORCE_CHANGE_PASSWORD - The user is confirmed and the user can sign in using a temporary password, but on first sign-in, the user must change their password to a new value before doing anything else. </p> </li> 
     /// </ul>
-    pub fn set_user_status(
-        mut self,
-        input: std::option::Option<crate::types::UserStatusType>,
-    ) -> Self {
-        self.user_status = input;
-        self
+    pub fn set_user_status(mut self, input: std::option::Option<crate::types::UserStatusType>) -> Self {
+        self.user_status = input; self
     }
     /// Appends an item to `mfa_options`.
     ///
@@ -210,28 +192,32 @@ impl UserTypeBuilder {
     /// <p>The MFA options for the user.</p>
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
-        v.push(input);
-        self.mfa_options = Some(v);
-        self
+                        v.push(input);
+                        self.mfa_options = Some(v);
+                        self
     }
     /// <p>The MFA options for the user.</p>
-    pub fn set_mfa_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
-    ) -> Self {
-        self.mfa_options = input;
-        self
+    pub fn set_mfa_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>) -> Self {
+        self.mfa_options = input; self
     }
     /// Consumes the builder and constructs a [`UserType`](crate::types::UserType).
     pub fn build(self) -> crate::types::UserType {
         crate::types::UserType {
-            username: self.username,
-            attributes: self.attributes,
-            user_create_date: self.user_create_date,
-            user_last_modified_date: self.user_last_modified_date,
-            enabled: self.enabled.unwrap_or_default(),
-            user_status: self.user_status,
-            mfa_options: self.mfa_options,
+            username: self.username
+            ,
+            attributes: self.attributes
+            ,
+            user_create_date: self.user_create_date
+            ,
+            user_last_modified_date: self.user_last_modified_date
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            user_status: self.user_status
+            ,
+            mfa_options: self.mfa_options
+            ,
         }
     }
 }
@@ -248,3 +234,4 @@ impl std::fmt::Debug for UserTypeBuilder {
         formatter.finish()
     }
 }
+

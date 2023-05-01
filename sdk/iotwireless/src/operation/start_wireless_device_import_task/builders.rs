@@ -4,71 +4,49 @@ pub use crate::operation::start_wireless_device_import_task::_start_wireless_dev
 pub use crate::operation::start_wireless_device_import_task::_start_wireless_device_import_task_input::StartWirelessDeviceImportTaskInputBuilder;
 
 /// Fluent builder constructing a request to `StartWirelessDeviceImportTask`.
-///
+/// 
 /// <p>Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartWirelessDeviceImportTaskFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::start_wireless_device_import_task::builders::StartWirelessDeviceImportTaskInputBuilder
             }
-impl StartWirelessDeviceImportTaskFluentBuilder {
+impl StartWirelessDeviceImportTaskFluentBuilder  {
     /// Creates a new `StartWirelessDeviceImportTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTask, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput, aws_smithy_http::result::SdkError<crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the Sidewalk destination that describes the IoT rule to route messages from the devices in the import task that are onboarded to AWS IoT Wireless.</p>
     pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_name(input.into());
@@ -85,10 +63,7 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -102,10 +77,7 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
         self
     }
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -115,11 +87,9 @@ impl StartWirelessDeviceImportTaskFluentBuilder {
         self
     }
     /// <p>The Sidewalk-related parameters for importing wireless devices that need to be provisioned in bulk.</p>
-    pub fn set_sidewalk(
-        mut self,
-        input: std::option::Option<crate::types::SidewalkStartImportInfo>,
-    ) -> Self {
+    pub fn set_sidewalk(mut self, input: std::option::Option<crate::types::SidewalkStartImportInfo>) -> Self {
         self.inner = self.inner.set_sidewalk(input);
         self
     }
 }
+

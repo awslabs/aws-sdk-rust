@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssessmentTemplateInput {
+pub struct DeleteAssessmentTemplateInput  {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
     #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentTemplateInput {
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
         self.assessment_template_arn.as_deref()
     }
 }
 impl DeleteAssessmentTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentTemplateInput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder {
         crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteAssessmentTemplateInputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-    pub fn set_assessment_template_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_template_arn = input;
-        self
+    pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_template_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentTemplateInput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_assessment_template::DeleteAssessmentTemplateInput {
-                assessment_template_arn: self.assessment_template_arn,
-            },
+                assessment_template_arn: self.assessment_template_arn
+                ,
+            }
         )
     }
 }
+

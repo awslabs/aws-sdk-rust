@@ -3,7 +3,7 @@
 /// Represents the input of a DeleteRuleGroupsNamespace operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleGroupsNamespaceInput {
+pub struct DeleteRuleGroupsNamespaceInput  {
     /// The ID of the workspace to delete rule group definition.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct DeleteRuleGroupsNamespaceInput {
 }
 impl DeleteRuleGroupsNamespaceInput {
     /// The ID of the workspace to delete rule group definition.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteRuleGroupsNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupsNamespaceInput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput).
-    pub fn builder() -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder{
+    pub fn builder() -> crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder {
         crate::operation::delete_rule_groups_namespace::builders::DeleteRuleGroupsNamespaceInputBuilder::default()
     }
 }
@@ -51,8 +51,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
     }
     /// The ID of the workspace to delete rule group definition.
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// The rule groups namespace name.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
     }
     /// The rule groups namespace name.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +69,20 @@ impl DeleteRuleGroupsNamespaceInputBuilder {
     }
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceInput`](crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceInput {
-                workspace_id: self.workspace_id,
-                name: self.name,
-                client_token: self.client_token,
-            },
+                workspace_id: self.workspace_id
+                ,
+                name: self.name
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Audio Pid Selection
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioPidSelection {
+pub struct AudioPidSelection  {
     /// Selects a specific PID from within a source.
     #[doc(hidden)]
     pub pid: i32,
@@ -35,13 +35,15 @@ impl AudioPidSelectionBuilder {
     }
     /// Selects a specific PID from within a source.
     pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
-        self.pid = input;
-        self
+        self.pid = input; self
     }
     /// Consumes the builder and constructs a [`AudioPidSelection`](crate::types::AudioPidSelection).
     pub fn build(self) -> crate::types::AudioPidSelection {
         crate::types::AudioPidSelection {
-            pid: self.pid.unwrap_or_default(),
+            pid: self.pid
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

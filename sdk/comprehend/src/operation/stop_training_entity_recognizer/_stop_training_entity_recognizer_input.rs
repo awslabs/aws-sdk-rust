@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTrainingEntityRecognizerInput {
+pub struct StopTrainingEntityRecognizerInput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
     #[doc(hidden)]
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
 }
 impl StopTrainingEntityRecognizerInput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
-    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<& str> {
         self.entity_recognizer_arn.as_deref()
     }
 }
 impl StopTrainingEntityRecognizerInput {
     /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerInput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput).
-    pub fn builder() -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder{
+    pub fn builder() -> crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder {
         crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl StopTrainingEntityRecognizerInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>
-    pub fn set_entity_recognizer_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.entity_recognizer_arn = input;
-        self
+    pub fn set_entity_recognizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.entity_recognizer_arn = input; self
     }
     /// Consumes the builder and constructs a [`StopTrainingEntityRecognizerInput`](crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizerInput {
-                entity_recognizer_arn: self.entity_recognizer_arn,
-            },
+                entity_recognizer_arn: self.entity_recognizer_arn
+                ,
+            }
         )
     }
 }
+

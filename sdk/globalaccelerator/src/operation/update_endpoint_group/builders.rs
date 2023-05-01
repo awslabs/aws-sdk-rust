@@ -4,81 +4,56 @@ pub use crate::operation::update_endpoint_group::_update_endpoint_group_output::
 pub use crate::operation::update_endpoint_group::_update_endpoint_group_input::UpdateEndpointGroupInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateEndpointGroup`.
-///
+/// 
 /// <p>Update an endpoint group. A resource must be valid and active when you add it as an endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEndpointGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder,
-}
-impl UpdateEndpointGroupFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder
+            }
+impl UpdateEndpointGroupFluentBuilder  {
     /// Creates a new `UpdateEndpointGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_endpoint_group::UpdateEndpointGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_endpoint_group::UpdateEndpointGroupOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_endpoint_group::UpdateEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_endpoint_group::UpdateEndpointGroupError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_endpoint_group::UpdateEndpointGroupOutput, aws_smithy_http::result::SdkError<crate::operation::update_endpoint_group::UpdateEndpointGroupError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
     }
@@ -92,22 +67,19 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
-    pub fn set_endpoint_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
-    ) -> Self {
+    pub fn set_endpoint_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>) -> Self {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
     }
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
-    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p> 
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> 
     /// <p>The default value is 100.</p>
     pub fn traffic_dial_percentage(mut self, input: f32) -> Self {
         self.inner = self.inner.traffic_dial_percentage(input);
         self
     }
-    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
-    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+    /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p> 
+    /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p> 
     /// <p>The default value is 100.</p>
     pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_traffic_dial_percentage(input);
@@ -129,10 +101,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
-    pub fn set_health_check_protocol(
-        mut self,
-        input: std::option::Option<crate::types::HealthCheckProtocol>,
-    ) -> Self {
+    pub fn set_health_check_protocol(mut self, input: std::option::Option<crate::types::HealthCheckProtocol>) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
@@ -142,10 +111,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    pub fn set_health_check_path(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_health_check_path(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
@@ -173,19 +139,17 @@ impl UpdateEndpointGroupFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
     ///
-    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn port_overrides(mut self, input: crate::types::PortOverride) -> Self {
         self.inner = self.inner.port_overrides(input);
         self
     }
-    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p>
+    /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_port_overrides(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PortOverride>>,
-    ) -> Self {
+    pub fn set_port_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortOverride>>) -> Self {
         self.inner = self.inner.set_port_overrides(input);
         self
     }
 }
+

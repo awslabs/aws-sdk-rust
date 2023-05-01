@@ -3,7 +3,7 @@
 /// <p>Your request has conflicting operations. This can occur if you're trying to perform more than one operation on the same resource at the same time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictingOperationException {
+pub struct ConflictingOperationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -17,25 +17,23 @@ pub struct ConflictingOperationException {
 }
 impl ConflictingOperationException {
     /// <p>The ID of the resource that conflicts with this operation.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The ARN of the resource that conflicts with this operation.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl ConflictingOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictingOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictingOperationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -50,9 +48,7 @@ impl aws_http::request_id::RequestId for crate::types::error::ConflictingOperati
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictingOperationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictingOperationException {
     /// Creates a new builder-style object to manufacture [`ConflictingOperationException`](crate::types::error::ConflictingOperationException).
@@ -78,8 +74,7 @@ impl ConflictingOperationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The ID of the resource that conflicts with this operation.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +83,7 @@ impl ConflictingOperationExceptionBuilder {
     }
     /// <p>The ID of the resource that conflicts with this operation.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The ARN of the resource that conflicts with this operation.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,30 +92,30 @@ impl ConflictingOperationExceptionBuilder {
     }
     /// <p>The ARN of the resource that conflicts with this operation.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ConflictingOperationException`](crate::types::error::ConflictingOperationException).
     pub fn build(self) -> crate::types::error::ConflictingOperationException {
         crate::types::error::ConflictingOperationException {
-            message: self.message,
-            resource_id: self.resource_id,
-            resource_arn: self.resource_arn,
+            message: self.message
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_arn: self.resource_arn
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

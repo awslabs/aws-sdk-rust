@@ -4,81 +4,59 @@ pub use crate::operation::update_maintenance_window_target::_update_maintenance_
 pub use crate::operation::update_maintenance_window_target::_update_maintenance_window_target_input::UpdateMaintenanceWindowTargetInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateMaintenanceWindowTarget`.
-///
-/// <p>Modifies the target of an existing maintenance window. You can change the following:</p>
-/// <ul>
-/// <li> <p>Name</p> </li>
-/// <li> <p>Description</p> </li>
-/// <li> <p>Owner</p> </li>
-/// <li> <p>IDs for an ID target</p> </li>
-/// <li> <p>Tags for a Tag target</p> </li>
-/// <li> <p>From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see <code>Target</code>.</p> </li>
-/// </ul> <note>
-/// <p>If a parameter is null, then the corresponding field isn't modified.</p>
+/// 
+/// <p>Modifies the target of an existing maintenance window. You can change the following:</p> 
+/// <ul> 
+/// <li> <p>Name</p> </li> 
+/// <li> <p>Description</p> </li> 
+/// <li> <p>Owner</p> </li> 
+/// <li> <p>IDs for an ID target</p> </li> 
+/// <li> <p>Tags for a Tag target</p> </li> 
+/// <li> <p>From any supported tag type to another. The three supported tag types are ID target, Tag target, and resource group. For more information, see <code>Target</code>.</p> </li> 
+/// </ul> <note> 
+/// <p>If a parameter is null, then the corresponding field isn't modified.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTargetFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder
             }
-impl UpdateMaintenanceWindowTargetFluentBuilder {
+impl UpdateMaintenanceWindowTargetFluentBuilder  {
     /// Creates a new `UpdateMaintenanceWindowTarget`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTarget,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTarget, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput, aws_smithy_http::result::SdkError<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The maintenance window ID with which to modify the target.</p>
     pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -109,10 +87,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self
     }
     /// <p>The targets to add or replace.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -122,10 +97,7 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self
     }
     /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while running tasks for these targets in this maintenance window.</p>
-    pub fn set_owner_information(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_owner_information(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_owner_information(input);
         self
     }
@@ -160,3 +132,4 @@ impl UpdateMaintenanceWindowTargetFluentBuilder {
         self
     }
 }
+

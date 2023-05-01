@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsOlderThanOrderingIdOutput {
+pub struct ListGroupsOlderThanOrderingIdOutput  {
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     #[doc(hidden)]
     pub groups_summaries: std::option::Option<std::vec::Vec<crate::types::GroupSummary>>,
@@ -13,22 +13,22 @@ pub struct ListGroupsOlderThanOrderingIdOutput {
 }
 impl ListGroupsOlderThanOrderingIdOutput {
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn groups_summaries(&self) -> std::option::Option<&[crate::types::GroupSummary]> {
+    pub fn groups_summaries(&self) -> std::option::Option<& [crate::types::GroupSummary]> {
         self.groups_summaries.as_deref()
     }
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListGroupsOlderThanOrderingIdOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListGroupsOlderThanOrderingIdOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput).
-    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdOutputBuilder{
+    pub fn builder() -> crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdOutputBuilder {
         crate::operation::list_groups_older_than_ordering_id::builders::ListGroupsOlderThanOrderingIdOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl ListGroupsOlderThanOrderingIdOutputBuilder {
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn groups_summaries(mut self, input: crate::types::GroupSummary) -> Self {
         let mut v = self.groups_summaries.unwrap_or_default();
-        v.push(input);
-        self.groups_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.groups_summaries = Some(v);
+                        self
     }
     /// <p> Summary information for list of groups that are mapped to users before a given ordering or timestamp identifier. </p>
-    pub fn set_groups_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupSummary>>,
-    ) -> Self {
-        self.groups_summaries = input;
-        self
+    pub fn set_groups_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupSummary>>) -> Self {
+        self.groups_summaries = input; self
     }
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,27 +64,26 @@ impl ListGroupsOlderThanOrderingIdOutputBuilder {
     }
     /// <p> If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of groups that are mapped to users before a given ordering or timestamp identifier. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListGroupsOlderThanOrderingIdOutput`](crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput
-    {
+    pub fn build(self) -> crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput {
         crate::operation::list_groups_older_than_ordering_id::ListGroupsOlderThanOrderingIdOutput {
-            groups_summaries: self.groups_summaries,
-            next_token: self.next_token,
+            groups_summaries: self.groups_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

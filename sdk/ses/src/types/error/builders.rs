@@ -66,3 +66,4 @@ pub use crate::types::error::_event_destination_already_exists_exception::EventD
 pub use crate::types::error::_invalid_configuration_set_exception::InvalidConfigurationSetExceptionBuilder;
 
 pub use crate::types::error::_configuration_set_already_exists_exception::ConfigurationSetAlreadyExistsExceptionBuilder;
+

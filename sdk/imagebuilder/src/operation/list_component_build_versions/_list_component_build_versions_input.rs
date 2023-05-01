@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentBuildVersionsInput {
+pub struct ListComponentBuildVersionsInput  {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
     #[doc(hidden)]
     pub component_version_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListComponentBuildVersionsInput {
 }
 impl ListComponentBuildVersionsInput {
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn component_version_arn(&self) -> std::option::Option<&str> {
+    pub fn component_version_arn(&self) -> std::option::Option<& str> {
         self.component_version_arn.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -23,13 +23,13 @@ impl ListComponentBuildVersionsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListComponentBuildVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListComponentBuildVersionsInput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsInput).
-    pub fn builder() -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder{
+    pub fn builder() -> crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder {
         crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl ListComponentBuildVersionsInputBuilder {
         self
     }
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
-    pub fn set_component_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.component_version_arn = input;
-        self
+    pub fn set_component_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.component_version_arn = input; self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,8 +59,7 @@ impl ListComponentBuildVersionsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,22 +68,20 @@ impl ListComponentBuildVersionsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListComponentBuildVersionsInput`](crate::operation::list_component_build_versions::ListComponentBuildVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_component_build_versions::ListComponentBuildVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_component_build_versions::ListComponentBuildVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_component_build_versions::ListComponentBuildVersionsInput {
-                component_version_arn: self.component_version_arn,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                component_version_arn: self.component_version_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

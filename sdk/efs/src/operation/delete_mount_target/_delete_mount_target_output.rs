@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMountTargetOutput {
+pub struct DeleteMountTargetOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteMountTargetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteMountTargetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMountTargetOutput`](crate::operation::delete_mount_target::DeleteMountTargetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder {
+    pub fn builder() -> crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder {
         crate::operation::delete_mount_target::builders::DeleteMountTargetOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteMountTargetOutputBuilder {
 }
 impl DeleteMountTargetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteMountTargetOutput`](crate::operation::delete_mount_target::DeleteMountTargetOutput).
     pub fn build(self) -> crate::operation::delete_mount_target::DeleteMountTargetOutput {
         crate::operation::delete_mount_target::DeleteMountTargetOutput {
@@ -41,3 +40,4 @@ impl DeleteMountTargetOutputBuilder {
         }
     }
 }
+

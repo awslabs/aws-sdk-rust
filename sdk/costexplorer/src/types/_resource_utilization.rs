@@ -3,16 +3,14 @@
 /// <p>Resource utilization of current resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceUtilization {
+pub struct ResourceUtilization  {
     /// <p>The utilization of current Amazon EC2 instance. </p>
     #[doc(hidden)]
     pub ec2_resource_utilization: std::option::Option<crate::types::Ec2ResourceUtilization>,
 }
 impl ResourceUtilization {
     /// <p>The utilization of current Amazon EC2 instance. </p>
-    pub fn ec2_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::types::Ec2ResourceUtilization> {
+    pub fn ec2_resource_utilization(&self) -> std::option::Option<& crate::types::Ec2ResourceUtilization> {
         self.ec2_resource_utilization.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl ResourceUtilizationBuilder {
         self
     }
     /// <p>The utilization of current Amazon EC2 instance. </p>
-    pub fn set_ec2_resource_utilization(
-        mut self,
-        input: std::option::Option<crate::types::Ec2ResourceUtilization>,
-    ) -> Self {
-        self.ec2_resource_utilization = input;
-        self
+    pub fn set_ec2_resource_utilization(mut self, input: std::option::Option<crate::types::Ec2ResourceUtilization>) -> Self {
+        self.ec2_resource_utilization = input; self
     }
     /// Consumes the builder and constructs a [`ResourceUtilization`](crate::types::ResourceUtilization).
     pub fn build(self) -> crate::types::ResourceUtilization {
         crate::types::ResourceUtilization {
-            ec2_resource_utilization: self.ec2_resource_utilization,
+            ec2_resource_utilization: self.ec2_resource_utilization
+            ,
         }
     }
 }
+

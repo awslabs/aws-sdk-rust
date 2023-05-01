@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateElasticIpInput {
+pub struct AssociateElasticIpInput  {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct AssociateElasticIpInput {
 }
 impl AssociateElasticIpInput {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<&str> {
+    pub fn elastic_ip(&self) -> std::option::Option<& str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl AssociateElasticIpInput {
     /// Creates a new builder-style object to manufacture [`AssociateElasticIpInput`](crate::operation::associate_elastic_ip::AssociateElasticIpInput).
-    pub fn builder(
-    ) -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
+    pub fn builder() -> crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder {
         crate::operation::associate_elastic_ip::builders::AssociateElasticIpInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl AssociateElasticIpInputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.elastic_ip = input;
-        self
+        self.elastic_ip = input; self
     }
     /// <p>The instance ID.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl AssociateElasticIpInputBuilder {
     }
     /// <p>The instance ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`AssociateElasticIpInput`](crate::operation::associate_elastic_ip::AssociateElasticIpInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_elastic_ip::AssociateElasticIpInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_elastic_ip::AssociateElasticIpInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_elastic_ip::AssociateElasticIpInput {
-                elastic_ip: self.elastic_ip,
-                instance_id: self.instance_id,
-            },
+                elastic_ip: self.elastic_ip
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Organization-wide Kubernetes audit logs configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationKubernetesAuditLogsConfiguration {
+pub struct OrganizationKubernetesAuditLogsConfiguration  {
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
     #[doc(hidden)]
     pub auto_enable: bool,
@@ -16,8 +16,7 @@ impl OrganizationKubernetesAuditLogsConfiguration {
 }
 impl OrganizationKubernetesAuditLogsConfiguration {
     /// Creates a new builder-style object to manufacture [`OrganizationKubernetesAuditLogsConfiguration`](crate::types::OrganizationKubernetesAuditLogsConfiguration).
-    pub fn builder() -> crate::types::builders::OrganizationKubernetesAuditLogsConfigurationBuilder
-    {
+    pub fn builder() -> crate::types::builders::OrganizationKubernetesAuditLogsConfigurationBuilder {
         crate::types::builders::OrganizationKubernetesAuditLogsConfigurationBuilder::default()
     }
 }
@@ -36,13 +35,15 @@ impl OrganizationKubernetesAuditLogsConfigurationBuilder {
     }
     /// <p>A value that contains information on whether Kubernetes audit logs should be enabled automatically as a data source for the organization.</p>
     pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_enable = input;
-        self
+        self.auto_enable = input; self
     }
     /// Consumes the builder and constructs a [`OrganizationKubernetesAuditLogsConfiguration`](crate::types::OrganizationKubernetesAuditLogsConfiguration).
     pub fn build(self) -> crate::types::OrganizationKubernetesAuditLogsConfiguration {
         crate::types::OrganizationKubernetesAuditLogsConfiguration {
-            auto_enable: self.auto_enable.unwrap_or_default(),
+            auto_enable: self.auto_enable
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

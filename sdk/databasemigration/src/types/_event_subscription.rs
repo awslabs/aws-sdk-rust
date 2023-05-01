@@ -3,7 +3,7 @@
 /// <p>Describes an event notification subscription created by the <code>CreateEventSubscription</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSubscription {
+pub struct EventSubscription  {
     /// <p>The Amazon Web Services customer account associated with the DMS event notification subscription.</p>
     #[doc(hidden)]
     pub customer_aws_id: std::option::Option<std::string::String>,
@@ -13,16 +13,16 @@ pub struct EventSubscription {
     /// <p>The topic ARN of the DMS event notification subscription.</p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the DMS event notification subscription.</p>
-    /// <p>Constraints:</p>
-    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
+    /// <p>The status of the DMS event notification subscription.</p> 
+    /// <p>Constraints:</p> 
+    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p> 
     /// <p>The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
     /// <p>The time the DMS event notification subscription was created.</p>
     #[doc(hidden)]
     pub subscription_creation_time: std::option::Option<std::string::String>,
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p> The type of DMS resource that generates events. </p> 
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     #[doc(hidden)]
     pub source_type: std::option::Option<std::string::String>,
@@ -38,39 +38,39 @@ pub struct EventSubscription {
 }
 impl EventSubscription {
     /// <p>The Amazon Web Services customer account associated with the DMS event notification subscription.</p>
-    pub fn customer_aws_id(&self) -> std::option::Option<&str> {
+    pub fn customer_aws_id(&self) -> std::option::Option<& str> {
         self.customer_aws_id.as_deref()
     }
     /// <p>The DMS event notification subscription Id.</p>
-    pub fn cust_subscription_id(&self) -> std::option::Option<&str> {
+    pub fn cust_subscription_id(&self) -> std::option::Option<& str> {
         self.cust_subscription_id.as_deref()
     }
     /// <p>The topic ARN of the DMS event notification subscription.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
-    /// <p>The status of the DMS event notification subscription.</p>
-    /// <p>Constraints:</p>
-    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
+    /// <p>The status of the DMS event notification subscription.</p> 
+    /// <p>Constraints:</p> 
+    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p> 
     /// <p>The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The time the DMS event notification subscription was created.</p>
-    pub fn subscription_creation_time(&self) -> std::option::Option<&str> {
+    pub fn subscription_creation_time(&self) -> std::option::Option<& str> {
         self.subscription_creation_time.as_deref()
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p> The type of DMS resource that generates events. </p> 
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> std::option::Option<& str> {
         self.source_type.as_deref()
     }
     /// <p>A list of source Ids for the event subscription.</p>
-    pub fn source_ids_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_ids_list(&self) -> std::option::Option<& [std::string::String]> {
         self.source_ids_list.as_deref()
     }
     /// <p>A lists of event categories.</p>
-    pub fn event_categories_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn event_categories_list(&self) -> std::option::Option<& [std::string::String]> {
         self.event_categories_list.as_deref()
     }
     /// <p>Boolean value that indicates if the event subscription is enabled.</p>
@@ -107,8 +107,7 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The Amazon Web Services customer account associated with the DMS event notification subscription.</p>
     pub fn set_customer_aws_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.customer_aws_id = input;
-        self
+        self.customer_aws_id = input; self
     }
     /// <p>The DMS event notification subscription Id.</p>
     pub fn cust_subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,12 +115,8 @@ impl EventSubscriptionBuilder {
         self
     }
     /// <p>The DMS event notification subscription Id.</p>
-    pub fn set_cust_subscription_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cust_subscription_id = input;
-        self
+    pub fn set_cust_subscription_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cust_subscription_id = input; self
     }
     /// <p>The topic ARN of the DMS event notification subscription.</p>
     pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,24 +125,22 @@ impl EventSubscriptionBuilder {
     }
     /// <p>The topic ARN of the DMS event notification subscription.</p>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
-    /// <p>The status of the DMS event notification subscription.</p>
-    /// <p>Constraints:</p>
-    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
+    /// <p>The status of the DMS event notification subscription.</p> 
+    /// <p>Constraints:</p> 
+    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p> 
     /// <p>The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The status of the DMS event notification subscription.</p>
-    /// <p>Constraints:</p>
-    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p>
+    /// <p>The status of the DMS event notification subscription.</p> 
+    /// <p>Constraints:</p> 
+    /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission | topic-not-exist</p> 
     /// <p>The status "no-permission" indicates that DMS no longer has permission to post to the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the subscription was created.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The time the DMS event notification subscription was created.</p>
     pub fn subscription_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -155,24 +148,19 @@ impl EventSubscriptionBuilder {
         self
     }
     /// <p>The time the DMS event notification subscription was created.</p>
-    pub fn set_subscription_creation_time(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.subscription_creation_time = input;
-        self
+    pub fn set_subscription_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.subscription_creation_time = input; self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p> The type of DMS resource that generates events. </p> 
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_type = Some(input.into());
         self
     }
-    /// <p> The type of DMS resource that generates events. </p>
+    /// <p> The type of DMS resource that generates events. </p> 
     /// <p>Valid values: replication-instance | replication-server | security-group | replication-task</p>
     pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_type = input;
-        self
+        self.source_type = input; self
     }
     /// Appends an item to `source_ids_list`.
     ///
@@ -181,17 +169,13 @@ impl EventSubscriptionBuilder {
     /// <p>A list of source Ids for the event subscription.</p>
     pub fn source_ids_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_ids_list.unwrap_or_default();
-        v.push(input.into());
-        self.source_ids_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.source_ids_list = Some(v);
+                        self
     }
     /// <p>A list of source Ids for the event subscription.</p>
-    pub fn set_source_ids_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.source_ids_list = input;
-        self
+    pub fn set_source_ids_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.source_ids_list = input; self
     }
     /// Appends an item to `event_categories_list`.
     ///
@@ -200,17 +184,13 @@ impl EventSubscriptionBuilder {
     /// <p>A lists of event categories.</p>
     pub fn event_categories_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.event_categories_list.unwrap_or_default();
-        v.push(input.into());
-        self.event_categories_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.event_categories_list = Some(v);
+                        self
     }
     /// <p>A lists of event categories.</p>
-    pub fn set_event_categories_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.event_categories_list = input;
-        self
+    pub fn set_event_categories_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.event_categories_list = input; self
     }
     /// <p>Boolean value that indicates if the event subscription is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -219,21 +199,31 @@ impl EventSubscriptionBuilder {
     }
     /// <p>Boolean value that indicates if the event subscription is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`EventSubscription`](crate::types::EventSubscription).
     pub fn build(self) -> crate::types::EventSubscription {
         crate::types::EventSubscription {
-            customer_aws_id: self.customer_aws_id,
-            cust_subscription_id: self.cust_subscription_id,
-            sns_topic_arn: self.sns_topic_arn,
-            status: self.status,
-            subscription_creation_time: self.subscription_creation_time,
-            source_type: self.source_type,
-            source_ids_list: self.source_ids_list,
-            event_categories_list: self.event_categories_list,
-            enabled: self.enabled.unwrap_or_default(),
+            customer_aws_id: self.customer_aws_id
+            ,
+            cust_subscription_id: self.cust_subscription_id
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            status: self.status
+            ,
+            subscription_creation_time: self.subscription_creation_time
+            ,
+            source_type: self.source_type
+            ,
+            source_ids_list: self.source_ids_list
+            ,
+            event_categories_list: self.event_categories_list
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

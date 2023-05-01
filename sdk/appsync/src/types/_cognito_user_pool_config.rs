@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon Cognito user pool configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CognitoUserPoolConfig {
+pub struct CognitoUserPoolConfig  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CognitoUserPoolConfig {
 }
 impl CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn app_id_client_regex(&self) -> std::option::Option<&str> {
+    pub fn app_id_client_regex(&self) -> std::option::Option<& str> {
         self.app_id_client_regex.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CognitoUserPoolConfigBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CognitoUserPoolConfigBuilder {
     }
     /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input;
-        self
+        self.aws_region = input; self
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
     pub fn app_id_client_regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,19 +68,19 @@ impl CognitoUserPoolConfigBuilder {
         self
     }
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client ID. If this value isn't set, no filtering is applied.</p>
-    pub fn set_app_id_client_regex(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_id_client_regex = input;
-        self
+    pub fn set_app_id_client_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_id_client_regex = input; self
     }
     /// Consumes the builder and constructs a [`CognitoUserPoolConfig`](crate::types::CognitoUserPoolConfig).
     pub fn build(self) -> crate::types::CognitoUserPoolConfig {
         crate::types::CognitoUserPoolConfig {
-            user_pool_id: self.user_pool_id,
-            aws_region: self.aws_region,
-            app_id_client_regex: self.app_id_client_regex,
+            user_pool_id: self.user_pool_id
+            ,
+            aws_region: self.aws_region
+            ,
+            app_id_client_regex: self.app_id_client_regex
+            ,
         }
     }
 }
+

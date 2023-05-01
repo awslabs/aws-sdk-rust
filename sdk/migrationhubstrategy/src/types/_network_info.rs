@@ -3,7 +3,7 @@
 /// <p> Information about the server's network for which the assessment was run. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInfo {
+pub struct NetworkInfo  {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
     #[doc(hidden)]
     pub interface_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct NetworkInfo {
 }
 impl NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn interface_name(&self) -> std::option::Option<&str> {
+    pub fn interface_name(&self) -> std::option::Option<& str> {
         self.interface_name.as_deref()
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    pub fn net_mask(&self) -> std::option::Option<&str> {
+    pub fn net_mask(&self) -> std::option::Option<& str> {
         self.net_mask.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl NetworkInfoBuilder {
     }
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
     pub fn set_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.interface_name = input;
-        self
+        self.interface_name = input; self
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl NetworkInfoBuilder {
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
     pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl NetworkInfoBuilder {
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
     pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
     pub fn net_mask(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl NetworkInfoBuilder {
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
     pub fn set_net_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.net_mask = input;
-        self
+        self.net_mask = input; self
     }
     /// Consumes the builder and constructs a [`NetworkInfo`](crate::types::NetworkInfo).
     pub fn build(self) -> crate::types::NetworkInfo {
         crate::types::NetworkInfo {
-            interface_name: self.interface_name,
-            ip_address: self.ip_address,
-            mac_address: self.mac_address,
-            net_mask: self.net_mask,
+            interface_name: self.interface_name
+            ,
+            ip_address: self.ip_address
+            ,
+            mac_address: self.mac_address
+            ,
+            net_mask: self.net_mask
+            ,
         }
     }
 }
+

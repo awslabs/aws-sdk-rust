@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mpeg2intradcprecision = unimplemented!();
 /// match mpeg2intradcprecision {
@@ -33,22 +33,14 @@
 /// Specifically, when `mpeg2intradcprecision` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Mpeg2IntraDcPrecision::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Mpeg2IntraDcPrecision {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -61,54 +53,47 @@ pub enum Mpeg2IntraDcPrecision {
     #[allow(missing_docs)] // documentation missing in model
     IntraDcPrecision9,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Mpeg2IntraDcPrecision {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUTO" => Mpeg2IntraDcPrecision::Auto,
-            "INTRA_DC_PRECISION_10" => Mpeg2IntraDcPrecision::IntraDcPrecision10,
-            "INTRA_DC_PRECISION_11" => Mpeg2IntraDcPrecision::IntraDcPrecision11,
-            "INTRA_DC_PRECISION_8" => Mpeg2IntraDcPrecision::IntraDcPrecision8,
-            "INTRA_DC_PRECISION_9" => Mpeg2IntraDcPrecision::IntraDcPrecision9,
-            other => Mpeg2IntraDcPrecision::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUTO" => Mpeg2IntraDcPrecision::Auto,
+"INTRA_DC_PRECISION_10" => Mpeg2IntraDcPrecision::IntraDcPrecision10,
+"INTRA_DC_PRECISION_11" => Mpeg2IntraDcPrecision::IntraDcPrecision11,
+"INTRA_DC_PRECISION_8" => Mpeg2IntraDcPrecision::IntraDcPrecision8,
+"INTRA_DC_PRECISION_9" => Mpeg2IntraDcPrecision::IntraDcPrecision9,
+other => Mpeg2IntraDcPrecision::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Mpeg2IntraDcPrecision {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2IntraDcPrecision::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Mpeg2IntraDcPrecision::from(s))
+                }
+            }
 impl Mpeg2IntraDcPrecision {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Mpeg2IntraDcPrecision::Auto => "AUTO",
-            Mpeg2IntraDcPrecision::IntraDcPrecision10 => "INTRA_DC_PRECISION_10",
-            Mpeg2IntraDcPrecision::IntraDcPrecision11 => "INTRA_DC_PRECISION_11",
-            Mpeg2IntraDcPrecision::IntraDcPrecision8 => "INTRA_DC_PRECISION_8",
-            Mpeg2IntraDcPrecision::IntraDcPrecision9 => "INTRA_DC_PRECISION_9",
-            Mpeg2IntraDcPrecision::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUTO",
-            "INTRA_DC_PRECISION_10",
-            "INTRA_DC_PRECISION_11",
-            "INTRA_DC_PRECISION_8",
-            "INTRA_DC_PRECISION_9",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Mpeg2IntraDcPrecision::Auto => "AUTO",
+    Mpeg2IntraDcPrecision::IntraDcPrecision10 => "INTRA_DC_PRECISION_10",
+    Mpeg2IntraDcPrecision::IntraDcPrecision11 => "INTRA_DC_PRECISION_11",
+    Mpeg2IntraDcPrecision::IntraDcPrecision8 => "INTRA_DC_PRECISION_8",
+    Mpeg2IntraDcPrecision::IntraDcPrecision9 => "INTRA_DC_PRECISION_9",
+    Mpeg2IntraDcPrecision::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUTO", "INTRA_DC_PRECISION_10", "INTRA_DC_PRECISION_11", "INTRA_DC_PRECISION_8", "INTRA_DC_PRECISION_9"]
+                }
+            }
 impl AsRef<str> for Mpeg2IntraDcPrecision {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -3,7 +3,7 @@
 /// <p>The results of evaluating an algorithm. Returned as part of the <code>GetAccuracyMetrics</code> response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationResult {
+pub struct EvaluationResult  {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
     #[doc(hidden)]
     pub algorithm_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EvaluationResult {
 }
 impl EvaluationResult {
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> std::option::Option<& str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
-    pub fn test_windows(&self) -> std::option::Option<&[crate::types::WindowSummary]> {
+    pub fn test_windows(&self) -> std::option::Option<& [crate::types::WindowSummary]> {
         self.test_windows.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that was evaluated.</p>
     pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.algorithm_arn = input;
-        self
+        self.algorithm_arn = input; self
     }
     /// Appends an item to `test_windows`.
     ///
@@ -53,23 +52,22 @@ impl EvaluationResultBuilder {
     /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
     pub fn test_windows(mut self, input: crate::types::WindowSummary) -> Self {
         let mut v = self.test_windows.unwrap_or_default();
-        v.push(input);
-        self.test_windows = Some(v);
-        self
+                        v.push(input);
+                        self.test_windows = Some(v);
+                        self
     }
     /// <p>The array of test windows used for evaluating the algorithm. The <code>NumberOfBacktestWindows</code> from the <code>EvaluationParameters</code> object determines the number of windows in the array.</p>
-    pub fn set_test_windows(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WindowSummary>>,
-    ) -> Self {
-        self.test_windows = input;
-        self
+    pub fn set_test_windows(mut self, input: std::option::Option<std::vec::Vec<crate::types::WindowSummary>>) -> Self {
+        self.test_windows = input; self
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {
         crate::types::EvaluationResult {
-            algorithm_arn: self.algorithm_arn,
-            test_windows: self.test_windows,
+            algorithm_arn: self.algorithm_arn
+            ,
+            test_windows: self.test_windows
+            ,
         }
     }
 }
+

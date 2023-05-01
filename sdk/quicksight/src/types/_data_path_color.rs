@@ -3,7 +3,7 @@
 /// <p>The color map that determines the color options for a particular element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataPathColor {
+pub struct DataPathColor  {
     /// <p>The element that the color needs to be applied to.</p>
     #[doc(hidden)]
     pub element: std::option::Option<crate::types::DataPathValue>,
@@ -16,15 +16,15 @@ pub struct DataPathColor {
 }
 impl DataPathColor {
     /// <p>The element that the color needs to be applied to.</p>
-    pub fn element(&self) -> std::option::Option<&crate::types::DataPathValue> {
+    pub fn element(&self) -> std::option::Option<& crate::types::DataPathValue> {
         self.element.as_ref()
     }
     /// <p>The color that needs to be applied to the element.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> std::option::Option<& str> {
         self.color.as_deref()
     }
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
-    pub fn time_granularity(&self) -> std::option::Option<&crate::types::TimeGranularity> {
+    pub fn time_granularity(&self) -> std::option::Option<& crate::types::TimeGranularity> {
         self.time_granularity.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl DataPathColorBuilder {
     }
     /// <p>The element that the color needs to be applied to.</p>
     pub fn set_element(mut self, input: std::option::Option<crate::types::DataPathValue>) -> Self {
-        self.element = input;
-        self
+        self.element = input; self
     }
     /// <p>The color that needs to be applied to the element.</p>
     pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl DataPathColorBuilder {
     }
     /// <p>The color that needs to be applied to the element.</p>
     pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.color = input;
-        self
+        self.color = input; self
     }
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
     pub fn time_granularity(mut self, input: crate::types::TimeGranularity) -> Self {
@@ -70,19 +68,19 @@ impl DataPathColorBuilder {
         self
     }
     /// <p>The time granularity of the field that the color needs to be applied to.</p>
-    pub fn set_time_granularity(
-        mut self,
-        input: std::option::Option<crate::types::TimeGranularity>,
-    ) -> Self {
-        self.time_granularity = input;
-        self
+    pub fn set_time_granularity(mut self, input: std::option::Option<crate::types::TimeGranularity>) -> Self {
+        self.time_granularity = input; self
     }
     /// Consumes the builder and constructs a [`DataPathColor`](crate::types::DataPathColor).
     pub fn build(self) -> crate::types::DataPathColor {
         crate::types::DataPathColor {
-            element: self.element,
-            color: self.color,
-            time_granularity: self.time_granularity,
+            element: self.element
+            ,
+            color: self.color
+            ,
+            time_granularity: self.time_granularity
+            ,
         }
     }
 }
+

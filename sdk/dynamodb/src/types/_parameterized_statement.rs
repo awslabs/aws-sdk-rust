@@ -3,7 +3,7 @@
 /// <p> Represents a PartiQL statment that uses parameters. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterizedStatement {
+pub struct ParameterizedStatement  {
     /// <p> A PartiQL statment that uses parameters. </p>
     #[doc(hidden)]
     pub statement: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParameterizedStatement {
 }
 impl ParameterizedStatement {
     /// <p> A PartiQL statment that uses parameters. </p>
-    pub fn statement(&self) -> std::option::Option<&str> {
+    pub fn statement(&self) -> std::option::Option<& str> {
         self.statement.as_deref()
     }
     /// <p> The parameter values. </p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::AttributeValue]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::types::AttributeValue]> {
         self.parameters.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ParameterizedStatementBuilder {
     }
     /// <p> A PartiQL statment that uses parameters. </p>
     pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement = input;
-        self
+        self.statement = input; self
     }
     /// Appends an item to `parameters`.
     ///
@@ -53,23 +52,22 @@ impl ParameterizedStatementBuilder {
     /// <p> The parameter values. </p>
     pub fn parameters(mut self, input: crate::types::AttributeValue) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-        v.push(input);
-        self.parameters = Some(v);
-        self
+                        v.push(input);
+                        self.parameters = Some(v);
+                        self
     }
     /// <p> The parameter values. </p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeValue>>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeValue>>) -> Self {
+        self.parameters = input; self
     }
     /// Consumes the builder and constructs a [`ParameterizedStatement`](crate::types::ParameterizedStatement).
     pub fn build(self) -> crate::types::ParameterizedStatement {
         crate::types::ParameterizedStatement {
-            statement: self.statement,
-            parameters: self.parameters,
+            statement: self.statement
+            ,
+            parameters: self.parameters
+            ,
         }
     }
 }
+

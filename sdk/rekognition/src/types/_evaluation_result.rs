@@ -3,7 +3,7 @@
 /// <p>The evaluation results for the training of a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationResult {
+pub struct EvaluationResult  {
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
     #[doc(hidden)]
     pub f1_score: std::option::Option<f32>,
@@ -17,7 +17,7 @@ impl EvaluationResult {
         self.f1_score
     }
     /// <p>The S3 bucket that contains the training summary.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::Summary> {
+    pub fn summary(&self) -> std::option::Option<& crate::types::Summary> {
         self.summary.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl EvaluationResultBuilder {
     }
     /// <p>The F1 score for the evaluation of all labels. The F1 score metric evaluates the overall precision and recall performance of the model as a single value. A higher value indicates better precision and recall performance. A lower score indicates that precision, recall, or both are performing poorly. </p>
     pub fn set_f1_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.f1_score = input;
-        self
+        self.f1_score = input; self
     }
     /// <p>The S3 bucket that contains the training summary.</p>
     pub fn summary(mut self, input: crate::types::Summary) -> Self {
@@ -53,14 +52,16 @@ impl EvaluationResultBuilder {
     }
     /// <p>The S3 bucket that contains the training summary.</p>
     pub fn set_summary(mut self, input: std::option::Option<crate::types::Summary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// Consumes the builder and constructs a [`EvaluationResult`](crate::types::EvaluationResult).
     pub fn build(self) -> crate::types::EvaluationResult {
         crate::types::EvaluationResult {
-            f1_score: self.f1_score,
-            summary: self.summary,
+            f1_score: self.f1_score
+            ,
+            summary: self.summary
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceTemplateVersionInput {
+pub struct DeleteServiceTemplateVersionInput  {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DeleteServiceTemplateVersionInput {
 }
 impl DeleteServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The service template major version to delete.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The service template minor version to delete.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
 }
 impl DeleteServiceTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceTemplateVersionInput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput).
-    pub fn builder() -> crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder {
         crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DeleteServiceTemplateVersionInputBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The service template major version to delete.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DeleteServiceTemplateVersionInputBuilder {
     }
     /// <p>The service template major version to delete.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>The service template minor version to delete.</p>
     pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,22 +68,20 @@ impl DeleteServiceTemplateVersionInputBuilder {
     }
     /// <p>The service template minor version to delete.</p>
     pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateVersionInput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput {
-                template_name: self.template_name,
-                major_version: self.major_version,
-                minor_version: self.minor_version,
-            },
+                template_name: self.template_name
+                ,
+                major_version: self.major_version
+                ,
+                minor_version: self.minor_version
+                ,
+            }
         )
     }
 }
+

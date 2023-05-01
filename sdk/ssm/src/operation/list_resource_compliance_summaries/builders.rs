@@ -4,64 +4,55 @@ pub use crate::operation::list_resource_compliance_summaries::_list_resource_com
 pub use crate::operation::list_resource_compliance_summaries::_list_resource_compliance_summaries_input::ListResourceComplianceSummariesInputBuilder;
 
 /// Fluent builder constructing a request to `ListResourceComplianceSummaries`.
-///
+/// 
 /// <p>Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceComplianceSummariesFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_resource_compliance_summaries::builders::ListResourceComplianceSummariesInputBuilder
             }
-impl ListResourceComplianceSummariesFluentBuilder {
+impl ListResourceComplianceSummariesFluentBuilder  {
     /// Creates a new `ListResourceComplianceSummaries`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput, aws_smithy_http::result::SdkError<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_resource_compliance_summaries::paginator::ListResourceComplianceSummariesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::list_resource_compliance_summaries::paginator::ListResourceComplianceSummariesPaginator{
-        crate::operation::list_resource_compliance_summaries::paginator::ListResourceComplianceSummariesPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_resource_compliance_summaries::paginator::ListResourceComplianceSummariesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_resource_compliance_summaries::paginator::ListResourceComplianceSummariesPaginator {
+                            crate::operation::list_resource_compliance_summaries::paginator::ListResourceComplianceSummariesPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -72,10 +63,7 @@ impl ListResourceComplianceSummariesFluentBuilder {
         self
     }
     /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComplianceStringFilter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComplianceStringFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -100,3 +88,4 @@ impl ListResourceComplianceSummariesFluentBuilder {
         self
     }
 }
+

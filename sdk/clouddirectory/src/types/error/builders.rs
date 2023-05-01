@@ -68,3 +68,4 @@ pub use crate::types::error::_directory_already_exists_exception::DirectoryAlrea
 pub use crate::types::error::_batch_write_exception::BatchWriteExceptionBuilder;
 
 pub use crate::types::error::_indexed_attribute_missing_exception::IndexedAttributeMissingExceptionBuilder;
+

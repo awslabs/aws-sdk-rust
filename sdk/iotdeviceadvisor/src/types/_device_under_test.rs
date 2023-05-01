@@ -3,7 +3,7 @@
 /// <p>Information of a test device. A thing ARN or a certificate ARN is required.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceUnderTest {
+pub struct DeviceUnderTest  {
     /// <p>Lists devices thing ARN.</p>
     #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DeviceUnderTest {
 }
 impl DeviceUnderTest {
     /// <p>Lists devices thing ARN.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>Lists devices certificate ARN.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DeviceUnderTestBuilder {
     }
     /// <p>Lists devices thing ARN.</p>
     pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_arn = input;
-        self
+        self.thing_arn = input; self
     }
     /// <p>Lists devices certificate ARN.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DeviceUnderTestBuilder {
     }
     /// <p>Lists devices certificate ARN.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeviceUnderTest`](crate::types::DeviceUnderTest).
     pub fn build(self) -> crate::types::DeviceUnderTest {
         crate::types::DeviceUnderTest {
-            thing_arn: self.thing_arn,
-            certificate_arn: self.certificate_arn,
+            thing_arn: self.thing_arn
+            ,
+            certificate_arn: self.certificate_arn
+            ,
         }
     }
 }
+

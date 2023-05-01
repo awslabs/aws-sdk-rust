@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objectcannedacl = unimplemented!();
 /// match objectcannedacl {
@@ -35,22 +35,14 @@
 /// Specifically, when `objectcannedacl` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectCannedAcl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -67,60 +59,51 @@ pub enum ObjectCannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectCannedAcl {
-    fn from(s: &str) -> Self {
-        match s {
-            "authenticated-read" => ObjectCannedAcl::AuthenticatedRead,
-            "aws-exec-read" => ObjectCannedAcl::AwsExecRead,
-            "bucket-owner-full-control" => ObjectCannedAcl::BucketOwnerFullControl,
-            "bucket-owner-read" => ObjectCannedAcl::BucketOwnerRead,
-            "private" => ObjectCannedAcl::Private,
-            "public-read" => ObjectCannedAcl::PublicRead,
-            "public-read-write" => ObjectCannedAcl::PublicReadWrite,
-            other => {
-                ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "authenticated-read" => ObjectCannedAcl::AuthenticatedRead,
+"aws-exec-read" => ObjectCannedAcl::AwsExecRead,
+"bucket-owner-full-control" => ObjectCannedAcl::BucketOwnerFullControl,
+"bucket-owner-read" => ObjectCannedAcl::BucketOwnerRead,
+"private" => ObjectCannedAcl::Private,
+"public-read" => ObjectCannedAcl::PublicRead,
+"public-read-write" => ObjectCannedAcl::PublicReadWrite,
+other => ObjectCannedAcl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ObjectCannedAcl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectCannedAcl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectCannedAcl::from(s))
+                }
+            }
 impl ObjectCannedAcl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ObjectCannedAcl::AuthenticatedRead => "authenticated-read",
-            ObjectCannedAcl::AwsExecRead => "aws-exec-read",
-            ObjectCannedAcl::BucketOwnerFullControl => "bucket-owner-full-control",
-            ObjectCannedAcl::BucketOwnerRead => "bucket-owner-read",
-            ObjectCannedAcl::Private => "private",
-            ObjectCannedAcl::PublicRead => "public-read",
-            ObjectCannedAcl::PublicReadWrite => "public-read-write",
-            ObjectCannedAcl::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "authenticated-read",
-            "aws-exec-read",
-            "bucket-owner-full-control",
-            "bucket-owner-read",
-            "private",
-            "public-read",
-            "public-read-write",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ObjectCannedAcl::AuthenticatedRead => "authenticated-read",
+    ObjectCannedAcl::AwsExecRead => "aws-exec-read",
+    ObjectCannedAcl::BucketOwnerFullControl => "bucket-owner-full-control",
+    ObjectCannedAcl::BucketOwnerRead => "bucket-owner-read",
+    ObjectCannedAcl::Private => "private",
+    ObjectCannedAcl::PublicRead => "public-read",
+    ObjectCannedAcl::PublicReadWrite => "public-read-write",
+    ObjectCannedAcl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"]
+                }
+            }
 impl AsRef<str> for ObjectCannedAcl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

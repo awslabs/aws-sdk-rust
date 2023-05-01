@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGameServersInput {
+pub struct ListGameServersInput  {
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
     #[doc(hidden)]
     pub game_server_group_name: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListGameServersInput {
 }
 impl ListGameServersInput {
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
-    pub fn game_server_group_name(&self) -> std::option::Option<&str> {
+    pub fn game_server_group_name(&self) -> std::option::Option<& str> {
         self.game_server_group_name.as_deref()
     }
     /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
@@ -30,7 +30,7 @@ impl ListGameServersInput {
         self.limit
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -57,12 +57,8 @@ impl ListGameServersInputBuilder {
         self
     }
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.game_server_group_name = input;
-        self
+    pub fn set_game_server_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.game_server_group_name = input; self
     }
     /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -71,8 +67,7 @@ impl ListGameServersInputBuilder {
     }
     /// <p>Indicates how to sort the returned data based on game server registration timestamp. Use <code>ASCENDING</code> to retrieve oldest game servers first, or use <code>DESCENDING</code> to retrieve newest game servers first. If this parameter is left empty, game servers are returned in no particular order.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -81,8 +76,7 @@ impl ListGameServersInputBuilder {
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,21 +85,22 @@ impl ListGameServersInputBuilder {
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListGameServersInput`](crate::operation::list_game_servers::ListGameServersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_game_servers::ListGameServersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_game_servers::ListGameServersInput {
-            game_server_group_name: self.game_server_group_name,
-            sort_order: self.sort_order,
-            limit: self.limit,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_game_servers::ListGameServersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_game_servers::ListGameServersInput {
+                game_server_group_name: self.game_server_group_name
+                ,
+                sort_order: self.sort_order
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

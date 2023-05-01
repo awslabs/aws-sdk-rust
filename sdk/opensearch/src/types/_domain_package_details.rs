@@ -3,7 +3,7 @@
 /// <p>Information about a package that is associated with a domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainPackageDetails {
+pub struct DomainPackageDetails  {
     /// <p>Internal ID of the package.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct DomainPackageDetails {
 }
 impl DomainPackageDetails {
     /// <p>Internal ID of the package.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> std::option::Option<& str> {
         self.package_id.as_deref()
     }
     /// <p>User-specified name of the package.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p>The type of package.</p>
-    pub fn package_type(&self) -> std::option::Option<&crate::types::PackageType> {
+    pub fn package_type(&self) -> std::option::Option<& crate::types::PackageType> {
         self.package_type.as_ref()
     }
     /// <p>Timestamp of the most recent update to the package association status.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>Name of the domain that the package is associated with.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>State of the association.</p>
-    pub fn domain_package_status(&self) -> std::option::Option<&crate::types::DomainPackageStatus> {
+    pub fn domain_package_status(&self) -> std::option::Option<& crate::types::DomainPackageStatus> {
         self.domain_package_status.as_ref()
     }
     /// <p>The current version of the package.</p>
-    pub fn package_version(&self) -> std::option::Option<&str> {
+    pub fn package_version(&self) -> std::option::Option<& str> {
         self.package_version.as_deref()
     }
     /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
-    pub fn reference_path(&self) -> std::option::Option<&str> {
+    pub fn reference_path(&self) -> std::option::Option<& str> {
         self.reference_path.as_deref()
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn error_details(&self) -> std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::types::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Internal ID of the package.</p>
     pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_id = input;
-        self
+        self.package_id = input; self
     }
     /// <p>User-specified name of the package.</p>
     pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>User-specified name of the package.</p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_name = input;
-        self
+        self.package_name = input; self
     }
     /// <p>The type of package.</p>
     pub fn package_type(mut self, input: crate::types::PackageType) -> Self {
@@ -118,12 +116,8 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>The type of package.</p>
-    pub fn set_package_type(
-        mut self,
-        input: std::option::Option<crate::types::PackageType>,
-    ) -> Self {
-        self.package_type = input;
-        self
+    pub fn set_package_type(mut self, input: std::option::Option<crate::types::PackageType>) -> Self {
+        self.package_type = input; self
     }
     /// <p>Timestamp of the most recent update to the package association status.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,12 +125,8 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>Timestamp of the most recent update to the package association status.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// <p>Name of the domain that the package is associated with.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,8 +135,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Name of the domain that the package is associated with.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>State of the association.</p>
     pub fn domain_package_status(mut self, input: crate::types::DomainPackageStatus) -> Self {
@@ -154,12 +143,8 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>State of the association.</p>
-    pub fn set_domain_package_status(
-        mut self,
-        input: std::option::Option<crate::types::DomainPackageStatus>,
-    ) -> Self {
-        self.domain_package_status = input;
-        self
+    pub fn set_domain_package_status(mut self, input: std::option::Option<crate::types::DomainPackageStatus>) -> Self {
+        self.domain_package_status = input; self
     }
     /// <p>The current version of the package.</p>
     pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,8 +153,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>The current version of the package.</p>
     pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_version = input;
-        self
+        self.package_version = input; self
     }
     /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
     pub fn reference_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +162,7 @@ impl DomainPackageDetailsBuilder {
     }
     /// <p>Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as <code>synonym_path</code> for dictionary files.</p>
     pub fn set_reference_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_path = input;
-        self
+        self.reference_path = input; self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
     pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
@@ -187,25 +170,31 @@ impl DomainPackageDetailsBuilder {
         self
     }
     /// <p>Additional information if the package is in an error state. Null otherwise.</p>
-    pub fn set_error_details(
-        mut self,
-        input: std::option::Option<crate::types::ErrorDetails>,
-    ) -> Self {
-        self.error_details = input;
-        self
+    pub fn set_error_details(mut self, input: std::option::Option<crate::types::ErrorDetails>) -> Self {
+        self.error_details = input; self
     }
     /// Consumes the builder and constructs a [`DomainPackageDetails`](crate::types::DomainPackageDetails).
     pub fn build(self) -> crate::types::DomainPackageDetails {
         crate::types::DomainPackageDetails {
-            package_id: self.package_id,
-            package_name: self.package_name,
-            package_type: self.package_type,
-            last_updated: self.last_updated,
-            domain_name: self.domain_name,
-            domain_package_status: self.domain_package_status,
-            package_version: self.package_version,
-            reference_path: self.reference_path,
-            error_details: self.error_details,
+            package_id: self.package_id
+            ,
+            package_name: self.package_name
+            ,
+            package_type: self.package_type
+            ,
+            last_updated: self.last_updated
+            ,
+            domain_name: self.domain_name
+            ,
+            domain_package_status: self.domain_package_status
+            ,
+            package_version: self.package_version
+            ,
+            reference_path: self.reference_path
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

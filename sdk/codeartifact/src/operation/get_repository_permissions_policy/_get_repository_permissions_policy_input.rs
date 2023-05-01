@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryPermissionsPolicyInput {
+pub struct GetRepositoryPermissionsPolicyInput  {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetRepositoryPermissionsPolicyInput {
 }
 impl GetRepositoryPermissionsPolicyInput {
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<&str> {
+    pub fn domain_owner(&self) -> std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> std::option::Option<& str> {
         self.repository.as_deref()
     }
 }
 impl GetRepositoryPermissionsPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetRepositoryPermissionsPolicyInput`](crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyInput).
-    pub fn builder() -> crate::operation::get_repository_permissions_policy::builders::GetRepositoryPermissionsPolicyInputBuilder{
+    pub fn builder() -> crate::operation::get_repository_permissions_policy::builders::GetRepositoryPermissionsPolicyInputBuilder {
         crate::operation::get_repository_permissions_policy::builders::GetRepositoryPermissionsPolicyInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p> The name of the domain containing the repository whose associated resource policy is to be retrieved. </p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_owner = input;
-        self
+        self.domain_owner = input; self
     }
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
     pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,16 +68,10 @@ impl GetRepositoryPermissionsPolicyInputBuilder {
     }
     /// <p> The name of the repository whose associated resource policy is to be retrieved. </p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input;
-        self
+        self.repository = input; self
     }
     /// Consumes the builder and constructs a [`GetRepositoryPermissionsPolicyInput`](crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_repository_permissions_policy::GetRepositoryPermissionsPolicyInput {
                 domain: self.domain
@@ -92,3 +84,4 @@ impl GetRepositoryPermissionsPolicyInputBuilder {
         )
     }
 }
+

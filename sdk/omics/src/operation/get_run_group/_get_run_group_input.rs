@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRunGroupInput {
+pub struct GetRunGroupInput  {
     /// <p>The group's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetRunGroupInput {
     /// <p>The group's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetRunGroupInputBuilder {
     }
     /// <p>The group's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetRunGroupInput`](crate::operation::get_run_group::GetRunGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_run_group::GetRunGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_run_group::GetRunGroupInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::get_run_group::GetRunGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_run_group::GetRunGroupInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

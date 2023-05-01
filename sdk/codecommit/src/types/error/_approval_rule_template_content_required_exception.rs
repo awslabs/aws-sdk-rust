@@ -3,7 +3,7 @@
 /// <p>The content for the approval rule template is empty. You must provide some content for an approval rule template. The content cannot be null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalRuleTemplateContentRequiredException {
+pub struct ApprovalRuleTemplateContentRequiredException  {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct ApprovalRuleTemplateContentRequiredException {
 }
 impl ApprovalRuleTemplateContentRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ApprovalRuleTemplateContentRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ApprovalRuleTemplateContentRequiredException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,27 +25,19 @@ impl std::fmt::Display for ApprovalRuleTemplateContentRequiredException {
     }
 }
 impl std::error::Error for ApprovalRuleTemplateContentRequiredException {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::ApprovalRuleTemplateContentRequiredException
-{
+impl aws_http::request_id::RequestId for crate::types::error::ApprovalRuleTemplateContentRequiredException {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for ApprovalRuleTemplateContentRequiredException
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ApprovalRuleTemplateContentRequiredException {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ApprovalRuleTemplateContentRequiredException {
     /// Creates a new builder-style object to manufacture [`ApprovalRuleTemplateContentRequiredException`](crate::types::error::ApprovalRuleTemplateContentRequiredException).
-    pub fn builder(
-    ) -> crate::types::error::builders::ApprovalRuleTemplateContentRequiredExceptionBuilder {
-        crate::types::error::builders::ApprovalRuleTemplateContentRequiredExceptionBuilder::default(
-        )
+    pub fn builder() -> crate::types::error::builders::ApprovalRuleTemplateContentRequiredExceptionBuilder {
+        crate::types::error::builders::ApprovalRuleTemplateContentRequiredExceptionBuilder::default()
     }
 }
 
@@ -66,28 +56,26 @@ impl ApprovalRuleTemplateContentRequiredExceptionBuilder {
     }
     /// <p>Any message associated with the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ApprovalRuleTemplateContentRequiredException`](crate::types::error::ApprovalRuleTemplateContentRequiredException).
     pub fn build(self) -> crate::types::error::ApprovalRuleTemplateContentRequiredException {
         crate::types::error::ApprovalRuleTemplateContentRequiredException {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

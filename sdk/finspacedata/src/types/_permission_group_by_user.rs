@@ -3,44 +3,42 @@
 /// <p>The structure of a permission group associated with a user account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PermissionGroupByUser {
+pub struct PermissionGroupByUser  {
     /// <p>The unique identifier for the permission group.</p>
     #[doc(hidden)]
     pub permission_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the permission group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Indicates the status of the user account within a permission group.</p>
-    /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <p>Indicates the status of the user account within a permission group.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> 
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> 
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub membership_status: std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroupByUser {
     /// <p>The unique identifier for the permission group.</p>
-    pub fn permission_group_id(&self) -> std::option::Option<&str> {
+    pub fn permission_group_id(&self) -> std::option::Option<& str> {
         self.permission_group_id.as_deref()
     }
     /// <p>The name of the permission group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>Indicates the status of the user account within a permission group.</p>
-    /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <p>Indicates the status of the user account within a permission group.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> 
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> 
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> 
     /// </ul>
-    pub fn membership_status(
-        &self,
-    ) -> std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
+    pub fn membership_status(&self) -> std::option::Option<& crate::types::PermissionGroupMembershipStatus> {
         self.membership_status.as_ref()
     }
 }
-impl std::fmt::Debug for PermissionGroupByUser {
+impl  std::fmt::Debug for PermissionGroupByUser  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PermissionGroupByUser");
         formatter.field("permission_group_id", &self.permission_group_id);
@@ -62,8 +60,7 @@ impl PermissionGroupByUser {
 pub struct PermissionGroupByUserBuilder {
     pub(crate) permission_group_id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) membership_status:
-        std::option::Option<crate::types::PermissionGroupMembershipStatus>,
+    pub(crate) membership_status: std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl PermissionGroupByUserBuilder {
     /// <p>The unique identifier for the permission group.</p>
@@ -72,12 +69,8 @@ impl PermissionGroupByUserBuilder {
         self
     }
     /// <p>The unique identifier for the permission group.</p>
-    pub fn set_permission_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.permission_group_id = input;
-        self
+    pub fn set_permission_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.permission_group_id = input; self
     }
     /// <p>The name of the permission group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,41 +79,36 @@ impl PermissionGroupByUserBuilder {
     }
     /// <p>The name of the permission group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>Indicates the status of the user account within a permission group.</p>
-    /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <p>Indicates the status of the user account within a permission group.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> 
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> 
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> 
     /// </ul>
-    pub fn membership_status(
-        mut self,
-        input: crate::types::PermissionGroupMembershipStatus,
-    ) -> Self {
+    pub fn membership_status(mut self, input: crate::types::PermissionGroupMembershipStatus) -> Self {
         self.membership_status = Some(input);
         self
     }
-    /// <p>Indicates the status of the user account within a permission group.</p>
-    /// <ul>
-    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
-    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li>
-    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
+    /// <p>Indicates the status of the user account within a permission group.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> 
+    /// <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> 
+    /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> 
     /// </ul>
-    pub fn set_membership_status(
-        mut self,
-        input: std::option::Option<crate::types::PermissionGroupMembershipStatus>,
-    ) -> Self {
-        self.membership_status = input;
-        self
+    pub fn set_membership_status(mut self, input: std::option::Option<crate::types::PermissionGroupMembershipStatus>) -> Self {
+        self.membership_status = input; self
     }
     /// Consumes the builder and constructs a [`PermissionGroupByUser`](crate::types::PermissionGroupByUser).
     pub fn build(self) -> crate::types::PermissionGroupByUser {
         crate::types::PermissionGroupByUser {
-            permission_group_id: self.permission_group_id,
-            name: self.name,
-            membership_status: self.membership_status,
+            permission_group_id: self.permission_group_id
+            ,
+            name: self.name
+            ,
+            membership_status: self.membership_status
+            ,
         }
     }
 }
@@ -133,3 +121,4 @@ impl std::fmt::Debug for PermissionGroupByUserBuilder {
         formatter.finish()
     }
 }
+

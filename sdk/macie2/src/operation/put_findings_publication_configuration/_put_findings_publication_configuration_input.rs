@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFindingsPublicationConfigurationInput {
+pub struct PutFindingsPublicationConfigurationInput  {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct PutFindingsPublicationConfigurationInput {
 }
 impl PutFindingsPublicationConfigurationInput {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
-    pub fn security_hub_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::SecurityHubConfiguration> {
+    pub fn security_hub_configuration(&self) -> std::option::Option<& crate::types::SecurityHubConfiguration> {
         self.security_hub_configuration.as_ref()
     }
 }
 impl PutFindingsPublicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutFindingsPublicationConfigurationInput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput).
-    pub fn builder() -> crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder {
         crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder::default()
     }
 }
@@ -34,8 +32,7 @@ impl PutFindingsPublicationConfigurationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutFindingsPublicationConfigurationInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) security_hub_configuration:
-        std::option::Option<crate::types::SecurityHubConfiguration>,
+    pub(crate) security_hub_configuration: std::option::Option<crate::types::SecurityHubConfiguration>,
 }
 impl PutFindingsPublicationConfigurationInputBuilder {
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
@@ -45,27 +42,19 @@ impl PutFindingsPublicationConfigurationInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
-    pub fn security_hub_configuration(
-        mut self,
-        input: crate::types::SecurityHubConfiguration,
-    ) -> Self {
+    pub fn security_hub_configuration(mut self, input: crate::types::SecurityHubConfiguration) -> Self {
         self.security_hub_configuration = Some(input);
         self
     }
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
-    pub fn set_security_hub_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SecurityHubConfiguration>,
-    ) -> Self {
-        self.security_hub_configuration = input;
-        self
+    pub fn set_security_hub_configuration(mut self, input: std::option::Option<crate::types::SecurityHubConfiguration>) -> Self {
+        self.security_hub_configuration = input; self
     }
     /// Consumes the builder and constructs a [`PutFindingsPublicationConfigurationInput`](crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationInput {
                 client_token: self.client_token
@@ -76,3 +65,4 @@ impl PutFindingsPublicationConfigurationInputBuilder {
         )
     }
 }
+

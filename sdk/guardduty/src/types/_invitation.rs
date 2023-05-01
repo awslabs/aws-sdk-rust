@@ -3,7 +3,7 @@
 /// <p>Contains information about the invitation to become a member account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Invitation {
+pub struct Invitation  {
     /// <p>The ID of the account that the invitation was sent from.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Invitation {
 }
 impl Invitation {
     /// <p>The ID of the account that the invitation was sent from.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
-    pub fn invitation_id(&self) -> std::option::Option<&str> {
+    pub fn invitation_id(&self) -> std::option::Option<& str> {
         self.invitation_id.as_deref()
     }
     /// <p>The status of the relationship between the inviter and invitee accounts.</p>
-    pub fn relationship_status(&self) -> std::option::Option<&str> {
+    pub fn relationship_status(&self) -> std::option::Option<& str> {
         self.relationship_status.as_deref()
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn invited_at(&self) -> std::option::Option<&str> {
+    pub fn invited_at(&self) -> std::option::Option<& str> {
         self.invited_at.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl InvitationBuilder {
     }
     /// <p>The ID of the account that the invitation was sent from.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
     pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl InvitationBuilder {
     }
     /// <p>The ID of the invitation. This value is used to validate the inviter account to the member account.</p>
     pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invitation_id = input;
-        self
+        self.invitation_id = input; self
     }
     /// <p>The status of the relationship between the inviter and invitee accounts.</p>
     pub fn relationship_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,12 +76,8 @@ impl InvitationBuilder {
         self
     }
     /// <p>The status of the relationship between the inviter and invitee accounts.</p>
-    pub fn set_relationship_status(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.relationship_status = input;
-        self
+    pub fn set_relationship_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.relationship_status = input; self
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn invited_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl InvitationBuilder {
     }
     /// <p>The timestamp when the invitation was sent.</p>
     pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invited_at = input;
-        self
+        self.invited_at = input; self
     }
     /// Consumes the builder and constructs a [`Invitation`](crate::types::Invitation).
     pub fn build(self) -> crate::types::Invitation {
         crate::types::Invitation {
-            account_id: self.account_id,
-            invitation_id: self.invitation_id,
-            relationship_status: self.relationship_status,
-            invited_at: self.invited_at,
+            account_id: self.account_id
+            ,
+            invitation_id: self.invitation_id
+            ,
+            relationship_status: self.relationship_status
+            ,
+            invited_at: self.invited_at
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Specifies a version of a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableVersion {
+pub struct TableVersion  {
     /// <p>The table in question.</p>
     #[doc(hidden)]
     pub table: std::option::Option<crate::types::Table>,
@@ -13,11 +13,11 @@ pub struct TableVersion {
 }
 impl TableVersion {
     /// <p>The table in question.</p>
-    pub fn table(&self) -> std::option::Option<&crate::types::Table> {
+    pub fn table(&self) -> std::option::Option<& crate::types::Table> {
         self.table.as_ref()
     }
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl TableVersionBuilder {
     }
     /// <p>The table in question.</p>
     pub fn set_table(mut self, input: std::option::Option<crate::types::Table>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl TableVersionBuilder {
     }
     /// <p>The ID value that identifies this table version. A <code>VersionId</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Consumes the builder and constructs a [`TableVersion`](crate::types::TableVersion).
     pub fn build(self) -> crate::types::TableVersion {
         crate::types::TableVersion {
-            table: self.table,
-            version_id: self.version_id,
+            table: self.table
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

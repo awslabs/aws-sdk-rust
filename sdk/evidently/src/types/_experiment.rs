@@ -3,7 +3,7 @@
 /// <p>A structure containing the configuration details of an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Experiment {
+pub struct Experiment  {
     /// <p>The ARN of the experiment.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -43,7 +43,7 @@ pub struct Experiment {
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     #[doc(hidden)]
     pub randomization_salt: std::option::Option<std::string::String>,
-    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p> 
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     #[doc(hidden)]
     pub sampling_rate: i64,
@@ -58,84 +58,80 @@ pub struct Experiment {
     pub online_ab_definition: std::option::Option<crate::types::OnlineAbDefinition>,
     /// <p>The list of tag keys and values associated with this experiment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Experiment {
     /// <p>The ARN of the experiment.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the experiment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name or ARN of the project that contains this experiment.</p>
-    pub fn project(&self) -> std::option::Option<&str> {
+    pub fn project(&self) -> std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The current state of the experiment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExperimentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ExperimentStatus> {
         self.status.as_ref()
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>A description of the experiment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the experiment is first created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the experiment was most recently updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::ExperimentSchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::types::ExperimentSchedule> {
         self.schedule.as_ref()
     }
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
-    pub fn execution(&self) -> std::option::Option<&crate::types::ExperimentExecution> {
+    pub fn execution(&self) -> std::option::Option<& crate::types::ExperimentExecution> {
         self.execution.as_ref()
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn treatments(&self) -> std::option::Option<&[crate::types::Treatment]> {
+    pub fn treatments(&self) -> std::option::Option<& [crate::types::Treatment]> {
         self.treatments.as_deref()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn metric_goals(&self) -> std::option::Option<&[crate::types::MetricGoal]> {
+    pub fn metric_goals(&self) -> std::option::Option<& [crate::types::MetricGoal]> {
         self.metric_goals.as_deref()
     }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn randomization_salt(&self) -> std::option::Option<&str> {
+    pub fn randomization_salt(&self) -> std::option::Option<& str> {
         self.randomization_salt.as_deref()
     }
-    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p> 
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub fn sampling_rate(&self) -> i64 {
         self.sampling_rate
     }
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
-    pub fn segment(&self) -> std::option::Option<&str> {
+    pub fn segment(&self) -> std::option::Option<& str> {
         self.segment.as_deref()
     }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ExperimentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ExperimentType> {
         self.r#type.as_ref()
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn online_ab_definition(&self) -> std::option::Option<&crate::types::OnlineAbDefinition> {
+    pub fn online_ab_definition(&self) -> std::option::Option<& crate::types::OnlineAbDefinition> {
         self.online_ab_definition.as_ref()
     }
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -167,8 +163,7 @@ pub struct ExperimentBuilder {
     pub(crate) segment: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<crate::types::ExperimentType>,
     pub(crate) online_ab_definition: std::option::Option<crate::types::OnlineAbDefinition>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ExperimentBuilder {
     /// <p>The ARN of the experiment.</p>
@@ -178,8 +173,7 @@ impl ExperimentBuilder {
     }
     /// <p>The ARN of the experiment.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the experiment.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,8 +182,7 @@ impl ExperimentBuilder {
     }
     /// <p>The name of the experiment.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name or ARN of the project that contains this experiment.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,8 +191,7 @@ impl ExperimentBuilder {
     }
     /// <p>The name or ARN of the project that contains this experiment.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The current state of the experiment.</p>
     pub fn status(mut self, input: crate::types::ExperimentStatus) -> Self {
@@ -207,12 +199,8 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The current state of the experiment.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ExperimentStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ExperimentStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,8 +209,7 @@ impl ExperimentBuilder {
     }
     /// <p>If the experiment was stopped, this is the string that was entered by the person who stopped the experiment, to explain why it was stopped.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     /// <p>A description of the experiment.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,8 +218,7 @@ impl ExperimentBuilder {
     }
     /// <p>A description of the experiment.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The date and time that the experiment is first created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -240,12 +226,8 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The date and time that the experiment is first created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The date and time that the experiment was most recently updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -253,12 +235,8 @@ impl ExperimentBuilder {
         self
     }
     /// <p>The date and time that the experiment was most recently updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
     pub fn schedule(mut self, input: crate::types::ExperimentSchedule) -> Self {
@@ -266,12 +244,8 @@ impl ExperimentBuilder {
         self
     }
     /// <p>A structure that contains the time and date that Evidently completed the analysis of the experiment.</p>
-    pub fn set_schedule(
-        mut self,
-        input: std::option::Option<crate::types::ExperimentSchedule>,
-    ) -> Self {
-        self.schedule = input;
-        self
+    pub fn set_schedule(mut self, input: std::option::Option<crate::types::ExperimentSchedule>) -> Self {
+        self.schedule = input; self
     }
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
     pub fn execution(mut self, input: crate::types::ExperimentExecution) -> Self {
@@ -279,12 +253,8 @@ impl ExperimentBuilder {
         self
     }
     /// <p>A structure that contains the date and time that the experiment started and ended.</p>
-    pub fn set_execution(
-        mut self,
-        input: std::option::Option<crate::types::ExperimentExecution>,
-    ) -> Self {
-        self.execution = input;
-        self
+    pub fn set_execution(mut self, input: std::option::Option<crate::types::ExperimentExecution>) -> Self {
+        self.execution = input; self
     }
     /// Appends an item to `treatments`.
     ///
@@ -293,17 +263,13 @@ impl ExperimentBuilder {
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
     pub fn treatments(mut self, input: crate::types::Treatment) -> Self {
         let mut v = self.treatments.unwrap_or_default();
-        v.push(input);
-        self.treatments = Some(v);
-        self
+                        v.push(input);
+                        self.treatments = Some(v);
+                        self
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub fn set_treatments(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Treatment>>,
-    ) -> Self {
-        self.treatments = input;
-        self
+    pub fn set_treatments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Treatment>>) -> Self {
+        self.treatments = input; self
     }
     /// Appends an item to `metric_goals`.
     ///
@@ -312,17 +278,13 @@ impl ExperimentBuilder {
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
     pub fn metric_goals(mut self, input: crate::types::MetricGoal) -> Self {
         let mut v = self.metric_goals.unwrap_or_default();
-        v.push(input);
-        self.metric_goals = Some(v);
-        self
+                        v.push(input);
+                        self.metric_goals = Some(v);
+                        self
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub fn set_metric_goals(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricGoal>>,
-    ) -> Self {
-        self.metric_goals = input;
-        self
+    pub fn set_metric_goals(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricGoal>>) -> Self {
+        self.metric_goals = input; self
     }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
@@ -330,24 +292,19 @@ impl ExperimentBuilder {
         self
     }
     /// <p>This value is used when Evidently assigns a particular user session to the experiment. It helps create a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.</p>
-    pub fn set_randomization_salt(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.randomization_salt = input;
-        self
+    pub fn set_randomization_salt(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.randomization_salt = input; self
     }
-    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p> 
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
         self.sampling_rate = Some(input);
         self
     }
-    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
+    /// <p>In thousandths of a percent, the amount of the available audience that is allocated to this experiment. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p> 
     /// <p>This is represented in thousandths of a percent, so a value of 10,000 is 10% of the available audience.</p>
     pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
-        self.sampling_rate = input;
-        self
+        self.sampling_rate = input; self
     }
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
     pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,8 +313,7 @@ impl ExperimentBuilder {
     }
     /// <p>The audience segment being used for the experiment, if a segment is being used.</p>
     pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.segment = input;
-        self
+        self.segment = input; self
     }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
     pub fn r#type(mut self, input: crate::types::ExperimentType) -> Self {
@@ -366,8 +322,7 @@ impl ExperimentBuilder {
     }
     /// <p>The type of this experiment. Currently, this value must be <code>aws.experiment.onlineab</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ExperimentType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub fn online_ab_definition(mut self, input: crate::types::OnlineAbDefinition) -> Self {
@@ -375,59 +330,65 @@ impl ExperimentBuilder {
         self
     }
     /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
-    pub fn set_online_ab_definition(
-        mut self,
-        input: std::option::Option<crate::types::OnlineAbDefinition>,
-    ) -> Self {
-        self.online_ab_definition = input;
-        self
+    pub fn set_online_ab_definition(mut self, input: std::option::Option<crate::types::OnlineAbDefinition>) -> Self {
+        self.online_ab_definition = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The list of tag keys and values associated with this experiment.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`Experiment`](crate::types::Experiment).
     pub fn build(self) -> crate::types::Experiment {
         crate::types::Experiment {
-            arn: self.arn,
-            name: self.name,
-            project: self.project,
-            status: self.status,
-            status_reason: self.status_reason,
-            description: self.description,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            schedule: self.schedule,
-            execution: self.execution,
-            treatments: self.treatments,
-            metric_goals: self.metric_goals,
-            randomization_salt: self.randomization_salt,
-            sampling_rate: self.sampling_rate.unwrap_or_default(),
-            segment: self.segment,
-            r#type: self.r#type,
-            online_ab_definition: self.online_ab_definition,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            project: self.project
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
+            description: self.description
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            schedule: self.schedule
+            ,
+            execution: self.execution
+            ,
+            treatments: self.treatments
+            ,
+            metric_goals: self.metric_goals
+            ,
+            randomization_salt: self.randomization_salt
+            ,
+            sampling_rate: self.sampling_rate
+                .unwrap_or_default()
+            ,
+            segment: self.segment
+            ,
+            r#type: self.r#type
+            ,
+            online_ab_definition: self.online_ab_definition
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

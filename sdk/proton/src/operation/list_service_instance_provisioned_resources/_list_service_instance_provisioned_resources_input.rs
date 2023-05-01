@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceInstanceProvisionedResourcesInput {
+pub struct ListServiceInstanceProvisionedResourcesInput  {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListServiceInstanceProvisionedResourcesInput {
 }
 impl ListServiceInstanceProvisionedResourcesInput {
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<&str> {
+    pub fn service_instance_name(&self) -> std::option::Option<& str> {
         self.service_instance_name.as_deref()
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListServiceInstanceProvisionedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListServiceInstanceProvisionedResourcesInput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput).
-    pub fn builder() -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesInputBuilder{
+    pub fn builder() -> crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesInputBuilder {
         crate::operation::list_service_instance_provisioned_resources::builders::ListServiceInstanceProvisionedResourcesInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
     }
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated to.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
     pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,12 +58,8 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
         self
     }
     /// <p>The name of the service instance whose provisioned resources you want.</p>
-    pub fn set_service_instance_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_instance_name = input;
-        self
+    pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_instance_name = input; self
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,11 +68,10 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
     }
     /// <p>A token that indicates the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned resources that was previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListServiceInstanceProvisionedResourcesInput`](crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput).
-    pub fn build(self) -> Result<crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesInput {
                 service_name: self.service_name
@@ -90,3 +84,4 @@ impl ListServiceInstanceProvisionedResourcesInputBuilder {
         )
     }
 }
+

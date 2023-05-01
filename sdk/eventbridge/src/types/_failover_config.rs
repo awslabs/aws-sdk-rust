@@ -3,7 +3,7 @@
 /// <p>The failover configuration for an endpoint. This includes what triggers failover and what happens when it's triggered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverConfig {
+pub struct FailoverConfig  {
     /// <p>The main Region of the endpoint.</p>
     #[doc(hidden)]
     pub primary: std::option::Option<crate::types::Primary>,
@@ -13,11 +13,11 @@ pub struct FailoverConfig {
 }
 impl FailoverConfig {
     /// <p>The main Region of the endpoint.</p>
-    pub fn primary(&self) -> std::option::Option<&crate::types::Primary> {
+    pub fn primary(&self) -> std::option::Option<& crate::types::Primary> {
         self.primary.as_ref()
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
-    pub fn secondary(&self) -> std::option::Option<&crate::types::Secondary> {
+    pub fn secondary(&self) -> std::option::Option<& crate::types::Secondary> {
         self.secondary.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl FailoverConfigBuilder {
     }
     /// <p>The main Region of the endpoint.</p>
     pub fn set_primary(mut self, input: std::option::Option<crate::types::Primary>) -> Self {
-        self.primary = input;
-        self
+        self.primary = input; self
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub fn secondary(mut self, input: crate::types::Secondary) -> Self {
@@ -53,14 +52,16 @@ impl FailoverConfigBuilder {
     }
     /// <p>The Region that events are routed to when failover is triggered or event replication is enabled.</p>
     pub fn set_secondary(mut self, input: std::option::Option<crate::types::Secondary>) -> Self {
-        self.secondary = input;
-        self
+        self.secondary = input; self
     }
     /// Consumes the builder and constructs a [`FailoverConfig`](crate::types::FailoverConfig).
     pub fn build(self) -> crate::types::FailoverConfig {
         crate::types::FailoverConfig {
-            primary: self.primary,
-            secondary: self.secondary,
+            primary: self.primary
+            ,
+            secondary: self.secondary
+            ,
         }
     }
 }
+

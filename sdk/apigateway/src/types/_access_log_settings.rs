@@ -3,7 +3,7 @@
 /// <p>Access log settings, including the access log format and access log destination ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessLogSettings {
+pub struct AccessLogSettings  {
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least <code>$context.requestId</code>.</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccessLogSettings {
 }
 impl AccessLogSettings {
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least <code>$context.requestId</code>.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with <code>amazon-apigateway-</code>.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AccessLogSettingsBuilder {
     }
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least <code>$context.requestId</code>.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with <code>amazon-apigateway-</code>.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AccessLogSettingsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs. If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with <code>amazon-apigateway-</code>.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// Consumes the builder and constructs a [`AccessLogSettings`](crate::types::AccessLogSettings).
     pub fn build(self) -> crate::types::AccessLogSettings {
         crate::types::AccessLogSettings {
-            format: self.format,
-            destination_arn: self.destination_arn,
+            format: self.format
+            ,
+            destination_arn: self.destination_arn
+            ,
         }
     }
 }
+

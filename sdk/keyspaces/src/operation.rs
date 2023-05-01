@@ -39,3 +39,4 @@ pub mod untag_resource;
 
 /// Types for the `UpdateTable` operation.
 pub mod update_table;
+

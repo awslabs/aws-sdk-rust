@@ -3,7 +3,7 @@
 /// <p>AddTagsToResourceOutput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {
+pub struct AddTagsToResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -11,19 +11,18 @@ pub struct AddTagsToResourceOutput {
 }
 impl AddTagsToResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput).
-    pub fn builder(
-    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder {
+    pub fn builder() -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder {
         crate::operation::add_tags_to_resource::builders::AddTagsToResourceOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl AddTagsToResourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput).
     pub fn build(self) -> crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
         crate::operation::add_tags_to_resource::AddTagsToResourceOutput {
-            resource_arn: self.resource_arn,
+            resource_arn: self.resource_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

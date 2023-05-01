@@ -2,29 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TerminateSolNetworkInstanceInput {
+pub struct TerminateSolNetworkInstanceInput  {
     /// <p>ID of the network instance.</p>
     #[doc(hidden)]
     pub ns_instance_id: std::option::Option<std::string::String>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TerminateSolNetworkInstanceInput {
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ns_instance_id(&self) -> std::option::Option<& str> {
         self.ns_instance_id.as_deref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for TerminateSolNetworkInstanceInput {
+impl  std::fmt::Debug for TerminateSolNetworkInstanceInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TerminateSolNetworkInstanceInput");
         formatter.field("ns_instance_id", &self.ns_instance_id);
@@ -34,7 +30,7 @@ impl std::fmt::Debug for TerminateSolNetworkInstanceInput {
 }
 impl TerminateSolNetworkInstanceInput {
     /// Creates a new builder-style object to manufacture [`TerminateSolNetworkInstanceInput`](crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput).
-    pub fn builder() -> crate::operation::terminate_sol_network_instance::builders::TerminateSolNetworkInstanceInputBuilder{
+    pub fn builder() -> crate::operation::terminate_sol_network_instance::builders::TerminateSolNetworkInstanceInputBuilder {
         crate::operation::terminate_sol_network_instance::builders::TerminateSolNetworkInstanceInputBuilder::default()
     }
 }
@@ -44,8 +40,7 @@ impl TerminateSolNetworkInstanceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct TerminateSolNetworkInstanceInputBuilder {
     pub(crate) ns_instance_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TerminateSolNetworkInstanceInputBuilder {
     /// <p>ID of the network instance.</p>
@@ -55,46 +50,32 @@ impl TerminateSolNetworkInstanceInputBuilder {
     }
     /// <p>ID of the network instance.</p>
     pub fn set_ns_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ns_instance_id = input;
-        self
+        self.ns_instance_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. When you use this API, the tags are transferred to the network operation that is created. Use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`TerminateSolNetworkInstanceInput`](crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceInput {
-                ns_instance_id: self.ns_instance_id,
-                tags: self.tags,
-            },
+                ns_instance_id: self.ns_instance_id
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -106,3 +87,4 @@ impl std::fmt::Debug for TerminateSolNetworkInstanceInputBuilder {
         formatter.finish()
     }
 }
+

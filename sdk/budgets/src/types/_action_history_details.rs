@@ -3,7 +3,7 @@
 /// <p>The description of the details for the event. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionHistoryDetails {
+pub struct ActionHistoryDetails  {
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ActionHistoryDetails {
 }
 impl ActionHistoryDetails {
     /// <p> A generic string.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The budget action resource. </p>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::types::Action> {
         self.action.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl ActionHistoryDetailsBuilder {
     }
     /// <p> A generic string.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The budget action resource. </p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
@@ -53,14 +52,16 @@ impl ActionHistoryDetailsBuilder {
     }
     /// <p>The budget action resource. </p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// Consumes the builder and constructs a [`ActionHistoryDetails`](crate::types::ActionHistoryDetails).
     pub fn build(self) -> crate::types::ActionHistoryDetails {
         crate::types::ActionHistoryDetails {
-            message: self.message,
-            action: self.action,
+            message: self.message
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

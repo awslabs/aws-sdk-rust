@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeprecateWorkflowTypeInput {
+pub struct UndeprecateWorkflowTypeInput  {
     /// <p>The name of the domain of the deprecated workflow type.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UndeprecateWorkflowTypeInput {
 }
 impl UndeprecateWorkflowTypeInput {
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn workflow_type(&self) -> std::option::Option<&crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<& crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
 }
 impl UndeprecateWorkflowTypeInput {
     /// Creates a new builder-style object to manufacture [`UndeprecateWorkflowTypeInput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput).
-    pub fn builder(
-    ) -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder
-    {
+    pub fn builder() -> crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder {
         crate::operation::undeprecate_workflow_type::builders::UndeprecateWorkflowTypeInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl UndeprecateWorkflowTypeInputBuilder {
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -53,25 +50,19 @@ impl UndeprecateWorkflowTypeInputBuilder {
         self
     }
     /// <p>The name of the domain of the deprecated workflow type.</p>
-    pub fn set_workflow_type(
-        mut self,
-        input: std::option::Option<crate::types::WorkflowType>,
-    ) -> Self {
-        self.workflow_type = input;
-        self
+    pub fn set_workflow_type(mut self, input: std::option::Option<crate::types::WorkflowType>) -> Self {
+        self.workflow_type = input; self
     }
     /// Consumes the builder and constructs a [`UndeprecateWorkflowTypeInput`](crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeInput {
-                domain: self.domain,
-                workflow_type: self.workflow_type,
-            },
+                domain: self.domain
+                ,
+                workflow_type: self.workflow_type
+                ,
+            }
         )
     }
 }
+

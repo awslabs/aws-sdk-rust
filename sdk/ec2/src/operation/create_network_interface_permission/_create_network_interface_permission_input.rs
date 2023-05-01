@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for CreateNetworkInterfacePermission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkInterfacePermissionInput {
+pub struct CreateNetworkInterfacePermissionInput  {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct CreateNetworkInterfacePermissionInput {
 }
 impl CreateNetworkInterfacePermissionInput {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
-    pub fn aws_service(&self) -> std::option::Option<&str> {
+    pub fn aws_service(&self) -> std::option::Option<& str> {
         self.aws_service.as_deref()
     }
     /// <p>The type of permission to grant.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::types::InterfacePermissionType> {
+    pub fn permission(&self) -> std::option::Option<& crate::types::InterfacePermissionType> {
         self.permission.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -44,7 +44,7 @@ impl CreateNetworkInterfacePermissionInput {
 }
 impl CreateNetworkInterfacePermissionInput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkInterfacePermissionInput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput).
-    pub fn builder() -> crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionInputBuilder{
+    pub fn builder() -> crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionInputBuilder {
         crate::operation::create_network_interface_permission::builders::CreateNetworkInterfacePermissionInputBuilder::default()
     }
 }
@@ -66,12 +66,8 @@ impl CreateNetworkInterfacePermissionInputBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_interface_id = input; self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl CreateNetworkInterfacePermissionInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
     pub fn aws_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +85,7 @@ impl CreateNetworkInterfacePermissionInputBuilder {
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
     pub fn set_aws_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_service = input;
-        self
+        self.aws_service = input; self
     }
     /// <p>The type of permission to grant.</p>
     pub fn permission(mut self, input: crate::types::InterfacePermissionType) -> Self {
@@ -99,12 +93,8 @@ impl CreateNetworkInterfacePermissionInputBuilder {
         self
     }
     /// <p>The type of permission to grant.</p>
-    pub fn set_permission(
-        mut self,
-        input: std::option::Option<crate::types::InterfacePermissionType>,
-    ) -> Self {
-        self.permission = input;
-        self
+    pub fn set_permission(mut self, input: std::option::Option<crate::types::InterfacePermissionType>) -> Self {
+        self.permission = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -113,11 +103,10 @@ impl CreateNetworkInterfacePermissionInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateNetworkInterfacePermissionInput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput).
-    pub fn build(self) -> Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput {
                 network_interface_id: self.network_interface_id
@@ -134,3 +123,4 @@ impl CreateNetworkInterfacePermissionInputBuilder {
         )
     }
 }
+

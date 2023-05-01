@@ -3,7 +3,7 @@
 /// <p>Confirms the device response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmDeviceOutput {
+pub struct ConfirmDeviceOutput  {
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     #[doc(hidden)]
     pub user_confirmation_necessary: bool,
@@ -16,10 +16,10 @@ impl ConfirmDeviceOutput {
     }
 }
 impl aws_http::request_id::RequestId for ConfirmDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ConfirmDeviceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmDeviceOutput`](crate::operation::confirm_device::ConfirmDeviceOutput).
     pub fn builder() -> crate::operation::confirm_device::builders::ConfirmDeviceOutputBuilder {
@@ -42,23 +42,25 @@ impl ConfirmDeviceOutputBuilder {
     }
     /// <p>Indicates whether the user confirmation must confirm the device response.</p>
     pub fn set_user_confirmation_necessary(mut self, input: std::option::Option<bool>) -> Self {
-        self.user_confirmation_necessary = input;
-        self
+        self.user_confirmation_necessary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ConfirmDeviceOutput`](crate::operation::confirm_device::ConfirmDeviceOutput).
     pub fn build(self) -> crate::operation::confirm_device::ConfirmDeviceOutput {
         crate::operation::confirm_device::ConfirmDeviceOutput {
-            user_confirmation_necessary: self.user_confirmation_necessary.unwrap_or_default(),
+            user_confirmation_necessary: self.user_confirmation_necessary
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

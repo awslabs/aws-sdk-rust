@@ -3,7 +3,7 @@
 /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JwtConfiguration {
+pub struct JwtConfiguration  {
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
     #[doc(hidden)]
     pub audience: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17,7 +17,7 @@ pub struct JwtConfiguration {
 }
 impl JwtConfiguration {
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
-    pub fn audience(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn audience(&self) -> std::option::Option<& [std::string::String]> {
         self.audience.as_deref()
     }
     /// <p>The base domain of the identity provider that issues JSON Web Tokens. For example, an Amazon Cognito user pool has the following format: https://cognito-idp.<replaceable>
@@ -25,7 +25,7 @@ impl JwtConfiguration {
     /// </replaceable>.amazonaws.com/<replaceable>
     /// {userPoolId}
     /// </replaceable> . Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> std::option::Option<& str> {
         self.issuer.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl JwtConfigurationBuilder {
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
     pub fn audience(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.audience.unwrap_or_default();
-        v.push(input.into());
-        self.audience = Some(v);
-        self
+                        v.push(input.into());
+                        self.audience = Some(v);
+                        self
     }
     /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
-    pub fn set_audience(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.audience = input;
-        self
+    pub fn set_audience(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.audience = input; self
     }
     /// <p>The base domain of the identity provider that issues JSON Web Tokens. For example, an Amazon Cognito user pool has the following format: https://cognito-idp.<replaceable>
     /// {region}
@@ -78,14 +74,16 @@ impl JwtConfigurationBuilder {
     /// {userPoolId}
     /// </replaceable> . Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
     pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issuer = input;
-        self
+        self.issuer = input; self
     }
     /// Consumes the builder and constructs a [`JwtConfiguration`](crate::types::JwtConfiguration).
     pub fn build(self) -> crate::types::JwtConfiguration {
         crate::types::JwtConfiguration {
-            audience: self.audience,
-            issuer: self.issuer,
+            audience: self.audience
+            ,
+            issuer: self.issuer
+            ,
         }
     }
 }
+

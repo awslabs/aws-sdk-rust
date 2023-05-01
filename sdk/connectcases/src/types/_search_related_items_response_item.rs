@@ -3,7 +3,7 @@
 /// <p>A list of items that represent RelatedItems.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchRelatedItemsResponseItem {
+pub struct SearchRelatedItemsResponseItem  {
     /// <p>Unique identifier of a related item.</p>
     #[doc(hidden)]
     pub related_item_id: std::option::Option<std::string::String>,
@@ -18,33 +18,27 @@ pub struct SearchRelatedItemsResponseItem {
     pub content: std::option::Option<crate::types::RelatedItemContent>,
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl SearchRelatedItemsResponseItem {
     /// <p>Unique identifier of a related item.</p>
-    pub fn related_item_id(&self) -> std::option::Option<&str> {
+    pub fn related_item_id(&self) -> std::option::Option<& str> {
         self.related_item_id.as_deref()
     }
     /// <p>Type of a related item.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RelatedItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::RelatedItemType> {
         self.r#type.as_ref()
     }
     /// <p>Time at which a related item was associated with a case.</p>
-    pub fn association_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn association_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.association_time.as_ref()
     }
     /// <p>Represents the content of a particular type of related item.</p>
-    pub fn content(&self) -> std::option::Option<&crate::types::RelatedItemContent> {
+    pub fn content(&self) -> std::option::Option<& crate::types::RelatedItemContent> {
         self.content.as_ref()
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    > {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>> {
         self.tags.as_ref()
     }
 }
@@ -63,9 +57,7 @@ pub struct SearchRelatedItemsResponseItemBuilder {
     pub(crate) r#type: std::option::Option<crate::types::RelatedItemType>,
     pub(crate) association_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) content: std::option::Option<crate::types::RelatedItemContent>,
-    pub(crate) tags: std::option::Option<
-        std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
-    >,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>,
 }
 impl SearchRelatedItemsResponseItemBuilder {
     /// <p>Unique identifier of a related item.</p>
@@ -75,8 +67,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Unique identifier of a related item.</p>
     pub fn set_related_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.related_item_id = input;
-        self
+        self.related_item_id = input; self
     }
     /// <p>Type of a related item.</p>
     pub fn r#type(mut self, input: crate::types::RelatedItemType) -> Self {
@@ -85,8 +76,7 @@ impl SearchRelatedItemsResponseItemBuilder {
     }
     /// <p>Type of a related item.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RelatedItemType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Time at which a related item was associated with a case.</p>
     pub fn association_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,12 +84,8 @@ impl SearchRelatedItemsResponseItemBuilder {
         self
     }
     /// <p>Time at which a related item was associated with a case.</p>
-    pub fn set_association_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.association_time = input;
-        self
+    pub fn set_association_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.association_time = input; self
     }
     /// <p>Represents the content of a particular type of related item.</p>
     pub fn content(mut self, input: crate::types::RelatedItemContent) -> Self {
@@ -107,49 +93,38 @@ impl SearchRelatedItemsResponseItemBuilder {
         self
     }
     /// <p>Represents the content of a particular type of related item.</p>
-    pub fn set_content(
-        mut self,
-        input: std::option::Option<crate::types::RelatedItemContent>,
-    ) -> Self {
-        self.content = input;
-        self
+    pub fn set_content(mut self, input: std::option::Option<crate::types::RelatedItemContent>) -> Self {
+        self.content = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: std::option::Option<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::option::Option<std::string::String>,
-            >,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`SearchRelatedItemsResponseItem`](crate::types::SearchRelatedItemsResponseItem).
     pub fn build(self) -> crate::types::SearchRelatedItemsResponseItem {
         crate::types::SearchRelatedItemsResponseItem {
-            related_item_id: self.related_item_id,
-            r#type: self.r#type,
-            association_time: self.association_time,
-            content: self.content,
-            tags: self.tags,
+            related_item_id: self.related_item_id
+            ,
+            r#type: self.r#type
+            ,
+            association_time: self.association_time
+            ,
+            content: self.content
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

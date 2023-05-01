@@ -3,7 +3,7 @@
 /// <p>Contains data about a job execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobExecution {
+pub struct JobExecution  {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -15,8 +15,7 @@ pub struct JobExecution {
     pub status: std::option::Option<crate::types::JobExecutionStatus>,
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
     #[doc(hidden)]
-    pub status_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub status_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     #[doc(hidden)]
     pub queued_at: i64,
@@ -41,22 +40,19 @@ pub struct JobExecution {
 }
 impl JobExecution {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The name of the thing that is executing the job.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn status_details(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn status_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.status_details.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
@@ -84,7 +80,7 @@ impl JobExecution {
         self.execution_number
     }
     /// <p>The content of the job document.</p>
-    pub fn job_document(&self) -> std::option::Option<&str> {
+    pub fn job_document(&self) -> std::option::Option<& str> {
         self.job_document.as_deref()
     }
 }
@@ -102,8 +98,7 @@ pub struct JobExecutionBuilder {
     pub(crate) job_id: std::option::Option<std::string::String>,
     pub(crate) thing_name: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::JobExecutionStatus>,
-    pub(crate) status_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) status_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) queued_at: std::option::Option<i64>,
     pub(crate) started_at: std::option::Option<i64>,
     pub(crate) last_updated_at: std::option::Option<i64>,
@@ -120,8 +115,7 @@ impl JobExecutionBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The name of the thing that is executing the job.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +124,7 @@ impl JobExecutionBuilder {
     }
     /// <p>The name of the thing that is executing the job.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
     pub fn status(mut self, input: crate::types::JobExecutionStatus) -> Self {
@@ -139,37 +132,23 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::JobExecutionStatus>) -> Self {
+        self.status = input; self
     }
     /// Adds a key-value pair to `status_details`.
     ///
     /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
     ///
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn status_details(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn status_details(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.status_details.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.status_details = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.status_details = Some(hash_map);
+                        self
     }
     /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
-    pub fn set_status_details(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.status_details = input;
-        self
+    pub fn set_status_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.status_details = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(mut self, input: i64) -> Self {
@@ -178,8 +157,7 @@ impl JobExecutionBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     pub fn set_queued_at(mut self, input: std::option::Option<i64>) -> Self {
-        self.queued_at = input;
-        self
+        self.queued_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
     pub fn started_at(mut self, input: i64) -> Self {
@@ -188,8 +166,7 @@ impl JobExecutionBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
     pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
-        self.started_at = input;
-        self
+        self.started_at = input; self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub fn last_updated_at(mut self, input: i64) -> Self {
@@ -198,8 +175,7 @@ impl JobExecutionBuilder {
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
     pub fn set_last_updated_at(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_updated_at = input;
-        self
+        self.last_updated_at = input; self
     }
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
     pub fn approximate_seconds_before_timed_out(mut self, input: i64) -> Self {
@@ -207,12 +183,8 @@ impl JobExecutionBuilder {
         self
     }
     /// <p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>
-    pub fn set_approximate_seconds_before_timed_out(
-        mut self,
-        input: std::option::Option<i64>,
-    ) -> Self {
-        self.approximate_seconds_before_timed_out = input;
-        self
+    pub fn set_approximate_seconds_before_timed_out(mut self, input: std::option::Option<i64>) -> Self {
+        self.approximate_seconds_before_timed_out = input; self
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -221,8 +193,7 @@ impl JobExecutionBuilder {
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
@@ -231,8 +202,7 @@ impl JobExecutionBuilder {
     }
     /// <p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>
     pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.execution_number = input;
-        self
+        self.execution_number = input; self
     }
     /// <p>The content of the job document.</p>
     pub fn job_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,23 +211,37 @@ impl JobExecutionBuilder {
     }
     /// <p>The content of the job document.</p>
     pub fn set_job_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_document = input;
-        self
+        self.job_document = input; self
     }
     /// Consumes the builder and constructs a [`JobExecution`](crate::types::JobExecution).
     pub fn build(self) -> crate::types::JobExecution {
         crate::types::JobExecution {
-            job_id: self.job_id,
-            thing_name: self.thing_name,
-            status: self.status,
-            status_details: self.status_details,
-            queued_at: self.queued_at.unwrap_or_default(),
-            started_at: self.started_at,
-            last_updated_at: self.last_updated_at.unwrap_or_default(),
-            approximate_seconds_before_timed_out: self.approximate_seconds_before_timed_out,
-            version_number: self.version_number.unwrap_or_default(),
-            execution_number: self.execution_number,
-            job_document: self.job_document,
+            job_id: self.job_id
+            ,
+            thing_name: self.thing_name
+            ,
+            status: self.status
+            ,
+            status_details: self.status_details
+            ,
+            queued_at: self.queued_at
+                .unwrap_or_default()
+            ,
+            started_at: self.started_at
+            ,
+            last_updated_at: self.last_updated_at
+                .unwrap_or_default()
+            ,
+            approximate_seconds_before_timed_out: self.approximate_seconds_before_timed_out
+            ,
+            version_number: self.version_number
+                .unwrap_or_default()
+            ,
+            execution_number: self.execution_number
+            ,
+            job_document: self.job_document
+            ,
         }
     }
 }
+

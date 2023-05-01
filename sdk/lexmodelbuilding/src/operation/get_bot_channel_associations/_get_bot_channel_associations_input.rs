@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotChannelAssociationsInput {
+pub struct GetBotChannelAssociationsInput  {
     /// <p>The name of the Amazon Lex bot in the association.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct GetBotChannelAssociationsInput {
 }
 impl GetBotChannelAssociationsInput {
     /// <p>The name of the Amazon Lex bot in the association.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> std::option::Option<& str> {
         self.bot_name.as_deref()
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
-    pub fn bot_alias(&self) -> std::option::Option<&str> {
+    pub fn bot_alias(&self) -> std::option::Option<& str> {
         self.bot_alias.as_deref()
     }
     /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of associations to return in the response. The default is 50. </p>
@@ -37,13 +37,13 @@ impl GetBotChannelAssociationsInput {
         self.max_results
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
-    pub fn name_contains(&self) -> std::option::Option<&str> {
+    pub fn name_contains(&self) -> std::option::Option<& str> {
         self.name_contains.as_deref()
     }
 }
 impl GetBotChannelAssociationsInput {
     /// Creates a new builder-style object to manufacture [`GetBotChannelAssociationsInput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput).
-    pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder{
+    pub fn builder() -> crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder {
         crate::operation::get_bot_channel_associations::builders::GetBotChannelAssociationsInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl GetBotChannelAssociationsInputBuilder {
     }
     /// <p>The name of the Amazon Lex bot in the association.</p>
     pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_name = input;
-        self
+        self.bot_name = input; self
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl GetBotChannelAssociationsInputBuilder {
     }
     /// <p>An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.</p>
     pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias = input;
-        self
+        self.bot_alias = input; self
     }
     /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl GetBotChannelAssociationsInputBuilder {
     }
     /// <p>A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of associations to return in the response. The default is 50. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,8 +93,7 @@ impl GetBotChannelAssociationsInputBuilder {
     }
     /// <p>The maximum number of associations to return in the response. The default is 50. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,24 +102,24 @@ impl GetBotChannelAssociationsInputBuilder {
     }
     /// <p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.</p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// Consumes the builder and constructs a [`GetBotChannelAssociationsInput`](crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_bot_channel_associations::GetBotChannelAssociationsInput {
-                bot_name: self.bot_name,
-                bot_alias: self.bot_alias,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-            },
+                bot_name: self.bot_name
+                ,
+                bot_alias: self.bot_alias
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+            }
         )
     }
 }
+

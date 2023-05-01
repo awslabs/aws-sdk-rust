@@ -3,20 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReplicationSubnetGroupInput {
+pub struct DeleteReplicationSubnetGroupInput  {
     /// <p>The subnet group name of the replication instance.</p>
     #[doc(hidden)]
     pub replication_subnet_group_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteReplicationSubnetGroupInput {
     /// <p>The subnet group name of the replication instance.</p>
-    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn replication_subnet_group_identifier(&self) -> std::option::Option<& str> {
         self.replication_subnet_group_identifier.as_deref()
     }
 }
 impl DeleteReplicationSubnetGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteReplicationSubnetGroupInput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput).
-    pub fn builder() -> crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupInputBuilder{
+    pub fn builder() -> crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupInputBuilder {
         crate::operation::delete_replication_subnet_group::builders::DeleteReplicationSubnetGroupInputBuilder::default()
     }
 }
@@ -29,32 +29,22 @@ pub struct DeleteReplicationSubnetGroupInputBuilder {
 }
 impl DeleteReplicationSubnetGroupInputBuilder {
     /// <p>The subnet group name of the replication instance.</p>
-    pub fn replication_subnet_group_identifier(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn replication_subnet_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.replication_subnet_group_identifier = Some(input.into());
         self
     }
     /// <p>The subnet group name of the replication instance.</p>
-    pub fn set_replication_subnet_group_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_subnet_group_identifier = input;
-        self
+    pub fn set_replication_subnet_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_subnet_group_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteReplicationSubnetGroupInput`](crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_replication_subnet_group::DeleteReplicationSubnetGroupInput {
-                replication_subnet_group_identifier: self.replication_subnet_group_identifier,
-            },
+                replication_subnet_group_identifier: self.replication_subnet_group_identifier
+                ,
+            }
         )
     }
 }
+

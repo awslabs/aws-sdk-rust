@@ -3,14 +3,14 @@
 /// <p>The refresh cache information for the file share or FSx file systems.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheAttributes {
-    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+pub struct CacheAttributes  {
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     #[doc(hidden)]
     pub cache_stale_timeout_in_seconds: std::option::Option<i32>,
 }
 impl CacheAttributes {
-    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub fn cache_stale_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.cache_stale_timeout_in_seconds
@@ -30,22 +30,23 @@ pub struct CacheAttributesBuilder {
     pub(crate) cache_stale_timeout_in_seconds: std::option::Option<i32>,
 }
 impl CacheAttributesBuilder {
-    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub fn cache_stale_timeout_in_seconds(mut self, input: i32) -> Self {
         self.cache_stale_timeout_in_seconds = Some(input);
         self
     }
-    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
+    /// <p>Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh after which access to the directory would cause the file gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p> 
     /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub fn set_cache_stale_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.cache_stale_timeout_in_seconds = input;
-        self
+        self.cache_stale_timeout_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`CacheAttributes`](crate::types::CacheAttributes).
     pub fn build(self) -> crate::types::CacheAttributes {
         crate::types::CacheAttributes {
-            cache_stale_timeout_in_seconds: self.cache_stale_timeout_in_seconds,
+            cache_stale_timeout_in_seconds: self.cache_stale_timeout_in_seconds
+            ,
         }
     }
 }
+

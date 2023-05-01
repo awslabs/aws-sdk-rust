@@ -3,7 +3,7 @@
 /// <p>The aggregated field wells of a bar chart.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BarChartAggregatedFieldWells {
+pub struct BarChartAggregatedFieldWells  {
     /// <p>The category (y-axis) field well of a bar chart.</p>
     #[doc(hidden)]
     pub category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
@@ -19,19 +19,19 @@ pub struct BarChartAggregatedFieldWells {
 }
 impl BarChartAggregatedFieldWells {
     /// <p>The category (y-axis) field well of a bar chart.</p>
-    pub fn category(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> std::option::Option<& [crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The value field wells of a bar chart. Values are aggregated by category.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
         self.values.as_deref()
     }
     /// <p>The color (group/color) field well of a bar chart.</p>
-    pub fn colors(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn colors(&self) -> std::option::Option<& [crate::types::DimensionField]> {
         self.colors.as_deref()
     }
     /// <p>The small multiples field well of a bar chart.</p>
-    pub fn small_multiples(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn small_multiples(&self) -> std::option::Option<& [crate::types::DimensionField]> {
         self.small_multiples.as_deref()
     }
 }
@@ -59,17 +59,13 @@ impl BarChartAggregatedFieldWellsBuilder {
     /// <p>The category (y-axis) field well of a bar chart.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
-        v.push(input);
-        self.category = Some(v);
-        self
+                        v.push(input);
+                        self.category = Some(v);
+                        self
     }
     /// <p>The category (y-axis) field well of a bar chart.</p>
-    pub fn set_category(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.category = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -78,17 +74,13 @@ impl BarChartAggregatedFieldWellsBuilder {
     /// <p>The value field wells of a bar chart. Values are aggregated by category.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input);
-        self.values = Some(v);
-        self
+                        v.push(input);
+                        self.values = Some(v);
+                        self
     }
     /// <p>The value field wells of a bar chart. Values are aggregated by category.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
+        self.values = input; self
     }
     /// Appends an item to `colors`.
     ///
@@ -97,17 +89,13 @@ impl BarChartAggregatedFieldWellsBuilder {
     /// <p>The color (group/color) field well of a bar chart.</p>
     pub fn colors(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.colors.unwrap_or_default();
-        v.push(input);
-        self.colors = Some(v);
-        self
+                        v.push(input);
+                        self.colors = Some(v);
+                        self
     }
     /// <p>The color (group/color) field well of a bar chart.</p>
-    pub fn set_colors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.colors = input;
-        self
+    pub fn set_colors(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.colors = input; self
     }
     /// Appends an item to `small_multiples`.
     ///
@@ -116,25 +104,26 @@ impl BarChartAggregatedFieldWellsBuilder {
     /// <p>The small multiples field well of a bar chart.</p>
     pub fn small_multiples(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.small_multiples.unwrap_or_default();
-        v.push(input);
-        self.small_multiples = Some(v);
-        self
+                        v.push(input);
+                        self.small_multiples = Some(v);
+                        self
     }
     /// <p>The small multiples field well of a bar chart.</p>
-    pub fn set_small_multiples(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    ) -> Self {
-        self.small_multiples = input;
-        self
+    pub fn set_small_multiples(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
+        self.small_multiples = input; self
     }
     /// Consumes the builder and constructs a [`BarChartAggregatedFieldWells`](crate::types::BarChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::BarChartAggregatedFieldWells {
         crate::types::BarChartAggregatedFieldWells {
-            category: self.category,
-            values: self.values,
-            colors: self.colors,
-            small_multiples: self.small_multiples,
+            category: self.category
+            ,
+            values: self.values
+            ,
+            colors: self.colors
+            ,
+            small_multiples: self.small_multiples
+            ,
         }
     }
 }
+

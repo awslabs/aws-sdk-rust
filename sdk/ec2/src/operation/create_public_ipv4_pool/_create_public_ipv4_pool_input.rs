@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePublicIpv4PoolInput {
+pub struct CreatePublicIpv4PoolInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,14 +16,13 @@ impl CreatePublicIpv4PoolInput {
         self.dry_run
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
 }
 impl CreatePublicIpv4PoolInput {
     /// Creates a new builder-style object to manufacture [`CreatePublicIpv4PoolInput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput).
-    pub fn builder(
-    ) -> crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder {
+    pub fn builder() -> crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder {
         crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder::default()
     }
 }
@@ -33,8 +32,7 @@ impl CreatePublicIpv4PoolInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreatePublicIpv4PoolInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) tag_specifications:
-        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl CreatePublicIpv4PoolInputBuilder {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -44,8 +42,7 @@ impl CreatePublicIpv4PoolInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -54,30 +51,24 @@ impl CreatePublicIpv4PoolInputBuilder {
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-        v.push(input);
-        self.tag_specifications = Some(v);
-        self
+                        v.push(input);
+                        self.tag_specifications = Some(v);
+                        self
     }
     /// <p>The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p>
-    pub fn set_tag_specifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
-    ) -> Self {
-        self.tag_specifications = input;
-        self
+    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+        self.tag_specifications = input; self
     }
     /// Consumes the builder and constructs a [`CreatePublicIpv4PoolInput`](crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_public_ipv4_pool::CreatePublicIpv4PoolInput {
-                dry_run: self.dry_run,
-                tag_specifications: self.tag_specifications,
-            },
+                dry_run: self.dry_run
+                ,
+                tag_specifications: self.tag_specifications
+                ,
+            }
         )
     }
 }
+

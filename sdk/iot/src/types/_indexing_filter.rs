@@ -3,14 +3,14 @@
 /// <p>Provides additional filters for specific data sources. Named shadow is the only data source that currently supports and requires a filter. To add named shadows to your fleet indexing configuration, set <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your shadow names in <code>filter</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexingFilter {
+pub struct IndexingFilter  {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
     #[doc(hidden)]
     pub named_shadow_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl IndexingFilter {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn named_shadow_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn named_shadow_names(&self) -> std::option::Option<& [std::string::String]> {
         self.named_shadow_names.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl IndexingFilterBuilder {
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
     pub fn named_shadow_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.named_shadow_names.unwrap_or_default();
-        v.push(input.into());
-        self.named_shadow_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.named_shadow_names = Some(v);
+                        self
     }
     /// <p>The shadow names that you select to index. The default maximum number of shadow names for indexing is 10. To increase the limit, see <a href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services General Reference</i>. </p>
-    pub fn set_named_shadow_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.named_shadow_names = input;
-        self
+    pub fn set_named_shadow_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.named_shadow_names = input; self
     }
     /// Consumes the builder and constructs a [`IndexingFilter`](crate::types::IndexingFilter).
     pub fn build(self) -> crate::types::IndexingFilter {
         crate::types::IndexingFilter {
-            named_shadow_names: self.named_shadow_names,
+            named_shadow_names: self.named_shadow_names
+            ,
         }
     }
 }
+

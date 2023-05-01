@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttributeGroupsForApplicationInput {
+pub struct ListAttributeGroupsForApplicationInput  {
     /// <p>The name or ID of the application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListAttributeGroupsForApplicationInput {
 }
 impl ListAttributeGroupsForApplicationInput {
     /// <p>The name or ID of the application.</p>
-    pub fn application(&self) -> std::option::Option<&str> {
+    pub fn application(&self) -> std::option::Option<& str> {
         self.application.as_deref()
     }
     /// <p>This token retrieves the next page of results after a previous API call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
@@ -29,7 +29,7 @@ impl ListAttributeGroupsForApplicationInput {
 }
 impl ListAttributeGroupsForApplicationInput {
     /// Creates a new builder-style object to manufacture [`ListAttributeGroupsForApplicationInput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput).
-    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationInputBuilder{
+    pub fn builder() -> crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationInputBuilder {
         crate::operation::list_attribute_groups_for_application::builders::ListAttributeGroupsForApplicationInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl ListAttributeGroupsForApplicationInputBuilder {
     }
     /// <p>The name or ID of the application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input;
-        self
+        self.application = input; self
     }
     /// <p>This token retrieves the next page of results after a previous API call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl ListAttributeGroupsForApplicationInputBuilder {
     }
     /// <p>This token retrieves the next page of results after a previous API call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,11 +68,10 @@ impl ListAttributeGroupsForApplicationInputBuilder {
     }
     /// <p>The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAttributeGroupsForApplicationInput`](crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput).
-    pub fn build(self) -> Result<crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_attribute_groups_for_application::ListAttributeGroupsForApplicationInput {
                 application: self.application
@@ -87,3 +84,4 @@ impl ListAttributeGroupsForApplicationInputBuilder {
         )
     }
 }
+

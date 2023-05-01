@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePrincipalMappingInput {
+pub struct DescribePrincipalMappingInput  {
     /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct DescribePrincipalMappingInput {
 }
 impl DescribePrincipalMappingInput {
     /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
     /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 impl DescribePrincipalMappingInput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalMappingInput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingInput).
-    pub fn builder(
-    ) -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder {
         crate::operation::describe_principal_mapping::builders::DescribePrincipalMappingInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl DescribePrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the index required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DescribePrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the data source to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DescribePrincipalMappingInputBuilder {
     }
     /// <p>The identifier of the group required to check the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribePrincipalMappingInput`](crate::operation::describe_principal_mapping::DescribePrincipalMappingInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_principal_mapping::DescribePrincipalMappingInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_principal_mapping::DescribePrincipalMappingInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_principal_mapping::DescribePrincipalMappingInput {
-                index_id: self.index_id,
-                data_source_id: self.data_source_id,
-                group_id: self.group_id,
-            },
+                index_id: self.index_id
+                ,
+                data_source_id: self.data_source_id
+                ,
+                group_id: self.group_id
+                ,
+            }
         )
     }
 }
+

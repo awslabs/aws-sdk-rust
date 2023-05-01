@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let queryidentifiersenclosingoption = unimplemented!();
 /// match queryidentifiersenclosingoption {
@@ -30,64 +30,55 @@
 /// Specifically, when `queryidentifiersenclosingoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueryIdentifiersEnclosingOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueryIdentifiersEnclosingOption {
     #[allow(missing_docs)] // documentation missing in model
     DoubleQuotes,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryIdentifiersEnclosingOption {
-    fn from(s: &str) -> Self {
-        match s {
-            "DOUBLE_QUOTES" => QueryIdentifiersEnclosingOption::DoubleQuotes,
-            "NONE" => QueryIdentifiersEnclosingOption::None,
-            other => QueryIdentifiersEnclosingOption::Unknown(
-                crate::primitives::UnknownVariantValue(other.to_owned()),
-            ),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DOUBLE_QUOTES" => QueryIdentifiersEnclosingOption::DoubleQuotes,
+"NONE" => QueryIdentifiersEnclosingOption::None,
+other => QueryIdentifiersEnclosingOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for QueryIdentifiersEnclosingOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryIdentifiersEnclosingOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueryIdentifiersEnclosingOption::from(s))
+                }
+            }
 impl QueryIdentifiersEnclosingOption {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            QueryIdentifiersEnclosingOption::DoubleQuotes => "DOUBLE_QUOTES",
-            QueryIdentifiersEnclosingOption::None => "NONE",
-            QueryIdentifiersEnclosingOption::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DOUBLE_QUOTES", "NONE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    QueryIdentifiersEnclosingOption::DoubleQuotes => "DOUBLE_QUOTES",
+    QueryIdentifiersEnclosingOption::None => "NONE",
+    QueryIdentifiersEnclosingOption::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DOUBLE_QUOTES", "NONE"]
+                }
+            }
 impl AsRef<str> for QueryIdentifiersEnclosingOption {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

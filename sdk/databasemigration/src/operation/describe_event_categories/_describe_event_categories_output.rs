@@ -3,31 +3,26 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventCategoriesOutput {
+pub struct DescribeEventCategoriesOutput  {
     /// <p>A list of event categories.</p>
     #[doc(hidden)]
-    pub event_category_group_list:
-        std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
+    pub event_category_group_list: std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of event categories.</p>
-    pub fn event_category_group_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::EventCategoryGroup]> {
+    pub fn event_category_group_list(&self) -> std::option::Option<& [crate::types::EventCategoryGroup]> {
         self.event_category_group_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEventCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder {
         crate::operation::describe_event_categories::builders::DescribeEventCategoriesOutputBuilder::default()
     }
 }
@@ -36,8 +31,7 @@ impl DescribeEventCategoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEventCategoriesOutputBuilder {
-    pub(crate) event_category_group_list:
-        std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
+    pub(crate) event_category_group_list: std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutputBuilder {
@@ -48,34 +42,30 @@ impl DescribeEventCategoriesOutputBuilder {
     /// <p>A list of event categories.</p>
     pub fn event_category_group_list(mut self, input: crate::types::EventCategoryGroup) -> Self {
         let mut v = self.event_category_group_list.unwrap_or_default();
-        v.push(input);
-        self.event_category_group_list = Some(v);
-        self
+                        v.push(input);
+                        self.event_category_group_list = Some(v);
+                        self
     }
     /// <p>A list of event categories.</p>
-    pub fn set_event_category_group_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
-    ) -> Self {
-        self.event_category_group_list = input;
-        self
+    pub fn set_event_category_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>) -> Self {
+        self.event_category_group_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_event_categories::DescribeEventCategoriesOutput {
+    pub fn build(self) -> crate::operation::describe_event_categories::DescribeEventCategoriesOutput {
         crate::operation::describe_event_categories::DescribeEventCategoriesOutput {
-            event_category_group_list: self.event_category_group_list,
+            event_category_group_list: self.event_category_group_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

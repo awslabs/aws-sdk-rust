@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateWorkspaceApiKeyOutput {
+pub struct CreateWorkspaceApiKeyOutput  {
     /// <p>The name of the key that was created.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct CreateWorkspaceApiKeyOutput {
 }
 impl CreateWorkspaceApiKeyOutput {
     /// <p>The name of the key that was created.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> std::option::Option<& str> {
         self.key_name.as_deref()
     }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The ID of the workspace that the key is valid for.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
-impl std::fmt::Debug for CreateWorkspaceApiKeyOutput {
+impl  std::fmt::Debug for CreateWorkspaceApiKeyOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateWorkspaceApiKeyOutput");
         formatter.field("key_name", &self.key_name);
@@ -39,15 +39,13 @@ impl std::fmt::Debug for CreateWorkspaceApiKeyOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreateWorkspaceApiKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateWorkspaceApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceApiKeyOutput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder {
         crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyOutputBuilder::default()
     }
 }
@@ -69,8 +67,7 @@ impl CreateWorkspaceApiKeyOutputBuilder {
     }
     /// <p>The name of the key that was created.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input;
-        self
+        self.key_name = input; self
     }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl CreateWorkspaceApiKeyOutputBuilder {
     }
     /// <p>The key token. Use this value as a bearer token to authenticate HTTP requests to the workspace.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The ID of the workspace that the key is valid for.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,24 +85,26 @@ impl CreateWorkspaceApiKeyOutputBuilder {
     }
     /// <p>The ID of the workspace that the key is valid for.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateWorkspaceApiKeyOutput`](crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput).
     pub fn build(self) -> crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput {
         crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput {
-            key_name: self.key_name,
-            key: self.key,
-            workspace_id: self.workspace_id,
+            key_name: self.key_name
+            ,
+            key: self.key
+            ,
+            workspace_id: self.workspace_id
+            ,
             _request_id: self._request_id,
         }
     }
@@ -121,3 +119,4 @@ impl std::fmt::Debug for CreateWorkspaceApiKeyOutputBuilder {
         formatter.finish()
     }
 }
+

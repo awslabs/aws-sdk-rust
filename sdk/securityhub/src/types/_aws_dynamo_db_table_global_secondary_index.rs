@@ -3,7 +3,7 @@
 /// <p>Information abut a global secondary index for the table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsDynamoDbTableGlobalSecondaryIndex {
+pub struct AwsDynamoDbTableGlobalSecondaryIndex  {
     /// <p>Whether the index is currently backfilling.</p>
     #[doc(hidden)]
     pub backfilling: bool,
@@ -16,12 +16,12 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     /// <p>The total size in bytes of the index.</p>
     #[doc(hidden)]
     pub index_size_bytes: i64,
-    /// <p>The current status of the index.</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <p>The current status of the index.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> </p> </li> 
+    /// <li> <p> <code>CREATING</code> </p> </li> 
+    /// <li> <p> <code>DELETING</code> </p> </li> 
+    /// <li> <p> <code>UPDATING</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub index_status: std::option::Option<std::string::String>,
@@ -36,8 +36,7 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndex {
     pub projection: std::option::Option<crate::types::AwsDynamoDbTableProjection>,
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
     #[doc(hidden)]
-    pub provisioned_throughput:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
+    pub provisioned_throughput: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
 }
 impl AwsDynamoDbTableGlobalSecondaryIndex {
     /// <p>Whether the index is currently backfilling.</p>
@@ -45,25 +44,25 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.backfilling
     }
     /// <p>The ARN of the index.</p>
-    pub fn index_arn(&self) -> std::option::Option<&str> {
+    pub fn index_arn(&self) -> std::option::Option<& str> {
         self.index_arn.as_deref()
     }
     /// <p>The name of the index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> std::option::Option<& str> {
         self.index_name.as_deref()
     }
     /// <p>The total size in bytes of the index.</p>
     pub fn index_size_bytes(&self) -> i64 {
         self.index_size_bytes
     }
-    /// <p>The current status of the index.</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <p>The current status of the index.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> </p> </li> 
+    /// <li> <p> <code>CREATING</code> </p> </li> 
+    /// <li> <p> <code>DELETING</code> </p> </li> 
+    /// <li> <p> <code>UPDATING</code> </p> </li> 
     /// </ul>
-    pub fn index_status(&self) -> std::option::Option<&str> {
+    pub fn index_status(&self) -> std::option::Option<& str> {
         self.index_status.as_deref()
     }
     /// <p>The number of items in the index.</p>
@@ -71,17 +70,15 @@ impl AwsDynamoDbTableGlobalSecondaryIndex {
         self.item_count
     }
     /// <p>The key schema for the index.</p>
-    pub fn key_schema(&self) -> std::option::Option<&[crate::types::AwsDynamoDbTableKeySchema]> {
+    pub fn key_schema(&self) -> std::option::Option<& [crate::types::AwsDynamoDbTableKeySchema]> {
         self.key_schema.as_deref()
     }
     /// <p>Attributes that are copied from the table into an index.</p>
-    pub fn projection(&self) -> std::option::Option<&crate::types::AwsDynamoDbTableProjection> {
+    pub fn projection(&self) -> std::option::Option<& crate::types::AwsDynamoDbTableProjection> {
         self.projection.as_ref()
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn provisioned_throughput(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughput> {
+    pub fn provisioned_throughput(&self) -> std::option::Option<& crate::types::AwsDynamoDbTableProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
 }
@@ -102,11 +99,9 @@ pub struct AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     pub(crate) index_size_bytes: std::option::Option<i64>,
     pub(crate) index_status: std::option::Option<std::string::String>,
     pub(crate) item_count: std::option::Option<i32>,
-    pub(crate) key_schema:
-        std::option::Option<std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
+    pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
     pub(crate) projection: std::option::Option<crate::types::AwsDynamoDbTableProjection>,
-    pub(crate) provisioned_throughput:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
+    pub(crate) provisioned_throughput: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
 }
 impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     /// <p>Whether the index is currently backfilling.</p>
@@ -116,8 +111,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>Whether the index is currently backfilling.</p>
     pub fn set_backfilling(mut self, input: std::option::Option<bool>) -> Self {
-        self.backfilling = input;
-        self
+        self.backfilling = input; self
     }
     /// <p>The ARN of the index.</p>
     pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +120,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The ARN of the index.</p>
     pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_arn = input;
-        self
+        self.index_arn = input; self
     }
     /// <p>The name of the index.</p>
     pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +129,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The name of the index.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input;
-        self
+        self.index_name = input; self
     }
     /// <p>The total size in bytes of the index.</p>
     pub fn index_size_bytes(mut self, input: i64) -> Self {
@@ -146,30 +138,28 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The total size in bytes of the index.</p>
     pub fn set_index_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.index_size_bytes = input;
-        self
+        self.index_size_bytes = input; self
     }
-    /// <p>The current status of the index.</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <p>The current status of the index.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> </p> </li> 
+    /// <li> <p> <code>CREATING</code> </p> </li> 
+    /// <li> <p> <code>DELETING</code> </p> </li> 
+    /// <li> <p> <code>UPDATING</code> </p> </li> 
     /// </ul>
     pub fn index_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.index_status = Some(input.into());
         self
     }
-    /// <p>The current status of the index.</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>CREATING</code> </p> </li>
-    /// <li> <p> <code>DELETING</code> </p> </li>
-    /// <li> <p> <code>UPDATING</code> </p> </li>
+    /// <p>The current status of the index.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code> </p> </li> 
+    /// <li> <p> <code>CREATING</code> </p> </li> 
+    /// <li> <p> <code>DELETING</code> </p> </li> 
+    /// <li> <p> <code>UPDATING</code> </p> </li> 
     /// </ul>
     pub fn set_index_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_status = input;
-        self
+        self.index_status = input; self
     }
     /// <p>The number of items in the index.</p>
     pub fn item_count(mut self, input: i32) -> Self {
@@ -178,8 +168,7 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     }
     /// <p>The number of items in the index.</p>
     pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.item_count = input;
-        self
+        self.item_count = input; self
     }
     /// Appends an item to `key_schema`.
     ///
@@ -188,17 +177,13 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
     /// <p>The key schema for the index.</p>
     pub fn key_schema(mut self, input: crate::types::AwsDynamoDbTableKeySchema) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
-        v.push(input);
-        self.key_schema = Some(v);
-        self
+                        v.push(input);
+                        self.key_schema = Some(v);
+                        self
     }
     /// <p>The key schema for the index.</p>
-    pub fn set_key_schema(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>,
-    ) -> Self {
-        self.key_schema = input;
-        self
+    pub fn set_key_schema(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsDynamoDbTableKeySchema>>) -> Self {
+        self.key_schema = input; self
     }
     /// <p>Attributes that are copied from the table into an index.</p>
     pub fn projection(mut self, input: crate::types::AwsDynamoDbTableProjection) -> Self {
@@ -206,41 +191,43 @@ impl AwsDynamoDbTableGlobalSecondaryIndexBuilder {
         self
     }
     /// <p>Attributes that are copied from the table into an index.</p>
-    pub fn set_projection(
-        mut self,
-        input: std::option::Option<crate::types::AwsDynamoDbTableProjection>,
-    ) -> Self {
-        self.projection = input;
-        self
+    pub fn set_projection(mut self, input: std::option::Option<crate::types::AwsDynamoDbTableProjection>) -> Self {
+        self.projection = input; self
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn provisioned_throughput(
-        mut self,
-        input: crate::types::AwsDynamoDbTableProvisionedThroughput,
-    ) -> Self {
+    pub fn provisioned_throughput(mut self, input: crate::types::AwsDynamoDbTableProvisionedThroughput) -> Self {
         self.provisioned_throughput = Some(input);
         self
     }
     /// <p>Information about the provisioned throughput settings for the indexes.</p>
-    pub fn set_provisioned_throughput(
-        mut self,
-        input: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>,
-    ) -> Self {
-        self.provisioned_throughput = input;
-        self
+    pub fn set_provisioned_throughput(mut self, input: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughput>) -> Self {
+        self.provisioned_throughput = input; self
     }
     /// Consumes the builder and constructs a [`AwsDynamoDbTableGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableGlobalSecondaryIndex).
     pub fn build(self) -> crate::types::AwsDynamoDbTableGlobalSecondaryIndex {
         crate::types::AwsDynamoDbTableGlobalSecondaryIndex {
-            backfilling: self.backfilling.unwrap_or_default(),
-            index_arn: self.index_arn,
-            index_name: self.index_name,
-            index_size_bytes: self.index_size_bytes.unwrap_or_default(),
-            index_status: self.index_status,
-            item_count: self.item_count.unwrap_or_default(),
-            key_schema: self.key_schema,
-            projection: self.projection,
-            provisioned_throughput: self.provisioned_throughput,
+            backfilling: self.backfilling
+                .unwrap_or_default()
+            ,
+            index_arn: self.index_arn
+            ,
+            index_name: self.index_name
+            ,
+            index_size_bytes: self.index_size_bytes
+                .unwrap_or_default()
+            ,
+            index_status: self.index_status
+            ,
+            item_count: self.item_count
+                .unwrap_or_default()
+            ,
+            key_schema: self.key_schema
+            ,
+            projection: self.projection
+            ,
+            provisioned_throughput: self.provisioned_throughput
+            ,
         }
     }
 }
+

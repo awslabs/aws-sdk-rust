@@ -4,84 +4,56 @@ pub use crate::operation::update_apns_voip_sandbox_channel::_update_apns_voip_sa
 pub use crate::operation::update_apns_voip_sandbox_channel::_update_apns_voip_sandbox_channel_input::UpdateApnsVoipSandboxChannelInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateApnsVoipSandboxChannel`.
-///
+/// 
 /// <p>Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP sandbox channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApnsVoipSandboxChannelFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder
             }
-impl UpdateApnsVoipSandboxChannelFluentBuilder {
+impl UpdateApnsVoipSandboxChannelFluentBuilder  {
     /// Creates a new `UpdateApnsVoipSandboxChannel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannel, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelOutput, aws_smithy_http::result::SdkError<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannelError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn apns_voip_sandbox_channel_request(
-        mut self,
-        input: crate::types::ApnsVoipSandboxChannelRequest,
-    ) -> Self {
+    pub fn apns_voip_sandbox_channel_request(mut self, input: crate::types::ApnsVoipSandboxChannelRequest) -> Self {
         self.inner = self.inner.apns_voip_sandbox_channel_request(input);
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
-    pub fn set_apns_voip_sandbox_channel_request(
-        mut self,
-        input: std::option::Option<crate::types::ApnsVoipSandboxChannelRequest>,
-    ) -> Self {
+    pub fn set_apns_voip_sandbox_channel_request(mut self, input: std::option::Option<crate::types::ApnsVoipSandboxChannelRequest>) -> Self {
         self.inner = self.inner.set_apns_voip_sandbox_channel_request(input);
         self
     }
@@ -96,3 +68,4 @@ impl UpdateApnsVoipSandboxChannelFluentBuilder {
         self
     }
 }
+

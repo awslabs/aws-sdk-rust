@@ -3,7 +3,7 @@
 /// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EphemeralStorage {
+pub struct EphemeralStorage  {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     #[doc(hidden)]
     pub size_in_gi_b: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl EphemeralStorageBuilder {
     }
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
-        self.size_in_gi_b = input;
-        self
+        self.size_in_gi_b = input; self
     }
     /// Consumes the builder and constructs a [`EphemeralStorage`](crate::types::EphemeralStorage).
     pub fn build(self) -> crate::types::EphemeralStorage {
         crate::types::EphemeralStorage {
-            size_in_gi_b: self.size_in_gi_b,
+            size_in_gi_b: self.size_in_gi_b
+            ,
         }
     }
 }
+

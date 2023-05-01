@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationInput {
+pub struct DescribeConfigurationInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 impl DescribeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_configuration::builders::DescribeConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_configuration::builders::DescribeConfigurationInputBuilder {
         crate::operation::describe_configuration::builders::DescribeConfigurationInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DescribeConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeConfigurationInput`](crate::operation::describe_configuration::DescribeConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_configuration::DescribeConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_configuration::DescribeConfigurationInput { arn: self.arn })
+    pub fn build(self) -> Result<crate::operation::describe_configuration::DescribeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_configuration::DescribeConfigurationInput {
+                arn: self.arn
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>A structure that contains the values and structure used to update a partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdatePartitionRequestEntry {
+pub struct BatchUpdatePartitionRequestEntry  {
     /// <p>A list of values defining the partitions.</p>
     #[doc(hidden)]
     pub partition_value_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct BatchUpdatePartitionRequestEntry {
 }
 impl BatchUpdatePartitionRequestEntry {
     /// <p>A list of values defining the partitions.</p>
-    pub fn partition_value_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_value_list(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_value_list.as_deref()
     }
     /// <p>The structure used to update a partition.</p>
-    pub fn partition_input(&self) -> std::option::Option<&crate::types::PartitionInput> {
+    pub fn partition_input(&self) -> std::option::Option<& crate::types::PartitionInput> {
         self.partition_input.as_ref()
     }
 }
@@ -43,17 +43,13 @@ impl BatchUpdatePartitionRequestEntryBuilder {
     /// <p>A list of values defining the partitions.</p>
     pub fn partition_value_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.partition_value_list.unwrap_or_default();
-        v.push(input.into());
-        self.partition_value_list = Some(v);
-        self
+                        v.push(input.into());
+                        self.partition_value_list = Some(v);
+                        self
     }
     /// <p>A list of values defining the partitions.</p>
-    pub fn set_partition_value_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.partition_value_list = input;
-        self
+    pub fn set_partition_value_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.partition_value_list = input; self
     }
     /// <p>The structure used to update a partition.</p>
     pub fn partition_input(mut self, input: crate::types::PartitionInput) -> Self {
@@ -61,18 +57,17 @@ impl BatchUpdatePartitionRequestEntryBuilder {
         self
     }
     /// <p>The structure used to update a partition.</p>
-    pub fn set_partition_input(
-        mut self,
-        input: std::option::Option<crate::types::PartitionInput>,
-    ) -> Self {
-        self.partition_input = input;
-        self
+    pub fn set_partition_input(mut self, input: std::option::Option<crate::types::PartitionInput>) -> Self {
+        self.partition_input = input; self
     }
     /// Consumes the builder and constructs a [`BatchUpdatePartitionRequestEntry`](crate::types::BatchUpdatePartitionRequestEntry).
     pub fn build(self) -> crate::types::BatchUpdatePartitionRequestEntry {
         crate::types::BatchUpdatePartitionRequestEntry {
-            partition_value_list: self.partition_value_list,
-            partition_input: self.partition_input,
+            partition_value_list: self.partition_value_list
+            ,
+            partition_input: self.partition_input
+            ,
         }
     }
 }
+

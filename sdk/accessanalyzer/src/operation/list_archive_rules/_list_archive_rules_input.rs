@@ -3,7 +3,7 @@
 /// <p>Retrieves a list of archive rules created for the specified analyzer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArchiveRulesInput {
+pub struct ListArchiveRulesInput  {
     /// <p>The name of the analyzer to retrieve rules from.</p>
     #[doc(hidden)]
     pub analyzer_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ListArchiveRulesInput {
 }
 impl ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> std::option::Option<& str> {
         self.analyzer_name.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the request.</p>
@@ -30,8 +30,7 @@ impl ListArchiveRulesInput {
 }
 impl ListArchiveRulesInput {
     /// Creates a new builder-style object to manufacture [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
-    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder {
         crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl ListArchiveRulesInputBuilder {
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
     pub fn set_analyzer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_name = input;
-        self
+        self.analyzer_name = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl ListArchiveRulesInputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,22 +69,20 @@ impl ListArchiveRulesInputBuilder {
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_archive_rules::ListArchiveRulesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_archive_rules::ListArchiveRulesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_archive_rules::ListArchiveRulesInput {
-                analyzer_name: self.analyzer_name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                analyzer_name: self.analyzer_name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectorProfileOutput {
+pub struct CreateConnectorProfileOutput  {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     #[doc(hidden)]
     pub connector_profile_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateConnectorProfileOutput {
 }
 impl CreateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_profile_arn(&self) -> std::option::Option<& str> {
         self.connector_profile_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateConnectorProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateConnectorProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorProfileOutput`](crate::operation::create_connector_profile::CreateConnectorProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_connector_profile::builders::CreateConnectorProfileOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_connector_profile::builders::CreateConnectorProfileOutputBuilder {
         crate::operation::create_connector_profile::builders::CreateConnectorProfileOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateConnectorProfileOutputBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    pub fn set_connector_profile_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connector_profile_arn = input;
-        self
+    pub fn set_connector_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connector_profile_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateConnectorProfileOutput`](crate::operation::create_connector_profile::CreateConnectorProfileOutput).
     pub fn build(self) -> crate::operation::create_connector_profile::CreateConnectorProfileOutput {
         crate::operation::create_connector_profile::CreateConnectorProfileOutput {
-            connector_profile_arn: self.connector_profile_arn,
+            connector_profile_arn: self.connector_profile_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

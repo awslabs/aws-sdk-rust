@@ -3,7 +3,7 @@
 /// <p>Error information for a failed <code>BatchGetVpcEndpoint</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointErrorDetail {
+pub struct VpcEndpointErrorDetail  {
     /// <p>The unique identifier of the VPC endpoint.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct VpcEndpointErrorDetail {
 }
 impl VpcEndpointErrorDetail {
     /// <p>The unique identifier of the VPC endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>An error message describing the reason for the failure.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code for the failed request.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl VpcEndpointErrorDetailBuilder {
     }
     /// <p>The unique identifier of the VPC endpoint.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>An error message describing the reason for the failure.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl VpcEndpointErrorDetailBuilder {
     }
     /// <p>An error message describing the reason for the failure.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error code for the failed request.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl VpcEndpointErrorDetailBuilder {
     }
     /// <p>The error code for the failed request.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// Consumes the builder and constructs a [`VpcEndpointErrorDetail`](crate::types::VpcEndpointErrorDetail).
     pub fn build(self) -> crate::types::VpcEndpointErrorDetail {
         crate::types::VpcEndpointErrorDetail {
-            id: self.id,
-            error_message: self.error_message,
-            error_code: self.error_code,
+            id: self.id
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigOutput {
+pub struct GetConfigOutput  {
     /// <p>The type of credentials.</p>
     #[doc(hidden)]
     pub config_type: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct GetConfigOutput {
 }
 impl GetConfigOutput {
     /// <p>The type of credentials.</p>
-    pub fn config_type(&self) -> std::option::Option<&str> {
+    pub fn config_type(&self) -> std::option::Option<& str> {
         self.config_type.as_deref()
     }
     /// <p>The chrystoki.conf configuration file.</p>
-    pub fn config_file(&self) -> std::option::Option<&str> {
+    pub fn config_file(&self) -> std::option::Option<& str> {
         self.config_file.as_deref()
     }
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
-    pub fn config_cred(&self) -> std::option::Option<&str> {
+    pub fn config_cred(&self) -> std::option::Option<& str> {
         self.config_cred.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput).
     pub fn builder() -> crate::operation::get_config::builders::GetConfigOutputBuilder {
@@ -57,8 +57,7 @@ impl GetConfigOutputBuilder {
     }
     /// <p>The type of credentials.</p>
     pub fn set_config_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_type = input;
-        self
+        self.config_type = input; self
     }
     /// <p>The chrystoki.conf configuration file.</p>
     pub fn config_file(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl GetConfigOutputBuilder {
     }
     /// <p>The chrystoki.conf configuration file.</p>
     pub fn set_config_file(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_file = input;
-        self
+        self.config_file = input; self
     }
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
     pub fn config_cred(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,25 +75,28 @@ impl GetConfigOutputBuilder {
     }
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
     pub fn set_config_cred(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_cred = input;
-        self
+        self.config_cred = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput).
     pub fn build(self) -> crate::operation::get_config::GetConfigOutput {
         crate::operation::get_config::GetConfigOutput {
-            config_type: self.config_type,
-            config_file: self.config_file,
-            config_cred: self.config_cred,
+            config_type: self.config_type
+            ,
+            config_file: self.config_file
+            ,
+            config_cred: self.config_cred
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

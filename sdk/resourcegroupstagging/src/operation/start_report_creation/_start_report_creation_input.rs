@@ -2,27 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReportCreationInput {
-    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p> <code>awsexamplebucket</code> </p>
+pub struct StartReportCreationInput  {
+    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p> 
+    /// <p> <code>awsexamplebucket</code> </p> 
     /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
 }
 impl StartReportCreationInput {
-    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p> 
+    /// <p> <code>awsexamplebucket</code> </p> 
     /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
 }
 impl StartReportCreationInput {
     /// Creates a new builder-style object to manufacture [`StartReportCreationInput`](crate::operation::start_report_creation::StartReportCreationInput).
-    pub fn builder(
-    ) -> crate::operation::start_report_creation::builders::StartReportCreationInputBuilder {
-        crate::operation::start_report_creation::builders::StartReportCreationInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::start_report_creation::builders::StartReportCreationInputBuilder {
+        crate::operation::start_report_creation::builders::StartReportCreationInputBuilder::default()
     }
 }
 
@@ -33,31 +31,27 @@ pub struct StartReportCreationInputBuilder {
     pub(crate) s3_bucket: std::option::Option<std::string::String>,
 }
 impl StartReportCreationInputBuilder {
-    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p> 
+    /// <p> <code>awsexamplebucket</code> </p> 
     /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
     pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.s3_bucket = Some(input.into());
         self
     }
-    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>
-    /// <p> <code>awsexamplebucket</code> </p>
+    /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p> 
+    /// <p> <code>awsexamplebucket</code> </p> 
     /// <p>For more information on S3 bucket requirements, including an example bucket policy, see the example S3 bucket policy on this page.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input;
-        self
+        self.s3_bucket = input; self
     }
     /// Consumes the builder and constructs a [`StartReportCreationInput`](crate::operation::start_report_creation::StartReportCreationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_report_creation::StartReportCreationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_report_creation::StartReportCreationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_report_creation::StartReportCreationInput {
-                s3_bucket: self.s3_bucket,
-            },
+                s3_bucket: self.s3_bucket
+                ,
+            }
         )
     }
 }
+

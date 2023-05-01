@@ -3,8 +3,8 @@
 /// <p>Metadata attributes of the time series that are written in each measure record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestreamDimension {
-    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+pub struct TimestreamDimension  {
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p> 
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct TimestreamDimension {
     pub value: std::option::Option<std::string::String>,
 }
 impl TimestreamDimension {
-    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p> 
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value to write in this column of the database record.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -38,17 +38,16 @@ pub struct TimestreamDimensionBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl TimestreamDimensionBuilder {
-    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p> 
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p>
+    /// <p>The metadata dimension name. This is the name of the column in the Amazon Timestream database table record.</p> 
     /// <p>Dimensions cannot be named: <code>measure_name</code>, <code>measure_value</code>, or <code>time</code>. These names are reserved. Dimension names cannot start with <code>ts_</code> or <code>measure_value</code> and they cannot contain the colon (<code>:</code>) character.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The value to write in this column of the database record.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,14 +56,16 @@ impl TimestreamDimensionBuilder {
     }
     /// <p>The value to write in this column of the database record.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`TimestreamDimension`](crate::types::TimestreamDimension).
     pub fn build(self) -> crate::types::TimestreamDimension {
         crate::types::TimestreamDimension {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

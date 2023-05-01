@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateByteMatchSetOutput {
+pub struct CreateByteMatchSetOutput  {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
     #[doc(hidden)]
     pub byte_match_set: std::option::Option<crate::types::ByteMatchSet>,
@@ -13,25 +13,23 @@ pub struct CreateByteMatchSetOutput {
 }
 impl CreateByteMatchSetOutput {
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
-    pub fn byte_match_set(&self) -> std::option::Option<&crate::types::ByteMatchSet> {
+    pub fn byte_match_set(&self) -> std::option::Option<& crate::types::ByteMatchSet> {
         self.byte_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateByteMatchSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateByteMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateByteMatchSetOutput`](crate::operation::create_byte_match_set::CreateByteMatchSetOutput).
-    pub fn builder(
-    ) -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder {
-        crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder {
+        crate::operation::create_byte_match_set::builders::CreateByteMatchSetOutputBuilder::default()
     }
 }
 
@@ -50,12 +48,8 @@ impl CreateByteMatchSetOutputBuilder {
         self
     }
     /// <p>A <code>ByteMatchSet</code> that contains no <code>ByteMatchTuple</code> objects.</p>
-    pub fn set_byte_match_set(
-        mut self,
-        input: std::option::Option<crate::types::ByteMatchSet>,
-    ) -> Self {
-        self.byte_match_set = input;
-        self
+    pub fn set_byte_match_set(mut self, input: std::option::Option<crate::types::ByteMatchSet>) -> Self {
+        self.byte_match_set = input; self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,24 +58,26 @@ impl CreateByteMatchSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateByteMatchSetOutput`](crate::operation::create_byte_match_set::CreateByteMatchSetOutput).
     pub fn build(self) -> crate::operation::create_byte_match_set::CreateByteMatchSetOutput {
         crate::operation::create_byte_match_set::CreateByteMatchSetOutput {
-            byte_match_set: self.byte_match_set,
-            change_token: self.change_token,
+            byte_match_set: self.byte_match_set
+            ,
+            change_token: self.change_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

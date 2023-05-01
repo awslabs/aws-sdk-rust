@@ -4,77 +4,56 @@ pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutputBuil
 pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilder;
 
 /// Fluent builder constructing a request to `CreateFlow`.
-///
+/// 
 /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
-}
-impl CreateFlowFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_flow::builders::CreateFlowInputBuilder
+            }
+impl CreateFlowFluentBuilder  {
     /// Creates a new `CreateFlow`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_flow::CreateFlow,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_flow::CreateFlowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlow, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_flow::CreateFlowOutput, aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS Region.
-    pub fn set_availability_zone(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -88,10 +67,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The entitlements that you want to grant on a flow.
-    pub fn set_entitlements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GrantEntitlementRequest>>,
-    ) -> Self {
+    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
@@ -105,10 +81,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The media streams that you want to add to the flow. You can associate these media streams with sources and outputs on the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
-    ) -> Self {
+    pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
         self.inner = self.inner.set_media_streams(input);
         self
     }
@@ -132,10 +105,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The outputs that you want to add to this flow.
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddOutputRequest>>,
-    ) -> Self {
+    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddOutputRequest>>) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
@@ -145,10 +115,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The settings for the source of the flow.
-    pub fn set_source(
-        mut self,
-        input: std::option::Option<crate::types::SetSourceRequest>,
-    ) -> Self {
+    pub fn set_source(mut self, input: std::option::Option<crate::types::SetSourceRequest>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
@@ -158,10 +125,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The settings for source failover.
-    pub fn set_source_failover_config(
-        mut self,
-        input: std::option::Option<crate::types::FailoverConfig>,
-    ) -> Self {
+    pub fn set_source_failover_config(mut self, input: std::option::Option<crate::types::FailoverConfig>) -> Self {
         self.inner = self.inner.set_source_failover_config(input);
         self
     }
@@ -175,10 +139,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SetSourceRequest>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::SetSourceRequest>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
@@ -192,10 +153,7 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// The VPC interfaces you want on the flow.
-    pub fn set_vpc_interfaces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>,
-    ) -> Self {
+    pub fn set_vpc_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcInterfaceRequest>>) -> Self {
         self.inner = self.inner.set_vpc_interfaces(input);
         self
     }
@@ -205,11 +163,9 @@ impl CreateFlowFluentBuilder {
         self
     }
     /// Create maintenance setting for a flow
-    pub fn set_maintenance(
-        mut self,
-        input: std::option::Option<crate::types::AddMaintenance>,
-    ) -> Self {
+    pub fn set_maintenance(mut self, input: std::option::Option<crate::types::AddMaintenance>) -> Self {
         self.inner = self.inner.set_maintenance(input);
         self
     }
 }
+

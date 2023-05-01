@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInternetGatewayOutput {
+pub struct DeleteInternetGatewayOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteInternetGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteInternetGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInternetGatewayOutput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayOutputBuilder {
         crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteInternetGatewayOutputBuilder {
 }
 impl DeleteInternetGatewayOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteInternetGatewayOutput`](crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput).
     pub fn build(self) -> crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput {
         crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput {
@@ -42,3 +40,4 @@ impl DeleteInternetGatewayOutputBuilder {
         }
     }
 }
+

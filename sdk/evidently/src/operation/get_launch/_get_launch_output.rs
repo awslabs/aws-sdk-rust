@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchOutput {
+pub struct GetLaunchOutput  {
     /// <p>A structure containing the configuration details of the launch.</p>
     #[doc(hidden)]
     pub launch: std::option::Option<crate::types::Launch>,
@@ -10,15 +10,15 @@ pub struct GetLaunchOutput {
 }
 impl GetLaunchOutput {
     /// <p>A structure containing the configuration details of the launch.</p>
-    pub fn launch(&self) -> std::option::Option<&crate::types::Launch> {
+    pub fn launch(&self) -> std::option::Option<& crate::types::Launch> {
         self.launch.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetLaunchOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetLaunchOutput {
     /// Creates a new builder-style object to manufacture [`GetLaunchOutput`](crate::operation::get_launch::GetLaunchOutput).
     pub fn builder() -> crate::operation::get_launch::builders::GetLaunchOutputBuilder {
@@ -41,23 +41,24 @@ impl GetLaunchOutputBuilder {
     }
     /// <p>A structure containing the configuration details of the launch.</p>
     pub fn set_launch(mut self, input: std::option::Option<crate::types::Launch>) -> Self {
-        self.launch = input;
-        self
+        self.launch = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetLaunchOutput`](crate::operation::get_launch::GetLaunchOutput).
     pub fn build(self) -> crate::operation::get_launch::GetLaunchOutput {
         crate::operation::get_launch::GetLaunchOutput {
-            launch: self.launch,
+            launch: self.launch
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

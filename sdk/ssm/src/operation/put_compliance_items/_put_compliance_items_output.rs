@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutComplianceItemsOutput {
+pub struct PutComplianceItemsOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutComplianceItemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutComplianceItemsOutput {
     /// Creates a new builder-style object to manufacture [`PutComplianceItemsOutput`](crate::operation::put_compliance_items::PutComplianceItemsOutput).
-    pub fn builder(
-    ) -> crate::operation::put_compliance_items::builders::PutComplianceItemsOutputBuilder {
+    pub fn builder() -> crate::operation::put_compliance_items::builders::PutComplianceItemsOutputBuilder {
         crate::operation::put_compliance_items::builders::PutComplianceItemsOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct PutComplianceItemsOutputBuilder {
 }
 impl PutComplianceItemsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutComplianceItemsOutput`](crate::operation::put_compliance_items::PutComplianceItemsOutput).
     pub fn build(self) -> crate::operation::put_compliance_items::PutComplianceItemsOutput {
         crate::operation::put_compliance_items::PutComplianceItemsOutput {
@@ -41,3 +40,4 @@ impl PutComplianceItemsOutputBuilder {
         }
     }
 }
+

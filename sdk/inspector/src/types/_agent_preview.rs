@@ -3,7 +3,7 @@
 /// <p>Used as a response element in the <code>PreviewAgents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentPreview {
+pub struct AgentPreview  {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct AgentPreview {
 }
 impl AgentPreview {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group(&self) -> std::option::Option<& str> {
         self.auto_scaling_group.as_deref()
     }
     /// <p>The health status of the Amazon Inspector Agent.</p>
-    pub fn agent_health(&self) -> std::option::Option<&crate::types::AgentHealth> {
+    pub fn agent_health(&self) -> std::option::Option<& crate::types::AgentHealth> {
         self.agent_health.as_ref()
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn operating_system(&self) -> std::option::Option<&str> {
+    pub fn operating_system(&self) -> std::option::Option<& str> {
         self.operating_system.as_deref()
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn kernel_version(&self) -> std::option::Option<&str> {
+    pub fn kernel_version(&self) -> std::option::Option<& str> {
         self.kernel_version.as_deref()
     }
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn ipv4_address(&self) -> std::option::Option<&str> {
+    pub fn ipv4_address(&self) -> std::option::Option<& str> {
         self.ipv4_address.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl AgentPreviewBuilder {
     }
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input;
-        self
+        self.hostname = input; self
     }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
     pub fn agent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl AgentPreviewBuilder {
     }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
     pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_id = input;
-        self
+        self.agent_id = input; self
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
     pub fn auto_scaling_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,12 +108,8 @@ impl AgentPreviewBuilder {
         self
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-    pub fn set_auto_scaling_group(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group = input;
-        self
+    pub fn set_auto_scaling_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_group = input; self
     }
     /// <p>The health status of the Amazon Inspector Agent.</p>
     pub fn agent_health(mut self, input: crate::types::AgentHealth) -> Self {
@@ -123,12 +117,8 @@ impl AgentPreviewBuilder {
         self
     }
     /// <p>The health status of the Amazon Inspector Agent.</p>
-    pub fn set_agent_health(
-        mut self,
-        input: std::option::Option<crate::types::AgentHealth>,
-    ) -> Self {
-        self.agent_health = input;
-        self
+    pub fn set_agent_health(mut self, input: std::option::Option<crate::types::AgentHealth>) -> Self {
+        self.agent_health = input; self
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
     pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +127,7 @@ impl AgentPreviewBuilder {
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
     pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_version = input;
-        self
+        self.agent_version = input; self
     }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +136,7 @@ impl AgentPreviewBuilder {
     }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operating_system = input;
-        self
+        self.operating_system = input; self
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn kernel_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +145,7 @@ impl AgentPreviewBuilder {
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn set_kernel_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kernel_version = input;
-        self
+        self.kernel_version = input; self
     }
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn ipv4_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,20 +154,28 @@ impl AgentPreviewBuilder {
     }
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     pub fn set_ipv4_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipv4_address = input;
-        self
+        self.ipv4_address = input; self
     }
     /// Consumes the builder and constructs a [`AgentPreview`](crate::types::AgentPreview).
     pub fn build(self) -> crate::types::AgentPreview {
         crate::types::AgentPreview {
-            hostname: self.hostname,
-            agent_id: self.agent_id,
-            auto_scaling_group: self.auto_scaling_group,
-            agent_health: self.agent_health,
-            agent_version: self.agent_version,
-            operating_system: self.operating_system,
-            kernel_version: self.kernel_version,
-            ipv4_address: self.ipv4_address,
+            hostname: self.hostname
+            ,
+            agent_id: self.agent_id
+            ,
+            auto_scaling_group: self.auto_scaling_group
+            ,
+            agent_health: self.agent_health
+            ,
+            agent_version: self.agent_version
+            ,
+            operating_system: self.operating_system
+            ,
+            kernel_version: self.kernel_version
+            ,
+            ipv4_address: self.ipv4_address
+            ,
         }
     }
 }
+

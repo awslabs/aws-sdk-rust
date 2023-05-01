@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoreNetworkOutput {
+pub struct GetCoreNetworkOutput  {
     /// <p>Details about a core network.</p>
     #[doc(hidden)]
     pub core_network: std::option::Option<crate::types::CoreNetwork>,
@@ -10,15 +10,15 @@ pub struct GetCoreNetworkOutput {
 }
 impl GetCoreNetworkOutput {
     /// <p>Details about a core network.</p>
-    pub fn core_network(&self) -> std::option::Option<&crate::types::CoreNetwork> {
+    pub fn core_network(&self) -> std::option::Option<& crate::types::CoreNetwork> {
         self.core_network.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCoreNetworkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetCoreNetworkOutput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkOutput`](crate::operation::get_core_network::GetCoreNetworkOutput).
     pub fn builder() -> crate::operation::get_core_network::builders::GetCoreNetworkOutputBuilder {
@@ -40,27 +40,25 @@ impl GetCoreNetworkOutputBuilder {
         self
     }
     /// <p>Details about a core network.</p>
-    pub fn set_core_network(
-        mut self,
-        input: std::option::Option<crate::types::CoreNetwork>,
-    ) -> Self {
-        self.core_network = input;
-        self
+    pub fn set_core_network(mut self, input: std::option::Option<crate::types::CoreNetwork>) -> Self {
+        self.core_network = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetCoreNetworkOutput`](crate::operation::get_core_network::GetCoreNetworkOutput).
     pub fn build(self) -> crate::operation::get_core_network::GetCoreNetworkOutput {
         crate::operation::get_core_network::GetCoreNetworkOutput {
-            core_network: self.core_network,
+            core_network: self.core_network
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

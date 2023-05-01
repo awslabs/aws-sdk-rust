@@ -3,7 +3,7 @@
 /// <p>Settings for the IMAGE_PROPERTIES feature type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectLabelsImagePropertiesSettings {
+pub struct DetectLabelsImagePropertiesSettings  {
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
     #[doc(hidden)]
     pub max_dominant_colors: i32,
@@ -35,13 +35,15 @@ impl DetectLabelsImagePropertiesSettingsBuilder {
     }
     /// <p>The maximum number of dominant colors to return when detecting labels in an image. The default value is 10.</p>
     pub fn set_max_dominant_colors(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_dominant_colors = input;
-        self
+        self.max_dominant_colors = input; self
     }
     /// Consumes the builder and constructs a [`DetectLabelsImagePropertiesSettings`](crate::types::DetectLabelsImagePropertiesSettings).
     pub fn build(self) -> crate::types::DetectLabelsImagePropertiesSettings {
         crate::types::DetectLabelsImagePropertiesSettings {
-            max_dominant_colors: self.max_dominant_colors.unwrap_or_default(),
+            max_dominant_colors: self.max_dominant_colors
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

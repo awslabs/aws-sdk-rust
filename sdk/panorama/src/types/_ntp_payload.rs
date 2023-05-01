@@ -3,14 +3,14 @@
 /// <p>Network time protocol (NTP) server settings. Use this option to connect to local NTP servers instead of <code>pool.ntp.org</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NtpPayload {
+pub struct NtpPayload  {
     /// <p>NTP servers to use, in order of preference.</p>
     #[doc(hidden)]
     pub ntp_servers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl NtpPayload {
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn ntp_servers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ntp_servers(&self) -> std::option::Option<& [std::string::String]> {
         self.ntp_servers.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl NtpPayloadBuilder {
     /// <p>NTP servers to use, in order of preference.</p>
     pub fn ntp_servers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ntp_servers.unwrap_or_default();
-        v.push(input.into());
-        self.ntp_servers = Some(v);
-        self
+                        v.push(input.into());
+                        self.ntp_servers = Some(v);
+                        self
     }
     /// <p>NTP servers to use, in order of preference.</p>
-    pub fn set_ntp_servers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ntp_servers = input;
-        self
+    pub fn set_ntp_servers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ntp_servers = input; self
     }
     /// Consumes the builder and constructs a [`NtpPayload`](crate::types::NtpPayload).
     pub fn build(self) -> crate::types::NtpPayload {
         crate::types::NtpPayload {
-            ntp_servers: self.ntp_servers,
+            ntp_servers: self.ntp_servers
+            ,
         }
     }
 }
+

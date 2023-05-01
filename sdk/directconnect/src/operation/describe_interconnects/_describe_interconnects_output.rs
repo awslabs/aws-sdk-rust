@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInterconnectsOutput {
+pub struct DescribeInterconnectsOutput  {
     /// <p>The interconnects.</p>
     #[doc(hidden)]
     pub interconnects: std::option::Option<std::vec::Vec<crate::types::Interconnect>>,
@@ -10,20 +10,18 @@ pub struct DescribeInterconnectsOutput {
 }
 impl DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
-    pub fn interconnects(&self) -> std::option::Option<&[crate::types::Interconnect]> {
+    pub fn interconnects(&self) -> std::option::Option<& [crate::types::Interconnect]> {
         self.interconnects.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInterconnectsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeInterconnectsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInterconnectsOutput`](crate::operation::describe_interconnects::DescribeInterconnectsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_interconnects::builders::DescribeInterconnectsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_interconnects::builders::DescribeInterconnectsOutputBuilder {
         crate::operation::describe_interconnects::builders::DescribeInterconnectsOutputBuilder::default()
     }
 }
@@ -43,32 +41,30 @@ impl DescribeInterconnectsOutputBuilder {
     /// <p>The interconnects.</p>
     pub fn interconnects(mut self, input: crate::types::Interconnect) -> Self {
         let mut v = self.interconnects.unwrap_or_default();
-        v.push(input);
-        self.interconnects = Some(v);
-        self
+                        v.push(input);
+                        self.interconnects = Some(v);
+                        self
     }
     /// <p>The interconnects.</p>
-    pub fn set_interconnects(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Interconnect>>,
-    ) -> Self {
-        self.interconnects = input;
-        self
+    pub fn set_interconnects(mut self, input: std::option::Option<std::vec::Vec<crate::types::Interconnect>>) -> Self {
+        self.interconnects = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeInterconnectsOutput`](crate::operation::describe_interconnects::DescribeInterconnectsOutput).
     pub fn build(self) -> crate::operation::describe_interconnects::DescribeInterconnectsOutput {
         crate::operation::describe_interconnects::DescribeInterconnectsOutput {
-            interconnects: self.interconnects,
+            interconnects: self.interconnects
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

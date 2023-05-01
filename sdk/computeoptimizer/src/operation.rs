@@ -63,3 +63,4 @@ pub mod put_recommendation_preferences;
 
 /// Types for the `UpdateEnrollmentStatus` operation.
 pub mod update_enrollment_status;
+

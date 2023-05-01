@@ -2,34 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterThingOutput {
+pub struct RegisterThingOutput  {
     /// <p>The certificate data, in PEM format.</p>
     #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>ARNs for the generated resources.</p>
     #[doc(hidden)]
-    pub resource_arns:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_arns: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl RegisterThingOutput {
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(&self) -> std::option::Option<&str> {
+    pub fn certificate_pem(&self) -> std::option::Option<& str> {
         self.certificate_pem.as_deref()
     }
     /// <p>ARNs for the generated resources.</p>
-    pub fn resource_arns(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resource_arns(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resource_arns.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterThingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterThingOutput {
     /// Creates a new builder-style object to manufacture [`RegisterThingOutput`](crate::operation::register_thing::RegisterThingOutput).
     pub fn builder() -> crate::operation::register_thing::builders::RegisterThingOutputBuilder {
@@ -42,8 +38,7 @@ impl RegisterThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegisterThingOutputBuilder {
     pub(crate) certificate_pem: std::option::Option<std::string::String>,
-    pub(crate) resource_arns:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) resource_arns: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl RegisterThingOutputBuilder {
@@ -54,49 +49,41 @@ impl RegisterThingOutputBuilder {
     }
     /// <p>The certificate data, in PEM format.</p>
     pub fn set_certificate_pem(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_pem = input;
-        self
+        self.certificate_pem = input; self
     }
     /// Adds a key-value pair to `resource_arns`.
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
     /// <p>ARNs for the generated resources.</p>
-    pub fn resource_arns(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn resource_arns(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.resource_arns.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.resource_arns = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.resource_arns = Some(hash_map);
+                        self
     }
     /// <p>ARNs for the generated resources.</p>
-    pub fn set_resource_arns(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.resource_arns = input;
-        self
+    pub fn set_resource_arns(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.resource_arns = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterThingOutput`](crate::operation::register_thing::RegisterThingOutput).
     pub fn build(self) -> crate::operation::register_thing::RegisterThingOutput {
         crate::operation::register_thing::RegisterThingOutput {
-            certificate_pem: self.certificate_pem,
-            resource_arns: self.resource_arns,
+            certificate_pem: self.certificate_pem
+            ,
+            resource_arns: self.resource_arns
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

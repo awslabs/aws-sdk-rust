@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterOnPremisesInstanceOutput {
+pub struct DeregisterOnPremisesInstanceOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterOnPremisesInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeregisterOnPremisesInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterOnPremisesInstanceOutput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput).
-    pub fn builder() -> crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceOutputBuilder{
+    pub fn builder() -> crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceOutputBuilder {
         crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct DeregisterOnPremisesInstanceOutputBuilder {
 }
 impl DeregisterOnPremisesInstanceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeregisterOnPremisesInstanceOutput`](crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput {
+    pub fn build(self) -> crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput {
         crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstanceOutput {
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateBillingGroupOutput {
+pub struct UpdateBillingGroupOutput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -34,23 +34,23 @@ pub struct UpdateBillingGroupOutput {
 }
 impl UpdateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The name of the billing group. The names must be unique to each billing group. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> A description of the billing group. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn primary_account_id(&self) -> std::option::Option<&str> {
+    pub fn primary_account_id(&self) -> std::option::Option<& str> {
         self.primary_account_id.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
-    pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_arn(&self) -> std::option::Option<& str> {
         self.pricing_plan_arn.as_deref()
     }
     /// <p> The number of accounts in the particular billing group. </p>
@@ -62,15 +62,15 @@ impl UpdateBillingGroupOutput {
         self.last_modified_time
     }
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::BillingGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::BillingGroupStatus> {
         self.status.as_ref()
     }
     /// <p> The reason why the billing group is in its current status. </p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBillingGroupOutput {
+impl  std::fmt::Debug for UpdateBillingGroupOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBillingGroupOutput");
         formatter.field("arn", &self.arn);
@@ -87,14 +87,13 @@ impl std::fmt::Debug for UpdateBillingGroupOutput {
     }
 }
 impl aws_http::request_id::RequestId for UpdateBillingGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder {
+    pub fn builder() -> crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder {
         crate::operation::update_billing_group::builders::UpdateBillingGroupOutputBuilder::default()
     }
 }
@@ -122,8 +121,7 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p> The name of the billing group. The names must be unique to each billing group. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +130,7 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p> The name of the billing group. The names must be unique to each billing group. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> A description of the billing group. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +139,7 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p> A description of the billing group. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
     pub fn primary_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,12 +147,8 @@ impl UpdateBillingGroupOutputBuilder {
         self
     }
     /// <p> The account ID that serves as the main account in a billing group. </p>
-    pub fn set_primary_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.primary_account_id = input;
-        self
+    pub fn set_primary_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.primary_account_id = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
     pub fn pricing_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,8 +157,7 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan to compute Amazon Web Services charges for the billing group. </p>
     pub fn set_pricing_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pricing_plan_arn = input;
-        self
+        self.pricing_plan_arn = input; self
     }
     /// <p> The number of accounts in the particular billing group. </p>
     pub fn size(mut self, input: i64) -> Self {
@@ -175,8 +166,7 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p> The number of accounts in the particular billing group. </p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input;
-        self
+        self.size = input; self
     }
     /// <p> The most recent time when the billing group was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -185,8 +175,7 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p> The most recent time when the billing group was modified. </p>
     pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
     pub fn status(mut self, input: crate::types::BillingGroupStatus) -> Self {
@@ -194,12 +183,8 @@ impl UpdateBillingGroupOutputBuilder {
         self
     }
     /// <p> The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::BillingGroupStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::BillingGroupStatus>) -> Self {
+        self.status = input; self
     }
     /// <p> The reason why the billing group is in its current status. </p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,30 +193,40 @@ impl UpdateBillingGroupOutputBuilder {
     }
     /// <p> The reason why the billing group is in its current status. </p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input;
-        self
+        self.status_reason = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateBillingGroupOutput`](crate::operation::update_billing_group::UpdateBillingGroupOutput).
     pub fn build(self) -> crate::operation::update_billing_group::UpdateBillingGroupOutput {
         crate::operation::update_billing_group::UpdateBillingGroupOutput {
-            arn: self.arn,
-            name: self.name,
-            description: self.description,
-            primary_account_id: self.primary_account_id,
-            pricing_plan_arn: self.pricing_plan_arn,
-            size: self.size.unwrap_or_default(),
-            last_modified_time: self.last_modified_time.unwrap_or_default(),
-            status: self.status,
-            status_reason: self.status_reason,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            primary_account_id: self.primary_account_id
+            ,
+            pricing_plan_arn: self.pricing_plan_arn
+            ,
+            size: self.size
+                .unwrap_or_default()
+            ,
+            last_modified_time: self.last_modified_time
+                .unwrap_or_default()
+            ,
+            status: self.status
+            ,
+            status_reason: self.status_reason
+            ,
             _request_id: self._request_id,
         }
     }
@@ -252,3 +247,4 @@ impl std::fmt::Debug for UpdateBillingGroupOutputBuilder {
         formatter.finish()
     }
 }
+

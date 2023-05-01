@@ -3,7 +3,7 @@
 /// <p>The parameter key-value pair used to update a provisioned product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProvisioningParameter {
+pub struct UpdateProvisioningParameter  {
     /// <p>The parameter key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct UpdateProvisioningParameter {
 }
 impl UpdateProvisioningParameter {
     /// <p>The parameter key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The parameter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
@@ -51,8 +51,7 @@ impl UpdateProvisioningParameterBuilder {
     }
     /// <p>The parameter key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The parameter value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl UpdateProvisioningParameterBuilder {
     }
     /// <p>The parameter value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
     pub fn use_previous_value(mut self, input: bool) -> Self {
@@ -71,15 +69,19 @@ impl UpdateProvisioningParameterBuilder {
     }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
     pub fn set_use_previous_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_previous_value = input;
-        self
+        self.use_previous_value = input; self
     }
     /// Consumes the builder and constructs a [`UpdateProvisioningParameter`](crate::types::UpdateProvisioningParameter).
     pub fn build(self) -> crate::types::UpdateProvisioningParameter {
         crate::types::UpdateProvisioningParameter {
-            key: self.key,
-            value: self.value,
-            use_previous_value: self.use_previous_value.unwrap_or_default(),
+            key: self.key
+            ,
+            value: self.value
+            ,
+            use_previous_value: self.use_previous_value
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

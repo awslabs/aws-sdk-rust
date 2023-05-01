@@ -3,7 +3,7 @@
 /// <p>Specifies a table definition in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CatalogEntry {
+pub struct CatalogEntry  {
     /// <p>The database in which the table metadata resides.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CatalogEntry {
 }
 impl CatalogEntry {
     /// <p>The database in which the table metadata resides.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table in question.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CatalogEntryBuilder {
     }
     /// <p>The database in which the table metadata resides.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the table in question.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CatalogEntryBuilder {
     }
     /// <p>The name of the table in question.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Consumes the builder and constructs a [`CatalogEntry`](crate::types::CatalogEntry).
     pub fn build(self) -> crate::types::CatalogEntry {
         crate::types::CatalogEntry {
-            database_name: self.database_name,
-            table_name: self.table_name,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
         }
     }
 }
+

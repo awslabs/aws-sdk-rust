@@ -3,7 +3,7 @@
 /// <p>The structure containing the Amazon S3 path to export the Earth Observation job output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportS3DataInput {
+pub struct ExportS3DataInput  {
     /// <p>The URL to the Amazon S3 data input.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExportS3DataInput {
 }
 impl ExportS3DataInput {
     /// <p>The URL to the Amazon S3 data input.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ExportS3DataInputBuilder {
     }
     /// <p>The URL to the Amazon S3 data input.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ExportS3DataInputBuilder {
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`ExportS3DataInput`](crate::types::ExportS3DataInput).
     pub fn build(self) -> crate::types::ExportS3DataInput {
         crate::types::ExportS3DataInput {
-            s3_uri: self.s3_uri,
-            kms_key_id: self.kms_key_id,
+            s3_uri: self.s3_uri
+            ,
+            kms_key_id: self.kms_key_id
+            ,
         }
     }
 }
+

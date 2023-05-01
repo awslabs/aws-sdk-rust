@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkResourcesOutput {
+pub struct GetNetworkResourcesOutput  {
     /// <p>The network resources.</p>
     #[doc(hidden)]
     pub network_resources: std::option::Option<std::vec::Vec<crate::types::NetworkResource>>,
@@ -13,25 +13,23 @@ pub struct GetNetworkResourcesOutput {
 }
 impl GetNetworkResourcesOutput {
     /// <p>The network resources.</p>
-    pub fn network_resources(&self) -> std::option::Option<&[crate::types::NetworkResource]> {
+    pub fn network_resources(&self) -> std::option::Option<& [crate::types::NetworkResource]> {
         self.network_resources.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetNetworkResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetNetworkResourcesOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourcesOutput`](crate::operation::get_network_resources::GetNetworkResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_network_resources::builders::GetNetworkResourcesOutputBuilder {
-        crate::operation::get_network_resources::builders::GetNetworkResourcesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_network_resources::builders::GetNetworkResourcesOutputBuilder {
+        crate::operation::get_network_resources::builders::GetNetworkResourcesOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl GetNetworkResourcesOutputBuilder {
     /// <p>The network resources.</p>
     pub fn network_resources(mut self, input: crate::types::NetworkResource) -> Self {
         let mut v = self.network_resources.unwrap_or_default();
-        v.push(input);
-        self.network_resources = Some(v);
-        self
+                        v.push(input);
+                        self.network_resources = Some(v);
+                        self
     }
     /// <p>The network resources.</p>
-    pub fn set_network_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkResource>>,
-    ) -> Self {
-        self.network_resources = input;
-        self
+    pub fn set_network_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkResource>>) -> Self {
+        self.network_resources = input; self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl GetNetworkResourcesOutputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetNetworkResourcesOutput`](crate::operation::get_network_resources::GetNetworkResourcesOutput).
     pub fn build(self) -> crate::operation::get_network_resources::GetNetworkResourcesOutput {
         crate::operation::get_network_resources::GetNetworkResourcesOutput {
-            network_resources: self.network_resources,
-            next_token: self.next_token,
+            network_resources: self.network_resources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

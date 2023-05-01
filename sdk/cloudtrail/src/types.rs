@@ -148,3 +148,4 @@ pub mod builders;
 
 /// Error types that AWS CloudTrail can respond with.
 pub mod error;
+

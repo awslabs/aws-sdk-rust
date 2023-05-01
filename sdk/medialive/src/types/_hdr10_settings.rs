@@ -3,7 +3,7 @@
 /// Hdr10 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Hdr10Settings {
+pub struct Hdr10Settings  {
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     #[doc(hidden)]
     pub max_cll: i32,
@@ -43,8 +43,7 @@ impl Hdr10SettingsBuilder {
     }
     /// Maximum Content Light Level An integer metadata value defining the maximum light level, in nits, of any single pixel within an encoded HDR video stream or file.
     pub fn set_max_cll(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_cll = input;
-        self
+        self.max_cll = input; self
     }
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub fn max_fall(mut self, input: i32) -> Self {
@@ -53,14 +52,18 @@ impl Hdr10SettingsBuilder {
     }
     /// Maximum Frame Average Light Level An integer metadata value defining the maximum average light level, in nits, for any single frame within an encoded HDR video stream or file.
     pub fn set_max_fall(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_fall = input;
-        self
+        self.max_fall = input; self
     }
     /// Consumes the builder and constructs a [`Hdr10Settings`](crate::types::Hdr10Settings).
     pub fn build(self) -> crate::types::Hdr10Settings {
         crate::types::Hdr10Settings {
-            max_cll: self.max_cll.unwrap_or_default(),
-            max_fall: self.max_fall.unwrap_or_default(),
+            max_cll: self.max_cll
+                .unwrap_or_default()
+            ,
+            max_fall: self.max_fall
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

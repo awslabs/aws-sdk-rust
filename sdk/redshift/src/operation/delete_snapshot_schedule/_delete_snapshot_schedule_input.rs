@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSnapshotScheduleInput {
+pub struct DeleteSnapshotScheduleInput  {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
     #[doc(hidden)]
     pub schedule_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteSnapshotScheduleInput {
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
-    pub fn schedule_identifier(&self) -> std::option::Option<&str> {
+    pub fn schedule_identifier(&self) -> std::option::Option<& str> {
         self.schedule_identifier.as_deref()
     }
 }
 impl DeleteSnapshotScheduleInput {
     /// Creates a new builder-style object to manufacture [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleInputBuilder {
         crate::operation::delete_snapshot_schedule::builders::DeleteSnapshotScheduleInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteSnapshotScheduleInputBuilder {
         self
     }
     /// <p>A unique identifier of the snapshot schedule to delete.</p>
-    pub fn set_schedule_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.schedule_identifier = input;
-        self
+    pub fn set_schedule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.schedule_identifier = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSnapshotScheduleInput`](crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleInput {
-                schedule_identifier: self.schedule_identifier,
-            },
+                schedule_identifier: self.schedule_identifier
+                ,
+            }
         )
     }
 }
+

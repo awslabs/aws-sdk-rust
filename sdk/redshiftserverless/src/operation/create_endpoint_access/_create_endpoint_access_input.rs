@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointAccessInput {
+pub struct CreateEndpointAccessInput  {
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct CreateEndpointAccessInput {
 }
 impl CreateEndpointAccessInput {
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
 }
 impl CreateEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
-    pub fn builder(
-    ) -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder {
+    pub fn builder() -> crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder {
         crate::operation::create_endpoint_access::builders::CreateEndpointAccessInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateEndpointAccessInputBuilder {
     }
     /// <p>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -69,17 +67,13 @@ impl CreateEndpointAccessInputBuilder {
     /// <p>The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +82,7 @@ impl CreateEndpointAccessInputBuilder {
     }
     /// <p>The name of the workgroup to associate with the VPC endpoint.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// Appends an item to `vpc_security_group_ids`.
     ///
@@ -98,32 +91,28 @@ impl CreateEndpointAccessInputBuilder {
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
     pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.vpc_security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.vpc_security_group_ids = Some(v);
+                        self
     }
     /// <p>The unique identifiers of the security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_vpc_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.vpc_security_group_ids = input;
-        self
+    pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.vpc_security_group_ids = input; self
     }
     /// Consumes the builder and constructs a [`CreateEndpointAccessInput`](crate::operation::create_endpoint_access::CreateEndpointAccessInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_endpoint_access::CreateEndpointAccessInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_endpoint_access::CreateEndpointAccessInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_endpoint_access::CreateEndpointAccessInput {
-                endpoint_name: self.endpoint_name,
-                subnet_ids: self.subnet_ids,
-                workgroup_name: self.workgroup_name,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-            },
+                endpoint_name: self.endpoint_name
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+            }
         )
     }
 }
+

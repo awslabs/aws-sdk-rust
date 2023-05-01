@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmProductInstanceOutput {
+pub struct ConfirmProductInstanceOutput  {
     /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ConfirmProductInstanceOutput {
 }
 impl ConfirmProductInstanceOutput {
     /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
@@ -22,15 +22,13 @@ impl ConfirmProductInstanceOutput {
     }
 }
 impl aws_http::request_id::RequestId for ConfirmProductInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ConfirmProductInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ConfirmProductInstanceOutput`](crate::operation::confirm_product_instance::ConfirmProductInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder {
         crate::operation::confirm_product_instance::builders::ConfirmProductInstanceOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl ConfirmProductInstanceOutputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the instance owner. This is only present if the product code is attached to the instance.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub fn r#return(mut self, input: bool) -> Self {
@@ -61,24 +58,26 @@ impl ConfirmProductInstanceOutputBuilder {
     }
     /// <p>The return value of the request. Returns <code>true</code> if the specified product code is owned by the requester and associated with the specified instance.</p>
     pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
-        self.r#return = input;
-        self
+        self.r#return = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ConfirmProductInstanceOutput`](crate::operation::confirm_product_instance::ConfirmProductInstanceOutput).
     pub fn build(self) -> crate::operation::confirm_product_instance::ConfirmProductInstanceOutput {
         crate::operation::confirm_product_instance::ConfirmProductInstanceOutput {
-            owner_id: self.owner_id,
-            r#return: self.r#return,
+            owner_id: self.owner_id
+            ,
+            r#return: self.r#return
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

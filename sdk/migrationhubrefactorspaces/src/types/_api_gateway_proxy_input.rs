@@ -3,8 +3,8 @@
 /// <p>A wrapper object holding the Amazon API Gateway endpoint input. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiGatewayProxyInput {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+pub struct ApiGatewayProxyInput  {
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
     #[doc(hidden)]
     pub endpoint_type: std::option::Option<crate::types::ApiGatewayEndpointType>,
@@ -13,13 +13,13 @@ pub struct ApiGatewayProxyInput {
     pub stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxyInput {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::types::ApiGatewayEndpointType> {
+    pub fn endpoint_type(&self) -> std::option::Option<& crate::types::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
 }
@@ -38,20 +38,16 @@ pub struct ApiGatewayProxyInputBuilder {
     pub(crate) stage_name: std::option::Option<std::string::String>,
 }
 impl ApiGatewayProxyInputBuilder {
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
     pub fn endpoint_type(mut self, input: crate::types::ApiGatewayEndpointType) -> Self {
         self.endpoint_type = Some(input);
         self
     }
-    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p>
+    /// <p>The type of endpoint to use for the API Gateway proxy. If no value is specified in the request, the value is set to <code>REGIONAL</code> by default.</p> 
     /// <p>If the value is set to <code>PRIVATE</code> in the request, this creates a private API endpoint that is isolated from the public internet. The private endpoint can only be accessed by using Amazon Virtual Private Cloud (Amazon VPC) endpoints for Amazon API Gateway that have been granted access. </p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: std::option::Option<crate::types::ApiGatewayEndpointType>,
-    ) -> Self {
-        self.endpoint_type = input;
-        self
+    pub fn set_endpoint_type(mut self, input: std::option::Option<crate::types::ApiGatewayEndpointType>) -> Self {
+        self.endpoint_type = input; self
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,14 +56,16 @@ impl ApiGatewayProxyInputBuilder {
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input;
-        self
+        self.stage_name = input; self
     }
     /// Consumes the builder and constructs a [`ApiGatewayProxyInput`](crate::types::ApiGatewayProxyInput).
     pub fn build(self) -> crate::types::ApiGatewayProxyInput {
         crate::types::ApiGatewayProxyInput {
-            endpoint_type: self.endpoint_type,
-            stage_name: self.stage_name,
+            endpoint_type: self.endpoint_type
+            ,
+            stage_name: self.stage_name
+            ,
         }
     }
 }
+

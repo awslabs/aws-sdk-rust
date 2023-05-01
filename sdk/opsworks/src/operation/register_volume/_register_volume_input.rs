@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterVolumeInput {
+pub struct RegisterVolumeInput  {
     /// <p>The Amazon EBS volume ID.</p>
     #[doc(hidden)]
     pub ec2_volume_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct RegisterVolumeInput {
 }
 impl RegisterVolumeInput {
     /// <p>The Amazon EBS volume ID.</p>
-    pub fn ec2_volume_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_volume_id(&self) -> std::option::Option<& str> {
         self.ec2_volume_id.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl RegisterVolumeInputBuilder {
     }
     /// <p>The Amazon EBS volume ID.</p>
     pub fn set_ec2_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_volume_id = input;
-        self
+        self.ec2_volume_id = input; self
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl RegisterVolumeInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// Consumes the builder and constructs a [`RegisterVolumeInput`](crate::operation::register_volume::RegisterVolumeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_volume::RegisterVolumeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::register_volume::RegisterVolumeInput {
-            ec2_volume_id: self.ec2_volume_id,
-            stack_id: self.stack_id,
-        })
+    pub fn build(self) -> Result<crate::operation::register_volume::RegisterVolumeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::register_volume::RegisterVolumeInput {
+                ec2_volume_id: self.ec2_volume_id
+                ,
+                stack_id: self.stack_id
+                ,
+            }
+        )
     }
 }
+

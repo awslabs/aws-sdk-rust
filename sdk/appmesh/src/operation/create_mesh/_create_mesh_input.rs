@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMeshInput {
+pub struct CreateMeshInput  {
     /// <p>The name to use for the service mesh.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateMeshInput {
 }
 impl CreateMeshInput {
     /// <p>The name to use for the service mesh.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The service mesh specification to apply.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::types::MeshSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::types::MeshSpec> {
         self.spec.as_ref()
     }
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::TagRef]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::TagRef]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl CreateMeshInputBuilder {
     }
     /// <p>The name to use for the service mesh.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input;
-        self
+        self.mesh_name = input; self
     }
     /// <p>The service mesh specification to apply.</p>
     pub fn spec(mut self, input: crate::types::MeshSpec) -> Self {
@@ -68,8 +67,7 @@ impl CreateMeshInputBuilder {
     }
     /// <p>The service mesh specification to apply.</p>
     pub fn set_spec(mut self, input: std::option::Option<crate::types::MeshSpec>) -> Self {
-        self.spec = input;
-        self
+        self.spec = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -78,17 +76,13 @@ impl CreateMeshInputBuilder {
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::TagRef) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Optional metadata that you can apply to the service mesh to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagRef>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagRef>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,21 +91,22 @@ impl CreateMeshInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateMeshInput`](crate::operation::create_mesh::CreateMeshInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_mesh::CreateMeshInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_mesh::CreateMeshInput {
-            mesh_name: self.mesh_name,
-            spec: self.spec,
-            tags: self.tags,
-            client_token: self.client_token,
-        })
+    pub fn build(self) -> Result<crate::operation::create_mesh::CreateMeshInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_mesh::CreateMeshInput {
+                mesh_name: self.mesh_name
+                ,
+                spec: self.spec
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
+            }
+        )
     }
 }
+

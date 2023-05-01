@@ -4,72 +4,54 @@ pub use crate::operation::create_hsm::_create_hsm_output::CreateHsmOutputBuilder
 pub use crate::operation::create_hsm::_create_hsm_input::CreateHsmInputBuilder;
 
 /// Fluent builder constructing a request to `CreateHsm`.
-///
-/// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>
-/// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p>
-/// <p>Creates an uninitialized HSM instance.</p>
-/// <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <code>DeleteHsm</code> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important>
-/// <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <code>DescribeHsm</code> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p>
+/// 
+/// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p> 
+/// <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.</p> 
+/// <p>Creates an uninitialized HSM instance.</p> 
+/// <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <code>DeleteHsm</code> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> 
+/// <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <code>DescribeHsm</code> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> 
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHsmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_hsm::builders::CreateHsmInputBuilder,
-}
-impl CreateHsmFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_hsm::builders::CreateHsmInputBuilder
+            }
+impl CreateHsmFluentBuilder  {
     /// Creates a new `CreateHsm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_hsm::CreateHsm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_hsm::CreateHsmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_hsm::CreateHsm, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_hsm::CreateHsmOutput, aws_smithy_http::result::SdkError<crate::operation::create_hsm::CreateHsmError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
@@ -90,13 +72,13 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_ssh_key(input);
         self
     }
-    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>The IP address to assign to the HSM's ENI.</p> 
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.eni_ip(input.into());
         self
     }
-    /// <p>The IP address to assign to the HSM's ENI.</p>
+    /// <p>The IP address to assign to the HSM's ENI.</p> 
     /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>
     pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_eni_ip(input);
@@ -122,24 +104,21 @@ impl CreateHsmFluentBuilder {
         self.inner = self.inner.set_external_id(input);
         self
     }
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
     pub fn subscription_type(mut self, input: crate::types::SubscriptionType) -> Self {
         self.inner = self.inner.subscription_type(input);
         self
     }
-    /// <p>Specifies the type of subscription for the HSM.</p>
-    /// <ul>
-    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li>
-    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li>
+    /// <p>Specifies the type of subscription for the HSM.</p> 
+    /// <ul> 
+    /// <li> <p> <b>PRODUCTION</b> - The HSM is being used in a production environment.</p> </li> 
+    /// <li> <p> <b>TRIAL</b> - The HSM is being used in a product trial.</p> </li> 
     /// </ul>
-    pub fn set_subscription_type(
-        mut self,
-        input: std::option::Option<crate::types::SubscriptionType>,
-    ) -> Self {
+    pub fn set_subscription_type(mut self, input: std::option::Option<crate::types::SubscriptionType>) -> Self {
         self.inner = self.inner.set_subscription_type(input);
         self
     }
@@ -164,3 +143,4 @@ impl CreateHsmFluentBuilder {
         self
     }
 }
+

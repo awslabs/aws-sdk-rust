@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersV2Input {
+pub struct ListClustersV2Input  {
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
     #[doc(hidden)]
     pub cluster_name_filter: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListClustersV2Input {
 }
 impl ListClustersV2Input {
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn cluster_name_filter(&self) -> std::option::Option<&str> {
+    pub fn cluster_name_filter(&self) -> std::option::Option<& str> {
         self.cluster_name_filter.as_deref()
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    pub fn cluster_type_filter(&self) -> std::option::Option<&str> {
+    pub fn cluster_type_filter(&self) -> std::option::Option<& str> {
         self.cluster_type_filter.as_deref()
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -30,7 +30,7 @@ impl ListClustersV2Input {
         self.max_results
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -57,12 +57,8 @@ impl ListClustersV2InputBuilder {
         self
     }
     /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-    pub fn set_cluster_name_filter(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_name_filter = input;
-        self
+    pub fn set_cluster_name_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_name_filter = input; self
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
     pub fn cluster_type_filter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,12 +66,8 @@ impl ListClustersV2InputBuilder {
         self
     }
     /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-    pub fn set_cluster_type_filter(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_type_filter = input;
-        self
+    pub fn set_cluster_type_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_type_filter = input; self
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,8 +76,7 @@ impl ListClustersV2InputBuilder {
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,21 +85,22 @@ impl ListClustersV2InputBuilder {
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListClustersV2Input`](crate::operation::list_clusters_v2::ListClustersV2Input).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_clusters_v2::ListClustersV2Input,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_clusters_v2::ListClustersV2Input {
-            cluster_name_filter: self.cluster_name_filter,
-            cluster_type_filter: self.cluster_type_filter,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_clusters_v2::ListClustersV2Input, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_clusters_v2::ListClustersV2Input {
+                cluster_name_filter: self.cluster_name_filter
+                ,
+                cluster_type_filter: self.cluster_type_filter
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

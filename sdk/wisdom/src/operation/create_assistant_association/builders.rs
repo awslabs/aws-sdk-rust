@@ -4,71 +4,49 @@ pub use crate::operation::create_assistant_association::_create_assistant_associ
 pub use crate::operation::create_assistant_association::_create_assistant_association_input::CreateAssistantAssociationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAssistantAssociation`.
-///
+/// 
 /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssistantAssociationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_assistant_association::builders::CreateAssistantAssociationInputBuilder
             }
-impl CreateAssistantAssociationFluentBuilder {
+impl CreateAssistantAssociationFluentBuilder  {
     /// Creates a new `CreateAssistantAssociation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_assistant_association::CreateAssistantAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_assistant_association::CreateAssistantAssociationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_assistant_association::CreateAssistantAssociationOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_assistant_association::CreateAssistantAssociationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_assistant_association::CreateAssistantAssociation, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_assistant_association::CreateAssistantAssociationError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_assistant_association::CreateAssistantAssociationOutput, aws_smithy_http::result::SdkError<crate::operation::create_assistant_association::CreateAssistantAssociationError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());
@@ -85,10 +63,7 @@ impl CreateAssistantAssociationFluentBuilder {
         self
     }
     /// <p>The type of association.</p>
-    pub fn set_association_type(
-        mut self,
-        input: std::option::Option<crate::types::AssociationType>,
-    ) -> Self {
+    pub fn set_association_type(mut self, input: std::option::Option<crate::types::AssociationType>) -> Self {
         self.inner = self.inner.set_association_type(input);
         self
     }
@@ -98,10 +73,7 @@ impl CreateAssistantAssociationFluentBuilder {
         self
     }
     /// <p>The identifier of the associated resource.</p>
-    pub fn set_association(
-        mut self,
-        input: std::option::Option<crate::types::AssistantAssociationInputData>,
-    ) -> Self {
+    pub fn set_association(mut self, input: std::option::Option<crate::types::AssistantAssociationInputData>) -> Self {
         self.inner = self.inner.set_association(input);
         self
     }
@@ -120,22 +92,14 @@ impl CreateAssistantAssociationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

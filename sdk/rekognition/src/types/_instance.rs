@@ -3,7 +3,7 @@
 /// <p>An instance of a label returned by Amazon Rekognition Image (<code>DetectLabels</code>) or by Amazon Rekognition Video (<code>GetLabelDetection</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The position of the label instance on the image.</p>
     #[doc(hidden)]
     pub bounding_box: std::option::Option<crate::types::BoundingBox>,
@@ -16,7 +16,7 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The position of the label instance on the image.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> std::option::Option<& crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
@@ -24,7 +24,7 @@ impl Instance {
         self.confidence
     }
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    pub fn dominant_colors(&self) -> std::option::Option<&[crate::types::DominantColor]> {
+    pub fn dominant_colors(&self) -> std::option::Option<& [crate::types::DominantColor]> {
         self.dominant_colors.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl InstanceBuilder {
         self
     }
     /// <p>The position of the label instance on the image.</p>
-    pub fn set_bounding_box(
-        mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
-    ) -> Self {
-        self.bounding_box = input;
-        self
+    pub fn set_bounding_box(mut self, input: std::option::Option<crate::types::BoundingBox>) -> Self {
+        self.bounding_box = input; self
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -64,8 +60,7 @@ impl InstanceBuilder {
     }
     /// <p>The confidence that Amazon Rekognition has in the accuracy of the bounding box.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// Appends an item to `dominant_colors`.
     ///
@@ -74,24 +69,24 @@ impl InstanceBuilder {
     /// <p>The dominant colors found in an individual instance of a label.</p>
     pub fn dominant_colors(mut self, input: crate::types::DominantColor) -> Self {
         let mut v = self.dominant_colors.unwrap_or_default();
-        v.push(input);
-        self.dominant_colors = Some(v);
-        self
+                        v.push(input);
+                        self.dominant_colors = Some(v);
+                        self
     }
     /// <p>The dominant colors found in an individual instance of a label.</p>
-    pub fn set_dominant_colors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DominantColor>>,
-    ) -> Self {
-        self.dominant_colors = input;
-        self
+    pub fn set_dominant_colors(mut self, input: std::option::Option<std::vec::Vec<crate::types::DominantColor>>) -> Self {
+        self.dominant_colors = input; self
     }
     /// Consumes the builder and constructs a [`Instance`](crate::types::Instance).
     pub fn build(self) -> crate::types::Instance {
         crate::types::Instance {
-            bounding_box: self.bounding_box,
-            confidence: self.confidence,
-            dominant_colors: self.dominant_colors,
+            bounding_box: self.bounding_box
+            ,
+            confidence: self.confidence
+            ,
+            dominant_colors: self.dominant_colors
+            ,
         }
     }
 }
+

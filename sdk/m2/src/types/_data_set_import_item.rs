@@ -3,7 +3,7 @@
 /// <p>Identifies a specific data set to import from an external location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSetImportItem {
+pub struct DataSetImportItem  {
     /// <p>The data set.</p>
     #[doc(hidden)]
     pub data_set: std::option::Option<crate::types::DataSet>,
@@ -13,11 +13,11 @@ pub struct DataSetImportItem {
 }
 impl DataSetImportItem {
     /// <p>The data set.</p>
-    pub fn data_set(&self) -> std::option::Option<&crate::types::DataSet> {
+    pub fn data_set(&self) -> std::option::Option<& crate::types::DataSet> {
         self.data_set.as_ref()
     }
     /// <p>The location of the data set.</p>
-    pub fn external_location(&self) -> std::option::Option<&crate::types::ExternalLocation> {
+    pub fn external_location(&self) -> std::option::Option<& crate::types::ExternalLocation> {
         self.external_location.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DataSetImportItemBuilder {
     }
     /// <p>The data set.</p>
     pub fn set_data_set(mut self, input: std::option::Option<crate::types::DataSet>) -> Self {
-        self.data_set = input;
-        self
+        self.data_set = input; self
     }
     /// <p>The location of the data set.</p>
     pub fn external_location(mut self, input: crate::types::ExternalLocation) -> Self {
@@ -52,18 +51,17 @@ impl DataSetImportItemBuilder {
         self
     }
     /// <p>The location of the data set.</p>
-    pub fn set_external_location(
-        mut self,
-        input: std::option::Option<crate::types::ExternalLocation>,
-    ) -> Self {
-        self.external_location = input;
-        self
+    pub fn set_external_location(mut self, input: std::option::Option<crate::types::ExternalLocation>) -> Self {
+        self.external_location = input; self
     }
     /// Consumes the builder and constructs a [`DataSetImportItem`](crate::types::DataSetImportItem).
     pub fn build(self) -> crate::types::DataSetImportItem {
         crate::types::DataSetImportItem {
-            data_set: self.data_set,
-            external_location: self.external_location,
+            data_set: self.data_set
+            ,
+            external_location: self.external_location
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartLoggingOutput {
+pub struct StartLoggingOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StartLoggingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartLoggingOutput {
     /// Creates a new builder-style object to manufacture [`StartLoggingOutput`](crate::operation::start_logging::StartLoggingOutput).
     pub fn builder() -> crate::operation::start_logging::builders::StartLoggingOutputBuilder {
@@ -26,14 +26,14 @@ pub struct StartLoggingOutputBuilder {
 }
 impl StartLoggingOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartLoggingOutput`](crate::operation::start_logging::StartLoggingOutput).
     pub fn build(self) -> crate::operation::start_logging::StartLoggingOutput {
         crate::operation::start_logging::StartLoggingOutput {
@@ -41,3 +41,4 @@ impl StartLoggingOutputBuilder {
         }
     }
 }
+

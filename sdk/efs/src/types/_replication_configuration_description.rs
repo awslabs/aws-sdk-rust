@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationConfigurationDescription {
+pub struct ReplicationConfigurationDescription  {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
     #[doc(hidden)]
     pub source_file_system_id: std::option::Option<std::string::String>,
@@ -24,27 +24,27 @@ pub struct ReplicationConfigurationDescription {
 }
 impl ReplicationConfigurationDescription {
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn source_file_system_id(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_id(&self) -> std::option::Option<& str> {
         self.source_file_system_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn source_file_system_region(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_region(&self) -> std::option::Option<& str> {
         self.source_file_system_region.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn source_file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn source_file_system_arn(&self) -> std::option::Option<& str> {
         self.source_file_system_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn original_source_file_system_arn(&self) -> std::option::Option<&str> {
+    pub fn original_source_file_system_arn(&self) -> std::option::Option<& str> {
         self.original_source_file_system_arn.as_deref()
     }
     /// <p>Describes when the replication configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::Destination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::types::Destination]> {
         self.destinations.as_deref()
     }
 }
@@ -73,12 +73,8 @@ impl ReplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>The ID of the source Amazon EFS file system that is being replicated.</p>
-    pub fn set_source_file_system_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_file_system_id = input;
-        self
+    pub fn set_source_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_file_system_id = input; self
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
     pub fn source_file_system_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,12 +82,8 @@ impl ReplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>The Amazon Web Services Region in which the source Amazon EFS file system is located.</p>
-    pub fn set_source_file_system_region(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_file_system_region = input;
-        self
+    pub fn set_source_file_system_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_file_system_region = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
     pub fn source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,28 +91,17 @@ impl ReplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the current source file system in the replication configuration.</p>
-    pub fn set_source_file_system_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_file_system_arn = input;
-        self
+    pub fn set_source_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_file_system_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn original_source_file_system_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn original_source_file_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.original_source_file_system_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the original source Amazon EFS file system in the replication configuration.</p>
-    pub fn set_original_source_file_system_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.original_source_file_system_arn = input;
-        self
+    pub fn set_original_source_file_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.original_source_file_system_arn = input; self
     }
     /// <p>Describes when the replication configuration was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -128,12 +109,8 @@ impl ReplicationConfigurationDescriptionBuilder {
         self
     }
     /// <p>Describes when the replication configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// Appends an item to `destinations`.
     ///
@@ -142,27 +119,30 @@ impl ReplicationConfigurationDescriptionBuilder {
     /// <p>An array of destination objects. Only one destination object is supported.</p>
     pub fn destinations(mut self, input: crate::types::Destination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-        v.push(input);
-        self.destinations = Some(v);
-        self
+                        v.push(input);
+                        self.destinations = Some(v);
+                        self
     }
     /// <p>An array of destination objects. Only one destination object is supported.</p>
-    pub fn set_destinations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Destination>>,
-    ) -> Self {
-        self.destinations = input;
-        self
+    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Destination>>) -> Self {
+        self.destinations = input; self
     }
     /// Consumes the builder and constructs a [`ReplicationConfigurationDescription`](crate::types::ReplicationConfigurationDescription).
     pub fn build(self) -> crate::types::ReplicationConfigurationDescription {
         crate::types::ReplicationConfigurationDescription {
-            source_file_system_id: self.source_file_system_id,
-            source_file_system_region: self.source_file_system_region,
-            source_file_system_arn: self.source_file_system_arn,
-            original_source_file_system_arn: self.original_source_file_system_arn,
-            creation_time: self.creation_time,
-            destinations: self.destinations,
+            source_file_system_id: self.source_file_system_id
+            ,
+            source_file_system_region: self.source_file_system_region
+            ,
+            source_file_system_arn: self.source_file_system_arn
+            ,
+            original_source_file_system_arn: self.original_source_file_system_arn
+            ,
+            creation_time: self.creation_time
+            ,
+            destinations: self.destinations
+            ,
         }
     }
 }
+

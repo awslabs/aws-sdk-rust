@@ -3,14 +3,14 @@
 /// <p>The details about a member account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Member {
+pub struct Member  {
     /// <p>The Amazon Web Services account ID of the member account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The email address of the member account.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
-    /// <p>This is replaced by <code>AdministratorID</code>.</p>
+    /// <p>This is replaced by <code>AdministratorID</code>.</p> 
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     #[doc(hidden)]
@@ -18,16 +18,16 @@ pub struct Member {
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[doc(hidden)]
     pub administrator_id: std::option::Option<std::string::String>,
-    /// <p>The status of the relationship between the member account and its administrator account. </p>
-    /// <p>The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li>
-    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li>
-    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li>
-    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li>
-    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li>
-    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
-    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
+    /// <p>The status of the relationship between the member account and its administrator account. </p> 
+    /// <p>The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li> 
+    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li> 
+    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li> 
+    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li> 
+    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li> 
+    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li> 
+    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub member_status: std::option::Option<std::string::String>,
@@ -40,43 +40,43 @@ pub struct Member {
 }
 impl Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
-    /// <p>This is replaced by <code>AdministratorID</code>.</p>
+    /// <p>This is replaced by <code>AdministratorID</code>.</p> 
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
-    pub fn master_id(&self) -> std::option::Option<&str> {
+    pub fn master_id(&self) -> std::option::Option<& str> {
         self.master_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
-    pub fn administrator_id(&self) -> std::option::Option<&str> {
+    pub fn administrator_id(&self) -> std::option::Option<& str> {
         self.administrator_id.as_deref()
     }
-    /// <p>The status of the relationship between the member account and its administrator account. </p>
-    /// <p>The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li>
-    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li>
-    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li>
-    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li>
-    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li>
-    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
-    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
+    /// <p>The status of the relationship between the member account and its administrator account. </p> 
+    /// <p>The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li> 
+    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li> 
+    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li> 
+    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li> 
+    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li> 
+    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li> 
+    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li> 
     /// </ul>
-    pub fn member_status(&self) -> std::option::Option<&str> {
+    pub fn member_status(&self) -> std::option::Option<& str> {
         self.member_status.as_deref()
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
-    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn invited_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -107,8 +107,7 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Web Services account ID of the member account.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The email address of the member account.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,22 +116,20 @@ impl MemberBuilder {
     }
     /// <p>The email address of the member account.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input;
-        self
+        self.email = input; self
     }
-    /// <p>This is replaced by <code>AdministratorID</code>.</p>
+    /// <p>This is replaced by <code>AdministratorID</code>.</p> 
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.master_id = Some(input.into());
         self
     }
-    /// <p>This is replaced by <code>AdministratorID</code>.</p>
+    /// <p>This is replaced by <code>AdministratorID</code>.</p> 
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_id = input;
-        self
+        self.master_id = input; self
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,38 +138,36 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     pub fn set_administrator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.administrator_id = input;
-        self
+        self.administrator_id = input; self
     }
-    /// <p>The status of the relationship between the member account and its administrator account. </p>
-    /// <p>The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li>
-    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li>
-    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li>
-    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li>
-    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li>
-    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
-    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
+    /// <p>The status of the relationship between the member account and its administrator account. </p> 
+    /// <p>The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li> 
+    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li> 
+    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li> 
+    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li> 
+    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li> 
+    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li> 
+    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li> 
     /// </ul>
     pub fn member_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.member_status = Some(input.into());
         self
     }
-    /// <p>The status of the relationship between the member account and its administrator account. </p>
-    /// <p>The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li>
-    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li>
-    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li>
-    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li>
-    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li>
-    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li>
-    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li>
+    /// <p>The status of the relationship between the member account and its administrator account. </p> 
+    /// <p>The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Created</code> - Indicates that the administrator account added the member account, but has not yet invited the member account.</p> </li> 
+    /// <li> <p> <code>Invited</code> - Indicates that the administrator account invited the member account. The member account has not yet responded to the invitation.</p> </li> 
+    /// <li> <p> <code>Enabled</code> - Indicates that the member account is currently active. For manually invited member accounts, indicates that the member account accepted the invitation.</p> </li> 
+    /// <li> <p> <code>Removed</code> - Indicates that the administrator account disassociated the member account.</p> </li> 
+    /// <li> <p> <code>Resigned</code> - Indicates that the member account disassociated themselves from the administrator account.</p> </li> 
+    /// <li> <p> <code>Deleted</code> - Indicates that the administrator account deleted the member account.</p> </li> 
+    /// <li> <p> <code>AccountSuspended</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p> </li> 
     /// </ul>
     pub fn set_member_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_status = input;
-        self
+        self.member_status = input; self
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
     pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -180,12 +175,8 @@ impl MemberBuilder {
         self
     }
     /// <p>A timestamp for the date and time when the invitation was sent to the member account.</p>
-    pub fn set_invited_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.invited_at = input;
-        self
+    pub fn set_invited_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.invited_at = input; self
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -193,23 +184,27 @@ impl MemberBuilder {
         self
     }
     /// <p>The timestamp for the date and time when the member account was updated.</p>
-    pub fn set_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.updated_at = input;
-        self
+    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input; self
     }
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {
         crate::types::Member {
-            account_id: self.account_id,
-            email: self.email,
-            master_id: self.master_id,
-            administrator_id: self.administrator_id,
-            member_status: self.member_status,
-            invited_at: self.invited_at,
-            updated_at: self.updated_at,
+            account_id: self.account_id
+            ,
+            email: self.email
+            ,
+            master_id: self.master_id
+            ,
+            administrator_id: self.administrator_id
+            ,
+            member_status: self.member_status
+            ,
+            invited_at: self.invited_at
+            ,
+            updated_at: self.updated_at
+            ,
         }
     }
 }
+

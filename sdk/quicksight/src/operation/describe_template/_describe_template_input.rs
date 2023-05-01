@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTemplateInput {
+pub struct DescribeTemplateInput  {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeTemplateInput {
 }
 impl DescribeTemplateInput {
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
@@ -30,14 +30,13 @@ impl DescribeTemplateInput {
         self.version_number
     }
     /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
 impl DescribeTemplateInput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateInput`](crate::operation::describe_template::DescribeTemplateInput).
-    pub fn builder() -> crate::operation::describe_template::builders::DescribeTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_template::builders::DescribeTemplateInputBuilder {
         crate::operation::describe_template::builders::DescribeTemplateInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl DescribeTemplateInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl DescribeTemplateInputBuilder {
     }
     /// <p>The ID for the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -79,8 +76,7 @@ impl DescribeTemplateInputBuilder {
     }
     /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input;
-        self
+        self.version_number = input; self
     }
     /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,21 +85,22 @@ impl DescribeTemplateInputBuilder {
     }
     /// <p>The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
     pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTemplateInput`](crate::operation::describe_template::DescribeTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_template::DescribeTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_template::DescribeTemplateInput {
-            aws_account_id: self.aws_account_id,
-            template_id: self.template_id,
-            version_number: self.version_number,
-            alias_name: self.alias_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_template::DescribeTemplateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_template::DescribeTemplateInput {
+                aws_account_id: self.aws_account_id
+                ,
+                template_id: self.template_id
+                ,
+                version_number: self.version_number
+                ,
+                alias_name: self.alias_name
+                ,
+            }
+        )
     }
 }
+

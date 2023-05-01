@@ -3,7 +3,7 @@
 /// <p>The result of a <code><code>DefineIndexField</code></code> request. Contains the status of the newly-configured index field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineIndexFieldOutput {
+pub struct DefineIndexFieldOutput  {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
     #[doc(hidden)]
     pub index_field: std::option::Option<crate::types::IndexFieldStatus>,
@@ -11,19 +11,18 @@ pub struct DefineIndexFieldOutput {
 }
 impl DefineIndexFieldOutput {
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
-    pub fn index_field(&self) -> std::option::Option<&crate::types::IndexFieldStatus> {
+    pub fn index_field(&self) -> std::option::Option<& crate::types::IndexFieldStatus> {
         self.index_field.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DefineIndexFieldOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DefineIndexFieldOutput {
     /// Creates a new builder-style object to manufacture [`DefineIndexFieldOutput`](crate::operation::define_index_field::DefineIndexFieldOutput).
-    pub fn builder() -> crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder
-    {
+    pub fn builder() -> crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder {
         crate::operation::define_index_field::builders::DefineIndexFieldOutputBuilder::default()
     }
 }
@@ -42,27 +41,25 @@ impl DefineIndexFieldOutputBuilder {
         self
     }
     /// <p>The value of an <code>IndexField</code> and its current status.</p>
-    pub fn set_index_field(
-        mut self,
-        input: std::option::Option<crate::types::IndexFieldStatus>,
-    ) -> Self {
-        self.index_field = input;
-        self
+    pub fn set_index_field(mut self, input: std::option::Option<crate::types::IndexFieldStatus>) -> Self {
+        self.index_field = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DefineIndexFieldOutput`](crate::operation::define_index_field::DefineIndexFieldOutput).
     pub fn build(self) -> crate::operation::define_index_field::DefineIndexFieldOutput {
         crate::operation::define_index_field::DefineIndexFieldOutput {
-            index_field: self.index_field,
+            index_field: self.index_field
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

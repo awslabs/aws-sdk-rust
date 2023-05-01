@@ -3,7 +3,7 @@
 /// <p>A configuration specification to be used to override existing configurations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationOverrides {
+pub struct ConfigurationOverrides  {
     /// <p>The override configurations for the application.</p>
     #[doc(hidden)]
     pub application_configuration: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
@@ -13,13 +13,11 @@ pub struct ConfigurationOverrides {
 }
 impl ConfigurationOverrides {
     /// <p>The override configurations for the application.</p>
-    pub fn application_configuration(&self) -> std::option::Option<&[crate::types::Configuration]> {
+    pub fn application_configuration(&self) -> std::option::Option<& [crate::types::Configuration]> {
         self.application_configuration.as_deref()
     }
     /// <p>The override configurations for monitoring.</p>
-    pub fn monitoring_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::MonitoringConfiguration> {
+    pub fn monitoring_configuration(&self) -> std::option::Option<& crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
 }
@@ -34,8 +32,7 @@ impl ConfigurationOverrides {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConfigurationOverridesBuilder {
-    pub(crate) application_configuration:
-        std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) application_configuration: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
     pub(crate) monitoring_configuration: std::option::Option<crate::types::MonitoringConfiguration>,
 }
 impl ConfigurationOverridesBuilder {
@@ -46,39 +43,31 @@ impl ConfigurationOverridesBuilder {
     /// <p>The override configurations for the application.</p>
     pub fn application_configuration(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.application_configuration.unwrap_or_default();
-        v.push(input);
-        self.application_configuration = Some(v);
-        self
+                        v.push(input);
+                        self.application_configuration = Some(v);
+                        self
     }
     /// <p>The override configurations for the application.</p>
-    pub fn set_application_configuration(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
-    ) -> Self {
-        self.application_configuration = input;
-        self
+    pub fn set_application_configuration(mut self, input: std::option::Option<std::vec::Vec<crate::types::Configuration>>) -> Self {
+        self.application_configuration = input; self
     }
     /// <p>The override configurations for monitoring.</p>
-    pub fn monitoring_configuration(
-        mut self,
-        input: crate::types::MonitoringConfiguration,
-    ) -> Self {
+    pub fn monitoring_configuration(mut self, input: crate::types::MonitoringConfiguration) -> Self {
         self.monitoring_configuration = Some(input);
         self
     }
     /// <p>The override configurations for monitoring.</p>
-    pub fn set_monitoring_configuration(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringConfiguration>,
-    ) -> Self {
-        self.monitoring_configuration = input;
-        self
+    pub fn set_monitoring_configuration(mut self, input: std::option::Option<crate::types::MonitoringConfiguration>) -> Self {
+        self.monitoring_configuration = input; self
     }
     /// Consumes the builder and constructs a [`ConfigurationOverrides`](crate::types::ConfigurationOverrides).
     pub fn build(self) -> crate::types::ConfigurationOverrides {
         crate::types::ConfigurationOverrides {
-            application_configuration: self.application_configuration,
-            monitoring_configuration: self.monitoring_configuration,
+            application_configuration: self.application_configuration
+            ,
+            monitoring_configuration: self.monitoring_configuration
+            ,
         }
     }
 }
+

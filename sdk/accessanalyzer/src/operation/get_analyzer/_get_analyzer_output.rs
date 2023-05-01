@@ -3,7 +3,7 @@
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnalyzerOutput {
+pub struct GetAnalyzerOutput  {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     #[doc(hidden)]
     pub analyzer: std::option::Option<crate::types::AnalyzerSummary>,
@@ -11,15 +11,15 @@ pub struct GetAnalyzerOutput {
 }
 impl GetAnalyzerOutput {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-    pub fn analyzer(&self) -> std::option::Option<&crate::types::AnalyzerSummary> {
+    pub fn analyzer(&self) -> std::option::Option<& crate::types::AnalyzerSummary> {
         self.analyzer.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAnalyzerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAnalyzerOutput {
     /// Creates a new builder-style object to manufacture [`GetAnalyzerOutput`](crate::operation::get_analyzer::GetAnalyzerOutput).
     pub fn builder() -> crate::operation::get_analyzer::builders::GetAnalyzerOutputBuilder {
@@ -41,27 +41,25 @@ impl GetAnalyzerOutputBuilder {
         self
     }
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-    pub fn set_analyzer(
-        mut self,
-        input: std::option::Option<crate::types::AnalyzerSummary>,
-    ) -> Self {
-        self.analyzer = input;
-        self
+    pub fn set_analyzer(mut self, input: std::option::Option<crate::types::AnalyzerSummary>) -> Self {
+        self.analyzer = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAnalyzerOutput`](crate::operation::get_analyzer::GetAnalyzerOutput).
     pub fn build(self) -> crate::operation::get_analyzer::GetAnalyzerOutput {
         crate::operation::get_analyzer::GetAnalyzerOutput {
-            analyzer: self.analyzer,
+            analyzer: self.analyzer
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

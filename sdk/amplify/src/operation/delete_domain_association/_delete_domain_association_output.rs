@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainAssociationOutput {
+pub struct DeleteDomainAssociationOutput  {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
     pub domain_association: std::option::Option<crate::types::DomainAssociation>,
@@ -10,20 +10,18 @@ pub struct DeleteDomainAssociationOutput {
 }
 impl DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
-    pub fn domain_association(&self) -> std::option::Option<&crate::types::DomainAssociation> {
+    pub fn domain_association(&self) -> std::option::Option<& crate::types::DomainAssociation> {
         self.domain_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDomainAssociationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteDomainAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainAssociationOutput`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_domain_association::builders::DeleteDomainAssociationOutputBuilder {
         crate::operation::delete_domain_association::builders::DeleteDomainAssociationOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DeleteDomainAssociationOutputBuilder {
         self
     }
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
-    pub fn set_domain_association(
-        mut self,
-        input: std::option::Option<crate::types::DomainAssociation>,
-    ) -> Self {
-        self.domain_association = input;
-        self
+    pub fn set_domain_association(mut self, input: std::option::Option<crate::types::DomainAssociation>) -> Self {
+        self.domain_association = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteDomainAssociationOutput`](crate::operation::delete_domain_association::DeleteDomainAssociationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_domain_association::DeleteDomainAssociationOutput {
+    pub fn build(self) -> crate::operation::delete_domain_association::DeleteDomainAssociationOutput {
         crate::operation::delete_domain_association::DeleteDomainAssociationOutput {
-            domain_association: self.domain_association,
+            domain_association: self.domain_association
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateConnectionOnInterconnectInput {
+pub struct AllocateConnectionOnInterconnectInput  {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     #[doc(hidden)]
     pub bandwidth: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct AllocateConnectionOnInterconnectInput {
 }
 impl AllocateConnectionOnInterconnectInput {
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> std::option::Option<& str> {
         self.bandwidth.as_deref()
     }
     /// <p>The name of the provisioned connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> std::option::Option<& str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
-    pub fn interconnect_id(&self) -> std::option::Option<&str> {
+    pub fn interconnect_id(&self) -> std::option::Option<& str> {
         self.interconnect_id.as_deref()
     }
     /// <p>The dedicated VLAN provisioned to the connection.</p>
@@ -43,7 +43,7 @@ impl AllocateConnectionOnInterconnectInput {
 }
 impl AllocateConnectionOnInterconnectInput {
     /// Creates a new builder-style object to manufacture [`AllocateConnectionOnInterconnectInput`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput).
-    pub fn builder() -> crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder{
+    pub fn builder() -> crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder {
         crate::operation::allocate_connection_on_interconnect::builders::AllocateConnectionOnInterconnectInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     }
     /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
     pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bandwidth = input;
-        self
+        self.bandwidth = input; self
     }
     /// <p>The name of the provisioned connection.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     }
     /// <p>The name of the provisioned connection.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
     pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input;
-        self
+        self.owner_account = input; self
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
     pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +93,7 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     }
     /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
     pub fn set_interconnect_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.interconnect_id = input;
-        self
+        self.interconnect_id = input; self
     }
     /// <p>The dedicated VLAN provisioned to the connection.</p>
     pub fn vlan(mut self, input: i32) -> Self {
@@ -106,11 +102,10 @@ impl AllocateConnectionOnInterconnectInputBuilder {
     }
     /// <p>The dedicated VLAN provisioned to the connection.</p>
     pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-        self.vlan = input;
-        self
+        self.vlan = input; self
     }
     /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectInput`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput).
-    pub fn build(self) -> Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectInput {
                 bandwidth: self.bandwidth
@@ -127,3 +122,4 @@ impl AllocateConnectionOnInterconnectInputBuilder {
         )
     }
 }
+

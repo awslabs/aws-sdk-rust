@@ -3,7 +3,7 @@
 /// <p>Contains the ARN of the analyzed resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzedResourceSummary {
+pub struct AnalyzedResourceSummary  {
     /// <p>The ARN of the analyzed resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AnalyzedResourceSummary {
 }
 impl AnalyzedResourceSummary {
     /// <p>The ARN of the analyzed resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>The type of resource that was analyzed.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl AnalyzedResourceSummaryBuilder {
     }
     /// <p>The ARN of the analyzed resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
     pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +59,8 @@ impl AnalyzedResourceSummaryBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn set_resource_owner_account(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_owner_account = input;
-        self
+    pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_owner_account = input; self
     }
     /// <p>The type of resource that was analyzed.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -73,19 +68,19 @@ impl AnalyzedResourceSummaryBuilder {
         self
     }
     /// <p>The type of resource that was analyzed.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// Consumes the builder and constructs a [`AnalyzedResourceSummary`](crate::types::AnalyzedResourceSummary).
     pub fn build(self) -> crate::types::AnalyzedResourceSummary {
         crate::types::AnalyzedResourceSummary {
-            resource_arn: self.resource_arn,
-            resource_owner_account: self.resource_owner_account,
-            resource_type: self.resource_type,
+            resource_arn: self.resource_arn
+            ,
+            resource_owner_account: self.resource_owner_account
+            ,
+            resource_type: self.resource_type
+            ,
         }
     }
 }
+

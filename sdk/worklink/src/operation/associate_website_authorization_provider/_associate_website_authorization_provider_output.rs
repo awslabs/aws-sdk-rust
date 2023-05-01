@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWebsiteAuthorizationProviderOutput {
+pub struct AssociateWebsiteAuthorizationProviderOutput  {
     /// <p>A unique identifier for the authorization provider.</p>
     #[doc(hidden)]
     pub authorization_provider_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct AssociateWebsiteAuthorizationProviderOutput {
 }
 impl AssociateWebsiteAuthorizationProviderOutput {
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn authorization_provider_id(&self) -> std::option::Option<&str> {
+    pub fn authorization_provider_id(&self) -> std::option::Option<& str> {
         self.authorization_provider_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateWebsiteAuthorizationProviderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateWebsiteAuthorizationProviderOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput).
-    pub fn builder() -> crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderOutputBuilder{
+    pub fn builder() -> crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderOutputBuilder {
         crate::operation::associate_website_authorization_provider::builders::AssociateWebsiteAuthorizationProviderOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl AssociateWebsiteAuthorizationProviderOutputBuilder {
         self
     }
     /// <p>A unique identifier for the authorization provider.</p>
-    pub fn set_authorization_provider_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorization_provider_id = input;
-        self
+    pub fn set_authorization_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorization_provider_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateWebsiteAuthorizationProviderOutput`](crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput).
-    pub fn build(self) -> crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput{
+    pub fn build(self) -> crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput {
         crate::operation::associate_website_authorization_provider::AssociateWebsiteAuthorizationProviderOutput {
             authorization_provider_id: self.authorization_provider_id
             ,
@@ -65,3 +61,4 @@ impl AssociateWebsiteAuthorizationProviderOutputBuilder {
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopAutoMlJobOutput {
+pub struct StopAutoMlJobOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StopAutoMlJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopAutoMlJobOutput {
     /// Creates a new builder-style object to manufacture [`StopAutoMlJobOutput`](crate::operation::stop_auto_ml_job::StopAutoMlJobOutput).
     pub fn builder() -> crate::operation::stop_auto_ml_job::builders::StopAutoMlJobOutputBuilder {
@@ -25,14 +25,14 @@ pub struct StopAutoMlJobOutputBuilder {
 }
 impl StopAutoMlJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopAutoMlJobOutput`](crate::operation::stop_auto_ml_job::StopAutoMlJobOutput).
     pub fn build(self) -> crate::operation::stop_auto_ml_job::StopAutoMlJobOutput {
         crate::operation::stop_auto_ml_job::StopAutoMlJobOutput {
@@ -40,3 +40,4 @@ impl StopAutoMlJobOutputBuilder {
         }
     }
 }
+

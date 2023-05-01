@@ -3,7 +3,7 @@
 /// <p>The set of IP addresses that are currently blocked for a <code>RateBasedStatement</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RateBasedStatementManagedKeysIpSet {
+pub struct RateBasedStatementManagedKeysIpSet  {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     #[doc(hidden)]
     pub ip_address_version: std::option::Option<crate::types::IpAddressVersion>,
@@ -13,11 +13,11 @@ pub struct RateBasedStatementManagedKeysIpSet {
 }
 impl RateBasedStatementManagedKeysIpSet {
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    pub fn ip_address_version(&self) -> std::option::Option<&crate::types::IpAddressVersion> {
+    pub fn ip_address_version(&self) -> std::option::Option<& crate::types::IpAddressVersion> {
         self.ip_address_version.as_ref()
     }
     /// <p>The IP addresses that are currently blocked.</p>
-    pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.addresses.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl RateBasedStatementManagedKeysIpSetBuilder {
         self
     }
     /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
-    pub fn set_ip_address_version(
-        mut self,
-        input: std::option::Option<crate::types::IpAddressVersion>,
-    ) -> Self {
-        self.ip_address_version = input;
-        self
+    pub fn set_ip_address_version(mut self, input: std::option::Option<crate::types::IpAddressVersion>) -> Self {
+        self.ip_address_version = input; self
     }
     /// Appends an item to `addresses`.
     ///
@@ -56,23 +52,22 @@ impl RateBasedStatementManagedKeysIpSetBuilder {
     /// <p>The IP addresses that are currently blocked.</p>
     pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-        v.push(input.into());
-        self.addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.addresses = Some(v);
+                        self
     }
     /// <p>The IP addresses that are currently blocked.</p>
-    pub fn set_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.addresses = input;
-        self
+    pub fn set_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.addresses = input; self
     }
     /// Consumes the builder and constructs a [`RateBasedStatementManagedKeysIpSet`](crate::types::RateBasedStatementManagedKeysIpSet).
     pub fn build(self) -> crate::types::RateBasedStatementManagedKeysIpSet {
         crate::types::RateBasedStatementManagedKeysIpSet {
-            ip_address_version: self.ip_address_version,
-            addresses: self.addresses,
+            ip_address_version: self.ip_address_version
+            ,
+            addresses: self.addresses
+            ,
         }
     }
 }
+

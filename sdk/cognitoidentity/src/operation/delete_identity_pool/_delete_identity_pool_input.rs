@@ -3,21 +3,20 @@
 /// <p>Input to the DeleteIdentityPool action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentityPoolInput {
+pub struct DeleteIdentityPoolInput  {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
 }
 impl DeleteIdentityPoolInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityPoolInput`](crate::operation::delete_identity_pool::DeleteIdentityPoolInput).
-    pub fn builder(
-    ) -> crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder {
+    pub fn builder() -> crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder {
         crate::operation::delete_identity_pool::builders::DeleteIdentityPoolInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl DeleteIdentityPoolInputBuilder {
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteIdentityPoolInput`](crate::operation::delete_identity_pool::DeleteIdentityPoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_identity_pool::DeleteIdentityPoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_identity_pool::DeleteIdentityPoolInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_identity_pool::DeleteIdentityPoolInput {
-                identity_pool_id: self.identity_pool_id,
-            },
+                identity_pool_id: self.identity_pool_id
+                ,
+            }
         )
     }
 }
+

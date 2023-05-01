@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let metrictype = unimplemented!();
 /// match metrictype {
@@ -34,22 +34,14 @@
 /// Specifically, when `metrictype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MetricType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     AggQueryDocMetrics,
@@ -64,55 +56,49 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     TrendQueryDocMetrics,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MetricType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AGG_QUERY_DOC_METRICS" => MetricType::AggQueryDocMetrics,
-            "DOCS_BY_CLICK_COUNT" => MetricType::DocsByClickCount,
-            "QUERIES_BY_COUNT" => MetricType::QueriesByCount,
-            "QUERIES_BY_ZERO_CLICK_RATE" => MetricType::QueriesByZeroClickRate,
-            "QUERIES_BY_ZERO_RESULT_RATE" => MetricType::QueriesByZeroResultRate,
-            "TREND_QUERY_DOC_METRICS" => MetricType::TrendQueryDocMetrics,
-            other => MetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AGG_QUERY_DOC_METRICS" => MetricType::AggQueryDocMetrics,
+"DOCS_BY_CLICK_COUNT" => MetricType::DocsByClickCount,
+"QUERIES_BY_COUNT" => MetricType::QueriesByCount,
+"QUERIES_BY_ZERO_CLICK_RATE" => MetricType::QueriesByZeroClickRate,
+"QUERIES_BY_ZERO_RESULT_RATE" => MetricType::QueriesByZeroResultRate,
+"TREND_QUERY_DOC_METRICS" => MetricType::TrendQueryDocMetrics,
+other => MetricType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for MetricType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MetricType::from(s))
+                }
+            }
 impl MetricType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            MetricType::AggQueryDocMetrics => "AGG_QUERY_DOC_METRICS",
-            MetricType::DocsByClickCount => "DOCS_BY_CLICK_COUNT",
-            MetricType::QueriesByCount => "QUERIES_BY_COUNT",
-            MetricType::QueriesByZeroClickRate => "QUERIES_BY_ZERO_CLICK_RATE",
-            MetricType::QueriesByZeroResultRate => "QUERIES_BY_ZERO_RESULT_RATE",
-            MetricType::TrendQueryDocMetrics => "TREND_QUERY_DOC_METRICS",
-            MetricType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AGG_QUERY_DOC_METRICS",
-            "DOCS_BY_CLICK_COUNT",
-            "QUERIES_BY_COUNT",
-            "QUERIES_BY_ZERO_CLICK_RATE",
-            "QUERIES_BY_ZERO_RESULT_RATE",
-            "TREND_QUERY_DOC_METRICS",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    MetricType::AggQueryDocMetrics => "AGG_QUERY_DOC_METRICS",
+    MetricType::DocsByClickCount => "DOCS_BY_CLICK_COUNT",
+    MetricType::QueriesByCount => "QUERIES_BY_COUNT",
+    MetricType::QueriesByZeroClickRate => "QUERIES_BY_ZERO_CLICK_RATE",
+    MetricType::QueriesByZeroResultRate => "QUERIES_BY_ZERO_RESULT_RATE",
+    MetricType::TrendQueryDocMetrics => "TREND_QUERY_DOC_METRICS",
+    MetricType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AGG_QUERY_DOC_METRICS", "DOCS_BY_CLICK_COUNT", "QUERIES_BY_COUNT", "QUERIES_BY_ZERO_CLICK_RATE", "QUERIES_BY_ZERO_RESULT_RATE", "TREND_QUERY_DOC_METRICS"]
+                }
+            }
 impl AsRef<str> for MetricType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

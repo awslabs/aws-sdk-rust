@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDiscovererOutput {
+pub struct DeleteDiscovererOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteDiscovererOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteDiscovererOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDiscovererOutput`](crate::operation::delete_discoverer::DeleteDiscovererOutput).
-    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererOutputBuilder {
         crate::operation::delete_discoverer::builders::DeleteDiscovererOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteDiscovererOutputBuilder {
 }
 impl DeleteDiscovererOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteDiscovererOutput`](crate::operation::delete_discoverer::DeleteDiscovererOutput).
     pub fn build(self) -> crate::operation::delete_discoverer::DeleteDiscovererOutput {
         crate::operation::delete_discoverer::DeleteDiscovererOutput {
@@ -41,3 +40,4 @@ impl DeleteDiscovererOutputBuilder {
         }
     }
 }
+

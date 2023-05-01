@@ -3,7 +3,7 @@
 /// <p>Details about a Map state that was started.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapStateStartedEventDetails {
+pub struct MapStateStartedEventDetails  {
     /// <p>The size of the array for Map state iterations.</p>
     #[doc(hidden)]
     pub length: i32,
@@ -35,13 +35,15 @@ impl MapStateStartedEventDetailsBuilder {
     }
     /// <p>The size of the array for Map state iterations.</p>
     pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.length = input;
-        self
+        self.length = input; self
     }
     /// Consumes the builder and constructs a [`MapStateStartedEventDetails`](crate::types::MapStateStartedEventDetails).
     pub fn build(self) -> crate::types::MapStateStartedEventDetails {
         crate::types::MapStateStartedEventDetails {
-            length: self.length.unwrap_or_default(),
+            length: self.length
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

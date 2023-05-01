@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartWorkflowInput {
+pub struct StartWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StartWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl StartWorkflowInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`StartWorkflowInput`](crate::operation::start_workflow::StartWorkflowInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_workflow::StartWorkflowInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_workflow::StartWorkflowInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::start_workflow::StartWorkflowInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_workflow::StartWorkflowInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

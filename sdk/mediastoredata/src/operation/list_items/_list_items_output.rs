@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListItemsOutput {
+pub struct ListItemsOutput  {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::Item>>,
@@ -13,19 +13,19 @@ pub struct ListItemsOutput {
 }
 impl ListItemsOutput {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Item]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::Item]> {
         self.items.as_deref()
     }
     /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListItemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListItemsOutput`](crate::operation::list_items::ListItemsOutput).
     pub fn builder() -> crate::operation::list_items::builders::ListItemsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListItemsOutputBuilder {
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
     pub fn items(mut self, input: crate::types::Item) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The metadata entries for the folders and objects at the requested path.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::Item>>) -> Self {
+        self.items = input; self
     }
     /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListItemsOutputBuilder {
     }
     /// <p>The token that can be used in a request to view the next set of results. For example, you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code> set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code> value that can be used to fetch the next batch of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListItemsOutput`](crate::operation::list_items::ListItemsOutput).
     pub fn build(self) -> crate::operation::list_items::ListItemsOutput {
         crate::operation::list_items::ListItemsOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProvisioningTemplateVersionInput {
+pub struct DeleteProvisioningTemplateVersionInput  {
     /// <p>The name of the provisioning template version to delete.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteProvisioningTemplateVersionInput {
 }
 impl DeleteProvisioningTemplateVersionInput {
     /// <p>The name of the provisioning template version to delete.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The provisioning template version ID to delete.</p>
@@ -22,7 +22,7 @@ impl DeleteProvisioningTemplateVersionInput {
 }
 impl DeleteProvisioningTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteProvisioningTemplateVersionInput`](crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput).
-    pub fn builder() -> crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionInputBuilder {
         crate::operation::delete_provisioning_template_version::builders::DeleteProvisioningTemplateVersionInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The name of the provisioning template version to delete.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The provisioning template version ID to delete.</p>
     pub fn version_id(mut self, input: i32) -> Self {
@@ -52,11 +51,10 @@ impl DeleteProvisioningTemplateVersionInputBuilder {
     }
     /// <p>The provisioning template version ID to delete.</p>
     pub fn set_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteProvisioningTemplateVersionInput`](crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_provisioning_template_version::DeleteProvisioningTemplateVersionInput {
                 template_name: self.template_name
@@ -67,3 +65,4 @@ impl DeleteProvisioningTemplateVersionInputBuilder {
         )
     }
 }
+

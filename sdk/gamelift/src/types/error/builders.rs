@@ -28,3 +28,4 @@ pub use crate::types::error::_idempotent_parameter_mismatch_exception::Idempoten
 pub use crate::types::error::_fleet_capacity_exceeded_exception::FleetCapacityExceededExceptionBuilder;
 
 pub use crate::types::error::_out_of_capacity_exception::OutOfCapacityExceptionBuilder;
+

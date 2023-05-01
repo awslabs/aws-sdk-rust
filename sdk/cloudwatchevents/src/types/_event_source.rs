@@ -3,7 +3,7 @@
 /// <p>A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSource {
+pub struct EventSource  {
     /// <p>The ARN of the event source.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct EventSource {
 }
 impl EventSource {
     /// <p>The ARN of the event source.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the partner that created the event source.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time the event source was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The name of the event source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::EventSourceState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::EventSourceState> {
         self.state.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl EventSourceBuilder {
     }
     /// <p>The ARN of the event source.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the partner that created the event source.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl EventSourceBuilder {
     }
     /// <p>The name of the partner that created the event source.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>The date and time the event source was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,12 +92,8 @@ impl EventSourceBuilder {
         self
     }
     /// <p>The date and time the event source was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
     pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -107,12 +101,8 @@ impl EventSourceBuilder {
         self
     }
     /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a matching event bus for it.</p>
-    pub fn set_expiration_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration_time = input;
-        self
+    pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration_time = input; self
     }
     /// <p>The name of the event source.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +111,7 @@ impl EventSourceBuilder {
     }
     /// <p>The name of the event source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn state(mut self, input: crate::types::EventSourceState) -> Self {
@@ -131,18 +120,24 @@ impl EventSourceBuilder {
     }
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event bus for this event source, and that event bus is active. If it is PENDING, either you haven't yet created a matching event bus, or that event bus is deactivated. If it is DELETED, you have created a matching event bus, but the event source has since been deleted.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::EventSourceState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`EventSource`](crate::types::EventSource).
     pub fn build(self) -> crate::types::EventSource {
         crate::types::EventSource {
-            arn: self.arn,
-            created_by: self.created_by,
-            creation_time: self.creation_time,
-            expiration_time: self.expiration_time,
-            name: self.name,
-            state: self.state,
+            arn: self.arn
+            ,
+            created_by: self.created_by
+            ,
+            creation_time: self.creation_time
+            ,
+            expiration_time: self.expiration_time
+            ,
+            name: self.name
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

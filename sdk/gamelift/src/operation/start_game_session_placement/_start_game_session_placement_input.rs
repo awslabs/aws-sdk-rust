@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartGameSessionPlacementInput {
+pub struct StartGameSessionPlacementInput  {
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
     #[doc(hidden)]
     pub placement_id: std::option::Option<std::string::String>,
@@ -23,23 +23,22 @@ pub struct StartGameSessionPlacementInput {
     pub player_latencies: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>,
     /// <p>Set of information on each player to create a player session for.</p>
     #[doc(hidden)]
-    pub desired_player_sessions:
-        std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
+    pub desired_player_sessions: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     #[doc(hidden)]
     pub game_session_data: std::option::Option<std::string::String>,
 }
 impl StartGameSessionPlacementInput {
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
-    pub fn placement_id(&self) -> std::option::Option<&str> {
+    pub fn placement_id(&self) -> std::option::Option<& str> {
         self.placement_id.as_deref()
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
-    pub fn game_session_queue_name(&self) -> std::option::Option<&str> {
+    pub fn game_session_queue_name(&self) -> std::option::Option<& str> {
         self.game_session_queue_name.as_deref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_properties(&self) -> std::option::Option<&[crate::types::GameProperty]> {
+    pub fn game_properties(&self) -> std::option::Option<& [crate::types::GameProperty]> {
         self.game_properties.as_deref()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -47,27 +46,25 @@ impl StartGameSessionPlacementInput {
         self.maximum_player_session_count
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn game_session_name(&self) -> std::option::Option<&str> {
+    pub fn game_session_name(&self) -> std::option::Option<& str> {
         self.game_session_name.as_deref()
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
-    pub fn player_latencies(&self) -> std::option::Option<&[crate::types::PlayerLatency]> {
+    pub fn player_latencies(&self) -> std::option::Option<& [crate::types::PlayerLatency]> {
         self.player_latencies.as_deref()
     }
     /// <p>Set of information on each player to create a player session for.</p>
-    pub fn desired_player_sessions(
-        &self,
-    ) -> std::option::Option<&[crate::types::DesiredPlayerSession]> {
+    pub fn desired_player_sessions(&self) -> std::option::Option<& [crate::types::DesiredPlayerSession]> {
         self.desired_player_sessions.as_deref()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(&self) -> std::option::Option<&str> {
+    pub fn game_session_data(&self) -> std::option::Option<& str> {
         self.game_session_data.as_deref()
     }
 }
 impl StartGameSessionPlacementInput {
     /// Creates a new builder-style object to manufacture [`StartGameSessionPlacementInput`](crate::operation::start_game_session_placement::StartGameSessionPlacementInput).
-    pub fn builder() -> crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder{
+    pub fn builder() -> crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder {
         crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder::default()
     }
 }
@@ -82,8 +79,7 @@ pub struct StartGameSessionPlacementInputBuilder {
     pub(crate) maximum_player_session_count: std::option::Option<i32>,
     pub(crate) game_session_name: std::option::Option<std::string::String>,
     pub(crate) player_latencies: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>,
-    pub(crate) desired_player_sessions:
-        std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
+    pub(crate) desired_player_sessions: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
     pub(crate) game_session_data: std::option::Option<std::string::String>,
 }
 impl StartGameSessionPlacementInputBuilder {
@@ -94,8 +90,7 @@ impl StartGameSessionPlacementInputBuilder {
     }
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
     pub fn set_placement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.placement_id = input;
-        self
+        self.placement_id = input; self
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
     pub fn game_session_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,12 +98,8 @@ impl StartGameSessionPlacementInputBuilder {
         self
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
-    pub fn set_game_session_queue_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.game_session_queue_name = input;
-        self
+    pub fn set_game_session_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.game_session_queue_name = input; self
     }
     /// Appends an item to `game_properties`.
     ///
@@ -117,17 +108,13 @@ impl StartGameSessionPlacementInputBuilder {
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
         let mut v = self.game_properties.unwrap_or_default();
-        v.push(input);
-        self.game_properties = Some(v);
-        self
+                        v.push(input);
+                        self.game_properties = Some(v);
+                        self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_properties(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
-    ) -> Self {
-        self.game_properties = input;
-        self
+    pub fn set_game_properties(mut self, input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>) -> Self {
+        self.game_properties = input; self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
@@ -136,8 +123,7 @@ impl StartGameSessionPlacementInputBuilder {
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_player_session_count = input;
-        self
+        self.maximum_player_session_count = input; self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn game_session_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,12 +131,8 @@ impl StartGameSessionPlacementInputBuilder {
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn set_game_session_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.game_session_name = input;
-        self
+    pub fn set_game_session_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.game_session_name = input; self
     }
     /// Appends an item to `player_latencies`.
     ///
@@ -159,17 +141,13 @@ impl StartGameSessionPlacementInputBuilder {
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
     pub fn player_latencies(mut self, input: crate::types::PlayerLatency) -> Self {
         let mut v = self.player_latencies.unwrap_or_default();
-        v.push(input);
-        self.player_latencies = Some(v);
-        self
+                        v.push(input);
+                        self.player_latencies = Some(v);
+                        self
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
-    pub fn set_player_latencies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>,
-    ) -> Self {
-        self.player_latencies = input;
-        self
+    pub fn set_player_latencies(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
+        self.player_latencies = input; self
     }
     /// Appends an item to `desired_player_sessions`.
     ///
@@ -178,17 +156,13 @@ impl StartGameSessionPlacementInputBuilder {
     /// <p>Set of information on each player to create a player session for.</p>
     pub fn desired_player_sessions(mut self, input: crate::types::DesiredPlayerSession) -> Self {
         let mut v = self.desired_player_sessions.unwrap_or_default();
-        v.push(input);
-        self.desired_player_sessions = Some(v);
-        self
+                        v.push(input);
+                        self.desired_player_sessions = Some(v);
+                        self
     }
     /// <p>Set of information on each player to create a player session for.</p>
-    pub fn set_desired_player_sessions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
-    ) -> Self {
-        self.desired_player_sessions = input;
-        self
+    pub fn set_desired_player_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>) -> Self {
+        self.desired_player_sessions = input; self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,31 +170,31 @@ impl StartGameSessionPlacementInputBuilder {
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_session_data(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.game_session_data = input;
-        self
+    pub fn set_game_session_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.game_session_data = input; self
     }
     /// Consumes the builder and constructs a [`StartGameSessionPlacementInput`](crate::operation::start_game_session_placement::StartGameSessionPlacementInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_game_session_placement::StartGameSessionPlacementInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_game_session_placement::StartGameSessionPlacementInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_game_session_placement::StartGameSessionPlacementInput {
-                placement_id: self.placement_id,
-                game_session_queue_name: self.game_session_queue_name,
-                game_properties: self.game_properties,
-                maximum_player_session_count: self.maximum_player_session_count,
-                game_session_name: self.game_session_name,
-                player_latencies: self.player_latencies,
-                desired_player_sessions: self.desired_player_sessions,
-                game_session_data: self.game_session_data,
-            },
+                placement_id: self.placement_id
+                ,
+                game_session_queue_name: self.game_session_queue_name
+                ,
+                game_properties: self.game_properties
+                ,
+                maximum_player_session_count: self.maximum_player_session_count
+                ,
+                game_session_name: self.game_session_name
+                ,
+                player_latencies: self.player_latencies
+                ,
+                desired_player_sessions: self.desired_player_sessions
+                ,
+                game_session_data: self.game_session_data
+                ,
+            }
         )
     }
 }
+

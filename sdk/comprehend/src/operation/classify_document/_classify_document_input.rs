@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClassifyDocumentInput {
+pub struct ClassifyDocumentInput  {
     /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
-    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p> 
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p> 
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p> 
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
     #[doc(hidden)]
     pub bytes: std::option::Option<aws_smithy_types::Blob>,
@@ -21,28 +21,26 @@ pub struct ClassifyDocumentInput {
 }
 impl ClassifyDocumentInput {
     /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
-    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p> 
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p> 
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p> 
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
-    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn document_reader_config(
-        &self,
-    ) -> std::option::Option<&crate::types::DocumentReaderConfig> {
+    pub fn document_reader_config(&self) -> std::option::Option<& crate::types::DocumentReaderConfig> {
         self.document_reader_config.as_ref()
     }
 }
-impl std::fmt::Debug for ClassifyDocumentInput {
+impl  std::fmt::Debug for ClassifyDocumentInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifyDocumentInput");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
@@ -54,8 +52,7 @@ impl std::fmt::Debug for ClassifyDocumentInput {
 }
 impl ClassifyDocumentInput {
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
-    pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentInputBuilder
-    {
+    pub fn builder() -> crate::operation::classify_document::builders::ClassifyDocumentInputBuilder {
         crate::operation::classify_document::builders::ClassifyDocumentInputBuilder::default()
     }
 }
@@ -77,8 +74,7 @@ impl ClassifyDocumentInputBuilder {
     }
     /// <p>The document text to be analyzed. If you enter text using this parameter, do not use the <code>Bytes</code> parameter.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,24 +83,22 @@ impl ClassifyDocumentInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input;
-        self
+        self.endpoint_arn = input; self
     }
-    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p> 
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p> 
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p> 
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
     pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
         self.bytes = Some(input);
         self
     }
-    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p>
-    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p>
-    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p>
+    /// <p>Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code> output file.</p> 
+    /// <p>Provide the input document as a sequence of base64-encoded bytes. If your code uses an Amazon Web Services SDK to classify documents, the SDK may encode the document file bytes for you. </p> 
+    /// <p>The maximum length of this field depends on the input document type. For details, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync.html"> Inputs for real-time custom analysis</a> in the Comprehend Developer Guide. </p> 
     /// <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.</p>
     pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.bytes = input;
-        self
+        self.bytes = input; self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
     pub fn document_reader_config(mut self, input: crate::types::DocumentReaderConfig) -> Self {
@@ -112,26 +106,23 @@ impl ClassifyDocumentInputBuilder {
         self
     }
     /// <p>Provides configuration parameters to override the default actions for extracting text from PDF documents and image files.</p>
-    pub fn set_document_reader_config(
-        mut self,
-        input: std::option::Option<crate::types::DocumentReaderConfig>,
-    ) -> Self {
-        self.document_reader_config = input;
-        self
+    pub fn set_document_reader_config(mut self, input: std::option::Option<crate::types::DocumentReaderConfig>) -> Self {
+        self.document_reader_config = input; self
     }
     /// Consumes the builder and constructs a [`ClassifyDocumentInput`](crate::operation::classify_document::ClassifyDocumentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::classify_document::ClassifyDocumentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::classify_document::ClassifyDocumentInput {
-            text: self.text,
-            endpoint_arn: self.endpoint_arn,
-            bytes: self.bytes,
-            document_reader_config: self.document_reader_config,
-        })
+    pub fn build(self) -> Result<crate::operation::classify_document::ClassifyDocumentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::classify_document::ClassifyDocumentInput {
+                text: self.text
+                ,
+                endpoint_arn: self.endpoint_arn
+                ,
+                bytes: self.bytes
+                ,
+                document_reader_config: self.document_reader_config
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for ClassifyDocumentInputBuilder {
@@ -144,3 +135,4 @@ impl std::fmt::Debug for ClassifyDocumentInputBuilder {
         formatter.finish()
     }
 }
+

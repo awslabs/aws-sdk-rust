@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectInput {
+pub struct DescribeProjectInput  {
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
     pub project_id: std::option::Option<std::string::String>,
 }
 impl DescribeProjectInput {
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> std::option::Option<& str> {
         self.project_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeProjectInputBuilder {
     }
     /// <p>The ID of the project.</p>
     pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_id = input;
-        self
+        self.project_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProjectInput`](crate::operation::describe_project::DescribeProjectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_project::DescribeProjectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_project::DescribeProjectInput {
-            project_id: self.project_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_project::DescribeProjectInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_project::DescribeProjectInput {
+                project_id: self.project_id
+                ,
+            }
+        )
     }
 }
+

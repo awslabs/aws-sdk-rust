@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationRevisionsOutput {
+pub struct ListConfigurationRevisionsOutput  {
     /// <p>Paginated results marker.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct ListConfigurationRevisionsOutput {
 }
 impl ListConfigurationRevisionsOutput {
     /// <p>Paginated results marker.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of ConfigurationRevision objects.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::types::ConfigurationRevision]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::types::ConfigurationRevision]> {
         self.revisions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListConfigurationRevisionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListConfigurationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder {
         crate::operation::list_configuration_revisions::builders::ListConfigurationRevisionsOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl ListConfigurationRevisionsOutputBuilder {
     }
     /// <p>Paginated results marker.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `revisions`.
     ///
@@ -59,35 +58,32 @@ impl ListConfigurationRevisionsOutputBuilder {
     /// <p>List of ConfigurationRevision objects.</p>
     pub fn revisions(mut self, input: crate::types::ConfigurationRevision) -> Self {
         let mut v = self.revisions.unwrap_or_default();
-        v.push(input);
-        self.revisions = Some(v);
-        self
+                        v.push(input);
+                        self.revisions = Some(v);
+                        self
     }
     /// <p>List of ConfigurationRevision objects.</p>
-    pub fn set_revisions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationRevision>>,
-    ) -> Self {
-        self.revisions = input;
-        self
+    pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigurationRevision>>) -> Self {
+        self.revisions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListConfigurationRevisionsOutput`](crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
+    pub fn build(self) -> crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
         crate::operation::list_configuration_revisions::ListConfigurationRevisionsOutput {
-            next_token: self.next_token,
-            revisions: self.revisions,
+            next_token: self.next_token
+            ,
+            revisions: self.revisions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

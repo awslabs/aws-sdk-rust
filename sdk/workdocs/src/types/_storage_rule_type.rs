@@ -3,7 +3,7 @@
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageRuleType {
+pub struct StorageRuleType  {
     /// <p>The amount of storage allocated, in bytes.</p>
     #[doc(hidden)]
     pub storage_allocated_in_bytes: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl StorageRuleType {
         self.storage_allocated_in_bytes
     }
     /// <p>The type of storage.</p>
-    pub fn storage_type(&self) -> std::option::Option<&crate::types::StorageType> {
+    pub fn storage_type(&self) -> std::option::Option<& crate::types::StorageType> {
         self.storage_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl StorageRuleTypeBuilder {
     }
     /// <p>The amount of storage allocated, in bytes.</p>
     pub fn set_storage_allocated_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.storage_allocated_in_bytes = input;
-        self
+        self.storage_allocated_in_bytes = input; self
     }
     /// <p>The type of storage.</p>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
@@ -52,18 +51,17 @@ impl StorageRuleTypeBuilder {
         self
     }
     /// <p>The type of storage.</p>
-    pub fn set_storage_type(
-        mut self,
-        input: std::option::Option<crate::types::StorageType>,
-    ) -> Self {
-        self.storage_type = input;
-        self
+    pub fn set_storage_type(mut self, input: std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input; self
     }
     /// Consumes the builder and constructs a [`StorageRuleType`](crate::types::StorageRuleType).
     pub fn build(self) -> crate::types::StorageRuleType {
         crate::types::StorageRuleType {
-            storage_allocated_in_bytes: self.storage_allocated_in_bytes,
-            storage_type: self.storage_type,
+            storage_allocated_in_bytes: self.storage_allocated_in_bytes
+            ,
+            storage_type: self.storage_type
+            ,
         }
     }
 }
+

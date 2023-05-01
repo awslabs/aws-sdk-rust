@@ -3,7 +3,7 @@
 /// <p>The input for the time-range filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TimeRangeFilterInput {
+pub struct TimeRangeFilterInput  {
     /// <p>The start time for the time-range filter.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,15 +13,15 @@ pub struct TimeRangeFilterInput {
 }
 impl TimeRangeFilterInput {
     /// <p>The start time for the time-range filter.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time for the time-range filter.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
-impl std::fmt::Debug for TimeRangeFilterInput {
+impl  std::fmt::Debug for TimeRangeFilterInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TimeRangeFilterInput");
         formatter.field("start_time", &"*** Sensitive Data Redacted ***");
@@ -50,12 +50,8 @@ impl TimeRangeFilterInputBuilder {
         self
     }
     /// <p>The start time for the time-range filter.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The end time for the time-range filter.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -64,14 +60,15 @@ impl TimeRangeFilterInputBuilder {
     }
     /// <p>The end time for the time-range filter.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// Consumes the builder and constructs a [`TimeRangeFilterInput`](crate::types::TimeRangeFilterInput).
     pub fn build(self) -> crate::types::TimeRangeFilterInput {
         crate::types::TimeRangeFilterInput {
-            start_time: self.start_time,
-            end_time: self.end_time,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
         }
     }
 }
@@ -83,3 +80,4 @@ impl std::fmt::Debug for TimeRangeFilterInputBuilder {
         formatter.finish()
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAwsLogSourceOutput {
+pub struct CreateAwsLogSourceOutput  {
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
     #[doc(hidden)]
     pub processing: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,25 +13,23 @@ pub struct CreateAwsLogSourceOutput {
 }
 impl CreateAwsLogSourceOutput {
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    pub fn processing(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn processing(&self) -> std::option::Option<& [std::string::String]> {
         self.processing.as_deref()
     }
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-    pub fn failed(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn failed(&self) -> std::option::Option<& [std::string::String]> {
         self.failed.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAwsLogSourceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAwsLogSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateAwsLogSourceOutput`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceOutputBuilder {
-        crate::operation::create_aws_log_source::builders::CreateAwsLogSourceOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_aws_log_source::builders::CreateAwsLogSourceOutputBuilder {
+        crate::operation::create_aws_log_source::builders::CreateAwsLogSourceOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl CreateAwsLogSourceOutputBuilder {
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
     pub fn processing(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.processing.unwrap_or_default();
-        v.push(input.into());
-        self.processing = Some(v);
-        self
+                        v.push(input.into());
+                        self.processing = Some(v);
+                        self
     }
     /// <p>Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake source.</p>
-    pub fn set_processing(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.processing = input;
-        self
+    pub fn set_processing(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.processing = input; self
     }
     /// Appends an item to `failed`.
     ///
@@ -70,33 +64,32 @@ impl CreateAwsLogSourceOutputBuilder {
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
     pub fn failed(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.failed.unwrap_or_default();
-        v.push(input.into());
-        self.failed = Some(v);
-        self
+                        v.push(input.into());
+                        self.failed = Some(v);
+                        self
     }
     /// <p>Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed. The failure occurred as these accounts are not part of an organization.</p>
-    pub fn set_failed(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.failed = input;
-        self
+    pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.failed = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAwsLogSourceOutput`](crate::operation::create_aws_log_source::CreateAwsLogSourceOutput).
     pub fn build(self) -> crate::operation::create_aws_log_source::CreateAwsLogSourceOutput {
         crate::operation::create_aws_log_source::CreateAwsLogSourceOutput {
-            processing: self.processing,
-            failed: self.failed,
+            processing: self.processing
+            ,
+            failed: self.failed
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

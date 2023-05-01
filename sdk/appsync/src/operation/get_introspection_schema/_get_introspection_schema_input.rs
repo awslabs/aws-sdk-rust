@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntrospectionSchemaInput {
+pub struct GetIntrospectionSchemaInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetIntrospectionSchemaInput {
 }
 impl GetIntrospectionSchemaInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The schema format: SDL or JSON.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::OutputType> {
+    pub fn format(&self) -> std::option::Option<& crate::types::OutputType> {
         self.format.as_ref()
     }
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
@@ -29,9 +29,7 @@ impl GetIntrospectionSchemaInput {
 }
 impl GetIntrospectionSchemaInput {
     /// Creates a new builder-style object to manufacture [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
-    pub fn builder(
-    ) -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder {
         crate::operation::get_introspection_schema::builders::GetIntrospectionSchemaInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl GetIntrospectionSchemaInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The schema format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::OutputType) -> Self {
@@ -62,8 +59,7 @@ impl GetIntrospectionSchemaInputBuilder {
     }
     /// <p>The schema format: SDL or JSON.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::OutputType>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
     pub fn include_directives(mut self, input: bool) -> Self {
@@ -72,22 +68,20 @@ impl GetIntrospectionSchemaInputBuilder {
     }
     /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
     pub fn set_include_directives(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_directives = input;
-        self
+        self.include_directives = input; self
     }
     /// Consumes the builder and constructs a [`GetIntrospectionSchemaInput`](crate::operation::get_introspection_schema::GetIntrospectionSchemaInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_introspection_schema::GetIntrospectionSchemaInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_introspection_schema::GetIntrospectionSchemaInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_introspection_schema::GetIntrospectionSchemaInput {
-                api_id: self.api_id,
-                format: self.format,
-                include_directives: self.include_directives,
-            },
+                api_id: self.api_id
+                ,
+                format: self.format
+                ,
+                include_directives: self.include_directives
+                ,
+            }
         )
     }
 }
+

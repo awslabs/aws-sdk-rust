@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAttributesInput {
+pub struct PutAttributesInput  {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutAttributesInput {
 }
 impl PutAttributesInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> std::option::Option<&str> {
+    pub fn cluster(&self) -> std::option::Option<& str> {
         self.cluster.as_deref()
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::types::Attribute]> {
         self.attributes.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl PutAttributesInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input;
-        self
+        self.cluster = input; self
     }
     /// Appends an item to `attributes`.
     ///
@@ -52,28 +51,24 @@ impl PutAttributesInputBuilder {
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-        v.push(input);
-        self.attributes = Some(v);
-        self
+                        v.push(input);
+                        self.attributes = Some(v);
+                        self
     }
     /// <p>The attributes to apply to your resource. You can specify up to 10 custom attributes for each resource. You can specify up to 10 attributes in a single call.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`PutAttributesInput`](crate::operation::put_attributes::PutAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_attributes::PutAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_attributes::PutAttributesInput {
-            cluster: self.cluster,
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> Result<crate::operation::put_attributes::PutAttributesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_attributes::PutAttributesInput {
+                cluster: self.cluster
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

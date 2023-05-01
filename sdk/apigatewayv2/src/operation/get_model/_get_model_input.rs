@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelInput {
+pub struct GetModelInput  {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetModelInput {
 }
 impl GetModelInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> std::option::Option<& str> {
         self.model_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetModelInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>The model ID.</p>
     pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetModelInputBuilder {
     }
     /// <p>The model ID.</p>
     pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_id = input;
-        self
+        self.model_id = input; self
     }
     /// Consumes the builder and constructs a [`GetModelInput`](crate::operation::get_model::GetModelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_model::GetModelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_model::GetModelInput {
-            api_id: self.api_id,
-            model_id: self.model_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_model::GetModelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_model::GetModelInput {
+                api_id: self.api_id
+                ,
+                model_id: self.model_id
+                ,
+            }
+        )
     }
 }
+

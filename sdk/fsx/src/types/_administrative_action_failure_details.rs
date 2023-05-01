@@ -3,14 +3,14 @@
 /// <p>Provides information about a failed administrative action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdministrativeActionFailureDetails {
+pub struct AdministrativeActionFailureDetails  {
     /// <p>Error message providing details about the failed administrative action.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AdministrativeActionFailureDetails {
     /// <p>Error message providing details about the failed administrative action.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl AdministrativeActionFailureDetailsBuilder {
     }
     /// <p>Error message providing details about the failed administrative action.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`AdministrativeActionFailureDetails`](crate::types::AdministrativeActionFailureDetails).
     pub fn build(self) -> crate::types::AdministrativeActionFailureDetails {
         crate::types::AdministrativeActionFailureDetails {
-            message: self.message,
+            message: self.message
+            ,
         }
     }
 }
+

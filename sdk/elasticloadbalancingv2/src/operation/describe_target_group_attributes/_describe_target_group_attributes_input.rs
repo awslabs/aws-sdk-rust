@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetGroupAttributesInput {
+pub struct DescribeTargetGroupAttributesInput  {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTargetGroupAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_arn(&self) -> std::option::Option<&str> {
+    pub fn target_group_arn(&self) -> std::option::Option<& str> {
         self.target_group_arn.as_deref()
     }
 }
 impl DescribeTargetGroupAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
-    pub fn builder() -> crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder{
+    pub fn builder() -> crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder {
         crate::operation::describe_target_group_attributes::builders::DescribeTargetGroupAttributesInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl DescribeTargetGroupAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_group_arn = input;
-        self
+        self.target_group_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTargetGroupAttributesInput`](crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_target_group_attributes::DescribeTargetGroupAttributesInput {
                 target_group_arn: self.target_group_arn
@@ -52,3 +46,4 @@ impl DescribeTargetGroupAttributesInputBuilder {
         )
     }
 }
+

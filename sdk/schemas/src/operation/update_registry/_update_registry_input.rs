@@ -3,7 +3,7 @@
 /// <p>Updates the registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegistryInput {
+pub struct UpdateRegistryInput  {
     /// <p>The description of the registry to update.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateRegistryInput {
 }
 impl UpdateRegistryInput {
     /// <p>The description of the registry to update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(&self) -> std::option::Option<&str> {
+    pub fn registry_name(&self) -> std::option::Option<& str> {
         self.registry_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateRegistryInputBuilder {
     }
     /// <p>The description of the registry to update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The name of the registry.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,19 +52,18 @@ impl UpdateRegistryInputBuilder {
     }
     /// <p>The name of the registry.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input;
-        self
+        self.registry_name = input; self
     }
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_registry::UpdateRegistryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_registry::UpdateRegistryInput {
-            description: self.description,
-            registry_name: self.registry_name,
-        })
+    pub fn build(self) -> Result<crate::operation::update_registry::UpdateRegistryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_registry::UpdateRegistryInput {
+                description: self.description
+                ,
+                registry_name: self.registry_name
+                ,
+            }
+        )
     }
 }
+

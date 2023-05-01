@@ -6,67 +6,38 @@ impl SendSerialConsoleSshPublicKeyInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKey,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKey, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.1");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.1",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "AWSEC2InstanceConnectService.SendSerialConsoleSSHPublicKey",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "AWSEC2InstanceConnectService.SendSerialConsoleSSHPublicKey"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -75,48 +46,31 @@ impl SendSerialConsoleSshPublicKeyInput {
             crate::protocol_serde::shape_send_serial_console_ssh_public_key::ser_send_serial_console_ssh_public_key_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
         let op = aws_smithy_http::operation::Operation::new(request, crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKey::new())
                             .with_metadata(aws_smithy_http::operation::Metadata::new("SendSerialConsoleSSHPublicKey", "ec2instanceconnect"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
@@ -135,27 +89,22 @@ impl SendSerialConsoleSSHPublicKey {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for SendSerialConsoleSSHPublicKey {
-    type Output = std::result::Result<
-        crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput,
-        crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError,
-    >;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-        if !response.status().is_success() && response.status().as_u16() != 200 {
-            crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_error(response)
-        } else {
-            crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_response(response)
-        }
-    }
-}
+                type Output = std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError>;
+                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+                     if !response.status().is_success() && response.status().as_u16() != 200 {
+                        crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_error(response)
+                     } else {
+                        crate::protocol_serde::shape_send_serial_console_ssh_public_key::de_send_serial_console_ssh_public_key_http_response(response)
+                     }
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type SendSerialConsoleSSHPublicKeyErrorKind = SendSerialConsoleSSHPublicKeyError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type SendSerialConsoleSSHPublicKeyErrorKind = SendSerialConsoleSSHPublicKeyError;
 /// Error type for the `SendSerialConsoleSSHPublicKeyError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -175,101 +124,119 @@ pub enum SendSerialConsoleSSHPublicKeyError {
     /// <p>Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the EnableSerialConsoleAccess API. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html">EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.</p>
     SerialConsoleAccessDisabledException(crate::types::error::SerialConsoleAccessDisabledException),
     /// <p>The instance currently has 1 active serial console session. Only 1 session is supported at a time.</p>
-    SerialConsoleSessionLimitExceededException(
-        crate::types::error::SerialConsoleSessionLimitExceededException,
-    ),
+    SerialConsoleSessionLimitExceededException(crate::types::error::SerialConsoleSessionLimitExceededException),
     /// <p>Unable to start a serial console session. Please try again.</p>
-    SerialConsoleSessionUnavailableException(
-        crate::types::error::SerialConsoleSessionUnavailableException,
-    ),
+    SerialConsoleSessionUnavailableException(crate::types::error::SerialConsoleSessionUnavailableException),
     /// <p>The service encountered an error. Follow the instructions in the error message and try again.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>The requests were made too frequently and have been throttled. Wait a while and try again. To increase the limit on your request frequency, contact AWS Support.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for SendSerialConsoleSSHPublicKeyError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for SendSerialConsoleSSHPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::AuthException(_inner) => _inner.fmt(f),
-            Self::Ec2InstanceNotFoundException(_inner) => _inner.fmt(f),
-            Self::Ec2InstanceStateInvalidException(_inner) => _inner.fmt(f),
-            Self::Ec2InstanceTypeInvalidException(_inner) => _inner.fmt(f),
-            Self::Ec2InstanceUnavailableException(_inner) => _inner.fmt(f),
-            Self::InvalidArgsException(_inner) => _inner.fmt(f),
-            Self::SerialConsoleAccessDisabledException(_inner) => _inner.fmt(f),
-            Self::SerialConsoleSessionLimitExceededException(_inner) => _inner.fmt(f),
-            Self::SerialConsoleSessionUnavailableException(_inner) => _inner.fmt(f),
-            Self::ServiceException(_inner) => _inner.fmt(f),
-            Self::ThrottlingException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::AuthException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Ec2InstanceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Ec2InstanceStateInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Ec2InstanceTypeInvalidException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Ec2InstanceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidArgsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::SerialConsoleAccessDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::SerialConsoleSessionLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::SerialConsoleSessionUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for SendSerialConsoleSSHPublicKeyError
-{
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SendSerialConsoleSSHPublicKeyError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AuthException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Ec2InstanceNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Ec2InstanceStateInvalidException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Ec2InstanceTypeInvalidException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::Ec2InstanceUnavailableException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidArgsException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SerialConsoleAccessDisabledException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SerialConsoleSessionLimitExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SerialConsoleSessionUnavailableException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ThrottlingException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::AuthException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Ec2InstanceNotFoundException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Ec2InstanceStateInvalidException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Ec2InstanceTypeInvalidException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::Ec2InstanceUnavailableException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidArgsException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::SerialConsoleAccessDisabledException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::SerialConsoleSessionLimitExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::SerialConsoleSessionUnavailableException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ServiceException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId
-    for crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError
-{
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+impl aws_http::request_id::RequestId for crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError {
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for SendSerialConsoleSSHPublicKeyError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -280,27 +247,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for SendSerialConsoleSSHPublicKey
 }
 impl SendSerialConsoleSSHPublicKeyError {
     /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `SendSerialConsoleSSHPublicKeyError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -366,18 +324,42 @@ impl SendSerialConsoleSSHPublicKeyError {
 impl std::error::Error for SendSerialConsoleSSHPublicKeyError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::AuthException(_inner) => Some(_inner),
-            Self::Ec2InstanceNotFoundException(_inner) => Some(_inner),
-            Self::Ec2InstanceStateInvalidException(_inner) => Some(_inner),
-            Self::Ec2InstanceTypeInvalidException(_inner) => Some(_inner),
-            Self::Ec2InstanceUnavailableException(_inner) => Some(_inner),
-            Self::InvalidArgsException(_inner) => Some(_inner),
-            Self::SerialConsoleAccessDisabledException(_inner) => Some(_inner),
-            Self::SerialConsoleSessionLimitExceededException(_inner) => Some(_inner),
-            Self::SerialConsoleSessionUnavailableException(_inner) => Some(_inner),
-            Self::ServiceException(_inner) => Some(_inner),
-            Self::ThrottlingException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::AuthException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Ec2InstanceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Ec2InstanceStateInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Ec2InstanceTypeInvalidException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Ec2InstanceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidArgsException(_inner) =>
+            Some(_inner)
+            ,
+            Self::SerialConsoleAccessDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            Self::SerialConsoleSessionLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::SerialConsoleSessionUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ServiceException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -392,3 +374,4 @@ mod _send_serial_console_ssh_public_key_output;
 
 /// Builders
 pub mod builders;
+

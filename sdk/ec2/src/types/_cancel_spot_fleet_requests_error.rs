@@ -3,7 +3,7 @@
 /// <p>Describes a Spot Fleet error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSpotFleetRequestsError {
+pub struct CancelSpotFleetRequestsError  {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::CancelBatchErrorCode>,
@@ -13,11 +13,11 @@ pub struct CancelSpotFleetRequestsError {
 }
 impl CancelSpotFleetRequestsError {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::CancelBatchErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::CancelBatchErrorCode> {
         self.code.as_ref()
     }
     /// <p>The description for the error code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl CancelSpotFleetRequestsErrorBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::CancelBatchErrorCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::CancelBatchErrorCode>) -> Self {
+        self.code = input; self
     }
     /// <p>The description for the error code.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl CancelSpotFleetRequestsErrorBuilder {
     }
     /// <p>The description for the error code.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`CancelSpotFleetRequestsError`](crate::types::CancelSpotFleetRequestsError).
     pub fn build(self) -> crate::types::CancelSpotFleetRequestsError {
         crate::types::CancelSpotFleetRequestsError {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

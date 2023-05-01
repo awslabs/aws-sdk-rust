@@ -2,29 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDelegationByAssessmentOutput {
+pub struct BatchDeleteDelegationByAssessmentOutput  {
     /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     #[doc(hidden)]
-    pub errors:
-        std::option::Option<std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>,
+    pub errors: std::option::Option<std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDelegationByAssessmentOutput {
     /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    pub fn errors(
-        &self,
-    ) -> std::option::Option<&[crate::types::BatchDeleteDelegationByAssessmentError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchDeleteDelegationByAssessmentError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDeleteDelegationByAssessmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchDeleteDelegationByAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDelegationByAssessmentOutput`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput).
-    pub fn builder() -> crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentOutputBuilder{
+    pub fn builder() -> crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentOutputBuilder {
         crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentOutputBuilder::default()
     }
 }
@@ -33,8 +30,7 @@ impl BatchDeleteDelegationByAssessmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentOutputBuilder {
-    pub(crate) errors:
-        std::option::Option<std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>,
+    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDelegationByAssessmentOutputBuilder {
@@ -45,31 +41,25 @@ impl BatchDeleteDelegationByAssessmentOutputBuilder {
     /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
     pub fn errors(mut self, input: crate::types::BatchDeleteDelegationByAssessmentError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p> A list of errors that the <code>BatchDeleteDelegationByAssessment</code> API returned. </p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>,
-        >,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchDeleteDelegationByAssessmentError>>) -> Self {
+        self.errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchDeleteDelegationByAssessmentOutput`](crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput).
-    pub fn build(self) -> crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput{
+    pub fn build(self) -> crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput {
         crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessmentOutput {
             errors: self.errors
             ,
@@ -77,3 +67,4 @@ impl BatchDeleteDelegationByAssessmentOutputBuilder {
         }
     }
 }
+

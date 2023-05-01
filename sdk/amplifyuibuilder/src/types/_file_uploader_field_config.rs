@@ -3,7 +3,7 @@
 /// <p>Describes the configuration for the file uploader field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileUploaderFieldConfig {
+pub struct FileUploaderFieldConfig  {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
     #[doc(hidden)]
     pub access_level: std::option::Option<crate::types::StorageAccessLevel>,
@@ -13,7 +13,7 @@ pub struct FileUploaderFieldConfig {
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     #[doc(hidden)]
     pub show_thumbnails: std::option::Option<bool>,
-    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
+    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p> 
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
     #[doc(hidden)]
     pub is_resumable: std::option::Option<bool>,
@@ -26,18 +26,18 @@ pub struct FileUploaderFieldConfig {
 }
 impl FileUploaderFieldConfig {
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    pub fn access_level(&self) -> std::option::Option<&crate::types::StorageAccessLevel> {
+    pub fn access_level(&self) -> std::option::Option<& crate::types::StorageAccessLevel> {
         self.access_level.as_ref()
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn accepted_file_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn accepted_file_types(&self) -> std::option::Option<& [std::string::String]> {
         self.accepted_file_types.as_deref()
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn show_thumbnails(&self) -> std::option::Option<bool> {
         self.show_thumbnails
     }
-    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
+    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p> 
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
     pub fn is_resumable(&self) -> std::option::Option<bool> {
         self.is_resumable
@@ -76,12 +76,8 @@ impl FileUploaderFieldConfigBuilder {
         self
     }
     /// <p>The access level to assign to the uploaded files in the Amazon S3 bucket where they are stored. The valid values for this property are <code>private</code>, <code>protected</code>, or <code>public</code>. For detailed information about the permissions associated with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File access levels</a> in the <i>Amplify documentation</i>.</p>
-    pub fn set_access_level(
-        mut self,
-        input: std::option::Option<crate::types::StorageAccessLevel>,
-    ) -> Self {
-        self.access_level = input;
-        self
+    pub fn set_access_level(mut self, input: std::option::Option<crate::types::StorageAccessLevel>) -> Self {
+        self.access_level = input; self
     }
     /// Appends an item to `accepted_file_types`.
     ///
@@ -90,17 +86,13 @@ impl FileUploaderFieldConfigBuilder {
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
     pub fn accepted_file_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.accepted_file_types.unwrap_or_default();
-        v.push(input.into());
-        self.accepted_file_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.accepted_file_types = Some(v);
+                        self
     }
     /// <p>The file types that are allowed to be uploaded by the file uploader. Provide this information in an array of strings specifying the valid file extensions.</p>
-    pub fn set_accepted_file_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.accepted_file_types = input;
-        self
+    pub fn set_accepted_file_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.accepted_file_types = input; self
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn show_thumbnails(mut self, input: bool) -> Self {
@@ -109,20 +101,18 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>Specifies whether to display or hide the image preview after selecting a file for upload. The default value is <code>true</code> to display the image preview.</p>
     pub fn set_show_thumbnails(mut self, input: std::option::Option<bool>) -> Self {
-        self.show_thumbnails = input;
-        self
+        self.show_thumbnails = input; self
     }
-    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
+    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p> 
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
     pub fn is_resumable(mut self, input: bool) -> Self {
         self.is_resumable = Some(input);
         self
     }
-    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p>
+    /// <p>Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.</p> 
     /// <p>When <code>isResumable</code> is set to <code>true</code>, the file uploader uses a multipart upload to break the files into chunks before upload. The progress of the upload isn't continuous, because the file uploader uploads a chunk at a time.</p>
     pub fn set_is_resumable(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_resumable = input;
-        self
+        self.is_resumable = input; self
     }
     /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
     pub fn max_file_count(mut self, input: i32) -> Self {
@@ -131,8 +121,7 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>Specifies the maximum number of files that can be selected to upload. The default value is an unlimited number of files.</p>
     pub fn set_max_file_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_file_count = input;
-        self
+        self.max_file_count = input; self
     }
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
     pub fn max_size(mut self, input: i32) -> Self {
@@ -141,18 +130,24 @@ impl FileUploaderFieldConfigBuilder {
     }
     /// <p>The maximum file size in bytes that the file uploader will accept. The default value is an unlimited file size.</p>
     pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_size = input;
-        self
+        self.max_size = input; self
     }
     /// Consumes the builder and constructs a [`FileUploaderFieldConfig`](crate::types::FileUploaderFieldConfig).
     pub fn build(self) -> crate::types::FileUploaderFieldConfig {
         crate::types::FileUploaderFieldConfig {
-            access_level: self.access_level,
-            accepted_file_types: self.accepted_file_types,
-            show_thumbnails: self.show_thumbnails,
-            is_resumable: self.is_resumable,
-            max_file_count: self.max_file_count,
-            max_size: self.max_size,
+            access_level: self.access_level
+            ,
+            accepted_file_types: self.accepted_file_types
+            ,
+            show_thumbnails: self.show_thumbnails
+            ,
+            is_resumable: self.is_resumable
+            ,
+            max_file_count: self.max_file_count
+            ,
+            max_size: self.max_size
+            ,
         }
     }
 }
+

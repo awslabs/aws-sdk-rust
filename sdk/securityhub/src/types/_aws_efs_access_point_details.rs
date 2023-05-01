@@ -3,7 +3,7 @@
 /// <p>Provides information about an Amazon EFS access point. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEfsAccessPointDetails {
+pub struct AwsEfsAccessPointDetails  {
     /// <p>The ID of the Amazon EFS access point. </p>
     #[doc(hidden)]
     pub access_point_id: std::option::Option<std::string::String>,
@@ -25,31 +25,27 @@ pub struct AwsEfsAccessPointDetails {
 }
 impl AwsEfsAccessPointDetails {
     /// <p>The ID of the Amazon EFS access point. </p>
-    pub fn access_point_id(&self) -> std::option::Option<&str> {
+    pub fn access_point_id(&self) -> std::option::Option<& str> {
         self.access_point_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The opaque string specified in the request to ensure idempotent creation. </p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The ID of the Amazon EFS file system that the access point applies to. </p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> std::option::Option<& str> {
         self.file_system_id.as_deref()
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point, that is used for all file operations by NFS clients using the access point. </p>
-    pub fn posix_user(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsEfsAccessPointPosixUserDetails> {
+    pub fn posix_user(&self) -> std::option::Option<& crate::types::AwsEfsAccessPointPosixUserDetails> {
         self.posix_user.as_ref()
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
-    pub fn root_directory(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsEfsAccessPointRootDirectoryDetails> {
+    pub fn root_directory(&self) -> std::option::Option<& crate::types::AwsEfsAccessPointRootDirectoryDetails> {
         self.root_directory.as_ref()
     }
 }
@@ -69,8 +65,7 @@ pub struct AwsEfsAccessPointDetailsBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) file_system_id: std::option::Option<std::string::String>,
     pub(crate) posix_user: std::option::Option<crate::types::AwsEfsAccessPointPosixUserDetails>,
-    pub(crate) root_directory:
-        std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryDetails>,
+    pub(crate) root_directory: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryDetails>,
 }
 impl AwsEfsAccessPointDetailsBuilder {
     /// <p>The ID of the Amazon EFS access point. </p>
@@ -80,8 +75,7 @@ impl AwsEfsAccessPointDetailsBuilder {
     }
     /// <p>The ID of the Amazon EFS access point. </p>
     pub fn set_access_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_point_id = input;
-        self
+        self.access_point_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +84,7 @@ impl AwsEfsAccessPointDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon EFS access point. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The opaque string specified in the request to ensure idempotent creation. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +93,7 @@ impl AwsEfsAccessPointDetailsBuilder {
     }
     /// <p>The opaque string specified in the request to ensure idempotent creation. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The ID of the Amazon EFS file system that the access point applies to. </p>
     pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +102,7 @@ impl AwsEfsAccessPointDetailsBuilder {
     }
     /// <p>The ID of the Amazon EFS file system that the access point applies to. </p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input;
-        self
+        self.file_system_id = input; self
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point, that is used for all file operations by NFS clients using the access point. </p>
     pub fn posix_user(mut self, input: crate::types::AwsEfsAccessPointPosixUserDetails) -> Self {
@@ -119,38 +110,34 @@ impl AwsEfsAccessPointDetailsBuilder {
         self
     }
     /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point, that is used for all file operations by NFS clients using the access point. </p>
-    pub fn set_posix_user(
-        mut self,
-        input: std::option::Option<crate::types::AwsEfsAccessPointPosixUserDetails>,
-    ) -> Self {
-        self.posix_user = input;
-        self
+    pub fn set_posix_user(mut self, input: std::option::Option<crate::types::AwsEfsAccessPointPosixUserDetails>) -> Self {
+        self.posix_user = input; self
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
-    pub fn root_directory(
-        mut self,
-        input: crate::types::AwsEfsAccessPointRootDirectoryDetails,
-    ) -> Self {
+    pub fn root_directory(mut self, input: crate::types::AwsEfsAccessPointRootDirectoryDetails) -> Self {
         self.root_directory = Some(input);
         self
     }
     /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
-    pub fn set_root_directory(
-        mut self,
-        input: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryDetails>,
-    ) -> Self {
-        self.root_directory = input;
-        self
+    pub fn set_root_directory(mut self, input: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryDetails>) -> Self {
+        self.root_directory = input; self
     }
     /// Consumes the builder and constructs a [`AwsEfsAccessPointDetails`](crate::types::AwsEfsAccessPointDetails).
     pub fn build(self) -> crate::types::AwsEfsAccessPointDetails {
         crate::types::AwsEfsAccessPointDetails {
-            access_point_id: self.access_point_id,
-            arn: self.arn,
-            client_token: self.client_token,
-            file_system_id: self.file_system_id,
-            posix_user: self.posix_user,
-            root_directory: self.root_directory,
+            access_point_id: self.access_point_id
+            ,
+            arn: self.arn
+            ,
+            client_token: self.client_token
+            ,
+            file_system_id: self.file_system_id
+            ,
+            posix_user: self.posix_user
+            ,
+            root_directory: self.root_directory
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about targets that resolved during the Automation execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolvedTargets {
+pub struct ResolvedTargets  {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
     #[doc(hidden)]
     pub parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,7 +13,7 @@ pub struct ResolvedTargets {
 }
 impl ResolvedTargets {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    pub fn parameter_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn parameter_values(&self) -> std::option::Option<& [std::string::String]> {
         self.parameter_values.as_deref()
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
@@ -43,17 +43,13 @@ impl ResolvedTargetsBuilder {
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
     pub fn parameter_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.parameter_values.unwrap_or_default();
-        v.push(input.into());
-        self.parameter_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.parameter_values = Some(v);
+                        self
     }
     /// <p>A list of parameter values sent to targets that resolved during the Automation execution.</p>
-    pub fn set_parameter_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.parameter_values = input;
-        self
+    pub fn set_parameter_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.parameter_values = input; self
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn truncated(mut self, input: bool) -> Self {
@@ -62,14 +58,17 @@ impl ResolvedTargetsBuilder {
     }
     /// <p>A boolean value indicating whether the resolved target list is truncated.</p>
     pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.truncated = input;
-        self
+        self.truncated = input; self
     }
     /// Consumes the builder and constructs a [`ResolvedTargets`](crate::types::ResolvedTargets).
     pub fn build(self) -> crate::types::ResolvedTargets {
         crate::types::ResolvedTargets {
-            parameter_values: self.parameter_values,
-            truncated: self.truncated.unwrap_or_default(),
+            parameter_values: self.parameter_values
+            ,
+            truncated: self.truncated
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

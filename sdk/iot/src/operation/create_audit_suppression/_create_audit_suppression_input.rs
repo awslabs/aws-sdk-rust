@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAuditSuppressionInput {
+pub struct CreateAuditSuppressionInput  {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     #[doc(hidden)]
     pub check_name: std::option::Option<std::string::String>,
@@ -24,15 +24,15 @@ pub struct CreateAuditSuppressionInput {
 }
 impl CreateAuditSuppressionInput {
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn check_name(&self) -> std::option::Option<&str> {
+    pub fn check_name(&self) -> std::option::Option<& str> {
         self.check_name.as_deref()
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&crate::types::ResourceIdentifier> {
+    pub fn resource_identifier(&self) -> std::option::Option<& crate::types::ResourceIdentifier> {
         self.resource_identifier.as_ref()
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
@@ -40,19 +40,17 @@ impl CreateAuditSuppressionInput {
         self.suppress_indefinitely
     }
     /// <p> The description of the audit suppression. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
 impl CreateAuditSuppressionInput {
     /// Creates a new builder-style object to manufacture [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
-    pub fn builder(
-    ) -> crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder {
         crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder::default()
     }
 }
@@ -76,8 +74,7 @@ impl CreateAuditSuppressionInputBuilder {
     }
     /// <p>An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
     pub fn set_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.check_name = input;
-        self
+        self.check_name = input; self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
     pub fn resource_identifier(mut self, input: crate::types::ResourceIdentifier) -> Self {
@@ -85,12 +82,8 @@ impl CreateAuditSuppressionInputBuilder {
         self
     }
     /// <p>Information that identifies the noncompliant resource.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: std::option::Option<crate::types::ResourceIdentifier>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: std::option::Option<crate::types::ResourceIdentifier>) -> Self {
+        self.resource_identifier = input; self
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
     pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -98,12 +91,8 @@ impl CreateAuditSuppressionInputBuilder {
         self
     }
     /// <p> The epoch timestamp in seconds at which this suppression expires. </p>
-    pub fn set_expiration_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration_date = input;
-        self
+    pub fn set_expiration_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration_date = input; self
     }
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn suppress_indefinitely(mut self, input: bool) -> Self {
@@ -112,8 +101,7 @@ impl CreateAuditSuppressionInputBuilder {
     }
     /// <p> Indicates whether a suppression should exist indefinitely or not. </p>
     pub fn set_suppress_indefinitely(mut self, input: std::option::Option<bool>) -> Self {
-        self.suppress_indefinitely = input;
-        self
+        self.suppress_indefinitely = input; self
     }
     /// <p> The description of the audit suppression. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +110,7 @@ impl CreateAuditSuppressionInputBuilder {
     }
     /// <p> The description of the audit suppression. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,29 +118,27 @@ impl CreateAuditSuppressionInputBuilder {
         self
     }
     /// <p> Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateAuditSuppressionInput`](crate::operation::create_audit_suppression::CreateAuditSuppressionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_audit_suppression::CreateAuditSuppressionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_audit_suppression::CreateAuditSuppressionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_audit_suppression::CreateAuditSuppressionInput {
-                check_name: self.check_name,
-                resource_identifier: self.resource_identifier,
-                expiration_date: self.expiration_date,
-                suppress_indefinitely: self.suppress_indefinitely,
-                description: self.description,
-                client_request_token: self.client_request_token,
-            },
+                check_name: self.check_name
+                ,
+                resource_identifier: self.resource_identifier
+                ,
+                expiration_date: self.expiration_date
+                ,
+                suppress_indefinitely: self.suppress_indefinitely
+                ,
+                description: self.description
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
         )
     }
 }
+

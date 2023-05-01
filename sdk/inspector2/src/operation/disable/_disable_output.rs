@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableOutput {
+pub struct DisableOutput  {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::types::Account>>,
@@ -13,19 +13,19 @@ pub struct DisableOutput {
 }
 impl DisableOutput {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::types::Account]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::types::Account]> {
         self.accounts.as_deref()
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<&[crate::types::FailedAccount]> {
+    pub fn failed_accounts(&self) -> std::option::Option<& [crate::types::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisableOutput {
     /// Creates a new builder-style object to manufacture [`DisableOutput`](crate::operation::disable::DisableOutput).
     pub fn builder() -> crate::operation::disable::builders::DisableOutputBuilder {
@@ -49,17 +49,13 @@ impl DisableOutputBuilder {
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
     pub fn accounts(mut self, input: crate::types::Account) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-        v.push(input);
-        self.accounts = Some(v);
-        self
+                        v.push(input);
+                        self.accounts = Some(v);
+                        self
     }
     /// <p>Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.</p>
-    pub fn set_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Account>>,
-    ) -> Self {
-        self.accounts = input;
-        self
+    pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Account>>) -> Self {
+        self.accounts = input; self
     }
     /// Appends an item to `failed_accounts`.
     ///
@@ -68,33 +64,32 @@ impl DisableOutputBuilder {
     /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
     pub fn failed_accounts(mut self, input: crate::types::FailedAccount) -> Self {
         let mut v = self.failed_accounts.unwrap_or_default();
-        v.push(input);
-        self.failed_accounts = Some(v);
-        self
+                        v.push(input);
+                        self.failed_accounts = Some(v);
+                        self
     }
     /// <p>Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.</p>
-    pub fn set_failed_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FailedAccount>>,
-    ) -> Self {
-        self.failed_accounts = input;
-        self
+    pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedAccount>>) -> Self {
+        self.failed_accounts = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisableOutput`](crate::operation::disable::DisableOutput).
     pub fn build(self) -> crate::operation::disable::DisableOutput {
         crate::operation::disable::DisableOutput {
-            accounts: self.accounts,
-            failed_accounts: self.failed_accounts,
+            accounts: self.accounts
+            ,
+            failed_accounts: self.failed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

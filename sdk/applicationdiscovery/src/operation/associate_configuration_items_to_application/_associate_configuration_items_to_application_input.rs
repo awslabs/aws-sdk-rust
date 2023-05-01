@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateConfigurationItemsToApplicationInput {
+pub struct AssociateConfigurationItemsToApplicationInput  {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
     #[doc(hidden)]
     pub application_configuration_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateConfigurationItemsToApplicationInput {
 }
 impl AssociateConfigurationItemsToApplicationInput {
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    pub fn application_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn application_configuration_id(&self) -> std::option::Option<& str> {
         self.application_configuration_id.as_deref()
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configuration_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.configuration_ids.as_deref()
     }
 }
 impl AssociateConfigurationItemsToApplicationInput {
     /// Creates a new builder-style object to manufacture [`AssociateConfigurationItemsToApplicationInput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput).
-    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder{
+    pub fn builder() -> crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder {
         crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
         self
     }
     /// <p>The configuration ID of an application with which items are to be associated.</p>
-    pub fn set_application_configuration_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_configuration_id = input;
-        self
+    pub fn set_application_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_configuration_id = input; self
     }
     /// Appends an item to `configuration_ids`.
     ///
@@ -55,20 +51,16 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
     /// <p>The ID of each configuration item to be associated with an application.</p>
     pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_ids = Some(v);
+                        self
     }
     /// <p>The ID of each configuration item to be associated with an application.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.configuration_ids = input;
-        self
+    pub fn set_configuration_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.configuration_ids = input; self
     }
     /// Consumes the builder and constructs a [`AssociateConfigurationItemsToApplicationInput`](crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput).
-    pub fn build(self) -> Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationInput {
                 application_configuration_id: self.application_configuration_id
@@ -79,3 +71,4 @@ impl AssociateConfigurationItemsToApplicationInputBuilder {
         )
     }
 }
+

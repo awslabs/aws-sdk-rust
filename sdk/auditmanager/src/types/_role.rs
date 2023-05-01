@@ -3,11 +3,11 @@
 /// <p> The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Role {
-    /// <p> The type of customer persona. </p> <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
+pub struct Role  {
+    /// <p> The type of customer persona. </p> <note> 
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p> 
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p> 
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub role_type: std::option::Option<crate::types::RoleType>,
@@ -16,16 +16,16 @@ pub struct Role {
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl Role {
-    /// <p> The type of customer persona. </p> <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note> 
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p> 
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p> 
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p> 
     /// </note>
-    pub fn role_type(&self) -> std::option::Option<&crate::types::RoleType> {
+    pub fn role_type(&self) -> std::option::Option<& crate::types::RoleType> {
         self.role_type.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -44,23 +44,22 @@ pub struct RoleBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
 }
 impl RoleBuilder {
-    /// <p> The type of customer persona. </p> <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note> 
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p> 
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p> 
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p> 
     /// </note>
     pub fn role_type(mut self, input: crate::types::RoleType) -> Self {
         self.role_type = Some(input);
         self
     }
-    /// <p> The type of customer persona. </p> <note>
-    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p>
-    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p>
-    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p>
+    /// <p> The type of customer persona. </p> <note> 
+    /// <p>In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>. </p> 
+    /// <p>In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.</p> 
+    /// <p>In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only be <code>RESOURCE_OWNER</code>.</p> 
     /// </note>
     pub fn set_role_type(mut self, input: std::option::Option<crate::types::RoleType>) -> Self {
-        self.role_type = input;
-        self
+        self.role_type = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,14 +68,16 @@ impl RoleBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`Role`](crate::types::Role).
     pub fn build(self) -> crate::types::Role {
         crate::types::Role {
-            role_type: self.role_type,
-            role_arn: self.role_arn,
+            role_type: self.role_type
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

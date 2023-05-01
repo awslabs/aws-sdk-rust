@@ -3,7 +3,7 @@
 /// <p> The billing period range in which the custom line item request will be applied. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomLineItemBillingPeriodRange {
+pub struct CustomLineItemBillingPeriodRange  {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
     #[doc(hidden)]
     pub inclusive_start_billing_period: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CustomLineItemBillingPeriodRange {
 }
 impl CustomLineItemBillingPeriodRange {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn inclusive_start_billing_period(&self) -> std::option::Option<&str> {
+    pub fn inclusive_start_billing_period(&self) -> std::option::Option<& str> {
         self.inclusive_start_billing_period.as_deref()
     }
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn exclusive_end_billing_period(&self) -> std::option::Option<&str> {
+    pub fn exclusive_end_billing_period(&self) -> std::option::Option<& str> {
         self.exclusive_end_billing_period.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl CustomLineItemBillingPeriodRangeBuilder {
         self
     }
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn set_inclusive_start_billing_period(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inclusive_start_billing_period = input;
-        self
+    pub fn set_inclusive_start_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inclusive_start_billing_period = input; self
     }
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
     pub fn exclusive_end_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl CustomLineItemBillingPeriodRangeBuilder {
         self
     }
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn set_exclusive_end_billing_period(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.exclusive_end_billing_period = input;
-        self
+    pub fn set_exclusive_end_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.exclusive_end_billing_period = input; self
     }
     /// Consumes the builder and constructs a [`CustomLineItemBillingPeriodRange`](crate::types::CustomLineItemBillingPeriodRange).
     pub fn build(self) -> crate::types::CustomLineItemBillingPeriodRange {
         crate::types::CustomLineItemBillingPeriodRange {
-            inclusive_start_billing_period: self.inclusive_start_billing_period,
-            exclusive_end_billing_period: self.exclusive_end_billing_period,
+            inclusive_start_billing_period: self.inclusive_start_billing_period
+            ,
+            exclusive_end_billing_period: self.exclusive_end_billing_period
+            ,
         }
     }
 }
+

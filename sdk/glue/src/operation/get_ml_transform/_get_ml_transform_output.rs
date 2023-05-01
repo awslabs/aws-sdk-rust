@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMlTransformOutput {
+pub struct GetMlTransformOutput  {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
@@ -43,15 +43,15 @@ pub struct GetMlTransformOutput {
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     #[doc(hidden)]
     pub glue_version: std::option::Option<std::string::String>,
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> 
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     #[doc(hidden)]
     pub max_capacity: std::option::Option<f64>,
-    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
-    /// <ul>
-    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
-    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
-    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p> 
+    /// <ul> 
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> 
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li> 
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub worker_type: std::option::Option<crate::types::WorkerType>,
@@ -71,39 +71,39 @@ pub struct GetMlTransformOutput {
 }
 impl GetMlTransformOutput {
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
-    pub fn transform_id(&self) -> std::option::Option<&str> {
+    pub fn transform_id(&self) -> std::option::Option<& str> {
         self.transform_id.as_deref()
     }
     /// <p>The unique name given to the transform when it was created.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the transform.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TransformStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TransformStatusType> {
         self.status.as_ref()
     }
     /// <p>The date and time when the transform was created.</p>
-    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The date and time when the transform was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn input_record_tables(&self) -> std::option::Option<&[crate::types::GlueTable]> {
+    pub fn input_record_tables(&self) -> std::option::Option<& [crate::types::GlueTable]> {
         self.input_record_tables.as_deref()
     }
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
-    pub fn parameters(&self) -> std::option::Option<&crate::types::TransformParameters> {
+    pub fn parameters(&self) -> std::option::Option<& crate::types::TransformParameters> {
         self.parameters.as_ref()
     }
     /// <p>The latest evaluation metrics.</p>
-    pub fn evaluation_metrics(&self) -> std::option::Option<&crate::types::EvaluationMetrics> {
+    pub fn evaluation_metrics(&self) -> std::option::Option<& crate::types::EvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
     /// <p>The number of labels available for this transform.</p>
@@ -112,29 +112,29 @@ impl GetMlTransformOutput {
     }
     /// <p>The <code>Map
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
-    pub fn schema(&self) -> std::option::Option<&[crate::types::SchemaColumn]> {
+    pub fn schema(&self) -> std::option::Option<& [crate::types::SchemaColumn]> {
         self.schema.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-    pub fn glue_version(&self) -> std::option::Option<&str> {
+    pub fn glue_version(&self) -> std::option::Option<& str> {
         self.glue_version.as_deref()
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> 
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(&self) -> std::option::Option<f64> {
         self.max_capacity
     }
-    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
-    /// <ul>
-    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
-    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
-    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p> 
+    /// <ul> 
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> 
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li> 
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li> 
     /// </ul>
-    pub fn worker_type(&self) -> std::option::Option<&crate::types::WorkerType> {
+    pub fn worker_type(&self) -> std::option::Option<& crate::types::WorkerType> {
         self.worker_type.as_ref()
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -150,15 +150,15 @@ impl GetMlTransformOutput {
         self.max_retries
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn transform_encryption(&self) -> std::option::Option<&crate::types::TransformEncryption> {
+    pub fn transform_encryption(&self) -> std::option::Option<& crate::types::TransformEncryption> {
         self.transform_encryption.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMlTransformOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMlTransformOutput {
     /// Creates a new builder-style object to manufacture [`GetMlTransformOutput`](crate::operation::get_ml_transform::GetMlTransformOutput).
     pub fn builder() -> crate::operation::get_ml_transform::builders::GetMlTransformOutputBuilder {
@@ -199,8 +199,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The unique identifier of the transform, generated at the time that the transform was created.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input;
-        self
+        self.transform_id = input; self
     }
     /// <p>The unique name given to the transform when it was created.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,8 +208,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The unique name given to the transform when it was created.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the transform.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,8 +217,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>A description of the transform.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
     pub fn status(mut self, input: crate::types::TransformStatusType) -> Self {
@@ -228,12 +225,8 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The last known status of the transform (to indicate whether it can be used or not). One of "NOT_READY", "READY", or "DELETING".</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TransformStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TransformStatusType>) -> Self {
+        self.status = input; self
     }
     /// <p>The date and time when the transform was created.</p>
     pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -241,12 +234,8 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The date and time when the transform was created.</p>
-    pub fn set_created_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_on = input;
-        self
+    pub fn set_created_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_on = input; self
     }
     /// <p>The date and time when the transform was last modified.</p>
     pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -254,12 +243,8 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The date and time when the transform was last modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_on = input;
-        self
+    pub fn set_last_modified_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_on = input; self
     }
     /// Appends an item to `input_record_tables`.
     ///
@@ -268,17 +253,13 @@ impl GetMlTransformOutputBuilder {
     /// <p>A list of Glue table definitions used by the transform.</p>
     pub fn input_record_tables(mut self, input: crate::types::GlueTable) -> Self {
         let mut v = self.input_record_tables.unwrap_or_default();
-        v.push(input);
-        self.input_record_tables = Some(v);
-        self
+                        v.push(input);
+                        self.input_record_tables = Some(v);
+                        self
     }
     /// <p>A list of Glue table definitions used by the transform.</p>
-    pub fn set_input_record_tables(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlueTable>>,
-    ) -> Self {
-        self.input_record_tables = input;
-        self
+    pub fn set_input_record_tables(mut self, input: std::option::Option<std::vec::Vec<crate::types::GlueTable>>) -> Self {
+        self.input_record_tables = input; self
     }
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
     pub fn parameters(mut self, input: crate::types::TransformParameters) -> Self {
@@ -286,12 +267,8 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The configuration parameters that are specific to the algorithm used.</p>
-    pub fn set_parameters(
-        mut self,
-        input: std::option::Option<crate::types::TransformParameters>,
-    ) -> Self {
-        self.parameters = input;
-        self
+    pub fn set_parameters(mut self, input: std::option::Option<crate::types::TransformParameters>) -> Self {
+        self.parameters = input; self
     }
     /// <p>The latest evaluation metrics.</p>
     pub fn evaluation_metrics(mut self, input: crate::types::EvaluationMetrics) -> Self {
@@ -299,12 +276,8 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The latest evaluation metrics.</p>
-    pub fn set_evaluation_metrics(
-        mut self,
-        input: std::option::Option<crate::types::EvaluationMetrics>,
-    ) -> Self {
-        self.evaluation_metrics = input;
-        self
+    pub fn set_evaluation_metrics(mut self, input: std::option::Option<crate::types::EvaluationMetrics>) -> Self {
+        self.evaluation_metrics = input; self
     }
     /// <p>The number of labels available for this transform.</p>
     pub fn label_count(mut self, input: i32) -> Self {
@@ -313,8 +286,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The number of labels available for this transform.</p>
     pub fn set_label_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.label_count = input;
-        self
+        self.label_count = input; self
     }
     /// Appends an item to `schema`.
     ///
@@ -324,18 +296,14 @@ impl GetMlTransformOutputBuilder {
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
     pub fn schema(mut self, input: crate::types::SchemaColumn) -> Self {
         let mut v = self.schema.unwrap_or_default();
-        v.push(input);
-        self.schema = Some(v);
-        self
+                        v.push(input);
+                        self.schema = Some(v);
+                        self
     }
     /// <p>The <code>Map
     /// <column, type></column,></code> object that represents the schema that this transform accepts. Has an upper bound of 100 columns.</p>
-    pub fn set_schema(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SchemaColumn>>,
-    ) -> Self {
-        self.schema = input;
-        self
+    pub fn set_schema(mut self, input: std::option::Option<std::vec::Vec<crate::types::SchemaColumn>>) -> Self {
+        self.schema = input; self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,8 +312,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,40 +321,37 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
     pub fn set_glue_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.glue_version = input;
-        self
+        self.glue_version = input; self
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> 
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn max_capacity(mut self, input: f64) -> Self {
         self.max_capacity = Some(input);
         self
     }
-    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p>
+    /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>. </p> 
     /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
     pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
-        self.max_capacity = input;
-        self
+        self.max_capacity = input; self
     }
-    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
-    /// <ul>
-    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
-    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
-    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p> 
+    /// <ul> 
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> 
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li> 
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li> 
     /// </ul>
     pub fn worker_type(mut self, input: crate::types::WorkerType) -> Self {
         self.worker_type = Some(input);
         self
     }
-    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
-    /// <ul>
-    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li>
-    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li>
-    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li>
+    /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p> 
+    /// <ul> 
+    /// <li> <p>For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.</p> </li> 
+    /// <li> <p>For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.</p> </li> 
+    /// <li> <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p> </li> 
     /// </ul>
     pub fn set_worker_type(mut self, input: std::option::Option<crate::types::WorkerType>) -> Self {
-        self.worker_type = input;
-        self
+        self.worker_type = input; self
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -396,8 +360,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
     pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_workers = input;
-        self
+        self.number_of_workers = input; self
     }
     /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -406,8 +369,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
     pub fn max_retries(mut self, input: i32) -> Self {
@@ -416,8 +378,7 @@ impl GetMlTransformOutputBuilder {
     }
     /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
     pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_retries = input;
-        self
+        self.max_retries = input; self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
     pub fn transform_encryption(mut self, input: crate::types::TransformEncryption) -> Self {
@@ -425,45 +386,62 @@ impl GetMlTransformOutputBuilder {
         self
     }
     /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-    pub fn set_transform_encryption(
-        mut self,
-        input: std::option::Option<crate::types::TransformEncryption>,
-    ) -> Self {
-        self.transform_encryption = input;
-        self
+    pub fn set_transform_encryption(mut self, input: std::option::Option<crate::types::TransformEncryption>) -> Self {
+        self.transform_encryption = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMlTransformOutput`](crate::operation::get_ml_transform::GetMlTransformOutput).
     pub fn build(self) -> crate::operation::get_ml_transform::GetMlTransformOutput {
         crate::operation::get_ml_transform::GetMlTransformOutput {
-            transform_id: self.transform_id,
-            name: self.name,
-            description: self.description,
-            status: self.status,
-            created_on: self.created_on,
-            last_modified_on: self.last_modified_on,
-            input_record_tables: self.input_record_tables,
-            parameters: self.parameters,
-            evaluation_metrics: self.evaluation_metrics,
-            label_count: self.label_count.unwrap_or_default(),
-            schema: self.schema,
-            role: self.role,
-            glue_version: self.glue_version,
-            max_capacity: self.max_capacity,
-            worker_type: self.worker_type,
-            number_of_workers: self.number_of_workers,
-            timeout: self.timeout,
-            max_retries: self.max_retries,
-            transform_encryption: self.transform_encryption,
+            transform_id: self.transform_id
+            ,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            created_on: self.created_on
+            ,
+            last_modified_on: self.last_modified_on
+            ,
+            input_record_tables: self.input_record_tables
+            ,
+            parameters: self.parameters
+            ,
+            evaluation_metrics: self.evaluation_metrics
+            ,
+            label_count: self.label_count
+                .unwrap_or_default()
+            ,
+            schema: self.schema
+            ,
+            role: self.role
+            ,
+            glue_version: self.glue_version
+            ,
+            max_capacity: self.max_capacity
+            ,
+            worker_type: self.worker_type
+            ,
+            number_of_workers: self.number_of_workers
+            ,
+            timeout: self.timeout
+            ,
+            max_retries: self.max_retries
+            ,
+            transform_encryption: self.transform_encryption
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

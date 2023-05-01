@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatalakeDelegatedAdminInput {
+pub struct CreateDatalakeDelegatedAdminInput  {
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
 }
 impl CreateDatalakeDelegatedAdminInput {
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
-    pub fn account(&self) -> std::option::Option<&str> {
+    pub fn account(&self) -> std::option::Option<& str> {
         self.account.as_deref()
     }
 }
 impl CreateDatalakeDelegatedAdminInput {
     /// Creates a new builder-style object to manufacture [`CreateDatalakeDelegatedAdminInput`](crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminInput).
-    pub fn builder() -> crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminInputBuilder{
+    pub fn builder() -> crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminInputBuilder {
         crate::operation::create_datalake_delegated_admin::builders::CreateDatalakeDelegatedAdminInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl CreateDatalakeDelegatedAdminInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Security Lake delegated administrator.</p>
     pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account = input;
-        self
+        self.account = input; self
     }
     /// Consumes the builder and constructs a [`CreateDatalakeDelegatedAdminInput`](crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_datalake_delegated_admin::CreateDatalakeDelegatedAdminInput {
-                account: self.account,
-            },
+                account: self.account
+                ,
+            }
         )
     }
 }
+

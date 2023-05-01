@@ -3,14 +3,14 @@
 /// <p>Describes an encryption key for a destination in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsEncryptionConfig {
+pub struct KmsEncryptionConfig  {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
     pub awskms_key_arn: std::option::Option<std::string::String>,
 }
 impl KmsEncryptionConfig {
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn awskms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn awskms_key_arn(&self) -> std::option::Option<& str> {
         self.awskms_key_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl KmsEncryptionConfigBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the encryption key. Must belong to the same Amazon Web Services Region as the destination Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn set_awskms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.awskms_key_arn = input;
-        self
+        self.awskms_key_arn = input; self
     }
     /// Consumes the builder and constructs a [`KmsEncryptionConfig`](crate::types::KmsEncryptionConfig).
     pub fn build(self) -> crate::types::KmsEncryptionConfig {
         crate::types::KmsEncryptionConfig {
-            awskms_key_arn: self.awskms_key_arn,
+            awskms_key_arn: self.awskms_key_arn
+            ,
         }
     }
 }
+

@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetV2LoggingLevelOutput {
+pub struct SetV2LoggingLevelOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetV2LoggingLevelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetV2LoggingLevelOutput {
     /// Creates a new builder-style object to manufacture [`SetV2LoggingLevelOutput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput).
-    pub fn builder(
-    ) -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelOutputBuilder {
+    pub fn builder() -> crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelOutputBuilder {
         crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct SetV2LoggingLevelOutputBuilder {
 }
 impl SetV2LoggingLevelOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetV2LoggingLevelOutput`](crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput).
     pub fn build(self) -> crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput {
         crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput {
@@ -41,3 +40,4 @@ impl SetV2LoggingLevelOutputBuilder {
         }
     }
 }
+

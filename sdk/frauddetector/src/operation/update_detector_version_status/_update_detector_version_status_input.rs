@@ -2,36 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorVersionStatusInput {
+pub struct UpdateDetectorVersionStatusInput  {
     /// <p>The detector ID. </p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The detector version ID. </p>
     #[doc(hidden)]
     pub detector_version_id: std::option::Option<std::string::String>,
-    /// <p>The new status.</p>
+    /// <p>The new status.</p> 
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::DetectorVersionStatus>,
 }
 impl UpdateDetectorVersionStatusInput {
     /// <p>The detector ID. </p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector version ID. </p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
-    /// <p>The new status.</p>
+    /// <p>The new status.</p> 
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DetectorVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DetectorVersionStatus> {
         self.status.as_ref()
     }
 }
 impl UpdateDetectorVersionStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
-    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder{
+    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder {
         crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder::default()
     }
 }
@@ -52,8 +52,7 @@ impl UpdateDetectorVersionStatusInputBuilder {
     }
     /// <p>The detector ID. </p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The detector version ID. </p>
     pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,41 +60,32 @@ impl UpdateDetectorVersionStatusInputBuilder {
         self
     }
     /// <p>The detector version ID. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.detector_version_id = input;
-        self
+    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.detector_version_id = input; self
     }
-    /// <p>The new status.</p>
+    /// <p>The new status.</p> 
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The new status.</p>
+    /// <p>The new status.</p> 
     /// <p>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code> </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DetectorVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusInput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_detector_version_status::UpdateDetectorVersionStatusInput {
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                status: self.status,
-            },
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

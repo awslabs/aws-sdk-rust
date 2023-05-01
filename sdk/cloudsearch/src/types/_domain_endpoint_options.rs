@@ -3,7 +3,7 @@
 /// <p>The domain's endpoint options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainEndpointOptions {
+pub struct DomainEndpointOptions  {
     /// <p>Whether the domain is HTTPS only enabled.</p>
     #[doc(hidden)]
     pub enforce_https: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl DomainEndpointOptions {
         self.enforce_https
     }
     /// <p>The minimum required TLS version</p>
-    pub fn tls_security_policy(&self) -> std::option::Option<&crate::types::TlsSecurityPolicy> {
+    pub fn tls_security_policy(&self) -> std::option::Option<& crate::types::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Whether the domain is HTTPS only enabled.</p>
     pub fn set_enforce_https(mut self, input: std::option::Option<bool>) -> Self {
-        self.enforce_https = input;
-        self
+        self.enforce_https = input; self
     }
     /// <p>The minimum required TLS version</p>
     pub fn tls_security_policy(mut self, input: crate::types::TlsSecurityPolicy) -> Self {
@@ -52,18 +51,17 @@ impl DomainEndpointOptionsBuilder {
         self
     }
     /// <p>The minimum required TLS version</p>
-    pub fn set_tls_security_policy(
-        mut self,
-        input: std::option::Option<crate::types::TlsSecurityPolicy>,
-    ) -> Self {
-        self.tls_security_policy = input;
-        self
+    pub fn set_tls_security_policy(mut self, input: std::option::Option<crate::types::TlsSecurityPolicy>) -> Self {
+        self.tls_security_policy = input; self
     }
     /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).
     pub fn build(self) -> crate::types::DomainEndpointOptions {
         crate::types::DomainEndpointOptions {
-            enforce_https: self.enforce_https,
-            tls_security_policy: self.tls_security_policy,
+            enforce_https: self.enforce_https
+            ,
+            tls_security_policy: self.tls_security_policy
+            ,
         }
     }
 }
+

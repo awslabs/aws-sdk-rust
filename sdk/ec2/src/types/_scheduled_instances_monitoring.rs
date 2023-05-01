@@ -3,7 +3,7 @@
 /// <p>Describes whether monitoring is enabled for a Scheduled Instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledInstancesMonitoring {
+pub struct ScheduledInstancesMonitoring  {
     /// <p>Indicates whether monitoring is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl ScheduledInstancesMonitoringBuilder {
     }
     /// <p>Indicates whether monitoring is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesMonitoring`](crate::types::ScheduledInstancesMonitoring).
     pub fn build(self) -> crate::types::ScheduledInstancesMonitoring {
         crate::types::ScheduledInstancesMonitoring {
-            enabled: self.enabled,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for EvaluateExpression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluateExpressionInput {
+pub struct EvaluateExpressionInput  {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct EvaluateExpressionInput {
 }
 impl EvaluateExpressionInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> std::option::Option<& str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The ID of the object.</p>
-    pub fn object_id(&self) -> std::option::Option<&str> {
+    pub fn object_id(&self) -> std::option::Option<& str> {
         self.object_id.as_deref()
     }
     /// <p>The expression to evaluate.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
 impl EvaluateExpressionInput {
     /// Creates a new builder-style object to manufacture [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
-    pub fn builder(
-    ) -> crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder {
+    pub fn builder() -> crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder {
         crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl EvaluateExpressionInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_id = input;
-        self
+        self.pipeline_id = input; self
     }
     /// <p>The ID of the object.</p>
     pub fn object_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl EvaluateExpressionInputBuilder {
     }
     /// <p>The ID of the object.</p>
     pub fn set_object_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_id = input;
-        self
+        self.object_id = input; self
     }
     /// <p>The expression to evaluate.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +69,20 @@ impl EvaluateExpressionInputBuilder {
     }
     /// <p>The expression to evaluate.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// Consumes the builder and constructs a [`EvaluateExpressionInput`](crate::operation::evaluate_expression::EvaluateExpressionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::evaluate_expression::EvaluateExpressionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::evaluate_expression::EvaluateExpressionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::evaluate_expression::EvaluateExpressionInput {
-                pipeline_id: self.pipeline_id,
-                object_id: self.object_id,
-                expression: self.expression,
-            },
+                pipeline_id: self.pipeline_id
+                ,
+                object_id: self.object_id
+                ,
+                expression: self.expression
+                ,
+            }
         )
     }
 }
+

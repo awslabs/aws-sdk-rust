@@ -3,7 +3,7 @@
 /// <p>Describes how to sort the data that you bind to a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortProperty {
+pub struct SortProperty  {
     /// <p>The field to perform the sort on.</p>
     #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SortProperty {
 }
 impl SortProperty {
     /// <p>The field to perform the sort on.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::types::SortDirection> {
+    pub fn direction(&self) -> std::option::Option<& crate::types::SortDirection> {
         self.direction.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl SortPropertyBuilder {
     }
     /// <p>The field to perform the sort on.</p>
     pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field = input;
-        self
+        self.field = input; self
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
     pub fn direction(mut self, input: crate::types::SortDirection) -> Self {
@@ -52,18 +51,17 @@ impl SortPropertyBuilder {
         self
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub fn set_direction(
-        mut self,
-        input: std::option::Option<crate::types::SortDirection>,
-    ) -> Self {
-        self.direction = input;
-        self
+    pub fn set_direction(mut self, input: std::option::Option<crate::types::SortDirection>) -> Self {
+        self.direction = input; self
     }
     /// Consumes the builder and constructs a [`SortProperty`](crate::types::SortProperty).
     pub fn build(self) -> crate::types::SortProperty {
         crate::types::SortProperty {
-            field: self.field,
-            direction: self.direction,
+            field: self.field
+            ,
+            direction: self.direction
+            ,
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobInput {
+pub struct GetJobInput  {
     /// <p>The ARN of the job to retrieve.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
 }
 impl GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetJobInputBuilder {
     }
     /// <p>The ARN of the job to retrieve.</p>
     pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_arn = input;
-        self
+        self.job_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
-    pub fn build(
-        self,
-    ) -> Result<crate::operation::get_job::GetJobInput, aws_smithy_http::operation::error::BuildError>
-    {
-        Ok(crate::operation::get_job::GetJobInput {
-            job_arn: self.job_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_job::GetJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_job::GetJobInput {
+                job_arn: self.job_arn
+                ,
+            }
+        )
     }
 }
+

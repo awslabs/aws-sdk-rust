@@ -3,7 +3,7 @@
 /// <p>Contains details about a specific Map Run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapRunListItem {
+pub struct MapRunListItem  {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct MapRunListItem {
 }
 impl MapRunListItem {
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The date on which the Map Run started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date on which the Map Run stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl MapRunListItemBuilder {
     }
     /// <p>The <code>executionArn</code> of the execution from which the Map Run was started.</p>
     pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
     pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl MapRunListItemBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Map Run.</p>
     pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
     pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,12 +84,8 @@ impl MapRunListItemBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.state_machine_arn = input;
-        self
+    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.state_machine_arn = input; self
     }
     /// <p>The date on which the Map Run started.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,12 +93,8 @@ impl MapRunListItemBuilder {
         self
     }
     /// <p>The date on which the Map Run started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
     }
     /// <p>The date on which the Map Run stopped.</p>
     pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -113,17 +103,22 @@ impl MapRunListItemBuilder {
     }
     /// <p>The date on which the Map Run stopped.</p>
     pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_date = input;
-        self
+        self.stop_date = input; self
     }
     /// Consumes the builder and constructs a [`MapRunListItem`](crate::types::MapRunListItem).
     pub fn build(self) -> crate::types::MapRunListItem {
         crate::types::MapRunListItem {
-            execution_arn: self.execution_arn,
-            map_run_arn: self.map_run_arn,
-            state_machine_arn: self.state_machine_arn,
-            start_date: self.start_date,
-            stop_date: self.stop_date,
+            execution_arn: self.execution_arn
+            ,
+            map_run_arn: self.map_run_arn
+            ,
+            state_machine_arn: self.state_machine_arn
+            ,
+            start_date: self.start_date
+            ,
+            stop_date: self.stop_date
+            ,
         }
     }
 }
+

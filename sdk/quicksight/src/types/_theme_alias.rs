@@ -3,7 +3,7 @@
 /// <p>An alias for a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeAlias {
+pub struct ThemeAlias  {
     /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ThemeAlias {
 }
 impl ThemeAlias {
     /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The display name of the theme alias.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
     /// <p>The version number of the theme alias.</p>
@@ -51,8 +51,7 @@ impl ThemeAliasBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the theme alias.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The display name of the theme alias.</p>
     pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ThemeAliasBuilder {
     }
     /// <p>The display name of the theme alias.</p>
     pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// <p>The version number of the theme alias.</p>
     pub fn theme_version_number(mut self, input: i64) -> Self {
@@ -71,15 +69,18 @@ impl ThemeAliasBuilder {
     }
     /// <p>The version number of the theme alias.</p>
     pub fn set_theme_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.theme_version_number = input;
-        self
+        self.theme_version_number = input; self
     }
     /// Consumes the builder and constructs a [`ThemeAlias`](crate::types::ThemeAlias).
     pub fn build(self) -> crate::types::ThemeAlias {
         crate::types::ThemeAlias {
-            arn: self.arn,
-            alias_name: self.alias_name,
-            theme_version_number: self.theme_version_number,
+            arn: self.arn
+            ,
+            alias_name: self.alias_name
+            ,
+            theme_version_number: self.theme_version_number
+            ,
         }
     }
 }
+

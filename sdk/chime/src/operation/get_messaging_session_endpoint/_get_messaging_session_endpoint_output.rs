@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMessagingSessionEndpointOutput {
+pub struct GetMessagingSessionEndpointOutput  {
     /// <p>The endpoint returned in the response.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::types::MessagingSessionEndpoint>,
@@ -10,18 +10,18 @@ pub struct GetMessagingSessionEndpointOutput {
 }
 impl GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
-    pub fn endpoint(&self) -> std::option::Option<&crate::types::MessagingSessionEndpoint> {
+    pub fn endpoint(&self) -> std::option::Option<& crate::types::MessagingSessionEndpoint> {
         self.endpoint.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetMessagingSessionEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetMessagingSessionEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetMessagingSessionEndpointOutput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput).
-    pub fn builder() -> crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder{
+    pub fn builder() -> crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder {
         crate::operation::get_messaging_session_endpoint::builders::GetMessagingSessionEndpointOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl GetMessagingSessionEndpointOutputBuilder {
         self
     }
     /// <p>The endpoint returned in the response.</p>
-    pub fn set_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::MessagingSessionEndpoint>,
-    ) -> Self {
-        self.endpoint = input;
-        self
+    pub fn set_endpoint(mut self, input: std::option::Option<crate::types::MessagingSessionEndpoint>) -> Self {
+        self.endpoint = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetMessagingSessionEndpointOutput`](crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput {
+    pub fn build(self) -> crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput {
         crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput {
-            endpoint: self.endpoint,
+            endpoint: self.endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

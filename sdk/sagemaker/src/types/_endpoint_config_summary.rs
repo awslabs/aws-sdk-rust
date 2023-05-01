@@ -3,7 +3,7 @@
 /// <p>Provides summary information for an endpoint configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointConfigSummary {
+pub struct EndpointConfigSummary  {
     /// <p>The name of the endpoint configuration.</p>
     #[doc(hidden)]
     pub endpoint_config_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct EndpointConfigSummary {
 }
 impl EndpointConfigSummary {
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> std::option::Option<& str> {
         self.endpoint_config_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
-    pub fn endpoint_config_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_config_arn(&self) -> std::option::Option<& str> {
         self.endpoint_config_arn.as_deref()
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl EndpointConfigSummaryBuilder {
         self
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn set_endpoint_config_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.endpoint_config_name = input;
-        self
+    pub fn set_endpoint_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.endpoint_config_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
     pub fn endpoint_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,12 +59,8 @@ impl EndpointConfigSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>
-    pub fn set_endpoint_config_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.endpoint_config_arn = input;
-        self
+    pub fn set_endpoint_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.endpoint_config_arn = input; self
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,19 +68,19 @@ impl EndpointConfigSummaryBuilder {
         self
     }
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// Consumes the builder and constructs a [`EndpointConfigSummary`](crate::types::EndpointConfigSummary).
     pub fn build(self) -> crate::types::EndpointConfigSummary {
         crate::types::EndpointConfigSummary {
-            endpoint_config_name: self.endpoint_config_name,
-            endpoint_config_arn: self.endpoint_config_arn,
-            creation_time: self.creation_time,
+            endpoint_config_name: self.endpoint_config_name
+            ,
+            endpoint_config_arn: self.endpoint_config_arn
+            ,
+            creation_time: self.creation_time
+            ,
         }
     }
 }
+

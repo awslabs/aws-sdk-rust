@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNetworkAnalyzerConfigurationOutput {
+pub struct UpdateNetworkAnalyzerConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateNetworkAnalyzerConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateNetworkAnalyzerConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkAnalyzerConfigurationOutput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput).
-    pub fn builder() -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationOutputBuilder {
         crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationOutputBuilder::default()
     }
 }
@@ -25,18 +25,19 @@ pub struct UpdateNetworkAnalyzerConfigurationOutputBuilder {
 }
 impl UpdateNetworkAnalyzerConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateNetworkAnalyzerConfigurationOutput`](crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput{
+    pub fn build(self) -> crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput {
         crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfigurationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

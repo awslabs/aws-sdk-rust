@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let s3serversideencryptiontype = unimplemented!();
 /// match s3serversideencryptiontype {
@@ -30,64 +30,55 @@
 /// Specifically, when `s3serversideencryptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `S3ServerSideEncryptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum S3ServerSideEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     ServerSideEncryptionKms,
     #[allow(missing_docs)] // documentation missing in model
     ServerSideEncryptionS3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for S3ServerSideEncryptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SERVER_SIDE_ENCRYPTION_KMS" => S3ServerSideEncryptionType::ServerSideEncryptionKms,
-            "SERVER_SIDE_ENCRYPTION_S3" => S3ServerSideEncryptionType::ServerSideEncryptionS3,
-            other => S3ServerSideEncryptionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "SERVER_SIDE_ENCRYPTION_KMS" => S3ServerSideEncryptionType::ServerSideEncryptionKms,
+"SERVER_SIDE_ENCRYPTION_S3" => S3ServerSideEncryptionType::ServerSideEncryptionS3,
+other => S3ServerSideEncryptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for S3ServerSideEncryptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ServerSideEncryptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(S3ServerSideEncryptionType::from(s))
+                }
+            }
 impl S3ServerSideEncryptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            S3ServerSideEncryptionType::ServerSideEncryptionKms => "SERVER_SIDE_ENCRYPTION_KMS",
-            S3ServerSideEncryptionType::ServerSideEncryptionS3 => "SERVER_SIDE_ENCRYPTION_S3",
-            S3ServerSideEncryptionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["SERVER_SIDE_ENCRYPTION_KMS", "SERVER_SIDE_ENCRYPTION_S3"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    S3ServerSideEncryptionType::ServerSideEncryptionKms => "SERVER_SIDE_ENCRYPTION_KMS",
+    S3ServerSideEncryptionType::ServerSideEncryptionS3 => "SERVER_SIDE_ENCRYPTION_S3",
+    S3ServerSideEncryptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["SERVER_SIDE_ENCRYPTION_KMS", "SERVER_SIDE_ENCRYPTION_S3"]
+                }
+            }
 impl AsRef<str> for S3ServerSideEncryptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

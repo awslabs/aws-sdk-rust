@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssignmentDeletionStatusOutput {
+pub struct ListAccountAssignmentDeletionStatusOutput  {
     /// <p>The status object for the account assignment deletion operation.</p>
     #[doc(hidden)]
-    pub account_assignments_deletion_status:
-        std::option::Option<std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
+    pub account_assignments_deletion_status: std::option::Option<std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListAccountAssignmentDeletionStatusOutput {
 }
 impl ListAccountAssignmentDeletionStatusOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn account_assignments_deletion_status(
-        &self,
-    ) -> std::option::Option<&[crate::types::AccountAssignmentOperationStatusMetadata]> {
+    pub fn account_assignments_deletion_status(&self) -> std::option::Option<& [crate::types::AccountAssignmentOperationStatusMetadata]> {
         self.account_assignments_deletion_status.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccountAssignmentDeletionStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAccountAssignmentDeletionStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssignmentDeletionStatusOutput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput).
-    pub fn builder() -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusOutputBuilder{
+    pub fn builder() -> crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusOutputBuilder {
         crate::operation::list_account_assignment_deletion_status::builders::ListAccountAssignmentDeletionStatusOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListAccountAssignmentDeletionStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountAssignmentDeletionStatusOutputBuilder {
-    pub(crate) account_assignments_deletion_status:
-        std::option::Option<std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
+    pub(crate) account_assignments_deletion_status: std::option::Option<std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,24 +47,15 @@ impl ListAccountAssignmentDeletionStatusOutputBuilder {
     /// To override the contents of this collection use [`set_account_assignments_deletion_status`](Self::set_account_assignments_deletion_status).
     ///
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn account_assignments_deletion_status(
-        mut self,
-        input: crate::types::AccountAssignmentOperationStatusMetadata,
-    ) -> Self {
+    pub fn account_assignments_deletion_status(mut self, input: crate::types::AccountAssignmentOperationStatusMetadata) -> Self {
         let mut v = self.account_assignments_deletion_status.unwrap_or_default();
-        v.push(input);
-        self.account_assignments_deletion_status = Some(v);
-        self
+                        v.push(input);
+                        self.account_assignments_deletion_status = Some(v);
+                        self
     }
     /// <p>The status object for the account assignment deletion operation.</p>
-    pub fn set_account_assignments_deletion_status(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>,
-        >,
-    ) -> Self {
-        self.account_assignments_deletion_status = input;
-        self
+    pub fn set_account_assignments_deletion_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountAssignmentOperationStatusMetadata>>) -> Self {
+        self.account_assignments_deletion_status = input; self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +64,19 @@ impl ListAccountAssignmentDeletionStatusOutputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAccountAssignmentDeletionStatusOutput`](crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput).
-    pub fn build(self) -> crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput{
+    pub fn build(self) -> crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput {
         crate::operation::list_account_assignment_deletion_status::ListAccountAssignmentDeletionStatusOutput {
             account_assignments_deletion_status: self.account_assignments_deletion_status
             ,
@@ -100,3 +86,4 @@ impl ListAccountAssignmentDeletionStatusOutputBuilder {
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UndeploySystemInstanceOutput {
+pub struct UndeploySystemInstanceOutput  {
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::SystemInstanceSummary>,
@@ -10,20 +10,18 @@ pub struct UndeploySystemInstanceOutput {
 }
 impl UndeploySystemInstanceOutput {
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::SystemInstanceSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::types::SystemInstanceSummary> {
         self.summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UndeploySystemInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UndeploySystemInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UndeploySystemInstanceOutput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceOutputBuilder {
         crate::operation::undeploy_system_instance::builders::UndeploySystemInstanceOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl UndeploySystemInstanceOutputBuilder {
         self
     }
     /// <p>An object that contains summary information about the system instance that was removed from its target.</p>
-    pub fn set_summary(
-        mut self,
-        input: std::option::Option<crate::types::SystemInstanceSummary>,
-    ) -> Self {
-        self.summary = input;
-        self
+    pub fn set_summary(mut self, input: std::option::Option<crate::types::SystemInstanceSummary>) -> Self {
+        self.summary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UndeploySystemInstanceOutput`](crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput).
     pub fn build(self) -> crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput {
         crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput {
-            summary: self.summary,
+            summary: self.summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

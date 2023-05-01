@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ulimitname = unimplemented!();
 /// match ulimitname {
@@ -43,22 +43,14 @@
 /// Specifically, when `ulimitname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UlimitName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UlimitName {
     #[allow(missing_docs)] // documentation missing in model
     Core,
@@ -91,82 +83,67 @@ pub enum UlimitName {
     #[allow(missing_docs)] // documentation missing in model
     Stack,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UlimitName {
-    fn from(s: &str) -> Self {
-        match s {
-            "core" => UlimitName::Core,
-            "cpu" => UlimitName::Cpu,
-            "data" => UlimitName::Data,
-            "fsize" => UlimitName::Fsize,
-            "locks" => UlimitName::Locks,
-            "memlock" => UlimitName::Memlock,
-            "msgqueue" => UlimitName::Msgqueue,
-            "nice" => UlimitName::Nice,
-            "nofile" => UlimitName::Nofile,
-            "nproc" => UlimitName::Nproc,
-            "rss" => UlimitName::Rss,
-            "rtprio" => UlimitName::Rtprio,
-            "rttime" => UlimitName::Rttime,
-            "sigpending" => UlimitName::Sigpending,
-            "stack" => UlimitName::Stack,
-            other => UlimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "core" => UlimitName::Core,
+"cpu" => UlimitName::Cpu,
+"data" => UlimitName::Data,
+"fsize" => UlimitName::Fsize,
+"locks" => UlimitName::Locks,
+"memlock" => UlimitName::Memlock,
+"msgqueue" => UlimitName::Msgqueue,
+"nice" => UlimitName::Nice,
+"nofile" => UlimitName::Nofile,
+"nproc" => UlimitName::Nproc,
+"rss" => UlimitName::Rss,
+"rtprio" => UlimitName::Rtprio,
+"rttime" => UlimitName::Rttime,
+"sigpending" => UlimitName::Sigpending,
+"stack" => UlimitName::Stack,
+other => UlimitName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for UlimitName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UlimitName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UlimitName::from(s))
+                }
+            }
 impl UlimitName {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            UlimitName::Core => "core",
-            UlimitName::Cpu => "cpu",
-            UlimitName::Data => "data",
-            UlimitName::Fsize => "fsize",
-            UlimitName::Locks => "locks",
-            UlimitName::Memlock => "memlock",
-            UlimitName::Msgqueue => "msgqueue",
-            UlimitName::Nice => "nice",
-            UlimitName::Nofile => "nofile",
-            UlimitName::Nproc => "nproc",
-            UlimitName::Rss => "rss",
-            UlimitName::Rtprio => "rtprio",
-            UlimitName::Rttime => "rttime",
-            UlimitName::Sigpending => "sigpending",
-            UlimitName::Stack => "stack",
-            UlimitName::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "core",
-            "cpu",
-            "data",
-            "fsize",
-            "locks",
-            "memlock",
-            "msgqueue",
-            "nice",
-            "nofile",
-            "nproc",
-            "rss",
-            "rtprio",
-            "rttime",
-            "sigpending",
-            "stack",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    UlimitName::Core => "core",
+    UlimitName::Cpu => "cpu",
+    UlimitName::Data => "data",
+    UlimitName::Fsize => "fsize",
+    UlimitName::Locks => "locks",
+    UlimitName::Memlock => "memlock",
+    UlimitName::Msgqueue => "msgqueue",
+    UlimitName::Nice => "nice",
+    UlimitName::Nofile => "nofile",
+    UlimitName::Nproc => "nproc",
+    UlimitName::Rss => "rss",
+    UlimitName::Rtprio => "rtprio",
+    UlimitName::Rttime => "rttime",
+    UlimitName::Sigpending => "sigpending",
+    UlimitName::Stack => "stack",
+    UlimitName::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["core", "cpu", "data", "fsize", "locks", "memlock", "msgqueue", "nice", "nofile", "nproc", "rss", "rtprio", "rttime", "sigpending", "stack"]
+                }
+            }
 impl AsRef<str> for UlimitName {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

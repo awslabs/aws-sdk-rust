@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppInputSourcesOutput {
+pub struct ListAppInputSourcesOutput  {
     /// <p>The list of Resilience Hub application input sources.</p>
     #[doc(hidden)]
     pub app_input_sources: std::option::Option<std::vec::Vec<crate::types::AppInputSource>>,
@@ -13,23 +13,22 @@ pub struct ListAppInputSourcesOutput {
 }
 impl ListAppInputSourcesOutput {
     /// <p>The list of Resilience Hub application input sources.</p>
-    pub fn app_input_sources(&self) -> std::option::Option<&[crate::types::AppInputSource]> {
+    pub fn app_input_sources(&self) -> std::option::Option<& [crate::types::AppInputSource]> {
         self.app_input_sources.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAppInputSourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAppInputSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAppInputSourcesOutput`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder {
         crate::operation::list_app_input_sources::builders::ListAppInputSourcesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListAppInputSourcesOutputBuilder {
     /// <p>The list of Resilience Hub application input sources.</p>
     pub fn app_input_sources(mut self, input: crate::types::AppInputSource) -> Self {
         let mut v = self.app_input_sources.unwrap_or_default();
-        v.push(input);
-        self.app_input_sources = Some(v);
-        self
+                        v.push(input);
+                        self.app_input_sources = Some(v);
+                        self
     }
     /// <p>The list of Resilience Hub application input sources.</p>
-    pub fn set_app_input_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AppInputSource>>,
-    ) -> Self {
-        self.app_input_sources = input;
-        self
+    pub fn set_app_input_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::AppInputSource>>) -> Self {
+        self.app_input_sources = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListAppInputSourcesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAppInputSourcesOutput`](crate::operation::list_app_input_sources::ListAppInputSourcesOutput).
     pub fn build(self) -> crate::operation::list_app_input_sources::ListAppInputSourcesOutput {
         crate::operation::list_app_input_sources::ListAppInputSourcesOutput {
-            app_input_sources: self.app_input_sources,
-            next_token: self.next_token,
+            app_input_sources: self.app_input_sources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProvisionedProductOutputsOutput {
+pub struct GetProvisionedProductOutputsOutput  {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
     #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::types::RecordOutput>>,
@@ -13,22 +13,22 @@ pub struct GetProvisionedProductOutputsOutput {
 }
 impl GetProvisionedProductOutputsOutput {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::RecordOutput]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::types::RecordOutput]> {
         self.outputs.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetProvisionedProductOutputsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetProvisionedProductOutputsOutput {
     /// Creates a new builder-style object to manufacture [`GetProvisionedProductOutputsOutput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput).
-    pub fn builder() -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsOutputBuilder{
+    pub fn builder() -> crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsOutputBuilder {
         crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl GetProvisionedProductOutputsOutputBuilder {
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
     pub fn outputs(mut self, input: crate::types::RecordOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = Some(v);
-        self
+                        v.push(input);
+                        self.outputs = Some(v);
+                        self
     }
     /// <p>Information about the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. </p>
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecordOutput>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecordOutput>>) -> Self {
+        self.outputs = input; self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,26 +64,26 @@ impl GetProvisionedProductOutputsOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetProvisionedProductOutputsOutput`](crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput {
+    pub fn build(self) -> crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput {
         crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput {
-            outputs: self.outputs,
-            next_page_token: self.next_page_token,
+            outputs: self.outputs
+            ,
+            next_page_token: self.next_page_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

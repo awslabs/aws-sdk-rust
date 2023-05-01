@@ -3,7 +3,7 @@
 /// <p>The general configuration of a column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnConfiguration {
+pub struct ColumnConfiguration  {
     /// <p>The column.</p>
     #[doc(hidden)]
     pub column: std::option::Option<crate::types::ColumnIdentifier>,
@@ -16,15 +16,15 @@ pub struct ColumnConfiguration {
 }
 impl ColumnConfiguration {
     /// <p>The column.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The format configuration of a column.</p>
-    pub fn format_configuration(&self) -> std::option::Option<&crate::types::FormatConfiguration> {
+    pub fn format_configuration(&self) -> std::option::Option<& crate::types::FormatConfiguration> {
         self.format_configuration.as_ref()
     }
     /// <p>The role of the column.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::ColumnRole> {
+    pub fn role(&self) -> std::option::Option<& crate::types::ColumnRole> {
         self.role.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl ColumnConfigurationBuilder {
         self
     }
     /// <p>The column.</p>
-    pub fn set_column(
-        mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
-    ) -> Self {
-        self.column = input;
-        self
+    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
+        self.column = input; self
     }
     /// <p>The format configuration of a column.</p>
     pub fn format_configuration(mut self, input: crate::types::FormatConfiguration) -> Self {
@@ -63,12 +59,8 @@ impl ColumnConfigurationBuilder {
         self
     }
     /// <p>The format configuration of a column.</p>
-    pub fn set_format_configuration(
-        mut self,
-        input: std::option::Option<crate::types::FormatConfiguration>,
-    ) -> Self {
-        self.format_configuration = input;
-        self
+    pub fn set_format_configuration(mut self, input: std::option::Option<crate::types::FormatConfiguration>) -> Self {
+        self.format_configuration = input; self
     }
     /// <p>The role of the column.</p>
     pub fn role(mut self, input: crate::types::ColumnRole) -> Self {
@@ -77,15 +69,18 @@ impl ColumnConfigurationBuilder {
     }
     /// <p>The role of the column.</p>
     pub fn set_role(mut self, input: std::option::Option<crate::types::ColumnRole>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// Consumes the builder and constructs a [`ColumnConfiguration`](crate::types::ColumnConfiguration).
     pub fn build(self) -> crate::types::ColumnConfiguration {
         crate::types::ColumnConfiguration {
-            column: self.column,
-            format_configuration: self.format_configuration,
-            role: self.role,
+            column: self.column
+            ,
+            format_configuration: self.format_configuration
+            ,
+            role: self.role
+            ,
         }
     }
 }
+

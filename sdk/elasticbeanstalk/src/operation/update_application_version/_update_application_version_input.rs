@@ -3,12 +3,12 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationVersionInput {
-    /// <p>The name of the application associated with this version.</p>
+pub struct UpdateApplicationVersionInput  {
+    /// <p>The name of the application associated with this version.</p> 
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
-    /// <p>The name of the version to update.</p>
+    /// <p>The name of the version to update.</p> 
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
     pub version_label: std::option::Option<std::string::String>,
@@ -17,26 +17,24 @@ pub struct UpdateApplicationVersionInput {
     pub description: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationVersionInput {
-    /// <p>The name of the application associated with this version.</p>
+    /// <p>The name of the application associated with this version.</p> 
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
-    /// <p>The name of the version to update.</p>
+    /// <p>The name of the version to update.</p> 
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> std::option::Option<& str> {
         self.version_label.as_deref()
     }
     /// <p>A new description for this version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationVersionInput`](crate::operation::update_application_version::UpdateApplicationVersionInput).
-    pub fn builder(
-    ) -> crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder {
         crate::operation::update_application_version::builders::UpdateApplicationVersionInputBuilder::default()
     }
 }
@@ -50,29 +48,27 @@ pub struct UpdateApplicationVersionInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
 }
 impl UpdateApplicationVersionInputBuilder {
-    /// <p>The name of the application associated with this version.</p>
+    /// <p>The name of the application associated with this version.</p> 
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.application_name = Some(input.into());
         self
     }
-    /// <p>The name of the application associated with this version.</p>
+    /// <p>The name of the application associated with this version.</p> 
     /// <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
-    /// <p>The name of the version to update.</p>
+    /// <p>The name of the version to update.</p> 
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
         self.version_label = Some(input.into());
         self
     }
-    /// <p>The name of the version to update.</p>
+    /// <p>The name of the version to update.</p> 
     /// <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_label = input;
-        self
+        self.version_label = input; self
     }
     /// <p>A new description for this version.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +77,20 @@ impl UpdateApplicationVersionInputBuilder {
     }
     /// <p>A new description for this version.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationVersionInput`](crate::operation::update_application_version::UpdateApplicationVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_application_version::UpdateApplicationVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_application_version::UpdateApplicationVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_application_version::UpdateApplicationVersionInput {
-                application_name: self.application_name,
-                version_label: self.version_label,
-                description: self.description,
-            },
+                application_name: self.application_name
+                ,
+                version_label: self.version_label
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

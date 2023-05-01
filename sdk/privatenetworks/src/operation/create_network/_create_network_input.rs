@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateNetworkInput {
+pub struct CreateNetworkInput  {
     /// <p>The name of the network. You can't change the name after you create the network.</p>
     #[doc(hidden)]
     pub network_name: std::option::Option<std::string::String>,
@@ -14,31 +14,27 @@ pub struct CreateNetworkInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p> The tags to apply to the network. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateNetworkInput {
     /// <p>The name of the network. You can't change the name after you create the network.</p>
-    pub fn network_name(&self) -> std::option::Option<&str> {
+    pub fn network_name(&self) -> std::option::Option<& str> {
         self.network_name.as_deref()
     }
     /// <p>The description of the network.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p> The tags to apply to the network. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateNetworkInput {
+impl  std::fmt::Debug for CreateNetworkInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkInput");
         formatter.field("network_name", &self.network_name);
@@ -62,8 +58,7 @@ pub struct CreateNetworkInputBuilder {
     pub(crate) network_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateNetworkInputBuilder {
     /// <p>The name of the network. You can't change the name after you create the network.</p>
@@ -73,8 +68,7 @@ impl CreateNetworkInputBuilder {
     }
     /// <p>The name of the network. You can't change the name after you create the network.</p>
     pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_name = input;
-        self
+        self.network_name = input; self
     }
     /// <p>The description of the network.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +77,7 @@ impl CreateNetworkInputBuilder {
     }
     /// <p>The description of the network.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,47 +86,37 @@ impl CreateNetworkInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags to apply to the network. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p> The tags to apply to the network. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_network::CreateNetworkInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_network::CreateNetworkInput {
-            network_name: self.network_name,
-            description: self.description,
-            client_token: self.client_token,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_network::CreateNetworkInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_network::CreateNetworkInput {
+                network_name: self.network_name
+                ,
+                description: self.description
+                ,
+                client_token: self.client_token
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateNetworkInputBuilder {
@@ -146,3 +129,4 @@ impl std::fmt::Debug for CreateNetworkInputBuilder {
         formatter.finish()
     }
 }
+

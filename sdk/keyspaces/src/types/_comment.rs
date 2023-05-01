@@ -3,14 +3,14 @@
 /// <p>An optional comment that describes the table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Comment {
+pub struct Comment  {
     /// <p>An optional description of the table.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl Comment {
     /// <p>An optional description of the table.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl CommentBuilder {
     }
     /// <p>An optional description of the table.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`Comment`](crate::types::Comment).
     pub fn build(self) -> crate::types::Comment {
         crate::types::Comment {
-            message: self.message,
+            message: self.message
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the destination configuration to use when publishing message sending events. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsDestination {
+pub struct CloudWatchLogsDestination  {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CloudWatchLogsDestination {
 }
 impl CloudWatchLogsDestination {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CloudWatchLogsDestinationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input;
-        self
+        self.iam_role_arn = input; self
     }
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
     pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CloudWatchLogsDestinationBuilder {
     }
     /// <p>The name of the Amazon CloudWatch log group that you want to record events in. </p>
     pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_arn = input;
-        self
+        self.log_group_arn = input; self
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::types::CloudWatchLogsDestination).
     pub fn build(self) -> crate::types::CloudWatchLogsDestination {
         crate::types::CloudWatchLogsDestination {
-            iam_role_arn: self.iam_role_arn,
-            log_group_arn: self.log_group_arn,
+            iam_role_arn: self.iam_role_arn
+            ,
+            log_group_arn: self.log_group_arn
+            ,
         }
     }
 }
+

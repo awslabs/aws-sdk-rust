@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAuditStreamConfigurationOutput {
+pub struct UpdateAuditStreamConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateAuditStreamConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateAuditStreamConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAuditStreamConfigurationOutput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput).
-    pub fn builder() -> crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationOutputBuilder {
         crate::operation::update_audit_stream_configuration::builders::UpdateAuditStreamConfigurationOutputBuilder::default()
     }
 }
@@ -25,21 +25,19 @@ pub struct UpdateAuditStreamConfigurationOutputBuilder {
 }
 impl UpdateAuditStreamConfigurationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateAuditStreamConfigurationOutput`](crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput
-    {
+    pub fn build(self) -> crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput {
         crate::operation::update_audit_stream_configuration::UpdateAuditStreamConfigurationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

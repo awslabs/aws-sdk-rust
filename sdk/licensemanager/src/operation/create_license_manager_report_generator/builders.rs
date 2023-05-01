@@ -4,68 +4,56 @@ pub use crate::operation::create_license_manager_report_generator::_create_licen
 pub use crate::operation::create_license_manager_report_generator::_create_license_manager_report_generator_input::CreateLicenseManagerReportGeneratorInputBuilder;
 
 /// Fluent builder constructing a request to `CreateLicenseManagerReportGenerator`.
-///
+/// 
 /// <p>Creates a report generator.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_license_manager_report_generator::builders::CreateLicenseManagerReportGeneratorInputBuilder
             }
-impl CreateLicenseManagerReportGeneratorFluentBuilder {
+impl CreateLicenseManagerReportGeneratorFluentBuilder  {
     /// Creates a new `CreateLicenseManagerReportGenerator`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorOutput, aws_smithy_http::result::SdkError<crate::operation::create_license_manager_report_generator::CreateLicenseManagerReportGeneratorError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Name of the report generator.</p>
     pub fn report_generator_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.report_generator_name(input.into());
         self
     }
     /// <p>Name of the report generator.</p>
-    pub fn set_report_generator_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_report_generator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_report_generator_name(input);
         self
     }
@@ -73,24 +61,21 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p>Type of reports to generate. The following report types an be generated:</p>
-    /// <ul>
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// <p>Type of reports to generate. The following report types an be generated:</p> 
+    /// <ul> 
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ReportType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>Type of reports to generate. The following report types an be generated:</p>
-    /// <ul>
-    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li>
-    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li>
+    /// <p>Type of reports to generate. The following report types an be generated:</p> 
+    /// <ul> 
+    /// <li> <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p> </li> 
+    /// <li> <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p> </li> 
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReportType>>,
-    ) -> Self {
+    pub fn set_type(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReportType>>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -100,10 +85,7 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self
     }
     /// <p>Defines the type of license configuration the report generator tracks.</p>
-    pub fn set_report_context(
-        mut self,
-        input: std::option::Option<crate::types::ReportContext>,
-    ) -> Self {
+    pub fn set_report_context(mut self, input: std::option::Option<crate::types::ReportContext>) -> Self {
         self.inner = self.inner.set_report_context(input);
         self
     }
@@ -113,10 +95,7 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self
     }
     /// <p>Frequency by which reports are generated. Reports can be generated daily, monthly, or weekly.</p>
-    pub fn set_report_frequency(
-        mut self,
-        input: std::option::Option<crate::types::ReportFrequency>,
-    ) -> Self {
+    pub fn set_report_frequency(mut self, input: std::option::Option<crate::types::ReportFrequency>) -> Self {
         self.inner = self.inner.set_report_frequency(input);
         self
     }
@@ -150,11 +129,9 @@ impl CreateLicenseManagerReportGeneratorFluentBuilder {
         self
     }
     /// <p>Tags to add to the report generator.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

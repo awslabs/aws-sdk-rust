@@ -284,3 +284,4 @@ pub mod builders;
 
 /// Error types that Amazon Personalize can respond with.
 pub mod error;
+

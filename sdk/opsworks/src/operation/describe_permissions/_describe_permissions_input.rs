@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePermissionsInput {
+pub struct DescribePermissionsInput  {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DescribePermissionsInput {
 }
 impl DescribePermissionsInput {
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> std::option::Option<& str> {
         self.stack_id.as_deref()
     }
 }
 impl DescribePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribePermissionsInput`](crate::operation::describe_permissions::DescribePermissionsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder {
         crate::operation::describe_permissions::builders::DescribePermissionsInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribePermissionsInputBuilder {
     }
     /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_user_arn = input;
-        self
+        self.iam_user_arn = input; self
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DescribePermissionsInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input;
-        self
+        self.stack_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribePermissionsInput`](crate::operation::describe_permissions::DescribePermissionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_permissions::DescribePermissionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_permissions::DescribePermissionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_permissions::DescribePermissionsInput {
-                iam_user_arn: self.iam_user_arn,
-                stack_id: self.stack_id,
-            },
+                iam_user_arn: self.iam_user_arn
+                ,
+                stack_id: self.stack_id
+                ,
+            }
         )
     }
 }
+

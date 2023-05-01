@@ -3,7 +3,7 @@
 /// <p>The settings for delivering logs to Amazon Kinesis Data Firehose.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirehoseLogDelivery {
+pub struct FirehoseLogDelivery  {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct FirehoseLogDelivery {
 }
 impl FirehoseLogDelivery {
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> std::option::Option<& str> {
         self.delivery_stream.as_deref()
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
@@ -43,8 +43,7 @@ impl FirehoseLogDeliveryBuilder {
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream that is the destination for log delivery.</p>
     pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream = input;
-        self
+        self.delivery_stream = input; self
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -53,14 +52,17 @@ impl FirehoseLogDeliveryBuilder {
     }
     /// <p>Specifies whether connector logs get delivered to Amazon Kinesis Data Firehose.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`FirehoseLogDelivery`](crate::types::FirehoseLogDelivery).
     pub fn build(self) -> crate::types::FirehoseLogDelivery {
         crate::types::FirehoseLogDelivery {
-            delivery_stream: self.delivery_stream,
-            enabled: self.enabled.unwrap_or_default(),
+            delivery_stream: self.delivery_stream
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

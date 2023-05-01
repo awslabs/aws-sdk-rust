@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssessmentReportUrlInput {
+pub struct GetAssessmentReportUrlInput  {
     /// <p> The unique identifier for the assessment report. </p>
     #[doc(hidden)]
     pub assessment_report_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct GetAssessmentReportUrlInput {
 }
 impl GetAssessmentReportUrlInput {
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn assessment_report_id(&self) -> std::option::Option<&str> {
+    pub fn assessment_report_id(&self) -> std::option::Option<& str> {
         self.assessment_report_id.as_deref()
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<&str> {
+    pub fn assessment_id(&self) -> std::option::Option<& str> {
         self.assessment_id.as_deref()
     }
 }
 impl GetAssessmentReportUrlInput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentReportUrlInput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput).
-    pub fn builder(
-    ) -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder {
         crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl GetAssessmentReportUrlInputBuilder {
         self
     }
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn set_assessment_report_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_report_id = input;
-        self
+    pub fn set_assessment_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_report_id = input; self
     }
     /// <p> The unique identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl GetAssessmentReportUrlInputBuilder {
     }
     /// <p> The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input;
-        self
+        self.assessment_id = input; self
     }
     /// Consumes the builder and constructs a [`GetAssessmentReportUrlInput`](crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_assessment_report_url::GetAssessmentReportUrlInput {
-                assessment_report_id: self.assessment_report_id,
-                assessment_id: self.assessment_id,
-            },
+                assessment_report_id: self.assessment_report_id
+                ,
+                assessment_id: self.assessment_id
+                ,
+            }
         )
     }
 }
+

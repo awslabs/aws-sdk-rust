@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketIntelligentTieringConfigurationInput {
+pub struct GetBucketIntelligentTieringConfigurationInput  {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetBucketIntelligentTieringConfigurationInput {
 }
 impl GetBucketIntelligentTieringConfigurationInput {
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetBucketIntelligentTieringConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetBucketIntelligentTieringConfigurationInput`](crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput).
-    pub fn builder() -> crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder {
         crate::operation::get_bucket_intelligent_tiering_configuration::builders::GetBucketIntelligentTieringConfigurationInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl GetBucketIntelligentTieringConfigurationInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,11 +51,10 @@ impl GetBucketIntelligentTieringConfigurationInputBuilder {
     }
     /// <p>The ID used to identify the S3 Intelligent-Tiering configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetBucketIntelligentTieringConfigurationInput`](crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_bucket_intelligent_tiering_configuration::GetBucketIntelligentTieringConfigurationInput {
                 bucket: self.bucket
@@ -67,3 +65,4 @@ impl GetBucketIntelligentTieringConfigurationInputBuilder {
         )
     }
 }
+

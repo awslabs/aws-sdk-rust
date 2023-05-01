@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRemediationExceptionsInput {
+pub struct DeleteRemediationExceptionsInput  {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     #[doc(hidden)]
-    pub resource_keys:
-        std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub resource_keys: std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
 }
 impl DeleteRemediationExceptionsInput {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> std::option::Option<& str> {
         self.config_rule_name.as_deref()
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
-    pub fn resource_keys(
-        &self,
-    ) -> std::option::Option<&[crate::types::RemediationExceptionResourceKey]> {
+    pub fn resource_keys(&self) -> std::option::Option<& [crate::types::RemediationExceptionResourceKey]> {
         self.resource_keys.as_deref()
     }
 }
 impl DeleteRemediationExceptionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteRemediationExceptionsInput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput).
-    pub fn builder() -> crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsInputBuilder{
+    pub fn builder() -> crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsInputBuilder {
         crate::operation::delete_remediation_exceptions::builders::DeleteRemediationExceptionsInputBuilder::default()
     }
 }
@@ -35,8 +32,7 @@ impl DeleteRemediationExceptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteRemediationExceptionsInputBuilder {
     pub(crate) config_rule_name: std::option::Option<std::string::String>,
-    pub(crate) resource_keys:
-        std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
+    pub(crate) resource_keys: std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
 }
 impl DeleteRemediationExceptionsInputBuilder {
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
@@ -46,8 +42,7 @@ impl DeleteRemediationExceptionsInputBuilder {
     }
     /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input;
-        self
+        self.config_rule_name = input; self
     }
     /// Appends an item to `resource_keys`.
     ///
@@ -56,30 +51,24 @@ impl DeleteRemediationExceptionsInputBuilder {
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
     pub fn resource_keys(mut self, input: crate::types::RemediationExceptionResourceKey) -> Self {
         let mut v = self.resource_keys.unwrap_or_default();
-        v.push(input);
-        self.resource_keys = Some(v);
-        self
+                        v.push(input);
+                        self.resource_keys = Some(v);
+                        self
     }
     /// <p>An exception list of resource exception keys to be processed with the current request. Config adds exception for each resource key. For example, Config adds 3 exceptions for 3 resource keys. </p>
-    pub fn set_resource_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>,
-    ) -> Self {
-        self.resource_keys = input;
-        self
+    pub fn set_resource_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::RemediationExceptionResourceKey>>) -> Self {
+        self.resource_keys = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRemediationExceptionsInput`](crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsInput {
-                config_rule_name: self.config_rule_name,
-                resource_keys: self.resource_keys,
-            },
+                config_rule_name: self.config_rule_name
+                ,
+                resource_keys: self.resource_keys
+                ,
+            }
         )
     }
 }
+

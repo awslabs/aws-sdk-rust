@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAuthorizationTokenOutput {
+pub struct GetAuthorizationTokenOutput  {
     /// <p> The returned authentication token. </p>
     #[doc(hidden)]
     pub authorization_token: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct GetAuthorizationTokenOutput {
 }
 impl GetAuthorizationTokenOutput {
     /// <p> The returned authentication token. </p>
-    pub fn authorization_token(&self) -> std::option::Option<&str> {
+    pub fn authorization_token(&self) -> std::option::Option<& str> {
         self.authorization_token.as_deref()
     }
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
-    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAuthorizationTokenOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetAuthorizationTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
-    pub fn builder(
-    ) -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder {
         crate::operation::get_authorization_token::builders::GetAuthorizationTokenOutputBuilder::default()
     }
 }
@@ -50,12 +48,8 @@ impl GetAuthorizationTokenOutputBuilder {
         self
     }
     /// <p> The returned authentication token. </p>
-    pub fn set_authorization_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authorization_token = input;
-        self
+    pub fn set_authorization_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authorization_token = input; self
     }
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -63,28 +57,27 @@ impl GetAuthorizationTokenOutputBuilder {
         self
     }
     /// <p> A timestamp that specifies the date and time the authorization token expires. </p>
-    pub fn set_expiration(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.expiration = input;
-        self
+    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.expiration = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetAuthorizationTokenOutput`](crate::operation::get_authorization_token::GetAuthorizationTokenOutput).
     pub fn build(self) -> crate::operation::get_authorization_token::GetAuthorizationTokenOutput {
         crate::operation::get_authorization_token::GetAuthorizationTokenOutput {
-            authorization_token: self.authorization_token,
-            expiration: self.expiration,
+            authorization_token: self.authorization_token
+            ,
+            expiration: self.expiration
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

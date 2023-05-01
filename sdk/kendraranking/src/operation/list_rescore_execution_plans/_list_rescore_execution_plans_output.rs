@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRescoreExecutionPlansOutput {
+pub struct ListRescoreExecutionPlansOutput  {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
     #[doc(hidden)]
-    pub summary_items:
-        std::option::Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
+    pub summary_items: std::option::Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListRescoreExecutionPlansOutput {
 }
 impl ListRescoreExecutionPlansOutput {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
-    pub fn summary_items(
-        &self,
-    ) -> std::option::Option<&[crate::types::RescoreExecutionPlanSummary]> {
+    pub fn summary_items(&self) -> std::option::Option<& [crate::types::RescoreExecutionPlanSummary]> {
         self.summary_items.as_deref()
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRescoreExecutionPlansOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListRescoreExecutionPlansOutput {
     /// Creates a new builder-style object to manufacture [`ListRescoreExecutionPlansOutput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput).
-    pub fn builder() -> crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder{
+    pub fn builder() -> crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder {
         crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListRescoreExecutionPlansOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListRescoreExecutionPlansOutputBuilder {
-    pub(crate) summary_items:
-        std::option::Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
+    pub(crate) summary_items: std::option::Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl ListRescoreExecutionPlansOutputBuilder {
     /// <p>An array of summary information for one or more rescore execution plans.</p>
     pub fn summary_items(mut self, input: crate::types::RescoreExecutionPlanSummary) -> Self {
         let mut v = self.summary_items.unwrap_or_default();
-        v.push(input);
-        self.summary_items = Some(v);
-        self
+                        v.push(input);
+                        self.summary_items = Some(v);
+                        self
     }
     /// <p>An array of summary information for one or more rescore execution plans.</p>
-    pub fn set_summary_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>,
-    ) -> Self {
-        self.summary_items = input;
-        self
+    pub fn set_summary_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RescoreExecutionPlanSummary>>) -> Self {
+        self.summary_items = input; self
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl ListRescoreExecutionPlansOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListRescoreExecutionPlansOutput`](crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput {
+    pub fn build(self) -> crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput {
         crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput {
-            summary_items: self.summary_items,
-            next_token: self.next_token,
+            summary_items: self.summary_items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestorePhoneNumberInput {
+pub struct RestorePhoneNumberInput  {
     /// <p>The phone number.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl RestorePhoneNumberInput {
     /// <p>The phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
 }
 impl RestorePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
-    pub fn builder(
-    ) -> crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder {
         crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl RestorePhoneNumberInputBuilder {
     }
     /// <p>The phone number.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input;
-        self
+        self.phone_number_id = input; self
     }
     /// Consumes the builder and constructs a [`RestorePhoneNumberInput`](crate::operation::restore_phone_number::RestorePhoneNumberInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::restore_phone_number::RestorePhoneNumberInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::restore_phone_number::RestorePhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::restore_phone_number::RestorePhoneNumberInput {
-                phone_number_id: self.phone_number_id,
-            },
+                phone_number_id: self.phone_number_id
+                ,
+            }
         )
     }
 }
+

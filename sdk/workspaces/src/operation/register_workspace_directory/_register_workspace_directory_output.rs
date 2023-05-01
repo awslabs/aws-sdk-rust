@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterWorkspaceDirectoryOutput {
+pub struct RegisterWorkspaceDirectoryOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RegisterWorkspaceDirectoryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RegisterWorkspaceDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
-    pub fn builder() -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder{
+    pub fn builder() -> crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder {
         crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct RegisterWorkspaceDirectoryOutputBuilder {
 }
 impl RegisterWorkspaceDirectoryOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RegisterWorkspaceDirectoryOutput`](crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
+    pub fn build(self) -> crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput {
             _request_id: self._request_id,
         }
     }
 }
+

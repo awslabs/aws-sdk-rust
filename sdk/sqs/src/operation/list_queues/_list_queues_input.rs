@@ -3,8 +3,8 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuesInput {
-    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+pub struct ListQueuesInput  {
+    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_name_prefix: std::option::Option<std::string::String>,
@@ -16,13 +16,13 @@ pub struct ListQueuesInput {
     pub max_results: std::option::Option<i32>,
 }
 impl ListQueuesInput {
-    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name_prefix(&self) -> std::option::Option<&str> {
+    pub fn queue_name_prefix(&self) -> std::option::Option<& str> {
         self.queue_name_prefix.as_deref()
     }
     /// <p>Pagination token to request the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
@@ -46,20 +46,16 @@ pub struct ListQueuesInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl ListQueuesInputBuilder {
-    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.queue_name_prefix = Some(input.into());
         self
     }
-    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
+    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_name_prefix(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.queue_name_prefix = input;
-        self
+    pub fn set_queue_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.queue_name_prefix = input; self
     }
     /// <p>Pagination token to request the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +64,7 @@ impl ListQueuesInputBuilder {
     }
     /// <p>Pagination token to request the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,20 +73,20 @@ impl ListQueuesInputBuilder {
     }
     /// <p>Maximum number of results to include in the response. Value range is 1 to 1000. You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListQueuesInput`](crate::operation::list_queues::ListQueuesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_queues::ListQueuesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_queues::ListQueuesInput {
-            queue_name_prefix: self.queue_name_prefix,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_queues::ListQueuesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_queues::ListQueuesInput {
+                queue_name_prefix: self.queue_name_prefix
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

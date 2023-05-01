@@ -3,14 +3,14 @@
 /// <p>The input configuration of a batch inference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchInferenceJobInput {
+pub struct BatchInferenceJobInput  {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
     #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::types::S3DataConfig>,
 }
 impl BatchInferenceJobInput {
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::S3DataConfig> {
+    pub fn s3_data_source(&self) -> std::option::Option<& crate::types::S3DataConfig> {
         self.s3_data_source.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl BatchInferenceJobInputBuilder {
         self
     }
     /// <p>The URI of the Amazon S3 location that contains your input data. The Amazon S3 bucket must be in the same region as the API endpoint you are calling.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: std::option::Option<crate::types::S3DataConfig>,
-    ) -> Self {
-        self.s3_data_source = input;
-        self
+    pub fn set_s3_data_source(mut self, input: std::option::Option<crate::types::S3DataConfig>) -> Self {
+        self.s3_data_source = input; self
     }
     /// Consumes the builder and constructs a [`BatchInferenceJobInput`](crate::types::BatchInferenceJobInput).
     pub fn build(self) -> crate::types::BatchInferenceJobInput {
         crate::types::BatchInferenceJobInput {
-            s3_data_source: self.s3_data_source,
+            s3_data_source: self.s3_data_source
+            ,
         }
     }
 }
+

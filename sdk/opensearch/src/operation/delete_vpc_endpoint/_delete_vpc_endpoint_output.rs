@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcEndpointOutput {
+pub struct DeleteVpcEndpointOutput  {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
     #[doc(hidden)]
     pub vpc_endpoint_summary: std::option::Option<crate::types::VpcEndpointSummary>,
@@ -10,19 +10,18 @@ pub struct DeleteVpcEndpointOutput {
 }
 impl DeleteVpcEndpointOutput {
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    pub fn vpc_endpoint_summary(&self) -> std::option::Option<&crate::types::VpcEndpointSummary> {
+    pub fn vpc_endpoint_summary(&self) -> std::option::Option<& crate::types::VpcEndpointSummary> {
         self.vpc_endpoint_summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVpcEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder {
         crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DeleteVpcEndpointOutputBuilder {
         self
     }
     /// <p>Information about the deleted endpoint, including its current status (<code>DELETING</code> or <code>DELETE_FAILED</code>).</p>
-    pub fn set_vpc_endpoint_summary(
-        mut self,
-        input: std::option::Option<crate::types::VpcEndpointSummary>,
-    ) -> Self {
-        self.vpc_endpoint_summary = input;
-        self
+    pub fn set_vpc_endpoint_summary(mut self, input: std::option::Option<crate::types::VpcEndpointSummary>) -> Self {
+        self.vpc_endpoint_summary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput).
     pub fn build(self) -> crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput {
         crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput {
-            vpc_endpoint_summary: self.vpc_endpoint_summary,
+            vpc_endpoint_summary: self.vpc_endpoint_summary
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

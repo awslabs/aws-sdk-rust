@@ -3,8 +3,8 @@
 /// <p>The configuration object of the Amazon Chime SDK meeting for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChimeSdkMeetingConfiguration {
-    /// <p>The source configuration for a specified media capture pipline.</p>
+pub struct ChimeSdkMeetingConfiguration  {
+    /// <p>The source configuration for a specified media capture pipeline.</p>
     #[doc(hidden)]
     pub source_configuration: std::option::Option<crate::types::SourceConfiguration>,
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
@@ -12,14 +12,12 @@ pub struct ChimeSdkMeetingConfiguration {
     pub artifacts_configuration: std::option::Option<crate::types::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfiguration {
-    /// <p>The source configuration for a specified media capture pipline.</p>
-    pub fn source_configuration(&self) -> std::option::Option<&crate::types::SourceConfiguration> {
+    /// <p>The source configuration for a specified media capture pipeline.</p>
+    pub fn source_configuration(&self) -> std::option::Option<& crate::types::SourceConfiguration> {
         self.source_configuration.as_ref()
     }
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-    pub fn artifacts_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::ArtifactsConfiguration> {
+    pub fn artifacts_configuration(&self) -> std::option::Option<& crate::types::ArtifactsConfiguration> {
         self.artifacts_configuration.as_ref()
     }
 }
@@ -38,18 +36,14 @@ pub struct ChimeSdkMeetingConfigurationBuilder {
     pub(crate) artifacts_configuration: std::option::Option<crate::types::ArtifactsConfiguration>,
 }
 impl ChimeSdkMeetingConfigurationBuilder {
-    /// <p>The source configuration for a specified media capture pipline.</p>
+    /// <p>The source configuration for a specified media capture pipeline.</p>
     pub fn source_configuration(mut self, input: crate::types::SourceConfiguration) -> Self {
         self.source_configuration = Some(input);
         self
     }
-    /// <p>The source configuration for a specified media capture pipline.</p>
-    pub fn set_source_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SourceConfiguration>,
-    ) -> Self {
-        self.source_configuration = input;
-        self
+    /// <p>The source configuration for a specified media capture pipeline.</p>
+    pub fn set_source_configuration(mut self, input: std::option::Option<crate::types::SourceConfiguration>) -> Self {
+        self.source_configuration = input; self
     }
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
     pub fn artifacts_configuration(mut self, input: crate::types::ArtifactsConfiguration) -> Self {
@@ -57,18 +51,17 @@ impl ChimeSdkMeetingConfigurationBuilder {
         self
     }
     /// <p>The configuration for the artifacts in an Amazon Chime SDK meeting.</p>
-    pub fn set_artifacts_configuration(
-        mut self,
-        input: std::option::Option<crate::types::ArtifactsConfiguration>,
-    ) -> Self {
-        self.artifacts_configuration = input;
-        self
+    pub fn set_artifacts_configuration(mut self, input: std::option::Option<crate::types::ArtifactsConfiguration>) -> Self {
+        self.artifacts_configuration = input; self
     }
     /// Consumes the builder and constructs a [`ChimeSdkMeetingConfiguration`](crate::types::ChimeSdkMeetingConfiguration).
     pub fn build(self) -> crate::types::ChimeSdkMeetingConfiguration {
         crate::types::ChimeSdkMeetingConfiguration {
-            source_configuration: self.source_configuration,
-            artifacts_configuration: self.artifacts_configuration,
+            source_configuration: self.source_configuration
+            ,
+            artifacts_configuration: self.artifacts_configuration
+            ,
         }
     }
 }
+

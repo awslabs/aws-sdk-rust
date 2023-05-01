@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBucketOwnershipControlsInput {
+pub struct DeleteBucketOwnershipControlsInput  {
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteBucketOwnershipControlsInput {
 }
 impl DeleteBucketOwnershipControlsInput {
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl DeleteBucketOwnershipControlsInput {
     /// Creates a new builder-style object to manufacture [`DeleteBucketOwnershipControlsInput`](crate::operation::delete_bucket_ownership_controls::DeleteBucketOwnershipControlsInput).
-    pub fn builder() -> crate::operation::delete_bucket_ownership_controls::builders::DeleteBucketOwnershipControlsInputBuilder{
+    pub fn builder() -> crate::operation::delete_bucket_ownership_controls::builders::DeleteBucketOwnershipControlsInputBuilder {
         crate::operation::delete_bucket_ownership_controls::builders::DeleteBucketOwnershipControlsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteBucketOwnershipControlsInputBuilder {
     }
     /// <p>The Amazon S3 bucket whose <code>OwnershipControls</code> you want to delete. </p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,20 +50,11 @@ impl DeleteBucketOwnershipControlsInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.expected_bucket_owner = input;
-        self
+    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.expected_bucket_owner = input; self
     }
     /// Consumes the builder and constructs a [`DeleteBucketOwnershipControlsInput`](crate::operation::delete_bucket_ownership_controls::DeleteBucketOwnershipControlsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_bucket_ownership_controls::DeleteBucketOwnershipControlsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_bucket_ownership_controls::DeleteBucketOwnershipControlsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_bucket_ownership_controls::DeleteBucketOwnershipControlsInput {
                 bucket: self.bucket
@@ -75,3 +65,4 @@ impl DeleteBucketOwnershipControlsInputBuilder {
         )
     }
 }
+

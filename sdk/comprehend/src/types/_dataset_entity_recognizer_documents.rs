@@ -3,7 +3,7 @@
 /// <p>Describes the documents submitted with a dataset for an entity recognizer model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetEntityRecognizerDocuments {
+pub struct DatasetEntityRecognizerDocuments  {
     /// <p> Specifies the Amazon S3 location where the documents for the dataset are located. </p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DatasetEntityRecognizerDocuments {
 }
 impl DatasetEntityRecognizerDocuments {
     /// <p> Specifies the Amazon S3 location where the documents for the dataset are located. </p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
-    pub fn input_format(&self) -> std::option::Option<&crate::types::InputFormat> {
+    pub fn input_format(&self) -> std::option::Option<& crate::types::InputFormat> {
         self.input_format.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DatasetEntityRecognizerDocumentsBuilder {
     }
     /// <p> Specifies the Amazon S3 location where the documents for the dataset are located. </p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input;
-        self
+        self.s3_uri = input; self
     }
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub fn input_format(mut self, input: crate::types::InputFormat) -> Self {
@@ -52,18 +51,17 @@ impl DatasetEntityRecognizerDocumentsBuilder {
         self
     }
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE. ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers. ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
-    pub fn set_input_format(
-        mut self,
-        input: std::option::Option<crate::types::InputFormat>,
-    ) -> Self {
-        self.input_format = input;
-        self
+    pub fn set_input_format(mut self, input: std::option::Option<crate::types::InputFormat>) -> Self {
+        self.input_format = input; self
     }
     /// Consumes the builder and constructs a [`DatasetEntityRecognizerDocuments`](crate::types::DatasetEntityRecognizerDocuments).
     pub fn build(self) -> crate::types::DatasetEntityRecognizerDocuments {
         crate::types::DatasetEntityRecognizerDocuments {
-            s3_uri: self.s3_uri,
-            input_format: self.input_format,
+            s3_uri: self.s3_uri
+            ,
+            input_format: self.input_format
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The connection endpoint for connecting to an Amazon OpenSearch Service domain through a proxy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpoint {
+pub struct VpcEndpoint  {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct VpcEndpoint {
 }
 impl VpcEndpoint {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn vpc_endpoint_owner(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_owner(&self) -> std::option::Option<& str> {
         self.vpc_endpoint_owner.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
-    pub fn vpc_options(&self) -> std::option::Option<&crate::types::VpcDerivedInfo> {
+    pub fn vpc_options(&self) -> std::option::Option<& crate::types::VpcDerivedInfo> {
         self.vpc_options.as_ref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The connection endpoint ID for connecting to the domain.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_id = input;
-        self
+        self.vpc_endpoint_id = input; self
     }
     /// <p>The creator of the endpoint.</p>
     pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +83,8 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn set_vpc_endpoint_owner(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpc_endpoint_owner = input;
-        self
+    pub fn set_vpc_endpoint_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpc_endpoint_owner = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl VpcEndpointBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcDerivedInfo) -> Self {
@@ -107,12 +101,8 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>Options to specify the subnets and security groups for an Amazon OpenSearch Service VPC endpoint.</p>
-    pub fn set_vpc_options(
-        mut self,
-        input: std::option::Option<crate::types::VpcDerivedInfo>,
-    ) -> Self {
-        self.vpc_options = input;
-        self
+    pub fn set_vpc_options(mut self, input: std::option::Option<crate::types::VpcDerivedInfo>) -> Self {
+        self.vpc_options = input; self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
@@ -120,12 +110,8 @@ impl VpcEndpointBuilder {
         self
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::VpcEndpointStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The connection endpoint ID for connecting to the domain.</p>
     pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,18 +120,24 @@ impl VpcEndpointBuilder {
     }
     /// <p>The connection endpoint ID for connecting to the domain.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input;
-        self
+        self.endpoint = input; self
     }
     /// Consumes the builder and constructs a [`VpcEndpoint`](crate::types::VpcEndpoint).
     pub fn build(self) -> crate::types::VpcEndpoint {
         crate::types::VpcEndpoint {
-            vpc_endpoint_id: self.vpc_endpoint_id,
-            vpc_endpoint_owner: self.vpc_endpoint_owner,
-            domain_arn: self.domain_arn,
-            vpc_options: self.vpc_options,
-            status: self.status,
-            endpoint: self.endpoint,
+            vpc_endpoint_id: self.vpc_endpoint_id
+            ,
+            vpc_endpoint_owner: self.vpc_endpoint_owner
+            ,
+            domain_arn: self.domain_arn
+            ,
+            vpc_options: self.vpc_options
+            ,
+            status: self.status
+            ,
+            endpoint: self.endpoint
+            ,
         }
     }
 }
+

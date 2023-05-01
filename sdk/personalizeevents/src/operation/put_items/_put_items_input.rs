@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutItemsInput {
+pub struct PutItemsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
     #[doc(hidden)]
     pub dataset_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutItemsInput {
 }
 impl PutItemsInput {
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>A list of item data.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Item]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::Item]> {
         self.items.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl PutItemsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items to.</p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -52,28 +51,24 @@ impl PutItemsInputBuilder {
     /// <p>A list of item data.</p>
     pub fn items(mut self, input: crate::types::Item) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>A list of item data.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Item>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::Item>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`PutItemsInput`](crate::operation::put_items::PutItemsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_items::PutItemsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::put_items::PutItemsInput {
-            dataset_arn: self.dataset_arn,
-            items: self.items,
-        })
+    pub fn build(self) -> Result<crate::operation::put_items::PutItemsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::put_items::PutItemsInput {
+                dataset_arn: self.dataset_arn
+                ,
+                items: self.items
+                ,
+            }
+        )
     }
 }
+

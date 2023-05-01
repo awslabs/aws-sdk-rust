@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTrustAnchorInput {
+pub struct UpdateTrustAnchorInput  {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct UpdateTrustAnchorInput {
 }
 impl UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_id(&self) -> std::option::Option<& str> {
         self.trust_anchor_id.as_deref()
     }
     /// <p>The name of the trust anchor.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The trust anchor type and its related certificate data.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::types::Source> {
         self.source.as_ref()
     }
 }
 impl UpdateTrustAnchorInput {
     /// Creates a new builder-style object to manufacture [`UpdateTrustAnchorInput`](crate::operation::update_trust_anchor::UpdateTrustAnchorInput).
-    pub fn builder(
-    ) -> crate::operation::update_trust_anchor::builders::UpdateTrustAnchorInputBuilder {
+    pub fn builder() -> crate::operation::update_trust_anchor::builders::UpdateTrustAnchorInputBuilder {
         crate::operation::update_trust_anchor::builders::UpdateTrustAnchorInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl UpdateTrustAnchorInputBuilder {
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn set_trust_anchor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_anchor_id = input;
-        self
+        self.trust_anchor_id = input; self
     }
     /// <p>The name of the trust anchor.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl UpdateTrustAnchorInputBuilder {
     }
     /// <p>The name of the trust anchor.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
@@ -71,22 +68,20 @@ impl UpdateTrustAnchorInputBuilder {
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// Consumes the builder and constructs a [`UpdateTrustAnchorInput`](crate::operation::update_trust_anchor::UpdateTrustAnchorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_trust_anchor::UpdateTrustAnchorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_trust_anchor::UpdateTrustAnchorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_trust_anchor::UpdateTrustAnchorInput {
-                trust_anchor_id: self.trust_anchor_id,
-                name: self.name,
-                source: self.source,
-            },
+                trust_anchor_id: self.trust_anchor_id
+                ,
+                name: self.name
+                ,
+                source: self.source
+                ,
+            }
         )
     }
 }
+

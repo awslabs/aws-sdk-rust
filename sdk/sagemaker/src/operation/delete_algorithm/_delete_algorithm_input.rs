@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlgorithmInput {
+pub struct DeleteAlgorithmInput  {
     /// <p>The name of the algorithm to delete.</p>
     #[doc(hidden)]
     pub algorithm_name: std::option::Option<std::string::String>,
 }
 impl DeleteAlgorithmInput {
     /// <p>The name of the algorithm to delete.</p>
-    pub fn algorithm_name(&self) -> std::option::Option<&str> {
+    pub fn algorithm_name(&self) -> std::option::Option<& str> {
         self.algorithm_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteAlgorithmInputBuilder {
     }
     /// <p>The name of the algorithm to delete.</p>
     pub fn set_algorithm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.algorithm_name = input;
-        self
+        self.algorithm_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAlgorithmInput`](crate::operation::delete_algorithm::DeleteAlgorithmInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_algorithm::DeleteAlgorithmInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_algorithm::DeleteAlgorithmInput {
-            algorithm_name: self.algorithm_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_algorithm::DeleteAlgorithmInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_algorithm::DeleteAlgorithmInput {
+                algorithm_name: self.algorithm_name
+                ,
+            }
+        )
     }
 }
+

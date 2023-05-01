@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThingGroupsInput {
+pub struct ListThingGroupsInput  {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListThingGroupsInput {
 }
 impl ListThingGroupsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -29,11 +29,11 @@ impl ListThingGroupsInput {
         self.max_results
     }
     /// <p>A filter that limits the results to those with the specified parent group.</p>
-    pub fn parent_group(&self) -> std::option::Option<&str> {
+    pub fn parent_group(&self) -> std::option::Option<& str> {
         self.parent_group.as_deref()
     }
     /// <p>A filter that limits the results to those with the specified name prefix.</p>
-    pub fn name_prefix_filter(&self) -> std::option::Option<&str> {
+    pub fn name_prefix_filter(&self) -> std::option::Option<& str> {
         self.name_prefix_filter.as_deref()
     }
     /// <p>If true, return child groups as well.</p>
@@ -66,8 +66,7 @@ impl ListThingGroupsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,8 +75,7 @@ impl ListThingGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A filter that limits the results to those with the specified parent group.</p>
     pub fn parent_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl ListThingGroupsInputBuilder {
     }
     /// <p>A filter that limits the results to those with the specified parent group.</p>
     pub fn set_parent_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_group = input;
-        self
+        self.parent_group = input; self
     }
     /// <p>A filter that limits the results to those with the specified name prefix.</p>
     pub fn name_prefix_filter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,12 +92,8 @@ impl ListThingGroupsInputBuilder {
         self
     }
     /// <p>A filter that limits the results to those with the specified name prefix.</p>
-    pub fn set_name_prefix_filter(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.name_prefix_filter = input;
-        self
+    pub fn set_name_prefix_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.name_prefix_filter = input; self
     }
     /// <p>If true, return child groups as well.</p>
     pub fn recursive(mut self, input: bool) -> Self {
@@ -109,22 +102,24 @@ impl ListThingGroupsInputBuilder {
     }
     /// <p>If true, return child groups as well.</p>
     pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
-        self.recursive = input;
-        self
+        self.recursive = input; self
     }
     /// Consumes the builder and constructs a [`ListThingGroupsInput`](crate::operation::list_thing_groups::ListThingGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_thing_groups::ListThingGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_thing_groups::ListThingGroupsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            parent_group: self.parent_group,
-            name_prefix_filter: self.name_prefix_filter,
-            recursive: self.recursive,
-        })
+    pub fn build(self) -> Result<crate::operation::list_thing_groups::ListThingGroupsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_thing_groups::ListThingGroupsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                parent_group: self.parent_group
+                ,
+                name_prefix_filter: self.name_prefix_filter
+                ,
+                recursive: self.recursive
+                ,
+            }
+        )
     }
 }
+

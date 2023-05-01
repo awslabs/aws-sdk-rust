@@ -3,7 +3,7 @@
 /// <p>The result from the inspection of the web request for a valid <code>CAPTCHA</code> token. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaptchaResponse {
+pub struct CaptchaResponse  {
     /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
     #[doc(hidden)]
     pub response_code: std::option::Option<i32>,
@@ -24,7 +24,7 @@ impl CaptchaResponse {
         self.solve_timestamp
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&crate::types::FailureReason> {
+    pub fn failure_reason(&self) -> std::option::Option<& crate::types::FailureReason> {
         self.failure_reason.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl CaptchaResponseBuilder {
     }
     /// <p>The HTTP response code indicating the status of the <code>CAPTCHA</code> token in the web request. If the token is missing, invalid, or expired, this code is <code>405 Method Not Allowed</code>.</p>
     pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.response_code = input;
-        self
+        self.response_code = input; self
     }
     /// <p>The time that the <code>CAPTCHA</code> was last solved for the supplied token. </p>
     pub fn solve_timestamp(mut self, input: i64) -> Self {
@@ -61,8 +60,7 @@ impl CaptchaResponseBuilder {
     }
     /// <p>The time that the <code>CAPTCHA</code> was last solved for the supplied token. </p>
     pub fn set_solve_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-        self.solve_timestamp = input;
-        self
+        self.solve_timestamp = input; self
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
     pub fn failure_reason(mut self, input: crate::types::FailureReason) -> Self {
@@ -70,19 +68,19 @@ impl CaptchaResponseBuilder {
         self
     }
     /// <p>The reason for failure, populated when the evaluation of the token fails.</p>
-    pub fn set_failure_reason(
-        mut self,
-        input: std::option::Option<crate::types::FailureReason>,
-    ) -> Self {
-        self.failure_reason = input;
-        self
+    pub fn set_failure_reason(mut self, input: std::option::Option<crate::types::FailureReason>) -> Self {
+        self.failure_reason = input; self
     }
     /// Consumes the builder and constructs a [`CaptchaResponse`](crate::types::CaptchaResponse).
     pub fn build(self) -> crate::types::CaptchaResponse {
         crate::types::CaptchaResponse {
-            response_code: self.response_code,
-            solve_timestamp: self.solve_timestamp,
-            failure_reason: self.failure_reason,
+            response_code: self.response_code
+            ,
+            solve_timestamp: self.solve_timestamp
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

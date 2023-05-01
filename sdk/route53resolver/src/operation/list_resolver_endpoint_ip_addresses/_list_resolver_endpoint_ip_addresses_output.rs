@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverEndpointIpAddressesOutput {
+pub struct ListResolverEndpointIpAddressesOutput  {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListResolverEndpointIpAddressesOutput {
 }
 impl ListResolverEndpointIpAddressesOutput {
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
@@ -24,18 +24,18 @@ impl ListResolverEndpointIpAddressesOutput {
         self.max_results
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn ip_addresses(&self) -> std::option::Option<&[crate::types::IpAddressResponse]> {
+    pub fn ip_addresses(&self) -> std::option::Option<& [crate::types::IpAddressResponse]> {
         self.ip_addresses.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListResolverEndpointIpAddressesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListResolverEndpointIpAddressesOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
-    pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder{
+    pub fn builder() -> crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder {
         crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     }
     /// <p>If the specified endpoint has more than <code>MaxResults</code> IP addresses, you can submit another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,8 +66,7 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     }
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `ip_addresses`.
     ///
@@ -77,32 +75,25 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
     pub fn ip_addresses(mut self, input: crate::types::IpAddressResponse) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-        v.push(input);
-        self.ip_addresses = Some(v);
-        self
+                        v.push(input);
+                        self.ip_addresses = Some(v);
+                        self
     }
     /// <p>Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that you forward DNS queries to (for inbound endpoints).</p>
-    pub fn set_ip_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpAddressResponse>>,
-    ) -> Self {
-        self.ip_addresses = input;
-        self
+    pub fn set_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpAddressResponse>>) -> Self {
+        self.ip_addresses = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListResolverEndpointIpAddressesOutput`](crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput
-    {
+    pub fn build(self) -> crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput {
         crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput {
             next_token: self.next_token
             ,
@@ -114,3 +105,4 @@ impl ListResolverEndpointIpAddressesOutputBuilder {
         }
     }
 }
+

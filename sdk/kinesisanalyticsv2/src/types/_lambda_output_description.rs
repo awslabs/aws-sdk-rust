@@ -3,25 +3,25 @@
 /// <p>For a SQL-based Kinesis Data Analytics application's output, describes the Amazon Lambda function that is configured as its destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaOutputDescription {
+pub struct LambdaOutputDescription  {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl LambdaOutputDescription {
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -47,28 +47,29 @@ impl LambdaOutputDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination Lambda function.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to write to the destination function.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`LambdaOutputDescription`](crate::types::LambdaOutputDescription).
     pub fn build(self) -> crate::types::LambdaOutputDescription {
         crate::types::LambdaOutputDescription {
-            resource_arn: self.resource_arn,
-            role_arn: self.role_arn,
+            resource_arn: self.resource_arn
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

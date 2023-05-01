@@ -3,7 +3,7 @@
 /// Audio Hls Rendition Selection
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioHlsRenditionSelection {
+pub struct AudioHlsRenditionSelection  {
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AudioHlsRenditionSelection {
 }
 impl AudioHlsRenditionSelection {
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AudioHlsRenditionSelectionBuilder {
     }
     /// Specifies the GROUP-ID in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AudioHlsRenditionSelectionBuilder {
     }
     /// Specifies the NAME in the #EXT-X-MEDIA tag of the target HLS audio rendition.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`AudioHlsRenditionSelection`](crate::types::AudioHlsRenditionSelection).
     pub fn build(self) -> crate::types::AudioHlsRenditionSelection {
         crate::types::AudioHlsRenditionSelection {
-            group_id: self.group_id,
-            name: self.name,
+            group_id: self.group_id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

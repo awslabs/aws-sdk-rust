@@ -3,20 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterParameterGroupInput {
-    /// <p>The name of the cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lower-case string.</p>
+pub struct CreateClusterParameterGroupInput  {
+    /// <p>The name of the cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lower-case string.</p> 
     /// </note>
     #[doc(hidden)]
     pub parameter_group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
+    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p> 
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
     #[doc(hidden)]
     pub parameter_group_family: std::option::Option<std::string::String>,
@@ -28,36 +28,36 @@ pub struct CreateClusterParameterGroupInput {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterParameterGroupInput {
-    /// <p>The name of the cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lower-case string.</p>
+    /// <p>The name of the cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lower-case string.</p> 
     /// </note>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> std::option::Option<& str> {
         self.parameter_group_name.as_deref()
     }
-    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
+    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p> 
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> std::option::Option<& str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>A description of the parameter group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterParameterGroupInput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder{
+    pub fn builder() -> crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder {
         crate::operation::create_cluster_parameter_group::builders::CreateClusterParameterGroupInputBuilder::default()
     }
 }
@@ -72,51 +72,43 @@ pub struct CreateClusterParameterGroupInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterParameterGroupInputBuilder {
-    /// <p>The name of the cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lower-case string.</p>
+    /// <p>The name of the cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lower-case string.</p> 
     /// </note>
     pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.parameter_group_name = Some(input.into());
         self
     }
-    /// <p>The name of the cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li>
-    /// <li> <p>First character must be a letter.</p> </li>
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
-    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lower-case string.</p>
+    /// <p>The name of the cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 alphanumeric characters or hyphens</p> </li> 
+    /// <li> <p>First character must be a letter.</p> </li> 
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
+    /// <li> <p>Must be unique withing your Amazon Web Services account.</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lower-case string.</p> 
     /// </note>
-    pub fn set_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parameter_group_name = input;
-        self
+    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parameter_group_name = input; self
     }
-    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
+    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p> 
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
     pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
         self.parameter_group_family = Some(input.into());
         self
     }
-    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
+    /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p> 
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn set_parameter_group_family(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parameter_group_family = input;
-        self
+    pub fn set_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parameter_group_family = input; self
     }
     /// <p>A description of the parameter group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +117,7 @@ impl CreateClusterParameterGroupInputBuilder {
     }
     /// <p>A description of the parameter group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -135,32 +126,28 @@ impl CreateClusterParameterGroupInputBuilder {
     /// <p>A list of tag instances.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateClusterParameterGroupInput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput {
-                parameter_group_name: self.parameter_group_name,
-                parameter_group_family: self.parameter_group_family,
-                description: self.description,
-                tags: self.tags,
-            },
+                parameter_group_name: self.parameter_group_name
+                ,
+                parameter_group_family: self.parameter_group_family
+                ,
+                description: self.description
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

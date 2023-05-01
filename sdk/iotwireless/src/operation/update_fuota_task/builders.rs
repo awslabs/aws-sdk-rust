@@ -4,71 +4,49 @@ pub use crate::operation::update_fuota_task::_update_fuota_task_output::UpdateFu
 pub use crate::operation::update_fuota_task::_update_fuota_task_input::UpdateFuotaTaskInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFuotaTask`.
-///
+/// 
 /// <p>Updates properties of a FUOTA task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFuotaTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_fuota_task::builders::UpdateFuotaTaskInputBuilder,
-}
-impl UpdateFuotaTaskFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_fuota_task::builders::UpdateFuotaTaskInputBuilder
+            }
+impl UpdateFuotaTaskFluentBuilder  {
     /// Creates a new `UpdateFuotaTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_fuota_task::UpdateFuotaTask,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_fuota_task::UpdateFuotaTaskOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_fuota_task::UpdateFuotaTaskError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_fuota_task::UpdateFuotaTask, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_fuota_task::UpdateFuotaTaskOutput, aws_smithy_http::result::SdkError<crate::operation::update_fuota_task::UpdateFuotaTaskError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The ID of a FUOTA task.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -105,10 +83,7 @@ impl UpdateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
-    pub fn set_lo_ra_wan(
-        mut self,
-        input: std::option::Option<crate::types::LoRaWanFuotaTask>,
-    ) -> Self {
+    pub fn set_lo_ra_wan(mut self, input: std::option::Option<crate::types::LoRaWanFuotaTask>) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
@@ -118,10 +93,7 @@ impl UpdateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_image(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_firmware_update_image(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_firmware_update_image(input);
         self
     }
@@ -131,10 +103,7 @@ impl UpdateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn set_firmware_update_role(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_firmware_update_role(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_firmware_update_role(input);
         self
     }
@@ -169,3 +138,4 @@ impl UpdateFuotaTaskFluentBuilder {
         self
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIndexOutput {
+pub struct UpdateIndexOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateIndexOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateIndexOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIndexOutput`](crate::operation::update_index::UpdateIndexOutput).
     pub fn builder() -> crate::operation::update_index::builders::UpdateIndexOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateIndexOutputBuilder {
 }
 impl UpdateIndexOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateIndexOutput`](crate::operation::update_index::UpdateIndexOutput).
     pub fn build(self) -> crate::operation::update_index::UpdateIndexOutput {
         crate::operation::update_index::UpdateIndexOutput {
@@ -40,3 +40,4 @@ impl UpdateIndexOutputBuilder {
         }
     }
 }
+

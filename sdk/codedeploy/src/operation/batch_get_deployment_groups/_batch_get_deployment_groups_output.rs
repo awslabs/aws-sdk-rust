@@ -3,11 +3,10 @@
 /// <p>Represents the output of a <code>BatchGetDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentGroupsOutput {
+pub struct BatchGetDeploymentGroupsOutput  {
     /// <p>Information about the deployment groups.</p>
     #[doc(hidden)]
-    pub deployment_groups_info:
-        std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
+    pub deployment_groups_info: std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     #[doc(hidden)]
     pub error_message: std::option::Option<std::string::String>,
@@ -15,24 +14,22 @@ pub struct BatchGetDeploymentGroupsOutput {
 }
 impl BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
-    pub fn deployment_groups_info(
-        &self,
-    ) -> std::option::Option<&[crate::types::DeploymentGroupInfo]> {
+    pub fn deployment_groups_info(&self) -> std::option::Option<& [crate::types::DeploymentGroupInfo]> {
         self.deployment_groups_info.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetDeploymentGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl BatchGetDeploymentGroupsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentGroupsOutput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput).
-    pub fn builder() -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsOutputBuilder{
+    pub fn builder() -> crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsOutputBuilder {
         crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsOutputBuilder::default()
     }
 }
@@ -41,8 +38,7 @@ impl BatchGetDeploymentGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsOutputBuilder {
-    pub(crate) deployment_groups_info:
-        std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
+    pub(crate) deployment_groups_info: std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
     pub(crate) error_message: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +50,13 @@ impl BatchGetDeploymentGroupsOutputBuilder {
     /// <p>Information about the deployment groups.</p>
     pub fn deployment_groups_info(mut self, input: crate::types::DeploymentGroupInfo) -> Self {
         let mut v = self.deployment_groups_info.unwrap_or_default();
-        v.push(input);
-        self.deployment_groups_info = Some(v);
-        self
+                        v.push(input);
+                        self.deployment_groups_info = Some(v);
+                        self
     }
     /// <p>Information about the deployment groups.</p>
-    pub fn set_deployment_groups_info(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
-    ) -> Self {
-        self.deployment_groups_info = input;
-        self
+    pub fn set_deployment_groups_info(mut self, input: std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>) -> Self {
+        self.deployment_groups_info = input; self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,26 +65,26 @@ impl BatchGetDeploymentGroupsOutputBuilder {
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`BatchGetDeploymentGroupsOutput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput {
+    pub fn build(self) -> crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput {
         crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput {
-            deployment_groups_info: self.deployment_groups_info,
-            error_message: self.error_message,
+            deployment_groups_info: self.deployment_groups_info
+            ,
+            error_message: self.error_message
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

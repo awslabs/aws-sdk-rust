@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageGenerationConfigurationInput {
+pub struct DescribeImageGenerationConfigurationInput  {
     /// <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeImageGenerationConfigurationInput {
 }
 impl DescribeImageGenerationConfigurationInput {
     /// <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
 }
 impl DescribeImageGenerationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeImageGenerationConfigurationInput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput).
-    pub fn builder() -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder {
         crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeImageGenerationConfigurationInputBuilder {
     }
     /// <p>The name of the stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,11 +51,10 @@ impl DescribeImageGenerationConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis video stream from which to retrieve the image generation configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeImageGenerationConfigurationInput`](crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfigurationInput {
                 stream_name: self.stream_name
@@ -67,3 +65,4 @@ impl DescribeImageGenerationConfigurationInputBuilder {
         )
     }
 }
+

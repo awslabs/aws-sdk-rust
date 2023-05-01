@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancesOutput {
+pub struct DescribeInstancesOutput  {
     /// <p>A collection of objects containing properties for each instance returned.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
@@ -13,23 +13,22 @@ pub struct DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// <p>A collection of objects containing properties for each instance returned.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::types::Instance]> {
         self.instances.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder {
         crate::operation::describe_instances::builders::DescribeInstancesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl DescribeInstancesOutputBuilder {
     /// <p>A collection of objects containing properties for each instance returned.</p>
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
-        v.push(input);
-        self.instances = Some(v);
-        self
+                        v.push(input);
+                        self.instances = Some(v);
+                        self
     }
     /// <p>A collection of objects containing properties for each instance returned.</p>
-    pub fn set_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
-    ) -> Self {
-        self.instances = input;
-        self
+    pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::Instance>>) -> Self {
+        self.instances = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl DescribeInstancesOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeInstancesOutput`](crate::operation::describe_instances::DescribeInstancesOutput).
     pub fn build(self) -> crate::operation::describe_instances::DescribeInstancesOutput {
         crate::operation::describe_instances::DescribeInstancesOutput {
-            instances: self.instances,
-            next_token: self.next_token,
+            instances: self.instances
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

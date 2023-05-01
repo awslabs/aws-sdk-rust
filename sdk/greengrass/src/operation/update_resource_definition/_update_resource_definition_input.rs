@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceDefinitionInput {
+pub struct UpdateResourceDefinitionInput  {
     /// The name of the definition.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UpdateResourceDefinitionInput {
 }
 impl UpdateResourceDefinitionInput {
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The ID of the resource definition.
-    pub fn resource_definition_id(&self) -> std::option::Option<&str> {
+    pub fn resource_definition_id(&self) -> std::option::Option<& str> {
         self.resource_definition_id.as_deref()
     }
 }
 impl UpdateResourceDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceDefinitionInput`](crate::operation::update_resource_definition::UpdateResourceDefinitionInput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder {
         crate::operation::update_resource_definition::builders::UpdateResourceDefinitionInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl UpdateResourceDefinitionInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The ID of the resource definition.
     pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,25 +50,19 @@ impl UpdateResourceDefinitionInputBuilder {
         self
     }
     /// The ID of the resource definition.
-    pub fn set_resource_definition_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_definition_id = input;
-        self
+    pub fn set_resource_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_definition_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateResourceDefinitionInput`](crate::operation::update_resource_definition::UpdateResourceDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_resource_definition::UpdateResourceDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_resource_definition::UpdateResourceDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_resource_definition::UpdateResourceDefinitionInput {
-                name: self.name,
-                resource_definition_id: self.resource_definition_id,
-            },
+                name: self.name
+                ,
+                resource_definition_id: self.resource_definition_id
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHoursOfOperationOutput {
+pub struct DescribeHoursOfOperationOutput  {
     /// <p>The hours of operation.</p>
     #[doc(hidden)]
     pub hours_of_operation: std::option::Option<crate::types::HoursOfOperation>,
@@ -10,18 +10,18 @@ pub struct DescribeHoursOfOperationOutput {
 }
 impl DescribeHoursOfOperationOutput {
     /// <p>The hours of operation.</p>
-    pub fn hours_of_operation(&self) -> std::option::Option<&crate::types::HoursOfOperation> {
+    pub fn hours_of_operation(&self) -> std::option::Option<& crate::types::HoursOfOperation> {
         self.hours_of_operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeHoursOfOperationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeHoursOfOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput).
-    pub fn builder() -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder {
         crate::operation::describe_hours_of_operation::builders::DescribeHoursOfOperationOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl DescribeHoursOfOperationOutputBuilder {
         self
     }
     /// <p>The hours of operation.</p>
-    pub fn set_hours_of_operation(
-        mut self,
-        input: std::option::Option<crate::types::HoursOfOperation>,
-    ) -> Self {
-        self.hours_of_operation = input;
-        self
+    pub fn set_hours_of_operation(mut self, input: std::option::Option<crate::types::HoursOfOperation>) -> Self {
+        self.hours_of_operation = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeHoursOfOperationOutput`](crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput {
+    pub fn build(self) -> crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput {
         crate::operation::describe_hours_of_operation::DescribeHoursOfOperationOutput {
-            hours_of_operation: self.hours_of_operation,
+            hours_of_operation: self.hours_of_operation
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

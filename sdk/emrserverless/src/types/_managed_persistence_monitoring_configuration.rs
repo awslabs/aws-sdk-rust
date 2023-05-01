@@ -3,7 +3,7 @@
 /// <p>The managed log persistence configuration for a job run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ManagedPersistenceMonitoringConfiguration {
+pub struct ManagedPersistenceMonitoringConfiguration  {
     /// <p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl ManagedPersistenceMonitoringConfiguration {
         self.enabled
     }
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ManagedPersistenceMonitoringConfigurationBuilder {
     }
     /// <p>Enables managed logging and defaults to true. If set to false, managed logging will be turned off.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
     pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +51,17 @@ impl ManagedPersistenceMonitoringConfigurationBuilder {
         self
     }
     /// <p>The KMS key ARN to encrypt the logs stored in managed log persistence.</p>
-    pub fn set_encryption_key_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.encryption_key_arn = input;
-        self
+    pub fn set_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.encryption_key_arn = input; self
     }
     /// Consumes the builder and constructs a [`ManagedPersistenceMonitoringConfiguration`](crate::types::ManagedPersistenceMonitoringConfiguration).
     pub fn build(self) -> crate::types::ManagedPersistenceMonitoringConfiguration {
         crate::types::ManagedPersistenceMonitoringConfiguration {
-            enabled: self.enabled,
-            encryption_key_arn: self.encryption_key_arn,
+            enabled: self.enabled
+            ,
+            encryption_key_arn: self.encryption_key_arn
+            ,
         }
     }
 }
+

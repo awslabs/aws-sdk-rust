@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProblemsInput {
+pub struct ListProblemsInput  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -24,15 +24,15 @@ pub struct ListProblemsInput {
 }
 impl ListProblemsInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -40,11 +40,11 @@ impl ListProblemsInput {
         self.max_results
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The name of the component. </p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
 }
@@ -73,12 +73,8 @@ impl ListProblemsInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_group_name = input; self
     }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,12 +82,8 @@ impl ListProblemsInputBuilder {
         self
     }
     /// <p>The time when the problem was detected, in epoch seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,8 +92,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the past seven days are returned.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -110,8 +101,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +110,7 @@ impl ListProblemsInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The name of the component. </p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,23 +119,26 @@ impl ListProblemsInputBuilder {
     }
     /// <p> The name of the component. </p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input;
-        self
+        self.component_name = input; self
     }
     /// Consumes the builder and constructs a [`ListProblemsInput`](crate::operation::list_problems::ListProblemsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_problems::ListProblemsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_problems::ListProblemsInput {
-            resource_group_name: self.resource_group_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            component_name: self.component_name,
-        })
+    pub fn build(self) -> Result<crate::operation::list_problems::ListProblemsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_problems::ListProblemsInput {
+                resource_group_name: self.resource_group_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                component_name: self.component_name
+                ,
+            }
+        )
     }
 }
+

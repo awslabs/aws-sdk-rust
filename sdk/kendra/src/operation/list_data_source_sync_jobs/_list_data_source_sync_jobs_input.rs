@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSourceSyncJobsInput {
+pub struct ListDataSourceSyncJobsInput  {
     /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -24,15 +24,15 @@ pub struct ListDataSourceSyncJobsInput {
 }
 impl ListDataSourceSyncJobsInput {
     /// <p>The identifier of the data source connector.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index used with the data source connector.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
@@ -40,19 +40,17 @@ impl ListDataSourceSyncJobsInput {
         self.max_results
     }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
-    pub fn start_time_filter(&self) -> std::option::Option<&crate::types::TimeRange> {
+    pub fn start_time_filter(&self) -> std::option::Option<& crate::types::TimeRange> {
         self.start_time_filter.as_ref()
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    pub fn status_filter(&self) -> std::option::Option<&crate::types::DataSourceSyncJobStatus> {
+    pub fn status_filter(&self) -> std::option::Option<& crate::types::DataSourceSyncJobStatus> {
         self.status_filter.as_ref()
     }
 }
 impl ListDataSourceSyncJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
-    pub fn builder(
-    ) -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder {
         crate::operation::list_data_source_sync_jobs::builders::ListDataSourceSyncJobsInputBuilder::default()
     }
 }
@@ -76,8 +74,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +83,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +92,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of jobs.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -106,8 +101,7 @@ impl ListDataSourceSyncJobsInputBuilder {
     }
     /// <p>The maximum number of synchronization jobs to return in the response. If there are fewer results in the list, this response contains only the actual results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
     pub fn start_time_filter(mut self, input: crate::types::TimeRange) -> Self {
@@ -115,12 +109,8 @@ impl ListDataSourceSyncJobsInputBuilder {
         self
     }
     /// <p>When specified, the synchronization jobs returned in the list are limited to jobs between the specified dates.</p>
-    pub fn set_start_time_filter(
-        mut self,
-        input: std::option::Option<crate::types::TimeRange>,
-    ) -> Self {
-        self.start_time_filter = input;
-        self
+    pub fn set_start_time_filter(mut self, input: std::option::Option<crate::types::TimeRange>) -> Self {
+        self.start_time_filter = input; self
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
     pub fn status_filter(mut self, input: crate::types::DataSourceSyncJobStatus) -> Self {
@@ -128,29 +118,27 @@ impl ListDataSourceSyncJobsInputBuilder {
         self
     }
     /// <p>Only returns synchronization jobs with the <code>Status</code> field equal to the specified status.</p>
-    pub fn set_status_filter(
-        mut self,
-        input: std::option::Option<crate::types::DataSourceSyncJobStatus>,
-    ) -> Self {
-        self.status_filter = input;
-        self
+    pub fn set_status_filter(mut self, input: std::option::Option<crate::types::DataSourceSyncJobStatus>) -> Self {
+        self.status_filter = input; self
     }
     /// Consumes the builder and constructs a [`ListDataSourceSyncJobsInput`](crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_data_source_sync_jobs::ListDataSourceSyncJobsInput {
-                id: self.id,
-                index_id: self.index_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                start_time_filter: self.start_time_filter,
-                status_filter: self.status_filter,
-            },
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                start_time_filter: self.start_time_filter
+                ,
+                status_filter: self.status_filter
+                ,
+            }
         )
     }
 }
+

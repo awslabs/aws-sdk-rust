@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableOutput {
+pub struct CreateConfiguredTableOutput  {
     /// <p>The created configured table.</p>
     #[doc(hidden)]
     pub configured_table: std::option::Option<crate::types::ConfiguredTable>,
@@ -10,20 +10,18 @@ pub struct CreateConfiguredTableOutput {
 }
 impl CreateConfiguredTableOutput {
     /// <p>The created configured table.</p>
-    pub fn configured_table(&self) -> std::option::Option<&crate::types::ConfiguredTable> {
+    pub fn configured_table(&self) -> std::option::Option<& crate::types::ConfiguredTable> {
         self.configured_table.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateConfiguredTableOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateConfiguredTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableOutput`](crate::operation::create_configured_table::CreateConfiguredTableOutput).
-    pub fn builder(
-    ) -> crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder {
         crate::operation::create_configured_table::builders::CreateConfiguredTableOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateConfiguredTableOutputBuilder {
         self
     }
     /// <p>The created configured table.</p>
-    pub fn set_configured_table(
-        mut self,
-        input: std::option::Option<crate::types::ConfiguredTable>,
-    ) -> Self {
-        self.configured_table = input;
-        self
+    pub fn set_configured_table(mut self, input: std::option::Option<crate::types::ConfiguredTable>) -> Self {
+        self.configured_table = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateConfiguredTableOutput`](crate::operation::create_configured_table::CreateConfiguredTableOutput).
     pub fn build(self) -> crate::operation::create_configured_table::CreateConfiguredTableOutput {
         crate::operation::create_configured_table::CreateConfiguredTableOutput {
-            configured_table: self.configured_table,
+            configured_table: self.configured_table
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

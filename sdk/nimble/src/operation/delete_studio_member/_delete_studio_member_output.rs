@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStudioMemberOutput {
+pub struct DeleteStudioMemberOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteStudioMemberOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteStudioMemberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStudioMemberOutput`](crate::operation::delete_studio_member::DeleteStudioMemberOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_studio_member::builders::DeleteStudioMemberOutputBuilder {
+    pub fn builder() -> crate::operation::delete_studio_member::builders::DeleteStudioMemberOutputBuilder {
         crate::operation::delete_studio_member::builders::DeleteStudioMemberOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeleteStudioMemberOutputBuilder {
 }
 impl DeleteStudioMemberOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteStudioMemberOutput`](crate::operation::delete_studio_member::DeleteStudioMemberOutput).
     pub fn build(self) -> crate::operation::delete_studio_member::DeleteStudioMemberOutput {
         crate::operation::delete_studio_member::DeleteStudioMemberOutput {
@@ -41,3 +40,4 @@ impl DeleteStudioMemberOutputBuilder {
         }
     }
 }
+

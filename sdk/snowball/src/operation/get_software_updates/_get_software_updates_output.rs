@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSoftwareUpdatesOutput {
+pub struct GetSoftwareUpdatesOutput  {
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
     #[doc(hidden)]
     pub updates_uri: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct GetSoftwareUpdatesOutput {
 }
 impl GetSoftwareUpdatesOutput {
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
-    pub fn updates_uri(&self) -> std::option::Option<&str> {
+    pub fn updates_uri(&self) -> std::option::Option<& str> {
         self.updates_uri.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetSoftwareUpdatesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetSoftwareUpdatesOutput {
     /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesOutput`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesOutputBuilder {
+    pub fn builder() -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesOutputBuilder {
         crate::operation::get_software_updates::builders::GetSoftwareUpdatesOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl GetSoftwareUpdatesOutputBuilder {
     }
     /// <p>The Amazon S3 presigned URL for the update file associated with the specified <code>JobId</code> value. The software update will be available for 2 days after this request is made. To access an update after the 2 days have passed, you'll have to make another call to <code>GetSoftwareUpdates</code>.</p>
     pub fn set_updates_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updates_uri = input;
-        self
+        self.updates_uri = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetSoftwareUpdatesOutput`](crate::operation::get_software_updates::GetSoftwareUpdatesOutput).
     pub fn build(self) -> crate::operation::get_software_updates::GetSoftwareUpdatesOutput {
         crate::operation::get_software_updates::GetSoftwareUpdatesOutput {
-            updates_uri: self.updates_uri,
+            updates_uri: self.updates_uri
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

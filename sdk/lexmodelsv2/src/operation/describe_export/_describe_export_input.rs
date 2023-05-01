@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExportInput {
+pub struct DescribeExportInput  {
     /// <p>The unique identifier of the export to describe.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
 }
 impl DescribeExportInput {
     /// <p>The unique identifier of the export to describe.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeExportInputBuilder {
     }
     /// <p>The unique identifier of the export to describe.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeExportInput`](crate::operation::describe_export::DescribeExportInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_export::DescribeExportInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_export::DescribeExportInput {
-            export_id: self.export_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_export::DescribeExportInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_export::DescribeExportInput {
+                export_id: self.export_id
+                ,
+            }
+        )
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let radiusauthenticationprotocol = unimplemented!();
 /// match radiusauthenticationprotocol {
@@ -32,22 +32,14 @@
 /// Specifically, when `radiusauthenticationprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RadiusAuthenticationProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RadiusAuthenticationProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Chap,
@@ -58,46 +50,45 @@ pub enum RadiusAuthenticationProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Pap,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RadiusAuthenticationProtocol {
-    fn from(s: &str) -> Self {
-        match s {
-            "CHAP" => RadiusAuthenticationProtocol::Chap,
-            "MS-CHAPv1" => RadiusAuthenticationProtocol::Mschapv1,
-            "MS-CHAPv2" => RadiusAuthenticationProtocol::Mschapv2,
-            "PAP" => RadiusAuthenticationProtocol::Pap,
-            other => RadiusAuthenticationProtocol::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CHAP" => RadiusAuthenticationProtocol::Chap,
+"MS-CHAPv1" => RadiusAuthenticationProtocol::Mschapv1,
+"MS-CHAPv2" => RadiusAuthenticationProtocol::Mschapv2,
+"PAP" => RadiusAuthenticationProtocol::Pap,
+other => RadiusAuthenticationProtocol::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for RadiusAuthenticationProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RadiusAuthenticationProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RadiusAuthenticationProtocol::from(s))
+                }
+            }
 impl RadiusAuthenticationProtocol {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RadiusAuthenticationProtocol::Chap => "CHAP",
-            RadiusAuthenticationProtocol::Mschapv1 => "MS-CHAPv1",
-            RadiusAuthenticationProtocol::Mschapv2 => "MS-CHAPv2",
-            RadiusAuthenticationProtocol::Pap => "PAP",
-            RadiusAuthenticationProtocol::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["CHAP", "MS-CHAPv1", "MS-CHAPv2", "PAP"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RadiusAuthenticationProtocol::Chap => "CHAP",
+    RadiusAuthenticationProtocol::Mschapv1 => "MS-CHAPv1",
+    RadiusAuthenticationProtocol::Mschapv2 => "MS-CHAPv2",
+    RadiusAuthenticationProtocol::Pap => "PAP",
+    RadiusAuthenticationProtocol::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CHAP", "MS-CHAPv1", "MS-CHAPv2", "PAP"]
+                }
+            }
 impl AsRef<str> for RadiusAuthenticationProtocol {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

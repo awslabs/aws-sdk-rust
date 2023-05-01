@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReadSetExportJobOutput {
+pub struct StartReadSetExportJobOutput  {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,36 +22,34 @@ pub struct StartReadSetExportJobOutput {
 }
 impl StartReadSetExportJobOutput {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>The job's output location.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReadSetExportJobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ReadSetExportJobStatus> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartReadSetExportJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartReadSetExportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartReadSetExportJobOutput`](crate::operation::start_read_set_export_job::StartReadSetExportJobOutput).
-    pub fn builder(
-    ) -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_read_set_export_job::builders::StartReadSetExportJobOutputBuilder {
         crate::operation::start_read_set_export_job::builders::StartReadSetExportJobOutputBuilder::default()
     }
 }
@@ -75,8 +73,7 @@ impl StartReadSetExportJobOutputBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The read set's sequence store ID.</p>
     pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +81,8 @@ impl StartReadSetExportJobOutputBuilder {
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.sequence_store_id = input;
-        self
+    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.sequence_store_id = input; self
     }
     /// <p>The job's output location.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +91,7 @@ impl StartReadSetExportJobOutputBuilder {
     }
     /// <p>The job's output location.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetExportJobStatus) -> Self {
@@ -107,12 +99,8 @@ impl StartReadSetExportJobOutputBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ReadSetExportJobStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ReadSetExportJobStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>When the job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -120,31 +108,33 @@ impl StartReadSetExportJobOutputBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartReadSetExportJobOutput`](crate::operation::start_read_set_export_job::StartReadSetExportJobOutput).
     pub fn build(self) -> crate::operation::start_read_set_export_job::StartReadSetExportJobOutput {
         crate::operation::start_read_set_export_job::StartReadSetExportJobOutput {
-            id: self.id,
-            sequence_store_id: self.sequence_store_id,
-            destination: self.destination,
-            status: self.status,
-            creation_time: self.creation_time,
+            id: self.id
+            ,
+            sequence_store_id: self.sequence_store_id
+            ,
+            destination: self.destination
+            ,
+            status: self.status
+            ,
+            creation_time: self.creation_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

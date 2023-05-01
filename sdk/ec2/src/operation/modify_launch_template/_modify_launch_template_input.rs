@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLaunchTemplateInput {
+pub struct ModifyLaunchTemplateInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p> 
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     #[doc(hidden)]
     pub launch_template_name: std::option::Option<std::string::String>,
@@ -27,30 +27,29 @@ impl ModifyLaunchTemplateInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p> 
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_template_id(&self) -> std::option::Option<& str> {
         self.launch_template_id.as_deref()
     }
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<&str> {
+    pub fn launch_template_name(&self) -> std::option::Option<& str> {
         self.launch_template_name.as_deref()
     }
     /// <p>The version number of the launch template to set as the default version.</p>
-    pub fn default_version(&self) -> std::option::Option<&str> {
+    pub fn default_version(&self) -> std::option::Option<& str> {
         self.default_version.as_deref()
     }
 }
 impl ModifyLaunchTemplateInput {
     /// Creates a new builder-style object to manufacture [`ModifyLaunchTemplateInput`](crate::operation::modify_launch_template::ModifyLaunchTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder {
+    pub fn builder() -> crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder {
         crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder::default()
     }
 }
@@ -73,50 +72,40 @@ impl ModifyLaunchTemplateInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p> 
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
+    /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p> 
     /// <p>Constraint: Maximum 128 ASCII characters.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.launch_template_id = Some(input.into());
         self
     }
-    /// <p>The ID of the launch template.</p>
+    /// <p>The ID of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn set_launch_template_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_id = input;
-        self
+    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_id = input; self
     }
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.launch_template_name = Some(input.into());
         self
     }
-    /// <p>The name of the launch template.</p>
+    /// <p>The name of the launch template.</p> 
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn set_launch_template_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.launch_template_name = input;
-        self
+    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.launch_template_name = input; self
     }
     /// <p>The version number of the launch template to set as the default version.</p>
     pub fn default_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,24 +114,24 @@ impl ModifyLaunchTemplateInputBuilder {
     }
     /// <p>The version number of the launch template to set as the default version.</p>
     pub fn set_default_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_version = input;
-        self
+        self.default_version = input; self
     }
     /// Consumes the builder and constructs a [`ModifyLaunchTemplateInput`](crate::operation::modify_launch_template::ModifyLaunchTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_launch_template::ModifyLaunchTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_launch_template::ModifyLaunchTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_launch_template::ModifyLaunchTemplateInput {
-                dry_run: self.dry_run,
-                client_token: self.client_token,
-                launch_template_id: self.launch_template_id,
-                launch_template_name: self.launch_template_name,
-                default_version: self.default_version,
-            },
+                dry_run: self.dry_run
+                ,
+                client_token: self.client_token
+                ,
+                launch_template_id: self.launch_template_id
+                ,
+                launch_template_name: self.launch_template_name
+                ,
+                default_version: self.default_version
+                ,
+            }
         )
     }
 }
+

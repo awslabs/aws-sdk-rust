@@ -188,3 +188,4 @@ pub mod builders;
 
 /// Error types that Amazon Pinpoint Email Service can respond with.
 pub mod error;
+

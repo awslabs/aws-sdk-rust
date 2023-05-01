@@ -3,7 +3,7 @@
 /// <p>Specifies an Amazon Web Services account that owns S3 buckets for a classification job to analyze, and one or more specific buckets to analyze for that account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketDefinitionForJob {
+pub struct S3BucketDefinitionForJob  {
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3BucketDefinitionForJob {
 }
 impl S3BucketDefinitionForJob {
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>An array that lists the names of the buckets.</p>
-    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn buckets(&self) -> std::option::Option<& [std::string::String]> {
         self.buckets.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl S3BucketDefinitionForJobBuilder {
     }
     /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Appends an item to `buckets`.
     ///
@@ -53,23 +52,22 @@ impl S3BucketDefinitionForJobBuilder {
     /// <p>An array that lists the names of the buckets.</p>
     pub fn buckets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input.into());
-        self.buckets = Some(v);
-        self
+                        v.push(input.into());
+                        self.buckets = Some(v);
+                        self
     }
     /// <p>An array that lists the names of the buckets.</p>
-    pub fn set_buckets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.buckets = input; self
     }
     /// Consumes the builder and constructs a [`S3BucketDefinitionForJob`](crate::types::S3BucketDefinitionForJob).
     pub fn build(self) -> crate::types::S3BucketDefinitionForJob {
         crate::types::S3BucketDefinitionForJob {
-            account_id: self.account_id,
-            buckets: self.buckets,
+            account_id: self.account_id
+            ,
+            buckets: self.buckets
+            ,
         }
     }
 }
+

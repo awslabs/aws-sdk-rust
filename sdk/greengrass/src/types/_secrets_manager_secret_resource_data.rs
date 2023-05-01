@@ -3,24 +3,21 @@
 /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecretsManagerSecretResourceData {
+pub struct SecretsManagerSecretResourceData  {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
     #[doc(hidden)]
-    pub additional_staging_labels_to_download:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub additional_staging_labels_to_download: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SecretsManagerSecretResourceData {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn additional_staging_labels_to_download(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_staging_labels_to_download(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_staging_labels_to_download.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl SecretsManagerSecretResourceData {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SecretsManagerSecretResourceDataBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) additional_staging_labels_to_download:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) additional_staging_labels_to_download: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SecretsManagerSecretResourceDataBuilder {
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
@@ -47,38 +43,31 @@ impl SecretsManagerSecretResourceDataBuilder {
     }
     /// The ARN of the Secrets Manager secret to make available on the core. The value of the secret's latest version (represented by the ''AWSCURRENT'' staging label) is included by default.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// Appends an item to `additional_staging_labels_to_download`.
     ///
     /// To override the contents of this collection use [`set_additional_staging_labels_to_download`](Self::set_additional_staging_labels_to_download).
     ///
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn additional_staging_labels_to_download(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
-        let mut v = self
-            .additional_staging_labels_to_download
-            .unwrap_or_default();
-        v.push(input.into());
-        self.additional_staging_labels_to_download = Some(v);
-        self
+    pub fn additional_staging_labels_to_download(mut self, input: impl Into<std::string::String>) -> Self {
+        let mut v = self.additional_staging_labels_to_download.unwrap_or_default();
+                        v.push(input.into());
+                        self.additional_staging_labels_to_download = Some(v);
+                        self
     }
     /// Optional. The staging labels whose values you want to make available on the core, in addition to ''AWSCURRENT''.
-    pub fn set_additional_staging_labels_to_download(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.additional_staging_labels_to_download = input;
-        self
+    pub fn set_additional_staging_labels_to_download(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.additional_staging_labels_to_download = input; self
     }
     /// Consumes the builder and constructs a [`SecretsManagerSecretResourceData`](crate::types::SecretsManagerSecretResourceData).
     pub fn build(self) -> crate::types::SecretsManagerSecretResourceData {
         crate::types::SecretsManagerSecretResourceData {
-            arn: self.arn,
-            additional_staging_labels_to_download: self.additional_staging_labels_to_download,
+            arn: self.arn
+            ,
+            additional_staging_labels_to_download: self.additional_staging_labels_to_download
+            ,
         }
     }
 }
+

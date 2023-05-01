@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckInLicenseInput {
+pub struct CheckInLicenseInput  {
     /// <p>License consumption token.</p>
     #[doc(hidden)]
     pub license_consumption_token: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct CheckInLicenseInput {
 }
 impl CheckInLicenseInput {
     /// <p>License consumption token.</p>
-    pub fn license_consumption_token(&self) -> std::option::Option<&str> {
+    pub fn license_consumption_token(&self) -> std::option::Option<& str> {
         self.license_consumption_token.as_deref()
     }
     /// <p>License beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<&str> {
+    pub fn beneficiary(&self) -> std::option::Option<& str> {
         self.beneficiary.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl CheckInLicenseInputBuilder {
         self
     }
     /// <p>License consumption token.</p>
-    pub fn set_license_consumption_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.license_consumption_token = input;
-        self
+    pub fn set_license_consumption_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.license_consumption_token = input; self
     }
     /// <p>License beneficiary.</p>
     pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,19 +51,18 @@ impl CheckInLicenseInputBuilder {
     }
     /// <p>License beneficiary.</p>
     pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.beneficiary = input;
-        self
+        self.beneficiary = input; self
     }
     /// Consumes the builder and constructs a [`CheckInLicenseInput`](crate::operation::check_in_license::CheckInLicenseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::check_in_license::CheckInLicenseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::check_in_license::CheckInLicenseInput {
-            license_consumption_token: self.license_consumption_token,
-            beneficiary: self.beneficiary,
-        })
+    pub fn build(self) -> Result<crate::operation::check_in_license::CheckInLicenseInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::check_in_license::CheckInLicenseInput {
+                license_consumption_token: self.license_consumption_token
+                ,
+                beneficiary: self.beneficiary
+                ,
+            }
+        )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Detailed data of an Proton service template version resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServiceTemplateVersion {
+pub struct ServiceTemplateVersion  {
     /// <p>The name of the version of a service template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -36,78 +36,71 @@ pub struct ServiceTemplateVersion {
     pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
     #[doc(hidden)]
-    pub compatible_environment_templates:
-        std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
+    pub compatible_environment_templates: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
     /// <p>The schema of the version of a service template.</p>
     #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_component_sources: std::option::Option<
-        std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-    >,
+    pub supported_component_sources: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl ServiceTemplateVersion {
     /// <p>The name of the version of a service template.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>The minor version of a service template.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
     /// <p>The recommended minor version of the service template.</p>
-    pub fn recommended_minor_version(&self) -> std::option::Option<&str> {
+    pub fn recommended_minor_version(&self) -> std::option::Option<& str> {
         self.recommended_minor_version.as_deref()
     }
     /// <p>The service template version status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TemplateVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A service template version status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>A description of the version of a service template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    pub fn compatible_environment_templates(
-        &self,
-    ) -> std::option::Option<&[crate::types::CompatibleEnvironmentTemplate]> {
+    pub fn compatible_environment_templates(&self) -> std::option::Option<& [crate::types::CompatibleEnvironmentTemplate]> {
         self.compatible_environment_templates.as_deref()
     }
     /// <p>The schema of the version of a service template.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(
-        &self,
-    ) -> std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
+    pub fn supported_component_sources(&self) -> std::option::Option<& [crate::types::ServiceTemplateSupportedComponentSourceType]> {
         self.supported_component_sources.as_deref()
     }
 }
-impl std::fmt::Debug for ServiceTemplateVersion {
+impl  std::fmt::Debug for ServiceTemplateVersion  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceTemplateVersion");
         formatter.field("template_name", &self.template_name);
@@ -120,15 +113,9 @@ impl std::fmt::Debug for ServiceTemplateVersion {
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "compatible_environment_templates",
-            &self.compatible_environment_templates,
-        );
+        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "supported_component_sources",
-            &self.supported_component_sources,
-        );
+        formatter.field("supported_component_sources", &self.supported_component_sources);
         formatter.finish()
     }
 }
@@ -153,12 +140,9 @@ pub struct ServiceTemplateVersionBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) compatible_environment_templates:
-        std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
+    pub(crate) compatible_environment_templates: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
     pub(crate) schema: std::option::Option<std::string::String>,
-    pub(crate) supported_component_sources: std::option::Option<
-        std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-    >,
+    pub(crate) supported_component_sources: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
 }
 impl ServiceTemplateVersionBuilder {
     /// <p>The name of the version of a service template.</p>
@@ -168,8 +152,7 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>The name of the version of a service template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +161,7 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>The latest major version that's associated with the version of a service template.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>The minor version of a service template.</p>
     pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,8 +170,7 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>The minor version of a service template.</p>
     pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// <p>The recommended minor version of the service template.</p>
     pub fn recommended_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,12 +178,8 @@ impl ServiceTemplateVersionBuilder {
         self
     }
     /// <p>The recommended minor version of the service template.</p>
-    pub fn set_recommended_minor_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recommended_minor_version = input;
-        self
+    pub fn set_recommended_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recommended_minor_version = input; self
     }
     /// <p>The service template version status.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
@@ -210,12 +187,8 @@ impl ServiceTemplateVersionBuilder {
         self
     }
     /// <p>The service template version status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TemplateVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>A service template version status message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,8 +197,7 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>A service template version status message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>A description of the version of a service template.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +206,7 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>A description of the version of a service template.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,8 +215,7 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the version of a service template.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The time when the version of a service template was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -253,12 +223,8 @@ impl ServiceTemplateVersionBuilder {
         self
     }
     /// <p>The time when the version of a service template was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The time when the version of a service template was last modified.</p>
     pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -266,34 +232,23 @@ impl ServiceTemplateVersionBuilder {
         self
     }
     /// <p>The time when the version of a service template was last modified.</p>
-    pub fn set_last_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_at = input;
-        self
+    pub fn set_last_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_at = input; self
     }
     /// Appends an item to `compatible_environment_templates`.
     ///
     /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
     ///
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    pub fn compatible_environment_templates(
-        mut self,
-        input: crate::types::CompatibleEnvironmentTemplate,
-    ) -> Self {
+    pub fn compatible_environment_templates(mut self, input: crate::types::CompatibleEnvironmentTemplate) -> Self {
         let mut v = self.compatible_environment_templates.unwrap_or_default();
-        v.push(input);
-        self.compatible_environment_templates = Some(v);
-        self
+                        v.push(input);
+                        self.compatible_environment_templates = Some(v);
+                        self
     }
     /// <p>An array of compatible environment template names for the major version of a service template.</p>
-    pub fn set_compatible_environment_templates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>,
-    ) -> Self {
-        self.compatible_environment_templates = input;
-        self
+    pub fn set_compatible_environment_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplate>>) -> Self {
+        self.compatible_environment_templates = input; self
     }
     /// <p>The schema of the version of a service template.</p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -302,51 +257,54 @@ impl ServiceTemplateVersionBuilder {
     }
     /// <p>The schema of the version of a service template.</p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// Appends an item to `supported_component_sources`.
     ///
     /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
     ///
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(
-        mut self,
-        input: crate::types::ServiceTemplateSupportedComponentSourceType,
-    ) -> Self {
+    pub fn supported_component_sources(mut self, input: crate::types::ServiceTemplateSupportedComponentSourceType) -> Self {
         let mut v = self.supported_component_sources.unwrap_or_default();
-        v.push(input);
-        self.supported_component_sources = Some(v);
-        self
+                        v.push(input);
+                        self.supported_component_sources = Some(v);
+                        self
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p>
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> 
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_supported_component_sources(
-        mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
-        >,
-    ) -> Self {
-        self.supported_component_sources = input;
-        self
+    pub fn set_supported_component_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>) -> Self {
+        self.supported_component_sources = input; self
     }
     /// Consumes the builder and constructs a [`ServiceTemplateVersion`](crate::types::ServiceTemplateVersion).
     pub fn build(self) -> crate::types::ServiceTemplateVersion {
         crate::types::ServiceTemplateVersion {
-            template_name: self.template_name,
-            major_version: self.major_version,
-            minor_version: self.minor_version,
-            recommended_minor_version: self.recommended_minor_version,
-            status: self.status,
-            status_message: self.status_message,
-            description: self.description,
-            arn: self.arn,
-            created_at: self.created_at,
-            last_modified_at: self.last_modified_at,
-            compatible_environment_templates: self.compatible_environment_templates,
-            schema: self.schema,
-            supported_component_sources: self.supported_component_sources,
+            template_name: self.template_name
+            ,
+            major_version: self.major_version
+            ,
+            minor_version: self.minor_version
+            ,
+            recommended_minor_version: self.recommended_minor_version
+            ,
+            status: self.status
+            ,
+            status_message: self.status_message
+            ,
+            description: self.description
+            ,
+            arn: self.arn
+            ,
+            created_at: self.created_at
+            ,
+            last_modified_at: self.last_modified_at
+            ,
+            compatible_environment_templates: self.compatible_environment_templates
+            ,
+            schema: self.schema
+            ,
+            supported_component_sources: self.supported_component_sources
+            ,
         }
     }
 }
@@ -363,15 +321,10 @@ impl std::fmt::Debug for ServiceTemplateVersionBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_at", &self.last_modified_at);
-        formatter.field(
-            "compatible_environment_templates",
-            &self.compatible_environment_templates,
-        );
+        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
         formatter.field("schema", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "supported_component_sources",
-            &self.supported_component_sources,
-        );
+        formatter.field("supported_component_sources", &self.supported_component_sources);
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>TimerFired</code> event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimerFiredEventAttributes {
+pub struct TimerFiredEventAttributes  {
     /// <p>The unique ID of the timer that fired.</p>
     #[doc(hidden)]
     pub timer_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct TimerFiredEventAttributes {
 }
 impl TimerFiredEventAttributes {
     /// <p>The unique ID of the timer that fired.</p>
-    pub fn timer_id(&self) -> std::option::Option<&str> {
+    pub fn timer_id(&self) -> std::option::Option<& str> {
         self.timer_id.as_deref()
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -43,8 +43,7 @@ impl TimerFiredEventAttributesBuilder {
     }
     /// <p>The unique ID of the timer that fired.</p>
     pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timer_id = input;
-        self
+        self.timer_id = input; self
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
@@ -53,14 +52,17 @@ impl TimerFiredEventAttributesBuilder {
     }
     /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.started_event_id = input;
-        self
+        self.started_event_id = input; self
     }
     /// Consumes the builder and constructs a [`TimerFiredEventAttributes`](crate::types::TimerFiredEventAttributes).
     pub fn build(self) -> crate::types::TimerFiredEventAttributes {
         crate::types::TimerFiredEventAttributes {
-            timer_id: self.timer_id,
-            started_event_id: self.started_event_id.unwrap_or_default(),
+            timer_id: self.timer_id
+            ,
+            started_event_id: self.started_event_id
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

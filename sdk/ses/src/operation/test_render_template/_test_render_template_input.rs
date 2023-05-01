@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRenderTemplateInput {
+pub struct TestRenderTemplateInput  {
     /// <p>The name of the template that you want to render.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct TestRenderTemplateInput {
 }
 impl TestRenderTemplateInput {
     /// <p>The name of the template that you want to render.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn template_data(&self) -> std::option::Option<&str> {
+    pub fn template_data(&self) -> std::option::Option<& str> {
         self.template_data.as_deref()
     }
 }
 impl TestRenderTemplateInput {
     /// Creates a new builder-style object to manufacture [`TestRenderTemplateInput`](crate::operation::test_render_template::TestRenderTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::test_render_template::builders::TestRenderTemplateInputBuilder {
+    pub fn builder() -> crate::operation::test_render_template::builders::TestRenderTemplateInputBuilder {
         crate::operation::test_render_template::builders::TestRenderTemplateInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl TestRenderTemplateInputBuilder {
     }
     /// <p>The name of the template that you want to render.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl TestRenderTemplateInputBuilder {
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn set_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_data = input;
-        self
+        self.template_data = input; self
     }
     /// Consumes the builder and constructs a [`TestRenderTemplateInput`](crate::operation::test_render_template::TestRenderTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::test_render_template::TestRenderTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::test_render_template::TestRenderTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::test_render_template::TestRenderTemplateInput {
-                template_name: self.template_name,
-                template_data: self.template_data,
-            },
+                template_name: self.template_name
+                ,
+                template_data: self.template_data
+                ,
+            }
         )
     }
 }
+

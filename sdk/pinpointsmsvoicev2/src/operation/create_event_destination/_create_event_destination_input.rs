@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventDestinationInput {
+pub struct CreateEventDestinationInput  {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -27,43 +27,37 @@ pub struct CreateEventDestinationInput {
 }
 impl CreateEventDestinationInput {
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> std::option::Option<& str> {
         self.event_destination_name.as_deref()
     }
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::types::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::types::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> std::option::Option<& crate::types::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::types::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::types::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-    pub fn sns_destination(&self) -> std::option::Option<&crate::types::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::types::SnsDestination> {
         self.sns_destination.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl CreateEventDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateEventDestinationInput`](crate::operation::create_event_destination::CreateEventDestinationInput).
-    pub fn builder(
-    ) -> crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder {
         crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder::default()
     }
 }
@@ -75,10 +69,8 @@ pub struct CreateEventDestinationInputBuilder {
     pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     pub(crate) event_destination_name: std::option::Option<std::string::String>,
     pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::types::EventType>>,
-    pub(crate) cloud_watch_logs_destination:
-        std::option::Option<crate::types::CloudWatchLogsDestination>,
-    pub(crate) kinesis_firehose_destination:
-        std::option::Option<crate::types::KinesisFirehoseDestination>,
+    pub(crate) cloud_watch_logs_destination: std::option::Option<crate::types::CloudWatchLogsDestination>,
+    pub(crate) kinesis_firehose_destination: std::option::Option<crate::types::KinesisFirehoseDestination>,
     pub(crate) sns_destination: std::option::Option<crate::types::SnsDestination>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
@@ -89,12 +81,8 @@ impl CreateEventDestinationInputBuilder {
         self
     }
     /// <p>Either the name of the configuration set or the configuration set ARN to apply event logging to. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// <p>The name that identifies the event destination.</p>
     pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,12 +90,8 @@ impl CreateEventDestinationInputBuilder {
         self
     }
     /// <p>The name that identifies the event destination.</p>
-    pub fn set_event_destination_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.event_destination_name = input;
-        self
+    pub fn set_event_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.event_destination_name = input; self
     }
     /// Appends an item to `matching_event_types`.
     ///
@@ -116,49 +100,31 @@ impl CreateEventDestinationInputBuilder {
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
     pub fn matching_event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.matching_event_types.unwrap_or_default();
-        v.push(input);
-        self.matching_event_types = Some(v);
-        self
+                        v.push(input);
+                        self.matching_event_types = Some(v);
+                        self
     }
     /// <p>An array of event types that determine which events to log. If "ALL" is used, then Amazon Pinpoint logs every event type.</p>
-    pub fn set_matching_event_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventType>>,
-    ) -> Self {
-        self.matching_event_types = input;
-        self
+    pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventType>>) -> Self {
+        self.matching_event_types = input; self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn cloud_watch_logs_destination(
-        mut self,
-        input: crate::types::CloudWatchLogsDestination,
-    ) -> Self {
+    pub fn cloud_watch_logs_destination(mut self, input: crate::types::CloudWatchLogsDestination) -> Self {
         self.cloud_watch_logs_destination = Some(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon CloudWatch logs.</p>
-    pub fn set_cloud_watch_logs_destination(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsDestination>,
-    ) -> Self {
-        self.cloud_watch_logs_destination = input;
-        self
+    pub fn set_cloud_watch_logs_destination(mut self, input: std::option::Option<crate::types::CloudWatchLogsDestination>) -> Self {
+        self.cloud_watch_logs_destination = input; self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn kinesis_firehose_destination(
-        mut self,
-        input: crate::types::KinesisFirehoseDestination,
-    ) -> Self {
+    pub fn kinesis_firehose_destination(mut self, input: crate::types::KinesisFirehoseDestination) -> Self {
         self.kinesis_firehose_destination = Some(input);
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon Kinesis Data Firehose.</p>
-    pub fn set_kinesis_firehose_destination(
-        mut self,
-        input: std::option::Option<crate::types::KinesisFirehoseDestination>,
-    ) -> Self {
-        self.kinesis_firehose_destination = input;
-        self
+    pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::types::KinesisFirehoseDestination>) -> Self {
+        self.kinesis_firehose_destination = input; self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
     pub fn sns_destination(mut self, input: crate::types::SnsDestination) -> Self {
@@ -166,12 +132,8 @@ impl CreateEventDestinationInputBuilder {
         self
     }
     /// <p>An object that contains information about an event destination for logging to Amazon SNS.</p>
-    pub fn set_sns_destination(
-        mut self,
-        input: std::option::Option<crate::types::SnsDestination>,
-    ) -> Self {
-        self.sns_destination = input;
-        self
+    pub fn set_sns_destination(mut self, input: std::option::Option<crate::types::SnsDestination>) -> Self {
+        self.sns_destination = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,26 +142,28 @@ impl CreateEventDestinationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateEventDestinationInput`](crate::operation::create_event_destination::CreateEventDestinationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_event_destination::CreateEventDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_event_destination::CreateEventDestinationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_event_destination::CreateEventDestinationInput {
-                configuration_set_name: self.configuration_set_name,
-                event_destination_name: self.event_destination_name,
-                matching_event_types: self.matching_event_types,
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                sns_destination: self.sns_destination,
-                client_token: self.client_token,
-            },
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination_name: self.event_destination_name
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                sns_destination: self.sns_destination
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportInput {
+pub struct StartImportInput  {
     /// <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
-    /// <ul>
-    /// <li> <p>A bot exports dependent intents.</p> </li>
-    /// <li> <p>An intent exports dependent slot types.</p> </li>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p> 
+    /// <ul> 
+    /// <li> <p>A bot exports dependent intents.</p> </li> 
+    /// <li> <p>An intent exports dependent slot types.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
-    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
-    /// <ul>
-    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
+    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p> 
+    /// <ul> 
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub merge_strategy: std::option::Option<crate::types::MergeStrategy>,
@@ -25,26 +25,26 @@ pub struct StartImportInput {
 }
 impl StartImportInput {
     /// <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
-    /// <ul>
-    /// <li> <p>A bot exports dependent intents.</p> </li>
-    /// <li> <p>An intent exports dependent slot types.</p> </li>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p> 
+    /// <ul> 
+    /// <li> <p>A bot exports dependent intents.</p> </li> 
+    /// <li> <p>An intent exports dependent slot types.</p> </li> 
     /// </ul>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
-    /// <ul>
-    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
+    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p> 
+    /// <ul> 
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li> 
     /// </ul>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::types::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::types::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -72,48 +72,39 @@ impl StartImportInputBuilder {
     }
     /// <p>A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.</p>
     pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
-    /// <ul>
-    /// <li> <p>A bot exports dependent intents.</p> </li>
-    /// <li> <p>An intent exports dependent slot types.</p> </li>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p> 
+    /// <ul> 
+    /// <li> <p>A bot exports dependent intents.</p> </li> 
+    /// <li> <p>An intent exports dependent slot types.</p> </li> 
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = Some(input);
         self
     }
-    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p>
-    /// <ul>
-    /// <li> <p>A bot exports dependent intents.</p> </li>
-    /// <li> <p>An intent exports dependent slot types.</p> </li>
+    /// <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p> 
+    /// <ul> 
+    /// <li> <p>A bot exports dependent intents.</p> </li> 
+    /// <li> <p>An intent exports dependent slot types.</p> </li> 
     /// </ul>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
-    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
-    /// <ul>
-    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
+    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p> 
+    /// <ul> 
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li> 
     /// </ul>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
         self.merge_strategy = Some(input);
         self
     }
-    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p>
-    /// <ul>
-    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li>
+    /// <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p> 
+    /// <ul> 
+    /// <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li> 
     /// </ul>
-    pub fn set_merge_strategy(
-        mut self,
-        input: std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
-        self.merge_strategy = input;
-        self
+    pub fn set_merge_strategy(mut self, input: std::option::Option<crate::types::MergeStrategy>) -> Self {
+        self.merge_strategy = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -122,30 +113,28 @@ impl StartImportInputBuilder {
     /// <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags to add to the imported bot. You can only add tags when you import a bot, you can't add tags to an intent or slot type.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`StartImportInput`](crate::operation::start_import::StartImportInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_import::StartImportInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::start_import::StartImportInput {
-            payload: self.payload,
-            resource_type: self.resource_type,
-            merge_strategy: self.merge_strategy,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::start_import::StartImportInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::start_import::StartImportInput {
+                payload: self.payload
+                ,
+                resource_type: self.resource_type
+                ,
+                merge_strategy: self.merge_strategy
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

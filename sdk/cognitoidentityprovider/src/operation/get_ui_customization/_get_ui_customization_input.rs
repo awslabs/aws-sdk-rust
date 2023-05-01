@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetUiCustomizationInput {
+pub struct GetUiCustomizationInput  {
     /// <p>The user pool ID for the user pool.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct GetUiCustomizationInput {
 }
 impl GetUiCustomizationInput {
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The client ID for the client app.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetUiCustomizationInput {
+impl  std::fmt::Debug for GetUiCustomizationInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetUiCustomizationInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -30,8 +30,7 @@ impl std::fmt::Debug for GetUiCustomizationInput {
 }
 impl GetUiCustomizationInput {
     /// Creates a new builder-style object to manufacture [`GetUiCustomizationInput`](crate::operation::get_ui_customization::GetUiCustomizationInput).
-    pub fn builder(
-    ) -> crate::operation::get_ui_customization::builders::GetUiCustomizationInputBuilder {
+    pub fn builder() -> crate::operation::get_ui_customization::builders::GetUiCustomizationInputBuilder {
         crate::operation::get_ui_customization::builders::GetUiCustomizationInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl GetUiCustomizationInputBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The client ID for the client app.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,21 +59,17 @@ impl GetUiCustomizationInputBuilder {
     }
     /// <p>The client ID for the client app.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Consumes the builder and constructs a [`GetUiCustomizationInput`](crate::operation::get_ui_customization::GetUiCustomizationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_ui_customization::GetUiCustomizationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_ui_customization::GetUiCustomizationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_ui_customization::GetUiCustomizationInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                client_id: self.client_id
+                ,
+            }
         )
     }
 }
@@ -87,3 +81,4 @@ impl std::fmt::Debug for GetUiCustomizationInputBuilder {
         formatter.finish()
     }
 }
+

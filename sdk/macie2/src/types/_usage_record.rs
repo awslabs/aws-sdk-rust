@@ -3,7 +3,7 @@
 /// <p>Provides quota and aggregated usage data for an Amazon Macie account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageRecord {
+pub struct UsageRecord  {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -19,21 +19,19 @@ pub struct UsageRecord {
 }
 impl UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
-    pub fn automated_discovery_free_trial_start_date(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn automated_discovery_free_trial_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.automated_discovery_free_trial_start_date.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.</p>
-    pub fn free_trial_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn free_trial_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.free_trial_start_date.as_ref()
     }
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
-    pub fn usage(&self) -> std::option::Option<&[crate::types::UsageByAccount]> {
+    pub fn usage(&self) -> std::option::Option<& [crate::types::UsageByAccount]> {
         self.usage.as_deref()
     }
 }
@@ -49,8 +47,7 @@ impl UsageRecord {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UsageRecordBuilder {
     pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) automated_discovery_free_trial_start_date:
-        std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) automated_discovery_free_trial_start_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) free_trial_start_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) usage: std::option::Option<std::vec::Vec<crate::types::UsageByAccount>>,
 }
@@ -62,24 +59,16 @@ impl UsageRecordBuilder {
     }
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
-    pub fn automated_discovery_free_trial_start_date(
-        mut self,
-        input: aws_smithy_types::DateTime,
-    ) -> Self {
+    pub fn automated_discovery_free_trial_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.automated_discovery_free_trial_start_date = Some(input);
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery started for the account. If the account is a member account in an organization, this value is the same as the value for the organization's Amazon Macie administrator account.</p>
-    pub fn set_automated_discovery_free_trial_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.automated_discovery_free_trial_start_date = input;
-        self
+    pub fn set_automated_discovery_free_trial_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.automated_discovery_free_trial_start_date = input; self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.</p>
     pub fn free_trial_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -87,12 +76,8 @@ impl UsageRecordBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.</p>
-    pub fn set_free_trial_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.free_trial_start_date = input;
-        self
+    pub fn set_free_trial_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.free_trial_start_date = input; self
     }
     /// Appends an item to `usage`.
     ///
@@ -101,26 +86,26 @@ impl UsageRecordBuilder {
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
     pub fn usage(mut self, input: crate::types::UsageByAccount) -> Self {
         let mut v = self.usage.unwrap_or_default();
-        v.push(input);
-        self.usage = Some(v);
-        self
+                        v.push(input);
+                        self.usage = Some(v);
+                        self
     }
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
-    pub fn set_usage(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UsageByAccount>>,
-    ) -> Self {
-        self.usage = input;
-        self
+    pub fn set_usage(mut self, input: std::option::Option<std::vec::Vec<crate::types::UsageByAccount>>) -> Self {
+        self.usage = input; self
     }
     /// Consumes the builder and constructs a [`UsageRecord`](crate::types::UsageRecord).
     pub fn build(self) -> crate::types::UsageRecord {
         crate::types::UsageRecord {
-            account_id: self.account_id,
-            automated_discovery_free_trial_start_date: self
-                .automated_discovery_free_trial_start_date,
-            free_trial_start_date: self.free_trial_start_date,
-            usage: self.usage,
+            account_id: self.account_id
+            ,
+            automated_discovery_free_trial_start_date: self.automated_discovery_free_trial_start_date
+            ,
+            free_trial_start_date: self.free_trial_start_date
+            ,
+            usage: self.usage
+            ,
         }
     }
 }
+

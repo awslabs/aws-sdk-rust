@@ -3,7 +3,7 @@
 /// <p>Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recipe {
+pub struct Recipe  {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct Recipe {
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>PERSONALIZED_RANKING</p> </li>
-    /// <li> <p>RELATED_ITEMS</p> </li>
-    /// <li> <p>USER_PERSONALIZATION</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+    /// <li> <p>RELATED_ITEMS</p> </li> 
+    /// <li> <p>USER_PERSONALIZATION</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub recipe_type: std::option::Option<std::string::String>,
@@ -39,44 +39,44 @@ pub struct Recipe {
 }
 impl Recipe {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
-    pub fn recipe_arn(&self) -> std::option::Option<&str> {
+    pub fn recipe_arn(&self) -> std::option::Option<& str> {
         self.recipe_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> std::option::Option<& str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>The ARN of the FeatureTransformation object.</p>
-    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
+    pub fn feature_transformation_arn(&self) -> std::option::Option<& str> {
         self.feature_transformation_arn.as_deref()
     }
     /// <p>The status of the recipe.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The description of the recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>PERSONALIZED_RANKING</p> </li>
-    /// <li> <p>RELATED_ITEMS</p> </li>
-    /// <li> <p>USER_PERSONALIZATION</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+    /// <li> <p>RELATED_ITEMS</p> </li> 
+    /// <li> <p>USER_PERSONALIZATION</p> </li> 
     /// </ul>
-    pub fn recipe_type(&self) -> std::option::Option<&str> {
+    pub fn recipe_type(&self) -> std::option::Option<& str> {
         self.recipe_type.as_deref()
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -109,8 +109,7 @@ impl RecipeBuilder {
     }
     /// <p>The name of the recipe.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
     pub fn recipe_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +118,7 @@ impl RecipeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recipe.</p>
     pub fn set_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recipe_arn = input;
-        self
+        self.recipe_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
     pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +127,7 @@ impl RecipeBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm that Amazon Personalize uses to train the model.</p>
     pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.algorithm_arn = input;
-        self
+        self.algorithm_arn = input; self
     }
     /// <p>The ARN of the FeatureTransformation object.</p>
     pub fn feature_transformation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,12 +135,8 @@ impl RecipeBuilder {
         self
     }
     /// <p>The ARN of the FeatureTransformation object.</p>
-    pub fn set_feature_transformation_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.feature_transformation_arn = input;
-        self
+    pub fn set_feature_transformation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.feature_transformation_arn = input; self
     }
     /// <p>The status of the recipe.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +145,7 @@ impl RecipeBuilder {
     }
     /// <p>The status of the recipe.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The description of the recipe.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +154,7 @@ impl RecipeBuilder {
     }
     /// <p>The description of the recipe.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -171,32 +162,27 @@ impl RecipeBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the recipe was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>PERSONALIZED_RANKING</p> </li>
-    /// <li> <p>RELATED_ITEMS</p> </li>
-    /// <li> <p>USER_PERSONALIZATION</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+    /// <li> <p>RELATED_ITEMS</p> </li> 
+    /// <li> <p>USER_PERSONALIZATION</p> </li> 
     /// </ul>
     pub fn recipe_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.recipe_type = Some(input.into());
         self
     }
-    /// <p>One of the following values:</p>
-    /// <ul>
-    /// <li> <p>PERSONALIZED_RANKING</p> </li>
-    /// <li> <p>RELATED_ITEMS</p> </li>
-    /// <li> <p>USER_PERSONALIZATION</p> </li>
+    /// <p>One of the following values:</p> 
+    /// <ul> 
+    /// <li> <p>PERSONALIZED_RANKING</p> </li> 
+    /// <li> <p>RELATED_ITEMS</p> </li> 
+    /// <li> <p>USER_PERSONALIZATION</p> </li> 
     /// </ul>
     pub fn set_recipe_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recipe_type = input;
-        self
+        self.recipe_type = input; self
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -204,25 +190,31 @@ impl RecipeBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the recipe was last updated.</p>
-    pub fn set_last_updated_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date_time = input;
-        self
+    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date_time = input; self
     }
     /// Consumes the builder and constructs a [`Recipe`](crate::types::Recipe).
     pub fn build(self) -> crate::types::Recipe {
         crate::types::Recipe {
-            name: self.name,
-            recipe_arn: self.recipe_arn,
-            algorithm_arn: self.algorithm_arn,
-            feature_transformation_arn: self.feature_transformation_arn,
-            status: self.status,
-            description: self.description,
-            creation_date_time: self.creation_date_time,
-            recipe_type: self.recipe_type,
-            last_updated_date_time: self.last_updated_date_time,
+            name: self.name
+            ,
+            recipe_arn: self.recipe_arn
+            ,
+            algorithm_arn: self.algorithm_arn
+            ,
+            feature_transformation_arn: self.feature_transformation_arn
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            recipe_type: self.recipe_type
+            ,
+            last_updated_date_time: self.last_updated_date_time
+            ,
         }
     }
 }
+

@@ -4,69 +4,51 @@ pub use crate::operation::create_service::_create_service_output::CreateServiceO
 pub use crate::operation::create_service::_create_service_input::CreateServiceInputBuilder;
 
 /// Fluent builder constructing a request to `CreateService`.
-///
-/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important>
-/// <p>If an Amazon Web Services resource is launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p>
+/// 
+/// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important> 
+/// <p>If an Amazon Web Services resource is launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p> 
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_service::builders::CreateServiceInputBuilder,
-}
-impl CreateServiceFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_service::builders::CreateServiceInputBuilder
+            }
+impl CreateServiceFluentBuilder  {
     /// Creates a new `CreateService`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_service::CreateService,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_service::CreateServiceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_service::CreateService, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_service::CreateServiceOutput, aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -93,10 +75,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The ID of the environment in which the service is created.</p>
-    pub fn set_environment_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_environment_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
@@ -106,10 +85,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The ID of the application which the service is created.</p>
-    pub fn set_application_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_application_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
@@ -129,10 +105,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-    pub fn set_endpoint_type(
-        mut self,
-        input: std::option::Option<crate::types::ServiceEndpointType>,
-    ) -> Self {
+    pub fn set_endpoint_type(mut self, input: std::option::Option<crate::types::ServiceEndpointType>) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
     }
@@ -142,10 +115,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
-    pub fn set_url_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::UrlEndpointInput>,
-    ) -> Self {
+    pub fn set_url_endpoint(mut self, input: std::option::Option<crate::types::UrlEndpointInput>) -> Self {
         self.inner = self.inner.set_url_endpoint(input);
         self
     }
@@ -155,10 +125,7 @@ impl CreateServiceFluentBuilder {
         self
     }
     /// <p>The configuration for the Lambda endpoint type.</p>
-    pub fn set_lambda_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::LambdaEndpointInput>,
-    ) -> Self {
+    pub fn set_lambda_endpoint(mut self, input: std::option::Option<crate::types::LambdaEndpointInput>) -> Self {
         self.inner = self.inner.set_lambda_endpoint(input);
         self
     }
@@ -167,21 +134,12 @@ impl CreateServiceFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to assign to the service. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -196,3 +154,4 @@ impl CreateServiceFluentBuilder {
         self
     }
 }
+

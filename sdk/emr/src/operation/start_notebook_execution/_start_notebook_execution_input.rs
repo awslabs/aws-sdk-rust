@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartNotebookExecutionInput {
+pub struct StartNotebookExecutionInput  {
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
     #[doc(hidden)]
     pub editor_id: std::option::Option<std::string::String>,
@@ -30,43 +30,41 @@ pub struct StartNotebookExecutionInput {
 }
 impl StartNotebookExecutionInput {
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
-    pub fn editor_id(&self) -> std::option::Option<&str> {
+    pub fn editor_id(&self) -> std::option::Option<& str> {
         self.editor_id.as_deref()
     }
     /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
-    pub fn relative_path(&self) -> std::option::Option<&str> {
+    pub fn relative_path(&self) -> std::option::Option<& str> {
         self.relative_path.as_deref()
     }
     /// <p>An optional name for the notebook execution.</p>
-    pub fn notebook_execution_name(&self) -> std::option::Option<&str> {
+    pub fn notebook_execution_name(&self) -> std::option::Option<& str> {
         self.notebook_execution_name.as_deref()
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
-    pub fn notebook_params(&self) -> std::option::Option<&str> {
+    pub fn notebook_params(&self) -> std::option::Option<& str> {
         self.notebook_params.as_deref()
     }
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-    pub fn execution_engine(&self) -> std::option::Option<&crate::types::ExecutionEngineConfig> {
+    pub fn execution_engine(&self) -> std::option::Option<& crate::types::ExecutionEngineConfig> {
         self.execution_engine.as_ref()
     }
     /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> std::option::Option<& str> {
         self.service_role.as_deref()
     }
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
-    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn notebook_instance_security_group_id(&self) -> std::option::Option<& str> {
         self.notebook_instance_security_group_id.as_deref()
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl StartNotebookExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartNotebookExecutionInput`](crate::operation::start_notebook_execution::StartNotebookExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder {
         crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder::default()
     }
 }
@@ -92,8 +90,7 @@ impl StartNotebookExecutionInputBuilder {
     }
     /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
     pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.editor_id = input;
-        self
+        self.editor_id = input; self
     }
     /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
     pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +99,7 @@ impl StartNotebookExecutionInputBuilder {
     }
     /// <p>The path and file name of the notebook file for this execution, relative to the path specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code> of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
     pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.relative_path = input;
-        self
+        self.relative_path = input; self
     }
     /// <p>An optional name for the notebook execution.</p>
     pub fn notebook_execution_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,12 +107,8 @@ impl StartNotebookExecutionInputBuilder {
         self
     }
     /// <p>An optional name for the notebook execution.</p>
-    pub fn set_notebook_execution_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.notebook_execution_name = input;
-        self
+    pub fn set_notebook_execution_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.notebook_execution_name = input; self
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +117,7 @@ impl StartNotebookExecutionInputBuilder {
     }
     /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</p>
     pub fn set_notebook_params(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_params = input;
-        self
+        self.notebook_params = input; self
     }
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
     pub fn execution_engine(mut self, input: crate::types::ExecutionEngineConfig) -> Self {
@@ -134,12 +125,8 @@ impl StartNotebookExecutionInputBuilder {
         self
     }
     /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-    pub fn set_execution_engine(
-        mut self,
-        input: std::option::Option<crate::types::ExecutionEngineConfig>,
-    ) -> Self {
-        self.execution_engine = input;
-        self
+    pub fn set_execution_engine(mut self, input: std::option::Option<crate::types::ExecutionEngineConfig>) -> Self {
+        self.execution_engine = input; self
     }
     /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
     pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,24 +135,16 @@ impl StartNotebookExecutionInputBuilder {
     }
     /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR role) for the notebook execution.</p>
     pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_role = input;
-        self
+        self.service_role = input; self
     }
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
-    pub fn notebook_instance_security_group_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn notebook_instance_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.notebook_instance_security_group_id = Some(input.into());
         self
     }
     /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook for this notebook execution.</p>
-    pub fn set_notebook_instance_security_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.notebook_instance_security_group_id = input;
-        self
+    pub fn set_notebook_instance_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.notebook_instance_security_group_id = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -174,36 +153,36 @@ impl StartNotebookExecutionInputBuilder {
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters and an optional value string with a maximum of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`StartNotebookExecutionInput`](crate::operation::start_notebook_execution::StartNotebookExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_notebook_execution::StartNotebookExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_notebook_execution::StartNotebookExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_notebook_execution::StartNotebookExecutionInput {
-                editor_id: self.editor_id,
-                relative_path: self.relative_path,
-                notebook_execution_name: self.notebook_execution_name,
-                notebook_params: self.notebook_params,
-                execution_engine: self.execution_engine,
-                service_role: self.service_role,
-                notebook_instance_security_group_id: self.notebook_instance_security_group_id,
-                tags: self.tags,
-            },
+                editor_id: self.editor_id
+                ,
+                relative_path: self.relative_path
+                ,
+                notebook_execution_name: self.notebook_execution_name
+                ,
+                notebook_params: self.notebook_params
+                ,
+                execution_engine: self.execution_engine
+                ,
+                service_role: self.service_role
+                ,
+                notebook_instance_security_group_id: self.notebook_instance_security_group_id
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPartnerEventSourcesInput {
+pub struct ListPartnerEventSourcesInput  {
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
     #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListPartnerEventSourcesInput {
 }
 impl ListPartnerEventSourcesInput {
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
-    pub fn name_prefix(&self) -> std::option::Option<&str> {
+    pub fn name_prefix(&self) -> std::option::Option<& str> {
         self.name_prefix.as_deref()
     }
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -29,9 +29,7 @@ impl ListPartnerEventSourcesInput {
 }
 impl ListPartnerEventSourcesInput {
     /// Creates a new builder-style object to manufacture [`ListPartnerEventSourcesInput`](crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesInputBuilder {
         crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListPartnerEventSourcesInputBuilder {
     }
     /// <p>If you specify this, the results are limited to only those partner event sources that start with the string you specify.</p>
     pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_prefix = input;
-        self
+        self.name_prefix = input; self
     }
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl ListPartnerEventSourcesInputBuilder {
     }
     /// <p>The token returned by a previous call to this operation. Specifying this retrieves the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -72,22 +68,20 @@ impl ListPartnerEventSourcesInputBuilder {
     }
     /// <p>pecifying this limits the number of results returned by this operation. The operation also returns a NextToken which you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListPartnerEventSourcesInput`](crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_partner_event_sources::ListPartnerEventSourcesInput {
-                name_prefix: self.name_prefix,
-                next_token: self.next_token,
-                limit: self.limit,
-            },
+                name_prefix: self.name_prefix
+                ,
+                next_token: self.next_token
+                ,
+                limit: self.limit
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeInput {}
+pub struct GetDatalakeInput  {
+}
 impl GetDatalakeInput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeInput`](crate::operation::get_datalake::GetDatalakeInput).
     pub fn builder() -> crate::operation::get_datalake::builders::GetDatalakeInputBuilder {
@@ -13,15 +14,15 @@ impl GetDatalakeInput {
 /// A builder for [`GetDatalakeInput`](crate::operation::get_datalake::GetDatalakeInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetDatalakeInputBuilder {}
+pub struct GetDatalakeInputBuilder {
+}
 impl GetDatalakeInputBuilder {
     /// Consumes the builder and constructs a [`GetDatalakeInput`](crate::operation::get_datalake::GetDatalakeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_datalake::GetDatalakeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_datalake::GetDatalakeInput {})
+    pub fn build(self) -> Result<crate::operation::get_datalake::GetDatalakeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_datalake::GetDatalakeInput {
+            }
+        )
     }
 }
+

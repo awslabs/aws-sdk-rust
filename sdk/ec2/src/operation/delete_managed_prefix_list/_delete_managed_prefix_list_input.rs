@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteManagedPrefixListInput {
+pub struct DeleteManagedPrefixListInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,15 +16,13 @@ impl DeleteManagedPrefixListInput {
         self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
 }
 impl DeleteManagedPrefixListInput {
     /// Creates a new builder-style object to manufacture [`DeleteManagedPrefixListInput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput).
-    pub fn builder(
-    ) -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder {
         crate::operation::delete_managed_prefix_list::builders::DeleteManagedPrefixListInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DeleteManagedPrefixListInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DeleteManagedPrefixListInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteManagedPrefixListInput`](crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListInput {
-                dry_run: self.dry_run,
-                prefix_list_id: self.prefix_list_id,
-            },
+                dry_run: self.dry_run
+                ,
+                prefix_list_id: self.prefix_list_id
+                ,
+            }
         )
     }
 }
+

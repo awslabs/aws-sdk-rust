@@ -3,7 +3,7 @@
 /// <p>The output from the DeleteThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThingShadowOutput {
+pub struct DeleteThingShadowOutput  {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
@@ -11,19 +11,18 @@ pub struct DeleteThingShadowOutput {
 }
 impl DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteThingShadowOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteThingShadowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder {
+    pub fn builder() -> crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder {
         crate::operation::delete_thing_shadow::builders::DeleteThingShadowOutputBuilder::default()
     }
 }
@@ -43,23 +42,24 @@ impl DeleteThingShadowOutputBuilder {
     }
     /// <p>The state information, in JSON format.</p>
     pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.payload = input;
-        self
+        self.payload = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteThingShadowOutput`](crate::operation::delete_thing_shadow::DeleteThingShadowOutput).
     pub fn build(self) -> crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
         crate::operation::delete_thing_shadow::DeleteThingShadowOutput {
-            payload: self.payload,
+            payload: self.payload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

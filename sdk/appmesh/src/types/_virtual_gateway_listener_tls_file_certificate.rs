@@ -3,7 +3,7 @@
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsFileCertificate {
+pub struct VirtualGatewayListenerTlsFileCertificate  {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VirtualGatewayListenerTlsFileCertificate {
 }
 impl VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
         self
     }
     /// <p>The certificate chain for the certificate.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_chain = input;
-        self
+    pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_chain = input; self
     }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
     pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl VirtualGatewayListenerTlsFileCertificateBuilder {
     }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
     pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsFileCertificate`](crate::types::VirtualGatewayListenerTlsFileCertificate).
     pub fn build(self) -> crate::types::VirtualGatewayListenerTlsFileCertificate {
         crate::types::VirtualGatewayListenerTlsFileCertificate {
-            certificate_chain: self.certificate_chain,
-            private_key: self.private_key,
+            certificate_chain: self.certificate_chain
+            ,
+            private_key: self.private_key
+            ,
         }
     }
 }
+

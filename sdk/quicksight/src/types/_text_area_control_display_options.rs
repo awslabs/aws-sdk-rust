@@ -3,7 +3,7 @@
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextAreaControlDisplayOptions {
+pub struct TextAreaControlDisplayOptions  {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     #[doc(hidden)]
     pub title_options: std::option::Option<crate::types::LabelOptions>,
@@ -13,13 +13,11 @@ pub struct TextAreaControlDisplayOptions {
 }
 impl TextAreaControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> std::option::Option<&crate::types::LabelOptions> {
+    pub fn title_options(&self) -> std::option::Option<& crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn placeholder_options(
-        &self,
-    ) -> std::option::Option<&crate::types::TextControlPlaceholderOptions> {
+    pub fn placeholder_options(&self) -> std::option::Option<& crate::types::TextControlPlaceholderOptions> {
         self.placeholder_options.as_ref()
     }
 }
@@ -35,8 +33,7 @@ impl TextAreaControlDisplayOptions {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TextAreaControlDisplayOptionsBuilder {
     pub(crate) title_options: std::option::Option<crate::types::LabelOptions>,
-    pub(crate) placeholder_options:
-        std::option::Option<crate::types::TextControlPlaceholderOptions>,
+    pub(crate) placeholder_options: std::option::Option<crate::types::TextControlPlaceholderOptions>,
 }
 impl TextAreaControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
@@ -45,34 +42,26 @@ impl TextAreaControlDisplayOptionsBuilder {
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn set_title_options(
-        mut self,
-        input: std::option::Option<crate::types::LabelOptions>,
-    ) -> Self {
-        self.title_options = input;
-        self
+    pub fn set_title_options(mut self, input: std::option::Option<crate::types::LabelOptions>) -> Self {
+        self.title_options = input; self
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn placeholder_options(
-        mut self,
-        input: crate::types::TextControlPlaceholderOptions,
-    ) -> Self {
+    pub fn placeholder_options(mut self, input: crate::types::TextControlPlaceholderOptions) -> Self {
         self.placeholder_options = Some(input);
         self
     }
     /// <p>The configuration of the placeholder options in a text area control.</p>
-    pub fn set_placeholder_options(
-        mut self,
-        input: std::option::Option<crate::types::TextControlPlaceholderOptions>,
-    ) -> Self {
-        self.placeholder_options = input;
-        self
+    pub fn set_placeholder_options(mut self, input: std::option::Option<crate::types::TextControlPlaceholderOptions>) -> Self {
+        self.placeholder_options = input; self
     }
     /// Consumes the builder and constructs a [`TextAreaControlDisplayOptions`](crate::types::TextAreaControlDisplayOptions).
     pub fn build(self) -> crate::types::TextAreaControlDisplayOptions {
         crate::types::TextAreaControlDisplayOptions {
-            title_options: self.title_options,
-            placeholder_options: self.placeholder_options,
+            title_options: self.title_options
+            ,
+            placeholder_options: self.placeholder_options
+            ,
         }
     }
 }
+

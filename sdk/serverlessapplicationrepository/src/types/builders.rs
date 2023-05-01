@@ -18,3 +18,4 @@ pub use crate::types::_rollback_configuration::RollbackConfigurationBuilder;
 pub use crate::types::_rollback_trigger::RollbackTriggerBuilder;
 
 pub use crate::types::_parameter_value::ParameterValueBuilder;
+

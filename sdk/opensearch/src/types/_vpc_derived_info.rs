@@ -3,7 +3,7 @@
 /// <p>Information about the subnets and security groups for an Amazon OpenSearch Service domain provisioned within a virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>. This information only exists if the domain was created with <code>VPCOptions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcDerivedInfo {
+pub struct VpcDerivedInfo  {
     /// <p>The ID for your VPC. Amazon VPC generates this value when you create a VPC.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct VpcDerivedInfo {
 }
 impl VpcDerivedInfo {
     /// <p>The ID for your VPC. Amazon VPC generates this value when you create a VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet IDs associated with the VPC endpoints for the domain.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The list of Availability Zones associated with the VPC subnets.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The list of security group IDs associated with the VPC endpoints for the domain.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl VpcDerivedInfoBuilder {
     }
     /// <p>The ID for your VPC. Amazon VPC generates this value when you create a VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input;
-        self
+        self.vpc_id = input; self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -69,17 +68,13 @@ impl VpcDerivedInfoBuilder {
     /// <p>A list of subnet IDs associated with the VPC endpoints for the domain.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-        v.push(input.into());
-        self.subnet_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnet_ids = Some(v);
+                        self
     }
     /// <p>A list of subnet IDs associated with the VPC endpoints for the domain.</p>
-    pub fn set_subnet_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnet_ids = input;
-        self
+    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnet_ids = input; self
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -88,17 +83,13 @@ impl VpcDerivedInfoBuilder {
     /// <p>The list of Availability Zones associated with the VPC subnets.</p>
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-        v.push(input.into());
-        self.availability_zones = Some(v);
-        self
+                        v.push(input.into());
+                        self.availability_zones = Some(v);
+                        self
     }
     /// <p>The list of Availability Zones associated with the VPC subnets.</p>
-    pub fn set_availability_zones(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.availability_zones = input;
-        self
+    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.availability_zones = input; self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -107,25 +98,26 @@ impl VpcDerivedInfoBuilder {
     /// <p>The list of security group IDs associated with the VPC endpoints for the domain.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.security_group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_group_ids = Some(v);
+                        self
     }
     /// <p>The list of security group IDs associated with the VPC endpoints for the domain.</p>
-    pub fn set_security_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_group_ids = input;
-        self
+    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_group_ids = input; self
     }
     /// Consumes the builder and constructs a [`VpcDerivedInfo`](crate::types::VpcDerivedInfo).
     pub fn build(self) -> crate::types::VpcDerivedInfo {
         crate::types::VpcDerivedInfo {
-            vpc_id: self.vpc_id,
-            subnet_ids: self.subnet_ids,
-            availability_zones: self.availability_zones,
-            security_group_ids: self.security_group_ids,
+            vpc_id: self.vpc_id
+            ,
+            subnet_ids: self.subnet_ids
+            ,
+            availability_zones: self.availability_zones
+            ,
+            security_group_ids: self.security_group_ids
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationVersionsInput {
+pub struct ListApplicationVersionsInput  {
     /// <p>The name of the application for which you want to list all versions.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListApplicationVersionsInput {
 }
 impl ListApplicationVersionsInput {
     /// <p>The name of the application for which you want to list all versions.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
     /// <p>The maximum number of versions to list in this invocation of the operation.</p>
@@ -23,15 +23,13 @@ impl ListApplicationVersionsInput {
         self.limit
     }
     /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListApplicationVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder {
         crate::operation::list_application_versions::builders::ListApplicationVersionsInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The name of the application for which you want to list all versions.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// <p>The maximum number of versions to list in this invocation of the operation.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -62,8 +59,7 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>The maximum number of versions to list in this invocation of the operation.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl ListApplicationVersionsInputBuilder {
     }
     /// <p>If a previous invocation of this operation returned a pagination token, pass it into this value to retrieve the next set of results. For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using the Amazon Command Line Interface's Pagination Options</a>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListApplicationVersionsInput`](crate::operation::list_application_versions::ListApplicationVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_application_versions::ListApplicationVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_application_versions::ListApplicationVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_application_versions::ListApplicationVersionsInput {
-                application_name: self.application_name,
-                limit: self.limit,
-                next_token: self.next_token,
-            },
+                application_name: self.application_name
+                ,
+                limit: self.limit
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

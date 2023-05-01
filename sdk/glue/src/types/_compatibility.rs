@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compatibility = unimplemented!();
 /// match compatibility {
@@ -36,22 +36,14 @@
 /// Specifically, when `compatibility` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Compatibility::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Compatibility {
     #[allow(missing_docs)] // documentation missing in model
     Backward,
@@ -70,63 +62,53 @@ pub enum Compatibility {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Compatibility {
-    fn from(s: &str) -> Self {
-        match s {
-            "BACKWARD" => Compatibility::Backward,
-            "BACKWARD_ALL" => Compatibility::BackwardAll,
-            "DISABLED" => Compatibility::Disabled,
-            "FORWARD" => Compatibility::Forward,
-            "FORWARD_ALL" => Compatibility::ForwardAll,
-            "FULL" => Compatibility::Full,
-            "FULL_ALL" => Compatibility::FullAll,
-            "NONE" => Compatibility::None,
-            other => {
-                Compatibility::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BACKWARD" => Compatibility::Backward,
+"BACKWARD_ALL" => Compatibility::BackwardAll,
+"DISABLED" => Compatibility::Disabled,
+"FORWARD" => Compatibility::Forward,
+"FORWARD_ALL" => Compatibility::ForwardAll,
+"FULL" => Compatibility::Full,
+"FULL_ALL" => Compatibility::FullAll,
+"NONE" => Compatibility::None,
+other => Compatibility::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for Compatibility {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Compatibility::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Compatibility::from(s))
+                }
+            }
 impl Compatibility {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Compatibility::Backward => "BACKWARD",
-            Compatibility::BackwardAll => "BACKWARD_ALL",
-            Compatibility::Disabled => "DISABLED",
-            Compatibility::Forward => "FORWARD",
-            Compatibility::ForwardAll => "FORWARD_ALL",
-            Compatibility::Full => "FULL",
-            Compatibility::FullAll => "FULL_ALL",
-            Compatibility::None => "NONE",
-            Compatibility::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BACKWARD",
-            "BACKWARD_ALL",
-            "DISABLED",
-            "FORWARD",
-            "FORWARD_ALL",
-            "FULL",
-            "FULL_ALL",
-            "NONE",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Compatibility::Backward => "BACKWARD",
+    Compatibility::BackwardAll => "BACKWARD_ALL",
+    Compatibility::Disabled => "DISABLED",
+    Compatibility::Forward => "FORWARD",
+    Compatibility::ForwardAll => "FORWARD_ALL",
+    Compatibility::Full => "FULL",
+    Compatibility::FullAll => "FULL_ALL",
+    Compatibility::None => "NONE",
+    Compatibility::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BACKWARD", "BACKWARD_ALL", "DISABLED", "FORWARD", "FORWARD_ALL", "FULL", "FULL_ALL", "NONE"]
+                }
+            }
 impl AsRef<str> for Compatibility {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

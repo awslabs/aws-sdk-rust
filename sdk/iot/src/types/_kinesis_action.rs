@@ -3,7 +3,7 @@
 /// <p>Describes an action to write data to an Amazon Kinesis stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisAction {
+pub struct KinesisAction  {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct KinesisAction {
 }
 impl KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The partition key.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> std::option::Option<& str> {
         self.partition_key.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl KinesisActionBuilder {
     }
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl KinesisActionBuilder {
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The partition key.</p>
     pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl KinesisActionBuilder {
     }
     /// <p>The partition key.</p>
     pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partition_key = input;
-        self
+        self.partition_key = input; self
     }
     /// Consumes the builder and constructs a [`KinesisAction`](crate::types::KinesisAction).
     pub fn build(self) -> crate::types::KinesisAction {
         crate::types::KinesisAction {
-            role_arn: self.role_arn,
-            stream_name: self.stream_name,
-            partition_key: self.partition_key,
+            role_arn: self.role_arn
+            ,
+            stream_name: self.stream_name
+            ,
+            partition_key: self.partition_key
+            ,
         }
     }
 }
+

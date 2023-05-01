@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterOperationInput {
+pub struct DescribeClusterOperationInput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
     #[doc(hidden)]
     pub cluster_operation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeClusterOperationInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 impl DescribeClusterOperationInput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOperationInput`](crate::operation::describe_cluster_operation::DescribeClusterOperationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder {
         crate::operation::describe_cluster_operation::builders::DescribeClusterOperationInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DescribeClusterOperationInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_operation_arn = input;
-        self
+    pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_operation_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeClusterOperationInput`](crate::operation::describe_cluster_operation::DescribeClusterOperationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_cluster_operation::DescribeClusterOperationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_cluster_operation::DescribeClusterOperationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_cluster_operation::DescribeClusterOperationInput {
-                cluster_operation_arn: self.cluster_operation_arn,
-            },
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -36,57 +36,51 @@ pub struct Rule {
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Rule {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the rule.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn trigger_event_source(
-        &self,
-    ) -> std::option::Option<&crate::types::RuleTriggerEventSource> {
+    pub fn trigger_event_source(&self) -> std::option::Option<& crate::types::RuleTriggerEventSource> {
         self.trigger_event_source.as_ref()
     }
     /// <p>The conditions of the rule.</p>
-    pub fn function(&self) -> std::option::Option<&str> {
+    pub fn function(&self) -> std::option::Option<& str> {
         self.function.as_deref()
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::RuleAction]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::types::RuleAction]> {
         self.actions.as_deref()
     }
     /// <p>The publish status of the rule.</p>
-    pub fn publish_status(&self) -> std::option::Option<&crate::types::RulePublishStatus> {
+    pub fn publish_status(&self) -> std::option::Option<& crate::types::RulePublishStatus> {
         self.publish_status.as_ref()
     }
     /// <p>The timestamp for when the rule was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The timestamp for the when the rule was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
-    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -111,8 +105,7 @@ pub struct RuleBuilder {
     pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_by: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RuleBuilder {
     /// <p>The name of the rule.</p>
@@ -122,8 +115,7 @@ impl RuleBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +124,7 @@ impl RuleBuilder {
     }
     /// <p>A unique identifier for the rule.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +133,7 @@ impl RuleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule.</p>
     pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_arn = input;
-        self
+        self.rule_arn = input; self
     }
     /// <p>The event source to trigger the rule.</p>
     pub fn trigger_event_source(mut self, input: crate::types::RuleTriggerEventSource) -> Self {
@@ -151,12 +141,8 @@ impl RuleBuilder {
         self
     }
     /// <p>The event source to trigger the rule.</p>
-    pub fn set_trigger_event_source(
-        mut self,
-        input: std::option::Option<crate::types::RuleTriggerEventSource>,
-    ) -> Self {
-        self.trigger_event_source = input;
-        self
+    pub fn set_trigger_event_source(mut self, input: std::option::Option<crate::types::RuleTriggerEventSource>) -> Self {
+        self.trigger_event_source = input; self
     }
     /// <p>The conditions of the rule.</p>
     pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,8 +151,7 @@ impl RuleBuilder {
     }
     /// <p>The conditions of the rule.</p>
     pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function = input;
-        self
+        self.function = input; self
     }
     /// Appends an item to `actions`.
     ///
@@ -175,17 +160,13 @@ impl RuleBuilder {
     /// <p>A list of actions to be run when the rule is triggered.</p>
     pub fn actions(mut self, input: crate::types::RuleAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
-        v.push(input);
-        self.actions = Some(v);
-        self
+                        v.push(input);
+                        self.actions = Some(v);
+                        self
     }
     /// <p>A list of actions to be run when the rule is triggered.</p>
-    pub fn set_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RuleAction>>,
-    ) -> Self {
-        self.actions = input;
-        self
+    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleAction>>) -> Self {
+        self.actions = input; self
     }
     /// <p>The publish status of the rule.</p>
     pub fn publish_status(mut self, input: crate::types::RulePublishStatus) -> Self {
@@ -193,12 +174,8 @@ impl RuleBuilder {
         self
     }
     /// <p>The publish status of the rule.</p>
-    pub fn set_publish_status(
-        mut self,
-        input: std::option::Option<crate::types::RulePublishStatus>,
-    ) -> Self {
-        self.publish_status = input;
-        self
+    pub fn set_publish_status(mut self, input: std::option::Option<crate::types::RulePublishStatus>) -> Self {
+        self.publish_status = input; self
     }
     /// <p>The timestamp for when the rule was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -206,12 +183,8 @@ impl RuleBuilder {
         self
     }
     /// <p>The timestamp for when the rule was created.</p>
-    pub fn set_created_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_time = input;
-        self
+    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_time = input; self
     }
     /// <p>The timestamp for the when the rule was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -219,12 +192,8 @@ impl RuleBuilder {
         self
     }
     /// <p>The timestamp for the when the rule was last updated.</p>
-    pub fn set_last_updated_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_time = input;
-        self
+    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_time = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
     pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -233,48 +202,49 @@ impl RuleBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the rule.</p>
     pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_by = input;
-        self
+        self.last_updated_by = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {
         crate::types::Rule {
-            name: self.name,
-            rule_id: self.rule_id,
-            rule_arn: self.rule_arn,
-            trigger_event_source: self.trigger_event_source,
-            function: self.function,
-            actions: self.actions,
-            publish_status: self.publish_status,
-            created_time: self.created_time,
-            last_updated_time: self.last_updated_time,
-            last_updated_by: self.last_updated_by,
-            tags: self.tags,
+            name: self.name
+            ,
+            rule_id: self.rule_id
+            ,
+            rule_arn: self.rule_arn
+            ,
+            trigger_event_source: self.trigger_event_source
+            ,
+            function: self.function
+            ,
+            actions: self.actions
+            ,
+            publish_status: self.publish_status
+            ,
+            created_time: self.created_time
+            ,
+            last_updated_time: self.last_updated_time
+            ,
+            last_updated_by: self.last_updated_by
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

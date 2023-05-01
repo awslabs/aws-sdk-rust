@@ -3,7 +3,7 @@
 /// <p>Describes the properties of a certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListedCertificate {
+pub struct ListedCertificate  {
     /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct ListedCertificate {
 }
 impl ListedCertificate {
     /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> std::option::Option<& str> {
         self.certificate_id.as_deref()
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    pub fn usage(&self) -> std::option::Option<&crate::types::CertificateUsageType> {
+    pub fn usage(&self) -> std::option::Option<& crate::types::CertificateUsageType> {
         self.usage.as_ref()
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CertificateStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::CertificateStatusType> {
         self.status.as_ref()
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn active_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn active_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.active_date.as_ref()
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn inactive_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn inactive_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.inactive_date.as_ref()
     }
     /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::CertificateType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::CertificateType> {
         self.r#type.as_ref()
     }
     /// <p>The name or short description that's used to identify the certificate.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl ListedCertificateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the specified certificate.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl ListedCertificateBuilder {
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input;
-        self
+        self.certificate_id = input; self
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn usage(mut self, input: crate::types::CertificateUsageType) -> Self {
@@ -110,12 +108,8 @@ impl ListedCertificateBuilder {
         self
     }
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
-    pub fn set_usage(
-        mut self,
-        input: std::option::Option<crate::types::CertificateUsageType>,
-    ) -> Self {
-        self.usage = input;
-        self
+    pub fn set_usage(mut self, input: std::option::Option<crate::types::CertificateUsageType>) -> Self {
+        self.usage = input; self
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
     pub fn status(mut self, input: crate::types::CertificateStatusType) -> Self {
@@ -123,12 +117,8 @@ impl ListedCertificateBuilder {
         self
     }
     /// <p>The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>, or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate will replace the current certificate when it expires.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::CertificateStatusType>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::CertificateStatusType>) -> Self {
+        self.status = input; self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,12 +126,8 @@ impl ListedCertificateBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn set_active_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.active_date = input;
-        self
+    pub fn set_active_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.active_date = input; self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,12 +135,8 @@ impl ListedCertificateBuilder {
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn set_inactive_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.inactive_date = input;
-        self
+    pub fn set_inactive_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.inactive_date = input; self
     }
     /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
     pub fn r#type(mut self, input: crate::types::CertificateType) -> Self {
@@ -163,8 +145,7 @@ impl ListedCertificateBuilder {
     }
     /// <p>The type for the certificate. If a private key has been specified for the certificate, its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key, the type is <code>CERTIFICATE</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::CertificateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The name or short description that's used to identify the certificate.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,20 +154,28 @@ impl ListedCertificateBuilder {
     }
     /// <p>The name or short description that's used to identify the certificate.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`ListedCertificate`](crate::types::ListedCertificate).
     pub fn build(self) -> crate::types::ListedCertificate {
         crate::types::ListedCertificate {
-            arn: self.arn,
-            certificate_id: self.certificate_id,
-            usage: self.usage,
-            status: self.status,
-            active_date: self.active_date,
-            inactive_date: self.inactive_date,
-            r#type: self.r#type,
-            description: self.description,
+            arn: self.arn
+            ,
+            certificate_id: self.certificate_id
+            ,
+            usage: self.usage
+            ,
+            status: self.status
+            ,
+            active_date: self.active_date
+            ,
+            inactive_date: self.inactive_date
+            ,
+            r#type: self.r#type
+            ,
+            description: self.description
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFailbackReplicationConfigurationInput {
+pub struct UpdateFailbackReplicationConfigurationInput  {
     /// <p>The ID of the Recovery Instance.</p>
     #[doc(hidden)]
     pub recovery_instance_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct UpdateFailbackReplicationConfigurationInput {
 }
 impl UpdateFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn recovery_instance_id(&self) -> std::option::Option<&str> {
+    pub fn recovery_instance_id(&self) -> std::option::Option<& str> {
         self.recovery_instance_id.as_deref()
     }
     /// <p>The name of the Failback Replication Configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
@@ -36,7 +36,7 @@ impl UpdateFailbackReplicationConfigurationInput {
 }
 impl UpdateFailbackReplicationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
-    pub fn builder() -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder {
         crate::operation::update_failback_replication_configuration::builders::UpdateFailbackReplicationConfigurationInputBuilder::default()
     }
 }
@@ -57,12 +57,8 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
         self
     }
     /// <p>The ID of the Recovery Instance.</p>
-    pub fn set_recovery_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_instance_id = input;
-        self
+    pub fn set_recovery_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_instance_id = input; self
     }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
     }
     /// <p>The name of the Failback Replication Configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -81,8 +76,7 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
     pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-        self.bandwidth_throttling = input;
-        self
+        self.bandwidth_throttling = input; self
     }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn use_private_ip(mut self, input: bool) -> Self {
@@ -91,11 +85,10 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
     }
     /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
     pub fn set_use_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_private_ip = input;
-        self
+        self.use_private_ip = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFailbackReplicationConfigurationInput`](crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_failback_replication_configuration::UpdateFailbackReplicationConfigurationInput {
                 recovery_instance_id: self.recovery_instance_id
@@ -111,3 +104,4 @@ impl UpdateFailbackReplicationConfigurationInputBuilder {
         )
     }
 }
+

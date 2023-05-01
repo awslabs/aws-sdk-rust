@@ -4,77 +4,55 @@ pub use crate::operation::describe_network_insights_paths::_describe_network_ins
 pub use crate::operation::describe_network_insights_paths::_describe_network_insights_paths_input::DescribeNetworkInsightsPathsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeNetworkInsightsPaths`.
-///
+/// 
 /// <p>Describes one or more of your paths.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNetworkInsightsPathsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_network_insights_paths::builders::DescribeNetworkInsightsPathsInputBuilder
             }
-impl DescribeNetworkInsightsPathsFluentBuilder {
+impl DescribeNetworkInsightsPathsFluentBuilder  {
     /// Creates a new `DescribeNetworkInsightsPaths`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPaths,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPaths, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_network_insights_paths::DescribeNetworkInsightsPathsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator{
-        crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator {
+                            crate::operation::describe_network_insights_paths::paginator::DescribeNetworkInsightsPathsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `NetworkInsightsPathIds`.
     ///
     /// To override the contents of this collection use [`set_network_insights_path_ids`](Self::set_network_insights_path_ids).
@@ -85,10 +63,7 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self
     }
     /// <p>The IDs of the paths.</p>
-    pub fn set_network_insights_path_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_network_insights_path_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_network_insights_path_ids(input);
         self
     }
@@ -96,42 +71,39 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p>destination - The ID of the resource.</p> </li>
-    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
-    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
-    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
-    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
-    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
-    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
-    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
-    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
-    /// <li> <p>protocol - The protocol.</p> </li>
-    /// <li> <p>source - The ID of the resource.</p> </li>
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>destination - The ID of the resource.</p> </li> 
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li> 
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li> 
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li> 
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li> 
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li> 
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li> 
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li> 
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li> 
+    /// <li> <p>protocol - The protocol.</p> </li> 
+    /// <li> <p>source - The ID of the resource.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters. The following are the possible values:</p>
-    /// <ul>
-    /// <li> <p>destination - The ID of the resource.</p> </li>
-    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li>
-    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li>
-    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li>
-    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li>
-    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li>
-    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li>
-    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li>
-    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li>
-    /// <li> <p>protocol - The protocol.</p> </li>
-    /// <li> <p>source - The ID of the resource.</p> </li>
+    /// <p>The filters. The following are the possible values:</p> 
+    /// <ul> 
+    /// <li> <p>destination - The ID of the resource.</p> </li> 
+    /// <li> <p>filter-at-source.source-address - The source IPv4 address at the source.</p> </li> 
+    /// <li> <p>filter-at-source.source-port-range - The source port range at the source.</p> </li> 
+    /// <li> <p>filter-at-source.destination-address - The destination IPv4 address at the source.</p> </li> 
+    /// <li> <p>filter-at-source.destination-port-range - The destination port range at the source.</p> </li> 
+    /// <li> <p>filter-at-destination.source-address - The source IPv4 address at the destination.</p> </li> 
+    /// <li> <p>filter-at-destination.source-port-range - The source port range at the destination.</p> </li> 
+    /// <li> <p>filter-at-destination.destination-address - The destination IPv4 address at the destination.</p> </li> 
+    /// <li> <p>filter-at-destination.destination-port-range - The destination port range at the destination.</p> </li> 
+    /// <li> <p>protocol - The protocol.</p> </li> 
+    /// <li> <p>source - The ID of the resource.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -166,3 +138,4 @@ impl DescribeNetworkInsightsPathsFluentBuilder {
         self
     }
 }
+

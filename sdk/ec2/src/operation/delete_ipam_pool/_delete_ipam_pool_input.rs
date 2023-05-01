@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIpamPoolInput {
+pub struct DeleteIpamPoolInput  {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl DeleteIpamPoolInput {
         self.dry_run
     }
     /// <p>The ID of the pool to delete.</p>
-    pub fn ipam_pool_id(&self) -> std::option::Option<&str> {
+    pub fn ipam_pool_id(&self) -> std::option::Option<& str> {
         self.ipam_pool_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteIpamPoolInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the pool to delete.</p>
     pub fn ipam_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteIpamPoolInputBuilder {
     }
     /// <p>The ID of the pool to delete.</p>
     pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_pool_id = input;
-        self
+        self.ipam_pool_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteIpamPoolInput`](crate::operation::delete_ipam_pool::DeleteIpamPoolInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_ipam_pool::DeleteIpamPoolInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_ipam_pool::DeleteIpamPoolInput {
-            dry_run: self.dry_run,
-            ipam_pool_id: self.ipam_pool_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_ipam_pool::DeleteIpamPoolInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_ipam_pool::DeleteIpamPoolInput {
+                dry_run: self.dry_run
+                ,
+                ipam_pool_id: self.ipam_pool_id
+                ,
+            }
+        )
     }
 }
+

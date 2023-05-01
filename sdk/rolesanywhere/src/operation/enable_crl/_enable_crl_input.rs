@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableCrlInput {
+pub struct EnableCrlInput  {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
     pub crl_id: std::option::Option<std::string::String>,
 }
 impl EnableCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> std::option::Option<&str> {
+    pub fn crl_id(&self) -> std::option::Option<& str> {
         self.crl_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl EnableCrlInputBuilder {
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     pub fn set_crl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.crl_id = input;
-        self
+        self.crl_id = input; self
     }
     /// Consumes the builder and constructs a [`EnableCrlInput`](crate::operation::enable_crl::EnableCrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::enable_crl::EnableCrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::enable_crl::EnableCrlInput {
-            crl_id: self.crl_id,
-        })
+    pub fn build(self) -> Result<crate::operation::enable_crl::EnableCrlInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::enable_crl::EnableCrlInput {
+                crl_id: self.crl_id
+                ,
+            }
+        )
     }
 }
+

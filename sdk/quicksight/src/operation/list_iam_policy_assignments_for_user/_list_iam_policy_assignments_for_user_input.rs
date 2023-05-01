@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIamPolicyAssignmentsForUserInput {
+pub struct ListIamPolicyAssignmentsForUserInput  {
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListIamPolicyAssignmentsForUserInput {
 }
 impl ListIamPolicyAssignmentsForUserInput {
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -37,13 +37,13 @@ impl ListIamPolicyAssignmentsForUserInput {
         self.max_results
     }
     /// <p>The namespace of the assignment.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
 impl ListIamPolicyAssignmentsForUserInput {
     /// Creates a new builder-style object to manufacture [`ListIamPolicyAssignmentsForUserInput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput).
-    pub fn builder() -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserInputBuilder{
+    pub fn builder() -> crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserInputBuilder {
         crate::operation::list_iam_policy_assignments_for_user::builders::ListIamPolicyAssignmentsForUserInputBuilder::default()
     }
 }
@@ -66,8 +66,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The name of the user.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
     }
     /// <p>The name of the user.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +84,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -96,8 +93,7 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The namespace of the assignment.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,11 +102,10 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
     }
     /// <p>The namespace of the assignment.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// Consumes the builder and constructs a [`ListIamPolicyAssignmentsForUserInput`](crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput).
-    pub fn build(self) -> Result<crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_iam_policy_assignments_for_user::ListIamPolicyAssignmentsForUserInput {
                 aws_account_id: self.aws_account_id
@@ -127,3 +122,4 @@ impl ListIamPolicyAssignmentsForUserInputBuilder {
         )
     }
 }
+

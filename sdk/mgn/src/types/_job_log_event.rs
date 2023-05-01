@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let joblogevent = unimplemented!();
 /// match joblogevent {
@@ -44,22 +44,14 @@
 /// Specifically, when `joblogevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobLogEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobLogEvent {
     #[allow(missing_docs)] // documentation missing in model
     CleanupEnd,
@@ -94,85 +86,69 @@ pub enum JobLogEvent {
     #[allow(missing_docs)] // documentation missing in model
     UsingPreviousSnapshot,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobLogEvent {
-    fn from(s: &str) -> Self {
-        match s {
-            "CLEANUP_END" => JobLogEvent::CleanupEnd,
-            "CLEANUP_FAIL" => JobLogEvent::CleanupFail,
-            "CLEANUP_START" => JobLogEvent::CleanupStart,
-            "CONVERSION_END" => JobLogEvent::ConversionEnd,
-            "CONVERSION_FAIL" => JobLogEvent::ConversionFail,
-            "CONVERSION_START" => JobLogEvent::ConversionStart,
-            "JOB_CANCEL" => JobLogEvent::JobCancel,
-            "JOB_END" => JobLogEvent::JobEnd,
-            "JOB_START" => JobLogEvent::JobStart,
-            "LAUNCH_FAILED" => JobLogEvent::LaunchFailed,
-            "LAUNCH_START" => JobLogEvent::LaunchStart,
-            "SERVER_SKIPPED" => JobLogEvent::ServerSkipped,
-            "SNAPSHOT_END" => JobLogEvent::SnapshotEnd,
-            "SNAPSHOT_FAIL" => JobLogEvent::SnapshotFail,
-            "SNAPSHOT_START" => JobLogEvent::SnapshotStart,
-            "USING_PREVIOUS_SNAPSHOT" => JobLogEvent::UsingPreviousSnapshot,
-            other => JobLogEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CLEANUP_END" => JobLogEvent::CleanupEnd,
+"CLEANUP_FAIL" => JobLogEvent::CleanupFail,
+"CLEANUP_START" => JobLogEvent::CleanupStart,
+"CONVERSION_END" => JobLogEvent::ConversionEnd,
+"CONVERSION_FAIL" => JobLogEvent::ConversionFail,
+"CONVERSION_START" => JobLogEvent::ConversionStart,
+"JOB_CANCEL" => JobLogEvent::JobCancel,
+"JOB_END" => JobLogEvent::JobEnd,
+"JOB_START" => JobLogEvent::JobStart,
+"LAUNCH_FAILED" => JobLogEvent::LaunchFailed,
+"LAUNCH_START" => JobLogEvent::LaunchStart,
+"SERVER_SKIPPED" => JobLogEvent::ServerSkipped,
+"SNAPSHOT_END" => JobLogEvent::SnapshotEnd,
+"SNAPSHOT_FAIL" => JobLogEvent::SnapshotFail,
+"SNAPSHOT_START" => JobLogEvent::SnapshotStart,
+"USING_PREVIOUS_SNAPSHOT" => JobLogEvent::UsingPreviousSnapshot,
+other => JobLogEvent::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for JobLogEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobLogEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobLogEvent::from(s))
+                }
+            }
 impl JobLogEvent {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            JobLogEvent::CleanupEnd => "CLEANUP_END",
-            JobLogEvent::CleanupFail => "CLEANUP_FAIL",
-            JobLogEvent::CleanupStart => "CLEANUP_START",
-            JobLogEvent::ConversionEnd => "CONVERSION_END",
-            JobLogEvent::ConversionFail => "CONVERSION_FAIL",
-            JobLogEvent::ConversionStart => "CONVERSION_START",
-            JobLogEvent::JobCancel => "JOB_CANCEL",
-            JobLogEvent::JobEnd => "JOB_END",
-            JobLogEvent::JobStart => "JOB_START",
-            JobLogEvent::LaunchFailed => "LAUNCH_FAILED",
-            JobLogEvent::LaunchStart => "LAUNCH_START",
-            JobLogEvent::ServerSkipped => "SERVER_SKIPPED",
-            JobLogEvent::SnapshotEnd => "SNAPSHOT_END",
-            JobLogEvent::SnapshotFail => "SNAPSHOT_FAIL",
-            JobLogEvent::SnapshotStart => "SNAPSHOT_START",
-            JobLogEvent::UsingPreviousSnapshot => "USING_PREVIOUS_SNAPSHOT",
-            JobLogEvent::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CLEANUP_END",
-            "CLEANUP_FAIL",
-            "CLEANUP_START",
-            "CONVERSION_END",
-            "CONVERSION_FAIL",
-            "CONVERSION_START",
-            "JOB_CANCEL",
-            "JOB_END",
-            "JOB_START",
-            "LAUNCH_FAILED",
-            "LAUNCH_START",
-            "SERVER_SKIPPED",
-            "SNAPSHOT_END",
-            "SNAPSHOT_FAIL",
-            "SNAPSHOT_START",
-            "USING_PREVIOUS_SNAPSHOT",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    JobLogEvent::CleanupEnd => "CLEANUP_END",
+    JobLogEvent::CleanupFail => "CLEANUP_FAIL",
+    JobLogEvent::CleanupStart => "CLEANUP_START",
+    JobLogEvent::ConversionEnd => "CONVERSION_END",
+    JobLogEvent::ConversionFail => "CONVERSION_FAIL",
+    JobLogEvent::ConversionStart => "CONVERSION_START",
+    JobLogEvent::JobCancel => "JOB_CANCEL",
+    JobLogEvent::JobEnd => "JOB_END",
+    JobLogEvent::JobStart => "JOB_START",
+    JobLogEvent::LaunchFailed => "LAUNCH_FAILED",
+    JobLogEvent::LaunchStart => "LAUNCH_START",
+    JobLogEvent::ServerSkipped => "SERVER_SKIPPED",
+    JobLogEvent::SnapshotEnd => "SNAPSHOT_END",
+    JobLogEvent::SnapshotFail => "SNAPSHOT_FAIL",
+    JobLogEvent::SnapshotStart => "SNAPSHOT_START",
+    JobLogEvent::UsingPreviousSnapshot => "USING_PREVIOUS_SNAPSHOT",
+    JobLogEvent::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CLEANUP_END", "CLEANUP_FAIL", "CLEANUP_START", "CONVERSION_END", "CONVERSION_FAIL", "CONVERSION_START", "JOB_CANCEL", "JOB_END", "JOB_START", "LAUNCH_FAILED", "LAUNCH_START", "SERVER_SKIPPED", "SNAPSHOT_END", "SNAPSHOT_FAIL", "SNAPSHOT_START", "USING_PREVIOUS_SNAPSHOT"]
+                }
+            }
 impl AsRef<str> for JobLogEvent {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

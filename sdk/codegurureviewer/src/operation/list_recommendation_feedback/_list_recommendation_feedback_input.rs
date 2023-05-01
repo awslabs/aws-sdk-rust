@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationFeedbackInput {
+pub struct ListRecommendationFeedbackInput  {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListRecommendationFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
     pub code_review_arn: std::option::Option<std::string::String>,
-    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p>
+    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -22,7 +22,7 @@ pub struct ListRecommendationFeedbackInput {
 }
 impl ListRecommendationFeedbackInput {
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
@@ -30,22 +30,22 @@ impl ListRecommendationFeedbackInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> std::option::Option<& str> {
         self.code_review_arn.as_deref()
     }
-    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p>
+    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn recommendation_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn recommendation_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.recommendation_ids.as_deref()
     }
 }
 impl ListRecommendationFeedbackInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackInput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput).
-    pub fn builder() -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder{
+    pub fn builder() -> crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder {
         crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder::default()
     }
 }
@@ -68,8 +68,7 @@ impl ListRecommendationFeedbackInputBuilder {
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,8 +77,7 @@ impl ListRecommendationFeedbackInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,29 +86,24 @@ impl ListRecommendationFeedbackInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_review_arn = input;
-        self
+        self.code_review_arn = input; self
     }
     /// Appends an item to `user_ids`.
     ///
     /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
     ///
-    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p>
+    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-        v.push(input.into());
-        self.user_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.user_ids = Some(v);
+                        self
     }
-    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p>
+    /// <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p> 
     /// <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-    pub fn set_user_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.user_ids = input;
-        self
+    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.user_ids = input; self
     }
     /// Appends an item to `recommendation_ids`.
     ///
@@ -119,33 +112,30 @@ impl ListRecommendationFeedbackInputBuilder {
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
     pub fn recommendation_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recommendation_ids.unwrap_or_default();
-        v.push(input.into());
-        self.recommendation_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.recommendation_ids = Some(v);
+                        self
     }
     /// <p>Used to query the recommendation feedback for a given recommendation.</p>
-    pub fn set_recommendation_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.recommendation_ids = input;
-        self
+    pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.recommendation_ids = input; self
     }
     /// Consumes the builder and constructs a [`ListRecommendationFeedbackInput`](crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_recommendation_feedback::ListRecommendationFeedbackInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                code_review_arn: self.code_review_arn,
-                user_ids: self.user_ids,
-                recommendation_ids: self.recommendation_ids,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                code_review_arn: self.code_review_arn
+                ,
+                user_ids: self.user_ids
+                ,
+                recommendation_ids: self.recommendation_ids
+                ,
+            }
         )
     }
 }
+

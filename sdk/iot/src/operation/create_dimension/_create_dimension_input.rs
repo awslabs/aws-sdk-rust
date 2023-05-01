@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDimensionInput {
+pub struct CreateDimensionInput  {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct CreateDimensionInput {
 }
 impl CreateDimensionInput {
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DimensionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::DimensionType> {
         self.r#type.as_ref()
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn string_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn string_values(&self) -> std::option::Option<& [std::string::String]> {
         self.string_values.as_deref()
     }
     /// <p>Metadata that can be used to manage the dimension.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
 }
@@ -66,8 +66,7 @@ impl CreateDimensionInputBuilder {
     }
     /// <p>A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn r#type(mut self, input: crate::types::DimensionType) -> Self {
@@ -76,8 +75,7 @@ impl CreateDimensionInputBuilder {
     }
     /// <p>Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::DimensionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Appends an item to `string_values`.
     ///
@@ -86,17 +84,13 @@ impl CreateDimensionInputBuilder {
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
     pub fn string_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.string_values.unwrap_or_default();
-        v.push(input.into());
-        self.string_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.string_values = Some(v);
+                        self
     }
     /// <p>Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code> dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").</p>
-    pub fn set_string_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.string_values = input;
-        self
+    pub fn set_string_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.string_values = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -105,17 +99,13 @@ impl CreateDimensionInputBuilder {
     /// <p>Metadata that can be used to manage the dimension.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata that can be used to manage the dimension.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,26 +113,25 @@ impl CreateDimensionInputBuilder {
         self
     }
     /// <p>Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateDimensionInput`](crate::operation::create_dimension::CreateDimensionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_dimension::CreateDimensionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_dimension::CreateDimensionInput {
-            name: self.name,
-            r#type: self.r#type,
-            string_values: self.string_values,
-            tags: self.tags,
-            client_request_token: self.client_request_token,
-        })
+    pub fn build(self) -> Result<crate::operation::create_dimension::CreateDimensionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_dimension::CreateDimensionInput {
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                string_values: self.string_values
+                ,
+                tags: self.tags
+                ,
+                client_request_token: self.client_request_token
+                ,
+            }
+        )
     }
 }
+

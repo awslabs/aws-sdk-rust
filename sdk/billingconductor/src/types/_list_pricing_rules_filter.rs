@@ -3,14 +3,14 @@
 /// <p> The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingRulesFilter {
+pub struct ListPricingRulesFilter  {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     #[doc(hidden)]
     pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
-    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arns(&self) -> std::option::Option<& [std::string::String]> {
         self.arns.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl ListPricingRulesFilterBuilder {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
-        v.push(input.into());
-        self.arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.arns = Some(v);
+                        self
     }
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
-    pub fn set_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.arns = input;
-        self
+    pub fn set_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.arns = input; self
     }
     /// Consumes the builder and constructs a [`ListPricingRulesFilter`](crate::types::ListPricingRulesFilter).
     pub fn build(self) -> crate::types::ListPricingRulesFilter {
-        crate::types::ListPricingRulesFilter { arns: self.arns }
+        crate::types::ListPricingRulesFilter {
+            arns: self.arns
+            ,
+        }
     }
 }
+

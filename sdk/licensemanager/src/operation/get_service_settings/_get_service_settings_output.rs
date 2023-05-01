@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSettingsOutput {
+pub struct GetServiceSettingsOutput  {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     #[doc(hidden)]
     pub s3_bucket_arn: std::option::Option<std::string::String>,
@@ -22,17 +22,15 @@ pub struct GetServiceSettingsOutput {
 }
 impl GetServiceSettingsOutput {
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn organization_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::OrganizationConfiguration> {
+    pub fn organization_configuration(&self) -> std::option::Option<& crate::types::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
@@ -40,19 +38,18 @@ impl GetServiceSettingsOutput {
         self.enable_cross_accounts_discovery
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn license_manager_resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn license_manager_resource_share_arn(&self) -> std::option::Option<& str> {
         self.license_manager_resource_share_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServiceSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetServiceSettingsOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingsOutput`](crate::operation::get_service_settings::GetServiceSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder {
         crate::operation::get_service_settings::builders::GetServiceSettingsOutputBuilder::default()
     }
 }
@@ -63,8 +60,7 @@ impl GetServiceSettingsOutput {
 pub struct GetServiceSettingsOutputBuilder {
     pub(crate) s3_bucket_arn: std::option::Option<std::string::String>,
     pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-    pub(crate) organization_configuration:
-        std::option::Option<crate::types::OrganizationConfiguration>,
+    pub(crate) organization_configuration: std::option::Option<crate::types::OrganizationConfiguration>,
     pub(crate) enable_cross_accounts_discovery: std::option::Option<bool>,
     pub(crate) license_manager_resource_share_arn: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -77,8 +73,7 @@ impl GetServiceSettingsOutputBuilder {
     }
     /// <p>Regional S3 bucket path for storing reports, license trail event data, discovery data, and so on.</p>
     pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_arn = input;
-        self
+        self.s3_bucket_arn = input; self
     }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
     pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,24 +82,16 @@ impl GetServiceSettingsOutputBuilder {
     }
     /// <p>SNS topic configured to receive notifications from License Manager.</p>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_topic_arn = input;
-        self
+        self.sns_topic_arn = input; self
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn organization_configuration(
-        mut self,
-        input: crate::types::OrganizationConfiguration,
-    ) -> Self {
+    pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
         self.organization_configuration = Some(input);
         self
     }
     /// <p>Indicates whether Organizations is integrated with License Manager for cross-account discovery.</p>
-    pub fn set_organization_configuration(
-        mut self,
-        input: std::option::Option<crate::types::OrganizationConfiguration>,
-    ) -> Self {
-        self.organization_configuration = input;
-        self
+    pub fn set_organization_configuration(mut self, input: std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
+        self.organization_configuration = input; self
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
     pub fn enable_cross_accounts_discovery(mut self, input: bool) -> Self {
@@ -113,43 +100,41 @@ impl GetServiceSettingsOutputBuilder {
     }
     /// <p>Indicates whether cross-account discovery is enabled.</p>
     pub fn set_enable_cross_accounts_discovery(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_cross_accounts_discovery = input;
-        self
+        self.enable_cross_accounts_discovery = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn license_manager_resource_share_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn license_manager_resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.license_manager_resource_share_arn = Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the resource share. The License Manager management account provides member accounts with access to this share.</p>
-    pub fn set_license_manager_resource_share_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.license_manager_resource_share_arn = input;
-        self
+    pub fn set_license_manager_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.license_manager_resource_share_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetServiceSettingsOutput`](crate::operation::get_service_settings::GetServiceSettingsOutput).
     pub fn build(self) -> crate::operation::get_service_settings::GetServiceSettingsOutput {
         crate::operation::get_service_settings::GetServiceSettingsOutput {
-            s3_bucket_arn: self.s3_bucket_arn,
-            sns_topic_arn: self.sns_topic_arn,
-            organization_configuration: self.organization_configuration,
-            enable_cross_accounts_discovery: self.enable_cross_accounts_discovery,
-            license_manager_resource_share_arn: self.license_manager_resource_share_arn,
+            s3_bucket_arn: self.s3_bucket_arn
+            ,
+            sns_topic_arn: self.sns_topic_arn
+            ,
+            organization_configuration: self.organization_configuration
+            ,
+            enable_cross_accounts_discovery: self.enable_cross_accounts_discovery
+            ,
+            license_manager_resource_share_arn: self.license_manager_resource_share_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

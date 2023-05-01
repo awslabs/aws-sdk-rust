@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAddressTransferOutput {
+pub struct EnableAddressTransferOutput  {
     /// <p>An Elastic IP address transfer.</p>
     #[doc(hidden)]
     pub address_transfer: std::option::Option<crate::types::AddressTransfer>,
@@ -10,20 +10,18 @@ pub struct EnableAddressTransferOutput {
 }
 impl EnableAddressTransferOutput {
     /// <p>An Elastic IP address transfer.</p>
-    pub fn address_transfer(&self) -> std::option::Option<&crate::types::AddressTransfer> {
+    pub fn address_transfer(&self) -> std::option::Option<& crate::types::AddressTransfer> {
         self.address_transfer.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for EnableAddressTransferOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EnableAddressTransferOutput {
     /// Creates a new builder-style object to manufacture [`EnableAddressTransferOutput`](crate::operation::enable_address_transfer::EnableAddressTransferOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_address_transfer::builders::EnableAddressTransferOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_address_transfer::builders::EnableAddressTransferOutputBuilder {
         crate::operation::enable_address_transfer::builders::EnableAddressTransferOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl EnableAddressTransferOutputBuilder {
         self
     }
     /// <p>An Elastic IP address transfer.</p>
-    pub fn set_address_transfer(
-        mut self,
-        input: std::option::Option<crate::types::AddressTransfer>,
-    ) -> Self {
-        self.address_transfer = input;
-        self
+    pub fn set_address_transfer(mut self, input: std::option::Option<crate::types::AddressTransfer>) -> Self {
+        self.address_transfer = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EnableAddressTransferOutput`](crate::operation::enable_address_transfer::EnableAddressTransferOutput).
     pub fn build(self) -> crate::operation::enable_address_transfer::EnableAddressTransferOutput {
         crate::operation::enable_address_transfer::EnableAddressTransferOutput {
-            address_transfer: self.address_transfer,
+            address_transfer: self.address_transfer
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,27 +3,27 @@
 /// <p>Specifies the criteria that are used to select the handshakes for the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HandshakeFilter {
-    /// <p>Specifies the type of handshake action.</p>
+pub struct HandshakeFilter  {
+    /// <p>Specifies the type of handshake action.</p> 
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::types::ActionType>,
-    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub parent_handshake_id: std::option::Option<std::string::String>,
 }
 impl HandshakeFilter {
-    /// <p>Specifies the type of handshake action.</p>
+    /// <p>Specifies the type of handshake action.</p> 
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn parent_handshake_id(&self) -> std::option::Option<&str> {
+    pub fn parent_handshake_id(&self) -> std::option::Option<& str> {
         self.parent_handshake_id.as_deref()
     }
 }
@@ -42,40 +42,38 @@ pub struct HandshakeFilterBuilder {
     pub(crate) parent_handshake_id: std::option::Option<std::string::String>,
 }
 impl HandshakeFilterBuilder {
-    /// <p>Specifies the type of handshake action.</p>
+    /// <p>Specifies the type of handshake action.</p> 
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.action_type = Some(input);
         self
     }
-    /// <p>Specifies the type of handshake action.</p>
+    /// <p>Specifies the type of handshake action.</p> 
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
     pub fn set_action_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
-    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn parent_handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.parent_handshake_id = Some(input.into());
         self
     }
-    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn set_parent_handshake_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.parent_handshake_id = input;
-        self
+    pub fn set_parent_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.parent_handshake_id = input; self
     }
     /// Consumes the builder and constructs a [`HandshakeFilter`](crate::types::HandshakeFilter).
     pub fn build(self) -> crate::types::HandshakeFilter {
         crate::types::HandshakeFilter {
-            action_type: self.action_type,
-            parent_handshake_id: self.parent_handshake_id,
+            action_type: self.action_type
+            ,
+            parent_handshake_id: self.parent_handshake_id
+            ,
         }
     }
 }
+

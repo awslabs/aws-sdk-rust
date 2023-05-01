@@ -3,7 +3,7 @@
 /// Settings for for a PULL type input.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputSourceRequest {
+pub struct InputSourceRequest  {
     /// The key used to extract the password from EC2 Parameter store.
     #[doc(hidden)]
     pub password_param: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct InputSourceRequest {
 }
 impl InputSourceRequest {
     /// The key used to extract the password from EC2 Parameter store.
-    pub fn password_param(&self) -> std::option::Option<&str> {
+    pub fn password_param(&self) -> std::option::Option<& str> {
         self.password_param.as_deref()
     }
     /// This represents the customer's source URL where stream is pulled from.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// The username for the input source.
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl InputSourceRequestBuilder {
     }
     /// The key used to extract the password from EC2 Parameter store.
     pub fn set_password_param(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password_param = input;
-        self
+        self.password_param = input; self
     }
     /// This represents the customer's source URL where stream is pulled from.
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl InputSourceRequestBuilder {
     }
     /// This represents the customer's source URL where stream is pulled from.
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// The username for the input source.
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl InputSourceRequestBuilder {
     }
     /// The username for the input source.
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Consumes the builder and constructs a [`InputSourceRequest`](crate::types::InputSourceRequest).
     pub fn build(self) -> crate::types::InputSourceRequest {
         crate::types::InputSourceRequest {
-            password_param: self.password_param,
-            url: self.url,
-            username: self.username,
+            password_param: self.password_param
+            ,
+            url: self.url
+            ,
+            username: self.username
+            ,
         }
     }
 }
+

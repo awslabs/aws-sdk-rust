@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSshPublicKeyInput {
+pub struct DeleteSshPublicKeyInput  {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct DeleteSshPublicKeyInput {
 }
 impl DeleteSshPublicKeyInput {
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
-    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key_id(&self) -> std::option::Option<& str> {
         self.ssh_public_key_id.as_deref()
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
 }
 impl DeleteSshPublicKeyInput {
     /// Creates a new builder-style object to manufacture [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
-    pub fn builder(
-    ) -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {
+    pub fn builder() -> crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder {
         crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DeleteSshPublicKeyInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance that has the user assigned to it.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
     pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +58,8 @@ impl DeleteSshPublicKeyInputBuilder {
         self
     }
     /// <p>A unique identifier used to reference your user's specific SSH key.</p>
-    pub fn set_ssh_public_key_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ssh_public_key_id = input;
-        self
+    pub fn set_ssh_public_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ssh_public_key_id = input; self
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,22 +68,20 @@ impl DeleteSshPublicKeyInputBuilder {
     }
     /// <p>A unique string that identifies a user whose public key is being deleted.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteSshPublicKeyInput`](crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_ssh_public_key::DeleteSshPublicKeyInput {
-                server_id: self.server_id,
-                ssh_public_key_id: self.ssh_public_key_id,
-                user_name: self.user_name,
-            },
+                server_id: self.server_id
+                ,
+                ssh_public_key_id: self.ssh_public_key_id
+                ,
+                user_name: self.user_name
+                ,
+            }
         )
     }
 }
+

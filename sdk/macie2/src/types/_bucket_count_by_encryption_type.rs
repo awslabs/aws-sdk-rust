@@ -3,7 +3,7 @@
 /// <p>Provides information about the number of S3 buckets whose settings do or don't specify default server-side encryption behavior for objects that are added to the buckets. For detailed information about these settings, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketCountByEncryptionType {
+pub struct BucketCountByEncryptionType  {
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon Web Services managed KMS key or a customer managed KMS key. By default, these buckets encrypt new objects automatically using SSE-KMS encryption.</p>
     #[doc(hidden)]
     pub kms_managed: i64,
@@ -59,8 +59,7 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon Web Services managed KMS key or a customer managed KMS key. By default, these buckets encrypt new objects automatically using SSE-KMS encryption.</p>
     pub fn set_kms_managed(mut self, input: std::option::Option<i64>) -> Self {
-        self.kms_managed = input;
-        self
+        self.kms_managed = input; self
     }
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.</p>
     pub fn s3_managed(mut self, input: i64) -> Self {
@@ -69,8 +68,7 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets whose default encryption settings are configured to encrypt new objects with an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.</p>
     pub fn set_s3_managed(mut self, input: std::option::Option<i64>) -> Self {
-        self.s3_managed = input;
-        self
+        self.s3_managed = input; self
     }
     /// <p>The total number of buckets that don't specify default server-side encryption behavior for new objects. Default encryption settings aren't configured for these buckets.</p>
     pub fn unencrypted(mut self, input: i64) -> Self {
@@ -79,8 +77,7 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets that don't specify default server-side encryption behavior for new objects. Default encryption settings aren't configured for these buckets.</p>
     pub fn set_unencrypted(mut self, input: std::option::Option<i64>) -> Self {
-        self.unencrypted = input;
-        self
+        self.unencrypted = input; self
     }
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
     pub fn unknown(mut self, input: i64) -> Self {
@@ -89,16 +86,24 @@ impl BucketCountByEncryptionTypeBuilder {
     }
     /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
     pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
-        self.unknown = input;
-        self
+        self.unknown = input; self
     }
     /// Consumes the builder and constructs a [`BucketCountByEncryptionType`](crate::types::BucketCountByEncryptionType).
     pub fn build(self) -> crate::types::BucketCountByEncryptionType {
         crate::types::BucketCountByEncryptionType {
-            kms_managed: self.kms_managed.unwrap_or_default(),
-            s3_managed: self.s3_managed.unwrap_or_default(),
-            unencrypted: self.unencrypted.unwrap_or_default(),
-            unknown: self.unknown.unwrap_or_default(),
+            kms_managed: self.kms_managed
+                .unwrap_or_default()
+            ,
+            s3_managed: self.s3_managed
+                .unwrap_or_default()
+            ,
+            unencrypted: self.unencrypted
+                .unwrap_or_default()
+            ,
+            unknown: self.unknown
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

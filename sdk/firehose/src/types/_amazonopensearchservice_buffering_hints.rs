@@ -3,11 +3,11 @@
 /// <p>Describes the buffering to perform before delivering data to the Amazon OpenSearch Service destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmazonopensearchserviceBufferingHints {
+pub struct AmazonopensearchserviceBufferingHints  {
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes). </p>
     #[doc(hidden)]
     pub interval_in_seconds: std::option::Option<i32>,
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> 
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
     #[doc(hidden)]
     pub size_in_m_bs: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl AmazonopensearchserviceBufferingHints {
     pub fn interval_in_seconds(&self) -> std::option::Option<i32> {
         self.interval_in_seconds
     }
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> 
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
     pub fn size_in_m_bs(&self) -> std::option::Option<i32> {
         self.size_in_m_bs
@@ -45,26 +45,27 @@ impl AmazonopensearchserviceBufferingHintsBuilder {
     }
     /// <p>Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The default value is 300 (5 minutes). </p>
     pub fn set_interval_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.interval_in_seconds = input;
-        self
+        self.interval_in_seconds = input; self
     }
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> 
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
     pub fn size_in_m_bs(mut self, input: i32) -> Self {
         self.size_in_m_bs = Some(input);
         self
     }
-    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p>
+    /// <p>Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is 5.</p> 
     /// <p>We recommend setting this parameter to a value greater than the amount of data you typically ingest into the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB or higher. </p>
     pub fn set_size_in_m_bs(mut self, input: std::option::Option<i32>) -> Self {
-        self.size_in_m_bs = input;
-        self
+        self.size_in_m_bs = input; self
     }
     /// Consumes the builder and constructs a [`AmazonopensearchserviceBufferingHints`](crate::types::AmazonopensearchserviceBufferingHints).
     pub fn build(self) -> crate::types::AmazonopensearchserviceBufferingHints {
         crate::types::AmazonopensearchserviceBufferingHints {
-            interval_in_seconds: self.interval_in_seconds,
-            size_in_m_bs: self.size_in_m_bs,
+            interval_in_seconds: self.interval_in_seconds
+            ,
+            size_in_m_bs: self.size_in_m_bs
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> The basic auth credentials required for basic authentication. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BasicAuthCredentials {
+pub struct BasicAuthCredentials  {
     /// <p> The username to use to connect to a resource. </p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct BasicAuthCredentials {
 }
 impl BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p> The password to use to connect to a resource.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for BasicAuthCredentials {
+impl  std::fmt::Debug for BasicAuthCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BasicAuthCredentials");
         formatter.field("username", &self.username);
@@ -51,8 +51,7 @@ impl BasicAuthCredentialsBuilder {
     }
     /// <p> The username to use to connect to a resource. </p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p> The password to use to connect to a resource.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl BasicAuthCredentialsBuilder {
     }
     /// <p> The password to use to connect to a resource.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input;
-        self
+        self.password = input; self
     }
     /// Consumes the builder and constructs a [`BasicAuthCredentials`](crate::types::BasicAuthCredentials).
     pub fn build(self) -> crate::types::BasicAuthCredentials {
         crate::types::BasicAuthCredentials {
-            username: self.username,
-            password: self.password,
+            username: self.username
+            ,
+            password: self.password
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for BasicAuthCredentialsBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// Represents a description of the rule groups namespace.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupsNamespaceDescription {
+pub struct RuleGroupsNamespaceDescription  {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -24,39 +24,35 @@ pub struct RuleGroupsNamespaceDescription {
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The status of rule groups namespace.
-    pub fn status(&self) -> std::option::Option<&crate::types::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// The rule groups namespace data.
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -77,8 +73,7 @@ pub struct RuleGroupsNamespaceDescriptionBuilder {
     pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RuleGroupsNamespaceDescriptionBuilder {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
@@ -88,8 +83,7 @@ impl RuleGroupsNamespaceDescriptionBuilder {
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// The rule groups namespace name.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +92,7 @@ impl RuleGroupsNamespaceDescriptionBuilder {
     }
     /// The rule groups namespace name.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The status of rule groups namespace.
     pub fn status(mut self, input: crate::types::RuleGroupsNamespaceStatus) -> Self {
@@ -107,12 +100,8 @@ impl RuleGroupsNamespaceDescriptionBuilder {
         self
     }
     /// The status of rule groups namespace.
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::RuleGroupsNamespaceStatus>) -> Self {
+        self.status = input; self
     }
     /// The rule groups namespace data.
     pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -121,8 +110,7 @@ impl RuleGroupsNamespaceDescriptionBuilder {
     }
     /// The rule groups namespace data.
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input;
-        self
+        self.data = input; self
     }
     /// The time when the rule groups namespace was created.
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,12 +118,8 @@ impl RuleGroupsNamespaceDescriptionBuilder {
         self
     }
     /// The time when the rule groups namespace was created.
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// The time when the rule groups namespace was modified.
     pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,48 +127,42 @@ impl RuleGroupsNamespaceDescriptionBuilder {
         self
     }
     /// The time when the rule groups namespace was modified.
-    pub fn set_modified_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.modified_at = input;
-        self
+    pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.modified_at = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// The tags of this rule groups namespace.
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// The tags of this rule groups namespace.
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`RuleGroupsNamespaceDescription`](crate::types::RuleGroupsNamespaceDescription).
     pub fn build(self) -> crate::types::RuleGroupsNamespaceDescription {
         crate::types::RuleGroupsNamespaceDescription {
-            arn: self.arn,
-            name: self.name,
-            status: self.status,
-            data: self.data,
-            created_at: self.created_at,
-            modified_at: self.modified_at,
-            tags: self.tags,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            data: self.data
+            ,
+            created_at: self.created_at
+            ,
+            modified_at: self.modified_at
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the output of DescribeScheduledInstances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScheduledInstancesOutput {
+pub struct DescribeScheduledInstancesOutput  {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +14,22 @@ pub struct DescribeScheduledInstancesOutput {
 }
 impl DescribeScheduledInstancesOutput {
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the Scheduled Instances.</p>
-    pub fn scheduled_instance_set(
-        &self,
-    ) -> std::option::Option<&[crate::types::ScheduledInstance]> {
+    pub fn scheduled_instance_set(&self) -> std::option::Option<& [crate::types::ScheduledInstance]> {
         self.scheduled_instance_set.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeScheduledInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeScheduledInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledInstancesOutput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput).
-    pub fn builder() -> crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesOutputBuilder{
+    pub fn builder() -> crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesOutputBuilder {
         crate::operation::describe_scheduled_instances::builders::DescribeScheduledInstancesOutputBuilder::default()
     }
 }
@@ -41,8 +39,7 @@ impl DescribeScheduledInstancesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeScheduledInstancesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) scheduled_instance_set:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>,
+    pub(crate) scheduled_instance_set: std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>,
     _request_id: Option<String>,
 }
 impl DescribeScheduledInstancesOutputBuilder {
@@ -53,8 +50,7 @@ impl DescribeScheduledInstancesOutputBuilder {
     }
     /// <p>The token required to retrieve the next set of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `scheduled_instance_set`.
     ///
@@ -63,35 +59,32 @@ impl DescribeScheduledInstancesOutputBuilder {
     /// <p>Information about the Scheduled Instances.</p>
     pub fn scheduled_instance_set(mut self, input: crate::types::ScheduledInstance) -> Self {
         let mut v = self.scheduled_instance_set.unwrap_or_default();
-        v.push(input);
-        self.scheduled_instance_set = Some(v);
-        self
+                        v.push(input);
+                        self.scheduled_instance_set = Some(v);
+                        self
     }
     /// <p>Information about the Scheduled Instances.</p>
-    pub fn set_scheduled_instance_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>,
-    ) -> Self {
-        self.scheduled_instance_set = input;
-        self
+    pub fn set_scheduled_instance_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>) -> Self {
+        self.scheduled_instance_set = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeScheduledInstancesOutput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput {
+    pub fn build(self) -> crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput {
         crate::operation::describe_scheduled_instances::DescribeScheduledInstancesOutput {
-            next_token: self.next_token,
-            scheduled_instance_set: self.scheduled_instance_set,
+            next_token: self.next_token
+            ,
+            scheduled_instance_set: self.scheduled_instance_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

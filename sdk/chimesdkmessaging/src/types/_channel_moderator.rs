@@ -3,7 +3,7 @@
 /// <p>The details of a channel moderator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelModerator {
+pub struct ChannelModerator  {
     /// <p>The moderator's data.</p>
     #[doc(hidden)]
     pub moderator: std::option::Option<crate::types::Identity>,
@@ -19,19 +19,19 @@ pub struct ChannelModerator {
 }
 impl ChannelModerator {
     /// <p>The moderator's data.</p>
-    pub fn moderator(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn moderator(&self) -> std::option::Option<& crate::types::Identity> {
         self.moderator.as_ref()
     }
     /// <p>The ARN of the moderator's channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The time at which the moderator was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::Identity> {
         self.created_by.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl ChannelModeratorBuilder {
     }
     /// <p>The moderator's data.</p>
     pub fn set_moderator(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.moderator = input;
-        self
+        self.moderator = input; self
     }
     /// <p>The ARN of the moderator's channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ChannelModeratorBuilder {
     }
     /// <p>The ARN of the moderator's channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The time at which the moderator was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl ChannelModeratorBuilder {
         self
     }
     /// <p>The time at which the moderator was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub fn created_by(mut self, input: crate::types::Identity) -> Self {
@@ -92,16 +86,20 @@ impl ChannelModeratorBuilder {
     }
     /// <p>The <code>AppInstanceUser</code> who created the moderator.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// Consumes the builder and constructs a [`ChannelModerator`](crate::types::ChannelModerator).
     pub fn build(self) -> crate::types::ChannelModerator {
         crate::types::ChannelModerator {
-            moderator: self.moderator,
-            channel_arn: self.channel_arn,
-            created_timestamp: self.created_timestamp,
-            created_by: self.created_by,
+            moderator: self.moderator
+            ,
+            channel_arn: self.channel_arn
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            created_by: self.created_by
+            ,
         }
     }
 }
+

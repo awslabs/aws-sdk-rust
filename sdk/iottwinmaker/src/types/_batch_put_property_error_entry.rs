@@ -3,14 +3,14 @@
 /// <p>An object that contains information about errors returned by the <code>BatchPutProperty</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutPropertyErrorEntry {
+pub struct BatchPutPropertyErrorEntry  {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::BatchPutPropertyError>>,
 }
 impl BatchPutPropertyErrorEntry {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::BatchPutPropertyError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchPutPropertyError]> {
         self.errors.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl BatchPutPropertyErrorEntryBuilder {
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
     pub fn errors(mut self, input: crate::types::BatchPutPropertyError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>A list of objects that contain information about errors returned by the <code>BatchPutProperty</code> action.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchPutPropertyError>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchPutPropertyError>>) -> Self {
+        self.errors = input; self
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyErrorEntry`](crate::types::BatchPutPropertyErrorEntry).
     pub fn build(self) -> crate::types::BatchPutPropertyErrorEntry {
         crate::types::BatchPutPropertyErrorEntry {
-            errors: self.errors,
+            errors: self.errors
+            ,
         }
     }
 }
+

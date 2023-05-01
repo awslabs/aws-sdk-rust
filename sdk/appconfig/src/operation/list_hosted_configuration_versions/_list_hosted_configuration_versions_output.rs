@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHostedConfigurationVersionsOutput {
+pub struct ListHostedConfigurationVersionsOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::HostedConfigurationVersionSummary>>,
@@ -13,22 +13,22 @@ pub struct ListHostedConfigurationVersionsOutput {
 }
 impl ListHostedConfigurationVersionsOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::HostedConfigurationVersionSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::HostedConfigurationVersionSummary]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListHostedConfigurationVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListHostedConfigurationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsOutput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput).
-    pub fn builder() -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsOutputBuilder{
+    pub fn builder() -> crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsOutputBuilder {
         crate::operation::list_hosted_configuration_versions::builders::ListHostedConfigurationVersionsOutputBuilder::default()
     }
 }
@@ -37,8 +37,7 @@ impl ListHostedConfigurationVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListHostedConfigurationVersionsOutputBuilder {
-    pub(crate) items:
-        std::option::Option<std::vec::Vec<crate::types::HostedConfigurationVersionSummary>>,
+    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::HostedConfigurationVersionSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListHostedConfigurationVersionsOutputBuilder {
     /// <p>The elements from this collection.</p>
     pub fn items(mut self, input: crate::types::HostedConfigurationVersionSummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HostedConfigurationVersionSummary>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::HostedConfigurationVersionSummary>>) -> Self {
+        self.items = input; self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,23 +64,19 @@ impl ListHostedConfigurationVersionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListHostedConfigurationVersionsOutput`](crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput
-    {
+    pub fn build(self) -> crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput {
         crate::operation::list_hosted_configuration_versions::ListHostedConfigurationVersionsOutput {
             items: self.items
             ,
@@ -95,3 +86,4 @@ impl ListHostedConfigurationVersionsOutputBuilder {
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// List of actions that have been deleted from the schedule.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchScheduleActionDeleteResult {
+pub struct BatchScheduleActionDeleteResult  {
     /// List of actions that have been deleted from the schedule.
     #[doc(hidden)]
     pub schedule_actions: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
 }
 impl BatchScheduleActionDeleteResult {
     /// List of actions that have been deleted from the schedule.
-    pub fn schedule_actions(&self) -> std::option::Option<&[crate::types::ScheduleAction]> {
+    pub fn schedule_actions(&self) -> std::option::Option<& [crate::types::ScheduleAction]> {
         self.schedule_actions.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl BatchScheduleActionDeleteResultBuilder {
     /// List of actions that have been deleted from the schedule.
     pub fn schedule_actions(mut self, input: crate::types::ScheduleAction) -> Self {
         let mut v = self.schedule_actions.unwrap_or_default();
-        v.push(input);
-        self.schedule_actions = Some(v);
-        self
+                        v.push(input);
+                        self.schedule_actions = Some(v);
+                        self
     }
     /// List of actions that have been deleted from the schedule.
-    pub fn set_schedule_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>,
-    ) -> Self {
-        self.schedule_actions = input;
-        self
+    pub fn set_schedule_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScheduleAction>>) -> Self {
+        self.schedule_actions = input; self
     }
     /// Consumes the builder and constructs a [`BatchScheduleActionDeleteResult`](crate::types::BatchScheduleActionDeleteResult).
     pub fn build(self) -> crate::types::BatchScheduleActionDeleteResult {
         crate::types::BatchScheduleActionDeleteResult {
-            schedule_actions: self.schedule_actions,
+            schedule_actions: self.schedule_actions
+            ,
         }
     }
 }
+

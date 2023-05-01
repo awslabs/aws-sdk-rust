@@ -3,7 +3,7 @@
 /// <p>The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeElasticsearchDomainOutput {
+pub struct DescribeElasticsearchDomainOutput  {
     /// <p>The current status of the Elasticsearch domain.</p>
     #[doc(hidden)]
     pub domain_status: std::option::Option<crate::types::ElasticsearchDomainStatus>,
@@ -11,18 +11,18 @@ pub struct DescribeElasticsearchDomainOutput {
 }
 impl DescribeElasticsearchDomainOutput {
     /// <p>The current status of the Elasticsearch domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::types::ElasticsearchDomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::types::ElasticsearchDomainStatus> {
         self.domain_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeElasticsearchDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeElasticsearchDomainOutput {
     /// Creates a new builder-style object to manufacture [`DescribeElasticsearchDomainOutput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput).
-    pub fn builder() -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainOutputBuilder{
+    pub fn builder() -> crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainOutputBuilder {
         crate::operation::describe_elasticsearch_domain::builders::DescribeElasticsearchDomainOutputBuilder::default()
     }
 }
@@ -41,29 +41,25 @@ impl DescribeElasticsearchDomainOutputBuilder {
         self
     }
     /// <p>The current status of the Elasticsearch domain.</p>
-    pub fn set_domain_status(
-        mut self,
-        input: std::option::Option<crate::types::ElasticsearchDomainStatus>,
-    ) -> Self {
-        self.domain_status = input;
-        self
+    pub fn set_domain_status(mut self, input: std::option::Option<crate::types::ElasticsearchDomainStatus>) -> Self {
+        self.domain_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeElasticsearchDomainOutput`](crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput {
+    pub fn build(self) -> crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput {
         crate::operation::describe_elasticsearch_domain::DescribeElasticsearchDomainOutput {
-            domain_status: self.domain_status,
+            domain_status: self.domain_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

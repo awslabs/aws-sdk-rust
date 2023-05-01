@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelContactOutput {
+pub struct CancelContactOutput  {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -11,15 +11,15 @@ pub struct CancelContactOutput {
 }
 impl CancelContactOutput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CancelContactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelContactOutput {
     /// Creates a new builder-style object to manufacture [`CancelContactOutput`](crate::operation::cancel_contact::CancelContactOutput).
     pub fn builder() -> crate::operation::cancel_contact::builders::CancelContactOutputBuilder {
@@ -42,23 +42,24 @@ impl CancelContactOutputBuilder {
     }
     /// <p>UUID of a contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelContactOutput`](crate::operation::cancel_contact::CancelContactOutput).
     pub fn build(self) -> crate::operation::cancel_contact::CancelContactOutput {
         crate::operation::cancel_contact::CancelContactOutput {
-            contact_id: self.contact_id,
+            contact_id: self.contact_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

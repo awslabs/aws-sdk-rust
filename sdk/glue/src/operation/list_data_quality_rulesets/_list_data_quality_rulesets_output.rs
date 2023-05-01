@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataQualityRulesetsOutput {
+pub struct ListDataQualityRulesetsOutput  {
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
     #[doc(hidden)]
     pub rulesets: std::option::Option<std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
@@ -13,24 +13,22 @@ pub struct ListDataQualityRulesetsOutput {
 }
 impl ListDataQualityRulesetsOutput {
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
-    pub fn rulesets(&self) -> std::option::Option<&[crate::types::DataQualityRulesetListDetails]> {
+    pub fn rulesets(&self) -> std::option::Option<& [crate::types::DataQualityRulesetListDetails]> {
         self.rulesets.as_deref()
     }
     /// <p>A pagination token, if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDataQualityRulesetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDataQualityRulesetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRulesetsOutput`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsOutputBuilder {
         crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsOutputBuilder::default()
     }
 }
@@ -39,8 +37,7 @@ impl ListDataQualityRulesetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDataQualityRulesetsOutputBuilder {
-    pub(crate) rulesets:
-        std::option::Option<std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
+    pub(crate) rulesets: std::option::Option<std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl ListDataQualityRulesetsOutputBuilder {
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
     pub fn rulesets(mut self, input: crate::types::DataQualityRulesetListDetails) -> Self {
         let mut v = self.rulesets.unwrap_or_default();
-        v.push(input);
-        self.rulesets = Some(v);
-        self
+                        v.push(input);
+                        self.rulesets = Some(v);
+                        self
     }
     /// <p>A paginated list of rulesets for the specified list of Glue tables.</p>
-    pub fn set_rulesets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataQualityRulesetListDetails>>,
-    ) -> Self {
-        self.rulesets = input;
-        self
+    pub fn set_rulesets(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataQualityRulesetListDetails>>) -> Self {
+        self.rulesets = input; self
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,26 +64,26 @@ impl ListDataQualityRulesetsOutputBuilder {
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDataQualityRulesetsOutput`](crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput {
+    pub fn build(self) -> crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput {
         crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput {
-            rulesets: self.rulesets,
-            next_token: self.next_token,
+            rulesets: self.rulesets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

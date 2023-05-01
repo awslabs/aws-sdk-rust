@@ -4,82 +4,55 @@ pub use crate::operation::list_resource_types::_list_resource_types_output::List
 pub use crate::operation::list_resource_types::_list_resource_types_input::ListResourceTypesInputBuilder;
 
 /// Fluent builder constructing a request to `ListResourceTypes`.
-///
+/// 
 /// <p>Lists the resource types that can be shared by RAM.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceTypesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder,
-}
-impl ListResourceTypesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_resource_types::builders::ListResourceTypesInputBuilder
+            }
+impl ListResourceTypesFluentBuilder  {
     /// Creates a new `ListResourceTypes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_resource_types::ListResourceTypes,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_resource_types::ListResourceTypesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_resource_types::ListResourceTypesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_resource_types::ListResourceTypes, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_resource_types::ListResourceTypesOutput, aws_smithy_http::result::SdkError<crate::operation::list_resource_types::ListResourceTypesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_resource_types::paginator::ListResourceTypesPaginator {
-        crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_resource_types::paginator::ListResourceTypesPaginator {
+                            crate::operation::list_resource_types::paginator::ListResourceTypesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -100,29 +73,27 @@ impl ListResourceTypesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
-    /// </ul>
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li> 
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li> 
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li> 
+    /// </ul> 
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(mut self, input: crate::types::ResourceRegionScopeFilter) -> Self {
         self.inner = self.inner.resource_region_scope(input);
         self
     }
-    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
-    /// <ul>
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
-    /// </ul>
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li> 
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li> 
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li> 
+    /// </ul> 
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(
-        mut self,
-        input: std::option::Option<crate::types::ResourceRegionScopeFilter>,
-    ) -> Self {
+    pub fn set_resource_region_scope(mut self, input: std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
         self.inner = self.inner.set_resource_region_scope(input);
         self
     }
 }
+

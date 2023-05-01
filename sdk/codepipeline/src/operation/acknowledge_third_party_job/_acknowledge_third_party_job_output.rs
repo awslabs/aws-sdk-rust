@@ -3,7 +3,7 @@
 /// <p>Represents the output of an AcknowledgeThirdPartyJob action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeThirdPartyJobOutput {
+pub struct AcknowledgeThirdPartyJobOutput  {
     /// <p>The status information for the third party job, if any.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::JobStatus>,
@@ -11,18 +11,18 @@ pub struct AcknowledgeThirdPartyJobOutput {
 }
 impl AcknowledgeThirdPartyJobOutput {
     /// <p>The status information for the third party job, if any.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AcknowledgeThirdPartyJobOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AcknowledgeThirdPartyJobOutput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput).
-    pub fn builder() -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder{
+    pub fn builder() -> crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder {
         crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobOutputBuilder::default()
     }
 }
@@ -42,25 +42,24 @@ impl AcknowledgeThirdPartyJobOutputBuilder {
     }
     /// <p>The status information for the third party job, if any.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AcknowledgeThirdPartyJobOutput`](crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput {
+    pub fn build(self) -> crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput {
         crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

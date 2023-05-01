@@ -3,7 +3,7 @@
 /// <p> Represents a set of controls in an Audit Manager assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentControlSet {
+pub struct AssessmentControlSet  {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -31,27 +31,27 @@ pub struct AssessmentControlSet {
 }
 impl AssessmentControlSet {
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p> The description for the control set. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The current status of the control set. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ControlSetStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ControlSetStatus> {
         self.status.as_ref()
     }
     /// <p> The roles that are associated with the control set. </p>
-    pub fn roles(&self) -> std::option::Option<&[crate::types::Role]> {
+    pub fn roles(&self) -> std::option::Option<& [crate::types::Role]> {
         self.roles.as_deref()
     }
     /// <p> The list of controls that's contained with the control set. </p>
-    pub fn controls(&self) -> std::option::Option<&[crate::types::AssessmentControl]> {
+    pub fn controls(&self) -> std::option::Option<& [crate::types::AssessmentControl]> {
         self.controls.as_deref()
     }
     /// <p> The delegations that are associated with the control set. </p>
-    pub fn delegations(&self) -> std::option::Option<&[crate::types::Delegation]> {
+    pub fn delegations(&self) -> std::option::Option<& [crate::types::Delegation]> {
         self.delegations.as_deref()
     }
     /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
@@ -91,8 +91,7 @@ impl AssessmentControlSetBuilder {
     }
     /// <p> The identifier of the control set in the assessment. This is the control set name in a plain string format. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p> The description for the control set. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl AssessmentControlSetBuilder {
     }
     /// <p> The description for the control set. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The current status of the control set. </p>
     pub fn status(mut self, input: crate::types::ControlSetStatus) -> Self {
@@ -110,12 +108,8 @@ impl AssessmentControlSetBuilder {
         self
     }
     /// <p> The current status of the control set. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ControlSetStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ControlSetStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `roles`.
     ///
@@ -124,17 +118,13 @@ impl AssessmentControlSetBuilder {
     /// <p> The roles that are associated with the control set. </p>
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         let mut v = self.roles.unwrap_or_default();
-        v.push(input);
-        self.roles = Some(v);
-        self
+                        v.push(input);
+                        self.roles = Some(v);
+                        self
     }
     /// <p> The roles that are associated with the control set. </p>
-    pub fn set_roles(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
-    ) -> Self {
-        self.roles = input;
-        self
+    pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::types::Role>>) -> Self {
+        self.roles = input; self
     }
     /// Appends an item to `controls`.
     ///
@@ -143,17 +133,13 @@ impl AssessmentControlSetBuilder {
     /// <p> The list of controls that's contained with the control set. </p>
     pub fn controls(mut self, input: crate::types::AssessmentControl) -> Self {
         let mut v = self.controls.unwrap_or_default();
-        v.push(input);
-        self.controls = Some(v);
-        self
+                        v.push(input);
+                        self.controls = Some(v);
+                        self
     }
     /// <p> The list of controls that's contained with the control set. </p>
-    pub fn set_controls(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssessmentControl>>,
-    ) -> Self {
-        self.controls = input;
-        self
+    pub fn set_controls(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssessmentControl>>) -> Self {
+        self.controls = input; self
     }
     /// Appends an item to `delegations`.
     ///
@@ -162,17 +148,13 @@ impl AssessmentControlSetBuilder {
     /// <p> The delegations that are associated with the control set. </p>
     pub fn delegations(mut self, input: crate::types::Delegation) -> Self {
         let mut v = self.delegations.unwrap_or_default();
-        v.push(input);
-        self.delegations = Some(v);
-        self
+                        v.push(input);
+                        self.delegations = Some(v);
+                        self
     }
     /// <p> The delegations that are associated with the control set. </p>
-    pub fn set_delegations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Delegation>>,
-    ) -> Self {
-        self.delegations = input;
-        self
+    pub fn set_delegations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Delegation>>) -> Self {
+        self.delegations = input; self
     }
     /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
     pub fn system_evidence_count(mut self, input: i32) -> Self {
@@ -181,8 +163,7 @@ impl AssessmentControlSetBuilder {
     }
     /// <p> The total number of evidence objects that are retrieved automatically for the control set. </p>
     pub fn set_system_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.system_evidence_count = input;
-        self
+        self.system_evidence_count = input; self
     }
     /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
     pub fn manual_evidence_count(mut self, input: i32) -> Self {
@@ -191,20 +172,30 @@ impl AssessmentControlSetBuilder {
     }
     /// <p> The total number of evidence objects that are uploaded manually to the control set. </p>
     pub fn set_manual_evidence_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_evidence_count = input;
-        self
+        self.manual_evidence_count = input; self
     }
     /// Consumes the builder and constructs a [`AssessmentControlSet`](crate::types::AssessmentControlSet).
     pub fn build(self) -> crate::types::AssessmentControlSet {
         crate::types::AssessmentControlSet {
-            id: self.id,
-            description: self.description,
-            status: self.status,
-            roles: self.roles,
-            controls: self.controls,
-            delegations: self.delegations,
-            system_evidence_count: self.system_evidence_count.unwrap_or_default(),
-            manual_evidence_count: self.manual_evidence_count.unwrap_or_default(),
+            id: self.id
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            roles: self.roles
+            ,
+            controls: self.controls
+            ,
+            delegations: self.delegations
+            ,
+            system_evidence_count: self.system_evidence_count
+                .unwrap_or_default()
+            ,
+            manual_evidence_count: self.manual_evidence_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentConfidence {
+pub struct IntentConfidence  {
     /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     #[doc(hidden)]
     pub score: f64,
@@ -35,13 +35,15 @@ impl IntentConfidenceBuilder {
     }
     /// <p>A score that indicates how confident Amazon Lex is that an intent satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher confidence.</p>
     pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// Consumes the builder and constructs a [`IntentConfidence`](crate::types::IntentConfidence).
     pub fn build(self) -> crate::types::IntentConfidence {
         crate::types::IntentConfidence {
-            score: self.score.unwrap_or_default(),
+            score: self.score
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

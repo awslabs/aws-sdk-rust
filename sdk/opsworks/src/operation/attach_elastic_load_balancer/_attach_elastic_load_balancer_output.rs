@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachElasticLoadBalancerOutput {
+pub struct AttachElasticLoadBalancerOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AttachElasticLoadBalancerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AttachElasticLoadBalancerOutput {
     /// Creates a new builder-style object to manufacture [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput).
-    pub fn builder() -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerOutputBuilder{
+    pub fn builder() -> crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerOutputBuilder {
         crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct AttachElasticLoadBalancerOutputBuilder {
 }
 impl AttachElasticLoadBalancerOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AttachElasticLoadBalancerOutput`](crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput {
+    pub fn build(self) -> crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput {
         crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput {
             _request_id: self._request_id,
         }
     }
 }
+

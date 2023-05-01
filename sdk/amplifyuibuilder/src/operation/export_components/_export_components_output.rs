@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportComponentsOutput {
+pub struct ExportComponentsOutput  {
     /// <p>Represents the configuration of the exported components.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::types::Component>>,
@@ -13,23 +13,22 @@ pub struct ExportComponentsOutput {
 }
 impl ExportComponentsOutput {
     /// <p>Represents the configuration of the exported components.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::types::Component]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::types::Component]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExportComponentsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ExportComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ExportComponentsOutput`](crate::operation::export_components::ExportComponentsOutput).
-    pub fn builder() -> crate::operation::export_components::builders::ExportComponentsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::export_components::builders::ExportComponentsOutputBuilder {
         crate::operation::export_components::builders::ExportComponentsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ExportComponentsOutputBuilder {
     /// <p>Represents the configuration of the exported components.</p>
     pub fn entities(mut self, input: crate::types::Component) -> Self {
         let mut v = self.entities.unwrap_or_default();
-        v.push(input);
-        self.entities = Some(v);
-        self
+                        v.push(input);
+                        self.entities = Some(v);
+                        self
     }
     /// <p>Represents the configuration of the exported components.</p>
-    pub fn set_entities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Component>>,
-    ) -> Self {
-        self.entities = input;
-        self
+    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Component>>) -> Self {
+        self.entities = input; self
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ExportComponentsOutputBuilder {
     }
     /// <p>The pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ExportComponentsOutput`](crate::operation::export_components::ExportComponentsOutput).
     pub fn build(self) -> crate::operation::export_components::ExportComponentsOutput {
         crate::operation::export_components::ExportComponentsOutput {
-            entities: self.entities,
-            next_token: self.next_token,
+            entities: self.entities
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

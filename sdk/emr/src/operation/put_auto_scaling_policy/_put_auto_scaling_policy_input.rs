@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAutoScalingPolicyInput {
+pub struct PutAutoScalingPolicyInput  {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct PutAutoScalingPolicyInput {
 }
 impl PutAutoScalingPolicyInput {
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cluster_id(&self) -> std::option::Option<& str> {
         self.cluster_id.as_deref()
     }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    pub fn instance_group_id(&self) -> std::option::Option<&str> {
+    pub fn instance_group_id(&self) -> std::option::Option<& str> {
         self.instance_group_id.as_deref()
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
-    pub fn auto_scaling_policy(&self) -> std::option::Option<&crate::types::AutoScalingPolicy> {
+    pub fn auto_scaling_policy(&self) -> std::option::Option<& crate::types::AutoScalingPolicy> {
         self.auto_scaling_policy.as_ref()
     }
 }
 impl PutAutoScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutAutoScalingPolicyInput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder {
         crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl PutAutoScalingPolicyInputBuilder {
     }
     /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input;
-        self
+        self.cluster_id = input; self
     }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
     pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,12 +58,8 @@ impl PutAutoScalingPolicyInputBuilder {
         self
     }
     /// <p>Specifies the ID of the instance group to which the automatic scaling policy is applied.</p>
-    pub fn set_instance_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.instance_group_id = input;
-        self
+    pub fn set_instance_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.instance_group_id = input; self
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
     pub fn auto_scaling_policy(mut self, input: crate::types::AutoScalingPolicy) -> Self {
@@ -73,26 +67,21 @@ impl PutAutoScalingPolicyInputBuilder {
         self
     }
     /// <p>Specifies the definition of the automatic scaling policy.</p>
-    pub fn set_auto_scaling_policy(
-        mut self,
-        input: std::option::Option<crate::types::AutoScalingPolicy>,
-    ) -> Self {
-        self.auto_scaling_policy = input;
-        self
+    pub fn set_auto_scaling_policy(mut self, input: std::option::Option<crate::types::AutoScalingPolicy>) -> Self {
+        self.auto_scaling_policy = input; self
     }
     /// Consumes the builder and constructs a [`PutAutoScalingPolicyInput`](crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyInput {
-                cluster_id: self.cluster_id,
-                instance_group_id: self.instance_group_id,
-                auto_scaling_policy: self.auto_scaling_policy,
-            },
+                cluster_id: self.cluster_id
+                ,
+                instance_group_id: self.instance_group_id
+                ,
+                auto_scaling_policy: self.auto_scaling_policy
+                ,
+            }
         )
     }
 }
+

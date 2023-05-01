@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMemberInput {
+pub struct GetMemberInput  {
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl GetMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetMemberInputBuilder {
     }
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_member::GetMemberInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_member::GetMemberInput {
-            account_id: self.account_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_member::GetMemberInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_member::GetMemberInput {
+                account_id: self.account_id
+                ,
+            }
+        )
     }
 }
+

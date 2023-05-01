@@ -3,14 +3,14 @@
 /// <p> Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3MonitoringConfiguration {
+pub struct S3MonitoringConfiguration  {
     /// <p>Amazon S3 destination URI for log publishing.</p>
     #[doc(hidden)]
     pub log_uri: std::option::Option<std::string::String>,
 }
 impl S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(&self) -> std::option::Option<&str> {
+    pub fn log_uri(&self) -> std::option::Option<& str> {
         self.log_uri.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl S3MonitoringConfigurationBuilder {
     }
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_uri = input;
-        self
+        self.log_uri = input; self
     }
     /// Consumes the builder and constructs a [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
     pub fn build(self) -> crate::types::S3MonitoringConfiguration {
         crate::types::S3MonitoringConfiguration {
-            log_uri: self.log_uri,
+            log_uri: self.log_uri
+            ,
         }
     }
 }
+

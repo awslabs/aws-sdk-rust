@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchSkillGroupsOutput {
+pub struct SearchSkillGroupsOutput  {
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
     #[doc(hidden)]
     pub skill_groups: std::option::Option<std::vec::Vec<crate::types::SkillGroupData>>,
@@ -16,11 +16,11 @@ pub struct SearchSkillGroupsOutput {
 }
 impl SearchSkillGroupsOutput {
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
-    pub fn skill_groups(&self) -> std::option::Option<&[crate::types::SkillGroupData]> {
+    pub fn skill_groups(&self) -> std::option::Option<& [crate::types::SkillGroupData]> {
         self.skill_groups.as_deref()
     }
     /// <p>The token returned to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of skill groups returned.</p>
@@ -29,14 +29,13 @@ impl SearchSkillGroupsOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchSkillGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SearchSkillGroupsOutput {
     /// Creates a new builder-style object to manufacture [`SearchSkillGroupsOutput`](crate::operation::search_skill_groups::SearchSkillGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::search_skill_groups::builders::SearchSkillGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::search_skill_groups::builders::SearchSkillGroupsOutputBuilder {
         crate::operation::search_skill_groups::builders::SearchSkillGroupsOutputBuilder::default()
     }
 }
@@ -58,17 +57,13 @@ impl SearchSkillGroupsOutputBuilder {
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
     pub fn skill_groups(mut self, input: crate::types::SkillGroupData) -> Self {
         let mut v = self.skill_groups.unwrap_or_default();
-        v.push(input);
-        self.skill_groups = Some(v);
-        self
+                        v.push(input);
+                        self.skill_groups = Some(v);
+                        self
     }
     /// <p>The skill groups that meet the filter criteria, in sort order.</p>
-    pub fn set_skill_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SkillGroupData>>,
-    ) -> Self {
-        self.skill_groups = input;
-        self
+    pub fn set_skill_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SkillGroupData>>) -> Self {
+        self.skill_groups = input; self
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +72,7 @@ impl SearchSkillGroupsOutputBuilder {
     }
     /// <p>The token returned to indicate that there is more data available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The total number of skill groups returned.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -87,25 +81,28 @@ impl SearchSkillGroupsOutputBuilder {
     }
     /// <p>The total number of skill groups returned.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input;
-        self
+        self.total_count = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SearchSkillGroupsOutput`](crate::operation::search_skill_groups::SearchSkillGroupsOutput).
     pub fn build(self) -> crate::operation::search_skill_groups::SearchSkillGroupsOutput {
         crate::operation::search_skill_groups::SearchSkillGroupsOutput {
-            skill_groups: self.skill_groups,
-            next_token: self.next_token,
-            total_count: self.total_count,
+            skill_groups: self.skill_groups
+            ,
+            next_token: self.next_token
+            ,
+            total_count: self.total_count
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

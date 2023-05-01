@@ -4,75 +4,52 @@ pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_
 pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_input::ModifyReservedInstancesInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyReservedInstances`.
-///
-/// <p>Modifies the configuration of your Reserved Instances, such as the Availability Zone, instance count, or instance type. The Reserved Instances to be modified must be identical, except for Availability Zone, network platform, and instance type.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
-/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// 
+/// <p>Modifies the configuration of your Reserved Instances, such as the Availability Zone, instance count, or instance type. The Reserved Instances to be modified must be identical, except for Availability Zone, network platform, and instance type.</p> 
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <note> 
+/// <p>We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyReservedInstancesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder,
-}
-impl ModifyReservedInstancesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder
+            }
+impl ModifyReservedInstancesFluentBuilder  {
     /// Creates a new `ModifyReservedInstances`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::modify_reserved_instances::ModifyReservedInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::modify_reserved_instances::ModifyReservedInstances, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::modify_reserved_instances::ModifyReservedInstancesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput, aws_smithy_http::result::SdkError<crate::operation::modify_reserved_instances::ModifyReservedInstancesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `ReservedInstancesIds`.
     ///
     /// To override the contents of this collection use [`set_reserved_instances_ids`](Self::set_reserved_instances_ids).
@@ -83,10 +60,7 @@ impl ModifyReservedInstancesFluentBuilder {
         self
     }
     /// <p>The IDs of the Reserved Instances to modify.</p>
-    pub fn set_reserved_instances_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_reserved_instances_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_reserved_instances_ids(input);
         self
     }
@@ -105,19 +79,14 @@ impl ModifyReservedInstancesFluentBuilder {
     /// To override the contents of this collection use [`set_target_configurations`](Self::set_target_configurations).
     ///
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    pub fn target_configurations(
-        mut self,
-        input: crate::types::ReservedInstancesConfiguration,
-    ) -> Self {
+    pub fn target_configurations(mut self, input: crate::types::ReservedInstancesConfiguration) -> Self {
         self.inner = self.inner.target_configurations(input);
         self
     }
     /// <p>The configuration settings for the Reserved Instances to modify.</p>
-    pub fn set_target_configurations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesConfiguration>>,
-    ) -> Self {
+    pub fn set_target_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesConfiguration>>) -> Self {
         self.inner = self.inner.set_target_configurations(input);
         self
     }
 }
+

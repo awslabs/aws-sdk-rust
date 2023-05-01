@@ -3,17 +3,14 @@
 /// <p>The container for <code>SnowconeDeviceConfiguration</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceConfiguration {
+pub struct DeviceConfiguration  {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
     #[doc(hidden)]
-    pub snowcone_device_configuration:
-        std::option::Option<crate::types::SnowconeDeviceConfiguration>,
+    pub snowcone_device_configuration: std::option::Option<crate::types::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfiguration {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
-    pub fn snowcone_device_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::SnowconeDeviceConfiguration> {
+    pub fn snowcone_device_configuration(&self) -> std::option::Option<& crate::types::SnowconeDeviceConfiguration> {
         self.snowcone_device_configuration.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl DeviceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeviceConfigurationBuilder {
-    pub(crate) snowcone_device_configuration:
-        std::option::Option<crate::types::SnowconeDeviceConfiguration>,
+    pub(crate) snowcone_device_configuration: std::option::Option<crate::types::SnowconeDeviceConfiguration>,
 }
 impl DeviceConfigurationBuilder {
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
-    pub fn snowcone_device_configuration(
-        mut self,
-        input: crate::types::SnowconeDeviceConfiguration,
-    ) -> Self {
+    pub fn snowcone_device_configuration(mut self, input: crate::types::SnowconeDeviceConfiguration) -> Self {
         self.snowcone_device_configuration = Some(input);
         self
     }
     /// <p>Returns information about the device configuration for an Snowcone job.</p>
-    pub fn set_snowcone_device_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SnowconeDeviceConfiguration>,
-    ) -> Self {
-        self.snowcone_device_configuration = input;
-        self
+    pub fn set_snowcone_device_configuration(mut self, input: std::option::Option<crate::types::SnowconeDeviceConfiguration>) -> Self {
+        self.snowcone_device_configuration = input; self
     }
     /// Consumes the builder and constructs a [`DeviceConfiguration`](crate::types::DeviceConfiguration).
     pub fn build(self) -> crate::types::DeviceConfiguration {
         crate::types::DeviceConfiguration {
-            snowcone_device_configuration: self.snowcone_device_configuration,
+            snowcone_device_configuration: self.snowcone_device_configuration
+            ,
         }
     }
 }
+

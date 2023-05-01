@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput {
+pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput  {
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
     #[doc(hidden)]
-    pub fleet_advisor_schema_objects:
-        std::option::Option<std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>,
+    pub fleet_advisor_schema_objects: std::option::Option<std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>,
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeFleetAdvisorSchemaObjectSummaryOutput {
 }
 impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-    pub fn fleet_advisor_schema_objects(
-        &self,
-    ) -> std::option::Option<&[crate::types::FleetAdvisorSchemaObjectResponse]> {
+    pub fn fleet_advisor_schema_objects(&self) -> std::option::Option<& [crate::types::FleetAdvisorSchemaObjectResponse]> {
         self.fleet_advisor_schema_objects.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFleetAdvisorSchemaObjectSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder {
         crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder {
-    pub(crate) fleet_advisor_schema_objects:
-        std::option::Option<std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>,
+    pub(crate) fleet_advisor_schema_objects: std::option::Option<std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,22 +47,15 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder {
     /// To override the contents of this collection use [`set_fleet_advisor_schema_objects`](Self::set_fleet_advisor_schema_objects).
     ///
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-    pub fn fleet_advisor_schema_objects(
-        mut self,
-        input: crate::types::FleetAdvisorSchemaObjectResponse,
-    ) -> Self {
+    pub fn fleet_advisor_schema_objects(mut self, input: crate::types::FleetAdvisorSchemaObjectResponse) -> Self {
         let mut v = self.fleet_advisor_schema_objects.unwrap_or_default();
-        v.push(input);
-        self.fleet_advisor_schema_objects = Some(v);
-        self
+                        v.push(input);
+                        self.fleet_advisor_schema_objects = Some(v);
+                        self
     }
     /// <p>A collection of <code>FleetAdvisorSchemaObjectResponse</code> objects.</p>
-    pub fn set_fleet_advisor_schema_objects(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>,
-    ) -> Self {
-        self.fleet_advisor_schema_objects = input;
-        self
+    pub fn set_fleet_advisor_schema_objects(mut self, input: std::option::Option<std::vec::Vec<crate::types::FleetAdvisorSchemaObjectResponse>>) -> Self {
+        self.fleet_advisor_schema_objects = input; self
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,20 +64,19 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorSchemaObjectSummaryOutput`](crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput).
-    pub fn build(self) -> crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput{
+    pub fn build(self) -> crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput {
         crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput {
             fleet_advisor_schema_objects: self.fleet_advisor_schema_objects
             ,
@@ -98,3 +86,4 @@ impl DescribeFleetAdvisorSchemaObjectSummaryOutputBuilder {
         }
     }
 }
+

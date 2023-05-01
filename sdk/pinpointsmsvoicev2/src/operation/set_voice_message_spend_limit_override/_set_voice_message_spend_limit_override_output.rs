@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVoiceMessageSpendLimitOverrideOutput {
+pub struct SetVoiceMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit to enforce on sending voice messages.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -15,13 +15,13 @@ impl SetVoiceMessageSpendLimitOverrideOutput {
     }
 }
 impl aws_http::request_id::RequestId for SetVoiceMessageSpendLimitOverrideOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SetVoiceMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput).
-    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideOutputBuilder{
+    pub fn builder() -> crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideOutputBuilder {
         crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideOutputBuilder::default()
     }
 }
@@ -41,20 +41,19 @@ impl SetVoiceMessageSpendLimitOverrideOutputBuilder {
     }
     /// <p>The current monthly limit to enforce on sending voice messages.</p>
     pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-        self.monthly_limit = input;
-        self
+        self.monthly_limit = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideOutput`](crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput).
-    pub fn build(self) -> crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput{
+    pub fn build(self) -> crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput {
         crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverrideOutput {
             monthly_limit: self.monthly_limit
             ,
@@ -62,3 +61,4 @@ impl SetVoiceMessageSpendLimitOverrideOutputBuilder {
         }
     }
 }
+

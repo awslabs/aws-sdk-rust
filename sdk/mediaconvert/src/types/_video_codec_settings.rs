@@ -3,14 +3,14 @@
 /// Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoCodecSettings {
+pub struct VideoCodecSettings  {
     /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
     #[doc(hidden)]
     pub av1_settings: std::option::Option<crate::types::Av1Settings>,
     /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
     #[doc(hidden)]
     pub avc_intra_settings: std::option::Option<crate::types::AvcIntraSettings>,
-    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
     #[doc(hidden)]
     pub codec: std::option::Option<crate::types::VideoCodec>,
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
@@ -43,53 +43,51 @@ pub struct VideoCodecSettings {
 }
 impl VideoCodecSettings {
     /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
-    pub fn av1_settings(&self) -> std::option::Option<&crate::types::Av1Settings> {
+    pub fn av1_settings(&self) -> std::option::Option<& crate::types::Av1Settings> {
         self.av1_settings.as_ref()
     }
     /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
-    pub fn avc_intra_settings(&self) -> std::option::Option<&crate::types::AvcIntraSettings> {
+    pub fn avc_intra_settings(&self) -> std::option::Option<& crate::types::AvcIntraSettings> {
         self.avc_intra_settings.as_ref()
     }
-    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
-    pub fn codec(&self) -> std::option::Option<&crate::types::VideoCodec> {
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
+    pub fn codec(&self) -> std::option::Option<& crate::types::VideoCodec> {
         self.codec.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
-    pub fn frame_capture_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::FrameCaptureSettings> {
+    pub fn frame_capture_settings(&self) -> std::option::Option<& crate::types::FrameCaptureSettings> {
         self.frame_capture_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
-    pub fn h264_settings(&self) -> std::option::Option<&crate::types::H264Settings> {
+    pub fn h264_settings(&self) -> std::option::Option<& crate::types::H264Settings> {
         self.h264_settings.as_ref()
     }
     /// Settings for H265 codec
-    pub fn h265_settings(&self) -> std::option::Option<&crate::types::H265Settings> {
+    pub fn h265_settings(&self) -> std::option::Option<& crate::types::H265Settings> {
         self.h265_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
-    pub fn mpeg2_settings(&self) -> std::option::Option<&crate::types::Mpeg2Settings> {
+    pub fn mpeg2_settings(&self) -> std::option::Option<& crate::types::Mpeg2Settings> {
         self.mpeg2_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
-    pub fn prores_settings(&self) -> std::option::Option<&crate::types::ProresSettings> {
+    pub fn prores_settings(&self) -> std::option::Option<& crate::types::ProresSettings> {
         self.prores_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
-    pub fn vc3_settings(&self) -> std::option::Option<&crate::types::Vc3Settings> {
+    pub fn vc3_settings(&self) -> std::option::Option<& crate::types::Vc3Settings> {
         self.vc3_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
-    pub fn vp8_settings(&self) -> std::option::Option<&crate::types::Vp8Settings> {
+    pub fn vp8_settings(&self) -> std::option::Option<& crate::types::Vp8Settings> {
         self.vp8_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
-    pub fn vp9_settings(&self) -> std::option::Option<&crate::types::Vp9Settings> {
+    pub fn vp9_settings(&self) -> std::option::Option<& crate::types::Vp9Settings> {
         self.vp9_settings.as_ref()
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
-    pub fn xavc_settings(&self) -> std::option::Option<&crate::types::XavcSettings> {
+    pub fn xavc_settings(&self) -> std::option::Option<& crate::types::XavcSettings> {
         self.xavc_settings.as_ref()
     }
 }
@@ -124,12 +122,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set Codec, under VideoDescription&gt;CodecSettings to the value AV1.
-    pub fn set_av1_settings(
-        mut self,
-        input: std::option::Option<crate::types::Av1Settings>,
-    ) -> Self {
-        self.av1_settings = input;
-        self
+    pub fn set_av1_settings(mut self, input: std::option::Option<crate::types::Av1Settings>) -> Self {
+        self.av1_settings = input; self
     }
     /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
     pub fn avc_intra_settings(mut self, input: crate::types::AvcIntraSettings) -> Self {
@@ -137,22 +131,17 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
-    pub fn set_avc_intra_settings(
-        mut self,
-        input: std::option::Option<crate::types::AvcIntraSettings>,
-    ) -> Self {
-        self.avc_intra_settings = input;
-        self
+    pub fn set_avc_intra_settings(mut self, input: std::option::Option<crate::types::AvcIntraSettings>) -> Self {
+        self.avc_intra_settings = input; self
     }
-    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
     pub fn codec(mut self, input: crate::types::VideoCodec) -> Self {
         self.codec = Some(input);
         self
     }
-    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+    /// Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
     pub fn set_codec(mut self, input: std::option::Option<crate::types::VideoCodec>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
     pub fn frame_capture_settings(mut self, input: crate::types::FrameCaptureSettings) -> Self {
@@ -160,12 +149,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
-    pub fn set_frame_capture_settings(
-        mut self,
-        input: std::option::Option<crate::types::FrameCaptureSettings>,
-    ) -> Self {
-        self.frame_capture_settings = input;
-        self
+    pub fn set_frame_capture_settings(mut self, input: std::option::Option<crate::types::FrameCaptureSettings>) -> Self {
+        self.frame_capture_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
     pub fn h264_settings(mut self, input: crate::types::H264Settings) -> Self {
@@ -173,12 +158,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value H_264.
-    pub fn set_h264_settings(
-        mut self,
-        input: std::option::Option<crate::types::H264Settings>,
-    ) -> Self {
-        self.h264_settings = input;
-        self
+    pub fn set_h264_settings(mut self, input: std::option::Option<crate::types::H264Settings>) -> Self {
+        self.h264_settings = input; self
     }
     /// Settings for H265 codec
     pub fn h265_settings(mut self, input: crate::types::H265Settings) -> Self {
@@ -186,12 +167,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Settings for H265 codec
-    pub fn set_h265_settings(
-        mut self,
-        input: std::option::Option<crate::types::H265Settings>,
-    ) -> Self {
-        self.h265_settings = input;
-        self
+    pub fn set_h265_settings(mut self, input: std::option::Option<crate::types::H265Settings>) -> Self {
+        self.h265_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
     pub fn mpeg2_settings(mut self, input: crate::types::Mpeg2Settings) -> Self {
@@ -199,12 +176,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value MPEG2.
-    pub fn set_mpeg2_settings(
-        mut self,
-        input: std::option::Option<crate::types::Mpeg2Settings>,
-    ) -> Self {
-        self.mpeg2_settings = input;
-        self
+    pub fn set_mpeg2_settings(mut self, input: std::option::Option<crate::types::Mpeg2Settings>) -> Self {
+        self.mpeg2_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
     pub fn prores_settings(mut self, input: crate::types::ProresSettings) -> Self {
@@ -212,12 +185,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
-    pub fn set_prores_settings(
-        mut self,
-        input: std::option::Option<crate::types::ProresSettings>,
-    ) -> Self {
-        self.prores_settings = input;
-        self
+    pub fn set_prores_settings(mut self, input: std::option::Option<crate::types::ProresSettings>) -> Self {
+        self.prores_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
     pub fn vc3_settings(mut self, input: crate::types::Vc3Settings) -> Self {
@@ -225,12 +194,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VC3
-    pub fn set_vc3_settings(
-        mut self,
-        input: std::option::Option<crate::types::Vc3Settings>,
-    ) -> Self {
-        self.vc3_settings = input;
-        self
+    pub fn set_vc3_settings(mut self, input: std::option::Option<crate::types::Vc3Settings>) -> Self {
+        self.vc3_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
     pub fn vp8_settings(mut self, input: crate::types::Vp8Settings) -> Self {
@@ -238,12 +203,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP8.
-    pub fn set_vp8_settings(
-        mut self,
-        input: std::option::Option<crate::types::Vp8Settings>,
-    ) -> Self {
-        self.vp8_settings = input;
-        self
+    pub fn set_vp8_settings(mut self, input: std::option::Option<crate::types::Vp8Settings>) -> Self {
+        self.vp8_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
     pub fn vp9_settings(mut self, input: crate::types::Vp9Settings) -> Self {
@@ -251,12 +212,8 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value VP9.
-    pub fn set_vp9_settings(
-        mut self,
-        input: std::option::Option<crate::types::Vp9Settings>,
-    ) -> Self {
-        self.vp9_settings = input;
-        self
+    pub fn set_vp9_settings(mut self, input: std::option::Option<crate::types::Vp9Settings>) -> Self {
+        self.vp9_settings = input; self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
     pub fn xavc_settings(mut self, input: crate::types::XavcSettings) -> Self {
@@ -264,28 +221,37 @@ impl VideoCodecSettingsBuilder {
         self
     }
     /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value XAVC.
-    pub fn set_xavc_settings(
-        mut self,
-        input: std::option::Option<crate::types::XavcSettings>,
-    ) -> Self {
-        self.xavc_settings = input;
-        self
+    pub fn set_xavc_settings(mut self, input: std::option::Option<crate::types::XavcSettings>) -> Self {
+        self.xavc_settings = input; self
     }
     /// Consumes the builder and constructs a [`VideoCodecSettings`](crate::types::VideoCodecSettings).
     pub fn build(self) -> crate::types::VideoCodecSettings {
         crate::types::VideoCodecSettings {
-            av1_settings: self.av1_settings,
-            avc_intra_settings: self.avc_intra_settings,
-            codec: self.codec,
-            frame_capture_settings: self.frame_capture_settings,
-            h264_settings: self.h264_settings,
-            h265_settings: self.h265_settings,
-            mpeg2_settings: self.mpeg2_settings,
-            prores_settings: self.prores_settings,
-            vc3_settings: self.vc3_settings,
-            vp8_settings: self.vp8_settings,
-            vp9_settings: self.vp9_settings,
-            xavc_settings: self.xavc_settings,
+            av1_settings: self.av1_settings
+            ,
+            avc_intra_settings: self.avc_intra_settings
+            ,
+            codec: self.codec
+            ,
+            frame_capture_settings: self.frame_capture_settings
+            ,
+            h264_settings: self.h264_settings
+            ,
+            h265_settings: self.h265_settings
+            ,
+            mpeg2_settings: self.mpeg2_settings
+            ,
+            prores_settings: self.prores_settings
+            ,
+            vc3_settings: self.vc3_settings
+            ,
+            vp8_settings: self.vp8_settings
+            ,
+            vp9_settings: self.vp9_settings
+            ,
+            xavc_settings: self.xavc_settings
+            ,
         }
     }
 }
+

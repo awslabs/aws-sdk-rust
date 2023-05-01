@@ -3,7 +3,7 @@
 /// <p>Wi-Fi access point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WiFiAccessPoint {
+pub struct WiFiAccessPoint  {
     /// <p>Wi-Fi MAC Address.</p>
     #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct WiFiAccessPoint {
 }
 impl WiFiAccessPoint {
     /// <p>Wi-Fi MAC Address.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
@@ -43,8 +43,7 @@ impl WiFiAccessPointBuilder {
     }
     /// <p>Wi-Fi MAC Address.</p>
     pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn rss(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl WiFiAccessPointBuilder {
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn set_rss(mut self, input: std::option::Option<i32>) -> Self {
-        self.rss = input;
-        self
+        self.rss = input; self
     }
     /// Consumes the builder and constructs a [`WiFiAccessPoint`](crate::types::WiFiAccessPoint).
     pub fn build(self) -> crate::types::WiFiAccessPoint {
         crate::types::WiFiAccessPoint {
-            mac_address: self.mac_address,
-            rss: self.rss,
+            mac_address: self.mac_address
+            ,
+            rss: self.rss
+            ,
         }
     }
 }
+

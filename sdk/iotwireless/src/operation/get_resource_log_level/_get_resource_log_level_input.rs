@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceLogLevelInput {
+pub struct GetResourceLogLevelInput  {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
@@ -12,20 +12,18 @@ pub struct GetResourceLogLevelInput {
 }
 impl GetResourceLogLevelInput {
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 impl GetResourceLogLevelInput {
     /// Creates a new builder-style object to manufacture [`GetResourceLogLevelInput`](crate::operation::get_resource_log_level::GetResourceLogLevelInput).
-    pub fn builder(
-    ) -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
-        crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder {
+        crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder::default()
     }
 }
 
@@ -43,12 +41,8 @@ impl GetResourceLogLevelInputBuilder {
         self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_identifier = input; self
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl GetResourceLogLevelInputBuilder {
     }
     /// <p>The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// Consumes the builder and constructs a [`GetResourceLogLevelInput`](crate::operation::get_resource_log_level::GetResourceLogLevelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resource_log_level::GetResourceLogLevelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_resource_log_level::GetResourceLogLevelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_resource_log_level::GetResourceLogLevelInput {
-                resource_identifier: self.resource_identifier,
-                resource_type: self.resource_type,
-            },
+                resource_identifier: self.resource_identifier
+                ,
+                resource_type: self.resource_type
+                ,
+            }
         )
     }
 }
+

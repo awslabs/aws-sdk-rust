@@ -3,7 +3,7 @@
 /// <p>An inferred field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedField {
+pub struct DetectedField  {
     /// <p>The field's value.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::AttributeValue>,
@@ -16,15 +16,15 @@ pub struct DetectedField {
 }
 impl DetectedField {
     /// <p>The field's value.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::AttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::AttributeValue> {
         self.value.as_ref()
     }
     /// <p>The field's confidence.</p>
-    pub fn confidence(&self) -> std::option::Option<&crate::types::Confidence> {
+    pub fn confidence(&self) -> std::option::Option<& crate::types::Confidence> {
         self.confidence.as_ref()
     }
     /// <p>The field's message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl DetectedFieldBuilder {
     }
     /// <p>The field's value.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::AttributeValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The field's confidence.</p>
     pub fn confidence(mut self, input: crate::types::Confidence) -> Self {
@@ -61,8 +60,7 @@ impl DetectedFieldBuilder {
     }
     /// <p>The field's confidence.</p>
     pub fn set_confidence(mut self, input: std::option::Option<crate::types::Confidence>) -> Self {
-        self.confidence = input;
-        self
+        self.confidence = input; self
     }
     /// <p>The field's message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl DetectedFieldBuilder {
     }
     /// <p>The field's message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`DetectedField`](crate::types::DetectedField).
     pub fn build(self) -> crate::types::DetectedField {
         crate::types::DetectedField {
-            value: self.value,
-            confidence: self.confidence,
-            message: self.message,
+            value: self.value
+            ,
+            confidence: self.confidence
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

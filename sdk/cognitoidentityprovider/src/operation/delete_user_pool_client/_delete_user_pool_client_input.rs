@@ -3,7 +3,7 @@
 /// <p>Represents the request to delete a user pool client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteUserPoolClientInput {
+pub struct DeleteUserPoolClientInput  {
     /// <p>The user pool ID for the user pool where you want to delete the client.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct DeleteUserPoolClientInput {
 }
 impl DeleteUserPoolClientInput {
     /// <p>The user pool ID for the user pool where you want to delete the client.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
-impl std::fmt::Debug for DeleteUserPoolClientInput {
+impl  std::fmt::Debug for DeleteUserPoolClientInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteUserPoolClientInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -31,8 +31,7 @@ impl std::fmt::Debug for DeleteUserPoolClientInput {
 }
 impl DeleteUserPoolClientInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserPoolClientInput`](crate::operation::delete_user_pool_client::DeleteUserPoolClientInput).
-    pub fn builder(
-    ) -> crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientInputBuilder {
+    pub fn builder() -> crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientInputBuilder {
         crate::operation::delete_user_pool_client::builders::DeleteUserPoolClientInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl DeleteUserPoolClientInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to delete the client.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,21 +60,17 @@ impl DeleteUserPoolClientInputBuilder {
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteUserPoolClientInput`](crate::operation::delete_user_pool_client::DeleteUserPoolClientInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_user_pool_client::DeleteUserPoolClientInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_user_pool_client::DeleteUserPoolClientInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_user_pool_client::DeleteUserPoolClientInput {
-                user_pool_id: self.user_pool_id,
-                client_id: self.client_id,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                client_id: self.client_id
+                ,
+            }
         )
     }
 }
@@ -88,3 +82,4 @@ impl std::fmt::Debug for DeleteUserPoolClientInputBuilder {
         formatter.finish()
     }
 }
+

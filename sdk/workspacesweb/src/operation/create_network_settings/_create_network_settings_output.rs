@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkSettingsOutput {
+pub struct CreateNetworkSettingsOutput  {
     /// <p>The ARN of the network settings.</p>
     #[doc(hidden)]
     pub network_settings_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateNetworkSettingsOutput {
 }
 impl CreateNetworkSettingsOutput {
     /// <p>The ARN of the network settings.</p>
-    pub fn network_settings_arn(&self) -> std::option::Option<&str> {
+    pub fn network_settings_arn(&self) -> std::option::Option<& str> {
         self.network_settings_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNetworkSettingsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateNetworkSettingsOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkSettingsOutput`](crate::operation::create_network_settings::CreateNetworkSettingsOutput).
-    pub fn builder(
-    ) -> crate::operation::create_network_settings::builders::CreateNetworkSettingsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_settings::builders::CreateNetworkSettingsOutputBuilder {
         crate::operation::create_network_settings::builders::CreateNetworkSettingsOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateNetworkSettingsOutputBuilder {
         self
     }
     /// <p>The ARN of the network settings.</p>
-    pub fn set_network_settings_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_settings_arn = input;
-        self
+    pub fn set_network_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_settings_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateNetworkSettingsOutput`](crate::operation::create_network_settings::CreateNetworkSettingsOutput).
     pub fn build(self) -> crate::operation::create_network_settings::CreateNetworkSettingsOutput {
         crate::operation::create_network_settings::CreateNetworkSettingsOutput {
-            network_settings_arn: self.network_settings_arn,
+            network_settings_arn: self.network_settings_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

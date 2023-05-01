@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServerInput {
+pub struct DescribeServerInput  {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
 }
 impl DescribeServerInput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeServerInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeServerInput`](crate::operation::describe_server::DescribeServerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_server::DescribeServerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_server::DescribeServerInput {
-            server_id: self.server_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_server::DescribeServerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_server::DescribeServerInput {
+                server_id: self.server_id
+                ,
+            }
+        )
     }
 }
+

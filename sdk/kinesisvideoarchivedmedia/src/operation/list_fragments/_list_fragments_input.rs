@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFragmentsInput {
+pub struct ListFragmentsInput  {
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListFragmentsInput {
 }
 impl ListFragmentsInput {
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> std::option::Option<& str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> std::option::Option<& str> {
         self.stream_arn.as_deref()
     }
     /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
@@ -33,11 +33,11 @@ impl ListFragmentsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
-    pub fn fragment_selector(&self) -> std::option::Option<&crate::types::FragmentSelector> {
+    pub fn fragment_selector(&self) -> std::option::Option<& crate::types::FragmentSelector> {
         self.fragment_selector.as_ref()
     }
 }
@@ -66,8 +66,7 @@ impl ListFragmentsInputBuilder {
     }
     /// <p>The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input;
-        self
+        self.stream_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +75,7 @@ impl ListFragmentsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input;
-        self
+        self.stream_arn = input; self
     }
     /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
     pub fn max_results(mut self, input: i64) -> Self {
@@ -86,8 +84,7 @@ impl ListFragmentsInputBuilder {
     }
     /// <p>The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <code>ListFragmentsOutput$NextToken</code> is provided in the output that you can use to resume pagination.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i64>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +93,7 @@ impl ListFragmentsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the <code>ListFragmentsOutput$NextToken</code> from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
     pub fn fragment_selector(mut self, input: crate::types::FragmentSelector) -> Self {
@@ -105,26 +101,25 @@ impl ListFragmentsInputBuilder {
         self
     }
     /// <p>Describes the timestamp range and timestamp origin for the range of fragments to return.</p>
-    pub fn set_fragment_selector(
-        mut self,
-        input: std::option::Option<crate::types::FragmentSelector>,
-    ) -> Self {
-        self.fragment_selector = input;
-        self
+    pub fn set_fragment_selector(mut self, input: std::option::Option<crate::types::FragmentSelector>) -> Self {
+        self.fragment_selector = input; self
     }
     /// Consumes the builder and constructs a [`ListFragmentsInput`](crate::operation::list_fragments::ListFragmentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_fragments::ListFragmentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_fragments::ListFragmentsInput {
-            stream_name: self.stream_name,
-            stream_arn: self.stream_arn,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            fragment_selector: self.fragment_selector,
-        })
+    pub fn build(self) -> Result<crate::operation::list_fragments::ListFragmentsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_fragments::ListFragmentsInput {
+                stream_name: self.stream_name
+                ,
+                stream_arn: self.stream_arn
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                fragment_selector: self.fragment_selector
+                ,
+            }
+        )
     }
 }
+

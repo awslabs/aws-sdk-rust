@@ -3,7 +3,7 @@
 /// <p>Provides information about the specified ML model, including dataset and model names and ARNs, as well as status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelSummary {
+pub struct ModelSummary  {
     /// <p>The name of the ML model. </p>
     #[doc(hidden)]
     pub model_name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ModelSummary {
 }
 impl ModelSummary {
     /// <p>The name of the ML model. </p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>The name of the dataset being used for the ML model. </p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> std::option::Option<& str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Indicates the status of the ML model. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ModelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ModelStatus> {
         self.status.as_ref()
     }
     /// <p>The time at which the specific model was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -75,8 +75,7 @@ impl ModelSummaryBuilder {
     }
     /// <p>The name of the ML model. </p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input;
-        self
+        self.model_name = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
     pub fn model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl ModelSummaryBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the ML model. </p>
     pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>The name of the dataset being used for the ML model. </p>
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl ModelSummaryBuilder {
     }
     /// <p>The name of the dataset being used for the ML model. </p>
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input;
-        self
+        self.dataset_name = input; self
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
     pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +102,7 @@ impl ModelSummaryBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset used to create the model. </p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input;
-        self
+        self.dataset_arn = input; self
     }
     /// <p>Indicates the status of the ML model. </p>
     pub fn status(mut self, input: crate::types::ModelStatus) -> Self {
@@ -115,8 +111,7 @@ impl ModelSummaryBuilder {
     }
     /// <p>Indicates the status of the ML model. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ModelStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The time at which the specific model was created. </p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -124,22 +119,25 @@ impl ModelSummaryBuilder {
         self
     }
     /// <p>The time at which the specific model was created. </p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Consumes the builder and constructs a [`ModelSummary`](crate::types::ModelSummary).
     pub fn build(self) -> crate::types::ModelSummary {
         crate::types::ModelSummary {
-            model_name: self.model_name,
-            model_arn: self.model_arn,
-            dataset_name: self.dataset_name,
-            dataset_arn: self.dataset_arn,
-            status: self.status,
-            created_at: self.created_at,
+            model_name: self.model_name
+            ,
+            model_arn: self.model_arn
+            ,
+            dataset_name: self.dataset_name
+            ,
+            dataset_arn: self.dataset_arn
+            ,
+            status: self.status
+            ,
+            created_at: self.created_at
+            ,
         }
     }
 }
+

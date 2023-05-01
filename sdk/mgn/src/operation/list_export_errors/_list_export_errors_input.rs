@@ -3,7 +3,7 @@
 /// <p>List export errors request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExportErrorsInput {
+pub struct ListExportErrorsInput  {
     /// <p>List export errors request export id.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListExportErrorsInput {
 }
 impl ListExportErrorsInput {
     /// <p>List export errors request export id.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> std::option::Option<& str> {
         self.export_id.as_deref()
     }
     /// <p>List export errors request max results.</p>
@@ -24,14 +24,13 @@ impl ListExportErrorsInput {
         self.max_results
     }
     /// <p>List export errors request next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListExportErrorsInput {
     /// Creates a new builder-style object to manufacture [`ListExportErrorsInput`](crate::operation::list_export_errors::ListExportErrorsInput).
-    pub fn builder() -> crate::operation::list_export_errors::builders::ListExportErrorsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_export_errors::builders::ListExportErrorsInputBuilder {
         crate::operation::list_export_errors::builders::ListExportErrorsInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl ListExportErrorsInputBuilder {
     }
     /// <p>List export errors request export id.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input;
-        self
+        self.export_id = input; self
     }
     /// <p>List export errors request max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -62,8 +60,7 @@ impl ListExportErrorsInputBuilder {
     }
     /// <p>List export errors request max results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>List export errors request next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +69,21 @@ impl ListExportErrorsInputBuilder {
     }
     /// <p>List export errors request next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListExportErrorsInput`](crate::operation::list_export_errors::ListExportErrorsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_export_errors::ListExportErrorsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_export_errors::ListExportErrorsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_export_errors::ListExportErrorsInput {
-                export_id: self.export_id,
-                max_results: self.max_results.unwrap_or_default(),
-                next_token: self.next_token,
-            },
+                export_id: self.export_id
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

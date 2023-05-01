@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDestinationInput {
+pub struct GetDestinationInput  {
     /// Destination ARN.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetDestinationInput {
     /// Destination ARN.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetDestinationInputBuilder {
     }
     /// Destination ARN.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetDestinationInput`](crate::operation::get_destination::GetDestinationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_destination::GetDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_destination::GetDestinationInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::get_destination::GetDestinationInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_destination::GetDestinationInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

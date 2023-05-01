@@ -3,9 +3,9 @@
 /// <p>Describes a WorkSpace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceProperties {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
-    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+pub struct WorkspaceProperties  {
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note> 
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p> 
     /// </note>
     #[doc(hidden)]
     pub running_mode: std::option::Option<crate::types::RunningMode>,
@@ -21,21 +21,21 @@ pub struct WorkspaceProperties {
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     #[doc(hidden)]
     pub compute_type_name: std::option::Option<crate::types::Compute>,
-    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
-    /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
-    /// </ul>
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note> 
+    /// <ul> 
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li> 
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li> 
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> 
+    /// </ul> 
     /// </note>
     #[doc(hidden)]
     pub protocols: std::option::Option<std::vec::Vec<crate::types::Protocol>>,
 }
 impl WorkspaceProperties {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
-    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note> 
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p> 
     /// </note>
-    pub fn running_mode(&self) -> std::option::Option<&crate::types::RunningMode> {
+    pub fn running_mode(&self) -> std::option::Option<& crate::types::RunningMode> {
         self.running_mode.as_ref()
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
@@ -51,17 +51,17 @@ impl WorkspaceProperties {
         self.user_volume_size_gib
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    pub fn compute_type_name(&self) -> std::option::Option<&crate::types::Compute> {
+    pub fn compute_type_name(&self) -> std::option::Option<& crate::types::Compute> {
         self.compute_type_name.as_ref()
     }
-    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
-    /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
-    /// </ul>
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note> 
+    /// <ul> 
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li> 
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li> 
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn protocols(&self) -> std::option::Option<&[crate::types::Protocol]> {
+    pub fn protocols(&self) -> std::option::Option<& [crate::types::Protocol]> {
         self.protocols.as_deref()
     }
 }
@@ -84,22 +84,18 @@ pub struct WorkspacePropertiesBuilder {
     pub(crate) protocols: std::option::Option<std::vec::Vec<crate::types::Protocol>>,
 }
 impl WorkspacePropertiesBuilder {
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
-    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note> 
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p> 
     /// </note>
     pub fn running_mode(mut self, input: crate::types::RunningMode) -> Self {
         self.running_mode = Some(input);
         self
     }
-    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note>
-    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+    /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p> <note> 
+    /// <p>The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p> 
     /// </note>
-    pub fn set_running_mode(
-        mut self,
-        input: std::option::Option<crate::types::RunningMode>,
-    ) -> Self {
-        self.running_mode = input;
-        self
+    pub fn set_running_mode(mut self, input: std::option::Option<crate::types::RunningMode>) -> Self {
+        self.running_mode = input; self
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
     pub fn running_mode_auto_stop_timeout_in_minutes(mut self, input: i32) -> Self {
@@ -107,12 +103,8 @@ impl WorkspacePropertiesBuilder {
         self
     }
     /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
-    pub fn set_running_mode_auto_stop_timeout_in_minutes(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.running_mode_auto_stop_timeout_in_minutes = input;
-        self
+    pub fn set_running_mode_auto_stop_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+        self.running_mode_auto_stop_timeout_in_minutes = input; self
     }
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn root_volume_size_gib(mut self, input: i32) -> Self {
@@ -121,8 +113,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn set_root_volume_size_gib(mut self, input: std::option::Option<i32>) -> Self {
-        self.root_volume_size_gib = input;
-        self
+        self.root_volume_size_gib = input; self
     }
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn user_volume_size_gib(mut self, input: i32) -> Self {
@@ -131,8 +122,7 @@ impl WorkspacePropertiesBuilder {
     }
     /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
     pub fn set_user_volume_size_gib(mut self, input: std::option::Option<i32>) -> Self {
-        self.user_volume_size_gib = input;
-        self
+        self.user_volume_size_gib = input; self
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub fn compute_type_name(mut self, input: crate::types::Compute) -> Self {
@@ -140,54 +130,52 @@ impl WorkspacePropertiesBuilder {
         self
     }
     /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
-    pub fn set_compute_type_name(
-        mut self,
-        input: std::option::Option<crate::types::Compute>,
-    ) -> Self {
-        self.compute_type_name = input;
-        self
+    pub fn set_compute_type_name(mut self, input: std::option::Option<crate::types::Compute>) -> Self {
+        self.compute_type_name = input; self
     }
     /// Appends an item to `protocols`.
     ///
     /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
     ///
-    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
-    /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
-    /// </ul>
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note> 
+    /// <ul> 
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li> 
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li> 
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> 
+    /// </ul> 
     /// </note>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-        v.push(input);
-        self.protocols = Some(v);
-        self
+                        v.push(input);
+                        self.protocols = Some(v);
+                        self
     }
-    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note>
-    /// <ul>
-    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li>
-    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li>
-    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li>
-    /// </ul>
+    /// <p>The protocol. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-protocols.html"> Protocols for Amazon WorkSpaces</a>.</p> <note> 
+    /// <ul> 
+    /// <li> <p>Only available for WorkSpaces created with PCoIP bundles.</p> </li> 
+    /// <li> <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>WSP</code>.</p> </li> 
+    /// <li> <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, and GraphicsPro.g4dn).</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn set_protocols(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Protocol>>,
-    ) -> Self {
-        self.protocols = input;
-        self
+    pub fn set_protocols(mut self, input: std::option::Option<std::vec::Vec<crate::types::Protocol>>) -> Self {
+        self.protocols = input; self
     }
     /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn build(self) -> crate::types::WorkspaceProperties {
         crate::types::WorkspaceProperties {
-            running_mode: self.running_mode,
-            running_mode_auto_stop_timeout_in_minutes: self
-                .running_mode_auto_stop_timeout_in_minutes,
-            root_volume_size_gib: self.root_volume_size_gib,
-            user_volume_size_gib: self.user_volume_size_gib,
-            compute_type_name: self.compute_type_name,
-            protocols: self.protocols,
+            running_mode: self.running_mode
+            ,
+            running_mode_auto_stop_timeout_in_minutes: self.running_mode_auto_stop_timeout_in_minutes
+            ,
+            root_volume_size_gib: self.root_volume_size_gib
+            ,
+            user_volume_size_gib: self.user_volume_size_gib
+            ,
+            compute_type_name: self.compute_type_name
+            ,
+            protocols: self.protocols
+            ,
         }
     }
 }
+

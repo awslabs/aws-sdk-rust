@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelIngestionOutput {
+pub struct CancelIngestionOutput  {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct CancelIngestionOutput {
 }
 impl CancelIngestionOutput {
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn ingestion_id(&self) -> std::option::Option<&str> {
+    pub fn ingestion_id(&self) -> std::option::Option<& str> {
         self.ingestion_id.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -36,10 +36,10 @@ impl CancelIngestionOutput {
     }
 }
 impl aws_http::request_id::RequestId for CancelIngestionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelIngestionOutput {
     /// Creates a new builder-style object to manufacture [`CancelIngestionOutput`](crate::operation::cancel_ingestion::CancelIngestionOutput).
     pub fn builder() -> crate::operation::cancel_ingestion::builders::CancelIngestionOutputBuilder {
@@ -65,8 +65,7 @@ impl CancelIngestionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the data ingestion.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>An ID for the ingestion.</p>
     pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +74,7 @@ impl CancelIngestionOutputBuilder {
     }
     /// <p>An ID for the ingestion.</p>
     pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ingestion_id = input;
-        self
+        self.ingestion_id = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +83,7 @@ impl CancelIngestionOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -95,26 +92,31 @@ impl CancelIngestionOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelIngestionOutput`](crate::operation::cancel_ingestion::CancelIngestionOutput).
     pub fn build(self) -> crate::operation::cancel_ingestion::CancelIngestionOutput {
         crate::operation::cancel_ingestion::CancelIngestionOutput {
-            arn: self.arn,
-            ingestion_id: self.ingestion_id,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            arn: self.arn
+            ,
+            ingestion_id: self.ingestion_id
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

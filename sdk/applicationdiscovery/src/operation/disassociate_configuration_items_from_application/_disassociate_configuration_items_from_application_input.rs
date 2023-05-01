@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateConfigurationItemsFromApplicationInput {
+pub struct DisassociateConfigurationItemsFromApplicationInput  {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
     #[doc(hidden)]
     pub application_configuration_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateConfigurationItemsFromApplicationInput {
 }
 impl DisassociateConfigurationItemsFromApplicationInput {
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    pub fn application_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn application_configuration_id(&self) -> std::option::Option<& str> {
         self.application_configuration_id.as_deref()
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn configuration_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn configuration_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.configuration_ids.as_deref()
     }
 }
 impl DisassociateConfigurationItemsFromApplicationInput {
     /// Creates a new builder-style object to manufacture [`DisassociateConfigurationItemsFromApplicationInput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput).
-    pub fn builder() -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder {
         crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
         self
     }
     /// <p>Configuration ID of an application from which each item is disassociated.</p>
-    pub fn set_application_configuration_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.application_configuration_id = input;
-        self
+    pub fn set_application_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.application_configuration_id = input; self
     }
     /// Appends an item to `configuration_ids`.
     ///
@@ -55,20 +51,16 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
     pub fn configuration_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.configuration_ids.unwrap_or_default();
-        v.push(input.into());
-        self.configuration_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.configuration_ids = Some(v);
+                        self
     }
     /// <p>Configuration ID of each item to be disassociated from an application.</p>
-    pub fn set_configuration_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.configuration_ids = input;
-        self
+    pub fn set_configuration_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.configuration_ids = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateConfigurationItemsFromApplicationInput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationInput {
                 application_configuration_id: self.application_configuration_id
@@ -79,3 +71,4 @@ impl DisassociateConfigurationItemsFromApplicationInputBuilder {
         )
     }
 }
+

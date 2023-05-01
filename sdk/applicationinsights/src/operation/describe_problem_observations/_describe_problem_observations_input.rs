@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProblemObservationsInput {
+pub struct DescribeProblemObservationsInput  {
     /// <p>The ID of the problem.</p>
     #[doc(hidden)]
     pub problem_id: std::option::Option<std::string::String>,
 }
 impl DescribeProblemObservationsInput {
     /// <p>The ID of the problem.</p>
-    pub fn problem_id(&self) -> std::option::Option<&str> {
+    pub fn problem_id(&self) -> std::option::Option<& str> {
         self.problem_id.as_deref()
     }
 }
 impl DescribeProblemObservationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeProblemObservationsInput`](crate::operation::describe_problem_observations::DescribeProblemObservationsInput).
-    pub fn builder() -> crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder {
         crate::operation::describe_problem_observations::builders::DescribeProblemObservationsInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeProblemObservationsInputBuilder {
     }
     /// <p>The ID of the problem.</p>
     pub fn set_problem_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.problem_id = input;
-        self
+        self.problem_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeProblemObservationsInput`](crate::operation::describe_problem_observations::DescribeProblemObservationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_problem_observations::DescribeProblemObservationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_problem_observations::DescribeProblemObservationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_problem_observations::DescribeProblemObservationsInput {
-                problem_id: self.problem_id,
-            },
+                problem_id: self.problem_id
+                ,
+            }
         )
     }
 }
+

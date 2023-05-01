@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let windowsaccessauditloglevel = unimplemented!();
 /// match windowsaccessauditloglevel {
@@ -32,22 +32,14 @@
 /// Specifically, when `windowsaccessauditloglevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WindowsAccessAuditLogLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WindowsAccessAuditLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -58,51 +50,45 @@ pub enum WindowsAccessAuditLogLevel {
     #[allow(missing_docs)] // documentation missing in model
     SuccessOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WindowsAccessAuditLogLevel {
-    fn from(s: &str) -> Self {
-        match s {
-            "DISABLED" => WindowsAccessAuditLogLevel::Disabled,
-            "FAILURE_ONLY" => WindowsAccessAuditLogLevel::FailureOnly,
-            "SUCCESS_AND_FAILURE" => WindowsAccessAuditLogLevel::SuccessAndFailure,
-            "SUCCESS_ONLY" => WindowsAccessAuditLogLevel::SuccessOnly,
-            other => WindowsAccessAuditLogLevel::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DISABLED" => WindowsAccessAuditLogLevel::Disabled,
+"FAILURE_ONLY" => WindowsAccessAuditLogLevel::FailureOnly,
+"SUCCESS_AND_FAILURE" => WindowsAccessAuditLogLevel::SuccessAndFailure,
+"SUCCESS_ONLY" => WindowsAccessAuditLogLevel::SuccessOnly,
+other => WindowsAccessAuditLogLevel::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for WindowsAccessAuditLogLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WindowsAccessAuditLogLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WindowsAccessAuditLogLevel::from(s))
+                }
+            }
 impl WindowsAccessAuditLogLevel {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            WindowsAccessAuditLogLevel::Disabled => "DISABLED",
-            WindowsAccessAuditLogLevel::FailureOnly => "FAILURE_ONLY",
-            WindowsAccessAuditLogLevel::SuccessAndFailure => "SUCCESS_AND_FAILURE",
-            WindowsAccessAuditLogLevel::SuccessOnly => "SUCCESS_ONLY",
-            WindowsAccessAuditLogLevel::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DISABLED",
-            "FAILURE_ONLY",
-            "SUCCESS_AND_FAILURE",
-            "SUCCESS_ONLY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    WindowsAccessAuditLogLevel::Disabled => "DISABLED",
+    WindowsAccessAuditLogLevel::FailureOnly => "FAILURE_ONLY",
+    WindowsAccessAuditLogLevel::SuccessAndFailure => "SUCCESS_AND_FAILURE",
+    WindowsAccessAuditLogLevel::SuccessOnly => "SUCCESS_ONLY",
+    WindowsAccessAuditLogLevel::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DISABLED", "FAILURE_ONLY", "SUCCESS_AND_FAILURE", "SUCCESS_ONLY"]
+                }
+            }
 impl AsRef<str> for WindowsAccessAuditLogLevel {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

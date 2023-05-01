@@ -3,7 +3,7 @@
 /// <p>Contains information about the result of the total usage based on the feature.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageFeatureResult {
+pub struct UsageFeatureResult  {
     /// <p>The feature that generated the usage cost.</p>
     #[doc(hidden)]
     pub feature: std::option::Option<crate::types::UsageFeature>,
@@ -13,11 +13,11 @@ pub struct UsageFeatureResult {
 }
 impl UsageFeatureResult {
     /// <p>The feature that generated the usage cost.</p>
-    pub fn feature(&self) -> std::option::Option<&crate::types::UsageFeature> {
+    pub fn feature(&self) -> std::option::Option<& crate::types::UsageFeature> {
         self.feature.as_ref()
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
-    pub fn total(&self) -> std::option::Option<&crate::types::Total> {
+    pub fn total(&self) -> std::option::Option<& crate::types::Total> {
         self.total.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl UsageFeatureResultBuilder {
     }
     /// <p>The feature that generated the usage cost.</p>
     pub fn set_feature(mut self, input: std::option::Option<crate::types::UsageFeature>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub fn total(mut self, input: crate::types::Total) -> Self {
@@ -53,14 +52,16 @@ impl UsageFeatureResultBuilder {
     }
     /// <p>Contains the total usage with the corresponding currency unit for that value.</p>
     pub fn set_total(mut self, input: std::option::Option<crate::types::Total>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// Consumes the builder and constructs a [`UsageFeatureResult`](crate::types::UsageFeatureResult).
     pub fn build(self) -> crate::types::UsageFeatureResult {
         crate::types::UsageFeatureResult {
-            feature: self.feature,
-            total: self.total,
+            feature: self.feature
+            ,
+            total: self.total
+            ,
         }
     }
 }
+

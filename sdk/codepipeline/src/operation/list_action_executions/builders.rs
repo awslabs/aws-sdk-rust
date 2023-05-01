@@ -4,82 +4,55 @@ pub use crate::operation::list_action_executions::_list_action_executions_output
 pub use crate::operation::list_action_executions::_list_action_executions_input::ListActionExecutionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListActionExecutions`.
-///
+/// 
 /// <p>Lists the action executions that have occurred in a pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListActionExecutionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder,
-}
-impl ListActionExecutionsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder
+            }
+impl ListActionExecutionsFluentBuilder  {
     /// Creates a new `ListActionExecutions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_action_executions::ListActionExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_action_executions::ListActionExecutionsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_action_executions::ListActionExecutionsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_action_executions::ListActionExecutionsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_action_executions::ListActionExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_action_executions::ListActionExecutionsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_action_executions::ListActionExecutionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_action_executions::ListActionExecutionsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator {
-        crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator {
+                            crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::new(self.handle, self.inner)
+                        }
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
     pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());
@@ -96,22 +69,19 @@ impl ListActionExecutionsFluentBuilder {
         self
     }
     /// <p>Input information used to filter action execution history.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::ActionExecutionFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::ActionExecutionFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
-    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note> 
+    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p> 
     /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note>
-    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p>
+    /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Action execution history is retained for up to 12 months, based on action execution start times. Default value is 100. </p> <note> 
+    /// <p>Detailed execution history is available for executions run on or after February 21, 2019.</p> 
     /// </note>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
@@ -128,3 +98,4 @@ impl ListActionExecutionsFluentBuilder {
         self
     }
 }
+

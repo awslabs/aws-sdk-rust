@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedNodesInput {
+pub struct DescribeReservedNodesInput  {
     /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
     #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
@@ -27,23 +27,23 @@ pub struct DescribeReservedNodesInput {
 }
 impl DescribeReservedNodesInput {
     /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
-    pub fn reservation_id(&self) -> std::option::Option<&str> {
+    pub fn reservation_id(&self) -> std::option::Option<& str> {
         self.reservation_id.as_deref()
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn reserved_nodes_offering_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_nodes_offering_id(&self) -> std::option::Option<& str> {
         self.reserved_nodes_offering_id.as_deref()
     }
     /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> std::option::Option<& str> {
         self.node_type.as_deref()
     }
     /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
-    pub fn duration(&self) -> std::option::Option<&str> {
+    pub fn duration(&self) -> std::option::Option<& str> {
         self.duration.as_deref()
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
-    pub fn offering_type(&self) -> std::option::Option<&str> {
+    pub fn offering_type(&self) -> std::option::Option<& str> {
         self.offering_type.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
@@ -51,15 +51,13 @@ impl DescribeReservedNodesInput {
         self.max_results
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeReservedNodesInput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder {
         crate::operation::describe_reserved_nodes::builders::DescribeReservedNodesInputBuilder::default()
     }
 }
@@ -84,8 +82,7 @@ impl DescribeReservedNodesInputBuilder {
     }
     /// <p>The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.</p>
     pub fn set_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_id = input;
-        self
+        self.reservation_id = input; self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
     pub fn reserved_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,12 +90,8 @@ impl DescribeReservedNodesInputBuilder {
         self
     }
     /// <p>The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
-    pub fn set_reserved_nodes_offering_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.reserved_nodes_offering_id = input;
-        self
+    pub fn set_reserved_nodes_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.reserved_nodes_offering_id = input; self
     }
     /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
     pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +100,7 @@ impl DescribeReservedNodesInputBuilder {
     }
     /// <p>The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input;
-        self
+        self.node_type = input; self
     }
     /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
     pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +109,7 @@ impl DescribeReservedNodesInputBuilder {
     }
     /// <p>The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.</p>
     pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.duration = input;
-        self
+        self.duration = input; self
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
     pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +118,7 @@ impl DescribeReservedNodesInputBuilder {
     }
     /// <p>The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"</p>
     pub fn set_offering_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_type = input;
-        self
+        self.offering_type = input; self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -137,8 +127,7 @@ impl DescribeReservedNodesInputBuilder {
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,26 +136,28 @@ impl DescribeReservedNodesInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReservedNodesInput`](crate::operation::describe_reserved_nodes::DescribeReservedNodesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_reserved_nodes::DescribeReservedNodesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_reserved_nodes::DescribeReservedNodesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_reserved_nodes::DescribeReservedNodesInput {
-                reservation_id: self.reservation_id,
-                reserved_nodes_offering_id: self.reserved_nodes_offering_id,
-                node_type: self.node_type,
-                duration: self.duration,
-                offering_type: self.offering_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                reservation_id: self.reservation_id
+                ,
+                reserved_nodes_offering_id: self.reserved_nodes_offering_id
+                ,
+                node_type: self.node_type
+                ,
+                duration: self.duration
+                ,
+                offering_type: self.offering_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

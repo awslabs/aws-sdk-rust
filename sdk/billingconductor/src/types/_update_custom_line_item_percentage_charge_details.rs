@@ -3,7 +3,7 @@
 /// <p> A representation of the new charge details that are associated with a percentage custom line item. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomLineItemPercentageChargeDetails {
+pub struct UpdateCustomLineItemPercentageChargeDetails  {
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     #[doc(hidden)]
     pub percentage_value: std::option::Option<f64>,
@@ -35,13 +35,14 @@ impl UpdateCustomLineItemPercentageChargeDetailsBuilder {
     }
     /// <p> The custom line item's new percentage value. This will be multiplied against the combined value of its associated resources to determine its charge value. </p>
     pub fn set_percentage_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.percentage_value = input;
-        self
+        self.percentage_value = input; self
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemPercentageChargeDetails`](crate::types::UpdateCustomLineItemPercentageChargeDetails).
     pub fn build(self) -> crate::types::UpdateCustomLineItemPercentageChargeDetails {
         crate::types::UpdateCustomLineItemPercentageChargeDetails {
-            percentage_value: self.percentage_value,
+            percentage_value: self.percentage_value
+            ,
         }
     }
 }
+

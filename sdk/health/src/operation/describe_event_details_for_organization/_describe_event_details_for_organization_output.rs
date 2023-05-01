@@ -2,36 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventDetailsForOrganizationOutput {
+pub struct DescribeEventDetailsForOrganizationOutput  {
     /// <p>Information about the events that could be retrieved.</p>
     #[doc(hidden)]
     pub successful_set: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetails>>,
     /// <p>Error messages for any events that could not be retrieved.</p>
     #[doc(hidden)]
-    pub failed_set:
-        std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
+    pub failed_set: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
     _request_id: Option<String>,
 }
 impl DescribeEventDetailsForOrganizationOutput {
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn successful_set(&self) -> std::option::Option<&[crate::types::OrganizationEventDetails]> {
+    pub fn successful_set(&self) -> std::option::Option<& [crate::types::OrganizationEventDetails]> {
         self.successful_set.as_deref()
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn failed_set(
-        &self,
-    ) -> std::option::Option<&[crate::types::OrganizationEventDetailsErrorItem]> {
+    pub fn failed_set(&self) -> std::option::Option<& [crate::types::OrganizationEventDetailsErrorItem]> {
         self.failed_set.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventDetailsForOrganizationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEventDetailsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventDetailsForOrganizationOutput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationOutputBuilder{
+    pub fn builder() -> crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationOutputBuilder {
         crate::operation::describe_event_details_for_organization::builders::DescribeEventDetailsForOrganizationOutputBuilder::default()
     }
 }
@@ -40,10 +37,8 @@ impl DescribeEventDetailsForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEventDetailsForOrganizationOutputBuilder {
-    pub(crate) successful_set:
-        std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetails>>,
-    pub(crate) failed_set:
-        std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
+    pub(crate) successful_set: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetails>>,
+    pub(crate) failed_set: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
     _request_id: Option<String>,
 }
 impl DescribeEventDetailsForOrganizationOutputBuilder {
@@ -54,17 +49,13 @@ impl DescribeEventDetailsForOrganizationOutputBuilder {
     /// <p>Information about the events that could be retrieved.</p>
     pub fn successful_set(mut self, input: crate::types::OrganizationEventDetails) -> Self {
         let mut v = self.successful_set.unwrap_or_default();
-        v.push(input);
-        self.successful_set = Some(v);
-        self
+                        v.push(input);
+                        self.successful_set = Some(v);
+                        self
     }
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn set_successful_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetails>>,
-    ) -> Self {
-        self.successful_set = input;
-        self
+    pub fn set_successful_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetails>>) -> Self {
+        self.successful_set = input; self
     }
     /// Appends an item to `failed_set`.
     ///
@@ -73,29 +64,25 @@ impl DescribeEventDetailsForOrganizationOutputBuilder {
     /// <p>Error messages for any events that could not be retrieved.</p>
     pub fn failed_set(mut self, input: crate::types::OrganizationEventDetailsErrorItem) -> Self {
         let mut v = self.failed_set.unwrap_or_default();
-        v.push(input);
-        self.failed_set = Some(v);
-        self
+                        v.push(input);
+                        self.failed_set = Some(v);
+                        self
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn set_failed_set(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>,
-    ) -> Self {
-        self.failed_set = input;
-        self
+    pub fn set_failed_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrganizationEventDetailsErrorItem>>) -> Self {
+        self.failed_set = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEventDetailsForOrganizationOutput`](crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput).
-    pub fn build(self) -> crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput{
+    pub fn build(self) -> crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput {
         crate::operation::describe_event_details_for_organization::DescribeEventDetailsForOrganizationOutput {
             successful_set: self.successful_set
             ,
@@ -105,3 +92,4 @@ impl DescribeEventDetailsForOrganizationOutputBuilder {
         }
     }
 }
+

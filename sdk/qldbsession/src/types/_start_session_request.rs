@@ -3,14 +3,14 @@
 /// <p>Specifies a request to start a new session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSessionRequest {
+pub struct StartSessionRequest  {
     /// <p>The name of the ledger to start a new session against.</p>
     #[doc(hidden)]
     pub ledger_name: std::option::Option<std::string::String>,
 }
 impl StartSessionRequest {
     /// <p>The name of the ledger to start a new session against.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> std::option::Option<& str> {
         self.ledger_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl StartSessionRequestBuilder {
     }
     /// <p>The name of the ledger to start a new session against.</p>
     pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ledger_name = input;
-        self
+        self.ledger_name = input; self
     }
     /// Consumes the builder and constructs a [`StartSessionRequest`](crate::types::StartSessionRequest).
     pub fn build(self) -> crate::types::StartSessionRequest {
         crate::types::StartSessionRequest {
-            ledger_name: self.ledger_name,
+            ledger_name: self.ledger_name
+            ,
         }
     }
 }
+

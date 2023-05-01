@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecoveryGroupsOutput {
+pub struct ListRecoveryGroupsOutput  {
     /// <p>The token that identifies which batch of results you want to see.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListRecoveryGroupsOutput {
 }
 impl ListRecoveryGroupsOutput {
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of recovery groups.</p>
-    pub fn recovery_groups(&self) -> std::option::Option<&[crate::types::RecoveryGroupOutput]> {
+    pub fn recovery_groups(&self) -> std::option::Option<& [crate::types::RecoveryGroupOutput]> {
         self.recovery_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRecoveryGroupsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListRecoveryGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecoveryGroupsOutput`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_recovery_groups::builders::ListRecoveryGroupsOutputBuilder {
         crate::operation::list_recovery_groups::builders::ListRecoveryGroupsOutputBuilder::default()
     }
 }
@@ -39,8 +38,7 @@ impl ListRecoveryGroupsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListRecoveryGroupsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) recovery_groups:
-        std::option::Option<std::vec::Vec<crate::types::RecoveryGroupOutput>>,
+    pub(crate) recovery_groups: std::option::Option<std::vec::Vec<crate::types::RecoveryGroupOutput>>,
     _request_id: Option<String>,
 }
 impl ListRecoveryGroupsOutputBuilder {
@@ -51,8 +49,7 @@ impl ListRecoveryGroupsOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `recovery_groups`.
     ///
@@ -61,33 +58,32 @@ impl ListRecoveryGroupsOutputBuilder {
     /// <p>A list of recovery groups.</p>
     pub fn recovery_groups(mut self, input: crate::types::RecoveryGroupOutput) -> Self {
         let mut v = self.recovery_groups.unwrap_or_default();
-        v.push(input);
-        self.recovery_groups = Some(v);
-        self
+                        v.push(input);
+                        self.recovery_groups = Some(v);
+                        self
     }
     /// <p>A list of recovery groups.</p>
-    pub fn set_recovery_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecoveryGroupOutput>>,
-    ) -> Self {
-        self.recovery_groups = input;
-        self
+    pub fn set_recovery_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecoveryGroupOutput>>) -> Self {
+        self.recovery_groups = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListRecoveryGroupsOutput`](crate::operation::list_recovery_groups::ListRecoveryGroupsOutput).
     pub fn build(self) -> crate::operation::list_recovery_groups::ListRecoveryGroupsOutput {
         crate::operation::list_recovery_groups::ListRecoveryGroupsOutput {
-            next_token: self.next_token,
-            recovery_groups: self.recovery_groups,
+            next_token: self.next_token
+            ,
+            recovery_groups: self.recovery_groups
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

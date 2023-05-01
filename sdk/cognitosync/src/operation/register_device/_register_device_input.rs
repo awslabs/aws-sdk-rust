@@ -3,7 +3,7 @@
 /// <p>A request to RegisterDevice.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDeviceInput {
+pub struct RegisterDeviceInput  {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct RegisterDeviceInput {
 }
 impl RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> std::option::Option<& str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The unique ID for this identity.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> std::option::Option<& str> {
         self.identity_id.as_deref()
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The push token.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl RegisterDeviceInputBuilder {
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_pool_id = input;
-        self
+        self.identity_pool_id = input; self
     }
     /// <p>The unique ID for this identity.</p>
     pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl RegisterDeviceInputBuilder {
     }
     /// <p>The unique ID for this identity.</p>
     pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_id = input;
-        self
+        self.identity_id = input; self
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -79,8 +77,7 @@ impl RegisterDeviceInputBuilder {
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input;
-        self
+        self.platform = input; self
     }
     /// <p>The push token.</p>
     pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,21 +86,22 @@ impl RegisterDeviceInputBuilder {
     }
     /// <p>The push token.</p>
     pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.token = input;
-        self
+        self.token = input; self
     }
     /// Consumes the builder and constructs a [`RegisterDeviceInput`](crate::operation::register_device::RegisterDeviceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::register_device::RegisterDeviceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::register_device::RegisterDeviceInput {
-            identity_pool_id: self.identity_pool_id,
-            identity_id: self.identity_id,
-            platform: self.platform,
-            token: self.token,
-        })
+    pub fn build(self) -> Result<crate::operation::register_device::RegisterDeviceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::register_device::RegisterDeviceInput {
+                identity_pool_id: self.identity_pool_id
+                ,
+                identity_id: self.identity_id
+                ,
+                platform: self.platform
+                ,
+                token: self.token
+                ,
+            }
+        )
     }
 }
+

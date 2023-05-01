@@ -3,20 +3,20 @@
 /// Represents the input of a DescribeLoggingConfiguration operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoggingConfigurationInput {
+pub struct DescribeLoggingConfigurationInput  {
     /// The ID of the workspace to vend logs to.
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl DescribeLoggingConfigurationInput {
     /// The ID of the workspace to vend logs to.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
 }
 impl DescribeLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder {
         crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl DescribeLoggingConfigurationInputBuilder {
     }
     /// The ID of the workspace to vend logs to.
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLoggingConfigurationInput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_logging_configuration::DescribeLoggingConfigurationInput {
-                workspace_id: self.workspace_id,
-            },
+                workspace_id: self.workspace_id
+                ,
+            }
         )
     }
 }
+

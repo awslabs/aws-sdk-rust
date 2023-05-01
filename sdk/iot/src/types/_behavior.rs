@@ -3,7 +3,7 @@
 /// <p>A Device Defender security profile behavior.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Behavior {
+pub struct Behavior  {
     /// <p>The name you've given to the behavior.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct Behavior {
 }
 impl Behavior {
     /// <p>The name you've given to the behavior.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> std::option::Option<& str> {
         self.metric.as_deref()
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
-    pub fn metric_dimension(&self) -> std::option::Option<&crate::types::MetricDimension> {
+    pub fn metric_dimension(&self) -> std::option::Option<& crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
-    pub fn criteria(&self) -> std::option::Option<&crate::types::BehaviorCriteria> {
+    pub fn criteria(&self) -> std::option::Option<& crate::types::BehaviorCriteria> {
         self.criteria.as_ref()
     }
     /// <p> Suppresses alerts. </p>
@@ -67,8 +67,7 @@ impl BehaviorBuilder {
     }
     /// <p>The name you've given to the behavior.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>What is measured by the behavior.</p>
     pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl BehaviorBuilder {
     }
     /// <p>What is measured by the behavior.</p>
     pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric = input;
-        self
+        self.metric = input; self
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
     pub fn metric_dimension(mut self, input: crate::types::MetricDimension) -> Self {
@@ -86,12 +84,8 @@ impl BehaviorBuilder {
         self
     }
     /// <p>The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric to only MQTT topics where the name matches the pattern specified in the dimension. This can't be used with custom metrics.</p>
-    pub fn set_metric_dimension(
-        mut self,
-        input: std::option::Option<crate::types::MetricDimension>,
-    ) -> Self {
-        self.metric_dimension = input;
-        self
+    pub fn set_metric_dimension(mut self, input: std::option::Option<crate::types::MetricDimension>) -> Self {
+        self.metric_dimension = input; self
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
     pub fn criteria(mut self, input: crate::types::BehaviorCriteria) -> Self {
@@ -99,12 +93,8 @@ impl BehaviorBuilder {
         self
     }
     /// <p>The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.</p>
-    pub fn set_criteria(
-        mut self,
-        input: std::option::Option<crate::types::BehaviorCriteria>,
-    ) -> Self {
-        self.criteria = input;
-        self
+    pub fn set_criteria(mut self, input: std::option::Option<crate::types::BehaviorCriteria>) -> Self {
+        self.criteria = input; self
     }
     /// <p> Suppresses alerts. </p>
     pub fn suppress_alerts(mut self, input: bool) -> Self {
@@ -113,17 +103,22 @@ impl BehaviorBuilder {
     }
     /// <p> Suppresses alerts. </p>
     pub fn set_suppress_alerts(mut self, input: std::option::Option<bool>) -> Self {
-        self.suppress_alerts = input;
-        self
+        self.suppress_alerts = input; self
     }
     /// Consumes the builder and constructs a [`Behavior`](crate::types::Behavior).
     pub fn build(self) -> crate::types::Behavior {
         crate::types::Behavior {
-            name: self.name,
-            metric: self.metric,
-            metric_dimension: self.metric_dimension,
-            criteria: self.criteria,
-            suppress_alerts: self.suppress_alerts,
+            name: self.name
+            ,
+            metric: self.metric
+            ,
+            metric_dimension: self.metric_dimension
+            ,
+            criteria: self.criteria
+            ,
+            suppress_alerts: self.suppress_alerts
+            ,
         }
     }
 }
+

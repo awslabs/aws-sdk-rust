@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConversionTasksOutput {
+pub struct DescribeConversionTasksOutput  {
     /// <p>Information about the conversion tasks.</p>
     #[doc(hidden)]
     pub conversion_tasks: std::option::Option<std::vec::Vec<crate::types::ConversionTask>>,
@@ -10,20 +10,18 @@ pub struct DescribeConversionTasksOutput {
 }
 impl DescribeConversionTasksOutput {
     /// <p>Information about the conversion tasks.</p>
-    pub fn conversion_tasks(&self) -> std::option::Option<&[crate::types::ConversionTask]> {
+    pub fn conversion_tasks(&self) -> std::option::Option<& [crate::types::ConversionTask]> {
         self.conversion_tasks.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeConversionTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeConversionTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConversionTasksOutput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksOutputBuilder {
         crate::operation::describe_conversion_tasks::builders::DescribeConversionTasksOutputBuilder::default()
     }
 }
@@ -43,34 +41,30 @@ impl DescribeConversionTasksOutputBuilder {
     /// <p>Information about the conversion tasks.</p>
     pub fn conversion_tasks(mut self, input: crate::types::ConversionTask) -> Self {
         let mut v = self.conversion_tasks.unwrap_or_default();
-        v.push(input);
-        self.conversion_tasks = Some(v);
-        self
+                        v.push(input);
+                        self.conversion_tasks = Some(v);
+                        self
     }
     /// <p>Information about the conversion tasks.</p>
-    pub fn set_conversion_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConversionTask>>,
-    ) -> Self {
-        self.conversion_tasks = input;
-        self
+    pub fn set_conversion_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConversionTask>>) -> Self {
+        self.conversion_tasks = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeConversionTasksOutput`](crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput {
+    pub fn build(self) -> crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput {
         crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput {
-            conversion_tasks: self.conversion_tasks,
+            conversion_tasks: self.conversion_tasks
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

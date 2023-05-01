@@ -3,7 +3,7 @@
 /// <p>Provides counts for human-labeled tasks in the labeling job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelCountersForWorkteam {
+pub struct LabelCountersForWorkteam  {
     /// <p>The total number of data objects labeled by a human worker.</p>
     #[doc(hidden)]
     pub human_labeled: i32,
@@ -51,8 +51,7 @@ impl LabelCountersForWorkteamBuilder {
     }
     /// <p>The total number of data objects labeled by a human worker.</p>
     pub fn set_human_labeled(mut self, input: std::option::Option<i32>) -> Self {
-        self.human_labeled = input;
-        self
+        self.human_labeled = input; self
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
     pub fn pending_human(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl LabelCountersForWorkteamBuilder {
     }
     /// <p>The total number of data objects that need to be labeled by a human worker.</p>
     pub fn set_pending_human(mut self, input: std::option::Option<i32>) -> Self {
-        self.pending_human = input;
-        self
+        self.pending_human = input; self
     }
     /// <p>The total number of tasks in the labeling job.</p>
     pub fn total(mut self, input: i32) -> Self {
@@ -71,15 +69,21 @@ impl LabelCountersForWorkteamBuilder {
     }
     /// <p>The total number of tasks in the labeling job.</p>
     pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
-        self.total = input;
-        self
+        self.total = input; self
     }
     /// Consumes the builder and constructs a [`LabelCountersForWorkteam`](crate::types::LabelCountersForWorkteam).
     pub fn build(self) -> crate::types::LabelCountersForWorkteam {
         crate::types::LabelCountersForWorkteam {
-            human_labeled: self.human_labeled.unwrap_or_default(),
-            pending_human: self.pending_human.unwrap_or_default(),
-            total: self.total.unwrap_or_default(),
+            human_labeled: self.human_labeled
+                .unwrap_or_default()
+            ,
+            pending_human: self.pending_human
+                .unwrap_or_default()
+            ,
+            total: self.total
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

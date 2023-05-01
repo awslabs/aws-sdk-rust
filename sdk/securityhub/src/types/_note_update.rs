@@ -3,7 +3,7 @@
 /// <p>The updated note.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoteUpdate {
+pub struct NoteUpdate  {
     /// <p>The updated note text.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NoteUpdate {
 }
 impl NoteUpdate {
     /// <p>The updated note text.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>The principal that updated the note.</p>
-    pub fn updated_by(&self) -> std::option::Option<&str> {
+    pub fn updated_by(&self) -> std::option::Option<& str> {
         self.updated_by.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl NoteUpdateBuilder {
     }
     /// <p>The updated note text.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input;
-        self
+        self.text = input; self
     }
     /// <p>The principal that updated the note.</p>
     pub fn updated_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl NoteUpdateBuilder {
     }
     /// <p>The principal that updated the note.</p>
     pub fn set_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updated_by = input;
-        self
+        self.updated_by = input; self
     }
     /// Consumes the builder and constructs a [`NoteUpdate`](crate::types::NoteUpdate).
     pub fn build(self) -> crate::types::NoteUpdate {
         crate::types::NoteUpdate {
-            text: self.text,
-            updated_by: self.updated_by,
+            text: self.text
+            ,
+            updated_by: self.updated_by
+            ,
         }
     }
 }
+

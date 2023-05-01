@@ -4,82 +4,55 @@ pub use crate::operation::list_stage_devices::_list_stage_devices_output::ListSt
 pub use crate::operation::list_stage_devices::_list_stage_devices_input::ListStageDevicesInputBuilder;
 
 /// Fluent builder constructing a request to `ListStageDevices`.
-///
+/// 
 /// <p>Lists devices allocated to the stage, containing detailed device information and deployment status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStageDevicesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_stage_devices::builders::ListStageDevicesInputBuilder,
-}
-impl ListStageDevicesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_stage_devices::builders::ListStageDevicesInputBuilder
+            }
+impl ListStageDevicesFluentBuilder  {
     /// Creates a new `ListStageDevices`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_stage_devices::ListStageDevices,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_stage_devices::ListStageDevicesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_stage_devices::ListStageDevicesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_stage_devices::ListStageDevicesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_stage_devices::ListStageDevices, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_stage_devices::ListStageDevicesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_stage_devices::ListStageDevicesOutput, aws_smithy_http::result::SdkError<crate::operation::list_stage_devices::ListStageDevicesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_stage_devices::paginator::ListStageDevicesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_stage_devices::paginator::ListStageDevicesPaginator {
-        crate::operation::list_stage_devices::paginator::ListStageDevicesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_stage_devices::paginator::ListStageDevicesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_stage_devices::paginator::ListStageDevicesPaginator {
+                            crate::operation::list_stage_devices::paginator::ListStageDevicesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The response from the last list when returning a list large enough to neeed tokening.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -106,10 +79,7 @@ impl ListStageDevicesFluentBuilder {
         self
     }
     /// <p>The name of the edge deployment plan.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_edge_deployment_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_edge_deployment_plan_name(input);
         self
     }
@@ -119,13 +89,8 @@ impl ListStageDevicesFluentBuilder {
         self
     }
     /// <p>Toggle for excluding devices deployed in other stages.</p>
-    pub fn set_exclude_devices_deployed_in_other_stage(
-        mut self,
-        input: std::option::Option<bool>,
-    ) -> Self {
-        self.inner = self
-            .inner
-            .set_exclude_devices_deployed_in_other_stage(input);
+    pub fn set_exclude_devices_deployed_in_other_stage(mut self, input: std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_exclude_devices_deployed_in_other_stage(input);
         self
     }
     /// <p>The name of the stage in the deployment.</p>
@@ -139,3 +104,4 @@ impl ListStageDevicesFluentBuilder {
         self
     }
 }
+

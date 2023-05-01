@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRevisionInput {
+pub struct DeleteRevisionInput  {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteRevisionInput {
 }
 impl DeleteRevisionInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteRevisionInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input;
-        self
+        self.data_set_id = input; self
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteRevisionInputBuilder {
     }
     /// <p>The unique identifier for a revision.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input;
-        self
+        self.revision_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRevisionInput`](crate::operation::delete_revision::DeleteRevisionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_revision::DeleteRevisionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_revision::DeleteRevisionInput {
-            data_set_id: self.data_set_id,
-            revision_id: self.revision_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_revision::DeleteRevisionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_revision::DeleteRevisionInput {
+                data_set_id: self.data_set_id
+                ,
+                revision_id: self.revision_id
+                ,
+            }
+        )
     }
 }
+

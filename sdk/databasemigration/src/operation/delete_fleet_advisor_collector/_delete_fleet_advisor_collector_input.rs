@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetAdvisorCollectorInput {
+pub struct DeleteFleetAdvisorCollectorInput  {
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
     #[doc(hidden)]
     pub collector_referenced_id: std::option::Option<std::string::String>,
 }
 impl DeleteFleetAdvisorCollectorInput {
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
-    pub fn collector_referenced_id(&self) -> std::option::Option<&str> {
+    pub fn collector_referenced_id(&self) -> std::option::Option<& str> {
         self.collector_referenced_id.as_deref()
     }
 }
 impl DeleteFleetAdvisorCollectorInput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorCollectorInput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput).
-    pub fn builder() -> crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorInputBuilder{
+    pub fn builder() -> crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorInputBuilder {
         crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorInputBuilder::default()
     }
 }
@@ -33,24 +33,17 @@ impl DeleteFleetAdvisorCollectorInputBuilder {
         self
     }
     /// <p>The reference ID of the Fleet Advisor collector to delete.</p>
-    pub fn set_collector_referenced_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.collector_referenced_id = input;
-        self
+    pub fn set_collector_referenced_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.collector_referenced_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorCollectorInput`](crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorInput {
-                collector_referenced_id: self.collector_referenced_id,
-            },
+                collector_referenced_id: self.collector_referenced_id
+                ,
+            }
         )
     }
 }
+

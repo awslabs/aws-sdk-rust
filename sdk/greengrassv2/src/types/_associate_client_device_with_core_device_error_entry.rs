@@ -3,7 +3,7 @@
 /// <p>Contains an error that occurs from a request to associate a client device with a core device. The <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html">BatchAssociateClientDeviceWithCoreDevice</a> operation returns a list of these errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateClientDeviceWithCoreDeviceErrorEntry {
+pub struct AssociateClientDeviceWithCoreDeviceErrorEntry  {
     /// <p>The name of the IoT thing whose associate request failed.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct AssociateClientDeviceWithCoreDeviceErrorEntry {
 }
 impl AssociateClientDeviceWithCoreDeviceErrorEntry {
     /// <p>The name of the IoT thing whose associate request failed.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The error code for the request.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>A message that provides additional information about the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 impl AssociateClientDeviceWithCoreDeviceErrorEntry {
     /// Creates a new builder-style object to manufacture [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry).
-    pub fn builder() -> crate::types::builders::AssociateClientDeviceWithCoreDeviceErrorEntryBuilder
-    {
+    pub fn builder() -> crate::types::builders::AssociateClientDeviceWithCoreDeviceErrorEntryBuilder {
         crate::types::builders::AssociateClientDeviceWithCoreDeviceErrorEntryBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntryBuilder {
     }
     /// <p>The name of the IoT thing whose associate request failed.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The error code for the request.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntryBuilder {
     }
     /// <p>The error code for the request.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input;
-        self
+        self.code = input; self
     }
     /// <p>A message that provides additional information about the error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,15 +69,18 @@ impl AssociateClientDeviceWithCoreDeviceErrorEntryBuilder {
     }
     /// <p>A message that provides additional information about the error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`AssociateClientDeviceWithCoreDeviceErrorEntry`](crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry).
     pub fn build(self) -> crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry {
         crate::types::AssociateClientDeviceWithCoreDeviceErrorEntry {
-            thing_name: self.thing_name,
-            code: self.code,
-            message: self.message,
+            thing_name: self.thing_name
+            ,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

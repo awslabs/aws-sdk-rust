@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDiscovererInput {
+pub struct CreateDiscovererInput  {
     /// <p>A description for the discoverer.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -14,16 +14,15 @@ pub struct CreateDiscovererInput {
     pub cross_account: bool,
     /// <p>Tags associated with the resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDiscovererInput {
     /// <p>A description for the discoverer.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the event bus.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
@@ -31,17 +30,13 @@ impl CreateDiscovererInput {
         self.cross_account
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 impl CreateDiscovererInput {
     /// Creates a new builder-style object to manufacture [`CreateDiscovererInput`](crate::operation::create_discoverer::CreateDiscovererInput).
-    pub fn builder() -> crate::operation::create_discoverer::builders::CreateDiscovererInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_discoverer::builders::CreateDiscovererInputBuilder {
         crate::operation::create_discoverer::builders::CreateDiscovererInputBuilder::default()
     }
 }
@@ -53,8 +48,7 @@ pub struct CreateDiscovererInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) source_arn: std::option::Option<std::string::String>,
     pub(crate) cross_account: std::option::Option<bool>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDiscovererInputBuilder {
     /// <p>A description for the discoverer.</p>
@@ -64,8 +58,7 @@ impl CreateDiscovererInputBuilder {
     }
     /// <p>A description for the discoverer.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ARN of the event bus.</p>
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +67,7 @@ impl CreateDiscovererInputBuilder {
     }
     /// <p>The ARN of the event bus.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input;
-        self
+        self.source_arn = input; self
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
     pub fn cross_account(mut self, input: bool) -> Self {
@@ -84,46 +76,38 @@ impl CreateDiscovererInputBuilder {
     }
     /// <p>Support discovery of schemas in events sent to the bus from another account. (default: true).</p>
     pub fn set_cross_account(mut self, input: std::option::Option<bool>) -> Self {
-        self.cross_account = input;
-        self
+        self.cross_account = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the resource.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateDiscovererInput`](crate::operation::create_discoverer::CreateDiscovererInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_discoverer::CreateDiscovererInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_discoverer::CreateDiscovererInput {
-            description: self.description,
-            source_arn: self.source_arn,
-            cross_account: self.cross_account.unwrap_or_default(),
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_discoverer::CreateDiscovererInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_discoverer::CreateDiscovererInput {
+                description: self.description
+                ,
+                source_arn: self.source_arn
+                ,
+                cross_account: self.cross_account
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

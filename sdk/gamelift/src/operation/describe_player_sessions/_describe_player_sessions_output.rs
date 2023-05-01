@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlayerSessionsOutput {
+pub struct DescribePlayerSessionsOutput  {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
     #[doc(hidden)]
     pub player_sessions: std::option::Option<std::vec::Vec<crate::types::PlayerSession>>,
@@ -13,24 +13,22 @@ pub struct DescribePlayerSessionsOutput {
 }
 impl DescribePlayerSessionsOutput {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
-    pub fn player_sessions(&self) -> std::option::Option<&[crate::types::PlayerSession]> {
+    pub fn player_sessions(&self) -> std::option::Option<& [crate::types::PlayerSession]> {
         self.player_sessions.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePlayerSessionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribePlayerSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlayerSessionsOutput`](crate::operation::describe_player_sessions::DescribePlayerSessionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_player_sessions::builders::DescribePlayerSessionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_player_sessions::builders::DescribePlayerSessionsOutputBuilder {
         crate::operation::describe_player_sessions::builders::DescribePlayerSessionsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl DescribePlayerSessionsOutputBuilder {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
     pub fn player_sessions(mut self, input: crate::types::PlayerSession) -> Self {
         let mut v = self.player_sessions.unwrap_or_default();
-        v.push(input);
-        self.player_sessions = Some(v);
-        self
+                        v.push(input);
+                        self.player_sessions = Some(v);
+                        self
     }
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
-    pub fn set_player_sessions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlayerSession>>,
-    ) -> Self {
-        self.player_sessions = input;
-        self
+    pub fn set_player_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlayerSession>>) -> Self {
+        self.player_sessions = input; self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl DescribePlayerSessionsOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribePlayerSessionsOutput`](crate::operation::describe_player_sessions::DescribePlayerSessionsOutput).
     pub fn build(self) -> crate::operation::describe_player_sessions::DescribePlayerSessionsOutput {
         crate::operation::describe_player_sessions::DescribePlayerSessionsOutput {
-            player_sessions: self.player_sessions,
-            next_token: self.next_token,
+            player_sessions: self.player_sessions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

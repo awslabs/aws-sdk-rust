@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDeliveryStreamInput {
+pub struct DescribeDeliveryStreamInput  {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeDeliveryStreamInput {
 }
 impl DescribeDeliveryStreamInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
@@ -23,15 +23,13 @@ impl DescribeDeliveryStreamInput {
         self.limit
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    pub fn exclusive_start_destination_id(&self) -> std::option::Option<&str> {
+    pub fn exclusive_start_destination_id(&self) -> std::option::Option<& str> {
         self.exclusive_start_destination_id.as_deref()
     }
 }
 impl DescribeDeliveryStreamInput {
     /// Creates a new builder-style object to manufacture [`DescribeDeliveryStreamInput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput).
-    pub fn builder(
-    ) -> crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder {
         crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl DescribeDeliveryStreamInputBuilder {
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delivery_stream_name = input;
-        self
+    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delivery_stream_name = input; self
     }
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,8 +59,7 @@ impl DescribeDeliveryStreamInputBuilder {
     }
     /// <p>The limit on the number of destinations to return. You can have one destination per delivery stream.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
     pub fn exclusive_start_destination_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,26 +67,21 @@ impl DescribeDeliveryStreamInputBuilder {
         self
     }
     /// <p>The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one destination per delivery stream.</p>
-    pub fn set_exclusive_start_destination_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.exclusive_start_destination_id = input;
-        self
+    pub fn set_exclusive_start_destination_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.exclusive_start_destination_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDeliveryStreamInput`](crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_delivery_stream::DescribeDeliveryStreamInput {
-                delivery_stream_name: self.delivery_stream_name,
-                limit: self.limit,
-                exclusive_start_destination_id: self.exclusive_start_destination_id,
-            },
+                delivery_stream_name: self.delivery_stream_name
+                ,
+                limit: self.limit
+                ,
+                exclusive_start_destination_id: self.exclusive_start_destination_id
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Information about an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionSummary {
+pub struct ActionSummary  {
     /// <p>The action type.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::types::ActionType>,
 }
 impl ActionSummary {
     /// <p>The action type.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::types::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::types::ActionType> {
         self.action_type.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl ActionSummaryBuilder {
     }
     /// <p>The action type.</p>
     pub fn set_action_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input;
-        self
+        self.action_type = input; self
     }
     /// Consumes the builder and constructs a [`ActionSummary`](crate::types::ActionSummary).
     pub fn build(self) -> crate::types::ActionSummary {
         crate::types::ActionSummary {
-            action_type: self.action_type,
+            action_type: self.action_type
+            ,
         }
     }
 }
+

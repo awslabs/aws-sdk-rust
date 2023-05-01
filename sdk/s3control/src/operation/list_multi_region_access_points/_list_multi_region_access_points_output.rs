@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMultiRegionAccessPointsOutput {
+pub struct ListMultiRegionAccessPointsOutput  {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
     #[doc(hidden)]
-    pub access_points:
-        std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
+    pub access_points: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListMultiRegionAccessPointsOutput {
 }
 impl ListMultiRegionAccessPointsOutput {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
-    pub fn access_points(
-        &self,
-    ) -> std::option::Option<&[crate::types::MultiRegionAccessPointReport]> {
+    pub fn access_points(&self) -> std::option::Option<& [crate::types::MultiRegionAccessPointReport]> {
         self.access_points.as_deref()
     }
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMultiRegionAccessPointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListMultiRegionAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`ListMultiRegionAccessPointsOutput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput).
-    pub fn builder() -> crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsOutputBuilder{
+    pub fn builder() -> crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsOutputBuilder {
         crate::operation::list_multi_region_access_points::builders::ListMultiRegionAccessPointsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListMultiRegionAccessPointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListMultiRegionAccessPointsOutputBuilder {
-    pub(crate) access_points:
-        std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
+    pub(crate) access_points: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl ListMultiRegionAccessPointsOutputBuilder {
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
     pub fn access_points(mut self, input: crate::types::MultiRegionAccessPointReport) -> Self {
         let mut v = self.access_points.unwrap_or_default();
-        v.push(input);
-        self.access_points = Some(v);
-        self
+                        v.push(input);
+                        self.access_points = Some(v);
+                        self
     }
     /// <p>The list of Multi-Region Access Points associated with the user.</p>
-    pub fn set_access_points(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointReport>>,
-    ) -> Self {
-        self.access_points = input;
-        self
+    pub fn set_access_points(mut self, input: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointReport>>) -> Self {
+        self.access_points = input; self
     }
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl ListMultiRegionAccessPointsOutputBuilder {
     }
     /// <p>If the specified bucket has more Multi-Region Access Points than can be returned in one call to this action, this field contains a continuation token. You can use this token tin subsequent calls to this action to retrieve additional Multi-Region Access Points.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListMultiRegionAccessPointsOutput`](crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput {
+    pub fn build(self) -> crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput {
         crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput {
-            access_points: self.access_points,
-            next_token: self.next_token,
+            access_points: self.access_points
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

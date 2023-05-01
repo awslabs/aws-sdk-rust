@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDevicesInput {
+pub struct SearchDevicesInput  {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct SearchDevicesInput {
 }
 impl SearchDevicesInput {
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -26,11 +26,11 @@ impl SearchDevicesInput {
         self.max_results
     }
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<&[crate::types::Sort]> {
+    pub fn sort_criteria(&self) -> std::option::Option<& [crate::types::Sort]> {
         self.sort_criteria.as_deref()
     }
 }
@@ -58,8 +58,7 @@ impl SearchDevicesInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,8 +67,7 @@ impl SearchDevicesInputBuilder {
     }
     /// <p>The maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -78,17 +76,13 @@ impl SearchDevicesInputBuilder {
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// Appends an item to `sort_criteria`.
     ///
@@ -97,30 +91,28 @@ impl SearchDevicesInputBuilder {
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
     pub fn sort_criteria(mut self, input: crate::types::Sort) -> Self {
         let mut v = self.sort_criteria.unwrap_or_default();
-        v.push(input);
-        self.sort_criteria = Some(v);
-        self
+                        v.push(input);
+                        self.sort_criteria = Some(v);
+                        self
     }
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Sort>>,
-    ) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::types::Sort>>) -> Self {
+        self.sort_criteria = input; self
     }
     /// Consumes the builder and constructs a [`SearchDevicesInput`](crate::operation::search_devices::SearchDevicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_devices::SearchDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::search_devices::SearchDevicesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            filters: self.filters,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> Result<crate::operation::search_devices::SearchDevicesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::search_devices::SearchDevicesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filters: self.filters
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

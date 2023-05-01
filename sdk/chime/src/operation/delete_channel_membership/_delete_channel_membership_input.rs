@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelMembershipInput {
+pub struct DeleteChannelMembershipInput  {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct DeleteChannelMembershipInput {
 }
 impl DeleteChannelMembershipInput {
     /// <p>The ARN of the channel from which you want to remove the user.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the member that you're removing from the channel.</p>
-    pub fn member_arn(&self) -> std::option::Option<&str> {
+    pub fn member_arn(&self) -> std::option::Option<& str> {
         self.member_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<&str> {
+    pub fn chime_bearer(&self) -> std::option::Option<& str> {
         self.chime_bearer.as_deref()
     }
 }
 impl DeleteChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
-    pub fn builder(
-    ) -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder {
         crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl DeleteChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the channel from which you want to remove the user.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN of the member that you're removing from the channel.</p>
     pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +59,7 @@ impl DeleteChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the member that you're removing from the channel.</p>
     pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_arn = input;
-        self
+        self.member_arn = input; self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +68,20 @@ impl DeleteChannelMembershipInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input;
-        self
+        self.chime_bearer = input; self
     }
     /// Consumes the builder and constructs a [`DeleteChannelMembershipInput`](crate::operation::delete_channel_membership::DeleteChannelMembershipInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_channel_membership::DeleteChannelMembershipInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_channel_membership::DeleteChannelMembershipInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_channel_membership::DeleteChannelMembershipInput {
-                channel_arn: self.channel_arn,
-                member_arn: self.member_arn,
-                chime_bearer: self.chime_bearer,
-            },
+                channel_arn: self.channel_arn
+                ,
+                member_arn: self.member_arn
+                ,
+                chime_bearer: self.chime_bearer
+                ,
+            }
         )
     }
 }
+

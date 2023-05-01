@@ -3,7 +3,7 @@
 /// <p>Identifies a Amazon Cognito user group. A user group can be used in on or more work teams.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CognitoMemberDefinition {
+pub struct CognitoMemberDefinition  {
     /// <p>An identifier for a user pool. The user pool must be in the same region as the service that you are calling.</p>
     #[doc(hidden)]
     pub user_pool: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CognitoMemberDefinition {
 }
 impl CognitoMemberDefinition {
     /// <p>An identifier for a user pool. The user pool must be in the same region as the service that you are calling.</p>
-    pub fn user_pool(&self) -> std::option::Option<&str> {
+    pub fn user_pool(&self) -> std::option::Option<& str> {
         self.user_pool.as_deref()
     }
     /// <p>An identifier for a user group.</p>
-    pub fn user_group(&self) -> std::option::Option<&str> {
+    pub fn user_group(&self) -> std::option::Option<& str> {
         self.user_group.as_deref()
     }
     /// <p>An identifier for an application client. You must create the app client ID using Amazon Cognito.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl CognitoMemberDefinitionBuilder {
     }
     /// <p>An identifier for a user pool. The user pool must be in the same region as the service that you are calling.</p>
     pub fn set_user_pool(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool = input;
-        self
+        self.user_pool = input; self
     }
     /// <p>An identifier for a user group.</p>
     pub fn user_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl CognitoMemberDefinitionBuilder {
     }
     /// <p>An identifier for a user group.</p>
     pub fn set_user_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_group = input;
-        self
+        self.user_group = input; self
     }
     /// <p>An identifier for an application client. You must create the app client ID using Amazon Cognito.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl CognitoMemberDefinitionBuilder {
     }
     /// <p>An identifier for an application client. You must create the app client ID using Amazon Cognito.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Consumes the builder and constructs a [`CognitoMemberDefinition`](crate::types::CognitoMemberDefinition).
     pub fn build(self) -> crate::types::CognitoMemberDefinition {
         crate::types::CognitoMemberDefinition {
-            user_pool: self.user_pool,
-            user_group: self.user_group,
-            client_id: self.client_id,
+            user_pool: self.user_pool
+            ,
+            user_group: self.user_group
+            ,
+            client_id: self.client_id
+            ,
         }
     }
 }
+

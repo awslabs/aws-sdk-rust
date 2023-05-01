@@ -3,7 +3,7 @@
 /// <p>The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelElasticsearchServiceSoftwareUpdateOutput {
+pub struct CancelElasticsearchServiceSoftwareUpdateOutput  {
     /// <p>The current status of the Elasticsearch service software update.</p>
     #[doc(hidden)]
     pub service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
@@ -11,20 +11,18 @@ pub struct CancelElasticsearchServiceSoftwareUpdateOutput {
 }
 impl CancelElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
-    pub fn service_software_options(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceSoftwareOptions> {
+    pub fn service_software_options(&self) -> std::option::Option<& crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelElasticsearchServiceSoftwareUpdateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelElasticsearchServiceSoftwareUpdateOutput {
     /// Creates a new builder-style object to manufacture [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput).
-    pub fn builder() -> crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateOutputBuilder {
         crate::operation::cancel_elasticsearch_service_software_update::builders::CancelElasticsearchServiceSoftwareUpdateOutputBuilder::default()
     }
 }
@@ -43,24 +41,20 @@ impl CancelElasticsearchServiceSoftwareUpdateOutputBuilder {
         self
     }
     /// <p>The current status of the Elasticsearch service software update.</p>
-    pub fn set_service_software_options(
-        mut self,
-        input: std::option::Option<crate::types::ServiceSoftwareOptions>,
-    ) -> Self {
-        self.service_software_options = input;
-        self
+    pub fn set_service_software_options(mut self, input: std::option::Option<crate::types::ServiceSoftwareOptions>) -> Self {
+        self.service_software_options = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput).
-    pub fn build(self) -> crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput{
+    pub fn build(self) -> crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput {
         crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput {
             service_software_options: self.service_software_options
             ,
@@ -68,3 +62,4 @@ impl CancelElasticsearchServiceSoftwareUpdateOutputBuilder {
         }
     }
 }
+

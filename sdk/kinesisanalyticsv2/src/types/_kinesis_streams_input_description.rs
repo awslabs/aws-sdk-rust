@@ -3,25 +3,25 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the Kinesis data stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisStreamsInputDescription {
+pub struct KinesisStreamsInputDescription  {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInputDescription {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
 }
@@ -47,28 +47,29 @@ impl KinesisStreamsInputDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note>
-    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p>
+    /// <p>The ARN of the IAM role that Kinesis Data Analytics can assume to access the stream.</p> <note> 
+    /// <p>Provided for backward compatibility. Applications that are created with the current API version have an application-level service execution role rather than a resource-level role.</p> 
     /// </note>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Consumes the builder and constructs a [`KinesisStreamsInputDescription`](crate::types::KinesisStreamsInputDescription).
     pub fn build(self) -> crate::types::KinesisStreamsInputDescription {
         crate::types::KinesisStreamsInputDescription {
-            resource_arn: self.resource_arn,
-            role_arn: self.role_arn,
+            resource_arn: self.resource_arn
+            ,
+            role_arn: self.role_arn
+            ,
         }
     }
 }
+

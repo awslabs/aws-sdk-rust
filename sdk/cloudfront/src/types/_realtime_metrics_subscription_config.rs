@@ -3,17 +3,14 @@
 /// <p>A subscription configuration for additional CloudWatch metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RealtimeMetricsSubscriptionConfig {
+pub struct RealtimeMetricsSubscriptionConfig  {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     #[doc(hidden)]
-    pub realtime_metrics_subscription_status:
-        std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
+    pub realtime_metrics_subscription_status: std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
 }
 impl RealtimeMetricsSubscriptionConfig {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn realtime_metrics_subscription_status(
-        &self,
-    ) -> std::option::Option<&crate::types::RealtimeMetricsSubscriptionStatus> {
+    pub fn realtime_metrics_subscription_status(&self) -> std::option::Option<& crate::types::RealtimeMetricsSubscriptionStatus> {
         self.realtime_metrics_subscription_status.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl RealtimeMetricsSubscriptionConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RealtimeMetricsSubscriptionConfigBuilder {
-    pub(crate) realtime_metrics_subscription_status:
-        std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
+    pub(crate) realtime_metrics_subscription_status: std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
 }
 impl RealtimeMetricsSubscriptionConfigBuilder {
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn realtime_metrics_subscription_status(
-        mut self,
-        input: crate::types::RealtimeMetricsSubscriptionStatus,
-    ) -> Self {
+    pub fn realtime_metrics_subscription_status(mut self, input: crate::types::RealtimeMetricsSubscriptionStatus) -> Self {
         self.realtime_metrics_subscription_status = Some(input);
         self
     }
     /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
-    pub fn set_realtime_metrics_subscription_status(
-        mut self,
-        input: std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>,
-    ) -> Self {
-        self.realtime_metrics_subscription_status = input;
-        self
+    pub fn set_realtime_metrics_subscription_status(mut self, input: std::option::Option<crate::types::RealtimeMetricsSubscriptionStatus>) -> Self {
+        self.realtime_metrics_subscription_status = input; self
     }
     /// Consumes the builder and constructs a [`RealtimeMetricsSubscriptionConfig`](crate::types::RealtimeMetricsSubscriptionConfig).
     pub fn build(self) -> crate::types::RealtimeMetricsSubscriptionConfig {
         crate::types::RealtimeMetricsSubscriptionConfig {
-            realtime_metrics_subscription_status: self.realtime_metrics_subscription_status,
+            realtime_metrics_subscription_status: self.realtime_metrics_subscription_status
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Compatibility information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Compatibility {
+pub struct Compatibility  {
     /// <p>The supported Kubernetes version of the cluster.</p>
     #[doc(hidden)]
     pub cluster_version: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct Compatibility {
 }
 impl Compatibility {
     /// <p>The supported Kubernetes version of the cluster.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> std::option::Option<& str> {
         self.cluster_version.as_deref()
     }
     /// <p>The supported compute platform.</p>
-    pub fn platform_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn platform_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.platform_versions.as_deref()
     }
     /// <p>The supported default version.</p>
@@ -51,8 +51,7 @@ impl CompatibilityBuilder {
     }
     /// <p>The supported Kubernetes version of the cluster.</p>
     pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_version = input;
-        self
+        self.cluster_version = input; self
     }
     /// Appends an item to `platform_versions`.
     ///
@@ -61,17 +60,13 @@ impl CompatibilityBuilder {
     /// <p>The supported compute platform.</p>
     pub fn platform_versions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.platform_versions.unwrap_or_default();
-        v.push(input.into());
-        self.platform_versions = Some(v);
-        self
+                        v.push(input.into());
+                        self.platform_versions = Some(v);
+                        self
     }
     /// <p>The supported compute platform.</p>
-    pub fn set_platform_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.platform_versions = input;
-        self
+    pub fn set_platform_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.platform_versions = input; self
     }
     /// <p>The supported default version.</p>
     pub fn default_version(mut self, input: bool) -> Self {
@@ -80,15 +75,19 @@ impl CompatibilityBuilder {
     }
     /// <p>The supported default version.</p>
     pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_version = input;
-        self
+        self.default_version = input; self
     }
     /// Consumes the builder and constructs a [`Compatibility`](crate::types::Compatibility).
     pub fn build(self) -> crate::types::Compatibility {
         crate::types::Compatibility {
-            cluster_version: self.cluster_version,
-            platform_versions: self.platform_versions,
-            default_version: self.default_version.unwrap_or_default(),
+            cluster_version: self.cluster_version
+            ,
+            platform_versions: self.platform_versions
+            ,
+            default_version: self.default_version
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

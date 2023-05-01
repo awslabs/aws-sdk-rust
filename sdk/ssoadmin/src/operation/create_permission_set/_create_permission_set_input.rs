@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePermissionSetInput {
+pub struct CreatePermissionSetInput  {
     /// <p>The name of the <code>PermissionSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -24,36 +24,34 @@ pub struct CreatePermissionSetInput {
 }
 impl CreatePermissionSetInput {
     /// <p>The name of the <code>PermissionSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the <code>PermissionSet</code>.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> std::option::Option<& str> {
         self.instance_arn.as_deref()
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
-    pub fn session_duration(&self) -> std::option::Option<&str> {
+    pub fn session_duration(&self) -> std::option::Option<& str> {
         self.session_duration.as_deref()
     }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
-    pub fn relay_state(&self) -> std::option::Option<&str> {
+    pub fn relay_state(&self) -> std::option::Option<& str> {
         self.relay_state.as_deref()
     }
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreatePermissionSetInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
-    pub fn builder(
-    ) -> crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder {
-        crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder {
+        crate::operation::create_permission_set::builders::CreatePermissionSetInputBuilder::default()
     }
 }
 
@@ -76,8 +74,7 @@ impl CreatePermissionSetInputBuilder {
     }
     /// <p>The name of the <code>PermissionSet</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The description of the <code>PermissionSet</code>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +83,7 @@ impl CreatePermissionSetInputBuilder {
     }
     /// <p>The description of the <code>PermissionSet</code>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +92,7 @@ impl CreatePermissionSetInputBuilder {
     }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_arn = input;
-        self
+        self.instance_arn = input; self
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
     pub fn session_duration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +101,7 @@ impl CreatePermissionSetInputBuilder {
     }
     /// <p>The length of time that the application user sessions are valid in the ISO-8601 standard.</p>
     pub fn set_session_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_duration = input;
-        self
+        self.session_duration = input; self
     }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
     pub fn relay_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +110,7 @@ impl CreatePermissionSetInputBuilder {
     }
     /// <p>Used to redirect users within the application during the federation authentication process.</p>
     pub fn set_relay_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.relay_state = input;
-        self
+        self.relay_state = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -126,34 +119,32 @@ impl CreatePermissionSetInputBuilder {
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags to attach to the new <code>PermissionSet</code>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreatePermissionSetInput`](crate::operation::create_permission_set::CreatePermissionSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_permission_set::CreatePermissionSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_permission_set::CreatePermissionSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_permission_set::CreatePermissionSetInput {
-                name: self.name,
-                description: self.description,
-                instance_arn: self.instance_arn,
-                session_duration: self.session_duration,
-                relay_state: self.relay_state,
-                tags: self.tags,
-            },
+                name: self.name
+                ,
+                description: self.description
+                ,
+                instance_arn: self.instance_arn
+                ,
+                session_duration: self.session_duration
+                ,
+                relay_state: self.relay_state
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
+

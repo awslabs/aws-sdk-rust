@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationOutput {
+pub struct DescribeApplicationOutput  {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
     #[doc(hidden)]
     pub application_detail: std::option::Option<crate::types::ApplicationDetail>,
@@ -10,21 +10,19 @@ pub struct DescribeApplicationOutput {
 }
 impl DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::types::ApplicationDetail> {
+    pub fn application_detail(&self) -> std::option::Option<& crate::types::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeApplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
-        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
+        crate::operation::describe_application::builders::DescribeApplicationOutputBuilder::default()
     }
 }
 
@@ -42,27 +40,25 @@ impl DescribeApplicationOutputBuilder {
         self
     }
     /// <p>Provides a description of the application, such as the application's Amazon Resource Name (ARN), status, and latest version.</p>
-    pub fn set_application_detail(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationDetail>,
-    ) -> Self {
-        self.application_detail = input;
-        self
+    pub fn set_application_detail(mut self, input: std::option::Option<crate::types::ApplicationDetail>) -> Self {
+        self.application_detail = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::operation::describe_application::DescribeApplicationOutput).
     pub fn build(self) -> crate::operation::describe_application::DescribeApplicationOutput {
         crate::operation::describe_application::DescribeApplicationOutput {
-            application_detail: self.application_detail,
+            application_detail: self.application_detail
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

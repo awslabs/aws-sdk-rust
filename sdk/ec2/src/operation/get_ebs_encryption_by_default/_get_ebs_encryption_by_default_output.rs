@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEbsEncryptionByDefaultOutput {
+pub struct GetEbsEncryptionByDefaultOutput  {
     /// <p>Indicates whether encryption by default is enabled.</p>
     #[doc(hidden)]
     pub ebs_encryption_by_default: std::option::Option<bool>,
@@ -15,13 +15,13 @@ impl GetEbsEncryptionByDefaultOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetEbsEncryptionByDefaultOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetEbsEncryptionByDefaultOutput {
     /// Creates a new builder-style object to manufacture [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
-    pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder{
+    pub fn builder() -> crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder {
         crate::operation::get_ebs_encryption_by_default::builders::GetEbsEncryptionByDefaultOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl GetEbsEncryptionByDefaultOutputBuilder {
     }
     /// <p>Indicates whether encryption by default is enabled.</p>
     pub fn set_ebs_encryption_by_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.ebs_encryption_by_default = input;
-        self
+        self.ebs_encryption_by_default = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetEbsEncryptionByDefaultOutput`](crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
+    pub fn build(self) -> crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
         crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput {
-            ebs_encryption_by_default: self.ebs_encryption_by_default,
+            ebs_encryption_by_default: self.ebs_encryption_by_default
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

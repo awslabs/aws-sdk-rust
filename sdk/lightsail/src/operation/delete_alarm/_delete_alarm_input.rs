@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlarmInput {
+pub struct DeleteAlarmInput  {
     /// <p>The name of the alarm to delete.</p>
     #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
 }
 impl DeleteAlarmInput {
     /// <p>The name of the alarm to delete.</p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteAlarmInputBuilder {
     }
     /// <p>The name of the alarm to delete.</p>
     pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_name = input;
-        self
+        self.alarm_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAlarmInput`](crate::operation::delete_alarm::DeleteAlarmInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_alarm::DeleteAlarmInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_alarm::DeleteAlarmInput {
-            alarm_name: self.alarm_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_alarm::DeleteAlarmInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_alarm::DeleteAlarmInput {
+                alarm_name: self.alarm_name
+                ,
+            }
+        )
     }
 }
+

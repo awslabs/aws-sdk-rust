@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportEcsServiceRecommendationsOutput {
-    /// <p> The identification number of the export job. </p>
+pub struct ExportEcsServiceRecommendationsOutput  {
+    /// <p> The identification number of the export job. </p> 
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,24 +13,24 @@ pub struct ExportEcsServiceRecommendationsOutput {
     _request_id: Option<String>,
 }
 impl ExportEcsServiceRecommendationsOutput {
-    /// <p> The identification number of the export job. </p>
+    /// <p> The identification number of the export job. </p> 
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
-    pub fn s3_destination(&self) -> std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> std::option::Option<& crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ExportEcsServiceRecommendationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ExportEcsServiceRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ExportEcsServiceRecommendationsOutput`](crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput).
-    pub fn builder() -> crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsOutputBuilder{
+    pub fn builder() -> crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsOutputBuilder {
         crate::operation::export_ecs_service_recommendations::builders::ExportEcsServiceRecommendationsOutputBuilder::default()
     }
 }
@@ -44,17 +44,16 @@ pub struct ExportEcsServiceRecommendationsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ExportEcsServiceRecommendationsOutputBuilder {
-    /// <p> The identification number of the export job. </p>
+    /// <p> The identification number of the export job. </p> 
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.job_id = Some(input.into());
         self
     }
-    /// <p> The identification number of the export job. </p>
+    /// <p> The identification number of the export job. </p> 
     /// <p>To view the status of an export job, use the <code>DescribeRecommendationExportJobs</code> action and specify the job ID. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
@@ -62,27 +61,20 @@ impl ExportEcsServiceRecommendationsOutputBuilder {
         self
     }
     /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
-    pub fn set_s3_destination(
-        mut self,
-        input: std::option::Option<crate::types::S3Destination>,
-    ) -> Self {
-        self.s3_destination = input;
-        self
+    pub fn set_s3_destination(mut self, input: std::option::Option<crate::types::S3Destination>) -> Self {
+        self.s3_destination = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ExportEcsServiceRecommendationsOutput`](crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput
-    {
+    pub fn build(self) -> crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput {
         crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput {
             job_id: self.job_id
             ,
@@ -92,3 +84,4 @@ impl ExportEcsServiceRecommendationsOutputBuilder {
         }
     }
 }
+

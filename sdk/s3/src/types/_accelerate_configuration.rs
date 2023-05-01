@@ -3,14 +3,14 @@
 /// <p>Configures the transfer acceleration state for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Amazon S3 Transfer Acceleration</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccelerateConfiguration {
+pub struct AccelerateConfiguration  {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::BucketAccelerateStatus>,
 }
 impl AccelerateConfiguration {
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::BucketAccelerateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::BucketAccelerateStatus> {
         self.status.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl AccelerateConfigurationBuilder {
         self
     }
     /// <p>Specifies the transfer acceleration status of the bucket.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::BucketAccelerateStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::BucketAccelerateStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`AccelerateConfiguration`](crate::types::AccelerateConfiguration).
     pub fn build(self) -> crate::types::AccelerateConfiguration {
         crate::types::AccelerateConfiguration {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

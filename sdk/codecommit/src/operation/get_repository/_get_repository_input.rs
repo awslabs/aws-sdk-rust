@@ -3,14 +3,14 @@
 /// <p>Represents the input of a get repository operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRepositoryInput {
+pub struct GetRepositoryInput  {
     /// <p>The name of the repository to get information about.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl GetRepositoryInput {
     /// <p>The name of the repository to get information about.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl GetRepositoryInputBuilder {
     }
     /// <p>The name of the repository to get information about.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// Consumes the builder and constructs a [`GetRepositoryInput`](crate::operation::get_repository::GetRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_repository::GetRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_repository::GetRepositoryInput {
-            repository_name: self.repository_name,
-        })
+    pub fn build(self) -> Result<crate::operation::get_repository::GetRepositoryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_repository::GetRepositoryInput {
+                repository_name: self.repository_name
+                ,
+            }
+        )
     }
 }
+

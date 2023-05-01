@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MergeBranchesByFastForwardInput {
+pub struct MergeBranchesByFastForwardInput  {
     /// <p>The name of the repository where you want to merge two branches.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct MergeBranchesByFastForwardInput {
 }
 impl MergeBranchesByFastForwardInput {
     /// <p>The name of the repository where you want to merge two branches.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn source_commit_specifier(&self) -> std::option::Option<&str> {
+    pub fn source_commit_specifier(&self) -> std::option::Option<& str> {
         self.source_commit_specifier.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn destination_commit_specifier(&self) -> std::option::Option<&str> {
+    pub fn destination_commit_specifier(&self) -> std::option::Option<& str> {
         self.destination_commit_specifier.as_deref()
     }
     /// <p>The branch where the merge is applied.</p>
-    pub fn target_branch(&self) -> std::option::Option<&str> {
+    pub fn target_branch(&self) -> std::option::Option<& str> {
         self.target_branch.as_deref()
     }
 }
 impl MergeBranchesByFastForwardInput {
     /// Creates a new builder-style object to manufacture [`MergeBranchesByFastForwardInput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput).
-    pub fn builder() -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder{
+    pub fn builder() -> crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder {
         crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl MergeBranchesByFastForwardInputBuilder {
     }
     /// <p>The name of the repository where you want to merge two branches.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,12 +66,8 @@ impl MergeBranchesByFastForwardInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_source_commit_specifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_commit_specifier = input;
-        self
+    pub fn set_source_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_commit_specifier = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
     pub fn destination_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,12 +75,8 @@ impl MergeBranchesByFastForwardInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_destination_commit_specifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_commit_specifier = input;
-        self
+    pub fn set_destination_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_commit_specifier = input; self
     }
     /// <p>The branch where the merge is applied.</p>
     pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,23 +85,22 @@ impl MergeBranchesByFastForwardInputBuilder {
     }
     /// <p>The branch where the merge is applied.</p>
     pub fn set_target_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_branch = input;
-        self
+        self.target_branch = input; self
     }
     /// Consumes the builder and constructs a [`MergeBranchesByFastForwardInput`](crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardInput {
-                repository_name: self.repository_name,
-                source_commit_specifier: self.source_commit_specifier,
-                destination_commit_specifier: self.destination_commit_specifier,
-                target_branch: self.target_branch,
-            },
+                repository_name: self.repository_name
+                ,
+                source_commit_specifier: self.source_commit_specifier
+                ,
+                destination_commit_specifier: self.destination_commit_specifier
+                ,
+                target_branch: self.target_branch
+                ,
+            }
         )
     }
 }
+

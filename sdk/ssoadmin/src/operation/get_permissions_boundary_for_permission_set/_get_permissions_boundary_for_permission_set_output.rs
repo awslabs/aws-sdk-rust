@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPermissionsBoundaryForPermissionSetOutput {
+pub struct GetPermissionsBoundaryForPermissionSetOutput  {
     /// <p>The permissions boundary attached to the specified permission set.</p>
     #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::types::PermissionsBoundary>,
@@ -10,18 +10,18 @@ pub struct GetPermissionsBoundaryForPermissionSetOutput {
 }
 impl GetPermissionsBoundaryForPermissionSetOutput {
     /// <p>The permissions boundary attached to the specified permission set.</p>
-    pub fn permissions_boundary(&self) -> std::option::Option<&crate::types::PermissionsBoundary> {
+    pub fn permissions_boundary(&self) -> std::option::Option<& crate::types::PermissionsBoundary> {
         self.permissions_boundary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPermissionsBoundaryForPermissionSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetPermissionsBoundaryForPermissionSetOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput).
-    pub fn builder() -> crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetOutputBuilder{
+    pub fn builder() -> crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetOutputBuilder {
         crate::operation::get_permissions_boundary_for_permission_set::builders::GetPermissionsBoundaryForPermissionSetOutputBuilder::default()
     }
 }
@@ -40,24 +40,20 @@ impl GetPermissionsBoundaryForPermissionSetOutputBuilder {
         self
     }
     /// <p>The permissions boundary attached to the specified permission set.</p>
-    pub fn set_permissions_boundary(
-        mut self,
-        input: std::option::Option<crate::types::PermissionsBoundary>,
-    ) -> Self {
-        self.permissions_boundary = input;
-        self
+    pub fn set_permissions_boundary(mut self, input: std::option::Option<crate::types::PermissionsBoundary>) -> Self {
+        self.permissions_boundary = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetOutput`](crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput).
-    pub fn build(self) -> crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput{
+    pub fn build(self) -> crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput {
         crate::operation::get_permissions_boundary_for_permission_set::GetPermissionsBoundaryForPermissionSetOutput {
             permissions_boundary: self.permissions_boundary
             ,
@@ -65,3 +61,4 @@ impl GetPermissionsBoundaryForPermissionSetOutputBuilder {
         }
     }
 }
+

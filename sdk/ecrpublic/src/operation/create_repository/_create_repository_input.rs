@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRepositoryInput {
+pub struct CreateRepositoryInput  {
     /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct CreateRepositoryInput {
 }
 impl CreateRepositoryInput {
     /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn catalog_data(&self) -> std::option::Option<&crate::types::RepositoryCatalogDataInput> {
+    pub fn catalog_data(&self) -> std::option::Option<& crate::types::RepositoryCatalogDataInput> {
         self.catalog_data.as_ref()
     }
     /// <p>The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateRepositoryInput {
     /// Creates a new builder-style object to manufacture [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_repository::builders::CreateRepositoryInputBuilder {
         crate::operation::create_repository::builders::CreateRepositoryInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl CreateRepositoryInputBuilder {
     }
     /// <p>The name to use for the repository. This appears publicly in the Amazon ECR Public Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>) or prepended with a namespace to group the repository into a category (for example <code>project-a/nginx-web-app</code>).</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
     pub fn catalog_data(mut self, input: crate::types::RepositoryCatalogDataInput) -> Self {
@@ -60,12 +58,8 @@ impl CreateRepositoryInputBuilder {
         self
     }
     /// <p>The details about the repository that are publicly visible in the Amazon ECR Public Gallery.</p>
-    pub fn set_catalog_data(
-        mut self,
-        input: std::option::Option<crate::types::RepositoryCatalogDataInput>,
-    ) -> Self {
-        self.catalog_data = input;
-        self
+    pub fn set_catalog_data(mut self, input: std::option::Option<crate::types::RepositoryCatalogDataInput>) -> Self {
+        self.catalog_data = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -74,29 +68,26 @@ impl CreateRepositoryInputBuilder {
     /// <p>The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The metadata that you apply to each repository to help categorize and organize your repositories. Each tag consists of a key and an optional value. You define both of them. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateRepositoryInput`](crate::operation::create_repository::CreateRepositoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_repository::CreateRepositoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_repository::CreateRepositoryInput {
-            repository_name: self.repository_name,
-            catalog_data: self.catalog_data,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_repository::CreateRepositoryInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_repository::CreateRepositoryInput {
+                repository_name: self.repository_name
+                ,
+                catalog_data: self.catalog_data
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

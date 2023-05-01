@@ -3,14 +3,14 @@
 /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PathFormat {
+pub struct PathFormat  {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     #[doc(hidden)]
     pub object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    pub fn object_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_prefixes(&self) -> std::option::Option<& [std::string::String]> {
         self.object_prefixes.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl PathFormatBuilder {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     pub fn object_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.object_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.object_prefixes = Some(v);
-        self
+                        v.push(input.into());
+                        self.object_prefixes = Some(v);
+                        self
     }
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    pub fn set_object_prefixes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.object_prefixes = input;
-        self
+    pub fn set_object_prefixes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.object_prefixes = input; self
     }
     /// Consumes the builder and constructs a [`PathFormat`](crate::types::PathFormat).
     pub fn build(self) -> crate::types::PathFormat {
         crate::types::PathFormat {
-            object_prefixes: self.object_prefixes,
+            object_prefixes: self.object_prefixes
+            ,
         }
     }
 }
+

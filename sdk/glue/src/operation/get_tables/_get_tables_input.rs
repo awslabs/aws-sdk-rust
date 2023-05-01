@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTablesInput {
+pub struct GetTablesInput  {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -27,19 +27,19 @@ pub struct GetTablesInput {
 }
 impl GetTablesInput {
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in a single response.</p>
@@ -47,11 +47,11 @@ impl GetTablesInput {
         self.max_results
     }
     /// <p>The transaction ID at which to read the table contents.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn query_as_of_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn query_as_of_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.query_as_of_time.as_ref()
     }
 }
@@ -82,8 +82,7 @@ impl GetTablesInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +91,7 @@ impl GetTablesInputBuilder {
     }
     /// <p>The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +100,7 @@ impl GetTablesInputBuilder {
     }
     /// <p>A regular expression pattern. If present, only those tables whose names match the pattern are returned.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +109,7 @@ impl GetTablesInputBuilder {
     }
     /// <p>A continuation token, included if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -122,8 +118,7 @@ impl GetTablesInputBuilder {
     }
     /// <p>The maximum number of tables to return in a single response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The transaction ID at which to read the table contents.</p>
     pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +127,7 @@ impl GetTablesInputBuilder {
     }
     /// <p>The transaction ID at which to read the table contents.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input;
-        self
+        self.transaction_id = input; self
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,28 +135,29 @@ impl GetTablesInputBuilder {
         self
     }
     /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn set_query_as_of_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.query_as_of_time = input;
-        self
+    pub fn set_query_as_of_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.query_as_of_time = input; self
     }
     /// Consumes the builder and constructs a [`GetTablesInput`](crate::operation::get_tables::GetTablesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_tables::GetTablesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_tables::GetTablesInput {
-            catalog_id: self.catalog_id,
-            database_name: self.database_name,
-            expression: self.expression,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            transaction_id: self.transaction_id,
-            query_as_of_time: self.query_as_of_time,
-        })
+    pub fn build(self) -> Result<crate::operation::get_tables::GetTablesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_tables::GetTablesInput {
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                expression: self.expression
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                transaction_id: self.transaction_id
+                ,
+                query_as_of_time: self.query_as_of_time
+                ,
+            }
+        )
     }
 }
+

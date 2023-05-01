@@ -3,14 +3,14 @@
 /// <p>A complex type that contains information about the CIDR location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocationSummary {
+pub struct LocationSummary  {
     /// <p>A string that specifies a location name.</p>
     #[doc(hidden)]
     pub location_name: std::option::Option<std::string::String>,
 }
 impl LocationSummary {
     /// <p>A string that specifies a location name.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> std::option::Option<& str> {
         self.location_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl LocationSummaryBuilder {
     }
     /// <p>A string that specifies a location name.</p>
     pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_name = input;
-        self
+        self.location_name = input; self
     }
     /// Consumes the builder and constructs a [`LocationSummary`](crate::types::LocationSummary).
     pub fn build(self) -> crate::types::LocationSummary {
         crate::types::LocationSummary {
-            location_name: self.location_name,
+            location_name: self.location_name
+            ,
         }
     }
 }
+

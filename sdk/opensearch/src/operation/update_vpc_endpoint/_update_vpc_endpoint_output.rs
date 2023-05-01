@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVpcEndpointOutput {
+pub struct UpdateVpcEndpointOutput  {
     /// <p>The endpoint to be updated.</p>
     #[doc(hidden)]
     pub vpc_endpoint: std::option::Option<crate::types::VpcEndpoint>,
@@ -10,19 +10,18 @@ pub struct UpdateVpcEndpointOutput {
 }
 impl UpdateVpcEndpointOutput {
     /// <p>The endpoint to be updated.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::types::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::types::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateVpcEndpointOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateVpcEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
-    pub fn builder(
-    ) -> crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder {
         crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateVpcEndpointOutputBuilder {
         self
     }
     /// <p>The endpoint to be updated.</p>
-    pub fn set_vpc_endpoint(
-        mut self,
-        input: std::option::Option<crate::types::VpcEndpoint>,
-    ) -> Self {
-        self.vpc_endpoint = input;
-        self
+    pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::types::VpcEndpoint>) -> Self {
+        self.vpc_endpoint = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateVpcEndpointOutput`](crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput).
     pub fn build(self) -> crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput {
         crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput {
-            vpc_endpoint: self.vpc_endpoint,
+            vpc_endpoint: self.vpc_endpoint
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

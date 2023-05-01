@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchResourcesInput {
+pub struct SearchResourcesInput  {
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
     #[doc(hidden)]
     pub bucket_criteria: std::option::Option<crate::types::SearchResourcesBucketCriteria>,
@@ -18,9 +18,7 @@ pub struct SearchResourcesInput {
 }
 impl SearchResourcesInput {
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-    pub fn bucket_criteria(
-        &self,
-    ) -> std::option::Option<&crate::types::SearchResourcesBucketCriteria> {
+    pub fn bucket_criteria(&self) -> std::option::Option<& crate::types::SearchResourcesBucketCriteria> {
         self.bucket_criteria.as_ref()
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
@@ -28,11 +26,11 @@ impl SearchResourcesInput {
         self.max_results
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn sort_criteria(&self) -> std::option::Option<&crate::types::SearchResourcesSortCriteria> {
+    pub fn sort_criteria(&self) -> std::option::Option<& crate::types::SearchResourcesSortCriteria> {
         self.sort_criteria.as_ref()
     }
 }
@@ -59,12 +57,8 @@ impl SearchResourcesInputBuilder {
         self
     }
     /// <p>The filter conditions that determine which S3 buckets to include or exclude from the query results.</p>
-    pub fn set_bucket_criteria(
-        mut self,
-        input: std::option::Option<crate::types::SearchResourcesBucketCriteria>,
-    ) -> Self {
-        self.bucket_criteria = input;
-        self
+    pub fn set_bucket_criteria(mut self, input: std::option::Option<crate::types::SearchResourcesBucketCriteria>) -> Self {
+        self.bucket_criteria = input; self
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -73,8 +67,7 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of the response. The default value is 50.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +76,7 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The criteria to use to sort the results.</p>
     pub fn sort_criteria(mut self, input: crate::types::SearchResourcesSortCriteria) -> Self {
@@ -92,25 +84,23 @@ impl SearchResourcesInputBuilder {
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn set_sort_criteria(
-        mut self,
-        input: std::option::Option<crate::types::SearchResourcesSortCriteria>,
-    ) -> Self {
-        self.sort_criteria = input;
-        self
+    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::SearchResourcesSortCriteria>) -> Self {
+        self.sort_criteria = input; self
     }
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_resources::SearchResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::search_resources::SearchResourcesInput {
-            bucket_criteria: self.bucket_criteria,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            sort_criteria: self.sort_criteria,
-        })
+    pub fn build(self) -> Result<crate::operation::search_resources::SearchResourcesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::search_resources::SearchResourcesInput {
+                bucket_criteria: self.bucket_criteria
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sort_criteria: self.sort_criteria
+                ,
+            }
+        )
     }
 }
+

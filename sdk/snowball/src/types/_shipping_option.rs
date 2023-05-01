@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let shippingoption = unimplemented!();
 /// match shippingoption {
@@ -32,22 +32,14 @@
 /// Specifically, when `shippingoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ShippingOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ShippingOption {
     #[allow(missing_docs)] // documentation missing in model
     Express,
@@ -58,46 +50,45 @@ pub enum ShippingOption {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ShippingOption {
-    fn from(s: &str) -> Self {
-        match s {
-            "EXPRESS" => ShippingOption::Express,
-            "NEXT_DAY" => ShippingOption::NextDay,
-            "SECOND_DAY" => ShippingOption::SecondDay,
-            "STANDARD" => ShippingOption::Standard,
-            other => {
-                ShippingOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EXPRESS" => ShippingOption::Express,
+"NEXT_DAY" => ShippingOption::NextDay,
+"SECOND_DAY" => ShippingOption::SecondDay,
+"STANDARD" => ShippingOption::Standard,
+other => ShippingOption::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ShippingOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShippingOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ShippingOption::from(s))
+                }
+            }
 impl ShippingOption {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ShippingOption::Express => "EXPRESS",
-            ShippingOption::NextDay => "NEXT_DAY",
-            ShippingOption::SecondDay => "SECOND_DAY",
-            ShippingOption::Standard => "STANDARD",
-            ShippingOption::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ShippingOption::Express => "EXPRESS",
+    ShippingOption::NextDay => "NEXT_DAY",
+    ShippingOption::SecondDay => "SECOND_DAY",
+    ShippingOption::Standard => "STANDARD",
+    ShippingOption::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"]
+                }
+            }
 impl AsRef<str> for ShippingOption {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

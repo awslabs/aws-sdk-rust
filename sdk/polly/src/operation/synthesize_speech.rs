@@ -6,137 +6,77 @@ impl SynthesizeSpeechInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    async fn _make_presigned_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::synthesize_speech::SynthesizeSpeech,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    async fn _make_presigned_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::synthesize_speech::SynthesizeSpeech, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::synthesize_speech::SynthesizeSpeechInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/speech").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::operation::synthesize_speech::SynthesizeSpeechInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_1) = &_input.engine {
-                    {
+                     {
                         query.push_kv("Engine", &aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
                 if let Some(inner_2) = &_input.language_code {
-                    {
-                        query.push_kv(
-                            "LanguageCode",
-                            &aws_smithy_http::query::fmt_string(&inner_2),
-                        );
+                     {
+                        query.push_kv("LanguageCode", &aws_smithy_http::query::fmt_string(&inner_2));
                     }
                 }
                 if let Some(inner_3) = &_input.lexicon_names {
-                    {
+                     {
                         for inner_4 in inner_3 {
-                            query.push_kv(
-                                "LexiconNames",
-                                &aws_smithy_http::query::fmt_string(&inner_4),
-                            );
+                            query.push_kv("LexiconNames", &aws_smithy_http::query::fmt_string(&inner_4));
                         }
                     }
                 }
                 let inner_5 = &_input.output_format;
-                let inner_5 = inner_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "output_format",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                query.push_kv(
-                    "OutputFormat",
-                    &aws_smithy_http::query::fmt_string(&inner_5),
-                );
+                let inner_5 = inner_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("output_format", "cannot be empty or unset"))?;
+                query.push_kv("OutputFormat", &aws_smithy_http::query::fmt_string(&inner_5));
                 if let Some(inner_6) = &_input.sample_rate {
-                    {
+                     {
                         query.push_kv("SampleRate", &aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
                 if let Some(inner_7) = &_input.speech_mark_types {
-                    {
+                     {
                         for inner_8 in inner_7 {
-                            query.push_kv(
-                                "SpeechMarkTypes",
-                                &aws_smithy_http::query::fmt_string(&inner_8),
-                            );
+                            query.push_kv("SpeechMarkTypes", &aws_smithy_http::query::fmt_string(&inner_8));
                         }
                     }
                 }
                 let inner_9 = &_input.text;
-                let inner_9 = inner_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "text",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_9 = inner_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("text", "cannot be empty or unset"))?;
                 if inner_9.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "text",
-                            "cannot be empty or unset",
-                        ),
-                    );
+                    return Err(aws_smithy_http::operation::error::BuildError::missing_field("text", "cannot be empty or unset"));
                 }
                 query.push_kv("Text", &aws_smithy_http::query::fmt_string(&inner_9));
                 if let Some(inner_10) = &_input.text_type {
-                    {
+                     {
                         query.push_kv("TextType", &aws_smithy_http::query::fmt_string(&inner_10));
                     }
                 }
                 let inner_11 = &_input.voice_id;
-                let inner_11 = inner_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "voice_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_11 = inner_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("voice_id", "cannot be empty or unset"))?;
                 query.push_kv("VoiceId", &aws_smithy_http::query::fmt_string(&inner_11));
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -147,216 +87,142 @@ impl SynthesizeSpeechInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::synthesize_speech::SynthesizeSpeech::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SynthesizeSpeech",
-            "polly",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::synthesize_speech::SynthesizeSpeech::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SynthesizeSpeech", "polly"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
-    ///
+    /// 
     /// Creates a presigned request for this operation.
-    ///
+    /// 
     /// The credentials provider from the `config` will be used to generate the request's signature.
     /// The `presigning_config` provides additional presigning-specific config values, such as the
     /// amount of time the request should be valid for after creation.
-    ///
+    /// 
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
-    ///
+    /// 
     pub async fn presigned(
-        self,
-        config: &crate::config::Config,
-        presigning_config: crate::presigning::PresigningConfig,
-    ) -> Result<
-        crate::presigning::PresignedRequest,
-        aws_smithy_http::result::SdkError<
-            crate::operation::synthesize_speech::SynthesizeSpeechError,
-        >,
-    > {
-        let (mut request, _) = self
-            ._make_presigned_operation(config)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .into_request_response();
-        {
+                    self,
+                    config: &crate::config::Config,
+                    presigning_config: crate::presigning::PresigningConfig
+                ) -> Result<crate::presigning::PresignedRequest, aws_smithy_http::result::SdkError<crate::operation::synthesize_speech::SynthesizeSpeechError>> {
+        let (mut request, _) = self._make_presigned_operation(config)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .into_request_response();
+         {
             // Change signature type to query params and wire up presigning config
-            let mut props = request.properties_mut();
-            props.insert(presigning_config.start_time());
-            props.insert(aws_sigv4::http_request::SignableBody::Bytes(b""));
-            let mut config = props
-                .get_mut::<aws_sig_auth::signer::OperationSigningConfig>()
-                .expect("signing config added by make_operation()");
-            config.signature_type = aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
-            config.expires_in = Some(presigning_config.expires());
+                                let mut props = request.properties_mut();
+                                props.insert(presigning_config.start_time());
+            props.insert(
+                aws_sigv4::http_request::SignableBody::Bytes(b"")
+            );
+            let mut config = props.get_mut::<aws_sig_auth::signer::OperationSigningConfig>()
+                                    .expect("signing config added by make_operation()");
+                                config.signature_type = aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
+                                config.expires_in = Some(presigning_config.expires());
         }
         let middleware = crate::middleware::DefaultMiddleware::default();
-        let mut svc = tower::builder::ServiceBuilder::new()
-            .layer(&middleware)
-            .service(crate::presigning::service::PresignedRequestService::new());
-
-        use tower::{Service, ServiceExt};
-        Ok(svc.ready().await?.call(request).await?)
+                        let mut svc = tower::builder::ServiceBuilder::new()
+                            .layer(&middleware)
+                            .service(crate::presigning::service::PresignedRequestService::new());
+        
+                        use tower::{Service, ServiceExt};
+                        Ok(svc.ready().await?.call(request).await?)
     }
     /// Consumes the builder and constructs an Operation<[`SynthesizeSpeech`](crate::operation::synthesize_speech::SynthesizeSpeech)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::synthesize_speech::SynthesizeSpeech,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::synthesize_speech::SynthesizeSpeech, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
-            {
+            fn uri_base(_input: &crate::operation::synthesize_speech::SynthesizeSpeechInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/v1/speech").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::operation::synthesize_speech::SynthesizeSpeechInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_synthesize_speech::ser_synthesize_speech_input(&self)?,
+            crate::protocol_serde::shape_synthesize_speech::ser_synthesize_speech_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::meta::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::meta::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::synthesize_speech::SynthesizeSpeech::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SynthesizeSpeech",
-            "polly",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::synthesize_speech::SynthesizeSpeech::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SynthesizeSpeech", "polly"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -373,37 +239,25 @@ impl SynthesizeSpeech {
     }
 }
 impl aws_smithy_http::response::ParseHttpResponse for SynthesizeSpeech {
-    type Output = std::result::Result<
-        crate::operation::synthesize_speech::SynthesizeSpeechOutput,
-        crate::operation::synthesize_speech::SynthesizeSpeechError,
-    >;
-    fn parse_unloaded(
-        &self,
-        response: &mut aws_smithy_http::operation::Response,
-    ) -> Option<Self::Output> {
-        // This is an error, defer to the non-streaming parser
-        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
-            return None;
-        }
-        Some(
-            crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_http_response(
-                response,
-            ),
-        )
-    }
-    fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-        // if streaming, we only hit this case if its an error
-        crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_http_error(response)
-    }
-}
+                type Output = std::result::Result<crate::operation::synthesize_speech::SynthesizeSpeechOutput, crate::operation::synthesize_speech::SynthesizeSpeechError>;
+                fn parse_unloaded(&self, response: &mut aws_smithy_http::operation::Response) -> Option<Self::Output> {
+                    // This is an error, defer to the non-streaming parser
+                    if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
+                        return None;
+                    }
+                    Some(crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_http_response(response))
+                }
+                fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+                    // if streaming, we only hit this case if its an error
+                    crate::protocol_serde::shape_synthesize_speech::de_synthesize_speech_http_error(response)
+                }
+            }
 
 /// Do not use this.
-///
-/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-#[deprecated(
-    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
-)]
-pub type SynthesizeSpeechErrorKind = SynthesizeSpeechError;
+            ///
+            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
+            pub type SynthesizeSpeechErrorKind = SynthesizeSpeechError;
 /// Error type for the `SynthesizeSpeechError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -416,7 +270,7 @@ pub enum SynthesizeSpeechError {
     InvalidSsmlException(crate::types::error::InvalidSsmlException),
     /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
     LanguageNotSupportedException(crate::types::error::LanguageNotSupportedException),
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
     /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::types::error::LexiconNotFoundException),
     /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
@@ -424,85 +278,103 @@ pub enum SynthesizeSpeechError {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
-    SsmlMarksNotSupportedForTextTypeException(
-        crate::types::error::SsmlMarksNotSupportedForTextTypeException,
-    ),
+    SsmlMarksNotSupportedForTextTypeException(crate::types::error::SsmlMarksNotSupportedForTextTypeException),
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::types::error::TextLengthExceededException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+                    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for SynthesizeSpeechError {
-    fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> Self {
+    
+                    fn create_unhandled_error(
+                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
+                    ) -> Self
+                     {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-            builder.set_meta(meta);
-            builder.build()
-        })
+                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+                                builder.set_meta(meta);
+                                builder.build()
+                            })
     }
 }
 impl std::fmt::Display for SynthesizeSpeechError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::EngineNotSupportedException(_inner) => _inner.fmt(f),
-            Self::InvalidSampleRateException(_inner) => _inner.fmt(f),
-            Self::InvalidSsmlException(_inner) => _inner.fmt(f),
-            Self::LanguageNotSupportedException(_inner) => _inner.fmt(f),
-            Self::LexiconNotFoundException(_inner) => _inner.fmt(f),
-            Self::MarksNotSupportedForFormatException(_inner) => _inner.fmt(f),
-            Self::ServiceFailureException(_inner) => _inner.fmt(f),
-            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => _inner.fmt(f),
-            Self::TextLengthExceededException(_inner) => _inner.fmt(f),
-            Self::Unhandled(_inner) => _inner.fmt(f),
+            Self::EngineNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidSampleRateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::InvalidSsmlException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::LanguageNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::LexiconNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::MarksNotSupportedForFormatException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::TextLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            Self::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for SynthesizeSpeechError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::EngineNotSupportedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidSampleRateException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::InvalidSsmlException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::LanguageNotSupportedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::LexiconNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::MarksNotSupportedForFormatException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::ServiceFailureException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
-            Self::TextLengthExceededException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            }
+            Self::EngineNotSupportedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidSampleRateException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::InvalidSsmlException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::LanguageNotSupportedException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::LexiconNotFoundException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::MarksNotSupportedForFormatException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::ServiceFailureException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
+            Self::TextLengthExceededException(_inner) =>
+            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            ,
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId
-    for crate::operation::synthesize_speech::SynthesizeSpeechError
-{
-    fn request_id(&self) -> Option<&str> {
-        self.meta().request_id()
-    }
-}
+impl aws_http::request_id::RequestId for crate::operation::synthesize_speech::SynthesizeSpeechError {
+                            fn request_id(&self) -> Option<&str> {
+                                self.meta().request_id()
+                            }
+                        }
 impl aws_smithy_types::retry::ProvideErrorKind for SynthesizeSpeechError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -513,27 +385,18 @@ impl aws_smithy_types::retry::ProvideErrorKind for SynthesizeSpeechError {
 }
 impl SynthesizeSpeechError {
     /// Creates the `SynthesizeSpeechError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err)
-                .build(),
-        )
-    }
-
-    /// Creates the `SynthesizeSpeechError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-        Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
-                .source(err.clone())
-                .meta(err)
-                .build(),
-        )
-    }
-    ///
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
+                    }
+    
+                    /// Creates the `SynthesizeSpeechError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
+                    }
+    /// 
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    ///
+    /// 
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -589,16 +452,36 @@ impl SynthesizeSpeechError {
 impl std::error::Error for SynthesizeSpeechError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::EngineNotSupportedException(_inner) => Some(_inner),
-            Self::InvalidSampleRateException(_inner) => Some(_inner),
-            Self::InvalidSsmlException(_inner) => Some(_inner),
-            Self::LanguageNotSupportedException(_inner) => Some(_inner),
-            Self::LexiconNotFoundException(_inner) => Some(_inner),
-            Self::MarksNotSupportedForFormatException(_inner) => Some(_inner),
-            Self::ServiceFailureException(_inner) => Some(_inner),
-            Self::SsmlMarksNotSupportedForTextTypeException(_inner) => Some(_inner),
-            Self::TextLengthExceededException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::EngineNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidSampleRateException(_inner) =>
+            Some(_inner)
+            ,
+            Self::InvalidSsmlException(_inner) =>
+            Some(_inner)
+            ,
+            Self::LanguageNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            Self::LexiconNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            Self::MarksNotSupportedForFormatException(_inner) =>
+            Some(_inner)
+            ,
+            Self::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            Self::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            Some(_inner)
+            ,
+            Self::TextLengthExceededException(_inner) =>
+            Some(_inner)
+            ,
+            Self::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -613,3 +496,4 @@ mod _synthesize_speech_output;
 
 /// Builders
 pub mod builders;
+

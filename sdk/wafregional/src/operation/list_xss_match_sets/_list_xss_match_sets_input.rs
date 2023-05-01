@@ -3,7 +3,7 @@
 /// <p>A request to list the <code>XssMatchSet</code> objects created by the current AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListXssMatchSetsInput {
+pub struct ListXssMatchSetsInput  {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ListXssMatchSetsInput {
 }
 impl ListXssMatchSetsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
@@ -23,8 +23,7 @@ impl ListXssMatchSetsInput {
 }
 impl ListXssMatchSetsInput {
     /// Creates a new builder-style object to manufacture [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
-    pub fn builder() -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder {
         crate::operation::list_xss_match_sets::builders::ListXssMatchSetsInputBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl ListXssMatchSetsInputBuilder {
     }
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>XssMatchSet</code> objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>XssMatchSets</code>. For the second and subsequent <code>ListXssMatchSets</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>XssMatchSets</code>.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -54,21 +52,19 @@ impl ListXssMatchSetsInputBuilder {
     }
     /// <p>Specifies the number of <code>XssMatchSet</code> objects that you want AWS WAF to return for this request. If you have more <code>XssMatchSet</code> objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>Rules</code>.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// Consumes the builder and constructs a [`ListXssMatchSetsInput`](crate::operation::list_xss_match_sets::ListXssMatchSetsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_xss_match_sets::ListXssMatchSetsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_xss_match_sets::ListXssMatchSetsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_xss_match_sets::ListXssMatchSetsInput {
-                next_marker: self.next_marker,
-                limit: self.limit.unwrap_or_default(),
-            },
+                next_marker: self.next_marker
+                ,
+                limit: self.limit
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

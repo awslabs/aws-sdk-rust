@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDevEndpointInput {
+pub struct DeleteDevEndpointInput  {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl DeleteDevEndpointInput {
     /// <p>The name of the <code>DevEndpoint</code>.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
 impl DeleteDevEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteDevEndpointInput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointInputBuilder {
+    pub fn builder() -> crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointInputBuilder {
         crate::operation::delete_dev_endpoint::builders::DeleteDevEndpointInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteDevEndpointInputBuilder {
     }
     /// <p>The name of the <code>DevEndpoint</code>.</p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDevEndpointInput`](crate::operation::delete_dev_endpoint::DeleteDevEndpointInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_dev_endpoint::DeleteDevEndpointInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_dev_endpoint::DeleteDevEndpointInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_dev_endpoint::DeleteDevEndpointInput {
-                endpoint_name: self.endpoint_name,
-            },
+                endpoint_name: self.endpoint_name
+                ,
+            }
         )
     }
 }
+

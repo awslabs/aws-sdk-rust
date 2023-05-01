@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAliasInput {
+pub struct DeleteAliasInput  {
     /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
     #[doc(hidden)]
     pub alias_name: std::option::Option<std::string::String>,
 }
 impl DeleteAliasInput {
     /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
-    pub fn alias_name(&self) -> std::option::Option<&str> {
+    pub fn alias_name(&self) -> std::option::Option<& str> {
         self.alias_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteAliasInputBuilder {
     }
     /// <p>The alias to be deleted. The alias name must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>.</p>
     pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_name = input;
-        self
+        self.alias_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAliasInput`](crate::operation::delete_alias::DeleteAliasInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_alias::DeleteAliasInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_alias::DeleteAliasInput {
-            alias_name: self.alias_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_alias::DeleteAliasInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_alias::DeleteAliasInput {
+                alias_name: self.alias_name
+                ,
+            }
+        )
     }
 }
+

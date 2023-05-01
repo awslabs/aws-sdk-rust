@@ -3,14 +3,14 @@
 /// <p>Contains the authorization parameters for the connection if Basic is specified as the authorization type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionBasicAuthResponseParameters {
+pub struct ConnectionBasicAuthResponseParameters  {
     /// <p>The user name to use for Basic authorization.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
 }
 impl ConnectionBasicAuthResponseParameters {
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ConnectionBasicAuthResponseParametersBuilder {
     }
     /// <p>The user name to use for Basic authorization.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Consumes the builder and constructs a [`ConnectionBasicAuthResponseParameters`](crate::types::ConnectionBasicAuthResponseParameters).
     pub fn build(self) -> crate::types::ConnectionBasicAuthResponseParameters {
         crate::types::ConnectionBasicAuthResponseParameters {
-            username: self.username,
+            username: self.username
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Provides the results of a query that retrieved the data for a standard metric that applies to a campaign, and provides information about that query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CampaignDateRangeKpiResponse {
+pub struct CampaignDateRangeKpiResponse  {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct CampaignDateRangeKpiResponse {
 }
 impl CampaignDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign that the metric applies to.</p>
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-    pub fn kpi_name(&self) -> std::option::Option<&str> {
+    pub fn kpi_name(&self) -> std::option::Option<& str> {
         self.kpi_name.as_deref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
-    pub fn kpi_result(&self) -> std::option::Option<&crate::types::BaseKpiResult> {
+    pub fn kpi_result(&self) -> std::option::Option<& crate::types::BaseKpiResult> {
         self.kpi_result.as_ref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Campaign Metrics resource because the resource returns all results in a single page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl CampaignDateRangeKpiResponseBuilder {
     }
     /// <p>The unique identifier for the application that the metric applies to.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The unique identifier for the campaign that the metric applies to.</p>
     pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl CampaignDateRangeKpiResponseBuilder {
     }
     /// <p>The unique identifier for the campaign that the metric applies to.</p>
     pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.campaign_id = input;
-        self
+        self.campaign_id = input; self
     }
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -103,8 +101,7 @@ impl CampaignDateRangeKpiResponseBuilder {
     }
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +110,7 @@ impl CampaignDateRangeKpiResponseBuilder {
     }
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub fn set_kpi_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kpi_name = input;
-        self
+        self.kpi_name = input; self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
     pub fn kpi_result(mut self, input: crate::types::BaseKpiResult) -> Self {
@@ -122,12 +118,8 @@ impl CampaignDateRangeKpiResponseBuilder {
         self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
-    pub fn set_kpi_result(
-        mut self,
-        input: std::option::Option<crate::types::BaseKpiResult>,
-    ) -> Self {
-        self.kpi_result = input;
-        self
+    pub fn set_kpi_result(mut self, input: std::option::Option<crate::types::BaseKpiResult>) -> Self {
+        self.kpi_result = input; self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Campaign Metrics resource because the resource returns all results in a single page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +128,7 @@ impl CampaignDateRangeKpiResponseBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Campaign Metrics resource because the resource returns all results in a single page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -145,23 +136,27 @@ impl CampaignDateRangeKpiResponseBuilder {
         self
     }
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// Consumes the builder and constructs a [`CampaignDateRangeKpiResponse`](crate::types::CampaignDateRangeKpiResponse).
     pub fn build(self) -> crate::types::CampaignDateRangeKpiResponse {
         crate::types::CampaignDateRangeKpiResponse {
-            application_id: self.application_id,
-            campaign_id: self.campaign_id,
-            end_time: self.end_time,
-            kpi_name: self.kpi_name,
-            kpi_result: self.kpi_result,
-            next_token: self.next_token,
-            start_time: self.start_time,
+            application_id: self.application_id
+            ,
+            campaign_id: self.campaign_id
+            ,
+            end_time: self.end_time
+            ,
+            kpi_name: self.kpi_name
+            ,
+            kpi_result: self.kpi_result
+            ,
+            next_token: self.next_token
+            ,
+            start_time: self.start_time
+            ,
         }
     }
 }
+

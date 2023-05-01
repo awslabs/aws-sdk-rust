@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttackOutput {
+pub struct DescribeAttackOutput  {
     /// <p>The attack that you requested. </p>
     #[doc(hidden)]
     pub attack: std::option::Option<crate::types::AttackDetail>,
@@ -10,15 +10,15 @@ pub struct DescribeAttackOutput {
 }
 impl DescribeAttackOutput {
     /// <p>The attack that you requested. </p>
-    pub fn attack(&self) -> std::option::Option<&crate::types::AttackDetail> {
+    pub fn attack(&self) -> std::option::Option<& crate::types::AttackDetail> {
         self.attack.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAttackOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAttackOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttackOutput`](crate::operation::describe_attack::DescribeAttackOutput).
     pub fn builder() -> crate::operation::describe_attack::builders::DescribeAttackOutputBuilder {
@@ -41,23 +41,24 @@ impl DescribeAttackOutputBuilder {
     }
     /// <p>The attack that you requested. </p>
     pub fn set_attack(mut self, input: std::option::Option<crate::types::AttackDetail>) -> Self {
-        self.attack = input;
-        self
+        self.attack = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAttackOutput`](crate::operation::describe_attack::DescribeAttackOutput).
     pub fn build(self) -> crate::operation::describe_attack::DescribeAttackOutput {
         crate::operation::describe_attack::DescribeAttackOutput {
-            attack: self.attack,
+            attack: self.attack
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

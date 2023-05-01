@@ -3,7 +3,7 @@
 /// <p>The structure representing the GetFindingsReportAccountSummaryResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsReportAccountSummaryOutput {
+pub struct GetFindingsReportAccountSummaryOutput  {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     #[doc(hidden)]
     pub report_summaries: std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
@@ -14,22 +14,22 @@ pub struct GetFindingsReportAccountSummaryOutput {
 }
 impl GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-    pub fn report_summaries(&self) -> std::option::Option<&[crate::types::FindingsReportSummary]> {
+    pub fn report_summaries(&self) -> std::option::Option<& [crate::types::FindingsReportSummary]> {
         self.report_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetFindingsReportAccountSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFindingsReportAccountSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsReportAccountSummaryOutput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput).
-    pub fn builder() -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryOutputBuilder{
+    pub fn builder() -> crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryOutputBuilder {
         crate::operation::get_findings_report_account_summary::builders::GetFindingsReportAccountSummaryOutputBuilder::default()
     }
 }
@@ -38,8 +38,7 @@ impl GetFindingsReportAccountSummaryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryOutputBuilder {
-    pub(crate) report_summaries:
-        std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub(crate) report_summaries: std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +50,13 @@ impl GetFindingsReportAccountSummaryOutputBuilder {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     pub fn report_summaries(mut self, input: crate::types::FindingsReportSummary) -> Self {
         let mut v = self.report_summaries.unwrap_or_default();
-        v.push(input);
-        self.report_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.report_summaries = Some(v);
+                        self
     }
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-    pub fn set_report_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
-    ) -> Self {
-        self.report_summaries = input;
-        self
+    pub fn set_report_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>) -> Self {
+        self.report_summaries = input; self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,23 +65,19 @@ impl GetFindingsReportAccountSummaryOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFindingsReportAccountSummaryOutput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput
-    {
+    pub fn build(self) -> crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput {
         crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput {
             report_summaries: self.report_summaries
             ,
@@ -96,3 +87,4 @@ impl GetFindingsReportAccountSummaryOutputBuilder {
         }
     }
 }
+

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyMigrationTaskStateOutput {
+pub struct NotifyMigrationTaskStateOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for NotifyMigrationTaskStateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl NotifyMigrationTaskStateOutput {
     /// Creates a new builder-style object to manufacture [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput).
-    pub fn builder() -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateOutputBuilder{
+    pub fn builder() -> crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateOutputBuilder {
         crate::operation::notify_migration_task_state::builders::NotifyMigrationTaskStateOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct NotifyMigrationTaskStateOutputBuilder {
 }
 impl NotifyMigrationTaskStateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`NotifyMigrationTaskStateOutput`](crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput {
+    pub fn build(self) -> crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput {
         crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput {
             _request_id: self._request_id,
         }
     }
 }
+

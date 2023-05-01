@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeDomainAccessOutput {
+pub struct RevokeDomainAccessOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RevokeDomainAccessOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RevokeDomainAccessOutput {
     /// Creates a new builder-style object to manufacture [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput).
-    pub fn builder(
-    ) -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_domain_access::builders::RevokeDomainAccessOutputBuilder {
         crate::operation::revoke_domain_access::builders::RevokeDomainAccessOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct RevokeDomainAccessOutputBuilder {
 }
 impl RevokeDomainAccessOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput).
     pub fn build(self) -> crate::operation::revoke_domain_access::RevokeDomainAccessOutput {
         crate::operation::revoke_domain_access::RevokeDomainAccessOutput {
@@ -41,3 +40,4 @@ impl RevokeDomainAccessOutputBuilder {
         }
     }
 }
+

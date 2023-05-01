@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionVersionsOutput {
+pub struct ListExtensionVersionsOutput  {
     /// <p>The list of extension versions.</p>
     #[doc(hidden)]
-    pub extension_versions:
-        std::option::Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    pub extension_versions: std::option::Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>,
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,27 +14,23 @@ pub struct ListExtensionVersionsOutput {
 }
 impl ListExtensionVersionsOutput {
     /// <p>The list of extension versions.</p>
-    pub fn extension_versions(
-        &self,
-    ) -> std::option::Option<&[crate::types::ExtensionVersionDetails]> {
+    pub fn extension_versions(&self) -> std::option::Option<& [crate::types::ExtensionVersionDetails]> {
         self.extension_versions.as_deref()
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListExtensionVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListExtensionVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExtensionVersionsOutput`](crate::operation::list_extension_versions::ListExtensionVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_extension_versions::builders::ListExtensionVersionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_extension_versions::builders::ListExtensionVersionsOutputBuilder {
         crate::operation::list_extension_versions::builders::ListExtensionVersionsOutputBuilder::default()
     }
 }
@@ -44,8 +39,7 @@ impl ListExtensionVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListExtensionVersionsOutputBuilder {
-    pub(crate) extension_versions:
-        std::option::Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>,
+    pub(crate) extension_versions: std::option::Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,45 +51,43 @@ impl ListExtensionVersionsOutputBuilder {
     /// <p>The list of extension versions.</p>
     pub fn extension_versions(mut self, input: crate::types::ExtensionVersionDetails) -> Self {
         let mut v = self.extension_versions.unwrap_or_default();
-        v.push(input);
-        self.extension_versions = Some(v);
-        self
+                        v.push(input);
+                        self.extension_versions = Some(v);
+                        self
     }
     /// <p>The list of extension versions.</p>
-    pub fn set_extension_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>,
-    ) -> Self {
-        self.extension_versions = input;
-        self
+    pub fn set_extension_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExtensionVersionDetails>>) -> Self {
+        self.extension_versions = input; self
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use this value when making the next call to this operation to continue where the last one finished. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListExtensionVersionsOutput`](crate::operation::list_extension_versions::ListExtensionVersionsOutput).
     pub fn build(self) -> crate::operation::list_extension_versions::ListExtensionVersionsOutput {
         crate::operation::list_extension_versions::ListExtensionVersionsOutput {
-            extension_versions: self.extension_versions,
-            next_token: self.next_token,
+            extension_versions: self.extension_versions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

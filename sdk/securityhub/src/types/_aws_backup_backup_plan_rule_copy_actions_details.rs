@@ -3,25 +3,23 @@
 /// <p>An array of <code>CopyAction</code> objects, each of which contains details of the copy operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsBackupBackupPlanRuleCopyActionsDetails {
+pub struct AwsBackupBackupPlanRuleCopyActionsDetails  {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
     #[doc(hidden)]
     pub destination_backup_vault_arn: std::option::Option<std::string::String>,
-    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p> 
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>,
 }
 impl AwsBackupBackupPlanRuleCopyActionsDetails {
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
-    pub fn destination_backup_vault_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_backup_vault_arn(&self) -> std::option::Option<& str> {
         self.destination_backup_vault_arn.as_deref()
     }
-    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p> 
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    pub fn lifecycle(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsBackupBackupPlanLifecycleDetails> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::types::AwsBackupBackupPlanLifecycleDetails> {
         self.lifecycle.as_ref()
     }
 }
@@ -46,33 +44,28 @@ impl AwsBackupBackupPlanRuleCopyActionsDetailsBuilder {
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for the copied backup. </p>
-    pub fn set_destination_backup_vault_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_backup_vault_arn = input;
-        self
+    pub fn set_destination_backup_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_backup_vault_arn = input; self
     }
-    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p> 
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
     pub fn lifecycle(mut self, input: crate::types::AwsBackupBackupPlanLifecycleDetails) -> Self {
         self.lifecycle = Some(input);
         self
     }
-    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p>
+    /// <p>Defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. If you do not specify a lifecycle, Backup applies the lifecycle policy of the source backup to the destination backup.</p> 
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::AwsBackupBackupPlanLifecycleDetails>) -> Self {
+        self.lifecycle = input; self
     }
     /// Consumes the builder and constructs a [`AwsBackupBackupPlanRuleCopyActionsDetails`](crate::types::AwsBackupBackupPlanRuleCopyActionsDetails).
     pub fn build(self) -> crate::types::AwsBackupBackupPlanRuleCopyActionsDetails {
         crate::types::AwsBackupBackupPlanRuleCopyActionsDetails {
-            destination_backup_vault_arn: self.destination_backup_vault_arn,
-            lifecycle: self.lifecycle,
+            destination_backup_vault_arn: self.destination_backup_vault_arn
+            ,
+            lifecycle: self.lifecycle
+            ,
         }
     }
 }
+

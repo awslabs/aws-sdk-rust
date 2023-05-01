@@ -3,7 +3,7 @@
 /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestThrottledException {
+pub struct RequestThrottledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -14,21 +14,19 @@ pub struct RequestThrottledException {
 }
 impl RequestThrottledException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::RequestThrottledExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::types::RequestThrottledExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl RequestThrottledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RequestThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestThrottledException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl aws_http::request_id::RequestId for crate::types::error::RequestThrottledEx
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RequestThrottledException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl RequestThrottledException {
     /// Creates a new builder-style object to manufacture [`RequestThrottledException`](crate::types::error::RequestThrottledException).
@@ -70,8 +66,7 @@ impl RequestThrottledExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The reason for the exception.</p>
     pub fn reason(mut self, input: crate::types::RequestThrottledExceptionReason) -> Self {
@@ -79,33 +74,29 @@ impl RequestThrottledExceptionBuilder {
         self
     }
     /// <p>The reason for the exception.</p>
-    pub fn set_reason(
-        mut self,
-        input: std::option::Option<crate::types::RequestThrottledExceptionReason>,
-    ) -> Self {
-        self.reason = input;
-        self
+    pub fn set_reason(mut self, input: std::option::Option<crate::types::RequestThrottledExceptionReason>) -> Self {
+        self.reason = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`RequestThrottledException`](crate::types::error::RequestThrottledException).
     pub fn build(self) -> crate::types::error::RequestThrottledException {
         crate::types::error::RequestThrottledException {
-            message: self.message,
-            reason: self.reason,
+            message: self.message
+            ,
+            reason: self.reason
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

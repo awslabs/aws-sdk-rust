@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallRuleOutput {
+pub struct DeleteFirewallRuleOutput  {
     /// <p>The specification for the firewall rule that you just deleted.</p>
     #[doc(hidden)]
     pub firewall_rule: std::option::Option<crate::types::FirewallRule>,
@@ -10,19 +10,18 @@ pub struct DeleteFirewallRuleOutput {
 }
 impl DeleteFirewallRuleOutput {
     /// <p>The specification for the firewall rule that you just deleted.</p>
-    pub fn firewall_rule(&self) -> std::option::Option<&crate::types::FirewallRule> {
+    pub fn firewall_rule(&self) -> std::option::Option<& crate::types::FirewallRule> {
         self.firewall_rule.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteFirewallRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteFirewallRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleOutput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleOutputBuilder {
+    pub fn builder() -> crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleOutputBuilder {
         crate::operation::delete_firewall_rule::builders::DeleteFirewallRuleOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DeleteFirewallRuleOutputBuilder {
         self
     }
     /// <p>The specification for the firewall rule that you just deleted.</p>
-    pub fn set_firewall_rule(
-        mut self,
-        input: std::option::Option<crate::types::FirewallRule>,
-    ) -> Self {
-        self.firewall_rule = input;
-        self
+    pub fn set_firewall_rule(mut self, input: std::option::Option<crate::types::FirewallRule>) -> Self {
+        self.firewall_rule = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteFirewallRuleOutput`](crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput).
     pub fn build(self) -> crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput {
         crate::operation::delete_firewall_rule::DeleteFirewallRuleOutput {
-            firewall_rule: self.firewall_rule,
+            firewall_rule: self.firewall_rule
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

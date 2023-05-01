@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationSettingsInput {
+pub struct UpdateApplicationSettingsInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
     /// <p>Specifies the default settings for an application.</p>
     #[doc(hidden)]
-    pub write_application_settings_request:
-        std::option::Option<crate::types::WriteApplicationSettingsRequest>,
+    pub write_application_settings_request: std::option::Option<crate::types::WriteApplicationSettingsRequest>,
 }
 impl UpdateApplicationSettingsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn write_application_settings_request(
-        &self,
-    ) -> std::option::Option<&crate::types::WriteApplicationSettingsRequest> {
+    pub fn write_application_settings_request(&self) -> std::option::Option<& crate::types::WriteApplicationSettingsRequest> {
         self.write_application_settings_request.as_ref()
     }
 }
 impl UpdateApplicationSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder{
+    pub fn builder() -> crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder {
         crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder::default()
     }
 }
@@ -35,8 +32,7 @@ impl UpdateApplicationSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInputBuilder {
     pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) write_application_settings_request:
-        std::option::Option<crate::types::WriteApplicationSettingsRequest>,
+    pub(crate) write_application_settings_request: std::option::Option<crate::types::WriteApplicationSettingsRequest>,
 }
 impl UpdateApplicationSettingsInputBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -46,37 +42,27 @@ impl UpdateApplicationSettingsInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn write_application_settings_request(
-        mut self,
-        input: crate::types::WriteApplicationSettingsRequest,
-    ) -> Self {
+    pub fn write_application_settings_request(mut self, input: crate::types::WriteApplicationSettingsRequest) -> Self {
         self.write_application_settings_request = Some(input);
         self
     }
     /// <p>Specifies the default settings for an application.</p>
-    pub fn set_write_application_settings_request(
-        mut self,
-        input: std::option::Option<crate::types::WriteApplicationSettingsRequest>,
-    ) -> Self {
-        self.write_application_settings_request = input;
-        self
+    pub fn set_write_application_settings_request(mut self, input: std::option::Option<crate::types::WriteApplicationSettingsRequest>) -> Self {
+        self.write_application_settings_request = input; self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_application_settings::UpdateApplicationSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_application_settings::UpdateApplicationSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_application_settings::UpdateApplicationSettingsInput {
-                application_id: self.application_id,
-                write_application_settings_request: self.write_application_settings_request,
-            },
+                application_id: self.application_id
+                ,
+                write_application_settings_request: self.write_application_settings_request
+                ,
+            }
         )
     }
 }
+

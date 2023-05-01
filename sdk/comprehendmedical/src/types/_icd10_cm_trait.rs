@@ -3,7 +3,7 @@
 /// <p>Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Icd10CmTrait {
+pub struct Icd10CmTrait  {
     /// <p>Provides a name or contextual description about the trait.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::Icd10CmTraitName>,
@@ -13,7 +13,7 @@ pub struct Icd10CmTrait {
 }
 impl Icd10CmTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::Icd10CmTraitName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::Icd10CmTraitName> {
         self.name.as_ref()
     }
     /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
@@ -43,8 +43,7 @@ impl Icd10CmTraitBuilder {
     }
     /// <p>Provides a name or contextual description about the trait.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::Icd10CmTraitName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -53,14 +52,16 @@ impl Icd10CmTraitBuilder {
     }
     /// <p>The level of confidence that Comprehend Medical; has that the segment of text is correctly recognized as a trait.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// Consumes the builder and constructs a [`Icd10CmTrait`](crate::types::Icd10CmTrait).
     pub fn build(self) -> crate::types::Icd10CmTrait {
         crate::types::Icd10CmTrait {
-            name: self.name,
-            score: self.score,
+            name: self.name
+            ,
+            score: self.score
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAggregationAuthorizationsInput {
+pub struct DescribeAggregationAuthorizationsInput  {
     /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
@@ -16,13 +16,13 @@ impl DescribeAggregationAuthorizationsInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeAggregationAuthorizationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregationAuthorizationsInput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput).
-    pub fn builder() -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder {
         crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeAggregationAuthorizationsInputBuilder {
     }
     /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,11 +51,10 @@ impl DescribeAggregationAuthorizationsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAggregationAuthorizationsInput`](crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizationsInput {
                 limit: self.limit
@@ -67,3 +65,4 @@ impl DescribeAggregationAuthorizationsInputBuilder {
         )
     }
 }
+

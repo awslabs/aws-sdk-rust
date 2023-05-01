@@ -3,7 +3,7 @@
 /// <p>Contains vulnerability counts for a specific image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageAggregation {
+pub struct ImageAggregation  {
     /// <p>The Amazon Resource Name (ARN) that identifies the image for this aggregation.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ImageAggregation {
 }
 impl ImageAggregation {
     /// <p>The Amazon Resource Name (ARN) that identifies the image for this aggregation.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> std::option::Option<& crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ImageAggregationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the image for this aggregation.</p>
-    pub fn set_image_build_version_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_build_version_arn = input;
-        self
+    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_build_version_arn = input; self
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
@@ -55,18 +51,17 @@ impl ImageAggregationBuilder {
         self
     }
     /// <p>Counts by severity level for medium severity and higher level findings, plus a total for all of the findings for the specified image.</p>
-    pub fn set_severity_counts(
-        mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
-    ) -> Self {
-        self.severity_counts = input;
-        self
+    pub fn set_severity_counts(mut self, input: std::option::Option<crate::types::SeverityCounts>) -> Self {
+        self.severity_counts = input; self
     }
     /// Consumes the builder and constructs a [`ImageAggregation`](crate::types::ImageAggregation).
     pub fn build(self) -> crate::types::ImageAggregation {
         crate::types::ImageAggregation {
-            image_build_version_arn: self.image_build_version_arn,
-            severity_counts: self.severity_counts,
+            image_build_version_arn: self.image_build_version_arn
+            ,
+            severity_counts: self.severity_counts
+            ,
         }
     }
 }
+

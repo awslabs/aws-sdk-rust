@@ -4,81 +4,55 @@ pub use crate::operation::list_assessment_templates::_list_assessment_templates_
 pub use crate::operation::list_assessment_templates::_list_assessment_templates_input::ListAssessmentTemplatesInputBuilder;
 
 /// Fluent builder constructing a request to `ListAssessmentTemplates`.
-///
+/// 
 /// <p>Lists the assessment templates that correspond to the assessment targets that are specified by the ARNs of the assessment targets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssessmentTemplatesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder,
-}
-impl ListAssessmentTemplatesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_assessment_templates::builders::ListAssessmentTemplatesInputBuilder
+            }
+impl ListAssessmentTemplatesFluentBuilder  {
     /// Creates a new `ListAssessmentTemplates`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_assessment_templates::ListAssessmentTemplates,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_assessment_templates::ListAssessmentTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_assessment_templates::ListAssessmentTemplatesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput, aws_smithy_http::result::SdkError<crate::operation::list_assessment_templates::ListAssessmentTemplatesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator
-    {
-        crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator {
+                            crate::operation::list_assessment_templates::paginator::ListAssessmentTemplatesPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `assessmentTargetArns`.
     ///
     /// To override the contents of this collection use [`set_assessment_target_arns`](Self::set_assessment_target_arns).
@@ -89,25 +63,19 @@ impl ListAssessmentTemplatesFluentBuilder {
         self
     }
     /// <p>A list of ARNs that specifies the assessment targets whose assessment templates you want to list.</p>
-    pub fn set_assessment_target_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_assessment_target_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_assessment_target_arns(input);
         self
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(mut self, input: crate::types::AssessmentTemplateFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::AssessmentTemplateFilter>,
-    ) -> Self {
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::AssessmentTemplateFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -132,3 +100,4 @@ impl ListAssessmentTemplatesFluentBuilder {
         self
     }
 }
+

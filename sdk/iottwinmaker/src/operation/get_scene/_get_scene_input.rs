@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSceneInput {
+pub struct GetSceneInput  {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetSceneInput {
 }
 impl GetSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> std::option::Option<&str> {
+    pub fn scene_id(&self) -> std::option::Option<& str> {
         self.scene_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetSceneInputBuilder {
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetSceneInputBuilder {
     }
     /// <p>The ID of the scene.</p>
     pub fn set_scene_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scene_id = input;
-        self
+        self.scene_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSceneInput`](crate::operation::get_scene::GetSceneInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_scene::GetSceneInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_scene::GetSceneInput {
-            workspace_id: self.workspace_id,
-            scene_id: self.scene_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_scene::GetSceneInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_scene::GetSceneInput {
+                workspace_id: self.workspace_id
+                ,
+                scene_id: self.scene_id
+                ,
+            }
+        )
     }
 }
+

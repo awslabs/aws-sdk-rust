@@ -3,40 +3,34 @@
 /// The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input Security Group should allow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInputSecurityGroupInput {
+pub struct UpdateInputSecurityGroupInput  {
     /// The id of the Input Security Group to update.
     #[doc(hidden)]
     pub input_security_group_id: std::option::Option<std::string::String>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// List of IPv4 CIDR addresses to whitelist
     #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
 }
 impl UpdateInputSecurityGroupInput {
     /// The id of the Input Security Group to update.
-    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn input_security_group_id(&self) -> std::option::Option<& str> {
         self.input_security_group_id.as_deref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn whitelist_rules(&self) -> std::option::Option<&[crate::types::InputWhitelistRuleCidr]> {
+    pub fn whitelist_rules(&self) -> std::option::Option<& [crate::types::InputWhitelistRuleCidr]> {
         self.whitelist_rules.as_deref()
     }
 }
 impl UpdateInputSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateInputSecurityGroupInput`](crate::operation::update_input_security_group::UpdateInputSecurityGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder {
         crate::operation::update_input_security_group::builders::UpdateInputSecurityGroupInputBuilder::default()
     }
 }
@@ -46,10 +40,8 @@ impl UpdateInputSecurityGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateInputSecurityGroupInputBuilder {
     pub(crate) input_security_group_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) whitelist_rules:
-        std::option::Option<std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) whitelist_rules: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
 }
 impl UpdateInputSecurityGroupInputBuilder {
     /// The id of the Input Security Group to update.
@@ -58,37 +50,23 @@ impl UpdateInputSecurityGroupInputBuilder {
         self
     }
     /// The id of the Input Security Group to update.
-    pub fn set_input_security_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.input_security_group_id = input;
-        self
+    pub fn set_input_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.input_security_group_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `whitelist_rules`.
     ///
@@ -97,31 +75,26 @@ impl UpdateInputSecurityGroupInputBuilder {
     /// List of IPv4 CIDR addresses to whitelist
     pub fn whitelist_rules(mut self, input: crate::types::InputWhitelistRuleCidr) -> Self {
         let mut v = self.whitelist_rules.unwrap_or_default();
-        v.push(input);
-        self.whitelist_rules = Some(v);
-        self
+                        v.push(input);
+                        self.whitelist_rules = Some(v);
+                        self
     }
     /// List of IPv4 CIDR addresses to whitelist
-    pub fn set_whitelist_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRuleCidr>>,
-    ) -> Self {
-        self.whitelist_rules = input;
-        self
+    pub fn set_whitelist_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRuleCidr>>) -> Self {
+        self.whitelist_rules = input; self
     }
     /// Consumes the builder and constructs a [`UpdateInputSecurityGroupInput`](crate::operation::update_input_security_group::UpdateInputSecurityGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_input_security_group::UpdateInputSecurityGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_input_security_group::UpdateInputSecurityGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_input_security_group::UpdateInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id,
-                tags: self.tags,
-                whitelist_rules: self.whitelist_rules,
-            },
+                input_security_group_id: self.input_security_group_id
+                ,
+                tags: self.tags
+                ,
+                whitelist_rules: self.whitelist_rules
+                ,
+            }
         )
     }
 }
+

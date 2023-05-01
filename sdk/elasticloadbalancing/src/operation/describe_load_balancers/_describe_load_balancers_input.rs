@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for DescribeLoadBalancers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancersInput {
+pub struct DescribeLoadBalancersInput  {
     /// <p>The names of the load balancers.</p>
     #[doc(hidden)]
     pub load_balancer_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,11 +16,11 @@ pub struct DescribeLoadBalancersInput {
 }
 impl DescribeLoadBalancersInput {
     /// <p>The names of the load balancers.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
@@ -30,9 +30,7 @@ impl DescribeLoadBalancersInput {
 }
 impl DescribeLoadBalancersInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
-    pub fn builder(
-    ) -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder {
         crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder::default()
     }
 }
@@ -53,17 +51,13 @@ impl DescribeLoadBalancersInputBuilder {
     /// <p>The names of the load balancers.</p>
     pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-        v.push(input.into());
-        self.load_balancer_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.load_balancer_names = Some(v);
+                        self
     }
     /// <p>The names of the load balancers.</p>
-    pub fn set_load_balancer_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.load_balancer_names = input;
-        self
+    pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.load_balancer_names = input; self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +66,7 @@ impl DescribeLoadBalancersInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -82,22 +75,20 @@ impl DescribeLoadBalancersInputBuilder {
     }
     /// <p>The maximum number of results to return with this call (a number from 1 to 400). The default is 400.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// Consumes the builder and constructs a [`DescribeLoadBalancersInput`](crate::operation::describe_load_balancers::DescribeLoadBalancersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_load_balancers::DescribeLoadBalancersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_load_balancers::DescribeLoadBalancersInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_load_balancers::DescribeLoadBalancersInput {
-                load_balancer_names: self.load_balancer_names,
-                marker: self.marker,
-                page_size: self.page_size,
-            },
+                load_balancer_names: self.load_balancer_names
+                ,
+                marker: self.marker
+                ,
+                page_size: self.page_size
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>CDMA object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CdmaNmrObj {
+pub struct CdmaNmrObj  {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     #[doc(hidden)]
     pub pn_offset: std::option::Option<i32>,
@@ -59,8 +59,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub fn set_pn_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.pn_offset = input;
-        self
+        self.pn_offset = input; self
     }
     /// <p>CDMA channel information.</p>
     pub fn cdma_channel(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>CDMA channel information.</p>
     pub fn set_cdma_channel(mut self, input: std::option::Option<i32>) -> Self {
-        self.cdma_channel = input;
-        self
+        self.cdma_channel = input; self
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn pilot_power(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn set_pilot_power(mut self, input: std::option::Option<i32>) -> Self {
-        self.pilot_power = input;
-        self
+        self.pilot_power = input; self
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn base_station_id(mut self, input: i32) -> Self {
@@ -89,16 +86,20 @@ impl CdmaNmrObjBuilder {
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn set_base_station_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.base_station_id = input;
-        self
+        self.base_station_id = input; self
     }
     /// Consumes the builder and constructs a [`CdmaNmrObj`](crate::types::CdmaNmrObj).
     pub fn build(self) -> crate::types::CdmaNmrObj {
         crate::types::CdmaNmrObj {
-            pn_offset: self.pn_offset,
-            cdma_channel: self.cdma_channel,
-            pilot_power: self.pilot_power,
-            base_station_id: self.base_station_id,
+            pn_offset: self.pn_offset
+            ,
+            cdma_channel: self.cdma_channel
+            ,
+            pilot_power: self.pilot_power
+            ,
+            base_station_id: self.base_station_id
+            ,
         }
     }
 }
+

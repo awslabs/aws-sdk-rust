@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterWorkspaceDirectoryInput {
+pub struct DeregisterWorkspaceDirectoryInput  {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl DeregisterWorkspaceDirectoryInput {
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
 }
 impl DeregisterWorkspaceDirectoryInput {
     /// Creates a new builder-style object to manufacture [`DeregisterWorkspaceDirectoryInput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput).
-    pub fn builder() -> crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder{
+    pub fn builder() -> crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder {
         crate::operation::deregister_workspace_directory::builders::DeregisterWorkspaceDirectoryInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeregisterWorkspaceDirectoryInputBuilder {
     }
     /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// Consumes the builder and constructs a [`DeregisterWorkspaceDirectoryInput`](crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryInput {
-                directory_id: self.directory_id,
-            },
+                directory_id: self.directory_id
+                ,
+            }
         )
     }
 }
+

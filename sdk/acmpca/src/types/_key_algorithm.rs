@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let keyalgorithm = unimplemented!();
 /// match keyalgorithm {
@@ -32,22 +32,14 @@
 /// Specifically, when `keyalgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KeyAlgorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     EcPrime256v1,
@@ -58,46 +50,45 @@ pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KeyAlgorithm {
-    fn from(s: &str) -> Self {
-        match s {
-            "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
-            "EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
-            "RSA_2048" => KeyAlgorithm::Rsa2048,
-            "RSA_4096" => KeyAlgorithm::Rsa4096,
-            other => {
-                KeyAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
+"EC_secp384r1" => KeyAlgorithm::EcSecp384r1,
+"RSA_2048" => KeyAlgorithm::Rsa2048,
+"RSA_4096" => KeyAlgorithm::Rsa4096,
+other => KeyAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for KeyAlgorithm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyAlgorithm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KeyAlgorithm::from(s))
+                }
+            }
 impl KeyAlgorithm {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
-            KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
-            KeyAlgorithm::Rsa2048 => "RSA_2048",
-            KeyAlgorithm::Rsa4096 => "RSA_4096",
-            KeyAlgorithm::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
+    KeyAlgorithm::EcSecp384r1 => "EC_secp384r1",
+    KeyAlgorithm::Rsa2048 => "RSA_2048",
+    KeyAlgorithm::Rsa4096 => "RSA_4096",
+    KeyAlgorithm::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096"]
+                }
+            }
 impl AsRef<str> for KeyAlgorithm {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

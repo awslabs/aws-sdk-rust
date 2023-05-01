@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyImageOutput {
+pub struct CopyImageOutput  {
     /// <p>The name of the destination image.</p>
     #[doc(hidden)]
     pub destination_image_name: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CopyImageOutput {
 }
 impl CopyImageOutput {
     /// <p>The name of the destination image.</p>
-    pub fn destination_image_name(&self) -> std::option::Option<&str> {
+    pub fn destination_image_name(&self) -> std::option::Option<& str> {
         self.destination_image_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CopyImageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CopyImageOutput {
     /// Creates a new builder-style object to manufacture [`CopyImageOutput`](crate::operation::copy_image::CopyImageOutput).
     pub fn builder() -> crate::operation::copy_image::builders::CopyImageOutputBuilder {
@@ -40,27 +40,25 @@ impl CopyImageOutputBuilder {
         self
     }
     /// <p>The name of the destination image.</p>
-    pub fn set_destination_image_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_image_name = input;
-        self
+    pub fn set_destination_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_image_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CopyImageOutput`](crate::operation::copy_image::CopyImageOutput).
     pub fn build(self) -> crate::operation::copy_image::CopyImageOutput {
         crate::operation::copy_image::CopyImageOutput {
-            destination_image_name: self.destination_image_name,
+            destination_image_name: self.destination_image_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

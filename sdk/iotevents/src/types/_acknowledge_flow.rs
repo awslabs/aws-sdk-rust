@@ -3,7 +3,7 @@
 /// <p>Specifies whether to get notified for alarm state changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeFlow {
+pub struct AcknowledgeFlow  {
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -35,13 +35,14 @@ impl AcknowledgeFlowBuilder {
     }
     /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you receive a notification when the alarm state changes. You must choose to acknowledge the notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>, you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code> state when the input property value returns to the specified range.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Consumes the builder and constructs a [`AcknowledgeFlow`](crate::types::AcknowledgeFlow).
     pub fn build(self) -> crate::types::AcknowledgeFlow {
         crate::types::AcknowledgeFlow {
-            enabled: self.enabled,
+            enabled: self.enabled
+            ,
         }
     }
 }
+

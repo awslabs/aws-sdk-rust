@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttachmentInput {
+pub struct DescribeAttachmentInput  {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
     #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> std::option::Option<& str> {
         self.attachment_id.as_deref()
     }
 }
 impl DescribeAttachmentInput {
     /// Creates a new builder-style object to manufacture [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
-    pub fn builder(
-    ) -> crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder {
+    pub fn builder() -> crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder {
         crate::operation::describe_attachment::builders::DescribeAttachmentInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
     pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_id = input;
-        self
+        self.attachment_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_attachment::DescribeAttachmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_attachment::DescribeAttachmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_attachment::DescribeAttachmentInput {
-                attachment_id: self.attachment_id,
-            },
+                attachment_id: self.attachment_id
+                ,
+            }
         )
     }
 }
+

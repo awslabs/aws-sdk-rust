@@ -3,7 +3,7 @@
 /// <p>Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEvaluationsOutput {
+pub struct DescribeEvaluationsOutput  {
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
@@ -14,25 +14,23 @@ pub struct DescribeEvaluationsOutput {
 }
 impl DescribeEvaluationsOutput {
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::Evaluation]> {
+    pub fn results(&self) -> std::option::Option<& [crate::types::Evaluation]> {
         self.results.as_deref()
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEvaluationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEvaluationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEvaluationsOutput`](crate::operation::describe_evaluations::DescribeEvaluationsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder {
-        crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder {
+        crate::operation::describe_evaluations::builders::DescribeEvaluationsOutputBuilder::default()
     }
 }
 
@@ -52,17 +50,13 @@ impl DescribeEvaluationsOutputBuilder {
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
     pub fn results(mut self, input: crate::types::Evaluation) -> Self {
         let mut v = self.results.unwrap_or_default();
-        v.push(input);
-        self.results = Some(v);
-        self
+                        v.push(input);
+                        self.results = Some(v);
+                        self
     }
     /// <p>A list of <code>Evaluation</code> that meet the search criteria. </p>
-    pub fn set_results(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
-    ) -> Self {
-        self.results = input;
-        self
+    pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::Evaluation>>) -> Self {
+        self.results = input; self
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +65,26 @@ impl DescribeEvaluationsOutputBuilder {
     }
     /// <p>The ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEvaluationsOutput`](crate::operation::describe_evaluations::DescribeEvaluationsOutput).
     pub fn build(self) -> crate::operation::describe_evaluations::DescribeEvaluationsOutput {
         crate::operation::describe_evaluations::DescribeEvaluationsOutput {
-            results: self.results,
-            next_token: self.next_token,
+            results: self.results
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

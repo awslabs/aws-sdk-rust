@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchStopJobRunInput {
+pub struct BatchStopJobRunInput  {
     /// <p>The name of the job definition for which to stop job runs.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct BatchStopJobRunInput {
 }
 impl BatchStopJobRunInput {
     /// <p>The name of the job definition for which to stop job runs.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
-    pub fn job_run_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_run_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.job_run_ids.as_deref()
     }
 }
 impl BatchStopJobRunInput {
     /// Creates a new builder-style object to manufacture [`BatchStopJobRunInput`](crate::operation::batch_stop_job_run::BatchStopJobRunInput).
-    pub fn builder() -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder
-    {
+    pub fn builder() -> crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder {
         crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl BatchStopJobRunInputBuilder {
     }
     /// <p>The name of the job definition for which to stop job runs.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input;
-        self
+        self.job_name = input; self
     }
     /// Appends an item to `job_run_ids`.
     ///
@@ -53,28 +51,24 @@ impl BatchStopJobRunInputBuilder {
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
     pub fn job_run_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_run_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_run_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_run_ids = Some(v);
+                        self
     }
     /// <p>A list of the <code>JobRunIds</code> that should be stopped for that job definition.</p>
-    pub fn set_job_run_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_run_ids = input;
-        self
+    pub fn set_job_run_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_run_ids = input; self
     }
     /// Consumes the builder and constructs a [`BatchStopJobRunInput`](crate::operation::batch_stop_job_run::BatchStopJobRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_stop_job_run::BatchStopJobRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::batch_stop_job_run::BatchStopJobRunInput {
-            job_name: self.job_name,
-            job_run_ids: self.job_run_ids,
-        })
+    pub fn build(self) -> Result<crate::operation::batch_stop_job_run::BatchStopJobRunInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::batch_stop_job_run::BatchStopJobRunInput {
+                job_name: self.job_name
+                ,
+                job_run_ids: self.job_run_ids
+                ,
+            }
+        )
     }
 }
+

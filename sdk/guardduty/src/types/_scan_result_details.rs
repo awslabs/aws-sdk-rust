@@ -3,14 +3,14 @@
 /// <p>Represents the result of the scan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanResultDetails {
+pub struct ScanResultDetails  {
     /// <p>An enum value representing possible scan results.</p>
     #[doc(hidden)]
     pub scan_result: std::option::Option<crate::types::ScanResult>,
 }
 impl ScanResultDetails {
     /// <p>An enum value representing possible scan results.</p>
-    pub fn scan_result(&self) -> std::option::Option<&crate::types::ScanResult> {
+    pub fn scan_result(&self) -> std::option::Option<& crate::types::ScanResult> {
         self.scan_result.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl ScanResultDetailsBuilder {
     }
     /// <p>An enum value representing possible scan results.</p>
     pub fn set_scan_result(mut self, input: std::option::Option<crate::types::ScanResult>) -> Self {
-        self.scan_result = input;
-        self
+        self.scan_result = input; self
     }
     /// Consumes the builder and constructs a [`ScanResultDetails`](crate::types::ScanResultDetails).
     pub fn build(self) -> crate::types::ScanResultDetails {
         crate::types::ScanResultDetails {
-            scan_result: self.scan_result,
+            scan_result: self.scan_result
+            ,
         }
     }
 }
+

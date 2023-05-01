@@ -3,7 +3,7 @@
 /// <p>Options for Amazon S3 as a logging destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifiedAccessLogS3Destination {
+pub struct VerifiedAccessLogS3Destination  {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -26,21 +26,19 @@ impl VerifiedAccessLogS3Destination {
         self.enabled
     }
     /// <p>The delivery status.</p>
-    pub fn delivery_status(
-        &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessLogDeliveryStatus> {
+    pub fn delivery_status(&self) -> std::option::Option<& crate::types::VerifiedAccessLogDeliveryStatus> {
         self.delivery_status.as_ref()
     }
     /// <p>The bucket name.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The Amazon Web Services account number that owns the bucket.</p>
-    pub fn bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> std::option::Option<& str> {
         self.bucket_owner.as_deref()
     }
 }
@@ -69,8 +67,7 @@ impl VerifiedAccessLogS3DestinationBuilder {
     }
     /// <p>Indicates whether logging is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The delivery status.</p>
     pub fn delivery_status(mut self, input: crate::types::VerifiedAccessLogDeliveryStatus) -> Self {
@@ -78,12 +75,8 @@ impl VerifiedAccessLogS3DestinationBuilder {
         self
     }
     /// <p>The delivery status.</p>
-    pub fn set_delivery_status(
-        mut self,
-        input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>,
-    ) -> Self {
-        self.delivery_status = input;
-        self
+    pub fn set_delivery_status(mut self, input: std::option::Option<crate::types::VerifiedAccessLogDeliveryStatus>) -> Self {
+        self.delivery_status = input; self
     }
     /// <p>The bucket name.</p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +85,7 @@ impl VerifiedAccessLogS3DestinationBuilder {
     }
     /// <p>The bucket name.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input;
-        self
+        self.bucket_name = input; self
     }
     /// <p>The bucket prefix.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,8 +94,7 @@ impl VerifiedAccessLogS3DestinationBuilder {
     }
     /// <p>The bucket prefix.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>The Amazon Web Services account number that owns the bucket.</p>
     pub fn bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,17 +103,22 @@ impl VerifiedAccessLogS3DestinationBuilder {
     }
     /// <p>The Amazon Web Services account number that owns the bucket.</p>
     pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_owner = input;
-        self
+        self.bucket_owner = input; self
     }
     /// Consumes the builder and constructs a [`VerifiedAccessLogS3Destination`](crate::types::VerifiedAccessLogS3Destination).
     pub fn build(self) -> crate::types::VerifiedAccessLogS3Destination {
         crate::types::VerifiedAccessLogS3Destination {
-            enabled: self.enabled,
-            delivery_status: self.delivery_status,
-            bucket_name: self.bucket_name,
-            prefix: self.prefix,
-            bucket_owner: self.bucket_owner,
+            enabled: self.enabled
+            ,
+            delivery_status: self.delivery_status
+            ,
+            bucket_name: self.bucket_name
+            ,
+            prefix: self.prefix
+            ,
+            bucket_owner: self.bucket_owner
+            ,
         }
     }
 }
+

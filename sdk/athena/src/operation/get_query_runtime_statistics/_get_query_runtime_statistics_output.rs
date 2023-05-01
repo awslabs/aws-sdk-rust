@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueryRuntimeStatisticsOutput {
+pub struct GetQueryRuntimeStatisticsOutput  {
     /// <p>Runtime statistics about the query execution.</p>
     #[doc(hidden)]
     pub query_runtime_statistics: std::option::Option<crate::types::QueryRuntimeStatistics>,
@@ -10,20 +10,18 @@ pub struct GetQueryRuntimeStatisticsOutput {
 }
 impl GetQueryRuntimeStatisticsOutput {
     /// <p>Runtime statistics about the query execution.</p>
-    pub fn query_runtime_statistics(
-        &self,
-    ) -> std::option::Option<&crate::types::QueryRuntimeStatistics> {
+    pub fn query_runtime_statistics(&self) -> std::option::Option<& crate::types::QueryRuntimeStatistics> {
         self.query_runtime_statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetQueryRuntimeStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetQueryRuntimeStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryRuntimeStatisticsOutput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput).
-    pub fn builder() -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsOutputBuilder{
+    pub fn builder() -> crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsOutputBuilder {
         crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl GetQueryRuntimeStatisticsOutputBuilder {
         self
     }
     /// <p>Runtime statistics about the query execution.</p>
-    pub fn set_query_runtime_statistics(
-        mut self,
-        input: std::option::Option<crate::types::QueryRuntimeStatistics>,
-    ) -> Self {
-        self.query_runtime_statistics = input;
-        self
+    pub fn set_query_runtime_statistics(mut self, input: std::option::Option<crate::types::QueryRuntimeStatistics>) -> Self {
+        self.query_runtime_statistics = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetQueryRuntimeStatisticsOutput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput {
+    pub fn build(self) -> crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput {
         crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput {
-            query_runtime_statistics: self.query_runtime_statistics,
+            query_runtime_statistics: self.query_runtime_statistics
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPreviewFindingsInput {
+pub struct ListAccessPreviewFindingsInput  {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
     pub access_preview_id: std::option::Option<std::string::String>,
@@ -11,9 +11,7 @@ pub struct ListAccessPreviewFindingsInput {
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>Criteria to filter the returned findings.</p>
     #[doc(hidden)]
-    pub filter: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Criterion>,
-    >,
+    pub filter: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Criterion>>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -23,22 +21,19 @@ pub struct ListAccessPreviewFindingsInput {
 }
 impl ListAccessPreviewFindingsInput {
     /// <p>The unique ID for the access preview.</p>
-    pub fn access_preview_id(&self) -> std::option::Option<&str> {
+    pub fn access_preview_id(&self) -> std::option::Option<& str> {
         self.access_preview_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn filter(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Criterion>>
-    {
+    pub fn filter(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -48,7 +43,7 @@ impl ListAccessPreviewFindingsInput {
 }
 impl ListAccessPreviewFindingsInput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsInput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput).
-    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder{
+    pub fn builder() -> crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder {
         crate::operation::list_access_preview_findings::builders::ListAccessPreviewFindingsInputBuilder::default()
     }
 }
@@ -59,9 +54,7 @@ impl ListAccessPreviewFindingsInput {
 pub struct ListAccessPreviewFindingsInputBuilder {
     pub(crate) access_preview_id: std::option::Option<std::string::String>,
     pub(crate) analyzer_arn: std::option::Option<std::string::String>,
-    pub(crate) filter: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::Criterion>,
-    >,
+    pub(crate) filter: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Criterion>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -72,12 +65,8 @@ impl ListAccessPreviewFindingsInputBuilder {
         self
     }
     /// <p>The unique ID for the access preview.</p>
-    pub fn set_access_preview_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.access_preview_id = input;
-        self
+    pub fn set_access_preview_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.access_preview_id = input; self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
     pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +75,7 @@ impl ListAccessPreviewFindingsInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access.</p>
     pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// Adds a key-value pair to `filter`.
     ///
@@ -96,19 +84,13 @@ impl ListAccessPreviewFindingsInputBuilder {
     /// <p>Criteria to filter the returned findings.</p>
     pub fn filter(mut self, k: impl Into<std::string::String>, v: crate::types::Criterion) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.filter = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.filter = Some(hash_map);
+                        self
     }
     /// <p>Criteria to filter the returned findings.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Criterion>,
-        >,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Criterion>>) -> Self {
+        self.filter = input; self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +99,7 @@ impl ListAccessPreviewFindingsInputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -127,24 +108,24 @@ impl ListAccessPreviewFindingsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAccessPreviewFindingsInput`](crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_access_preview_findings::ListAccessPreviewFindingsInput {
-                access_preview_id: self.access_preview_id,
-                analyzer_arn: self.analyzer_arn,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                access_preview_id: self.access_preview_id
+                ,
+                analyzer_arn: self.analyzer_arn
+                ,
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

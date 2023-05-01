@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSessionInput {
+pub struct GetSessionInput  {
     /// <p>The session ID.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl GetSessionInput {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetSessionInputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSessionInput`](crate::operation::get_session::GetSessionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_session::GetSessionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_session::GetSessionInput {
-            session_id: self.session_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_session::GetSessionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_session::GetSessionInput {
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

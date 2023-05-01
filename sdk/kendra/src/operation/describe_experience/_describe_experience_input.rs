@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExperienceInput {
+pub struct DescribeExperienceInput  {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DescribeExperienceInput {
 }
 impl DescribeExperienceInput {
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
 impl DescribeExperienceInput {
     /// Creates a new builder-style object to manufacture [`DescribeExperienceInput`](crate::operation::describe_experience::DescribeExperienceInput).
-    pub fn builder(
-    ) -> crate::operation::describe_experience::builders::DescribeExperienceInputBuilder {
+    pub fn builder() -> crate::operation::describe_experience::builders::DescribeExperienceInputBuilder {
         crate::operation::describe_experience::builders::DescribeExperienceInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DescribeExperienceInputBuilder {
     }
     /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DescribeExperienceInputBuilder {
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeExperienceInput`](crate::operation::describe_experience::DescribeExperienceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_experience::DescribeExperienceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_experience::DescribeExperienceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_experience::DescribeExperienceInput {
-                id: self.id,
-                index_id: self.index_id,
-            },
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+            }
         )
     }
 }
+

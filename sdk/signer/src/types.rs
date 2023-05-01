@@ -112,3 +112,4 @@ pub mod builders;
 
 /// Error types that AWS Signer can respond with.
 pub mod error;
+

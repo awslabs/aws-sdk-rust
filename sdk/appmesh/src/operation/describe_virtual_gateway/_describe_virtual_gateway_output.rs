@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualGatewayOutput {
+pub struct DescribeVirtualGatewayOutput  {
     /// <p>The full description of your virtual gateway.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::types::VirtualGatewayData>,
@@ -10,20 +10,18 @@ pub struct DescribeVirtualGatewayOutput {
 }
 impl DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
-    pub fn virtual_gateway(&self) -> std::option::Option<&crate::types::VirtualGatewayData> {
+    pub fn virtual_gateway(&self) -> std::option::Option<& crate::types::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVirtualGatewayOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeVirtualGatewayOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualGatewayOutput`](crate::operation::describe_virtual_gateway::DescribeVirtualGatewayOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_virtual_gateway::builders::DescribeVirtualGatewayOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_virtual_gateway::builders::DescribeVirtualGatewayOutputBuilder {
         crate::operation::describe_virtual_gateway::builders::DescribeVirtualGatewayOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl DescribeVirtualGatewayOutputBuilder {
         self
     }
     /// <p>The full description of your virtual gateway.</p>
-    pub fn set_virtual_gateway(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayData>,
-    ) -> Self {
-        self.virtual_gateway = input;
-        self
+    pub fn set_virtual_gateway(mut self, input: std::option::Option<crate::types::VirtualGatewayData>) -> Self {
+        self.virtual_gateway = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeVirtualGatewayOutput`](crate::operation::describe_virtual_gateway::DescribeVirtualGatewayOutput).
     pub fn build(self) -> crate::operation::describe_virtual_gateway::DescribeVirtualGatewayOutput {
         crate::operation::describe_virtual_gateway::DescribeVirtualGatewayOutput {
-            virtual_gateway: self.virtual_gateway,
+            virtual_gateway: self.virtual_gateway
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Describes a connector that enables persistent storage for users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageConnector {
+pub struct StorageConnector  {
     /// <p>The type of storage connector.</p>
     #[doc(hidden)]
     pub connector_type: std::option::Option<crate::types::StorageConnectorType>,
@@ -16,15 +16,15 @@ pub struct StorageConnector {
 }
 impl StorageConnector {
     /// <p>The type of storage connector.</p>
-    pub fn connector_type(&self) -> std::option::Option<&crate::types::StorageConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<& crate::types::StorageConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> std::option::Option<& str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> std::option::Option<& [std::string::String]> {
         self.domains.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl StorageConnectorBuilder {
         self
     }
     /// <p>The type of storage connector.</p>
-    pub fn set_connector_type(
-        mut self,
-        input: std::option::Option<crate::types::StorageConnectorType>,
-    ) -> Self {
-        self.connector_type = input;
-        self
+    pub fn set_connector_type(mut self, input: std::option::Option<crate::types::StorageConnectorType>) -> Self {
+        self.connector_type = input; self
     }
     /// <p>The ARN of the storage connector.</p>
     pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,12 +59,8 @@ impl StorageConnectorBuilder {
         self
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn set_resource_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_identifier = input;
-        self
+    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_identifier = input; self
     }
     /// Appends an item to `domains`.
     ///
@@ -77,24 +69,24 @@ impl StorageConnectorBuilder {
     /// <p>The names of the domains for the account.</p>
     pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = Some(v);
+                        self
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn set_domains(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// Consumes the builder and constructs a [`StorageConnector`](crate::types::StorageConnector).
     pub fn build(self) -> crate::types::StorageConnector {
         crate::types::StorageConnector {
-            connector_type: self.connector_type,
-            resource_identifier: self.resource_identifier,
-            domains: self.domains,
+            connector_type: self.connector_type
+            ,
+            resource_identifier: self.resource_identifier
+            ,
+            domains: self.domains
+            ,
         }
     }
 }
+

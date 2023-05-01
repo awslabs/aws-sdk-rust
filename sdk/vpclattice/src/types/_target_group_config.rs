@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of a target group. Lambda functions don't support target group configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetGroupConfig {
+pub struct TargetGroupConfig  {
     /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
@@ -29,25 +29,23 @@ impl TargetGroupConfig {
         self.port
     }
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::TargetGroupProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::TargetGroupProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
-    pub fn protocol_version(
-        &self,
-    ) -> std::option::Option<&crate::types::TargetGroupProtocolVersion> {
+    pub fn protocol_version(&self) -> std::option::Option<& crate::types::TargetGroupProtocolVersion> {
         self.protocol_version.as_ref()
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<& crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_identifier(&self) -> std::option::Option<&str> {
+    pub fn vpc_identifier(&self) -> std::option::Option<& str> {
         self.vpc_identifier.as_deref()
     }
     /// <p>The health check configuration.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheckConfig> {
+    pub fn health_check(&self) -> std::option::Option<& crate::types::HealthCheckConfig> {
         self.health_check.as_ref()
     }
 }
@@ -77,8 +75,7 @@ impl TargetGroupConfigBuilder {
     }
     /// <p>The port on which the targets are listening. For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code> </p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
     pub fn protocol(mut self, input: crate::types::TargetGroupProtocol) -> Self {
@@ -86,12 +83,8 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The protocol to use for routing traffic to the targets. Default is the protocol of a target group.</p>
-    pub fn set_protocol(
-        mut self,
-        input: std::option::Option<crate::types::TargetGroupProtocol>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: std::option::Option<crate::types::TargetGroupProtocol>) -> Self {
+        self.protocol = input; self
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
     pub fn protocol_version(mut self, input: crate::types::TargetGroupProtocolVersion) -> Self {
@@ -99,12 +92,8 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The protocol version. Default value is <code>HTTP1</code>.</p>
-    pub fn set_protocol_version(
-        mut self,
-        input: std::option::Option<crate::types::TargetGroupProtocolVersion>,
-    ) -> Self {
-        self.protocol_version = input;
-        self
+    pub fn set_protocol_version(mut self, input: std::option::Option<crate::types::TargetGroupProtocolVersion>) -> Self {
+        self.protocol_version = input; self
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -112,12 +101,8 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(
-        mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
-    ) -> Self {
-        self.ip_address_type = input;
-        self
+    pub fn set_ip_address_type(mut self, input: std::option::Option<crate::types::IpAddressType>) -> Self {
+        self.ip_address_type = input; self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +111,7 @@ impl TargetGroupConfigBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_identifier = input;
-        self
+        self.vpc_identifier = input; self
     }
     /// <p>The health check configuration.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheckConfig) -> Self {
@@ -135,22 +119,25 @@ impl TargetGroupConfigBuilder {
         self
     }
     /// <p>The health check configuration.</p>
-    pub fn set_health_check(
-        mut self,
-        input: std::option::Option<crate::types::HealthCheckConfig>,
-    ) -> Self {
-        self.health_check = input;
-        self
+    pub fn set_health_check(mut self, input: std::option::Option<crate::types::HealthCheckConfig>) -> Self {
+        self.health_check = input; self
     }
     /// Consumes the builder and constructs a [`TargetGroupConfig`](crate::types::TargetGroupConfig).
     pub fn build(self) -> crate::types::TargetGroupConfig {
         crate::types::TargetGroupConfig {
-            port: self.port,
-            protocol: self.protocol,
-            protocol_version: self.protocol_version,
-            ip_address_type: self.ip_address_type,
-            vpc_identifier: self.vpc_identifier,
-            health_check: self.health_check,
+            port: self.port
+            ,
+            protocol: self.protocol
+            ,
+            protocol_version: self.protocol_version
+            ,
+            ip_address_type: self.ip_address_type
+            ,
+            vpc_identifier: self.vpc_identifier
+            ,
+            health_check: self.health_check
+            ,
         }
     }
 }
+

@@ -3,48 +3,46 @@
 /// <p>The request failed due to a conflict. Check the <code>ConflictType</code> and error message for more details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
-    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
-    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
-    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
-    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
-    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li> 
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li> 
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li> 
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li> 
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li> 
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub conflict_type: std::option::Option<crate::types::ConflictType>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
 impl ConflictException {
-    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
-    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
-    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
-    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
-    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
-    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li> 
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li> 
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li> 
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li> 
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li> 
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li> 
     /// </ul>
-    pub fn conflict_type(&self) -> std::option::Option<&crate::types::ConflictType> {
+    pub fn conflict_type(&self) -> std::option::Option<& crate::types::ConflictType> {
         self.conflict_type.as_ref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -59,9 +57,7 @@ impl aws_http::request_id::RequestId for crate::types::error::ConflictException 
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConflictException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::types::error::ConflictException).
@@ -86,58 +82,53 @@ impl ConflictExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
-    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
-    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
-    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
-    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
-    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
-    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li> 
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li> 
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li> 
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li> 
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li> 
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li> 
     /// </ul>
     pub fn conflict_type(mut self, input: crate::types::ConflictType) -> Self {
         self.conflict_type = Some(input);
         self
     }
-    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li>
-    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li>
-    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li>
-    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li>
-    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li>
-    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li>
+    /// <p>The type of conflict which caused a ConflictException. Possible types and the corresponding error messages are as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.</p> </li> 
+    /// <li> <p> <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker ID after an enrollment has been requested.</p> </li> 
+    /// <li> <p> <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.</p> </li> 
+    /// <li> <p> <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.</p> </li> 
+    /// <li> <p> <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out speaker.</p> </li> 
+    /// <li> <p> <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource was modified by another request during execution.</p> </li> 
     /// </ul>
-    pub fn set_conflict_type(
-        mut self,
-        input: std::option::Option<crate::types::ConflictType>,
-    ) -> Self {
-        self.conflict_type = input;
-        self
+    pub fn set_conflict_type(mut self, input: std::option::Option<crate::types::ConflictType>) -> Self {
+        self.conflict_type = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`ConflictException`](crate::types::error::ConflictException).
     pub fn build(self) -> crate::types::error::ConflictException {
         crate::types::error::ConflictException {
-            message: self.message,
-            conflict_type: self.conflict_type,
+            message: self.message
+            ,
+            conflict_type: self.conflict_type
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object representing an Glue table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataQualityTargetTable {
+pub struct DataQualityTargetTable  {
     /// <p>The name of the Glue table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DataQualityTargetTable {
 }
 impl DataQualityTargetTable {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the database where the Glue table exists.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl DataQualityTargetTableBuilder {
     }
     /// <p>The name of the Glue table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name of the database where the Glue table exists.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl DataQualityTargetTableBuilder {
     }
     /// <p>The name of the database where the Glue table exists.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// Consumes the builder and constructs a [`DataQualityTargetTable`](crate::types::DataQualityTargetTable).
     pub fn build(self) -> crate::types::DataQualityTargetTable {
         crate::types::DataQualityTargetTable {
-            table_name: self.table_name,
-            database_name: self.database_name,
+            table_name: self.table_name
+            ,
+            database_name: self.database_name
+            ,
         }
     }
 }
+

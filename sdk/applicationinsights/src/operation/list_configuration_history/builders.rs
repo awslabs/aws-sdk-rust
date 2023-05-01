@@ -4,95 +4,67 @@ pub use crate::operation::list_configuration_history::_list_configuration_histor
 pub use crate::operation::list_configuration_history::_list_configuration_history_input::ListConfigurationHistoryInputBuilder;
 
 /// Fluent builder constructing a request to `ListConfigurationHistory`.
-///
-/// <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are: </p>
-/// <ul>
-/// <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
-/// <li> <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p> </li>
-/// <li> <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p> </li>
+/// 
+/// <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are: </p> 
+/// <ul> 
+/// <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li> 
+/// <li> <p>WARN: alarm not created due to insufficient data points used to predict thresholds.</p> </li> 
+/// <li> <p>ERROR: alarm not created due to permission errors or exceeding quotas. </p> </li> 
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConfigurationHistoryFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_configuration_history::builders::ListConfigurationHistoryInputBuilder
             }
-impl ListConfigurationHistoryFluentBuilder {
+impl ListConfigurationHistoryFluentBuilder  {
     /// Creates a new `ListConfigurationHistory`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_configuration_history::ListConfigurationHistory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_history::ListConfigurationHistoryError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_configuration_history::ListConfigurationHistoryOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::list_configuration_history::ListConfigurationHistoryError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_configuration_history::ListConfigurationHistory, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_configuration_history::ListConfigurationHistoryError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_configuration_history::ListConfigurationHistoryOutput, aws_smithy_http::result::SdkError<crate::operation::list_configuration_history::ListConfigurationHistoryError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator
-    {
-        crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator {
+                            crate::operation::list_configuration_history::paginator::ListConfigurationHistoryPaginator::new(self.handle, self.inner)
+                        }
     /// <p>Resource group to which the application belongs. </p>
     pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_group_name(input.into());
         self
     }
     /// <p>Resource group to which the application belongs. </p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_group_name(input);
         self
     }
@@ -102,10 +74,7 @@ impl ListConfigurationHistoryFluentBuilder {
         self
     }
     /// <p>The start time of the event. </p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -125,10 +94,7 @@ impl ListConfigurationHistoryFluentBuilder {
         self
     }
     /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-    pub fn set_event_status(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationEventStatus>,
-    ) -> Self {
+    pub fn set_event_status(mut self, input: std::option::Option<crate::types::ConfigurationEventStatus>) -> Self {
         self.inner = self.inner.set_event_status(input);
         self
     }
@@ -153,3 +119,4 @@ impl ListConfigurationHistoryFluentBuilder {
         self
     }
 }
+

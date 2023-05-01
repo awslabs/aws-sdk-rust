@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportMigrationTaskInput {
+pub struct ImportMigrationTaskInput  {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
     #[doc(hidden)]
     pub progress_update_stream: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ImportMigrationTaskInput {
 }
 impl ImportMigrationTaskInput {
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
-    pub fn progress_update_stream(&self) -> std::option::Option<&str> {
+    pub fn progress_update_stream(&self) -> std::option::Option<& str> {
         self.progress_update_stream.as_deref()
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn migration_task_name(&self) -> std::option::Option<&str> {
+    pub fn migration_task_name(&self) -> std::option::Option<& str> {
         self.migration_task_name.as_deref()
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
@@ -29,10 +29,8 @@ impl ImportMigrationTaskInput {
 }
 impl ImportMigrationTaskInput {
     /// Creates a new builder-style object to manufacture [`ImportMigrationTaskInput`](crate::operation::import_migration_task::ImportMigrationTaskInput).
-    pub fn builder(
-    ) -> crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder {
-        crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder {
+        crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder::default()
     }
 }
 
@@ -51,12 +49,8 @@ impl ImportMigrationTaskInputBuilder {
         self
     }
     /// <p>The name of the ProgressUpdateStream. &gt;</p>
-    pub fn set_progress_update_stream(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.progress_update_stream = input;
-        self
+    pub fn set_progress_update_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.progress_update_stream = input; self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
     pub fn migration_task_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,12 +58,8 @@ impl ImportMigrationTaskInputBuilder {
         self
     }
     /// <p>Unique identifier that references the migration task. <i>Do not store personal data in this field.</i> </p>
-    pub fn set_migration_task_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.migration_task_name = input;
-        self
+    pub fn set_migration_task_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.migration_task_name = input; self
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -78,22 +68,21 @@ impl ImportMigrationTaskInputBuilder {
     }
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if the caller has permission to make the call.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`ImportMigrationTaskInput`](crate::operation::import_migration_task::ImportMigrationTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_migration_task::ImportMigrationTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::import_migration_task::ImportMigrationTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::import_migration_task::ImportMigrationTaskInput {
-                progress_update_stream: self.progress_update_stream,
-                migration_task_name: self.migration_task_name,
-                dry_run: self.dry_run.unwrap_or_default(),
-            },
+                progress_update_stream: self.progress_update_stream
+                ,
+                migration_task_name: self.migration_task_name
+                ,
+                dry_run: self.dry_run
+                    .unwrap_or_default()
+                ,
+            }
         )
     }
 }
+

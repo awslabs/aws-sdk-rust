@@ -3,7 +3,7 @@
 /// <p>The location of artifacts for an AutoML candidate job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CandidateArtifactLocations {
+pub struct CandidateArtifactLocations  {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
     #[doc(hidden)]
     pub explainability: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CandidateArtifactLocations {
 }
 impl CandidateArtifactLocations {
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
-    pub fn explainability(&self) -> std::option::Option<&str> {
+    pub fn explainability(&self) -> std::option::Option<& str> {
         self.explainability.as_deref()
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
-    pub fn model_insights(&self) -> std::option::Option<&str> {
+    pub fn model_insights(&self) -> std::option::Option<& str> {
         self.model_insights.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl CandidateArtifactLocationsBuilder {
     }
     /// <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.</p>
     pub fn set_explainability(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.explainability = input;
-        self
+        self.explainability = input; self
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
     pub fn model_insights(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl CandidateArtifactLocationsBuilder {
     }
     /// <p>The Amazon S3 prefix to the model insight artifacts generated for the AutoML candidate.</p>
     pub fn set_model_insights(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_insights = input;
-        self
+        self.model_insights = input; self
     }
     /// Consumes the builder and constructs a [`CandidateArtifactLocations`](crate::types::CandidateArtifactLocations).
     pub fn build(self) -> crate::types::CandidateArtifactLocations {
         crate::types::CandidateArtifactLocations {
-            explainability: self.explainability,
-            model_insights: self.model_insights,
+            explainability: self.explainability
+            ,
+            model_insights: self.model_insights
+            ,
         }
     }
 }
+

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssessmentRunAgentsInput {
+pub struct ListAssessmentRunAgentsInput  {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
     #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::AgentFilter>,
@@ -19,16 +19,16 @@ pub struct ListAssessmentRunAgentsInput {
 }
 impl ListAssessmentRunAgentsInput {
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::AgentFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::AgentFilter> {
         self.filter.as_ref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -38,9 +38,7 @@ impl ListAssessmentRunAgentsInput {
 }
 impl ListAssessmentRunAgentsInput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentRunAgentsInput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput).
-    pub fn builder(
-    ) -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder {
         crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder::default()
     }
 }
@@ -61,24 +59,19 @@ impl ListAssessmentRunAgentsInputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_run_arn = input;
-        self
+    pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_run_arn = input; self
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(mut self, input: crate::types::AgentFilter) -> Self {
         self.filter = Some(input);
         self
     }
-    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+    /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn set_filter(mut self, input: std::option::Option<crate::types::AgentFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +80,7 @@ impl ListAssessmentRunAgentsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -97,23 +89,22 @@ impl ListAssessmentRunAgentsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAssessmentRunAgentsInput`](crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsInput {
-                assessment_run_arn: self.assessment_run_arn,
-                filter: self.filter,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                assessment_run_arn: self.assessment_run_arn
+                ,
+                filter: self.filter
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

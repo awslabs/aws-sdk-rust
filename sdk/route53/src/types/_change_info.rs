@@ -3,7 +3,7 @@
 /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeInfo {
+pub struct ChangeInfo  {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ChangeInfo {
 }
 impl ChangeInfo {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ChangeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ChangeStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn submitted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_at.as_ref()
     }
     /// <p>A comment you can provide.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl ChangeInfoBuilder {
     }
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
     pub fn status(mut self, input: crate::types::ChangeStatus) -> Self {
@@ -69,8 +68,7 @@ impl ChangeInfoBuilder {
     }
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ChangeStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
     pub fn submitted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl ChangeInfoBuilder {
         self
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn set_submitted_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.submitted_at = input;
-        self
+    pub fn set_submitted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.submitted_at = input; self
     }
     /// <p>A comment you can provide.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl ChangeInfoBuilder {
     }
     /// <p>A comment you can provide.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// Consumes the builder and constructs a [`ChangeInfo`](crate::types::ChangeInfo).
     pub fn build(self) -> crate::types::ChangeInfo {
         crate::types::ChangeInfo {
-            id: self.id,
-            status: self.status,
-            submitted_at: self.submitted_at,
-            comment: self.comment,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            submitted_at: self.submitted_at
+            ,
+            comment: self.comment
+            ,
         }
     }
 }
+

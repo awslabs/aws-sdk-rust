@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFieldOptionsOutput {
+pub struct ListFieldOptionsOutput  {
     /// <p>A list of <code>FieldOption</code> objects.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::types::FieldOption>>,
@@ -13,23 +13,22 @@ pub struct ListFieldOptionsOutput {
 }
 impl ListFieldOptionsOutput {
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::types::FieldOption]> {
+    pub fn options(&self) -> std::option::Option<& [crate::types::FieldOption]> {
         self.options.as_deref()
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFieldOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListFieldOptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
-    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder {
         crate::operation::list_field_options::builders::ListFieldOptionsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListFieldOptionsOutputBuilder {
     /// <p>A list of <code>FieldOption</code> objects.</p>
     pub fn options(mut self, input: crate::types::FieldOption) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = Some(v);
-        self
+                        v.push(input);
+                        self.options = Some(v);
+                        self
     }
     /// <p>A list of <code>FieldOption</code> objects.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldOption>>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListFieldOptionsOutputBuilder {
     }
     /// <p>The token for the next set of results. This is null if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListFieldOptionsOutput`](crate::operation::list_field_options::ListFieldOptionsOutput).
     pub fn build(self) -> crate::operation::list_field_options::ListFieldOptionsOutput {
         crate::operation::list_field_options::ListFieldOptionsOutput {
-            options: self.options,
-            next_token: self.next_token,
+            options: self.options
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

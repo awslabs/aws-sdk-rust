@@ -3,7 +3,7 @@
 /// <p>A summary of schema details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaSummary {
+pub struct SchemaSummary  {
     /// <p>The date and time that schema was modified.</p>
     #[doc(hidden)]
     pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
@@ -15,30 +15,26 @@ pub struct SchemaSummary {
     pub schema_name: std::option::Option<std::string::String>,
     /// <p>Tags associated with the schema.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The number of versions available for the schema.</p>
     #[doc(hidden)]
     pub version_count: i64,
 }
 impl SchemaSummary {
     /// <p>The date and time that schema was modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The ARN of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> std::option::Option<& str> {
         self.schema_name.as_deref()
     }
     /// <p>Tags associated with the schema.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The number of versions available for the schema.</p>
@@ -60,8 +56,7 @@ pub struct SchemaSummaryBuilder {
     pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) schema_arn: std::option::Option<std::string::String>,
     pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) version_count: std::option::Option<i64>,
 }
 impl SchemaSummaryBuilder {
@@ -71,12 +66,8 @@ impl SchemaSummaryBuilder {
         self
     }
     /// <p>The date and time that schema was modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     /// <p>The ARN of the schema.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +76,7 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The ARN of the schema.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The name of the schema.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,33 +85,22 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input;
-        self
+        self.schema_name = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags associated with the schema.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Tags associated with the schema.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The number of versions available for the schema.</p>
     pub fn version_count(mut self, input: i64) -> Self {
@@ -130,17 +109,23 @@ impl SchemaSummaryBuilder {
     }
     /// <p>The number of versions available for the schema.</p>
     pub fn set_version_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_count = input;
-        self
+        self.version_count = input; self
     }
     /// Consumes the builder and constructs a [`SchemaSummary`](crate::types::SchemaSummary).
     pub fn build(self) -> crate::types::SchemaSummary {
         crate::types::SchemaSummary {
-            last_modified: self.last_modified,
-            schema_arn: self.schema_arn,
-            schema_name: self.schema_name,
-            tags: self.tags,
-            version_count: self.version_count.unwrap_or_default(),
+            last_modified: self.last_modified
+            ,
+            schema_arn: self.schema_arn
+            ,
+            schema_name: self.schema_name
+            ,
+            tags: self.tags
+            ,
+            version_count: self.version_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

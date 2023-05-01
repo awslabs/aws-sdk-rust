@@ -3,7 +3,7 @@
 /// <p>Contains summary information about a quick connect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QuickConnectSummary {
+pub struct QuickConnectSummary  {
     /// <p>The identifier for the quick connect.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct QuickConnectSummary {
 }
 impl QuickConnectSummary {
     /// <p>The identifier for the quick connect.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the quick connect.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn quick_connect_type(&self) -> std::option::Option<&crate::types::QuickConnectType> {
+    pub fn quick_connect_type(&self) -> std::option::Option<& crate::types::QuickConnectType> {
         self.quick_connect_type.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl QuickConnectSummaryBuilder {
     }
     /// <p>The identifier for the quick connect.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl QuickConnectSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the quick connect.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the quick connect.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl QuickConnectSummaryBuilder {
     }
     /// <p>The name of the quick connect.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
     pub fn quick_connect_type(mut self, input: crate::types::QuickConnectType) -> Self {
@@ -88,20 +85,21 @@ impl QuickConnectSummaryBuilder {
         self
     }
     /// <p>The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).</p>
-    pub fn set_quick_connect_type(
-        mut self,
-        input: std::option::Option<crate::types::QuickConnectType>,
-    ) -> Self {
-        self.quick_connect_type = input;
-        self
+    pub fn set_quick_connect_type(mut self, input: std::option::Option<crate::types::QuickConnectType>) -> Self {
+        self.quick_connect_type = input; self
     }
     /// Consumes the builder and constructs a [`QuickConnectSummary`](crate::types::QuickConnectSummary).
     pub fn build(self) -> crate::types::QuickConnectSummary {
         crate::types::QuickConnectSummary {
-            id: self.id,
-            arn: self.arn,
-            name: self.name,
-            quick_connect_type: self.quick_connect_type,
+            id: self.id
+            ,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            quick_connect_type: self.quick_connect_type
+            ,
         }
     }
 }
+

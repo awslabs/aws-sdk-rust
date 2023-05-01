@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThreatIntelSetOutput {
+pub struct DeleteThreatIntelSetOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteThreatIntelSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteThreatIntelSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteThreatIntelSetOutput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetOutputBuilder {
         crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetOutputBuilder::default()
     }
 }
@@ -27,14 +25,14 @@ pub struct DeleteThreatIntelSetOutputBuilder {
 }
 impl DeleteThreatIntelSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteThreatIntelSetOutput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput).
     pub fn build(self) -> crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput {
         crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput {
@@ -42,3 +40,4 @@ impl DeleteThreatIntelSetOutputBuilder {
         }
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProfileInput {
+pub struct GetProfileInput  {
     /// <p>The ARN of the room profile for which to request details. Required.</p>
     #[doc(hidden)]
     pub profile_arn: std::option::Option<std::string::String>,
 }
 impl GetProfileInput {
     /// <p>The ARN of the room profile for which to request details. Required.</p>
-    pub fn profile_arn(&self) -> std::option::Option<&str> {
+    pub fn profile_arn(&self) -> std::option::Option<& str> {
         self.profile_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetProfileInputBuilder {
     }
     /// <p>The ARN of the room profile for which to request details. Required.</p>
     pub fn set_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_arn = input;
-        self
+        self.profile_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetProfileInput`](crate::operation::get_profile::GetProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_profile::GetProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_profile::GetProfileInput {
-            profile_arn: self.profile_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_profile::GetProfileInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_profile::GetProfileInput {
+                profile_arn: self.profile_arn
+                ,
+            }
+        )
     }
 }
+

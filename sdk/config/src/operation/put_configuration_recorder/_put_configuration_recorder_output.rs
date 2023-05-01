@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationRecorderOutput {
+pub struct PutConfigurationRecorderOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutConfigurationRecorderOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PutConfigurationRecorderOutput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationRecorderOutput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput).
-    pub fn builder(
-    ) -> crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder
-    {
+    pub fn builder() -> crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder {
         crate::operation::put_configuration_recorder::builders::PutConfigurationRecorderOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct PutConfigurationRecorderOutputBuilder {
 }
 impl PutConfigurationRecorderOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PutConfigurationRecorderOutput`](crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput {
+    pub fn build(self) -> crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput {
         crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput {
             _request_id: self._request_id,
         }
     }
 }
+

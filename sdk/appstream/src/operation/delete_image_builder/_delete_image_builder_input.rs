@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImageBuilderInput {
+pub struct DeleteImageBuilderInput  {
     /// <p>The name of the image builder.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteImageBuilderInput {
     /// <p>The name of the image builder.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl DeleteImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`DeleteImageBuilderInput`](crate::operation::delete_image_builder::DeleteImageBuilderInput).
-    pub fn builder(
-    ) -> crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {
+    pub fn builder() -> crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder {
         crate::operation::delete_image_builder::builders::DeleteImageBuilderInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl DeleteImageBuilderInputBuilder {
     }
     /// <p>The name of the image builder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteImageBuilderInput`](crate::operation::delete_image_builder::DeleteImageBuilderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_image_builder::DeleteImageBuilderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_image_builder::DeleteImageBuilderInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::delete_image_builder::DeleteImageBuilderInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_image_builder::DeleteImageBuilderInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

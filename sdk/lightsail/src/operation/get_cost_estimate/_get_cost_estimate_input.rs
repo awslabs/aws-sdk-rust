@@ -2,52 +2,52 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCostEstimateInput {
+pub struct GetCostEstimateInput  {
     /// <p>The resource name.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
-    /// <p>The cost estimate start time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate start time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The cost estimate end time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate end time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetCostEstimateInput {
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
-    /// <p>The cost estimate start time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate start time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The cost estimate end time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate end time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -74,67 +74,62 @@ impl GetCostEstimateInputBuilder {
     }
     /// <p>The resource name.</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
-    /// <p>The cost estimate start time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate start time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.start_time = Some(input);
         self
     }
-    /// <p>The cost estimate start time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate start time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify <code>1538424000</code> as the start time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
-    /// <p>The cost estimate end time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate end time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.end_time = Some(input);
         self
     }
-    /// <p>The cost estimate end time.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
-    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li>
-    /// </ul>
+    /// <p>The cost estimate end time.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> 
+    /// <li> <p>Specified in the Unix time format.</p> <p>For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify <code>1538427600</code> as the end time.</p> </li> 
+    /// </ul> 
     /// <p>You can convert a human-friendly time to Unix time format using a converter like <a href="https://www.epochconverter.com/">Epoch converter</a>.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// Consumes the builder and constructs a [`GetCostEstimateInput`](crate::operation::get_cost_estimate::GetCostEstimateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_cost_estimate::GetCostEstimateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_cost_estimate::GetCostEstimateInput {
-            resource_name: self.resource_name,
-            start_time: self.start_time,
-            end_time: self.end_time,
-        })
+    pub fn build(self) -> Result<crate::operation::get_cost_estimate::GetCostEstimateInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_cost_estimate::GetCostEstimateInput {
+                resource_name: self.resource_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+            }
+        )
     }
 }
+

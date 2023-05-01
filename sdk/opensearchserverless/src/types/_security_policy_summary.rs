@@ -3,7 +3,7 @@
 /// <p>A summary of a security policy for OpenSearch Serverless.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityPolicySummary {
+pub struct SecurityPolicySummary  {
     /// <p>The type of security policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SecurityPolicyType>,
@@ -25,19 +25,19 @@ pub struct SecurityPolicySummary {
 }
 impl SecurityPolicySummary {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SecurityPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> std::option::Option<&str> {
+    pub fn policy_version(&self) -> std::option::Option<& str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the security policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date the policy was created.</p>
@@ -74,12 +74,8 @@ impl SecurityPolicySummaryBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::SecurityPolicyType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::SecurityPolicyType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +84,7 @@ impl SecurityPolicySummaryBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The version of the policy.</p>
     pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +93,7 @@ impl SecurityPolicySummaryBuilder {
     }
     /// <p>The version of the policy.</p>
     pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_version = input;
-        self
+        self.policy_version = input; self
     }
     /// <p>The description of the security policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +102,7 @@ impl SecurityPolicySummaryBuilder {
     }
     /// <p>The description of the security policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The date the policy was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
@@ -118,8 +111,7 @@ impl SecurityPolicySummaryBuilder {
     }
     /// <p>The date the policy was created.</p>
     pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.created_date = input;
-        self
+        self.created_date = input; self
     }
     /// <p>The timestamp of when the policy was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -128,18 +120,24 @@ impl SecurityPolicySummaryBuilder {
     }
     /// <p>The timestamp of when the policy was last modified.</p>
     pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_date = input;
-        self
+        self.last_modified_date = input; self
     }
     /// Consumes the builder and constructs a [`SecurityPolicySummary`](crate::types::SecurityPolicySummary).
     pub fn build(self) -> crate::types::SecurityPolicySummary {
         crate::types::SecurityPolicySummary {
-            r#type: self.r#type,
-            name: self.name,
-            policy_version: self.policy_version,
-            description: self.description,
-            created_date: self.created_date,
-            last_modified_date: self.last_modified_date,
+            r#type: self.r#type
+            ,
+            name: self.name
+            ,
+            policy_version: self.policy_version
+            ,
+            description: self.description
+            ,
+            created_date: self.created_date
+            ,
+            last_modified_date: self.last_modified_date
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateTestGridUrlOutput {
+pub struct CreateTestGridUrlOutput  {
     /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct CreateTestGridUrlOutput {
 }
 impl CreateTestGridUrlOutput {
     /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
-    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expires(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
 }
-impl std::fmt::Debug for CreateTestGridUrlOutput {
+impl  std::fmt::Debug for CreateTestGridUrlOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateTestGridUrlOutput");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
@@ -31,14 +31,13 @@ impl std::fmt::Debug for CreateTestGridUrlOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreateTestGridUrlOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTestGridUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreateTestGridUrlOutput`](crate::operation::create_test_grid_url::CreateTestGridUrlOutput).
-    pub fn builder(
-    ) -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlOutputBuilder {
+    pub fn builder() -> crate::operation::create_test_grid_url::builders::CreateTestGridUrlOutputBuilder {
         crate::operation::create_test_grid_url::builders::CreateTestGridUrlOutputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateTestGridUrlOutputBuilder {
     }
     /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>. </p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
     pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -69,23 +67,24 @@ impl CreateTestGridUrlOutputBuilder {
     }
     /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
     pub fn set_expires(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expires = input;
-        self
+        self.expires = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTestGridUrlOutput`](crate::operation::create_test_grid_url::CreateTestGridUrlOutput).
     pub fn build(self) -> crate::operation::create_test_grid_url::CreateTestGridUrlOutput {
         crate::operation::create_test_grid_url::CreateTestGridUrlOutput {
-            url: self.url,
-            expires: self.expires,
+            url: self.url
+            ,
+            expires: self.expires
+            ,
             _request_id: self._request_id,
         }
     }
@@ -99,3 +98,4 @@ impl std::fmt::Debug for CreateTestGridUrlOutputBuilder {
         formatter.finish()
     }
 }
+

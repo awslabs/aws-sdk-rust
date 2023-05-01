@@ -3,7 +3,7 @@
 /// <p>An object that contains a system's definition document and summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemTemplateDescription {
+pub struct SystemTemplateDescription  {
     /// <p>An object that contains summary information about a system.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::SystemTemplateSummary>,
@@ -16,11 +16,11 @@ pub struct SystemTemplateDescription {
 }
 impl SystemTemplateDescription {
     /// <p>An object that contains summary information about a system.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::SystemTemplateSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::types::SystemTemplateSummary> {
         self.summary.as_ref()
     }
     /// <p>The definition document of a system.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<& crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
@@ -50,12 +50,8 @@ impl SystemTemplateDescriptionBuilder {
         self
     }
     /// <p>An object that contains summary information about a system.</p>
-    pub fn set_summary(
-        mut self,
-        input: std::option::Option<crate::types::SystemTemplateSummary>,
-    ) -> Self {
-        self.summary = input;
-        self
+    pub fn set_summary(mut self, input: std::option::Option<crate::types::SystemTemplateSummary>) -> Self {
+        self.summary = input; self
     }
     /// <p>The definition document of a system.</p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
@@ -63,12 +59,8 @@ impl SystemTemplateDescriptionBuilder {
         self
     }
     /// <p>The definition document of a system.</p>
-    pub fn set_definition(
-        mut self,
-        input: std::option::Option<crate::types::DefinitionDocument>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: std::option::Option<crate::types::DefinitionDocument>) -> Self {
+        self.definition = input; self
     }
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
@@ -77,15 +69,18 @@ impl SystemTemplateDescriptionBuilder {
     }
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
     pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.validated_namespace_version = input;
-        self
+        self.validated_namespace_version = input; self
     }
     /// Consumes the builder and constructs a [`SystemTemplateDescription`](crate::types::SystemTemplateDescription).
     pub fn build(self) -> crate::types::SystemTemplateDescription {
         crate::types::SystemTemplateDescription {
-            summary: self.summary,
-            definition: self.definition,
-            validated_namespace_version: self.validated_namespace_version,
+            summary: self.summary
+            ,
+            definition: self.definition
+            ,
+            validated_namespace_version: self.validated_namespace_version
+            ,
         }
     }
 }
+

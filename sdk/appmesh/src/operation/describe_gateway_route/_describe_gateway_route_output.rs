@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayRouteOutput {
+pub struct DescribeGatewayRouteOutput  {
     /// <p>The full description of your gateway route.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::types::GatewayRouteData>,
@@ -10,19 +10,18 @@ pub struct DescribeGatewayRouteOutput {
 }
 impl DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
-    pub fn gateway_route(&self) -> std::option::Option<&crate::types::GatewayRouteData> {
+    pub fn gateway_route(&self) -> std::option::Option<& crate::types::GatewayRouteData> {
         self.gateway_route.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeGatewayRouteOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeGatewayRouteOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayRouteOutput`](crate::operation::describe_gateway_route::DescribeGatewayRouteOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_gateway_route::builders::DescribeGatewayRouteOutputBuilder {
+    pub fn builder() -> crate::operation::describe_gateway_route::builders::DescribeGatewayRouteOutputBuilder {
         crate::operation::describe_gateway_route::builders::DescribeGatewayRouteOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DescribeGatewayRouteOutputBuilder {
         self
     }
     /// <p>The full description of your gateway route.</p>
-    pub fn set_gateway_route(
-        mut self,
-        input: std::option::Option<crate::types::GatewayRouteData>,
-    ) -> Self {
-        self.gateway_route = input;
-        self
+    pub fn set_gateway_route(mut self, input: std::option::Option<crate::types::GatewayRouteData>) -> Self {
+        self.gateway_route = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeGatewayRouteOutput`](crate::operation::describe_gateway_route::DescribeGatewayRouteOutput).
     pub fn build(self) -> crate::operation::describe_gateway_route::DescribeGatewayRouteOutput {
         crate::operation::describe_gateway_route::DescribeGatewayRouteOutput {
-            gateway_route: self.gateway_route,
+            gateway_route: self.gateway_route
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the estimated monthly cost to analyze an Amazon Web Services resource. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceResourceCost {
+pub struct ServiceResourceCost  {
     /// <p>The type of the Amazon Web Services resource.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct ServiceResourceCost {
 }
 impl ServiceResourceCost {
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
-    pub fn state(&self) -> std::option::Option<&crate::types::CostEstimationServiceResourceState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::CostEstimationServiceResourceState> {
         self.state.as_ref()
     }
     /// <p>The number of active resources analyzed for this service to create a monthly cost estimate.</p>
@@ -67,8 +67,7 @@ impl ServiceResourceCostBuilder {
     }
     /// <p>The type of the Amazon Web Services resource.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
     pub fn state(mut self, input: crate::types::CostEstimationServiceResourceState) -> Self {
@@ -76,12 +75,8 @@ impl ServiceResourceCostBuilder {
         self
     }
     /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics, events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for the number of active Amazon Web Services resource hours analyzed for each resource. Inactive resources are not charged. </p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::CostEstimationServiceResourceState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::CostEstimationServiceResourceState>) -> Self {
+        self.state = input; self
     }
     /// <p>The number of active resources analyzed for this service to create a monthly cost estimate.</p>
     pub fn count(mut self, input: i32) -> Self {
@@ -90,8 +85,7 @@ impl ServiceResourceCostBuilder {
     }
     /// <p>The number of active resources analyzed for this service to create a monthly cost estimate.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The price per hour to analyze the resources in the service. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
     pub fn unit_cost(mut self, input: f64) -> Self {
@@ -100,8 +94,7 @@ impl ServiceResourceCostBuilder {
     }
     /// <p>The price per hour to analyze the resources in the service. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
     pub fn set_unit_cost(mut self, input: std::option::Option<f64>) -> Self {
-        self.unit_cost = input;
-        self
+        self.unit_cost = input; self
     }
     /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
     pub fn cost(mut self, input: f64) -> Self {
@@ -110,17 +103,25 @@ impl ServiceResourceCostBuilder {
     }
     /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
     pub fn set_cost(mut self, input: std::option::Option<f64>) -> Self {
-        self.cost = input;
-        self
+        self.cost = input; self
     }
     /// Consumes the builder and constructs a [`ServiceResourceCost`](crate::types::ServiceResourceCost).
     pub fn build(self) -> crate::types::ServiceResourceCost {
         crate::types::ServiceResourceCost {
-            r#type: self.r#type,
-            state: self.state,
-            count: self.count.unwrap_or_default(),
-            unit_cost: self.unit_cost.unwrap_or_default(),
-            cost: self.cost.unwrap_or_default(),
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            count: self.count
+                .unwrap_or_default()
+            ,
+            unit_cost: self.unit_cost
+                .unwrap_or_default()
+            ,
+            cost: self.cost
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

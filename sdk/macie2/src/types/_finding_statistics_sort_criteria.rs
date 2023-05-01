@@ -3,7 +3,7 @@
 /// <p>Specifies criteria for sorting the results of a query that retrieves aggregated statistical data about findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingStatisticsSortCriteria {
+pub struct FindingStatisticsSortCriteria  {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
@@ -13,13 +13,11 @@ pub struct FindingStatisticsSortCriteria {
 }
 impl FindingStatisticsSortCriteria {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn attribute_name(
-        &self,
-    ) -> std::option::Option<&crate::types::FindingStatisticsSortAttributeName> {
+    pub fn attribute_name(&self) -> std::option::Option<& crate::types::FindingStatisticsSortAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
-    pub fn order_by(&self) -> std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> std::option::Option<& crate::types::OrderBy> {
         self.order_by.as_ref()
     }
 }
@@ -34,26 +32,18 @@ impl FindingStatisticsSortCriteria {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FindingStatisticsSortCriteriaBuilder {
-    pub(crate) attribute_name:
-        std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
+    pub(crate) attribute_name: std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
     pub(crate) order_by: std::option::Option<crate::types::OrderBy>,
 }
 impl FindingStatisticsSortCriteriaBuilder {
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn attribute_name(
-        mut self,
-        input: crate::types::FindingStatisticsSortAttributeName,
-    ) -> Self {
+    pub fn attribute_name(mut self, input: crate::types::FindingStatisticsSortAttributeName) -> Self {
         self.attribute_name = Some(input);
         self
     }
     /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
-    pub fn set_attribute_name(
-        mut self,
-        input: std::option::Option<crate::types::FindingStatisticsSortAttributeName>,
-    ) -> Self {
-        self.attribute_name = input;
-        self
+    pub fn set_attribute_name(mut self, input: std::option::Option<crate::types::FindingStatisticsSortAttributeName>) -> Self {
+        self.attribute_name = input; self
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
@@ -62,14 +52,16 @@ impl FindingStatisticsSortCriteriaBuilder {
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn set_order_by(mut self, input: std::option::Option<crate::types::OrderBy>) -> Self {
-        self.order_by = input;
-        self
+        self.order_by = input; self
     }
     /// Consumes the builder and constructs a [`FindingStatisticsSortCriteria`](crate::types::FindingStatisticsSortCriteria).
     pub fn build(self) -> crate::types::FindingStatisticsSortCriteria {
         crate::types::FindingStatisticsSortCriteria {
-            attribute_name: self.attribute_name,
-            order_by: self.order_by,
+            attribute_name: self.attribute_name
+            ,
+            order_by: self.order_by
+            ,
         }
     }
 }
+

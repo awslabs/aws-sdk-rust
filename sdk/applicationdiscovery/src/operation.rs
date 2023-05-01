@@ -75,3 +75,4 @@ pub mod stop_data_collection_by_agent_ids;
 
 /// Types for the `UpdateApplication` operation.
 pub mod update_application;
+

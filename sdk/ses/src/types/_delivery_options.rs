@@ -3,14 +3,14 @@
 /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeliveryOptions {
+pub struct DeliveryOptions  {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     #[doc(hidden)]
     pub tls_policy: std::option::Option<crate::types::TlsPolicy>,
 }
 impl DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    pub fn tls_policy(&self) -> std::option::Option<&crate::types::TlsPolicy> {
+    pub fn tls_policy(&self) -> std::option::Option<& crate::types::TlsPolicy> {
         self.tls_policy.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl DeliveryOptionsBuilder {
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn set_tls_policy(mut self, input: std::option::Option<crate::types::TlsPolicy>) -> Self {
-        self.tls_policy = input;
-        self
+        self.tls_policy = input; self
     }
     /// Consumes the builder and constructs a [`DeliveryOptions`](crate::types::DeliveryOptions).
     pub fn build(self) -> crate::types::DeliveryOptions {
         crate::types::DeliveryOptions {
-            tls_policy: self.tls_policy,
+            tls_policy: self.tls_policy
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An Amazon Lex V2 chat bot created under an <code>AppInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceBot {
+pub struct AppInstanceBot  {
     /// <p>The ARN of the AppInstanceBot.</p>
     #[doc(hidden)]
     pub app_instance_bot_arn: std::option::Option<std::string::String>,
@@ -25,31 +25,31 @@ pub struct AppInstanceBot {
 }
 impl AppInstanceBot {
     /// <p>The ARN of the AppInstanceBot.</p>
-    pub fn app_instance_bot_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_bot_arn(&self) -> std::option::Option<& str> {
         self.app_instance_bot_arn.as_deref()
     }
     /// <p>The name of the AppInstanceBot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data processing instructions for an AppInstanceBot.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::Configuration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::types::Configuration> {
         self.configuration.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The metadata for an AppInstanceBot.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for AppInstanceBot {
+impl  std::fmt::Debug for AppInstanceBot  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceBot");
         formatter.field("app_instance_bot_arn", &self.app_instance_bot_arn);
@@ -86,12 +86,8 @@ impl AppInstanceBotBuilder {
         self
     }
     /// <p>The ARN of the AppInstanceBot.</p>
-    pub fn set_app_instance_bot_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.app_instance_bot_arn = input;
-        self
+    pub fn set_app_instance_bot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.app_instance_bot_arn = input; self
     }
     /// <p>The name of the AppInstanceBot.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +96,7 @@ impl AppInstanceBotBuilder {
     }
     /// <p>The name of the AppInstanceBot.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The data processing instructions for an AppInstanceBot.</p>
     pub fn configuration(mut self, input: crate::types::Configuration) -> Self {
@@ -109,12 +104,8 @@ impl AppInstanceBotBuilder {
         self
     }
     /// <p>The data processing instructions for an AppInstanceBot.</p>
-    pub fn set_configuration(
-        mut self,
-        input: std::option::Option<crate::types::Configuration>,
-    ) -> Self {
-        self.configuration = input;
-        self
+    pub fn set_configuration(mut self, input: std::option::Option<crate::types::Configuration>) -> Self {
+        self.configuration = input; self
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,12 +113,8 @@ impl AppInstanceBotBuilder {
         self
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was created.</p>
-    pub fn set_created_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_timestamp = input;
-        self
+    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_timestamp = input; self
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was last updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,12 +122,8 @@ impl AppInstanceBotBuilder {
         self
     }
     /// <p>The time at which the <code>AppInstanceBot</code> was last updated.</p>
-    pub fn set_last_updated_timestamp(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_timestamp = input;
-        self
+    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_timestamp = input; self
     }
     /// <p>The metadata for an AppInstanceBot.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,18 +132,23 @@ impl AppInstanceBotBuilder {
     }
     /// <p>The metadata for an AppInstanceBot.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input;
-        self
+        self.metadata = input; self
     }
     /// Consumes the builder and constructs a [`AppInstanceBot`](crate::types::AppInstanceBot).
     pub fn build(self) -> crate::types::AppInstanceBot {
         crate::types::AppInstanceBot {
-            app_instance_bot_arn: self.app_instance_bot_arn,
-            name: self.name,
-            configuration: self.configuration,
-            created_timestamp: self.created_timestamp,
-            last_updated_timestamp: self.last_updated_timestamp,
-            metadata: self.metadata,
+            app_instance_bot_arn: self.app_instance_bot_arn
+            ,
+            name: self.name
+            ,
+            configuration: self.configuration
+            ,
+            created_timestamp: self.created_timestamp
+            ,
+            last_updated_timestamp: self.last_updated_timestamp
+            ,
+            metadata: self.metadata
+            ,
         }
     }
 }
@@ -176,3 +164,4 @@ impl std::fmt::Debug for AppInstanceBotBuilder {
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html">ListTaskExecutions</a> operation is called.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskExecutionListEntry {
+pub struct TaskExecutionListEntry  {
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
     #[doc(hidden)]
     pub task_execution_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TaskExecutionListEntry {
 }
 impl TaskExecutionListEntry {
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> std::option::Option<& str> {
         self.task_execution_arn.as_deref()
     }
     /// <p>The status of a task execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TaskExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TaskExecutionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl TaskExecutionListEntryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
-    pub fn set_task_execution_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.task_execution_arn = input;
-        self
+    pub fn set_task_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.task_execution_arn = input; self
     }
     /// <p>The status of a task execution.</p>
     pub fn status(mut self, input: crate::types::TaskExecutionStatus) -> Self {
@@ -55,18 +51,17 @@ impl TaskExecutionListEntryBuilder {
         self
     }
     /// <p>The status of a task execution.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::TaskExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::TaskExecutionStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`TaskExecutionListEntry`](crate::types::TaskExecutionListEntry).
     pub fn build(self) -> crate::types::TaskExecutionListEntry {
         crate::types::TaskExecutionListEntry {
-            task_execution_arn: self.task_execution_arn,
-            status: self.status,
+            task_execution_arn: self.task_execution_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

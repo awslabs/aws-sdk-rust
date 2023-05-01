@@ -3,7 +3,7 @@
 /// <p> Information about the health of Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudFormationHealth {
+pub struct CloudFormationHealth  {
     /// <p> The name of the CloudFormation stack. </p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct CloudFormationHealth {
 }
 impl CloudFormationHealth {
     /// <p> The name of the CloudFormation stack. </p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
-    pub fn insight(&self) -> std::option::Option<&crate::types::InsightHealth> {
+    pub fn insight(&self) -> std::option::Option<& crate::types::InsightHealth> {
         self.insight.as_ref()
     }
     /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
@@ -51,8 +51,7 @@ impl CloudFormationHealthBuilder {
     }
     /// <p> The name of the CloudFormation stack. </p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input;
-        self
+        self.stack_name = input; self
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     pub fn insight(mut self, input: crate::types::InsightHealth) -> Self {
@@ -61,8 +60,7 @@ impl CloudFormationHealthBuilder {
     }
     /// <p> Information about the health of the Amazon Web Services resources in your account that are specified by an Amazon Web Services CloudFormation stack, including the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights. </p>
     pub fn set_insight(mut self, input: std::option::Option<crate::types::InsightHealth>) -> Self {
-        self.insight = input;
-        self
+        self.insight = input; self
     }
     /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
     pub fn analyzed_resource_count(mut self, input: i64) -> Self {
@@ -71,15 +69,18 @@ impl CloudFormationHealthBuilder {
     }
     /// <p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>
     pub fn set_analyzed_resource_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.analyzed_resource_count = input;
-        self
+        self.analyzed_resource_count = input; self
     }
     /// Consumes the builder and constructs a [`CloudFormationHealth`](crate::types::CloudFormationHealth).
     pub fn build(self) -> crate::types::CloudFormationHealth {
         crate::types::CloudFormationHealth {
-            stack_name: self.stack_name,
-            insight: self.insight,
-            analyzed_resource_count: self.analyzed_resource_count,
+            stack_name: self.stack_name
+            ,
+            insight: self.insight
+            ,
+            analyzed_resource_count: self.analyzed_resource_count
+            ,
         }
     }
 }
+

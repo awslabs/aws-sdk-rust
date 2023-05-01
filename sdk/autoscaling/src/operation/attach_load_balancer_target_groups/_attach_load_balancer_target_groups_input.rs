@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachLoadBalancerTargetGroupsInput {
+pub struct AttachLoadBalancerTargetGroupsInput  {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AttachLoadBalancerTargetGroupsInput {
 }
 impl AttachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn target_group_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_group_ar_ns(&self) -> std::option::Option<& [std::string::String]> {
         self.target_group_ar_ns.as_deref()
     }
 }
 impl AttachLoadBalancerTargetGroupsInput {
     /// Creates a new builder-style object to manufacture [`AttachLoadBalancerTargetGroupsInput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput).
-    pub fn builder() -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder{
+    pub fn builder() -> crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder {
         crate::operation::attach_load_balancer_target_groups::builders::AttachLoadBalancerTargetGroupsInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.auto_scaling_group_name = input;
-        self
+    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.auto_scaling_group_name = input; self
     }
     /// Appends an item to `target_group_ar_ns`.
     ///
@@ -55,25 +51,16 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
     pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_group_ar_ns.unwrap_or_default();
-        v.push(input.into());
-        self.target_group_ar_ns = Some(v);
-        self
+                        v.push(input.into());
+                        self.target_group_ar_ns = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the target groups. You can specify up to 10 target groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
-    pub fn set_target_group_ar_ns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.target_group_ar_ns = input;
-        self
+    pub fn set_target_group_ar_ns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.target_group_ar_ns = input; self
     }
     /// Consumes the builder and constructs a [`AttachLoadBalancerTargetGroupsInput`](crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name
@@ -84,3 +71,4 @@ impl AttachLoadBalancerTargetGroupsInputBuilder {
         )
     }
 }
+

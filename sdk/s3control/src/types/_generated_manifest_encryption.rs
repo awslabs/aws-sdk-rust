@@ -3,7 +3,7 @@
 /// <p>The encryption configuration to use when storing the generated manifest.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedManifestEncryption {
+pub struct GeneratedManifestEncryption  {
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
     #[doc(hidden)]
     pub sses3: std::option::Option<crate::types::Sses3Encryption>,
@@ -13,11 +13,11 @@ pub struct GeneratedManifestEncryption {
 }
 impl GeneratedManifestEncryption {
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
-    pub fn sses3(&self) -> std::option::Option<&crate::types::Sses3Encryption> {
+    pub fn sses3(&self) -> std::option::Option<& crate::types::Sses3Encryption> {
         self.sses3.as_ref()
     }
     /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
-    pub fn ssekms(&self) -> std::option::Option<&crate::types::SsekmsEncryption> {
+    pub fn ssekms(&self) -> std::option::Option<& crate::types::SsekmsEncryption> {
         self.ssekms.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl GeneratedManifestEncryptionBuilder {
     }
     /// <p>Specifies the use of SSE-S3 to encrypt generated manifest objects.</p>
     pub fn set_sses3(mut self, input: std::option::Option<crate::types::Sses3Encryption>) -> Self {
-        self.sses3 = input;
-        self
+        self.sses3 = input; self
     }
     /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
     pub fn ssekms(mut self, input: crate::types::SsekmsEncryption) -> Self {
@@ -52,18 +51,17 @@ impl GeneratedManifestEncryptionBuilder {
         self
     }
     /// <p>Configuration details on how SSE-KMS is used to encrypt generated manifest objects.</p>
-    pub fn set_ssekms(
-        mut self,
-        input: std::option::Option<crate::types::SsekmsEncryption>,
-    ) -> Self {
-        self.ssekms = input;
-        self
+    pub fn set_ssekms(mut self, input: std::option::Option<crate::types::SsekmsEncryption>) -> Self {
+        self.ssekms = input; self
     }
     /// Consumes the builder and constructs a [`GeneratedManifestEncryption`](crate::types::GeneratedManifestEncryption).
     pub fn build(self) -> crate::types::GeneratedManifestEncryption {
         crate::types::GeneratedManifestEncryption {
-            sses3: self.sses3,
-            ssekms: self.ssekms,
+            sses3: self.sses3
+            ,
+            ssekms: self.ssekms
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessorOutput {
+pub struct CreateAccessorOutput  {
     /// <p>The unique identifier of the accessor.</p>
     #[doc(hidden)]
     pub accessor_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateAccessorOutput {
 }
 impl CreateAccessorOutput {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn accessor_id(&self) -> std::option::Option<&str> {
+    pub fn accessor_id(&self) -> std::option::Option<& str> {
         self.accessor_id.as_deref()
     }
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
-    pub fn billing_token(&self) -> std::option::Option<&str> {
+    pub fn billing_token(&self) -> std::option::Option<& str> {
         self.billing_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAccessorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateAccessorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessorOutput`](crate::operation::create_accessor::CreateAccessorOutput).
     pub fn builder() -> crate::operation::create_accessor::builders::CreateAccessorOutputBuilder {
@@ -49,8 +49,7 @@ impl CreateAccessorOutputBuilder {
     }
     /// <p>The unique identifier of the accessor.</p>
     pub fn set_accessor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accessor_id = input;
-        self
+        self.accessor_id = input; self
     }
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
     pub fn billing_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl CreateAccessorOutputBuilder {
     }
     /// <p>The billing token is a property of the Accessor. Use this token to make Ethereum API calls to your Ethereum node. The billing token is used to track your accessor object for billing Ethereum API requests made to your Ethereum nodes.</p>
     pub fn set_billing_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_token = input;
-        self
+        self.billing_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateAccessorOutput`](crate::operation::create_accessor::CreateAccessorOutput).
     pub fn build(self) -> crate::operation::create_accessor::CreateAccessorOutput {
         crate::operation::create_accessor::CreateAccessorOutput {
-            accessor_id: self.accessor_id,
-            billing_token: self.billing_token,
+            accessor_id: self.accessor_id
+            ,
+            billing_token: self.billing_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

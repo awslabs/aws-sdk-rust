@@ -2,15 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMapInput {
+pub struct UpdateMapInput  {
     /// <p>The name of the map resource to update.</p>
     #[doc(hidden)]
     pub map_name: std::option::Option<std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::types::PricingPlan>,
     /// <p>Updates the description for the map resource.</p>
@@ -19,19 +16,16 @@ pub struct UpdateMapInput {
 }
 impl UpdateMapInput {
     /// <p>The name of the map resource to update.</p>
-    pub fn map_name(&self) -> std::option::Option<&str> {
+    pub fn map_name(&self) -> std::option::Option<& str> {
         self.map_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn pricing_plan(&self) -> std::option::Option<&crate::types::PricingPlan> {
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn pricing_plan(&self) -> std::option::Option<& crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>Updates the description for the map resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -58,29 +52,18 @@ impl UpdateMapInputBuilder {
     }
     /// <p>The name of the map resource to update.</p>
     pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_name = input;
-        self
+        self.map_name = input; self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = Some(input);
         self
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
-    #[deprecated(
-        note = "Deprecated. If included, the only allowed value is RequestBasedUsage.",
-        since = "2022-02-01"
-    )]
-    pub fn set_pricing_plan(
-        mut self,
-        input: std::option::Option<crate::types::PricingPlan>,
-    ) -> Self {
-        self.pricing_plan = input;
-        self
+    #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
+    pub fn set_pricing_plan(mut self, input: std::option::Option<crate::types::PricingPlan>) -> Self {
+        self.pricing_plan = input; self
     }
     /// <p>Updates the description for the map resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,20 +72,20 @@ impl UpdateMapInputBuilder {
     }
     /// <p>Updates the description for the map resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateMapInput`](crate::operation::update_map::UpdateMapInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_map::UpdateMapInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_map::UpdateMapInput {
-            map_name: self.map_name,
-            pricing_plan: self.pricing_plan,
-            description: self.description,
-        })
+    pub fn build(self) -> Result<crate::operation::update_map::UpdateMapInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_map::UpdateMapInput {
+                map_name: self.map_name
+                ,
+                pricing_plan: self.pricing_plan
+                ,
+                description: self.description
+                ,
+            }
+        )
     }
 }
+

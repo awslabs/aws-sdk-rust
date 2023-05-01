@@ -3,21 +3,20 @@
 /// <p>The input for the DescribeThingType operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThingTypeInput {
+pub struct DescribeThingTypeInput  {
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
 }
 impl DescribeThingTypeInput {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
 }
 impl DescribeThingTypeInput {
     /// Creates a new builder-style object to manufacture [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
-    pub fn builder(
-    ) -> crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder {
+    pub fn builder() -> crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder {
         crate::operation::describe_thing_type::builders::DescribeThingTypeInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl DescribeThingTypeInputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeThingTypeInput`](crate::operation::describe_thing_type::DescribeThingTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_thing_type::DescribeThingTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_thing_type::DescribeThingTypeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_thing_type::DescribeThingTypeInput {
-                thing_type_name: self.thing_type_name,
-            },
+                thing_type_name: self.thing_type_name
+                ,
+            }
         )
     }
 }
+

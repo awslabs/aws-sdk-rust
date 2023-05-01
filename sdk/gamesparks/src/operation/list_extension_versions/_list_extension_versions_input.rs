@@ -2,37 +2,37 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionVersionsInput {
+pub struct ListExtensionVersionsInput  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
 }
 impl ListExtensionVersionsInput {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -40,9 +40,7 @@ impl ListExtensionVersionsInput {
 }
 impl ListExtensionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListExtensionVersionsInput`](crate::operation::list_extension_versions::ListExtensionVersionsInput).
-    pub fn builder(
-    ) -> crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder {
         crate::operation::list_extension_versions::builders::ListExtensionVersionsInputBuilder::default()
     }
 }
@@ -64,8 +62,7 @@ impl ListExtensionVersionsInputBuilder {
     }
     /// <p>The namespace (qualifier) of the extension.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p>The name of the extension.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,47 +71,44 @@ impl ListExtensionVersionsInputBuilder {
     }
     /// <p>The name of the extension.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token that indicates the start of the next sequential page of results.</p>
+    /// <p>The token that indicates the start of the next sequential page of results.</p> 
     /// <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return.</p>
+    /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListExtensionVersionsInput`](crate::operation::list_extension_versions::ListExtensionVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_extension_versions::ListExtensionVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_extension_versions::ListExtensionVersionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_extension_versions::ListExtensionVersionsInput {
-                namespace: self.namespace,
-                name: self.name,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                namespace: self.namespace
+                ,
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

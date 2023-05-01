@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetInput {
+pub struct CreateDatasetInput  {
     /// <p>The name for the dataset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,12 +12,12 @@ pub struct CreateDatasetInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
-    /// <p>The type of dataset.</p>
-    /// <p>One of the following (case insensitive) values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
+    /// <p>The type of dataset.</p> 
+    /// <p>One of the following (case insensitive) values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dataset_type: std::option::Option<std::string::String>,
@@ -27,29 +27,29 @@ pub struct CreateDatasetInput {
 }
 impl CreateDatasetInput {
     /// <p>The name for the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
-    /// <p>The type of dataset.</p>
-    /// <p>One of the following (case insensitive) values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
+    /// <p>The type of dataset.</p> 
+    /// <p>One of the following (case insensitive) values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
     /// </ul>
-    pub fn dataset_type(&self) -> std::option::Option<&str> {
+    pub fn dataset_type(&self) -> std::option::Option<& str> {
         self.dataset_type.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -78,8 +78,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The name for the dataset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +87,7 @@ impl CreateDatasetInputBuilder {
     }
     /// <p>The ARN of the schema to associate with the dataset. The schema defines the dataset fields.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input;
-        self
+        self.schema_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,34 +95,29 @@ impl CreateDatasetInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dataset_group_arn = input;
-        self
+    pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dataset_group_arn = input; self
     }
-    /// <p>The type of dataset.</p>
-    /// <p>One of the following (case insensitive) values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
+    /// <p>The type of dataset.</p> 
+    /// <p>One of the following (case insensitive) values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
     /// </ul>
     pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.dataset_type = Some(input.into());
         self
     }
-    /// <p>The type of dataset.</p>
-    /// <p>One of the following (case insensitive) values:</p>
-    /// <ul>
-    /// <li> <p>Interactions</p> </li>
-    /// <li> <p>Items</p> </li>
-    /// <li> <p>Users</p> </li>
+    /// <p>The type of dataset.</p> 
+    /// <p>One of the following (case insensitive) values:</p> 
+    /// <ul> 
+    /// <li> <p>Interactions</p> </li> 
+    /// <li> <p>Items</p> </li> 
+    /// <li> <p>Users</p> </li> 
     /// </ul>
     pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_type = input;
-        self
+        self.dataset_type = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -133,31 +126,30 @@ impl CreateDatasetInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the dataset.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::operation::create_dataset::CreateDatasetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_dataset::CreateDatasetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_dataset::CreateDatasetInput {
-            name: self.name,
-            schema_arn: self.schema_arn,
-            dataset_group_arn: self.dataset_group_arn,
-            dataset_type: self.dataset_type,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_dataset::CreateDatasetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_dataset::CreateDatasetInput {
+                name: self.name
+                ,
+                schema_arn: self.schema_arn
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                dataset_type: self.dataset_type
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

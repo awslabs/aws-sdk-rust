@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileCacheOutput {
+pub struct DeleteFileCacheOutput  {
     /// <p>The ID of the cache that's being deleted.</p>
     #[doc(hidden)]
     pub file_cache_id: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct DeleteFileCacheOutput {
 }
 impl DeleteFileCacheOutput {
     /// <p>The ID of the cache that's being deleted.</p>
-    pub fn file_cache_id(&self) -> std::option::Option<&str> {
+    pub fn file_cache_id(&self) -> std::option::Option<& str> {
         self.file_cache_id.as_deref()
     }
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::types::FileCacheLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::types::FileCacheLifecycle> {
         self.lifecycle.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteFileCacheOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteFileCacheOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFileCacheOutput`](crate::operation::delete_file_cache::DeleteFileCacheOutput).
-    pub fn builder() -> crate::operation::delete_file_cache::builders::DeleteFileCacheOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_file_cache::builders::DeleteFileCacheOutputBuilder {
         crate::operation::delete_file_cache::builders::DeleteFileCacheOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl DeleteFileCacheOutputBuilder {
     }
     /// <p>The ID of the cache that's being deleted.</p>
     pub fn set_file_cache_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_cache_id = input;
-        self
+        self.file_cache_id = input; self
     }
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::FileCacheLifecycle) -> Self {
@@ -59,28 +57,27 @@ impl DeleteFileCacheOutputBuilder {
         self
     }
     /// <p>The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code> operation is successful, this status is <code>DELETING</code>.</p>
-    pub fn set_lifecycle(
-        mut self,
-        input: std::option::Option<crate::types::FileCacheLifecycle>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::FileCacheLifecycle>) -> Self {
+        self.lifecycle = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteFileCacheOutput`](crate::operation::delete_file_cache::DeleteFileCacheOutput).
     pub fn build(self) -> crate::operation::delete_file_cache::DeleteFileCacheOutput {
         crate::operation::delete_file_cache::DeleteFileCacheOutput {
-            file_cache_id: self.file_cache_id,
-            lifecycle: self.lifecycle,
+            file_cache_id: self.file_cache_id
+            ,
+            lifecycle: self.lifecycle
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

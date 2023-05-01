@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEndpointsInput {
+pub struct ListEndpointsInput  {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
     #[doc(hidden)]
     pub sort_by: std::option::Option<crate::types::EndpointSortKey>,
@@ -36,15 +36,15 @@ pub struct ListEndpointsInput {
 }
 impl ListEndpointsInput {
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::EndpointSortKey> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::EndpointSortKey> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::OrderKey> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::OrderKey> {
         self.sort_order.as_ref()
     }
     /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
@@ -52,27 +52,27 @@ impl ListEndpointsInput {
         self.max_results
     }
     /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> std::option::Option<&str> {
+    pub fn name_contains(&self) -> std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
-    pub fn last_modified_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time_before.as_ref()
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
-    pub fn last_modified_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time_after.as_ref()
     }
     /// <p> A filter that returns only endpoints with the specified status.</p>
-    pub fn status_equals(&self) -> std::option::Option<&crate::types::EndpointStatus> {
+    pub fn status_equals(&self) -> std::option::Option<& crate::types::EndpointStatus> {
         self.status_equals.as_ref()
     }
 }
@@ -105,12 +105,8 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::EndpointSortKey>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::EndpointSortKey>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::OrderKey) -> Self {
@@ -119,8 +115,7 @@ impl ListEndpointsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::OrderKey>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +124,7 @@ impl ListEndpointsInputBuilder {
     }
     /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -139,8 +133,7 @@ impl ListEndpointsInputBuilder {
     }
     /// <p>The maximum number of endpoints to return in the response. This value defaults to 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +142,7 @@ impl ListEndpointsInputBuilder {
     }
     /// <p>A string in endpoint names. This filter returns only endpoints whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,12 +150,8 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>A filter that returns only endpoints that were created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
     }
     /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -171,12 +159,8 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p>A filter that returns only endpoints with a creation time greater than or equal to the specified time (timestamp).</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
     }
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
     pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -184,12 +168,8 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p> A filter that returns only endpoints that were modified before the specified timestamp. </p>
-    pub fn set_last_modified_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time_before = input;
-        self
+    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time_before = input; self
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
     pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -197,12 +177,8 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p> A filter that returns only endpoints that were modified after the specified timestamp. </p>
-    pub fn set_last_modified_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time_after = input;
-        self
+    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time_after = input; self
     }
     /// <p> A filter that returns only endpoints with the specified status.</p>
     pub fn status_equals(mut self, input: crate::types::EndpointStatus) -> Self {
@@ -210,31 +186,35 @@ impl ListEndpointsInputBuilder {
         self
     }
     /// <p> A filter that returns only endpoints with the specified status.</p>
-    pub fn set_status_equals(
-        mut self,
-        input: std::option::Option<crate::types::EndpointStatus>,
-    ) -> Self {
-        self.status_equals = input;
-        self
+    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::EndpointStatus>) -> Self {
+        self.status_equals = input; self
     }
     /// Consumes the builder and constructs a [`ListEndpointsInput`](crate::operation::list_endpoints::ListEndpointsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_endpoints::ListEndpointsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_endpoints::ListEndpointsInput {
-            sort_by: self.sort_by,
-            sort_order: self.sort_order,
-            next_token: self.next_token,
-            max_results: self.max_results,
-            name_contains: self.name_contains,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
-            last_modified_time_before: self.last_modified_time_before,
-            last_modified_time_after: self.last_modified_time_after,
-            status_equals: self.status_equals,
-        })
+    pub fn build(self) -> Result<crate::operation::list_endpoints::ListEndpointsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_endpoints::ListEndpointsInput {
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                creation_time_after: self.creation_time_after
+                ,
+                last_modified_time_before: self.last_modified_time_before
+                ,
+                last_modified_time_after: self.last_modified_time_after
+                ,
+                status_equals: self.status_equals
+                ,
+            }
+        )
     }
 }
+

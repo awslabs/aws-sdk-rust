@@ -3,7 +3,7 @@
 /// <p>A range of double values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DoubleRange {
+pub struct DoubleRange  {
     /// <p>The minimum value in the range.</p>
     #[doc(hidden)]
     pub from: f64,
@@ -43,8 +43,7 @@ impl DoubleRangeBuilder {
     }
     /// <p>The minimum value in the range.</p>
     pub fn set_from(mut self, input: std::option::Option<f64>) -> Self {
-        self.from = input;
-        self
+        self.from = input; self
     }
     /// <p>The maximum value in the range.</p>
     pub fn to(mut self, input: f64) -> Self {
@@ -53,14 +52,18 @@ impl DoubleRangeBuilder {
     }
     /// <p>The maximum value in the range.</p>
     pub fn set_to(mut self, input: std::option::Option<f64>) -> Self {
-        self.to = input;
-        self
+        self.to = input; self
     }
     /// Consumes the builder and constructs a [`DoubleRange`](crate::types::DoubleRange).
     pub fn build(self) -> crate::types::DoubleRange {
         crate::types::DoubleRange {
-            from: self.from.unwrap_or_default(),
-            to: self.to.unwrap_or_default(),
+            from: self.from
+                .unwrap_or_default()
+            ,
+            to: self.to
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

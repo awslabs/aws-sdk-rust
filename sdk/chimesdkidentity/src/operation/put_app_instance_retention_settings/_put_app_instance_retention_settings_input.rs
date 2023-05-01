@@ -2,30 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAppInstanceRetentionSettingsInput {
+pub struct PutAppInstanceRetentionSettingsInput  {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The time in days to retain data. Data type: number.</p>
     #[doc(hidden)]
-    pub app_instance_retention_settings:
-        std::option::Option<crate::types::AppInstanceRetentionSettings>,
+    pub app_instance_retention_settings: std::option::Option<crate::types::AppInstanceRetentionSettings>,
 }
 impl PutAppInstanceRetentionSettingsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn app_instance_retention_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::AppInstanceRetentionSettings> {
+    pub fn app_instance_retention_settings(&self) -> std::option::Option<& crate::types::AppInstanceRetentionSettings> {
         self.app_instance_retention_settings.as_ref()
     }
 }
 impl PutAppInstanceRetentionSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceRetentionSettingsInput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsInput).
-    pub fn builder() -> crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsInputBuilder{
+    pub fn builder() -> crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsInputBuilder {
         crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsInputBuilder::default()
     }
 }
@@ -35,8 +32,7 @@ impl PutAppInstanceRetentionSettingsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsInputBuilder {
     pub(crate) app_instance_arn: std::option::Option<std::string::String>,
-    pub(crate) app_instance_retention_settings:
-        std::option::Option<crate::types::AppInstanceRetentionSettings>,
+    pub(crate) app_instance_retention_settings: std::option::Option<crate::types::AppInstanceRetentionSettings>,
 }
 impl PutAppInstanceRetentionSettingsInputBuilder {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -46,32 +42,19 @@ impl PutAppInstanceRetentionSettingsInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input;
-        self
+        self.app_instance_arn = input; self
     }
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn app_instance_retention_settings(
-        mut self,
-        input: crate::types::AppInstanceRetentionSettings,
-    ) -> Self {
+    pub fn app_instance_retention_settings(mut self, input: crate::types::AppInstanceRetentionSettings) -> Self {
         self.app_instance_retention_settings = Some(input);
         self
     }
     /// <p>The time in days to retain data. Data type: number.</p>
-    pub fn set_app_instance_retention_settings(
-        mut self,
-        input: std::option::Option<crate::types::AppInstanceRetentionSettings>,
-    ) -> Self {
-        self.app_instance_retention_settings = input;
-        self
+    pub fn set_app_instance_retention_settings(mut self, input: std::option::Option<crate::types::AppInstanceRetentionSettings>) -> Self {
+        self.app_instance_retention_settings = input; self
     }
     /// Consumes the builder and constructs a [`PutAppInstanceRetentionSettingsInput`](crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettingsInput {
                 app_instance_arn: self.app_instance_arn
@@ -82,3 +65,4 @@ impl PutAppInstanceRetentionSettingsInputBuilder {
         )
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectMitigationActionsTaskInput {
+pub struct DescribeDetectMitigationActionsTaskInput  {
     /// <p> The unique identifier of the task. </p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl DescribeDetectMitigationActionsTaskInput {
     /// <p> The unique identifier of the task. </p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl DescribeDetectMitigationActionsTaskInput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectMitigationActionsTaskInput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput).
-    pub fn builder() -> crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskInputBuilder{
+    pub fn builder() -> crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskInputBuilder {
         crate::operation::describe_detect_mitigation_actions_task::builders::DescribeDetectMitigationActionsTaskInputBuilder::default()
     }
 }
@@ -34,11 +34,10 @@ impl DescribeDetectMitigationActionsTaskInputBuilder {
     }
     /// <p> The unique identifier of the task. </p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDetectMitigationActionsTaskInput`](crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput).
-    pub fn build(self) -> Result<crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_detect_mitigation_actions_task::DescribeDetectMitigationActionsTaskInput {
                 task_id: self.task_id
@@ -47,3 +46,4 @@ impl DescribeDetectMitigationActionsTaskInputBuilder {
         )
     }
 }
+

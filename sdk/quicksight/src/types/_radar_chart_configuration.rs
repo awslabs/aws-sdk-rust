@@ -3,7 +3,7 @@
 /// <p>The configuration of a <code>RadarChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RadarChartConfiguration {
+pub struct RadarChartConfiguration  {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
     #[doc(hidden)]
     pub field_wells: std::option::Option<crate::types::RadarChartFieldWells>,
@@ -49,23 +49,19 @@ pub struct RadarChartConfiguration {
 }
 impl RadarChartConfiguration {
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::RadarChartFieldWells> {
+    pub fn field_wells(&self) -> std::option::Option<& crate::types::RadarChartFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>RadarChartVisual</code>.</p>
-    pub fn sort_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::RadarChartSortConfiguration> {
+    pub fn sort_configuration(&self) -> std::option::Option<& crate::types::RadarChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The shape of the radar chart.</p>
-    pub fn shape(&self) -> std::option::Option<&crate::types::RadarChartShape> {
+    pub fn shape(&self) -> std::option::Option<& crate::types::RadarChartShape> {
         self.shape.as_ref()
     }
     /// <p>The base sreies settings of a radar chart.</p>
-    pub fn base_series_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::RadarChartSeriesSettings> {
+    pub fn base_series_settings(&self) -> std::option::Option<& crate::types::RadarChartSeriesSettings> {
         self.base_series_settings.as_ref()
     }
     /// <p>The start angle of a radar chart's axis.</p>
@@ -73,43 +69,39 @@ impl RadarChartConfiguration {
         self.start_angle
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn visual_palette(&self) -> std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> std::option::Option<& crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
     /// <p>Determines the visibility of the colors of alternatign bands in a radar chart.</p>
-    pub fn alternate_band_colors_visibility(
-        &self,
-    ) -> std::option::Option<&crate::types::Visibility> {
+    pub fn alternate_band_colors_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.alternate_band_colors_visibility.as_ref()
     }
     /// <p>The color of the even-numbered alternate bands of a radar chart.</p>
-    pub fn alternate_band_even_color(&self) -> std::option::Option<&str> {
+    pub fn alternate_band_even_color(&self) -> std::option::Option<& str> {
         self.alternate_band_even_color.as_deref()
     }
     /// <p>The color of the odd-numbered alternate bands of a radar chart.</p>
-    pub fn alternate_band_odd_color(&self) -> std::option::Option<&str> {
+    pub fn alternate_band_odd_color(&self) -> std::option::Option<& str> {
         self.alternate_band_odd_color.as_deref()
     }
     /// <p>The category axis of a radar chart.</p>
-    pub fn category_axis(&self) -> std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn category_axis(&self) -> std::option::Option<& crate::types::AxisDisplayOptions> {
         self.category_axis.as_ref()
     }
     /// <p>The category label options of a radar chart.</p>
-    pub fn category_label_options(
-        &self,
-    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn category_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.category_label_options.as_ref()
     }
     /// <p>The color axis of a radar chart.</p>
-    pub fn color_axis(&self) -> std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn color_axis(&self) -> std::option::Option<& crate::types::AxisDisplayOptions> {
         self.color_axis.as_ref()
     }
     /// <p>The color label options of a radar chart.</p>
-    pub fn color_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    pub fn color_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
         self.color_label_options.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> std::option::Option<& crate::types::LegendOptions> {
         self.legend.as_ref()
     }
 }
@@ -146,12 +138,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The field well configuration of a <code>RadarChartVisual</code>.</p>
-    pub fn set_field_wells(
-        mut self,
-        input: std::option::Option<crate::types::RadarChartFieldWells>,
-    ) -> Self {
-        self.field_wells = input;
-        self
+    pub fn set_field_wells(mut self, input: std::option::Option<crate::types::RadarChartFieldWells>) -> Self {
+        self.field_wells = input; self
     }
     /// <p>The sort configuration of a <code>RadarChartVisual</code>.</p>
     pub fn sort_configuration(mut self, input: crate::types::RadarChartSortConfiguration) -> Self {
@@ -159,12 +147,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a <code>RadarChartVisual</code>.</p>
-    pub fn set_sort_configuration(
-        mut self,
-        input: std::option::Option<crate::types::RadarChartSortConfiguration>,
-    ) -> Self {
-        self.sort_configuration = input;
-        self
+    pub fn set_sort_configuration(mut self, input: std::option::Option<crate::types::RadarChartSortConfiguration>) -> Self {
+        self.sort_configuration = input; self
     }
     /// <p>The shape of the radar chart.</p>
     pub fn shape(mut self, input: crate::types::RadarChartShape) -> Self {
@@ -173,8 +157,7 @@ impl RadarChartConfigurationBuilder {
     }
     /// <p>The shape of the radar chart.</p>
     pub fn set_shape(mut self, input: std::option::Option<crate::types::RadarChartShape>) -> Self {
-        self.shape = input;
-        self
+        self.shape = input; self
     }
     /// <p>The base sreies settings of a radar chart.</p>
     pub fn base_series_settings(mut self, input: crate::types::RadarChartSeriesSettings) -> Self {
@@ -182,12 +165,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The base sreies settings of a radar chart.</p>
-    pub fn set_base_series_settings(
-        mut self,
-        input: std::option::Option<crate::types::RadarChartSeriesSettings>,
-    ) -> Self {
-        self.base_series_settings = input;
-        self
+    pub fn set_base_series_settings(mut self, input: std::option::Option<crate::types::RadarChartSeriesSettings>) -> Self {
+        self.base_series_settings = input; self
     }
     /// <p>The start angle of a radar chart's axis.</p>
     pub fn start_angle(mut self, input: f64) -> Self {
@@ -196,8 +175,7 @@ impl RadarChartConfigurationBuilder {
     }
     /// <p>The start angle of a radar chart's axis.</p>
     pub fn set_start_angle(mut self, input: std::option::Option<f64>) -> Self {
-        self.start_angle = input;
-        self
+        self.start_angle = input; self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub fn visual_palette(mut self, input: crate::types::VisualPalette) -> Self {
@@ -205,12 +183,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn set_visual_palette(
-        mut self,
-        input: std::option::Option<crate::types::VisualPalette>,
-    ) -> Self {
-        self.visual_palette = input;
-        self
+    pub fn set_visual_palette(mut self, input: std::option::Option<crate::types::VisualPalette>) -> Self {
+        self.visual_palette = input; self
     }
     /// <p>Determines the visibility of the colors of alternatign bands in a radar chart.</p>
     pub fn alternate_band_colors_visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -218,12 +192,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>Determines the visibility of the colors of alternatign bands in a radar chart.</p>
-    pub fn set_alternate_band_colors_visibility(
-        mut self,
-        input: std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.alternate_band_colors_visibility = input;
-        self
+    pub fn set_alternate_band_colors_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+        self.alternate_band_colors_visibility = input; self
     }
     /// <p>The color of the even-numbered alternate bands of a radar chart.</p>
     pub fn alternate_band_even_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,12 +201,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The color of the even-numbered alternate bands of a radar chart.</p>
-    pub fn set_alternate_band_even_color(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.alternate_band_even_color = input;
-        self
+    pub fn set_alternate_band_even_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.alternate_band_even_color = input; self
     }
     /// <p>The color of the odd-numbered alternate bands of a radar chart.</p>
     pub fn alternate_band_odd_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -244,12 +210,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The color of the odd-numbered alternate bands of a radar chart.</p>
-    pub fn set_alternate_band_odd_color(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.alternate_band_odd_color = input;
-        self
+    pub fn set_alternate_band_odd_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.alternate_band_odd_color = input; self
     }
     /// <p>The category axis of a radar chart.</p>
     pub fn category_axis(mut self, input: crate::types::AxisDisplayOptions) -> Self {
@@ -257,12 +219,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The category axis of a radar chart.</p>
-    pub fn set_category_axis(
-        mut self,
-        input: std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
-        self.category_axis = input;
-        self
+    pub fn set_category_axis(mut self, input: std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.category_axis = input; self
     }
     /// <p>The category label options of a radar chart.</p>
     pub fn category_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -270,12 +228,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The category label options of a radar chart.</p>
-    pub fn set_category_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.category_label_options = input;
-        self
+    pub fn set_category_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.category_label_options = input; self
     }
     /// <p>The color axis of a radar chart.</p>
     pub fn color_axis(mut self, input: crate::types::AxisDisplayOptions) -> Self {
@@ -283,12 +237,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The color axis of a radar chart.</p>
-    pub fn set_color_axis(
-        mut self,
-        input: std::option::Option<crate::types::AxisDisplayOptions>,
-    ) -> Self {
-        self.color_axis = input;
-        self
+    pub fn set_color_axis(mut self, input: std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
+        self.color_axis = input; self
     }
     /// <p>The color label options of a radar chart.</p>
     pub fn color_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -296,12 +246,8 @@ impl RadarChartConfigurationBuilder {
         self
     }
     /// <p>The color label options of a radar chart.</p>
-    pub fn set_color_label_options(
-        mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    ) -> Self {
-        self.color_label_options = input;
-        self
+    pub fn set_color_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
+        self.color_label_options = input; self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
@@ -310,26 +256,40 @@ impl RadarChartConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input;
-        self
+        self.legend = input; self
     }
     /// Consumes the builder and constructs a [`RadarChartConfiguration`](crate::types::RadarChartConfiguration).
     pub fn build(self) -> crate::types::RadarChartConfiguration {
         crate::types::RadarChartConfiguration {
-            field_wells: self.field_wells,
-            sort_configuration: self.sort_configuration,
-            shape: self.shape,
-            base_series_settings: self.base_series_settings,
-            start_angle: self.start_angle,
-            visual_palette: self.visual_palette,
-            alternate_band_colors_visibility: self.alternate_band_colors_visibility,
-            alternate_band_even_color: self.alternate_band_even_color,
-            alternate_band_odd_color: self.alternate_band_odd_color,
-            category_axis: self.category_axis,
-            category_label_options: self.category_label_options,
-            color_axis: self.color_axis,
-            color_label_options: self.color_label_options,
-            legend: self.legend,
+            field_wells: self.field_wells
+            ,
+            sort_configuration: self.sort_configuration
+            ,
+            shape: self.shape
+            ,
+            base_series_settings: self.base_series_settings
+            ,
+            start_angle: self.start_angle
+            ,
+            visual_palette: self.visual_palette
+            ,
+            alternate_band_colors_visibility: self.alternate_band_colors_visibility
+            ,
+            alternate_band_even_color: self.alternate_band_even_color
+            ,
+            alternate_band_odd_color: self.alternate_band_odd_color
+            ,
+            category_axis: self.category_axis
+            ,
+            category_label_options: self.category_label_options
+            ,
+            color_axis: self.color_axis
+            ,
+            color_label_options: self.color_label_options
+            ,
+            legend: self.legend
+            ,
         }
     }
 }
+

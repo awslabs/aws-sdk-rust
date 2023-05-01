@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnvironmentTemplateVersionInput {
+pub struct GetEnvironmentTemplateVersionInput  {
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetEnvironmentTemplateVersionInput {
 }
 impl GetEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> std::option::Option<& str> {
         self.template_name.as_deref()
     }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
-    pub fn major_version(&self) -> std::option::Option<&str> {
+    pub fn major_version(&self) -> std::option::Option<& str> {
         self.major_version.as_deref()
     }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
-    pub fn minor_version(&self) -> std::option::Option<&str> {
+    pub fn minor_version(&self) -> std::option::Option<& str> {
         self.minor_version.as_deref()
     }
 }
 impl GetEnvironmentTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentTemplateVersionInput`](crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput).
-    pub fn builder() -> crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder{
+    pub fn builder() -> crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder {
         crate::operation::get_environment_template_version::builders::GetEnvironmentTemplateVersionInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>The name of the environment template a version of which you want to get detailed data for.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input;
-        self
+        self.template_name = input; self
     }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>To get environment template major version detail data, include <code>major Version</code>.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input;
-        self
+        self.major_version = input; self
     }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,16 +68,10 @@ impl GetEnvironmentTemplateVersionInputBuilder {
     }
     /// <p>To get environment template minor version detail data, include <code>minorVersion</code>.</p>
     pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minor_version = input;
-        self
+        self.minor_version = input; self
     }
     /// Consumes the builder and constructs a [`GetEnvironmentTemplateVersionInput`](crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_environment_template_version::GetEnvironmentTemplateVersionInput {
                 template_name: self.template_name
@@ -92,3 +84,4 @@ impl GetEnvironmentTemplateVersionInputBuilder {
         )
     }
 }
+

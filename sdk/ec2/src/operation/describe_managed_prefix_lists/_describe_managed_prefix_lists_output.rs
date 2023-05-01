@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeManagedPrefixListsOutput {
+pub struct DescribeManagedPrefixListsOutput  {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DescribeManagedPrefixListsOutput {
 }
 impl DescribeManagedPrefixListsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the prefix lists.</p>
-    pub fn prefix_lists(&self) -> std::option::Option<&[crate::types::ManagedPrefixList]> {
+    pub fn prefix_lists(&self) -> std::option::Option<& [crate::types::ManagedPrefixList]> {
         self.prefix_lists.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeManagedPrefixListsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeManagedPrefixListsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedPrefixListsOutput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput).
-    pub fn builder() -> crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder {
         crate::operation::describe_managed_prefix_lists::builders::DescribeManagedPrefixListsOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl DescribeManagedPrefixListsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `prefix_lists`.
     ///
@@ -59,35 +58,32 @@ impl DescribeManagedPrefixListsOutputBuilder {
     /// <p>Information about the prefix lists.</p>
     pub fn prefix_lists(mut self, input: crate::types::ManagedPrefixList) -> Self {
         let mut v = self.prefix_lists.unwrap_or_default();
-        v.push(input);
-        self.prefix_lists = Some(v);
-        self
+                        v.push(input);
+                        self.prefix_lists = Some(v);
+                        self
     }
     /// <p>Information about the prefix lists.</p>
-    pub fn set_prefix_lists(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ManagedPrefixList>>,
-    ) -> Self {
-        self.prefix_lists = input;
-        self
+    pub fn set_prefix_lists(mut self, input: std::option::Option<std::vec::Vec<crate::types::ManagedPrefixList>>) -> Self {
+        self.prefix_lists = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeManagedPrefixListsOutput`](crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput {
+    pub fn build(self) -> crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput {
         crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput {
-            next_token: self.next_token,
-            prefix_lists: self.prefix_lists,
+            next_token: self.next_token
+            ,
+            prefix_lists: self.prefix_lists
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

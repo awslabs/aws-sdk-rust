@@ -3,7 +3,7 @@
 /// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VideoConfiguration {
+pub struct VideoConfiguration  {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     #[doc(hidden)]
     pub avc_profile: std::option::Option<std::string::String>,
@@ -31,19 +31,19 @@ pub struct VideoConfiguration {
 }
 impl VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
-    pub fn avc_profile(&self) -> std::option::Option<&str> {
+    pub fn avc_profile(&self) -> std::option::Option<& str> {
         self.avc_profile.as_deref()
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
-    pub fn avc_level(&self) -> std::option::Option<&str> {
+    pub fn avc_level(&self) -> std::option::Option<& str> {
         self.avc_level.as_deref()
     }
     /// <p>Codec used for the video encoding.</p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> std::option::Option<& str> {
         self.codec.as_deref()
     }
     /// <p>Software or hardware used to encode the video.</p>
-    pub fn encoder(&self) -> std::option::Option<&str> {
+    pub fn encoder(&self) -> std::option::Option<& str> {
         self.encoder.as_deref()
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -91,8 +91,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     pub fn set_avc_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.avc_profile = input;
-        self
+        self.avc_profile = input; self
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
     pub fn avc_level(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
     pub fn set_avc_level(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.avc_level = input;
-        self
+        self.avc_level = input; self
     }
     /// <p>Codec used for the video encoding.</p>
     pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +109,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>Codec used for the video encoding.</p>
     pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.codec = input;
-        self
+        self.codec = input; self
     }
     /// <p>Software or hardware used to encode the video.</p>
     pub fn encoder(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +118,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>Software or hardware used to encode the video.</p>
     pub fn set_encoder(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encoder = input;
-        self
+        self.encoder = input; self
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn target_bitrate(mut self, input: i64) -> Self {
@@ -131,8 +127,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
-        self.target_bitrate = input;
-        self
+        self.target_bitrate = input; self
     }
     /// <p>The expected ingest framerate. This is configured in the encoder.</p>
     pub fn target_framerate(mut self, input: i64) -> Self {
@@ -141,8 +136,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>The expected ingest framerate. This is configured in the encoder.</p>
     pub fn set_target_framerate(mut self, input: std::option::Option<i64>) -> Self {
-        self.target_framerate = input;
-        self
+        self.target_framerate = input; self
     }
     /// <p>Video-resolution height in pixels.</p>
     pub fn video_height(mut self, input: i64) -> Self {
@@ -151,8 +145,7 @@ impl VideoConfigurationBuilder {
     }
     /// <p>Video-resolution height in pixels.</p>
     pub fn set_video_height(mut self, input: std::option::Option<i64>) -> Self {
-        self.video_height = input;
-        self
+        self.video_height = input; self
     }
     /// <p>Video-resolution width in pixels.</p>
     pub fn video_width(mut self, input: i64) -> Self {
@@ -161,20 +154,32 @@ impl VideoConfigurationBuilder {
     }
     /// <p>Video-resolution width in pixels.</p>
     pub fn set_video_width(mut self, input: std::option::Option<i64>) -> Self {
-        self.video_width = input;
-        self
+        self.video_width = input; self
     }
     /// Consumes the builder and constructs a [`VideoConfiguration`](crate::types::VideoConfiguration).
     pub fn build(self) -> crate::types::VideoConfiguration {
         crate::types::VideoConfiguration {
-            avc_profile: self.avc_profile,
-            avc_level: self.avc_level,
-            codec: self.codec,
-            encoder: self.encoder,
-            target_bitrate: self.target_bitrate.unwrap_or_default(),
-            target_framerate: self.target_framerate.unwrap_or_default(),
-            video_height: self.video_height.unwrap_or_default(),
-            video_width: self.video_width.unwrap_or_default(),
+            avc_profile: self.avc_profile
+            ,
+            avc_level: self.avc_level
+            ,
+            codec: self.codec
+            ,
+            encoder: self.encoder
+            ,
+            target_bitrate: self.target_bitrate
+                .unwrap_or_default()
+            ,
+            target_framerate: self.target_framerate
+                .unwrap_or_default()
+            ,
+            video_height: self.video_height
+                .unwrap_or_default()
+            ,
+            video_width: self.video_width
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

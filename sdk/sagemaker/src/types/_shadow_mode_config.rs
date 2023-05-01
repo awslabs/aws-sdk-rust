@@ -3,24 +3,21 @@
 /// <p> The configuration of <code>ShadowMode</code> inference experiment type, which specifies a production variant to take all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant it also specifies the percentage of requests that Amazon SageMaker replicates. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShadowModeConfig {
+pub struct ShadowModeConfig  {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
     #[doc(hidden)]
     pub source_model_variant_name: std::option::Option<std::string::String>,
     /// <p>List of shadow variant configurations.</p>
     #[doc(hidden)]
-    pub shadow_model_variants:
-        std::option::Option<std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
+    pub shadow_model_variants: std::option::Option<std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
 }
 impl ShadowModeConfig {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
-    pub fn source_model_variant_name(&self) -> std::option::Option<&str> {
+    pub fn source_model_variant_name(&self) -> std::option::Option<& str> {
         self.source_model_variant_name.as_deref()
     }
     /// <p>List of shadow variant configurations.</p>
-    pub fn shadow_model_variants(
-        &self,
-    ) -> std::option::Option<&[crate::types::ShadowModelVariantConfig]> {
+    pub fn shadow_model_variants(&self) -> std::option::Option<& [crate::types::ShadowModelVariantConfig]> {
         self.shadow_model_variants.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl ShadowModeConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ShadowModeConfigBuilder {
     pub(crate) source_model_variant_name: std::option::Option<std::string::String>,
-    pub(crate) shadow_model_variants:
-        std::option::Option<std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
+    pub(crate) shadow_model_variants: std::option::Option<std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
 }
 impl ShadowModeConfigBuilder {
     /// <p> The name of the production variant, which takes all the inference requests. </p>
@@ -46,12 +42,8 @@ impl ShadowModeConfigBuilder {
         self
     }
     /// <p> The name of the production variant, which takes all the inference requests. </p>
-    pub fn set_source_model_variant_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_model_variant_name = input;
-        self
+    pub fn set_source_model_variant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_model_variant_name = input; self
     }
     /// Appends an item to `shadow_model_variants`.
     ///
@@ -60,23 +52,22 @@ impl ShadowModeConfigBuilder {
     /// <p>List of shadow variant configurations.</p>
     pub fn shadow_model_variants(mut self, input: crate::types::ShadowModelVariantConfig) -> Self {
         let mut v = self.shadow_model_variants.unwrap_or_default();
-        v.push(input);
-        self.shadow_model_variants = Some(v);
-        self
+                        v.push(input);
+                        self.shadow_model_variants = Some(v);
+                        self
     }
     /// <p>List of shadow variant configurations.</p>
-    pub fn set_shadow_model_variants(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ShadowModelVariantConfig>>,
-    ) -> Self {
-        self.shadow_model_variants = input;
-        self
+    pub fn set_shadow_model_variants(mut self, input: std::option::Option<std::vec::Vec<crate::types::ShadowModelVariantConfig>>) -> Self {
+        self.shadow_model_variants = input; self
     }
     /// Consumes the builder and constructs a [`ShadowModeConfig`](crate::types::ShadowModeConfig).
     pub fn build(self) -> crate::types::ShadowModeConfig {
         crate::types::ShadowModeConfig {
-            source_model_variant_name: self.source_model_variant_name,
-            shadow_model_variants: self.shadow_model_variants,
+            source_model_variant_name: self.source_model_variant_name
+            ,
+            shadow_model_variants: self.shadow_model_variants
+            ,
         }
     }
 }
+

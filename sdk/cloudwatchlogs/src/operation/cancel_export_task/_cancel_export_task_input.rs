@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelExportTaskInput {
+pub struct CancelExportTaskInput  {
     /// <p>The ID of the export task.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelExportTaskInput {
     /// <p>The ID of the export task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl CancelExportTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-    pub fn builder() -> crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder {
         crate::operation::cancel_export_task::builders::CancelExportTaskInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl CancelExportTaskInputBuilder {
     }
     /// <p>The ID of the export task.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelExportTaskInput`](crate::operation::cancel_export_task::CancelExportTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_export_task::CancelExportTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_export_task::CancelExportTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_export_task::CancelExportTaskInput {
-                task_id: self.task_id,
-            },
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

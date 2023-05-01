@@ -3,7 +3,7 @@
 /// <p>UntagResourceRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Specifies the keys in the tags that you want to remove.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> std::option::Option<& [std::string::String]> {
         self.keys.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UntagResourceInputBuilder {
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the resource to remove the tags from.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Appends an item to `keys`.
     ///
@@ -53,28 +52,24 @@ impl UntagResourceInputBuilder {
     /// <p>Specifies the keys in the tags that you want to remove.</p>
     pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
-        v.push(input.into());
-        self.keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.keys = Some(v);
+                        self
     }
     /// <p>Specifies the keys in the tags that you want to remove.</p>
-    pub fn set_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.keys = input;
-        self
+    pub fn set_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.keys = input; self
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::untag_resource::UntagResourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::untag_resource::UntagResourceInput {
-            resource_arn: self.resource_arn,
-            keys: self.keys,
-        })
+    pub fn build(self) -> Result<crate::operation::untag_resource::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::untag_resource::UntagResourceInput {
+                resource_arn: self.resource_arn
+                ,
+                keys: self.keys
+                ,
+            }
+        )
     }
 }
+

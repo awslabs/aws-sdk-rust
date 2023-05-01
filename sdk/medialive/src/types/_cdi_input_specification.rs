@@ -3,14 +3,14 @@
 /// Placeholder documentation for CdiInputSpecification
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CdiInputSpecification {
+pub struct CdiInputSpecification  {
     /// Maximum CDI input resolution
     #[doc(hidden)]
     pub resolution: std::option::Option<crate::types::CdiInputResolution>,
 }
 impl CdiInputSpecification {
     /// Maximum CDI input resolution
-    pub fn resolution(&self) -> std::option::Option<&crate::types::CdiInputResolution> {
+    pub fn resolution(&self) -> std::option::Option<& crate::types::CdiInputResolution> {
         self.resolution.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl CdiInputSpecificationBuilder {
         self
     }
     /// Maximum CDI input resolution
-    pub fn set_resolution(
-        mut self,
-        input: std::option::Option<crate::types::CdiInputResolution>,
-    ) -> Self {
-        self.resolution = input;
-        self
+    pub fn set_resolution(mut self, input: std::option::Option<crate::types::CdiInputResolution>) -> Self {
+        self.resolution = input; self
     }
     /// Consumes the builder and constructs a [`CdiInputSpecification`](crate::types::CdiInputSpecification).
     pub fn build(self) -> crate::types::CdiInputSpecification {
         crate::types::CdiInputSpecification {
-            resolution: self.resolution,
+            resolution: self.resolution
+            ,
         }
     }
 }
+

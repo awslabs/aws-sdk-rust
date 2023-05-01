@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTableInput {
+pub struct DescribeTableInput  {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -36,35 +36,35 @@ pub struct DescribeTableInput {
 }
 impl DescribeTableInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> std::option::Option<& str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn connected_database(&self) -> std::option::Option<&str> {
+    pub fn connected_database(&self) -> std::option::Option<& str> {
         self.connected_database.as_deref()
     }
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> std::option::Option<& str> {
         self.table.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
@@ -72,7 +72,7 @@ impl DescribeTableInput {
         self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
 }
@@ -105,12 +105,8 @@ impl DescribeTableInputBuilder {
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_identifier = input;
-        self
+    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_identifier = input; self
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +115,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_arn = input;
-        self
+        self.secret_arn = input; self
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +124,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input;
-        self
+        self.db_user = input; self
     }
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +133,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub fn connected_database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,12 +141,8 @@ impl DescribeTableInputBuilder {
         self
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
-    pub fn set_connected_database(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connected_database = input;
-        self
+    pub fn set_connected_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connected_database = input; self
     }
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +151,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +160,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The table name. If no table is specified, then all tables for all matching schemas are returned. If no table and no schema is specified, then all tables for all schemas in the database are returned</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,8 +169,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -192,8 +178,7 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,27 +187,35 @@ impl DescribeTableInputBuilder {
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_table::DescribeTableInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_table::DescribeTableInput {
-            cluster_identifier: self.cluster_identifier,
-            secret_arn: self.secret_arn,
-            db_user: self.db_user,
-            database: self.database,
-            connected_database: self.connected_database,
-            schema: self.schema,
-            table: self.table,
-            next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
-            workgroup_name: self.workgroup_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_table::DescribeTableInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_table::DescribeTableInput {
+                cluster_identifier: self.cluster_identifier
+                ,
+                secret_arn: self.secret_arn
+                ,
+                db_user: self.db_user
+                ,
+                database: self.database
+                ,
+                connected_database: self.connected_database
+                ,
+                schema: self.schema
+                ,
+                table: self.table
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                    .unwrap_or_default()
+                ,
+                workgroup_name: self.workgroup_name
+                ,
+            }
+        )
     }
 }
+

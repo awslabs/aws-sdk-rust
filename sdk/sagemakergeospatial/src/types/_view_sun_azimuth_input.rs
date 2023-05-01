@@ -3,7 +3,7 @@
 /// <p>The input structure for specifying ViewSunAzimuth property filter. ViewSunAzimuth refers to the Sun azimuth angle. From the scene center point on the ground, this is the angle between truth north and the sun. Measured clockwise in degrees (0-360).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ViewSunAzimuthInput {
+pub struct ViewSunAzimuthInput  {
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     #[doc(hidden)]
     pub lower_bound: std::option::Option<f32>,
@@ -43,8 +43,7 @@ impl ViewSunAzimuthInputBuilder {
     }
     /// <p>The minimum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth greater than or equal to this value.</p>
     pub fn set_lower_bound(mut self, input: std::option::Option<f32>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     pub fn upper_bound(mut self, input: f32) -> Self {
@@ -53,14 +52,16 @@ impl ViewSunAzimuthInputBuilder {
     }
     /// <p>The maximum value for ViewSunAzimuth property filter. This filters items having ViewSunAzimuth lesser than or equal to this value.</p>
     pub fn set_upper_bound(mut self, input: std::option::Option<f32>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// Consumes the builder and constructs a [`ViewSunAzimuthInput`](crate::types::ViewSunAzimuthInput).
     pub fn build(self) -> crate::types::ViewSunAzimuthInput {
         crate::types::ViewSunAzimuthInput {
-            lower_bound: self.lower_bound,
-            upper_bound: self.upper_bound,
+            lower_bound: self.lower_bound
+            ,
+            upper_bound: self.upper_bound
+            ,
         }
     }
 }
+

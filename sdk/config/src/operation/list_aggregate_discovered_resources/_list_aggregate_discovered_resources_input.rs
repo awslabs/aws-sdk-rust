@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAggregateDiscoveredResourcesInput {
+pub struct ListAggregateDiscoveredResourcesInput  {
     /// <p>The name of the configuration aggregator. </p>
     #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct ListAggregateDiscoveredResourcesInput {
 }
 impl ListAggregateDiscoveredResourcesInput {
     /// <p>The name of the configuration aggregator. </p>
-    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<& str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-    pub fn filters(&self) -> std::option::Option<&crate::types::ResourceFilters> {
+    pub fn filters(&self) -> std::option::Option<& crate::types::ResourceFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -37,13 +37,13 @@ impl ListAggregateDiscoveredResourcesInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListAggregateDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListAggregateDiscoveredResourcesInput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput).
-    pub fn builder() -> crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder{
+    pub fn builder() -> crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder {
         crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder::default()
     }
 }
@@ -65,12 +65,8 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         self
     }
     /// <p>The name of the configuration aggregator. </p>
-    pub fn set_configuration_aggregator_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_aggregator_name = input;
-        self
+    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_aggregator_name = input; self
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -78,12 +74,8 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         self
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ResourceFilters) -> Self {
@@ -91,12 +83,8 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         self
     }
     /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<crate::types::ResourceFilters>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<crate::types::ResourceFilters>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -105,8 +93,7 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,11 +102,10 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListAggregateDiscoveredResourcesInput`](crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput).
-    pub fn build(self) -> Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesInput {
                 configuration_aggregator_name: self.configuration_aggregator_name
@@ -136,3 +122,4 @@ impl ListAggregateDiscoveredResourcesInputBuilder {
         )
     }
 }
+

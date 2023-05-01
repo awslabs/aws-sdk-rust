@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserInput {
+pub struct DeleteUserInput  {
     /// <p>The organization that contains the user to be deleted.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteUserInput {
 }
 impl DeleteUserInput {
     /// <p>The organization that contains the user to be deleted.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> std::option::Option<& str> {
         self.organization_id.as_deref()
     }
     /// <p>The identifier of the user to be deleted.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The organization that contains the user to be deleted.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input;
-        self
+        self.organization_id = input; self
     }
     /// <p>The identifier of the user to be deleted.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteUserInputBuilder {
     }
     /// <p>The identifier of the user to be deleted.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_user::DeleteUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_user::DeleteUserInput {
-            organization_id: self.organization_id,
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_user::DeleteUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_user::DeleteUserInput {
+                organization_id: self.organization_id
+                ,
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

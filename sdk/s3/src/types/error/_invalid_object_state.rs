@@ -3,7 +3,7 @@
 /// <p>Object is archived and inaccessible until restored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidObjectState {
+pub struct InvalidObjectState  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub storage_class: std::option::Option<crate::types::StorageClass>,
@@ -17,25 +17,23 @@ pub struct InvalidObjectState {
 }
 impl InvalidObjectState {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn storage_class(&self) -> std::option::Option<&crate::types::StorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn access_tier(&self) -> std::option::Option<&crate::types::IntelligentTieringAccessTier> {
+    pub fn access_tier(&self) -> std::option::Option<& crate::types::IntelligentTieringAccessTier> {
         self.access_tier.as_ref()
     }
 }
 impl InvalidObjectState {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidObjectState {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidObjectState")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -56,9 +54,7 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidObjectState
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidObjectState {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InvalidObjectState {
     /// Creates a new builder-style object to manufacture [`InvalidObjectState`](crate::types::error::InvalidObjectState).
@@ -83,12 +79,8 @@ impl InvalidObjectStateBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_storage_class(
-        mut self,
-        input: std::option::Option<crate::types::StorageClass>,
-    ) -> Self {
-        self.storage_class = input;
-        self
+    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::StorageClass>) -> Self {
+        self.storage_class = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn access_tier(mut self, input: crate::types::IntelligentTieringAccessTier) -> Self {
@@ -96,12 +88,8 @@ impl InvalidObjectStateBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_access_tier(
-        mut self,
-        input: std::option::Option<crate::types::IntelligentTieringAccessTier>,
-    ) -> Self {
-        self.access_tier = input;
-        self
+    pub fn set_access_tier(mut self, input: std::option::Option<crate::types::IntelligentTieringAccessTier>) -> Self {
+        self.access_tier = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,30 +98,30 @@ impl InvalidObjectStateBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InvalidObjectState`](crate::types::error::InvalidObjectState).
     pub fn build(self) -> crate::types::error::InvalidObjectState {
         crate::types::error::InvalidObjectState {
-            storage_class: self.storage_class,
-            access_tier: self.access_tier,
-            message: self.message,
+            storage_class: self.storage_class
+            ,
+            access_tier: self.access_tier
+            ,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

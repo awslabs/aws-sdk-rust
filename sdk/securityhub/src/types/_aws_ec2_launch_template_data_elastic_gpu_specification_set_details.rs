@@ -3,22 +3,20 @@
 /// <p> Provides details about an Elastic Graphics specification for an Amazon EC2 launch template. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
+pub struct AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails  {
     /// <p> The type of Elastic Graphics accelerator. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
     /// <p> The type of Elastic Graphics accelerator. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder
-    {
+    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
         crate::types::builders::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder::default()
     }
 }
@@ -37,13 +35,14 @@ impl AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetailsBuilder {
     }
     /// <p> The type of Elastic Graphics accelerator. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails`](crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails).
     pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
         crate::types::AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails {
-            r#type: self.r#type,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendSerialConsoleSshPublicKeyOutput {
+pub struct SendSerialConsoleSshPublicKeyOutput  {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct SendSerialConsoleSshPublicKeyOutput {
 }
 impl SendSerialConsoleSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
@@ -22,13 +22,13 @@ impl SendSerialConsoleSshPublicKeyOutput {
     }
 }
 impl aws_http::request_id::RequestId for SendSerialConsoleSshPublicKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SendSerialConsoleSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`SendSerialConsoleSshPublicKeyOutput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput).
-    pub fn builder() -> crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder{
+    pub fn builder() -> crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder {
         crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl SendSerialConsoleSshPublicKeyOutputBuilder {
     }
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub fn success(mut self, input: bool) -> Self {
@@ -59,27 +58,27 @@ impl SendSerialConsoleSshPublicKeyOutputBuilder {
     }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub fn set_success(mut self, input: std::option::Option<bool>) -> Self {
-        self.success = input;
-        self
+        self.success = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyOutput`](crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput
-    {
+    pub fn build(self) -> crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput {
         crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput {
-            request_id: self.request_id,
-            success: self.success.unwrap_or_default(),
+            request_id: self.request_id
+            ,
+            success: self.success
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

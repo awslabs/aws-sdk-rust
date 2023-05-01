@@ -3,24 +3,21 @@
 /// <p>A container for the response details that are returned when querying about an asynchronous request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AsyncResponseDetails {
+pub struct AsyncResponseDetails  {
     /// <p>The details for the Multi-Region Access Point.</p>
     #[doc(hidden)]
-    pub multi_region_access_point_details:
-        std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
+    pub multi_region_access_point_details: std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
     /// <p>Error details for an asynchronous request.</p>
     #[doc(hidden)]
     pub error_details: std::option::Option<crate::types::AsyncErrorDetails>,
 }
 impl AsyncResponseDetails {
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn multi_region_access_point_details(
-        &self,
-    ) -> std::option::Option<&crate::types::MultiRegionAccessPointsAsyncResponse> {
+    pub fn multi_region_access_point_details(&self) -> std::option::Option<& crate::types::MultiRegionAccessPointsAsyncResponse> {
         self.multi_region_access_point_details.as_ref()
     }
     /// <p>Error details for an asynchronous request.</p>
-    pub fn error_details(&self) -> std::option::Option<&crate::types::AsyncErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::types::AsyncErrorDetails> {
         self.error_details.as_ref()
     }
 }
@@ -35,26 +32,18 @@ impl AsyncResponseDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AsyncResponseDetailsBuilder {
-    pub(crate) multi_region_access_point_details:
-        std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
+    pub(crate) multi_region_access_point_details: std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
     pub(crate) error_details: std::option::Option<crate::types::AsyncErrorDetails>,
 }
 impl AsyncResponseDetailsBuilder {
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn multi_region_access_point_details(
-        mut self,
-        input: crate::types::MultiRegionAccessPointsAsyncResponse,
-    ) -> Self {
+    pub fn multi_region_access_point_details(mut self, input: crate::types::MultiRegionAccessPointsAsyncResponse) -> Self {
         self.multi_region_access_point_details = Some(input);
         self
     }
     /// <p>The details for the Multi-Region Access Point.</p>
-    pub fn set_multi_region_access_point_details(
-        mut self,
-        input: std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>,
-    ) -> Self {
-        self.multi_region_access_point_details = input;
-        self
+    pub fn set_multi_region_access_point_details(mut self, input: std::option::Option<crate::types::MultiRegionAccessPointsAsyncResponse>) -> Self {
+        self.multi_region_access_point_details = input; self
     }
     /// <p>Error details for an asynchronous request.</p>
     pub fn error_details(mut self, input: crate::types::AsyncErrorDetails) -> Self {
@@ -62,18 +51,17 @@ impl AsyncResponseDetailsBuilder {
         self
     }
     /// <p>Error details for an asynchronous request.</p>
-    pub fn set_error_details(
-        mut self,
-        input: std::option::Option<crate::types::AsyncErrorDetails>,
-    ) -> Self {
-        self.error_details = input;
-        self
+    pub fn set_error_details(mut self, input: std::option::Option<crate::types::AsyncErrorDetails>) -> Self {
+        self.error_details = input; self
     }
     /// Consumes the builder and constructs a [`AsyncResponseDetails`](crate::types::AsyncResponseDetails).
     pub fn build(self) -> crate::types::AsyncResponseDetails {
         crate::types::AsyncResponseDetails {
-            multi_region_access_point_details: self.multi_region_access_point_details,
-            error_details: self.error_details,
+            multi_region_access_point_details: self.multi_region_access_point_details
+            ,
+            error_details: self.error_details
+            ,
         }
     }
 }
+

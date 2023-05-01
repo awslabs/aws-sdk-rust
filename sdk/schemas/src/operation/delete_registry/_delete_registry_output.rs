@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegistryOutput {
+pub struct DeleteRegistryOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteRegistryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRegistryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput).
     pub fn builder() -> crate::operation::delete_registry::builders::DeleteRegistryOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteRegistryOutputBuilder {
 }
 impl DeleteRegistryOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput).
     pub fn build(self) -> crate::operation::delete_registry::DeleteRegistryOutput {
         crate::operation::delete_registry::DeleteRegistryOutput {
@@ -40,3 +40,4 @@ impl DeleteRegistryOutputBuilder {
         }
     }
 }
+

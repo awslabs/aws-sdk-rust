@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWirelessDeviceImportTasksInput {
+pub struct ListWirelessDeviceImportTasksInput  {
     /// <p>The maximum number of results to return in this operation.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,13 @@ impl ListWirelessDeviceImportTasksInput {
         self.max_results
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListWirelessDeviceImportTasksInput {
     /// Creates a new builder-style object to manufacture [`ListWirelessDeviceImportTasksInput`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput).
-    pub fn builder() -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksInputBuilder{
+    pub fn builder() -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksInputBuilder {
         crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl ListWirelessDeviceImportTasksInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +51,10 @@ impl ListWirelessDeviceImportTasksInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListWirelessDeviceImportTasksInput`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksInput {
                 max_results: self.max_results
@@ -72,3 +65,4 @@ impl ListWirelessDeviceImportTasksInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for ResetImageAttribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetImageAttributeInput {
+pub struct ResetImageAttributeInput  {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::ResetImageAttributeName>,
@@ -16,11 +16,11 @@ pub struct ResetImageAttributeInput {
 }
 impl ResetImageAttributeInput {
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::ResetImageAttributeName> {
+    pub fn attribute(&self) -> std::option::Option<& crate::types::ResetImageAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -30,10 +30,8 @@ impl ResetImageAttributeInput {
 }
 impl ResetImageAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
-    pub fn builder(
-    ) -> crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
-        crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder {
+        crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder::default()
     }
 }
 
@@ -52,12 +50,8 @@ impl ResetImageAttributeInputBuilder {
         self
     }
     /// <p>The attribute to reset (currently you can only reset the launch permission attribute).</p>
-    pub fn set_attribute(
-        mut self,
-        input: std::option::Option<crate::types::ResetImageAttributeName>,
-    ) -> Self {
-        self.attribute = input;
-        self
+    pub fn set_attribute(mut self, input: std::option::Option<crate::types::ResetImageAttributeName>) -> Self {
+        self.attribute = input; self
     }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +60,7 @@ impl ResetImageAttributeInputBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -76,22 +69,20 @@ impl ResetImageAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`ResetImageAttributeInput`](crate::operation::reset_image_attribute::ResetImageAttributeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reset_image_attribute::ResetImageAttributeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::reset_image_attribute::ResetImageAttributeInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reset_image_attribute::ResetImageAttributeInput {
-                attribute: self.attribute,
-                image_id: self.image_id,
-                dry_run: self.dry_run,
-            },
+                attribute: self.attribute
+                ,
+                image_id: self.image_id
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

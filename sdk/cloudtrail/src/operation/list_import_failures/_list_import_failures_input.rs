@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportFailuresInput {
+pub struct ListImportFailuresInput  {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListImportFailuresInput {
 }
 impl ListImportFailuresInput {
     /// <p> The ID of the import. </p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p> The maximum number of failures to display on a single page. </p>
@@ -23,14 +23,13 @@ impl ListImportFailuresInput {
         self.max_results
     }
     /// <p> A token you can use to get the next page of import failures. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListImportFailuresInput {
     /// Creates a new builder-style object to manufacture [`ListImportFailuresInput`](crate::operation::list_import_failures::ListImportFailuresInput).
-    pub fn builder(
-    ) -> crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder {
+    pub fn builder() -> crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder {
         crate::operation::list_import_failures::builders::ListImportFailuresInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListImportFailuresInputBuilder {
     }
     /// <p> The ID of the import. </p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p> The maximum number of failures to display on a single page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -61,8 +59,7 @@ impl ListImportFailuresInputBuilder {
     }
     /// <p> The maximum number of failures to display on a single page. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> A token you can use to get the next page of import failures. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl ListImportFailuresInputBuilder {
     }
     /// <p> A token you can use to get the next page of import failures. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListImportFailuresInput`](crate::operation::list_import_failures::ListImportFailuresInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_import_failures::ListImportFailuresInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_import_failures::ListImportFailuresInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_import_failures::ListImportFailuresInput {
-                import_id: self.import_id,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                import_id: self.import_id
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

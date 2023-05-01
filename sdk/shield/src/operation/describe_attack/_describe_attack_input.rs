@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttackInput {
+pub struct DescribeAttackInput  {
     /// <p>The unique identifier (ID) for the attack.</p>
     #[doc(hidden)]
     pub attack_id: std::option::Option<std::string::String>,
 }
 impl DescribeAttackInput {
     /// <p>The unique identifier (ID) for the attack.</p>
-    pub fn attack_id(&self) -> std::option::Option<&str> {
+    pub fn attack_id(&self) -> std::option::Option<& str> {
         self.attack_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeAttackInputBuilder {
     }
     /// <p>The unique identifier (ID) for the attack.</p>
     pub fn set_attack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attack_id = input;
-        self
+        self.attack_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAttackInput`](crate::operation::describe_attack::DescribeAttackInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_attack::DescribeAttackInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_attack::DescribeAttackInput {
-            attack_id: self.attack_id,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_attack::DescribeAttackInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_attack::DescribeAttackInput {
+                attack_id: self.attack_id
+                ,
+            }
+        )
     }
 }
+

@@ -3,31 +3,26 @@
 /// <p>DescribeNFSFileSharesOutput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNfsFileSharesOutput {
+pub struct DescribeNfsFileSharesOutput  {
     /// <p>An array containing a description for each requested file share.</p>
     #[doc(hidden)]
-    pub nfs_file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
+    pub nfs_file_share_info_list: std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
-    pub fn nfs_file_share_info_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::NfsFileShareInfo]> {
+    pub fn nfs_file_share_info_list(&self) -> std::option::Option<& [crate::types::NfsFileShareInfo]> {
         self.nfs_file_share_info_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeNfsFileSharesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeNfsFileSharesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNfsFileSharesOutput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesOutputBuilder {
         crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesOutputBuilder::default()
     }
 }
@@ -36,8 +31,7 @@ impl DescribeNfsFileSharesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeNfsFileSharesOutputBuilder {
-    pub(crate) nfs_file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
+    pub(crate) nfs_file_share_info_list: std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeNfsFileSharesOutputBuilder {
@@ -48,32 +42,30 @@ impl DescribeNfsFileSharesOutputBuilder {
     /// <p>An array containing a description for each requested file share.</p>
     pub fn nfs_file_share_info_list(mut self, input: crate::types::NfsFileShareInfo) -> Self {
         let mut v = self.nfs_file_share_info_list.unwrap_or_default();
-        v.push(input);
-        self.nfs_file_share_info_list = Some(v);
-        self
+                        v.push(input);
+                        self.nfs_file_share_info_list = Some(v);
+                        self
     }
     /// <p>An array containing a description for each requested file share.</p>
-    pub fn set_nfs_file_share_info_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
-    ) -> Self {
-        self.nfs_file_share_info_list = input;
-        self
+    pub fn set_nfs_file_share_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>) -> Self {
+        self.nfs_file_share_info_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeNfsFileSharesOutput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput).
     pub fn build(self) -> crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput {
         crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput {
-            nfs_file_share_info_list: self.nfs_file_share_info_list,
+            nfs_file_share_info_list: self.nfs_file_share_info_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

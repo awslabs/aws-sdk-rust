@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoomInput {
+pub struct GetRoomInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetRoomInput {
 }
 impl GetRoomInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> std::option::Option<&str> {
+    pub fn room_id(&self) -> std::option::Option<& str> {
         self.room_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetRoomInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetRoomInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_id = input;
-        self
+        self.room_id = input; self
     }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_room::GetRoomInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_room::GetRoomInput {
-            account_id: self.account_id,
-            room_id: self.room_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_room::GetRoomInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_room::GetRoomInput {
+                account_id: self.account_id
+                ,
+                room_id: self.room_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListChannelFlowsOutput {
+pub struct ListChannelFlowsOutput  {
     /// <p>The information about each channel flow.</p>
     #[doc(hidden)]
     pub channel_flows: std::option::Option<std::vec::Vec<crate::types::ChannelFlowSummary>>,
@@ -13,15 +13,15 @@ pub struct ListChannelFlowsOutput {
 }
 impl ListChannelFlowsOutput {
     /// <p>The information about each channel flow.</p>
-    pub fn channel_flows(&self) -> std::option::Option<&[crate::types::ChannelFlowSummary]> {
+    pub fn channel_flows(&self) -> std::option::Option<& [crate::types::ChannelFlowSummary]> {
         self.channel_flows.as_deref()
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListChannelFlowsOutput {
+impl  std::fmt::Debug for ListChannelFlowsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelFlowsOutput");
         formatter.field("channel_flows", &self.channel_flows);
@@ -31,14 +31,13 @@ impl std::fmt::Debug for ListChannelFlowsOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListChannelFlowsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListChannelFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelFlowsOutput`](crate::operation::list_channel_flows::ListChannelFlowsOutput).
-    pub fn builder() -> crate::operation::list_channel_flows::builders::ListChannelFlowsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_channel_flows::builders::ListChannelFlowsOutputBuilder {
         crate::operation::list_channel_flows::builders::ListChannelFlowsOutputBuilder::default()
     }
 }
@@ -59,17 +58,13 @@ impl ListChannelFlowsOutputBuilder {
     /// <p>The information about each channel flow.</p>
     pub fn channel_flows(mut self, input: crate::types::ChannelFlowSummary) -> Self {
         let mut v = self.channel_flows.unwrap_or_default();
-        v.push(input);
-        self.channel_flows = Some(v);
-        self
+                        v.push(input);
+                        self.channel_flows = Some(v);
+                        self
     }
     /// <p>The information about each channel flow.</p>
-    pub fn set_channel_flows(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChannelFlowSummary>>,
-    ) -> Self {
-        self.channel_flows = input;
-        self
+    pub fn set_channel_flows(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChannelFlowSummary>>) -> Self {
+        self.channel_flows = input; self
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,23 +73,24 @@ impl ListChannelFlowsOutputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListChannelFlowsOutput`](crate::operation::list_channel_flows::ListChannelFlowsOutput).
     pub fn build(self) -> crate::operation::list_channel_flows::ListChannelFlowsOutput {
         crate::operation::list_channel_flows::ListChannelFlowsOutput {
-            channel_flows: self.channel_flows,
-            next_token: self.next_token,
+            channel_flows: self.channel_flows
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
@@ -108,3 +104,4 @@ impl std::fmt::Debug for ListChannelFlowsOutputBuilder {
         formatter.finish()
     }
 }
+

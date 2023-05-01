@@ -3,7 +3,7 @@
 /// <p>The number of documents successfully and unsuccessfully processed during a translation job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>The number of documents successfully processed during a translation job.</p>
     #[doc(hidden)]
     pub translated_documents_count: std::option::Option<i32>,
@@ -51,8 +51,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The number of documents successfully processed during a translation job.</p>
     pub fn set_translated_documents_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.translated_documents_count = input;
-        self
+        self.translated_documents_count = input; self
     }
     /// <p>The number of documents that could not be processed during a translation job.</p>
     pub fn documents_with_errors_count(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl JobDetailsBuilder {
     }
     /// <p>The number of documents that could not be processed during a translation job.</p>
     pub fn set_documents_with_errors_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.documents_with_errors_count = input;
-        self
+        self.documents_with_errors_count = input; self
     }
     /// <p>The number of documents used as input in a translation job.</p>
     pub fn input_documents_count(mut self, input: i32) -> Self {
@@ -71,15 +69,18 @@ impl JobDetailsBuilder {
     }
     /// <p>The number of documents used as input in a translation job.</p>
     pub fn set_input_documents_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.input_documents_count = input;
-        self
+        self.input_documents_count = input; self
     }
     /// Consumes the builder and constructs a [`JobDetails`](crate::types::JobDetails).
     pub fn build(self) -> crate::types::JobDetails {
         crate::types::JobDetails {
-            translated_documents_count: self.translated_documents_count,
-            documents_with_errors_count: self.documents_with_errors_count,
-            input_documents_count: self.input_documents_count,
+            translated_documents_count: self.translated_documents_count
+            ,
+            documents_with_errors_count: self.documents_with_errors_count
+            ,
+            input_documents_count: self.input_documents_count
+            ,
         }
     }
 }
+

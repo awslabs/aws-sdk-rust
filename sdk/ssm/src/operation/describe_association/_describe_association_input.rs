@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssociationInput {
+pub struct DescribeAssociationInput  {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct DescribeAssociationInput {
 }
 impl DescribeAssociationInput {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The managed node ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The association ID for which you want information.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    pub fn association_version(&self) -> std::option::Option<&str> {
+    pub fn association_version(&self) -> std::option::Option<& str> {
         self.association_version.as_deref()
     }
 }
 impl DescribeAssociationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssociationInput`](crate::operation::describe_association::DescribeAssociationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_association::builders::DescribeAssociationInputBuilder {
+    pub fn builder() -> crate::operation::describe_association::builders::DescribeAssociationInputBuilder {
         crate::operation::describe_association::builders::DescribeAssociationInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl DescribeAssociationInputBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The managed node ID.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl DescribeAssociationInputBuilder {
     }
     /// <p>The managed node ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The association ID for which you want information.</p>
     pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl DescribeAssociationInputBuilder {
     }
     /// <p>The association ID for which you want information.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
     pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,27 +84,23 @@ impl DescribeAssociationInputBuilder {
         self
     }
     /// <p>Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for a managed node, use <code>ListAssociations</code>. To get a list of versions for a specific association, use <code>ListAssociationVersions</code>. </p>
-    pub fn set_association_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.association_version = input;
-        self
+    pub fn set_association_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.association_version = input; self
     }
     /// Consumes the builder and constructs a [`DescribeAssociationInput`](crate::operation::describe_association::DescribeAssociationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_association::DescribeAssociationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_association::DescribeAssociationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_association::DescribeAssociationInput {
-                name: self.name,
-                instance_id: self.instance_id,
-                association_id: self.association_id,
-                association_version: self.association_version,
-            },
+                name: self.name
+                ,
+                instance_id: self.instance_id
+                ,
+                association_id: self.association_id
+                ,
+                association_version: self.association_version
+                ,
+            }
         )
     }
 }
+

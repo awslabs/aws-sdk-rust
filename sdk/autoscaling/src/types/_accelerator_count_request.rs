@@ -3,7 +3,7 @@
 /// <p>Specifies the minimum and maximum for the <code>AcceleratorCount</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceleratorCountRequest {
+pub struct AcceleratorCountRequest  {
     /// <p>The minimum value.</p>
     #[doc(hidden)]
     pub min: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl AcceleratorCountRequestBuilder {
     }
     /// <p>The minimum value.</p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>The maximum value.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl AcceleratorCountRequestBuilder {
     }
     /// <p>The maximum value.</p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// Consumes the builder and constructs a [`AcceleratorCountRequest`](crate::types::AcceleratorCountRequest).
     pub fn build(self) -> crate::types::AcceleratorCountRequest {
         crate::types::AcceleratorCountRequest {
-            min: self.min,
-            max: self.max,
+            min: self.min
+            ,
+            max: self.max
+            ,
         }
     }
 }
+

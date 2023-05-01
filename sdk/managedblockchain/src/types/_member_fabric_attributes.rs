@@ -3,7 +3,7 @@
 /// <p>Attributes of Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberFabricAttributes {
+pub struct MemberFabricAttributes  {
     /// <p>The user name for the initial administrator user for the member.</p>
     #[doc(hidden)]
     pub admin_username: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MemberFabricAttributes {
 }
 impl MemberFabricAttributes {
     /// <p>The user name for the initial administrator user for the member.</p>
-    pub fn admin_username(&self) -> std::option::Option<&str> {
+    pub fn admin_username(&self) -> std::option::Option<& str> {
         self.admin_username.as_deref()
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
-    pub fn ca_endpoint(&self) -> std::option::Option<&str> {
+    pub fn ca_endpoint(&self) -> std::option::Option<& str> {
         self.ca_endpoint.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl MemberFabricAttributesBuilder {
     }
     /// <p>The user name for the initial administrator user for the member.</p>
     pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.admin_username = input;
-        self
+        self.admin_username = input; self
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
     pub fn ca_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl MemberFabricAttributesBuilder {
     }
     /// <p>The endpoint used to access the member's certificate authority.</p>
     pub fn set_ca_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ca_endpoint = input;
-        self
+        self.ca_endpoint = input; self
     }
     /// Consumes the builder and constructs a [`MemberFabricAttributes`](crate::types::MemberFabricAttributes).
     pub fn build(self) -> crate::types::MemberFabricAttributes {
         crate::types::MemberFabricAttributes {
-            admin_username: self.admin_username,
-            ca_endpoint: self.ca_endpoint,
+            admin_username: self.admin_username
+            ,
+            ca_endpoint: self.ca_endpoint
+            ,
         }
     }
 }
+

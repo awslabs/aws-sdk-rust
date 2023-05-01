@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rollbackondisable = unimplemented!();
 /// match rollbackondisable {
@@ -30,64 +30,55 @@
 /// Specifically, when `rollbackondisable` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RollbackOnDisable::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RollbackOnDisable {
     #[allow(missing_docs)] // documentation missing in model
     DefaultRollback,
     #[allow(missing_docs)] // documentation missing in model
     NoRollback,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RollbackOnDisable {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEFAULT_ROLLBACK" => RollbackOnDisable::DefaultRollback,
-            "NO_ROLLBACK" => RollbackOnDisable::NoRollback,
-            other => {
-                RollbackOnDisable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEFAULT_ROLLBACK" => RollbackOnDisable::DefaultRollback,
+"NO_ROLLBACK" => RollbackOnDisable::NoRollback,
+other => RollbackOnDisable::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for RollbackOnDisable {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RollbackOnDisable::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RollbackOnDisable::from(s))
+                }
+            }
 impl RollbackOnDisable {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            RollbackOnDisable::DefaultRollback => "DEFAULT_ROLLBACK",
-            RollbackOnDisable::NoRollback => "NO_ROLLBACK",
-            RollbackOnDisable::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT_ROLLBACK", "NO_ROLLBACK"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    RollbackOnDisable::DefaultRollback => "DEFAULT_ROLLBACK",
+    RollbackOnDisable::NoRollback => "NO_ROLLBACK",
+    RollbackOnDisable::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEFAULT_ROLLBACK", "NO_ROLLBACK"]
+                }
+            }
 impl AsRef<str> for RollbackOnDisable {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

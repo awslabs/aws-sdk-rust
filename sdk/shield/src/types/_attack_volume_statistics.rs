@@ -3,7 +3,7 @@
 /// <p>Statistics objects for the various data types in <code>AttackVolume</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttackVolumeStatistics {
+pub struct AttackVolumeStatistics  {
     /// <p>The maximum attack volume observed for the given unit.</p>
     #[doc(hidden)]
     pub max: f64,
@@ -35,13 +35,15 @@ impl AttackVolumeStatisticsBuilder {
     }
     /// <p>The maximum attack volume observed for the given unit.</p>
     pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// Consumes the builder and constructs a [`AttackVolumeStatistics`](crate::types::AttackVolumeStatistics).
     pub fn build(self) -> crate::types::AttackVolumeStatistics {
         crate::types::AttackVolumeStatistics {
-            max: self.max.unwrap_or_default(),
+            max: self.max
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

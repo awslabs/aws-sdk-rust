@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notebookinstancestatus = unimplemented!();
 /// match notebookinstancestatus {
@@ -35,22 +35,14 @@
 /// Specifically, when `notebookinstancestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotebookInstanceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotebookInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -67,60 +59,51 @@ pub enum NotebookInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotebookInstanceStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Deleting" => NotebookInstanceStatus::Deleting,
-            "Failed" => NotebookInstanceStatus::Failed,
-            "InService" => NotebookInstanceStatus::InService,
-            "Pending" => NotebookInstanceStatus::Pending,
-            "Stopped" => NotebookInstanceStatus::Stopped,
-            "Stopping" => NotebookInstanceStatus::Stopping,
-            "Updating" => NotebookInstanceStatus::Updating,
-            other => NotebookInstanceStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Deleting" => NotebookInstanceStatus::Deleting,
+"Failed" => NotebookInstanceStatus::Failed,
+"InService" => NotebookInstanceStatus::InService,
+"Pending" => NotebookInstanceStatus::Pending,
+"Stopped" => NotebookInstanceStatus::Stopped,
+"Stopping" => NotebookInstanceStatus::Stopping,
+"Updating" => NotebookInstanceStatus::Updating,
+other => NotebookInstanceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NotebookInstanceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotebookInstanceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotebookInstanceStatus::from(s))
+                }
+            }
 impl NotebookInstanceStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NotebookInstanceStatus::Deleting => "Deleting",
-            NotebookInstanceStatus::Failed => "Failed",
-            NotebookInstanceStatus::InService => "InService",
-            NotebookInstanceStatus::Pending => "Pending",
-            NotebookInstanceStatus::Stopped => "Stopped",
-            NotebookInstanceStatus::Stopping => "Stopping",
-            NotebookInstanceStatus::Updating => "Updating",
-            NotebookInstanceStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Deleting",
-            "Failed",
-            "InService",
-            "Pending",
-            "Stopped",
-            "Stopping",
-            "Updating",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NotebookInstanceStatus::Deleting => "Deleting",
+    NotebookInstanceStatus::Failed => "Failed",
+    NotebookInstanceStatus::InService => "InService",
+    NotebookInstanceStatus::Pending => "Pending",
+    NotebookInstanceStatus::Stopped => "Stopped",
+    NotebookInstanceStatus::Stopping => "Stopping",
+    NotebookInstanceStatus::Updating => "Updating",
+    NotebookInstanceStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Deleting", "Failed", "InService", "Pending", "Stopped", "Stopping", "Updating"]
+                }
+            }
 impl AsRef<str> for NotebookInstanceStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

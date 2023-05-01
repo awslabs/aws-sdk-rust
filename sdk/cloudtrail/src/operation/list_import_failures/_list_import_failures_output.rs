@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportFailuresOutput {
+pub struct ListImportFailuresOutput  {
     /// <p> Contains information about the import failures. </p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::types::ImportFailureListItem>>,
@@ -13,23 +13,22 @@ pub struct ListImportFailuresOutput {
 }
 impl ListImportFailuresOutput {
     /// <p> Contains information about the import failures. </p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::ImportFailureListItem]> {
+    pub fn failures(&self) -> std::option::Option<& [crate::types::ImportFailureListItem]> {
         self.failures.as_deref()
     }
     /// <p> A token you can use to get the next page of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListImportFailuresOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListImportFailuresOutput {
     /// Creates a new builder-style object to manufacture [`ListImportFailuresOutput`](crate::operation::list_import_failures::ListImportFailuresOutput).
-    pub fn builder(
-    ) -> crate::operation::list_import_failures::builders::ListImportFailuresOutputBuilder {
+    pub fn builder() -> crate::operation::list_import_failures::builders::ListImportFailuresOutputBuilder {
         crate::operation::list_import_failures::builders::ListImportFailuresOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListImportFailuresOutputBuilder {
     /// <p> Contains information about the import failures. </p>
     pub fn failures(mut self, input: crate::types::ImportFailureListItem) -> Self {
         let mut v = self.failures.unwrap_or_default();
-        v.push(input);
-        self.failures = Some(v);
-        self
+                        v.push(input);
+                        self.failures = Some(v);
+                        self
     }
     /// <p> Contains information about the import failures. </p>
-    pub fn set_failures(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportFailureListItem>>,
-    ) -> Self {
-        self.failures = input;
-        self
+    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportFailureListItem>>) -> Self {
+        self.failures = input; self
     }
     /// <p> A token you can use to get the next page of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListImportFailuresOutputBuilder {
     }
     /// <p> A token you can use to get the next page of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListImportFailuresOutput`](crate::operation::list_import_failures::ListImportFailuresOutput).
     pub fn build(self) -> crate::operation::list_import_failures::ListImportFailuresOutput {
         crate::operation::list_import_failures::ListImportFailuresOutput {
-            failures: self.failures,
-            next_token: self.next_token,
+            failures: self.failures
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

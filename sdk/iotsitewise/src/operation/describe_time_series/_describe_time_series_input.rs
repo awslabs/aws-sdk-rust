@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTimeSeriesInput {
+pub struct DescribeTimeSeriesInput  {
     /// <p>The alias that identifies the time series.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct DescribeTimeSeriesInput {
 }
 impl DescribeTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> std::option::Option<& str> {
         self.property_id.as_deref()
     }
 }
 impl DescribeTimeSeriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
-    pub fn builder(
-    ) -> crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder {
+    pub fn builder() -> crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder {
         crate::operation::describe_time_series::builders::DescribeTimeSeriesInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DescribeTimeSeriesInputBuilder {
     }
     /// <p>The alias that identifies the time series.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input;
-        self
+        self.alias = input; self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl DescribeTimeSeriesInputBuilder {
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl DescribeTimeSeriesInputBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_id = input;
-        self
+        self.property_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_time_series::DescribeTimeSeriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_time_series::DescribeTimeSeriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_time_series::DescribeTimeSeriesInput {
-                alias: self.alias,
-                asset_id: self.asset_id,
-                property_id: self.property_id,
-            },
+                alias: self.alias
+                ,
+                asset_id: self.asset_id
+                ,
+                property_id: self.property_id
+                ,
+            }
         )
     }
 }
+

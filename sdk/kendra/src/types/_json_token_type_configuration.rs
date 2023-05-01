@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for the JSON token type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JsonTokenTypeConfiguration {
+pub struct JsonTokenTypeConfiguration  {
     /// <p>The user name attribute field.</p>
     #[doc(hidden)]
     pub user_name_attribute_field: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct JsonTokenTypeConfiguration {
 }
 impl JsonTokenTypeConfiguration {
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(&self) -> std::option::Option<&str> {
+    pub fn user_name_attribute_field(&self) -> std::option::Option<& str> {
         self.user_name_attribute_field.as_deref()
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(&self) -> std::option::Option<&str> {
+    pub fn group_attribute_field(&self) -> std::option::Option<& str> {
         self.group_attribute_field.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl JsonTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The user name attribute field.</p>
-    pub fn set_user_name_attribute_field(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.user_name_attribute_field = input;
-        self
+    pub fn set_user_name_attribute_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.user_name_attribute_field = input; self
     }
     /// <p>The group attribute field.</p>
     pub fn group_attribute_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +51,17 @@ impl JsonTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The group attribute field.</p>
-    pub fn set_group_attribute_field(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.group_attribute_field = input;
-        self
+    pub fn set_group_attribute_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.group_attribute_field = input; self
     }
     /// Consumes the builder and constructs a [`JsonTokenTypeConfiguration`](crate::types::JsonTokenTypeConfiguration).
     pub fn build(self) -> crate::types::JsonTokenTypeConfiguration {
         crate::types::JsonTokenTypeConfiguration {
-            user_name_attribute_field: self.user_name_attribute_field,
-            group_attribute_field: self.group_attribute_field,
+            user_name_attribute_field: self.user_name_attribute_field
+            ,
+            group_attribute_field: self.group_attribute_field
+            ,
         }
     }
 }
+

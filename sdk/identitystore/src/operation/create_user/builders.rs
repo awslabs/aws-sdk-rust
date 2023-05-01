@@ -4,77 +4,56 @@ pub use crate::operation::create_user::_create_user_output::CreateUserOutputBuil
 pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilder;
 
 /// Fluent builder constructing a request to `CreateUser`.
-///
+/// 
 /// <p>Creates a user within the specified identity store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUserFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_user::builders::CreateUserInputBuilder,
-}
-impl CreateUserFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_user::builders::CreateUserInputBuilder
+            }
+impl CreateUserFluentBuilder  {
     /// Creates a new `CreateUser`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_user::CreateUser,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_user::CreateUserOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_user::CreateUser, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_user::CreateUserOutput, aws_smithy_http::result::SdkError<crate::operation::create_user::CreateUserError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
@@ -138,10 +117,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>A list of <code>Email</code> objects containing email addresses associated with the user.</p>
-    pub fn set_emails(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Email>>,
-    ) -> Self {
+    pub fn set_emails(mut self, input: std::option::Option<std::vec::Vec<crate::types::Email>>) -> Self {
         self.inner = self.inner.set_emails(input);
         self
     }
@@ -155,10 +131,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>A list of <code>Address</code> objects containing addresses associated with the user.</p>
-    pub fn set_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Address>>,
-    ) -> Self {
+    pub fn set_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::types::Address>>) -> Self {
         self.inner = self.inner.set_addresses(input);
         self
     }
@@ -172,10 +145,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>A list of <code>PhoneNumber</code> objects containing phone numbers associated with the user.</p>
-    pub fn set_phone_numbers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
-    ) -> Self {
+    pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>) -> Self {
         self.inner = self.inner.set_phone_numbers(input);
         self
     }
@@ -205,10 +175,7 @@ impl CreateUserFluentBuilder {
         self
     }
     /// <p>A string containing the preferred language of the user. For example, "American English" or "en-us."</p>
-    pub fn set_preferred_language(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_preferred_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_preferred_language(input);
         self
     }
@@ -233,3 +200,4 @@ impl CreateUserFluentBuilder {
         self
     }
 }
+

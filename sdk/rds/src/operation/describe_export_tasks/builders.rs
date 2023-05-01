@@ -4,92 +4,62 @@ pub use crate::operation::describe_export_tasks::_describe_export_tasks_output::
 pub use crate::operation::describe_export_tasks::_describe_export_tasks_input::DescribeExportTasksInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeExportTasks`.
-///
+/// 
 /// <p>Returns information about a snapshot or cluster export to Amazon S3. This API operation supports pagination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExportTasksFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder,
-}
-impl DescribeExportTasksFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder
+            }
+impl DescribeExportTasksFluentBuilder  {
     /// Creates a new `DescribeExportTasks`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_export_tasks::DescribeExportTasks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_export_tasks::DescribeExportTasksOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_export_tasks::DescribeExportTasksError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_export_tasks::DescribeExportTasks, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_export_tasks::DescribeExportTasksOutput, aws_smithy_http::result::SdkError<crate::operation::describe_export_tasks::DescribeExportTasksError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator {
-        crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator {
+                            crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.export_task_identifier(input.into());
         self
     }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
-    pub fn set_export_task_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_export_task_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_export_task_identifier(input);
         self
     }
@@ -107,46 +77,43 @@ impl DescribeExportTasksFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
-    /// <p>Supported filters include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
-    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
-    /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>canceled</code> </p> </li>
-    /// <li> <p> <code>canceling</code> </p> </li>
-    /// <li> <p> <code>complete</code> </p> </li>
-    /// <li> <p> <code>failed</code> </p> </li>
-    /// <li> <p> <code>in_progress</code> </p> </li>
-    /// <li> <p> <code>starting</code> </p> </li>
-    /// </ul> </li>
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p> 
+    /// <p>Supported filters include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li> 
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li> 
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li> 
+    /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>canceled</code> </p> </li> 
+    /// <li> <p> <code>canceling</code> </p> </li> 
+    /// <li> <p> <code>complete</code> </p> </li> 
+    /// <li> <p> <code>failed</code> </p> </li> 
+    /// <li> <p> <code>in_progress</code> </p> </li> 
+    /// <li> <p> <code>starting</code> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p>
-    /// <p>Supported filters include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li>
-    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li>
-    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li>
-    /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>canceled</code> </p> </li>
-    /// <li> <p> <code>canceling</code> </p> </li>
-    /// <li> <p> <code>complete</code> </p> </li>
-    /// <li> <p> <code>failed</code> </p> </li>
-    /// <li> <p> <code>in_progress</code> </p> </li>
-    /// <li> <p> <code>starting</code> </p> </li>
-    /// </ul> </li>
+    /// <p>Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value pairs that define what to include in the output. Filter names and values are case-sensitive.</p> 
+    /// <p>Supported filters include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.</p> </li> 
+    /// <li> <p> <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.</p> </li> 
+    /// <li> <p> <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.</p> </li> 
+    /// <li> <p> <code>status</code> - The status of the export task. Must be lowercase. Valid statuses are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>canceled</code> </p> </li> 
+    /// <li> <p> <code>canceling</code> </p> </li> 
+    /// <li> <p> <code>complete</code> </p> </li> 
+    /// <li> <p> <code>failed</code> </p> </li> 
+    /// <li> <p> <code>in_progress</code> </p> </li> 
+    /// <li> <p> <code>starting</code> </p> </li> 
+    /// </ul> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -160,15 +127,15 @@ impl DescribeExportTasksFluentBuilder {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p>
-    /// <p>Default: 100</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified value, a pagination token called a marker is included in the response. You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve the remaining results.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
@@ -180,11 +147,9 @@ impl DescribeExportTasksFluentBuilder {
         self
     }
     /// <p>The type of source for the export.</p>
-    pub fn set_source_type(
-        mut self,
-        input: std::option::Option<crate::types::ExportSourceType>,
-    ) -> Self {
+    pub fn set_source_type(mut self, input: std::option::Option<crate::types::ExportSourceType>) -> Self {
         self.inner = self.inner.set_source_type(input);
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeArtifactOutput {
+pub struct DescribeArtifactOutput  {
     /// <p>The name of the artifact.</p>
     #[doc(hidden)]
     pub artifact_name: std::option::Option<std::string::String>,
@@ -17,8 +17,7 @@ pub struct DescribeArtifactOutput {
     pub artifact_type: std::option::Option<std::string::String>,
     /// <p>A list of the artifact's properties.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>When the artifact was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -41,62 +40,58 @@ pub struct DescribeArtifactOutput {
 }
 impl DescribeArtifactOutput {
     /// <p>The name of the artifact.</p>
-    pub fn artifact_name(&self) -> std::option::Option<&str> {
+    pub fn artifact_name(&self) -> std::option::Option<& str> {
         self.artifact_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
-    pub fn artifact_arn(&self) -> std::option::Option<&str> {
+    pub fn artifact_arn(&self) -> std::option::Option<& str> {
         self.artifact_arn.as_deref()
     }
     /// <p>The source of the artifact.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::ArtifactSource> {
+    pub fn source(&self) -> std::option::Option<& crate::types::ArtifactSource> {
         self.source.as_ref()
     }
     /// <p>The type of the artifact.</p>
-    pub fn artifact_type(&self) -> std::option::Option<&str> {
+    pub fn artifact_type(&self) -> std::option::Option<& str> {
         self.artifact_type.as_deref()
     }
     /// <p>A list of the artifact's properties.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.properties.as_ref()
     }
     /// <p>When the artifact was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>When the artifact was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> std::option::Option<& crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> std::option::Option<&crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> std::option::Option<& crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn lineage_group_arn(&self) -> std::option::Option<&str> {
+    pub fn lineage_group_arn(&self) -> std::option::Option<& str> {
         self.lineage_group_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeArtifactOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DescribeArtifactOutput`](crate::operation::describe_artifact::DescribeArtifactOutput).
-    pub fn builder() -> crate::operation::describe_artifact::builders::DescribeArtifactOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_artifact::builders::DescribeArtifactOutputBuilder {
         crate::operation::describe_artifact::builders::DescribeArtifactOutputBuilder::default()
     }
 }
@@ -109,8 +104,7 @@ pub struct DescribeArtifactOutputBuilder {
     pub(crate) artifact_arn: std::option::Option<std::string::String>,
     pub(crate) source: std::option::Option<crate::types::ArtifactSource>,
     pub(crate) artifact_type: std::option::Option<std::string::String>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) created_by: std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -127,8 +121,7 @@ impl DescribeArtifactOutputBuilder {
     }
     /// <p>The name of the artifact.</p>
     pub fn set_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_name = input;
-        self
+        self.artifact_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +130,7 @@ impl DescribeArtifactOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the artifact.</p>
     pub fn set_artifact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_arn = input;
-        self
+        self.artifact_arn = input; self
     }
     /// <p>The source of the artifact.</p>
     pub fn source(mut self, input: crate::types::ArtifactSource) -> Self {
@@ -147,8 +139,7 @@ impl DescribeArtifactOutputBuilder {
     }
     /// <p>The source of the artifact.</p>
     pub fn set_source(mut self, input: std::option::Option<crate::types::ArtifactSource>) -> Self {
-        self.source = input;
-        self
+        self.source = input; self
     }
     /// <p>The type of the artifact.</p>
     pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,33 +148,22 @@ impl DescribeArtifactOutputBuilder {
     }
     /// <p>The type of the artifact.</p>
     pub fn set_artifact_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.artifact_type = input;
-        self
+        self.artifact_type = input; self
     }
     /// Adds a key-value pair to `properties`.
     ///
     /// To override the contents of this collection use [`set_properties`](Self::set_properties).
     ///
     /// <p>A list of the artifact's properties.</p>
-    pub fn properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.properties = Some(hash_map);
+                        self
     }
     /// <p>A list of the artifact's properties.</p>
-    pub fn set_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.properties = input;
-        self
+    pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.properties = input; self
     }
     /// <p>When the artifact was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -191,12 +171,8 @@ impl DescribeArtifactOutputBuilder {
         self
     }
     /// <p>When the artifact was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -205,8 +181,7 @@ impl DescribeArtifactOutputBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input;
-        self
+        self.created_by = input; self
     }
     /// <p>When the artifact was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -214,12 +189,8 @@ impl DescribeArtifactOutputBuilder {
         self
     }
     /// <p>When the artifact was last modified.</p>
-    pub fn set_last_modified_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_time = input;
-        self
+    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input; self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
@@ -227,12 +198,8 @@ impl DescribeArtifactOutputBuilder {
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_last_modified_by(
-        mut self,
-        input: std::option::Option<crate::types::UserContext>,
-    ) -> Self {
-        self.last_modified_by = input;
-        self
+    pub fn set_last_modified_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+        self.last_modified_by = input; self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
@@ -240,12 +207,8 @@ impl DescribeArtifactOutputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(
-        mut self,
-        input: std::option::Option<crate::types::MetadataProperties>,
-    ) -> Self {
-        self.metadata_properties = input;
-        self
+    pub fn set_metadata_properties(mut self, input: std::option::Option<crate::types::MetadataProperties>) -> Self {
+        self.metadata_properties = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     pub fn lineage_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,37 +216,45 @@ impl DescribeArtifactOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the lineage group.</p>
-    pub fn set_lineage_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.lineage_group_arn = input;
-        self
+    pub fn set_lineage_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.lineage_group_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeArtifactOutput`](crate::operation::describe_artifact::DescribeArtifactOutput).
     pub fn build(self) -> crate::operation::describe_artifact::DescribeArtifactOutput {
         crate::operation::describe_artifact::DescribeArtifactOutput {
-            artifact_name: self.artifact_name,
-            artifact_arn: self.artifact_arn,
-            source: self.source,
-            artifact_type: self.artifact_type,
-            properties: self.properties,
-            creation_time: self.creation_time,
-            created_by: self.created_by,
-            last_modified_time: self.last_modified_time,
-            last_modified_by: self.last_modified_by,
-            metadata_properties: self.metadata_properties,
-            lineage_group_arn: self.lineage_group_arn,
+            artifact_name: self.artifact_name
+            ,
+            artifact_arn: self.artifact_arn
+            ,
+            source: self.source
+            ,
+            artifact_type: self.artifact_type
+            ,
+            properties: self.properties
+            ,
+            creation_time: self.creation_time
+            ,
+            created_by: self.created_by
+            ,
+            last_modified_time: self.last_modified_time
+            ,
+            last_modified_by: self.last_modified_by
+            ,
+            metadata_properties: self.metadata_properties
+            ,
+            lineage_group_arn: self.lineage_group_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

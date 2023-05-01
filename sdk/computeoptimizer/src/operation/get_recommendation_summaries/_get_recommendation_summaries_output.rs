@@ -2,38 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecommendationSummariesOutput {
-    /// <p>The token to use to advance to the next page of recommendation summaries.</p>
+pub struct GetRecommendationSummariesOutput  {
+    /// <p>The token to use to advance to the next page of recommendation summaries.</p> 
     /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of objects that summarize a recommendation.</p>
     #[doc(hidden)]
-    pub recommendation_summaries:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub recommendation_summaries: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationSummariesOutput {
-    /// <p>The token to use to advance to the next page of recommendation summaries.</p>
+    /// <p>The token to use to advance to the next page of recommendation summaries.</p> 
     /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that summarize a recommendation.</p>
-    pub fn recommendation_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::types::RecommendationSummary]> {
+    pub fn recommendation_summaries(&self) -> std::option::Option<& [crate::types::RecommendationSummary]> {
         self.recommendation_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRecommendationSummariesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRecommendationSummariesOutput {
     /// Creates a new builder-style object to manufacture [`GetRecommendationSummariesOutput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput).
-    pub fn builder() -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder{
+    pub fn builder() -> crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder {
         crate::operation::get_recommendation_summaries::builders::GetRecommendationSummariesOutputBuilder::default()
     }
 }
@@ -43,22 +40,20 @@ impl GetRecommendationSummariesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetRecommendationSummariesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) recommendation_summaries:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
+    pub(crate) recommendation_summaries: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
     _request_id: Option<String>,
 }
 impl GetRecommendationSummariesOutputBuilder {
-    /// <p>The token to use to advance to the next page of recommendation summaries.</p>
+    /// <p>The token to use to advance to the next page of recommendation summaries.</p> 
     /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token to use to advance to the next page of recommendation summaries.</p>
+    /// <p>The token to use to advance to the next page of recommendation summaries.</p> 
     /// <p>This value is null when there are no more pages of recommendation summaries to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `recommendation_summaries`.
     ///
@@ -67,35 +62,32 @@ impl GetRecommendationSummariesOutputBuilder {
     /// <p>An array of objects that summarize a recommendation.</p>
     pub fn recommendation_summaries(mut self, input: crate::types::RecommendationSummary) -> Self {
         let mut v = self.recommendation_summaries.unwrap_or_default();
-        v.push(input);
-        self.recommendation_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.recommendation_summaries = Some(v);
+                        self
     }
     /// <p>An array of objects that summarize a recommendation.</p>
-    pub fn set_recommendation_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>,
-    ) -> Self {
-        self.recommendation_summaries = input;
-        self
+    pub fn set_recommendation_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationSummary>>) -> Self {
+        self.recommendation_summaries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRecommendationSummariesOutput`](crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput {
+    pub fn build(self) -> crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput {
         crate::operation::get_recommendation_summaries::GetRecommendationSummariesOutput {
-            next_token: self.next_token,
-            recommendation_summaries: self.recommendation_summaries,
+            next_token: self.next_token
+            ,
+            recommendation_summaries: self.recommendation_summaries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

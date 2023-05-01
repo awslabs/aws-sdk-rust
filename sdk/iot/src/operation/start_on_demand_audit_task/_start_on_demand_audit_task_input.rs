@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartOnDemandAuditTaskInput {
+pub struct StartOnDemandAuditTaskInput  {
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     #[doc(hidden)]
     pub target_check_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartOnDemandAuditTaskInput {
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    pub fn target_check_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_check_names(&self) -> std::option::Option<& [std::string::String]> {
         self.target_check_names.as_deref()
     }
 }
 impl StartOnDemandAuditTaskInput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandAuditTaskInput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput).
-    pub fn builder(
-    ) -> crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder {
         crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder::default()
     }
 }
@@ -36,29 +34,22 @@ impl StartOnDemandAuditTaskInputBuilder {
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
     pub fn target_check_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_check_names.unwrap_or_default();
-        v.push(input.into());
-        self.target_check_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.target_check_names = Some(v);
+                        self
     }
     /// <p>Which checks are performed during the audit. The checks you specify must be enabled for your account or an exception occurs. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.</p>
-    pub fn set_target_check_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.target_check_names = input;
-        self
+    pub fn set_target_check_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.target_check_names = input; self
     }
     /// Consumes the builder and constructs a [`StartOnDemandAuditTaskInput`](crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskInput {
-                target_check_names: self.target_check_names,
-            },
+                target_check_names: self.target_check_names
+                ,
+            }
         )
     }
 }
+

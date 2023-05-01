@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentOutputsOutput {
+pub struct ListEnvironmentOutputsOutput  {
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct ListEnvironmentOutputsOutput {
 }
 impl ListEnvironmentOutputsOutput {
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>An array of environment outputs with detail data.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::types::Output]> {
         self.outputs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEnvironmentOutputsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListEnvironmentOutputsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder {
         crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl ListEnvironmentOutputsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next environment output in the array of environment outputs, after the current requested list of environment outputs.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `outputs`.
     ///
@@ -61,33 +58,32 @@ impl ListEnvironmentOutputsOutputBuilder {
     /// <p>An array of environment outputs with detail data.</p>
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = Some(v);
-        self
+                        v.push(input);
+                        self.outputs = Some(v);
+                        self
     }
     /// <p>An array of environment outputs with detail data.</p>
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListEnvironmentOutputsOutput`](crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput).
     pub fn build(self) -> crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput {
         crate::operation::list_environment_outputs::ListEnvironmentOutputsOutput {
-            next_token: self.next_token,
-            outputs: self.outputs,
+            next_token: self.next_token
+            ,
+            outputs: self.outputs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

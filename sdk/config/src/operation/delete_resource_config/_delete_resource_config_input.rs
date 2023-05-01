@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourceConfigInput {
+pub struct DeleteResourceConfigInput  {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DeleteResourceConfigInput {
 }
 impl DeleteResourceConfigInput {
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>Unique identifier of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
 }
 impl DeleteResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourceConfigInput`](crate::operation::delete_resource_config::DeleteResourceConfigInput).
-    pub fn builder(
-    ) -> crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder {
+    pub fn builder() -> crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder {
         crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteResourceConfigInputBuilder {
     }
     /// <p>The type of the resource.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>Unique identifier of the resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DeleteResourceConfigInputBuilder {
     }
     /// <p>Unique identifier of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteResourceConfigInput`](crate::operation::delete_resource_config::DeleteResourceConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_resource_config::DeleteResourceConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_resource_config::DeleteResourceConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_resource_config::DeleteResourceConfigInput {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-            },
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+            }
         )
     }
 }
+

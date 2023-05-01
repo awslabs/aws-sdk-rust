@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLogPatternOutput {
+pub struct UpdateLogPatternOutput  {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct UpdateLogPatternOutput {
 }
 impl UpdateLogPatternOutput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The successfully created log pattern.</p>
-    pub fn log_pattern(&self) -> std::option::Option<&crate::types::LogPattern> {
+    pub fn log_pattern(&self) -> std::option::Option<& crate::types::LogPattern> {
         self.log_pattern.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateLogPatternOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateLogPatternOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLogPatternOutput`](crate::operation::update_log_pattern::UpdateLogPatternOutput).
-    pub fn builder() -> crate::operation::update_log_pattern::builders::UpdateLogPatternOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_log_pattern::builders::UpdateLogPatternOutputBuilder {
         crate::operation::update_log_pattern::builders::UpdateLogPatternOutputBuilder::default()
     }
 }
@@ -49,12 +48,8 @@ impl UpdateLogPatternOutputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_group_name = input; self
     }
     /// <p>The successfully created log pattern.</p>
     pub fn log_pattern(mut self, input: crate::types::LogPattern) -> Self {
@@ -63,24 +58,26 @@ impl UpdateLogPatternOutputBuilder {
     }
     /// <p>The successfully created log pattern.</p>
     pub fn set_log_pattern(mut self, input: std::option::Option<crate::types::LogPattern>) -> Self {
-        self.log_pattern = input;
-        self
+        self.log_pattern = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateLogPatternOutput`](crate::operation::update_log_pattern::UpdateLogPatternOutput).
     pub fn build(self) -> crate::operation::update_log_pattern::UpdateLogPatternOutput {
         crate::operation::update_log_pattern::UpdateLogPatternOutput {
-            resource_group_name: self.resource_group_name,
-            log_pattern: self.log_pattern,
+            resource_group_name: self.resource_group_name
+            ,
+            log_pattern: self.log_pattern
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

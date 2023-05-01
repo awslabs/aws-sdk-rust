@@ -3,7 +3,7 @@
 /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceIdPreference {
+pub struct ResourceIdPreference  {
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
     #[doc(hidden)]
     pub resource_id_type: std::option::Option<crate::types::ResourceIdType>,
@@ -13,11 +13,11 @@ pub struct ResourceIdPreference {
 }
 impl ResourceIdPreference {
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
-    pub fn resource_id_type(&self) -> std::option::Option<&crate::types::ResourceIdType> {
+    pub fn resource_id_type(&self) -> std::option::Option<& crate::types::ResourceIdType> {
         self.resource_id_type.as_ref()
     }
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::types::Resource]> {
         self.resources.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl ResourceIdPreferenceBuilder {
         self
     }
     /// <p>Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters) or <code>SHORT_ID</code> (8 characters).</p>
-    pub fn set_resource_id_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceIdType>,
-    ) -> Self {
-        self.resource_id_type = input;
-        self
+    pub fn set_resource_id_type(mut self, input: std::option::Option<crate::types::ResourceIdType>) -> Self {
+        self.resource_id_type = input; self
     }
     /// Appends an item to `resources`.
     ///
@@ -56,23 +52,22 @@ impl ResourceIdPreferenceBuilder {
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-        v.push(input);
-        self.resources = Some(v);
-        self
+                        v.push(input);
+                        self.resources = Some(v);
+                        self
     }
     /// <p>Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code> and <code>MOUNT_TARGET</code>.</p>
-    pub fn set_resources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
-    ) -> Self {
-        self.resources = input;
-        self
+    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Resource>>) -> Self {
+        self.resources = input; self
     }
     /// Consumes the builder and constructs a [`ResourceIdPreference`](crate::types::ResourceIdPreference).
     pub fn build(self) -> crate::types::ResourceIdPreference {
         crate::types::ResourceIdPreference {
-            resource_id_type: self.resource_id_type,
-            resources: self.resources,
+            resource_id_type: self.resource_id_type
+            ,
+            resources: self.resources
+            ,
         }
     }
 }
+

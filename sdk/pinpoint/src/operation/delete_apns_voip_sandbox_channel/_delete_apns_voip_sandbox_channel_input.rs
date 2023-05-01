@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApnsVoipSandboxChannelInput {
+pub struct DeleteApnsVoipSandboxChannelInput  {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteApnsVoipSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 impl DeleteApnsVoipSandboxChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteApnsVoipSandboxChannelInput`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelInput).
-    pub fn builder() -> crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelInputBuilder{
+    pub fn builder() -> crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelInputBuilder {
         crate::operation::delete_apns_voip_sandbox_channel::builders::DeleteApnsVoipSandboxChannelInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeleteApnsVoipSandboxChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteApnsVoipSandboxChannelInput`](crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_apns_voip_sandbox_channel::DeleteApnsVoipSandboxChannelInput {
-                application_id: self.application_id,
-            },
+                application_id: self.application_id
+                ,
+            }
         )
     }
 }
+

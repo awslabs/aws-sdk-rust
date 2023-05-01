@@ -3,7 +3,7 @@
 /// <p>Describes a deferred maintenance window</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeferredMaintenanceWindow {
+pub struct DeferredMaintenanceWindow  {
     /// <p>A unique identifier for the maintenance window.</p>
     #[doc(hidden)]
     pub defer_maintenance_identifier: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DeferredMaintenanceWindow {
 }
 impl DeferredMaintenanceWindow {
     /// <p>A unique identifier for the maintenance window.</p>
-    pub fn defer_maintenance_identifier(&self) -> std::option::Option<&str> {
+    pub fn defer_maintenance_identifier(&self) -> std::option::Option<& str> {
         self.defer_maintenance_identifier.as_deref()
     }
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn defer_maintenance_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.defer_maintenance_start_time.as_ref()
     }
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn defer_maintenance_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.defer_maintenance_end_time.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl DeferredMaintenanceWindowBuilder {
         self
     }
     /// <p>A unique identifier for the maintenance window.</p>
-    pub fn set_defer_maintenance_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.defer_maintenance_identifier = input;
-        self
+    pub fn set_defer_maintenance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.defer_maintenance_identifier = input; self
     }
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
     pub fn defer_maintenance_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -63,12 +59,8 @@ impl DeferredMaintenanceWindowBuilder {
         self
     }
     /// <p> A timestamp for the beginning of the time period when we defer maintenance.</p>
-    pub fn set_defer_maintenance_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.defer_maintenance_start_time = input;
-        self
+    pub fn set_defer_maintenance_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.defer_maintenance_start_time = input; self
     }
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
     pub fn defer_maintenance_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,19 +68,19 @@ impl DeferredMaintenanceWindowBuilder {
         self
     }
     /// <p> A timestamp for the end of the time period when we defer maintenance.</p>
-    pub fn set_defer_maintenance_end_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.defer_maintenance_end_time = input;
-        self
+    pub fn set_defer_maintenance_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.defer_maintenance_end_time = input; self
     }
     /// Consumes the builder and constructs a [`DeferredMaintenanceWindow`](crate::types::DeferredMaintenanceWindow).
     pub fn build(self) -> crate::types::DeferredMaintenanceWindow {
         crate::types::DeferredMaintenanceWindow {
-            defer_maintenance_identifier: self.defer_maintenance_identifier,
-            defer_maintenance_start_time: self.defer_maintenance_start_time,
-            defer_maintenance_end_time: self.defer_maintenance_end_time,
+            defer_maintenance_identifier: self.defer_maintenance_identifier
+            ,
+            defer_maintenance_start_time: self.defer_maintenance_start_time
+            ,
+            defer_maintenance_end_time: self.defer_maintenance_end_time
+            ,
         }
     }
 }
+

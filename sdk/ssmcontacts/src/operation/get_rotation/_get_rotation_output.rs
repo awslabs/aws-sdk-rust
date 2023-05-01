@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRotationOutput {
+pub struct GetRotationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
     #[doc(hidden)]
     pub rotation_arn: std::option::Option<std::string::String>,
@@ -25,35 +25,35 @@ pub struct GetRotationOutput {
 }
 impl GetRotationOutput {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
-    pub fn rotation_arn(&self) -> std::option::Option<&str> {
+    pub fn rotation_arn(&self) -> std::option::Option<& str> {
         self.rotation_arn.as_deref()
     }
     /// <p>The name of the on-call rotation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn contact_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn contact_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.contact_ids.as_deref()
     }
     /// <p>The specified start time for the on-call rotation.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
-    pub fn time_zone_id(&self) -> std::option::Option<&str> {
+    pub fn time_zone_id(&self) -> std::option::Option<& str> {
         self.time_zone_id.as_deref()
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn recurrence(&self) -> std::option::Option<&crate::types::RecurrenceSettings> {
+    pub fn recurrence(&self) -> std::option::Option<& crate::types::RecurrenceSettings> {
         self.recurrence.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRotationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRotationOutput {
     /// Creates a new builder-style object to manufacture [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput).
     pub fn builder() -> crate::operation::get_rotation::builders::GetRotationOutputBuilder {
@@ -81,8 +81,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation.</p>
     pub fn set_rotation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_arn = input;
-        self
+        self.rotation_arn = input; self
     }
     /// <p>The name of the on-call rotation.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +90,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The name of the on-call rotation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `contact_ids`.
     ///
@@ -101,17 +99,13 @@ impl GetRotationOutputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
     pub fn contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
-        v.push(input.into());
-        self.contact_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.contact_ids = Some(v);
+                        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the on-call rotation team.</p>
-    pub fn set_contact_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.contact_ids = input;
-        self
+    pub fn set_contact_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.contact_ids = input; self
     }
     /// <p>The specified start time for the on-call rotation.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,12 +113,8 @@ impl GetRotationOutputBuilder {
         self
     }
     /// <p>The specified start time for the on-call rotation.</p>
-    pub fn set_start_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_time = input;
-        self
+    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_time = input; self
     }
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +123,7 @@ impl GetRotationOutputBuilder {
     }
     /// <p>The time zone that the rotation’s activity is based on, in Internet Assigned Numbers Authority (IANA) format.</p>
     pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone_id = input;
-        self
+        self.time_zone_id = input; self
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
@@ -142,32 +131,35 @@ impl GetRotationOutputBuilder {
         self
     }
     /// <p>Specifies how long a rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(
-        mut self,
-        input: std::option::Option<crate::types::RecurrenceSettings>,
-    ) -> Self {
-        self.recurrence = input;
-        self
+    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::RecurrenceSettings>) -> Self {
+        self.recurrence = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRotationOutput`](crate::operation::get_rotation::GetRotationOutput).
     pub fn build(self) -> crate::operation::get_rotation::GetRotationOutput {
         crate::operation::get_rotation::GetRotationOutput {
-            rotation_arn: self.rotation_arn,
-            name: self.name,
-            contact_ids: self.contact_ids,
-            start_time: self.start_time,
-            time_zone_id: self.time_zone_id,
-            recurrence: self.recurrence,
+            rotation_arn: self.rotation_arn
+            ,
+            name: self.name
+            ,
+            contact_ids: self.contact_ids
+            ,
+            start_time: self.start_time
+            ,
+            time_zone_id: self.time_zone_id
+            ,
+            recurrence: self.recurrence
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

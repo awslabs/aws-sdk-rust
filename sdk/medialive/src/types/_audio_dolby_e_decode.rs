@@ -3,14 +3,14 @@
 /// Audio Dolby EDecode
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioDolbyEDecode {
+pub struct AudioDolbyEDecode  {
     /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
     #[doc(hidden)]
     pub program_selection: std::option::Option<crate::types::DolbyEProgramSelection>,
 }
 impl AudioDolbyEDecode {
     /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
-    pub fn program_selection(&self) -> std::option::Option<&crate::types::DolbyEProgramSelection> {
+    pub fn program_selection(&self) -> std::option::Option<& crate::types::DolbyEProgramSelection> {
         self.program_selection.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl AudioDolbyEDecodeBuilder {
         self
     }
     /// Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. “All channels” means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect.
-    pub fn set_program_selection(
-        mut self,
-        input: std::option::Option<crate::types::DolbyEProgramSelection>,
-    ) -> Self {
-        self.program_selection = input;
-        self
+    pub fn set_program_selection(mut self, input: std::option::Option<crate::types::DolbyEProgramSelection>) -> Self {
+        self.program_selection = input; self
     }
     /// Consumes the builder and constructs a [`AudioDolbyEDecode`](crate::types::AudioDolbyEDecode).
     pub fn build(self) -> crate::types::AudioDolbyEDecode {
         crate::types::AudioDolbyEDecode {
-            program_selection: self.program_selection,
+            program_selection: self.program_selection
+            ,
         }
     }
 }
+

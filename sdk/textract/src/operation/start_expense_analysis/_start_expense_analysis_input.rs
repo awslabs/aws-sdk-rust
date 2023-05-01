@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExpenseAnalysisInput {
+pub struct StartExpenseAnalysisInput  {
     /// <p>The location of the document to be processed.</p>
     #[doc(hidden)]
     pub document_location: std::option::Option<crate::types::DocumentLocation>,
@@ -24,34 +24,33 @@ pub struct StartExpenseAnalysisInput {
 }
 impl StartExpenseAnalysisInput {
     /// <p>The location of the document to be processed.</p>
-    pub fn document_location(&self) -> std::option::Option<&crate::types::DocumentLocation> {
+    pub fn document_location(&self) -> std::option::Option<& crate::types::DocumentLocation> {
         self.document_location.as_ref()
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
-    pub fn job_tag(&self) -> std::option::Option<&str> {
+    pub fn job_tag(&self) -> std::option::Option<& str> {
         self.job_tag.as_deref()
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn notification_channel(&self) -> std::option::Option<&crate::types::NotificationChannel> {
+    pub fn notification_channel(&self) -> std::option::Option<& crate::types::NotificationChannel> {
         self.notification_channel.as_ref()
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
-    pub fn output_config(&self) -> std::option::Option<&crate::types::OutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::types::OutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 impl StartExpenseAnalysisInput {
     /// Creates a new builder-style object to manufacture [`StartExpenseAnalysisInput`](crate::operation::start_expense_analysis::StartExpenseAnalysisInput).
-    pub fn builder(
-    ) -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::start_expense_analysis::builders::StartExpenseAnalysisInputBuilder {
         crate::operation::start_expense_analysis::builders::StartExpenseAnalysisInputBuilder::default()
     }
 }
@@ -74,12 +73,8 @@ impl StartExpenseAnalysisInputBuilder {
         self
     }
     /// <p>The location of the document to be processed.</p>
-    pub fn set_document_location(
-        mut self,
-        input: std::option::Option<crate::types::DocumentLocation>,
-    ) -> Self {
-        self.document_location = input;
-        self
+    pub fn set_document_location(mut self, input: std::option::Option<crate::types::DocumentLocation>) -> Self {
+        self.document_location = input; self
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,12 +82,8 @@ impl StartExpenseAnalysisInputBuilder {
         self
     }
     /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once. For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a> </p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +92,7 @@ impl StartExpenseAnalysisInputBuilder {
     }
     /// <p>An identifier you specify that's included in the completion notification published to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).</p>
     pub fn set_job_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_tag = input;
-        self
+        self.job_tag = input; self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
     pub fn notification_channel(mut self, input: crate::types::NotificationChannel) -> Self {
@@ -110,12 +100,8 @@ impl StartExpenseAnalysisInputBuilder {
         self
     }
     /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>
-    pub fn set_notification_channel(
-        mut self,
-        input: std::option::Option<crate::types::NotificationChannel>,
-    ) -> Self {
-        self.notification_channel = input;
-        self
+    pub fn set_notification_channel(mut self, input: std::option::Option<crate::types::NotificationChannel>) -> Self {
+        self.notification_channel = input; self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
     pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
@@ -123,12 +109,8 @@ impl StartExpenseAnalysisInputBuilder {
         self
     }
     /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the <code>GetExpenseAnalysis</code> operation.</p>
-    pub fn set_output_config(
-        mut self,
-        input: std::option::Option<crate::types::OutputConfig>,
-    ) -> Self {
-        self.output_config = input;
-        self
+    pub fn set_output_config(mut self, input: std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.output_config = input; self
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,25 +119,26 @@ impl StartExpenseAnalysisInputBuilder {
     }
     /// <p>The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side,using SSE-S3.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input;
-        self
+        self.kms_key_id = input; self
     }
     /// Consumes the builder and constructs a [`StartExpenseAnalysisInput`](crate::operation::start_expense_analysis::StartExpenseAnalysisInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_expense_analysis::StartExpenseAnalysisInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_expense_analysis::StartExpenseAnalysisInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_expense_analysis::StartExpenseAnalysisInput {
-                document_location: self.document_location,
-                client_request_token: self.client_request_token,
-                job_tag: self.job_tag,
-                notification_channel: self.notification_channel,
-                output_config: self.output_config,
-                kms_key_id: self.kms_key_id,
-            },
+                document_location: self.document_location
+                ,
+                client_request_token: self.client_request_token
+                ,
+                job_tag: self.job_tag
+                ,
+                notification_channel: self.notification_channel
+                ,
+                output_config: self.output_config
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+            }
         )
     }
 }
+

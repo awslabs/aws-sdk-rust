@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProtectedQueriesOutput {
+pub struct ListProtectedQueriesOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListProtectedQueriesOutput {
 }
 impl ListProtectedQueriesOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of protected queries.</p>
-    pub fn protected_queries(&self) -> std::option::Option<&[crate::types::ProtectedQuerySummary]> {
+    pub fn protected_queries(&self) -> std::option::Option<& [crate::types::ProtectedQuerySummary]> {
         self.protected_queries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListProtectedQueriesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListProtectedQueriesOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder {
         crate::operation::list_protected_queries::builders::ListProtectedQueriesOutputBuilder::default()
     }
 }
@@ -39,8 +38,7 @@ impl ListProtectedQueriesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListProtectedQueriesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) protected_queries:
-        std::option::Option<std::vec::Vec<crate::types::ProtectedQuerySummary>>,
+    pub(crate) protected_queries: std::option::Option<std::vec::Vec<crate::types::ProtectedQuerySummary>>,
     _request_id: Option<String>,
 }
 impl ListProtectedQueriesOutputBuilder {
@@ -51,8 +49,7 @@ impl ListProtectedQueriesOutputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `protected_queries`.
     ///
@@ -61,33 +58,32 @@ impl ListProtectedQueriesOutputBuilder {
     /// <p>A list of protected queries.</p>
     pub fn protected_queries(mut self, input: crate::types::ProtectedQuerySummary) -> Self {
         let mut v = self.protected_queries.unwrap_or_default();
-        v.push(input);
-        self.protected_queries = Some(v);
-        self
+                        v.push(input);
+                        self.protected_queries = Some(v);
+                        self
     }
     /// <p>A list of protected queries.</p>
-    pub fn set_protected_queries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProtectedQuerySummary>>,
-    ) -> Self {
-        self.protected_queries = input;
-        self
+    pub fn set_protected_queries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProtectedQuerySummary>>) -> Self {
+        self.protected_queries = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListProtectedQueriesOutput`](crate::operation::list_protected_queries::ListProtectedQueriesOutput).
     pub fn build(self) -> crate::operation::list_protected_queries::ListProtectedQueriesOutput {
         crate::operation::list_protected_queries::ListProtectedQueriesOutput {
-            next_token: self.next_token,
-            protected_queries: self.protected_queries,
+            next_token: self.next_token
+            ,
+            protected_queries: self.protected_queries
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

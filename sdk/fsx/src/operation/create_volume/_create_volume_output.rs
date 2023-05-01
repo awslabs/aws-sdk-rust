@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVolumeOutput {
+pub struct CreateVolumeOutput  {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
     #[doc(hidden)]
     pub volume: std::option::Option<crate::types::Volume>,
@@ -10,15 +10,15 @@ pub struct CreateVolumeOutput {
 }
 impl CreateVolumeOutput {
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
-    pub fn volume(&self) -> std::option::Option<&crate::types::Volume> {
+    pub fn volume(&self) -> std::option::Option<& crate::types::Volume> {
         self.volume.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVolumeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateVolumeOutput {
     /// Creates a new builder-style object to manufacture [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput).
     pub fn builder() -> crate::operation::create_volume::builders::CreateVolumeOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateVolumeOutputBuilder {
     }
     /// <p>Returned after a successful <code>CreateVolume</code> API operation, describing the volume just created.</p>
     pub fn set_volume(mut self, input: std::option::Option<crate::types::Volume>) -> Self {
-        self.volume = input;
-        self
+        self.volume = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateVolumeOutput`](crate::operation::create_volume::CreateVolumeOutput).
     pub fn build(self) -> crate::operation::create_volume::CreateVolumeOutput {
         crate::operation::create_volume::CreateVolumeOutput {
-            volume: self.volume,
+            volume: self.volume
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

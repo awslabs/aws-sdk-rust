@@ -3,7 +3,7 @@
 /// <p>The values of the AWS IoT Events logging options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingOptions {
+pub struct LoggingOptions  {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -15,16 +15,15 @@ pub struct LoggingOptions {
     pub enabled: bool,
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
     #[doc(hidden)]
-    pub detector_debug_options:
-        std::option::Option<std::vec::Vec<crate::types::DetectorDebugOption>>,
+    pub detector_debug_options: std::option::Option<std::vec::Vec<crate::types::DetectorDebugOption>>,
 }
 impl LoggingOptions {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The logging level.</p>
-    pub fn level(&self) -> std::option::Option<&crate::types::LoggingLevel> {
+    pub fn level(&self) -> std::option::Option<& crate::types::LoggingLevel> {
         self.level.as_ref()
     }
     /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
@@ -32,9 +31,7 @@ impl LoggingOptions {
         self.enabled
     }
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
-    pub fn detector_debug_options(
-        &self,
-    ) -> std::option::Option<&[crate::types::DetectorDebugOption]> {
+    pub fn detector_debug_options(&self) -> std::option::Option<& [crate::types::DetectorDebugOption]> {
         self.detector_debug_options.as_deref()
     }
 }
@@ -52,8 +49,7 @@ pub struct LoggingOptionsBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) level: std::option::Option<crate::types::LoggingLevel>,
     pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) detector_debug_options:
-        std::option::Option<std::vec::Vec<crate::types::DetectorDebugOption>>,
+    pub(crate) detector_debug_options: std::option::Option<std::vec::Vec<crate::types::DetectorDebugOption>>,
 }
 impl LoggingOptionsBuilder {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
@@ -63,8 +59,7 @@ impl LoggingOptionsBuilder {
     }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The logging level.</p>
     pub fn level(mut self, input: crate::types::LoggingLevel) -> Self {
@@ -73,8 +68,7 @@ impl LoggingOptionsBuilder {
     }
     /// <p>The logging level.</p>
     pub fn set_level(mut self, input: std::option::Option<crate::types::LoggingLevel>) -> Self {
-        self.level = input;
-        self
+        self.level = input; self
     }
     /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -83,8 +77,7 @@ impl LoggingOptionsBuilder {
     }
     /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// Appends an item to `detector_debug_options`.
     ///
@@ -93,25 +86,27 @@ impl LoggingOptionsBuilder {
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
     pub fn detector_debug_options(mut self, input: crate::types::DetectorDebugOption) -> Self {
         let mut v = self.detector_debug_options.unwrap_or_default();
-        v.push(input);
-        self.detector_debug_options = Some(v);
-        self
+                        v.push(input);
+                        self.detector_debug_options = Some(v);
+                        self
     }
     /// <p>Information that identifies those detector models and their detectors (instances) for which the logging level is given.</p>
-    pub fn set_detector_debug_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DetectorDebugOption>>,
-    ) -> Self {
-        self.detector_debug_options = input;
-        self
+    pub fn set_detector_debug_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::DetectorDebugOption>>) -> Self {
+        self.detector_debug_options = input; self
     }
     /// Consumes the builder and constructs a [`LoggingOptions`](crate::types::LoggingOptions).
     pub fn build(self) -> crate::types::LoggingOptions {
         crate::types::LoggingOptions {
-            role_arn: self.role_arn,
-            level: self.level,
-            enabled: self.enabled.unwrap_or_default(),
-            detector_debug_options: self.detector_debug_options,
+            role_arn: self.role_arn
+            ,
+            level: self.level
+            ,
+            enabled: self.enabled
+                .unwrap_or_default()
+            ,
+            detector_debug_options: self.detector_debug_options
+            ,
         }
     }
 }
+

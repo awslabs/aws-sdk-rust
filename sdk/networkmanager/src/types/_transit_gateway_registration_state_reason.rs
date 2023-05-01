@@ -3,7 +3,7 @@
 /// <p>Describes the status of a transit gateway registration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitGatewayRegistrationStateReason {
+pub struct TransitGatewayRegistrationStateReason  {
     /// <p>The code for the state reason.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::TransitGatewayRegistrationState>,
@@ -13,11 +13,11 @@ pub struct TransitGatewayRegistrationStateReason {
 }
 impl TransitGatewayRegistrationStateReason {
     /// <p>The code for the state reason.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::TransitGatewayRegistrationState> {
+    pub fn code(&self) -> std::option::Option<& crate::types::TransitGatewayRegistrationState> {
         self.code.as_ref()
     }
     /// <p>The message for the state reason.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl TransitGatewayRegistrationStateReasonBuilder {
         self
     }
     /// <p>The code for the state reason.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::TransitGatewayRegistrationState>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::TransitGatewayRegistrationState>) -> Self {
+        self.code = input; self
     }
     /// <p>The message for the state reason.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl TransitGatewayRegistrationStateReasonBuilder {
     }
     /// <p>The message for the state reason.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`TransitGatewayRegistrationStateReason`](crate::types::TransitGatewayRegistrationStateReason).
     pub fn build(self) -> crate::types::TransitGatewayRegistrationStateReason {
         crate::types::TransitGatewayRegistrationStateReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

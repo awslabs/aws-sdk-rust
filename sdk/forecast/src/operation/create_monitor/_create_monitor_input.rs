@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMonitorInput {
+pub struct CreateMonitorInput  {
     /// <p>The name of the monitor resource.</p>
     #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct CreateMonitorInput {
 }
 impl CreateMonitorInput {
     /// <p>The name of the monitor resource.</p>
-    pub fn monitor_name(&self) -> std::option::Option<&str> {
+    pub fn monitor_name(&self) -> std::option::Option<& str> {
         self.monitor_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>The name of the monitor resource.</p>
     pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_name = input;
-        self
+        self.monitor_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl CreateMonitorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to monitor.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -70,29 +68,26 @@ impl CreateMonitorInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the monitor resource.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_monitor::CreateMonitorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_monitor::CreateMonitorInput {
-            monitor_name: self.monitor_name,
-            resource_arn: self.resource_arn,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_monitor::CreateMonitorInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_monitor::CreateMonitorInput {
+                monitor_name: self.monitor_name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

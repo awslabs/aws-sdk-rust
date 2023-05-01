@@ -3,14 +3,14 @@
 /// <p>Specifies configuration properties for an exporting labels task run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportLabelsTaskRunProperties {
+pub struct ExportLabelsTaskRunProperties  {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
     #[doc(hidden)]
     pub output_s3_path: std::option::Option<std::string::String>,
 }
 impl ExportLabelsTaskRunProperties {
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
-    pub fn output_s3_path(&self) -> std::option::Option<&str> {
+    pub fn output_s3_path(&self) -> std::option::Option<& str> {
         self.output_s3_path.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ExportLabelsTaskRunPropertiesBuilder {
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) path where you will export the labels.</p>
     pub fn set_output_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_s3_path = input;
-        self
+        self.output_s3_path = input; self
     }
     /// Consumes the builder and constructs a [`ExportLabelsTaskRunProperties`](crate::types::ExportLabelsTaskRunProperties).
     pub fn build(self) -> crate::types::ExportLabelsTaskRunProperties {
         crate::types::ExportLabelsTaskRunProperties {
-            output_s3_path: self.output_s3_path,
+            output_s3_path: self.output_s3_path
+            ,
         }
     }
 }
+

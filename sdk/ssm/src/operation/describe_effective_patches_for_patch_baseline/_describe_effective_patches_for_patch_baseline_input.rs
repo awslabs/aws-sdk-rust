@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectivePatchesForPatchBaselineInput {
+pub struct DescribeEffectivePatchesForPatchBaselineInput  {
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeEffectivePatchesForPatchBaselineInput {
 }
 impl DescribeEffectivePatchesForPatchBaselineInput {
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
-    pub fn baseline_id(&self) -> std::option::Option<&str> {
+    pub fn baseline_id(&self) -> std::option::Option<& str> {
         self.baseline_id.as_deref()
     }
     /// <p>The maximum number of patches to return (per page).</p>
@@ -23,13 +23,13 @@ impl DescribeEffectivePatchesForPatchBaselineInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeEffectivePatchesForPatchBaselineInput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePatchesForPatchBaselineInput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput).
-    pub fn builder() -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder{
+    pub fn builder() -> crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder {
         crate::operation::describe_effective_patches_for_patch_baseline::builders::DescribeEffectivePatchesForPatchBaselineInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     }
     /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
     pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.baseline_id = input;
-        self
+        self.baseline_id = input; self
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     }
     /// <p>The maximum number of patches to return (per page).</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,11 +68,10 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeEffectivePatchesForPatchBaselineInput`](crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput).
-    pub fn build(self) -> Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineInput {
                 baseline_id: self.baseline_id
@@ -87,3 +84,4 @@ impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
         )
     }
 }
+

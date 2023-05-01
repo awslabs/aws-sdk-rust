@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopContactInput {
+pub struct StopContactInput  {
     /// <p>The ID of the contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct StopContactInput {
 }
 impl StopContactInput {
     /// <p>The ID of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl StopContactInputBuilder {
     }
     /// <p>The ID of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input;
-        self
+        self.contact_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl StopContactInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`StopContactInput`](crate::operation::stop_contact::StopContactInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_contact::StopContactInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_contact::StopContactInput {
-            contact_id: self.contact_id,
-            instance_id: self.instance_id,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_contact::StopContactInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_contact::StopContactInput {
+                contact_id: self.contact_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
+        )
     }
 }
+

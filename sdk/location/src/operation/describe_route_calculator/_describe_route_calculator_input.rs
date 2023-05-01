@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRouteCalculatorInput {
+pub struct DescribeRouteCalculatorInput  {
     /// <p>The name of the route calculator resource.</p>
     #[doc(hidden)]
     pub calculator_name: std::option::Option<std::string::String>,
 }
 impl DescribeRouteCalculatorInput {
     /// <p>The name of the route calculator resource.</p>
-    pub fn calculator_name(&self) -> std::option::Option<&str> {
+    pub fn calculator_name(&self) -> std::option::Option<& str> {
         self.calculator_name.as_deref()
     }
 }
 impl DescribeRouteCalculatorInput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteCalculatorInput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorInput).
-    pub fn builder(
-    ) -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder {
         crate::operation::describe_route_calculator::builders::DescribeRouteCalculatorInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DescribeRouteCalculatorInputBuilder {
     }
     /// <p>The name of the route calculator resource.</p>
     pub fn set_calculator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.calculator_name = input;
-        self
+        self.calculator_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeRouteCalculatorInput`](crate::operation::describe_route_calculator::DescribeRouteCalculatorInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_route_calculator::DescribeRouteCalculatorInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_route_calculator::DescribeRouteCalculatorInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_route_calculator::DescribeRouteCalculatorInput {
-                calculator_name: self.calculator_name,
-            },
+                calculator_name: self.calculator_name
+                ,
+            }
         )
     }
 }
+

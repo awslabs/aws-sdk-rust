@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListActiveViolationsOutput {
+pub struct ListActiveViolationsOutput  {
     /// <p>The list of active violations.</p>
     #[doc(hidden)]
     pub active_violations: std::option::Option<std::vec::Vec<crate::types::ActiveViolation>>,
@@ -13,23 +13,22 @@ pub struct ListActiveViolationsOutput {
 }
 impl ListActiveViolationsOutput {
     /// <p>The list of active violations.</p>
-    pub fn active_violations(&self) -> std::option::Option<&[crate::types::ActiveViolation]> {
+    pub fn active_violations(&self) -> std::option::Option<& [crate::types::ActiveViolation]> {
         self.active_violations.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListActiveViolationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListActiveViolationsOutput {
     /// Creates a new builder-style object to manufacture [`ListActiveViolationsOutput`](crate::operation::list_active_violations::ListActiveViolationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder {
         crate::operation::list_active_violations::builders::ListActiveViolationsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListActiveViolationsOutputBuilder {
     /// <p>The list of active violations.</p>
     pub fn active_violations(mut self, input: crate::types::ActiveViolation) -> Self {
         let mut v = self.active_violations.unwrap_or_default();
-        v.push(input);
-        self.active_violations = Some(v);
-        self
+                        v.push(input);
+                        self.active_violations = Some(v);
+                        self
     }
     /// <p>The list of active violations.</p>
-    pub fn set_active_violations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ActiveViolation>>,
-    ) -> Self {
-        self.active_violations = input;
-        self
+    pub fn set_active_violations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ActiveViolation>>) -> Self {
+        self.active_violations = input; self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListActiveViolationsOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListActiveViolationsOutput`](crate::operation::list_active_violations::ListActiveViolationsOutput).
     pub fn build(self) -> crate::operation::list_active_violations::ListActiveViolationsOutput {
         crate::operation::list_active_violations::ListActiveViolationsOutput {
-            active_violations: self.active_violations,
-            next_token: self.next_token,
+            active_violations: self.active_violations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -16,3 +16,4 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 pub use crate::types::error::_service_linked_role_lock_client_exception::ServiceLinkedRoleLockClientExceptionBuilder;
 
 pub use crate::types::error::_dependency_exception::DependencyExceptionBuilder;
+

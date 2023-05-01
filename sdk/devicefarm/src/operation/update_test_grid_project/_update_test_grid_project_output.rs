@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTestGridProjectOutput {
+pub struct UpdateTestGridProjectOutput  {
     /// <p>The project, including updated information.</p>
     #[doc(hidden)]
     pub test_grid_project: std::option::Option<crate::types::TestGridProject>,
@@ -10,20 +10,18 @@ pub struct UpdateTestGridProjectOutput {
 }
 impl UpdateTestGridProjectOutput {
     /// <p>The project, including updated information.</p>
-    pub fn test_grid_project(&self) -> std::option::Option<&crate::types::TestGridProject> {
+    pub fn test_grid_project(&self) -> std::option::Option<& crate::types::TestGridProject> {
         self.test_grid_project.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTestGridProjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateTestGridProjectOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTestGridProjectOutput`](crate::operation::update_test_grid_project::UpdateTestGridProjectOutput).
-    pub fn builder(
-    ) -> crate::operation::update_test_grid_project::builders::UpdateTestGridProjectOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_test_grid_project::builders::UpdateTestGridProjectOutputBuilder {
         crate::operation::update_test_grid_project::builders::UpdateTestGridProjectOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl UpdateTestGridProjectOutputBuilder {
         self
     }
     /// <p>The project, including updated information.</p>
-    pub fn set_test_grid_project(
-        mut self,
-        input: std::option::Option<crate::types::TestGridProject>,
-    ) -> Self {
-        self.test_grid_project = input;
-        self
+    pub fn set_test_grid_project(mut self, input: std::option::Option<crate::types::TestGridProject>) -> Self {
+        self.test_grid_project = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateTestGridProjectOutput`](crate::operation::update_test_grid_project::UpdateTestGridProjectOutput).
     pub fn build(self) -> crate::operation::update_test_grid_project::UpdateTestGridProjectOutput {
         crate::operation::update_test_grid_project::UpdateTestGridProjectOutput {
-            test_grid_project: self.test_grid_project,
+            test_grid_project: self.test_grid_project
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

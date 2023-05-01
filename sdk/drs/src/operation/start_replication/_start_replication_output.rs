@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplicationOutput {
+pub struct StartReplicationOutput  {
     /// <p>The Source Server that this action was targeted on.</p>
     #[doc(hidden)]
     pub source_server: std::option::Option<crate::types::SourceServer>,
@@ -10,19 +10,18 @@ pub struct StartReplicationOutput {
 }
 impl StartReplicationOutput {
     /// <p>The Source Server that this action was targeted on.</p>
-    pub fn source_server(&self) -> std::option::Option<&crate::types::SourceServer> {
+    pub fn source_server(&self) -> std::option::Option<& crate::types::SourceServer> {
         self.source_server.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartReplicationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
-    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_replication::builders::StartReplicationOutputBuilder {
         crate::operation::start_replication::builders::StartReplicationOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl StartReplicationOutputBuilder {
         self
     }
     /// <p>The Source Server that this action was targeted on.</p>
-    pub fn set_source_server(
-        mut self,
-        input: std::option::Option<crate::types::SourceServer>,
-    ) -> Self {
-        self.source_server = input;
-        self
+    pub fn set_source_server(mut self, input: std::option::Option<crate::types::SourceServer>) -> Self {
+        self.source_server = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartReplicationOutput`](crate::operation::start_replication::StartReplicationOutput).
     pub fn build(self) -> crate::operation::start_replication::StartReplicationOutput {
         crate::operation::start_replication::StartReplicationOutput {
-            source_server: self.source_server,
+            source_server: self.source_server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

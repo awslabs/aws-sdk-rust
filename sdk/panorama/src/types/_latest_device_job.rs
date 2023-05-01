@@ -3,7 +3,7 @@
 /// <p>Returns information about the latest device job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LatestDeviceJob {
+pub struct LatestDeviceJob  {
     /// <p>The target version of the device software.</p>
     #[doc(hidden)]
     pub image_version: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct LatestDeviceJob {
 }
 impl LatestDeviceJob {
     /// <p>The target version of the device software.</p>
-    pub fn image_version(&self) -> std::option::Option<&str> {
+    pub fn image_version(&self) -> std::option::Option<& str> {
         self.image_version.as_deref()
     }
     /// <p>Status of the latest device job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::UpdateProgress> {
+    pub fn status(&self) -> std::option::Option<& crate::types::UpdateProgress> {
         self.status.as_ref()
     }
     /// <p>The job's type.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::types::JobType> {
         self.job_type.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl LatestDeviceJobBuilder {
     }
     /// <p>The target version of the device software.</p>
     pub fn set_image_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_version = input;
-        self
+        self.image_version = input; self
     }
     /// <p>Status of the latest device job.</p>
     pub fn status(mut self, input: crate::types::UpdateProgress) -> Self {
@@ -61,8 +60,7 @@ impl LatestDeviceJobBuilder {
     }
     /// <p>Status of the latest device job.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::UpdateProgress>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The job's type.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
@@ -71,15 +69,18 @@ impl LatestDeviceJobBuilder {
     }
     /// <p>The job's type.</p>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input;
-        self
+        self.job_type = input; self
     }
     /// Consumes the builder and constructs a [`LatestDeviceJob`](crate::types::LatestDeviceJob).
     pub fn build(self) -> crate::types::LatestDeviceJob {
         crate::types::LatestDeviceJob {
-            image_version: self.image_version,
-            status: self.status,
-            job_type: self.job_type,
+            image_version: self.image_version
+            ,
+            status: self.status
+            ,
+            job_type: self.job_type
+            ,
         }
     }
 }
+

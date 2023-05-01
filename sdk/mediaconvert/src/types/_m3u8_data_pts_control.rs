@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let m3u8dataptscontrol = unimplemented!();
 /// match m3u8dataptscontrol {
@@ -30,64 +30,55 @@
 /// Specifically, when `m3u8dataptscontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `M3u8DataPtsControl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum M3u8DataPtsControl {
     #[allow(missing_docs)] // documentation missing in model
     AlignToVideo,
     #[allow(missing_docs)] // documentation missing in model
     Auto,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for M3u8DataPtsControl {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALIGN_TO_VIDEO" => M3u8DataPtsControl::AlignToVideo,
-            "AUTO" => M3u8DataPtsControl::Auto,
-            other => M3u8DataPtsControl::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "ALIGN_TO_VIDEO" => M3u8DataPtsControl::AlignToVideo,
+"AUTO" => M3u8DataPtsControl::Auto,
+other => M3u8DataPtsControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for M3u8DataPtsControl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M3u8DataPtsControl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(M3u8DataPtsControl::from(s))
+                }
+            }
 impl M3u8DataPtsControl {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            M3u8DataPtsControl::AlignToVideo => "ALIGN_TO_VIDEO",
-            M3u8DataPtsControl::Auto => "AUTO",
-            M3u8DataPtsControl::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["ALIGN_TO_VIDEO", "AUTO"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    M3u8DataPtsControl::AlignToVideo => "ALIGN_TO_VIDEO",
+    M3u8DataPtsControl::Auto => "AUTO",
+    M3u8DataPtsControl::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["ALIGN_TO_VIDEO", "AUTO"]
+                }
+            }
 impl AsRef<str> for M3u8DataPtsControl {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

@@ -3,24 +3,24 @@
 /// <p>A complex type that contains information about the request to create a public or private hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHostedZoneInput {
-    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+pub struct CreateHostedZoneInput  {
+    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p> 
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
-    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>
+    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p> 
+    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> 
     /// <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
     #[doc(hidden)]
     pub vpc: std::option::Option<crate::types::Vpc>,
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
     #[doc(hidden)]
     pub caller_reference: std::option::Option<std::string::String>,
-    /// <p>(Optional) A complex type that contains the following optional values:</p>
-    /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
-    /// </ul>
+    /// <p>(Optional) A complex type that contains the following optional values:</p> 
+    /// <ul> 
+    /// <li> <p>For public and private hosted zones, an optional comment</p> </li> 
+    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     #[doc(hidden)]
     pub hosted_zone_config: std::option::Option<crate::types::HostedZoneConfig>,
@@ -29,39 +29,38 @@ pub struct CreateHostedZoneInput {
     pub delegation_set_id: std::option::Option<std::string::String>,
 }
 impl CreateHostedZoneInput {
-    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p> 
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
-    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>
+    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p> 
+    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> 
     /// <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> std::option::Option<& crate::types::Vpc> {
         self.vpc.as_ref()
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
-    pub fn caller_reference(&self) -> std::option::Option<&str> {
+    pub fn caller_reference(&self) -> std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
-    /// <p>(Optional) A complex type that contains the following optional values:</p>
-    /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
-    /// </ul>
+    /// <p>(Optional) A complex type that contains the following optional values:</p> 
+    /// <ul> 
+    /// <li> <p>For public and private hosted zones, an optional comment</p> </li> 
+    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
-    pub fn hosted_zone_config(&self) -> std::option::Option<&crate::types::HostedZoneConfig> {
+    pub fn hosted_zone_config(&self) -> std::option::Option<& crate::types::HostedZoneConfig> {
         self.hosted_zone_config.as_ref()
     }
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
-    pub fn delegation_set_id(&self) -> std::option::Option<&str> {
+    pub fn delegation_set_id(&self) -> std::option::Option<& str> {
         self.delegation_set_id.as_deref()
     }
 }
 impl CreateHostedZoneInput {
     /// Creates a new builder-style object to manufacture [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
-    pub fn builder() -> crate::operation::create_hosted_zone::builders::CreateHostedZoneInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_hosted_zone::builders::CreateHostedZoneInputBuilder {
         crate::operation::create_hosted_zone::builders::CreateHostedZoneInputBuilder::default()
     }
 }
@@ -77,31 +76,29 @@ pub struct CreateHostedZoneInputBuilder {
     pub(crate) delegation_set_id: std::option::Option<std::string::String>,
 }
 impl CreateHostedZoneInputBuilder {
-    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p> 
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
+    /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p> 
     /// <p>If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route&nbsp;53, change the name servers for your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
-    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>
+    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p> 
+    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> 
     /// <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
         self.vpc = Some(input);
         self
     }
-    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p>
-    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p>
+    /// <p>(Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating with this hosted zone.</p> 
+    /// <p>You can specify only one Amazon VPC when you create a private hosted zone. If you are associating a VPC with a hosted zone with this request, the paramaters <code>VPCId</code> and <code>VPCRegion</code> are also required.</p> 
     /// <p>To associate additional Amazon VPCs with the hosted zone, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html">AssociateVPCWithHostedZone</a> after you create a hosted zone.</p>
     pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
-        self.vpc = input;
-        self
+        self.vpc = input; self
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,31 +107,26 @@ impl CreateHostedZoneInputBuilder {
     }
     /// <p>A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any unique string, for example, a date/time stamp.</p>
     pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.caller_reference = input;
-        self
+        self.caller_reference = input; self
     }
-    /// <p>(Optional) A complex type that contains the following optional values:</p>
-    /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
-    /// </ul>
+    /// <p>(Optional) A complex type that contains the following optional values:</p> 
+    /// <ul> 
+    /// <li> <p>For public and private hosted zones, an optional comment</p> </li> 
+    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
     pub fn hosted_zone_config(mut self, input: crate::types::HostedZoneConfig) -> Self {
         self.hosted_zone_config = Some(input);
         self
     }
-    /// <p>(Optional) A complex type that contains the following optional values:</p>
-    /// <ul>
-    /// <li> <p>For public and private hosted zones, an optional comment</p> </li>
-    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li>
-    /// </ul>
+    /// <p>(Optional) A complex type that contains the following optional values:</p> 
+    /// <ul> 
+    /// <li> <p>For public and private hosted zones, an optional comment</p> </li> 
+    /// <li> <p>For private hosted zones, an optional <code>PrivateZone</code> element</p> </li> 
+    /// </ul> 
     /// <p>If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and the other elements.</p>
-    pub fn set_hosted_zone_config(
-        mut self,
-        input: std::option::Option<crate::types::HostedZoneConfig>,
-    ) -> Self {
-        self.hosted_zone_config = input;
-        self
+    pub fn set_hosted_zone_config(mut self, input: std::option::Option<crate::types::HostedZoneConfig>) -> Self {
+        self.hosted_zone_config = input; self
     }
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,28 +134,25 @@ impl CreateHostedZoneInputBuilder {
         self
     }
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
-    pub fn set_delegation_set_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.delegation_set_id = input;
-        self
+    pub fn set_delegation_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.delegation_set_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_hosted_zone::CreateHostedZoneInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_hosted_zone::CreateHostedZoneInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_hosted_zone::CreateHostedZoneInput {
-                name: self.name,
-                vpc: self.vpc,
-                caller_reference: self.caller_reference,
-                hosted_zone_config: self.hosted_zone_config,
-                delegation_set_id: self.delegation_set_id,
-            },
+                name: self.name
+                ,
+                vpc: self.vpc
+                ,
+                caller_reference: self.caller_reference
+                ,
+                hosted_zone_config: self.hosted_zone_config
+                ,
+                delegation_set_id: self.delegation_set_id
+                ,
+            }
         )
     }
 }
+

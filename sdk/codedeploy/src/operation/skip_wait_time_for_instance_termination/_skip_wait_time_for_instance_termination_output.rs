@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkipWaitTimeForInstanceTerminationOutput {
+pub struct SkipWaitTimeForInstanceTerminationOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SkipWaitTimeForInstanceTerminationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SkipWaitTimeForInstanceTerminationOutput {
     /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput).
-    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder{
+    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder {
         crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationOutputBuilder::default()
     }
 }
@@ -25,18 +25,19 @@ pub struct SkipWaitTimeForInstanceTerminationOutputBuilder {
 }
 impl SkipWaitTimeForInstanceTerminationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationOutput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput).
-    pub fn build(self) -> crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput{
+    pub fn build(self) -> crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput {
         crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput {
             _request_id: self._request_id,
         }
     }
 }
+

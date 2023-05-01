@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThemePermissionsOutput {
+pub struct DescribeThemePermissionsOutput  {
     /// <p>The ID for the theme.</p>
     #[doc(hidden)]
     pub theme_id: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct DescribeThemePermissionsOutput {
 }
 impl DescribeThemePermissionsOutput {
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<&str> {
+    pub fn theme_id(&self) -> std::option::Option<& str> {
         self.theme_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> std::option::Option<& str> {
         self.theme_arn.as_deref()
     }
     /// <p>A list of resource permissions set on the theme. </p>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -43,15 +43,13 @@ impl DescribeThemePermissionsOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeThemePermissionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeThemePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeThemePermissionsOutput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsOutputBuilder {
         crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsOutputBuilder::default()
     }
 }
@@ -75,8 +73,7 @@ impl DescribeThemePermissionsOutputBuilder {
     }
     /// <p>The ID for the theme.</p>
     pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_id = input;
-        self
+        self.theme_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +82,7 @@ impl DescribeThemePermissionsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the theme.</p>
     pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_arn = input;
-        self
+        self.theme_arn = input; self
     }
     /// Appends an item to `permissions`.
     ///
@@ -95,17 +91,13 @@ impl DescribeThemePermissionsOutputBuilder {
     /// <p>A list of resource permissions set on the theme. </p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>A list of resource permissions set on the theme. </p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.permissions = input; self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +106,7 @@ impl DescribeThemePermissionsOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -124,29 +115,33 @@ impl DescribeThemePermissionsOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeThemePermissionsOutput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput {
+    pub fn build(self) -> crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput {
         crate::operation::describe_theme_permissions::DescribeThemePermissionsOutput {
-            theme_id: self.theme_id,
-            theme_arn: self.theme_arn,
-            permissions: self.permissions,
-            request_id: self.request_id,
-            status: self.status.unwrap_or_default(),
+            theme_id: self.theme_id
+            ,
+            theme_arn: self.theme_arn
+            ,
+            permissions: self.permissions
+            ,
+            request_id: self.request_id
+            ,
+            status: self.status
+                .unwrap_or_default()
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

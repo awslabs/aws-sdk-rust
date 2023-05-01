@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCollaborationInput {
+pub struct UpdateCollaborationInput  {
     /// <p>The identifier for the collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct UpdateCollaborationInput {
 }
 impl UpdateCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the collaboration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl UpdateCollaborationInput {
     /// Creates a new builder-style object to manufacture [`UpdateCollaborationInput`](crate::operation::update_collaboration::UpdateCollaborationInput).
-    pub fn builder(
-    ) -> crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder {
+    pub fn builder() -> crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder {
         crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl UpdateCollaborationInputBuilder {
         self
     }
     /// <p>The identifier for the collaboration.</p>
-    pub fn set_collaboration_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.collaboration_identifier = input;
-        self
+    pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.collaboration_identifier = input; self
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +59,7 @@ impl UpdateCollaborationInputBuilder {
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the collaboration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,22 +68,20 @@ impl UpdateCollaborationInputBuilder {
     }
     /// <p>A description of the collaboration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateCollaborationInput`](crate::operation::update_collaboration::UpdateCollaborationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_collaboration::UpdateCollaborationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_collaboration::UpdateCollaborationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_collaboration::UpdateCollaborationInput {
-                collaboration_identifier: self.collaboration_identifier,
-                name: self.name,
-                description: self.description,
-            },
+                collaboration_identifier: self.collaboration_identifier
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

@@ -2,30 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateInstancesOutput {
+pub struct TerminateInstancesOutput  {
     /// <p>Information about the terminated instances.</p>
     #[doc(hidden)]
-    pub terminating_instances:
-        std::option::Option<std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub terminating_instances: std::option::Option<std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl TerminateInstancesOutput {
     /// <p>Information about the terminated instances.</p>
-    pub fn terminating_instances(
-        &self,
-    ) -> std::option::Option<&[crate::types::InstanceStateChange]> {
+    pub fn terminating_instances(&self) -> std::option::Option<& [crate::types::InstanceStateChange]> {
         self.terminating_instances.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for TerminateInstancesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl TerminateInstancesOutput {
     /// Creates a new builder-style object to manufacture [`TerminateInstancesOutput`](crate::operation::terminate_instances::TerminateInstancesOutput).
-    pub fn builder(
-    ) -> crate::operation::terminate_instances::builders::TerminateInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::terminate_instances::builders::TerminateInstancesOutputBuilder {
         crate::operation::terminate_instances::builders::TerminateInstancesOutputBuilder::default()
     }
 }
@@ -34,8 +30,7 @@ impl TerminateInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TerminateInstancesOutputBuilder {
-    pub(crate) terminating_instances:
-        std::option::Option<std::vec::Vec<crate::types::InstanceStateChange>>,
+    pub(crate) terminating_instances: std::option::Option<std::vec::Vec<crate::types::InstanceStateChange>>,
     _request_id: Option<String>,
 }
 impl TerminateInstancesOutputBuilder {
@@ -46,32 +41,30 @@ impl TerminateInstancesOutputBuilder {
     /// <p>Information about the terminated instances.</p>
     pub fn terminating_instances(mut self, input: crate::types::InstanceStateChange) -> Self {
         let mut v = self.terminating_instances.unwrap_or_default();
-        v.push(input);
-        self.terminating_instances = Some(v);
-        self
+                        v.push(input);
+                        self.terminating_instances = Some(v);
+                        self
     }
     /// <p>Information about the terminated instances.</p>
-    pub fn set_terminating_instances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceStateChange>>,
-    ) -> Self {
-        self.terminating_instances = input;
-        self
+    pub fn set_terminating_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceStateChange>>) -> Self {
+        self.terminating_instances = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`TerminateInstancesOutput`](crate::operation::terminate_instances::TerminateInstancesOutput).
     pub fn build(self) -> crate::operation::terminate_instances::TerminateInstancesOutput {
         crate::operation::terminate_instances::TerminateInstancesOutput {
-            terminating_instances: self.terminating_instances,
+            terminating_instances: self.terminating_instances
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

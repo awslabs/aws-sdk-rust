@@ -3,24 +3,21 @@
 /// <p>The LF-tag policy and permissions for database resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseLfTagPolicyAndPermissions {
+pub struct DatabaseLfTagPolicyAndPermissions  {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
     /// <p>The permissions granted to subscribers on database resources.</p>
     #[doc(hidden)]
-    pub permissions:
-        std::option::Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
+    pub permissions: std::option::Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
 }
 impl DatabaseLfTagPolicyAndPermissions {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn expression(&self) -> std::option::Option<&[crate::types::LfTag]> {
+    pub fn expression(&self) -> std::option::Option<& [crate::types::LfTag]> {
         self.expression.as_deref()
     }
     /// <p>The permissions granted to subscribers on database resources.</p>
-    pub fn permissions(
-        &self,
-    ) -> std::option::Option<&[crate::types::DatabaseLfTagPolicyPermission]> {
+    pub fn permissions(&self) -> std::option::Option<& [crate::types::DatabaseLfTagPolicyPermission]> {
         self.permissions.as_deref()
     }
 }
@@ -36,8 +33,7 @@ impl DatabaseLfTagPolicyAndPermissions {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DatabaseLfTagPolicyAndPermissionsBuilder {
     pub(crate) expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
-    pub(crate) permissions:
-        std::option::Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
+    pub(crate) permissions: std::option::Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
 }
 impl DatabaseLfTagPolicyAndPermissionsBuilder {
     /// Appends an item to `expression`.
@@ -47,17 +43,13 @@ impl DatabaseLfTagPolicyAndPermissionsBuilder {
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
-        v.push(input);
-        self.expression = Some(v);
-        self
+                        v.push(input);
+                        self.expression = Some(v);
+                        self
     }
     /// <p>A list of LF-tag conditions that apply to database resources.</p>
-    pub fn set_expression(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
-    ) -> Self {
-        self.expression = input;
-        self
+    pub fn set_expression(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTag>>) -> Self {
+        self.expression = input; self
     }
     /// Appends an item to `permissions`.
     ///
@@ -66,23 +58,22 @@ impl DatabaseLfTagPolicyAndPermissionsBuilder {
     /// <p>The permissions granted to subscribers on database resources.</p>
     pub fn permissions(mut self, input: crate::types::DatabaseLfTagPolicyPermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-        v.push(input);
-        self.permissions = Some(v);
-        self
+                        v.push(input);
+                        self.permissions = Some(v);
+                        self
     }
     /// <p>The permissions granted to subscribers on database resources.</p>
-    pub fn set_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>,
-    ) -> Self {
-        self.permissions = input;
-        self
+    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatabaseLfTagPolicyPermission>>) -> Self {
+        self.permissions = input; self
     }
     /// Consumes the builder and constructs a [`DatabaseLfTagPolicyAndPermissions`](crate::types::DatabaseLfTagPolicyAndPermissions).
     pub fn build(self) -> crate::types::DatabaseLfTagPolicyAndPermissions {
         crate::types::DatabaseLfTagPolicyAndPermissions {
-            expression: self.expression,
-            permissions: self.permissions,
+            expression: self.expression
+            ,
+            permissions: self.permissions
+            ,
         }
     }
 }
+

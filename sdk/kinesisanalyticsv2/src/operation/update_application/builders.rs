@@ -4,74 +4,52 @@ pub use crate::operation::update_application::_update_application_output::Update
 pub use crate::operation::update_application::_update_application_input::UpdateApplicationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateApplication`.
-///
-/// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code, input configuration, and output configuration. </p>
-/// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application. </p> <note>
-/// <p>You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.</p>
+/// 
+/// <p>Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code, input configuration, and output configuration. </p> 
+/// <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application. </p> <note> 
+/// <p>You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_application::builders::UpdateApplicationInputBuilder,
-}
-impl UpdateApplicationFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_application::builders::UpdateApplicationInputBuilder
+            }
+impl UpdateApplicationFluentBuilder  {
     /// Creates a new `UpdateApplication`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_application::UpdateApplication,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_application::UpdateApplicationOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_application::UpdateApplicationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_application::UpdateApplication, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_application::UpdateApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the application to update.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -93,18 +71,12 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn application_configuration_update(
-        mut self,
-        input: crate::types::ApplicationConfigurationUpdate,
-    ) -> Self {
+    pub fn application_configuration_update(mut self, input: crate::types::ApplicationConfigurationUpdate) -> Self {
         self.inner = self.inner.application_configuration_update(input);
         self
     }
     /// <p>Describes application configuration updates.</p>
-    pub fn set_application_configuration_update(
-        mut self,
-        input: std::option::Option<crate::types::ApplicationConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_application_configuration_update(mut self, input: std::option::Option<crate::types::ApplicationConfigurationUpdate>) -> Self {
         self.inner = self.inner.set_application_configuration_update(input);
         self
     }
@@ -114,10 +86,7 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>Describes updates to the service execution role.</p>
-    pub fn set_service_execution_role_update(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_service_execution_role_update(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_service_execution_role_update(input);
         self
     }
@@ -127,10 +96,7 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>Describes updates to the application's starting parameters.</p>
-    pub fn set_run_configuration_update(
-        mut self,
-        input: std::option::Option<crate::types::RunConfigurationUpdate>,
-    ) -> Self {
+    pub fn set_run_configuration_update(mut self, input: std::option::Option<crate::types::RunConfigurationUpdate>) -> Self {
         self.inner = self.inner.set_run_configuration_update(input);
         self
     }
@@ -139,18 +105,12 @@ impl UpdateApplicationFluentBuilder {
     /// To override the contents of this collection use [`set_cloud_watch_logging_option_updates`](Self::set_cloud_watch_logging_option_updates).
     ///
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn cloud_watch_logging_option_updates(
-        mut self,
-        input: crate::types::CloudWatchLoggingOptionUpdate,
-    ) -> Self {
+    pub fn cloud_watch_logging_option_updates(mut self, input: crate::types::CloudWatchLoggingOptionUpdate) -> Self {
         self.inner = self.inner.cloud_watch_logging_option_updates(input);
         self
     }
     /// <p>Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use <code>AddApplicationCloudWatchLoggingOption</code>.</p>
-    pub fn set_cloud_watch_logging_option_updates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>,
-    ) -> Self {
+    pub fn set_cloud_watch_logging_option_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CloudWatchLoggingOptionUpdate>>) -> Self {
         self.inner = self.inner.set_cloud_watch_logging_option_updates(input);
         self
     }
@@ -160,11 +120,9 @@ impl UpdateApplicationFluentBuilder {
         self
     }
     /// <p>A value you use to implement strong concurrency for application updates. You must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current <code>ConditionalToken</code> using <code>DescribeApplication</code>. For better concurrency support, use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.</p>
-    pub fn set_conditional_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_conditional_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_conditional_token(input);
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that sets information about a property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyRequest {
+pub struct PropertyRequest  {
     /// <p>An object that specifies information about a property.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::types::PropertyDefinitionRequest>,
@@ -16,15 +16,15 @@ pub struct PropertyRequest {
 }
 impl PropertyRequest {
     /// <p>An object that specifies information about a property.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::PropertyDefinitionRequest> {
+    pub fn definition(&self) -> std::option::Option<& crate::types::PropertyDefinitionRequest> {
         self.definition.as_ref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::DataValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::DataValue> {
         self.value.as_ref()
     }
     /// <p>The update type of the update property request.</p>
-    pub fn update_type(&self) -> std::option::Option<&crate::types::PropertyUpdateType> {
+    pub fn update_type(&self) -> std::option::Option<& crate::types::PropertyUpdateType> {
         self.update_type.as_ref()
     }
 }
@@ -50,12 +50,8 @@ impl PropertyRequestBuilder {
         self
     }
     /// <p>An object that specifies information about a property.</p>
-    pub fn set_definition(
-        mut self,
-        input: std::option::Option<crate::types::PropertyDefinitionRequest>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: std::option::Option<crate::types::PropertyDefinitionRequest>) -> Self {
+        self.definition = input; self
     }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
@@ -64,8 +60,7 @@ impl PropertyRequestBuilder {
     }
     /// <p>The value of the property.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::DataValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The update type of the update property request.</p>
     pub fn update_type(mut self, input: crate::types::PropertyUpdateType) -> Self {
@@ -73,19 +68,19 @@ impl PropertyRequestBuilder {
         self
     }
     /// <p>The update type of the update property request.</p>
-    pub fn set_update_type(
-        mut self,
-        input: std::option::Option<crate::types::PropertyUpdateType>,
-    ) -> Self {
-        self.update_type = input;
-        self
+    pub fn set_update_type(mut self, input: std::option::Option<crate::types::PropertyUpdateType>) -> Self {
+        self.update_type = input; self
     }
     /// Consumes the builder and constructs a [`PropertyRequest`](crate::types::PropertyRequest).
     pub fn build(self) -> crate::types::PropertyRequest {
         crate::types::PropertyRequest {
-            definition: self.definition,
-            value: self.value,
-            update_type: self.update_type,
+            definition: self.definition
+            ,
+            value: self.value
+            ,
+            update_type: self.update_type
+            ,
         }
     }
 }
+

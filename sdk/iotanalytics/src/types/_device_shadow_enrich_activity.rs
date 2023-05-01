@@ -3,7 +3,7 @@
 /// <p>An activity that adds information from the IoT Device Shadow service to a message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceShadowEnrichActivity {
+pub struct DeviceShadowEnrichActivity  {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DeviceShadowEnrichActivity {
 }
 impl DeviceShadowEnrichActivity {
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the attribute that is added to the message.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> std::option::Option<& str> {
         self.attribute.as_deref()
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> std::option::Option<& str> {
         self.next.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl DeviceShadowEnrichActivityBuilder {
     }
     /// <p>The name of the <code>deviceShadowEnrich</code> activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name of the attribute that is added to the message.</p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl DeviceShadowEnrichActivityBuilder {
     }
     /// <p>The name of the attribute that is added to the message.</p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute = input;
-        self
+        self.attribute = input; self
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl DeviceShadowEnrichActivityBuilder {
     }
     /// <p>The name of the IoT device whose shadow information is added to the message.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input;
-        self
+        self.thing_name = input; self
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +94,7 @@ impl DeviceShadowEnrichActivityBuilder {
     }
     /// <p>The ARN of the role that allows access to the device's shadow.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,17 +103,22 @@ impl DeviceShadowEnrichActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next = input;
-        self
+        self.next = input; self
     }
     /// Consumes the builder and constructs a [`DeviceShadowEnrichActivity`](crate::types::DeviceShadowEnrichActivity).
     pub fn build(self) -> crate::types::DeviceShadowEnrichActivity {
         crate::types::DeviceShadowEnrichActivity {
-            name: self.name,
-            attribute: self.attribute,
-            thing_name: self.thing_name,
-            role_arn: self.role_arn,
-            next: self.next,
+            name: self.name
+            ,
+            attribute: self.attribute
+            ,
+            thing_name: self.thing_name
+            ,
+            role_arn: self.role_arn
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

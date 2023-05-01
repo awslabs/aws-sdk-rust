@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataQualityRulesetEvaluationRunOutput {
+pub struct GetDataQualityRulesetEvaluationRunOutput  {
     /// <p>The unique run identifier associated with this run.</p>
     #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
@@ -20,8 +20,7 @@ pub struct GetDataQualityRulesetEvaluationRunOutput {
     pub timeout: std::option::Option<i32>,
     /// <p>Additional run options you can specify for an evaluation run.</p>
     #[doc(hidden)]
-    pub additional_run_options:
-        std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
+    pub additional_run_options: std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     /// <p>The status for this run.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::TaskStatusType>,
@@ -50,15 +49,15 @@ pub struct GetDataQualityRulesetEvaluationRunOutput {
 }
 impl GetDataQualityRulesetEvaluationRunOutput {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The data source (an Glue table) associated with this evaluation run.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<& crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
@@ -70,29 +69,27 @@ impl GetDataQualityRulesetEvaluationRunOutput {
         self.timeout
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        &self,
-    ) -> std::option::Option<&crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
+    pub fn additional_run_options(&self) -> std::option::Option<& crate::types::DataQualityEvaluationRunAdditionalRunOptions> {
         self.additional_run_options.as_ref()
     }
     /// <p>The status for this run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TaskStatusType> {
+    pub fn status(&self) -> std::option::Option<& crate::types::TaskStatusType> {
         self.status.as_ref()
     }
     /// <p>The error strings that are associated with the run.</p>
-    pub fn error_string(&self) -> std::option::Option<&str> {
+    pub fn error_string(&self) -> std::option::Option<& str> {
         self.error_string.as_deref()
     }
     /// <p>The date and time when this run started.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>The date and time when this run was completed.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
@@ -100,22 +97,22 @@ impl GetDataQualityRulesetEvaluationRunOutput {
         self.execution_time
     }
     /// <p>A list of ruleset names for the run.</p>
-    pub fn ruleset_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ruleset_names(&self) -> std::option::Option<& [std::string::String]> {
         self.ruleset_names.as_deref()
     }
     /// <p>A list of result IDs for the data quality results for the run.</p>
-    pub fn result_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn result_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.result_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDataQualityRulesetEvaluationRunOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDataQualityRulesetEvaluationRunOutput {
     /// Creates a new builder-style object to manufacture [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput).
-    pub fn builder() -> crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder{
+    pub fn builder() -> crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder {
         crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunOutputBuilder::default()
     }
 }
@@ -129,8 +126,7 @@ pub struct GetDataQualityRulesetEvaluationRunOutputBuilder {
     pub(crate) role: std::option::Option<std::string::String>,
     pub(crate) number_of_workers: std::option::Option<i32>,
     pub(crate) timeout: std::option::Option<i32>,
-    pub(crate) additional_run_options:
-        std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
+    pub(crate) additional_run_options: std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
     pub(crate) status: std::option::Option<crate::types::TaskStatusType>,
     pub(crate) error_string: std::option::Option<std::string::String>,
     pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
@@ -149,8 +145,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input;
-        self
+        self.run_id = input; self
     }
     /// <p>The data source (an Glue table) associated with this evaluation run.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -159,8 +154,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The data source (an Glue table) associated with this evaluation run.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input;
-        self
+        self.data_source = input; self
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,8 +163,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>An IAM role supplied to encrypt the results of the run.</p>
     pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role = input;
-        self
+        self.role = input; self
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn number_of_workers(mut self, input: i32) -> Self {
@@ -179,8 +172,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The number of <code>G.1X</code> workers to be used in the run. The default is 5.</p>
     pub fn set_number_of_workers(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_workers = input;
-        self
+        self.number_of_workers = input; self
     }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn timeout(mut self, input: i32) -> Self {
@@ -189,24 +181,16 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The timeout for a run in minutes. This is the maximum time that a run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
     pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout = input;
-        self
+        self.timeout = input; self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn additional_run_options(
-        mut self,
-        input: crate::types::DataQualityEvaluationRunAdditionalRunOptions,
-    ) -> Self {
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityEvaluationRunAdditionalRunOptions) -> Self {
         self.additional_run_options = Some(input);
         self
     }
     /// <p>Additional run options you can specify for an evaluation run.</p>
-    pub fn set_additional_run_options(
-        mut self,
-        input: std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>,
-    ) -> Self {
-        self.additional_run_options = input;
-        self
+    pub fn set_additional_run_options(mut self, input: std::option::Option<crate::types::DataQualityEvaluationRunAdditionalRunOptions>) -> Self {
+        self.additional_run_options = input; self
     }
     /// <p>The status for this run.</p>
     pub fn status(mut self, input: crate::types::TaskStatusType) -> Self {
@@ -215,8 +199,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The status for this run.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::TaskStatusType>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The error strings that are associated with the run.</p>
     pub fn error_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,8 +208,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The error strings that are associated with the run.</p>
     pub fn set_error_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_string = input;
-        self
+        self.error_string = input; self
     }
     /// <p>The date and time when this run started.</p>
     pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -234,12 +216,8 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>The date and time when this run started.</p>
-    pub fn set_started_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_on = input;
-        self
+    pub fn set_started_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.started_on = input; self
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
     pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -247,12 +225,8 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>A timestamp. The last point in time when this data quality rule recommendation run was modified.</p>
-    pub fn set_last_modified_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified_on = input;
-        self
+    pub fn set_last_modified_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_on = input; self
     }
     /// <p>The date and time when this run was completed.</p>
     pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -260,12 +234,8 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         self
     }
     /// <p>The date and time when this run was completed.</p>
-    pub fn set_completed_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.completed_on = input;
-        self
+    pub fn set_completed_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.completed_on = input; self
     }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
     pub fn execution_time(mut self, input: i32) -> Self {
@@ -274,8 +244,7 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     }
     /// <p>The amount of time (in seconds) that the run consumed resources.</p>
     pub fn set_execution_time(mut self, input: std::option::Option<i32>) -> Self {
-        self.execution_time = input;
-        self
+        self.execution_time = input; self
     }
     /// Appends an item to `ruleset_names`.
     ///
@@ -284,17 +253,13 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     /// <p>A list of ruleset names for the run.</p>
     pub fn ruleset_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ruleset_names.unwrap_or_default();
-        v.push(input.into());
-        self.ruleset_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.ruleset_names = Some(v);
+                        self
     }
     /// <p>A list of ruleset names for the run.</p>
-    pub fn set_ruleset_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ruleset_names = input;
-        self
+    pub fn set_ruleset_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ruleset_names = input; self
     }
     /// Appends an item to `result_ids`.
     ///
@@ -303,29 +268,25 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
     /// <p>A list of result IDs for the data quality results for the run.</p>
     pub fn result_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.result_ids.unwrap_or_default();
-        v.push(input.into());
-        self.result_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.result_ids = Some(v);
+                        self
     }
     /// <p>A list of result IDs for the data quality results for the run.</p>
-    pub fn set_result_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.result_ids = input;
-        self
+    pub fn set_result_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.result_ids = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDataQualityRulesetEvaluationRunOutput`](crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput).
-    pub fn build(self) -> crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput{
+    pub fn build(self) -> crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput {
         crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRunOutput {
             run_id: self.run_id
             ,
@@ -360,3 +321,4 @@ impl GetDataQualityRulesetEvaluationRunOutputBuilder {
         }
     }
 }
+

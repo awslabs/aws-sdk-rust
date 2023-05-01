@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIdentityProviderInput {
+pub struct DescribeIdentityProviderInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DescribeIdentityProviderInput {
 }
 impl DescribeIdentityProviderInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> std::option::Option<& str> {
         self.provider_name.as_deref()
     }
 }
 impl DescribeIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`DescribeIdentityProviderInput`](crate::operation::describe_identity_provider::DescribeIdentityProviderInput).
-    pub fn builder(
-    ) -> crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder {
         crate::operation::describe_identity_provider::builders::DescribeIdentityProviderInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl DescribeIdentityProviderInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The IdP name.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,21 +51,18 @@ impl DescribeIdentityProviderInputBuilder {
     }
     /// <p>The IdP name.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input;
-        self
+        self.provider_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeIdentityProviderInput`](crate::operation::describe_identity_provider::DescribeIdentityProviderInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_identity_provider::DescribeIdentityProviderInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_identity_provider::DescribeIdentityProviderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_identity_provider::DescribeIdentityProviderInput {
-                user_pool_id: self.user_pool_id,
-                provider_name: self.provider_name,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                provider_name: self.provider_name
+                ,
+            }
         )
     }
 }
+

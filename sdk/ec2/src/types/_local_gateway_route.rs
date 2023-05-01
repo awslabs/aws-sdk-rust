@@ -3,7 +3,7 @@
 /// <p>Describes a route for a local gateway route table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalGatewayRoute {
+pub struct LocalGatewayRoute  {
     /// <p>The CIDR block used for destination matches.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -40,47 +40,47 @@ pub struct LocalGatewayRoute {
 }
 impl LocalGatewayRoute {
     /// <p>The CIDR block used for destination matches.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<& str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>The route type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LocalGatewayRouteType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::LocalGatewayRouteType> {
         self.r#type.as_ref()
     }
     /// <p>The state of the route.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::LocalGatewayRouteState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::LocalGatewayRouteState> {
         self.state.as_ref()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_route_table_id(&self) -> std::option::Option<& str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn local_gateway_route_table_arn(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_route_table_arn(&self) -> std::option::Option<& str> {
         self.local_gateway_route_table_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> std::option::Option<& str> {
         self.owner_id.as_deref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the customer-owned address pool.</p>
-    pub fn coip_pool_id(&self) -> std::option::Option<&str> {
+    pub fn coip_pool_id(&self) -> std::option::Option<& str> {
         self.coip_pool_id.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p> The ID of the prefix list. </p>
-    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<& str> {
         self.destination_prefix_list_id.as_deref()
     }
 }
@@ -114,28 +114,17 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The CIDR block used for destination matches.</p>
-    pub fn set_destination_cidr_block(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_cidr_block = input;
-        self
+    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_cidr_block = input; self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn local_gateway_virtual_interface_group_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.local_gateway_virtual_interface_group_id = Some(input.into());
         self
     }
     /// <p>The ID of the virtual interface group.</p>
-    pub fn set_local_gateway_virtual_interface_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.local_gateway_virtual_interface_group_id = input;
-        self
+    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_virtual_interface_group_id = input; self
     }
     /// <p>The route type.</p>
     pub fn r#type(mut self, input: crate::types::LocalGatewayRouteType) -> Self {
@@ -143,12 +132,8 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The route type.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::LocalGatewayRouteType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::LocalGatewayRouteType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>The state of the route.</p>
     pub fn state(mut self, input: crate::types::LocalGatewayRouteState) -> Self {
@@ -156,12 +141,8 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The state of the route.</p>
-    pub fn set_state(
-        mut self,
-        input: std::option::Option<crate::types::LocalGatewayRouteState>,
-    ) -> Self {
-        self.state = input;
-        self
+    pub fn set_state(mut self, input: std::option::Option<crate::types::LocalGatewayRouteState>) -> Self {
+        self.state = input; self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,12 +150,8 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.local_gateway_route_table_id = input;
-        self
+    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_route_table_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
     pub fn local_gateway_route_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,12 +159,8 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.local_gateway_route_table_arn = input;
-        self
+    pub fn set_local_gateway_route_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.local_gateway_route_table_arn = input; self
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,8 +169,7 @@ impl LocalGatewayRouteBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the local gateway route.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input;
-        self
+        self.owner_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,8 +178,7 @@ impl LocalGatewayRouteBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// <p>The ID of the customer-owned address pool.</p>
     pub fn coip_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,8 +187,7 @@ impl LocalGatewayRouteBuilder {
     }
     /// <p>The ID of the customer-owned address pool.</p>
     pub fn set_coip_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.coip_pool_id = input;
-        self
+        self.coip_pool_id = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,12 +195,8 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_interface_id = input; self
     }
     /// <p> The ID of the prefix list. </p>
     pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -238,27 +204,35 @@ impl LocalGatewayRouteBuilder {
         self
     }
     /// <p> The ID of the prefix list. </p>
-    pub fn set_destination_prefix_list_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.destination_prefix_list_id = input;
-        self
+    pub fn set_destination_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.destination_prefix_list_id = input; self
     }
     /// Consumes the builder and constructs a [`LocalGatewayRoute`](crate::types::LocalGatewayRoute).
     pub fn build(self) -> crate::types::LocalGatewayRoute {
         crate::types::LocalGatewayRoute {
-            destination_cidr_block: self.destination_cidr_block,
-            local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id,
-            r#type: self.r#type,
-            state: self.state,
-            local_gateway_route_table_id: self.local_gateway_route_table_id,
-            local_gateway_route_table_arn: self.local_gateway_route_table_arn,
-            owner_id: self.owner_id,
-            subnet_id: self.subnet_id,
-            coip_pool_id: self.coip_pool_id,
-            network_interface_id: self.network_interface_id,
-            destination_prefix_list_id: self.destination_prefix_list_id,
+            destination_cidr_block: self.destination_cidr_block
+            ,
+            local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id
+            ,
+            r#type: self.r#type
+            ,
+            state: self.state
+            ,
+            local_gateway_route_table_id: self.local_gateway_route_table_id
+            ,
+            local_gateway_route_table_arn: self.local_gateway_route_table_arn
+            ,
+            owner_id: self.owner_id
+            ,
+            subnet_id: self.subnet_id
+            ,
+            coip_pool_id: self.coip_pool_id
+            ,
+            network_interface_id: self.network_interface_id
+            ,
+            destination_prefix_list_id: self.destination_prefix_list_id
+            ,
         }
     }
 }
+

@@ -4,58 +4,49 @@ pub use crate::operation::update_assessment_framework_share::_update_assessment_
 pub use crate::operation::update_assessment_framework_share::_update_assessment_framework_share_input::UpdateAssessmentFrameworkShareInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateAssessmentFrameworkShare`.
-///
+/// 
 /// <p> Updates a share request for a custom framework in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareInputBuilder
             }
-impl UpdateAssessmentFrameworkShareFluentBuilder {
+impl UpdateAssessmentFrameworkShareFluentBuilder  {
     /// Creates a new `UpdateAssessmentFrameworkShare`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShare, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput, aws_smithy_http::result::SdkError<crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p> The unique identifier for the share request. </p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
@@ -72,10 +63,7 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
         self
     }
     /// <p>Specifies whether the share request is a sent request or a received request.</p>
-    pub fn set_request_type(
-        mut self,
-        input: std::option::Option<crate::types::ShareRequestType>,
-    ) -> Self {
+    pub fn set_request_type(mut self, input: std::option::Option<crate::types::ShareRequestType>) -> Self {
         self.inner = self.inner.set_request_type(input);
         self
     }
@@ -85,11 +73,9 @@ impl UpdateAssessmentFrameworkShareFluentBuilder {
         self
     }
     /// <p>Specifies the update action for the share request.</p>
-    pub fn set_action(
-        mut self,
-        input: std::option::Option<crate::types::ShareRequestAction>,
-    ) -> Self {
+    pub fn set_action(mut self, input: std::option::Option<crate::types::ShareRequestAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
 }
+

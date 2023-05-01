@@ -3,14 +3,14 @@
 /// <p>A container for the calculated facet values and counts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketInfo {
+pub struct BucketInfo  {
     /// <p>A list of the calculated facet values and counts.</p>
     #[doc(hidden)]
     pub buckets: std::option::Option<std::vec::Vec<crate::types::Bucket>>,
 }
 impl BucketInfo {
     /// <p>A list of the calculated facet values and counts.</p>
-    pub fn buckets(&self) -> std::option::Option<&[crate::types::Bucket]> {
+    pub fn buckets(&self) -> std::option::Option<& [crate::types::Bucket]> {
         self.buckets.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl BucketInfoBuilder {
     /// <p>A list of the calculated facet values and counts.</p>
     pub fn buckets(mut self, input: crate::types::Bucket) -> Self {
         let mut v = self.buckets.unwrap_or_default();
-        v.push(input);
-        self.buckets = Some(v);
-        self
+                        v.push(input);
+                        self.buckets = Some(v);
+                        self
     }
     /// <p>A list of the calculated facet values and counts.</p>
-    pub fn set_buckets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Bucket>>,
-    ) -> Self {
-        self.buckets = input;
-        self
+    pub fn set_buckets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Bucket>>) -> Self {
+        self.buckets = input; self
     }
     /// Consumes the builder and constructs a [`BucketInfo`](crate::types::BucketInfo).
     pub fn build(self) -> crate::types::BucketInfo {
         crate::types::BucketInfo {
-            buckets: self.buckets,
+            buckets: self.buckets
+            ,
         }
     }
 }
+

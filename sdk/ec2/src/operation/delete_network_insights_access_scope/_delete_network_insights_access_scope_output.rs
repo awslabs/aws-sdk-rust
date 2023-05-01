@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkInsightsAccessScopeOutput {
+pub struct DeleteNetworkInsightsAccessScopeOutput  {
     /// <p>The ID of the Network Access Scope.</p>
     #[doc(hidden)]
     pub network_insights_access_scope_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DeleteNetworkInsightsAccessScopeOutput {
 }
 impl DeleteNetworkInsightsAccessScopeOutput {
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(&self) -> std::option::Option<&str> {
+    pub fn network_insights_access_scope_id(&self) -> std::option::Option<& str> {
         self.network_insights_access_scope_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteNetworkInsightsAccessScopeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteNetworkInsightsAccessScopeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInsightsAccessScopeOutput`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput).
-    pub fn builder() -> crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeOutputBuilder{
+    pub fn builder() -> crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeOutputBuilder {
         crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeOutputBuilder::default()
     }
 }
@@ -35,32 +35,25 @@ pub struct DeleteNetworkInsightsAccessScopeOutputBuilder {
 }
 impl DeleteNetworkInsightsAccessScopeOutputBuilder {
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn network_insights_access_scope_id(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn network_insights_access_scope_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.network_insights_access_scope_id = Some(input.into());
         self
     }
     /// <p>The ID of the Network Access Scope.</p>
-    pub fn set_network_insights_access_scope_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_insights_access_scope_id = input;
-        self
+    pub fn set_network_insights_access_scope_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_insights_access_scope_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteNetworkInsightsAccessScopeOutput`](crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput).
-    pub fn build(self) -> crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput{
+    pub fn build(self) -> crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput {
         crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScopeOutput {
             network_insights_access_scope_id: self.network_insights_access_scope_id
             ,
@@ -68,3 +61,4 @@ impl DeleteNetworkInsightsAccessScopeOutputBuilder {
         }
     }
 }
+

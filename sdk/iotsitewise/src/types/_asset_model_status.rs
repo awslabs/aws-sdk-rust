@@ -3,7 +3,7 @@
 /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelStatus {
+pub struct AssetModelStatus  {
     /// <p>The current state of the asset model.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::AssetModelState>,
@@ -13,11 +13,11 @@ pub struct AssetModelStatus {
 }
 impl AssetModelStatus {
     /// <p>The current state of the asset model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AssetModelState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::AssetModelState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ErrorDetails> {
+    pub fn error(&self) -> std::option::Option<& crate::types::ErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl AssetModelStatusBuilder {
     }
     /// <p>The current state of the asset model.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::AssetModelState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::ErrorDetails) -> Self {
@@ -53,14 +52,16 @@ impl AssetModelStatusBuilder {
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ErrorDetails>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// Consumes the builder and constructs a [`AssetModelStatus`](crate::types::AssetModelStatus).
     pub fn build(self) -> crate::types::AssetModelStatus {
         crate::types::AssetModelStatus {
-            state: self.state,
-            error: self.error,
+            state: self.state
+            ,
+            error: self.error
+            ,
         }
     }
 }
+

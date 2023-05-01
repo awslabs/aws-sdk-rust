@@ -3,20 +3,20 @@
 /// <p>Container for the request parameters to cancel a service software update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelServiceSoftwareUpdateInput {
+pub struct CancelServiceSoftwareUpdateInput  {
     /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl CancelServiceSoftwareUpdateInput {
     /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
 impl CancelServiceSoftwareUpdateInput {
     /// Creates a new builder-style object to manufacture [`CancelServiceSoftwareUpdateInput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput).
-    pub fn builder() -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder{
+    pub fn builder() -> crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder {
         crate::operation::cancel_service_software_update::builders::CancelServiceSoftwareUpdateInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl CancelServiceSoftwareUpdateInputBuilder {
     }
     /// <p>Name of the OpenSearch Service domain that you want to cancel the service software update on.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// Consumes the builder and constructs a [`CancelServiceSoftwareUpdateInput`](crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_service_software_update::CancelServiceSoftwareUpdateInput {
-                domain_name: self.domain_name,
-            },
+                domain_name: self.domain_name
+                ,
+            }
         )
     }
 }
+

@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSmbSettingsInput {
+pub struct DescribeSmbSettingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSmbSettingsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> std::option::Option<& str> {
         self.gateway_arn.as_deref()
     }
 }
 impl DescribeSmbSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSmbSettingsInput`](crate::operation::describe_smb_settings::DescribeSmbSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder {
-        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder {
+        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsInputBuilder::default()
     }
 }
 
@@ -36,20 +34,16 @@ impl DescribeSmbSettingsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input;
-        self
+        self.gateway_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeSmbSettingsInput`](crate::operation::describe_smb_settings::DescribeSmbSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_smb_settings::DescribeSmbSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_smb_settings::DescribeSmbSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_smb_settings::DescribeSmbSettingsInput {
-                gateway_arn: self.gateway_arn,
-            },
+                gateway_arn: self.gateway_arn
+                ,
+            }
         )
     }
 }
+

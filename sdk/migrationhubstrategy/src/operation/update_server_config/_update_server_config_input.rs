@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServerConfigInput {
+pub struct UpdateServerConfigInput  {
     /// <p> The ID of the server. </p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct UpdateServerConfigInput {
 }
 impl UpdateServerConfigInput {
     /// <p> The ID of the server. </p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
-    pub fn strategy_option(&self) -> std::option::Option<&crate::types::StrategyOption> {
+    pub fn strategy_option(&self) -> std::option::Option<& crate::types::StrategyOption> {
         self.strategy_option.as_ref()
     }
 }
 impl UpdateServerConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
-    pub fn builder(
-    ) -> crate::operation::update_server_config::builders::UpdateServerConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_server_config::builders::UpdateServerConfigInputBuilder {
         crate::operation::update_server_config::builders::UpdateServerConfigInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl UpdateServerConfigInputBuilder {
     }
     /// <p> The ID of the server. </p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn strategy_option(mut self, input: crate::types::StrategyOption) -> Self {
@@ -52,25 +50,19 @@ impl UpdateServerConfigInputBuilder {
         self
     }
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
-    pub fn set_strategy_option(
-        mut self,
-        input: std::option::Option<crate::types::StrategyOption>,
-    ) -> Self {
-        self.strategy_option = input;
-        self
+    pub fn set_strategy_option(mut self, input: std::option::Option<crate::types::StrategyOption>) -> Self {
+        self.strategy_option = input; self
     }
     /// Consumes the builder and constructs a [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_server_config::UpdateServerConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_server_config::UpdateServerConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_server_config::UpdateServerConfigInput {
-                server_id: self.server_id,
-                strategy_option: self.strategy_option,
-            },
+                server_id: self.server_id
+                ,
+                strategy_option: self.strategy_option
+                ,
+            }
         )
     }
 }
+

@@ -401,6 +401,16 @@ pub use crate::types::_list_recommender_configurations_response::ListRecommender
 
 pub use crate::types::_push_notification_template_response::PushNotificationTemplateResponse;
 
+pub use crate::types::_journey_runs_response::JourneyRunsResponse;
+
+pub use crate::types::_journey_run_response::JourneyRunResponse;
+
+pub use crate::types::_journey_run_status::JourneyRunStatus;
+
+pub use crate::types::_journey_run_execution_metrics_response::JourneyRunExecutionMetricsResponse;
+
+pub use crate::types::_journey_run_execution_activity_metrics_response::JourneyRunExecutionActivityMetricsResponse;
+
 pub use crate::types::_journey_execution_metrics_response::JourneyExecutionMetricsResponse;
 
 pub use crate::types::_journey_execution_activity_metrics_response::JourneyExecutionActivityMetricsResponse;
@@ -721,6 +731,16 @@ mod _journey_push_message;
 
 mod _journey_response;
 
+mod _journey_run_execution_activity_metrics_response;
+
+mod _journey_run_execution_metrics_response;
+
+mod _journey_run_response;
+
+mod _journey_run_status;
+
+mod _journey_runs_response;
+
 mod _journey_schedule;
 
 mod _journey_sms_message;
@@ -916,3 +936,4 @@ pub mod builders;
 
 /// Error types that Amazon Pinpoint can respond with.
 pub mod error;
+

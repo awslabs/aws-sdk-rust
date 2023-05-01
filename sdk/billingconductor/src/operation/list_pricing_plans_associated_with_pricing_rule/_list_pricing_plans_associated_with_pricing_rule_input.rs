@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPricingPlansAssociatedWithPricingRuleInput {
+pub struct ListPricingPlansAssociatedWithPricingRuleInput  {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     #[doc(hidden)]
     pub billing_period: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListPricingPlansAssociatedWithPricingRuleInput {
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
-    pub fn billing_period(&self) -> std::option::Option<&str> {
+    pub fn billing_period(&self) -> std::option::Option<& str> {
         self.billing_period.as_deref()
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
-    pub fn pricing_rule_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_rule_arn(&self) -> std::option::Option<& str> {
         self.pricing_rule_arn.as_deref()
     }
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
@@ -30,13 +30,13 @@ impl ListPricingPlansAssociatedWithPricingRuleInput {
         self.max_results
     }
     /// <p> The optional pagination token returned by a previous call. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListPricingPlansAssociatedWithPricingRuleInput {
     /// Creates a new builder-style object to manufacture [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput).
-    pub fn builder() -> crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder{
+    pub fn builder() -> crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         crate::operation::list_pricing_plans_associated_with_pricing_rule::builders::ListPricingPlansAssociatedWithPricingRuleInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     }
     /// <p> The pricing plan billing period for which associations will be listed. </p>
     pub fn set_billing_period(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_period = input;
-        self
+        self.billing_period = input; self
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn pricing_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     }
     /// <p> The pricing rule Amazon Resource Name (ARN) for which associations will be listed. </p>
     pub fn set_pricing_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pricing_rule_arn = input;
-        self
+        self.pricing_rule_arn = input; self
     }
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,8 +76,7 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     }
     /// <p> The optional maximum number of pricing rule associations to retrieve. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> The optional pagination token returned by a previous call. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,11 +85,10 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
     }
     /// <p> The optional pagination token returned by a previous call. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleInput`](crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput).
-    pub fn build(self) -> Result<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleInput {
                 billing_period: self.billing_period
@@ -107,3 +103,4 @@ impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
         )
     }
 }
+

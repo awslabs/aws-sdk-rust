@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcesByExternalIdInput {
+pub struct DeleteResourcesByExternalIdInput  {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     #[doc(hidden)]
     pub external_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcesByExternalIdInput {
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> std::option::Option<& str> {
         self.external_id.as_deref()
     }
 }
 impl DeleteResourcesByExternalIdInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
-    pub fn builder() -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdInputBuilder{
+    pub fn builder() -> crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdInputBuilder {
         crate::operation::delete_resources_by_external_id::builders::DeleteResourcesByExternalIdInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DeleteResourcesByExternalIdInputBuilder {
     }
     /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input;
-        self
+        self.external_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteResourcesByExternalIdInput`](crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdInput {
-                external_id: self.external_id,
-            },
+                external_id: self.external_id
+                ,
+            }
         )
     }
 }
+

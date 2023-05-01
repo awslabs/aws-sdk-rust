@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopInferenceSchedulerInput {
+pub struct StopInferenceSchedulerInput  {
     /// <p>The name of the inference scheduler to be stopped. </p>
     #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl StopInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be stopped. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
         self.inference_scheduler_name.as_deref()
     }
 }
 impl StopInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`StopInferenceSchedulerInput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput).
-    pub fn builder(
-    ) -> crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerInputBuilder {
         crate::operation::stop_inference_scheduler::builders::StopInferenceSchedulerInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl StopInferenceSchedulerInputBuilder {
         self
     }
     /// <p>The name of the inference scheduler to be stopped. </p>
-    pub fn set_inference_scheduler_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.inference_scheduler_name = input;
-        self
+    pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.inference_scheduler_name = input; self
     }
     /// Consumes the builder and constructs a [`StopInferenceSchedulerInput`](crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_inference_scheduler::StopInferenceSchedulerInput {
-                inference_scheduler_name: self.inference_scheduler_name,
-            },
+                inference_scheduler_name: self.inference_scheduler_name
+                ,
+            }
         )
     }
 }
+

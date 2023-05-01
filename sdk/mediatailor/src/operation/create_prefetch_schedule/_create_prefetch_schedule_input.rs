@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePrefetchScheduleInput {
+pub struct CreatePrefetchScheduleInput  {
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
     #[doc(hidden)]
     pub consumption: std::option::Option<crate::types::PrefetchConsumption>,
@@ -21,31 +21,29 @@ pub struct CreatePrefetchScheduleInput {
 }
 impl CreatePrefetchScheduleInput {
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    pub fn consumption(&self) -> std::option::Option<&crate::types::PrefetchConsumption> {
+    pub fn consumption(&self) -> std::option::Option<& crate::types::PrefetchConsumption> {
         self.consumption.as_ref()
     }
     /// <p>The name to assign to the schedule request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn playback_configuration_name(&self) -> std::option::Option<& str> {
         self.playback_configuration_name.as_deref()
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    pub fn retrieval(&self) -> std::option::Option<&crate::types::PrefetchRetrieval> {
+    pub fn retrieval(&self) -> std::option::Option<& crate::types::PrefetchRetrieval> {
         self.retrieval.as_ref()
     }
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> std::option::Option<& str> {
         self.stream_id.as_deref()
     }
 }
 impl CreatePrefetchScheduleInput {
     /// Creates a new builder-style object to manufacture [`CreatePrefetchScheduleInput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput).
-    pub fn builder(
-    ) -> crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder {
         crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder::default()
     }
 }
@@ -67,12 +65,8 @@ impl CreatePrefetchScheduleInputBuilder {
         self
     }
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
-    pub fn set_consumption(
-        mut self,
-        input: std::option::Option<crate::types::PrefetchConsumption>,
-    ) -> Self {
-        self.consumption = input;
-        self
+    pub fn set_consumption(mut self, input: std::option::Option<crate::types::PrefetchConsumption>) -> Self {
+        self.consumption = input; self
     }
     /// <p>The name to assign to the schedule request.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +75,7 @@ impl CreatePrefetchScheduleInputBuilder {
     }
     /// <p>The name to assign to the schedule request.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The name to assign to the playback configuration.</p>
     pub fn playback_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,12 +83,8 @@ impl CreatePrefetchScheduleInputBuilder {
         self
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn set_playback_configuration_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.playback_configuration_name = input;
-        self
+    pub fn set_playback_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.playback_configuration_name = input; self
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
     pub fn retrieval(mut self, input: crate::types::PrefetchRetrieval) -> Self {
@@ -103,12 +92,8 @@ impl CreatePrefetchScheduleInputBuilder {
         self
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
-    pub fn set_retrieval(
-        mut self,
-        input: std::option::Option<crate::types::PrefetchRetrieval>,
-    ) -> Self {
-        self.retrieval = input;
-        self
+    pub fn set_retrieval(mut self, input: std::option::Option<crate::types::PrefetchRetrieval>) -> Self {
+        self.retrieval = input; self
     }
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,24 +102,24 @@ impl CreatePrefetchScheduleInputBuilder {
     }
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input;
-        self
+        self.stream_id = input; self
     }
     /// Consumes the builder and constructs a [`CreatePrefetchScheduleInput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput {
-                consumption: self.consumption,
-                name: self.name,
-                playback_configuration_name: self.playback_configuration_name,
-                retrieval: self.retrieval,
-                stream_id: self.stream_id,
-            },
+                consumption: self.consumption
+                ,
+                name: self.name
+                ,
+                playback_configuration_name: self.playback_configuration_name
+                ,
+                retrieval: self.retrieval
+                ,
+                stream_id: self.stream_id
+                ,
+            }
         )
     }
 }
+

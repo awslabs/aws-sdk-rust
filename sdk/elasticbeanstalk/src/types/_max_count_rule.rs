@@ -3,7 +3,7 @@
 /// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxCountRule {
+pub struct MaxCountRule  {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -51,8 +51,7 @@ impl MaxCountRuleBuilder {
     }
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub fn max_count(mut self, input: i32) -> Self {
@@ -61,8 +60,7 @@ impl MaxCountRuleBuilder {
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub fn set_max_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_count = input;
-        self
+        self.max_count = input; self
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl MaxCountRuleBuilder {
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn set_delete_source_from_s3(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_source_from_s3 = input;
-        self
+        self.delete_source_from_s3 = input; self
     }
     /// Consumes the builder and constructs a [`MaxCountRule`](crate::types::MaxCountRule).
     pub fn build(self) -> crate::types::MaxCountRule {
         crate::types::MaxCountRule {
-            enabled: self.enabled,
-            max_count: self.max_count,
-            delete_source_from_s3: self.delete_source_from_s3,
+            enabled: self.enabled
+            ,
+            max_count: self.max_count
+            ,
+            delete_source_from_s3: self.delete_source_from_s3
+            ,
         }
     }
 }
+

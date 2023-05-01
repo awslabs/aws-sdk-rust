@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetServiceSpecificCredentialInput {
-    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
+pub struct ResetServiceSpecificCredentialInput  {
+    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>The unique identifier of the service-specific credential.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     #[doc(hidden)]
     pub service_specific_credential_id: std::option::Option<std::string::String>,
 }
 impl ResetServiceSpecificCredentialInput {
-    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
+    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
-    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>The unique identifier of the service-specific credential.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn service_specific_credential_id(&self) -> std::option::Option<&str> {
+    pub fn service_specific_credential_id(&self) -> std::option::Option<& str> {
         self.service_specific_credential_id.as_deref()
     }
 }
 impl ResetServiceSpecificCredentialInput {
     /// Creates a new builder-style object to manufacture [`ResetServiceSpecificCredentialInput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput).
-    pub fn builder() -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder{
+    pub fn builder() -> crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder {
         crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder::default()
     }
 }
@@ -39,40 +39,30 @@ pub struct ResetServiceSpecificCredentialInputBuilder {
     pub(crate) service_specific_credential_id: std::option::Option<std::string::String>,
 }
 impl ResetServiceSpecificCredentialInputBuilder {
-    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
+    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p>
+    /// <p>The name of the IAM user associated with the service-specific credential. If this value is not specified, then the operation assumes the user whose credentials are used to call the operation.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input;
-        self
+        self.user_name = input; self
     }
-    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>The unique identifier of the service-specific credential.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn service_specific_credential_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.service_specific_credential_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the service-specific credential.</p>
+    /// <p>The unique identifier of the service-specific credential.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn set_service_specific_credential_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_specific_credential_id = input;
-        self
+    pub fn set_service_specific_credential_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_specific_credential_id = input; self
     }
     /// Consumes the builder and constructs a [`ResetServiceSpecificCredentialInput`](crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialInput {
                 user_name: self.user_name
@@ -83,3 +73,4 @@ impl ResetServiceSpecificCredentialInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that contains information about a property response.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyResponse {
+pub struct PropertyResponse  {
     /// <p>An object that specifies information about a property.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::types::PropertyDefinitionResponse>,
@@ -13,11 +13,11 @@ pub struct PropertyResponse {
 }
 impl PropertyResponse {
     /// <p>An object that specifies information about a property.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::PropertyDefinitionResponse> {
+    pub fn definition(&self) -> std::option::Option<& crate::types::PropertyDefinitionResponse> {
         self.definition.as_ref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::DataValue> {
+    pub fn value(&self) -> std::option::Option<& crate::types::DataValue> {
         self.value.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl PropertyResponseBuilder {
         self
     }
     /// <p>An object that specifies information about a property.</p>
-    pub fn set_definition(
-        mut self,
-        input: std::option::Option<crate::types::PropertyDefinitionResponse>,
-    ) -> Self {
-        self.definition = input;
-        self
+    pub fn set_definition(mut self, input: std::option::Option<crate::types::PropertyDefinitionResponse>) -> Self {
+        self.definition = input; self
     }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
@@ -56,14 +52,16 @@ impl PropertyResponseBuilder {
     }
     /// <p>The value of the property.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::DataValue>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`PropertyResponse`](crate::types::PropertyResponse).
     pub fn build(self) -> crate::types::PropertyResponse {
         crate::types::PropertyResponse {
-            definition: self.definition,
-            value: self.value,
+            definition: self.definition
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

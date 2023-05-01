@@ -3,7 +3,7 @@
 /// <p>Describes the default credit option for CPU usage of a burstable performance instance family.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceFamilyCreditSpecification {
+pub struct InstanceFamilyCreditSpecification  {
     /// <p>The instance family.</p>
     #[doc(hidden)]
     pub instance_family: std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
@@ -13,13 +13,11 @@ pub struct InstanceFamilyCreditSpecification {
 }
 impl InstanceFamilyCreditSpecification {
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        &self,
-    ) -> std::option::Option<&crate::types::UnlimitedSupportedInstanceFamily> {
+    pub fn instance_family(&self) -> std::option::Option<& crate::types::UnlimitedSupportedInstanceFamily> {
         self.instance_family.as_ref()
     }
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
-    pub fn cpu_credits(&self) -> std::option::Option<&str> {
+    pub fn cpu_credits(&self) -> std::option::Option<& str> {
         self.cpu_credits.as_deref()
     }
 }
@@ -39,20 +37,13 @@ pub struct InstanceFamilyCreditSpecificationBuilder {
 }
 impl InstanceFamilyCreditSpecificationBuilder {
     /// <p>The instance family.</p>
-    pub fn instance_family(
-        mut self,
-        input: crate::types::UnlimitedSupportedInstanceFamily,
-    ) -> Self {
+    pub fn instance_family(mut self, input: crate::types::UnlimitedSupportedInstanceFamily) -> Self {
         self.instance_family = Some(input);
         self
     }
     /// <p>The instance family.</p>
-    pub fn set_instance_family(
-        mut self,
-        input: std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>,
-    ) -> Self {
-        self.instance_family = input;
-        self
+    pub fn set_instance_family(mut self, input: std::option::Option<crate::types::UnlimitedSupportedInstanceFamily>) -> Self {
+        self.instance_family = input; self
     }
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
     pub fn cpu_credits(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +52,16 @@ impl InstanceFamilyCreditSpecificationBuilder {
     }
     /// <p>The default credit option for CPU usage of the instance family. Valid values are <code>standard</code> and <code>unlimited</code>.</p>
     pub fn set_cpu_credits(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cpu_credits = input;
-        self
+        self.cpu_credits = input; self
     }
     /// Consumes the builder and constructs a [`InstanceFamilyCreditSpecification`](crate::types::InstanceFamilyCreditSpecification).
     pub fn build(self) -> crate::types::InstanceFamilyCreditSpecification {
         crate::types::InstanceFamilyCreditSpecification {
-            instance_family: self.instance_family,
-            cpu_credits: self.cpu_credits,
+            instance_family: self.instance_family
+            ,
+            cpu_credits: self.cpu_credits
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>An object that contains information about an entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitySummary {
+pub struct EntitySummary  {
     /// <p>The ID of the entity.</p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
@@ -34,27 +34,27 @@ pub struct EntitySummary {
 }
 impl EntitySummary {
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> std::option::Option<&str> {
+    pub fn entity_name(&self) -> std::option::Option<& str> {
         self.entity_name.as_deref()
     }
     /// <p>The ARN of the entity.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn parent_entity_id(&self) -> std::option::Option<&str> {
+    pub fn parent_entity_id(&self) -> std::option::Option<& str> {
         self.parent_entity_id.as_deref()
     }
     /// <p>The current status of the entity.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The description of the entity.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
@@ -62,11 +62,11 @@ impl EntitySummary {
         self.has_child_entities
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last date and time when the entity was updated.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
@@ -99,8 +99,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The name of the entity.</p>
     pub fn set_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The ARN of the entity.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The ARN of the entity.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the parent entity.</p>
     pub fn parent_entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +126,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The ID of the parent entity.</p>
     pub fn set_parent_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_entity_id = input;
-        self
+        self.parent_entity_id = input; self
     }
     /// <p>The current status of the entity.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -139,8 +135,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The current status of the entity.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +144,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>The description of the entity.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
     pub fn has_child_entities(mut self, input: bool) -> Self {
@@ -159,8 +153,7 @@ impl EntitySummaryBuilder {
     }
     /// <p>A Boolean value that specifies whether the entity has child entities or not.</p>
     pub fn set_has_child_entities(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_child_entities = input;
-        self
+        self.has_child_entities = input; self
     }
     /// <p>The date and time when the entity was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -168,12 +161,8 @@ impl EntitySummaryBuilder {
         self
     }
     /// <p>The date and time when the entity was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     /// <p>The last date and time when the entity was updated.</p>
     pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -181,25 +170,31 @@ impl EntitySummaryBuilder {
         self
     }
     /// <p>The last date and time when the entity was updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date_time = input;
-        self
+    pub fn set_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_date_time = input; self
     }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {
         crate::types::EntitySummary {
-            entity_id: self.entity_id,
-            entity_name: self.entity_name,
-            arn: self.arn,
-            parent_entity_id: self.parent_entity_id,
-            status: self.status,
-            description: self.description,
-            has_child_entities: self.has_child_entities,
-            creation_date_time: self.creation_date_time,
-            update_date_time: self.update_date_time,
+            entity_id: self.entity_id
+            ,
+            entity_name: self.entity_name
+            ,
+            arn: self.arn
+            ,
+            parent_entity_id: self.parent_entity_id
+            ,
+            status: self.status
+            ,
+            description: self.description
+            ,
+            has_child_entities: self.has_child_entities
+            ,
+            creation_date_time: self.creation_date_time
+            ,
+            update_date_time: self.update_date_time
+            ,
         }
     }
 }
+

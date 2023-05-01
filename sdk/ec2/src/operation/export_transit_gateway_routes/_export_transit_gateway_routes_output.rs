@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportTransitGatewayRoutesOutput {
+pub struct ExportTransitGatewayRoutesOutput  {
     /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct ExportTransitGatewayRoutesOutput {
 }
 impl ExportTransitGatewayRoutesOutput {
     /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
-    pub fn s3_location(&self) -> std::option::Option<&str> {
+    pub fn s3_location(&self) -> std::option::Option<& str> {
         self.s3_location.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExportTransitGatewayRoutesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ExportTransitGatewayRoutesOutput {
     /// Creates a new builder-style object to manufacture [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput).
-    pub fn builder() -> crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder{
+    pub fn builder() -> crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder {
         crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl ExportTransitGatewayRoutesOutputBuilder {
     }
     /// <p>The URL of the exported file in Amazon S3. For example, s3://<i>bucket_name</i>/VPCTransitGateway/TransitGatewayRouteTables/<i>file_name</i>.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_location = input;
-        self
+        self.s3_location = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ExportTransitGatewayRoutesOutput`](crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput {
+    pub fn build(self) -> crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput {
         crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput {
-            s3_location: self.s3_location,
+            s3_location: self.s3_location
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

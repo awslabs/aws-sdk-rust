@@ -3,7 +3,7 @@
 /// <p>Describes the logging options payload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingOptionsPayload {
+pub struct LoggingOptionsPayload  {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LoggingOptionsPayload {
 }
 impl LoggingOptionsPayload {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The log level.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> std::option::Option<& crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl LoggingOptionsPayloadBuilder {
     }
     /// <p>The ARN of the IAM role that grants access.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The log level.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
@@ -53,14 +52,16 @@ impl LoggingOptionsPayloadBuilder {
     }
     /// <p>The log level.</p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
-        self.log_level = input;
-        self
+        self.log_level = input; self
     }
     /// Consumes the builder and constructs a [`LoggingOptionsPayload`](crate::types::LoggingOptionsPayload).
     pub fn build(self) -> crate::types::LoggingOptionsPayload {
         crate::types::LoggingOptionsPayload {
-            role_arn: self.role_arn,
-            log_level: self.log_level,
+            role_arn: self.role_arn
+            ,
+            log_level: self.log_level
+            ,
         }
     }
 }
+

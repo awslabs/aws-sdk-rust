@@ -4,71 +4,49 @@ pub use crate::operation::create_alarm_model::_create_alarm_model_output::Create
 pub use crate::operation::create_alarm_model::_create_alarm_model_input::CreateAlarmModelInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAlarmModel`.
-///
+/// 
 /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAlarmModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_alarm_model::builders::CreateAlarmModelInputBuilder,
-}
-impl CreateAlarmModelFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_alarm_model::builders::CreateAlarmModelInputBuilder
+            }
+impl CreateAlarmModelFluentBuilder  {
     /// Creates a new `CreateAlarmModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_alarm_model::CreateAlarmModel,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_alarm_model::CreateAlarmModelError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_alarm_model::CreateAlarmModelOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_alarm_model::CreateAlarmModelError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_alarm_model::CreateAlarmModel, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_alarm_model::CreateAlarmModelError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_alarm_model::CreateAlarmModelOutput, aws_smithy_http::result::SdkError<crate::operation::create_alarm_model::CreateAlarmModelError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.</p>
     pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alarm_model_name(input.into());
@@ -85,10 +63,7 @@ impl CreateAlarmModelFluentBuilder {
         self
     }
     /// <p>A description that tells you what the alarm model detects.</p>
-    pub fn set_alarm_model_description(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_alarm_model_description(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_model_description(input);
         self
     }
@@ -106,18 +81,15 @@ impl CreateAlarmModelFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p> 
     /// <p>You can create up to 50 tags for one alarm model.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
+    /// <p>A list of key-value pairs that contain metadata for the alarm model. The tags help you manage the alarm model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/tagging-iotevents.html">Tagging your AWS IoT Events resources</a> in the <i>AWS IoT Events Developer Guide</i>.</p> 
     /// <p>You can create up to 50 tags for one alarm model.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -157,10 +129,7 @@ impl CreateAlarmModelFluentBuilder {
         self
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn set_alarm_notification(
-        mut self,
-        input: std::option::Option<crate::types::AlarmNotification>,
-    ) -> Self {
+    pub fn set_alarm_notification(mut self, input: std::option::Option<crate::types::AlarmNotification>) -> Self {
         self.inner = self.inner.set_alarm_notification(input);
         self
     }
@@ -170,10 +139,7 @@ impl CreateAlarmModelFluentBuilder {
         self
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn set_alarm_event_actions(
-        mut self,
-        input: std::option::Option<crate::types::AlarmEventActions>,
-    ) -> Self {
+    pub fn set_alarm_event_actions(mut self, input: std::option::Option<crate::types::AlarmEventActions>) -> Self {
         self.inner = self.inner.set_alarm_event_actions(input);
         self
     }
@@ -183,11 +149,9 @@ impl CreateAlarmModelFluentBuilder {
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn set_alarm_capabilities(
-        mut self,
-        input: std::option::Option<crate::types::AlarmCapabilities>,
-    ) -> Self {
+    pub fn set_alarm_capabilities(mut self, input: std::option::Option<crate::types::AlarmCapabilities>) -> Self {
         self.inner = self.inner.set_alarm_capabilities(input);
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCostCategoryDefinitionInput {
+pub struct DescribeCostCategoryDefinitionInput  {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeCostCategoryDefinitionInput {
 }
 impl DescribeCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The date when the Cost Category was effective. </p>
-    pub fn effective_on(&self) -> std::option::Option<&str> {
+    pub fn effective_on(&self) -> std::option::Option<& str> {
         self.effective_on.as_deref()
     }
 }
 impl DescribeCostCategoryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeCostCategoryDefinitionInput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput).
-    pub fn builder() -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder {
         crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl DescribeCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cost_category_arn = input;
-        self
+    pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cost_category_arn = input; self
     }
     /// <p>The date when the Cost Category was effective. </p>
     pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,16 +51,10 @@ impl DescribeCostCategoryDefinitionInputBuilder {
     }
     /// <p>The date when the Cost Category was effective. </p>
     pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.effective_on = input;
-        self
+        self.effective_on = input; self
     }
     /// Consumes the builder and constructs a [`DescribeCostCategoryDefinitionInput`](crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionInput {
                 cost_category_arn: self.cost_category_arn
@@ -75,3 +65,4 @@ impl DescribeCostCategoryDefinitionInputBuilder {
         )
     }
 }
+

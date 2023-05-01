@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLabelsInput {
+pub struct CreateLabelsInput  {
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct CreateLabelsInput {
 }
 impl CreateLabelsInput {
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>List of labels to add to the resource.</p>
-    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<&str> {
+    pub fn authentication_token(&self) -> std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
 }
-impl std::fmt::Debug for CreateLabelsInput {
+impl  std::fmt::Debug for CreateLabelsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLabelsInput");
         formatter.field("resource_id", &self.resource_id);
@@ -59,8 +59,7 @@ impl CreateLabelsInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// Appends an item to `labels`.
     ///
@@ -69,17 +68,13 @@ impl CreateLabelsInputBuilder {
     /// <p>List of labels to add to the resource.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-        v.push(input.into());
-        self.labels = Some(v);
-        self
+                        v.push(input.into());
+                        self.labels = Some(v);
+                        self
     }
     /// <p>List of labels to add to the resource.</p>
-    pub fn set_labels(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.labels = input;
-        self
+    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.labels = input; self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,25 +82,21 @@ impl CreateLabelsInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_token = input; self
     }
     /// Consumes the builder and constructs a [`CreateLabelsInput`](crate::operation::create_labels::CreateLabelsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_labels::CreateLabelsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_labels::CreateLabelsInput {
-            resource_id: self.resource_id,
-            labels: self.labels,
-            authentication_token: self.authentication_token,
-        })
+    pub fn build(self) -> Result<crate::operation::create_labels::CreateLabelsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_labels::CreateLabelsInput {
+                resource_id: self.resource_id
+                ,
+                labels: self.labels
+                ,
+                authentication_token: self.authentication_token
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for CreateLabelsInputBuilder {
@@ -117,3 +108,4 @@ impl std::fmt::Debug for CreateLabelsInputBuilder {
         formatter.finish()
     }
 }
+

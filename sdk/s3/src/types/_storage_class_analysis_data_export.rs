@@ -3,7 +3,7 @@
 /// <p>Container for data related to the storage class analysis for an Amazon S3 bucket for export.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageClassAnalysisDataExport {
+pub struct StorageClassAnalysisDataExport  {
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
     #[doc(hidden)]
     pub output_schema_version: std::option::Option<crate::types::StorageClassAnalysisSchemaVersion>,
@@ -13,13 +13,11 @@ pub struct StorageClassAnalysisDataExport {
 }
 impl StorageClassAnalysisDataExport {
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
-    pub fn output_schema_version(
-        &self,
-    ) -> std::option::Option<&crate::types::StorageClassAnalysisSchemaVersion> {
+    pub fn output_schema_version(&self) -> std::option::Option<& crate::types::StorageClassAnalysisSchemaVersion> {
         self.output_schema_version.as_ref()
     }
     /// <p>The place to store the data for an analysis.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::AnalyticsExportDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::AnalyticsExportDestination> {
         self.destination.as_ref()
     }
 }
@@ -34,26 +32,18 @@ impl StorageClassAnalysisDataExport {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StorageClassAnalysisDataExportBuilder {
-    pub(crate) output_schema_version:
-        std::option::Option<crate::types::StorageClassAnalysisSchemaVersion>,
+    pub(crate) output_schema_version: std::option::Option<crate::types::StorageClassAnalysisSchemaVersion>,
     pub(crate) destination: std::option::Option<crate::types::AnalyticsExportDestination>,
 }
 impl StorageClassAnalysisDataExportBuilder {
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
-    pub fn output_schema_version(
-        mut self,
-        input: crate::types::StorageClassAnalysisSchemaVersion,
-    ) -> Self {
+    pub fn output_schema_version(mut self, input: crate::types::StorageClassAnalysisSchemaVersion) -> Self {
         self.output_schema_version = Some(input);
         self
     }
     /// <p>The version of the output schema to use when exporting data. Must be <code>V_1</code>.</p>
-    pub fn set_output_schema_version(
-        mut self,
-        input: std::option::Option<crate::types::StorageClassAnalysisSchemaVersion>,
-    ) -> Self {
-        self.output_schema_version = input;
-        self
+    pub fn set_output_schema_version(mut self, input: std::option::Option<crate::types::StorageClassAnalysisSchemaVersion>) -> Self {
+        self.output_schema_version = input; self
     }
     /// <p>The place to store the data for an analysis.</p>
     pub fn destination(mut self, input: crate::types::AnalyticsExportDestination) -> Self {
@@ -61,18 +51,17 @@ impl StorageClassAnalysisDataExportBuilder {
         self
     }
     /// <p>The place to store the data for an analysis.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::AnalyticsExportDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::AnalyticsExportDestination>) -> Self {
+        self.destination = input; self
     }
     /// Consumes the builder and constructs a [`StorageClassAnalysisDataExport`](crate::types::StorageClassAnalysisDataExport).
     pub fn build(self) -> crate::types::StorageClassAnalysisDataExport {
         crate::types::StorageClassAnalysisDataExport {
-            output_schema_version: self.output_schema_version,
-            destination: self.destination,
+            output_schema_version: self.output_schema_version
+            ,
+            destination: self.destination
+            ,
         }
     }
 }
+

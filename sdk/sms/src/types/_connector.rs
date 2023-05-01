@@ -3,7 +3,7 @@
 /// <p>Represents a connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Connector {
+pub struct Connector  {
     /// <p>The ID of the connector.</p>
     #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
@@ -37,43 +37,43 @@ pub struct Connector {
 }
 impl Connector {
     /// <p>The ID of the connector.</p>
-    pub fn connector_id(&self) -> std::option::Option<&str> {
+    pub fn connector_id(&self) -> std::option::Option<& str> {
         self.connector_id.as_deref()
     }
     /// <p>The connector version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The status of the connector.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ConnectorStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ConnectorStatus> {
         self.status.as_ref()
     }
     /// <p>The capabilities of the connector.</p>
-    pub fn capability_list(&self) -> std::option::Option<&[crate::types::ConnectorCapability]> {
+    pub fn capability_list(&self) -> std::option::Option<& [crate::types::ConnectorCapability]> {
         self.capability_list.as_deref()
     }
     /// <p>The name of the VM manager.</p>
-    pub fn vm_manager_name(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_name(&self) -> std::option::Option<& str> {
         self.vm_manager_name.as_deref()
     }
     /// <p>The VM management product.</p>
-    pub fn vm_manager_type(&self) -> std::option::Option<&crate::types::VmManagerType> {
+    pub fn vm_manager_type(&self) -> std::option::Option<& crate::types::VmManagerType> {
         self.vm_manager_type.as_ref()
     }
     /// <p>The ID of the VM manager.</p>
-    pub fn vm_manager_id(&self) -> std::option::Option<&str> {
+    pub fn vm_manager_id(&self) -> std::option::Option<& str> {
         self.vm_manager_id.as_deref()
     }
     /// <p>The IP address of the connector.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The MAC address of the connector.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>The time the connector was associated.</p>
-    pub fn associated_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn associated_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.associated_on.as_ref()
     }
 }
@@ -91,8 +91,7 @@ pub struct ConnectorBuilder {
     pub(crate) connector_id: std::option::Option<std::string::String>,
     pub(crate) version: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::ConnectorStatus>,
-    pub(crate) capability_list:
-        std::option::Option<std::vec::Vec<crate::types::ConnectorCapability>>,
+    pub(crate) capability_list: std::option::Option<std::vec::Vec<crate::types::ConnectorCapability>>,
     pub(crate) vm_manager_name: std::option::Option<std::string::String>,
     pub(crate) vm_manager_type: std::option::Option<crate::types::VmManagerType>,
     pub(crate) vm_manager_id: std::option::Option<std::string::String>,
@@ -108,8 +107,7 @@ impl ConnectorBuilder {
     }
     /// <p>The ID of the connector.</p>
     pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_id = input;
-        self
+        self.connector_id = input; self
     }
     /// <p>The connector version.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +116,7 @@ impl ConnectorBuilder {
     }
     /// <p>The connector version.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The status of the connector.</p>
     pub fn status(mut self, input: crate::types::ConnectorStatus) -> Self {
@@ -128,8 +125,7 @@ impl ConnectorBuilder {
     }
     /// <p>The status of the connector.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ConnectorStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Appends an item to `capability_list`.
     ///
@@ -138,17 +134,13 @@ impl ConnectorBuilder {
     /// <p>The capabilities of the connector.</p>
     pub fn capability_list(mut self, input: crate::types::ConnectorCapability) -> Self {
         let mut v = self.capability_list.unwrap_or_default();
-        v.push(input);
-        self.capability_list = Some(v);
-        self
+                        v.push(input);
+                        self.capability_list = Some(v);
+                        self
     }
     /// <p>The capabilities of the connector.</p>
-    pub fn set_capability_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConnectorCapability>>,
-    ) -> Self {
-        self.capability_list = input;
-        self
+    pub fn set_capability_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectorCapability>>) -> Self {
+        self.capability_list = input; self
     }
     /// <p>The name of the VM manager.</p>
     pub fn vm_manager_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +149,7 @@ impl ConnectorBuilder {
     }
     /// <p>The name of the VM manager.</p>
     pub fn set_vm_manager_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_manager_name = input;
-        self
+        self.vm_manager_name = input; self
     }
     /// <p>The VM management product.</p>
     pub fn vm_manager_type(mut self, input: crate::types::VmManagerType) -> Self {
@@ -166,12 +157,8 @@ impl ConnectorBuilder {
         self
     }
     /// <p>The VM management product.</p>
-    pub fn set_vm_manager_type(
-        mut self,
-        input: std::option::Option<crate::types::VmManagerType>,
-    ) -> Self {
-        self.vm_manager_type = input;
-        self
+    pub fn set_vm_manager_type(mut self, input: std::option::Option<crate::types::VmManagerType>) -> Self {
+        self.vm_manager_type = input; self
     }
     /// <p>The ID of the VM manager.</p>
     pub fn vm_manager_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,8 +167,7 @@ impl ConnectorBuilder {
     }
     /// <p>The ID of the VM manager.</p>
     pub fn set_vm_manager_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_manager_id = input;
-        self
+        self.vm_manager_id = input; self
     }
     /// <p>The IP address of the connector.</p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,8 +176,7 @@ impl ConnectorBuilder {
     }
     /// <p>The IP address of the connector.</p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input;
-        self
+        self.ip_address = input; self
     }
     /// <p>The MAC address of the connector.</p>
     pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +185,7 @@ impl ConnectorBuilder {
     }
     /// <p>The MAC address of the connector.</p>
     pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mac_address = input;
-        self
+        self.mac_address = input; self
     }
     /// <p>The time the connector was associated.</p>
     pub fn associated_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -209,26 +193,33 @@ impl ConnectorBuilder {
         self
     }
     /// <p>The time the connector was associated.</p>
-    pub fn set_associated_on(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.associated_on = input;
-        self
+    pub fn set_associated_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.associated_on = input; self
     }
     /// Consumes the builder and constructs a [`Connector`](crate::types::Connector).
     pub fn build(self) -> crate::types::Connector {
         crate::types::Connector {
-            connector_id: self.connector_id,
-            version: self.version,
-            status: self.status,
-            capability_list: self.capability_list,
-            vm_manager_name: self.vm_manager_name,
-            vm_manager_type: self.vm_manager_type,
-            vm_manager_id: self.vm_manager_id,
-            ip_address: self.ip_address,
-            mac_address: self.mac_address,
-            associated_on: self.associated_on,
+            connector_id: self.connector_id
+            ,
+            version: self.version
+            ,
+            status: self.status
+            ,
+            capability_list: self.capability_list
+            ,
+            vm_manager_name: self.vm_manager_name
+            ,
+            vm_manager_type: self.vm_manager_type
+            ,
+            vm_manager_id: self.vm_manager_id
+            ,
+            ip_address: self.ip_address
+            ,
+            mac_address: self.mac_address
+            ,
+            associated_on: self.associated_on
+            ,
         }
     }
 }
+

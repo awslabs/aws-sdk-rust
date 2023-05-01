@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDhcpOptionsOutput {
+pub struct DescribeDhcpOptionsOutput  {
     /// <p>Information about one or more DHCP options sets.</p>
     #[doc(hidden)]
     pub dhcp_options: std::option::Option<std::vec::Vec<crate::types::DhcpOptions>>,
@@ -13,25 +13,23 @@ pub struct DescribeDhcpOptionsOutput {
 }
 impl DescribeDhcpOptionsOutput {
     /// <p>Information about one or more DHCP options sets.</p>
-    pub fn dhcp_options(&self) -> std::option::Option<&[crate::types::DhcpOptions]> {
+    pub fn dhcp_options(&self) -> std::option::Option<& [crate::types::DhcpOptions]> {
         self.dhcp_options.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDhcpOptionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDhcpOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDhcpOptionsOutput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder {
-        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder {
+        crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl DescribeDhcpOptionsOutputBuilder {
     /// <p>Information about one or more DHCP options sets.</p>
     pub fn dhcp_options(mut self, input: crate::types::DhcpOptions) -> Self {
         let mut v = self.dhcp_options.unwrap_or_default();
-        v.push(input);
-        self.dhcp_options = Some(v);
-        self
+                        v.push(input);
+                        self.dhcp_options = Some(v);
+                        self
     }
     /// <p>Information about one or more DHCP options sets.</p>
-    pub fn set_dhcp_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DhcpOptions>>,
-    ) -> Self {
-        self.dhcp_options = input;
-        self
+    pub fn set_dhcp_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::DhcpOptions>>) -> Self {
+        self.dhcp_options = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl DescribeDhcpOptionsOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDhcpOptionsOutput`](crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput).
     pub fn build(self) -> crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput {
         crate::operation::describe_dhcp_options::DescribeDhcpOptionsOutput {
-            dhcp_options: self.dhcp_options,
-            next_token: self.next_token,
+            dhcp_options: self.dhcp_options
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

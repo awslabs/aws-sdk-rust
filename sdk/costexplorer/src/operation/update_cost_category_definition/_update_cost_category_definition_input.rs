@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCostCategoryDefinitionInput {
+pub struct UpdateCostCategoryDefinitionInput  {
     /// <p>The unique identifier for your Cost Category.</p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -20,40 +20,37 @@ pub struct UpdateCostCategoryDefinitionInput {
     pub default_value: std::option::Option<std::string::String>,
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     #[doc(hidden)]
-    pub split_charge_rules:
-        std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    pub split_charge_rules: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
 }
 impl UpdateCostCategoryDefinitionInput {
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> std::option::Option<& str> {
         self.effective_start.as_deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn rule_version(&self) -> std::option::Option<&crate::types::CostCategoryRuleVersion> {
+    pub fn rule_version(&self) -> std::option::Option<& crate::types::CostCategoryRuleVersion> {
         self.rule_version.as_ref()
     }
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::CostCategoryRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::CostCategoryRule]> {
         self.rules.as_deref()
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn split_charge_rules(
-        &self,
-    ) -> std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
+    pub fn split_charge_rules(&self) -> std::option::Option<& [crate::types::CostCategorySplitChargeRule]> {
         self.split_charge_rules.as_deref()
     }
 }
 impl UpdateCostCategoryDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateCostCategoryDefinitionInput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput).
-    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder{
+    pub fn builder() -> crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder {
         crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder::default()
     }
 }
@@ -67,8 +64,7 @@ pub struct UpdateCostCategoryDefinitionInputBuilder {
     pub(crate) rule_version: std::option::Option<crate::types::CostCategoryRuleVersion>,
     pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
     pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) split_charge_rules:
-        std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+    pub(crate) split_charge_rules: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
 }
 impl UpdateCostCategoryDefinitionInputBuilder {
     /// <p>The unique identifier for your Cost Category.</p>
@@ -77,12 +73,8 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p>The unique identifier for your Cost Category.</p>
-    pub fn set_cost_category_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cost_category_arn = input;
-        self
+    pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cost_category_arn = input; self
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
     pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +83,7 @@ impl UpdateCostCategoryDefinitionInputBuilder {
     }
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.</p>
     pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.effective_start = input;
-        self
+        self.effective_start = input; self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
@@ -100,12 +91,8 @@ impl UpdateCostCategoryDefinitionInputBuilder {
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn set_rule_version(
-        mut self,
-        input: std::option::Option<crate::types::CostCategoryRuleVersion>,
-    ) -> Self {
-        self.rule_version = input;
-        self
+    pub fn set_rule_version(mut self, input: std::option::Option<crate::types::CostCategoryRuleVersion>) -> Self {
+        self.rule_version = input; self
     }
     /// Appends an item to `rules`.
     ///
@@ -114,17 +101,13 @@ impl UpdateCostCategoryDefinitionInputBuilder {
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
     pub fn rules(mut self, input: crate::types::CostCategoryRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>) -> Self {
+        self.rules = input; self
     }
     /// <p>The default value for the cost category.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +116,7 @@ impl UpdateCostCategoryDefinitionInputBuilder {
     }
     /// <p>The default value for the cost category.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input;
-        self
+        self.default_value = input; self
     }
     /// Appends an item to `split_charge_rules`.
     ///
@@ -143,34 +125,32 @@ impl UpdateCostCategoryDefinitionInputBuilder {
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         let mut v = self.split_charge_rules.unwrap_or_default();
-        v.push(input);
-        self.split_charge_rules = Some(v);
-        self
+                        v.push(input);
+                        self.split_charge_rules = Some(v);
+                        self
     }
     /// <p> The split charge rules used to allocate your charges between your Cost Category values. </p>
-    pub fn set_split_charge_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
-    ) -> Self {
-        self.split_charge_rules = input;
-        self
+    pub fn set_split_charge_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>) -> Self {
+        self.split_charge_rules = input; self
     }
     /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionInput`](crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_cost_category_definition::UpdateCostCategoryDefinitionInput {
-                cost_category_arn: self.cost_category_arn,
-                effective_start: self.effective_start,
-                rule_version: self.rule_version,
-                rules: self.rules,
-                default_value: self.default_value,
-                split_charge_rules: self.split_charge_rules,
-            },
+                cost_category_arn: self.cost_category_arn
+                ,
+                effective_start: self.effective_start
+                ,
+                rule_version: self.rule_version
+                ,
+                rules: self.rules
+                ,
+                default_value: self.default_value
+                ,
+                split_charge_rules: self.split_charge_rules
+                ,
+            }
         )
     }
 }
+

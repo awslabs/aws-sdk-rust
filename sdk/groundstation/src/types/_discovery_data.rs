@@ -3,7 +3,7 @@
 /// <p>Data for agent discovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoveryData {
+pub struct DiscoveryData  {
     /// <p>List of public IP addresses to associate with agent.</p>
     #[doc(hidden)]
     pub public_ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct DiscoveryData {
 }
 impl DiscoveryData {
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub fn public_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn public_ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.public_ip_addresses.as_deref()
     }
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub fn private_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn private_ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>List of capabilities to associate with agent.</p>
-    pub fn capability_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn capability_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.capability_arns.as_deref()
     }
 }
@@ -51,17 +51,13 @@ impl DiscoveryDataBuilder {
     /// <p>List of public IP addresses to associate with agent.</p>
     pub fn public_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.public_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.public_ip_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.public_ip_addresses = Some(v);
+                        self
     }
     /// <p>List of public IP addresses to associate with agent.</p>
-    pub fn set_public_ip_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.public_ip_addresses = input;
-        self
+    pub fn set_public_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.public_ip_addresses = input; self
     }
     /// Appends an item to `private_ip_addresses`.
     ///
@@ -70,17 +66,13 @@ impl DiscoveryDataBuilder {
     /// <p>List of private IP addresses to associate with agent.</p>
     pub fn private_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.private_ip_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.private_ip_addresses = Some(v);
+                        self
     }
     /// <p>List of private IP addresses to associate with agent.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.private_ip_addresses = input;
-        self
+    pub fn set_private_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.private_ip_addresses = input; self
     }
     /// Appends an item to `capability_arns`.
     ///
@@ -89,24 +81,24 @@ impl DiscoveryDataBuilder {
     /// <p>List of capabilities to associate with agent.</p>
     pub fn capability_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.capability_arns.unwrap_or_default();
-        v.push(input.into());
-        self.capability_arns = Some(v);
-        self
+                        v.push(input.into());
+                        self.capability_arns = Some(v);
+                        self
     }
     /// <p>List of capabilities to associate with agent.</p>
-    pub fn set_capability_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.capability_arns = input;
-        self
+    pub fn set_capability_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.capability_arns = input; self
     }
     /// Consumes the builder and constructs a [`DiscoveryData`](crate::types::DiscoveryData).
     pub fn build(self) -> crate::types::DiscoveryData {
         crate::types::DiscoveryData {
-            public_ip_addresses: self.public_ip_addresses,
-            private_ip_addresses: self.private_ip_addresses,
-            capability_arns: self.capability_arns,
+            public_ip_addresses: self.public_ip_addresses
+            ,
+            private_ip_addresses: self.private_ip_addresses
+            ,
+            capability_arns: self.capability_arns
+            ,
         }
     }
 }
+

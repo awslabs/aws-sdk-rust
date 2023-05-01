@@ -3,7 +3,7 @@
 /// <p>Configuration of the topic rule destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TopicRuleDestinationConfiguration {
+pub struct TopicRuleDestinationConfiguration  {
     /// <p>Configuration of the HTTP URL.</p>
     #[doc(hidden)]
     pub http_url_configuration: std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
@@ -13,15 +13,11 @@ pub struct TopicRuleDestinationConfiguration {
 }
 impl TopicRuleDestinationConfiguration {
     /// <p>Configuration of the HTTP URL.</p>
-    pub fn http_url_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::HttpUrlDestinationConfiguration> {
+    pub fn http_url_configuration(&self) -> std::option::Option<& crate::types::HttpUrlDestinationConfiguration> {
         self.http_url_configuration.as_ref()
     }
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
-    pub fn vpc_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::VpcDestinationConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<& crate::types::VpcDestinationConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
@@ -36,26 +32,18 @@ impl TopicRuleDestinationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TopicRuleDestinationConfigurationBuilder {
-    pub(crate) http_url_configuration:
-        std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
+    pub(crate) http_url_configuration: std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
     pub(crate) vpc_configuration: std::option::Option<crate::types::VpcDestinationConfiguration>,
 }
 impl TopicRuleDestinationConfigurationBuilder {
     /// <p>Configuration of the HTTP URL.</p>
-    pub fn http_url_configuration(
-        mut self,
-        input: crate::types::HttpUrlDestinationConfiguration,
-    ) -> Self {
+    pub fn http_url_configuration(mut self, input: crate::types::HttpUrlDestinationConfiguration) -> Self {
         self.http_url_configuration = Some(input);
         self
     }
     /// <p>Configuration of the HTTP URL.</p>
-    pub fn set_http_url_configuration(
-        mut self,
-        input: std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
-    ) -> Self {
-        self.http_url_configuration = input;
-        self
+    pub fn set_http_url_configuration(mut self, input: std::option::Option<crate::types::HttpUrlDestinationConfiguration>) -> Self {
+        self.http_url_configuration = input; self
     }
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcDestinationConfiguration) -> Self {
@@ -63,18 +51,17 @@ impl TopicRuleDestinationConfigurationBuilder {
         self
     }
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
-    pub fn set_vpc_configuration(
-        mut self,
-        input: std::option::Option<crate::types::VpcDestinationConfiguration>,
-    ) -> Self {
-        self.vpc_configuration = input;
-        self
+    pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::types::VpcDestinationConfiguration>) -> Self {
+        self.vpc_configuration = input; self
     }
     /// Consumes the builder and constructs a [`TopicRuleDestinationConfiguration`](crate::types::TopicRuleDestinationConfiguration).
     pub fn build(self) -> crate::types::TopicRuleDestinationConfiguration {
         crate::types::TopicRuleDestinationConfiguration {
-            http_url_configuration: self.http_url_configuration,
-            vpc_configuration: self.vpc_configuration,
+            http_url_configuration: self.http_url_configuration
+            ,
+            vpc_configuration: self.vpc_configuration
+            ,
         }
     }
 }
+

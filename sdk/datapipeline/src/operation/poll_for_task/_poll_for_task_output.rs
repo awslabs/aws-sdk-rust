@@ -3,7 +3,7 @@
 /// <p>Contains the output of PollForTask.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForTaskOutput {
+pub struct PollForTaskOutput  {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     #[doc(hidden)]
     pub task_object: std::option::Option<crate::types::TaskObject>,
@@ -11,15 +11,15 @@ pub struct PollForTaskOutput {
 }
 impl PollForTaskOutput {
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
-    pub fn task_object(&self) -> std::option::Option<&crate::types::TaskObject> {
+    pub fn task_object(&self) -> std::option::Option<& crate::types::TaskObject> {
         self.task_object.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PollForTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PollForTaskOutput {
     /// Creates a new builder-style object to manufacture [`PollForTaskOutput`](crate::operation::poll_for_task::PollForTaskOutput).
     pub fn builder() -> crate::operation::poll_for_task::builders::PollForTaskOutputBuilder {
@@ -42,23 +42,24 @@ impl PollForTaskOutputBuilder {
     }
     /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>, which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <code>ReportTaskProgress</code> and <code>SetTaskStatus</code>.</p>
     pub fn set_task_object(mut self, input: std::option::Option<crate::types::TaskObject>) -> Self {
-        self.task_object = input;
-        self
+        self.task_object = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PollForTaskOutput`](crate::operation::poll_for_task::PollForTaskOutput).
     pub fn build(self) -> crate::operation::poll_for_task::PollForTaskOutput {
         crate::operation::poll_for_task::PollForTaskOutput {
-            task_object: self.task_object,
+            task_object: self.task_object
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

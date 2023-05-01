@@ -3,7 +3,7 @@
 /// <p>Details of the response plan that are used when creating an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponsePlanSummary {
+pub struct ResponsePlanSummary  {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResponsePlanSummary {
 }
 impl ResponsePlanSummary {
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ResponsePlanSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ResponsePlanSummaryBuilder {
     }
     /// <p>The name of the response plan. This can't include spaces.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ResponsePlanSummaryBuilder {
     }
     /// <p>The human readable name of the response plan. This can include spaces.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input;
-        self
+        self.display_name = input; self
     }
     /// Consumes the builder and constructs a [`ResponsePlanSummary`](crate::types::ResponsePlanSummary).
     pub fn build(self) -> crate::types::ResponsePlanSummary {
         crate::types::ResponsePlanSummary {
-            arn: self.arn,
-            name: self.name,
-            display_name: self.display_name,
+            arn: self.arn
+            ,
+            name: self.name
+            ,
+            display_name: self.display_name
+            ,
         }
     }
 }
+

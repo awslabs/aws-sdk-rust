@@ -3,7 +3,7 @@
 /// <p>Details for an S3 bucket notification configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsS3BucketNotificationConfigurationDetail {
+pub struct AwsS3BucketNotificationConfigurationDetail  {
     /// <p>The list of events that trigger a notification.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,37 +13,35 @@ pub struct AwsS3BucketNotificationConfigurationDetail {
     /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the notification.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
-    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
-    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
-    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li> 
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li> 
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl AwsS3BucketNotificationConfigurationDetail {
     /// <p>The list of events that trigger a notification.</p>
-    pub fn events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn events(&self) -> std::option::Option<& [std::string::String]> {
         self.events.as_deref()
     }
     /// <p>The filters that determine which S3 buckets generate notifications.</p>
-    pub fn filter(
-        &self,
-    ) -> std::option::Option<&crate::types::AwsS3BucketNotificationConfigurationFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::AwsS3BucketNotificationConfigurationFilter> {
         self.filter.as_ref()
     }
     /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the notification.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
-    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
-    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
-    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li> 
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li> 
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -59,8 +57,7 @@ impl AwsS3BucketNotificationConfigurationDetail {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsS3BucketNotificationConfigurationDetailBuilder {
     pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) filter:
-        std::option::Option<crate::types::AwsS3BucketNotificationConfigurationFilter>,
+    pub(crate) filter: std::option::Option<crate::types::AwsS3BucketNotificationConfigurationFilter>,
     pub(crate) destination: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<std::string::String>,
 }
@@ -72,33 +69,22 @@ impl AwsS3BucketNotificationConfigurationDetailBuilder {
     /// <p>The list of events that trigger a notification.</p>
     pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input.into());
-        self.events = Some(v);
-        self
+                        v.push(input.into());
+                        self.events = Some(v);
+                        self
     }
     /// <p>The list of events that trigger a notification.</p>
-    pub fn set_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.events = input; self
     }
     /// <p>The filters that determine which S3 buckets generate notifications.</p>
-    pub fn filter(
-        mut self,
-        input: crate::types::AwsS3BucketNotificationConfigurationFilter,
-    ) -> Self {
+    pub fn filter(mut self, input: crate::types::AwsS3BucketNotificationConfigurationFilter) -> Self {
         self.filter = Some(input);
         self
     }
     /// <p>The filters that determine which S3 buckets generate notifications.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::AwsS3BucketNotificationConfigurationFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::AwsS3BucketNotificationConfigurationFilter>) -> Self {
+        self.filter = input; self
     }
     /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the notification.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,36 +93,39 @@ impl AwsS3BucketNotificationConfigurationDetailBuilder {
     }
     /// <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that generates the notification.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input;
-        self
+        self.destination = input; self
     }
-    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
-    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
-    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li> 
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li> 
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>LambdaConfiguration</code> </p> </li>
-    /// <li> <p> <code>QueueConfiguration</code> </p> </li>
-    /// <li> <p> <code>TopicConfiguration</code> </p> </li>
+    /// <p>Indicates the type of notification. Notifications can be generated using Lambda functions, Amazon SQS queues, or Amazon SNS topics, with corresponding valid values as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LambdaConfiguration</code> </p> </li> 
+    /// <li> <p> <code>QueueConfiguration</code> </p> </li> 
+    /// <li> <p> <code>TopicConfiguration</code> </p> </li> 
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketNotificationConfigurationDetail`](crate::types::AwsS3BucketNotificationConfigurationDetail).
     pub fn build(self) -> crate::types::AwsS3BucketNotificationConfigurationDetail {
         crate::types::AwsS3BucketNotificationConfigurationDetail {
-            events: self.events,
-            filter: self.filter,
-            destination: self.destination,
-            r#type: self.r#type,
+            events: self.events
+            ,
+            filter: self.filter
+            ,
+            destination: self.destination
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

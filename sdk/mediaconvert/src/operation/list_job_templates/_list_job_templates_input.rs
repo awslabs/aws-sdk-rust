@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobTemplatesInput {
+pub struct ListJobTemplatesInput  {
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
     #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListJobTemplatesInput {
 }
 impl ListJobTemplatesInput {
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
-    pub fn list_by(&self) -> std::option::Option<&crate::types::JobTemplateListBy> {
+    pub fn list_by(&self) -> std::option::Option<& crate::types::JobTemplateListBy> {
         self.list_by.as_ref()
     }
     /// Optional. Number of job templates, up to twenty, that will be returned at one time.
@@ -33,18 +33,17 @@ impl ListJobTemplatesInput {
         self.max_results
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-    pub fn order(&self) -> std::option::Option<&crate::types::Order> {
+    pub fn order(&self) -> std::option::Option<& crate::types::Order> {
         self.order.as_ref()
     }
 }
 impl ListJobTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
-    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder {
         crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder::default()
     }
 }
@@ -67,8 +66,7 @@ impl ListJobTemplatesInputBuilder {
     }
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
     pub fn list_by(mut self, input: crate::types::JobTemplateListBy) -> Self {
@@ -76,12 +74,8 @@ impl ListJobTemplatesInputBuilder {
         self
     }
     /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
-    pub fn set_list_by(
-        mut self,
-        input: std::option::Option<crate::types::JobTemplateListBy>,
-    ) -> Self {
-        self.list_by = input;
-        self
+    pub fn set_list_by(mut self, input: std::option::Option<crate::types::JobTemplateListBy>) -> Self {
+        self.list_by = input; self
     }
     /// Optional. Number of job templates, up to twenty, that will be returned at one time.
     pub fn max_results(mut self, input: i32) -> Self {
@@ -90,8 +84,7 @@ impl ListJobTemplatesInputBuilder {
     }
     /// Optional. Number of job templates, up to twenty, that will be returned at one time.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +93,7 @@ impl ListJobTemplatesInputBuilder {
     }
     /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
@@ -110,24 +102,24 @@ impl ListJobTemplatesInputBuilder {
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn set_order(mut self, input: std::option::Option<crate::types::Order>) -> Self {
-        self.order = input;
-        self
+        self.order = input; self
     }
     /// Consumes the builder and constructs a [`ListJobTemplatesInput`](crate::operation::list_job_templates::ListJobTemplatesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_job_templates::ListJobTemplatesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_job_templates::ListJobTemplatesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_job_templates::ListJobTemplatesInput {
-                category: self.category,
-                list_by: self.list_by,
-                max_results: self.max_results,
-                next_token: self.next_token,
-                order: self.order,
-            },
+                category: self.category
+                ,
+                list_by: self.list_by
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                order: self.order
+                ,
+            }
         )
     }
 }
+

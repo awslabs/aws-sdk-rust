@@ -3,16 +3,14 @@
 /// <p>Contains information about the configuration of a deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeDeploymentConfig {
+pub struct EdgeDeploymentConfig  {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
     #[doc(hidden)]
     pub failure_handling_policy: std::option::Option<crate::types::FailureHandlingPolicy>,
 }
 impl EdgeDeploymentConfig {
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
-    pub fn failure_handling_policy(
-        &self,
-    ) -> std::option::Option<&crate::types::FailureHandlingPolicy> {
+    pub fn failure_handling_policy(&self) -> std::option::Option<& crate::types::FailureHandlingPolicy> {
         self.failure_handling_policy.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl EdgeDeploymentConfigBuilder {
         self
     }
     /// <p>Toggle that determines whether to rollback to previous configuration if the current deployment fails. By default this is turned on. You may turn this off if you want to investigate the errors yourself.</p>
-    pub fn set_failure_handling_policy(
-        mut self,
-        input: std::option::Option<crate::types::FailureHandlingPolicy>,
-    ) -> Self {
-        self.failure_handling_policy = input;
-        self
+    pub fn set_failure_handling_policy(mut self, input: std::option::Option<crate::types::FailureHandlingPolicy>) -> Self {
+        self.failure_handling_policy = input; self
     }
     /// Consumes the builder and constructs a [`EdgeDeploymentConfig`](crate::types::EdgeDeploymentConfig).
     pub fn build(self) -> crate::types::EdgeDeploymentConfig {
         crate::types::EdgeDeploymentConfig {
-            failure_handling_policy: self.failure_handling_policy,
+            failure_handling_policy: self.failure_handling_policy
+            ,
         }
     }
 }
+

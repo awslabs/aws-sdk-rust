@@ -3,7 +3,7 @@
 /// <p>The request to sign out of all devices, as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminUserGlobalSignOutInput {
+pub struct AdminUserGlobalSignOutInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct AdminUserGlobalSignOutInput {
 }
 impl AdminUserGlobalSignOutInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for AdminUserGlobalSignOutInput {
+impl  std::fmt::Debug for AdminUserGlobalSignOutInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUserGlobalSignOutInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -31,9 +31,7 @@ impl std::fmt::Debug for AdminUserGlobalSignOutInput {
 }
 impl AdminUserGlobalSignOutInput {
     /// Creates a new builder-style object to manufacture [`AdminUserGlobalSignOutInput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput).
-    pub fn builder(
-    ) -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder {
         crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder::default()
     }
 }
@@ -53,8 +51,7 @@ impl AdminUserGlobalSignOutInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,21 +60,17 @@ impl AdminUserGlobalSignOutInputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// Consumes the builder and constructs a [`AdminUserGlobalSignOutInput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+            }
         )
     }
 }
@@ -89,3 +82,4 @@ impl std::fmt::Debug for AdminUserGlobalSignOutInputBuilder {
         formatter.finish()
     }
 }
+

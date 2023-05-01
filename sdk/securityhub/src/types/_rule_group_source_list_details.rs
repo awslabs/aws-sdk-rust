@@ -3,7 +3,7 @@
 /// <p>Stateful inspection criteria for a domain list rule group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupSourceListDetails {
+pub struct RuleGroupSourceListDetails  {
     /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
     #[doc(hidden)]
     pub generated_rules_type: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct RuleGroupSourceListDetails {
 }
 impl RuleGroupSourceListDetails {
     /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
-    pub fn generated_rules_type(&self) -> std::option::Option<&str> {
+    pub fn generated_rules_type(&self) -> std::option::Option<& str> {
         self.generated_rules_type.as_deref()
     }
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
-    pub fn target_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_types(&self) -> std::option::Option<& [std::string::String]> {
         self.target_types.as_deref()
     }
     /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
-    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn targets(&self) -> std::option::Option<& [std::string::String]> {
         self.targets.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl RuleGroupSourceListDetailsBuilder {
         self
     }
     /// <p>Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.</p>
-    pub fn set_generated_rules_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.generated_rules_type = input;
-        self
+    pub fn set_generated_rules_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.generated_rules_type = input; self
     }
     /// Appends an item to `target_types`.
     ///
@@ -64,17 +60,13 @@ impl RuleGroupSourceListDetailsBuilder {
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
     pub fn target_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_types.unwrap_or_default();
-        v.push(input.into());
-        self.target_types = Some(v);
-        self
+                        v.push(input.into());
+                        self.target_types = Some(v);
+                        self
     }
     /// <p>The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify <code>HTTP_HOST</code> for HTTP. You can specify either or both.</p>
-    pub fn set_target_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.target_types = input;
-        self
+    pub fn set_target_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.target_types = input; self
     }
     /// Appends an item to `targets`.
     ///
@@ -83,24 +75,24 @@ impl RuleGroupSourceListDetailsBuilder {
     /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
     pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input.into());
-        self.targets = Some(v);
-        self
+                        v.push(input.into());
+                        self.targets = Some(v);
+                        self
     }
     /// <p>The domains that you want to inspect for in your traffic flows. You can provide full domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code> matches all domains that end with <code>example.com</code>.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.targets = input; self
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceListDetails`](crate::types::RuleGroupSourceListDetails).
     pub fn build(self) -> crate::types::RuleGroupSourceListDetails {
         crate::types::RuleGroupSourceListDetails {
-            generated_rules_type: self.generated_rules_type,
-            target_types: self.target_types,
-            targets: self.targets,
+            generated_rules_type: self.generated_rules_type
+            ,
+            target_types: self.target_types
+            ,
+            targets: self.targets
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Represents the input of a <code>FlushApiCache</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlushApiCacheInput {
+pub struct FlushApiCacheInput  {
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
 }
 impl FlushApiCacheInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl FlushApiCacheInputBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// Consumes the builder and constructs a [`FlushApiCacheInput`](crate::operation::flush_api_cache::FlushApiCacheInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::flush_api_cache::FlushApiCacheInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::flush_api_cache::FlushApiCacheInput {
-            api_id: self.api_id,
-        })
+    pub fn build(self) -> Result<crate::operation::flush_api_cache::FlushApiCacheInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::flush_api_cache::FlushApiCacheInput {
+                api_id: self.api_id
+                ,
+            }
+        )
     }
 }
+

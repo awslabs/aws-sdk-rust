@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelZonalShiftInput {
+pub struct CancelZonalShiftInput  {
     /// <p>The internally-generated identifier of a zonal shift.</p>
     #[doc(hidden)]
     pub zonal_shift_id: std::option::Option<std::string::String>,
 }
 impl CancelZonalShiftInput {
     /// <p>The internally-generated identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(&self) -> std::option::Option<&str> {
+    pub fn zonal_shift_id(&self) -> std::option::Option<& str> {
         self.zonal_shift_id.as_deref()
     }
 }
 impl CancelZonalShiftInput {
     /// Creates a new builder-style object to manufacture [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
-    pub fn builder() -> crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder {
         crate::operation::cancel_zonal_shift::builders::CancelZonalShiftInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl CancelZonalShiftInputBuilder {
     }
     /// <p>The internally-generated identifier of a zonal shift.</p>
     pub fn set_zonal_shift_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.zonal_shift_id = input;
-        self
+        self.zonal_shift_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelZonalShiftInput`](crate::operation::cancel_zonal_shift::CancelZonalShiftInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_zonal_shift::CancelZonalShiftInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_zonal_shift::CancelZonalShiftInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_zonal_shift::CancelZonalShiftInput {
-                zonal_shift_id: self.zonal_shift_id,
-            },
+                zonal_shift_id: self.zonal_shift_id
+                ,
+            }
         )
     }
 }
+

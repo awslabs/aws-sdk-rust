@@ -3,14 +3,14 @@
 /// <p>The data source for the Autopilot job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlDataSource {
+pub struct AutoMlDataSource  {
     /// <p>The Amazon S3 location of the input data.</p>
     #[doc(hidden)]
     pub s3_data_source: std::option::Option<crate::types::AutoMls3DataSource>,
 }
 impl AutoMlDataSource {
     /// <p>The Amazon S3 location of the input data.</p>
-    pub fn s3_data_source(&self) -> std::option::Option<&crate::types::AutoMls3DataSource> {
+    pub fn s3_data_source(&self) -> std::option::Option<& crate::types::AutoMls3DataSource> {
         self.s3_data_source.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl AutoMlDataSourceBuilder {
         self
     }
     /// <p>The Amazon S3 location of the input data.</p>
-    pub fn set_s3_data_source(
-        mut self,
-        input: std::option::Option<crate::types::AutoMls3DataSource>,
-    ) -> Self {
-        self.s3_data_source = input;
-        self
+    pub fn set_s3_data_source(mut self, input: std::option::Option<crate::types::AutoMls3DataSource>) -> Self {
+        self.s3_data_source = input; self
     }
     /// Consumes the builder and constructs a [`AutoMlDataSource`](crate::types::AutoMlDataSource).
     pub fn build(self) -> crate::types::AutoMlDataSource {
         crate::types::AutoMlDataSource {
-            s3_data_source: self.s3_data_source,
+            s3_data_source: self.s3_data_source
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHiTsForQualificationTypeOutput {
+pub struct ListHiTsForQualificationTypeOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListHiTsForQualificationTypeOutput {
 }
 impl ListHiTsForQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
@@ -24,18 +24,18 @@ impl ListHiTsForQualificationTypeOutput {
         self.num_results
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn hi_ts(&self) -> std::option::Option<&[crate::types::Hit]> {
+    pub fn hi_ts(&self) -> std::option::Option<& [crate::types::Hit]> {
         self.hi_ts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListHiTsForQualificationTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListHiTsForQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`ListHiTsForQualificationTypeOutput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput).
-    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeOutputBuilder{
+    pub fn builder() -> crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeOutputBuilder {
         crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl ListHiTsForQualificationTypeOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     pub fn num_results(mut self, input: i32) -> Self {
@@ -67,8 +66,7 @@ impl ListHiTsForQualificationTypeOutputBuilder {
     }
     /// <p> The number of HITs on this page in the filtered results list, equivalent to the number of HITs being returned by this call. </p>
     pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// Appends an item to `hi_ts`.
     ///
@@ -77,37 +75,34 @@ impl ListHiTsForQualificationTypeOutputBuilder {
     /// <p> The list of HIT elements returned by the query.</p>
     pub fn hi_ts(mut self, input: crate::types::Hit) -> Self {
         let mut v = self.hi_ts.unwrap_or_default();
-        v.push(input);
-        self.hi_ts = Some(v);
-        self
+                        v.push(input);
+                        self.hi_ts = Some(v);
+                        self
     }
     /// <p> The list of HIT elements returned by the query.</p>
-    pub fn set_hi_ts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Hit>>,
-    ) -> Self {
-        self.hi_ts = input;
-        self
+    pub fn set_hi_ts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Hit>>) -> Self {
+        self.hi_ts = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListHiTsForQualificationTypeOutput`](crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput
-    {
+    pub fn build(self) -> crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput {
         crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput {
-            next_token: self.next_token,
-            num_results: self.num_results,
-            hi_ts: self.hi_ts,
+            next_token: self.next_token
+            ,
+            num_results: self.num_results
+            ,
+            hi_ts: self.hi_ts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

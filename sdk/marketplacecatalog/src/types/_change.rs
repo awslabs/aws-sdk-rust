@@ -3,7 +3,7 @@
 /// <p>An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Change {
+pub struct Change  {
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
     #[doc(hidden)]
     pub change_type: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Change {
 }
 impl Change {
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
-    pub fn change_type(&self) -> std::option::Option<&str> {
+    pub fn change_type(&self) -> std::option::Option<& str> {
         self.change_type.as_deref()
     }
     /// <p>The entity to be changed.</p>
-    pub fn entity(&self) -> std::option::Option<&crate::types::Entity> {
+    pub fn entity(&self) -> std::option::Option<& crate::types::Entity> {
         self.entity.as_ref()
     }
     /// <p>The tags associated with the change.</p>
-    pub fn entity_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn entity_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.entity_tags.as_deref()
     }
     /// <p>This object contains details specific to the change type of the requested change. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
     /// <p>Optional name for the change.</p>
-    pub fn change_name(&self) -> std::option::Option<&str> {
+    pub fn change_name(&self) -> std::option::Option<& str> {
         self.change_name.as_deref()
     }
 }
@@ -67,8 +67,7 @@ impl ChangeBuilder {
     }
     /// <p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
     pub fn set_change_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_type = input;
-        self
+        self.change_type = input; self
     }
     /// <p>The entity to be changed.</p>
     pub fn entity(mut self, input: crate::types::Entity) -> Self {
@@ -77,8 +76,7 @@ impl ChangeBuilder {
     }
     /// <p>The entity to be changed.</p>
     pub fn set_entity(mut self, input: std::option::Option<crate::types::Entity>) -> Self {
-        self.entity = input;
-        self
+        self.entity = input; self
     }
     /// Appends an item to `entity_tags`.
     ///
@@ -87,17 +85,13 @@ impl ChangeBuilder {
     /// <p>The tags associated with the change.</p>
     pub fn entity_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.entity_tags.unwrap_or_default();
-        v.push(input);
-        self.entity_tags = Some(v);
-        self
+                        v.push(input);
+                        self.entity_tags = Some(v);
+                        self
     }
     /// <p>The tags associated with the change.</p>
-    pub fn set_entity_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.entity_tags = input;
-        self
+    pub fn set_entity_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.entity_tags = input; self
     }
     /// <p>This object contains details specific to the change type of the requested change. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
     pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,8 +100,7 @@ impl ChangeBuilder {
     }
     /// <p>This object contains details specific to the change type of the requested change. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
     pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     /// <p>Optional name for the change.</p>
     pub fn change_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,17 +109,22 @@ impl ChangeBuilder {
     }
     /// <p>Optional name for the change.</p>
     pub fn set_change_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_name = input;
-        self
+        self.change_name = input; self
     }
     /// Consumes the builder and constructs a [`Change`](crate::types::Change).
     pub fn build(self) -> crate::types::Change {
         crate::types::Change {
-            change_type: self.change_type,
-            entity: self.entity,
-            entity_tags: self.entity_tags,
-            details: self.details,
-            change_name: self.change_name,
+            change_type: self.change_type
+            ,
+            entity: self.entity
+            ,
+            entity_tags: self.entity_tags
+            ,
+            details: self.details
+            ,
+            change_name: self.change_name
+            ,
         }
     }
 }
+

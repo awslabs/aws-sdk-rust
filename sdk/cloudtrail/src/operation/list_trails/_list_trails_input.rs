@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrailsInput {
+pub struct ListTrailsInput  {
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTrailsInput {
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl ListTrailsInputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListTrailsInput`](crate::operation::list_trails::ListTrailsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_trails::ListTrailsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_trails::ListTrailsInput {
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_trails::ListTrailsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_trails::ListTrailsInput {
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

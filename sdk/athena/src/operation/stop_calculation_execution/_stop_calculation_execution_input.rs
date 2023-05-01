@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopCalculationExecutionInput {
+pub struct StopCalculationExecutionInput  {
     /// <p>The calculation execution UUID.</p>
     #[doc(hidden)]
     pub calculation_execution_id: std::option::Option<std::string::String>,
 }
 impl StopCalculationExecutionInput {
     /// <p>The calculation execution UUID.</p>
-    pub fn calculation_execution_id(&self) -> std::option::Option<&str> {
+    pub fn calculation_execution_id(&self) -> std::option::Option<& str> {
         self.calculation_execution_id.as_deref()
     }
 }
 impl StopCalculationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopCalculationExecutionInput`](crate::operation::stop_calculation_execution::StopCalculationExecutionInput).
-    pub fn builder(
-    ) -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder {
         crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl StopCalculationExecutionInputBuilder {
         self
     }
     /// <p>The calculation execution UUID.</p>
-    pub fn set_calculation_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.calculation_execution_id = input;
-        self
+    pub fn set_calculation_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.calculation_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`StopCalculationExecutionInput`](crate::operation::stop_calculation_execution::StopCalculationExecutionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_calculation_execution::StopCalculationExecutionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::stop_calculation_execution::StopCalculationExecutionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::stop_calculation_execution::StopCalculationExecutionInput {
-                calculation_execution_id: self.calculation_execution_id,
-            },
+                calculation_execution_id: self.calculation_execution_id
+                ,
+            }
         )
     }
 }
+

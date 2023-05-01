@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateObjectOutput {
+pub struct CreateObjectOutput  {
     /// <p>The identifier that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateObjectOutput {
 }
 impl CreateObjectOutput {
     /// <p>The identifier that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateObjectOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateObjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateObjectOutput`](crate::operation::create_object::CreateObjectOutput).
     pub fn builder() -> crate::operation::create_object::builders::CreateObjectOutputBuilder {
@@ -40,27 +40,25 @@ impl CreateObjectOutputBuilder {
         self
     }
     /// <p>The identifier that is associated with the object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.object_identifier = input;
-        self
+    pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.object_identifier = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateObjectOutput`](crate::operation::create_object::CreateObjectOutput).
     pub fn build(self) -> crate::operation::create_object::CreateObjectOutput {
         crate::operation::create_object::CreateObjectOutput {
-            object_identifier: self.object_identifier,
+            object_identifier: self.object_identifier
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePresetInput {
+pub struct UpdatePresetInput  {
     /// The new category for the preset, if you are changing it.
     #[doc(hidden)]
     pub category: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdatePresetInput {
 }
 impl UpdatePresetInput {
     /// The new category for the preset, if you are changing it.
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> std::option::Option<& str> {
         self.category.as_deref()
     }
     /// The new description for the preset, if you are changing it.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The name of the preset you are modifying.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Settings for preset
-    pub fn settings(&self) -> std::option::Option<&crate::types::PresetSettings> {
+    pub fn settings(&self) -> std::option::Option<& crate::types::PresetSettings> {
         self.settings.as_ref()
     }
 }
@@ -58,8 +58,7 @@ impl UpdatePresetInputBuilder {
     }
     /// The new category for the preset, if you are changing it.
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input;
-        self
+        self.category = input; self
     }
     /// The new description for the preset, if you are changing it.
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl UpdatePresetInputBuilder {
     }
     /// The new description for the preset, if you are changing it.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// The name of the preset you are modifying.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +76,7 @@ impl UpdatePresetInputBuilder {
     }
     /// The name of the preset you are modifying.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Settings for preset
     pub fn settings(mut self, input: crate::types::PresetSettings) -> Self {
@@ -87,25 +84,23 @@ impl UpdatePresetInputBuilder {
         self
     }
     /// Settings for preset
-    pub fn set_settings(
-        mut self,
-        input: std::option::Option<crate::types::PresetSettings>,
-    ) -> Self {
-        self.settings = input;
-        self
+    pub fn set_settings(mut self, input: std::option::Option<crate::types::PresetSettings>) -> Self {
+        self.settings = input; self
     }
     /// Consumes the builder and constructs a [`UpdatePresetInput`](crate::operation::update_preset::UpdatePresetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_preset::UpdatePresetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_preset::UpdatePresetInput {
-            category: self.category,
-            description: self.description,
-            name: self.name,
-            settings: self.settings,
-        })
+    pub fn build(self) -> Result<crate::operation::update_preset::UpdatePresetInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_preset::UpdatePresetInput {
+                category: self.category
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                settings: self.settings
+                ,
+            }
+        )
     }
 }
+

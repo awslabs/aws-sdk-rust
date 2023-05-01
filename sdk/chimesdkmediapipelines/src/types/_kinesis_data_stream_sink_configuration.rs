@@ -3,18 +3,18 @@
 /// <p>A structure that contains the configuration settings for a Kinesis Data Stream sink.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct KinesisDataStreamSinkConfiguration {
-    /// <p>The URL of the sink, <a href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+pub struct KinesisDataStreamSinkConfiguration  {
+    /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub insights_target: std::option::Option<std::string::String>,
 }
 impl KinesisDataStreamSinkConfiguration {
-    /// <p>The URL of the sink, <a href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
-    pub fn insights_target(&self) -> std::option::Option<&str> {
+    /// <p>The ARN of the sink.</p>
+    pub fn insights_target(&self) -> std::option::Option<& str> {
         self.insights_target.as_deref()
     }
 }
-impl std::fmt::Debug for KinesisDataStreamSinkConfiguration {
+impl  std::fmt::Debug for KinesisDataStreamSinkConfiguration  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("KinesisDataStreamSinkConfiguration");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
@@ -35,20 +35,20 @@ pub struct KinesisDataStreamSinkConfigurationBuilder {
     pub(crate) insights_target: std::option::Option<std::string::String>,
 }
 impl KinesisDataStreamSinkConfigurationBuilder {
-    /// <p>The URL of the sink, <a href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+    /// <p>The ARN of the sink.</p>
     pub fn insights_target(mut self, input: impl Into<std::string::String>) -> Self {
         self.insights_target = Some(input.into());
         self
     }
-    /// <p>The URL of the sink, <a href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+    /// <p>The ARN of the sink.</p>
     pub fn set_insights_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insights_target = input;
-        self
+        self.insights_target = input; self
     }
     /// Consumes the builder and constructs a [`KinesisDataStreamSinkConfiguration`](crate::types::KinesisDataStreamSinkConfiguration).
     pub fn build(self) -> crate::types::KinesisDataStreamSinkConfiguration {
         crate::types::KinesisDataStreamSinkConfiguration {
-            insights_target: self.insights_target,
+            insights_target: self.insights_target
+            ,
         }
     }
 }
@@ -59,3 +59,4 @@ impl std::fmt::Debug for KinesisDataStreamSinkConfigurationBuilder {
         formatter.finish()
     }
 }
+

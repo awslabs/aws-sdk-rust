@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTrunkInterfaceInput {
+pub struct DisassociateTrunkInterfaceInput  {
     /// <p>The ID of the association</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DisassociateTrunkInterfaceInput {
 }
 impl DisassociateTrunkInterfaceInput {
     /// <p>The ID of the association</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,7 @@ impl DisassociateTrunkInterfaceInput {
 }
 impl DisassociateTrunkInterfaceInput {
     /// Creates a new builder-style object to manufacture [`DisassociateTrunkInterfaceInput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput).
-    pub fn builder() -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder {
         crate::operation::disassociate_trunk_interface::builders::DisassociateTrunkInterfaceInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl DisassociateTrunkInterfaceInputBuilder {
     }
     /// <p>The ID of the association</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl DisassociateTrunkInterfaceInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -70,22 +68,20 @@ impl DisassociateTrunkInterfaceInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateTrunkInterfaceInput`](crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceInput {
-                association_id: self.association_id,
-                client_token: self.client_token,
-                dry_run: self.dry_run,
-            },
+                association_id: self.association_id
+                ,
+                client_token: self.client_token
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

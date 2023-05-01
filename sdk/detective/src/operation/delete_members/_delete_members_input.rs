@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMembersInput {
+pub struct DeleteMembersInput  {
     /// <p>The ARN of the behavior graph to remove members from.</p>
     #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteMembersInput {
 }
 impl DeleteMembersInput {
     /// <p>The ARN of the behavior graph to remove members from.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.account_ids.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteMembersInputBuilder {
     }
     /// <p>The ARN of the behavior graph to remove members from.</p>
     pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.graph_arn = input;
-        self
+        self.graph_arn = input; self
     }
     /// Appends an item to `account_ids`.
     ///
@@ -52,28 +51,24 @@ impl DeleteMembersInputBuilder {
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.account_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.account_ids = Some(v);
+                        self
     }
     /// <p>The list of Amazon Web Services account identifiers for the member accounts to remove from the behavior graph. You can remove up to 50 member accounts at a time.</p>
-    pub fn set_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.account_ids = input;
-        self
+    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.account_ids = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMembersInput`](crate::operation::delete_members::DeleteMembersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_members::DeleteMembersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_members::DeleteMembersInput {
-            graph_arn: self.graph_arn,
-            account_ids: self.account_ids,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_members::DeleteMembersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_members::DeleteMembersInput {
+                graph_arn: self.graph_arn
+                ,
+                account_ids: self.account_ids
+                ,
+            }
+        )
     }
 }
+

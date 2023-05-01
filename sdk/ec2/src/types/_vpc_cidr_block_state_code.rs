@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vpccidrblockstatecode = unimplemented!();
 /// match vpccidrblockstatecode {
@@ -34,22 +34,14 @@
 /// Specifically, when `vpccidrblockstatecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcCidrBlockStateCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VpcCidrBlockStateCode {
     #[allow(missing_docs)] // documentation missing in model
     Associated,
@@ -64,57 +56,49 @@ pub enum VpcCidrBlockStateCode {
     #[allow(missing_docs)] // documentation missing in model
     Failing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VpcCidrBlockStateCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "associated" => VpcCidrBlockStateCode::Associated,
-            "associating" => VpcCidrBlockStateCode::Associating,
-            "disassociated" => VpcCidrBlockStateCode::Disassociated,
-            "disassociating" => VpcCidrBlockStateCode::Disassociating,
-            "failed" => VpcCidrBlockStateCode::Failed,
-            "failing" => VpcCidrBlockStateCode::Failing,
-            other => VpcCidrBlockStateCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "associated" => VpcCidrBlockStateCode::Associated,
+"associating" => VpcCidrBlockStateCode::Associating,
+"disassociated" => VpcCidrBlockStateCode::Disassociated,
+"disassociating" => VpcCidrBlockStateCode::Disassociating,
+"failed" => VpcCidrBlockStateCode::Failed,
+"failing" => VpcCidrBlockStateCode::Failing,
+other => VpcCidrBlockStateCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for VpcCidrBlockStateCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VpcCidrBlockStateCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VpcCidrBlockStateCode::from(s))
+                }
+            }
 impl VpcCidrBlockStateCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            VpcCidrBlockStateCode::Associated => "associated",
-            VpcCidrBlockStateCode::Associating => "associating",
-            VpcCidrBlockStateCode::Disassociated => "disassociated",
-            VpcCidrBlockStateCode::Disassociating => "disassociating",
-            VpcCidrBlockStateCode::Failed => "failed",
-            VpcCidrBlockStateCode::Failing => "failing",
-            VpcCidrBlockStateCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "associated",
-            "associating",
-            "disassociated",
-            "disassociating",
-            "failed",
-            "failing",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    VpcCidrBlockStateCode::Associated => "associated",
+    VpcCidrBlockStateCode::Associating => "associating",
+    VpcCidrBlockStateCode::Disassociated => "disassociated",
+    VpcCidrBlockStateCode::Disassociating => "disassociating",
+    VpcCidrBlockStateCode::Failed => "failed",
+    VpcCidrBlockStateCode::Failing => "failing",
+    VpcCidrBlockStateCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["associated", "associating", "disassociated", "disassociating", "failed", "failing"]
+                }
+            }
 impl AsRef<str> for VpcCidrBlockStateCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

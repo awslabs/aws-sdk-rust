@@ -3,7 +3,7 @@
 /// <p>The summary of the step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateStepSummary {
+pub struct TemplateStepSummary  {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct TemplateStepSummary {
 }
 impl TemplateStepSummary {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> std::option::Option<&crate::types::StepActionType> {
+    pub fn step_action_type(&self) -> std::option::Option<& crate::types::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::types::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::types::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The owner of the step.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::types::Owner> {
+    pub fn owner(&self) -> std::option::Option<& crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
 }
@@ -99,8 +99,7 @@ impl TemplateStepSummaryBuilder {
     }
     /// <p>The ID of the step.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +108,7 @@ impl TemplateStepSummaryBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.step_group_id = input;
-        self
+        self.step_group_id = input; self
     }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +117,7 @@ impl TemplateStepSummaryBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +126,7 @@ impl TemplateStepSummaryBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
@@ -138,12 +134,8 @@ impl TemplateStepSummaryBuilder {
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn set_step_action_type(
-        mut self,
-        input: std::option::Option<crate::types::StepActionType>,
-    ) -> Self {
-        self.step_action_type = input;
-        self
+    pub fn set_step_action_type(mut self, input: std::option::Option<crate::types::StepActionType>) -> Self {
+        self.step_action_type = input; self
     }
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
@@ -152,8 +144,7 @@ impl TemplateStepSummaryBuilder {
     }
     /// <p>The servers on which to run the script.</p>
     pub fn set_target_type(mut self, input: std::option::Option<crate::types::TargetType>) -> Self {
-        self.target_type = input;
-        self
+        self.target_type = input; self
     }
     /// <p>The owner of the step.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
@@ -162,8 +153,7 @@ impl TemplateStepSummaryBuilder {
     }
     /// <p>The owner of the step.</p>
     pub fn set_owner(mut self, input: std::option::Option<crate::types::Owner>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// Appends an item to `previous`.
     ///
@@ -172,17 +162,13 @@ impl TemplateStepSummaryBuilder {
     /// <p>The previous step.</p>
     pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
-        v.push(input.into());
-        self.previous = Some(v);
-        self
+                        v.push(input.into());
+                        self.previous = Some(v);
+                        self
     }
     /// <p>The previous step.</p>
-    pub fn set_previous(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.previous = input;
-        self
+    pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.previous = input; self
     }
     /// Appends an item to `next`.
     ///
@@ -191,30 +177,36 @@ impl TemplateStepSummaryBuilder {
     /// <p>The next step.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
-        v.push(input.into());
-        self.next = Some(v);
-        self
+                        v.push(input.into());
+                        self.next = Some(v);
+                        self
     }
     /// <p>The next step.</p>
-    pub fn set_next(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.next = input;
-        self
+    pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.next = input; self
     }
     /// Consumes the builder and constructs a [`TemplateStepSummary`](crate::types::TemplateStepSummary).
     pub fn build(self) -> crate::types::TemplateStepSummary {
         crate::types::TemplateStepSummary {
-            id: self.id,
-            step_group_id: self.step_group_id,
-            template_id: self.template_id,
-            name: self.name,
-            step_action_type: self.step_action_type,
-            target_type: self.target_type,
-            owner: self.owner,
-            previous: self.previous,
-            next: self.next,
+            id: self.id
+            ,
+            step_group_id: self.step_group_id
+            ,
+            template_id: self.template_id
+            ,
+            name: self.name
+            ,
+            step_action_type: self.step_action_type
+            ,
+            target_type: self.target_type
+            ,
+            owner: self.owner
+            ,
+            previous: self.previous
+            ,
+            next: self.next
+            ,
         }
     }
 }
+

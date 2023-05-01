@@ -3,25 +3,25 @@
 /// <p>Identifies a version of code that App Runner refers to within a source code repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceCodeVersion {
-    /// <p>The type of version identifier.</p>
+pub struct SourceCodeVersion  {
+    /// <p>The type of version identifier.</p> 
     /// <p>For a git-based repository, branches represent versions.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SourceCodeVersionType>,
-    /// <p>A source code version.</p>
+    /// <p>A source code version.</p> 
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SourceCodeVersion {
-    /// <p>The type of version identifier.</p>
+    /// <p>The type of version identifier.</p> 
     /// <p>For a git-based repository, branches represent versions.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SourceCodeVersionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::SourceCodeVersionType> {
         self.r#type.as_ref()
     }
-    /// <p>A source code version.</p>
+    /// <p>A source code version.</p> 
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -40,38 +40,36 @@ pub struct SourceCodeVersionBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl SourceCodeVersionBuilder {
-    /// <p>The type of version identifier.</p>
+    /// <p>The type of version identifier.</p> 
     /// <p>For a git-based repository, branches represent versions.</p>
     pub fn r#type(mut self, input: crate::types::SourceCodeVersionType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of version identifier.</p>
+    /// <p>The type of version identifier.</p> 
     /// <p>For a git-based repository, branches represent versions.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::SourceCodeVersionType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::SourceCodeVersionType>) -> Self {
+        self.r#type = input; self
     }
-    /// <p>A source code version.</p>
+    /// <p>A source code version.</p> 
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>A source code version.</p>
+    /// <p>A source code version.</p> 
     /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`SourceCodeVersion`](crate::types::SourceCodeVersion).
     pub fn build(self) -> crate::types::SourceCodeVersion {
         crate::types::SourceCodeVersion {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Configuration that controls the parallelism of the pipeline. By default, the parallelism configuration specified applies to all executions of the pipeline unless overridden.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParallelismConfiguration {
+pub struct ParallelismConfiguration  {
     /// <p>The max number of steps that can be executed in parallel. </p>
     #[doc(hidden)]
     pub max_parallel_execution_steps: i32,
@@ -35,13 +35,15 @@ impl ParallelismConfigurationBuilder {
     }
     /// <p>The max number of steps that can be executed in parallel. </p>
     pub fn set_max_parallel_execution_steps(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_parallel_execution_steps = input;
-        self
+        self.max_parallel_execution_steps = input; self
     }
     /// Consumes the builder and constructs a [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
     pub fn build(self) -> crate::types::ParallelismConfiguration {
         crate::types::ParallelismConfiguration {
-            max_parallel_execution_steps: self.max_parallel_execution_steps.unwrap_or_default(),
+            max_parallel_execution_steps: self.max_parallel_execution_steps
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

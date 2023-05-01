@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessesOutput {
+pub struct ListAccessesOutput  {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct ListAccessesOutput {
 }
 impl ListAccessesOutput {
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> std::option::Option<& str> {
         self.server_id.as_deref()
     }
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn accesses(&self) -> std::option::Option<&[crate::types::ListedAccess]> {
+    pub fn accesses(&self) -> std::option::Option<& [crate::types::ListedAccess]> {
         self.accesses.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccessesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListAccessesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput).
     pub fn builder() -> crate::operation::list_accesses::builders::ListAccessesOutputBuilder {
@@ -57,8 +57,7 @@ impl ListAccessesOutputBuilder {
     }
     /// <p>When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional accesses.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +66,7 @@ impl ListAccessesOutputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input;
-        self
+        self.server_id = input; self
     }
     /// Appends an item to `accesses`.
     ///
@@ -77,34 +75,34 @@ impl ListAccessesOutputBuilder {
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
     pub fn accesses(mut self, input: crate::types::ListedAccess) -> Self {
         let mut v = self.accesses.unwrap_or_default();
-        v.push(input);
-        self.accesses = Some(v);
-        self
+                        v.push(input);
+                        self.accesses = Some(v);
+                        self
     }
     /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you specify.</p>
-    pub fn set_accesses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ListedAccess>>,
-    ) -> Self {
-        self.accesses = input;
-        self
+    pub fn set_accesses(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListedAccess>>) -> Self {
+        self.accesses = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListAccessesOutput`](crate::operation::list_accesses::ListAccessesOutput).
     pub fn build(self) -> crate::operation::list_accesses::ListAccessesOutput {
         crate::operation::list_accesses::ListAccessesOutput {
-            next_token: self.next_token,
-            server_id: self.server_id,
-            accesses: self.accesses,
+            next_token: self.next_token
+            ,
+            server_id: self.server_id
+            ,
+            accesses: self.accesses
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProblemObservationsOutput {
+pub struct DescribeProblemObservationsOutput  {
     /// <p>Observations related to the problem.</p>
     #[doc(hidden)]
     pub related_observations: std::option::Option<crate::types::RelatedObservations>,
@@ -10,18 +10,18 @@ pub struct DescribeProblemObservationsOutput {
 }
 impl DescribeProblemObservationsOutput {
     /// <p>Observations related to the problem.</p>
-    pub fn related_observations(&self) -> std::option::Option<&crate::types::RelatedObservations> {
+    pub fn related_observations(&self) -> std::option::Option<& crate::types::RelatedObservations> {
         self.related_observations.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProblemObservationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeProblemObservationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProblemObservationsOutput`](crate::operation::describe_problem_observations::DescribeProblemObservationsOutput).
-    pub fn builder() -> crate::operation::describe_problem_observations::builders::DescribeProblemObservationsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_problem_observations::builders::DescribeProblemObservationsOutputBuilder {
         crate::operation::describe_problem_observations::builders::DescribeProblemObservationsOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl DescribeProblemObservationsOutputBuilder {
         self
     }
     /// <p>Observations related to the problem.</p>
-    pub fn set_related_observations(
-        mut self,
-        input: std::option::Option<crate::types::RelatedObservations>,
-    ) -> Self {
-        self.related_observations = input;
-        self
+    pub fn set_related_observations(mut self, input: std::option::Option<crate::types::RelatedObservations>) -> Self {
+        self.related_observations = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeProblemObservationsOutput`](crate::operation::describe_problem_observations::DescribeProblemObservationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_problem_observations::DescribeProblemObservationsOutput {
+    pub fn build(self) -> crate::operation::describe_problem_observations::DescribeProblemObservationsOutput {
         crate::operation::describe_problem_observations::DescribeProblemObservationsOutput {
-            related_observations: self.related_observations,
+            related_observations: self.related_observations
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

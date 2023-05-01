@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyManagedPrefixListInput {
+pub struct ModifyManagedPrefixListInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -21,7 +21,7 @@ pub struct ModifyManagedPrefixListInput {
     /// <p>One or more entries to remove from the prefix list.</p>
     #[doc(hidden)]
     pub remove_entries: std::option::Option<std::vec::Vec<crate::types::RemovePrefixListEntry>>,
-    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
+    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p> 
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
     #[doc(hidden)]
     pub max_entries: std::option::Option<i32>,
@@ -32,7 +32,7 @@ impl ModifyManagedPrefixListInput {
         self.dry_run
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The current version of the prefix list.</p>
@@ -40,18 +40,18 @@ impl ModifyManagedPrefixListInput {
         self.current_version
     }
     /// <p>A name for the prefix list.</p>
-    pub fn prefix_list_name(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_name(&self) -> std::option::Option<& str> {
         self.prefix_list_name.as_deref()
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn add_entries(&self) -> std::option::Option<&[crate::types::AddPrefixListEntry]> {
+    pub fn add_entries(&self) -> std::option::Option<& [crate::types::AddPrefixListEntry]> {
         self.add_entries.as_deref()
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn remove_entries(&self) -> std::option::Option<&[crate::types::RemovePrefixListEntry]> {
+    pub fn remove_entries(&self) -> std::option::Option<& [crate::types::RemovePrefixListEntry]> {
         self.remove_entries.as_deref()
     }
-    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
+    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p> 
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
     pub fn max_entries(&self) -> std::option::Option<i32> {
         self.max_entries
@@ -59,9 +59,7 @@ impl ModifyManagedPrefixListInput {
 }
 impl ModifyManagedPrefixListInput {
     /// Creates a new builder-style object to manufacture [`ModifyManagedPrefixListInput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput).
-    pub fn builder(
-    ) -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder
-    {
+    pub fn builder() -> crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder {
         crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder::default()
     }
 }
@@ -75,8 +73,7 @@ pub struct ModifyManagedPrefixListInputBuilder {
     pub(crate) current_version: std::option::Option<i64>,
     pub(crate) prefix_list_name: std::option::Option<std::string::String>,
     pub(crate) add_entries: std::option::Option<std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    pub(crate) remove_entries:
-        std::option::Option<std::vec::Vec<crate::types::RemovePrefixListEntry>>,
+    pub(crate) remove_entries: std::option::Option<std::vec::Vec<crate::types::RemovePrefixListEntry>>,
     pub(crate) max_entries: std::option::Option<i32>,
 }
 impl ModifyManagedPrefixListInputBuilder {
@@ -87,8 +84,7 @@ impl ModifyManagedPrefixListInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +93,7 @@ impl ModifyManagedPrefixListInputBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// <p>The current version of the prefix list.</p>
     pub fn current_version(mut self, input: i64) -> Self {
@@ -107,8 +102,7 @@ impl ModifyManagedPrefixListInputBuilder {
     }
     /// <p>The current version of the prefix list.</p>
     pub fn set_current_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.current_version = input;
-        self
+        self.current_version = input; self
     }
     /// <p>A name for the prefix list.</p>
     pub fn prefix_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +111,7 @@ impl ModifyManagedPrefixListInputBuilder {
     }
     /// <p>A name for the prefix list.</p>
     pub fn set_prefix_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_name = input;
-        self
+        self.prefix_list_name = input; self
     }
     /// Appends an item to `add_entries`.
     ///
@@ -127,17 +120,13 @@ impl ModifyManagedPrefixListInputBuilder {
     /// <p>One or more entries to add to the prefix list.</p>
     pub fn add_entries(mut self, input: crate::types::AddPrefixListEntry) -> Self {
         let mut v = self.add_entries.unwrap_or_default();
-        v.push(input);
-        self.add_entries = Some(v);
-        self
+                        v.push(input);
+                        self.add_entries = Some(v);
+                        self
     }
     /// <p>One or more entries to add to the prefix list.</p>
-    pub fn set_add_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddPrefixListEntry>>,
-    ) -> Self {
-        self.add_entries = input;
-        self
+    pub fn set_add_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddPrefixListEntry>>) -> Self {
+        self.add_entries = input; self
     }
     /// Appends an item to `remove_entries`.
     ///
@@ -146,47 +135,45 @@ impl ModifyManagedPrefixListInputBuilder {
     /// <p>One or more entries to remove from the prefix list.</p>
     pub fn remove_entries(mut self, input: crate::types::RemovePrefixListEntry) -> Self {
         let mut v = self.remove_entries.unwrap_or_default();
-        v.push(input);
-        self.remove_entries = Some(v);
-        self
+                        v.push(input);
+                        self.remove_entries = Some(v);
+                        self
     }
     /// <p>One or more entries to remove from the prefix list.</p>
-    pub fn set_remove_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RemovePrefixListEntry>>,
-    ) -> Self {
-        self.remove_entries = input;
-        self
+    pub fn set_remove_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::RemovePrefixListEntry>>) -> Self {
+        self.remove_entries = input; self
     }
-    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
+    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p> 
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
     pub fn max_entries(mut self, input: i32) -> Self {
         self.max_entries = Some(input);
         self
     }
-    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
+    /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p> 
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
     pub fn set_max_entries(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_entries = input;
-        self
+        self.max_entries = input; self
     }
     /// Consumes the builder and constructs a [`ModifyManagedPrefixListInput`](crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListInput {
-                dry_run: self.dry_run,
-                prefix_list_id: self.prefix_list_id,
-                current_version: self.current_version,
-                prefix_list_name: self.prefix_list_name,
-                add_entries: self.add_entries,
-                remove_entries: self.remove_entries,
-                max_entries: self.max_entries,
-            },
+                dry_run: self.dry_run
+                ,
+                prefix_list_id: self.prefix_list_id
+                ,
+                current_version: self.current_version
+                ,
+                prefix_list_name: self.prefix_list_name
+                ,
+                add_entries: self.add_entries
+                ,
+                remove_entries: self.remove_entries
+                ,
+                max_entries: self.max_entries
+                ,
+            }
         )
     }
 }
+

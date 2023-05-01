@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDiscoveredResourcesInput {
+pub struct ListDiscoveredResourcesInput  {
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
     #[doc(hidden)]
     pub member_account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,11 +18,11 @@ pub struct ListDiscoveredResourcesInput {
 }
 impl ListDiscoveredResourcesInput {
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn member_account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn member_account_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.member_account_ids.as_deref()
     }
     /// <p>The type of resources to discover.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -30,15 +30,13 @@ impl ListDiscoveredResourcesInput {
         self.max_results
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl ListDiscoveredResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder::default()
     }
 }
@@ -60,17 +58,13 @@ impl ListDiscoveredResourcesInputBuilder {
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
     pub fn member_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.member_account_ids.unwrap_or_default();
-        v.push(input.into());
-        self.member_account_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.member_account_ids = Some(v);
+                        self
     }
     /// <p>The Amazon Web Services account IDs to discover resources in. Only one account is supported per request. The account must be a member of your organization.</p>
-    pub fn set_member_account_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.member_account_ids = input;
-        self
+    pub fn set_member_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.member_account_ids = input; self
     }
     /// <p>The type of resources to discover.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +73,7 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>The type of resources to discover.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input;
-        self
+        self.resource_type = input; self
     }
     /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,8 +82,7 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,23 +91,22 @@ impl ListDiscoveredResourcesInputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_discovered_resources::ListDiscoveredResourcesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
-                member_account_ids: self.member_account_ids,
-                resource_type: self.resource_type,
-                max_results: self.max_results,
-                next_token: self.next_token,
-            },
+                member_account_ids: self.member_account_ids
+                ,
+                resource_type: self.resource_type
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
         )
     }
 }
+

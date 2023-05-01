@@ -3,7 +3,7 @@
 /// <p>A structure that describes certain columns on certain rows.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCellsFilter {
+pub struct DataCellsFilter  {
     /// <p>The ID of the catalog to which the table belongs.</p>
     #[doc(hidden)]
     pub table_catalog_id: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct DataCellsFilter {
     /// <p>A list of column names.</p>
     #[doc(hidden)]
     pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A wildcard with exclusions.</p>
+    /// <p>A wildcard with exclusions.</p> 
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     #[doc(hidden)]
     pub column_wildcard: std::option::Option<crate::types::ColumnWildcard>,
@@ -32,36 +32,36 @@ pub struct DataCellsFilter {
 }
 impl DataCellsFilter {
     /// <p>The ID of the catalog to which the table belongs.</p>
-    pub fn table_catalog_id(&self) -> std::option::Option<&str> {
+    pub fn table_catalog_id(&self) -> std::option::Option<& str> {
         self.table_catalog_id.as_deref()
     }
     /// <p>A database in the Glue Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>A table in the database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The name given by the user to the data filter cell.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A PartiQL predicate.</p>
-    pub fn row_filter(&self) -> std::option::Option<&crate::types::RowFilter> {
+    pub fn row_filter(&self) -> std::option::Option<& crate::types::RowFilter> {
         self.row_filter.as_ref()
     }
     /// <p>A list of column names.</p>
-    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_names(&self) -> std::option::Option<& [std::string::String]> {
         self.column_names.as_deref()
     }
-    /// <p>A wildcard with exclusions.</p>
+    /// <p>A wildcard with exclusions.</p> 
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
-    pub fn column_wildcard(&self) -> std::option::Option<&crate::types::ColumnWildcard> {
+    pub fn column_wildcard(&self) -> std::option::Option<& crate::types::ColumnWildcard> {
         self.column_wildcard.as_ref()
     }
     /// <p>The ID of the data cells filter version.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
 }
@@ -93,8 +93,7 @@ impl DataCellsFilterBuilder {
     }
     /// <p>The ID of the catalog to which the table belongs.</p>
     pub fn set_table_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_catalog_id = input;
-        self
+        self.table_catalog_id = input; self
     }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +102,7 @@ impl DataCellsFilterBuilder {
     }
     /// <p>A database in the Glue Data Catalog.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>A table in the database.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +111,7 @@ impl DataCellsFilterBuilder {
     }
     /// <p>A table in the database.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +120,7 @@ impl DataCellsFilterBuilder {
     }
     /// <p>The name given by the user to the data filter cell.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A PartiQL predicate.</p>
     pub fn row_filter(mut self, input: crate::types::RowFilter) -> Self {
@@ -133,8 +129,7 @@ impl DataCellsFilterBuilder {
     }
     /// <p>A PartiQL predicate.</p>
     pub fn set_row_filter(mut self, input: std::option::Option<crate::types::RowFilter>) -> Self {
-        self.row_filter = input;
-        self
+        self.row_filter = input; self
     }
     /// Appends an item to `column_names`.
     ///
@@ -143,32 +138,24 @@ impl DataCellsFilterBuilder {
     /// <p>A list of column names.</p>
     pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.column_names.unwrap_or_default();
-        v.push(input.into());
-        self.column_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.column_names = Some(v);
+                        self
     }
     /// <p>A list of column names.</p>
-    pub fn set_column_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.column_names = input;
-        self
+    pub fn set_column_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.column_names = input; self
     }
-    /// <p>A wildcard with exclusions.</p>
+    /// <p>A wildcard with exclusions.</p> 
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
     pub fn column_wildcard(mut self, input: crate::types::ColumnWildcard) -> Self {
         self.column_wildcard = Some(input);
         self
     }
-    /// <p>A wildcard with exclusions.</p>
+    /// <p>A wildcard with exclusions.</p> 
     /// <p>You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>. </p>
-    pub fn set_column_wildcard(
-        mut self,
-        input: std::option::Option<crate::types::ColumnWildcard>,
-    ) -> Self {
-        self.column_wildcard = input;
-        self
+    pub fn set_column_wildcard(mut self, input: std::option::Option<crate::types::ColumnWildcard>) -> Self {
+        self.column_wildcard = input; self
     }
     /// <p>The ID of the data cells filter version.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,20 +164,28 @@ impl DataCellsFilterBuilder {
     }
     /// <p>The ID of the data cells filter version.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Consumes the builder and constructs a [`DataCellsFilter`](crate::types::DataCellsFilter).
     pub fn build(self) -> crate::types::DataCellsFilter {
         crate::types::DataCellsFilter {
-            table_catalog_id: self.table_catalog_id,
-            database_name: self.database_name,
-            table_name: self.table_name,
-            name: self.name,
-            row_filter: self.row_filter,
-            column_names: self.column_names,
-            column_wildcard: self.column_wildcard,
-            version_id: self.version_id,
+            table_catalog_id: self.table_catalog_id
+            ,
+            database_name: self.database_name
+            ,
+            table_name: self.table_name
+            ,
+            name: self.name
+            ,
+            row_filter: self.row_filter
+            ,
+            column_names: self.column_names
+            ,
+            column_wildcard: self.column_wildcard
+            ,
+            version_id: self.version_id
+            ,
         }
     }
 }
+

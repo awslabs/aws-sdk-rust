@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionHistoriesInput {
+pub struct DescribeBudgetActionHistoriesInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct DescribeBudgetActionHistoriesInput {
 }
 impl DescribeBudgetActionHistoriesInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::TimePeriod> {
+    pub fn time_period(&self) -> std::option::Option<& crate::types::TimePeriod> {
         self.time_period.as_ref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -44,13 +44,13 @@ impl DescribeBudgetActionHistoriesInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeBudgetActionHistoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionHistoriesInput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput).
-    pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder {
         crate::operation::describe_budget_action_histories::builders::DescribeBudgetActionHistoriesInputBuilder::default()
     }
 }
@@ -74,8 +74,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_id = input;
-        self
+        self.action_id = input; self
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub fn time_period(mut self, input: crate::types::TimePeriod) -> Self {
@@ -104,8 +101,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
     }
     /// <p>The period of time that's covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
     pub fn set_time_period(mut self, input: std::option::Option<crate::types::TimePeriod>) -> Self {
-        self.time_period = input;
-        self
+        self.time_period = input; self
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -114,8 +110,7 @@ impl DescribeBudgetActionHistoriesInputBuilder {
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,16 +119,10 @@ impl DescribeBudgetActionHistoriesInputBuilder {
     }
     /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesInput`](crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_budget_action_histories::DescribeBudgetActionHistoriesInput {
                 account_id: self.account_id
@@ -152,3 +141,4 @@ impl DescribeBudgetActionHistoriesInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Eac3 Atmos Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Eac3AtmosSettings {
+pub struct Eac3AtmosSettings  {
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
     #[doc(hidden)]
     pub bitrate: f64,
@@ -32,7 +32,7 @@ impl Eac3AtmosSettings {
         self.bitrate
     }
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
-    pub fn coding_mode(&self) -> std::option::Option<&crate::types::Eac3AtmosCodingMode> {
+    pub fn coding_mode(&self) -> std::option::Option<& crate::types::Eac3AtmosCodingMode> {
         self.coding_mode.as_ref()
     }
     /// Sets the dialnorm for the output. Default 23.
@@ -40,11 +40,11 @@ impl Eac3AtmosSettings {
         self.dialnorm
     }
     /// Sets the Dolby dynamic range compression profile.
-    pub fn drc_line(&self) -> std::option::Option<&crate::types::Eac3AtmosDrcLine> {
+    pub fn drc_line(&self) -> std::option::Option<& crate::types::Eac3AtmosDrcLine> {
         self.drc_line.as_ref()
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
-    pub fn drc_rf(&self) -> std::option::Option<&crate::types::Eac3AtmosDrcRf> {
+    pub fn drc_rf(&self) -> std::option::Option<& crate::types::Eac3AtmosDrcRf> {
         self.drc_rf.as_ref()
     }
     /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
@@ -83,8 +83,7 @@ impl Eac3AtmosSettingsBuilder {
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode. // * @affectsRightSizing true
     pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
     pub fn coding_mode(mut self, input: crate::types::Eac3AtmosCodingMode) -> Self {
@@ -92,12 +91,8 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Dolby Digital Plus with Dolby Atmos coding mode. Determines number of channels.
-    pub fn set_coding_mode(
-        mut self,
-        input: std::option::Option<crate::types::Eac3AtmosCodingMode>,
-    ) -> Self {
-        self.coding_mode = input;
-        self
+    pub fn set_coding_mode(mut self, input: std::option::Option<crate::types::Eac3AtmosCodingMode>) -> Self {
+        self.coding_mode = input; self
     }
     /// Sets the dialnorm for the output. Default 23.
     pub fn dialnorm(mut self, input: i32) -> Self {
@@ -106,8 +101,7 @@ impl Eac3AtmosSettingsBuilder {
     }
     /// Sets the dialnorm for the output. Default 23.
     pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
-        self.dialnorm = input;
-        self
+        self.dialnorm = input; self
     }
     /// Sets the Dolby dynamic range compression profile.
     pub fn drc_line(mut self, input: crate::types::Eac3AtmosDrcLine) -> Self {
@@ -115,12 +109,8 @@ impl Eac3AtmosSettingsBuilder {
         self
     }
     /// Sets the Dolby dynamic range compression profile.
-    pub fn set_drc_line(
-        mut self,
-        input: std::option::Option<crate::types::Eac3AtmosDrcLine>,
-    ) -> Self {
-        self.drc_line = input;
-        self
+    pub fn set_drc_line(mut self, input: std::option::Option<crate::types::Eac3AtmosDrcLine>) -> Self {
+        self.drc_line = input; self
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
     pub fn drc_rf(mut self, input: crate::types::Eac3AtmosDrcRf) -> Self {
@@ -129,8 +119,7 @@ impl Eac3AtmosSettingsBuilder {
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
     pub fn set_drc_rf(mut self, input: std::option::Option<crate::types::Eac3AtmosDrcRf>) -> Self {
-        self.drc_rf = input;
-        self
+        self.drc_rf = input; self
     }
     /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn height_trim(mut self, input: f64) -> Self {
@@ -139,8 +128,7 @@ impl Eac3AtmosSettingsBuilder {
     }
     /// Height dimensional trim. Sets the maximum amount to attenuate the height channels when the downstream player isn??t configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn set_height_trim(mut self, input: std::option::Option<f64>) -> Self {
-        self.height_trim = input;
-        self
+        self.height_trim = input; self
     }
     /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn surround_trim(mut self, input: f64) -> Self {
@@ -149,19 +137,30 @@ impl Eac3AtmosSettingsBuilder {
     }
     /// Surround dimensional trim. Sets the maximum amount to attenuate the surround channels when the downstream player isn't configured to handle Dolby Digital Plus with Dolby Atmos and must remix the channels.
     pub fn set_surround_trim(mut self, input: std::option::Option<f64>) -> Self {
-        self.surround_trim = input;
-        self
+        self.surround_trim = input; self
     }
     /// Consumes the builder and constructs a [`Eac3AtmosSettings`](crate::types::Eac3AtmosSettings).
     pub fn build(self) -> crate::types::Eac3AtmosSettings {
         crate::types::Eac3AtmosSettings {
-            bitrate: self.bitrate.unwrap_or_default(),
-            coding_mode: self.coding_mode,
-            dialnorm: self.dialnorm.unwrap_or_default(),
-            drc_line: self.drc_line,
-            drc_rf: self.drc_rf,
-            height_trim: self.height_trim.unwrap_or_default(),
-            surround_trim: self.surround_trim.unwrap_or_default(),
+            bitrate: self.bitrate
+                .unwrap_or_default()
+            ,
+            coding_mode: self.coding_mode
+            ,
+            dialnorm: self.dialnorm
+                .unwrap_or_default()
+            ,
+            drc_line: self.drc_line
+            ,
+            drc_rf: self.drc_rf
+            ,
+            height_trim: self.height_trim
+                .unwrap_or_default()
+            ,
+            surround_trim: self.surround_trim
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

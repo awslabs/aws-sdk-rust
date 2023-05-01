@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkersWithQualificationTypeOutput {
+pub struct ListWorkersWithQualificationTypeOutput  {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListWorkersWithQualificationTypeOutput {
 }
 impl ListWorkersWithQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
@@ -24,18 +24,18 @@ impl ListWorkersWithQualificationTypeOutput {
         self.num_results
     }
     /// <p> The list of Qualification elements returned by this call. </p>
-    pub fn qualifications(&self) -> std::option::Option<&[crate::types::Qualification]> {
+    pub fn qualifications(&self) -> std::option::Option<& [crate::types::Qualification]> {
         self.qualifications.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkersWithQualificationTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkersWithQualificationTypeOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkersWithQualificationTypeOutput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput).
-    pub fn builder() -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeOutputBuilder{
+    pub fn builder() -> crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeOutputBuilder {
         crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeOutputBuilder::default()
     }
 }
@@ -57,8 +57,7 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn num_results(mut self, input: i32) -> Self {
@@ -67,8 +66,7 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
     }
     /// <p> The number of Qualifications on this page in the filtered results list, equivalent to the number of Qualifications being returned by this call.</p>
     pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.num_results = input;
-        self
+        self.num_results = input; self
     }
     /// Appends an item to `qualifications`.
     ///
@@ -77,29 +75,25 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
     /// <p> The list of Qualification elements returned by this call. </p>
     pub fn qualifications(mut self, input: crate::types::Qualification) -> Self {
         let mut v = self.qualifications.unwrap_or_default();
-        v.push(input);
-        self.qualifications = Some(v);
-        self
+                        v.push(input);
+                        self.qualifications = Some(v);
+                        self
     }
     /// <p> The list of Qualification elements returned by this call. </p>
-    pub fn set_qualifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Qualification>>,
-    ) -> Self {
-        self.qualifications = input;
-        self
+    pub fn set_qualifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::Qualification>>) -> Self {
+        self.qualifications = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkersWithQualificationTypeOutput`](crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput).
-    pub fn build(self) -> crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput{
+    pub fn build(self) -> crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput {
         crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput {
             next_token: self.next_token
             ,
@@ -111,3 +105,4 @@ impl ListWorkersWithQualificationTypeOutputBuilder {
         }
     }
 }
+

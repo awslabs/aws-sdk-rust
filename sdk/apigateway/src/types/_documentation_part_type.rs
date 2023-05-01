@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let documentationparttype = unimplemented!();
 /// match documentationparttype {
@@ -40,22 +40,14 @@
 /// Specifically, when `documentationparttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DocumentationPartType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DocumentationPartType {
     #[allow(missing_docs)] // documentation missing in model
     Api,
@@ -82,75 +74,61 @@ pub enum DocumentationPartType {
     #[allow(missing_docs)] // documentation missing in model
     ResponseHeader,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DocumentationPartType {
-    fn from(s: &str) -> Self {
-        match s {
-            "API" => DocumentationPartType::Api,
-            "AUTHORIZER" => DocumentationPartType::Authorizer,
-            "METHOD" => DocumentationPartType::Method,
-            "MODEL" => DocumentationPartType::Model,
-            "PATH_PARAMETER" => DocumentationPartType::PathParameter,
-            "QUERY_PARAMETER" => DocumentationPartType::QueryParameter,
-            "REQUEST_BODY" => DocumentationPartType::RequestBody,
-            "REQUEST_HEADER" => DocumentationPartType::RequestHeader,
-            "RESOURCE" => DocumentationPartType::Resource,
-            "RESPONSE" => DocumentationPartType::Response,
-            "RESPONSE_BODY" => DocumentationPartType::ResponseBody,
-            "RESPONSE_HEADER" => DocumentationPartType::ResponseHeader,
-            other => DocumentationPartType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "API" => DocumentationPartType::Api,
+"AUTHORIZER" => DocumentationPartType::Authorizer,
+"METHOD" => DocumentationPartType::Method,
+"MODEL" => DocumentationPartType::Model,
+"PATH_PARAMETER" => DocumentationPartType::PathParameter,
+"QUERY_PARAMETER" => DocumentationPartType::QueryParameter,
+"REQUEST_BODY" => DocumentationPartType::RequestBody,
+"REQUEST_HEADER" => DocumentationPartType::RequestHeader,
+"RESOURCE" => DocumentationPartType::Resource,
+"RESPONSE" => DocumentationPartType::Response,
+"RESPONSE_BODY" => DocumentationPartType::ResponseBody,
+"RESPONSE_HEADER" => DocumentationPartType::ResponseHeader,
+other => DocumentationPartType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DocumentationPartType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentationPartType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DocumentationPartType::from(s))
+                }
+            }
 impl DocumentationPartType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DocumentationPartType::Api => "API",
-            DocumentationPartType::Authorizer => "AUTHORIZER",
-            DocumentationPartType::Method => "METHOD",
-            DocumentationPartType::Model => "MODEL",
-            DocumentationPartType::PathParameter => "PATH_PARAMETER",
-            DocumentationPartType::QueryParameter => "QUERY_PARAMETER",
-            DocumentationPartType::RequestBody => "REQUEST_BODY",
-            DocumentationPartType::RequestHeader => "REQUEST_HEADER",
-            DocumentationPartType::Resource => "RESOURCE",
-            DocumentationPartType::Response => "RESPONSE",
-            DocumentationPartType::ResponseBody => "RESPONSE_BODY",
-            DocumentationPartType::ResponseHeader => "RESPONSE_HEADER",
-            DocumentationPartType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "API",
-            "AUTHORIZER",
-            "METHOD",
-            "MODEL",
-            "PATH_PARAMETER",
-            "QUERY_PARAMETER",
-            "REQUEST_BODY",
-            "REQUEST_HEADER",
-            "RESOURCE",
-            "RESPONSE",
-            "RESPONSE_BODY",
-            "RESPONSE_HEADER",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DocumentationPartType::Api => "API",
+    DocumentationPartType::Authorizer => "AUTHORIZER",
+    DocumentationPartType::Method => "METHOD",
+    DocumentationPartType::Model => "MODEL",
+    DocumentationPartType::PathParameter => "PATH_PARAMETER",
+    DocumentationPartType::QueryParameter => "QUERY_PARAMETER",
+    DocumentationPartType::RequestBody => "REQUEST_BODY",
+    DocumentationPartType::RequestHeader => "REQUEST_HEADER",
+    DocumentationPartType::Resource => "RESOURCE",
+    DocumentationPartType::Response => "RESPONSE",
+    DocumentationPartType::ResponseBody => "RESPONSE_BODY",
+    DocumentationPartType::ResponseHeader => "RESPONSE_HEADER",
+    DocumentationPartType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["API", "AUTHORIZER", "METHOD", "MODEL", "PATH_PARAMETER", "QUERY_PARAMETER", "REQUEST_BODY", "REQUEST_HEADER", "RESOURCE", "RESPONSE", "RESPONSE_BODY", "RESPONSE_HEADER"]
+                }
+            }
 impl AsRef<str> for DocumentationPartType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

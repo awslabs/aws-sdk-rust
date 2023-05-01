@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessDeviceFromMulticastGroupInput {
+pub struct DisassociateWirelessDeviceFromMulticastGroupInput  {
     /// <p>The ID of the multicast group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateWirelessDeviceFromMulticastGroupInput {
 }
 impl DisassociateWirelessDeviceFromMulticastGroupInput {
     /// <p>The ID of the multicast group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn wireless_device_id(&self) -> std::option::Option<&str> {
+    pub fn wireless_device_id(&self) -> std::option::Option<& str> {
         self.wireless_device_id.as_deref()
     }
 }
 impl DisassociateWirelessDeviceFromMulticastGroupInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupInput).
-    pub fn builder() -> crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupInputBuilder{
+    pub fn builder() -> crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupInputBuilder {
         crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DisassociateWirelessDeviceFromMulticastGroupInputBuilder {
     }
     /// <p>The ID of the multicast group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ID of the wireless device.</p>
     pub fn wireless_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,15 +50,11 @@ impl DisassociateWirelessDeviceFromMulticastGroupInputBuilder {
         self
     }
     /// <p>The ID of the wireless device.</p>
-    pub fn set_wireless_device_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.wireless_device_id = input;
-        self
+    pub fn set_wireless_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.wireless_device_id = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessDeviceFromMulticastGroupInput`](crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupInput {
                 id: self.id
@@ -70,3 +65,4 @@ impl DisassociateWirelessDeviceFromMulticastGroupInputBuilder {
         )
     }
 }
+

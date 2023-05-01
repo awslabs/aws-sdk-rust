@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListObjectsV2Output {
+pub struct ListObjectsV2Output  {
     /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>Metadata about each object returned.</p>
     #[doc(hidden)]
     pub contents: std::option::Option<std::vec::Vec<crate::types::Object>>,
-    /// <p>The bucket name.</p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The bucket name.</p> 
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p> Keys that begin with the indicated prefix.</p>
@@ -23,19 +23,19 @@ pub struct ListObjectsV2Output {
     /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     #[doc(hidden)]
     pub max_keys: i32,
-    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p> 
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p> 
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
     #[doc(hidden)]
     pub common_prefixes: std::option::Option<std::vec::Vec<crate::types::CommonPrefix>>,
-    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     #[doc(hidden)]
     pub encoding_type: std::option::Option<crate::types::EncodingType>,
-    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equal to the <code>MaxKeys</code> field. Say you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
     #[doc(hidden)]
     pub key_count: i32,
     /// <p> If ContinuationToken was sent with the request, it is included in the response.</p>
@@ -56,68 +56,68 @@ impl ListObjectsV2Output {
         self.is_truncated
     }
     /// <p>Metadata about each object returned.</p>
-    pub fn contents(&self) -> std::option::Option<&[crate::types::Object]> {
+    pub fn contents(&self) -> std::option::Option<& [crate::types::Object]> {
         self.contents.as_deref()
     }
-    /// <p>The bucket name.</p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    /// <p>The bucket name.</p> 
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> Keys that begin with the indicated prefix.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn max_keys(&self) -> i32 {
         self.max_keys
     }
-    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p> 
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p> 
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
-    pub fn common_prefixes(&self) -> std::option::Option<&[crate::types::CommonPrefix]> {
+    pub fn common_prefixes(&self) -> std::option::Option<& [crate::types::CommonPrefix]> {
         self.common_prefixes.as_deref()
     }
-    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
-    pub fn encoding_type(&self) -> std::option::Option<&crate::types::EncodingType> {
+    pub fn encoding_type(&self) -> std::option::Option<& crate::types::EncodingType> {
         self.encoding_type.as_ref()
     }
-    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equal to the <code>MaxKeys</code> field. Say you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
     pub fn key_count(&self) -> i32 {
         self.key_count
     }
     /// <p> If ContinuationToken was sent with the request, it is included in the response.</p>
-    pub fn continuation_token(&self) -> std::option::Option<&str> {
+    pub fn continuation_token(&self) -> std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
-    pub fn next_continuation_token(&self) -> std::option::Option<&str> {
+    pub fn next_continuation_token(&self) -> std::option::Option<& str> {
         self.next_continuation_token.as_deref()
     }
     /// <p>If StartAfter was sent with the request, it is included in the response.</p>
-    pub fn start_after(&self) -> std::option::Option<&str> {
+    pub fn start_after(&self) -> std::option::Option<& str> {
         self.start_after.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for ListObjectsV2Output {
-    fn extended_request_id(&self) -> Option<&str> {
-        self._extended_request_id.as_deref()
-    }
-}
+                                fn extended_request_id(&self) -> Option<&str> {
+                                    self._extended_request_id.as_deref()
+                                }
+                            }
 impl aws_http::request_id::RequestId for ListObjectsV2Output {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListObjectsV2Output {
     /// Creates a new builder-style object to manufacture [`ListObjectsV2Output`](crate::operation::list_objects_v2::ListObjectsV2Output).
     pub fn builder() -> crate::operation::list_objects_v2::builders::ListObjectsV2OutputBuilder {
@@ -152,8 +152,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>Set to false if all of the results were returned. Set to true if more keys are available to return. If the number of results exceeds that specified by MaxKeys, all of the results might not be returned.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input;
-        self
+        self.is_truncated = input; self
     }
     /// Appends an item to `contents`.
     ///
@@ -162,31 +161,26 @@ impl ListObjectsV2OutputBuilder {
     /// <p>Metadata about each object returned.</p>
     pub fn contents(mut self, input: crate::types::Object) -> Self {
         let mut v = self.contents.unwrap_or_default();
-        v.push(input);
-        self.contents = Some(v);
-        self
+                        v.push(input);
+                        self.contents = Some(v);
+                        self
     }
     /// <p>Metadata about each object returned.</p>
-    pub fn set_contents(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Object>>,
-    ) -> Self {
-        self.contents = input;
-        self
+    pub fn set_contents(mut self, input: std::option::Option<std::vec::Vec<crate::types::Object>>) -> Self {
+        self.contents = input; self
     }
-    /// <p>The bucket name.</p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The bucket name.</p> 
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The bucket name.</p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The bucket name.</p> 
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> Keys that begin with the indicated prefix.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +189,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p> Keys that begin with the indicated prefix.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,8 +198,7 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection. These rolled-up keys are not returned elsewhere in the response. Each rolled-up result counts as only one return against the <code>MaxKeys</code> value.</p>
     pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delimiter = input;
-        self
+        self.delimiter = input; self
     }
     /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn max_keys(mut self, input: i32) -> Self {
@@ -215,62 +207,52 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>Sets the maximum number of keys returned in the response. By default the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more.</p>
     pub fn set_max_keys(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_keys = input;
-        self
+        self.max_keys = input; self
     }
     /// Appends an item to `common_prefixes`.
     ///
     /// To override the contents of this collection use [`set_common_prefixes`](Self::set_common_prefixes).
     ///
-    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p> 
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p> 
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
     pub fn common_prefixes(mut self, input: crate::types::CommonPrefix) -> Self {
         let mut v = self.common_prefixes.unwrap_or_default();
-        v.push(input);
-        self.common_prefixes = Some(v);
-        self
+                        v.push(input);
+                        self.common_prefixes = Some(v);
+                        self
     }
-    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p>
-    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p>
-    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p>
+    /// <p>All of the keys (up to 1,000) rolled up into a common prefix count as a single return when calculating the number of returns.</p> 
+    /// <p>A response can contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> contains all (if there are any) keys between <code>Prefix</code> and the next occurrence of the string specified by a delimiter.</p> 
+    /// <p> <code>CommonPrefixes</code> lists keys that act like subdirectories in the directory specified by <code>Prefix</code>.</p> 
     /// <p>For example, if the prefix is <code>notes/</code> and the delimiter is a slash (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is <code>notes/summer/</code>. All of the keys that roll up into a common prefix count as a single return when calculating the number of returns. </p>
-    pub fn set_common_prefixes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CommonPrefix>>,
-    ) -> Self {
-        self.common_prefixes = input;
-        self
+    pub fn set_common_prefixes(mut self, input: std::option::Option<std::vec::Vec<crate::types::CommonPrefix>>) -> Self {
+        self.common_prefixes = input; self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
     pub fn encoding_type(mut self, input: crate::types::EncodingType) -> Self {
         self.encoding_type = Some(input);
         self
     }
-    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p>
-    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p>
+    /// <p>Encoding type used by Amazon S3 to encode object key names in the XML response.</p> 
+    /// <p>If you specify the encoding-type request parameter, Amazon S3 includes this element in the response, and returns encoded key name values in the following response elements:</p> 
     /// <p> <code>Delimiter, Prefix, Key,</code> and <code>StartAfter</code>.</p>
-    pub fn set_encoding_type(
-        mut self,
-        input: std::option::Option<crate::types::EncodingType>,
-    ) -> Self {
-        self.encoding_type = input;
-        self
+    pub fn set_encoding_type(mut self, input: std::option::Option<crate::types::EncodingType>) -> Self {
+        self.encoding_type = input; self
     }
-    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equal to the <code>MaxKeys</code> field. Say you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
     pub fn key_count(mut self, input: i32) -> Self {
         self.key_count = Some(input);
         self
     }
-    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equal to the <code>MaxKeys</code> field. Say you ask for 50 keys, your result will include 50 keys or fewer.</p>
+    /// <p>KeyCount is the number of keys returned with this request. KeyCount will always be less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include less than equals 50 keys </p>
     pub fn set_key_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.key_count = input;
-        self
+        self.key_count = input; self
     }
     /// <p> If ContinuationToken was sent with the request, it is included in the response.</p>
     pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -278,12 +260,8 @@ impl ListObjectsV2OutputBuilder {
         self
     }
     /// <p> If ContinuationToken was sent with the request, it is included in the response.</p>
-    pub fn set_continuation_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.continuation_token = input;
-        self
+    pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.continuation_token = input; self
     }
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
     pub fn next_continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -291,12 +269,8 @@ impl ListObjectsV2OutputBuilder {
         self
     }
     /// <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is true, which means there are more keys in the bucket that can be listed. The next list requests to Amazon S3 can be continued with this <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is obfuscated and is not a real key</p>
-    pub fn set_next_continuation_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.next_continuation_token = input;
-        self
+    pub fn set_next_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.next_continuation_token = input; self
     }
     /// <p>If StartAfter was sent with the request, it is included in the response.</p>
     pub fn start_after(mut self, input: impl Into<std::string::String>) -> Self {
@@ -305,47 +279,59 @@ impl ListObjectsV2OutputBuilder {
     }
     /// <p>If StartAfter was sent with the request, it is included in the response.</p>
     pub fn set_start_after(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_after = input;
-        self
+        self.start_after = input; self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-        self._extended_request_id = Some(extended_request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_extended_request_id(
-        &mut self,
-        extended_request_id: Option<String>,
-    ) -> &mut Self {
-        self._extended_request_id = extended_request_id;
-        self
-    }
+                                    self._extended_request_id = Some(extended_request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
+                                    self._extended_request_id = extended_request_id;
+                                    self
+                                }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListObjectsV2Output`](crate::operation::list_objects_v2::ListObjectsV2Output).
     pub fn build(self) -> crate::operation::list_objects_v2::ListObjectsV2Output {
         crate::operation::list_objects_v2::ListObjectsV2Output {
-            is_truncated: self.is_truncated.unwrap_or_default(),
-            contents: self.contents,
-            name: self.name,
-            prefix: self.prefix,
-            delimiter: self.delimiter,
-            max_keys: self.max_keys.unwrap_or_default(),
-            common_prefixes: self.common_prefixes,
-            encoding_type: self.encoding_type,
-            key_count: self.key_count.unwrap_or_default(),
-            continuation_token: self.continuation_token,
-            next_continuation_token: self.next_continuation_token,
-            start_after: self.start_after,
+            is_truncated: self.is_truncated
+                .unwrap_or_default()
+            ,
+            contents: self.contents
+            ,
+            name: self.name
+            ,
+            prefix: self.prefix
+            ,
+            delimiter: self.delimiter
+            ,
+            max_keys: self.max_keys
+                .unwrap_or_default()
+            ,
+            common_prefixes: self.common_prefixes
+            ,
+            encoding_type: self.encoding_type
+            ,
+            key_count: self.key_count
+                .unwrap_or_default()
+            ,
+            continuation_token: self.continuation_token
+            ,
+            next_continuation_token: self.next_continuation_token
+            ,
+            start_after: self.start_after
+            ,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
+

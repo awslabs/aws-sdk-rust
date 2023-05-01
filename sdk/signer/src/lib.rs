@@ -11,92 +11,94 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
+
 #![warn(missing_docs)]
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
-//!
+//! 
 //! AWS Signer is a fully managed code signing service to help you ensure the trust and integrity of your code.
-//!
+//! 
 //! AWS Signer supports the following applications:
-//!
+//! 
 //! With _code signing for AWS Lambda_, you can sign AWS Lambda deployment packages. Integrated support is provided for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then use Signer to sign Lambda zip files in S3.
-//!
+//! 
 //! With _code signing for IoT_, you can sign code for any IoT device that is supported by AWS. IoT code signing is available for [Amazon FreeRTOS](http://docs.aws.amazon.com/freertos/latest/userguide/) and [AWS IoT Device Management](http://docs.aws.amazon.com/iot/latest/developerguide/), and is integrated with [AWS Certificate Manager (ACM)](http://docs.aws.amazon.com/acm/latest/userguide/). In order to sign code, you import a third-party code signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT Device Management.
-//!
+//! 
 //! For more information about AWS Signer, see the [AWS Signer Developer Guide](http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html).
-//!
+//! 
 //! ## Getting Started
-//!
+//! 
 //! > Examples are available for many services and operations, check out the
 //! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
-//!
+//! 
 //! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
 //! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-signer` to
 //! your project, add the following to your **Cargo.toml** file:
-//!
+//! 
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.1"
-//! aws-sdk-signer = "0.26.0"
+//! aws-sdk-signer = "0.27.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
-//!
+//! 
 //! Then in code, a client can be created with the following:
-//!
+//! 
 //! ```rust,no_run
 //! use aws_sdk_signer as signer;
-//!
+//! 
 //! #[tokio::main]
 //! async fn main() -> Result<(), signer::Error> {
 //!     let config = aws_config::load_from_env().await;
 //!     let client = signer::Client::new(&config);
-//!
+//! 
 //!     // ... make some calls with the client
-//!
+//! 
 //!     Ok(())
 //! }
 //! ```
-//!
+//! 
 //! See the [client documentation](https://docs.rs/aws-sdk-signer/latest/aws_sdk_signer/client/struct.Client.html)
 //! for information on what calls can be made, and the inputs and outputs for each of those calls.
-//!
+//! 
 //! ## Using the SDK
-//!
+//! 
 //! Until the SDK is released, we will be adding information about using the SDK to the
 //! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
 //! additional sections for the guide by opening an issue and describing what you are trying to do.
-//!
+//! 
 //! ## Getting Help
-//!
+//! 
 //! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 //! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
 //! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
 //! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
-//!
-//!
+//! 
+//! 
 //! # Crate Organization
-//!
+//! 
 //! The entry point for most customers will be [`Client`], which exposes one method for each API
 //! offered by AWS Signer. The return value of each of these methods is a "fluent builder",
 //! where the different inputs for that API are added by builder-style function call chaining,
 //! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
 //! either a successful output or a [`SdkError`](crate::error::SdkError).
-//!
+//! 
 //! Some of these API inputs may be structs or enums to provide more complex structured information.
 //! These structs and enums live in [`types`](crate::types). There are some simpler types for
 //! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
-//!
+//! 
 //! All types required to configure a client via the [`Config`](crate::Config) struct live
 //! in [`config`](crate::config).
-//!
+//! 
 //! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
 //! is the input, output, and error type for that API, as well as builders to construct each of those.
-//!
+//! 
 //! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
 //! client can return. Any other error type can be converted to this `Error` type via the
 //! [`From`](std::convert::From) trait.
-//!
+//! 
 //! The other modules within this crate are not required for normal usage.
+
 
 // Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.
 pub use error_meta::Error;
@@ -106,14 +108,14 @@ pub use config::Config;
 
 /// Client for calling AWS Signer.
 /// ## Constructing a `Client`
-///
+/// 
 /// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
 /// crate should be used to automatically resolve this config using
 /// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
 /// across multiple different AWS SDK clients. This config resolution process can be customized
 /// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
 /// the [builder pattern] to customize the default config.
-///
+/// 
 /// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
 /// # async fn wrapper() {
@@ -121,12 +123,12 @@ pub use config::Config;
 /// let client = aws_sdk_signer::Client::new(&config);
 /// # }
 /// ```
-///
+/// 
 /// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
 /// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
 /// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
 /// done as follows:
-///
+/// 
 /// ```rust,no_run
 /// # async fn wrapper() {
 /// let sdk_config = aws_config::load_from_env().await;
@@ -137,12 +139,12 @@ pub use config::Config;
 ///     .build();
 /// # }
 /// ```
-///
+/// 
 /// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
-///
+/// 
 /// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
 /// be done once at application start-up.
-///
+/// 
 /// [`Config`]: crate::Config
 /// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
 /// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
@@ -152,20 +154,20 @@ pub use config::Config;
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 /// # Using the `Client`
-///
+/// 
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AddProfilePermission`](crate::operation::add_profile_permission) operation has
 /// a [`Client::add_profile_permission`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `call()` function that returns an async future that
 /// returns a result, as illustrated below:
-///
+/// 
 /// ```rust,ignore
 /// let result = client.add_profile_permission()
 ///     .profile_name("example")
 ///     .call()
 ///     .await;
 /// ```
-///
+/// 
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
@@ -196,10 +198,10 @@ pub mod types;
 
 mod idempotency_token;
 
-///
+/// 
 pub mod middleware;
 
-///
+/// 
 mod no_credentials;
 
 mod lens;
@@ -212,3 +214,4 @@ mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;
+

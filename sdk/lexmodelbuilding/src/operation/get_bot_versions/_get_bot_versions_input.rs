@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBotVersionsInput {
+pub struct GetBotVersionsInput  {
     /// <p>The name of the bot for which versions should be returned.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetBotVersionsInput {
 }
 impl GetBotVersionsInput {
     /// <p>The name of the bot for which versions should be returned.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of bot versions to return in the response. The default is 10.</p>
@@ -50,8 +50,7 @@ impl GetBotVersionsInputBuilder {
     }
     /// <p>The name of the bot for which versions should be returned.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetBotVersionsInputBuilder {
     }
     /// <p>A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of bot versions to return in the response. The default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -70,20 +68,20 @@ impl GetBotVersionsInputBuilder {
     }
     /// <p>The maximum number of bot versions to return in the response. The default is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`GetBotVersionsInput`](crate::operation::get_bot_versions::GetBotVersionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_bot_versions::GetBotVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_bot_versions::GetBotVersionsInput {
-            name: self.name,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::get_bot_versions::GetBotVersionsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_bot_versions::GetBotVersionsInput {
+                name: self.name
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
+

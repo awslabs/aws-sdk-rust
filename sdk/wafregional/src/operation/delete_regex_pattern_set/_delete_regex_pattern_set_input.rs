@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegexPatternSetInput {
+pub struct DeleteRegexPatternSetInput  {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DeleteRegexPatternSetInput {
 }
 impl DeleteRegexPatternSetInput {
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<& str> {
         self.regex_pattern_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> std::option::Option<& str> {
         self.change_token.as_deref()
     }
 }
 impl DeleteRegexPatternSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetInput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder {
         crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl DeleteRegexPatternSetInputBuilder {
         self
     }
     /// <p>The <code>RegexPatternSetId</code> of the <code>RegexPatternSet</code> that you want to delete. <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn set_regex_pattern_set_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.regex_pattern_set_id = input;
-        self
+    pub fn set_regex_pattern_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.regex_pattern_set_id = input; self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,21 +51,18 @@ impl DeleteRegexPatternSetInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input;
-        self
+        self.change_token = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRegexPatternSetInput`](crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetInput {
-                regex_pattern_set_id: self.regex_pattern_set_id,
-                change_token: self.change_token,
-            },
+                regex_pattern_set_id: self.regex_pattern_set_id
+                ,
+                change_token: self.change_token
+                ,
+            }
         )
     }
 }
+

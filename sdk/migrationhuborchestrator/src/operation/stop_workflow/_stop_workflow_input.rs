@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopWorkflowInput {
+pub struct StopWorkflowInput  {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl StopWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl StopWorkflowInputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`StopWorkflowInput`](crate::operation::stop_workflow::StopWorkflowInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_workflow::StopWorkflowInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_workflow::StopWorkflowInput { id: self.id })
+    pub fn build(self) -> Result<crate::operation::stop_workflow::StopWorkflowInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_workflow::StopWorkflowInput {
+                id: self.id
+                ,
+            }
+        )
     }
 }
+

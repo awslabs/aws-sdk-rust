@@ -3,7 +3,7 @@
 /// <p>The version of the database engine that an instance can be upgraded to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeTarget {
+pub struct UpgradeTarget  {
     /// <p>The name of the upgrade target database engine.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct UpgradeTarget {
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
@@ -67,8 +67,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>The name of the upgrade target database engine.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The version number of the upgrade target database engine.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>The version number of the upgrade target database engine.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>The version of the database engine that an instance can be upgraded to.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
@@ -97,8 +94,7 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have <code>AutoMinorVersionUpgrade</code> set to <code>true</code>.</p>
     pub fn set_auto_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_upgrade = input;
-        self
+        self.auto_upgrade = input; self
     }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
@@ -107,17 +103,24 @@ impl UpgradeTargetBuilder {
     }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_major_version_upgrade = input;
-        self
+        self.is_major_version_upgrade = input; self
     }
     /// Consumes the builder and constructs a [`UpgradeTarget`](crate::types::UpgradeTarget).
     pub fn build(self) -> crate::types::UpgradeTarget {
         crate::types::UpgradeTarget {
-            engine: self.engine,
-            engine_version: self.engine_version,
-            description: self.description,
-            auto_upgrade: self.auto_upgrade.unwrap_or_default(),
-            is_major_version_upgrade: self.is_major_version_upgrade.unwrap_or_default(),
+            engine: self.engine
+            ,
+            engine_version: self.engine_version
+            ,
+            description: self.description
+            ,
+            auto_upgrade: self.auto_upgrade
+                .unwrap_or_default()
+            ,
+            is_major_version_upgrade: self.is_major_version_upgrade
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

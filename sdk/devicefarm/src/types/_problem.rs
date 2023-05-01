@@ -3,7 +3,7 @@
 /// <p>Represents a specific warning or failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Problem {
+pub struct Problem  {
     /// <p>Information about the associated run.</p>
     #[doc(hidden)]
     pub run: std::option::Option<crate::types::ProblemDetail>,
@@ -19,16 +19,16 @@ pub struct Problem {
     /// <p>Information about the associated device.</p>
     #[doc(hidden)]
     pub device: std::option::Option<crate::types::Device>,
-    /// <p>The problem's result.</p>
-    /// <p>Allowed values include:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <p>The problem's result.</p> 
+    /// <p>Allowed values include:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>PASSED</p> </li> 
+    /// <li> <p>WARNED</p> </li> 
+    /// <li> <p>FAILED</p> </li> 
+    /// <li> <p>SKIPPED</p> </li> 
+    /// <li> <p>ERRORED</p> </li> 
+    /// <li> <p>STOPPED</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub result: std::option::Option<crate::types::ExecutionResult>,
@@ -38,41 +38,41 @@ pub struct Problem {
 }
 impl Problem {
     /// <p>Information about the associated run.</p>
-    pub fn run(&self) -> std::option::Option<&crate::types::ProblemDetail> {
+    pub fn run(&self) -> std::option::Option<& crate::types::ProblemDetail> {
         self.run.as_ref()
     }
     /// <p>Information about the associated job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::types::ProblemDetail> {
+    pub fn job(&self) -> std::option::Option<& crate::types::ProblemDetail> {
         self.job.as_ref()
     }
     /// <p>Information about the associated suite.</p>
-    pub fn suite(&self) -> std::option::Option<&crate::types::ProblemDetail> {
+    pub fn suite(&self) -> std::option::Option<& crate::types::ProblemDetail> {
         self.suite.as_ref()
     }
     /// <p>Information about the associated test.</p>
-    pub fn test(&self) -> std::option::Option<&crate::types::ProblemDetail> {
+    pub fn test(&self) -> std::option::Option<& crate::types::ProblemDetail> {
         self.test.as_ref()
     }
     /// <p>Information about the associated device.</p>
-    pub fn device(&self) -> std::option::Option<&crate::types::Device> {
+    pub fn device(&self) -> std::option::Option<& crate::types::Device> {
         self.device.as_ref()
     }
-    /// <p>The problem's result.</p>
-    /// <p>Allowed values include:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <p>The problem's result.</p> 
+    /// <p>Allowed values include:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>PASSED</p> </li> 
+    /// <li> <p>WARNED</p> </li> 
+    /// <li> <p>FAILED</p> </li> 
+    /// <li> <p>SKIPPED</p> </li> 
+    /// <li> <p>ERRORED</p> </li> 
+    /// <li> <p>STOPPED</p> </li> 
     /// </ul>
-    pub fn result(&self) -> std::option::Option<&crate::types::ExecutionResult> {
+    pub fn result(&self) -> std::option::Option<& crate::types::ExecutionResult> {
         self.result.as_ref()
     }
     /// <p>A message about the problem's result.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -103,8 +103,7 @@ impl ProblemBuilder {
     }
     /// <p>Information about the associated run.</p>
     pub fn set_run(mut self, input: std::option::Option<crate::types::ProblemDetail>) -> Self {
-        self.run = input;
-        self
+        self.run = input; self
     }
     /// <p>Information about the associated job.</p>
     pub fn job(mut self, input: crate::types::ProblemDetail) -> Self {
@@ -113,8 +112,7 @@ impl ProblemBuilder {
     }
     /// <p>Information about the associated job.</p>
     pub fn set_job(mut self, input: std::option::Option<crate::types::ProblemDetail>) -> Self {
-        self.job = input;
-        self
+        self.job = input; self
     }
     /// <p>Information about the associated suite.</p>
     pub fn suite(mut self, input: crate::types::ProblemDetail) -> Self {
@@ -123,8 +121,7 @@ impl ProblemBuilder {
     }
     /// <p>Information about the associated suite.</p>
     pub fn set_suite(mut self, input: std::option::Option<crate::types::ProblemDetail>) -> Self {
-        self.suite = input;
-        self
+        self.suite = input; self
     }
     /// <p>Information about the associated test.</p>
     pub fn test(mut self, input: crate::types::ProblemDetail) -> Self {
@@ -133,8 +130,7 @@ impl ProblemBuilder {
     }
     /// <p>Information about the associated test.</p>
     pub fn set_test(mut self, input: std::option::Option<crate::types::ProblemDetail>) -> Self {
-        self.test = input;
-        self
+        self.test = input; self
     }
     /// <p>Information about the associated device.</p>
     pub fn device(mut self, input: crate::types::Device) -> Self {
@@ -143,38 +139,36 @@ impl ProblemBuilder {
     }
     /// <p>Information about the associated device.</p>
     pub fn set_device(mut self, input: std::option::Option<crate::types::Device>) -> Self {
-        self.device = input;
-        self
+        self.device = input; self
     }
-    /// <p>The problem's result.</p>
-    /// <p>Allowed values include:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <p>The problem's result.</p> 
+    /// <p>Allowed values include:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>PASSED</p> </li> 
+    /// <li> <p>WARNED</p> </li> 
+    /// <li> <p>FAILED</p> </li> 
+    /// <li> <p>SKIPPED</p> </li> 
+    /// <li> <p>ERRORED</p> </li> 
+    /// <li> <p>STOPPED</p> </li> 
     /// </ul>
     pub fn result(mut self, input: crate::types::ExecutionResult) -> Self {
         self.result = Some(input);
         self
     }
-    /// <p>The problem's result.</p>
-    /// <p>Allowed values include:</p>
-    /// <ul>
-    /// <li> <p>PENDING</p> </li>
-    /// <li> <p>PASSED</p> </li>
-    /// <li> <p>WARNED</p> </li>
-    /// <li> <p>FAILED</p> </li>
-    /// <li> <p>SKIPPED</p> </li>
-    /// <li> <p>ERRORED</p> </li>
-    /// <li> <p>STOPPED</p> </li>
+    /// <p>The problem's result.</p> 
+    /// <p>Allowed values include:</p> 
+    /// <ul> 
+    /// <li> <p>PENDING</p> </li> 
+    /// <li> <p>PASSED</p> </li> 
+    /// <li> <p>WARNED</p> </li> 
+    /// <li> <p>FAILED</p> </li> 
+    /// <li> <p>SKIPPED</p> </li> 
+    /// <li> <p>ERRORED</p> </li> 
+    /// <li> <p>STOPPED</p> </li> 
     /// </ul>
     pub fn set_result(mut self, input: std::option::Option<crate::types::ExecutionResult>) -> Self {
-        self.result = input;
-        self
+        self.result = input; self
     }
     /// <p>A message about the problem's result.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,19 +177,26 @@ impl ProblemBuilder {
     }
     /// <p>A message about the problem's result.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`Problem`](crate::types::Problem).
     pub fn build(self) -> crate::types::Problem {
         crate::types::Problem {
-            run: self.run,
-            job: self.job,
-            suite: self.suite,
-            test: self.test,
-            device: self.device,
-            result: self.result,
-            message: self.message,
+            run: self.run
+            ,
+            job: self.job
+            ,
+            suite: self.suite
+            ,
+            test: self.test
+            ,
+            device: self.device
+            ,
+            result: self.result
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

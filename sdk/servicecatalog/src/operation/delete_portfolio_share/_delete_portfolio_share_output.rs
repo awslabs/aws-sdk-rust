@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePortfolioShareOutput {
+pub struct DeletePortfolioShareOutput  {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
     #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
@@ -10,19 +10,18 @@ pub struct DeletePortfolioShareOutput {
 }
 impl DeletePortfolioShareOutput {
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
-    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
+    pub fn portfolio_share_token(&self) -> std::option::Option<& str> {
         self.portfolio_share_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeletePortfolioShareOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeletePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`DeletePortfolioShareOutput`](crate::operation::delete_portfolio_share::DeletePortfolioShareOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_portfolio_share::builders::DeletePortfolioShareOutputBuilder {
+    pub fn builder() -> crate::operation::delete_portfolio_share::builders::DeletePortfolioShareOutputBuilder {
         crate::operation::delete_portfolio_share::builders::DeletePortfolioShareOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl DeletePortfolioShareOutputBuilder {
         self
     }
     /// <p>The portfolio share unique identifier. This will only be returned if delete is made to an organization node.</p>
-    pub fn set_portfolio_share_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.portfolio_share_token = input;
-        self
+    pub fn set_portfolio_share_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.portfolio_share_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeletePortfolioShareOutput`](crate::operation::delete_portfolio_share::DeletePortfolioShareOutput).
     pub fn build(self) -> crate::operation::delete_portfolio_share::DeletePortfolioShareOutput {
         crate::operation::delete_portfolio_share::DeletePortfolioShareOutput {
-            portfolio_share_token: self.portfolio_share_token,
+            portfolio_share_token: self.portfolio_share_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

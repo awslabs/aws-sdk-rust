@@ -3,19 +3,19 @@
 /// <p>Represents the input to <code>DescribeDBClusterParameterGroups</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterParameterGroupsInput {
-    /// <p>The name of a specific cluster parameter group to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+pub struct DescribeDbClusterParameterGroupsInput  {
+    /// <p>The name of a specific cluster parameter group to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     /// <p>This parameter is not currently supported.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -24,32 +24,32 @@ pub struct DescribeDbClusterParameterGroupsInput {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParameterGroupsInput {
-    /// <p>The name of a specific cluster parameter group to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <p>The name of a specific cluster parameter group to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li> 
     /// </ul>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 impl DescribeDbClusterParameterGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsInput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder{
+    pub fn builder() -> crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder {
         crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder::default()
     }
 }
@@ -64,29 +64,22 @@ pub struct DescribeDbClusterParameterGroupsInputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbClusterParameterGroupsInputBuilder {
-    /// <p>The name of a specific cluster parameter group to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <p>The name of a specific cluster parameter group to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li> 
     /// </ul>
-    pub fn db_cluster_parameter_group_name(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_parameter_group_name = Some(input.into());
         self
     }
-    /// <p>The name of a specific cluster parameter group to return details for.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li>
+    /// <p>The name of a specific cluster parameter group to return details for.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>If provided, must match the name of an existing <code>DBClusterParameterGroup</code>.</p> </li> 
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_parameter_group_name = input;
-        self
+    pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_parameter_group_name = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -95,31 +88,26 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
-    /// <p>Default: 100</p>
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
+    /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input;
-        self
+        self.max_records = input; self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,11 +116,10 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsInput`](crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput).
-    pub fn build(self) -> Result<crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsInput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
@@ -147,3 +134,4 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
         )
     }
 }
+

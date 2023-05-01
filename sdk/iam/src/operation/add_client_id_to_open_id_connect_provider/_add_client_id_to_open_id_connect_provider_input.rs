@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddClientIdToOpenIdConnectProviderInput {
+pub struct AddClientIdToOpenIdConnectProviderInput  {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     #[doc(hidden)]
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AddClientIdToOpenIdConnectProviderInput {
 }
 impl AddClientIdToOpenIdConnectProviderInput {
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<& str> {
         self.open_id_connect_provider_arn.as_deref()
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
 }
 impl AddClientIdToOpenIdConnectProviderInput {
     /// Creates a new builder-style object to manufacture [`AddClientIdToOpenIdConnectProviderInput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput).
-    pub fn builder() -> crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderInputBuilder{
+    pub fn builder() -> crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderInputBuilder {
         crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
-    pub fn set_open_id_connect_provider_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.open_id_connect_provider_arn = input;
-        self
+    pub fn set_open_id_connect_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.open_id_connect_provider_arn = input; self
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,11 +51,10 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
     }
     /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider resource.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input;
-        self
+        self.client_id = input; self
     }
     /// Consumes the builder and constructs a [`AddClientIdToOpenIdConnectProviderInput`](crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput).
-    pub fn build(self) -> Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderInput {
                 open_id_connect_provider_arn: self.open_id_connect_provider_arn
@@ -70,3 +65,4 @@ impl AddClientIdToOpenIdConnectProviderInputBuilder {
         )
     }
 }
+

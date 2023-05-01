@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBudgetActionsForBudgetInput {
+pub struct DescribeBudgetActionsForBudgetInput  {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeBudgetActionsForBudgetInput {
 }
 impl DescribeBudgetActionsForBudgetInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> std::option::Option<& str> {
         self.budget_name.as_deref()
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -30,13 +30,13 @@ impl DescribeBudgetActionsForBudgetInput {
         self.max_results
     }
     /// <p> A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeBudgetActionsForBudgetInput {
     /// Creates a new builder-style object to manufacture [`DescribeBudgetActionsForBudgetInput`](crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetInput).
-    pub fn builder() -> crate::operation::describe_budget_actions_for_budget::builders::DescribeBudgetActionsForBudgetInputBuilder{
+    pub fn builder() -> crate::operation::describe_budget_actions_for_budget::builders::DescribeBudgetActionsForBudgetInputBuilder {
         crate::operation::describe_budget_actions_for_budget::builders::DescribeBudgetActionsForBudgetInputBuilder::default()
     }
 }
@@ -58,8 +58,7 @@ impl DescribeBudgetActionsForBudgetInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +67,7 @@ impl DescribeBudgetActionsForBudgetInputBuilder {
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input;
-        self
+        self.budget_name = input; self
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -78,8 +76,7 @@ impl DescribeBudgetActionsForBudgetInputBuilder {
     }
     /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p> A generic string.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,16 +85,10 @@ impl DescribeBudgetActionsForBudgetInputBuilder {
     }
     /// <p> A generic string.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeBudgetActionsForBudgetInput`](crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_budget_actions_for_budget::DescribeBudgetActionsForBudgetInput {
                 account_id: self.account_id
@@ -112,3 +103,4 @@ impl DescribeBudgetActionsForBudgetInputBuilder {
         )
     }
 }
+

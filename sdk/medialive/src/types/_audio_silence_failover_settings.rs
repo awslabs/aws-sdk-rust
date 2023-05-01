@@ -3,7 +3,7 @@
 /// Placeholder documentation for AudioSilenceFailoverSettings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioSilenceFailoverSettings {
+pub struct AudioSilenceFailoverSettings  {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
     #[doc(hidden)]
     pub audio_selector_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct AudioSilenceFailoverSettings {
 }
 impl AudioSilenceFailoverSettings {
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
-    pub fn audio_selector_name(&self) -> std::option::Option<&str> {
+    pub fn audio_selector_name(&self) -> std::option::Option<& str> {
         self.audio_selector_name.as_deref()
     }
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
@@ -42,12 +42,8 @@ impl AudioSilenceFailoverSettingsBuilder {
         self
     }
     /// The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank.
-    pub fn set_audio_selector_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.audio_selector_name = input;
-        self
+    pub fn set_audio_selector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.audio_selector_name = input; self
     }
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
     pub fn audio_silence_threshold_msec(mut self, input: i32) -> Self {
@@ -56,14 +52,17 @@ impl AudioSilenceFailoverSettingsBuilder {
     }
     /// The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS.
     pub fn set_audio_silence_threshold_msec(mut self, input: std::option::Option<i32>) -> Self {
-        self.audio_silence_threshold_msec = input;
-        self
+        self.audio_silence_threshold_msec = input; self
     }
     /// Consumes the builder and constructs a [`AudioSilenceFailoverSettings`](crate::types::AudioSilenceFailoverSettings).
     pub fn build(self) -> crate::types::AudioSilenceFailoverSettings {
         crate::types::AudioSilenceFailoverSettings {
-            audio_selector_name: self.audio_selector_name,
-            audio_silence_threshold_msec: self.audio_silence_threshold_msec.unwrap_or_default(),
+            audio_selector_name: self.audio_selector_name
+            ,
+            audio_silence_threshold_msec: self.audio_silence_threshold_msec
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

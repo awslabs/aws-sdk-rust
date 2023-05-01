@@ -3,7 +3,7 @@
 /// <p>The parameters for using an Active MQ broker as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeSourceActiveMqBrokerParameters {
+pub struct PipeSourceActiveMqBrokerParameters  {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::types::MqBrokerAccessCredentials>,
@@ -19,11 +19,11 @@ pub struct PipeSourceActiveMqBrokerParameters {
 }
 impl PipeSourceActiveMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::types::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::types::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(&self) -> std::option::Option<&str> {
+    pub fn queue_name(&self) -> std::option::Option<& str> {
         self.queue_name.as_deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -35,16 +35,13 @@ impl PipeSourceActiveMqBrokerParameters {
         self.maximum_batching_window_in_seconds
     }
 }
-impl std::fmt::Debug for PipeSourceActiveMqBrokerParameters {
+impl  std::fmt::Debug for PipeSourceActiveMqBrokerParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceActiveMqBrokerParameters");
         formatter.field("credentials", &self.credentials);
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.finish()
     }
 }
@@ -71,12 +68,8 @@ impl PipeSourceActiveMqBrokerParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(
-        mut self,
-        input: std::option::Option<crate::types::MqBrokerAccessCredentials>,
-    ) -> Self {
-        self.credentials = input;
-        self
+    pub fn set_credentials(mut self, input: std::option::Option<crate::types::MqBrokerAccessCredentials>) -> Self {
+        self.credentials = input; self
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +78,7 @@ impl PipeSourceActiveMqBrokerParametersBuilder {
     }
     /// <p>The name of the destination queue to consume.</p>
     pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_name = input;
-        self
+        self.queue_name = input; self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
@@ -95,8 +87,7 @@ impl PipeSourceActiveMqBrokerParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input;
-        self
+        self.batch_size = input; self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -104,20 +95,20 @@ impl PipeSourceActiveMqBrokerParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.maximum_batching_window_in_seconds = input;
-        self
+    pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+        self.maximum_batching_window_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`PipeSourceActiveMqBrokerParameters`](crate::types::PipeSourceActiveMqBrokerParameters).
     pub fn build(self) -> crate::types::PipeSourceActiveMqBrokerParameters {
         crate::types::PipeSourceActiveMqBrokerParameters {
-            credentials: self.credentials,
-            queue_name: self.queue_name,
-            batch_size: self.batch_size,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+            credentials: self.credentials
+            ,
+            queue_name: self.queue_name
+            ,
+            batch_size: self.batch_size
+            ,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+            ,
         }
     }
 }
@@ -127,10 +118,8 @@ impl std::fmt::Debug for PipeSourceActiveMqBrokerParametersBuilder {
         formatter.field("credentials", &self.credentials);
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.finish()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Definition {
+pub struct Definition  {
     /// <p>The unique model handle.</p>
     #[doc(hidden)]
     pub model_handle: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Definition {
 }
 impl Definition {
     /// <p>The unique model handle.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> std::option::Option<& str> {
         self.model_handle.as_deref()
     }
     /// <p>The absolute S3 location of the model.</p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> std::option::Option<& str> {
         self.s3_url.as_deref()
     }
     /// <p>The checksum information of the model.</p>
-    pub fn checksum(&self) -> std::option::Option<&crate::types::Checksum> {
+    pub fn checksum(&self) -> std::option::Option<& crate::types::Checksum> {
         self.checksum.as_ref()
     }
     /// <p>The desired state of the model.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ModelState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ModelState> {
         self.state.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl DefinitionBuilder {
     }
     /// <p>The unique model handle.</p>
     pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_handle = input;
-        self
+        self.model_handle = input; self
     }
     /// <p>The absolute S3 location of the model.</p>
     pub fn s3_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl DefinitionBuilder {
     }
     /// <p>The absolute S3 location of the model.</p>
     pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_url = input;
-        self
+        self.s3_url = input; self
     }
     /// <p>The checksum information of the model.</p>
     pub fn checksum(mut self, input: crate::types::Checksum) -> Self {
@@ -79,8 +77,7 @@ impl DefinitionBuilder {
     }
     /// <p>The checksum information of the model.</p>
     pub fn set_checksum(mut self, input: std::option::Option<crate::types::Checksum>) -> Self {
-        self.checksum = input;
-        self
+        self.checksum = input; self
     }
     /// <p>The desired state of the model.</p>
     pub fn state(mut self, input: crate::types::ModelState) -> Self {
@@ -89,16 +86,20 @@ impl DefinitionBuilder {
     }
     /// <p>The desired state of the model.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ModelState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`Definition`](crate::types::Definition).
     pub fn build(self) -> crate::types::Definition {
         crate::types::Definition {
-            model_handle: self.model_handle,
-            s3_url: self.s3_url,
-            checksum: self.checksum,
-            state: self.state,
+            model_handle: self.model_handle
+            ,
+            s3_url: self.s3_url
+            ,
+            checksum: self.checksum
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

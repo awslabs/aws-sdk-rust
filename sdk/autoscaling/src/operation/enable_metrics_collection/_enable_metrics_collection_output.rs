@@ -2,19 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableMetricsCollectionOutput {
+pub struct EnableMetricsCollectionOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for EnableMetricsCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EnableMetricsCollectionOutput {
     /// Creates a new builder-style object to manufacture [`EnableMetricsCollectionOutput`](crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput).
-    pub fn builder(
-    ) -> crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionOutputBuilder {
         crate::operation::enable_metrics_collection::builders::EnableMetricsCollectionOutputBuilder::default()
     }
 }
@@ -27,20 +25,19 @@ pub struct EnableMetricsCollectionOutputBuilder {
 }
 impl EnableMetricsCollectionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EnableMetricsCollectionOutput`](crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput {
+    pub fn build(self) -> crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput {
         crate::operation::enable_metrics_collection::EnableMetricsCollectionOutput {
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMemberAccountsInput {
+pub struct ListMemberAccountsInput  {
     /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListMemberAccountsInput {
 }
 impl ListMemberAccountsInput {
     /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
@@ -22,8 +22,7 @@ impl ListMemberAccountsInput {
 }
 impl ListMemberAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListMemberAccountsInput`](crate::operation::list_member_accounts::ListMemberAccountsInput).
-    pub fn builder(
-    ) -> crate::operation::list_member_accounts::builders::ListMemberAccountsInputBuilder {
+    pub fn builder() -> crate::operation::list_member_accounts::builders::ListMemberAccountsInputBuilder {
         crate::operation::list_member_accounts::builders::ListMemberAccountsInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListMemberAccountsInputBuilder {
     }
     /// <p>(Discontinued) Use this parameter when paginating results. Set the value of this parameter to null on your first call to the <code>ListMemberAccounts</code> action. Subsequent calls to the action fill <code>nextToken</code> in the request with the value of <code>nextToken</code> from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl ListMemberAccountsInputBuilder {
     }
     /// <p>(Discontinued) Use this parameter to indicate the maximum number of items that you want in the response. The default value is 250.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListMemberAccountsInput`](crate::operation::list_member_accounts::ListMemberAccountsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_member_accounts::ListMemberAccountsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_member_accounts::ListMemberAccountsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_member_accounts::ListMemberAccountsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

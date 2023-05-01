@@ -3,7 +3,7 @@
 /// <p>Specifies the inventory configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET Bucket inventory</a> in the <i>Amazon S3 API Reference</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryConfiguration {
+pub struct InventoryConfiguration  {
     /// <p>Contains information about where to publish the inventory results.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::InventoryDestination>,
@@ -18,8 +18,7 @@ pub struct InventoryConfiguration {
     pub id: std::option::Option<std::string::String>,
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
     #[doc(hidden)]
-    pub included_object_versions:
-        std::option::Option<crate::types::InventoryIncludedObjectVersions>,
+    pub included_object_versions: std::option::Option<crate::types::InventoryIncludedObjectVersions>,
     /// <p>Contains the optional fields that are included in the inventory results.</p>
     #[doc(hidden)]
     pub optional_fields: std::option::Option<std::vec::Vec<crate::types::InventoryOptionalField>>,
@@ -29,7 +28,7 @@ pub struct InventoryConfiguration {
 }
 impl InventoryConfiguration {
     /// <p>Contains information about where to publish the inventory results.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::InventoryDestination> {
+    pub fn destination(&self) -> std::option::Option<& crate::types::InventoryDestination> {
         self.destination.as_ref()
     }
     /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
@@ -37,25 +36,23 @@ impl InventoryConfiguration {
         self.is_enabled
     }
     /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::InventoryFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::InventoryFilter> {
         self.filter.as_ref()
     }
     /// <p>The ID used to identify the inventory configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
-    pub fn included_object_versions(
-        &self,
-    ) -> std::option::Option<&crate::types::InventoryIncludedObjectVersions> {
+    pub fn included_object_versions(&self) -> std::option::Option<& crate::types::InventoryIncludedObjectVersions> {
         self.included_object_versions.as_ref()
     }
     /// <p>Contains the optional fields that are included in the inventory results.</p>
-    pub fn optional_fields(&self) -> std::option::Option<&[crate::types::InventoryOptionalField]> {
+    pub fn optional_fields(&self) -> std::option::Option<& [crate::types::InventoryOptionalField]> {
         self.optional_fields.as_deref()
     }
     /// <p>Specifies the schedule for generating inventory results.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::InventorySchedule> {
+    pub fn schedule(&self) -> std::option::Option<& crate::types::InventorySchedule> {
         self.schedule.as_ref()
     }
 }
@@ -74,10 +71,8 @@ pub struct InventoryConfigurationBuilder {
     pub(crate) is_enabled: std::option::Option<bool>,
     pub(crate) filter: std::option::Option<crate::types::InventoryFilter>,
     pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) included_object_versions:
-        std::option::Option<crate::types::InventoryIncludedObjectVersions>,
-    pub(crate) optional_fields:
-        std::option::Option<std::vec::Vec<crate::types::InventoryOptionalField>>,
+    pub(crate) included_object_versions: std::option::Option<crate::types::InventoryIncludedObjectVersions>,
+    pub(crate) optional_fields: std::option::Option<std::vec::Vec<crate::types::InventoryOptionalField>>,
     pub(crate) schedule: std::option::Option<crate::types::InventorySchedule>,
 }
 impl InventoryConfigurationBuilder {
@@ -87,12 +82,8 @@ impl InventoryConfigurationBuilder {
         self
     }
     /// <p>Contains information about where to publish the inventory results.</p>
-    pub fn set_destination(
-        mut self,
-        input: std::option::Option<crate::types::InventoryDestination>,
-    ) -> Self {
-        self.destination = input;
-        self
+    pub fn set_destination(mut self, input: std::option::Option<crate::types::InventoryDestination>) -> Self {
+        self.destination = input; self
     }
     /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
@@ -101,8 +92,7 @@ impl InventoryConfigurationBuilder {
     }
     /// <p>Specifies whether the inventory is enabled or disabled. If set to <code>True</code>, an inventory list is generated. If set to <code>False</code>, no inventory list is generated.</p>
     pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
     pub fn filter(mut self, input: crate::types::InventoryFilter) -> Self {
@@ -111,8 +101,7 @@ impl InventoryConfigurationBuilder {
     }
     /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
     pub fn set_filter(mut self, input: std::option::Option<crate::types::InventoryFilter>) -> Self {
-        self.filter = input;
-        self
+        self.filter = input; self
     }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,24 +110,16 @@ impl InventoryConfigurationBuilder {
     }
     /// <p>The ID used to identify the inventory configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
-    pub fn included_object_versions(
-        mut self,
-        input: crate::types::InventoryIncludedObjectVersions,
-    ) -> Self {
+    pub fn included_object_versions(mut self, input: crate::types::InventoryIncludedObjectVersions) -> Self {
         self.included_object_versions = Some(input);
         self
     }
     /// <p>Object versions to include in the inventory list. If set to <code>All</code>, the list includes all the object versions, which adds the version-related fields <code>VersionId</code>, <code>IsLatest</code>, and <code>DeleteMarker</code> to the list. If set to <code>Current</code>, the list does not contain these version-related fields.</p>
-    pub fn set_included_object_versions(
-        mut self,
-        input: std::option::Option<crate::types::InventoryIncludedObjectVersions>,
-    ) -> Self {
-        self.included_object_versions = input;
-        self
+    pub fn set_included_object_versions(mut self, input: std::option::Option<crate::types::InventoryIncludedObjectVersions>) -> Self {
+        self.included_object_versions = input; self
     }
     /// Appends an item to `optional_fields`.
     ///
@@ -147,17 +128,13 @@ impl InventoryConfigurationBuilder {
     /// <p>Contains the optional fields that are included in the inventory results.</p>
     pub fn optional_fields(mut self, input: crate::types::InventoryOptionalField) -> Self {
         let mut v = self.optional_fields.unwrap_or_default();
-        v.push(input);
-        self.optional_fields = Some(v);
-        self
+                        v.push(input);
+                        self.optional_fields = Some(v);
+                        self
     }
     /// <p>Contains the optional fields that are included in the inventory results.</p>
-    pub fn set_optional_fields(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InventoryOptionalField>>,
-    ) -> Self {
-        self.optional_fields = input;
-        self
+    pub fn set_optional_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryOptionalField>>) -> Self {
+        self.optional_fields = input; self
     }
     /// <p>Specifies the schedule for generating inventory results.</p>
     pub fn schedule(mut self, input: crate::types::InventorySchedule) -> Self {
@@ -165,23 +142,28 @@ impl InventoryConfigurationBuilder {
         self
     }
     /// <p>Specifies the schedule for generating inventory results.</p>
-    pub fn set_schedule(
-        mut self,
-        input: std::option::Option<crate::types::InventorySchedule>,
-    ) -> Self {
-        self.schedule = input;
-        self
+    pub fn set_schedule(mut self, input: std::option::Option<crate::types::InventorySchedule>) -> Self {
+        self.schedule = input; self
     }
     /// Consumes the builder and constructs a [`InventoryConfiguration`](crate::types::InventoryConfiguration).
     pub fn build(self) -> crate::types::InventoryConfiguration {
         crate::types::InventoryConfiguration {
-            destination: self.destination,
-            is_enabled: self.is_enabled.unwrap_or_default(),
-            filter: self.filter,
-            id: self.id,
-            included_object_versions: self.included_object_versions,
-            optional_fields: self.optional_fields,
-            schedule: self.schedule,
+            destination: self.destination
+            ,
+            is_enabled: self.is_enabled
+                .unwrap_or_default()
+            ,
+            filter: self.filter
+            ,
+            id: self.id
+            ,
+            included_object_versions: self.included_object_versions
+            ,
+            optional_fields: self.optional_fields
+            ,
+            schedule: self.schedule
+            ,
         }
     }
 }
+

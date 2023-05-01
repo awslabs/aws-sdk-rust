@@ -3,21 +3,20 @@
 /// <p> Input to the <code>TerminateJobFlows</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateJobFlowsInput {
+pub struct TerminateJobFlowsInput  {
     /// <p>A list of job flows to be shut down.</p>
     #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TerminateJobFlowsInput {
     /// <p>A list of job flows to be shut down.</p>
-    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_flow_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.job_flow_ids.as_deref()
     }
 }
 impl TerminateJobFlowsInput {
     /// Creates a new builder-style object to manufacture [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
-    pub fn builder(
-    ) -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
+    pub fn builder() -> crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder {
         crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder::default()
     }
 }
@@ -36,29 +35,22 @@ impl TerminateJobFlowsInputBuilder {
     /// <p>A list of job flows to be shut down.</p>
     pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_flow_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_flow_ids = Some(v);
+                        self
     }
     /// <p>A list of job flows to be shut down.</p>
-    pub fn set_job_flow_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_flow_ids = input;
-        self
+    pub fn set_job_flow_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_flow_ids = input; self
     }
     /// Consumes the builder and constructs a [`TerminateJobFlowsInput`](crate::operation::terminate_job_flows::TerminateJobFlowsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::terminate_job_flows::TerminateJobFlowsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::terminate_job_flows::TerminateJobFlowsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::terminate_job_flows::TerminateJobFlowsInput {
-                job_flow_ids: self.job_flow_ids,
-            },
+                job_flow_ids: self.job_flow_ids
+                ,
+            }
         )
     }
 }
+

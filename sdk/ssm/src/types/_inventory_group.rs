@@ -3,7 +3,7 @@
 /// <p>A user-defined set of one or more filters on which to aggregate inventory data. Groups return a count of resources that match and don't match the specified criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryGroup {
+pub struct InventoryGroup  {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct InventoryGroup {
 }
 impl InventoryGroup {
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::InventoryFilter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::InventoryFilter]> {
         self.filters.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl InventoryGroupBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `filters`.
     ///
@@ -53,23 +52,22 @@ impl InventoryGroupBuilder {
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
     pub fn filters(mut self, input: crate::types::InventoryFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
     /// <p>Filters define the criteria for the group. The <code>matchingCount</code> field displays the number of resources that match the criteria. The <code>notMatchingCount</code> field displays the number of resources that don't match the criteria. </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InventoryFilter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryFilter>>) -> Self {
+        self.filters = input; self
     }
     /// Consumes the builder and constructs a [`InventoryGroup`](crate::types::InventoryGroup).
     pub fn build(self) -> crate::types::InventoryGroup {
         crate::types::InventoryGroup {
-            name: self.name,
-            filters: self.filters,
+            name: self.name
+            ,
+            filters: self.filters
+            ,
         }
     }
 }
+

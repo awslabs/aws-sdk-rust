@@ -3,7 +3,7 @@
 /// <p>The automatically created recovery point of a namespace. Recovery points are created every 30 minutes and kept for 24 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecoveryPoint {
+pub struct RecoveryPoint  {
     /// <p>The unique identifier of the recovery point.</p>
     #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct RecoveryPoint {
 }
 impl RecoveryPoint {
     /// <p>The unique identifier of the recovery point.</p>
-    pub fn recovery_point_id(&self) -> std::option::Option<&str> {
+    pub fn recovery_point_id(&self) -> std::option::Option<& str> {
         self.recovery_point_id.as_deref()
     }
     /// <p>The time the recovery point is created.</p>
-    pub fn recovery_point_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn recovery_point_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.recovery_point_create_time.as_ref()
     }
     /// <p>The total size of the data in the recovery point in megabytes.</p>
@@ -37,15 +37,15 @@ impl RecoveryPoint {
         self.total_size_in_mega_bytes
     }
     /// <p>The name of the namespace the recovery point is associated with.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the workgroup the recovery point is associated with.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<&str> {
+    pub fn workgroup_name(&self) -> std::option::Option<& str> {
         self.workgroup_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<&str> {
+    pub fn namespace_arn(&self) -> std::option::Option<& str> {
         self.namespace_arn.as_deref()
     }
 }
@@ -74,12 +74,8 @@ impl RecoveryPointBuilder {
         self
     }
     /// <p>The unique identifier of the recovery point.</p>
-    pub fn set_recovery_point_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_point_id = input;
-        self
+    pub fn set_recovery_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_point_id = input; self
     }
     /// <p>The time the recovery point is created.</p>
     pub fn recovery_point_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -87,12 +83,8 @@ impl RecoveryPointBuilder {
         self
     }
     /// <p>The time the recovery point is created.</p>
-    pub fn set_recovery_point_create_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.recovery_point_create_time = input;
-        self
+    pub fn set_recovery_point_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.recovery_point_create_time = input; self
     }
     /// <p>The total size of the data in the recovery point in megabytes.</p>
     pub fn total_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -101,8 +93,7 @@ impl RecoveryPointBuilder {
     }
     /// <p>The total size of the data in the recovery point in megabytes.</p>
     pub fn set_total_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.total_size_in_mega_bytes = input;
-        self
+        self.total_size_in_mega_bytes = input; self
     }
     /// <p>The name of the namespace the recovery point is associated with.</p>
     pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +102,7 @@ impl RecoveryPointBuilder {
     }
     /// <p>The name of the namespace the recovery point is associated with.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input;
-        self
+        self.namespace_name = input; self
     }
     /// <p>The name of the workgroup the recovery point is associated with.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +111,7 @@ impl RecoveryPointBuilder {
     }
     /// <p>The name of the workgroup the recovery point is associated with.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input;
-        self
+        self.workgroup_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
     pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,18 +120,24 @@ impl RecoveryPointBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.</p>
     pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_arn = input;
-        self
+        self.namespace_arn = input; self
     }
     /// Consumes the builder and constructs a [`RecoveryPoint`](crate::types::RecoveryPoint).
     pub fn build(self) -> crate::types::RecoveryPoint {
         crate::types::RecoveryPoint {
-            recovery_point_id: self.recovery_point_id,
-            recovery_point_create_time: self.recovery_point_create_time,
-            total_size_in_mega_bytes: self.total_size_in_mega_bytes,
-            namespace_name: self.namespace_name,
-            workgroup_name: self.workgroup_name,
-            namespace_arn: self.namespace_arn,
+            recovery_point_id: self.recovery_point_id
+            ,
+            recovery_point_create_time: self.recovery_point_create_time
+            ,
+            total_size_in_mega_bytes: self.total_size_in_mega_bytes
+            ,
+            namespace_name: self.namespace_name
+            ,
+            workgroup_name: self.workgroup_name
+            ,
+            namespace_arn: self.namespace_arn
+            ,
         }
     }
 }
+

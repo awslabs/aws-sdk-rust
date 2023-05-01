@@ -35,11 +35,11 @@ pub enum Error {
     PlatformNotSupportedException(crate::types::error::PlatformNotSupportedException),
     /// <p>The calls to the API are throttled.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p>
+    /// <p>The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of allowed range.</p> 
     /// <p>For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed range, the entire batch is not processed. You must remove invalid records and try again.</p>
     TimestampOutOfBoundsException(crate::types::error::TimestampOutOfBoundsException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61,38 +61,20 @@ impl std::fmt::Display for Error {
             Error::PlatformNotSupportedException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::TimestampOutOfBoundsException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::batch_meter_usage::BatchMeterUsageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::batch_meter_usage::BatchMeterUsageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -112,92 +94,46 @@ impl From<crate::operation::batch_meter_usage::BatchMeterUsageError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::meter_usage::MeterUsageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
 impl From<crate::operation::meter_usage::MeterUsageError> for Error {
     fn from(err: crate::operation::meter_usage::MeterUsageError) -> Self {
         match err {
-            crate::operation::meter_usage::MeterUsageError::CustomerNotEntitledException(inner) => {
-                Error::CustomerNotEntitledException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::DuplicateRequestException(inner) => {
-                Error::DuplicateRequestException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException(
-                inner,
-            ) => Error::InternalServiceErrorException(inner),
-            crate::operation::meter_usage::MeterUsageError::InvalidEndpointRegionException(
-                inner,
-            ) => Error::InvalidEndpointRegionException(inner),
-            crate::operation::meter_usage::MeterUsageError::InvalidProductCodeException(inner) => {
-                Error::InvalidProductCodeException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::InvalidTagException(inner) => {
-                Error::InvalidTagException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::InvalidUsageAllocationsException(
-                inner,
-            ) => Error::InvalidUsageAllocationsException(inner),
-            crate::operation::meter_usage::MeterUsageError::InvalidUsageDimensionException(
-                inner,
-            ) => Error::InvalidUsageDimensionException(inner),
-            crate::operation::meter_usage::MeterUsageError::ThrottlingException(inner) => {
-                Error::ThrottlingException(inner)
-            }
-            crate::operation::meter_usage::MeterUsageError::TimestampOutOfBoundsException(
-                inner,
-            ) => Error::TimestampOutOfBoundsException(inner),
-            crate::operation::meter_usage::MeterUsageError::Unhandled(inner) => {
-                Error::Unhandled(inner)
-            }
+            crate::operation::meter_usage::MeterUsageError::CustomerNotEntitledException(inner) => Error::CustomerNotEntitledException(inner),
+            crate::operation::meter_usage::MeterUsageError::DuplicateRequestException(inner) => Error::DuplicateRequestException(inner),
+            crate::operation::meter_usage::MeterUsageError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidEndpointRegionException(inner) => Error::InvalidEndpointRegionException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidProductCodeException(inner) => Error::InvalidProductCodeException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidUsageAllocationsException(inner) => Error::InvalidUsageAllocationsException(inner),
+            crate::operation::meter_usage::MeterUsageError::InvalidUsageDimensionException(inner) => Error::InvalidUsageDimensionException(inner),
+            crate::operation::meter_usage::MeterUsageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::meter_usage::MeterUsageError::TimestampOutOfBoundsException(inner) => Error::TimestampOutOfBoundsException(inner),
+            crate::operation::meter_usage::MeterUsageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::operation::register_usage::RegisterUsageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::register_usage::RegisterUsageError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_usage::RegisterUsageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_usage::RegisterUsageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -216,34 +152,16 @@ impl From<crate::operation::register_usage::RegisterUsageError> for Error {
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::operation::resolve_customer::ResolveCustomerError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::operation::resolve_customer::ResolveCustomerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
-                aws_smithy_types::error::Unhandled::builder()
-                    .meta(
-                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
-                    )
-                    .source(err)
-                    .build(),
-            ),
+                                            aws_smithy_types::error::Unhandled::builder()
+                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
+                                                .source(err)
+                                                .build()
+                                        ),
         }
     }
 }
@@ -284,3 +202,4 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
+

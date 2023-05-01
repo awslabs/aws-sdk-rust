@@ -3,7 +3,7 @@
 /// <p>Information about a service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceInfo {
+pub struct ServiceInfo  {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ServiceInfo {
 }
 impl ServiceInfo {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The service name.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl ServiceInfoBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input;
-        self
+        self.service_code = input; self
     }
     /// <p>The service name.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl ServiceInfoBuilder {
     }
     /// <p>The service name.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input;
-        self
+        self.service_name = input; self
     }
     /// Consumes the builder and constructs a [`ServiceInfo`](crate::types::ServiceInfo).
     pub fn build(self) -> crate::types::ServiceInfo {
         crate::types::ServiceInfo {
-            service_code: self.service_code,
-            service_name: self.service_name,
+            service_code: self.service_code
+            ,
+            service_name: self.service_name
+            ,
         }
     }
 }
+

@@ -3,22 +3,20 @@
 /// <p>Cancels a data repository task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelDataRepositoryTaskInput {
+pub struct CancelDataRepositoryTaskInput  {
     /// <p>Specifies the data repository task to cancel.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl CancelDataRepositoryTaskInput {
     /// <p>Specifies the data repository task to cancel.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl CancelDataRepositoryTaskInput {
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskInput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput).
-    pub fn builder(
-    ) -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder
-    {
+    pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder {
         crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskInputBuilder::default()
     }
 }
@@ -37,20 +35,16 @@ impl CancelDataRepositoryTaskInputBuilder {
     }
     /// <p>Specifies the data repository task to cancel.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelDataRepositoryTaskInput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskInput {
-                task_id: self.task_id,
-            },
+                task_id: self.task_id
+                ,
+            }
         )
     }
 }
+

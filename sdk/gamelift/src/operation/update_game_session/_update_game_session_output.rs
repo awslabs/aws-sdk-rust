@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameSessionOutput {
+pub struct UpdateGameSessionOutput  {
     /// <p>The updated game session properties.</p>
     #[doc(hidden)]
     pub game_session: std::option::Option<crate::types::GameSession>,
@@ -10,19 +10,18 @@ pub struct UpdateGameSessionOutput {
 }
 impl UpdateGameSessionOutput {
     /// <p>The updated game session properties.</p>
-    pub fn game_session(&self) -> std::option::Option<&crate::types::GameSession> {
+    pub fn game_session(&self) -> std::option::Option<& crate::types::GameSession> {
         self.game_session.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateGameSessionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateGameSessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionOutput`](crate::operation::update_game_session::UpdateGameSessionOutput).
-    pub fn builder(
-    ) -> crate::operation::update_game_session::builders::UpdateGameSessionOutputBuilder {
+    pub fn builder() -> crate::operation::update_game_session::builders::UpdateGameSessionOutputBuilder {
         crate::operation::update_game_session::builders::UpdateGameSessionOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateGameSessionOutputBuilder {
         self
     }
     /// <p>The updated game session properties.</p>
-    pub fn set_game_session(
-        mut self,
-        input: std::option::Option<crate::types::GameSession>,
-    ) -> Self {
-        self.game_session = input;
-        self
+    pub fn set_game_session(mut self, input: std::option::Option<crate::types::GameSession>) -> Self {
+        self.game_session = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateGameSessionOutput`](crate::operation::update_game_session::UpdateGameSessionOutput).
     pub fn build(self) -> crate::operation::update_game_session::UpdateGameSessionOutput {
         crate::operation::update_game_session::UpdateGameSessionOutput {
-            game_session: self.game_session,
+            game_session: self.game_session
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

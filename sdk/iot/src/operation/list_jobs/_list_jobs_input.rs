@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsInput {
+pub struct ListJobsInput  {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::JobStatus>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_selection: std::option::Option<crate::types::TargetSelection>,
@@ -23,23 +23,23 @@ pub struct ListJobsInput {
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     #[doc(hidden)]
     pub thing_group_id: std::option::Option<std::string::String>,
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
 }
 impl ListJobsInput {
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
-    pub fn target_selection(&self) -> std::option::Option<&crate::types::TargetSelection> {
+    pub fn target_selection(&self) -> std::option::Option<& crate::types::TargetSelection> {
         self.target_selection.as_ref()
     }
     /// <p>The maximum number of results to return per request.</p>
@@ -47,23 +47,23 @@ impl ListJobsInput {
         self.max_results
     }
     /// <p>The token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
-    pub fn thing_group_name(&self) -> std::option::Option<&str> {
+    pub fn thing_group_name(&self) -> std::option::Option<& str> {
         self.thing_group_name.as_deref()
     }
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
-    pub fn thing_group_id(&self) -> std::option::Option<&str> {
+    pub fn thing_group_id(&self) -> std::option::Option<& str> {
         self.thing_group_id.as_deref()
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
-    pub fn namespace_id(&self) -> std::option::Option<&str> {
+    pub fn namespace_id(&self) -> std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
 }
@@ -94,25 +94,20 @@ impl ListJobsInputBuilder {
     }
     /// <p>An optional filter that lets you search for jobs that have the specified status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
     pub fn target_selection(mut self, input: crate::types::TargetSelection) -> Self {
         self.target_selection = Some(input);
         self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
-    pub fn set_target_selection(
-        mut self,
-        input: std::option::Option<crate::types::TargetSelection>,
-    ) -> Self {
-        self.target_selection = input;
-        self
+    pub fn set_target_selection(mut self, input: std::option::Option<crate::types::TargetSelection>) -> Self {
+        self.target_selection = input; self
     }
     /// <p>The maximum number of results to return per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -121,8 +116,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The maximum number of results to return per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +125,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>The token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub fn thing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,8 +134,7 @@ impl ListJobsInputBuilder {
     }
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_name = input;
-        self
+        self.thing_group_name = input; self
     }
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub fn thing_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,42 +143,45 @@ impl ListJobsInputBuilder {
     }
     /// <p>A filter that limits the returned jobs to those for the specified group.</p>
     pub fn set_thing_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_group_id = input;
-        self
+        self.thing_group_id = input; self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace_id = Some(input.into());
         self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_jobs::ListJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_jobs::ListJobsInput {
-            status: self.status,
-            target_selection: self.target_selection,
-            max_results: self.max_results,
-            next_token: self.next_token,
-            thing_group_name: self.thing_group_name,
-            thing_group_id: self.thing_group_id,
-            namespace_id: self.namespace_id,
-        })
+    pub fn build(self) -> Result<crate::operation::list_jobs::ListJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_jobs::ListJobsInput {
+                status: self.status
+                ,
+                target_selection: self.target_selection
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                thing_group_name: self.thing_group_name
+                ,
+                thing_group_id: self.thing_group_id
+                ,
+                namespace_id: self.namespace_id
+                ,
+            }
+        )
     }
 }
+

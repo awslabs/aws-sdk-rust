@@ -3,8 +3,8 @@
 /// <p>Identifies a participant in a handshake.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HandshakeParty {
-    /// <p>The unique identifier (ID) for the party.</p>
+pub struct HandshakeParty  {
+    /// <p>The unique identifier (ID) for the party.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct HandshakeParty {
     pub r#type: std::option::Option<crate::types::HandshakePartyType>,
 }
 impl HandshakeParty {
-    /// <p>The unique identifier (ID) for the party.</p>
+    /// <p>The unique identifier (ID) for the party.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of party.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::HandshakePartyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::HandshakePartyType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for HandshakeParty {
+impl  std::fmt::Debug for HandshakeParty  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeParty");
         formatter.field("id", &"*** Sensitive Data Redacted ***");
@@ -46,17 +46,16 @@ pub struct HandshakePartyBuilder {
     pub(crate) r#type: std::option::Option<crate::types::HandshakePartyType>,
 }
 impl HandshakePartyBuilder {
-    /// <p>The unique identifier (ID) for the party.</p>
+    /// <p>The unique identifier (ID) for the party.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.id = Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) for the party.</p>
+    /// <p>The unique identifier (ID) for the party.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The type of party.</p>
     pub fn r#type(mut self, input: crate::types::HandshakePartyType) -> Self {
@@ -64,18 +63,16 @@ impl HandshakePartyBuilder {
         self
     }
     /// <p>The type of party.</p>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::HandshakePartyType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::HandshakePartyType>) -> Self {
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`HandshakeParty`](crate::types::HandshakeParty).
     pub fn build(self) -> crate::types::HandshakeParty {
         crate::types::HandshakeParty {
-            id: self.id,
-            r#type: self.r#type,
+            id: self.id
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
@@ -87,3 +84,4 @@ impl std::fmt::Debug for HandshakePartyBuilder {
         formatter.finish()
     }
 }
+

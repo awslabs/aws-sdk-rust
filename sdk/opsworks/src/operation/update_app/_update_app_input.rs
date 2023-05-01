@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppInput {
+pub struct UpdateAppInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -32,43 +32,41 @@ pub struct UpdateAppInput {
     pub ssl_configuration: std::option::Option<crate::types::SslConfiguration>,
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>,
-    >,
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
-    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    pub attributes: std::option::Option<std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>>,
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> 
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note> 
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p> 
     /// </note>
     #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::types::EnvironmentVariable>>,
 }
 impl UpdateAppInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The app name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The app's data sources.</p>
-    pub fn data_sources(&self) -> std::option::Option<&[crate::types::DataSource]> {
+    pub fn data_sources(&self) -> std::option::Option<& [crate::types::DataSource]> {
         self.data_sources.as_deref()
     }
     /// <p>The app type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AppType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::AppType> {
         self.r#type.as_ref()
     }
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
-    pub fn app_source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn app_source(&self) -> std::option::Option<& crate::types::Source> {
         self.app_source.as_ref()
     }
     /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> std::option::Option<& [std::string::String]> {
         self.domains.as_deref()
     }
     /// <p>Whether SSL is enabled for the app.</p>
@@ -76,22 +74,18 @@ impl UpdateAppInput {
         self.enable_ssl
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-    pub fn ssl_configuration(&self) -> std::option::Option<&crate::types::SslConfiguration> {
+    pub fn ssl_configuration(&self) -> std::option::Option<& crate::types::SslConfiguration> {
         self.ssl_configuration.as_ref()
     }
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>> {
         self.attributes.as_ref()
     }
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
-    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> 
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note> 
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p> 
     /// </note>
-    pub fn environment(&self) -> std::option::Option<&[crate::types::EnvironmentVariable]> {
+    pub fn environment(&self) -> std::option::Option<& [crate::types::EnvironmentVariable]> {
         self.environment.as_deref()
     }
 }
@@ -115,9 +109,7 @@ pub struct UpdateAppInputBuilder {
     pub(crate) domains: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) enable_ssl: std::option::Option<bool>,
     pub(crate) ssl_configuration: std::option::Option<crate::types::SslConfiguration>,
-    pub(crate) attributes: std::option::Option<
-        std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>,
-    >,
+    pub(crate) attributes: std::option::Option<std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>>,
     pub(crate) environment: std::option::Option<std::vec::Vec<crate::types::EnvironmentVariable>>,
 }
 impl UpdateAppInputBuilder {
@@ -128,8 +120,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The app name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,8 +129,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The app name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the app.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,8 +138,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>A description of the app.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Appends an item to `data_sources`.
     ///
@@ -158,17 +147,13 @@ impl UpdateAppInputBuilder {
     /// <p>The app's data sources.</p>
     pub fn data_sources(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-        v.push(input);
-        self.data_sources = Some(v);
-        self
+                        v.push(input);
+                        self.data_sources = Some(v);
+                        self
     }
     /// <p>The app's data sources.</p>
-    pub fn set_data_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
-    ) -> Self {
-        self.data_sources = input;
-        self
+    pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSource>>) -> Self {
+        self.data_sources = input; self
     }
     /// <p>The app type.</p>
     pub fn r#type(mut self, input: crate::types::AppType) -> Self {
@@ -177,8 +162,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>The app type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::AppType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub fn app_source(mut self, input: crate::types::Source) -> Self {
@@ -187,8 +171,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
     pub fn set_app_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
-        self.app_source = input;
-        self
+        self.app_source = input; self
     }
     /// Appends an item to `domains`.
     ///
@@ -197,17 +180,13 @@ impl UpdateAppInputBuilder {
     /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
-        v.push(input.into());
-        self.domains = Some(v);
-        self
+                        v.push(input.into());
+                        self.domains = Some(v);
+                        self
     }
     /// <p>The app's virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn set_domains(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.domains = input;
-        self
+    pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.domains = input; self
     }
     /// <p>Whether SSL is enabled for the app.</p>
     pub fn enable_ssl(mut self, input: bool) -> Self {
@@ -216,8 +195,7 @@ impl UpdateAppInputBuilder {
     }
     /// <p>Whether SSL is enabled for the app.</p>
     pub fn set_enable_ssl(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_ssl = input;
-        self
+        self.enable_ssl = input; self
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     pub fn ssl_configuration(mut self, input: crate::types::SslConfiguration) -> Self {
@@ -225,82 +203,73 @@ impl UpdateAppInputBuilder {
         self
     }
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-    pub fn set_ssl_configuration(
-        mut self,
-        input: std::option::Option<crate::types::SslConfiguration>,
-    ) -> Self {
-        self.ssl_configuration = input;
-        self
+    pub fn set_ssl_configuration(mut self, input: std::option::Option<crate::types::SslConfiguration>) -> Self {
+        self.ssl_configuration = input; self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn attributes(
-        mut self,
-        k: crate::types::AppAttributesKeys,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: crate::types::AppAttributesKeys, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k, v.into());
-        self.attributes = Some(hash_map);
-        self
+                        hash_map.insert(k, v.into());
+                        self.attributes = Some(hash_map);
+                        self
     }
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// Appends an item to `environment`.
     ///
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
-    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> 
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note> 
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p> 
     /// </note>
     pub fn environment(mut self, input: crate::types::EnvironmentVariable) -> Self {
         let mut v = self.environment.unwrap_or_default();
-        v.push(input);
-        self.environment = Some(v);
-        self
+                        v.push(input);
+                        self.environment = Some(v);
+                        self
     }
-    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p>
-    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note>
-    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p>
+    /// <p>An array of <code>EnvironmentVariable</code> objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instances.For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment"> Environment Variables</a>.</p> 
+    /// <p>There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large (maximum is 20 KB)."</p> <note> 
+    /// <p>If you have specified one or more environment variables, you cannot modify the stack's Chef version.</p> 
     /// </note>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentVariable>>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnvironmentVariable>>) -> Self {
+        self.environment = input; self
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_app::UpdateAppInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_app::UpdateAppInput {
-            app_id: self.app_id,
-            name: self.name,
-            description: self.description,
-            data_sources: self.data_sources,
-            r#type: self.r#type,
-            app_source: self.app_source,
-            domains: self.domains,
-            enable_ssl: self.enable_ssl,
-            ssl_configuration: self.ssl_configuration,
-            attributes: self.attributes,
-            environment: self.environment,
-        })
+    pub fn build(self) -> Result<crate::operation::update_app::UpdateAppInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_app::UpdateAppInput {
+                app_id: self.app_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                data_sources: self.data_sources
+                ,
+                r#type: self.r#type
+                ,
+                app_source: self.app_source
+                ,
+                domains: self.domains
+                ,
+                enable_ssl: self.enable_ssl
+                ,
+                ssl_configuration: self.ssl_configuration
+                ,
+                attributes: self.attributes
+                ,
+                environment: self.environment
+                ,
+            }
+        )
     }
 }
+

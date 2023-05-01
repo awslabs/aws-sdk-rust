@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProblemsOutput {
+pub struct ListProblemsOutput  {
     /// <p>The list of problems. </p>
     #[doc(hidden)]
     pub problem_list: std::option::Option<std::vec::Vec<crate::types::Problem>>,
@@ -16,23 +16,23 @@ pub struct ListProblemsOutput {
 }
 impl ListProblemsOutput {
     /// <p>The list of problems. </p>
-    pub fn problem_list(&self) -> std::option::Option<&[crate::types::Problem]> {
+    pub fn problem_list(&self) -> std::option::Option<& [crate::types::Problem]> {
         self.problem_list.as_deref()
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The name of the resource group. </p>
-    pub fn resource_group_name(&self) -> std::option::Option<&str> {
+    pub fn resource_group_name(&self) -> std::option::Option<& str> {
         self.resource_group_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListProblemsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListProblemsOutput {
     /// Creates a new builder-style object to manufacture [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput).
     pub fn builder() -> crate::operation::list_problems::builders::ListProblemsOutputBuilder {
@@ -57,17 +57,13 @@ impl ListProblemsOutputBuilder {
     /// <p>The list of problems. </p>
     pub fn problem_list(mut self, input: crate::types::Problem) -> Self {
         let mut v = self.problem_list.unwrap_or_default();
-        v.push(input);
-        self.problem_list = Some(v);
-        self
+                        v.push(input);
+                        self.problem_list = Some(v);
+                        self
     }
     /// <p>The list of problems. </p>
-    pub fn set_problem_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Problem>>,
-    ) -> Self {
-        self.problem_list = input;
-        self
+    pub fn set_problem_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Problem>>) -> Self {
+        self.problem_list = input; self
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +72,7 @@ impl ListProblemsOutputBuilder {
     }
     /// <p>The token used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p> The name of the resource group. </p>
     pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,29 +80,29 @@ impl ListProblemsOutputBuilder {
         self
     }
     /// <p> The name of the resource group. </p>
-    pub fn set_resource_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.resource_group_name = input;
-        self
+    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.resource_group_name = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListProblemsOutput`](crate::operation::list_problems::ListProblemsOutput).
     pub fn build(self) -> crate::operation::list_problems::ListProblemsOutput {
         crate::operation::list_problems::ListProblemsOutput {
-            problem_list: self.problem_list,
-            next_token: self.next_token,
-            resource_group_name: self.resource_group_name,
+            problem_list: self.problem_list
+            ,
+            next_token: self.next_token
+            ,
+            resource_group_name: self.resource_group_name
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

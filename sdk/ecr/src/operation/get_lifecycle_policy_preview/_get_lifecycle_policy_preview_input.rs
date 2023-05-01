@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLifecyclePolicyPreviewInput {
+pub struct GetLifecyclePolicyPreviewInput  {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct GetLifecyclePolicyPreviewInput {
 }
 impl GetLifecyclePolicyPreviewInput {
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn image_ids(&self) -> std::option::Option<&[crate::types::ImageIdentifier]> {
+    pub fn image_ids(&self) -> std::option::Option<& [crate::types::ImageIdentifier]> {
         self.image_ids.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
@@ -44,13 +44,13 @@ impl GetLifecyclePolicyPreviewInput {
         self.max_results
     }
     /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::types::LifecyclePolicyPreviewFilter> {
+    pub fn filter(&self) -> std::option::Option<& crate::types::LifecyclePolicyPreviewFilter> {
         self.filter.as_ref()
     }
 }
 impl GetLifecyclePolicyPreviewInput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePolicyPreviewInput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput).
-    pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder{
+    pub fn builder() -> crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder {
         crate::operation::get_lifecycle_policy_preview::builders::GetLifecyclePolicyPreviewInputBuilder::default()
     }
 }
@@ -74,8 +74,7 @@ impl GetLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository. If you do not specify a registry, the default registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The name of the repository.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl GetLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The name of the repository.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// Appends an item to `image_ids`.
     ///
@@ -94,17 +92,13 @@ impl GetLifecyclePolicyPreviewInputBuilder {
     /// <p>The list of imageIDs to be included.</p>
     pub fn image_ids(mut self, input: crate::types::ImageIdentifier) -> Self {
         let mut v = self.image_ids.unwrap_or_default();
-        v.push(input);
-        self.image_ids = Some(v);
-        self
+                        v.push(input);
+                        self.image_ids = Some(v);
+                        self
     }
     /// <p>The list of imageIDs to be included.</p>
-    pub fn set_image_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>,
-    ) -> Self {
-        self.image_ids = input;
-        self
+    pub fn set_image_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageIdentifier>>) -> Self {
+        self.image_ids = input; self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +107,7 @@ impl GetLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated  <code>GetLifecyclePolicyPreviewRequest</code> request where <code>maxResults</code> was used and the  results exceeded the value of that parameter. Pagination continues from the end of the  previous results that returned the <code>nextToken</code> value. This value is  <code>null</code> when there are no more results to return. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -123,8 +116,7 @@ impl GetLifecyclePolicyPreviewInputBuilder {
     }
     /// <p>The maximum number of repository results returned by <code>GetLifecyclePolicyPreviewRequest</code> in  paginated output. When this parameter is used, <code>GetLifecyclePolicyPreviewRequest</code> only returns  <code>maxResults</code> results in a single page along with a <code>nextToken</code>  response element. The remaining results of the initial request can be seen by sending  another <code>GetLifecyclePolicyPreviewRequest</code> request with the returned <code>nextToken</code>  value. This value can be between 1 and 1000. If this  parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code> returns up to  100 results and a <code>nextToken</code> value, if  applicable. This option cannot be used when you specify images with <code>imageIds</code>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
     pub fn filter(mut self, input: crate::types::LifecyclePolicyPreviewFilter) -> Self {
@@ -132,29 +124,27 @@ impl GetLifecyclePolicyPreviewInputBuilder {
         self
     }
     /// <p>An optional parameter that filters results based on image tag status and all tags, if tagged.</p>
-    pub fn set_filter(
-        mut self,
-        input: std::option::Option<crate::types::LifecyclePolicyPreviewFilter>,
-    ) -> Self {
-        self.filter = input;
-        self
+    pub fn set_filter(mut self, input: std::option::Option<crate::types::LifecyclePolicyPreviewFilter>) -> Self {
+        self.filter = input; self
     }
     /// Consumes the builder and constructs a [`GetLifecyclePolicyPreviewInput`](crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewInput {
-                registry_id: self.registry_id,
-                repository_name: self.repository_name,
-                image_ids: self.image_ids,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                filter: self.filter,
-            },
+                registry_id: self.registry_id
+                ,
+                repository_name: self.repository_name
+                ,
+                image_ids: self.image_ids
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                filter: self.filter
+                ,
+            }
         )
     }
 }
+

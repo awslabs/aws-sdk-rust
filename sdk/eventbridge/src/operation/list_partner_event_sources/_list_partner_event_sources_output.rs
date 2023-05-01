@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPartnerEventSourcesOutput {
+pub struct ListPartnerEventSourcesOutput  {
     /// <p>The list of partner event sources returned by the operation.</p>
     #[doc(hidden)]
     pub partner_event_sources: std::option::Option<std::vec::Vec<crate::types::PartnerEventSource>>,
@@ -13,26 +13,22 @@ pub struct ListPartnerEventSourcesOutput {
 }
 impl ListPartnerEventSourcesOutput {
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn partner_event_sources(
-        &self,
-    ) -> std::option::Option<&[crate::types::PartnerEventSource]> {
+    pub fn partner_event_sources(&self) -> std::option::Option<& [crate::types::PartnerEventSource]> {
         self.partner_event_sources.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPartnerEventSourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPartnerEventSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListPartnerEventSourcesOutput`](crate::operation::list_partner_event_sources::ListPartnerEventSourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesOutputBuilder {
         crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesOutputBuilder::default()
     }
 }
@@ -41,8 +37,7 @@ impl ListPartnerEventSourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListPartnerEventSourcesOutputBuilder {
-    pub(crate) partner_event_sources:
-        std::option::Option<std::vec::Vec<crate::types::PartnerEventSource>>,
+    pub(crate) partner_event_sources: std::option::Option<std::vec::Vec<crate::types::PartnerEventSource>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +49,13 @@ impl ListPartnerEventSourcesOutputBuilder {
     /// <p>The list of partner event sources returned by the operation.</p>
     pub fn partner_event_sources(mut self, input: crate::types::PartnerEventSource) -> Self {
         let mut v = self.partner_event_sources.unwrap_or_default();
-        v.push(input);
-        self.partner_event_sources = Some(v);
-        self
+                        v.push(input);
+                        self.partner_event_sources = Some(v);
+                        self
     }
     /// <p>The list of partner event sources returned by the operation.</p>
-    pub fn set_partner_event_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PartnerEventSource>>,
-    ) -> Self {
-        self.partner_event_sources = input;
-        self
+    pub fn set_partner_event_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::PartnerEventSource>>) -> Self {
+        self.partner_event_sources = input; self
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,26 +64,26 @@ impl ListPartnerEventSourcesOutputBuilder {
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPartnerEventSourcesOutput`](crate::operation::list_partner_event_sources::ListPartnerEventSourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_partner_event_sources::ListPartnerEventSourcesOutput {
+    pub fn build(self) -> crate::operation::list_partner_event_sources::ListPartnerEventSourcesOutput {
         crate::operation::list_partner_event_sources::ListPartnerEventSourcesOutput {
-            partner_event_sources: self.partner_event_sources,
-            next_token: self.next_token,
+            partner_event_sources: self.partner_event_sources
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

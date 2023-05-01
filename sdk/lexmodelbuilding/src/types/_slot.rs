@@ -3,7 +3,7 @@
 /// <p>Identifies the version of a specific slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Slot {
+pub struct Slot  {
     /// <p>The name of the slot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct Slot {
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
     #[doc(hidden)]
     pub value_elicitation_prompt: std::option::Option<crate::types::Prompt>,
-    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
+    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p> 
     /// <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
@@ -41,48 +41,48 @@ pub struct Slot {
 }
 impl Slot {
     /// <p>The name of the slot.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the slot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the slot is required or optional. </p>
-    pub fn slot_constraint(&self) -> std::option::Option<&crate::types::SlotConstraint> {
+    pub fn slot_constraint(&self) -> std::option::Option<& crate::types::SlotConstraint> {
         self.slot_constraint.as_ref()
     }
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
-    pub fn slot_type(&self) -> std::option::Option<&str> {
+    pub fn slot_type(&self) -> std::option::Option<& str> {
         self.slot_type.as_deref()
     }
     /// <p>The version of the slot type.</p>
-    pub fn slot_type_version(&self) -> std::option::Option<&str> {
+    pub fn slot_type_version(&self) -> std::option::Option<& str> {
         self.slot_type_version.as_deref()
     }
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
-    pub fn value_elicitation_prompt(&self) -> std::option::Option<&crate::types::Prompt> {
+    pub fn value_elicitation_prompt(&self) -> std::option::Option<& crate::types::Prompt> {
         self.value_elicitation_prompt.as_ref()
     }
-    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
+    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p> 
     /// <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// <p> If you know a specific pattern with which users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances. </p>
-    pub fn sample_utterances(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sample_utterances(&self) -> std::option::Option<& [std::string::String]> {
         self.sample_utterances.as_deref()
     }
     /// <p> A set of possible responses for the slot type used by text-based clients. A user chooses an option from the response card, instead of using text to reply. </p>
-    pub fn response_card(&self) -> std::option::Option<&str> {
+    pub fn response_card(&self) -> std::option::Option<& str> {
         self.response_card.as_deref()
     }
     /// <p>Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>. </p>
-    pub fn obfuscation_setting(&self) -> std::option::Option<&crate::types::ObfuscationSetting> {
+    pub fn obfuscation_setting(&self) -> std::option::Option<& crate::types::ObfuscationSetting> {
         self.obfuscation_setting.as_ref()
     }
     /// <p>A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-    pub fn default_value_spec(&self) -> std::option::Option<&crate::types::SlotDefaultValueSpec> {
+    pub fn default_value_spec(&self) -> std::option::Option<& crate::types::SlotDefaultValueSpec> {
         self.default_value_spec.as_ref()
     }
 }
@@ -117,8 +117,7 @@ impl SlotBuilder {
     }
     /// <p>The name of the slot.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the slot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +126,7 @@ impl SlotBuilder {
     }
     /// <p>A description of the slot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Specifies whether the slot is required or optional. </p>
     pub fn slot_constraint(mut self, input: crate::types::SlotConstraint) -> Self {
@@ -136,12 +134,8 @@ impl SlotBuilder {
         self
     }
     /// <p>Specifies whether the slot is required or optional. </p>
-    pub fn set_slot_constraint(
-        mut self,
-        input: std::option::Option<crate::types::SlotConstraint>,
-    ) -> Self {
-        self.slot_constraint = input;
-        self
+    pub fn set_slot_constraint(mut self, input: std::option::Option<crate::types::SlotConstraint>) -> Self {
+        self.slot_constraint = input; self
     }
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
     pub fn slot_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +144,7 @@ impl SlotBuilder {
     }
     /// <p>The type of the slot, either a custom slot type that you defined or one of the built-in slot types.</p>
     pub fn set_slot_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type = input;
-        self
+        self.slot_type = input; self
     }
     /// <p>The version of the slot type.</p>
     pub fn slot_type_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,12 +152,8 @@ impl SlotBuilder {
         self
     }
     /// <p>The version of the slot type.</p>
-    pub fn set_slot_type_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.slot_type_version = input;
-        self
+    pub fn set_slot_type_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.slot_type_version = input; self
     }
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
     pub fn value_elicitation_prompt(mut self, input: crate::types::Prompt) -> Self {
@@ -172,24 +161,19 @@ impl SlotBuilder {
         self
     }
     /// <p>The prompt that Amazon Lex uses to elicit the slot value from the user.</p>
-    pub fn set_value_elicitation_prompt(
-        mut self,
-        input: std::option::Option<crate::types::Prompt>,
-    ) -> Self {
-        self.value_elicitation_prompt = input;
-        self
+    pub fn set_value_elicitation_prompt(mut self, input: std::option::Option<crate::types::Prompt>) -> Self {
+        self.value_elicitation_prompt = input; self
     }
-    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
+    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p> 
     /// <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>
     pub fn priority(mut self, input: i32) -> Self {
         self.priority = Some(input);
         self
     }
-    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
+    /// <p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p> 
     /// <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// Appends an item to `sample_utterances`.
     ///
@@ -198,17 +182,13 @@ impl SlotBuilder {
     /// <p> If you know a specific pattern with which users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances. </p>
     pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
-        v.push(input.into());
-        self.sample_utterances = Some(v);
-        self
+                        v.push(input.into());
+                        self.sample_utterances = Some(v);
+                        self
     }
     /// <p> If you know a specific pattern with which users might respond to an Amazon Lex request for a slot value, you can provide those utterances to improve accuracy. This is optional. In most cases, Amazon Lex is capable of understanding user utterances. </p>
-    pub fn set_sample_utterances(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.sample_utterances = input;
-        self
+    pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.sample_utterances = input; self
     }
     /// <p> A set of possible responses for the slot type used by text-based clients. A user chooses an option from the response card, instead of using text to reply. </p>
     pub fn response_card(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,8 +197,7 @@ impl SlotBuilder {
     }
     /// <p> A set of possible responses for the slot type used by text-based clients. A user chooses an option from the response card, instead of using text to reply. </p>
     pub fn set_response_card(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.response_card = input;
-        self
+        self.response_card = input; self
     }
     /// <p>Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>. </p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
@@ -226,12 +205,8 @@ impl SlotBuilder {
         self
     }
     /// <p>Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is "full_name", obfuscated values are replaced with "{full_name}". For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>. </p>
-    pub fn set_obfuscation_setting(
-        mut self,
-        input: std::option::Option<crate::types::ObfuscationSetting>,
-    ) -> Self {
-        self.obfuscation_setting = input;
-        self
+    pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::types::ObfuscationSetting>) -> Self {
+        self.obfuscation_setting = input; self
     }
     /// <p>A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
     pub fn default_value_spec(mut self, input: crate::types::SlotDefaultValueSpec) -> Self {
@@ -239,27 +214,35 @@ impl SlotBuilder {
         self
     }
     /// <p>A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>
-    pub fn set_default_value_spec(
-        mut self,
-        input: std::option::Option<crate::types::SlotDefaultValueSpec>,
-    ) -> Self {
-        self.default_value_spec = input;
-        self
+    pub fn set_default_value_spec(mut self, input: std::option::Option<crate::types::SlotDefaultValueSpec>) -> Self {
+        self.default_value_spec = input; self
     }
     /// Consumes the builder and constructs a [`Slot`](crate::types::Slot).
     pub fn build(self) -> crate::types::Slot {
         crate::types::Slot {
-            name: self.name,
-            description: self.description,
-            slot_constraint: self.slot_constraint,
-            slot_type: self.slot_type,
-            slot_type_version: self.slot_type_version,
-            value_elicitation_prompt: self.value_elicitation_prompt,
-            priority: self.priority,
-            sample_utterances: self.sample_utterances,
-            response_card: self.response_card,
-            obfuscation_setting: self.obfuscation_setting,
-            default_value_spec: self.default_value_spec,
+            name: self.name
+            ,
+            description: self.description
+            ,
+            slot_constraint: self.slot_constraint
+            ,
+            slot_type: self.slot_type
+            ,
+            slot_type_version: self.slot_type_version
+            ,
+            value_elicitation_prompt: self.value_elicitation_prompt
+            ,
+            priority: self.priority
+            ,
+            sample_utterances: self.sample_utterances
+            ,
+            response_card: self.response_card
+            ,
+            obfuscation_setting: self.obfuscation_setting
+            ,
+            default_value_spec: self.default_value_spec
+            ,
         }
     }
 }
+

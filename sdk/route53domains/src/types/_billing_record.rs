@@ -3,7 +3,7 @@
 /// <p>Information for one billing record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BillingRecord {
+pub struct BillingRecord  {
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -16,29 +16,29 @@ pub struct BillingRecord {
     /// <p>The date that the operation was billed, in Unix format.</p>
     #[doc(hidden)]
     pub bill_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>The price that you were charged for the operation, in US dollars.</p> 
     /// <p>Example value: 12.0</p>
     #[doc(hidden)]
     pub price: f64,
 }
 impl BillingRecord {
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The operation that you were charged for.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn operation(&self) -> std::option::Option<& crate::types::OperationType> {
         self.operation.as_ref()
     }
     /// <p>The ID of the invoice that is associated with the billing record.</p>
-    pub fn invoice_id(&self) -> std::option::Option<&str> {
+    pub fn invoice_id(&self) -> std::option::Option<& str> {
         self.invoice_id.as_deref()
     }
     /// <p>The date that the operation was billed, in Unix format.</p>
-    pub fn bill_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn bill_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.bill_date.as_ref()
     }
-    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>The price that you were charged for the operation, in US dollars.</p> 
     /// <p>Example value: 12.0</p>
     pub fn price(&self) -> f64 {
         self.price
@@ -69,8 +69,7 @@ impl BillingRecordBuilder {
     }
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The operation that you were charged for.</p>
     pub fn operation(mut self, input: crate::types::OperationType) -> Self {
@@ -78,12 +77,8 @@ impl BillingRecordBuilder {
         self
     }
     /// <p>The operation that you were charged for.</p>
-    pub fn set_operation(
-        mut self,
-        input: std::option::Option<crate::types::OperationType>,
-    ) -> Self {
-        self.operation = input;
-        self
+    pub fn set_operation(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
+        self.operation = input; self
     }
     /// <p>The ID of the invoice that is associated with the billing record.</p>
     pub fn invoice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +87,7 @@ impl BillingRecordBuilder {
     }
     /// <p>The ID of the invoice that is associated with the billing record.</p>
     pub fn set_invoice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invoice_id = input;
-        self
+        self.invoice_id = input; self
     }
     /// <p>The date that the operation was billed, in Unix format.</p>
     pub fn bill_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,29 +96,34 @@ impl BillingRecordBuilder {
     }
     /// <p>The date that the operation was billed, in Unix format.</p>
     pub fn set_bill_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.bill_date = input;
-        self
+        self.bill_date = input; self
     }
-    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>The price that you were charged for the operation, in US dollars.</p> 
     /// <p>Example value: 12.0</p>
     pub fn price(mut self, input: f64) -> Self {
         self.price = Some(input);
         self
     }
-    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>The price that you were charged for the operation, in US dollars.</p> 
     /// <p>Example value: 12.0</p>
     pub fn set_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.price = input;
-        self
+        self.price = input; self
     }
     /// Consumes the builder and constructs a [`BillingRecord`](crate::types::BillingRecord).
     pub fn build(self) -> crate::types::BillingRecord {
         crate::types::BillingRecord {
-            domain_name: self.domain_name,
-            operation: self.operation,
-            invoice_id: self.invoice_id,
-            bill_date: self.bill_date,
-            price: self.price.unwrap_or_default(),
+            domain_name: self.domain_name
+            ,
+            operation: self.operation
+            ,
+            invoice_id: self.invoice_id
+            ,
+            bill_date: self.bill_date
+            ,
+            price: self.price
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

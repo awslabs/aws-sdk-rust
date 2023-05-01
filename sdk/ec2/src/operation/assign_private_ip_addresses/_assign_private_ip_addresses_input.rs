@@ -3,14 +3,14 @@
 /// <p>Contains the parameters for AssignPrivateIpAddresses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssignPrivateIpAddressesInput {
+pub struct AssignPrivateIpAddressesInput  {
     /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
     #[doc(hidden)]
     pub allow_reassignment: std::option::Option<bool>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
-    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p> 
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
     #[doc(hidden)]
     pub private_ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -30,12 +30,12 @@ impl AssignPrivateIpAddressesInput {
         self.allow_reassignment
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
-    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p> 
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn private_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn private_ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
@@ -43,7 +43,7 @@ impl AssignPrivateIpAddressesInput {
         self.secondary_private_ip_address_count
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn ipv4_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipv4_prefixes(&self) -> std::option::Option<& [std::string::String]> {
         self.ipv4_prefixes.as_deref()
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
@@ -53,9 +53,7 @@ impl AssignPrivateIpAddressesInput {
 }
 impl AssignPrivateIpAddressesInput {
     /// Creates a new builder-style object to manufacture [`AssignPrivateIpAddressesInput`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput).
-    pub fn builder(
-    ) -> crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder
-    {
+    pub fn builder() -> crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder {
         crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder::default()
     }
 }
@@ -79,8 +77,7 @@ impl AssignPrivateIpAddressesInputBuilder {
     }
     /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
     pub fn set_allow_reassignment(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_reassignment = input;
-        self
+        self.allow_reassignment = input; self
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,33 +85,25 @@ impl AssignPrivateIpAddressesInputBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_interface_id = input;
-        self
+    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_interface_id = input; self
     }
     /// Appends an item to `private_ip_addresses`.
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
-    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p> 
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
     pub fn private_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.private_ip_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.private_ip_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.private_ip_addresses = Some(v);
+                        self
     }
-    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p> 
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn set_private_ip_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.private_ip_addresses = input;
-        self
+    pub fn set_private_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.private_ip_addresses = input; self
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
     pub fn secondary_private_ip_address_count(mut self, input: i32) -> Self {
@@ -122,12 +111,8 @@ impl AssignPrivateIpAddressesInputBuilder {
         self
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
-    pub fn set_secondary_private_ip_address_count(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.secondary_private_ip_address_count = input;
-        self
+    pub fn set_secondary_private_ip_address_count(mut self, input: std::option::Option<i32>) -> Self {
+        self.secondary_private_ip_address_count = input; self
     }
     /// Appends an item to `ipv4_prefixes`.
     ///
@@ -136,17 +121,13 @@ impl AssignPrivateIpAddressesInputBuilder {
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
     pub fn ipv4_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ipv4_prefixes.unwrap_or_default();
-        v.push(input.into());
-        self.ipv4_prefixes = Some(v);
-        self
+                        v.push(input.into());
+                        self.ipv4_prefixes = Some(v);
+                        self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ipv4_prefixes = input;
-        self
+    pub fn set_ipv4_prefixes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ipv4_prefixes = input; self
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
@@ -155,25 +136,26 @@ impl AssignPrivateIpAddressesInputBuilder {
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code> option.</p>
     pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.ipv4_prefix_count = input;
-        self
+        self.ipv4_prefix_count = input; self
     }
     /// Consumes the builder and constructs a [`AssignPrivateIpAddressesInput`](crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesInput {
-                allow_reassignment: self.allow_reassignment,
-                network_interface_id: self.network_interface_id,
-                private_ip_addresses: self.private_ip_addresses,
-                secondary_private_ip_address_count: self.secondary_private_ip_address_count,
-                ipv4_prefixes: self.ipv4_prefixes,
-                ipv4_prefix_count: self.ipv4_prefix_count,
-            },
+                allow_reassignment: self.allow_reassignment
+                ,
+                network_interface_id: self.network_interface_id
+                ,
+                private_ip_addresses: self.private_ip_addresses
+                ,
+                secondary_private_ip_address_count: self.secondary_private_ip_address_count
+                ,
+                ipv4_prefixes: self.ipv4_prefixes
+                ,
+                ipv4_prefix_count: self.ipv4_prefix_count
+                ,
+            }
         )
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>Describes a license configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateLicenseConfiguration {
+pub struct LaunchTemplateLicenseConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
 }
 impl LaunchTemplateLicenseConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
         self.license_configuration_arn.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl LaunchTemplateLicenseConfigurationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn set_license_configuration_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.license_configuration_arn = input;
-        self
+    pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.license_configuration_arn = input; self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateLicenseConfiguration`](crate::types::LaunchTemplateLicenseConfiguration).
     pub fn build(self) -> crate::types::LaunchTemplateLicenseConfiguration {
         crate::types::LaunchTemplateLicenseConfiguration {
-            license_configuration_arn: self.license_configuration_arn,
+            license_configuration_arn: self.license_configuration_arn
+            ,
         }
     }
 }
+

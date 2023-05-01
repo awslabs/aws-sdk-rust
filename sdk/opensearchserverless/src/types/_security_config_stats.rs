@@ -3,7 +3,7 @@
 /// <p>Statistics for an OpenSearch Serverless security configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigStats {
+pub struct SecurityConfigStats  {
     /// <p>The number of security configurations in the current account.</p>
     #[doc(hidden)]
     pub saml_config_count: std::option::Option<i64>,
@@ -35,13 +35,14 @@ impl SecurityConfigStatsBuilder {
     }
     /// <p>The number of security configurations in the current account.</p>
     pub fn set_saml_config_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.saml_config_count = input;
-        self
+        self.saml_config_count = input; self
     }
     /// Consumes the builder and constructs a [`SecurityConfigStats`](crate::types::SecurityConfigStats).
     pub fn build(self) -> crate::types::SecurityConfigStats {
         crate::types::SecurityConfigStats {
-            saml_config_count: self.saml_config_count,
+            saml_config_count: self.saml_config_count
+            ,
         }
     }
 }
+

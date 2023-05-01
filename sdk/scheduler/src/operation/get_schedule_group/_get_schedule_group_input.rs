@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetScheduleGroupInput {
+pub struct GetScheduleGroupInput  {
     /// <p>The name of the schedule group to retrieve.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetScheduleGroupInput {
     /// <p>The name of the schedule group to retrieve.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetScheduleGroupInput {
     /// Creates a new builder-style object to manufacture [`GetScheduleGroupInput`](crate::operation::get_schedule_group::GetScheduleGroupInput).
-    pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_schedule_group::builders::GetScheduleGroupInputBuilder {
         crate::operation::get_schedule_group::builders::GetScheduleGroupInputBuilder::default()
     }
 }
@@ -35,16 +34,16 @@ impl GetScheduleGroupInputBuilder {
     }
     /// <p>The name of the schedule group to retrieve.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetScheduleGroupInput`](crate::operation::get_schedule_group::GetScheduleGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_schedule_group::GetScheduleGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_schedule_group::GetScheduleGroupInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_schedule_group::GetScheduleGroupInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_schedule_group::GetScheduleGroupInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

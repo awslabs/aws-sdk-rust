@@ -3,7 +3,7 @@
 /// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Statistics {
+pub struct Statistics  {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     #[doc(hidden)]
     pub count: std::option::Option<i32>,
@@ -59,11 +59,11 @@ impl Statistics {
         self.count_nan
     }
     /// <p>For a numeric field, the minimum value in the field.</p>
-    pub fn min(&self) -> std::option::Option<&str> {
+    pub fn min(&self) -> std::option::Option<& str> {
         self.min.as_deref()
     }
     /// <p>For a numeric field, the maximum value in the field.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> std::option::Option<& str> {
         self.max.as_deref()
     }
     /// <p>For a numeric field, the average value in the field.</p>
@@ -123,8 +123,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input;
-        self
+        self.count = input; self
     }
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
     pub fn count_distinct(mut self, input: i32) -> Self {
@@ -133,8 +132,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
     pub fn set_count_distinct(mut self, input: std::option::Option<i32>) -> Self {
-        self.count_distinct = input;
-        self
+        self.count_distinct = input; self
     }
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
     pub fn count_null(mut self, input: i32) -> Self {
@@ -143,8 +141,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
     pub fn set_count_null(mut self, input: std::option::Option<i32>) -> Self {
-        self.count_null = input;
-        self
+        self.count_null = input; self
     }
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
     pub fn count_nan(mut self, input: i32) -> Self {
@@ -153,8 +150,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
     pub fn set_count_nan(mut self, input: std::option::Option<i32>) -> Self {
-        self.count_nan = input;
-        self
+        self.count_nan = input; self
     }
     /// <p>For a numeric field, the minimum value in the field.</p>
     pub fn min(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,8 +159,7 @@ impl StatisticsBuilder {
     }
     /// <p>For a numeric field, the minimum value in the field.</p>
     pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.min = input;
-        self
+        self.min = input; self
     }
     /// <p>For a numeric field, the maximum value in the field.</p>
     pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,8 +168,7 @@ impl StatisticsBuilder {
     }
     /// <p>For a numeric field, the maximum value in the field.</p>
     pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max = input;
-        self
+        self.max = input; self
     }
     /// <p>For a numeric field, the average value in the field.</p>
     pub fn avg(mut self, input: f64) -> Self {
@@ -183,8 +177,7 @@ impl StatisticsBuilder {
     }
     /// <p>For a numeric field, the average value in the field.</p>
     pub fn set_avg(mut self, input: std::option::Option<f64>) -> Self {
-        self.avg = input;
-        self
+        self.avg = input; self
     }
     /// <p>For a numeric field, the standard deviation.</p>
     pub fn stddev(mut self, input: f64) -> Self {
@@ -193,8 +186,7 @@ impl StatisticsBuilder {
     }
     /// <p>For a numeric field, the standard deviation.</p>
     pub fn set_stddev(mut self, input: std::option::Option<f64>) -> Self {
-        self.stddev = input;
-        self
+        self.stddev = input; self
     }
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_long(mut self, input: i64) -> Self {
@@ -203,8 +195,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
     pub fn set_count_long(mut self, input: std::option::Option<i64>) -> Self {
-        self.count_long = input;
-        self
+        self.count_long = input; self
     }
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_distinct_long(mut self, input: i64) -> Self {
@@ -213,8 +204,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
     pub fn set_count_distinct_long(mut self, input: std::option::Option<i64>) -> Self {
-        self.count_distinct_long = input;
-        self
+        self.count_distinct_long = input; self
     }
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_null_long(mut self, input: i64) -> Self {
@@ -223,8 +213,7 @@ impl StatisticsBuilder {
     }
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
     pub fn set_count_null_long(mut self, input: std::option::Option<i64>) -> Self {
-        self.count_null_long = input;
-        self
+        self.count_null_long = input; self
     }
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_nan_long(mut self, input: i64) -> Self {
@@ -233,24 +222,36 @@ impl StatisticsBuilder {
     }
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     pub fn set_count_nan_long(mut self, input: std::option::Option<i64>) -> Self {
-        self.count_nan_long = input;
-        self
+        self.count_nan_long = input; self
     }
     /// Consumes the builder and constructs a [`Statistics`](crate::types::Statistics).
     pub fn build(self) -> crate::types::Statistics {
         crate::types::Statistics {
-            count: self.count,
-            count_distinct: self.count_distinct,
-            count_null: self.count_null,
-            count_nan: self.count_nan,
-            min: self.min,
-            max: self.max,
-            avg: self.avg,
-            stddev: self.stddev,
-            count_long: self.count_long,
-            count_distinct_long: self.count_distinct_long,
-            count_null_long: self.count_null_long,
-            count_nan_long: self.count_nan_long,
+            count: self.count
+            ,
+            count_distinct: self.count_distinct
+            ,
+            count_null: self.count_null
+            ,
+            count_nan: self.count_nan
+            ,
+            min: self.min
+            ,
+            max: self.max
+            ,
+            avg: self.avg
+            ,
+            stddev: self.stddev
+            ,
+            count_long: self.count_long
+            ,
+            count_distinct_long: self.count_distinct_long
+            ,
+            count_null_long: self.count_null_long
+            ,
+            count_nan_long: self.count_nan_long
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsByRuleOutput {
+pub struct ListTargetsByRuleOutput  {
     /// <p>The targets assigned to the rule.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::types::Target>>,
@@ -13,23 +13,22 @@ pub struct ListTargetsByRuleOutput {
 }
 impl ListTargetsByRuleOutput {
     /// <p>The targets assigned to the rule.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
         self.targets.as_deref()
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTargetsByRuleOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListTargetsByRuleOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsByRuleOutput`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput).
-    pub fn builder(
-    ) -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleOutputBuilder {
+    pub fn builder() -> crate::operation::list_targets_by_rule::builders::ListTargetsByRuleOutputBuilder {
         crate::operation::list_targets_by_rule::builders::ListTargetsByRuleOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListTargetsByRuleOutputBuilder {
     /// <p>The targets assigned to the rule.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input);
-        self.targets = Some(v);
-        self
+                        v.push(input);
+                        self.targets = Some(v);
+                        self
     }
     /// <p>The targets assigned to the rule.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+        self.targets = input; self
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListTargetsByRuleOutputBuilder {
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListTargetsByRuleOutput`](crate::operation::list_targets_by_rule::ListTargetsByRuleOutput).
     pub fn build(self) -> crate::operation::list_targets_by_rule::ListTargetsByRuleOutput {
         crate::operation::list_targets_by_rule::ListTargetsByRuleOutput {
-            targets: self.targets,
-            next_token: self.next_token,
+            targets: self.targets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

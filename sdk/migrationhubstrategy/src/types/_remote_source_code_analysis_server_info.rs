@@ -3,19 +3,15 @@
 /// <p>Information about the server configured for source code analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoteSourceCodeAnalysisServerInfo {
+pub struct RemoteSourceCodeAnalysisServerInfo  {
     /// <p>The time when the remote source code server was configured.</p>
     #[doc(hidden)]
-    pub remote_source_code_analysis_server_configuration_timestamp:
-        std::option::Option<std::string::String>,
+    pub remote_source_code_analysis_server_configuration_timestamp: std::option::Option<std::string::String>,
 }
 impl RemoteSourceCodeAnalysisServerInfo {
     /// <p>The time when the remote source code server was configured.</p>
-    pub fn remote_source_code_analysis_server_configuration_timestamp(
-        &self,
-    ) -> std::option::Option<&str> {
-        self.remote_source_code_analysis_server_configuration_timestamp
-            .as_deref()
+    pub fn remote_source_code_analysis_server_configuration_timestamp(&self) -> std::option::Option<& str> {
+        self.remote_source_code_analysis_server_configuration_timestamp.as_deref()
     }
 }
 impl RemoteSourceCodeAnalysisServerInfo {
@@ -29,31 +25,24 @@ impl RemoteSourceCodeAnalysisServerInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RemoteSourceCodeAnalysisServerInfoBuilder {
-    pub(crate) remote_source_code_analysis_server_configuration_timestamp:
-        std::option::Option<std::string::String>,
+    pub(crate) remote_source_code_analysis_server_configuration_timestamp: std::option::Option<std::string::String>,
 }
 impl RemoteSourceCodeAnalysisServerInfoBuilder {
     /// <p>The time when the remote source code server was configured.</p>
-    pub fn remote_source_code_analysis_server_configuration_timestamp(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn remote_source_code_analysis_server_configuration_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
         self.remote_source_code_analysis_server_configuration_timestamp = Some(input.into());
         self
     }
     /// <p>The time when the remote source code server was configured.</p>
-    pub fn set_remote_source_code_analysis_server_configuration_timestamp(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.remote_source_code_analysis_server_configuration_timestamp = input;
-        self
+    pub fn set_remote_source_code_analysis_server_configuration_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.remote_source_code_analysis_server_configuration_timestamp = input; self
     }
     /// Consumes the builder and constructs a [`RemoteSourceCodeAnalysisServerInfo`](crate::types::RemoteSourceCodeAnalysisServerInfo).
     pub fn build(self) -> crate::types::RemoteSourceCodeAnalysisServerInfo {
         crate::types::RemoteSourceCodeAnalysisServerInfo {
-            remote_source_code_analysis_server_configuration_timestamp: self
-                .remote_source_code_analysis_server_configuration_timestamp,
+            remote_source_code_analysis_server_configuration_timestamp: self.remote_source_code_analysis_server_configuration_timestamp
+            ,
         }
     }
 }
+

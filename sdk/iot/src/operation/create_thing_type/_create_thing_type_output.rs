@@ -3,7 +3,7 @@
 /// <p>The output of the CreateThingType operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThingTypeOutput {
+pub struct CreateThingTypeOutput  {
     /// <p>The name of the thing type.</p>
     #[doc(hidden)]
     pub thing_type_name: std::option::Option<std::string::String>,
@@ -17,27 +17,26 @@ pub struct CreateThingTypeOutput {
 }
 impl CreateThingTypeOutput {
     /// <p>The name of the thing type.</p>
-    pub fn thing_type_name(&self) -> std::option::Option<&str> {
+    pub fn thing_type_name(&self) -> std::option::Option<& str> {
         self.thing_type_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
-    pub fn thing_type_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_type_arn(&self) -> std::option::Option<& str> {
         self.thing_type_arn.as_deref()
     }
     /// <p>The thing type ID.</p>
-    pub fn thing_type_id(&self) -> std::option::Option<&str> {
+    pub fn thing_type_id(&self) -> std::option::Option<& str> {
         self.thing_type_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateThingTypeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateThingTypeOutput {
     /// Creates a new builder-style object to manufacture [`CreateThingTypeOutput`](crate::operation::create_thing_type::CreateThingTypeOutput).
-    pub fn builder() -> crate::operation::create_thing_type::builders::CreateThingTypeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_thing_type::builders::CreateThingTypeOutputBuilder {
         crate::operation::create_thing_type::builders::CreateThingTypeOutputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateThingTypeOutputBuilder {
     }
     /// <p>The name of the thing type.</p>
     pub fn set_thing_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_name = input;
-        self
+        self.thing_type_name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
     pub fn thing_type_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl CreateThingTypeOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the thing type.</p>
     pub fn set_thing_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_arn = input;
-        self
+        self.thing_type_arn = input; self
     }
     /// <p>The thing type ID.</p>
     pub fn thing_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,25 +76,28 @@ impl CreateThingTypeOutputBuilder {
     }
     /// <p>The thing type ID.</p>
     pub fn set_thing_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_type_id = input;
-        self
+        self.thing_type_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateThingTypeOutput`](crate::operation::create_thing_type::CreateThingTypeOutput).
     pub fn build(self) -> crate::operation::create_thing_type::CreateThingTypeOutput {
         crate::operation::create_thing_type::CreateThingTypeOutput {
-            thing_type_name: self.thing_type_name,
-            thing_type_arn: self.thing_type_arn,
-            thing_type_id: self.thing_type_id,
+            thing_type_name: self.thing_type_name
+            ,
+            thing_type_arn: self.thing_type_arn
+            ,
+            thing_type_id: self.thing_type_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCustomEntityTypeInput {
+pub struct GetCustomEntityTypeInput  {
     /// <p>The name of the custom pattern that you want to retrieve.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetCustomEntityTypeInput {
     /// <p>The name of the custom pattern that you want to retrieve.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 impl GetCustomEntityTypeInput {
     /// Creates a new builder-style object to manufacture [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
-    pub fn builder(
-    ) -> crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder {
-        crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder {
+        crate::operation::get_custom_entity_type::builders::GetCustomEntityTypeInputBuilder::default()
     }
 }
 
@@ -36,16 +34,16 @@ impl GetCustomEntityTypeInputBuilder {
     }
     /// <p>The name of the custom pattern that you want to retrieve.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetCustomEntityTypeInput`](crate::operation::get_custom_entity_type::GetCustomEntityTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_custom_entity_type::GetCustomEntityTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_custom_entity_type::GetCustomEntityTypeInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_custom_entity_type::GetCustomEntityTypeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_custom_entity_type::GetCustomEntityTypeInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

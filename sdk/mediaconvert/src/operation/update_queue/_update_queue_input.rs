@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateQueueInput {
+pub struct UpdateQueueInput  {
     /// The new description for the queue, if you are changing it.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -18,21 +18,19 @@ pub struct UpdateQueueInput {
 }
 impl UpdateQueueInput {
     /// The new description for the queue, if you are changing it.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// The name of the queue that you are modifying.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn reservation_plan_settings(
-        &self,
-    ) -> std::option::Option<&crate::types::ReservationPlanSettings> {
+    pub fn reservation_plan_settings(&self) -> std::option::Option<& crate::types::ReservationPlanSettings> {
         self.reservation_plan_settings.as_ref()
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    pub fn status(&self) -> std::option::Option<&crate::types::QueueStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::QueueStatus> {
         self.status.as_ref()
     }
 }
@@ -49,8 +47,7 @@ impl UpdateQueueInput {
 pub struct UpdateQueueInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) reservation_plan_settings:
-        std::option::Option<crate::types::ReservationPlanSettings>,
+    pub(crate) reservation_plan_settings: std::option::Option<crate::types::ReservationPlanSettings>,
     pub(crate) status: std::option::Option<crate::types::QueueStatus>,
 }
 impl UpdateQueueInputBuilder {
@@ -61,8 +58,7 @@ impl UpdateQueueInputBuilder {
     }
     /// The new description for the queue, if you are changing it.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// The name of the queue that you are modifying.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,24 +67,16 @@ impl UpdateQueueInputBuilder {
     }
     /// The name of the queue that you are modifying.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn reservation_plan_settings(
-        mut self,
-        input: crate::types::ReservationPlanSettings,
-    ) -> Self {
+    pub fn reservation_plan_settings(mut self, input: crate::types::ReservationPlanSettings) -> Self {
         self.reservation_plan_settings = Some(input);
         self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn set_reservation_plan_settings(
-        mut self,
-        input: std::option::Option<crate::types::ReservationPlanSettings>,
-    ) -> Self {
-        self.reservation_plan_settings = input;
-        self
+    pub fn set_reservation_plan_settings(mut self, input: std::option::Option<crate::types::ReservationPlanSettings>) -> Self {
+        self.reservation_plan_settings = input; self
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
@@ -97,21 +85,22 @@ impl UpdateQueueInputBuilder {
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
     pub fn set_status(mut self, input: std::option::Option<crate::types::QueueStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`UpdateQueueInput`](crate::operation::update_queue::UpdateQueueInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_queue::UpdateQueueInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_queue::UpdateQueueInput {
-            description: self.description,
-            name: self.name,
-            reservation_plan_settings: self.reservation_plan_settings,
-            status: self.status,
-        })
+    pub fn build(self) -> Result<crate::operation::update_queue::UpdateQueueInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_queue::UpdateQueueInput {
+                description: self.description
+                ,
+                name: self.name
+                ,
+                reservation_plan_settings: self.reservation_plan_settings
+                ,
+                status: self.status
+                ,
+            }
+        )
     }
 }
+

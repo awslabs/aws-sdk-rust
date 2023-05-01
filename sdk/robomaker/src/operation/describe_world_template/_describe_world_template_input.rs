@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorldTemplateInput {
+pub struct DescribeWorldTemplateInput  {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
     #[doc(hidden)]
     pub template: std::option::Option<std::string::String>,
 }
 impl DescribeWorldTemplateInput {
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
-    pub fn template(&self) -> std::option::Option<&str> {
+    pub fn template(&self) -> std::option::Option<& str> {
         self.template.as_deref()
     }
 }
 impl DescribeWorldTemplateInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorldTemplateInput`](crate::operation::describe_world_template::DescribeWorldTemplateInput).
-    pub fn builder(
-    ) -> crate::operation::describe_world_template::builders::DescribeWorldTemplateInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_world_template::builders::DescribeWorldTemplateInputBuilder {
         crate::operation::describe_world_template::builders::DescribeWorldTemplateInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DescribeWorldTemplateInputBuilder {
     }
     /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
     pub fn set_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template = input;
-        self
+        self.template = input; self
     }
     /// Consumes the builder and constructs a [`DescribeWorldTemplateInput`](crate::operation::describe_world_template::DescribeWorldTemplateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_world_template::DescribeWorldTemplateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_world_template::DescribeWorldTemplateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_world_template::DescribeWorldTemplateInput {
-                template: self.template,
-            },
+                template: self.template
+                ,
+            }
         )
     }
 }
+

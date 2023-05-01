@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCacheClusterOutput {
+pub struct CreateCacheClusterOutput  {
     /// <p>Contains all of the attributes of a specific cluster.</p>
     #[doc(hidden)]
     pub cache_cluster: std::option::Option<crate::types::CacheCluster>,
@@ -10,19 +10,18 @@ pub struct CreateCacheClusterOutput {
 }
 impl CreateCacheClusterOutput {
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn cache_cluster(&self) -> std::option::Option<&crate::types::CacheCluster> {
+    pub fn cache_cluster(&self) -> std::option::Option<& crate::types::CacheCluster> {
         self.cache_cluster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCacheClusterOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCacheClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateCacheClusterOutput`](crate::operation::create_cache_cluster::CreateCacheClusterOutput).
-    pub fn builder(
-    ) -> crate::operation::create_cache_cluster::builders::CreateCacheClusterOutputBuilder {
+    pub fn builder() -> crate::operation::create_cache_cluster::builders::CreateCacheClusterOutputBuilder {
         crate::operation::create_cache_cluster::builders::CreateCacheClusterOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateCacheClusterOutputBuilder {
         self
     }
     /// <p>Contains all of the attributes of a specific cluster.</p>
-    pub fn set_cache_cluster(
-        mut self,
-        input: std::option::Option<crate::types::CacheCluster>,
-    ) -> Self {
-        self.cache_cluster = input;
-        self
+    pub fn set_cache_cluster(mut self, input: std::option::Option<crate::types::CacheCluster>) -> Self {
+        self.cache_cluster = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCacheClusterOutput`](crate::operation::create_cache_cluster::CreateCacheClusterOutput).
     pub fn build(self) -> crate::operation::create_cache_cluster::CreateCacheClusterOutput {
         crate::operation::create_cache_cluster::CreateCacheClusterOutput {
-            cache_cluster: self.cache_cluster,
+            cache_cluster: self.cache_cluster
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

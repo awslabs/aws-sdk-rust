@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDifferencesInput {
+pub struct GetDifferencesInput  {
     /// <p>The name of the repository where you want to get differences.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -27,23 +27,23 @@ pub struct GetDifferencesInput {
 }
 impl GetDifferencesInput {
     /// <p>The name of the repository where you want to get differences.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn before_commit_specifier(&self) -> std::option::Option<&str> {
+    pub fn before_commit_specifier(&self) -> std::option::Option<& str> {
         self.before_commit_specifier.as_deref()
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn after_commit_specifier(&self) -> std::option::Option<&str> {
+    pub fn after_commit_specifier(&self) -> std::option::Option<& str> {
         self.after_commit_specifier.as_deref()
     }
     /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
-    pub fn before_path(&self) -> std::option::Option<&str> {
+    pub fn before_path(&self) -> std::option::Option<& str> {
         self.before_path.as_deref()
     }
     /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
-    pub fn after_path(&self) -> std::option::Option<&str> {
+    pub fn after_path(&self) -> std::option::Option<& str> {
         self.after_path.as_deref()
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -51,7 +51,7 @@ impl GetDifferencesInput {
         self.max_results
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -82,8 +82,7 @@ impl GetDifferencesInputBuilder {
     }
     /// <p>The name of the repository where you want to get differences.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
     pub fn before_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +90,8 @@ impl GetDifferencesInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn set_before_commit_specifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.before_commit_specifier = input;
-        self
+    pub fn set_before_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.before_commit_specifier = input; self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
     pub fn after_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,12 +99,8 @@ impl GetDifferencesInputBuilder {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn set_after_commit_specifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.after_commit_specifier = input;
-        self
+    pub fn set_after_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.after_commit_specifier = input; self
     }
     /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
     pub fn before_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +109,7 @@ impl GetDifferencesInputBuilder {
     }
     /// <p>The file path in which to check for differences. Limits the results to this path. Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code> and <code>afterPath</code> are not specified, differences are shown for all paths.</p>
     pub fn set_before_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_path = input;
-        self
+        self.before_path = input; self
     }
     /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
     pub fn after_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,8 +118,7 @@ impl GetDifferencesInputBuilder {
     }
     /// <p>The file path in which to check differences. Limits the results to this path. Can also be used to specify the changed name of a directory or folder, if it has changed. If not specified, differences are shown for all paths.</p>
     pub fn set_after_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_path = input;
-        self
+        self.after_path = input; self
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -138,8 +127,7 @@ impl GetDifferencesInputBuilder {
     }
     /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,24 +136,28 @@ impl GetDifferencesInputBuilder {
     }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`GetDifferencesInput`](crate::operation::get_differences::GetDifferencesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_differences::GetDifferencesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_differences::GetDifferencesInput {
-            repository_name: self.repository_name,
-            before_commit_specifier: self.before_commit_specifier,
-            after_commit_specifier: self.after_commit_specifier,
-            before_path: self.before_path,
-            after_path: self.after_path,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::get_differences::GetDifferencesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_differences::GetDifferencesInput {
+                repository_name: self.repository_name
+                ,
+                before_commit_specifier: self.before_commit_specifier
+                ,
+                after_commit_specifier: self.after_commit_specifier
+                ,
+                before_path: self.before_path
+                ,
+                after_path: self.after_path
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

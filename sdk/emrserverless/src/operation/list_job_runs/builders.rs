@@ -4,78 +4,55 @@ pub use crate::operation::list_job_runs::_list_job_runs_output::ListJobRunsOutpu
 pub use crate::operation::list_job_runs::_list_job_runs_input::ListJobRunsInputBuilder;
 
 /// Fluent builder constructing a request to `ListJobRuns`.
-///
+/// 
 /// <p>Lists job runs based on a set of parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJobRunsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::list_job_runs::builders::ListJobRunsInputBuilder,
-}
-impl ListJobRunsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::list_job_runs::builders::ListJobRunsInputBuilder
+            }
+impl ListJobRunsFluentBuilder  {
     /// Creates a new `ListJobRuns`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::list_job_runs::ListJobRuns,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<crate::operation::list_job_runs::ListJobRunsError>,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::list_job_runs::ListJobRunsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_job_runs::ListJobRunsError>,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_job_runs::ListJobRuns, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::list_job_runs::ListJobRunsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::list_job_runs::ListJobRunsOutput, aws_smithy_http::result::SdkError<crate::operation::list_job_runs::ListJobRunsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::list_job_runs::paginator::ListJobRunsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::list_job_runs::paginator::ListJobRunsPaginator {
-        crate::operation::list_job_runs::paginator::ListJobRunsPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::list_job_runs::paginator::ListJobRunsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::list_job_runs::paginator::ListJobRunsPaginator {
+                            crate::operation::list_job_runs::paginator::ListJobRunsPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The ID of the application for which to list the job run.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -112,10 +89,7 @@ impl ListJobRunsFluentBuilder {
         self
     }
     /// <p>The lower bound of the option to filter by creation date and time.</p>
-    pub fn set_created_at_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_at_after(input);
         self
     }
@@ -125,10 +99,7 @@ impl ListJobRunsFluentBuilder {
         self
     }
     /// <p>The upper bound of the option to filter by creation date and time.</p>
-    pub fn set_created_at_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
+    pub fn set_created_at_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_at_before(input);
         self
     }
@@ -142,11 +113,9 @@ impl ListJobRunsFluentBuilder {
         self
     }
     /// <p>An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</p>
-    pub fn set_states(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobRunState>>,
-    ) -> Self {
+    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobRunState>>) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
 }
+

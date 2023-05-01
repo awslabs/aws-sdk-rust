@@ -3,7 +3,7 @@
 /// <p>Error information for an OpenSearch Serverless request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionErrorDetail {
+pub struct CollectionErrorDetail  {
     /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct CollectionErrorDetail {
 }
 impl CollectionErrorDetail {
     /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl CollectionErrorDetailBuilder {
     }
     /// <p>If the request contains collection IDs, the response includes the IDs provided in the request.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl CollectionErrorDetailBuilder {
     }
     /// <p>If the request contains collection names, the response includes the names provided in the request.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl CollectionErrorDetailBuilder {
     }
     /// <p>A description of the error. For example, <code>The specified Collection is not found.</code> </p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,16 +86,20 @@ impl CollectionErrorDetailBuilder {
     }
     /// <p>The error code for the request. For example, <code>NOT_FOUND</code>.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// Consumes the builder and constructs a [`CollectionErrorDetail`](crate::types::CollectionErrorDetail).
     pub fn build(self) -> crate::types::CollectionErrorDetail {
         crate::types::CollectionErrorDetail {
-            id: self.id,
-            name: self.name,
-            error_message: self.error_message,
-            error_code: self.error_code,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            error_message: self.error_message
+            ,
+            error_code: self.error_code
+            ,
         }
     }
 }
+

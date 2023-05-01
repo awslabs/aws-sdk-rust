@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreatePartitionInput {
+pub struct BatchCreatePartitionInput  {
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct BatchCreatePartitionInput {
 }
 impl BatchCreatePartitionInput {
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn partition_input_list(&self) -> std::option::Option<&[crate::types::PartitionInput]> {
+    pub fn partition_input_list(&self) -> std::option::Option<& [crate::types::PartitionInput]> {
         self.partition_input_list.as_deref()
     }
 }
 impl BatchCreatePartitionInput {
     /// Creates a new builder-style object to manufacture [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
-    pub fn builder(
-    ) -> crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder {
+    pub fn builder() -> crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder {
         crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder::default()
     }
 }
@@ -49,8 +48,7 @@ pub struct BatchCreatePartitionInputBuilder {
     pub(crate) catalog_id: std::option::Option<std::string::String>,
     pub(crate) database_name: std::option::Option<std::string::String>,
     pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) partition_input_list:
-        std::option::Option<std::vec::Vec<crate::types::PartitionInput>>,
+    pub(crate) partition_input_list: std::option::Option<std::vec::Vec<crate::types::PartitionInput>>,
 }
 impl BatchCreatePartitionInputBuilder {
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
@@ -60,8 +58,7 @@ impl BatchCreatePartitionInputBuilder {
     }
     /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be the Amazon Web Services account ID.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input;
-        self
+        self.catalog_id = input; self
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl BatchCreatePartitionInputBuilder {
     }
     /// <p>The name of the metadata database in which the partition is to be created.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input;
-        self
+        self.database_name = input; self
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl BatchCreatePartitionInputBuilder {
     }
     /// <p>The name of the metadata table in which the partition is to be created.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input;
-        self
+        self.table_name = input; self
     }
     /// Appends an item to `partition_input_list`.
     ///
@@ -90,32 +85,28 @@ impl BatchCreatePartitionInputBuilder {
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
     pub fn partition_input_list(mut self, input: crate::types::PartitionInput) -> Self {
         let mut v = self.partition_input_list.unwrap_or_default();
-        v.push(input);
-        self.partition_input_list = Some(v);
-        self
+                        v.push(input);
+                        self.partition_input_list = Some(v);
+                        self
     }
     /// <p>A list of <code>PartitionInput</code> structures that define the partitions to be created.</p>
-    pub fn set_partition_input_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PartitionInput>>,
-    ) -> Self {
-        self.partition_input_list = input;
-        self
+    pub fn set_partition_input_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::PartitionInput>>) -> Self {
+        self.partition_input_list = input; self
     }
     /// Consumes the builder and constructs a [`BatchCreatePartitionInput`](crate::operation::batch_create_partition::BatchCreatePartitionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_create_partition::BatchCreatePartitionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::batch_create_partition::BatchCreatePartitionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::batch_create_partition::BatchCreatePartitionInput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                partition_input_list: self.partition_input_list,
-            },
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                partition_input_list: self.partition_input_list
+                ,
+            }
         )
     }
 }
+

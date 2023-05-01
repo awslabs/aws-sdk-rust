@@ -4,73 +4,51 @@ pub use crate::operation::create_data_integration::_create_data_integration_outp
 pub use crate::operation::create_data_integration::_create_data_integration_input::CreateDataIntegrationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDataIntegration`.
-///
-/// <p>Creates and persists a DataIntegration resource.</p> <note>
-/// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p>
+/// 
+/// <p>Creates and persists a DataIntegration resource.</p> <note> 
+/// <p>You cannot create a DataIntegration association for a DataIntegration that has been previously associated. Use a different DataIntegration, or recreate the DataIntegration using the <code>CreateDataIntegration</code> API.</p> 
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataIntegrationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder,
-}
-impl CreateDataIntegrationFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::create_data_integration::builders::CreateDataIntegrationInputBuilder
+            }
+impl CreateDataIntegrationFluentBuilder  {
     /// Creates a new `CreateDataIntegration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::create_data_integration::CreateDataIntegration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::create_data_integration::CreateDataIntegrationOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::create_data_integration::CreateDataIntegrationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_data_integration::CreateDataIntegration, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::create_data_integration::CreateDataIntegrationOutput, aws_smithy_http::result::SdkError<crate::operation::create_data_integration::CreateDataIntegrationError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>The name of the DataIntegration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -117,10 +95,7 @@ impl CreateDataIntegrationFluentBuilder {
         self
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn set_schedule_config(
-        mut self,
-        input: std::option::Option<crate::types::ScheduleConfiguration>,
-    ) -> Self {
+    pub fn set_schedule_config(mut self, input: std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.inner = self.inner.set_schedule_config(input);
         self
     }
@@ -129,21 +104,12 @@ impl CreateDataIntegrationFluentBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -163,10 +129,7 @@ impl CreateDataIntegrationFluentBuilder {
         self
     }
     /// <p>The configuration for what files should be pulled from the source.</p>
-    pub fn set_file_configuration(
-        mut self,
-        input: std::option::Option<crate::types::FileConfiguration>,
-    ) -> Self {
+    pub fn set_file_configuration(mut self, input: std::option::Option<crate::types::FileConfiguration>) -> Self {
         self.inner = self.inner.set_file_configuration(input);
         self
     }
@@ -175,25 +138,14 @@ impl CreateDataIntegrationFluentBuilder {
     /// To override the contents of this collection use [`set_object_configuration`](Self::set_object_configuration).
     ///
     /// <p>The configuration for what data should be pulled from the source.</p>
-    pub fn object_configuration(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn object_configuration(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.object_configuration(k.into(), v);
         self
     }
     /// <p>The configuration for what data should be pulled from the source.</p>
-    pub fn set_object_configuration(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
-            >,
-        >,
-    ) -> Self {
+    pub fn set_object_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>>) -> Self {
         self.inner = self.inner.set_object_configuration(input);
         self
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDevEnvironmentInput {
+pub struct DeleteDevEnvironmentInput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct DeleteDevEnvironmentInput {
 }
 impl DeleteDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl DeleteDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteDevEnvironmentInput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentInput).
-    pub fn builder(
-    ) -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder {
         crate::operation::delete_dev_environment::builders::DeleteDevEnvironmentInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl DeleteDevEnvironmentInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input;
-        self
+        self.space_name = input; self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl DeleteDevEnvironmentInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input;
-        self
+        self.project_name = input; self
     }
     /// <p>The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl DeleteDevEnvironmentInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use <code>ListDevEnvironments</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDevEnvironmentInput`](crate::operation::delete_dev_environment::DeleteDevEnvironmentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_dev_environment::DeleteDevEnvironmentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_dev_environment::DeleteDevEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_dev_environment::DeleteDevEnvironmentInput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-            },
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+            }
         )
     }
 }
+

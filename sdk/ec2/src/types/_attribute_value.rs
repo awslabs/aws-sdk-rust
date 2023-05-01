@@ -3,14 +3,14 @@
 /// <p>Describes a value for a resource attribute that is a String.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeValue {
+pub struct AttributeValue  {
     /// <p>The attribute value. The value is case-sensitive.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl AttributeValue {
     /// <p>The attribute value. The value is case-sensitive.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl AttributeValueBuilder {
     }
     /// <p>The attribute value. The value is case-sensitive.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`AttributeValue`](crate::types::AttributeValue).
     pub fn build(self) -> crate::types::AttributeValue {
-        crate::types::AttributeValue { value: self.value }
+        crate::types::AttributeValue {
+            value: self.value
+            ,
+        }
     }
 }
+

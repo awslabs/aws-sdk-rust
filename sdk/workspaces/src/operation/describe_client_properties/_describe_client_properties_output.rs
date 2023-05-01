@@ -2,31 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClientPropertiesOutput {
+pub struct DescribeClientPropertiesOutput  {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
     #[doc(hidden)]
-    pub client_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::ClientPropertiesResult>>,
+    pub client_properties_list: std::option::Option<std::vec::Vec<crate::types::ClientPropertiesResult>>,
     _request_id: Option<String>,
 }
 impl DescribeClientPropertiesOutput {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
-    pub fn client_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::ClientPropertiesResult]> {
+    pub fn client_properties_list(&self) -> std::option::Option<& [crate::types::ClientPropertiesResult]> {
         self.client_properties_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClientPropertiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeClientPropertiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientPropertiesOutput`](crate::operation::describe_client_properties::DescribeClientPropertiesOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_client_properties::builders::DescribeClientPropertiesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_client_properties::builders::DescribeClientPropertiesOutputBuilder {
         crate::operation::describe_client_properties::builders::DescribeClientPropertiesOutputBuilder::default()
     }
 }
@@ -35,8 +30,7 @@ impl DescribeClientPropertiesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeClientPropertiesOutputBuilder {
-    pub(crate) client_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::ClientPropertiesResult>>,
+    pub(crate) client_properties_list: std::option::Option<std::vec::Vec<crate::types::ClientPropertiesResult>>,
     _request_id: Option<String>,
 }
 impl DescribeClientPropertiesOutputBuilder {
@@ -47,34 +41,30 @@ impl DescribeClientPropertiesOutputBuilder {
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
     pub fn client_properties_list(mut self, input: crate::types::ClientPropertiesResult) -> Self {
         let mut v = self.client_properties_list.unwrap_or_default();
-        v.push(input);
-        self.client_properties_list = Some(v);
-        self
+                        v.push(input);
+                        self.client_properties_list = Some(v);
+                        self
     }
     /// <p>Information about the specified Amazon WorkSpaces clients.</p>
-    pub fn set_client_properties_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClientPropertiesResult>>,
-    ) -> Self {
-        self.client_properties_list = input;
-        self
+    pub fn set_client_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClientPropertiesResult>>) -> Self {
+        self.client_properties_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeClientPropertiesOutput`](crate::operation::describe_client_properties::DescribeClientPropertiesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_client_properties::DescribeClientPropertiesOutput {
+    pub fn build(self) -> crate::operation::describe_client_properties::DescribeClientPropertiesOutput {
         crate::operation::describe_client_properties::DescribeClientPropertiesOutput {
-            client_properties_list: self.client_properties_list,
+            client_properties_list: self.client_properties_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

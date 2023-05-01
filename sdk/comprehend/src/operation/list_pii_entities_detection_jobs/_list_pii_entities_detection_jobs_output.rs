@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPiiEntitiesDetectionJobsOutput {
+pub struct ListPiiEntitiesDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub pii_entities_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>,
+    pub pii_entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct ListPiiEntitiesDetectionJobsOutput {
 }
 impl ListPiiEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn pii_entities_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::PiiEntitiesDetectionJobProperties]> {
+    pub fn pii_entities_detection_job_properties_list(&self) -> std::option::Option<& [crate::types::PiiEntitiesDetectionJobProperties]> {
         self.pii_entities_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPiiEntitiesDetectionJobsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPiiEntitiesDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsOutput`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput).
-    pub fn builder() -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsOutputBuilder{
+    pub fn builder() -> crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsOutputBuilder {
         crate::operation::list_pii_entities_detection_jobs::builders::ListPiiEntitiesDetectionJobsOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl ListPiiEntitiesDetectionJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListPiiEntitiesDetectionJobsOutputBuilder {
-    pub(crate) pii_entities_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>,
+    pub(crate) pii_entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,24 +47,15 @@ impl ListPiiEntitiesDetectionJobsOutputBuilder {
     /// To override the contents of this collection use [`set_pii_entities_detection_job_properties_list`](Self::set_pii_entities_detection_job_properties_list).
     ///
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn pii_entities_detection_job_properties_list(
-        mut self,
-        input: crate::types::PiiEntitiesDetectionJobProperties,
-    ) -> Self {
-        let mut v = self
-            .pii_entities_detection_job_properties_list
-            .unwrap_or_default();
-        v.push(input);
-        self.pii_entities_detection_job_properties_list = Some(v);
-        self
+    pub fn pii_entities_detection_job_properties_list(mut self, input: crate::types::PiiEntitiesDetectionJobProperties) -> Self {
+        let mut v = self.pii_entities_detection_job_properties_list.unwrap_or_default();
+                        v.push(input);
+                        self.pii_entities_detection_job_properties_list = Some(v);
+                        self
     }
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn set_pii_entities_detection_job_properties_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>,
-    ) -> Self {
-        self.pii_entities_detection_job_properties_list = input;
-        self
+    pub fn set_pii_entities_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::PiiEntitiesDetectionJobProperties>>) -> Self {
+        self.pii_entities_detection_job_properties_list = input; self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,28 +64,26 @@ impl ListPiiEntitiesDetectionJobsOutputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPiiEntitiesDetectionJobsOutput`](crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput
-    {
+    pub fn build(self) -> crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput {
         crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput {
-            pii_entities_detection_job_properties_list: self
-                .pii_entities_detection_job_properties_list,
-            next_token: self.next_token,
+            pii_entities_detection_job_properties_list: self.pii_entities_detection_job_properties_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

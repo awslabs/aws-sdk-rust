@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttachedLinksInput {
+pub struct ListAttachedLinksInput  {
     /// <p>Limits the number of returned links to the specified number.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,18 +19,17 @@ impl ListAttachedLinksInput {
         self.max_results
     }
     /// <p>The token for the next set of items to return. You received this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
-    pub fn sink_identifier(&self) -> std::option::Option<&str> {
+    pub fn sink_identifier(&self) -> std::option::Option<& str> {
         self.sink_identifier.as_deref()
     }
 }
 impl ListAttachedLinksInput {
     /// Creates a new builder-style object to manufacture [`ListAttachedLinksInput`](crate::operation::list_attached_links::ListAttachedLinksInput).
-    pub fn builder(
-    ) -> crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder {
+    pub fn builder() -> crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder {
         crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl ListAttachedLinksInputBuilder {
     }
     /// <p>Limits the number of returned links to the specified number.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token for the next set of items to return. You received this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl ListAttachedLinksInputBuilder {
     }
     /// <p>The token for the next set of items to return. You received this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
     pub fn sink_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,22 +68,20 @@ impl ListAttachedLinksInputBuilder {
     }
     /// <p>The ARN of the sink that you want to retrieve links for.</p>
     pub fn set_sink_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sink_identifier = input;
-        self
+        self.sink_identifier = input; self
     }
     /// Consumes the builder and constructs a [`ListAttachedLinksInput`](crate::operation::list_attached_links::ListAttachedLinksInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_attached_links::ListAttachedLinksInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_attached_links::ListAttachedLinksInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_attached_links::ListAttachedLinksInput {
-                max_results: self.max_results,
-                next_token: self.next_token,
-                sink_identifier: self.sink_identifier,
-            },
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+                sink_identifier: self.sink_identifier
+                ,
+            }
         )
     }
 }
+

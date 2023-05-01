@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let automlmetricenum = unimplemented!();
 /// match automlmetricenum {
@@ -41,22 +41,14 @@
 /// Specifically, when `automlmetricenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AutoMlMetricEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AutoMlMetricEnum {
     #[allow(missing_docs)] // documentation missing in model
     Auc,
@@ -85,78 +77,63 @@ pub enum AutoMlMetricEnum {
     #[allow(missing_docs)] // documentation missing in model
     RecallMacro,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AutoMlMetricEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUC" => AutoMlMetricEnum::Auc,
-            "Accuracy" => AutoMlMetricEnum::Accuracy,
-            "BalancedAccuracy" => AutoMlMetricEnum::BalancedAccuracy,
-            "F1" => AutoMlMetricEnum::F1,
-            "F1macro" => AutoMlMetricEnum::F1Macro,
-            "MAE" => AutoMlMetricEnum::Mae,
-            "MSE" => AutoMlMetricEnum::Mse,
-            "Precision" => AutoMlMetricEnum::Precision,
-            "PrecisionMacro" => AutoMlMetricEnum::PrecisionMacro,
-            "R2" => AutoMlMetricEnum::R2,
-            "RMSE" => AutoMlMetricEnum::Rmse,
-            "Recall" => AutoMlMetricEnum::Recall,
-            "RecallMacro" => AutoMlMetricEnum::RecallMacro,
-            other => {
-                AutoMlMetricEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AUC" => AutoMlMetricEnum::Auc,
+"Accuracy" => AutoMlMetricEnum::Accuracy,
+"BalancedAccuracy" => AutoMlMetricEnum::BalancedAccuracy,
+"F1" => AutoMlMetricEnum::F1,
+"F1macro" => AutoMlMetricEnum::F1Macro,
+"MAE" => AutoMlMetricEnum::Mae,
+"MSE" => AutoMlMetricEnum::Mse,
+"Precision" => AutoMlMetricEnum::Precision,
+"PrecisionMacro" => AutoMlMetricEnum::PrecisionMacro,
+"R2" => AutoMlMetricEnum::R2,
+"RMSE" => AutoMlMetricEnum::Rmse,
+"Recall" => AutoMlMetricEnum::Recall,
+"RecallMacro" => AutoMlMetricEnum::RecallMacro,
+other => AutoMlMetricEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AutoMlMetricEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoMlMetricEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AutoMlMetricEnum::from(s))
+                }
+            }
 impl AutoMlMetricEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutoMlMetricEnum::Auc => "AUC",
-            AutoMlMetricEnum::Accuracy => "Accuracy",
-            AutoMlMetricEnum::BalancedAccuracy => "BalancedAccuracy",
-            AutoMlMetricEnum::F1 => "F1",
-            AutoMlMetricEnum::F1Macro => "F1macro",
-            AutoMlMetricEnum::Mae => "MAE",
-            AutoMlMetricEnum::Mse => "MSE",
-            AutoMlMetricEnum::Precision => "Precision",
-            AutoMlMetricEnum::PrecisionMacro => "PrecisionMacro",
-            AutoMlMetricEnum::R2 => "R2",
-            AutoMlMetricEnum::Rmse => "RMSE",
-            AutoMlMetricEnum::Recall => "Recall",
-            AutoMlMetricEnum::RecallMacro => "RecallMacro",
-            AutoMlMetricEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AUC",
-            "Accuracy",
-            "BalancedAccuracy",
-            "F1",
-            "F1macro",
-            "MAE",
-            "MSE",
-            "Precision",
-            "PrecisionMacro",
-            "R2",
-            "RMSE",
-            "Recall",
-            "RecallMacro",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AutoMlMetricEnum::Auc => "AUC",
+    AutoMlMetricEnum::Accuracy => "Accuracy",
+    AutoMlMetricEnum::BalancedAccuracy => "BalancedAccuracy",
+    AutoMlMetricEnum::F1 => "F1",
+    AutoMlMetricEnum::F1Macro => "F1macro",
+    AutoMlMetricEnum::Mae => "MAE",
+    AutoMlMetricEnum::Mse => "MSE",
+    AutoMlMetricEnum::Precision => "Precision",
+    AutoMlMetricEnum::PrecisionMacro => "PrecisionMacro",
+    AutoMlMetricEnum::R2 => "R2",
+    AutoMlMetricEnum::Rmse => "RMSE",
+    AutoMlMetricEnum::Recall => "Recall",
+    AutoMlMetricEnum::RecallMacro => "RecallMacro",
+    AutoMlMetricEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AUC", "Accuracy", "BalancedAccuracy", "F1", "F1macro", "MAE", "MSE", "Precision", "PrecisionMacro", "R2", "RMSE", "Recall", "RecallMacro"]
+                }
+            }
 impl AsRef<str> for AutoMlMetricEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

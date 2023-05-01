@@ -68,3 +68,4 @@ pub use crate::types::_public_dns_properties_mutable::PublicDnsPropertiesMutable
 pub use crate::types::_private_dns_namespace_properties::PrivateDnsNamespacePropertiesBuilder;
 
 pub use crate::types::_private_dns_properties_mutable::PrivateDnsPropertiesMutableBuilder;
+

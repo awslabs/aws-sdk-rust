@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOutpostsWithS3Input {
+pub struct ListOutpostsWithS3Input  {
     /// <p>When you can get additional results from the <code>ListOutpostsWithS3</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional Outposts.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListOutpostsWithS3Input {
 }
 impl ListOutpostsWithS3Input {
     /// <p>When you can get additional results from the <code>ListOutpostsWithS3</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional Outposts.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of Outposts to return. The limit is 100.</p>
@@ -22,8 +22,7 @@ impl ListOutpostsWithS3Input {
 }
 impl ListOutpostsWithS3Input {
     /// Creates a new builder-style object to manufacture [`ListOutpostsWithS3Input`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input).
-    pub fn builder(
-    ) -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3InputBuilder {
+    pub fn builder() -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3InputBuilder {
         crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3InputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl ListOutpostsWithS3InputBuilder {
     }
     /// <p>When you can get additional results from the <code>ListOutpostsWithS3</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional Outposts.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of Outposts to return. The limit is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -53,21 +51,18 @@ impl ListOutpostsWithS3InputBuilder {
     }
     /// <p>The maximum number of Outposts to return. The limit is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListOutpostsWithS3Input`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_outposts_with_s3::ListOutpostsWithS3Input {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

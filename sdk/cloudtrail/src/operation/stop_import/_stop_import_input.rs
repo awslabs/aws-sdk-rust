@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopImportInput {
+pub struct StopImportInput  {
     /// <p> The ID of the import. </p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
 }
 impl StopImportInput {
     /// <p> The ID of the import. </p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl StopImportInputBuilder {
     }
     /// <p> The ID of the import. </p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// Consumes the builder and constructs a [`StopImportInput`](crate::operation::stop_import::StopImportInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::stop_import::StopImportInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::stop_import::StopImportInput {
-            import_id: self.import_id,
-        })
+    pub fn build(self) -> Result<crate::operation::stop_import::StopImportInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::stop_import::StopImportInput {
+                import_id: self.import_id
+                ,
+            }
+        )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactInput {
+pub struct GetContactInput  {
     /// <p>The name of the contact list to which the contact belongs.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetContactInput {
 }
 impl GetContactInput {
     /// <p>The name of the contact list to which the contact belongs.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<&str> {
+    pub fn contact_list_name(&self) -> std::option::Option<& str> {
         self.contact_list_name.as_deref()
     }
     /// <p>The contact's email addres.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
@@ -41,12 +41,8 @@ impl GetContactInputBuilder {
         self
     }
     /// <p>The name of the contact list to which the contact belongs.</p>
-    pub fn set_contact_list_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.contact_list_name = input;
-        self
+    pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.contact_list_name = input; self
     }
     /// <p>The contact's email addres.</p>
     pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,19 +51,18 @@ impl GetContactInputBuilder {
     }
     /// <p>The contact's email addres.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input;
-        self
+        self.email_address = input; self
     }
     /// Consumes the builder and constructs a [`GetContactInput`](crate::operation::get_contact::GetContactInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_contact::GetContactInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_contact::GetContactInput {
-            contact_list_name: self.contact_list_name,
-            email_address: self.email_address,
-        })
+    pub fn build(self) -> Result<crate::operation::get_contact::GetContactInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_contact::GetContactInput {
+                contact_list_name: self.contact_list_name
+                ,
+                email_address: self.email_address
+                ,
+            }
+        )
     }
 }
+

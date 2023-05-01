@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMinuteUsageInput {
+pub struct GetMinuteUsageInput  {
     /// <p>The month being requested, with a value of 1-12.</p>
     #[doc(hidden)]
     pub month: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl GetMinuteUsageInputBuilder {
     }
     /// <p>The month being requested, with a value of 1-12.</p>
     pub fn set_month(mut self, input: std::option::Option<i32>) -> Self {
-        self.month = input;
-        self
+        self.month = input; self
     }
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn year(mut self, input: i32) -> Self {
@@ -53,19 +52,18 @@ impl GetMinuteUsageInputBuilder {
     }
     /// <p>The year being requested, in the format of YYYY.</p>
     pub fn set_year(mut self, input: std::option::Option<i32>) -> Self {
-        self.year = input;
-        self
+        self.year = input; self
     }
     /// Consumes the builder and constructs a [`GetMinuteUsageInput`](crate::operation::get_minute_usage::GetMinuteUsageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_minute_usage::GetMinuteUsageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_minute_usage::GetMinuteUsageInput {
-            month: self.month,
-            year: self.year,
-        })
+    pub fn build(self) -> Result<crate::operation::get_minute_usage::GetMinuteUsageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_minute_usage::GetMinuteUsageInput {
+                month: self.month
+                ,
+                year: self.year
+                ,
+            }
+        )
     }
 }
+

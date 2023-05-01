@@ -3,7 +3,7 @@
 /// A request to add media streams to the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowMediaStreamsInput {
+pub struct AddFlowMediaStreamsInput  {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -13,20 +13,18 @@ pub struct AddFlowMediaStreamsInput {
 }
 impl AddFlowMediaStreamsInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that you want to add to the flow.
-    pub fn media_streams(&self) -> std::option::Option<&[crate::types::AddMediaStreamRequest]> {
+    pub fn media_streams(&self) -> std::option::Option<& [crate::types::AddMediaStreamRequest]> {
         self.media_streams.as_deref()
     }
 }
 impl AddFlowMediaStreamsInput {
     /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
-    pub fn builder(
-    ) -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
-        crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder {
+        crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsInputBuilder::default()
     }
 }
 
@@ -35,8 +33,7 @@ impl AddFlowMediaStreamsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AddFlowMediaStreamsInputBuilder {
     pub(crate) flow_arn: std::option::Option<std::string::String>,
-    pub(crate) media_streams:
-        std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
+    pub(crate) media_streams: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
 }
 impl AddFlowMediaStreamsInputBuilder {
     /// The Amazon Resource Name (ARN) of the flow.
@@ -46,8 +43,7 @@ impl AddFlowMediaStreamsInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     /// Appends an item to `media_streams`.
     ///
@@ -56,30 +52,24 @@ impl AddFlowMediaStreamsInputBuilder {
     /// The media streams that you want to add to the flow.
     pub fn media_streams(mut self, input: crate::types::AddMediaStreamRequest) -> Self {
         let mut v = self.media_streams.unwrap_or_default();
-        v.push(input);
-        self.media_streams = Some(v);
-        self
+                        v.push(input);
+                        self.media_streams = Some(v);
+                        self
     }
     /// The media streams that you want to add to the flow.
-    pub fn set_media_streams(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>,
-    ) -> Self {
-        self.media_streams = input;
-        self
+    pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddMediaStreamRequest>>) -> Self {
+        self.media_streams = input; self
     }
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsInput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::add_flow_media_streams::AddFlowMediaStreamsInput {
-                flow_arn: self.flow_arn,
-                media_streams: self.media_streams,
-            },
+                flow_arn: self.flow_arn
+                ,
+                media_streams: self.media_streams
+                ,
+            }
         )
     }
 }
+

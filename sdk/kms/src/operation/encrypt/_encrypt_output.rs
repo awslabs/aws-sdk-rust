@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptOutput {
+pub struct EncryptOutput  {
     /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
     #[doc(hidden)]
     pub ciphertext_blob: std::option::Option<aws_smithy_types::Blob>,
@@ -16,25 +16,23 @@ pub struct EncryptOutput {
 }
 impl EncryptOutput {
     /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn ciphertext_blob(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn ciphertext_blob(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.ciphertext_blob.as_ref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
-    pub fn encryption_algorithm(
-        &self,
-    ) -> std::option::Option<&crate::types::EncryptionAlgorithmSpec> {
+    pub fn encryption_algorithm(&self) -> std::option::Option<& crate::types::EncryptionAlgorithmSpec> {
         self.encryption_algorithm.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for EncryptOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl EncryptOutput {
     /// Creates a new builder-style object to manufacture [`EncryptOutput`](crate::operation::encrypt::EncryptOutput).
     pub fn builder() -> crate::operation::encrypt::builders::EncryptOutputBuilder {
@@ -58,12 +56,8 @@ impl EncryptOutputBuilder {
         self
     }
     /// <p>The encrypted plaintext. When you use the HTTP API or the Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
-    pub fn set_ciphertext_blob(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.ciphertext_blob = input;
-        self
+    pub fn set_ciphertext_blob(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.ciphertext_blob = input; self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,8 +66,7 @@ impl EncryptOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the KMS key that was used to encrypt the plaintext.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlgorithmSpec) -> Self {
@@ -81,29 +74,29 @@ impl EncryptOutputBuilder {
         self
     }
     /// <p>The encryption algorithm that was used to encrypt the plaintext.</p>
-    pub fn set_encryption_algorithm(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionAlgorithmSpec>,
-    ) -> Self {
-        self.encryption_algorithm = input;
-        self
+    pub fn set_encryption_algorithm(mut self, input: std::option::Option<crate::types::EncryptionAlgorithmSpec>) -> Self {
+        self.encryption_algorithm = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`EncryptOutput`](crate::operation::encrypt::EncryptOutput).
     pub fn build(self) -> crate::operation::encrypt::EncryptOutput {
         crate::operation::encrypt::EncryptOutput {
-            ciphertext_blob: self.ciphertext_blob,
-            key_id: self.key_id,
-            encryption_algorithm: self.encryption_algorithm,
+            ciphertext_blob: self.ciphertext_blob
+            ,
+            key_id: self.key_id
+            ,
+            encryption_algorithm: self.encryption_algorithm
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

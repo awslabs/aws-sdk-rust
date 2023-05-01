@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetActionTypeInput {
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+pub struct GetActionTypeInput  {
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub category: std::option::Option<crate::types::ActionCategory>,
@@ -25,28 +25,28 @@ pub struct GetActionTypeInput {
     pub version: std::option::Option<std::string::String>,
 }
 impl GetActionTypeInput {
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
-    pub fn category(&self) -> std::option::Option<&crate::types::ActionCategory> {
+    pub fn category(&self) -> std::option::Option<& crate::types::ActionCategory> {
         self.category.as_ref()
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
@@ -67,34 +67,30 @@ pub struct GetActionTypeInputBuilder {
     pub(crate) version: std::option::Option<std::string::String>,
 }
 impl GetActionTypeInputBuilder {
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.category = Some(input);
         self
     }
-    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage. The following are the valid values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
-    pub fn set_category(
-        mut self,
-        input: std::option::Option<crate::types::ActionCategory>,
-    ) -> Self {
-        self.category = input;
-        self
+    pub fn set_category(mut self, input: std::option::Option<crate::types::ActionCategory>) -> Self {
+        self.category = input; self
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +99,7 @@ impl GetActionTypeInputBuilder {
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input;
-        self
+        self.owner = input; self
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +108,7 @@ impl GetActionTypeInputBuilder {
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
     pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider = input;
-        self
+        self.provider = input; self
     }
     /// <p>A string that describes the action type version.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,21 +117,22 @@ impl GetActionTypeInputBuilder {
     }
     /// <p>A string that describes the action type version.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// Consumes the builder and constructs a [`GetActionTypeInput`](crate::operation::get_action_type::GetActionTypeInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_action_type::GetActionTypeInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_action_type::GetActionTypeInput {
-            category: self.category,
-            owner: self.owner,
-            provider: self.provider,
-            version: self.version,
-        })
+    pub fn build(self) -> Result<crate::operation::get_action_type::GetActionTypeInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_action_type::GetActionTypeInput {
+                category: self.category
+                ,
+                owner: self.owner
+                ,
+                provider: self.provider
+                ,
+                version: self.version
+                ,
+            }
+        )
     }
 }
+

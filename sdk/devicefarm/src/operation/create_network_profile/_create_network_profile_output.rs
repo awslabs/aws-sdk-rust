@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkProfileOutput {
+pub struct CreateNetworkProfileOutput  {
     /// <p>The network profile that is returned by the create network profile request.</p>
     #[doc(hidden)]
     pub network_profile: std::option::Option<crate::types::NetworkProfile>,
@@ -10,19 +10,18 @@ pub struct CreateNetworkProfileOutput {
 }
 impl CreateNetworkProfileOutput {
     /// <p>The network profile that is returned by the create network profile request.</p>
-    pub fn network_profile(&self) -> std::option::Option<&crate::types::NetworkProfile> {
+    pub fn network_profile(&self) -> std::option::Option<& crate::types::NetworkProfile> {
         self.network_profile.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNetworkProfileOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateNetworkProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkProfileOutput`](crate::operation::create_network_profile::CreateNetworkProfileOutput).
-    pub fn builder(
-    ) -> crate::operation::create_network_profile::builders::CreateNetworkProfileOutputBuilder {
+    pub fn builder() -> crate::operation::create_network_profile::builders::CreateNetworkProfileOutputBuilder {
         crate::operation::create_network_profile::builders::CreateNetworkProfileOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateNetworkProfileOutputBuilder {
         self
     }
     /// <p>The network profile that is returned by the create network profile request.</p>
-    pub fn set_network_profile(
-        mut self,
-        input: std::option::Option<crate::types::NetworkProfile>,
-    ) -> Self {
-        self.network_profile = input;
-        self
+    pub fn set_network_profile(mut self, input: std::option::Option<crate::types::NetworkProfile>) -> Self {
+        self.network_profile = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateNetworkProfileOutput`](crate::operation::create_network_profile::CreateNetworkProfileOutput).
     pub fn build(self) -> crate::operation::create_network_profile::CreateNetworkProfileOutput {
         crate::operation::create_network_profile::CreateNetworkProfileOutput {
-            network_profile: self.network_profile,
+            network_profile: self.network_profile
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

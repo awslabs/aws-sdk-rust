@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDiscoveredResourcesOutput {
+pub struct ListDiscoveredResourcesOutput  {
     /// <p>Details of the resources that were discovered.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::DiscoveredResource>>,
@@ -13,24 +13,22 @@ pub struct ListDiscoveredResourcesOutput {
 }
 impl ListDiscoveredResourcesOutput {
     /// <p>Details of the resources that were discovered.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::DiscoveredResource]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::DiscoveredResource]> {
         self.items.as_deref()
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDiscoveredResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDiscoveredResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder {
         crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl ListDiscoveredResourcesOutputBuilder {
     /// <p>Details of the resources that were discovered.</p>
     pub fn items(mut self, input: crate::types::DiscoveredResource) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>Details of the resources that were discovered.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DiscoveredResource>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::DiscoveredResource>>) -> Self {
+        self.items = input; self
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl ListDiscoveredResourcesOutputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
+    pub fn build(self) -> crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
         crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

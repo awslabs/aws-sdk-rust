@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCodeSigningConfigsInput {
+pub struct ListCodeSigningConfigsInput  {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListCodeSigningConfigsInput {
 }
 impl ListCodeSigningConfigsInput {
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Maximum number of items to return.</p>
@@ -22,9 +22,7 @@ impl ListCodeSigningConfigsInput {
 }
 impl ListCodeSigningConfigsInput {
     /// Creates a new builder-style object to manufacture [`ListCodeSigningConfigsInput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput).
-    pub fn builder(
-    ) -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder {
         crate::operation::list_code_signing_configs::builders::ListCodeSigningConfigsInputBuilder::default()
     }
 }
@@ -44,8 +42,7 @@ impl ListCodeSigningConfigsInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>Maximum number of items to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -54,21 +51,18 @@ impl ListCodeSigningConfigsInputBuilder {
     }
     /// <p>Maximum number of items to return.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// Consumes the builder and constructs a [`ListCodeSigningConfigsInput`](crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_code_signing_configs::ListCodeSigningConfigsInput {
-                marker: self.marker,
-                max_items: self.max_items,
-            },
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
         )
     }
 }
+

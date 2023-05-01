@@ -3,7 +3,7 @@
 /// <p>Returns status details of an evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationStatus {
+pub struct EvaluationStatus  {
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ResourceEvaluationStatus>,
@@ -13,11 +13,11 @@ pub struct EvaluationStatus {
 }
 impl EvaluationStatus {
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceEvaluationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ResourceEvaluationStatus> {
         self.status.as_ref()
     }
     /// <p>An explanation for failed execution status.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl EvaluationStatusBuilder {
         self
     }
     /// <p>The status of an execution. The valid values are In_Progress, Succeeded or Failed. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ResourceEvaluationStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceEvaluationStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>An explanation for failed execution status.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl EvaluationStatusBuilder {
     }
     /// <p>An explanation for failed execution status.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input;
-        self
+        self.failure_reason = input; self
     }
     /// Consumes the builder and constructs a [`EvaluationStatus`](crate::types::EvaluationStatus).
     pub fn build(self) -> crate::types::EvaluationStatus {
         crate::types::EvaluationStatus {
-            status: self.status,
-            failure_reason: self.failure_reason,
+            status: self.status
+            ,
+            failure_reason: self.failure_reason
+            ,
         }
     }
 }
+

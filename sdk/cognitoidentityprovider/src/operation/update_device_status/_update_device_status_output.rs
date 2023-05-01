@@ -3,18 +3,17 @@
 /// <p>The response to the request to update the device status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeviceStatusOutput {
+pub struct UpdateDeviceStatusOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateDeviceStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDeviceStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceStatusOutput`](crate::operation::update_device_status::UpdateDeviceStatusOutput).
-    pub fn builder(
-    ) -> crate::operation::update_device_status::builders::UpdateDeviceStatusOutputBuilder {
+    pub fn builder() -> crate::operation::update_device_status::builders::UpdateDeviceStatusOutputBuilder {
         crate::operation::update_device_status::builders::UpdateDeviceStatusOutputBuilder::default()
     }
 }
@@ -27,14 +26,14 @@ pub struct UpdateDeviceStatusOutputBuilder {
 }
 impl UpdateDeviceStatusOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDeviceStatusOutput`](crate::operation::update_device_status::UpdateDeviceStatusOutput).
     pub fn build(self) -> crate::operation::update_device_status::UpdateDeviceStatusOutput {
         crate::operation::update_device_status::UpdateDeviceStatusOutput {
@@ -42,3 +41,4 @@ impl UpdateDeviceStatusOutputBuilder {
         }
     }
 }
+

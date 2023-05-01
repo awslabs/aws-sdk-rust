@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTaskSetOutput {
+pub struct CreateTaskSetOutput  {
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     #[doc(hidden)]
     pub task_set: std::option::Option<crate::types::TaskSet>,
@@ -10,15 +10,15 @@ pub struct CreateTaskSetOutput {
 }
 impl CreateTaskSetOutput {
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
-    pub fn task_set(&self) -> std::option::Option<&crate::types::TaskSet> {
+    pub fn task_set(&self) -> std::option::Option<& crate::types::TaskSet> {
         self.task_set.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTaskSetOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateTaskSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateTaskSetOutput`](crate::operation::create_task_set::CreateTaskSetOutput).
     pub fn builder() -> crate::operation::create_task_set::builders::CreateTaskSetOutputBuilder {
@@ -41,23 +41,24 @@ impl CreateTaskSetOutputBuilder {
     }
     /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. A task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.</p>
     pub fn set_task_set(mut self, input: std::option::Option<crate::types::TaskSet>) -> Self {
-        self.task_set = input;
-        self
+        self.task_set = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateTaskSetOutput`](crate::operation::create_task_set::CreateTaskSetOutput).
     pub fn build(self) -> crate::operation::create_task_set::CreateTaskSetOutput {
         crate::operation::create_task_set::CreateTaskSetOutput {
-            task_set: self.task_set,
+            task_set: self.task_set
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

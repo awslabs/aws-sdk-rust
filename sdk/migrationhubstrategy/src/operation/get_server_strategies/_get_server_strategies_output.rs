@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServerStrategiesOutput {
+pub struct GetServerStrategiesOutput  {
     /// <p> A list of strategy recommendations for the server. </p>
     #[doc(hidden)]
     pub server_strategies: std::option::Option<std::vec::Vec<crate::types::ServerStrategy>>,
@@ -10,21 +10,19 @@ pub struct GetServerStrategiesOutput {
 }
 impl GetServerStrategiesOutput {
     /// <p> A list of strategy recommendations for the server. </p>
-    pub fn server_strategies(&self) -> std::option::Option<&[crate::types::ServerStrategy]> {
+    pub fn server_strategies(&self) -> std::option::Option<& [crate::types::ServerStrategy]> {
         self.server_strategies.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServerStrategiesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetServerStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder {
-        crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder {
+        crate::operation::get_server_strategies::builders::GetServerStrategiesOutputBuilder::default()
     }
 }
 
@@ -43,32 +41,30 @@ impl GetServerStrategiesOutputBuilder {
     /// <p> A list of strategy recommendations for the server. </p>
     pub fn server_strategies(mut self, input: crate::types::ServerStrategy) -> Self {
         let mut v = self.server_strategies.unwrap_or_default();
-        v.push(input);
-        self.server_strategies = Some(v);
-        self
+                        v.push(input);
+                        self.server_strategies = Some(v);
+                        self
     }
     /// <p> A list of strategy recommendations for the server. </p>
-    pub fn set_server_strategies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerStrategy>>,
-    ) -> Self {
-        self.server_strategies = input;
-        self
+    pub fn set_server_strategies(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServerStrategy>>) -> Self {
+        self.server_strategies = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetServerStrategiesOutput`](crate::operation::get_server_strategies::GetServerStrategiesOutput).
     pub fn build(self) -> crate::operation::get_server_strategies::GetServerStrategiesOutput {
         crate::operation::get_server_strategies::GetServerStrategiesOutput {
-            server_strategies: self.server_strategies,
+            server_strategies: self.server_strategies
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

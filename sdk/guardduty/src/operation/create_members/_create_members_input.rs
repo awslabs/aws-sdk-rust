@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMembersInput {
+pub struct CreateMembersInput  {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct CreateMembersInput {
 }
 impl CreateMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn account_details(&self) -> std::option::Option<&[crate::types::AccountDetail]> {
+    pub fn account_details(&self) -> std::option::Option<& [crate::types::AccountDetail]> {
         self.account_details.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl CreateMembersInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// Appends an item to `account_details`.
     ///
@@ -52,28 +51,24 @@ impl CreateMembersInputBuilder {
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
     pub fn account_details(mut self, input: crate::types::AccountDetail) -> Self {
         let mut v = self.account_details.unwrap_or_default();
-        v.push(input);
-        self.account_details = Some(v);
-        self
+                        v.push(input);
+                        self.account_details = Some(v);
+                        self
     }
     /// <p>A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.</p>
-    pub fn set_account_details(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccountDetail>>,
-    ) -> Self {
-        self.account_details = input;
-        self
+    pub fn set_account_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountDetail>>) -> Self {
+        self.account_details = input; self
     }
     /// Consumes the builder and constructs a [`CreateMembersInput`](crate::operation::create_members::CreateMembersInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_members::CreateMembersInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_members::CreateMembersInput {
-            detector_id: self.detector_id,
-            account_details: self.account_details,
-        })
+    pub fn build(self) -> Result<crate::operation::create_members::CreateMembersInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_members::CreateMembersInput {
+                detector_id: self.detector_id
+                ,
+                account_details: self.account_details
+                ,
+            }
+        )
     }
 }
+

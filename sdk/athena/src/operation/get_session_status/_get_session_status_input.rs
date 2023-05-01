@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSessionStatusInput {
+pub struct GetSessionStatusInput  {
     /// <p>The session ID.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl GetSessionStatusInput {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 impl GetSessionStatusInput {
     /// Creates a new builder-style object to manufacture [`GetSessionStatusInput`](crate::operation::get_session_status::GetSessionStatusInput).
-    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_session_status::builders::GetSessionStatusInputBuilder {
         crate::operation::get_session_status::builders::GetSessionStatusInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl GetSessionStatusInputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// Consumes the builder and constructs a [`GetSessionStatusInput`](crate::operation::get_session_status::GetSessionStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_session_status::GetSessionStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_session_status::GetSessionStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_session_status::GetSessionStatusInput {
-                session_id: self.session_id,
-            },
+                session_id: self.session_id
+                ,
+            }
         )
     }
 }
+

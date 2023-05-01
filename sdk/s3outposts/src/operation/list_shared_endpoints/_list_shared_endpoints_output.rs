@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSharedEndpointsOutput {
+pub struct ListSharedEndpointsOutput  {
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     #[doc(hidden)]
     pub endpoints: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
@@ -13,25 +13,23 @@ pub struct ListSharedEndpointsOutput {
 }
 impl ListSharedEndpointsOutput {
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::Endpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::types::Endpoint]> {
         self.endpoints.as_deref()
     }
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSharedEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListSharedEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListSharedEndpointsOutput`](crate::operation::list_shared_endpoints::ListSharedEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder {
-        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder {
+        crate::operation::list_shared_endpoints::builders::ListSharedEndpointsOutputBuilder::default()
     }
 }
 
@@ -51,17 +49,13 @@ impl ListSharedEndpointsOutputBuilder {
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
     pub fn endpoints(mut self, input: crate::types::Endpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
-        v.push(input);
-        self.endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.endpoints = Some(v);
+                        self
     }
     /// <p>The list of endpoints associated with the specified Outpost that have been shared by Amazon Web Services Resource Access Manager (RAM).</p>
-    pub fn set_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
-    ) -> Self {
-        self.endpoints = input;
-        self
+    pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Endpoint>>) -> Self {
+        self.endpoints = input; self
     }
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl ListSharedEndpointsOutputBuilder {
     }
     /// <p>If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>, you can include this value in subsequent calls to this operation to retrieve more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListSharedEndpointsOutput`](crate::operation::list_shared_endpoints::ListSharedEndpointsOutput).
     pub fn build(self) -> crate::operation::list_shared_endpoints::ListSharedEndpointsOutput {
         crate::operation::list_shared_endpoints::ListSharedEndpointsOutput {
-            endpoints: self.endpoints,
-            next_token: self.next_token,
+            endpoints: self.endpoints
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

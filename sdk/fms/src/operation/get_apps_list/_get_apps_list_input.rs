@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppsListInput {
+pub struct GetAppsListInput  {
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
     #[doc(hidden)]
     pub list_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     #[doc(hidden)]
-    pub default_list: bool,
+    pub default_list: std::option::Option<bool>,
 }
 impl GetAppsListInput {
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
-    pub fn list_id(&self) -> std::option::Option<&str> {
+    pub fn list_id(&self) -> std::option::Option<& str> {
         self.list_id.as_deref()
     }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-    pub fn default_list(&self) -> bool {
+    pub fn default_list(&self) -> std::option::Option<bool> {
         self.default_list
     }
 }
@@ -42,8 +42,7 @@ impl GetAppsListInputBuilder {
     }
     /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
     pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.list_id = input;
-        self
+        self.list_id = input; self
     }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub fn default_list(mut self, input: bool) -> Self {
@@ -52,19 +51,18 @@ impl GetAppsListInputBuilder {
     }
     /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub fn set_default_list(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_list = input;
-        self
+        self.default_list = input; self
     }
     /// Consumes the builder and constructs a [`GetAppsListInput`](crate::operation::get_apps_list::GetAppsListInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_apps_list::GetAppsListInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_apps_list::GetAppsListInput {
-            list_id: self.list_id,
-            default_list: self.default_list.unwrap_or_default(),
-        })
+    pub fn build(self) -> Result<crate::operation::get_apps_list::GetAppsListInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_apps_list::GetAppsListInput {
+                list_id: self.list_id
+                ,
+                default_list: self.default_list
+                ,
+            }
+        )
     }
 }
+

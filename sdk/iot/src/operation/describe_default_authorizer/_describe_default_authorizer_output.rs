@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDefaultAuthorizerOutput {
+pub struct DescribeDefaultAuthorizerOutput  {
     /// <p>The default authorizer's description.</p>
     #[doc(hidden)]
     pub authorizer_description: std::option::Option<crate::types::AuthorizerDescription>,
@@ -10,20 +10,18 @@ pub struct DescribeDefaultAuthorizerOutput {
 }
 impl DescribeDefaultAuthorizerOutput {
     /// <p>The default authorizer's description.</p>
-    pub fn authorizer_description(
-        &self,
-    ) -> std::option::Option<&crate::types::AuthorizerDescription> {
+    pub fn authorizer_description(&self) -> std::option::Option<& crate::types::AuthorizerDescription> {
         self.authorizer_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDefaultAuthorizerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeDefaultAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDefaultAuthorizerOutput`](crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput).
-    pub fn builder() -> crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerOutputBuilder{
+    pub fn builder() -> crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerOutputBuilder {
         crate::operation::describe_default_authorizer::builders::DescribeDefaultAuthorizerOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DescribeDefaultAuthorizerOutputBuilder {
         self
     }
     /// <p>The default authorizer's description.</p>
-    pub fn set_authorizer_description(
-        mut self,
-        input: std::option::Option<crate::types::AuthorizerDescription>,
-    ) -> Self {
-        self.authorizer_description = input;
-        self
+    pub fn set_authorizer_description(mut self, input: std::option::Option<crate::types::AuthorizerDescription>) -> Self {
+        self.authorizer_description = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeDefaultAuthorizerOutput`](crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput {
+    pub fn build(self) -> crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput {
         crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput {
-            authorizer_description: self.authorizer_description,
+            authorizer_description: self.authorizer_description
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

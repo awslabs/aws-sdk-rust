@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectivePolicyOutput {
+pub struct DescribeEffectivePolicyOutput  {
     /// <p>The contents of the effective policy.</p>
     #[doc(hidden)]
     pub effective_policy: std::option::Option<crate::types::EffectivePolicy>,
@@ -10,20 +10,18 @@ pub struct DescribeEffectivePolicyOutput {
 }
 impl DescribeEffectivePolicyOutput {
     /// <p>The contents of the effective policy.</p>
-    pub fn effective_policy(&self) -> std::option::Option<&crate::types::EffectivePolicy> {
+    pub fn effective_policy(&self) -> std::option::Option<& crate::types::EffectivePolicy> {
         self.effective_policy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEffectivePolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeEffectivePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyOutputBuilder {
         crate::operation::describe_effective_policy::builders::DescribeEffectivePolicyOutputBuilder::default()
     }
 }
@@ -42,29 +40,25 @@ impl DescribeEffectivePolicyOutputBuilder {
         self
     }
     /// <p>The contents of the effective policy.</p>
-    pub fn set_effective_policy(
-        mut self,
-        input: std::option::Option<crate::types::EffectivePolicy>,
-    ) -> Self {
-        self.effective_policy = input;
-        self
+    pub fn set_effective_policy(mut self, input: std::option::Option<crate::types::EffectivePolicy>) -> Self {
+        self.effective_policy = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeEffectivePolicyOutput`](crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput {
+    pub fn build(self) -> crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput {
         crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput {
-            effective_policy: self.effective_policy,
+            effective_policy: self.effective_policy
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

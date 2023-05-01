@@ -3,7 +3,7 @@
 /// <p>Information about on-call rotations that recur monthly.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonthlySetting {
+pub struct MonthlySetting  {
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl MonthlySetting {
         self.day_of_month
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-    pub fn hand_off_time(&self) -> std::option::Option<&crate::types::HandOffTime> {
+    pub fn hand_off_time(&self) -> std::option::Option<& crate::types::HandOffTime> {
         self.hand_off_time.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl MonthlySettingBuilder {
     }
     /// <p>The day of the month when monthly recurring on-call rotations begin.</p>
     pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
-        self.day_of_month = input;
-        self
+        self.day_of_month = input; self
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
     pub fn hand_off_time(mut self, input: crate::types::HandOffTime) -> Self {
@@ -52,18 +51,17 @@ impl MonthlySettingBuilder {
         self
     }
     /// <p>The time of day when a monthly recurring on-call shift rotation begins.</p>
-    pub fn set_hand_off_time(
-        mut self,
-        input: std::option::Option<crate::types::HandOffTime>,
-    ) -> Self {
-        self.hand_off_time = input;
-        self
+    pub fn set_hand_off_time(mut self, input: std::option::Option<crate::types::HandOffTime>) -> Self {
+        self.hand_off_time = input; self
     }
     /// Consumes the builder and constructs a [`MonthlySetting`](crate::types::MonthlySetting).
     pub fn build(self) -> crate::types::MonthlySetting {
         crate::types::MonthlySetting {
-            day_of_month: self.day_of_month,
-            hand_off_time: self.hand_off_time,
+            day_of_month: self.day_of_month
+            ,
+            hand_off_time: self.hand_off_time
+            ,
         }
     }
 }
+

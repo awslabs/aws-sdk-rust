@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClassificationJobInput {
+pub struct DescribeClassificationJobInput  {
     /// <p>The unique identifier for the classification job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeClassificationJobInput {
     /// <p>The unique identifier for the classification job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeClassificationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeClassificationJobInput`](crate::operation::describe_classification_job::DescribeClassificationJobInput).
-    pub fn builder() -> crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder {
         crate::operation::describe_classification_job::builders::DescribeClassificationJobInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeClassificationJobInputBuilder {
     }
     /// <p>The unique identifier for the classification job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeClassificationJobInput`](crate::operation::describe_classification_job::DescribeClassificationJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_classification_job::DescribeClassificationJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_classification_job::DescribeClassificationJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_classification_job::DescribeClassificationJobInput {
-                job_id: self.job_id,
-            },
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

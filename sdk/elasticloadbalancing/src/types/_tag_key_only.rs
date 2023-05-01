@@ -3,14 +3,14 @@
 /// <p>The key of a tag.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagKeyOnly {
+pub struct TagKeyOnly  {
     /// <p>The name of the key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
 }
 impl TagKeyOnly {
     /// <p>The name of the key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
@@ -35,11 +35,14 @@ impl TagKeyOnlyBuilder {
     }
     /// <p>The name of the key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// Consumes the builder and constructs a [`TagKeyOnly`](crate::types::TagKeyOnly).
     pub fn build(self) -> crate::types::TagKeyOnly {
-        crate::types::TagKeyOnly { key: self.key }
+        crate::types::TagKeyOnly {
+            key: self.key
+            ,
+        }
     }
 }
+

@@ -2,36 +2,33 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWirelessDeviceImportTasksOutput {
+pub struct ListWirelessDeviceImportTasksOutput  {
     /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
     #[doc(hidden)]
-    pub wireless_device_import_task_list:
-        std::option::Option<std::vec::Vec<crate::types::WirelessDeviceImportTask>>,
+    pub wireless_device_import_task_list: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceImportTask>>,
     _request_id: Option<String>,
 }
 impl ListWirelessDeviceImportTasksOutput {
     /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
-    pub fn wireless_device_import_task_list(
-        &self,
-    ) -> std::option::Option<&[crate::types::WirelessDeviceImportTask]> {
+    pub fn wireless_device_import_task_list(&self) -> std::option::Option<& [crate::types::WirelessDeviceImportTask]> {
         self.wireless_device_import_task_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWirelessDeviceImportTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWirelessDeviceImportTasksOutput {
     /// Creates a new builder-style object to manufacture [`ListWirelessDeviceImportTasksOutput`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput).
-    pub fn builder() -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksOutputBuilder{
+    pub fn builder() -> crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksOutputBuilder {
         crate::operation::list_wireless_device_import_tasks::builders::ListWirelessDeviceImportTasksOutputBuilder::default()
     }
 }
@@ -41,8 +38,7 @@ impl ListWirelessDeviceImportTasksOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListWirelessDeviceImportTasksOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) wireless_device_import_task_list:
-        std::option::Option<std::vec::Vec<crate::types::WirelessDeviceImportTask>>,
+    pub(crate) wireless_device_import_task_list: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceImportTask>>,
     _request_id: Option<String>,
 }
 impl ListWirelessDeviceImportTasksOutputBuilder {
@@ -53,49 +49,41 @@ impl ListWirelessDeviceImportTasksOutputBuilder {
     }
     /// <p>The token to use to get the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `wireless_device_import_task_list`.
     ///
     /// To override the contents of this collection use [`set_wireless_device_import_task_list`](Self::set_wireless_device_import_task_list).
     ///
     /// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
-    pub fn wireless_device_import_task_list(
-        mut self,
-        input: crate::types::WirelessDeviceImportTask,
-    ) -> Self {
+    pub fn wireless_device_import_task_list(mut self, input: crate::types::WirelessDeviceImportTask) -> Self {
         let mut v = self.wireless_device_import_task_list.unwrap_or_default();
-        v.push(input);
-        self.wireless_device_import_task_list = Some(v);
-        self
+                        v.push(input);
+                        self.wireless_device_import_task_list = Some(v);
+                        self
     }
     /// <p>List of import tasks and summary information of onboarding status of devices in each import task.</p>
-    pub fn set_wireless_device_import_task_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceImportTask>>,
-    ) -> Self {
-        self.wireless_device_import_task_list = input;
-        self
+    pub fn set_wireless_device_import_task_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::WirelessDeviceImportTask>>) -> Self {
+        self.wireless_device_import_task_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWirelessDeviceImportTasksOutput`](crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput
-    {
+    pub fn build(self) -> crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput {
         crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput {
-            next_token: self.next_token,
-            wireless_device_import_task_list: self.wireless_device_import_task_list,
+            next_token: self.next_token
+            ,
+            wireless_device_import_task_list: self.wireless_device_import_task_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

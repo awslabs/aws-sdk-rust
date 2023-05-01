@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotificationsOutput {
+pub struct ListNotificationsOutput  {
     /// <p> The returned list of notifications. </p>
     #[doc(hidden)]
     pub notifications: std::option::Option<std::vec::Vec<crate::types::Notification>>,
@@ -13,23 +13,22 @@ pub struct ListNotificationsOutput {
 }
 impl ListNotificationsOutput {
     /// <p> The returned list of notifications. </p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::types::Notification]> {
+    pub fn notifications(&self) -> std::option::Option<& [crate::types::Notification]> {
         self.notifications.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListNotificationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListNotificationsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_notifications::builders::ListNotificationsOutputBuilder {
         crate::operation::list_notifications::builders::ListNotificationsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListNotificationsOutputBuilder {
     /// <p> The returned list of notifications. </p>
     pub fn notifications(mut self, input: crate::types::Notification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
-        v.push(input);
-        self.notifications = Some(v);
-        self
+                        v.push(input);
+                        self.notifications = Some(v);
+                        self
     }
     /// <p> The returned list of notifications. </p>
-    pub fn set_notifications(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Notification>>,
-    ) -> Self {
-        self.notifications = input;
-        self
+    pub fn set_notifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::Notification>>) -> Self {
+        self.notifications = input; self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListNotificationsOutputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListNotificationsOutput`](crate::operation::list_notifications::ListNotificationsOutput).
     pub fn build(self) -> crate::operation::list_notifications::ListNotificationsOutput {
         crate::operation::list_notifications::ListNotificationsOutput {
-            notifications: self.notifications,
-            next_token: self.next_token,
+            notifications: self.notifications
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

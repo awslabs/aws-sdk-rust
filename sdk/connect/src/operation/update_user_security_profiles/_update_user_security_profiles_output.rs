@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserSecurityProfilesOutput {
+pub struct UpdateUserSecurityProfilesOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateUserSecurityProfilesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateUserSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateUserSecurityProfilesOutput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput).
-    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesOutputBuilder{
+    pub fn builder() -> crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesOutputBuilder {
         crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesOutputBuilder::default()
     }
 }
@@ -25,20 +25,19 @@ pub struct UpdateUserSecurityProfilesOutputBuilder {
 }
 impl UpdateUserSecurityProfilesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateUserSecurityProfilesOutput`](crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput {
+    pub fn build(self) -> crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput {
         crate::operation::update_user_security_profiles::UpdateUserSecurityProfilesOutput {
             _request_id: self._request_id,
         }
     }
 }
+

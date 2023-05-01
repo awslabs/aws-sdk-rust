@@ -3,14 +3,14 @@
 /// <p>Identifies the resources to deploy for a monitoring job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitoringResources {
+pub struct MonitoringResources  {
     /// <p>The configuration for the cluster resources used to run the processing job.</p>
     #[doc(hidden)]
     pub cluster_config: std::option::Option<crate::types::MonitoringClusterConfig>,
 }
 impl MonitoringResources {
     /// <p>The configuration for the cluster resources used to run the processing job.</p>
-    pub fn cluster_config(&self) -> std::option::Option<&crate::types::MonitoringClusterConfig> {
+    pub fn cluster_config(&self) -> std::option::Option<& crate::types::MonitoringClusterConfig> {
         self.cluster_config.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl MonitoringResourcesBuilder {
         self
     }
     /// <p>The configuration for the cluster resources used to run the processing job.</p>
-    pub fn set_cluster_config(
-        mut self,
-        input: std::option::Option<crate::types::MonitoringClusterConfig>,
-    ) -> Self {
-        self.cluster_config = input;
-        self
+    pub fn set_cluster_config(mut self, input: std::option::Option<crate::types::MonitoringClusterConfig>) -> Self {
+        self.cluster_config = input; self
     }
     /// Consumes the builder and constructs a [`MonitoringResources`](crate::types::MonitoringResources).
     pub fn build(self) -> crate::types::MonitoringResources {
         crate::types::MonitoringResources {
-            cluster_config: self.cluster_config,
+            cluster_config: self.cluster_config
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVoiceProfilesInput {
+pub struct ListVoiceProfilesInput  {
     /// <p>The ID of the voice profile domain.</p>
     #[doc(hidden)]
     pub voice_profile_domain_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListVoiceProfilesInput {
 }
 impl ListVoiceProfilesInput {
     /// <p>The ID of the voice profile domain.</p>
-    pub fn voice_profile_domain_id(&self) -> std::option::Option<&str> {
+    pub fn voice_profile_domain_id(&self) -> std::option::Option<& str> {
         self.voice_profile_domain_id.as_deref()
     }
     /// <p>The token used to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results in the request.</p>
@@ -29,8 +29,7 @@ impl ListVoiceProfilesInput {
 }
 impl ListVoiceProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
-    pub fn builder(
-    ) -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesInputBuilder {
+    pub fn builder() -> crate::operation::list_voice_profiles::builders::ListVoiceProfilesInputBuilder {
         crate::operation::list_voice_profiles::builders::ListVoiceProfilesInputBuilder::default()
     }
 }
@@ -50,12 +49,8 @@ impl ListVoiceProfilesInputBuilder {
         self
     }
     /// <p>The ID of the voice profile domain.</p>
-    pub fn set_voice_profile_domain_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_profile_domain_id = input;
-        self
+    pub fn set_voice_profile_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_profile_domain_id = input; self
     }
     /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +59,7 @@ impl ListVoiceProfilesInputBuilder {
     }
     /// <p>The token used to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,22 +68,20 @@ impl ListVoiceProfilesInputBuilder {
     }
     /// <p>The maximum number of results in the request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListVoiceProfilesInput`](crate::operation::list_voice_profiles::ListVoiceProfilesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_voice_profiles::ListVoiceProfilesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_voice_profiles::ListVoiceProfilesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_voice_profiles::ListVoiceProfilesInput {
-                voice_profile_domain_id: self.voice_profile_domain_id,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            },
+                voice_profile_domain_id: self.voice_profile_domain_id
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
         )
     }
 }
+

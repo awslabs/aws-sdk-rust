@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsInput {
+pub struct ListEnvironmentsInput  {
     /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListEnvironmentsInput {
 }
 impl ListEnvironmentsInput {
     /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of runtime environments to return.</p>
@@ -26,18 +26,17 @@ impl ListEnvironmentsInput {
         self.max_results
     }
     /// <p>The names of the runtime environments. Must be unique within the account.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The engine type for the runtime environment.</p>
-    pub fn engine_type(&self) -> std::option::Option<&crate::types::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<& crate::types::EngineType> {
         self.engine_type.as_ref()
     }
 }
 impl ListEnvironmentsInput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsInputBuilder {
         crate::operation::list_environments::builders::ListEnvironmentsInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl ListEnvironmentsInputBuilder {
     }
     /// <p>A pagination token to control the number of runtime environments displayed in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of runtime environments to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,8 +67,7 @@ impl ListEnvironmentsInputBuilder {
     }
     /// <p>The maximum number of runtime environments to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Appends an item to `names`.
     ///
@@ -79,17 +76,13 @@ impl ListEnvironmentsInputBuilder {
     /// <p>The names of the runtime environments. Must be unique within the account.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-        v.push(input.into());
-        self.names = Some(v);
-        self
+                        v.push(input.into());
+                        self.names = Some(v);
+                        self
     }
     /// <p>The names of the runtime environments. Must be unique within the account.</p>
-    pub fn set_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.names = input;
-        self
+    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.names = input; self
     }
     /// <p>The engine type for the runtime environment.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -98,21 +91,22 @@ impl ListEnvironmentsInputBuilder {
     }
     /// <p>The engine type for the runtime environment.</p>
     pub fn set_engine_type(mut self, input: std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input;
-        self
+        self.engine_type = input; self
     }
     /// Consumes the builder and constructs a [`ListEnvironmentsInput`](crate::operation::list_environments::ListEnvironmentsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_environments::ListEnvironmentsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_environments::ListEnvironmentsInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            names: self.names,
-            engine_type: self.engine_type,
-        })
+    pub fn build(self) -> Result<crate::operation::list_environments::ListEnvironmentsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_environments::ListEnvironmentsInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                names: self.names
+                ,
+                engine_type: self.engine_type
+                ,
+            }
+        )
     }
 }
+

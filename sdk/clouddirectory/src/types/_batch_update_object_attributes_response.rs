@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateObjectAttributesResponse {
+pub struct BatchUpdateObjectAttributesResponse  {
     /// <p>ID that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl BatchUpdateObjectAttributesResponseBuilder {
         self
     }
     /// <p>ID that is associated with the object.</p>
-    pub fn set_object_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.object_identifier = input;
-        self
+    pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.object_identifier = input; self
     }
     /// Consumes the builder and constructs a [`BatchUpdateObjectAttributesResponse`](crate::types::BatchUpdateObjectAttributesResponse).
     pub fn build(self) -> crate::types::BatchUpdateObjectAttributesResponse {
         crate::types::BatchUpdateObjectAttributesResponse {
-            object_identifier: self.object_identifier,
+            object_identifier: self.object_identifier
+            ,
         }
     }
 }
+

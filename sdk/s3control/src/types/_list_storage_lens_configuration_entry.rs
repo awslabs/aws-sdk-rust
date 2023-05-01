@@ -3,7 +3,7 @@
 /// <p>Part of <code>ListStorageLensConfigurationResult</code>. Each entry includes the description of the S3 Storage Lens configuration, its home Region, whether it is enabled, its Amazon Resource Name (ARN), and config ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStorageLensConfigurationEntry {
+pub struct ListStorageLensConfigurationEntry  {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct ListStorageLensConfigurationEntry {
 }
 impl ListStorageLensConfigurationEntry {
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
-    pub fn storage_lens_arn(&self) -> std::option::Option<&str> {
+    pub fn storage_lens_arn(&self) -> std::option::Option<& str> {
         self.storage_lens_arn.as_deref()
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> std::option::Option<& str> {
         self.home_region.as_deref()
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
@@ -59,8 +59,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>A container for the S3 Storage Lens configuration ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
     pub fn storage_lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>The ARN of the S3 Storage Lens configuration. This property is read-only.</p>
     pub fn set_storage_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_lens_arn = input;
-        self
+        self.storage_lens_arn = input; self
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
     pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +77,7 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>A container for the S3 Storage Lens home Region. Your metrics data is stored and retained in your designated S3 Storage Lens home Region.</p>
     pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.home_region = input;
-        self
+        self.home_region = input; self
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
@@ -89,16 +86,21 @@ impl ListStorageLensConfigurationEntryBuilder {
     }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled. This property is required.</p>
     pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_enabled = input;
-        self
+        self.is_enabled = input; self
     }
     /// Consumes the builder and constructs a [`ListStorageLensConfigurationEntry`](crate::types::ListStorageLensConfigurationEntry).
     pub fn build(self) -> crate::types::ListStorageLensConfigurationEntry {
         crate::types::ListStorageLensConfigurationEntry {
-            id: self.id,
-            storage_lens_arn: self.storage_lens_arn,
-            home_region: self.home_region,
-            is_enabled: self.is_enabled.unwrap_or_default(),
+            id: self.id
+            ,
+            storage_lens_arn: self.storage_lens_arn
+            ,
+            home_region: self.home_region
+            ,
+            is_enabled: self.is_enabled
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The number of conformance packs that are compliant and noncompliant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregateConformancePackComplianceCount {
+pub struct AggregateConformancePackComplianceCount  {
     /// <p>Number of compliant conformance packs.</p>
     #[doc(hidden)]
     pub compliant_conformance_pack_count: i32,
@@ -43,8 +43,7 @@ impl AggregateConformancePackComplianceCountBuilder {
     }
     /// <p>Number of compliant conformance packs.</p>
     pub fn set_compliant_conformance_pack_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.compliant_conformance_pack_count = input;
-        self
+        self.compliant_conformance_pack_count = input; self
     }
     /// <p>Number of noncompliant conformance packs.</p>
     pub fn non_compliant_conformance_pack_count(mut self, input: i32) -> Self {
@@ -52,22 +51,19 @@ impl AggregateConformancePackComplianceCountBuilder {
         self
     }
     /// <p>Number of noncompliant conformance packs.</p>
-    pub fn set_non_compliant_conformance_pack_count(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.non_compliant_conformance_pack_count = input;
-        self
+    pub fn set_non_compliant_conformance_pack_count(mut self, input: std::option::Option<i32>) -> Self {
+        self.non_compliant_conformance_pack_count = input; self
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceCount`](crate::types::AggregateConformancePackComplianceCount).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceCount {
         crate::types::AggregateConformancePackComplianceCount {
-            compliant_conformance_pack_count: self
-                .compliant_conformance_pack_count
-                .unwrap_or_default(),
-            non_compliant_conformance_pack_count: self
-                .non_compliant_conformance_pack_count
-                .unwrap_or_default(),
+            compliant_conformance_pack_count: self.compliant_conformance_pack_count
+                .unwrap_or_default()
+            ,
+            non_compliant_conformance_pack_count: self.non_compliant_conformance_pack_count
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

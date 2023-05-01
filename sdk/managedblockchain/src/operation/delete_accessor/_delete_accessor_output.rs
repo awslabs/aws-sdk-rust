@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessorOutput {
+pub struct DeleteAccessorOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteAccessorOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteAccessorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessorOutput`](crate::operation::delete_accessor::DeleteAccessorOutput).
     pub fn builder() -> crate::operation::delete_accessor::builders::DeleteAccessorOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteAccessorOutputBuilder {
 }
 impl DeleteAccessorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteAccessorOutput`](crate::operation::delete_accessor::DeleteAccessorOutput).
     pub fn build(self) -> crate::operation::delete_accessor::DeleteAccessorOutput {
         crate::operation::delete_accessor::DeleteAccessorOutput {
@@ -40,3 +40,4 @@ impl DeleteAccessorOutputBuilder {
         }
     }
 }
+

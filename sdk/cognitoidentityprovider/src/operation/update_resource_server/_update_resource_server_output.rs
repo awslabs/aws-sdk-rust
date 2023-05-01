@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceServerOutput {
+pub struct UpdateResourceServerOutput  {
     /// <p>The resource server.</p>
     #[doc(hidden)]
     pub resource_server: std::option::Option<crate::types::ResourceServerType>,
@@ -10,19 +10,18 @@ pub struct UpdateResourceServerOutput {
 }
 impl UpdateResourceServerOutput {
     /// <p>The resource server.</p>
-    pub fn resource_server(&self) -> std::option::Option<&crate::types::ResourceServerType> {
+    pub fn resource_server(&self) -> std::option::Option<& crate::types::ResourceServerType> {
         self.resource_server.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateResourceServerOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateResourceServerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceServerOutput`](crate::operation::update_resource_server::UpdateResourceServerOutput).
-    pub fn builder(
-    ) -> crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder {
+    pub fn builder() -> crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder {
         crate::operation::update_resource_server::builders::UpdateResourceServerOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateResourceServerOutputBuilder {
         self
     }
     /// <p>The resource server.</p>
-    pub fn set_resource_server(
-        mut self,
-        input: std::option::Option<crate::types::ResourceServerType>,
-    ) -> Self {
-        self.resource_server = input;
-        self
+    pub fn set_resource_server(mut self, input: std::option::Option<crate::types::ResourceServerType>) -> Self {
+        self.resource_server = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateResourceServerOutput`](crate::operation::update_resource_server::UpdateResourceServerOutput).
     pub fn build(self) -> crate::operation::update_resource_server::UpdateResourceServerOutput {
         crate::operation::update_resource_server::UpdateResourceServerOutput {
-            resource_server: self.resource_server,
+            resource_server: self.resource_server
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefreshSchemasOutput {
+pub struct RefreshSchemasOutput  {
     /// <p>The status of the refreshed schema.</p>
     #[doc(hidden)]
     pub refresh_schemas_status: std::option::Option<crate::types::RefreshSchemasStatus>,
@@ -11,17 +11,15 @@ pub struct RefreshSchemasOutput {
 }
 impl RefreshSchemasOutput {
     /// <p>The status of the refreshed schema.</p>
-    pub fn refresh_schemas_status(
-        &self,
-    ) -> std::option::Option<&crate::types::RefreshSchemasStatus> {
+    pub fn refresh_schemas_status(&self) -> std::option::Option<& crate::types::RefreshSchemasStatus> {
         self.refresh_schemas_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RefreshSchemasOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RefreshSchemasOutput {
     /// Creates a new builder-style object to manufacture [`RefreshSchemasOutput`](crate::operation::refresh_schemas::RefreshSchemasOutput).
     pub fn builder() -> crate::operation::refresh_schemas::builders::RefreshSchemasOutputBuilder {
@@ -43,27 +41,25 @@ impl RefreshSchemasOutputBuilder {
         self
     }
     /// <p>The status of the refreshed schema.</p>
-    pub fn set_refresh_schemas_status(
-        mut self,
-        input: std::option::Option<crate::types::RefreshSchemasStatus>,
-    ) -> Self {
-        self.refresh_schemas_status = input;
-        self
+    pub fn set_refresh_schemas_status(mut self, input: std::option::Option<crate::types::RefreshSchemasStatus>) -> Self {
+        self.refresh_schemas_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RefreshSchemasOutput`](crate::operation::refresh_schemas::RefreshSchemasOutput).
     pub fn build(self) -> crate::operation::refresh_schemas::RefreshSchemasOutput {
         crate::operation::refresh_schemas::RefreshSchemasOutput {
-            refresh_schemas_status: self.refresh_schemas_status,
+            refresh_schemas_status: self.refresh_schemas_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

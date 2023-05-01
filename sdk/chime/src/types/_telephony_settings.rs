@@ -3,7 +3,7 @@
 /// <p>Settings that allow management of telephony permissions for an Amazon Chime user, such as inbound and outbound calling and text messaging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TelephonySettings {
+pub struct TelephonySettings  {
     /// <p>Allows or denies inbound calling.</p>
     #[doc(hidden)]
     pub inbound_calling: std::option::Option<bool>,
@@ -51,8 +51,7 @@ impl TelephonySettingsBuilder {
     }
     /// <p>Allows or denies inbound calling.</p>
     pub fn set_inbound_calling(mut self, input: std::option::Option<bool>) -> Self {
-        self.inbound_calling = input;
-        self
+        self.inbound_calling = input; self
     }
     /// <p>Allows or denies outbound calling.</p>
     pub fn outbound_calling(mut self, input: bool) -> Self {
@@ -61,8 +60,7 @@ impl TelephonySettingsBuilder {
     }
     /// <p>Allows or denies outbound calling.</p>
     pub fn set_outbound_calling(mut self, input: std::option::Option<bool>) -> Self {
-        self.outbound_calling = input;
-        self
+        self.outbound_calling = input; self
     }
     /// <p>Allows or denies SMS messaging.</p>
     pub fn sms(mut self, input: bool) -> Self {
@@ -71,15 +69,18 @@ impl TelephonySettingsBuilder {
     }
     /// <p>Allows or denies SMS messaging.</p>
     pub fn set_sms(mut self, input: std::option::Option<bool>) -> Self {
-        self.sms = input;
-        self
+        self.sms = input; self
     }
     /// Consumes the builder and constructs a [`TelephonySettings`](crate::types::TelephonySettings).
     pub fn build(self) -> crate::types::TelephonySettings {
         crate::types::TelephonySettings {
-            inbound_calling: self.inbound_calling,
-            outbound_calling: self.outbound_calling,
-            sms: self.sms,
+            inbound_calling: self.inbound_calling
+            ,
+            outbound_calling: self.outbound_calling
+            ,
+            sms: self.sms
+            ,
         }
     }
 }
+

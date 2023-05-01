@@ -3,14 +3,14 @@
 /// <p>Describes the compute type of the bundle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeType {
+pub struct ComputeType  {
     /// <p>The compute type.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::Compute>,
 }
 impl ComputeType {
     /// <p>The compute type.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::Compute> {
+    pub fn name(&self) -> std::option::Option<& crate::types::Compute> {
         self.name.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl ComputeTypeBuilder {
     }
     /// <p>The compute type.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::Compute>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`ComputeType`](crate::types::ComputeType).
     pub fn build(self) -> crate::types::ComputeType {
-        crate::types::ComputeType { name: self.name }
+        crate::types::ComputeType {
+            name: self.name
+            ,
+        }
     }
 }
+

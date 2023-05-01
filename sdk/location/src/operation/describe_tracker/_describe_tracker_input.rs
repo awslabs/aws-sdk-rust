@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrackerInput {
+pub struct DescribeTrackerInput  {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
 }
 impl DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeTrackerInputBuilder {
     }
     /// <p>The name of the tracker resource.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTrackerInput`](crate::operation::describe_tracker::DescribeTrackerInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_tracker::DescribeTrackerInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_tracker::DescribeTrackerInput {
-            tracker_name: self.tracker_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_tracker::DescribeTrackerInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_tracker::DescribeTrackerInput {
+                tracker_name: self.tracker_name
+                ,
+            }
+        )
     }
 }
+

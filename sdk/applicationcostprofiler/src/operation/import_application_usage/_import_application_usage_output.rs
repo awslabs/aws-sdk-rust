@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportApplicationUsageOutput {
+pub struct ImportApplicationUsageOutput  {
     /// <p>ID of the import request.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct ImportApplicationUsageOutput {
 }
 impl ImportApplicationUsageOutput {
     /// <p>ID of the import request.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ImportApplicationUsageOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ImportApplicationUsageOutput {
     /// Creates a new builder-style object to manufacture [`ImportApplicationUsageOutput`](crate::operation::import_application_usage::ImportApplicationUsageOutput).
-    pub fn builder(
-    ) -> crate::operation::import_application_usage::builders::ImportApplicationUsageOutputBuilder
-    {
+    pub fn builder() -> crate::operation::import_application_usage::builders::ImportApplicationUsageOutputBuilder {
         crate::operation::import_application_usage::builders::ImportApplicationUsageOutputBuilder::default()
     }
 }
@@ -43,23 +41,24 @@ impl ImportApplicationUsageOutputBuilder {
     }
     /// <p>ID of the import request.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ImportApplicationUsageOutput`](crate::operation::import_application_usage::ImportApplicationUsageOutput).
     pub fn build(self) -> crate::operation::import_application_usage::ImportApplicationUsageOutput {
         crate::operation::import_application_usage::ImportApplicationUsageOutput {
-            import_id: self.import_id,
+            import_id: self.import_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -4,104 +4,76 @@ pub use crate::operation::describe_verified_access_groups::_describe_verified_ac
 pub use crate::operation::describe_verified_access_groups::_describe_verified_access_groups_input::DescribeVerifiedAccessGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeVerifiedAccessGroups`.
-///
-/// <p>Describe details of existing Verified Access groups.</p>
+/// 
+/// <p>Describes the specified Verified Access groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVerifiedAccessGroupsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_verified_access_groups::builders::DescribeVerifiedAccessGroupsInputBuilder
             }
-impl DescribeVerifiedAccessGroupsFluentBuilder {
+impl DescribeVerifiedAccessGroupsFluentBuilder  {
     /// Creates a new `DescribeVerifiedAccessGroups`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroups,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroups, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_groups::DescribeVerifiedAccessGroupsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator{
-        crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator {
+                            crate::operation::describe_verified_access_groups::paginator::DescribeVerifiedAccessGroupsPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `VerifiedAccessGroupIds`.
     ///
     /// To override the contents of this collection use [`set_verified_access_group_ids`](Self::set_verified_access_group_ids).
     ///
-    /// <p>The ID of the Amazon Web Services Verified Access groups.</p>
+    /// <p>The ID of the Verified Access groups.</p>
     pub fn verified_access_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_group_ids(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access groups.</p>
-    pub fn set_verified_access_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    /// <p>The ID of the Verified Access groups.</p>
+    pub fn set_verified_access_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_verified_access_group_ids(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
+    /// <p>The ID of the Verified Access instance.</p>
     pub fn verified_access_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.verified_access_instance_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    /// <p>The ID of the Verified Access instance.</p>
+    pub fn set_verified_access_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_verified_access_instance_id(input);
         self
     }
@@ -135,10 +107,7 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
         self
     }
     /// <p>One or more filters. Filter names and values are case-sensitive.</p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -153,3 +122,4 @@ impl DescribeVerifiedAccessGroupsFluentBuilder {
         self
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The current state of a timer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Timer {
+pub struct Timer  {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Timer {
 }
 impl Timer {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The expiration time for the timer.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl TimerBuilder {
     }
     /// <p>The name of the timer.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The expiration time for the timer.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -53,14 +52,16 @@ impl TimerBuilder {
     }
     /// <p>The expiration time for the timer.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// Consumes the builder and constructs a [`Timer`](crate::types::Timer).
     pub fn build(self) -> crate::types::Timer {
         crate::types::Timer {
-            name: self.name,
-            timestamp: self.timestamp,
+            name: self.name
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

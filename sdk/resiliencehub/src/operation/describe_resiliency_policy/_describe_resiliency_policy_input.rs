@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResiliencyPolicyInput {
+pub struct DescribeResiliencyPolicyInput  {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResiliencyPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> std::option::Option<& str> {
         self.policy_arn.as_deref()
     }
 }
 impl DescribeResiliencyPolicyInput {
     /// Creates a new builder-style object to manufacture [`DescribeResiliencyPolicyInput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput).
-    pub fn builder(
-    ) -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder {
         crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl DescribeResiliencyPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input;
-        self
+        self.policy_arn = input; self
     }
     /// Consumes the builder and constructs a [`DescribeResiliencyPolicyInput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput {
-                policy_arn: self.policy_arn,
-            },
+                policy_arn: self.policy_arn
+                ,
+            }
         )
     }
 }
+

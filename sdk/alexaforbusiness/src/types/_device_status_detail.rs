@@ -3,7 +3,7 @@
 /// <p>Details of a device’s status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceStatusDetail {
+pub struct DeviceStatusDetail  {
     /// <p>The list of available features on the device.</p>
     #[doc(hidden)]
     pub feature: std::option::Option<crate::types::Feature>,
@@ -13,11 +13,11 @@ pub struct DeviceStatusDetail {
 }
 impl DeviceStatusDetail {
     /// <p>The list of available features on the device.</p>
-    pub fn feature(&self) -> std::option::Option<&crate::types::Feature> {
+    pub fn feature(&self) -> std::option::Option<& crate::types::Feature> {
         self.feature.as_ref()
     }
     /// <p>The device status detail code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::DeviceStatusDetailCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::DeviceStatusDetailCode> {
         self.code.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl DeviceStatusDetailBuilder {
     }
     /// <p>The list of available features on the device.</p>
     pub fn set_feature(mut self, input: std::option::Option<crate::types::Feature>) -> Self {
-        self.feature = input;
-        self
+        self.feature = input; self
     }
     /// <p>The device status detail code.</p>
     pub fn code(mut self, input: crate::types::DeviceStatusDetailCode) -> Self {
@@ -52,18 +51,17 @@ impl DeviceStatusDetailBuilder {
         self
     }
     /// <p>The device status detail code.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::DeviceStatusDetailCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::DeviceStatusDetailCode>) -> Self {
+        self.code = input; self
     }
     /// Consumes the builder and constructs a [`DeviceStatusDetail`](crate::types::DeviceStatusDetail).
     pub fn build(self) -> crate::types::DeviceStatusDetail {
         crate::types::DeviceStatusDetail {
-            feature: self.feature,
-            code: self.code,
+            feature: self.feature
+            ,
+            code: self.code
+            ,
         }
     }
 }
+

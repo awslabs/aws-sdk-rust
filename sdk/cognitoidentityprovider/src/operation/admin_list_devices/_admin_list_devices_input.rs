@@ -3,7 +3,7 @@
 /// <p>Represents the request to list devices, as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminListDevicesInput {
+pub struct AdminListDevicesInput  {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct AdminListDevicesInput {
 }
 impl AdminListDevicesInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> std::option::Option<& str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     /// <p>The limit of the devices request.</p>
@@ -31,11 +31,11 @@ impl AdminListDevicesInput {
         self.limit
     }
     /// <p>The pagination token.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> std::option::Option<& str> {
         self.pagination_token.as_deref()
     }
 }
-impl std::fmt::Debug for AdminListDevicesInput {
+impl  std::fmt::Debug for AdminListDevicesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminListDevicesInput");
         formatter.field("user_pool_id", &self.user_pool_id);
@@ -47,8 +47,7 @@ impl std::fmt::Debug for AdminListDevicesInput {
 }
 impl AdminListDevicesInput {
     /// Creates a new builder-style object to manufacture [`AdminListDevicesInput`](crate::operation::admin_list_devices::AdminListDevicesInput).
-    pub fn builder() -> crate::operation::admin_list_devices::builders::AdminListDevicesInputBuilder
-    {
+    pub fn builder() -> crate::operation::admin_list_devices::builders::AdminListDevicesInputBuilder {
         crate::operation::admin_list_devices::builders::AdminListDevicesInputBuilder::default()
     }
 }
@@ -70,8 +69,7 @@ impl AdminListDevicesInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input;
-        self
+        self.user_pool_id = input; self
     }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +78,7 @@ impl AdminListDevicesInputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input;
-        self
+        self.username = input; self
     }
     /// <p>The limit of the devices request.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -90,8 +87,7 @@ impl AdminListDevicesInputBuilder {
     }
     /// <p>The limit of the devices request.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The pagination token.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,23 +96,21 @@ impl AdminListDevicesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input;
-        self
+        self.pagination_token = input; self
     }
     /// Consumes the builder and constructs a [`AdminListDevicesInput`](crate::operation::admin_list_devices::AdminListDevicesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::admin_list_devices::AdminListDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::admin_list_devices::AdminListDevicesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::admin_list_devices::AdminListDevicesInput {
-                user_pool_id: self.user_pool_id,
-                username: self.username,
-                limit: self.limit,
-                pagination_token: self.pagination_token,
-            },
+                user_pool_id: self.user_pool_id
+                ,
+                username: self.username
+                ,
+                limit: self.limit
+                ,
+                pagination_token: self.pagination_token
+                ,
+            }
         )
     }
 }
@@ -130,3 +124,4 @@ impl std::fmt::Debug for AdminListDevicesInputBuilder {
         formatter.finish()
     }
 }
+

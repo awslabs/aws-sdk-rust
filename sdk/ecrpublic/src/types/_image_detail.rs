@@ -3,7 +3,7 @@
 /// <p>An object that describes an image that's returned by a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageDetail {
+pub struct ImageDetail  {
     /// <p>The Amazon Web Services account ID that's associated with the public registry where this image belongs.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -16,9 +16,9 @@ pub struct ImageDetail {
     /// <p>The list of tags that's associated with this image.</p>
     #[doc(hidden)]
     pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
-    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
+    /// <p>The size, in bytes, of the image in the repository.</p> 
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note> 
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub image_size_in_bytes: std::option::Option<i64>,
@@ -34,38 +34,38 @@ pub struct ImageDetail {
 }
 impl ImageDetail {
     /// <p>The Amazon Web Services account ID that's associated with the public registry where this image belongs.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> std::option::Option<& str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository where this image belongs.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
+    pub fn image_digest(&self) -> std::option::Option<& str> {
         self.image_digest.as_deref()
     }
     /// <p>The list of tags that's associated with this image.</p>
-    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn image_tags(&self) -> std::option::Option<& [std::string::String]> {
         self.image_tags.as_deref()
     }
-    /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
-    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
+    /// <p>The size, in bytes, of the image in the repository.</p> 
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note> 
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p> 
     /// </note>
     pub fn image_size_in_bytes(&self) -> std::option::Option<i64> {
         self.image_size_in_bytes
     }
     /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
-    pub fn image_pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn image_pushed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.image_pushed_at.as_ref()
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn image_manifest_media_type(&self) -> std::option::Option<&str> {
+    pub fn image_manifest_media_type(&self) -> std::option::Option<& str> {
         self.image_manifest_media_type.as_deref()
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn artifact_media_type(&self) -> std::option::Option<&str> {
+    pub fn artifact_media_type(&self) -> std::option::Option<& str> {
         self.artifact_media_type.as_deref()
     }
 }
@@ -97,8 +97,7 @@ impl ImageDetailBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the public registry where this image belongs.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input;
-        self
+        self.registry_id = input; self
     }
     /// <p>The name of the repository where this image belongs.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +106,7 @@ impl ImageDetailBuilder {
     }
     /// <p>The name of the repository where this image belongs.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input;
-        self
+        self.repository_name = input; self
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +115,7 @@ impl ImageDetailBuilder {
     }
     /// <p>The <code>sha256</code> digest of the image manifest.</p>
     pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_digest = input;
-        self
+        self.image_digest = input; self
     }
     /// Appends an item to `image_tags`.
     ///
@@ -127,33 +124,28 @@ impl ImageDetailBuilder {
     /// <p>The list of tags that's associated with this image.</p>
     pub fn image_tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
-        v.push(input.into());
-        self.image_tags = Some(v);
-        self
+                        v.push(input.into());
+                        self.image_tags = Some(v);
+                        self
     }
     /// <p>The list of tags that's associated with this image.</p>
-    pub fn set_image_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.image_tags = input;
-        self
+    pub fn set_image_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.image_tags = input; self
     }
-    /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
-    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
+    /// <p>The size, in bytes, of the image in the repository.</p> 
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note> 
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p> 
     /// </note>
     pub fn image_size_in_bytes(mut self, input: i64) -> Self {
         self.image_size_in_bytes = Some(input);
         self
     }
-    /// <p>The size, in bytes, of the image in the repository.</p>
-    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note>
-    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p>
+    /// <p>The size, in bytes, of the image in the repository.</p> 
+    /// <p>If the image is a manifest list, this is the max size of all manifests in the list.</p> <note> 
+    /// <p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them to a V2 Docker registry. The output of the <code>docker images</code> command shows the uncompressed image size, so it might return a larger image size than the image sizes that are returned by <code>DescribeImages</code>.</p> 
     /// </note>
     pub fn set_image_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.image_size_in_bytes = input;
-        self
+        self.image_size_in_bytes = input; self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
     pub fn image_pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,12 +153,8 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The date and time, expressed in standard JavaScript date format, that the current image was pushed to the repository at. </p>
-    pub fn set_image_pushed_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.image_pushed_at = input;
-        self
+    pub fn set_image_pushed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.image_pushed_at = input; self
     }
     /// <p>The media type of the image manifest.</p>
     pub fn image_manifest_media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,12 +162,8 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The media type of the image manifest.</p>
-    pub fn set_image_manifest_media_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.image_manifest_media_type = input;
-        self
+    pub fn set_image_manifest_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.image_manifest_media_type = input; self
     }
     /// <p>The artifact media type of the image.</p>
     pub fn artifact_media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,24 +171,29 @@ impl ImageDetailBuilder {
         self
     }
     /// <p>The artifact media type of the image.</p>
-    pub fn set_artifact_media_type(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.artifact_media_type = input;
-        self
+    pub fn set_artifact_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.artifact_media_type = input; self
     }
     /// Consumes the builder and constructs a [`ImageDetail`](crate::types::ImageDetail).
     pub fn build(self) -> crate::types::ImageDetail {
         crate::types::ImageDetail {
-            registry_id: self.registry_id,
-            repository_name: self.repository_name,
-            image_digest: self.image_digest,
-            image_tags: self.image_tags,
-            image_size_in_bytes: self.image_size_in_bytes,
-            image_pushed_at: self.image_pushed_at,
-            image_manifest_media_type: self.image_manifest_media_type,
-            artifact_media_type: self.artifact_media_type,
+            registry_id: self.registry_id
+            ,
+            repository_name: self.repository_name
+            ,
+            image_digest: self.image_digest
+            ,
+            image_tags: self.image_tags
+            ,
+            image_size_in_bytes: self.image_size_in_bytes
+            ,
+            image_pushed_at: self.image_pushed_at
+            ,
+            image_manifest_media_type: self.image_manifest_media_type
+            ,
+            artifact_media_type: self.artifact_media_type
+            ,
         }
     }
 }
+

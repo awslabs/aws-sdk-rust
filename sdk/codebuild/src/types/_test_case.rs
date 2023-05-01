@@ -3,7 +3,7 @@
 /// <p> Information about a test case created using a framework such as NUnit or Cucumber. A test case might be a unit test or a configuration test. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestCase {
+pub struct TestCase  {
     /// <p> The ARN of the report to which the test case belongs. </p>
     #[doc(hidden)]
     pub report_arn: std::option::Option<std::string::String>,
@@ -31,23 +31,23 @@ pub struct TestCase {
 }
 impl TestCase {
     /// <p> The ARN of the report to which the test case belongs. </p>
-    pub fn report_arn(&self) -> std::option::Option<&str> {
+    pub fn report_arn(&self) -> std::option::Option<& str> {
         self.report_arn.as_deref()
     }
     /// <p> The path to the raw data file that contains the test result. </p>
-    pub fn test_raw_data_path(&self) -> std::option::Option<&str> {
+    pub fn test_raw_data_path(&self) -> std::option::Option<& str> {
         self.test_raw_data_path.as_deref()
     }
     /// <p> A string that is applied to a series of related test cases. CodeBuild generates the prefix. The prefix depends on the framework used to generate the tests. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p> The name of the test case. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The status returned by the test case after it was run. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p> The number of nanoseconds it took to run this test case. </p>
@@ -55,11 +55,11 @@ impl TestCase {
         self.duration_in_nano_seconds
     }
     /// <p> A message associated with a test case. For example, an error message or stack trace. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
-    pub fn expired(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expired(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expired.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl TestCaseBuilder {
     }
     /// <p> The ARN of the report to which the test case belongs. </p>
     pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_arn = input;
-        self
+        self.report_arn = input; self
     }
     /// <p> The path to the raw data file that contains the test result. </p>
     pub fn test_raw_data_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,12 +99,8 @@ impl TestCaseBuilder {
         self
     }
     /// <p> The path to the raw data file that contains the test result. </p>
-    pub fn set_test_raw_data_path(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.test_raw_data_path = input;
-        self
+    pub fn set_test_raw_data_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.test_raw_data_path = input; self
     }
     /// <p> A string that is applied to a series of related test cases. CodeBuild generates the prefix. The prefix depends on the framework used to generate the tests. </p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +109,7 @@ impl TestCaseBuilder {
     }
     /// <p> A string that is applied to a series of related test cases. CodeBuild generates the prefix. The prefix depends on the framework used to generate the tests. </p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// <p> The name of the test case. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +118,7 @@ impl TestCaseBuilder {
     }
     /// <p> The name of the test case. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The status returned by the test case after it was run. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +127,7 @@ impl TestCaseBuilder {
     }
     /// <p> The status returned by the test case after it was run. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p> The number of nanoseconds it took to run this test case. </p>
     pub fn duration_in_nano_seconds(mut self, input: i64) -> Self {
@@ -144,8 +136,7 @@ impl TestCaseBuilder {
     }
     /// <p> The number of nanoseconds it took to run this test case. </p>
     pub fn set_duration_in_nano_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.duration_in_nano_seconds = input;
-        self
+        self.duration_in_nano_seconds = input; self
     }
     /// <p> A message associated with a test case. For example, an error message or stack trace. </p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +145,7 @@ impl TestCaseBuilder {
     }
     /// <p> A message associated with a test case. For example, an error message or stack trace. </p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
     pub fn expired(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -164,20 +154,28 @@ impl TestCaseBuilder {
     }
     /// <p> The date and time a test case expires. A test case expires 30 days after it is created. An expired test case is not available to view in CodeBuild. </p>
     pub fn set_expired(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expired = input;
-        self
+        self.expired = input; self
     }
     /// Consumes the builder and constructs a [`TestCase`](crate::types::TestCase).
     pub fn build(self) -> crate::types::TestCase {
         crate::types::TestCase {
-            report_arn: self.report_arn,
-            test_raw_data_path: self.test_raw_data_path,
-            prefix: self.prefix,
-            name: self.name,
-            status: self.status,
-            duration_in_nano_seconds: self.duration_in_nano_seconds,
-            message: self.message,
-            expired: self.expired,
+            report_arn: self.report_arn
+            ,
+            test_raw_data_path: self.test_raw_data_path
+            ,
+            prefix: self.prefix
+            ,
+            name: self.name
+            ,
+            status: self.status
+            ,
+            duration_in_nano_seconds: self.duration_in_nano_seconds
+            ,
+            message: self.message
+            ,
+            expired: self.expired
+            ,
         }
     }
 }
+

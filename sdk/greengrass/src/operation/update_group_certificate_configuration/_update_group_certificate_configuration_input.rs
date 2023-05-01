@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupCertificateConfigurationInput {
+pub struct UpdateGroupCertificateConfigurationInput  {
     /// The amount of time remaining before the certificate expires, in milliseconds.
     #[doc(hidden)]
     pub certificate_expiry_in_milliseconds: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateGroupCertificateConfigurationInput {
 }
 impl UpdateGroupCertificateConfigurationInput {
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<&str> {
+    pub fn certificate_expiry_in_milliseconds(&self) -> std::option::Option<& str> {
         self.certificate_expiry_in_milliseconds.as_deref()
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 impl UpdateGroupCertificateConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupCertificateConfigurationInput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput).
-    pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder {
         crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder::default()
     }
 }
@@ -36,20 +36,13 @@ pub struct UpdateGroupCertificateConfigurationInputBuilder {
 }
 impl UpdateGroupCertificateConfigurationInputBuilder {
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn certificate_expiry_in_milliseconds(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn certificate_expiry_in_milliseconds(mut self, input: impl Into<std::string::String>) -> Self {
         self.certificate_expiry_in_milliseconds = Some(input.into());
         self
     }
     /// The amount of time remaining before the certificate expires, in milliseconds.
-    pub fn set_certificate_expiry_in_milliseconds(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.certificate_expiry_in_milliseconds = input;
-        self
+    pub fn set_certificate_expiry_in_milliseconds(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.certificate_expiry_in_milliseconds = input; self
     }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,11 +51,10 @@ impl UpdateGroupCertificateConfigurationInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateGroupCertificateConfigurationInput`](crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationInput {
                 certificate_expiry_in_milliseconds: self.certificate_expiry_in_milliseconds
@@ -73,3 +65,4 @@ impl UpdateGroupCertificateConfigurationInputBuilder {
         )
     }
 }
+

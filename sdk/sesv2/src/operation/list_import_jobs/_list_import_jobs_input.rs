@@ -3,7 +3,7 @@
 /// <p>Represents a request to list all of the import jobs for a data destination within the specified maximum number of import jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportJobsInput {
+pub struct ListImportJobsInput  {
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
     #[doc(hidden)]
     pub import_destination_type: std::option::Option<crate::types::ImportDestinationType>,
@@ -16,13 +16,11 @@ pub struct ListImportJobsInput {
 }
 impl ListImportJobsInput {
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
-    pub fn import_destination_type(
-        &self,
-    ) -> std::option::Option<&crate::types::ImportDestinationType> {
+    pub fn import_destination_type(&self) -> std::option::Option<& crate::types::ImportDestinationType> {
         self.import_destination_type.as_ref()
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
@@ -52,12 +50,8 @@ impl ListImportJobsInputBuilder {
         self
     }
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
-    pub fn set_import_destination_type(
-        mut self,
-        input: std::option::Option<crate::types::ImportDestinationType>,
-    ) -> Self {
-        self.import_destination_type = input;
-        self
+    pub fn set_import_destination_type(mut self, input: std::option::Option<crate::types::ImportDestinationType>) -> Self {
+        self.import_destination_type = input; self
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +60,7 @@ impl ListImportJobsInputBuilder {
     }
     /// <p>A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with the same parameters to retrieve the next page of import jobs.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -76,20 +69,20 @@ impl ListImportJobsInputBuilder {
     }
     /// <p>Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional addresses.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input;
-        self
+        self.page_size = input; self
     }
     /// Consumes the builder and constructs a [`ListImportJobsInput`](crate::operation::list_import_jobs::ListImportJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_import_jobs::ListImportJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_import_jobs::ListImportJobsInput {
-            import_destination_type: self.import_destination_type,
-            next_token: self.next_token,
-            page_size: self.page_size,
-        })
+    pub fn build(self) -> Result<crate::operation::list_import_jobs::ListImportJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_import_jobs::ListImportJobsInput {
+                import_destination_type: self.import_destination_type
+                ,
+                next_token: self.next_token
+                ,
+                page_size: self.page_size
+                ,
+            }
+        )
     }
 }
+

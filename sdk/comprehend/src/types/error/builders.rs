@@ -30,3 +30,4 @@ pub use crate::types::error::_unsupported_language_exception::UnsupportedLanguag
 pub use crate::types::error::_text_size_limit_exceeded_exception::TextSizeLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_batch_size_limit_exceeded_exception::BatchSizeLimitExceededExceptionBuilder;
+

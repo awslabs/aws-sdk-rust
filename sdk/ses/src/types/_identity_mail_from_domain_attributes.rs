@@ -3,34 +3,30 @@
 /// <p>Represents the custom MAIL FROM domain attributes of a verified identity (email address or domain).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityMailFromDomainAttributes {
+pub struct IdentityMailFromDomainAttributes  {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
     #[doc(hidden)]
     pub mail_from_domain: std::option::Option<std::string::String>,
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
     #[doc(hidden)]
     pub mail_from_domain_status: std::option::Option<crate::types::CustomMailFromStatus>,
-    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
+    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p> 
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
     #[doc(hidden)]
     pub behavior_on_mx_failure: std::option::Option<crate::types::BehaviorOnMxFailure>,
 }
 impl IdentityMailFromDomainAttributes {
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
-    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+    pub fn mail_from_domain(&self) -> std::option::Option<& str> {
         self.mail_from_domain.as_deref()
     }
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
-    pub fn mail_from_domain_status(
-        &self,
-    ) -> std::option::Option<&crate::types::CustomMailFromStatus> {
+    pub fn mail_from_domain_status(&self) -> std::option::Option<& crate::types::CustomMailFromStatus> {
         self.mail_from_domain_status.as_ref()
     }
-    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
+    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p> 
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
-    pub fn behavior_on_mx_failure(
-        &self,
-    ) -> std::option::Option<&crate::types::BehaviorOnMxFailure> {
+    pub fn behavior_on_mx_failure(&self) -> std::option::Option<& crate::types::BehaviorOnMxFailure> {
         self.behavior_on_mx_failure.as_ref()
     }
 }
@@ -57,8 +53,7 @@ impl IdentityMailFromDomainAttributesBuilder {
     }
     /// <p>The custom MAIL FROM domain that the identity is configured to use.</p>
     pub fn set_mail_from_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mail_from_domain = input;
-        self
+        self.mail_from_domain = input; self
     }
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
     pub fn mail_from_domain_status(mut self, input: crate::types::CustomMailFromStatus) -> Self {
@@ -66,34 +61,30 @@ impl IdentityMailFromDomainAttributesBuilder {
         self
     }
     /// <p>The state that indicates whether Amazon SES has successfully read the MX record required for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES uses the specified custom MAIL FROM domain when the verified identity sends an email. All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.</p>
-    pub fn set_mail_from_domain_status(
-        mut self,
-        input: std::option::Option<crate::types::CustomMailFromStatus>,
-    ) -> Self {
-        self.mail_from_domain_status = input;
-        self
+    pub fn set_mail_from_domain_status(mut self, input: std::option::Option<crate::types::CustomMailFromStatus>) -> Self {
+        self.mail_from_domain_status = input; self
     }
-    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
+    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p> 
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
     pub fn behavior_on_mx_failure(mut self, input: crate::types::BehaviorOnMxFailure) -> Self {
         self.behavior_on_mx_failure = Some(input);
         self
     }
-    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p>
+    /// <p>The action that Amazon SES takes if it cannot successfully read the required MX record when you send an email. A value of <code>UseDefaultValue</code> indicates that if Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code> error and does not send the email.</p> 
     /// <p>The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>.</p>
-    pub fn set_behavior_on_mx_failure(
-        mut self,
-        input: std::option::Option<crate::types::BehaviorOnMxFailure>,
-    ) -> Self {
-        self.behavior_on_mx_failure = input;
-        self
+    pub fn set_behavior_on_mx_failure(mut self, input: std::option::Option<crate::types::BehaviorOnMxFailure>) -> Self {
+        self.behavior_on_mx_failure = input; self
     }
     /// Consumes the builder and constructs a [`IdentityMailFromDomainAttributes`](crate::types::IdentityMailFromDomainAttributes).
     pub fn build(self) -> crate::types::IdentityMailFromDomainAttributes {
         crate::types::IdentityMailFromDomainAttributes {
-            mail_from_domain: self.mail_from_domain,
-            mail_from_domain_status: self.mail_from_domain_status,
-            behavior_on_mx_failure: self.behavior_on_mx_failure,
+            mail_from_domain: self.mail_from_domain
+            ,
+            mail_from_domain_status: self.mail_from_domain_status
+            ,
+            behavior_on_mx_failure: self.behavior_on_mx_failure
+            ,
         }
     }
 }
+

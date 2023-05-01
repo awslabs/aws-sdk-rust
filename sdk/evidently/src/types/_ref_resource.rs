@@ -3,7 +3,7 @@
 /// <p>A structure that contains information about one experiment or launch that uses the specified segment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefResource {
+pub struct RefResource  {
     /// <p>The name of the experiment or launch.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct RefResource {
 }
 impl RefResource {
     /// <p>The name of the experiment or launch.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The ARN of the experiment or launch.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the experiment or launch.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The day and time that this experiment or launch started.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The day and time that this experiment or launch ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
-    pub fn last_updated_on(&self) -> std::option::Option<&str> {
+    pub fn last_updated_on(&self) -> std::option::Option<& str> {
         self.last_updated_on.as_deref()
     }
 }
@@ -83,8 +83,7 @@ impl RefResourceBuilder {
     }
     /// <p>The name of the experiment or launch.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl RefResourceBuilder {
     }
     /// <p>Specifies whether the resource that this structure contains information about is an experiment or a launch.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The ARN of the experiment or launch.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +101,7 @@ impl RefResourceBuilder {
     }
     /// <p>The ARN of the experiment or launch.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The status of the experiment or launch.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,8 +110,7 @@ impl RefResourceBuilder {
     }
     /// <p>The status of the experiment or launch.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The day and time that this experiment or launch started.</p>
     pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +119,7 @@ impl RefResourceBuilder {
     }
     /// <p>The day and time that this experiment or launch started.</p>
     pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_time = input;
-        self
+        self.start_time = input; self
     }
     /// <p>The day and time that this experiment or launch ended.</p>
     pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +128,7 @@ impl RefResourceBuilder {
     }
     /// <p>The day and time that this experiment or launch ended.</p>
     pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_time = input;
-        self
+        self.end_time = input; self
     }
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
     pub fn last_updated_on(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,19 +137,26 @@ impl RefResourceBuilder {
     }
     /// <p>The day and time that this experiment or launch was most recently updated.</p>
     pub fn set_last_updated_on(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_on = input;
-        self
+        self.last_updated_on = input; self
     }
     /// Consumes the builder and constructs a [`RefResource`](crate::types::RefResource).
     pub fn build(self) -> crate::types::RefResource {
         crate::types::RefResource {
-            name: self.name,
-            r#type: self.r#type,
-            arn: self.arn,
-            status: self.status,
-            start_time: self.start_time,
-            end_time: self.end_time,
-            last_updated_on: self.last_updated_on,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            arn: self.arn
+            ,
+            status: self.status
+            ,
+            start_time: self.start_time
+            ,
+            end_time: self.end_time
+            ,
+            last_updated_on: self.last_updated_on
+            ,
         }
     }
 }
+

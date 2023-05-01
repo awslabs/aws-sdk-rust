@@ -3,7 +3,7 @@
 /// <p>A list of Elastic DocumentDB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterInList {
+pub struct ClusterInList  {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ClusterInList {
 }
 impl ClusterInList {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
         self.status.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ClusterInListBuilder {
     }
     /// <p>The name of the Elastic DocumentDB cluster.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input;
-        self
+        self.cluster_name = input; self
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ClusterInListBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -71,15 +69,18 @@ impl ClusterInListBuilder {
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ClusterInList`](crate::types::ClusterInList).
     pub fn build(self) -> crate::types::ClusterInList {
         crate::types::ClusterInList {
-            cluster_name: self.cluster_name,
-            cluster_arn: self.cluster_arn,
-            status: self.status,
+            cluster_name: self.cluster_name
+            ,
+            cluster_arn: self.cluster_arn
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

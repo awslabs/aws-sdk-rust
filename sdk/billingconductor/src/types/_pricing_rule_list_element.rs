@@ -3,7 +3,7 @@
 /// <p> A representation of a pricing rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PricingRuleListElement {
+pub struct PricingRuleListElement  {
     /// <p> The name of a pricing rule. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -40,34 +40,34 @@ pub struct PricingRuleListElement {
     /// <p> The set of tiering configurations for the pricing rule. </p>
     #[doc(hidden)]
     pub tiering: std::option::Option<crate::types::Tiering>,
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     #[doc(hidden)]
     pub usage_type: std::option::Option<std::string::String>,
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
 }
 impl PricingRuleListElement {
     /// <p> The name of a pricing rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) used to uniquely identify a pricing rule. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The pricing rule description. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The scope of pricing rule that indicates if it is globally applicable, or if it is service-specific. </p>
-    pub fn scope(&self) -> std::option::Option<&crate::types::PricingRuleScope> {
+    pub fn scope(&self) -> std::option::Option<& crate::types::PricingRuleScope> {
         self.scope.as_ref()
     }
     /// <p> The type of pricing rule. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PricingRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PricingRuleType> {
         self.r#type.as_ref()
     }
     /// <p> A percentage modifier applied on the public pricing rates. </p>
@@ -75,7 +75,7 @@ impl PricingRuleListElement {
         self.modifier_percentage
     }
     /// <p> If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p> The pricing plans count that this pricing rule is associated with. </p>
@@ -91,25 +91,25 @@ impl PricingRuleListElement {
         self.last_modified_time
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
-    pub fn billing_entity(&self) -> std::option::Option<&str> {
+    pub fn billing_entity(&self) -> std::option::Option<& str> {
         self.billing_entity.as_deref()
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
-    pub fn tiering(&self) -> std::option::Option<&crate::types::Tiering> {
+    pub fn tiering(&self) -> std::option::Option<& crate::types::Tiering> {
         self.tiering.as_ref()
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
 }
-impl std::fmt::Debug for PricingRuleListElement {
+impl  std::fmt::Debug for PricingRuleListElement  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PricingRuleListElement");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -119,10 +119,7 @@ impl std::fmt::Debug for PricingRuleListElement {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
@@ -166,8 +163,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The name of a pricing rule. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p> The Amazon Resource Name (ARN) used to uniquely identify a pricing rule. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +172,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) used to uniquely identify a pricing rule. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p> The pricing rule description. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,8 +181,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The pricing rule description. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p> The scope of pricing rule that indicates if it is globally applicable, or if it is service-specific. </p>
     pub fn scope(mut self, input: crate::types::PricingRuleScope) -> Self {
@@ -196,8 +190,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The scope of pricing rule that indicates if it is globally applicable, or if it is service-specific. </p>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::PricingRuleScope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// <p> The type of pricing rule. </p>
     pub fn r#type(mut self, input: crate::types::PricingRuleType) -> Self {
@@ -206,8 +199,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The type of pricing rule. </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PricingRuleType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p> A percentage modifier applied on the public pricing rates. </p>
     pub fn modifier_percentage(mut self, input: f64) -> Self {
@@ -216,8 +208,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> A percentage modifier applied on the public pricing rates. </p>
     pub fn set_modifier_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.modifier_percentage = input;
-        self
+        self.modifier_percentage = input; self
     }
     /// <p> If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,8 +217,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates which service the <code>PricingRule</code> is applicable for. </p>
     pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service = input;
-        self
+        self.service = input; self
     }
     /// <p> The pricing plans count that this pricing rule is associated with. </p>
     pub fn associated_pricing_plan_count(mut self, input: i64) -> Self {
@@ -236,8 +226,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The pricing plans count that this pricing rule is associated with. </p>
     pub fn set_associated_pricing_plan_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.associated_pricing_plan_count = input;
-        self
+        self.associated_pricing_plan_count = input; self
     }
     /// <p> The time when the pricing rule was created. </p>
     pub fn creation_time(mut self, input: i64) -> Self {
@@ -246,8 +235,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The time when the pricing rule was created. </p>
     pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.creation_time = input;
-        self
+        self.creation_time = input; self
     }
     /// <p> The most recent time when the pricing rule was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -256,8 +244,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The most recent time when the pricing rule was modified. </p>
     pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_time = input;
-        self
+        self.last_modified_time = input; self
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     pub fn billing_entity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +253,7 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace. </p>
     pub fn set_billing_entity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_entity = input;
-        self
+        self.billing_entity = input; self
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
     pub fn tiering(mut self, input: crate::types::Tiering) -> Self {
@@ -276,50 +262,64 @@ impl PricingRuleListElementBuilder {
     }
     /// <p> The set of tiering configurations for the pricing rule. </p>
     pub fn set_tiering(mut self, input: std::option::Option<crate::types::Tiering>) -> Self {
-        self.tiering = input;
-        self
+        self.tiering = input; self
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.usage_type = Some(input.into());
         self
     }
-    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p>
+    /// <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> 
     /// <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. </p>
     pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_type = input;
-        self
+        self.usage_type = input; self
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
         self.operation = Some(input.into());
         self
     }
-    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p>
+    /// <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> 
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation = input;
-        self
+        self.operation = input; self
     }
     /// Consumes the builder and constructs a [`PricingRuleListElement`](crate::types::PricingRuleListElement).
     pub fn build(self) -> crate::types::PricingRuleListElement {
         crate::types::PricingRuleListElement {
-            name: self.name,
-            arn: self.arn,
-            description: self.description,
-            scope: self.scope,
-            r#type: self.r#type,
-            modifier_percentage: self.modifier_percentage,
-            service: self.service,
-            associated_pricing_plan_count: self.associated_pricing_plan_count.unwrap_or_default(),
-            creation_time: self.creation_time.unwrap_or_default(),
-            last_modified_time: self.last_modified_time.unwrap_or_default(),
-            billing_entity: self.billing_entity,
-            tiering: self.tiering,
-            usage_type: self.usage_type,
-            operation: self.operation,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            scope: self.scope
+            ,
+            r#type: self.r#type
+            ,
+            modifier_percentage: self.modifier_percentage
+            ,
+            service: self.service
+            ,
+            associated_pricing_plan_count: self.associated_pricing_plan_count
+                .unwrap_or_default()
+            ,
+            creation_time: self.creation_time
+                .unwrap_or_default()
+            ,
+            last_modified_time: self.last_modified_time
+                .unwrap_or_default()
+            ,
+            billing_entity: self.billing_entity
+            ,
+            tiering: self.tiering
+            ,
+            usage_type: self.usage_type
+            ,
+            operation: self.operation
+            ,
         }
     }
 }
@@ -333,10 +333,7 @@ impl std::fmt::Debug for PricingRuleListElementBuilder {
         formatter.field("r#type", &self.r#type);
         formatter.field("modifier_percentage", &self.modifier_percentage);
         formatter.field("service", &self.service);
-        formatter.field(
-            "associated_pricing_plan_count",
-            &self.associated_pricing_plan_count,
-        );
+        formatter.field("associated_pricing_plan_count", &self.associated_pricing_plan_count);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("billing_entity", &self.billing_entity);
@@ -346,3 +343,4 @@ impl std::fmt::Debug for PricingRuleListElementBuilder {
         formatter.finish()
     }
 }
+

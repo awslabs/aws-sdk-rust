@@ -3,7 +3,7 @@
 /// <p>A set of validation rules for incoming Method requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestValidator {
+pub struct RequestValidator  {
     /// <p>The identifier of this RequestValidator.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct RequestValidator {
 }
 impl RequestValidator {
     /// <p>The identifier of this RequestValidator.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of this RequestValidator</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
@@ -59,8 +59,7 @@ impl RequestValidatorBuilder {
     }
     /// <p>The identifier of this RequestValidator.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of this RequestValidator</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +68,7 @@ impl RequestValidatorBuilder {
     }
     /// <p>The name of this RequestValidator</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     pub fn validate_request_body(mut self, input: bool) -> Self {
@@ -79,8 +77,7 @@ impl RequestValidatorBuilder {
     }
     /// <p>A Boolean flag to indicate whether to validate a request body according to the configured Model schema.</p>
     pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
-        self.validate_request_body = input;
-        self
+        self.validate_request_body = input; self
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn validate_request_parameters(mut self, input: bool) -> Self {
@@ -89,16 +86,22 @@ impl RequestValidatorBuilder {
     }
     /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
     pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
-        self.validate_request_parameters = input;
-        self
+        self.validate_request_parameters = input; self
     }
     /// Consumes the builder and constructs a [`RequestValidator`](crate::types::RequestValidator).
     pub fn build(self) -> crate::types::RequestValidator {
         crate::types::RequestValidator {
-            id: self.id,
-            name: self.name,
-            validate_request_body: self.validate_request_body.unwrap_or_default(),
-            validate_request_parameters: self.validate_request_parameters.unwrap_or_default(),
+            id: self.id
+            ,
+            name: self.name
+            ,
+            validate_request_body: self.validate_request_body
+                .unwrap_or_default()
+            ,
+            validate_request_parameters: self.validate_request_parameters
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

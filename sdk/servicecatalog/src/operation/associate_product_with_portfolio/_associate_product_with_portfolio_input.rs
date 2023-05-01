@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateProductWithPortfolioInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+pub struct AssociateProductWithPortfolioInput  {
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -21,30 +21,30 @@ pub struct AssociateProductWithPortfolioInput {
     pub source_portfolio_id: std::option::Option<std::string::String>,
 }
 impl AssociateProductWithPortfolioInput {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<&str> {
+    pub fn accept_language(&self) -> std::option::Option<& str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn portfolio_id(&self) -> std::option::Option<&str> {
+    pub fn portfolio_id(&self) -> std::option::Option<& str> {
         self.portfolio_id.as_deref()
     }
     /// <p>The identifier of the source portfolio.</p>
-    pub fn source_portfolio_id(&self) -> std::option::Option<&str> {
+    pub fn source_portfolio_id(&self) -> std::option::Option<& str> {
         self.source_portfolio_id.as_deref()
     }
 }
 impl AssociateProductWithPortfolioInput {
     /// Creates a new builder-style object to manufacture [`AssociateProductWithPortfolioInput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput).
-    pub fn builder() -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder{
+    pub fn builder() -> crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder {
         crate::operation::associate_product_with_portfolio::builders::AssociateProductWithPortfolioInputBuilder::default()
     }
 }
@@ -59,23 +59,22 @@ pub struct AssociateProductWithPortfolioInputBuilder {
     pub(crate) source_portfolio_id: std::option::Option<std::string::String>,
 }
 impl AssociateProductWithPortfolioInputBuilder {
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p>
-    /// <ul>
-    /// <li> <p> <code>jp</code> - Japanese</p> </li>
-    /// <li> <p> <code>zh</code> - Chinese</p> </li>
+    /// <p>The language code.</p> 
+    /// <ul> 
+    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
+    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input;
-        self
+        self.accept_language = input; self
     }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +83,7 @@ impl AssociateProductWithPortfolioInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The portfolio identifier.</p>
     pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl AssociateProductWithPortfolioInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portfolio_id = input;
-        self
+        self.portfolio_id = input; self
     }
     /// <p>The identifier of the source portfolio.</p>
     pub fn source_portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,20 +100,11 @@ impl AssociateProductWithPortfolioInputBuilder {
         self
     }
     /// <p>The identifier of the source portfolio.</p>
-    pub fn set_source_portfolio_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_portfolio_id = input;
-        self
+    pub fn set_source_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_portfolio_id = input; self
     }
     /// Consumes the builder and constructs a [`AssociateProductWithPortfolioInput`](crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioInput {
                 accept_language: self.accept_language
@@ -131,3 +119,4 @@ impl AssociateProductWithPortfolioInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p> The connector-specific credentials required by Datadog. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DatadogConnectorProfileCredentials {
+pub struct DatadogConnectorProfileCredentials  {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct DatadogConnectorProfileCredentials {
 }
 impl DatadogConnectorProfileCredentials {
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
-    pub fn api_key(&self) -> std::option::Option<&str> {
+    pub fn api_key(&self) -> std::option::Option<& str> {
         self.api_key.as_deref()
     }
     /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
-    pub fn application_key(&self) -> std::option::Option<&str> {
+    pub fn application_key(&self) -> std::option::Option<& str> {
         self.application_key.as_deref()
     }
 }
-impl std::fmt::Debug for DatadogConnectorProfileCredentials {
+impl  std::fmt::Debug for DatadogConnectorProfileCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatadogConnectorProfileCredentials");
         formatter.field("api_key", &"*** Sensitive Data Redacted ***");
@@ -51,8 +51,7 @@ impl DatadogConnectorProfileCredentialsBuilder {
     }
     /// <p> A unique alphanumeric identifier used to authenticate a user, developer, or calling program to your API. </p>
     pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_key = input;
-        self
+        self.api_key = input; self
     }
     /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
     pub fn application_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,14 +60,15 @@ impl DatadogConnectorProfileCredentialsBuilder {
     }
     /// <p> Application keys, in conjunction with your API key, give you full access to Datadog’s programmatic API. Application keys are associated with the user account that created them. The application key is used to log all requests made to the API. </p>
     pub fn set_application_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_key = input;
-        self
+        self.application_key = input; self
     }
     /// Consumes the builder and constructs a [`DatadogConnectorProfileCredentials`](crate::types::DatadogConnectorProfileCredentials).
     pub fn build(self) -> crate::types::DatadogConnectorProfileCredentials {
         crate::types::DatadogConnectorProfileCredentials {
-            api_key: self.api_key,
-            application_key: self.application_key,
+            api_key: self.api_key
+            ,
+            application_key: self.application_key
+            ,
         }
     }
 }
@@ -80,3 +80,4 @@ impl std::fmt::Debug for DatadogConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
+

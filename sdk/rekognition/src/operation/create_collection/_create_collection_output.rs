@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCollectionOutput {
+pub struct CreateCollectionOutput  {
     /// <p>HTTP status code indicating the result of the operation.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
@@ -20,23 +20,22 @@ impl CreateCollectionOutput {
         self.status_code
     }
     /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
-    pub fn collection_arn(&self) -> std::option::Option<&str> {
+    pub fn collection_arn(&self) -> std::option::Option<& str> {
         self.collection_arn.as_deref()
     }
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
-    pub fn face_model_version(&self) -> std::option::Option<&str> {
+    pub fn face_model_version(&self) -> std::option::Option<& str> {
         self.face_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCollectionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
-    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_collection::builders::CreateCollectionOutputBuilder {
         crate::operation::create_collection::builders::CreateCollectionOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl CreateCollectionOutputBuilder {
     }
     /// <p>HTTP status code indicating the result of the operation.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +66,7 @@ impl CreateCollectionOutputBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the collection. You can use this to manage permissions on your resources. </p>
     pub fn set_collection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_arn = input;
-        self
+        self.collection_arn = input; self
     }
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
     pub fn face_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,29 +74,29 @@ impl CreateCollectionOutputBuilder {
         self
     }
     /// <p>Version number of the face detection model associated with the collection you are creating.</p>
-    pub fn set_face_model_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.face_model_version = input;
-        self
+    pub fn set_face_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.face_model_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateCollectionOutput`](crate::operation::create_collection::CreateCollectionOutput).
     pub fn build(self) -> crate::operation::create_collection::CreateCollectionOutput {
         crate::operation::create_collection::CreateCollectionOutput {
-            status_code: self.status_code,
-            collection_arn: self.collection_arn,
-            face_model_version: self.face_model_version,
+            status_code: self.status_code
+            ,
+            collection_arn: self.collection_arn
+            ,
+            face_model_version: self.face_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

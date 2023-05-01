@@ -3,8 +3,8 @@
 /// <p>The logging configuration associated with an Amazon Chime SDK Voice Connector. Specifies whether SIP message logs can be sent to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
-    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+pub struct LoggingConfiguration  {
+    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
     #[doc(hidden)]
     pub enable_sip_logs: std::option::Option<bool>,
     /// <p>Enables or disables media metrics logging.</p>
@@ -12,7 +12,7 @@ pub struct LoggingConfiguration {
     pub enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfiguration {
-    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
     pub fn enable_sip_logs(&self) -> std::option::Option<bool> {
         self.enable_sip_logs
     }
@@ -36,15 +36,14 @@ pub struct LoggingConfigurationBuilder {
     pub(crate) enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfigurationBuilder {
-    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
     pub fn enable_sip_logs(mut self, input: bool) -> Self {
         self.enable_sip_logs = Some(input);
         self
     }
-    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+    /// <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
     pub fn set_enable_sip_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_sip_logs = input;
-        self
+        self.enable_sip_logs = input; self
     }
     /// <p>Enables or disables media metrics logging.</p>
     pub fn enable_media_metric_logs(mut self, input: bool) -> Self {
@@ -53,14 +52,16 @@ impl LoggingConfigurationBuilder {
     }
     /// <p>Enables or disables media metrics logging.</p>
     pub fn set_enable_media_metric_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_media_metric_logs = input;
-        self
+        self.enable_media_metric_logs = input; self
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {
-            enable_sip_logs: self.enable_sip_logs,
-            enable_media_metric_logs: self.enable_media_metric_logs,
+            enable_sip_logs: self.enable_sip_logs
+            ,
+            enable_media_metric_logs: self.enable_media_metric_logs
+            ,
         }
     }
 }
+

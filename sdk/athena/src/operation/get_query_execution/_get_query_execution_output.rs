@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQueryExecutionOutput {
+pub struct GetQueryExecutionOutput  {
     /// <p>Information about the query execution.</p>
     #[doc(hidden)]
     pub query_execution: std::option::Option<crate::types::QueryExecution>,
@@ -10,19 +10,18 @@ pub struct GetQueryExecutionOutput {
 }
 impl GetQueryExecutionOutput {
     /// <p>Information about the query execution.</p>
-    pub fn query_execution(&self) -> std::option::Option<&crate::types::QueryExecution> {
+    pub fn query_execution(&self) -> std::option::Option<& crate::types::QueryExecution> {
         self.query_execution.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetQueryExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetQueryExecutionOutput {
     /// Creates a new builder-style object to manufacture [`GetQueryExecutionOutput`](crate::operation::get_query_execution::GetQueryExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::get_query_execution::builders::GetQueryExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::get_query_execution::builders::GetQueryExecutionOutputBuilder {
         crate::operation::get_query_execution::builders::GetQueryExecutionOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetQueryExecutionOutputBuilder {
         self
     }
     /// <p>Information about the query execution.</p>
-    pub fn set_query_execution(
-        mut self,
-        input: std::option::Option<crate::types::QueryExecution>,
-    ) -> Self {
-        self.query_execution = input;
-        self
+    pub fn set_query_execution(mut self, input: std::option::Option<crate::types::QueryExecution>) -> Self {
+        self.query_execution = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetQueryExecutionOutput`](crate::operation::get_query_execution::GetQueryExecutionOutput).
     pub fn build(self) -> crate::operation::get_query_execution::GetQueryExecutionOutput {
         crate::operation::get_query_execution::GetQueryExecutionOutput {
-            query_execution: self.query_execution,
+            query_execution: self.query_execution
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

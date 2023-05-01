@@ -3,19 +3,17 @@
 /// <p>The output for the DeleteRegistrationCode operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegistrationCodeOutput {
+pub struct DeleteRegistrationCodeOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteRegistrationCodeOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRegistrationCodeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistrationCodeOutput`](crate::operation::delete_registration_code::DeleteRegistrationCodeOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeOutputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_registration_code::builders::DeleteRegistrationCodeOutputBuilder {
         crate::operation::delete_registration_code::builders::DeleteRegistrationCodeOutputBuilder::default()
     }
 }
@@ -28,14 +26,14 @@ pub struct DeleteRegistrationCodeOutputBuilder {
 }
 impl DeleteRegistrationCodeOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRegistrationCodeOutput`](crate::operation::delete_registration_code::DeleteRegistrationCodeOutput).
     pub fn build(self) -> crate::operation::delete_registration_code::DeleteRegistrationCodeOutput {
         crate::operation::delete_registration_code::DeleteRegistrationCodeOutput {
@@ -43,3 +41,4 @@ impl DeleteRegistrationCodeOutputBuilder {
         }
     }
 }
+

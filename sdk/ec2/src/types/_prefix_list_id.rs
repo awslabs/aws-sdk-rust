@@ -3,8 +3,8 @@
 /// <p>Describes a prefix list ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrefixListId {
-    /// <p>A description for the security group rule that references this prefix list ID.</p>
+pub struct PrefixListId  {
+    /// <p>A description for the security group rule that references this prefix list ID.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13,13 +13,13 @@ pub struct PrefixListId {
     pub prefix_list_id: std::option::Option<std::string::String>,
 }
 impl PrefixListId {
-    /// <p>A description for the security group rule that references this prefix list ID.</p>
+    /// <p>A description for the security group rule that references this prefix list ID.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The ID of the prefix.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
         self.prefix_list_id.as_deref()
     }
 }
@@ -38,17 +38,16 @@ pub struct PrefixListIdBuilder {
     pub(crate) prefix_list_id: std::option::Option<std::string::String>,
 }
 impl PrefixListIdBuilder {
-    /// <p>A description for the security group rule that references this prefix list ID.</p>
+    /// <p>A description for the security group rule that references this prefix list ID.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description for the security group rule that references this prefix list ID.</p>
+    /// <p>A description for the security group rule that references this prefix list ID.</p> 
     /// <p>Constraints: Up to 255 characters in length. Allowed characters are a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The ID of the prefix.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,14 +56,16 @@ impl PrefixListIdBuilder {
     }
     /// <p>The ID of the prefix.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input;
-        self
+        self.prefix_list_id = input; self
     }
     /// Consumes the builder and constructs a [`PrefixListId`](crate::types::PrefixListId).
     pub fn build(self) -> crate::types::PrefixListId {
         crate::types::PrefixListId {
-            description: self.description,
-            prefix_list_id: self.prefix_list_id,
+            description: self.description
+            ,
+            prefix_list_id: self.prefix_list_id
+            ,
         }
     }
 }
+

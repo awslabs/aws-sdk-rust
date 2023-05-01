@@ -2,23 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssessmentRunInput {
+pub struct DeleteAssessmentRunInput  {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
     #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAssessmentRunInput {
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
 }
 impl DeleteAssessmentRunInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssessmentRunInput`](crate::operation::delete_assessment_run::DeleteAssessmentRunInput).
-    pub fn builder(
-    ) -> crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder {
-        crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder {
+        crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder::default()
     }
 }
 
@@ -35,24 +33,17 @@ impl DeleteAssessmentRunInputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-    pub fn set_assessment_run_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.assessment_run_arn = input;
-        self
+    pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.assessment_run_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAssessmentRunInput`](crate::operation::delete_assessment_run::DeleteAssessmentRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_assessment_run::DeleteAssessmentRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_assessment_run::DeleteAssessmentRunInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_assessment_run::DeleteAssessmentRunInput {
-                assessment_run_arn: self.assessment_run_arn,
-            },
+                assessment_run_arn: self.assessment_run_arn
+                ,
+            }
         )
     }
 }
+

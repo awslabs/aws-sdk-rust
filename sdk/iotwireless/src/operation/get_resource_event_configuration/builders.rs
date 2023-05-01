@@ -4,71 +4,49 @@ pub use crate::operation::get_resource_event_configuration::_get_resource_event_
 pub use crate::operation::get_resource_event_configuration::_get_resource_event_configuration_input::GetResourceEventConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `GetResourceEventConfiguration`.
-///
+/// 
 /// <p>Get the event configuration for a particular resource identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceEventConfigurationFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder
             }
-impl GetResourceEventConfigurationFluentBuilder {
+impl GetResourceEventConfigurationFluentBuilder  {
     /// Creates a new `GetResourceEventConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_resource_event_configuration::GetResourceEventConfigurationOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_resource_event_configuration::GetResourceEventConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Resource identifier to opt in for event messaging.</p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
@@ -85,10 +63,7 @@ impl GetResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn set_identifier_type(
-        mut self,
-        input: std::option::Option<crate::types::IdentifierType>,
-    ) -> Self {
+    pub fn set_identifier_type(mut self, input: std::option::Option<crate::types::IdentifierType>) -> Self {
         self.inner = self.inner.set_identifier_type(input);
         self
     }
@@ -98,11 +73,9 @@ impl GetResourceEventConfigurationFluentBuilder {
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn set_partner_type(
-        mut self,
-        input: std::option::Option<crate::types::EventNotificationPartnerType>,
-    ) -> Self {
+    pub fn set_partner_type(mut self, input: std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
         self.inner = self.inner.set_partner_type(input);
         self
     }
 }
+

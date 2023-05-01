@@ -3,15 +3,15 @@
 /// <p>Contains information about the current state of the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmState {
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+pub struct AlarmState  {
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state_name: std::option::Option<crate::types::AlarmStateName>,
@@ -26,28 +26,28 @@ pub struct AlarmState {
     pub system_event: std::option::Option<crate::types::SystemEvent>,
 }
 impl AlarmState {
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
-    pub fn state_name(&self) -> std::option::Option<&crate::types::AlarmStateName> {
+    pub fn state_name(&self) -> std::option::Option<& crate::types::AlarmStateName> {
         self.state_name.as_ref()
     }
     /// <p>Information needed to evaluate data.</p>
-    pub fn rule_evaluation(&self) -> std::option::Option<&crate::types::RuleEvaluation> {
+    pub fn rule_evaluation(&self) -> std::option::Option<& crate::types::RuleEvaluation> {
         self.rule_evaluation.as_ref()
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-    pub fn customer_action(&self) -> std::option::Option<&crate::types::CustomerAction> {
+    pub fn customer_action(&self) -> std::option::Option<& crate::types::CustomerAction> {
         self.customer_action.as_ref()
     }
     /// <p>Contains information about alarm state changes.</p>
-    pub fn system_event(&self) -> std::option::Option<&crate::types::SystemEvent> {
+    pub fn system_event(&self) -> std::option::Option<& crate::types::SystemEvent> {
         self.system_event.as_ref()
     }
 }
@@ -68,34 +68,30 @@ pub struct AlarmStateBuilder {
     pub(crate) system_event: std::option::Option<crate::types::SystemEvent>,
 }
 impl AlarmStateBuilder {
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
     pub fn state_name(mut self, input: crate::types::AlarmStateName) -> Self {
         self.state_name = Some(input);
         self
     }
-    /// <p>The name of the alarm state. The state name can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li>
-    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li>
-    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li>
-    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li>
-    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
-    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
+    /// <p>The name of the alarm state. The state name can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it isn't ready to evaluate data. To enable the alarm, you must change the alarm to the <code>NORMAL</code> state.</p> </li> 
+    /// <li> <p> <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready to evaluate data.</p> </li> 
+    /// <li> <p> <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm is invoked.</p> </li> 
+    /// <li> <p> <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state, the alarm was invoked and you acknowledged the alarm.</p> </li> 
+    /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li> 
+    /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li> 
     /// </ul>
-    pub fn set_state_name(
-        mut self,
-        input: std::option::Option<crate::types::AlarmStateName>,
-    ) -> Self {
-        self.state_name = input;
-        self
+    pub fn set_state_name(mut self, input: std::option::Option<crate::types::AlarmStateName>) -> Self {
+        self.state_name = input; self
     }
     /// <p>Information needed to evaluate data.</p>
     pub fn rule_evaluation(mut self, input: crate::types::RuleEvaluation) -> Self {
@@ -103,12 +99,8 @@ impl AlarmStateBuilder {
         self
     }
     /// <p>Information needed to evaluate data.</p>
-    pub fn set_rule_evaluation(
-        mut self,
-        input: std::option::Option<crate::types::RuleEvaluation>,
-    ) -> Self {
-        self.rule_evaluation = input;
-        self
+    pub fn set_rule_evaluation(mut self, input: std::option::Option<crate::types::RuleEvaluation>) -> Self {
+        self.rule_evaluation = input; self
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
     pub fn customer_action(mut self, input: crate::types::CustomerAction) -> Self {
@@ -116,12 +108,8 @@ impl AlarmStateBuilder {
         self
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-    pub fn set_customer_action(
-        mut self,
-        input: std::option::Option<crate::types::CustomerAction>,
-    ) -> Self {
-        self.customer_action = input;
-        self
+    pub fn set_customer_action(mut self, input: std::option::Option<crate::types::CustomerAction>) -> Self {
+        self.customer_action = input; self
     }
     /// <p>Contains information about alarm state changes.</p>
     pub fn system_event(mut self, input: crate::types::SystemEvent) -> Self {
@@ -129,20 +117,21 @@ impl AlarmStateBuilder {
         self
     }
     /// <p>Contains information about alarm state changes.</p>
-    pub fn set_system_event(
-        mut self,
-        input: std::option::Option<crate::types::SystemEvent>,
-    ) -> Self {
-        self.system_event = input;
-        self
+    pub fn set_system_event(mut self, input: std::option::Option<crate::types::SystemEvent>) -> Self {
+        self.system_event = input; self
     }
     /// Consumes the builder and constructs a [`AlarmState`](crate::types::AlarmState).
     pub fn build(self) -> crate::types::AlarmState {
         crate::types::AlarmState {
-            state_name: self.state_name,
-            rule_evaluation: self.rule_evaluation,
-            customer_action: self.customer_action,
-            system_event: self.system_event,
+            state_name: self.state_name
+            ,
+            rule_evaluation: self.rule_evaluation
+            ,
+            customer_action: self.customer_action
+            ,
+            system_event: self.system_event
+            ,
         }
     }
 }
+

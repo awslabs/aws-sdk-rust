@@ -3,14 +3,14 @@
 /// <p>Provides detailed information about the data repository if its <code>Lifecycle</code> is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataRepositoryFailureDetails {
+pub struct DataRepositoryFailureDetails  {
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DataRepositoryFailureDetails {
     /// <p>A detailed error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl DataRepositoryFailureDetailsBuilder {
     }
     /// <p>A detailed error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`DataRepositoryFailureDetails`](crate::types::DataRepositoryFailureDetails).
     pub fn build(self) -> crate::types::DataRepositoryFailureDetails {
         crate::types::DataRepositoryFailureDetails {
-            message: self.message,
+            message: self.message
+            ,
         }
     }
 }
+

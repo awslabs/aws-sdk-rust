@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMetricAttributionInput {
+pub struct CreateMetricAttributionInput  {
     /// <p>A name for the metric attribution.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,29 +18,25 @@ pub struct CreateMetricAttributionInput {
 }
 impl CreateMetricAttributionInput {
     /// <p>A name for the metric attribution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    pub fn metrics(&self) -> std::option::Option<&[crate::types::MetricAttribute]> {
+    pub fn metrics(&self) -> std::option::Option<& [crate::types::MetricAttribute]> {
         self.metrics.as_deref()
     }
     /// <p>The output configuration details for the metric attribution.</p>
-    pub fn metrics_output_config(
-        &self,
-    ) -> std::option::Option<&crate::types::MetricAttributionOutput> {
+    pub fn metrics_output_config(&self) -> std::option::Option<& crate::types::MetricAttributionOutput> {
         self.metrics_output_config.as_ref()
     }
 }
 impl CreateMetricAttributionInput {
     /// Creates a new builder-style object to manufacture [`CreateMetricAttributionInput`](crate::operation::create_metric_attribution::CreateMetricAttributionInput).
-    pub fn builder(
-    ) -> crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder
-    {
+    pub fn builder() -> crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder {
         crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder::default()
     }
 }
@@ -62,8 +58,7 @@ impl CreateMetricAttributionInputBuilder {
     }
     /// <p>A name for the metric attribution.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +66,8 @@ impl CreateMetricAttributionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination dataset group for the metric attribution.</p>
-    pub fn set_dataset_group_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.dataset_group_arn = input;
-        self
+    pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.dataset_group_arn = input; self
     }
     /// Appends an item to `metrics`.
     ///
@@ -85,17 +76,13 @@ impl CreateMetricAttributionInputBuilder {
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
     pub fn metrics(mut self, input: crate::types::MetricAttribute) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-        v.push(input);
-        self.metrics = Some(v);
-        self
+                        v.push(input);
+                        self.metrics = Some(v);
+                        self
     }
     /// <p>A list of metric attributes for the metric attribution. Each metric attribute specifies an event type to track and a function. Available functions are <code>SUM()</code> or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).</p>
-    pub fn set_metrics(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricAttribute>>,
-    ) -> Self {
-        self.metrics = input;
-        self
+    pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricAttribute>>) -> Self {
+        self.metrics = input; self
     }
     /// <p>The output configuration details for the metric attribution.</p>
     pub fn metrics_output_config(mut self, input: crate::types::MetricAttributionOutput) -> Self {
@@ -103,27 +90,23 @@ impl CreateMetricAttributionInputBuilder {
         self
     }
     /// <p>The output configuration details for the metric attribution.</p>
-    pub fn set_metrics_output_config(
-        mut self,
-        input: std::option::Option<crate::types::MetricAttributionOutput>,
-    ) -> Self {
-        self.metrics_output_config = input;
-        self
+    pub fn set_metrics_output_config(mut self, input: std::option::Option<crate::types::MetricAttributionOutput>) -> Self {
+        self.metrics_output_config = input; self
     }
     /// Consumes the builder and constructs a [`CreateMetricAttributionInput`](crate::operation::create_metric_attribution::CreateMetricAttributionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_metric_attribution::CreateMetricAttributionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_metric_attribution::CreateMetricAttributionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_metric_attribution::CreateMetricAttributionInput {
-                name: self.name,
-                dataset_group_arn: self.dataset_group_arn,
-                metrics: self.metrics,
-                metrics_output_config: self.metrics_output_config,
-            },
+                name: self.name
+                ,
+                dataset_group_arn: self.dataset_group_arn
+                ,
+                metrics: self.metrics
+                ,
+                metrics_output_config: self.metrics_output_config
+                ,
+            }
         )
     }
 }
+

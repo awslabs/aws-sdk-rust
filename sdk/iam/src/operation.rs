@@ -474,3 +474,4 @@ pub mod upload_signing_certificate;
 
 /// Types for the `UploadSSHPublicKey` operation.
 pub mod upload_ssh_public_key;
+

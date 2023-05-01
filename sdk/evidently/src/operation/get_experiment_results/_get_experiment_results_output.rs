@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExperimentResultsOutput {
+pub struct GetExperimentResultsOutput  {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
     #[doc(hidden)]
     pub results_data: std::option::Option<std::vec::Vec<crate::types::ExperimentResultsData>>,
@@ -19,31 +19,30 @@ pub struct GetExperimentResultsOutput {
 }
 impl GetExperimentResultsOutput {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
-    pub fn results_data(&self) -> std::option::Option<&[crate::types::ExperimentResultsData]> {
+    pub fn results_data(&self) -> std::option::Option<& [crate::types::ExperimentResultsData]> {
         self.results_data.as_deref()
     }
     /// <p>An array of structures that include the reports that you requested.</p>
-    pub fn reports(&self) -> std::option::Option<&[crate::types::ExperimentReport]> {
+    pub fn reports(&self) -> std::option::Option<& [crate::types::ExperimentReport]> {
         self.reports.as_deref()
     }
     /// <p>The timestamps of each result returned.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn timestamps(&self) -> std::option::Option<& [aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetExperimentResultsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetExperimentResultsOutput {
     /// Creates a new builder-style object to manufacture [`GetExperimentResultsOutput`](crate::operation::get_experiment_results::GetExperimentResultsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_experiment_results::builders::GetExperimentResultsOutputBuilder {
+    pub fn builder() -> crate::operation::get_experiment_results::builders::GetExperimentResultsOutputBuilder {
         crate::operation::get_experiment_results::builders::GetExperimentResultsOutputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl GetExperimentResultsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetExperimentResultsOutputBuilder {
-    pub(crate) results_data:
-        std::option::Option<std::vec::Vec<crate::types::ExperimentResultsData>>,
+    pub(crate) results_data: std::option::Option<std::vec::Vec<crate::types::ExperimentResultsData>>,
     pub(crate) reports: std::option::Option<std::vec::Vec<crate::types::ExperimentReport>>,
     pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
     pub(crate) details: std::option::Option<std::string::String>,
@@ -67,17 +65,13 @@ impl GetExperimentResultsOutputBuilder {
     /// <p>An array of structures that include experiment results including metric names and values. </p>
     pub fn results_data(mut self, input: crate::types::ExperimentResultsData) -> Self {
         let mut v = self.results_data.unwrap_or_default();
-        v.push(input);
-        self.results_data = Some(v);
-        self
+                        v.push(input);
+                        self.results_data = Some(v);
+                        self
     }
     /// <p>An array of structures that include experiment results including metric names and values. </p>
-    pub fn set_results_data(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExperimentResultsData>>,
-    ) -> Self {
-        self.results_data = input;
-        self
+    pub fn set_results_data(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperimentResultsData>>) -> Self {
+        self.results_data = input; self
     }
     /// Appends an item to `reports`.
     ///
@@ -86,17 +80,13 @@ impl GetExperimentResultsOutputBuilder {
     /// <p>An array of structures that include the reports that you requested.</p>
     pub fn reports(mut self, input: crate::types::ExperimentReport) -> Self {
         let mut v = self.reports.unwrap_or_default();
-        v.push(input);
-        self.reports = Some(v);
-        self
+                        v.push(input);
+                        self.reports = Some(v);
+                        self
     }
     /// <p>An array of structures that include the reports that you requested.</p>
-    pub fn set_reports(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExperimentReport>>,
-    ) -> Self {
-        self.reports = input;
-        self
+    pub fn set_reports(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperimentReport>>) -> Self {
+        self.reports = input; self
     }
     /// Appends an item to `timestamps`.
     ///
@@ -105,17 +95,13 @@ impl GetExperimentResultsOutputBuilder {
     /// <p>The timestamps of each result returned.</p>
     pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
-        v.push(input);
-        self.timestamps = Some(v);
-        self
+                        v.push(input);
+                        self.timestamps = Some(v);
+                        self
     }
     /// <p>The timestamps of each result returned.</p>
-    pub fn set_timestamps(
-        mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-    ) -> Self {
-        self.timestamps = input;
-        self
+    pub fn set_timestamps(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>) -> Self {
+        self.timestamps = input; self
     }
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
     pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,26 +110,30 @@ impl GetExperimentResultsOutputBuilder {
     }
     /// <p>If the experiment doesn't yet have enough events to provide valid results, this field is returned with the message <code>Not enough events to generate results</code>. If there are enough events to provide valid results, this field is not returned.</p>
     pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.details = input;
-        self
+        self.details = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetExperimentResultsOutput`](crate::operation::get_experiment_results::GetExperimentResultsOutput).
     pub fn build(self) -> crate::operation::get_experiment_results::GetExperimentResultsOutput {
         crate::operation::get_experiment_results::GetExperimentResultsOutput {
-            results_data: self.results_data,
-            reports: self.reports,
-            timestamps: self.timestamps,
-            details: self.details,
+            results_data: self.results_data
+            ,
+            reports: self.reports
+            ,
+            timestamps: self.timestamps
+            ,
+            details: self.details
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

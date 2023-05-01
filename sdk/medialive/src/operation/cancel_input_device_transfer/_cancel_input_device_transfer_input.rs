@@ -3,20 +3,20 @@
 /// Placeholder documentation for CancelInputDeviceTransferRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelInputDeviceTransferInput {
+pub struct CancelInputDeviceTransferInput  {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     #[doc(hidden)]
     pub input_device_id: std::option::Option<std::string::String>,
 }
 impl CancelInputDeviceTransferInput {
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> std::option::Option<&str> {
+    pub fn input_device_id(&self) -> std::option::Option<& str> {
         self.input_device_id.as_deref()
     }
 }
 impl CancelInputDeviceTransferInput {
     /// Creates a new builder-style object to manufacture [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
-    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder{
+    pub fn builder() -> crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder {
         crate::operation::cancel_input_device_transfer::builders::CancelInputDeviceTransferInputBuilder::default()
     }
 }
@@ -35,20 +35,16 @@ impl CancelInputDeviceTransferInputBuilder {
     }
     /// The unique ID of the input device to cancel. For example, hd-123456789abcdef.
     pub fn set_input_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_device_id = input;
-        self
+        self.input_device_id = input; self
     }
     /// Consumes the builder and constructs a [`CancelInputDeviceTransferInput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferInput {
-                input_device_id: self.input_device_id,
-            },
+                input_device_id: self.input_device_id
+                ,
+            }
         )
     }
 }
+

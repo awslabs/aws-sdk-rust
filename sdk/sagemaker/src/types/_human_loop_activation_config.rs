@@ -3,17 +3,14 @@
 /// <p>Provides information about how and under what conditions SageMaker creates a human loop. If <code>HumanLoopActivationConfig</code> is not given, then all requests go to humans.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopActivationConfig {
+pub struct HumanLoopActivationConfig  {
     /// <p>Container structure for defining under what conditions SageMaker creates a human loop.</p>
     #[doc(hidden)]
-    pub human_loop_activation_conditions_config:
-        std::option::Option<crate::types::HumanLoopActivationConditionsConfig>,
+    pub human_loop_activation_conditions_config: std::option::Option<crate::types::HumanLoopActivationConditionsConfig>,
 }
 impl HumanLoopActivationConfig {
     /// <p>Container structure for defining under what conditions SageMaker creates a human loop.</p>
-    pub fn human_loop_activation_conditions_config(
-        &self,
-    ) -> std::option::Option<&crate::types::HumanLoopActivationConditionsConfig> {
+    pub fn human_loop_activation_conditions_config(&self) -> std::option::Option<& crate::types::HumanLoopActivationConditionsConfig> {
         self.human_loop_activation_conditions_config.as_ref()
     }
 }
@@ -28,30 +25,24 @@ impl HumanLoopActivationConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct HumanLoopActivationConfigBuilder {
-    pub(crate) human_loop_activation_conditions_config:
-        std::option::Option<crate::types::HumanLoopActivationConditionsConfig>,
+    pub(crate) human_loop_activation_conditions_config: std::option::Option<crate::types::HumanLoopActivationConditionsConfig>,
 }
 impl HumanLoopActivationConfigBuilder {
     /// <p>Container structure for defining under what conditions SageMaker creates a human loop.</p>
-    pub fn human_loop_activation_conditions_config(
-        mut self,
-        input: crate::types::HumanLoopActivationConditionsConfig,
-    ) -> Self {
+    pub fn human_loop_activation_conditions_config(mut self, input: crate::types::HumanLoopActivationConditionsConfig) -> Self {
         self.human_loop_activation_conditions_config = Some(input);
         self
     }
     /// <p>Container structure for defining under what conditions SageMaker creates a human loop.</p>
-    pub fn set_human_loop_activation_conditions_config(
-        mut self,
-        input: std::option::Option<crate::types::HumanLoopActivationConditionsConfig>,
-    ) -> Self {
-        self.human_loop_activation_conditions_config = input;
-        self
+    pub fn set_human_loop_activation_conditions_config(mut self, input: std::option::Option<crate::types::HumanLoopActivationConditionsConfig>) -> Self {
+        self.human_loop_activation_conditions_config = input; self
     }
     /// Consumes the builder and constructs a [`HumanLoopActivationConfig`](crate::types::HumanLoopActivationConfig).
     pub fn build(self) -> crate::types::HumanLoopActivationConfig {
         crate::types::HumanLoopActivationConfig {
-            human_loop_activation_conditions_config: self.human_loop_activation_conditions_config,
+            human_loop_activation_conditions_config: self.human_loop_activation_conditions_config
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LongTermPricingListEntry {
+pub struct LongTermPricingListEntry  {
     /// <p>The ID of the long-term pricing type for the device.</p>
     #[doc(hidden)]
     pub long_term_pricing_id: std::option::Option<std::string::String>,
@@ -37,29 +37,27 @@ pub struct LongTermPricingListEntry {
 }
 impl LongTermPricingListEntry {
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn long_term_pricing_id(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_id(&self) -> std::option::Option<& str> {
         self.long_term_pricing_id.as_deref()
     }
     /// <p>The end date the long-term pricing contract.</p>
-    pub fn long_term_pricing_end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn long_term_pricing_end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.long_term_pricing_end_date.as_ref()
     }
     /// <p>The start date of the long-term pricing contract.</p>
-    pub fn long_term_pricing_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn long_term_pricing_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.long_term_pricing_start_date.as_ref()
     }
     /// <p>The type of long-term pricing that was selected for the device.</p>
-    pub fn long_term_pricing_type(
-        &self,
-    ) -> std::option::Option<&crate::types::LongTermPricingType> {
+    pub fn long_term_pricing_type(&self) -> std::option::Option<& crate::types::LongTermPricingType> {
         self.long_term_pricing_type.as_ref()
     }
     /// <p>The current active jobs on the device the long-term pricing type.</p>
-    pub fn current_active_job(&self) -> std::option::Option<&str> {
+    pub fn current_active_job(&self) -> std::option::Option<& str> {
         self.current_active_job.as_deref()
     }
     /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
-    pub fn replacement_job(&self) -> std::option::Option<&str> {
+    pub fn replacement_job(&self) -> std::option::Option<& str> {
         self.replacement_job.as_deref()
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
@@ -67,15 +65,15 @@ impl LongTermPricingListEntry {
         self.is_long_term_pricing_auto_renew
     }
     /// <p>The status of the long-term pricing type.</p>
-    pub fn long_term_pricing_status(&self) -> std::option::Option<&str> {
+    pub fn long_term_pricing_status(&self) -> std::option::Option<& str> {
         self.long_term_pricing_status.as_deref()
     }
     /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
-    pub fn snowball_type(&self) -> std::option::Option<&crate::types::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<& crate::types::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
-    pub fn job_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.job_ids.as_deref()
     }
 }
@@ -108,12 +106,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The ID of the long-term pricing type for the device.</p>
-    pub fn set_long_term_pricing_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.long_term_pricing_id = input;
-        self
+    pub fn set_long_term_pricing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.long_term_pricing_id = input; self
     }
     /// <p>The end date the long-term pricing contract.</p>
     pub fn long_term_pricing_end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -121,12 +115,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The end date the long-term pricing contract.</p>
-    pub fn set_long_term_pricing_end_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.long_term_pricing_end_date = input;
-        self
+    pub fn set_long_term_pricing_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.long_term_pricing_end_date = input; self
     }
     /// <p>The start date of the long-term pricing contract.</p>
     pub fn long_term_pricing_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -134,12 +124,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The start date of the long-term pricing contract.</p>
-    pub fn set_long_term_pricing_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.long_term_pricing_start_date = input;
-        self
+    pub fn set_long_term_pricing_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.long_term_pricing_start_date = input; self
     }
     /// <p>The type of long-term pricing that was selected for the device.</p>
     pub fn long_term_pricing_type(mut self, input: crate::types::LongTermPricingType) -> Self {
@@ -147,12 +133,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The type of long-term pricing that was selected for the device.</p>
-    pub fn set_long_term_pricing_type(
-        mut self,
-        input: std::option::Option<crate::types::LongTermPricingType>,
-    ) -> Self {
-        self.long_term_pricing_type = input;
-        self
+    pub fn set_long_term_pricing_type(mut self, input: std::option::Option<crate::types::LongTermPricingType>) -> Self {
+        self.long_term_pricing_type = input; self
     }
     /// <p>The current active jobs on the device the long-term pricing type.</p>
     pub fn current_active_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,12 +142,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The current active jobs on the device the long-term pricing type.</p>
-    pub fn set_current_active_job(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.current_active_job = input;
-        self
+    pub fn set_current_active_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.current_active_job = input; self
     }
     /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
     pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,8 +152,7 @@ impl LongTermPricingListEntryBuilder {
     }
     /// <p>A new device that replaces a device that is ordered with long-term pricing.</p>
     pub fn set_replacement_job(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replacement_job = input;
-        self
+        self.replacement_job = input; self
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
@@ -184,8 +161,7 @@ impl LongTermPricingListEntryBuilder {
     }
     /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the device should be automatically renewed before the long-term pricing contract expires.</p>
     pub fn set_is_long_term_pricing_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_long_term_pricing_auto_renew = input;
-        self
+        self.is_long_term_pricing_auto_renew = input; self
     }
     /// <p>The status of the long-term pricing type.</p>
     pub fn long_term_pricing_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,12 +169,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The status of the long-term pricing type.</p>
-    pub fn set_long_term_pricing_status(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.long_term_pricing_status = input;
-        self
+    pub fn set_long_term_pricing_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.long_term_pricing_status = input; self
     }
     /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
@@ -206,12 +178,8 @@ impl LongTermPricingListEntryBuilder {
         self
     }
     /// <p>The type of Snow Family devices associated with this long-term pricing job.</p>
-    pub fn set_snowball_type(
-        mut self,
-        input: std::option::Option<crate::types::SnowballType>,
-    ) -> Self {
-        self.snowball_type = input;
-        self
+    pub fn set_snowball_type(mut self, input: std::option::Option<crate::types::SnowballType>) -> Self {
+        self.snowball_type = input; self
     }
     /// Appends an item to `job_ids`.
     ///
@@ -220,31 +188,38 @@ impl LongTermPricingListEntryBuilder {
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
     pub fn job_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_ids.unwrap_or_default();
-        v.push(input.into());
-        self.job_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_ids = Some(v);
+                        self
     }
     /// <p>The IDs of the jobs that are associated with a long-term pricing type.</p>
-    pub fn set_job_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_ids = input;
-        self
+    pub fn set_job_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_ids = input; self
     }
     /// Consumes the builder and constructs a [`LongTermPricingListEntry`](crate::types::LongTermPricingListEntry).
     pub fn build(self) -> crate::types::LongTermPricingListEntry {
         crate::types::LongTermPricingListEntry {
-            long_term_pricing_id: self.long_term_pricing_id,
-            long_term_pricing_end_date: self.long_term_pricing_end_date,
-            long_term_pricing_start_date: self.long_term_pricing_start_date,
-            long_term_pricing_type: self.long_term_pricing_type,
-            current_active_job: self.current_active_job,
-            replacement_job: self.replacement_job,
-            is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew,
-            long_term_pricing_status: self.long_term_pricing_status,
-            snowball_type: self.snowball_type,
-            job_ids: self.job_ids,
+            long_term_pricing_id: self.long_term_pricing_id
+            ,
+            long_term_pricing_end_date: self.long_term_pricing_end_date
+            ,
+            long_term_pricing_start_date: self.long_term_pricing_start_date
+            ,
+            long_term_pricing_type: self.long_term_pricing_type
+            ,
+            current_active_job: self.current_active_job
+            ,
+            replacement_job: self.replacement_job
+            ,
+            is_long_term_pricing_auto_renew: self.is_long_term_pricing_auto_renew
+            ,
+            long_term_pricing_status: self.long_term_pricing_status
+            ,
+            snowball_type: self.snowball_type
+            ,
+            job_ids: self.job_ids
+            ,
         }
     }
 }
+

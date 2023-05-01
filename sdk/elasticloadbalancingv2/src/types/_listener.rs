@@ -3,7 +3,7 @@
 /// <p>Information about a listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Listener {
+pub struct Listener  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -31,11 +31,11 @@ pub struct Listener {
 }
 impl Listener {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<&str> {
+    pub fn listener_arn(&self) -> std::option::Option<& str> {
         self.listener_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The port on which the load balancer is listening.</p>
@@ -43,23 +43,23 @@ impl Listener {
         self.port
     }
     /// <p>The protocol for connections from clients to the load balancer.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::ProtocolEnum> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::ProtocolEnum> {
         self.protocol.as_ref()
     }
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::types::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::types::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
-    pub fn ssl_policy(&self) -> std::option::Option<&str> {
+    pub fn ssl_policy(&self) -> std::option::Option<& str> {
         self.ssl_policy.as_deref()
     }
     /// <p>The default actions for the listener.</p>
-    pub fn default_actions(&self) -> std::option::Option<&[crate::types::Action]> {
+    pub fn default_actions(&self) -> std::option::Option<& [crate::types::Action]> {
         self.default_actions.as_deref()
     }
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
-    pub fn alpn_policy(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alpn_policy(&self) -> std::option::Option<& [std::string::String]> {
         self.alpn_policy.as_deref()
     }
 }
@@ -91,8 +91,7 @@ impl ListenerBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_arn = input;
-        self
+        self.listener_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,12 +99,8 @@ impl ListenerBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.load_balancer_arn = input;
-        self
+    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.load_balancer_arn = input; self
     }
     /// <p>The port on which the load balancer is listening.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -114,8 +109,7 @@ impl ListenerBuilder {
     }
     /// <p>The port on which the load balancer is listening.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input;
-        self
+        self.port = input; self
     }
     /// <p>The protocol for connections from clients to the load balancer.</p>
     pub fn protocol(mut self, input: crate::types::ProtocolEnum) -> Self {
@@ -124,8 +118,7 @@ impl ListenerBuilder {
     }
     /// <p>The protocol for connections from clients to the load balancer.</p>
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::ProtocolEnum>) -> Self {
-        self.protocol = input;
-        self
+        self.protocol = input; self
     }
     /// Appends an item to `certificates`.
     ///
@@ -134,17 +127,13 @@ impl ListenerBuilder {
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
     pub fn certificates(mut self, input: crate::types::Certificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
-        v.push(input);
-        self.certificates = Some(v);
-        self
+                        v.push(input);
+                        self.certificates = Some(v);
+                        self
     }
     /// <p>[HTTPS or TLS listener] The default certificate for the listener.</p>
-    pub fn set_certificates(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
-    ) -> Self {
-        self.certificates = input;
-        self
+    pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::types::Certificate>>) -> Self {
+        self.certificates = input; self
     }
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +142,7 @@ impl ListenerBuilder {
     }
     /// <p>[HTTPS or TLS listener] The security policy that defines which protocols and ciphers are supported.</p>
     pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssl_policy = input;
-        self
+        self.ssl_policy = input; self
     }
     /// Appends an item to `default_actions`.
     ///
@@ -163,17 +151,13 @@ impl ListenerBuilder {
     /// <p>The default actions for the listener.</p>
     pub fn default_actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.default_actions.unwrap_or_default();
-        v.push(input);
-        self.default_actions = Some(v);
-        self
+                        v.push(input);
+                        self.default_actions = Some(v);
+                        self
     }
     /// <p>The default actions for the listener.</p>
-    pub fn set_default_actions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
-    ) -> Self {
-        self.default_actions = input;
-        self
+    pub fn set_default_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Action>>) -> Self {
+        self.default_actions = input; self
     }
     /// Appends an item to `alpn_policy`.
     ///
@@ -182,29 +166,34 @@ impl ListenerBuilder {
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
     pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alpn_policy.unwrap_or_default();
-        v.push(input.into());
-        self.alpn_policy = Some(v);
-        self
+                        v.push(input.into());
+                        self.alpn_policy = Some(v);
+                        self
     }
     /// <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN) policy.</p>
-    pub fn set_alpn_policy(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.alpn_policy = input;
-        self
+    pub fn set_alpn_policy(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.alpn_policy = input; self
     }
     /// Consumes the builder and constructs a [`Listener`](crate::types::Listener).
     pub fn build(self) -> crate::types::Listener {
         crate::types::Listener {
-            listener_arn: self.listener_arn,
-            load_balancer_arn: self.load_balancer_arn,
-            port: self.port,
-            protocol: self.protocol,
-            certificates: self.certificates,
-            ssl_policy: self.ssl_policy,
-            default_actions: self.default_actions,
-            alpn_policy: self.alpn_policy,
+            listener_arn: self.listener_arn
+            ,
+            load_balancer_arn: self.load_balancer_arn
+            ,
+            port: self.port
+            ,
+            protocol: self.protocol
+            ,
+            certificates: self.certificates
+            ,
+            ssl_policy: self.ssl_policy
+            ,
+            default_actions: self.default_actions
+            ,
+            alpn_policy: self.alpn_policy
+            ,
         }
     }
 }
+

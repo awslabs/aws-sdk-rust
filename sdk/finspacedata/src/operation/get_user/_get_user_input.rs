@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserInput {
+pub struct GetUserInput  {
     /// <p>The unique identifier of the user to get data for.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
 }
 impl GetUserInput {
     /// <p>The unique identifier of the user to get data for.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetUserInputBuilder {
     }
     /// <p>The unique identifier of the user to get data for.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_user::GetUserInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_user::GetUserInput {
-            user_id: self.user_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_user::GetUserInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_user::GetUserInput {
+                user_id: self.user_id
+                ,
+            }
+        )
     }
 }
+

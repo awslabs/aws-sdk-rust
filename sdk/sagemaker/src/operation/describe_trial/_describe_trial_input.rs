@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrialInput {
+pub struct DescribeTrialInput  {
     /// <p>The name of the trial to describe.</p>
     #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
 }
 impl DescribeTrialInput {
     /// <p>The name of the trial to describe.</p>
-    pub fn trial_name(&self) -> std::option::Option<&str> {
+    pub fn trial_name(&self) -> std::option::Option<& str> {
         self.trial_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DescribeTrialInputBuilder {
     }
     /// <p>The name of the trial to describe.</p>
     pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_name = input;
-        self
+        self.trial_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeTrialInput`](crate::operation::describe_trial::DescribeTrialInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_trial::DescribeTrialInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_trial::DescribeTrialInput {
-            trial_name: self.trial_name,
-        })
+    pub fn build(self) -> Result<crate::operation::describe_trial::DescribeTrialInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_trial::DescribeTrialInput {
+                trial_name: self.trial_name
+                ,
+            }
+        )
     }
 }
+

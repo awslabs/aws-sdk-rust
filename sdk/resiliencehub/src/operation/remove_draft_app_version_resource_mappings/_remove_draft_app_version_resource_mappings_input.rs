@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveDraftAppVersionResourceMappingsInput {
+pub struct RemoveDraftAppVersionResourceMappingsInput  {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -21,47 +21,47 @@ pub struct RemoveDraftAppVersionResourceMappingsInput {
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
     #[doc(hidden)]
     pub terraform_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
-    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note> 
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p> 
     /// </note>
     #[doc(hidden)]
     pub eks_source_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RemoveDraftAppVersionResourceMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> std::option::Option<& str> {
         self.app_arn.as_deref()
     }
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
-    pub fn resource_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_names(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_names.as_deref()
     }
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
-    pub fn logical_stack_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn logical_stack_names(&self) -> std::option::Option<& [std::string::String]> {
         self.logical_stack_names.as_deref()
     }
     /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
-    pub fn app_registry_app_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn app_registry_app_names(&self) -> std::option::Option<& [std::string::String]> {
         self.app_registry_app_names.as_deref()
     }
     /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
-    pub fn resource_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_group_names.as_deref()
     }
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
-    pub fn terraform_source_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn terraform_source_names(&self) -> std::option::Option<& [std::string::String]> {
         self.terraform_source_names.as_deref()
     }
-    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
-    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note> 
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p> 
     /// </note>
-    pub fn eks_source_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn eks_source_names(&self) -> std::option::Option<& [std::string::String]> {
         self.eks_source_names.as_deref()
     }
 }
 impl RemoveDraftAppVersionResourceMappingsInput {
     /// Creates a new builder-style object to manufacture [`RemoveDraftAppVersionResourceMappingsInput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput).
-    pub fn builder() -> crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder{
+    pub fn builder() -> crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder {
         crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder::default()
     }
 }
@@ -86,8 +86,7 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input;
-        self
+        self.app_arn = input; self
     }
     /// Appends an item to `resource_names`.
     ///
@@ -96,17 +95,13 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
     pub fn resource_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_names.unwrap_or_default();
-        v.push(input.into());
-        self.resource_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_names = Some(v);
+                        self
     }
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
-    pub fn set_resource_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_names = input;
-        self
+    pub fn set_resource_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_names = input; self
     }
     /// Appends an item to `logical_stack_names`.
     ///
@@ -115,17 +110,13 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
     pub fn logical_stack_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.logical_stack_names.unwrap_or_default();
-        v.push(input.into());
-        self.logical_stack_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.logical_stack_names = Some(v);
+                        self
     }
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
-    pub fn set_logical_stack_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.logical_stack_names = input;
-        self
+    pub fn set_logical_stack_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.logical_stack_names = input; self
     }
     /// Appends an item to `app_registry_app_names`.
     ///
@@ -134,17 +125,13 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
     pub fn app_registry_app_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.app_registry_app_names.unwrap_or_default();
-        v.push(input.into());
-        self.app_registry_app_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.app_registry_app_names = Some(v);
+                        self
     }
     /// <p>The names of the registered applications you want to remove from the resource mappings.</p>
-    pub fn set_app_registry_app_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.app_registry_app_names = input;
-        self
+    pub fn set_app_registry_app_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.app_registry_app_names = input; self
     }
     /// Appends an item to `resource_group_names`.
     ///
@@ -153,17 +140,13 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
     pub fn resource_group_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_group_names.unwrap_or_default();
-        v.push(input.into());
-        self.resource_group_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_group_names = Some(v);
+                        self
     }
     /// <p>The names of the resource groups you want to remove from the resource mappings.</p>
-    pub fn set_resource_group_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_group_names = input;
-        self
+    pub fn set_resource_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_group_names = input; self
     }
     /// Appends an item to `terraform_source_names`.
     ///
@@ -172,43 +155,35 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
     pub fn terraform_source_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.terraform_source_names.unwrap_or_default();
-        v.push(input.into());
-        self.terraform_source_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.terraform_source_names = Some(v);
+                        self
     }
     /// <p>The names of the Terraform sources you want to remove from the resource mappings.</p>
-    pub fn set_terraform_source_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.terraform_source_names = input;
-        self
+    pub fn set_terraform_source_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.terraform_source_names = input; self
     }
     /// Appends an item to `eks_source_names`.
     ///
     /// To override the contents of this collection use [`set_eks_source_names`](Self::set_eks_source_names).
     ///
-    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
-    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note> 
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p> 
     /// </note>
     pub fn eks_source_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.eks_source_names.unwrap_or_default();
-        v.push(input.into());
-        self.eks_source_names = Some(v);
-        self
+                        v.push(input.into());
+                        self.eks_source_names = Some(v);
+                        self
     }
-    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note>
-    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p>
+    /// <p>The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want to remove from the resource mappings.</p> <note> 
+    /// <p>This parameter accepts values in "eks-cluster/namespace" format.</p> 
     /// </note>
-    pub fn set_eks_source_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.eks_source_names = input;
-        self
+    pub fn set_eks_source_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.eks_source_names = input; self
     }
     /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsInput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput).
-    pub fn build(self) -> Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput {
                 app_arn: self.app_arn
@@ -229,3 +204,4 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
         )
     }
 }
+

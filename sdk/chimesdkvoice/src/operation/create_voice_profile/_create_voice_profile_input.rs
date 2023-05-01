@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVoiceProfileInput {
+pub struct CreateVoiceProfileInput  {
     /// <p>The ID of the speaker search task.</p>
     #[doc(hidden)]
     pub speaker_search_task_id: std::option::Option<std::string::String>,
 }
 impl CreateVoiceProfileInput {
     /// <p>The ID of the speaker search task.</p>
-    pub fn speaker_search_task_id(&self) -> std::option::Option<&str> {
+    pub fn speaker_search_task_id(&self) -> std::option::Option<& str> {
         self.speaker_search_task_id.as_deref()
     }
 }
 impl CreateVoiceProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceProfileInput`](crate::operation::create_voice_profile::CreateVoiceProfileInput).
-    pub fn builder(
-    ) -> crate::operation::create_voice_profile::builders::CreateVoiceProfileInputBuilder {
+    pub fn builder() -> crate::operation::create_voice_profile::builders::CreateVoiceProfileInputBuilder {
         crate::operation::create_voice_profile::builders::CreateVoiceProfileInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl CreateVoiceProfileInputBuilder {
         self
     }
     /// <p>The ID of the speaker search task.</p>
-    pub fn set_speaker_search_task_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.speaker_search_task_id = input;
-        self
+    pub fn set_speaker_search_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.speaker_search_task_id = input; self
     }
     /// Consumes the builder and constructs a [`CreateVoiceProfileInput`](crate::operation::create_voice_profile::CreateVoiceProfileInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_voice_profile::CreateVoiceProfileInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_voice_profile::CreateVoiceProfileInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_voice_profile::CreateVoiceProfileInput {
-                speaker_search_task_id: self.speaker_search_task_id,
-            },
+                speaker_search_task_id: self.speaker_search_task_id
+                ,
+            }
         )
     }
 }
+

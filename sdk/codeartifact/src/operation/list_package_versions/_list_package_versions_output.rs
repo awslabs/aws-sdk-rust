@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackageVersionsOutput {
-    /// <p> The default package version to display. This depends on the package format: </p>
-    /// <ul>
-    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
-    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
+pub struct ListPackageVersionsOutput  {
+    /// <p> The default package version to display. This depends on the package format: </p> 
+    /// <ul> 
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li> 
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub default_display_version: std::option::Option<std::string::String>,
     /// <p> A format of the package. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -33,51 +33,49 @@ pub struct ListPackageVersionsOutput {
     _request_id: Option<String>,
 }
 impl ListPackageVersionsOutput {
-    /// <p> The default package version to display. This depends on the package format: </p>
-    /// <ul>
-    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
-    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
+    /// <p> The default package version to display. This depends on the package format: </p> 
+    /// <ul> 
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li> 
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li> 
     /// </ul>
-    pub fn default_display_version(&self) -> std::option::Option<&str> {
+    pub fn default_display_version(&self) -> std::option::Option<& str> {
         self.default_display_version.as_deref()
     }
     /// <p> A format of the package. </p>
-    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package. </p>
-    pub fn package(&self) -> std::option::Option<&str> {
+    pub fn package(&self) -> std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
-    pub fn versions(&self) -> std::option::Option<&[crate::types::PackageVersionSummary]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::types::PackageVersionSummary]> {
         self.versions.as_deref()
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPackageVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListPackageVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder {
-        crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder {
+        crate::operation::list_package_versions::builders::ListPackageVersionsOutputBuilder::default()
     }
 }
 
@@ -94,26 +92,22 @@ pub struct ListPackageVersionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListPackageVersionsOutputBuilder {
-    /// <p> The default package version to display. This depends on the package format: </p>
-    /// <ul>
-    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
-    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
+    /// <p> The default package version to display. This depends on the package format: </p> 
+    /// <ul> 
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li> 
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li> 
     /// </ul>
     pub fn default_display_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.default_display_version = Some(input.into());
         self
     }
-    /// <p> The default package version to display. This depends on the package format: </p>
-    /// <ul>
-    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li>
-    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li>
+    /// <p> The default package version to display. This depends on the package format: </p> 
+    /// <ul> 
+    /// <li> <p> For Maven and PyPI packages, it's the most recently published package version. </p> </li> 
+    /// <li> <p> For npm packages, it's the version referenced by the <code>latest</code> tag. If the <code>latest</code> tag is not set, it's the most recently published package version. </p> </li> 
     /// </ul>
-    pub fn set_default_display_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.default_display_version = input;
-        self
+    pub fn set_default_display_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.default_display_version = input; self
     }
     /// <p> A format of the package. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
@@ -122,28 +116,26 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p> A format of the package. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input;
-        self
+        self.format = input; self
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input;
-        self
+        self.namespace = input; self
     }
     /// <p> The name of the package. </p>
     pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +144,7 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p> The name of the package. </p>
     pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package = input;
-        self
+        self.package = input; self
     }
     /// Appends an item to `versions`.
     ///
@@ -162,17 +153,13 @@ impl ListPackageVersionsOutputBuilder {
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
     pub fn versions(mut self, input: crate::types::PackageVersionSummary) -> Self {
         let mut v = self.versions.unwrap_or_default();
-        v.push(input);
-        self.versions = Some(v);
-        self
+                        v.push(input);
+                        self.versions = Some(v);
+                        self
     }
     /// <p> The returned list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a> objects. </p>
-    pub fn set_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PackageVersionSummary>>,
-    ) -> Self {
-        self.versions = input;
-        self
+    pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::PackageVersionSummary>>) -> Self {
+        self.versions = input; self
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,28 +168,34 @@ impl ListPackageVersionsOutputBuilder {
     }
     /// <p> If there are additional results, this is the token for the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListPackageVersionsOutput`](crate::operation::list_package_versions::ListPackageVersionsOutput).
     pub fn build(self) -> crate::operation::list_package_versions::ListPackageVersionsOutput {
         crate::operation::list_package_versions::ListPackageVersionsOutput {
-            default_display_version: self.default_display_version,
-            format: self.format,
-            namespace: self.namespace,
-            package: self.package,
-            versions: self.versions,
-            next_token: self.next_token,
+            default_display_version: self.default_display_version
+            ,
+            format: self.format
+            ,
+            namespace: self.namespace
+            ,
+            package: self.package
+            ,
+            versions: self.versions
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

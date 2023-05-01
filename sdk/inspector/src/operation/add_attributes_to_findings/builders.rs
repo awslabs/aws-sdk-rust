@@ -4,72 +4,49 @@ pub use crate::operation::add_attributes_to_findings::_add_attributes_to_finding
 pub use crate::operation::add_attributes_to_findings::_add_attributes_to_findings_input::AddAttributesToFindingsInputBuilder;
 
 /// Fluent builder constructing a request to `AddAttributesToFindings`.
-///
+/// 
 /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddAttributesToFindingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner:
-        crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder,
-}
-impl AddAttributesToFindingsFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder
+            }
+impl AddAttributesToFindingsFluentBuilder  {
     /// Creates a new `AddAttributesToFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::add_attributes_to_findings::AddAttributesToFindings, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput, aws_smithy_http::result::SdkError<crate::operation::add_attributes_to_findings::AddAttributesToFindingsError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `findingArns`.
     ///
     /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
@@ -80,10 +57,7 @@ impl AddAttributesToFindingsFluentBuilder {
         self
     }
     /// <p>The ARNs that specify the findings that you want to assign attributes to.</p>
-    pub fn set_finding_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_finding_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
     }
@@ -97,11 +71,9 @@ impl AddAttributesToFindingsFluentBuilder {
         self
     }
     /// <p>The array of attributes that you want to assign to specified findings.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    ) -> Self {
+    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
 }
+

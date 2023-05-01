@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationOutput {
+pub struct UpdateConfigurationOutput  {
     /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -25,41 +25,39 @@ pub struct UpdateConfigurationOutput {
 }
 impl UpdateConfigurationOutput {
     /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Required. The date and time of the configuration.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<&crate::types::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::types::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::types::SanitizationWarning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::types::SanitizationWarning]> {
         self.warnings.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
-    pub fn builder(
-    ) -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
-        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder {
+        crate::operation::update_configuration::builders::UpdateConfigurationOutputBuilder::default()
     }
 }
 
@@ -83,8 +81,7 @@ impl UpdateConfigurationOutputBuilder {
     }
     /// <p>Required. The Amazon Resource Name (ARN) of the configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>Required. The date and time of the configuration.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +90,7 @@ impl UpdateConfigurationOutputBuilder {
     }
     /// <p>Required. The date and time of the configuration.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +99,7 @@ impl UpdateConfigurationOutputBuilder {
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The latest revision of the configuration.</p>
     pub fn latest_revision(mut self, input: crate::types::ConfigurationRevision) -> Self {
@@ -112,12 +107,8 @@ impl UpdateConfigurationOutputBuilder {
         self
     }
     /// <p>The latest revision of the configuration.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: std::option::Option<crate::types::ConfigurationRevision>,
-    ) -> Self {
-        self.latest_revision = input;
-        self
+    pub fn set_latest_revision(mut self, input: std::option::Option<crate::types::ConfigurationRevision>) -> Self {
+        self.latest_revision = input; self
     }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +117,7 @@ impl UpdateConfigurationOutputBuilder {
     }
     /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `warnings`.
     ///
@@ -136,37 +126,40 @@ impl UpdateConfigurationOutputBuilder {
     /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
     pub fn warnings(mut self, input: crate::types::SanitizationWarning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = Some(v);
-        self
+                        v.push(input);
+                        self.warnings = Some(v);
+                        self
     }
     /// <p>The list of the first 20 warnings about the configuration XML elements or attributes that were sanitized.</p>
-    pub fn set_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SanitizationWarning>>,
-    ) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::types::SanitizationWarning>>) -> Self {
+        self.warnings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateConfigurationOutput`](crate::operation::update_configuration::UpdateConfigurationOutput).
     pub fn build(self) -> crate::operation::update_configuration::UpdateConfigurationOutput {
         crate::operation::update_configuration::UpdateConfigurationOutput {
-            arn: self.arn,
-            created: self.created,
-            id: self.id,
-            latest_revision: self.latest_revision,
-            name: self.name,
-            warnings: self.warnings,
+            arn: self.arn
+            ,
+            created: self.created
+            ,
+            id: self.id
+            ,
+            latest_revision: self.latest_revision
+            ,
+            name: self.name
+            ,
+            warnings: self.warnings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

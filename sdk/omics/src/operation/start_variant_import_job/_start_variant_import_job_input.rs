@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartVariantImportJobInput {
+pub struct StartVariantImportJobInput  {
     /// <p>The destination variant store for the job.</p>
     #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct StartVariantImportJobInput {
 }
 impl StartVariantImportJobInput {
     /// <p>The destination variant store for the job.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>A service role for the job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>Items to import.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::VariantImportItemSource]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::VariantImportItemSource]> {
         self.items.as_deref()
     }
     /// <p>The job's left normalization setting.</p>
@@ -36,9 +36,7 @@ impl StartVariantImportJobInput {
 }
 impl StartVariantImportJobInput {
     /// Creates a new builder-style object to manufacture [`StartVariantImportJobInput`](crate::operation::start_variant_import_job::StartVariantImportJobInput).
-    pub fn builder(
-    ) -> crate::operation::start_variant_import_job::builders::StartVariantImportJobInputBuilder
-    {
+    pub fn builder() -> crate::operation::start_variant_import_job::builders::StartVariantImportJobInputBuilder {
         crate::operation::start_variant_import_job::builders::StartVariantImportJobInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl StartVariantImportJobInputBuilder {
     }
     /// <p>The destination variant store for the job.</p>
     pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_name = input;
-        self
+        self.destination_name = input; self
     }
     /// <p>A service role for the job.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl StartVariantImportJobInputBuilder {
     }
     /// <p>A service role for the job.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -80,17 +76,13 @@ impl StartVariantImportJobInputBuilder {
     /// <p>Items to import.</p>
     pub fn items(mut self, input: crate::types::VariantImportItemSource) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>Items to import.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VariantImportItemSource>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariantImportItemSource>>) -> Self {
+        self.items = input; self
     }
     /// <p>The job's left normalization setting.</p>
     pub fn run_left_normalization(mut self, input: bool) -> Self {
@@ -99,23 +91,22 @@ impl StartVariantImportJobInputBuilder {
     }
     /// <p>The job's left normalization setting.</p>
     pub fn set_run_left_normalization(mut self, input: std::option::Option<bool>) -> Self {
-        self.run_left_normalization = input;
-        self
+        self.run_left_normalization = input; self
     }
     /// Consumes the builder and constructs a [`StartVariantImportJobInput`](crate::operation::start_variant_import_job::StartVariantImportJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_variant_import_job::StartVariantImportJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_variant_import_job::StartVariantImportJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_variant_import_job::StartVariantImportJobInput {
-                destination_name: self.destination_name,
-                role_arn: self.role_arn,
-                items: self.items,
-                run_left_normalization: self.run_left_normalization,
-            },
+                destination_name: self.destination_name
+                ,
+                role_arn: self.role_arn
+                ,
+                items: self.items
+                ,
+                run_left_normalization: self.run_left_normalization
+                ,
+            }
         )
     }
 }
+

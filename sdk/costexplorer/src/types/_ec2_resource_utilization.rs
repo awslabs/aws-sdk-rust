@@ -3,7 +3,7 @@
 /// <p>Utilization metrics for the instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2ResourceUtilization {
+pub struct Ec2ResourceUtilization  {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
     #[doc(hidden)]
     pub max_cpu_utilization_percentage: std::option::Option<std::string::String>,
@@ -25,33 +25,27 @@ pub struct Ec2ResourceUtilization {
 }
 impl Ec2ResourceUtilization {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
-    pub fn max_cpu_utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn max_cpu_utilization_percentage(&self) -> std::option::Option<& str> {
         self.max_cpu_utilization_percentage.as_deref()
     }
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
-    pub fn max_memory_utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn max_memory_utilization_percentage(&self) -> std::option::Option<& str> {
         self.max_memory_utilization_percentage.as_deref()
     }
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-    pub fn max_storage_utilization_percentage(&self) -> std::option::Option<&str> {
+    pub fn max_storage_utilization_percentage(&self) -> std::option::Option<& str> {
         self.max_storage_utilization_percentage.as_deref()
     }
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
-    pub fn ebs_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::types::EbsResourceUtilization> {
+    pub fn ebs_resource_utilization(&self) -> std::option::Option<& crate::types::EbsResourceUtilization> {
         self.ebs_resource_utilization.as_ref()
     }
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-    pub fn disk_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::types::DiskResourceUtilization> {
+    pub fn disk_resource_utilization(&self) -> std::option::Option<& crate::types::DiskResourceUtilization> {
         self.disk_resource_utilization.as_ref()
     }
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-    pub fn network_resource_utilization(
-        &self,
-    ) -> std::option::Option<&crate::types::NetworkResourceUtilization> {
+    pub fn network_resource_utilization(&self) -> std::option::Option<& crate::types::NetworkResourceUtilization> {
         self.network_resource_utilization.as_ref()
     }
 }
@@ -70,10 +64,8 @@ pub struct Ec2ResourceUtilizationBuilder {
     pub(crate) max_memory_utilization_percentage: std::option::Option<std::string::String>,
     pub(crate) max_storage_utilization_percentage: std::option::Option<std::string::String>,
     pub(crate) ebs_resource_utilization: std::option::Option<crate::types::EbsResourceUtilization>,
-    pub(crate) disk_resource_utilization:
-        std::option::Option<crate::types::DiskResourceUtilization>,
-    pub(crate) network_resource_utilization:
-        std::option::Option<crate::types::NetworkResourceUtilization>,
+    pub(crate) disk_resource_utilization: std::option::Option<crate::types::DiskResourceUtilization>,
+    pub(crate) network_resource_utilization: std::option::Option<crate::types::NetworkResourceUtilization>,
 }
 impl Ec2ResourceUtilizationBuilder {
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
@@ -82,44 +74,26 @@ impl Ec2ResourceUtilizationBuilder {
         self
     }
     /// <p>The maximum observed or expected CPU utilization of the instance.</p>
-    pub fn set_max_cpu_utilization_percentage(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.max_cpu_utilization_percentage = input;
-        self
+    pub fn set_max_cpu_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.max_cpu_utilization_percentage = input; self
     }
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
-    pub fn max_memory_utilization_percentage(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn max_memory_utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
         self.max_memory_utilization_percentage = Some(input.into());
         self
     }
     /// <p>The maximum observed or expected memory utilization of the instance.</p>
-    pub fn set_max_memory_utilization_percentage(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.max_memory_utilization_percentage = input;
-        self
+    pub fn set_max_memory_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.max_memory_utilization_percentage = input; self
     }
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-    pub fn max_storage_utilization_percentage(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn max_storage_utilization_percentage(mut self, input: impl Into<std::string::String>) -> Self {
         self.max_storage_utilization_percentage = Some(input.into());
         self
     }
     /// <p>The maximum observed or expected storage utilization of the instance. This doesn't include EBS storage.</p>
-    pub fn set_max_storage_utilization_percentage(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.max_storage_utilization_percentage = input;
-        self
+    pub fn set_max_storage_utilization_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.max_storage_utilization_percentage = input; self
     }
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
     pub fn ebs_resource_utilization(mut self, input: crate::types::EbsResourceUtilization) -> Self {
@@ -127,54 +101,43 @@ impl Ec2ResourceUtilizationBuilder {
         self
     }
     /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
-    pub fn set_ebs_resource_utilization(
-        mut self,
-        input: std::option::Option<crate::types::EbsResourceUtilization>,
-    ) -> Self {
-        self.ebs_resource_utilization = input;
-        self
+    pub fn set_ebs_resource_utilization(mut self, input: std::option::Option<crate::types::EbsResourceUtilization>) -> Self {
+        self.ebs_resource_utilization = input; self
     }
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-    pub fn disk_resource_utilization(
-        mut self,
-        input: crate::types::DiskResourceUtilization,
-    ) -> Self {
+    pub fn disk_resource_utilization(mut self, input: crate::types::DiskResourceUtilization) -> Self {
         self.disk_resource_utilization = Some(input);
         self
     }
     /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
-    pub fn set_disk_resource_utilization(
-        mut self,
-        input: std::option::Option<crate::types::DiskResourceUtilization>,
-    ) -> Self {
-        self.disk_resource_utilization = input;
-        self
+    pub fn set_disk_resource_utilization(mut self, input: std::option::Option<crate::types::DiskResourceUtilization>) -> Self {
+        self.disk_resource_utilization = input; self
     }
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-    pub fn network_resource_utilization(
-        mut self,
-        input: crate::types::NetworkResourceUtilization,
-    ) -> Self {
+    pub fn network_resource_utilization(mut self, input: crate::types::NetworkResourceUtilization) -> Self {
         self.network_resource_utilization = Some(input);
         self
     }
     /// <p>The network field that contains a list of network metrics that are associated with the current instance. </p>
-    pub fn set_network_resource_utilization(
-        mut self,
-        input: std::option::Option<crate::types::NetworkResourceUtilization>,
-    ) -> Self {
-        self.network_resource_utilization = input;
-        self
+    pub fn set_network_resource_utilization(mut self, input: std::option::Option<crate::types::NetworkResourceUtilization>) -> Self {
+        self.network_resource_utilization = input; self
     }
     /// Consumes the builder and constructs a [`Ec2ResourceUtilization`](crate::types::Ec2ResourceUtilization).
     pub fn build(self) -> crate::types::Ec2ResourceUtilization {
         crate::types::Ec2ResourceUtilization {
-            max_cpu_utilization_percentage: self.max_cpu_utilization_percentage,
-            max_memory_utilization_percentage: self.max_memory_utilization_percentage,
-            max_storage_utilization_percentage: self.max_storage_utilization_percentage,
-            ebs_resource_utilization: self.ebs_resource_utilization,
-            disk_resource_utilization: self.disk_resource_utilization,
-            network_resource_utilization: self.network_resource_utilization,
+            max_cpu_utilization_percentage: self.max_cpu_utilization_percentage
+            ,
+            max_memory_utilization_percentage: self.max_memory_utilization_percentage
+            ,
+            max_storage_utilization_percentage: self.max_storage_utilization_percentage
+            ,
+            ebs_resource_utilization: self.ebs_resource_utilization
+            ,
+            disk_resource_utilization: self.disk_resource_utilization
+            ,
+            network_resource_utilization: self.network_resource_utilization
+            ,
         }
     }
 }
+

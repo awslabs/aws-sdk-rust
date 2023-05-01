@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportTaskOutput {
+pub struct StartImportTaskOutput  {
     /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     #[doc(hidden)]
     pub task: std::option::Option<crate::types::ImportTask>,
@@ -10,19 +10,18 @@ pub struct StartImportTaskOutput {
 }
 impl StartImportTaskOutput {
     /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
-    pub fn task(&self) -> std::option::Option<&crate::types::ImportTask> {
+    pub fn task(&self) -> std::option::Option<& crate::types::ImportTask> {
         self.task.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartImportTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartImportTaskOutput`](crate::operation::start_import_task::StartImportTaskOutput).
-    pub fn builder() -> crate::operation::start_import_task::builders::StartImportTaskOutputBuilder
-    {
+    pub fn builder() -> crate::operation::start_import_task::builders::StartImportTaskOutputBuilder {
         crate::operation::start_import_task::builders::StartImportTaskOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl StartImportTaskOutputBuilder {
     }
     /// <p>An array of information related to the import task request including status information, times, IDs, the Amazon S3 Object URL for the import file, and more. </p>
     pub fn set_task(mut self, input: std::option::Option<crate::types::ImportTask>) -> Self {
-        self.task = input;
-        self
+        self.task = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartImportTaskOutput`](crate::operation::start_import_task::StartImportTaskOutput).
     pub fn build(self) -> crate::operation::start_import_task::StartImportTaskOutput {
         crate::operation::start_import_task::StartImportTaskOutput {
-            task: self.task,
+            task: self.task
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

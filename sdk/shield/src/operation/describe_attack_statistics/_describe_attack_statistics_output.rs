@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttackStatisticsOutput {
+pub struct DescribeAttackStatisticsOutput  {
     /// <p>The time range of the attack.</p>
     #[doc(hidden)]
     pub time_range: std::option::Option<crate::types::TimeRange>,
@@ -13,24 +13,22 @@ pub struct DescribeAttackStatisticsOutput {
 }
 impl DescribeAttackStatisticsOutput {
     /// <p>The time range of the attack.</p>
-    pub fn time_range(&self) -> std::option::Option<&crate::types::TimeRange> {
+    pub fn time_range(&self) -> std::option::Option<& crate::types::TimeRange> {
         self.time_range.as_ref()
     }
     /// <p>The data that describes the attacks detected during the time period.</p>
-    pub fn data_items(&self) -> std::option::Option<&[crate::types::AttackStatisticsDataItem]> {
+    pub fn data_items(&self) -> std::option::Option<& [crate::types::AttackStatisticsDataItem]> {
         self.data_items.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAttackStatisticsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeAttackStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsOutput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsOutputBuilder {
         crate::operation::describe_attack_statistics::builders::DescribeAttackStatisticsOutputBuilder::default()
     }
 }
@@ -40,8 +38,7 @@ impl DescribeAttackStatisticsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAttackStatisticsOutputBuilder {
     pub(crate) time_range: std::option::Option<crate::types::TimeRange>,
-    pub(crate) data_items:
-        std::option::Option<std::vec::Vec<crate::types::AttackStatisticsDataItem>>,
+    pub(crate) data_items: std::option::Option<std::vec::Vec<crate::types::AttackStatisticsDataItem>>,
     _request_id: Option<String>,
 }
 impl DescribeAttackStatisticsOutputBuilder {
@@ -52,8 +49,7 @@ impl DescribeAttackStatisticsOutputBuilder {
     }
     /// <p>The time range of the attack.</p>
     pub fn set_time_range(mut self, input: std::option::Option<crate::types::TimeRange>) -> Self {
-        self.time_range = input;
-        self
+        self.time_range = input; self
     }
     /// Appends an item to `data_items`.
     ///
@@ -62,35 +58,32 @@ impl DescribeAttackStatisticsOutputBuilder {
     /// <p>The data that describes the attacks detected during the time period.</p>
     pub fn data_items(mut self, input: crate::types::AttackStatisticsDataItem) -> Self {
         let mut v = self.data_items.unwrap_or_default();
-        v.push(input);
-        self.data_items = Some(v);
-        self
+                        v.push(input);
+                        self.data_items = Some(v);
+                        self
     }
     /// <p>The data that describes the attacks detected during the time period.</p>
-    pub fn set_data_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttackStatisticsDataItem>>,
-    ) -> Self {
-        self.data_items = input;
-        self
+    pub fn set_data_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttackStatisticsDataItem>>) -> Self {
+        self.data_items = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeAttackStatisticsOutput`](crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
+    pub fn build(self) -> crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
         crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput {
-            time_range: self.time_range,
-            data_items: self.data_items,
+            time_range: self.time_range
+            ,
+            data_items: self.data_items
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

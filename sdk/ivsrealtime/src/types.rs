@@ -24,3 +24,4 @@ pub mod builders;
 
 /// Error types that Amazon Interactive Video Service RealTime can respond with.
 pub mod error;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEntityInput {
+pub struct CreateEntityInput  {
     /// <p>The ID of the workspace that contains the entity.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -17,51 +17,41 @@ pub struct CreateEntityInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub components: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentRequest>,
-    >,
+    pub components: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ComponentRequest>>,
     /// <p>The ID of the entity's parent entity.</p>
     #[doc(hidden)]
     pub parent_entity_id: std::option::Option<std::string::String>,
     /// <p>Metadata that you can use to manage the entity.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> std::option::Option<& str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the entity.</p>
-    pub fn entity_name(&self) -> std::option::Option<&str> {
+    pub fn entity_name(&self) -> std::option::Option<& str> {
         self.entity_name.as_deref()
     }
     /// <p>The description of the entity.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ComponentRequest>,
-    > {
+    pub fn components(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::ComponentRequest>> {
         self.components.as_ref()
     }
     /// <p>The ID of the entity's parent entity.</p>
-    pub fn parent_entity_id(&self) -> std::option::Option<&str> {
+    pub fn parent_entity_id(&self) -> std::option::Option<& str> {
         self.parent_entity_id.as_deref()
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -80,12 +70,9 @@ pub struct CreateEntityInputBuilder {
     pub(crate) entity_id: std::option::Option<std::string::String>,
     pub(crate) entity_name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) components: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ComponentRequest>,
-    >,
+    pub(crate) components: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ComponentRequest>>,
     pub(crate) parent_entity_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateEntityInputBuilder {
     /// <p>The ID of the workspace that contains the entity.</p>
@@ -95,8 +82,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The ID of the workspace that contains the entity.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input;
-        self
+        self.workspace_id = input; self
     }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +91,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input;
-        self
+        self.entity_id = input; self
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +100,7 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The name of the entity.</p>
     pub fn set_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_name = input;
-        self
+        self.entity_name = input; self
     }
     /// <p>The description of the entity.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,33 +109,22 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The description of the entity.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Adds a key-value pair to `components`.
     ///
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn components(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::ComponentRequest,
-    ) -> Self {
+    pub fn components(mut self, k: impl Into<std::string::String>, v: crate::types::ComponentRequest) -> Self {
         let mut hash_map = self.components.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.components = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.components = Some(hash_map);
+                        self
     }
     /// <p>An object that maps strings to the components in the entity. Each string in the mapping must be unique to this object.</p>
-    pub fn set_components(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ComponentRequest>,
-        >,
-    ) -> Self {
-        self.components = input;
-        self
+    pub fn set_components(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ComponentRequest>>) -> Self {
+        self.components = input; self
     }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn parent_entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,49 +133,43 @@ impl CreateEntityInputBuilder {
     }
     /// <p>The ID of the entity's parent entity.</p>
     pub fn set_parent_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_entity_id = input;
-        self
+        self.parent_entity_id = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>Metadata that you can use to manage the entity.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`CreateEntityInput`](crate::operation::create_entity::CreateEntityInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_entity::CreateEntityInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_entity::CreateEntityInput {
-            workspace_id: self.workspace_id,
-            entity_id: self.entity_id,
-            entity_name: self.entity_name,
-            description: self.description,
-            components: self.components,
-            parent_entity_id: self.parent_entity_id,
-            tags: self.tags,
-        })
+    pub fn build(self) -> Result<crate::operation::create_entity::CreateEntityInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_entity::CreateEntityInput {
+                workspace_id: self.workspace_id
+                ,
+                entity_id: self.entity_id
+                ,
+                entity_name: self.entity_name
+                ,
+                description: self.description
+                ,
+                components: self.components
+                ,
+                parent_entity_id: self.parent_entity_id
+                ,
+                tags: self.tags
+                ,
+            }
+        )
     }
 }
+

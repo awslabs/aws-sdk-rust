@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let h264codecprofile = unimplemented!();
 /// match h264codecprofile {
@@ -34,22 +34,14 @@
 /// Specifically, when `h264codecprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264CodecProfile::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum H264CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
     Baseline,
@@ -64,57 +56,49 @@ pub enum H264CodecProfile {
     #[allow(missing_docs)] // documentation missing in model
     Main,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for H264CodecProfile {
-    fn from(s: &str) -> Self {
-        match s {
-            "BASELINE" => H264CodecProfile::Baseline,
-            "HIGH" => H264CodecProfile::High,
-            "HIGH_10BIT" => H264CodecProfile::High10Bit,
-            "HIGH_422" => H264CodecProfile::High422,
-            "HIGH_422_10BIT" => H264CodecProfile::High42210Bit,
-            "MAIN" => H264CodecProfile::Main,
-            other => {
-                H264CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BASELINE" => H264CodecProfile::Baseline,
+"HIGH" => H264CodecProfile::High,
+"HIGH_10BIT" => H264CodecProfile::High10Bit,
+"HIGH_422" => H264CodecProfile::High422,
+"HIGH_422_10BIT" => H264CodecProfile::High42210Bit,
+"MAIN" => H264CodecProfile::Main,
+other => H264CodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for H264CodecProfile {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264CodecProfile::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(H264CodecProfile::from(s))
+                }
+            }
 impl H264CodecProfile {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            H264CodecProfile::Baseline => "BASELINE",
-            H264CodecProfile::High => "HIGH",
-            H264CodecProfile::High10Bit => "HIGH_10BIT",
-            H264CodecProfile::High422 => "HIGH_422",
-            H264CodecProfile::High42210Bit => "HIGH_422_10BIT",
-            H264CodecProfile::Main => "MAIN",
-            H264CodecProfile::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BASELINE",
-            "HIGH",
-            "HIGH_10BIT",
-            "HIGH_422",
-            "HIGH_422_10BIT",
-            "MAIN",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    H264CodecProfile::Baseline => "BASELINE",
+    H264CodecProfile::High => "HIGH",
+    H264CodecProfile::High10Bit => "HIGH_10BIT",
+    H264CodecProfile::High422 => "HIGH_422",
+    H264CodecProfile::High42210Bit => "HIGH_422_10BIT",
+    H264CodecProfile::Main => "MAIN",
+    H264CodecProfile::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BASELINE", "HIGH", "HIGH_10BIT", "HIGH_422", "HIGH_422_10BIT", "MAIN"]
+                }
+            }
 impl AsRef<str> for H264CodecProfile {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

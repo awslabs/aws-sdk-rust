@@ -3,7 +3,7 @@
 /// <p>Configuration information for Organizations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationConfiguration {
+pub struct OrganizationConfiguration  {
     /// <p>Enables Organizations integration.</p>
     #[doc(hidden)]
     pub enable_integration: bool,
@@ -35,13 +35,15 @@ impl OrganizationConfigurationBuilder {
     }
     /// <p>Enables Organizations integration.</p>
     pub fn set_enable_integration(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_integration = input;
-        self
+        self.enable_integration = input; self
     }
     /// Consumes the builder and constructs a [`OrganizationConfiguration`](crate::types::OrganizationConfiguration).
     pub fn build(self) -> crate::types::OrganizationConfiguration {
         crate::types::OrganizationConfiguration {
-            enable_integration: self.enable_integration.unwrap_or_default(),
+            enable_integration: self.enable_integration
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

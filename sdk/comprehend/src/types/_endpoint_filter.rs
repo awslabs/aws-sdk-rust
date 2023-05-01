@@ -3,7 +3,7 @@
 /// <p>The filter used to determine which endpoints are returned. You can filter jobs on their name, model, status, or the date and time that they were created. You can only set one filter at a time. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointFilter {
+pub struct EndpointFilter  {
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct EndpointFilter {
 }
 impl EndpointFilter {
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
     /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::EndpointStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl EndpointFilterBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
     pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_arn = input;
-        self
+        self.model_arn = input; self
     }
     /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
     pub fn status(mut self, input: crate::types::EndpointStatus) -> Self {
@@ -69,8 +68,7 @@ impl EndpointFilterBuilder {
     }
     /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready, Updating, Deleting, Failed.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::EndpointStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -78,12 +76,8 @@ impl EndpointFilterBuilder {
         self
     }
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
     }
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,20 +85,21 @@ impl EndpointFilterBuilder {
         self
     }
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
     }
     /// Consumes the builder and constructs a [`EndpointFilter`](crate::types::EndpointFilter).
     pub fn build(self) -> crate::types::EndpointFilter {
         crate::types::EndpointFilter {
-            model_arn: self.model_arn,
-            status: self.status,
-            creation_time_before: self.creation_time_before,
-            creation_time_after: self.creation_time_after,
+            model_arn: self.model_arn
+            ,
+            status: self.status
+            ,
+            creation_time_before: self.creation_time_before
+            ,
+            creation_time_after: self.creation_time_after
+            ,
         }
     }
 }
+

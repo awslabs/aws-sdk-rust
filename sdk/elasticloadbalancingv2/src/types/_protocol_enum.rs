@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let protocolenum = unimplemented!();
 /// match protocolenum {
@@ -35,22 +35,14 @@
 /// Specifically, when `protocolenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProtocolEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProtocolEnum {
     #[allow(missing_docs)] // documentation missing in model
     Geneve,
@@ -67,52 +59,51 @@ pub enum ProtocolEnum {
     #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProtocolEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "GENEVE" => ProtocolEnum::Geneve,
-            "HTTP" => ProtocolEnum::Http,
-            "HTTPS" => ProtocolEnum::Https,
-            "TCP" => ProtocolEnum::Tcp,
-            "TCP_UDP" => ProtocolEnum::TcpUdp,
-            "TLS" => ProtocolEnum::Tls,
-            "UDP" => ProtocolEnum::Udp,
-            other => {
-                ProtocolEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "GENEVE" => ProtocolEnum::Geneve,
+"HTTP" => ProtocolEnum::Http,
+"HTTPS" => ProtocolEnum::Https,
+"TCP" => ProtocolEnum::Tcp,
+"TCP_UDP" => ProtocolEnum::TcpUdp,
+"TLS" => ProtocolEnum::Tls,
+"UDP" => ProtocolEnum::Udp,
+other => ProtocolEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for ProtocolEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProtocolEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProtocolEnum::from(s))
+                }
+            }
 impl ProtocolEnum {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ProtocolEnum::Geneve => "GENEVE",
-            ProtocolEnum::Http => "HTTP",
-            ProtocolEnum::Https => "HTTPS",
-            ProtocolEnum::Tcp => "TCP",
-            ProtocolEnum::TcpUdp => "TCP_UDP",
-            ProtocolEnum::Tls => "TLS",
-            ProtocolEnum::Udp => "UDP",
-            ProtocolEnum::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ProtocolEnum::Geneve => "GENEVE",
+    ProtocolEnum::Http => "HTTP",
+    ProtocolEnum::Https => "HTTPS",
+    ProtocolEnum::Tcp => "TCP",
+    ProtocolEnum::TcpUdp => "TCP_UDP",
+    ProtocolEnum::Tls => "TLS",
+    ProtocolEnum::Udp => "UDP",
+    ProtocolEnum::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["GENEVE", "HTTP", "HTTPS", "TCP", "TCP_UDP", "TLS", "UDP"]
+                }
+            }
 impl AsRef<str> for ProtocolEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

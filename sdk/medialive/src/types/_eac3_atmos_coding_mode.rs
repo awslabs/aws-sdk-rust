@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eac3atmoscodingmode = unimplemented!();
 /// match eac3atmoscodingmode {
@@ -31,22 +31,14 @@
 /// Specifically, when `eac3atmoscodingmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3AtmosCodingMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Eac3 Atmos Coding Mode
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Eac3AtmosCodingMode {
     #[allow(missing_docs)] // documentation missing in model
     CodingMode514,
@@ -55,48 +47,43 @@ pub enum Eac3AtmosCodingMode {
     #[allow(missing_docs)] // documentation missing in model
     CodingMode916,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Eac3AtmosCodingMode {
-    fn from(s: &str) -> Self {
-        match s {
-            "CODING_MODE_5_1_4" => Eac3AtmosCodingMode::CodingMode514,
-            "CODING_MODE_7_1_4" => Eac3AtmosCodingMode::CodingMode714,
-            "CODING_MODE_9_1_6" => Eac3AtmosCodingMode::CodingMode916,
-            other => Eac3AtmosCodingMode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CODING_MODE_5_1_4" => Eac3AtmosCodingMode::CodingMode514,
+"CODING_MODE_7_1_4" => Eac3AtmosCodingMode::CodingMode714,
+"CODING_MODE_9_1_6" => Eac3AtmosCodingMode::CodingMode916,
+other => Eac3AtmosCodingMode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Eac3AtmosCodingMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3AtmosCodingMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Eac3AtmosCodingMode::from(s))
+                }
+            }
 impl Eac3AtmosCodingMode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Eac3AtmosCodingMode::CodingMode514 => "CODING_MODE_5_1_4",
-            Eac3AtmosCodingMode::CodingMode714 => "CODING_MODE_7_1_4",
-            Eac3AtmosCodingMode::CodingMode916 => "CODING_MODE_9_1_6",
-            Eac3AtmosCodingMode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CODING_MODE_5_1_4",
-            "CODING_MODE_7_1_4",
-            "CODING_MODE_9_1_6",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Eac3AtmosCodingMode::CodingMode514 => "CODING_MODE_5_1_4",
+    Eac3AtmosCodingMode::CodingMode714 => "CODING_MODE_7_1_4",
+    Eac3AtmosCodingMode::CodingMode916 => "CODING_MODE_9_1_6",
+    Eac3AtmosCodingMode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CODING_MODE_5_1_4", "CODING_MODE_7_1_4", "CODING_MODE_9_1_6"]
+                }
+            }
 impl AsRef<str> for Eac3AtmosCodingMode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

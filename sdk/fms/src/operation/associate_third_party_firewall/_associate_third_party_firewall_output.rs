@@ -2,43 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateThirdPartyFirewallOutput {
-    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+pub struct AssociateThirdPartyFirewallOutput  {
+    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub third_party_firewall_status:
-        std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
+    pub third_party_firewall_status: std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     _request_id: Option<String>,
 }
 impl AssociateThirdPartyFirewallOutput {
-    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
-    pub fn third_party_firewall_status(
-        &self,
-    ) -> std::option::Option<&crate::types::ThirdPartyFirewallAssociationStatus> {
+    pub fn third_party_firewall_status(&self) -> std::option::Option<& crate::types::ThirdPartyFirewallAssociationStatus> {
         self.third_party_firewall_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateThirdPartyFirewallOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl AssociateThirdPartyFirewallOutput {
     /// Creates a new builder-style object to manufacture [`AssociateThirdPartyFirewallOutput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput).
-    pub fn builder() -> crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallOutputBuilder{
+    pub fn builder() -> crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallOutputBuilder {
         crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallOutputBuilder::default()
     }
 }
@@ -47,57 +44,49 @@ impl AssociateThirdPartyFirewallOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AssociateThirdPartyFirewallOutputBuilder {
-    pub(crate) third_party_firewall_status:
-        std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
+    pub(crate) third_party_firewall_status: std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
     _request_id: Option<String>,
 }
 impl AssociateThirdPartyFirewallOutputBuilder {
-    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
-    pub fn third_party_firewall_status(
-        mut self,
-        input: crate::types::ThirdPartyFirewallAssociationStatus,
-    ) -> Self {
+    pub fn third_party_firewall_status(mut self, input: crate::types::ThirdPartyFirewallAssociationStatus) -> Self {
         self.third_party_firewall_status = Some(input);
         self
     }
-    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p>
-    /// <ul>
-    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li>
-    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li>
+    /// <p>The current status for setting a Firewall Manager policy administrator's account as an administrator of the third-party firewall tenant.</p> 
+    /// <ul> 
+    /// <li> <p> <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been removed as a tenant administrator.</p> </li> 
+    /// <li> <p> <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist as a tenant administrator.</p> </li> 
     /// </ul>
-    pub fn set_third_party_firewall_status(
-        mut self,
-        input: std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>,
-    ) -> Self {
-        self.third_party_firewall_status = input;
-        self
+    pub fn set_third_party_firewall_status(mut self, input: std::option::Option<crate::types::ThirdPartyFirewallAssociationStatus>) -> Self {
+        self.third_party_firewall_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`AssociateThirdPartyFirewallOutput`](crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput {
+    pub fn build(self) -> crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput {
         crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput {
-            third_party_firewall_status: self.third_party_firewall_status,
+            third_party_firewall_status: self.third_party_firewall_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageInput {}
+pub struct DescribeStorageInput  {
+}
 impl DescribeStorageInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageInput`](crate::operation::describe_storage::DescribeStorageInput).
     pub fn builder() -> crate::operation::describe_storage::builders::DescribeStorageInputBuilder {
@@ -13,15 +14,15 @@ impl DescribeStorageInput {
 /// A builder for [`DescribeStorageInput`](crate::operation::describe_storage::DescribeStorageInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeStorageInputBuilder {}
+pub struct DescribeStorageInputBuilder {
+}
 impl DescribeStorageInputBuilder {
     /// Consumes the builder and constructs a [`DescribeStorageInput`](crate::operation::describe_storage::DescribeStorageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_storage::DescribeStorageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::describe_storage::DescribeStorageInput {})
+    pub fn build(self) -> Result<crate::operation::describe_storage::DescribeStorageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::describe_storage::DescribeStorageInput {
+            }
+        )
     }
 }
+

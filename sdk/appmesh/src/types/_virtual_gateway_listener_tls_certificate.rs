@@ -23,14 +23,8 @@ pub enum VirtualGatewayListenerTlsCertificate {
 impl VirtualGatewayListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Acm`](crate::types::VirtualGatewayListenerTlsCertificate::Acm), extracting the inner [`VirtualGatewayListenerTlsAcmCertificate`](crate::types::VirtualGatewayListenerTlsAcmCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(
-        &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsAcmCertificate, &Self> {
-        if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_acm(&self) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsAcmCertificate, &Self> {
+        if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Acm`](crate::types::VirtualGatewayListenerTlsCertificate::Acm).
     pub fn is_acm(&self) -> bool {
@@ -38,14 +32,8 @@ impl VirtualGatewayListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`File`](crate::types::VirtualGatewayListenerTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::types::VirtualGatewayListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
-        if let VirtualGatewayListenerTlsCertificate::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsFileCertificate, &Self> {
+        if let VirtualGatewayListenerTlsCertificate::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayListenerTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -53,14 +41,8 @@ impl VirtualGatewayListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::VirtualGatewayListenerTlsCertificate::Sds), extracting the inner [`VirtualGatewayListenerTlsSdsCertificate`](crate::types::VirtualGatewayListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
-        if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::types::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+        if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayListenerTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -71,3 +53,4 @@ impl VirtualGatewayListenerTlsCertificate {
         matches!(self, Self::Unknown)
     }
 }
+

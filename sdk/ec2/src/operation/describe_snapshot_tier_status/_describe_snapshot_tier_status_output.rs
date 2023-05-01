@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnapshotTierStatusOutput {
+pub struct DescribeSnapshotTierStatusOutput  {
     /// <p>Information about the snapshot's storage tier.</p>
     #[doc(hidden)]
-    pub snapshot_tier_statuses:
-        std::option::Option<std::vec::Vec<crate::types::SnapshotTierStatus>>,
+    pub snapshot_tier_statuses: std::option::Option<std::vec::Vec<crate::types::SnapshotTierStatus>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,24 +13,22 @@ pub struct DescribeSnapshotTierStatusOutput {
 }
 impl DescribeSnapshotTierStatusOutput {
     /// <p>Information about the snapshot's storage tier.</p>
-    pub fn snapshot_tier_statuses(
-        &self,
-    ) -> std::option::Option<&[crate::types::SnapshotTierStatus]> {
+    pub fn snapshot_tier_statuses(&self) -> std::option::Option<& [crate::types::SnapshotTierStatus]> {
         self.snapshot_tier_statuses.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSnapshotTierStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeSnapshotTierStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSnapshotTierStatusOutput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput).
-    pub fn builder() -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusOutputBuilder{
+    pub fn builder() -> crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusOutputBuilder {
         crate::operation::describe_snapshot_tier_status::builders::DescribeSnapshotTierStatusOutputBuilder::default()
     }
 }
@@ -40,8 +37,7 @@ impl DescribeSnapshotTierStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSnapshotTierStatusOutputBuilder {
-    pub(crate) snapshot_tier_statuses:
-        std::option::Option<std::vec::Vec<crate::types::SnapshotTierStatus>>,
+    pub(crate) snapshot_tier_statuses: std::option::Option<std::vec::Vec<crate::types::SnapshotTierStatus>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,17 +49,13 @@ impl DescribeSnapshotTierStatusOutputBuilder {
     /// <p>Information about the snapshot's storage tier.</p>
     pub fn snapshot_tier_statuses(mut self, input: crate::types::SnapshotTierStatus) -> Self {
         let mut v = self.snapshot_tier_statuses.unwrap_or_default();
-        v.push(input);
-        self.snapshot_tier_statuses = Some(v);
-        self
+                        v.push(input);
+                        self.snapshot_tier_statuses = Some(v);
+                        self
     }
     /// <p>Information about the snapshot's storage tier.</p>
-    pub fn set_snapshot_tier_statuses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SnapshotTierStatus>>,
-    ) -> Self {
-        self.snapshot_tier_statuses = input;
-        self
+    pub fn set_snapshot_tier_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::SnapshotTierStatus>>) -> Self {
+        self.snapshot_tier_statuses = input; self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,26 +64,26 @@ impl DescribeSnapshotTierStatusOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeSnapshotTierStatusOutput`](crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput {
+    pub fn build(self) -> crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput {
         crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput {
-            snapshot_tier_statuses: self.snapshot_tier_statuses,
-            next_token: self.next_token,
+            snapshot_tier_statuses: self.snapshot_tier_statuses
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Defines the compliance against the resiliency policy for a disruption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisruptionCompliance {
+pub struct DisruptionCompliance  {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
     #[doc(hidden)]
     pub achievable_rto_in_secs: i32,
@@ -45,11 +45,11 @@ impl DisruptionCompliance {
         self.current_rto_in_secs
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn rto_reference_id(&self) -> std::option::Option<&str> {
+    pub fn rto_reference_id(&self) -> std::option::Option<& str> {
         self.rto_reference_id.as_deref()
     }
     /// <p>The RTO description.</p>
-    pub fn rto_description(&self) -> std::option::Option<&str> {
+    pub fn rto_description(&self) -> std::option::Option<& str> {
         self.rto_description.as_deref()
     }
     /// <p>The current RPO, in seconds.</p>
@@ -57,15 +57,15 @@ impl DisruptionCompliance {
         self.current_rpo_in_secs
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn rpo_reference_id(&self) -> std::option::Option<&str> {
+    pub fn rpo_reference_id(&self) -> std::option::Option<& str> {
         self.rpo_reference_id.as_deref()
     }
     /// <p>The RPO description.</p>
-    pub fn rpo_description(&self) -> std::option::Option<&str> {
+    pub fn rpo_description(&self) -> std::option::Option<& str> {
         self.rpo_description.as_deref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn compliance_status(&self) -> std::option::Option<& crate::types::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
@@ -73,7 +73,7 @@ impl DisruptionCompliance {
         self.achievable_rpo_in_secs
     }
     /// <p>The disruption compliance message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -107,8 +107,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
     pub fn set_achievable_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-        self.achievable_rto_in_secs = input;
-        self
+        self.achievable_rto_in_secs = input; self
     }
     /// <p>The current RTO, in seconds.</p>
     pub fn current_rto_in_secs(mut self, input: i32) -> Self {
@@ -117,8 +116,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The current RTO, in seconds.</p>
     pub fn set_current_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-        self.current_rto_in_secs = input;
-        self
+        self.current_rto_in_secs = input; self
     }
     /// <p>The RTO reference identifier.</p>
     pub fn rto_reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +125,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The RTO reference identifier.</p>
     pub fn set_rto_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rto_reference_id = input;
-        self
+        self.rto_reference_id = input; self
     }
     /// <p>The RTO description.</p>
     pub fn rto_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +134,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The RTO description.</p>
     pub fn set_rto_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rto_description = input;
-        self
+        self.rto_description = input; self
     }
     /// <p>The current RPO, in seconds.</p>
     pub fn current_rpo_in_secs(mut self, input: i32) -> Self {
@@ -147,8 +143,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The current RPO, in seconds.</p>
     pub fn set_current_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-        self.current_rpo_in_secs = input;
-        self
+        self.current_rpo_in_secs = input; self
     }
     /// <p>The RPO reference identifier.</p>
     pub fn rpo_reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +152,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The RPO reference identifier.</p>
     pub fn set_rpo_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rpo_reference_id = input;
-        self
+        self.rpo_reference_id = input; self
     }
     /// <p>The RPO description.</p>
     pub fn rpo_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +161,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The RPO description.</p>
     pub fn set_rpo_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rpo_description = input;
-        self
+        self.rpo_description = input; self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
@@ -176,12 +169,8 @@ impl DisruptionComplianceBuilder {
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn set_compliance_status(
-        mut self,
-        input: std::option::Option<crate::types::ComplianceStatus>,
-    ) -> Self {
-        self.compliance_status = input;
-        self
+    pub fn set_compliance_status(mut self, input: std::option::Option<crate::types::ComplianceStatus>) -> Self {
+        self.compliance_status = input; self
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     pub fn achievable_rpo_in_secs(mut self, input: i32) -> Self {
@@ -190,8 +179,7 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     pub fn set_achievable_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
-        self.achievable_rpo_in_secs = input;
-        self
+        self.achievable_rpo_in_secs = input; self
     }
     /// <p>The disruption compliance message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,22 +188,36 @@ impl DisruptionComplianceBuilder {
     }
     /// <p>The disruption compliance message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`DisruptionCompliance`](crate::types::DisruptionCompliance).
     pub fn build(self) -> crate::types::DisruptionCompliance {
         crate::types::DisruptionCompliance {
-            achievable_rto_in_secs: self.achievable_rto_in_secs.unwrap_or_default(),
-            current_rto_in_secs: self.current_rto_in_secs.unwrap_or_default(),
-            rto_reference_id: self.rto_reference_id,
-            rto_description: self.rto_description,
-            current_rpo_in_secs: self.current_rpo_in_secs.unwrap_or_default(),
-            rpo_reference_id: self.rpo_reference_id,
-            rpo_description: self.rpo_description,
-            compliance_status: self.compliance_status,
-            achievable_rpo_in_secs: self.achievable_rpo_in_secs.unwrap_or_default(),
-            message: self.message,
+            achievable_rto_in_secs: self.achievable_rto_in_secs
+                .unwrap_or_default()
+            ,
+            current_rto_in_secs: self.current_rto_in_secs
+                .unwrap_or_default()
+            ,
+            rto_reference_id: self.rto_reference_id
+            ,
+            rto_description: self.rto_description
+            ,
+            current_rpo_in_secs: self.current_rpo_in_secs
+                .unwrap_or_default()
+            ,
+            rpo_reference_id: self.rpo_reference_id
+            ,
+            rpo_description: self.rpo_description
+            ,
+            compliance_status: self.compliance_status
+            ,
+            achievable_rpo_in_secs: self.achievable_rpo_in_secs
+                .unwrap_or_default()
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

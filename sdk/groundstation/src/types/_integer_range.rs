@@ -3,7 +3,7 @@
 /// <p>An integer range that has a minimum and maximum value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntegerRange {
+pub struct IntegerRange  {
     /// <p>A minimum value.</p>
     #[doc(hidden)]
     pub minimum: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl IntegerRangeBuilder {
     }
     /// <p>A minimum value.</p>
     pub fn set_minimum(mut self, input: std::option::Option<i32>) -> Self {
-        self.minimum = input;
-        self
+        self.minimum = input; self
     }
     /// <p>A maximum value.</p>
     pub fn maximum(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl IntegerRangeBuilder {
     }
     /// <p>A maximum value.</p>
     pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum = input;
-        self
+        self.maximum = input; self
     }
     /// Consumes the builder and constructs a [`IntegerRange`](crate::types::IntegerRange).
     pub fn build(self) -> crate::types::IntegerRange {
         crate::types::IntegerRange {
-            minimum: self.minimum,
-            maximum: self.maximum,
+            minimum: self.minimum
+            ,
+            maximum: self.maximum
+            ,
         }
     }
 }
+

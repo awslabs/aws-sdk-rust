@@ -3,7 +3,7 @@
 /// <p>The EBS field that contains a list of EBS metrics that are associated with the current instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsResourceUtilization {
+pub struct EbsResourceUtilization  {
     /// <p>The maximum number of read operations per second. </p>
     #[doc(hidden)]
     pub ebs_read_ops_per_second: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct EbsResourceUtilization {
 }
 impl EbsResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
-    pub fn ebs_read_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_read_ops_per_second(&self) -> std::option::Option<& str> {
         self.ebs_read_ops_per_second.as_deref()
     }
     /// <p>The maximum number of write operations per second. </p>
-    pub fn ebs_write_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_write_ops_per_second(&self) -> std::option::Option<& str> {
         self.ebs_write_ops_per_second.as_deref()
     }
     /// <p>The maximum size of read operations per second </p>
-    pub fn ebs_read_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_read_bytes_per_second(&self) -> std::option::Option<& str> {
         self.ebs_read_bytes_per_second.as_deref()
     }
     /// <p>The maximum size of write operations per second. </p>
-    pub fn ebs_write_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn ebs_write_bytes_per_second(&self) -> std::option::Option<& str> {
         self.ebs_write_bytes_per_second.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl EbsResourceUtilizationBuilder {
         self
     }
     /// <p>The maximum number of read operations per second. </p>
-    pub fn set_ebs_read_ops_per_second(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ebs_read_ops_per_second = input;
-        self
+    pub fn set_ebs_read_ops_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ebs_read_ops_per_second = input; self
     }
     /// <p>The maximum number of write operations per second. </p>
     pub fn ebs_write_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,12 +67,8 @@ impl EbsResourceUtilizationBuilder {
         self
     }
     /// <p>The maximum number of write operations per second. </p>
-    pub fn set_ebs_write_ops_per_second(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ebs_write_ops_per_second = input;
-        self
+    pub fn set_ebs_write_ops_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ebs_write_ops_per_second = input; self
     }
     /// <p>The maximum size of read operations per second </p>
     pub fn ebs_read_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,12 +76,8 @@ impl EbsResourceUtilizationBuilder {
         self
     }
     /// <p>The maximum size of read operations per second </p>
-    pub fn set_ebs_read_bytes_per_second(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ebs_read_bytes_per_second = input;
-        self
+    pub fn set_ebs_read_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ebs_read_bytes_per_second = input; self
     }
     /// <p>The maximum size of write operations per second. </p>
     pub fn ebs_write_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,20 +85,21 @@ impl EbsResourceUtilizationBuilder {
         self
     }
     /// <p>The maximum size of write operations per second. </p>
-    pub fn set_ebs_write_bytes_per_second(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ebs_write_bytes_per_second = input;
-        self
+    pub fn set_ebs_write_bytes_per_second(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ebs_write_bytes_per_second = input; self
     }
     /// Consumes the builder and constructs a [`EbsResourceUtilization`](crate::types::EbsResourceUtilization).
     pub fn build(self) -> crate::types::EbsResourceUtilization {
         crate::types::EbsResourceUtilization {
-            ebs_read_ops_per_second: self.ebs_read_ops_per_second,
-            ebs_write_ops_per_second: self.ebs_write_ops_per_second,
-            ebs_read_bytes_per_second: self.ebs_read_bytes_per_second,
-            ebs_write_bytes_per_second: self.ebs_write_bytes_per_second,
+            ebs_read_ops_per_second: self.ebs_read_ops_per_second
+            ,
+            ebs_write_ops_per_second: self.ebs_write_ops_per_second
+            ,
+            ebs_read_bytes_per_second: self.ebs_read_bytes_per_second
+            ,
+            ebs_write_bytes_per_second: self.ebs_write_bytes_per_second
+            ,
         }
     }
 }
+

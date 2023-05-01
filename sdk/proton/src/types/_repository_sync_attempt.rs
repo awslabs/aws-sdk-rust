@@ -3,7 +3,7 @@
 /// <p>Detail data for a repository sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositorySyncAttempt {
+pub struct RepositorySyncAttempt  {
     /// <p>The time when the sync attempt started.</p>
     #[doc(hidden)]
     pub started_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct RepositorySyncAttempt {
 }
 impl RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The sync attempt status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RepositorySyncStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::RepositorySyncStatus> {
         self.status.as_ref()
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::RepositorySyncEvent]> {
+    pub fn events(&self) -> std::option::Option<& [crate::types::RepositorySyncEvent]> {
         self.events.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl RepositorySyncAttemptBuilder {
         self
     }
     /// <p>The time when the sync attempt started.</p>
-    pub fn set_started_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.started_at = input;
-        self
+    pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input; self
     }
     /// <p>The sync attempt status.</p>
     pub fn status(mut self, input: crate::types::RepositorySyncStatus) -> Self {
@@ -63,12 +59,8 @@ impl RepositorySyncAttemptBuilder {
         self
     }
     /// <p>The sync attempt status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::RepositorySyncStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::RepositorySyncStatus>) -> Self {
+        self.status = input; self
     }
     /// Appends an item to `events`.
     ///
@@ -77,24 +69,24 @@ impl RepositorySyncAttemptBuilder {
     /// <p>Detail data for sync attempt events.</p>
     pub fn events(mut self, input: crate::types::RepositorySyncEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
-        v.push(input);
-        self.events = Some(v);
-        self
+                        v.push(input);
+                        self.events = Some(v);
+                        self
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn set_events(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositorySyncEvent>>,
-    ) -> Self {
-        self.events = input;
-        self
+    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::RepositorySyncEvent>>) -> Self {
+        self.events = input; self
     }
     /// Consumes the builder and constructs a [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).
     pub fn build(self) -> crate::types::RepositorySyncAttempt {
         crate::types::RepositorySyncAttempt {
-            started_at: self.started_at,
-            status: self.status,
-            events: self.events,
+            started_at: self.started_at
+            ,
+            status: self.status
+            ,
+            events: self.events
+            ,
         }
     }
 }
+

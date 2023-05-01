@@ -3,7 +3,7 @@
 /// <p>The PATCH request to grant a temporary extension to the remaining quota of a usage plan associated with a specified API key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUsageInput {
+pub struct UpdateUsageInput  {
     /// <p>The Id of the usage plan associated with the usage data.</p>
     #[doc(hidden)]
     pub usage_plan_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UpdateUsageInput {
 }
 impl UpdateUsageInput {
     /// <p>The Id of the usage plan associated with the usage data.</p>
-    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+    pub fn usage_plan_id(&self) -> std::option::Option<& str> {
         self.usage_plan_id.as_deref()
     }
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> std::option::Option<& [crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl UpdateUsageInputBuilder {
     }
     /// <p>The Id of the usage plan associated with the usage data.</p>
     pub fn set_usage_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_plan_id = input;
-        self
+        self.usage_plan_id = input; self
     }
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl UpdateUsageInputBuilder {
     }
     /// <p>The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input;
-        self
+        self.key_id = input; self
     }
     /// Appends an item to `patch_operations`.
     ///
@@ -71,29 +69,26 @@ impl UpdateUsageInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-        v.push(input);
-        self.patch_operations = Some(v);
-        self
+                        v.push(input);
+                        self.patch_operations = Some(v);
+                        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
-    ) -> Self {
-        self.patch_operations = input;
-        self
+    pub fn set_patch_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>) -> Self {
+        self.patch_operations = input; self
     }
     /// Consumes the builder and constructs a [`UpdateUsageInput`](crate::operation::update_usage::UpdateUsageInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_usage::UpdateUsageInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_usage::UpdateUsageInput {
-            usage_plan_id: self.usage_plan_id,
-            key_id: self.key_id,
-            patch_operations: self.patch_operations,
-        })
+    pub fn build(self) -> Result<crate::operation::update_usage::UpdateUsageInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_usage::UpdateUsageInput {
+                usage_plan_id: self.usage_plan_id
+                ,
+                key_id: self.key_id
+                ,
+                patch_operations: self.patch_operations
+                ,
+            }
+        )
     }
 }
+

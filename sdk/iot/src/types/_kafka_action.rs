@@ -3,7 +3,7 @@
 /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KafkaAction {
+pub struct KafkaAction  {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     #[doc(hidden)]
     pub destination_arn: std::option::Option<std::string::String>,
@@ -18,31 +18,27 @@ pub struct KafkaAction {
     pub partition: std::option::Option<std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
     #[doc(hidden)]
-    pub client_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The Kafka message key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Kafka message partition.</p>
-    pub fn partition(&self) -> std::option::Option<&str> {
+    pub fn partition(&self) -> std::option::Option<& str> {
         self.partition.as_deref()
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn client_properties(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn client_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.client_properties.as_ref()
     }
 }
@@ -61,8 +57,7 @@ pub struct KafkaActionBuilder {
     pub(crate) topic: std::option::Option<std::string::String>,
     pub(crate) key: std::option::Option<std::string::String>,
     pub(crate) partition: std::option::Option<std::string::String>,
-    pub(crate) client_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) client_properties: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KafkaActionBuilder {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
@@ -72,8 +67,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input;
-        self
+        self.destination_arn = input; self
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
     pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
     pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic = input;
-        self
+        self.topic = input; self
     }
     /// <p>The Kafka message key.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +85,7 @@ impl KafkaActionBuilder {
     }
     /// <p>The Kafka message key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The Kafka message partition.</p>
     pub fn partition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,42 +94,37 @@ impl KafkaActionBuilder {
     }
     /// <p>The Kafka message partition.</p>
     pub fn set_partition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partition = input;
-        self
+        self.partition = input; self
     }
     /// Adds a key-value pair to `client_properties`.
     ///
     /// To override the contents of this collection use [`set_client_properties`](Self::set_client_properties).
     ///
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn client_properties(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn client_properties(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.client_properties.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.client_properties = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.client_properties = Some(hash_map);
+                        self
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
-    pub fn set_client_properties(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.client_properties = input;
-        self
+    pub fn set_client_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.client_properties = input; self
     }
     /// Consumes the builder and constructs a [`KafkaAction`](crate::types::KafkaAction).
     pub fn build(self) -> crate::types::KafkaAction {
         crate::types::KafkaAction {
-            destination_arn: self.destination_arn,
-            topic: self.topic,
-            key: self.key,
-            partition: self.partition,
-            client_properties: self.client_properties,
+            destination_arn: self.destination_arn
+            ,
+            topic: self.topic
+            ,
+            key: self.key
+            ,
+            partition: self.partition
+            ,
+            client_properties: self.client_properties
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceOutput {
+pub struct GetInstanceOutput  {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
     #[doc(hidden)]
     pub instance: std::option::Option<crate::types::Instance>,
@@ -10,15 +10,15 @@ pub struct GetInstanceOutput {
 }
 impl GetInstanceOutput {
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
-    pub fn instance(&self) -> std::option::Option<&crate::types::Instance> {
+    pub fn instance(&self) -> std::option::Option<& crate::types::Instance> {
         self.instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput).
     pub fn builder() -> crate::operation::get_instance::builders::GetInstanceOutputBuilder {
@@ -41,23 +41,24 @@ impl GetInstanceOutputBuilder {
     }
     /// <p>An array of key-value pairs containing information about the specified instance.</p>
     pub fn set_instance(mut self, input: std::option::Option<crate::types::Instance>) -> Self {
-        self.instance = input;
-        self
+        self.instance = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetInstanceOutput`](crate::operation::get_instance::GetInstanceOutput).
     pub fn build(self) -> crate::operation::get_instance::GetInstanceOutput {
         crate::operation::get_instance::GetInstanceOutput {
-            instance: self.instance,
+            instance: self.instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

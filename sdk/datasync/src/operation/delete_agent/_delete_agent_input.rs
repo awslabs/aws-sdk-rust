@@ -3,14 +3,14 @@
 /// <p>DeleteAgentRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAgentInput {
+pub struct DeleteAgentInput  {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAgentInput {
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> std::option::Option<& str> {
         self.agent_arn.as_deref()
     }
 }
@@ -35,18 +35,16 @@ impl DeleteAgentInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code> operation to return a list of agents for your account and Amazon Web Services Region.</p>
     pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agent_arn = input;
-        self
+        self.agent_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeleteAgentInput`](crate::operation::delete_agent::DeleteAgentInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_agent::DeleteAgentInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_agent::DeleteAgentInput {
-            agent_arn: self.agent_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_agent::DeleteAgentInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_agent::DeleteAgentInput {
+                agent_arn: self.agent_arn
+                ,
+            }
+        )
     }
 }
+

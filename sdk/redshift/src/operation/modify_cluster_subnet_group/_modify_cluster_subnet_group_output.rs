@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterSubnetGroupOutput {
+pub struct ModifyClusterSubnetGroupOutput  {
     /// <p>Describes a subnet group.</p>
     #[doc(hidden)]
     pub cluster_subnet_group: std::option::Option<crate::types::ClusterSubnetGroup>,
@@ -10,18 +10,18 @@ pub struct ModifyClusterSubnetGroupOutput {
 }
 impl ModifyClusterSubnetGroupOutput {
     /// <p>Describes a subnet group.</p>
-    pub fn cluster_subnet_group(&self) -> std::option::Option<&crate::types::ClusterSubnetGroup> {
+    pub fn cluster_subnet_group(&self) -> std::option::Option<& crate::types::ClusterSubnetGroup> {
         self.cluster_subnet_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyClusterSubnetGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ModifyClusterSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterSubnetGroupOutput`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput).
-    pub fn builder() -> crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupOutputBuilder{
+    pub fn builder() -> crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupOutputBuilder {
         crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl ModifyClusterSubnetGroupOutputBuilder {
         self
     }
     /// <p>Describes a subnet group.</p>
-    pub fn set_cluster_subnet_group(
-        mut self,
-        input: std::option::Option<crate::types::ClusterSubnetGroup>,
-    ) -> Self {
-        self.cluster_subnet_group = input;
-        self
+    pub fn set_cluster_subnet_group(mut self, input: std::option::Option<crate::types::ClusterSubnetGroup>) -> Self {
+        self.cluster_subnet_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ModifyClusterSubnetGroupOutput`](crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput {
+    pub fn build(self) -> crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput {
         crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroupOutput {
-            cluster_subnet_group: self.cluster_subnet_group,
+            cluster_subnet_group: self.cluster_subnet_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

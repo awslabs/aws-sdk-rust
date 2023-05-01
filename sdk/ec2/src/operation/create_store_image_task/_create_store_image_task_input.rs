@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStoreImageTaskInput {
+pub struct CreateStoreImageTaskInput  {
     /// <p>The ID of the AMI.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct CreateStoreImageTaskInput {
 }
 impl CreateStoreImageTaskInput {
     /// <p>The ID of the AMI.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn s3_object_tags(&self) -> std::option::Option<&[crate::types::S3ObjectTag]> {
+    pub fn s3_object_tags(&self) -> std::option::Option<& [crate::types::S3ObjectTag]> {
         self.s3_object_tags.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,8 +36,7 @@ impl CreateStoreImageTaskInput {
 }
 impl CreateStoreImageTaskInput {
     /// Creates a new builder-style object to manufacture [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
-    pub fn builder(
-    ) -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder {
+    pub fn builder() -> crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder {
         crate::operation::create_store_image_task::builders::CreateStoreImageTaskInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl CreateStoreImageTaskInputBuilder {
     }
     /// <p>The ID of the AMI.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input;
-        self
+        self.image_id = input; self
     }
     /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl CreateStoreImageTaskInputBuilder {
     }
     /// <p>The name of the Amazon S3 bucket in which the AMI object will be stored. The bucket must be in the Region in which the request is being made. The AMI object appears in the bucket only after the upload task has completed. </p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// Appends an item to `s3_object_tags`.
     ///
@@ -79,17 +76,13 @@ impl CreateStoreImageTaskInputBuilder {
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
     pub fn s3_object_tags(mut self, input: crate::types::S3ObjectTag) -> Self {
         let mut v = self.s3_object_tags.unwrap_or_default();
-        v.push(input);
-        self.s3_object_tags = Some(v);
-        self
+                        v.push(input);
+                        self.s3_object_tags = Some(v);
+                        self
     }
     /// <p>The tags to apply to the AMI object that will be stored in the Amazon S3 bucket. </p>
-    pub fn set_s3_object_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3ObjectTag>>,
-    ) -> Self {
-        self.s3_object_tags = input;
-        self
+    pub fn set_s3_object_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::S3ObjectTag>>) -> Self {
+        self.s3_object_tags = input; self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -98,23 +91,22 @@ impl CreateStoreImageTaskInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`CreateStoreImageTaskInput`](crate::operation::create_store_image_task::CreateStoreImageTaskInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_store_image_task::CreateStoreImageTaskInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_store_image_task::CreateStoreImageTaskInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_store_image_task::CreateStoreImageTaskInput {
-                image_id: self.image_id,
-                bucket: self.bucket,
-                s3_object_tags: self.s3_object_tags,
-                dry_run: self.dry_run,
-            },
+                image_id: self.image_id
+                ,
+                bucket: self.bucket
+                ,
+                s3_object_tags: self.s3_object_tags
+                ,
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

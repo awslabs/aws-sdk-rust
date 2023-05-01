@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReturnShippingLabelOutput {
+pub struct CreateReturnShippingLabelOutput  {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ShippingLabelStatus>,
@@ -10,18 +10,18 @@ pub struct CreateReturnShippingLabelOutput {
 }
 impl CreateReturnShippingLabelOutput {
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ShippingLabelStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ShippingLabelStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateReturnShippingLabelOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateReturnShippingLabelOutput {
     /// Creates a new builder-style object to manufacture [`CreateReturnShippingLabelOutput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput).
-    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder{
+    pub fn builder() -> crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder {
         crate::operation::create_return_shipping_label::builders::CreateReturnShippingLabelOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl CreateReturnShippingLabelOutputBuilder {
         self
     }
     /// <p>The status information of the task on a Snow device that is being returned to Amazon Web Services.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ShippingLabelStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ShippingLabelStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateReturnShippingLabelOutput`](crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput {
+    pub fn build(self) -> crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput {
         crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput {
-            status: self.status,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Information about a Savings Plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlan {
+pub struct SavingsPlan  {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
@@ -57,72 +57,71 @@ pub struct SavingsPlan {
     pub term_duration_in_seconds: i64,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SavingsPlan {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+    pub fn savings_plan_id(&self) -> std::option::Option<& str> {
         self.savings_plan_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
-    pub fn savings_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn savings_plan_arn(&self) -> std::option::Option<& str> {
         self.savings_plan_arn.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The start time.</p>
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
     /// <p>The end time.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
     /// <p>The state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::SavingsPlanState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::SavingsPlanState> {
         self.state.as_ref()
     }
     /// <p>The AWS Region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The EC2 instance family.</p>
-    pub fn ec2_instance_family(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_family(&self) -> std::option::Option<& str> {
         self.ec2_instance_family.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn savings_plan_type(&self) -> std::option::Option<&crate::types::SavingsPlanType> {
+    pub fn savings_plan_type(&self) -> std::option::Option<& crate::types::SavingsPlanType> {
         self.savings_plan_type.as_ref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::types::SavingsPlanPaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::types::SavingsPlanPaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The product types.</p>
-    pub fn product_types(&self) -> std::option::Option<&[crate::types::SavingsPlanProductType]> {
+    pub fn product_types(&self) -> std::option::Option<& [crate::types::SavingsPlanProductType]> {
         self.product_types.as_deref()
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::types::CurrencyCode> {
+    pub fn currency(&self) -> std::option::Option<& crate::types::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The hourly commitment, in USD.</p>
-    pub fn commitment(&self) -> std::option::Option<&str> {
+    pub fn commitment(&self) -> std::option::Option<& str> {
         self.commitment.as_deref()
     }
     /// <p>The up-front payment amount.</p>
-    pub fn upfront_payment_amount(&self) -> std::option::Option<&str> {
+    pub fn upfront_payment_amount(&self) -> std::option::Option<& str> {
         self.upfront_payment_amount.as_deref()
     }
     /// <p>The recurring payment amount.</p>
-    pub fn recurring_payment_amount(&self) -> std::option::Option<&str> {
+    pub fn recurring_payment_amount(&self) -> std::option::Option<& str> {
         self.recurring_payment_amount.as_deref()
     }
     /// <p>The duration of the term, in seconds.</p>
@@ -130,10 +129,7 @@ impl SavingsPlan {
         self.term_duration_in_seconds
     }
     /// <p>One or more tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -159,15 +155,13 @@ pub struct SavingsPlanBuilder {
     pub(crate) ec2_instance_family: std::option::Option<std::string::String>,
     pub(crate) savings_plan_type: std::option::Option<crate::types::SavingsPlanType>,
     pub(crate) payment_option: std::option::Option<crate::types::SavingsPlanPaymentOption>,
-    pub(crate) product_types:
-        std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>,
+    pub(crate) product_types: std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>,
     pub(crate) currency: std::option::Option<crate::types::CurrencyCode>,
     pub(crate) commitment: std::option::Option<std::string::String>,
     pub(crate) upfront_payment_amount: std::option::Option<std::string::String>,
     pub(crate) recurring_payment_amount: std::option::Option<std::string::String>,
     pub(crate) term_duration_in_seconds: std::option::Option<i64>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SavingsPlanBuilder {
     /// <p>The ID of the offering.</p>
@@ -177,8 +171,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The ID of the offering.</p>
     pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_id = input;
-        self
+        self.offering_id = input; self
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn savings_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,8 +180,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The ID of the Savings Plan.</p>
     pub fn set_savings_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.savings_plan_id = input;
-        self
+        self.savings_plan_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
     pub fn savings_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,8 +189,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
     pub fn set_savings_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.savings_plan_arn = input;
-        self
+        self.savings_plan_arn = input; self
     }
     /// <p>The description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,8 +198,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The start time.</p>
     pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -217,8 +207,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The start time.</p>
     pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start = input;
-        self
+        self.start = input; self
     }
     /// <p>The end time.</p>
     pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,8 +216,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The end time.</p>
     pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end = input;
-        self
+        self.end = input; self
     }
     /// <p>The state.</p>
     pub fn state(mut self, input: crate::types::SavingsPlanState) -> Self {
@@ -237,8 +225,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The state.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::SavingsPlanState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// <p>The AWS Region.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,8 +234,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The AWS Region.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input;
-        self
+        self.region = input; self
     }
     /// <p>The EC2 instance family.</p>
     pub fn ec2_instance_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,12 +242,8 @@ impl SavingsPlanBuilder {
         self
     }
     /// <p>The EC2 instance family.</p>
-    pub fn set_ec2_instance_family(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.ec2_instance_family = input;
-        self
+    pub fn set_ec2_instance_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.ec2_instance_family = input; self
     }
     /// <p>The plan type.</p>
     pub fn savings_plan_type(mut self, input: crate::types::SavingsPlanType) -> Self {
@@ -269,12 +251,8 @@ impl SavingsPlanBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_savings_plan_type(
-        mut self,
-        input: std::option::Option<crate::types::SavingsPlanType>,
-    ) -> Self {
-        self.savings_plan_type = input;
-        self
+    pub fn set_savings_plan_type(mut self, input: std::option::Option<crate::types::SavingsPlanType>) -> Self {
+        self.savings_plan_type = input; self
     }
     /// <p>The payment option.</p>
     pub fn payment_option(mut self, input: crate::types::SavingsPlanPaymentOption) -> Self {
@@ -282,12 +260,8 @@ impl SavingsPlanBuilder {
         self
     }
     /// <p>The payment option.</p>
-    pub fn set_payment_option(
-        mut self,
-        input: std::option::Option<crate::types::SavingsPlanPaymentOption>,
-    ) -> Self {
-        self.payment_option = input;
-        self
+    pub fn set_payment_option(mut self, input: std::option::Option<crate::types::SavingsPlanPaymentOption>) -> Self {
+        self.payment_option = input; self
     }
     /// Appends an item to `product_types`.
     ///
@@ -296,17 +270,13 @@ impl SavingsPlanBuilder {
     /// <p>The product types.</p>
     pub fn product_types(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         let mut v = self.product_types.unwrap_or_default();
-        v.push(input);
-        self.product_types = Some(v);
-        self
+                        v.push(input);
+                        self.product_types = Some(v);
+                        self
     }
     /// <p>The product types.</p>
-    pub fn set_product_types(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>,
-    ) -> Self {
-        self.product_types = input;
-        self
+    pub fn set_product_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>) -> Self {
+        self.product_types = input; self
     }
     /// <p>The currency.</p>
     pub fn currency(mut self, input: crate::types::CurrencyCode) -> Self {
@@ -315,8 +285,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The currency.</p>
     pub fn set_currency(mut self, input: std::option::Option<crate::types::CurrencyCode>) -> Self {
-        self.currency = input;
-        self
+        self.currency = input; self
     }
     /// <p>The hourly commitment, in USD.</p>
     pub fn commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -325,8 +294,7 @@ impl SavingsPlanBuilder {
     }
     /// <p>The hourly commitment, in USD.</p>
     pub fn set_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commitment = input;
-        self
+        self.commitment = input; self
     }
     /// <p>The up-front payment amount.</p>
     pub fn upfront_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -334,12 +302,8 @@ impl SavingsPlanBuilder {
         self
     }
     /// <p>The up-front payment amount.</p>
-    pub fn set_upfront_payment_amount(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.upfront_payment_amount = input;
-        self
+    pub fn set_upfront_payment_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.upfront_payment_amount = input; self
     }
     /// <p>The recurring payment amount.</p>
     pub fn recurring_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -347,12 +311,8 @@ impl SavingsPlanBuilder {
         self
     }
     /// <p>The recurring payment amount.</p>
-    pub fn set_recurring_payment_amount(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recurring_payment_amount = input;
-        self
+    pub fn set_recurring_payment_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recurring_payment_amount = input; self
     }
     /// <p>The duration of the term, in seconds.</p>
     pub fn term_duration_in_seconds(mut self, input: i64) -> Self {
@@ -361,55 +321,64 @@ impl SavingsPlanBuilder {
     }
     /// <p>The duration of the term, in seconds.</p>
     pub fn set_term_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.term_duration_in_seconds = input;
-        self
+        self.term_duration_in_seconds = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>One or more tags.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`SavingsPlan`](crate::types::SavingsPlan).
     pub fn build(self) -> crate::types::SavingsPlan {
         crate::types::SavingsPlan {
-            offering_id: self.offering_id,
-            savings_plan_id: self.savings_plan_id,
-            savings_plan_arn: self.savings_plan_arn,
-            description: self.description,
-            start: self.start,
-            end: self.end,
-            state: self.state,
-            region: self.region,
-            ec2_instance_family: self.ec2_instance_family,
-            savings_plan_type: self.savings_plan_type,
-            payment_option: self.payment_option,
-            product_types: self.product_types,
-            currency: self.currency,
-            commitment: self.commitment,
-            upfront_payment_amount: self.upfront_payment_amount,
-            recurring_payment_amount: self.recurring_payment_amount,
-            term_duration_in_seconds: self.term_duration_in_seconds.unwrap_or_default(),
-            tags: self.tags,
+            offering_id: self.offering_id
+            ,
+            savings_plan_id: self.savings_plan_id
+            ,
+            savings_plan_arn: self.savings_plan_arn
+            ,
+            description: self.description
+            ,
+            start: self.start
+            ,
+            end: self.end
+            ,
+            state: self.state
+            ,
+            region: self.region
+            ,
+            ec2_instance_family: self.ec2_instance_family
+            ,
+            savings_plan_type: self.savings_plan_type
+            ,
+            payment_option: self.payment_option
+            ,
+            product_types: self.product_types
+            ,
+            currency: self.currency
+            ,
+            commitment: self.commitment
+            ,
+            upfront_payment_amount: self.upfront_payment_amount
+            ,
+            recurring_payment_amount: self.recurring_payment_amount
+            ,
+            term_duration_in_seconds: self.term_duration_in_seconds
+                .unwrap_or_default()
+            ,
+            tags: self.tags
+            ,
         }
     }
 }
+

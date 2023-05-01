@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantFlowEntitlementsOutput {
+pub struct GrantFlowEntitlementsOutput  {
     /// The entitlements that were just granted.
     #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::types::Entitlement>>,
@@ -13,24 +13,22 @@ pub struct GrantFlowEntitlementsOutput {
 }
 impl GrantFlowEntitlementsOutput {
     /// The entitlements that were just granted.
-    pub fn entitlements(&self) -> std::option::Option<&[crate::types::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::types::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// The ARN of the flow that these entitlements were granted to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GrantFlowEntitlementsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GrantFlowEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`GrantFlowEntitlementsOutput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput).
-    pub fn builder(
-    ) -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder {
         crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl GrantFlowEntitlementsOutputBuilder {
     /// The entitlements that were just granted.
     pub fn entitlements(mut self, input: crate::types::Entitlement) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-        v.push(input);
-        self.entitlements = Some(v);
-        self
+                        v.push(input);
+                        self.entitlements = Some(v);
+                        self
     }
     /// The entitlements that were just granted.
-    pub fn set_entitlements(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>,
-    ) -> Self {
-        self.entitlements = input;
-        self
+    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>) -> Self {
+        self.entitlements = input; self
     }
     /// The ARN of the flow that these entitlements were granted to.
     pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl GrantFlowEntitlementsOutputBuilder {
     }
     /// The ARN of the flow that these entitlements were granted to.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input;
-        self
+        self.flow_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GrantFlowEntitlementsOutput`](crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput).
     pub fn build(self) -> crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput {
         crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput {
-            entitlements: self.entitlements,
-            flow_arn: self.flow_arn,
+            entitlements: self.entitlements
+            ,
+            flow_arn: self.flow_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

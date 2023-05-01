@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainDeliverabilityTrackingOption {
+pub struct DomainDeliverabilityTrackingOption  {
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -12,22 +12,19 @@ pub struct DomainDeliverabilityTrackingOption {
     pub subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
     #[doc(hidden)]
-    pub inbox_placement_tracking_option:
-        std::option::Option<crate::types::InboxPlacementTrackingOption>,
+    pub inbox_placement_tracking_option: std::option::Option<crate::types::InboxPlacementTrackingOption>,
 }
 impl DomainDeliverabilityTrackingOption {
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscription_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.subscription_start_date.as_ref()
     }
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-    pub fn inbox_placement_tracking_option(
-        &self,
-    ) -> std::option::Option<&crate::types::InboxPlacementTrackingOption> {
+    pub fn inbox_placement_tracking_option(&self) -> std::option::Option<& crate::types::InboxPlacementTrackingOption> {
         self.inbox_placement_tracking_option.as_ref()
     }
 }
@@ -44,8 +41,7 @@ impl DomainDeliverabilityTrackingOption {
 pub struct DomainDeliverabilityTrackingOptionBuilder {
     pub(crate) domain: std::option::Option<std::string::String>,
     pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) inbox_placement_tracking_option:
-        std::option::Option<crate::types::InboxPlacementTrackingOption>,
+    pub(crate) inbox_placement_tracking_option: std::option::Option<crate::types::InboxPlacementTrackingOption>,
 }
 impl DomainDeliverabilityTrackingOptionBuilder {
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
@@ -55,8 +51,7 @@ impl DomainDeliverabilityTrackingOptionBuilder {
     }
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input;
-        self
+        self.domain = input; self
     }
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
     pub fn subscription_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -64,35 +59,28 @@ impl DomainDeliverabilityTrackingOptionBuilder {
         self
     }
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
-    pub fn set_subscription_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.subscription_start_date = input;
-        self
+    pub fn set_subscription_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.subscription_start_date = input; self
     }
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-    pub fn inbox_placement_tracking_option(
-        mut self,
-        input: crate::types::InboxPlacementTrackingOption,
-    ) -> Self {
+    pub fn inbox_placement_tracking_option(mut self, input: crate::types::InboxPlacementTrackingOption) -> Self {
         self.inbox_placement_tracking_option = Some(input);
         self
     }
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-    pub fn set_inbox_placement_tracking_option(
-        mut self,
-        input: std::option::Option<crate::types::InboxPlacementTrackingOption>,
-    ) -> Self {
-        self.inbox_placement_tracking_option = input;
-        self
+    pub fn set_inbox_placement_tracking_option(mut self, input: std::option::Option<crate::types::InboxPlacementTrackingOption>) -> Self {
+        self.inbox_placement_tracking_option = input; self
     }
     /// Consumes the builder and constructs a [`DomainDeliverabilityTrackingOption`](crate::types::DomainDeliverabilityTrackingOption).
     pub fn build(self) -> crate::types::DomainDeliverabilityTrackingOption {
         crate::types::DomainDeliverabilityTrackingOption {
-            domain: self.domain,
-            subscription_start_date: self.subscription_start_date,
-            inbox_placement_tracking_option: self.inbox_placement_tracking_option,
+            domain: self.domain
+            ,
+            subscription_start_date: self.subscription_start_date
+            ,
+            inbox_placement_tracking_option: self.inbox_placement_tracking_option
+            ,
         }
     }
 }
+

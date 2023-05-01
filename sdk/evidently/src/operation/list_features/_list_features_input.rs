@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFeaturesInput {
+pub struct ListFeaturesInput  {
     /// <p>The name or ARN of the project to return the feature list from.</p>
     #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListFeaturesInput {
 }
 impl ListFeaturesInput {
     /// <p>The name or ARN of the project to return the feature list from.</p>
-    pub fn project(&self) -> std::option::Option<&str> {
+    pub fn project(&self) -> std::option::Option<& str> {
         self.project.as_deref()
     }
     /// <p>The maximum number of results to include in the response.</p>
@@ -23,7 +23,7 @@ impl ListFeaturesInput {
         self.max_results
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -50,8 +50,7 @@ impl ListFeaturesInputBuilder {
     }
     /// <p>The name or ARN of the project to return the feature list from.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input;
-        self
+        self.project = input; self
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,8 +59,7 @@ impl ListFeaturesInputBuilder {
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,20 +68,20 @@ impl ListFeaturesInputBuilder {
     }
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListFeaturesInput`](crate::operation::list_features::ListFeaturesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_features::ListFeaturesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_features::ListFeaturesInput {
-            project: self.project,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_features::ListFeaturesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_features::ListFeaturesInput {
+                project: self.project
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

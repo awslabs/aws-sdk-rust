@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -113,22 +113,14 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     CapacityReservation,
@@ -301,314 +293,207 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     VpnGateway,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
-    fn from(s: &str) -> Self {
-        match s {
-            "capacity-reservation" => ResourceType::CapacityReservation,
-            "capacity-reservation-fleet" => ResourceType::CapacityReservationFleet,
-            "carrier-gateway" => ResourceType::CarrierGateway,
-            "client-vpn-endpoint" => ResourceType::ClientVpnEndpoint,
-            "coip-pool" => ResourceType::CoipPool,
-            "customer-gateway" => ResourceType::CustomerGateway,
-            "dedicated-host" => ResourceType::DedicatedHost,
-            "dhcp-options" => ResourceType::DhcpOptions,
-            "egress-only-internet-gateway" => ResourceType::EgressOnlyInternetGateway,
-            "elastic-gpu" => ResourceType::ElasticGpu,
-            "elastic-ip" => ResourceType::ElasticIp,
-            "export-image-task" => ResourceType::ExportImageTask,
-            "export-instance-task" => ResourceType::ExportInstanceTask,
-            "fleet" => ResourceType::Fleet,
-            "fpga-image" => ResourceType::FpgaImage,
-            "host-reservation" => ResourceType::HostReservation,
-            "image" => ResourceType::Image,
-            "import-image-task" => ResourceType::ImportImageTask,
-            "import-snapshot-task" => ResourceType::ImportSnapshotTask,
-            "instance" => ResourceType::Instance,
-            "instance-event-window" => ResourceType::InstanceEventWindow,
-            "internet-gateway" => ResourceType::InternetGateway,
-            "ipam" => ResourceType::Ipam,
-            "ipam-pool" => ResourceType::IpamPool,
-            "ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
-            "ipam-resource-discovery-association" => ResourceType::IpamResourceDiscoveryAssociation,
-            "ipam-scope" => ResourceType::IpamScope,
-            "ipv4pool-ec2" => ResourceType::Ipv4poolEc2,
-            "ipv6pool-ec2" => ResourceType::Ipv6poolEc2,
-            "key-pair" => ResourceType::KeyPair,
-            "launch-template" => ResourceType::LaunchTemplate,
-            "local-gateway" => ResourceType::LocalGateway,
-            "local-gateway-route-table" => ResourceType::LocalGatewayRouteTable,
-            "local-gateway-route-table-virtual-interface-group-association" => {
-                ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation
+                fn from(s: &str) -> Self {
+                    match s {
+                        "capacity-reservation" => ResourceType::CapacityReservation,
+"capacity-reservation-fleet" => ResourceType::CapacityReservationFleet,
+"carrier-gateway" => ResourceType::CarrierGateway,
+"client-vpn-endpoint" => ResourceType::ClientVpnEndpoint,
+"coip-pool" => ResourceType::CoipPool,
+"customer-gateway" => ResourceType::CustomerGateway,
+"dedicated-host" => ResourceType::DedicatedHost,
+"dhcp-options" => ResourceType::DhcpOptions,
+"egress-only-internet-gateway" => ResourceType::EgressOnlyInternetGateway,
+"elastic-gpu" => ResourceType::ElasticGpu,
+"elastic-ip" => ResourceType::ElasticIp,
+"export-image-task" => ResourceType::ExportImageTask,
+"export-instance-task" => ResourceType::ExportInstanceTask,
+"fleet" => ResourceType::Fleet,
+"fpga-image" => ResourceType::FpgaImage,
+"host-reservation" => ResourceType::HostReservation,
+"image" => ResourceType::Image,
+"import-image-task" => ResourceType::ImportImageTask,
+"import-snapshot-task" => ResourceType::ImportSnapshotTask,
+"instance" => ResourceType::Instance,
+"instance-event-window" => ResourceType::InstanceEventWindow,
+"internet-gateway" => ResourceType::InternetGateway,
+"ipam" => ResourceType::Ipam,
+"ipam-pool" => ResourceType::IpamPool,
+"ipam-resource-discovery" => ResourceType::IpamResourceDiscovery,
+"ipam-resource-discovery-association" => ResourceType::IpamResourceDiscoveryAssociation,
+"ipam-scope" => ResourceType::IpamScope,
+"ipv4pool-ec2" => ResourceType::Ipv4poolEc2,
+"ipv6pool-ec2" => ResourceType::Ipv6poolEc2,
+"key-pair" => ResourceType::KeyPair,
+"launch-template" => ResourceType::LaunchTemplate,
+"local-gateway" => ResourceType::LocalGateway,
+"local-gateway-route-table" => ResourceType::LocalGatewayRouteTable,
+"local-gateway-route-table-virtual-interface-group-association" => ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+"local-gateway-route-table-vpc-association" => ResourceType::LocalGatewayRouteTableVpcAssociation,
+"local-gateway-virtual-interface" => ResourceType::LocalGatewayVirtualInterface,
+"local-gateway-virtual-interface-group" => ResourceType::LocalGatewayVirtualInterfaceGroup,
+"natgateway" => ResourceType::Natgateway,
+"network-acl" => ResourceType::NetworkAcl,
+"network-insights-access-scope" => ResourceType::NetworkInsightsAccessScope,
+"network-insights-access-scope-analysis" => ResourceType::NetworkInsightsAccessScopeAnalysis,
+"network-insights-analysis" => ResourceType::NetworkInsightsAnalysis,
+"network-insights-path" => ResourceType::NetworkInsightsPath,
+"network-interface" => ResourceType::NetworkInterface,
+"placement-group" => ResourceType::PlacementGroup,
+"prefix-list" => ResourceType::PrefixList,
+"replace-root-volume-task" => ResourceType::ReplaceRootVolumeTask,
+"reserved-instances" => ResourceType::ReservedInstances,
+"route-table" => ResourceType::RouteTable,
+"security-group" => ResourceType::SecurityGroup,
+"security-group-rule" => ResourceType::SecurityGroupRule,
+"snapshot" => ResourceType::Snapshot,
+"spot-fleet-request" => ResourceType::SpotFleetRequest,
+"spot-instances-request" => ResourceType::SpotInstancesRequest,
+"subnet" => ResourceType::Subnet,
+"subnet-cidr-reservation" => ResourceType::SubnetCidrReservation,
+"traffic-mirror-filter" => ResourceType::TrafficMirrorFilter,
+"traffic-mirror-filter-rule" => ResourceType::TrafficMirrorFilterRule,
+"traffic-mirror-session" => ResourceType::TrafficMirrorSession,
+"traffic-mirror-target" => ResourceType::TrafficMirrorTarget,
+"transit-gateway" => ResourceType::TransitGateway,
+"transit-gateway-attachment" => ResourceType::TransitGatewayAttachment,
+"transit-gateway-connect-peer" => ResourceType::TransitGatewayConnectPeer,
+"transit-gateway-multicast-domain" => ResourceType::TransitGatewayMulticastDomain,
+"transit-gateway-policy-table" => ResourceType::TransitGatewayPolicyTable,
+"transit-gateway-route-table" => ResourceType::TransitGatewayRouteTable,
+"transit-gateway-route-table-announcement" => ResourceType::TransitGatewayRouteTableAnnouncement,
+"verified-access-endpoint" => ResourceType::VerifiedAccessEndpoint,
+"verified-access-group" => ResourceType::VerifiedAccessGroup,
+"verified-access-instance" => ResourceType::VerifiedAccessInstance,
+"verified-access-policy" => ResourceType::VerifiedAccessPolicy,
+"verified-access-trust-provider" => ResourceType::VerifiedAccessTrustProvider,
+"volume" => ResourceType::Volume,
+"vpc" => ResourceType::Vpc,
+"vpc-block-public-access-exclusion" => ResourceType::VpcBlockPublicAccessExclusion,
+"vpc-endpoint" => ResourceType::VpcEndpoint,
+"vpc-endpoint-connection" => ResourceType::VpcEndpointConnection,
+"vpc-endpoint-connection-device-type" => ResourceType::VpcEndpointConnectionDeviceType,
+"vpc-endpoint-service" => ResourceType::VpcEndpointService,
+"vpc-endpoint-service-permission" => ResourceType::VpcEndpointServicePermission,
+"vpc-flow-log" => ResourceType::VpcFlowLog,
+"vpc-peering-connection" => ResourceType::VpcPeeringConnection,
+"vpn-connection" => ResourceType::VpnConnection,
+"vpn-connection-device-type" => ResourceType::VpnConnectionDeviceType,
+"vpn-gateway" => ResourceType::VpnGateway,
+other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "local-gateway-route-table-vpc-association" => {
-                ResourceType::LocalGatewayRouteTableVpcAssociation
-            }
-            "local-gateway-virtual-interface" => ResourceType::LocalGatewayVirtualInterface,
-            "local-gateway-virtual-interface-group" => {
-                ResourceType::LocalGatewayVirtualInterfaceGroup
-            }
-            "natgateway" => ResourceType::Natgateway,
-            "network-acl" => ResourceType::NetworkAcl,
-            "network-insights-access-scope" => ResourceType::NetworkInsightsAccessScope,
-            "network-insights-access-scope-analysis" => {
-                ResourceType::NetworkInsightsAccessScopeAnalysis
-            }
-            "network-insights-analysis" => ResourceType::NetworkInsightsAnalysis,
-            "network-insights-path" => ResourceType::NetworkInsightsPath,
-            "network-interface" => ResourceType::NetworkInterface,
-            "placement-group" => ResourceType::PlacementGroup,
-            "prefix-list" => ResourceType::PrefixList,
-            "replace-root-volume-task" => ResourceType::ReplaceRootVolumeTask,
-            "reserved-instances" => ResourceType::ReservedInstances,
-            "route-table" => ResourceType::RouteTable,
-            "security-group" => ResourceType::SecurityGroup,
-            "security-group-rule" => ResourceType::SecurityGroupRule,
-            "snapshot" => ResourceType::Snapshot,
-            "spot-fleet-request" => ResourceType::SpotFleetRequest,
-            "spot-instances-request" => ResourceType::SpotInstancesRequest,
-            "subnet" => ResourceType::Subnet,
-            "subnet-cidr-reservation" => ResourceType::SubnetCidrReservation,
-            "traffic-mirror-filter" => ResourceType::TrafficMirrorFilter,
-            "traffic-mirror-filter-rule" => ResourceType::TrafficMirrorFilterRule,
-            "traffic-mirror-session" => ResourceType::TrafficMirrorSession,
-            "traffic-mirror-target" => ResourceType::TrafficMirrorTarget,
-            "transit-gateway" => ResourceType::TransitGateway,
-            "transit-gateway-attachment" => ResourceType::TransitGatewayAttachment,
-            "transit-gateway-connect-peer" => ResourceType::TransitGatewayConnectPeer,
-            "transit-gateway-multicast-domain" => ResourceType::TransitGatewayMulticastDomain,
-            "transit-gateway-policy-table" => ResourceType::TransitGatewayPolicyTable,
-            "transit-gateway-route-table" => ResourceType::TransitGatewayRouteTable,
-            "transit-gateway-route-table-announcement" => {
-                ResourceType::TransitGatewayRouteTableAnnouncement
-            }
-            "verified-access-endpoint" => ResourceType::VerifiedAccessEndpoint,
-            "verified-access-group" => ResourceType::VerifiedAccessGroup,
-            "verified-access-instance" => ResourceType::VerifiedAccessInstance,
-            "verified-access-policy" => ResourceType::VerifiedAccessPolicy,
-            "verified-access-trust-provider" => ResourceType::VerifiedAccessTrustProvider,
-            "volume" => ResourceType::Volume,
-            "vpc" => ResourceType::Vpc,
-            "vpc-block-public-access-exclusion" => ResourceType::VpcBlockPublicAccessExclusion,
-            "vpc-endpoint" => ResourceType::VpcEndpoint,
-            "vpc-endpoint-connection" => ResourceType::VpcEndpointConnection,
-            "vpc-endpoint-connection-device-type" => ResourceType::VpcEndpointConnectionDeviceType,
-            "vpc-endpoint-service" => ResourceType::VpcEndpointService,
-            "vpc-endpoint-service-permission" => ResourceType::VpcEndpointServicePermission,
-            "vpc-flow-log" => ResourceType::VpcFlowLog,
-            "vpc-peering-connection" => ResourceType::VpcPeeringConnection,
-            "vpn-connection" => ResourceType::VpnConnection,
-            "vpn-connection-device-type" => ResourceType::VpnConnectionDeviceType,
-            "vpn-gateway" => ResourceType::VpnGateway,
-            other => {
-                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-            }
-        }
-    }
-}
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            ResourceType::CapacityReservation => "capacity-reservation",
-            ResourceType::CapacityReservationFleet => "capacity-reservation-fleet",
-            ResourceType::CarrierGateway => "carrier-gateway",
-            ResourceType::ClientVpnEndpoint => "client-vpn-endpoint",
-            ResourceType::CoipPool => "coip-pool",
-            ResourceType::CustomerGateway => "customer-gateway",
-            ResourceType::DedicatedHost => "dedicated-host",
-            ResourceType::DhcpOptions => "dhcp-options",
-            ResourceType::EgressOnlyInternetGateway => "egress-only-internet-gateway",
-            ResourceType::ElasticGpu => "elastic-gpu",
-            ResourceType::ElasticIp => "elastic-ip",
-            ResourceType::ExportImageTask => "export-image-task",
-            ResourceType::ExportInstanceTask => "export-instance-task",
-            ResourceType::Fleet => "fleet",
-            ResourceType::FpgaImage => "fpga-image",
-            ResourceType::HostReservation => "host-reservation",
-            ResourceType::Image => "image",
-            ResourceType::ImportImageTask => "import-image-task",
-            ResourceType::ImportSnapshotTask => "import-snapshot-task",
-            ResourceType::Instance => "instance",
-            ResourceType::InstanceEventWindow => "instance-event-window",
-            ResourceType::InternetGateway => "internet-gateway",
-            ResourceType::Ipam => "ipam",
-            ResourceType::IpamPool => "ipam-pool",
-            ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
-            ResourceType::IpamResourceDiscoveryAssociation => "ipam-resource-discovery-association",
-            ResourceType::IpamScope => "ipam-scope",
-            ResourceType::Ipv4poolEc2 => "ipv4pool-ec2",
-            ResourceType::Ipv6poolEc2 => "ipv6pool-ec2",
-            ResourceType::KeyPair => "key-pair",
-            ResourceType::LaunchTemplate => "launch-template",
-            ResourceType::LocalGateway => "local-gateway",
-            ResourceType::LocalGatewayRouteTable => "local-gateway-route-table",
-            ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation => {
-                "local-gateway-route-table-virtual-interface-group-association"
-            }
-            ResourceType::LocalGatewayRouteTableVpcAssociation => {
-                "local-gateway-route-table-vpc-association"
-            }
-            ResourceType::LocalGatewayVirtualInterface => "local-gateway-virtual-interface",
-            ResourceType::LocalGatewayVirtualInterfaceGroup => {
-                "local-gateway-virtual-interface-group"
-            }
-            ResourceType::Natgateway => "natgateway",
-            ResourceType::NetworkAcl => "network-acl",
-            ResourceType::NetworkInsightsAccessScope => "network-insights-access-scope",
-            ResourceType::NetworkInsightsAccessScopeAnalysis => {
-                "network-insights-access-scope-analysis"
-            }
-            ResourceType::NetworkInsightsAnalysis => "network-insights-analysis",
-            ResourceType::NetworkInsightsPath => "network-insights-path",
-            ResourceType::NetworkInterface => "network-interface",
-            ResourceType::PlacementGroup => "placement-group",
-            ResourceType::PrefixList => "prefix-list",
-            ResourceType::ReplaceRootVolumeTask => "replace-root-volume-task",
-            ResourceType::ReservedInstances => "reserved-instances",
-            ResourceType::RouteTable => "route-table",
-            ResourceType::SecurityGroup => "security-group",
-            ResourceType::SecurityGroupRule => "security-group-rule",
-            ResourceType::Snapshot => "snapshot",
-            ResourceType::SpotFleetRequest => "spot-fleet-request",
-            ResourceType::SpotInstancesRequest => "spot-instances-request",
-            ResourceType::Subnet => "subnet",
-            ResourceType::SubnetCidrReservation => "subnet-cidr-reservation",
-            ResourceType::TrafficMirrorFilter => "traffic-mirror-filter",
-            ResourceType::TrafficMirrorFilterRule => "traffic-mirror-filter-rule",
-            ResourceType::TrafficMirrorSession => "traffic-mirror-session",
-            ResourceType::TrafficMirrorTarget => "traffic-mirror-target",
-            ResourceType::TransitGateway => "transit-gateway",
-            ResourceType::TransitGatewayAttachment => "transit-gateway-attachment",
-            ResourceType::TransitGatewayConnectPeer => "transit-gateway-connect-peer",
-            ResourceType::TransitGatewayMulticastDomain => "transit-gateway-multicast-domain",
-            ResourceType::TransitGatewayPolicyTable => "transit-gateway-policy-table",
-            ResourceType::TransitGatewayRouteTable => "transit-gateway-route-table",
-            ResourceType::TransitGatewayRouteTableAnnouncement => {
-                "transit-gateway-route-table-announcement"
-            }
-            ResourceType::VerifiedAccessEndpoint => "verified-access-endpoint",
-            ResourceType::VerifiedAccessGroup => "verified-access-group",
-            ResourceType::VerifiedAccessInstance => "verified-access-instance",
-            ResourceType::VerifiedAccessPolicy => "verified-access-policy",
-            ResourceType::VerifiedAccessTrustProvider => "verified-access-trust-provider",
-            ResourceType::Volume => "volume",
-            ResourceType::Vpc => "vpc",
-            ResourceType::VpcBlockPublicAccessExclusion => "vpc-block-public-access-exclusion",
-            ResourceType::VpcEndpoint => "vpc-endpoint",
-            ResourceType::VpcEndpointConnection => "vpc-endpoint-connection",
-            ResourceType::VpcEndpointConnectionDeviceType => "vpc-endpoint-connection-device-type",
-            ResourceType::VpcEndpointService => "vpc-endpoint-service",
-            ResourceType::VpcEndpointServicePermission => "vpc-endpoint-service-permission",
-            ResourceType::VpcFlowLog => "vpc-flow-log",
-            ResourceType::VpcPeeringConnection => "vpc-peering-connection",
-            ResourceType::VpnConnection => "vpn-connection",
-            ResourceType::VpnConnectionDeviceType => "vpn-connection-device-type",
-            ResourceType::VpnGateway => "vpn-gateway",
-            ResourceType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "capacity-reservation",
-            "capacity-reservation-fleet",
-            "carrier-gateway",
-            "client-vpn-endpoint",
-            "coip-pool",
-            "customer-gateway",
-            "dedicated-host",
-            "dhcp-options",
-            "egress-only-internet-gateway",
-            "elastic-gpu",
-            "elastic-ip",
-            "export-image-task",
-            "export-instance-task",
-            "fleet",
-            "fpga-image",
-            "host-reservation",
-            "image",
-            "import-image-task",
-            "import-snapshot-task",
-            "instance",
-            "instance-event-window",
-            "internet-gateway",
-            "ipam",
-            "ipam-pool",
-            "ipam-resource-discovery",
-            "ipam-resource-discovery-association",
-            "ipam-scope",
-            "ipv4pool-ec2",
-            "ipv6pool-ec2",
-            "key-pair",
-            "launch-template",
-            "local-gateway",
-            "local-gateway-route-table",
-            "local-gateway-route-table-virtual-interface-group-association",
-            "local-gateway-route-table-vpc-association",
-            "local-gateway-virtual-interface",
-            "local-gateway-virtual-interface-group",
-            "natgateway",
-            "network-acl",
-            "network-insights-access-scope",
-            "network-insights-access-scope-analysis",
-            "network-insights-analysis",
-            "network-insights-path",
-            "network-interface",
-            "placement-group",
-            "prefix-list",
-            "replace-root-volume-task",
-            "reserved-instances",
-            "route-table",
-            "security-group",
-            "security-group-rule",
-            "snapshot",
-            "spot-fleet-request",
-            "spot-instances-request",
-            "subnet",
-            "subnet-cidr-reservation",
-            "traffic-mirror-filter",
-            "traffic-mirror-filter-rule",
-            "traffic-mirror-session",
-            "traffic-mirror-target",
-            "transit-gateway",
-            "transit-gateway-attachment",
-            "transit-gateway-connect-peer",
-            "transit-gateway-multicast-domain",
-            "transit-gateway-policy-table",
-            "transit-gateway-route-table",
-            "transit-gateway-route-table-announcement",
-            "verified-access-endpoint",
-            "verified-access-group",
-            "verified-access-instance",
-            "verified-access-policy",
-            "verified-access-trust-provider",
-            "volume",
-            "vpc",
-            "vpc-block-public-access-exclusion",
-            "vpc-endpoint",
-            "vpc-endpoint-connection",
-            "vpc-endpoint-connection-device-type",
-            "vpc-endpoint-service",
-            "vpc-endpoint-service-permission",
-            "vpc-flow-log",
-            "vpc-peering-connection",
-            "vpn-connection",
-            "vpn-connection-device-type",
-            "vpn-gateway",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    ResourceType::CapacityReservation => "capacity-reservation",
+    ResourceType::CapacityReservationFleet => "capacity-reservation-fleet",
+    ResourceType::CarrierGateway => "carrier-gateway",
+    ResourceType::ClientVpnEndpoint => "client-vpn-endpoint",
+    ResourceType::CoipPool => "coip-pool",
+    ResourceType::CustomerGateway => "customer-gateway",
+    ResourceType::DedicatedHost => "dedicated-host",
+    ResourceType::DhcpOptions => "dhcp-options",
+    ResourceType::EgressOnlyInternetGateway => "egress-only-internet-gateway",
+    ResourceType::ElasticGpu => "elastic-gpu",
+    ResourceType::ElasticIp => "elastic-ip",
+    ResourceType::ExportImageTask => "export-image-task",
+    ResourceType::ExportInstanceTask => "export-instance-task",
+    ResourceType::Fleet => "fleet",
+    ResourceType::FpgaImage => "fpga-image",
+    ResourceType::HostReservation => "host-reservation",
+    ResourceType::Image => "image",
+    ResourceType::ImportImageTask => "import-image-task",
+    ResourceType::ImportSnapshotTask => "import-snapshot-task",
+    ResourceType::Instance => "instance",
+    ResourceType::InstanceEventWindow => "instance-event-window",
+    ResourceType::InternetGateway => "internet-gateway",
+    ResourceType::Ipam => "ipam",
+    ResourceType::IpamPool => "ipam-pool",
+    ResourceType::IpamResourceDiscovery => "ipam-resource-discovery",
+    ResourceType::IpamResourceDiscoveryAssociation => "ipam-resource-discovery-association",
+    ResourceType::IpamScope => "ipam-scope",
+    ResourceType::Ipv4poolEc2 => "ipv4pool-ec2",
+    ResourceType::Ipv6poolEc2 => "ipv6pool-ec2",
+    ResourceType::KeyPair => "key-pair",
+    ResourceType::LaunchTemplate => "launch-template",
+    ResourceType::LocalGateway => "local-gateway",
+    ResourceType::LocalGatewayRouteTable => "local-gateway-route-table",
+    ResourceType::LocalGatewayRouteTableVirtualInterfaceGroupAssociation => "local-gateway-route-table-virtual-interface-group-association",
+    ResourceType::LocalGatewayRouteTableVpcAssociation => "local-gateway-route-table-vpc-association",
+    ResourceType::LocalGatewayVirtualInterface => "local-gateway-virtual-interface",
+    ResourceType::LocalGatewayVirtualInterfaceGroup => "local-gateway-virtual-interface-group",
+    ResourceType::Natgateway => "natgateway",
+    ResourceType::NetworkAcl => "network-acl",
+    ResourceType::NetworkInsightsAccessScope => "network-insights-access-scope",
+    ResourceType::NetworkInsightsAccessScopeAnalysis => "network-insights-access-scope-analysis",
+    ResourceType::NetworkInsightsAnalysis => "network-insights-analysis",
+    ResourceType::NetworkInsightsPath => "network-insights-path",
+    ResourceType::NetworkInterface => "network-interface",
+    ResourceType::PlacementGroup => "placement-group",
+    ResourceType::PrefixList => "prefix-list",
+    ResourceType::ReplaceRootVolumeTask => "replace-root-volume-task",
+    ResourceType::ReservedInstances => "reserved-instances",
+    ResourceType::RouteTable => "route-table",
+    ResourceType::SecurityGroup => "security-group",
+    ResourceType::SecurityGroupRule => "security-group-rule",
+    ResourceType::Snapshot => "snapshot",
+    ResourceType::SpotFleetRequest => "spot-fleet-request",
+    ResourceType::SpotInstancesRequest => "spot-instances-request",
+    ResourceType::Subnet => "subnet",
+    ResourceType::SubnetCidrReservation => "subnet-cidr-reservation",
+    ResourceType::TrafficMirrorFilter => "traffic-mirror-filter",
+    ResourceType::TrafficMirrorFilterRule => "traffic-mirror-filter-rule",
+    ResourceType::TrafficMirrorSession => "traffic-mirror-session",
+    ResourceType::TrafficMirrorTarget => "traffic-mirror-target",
+    ResourceType::TransitGateway => "transit-gateway",
+    ResourceType::TransitGatewayAttachment => "transit-gateway-attachment",
+    ResourceType::TransitGatewayConnectPeer => "transit-gateway-connect-peer",
+    ResourceType::TransitGatewayMulticastDomain => "transit-gateway-multicast-domain",
+    ResourceType::TransitGatewayPolicyTable => "transit-gateway-policy-table",
+    ResourceType::TransitGatewayRouteTable => "transit-gateway-route-table",
+    ResourceType::TransitGatewayRouteTableAnnouncement => "transit-gateway-route-table-announcement",
+    ResourceType::VerifiedAccessEndpoint => "verified-access-endpoint",
+    ResourceType::VerifiedAccessGroup => "verified-access-group",
+    ResourceType::VerifiedAccessInstance => "verified-access-instance",
+    ResourceType::VerifiedAccessPolicy => "verified-access-policy",
+    ResourceType::VerifiedAccessTrustProvider => "verified-access-trust-provider",
+    ResourceType::Volume => "volume",
+    ResourceType::Vpc => "vpc",
+    ResourceType::VpcBlockPublicAccessExclusion => "vpc-block-public-access-exclusion",
+    ResourceType::VpcEndpoint => "vpc-endpoint",
+    ResourceType::VpcEndpointConnection => "vpc-endpoint-connection",
+    ResourceType::VpcEndpointConnectionDeviceType => "vpc-endpoint-connection-device-type",
+    ResourceType::VpcEndpointService => "vpc-endpoint-service",
+    ResourceType::VpcEndpointServicePermission => "vpc-endpoint-service-permission",
+    ResourceType::VpcFlowLog => "vpc-flow-log",
+    ResourceType::VpcPeeringConnection => "vpc-peering-connection",
+    ResourceType::VpnConnection => "vpn-connection",
+    ResourceType::VpnConnectionDeviceType => "vpn-connection-device-type",
+    ResourceType::VpnGateway => "vpn-gateway",
+    ResourceType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["capacity-reservation", "capacity-reservation-fleet", "carrier-gateway", "client-vpn-endpoint", "coip-pool", "customer-gateway", "dedicated-host", "dhcp-options", "egress-only-internet-gateway", "elastic-gpu", "elastic-ip", "export-image-task", "export-instance-task", "fleet", "fpga-image", "host-reservation", "image", "import-image-task", "import-snapshot-task", "instance", "instance-event-window", "internet-gateway", "ipam", "ipam-pool", "ipam-resource-discovery", "ipam-resource-discovery-association", "ipam-scope", "ipv4pool-ec2", "ipv6pool-ec2", "key-pair", "launch-template", "local-gateway", "local-gateway-route-table", "local-gateway-route-table-virtual-interface-group-association", "local-gateway-route-table-vpc-association", "local-gateway-virtual-interface", "local-gateway-virtual-interface-group", "natgateway", "network-acl", "network-insights-access-scope", "network-insights-access-scope-analysis", "network-insights-analysis", "network-insights-path", "network-interface", "placement-group", "prefix-list", "replace-root-volume-task", "reserved-instances", "route-table", "security-group", "security-group-rule", "snapshot", "spot-fleet-request", "spot-instances-request", "subnet", "subnet-cidr-reservation", "traffic-mirror-filter", "traffic-mirror-filter-rule", "traffic-mirror-session", "traffic-mirror-target", "transit-gateway", "transit-gateway-attachment", "transit-gateway-connect-peer", "transit-gateway-multicast-domain", "transit-gateway-policy-table", "transit-gateway-route-table", "transit-gateway-route-table-announcement", "verified-access-endpoint", "verified-access-group", "verified-access-instance", "verified-access-policy", "verified-access-trust-provider", "volume", "vpc", "vpc-block-public-access-exclusion", "vpc-endpoint", "vpc-endpoint-connection", "vpc-endpoint-connection-device-type", "vpc-endpoint-service", "vpc-endpoint-service-permission", "vpc-flow-log", "vpc-peering-connection", "vpn-connection", "vpn-connection-device-type", "vpn-gateway"]
+                }
+            }
 impl AsRef<str> for ResourceType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

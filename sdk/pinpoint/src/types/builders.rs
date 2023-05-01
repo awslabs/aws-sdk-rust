@@ -349,6 +349,14 @@ pub use crate::types::_list_recommender_configurations_response::ListRecommender
 
 pub use crate::types::_push_notification_template_response::PushNotificationTemplateResponseBuilder;
 
+pub use crate::types::_journey_runs_response::JourneyRunsResponseBuilder;
+
+pub use crate::types::_journey_run_response::JourneyRunResponseBuilder;
+
+pub use crate::types::_journey_run_execution_metrics_response::JourneyRunExecutionMetricsResponseBuilder;
+
+pub use crate::types::_journey_run_execution_activity_metrics_response::JourneyRunExecutionActivityMetricsResponseBuilder;
+
 pub use crate::types::_journey_execution_metrics_response::JourneyExecutionMetricsResponseBuilder;
 
 pub use crate::types::_journey_execution_activity_metrics_response::JourneyExecutionActivityMetricsResponseBuilder;
@@ -402,3 +410,4 @@ pub use crate::types::_import_job_request::ImportJobRequestBuilder;
 pub use crate::types::_export_job_request::ExportJobRequestBuilder;
 
 pub use crate::types::_create_application_request::CreateApplicationRequestBuilder;
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateIpGroupsInput {
+pub struct DisassociateIpGroupsInput  {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DisassociateIpGroupsInput {
 }
 impl DisassociateIpGroupsInput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> std::option::Option<& str> {
         self.directory_id.as_deref()
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.group_ids.as_deref()
     }
 }
 impl DisassociateIpGroupsInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpGroupsInput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsInputBuilder {
         crate::operation::disassociate_ip_groups::builders::DisassociateIpGroupsInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DisassociateIpGroupsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input;
-        self
+        self.directory_id = input; self
     }
     /// Appends an item to `group_ids`.
     ///
@@ -53,30 +51,24 @@ impl DisassociateIpGroupsInputBuilder {
     /// <p>The identifiers of one or more IP access control groups.</p>
     pub fn group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.group_ids.unwrap_or_default();
-        v.push(input.into());
-        self.group_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.group_ids = Some(v);
+                        self
     }
     /// <p>The identifiers of one or more IP access control groups.</p>
-    pub fn set_group_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.group_ids = input;
-        self
+    pub fn set_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.group_ids = input; self
     }
     /// Consumes the builder and constructs a [`DisassociateIpGroupsInput`](crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::disassociate_ip_groups::DisassociateIpGroupsInput {
-                directory_id: self.directory_id,
-                group_ids: self.group_ids,
-            },
+                directory_id: self.directory_id
+                ,
+                group_ids: self.group_ids
+                ,
+            }
         )
     }
 }
+

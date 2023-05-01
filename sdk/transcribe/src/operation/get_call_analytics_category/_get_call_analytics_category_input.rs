@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCallAnalyticsCategoryInput {
+pub struct GetCallAnalyticsCategoryInput  {
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
     #[doc(hidden)]
     pub category_name: std::option::Option<std::string::String>,
 }
 impl GetCallAnalyticsCategoryInput {
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
-    pub fn category_name(&self) -> std::option::Option<&str> {
+    pub fn category_name(&self) -> std::option::Option<& str> {
         self.category_name.as_deref()
     }
 }
 impl GetCallAnalyticsCategoryInput {
     /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryInput`](crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput).
-    pub fn builder(
-    ) -> crate::operation::get_call_analytics_category::builders::GetCallAnalyticsCategoryInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_call_analytics_category::builders::GetCallAnalyticsCategoryInputBuilder {
         crate::operation::get_call_analytics_category::builders::GetCallAnalyticsCategoryInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetCallAnalyticsCategoryInputBuilder {
     }
     /// <p>The name of the Call Analytics category you want information about. Category names are case sensitive.</p>
     pub fn set_category_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category_name = input;
-        self
+        self.category_name = input; self
     }
     /// Consumes the builder and constructs a [`GetCallAnalyticsCategoryInput`](crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_call_analytics_category::GetCallAnalyticsCategoryInput {
-                category_name: self.category_name,
-            },
+                category_name: self.category_name
+                ,
+            }
         )
     }
 }
+

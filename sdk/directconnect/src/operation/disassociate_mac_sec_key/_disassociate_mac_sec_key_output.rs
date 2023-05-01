@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMacSecKeyOutput {
+pub struct DisassociateMacSecKeyOutput  {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct DisassociateMacSecKeyOutput {
 }
 impl DisassociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> std::option::Option<& str> {
         self.connection_id.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::types::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::types::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateMacSecKeyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DisassociateMacSecKeyOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMacSecKeyOutput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput).
-    pub fn builder(
-    ) -> crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyOutputBuilder
-    {
+    pub fn builder() -> crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyOutputBuilder {
         crate::operation::disassociate_mac_sec_key::builders::DisassociateMacSecKeyOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl DisassociateMacSecKeyOutputBuilder {
     }
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input;
-        self
+        self.connection_id = input; self
     }
     /// Appends an item to `mac_sec_keys`.
     ///
@@ -61,33 +58,32 @@ impl DisassociateMacSecKeyOutputBuilder {
     /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
     pub fn mac_sec_keys(mut self, input: crate::types::MacSecKey) -> Self {
         let mut v = self.mac_sec_keys.unwrap_or_default();
-        v.push(input);
-        self.mac_sec_keys = Some(v);
-        self
+                        v.push(input);
+                        self.mac_sec_keys = Some(v);
+                        self
     }
     /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
-    pub fn set_mac_sec_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>,
-    ) -> Self {
-        self.mac_sec_keys = input;
-        self
+    pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>) -> Self {
+        self.mac_sec_keys = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DisassociateMacSecKeyOutput`](crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput).
     pub fn build(self) -> crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput {
         crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyOutput {
-            connection_id: self.connection_id,
-            mac_sec_keys: self.mac_sec_keys,
+            connection_id: self.connection_id
+            ,
+            mac_sec_keys: self.mac_sec_keys
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

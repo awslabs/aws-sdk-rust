@@ -3,7 +3,7 @@
 /// <p>An object containing information regarding the last launch of a Source Server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastLaunch {
+pub struct LifeCycleLastLaunch  {
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
     #[doc(hidden)]
     pub initiated: std::option::Option<crate::types::LifeCycleLastLaunchInitiated>,
@@ -13,11 +13,11 @@ pub struct LifeCycleLastLaunch {
 }
 impl LifeCycleLastLaunch {
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
-    pub fn initiated(&self) -> std::option::Option<&crate::types::LifeCycleLastLaunchInitiated> {
+    pub fn initiated(&self) -> std::option::Option<& crate::types::LifeCycleLastLaunchInitiated> {
         self.initiated.as_ref()
     }
     /// <p>Status of Source Server's last launch.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::LaunchStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::LaunchStatus> {
         self.status.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl LifeCycleLastLaunchBuilder {
         self
     }
     /// <p>An object containing information regarding the initiation of the last launch of a Source Server.</p>
-    pub fn set_initiated(
-        mut self,
-        input: std::option::Option<crate::types::LifeCycleLastLaunchInitiated>,
-    ) -> Self {
-        self.initiated = input;
-        self
+    pub fn set_initiated(mut self, input: std::option::Option<crate::types::LifeCycleLastLaunchInitiated>) -> Self {
+        self.initiated = input; self
     }
     /// <p>Status of Source Server's last launch.</p>
     pub fn status(mut self, input: crate::types::LaunchStatus) -> Self {
@@ -56,14 +52,16 @@ impl LifeCycleLastLaunchBuilder {
     }
     /// <p>Status of Source Server's last launch.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::LaunchStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`LifeCycleLastLaunch`](crate::types::LifeCycleLastLaunch).
     pub fn build(self) -> crate::types::LifeCycleLastLaunch {
         crate::types::LifeCycleLastLaunch {
-            initiated: self.initiated,
-            status: self.status,
+            initiated: self.initiated
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

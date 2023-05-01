@@ -3,14 +3,14 @@
 /// <p>Information needed to clear the timer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClearTimerAction {
+pub struct ClearTimerAction  {
     /// <p>The name of the timer to clear.</p>
     #[doc(hidden)]
     pub timer_name: std::option::Option<std::string::String>,
 }
 impl ClearTimerAction {
     /// <p>The name of the timer to clear.</p>
-    pub fn timer_name(&self) -> std::option::Option<&str> {
+    pub fn timer_name(&self) -> std::option::Option<& str> {
         self.timer_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ClearTimerActionBuilder {
     }
     /// <p>The name of the timer to clear.</p>
     pub fn set_timer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timer_name = input;
-        self
+        self.timer_name = input; self
     }
     /// Consumes the builder and constructs a [`ClearTimerAction`](crate::types::ClearTimerAction).
     pub fn build(self) -> crate::types::ClearTimerAction {
         crate::types::ClearTimerAction {
-            timer_name: self.timer_name,
+            timer_name: self.timer_name
+            ,
         }
     }
 }
+

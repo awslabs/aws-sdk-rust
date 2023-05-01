@@ -3,9 +3,9 @@
 /// <p>Additional connection options for the connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JdbcConnectorOptions {
-    /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+pub struct JdbcConnectorOptions  {
+    /// <p>Extra condition clause to filter data from source. For example:</p> 
+    /// <p> <code>BillingCity='Mountain View'</code> </p> 
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     #[doc(hidden)]
     pub filter_predicate: std::option::Option<std::string::String>,
@@ -29,19 +29,17 @@ pub struct JdbcConnectorOptions {
     pub job_bookmark_keys_sort_order: std::option::Option<std::string::String>,
     /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
     #[doc(hidden)]
-    pub data_type_mapping: std::option::Option<
-        std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>,
-    >,
+    pub data_type_mapping: std::option::Option<std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>>,
 }
 impl JdbcConnectorOptions {
-    /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p>Extra condition clause to filter data from source. For example:</p> 
+    /// <p> <code>BillingCity='Mountain View'</code> </p> 
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
-    pub fn filter_predicate(&self) -> std::option::Option<&str> {
+    pub fn filter_predicate(&self) -> std::option::Option<& str> {
         self.filter_predicate.as_deref()
     }
     /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
-    pub fn partition_column(&self) -> std::option::Option<&str> {
+    pub fn partition_column(&self) -> std::option::Option<& str> {
         self.partition_column.as_deref()
     }
     /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
@@ -57,19 +55,15 @@ impl JdbcConnectorOptions {
         self.num_partitions
     }
     /// <p>The name of the job bookmark keys on which to sort.</p>
-    pub fn job_bookmark_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_bookmark_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.job_bookmark_keys.as_deref()
     }
     /// <p>Specifies an ascending or descending sort order.</p>
-    pub fn job_bookmark_keys_sort_order(&self) -> std::option::Option<&str> {
+    pub fn job_bookmark_keys_sort_order(&self) -> std::option::Option<& str> {
         self.job_bookmark_keys_sort_order.as_deref()
     }
     /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
-    pub fn data_type_mapping(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>,
-    > {
+    pub fn data_type_mapping(&self) -> std::option::Option<& std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>> {
         self.data_type_mapping.as_ref()
     }
 }
@@ -91,24 +85,21 @@ pub struct JdbcConnectorOptionsBuilder {
     pub(crate) num_partitions: std::option::Option<i64>,
     pub(crate) job_bookmark_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) job_bookmark_keys_sort_order: std::option::Option<std::string::String>,
-    pub(crate) data_type_mapping: std::option::Option<
-        std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>,
-    >,
+    pub(crate) data_type_mapping: std::option::Option<std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>>,
 }
 impl JdbcConnectorOptionsBuilder {
-    /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p>Extra condition clause to filter data from source. For example:</p> 
+    /// <p> <code>BillingCity='Mountain View'</code> </p> 
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub fn filter_predicate(mut self, input: impl Into<std::string::String>) -> Self {
         self.filter_predicate = Some(input.into());
         self
     }
-    /// <p>Extra condition clause to filter data from source. For example:</p>
-    /// <p> <code>BillingCity='Mountain View'</code> </p>
+    /// <p>Extra condition clause to filter data from source. For example:</p> 
+    /// <p> <code>BillingCity='Mountain View'</code> </p> 
     /// <p>When using a query instead of a table name, you should validate that the query works with the specified <code>filterPredicate</code>.</p>
     pub fn set_filter_predicate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_predicate = input;
-        self
+        self.filter_predicate = input; self
     }
     /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
     pub fn partition_column(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,8 +108,7 @@ impl JdbcConnectorOptionsBuilder {
     }
     /// <p>The name of an integer column that is used for partitioning. This option works only when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>. This option works the same way as in the Spark SQL JDBC reader.</p>
     pub fn set_partition_column(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partition_column = input;
-        self
+        self.partition_column = input; self
     }
     /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
     pub fn lower_bound(mut self, input: i64) -> Self {
@@ -127,8 +117,7 @@ impl JdbcConnectorOptionsBuilder {
     }
     /// <p>The minimum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
     pub fn set_lower_bound(mut self, input: std::option::Option<i64>) -> Self {
-        self.lower_bound = input;
-        self
+        self.lower_bound = input; self
     }
     /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
     pub fn upper_bound(mut self, input: i64) -> Self {
@@ -137,8 +126,7 @@ impl JdbcConnectorOptionsBuilder {
     }
     /// <p>The maximum value of <code>partitionColumn</code> that is used to decide partition stride.</p>
     pub fn set_upper_bound(mut self, input: std::option::Option<i64>) -> Self {
-        self.upper_bound = input;
-        self
+        self.upper_bound = input; self
     }
     /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
     pub fn num_partitions(mut self, input: i64) -> Self {
@@ -147,8 +135,7 @@ impl JdbcConnectorOptionsBuilder {
     }
     /// <p>The number of partitions. This value, along with <code>lowerBound</code> (inclusive) and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code> clause expressions that are used to split the <code>partitionColumn</code>.</p>
     pub fn set_num_partitions(mut self, input: std::option::Option<i64>) -> Self {
-        self.num_partitions = input;
-        self
+        self.num_partitions = input; self
     }
     /// Appends an item to `job_bookmark_keys`.
     ///
@@ -157,17 +144,13 @@ impl JdbcConnectorOptionsBuilder {
     /// <p>The name of the job bookmark keys on which to sort.</p>
     pub fn job_bookmark_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_bookmark_keys.unwrap_or_default();
-        v.push(input.into());
-        self.job_bookmark_keys = Some(v);
-        self
+                        v.push(input.into());
+                        self.job_bookmark_keys = Some(v);
+                        self
     }
     /// <p>The name of the job bookmark keys on which to sort.</p>
-    pub fn set_job_bookmark_keys(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.job_bookmark_keys = input;
-        self
+    pub fn set_job_bookmark_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.job_bookmark_keys = input; self
     }
     /// <p>Specifies an ascending or descending sort order.</p>
     pub fn job_bookmark_keys_sort_order(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,49 +158,44 @@ impl JdbcConnectorOptionsBuilder {
         self
     }
     /// <p>Specifies an ascending or descending sort order.</p>
-    pub fn set_job_bookmark_keys_sort_order(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.job_bookmark_keys_sort_order = input;
-        self
+    pub fn set_job_bookmark_keys_sort_order(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.job_bookmark_keys_sort_order = input; self
     }
     /// Adds a key-value pair to `data_type_mapping`.
     ///
     /// To override the contents of this collection use [`set_data_type_mapping`](Self::set_data_type_mapping).
     ///
     /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
-    pub fn data_type_mapping(
-        mut self,
-        k: crate::types::JdbcDataType,
-        v: crate::types::GlueRecordType,
-    ) -> Self {
+    pub fn data_type_mapping(mut self, k: crate::types::JdbcDataType, v: crate::types::GlueRecordType) -> Self {
         let mut hash_map = self.data_type_mapping.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.data_type_mapping = Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.data_type_mapping = Some(hash_map);
+                        self
     }
     /// <p>Custom data type mapping that builds a mapping from a JDBC data type to an Glue data type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type by calling the <code>ResultSet.getString()</code> method of the driver, and uses it to build the Glue record. The <code>ResultSet</code> object is implemented by each driver, so the behavior is specific to the driver you use. Refer to the documentation for your JDBC driver to understand how the driver performs the conversions.</p>
-    pub fn set_data_type_mapping(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>,
-        >,
-    ) -> Self {
-        self.data_type_mapping = input;
-        self
+    pub fn set_data_type_mapping(mut self, input: std::option::Option<std::collections::HashMap<crate::types::JdbcDataType, crate::types::GlueRecordType>>) -> Self {
+        self.data_type_mapping = input; self
     }
     /// Consumes the builder and constructs a [`JdbcConnectorOptions`](crate::types::JdbcConnectorOptions).
     pub fn build(self) -> crate::types::JdbcConnectorOptions {
         crate::types::JdbcConnectorOptions {
-            filter_predicate: self.filter_predicate,
-            partition_column: self.partition_column,
-            lower_bound: self.lower_bound,
-            upper_bound: self.upper_bound,
-            num_partitions: self.num_partitions,
-            job_bookmark_keys: self.job_bookmark_keys,
-            job_bookmark_keys_sort_order: self.job_bookmark_keys_sort_order,
-            data_type_mapping: self.data_type_mapping,
+            filter_predicate: self.filter_predicate
+            ,
+            partition_column: self.partition_column
+            ,
+            lower_bound: self.lower_bound
+            ,
+            upper_bound: self.upper_bound
+            ,
+            num_partitions: self.num_partitions
+            ,
+            job_bookmark_keys: self.job_bookmark_keys
+            ,
+            job_bookmark_keys_sort_order: self.job_bookmark_keys_sort_order
+            ,
+            data_type_mapping: self.data_type_mapping
+            ,
         }
     }
 }
+

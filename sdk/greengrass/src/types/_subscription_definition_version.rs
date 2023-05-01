@@ -3,14 +3,14 @@
 /// Information about a subscription definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionDefinitionVersion {
+pub struct SubscriptionDefinitionVersion  {
     /// A list of subscriptions.
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
 }
 impl SubscriptionDefinitionVersion {
     /// A list of subscriptions.
-    pub fn subscriptions(&self) -> std::option::Option<&[crate::types::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<& [crate::types::Subscription]> {
         self.subscriptions.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl SubscriptionDefinitionVersionBuilder {
     /// A list of subscriptions.
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-        v.push(input);
-        self.subscriptions = Some(v);
-        self
+                        v.push(input);
+                        self.subscriptions = Some(v);
+                        self
     }
     /// A list of subscriptions.
-    pub fn set_subscriptions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
-    ) -> Self {
-        self.subscriptions = input;
-        self
+    pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscription>>) -> Self {
+        self.subscriptions = input; self
     }
     /// Consumes the builder and constructs a [`SubscriptionDefinitionVersion`](crate::types::SubscriptionDefinitionVersion).
     pub fn build(self) -> crate::types::SubscriptionDefinitionVersion {
         crate::types::SubscriptionDefinitionVersion {
-            subscriptions: self.subscriptions,
+            subscriptions: self.subscriptions
+            ,
         }
     }
 }
+

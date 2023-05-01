@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListControlsOutput {
+pub struct ListControlsOutput  {
     /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
     #[doc(hidden)]
     pub control_metadata_list: std::option::Option<std::vec::Vec<crate::types::ControlMetadata>>,
@@ -13,19 +13,19 @@ pub struct ListControlsOutput {
 }
 impl ListControlsOutput {
     /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
-    pub fn control_metadata_list(&self) -> std::option::Option<&[crate::types::ControlMetadata]> {
+    pub fn control_metadata_list(&self) -> std::option::Option<& [crate::types::ControlMetadata]> {
         self.control_metadata_list.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListControlsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListControlsOutput {
     /// Creates a new builder-style object to manufacture [`ListControlsOutput`](crate::operation::list_controls::ListControlsOutput).
     pub fn builder() -> crate::operation::list_controls::builders::ListControlsOutputBuilder {
@@ -37,8 +37,7 @@ impl ListControlsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListControlsOutputBuilder {
-    pub(crate) control_metadata_list:
-        std::option::Option<std::vec::Vec<crate::types::ControlMetadata>>,
+    pub(crate) control_metadata_list: std::option::Option<std::vec::Vec<crate::types::ControlMetadata>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListControlsOutputBuilder {
     /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
     pub fn control_metadata_list(mut self, input: crate::types::ControlMetadata) -> Self {
         let mut v = self.control_metadata_list.unwrap_or_default();
-        v.push(input);
-        self.control_metadata_list = Some(v);
-        self
+                        v.push(input);
+                        self.control_metadata_list = Some(v);
+                        self
     }
     /// <p> The list of control metadata objects that the <code>ListControls</code> API returned. </p>
-    pub fn set_control_metadata_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ControlMetadata>>,
-    ) -> Self {
-        self.control_metadata_list = input;
-        self
+    pub fn set_control_metadata_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ControlMetadata>>) -> Self {
+        self.control_metadata_list = input; self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListControlsOutputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListControlsOutput`](crate::operation::list_controls::ListControlsOutput).
     pub fn build(self) -> crate::operation::list_controls::ListControlsOutput {
         crate::operation::list_controls::ListControlsOutput {
-            control_metadata_list: self.control_metadata_list,
-            next_token: self.next_token,
+            control_metadata_list: self.control_metadata_list
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

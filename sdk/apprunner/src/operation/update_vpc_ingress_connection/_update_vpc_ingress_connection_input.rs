@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVpcIngressConnectionInput {
+pub struct UpdateVpcIngressConnectionInput  {
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection_arn: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct UpdateVpcIngressConnectionInput {
 }
 impl UpdateVpcIngressConnectionInput {
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
-    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<&str> {
+    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<& str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    pub fn ingress_vpc_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::IngressVpcConfiguration> {
+    pub fn ingress_vpc_configuration(&self) -> std::option::Option<& crate::types::IngressVpcConfiguration> {
         self.ingress_vpc_configuration.as_ref()
     }
 }
 impl UpdateVpcIngressConnectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcIngressConnectionInput`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput).
-    pub fn builder() -> crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder{
+    pub fn builder() -> crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder {
         crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionInputBuilder::default()
     }
 }
@@ -34,8 +32,7 @@ impl UpdateVpcIngressConnectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVpcIngressConnectionInputBuilder {
     pub(crate) vpc_ingress_connection_arn: std::option::Option<std::string::String>,
-    pub(crate) ingress_vpc_configuration:
-        std::option::Option<crate::types::IngressVpcConfiguration>,
+    pub(crate) ingress_vpc_configuration: std::option::Option<crate::types::IngressVpcConfiguration>,
 }
 impl UpdateVpcIngressConnectionInputBuilder {
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
@@ -44,41 +41,28 @@ impl UpdateVpcIngressConnectionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (Arn) for the App Runner VPC Ingress Connection resource that you want to update.</p>
-    pub fn set_vpc_ingress_connection_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.vpc_ingress_connection_arn = input;
-        self
+    pub fn set_vpc_ingress_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.vpc_ingress_connection_arn = input; self
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    pub fn ingress_vpc_configuration(
-        mut self,
-        input: crate::types::IngressVpcConfiguration,
-    ) -> Self {
+    pub fn ingress_vpc_configuration(mut self, input: crate::types::IngressVpcConfiguration) -> Self {
         self.ingress_vpc_configuration = Some(input);
         self
     }
     /// <p>Specifications for the customer’s Amazon VPC and the related Amazon Web Services PrivateLink VPC endpoint that are used to update the VPC Ingress Connection resource.</p>
-    pub fn set_ingress_vpc_configuration(
-        mut self,
-        input: std::option::Option<crate::types::IngressVpcConfiguration>,
-    ) -> Self {
-        self.ingress_vpc_configuration = input;
-        self
+    pub fn set_ingress_vpc_configuration(mut self, input: std::option::Option<crate::types::IngressVpcConfiguration>) -> Self {
+        self.ingress_vpc_configuration = input; self
     }
     /// Consumes the builder and constructs a [`UpdateVpcIngressConnectionInput`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionInput {
-                vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,
-                ingress_vpc_configuration: self.ingress_vpc_configuration,
-            },
+                vpc_ingress_connection_arn: self.vpc_ingress_connection_arn
+                ,
+                ingress_vpc_configuration: self.ingress_vpc_configuration
+                ,
+            }
         )
     }
 }
+

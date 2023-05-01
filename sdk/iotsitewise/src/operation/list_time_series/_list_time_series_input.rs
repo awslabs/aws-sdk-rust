@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTimeSeriesInput {
+pub struct ListTimeSeriesInput  {
     /// <p>The token to be used for the next set of paginated results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,17 +15,17 @@ pub struct ListTimeSeriesInput {
     /// <p>The alias prefix of the time series.</p>
     #[doc(hidden)]
     pub alias_prefix: std::option::Option<std::string::String>,
-    /// <p>The type of the time series. The time series type can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
-    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
+    /// <p>The type of the time series. The time series type can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li> 
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub time_series_type: std::option::Option<crate::types::ListTimeSeriesType>,
 }
 impl ListTimeSeriesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
@@ -33,19 +33,19 @@ impl ListTimeSeriesInput {
         self.max_results
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> std::option::Option<& str> {
         self.asset_id.as_deref()
     }
     /// <p>The alias prefix of the time series.</p>
-    pub fn alias_prefix(&self) -> std::option::Option<&str> {
+    pub fn alias_prefix(&self) -> std::option::Option<& str> {
         self.alias_prefix.as_deref()
     }
-    /// <p>The type of the time series. The time series type can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
-    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
+    /// <p>The type of the time series. The time series type can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li> 
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li> 
     /// </ul>
-    pub fn time_series_type(&self) -> std::option::Option<&crate::types::ListTimeSeriesType> {
+    pub fn time_series_type(&self) -> std::option::Option<& crate::types::ListTimeSeriesType> {
         self.time_series_type.as_ref()
     }
 }
@@ -74,8 +74,7 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,8 +83,7 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The maximum number of results to return for each paginated request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,8 +92,7 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input;
-        self
+        self.asset_id = input; self
     }
     /// <p>The alias prefix of the time series.</p>
     pub fn alias_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,43 +101,41 @@ impl ListTimeSeriesInputBuilder {
     }
     /// <p>The alias prefix of the time series.</p>
     pub fn set_alias_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_prefix = input;
-        self
+        self.alias_prefix = input; self
     }
-    /// <p>The type of the time series. The time series type can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
-    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
+    /// <p>The type of the time series. The time series type can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li> 
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li> 
     /// </ul>
     pub fn time_series_type(mut self, input: crate::types::ListTimeSeriesType) -> Self {
         self.time_series_type = Some(input);
         self
     }
-    /// <p>The type of the time series. The time series type can be one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li>
-    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li>
+    /// <p>The type of the time series. The time series type can be one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASSOCIATED</code> – The time series is associated with an asset property.</p> </li> 
+    /// <li> <p> <code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p> </li> 
     /// </ul>
-    pub fn set_time_series_type(
-        mut self,
-        input: std::option::Option<crate::types::ListTimeSeriesType>,
-    ) -> Self {
-        self.time_series_type = input;
-        self
+    pub fn set_time_series_type(mut self, input: std::option::Option<crate::types::ListTimeSeriesType>) -> Self {
+        self.time_series_type = input; self
     }
     /// Consumes the builder and constructs a [`ListTimeSeriesInput`](crate::operation::list_time_series::ListTimeSeriesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_time_series::ListTimeSeriesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_time_series::ListTimeSeriesInput {
-            next_token: self.next_token,
-            max_results: self.max_results,
-            asset_id: self.asset_id,
-            alias_prefix: self.alias_prefix,
-            time_series_type: self.time_series_type,
-        })
+    pub fn build(self) -> Result<crate::operation::list_time_series::ListTimeSeriesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_time_series::ListTimeSeriesInput {
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                asset_id: self.asset_id
+                ,
+                alias_prefix: self.alias_prefix
+                ,
+                time_series_type: self.time_series_type
+                ,
+            }
+        )
     }
 }
+

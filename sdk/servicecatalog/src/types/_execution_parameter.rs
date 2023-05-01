@@ -3,7 +3,7 @@
 /// <p>Details of an execution parameter value that is passed to a self-service action when executed on a provisioned product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionParameter {
+pub struct ExecutionParameter  {
     /// <p>The name of the execution parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ExecutionParameter {
 }
 impl ExecutionParameter {
     /// <p>The name of the execution parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The execution parameter type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The default values for the execution parameter.</p>
-    pub fn default_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn default_values(&self) -> std::option::Option<& [std::string::String]> {
         self.default_values.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ExecutionParameterBuilder {
     }
     /// <p>The name of the execution parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The execution parameter type.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ExecutionParameterBuilder {
     }
     /// <p>The execution parameter type.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Appends an item to `default_values`.
     ///
@@ -71,24 +69,24 @@ impl ExecutionParameterBuilder {
     /// <p>The default values for the execution parameter.</p>
     pub fn default_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.default_values.unwrap_or_default();
-        v.push(input.into());
-        self.default_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.default_values = Some(v);
+                        self
     }
     /// <p>The default values for the execution parameter.</p>
-    pub fn set_default_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.default_values = input;
-        self
+    pub fn set_default_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.default_values = input; self
     }
     /// Consumes the builder and constructs a [`ExecutionParameter`](crate::types::ExecutionParameter).
     pub fn build(self) -> crate::types::ExecutionParameter {
         crate::types::ExecutionParameter {
-            name: self.name,
-            r#type: self.r#type,
-            default_values: self.default_values,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            default_values: self.default_values
+            ,
         }
     }
 }
+

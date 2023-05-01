@@ -3,27 +3,21 @@
 /// <p>The configured log publishing options for the domain and their current status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogPublishingOptionsStatus {
+pub struct LogPublishingOptionsStatus  {
     /// <p>The log publishing options configured for the Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    >,
+    pub options: std::option::Option<std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     /// <p>The status of the log publishing options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the Elasticsearch domain.</p>
-    pub fn options(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    > {
+    pub fn options(&self) -> std::option::Option<& std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>> {
         self.options.as_ref()
     }
     /// <p>The status of the log publishing options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -38,9 +32,7 @@ impl LogPublishingOptionsStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LogPublishingOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-    >,
+    pub(crate) options: std::option::Option<std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>,
     pub(crate) status: std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatusBuilder {
@@ -49,25 +41,15 @@ impl LogPublishingOptionsStatusBuilder {
     /// To override the contents of this collection use [`set_options`](Self::set_options).
     ///
     /// <p>The log publishing options configured for the Elasticsearch domain.</p>
-    pub fn options(
-        mut self,
-        k: crate::types::LogType,
-        v: crate::types::LogPublishingOption,
-    ) -> Self {
+    pub fn options(mut self, k: crate::types::LogType, v: crate::types::LogPublishingOption) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.options = Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.options = Some(hash_map);
+                        self
     }
     /// <p>The log publishing options configured for the Elasticsearch domain.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
-        >,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>) -> Self {
+        self.options = input; self
     }
     /// <p>The status of the log publishing options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -76,14 +58,16 @@ impl LogPublishingOptionsStatusBuilder {
     }
     /// <p>The status of the log publishing options for the Elasticsearch domain. See <code>OptionStatus</code> for the status information that's included. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`LogPublishingOptionsStatus`](crate::types::LogPublishingOptionsStatus).
     pub fn build(self) -> crate::types::LogPublishingOptionsStatus {
         crate::types::LogPublishingOptionsStatus {
-            options: self.options,
-            status: self.status,
+            options: self.options
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

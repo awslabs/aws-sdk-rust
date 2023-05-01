@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupCertificateAuthoritiesInput {
+pub struct ListGroupCertificateAuthoritiesInput  {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl ListGroupCertificateAuthoritiesInput {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 impl ListGroupCertificateAuthoritiesInput {
     /// Creates a new builder-style object to manufacture [`ListGroupCertificateAuthoritiesInput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput).
-    pub fn builder() -> crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesInputBuilder{
+    pub fn builder() -> crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesInputBuilder {
         crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesInputBuilder::default()
     }
 }
@@ -34,16 +34,10 @@ impl ListGroupCertificateAuthoritiesInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input;
-        self
+        self.group_id = input; self
     }
     /// Consumes the builder and constructs a [`ListGroupCertificateAuthoritiesInput`](crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthoritiesInput {
                 group_id: self.group_id
@@ -52,3 +46,4 @@ impl ListGroupCertificateAuthoritiesInputBuilder {
         )
     }
 }
+

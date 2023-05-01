@@ -4,58 +4,49 @@ pub use crate::operation::create_media_live_connector_pipeline::_create_media_li
 pub use crate::operation::create_media_live_connector_pipeline::_create_media_live_connector_pipeline_input::CreateMediaLiveConnectorPipelineInputBuilder;
 
 /// Fluent builder constructing a request to `CreateMediaLiveConnectorPipeline`.
-///
+/// 
 /// <p>Creates a media live connector pipeline in an Amazon Chime SDK meeting.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineInputBuilder
             }
-impl CreateMediaLiveConnectorPipelineFluentBuilder {
+impl CreateMediaLiveConnectorPipelineFluentBuilder  {
     /// Creates a new `CreateMediaLiveConnectorPipeline`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipeline, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput, aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Appends an item to `Sources`.
     ///
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
@@ -66,10 +57,7 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
         self
     }
     /// <p>The media live connector pipeline's data sources.</p>
-    pub fn set_sources(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>,
-    ) -> Self {
+    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSourceConfiguration>>) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
@@ -83,10 +71,7 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
         self
     }
     /// <p>The media live connector pipeline's data sinks.</p>
-    pub fn set_sinks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>,
-    ) -> Self {
+    pub fn set_sinks(mut self, input: std::option::Option<std::vec::Vec<crate::types::LiveConnectorSinkConfiguration>>) -> Self {
         self.inner = self.inner.set_sinks(input);
         self
     }
@@ -96,10 +81,7 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
         self
     }
     /// <p>The token assigned to the client making the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -113,11 +95,9 @@ impl CreateMediaLiveConnectorPipelineFluentBuilder {
         self
     }
     /// <p>The tags associated with the media live connector pipeline.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
+

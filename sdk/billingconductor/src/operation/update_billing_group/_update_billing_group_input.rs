@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateBillingGroupInput {
+pub struct UpdateBillingGroupInput  {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -21,29 +21,27 @@ pub struct UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::BillingGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::BillingGroupStatus> {
         self.status.as_ref()
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn computation_preference(
-        &self,
-    ) -> std::option::Option<&crate::types::ComputationPreference> {
+    pub fn computation_preference(&self) -> std::option::Option<& crate::types::ComputationPreference> {
         self.computation_preference.as_ref()
     }
     /// <p>A description of the billing group. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBillingGroupInput {
+impl  std::fmt::Debug for UpdateBillingGroupInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBillingGroupInput");
         formatter.field("arn", &self.arn);
@@ -56,8 +54,7 @@ impl std::fmt::Debug for UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-    pub fn builder(
-    ) -> crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
+    pub fn builder() -> crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder {
         crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder::default()
     }
 }
@@ -80,8 +77,7 @@ impl UpdateBillingGroupInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +86,7 @@ impl UpdateBillingGroupInputBuilder {
     }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
     pub fn status(mut self, input: crate::types::BillingGroupStatus) -> Self {
@@ -99,12 +94,8 @@ impl UpdateBillingGroupInputBuilder {
         self
     }
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::BillingGroupStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::BillingGroupStatus>) -> Self {
+        self.status = input; self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
     pub fn computation_preference(mut self, input: crate::types::ComputationPreference) -> Self {
@@ -112,12 +103,8 @@ impl UpdateBillingGroupInputBuilder {
         self
     }
     /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn set_computation_preference(
-        mut self,
-        input: std::option::Option<crate::types::ComputationPreference>,
-    ) -> Self {
-        self.computation_preference = input;
-        self
+    pub fn set_computation_preference(mut self, input: std::option::Option<crate::types::ComputationPreference>) -> Self {
+        self.computation_preference = input; self
     }
     /// <p>A description of the billing group. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,24 +113,23 @@ impl UpdateBillingGroupInputBuilder {
     }
     /// <p>A description of the billing group. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_billing_group::UpdateBillingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_billing_group::UpdateBillingGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_billing_group::UpdateBillingGroupInput {
-                arn: self.arn,
-                name: self.name,
-                status: self.status,
-                computation_preference: self.computation_preference,
-                description: self.description,
-            },
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                computation_preference: self.computation_preference
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
@@ -158,3 +144,4 @@ impl std::fmt::Debug for UpdateBillingGroupInputBuilder {
         formatter.finish()
     }
 }
+

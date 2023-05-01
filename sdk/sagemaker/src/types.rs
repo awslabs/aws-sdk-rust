@@ -29,9 +29,11 @@ pub use crate::types::_user_settings::UserSettings;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettings;
 
-pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSettings;
+pub use crate::types::_model_register_settings::ModelRegisterSettings;
 
 pub use crate::types::_feature_status::FeatureStatus;
+
+pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSettings;
 
 pub use crate::types::_r_session_app_settings::RSessionAppSettings;
 
@@ -2241,6 +2243,8 @@ mod _model_quality_baseline_config;
 
 mod _model_quality_job_input;
 
+mod _model_register_settings;
+
 mod _model_sort_key;
 
 mod _model_step_metadata;
@@ -2844,3 +2848,4 @@ pub mod builders;
 
 /// Error types that Amazon SageMaker Service can respond with.
 pub mod error;
+

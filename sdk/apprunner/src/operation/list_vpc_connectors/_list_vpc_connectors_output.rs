@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcConnectorsOutput {
+pub struct ListVpcConnectorsOutput  {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     #[doc(hidden)]
     pub vpc_connectors: std::option::Option<std::vec::Vec<crate::types::VpcConnector>>,
@@ -13,23 +13,22 @@ pub struct ListVpcConnectorsOutput {
 }
 impl ListVpcConnectorsOutput {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn vpc_connectors(&self) -> std::option::Option<&[crate::types::VpcConnector]> {
+    pub fn vpc_connectors(&self) -> std::option::Option<& [crate::types::VpcConnector]> {
         self.vpc_connectors.as_deref()
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVpcConnectorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListVpcConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcConnectorsOutput`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder {
         crate::operation::list_vpc_connectors::builders::ListVpcConnectorsOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListVpcConnectorsOutputBuilder {
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
     pub fn vpc_connectors(mut self, input: crate::types::VpcConnector) -> Self {
         let mut v = self.vpc_connectors.unwrap_or_default();
-        v.push(input);
-        self.vpc_connectors = Some(v);
-        self
+                        v.push(input);
+                        self.vpc_connectors = Some(v);
+                        self
     }
     /// <p>A list of information records for VPC connectors. In a paginated request, the request returns up to <code>MaxResults</code> records for each call.</p>
-    pub fn set_vpc_connectors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcConnector>>,
-    ) -> Self {
-        self.vpc_connectors = input;
-        self
+    pub fn set_vpc_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcConnector>>) -> Self {
+        self.vpc_connectors = input; self
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListVpcConnectorsOutputBuilder {
     }
     /// <p>The token that you can pass in a subsequent request to get the next result page. It's returned in a paginated request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListVpcConnectorsOutput`](crate::operation::list_vpc_connectors::ListVpcConnectorsOutput).
     pub fn build(self) -> crate::operation::list_vpc_connectors::ListVpcConnectorsOutput {
         crate::operation::list_vpc_connectors::ListVpcConnectorsOutput {
-            vpc_connectors: self.vpc_connectors,
-            next_token: self.next_token,
+            vpc_connectors: self.vpc_connectors
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

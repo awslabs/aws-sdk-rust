@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unit = unimplemented!();
 /// match unit {
@@ -55,22 +55,14 @@
 /// Specifically, when `unit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Unit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -127,118 +119,91 @@ pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Unit {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bits" => Unit::Bits,
-            "Bits/Second" => Unit::BitsPerSecond,
-            "Bytes" => Unit::Bytes,
-            "Bytes/Second" => Unit::BytesPerSecond,
-            "Count" => Unit::Count,
-            "Count/Second" => Unit::CountPerSecond,
-            "Gigabits" => Unit::Gigabits,
-            "Gigabits/Second" => Unit::GigabitsPerSecond,
-            "Gigabytes" => Unit::Gigabytes,
-            "Gigabytes/Second" => Unit::GigabytesPerSecond,
-            "Kilobits" => Unit::Kilobits,
-            "Kilobits/Second" => Unit::KilobitsPerSecond,
-            "Kilobytes" => Unit::Kilobytes,
-            "Kilobytes/Second" => Unit::KilobytesPerSecond,
-            "Megabits" => Unit::Megabits,
-            "Megabits/Second" => Unit::MegabitsPerSecond,
-            "Megabytes" => Unit::Megabytes,
-            "Megabytes/Second" => Unit::MegabytesPerSecond,
-            "Microseconds" => Unit::Microseconds,
-            "Milliseconds" => Unit::Milliseconds,
-            "None" => Unit::None,
-            "Percent" => Unit::Percent,
-            "Seconds" => Unit::Seconds,
-            "Terabits" => Unit::Terabits,
-            "Terabits/Second" => Unit::TerabitsPerSecond,
-            "Terabytes" => Unit::Terabytes,
-            "Terabytes/Second" => Unit::TerabytesPerSecond,
-            other => Unit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Bits" => Unit::Bits,
+"Bits/Second" => Unit::BitsPerSecond,
+"Bytes" => Unit::Bytes,
+"Bytes/Second" => Unit::BytesPerSecond,
+"Count" => Unit::Count,
+"Count/Second" => Unit::CountPerSecond,
+"Gigabits" => Unit::Gigabits,
+"Gigabits/Second" => Unit::GigabitsPerSecond,
+"Gigabytes" => Unit::Gigabytes,
+"Gigabytes/Second" => Unit::GigabytesPerSecond,
+"Kilobits" => Unit::Kilobits,
+"Kilobits/Second" => Unit::KilobitsPerSecond,
+"Kilobytes" => Unit::Kilobytes,
+"Kilobytes/Second" => Unit::KilobytesPerSecond,
+"Megabits" => Unit::Megabits,
+"Megabits/Second" => Unit::MegabitsPerSecond,
+"Megabytes" => Unit::Megabytes,
+"Megabytes/Second" => Unit::MegabytesPerSecond,
+"Microseconds" => Unit::Microseconds,
+"Milliseconds" => Unit::Milliseconds,
+"None" => Unit::None,
+"Percent" => Unit::Percent,
+"Seconds" => Unit::Seconds,
+"Terabits" => Unit::Terabits,
+"Terabits/Second" => Unit::TerabitsPerSecond,
+"Terabytes" => Unit::Terabytes,
+"Terabytes/Second" => Unit::TerabytesPerSecond,
+other => Unit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for Unit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Unit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Unit::from(s))
+                }
+            }
 impl Unit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            Unit::Bits => "Bits",
-            Unit::BitsPerSecond => "Bits/Second",
-            Unit::Bytes => "Bytes",
-            Unit::BytesPerSecond => "Bytes/Second",
-            Unit::Count => "Count",
-            Unit::CountPerSecond => "Count/Second",
-            Unit::Gigabits => "Gigabits",
-            Unit::GigabitsPerSecond => "Gigabits/Second",
-            Unit::Gigabytes => "Gigabytes",
-            Unit::GigabytesPerSecond => "Gigabytes/Second",
-            Unit::Kilobits => "Kilobits",
-            Unit::KilobitsPerSecond => "Kilobits/Second",
-            Unit::Kilobytes => "Kilobytes",
-            Unit::KilobytesPerSecond => "Kilobytes/Second",
-            Unit::Megabits => "Megabits",
-            Unit::MegabitsPerSecond => "Megabits/Second",
-            Unit::Megabytes => "Megabytes",
-            Unit::MegabytesPerSecond => "Megabytes/Second",
-            Unit::Microseconds => "Microseconds",
-            Unit::Milliseconds => "Milliseconds",
-            Unit::None => "None",
-            Unit::Percent => "Percent",
-            Unit::Seconds => "Seconds",
-            Unit::Terabits => "Terabits",
-            Unit::TerabitsPerSecond => "Terabits/Second",
-            Unit::Terabytes => "Terabytes",
-            Unit::TerabytesPerSecond => "Terabytes/Second",
-            Unit::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    Unit::Bits => "Bits",
+    Unit::BitsPerSecond => "Bits/Second",
+    Unit::Bytes => "Bytes",
+    Unit::BytesPerSecond => "Bytes/Second",
+    Unit::Count => "Count",
+    Unit::CountPerSecond => "Count/Second",
+    Unit::Gigabits => "Gigabits",
+    Unit::GigabitsPerSecond => "Gigabits/Second",
+    Unit::Gigabytes => "Gigabytes",
+    Unit::GigabytesPerSecond => "Gigabytes/Second",
+    Unit::Kilobits => "Kilobits",
+    Unit::KilobitsPerSecond => "Kilobits/Second",
+    Unit::Kilobytes => "Kilobytes",
+    Unit::KilobytesPerSecond => "Kilobytes/Second",
+    Unit::Megabits => "Megabits",
+    Unit::MegabitsPerSecond => "Megabits/Second",
+    Unit::Megabytes => "Megabytes",
+    Unit::MegabytesPerSecond => "Megabytes/Second",
+    Unit::Microseconds => "Microseconds",
+    Unit::Milliseconds => "Milliseconds",
+    Unit::None => "None",
+    Unit::Percent => "Percent",
+    Unit::Seconds => "Seconds",
+    Unit::Terabits => "Terabits",
+    Unit::TerabitsPerSecond => "Terabits/Second",
+    Unit::Terabytes => "Terabytes",
+    Unit::TerabytesPerSecond => "Terabytes/Second",
+    Unit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"]
+                }
+            }
 impl AsRef<str> for Unit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

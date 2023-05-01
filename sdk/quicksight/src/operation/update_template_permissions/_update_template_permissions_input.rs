@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTemplatePermissionsInput {
+pub struct UpdateTemplatePermissionsInput  {
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct UpdateTemplatePermissionsInput {
 }
 impl UpdateTemplatePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> std::option::Option<& str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>A list of resource permissions to be granted on the template. </p>
-    pub fn grant_permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn grant_permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.grant_permissions.as_deref()
     }
     /// <p>A list of resource permissions to be revoked from the template. </p>
-    pub fn revoke_permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
+    pub fn revoke_permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
         self.revoke_permissions.as_deref()
     }
 }
 impl UpdateTemplatePermissionsInput {
     /// Creates a new builder-style object to manufacture [`UpdateTemplatePermissionsInput`](crate::operation::update_template_permissions::UpdateTemplatePermissionsInput).
-    pub fn builder() -> crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsInputBuilder{
+    pub fn builder() -> crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsInputBuilder {
         crate::operation::update_template_permissions::builders::UpdateTemplatePermissionsInputBuilder::default()
     }
 }
@@ -47,10 +47,8 @@ impl UpdateTemplatePermissionsInput {
 pub struct UpdateTemplatePermissionsInputBuilder {
     pub(crate) aws_account_id: std::option::Option<std::string::String>,
     pub(crate) template_id: std::option::Option<std::string::String>,
-    pub(crate) grant_permissions:
-        std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    pub(crate) revoke_permissions:
-        std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) grant_permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    pub(crate) revoke_permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
 }
 impl UpdateTemplatePermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
@@ -60,8 +58,7 @@ impl UpdateTemplatePermissionsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the template.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input;
-        self
+        self.aws_account_id = input; self
     }
     /// <p>The ID for the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl UpdateTemplatePermissionsInputBuilder {
     }
     /// <p>The ID for the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input;
-        self
+        self.template_id = input; self
     }
     /// Appends an item to `grant_permissions`.
     ///
@@ -80,17 +76,13 @@ impl UpdateTemplatePermissionsInputBuilder {
     /// <p>A list of resource permissions to be granted on the template. </p>
     pub fn grant_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.grant_permissions.unwrap_or_default();
-        v.push(input);
-        self.grant_permissions = Some(v);
-        self
+                        v.push(input);
+                        self.grant_permissions = Some(v);
+                        self
     }
     /// <p>A list of resource permissions to be granted on the template. </p>
-    pub fn set_grant_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.grant_permissions = input;
-        self
+    pub fn set_grant_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.grant_permissions = input; self
     }
     /// Appends an item to `revoke_permissions`.
     ///
@@ -99,32 +91,28 @@ impl UpdateTemplatePermissionsInputBuilder {
     /// <p>A list of resource permissions to be revoked from the template. </p>
     pub fn revoke_permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.revoke_permissions.unwrap_or_default();
-        v.push(input);
-        self.revoke_permissions = Some(v);
-        self
+                        v.push(input);
+                        self.revoke_permissions = Some(v);
+                        self
     }
     /// <p>A list of resource permissions to be revoked from the template. </p>
-    pub fn set_revoke_permissions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
-    ) -> Self {
-        self.revoke_permissions = input;
-        self
+    pub fn set_revoke_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+        self.revoke_permissions = input; self
     }
     /// Consumes the builder and constructs a [`UpdateTemplatePermissionsInput`](crate::operation::update_template_permissions::UpdateTemplatePermissionsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_template_permissions::UpdateTemplatePermissionsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_template_permissions::UpdateTemplatePermissionsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_template_permissions::UpdateTemplatePermissionsInput {
-                aws_account_id: self.aws_account_id,
-                template_id: self.template_id,
-                grant_permissions: self.grant_permissions,
-                revoke_permissions: self.revoke_permissions,
-            },
+                aws_account_id: self.aws_account_id
+                ,
+                template_id: self.template_id
+                ,
+                grant_permissions: self.grant_permissions
+                ,
+                revoke_permissions: self.revoke_permissions
+                ,
+            }
         )
     }
 }
+

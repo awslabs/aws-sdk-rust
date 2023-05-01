@@ -3,7 +3,7 @@
 /// <p>Contains the response to a successful <code>UploadServerCertificate</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadServerCertificateOutput {
+pub struct UploadServerCertificateOutput  {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
     #[doc(hidden)]
     pub server_certificate_metadata: std::option::Option<crate::types::ServerCertificateMetadata>,
@@ -14,26 +14,22 @@ pub struct UploadServerCertificateOutput {
 }
 impl UploadServerCertificateOutput {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-    pub fn server_certificate_metadata(
-        &self,
-    ) -> std::option::Option<&crate::types::ServerCertificateMetadata> {
+    pub fn server_certificate_metadata(&self) -> std::option::Option<& crate::types::ServerCertificateMetadata> {
         self.server_certificate_metadata.as_ref()
     }
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UploadServerCertificateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UploadServerCertificateOutput {
     /// Creates a new builder-style object to manufacture [`UploadServerCertificateOutput`](crate::operation::upload_server_certificate::UploadServerCertificateOutput).
-    pub fn builder(
-    ) -> crate::operation::upload_server_certificate::builders::UploadServerCertificateOutputBuilder
-    {
+    pub fn builder() -> crate::operation::upload_server_certificate::builders::UploadServerCertificateOutputBuilder {
         crate::operation::upload_server_certificate::builders::UploadServerCertificateOutputBuilder::default()
     }
 }
@@ -42,27 +38,19 @@ impl UploadServerCertificateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UploadServerCertificateOutputBuilder {
-    pub(crate) server_certificate_metadata:
-        std::option::Option<crate::types::ServerCertificateMetadata>,
+    pub(crate) server_certificate_metadata: std::option::Option<crate::types::ServerCertificateMetadata>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl UploadServerCertificateOutputBuilder {
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-    pub fn server_certificate_metadata(
-        mut self,
-        input: crate::types::ServerCertificateMetadata,
-    ) -> Self {
+    pub fn server_certificate_metadata(mut self, input: crate::types::ServerCertificateMetadata) -> Self {
         self.server_certificate_metadata = Some(input);
         self
     }
     /// <p>The meta information of the uploaded server certificate without its certificate body, certificate chain, and private key.</p>
-    pub fn set_server_certificate_metadata(
-        mut self,
-        input: std::option::Option<crate::types::ServerCertificateMetadata>,
-    ) -> Self {
-        self.server_certificate_metadata = input;
-        self
+    pub fn set_server_certificate_metadata(mut self, input: std::option::Option<crate::types::ServerCertificateMetadata>) -> Self {
+        self.server_certificate_metadata = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -71,35 +59,32 @@ impl UploadServerCertificateOutputBuilder {
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags that are attached to the new IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UploadServerCertificateOutput`](crate::operation::upload_server_certificate::UploadServerCertificateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::upload_server_certificate::UploadServerCertificateOutput {
+    pub fn build(self) -> crate::operation::upload_server_certificate::UploadServerCertificateOutput {
         crate::operation::upload_server_certificate::UploadServerCertificateOutput {
-            server_certificate_metadata: self.server_certificate_metadata,
-            tags: self.tags,
+            server_certificate_metadata: self.server_certificate_metadata
+            ,
+            tags: self.tags
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

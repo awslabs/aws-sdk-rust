@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeviceInstanceOutput {
+pub struct UpdateDeviceInstanceOutput  {
     /// <p>An object that contains information about your device instance.</p>
     #[doc(hidden)]
     pub device_instance: std::option::Option<crate::types::DeviceInstance>,
@@ -10,19 +10,18 @@ pub struct UpdateDeviceInstanceOutput {
 }
 impl UpdateDeviceInstanceOutput {
     /// <p>An object that contains information about your device instance.</p>
-    pub fn device_instance(&self) -> std::option::Option<&crate::types::DeviceInstance> {
+    pub fn device_instance(&self) -> std::option::Option<& crate::types::DeviceInstance> {
         self.device_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDeviceInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateDeviceInstanceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceInstanceOutput`](crate::operation::update_device_instance::UpdateDeviceInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::update_device_instance::builders::UpdateDeviceInstanceOutputBuilder {
         crate::operation::update_device_instance::builders::UpdateDeviceInstanceOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl UpdateDeviceInstanceOutputBuilder {
         self
     }
     /// <p>An object that contains information about your device instance.</p>
-    pub fn set_device_instance(
-        mut self,
-        input: std::option::Option<crate::types::DeviceInstance>,
-    ) -> Self {
-        self.device_instance = input;
-        self
+    pub fn set_device_instance(mut self, input: std::option::Option<crate::types::DeviceInstance>) -> Self {
+        self.device_instance = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateDeviceInstanceOutput`](crate::operation::update_device_instance::UpdateDeviceInstanceOutput).
     pub fn build(self) -> crate::operation::update_device_instance::UpdateDeviceInstanceOutput {
         crate::operation::update_device_instance::UpdateDeviceInstanceOutput {
-            device_instance: self.device_instance,
+            device_instance: self.device_instance
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

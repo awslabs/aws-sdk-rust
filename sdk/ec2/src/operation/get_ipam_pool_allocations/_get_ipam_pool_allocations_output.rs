@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpamPoolAllocationsOutput {
+pub struct GetIpamPoolAllocationsOutput  {
     /// <p>The IPAM pool allocations you want information on.</p>
     #[doc(hidden)]
     pub ipam_pool_allocations: std::option::Option<std::vec::Vec<crate::types::IpamPoolAllocation>>,
@@ -13,26 +13,22 @@ pub struct GetIpamPoolAllocationsOutput {
 }
 impl GetIpamPoolAllocationsOutput {
     /// <p>The IPAM pool allocations you want information on.</p>
-    pub fn ipam_pool_allocations(
-        &self,
-    ) -> std::option::Option<&[crate::types::IpamPoolAllocation]> {
+    pub fn ipam_pool_allocations(&self) -> std::option::Option<& [crate::types::IpamPoolAllocation]> {
         self.ipam_pool_allocations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetIpamPoolAllocationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetIpamPoolAllocationsOutput {
     /// Creates a new builder-style object to manufacture [`GetIpamPoolAllocationsOutput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput).
-    pub fn builder(
-    ) -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder {
         crate::operation::get_ipam_pool_allocations::builders::GetIpamPoolAllocationsOutputBuilder::default()
     }
 }
@@ -41,8 +37,7 @@ impl GetIpamPoolAllocationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetIpamPoolAllocationsOutputBuilder {
-    pub(crate) ipam_pool_allocations:
-        std::option::Option<std::vec::Vec<crate::types::IpamPoolAllocation>>,
+    pub(crate) ipam_pool_allocations: std::option::Option<std::vec::Vec<crate::types::IpamPoolAllocation>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -54,17 +49,13 @@ impl GetIpamPoolAllocationsOutputBuilder {
     /// <p>The IPAM pool allocations you want information on.</p>
     pub fn ipam_pool_allocations(mut self, input: crate::types::IpamPoolAllocation) -> Self {
         let mut v = self.ipam_pool_allocations.unwrap_or_default();
-        v.push(input);
-        self.ipam_pool_allocations = Some(v);
-        self
+                        v.push(input);
+                        self.ipam_pool_allocations = Some(v);
+                        self
     }
     /// <p>The IPAM pool allocations you want information on.</p>
-    pub fn set_ipam_pool_allocations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpamPoolAllocation>>,
-    ) -> Self {
-        self.ipam_pool_allocations = input;
-        self
+    pub fn set_ipam_pool_allocations(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpamPoolAllocation>>) -> Self {
+        self.ipam_pool_allocations = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,26 +64,26 @@ impl GetIpamPoolAllocationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetIpamPoolAllocationsOutput`](crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput {
+    pub fn build(self) -> crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput {
         crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput {
-            ipam_pool_allocations: self.ipam_pool_allocations,
-            next_token: self.next_token,
+            ipam_pool_allocations: self.ipam_pool_allocations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

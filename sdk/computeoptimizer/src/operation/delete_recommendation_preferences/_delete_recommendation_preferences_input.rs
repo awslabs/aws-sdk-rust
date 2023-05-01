@@ -2,45 +2,42 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecommendationPreferencesInput {
-    /// <p>The target resource type of the recommendation preference to delete.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
-    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+pub struct DeleteRecommendationPreferencesInput  {
+    /// <p>The target resource type of the recommendation preference to delete.</p> 
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note> 
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
-    /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+    /// <p>An object that describes the scope of the recommendation preference to delete.</p> 
     /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::Scope>,
     /// <p>The name of the recommendation preference to delete.</p>
     #[doc(hidden)]
-    pub recommendation_preference_names:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationPreferenceName>>,
+    pub recommendation_preference_names: std::option::Option<std::vec::Vec<crate::types::RecommendationPreferenceName>>,
 }
 impl DeleteRecommendationPreferencesInput {
-    /// <p>The target resource type of the recommendation preference to delete.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
-    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+    /// <p>The target resource type of the recommendation preference to delete.</p> 
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note> 
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
     /// </note>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+    /// <p>An object that describes the scope of the recommendation preference to delete.</p> 
     /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-    pub fn scope(&self) -> std::option::Option<&crate::types::Scope> {
+    pub fn scope(&self) -> std::option::Option<& crate::types::Scope> {
         self.scope.as_ref()
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn recommendation_preference_names(
-        &self,
-    ) -> std::option::Option<&[crate::types::RecommendationPreferenceName]> {
+    pub fn recommendation_preference_names(&self) -> std::option::Option<& [crate::types::RecommendationPreferenceName]> {
         self.recommendation_preference_names.as_deref()
     }
 }
 impl DeleteRecommendationPreferencesInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationPreferencesInput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput).
-    pub fn builder() -> crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder{
+    pub fn builder() -> crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder {
         crate::operation::delete_recommendation_preferences::builders::DeleteRecommendationPreferencesInputBuilder::default()
     }
 }
@@ -51,70 +48,52 @@ impl DeleteRecommendationPreferencesInput {
 pub struct DeleteRecommendationPreferencesInputBuilder {
     pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
     pub(crate) scope: std::option::Option<crate::types::Scope>,
-    pub(crate) recommendation_preference_names:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationPreferenceName>>,
+    pub(crate) recommendation_preference_names: std::option::Option<std::vec::Vec<crate::types::RecommendationPreferenceName>>,
 }
 impl DeleteRecommendationPreferencesInputBuilder {
-    /// <p>The target resource type of the recommendation preference to delete.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
-    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+    /// <p>The target resource type of the recommendation preference to delete.</p> 
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note> 
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
     /// </note>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = Some(input);
         self
     }
-    /// <p>The target resource type of the recommendation preference to delete.</p>
-    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note>
-    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p>
+    /// <p>The target resource type of the recommendation preference to delete.</p> 
+    /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses only instances that are part of an Auto Scaling group.</p> <note> 
+    /// <p>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</p> 
     /// </note>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
-    /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+    /// <p>An object that describes the scope of the recommendation preference to delete.</p> 
     /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = Some(input);
         self
     }
-    /// <p>An object that describes the scope of the recommendation preference to delete.</p>
+    /// <p>An object that describes the scope of the recommendation preference to delete.</p> 
     /// <p>You can delete recommendation preferences that are created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input;
-        self
+        self.scope = input; self
     }
     /// Appends an item to `recommendation_preference_names`.
     ///
     /// To override the contents of this collection use [`set_recommendation_preference_names`](Self::set_recommendation_preference_names).
     ///
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn recommendation_preference_names(
-        mut self,
-        input: crate::types::RecommendationPreferenceName,
-    ) -> Self {
+    pub fn recommendation_preference_names(mut self, input: crate::types::RecommendationPreferenceName) -> Self {
         let mut v = self.recommendation_preference_names.unwrap_or_default();
-        v.push(input);
-        self.recommendation_preference_names = Some(v);
-        self
+                        v.push(input);
+                        self.recommendation_preference_names = Some(v);
+                        self
     }
     /// <p>The name of the recommendation preference to delete.</p>
-    pub fn set_recommendation_preference_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationPreferenceName>>,
-    ) -> Self {
-        self.recommendation_preference_names = input;
-        self
+    pub fn set_recommendation_preference_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationPreferenceName>>) -> Self {
+        self.recommendation_preference_names = input; self
     }
     /// Consumes the builder and constructs a [`DeleteRecommendationPreferencesInput`](crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesInput {
                 resource_type: self.resource_type
@@ -127,3 +106,4 @@ impl DeleteRecommendationPreferencesInputBuilder {
         )
     }
 }
+

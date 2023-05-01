@@ -3,24 +3,21 @@
 /// <p>Information about a site plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SitePlan {
+pub struct SitePlan  {
     /// <p>The resource definitions of the plan.</p>
     #[doc(hidden)]
-    pub resource_definitions:
-        std::option::Option<std::vec::Vec<crate::types::NetworkResourceDefinition>>,
+    pub resource_definitions: std::option::Option<std::vec::Vec<crate::types::NetworkResourceDefinition>>,
     /// <p>The options of the plan.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
 }
 impl SitePlan {
     /// <p>The resource definitions of the plan.</p>
-    pub fn resource_definitions(
-        &self,
-    ) -> std::option::Option<&[crate::types::NetworkResourceDefinition]> {
+    pub fn resource_definitions(&self) -> std::option::Option<& [crate::types::NetworkResourceDefinition]> {
         self.resource_definitions.as_deref()
     }
     /// <p>The options of the plan.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::types::NameValuePair]> {
+    pub fn options(&self) -> std::option::Option<& [crate::types::NameValuePair]> {
         self.options.as_deref()
     }
 }
@@ -35,8 +32,7 @@ impl SitePlan {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SitePlanBuilder {
-    pub(crate) resource_definitions:
-        std::option::Option<std::vec::Vec<crate::types::NetworkResourceDefinition>>,
+    pub(crate) resource_definitions: std::option::Option<std::vec::Vec<crate::types::NetworkResourceDefinition>>,
     pub(crate) options: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
 }
 impl SitePlanBuilder {
@@ -47,17 +43,13 @@ impl SitePlanBuilder {
     /// <p>The resource definitions of the plan.</p>
     pub fn resource_definitions(mut self, input: crate::types::NetworkResourceDefinition) -> Self {
         let mut v = self.resource_definitions.unwrap_or_default();
-        v.push(input);
-        self.resource_definitions = Some(v);
-        self
+                        v.push(input);
+                        self.resource_definitions = Some(v);
+                        self
     }
     /// <p>The resource definitions of the plan.</p>
-    pub fn set_resource_definitions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkResourceDefinition>>,
-    ) -> Self {
-        self.resource_definitions = input;
-        self
+    pub fn set_resource_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkResourceDefinition>>) -> Self {
+        self.resource_definitions = input; self
     }
     /// Appends an item to `options`.
     ///
@@ -66,23 +58,22 @@ impl SitePlanBuilder {
     /// <p>The options of the plan.</p>
     pub fn options(mut self, input: crate::types::NameValuePair) -> Self {
         let mut v = self.options.unwrap_or_default();
-        v.push(input);
-        self.options = Some(v);
-        self
+                        v.push(input);
+                        self.options = Some(v);
+                        self
     }
     /// <p>The options of the plan.</p>
-    pub fn set_options(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
-    ) -> Self {
-        self.options = input;
-        self
+    pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>) -> Self {
+        self.options = input; self
     }
     /// Consumes the builder and constructs a [`SitePlan`](crate::types::SitePlan).
     pub fn build(self) -> crate::types::SitePlan {
         crate::types::SitePlan {
-            resource_definitions: self.resource_definitions,
-            options: self.options,
+            resource_definitions: self.resource_definitions
+            ,
+            options: self.options
+            ,
         }
     }
 }
+

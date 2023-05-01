@@ -3,7 +3,7 @@
 /// <p>The result of a renewal offering.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenewOfferingOutput {
+pub struct RenewOfferingOutput  {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
     #[doc(hidden)]
     pub offering_transaction: std::option::Option<crate::types::OfferingTransaction>,
@@ -11,15 +11,15 @@ pub struct RenewOfferingOutput {
 }
 impl RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    pub fn offering_transaction(&self) -> std::option::Option<&crate::types::OfferingTransaction> {
+    pub fn offering_transaction(&self) -> std::option::Option<& crate::types::OfferingTransaction> {
         self.offering_transaction.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RenewOfferingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl RenewOfferingOutput {
     /// Creates a new builder-style object to manufacture [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput).
     pub fn builder() -> crate::operation::renew_offering::builders::RenewOfferingOutputBuilder {
@@ -41,27 +41,25 @@ impl RenewOfferingOutputBuilder {
         self
     }
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    pub fn set_offering_transaction(
-        mut self,
-        input: std::option::Option<crate::types::OfferingTransaction>,
-    ) -> Self {
-        self.offering_transaction = input;
-        self
+    pub fn set_offering_transaction(mut self, input: std::option::Option<crate::types::OfferingTransaction>) -> Self {
+        self.offering_transaction = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput).
     pub fn build(self) -> crate::operation::renew_offering::RenewOfferingOutput {
         crate::operation::renew_offering::RenewOfferingOutput {
-            offering_transaction: self.offering_transaction,
+            offering_transaction: self.offering_transaction
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

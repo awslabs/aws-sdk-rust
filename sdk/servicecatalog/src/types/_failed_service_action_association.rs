@@ -3,7 +3,7 @@
 /// <p>An object containing information about the error, along with identifying information about the self-service action and its associations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedServiceActionAssociation {
+pub struct FailedServiceActionAssociation  {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
     #[doc(hidden)]
     pub service_action_id: std::option::Option<std::string::String>,
@@ -22,25 +22,23 @@ pub struct FailedServiceActionAssociation {
 }
 impl FailedServiceActionAssociation {
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn service_action_id(&self) -> std::option::Option<&str> {
+    pub fn service_action_id(&self) -> std::option::Option<& str> {
         self.service_action_id.as_deref()
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> std::option::Option<& str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The error code. Valid values are listed below.</p>
-    pub fn error_code(
-        &self,
-    ) -> std::option::Option<&crate::types::ServiceActionAssociationErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::types::ServiceActionAssociationErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A text description of the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
@@ -68,12 +66,8 @@ impl FailedServiceActionAssociationBuilder {
         self
     }
     /// <p>The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.</p>
-    pub fn set_service_action_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.service_action_id = input;
-        self
+    pub fn set_service_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.service_action_id = input; self
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +76,7 @@ impl FailedServiceActionAssociationBuilder {
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input;
-        self
+        self.product_id = input; self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,12 +84,8 @@ impl FailedServiceActionAssociationBuilder {
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn set_provisioning_artifact_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.provisioning_artifact_id = input;
-        self
+    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.provisioning_artifact_id = input; self
     }
     /// <p>The error code. Valid values are listed below.</p>
     pub fn error_code(mut self, input: crate::types::ServiceActionAssociationErrorCode) -> Self {
@@ -104,12 +93,8 @@ impl FailedServiceActionAssociationBuilder {
         self
     }
     /// <p>The error code. Valid values are listed below.</p>
-    pub fn set_error_code(
-        mut self,
-        input: std::option::Option<crate::types::ServiceActionAssociationErrorCode>,
-    ) -> Self {
-        self.error_code = input;
-        self
+    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ServiceActionAssociationErrorCode>) -> Self {
+        self.error_code = input; self
     }
     /// <p>A text description of the error.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,17 +103,22 @@ impl FailedServiceActionAssociationBuilder {
     }
     /// <p>A text description of the error.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Consumes the builder and constructs a [`FailedServiceActionAssociation`](crate::types::FailedServiceActionAssociation).
     pub fn build(self) -> crate::types::FailedServiceActionAssociation {
         crate::types::FailedServiceActionAssociation {
-            service_action_id: self.service_action_id,
-            product_id: self.product_id,
-            provisioning_artifact_id: self.provisioning_artifact_id,
-            error_code: self.error_code,
-            error_message: self.error_message,
+            service_action_id: self.service_action_id
+            ,
+            product_id: self.product_id
+            ,
+            provisioning_artifact_id: self.provisioning_artifact_id
+            ,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
         }
     }
 }
+

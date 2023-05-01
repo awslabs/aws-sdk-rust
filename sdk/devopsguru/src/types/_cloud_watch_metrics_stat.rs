@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudwatchmetricsstat = unimplemented!();
 /// match cloudwatchmetricsstat {
@@ -36,22 +36,14 @@
 /// Specifically, when `cloudwatchmetricsstat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchMetricsStat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudWatchMetricsStat {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -70,63 +62,53 @@ pub enum CloudWatchMetricsStat {
     #[allow(missing_docs)] // documentation missing in model
     P99,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchMetricsStat {
-    fn from(s: &str) -> Self {
-        match s {
-            "Average" => CloudWatchMetricsStat::Average,
-            "Maximum" => CloudWatchMetricsStat::Maximum,
-            "Minimum" => CloudWatchMetricsStat::Minimum,
-            "SampleCount" => CloudWatchMetricsStat::SampleCount,
-            "Sum" => CloudWatchMetricsStat::Sum,
-            "p50" => CloudWatchMetricsStat::P50,
-            "p90" => CloudWatchMetricsStat::P90,
-            "p99" => CloudWatchMetricsStat::P99,
-            other => CloudWatchMetricsStat::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Average" => CloudWatchMetricsStat::Average,
+"Maximum" => CloudWatchMetricsStat::Maximum,
+"Minimum" => CloudWatchMetricsStat::Minimum,
+"SampleCount" => CloudWatchMetricsStat::SampleCount,
+"Sum" => CloudWatchMetricsStat::Sum,
+"p50" => CloudWatchMetricsStat::P50,
+"p90" => CloudWatchMetricsStat::P90,
+"p99" => CloudWatchMetricsStat::P99,
+other => CloudWatchMetricsStat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for CloudWatchMetricsStat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchMetricsStat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudWatchMetricsStat::from(s))
+                }
+            }
 impl CloudWatchMetricsStat {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            CloudWatchMetricsStat::Average => "Average",
-            CloudWatchMetricsStat::Maximum => "Maximum",
-            CloudWatchMetricsStat::Minimum => "Minimum",
-            CloudWatchMetricsStat::SampleCount => "SampleCount",
-            CloudWatchMetricsStat::Sum => "Sum",
-            CloudWatchMetricsStat::P50 => "p50",
-            CloudWatchMetricsStat::P90 => "p90",
-            CloudWatchMetricsStat::P99 => "p99",
-            CloudWatchMetricsStat::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Average",
-            "Maximum",
-            "Minimum",
-            "SampleCount",
-            "Sum",
-            "p50",
-            "p90",
-            "p99",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    CloudWatchMetricsStat::Average => "Average",
+    CloudWatchMetricsStat::Maximum => "Maximum",
+    CloudWatchMetricsStat::Minimum => "Minimum",
+    CloudWatchMetricsStat::SampleCount => "SampleCount",
+    CloudWatchMetricsStat::Sum => "Sum",
+    CloudWatchMetricsStat::P50 => "p50",
+    CloudWatchMetricsStat::P90 => "p90",
+    CloudWatchMetricsStat::P99 => "p99",
+    CloudWatchMetricsStat::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Average", "Maximum", "Minimum", "SampleCount", "Sum", "p50", "p90", "p99"]
+                }
+            }
 impl AsRef<str> for CloudWatchMetricsStat {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

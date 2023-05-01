@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchreadexceptiontype = unimplemented!();
 /// match batchreadexceptiontype {
@@ -41,22 +41,14 @@
 /// Specifically, when `batchreadexceptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchReadExceptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchReadExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -85,82 +77,63 @@ pub enum BatchReadExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     ValidationException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchReadExceptionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDeniedException" => BatchReadExceptionType::AccessDeniedException,
-            "CannotListParentOfRootException" => {
-                BatchReadExceptionType::CannotListParentOfRootException
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDeniedException" => BatchReadExceptionType::AccessDeniedException,
+"CannotListParentOfRootException" => BatchReadExceptionType::CannotListParentOfRootException,
+"DirectoryNotEnabledException" => BatchReadExceptionType::DirectoryNotEnabledException,
+"FacetValidationException" => BatchReadExceptionType::FacetValidationException,
+"InternalServiceException" => BatchReadExceptionType::InternalServiceException,
+"InvalidArnException" => BatchReadExceptionType::InvalidArnException,
+"InvalidNextTokenException" => BatchReadExceptionType::InvalidNextTokenException,
+"LimitExceededException" => BatchReadExceptionType::LimitExceededException,
+"NotIndexException" => BatchReadExceptionType::NotIndexException,
+"NotNodeException" => BatchReadExceptionType::NotNodeException,
+"NotPolicyException" => BatchReadExceptionType::NotPolicyException,
+"ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
+"ValidationException" => BatchReadExceptionType::ValidationException,
+other => BatchReadExceptionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "DirectoryNotEnabledException" => BatchReadExceptionType::DirectoryNotEnabledException,
-            "FacetValidationException" => BatchReadExceptionType::FacetValidationException,
-            "InternalServiceException" => BatchReadExceptionType::InternalServiceException,
-            "InvalidArnException" => BatchReadExceptionType::InvalidArnException,
-            "InvalidNextTokenException" => BatchReadExceptionType::InvalidNextTokenException,
-            "LimitExceededException" => BatchReadExceptionType::LimitExceededException,
-            "NotIndexException" => BatchReadExceptionType::NotIndexException,
-            "NotNodeException" => BatchReadExceptionType::NotNodeException,
-            "NotPolicyException" => BatchReadExceptionType::NotPolicyException,
-            "ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
-            "ValidationException" => BatchReadExceptionType::ValidationException,
-            other => BatchReadExceptionType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for BatchReadExceptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchReadExceptionType::from(s))
-    }
-}
-impl BatchReadExceptionType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            BatchReadExceptionType::AccessDeniedException => "AccessDeniedException",
-            BatchReadExceptionType::CannotListParentOfRootException => {
-                "CannotListParentOfRootException"
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchReadExceptionType::from(s))
+                }
             }
-            BatchReadExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
-            BatchReadExceptionType::FacetValidationException => "FacetValidationException",
-            BatchReadExceptionType::InternalServiceException => "InternalServiceException",
-            BatchReadExceptionType::InvalidArnException => "InvalidArnException",
-            BatchReadExceptionType::InvalidNextTokenException => "InvalidNextTokenException",
-            BatchReadExceptionType::LimitExceededException => "LimitExceededException",
-            BatchReadExceptionType::NotIndexException => "NotIndexException",
-            BatchReadExceptionType::NotNodeException => "NotNodeException",
-            BatchReadExceptionType::NotPolicyException => "NotPolicyException",
-            BatchReadExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
-            BatchReadExceptionType::ValidationException => "ValidationException",
-            BatchReadExceptionType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDeniedException",
-            "CannotListParentOfRootException",
-            "DirectoryNotEnabledException",
-            "FacetValidationException",
-            "InternalServiceException",
-            "InvalidArnException",
-            "InvalidNextTokenException",
-            "LimitExceededException",
-            "NotIndexException",
-            "NotNodeException",
-            "NotPolicyException",
-            "ResourceNotFoundException",
-            "ValidationException",
-        ]
-    }
+impl BatchReadExceptionType {
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    BatchReadExceptionType::AccessDeniedException => "AccessDeniedException",
+    BatchReadExceptionType::CannotListParentOfRootException => "CannotListParentOfRootException",
+    BatchReadExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
+    BatchReadExceptionType::FacetValidationException => "FacetValidationException",
+    BatchReadExceptionType::InternalServiceException => "InternalServiceException",
+    BatchReadExceptionType::InvalidArnException => "InvalidArnException",
+    BatchReadExceptionType::InvalidNextTokenException => "InvalidNextTokenException",
+    BatchReadExceptionType::LimitExceededException => "LimitExceededException",
+    BatchReadExceptionType::NotIndexException => "NotIndexException",
+    BatchReadExceptionType::NotNodeException => "NotNodeException",
+    BatchReadExceptionType::NotPolicyException => "NotPolicyException",
+    BatchReadExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
+    BatchReadExceptionType::ValidationException => "ValidationException",
+    BatchReadExceptionType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDeniedException", "CannotListParentOfRootException", "DirectoryNotEnabledException", "FacetValidationException", "InternalServiceException", "InvalidArnException", "InvalidNextTokenException", "LimitExceededException", "NotIndexException", "NotNodeException", "NotPolicyException", "ResourceNotFoundException", "ValidationException"]
+                }
+            }
 impl AsRef<str> for BatchReadExceptionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

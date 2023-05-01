@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardsOutput {
+pub struct ListDashboardsOutput  {
     /// <p>A list that summarizes each dashboard in the project.</p>
     #[doc(hidden)]
     pub dashboard_summaries: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
@@ -13,19 +13,19 @@ pub struct ListDashboardsOutput {
 }
 impl ListDashboardsOutput {
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub fn dashboard_summaries(&self) -> std::option::Option<&[crate::types::DashboardSummary]> {
+    pub fn dashboard_summaries(&self) -> std::option::Option<& [crate::types::DashboardSummary]> {
         self.dashboard_summaries.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDashboardsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDashboardsOutput {
     /// Creates a new builder-style object to manufacture [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput).
     pub fn builder() -> crate::operation::list_dashboards::builders::ListDashboardsOutputBuilder {
@@ -37,8 +37,7 @@ impl ListDashboardsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDashboardsOutputBuilder {
-    pub(crate) dashboard_summaries:
-        std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
+    pub(crate) dashboard_summaries: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,17 +49,13 @@ impl ListDashboardsOutputBuilder {
     /// <p>A list that summarizes each dashboard in the project.</p>
     pub fn dashboard_summaries(mut self, input: crate::types::DashboardSummary) -> Self {
         let mut v = self.dashboard_summaries.unwrap_or_default();
-        v.push(input);
-        self.dashboard_summaries = Some(v);
-        self
+                        v.push(input);
+                        self.dashboard_summaries = Some(v);
+                        self
     }
     /// <p>A list that summarizes each dashboard in the project.</p>
-    pub fn set_dashboard_summaries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>,
-    ) -> Self {
-        self.dashboard_summaries = input;
-        self
+    pub fn set_dashboard_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::DashboardSummary>>) -> Self {
+        self.dashboard_summaries = input; self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListDashboardsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDashboardsOutput`](crate::operation::list_dashboards::ListDashboardsOutput).
     pub fn build(self) -> crate::operation::list_dashboards::ListDashboardsOutput {
         crate::operation::list_dashboards::ListDashboardsOutput {
-            dashboard_summaries: self.dashboard_summaries,
-            next_token: self.next_token,
+            dashboard_summaries: self.dashboard_summaries
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

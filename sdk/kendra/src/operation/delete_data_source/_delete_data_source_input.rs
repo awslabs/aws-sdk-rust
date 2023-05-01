@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSourceInput {
+pub struct DeleteDataSourceInput  {
     /// <p>The identifier of the data source connector you want to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct DeleteDataSourceInput {
 }
 impl DeleteDataSourceInput {
     /// <p>The identifier of the data source connector you want to delete.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index used with the data source connector.</p>
-    pub fn index_id(&self) -> std::option::Option<&str> {
+    pub fn index_id(&self) -> std::option::Option<& str> {
         self.index_id.as_deref()
     }
 }
 impl DeleteDataSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
-    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder {
         crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl DeleteDataSourceInputBuilder {
     }
     /// <p>The identifier of the data source connector you want to delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl DeleteDataSourceInputBuilder {
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input;
-        self
+        self.index_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_data_source::DeleteDataSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_data_source::DeleteDataSourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_data_source::DeleteDataSourceInput {
-                id: self.id,
-                index_id: self.index_id,
-            },
+                id: self.id
+                ,
+                index_id: self.index_id
+                ,
+            }
         )
     }
 }
+

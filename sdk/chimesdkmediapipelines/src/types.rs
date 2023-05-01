@@ -19,6 +19,8 @@ pub use crate::types::_voice_analytics_configuration_status::VoiceAnalyticsConfi
 
 pub use crate::types::_s3_recording_sink_configuration::S3RecordingSinkConfiguration;
 
+pub use crate::types::_recording_file_format::RecordingFileFormat;
+
 pub use crate::types::_kinesis_data_stream_sink_configuration::KinesisDataStreamSinkConfiguration;
 
 pub use crate::types::_amazon_transcribe_processor_configuration::AmazonTranscribeProcessorConfiguration;
@@ -66,8 +68,6 @@ pub use crate::types::_media_pipeline::MediaPipeline;
 pub use crate::types::_media_insights_pipeline::MediaInsightsPipeline;
 
 pub use crate::types::_s3_recording_sink_runtime_configuration::S3RecordingSinkRuntimeConfiguration;
-
-pub use crate::types::_recording_file_format::RecordingFileFormat;
 
 pub use crate::types::_kinesis_video_stream_recording_source_runtime_configuration::KinesisVideoStreamRecordingSourceRuntimeConfiguration;
 
@@ -384,3 +384,4 @@ pub mod builders;
 
 /// Error types that Amazon Chime SDK Media Pipelines can respond with.
 pub mod error;
+

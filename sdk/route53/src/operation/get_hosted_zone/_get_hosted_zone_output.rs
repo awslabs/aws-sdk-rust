@@ -3,7 +3,7 @@
 /// <p>A complex type that contain the response to a <code>GetHostedZone</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHostedZoneOutput {
+pub struct GetHostedZoneOutput  {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
     #[doc(hidden)]
     pub hosted_zone: std::option::Option<crate::types::HostedZone>,
@@ -17,23 +17,23 @@ pub struct GetHostedZoneOutput {
 }
 impl GetHostedZoneOutput {
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
-    pub fn hosted_zone(&self) -> std::option::Option<&crate::types::HostedZone> {
+    pub fn hosted_zone(&self) -> std::option::Option<& crate::types::HostedZone> {
         self.hosted_zone.as_ref()
     }
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-    pub fn delegation_set(&self) -> std::option::Option<&crate::types::DelegationSet> {
+    pub fn delegation_set(&self) -> std::option::Option<& crate::types::DelegationSet> {
         self.delegation_set.as_ref()
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn vp_cs(&self) -> std::option::Option<&[crate::types::Vpc]> {
+    pub fn vp_cs(&self) -> std::option::Option<& [crate::types::Vpc]> {
         self.vp_cs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetHostedZoneOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetHostedZoneOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput).
     pub fn builder() -> crate::operation::get_hosted_zone::builders::GetHostedZoneOutputBuilder {
@@ -58,8 +58,7 @@ impl GetHostedZoneOutputBuilder {
     }
     /// <p>A complex type that contains general information about the specified hosted zone.</p>
     pub fn set_hosted_zone(mut self, input: std::option::Option<crate::types::HostedZone>) -> Self {
-        self.hosted_zone = input;
-        self
+        self.hosted_zone = input; self
     }
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
@@ -67,12 +66,8 @@ impl GetHostedZoneOutputBuilder {
         self
     }
     /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
-    pub fn set_delegation_set(
-        mut self,
-        input: std::option::Option<crate::types::DelegationSet>,
-    ) -> Self {
-        self.delegation_set = input;
-        self
+    pub fn set_delegation_set(mut self, input: std::option::Option<crate::types::DelegationSet>) -> Self {
+        self.delegation_set = input; self
     }
     /// Appends an item to `vp_cs`.
     ///
@@ -81,34 +76,34 @@ impl GetHostedZoneOutputBuilder {
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
     pub fn vp_cs(mut self, input: crate::types::Vpc) -> Self {
         let mut v = self.vp_cs.unwrap_or_default();
-        v.push(input);
-        self.vp_cs = Some(v);
-        self
+                        v.push(input);
+                        self.vp_cs = Some(v);
+                        self
     }
     /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
-    pub fn set_vp_cs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Vpc>>,
-    ) -> Self {
-        self.vp_cs = input;
-        self
+    pub fn set_vp_cs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Vpc>>) -> Self {
+        self.vp_cs = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput).
     pub fn build(self) -> crate::operation::get_hosted_zone::GetHostedZoneOutput {
         crate::operation::get_hosted_zone::GetHostedZoneOutput {
-            hosted_zone: self.hosted_zone,
-            delegation_set: self.delegation_set,
-            vp_cs: self.vp_cs,
+            hosted_zone: self.hosted_zone
+            ,
+            delegation_set: self.delegation_set
+            ,
+            vp_cs: self.vp_cs
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

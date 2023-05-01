@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNetworkAclOutput {
+pub struct CreateNetworkAclOutput  {
     /// <p>Information about the network ACL.</p>
     #[doc(hidden)]
     pub network_acl: std::option::Option<crate::types::NetworkAcl>,
@@ -10,19 +10,18 @@ pub struct CreateNetworkAclOutput {
 }
 impl CreateNetworkAclOutput {
     /// <p>Information about the network ACL.</p>
-    pub fn network_acl(&self) -> std::option::Option<&crate::types::NetworkAcl> {
+    pub fn network_acl(&self) -> std::option::Option<& crate::types::NetworkAcl> {
         self.network_acl.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNetworkAclOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateNetworkAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
-    pub fn builder() -> crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder {
         crate::operation::create_network_acl::builders::CreateNetworkAclOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl CreateNetworkAclOutputBuilder {
     }
     /// <p>Information about the network ACL.</p>
     pub fn set_network_acl(mut self, input: std::option::Option<crate::types::NetworkAcl>) -> Self {
-        self.network_acl = input;
-        self
+        self.network_acl = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateNetworkAclOutput`](crate::operation::create_network_acl::CreateNetworkAclOutput).
     pub fn build(self) -> crate::operation::create_network_acl::CreateNetworkAclOutput {
         crate::operation::create_network_acl::CreateNetworkAclOutput {
-            network_acl: self.network_acl,
+            network_acl: self.network_acl
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

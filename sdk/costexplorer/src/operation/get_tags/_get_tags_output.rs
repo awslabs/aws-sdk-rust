@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTagsOutput {
+pub struct GetTagsOutput  {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct GetTagsOutput {
 }
 impl GetTagsOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> std::option::Option<& str> {
         self.next_page_token.as_deref()
     }
     /// <p>The tags that match your request.</p>
-    pub fn tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tags(&self) -> std::option::Option<& [std::string::String]> {
         self.tags.as_deref()
     }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
@@ -36,10 +36,10 @@ impl GetTagsOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetTagsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetTagsOutput {
     /// Creates a new builder-style object to manufacture [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput).
     pub fn builder() -> crate::operation::get_tags::builders::GetTagsOutputBuilder {
@@ -65,8 +65,7 @@ impl GetTagsOutputBuilder {
     }
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input;
-        self
+        self.next_page_token = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -75,17 +74,13 @@ impl GetTagsOutputBuilder {
     /// <p>The tags that match your request.</p>
     pub fn tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input.into());
-        self.tags = Some(v);
-        self
+                        v.push(input.into());
+                        self.tags = Some(v);
+                        self
     }
     /// <p>The tags that match your request.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
     pub fn return_size(mut self, input: i32) -> Self {
@@ -94,8 +89,7 @@ impl GetTagsOutputBuilder {
     }
     /// <p>The number of query results that Amazon Web Services returns at a time.</p>
     pub fn set_return_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.return_size = input;
-        self
+        self.return_size = input; self
     }
     /// <p>The total number of query results.</p>
     pub fn total_size(mut self, input: i32) -> Self {
@@ -104,26 +98,30 @@ impl GetTagsOutputBuilder {
     }
     /// <p>The total number of query results.</p>
     pub fn set_total_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_size = input;
-        self
+        self.total_size = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetTagsOutput`](crate::operation::get_tags::GetTagsOutput).
     pub fn build(self) -> crate::operation::get_tags::GetTagsOutput {
         crate::operation::get_tags::GetTagsOutput {
-            next_page_token: self.next_page_token,
-            tags: self.tags,
-            return_size: self.return_size,
-            total_size: self.total_size,
+            next_page_token: self.next_page_token
+            ,
+            tags: self.tags
+            ,
+            return_size: self.return_size
+            ,
+            total_size: self.total_size
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDevicePositionInput {
+pub struct GetDevicePositionInput  {
     /// <p>The tracker resource receiving the position update.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
@@ -12,18 +12,17 @@ pub struct GetDevicePositionInput {
 }
 impl GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
-    pub fn tracker_name(&self) -> std::option::Option<&str> {
+    pub fn tracker_name(&self) -> std::option::Option<& str> {
         self.tracker_name.as_deref()
     }
     /// <p>The device whose position you want to retrieve.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> std::option::Option<& str> {
         self.device_id.as_deref()
     }
 }
 impl GetDevicePositionInput {
     /// Creates a new builder-style object to manufacture [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
-    pub fn builder(
-    ) -> crate::operation::get_device_position::builders::GetDevicePositionInputBuilder {
+    pub fn builder() -> crate::operation::get_device_position::builders::GetDevicePositionInputBuilder {
         crate::operation::get_device_position::builders::GetDevicePositionInputBuilder::default()
     }
 }
@@ -43,8 +42,7 @@ impl GetDevicePositionInputBuilder {
     }
     /// <p>The tracker resource receiving the position update.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input;
-        self
+        self.tracker_name = input; self
     }
     /// <p>The device whose position you want to retrieve.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,21 +51,18 @@ impl GetDevicePositionInputBuilder {
     }
     /// <p>The device whose position you want to retrieve.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input;
-        self
+        self.device_id = input; self
     }
     /// Consumes the builder and constructs a [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_device_position::GetDevicePositionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_device_position::GetDevicePositionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_device_position::GetDevicePositionInput {
-                tracker_name: self.tracker_name,
-                device_id: self.device_id,
-            },
+                tracker_name: self.tracker_name
+                ,
+                device_id: self.device_id
+                ,
+            }
         )
     }
 }
+

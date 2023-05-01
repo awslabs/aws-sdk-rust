@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEnvironmentOutput {
+pub struct CreateEnvironmentOutput  {
     /// <p>The environment detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub environment: std::option::Option<crate::types::Environment>,
@@ -10,19 +10,18 @@ pub struct CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// <p>The environment detail data that's returned by Proton.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::types::Environment> {
+    pub fn environment(&self) -> std::option::Option<& crate::types::Environment> {
         self.environment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateEnvironmentOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
-    pub fn builder(
-    ) -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
+    pub fn builder() -> crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder {
         crate::operation::create_environment::builders::CreateEnvironmentOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl CreateEnvironmentOutputBuilder {
         self
     }
     /// <p>The environment detail data that's returned by Proton.</p>
-    pub fn set_environment(
-        mut self,
-        input: std::option::Option<crate::types::Environment>,
-    ) -> Self {
-        self.environment = input;
-        self
+    pub fn set_environment(mut self, input: std::option::Option<crate::types::Environment>) -> Self {
+        self.environment = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateEnvironmentOutput`](crate::operation::create_environment::CreateEnvironmentOutput).
     pub fn build(self) -> crate::operation::create_environment::CreateEnvironmentOutput {
         crate::operation::create_environment::CreateEnvironmentOutput {
-            environment: self.environment,
+            environment: self.environment
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

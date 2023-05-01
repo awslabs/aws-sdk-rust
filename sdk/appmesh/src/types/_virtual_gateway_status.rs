@@ -3,14 +3,14 @@
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayStatus {
+pub struct VirtualGatewayStatus  {
     /// <p>The current status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::VirtualGatewayStatusCode>,
 }
 impl VirtualGatewayStatus {
     /// <p>The current status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VirtualGatewayStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::types::VirtualGatewayStatusCode> {
         self.status.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl VirtualGatewayStatusBuilder {
         self
     }
     /// <p>The current status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::VirtualGatewayStatusCode>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::VirtualGatewayStatusCode>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`VirtualGatewayStatus`](crate::types::VirtualGatewayStatus).
     pub fn build(self) -> crate::types::VirtualGatewayStatus {
         crate::types::VirtualGatewayStatus {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

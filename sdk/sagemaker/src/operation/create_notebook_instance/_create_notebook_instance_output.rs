@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotebookInstanceOutput {
+pub struct CreateNotebookInstanceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
     #[doc(hidden)]
     pub notebook_instance_arn: std::option::Option<std::string::String>,
@@ -10,20 +10,18 @@ pub struct CreateNotebookInstanceOutput {
 }
 impl CreateNotebookInstanceOutput {
     /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
-    pub fn notebook_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn notebook_instance_arn(&self) -> std::option::Option<& str> {
         self.notebook_instance_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateNotebookInstanceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateNotebookInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateNotebookInstanceOutput`](crate::operation::create_notebook_instance::CreateNotebookInstanceOutput).
-    pub fn builder(
-    ) -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_notebook_instance::builders::CreateNotebookInstanceOutputBuilder {
         crate::operation::create_notebook_instance::builders::CreateNotebookInstanceOutputBuilder::default()
     }
 }
@@ -42,27 +40,25 @@ impl CreateNotebookInstanceOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the notebook instance. </p>
-    pub fn set_notebook_instance_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.notebook_instance_arn = input;
-        self
+    pub fn set_notebook_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.notebook_instance_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateNotebookInstanceOutput`](crate::operation::create_notebook_instance::CreateNotebookInstanceOutput).
     pub fn build(self) -> crate::operation::create_notebook_instance::CreateNotebookInstanceOutput {
         crate::operation::create_notebook_instance::CreateNotebookInstanceOutput {
-            notebook_instance_arn: self.notebook_instance_arn,
+            notebook_instance_arn: self.notebook_instance_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

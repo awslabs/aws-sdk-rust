@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CompleteAttachmentUploadInput {
+pub struct CompleteAttachmentUploadInput  {
     /// <p>A list of unique identifiers for the attachments.</p>
     #[doc(hidden)]
     pub attachment_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,23 +15,21 @@ pub struct CompleteAttachmentUploadInput {
 }
 impl CompleteAttachmentUploadInput {
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn attachment_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attachment_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.attachment_ids.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The authentication token associated with the participant's connection.</p>
-    pub fn connection_token(&self) -> std::option::Option<&str> {
+    pub fn connection_token(&self) -> std::option::Option<& str> {
         self.connection_token.as_deref()
     }
 }
 impl CompleteAttachmentUploadInput {
     /// Creates a new builder-style object to manufacture [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
-    pub fn builder(
-    ) -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder
-    {
+    pub fn builder() -> crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder {
         crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder::default()
     }
 }
@@ -52,17 +50,13 @@ impl CompleteAttachmentUploadInputBuilder {
     /// <p>A list of unique identifiers for the attachments.</p>
     pub fn attachment_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attachment_ids.unwrap_or_default();
-        v.push(input.into());
-        self.attachment_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.attachment_ids = Some(v);
+                        self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn set_attachment_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.attachment_ids = input;
-        self
+    pub fn set_attachment_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.attachment_ids = input; self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +65,7 @@ impl CompleteAttachmentUploadInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,22 +74,20 @@ impl CompleteAttachmentUploadInputBuilder {
     }
     /// <p>The authentication token associated with the participant's connection.</p>
     pub fn set_connection_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_token = input;
-        self
+        self.connection_token = input; self
     }
     /// Consumes the builder and constructs a [`CompleteAttachmentUploadInput`](crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::complete_attachment_upload::CompleteAttachmentUploadInput {
-                attachment_ids: self.attachment_ids,
-                client_token: self.client_token,
-                connection_token: self.connection_token,
-            },
+                attachment_ids: self.attachment_ids
+                ,
+                client_token: self.client_token
+                ,
+                connection_token: self.connection_token
+                ,
+            }
         )
     }
 }
+

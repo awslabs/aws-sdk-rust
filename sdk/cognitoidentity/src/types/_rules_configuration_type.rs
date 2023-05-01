@@ -3,16 +3,16 @@
 /// <p>A container for rules.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RulesConfigurationType {
-    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+pub struct RulesConfigurationType  {
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::MappingRule>>,
 }
 impl RulesConfigurationType {
-    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::MappingRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::types::MappingRule]> {
         self.rules.as_deref()
     }
 }
@@ -34,25 +34,25 @@ impl RulesConfigurationTypeBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
     pub fn rules(mut self, input: crate::types::MappingRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-        v.push(input);
-        self.rules = Some(v);
-        self
+                        v.push(input);
+                        self.rules = Some(v);
+                        self
     }
-    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+    /// <p>An array of rules. You can specify up to 25 rules per identity provider.</p> 
     /// <p>Rules are evaluated in order. The first one to match specifies the role.</p>
-    pub fn set_rules(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MappingRule>>,
-    ) -> Self {
-        self.rules = input;
-        self
+    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::MappingRule>>) -> Self {
+        self.rules = input; self
     }
     /// Consumes the builder and constructs a [`RulesConfigurationType`](crate::types::RulesConfigurationType).
     pub fn build(self) -> crate::types::RulesConfigurationType {
-        crate::types::RulesConfigurationType { rules: self.rules }
+        crate::types::RulesConfigurationType {
+            rules: self.rules
+            ,
+        }
     }
 }
+

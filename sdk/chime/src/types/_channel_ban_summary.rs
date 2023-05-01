@@ -3,14 +3,14 @@
 /// <p>Summary of the details of a <code>ChannelBan</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelBanSummary {
+pub struct ChannelBanSummary  {
     /// <p>The member being banned from a channel.</p>
     #[doc(hidden)]
     pub member: std::option::Option<crate::types::Identity>,
 }
 impl ChannelBanSummary {
     /// <p>The member being banned from a channel.</p>
-    pub fn member(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn member(&self) -> std::option::Option<& crate::types::Identity> {
         self.member.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl ChannelBanSummaryBuilder {
     }
     /// <p>The member being banned from a channel.</p>
     pub fn set_member(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     /// Consumes the builder and constructs a [`ChannelBanSummary`](crate::types::ChannelBanSummary).
     pub fn build(self) -> crate::types::ChannelBanSummary {
         crate::types::ChannelBanSummary {
-            member: self.member,
+            member: self.member
+            ,
         }
     }
 }
+

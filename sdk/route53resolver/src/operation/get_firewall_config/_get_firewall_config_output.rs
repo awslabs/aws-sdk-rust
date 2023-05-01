@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFirewallConfigOutput {
+pub struct GetFirewallConfigOutput  {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
     #[doc(hidden)]
     pub firewall_config: std::option::Option<crate::types::FirewallConfig>,
@@ -10,19 +10,18 @@ pub struct GetFirewallConfigOutput {
 }
 impl GetFirewallConfigOutput {
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
-    pub fn firewall_config(&self) -> std::option::Option<&crate::types::FirewallConfig> {
+    pub fn firewall_config(&self) -> std::option::Option<& crate::types::FirewallConfig> {
         self.firewall_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetFirewallConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetFirewallConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetFirewallConfigOutput`](crate::operation::get_firewall_config::GetFirewallConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_firewall_config::builders::GetFirewallConfigOutputBuilder {
+    pub fn builder() -> crate::operation::get_firewall_config::builders::GetFirewallConfigOutputBuilder {
         crate::operation::get_firewall_config::builders::GetFirewallConfigOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl GetFirewallConfigOutputBuilder {
         self
     }
     /// <p>Configuration of the firewall behavior provided by DNS Firewall for a single VPC from AmazonVPC. </p>
-    pub fn set_firewall_config(
-        mut self,
-        input: std::option::Option<crate::types::FirewallConfig>,
-    ) -> Self {
-        self.firewall_config = input;
-        self
+    pub fn set_firewall_config(mut self, input: std::option::Option<crate::types::FirewallConfig>) -> Self {
+        self.firewall_config = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetFirewallConfigOutput`](crate::operation::get_firewall_config::GetFirewallConfigOutput).
     pub fn build(self) -> crate::operation::get_firewall_config::GetFirewallConfigOutput {
         crate::operation::get_firewall_config::GetFirewallConfigOutput {
-            firewall_config: self.firewall_config,
+            firewall_config: self.firewall_config
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

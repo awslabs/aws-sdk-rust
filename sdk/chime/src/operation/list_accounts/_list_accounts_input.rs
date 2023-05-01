@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAccountsInput {
+pub struct ListAccountsInput  {
     /// <p>Amazon Chime account name prefix with which to filter results.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListAccountsInput {
 }
 impl ListAccountsInput {
     /// <p>Amazon Chime account name prefix with which to filter results.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>User email address with which to filter results.</p>
-    pub fn user_email(&self) -> std::option::Option<&str> {
+    pub fn user_email(&self) -> std::option::Option<& str> {
         self.user_email.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
@@ -34,7 +34,7 @@ impl ListAccountsInput {
         self.max_results
     }
 }
-impl std::fmt::Debug for ListAccountsInput {
+impl  std::fmt::Debug for ListAccountsInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAccountsInput");
         formatter.field("name", &self.name);
@@ -68,8 +68,7 @@ impl ListAccountsInputBuilder {
     }
     /// <p>Amazon Chime account name prefix with which to filter results.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>User email address with which to filter results.</p>
     pub fn user_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +77,7 @@ impl ListAccountsInputBuilder {
     }
     /// <p>User email address with which to filter results.</p>
     pub fn set_user_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_email = input;
-        self
+        self.user_email = input; self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +86,7 @@ impl ListAccountsInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -98,22 +95,22 @@ impl ListAccountsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`ListAccountsInput`](crate::operation::list_accounts::ListAccountsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_accounts::ListAccountsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_accounts::ListAccountsInput {
-            name: self.name,
-            user_email: self.user_email,
-            next_token: self.next_token,
-            max_results: self.max_results,
-        })
+    pub fn build(self) -> Result<crate::operation::list_accounts::ListAccountsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_accounts::ListAccountsInput {
+                name: self.name
+                ,
+                user_email: self.user_email
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for ListAccountsInputBuilder {
@@ -126,3 +123,4 @@ impl std::fmt::Debug for ListAccountsInputBuilder {
         formatter.finish()
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>An object that represents the status of a virtual service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceStatus {
+pub struct VirtualServiceStatus  {
     /// <p>The current status of the virtual service.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::VirtualServiceStatusCode>,
 }
 impl VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VirtualServiceStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::types::VirtualServiceStatusCode> {
         self.status.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl VirtualServiceStatusBuilder {
         self
     }
     /// <p>The current status of the virtual service.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::VirtualServiceStatusCode>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::VirtualServiceStatusCode>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`VirtualServiceStatus`](crate::types::VirtualServiceStatus).
     pub fn build(self) -> crate::types::VirtualServiceStatus {
         crate::types::VirtualServiceStatus {
-            status: self.status,
+            status: self.status
+            ,
         }
     }
 }
+

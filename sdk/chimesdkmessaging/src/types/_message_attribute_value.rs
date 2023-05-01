@@ -3,14 +3,14 @@
 /// <p>A list of message attribute values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageAttributeValue {
+pub struct MessageAttributeValue  {
     /// <p>The strings in a message attribute value.</p>
     #[doc(hidden)]
     pub string_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
-    pub fn string_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn string_values(&self) -> std::option::Option<& [std::string::String]> {
         self.string_values.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl MessageAttributeValueBuilder {
     /// <p>The strings in a message attribute value.</p>
     pub fn string_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.string_values.unwrap_or_default();
-        v.push(input.into());
-        self.string_values = Some(v);
-        self
+                        v.push(input.into());
+                        self.string_values = Some(v);
+                        self
     }
     /// <p>The strings in a message attribute value.</p>
-    pub fn set_string_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.string_values = input;
-        self
+    pub fn set_string_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.string_values = input; self
     }
     /// Consumes the builder and constructs a [`MessageAttributeValue`](crate::types::MessageAttributeValue).
     pub fn build(self) -> crate::types::MessageAttributeValue {
         crate::types::MessageAttributeValue {
-            string_values: self.string_values,
+            string_values: self.string_values
+            ,
         }
     }
 }
+

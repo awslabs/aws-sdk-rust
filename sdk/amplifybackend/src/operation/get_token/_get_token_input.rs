@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTokenInput {
+pub struct GetTokenInput  {
     /// <p>The app ID.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetTokenInput {
 }
 impl GetTokenInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl GetTokenInputBuilder {
     }
     /// <p>The app ID.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input;
-        self
+        self.app_id = input; self
     }
     /// <p>The session ID.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl GetTokenInputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// Consumes the builder and constructs a [`GetTokenInput`](crate::operation::get_token::GetTokenInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_token::GetTokenInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_token::GetTokenInput {
-            app_id: self.app_id,
-            session_id: self.session_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_token::GetTokenInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_token::GetTokenInput {
+                app_id: self.app_id
+                ,
+                session_id: self.session_id
+                ,
+            }
+        )
     }
 }
+

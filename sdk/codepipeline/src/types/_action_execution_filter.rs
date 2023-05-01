@@ -3,14 +3,14 @@
 /// <p>Filter values for the action execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionFilter {
+pub struct ActionExecutionFilter  {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl ActionExecutionFilter {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl ActionExecutionFilterBuilder {
         self
     }
     /// <p>The pipeline execution ID used to filter action execution history.</p>
-    pub fn set_pipeline_execution_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.pipeline_execution_id = input;
-        self
+    pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.pipeline_execution_id = input; self
     }
     /// Consumes the builder and constructs a [`ActionExecutionFilter`](crate::types::ActionExecutionFilter).
     pub fn build(self) -> crate::types::ActionExecutionFilter {
         crate::types::ActionExecutionFilter {
-            pipeline_execution_id: self.pipeline_execution_id,
+            pipeline_execution_id: self.pipeline_execution_id
+            ,
         }
     }
 }
+

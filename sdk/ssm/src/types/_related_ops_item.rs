@@ -3,14 +3,14 @@
 /// <p>An OpsItems that shares something in common with the current OpsItem. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelatedOpsItem {
+pub struct RelatedOpsItem  {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
 }
 impl RelatedOpsItem {
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl RelatedOpsItemBuilder {
     }
     /// <p>The ID of an OpsItem related to the current OpsItem.</p>
     pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// Consumes the builder and constructs a [`RelatedOpsItem`](crate::types::RelatedOpsItem).
     pub fn build(self) -> crate::types::RelatedOpsItem {
         crate::types::RelatedOpsItem {
-            ops_item_id: self.ops_item_id,
+            ops_item_id: self.ops_item_id
+            ,
         }
     }
 }
+

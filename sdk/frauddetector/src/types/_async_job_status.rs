@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let asyncjobstatus = unimplemented!();
 /// match asyncjobstatus {
@@ -34,22 +34,14 @@
 /// Specifically, when `asyncjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AsyncJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AsyncJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -64,57 +56,49 @@ pub enum AsyncJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgressInitializing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AsyncJobStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "CANCELED" => AsyncJobStatus::Canceled,
-            "CANCEL_IN_PROGRESS" => AsyncJobStatus::CancelInProgress,
-            "COMPLETE" => AsyncJobStatus::Complete,
-            "FAILED" => AsyncJobStatus::Failed,
-            "IN_PROGRESS" => AsyncJobStatus::InProgress,
-            "IN_PROGRESS_INITIALIZING" => AsyncJobStatus::InProgressInitializing,
-            other => {
-                AsyncJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "CANCELED" => AsyncJobStatus::Canceled,
+"CANCEL_IN_PROGRESS" => AsyncJobStatus::CancelInProgress,
+"COMPLETE" => AsyncJobStatus::Complete,
+"FAILED" => AsyncJobStatus::Failed,
+"IN_PROGRESS" => AsyncJobStatus::InProgress,
+"IN_PROGRESS_INITIALIZING" => AsyncJobStatus::InProgressInitializing,
+other => AsyncJobStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for AsyncJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AsyncJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AsyncJobStatus::from(s))
+                }
+            }
 impl AsyncJobStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AsyncJobStatus::Canceled => "CANCELED",
-            AsyncJobStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
-            AsyncJobStatus::Complete => "COMPLETE",
-            AsyncJobStatus::Failed => "FAILED",
-            AsyncJobStatus::InProgress => "IN_PROGRESS",
-            AsyncJobStatus::InProgressInitializing => "IN_PROGRESS_INITIALIZING",
-            AsyncJobStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "CANCELED",
-            "CANCEL_IN_PROGRESS",
-            "COMPLETE",
-            "FAILED",
-            "IN_PROGRESS",
-            "IN_PROGRESS_INITIALIZING",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AsyncJobStatus::Canceled => "CANCELED",
+    AsyncJobStatus::CancelInProgress => "CANCEL_IN_PROGRESS",
+    AsyncJobStatus::Complete => "COMPLETE",
+    AsyncJobStatus::Failed => "FAILED",
+    AsyncJobStatus::InProgress => "IN_PROGRESS",
+    AsyncJobStatus::InProgressInitializing => "IN_PROGRESS_INITIALIZING",
+    AsyncJobStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["CANCELED", "CANCEL_IN_PROGRESS", "COMPLETE", "FAILED", "IN_PROGRESS", "IN_PROGRESS_INITIALIZING"]
+                }
+            }
 impl AsRef<str> for AsyncJobStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

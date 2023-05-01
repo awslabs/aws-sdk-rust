@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartOnDemandReplicationRunInput {
+pub struct StartOnDemandReplicationRunInput  {
     /// <p>The ID of the replication job.</p>
     #[doc(hidden)]
     pub replication_job_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct StartOnDemandReplicationRunInput {
 }
 impl StartOnDemandReplicationRunInput {
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(&self) -> std::option::Option<&str> {
+    pub fn replication_job_id(&self) -> std::option::Option<& str> {
         self.replication_job_id.as_deref()
     }
     /// <p>The description of the replication run.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 impl StartOnDemandReplicationRunInput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandReplicationRunInput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput).
-    pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder{
+    pub fn builder() -> crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder {
         crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder::default()
     }
 }
@@ -41,12 +41,8 @@ impl StartOnDemandReplicationRunInputBuilder {
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.replication_job_id = input;
-        self
+    pub fn set_replication_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.replication_job_id = input; self
     }
     /// <p>The description of the replication run.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,21 +51,18 @@ impl StartOnDemandReplicationRunInputBuilder {
     }
     /// <p>The description of the replication run.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// Consumes the builder and constructs a [`StartOnDemandReplicationRunInput`](crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunInput {
-                replication_job_id: self.replication_job_id,
-                description: self.description,
-            },
+                replication_job_id: self.replication_job_id
+                ,
+                description: self.description
+                ,
+            }
         )
     }
 }
+

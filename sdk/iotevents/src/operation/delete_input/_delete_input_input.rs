@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInputInput {
+pub struct DeleteInputInput  {
     /// <p>The name of the input to delete.</p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
 }
 impl DeleteInputInput {
     /// <p>The name of the input to delete.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> std::option::Option<& str> {
         self.input_name.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl DeleteInputInputBuilder {
     }
     /// <p>The name of the input to delete.</p>
     pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_name = input;
-        self
+        self.input_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteInputInput`](crate::operation::delete_input::DeleteInputInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_input::DeleteInputInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_input::DeleteInputInput {
-            input_name: self.input_name,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_input::DeleteInputInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_input::DeleteInputInput {
+                input_name: self.input_name
+                ,
+            }
+        )
     }
 }
+

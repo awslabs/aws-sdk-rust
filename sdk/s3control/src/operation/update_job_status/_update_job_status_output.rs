@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobStatusOutput {
+pub struct UpdateJobStatusOutput  {
     /// <p>The ID for the job whose status was updated.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -16,27 +16,26 @@ pub struct UpdateJobStatusOutput {
 }
 impl UpdateJobStatusOutput {
     /// <p>The ID for the job whose status was updated.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status for the specified job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>The reason that the specified job's status was updated.</p>
-    pub fn status_update_reason(&self) -> std::option::Option<&str> {
+    pub fn status_update_reason(&self) -> std::option::Option<& str> {
         self.status_update_reason.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateJobStatusOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateJobStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobStatusOutput`](crate::operation::update_job_status::UpdateJobStatusOutput).
-    pub fn builder() -> crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder
-    {
+    pub fn builder() -> crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder {
         crate::operation::update_job_status::builders::UpdateJobStatusOutputBuilder::default()
     }
 }
@@ -58,8 +57,7 @@ impl UpdateJobStatusOutputBuilder {
     }
     /// <p>The ID for the job whose status was updated.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// <p>The current status for the specified job.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -68,8 +66,7 @@ impl UpdateJobStatusOutputBuilder {
     }
     /// <p>The current status for the specified job.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The reason that the specified job's status was updated.</p>
     pub fn status_update_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,29 +74,29 @@ impl UpdateJobStatusOutputBuilder {
         self
     }
     /// <p>The reason that the specified job's status was updated.</p>
-    pub fn set_status_update_reason(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.status_update_reason = input;
-        self
+    pub fn set_status_update_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.status_update_reason = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateJobStatusOutput`](crate::operation::update_job_status::UpdateJobStatusOutput).
     pub fn build(self) -> crate::operation::update_job_status::UpdateJobStatusOutput {
         crate::operation::update_job_status::UpdateJobStatusOutput {
-            job_id: self.job_id,
-            status: self.status,
-            status_update_reason: self.status_update_reason,
+            job_id: self.job_id
+            ,
+            status: self.status
+            ,
+            status_update_reason: self.status_update_reason
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

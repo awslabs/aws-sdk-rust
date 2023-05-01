@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetJobBookmarkOutput {
+pub struct ResetJobBookmarkOutput  {
     /// <p>The reset bookmark entry.</p>
     #[doc(hidden)]
     pub job_bookmark_entry: std::option::Option<crate::types::JobBookmarkEntry>,
@@ -10,19 +10,18 @@ pub struct ResetJobBookmarkOutput {
 }
 impl ResetJobBookmarkOutput {
     /// <p>The reset bookmark entry.</p>
-    pub fn job_bookmark_entry(&self) -> std::option::Option<&crate::types::JobBookmarkEntry> {
+    pub fn job_bookmark_entry(&self) -> std::option::Option<& crate::types::JobBookmarkEntry> {
         self.job_bookmark_entry.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ResetJobBookmarkOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ResetJobBookmarkOutput {
     /// Creates a new builder-style object to manufacture [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput).
-    pub fn builder() -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkOutputBuilder
-    {
+    pub fn builder() -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkOutputBuilder {
         crate::operation::reset_job_bookmark::builders::ResetJobBookmarkOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl ResetJobBookmarkOutputBuilder {
         self
     }
     /// <p>The reset bookmark entry.</p>
-    pub fn set_job_bookmark_entry(
-        mut self,
-        input: std::option::Option<crate::types::JobBookmarkEntry>,
-    ) -> Self {
-        self.job_bookmark_entry = input;
-        self
+    pub fn set_job_bookmark_entry(mut self, input: std::option::Option<crate::types::JobBookmarkEntry>) -> Self {
+        self.job_bookmark_entry = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ResetJobBookmarkOutput`](crate::operation::reset_job_bookmark::ResetJobBookmarkOutput).
     pub fn build(self) -> crate::operation::reset_job_bookmark::ResetJobBookmarkOutput {
         crate::operation::reset_job_bookmark::ResetJobBookmarkOutput {
-            job_bookmark_entry: self.job_bookmark_entry,
+            job_bookmark_entry: self.job_bookmark_entry
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

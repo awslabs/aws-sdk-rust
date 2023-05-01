@@ -3,7 +3,7 @@
 /// <p>A launch path object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchPath {
+pub struct LaunchPath  {
     /// <p>The identifier of the launch path.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LaunchPath {
 }
 impl LaunchPath {
     /// <p>The identifier of the launch path.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the launch path.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl LaunchPathBuilder {
     }
     /// <p>The identifier of the launch path.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the launch path.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl LaunchPathBuilder {
     }
     /// <p>The name of the launch path.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`LaunchPath`](crate::types::LaunchPath).
     pub fn build(self) -> crate::types::LaunchPath {
         crate::types::LaunchPath {
-            id: self.id,
-            name: self.name,
+            id: self.id
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

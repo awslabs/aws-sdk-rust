@@ -3,7 +3,7 @@
 /// <p>The result of the purchase offering (for example, success or failure).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseOfferingOutput {
+pub struct PurchaseOfferingOutput  {
     /// <p>Represents the offering transaction for the purchase result.</p>
     #[doc(hidden)]
     pub offering_transaction: std::option::Option<crate::types::OfferingTransaction>,
@@ -11,19 +11,18 @@ pub struct PurchaseOfferingOutput {
 }
 impl PurchaseOfferingOutput {
     /// <p>Represents the offering transaction for the purchase result.</p>
-    pub fn offering_transaction(&self) -> std::option::Option<&crate::types::OfferingTransaction> {
+    pub fn offering_transaction(&self) -> std::option::Option<& crate::types::OfferingTransaction> {
         self.offering_transaction.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PurchaseOfferingOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
-    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder
-    {
+    pub fn builder() -> crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder {
         crate::operation::purchase_offering::builders::PurchaseOfferingOutputBuilder::default()
     }
 }
@@ -42,27 +41,25 @@ impl PurchaseOfferingOutputBuilder {
         self
     }
     /// <p>Represents the offering transaction for the purchase result.</p>
-    pub fn set_offering_transaction(
-        mut self,
-        input: std::option::Option<crate::types::OfferingTransaction>,
-    ) -> Self {
-        self.offering_transaction = input;
-        self
+    pub fn set_offering_transaction(mut self, input: std::option::Option<crate::types::OfferingTransaction>) -> Self {
+        self.offering_transaction = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
     pub fn build(self) -> crate::operation::purchase_offering::PurchaseOfferingOutput {
         crate::operation::purchase_offering::PurchaseOfferingOutput {
-            offering_transaction: self.offering_transaction,
+            offering_transaction: self.offering_transaction
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

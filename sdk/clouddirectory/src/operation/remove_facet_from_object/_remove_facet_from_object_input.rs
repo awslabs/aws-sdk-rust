@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFacetFromObjectInput {
+pub struct RemoveFacetFromObjectInput  {
     /// <p>The ARN of the directory in which the object resides.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -15,23 +15,21 @@ pub struct RemoveFacetFromObjectInput {
 }
 impl RemoveFacetFromObjectInput {
     /// <p>The ARN of the directory in which the object resides.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::types::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::types::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>A reference to the object to remove the facet from.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 impl RemoveFacetFromObjectInput {
     /// Creates a new builder-style object to manufacture [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
-    pub fn builder(
-    ) -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder
-    {
+    pub fn builder() -> crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder {
         crate::operation::remove_facet_from_object::builders::RemoveFacetFromObjectInputBuilder::default()
     }
 }
@@ -52,8 +50,7 @@ impl RemoveFacetFromObjectInputBuilder {
     }
     /// <p>The ARN of the directory in which the object resides.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input;
-        self
+        self.directory_arn = input; self
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
@@ -61,12 +58,8 @@ impl RemoveFacetFromObjectInputBuilder {
         self
     }
     /// <p>The facet to remove. See <code>SchemaFacet</code> for details.</p>
-    pub fn set_schema_facet(
-        mut self,
-        input: std::option::Option<crate::types::SchemaFacet>,
-    ) -> Self {
-        self.schema_facet = input;
-        self
+    pub fn set_schema_facet(mut self, input: std::option::Option<crate::types::SchemaFacet>) -> Self {
+        self.schema_facet = input; self
     }
     /// <p>A reference to the object to remove the facet from.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -74,26 +67,21 @@ impl RemoveFacetFromObjectInputBuilder {
         self
     }
     /// <p>A reference to the object to remove the facet from.</p>
-    pub fn set_object_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.object_reference = input;
-        self
+    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.object_reference = input; self
     }
     /// Consumes the builder and constructs a [`RemoveFacetFromObjectInput`](crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::remove_facet_from_object::RemoveFacetFromObjectInput {
-                directory_arn: self.directory_arn,
-                schema_facet: self.schema_facet,
-                object_reference: self.object_reference,
-            },
+                directory_arn: self.directory_arn
+                ,
+                schema_facet: self.schema_facet
+                ,
+                object_reference: self.object_reference
+                ,
+            }
         )
     }
 }
+

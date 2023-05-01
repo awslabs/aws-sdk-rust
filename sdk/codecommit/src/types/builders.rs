@@ -110,3 +110,4 @@ pub use crate::types::_batch_describe_merge_conflicts_error::BatchDescribeMergeC
 pub use crate::types::_conflict::ConflictBuilder;
 
 pub use crate::types::_batch_associate_approval_rule_template_with_repositories_error::BatchAssociateApprovalRuleTemplateWithRepositoriesErrorBuilder;
+

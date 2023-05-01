@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportOutput {
+pub struct StartImportOutput  {
     /// <p>The name given to the import job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,39 +28,39 @@ pub struct StartImportOutput {
 }
 impl StartImportOutput {
     /// <p>The name given to the import job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of resource to import.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The action to take when there is a merge conflict.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<&crate::types::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<& crate::types::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The identifier for the specific import job.</p>
-    pub fn import_id(&self) -> std::option::Option<&str> {
+    pub fn import_id(&self) -> std::option::Option<& str> {
         self.import_id.as_deref()
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
-    pub fn import_status(&self) -> std::option::Option<&crate::types::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<& crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>A list of tags added to the imported bot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A timestamp for the date and time that the import job was requested.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartImportOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartImportOutput {
     /// Creates a new builder-style object to manufacture [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
     pub fn builder() -> crate::operation::start_import::builders::StartImportOutputBuilder {
@@ -89,8 +89,7 @@ impl StartImportOutputBuilder {
     }
     /// <p>The name given to the import job.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of resource to import.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -98,12 +97,8 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The type of resource to import.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The action to take when there is a merge conflict.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
@@ -111,12 +106,8 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The action to take when there is a merge conflict.</p>
-    pub fn set_merge_strategy(
-        mut self,
-        input: std::option::Option<crate::types::MergeStrategy>,
-    ) -> Self {
-        self.merge_strategy = input;
-        self
+    pub fn set_merge_strategy(mut self, input: std::option::Option<crate::types::MergeStrategy>) -> Self {
+        self.merge_strategy = input; self
     }
     /// <p>The identifier for the specific import job.</p>
     pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +116,7 @@ impl StartImportOutputBuilder {
     }
     /// <p>The identifier for the specific import job.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input;
-        self
+        self.import_id = input; self
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -134,12 +124,8 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The status of the import job. If the status is <code>FAILED</code>, you can get the reason for the failure using the <code>GetImport</code> operation.</p>
-    pub fn set_import_status(
-        mut self,
-        input: std::option::Option<crate::types::ImportStatus>,
-    ) -> Self {
-        self.import_status = input;
-        self
+    pub fn set_import_status(mut self, input: std::option::Option<crate::types::ImportStatus>) -> Self {
+        self.import_status = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -148,17 +134,13 @@ impl StartImportOutputBuilder {
     /// <p>A list of tags added to the imported bot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>A list of tags added to the imported bot.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// <p>A timestamp for the date and time that the import job was requested.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -166,33 +148,37 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>A timestamp for the date and time that the import job was requested.</p>
-    pub fn set_created_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_date = input;
-        self
+    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_date = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
     pub fn build(self) -> crate::operation::start_import::StartImportOutput {
         crate::operation::start_import::StartImportOutput {
-            name: self.name,
-            resource_type: self.resource_type,
-            merge_strategy: self.merge_strategy,
-            import_id: self.import_id,
-            import_status: self.import_status,
-            tags: self.tags,
-            created_date: self.created_date,
+            name: self.name
+            ,
+            resource_type: self.resource_type
+            ,
+            merge_strategy: self.merge_strategy
+            ,
+            import_id: self.import_id
+            ,
+            import_status: self.import_status
+            ,
+            tags: self.tags
+            ,
+            created_date: self.created_date
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

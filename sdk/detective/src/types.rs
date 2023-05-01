@@ -68,3 +68,4 @@ pub mod builders;
 
 /// Error types that Amazon Detective can respond with.
 pub mod error;
+

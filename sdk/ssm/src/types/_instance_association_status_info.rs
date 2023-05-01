@@ -3,7 +3,7 @@
 /// <p>Status information about the association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceAssociationStatusInfo {
+pub struct InstanceAssociationStatusInfo  {
     /// <p>The association ID.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -43,51 +43,51 @@ pub struct InstanceAssociationStatusInfo {
 }
 impl InstanceAssociationStatusInfo {
     /// <p>The association ID.</p>
-    pub fn association_id(&self) -> std::option::Option<&str> {
+    pub fn association_id(&self) -> std::option::Option<& str> {
         self.association_id.as_deref()
     }
     /// <p>The name of the association.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The association document versions.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>The version of the association applied to the managed node.</p>
-    pub fn association_version(&self) -> std::option::Option<&str> {
+    pub fn association_version(&self) -> std::option::Option<& str> {
         self.association_version.as_deref()
     }
     /// <p>The managed node ID where the association was created.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The date the association ran. </p>
-    pub fn execution_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn execution_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.execution_date.as_ref()
     }
     /// <p>Status information about the association.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>Detailed status information about the association.</p>
-    pub fn detailed_status(&self) -> std::option::Option<&str> {
+    pub fn detailed_status(&self) -> std::option::Option<& str> {
         self.detailed_status.as_deref()
     }
     /// <p>Summary information about association execution.</p>
-    pub fn execution_summary(&self) -> std::option::Option<&str> {
+    pub fn execution_summary(&self) -> std::option::Option<& str> {
         self.execution_summary.as_deref()
     }
     /// <p>An error code returned by the request to create the association.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    pub fn output_url(&self) -> std::option::Option<&crate::types::InstanceAssociationOutputUrl> {
+    pub fn output_url(&self) -> std::option::Option<& crate::types::InstanceAssociationOutputUrl> {
         self.output_url.as_ref()
     }
     /// <p>The name of the association applied to the managed node.</p>
-    pub fn association_name(&self) -> std::option::Option<&str> {
+    pub fn association_name(&self) -> std::option::Option<& str> {
         self.association_name.as_deref()
     }
 }
@@ -123,8 +123,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>The association ID.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input;
-        self
+        self.association_id = input; self
     }
     /// <p>The name of the association.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +132,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>The name of the association.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The association document versions.</p>
     pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +141,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>The association document versions.</p>
     pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_version = input;
-        self
+        self.document_version = input; self
     }
     /// <p>The version of the association applied to the managed node.</p>
     pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,12 +149,8 @@ impl InstanceAssociationStatusInfoBuilder {
         self
     }
     /// <p>The version of the association applied to the managed node.</p>
-    pub fn set_association_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.association_version = input;
-        self
+    pub fn set_association_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.association_version = input; self
     }
     /// <p>The managed node ID where the association was created.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,8 +159,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>The managed node ID where the association was created.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// <p>The date the association ran. </p>
     pub fn execution_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -175,12 +167,8 @@ impl InstanceAssociationStatusInfoBuilder {
         self
     }
     /// <p>The date the association ran. </p>
-    pub fn set_execution_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.execution_date = input;
-        self
+    pub fn set_execution_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.execution_date = input; self
     }
     /// <p>Status information about the association.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,8 +177,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>Status information about the association.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Detailed status information about the association.</p>
     pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,8 +186,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>Detailed status information about the association.</p>
     pub fn set_detailed_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detailed_status = input;
-        self
+        self.detailed_status = input; self
     }
     /// <p>Summary information about association execution.</p>
     pub fn execution_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -208,12 +194,8 @@ impl InstanceAssociationStatusInfoBuilder {
         self
     }
     /// <p>Summary information about association execution.</p>
-    pub fn set_execution_summary(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_summary = input;
-        self
+    pub fn set_execution_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_summary = input; self
     }
     /// <p>An error code returned by the request to create the association.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,8 +204,7 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>An error code returned by the request to create the association.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     pub fn output_url(mut self, input: crate::types::InstanceAssociationOutputUrl) -> Self {
@@ -231,12 +212,8 @@ impl InstanceAssociationStatusInfoBuilder {
         self
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    pub fn set_output_url(
-        mut self,
-        input: std::option::Option<crate::types::InstanceAssociationOutputUrl>,
-    ) -> Self {
-        self.output_url = input;
-        self
+    pub fn set_output_url(mut self, input: std::option::Option<crate::types::InstanceAssociationOutputUrl>) -> Self {
+        self.output_url = input; self
     }
     /// <p>The name of the association applied to the managed node.</p>
     pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,24 +222,36 @@ impl InstanceAssociationStatusInfoBuilder {
     }
     /// <p>The name of the association applied to the managed node.</p>
     pub fn set_association_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_name = input;
-        self
+        self.association_name = input; self
     }
     /// Consumes the builder and constructs a [`InstanceAssociationStatusInfo`](crate::types::InstanceAssociationStatusInfo).
     pub fn build(self) -> crate::types::InstanceAssociationStatusInfo {
         crate::types::InstanceAssociationStatusInfo {
-            association_id: self.association_id,
-            name: self.name,
-            document_version: self.document_version,
-            association_version: self.association_version,
-            instance_id: self.instance_id,
-            execution_date: self.execution_date,
-            status: self.status,
-            detailed_status: self.detailed_status,
-            execution_summary: self.execution_summary,
-            error_code: self.error_code,
-            output_url: self.output_url,
-            association_name: self.association_name,
+            association_id: self.association_id
+            ,
+            name: self.name
+            ,
+            document_version: self.document_version
+            ,
+            association_version: self.association_version
+            ,
+            instance_id: self.instance_id
+            ,
+            execution_date: self.execution_date
+            ,
+            status: self.status
+            ,
+            detailed_status: self.detailed_status
+            ,
+            execution_summary: self.execution_summary
+            ,
+            error_code: self.error_code
+            ,
+            output_url: self.output_url
+            ,
+            association_name: self.association_name
+            ,
         }
     }
 }
+

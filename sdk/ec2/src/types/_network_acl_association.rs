@@ -3,7 +3,7 @@
 /// <p>Describes an association between a network ACL and a subnet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkAclAssociation {
+pub struct NetworkAclAssociation  {
     /// <p>The ID of the association between a network ACL and a subnet.</p>
     #[doc(hidden)]
     pub network_acl_association_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct NetworkAclAssociation {
 }
 impl NetworkAclAssociation {
     /// <p>The ID of the association between a network ACL and a subnet.</p>
-    pub fn network_acl_association_id(&self) -> std::option::Option<&str> {
+    pub fn network_acl_association_id(&self) -> std::option::Option<& str> {
         self.network_acl_association_id.as_deref()
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(&self) -> std::option::Option<&str> {
+    pub fn network_acl_id(&self) -> std::option::Option<& str> {
         self.network_acl_id.as_deref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
 }
@@ -50,12 +50,8 @@ impl NetworkAclAssociationBuilder {
         self
     }
     /// <p>The ID of the association between a network ACL and a subnet.</p>
-    pub fn set_network_acl_association_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.network_acl_association_id = input;
-        self
+    pub fn set_network_acl_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.network_acl_association_id = input; self
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl NetworkAclAssociationBuilder {
     }
     /// <p>The ID of the network ACL.</p>
     pub fn set_network_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_acl_id = input;
-        self
+        self.network_acl_id = input; self
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,15 +69,18 @@ impl NetworkAclAssociationBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input;
-        self
+        self.subnet_id = input; self
     }
     /// Consumes the builder and constructs a [`NetworkAclAssociation`](crate::types::NetworkAclAssociation).
     pub fn build(self) -> crate::types::NetworkAclAssociation {
         crate::types::NetworkAclAssociation {
-            network_acl_association_id: self.network_acl_association_id,
-            network_acl_id: self.network_acl_id,
-            subnet_id: self.subnet_id,
+            network_acl_association_id: self.network_acl_association_id
+            ,
+            network_acl_id: self.network_acl_id
+            ,
+            subnet_id: self.subnet_id
+            ,
         }
     }
 }
+

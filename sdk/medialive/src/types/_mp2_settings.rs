@@ -3,7 +3,7 @@
 /// Mp2 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Mp2Settings {
+pub struct Mp2Settings  {
     /// Average bitrate in bits/second.
     #[doc(hidden)]
     pub bitrate: f64,
@@ -20,7 +20,7 @@ impl Mp2Settings {
         self.bitrate
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
-    pub fn coding_mode(&self) -> std::option::Option<&crate::types::Mp2CodingMode> {
+    pub fn coding_mode(&self) -> std::option::Option<& crate::types::Mp2CodingMode> {
         self.coding_mode.as_ref()
     }
     /// Sample rate in Hz.
@@ -51,8 +51,7 @@ impl Mp2SettingsBuilder {
     }
     /// Average bitrate in bits/second.
     pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
-        self.bitrate = input;
-        self
+        self.bitrate = input; self
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     pub fn coding_mode(mut self, input: crate::types::Mp2CodingMode) -> Self {
@@ -60,12 +59,8 @@ impl Mp2SettingsBuilder {
         self
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
-    pub fn set_coding_mode(
-        mut self,
-        input: std::option::Option<crate::types::Mp2CodingMode>,
-    ) -> Self {
-        self.coding_mode = input;
-        self
+    pub fn set_coding_mode(mut self, input: std::option::Option<crate::types::Mp2CodingMode>) -> Self {
+        self.coding_mode = input; self
     }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: f64) -> Self {
@@ -74,15 +69,20 @@ impl Mp2SettingsBuilder {
     }
     /// Sample rate in Hz.
     pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
-        self.sample_rate = input;
-        self
+        self.sample_rate = input; self
     }
     /// Consumes the builder and constructs a [`Mp2Settings`](crate::types::Mp2Settings).
     pub fn build(self) -> crate::types::Mp2Settings {
         crate::types::Mp2Settings {
-            bitrate: self.bitrate.unwrap_or_default(),
-            coding_mode: self.coding_mode,
-            sample_rate: self.sample_rate.unwrap_or_default(),
+            bitrate: self.bitrate
+                .unwrap_or_default()
+            ,
+            coding_mode: self.coding_mode
+            ,
+            sample_rate: self.sample_rate
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

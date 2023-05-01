@@ -3,7 +3,7 @@
 /// <p>A tag for a column in a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html">TagColumnOperation</a> </code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnTag {
+pub struct ColumnTag  {
     /// <p>A geospatial role for a column.</p>
     #[doc(hidden)]
     pub column_geographic_role: std::option::Option<crate::types::GeoSpatialDataRole>,
@@ -13,11 +13,11 @@ pub struct ColumnTag {
 }
 impl ColumnTag {
     /// <p>A geospatial role for a column.</p>
-    pub fn column_geographic_role(&self) -> std::option::Option<&crate::types::GeoSpatialDataRole> {
+    pub fn column_geographic_role(&self) -> std::option::Option<& crate::types::GeoSpatialDataRole> {
         self.column_geographic_role.as_ref()
     }
     /// <p>A description for a column.</p>
-    pub fn column_description(&self) -> std::option::Option<&crate::types::ColumnDescription> {
+    pub fn column_description(&self) -> std::option::Option<& crate::types::ColumnDescription> {
         self.column_description.as_ref()
     }
 }
@@ -42,12 +42,8 @@ impl ColumnTagBuilder {
         self
     }
     /// <p>A geospatial role for a column.</p>
-    pub fn set_column_geographic_role(
-        mut self,
-        input: std::option::Option<crate::types::GeoSpatialDataRole>,
-    ) -> Self {
-        self.column_geographic_role = input;
-        self
+    pub fn set_column_geographic_role(mut self, input: std::option::Option<crate::types::GeoSpatialDataRole>) -> Self {
+        self.column_geographic_role = input; self
     }
     /// <p>A description for a column.</p>
     pub fn column_description(mut self, input: crate::types::ColumnDescription) -> Self {
@@ -55,18 +51,17 @@ impl ColumnTagBuilder {
         self
     }
     /// <p>A description for a column.</p>
-    pub fn set_column_description(
-        mut self,
-        input: std::option::Option<crate::types::ColumnDescription>,
-    ) -> Self {
-        self.column_description = input;
-        self
+    pub fn set_column_description(mut self, input: std::option::Option<crate::types::ColumnDescription>) -> Self {
+        self.column_description = input; self
     }
     /// Consumes the builder and constructs a [`ColumnTag`](crate::types::ColumnTag).
     pub fn build(self) -> crate::types::ColumnTag {
         crate::types::ColumnTag {
-            column_geographic_role: self.column_geographic_role,
-            column_description: self.column_description,
+            column_geographic_role: self.column_geographic_role
+            ,
+            column_description: self.column_description
+            ,
         }
     }
 }
+

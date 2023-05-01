@@ -3,7 +3,7 @@
 /// <p>An object that filters a workflow search.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowTemplateFilter {
+pub struct FlowTemplateFilter  {
     /// <p>The name of the search filter field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::FlowTemplateFilterName>,
@@ -13,11 +13,11 @@ pub struct FlowTemplateFilter {
 }
 impl FlowTemplateFilter {
     /// <p>The name of the search filter field.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::FlowTemplateFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::FlowTemplateFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl FlowTemplateFilterBuilder {
         self
     }
     /// <p>The name of the search filter field.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::FlowTemplateFilterName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::FlowTemplateFilterName>) -> Self {
+        self.name = input; self
     }
     /// Appends an item to `value`.
     ///
@@ -56,23 +52,22 @@ impl FlowTemplateFilterBuilder {
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
-        v.push(input.into());
-        self.value = Some(v);
-        self
+                        v.push(input.into());
+                        self.value = Some(v);
+                        self
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn set_value(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.value = input;
-        self
+    pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`FlowTemplateFilter`](crate::types::FlowTemplateFilter).
     pub fn build(self) -> crate::types::FlowTemplateFilter {
         crate::types::FlowTemplateFilter {
-            name: self.name,
-            value: self.value,
+            name: self.name
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

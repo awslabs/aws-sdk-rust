@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkAclEntryInput {
+pub struct DeleteNetworkAclEntryInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -26,7 +26,7 @@ impl DeleteNetworkAclEntryInput {
         self.egress
     }
     /// <p>The ID of the network ACL.</p>
-    pub fn network_acl_id(&self) -> std::option::Option<&str> {
+    pub fn network_acl_id(&self) -> std::option::Option<& str> {
         self.network_acl_id.as_deref()
     }
     /// <p>The rule number of the entry to delete.</p>
@@ -36,9 +36,7 @@ impl DeleteNetworkAclEntryInput {
 }
 impl DeleteNetworkAclEntryInput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
-    pub fn builder(
-    ) -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder {
         crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder::default()
     }
 }
@@ -60,8 +58,7 @@ impl DeleteNetworkAclEntryInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>Indicates whether the rule is an egress rule.</p>
     pub fn egress(mut self, input: bool) -> Self {
@@ -70,8 +67,7 @@ impl DeleteNetworkAclEntryInputBuilder {
     }
     /// <p>Indicates whether the rule is an egress rule.</p>
     pub fn set_egress(mut self, input: std::option::Option<bool>) -> Self {
-        self.egress = input;
-        self
+        self.egress = input; self
     }
     /// <p>The ID of the network ACL.</p>
     pub fn network_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl DeleteNetworkAclEntryInputBuilder {
     }
     /// <p>The ID of the network ACL.</p>
     pub fn set_network_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_acl_id = input;
-        self
+        self.network_acl_id = input; self
     }
     /// <p>The rule number of the entry to delete.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
@@ -90,23 +85,22 @@ impl DeleteNetworkAclEntryInputBuilder {
     }
     /// <p>The rule number of the entry to delete.</p>
     pub fn set_rule_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.rule_number = input;
-        self
+        self.rule_number = input; self
     }
     /// Consumes the builder and constructs a [`DeleteNetworkAclEntryInput`](crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryInput {
-                dry_run: self.dry_run,
-                egress: self.egress,
-                network_acl_id: self.network_acl_id,
-                rule_number: self.rule_number,
-            },
+                dry_run: self.dry_run
+                ,
+                egress: self.egress
+                ,
+                network_acl_id: self.network_acl_id
+                ,
+                rule_number: self.rule_number
+                ,
+            }
         )
     }
 }
+

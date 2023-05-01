@@ -3,7 +3,7 @@
 /// <p>Describes a Reserved Instance listing state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceCount {
+pub struct InstanceCount  {
     /// <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
     #[doc(hidden)]
     pub instance_count: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl InstanceCount {
         self.instance_count
     }
     /// <p>The states of the listed Reserved Instances.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ListingState> {
+    pub fn state(&self) -> std::option::Option<& crate::types::ListingState> {
         self.state.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl InstanceCountBuilder {
     }
     /// <p>The number of listed Reserved Instances in the state specified by the <code>state</code>.</p>
     pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_count = input;
-        self
+        self.instance_count = input; self
     }
     /// <p>The states of the listed Reserved Instances.</p>
     pub fn state(mut self, input: crate::types::ListingState) -> Self {
@@ -53,14 +52,16 @@ impl InstanceCountBuilder {
     }
     /// <p>The states of the listed Reserved Instances.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ListingState>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     /// Consumes the builder and constructs a [`InstanceCount`](crate::types::InstanceCount).
     pub fn build(self) -> crate::types::InstanceCount {
         crate::types::InstanceCount {
-            instance_count: self.instance_count,
-            state: self.state,
+            instance_count: self.instance_count
+            ,
+            state: self.state
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListModelPackageGroupsInput {
+pub struct ListModelPackageGroupsInput  {
     /// <p>A filter that returns only model groups created after the specified time.</p>
     #[doc(hidden)]
     pub creation_time_after: std::option::Option<aws_smithy_types::DateTime>,
@@ -27,11 +27,11 @@ pub struct ListModelPackageGroupsInput {
 }
 impl ListModelPackageGroupsInput {
     /// <p>A filter that returns only model groups created after the specified time.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>A filter that returns only model groups created before the specified time.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -39,27 +39,25 @@ impl ListModelPackageGroupsInput {
         self.max_results
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
-    pub fn name_contains(&self) -> std::option::Option<&str> {
+    pub fn name_contains(&self) -> std::option::Option<& str> {
         self.name_contains.as_deref()
     }
     /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::ModelPackageGroupSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::ModelPackageGroupSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 impl ListModelPackageGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListModelPackageGroupsInput`](crate::operation::list_model_package_groups::ListModelPackageGroupsInput).
-    pub fn builder(
-    ) -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder
-    {
+    pub fn builder() -> crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder {
         crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder::default()
     }
 }
@@ -83,12 +81,8 @@ impl ListModelPackageGroupsInputBuilder {
         self
     }
     /// <p>A filter that returns only model groups created after the specified time.</p>
-    pub fn set_creation_time_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_after = input;
-        self
+    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_after = input; self
     }
     /// <p>A filter that returns only model groups created before the specified time.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -96,12 +90,8 @@ impl ListModelPackageGroupsInputBuilder {
         self
     }
     /// <p>A filter that returns only model groups created before the specified time.</p>
-    pub fn set_creation_time_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time_before = input;
-        self
+    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time_before = input; self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -110,8 +100,7 @@ impl ListModelPackageGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,8 +109,7 @@ impl ListModelPackageGroupsInputBuilder {
     }
     /// <p>A string in the model group name. This filter returns only model groups whose name contains the specified string.</p>
     pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_contains = input;
-        self
+        self.name_contains = input; self
     }
     /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,8 +118,7 @@ impl ListModelPackageGroupsInputBuilder {
     }
     /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model groups, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
     pub fn sort_by(mut self, input: crate::types::ModelPackageGroupSortBy) -> Self {
@@ -139,12 +126,8 @@ impl ListModelPackageGroupsInputBuilder {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(
-        mut self,
-        input: std::option::Option<crate::types::ModelPackageGroupSortBy>,
-    ) -> Self {
-        self.sort_by = input;
-        self
+    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ModelPackageGroupSortBy>) -> Self {
+        self.sort_by = input; self
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -153,26 +136,28 @@ impl ListModelPackageGroupsInputBuilder {
     }
     /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// Consumes the builder and constructs a [`ListModelPackageGroupsInput`](crate::operation::list_model_package_groups::ListModelPackageGroupsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_model_package_groups::ListModelPackageGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_model_package_groups::ListModelPackageGroupsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_model_package_groups::ListModelPackageGroupsInput {
-                creation_time_after: self.creation_time_after,
-                creation_time_before: self.creation_time_before,
-                max_results: self.max_results,
-                name_contains: self.name_contains,
-                next_token: self.next_token,
-                sort_by: self.sort_by,
-                sort_order: self.sort_order,
-            },
+                creation_time_after: self.creation_time_after
+                ,
+                creation_time_before: self.creation_time_before
+                ,
+                max_results: self.max_results
+                ,
+                name_contains: self.name_contains
+                ,
+                next_token: self.next_token
+                ,
+                sort_by: self.sort_by
+                ,
+                sort_order: self.sort_order
+                ,
+            }
         )
     }
 }
+

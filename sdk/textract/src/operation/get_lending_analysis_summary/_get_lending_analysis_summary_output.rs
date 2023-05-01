@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLendingAnalysisSummaryOutput {
+pub struct GetLendingAnalysisSummaryOutput  {
     /// <p>Information about the input document.</p>
     #[doc(hidden)]
     pub document_metadata: std::option::Option<crate::types::DocumentMetadata>,
@@ -25,38 +25,38 @@ pub struct GetLendingAnalysisSummaryOutput {
 }
 impl GetLendingAnalysisSummaryOutput {
     /// <p>Information about the input document.</p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p> The current status of the lending analysis job. </p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p> Contains summary information for documents grouped by type.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::LendingSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::types::LendingSummary> {
         self.summary.as_ref()
     }
     /// <p>A list of warnings that occurred during the lending analysis operation.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::types::Warning]> {
+    pub fn warnings(&self) -> std::option::Option<& [crate::types::Warning]> {
         self.warnings.as_deref()
     }
     /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The current model version of the Analyze Lending API.</p>
-    pub fn analyze_lending_model_version(&self) -> std::option::Option<&str> {
+    pub fn analyze_lending_model_version(&self) -> std::option::Option<& str> {
         self.analyze_lending_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetLendingAnalysisSummaryOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetLendingAnalysisSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetLendingAnalysisSummaryOutput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput).
-    pub fn builder() -> crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryOutputBuilder{
+    pub fn builder() -> crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryOutputBuilder {
         crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryOutputBuilder::default()
     }
 }
@@ -80,12 +80,8 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         self
     }
     /// <p>Information about the input document.</p>
-    pub fn set_document_metadata(
-        mut self,
-        input: std::option::Option<crate::types::DocumentMetadata>,
-    ) -> Self {
-        self.document_metadata = input;
-        self
+    pub fn set_document_metadata(mut self, input: std::option::Option<crate::types::DocumentMetadata>) -> Self {
+        self.document_metadata = input; self
     }
     /// <p> The current status of the lending analysis job. </p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -94,8 +90,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
     }
     /// <p> The current status of the lending analysis job. </p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input;
-        self
+        self.job_status = input; self
     }
     /// <p> Contains summary information for documents grouped by type.</p>
     pub fn summary(mut self, input: crate::types::LendingSummary) -> Self {
@@ -104,8 +99,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
     }
     /// <p> Contains summary information for documents grouped by type.</p>
     pub fn set_summary(mut self, input: std::option::Option<crate::types::LendingSummary>) -> Self {
-        self.summary = input;
-        self
+        self.summary = input; self
     }
     /// Appends an item to `warnings`.
     ///
@@ -114,17 +108,13 @@ impl GetLendingAnalysisSummaryOutputBuilder {
     /// <p>A list of warnings that occurred during the lending analysis operation.</p>
     pub fn warnings(mut self, input: crate::types::Warning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
-        v.push(input);
-        self.warnings = Some(v);
-        self
+                        v.push(input);
+                        self.warnings = Some(v);
+                        self
     }
     /// <p>A list of warnings that occurred during the lending analysis operation.</p>
-    pub fn set_warnings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Warning>>,
-    ) -> Self {
-        self.warnings = input;
-        self
+    pub fn set_warnings(mut self, input: std::option::Option<std::vec::Vec<crate::types::Warning>>) -> Self {
+        self.warnings = input; self
     }
     /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +123,7 @@ impl GetLendingAnalysisSummaryOutputBuilder {
     }
     /// <p>Returns if the lending analysis could not be completed. Contains explanation for what error occurred.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input;
-        self
+        self.status_message = input; self
     }
     /// <p>The current model version of the Analyze Lending API.</p>
     pub fn analyze_lending_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,34 +131,35 @@ impl GetLendingAnalysisSummaryOutputBuilder {
         self
     }
     /// <p>The current model version of the Analyze Lending API.</p>
-    pub fn set_analyze_lending_model_version(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.analyze_lending_model_version = input;
-        self
+    pub fn set_analyze_lending_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.analyze_lending_model_version = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetLendingAnalysisSummaryOutput`](crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput {
+    pub fn build(self) -> crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput {
         crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput {
-            document_metadata: self.document_metadata,
-            job_status: self.job_status,
-            summary: self.summary,
-            warnings: self.warnings,
-            status_message: self.status_message,
-            analyze_lending_model_version: self.analyze_lending_model_version,
+            document_metadata: self.document_metadata
+            ,
+            job_status: self.job_status
+            ,
+            summary: self.summary
+            ,
+            warnings: self.warnings
+            ,
+            status_message: self.status_message
+            ,
+            analyze_lending_model_version: self.analyze_lending_model_version
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

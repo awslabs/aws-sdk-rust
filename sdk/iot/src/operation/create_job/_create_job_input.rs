@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobInput {
+pub struct CreateJobInput  {
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
     /// <p>A list of things and thing groups to which the job should be sent.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
     #[doc(hidden)]
     pub document_source: std::option::Option<std::string::String>,
@@ -26,15 +26,14 @@ pub struct CreateJobInput {
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     #[doc(hidden)]
     pub presigned_url_config: std::option::Option<crate::types::PresignedUrlConfig>,
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
     #[doc(hidden)]
     pub target_selection: std::option::Option<crate::types::TargetSelection>,
     /// <p>Allows you to create a staged rollout of the job.</p>
     #[doc(hidden)]
-    pub job_executions_rollout_config:
-        std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub job_executions_rollout_config: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     /// <p>Allows you to create the criteria to abort a job.</p>
     #[doc(hidden)]
     pub abort_config: std::option::Option<crate::types::AbortConfig>,
@@ -44,10 +43,10 @@ pub struct CreateJobInput {
     /// <p>Metadata which can be used to manage the job.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     #[doc(hidden)]
     pub namespace_id: std::option::Option<std::string::String>,
@@ -57,99 +56,91 @@ pub struct CreateJobInput {
     /// <p>Allows you to create the criteria to retry a job.</p>
     #[doc(hidden)]
     pub job_executions_retry_config: std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
     #[doc(hidden)]
-    pub document_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub document_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     #[doc(hidden)]
     pub scheduling_config: std::option::Option<crate::types::SchedulingConfig>,
 }
 impl CreateJobInput {
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>A list of things and thing groups to which the job should be sent.</p>
-    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn targets(&self) -> std::option::Option<& [std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
-    pub fn document_source(&self) -> std::option::Option<&str> {
+    pub fn document_source(&self) -> std::option::Option<& str> {
         self.document_source.as_deref()
     }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>A short text description of the job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    pub fn presigned_url_config(&self) -> std::option::Option<&crate::types::PresignedUrlConfig> {
+    pub fn presigned_url_config(&self) -> std::option::Option<& crate::types::PresignedUrlConfig> {
         self.presigned_url_config.as_ref()
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
-    pub fn target_selection(&self) -> std::option::Option<&crate::types::TargetSelection> {
+    pub fn target_selection(&self) -> std::option::Option<& crate::types::TargetSelection> {
         self.target_selection.as_ref()
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn job_executions_rollout_config(
-        &self,
-    ) -> std::option::Option<&crate::types::JobExecutionsRolloutConfig> {
+    pub fn job_executions_rollout_config(&self) -> std::option::Option<& crate::types::JobExecutionsRolloutConfig> {
         self.job_executions_rollout_config.as_ref()
     }
     /// <p>Allows you to create the criteria to abort a job.</p>
-    pub fn abort_config(&self) -> std::option::Option<&crate::types::AbortConfig> {
+    pub fn abort_config(&self) -> std::option::Option<& crate::types::AbortConfig> {
         self.abort_config.as_ref()
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn timeout_config(&self) -> std::option::Option<&crate::types::TimeoutConfig> {
+    pub fn timeout_config(&self) -> std::option::Option<& crate::types::TimeoutConfig> {
         self.timeout_config.as_ref()
     }
     /// <p>Metadata which can be used to manage the job.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
-    pub fn namespace_id(&self) -> std::option::Option<&str> {
+    pub fn namespace_id(&self) -> std::option::Option<& str> {
         self.namespace_id.as_deref()
     }
     /// <p>The ARN of the job template used to create the job.</p>
-    pub fn job_template_arn(&self) -> std::option::Option<&str> {
+    pub fn job_template_arn(&self) -> std::option::Option<& str> {
         self.job_template_arn.as_deref()
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        &self,
-    ) -> std::option::Option<&crate::types::JobExecutionsRetryConfig> {
+    pub fn job_executions_retry_config(&self) -> std::option::Option<& crate::types::JobExecutionsRetryConfig> {
         self.job_executions_retry_config.as_ref()
     }
-    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
-    pub fn document_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn document_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.document_parameters.as_ref()
     }
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
-    pub fn scheduling_config(&self) -> std::option::Option<&crate::types::SchedulingConfig> {
+    pub fn scheduling_config(&self) -> std::option::Option<& crate::types::SchedulingConfig> {
         self.scheduling_config.as_ref()
     }
 }
@@ -171,17 +162,14 @@ pub struct CreateJobInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) presigned_url_config: std::option::Option<crate::types::PresignedUrlConfig>,
     pub(crate) target_selection: std::option::Option<crate::types::TargetSelection>,
-    pub(crate) job_executions_rollout_config:
-        std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+    pub(crate) job_executions_rollout_config: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     pub(crate) abort_config: std::option::Option<crate::types::AbortConfig>,
     pub(crate) timeout_config: std::option::Option<crate::types::TimeoutConfig>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) namespace_id: std::option::Option<std::string::String>,
     pub(crate) job_template_arn: std::option::Option<std::string::String>,
-    pub(crate) job_executions_retry_config:
-        std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    pub(crate) document_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) job_executions_retry_config: std::option::Option<crate::types::JobExecutionsRetryConfig>,
+    pub(crate) document_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) scheduling_config: std::option::Option<crate::types::SchedulingConfig>,
 }
 impl CreateJobInputBuilder {
@@ -192,8 +180,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Appends an item to `targets`.
     ///
@@ -202,37 +189,32 @@ impl CreateJobInputBuilder {
     /// <p>A list of things and thing groups to which the job should be sent.</p>
     pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-        v.push(input.into());
-        self.targets = Some(v);
-        self
+                        v.push(input.into());
+                        self.targets = Some(v);
+                        self
     }
     /// <p>A list of things and thing groups to which the job should be sent.</p>
-    pub fn set_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.targets = input;
-        self
+    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.targets = input; self
     }
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
     pub fn document_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.document_source = Some(input.into());
         self
     }
-    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note>
-    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p>
-    /// <p>The placeholder link is of the following form:</p>
-    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p>
-    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p>
+    /// <p>An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p> <note> 
+    /// <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> 
+    /// <p>The placeholder link is of the following form:</p> 
+    /// <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> 
+    /// <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> 
     /// </note>
     pub fn set_document_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_source = input;
-        self
+        self.document_source = input; self
     }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,8 +223,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>The job document. Required if you don't specify a value for <code>documentSource</code>.</p>
     pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document = input;
-        self
+        self.document = input; self
     }
     /// <p>A short text description of the job.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -251,8 +232,7 @@ impl CreateJobInputBuilder {
     }
     /// <p>A short text description of the job.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     pub fn presigned_url_config(mut self, input: crate::types::PresignedUrlConfig) -> Self {
@@ -260,45 +240,30 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>Configuration information for pre-signed S3 URLs.</p>
-    pub fn set_presigned_url_config(
-        mut self,
-        input: std::option::Option<crate::types::PresignedUrlConfig>,
-    ) -> Self {
-        self.presigned_url_config = input;
-        self
+    pub fn set_presigned_url_config(mut self, input: std::option::Option<crate::types::PresignedUrlConfig>) -> Self {
+        self.presigned_url_config = input; self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
     pub fn target_selection(mut self, input: crate::types::TargetSelection) -> Self {
         self.target_selection = Some(input);
         self
     }
-    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note>
-    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p>
+    /// <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.</p> <note> 
+    /// <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> 
     /// </note>
-    pub fn set_target_selection(
-        mut self,
-        input: std::option::Option<crate::types::TargetSelection>,
-    ) -> Self {
-        self.target_selection = input;
-        self
+    pub fn set_target_selection(mut self, input: std::option::Option<crate::types::TargetSelection>) -> Self {
+        self.target_selection = input; self
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn job_executions_rollout_config(
-        mut self,
-        input: crate::types::JobExecutionsRolloutConfig,
-    ) -> Self {
+    pub fn job_executions_rollout_config(mut self, input: crate::types::JobExecutionsRolloutConfig) -> Self {
         self.job_executions_rollout_config = Some(input);
         self
     }
     /// <p>Allows you to create a staged rollout of the job.</p>
-    pub fn set_job_executions_rollout_config(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
-    ) -> Self {
-        self.job_executions_rollout_config = input;
-        self
+    pub fn set_job_executions_rollout_config(mut self, input: std::option::Option<crate::types::JobExecutionsRolloutConfig>) -> Self {
+        self.job_executions_rollout_config = input; self
     }
     /// <p>Allows you to create the criteria to abort a job.</p>
     pub fn abort_config(mut self, input: crate::types::AbortConfig) -> Self {
@@ -306,12 +271,8 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>Allows you to create the criteria to abort a job.</p>
-    pub fn set_abort_config(
-        mut self,
-        input: std::option::Option<crate::types::AbortConfig>,
-    ) -> Self {
-        self.abort_config = input;
-        self
+    pub fn set_abort_config(mut self, input: std::option::Option<crate::types::AbortConfig>) -> Self {
+        self.abort_config = input; self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn timeout_config(mut self, input: crate::types::TimeoutConfig) -> Self {
@@ -319,12 +280,8 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
-    pub fn set_timeout_config(
-        mut self,
-        input: std::option::Option<crate::types::TimeoutConfig>,
-    ) -> Self {
-        self.timeout_config = input;
-        self
+    pub fn set_timeout_config(mut self, input: std::option::Option<crate::types::TimeoutConfig>) -> Self {
+        self.timeout_config = input; self
     }
     /// Appends an item to `tags`.
     ///
@@ -333,35 +290,30 @@ impl CreateJobInputBuilder {
     /// <p>Metadata which can be used to manage the job.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
     /// <p>Metadata which can be used to manage the job.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace_id = Some(input.into());
         self
     }
-    /// <p>The namespace used to indicate that a job is a customer-managed job.</p>
-    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p>
-    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
-    /// <p>The <code>namespaceId</code> feature is in public preview.</p>
+    /// <p>The namespace used to indicate that a job is a customer-managed job.</p> 
+    /// <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> 
+    /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> 
+    /// <p>The <code>namespaceId</code> feature is in public preview.</p> 
     /// </note>
     pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_id = input;
-        self
+        self.namespace_id = input; self
     }
     /// <p>The ARN of the job template used to create the job.</p>
     pub fn job_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -370,53 +322,35 @@ impl CreateJobInputBuilder {
     }
     /// <p>The ARN of the job template used to create the job.</p>
     pub fn set_job_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_template_arn = input;
-        self
+        self.job_template_arn = input; self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn job_executions_retry_config(
-        mut self,
-        input: crate::types::JobExecutionsRetryConfig,
-    ) -> Self {
+    pub fn job_executions_retry_config(mut self, input: crate::types::JobExecutionsRetryConfig) -> Self {
         self.job_executions_retry_config = Some(input);
         self
     }
     /// <p>Allows you to create the criteria to retry a job.</p>
-    pub fn set_job_executions_retry_config(
-        mut self,
-        input: std::option::Option<crate::types::JobExecutionsRetryConfig>,
-    ) -> Self {
-        self.job_executions_retry_config = input;
-        self
+    pub fn set_job_executions_retry_config(mut self, input: std::option::Option<crate::types::JobExecutionsRetryConfig>) -> Self {
+        self.job_executions_retry_config = input; self
     }
     /// Adds a key-value pair to `document_parameters`.
     ///
     /// To override the contents of this collection use [`set_document_parameters`](Self::set_document_parameters).
     ///
-    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
-    pub fn document_parameters(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn document_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.document_parameters.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.document_parameters = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.document_parameters = Some(hash_map);
+                        self
     }
-    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note>
-    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
+    /// <p>Parameters of an Amazon Web Services managed template that you can specify to create the job document.</p> <note> 
+    /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> 
     /// </note>
-    pub fn set_document_parameters(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.document_parameters = input;
-        self
+    pub fn set_document_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.document_parameters = input; self
     }
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
     pub fn scheduling_config(mut self, input: crate::types::SchedulingConfig) -> Self {
@@ -424,37 +358,47 @@ impl CreateJobInputBuilder {
         self
     }
     /// <p>The configuration that allows you to schedule a job for a future date and time in addition to specifying the end behavior for each job execution.</p>
-    pub fn set_scheduling_config(
-        mut self,
-        input: std::option::Option<crate::types::SchedulingConfig>,
-    ) -> Self {
-        self.scheduling_config = input;
-        self
+    pub fn set_scheduling_config(mut self, input: std::option::Option<crate::types::SchedulingConfig>) -> Self {
+        self.scheduling_config = input; self
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_job::CreateJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_job::CreateJobInput {
-            job_id: self.job_id,
-            targets: self.targets,
-            document_source: self.document_source,
-            document: self.document,
-            description: self.description,
-            presigned_url_config: self.presigned_url_config,
-            target_selection: self.target_selection,
-            job_executions_rollout_config: self.job_executions_rollout_config,
-            abort_config: self.abort_config,
-            timeout_config: self.timeout_config,
-            tags: self.tags,
-            namespace_id: self.namespace_id,
-            job_template_arn: self.job_template_arn,
-            job_executions_retry_config: self.job_executions_retry_config,
-            document_parameters: self.document_parameters,
-            scheduling_config: self.scheduling_config,
-        })
+    pub fn build(self) -> Result<crate::operation::create_job::CreateJobInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_job::CreateJobInput {
+                job_id: self.job_id
+                ,
+                targets: self.targets
+                ,
+                document_source: self.document_source
+                ,
+                document: self.document
+                ,
+                description: self.description
+                ,
+                presigned_url_config: self.presigned_url_config
+                ,
+                target_selection: self.target_selection
+                ,
+                job_executions_rollout_config: self.job_executions_rollout_config
+                ,
+                abort_config: self.abort_config
+                ,
+                timeout_config: self.timeout_config
+                ,
+                tags: self.tags
+                ,
+                namespace_id: self.namespace_id
+                ,
+                job_template_arn: self.job_template_arn
+                ,
+                job_executions_retry_config: self.job_executions_retry_config
+                ,
+                document_parameters: self.document_parameters
+                ,
+                scheduling_config: self.scheduling_config
+                ,
+            }
+        )
     }
 }
+

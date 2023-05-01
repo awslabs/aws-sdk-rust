@@ -3,7 +3,7 @@
 /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsufficientCacheClusterCapacityFault {
+pub struct InsufficientCacheClusterCapacityFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,15 +11,13 @@ pub struct InsufficientCacheClusterCapacityFault {
 }
 impl InsufficientCacheClusterCapacityFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InsufficientCacheClusterCapacityFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientCacheClusterCapacityFault")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -27,25 +25,18 @@ impl std::fmt::Display for InsufficientCacheClusterCapacityFault {
     }
 }
 impl std::error::Error for InsufficientCacheClusterCapacityFault {}
-impl aws_http::request_id::RequestId
-    for crate::types::error::InsufficientCacheClusterCapacityFault
-{
+impl aws_http::request_id::RequestId for crate::types::error::InsufficientCacheClusterCapacityFault {
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
-    for InsufficientCacheClusterCapacityFault
-{
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InsufficientCacheClusterCapacityFault {
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InsufficientCacheClusterCapacityFault {
     /// Creates a new builder-style object to manufacture [`InsufficientCacheClusterCapacityFault`](crate::types::error::InsufficientCacheClusterCapacityFault).
-    pub fn builder() -> crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder
-    {
+    pub fn builder() -> crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder {
         crate::types::error::builders::InsufficientCacheClusterCapacityFaultBuilder::default()
     }
 }
@@ -65,28 +56,26 @@ impl InsufficientCacheClusterCapacityFaultBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InsufficientCacheClusterCapacityFault`](crate::types::error::InsufficientCacheClusterCapacityFault).
     pub fn build(self) -> crate::types::error::InsufficientCacheClusterCapacityFault {
         crate::types::error::InsufficientCacheClusterCapacityFault {
-            message: self.message,
+            message: self.message
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

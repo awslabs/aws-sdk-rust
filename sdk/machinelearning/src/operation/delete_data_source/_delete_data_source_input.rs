@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSourceInput {
+pub struct DeleteDataSourceInput  {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     #[doc(hidden)]
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataSourceInput {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> std::option::Option<& str> {
         self.data_source_id.as_deref()
     }
 }
 impl DeleteDataSourceInput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
-    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder {
         crate::operation::delete_data_source::builders::DeleteDataSourceInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DeleteDataSourceInputBuilder {
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input;
-        self
+        self.data_source_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteDataSourceInput`](crate::operation::delete_data_source::DeleteDataSourceInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_data_source::DeleteDataSourceInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_data_source::DeleteDataSourceInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_data_source::DeleteDataSourceInput {
-                data_source_id: self.data_source_id,
-            },
+                data_source_id: self.data_source_id
+                ,
+            }
         )
     }
 }
+

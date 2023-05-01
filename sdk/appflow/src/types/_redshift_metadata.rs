@@ -3,7 +3,8 @@
 /// <p> The connector metadata specific to Amazon Redshift. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftMetadata {}
+pub struct RedshiftMetadata  {
+}
 impl RedshiftMetadata {
     /// Creates a new builder-style object to manufacture [`RedshiftMetadata`](crate::types::RedshiftMetadata).
     pub fn builder() -> crate::types::builders::RedshiftMetadataBuilder {
@@ -14,10 +15,13 @@ impl RedshiftMetadata {
 /// A builder for [`RedshiftMetadata`](crate::types::RedshiftMetadata).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct RedshiftMetadataBuilder {}
+pub struct RedshiftMetadataBuilder {
+}
 impl RedshiftMetadataBuilder {
     /// Consumes the builder and constructs a [`RedshiftMetadata`](crate::types::RedshiftMetadata).
     pub fn build(self) -> crate::types::RedshiftMetadata {
-        crate::types::RedshiftMetadata {}
+        crate::types::RedshiftMetadata {
+        }
     }
 }
+

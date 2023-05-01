@@ -3,7 +3,7 @@
 /// Group owner related settings for local resources.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupOwnerSetting {
+pub struct GroupOwnerSetting  {
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
     #[doc(hidden)]
     pub auto_add_group_owner: bool,
@@ -17,7 +17,7 @@ impl GroupOwnerSetting {
         self.auto_add_group_owner
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
-    pub fn group_owner(&self) -> std::option::Option<&str> {
+    pub fn group_owner(&self) -> std::option::Option<& str> {
         self.group_owner.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GroupOwnerSettingBuilder {
     }
     /// If true, AWS IoT Greengrass automatically adds the specified Linux OS group owner of the resource to the Lambda process privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
     pub fn set_auto_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_add_group_owner = input;
-        self
+        self.auto_add_group_owner = input; self
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
     pub fn group_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,17 @@ impl GroupOwnerSettingBuilder {
     }
     /// The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
     pub fn set_group_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_owner = input;
-        self
+        self.group_owner = input; self
     }
     /// Consumes the builder and constructs a [`GroupOwnerSetting`](crate::types::GroupOwnerSetting).
     pub fn build(self) -> crate::types::GroupOwnerSetting {
         crate::types::GroupOwnerSetting {
-            auto_add_group_owner: self.auto_add_group_owner.unwrap_or_default(),
-            group_owner: self.group_owner,
+            auto_add_group_owner: self.auto_add_group_owner
+                .unwrap_or_default()
+            ,
+            group_owner: self.group_owner
+            ,
         }
     }
 }
+

@@ -14,3 +14,4 @@ pub use crate::types::_s3_encryption_configuration::S3EncryptionConfigurationBui
 pub use crate::types::_journal_kinesis_stream_description::JournalKinesisStreamDescriptionBuilder;
 
 pub use crate::types::_value_holder::ValueHolderBuilder;
+

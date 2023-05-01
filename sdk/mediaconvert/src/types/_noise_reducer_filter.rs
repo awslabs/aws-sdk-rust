@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let noisereducerfilter = unimplemented!();
 /// match noisereducerfilter {
@@ -36,22 +36,14 @@
 /// Specifically, when `noisereducerfilter` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NoiseReducerFilter::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NoiseReducerFilter {
     #[allow(missing_docs)] // documentation missing in model
     Bilateral,
@@ -70,63 +62,53 @@ pub enum NoiseReducerFilter {
     #[allow(missing_docs)] // documentation missing in model
     Temporal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NoiseReducerFilter {
-    fn from(s: &str) -> Self {
-        match s {
-            "BILATERAL" => NoiseReducerFilter::Bilateral,
-            "CONSERVE" => NoiseReducerFilter::Conserve,
-            "GAUSSIAN" => NoiseReducerFilter::Gaussian,
-            "LANCZOS" => NoiseReducerFilter::Lanczos,
-            "MEAN" => NoiseReducerFilter::Mean,
-            "SHARPEN" => NoiseReducerFilter::Sharpen,
-            "SPATIAL" => NoiseReducerFilter::Spatial,
-            "TEMPORAL" => NoiseReducerFilter::Temporal,
-            other => NoiseReducerFilter::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BILATERAL" => NoiseReducerFilter::Bilateral,
+"CONSERVE" => NoiseReducerFilter::Conserve,
+"GAUSSIAN" => NoiseReducerFilter::Gaussian,
+"LANCZOS" => NoiseReducerFilter::Lanczos,
+"MEAN" => NoiseReducerFilter::Mean,
+"SHARPEN" => NoiseReducerFilter::Sharpen,
+"SPATIAL" => NoiseReducerFilter::Spatial,
+"TEMPORAL" => NoiseReducerFilter::Temporal,
+other => NoiseReducerFilter::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for NoiseReducerFilter {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NoiseReducerFilter::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NoiseReducerFilter::from(s))
+                }
+            }
 impl NoiseReducerFilter {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NoiseReducerFilter::Bilateral => "BILATERAL",
-            NoiseReducerFilter::Conserve => "CONSERVE",
-            NoiseReducerFilter::Gaussian => "GAUSSIAN",
-            NoiseReducerFilter::Lanczos => "LANCZOS",
-            NoiseReducerFilter::Mean => "MEAN",
-            NoiseReducerFilter::Sharpen => "SHARPEN",
-            NoiseReducerFilter::Spatial => "SPATIAL",
-            NoiseReducerFilter::Temporal => "TEMPORAL",
-            NoiseReducerFilter::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BILATERAL",
-            "CONSERVE",
-            "GAUSSIAN",
-            "LANCZOS",
-            "MEAN",
-            "SHARPEN",
-            "SPATIAL",
-            "TEMPORAL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NoiseReducerFilter::Bilateral => "BILATERAL",
+    NoiseReducerFilter::Conserve => "CONSERVE",
+    NoiseReducerFilter::Gaussian => "GAUSSIAN",
+    NoiseReducerFilter::Lanczos => "LANCZOS",
+    NoiseReducerFilter::Mean => "MEAN",
+    NoiseReducerFilter::Sharpen => "SHARPEN",
+    NoiseReducerFilter::Spatial => "SPATIAL",
+    NoiseReducerFilter::Temporal => "TEMPORAL",
+    NoiseReducerFilter::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BILATERAL", "CONSERVE", "GAUSSIAN", "LANCZOS", "MEAN", "SHARPEN", "SPATIAL", "TEMPORAL"]
+                }
+            }
 impl AsRef<str> for NoiseReducerFilter {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

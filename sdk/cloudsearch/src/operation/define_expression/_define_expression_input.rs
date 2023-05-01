@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code><code>DefineExpression</code></code> operation. Specifies the name of the domain you want to update and the expression you want to configure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineExpressionInput {
+pub struct DefineExpressionInput  {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,18 +13,17 @@ pub struct DefineExpressionInput {
 }
 impl DefineExpressionInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
-    pub fn expression(&self) -> std::option::Option<&crate::types::Expression> {
+    pub fn expression(&self) -> std::option::Option<& crate::types::Expression> {
         self.expression.as_ref()
     }
 }
 impl DefineExpressionInput {
     /// Creates a new builder-style object to manufacture [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
-    pub fn builder() -> crate::operation::define_expression::builders::DefineExpressionInputBuilder
-    {
+    pub fn builder() -> crate::operation::define_expression::builders::DefineExpressionInputBuilder {
         crate::operation::define_expression::builders::DefineExpressionInputBuilder::default()
     }
 }
@@ -44,8 +43,7 @@ impl DefineExpressionInputBuilder {
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub fn expression(mut self, input: crate::types::Expression) -> Self {
@@ -54,19 +52,18 @@ impl DefineExpressionInputBuilder {
     }
     /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results. </p>
     pub fn set_expression(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
-        self.expression = input;
-        self
+        self.expression = input; self
     }
     /// Consumes the builder and constructs a [`DefineExpressionInput`](crate::operation::define_expression::DefineExpressionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::define_expression::DefineExpressionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::define_expression::DefineExpressionInput {
-            domain_name: self.domain_name,
-            expression: self.expression,
-        })
+    pub fn build(self) -> Result<crate::operation::define_expression::DefineExpressionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::define_expression::DefineExpressionInput {
+                domain_name: self.domain_name
+                ,
+                expression: self.expression
+                ,
+            }
+        )
     }
 }
+

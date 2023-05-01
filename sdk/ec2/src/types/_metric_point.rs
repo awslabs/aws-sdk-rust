@@ -3,7 +3,7 @@
 /// <p>Indicates whether the network was healthy or degraded at a particular point. The value is aggregated from the <code>startDate</code> to the <code>endDate</code>. Currently only <code>five_minutes</code> is supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricPoint {
+pub struct MetricPoint  {
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
     #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,11 +19,11 @@ pub struct MetricPoint {
 }
 impl MetricPoint {
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -31,7 +31,7 @@ impl MetricPoint {
         self.value
     }
     /// <p>The status of the metric point.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -58,12 +58,8 @@ impl MetricPointBuilder {
         self
     }
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn set_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
     }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
     pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -72,8 +68,7 @@ impl MetricPointBuilder {
     }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
     pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input;
-        self
+        self.end_date = input; self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn value(mut self, input: f32) -> Self {
@@ -82,8 +77,7 @@ impl MetricPointBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The status of the metric point.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,16 +86,20 @@ impl MetricPointBuilder {
     }
     /// <p>The status of the metric point.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`MetricPoint`](crate::types::MetricPoint).
     pub fn build(self) -> crate::types::MetricPoint {
         crate::types::MetricPoint {
-            start_date: self.start_date,
-            end_date: self.end_date,
-            value: self.value,
-            status: self.status,
+            start_date: self.start_date
+            ,
+            end_date: self.end_date
+            ,
+            value: self.value
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

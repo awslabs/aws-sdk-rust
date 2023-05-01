@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClientVpnConnectionsOutput {
+pub struct DescribeClientVpnConnectionsOutput  {
     /// <p>Information about the active and terminated client connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::types::ClientVpnConnection>>,
@@ -13,22 +13,22 @@ pub struct DescribeClientVpnConnectionsOutput {
 }
 impl DescribeClientVpnConnectionsOutput {
     /// <p>Information about the active and terminated client connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::types::ClientVpnConnection]> {
+    pub fn connections(&self) -> std::option::Option<& [crate::types::ClientVpnConnection]> {
         self.connections.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeClientVpnConnectionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeClientVpnConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClientVpnConnectionsOutput`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput).
-    pub fn builder() -> crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsOutputBuilder{
+    pub fn builder() -> crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsOutputBuilder {
         crate::operation::describe_client_vpn_connections::builders::DescribeClientVpnConnectionsOutputBuilder::default()
     }
 }
@@ -49,17 +49,13 @@ impl DescribeClientVpnConnectionsOutputBuilder {
     /// <p>Information about the active and terminated client connections.</p>
     pub fn connections(mut self, input: crate::types::ClientVpnConnection) -> Self {
         let mut v = self.connections.unwrap_or_default();
-        v.push(input);
-        self.connections = Some(v);
-        self
+                        v.push(input);
+                        self.connections = Some(v);
+                        self
     }
     /// <p>Information about the active and terminated client connections.</p>
-    pub fn set_connections(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClientVpnConnection>>,
-    ) -> Self {
-        self.connections = input;
-        self
+    pub fn set_connections(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClientVpnConnection>>) -> Self {
+        self.connections = input; self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,26 +64,26 @@ impl DescribeClientVpnConnectionsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeClientVpnConnectionsOutput`](crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput {
+    pub fn build(self) -> crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput {
         crate::operation::describe_client_vpn_connections::DescribeClientVpnConnectionsOutput {
-            connections: self.connections,
-            next_token: self.next_token,
+            connections: self.connections
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

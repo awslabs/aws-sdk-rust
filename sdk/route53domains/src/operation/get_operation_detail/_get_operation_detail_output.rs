@@ -3,7 +3,7 @@
 /// <p>The GetOperationDetail response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationDetailOutput {
+pub struct GetOperationDetailOutput  {
     /// <p>The identifier for the operation.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -25,13 +25,13 @@ pub struct GetOperationDetailOutput {
     /// <p> The date when the operation was last updated. </p>
     #[doc(hidden)]
     pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status_flag: std::option::Option<crate::types::StatusFlag>,
@@ -39,54 +39,53 @@ pub struct GetOperationDetailOutput {
 }
 impl GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>Detailed information on the status including possible errors.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The name of a domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The type of operation that was requested.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
     /// <p> The date when the operation was last updated. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
-    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
     /// </ul>
-    pub fn status_flag(&self) -> std::option::Option<&crate::types::StatusFlag> {
+    pub fn status_flag(&self) -> std::option::Option<& crate::types::StatusFlag> {
         self.status_flag.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetOperationDetailOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetOperationDetailOutput {
     /// Creates a new builder-style object to manufacture [`GetOperationDetailOutput`](crate::operation::get_operation_detail::GetOperationDetailOutput).
-    pub fn builder(
-    ) -> crate::operation::get_operation_detail::builders::GetOperationDetailOutputBuilder {
+    pub fn builder() -> crate::operation::get_operation_detail::builders::GetOperationDetailOutputBuilder {
         crate::operation::get_operation_detail::builders::GetOperationDetailOutputBuilder::default()
     }
 }
@@ -113,8 +112,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The identifier for the operation.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
@@ -123,8 +121,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>Detailed information on the status including possible errors.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +130,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>Detailed information on the status including possible errors.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The name of a domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +139,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The name of a domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input;
-        self
+        self.domain_name = input; self
     }
     /// <p>The type of operation that was requested.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
@@ -153,8 +148,7 @@ impl GetOperationDetailOutputBuilder {
     }
     /// <p>The type of operation that was requested.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The date when the request was submitted.</p>
     pub fn submitted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -162,12 +156,8 @@ impl GetOperationDetailOutputBuilder {
         self
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn set_submitted_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.submitted_date = input;
-        self
+    pub fn set_submitted_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.submitted_date = input; self
     }
     /// <p> The date when the operation was last updated. </p>
     pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -175,58 +165,62 @@ impl GetOperationDetailOutputBuilder {
         self
     }
     /// <p> The date when the operation was last updated. </p>
-    pub fn set_last_updated_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_date = input;
-        self
+    pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_date = input; self
     }
-    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
     /// </ul>
     pub fn status_flag(mut self, input: crate::types::StatusFlag) -> Self {
         self.status_flag = Some(input);
         self
     }
-    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// <p> Lists any outstanding operations that require customer action. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
     /// </ul>
     pub fn set_status_flag(mut self, input: std::option::Option<crate::types::StatusFlag>) -> Self {
-        self.status_flag = input;
-        self
+        self.status_flag = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetOperationDetailOutput`](crate::operation::get_operation_detail::GetOperationDetailOutput).
     pub fn build(self) -> crate::operation::get_operation_detail::GetOperationDetailOutput {
         crate::operation::get_operation_detail::GetOperationDetailOutput {
-            operation_id: self.operation_id,
-            status: self.status,
-            message: self.message,
-            domain_name: self.domain_name,
-            r#type: self.r#type,
-            submitted_date: self.submitted_date,
-            last_updated_date: self.last_updated_date,
-            status_flag: self.status_flag,
+            operation_id: self.operation_id
+            ,
+            status: self.status
+            ,
+            message: self.message
+            ,
+            domain_name: self.domain_name
+            ,
+            r#type: self.r#type
+            ,
+            submitted_date: self.submitted_date
+            ,
+            last_updated_date: self.last_updated_date
+            ,
+            status_flag: self.status_flag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

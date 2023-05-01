@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecommendationTemplateOutput {
+pub struct DeleteRecommendationTemplateOutput  {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     #[doc(hidden)]
     pub recommendation_template_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DeleteRecommendationTemplateOutput {
 }
 impl DeleteRecommendationTemplateOutput {
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn recommendation_template_arn(&self) -> std::option::Option<&str> {
+    pub fn recommendation_template_arn(&self) -> std::option::Option<& str> {
         self.recommendation_template_arn.as_deref()
     }
     /// <p>The status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RecommendationTemplateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::RecommendationTemplateStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteRecommendationTemplateOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteRecommendationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecommendationTemplateOutput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput).
-    pub fn builder() -> crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateOutputBuilder{
+    pub fn builder() -> crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateOutputBuilder {
         crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateOutputBuilder::default()
     }
 }
@@ -48,12 +48,8 @@ impl DeleteRecommendationTemplateOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn set_recommendation_template_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recommendation_template_arn = input;
-        self
+    pub fn set_recommendation_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recommendation_template_arn = input; self
     }
     /// <p>The status of the action.</p>
     pub fn status(mut self, input: crate::types::RecommendationTemplateStatus) -> Self {
@@ -61,30 +57,27 @@ impl DeleteRecommendationTemplateOutputBuilder {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::RecommendationTemplateStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::RecommendationTemplateStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteRecommendationTemplateOutput`](crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput {
+    pub fn build(self) -> crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput {
         crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput {
-            recommendation_template_arn: self.recommendation_template_arn,
-            status: self.status,
+            recommendation_template_arn: self.recommendation_template_arn
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

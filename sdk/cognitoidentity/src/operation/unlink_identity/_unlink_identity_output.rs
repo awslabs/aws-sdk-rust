@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlinkIdentityOutput {
+pub struct UnlinkIdentityOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UnlinkIdentityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UnlinkIdentityOutput {
     /// Creates a new builder-style object to manufacture [`UnlinkIdentityOutput`](crate::operation::unlink_identity::UnlinkIdentityOutput).
     pub fn builder() -> crate::operation::unlink_identity::builders::UnlinkIdentityOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UnlinkIdentityOutputBuilder {
 }
 impl UnlinkIdentityOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UnlinkIdentityOutput`](crate::operation::unlink_identity::UnlinkIdentityOutput).
     pub fn build(self) -> crate::operation::unlink_identity::UnlinkIdentityOutput {
         crate::operation::unlink_identity::UnlinkIdentityOutput {
@@ -40,3 +40,4 @@ impl UnlinkIdentityOutputBuilder {
         }
     }
 }
+

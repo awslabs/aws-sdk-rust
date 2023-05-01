@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNamedQueryInput {
+pub struct UpdateNamedQueryInput  {
     /// <p>The unique identifier (UUID) of the query.</p>
     #[doc(hidden)]
     pub named_query_id: std::option::Option<std::string::String>,
@@ -18,26 +18,25 @@ pub struct UpdateNamedQueryInput {
 }
 impl UpdateNamedQueryInput {
     /// <p>The unique identifier (UUID) of the query.</p>
-    pub fn named_query_id(&self) -> std::option::Option<&str> {
+    pub fn named_query_id(&self) -> std::option::Option<& str> {
         self.named_query_id.as_deref()
     }
     /// <p>The name of the query.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The query description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The contents of the query with all query statements.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
 impl UpdateNamedQueryInput {
     /// Creates a new builder-style object to manufacture [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
-    pub fn builder() -> crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder {
         crate::operation::update_named_query::builders::UpdateNamedQueryInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The unique identifier (UUID) of the query.</p>
     pub fn set_named_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.named_query_id = input;
-        self
+        self.named_query_id = input; self
     }
     /// <p>The name of the query.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,8 +67,7 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The name of the query.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The query description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +76,7 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The query description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The contents of the query with all query statements.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,23 +85,22 @@ impl UpdateNamedQueryInputBuilder {
     }
     /// <p>The contents of the query with all query statements.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input;
-        self
+        self.query_string = input; self
     }
     /// Consumes the builder and constructs a [`UpdateNamedQueryInput`](crate::operation::update_named_query::UpdateNamedQueryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_named_query::UpdateNamedQueryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_named_query::UpdateNamedQueryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_named_query::UpdateNamedQueryInput {
-                named_query_id: self.named_query_id,
-                name: self.name,
-                description: self.description,
-                query_string: self.query_string,
-            },
+                named_query_id: self.named_query_id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                query_string: self.query_string
+                ,
+            }
         )
     }
 }
+

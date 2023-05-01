@@ -3,7 +3,7 @@
 /// <p>The details that identify a resource that is collected by Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregateResourceIdentifier {
+pub struct AggregateResourceIdentifier  {
     /// <p>The 12-digit account ID of the source account.</p>
     #[doc(hidden)]
     pub source_account_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct AggregateResourceIdentifier {
 }
 impl AggregateResourceIdentifier {
     /// <p>The 12-digit account ID of the source account.</p>
-    pub fn source_account_id(&self) -> std::option::Option<&str> {
+    pub fn source_account_id(&self) -> std::option::Option<& str> {
         self.source_account_id.as_deref()
     }
     /// <p>The source region where data is aggregated.</p>
-    pub fn source_region(&self) -> std::option::Option<&str> {
+    pub fn source_region(&self) -> std::option::Option<& str> {
         self.source_region.as_deref()
     }
     /// <p>The ID of the Amazon Web Services resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name of the Amazon Web Services resource.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> std::option::Option<& str> {
         self.resource_name.as_deref()
     }
 }
@@ -66,12 +66,8 @@ impl AggregateResourceIdentifierBuilder {
         self
     }
     /// <p>The 12-digit account ID of the source account.</p>
-    pub fn set_source_account_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_account_id = input;
-        self
+    pub fn set_source_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_account_id = input; self
     }
     /// <p>The source region where data is aggregated.</p>
     pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +76,7 @@ impl AggregateResourceIdentifierBuilder {
     }
     /// <p>The source region where data is aggregated.</p>
     pub fn set_source_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_region = input;
-        self
+        self.source_region = input; self
     }
     /// <p>The ID of the Amazon Web Services resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +85,7 @@ impl AggregateResourceIdentifierBuilder {
     }
     /// <p>The ID of the Amazon Web Services resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input;
-        self
+        self.resource_id = input; self
     }
     /// <p>The type of the Amazon Web Services resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -99,12 +93,8 @@ impl AggregateResourceIdentifierBuilder {
         self
     }
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn set_resource_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceType>,
-    ) -> Self {
-        self.resource_type = input;
-        self
+    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+        self.resource_type = input; self
     }
     /// <p>The name of the Amazon Web Services resource.</p>
     pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,17 +103,22 @@ impl AggregateResourceIdentifierBuilder {
     }
     /// <p>The name of the Amazon Web Services resource.</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input;
-        self
+        self.resource_name = input; self
     }
     /// Consumes the builder and constructs a [`AggregateResourceIdentifier`](crate::types::AggregateResourceIdentifier).
     pub fn build(self) -> crate::types::AggregateResourceIdentifier {
         crate::types::AggregateResourceIdentifier {
-            source_account_id: self.source_account_id,
-            source_region: self.source_region,
-            resource_id: self.resource_id,
-            resource_type: self.resource_type,
-            resource_name: self.resource_name,
+            source_account_id: self.source_account_id
+            ,
+            source_region: self.source_region
+            ,
+            resource_id: self.resource_id
+            ,
+            resource_type: self.resource_type
+            ,
+            resource_name: self.resource_name
+            ,
         }
     }
 }
+

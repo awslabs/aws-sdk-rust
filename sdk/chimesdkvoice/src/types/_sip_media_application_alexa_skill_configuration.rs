@@ -3,7 +3,7 @@
 /// <p>The Alexa Skill configuration of a SIP media application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplicationAlexaSkillConfiguration {
+pub struct SipMediaApplicationAlexaSkillConfiguration  {
     /// <p>The status of the Alexa Skill configuration.</p>
     #[doc(hidden)]
     pub alexa_skill_status: std::option::Option<crate::types::AlexaSkillStatus>,
@@ -13,11 +13,11 @@ pub struct SipMediaApplicationAlexaSkillConfiguration {
 }
 impl SipMediaApplicationAlexaSkillConfiguration {
     /// <p>The status of the Alexa Skill configuration.</p>
-    pub fn alexa_skill_status(&self) -> std::option::Option<&crate::types::AlexaSkillStatus> {
+    pub fn alexa_skill_status(&self) -> std::option::Option<& crate::types::AlexaSkillStatus> {
         self.alexa_skill_status.as_ref()
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn alexa_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alexa_skill_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.alexa_skill_ids.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
         self
     }
     /// <p>The status of the Alexa Skill configuration.</p>
-    pub fn set_alexa_skill_status(
-        mut self,
-        input: std::option::Option<crate::types::AlexaSkillStatus>,
-    ) -> Self {
-        self.alexa_skill_status = input;
-        self
+    pub fn set_alexa_skill_status(mut self, input: std::option::Option<crate::types::AlexaSkillStatus>) -> Self {
+        self.alexa_skill_status = input; self
     }
     /// Appends an item to `alexa_skill_ids`.
     ///
@@ -56,23 +52,22 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
     /// <p>The ID of the Alexa Skill configuration.</p>
     pub fn alexa_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alexa_skill_ids.unwrap_or_default();
-        v.push(input.into());
-        self.alexa_skill_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.alexa_skill_ids = Some(v);
+                        self
     }
     /// <p>The ID of the Alexa Skill configuration.</p>
-    pub fn set_alexa_skill_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.alexa_skill_ids = input;
-        self
+    pub fn set_alexa_skill_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.alexa_skill_ids = input; self
     }
     /// Consumes the builder and constructs a [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
     pub fn build(self) -> crate::types::SipMediaApplicationAlexaSkillConfiguration {
         crate::types::SipMediaApplicationAlexaSkillConfiguration {
-            alexa_skill_status: self.alexa_skill_status,
-            alexa_skill_ids: self.alexa_skill_ids,
+            alexa_skill_status: self.alexa_skill_status
+            ,
+            alexa_skill_ids: self.alexa_skill_ids
+            ,
         }
     }
 }
+

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelDataRepositoryTaskOutput {
-    /// <p>The lifecycle status of the data repository task, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+pub struct CancelDataRepositoryTaskOutput  {
+    /// <p>The lifecycle status of the data repository task, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
@@ -20,31 +20,31 @@ pub struct CancelDataRepositoryTaskOutput {
     _request_id: Option<String>,
 }
 impl CancelDataRepositoryTaskOutput {
-    /// <p>The lifecycle status of the data repository task, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// <p>The lifecycle status of the data repository task, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
     /// </ul>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::types::DataRepositoryTaskLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::types::DataRepositoryTaskLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The ID of the task being canceled.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CancelDataRepositoryTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelDataRepositoryTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
-    pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder{
+    pub fn builder() -> crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder {
         crate::operation::cancel_data_repository_task::builders::CancelDataRepositoryTaskOutputBuilder::default()
     }
 }
@@ -58,34 +58,30 @@ pub struct CancelDataRepositoryTaskOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelDataRepositoryTaskOutputBuilder {
-    /// <p>The lifecycle status of the data repository task, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// <p>The lifecycle status of the data repository task, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::DataRepositoryTaskLifecycle) -> Self {
         self.lifecycle = Some(input);
         self
     }
-    /// <p>The lifecycle status of the data repository task, as follows:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li>
-    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li>
-    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li>
-    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li>
-    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li>
-    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li>
+    /// <p>The lifecycle status of the data repository task, as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> - Amazon FSx has not started the task.</p> </li> 
+    /// <li> <p> <code>EXECUTING</code> - Amazon FSx is processing the task.</p> </li> 
+    /// <li> <p> <code>FAILED</code> - Amazon FSx was not able to complete the task. For example, there may be files the task failed to process. The <code>DataRepositoryTaskFailureDetails</code> property provides more information about task failures.</p> </li> 
+    /// <li> <p> <code>SUCCEEDED</code> - FSx completed the task successfully.</p> </li> 
+    /// <li> <p> <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.</p> </li> 
+    /// <li> <p> <code>CANCELING</code> - FSx is in process of canceling the task.</p> </li> 
     /// </ul>
-    pub fn set_lifecycle(
-        mut self,
-        input: std::option::Option<crate::types::DataRepositoryTaskLifecycle>,
-    ) -> Self {
-        self.lifecycle = input;
-        self
+    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::DataRepositoryTaskLifecycle>) -> Self {
+        self.lifecycle = input; self
     }
     /// <p>The ID of the task being canceled.</p>
     pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,26 +90,26 @@ impl CancelDataRepositoryTaskOutputBuilder {
     }
     /// <p>The ID of the task being canceled.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input;
-        self
+        self.task_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelDataRepositoryTaskOutput`](crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
+    pub fn build(self) -> crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
         crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput {
-            lifecycle: self.lifecycle,
-            task_id: self.task_id,
+            lifecycle: self.lifecycle
+            ,
+            task_id: self.task_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

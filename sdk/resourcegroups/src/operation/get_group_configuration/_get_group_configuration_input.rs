@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupConfigurationInput {
+pub struct GetGroupConfigurationInput  {
     /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
 }
 impl GetGroupConfigurationInput {
     /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> std::option::Option<& str> {
         self.group.as_deref()
     }
 }
 impl GetGroupConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
-    pub fn builder(
-    ) -> crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder {
         crate::operation::get_group_configuration::builders::GetGroupConfigurationInputBuilder::default()
     }
 }
@@ -36,20 +34,16 @@ impl GetGroupConfigurationInputBuilder {
     }
     /// <p>The name or the ARN of the resource group for which you want to retrive the service configuration.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
     /// Consumes the builder and constructs a [`GetGroupConfigurationInput`](crate::operation::get_group_configuration::GetGroupConfigurationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_group_configuration::GetGroupConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_group_configuration::GetGroupConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_group_configuration::GetGroupConfigurationInput {
-                group: self.group,
-            },
+                group: self.group
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetResourcesInput {
+pub struct GetResourcesInput  {
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct GetResourcesInput {
 }
 impl GetResourcesInput {
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<&str> {
+    pub fn authentication_token(&self) -> std::option::Option<& str> {
         self.authentication_token.as_deref()
     }
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The collection type.</p>
-    pub fn collection_type(&self) -> std::option::Option<&crate::types::ResourceCollectionType> {
+    pub fn collection_type(&self) -> std::option::Option<& crate::types::ResourceCollectionType> {
         self.collection_type.as_ref()
     }
     /// <p>The maximum number of resources to return.</p>
@@ -37,11 +37,11 @@ impl GetResourcesInput {
         self.limit
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
-impl std::fmt::Debug for GetResourcesInput {
+impl  std::fmt::Debug for GetResourcesInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetResourcesInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -76,12 +76,8 @@ impl GetResourcesInputBuilder {
         self
     }
     /// <p>The Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.authentication_token = input;
-        self
+    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.authentication_token = input; self
     }
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +86,7 @@ impl GetResourcesInputBuilder {
     }
     /// <p>The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The collection type.</p>
     pub fn collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
@@ -99,12 +94,8 @@ impl GetResourcesInputBuilder {
         self
     }
     /// <p>The collection type.</p>
-    pub fn set_collection_type(
-        mut self,
-        input: std::option::Option<crate::types::ResourceCollectionType>,
-    ) -> Self {
-        self.collection_type = input;
-        self
+    pub fn set_collection_type(mut self, input: std::option::Option<crate::types::ResourceCollectionType>) -> Self {
+        self.collection_type = input; self
     }
     /// <p>The maximum number of resources to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -113,8 +104,7 @@ impl GetResourcesInputBuilder {
     }
     /// <p>The maximum number of resources to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input;
-        self
+        self.limit = input; self
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,23 +113,24 @@ impl GetResourcesInputBuilder {
     }
     /// <p>The marker for the next set of results. This marker was received from a previous call.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// Consumes the builder and constructs a [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_resources::GetResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_resources::GetResourcesInput {
-            authentication_token: self.authentication_token,
-            user_id: self.user_id,
-            collection_type: self.collection_type,
-            limit: self.limit,
-            marker: self.marker,
-        })
+    pub fn build(self) -> Result<crate::operation::get_resources::GetResourcesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_resources::GetResourcesInput {
+                authentication_token: self.authentication_token
+                ,
+                user_id: self.user_id
+                ,
+                collection_type: self.collection_type
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
+            }
+        )
     }
 }
 impl std::fmt::Debug for GetResourcesInputBuilder {
@@ -153,3 +144,4 @@ impl std::fmt::Debug for GetResourcesInputBuilder {
         formatter.finish()
     }
 }
+

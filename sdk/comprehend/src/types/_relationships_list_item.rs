@@ -3,7 +3,7 @@
 /// <p>List of child blocks for the current block.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelationshipsListItem {
+pub struct RelationshipsListItem  {
     /// <p>Identifers of the child blocks.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct RelationshipsListItem {
 }
 impl RelationshipsListItem {
     /// <p>Identifers of the child blocks.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>Only supported relationship is a child relationship.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RelationshipType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::RelationshipType> {
         self.r#type.as_ref()
     }
 }
@@ -43,17 +43,13 @@ impl RelationshipsListItemBuilder {
     /// <p>Identifers of the child blocks.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
     /// <p>Identifers of the child blocks.</p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// <p>Only supported relationship is a child relationship.</p>
     pub fn r#type(mut self, input: crate::types::RelationshipType) -> Self {
@@ -62,14 +58,16 @@ impl RelationshipsListItemBuilder {
     }
     /// <p>Only supported relationship is a child relationship.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RelationshipType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`RelationshipsListItem`](crate::types::RelationshipsListItem).
     pub fn build(self) -> crate::types::RelationshipsListItem {
         crate::types::RelationshipsListItem {
-            ids: self.ids,
-            r#type: self.r#type,
+            ids: self.ids
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

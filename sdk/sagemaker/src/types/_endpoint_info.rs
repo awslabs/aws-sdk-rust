@@ -3,14 +3,14 @@
 /// <p>Details about a customer endpoint that was compared in an Inference Recommender job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointInfo {
+pub struct EndpointInfo  {
     /// <p>The name of a customer's endpoint.</p>
     #[doc(hidden)]
     pub endpoint_name: std::option::Option<std::string::String>,
 }
 impl EndpointInfo {
     /// <p>The name of a customer's endpoint.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> std::option::Option<& str> {
         self.endpoint_name.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl EndpointInfoBuilder {
     }
     /// <p>The name of a customer's endpoint.</p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input;
-        self
+        self.endpoint_name = input; self
     }
     /// Consumes the builder and constructs a [`EndpointInfo`](crate::types::EndpointInfo).
     pub fn build(self) -> crate::types::EndpointInfo {
         crate::types::EndpointInfo {
-            endpoint_name: self.endpoint_name,
+            endpoint_name: self.endpoint_name
+            ,
         }
     }
 }
+

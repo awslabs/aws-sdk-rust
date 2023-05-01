@@ -3,7 +3,7 @@
 /// <p>The description of the VPC in which the connector resides.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcDescription {
+pub struct VpcDescription  {
     /// <p>The security groups for the connector.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct VpcDescription {
 }
 impl VpcDescription {
     /// <p>The security groups for the connector.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The subnets for the connector.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
 }
@@ -43,17 +43,13 @@ impl VpcDescriptionBuilder {
     /// <p>The security groups for the connector.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-        v.push(input.into());
-        self.security_groups = Some(v);
-        self
+                        v.push(input.into());
+                        self.security_groups = Some(v);
+                        self
     }
     /// <p>The security groups for the connector.</p>
-    pub fn set_security_groups(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.security_groups = input;
-        self
+    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.security_groups = input; self
     }
     /// Appends an item to `subnets`.
     ///
@@ -62,23 +58,22 @@ impl VpcDescriptionBuilder {
     /// <p>The subnets for the connector.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-        v.push(input.into());
-        self.subnets = Some(v);
-        self
+                        v.push(input.into());
+                        self.subnets = Some(v);
+                        self
     }
     /// <p>The subnets for the connector.</p>
-    pub fn set_subnets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subnets = input;
-        self
+    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subnets = input; self
     }
     /// Consumes the builder and constructs a [`VpcDescription`](crate::types::VpcDescription).
     pub fn build(self) -> crate::types::VpcDescription {
         crate::types::VpcDescription {
-            security_groups: self.security_groups,
-            subnets: self.subnets,
+            security_groups: self.security_groups
+            ,
+            subnets: self.subnets
+            ,
         }
     }
 }
+

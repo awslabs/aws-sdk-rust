@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserSettingsInput {
+pub struct UpdateUserSettingsInput  {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,22 +15,21 @@ pub struct UpdateUserSettingsInput {
 }
 impl UpdateUserSettingsInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The user settings to update.</p>
-    pub fn user_settings(&self) -> std::option::Option<&crate::types::UserSettings> {
+    pub fn user_settings(&self) -> std::option::Option<& crate::types::UserSettings> {
         self.user_settings.as_ref()
     }
 }
 impl UpdateUserSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_settings::builders::UpdateUserSettingsInputBuilder {
+    pub fn builder() -> crate::operation::update_user_settings::builders::UpdateUserSettingsInputBuilder {
         crate::operation::update_user_settings::builders::UpdateUserSettingsInputBuilder::default()
     }
 }
@@ -51,8 +50,7 @@ impl UpdateUserSettingsInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input;
-        self
+        self.account_id = input; self
     }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +59,7 @@ impl UpdateUserSettingsInputBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The user settings to update.</p>
     pub fn user_settings(mut self, input: crate::types::UserSettings) -> Self {
@@ -70,26 +67,21 @@ impl UpdateUserSettingsInputBuilder {
         self
     }
     /// <p>The user settings to update.</p>
-    pub fn set_user_settings(
-        mut self,
-        input: std::option::Option<crate::types::UserSettings>,
-    ) -> Self {
-        self.user_settings = input;
-        self
+    pub fn set_user_settings(mut self, input: std::option::Option<crate::types::UserSettings>) -> Self {
+        self.user_settings = input; self
     }
     /// Consumes the builder and constructs a [`UpdateUserSettingsInput`](crate::operation::update_user_settings::UpdateUserSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_user_settings::UpdateUserSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_user_settings::UpdateUserSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_user_settings::UpdateUserSettingsInput {
-                account_id: self.account_id,
-                user_id: self.user_id,
-                user_settings: self.user_settings,
-            },
+                account_id: self.account_id
+                ,
+                user_id: self.user_id
+                ,
+                user_settings: self.user_settings
+                ,
+            }
         )
     }
 }
+

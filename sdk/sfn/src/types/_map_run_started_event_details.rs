@@ -3,14 +3,14 @@
 /// <p>Contains details about a Map Run that was started during a state machine execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapRunStartedEventDetails {
+pub struct MapRunStartedEventDetails  {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
     #[doc(hidden)]
     pub map_run_arn: std::option::Option<std::string::String>,
 }
 impl MapRunStartedEventDetails {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> std::option::Option<& str> {
         self.map_run_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl MapRunStartedEventDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
     pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.map_run_arn = input;
-        self
+        self.map_run_arn = input; self
     }
     /// Consumes the builder and constructs a [`MapRunStartedEventDetails`](crate::types::MapRunStartedEventDetails).
     pub fn build(self) -> crate::types::MapRunStartedEventDetails {
         crate::types::MapRunStartedEventDetails {
-            map_run_arn: self.map_run_arn,
+            map_run_arn: self.map_run_arn
+            ,
         }
     }
 }
+

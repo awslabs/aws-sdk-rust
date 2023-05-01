@@ -3,14 +3,14 @@
 /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DonutCenterOptions {
+pub struct DonutCenterOptions  {
     /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
     #[doc(hidden)]
     pub label_visibility: std::option::Option<crate::types::Visibility>,
 }
 impl DonutCenterOptions {
     /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
-    pub fn label_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn label_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.label_visibility.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl DonutCenterOptionsBuilder {
         self
     }
     /// <p>Determines the visibility of the label in a donut chart. In the Amazon QuickSight console, this option is called <code>'Show total'</code>.</p>
-    pub fn set_label_visibility(
-        mut self,
-        input: std::option::Option<crate::types::Visibility>,
-    ) -> Self {
-        self.label_visibility = input;
-        self
+    pub fn set_label_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+        self.label_visibility = input; self
     }
     /// Consumes the builder and constructs a [`DonutCenterOptions`](crate::types::DonutCenterOptions).
     pub fn build(self) -> crate::types::DonutCenterOptions {
         crate::types::DonutCenterOptions {
-            label_visibility: self.label_visibility,
+            label_visibility: self.label_visibility
+            ,
         }
     }
 }
+

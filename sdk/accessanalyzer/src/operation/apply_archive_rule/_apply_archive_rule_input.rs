@@ -3,7 +3,7 @@
 /// <p>Retroactively applies an archive rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplyArchiveRuleInput {
+pub struct ApplyArchiveRuleInput  {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
     #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
@@ -16,22 +16,21 @@ pub struct ApplyArchiveRuleInput {
 }
 impl ApplyArchiveRuleInput {
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The name of the rule to apply.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 impl ApplyArchiveRuleInput {
     /// Creates a new builder-style object to manufacture [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
-    pub fn builder() -> crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder
-    {
+    pub fn builder() -> crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder {
         crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder::default()
     }
 }
@@ -52,8 +51,7 @@ impl ApplyArchiveRuleInputBuilder {
     }
     /// <p>The Amazon resource name (ARN) of the analyzer.</p>
     pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_arn = input;
-        self
+        self.analyzer_arn = input; self
     }
     /// <p>The name of the rule to apply.</p>
     pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,8 +60,7 @@ impl ApplyArchiveRuleInputBuilder {
     }
     /// <p>The name of the rule to apply.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input;
-        self
+        self.rule_name = input; self
     }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,22 +69,20 @@ impl ApplyArchiveRuleInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// Consumes the builder and constructs a [`ApplyArchiveRuleInput`](crate::operation::apply_archive_rule::ApplyArchiveRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::apply_archive_rule::ApplyArchiveRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::apply_archive_rule::ApplyArchiveRuleInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::apply_archive_rule::ApplyArchiveRuleInput {
-                analyzer_arn: self.analyzer_arn,
-                rule_name: self.rule_name,
-                client_token: self.client_token,
-            },
+                analyzer_arn: self.analyzer_arn
+                ,
+                rule_name: self.rule_name
+                ,
+                client_token: self.client_token
+                ,
+            }
         )
     }
 }
+

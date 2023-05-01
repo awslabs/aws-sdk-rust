@@ -3,7 +3,7 @@
 /// <p>Unexpected error while processing the request. Retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceFault {
+pub struct InternalServiceFault  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -14,21 +14,19 @@ pub struct InternalServiceFault {
 }
 impl InternalServiceFault {
     /// <p>The name of the exception.</p>
-    pub fn amzn_error_type(&self) -> std::option::Option<&str> {
+    pub fn amzn_error_type(&self) -> std::option::Option<& str> {
         self.amzn_error_type.as_deref()
     }
 }
 impl InternalServiceFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServiceFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceFault")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -43,9 +41,7 @@ impl aws_http::request_id::RequestId for crate::types::error::InternalServiceFau
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServiceFault {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        &self.meta
-    }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
 }
 impl InternalServiceFault {
     /// Creates a new builder-style object to manufacture [`InternalServiceFault`](crate::types::error::InternalServiceFault).
@@ -70,8 +66,7 @@ impl InternalServiceFaultBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The name of the exception.</p>
     pub fn amzn_error_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,29 +75,28 @@ impl InternalServiceFaultBuilder {
     }
     /// <p>The name of the exception.</p>
     pub fn set_amzn_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_error_type = input;
-        self
+        self.amzn_error_type = input; self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-        self.meta = Some(meta);
-        self
-    }
-
-    /// Sets error metadata
-    pub fn set_meta(
-        &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
-    ) -> &mut Self {
-        self.meta = meta;
-        self
-    }
+                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+                                                self.meta = Some(meta);
+                                                self
+                                            }
+    
+                                            /// Sets error metadata
+                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
+                                                self.meta = meta;
+                                                self
+                                            }
     /// Consumes the builder and constructs a [`InternalServiceFault`](crate::types::error::InternalServiceFault).
     pub fn build(self) -> crate::types::error::InternalServiceFault {
         crate::types::error::InternalServiceFault {
-            message: self.message,
-            amzn_error_type: self.amzn_error_type,
+            message: self.message
+            ,
+            amzn_error_type: self.amzn_error_type
+            ,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
+

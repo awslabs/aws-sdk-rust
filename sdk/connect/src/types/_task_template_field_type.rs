@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tasktemplatefieldtype = unimplemented!();
 /// match tasktemplatefieldtype {
@@ -40,22 +40,14 @@
 /// Specifically, when `tasktemplatefieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TaskTemplateFieldType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TaskTemplateFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
@@ -82,75 +74,61 @@ pub enum TaskTemplateFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Url,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskTemplateFieldType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BOOLEAN" => TaskTemplateFieldType::Boolean,
-            "DATE_TIME" => TaskTemplateFieldType::DateTime,
-            "DESCRIPTION" => TaskTemplateFieldType::Description,
-            "EMAIL" => TaskTemplateFieldType::Email,
-            "NAME" => TaskTemplateFieldType::Name,
-            "NUMBER" => TaskTemplateFieldType::Number,
-            "QUICK_CONNECT" => TaskTemplateFieldType::QuickConnect,
-            "SCHEDULED_TIME" => TaskTemplateFieldType::ScheduledTime,
-            "SINGLE_SELECT" => TaskTemplateFieldType::SingleSelect,
-            "TEXT" => TaskTemplateFieldType::Text,
-            "TEXT_AREA" => TaskTemplateFieldType::TextArea,
-            "URL" => TaskTemplateFieldType::Url,
-            other => TaskTemplateFieldType::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "BOOLEAN" => TaskTemplateFieldType::Boolean,
+"DATE_TIME" => TaskTemplateFieldType::DateTime,
+"DESCRIPTION" => TaskTemplateFieldType::Description,
+"EMAIL" => TaskTemplateFieldType::Email,
+"NAME" => TaskTemplateFieldType::Name,
+"NUMBER" => TaskTemplateFieldType::Number,
+"QUICK_CONNECT" => TaskTemplateFieldType::QuickConnect,
+"SCHEDULED_TIME" => TaskTemplateFieldType::ScheduledTime,
+"SINGLE_SELECT" => TaskTemplateFieldType::SingleSelect,
+"TEXT" => TaskTemplateFieldType::Text,
+"TEXT_AREA" => TaskTemplateFieldType::TextArea,
+"URL" => TaskTemplateFieldType::Url,
+other => TaskTemplateFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for TaskTemplateFieldType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TaskTemplateFieldType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TaskTemplateFieldType::from(s))
+                }
+            }
 impl TaskTemplateFieldType {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            TaskTemplateFieldType::Boolean => "BOOLEAN",
-            TaskTemplateFieldType::DateTime => "DATE_TIME",
-            TaskTemplateFieldType::Description => "DESCRIPTION",
-            TaskTemplateFieldType::Email => "EMAIL",
-            TaskTemplateFieldType::Name => "NAME",
-            TaskTemplateFieldType::Number => "NUMBER",
-            TaskTemplateFieldType::QuickConnect => "QUICK_CONNECT",
-            TaskTemplateFieldType::ScheduledTime => "SCHEDULED_TIME",
-            TaskTemplateFieldType::SingleSelect => "SINGLE_SELECT",
-            TaskTemplateFieldType::Text => "TEXT",
-            TaskTemplateFieldType::TextArea => "TEXT_AREA",
-            TaskTemplateFieldType::Url => "URL",
-            TaskTemplateFieldType::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "BOOLEAN",
-            "DATE_TIME",
-            "DESCRIPTION",
-            "EMAIL",
-            "NAME",
-            "NUMBER",
-            "QUICK_CONNECT",
-            "SCHEDULED_TIME",
-            "SINGLE_SELECT",
-            "TEXT",
-            "TEXT_AREA",
-            "URL",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    TaskTemplateFieldType::Boolean => "BOOLEAN",
+    TaskTemplateFieldType::DateTime => "DATE_TIME",
+    TaskTemplateFieldType::Description => "DESCRIPTION",
+    TaskTemplateFieldType::Email => "EMAIL",
+    TaskTemplateFieldType::Name => "NAME",
+    TaskTemplateFieldType::Number => "NUMBER",
+    TaskTemplateFieldType::QuickConnect => "QUICK_CONNECT",
+    TaskTemplateFieldType::ScheduledTime => "SCHEDULED_TIME",
+    TaskTemplateFieldType::SingleSelect => "SINGLE_SELECT",
+    TaskTemplateFieldType::Text => "TEXT",
+    TaskTemplateFieldType::TextArea => "TEXT_AREA",
+    TaskTemplateFieldType::Url => "URL",
+    TaskTemplateFieldType::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["BOOLEAN", "DATE_TIME", "DESCRIPTION", "EMAIL", "NAME", "NUMBER", "QUICK_CONNECT", "SCHEDULED_TIME", "SINGLE_SELECT", "TEXT", "TEXT_AREA", "URL"]
+                }
+            }
 impl AsRef<str> for TaskTemplateFieldType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

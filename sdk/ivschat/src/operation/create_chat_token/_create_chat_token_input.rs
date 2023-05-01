@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChatTokenInput {
+pub struct CreateChatTokenInput  {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     #[doc(hidden)]
     pub room_identifier: std::option::Option<std::string::String>,
@@ -17,20 +17,19 @@ pub struct CreateChatTokenInput {
     pub session_duration_in_minutes: i32,
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateChatTokenInput {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    pub fn room_identifier(&self) -> std::option::Option<&str> {
+    pub fn room_identifier(&self) -> std::option::Option<& str> {
         self.room_identifier.as_deref()
     }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    pub fn capabilities(&self) -> std::option::Option<&[crate::types::ChatTokenCapability]> {
+    pub fn capabilities(&self) -> std::option::Option<& [crate::types::ChatTokenCapability]> {
         self.capabilities.as_deref()
     }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
@@ -38,10 +37,7 @@ impl CreateChatTokenInput {
         self.session_duration_in_minutes
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
@@ -60,8 +56,7 @@ pub struct CreateChatTokenInputBuilder {
     pub(crate) user_id: std::option::Option<std::string::String>,
     pub(crate) capabilities: std::option::Option<std::vec::Vec<crate::types::ChatTokenCapability>>,
     pub(crate) session_duration_in_minutes: std::option::Option<i32>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateChatTokenInputBuilder {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
@@ -71,8 +66,7 @@ impl CreateChatTokenInputBuilder {
     }
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     pub fn set_room_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_identifier = input;
-        self
+        self.room_identifier = input; self
     }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,8 +75,7 @@ impl CreateChatTokenInputBuilder {
     }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// Appends an item to `capabilities`.
     ///
@@ -91,17 +84,13 @@ impl CreateChatTokenInputBuilder {
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
     pub fn capabilities(mut self, input: crate::types::ChatTokenCapability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-        v.push(input);
-        self.capabilities = Some(v);
-        self
+                        v.push(input);
+                        self.capabilities = Some(v);
+                        self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    pub fn set_capabilities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChatTokenCapability>>,
-    ) -> Self {
-        self.capabilities = input;
-        self
+    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChatTokenCapability>>) -> Self {
+        self.capabilities = input; self
     }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
     pub fn session_duration_in_minutes(mut self, input: i32) -> Self {
@@ -110,47 +99,40 @@ impl CreateChatTokenInputBuilder {
     }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
     pub fn set_session_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.session_duration_in_minutes = input;
-        self
+        self.session_duration_in_minutes = input; self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn attributes(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.attributes = Some(hash_map);
+                        self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn set_attributes(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.attributes = input;
-        self
+    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.attributes = input; self
     }
     /// Consumes the builder and constructs a [`CreateChatTokenInput`](crate::operation::create_chat_token::CreateChatTokenInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_chat_token::CreateChatTokenInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_chat_token::CreateChatTokenInput {
-            room_identifier: self.room_identifier,
-            user_id: self.user_id,
-            capabilities: self.capabilities,
-            session_duration_in_minutes: self.session_duration_in_minutes.unwrap_or_default(),
-            attributes: self.attributes,
-        })
+    pub fn build(self) -> Result<crate::operation::create_chat_token::CreateChatTokenInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_chat_token::CreateChatTokenInput {
+                room_identifier: self.room_identifier
+                ,
+                user_id: self.user_id
+                ,
+                capabilities: self.capabilities
+                ,
+                session_duration_in_minutes: self.session_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                attributes: self.attributes
+                ,
+            }
+        )
     }
 }
+

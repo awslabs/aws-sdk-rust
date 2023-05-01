@@ -3,7 +3,7 @@
 /// <p>Item in a list of satellites.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SatelliteListItem {
+pub struct SatelliteListItem  {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct SatelliteListItem {
 }
 impl SatelliteListItem {
     /// <p>UUID of a satellite.</p>
-    pub fn satellite_id(&self) -> std::option::Option<&str> {
+    pub fn satellite_id(&self) -> std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+    pub fn satellite_arn(&self) -> std::option::Option<& str> {
         self.satellite_arn.as_deref()
     }
     /// <p>NORAD satellite ID number.</p>
@@ -34,11 +34,11 @@ impl SatelliteListItem {
         self.norad_satellite_id
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ground_stations(&self) -> std::option::Option<& [std::string::String]> {
         self.ground_stations.as_deref()
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    pub fn current_ephemeris(&self) -> std::option::Option<&crate::types::EphemerisMetaData> {
+    pub fn current_ephemeris(&self) -> std::option::Option<& crate::types::EphemerisMetaData> {
         self.current_ephemeris.as_ref()
     }
 }
@@ -67,8 +67,7 @@ impl SatelliteListItemBuilder {
     }
     /// <p>UUID of a satellite.</p>
     pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.satellite_id = input;
-        self
+        self.satellite_id = input; self
     }
     /// <p>ARN of a satellite.</p>
     pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,8 +76,7 @@ impl SatelliteListItemBuilder {
     }
     /// <p>ARN of a satellite.</p>
     pub fn set_satellite_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.satellite_arn = input;
-        self
+        self.satellite_arn = input; self
     }
     /// <p>NORAD satellite ID number.</p>
     pub fn norad_satellite_id(mut self, input: i32) -> Self {
@@ -87,8 +85,7 @@ impl SatelliteListItemBuilder {
     }
     /// <p>NORAD satellite ID number.</p>
     pub fn set_norad_satellite_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.norad_satellite_id = input;
-        self
+        self.norad_satellite_id = input; self
     }
     /// Appends an item to `ground_stations`.
     ///
@@ -97,17 +94,13 @@ impl SatelliteListItemBuilder {
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
     pub fn ground_stations(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ground_stations.unwrap_or_default();
-        v.push(input.into());
-        self.ground_stations = Some(v);
-        self
+                        v.push(input.into());
+                        self.ground_stations = Some(v);
+                        self
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn set_ground_stations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ground_stations = input;
-        self
+    pub fn set_ground_stations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ground_stations = input; self
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
     pub fn current_ephemeris(mut self, input: crate::types::EphemerisMetaData) -> Self {
@@ -115,21 +108,24 @@ impl SatelliteListItemBuilder {
         self
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    pub fn set_current_ephemeris(
-        mut self,
-        input: std::option::Option<crate::types::EphemerisMetaData>,
-    ) -> Self {
-        self.current_ephemeris = input;
-        self
+    pub fn set_current_ephemeris(mut self, input: std::option::Option<crate::types::EphemerisMetaData>) -> Self {
+        self.current_ephemeris = input; self
     }
     /// Consumes the builder and constructs a [`SatelliteListItem`](crate::types::SatelliteListItem).
     pub fn build(self) -> crate::types::SatelliteListItem {
         crate::types::SatelliteListItem {
-            satellite_id: self.satellite_id,
-            satellite_arn: self.satellite_arn,
-            norad_satellite_id: self.norad_satellite_id.unwrap_or_default(),
-            ground_stations: self.ground_stations,
-            current_ephemeris: self.current_ephemeris,
+            satellite_id: self.satellite_id
+            ,
+            satellite_arn: self.satellite_arn
+            ,
+            norad_satellite_id: self.norad_satellite_id
+                .unwrap_or_default()
+            ,
+            ground_stations: self.ground_stations
+            ,
+            current_ephemeris: self.current_ephemeris
+            ,
         }
     }
 }
+

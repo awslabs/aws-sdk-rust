@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLayerVersionsOutput {
+pub struct ListLayerVersionsOutput  {
     /// <p>A pagination token returned when the response doesn't contain all versions.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListLayerVersionsOutput {
 }
 impl ListLayerVersionsOutput {
     /// <p>A pagination token returned when the response doesn't contain all versions.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>A list of versions.</p>
-    pub fn layer_versions(&self) -> std::option::Option<&[crate::types::LayerVersionsListItem]> {
+    pub fn layer_versions(&self) -> std::option::Option<& [crate::types::LayerVersionsListItem]> {
         self.layer_versions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLayerVersionsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListLayerVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListLayerVersionsOutput`](crate::operation::list_layer_versions::ListLayerVersionsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_layer_versions::builders::ListLayerVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_layer_versions::builders::ListLayerVersionsOutputBuilder {
         crate::operation::list_layer_versions::builders::ListLayerVersionsOutputBuilder::default()
     }
 }
@@ -39,8 +38,7 @@ impl ListLayerVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListLayerVersionsOutputBuilder {
     pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) layer_versions:
-        std::option::Option<std::vec::Vec<crate::types::LayerVersionsListItem>>,
+    pub(crate) layer_versions: std::option::Option<std::vec::Vec<crate::types::LayerVersionsListItem>>,
     _request_id: Option<String>,
 }
 impl ListLayerVersionsOutputBuilder {
@@ -51,8 +49,7 @@ impl ListLayerVersionsOutputBuilder {
     }
     /// <p>A pagination token returned when the response doesn't contain all versions.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// Appends an item to `layer_versions`.
     ///
@@ -61,33 +58,32 @@ impl ListLayerVersionsOutputBuilder {
     /// <p>A list of versions.</p>
     pub fn layer_versions(mut self, input: crate::types::LayerVersionsListItem) -> Self {
         let mut v = self.layer_versions.unwrap_or_default();
-        v.push(input);
-        self.layer_versions = Some(v);
-        self
+                        v.push(input);
+                        self.layer_versions = Some(v);
+                        self
     }
     /// <p>A list of versions.</p>
-    pub fn set_layer_versions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LayerVersionsListItem>>,
-    ) -> Self {
-        self.layer_versions = input;
-        self
+    pub fn set_layer_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::LayerVersionsListItem>>) -> Self {
+        self.layer_versions = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListLayerVersionsOutput`](crate::operation::list_layer_versions::ListLayerVersionsOutput).
     pub fn build(self) -> crate::operation::list_layer_versions::ListLayerVersionsOutput {
         crate::operation::list_layer_versions::ListLayerVersionsOutput {
-            next_marker: self.next_marker,
-            layer_versions: self.layer_versions,
+            next_marker: self.next_marker
+            ,
+            layer_versions: self.layer_versions
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

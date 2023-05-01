@@ -3,7 +3,7 @@
 /// <p>Specifies limits for how long an Amazon Braket job can run. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobStoppingCondition {
+pub struct JobStoppingCondition  {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
     #[doc(hidden)]
     pub max_runtime_in_seconds: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl JobStoppingConditionBuilder {
     }
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
     pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_runtime_in_seconds = input;
-        self
+        self.max_runtime_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`JobStoppingCondition`](crate::types::JobStoppingCondition).
     pub fn build(self) -> crate::types::JobStoppingCondition {
         crate::types::JobStoppingCondition {
-            max_runtime_in_seconds: self.max_runtime_in_seconds,
+            max_runtime_in_seconds: self.max_runtime_in_seconds
+            ,
         }
     }
 }
+

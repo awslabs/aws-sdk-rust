@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelQuantumTaskOutput {
+pub struct CancelQuantumTaskOutput  {
     /// <p>The ARN of the task.</p>
     #[doc(hidden)]
     pub quantum_task_arn: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct CancelQuantumTaskOutput {
 }
 impl CancelQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
-    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
+    pub fn quantum_task_arn(&self) -> std::option::Option<& str> {
         self.quantum_task_arn.as_deref()
     }
     /// <p>The status of the cancellation request.</p>
-    pub fn cancellation_status(&self) -> std::option::Option<&crate::types::CancellationStatus> {
+    pub fn cancellation_status(&self) -> std::option::Option<& crate::types::CancellationStatus> {
         self.cancellation_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelQuantumTaskOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CancelQuantumTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelQuantumTaskOutput`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput).
-    pub fn builder(
-    ) -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder {
         crate::operation::cancel_quantum_task::builders::CancelQuantumTaskOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl CancelQuantumTaskOutputBuilder {
     }
     /// <p>The ARN of the task.</p>
     pub fn set_quantum_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quantum_task_arn = input;
-        self
+        self.quantum_task_arn = input; self
     }
     /// <p>The status of the cancellation request.</p>
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
@@ -59,28 +57,27 @@ impl CancelQuantumTaskOutputBuilder {
         self
     }
     /// <p>The status of the cancellation request.</p>
-    pub fn set_cancellation_status(
-        mut self,
-        input: std::option::Option<crate::types::CancellationStatus>,
-    ) -> Self {
-        self.cancellation_status = input;
-        self
+    pub fn set_cancellation_status(mut self, input: std::option::Option<crate::types::CancellationStatus>) -> Self {
+        self.cancellation_status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CancelQuantumTaskOutput`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput).
     pub fn build(self) -> crate::operation::cancel_quantum_task::CancelQuantumTaskOutput {
         crate::operation::cancel_quantum_task::CancelQuantumTaskOutput {
-            quantum_task_arn: self.quantum_task_arn,
-            cancellation_status: self.cancellation_status,
+            quantum_task_arn: self.quantum_task_arn
+            ,
+            cancellation_status: self.cancellation_status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

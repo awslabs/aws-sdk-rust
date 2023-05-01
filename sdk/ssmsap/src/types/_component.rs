@@ -3,7 +3,7 @@
 /// <p>The SAP component of your application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Component {
+pub struct Component  {
     /// <p>The ID of the component.</p>
     #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct Component {
 }
 impl Component {
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<&str> {
+    pub fn component_id(&self) -> std::option::Option<& str> {
         self.component_id.as_deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The type of the component.</p>
-    pub fn component_type(&self) -> std::option::Option<&crate::types::ComponentType> {
+    pub fn component_type(&self) -> std::option::Option<& crate::types::ComponentType> {
         self.component_type.as_ref()
     }
     /// <p>The status of the component.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ComponentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ComponentStatus> {
         self.status.as_ref()
     }
     /// <p>The SAP HANA databases of the component.</p>
-    pub fn databases(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn databases(&self) -> std::option::Option<& [std::string::String]> {
         self.databases.as_deref()
     }
     /// <p>The hosts of the component.</p>
-    pub fn hosts(&self) -> std::option::Option<&[crate::types::Host]> {
+    pub fn hosts(&self) -> std::option::Option<& [crate::types::Host]> {
         self.hosts.as_deref()
     }
     /// <p>The primary host of the component.</p>
-    pub fn primary_host(&self) -> std::option::Option<&str> {
+    pub fn primary_host(&self) -> std::option::Option<& str> {
         self.primary_host.as_deref()
     }
     /// <p>The time at which the component was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -91,8 +91,7 @@ impl ComponentBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_id = input;
-        self
+        self.component_id = input; self
     }
     /// <p>The ID of the application.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,8 +100,7 @@ impl ComponentBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// <p>The type of the component.</p>
     pub fn component_type(mut self, input: crate::types::ComponentType) -> Self {
@@ -110,12 +108,8 @@ impl ComponentBuilder {
         self
     }
     /// <p>The type of the component.</p>
-    pub fn set_component_type(
-        mut self,
-        input: std::option::Option<crate::types::ComponentType>,
-    ) -> Self {
-        self.component_type = input;
-        self
+    pub fn set_component_type(mut self, input: std::option::Option<crate::types::ComponentType>) -> Self {
+        self.component_type = input; self
     }
     /// <p>The status of the component.</p>
     pub fn status(mut self, input: crate::types::ComponentStatus) -> Self {
@@ -124,8 +118,7 @@ impl ComponentBuilder {
     }
     /// <p>The status of the component.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ComponentStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Appends an item to `databases`.
     ///
@@ -134,17 +127,13 @@ impl ComponentBuilder {
     /// <p>The SAP HANA databases of the component.</p>
     pub fn databases(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.databases.unwrap_or_default();
-        v.push(input.into());
-        self.databases = Some(v);
-        self
+                        v.push(input.into());
+                        self.databases = Some(v);
+                        self
     }
     /// <p>The SAP HANA databases of the component.</p>
-    pub fn set_databases(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.databases = input;
-        self
+    pub fn set_databases(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.databases = input; self
     }
     /// Appends an item to `hosts`.
     ///
@@ -153,17 +142,13 @@ impl ComponentBuilder {
     /// <p>The hosts of the component.</p>
     pub fn hosts(mut self, input: crate::types::Host) -> Self {
         let mut v = self.hosts.unwrap_or_default();
-        v.push(input);
-        self.hosts = Some(v);
-        self
+                        v.push(input);
+                        self.hosts = Some(v);
+                        self
     }
     /// <p>The hosts of the component.</p>
-    pub fn set_hosts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Host>>,
-    ) -> Self {
-        self.hosts = input;
-        self
+    pub fn set_hosts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Host>>) -> Self {
+        self.hosts = input; self
     }
     /// <p>The primary host of the component.</p>
     pub fn primary_host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +157,7 @@ impl ComponentBuilder {
     }
     /// <p>The primary host of the component.</p>
     pub fn set_primary_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_host = input;
-        self
+        self.primary_host = input; self
     }
     /// <p>The time at which the component was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -181,24 +165,29 @@ impl ComponentBuilder {
         self
     }
     /// <p>The time at which the component was last updated.</p>
-    pub fn set_last_updated(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated = input;
-        self
+    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated = input; self
     }
     /// Consumes the builder and constructs a [`Component`](crate::types::Component).
     pub fn build(self) -> crate::types::Component {
         crate::types::Component {
-            component_id: self.component_id,
-            application_id: self.application_id,
-            component_type: self.component_type,
-            status: self.status,
-            databases: self.databases,
-            hosts: self.hosts,
-            primary_host: self.primary_host,
-            last_updated: self.last_updated,
+            component_id: self.component_id
+            ,
+            application_id: self.application_id
+            ,
+            component_type: self.component_type
+            ,
+            status: self.status
+            ,
+            databases: self.databases
+            ,
+            hosts: self.hosts
+            ,
+            primary_host: self.primary_host
+            ,
+            last_updated: self.last_updated
+            ,
         }
     }
 }
+

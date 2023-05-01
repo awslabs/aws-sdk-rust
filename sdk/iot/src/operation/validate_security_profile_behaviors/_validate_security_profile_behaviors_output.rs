@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateSecurityProfileBehaviorsOutput {
+pub struct ValidateSecurityProfileBehaviorsOutput  {
     /// <p>True if the behaviors were valid.</p>
     #[doc(hidden)]
     pub valid: bool,
@@ -17,18 +17,18 @@ impl ValidateSecurityProfileBehaviorsOutput {
         self.valid
     }
     /// <p>The list of any errors found in the behaviors.</p>
-    pub fn validation_errors(&self) -> std::option::Option<&[crate::types::ValidationError]> {
+    pub fn validation_errors(&self) -> std::option::Option<& [crate::types::ValidationError]> {
         self.validation_errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ValidateSecurityProfileBehaviorsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ValidateSecurityProfileBehaviorsOutput {
     /// Creates a new builder-style object to manufacture [`ValidateSecurityProfileBehaviorsOutput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput).
-    pub fn builder() -> crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsOutputBuilder{
+    pub fn builder() -> crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsOutputBuilder {
         crate::operation::validate_security_profile_behaviors::builders::ValidateSecurityProfileBehaviorsOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
     }
     /// <p>True if the behaviors were valid.</p>
     pub fn set_valid(mut self, input: std::option::Option<bool>) -> Self {
-        self.valid = input;
-        self
+        self.valid = input; self
     }
     /// Appends an item to `validation_errors`.
     ///
@@ -59,32 +58,25 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
     /// <p>The list of any errors found in the behaviors.</p>
     pub fn validation_errors(mut self, input: crate::types::ValidationError) -> Self {
         let mut v = self.validation_errors.unwrap_or_default();
-        v.push(input);
-        self.validation_errors = Some(v);
-        self
+                        v.push(input);
+                        self.validation_errors = Some(v);
+                        self
     }
     /// <p>The list of any errors found in the behaviors.</p>
-    pub fn set_validation_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>,
-    ) -> Self {
-        self.validation_errors = input;
-        self
+    pub fn set_validation_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationError>>) -> Self {
+        self.validation_errors = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ValidateSecurityProfileBehaviorsOutput`](crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput
-    {
+    pub fn build(self) -> crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput {
         crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput {
             valid: self.valid
                 .unwrap_or_default()
@@ -95,3 +87,4 @@ impl ValidateSecurityProfileBehaviorsOutputBuilder {
         }
     }
 }
+

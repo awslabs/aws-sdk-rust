@@ -3,17 +3,17 @@
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecryptStepDetails {
+pub struct DecryptStepDetails  {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EncryptionType>,
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
-    /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
+    /// <ul> 
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
@@ -26,29 +26,27 @@ pub struct DecryptStepDetails {
 }
 impl DecryptStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
-    /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
+    /// <ul> 
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
     /// </ul>
-    pub fn source_file_location(&self) -> std::option::Option<&str> {
+    pub fn source_file_location(&self) -> std::option::Option<& str> {
         self.source_file_location.as_deref()
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
-    pub fn overwrite_existing(&self) -> std::option::Option<&crate::types::OverwriteExisting> {
+    pub fn overwrite_existing(&self) -> std::option::Option<& crate::types::OverwriteExisting> {
         self.overwrite_existing.as_ref()
     }
     /// <p>Specifies the location for the file that's being processed.</p>
-    pub fn destination_file_location(
-        &self,
-    ) -> std::option::Option<&crate::types::InputFileLocation> {
+    pub fn destination_file_location(&self) -> std::option::Option<& crate::types::InputFileLocation> {
         self.destination_file_location.as_ref()
     }
 }
@@ -77,8 +75,7 @@ impl DecryptStepDetailsBuilder {
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
@@ -87,29 +84,24 @@ impl DecryptStepDetailsBuilder {
     }
     /// <p>The type of encryption used. Currently, this value must be <code>PGP</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
-    /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
+    /// <ul> 
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
     /// </ul>
     pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_file_location = Some(input.into());
         self
     }
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
-    /// <ul>
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
+    /// <ul> 
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
     /// </ul>
-    pub fn set_source_file_location(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_file_location = input;
-        self
+    pub fn set_source_file_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_file_location = input; self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
     pub fn overwrite_existing(mut self, input: crate::types::OverwriteExisting) -> Self {
@@ -117,12 +109,8 @@ impl DecryptStepDetailsBuilder {
         self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
-    pub fn set_overwrite_existing(
-        mut self,
-        input: std::option::Option<crate::types::OverwriteExisting>,
-    ) -> Self {
-        self.overwrite_existing = input;
-        self
+    pub fn set_overwrite_existing(mut self, input: std::option::Option<crate::types::OverwriteExisting>) -> Self {
+        self.overwrite_existing = input; self
     }
     /// <p>Specifies the location for the file that's being processed.</p>
     pub fn destination_file_location(mut self, input: crate::types::InputFileLocation) -> Self {
@@ -130,21 +118,23 @@ impl DecryptStepDetailsBuilder {
         self
     }
     /// <p>Specifies the location for the file that's being processed.</p>
-    pub fn set_destination_file_location(
-        mut self,
-        input: std::option::Option<crate::types::InputFileLocation>,
-    ) -> Self {
-        self.destination_file_location = input;
-        self
+    pub fn set_destination_file_location(mut self, input: std::option::Option<crate::types::InputFileLocation>) -> Self {
+        self.destination_file_location = input; self
     }
     /// Consumes the builder and constructs a [`DecryptStepDetails`](crate::types::DecryptStepDetails).
     pub fn build(self) -> crate::types::DecryptStepDetails {
         crate::types::DecryptStepDetails {
-            name: self.name,
-            r#type: self.r#type,
-            source_file_location: self.source_file_location,
-            overwrite_existing: self.overwrite_existing,
-            destination_file_location: self.destination_file_location,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            source_file_location: self.source_file_location
+            ,
+            overwrite_existing: self.overwrite_existing
+            ,
+            destination_file_location: self.destination_file_location
+            ,
         }
     }
 }
+

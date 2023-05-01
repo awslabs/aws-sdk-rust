@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePresignedNotebookUrlInput {
+pub struct CreatePresignedNotebookUrlInput  {
     /// <p>The session ID.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl CreatePresignedNotebookUrlInput {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
 }
 impl CreatePresignedNotebookUrlInput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
-    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder{
+    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder {
         crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl CreatePresignedNotebookUrlInputBuilder {
     }
     /// <p>The session ID.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input;
-        self
+        self.session_id = input; self
     }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlInput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlInput {
-                session_id: self.session_id,
-            },
+                session_id: self.session_id
+                ,
+            }
         )
     }
 }
+

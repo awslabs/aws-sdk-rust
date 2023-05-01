@@ -3,14 +3,14 @@
 /// <p>Options for filtering API keys.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiKeyFilter {
+pub struct ApiKeyFilter  {
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
     #[doc(hidden)]
     pub key_status: std::option::Option<crate::types::Status>,
 }
 impl ApiKeyFilter {
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-    pub fn key_status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn key_status(&self) -> std::option::Option<& crate::types::Status> {
         self.key_status.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl ApiKeyFilterBuilder {
     }
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
     pub fn set_key_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.key_status = input;
-        self
+        self.key_status = input; self
     }
     /// Consumes the builder and constructs a [`ApiKeyFilter`](crate::types::ApiKeyFilter).
     pub fn build(self) -> crate::types::ApiKeyFilter {
         crate::types::ApiKeyFilter {
-            key_status: self.key_status,
+            key_status: self.key_status
+            ,
         }
     }
 }
+

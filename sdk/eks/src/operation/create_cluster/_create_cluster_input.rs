@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterInput {
+pub struct CreateClusterInput  {
     /// <p>The unique name to give to your cluster.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
-    /// <p>The default version might not be the latest version available.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note> 
+    /// <p>The default version might not be the latest version available.</p> 
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -19,10 +19,9 @@ pub struct CreateClusterInput {
     pub resources_vpc_config: std::option::Option<crate::types::VpcConfigRequest>,
     /// <p>The Kubernetes network configuration for the cluster.</p>
     #[doc(hidden)]
-    pub kubernetes_network_config:
-        std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    pub kubernetes_network_config: std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note> 
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p> 
     /// </note>
     #[doc(hidden)]
     pub logging: std::option::Option<crate::types::Logging>,
@@ -31,8 +30,7 @@ pub struct CreateClusterInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The encryption configuration for the cluster.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<std::vec::Vec<crate::types::EncryptionConfig>>,
@@ -42,52 +40,47 @@ pub struct CreateClusterInput {
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
-    /// <p>The default version might not be the latest version available.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note> 
+    /// <p>The default version might not be the latest version available.</p> 
     /// </note>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
-    pub fn resources_vpc_config(&self) -> std::option::Option<&crate::types::VpcConfigRequest> {
+    pub fn resources_vpc_config(&self) -> std::option::Option<& crate::types::VpcConfigRequest> {
         self.resources_vpc_config.as_ref()
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        &self,
-    ) -> std::option::Option<&crate::types::KubernetesNetworkConfigRequest> {
+    pub fn kubernetes_network_config(&self) -> std::option::Option<& crate::types::KubernetesNetworkConfigRequest> {
         self.kubernetes_network_config.as_ref()
     }
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note> 
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p> 
     /// </note>
-    pub fn logging(&self) -> std::option::Option<&crate::types::Logging> {
+    pub fn logging(&self) -> std::option::Option<& crate::types::Logging> {
         self.logging.as_ref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> std::option::Option<& str> {
         self.client_request_token.as_deref()
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn encryption_config(&self) -> std::option::Option<&[crate::types::EncryptionConfig]> {
+    pub fn encryption_config(&self) -> std::option::Option<& [crate::types::EncryptionConfig]> {
         self.encryption_config.as_deref()
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
-    pub fn outpost_config(&self) -> std::option::Option<&crate::types::OutpostConfigRequest> {
+    pub fn outpost_config(&self) -> std::option::Option<& crate::types::OutpostConfigRequest> {
         self.outpost_config.as_ref()
     }
 }
@@ -106,14 +99,11 @@ pub struct CreateClusterInputBuilder {
     pub(crate) version: std::option::Option<std::string::String>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) resources_vpc_config: std::option::Option<crate::types::VpcConfigRequest>,
-    pub(crate) kubernetes_network_config:
-        std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
+    pub(crate) kubernetes_network_config: std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
     pub(crate) logging: std::option::Option<crate::types::Logging>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) encryption_config:
-        std::option::Option<std::vec::Vec<crate::types::EncryptionConfig>>,
+    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) encryption_config: std::option::Option<std::vec::Vec<crate::types::EncryptionConfig>>,
     pub(crate) outpost_config: std::option::Option<crate::types::OutpostConfigRequest>,
 }
 impl CreateClusterInputBuilder {
@@ -124,22 +114,20 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The unique name to give to your cluster.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
-    /// <p>The default version might not be the latest version available.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note> 
+    /// <p>The default version might not be the latest version available.</p> 
     /// </note>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
         self.version = Some(input.into());
         self
     }
-    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note>
-    /// <p>The default version might not be the latest version available.</p>
+    /// <p>The desired Kubernetes version for your cluster. If you don't specify a value here, the default version available in Amazon EKS is used.</p> <note> 
+    /// <p>The default version might not be the latest version available.</p> 
     /// </note>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input;
-        self
+        self.version = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,8 +136,7 @@ impl CreateClusterInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to Amazon Web Services API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input;
-        self
+        self.role_arn = input; self
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
     pub fn resources_vpc_config(mut self, input: crate::types::VpcConfigRequest) -> Self {
@@ -157,42 +144,30 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify at least two subnets. You can specify up to five security groups. However, we recommend that you use a dedicated security group for your cluster control plane.</p>
-    pub fn set_resources_vpc_config(
-        mut self,
-        input: std::option::Option<crate::types::VpcConfigRequest>,
-    ) -> Self {
-        self.resources_vpc_config = input;
-        self
+    pub fn set_resources_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfigRequest>) -> Self {
+        self.resources_vpc_config = input; self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn kubernetes_network_config(
-        mut self,
-        input: crate::types::KubernetesNetworkConfigRequest,
-    ) -> Self {
+    pub fn kubernetes_network_config(mut self, input: crate::types::KubernetesNetworkConfigRequest) -> Self {
         self.kubernetes_network_config = Some(input);
         self
     }
     /// <p>The Kubernetes network configuration for the cluster.</p>
-    pub fn set_kubernetes_network_config(
-        mut self,
-        input: std::option::Option<crate::types::KubernetesNetworkConfigRequest>,
-    ) -> Self {
-        self.kubernetes_network_config = input;
-        self
+    pub fn set_kubernetes_network_config(mut self, input: std::option::Option<crate::types::KubernetesNetworkConfigRequest>) -> Self {
+        self.kubernetes_network_config = input; self
     }
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note> 
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p> 
     /// </note>
     pub fn logging(mut self, input: crate::types::Logging) -> Self {
         self.logging = Some(input);
         self
     }
-    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note>
-    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
+    /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p> <note> 
+    /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p> 
     /// </note>
     pub fn set_logging(mut self, input: std::option::Option<crate::types::Logging>) -> Self {
-        self.logging = input;
-        self
+        self.logging = input; self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,37 +175,23 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.client_request_token = input;
-        self
+    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.client_request_token = input; self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn tags(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-        hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v.into());
+                        self.tags = Some(hash_map);
+                        self
     }
     /// <p>The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key and an optional value. You define both.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+        self.tags = input; self
     }
     /// Appends an item to `encryption_config`.
     ///
@@ -239,17 +200,13 @@ impl CreateClusterInputBuilder {
     /// <p>The encryption configuration for the cluster.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
         let mut v = self.encryption_config.unwrap_or_default();
-        v.push(input);
-        self.encryption_config = Some(v);
-        self
+                        v.push(input);
+                        self.encryption_config = Some(v);
+                        self
     }
     /// <p>The encryption configuration for the cluster.</p>
-    pub fn set_encryption_config(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EncryptionConfig>>,
-    ) -> Self {
-        self.encryption_config = input;
-        self
+    pub fn set_encryption_config(mut self, input: std::option::Option<std::vec::Vec<crate::types::EncryptionConfig>>) -> Self {
+        self.encryption_config = input; self
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
     pub fn outpost_config(mut self, input: crate::types::OutpostConfigRequest) -> Self {
@@ -257,31 +214,35 @@ impl CreateClusterInputBuilder {
         self
     }
     /// <p>An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a local cluster on an Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.</p>
-    pub fn set_outpost_config(
-        mut self,
-        input: std::option::Option<crate::types::OutpostConfigRequest>,
-    ) -> Self {
-        self.outpost_config = input;
-        self
+    pub fn set_outpost_config(mut self, input: std::option::Option<crate::types::OutpostConfigRequest>) -> Self {
+        self.outpost_config = input; self
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_cluster::CreateClusterInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::create_cluster::CreateClusterInput {
-            name: self.name,
-            version: self.version,
-            role_arn: self.role_arn,
-            resources_vpc_config: self.resources_vpc_config,
-            kubernetes_network_config: self.kubernetes_network_config,
-            logging: self.logging,
-            client_request_token: self.client_request_token,
-            tags: self.tags,
-            encryption_config: self.encryption_config,
-            outpost_config: self.outpost_config,
-        })
+    pub fn build(self) -> Result<crate::operation::create_cluster::CreateClusterInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::create_cluster::CreateClusterInput {
+                name: self.name
+                ,
+                version: self.version
+                ,
+                role_arn: self.role_arn
+                ,
+                resources_vpc_config: self.resources_vpc_config
+                ,
+                kubernetes_network_config: self.kubernetes_network_config
+                ,
+                logging: self.logging
+                ,
+                client_request_token: self.client_request_token
+                ,
+                tags: self.tags
+                ,
+                encryption_config: self.encryption_config
+                ,
+                outpost_config: self.outpost_config
+                ,
+            }
+        )
     }
 }
+

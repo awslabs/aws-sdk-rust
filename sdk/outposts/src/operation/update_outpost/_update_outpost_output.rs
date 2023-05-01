@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOutpostOutput {
+pub struct UpdateOutpostOutput  {
     /// <p>Information about an Outpost.</p>
     #[doc(hidden)]
     pub outpost: std::option::Option<crate::types::Outpost>,
@@ -10,15 +10,15 @@ pub struct UpdateOutpostOutput {
 }
 impl UpdateOutpostOutput {
     /// <p>Information about an Outpost.</p>
-    pub fn outpost(&self) -> std::option::Option<&crate::types::Outpost> {
+    pub fn outpost(&self) -> std::option::Option<& crate::types::Outpost> {
         self.outpost.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateOutpostOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateOutpostOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOutpostOutput`](crate::operation::update_outpost::UpdateOutpostOutput).
     pub fn builder() -> crate::operation::update_outpost::builders::UpdateOutpostOutputBuilder {
@@ -41,23 +41,24 @@ impl UpdateOutpostOutputBuilder {
     }
     /// <p>Information about an Outpost.</p>
     pub fn set_outpost(mut self, input: std::option::Option<crate::types::Outpost>) -> Self {
-        self.outpost = input;
-        self
+        self.outpost = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateOutpostOutput`](crate::operation::update_outpost::UpdateOutpostOutput).
     pub fn build(self) -> crate::operation::update_outpost::UpdateOutpostOutput {
         crate::operation::update_outpost::UpdateOutpostOutput {
-            outpost: self.outpost,
+            outpost: self.outpost
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>API stage name of the associated API stage in a usage plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiStage {
+pub struct ApiStage  {
     /// <p>API Id of the associated API stage in a usage plan.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -12,25 +12,19 @@ pub struct ApiStage {
     pub stage: std::option::Option<std::string::String>,
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
     #[doc(hidden)]
-    pub throttle: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>,
-    >,
+    pub throttle: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>>,
 }
 impl ApiStage {
     /// <p>API Id of the associated API stage in a usage plan.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> std::option::Option<& str> {
         self.api_id.as_deref()
     }
     /// <p>API stage name of the associated API stage in a usage plan.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> std::option::Option<& str> {
         self.stage.as_deref()
     }
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
-    pub fn throttle(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>,
-    > {
+    pub fn throttle(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>> {
         self.throttle.as_ref()
     }
 }
@@ -47,9 +41,7 @@ impl ApiStage {
 pub struct ApiStageBuilder {
     pub(crate) api_id: std::option::Option<std::string::String>,
     pub(crate) stage: std::option::Option<std::string::String>,
-    pub(crate) throttle: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>,
-    >,
+    pub(crate) throttle: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>>,
 }
 impl ApiStageBuilder {
     /// <p>API Id of the associated API stage in a usage plan.</p>
@@ -59,8 +51,7 @@ impl ApiStageBuilder {
     }
     /// <p>API Id of the associated API stage in a usage plan.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input;
-        self
+        self.api_id = input; self
     }
     /// <p>API stage name of the associated API stage in a usage plan.</p>
     pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,40 +60,33 @@ impl ApiStageBuilder {
     }
     /// <p>API stage name of the associated API stage in a usage plan.</p>
     pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// Adds a key-value pair to `throttle`.
     ///
     /// To override the contents of this collection use [`set_throttle`](Self::set_throttle).
     ///
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
-    pub fn throttle(
-        mut self,
-        k: impl Into<std::string::String>,
-        v: crate::types::ThrottleSettings,
-    ) -> Self {
+    pub fn throttle(mut self, k: impl Into<std::string::String>, v: crate::types::ThrottleSettings) -> Self {
         let mut hash_map = self.throttle.unwrap_or_default();
-        hash_map.insert(k.into(), v);
-        self.throttle = Some(hash_map);
-        self
+                        hash_map.insert(k.into(), v);
+                        self.throttle = Some(hash_map);
+                        self
     }
     /// <p>Map containing method level throttling information for API stage in a usage plan.</p>
-    pub fn set_throttle(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>,
-        >,
-    ) -> Self {
-        self.throttle = input;
-        self
+    pub fn set_throttle(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ThrottleSettings>>) -> Self {
+        self.throttle = input; self
     }
     /// Consumes the builder and constructs a [`ApiStage`](crate::types::ApiStage).
     pub fn build(self) -> crate::types::ApiStage {
         crate::types::ApiStage {
-            api_id: self.api_id,
-            stage: self.stage,
-            throttle: self.throttle,
+            api_id: self.api_id
+            ,
+            stage: self.stage
+            ,
+            throttle: self.throttle
+            ,
         }
     }
 }
+

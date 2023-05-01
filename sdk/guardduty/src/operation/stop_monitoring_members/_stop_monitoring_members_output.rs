@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMonitoringMembersOutput {
+pub struct StopMonitoringMembersOutput  {
     /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
@@ -10,20 +10,18 @@ pub struct StopMonitoringMembersOutput {
 }
 impl StopMonitoringMembersOutput {
     /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StopMonitoringMembersOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StopMonitoringMembersOutput {
     /// Creates a new builder-style object to manufacture [`StopMonitoringMembersOutput`](crate::operation::stop_monitoring_members::StopMonitoringMembersOutput).
-    pub fn builder(
-    ) -> crate::operation::stop_monitoring_members::builders::StopMonitoringMembersOutputBuilder
-    {
+    pub fn builder() -> crate::operation::stop_monitoring_members::builders::StopMonitoringMembersOutputBuilder {
         crate::operation::stop_monitoring_members::builders::StopMonitoringMembersOutputBuilder::default()
     }
 }
@@ -32,8 +30,7 @@ impl StopMonitoringMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StopMonitoringMembersOutputBuilder {
-    pub(crate) unprocessed_accounts:
-        std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl StopMonitoringMembersOutputBuilder {
@@ -44,32 +41,30 @@ impl StopMonitoringMembersOutputBuilder {
     /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-        v.push(input);
-        self.unprocessed_accounts = Some(v);
-        self
+                        v.push(input);
+                        self.unprocessed_accounts = Some(v);
+                        self
     }
     /// <p>A list of objects that contain an accountId for each account that could not be processed, and a result string that indicates why the account was not processed. </p>
-    pub fn set_unprocessed_accounts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
-    ) -> Self {
-        self.unprocessed_accounts = input;
-        self
+    pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
+        self.unprocessed_accounts = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StopMonitoringMembersOutput`](crate::operation::stop_monitoring_members::StopMonitoringMembersOutput).
     pub fn build(self) -> crate::operation::stop_monitoring_members::StopMonitoringMembersOutput {
         crate::operation::stop_monitoring_members::StopMonitoringMembersOutput {
-            unprocessed_accounts: self.unprocessed_accounts,
+            unprocessed_accounts: self.unprocessed_accounts
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

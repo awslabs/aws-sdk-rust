@@ -3,7 +3,7 @@
 /// <p>Represents the content of a <code>Comment</code> to be returned to agents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CommentContent {
+pub struct CommentContent  {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CommentContent {
 }
 impl CommentContent {
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::CommentBodyTextType> {
+    pub fn content_type(&self) -> std::option::Option<& crate::types::CommentBodyTextType> {
         self.content_type.as_ref()
     }
 }
@@ -43,8 +43,7 @@ impl CommentContentBuilder {
     }
     /// <p>Text in the body of a <code>Comment</code> on a case.</p>
     pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.body = input;
-        self
+        self.body = input; self
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
     pub fn content_type(mut self, input: crate::types::CommentBodyTextType) -> Self {
@@ -52,18 +51,17 @@ impl CommentContentBuilder {
         self
     }
     /// <p>Type of the text in the box of a <code>Comment</code> on a case.</p>
-    pub fn set_content_type(
-        mut self,
-        input: std::option::Option<crate::types::CommentBodyTextType>,
-    ) -> Self {
-        self.content_type = input;
-        self
+    pub fn set_content_type(mut self, input: std::option::Option<crate::types::CommentBodyTextType>) -> Self {
+        self.content_type = input; self
     }
     /// Consumes the builder and constructs a [`CommentContent`](crate::types::CommentContent).
     pub fn build(self) -> crate::types::CommentContent {
         crate::types::CommentContent {
-            body: self.body,
-            content_type: self.content_type,
+            body: self.body
+            ,
+            content_type: self.content_type
+            ,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMountTargetInput {
+pub struct DeleteMountTargetInput  {
     /// <p>The ID of the mount target to delete (String).</p>
     #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
 }
 impl DeleteMountTargetInput {
     /// <p>The ID of the mount target to delete (String).</p>
-    pub fn mount_target_id(&self) -> std::option::Option<&str> {
+    pub fn mount_target_id(&self) -> std::option::Option<& str> {
         self.mount_target_id.as_deref()
     }
 }
 impl DeleteMountTargetInput {
     /// Creates a new builder-style object to manufacture [`DeleteMountTargetInput`](crate::operation::delete_mount_target::DeleteMountTargetInput).
-    pub fn builder(
-    ) -> crate::operation::delete_mount_target::builders::DeleteMountTargetInputBuilder {
+    pub fn builder() -> crate::operation::delete_mount_target::builders::DeleteMountTargetInputBuilder {
         crate::operation::delete_mount_target::builders::DeleteMountTargetInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl DeleteMountTargetInputBuilder {
     }
     /// <p>The ID of the mount target to delete (String).</p>
     pub fn set_mount_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mount_target_id = input;
-        self
+        self.mount_target_id = input; self
     }
     /// Consumes the builder and constructs a [`DeleteMountTargetInput`](crate::operation::delete_mount_target::DeleteMountTargetInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_mount_target::DeleteMountTargetInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_mount_target::DeleteMountTargetInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_mount_target::DeleteMountTargetInput {
-                mount_target_id: self.mount_target_id,
-            },
+                mount_target_id: self.mount_target_id
+                ,
+            }
         )
     }
 }
+

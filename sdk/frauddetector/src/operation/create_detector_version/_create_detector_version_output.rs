@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDetectorVersionOutput {
+pub struct CreateDetectorVersionOutput  {
     /// <p>The ID for the created version's parent detector.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -16,28 +16,26 @@ pub struct CreateDetectorVersionOutput {
 }
 impl CreateDetectorVersionOutput {
     /// <p>The ID for the created version's parent detector.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The ID for the created detector. </p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The status of the detector version.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DetectorVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::DetectorVersionStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDetectorVersionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorVersionOutput`](crate::operation::create_detector_version::CreateDetectorVersionOutput).
-    pub fn builder(
-    ) -> crate::operation::create_detector_version::builders::CreateDetectorVersionOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_detector_version::builders::CreateDetectorVersionOutputBuilder {
         crate::operation::create_detector_version::builders::CreateDetectorVersionOutputBuilder::default()
     }
 }
@@ -59,8 +57,7 @@ impl CreateDetectorVersionOutputBuilder {
     }
     /// <p>The ID for the created version's parent detector.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input;
-        self
+        self.detector_id = input; self
     }
     /// <p>The ID for the created detector. </p>
     pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,12 +65,8 @@ impl CreateDetectorVersionOutputBuilder {
         self
     }
     /// <p>The ID for the created detector. </p>
-    pub fn set_detector_version_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.detector_version_id = input;
-        self
+    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.detector_version_id = input; self
     }
     /// <p>The status of the detector version.</p>
     pub fn status(mut self, input: crate::types::DetectorVersionStatus) -> Self {
@@ -81,29 +74,29 @@ impl CreateDetectorVersionOutputBuilder {
         self
     }
     /// <p>The status of the detector version.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::DetectorVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::DetectorVersionStatus>) -> Self {
+        self.status = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDetectorVersionOutput`](crate::operation::create_detector_version::CreateDetectorVersionOutput).
     pub fn build(self) -> crate::operation::create_detector_version::CreateDetectorVersionOutput {
         crate::operation::create_detector_version::CreateDetectorVersionOutput {
-            detector_id: self.detector_id,
-            detector_version_id: self.detector_version_id,
-            status: self.status,
+            detector_id: self.detector_id
+            ,
+            detector_version_id: self.detector_version_id
+            ,
+            status: self.status
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

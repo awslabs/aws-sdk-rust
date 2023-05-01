@@ -27,6 +27,8 @@ pub use crate::types::_user_settings::UserSettingsBuilder;
 
 pub use crate::types::_canvas_app_settings::CanvasAppSettingsBuilder;
 
+pub use crate::types::_model_register_settings::ModelRegisterSettingsBuilder;
+
 pub use crate::types::_time_series_forecasting_settings::TimeSeriesForecastingSettingsBuilder;
 
 pub use crate::types::_r_session_app_settings::RSessionAppSettingsBuilder;
@@ -950,3 +952,4 @@ pub use crate::types::_deployment_stage::DeploymentStageBuilder;
 pub use crate::types::_batch_describe_model_package_error::BatchDescribeModelPackageErrorBuilder;
 
 pub use crate::types::_batch_describe_model_package_summary::BatchDescribeModelPackageSummaryBuilder;
+

@@ -3,7 +3,7 @@
 /// <p>The details that define an aggregation based on operating system package type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageAggregation {
+pub struct PackageAggregation  {
     /// <p>The names of packages to aggregate findings on.</p>
     #[doc(hidden)]
     pub package_names: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -16,15 +16,15 @@ pub struct PackageAggregation {
 }
 impl PackageAggregation {
     /// <p>The names of packages to aggregate findings on.</p>
-    pub fn package_names(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn package_names(&self) -> std::option::Option<& [crate::types::StringFilter]> {
         self.package_names.as_deref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::PackageSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<& crate::types::PackageSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -51,17 +51,13 @@ impl PackageAggregationBuilder {
     /// <p>The names of packages to aggregate findings on.</p>
     pub fn package_names(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.package_names.unwrap_or_default();
-        v.push(input);
-        self.package_names = Some(v);
-        self
+                        v.push(input);
+                        self.package_names = Some(v);
+                        self
     }
     /// <p>The names of packages to aggregate findings on.</p>
-    pub fn set_package_names(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    ) -> Self {
-        self.package_names = input;
-        self
+    pub fn set_package_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
+        self.package_names = input; self
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -70,8 +66,7 @@ impl PackageAggregationBuilder {
     }
     /// <p>The order to sort results by.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input;
-        self
+        self.sort_order = input; self
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::PackageSortBy) -> Self {
@@ -80,15 +75,18 @@ impl PackageAggregationBuilder {
     }
     /// <p>The value to sort results by.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::PackageSortBy>) -> Self {
-        self.sort_by = input;
-        self
+        self.sort_by = input; self
     }
     /// Consumes the builder and constructs a [`PackageAggregation`](crate::types::PackageAggregation).
     pub fn build(self) -> crate::types::PackageAggregation {
         crate::types::PackageAggregation {
-            package_names: self.package_names,
-            sort_order: self.sort_order,
-            sort_by: self.sort_by,
+            package_names: self.package_names
+            ,
+            sort_order: self.sort_order
+            ,
+            sort_by: self.sort_by
+            ,
         }
     }
 }
+

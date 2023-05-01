@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRuleInput {
+pub struct GetRuleInput  {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl GetRuleInput {
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetRuleInputBuilder {
     }
     /// <p>The <code>RuleId</code> of the <code>Rule</code> that you want to get. <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input;
-        self
+        self.rule_id = input; self
     }
     /// Consumes the builder and constructs a [`GetRuleInput`](crate::operation::get_rule::GetRuleInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_rule::GetRuleInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_rule::GetRuleInput {
-            rule_id: self.rule_id,
-        })
+    pub fn build(self) -> Result<crate::operation::get_rule::GetRuleInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_rule::GetRuleInput {
+                rule_id: self.rule_id
+                ,
+            }
+        )
     }
 }
+

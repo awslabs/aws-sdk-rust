@@ -3,7 +3,7 @@
 /// <p>A summary of the custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginSummary {
+pub struct CustomPluginSummary  {
     /// <p>The time that the custom plugin was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -25,29 +25,27 @@ pub struct CustomPluginSummary {
 }
 impl CustomPluginSummary {
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_plugin_arn(&self) -> std::option::Option<& str> {
         self.custom_plugin_arn.as_deref()
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn custom_plugin_state(&self) -> std::option::Option<&crate::types::CustomPluginState> {
+    pub fn custom_plugin_state(&self) -> std::option::Option<& crate::types::CustomPluginState> {
         self.custom_plugin_state.as_ref()
     }
     /// <p>A description of the custom plugin.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The latest revision of the custom plugin.</p>
-    pub fn latest_revision(
-        &self,
-    ) -> std::option::Option<&crate::types::CustomPluginRevisionSummary> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::types::CustomPluginRevisionSummary> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -76,12 +74,8 @@ impl CustomPluginSummaryBuilder {
         self
     }
     /// <p>The time that the custom plugin was created.</p>
-    pub fn set_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_time = input;
-        self
+    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_time = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
     pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,12 +83,8 @@ impl CustomPluginSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
-    pub fn set_custom_plugin_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.custom_plugin_arn = input;
-        self
+    pub fn set_custom_plugin_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.custom_plugin_arn = input; self
     }
     /// <p>The state of the custom plugin.</p>
     pub fn custom_plugin_state(mut self, input: crate::types::CustomPluginState) -> Self {
@@ -102,12 +92,8 @@ impl CustomPluginSummaryBuilder {
         self
     }
     /// <p>The state of the custom plugin.</p>
-    pub fn set_custom_plugin_state(
-        mut self,
-        input: std::option::Option<crate::types::CustomPluginState>,
-    ) -> Self {
-        self.custom_plugin_state = input;
-        self
+    pub fn set_custom_plugin_state(mut self, input: std::option::Option<crate::types::CustomPluginState>) -> Self {
+        self.custom_plugin_state = input; self
     }
     /// <p>A description of the custom plugin.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +102,7 @@ impl CustomPluginSummaryBuilder {
     }
     /// <p>A description of the custom plugin.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The latest revision of the custom plugin.</p>
     pub fn latest_revision(mut self, input: crate::types::CustomPluginRevisionSummary) -> Self {
@@ -125,12 +110,8 @@ impl CustomPluginSummaryBuilder {
         self
     }
     /// <p>The latest revision of the custom plugin.</p>
-    pub fn set_latest_revision(
-        mut self,
-        input: std::option::Option<crate::types::CustomPluginRevisionSummary>,
-    ) -> Self {
-        self.latest_revision = input;
-        self
+    pub fn set_latest_revision(mut self, input: std::option::Option<crate::types::CustomPluginRevisionSummary>) -> Self {
+        self.latest_revision = input; self
     }
     /// <p>The name of the custom plugin.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,18 +120,24 @@ impl CustomPluginSummaryBuilder {
     }
     /// <p>The name of the custom plugin.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`CustomPluginSummary`](crate::types::CustomPluginSummary).
     pub fn build(self) -> crate::types::CustomPluginSummary {
         crate::types::CustomPluginSummary {
-            creation_time: self.creation_time,
-            custom_plugin_arn: self.custom_plugin_arn,
-            custom_plugin_state: self.custom_plugin_state,
-            description: self.description,
-            latest_revision: self.latest_revision,
-            name: self.name,
+            creation_time: self.creation_time
+            ,
+            custom_plugin_arn: self.custom_plugin_arn
+            ,
+            custom_plugin_state: self.custom_plugin_state
+            ,
+            description: self.description
+            ,
+            latest_revision: self.latest_revision
+            ,
+            name: self.name
+            ,
         }
     }
 }
+

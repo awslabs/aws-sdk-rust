@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSerialConsoleAccessStatusInput {
+pub struct GetSerialConsoleAccessStatusInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl GetSerialConsoleAccessStatusInput {
 }
 impl GetSerialConsoleAccessStatusInput {
     /// Creates a new builder-style object to manufacture [`GetSerialConsoleAccessStatusInput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput).
-    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder{
+    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder {
         crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl GetSerialConsoleAccessStatusInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// Consumes the builder and constructs a [`GetSerialConsoleAccessStatusInput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusInput {
-                dry_run: self.dry_run,
-            },
+                dry_run: self.dry_run
+                ,
+            }
         )
     }
 }
+

@@ -4,74 +4,52 @@ pub use crate::operation::update_game_session::_update_game_session_output::Upda
 pub use crate::operation::update_game_session::_update_game_session_input::UpdateGameSessionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateGameSession`.
-///
-/// <p>Updates the mutable properties of a game session. </p>
-/// <p>To update a game session, specify the game session ID and the values you want to change. </p>
-/// <p>If successful, the updated <code>GameSession</code> object is returned. </p>
+/// 
+/// <p>Updates the mutable properties of a game session. </p> 
+/// <p>To update a game session, specify the game session ID and the values you want to change. </p> 
+/// <p>If successful, the updated <code>GameSession</code> object is returned. </p> 
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGameSessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder,
-}
-impl UpdateGameSessionFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder
+            }
+impl UpdateGameSessionFluentBuilder  {
     /// Creates a new `UpdateGameSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_game_session::UpdateGameSession,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_game_session::UpdateGameSessionOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_game_session::UpdateGameSessionError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_game_session::UpdateGameSession, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_game_session::UpdateGameSessionOutput, aws_smithy_http::result::SdkError<crate::operation::update_game_session::UpdateGameSessionError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>A unique identifier for the game session to update. </p>
     pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_session_id(input.into());
@@ -103,40 +81,32 @@ impl UpdateGameSessionFluentBuilder {
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(
-        mut self,
-        input: crate::types::PlayerSessionCreationPolicy,
-    ) -> Self {
+    pub fn player_session_creation_policy(mut self, input: crate::types::PlayerSessionCreationPolicy) -> Self {
         self.inner = self.inner.player_session_creation_policy(input);
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn set_player_session_creation_policy(
-        mut self,
-        input: std::option::Option<crate::types::PlayerSessionCreationPolicy>,
-    ) -> Self {
+    pub fn set_player_session_creation_policy(mut self, input: std::option::Option<crate::types::PlayerSessionCreationPolicy>) -> Self {
         self.inner = self.inner.set_player_session_creation_policy(input);
         self
     }
-    /// <p>Game session protection policy to apply to this game session only.</p>
-    /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <p>Game session protection policy to apply to this game session only.</p> 
+    /// <ul> 
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> 
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> 
     /// </ul>
     pub fn protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.inner = self.inner.protection_policy(input);
         self
     }
-    /// <p>Game session protection policy to apply to this game session only.</p>
-    /// <ul>
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
+    /// <p>Game session protection policy to apply to this game session only.</p> 
+    /// <ul> 
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> 
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> 
     /// </ul>
-    pub fn set_protection_policy(
-        mut self,
-        input: std::option::Option<crate::types::ProtectionPolicy>,
-    ) -> Self {
+    pub fn set_protection_policy(mut self, input: std::option::Option<crate::types::ProtectionPolicy>) -> Self {
         self.inner = self.inner.set_protection_policy(input);
         self
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SheetControlLayoutConfiguration {
+pub struct SheetControlLayoutConfiguration  {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
     #[doc(hidden)]
     pub grid_layout: std::option::Option<crate::types::GridLayoutConfiguration>,
 }
 impl SheetControlLayoutConfiguration {
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    pub fn grid_layout(&self) -> std::option::Option<&crate::types::GridLayoutConfiguration> {
+    pub fn grid_layout(&self) -> std::option::Option<& crate::types::GridLayoutConfiguration> {
         self.grid_layout.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl SheetControlLayoutConfigurationBuilder {
         self
     }
     /// <p>The configuration that determines the elements and canvas size options of sheet control.</p>
-    pub fn set_grid_layout(
-        mut self,
-        input: std::option::Option<crate::types::GridLayoutConfiguration>,
-    ) -> Self {
-        self.grid_layout = input;
-        self
+    pub fn set_grid_layout(mut self, input: std::option::Option<crate::types::GridLayoutConfiguration>) -> Self {
+        self.grid_layout = input; self
     }
     /// Consumes the builder and constructs a [`SheetControlLayoutConfiguration`](crate::types::SheetControlLayoutConfiguration).
     pub fn build(self) -> crate::types::SheetControlLayoutConfiguration {
         crate::types::SheetControlLayoutConfiguration {
-            grid_layout: self.grid_layout,
+            grid_layout: self.grid_layout
+            ,
         }
     }
 }
+

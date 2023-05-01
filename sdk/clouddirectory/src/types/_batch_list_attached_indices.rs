@@ -3,7 +3,7 @@
 /// <p>Lists indices attached to an object inside a <code>BatchRead</code> operation. For more information, see <code>ListAttachedIndices</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListAttachedIndices {
+pub struct BatchListAttachedIndices  {
     /// <p>A reference to the object that has indices attached.</p>
     #[doc(hidden)]
     pub target_reference: std::option::Option<crate::types::ObjectReference>,
@@ -16,11 +16,11 @@ pub struct BatchListAttachedIndices {
 }
 impl BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
         self.target_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -50,12 +50,8 @@ impl BatchListAttachedIndicesBuilder {
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn set_target_reference(
-        mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
-    ) -> Self {
-        self.target_reference = input;
-        self
+    pub fn set_target_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+        self.target_reference = input; self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +60,7 @@ impl BatchListAttachedIndicesBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,15 +69,18 @@ impl BatchListAttachedIndicesBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// Consumes the builder and constructs a [`BatchListAttachedIndices`](crate::types::BatchListAttachedIndices).
     pub fn build(self) -> crate::types::BatchListAttachedIndices {
         crate::types::BatchListAttachedIndices {
-            target_reference: self.target_reference,
-            next_token: self.next_token,
-            max_results: self.max_results,
+            target_reference: self.target_reference
+            ,
+            next_token: self.next_token
+            ,
+            max_results: self.max_results
+            ,
         }
     }
 }
+

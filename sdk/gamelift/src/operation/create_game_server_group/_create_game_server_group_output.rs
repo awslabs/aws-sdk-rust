@@ -2,28 +2,26 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGameServerGroupOutput {
-    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+pub struct CreateGameServerGroupOutput  {
+    /// <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::types::GameServerGroup>,
     _request_id: Option<String>,
 }
 impl CreateGameServerGroupOutput {
-    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::types::GameServerGroup> {
+    /// <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    pub fn game_server_group(&self) -> std::option::Option<& crate::types::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateGameServerGroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameServerGroupOutput`](crate::operation::create_game_server_group::CreateGameServerGroupOutput).
-    pub fn builder(
-    ) -> crate::operation::create_game_server_group::builders::CreateGameServerGroupOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_game_server_group::builders::CreateGameServerGroupOutputBuilder {
         crate::operation::create_game_server_group::builders::CreateGameServerGroupOutputBuilder::default()
     }
 }
@@ -36,33 +34,31 @@ pub struct CreateGameServerGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateGameServerGroupOutputBuilder {
-    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    /// <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     pub fn game_server_group(mut self, input: crate::types::GameServerGroup) -> Self {
         self.game_server_group = Some(input);
         self
     }
-    /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
-    pub fn set_game_server_group(
-        mut self,
-        input: std::option::Option<crate::types::GameServerGroup>,
-    ) -> Self {
-        self.game_server_group = input;
-        self
+    /// <p>The newly created game server group object, including the new ARN value for the Amazon GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
+    pub fn set_game_server_group(mut self, input: std::option::Option<crate::types::GameServerGroup>) -> Self {
+        self.game_server_group = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateGameServerGroupOutput`](crate::operation::create_game_server_group::CreateGameServerGroupOutput).
     pub fn build(self) -> crate::operation::create_game_server_group::CreateGameServerGroupOutput {
         crate::operation::create_game_server_group::CreateGameServerGroupOutput {
-            game_server_group: self.game_server_group,
+            game_server_group: self.game_server_group
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

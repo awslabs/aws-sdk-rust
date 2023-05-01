@@ -3,7 +3,7 @@
 /// Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NielsenConfiguration {
+pub struct NielsenConfiguration  {
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     #[doc(hidden)]
     pub breakout_code: i32,
@@ -17,7 +17,7 @@ impl NielsenConfiguration {
         self.breakout_code
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
-    pub fn distributor_id(&self) -> std::option::Option<&str> {
+    pub fn distributor_id(&self) -> std::option::Option<& str> {
         self.distributor_id.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl NielsenConfigurationBuilder {
     }
     /// Nielsen has discontinued the use of breakout code functionality. If you must include this property, set the value to zero.
     pub fn set_breakout_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.breakout_code = input;
-        self
+        self.breakout_code = input; self
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
     pub fn distributor_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,17 @@ impl NielsenConfigurationBuilder {
     }
     /// Use Distributor ID (DistributorID) to specify the distributor ID that is assigned to your organization by Neilsen.
     pub fn set_distributor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.distributor_id = input;
-        self
+        self.distributor_id = input; self
     }
     /// Consumes the builder and constructs a [`NielsenConfiguration`](crate::types::NielsenConfiguration).
     pub fn build(self) -> crate::types::NielsenConfiguration {
         crate::types::NielsenConfiguration {
-            breakout_code: self.breakout_code.unwrap_or_default(),
-            distributor_id: self.distributor_id,
+            breakout_code: self.breakout_code
+                .unwrap_or_default()
+            ,
+            distributor_id: self.distributor_id
+            ,
         }
     }
 }
+

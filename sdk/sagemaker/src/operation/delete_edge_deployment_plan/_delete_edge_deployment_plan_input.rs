@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEdgeDeploymentPlanInput {
+pub struct DeleteEdgeDeploymentPlanInput  {
     /// <p>The name of the edge deployment plan to delete.</p>
     #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
 }
 impl DeleteEdgeDeploymentPlanInput {
     /// <p>The name of the edge deployment plan to delete.</p>
-    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<& str> {
         self.edge_deployment_plan_name.as_deref()
     }
 }
 impl DeleteEdgeDeploymentPlanInput {
     /// Creates a new builder-style object to manufacture [`DeleteEdgeDeploymentPlanInput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput).
-    pub fn builder(
-    ) -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanInputBuilder
-    {
+    pub fn builder() -> crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanInputBuilder {
         crate::operation::delete_edge_deployment_plan::builders::DeleteEdgeDeploymentPlanInputBuilder::default()
     }
 }
@@ -35,24 +33,17 @@ impl DeleteEdgeDeploymentPlanInputBuilder {
         self
     }
     /// <p>The name of the edge deployment plan to delete.</p>
-    pub fn set_edge_deployment_plan_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.edge_deployment_plan_name = input;
-        self
+    pub fn set_edge_deployment_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.edge_deployment_plan_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteEdgeDeploymentPlanInput`](crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_edge_deployment_plan::DeleteEdgeDeploymentPlanInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name,
-            },
+                edge_deployment_plan_name: self.edge_deployment_plan_name
+                ,
+            }
         )
     }
 }
+

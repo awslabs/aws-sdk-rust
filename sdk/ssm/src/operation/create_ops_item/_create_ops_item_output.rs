@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOpsItemOutput {
+pub struct CreateOpsItemOutput  {
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateOpsItemOutput {
 }
 impl CreateOpsItemOutput {
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<&str> {
+    pub fn ops_item_id(&self) -> std::option::Option<& str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
+    pub fn ops_item_arn(&self) -> std::option::Option<& str> {
         self.ops_item_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateOpsItemOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateOpsItemOutput {
     /// Creates a new builder-style object to manufacture [`CreateOpsItemOutput`](crate::operation::create_ops_item::CreateOpsItemOutput).
     pub fn builder() -> crate::operation::create_ops_item::builders::CreateOpsItemOutputBuilder {
@@ -49,8 +49,7 @@ impl CreateOpsItemOutputBuilder {
     }
     /// <p>The ID of the OpsItem.</p>
     pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_id = input;
-        self
+        self.ops_item_id = input; self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl CreateOpsItemOutputBuilder {
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_arn = input;
-        self
+        self.ops_item_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateOpsItemOutput`](crate::operation::create_ops_item::CreateOpsItemOutput).
     pub fn build(self) -> crate::operation::create_ops_item::CreateOpsItemOutput {
         crate::operation::create_ops_item::CreateOpsItemOutput {
-            ops_item_id: self.ops_item_id,
-            ops_item_arn: self.ops_item_arn,
+            ops_item_id: self.ops_item_id
+            ,
+            ops_item_arn: self.ops_item_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

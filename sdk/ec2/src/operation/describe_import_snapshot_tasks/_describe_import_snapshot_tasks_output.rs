@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImportSnapshotTasksOutput {
+pub struct DescribeImportSnapshotTasksOutput  {
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     #[doc(hidden)]
     pub import_snapshot_tasks: std::option::Option<std::vec::Vec<crate::types::ImportSnapshotTask>>,
@@ -13,24 +13,22 @@ pub struct DescribeImportSnapshotTasksOutput {
 }
 impl DescribeImportSnapshotTasksOutput {
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn import_snapshot_tasks(
-        &self,
-    ) -> std::option::Option<&[crate::types::ImportSnapshotTask]> {
+    pub fn import_snapshot_tasks(&self) -> std::option::Option<& [crate::types::ImportSnapshotTask]> {
         self.import_snapshot_tasks.as_deref()
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeImportSnapshotTasksOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeImportSnapshotTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput).
-    pub fn builder() -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder{
+    pub fn builder() -> crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder {
         crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksOutputBuilder::default()
     }
 }
@@ -39,8 +37,7 @@ impl DescribeImportSnapshotTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImportSnapshotTasksOutputBuilder {
-    pub(crate) import_snapshot_tasks:
-        std::option::Option<std::vec::Vec<crate::types::ImportSnapshotTask>>,
+    pub(crate) import_snapshot_tasks: std::option::Option<std::vec::Vec<crate::types::ImportSnapshotTask>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -52,17 +49,13 @@ impl DescribeImportSnapshotTasksOutputBuilder {
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub fn import_snapshot_tasks(mut self, input: crate::types::ImportSnapshotTask) -> Self {
         let mut v = self.import_snapshot_tasks.unwrap_or_default();
-        v.push(input);
-        self.import_snapshot_tasks = Some(v);
-        self
+                        v.push(input);
+                        self.import_snapshot_tasks = Some(v);
+                        self
     }
     /// <p>A list of zero or more import snapshot tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn set_import_snapshot_tasks(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportSnapshotTask>>,
-    ) -> Self {
-        self.import_snapshot_tasks = input;
-        self
+    pub fn set_import_snapshot_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportSnapshotTask>>) -> Self {
+        self.import_snapshot_tasks = input; self
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,26 +64,26 @@ impl DescribeImportSnapshotTasksOutputBuilder {
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeImportSnapshotTasksOutput`](crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput {
+    pub fn build(self) -> crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput {
         crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput {
-            import_snapshot_tasks: self.import_snapshot_tasks,
-            next_token: self.next_token,
+            import_snapshot_tasks: self.import_snapshot_tasks
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

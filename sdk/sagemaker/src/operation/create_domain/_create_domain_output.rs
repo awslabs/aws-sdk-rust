@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainOutput {
+pub struct CreateDomainOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
     #[doc(hidden)]
     pub domain_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateDomainOutput {
 }
 impl CreateDomainOutput {
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> std::option::Option<& str> {
         self.domain_arn.as_deref()
     }
     /// <p>The URL to the created domain.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
     pub fn builder() -> crate::operation::create_domain::builders::CreateDomainOutputBuilder {
@@ -49,8 +49,7 @@ impl CreateDomainOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the created domain.</p>
     pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_arn = input;
-        self
+        self.domain_arn = input; self
     }
     /// <p>The URL to the created domain.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,24 +58,26 @@ impl CreateDomainOutputBuilder {
     }
     /// <p>The URL to the created domain.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input;
-        self
+        self.url = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput).
     pub fn build(self) -> crate::operation::create_domain::CreateDomainOutput {
         crate::operation::create_domain::CreateDomainOutput {
-            domain_arn: self.domain_arn,
-            url: self.url,
+            domain_arn: self.domain_arn
+            ,
+            url: self.url
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

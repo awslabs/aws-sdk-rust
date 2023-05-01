@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkspacesOutput {
+pub struct ListWorkspacesOutput  {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
     #[doc(hidden)]
     pub workspaces: std::option::Option<std::vec::Vec<crate::types::WorkspaceSummary>>,
@@ -13,19 +13,19 @@ pub struct ListWorkspacesOutput {
 }
 impl ListWorkspacesOutput {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn workspaces(&self) -> std::option::Option<&[crate::types::WorkspaceSummary]> {
+    pub fn workspaces(&self) -> std::option::Option<& [crate::types::WorkspaceSummary]> {
         self.workspaces.as_deref()
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkspacesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkspacesOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
     pub fn builder() -> crate::operation::list_workspaces::builders::ListWorkspacesOutputBuilder {
@@ -49,17 +49,13 @@ impl ListWorkspacesOutputBuilder {
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
     pub fn workspaces(mut self, input: crate::types::WorkspaceSummary) -> Self {
         let mut v = self.workspaces.unwrap_or_default();
-        v.push(input);
-        self.workspaces = Some(v);
-        self
+                        v.push(input);
+                        self.workspaces = Some(v);
+                        self
     }
     /// <p>An array of structures that contain some information about the workspaces in the account.</p>
-    pub fn set_workspaces(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkspaceSummary>>,
-    ) -> Self {
-        self.workspaces = input;
-        self
+    pub fn set_workspaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkspaceSummary>>) -> Self {
+        self.workspaces = input; self
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListWorkspacesOutputBuilder {
     }
     /// <p>The token to use when requesting the next set of workspaces.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
     pub fn build(self) -> crate::operation::list_workspaces::ListWorkspacesOutput {
         crate::operation::list_workspaces::ListWorkspacesOutput {
-            workspaces: self.workspaces,
-            next_token: self.next_token,
+            workspaces: self.workspaces
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

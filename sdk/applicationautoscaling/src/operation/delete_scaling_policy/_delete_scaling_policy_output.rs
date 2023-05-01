@@ -2,20 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScalingPolicyOutput {
+pub struct DeleteScalingPolicyOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteScalingPolicyOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyOutput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput).
-    pub fn builder(
-    ) -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder {
-        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder {
+        crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyOutputBuilder::default()
     }
 }
 
@@ -27,14 +25,14 @@ pub struct DeleteScalingPolicyOutputBuilder {
 }
 impl DeleteScalingPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteScalingPolicyOutput`](crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput).
     pub fn build(self) -> crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput {
         crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput {
@@ -42,3 +40,4 @@ impl DeleteScalingPolicyOutputBuilder {
         }
     }
 }
+

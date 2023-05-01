@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSecurityConfigurationOutput {
+pub struct CreateSecurityConfigurationOutput  {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct CreateSecurityConfigurationOutput {
 }
 impl CreateSecurityConfigurationOutput {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSecurityConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateSecurityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityConfigurationOutput`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput).
-    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::create_security_configuration::builders::CreateSecurityConfigurationOutputBuilder {
         crate::operation::create_security_configuration::builders::CreateSecurityConfigurationOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl CreateSecurityConfigurationOutputBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The date and time the security configuration was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -58,30 +57,27 @@ impl CreateSecurityConfigurationOutputBuilder {
         self
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn set_creation_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date_time = input;
-        self
+    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date_time = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateSecurityConfigurationOutput`](crate::operation::create_security_configuration::CreateSecurityConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_security_configuration::CreateSecurityConfigurationOutput {
+    pub fn build(self) -> crate::operation::create_security_configuration::CreateSecurityConfigurationOutput {
         crate::operation::create_security_configuration::CreateSecurityConfigurationOutput {
-            name: self.name,
-            creation_date_time: self.creation_date_time,
+            name: self.name
+            ,
+            creation_date_time: self.creation_date_time
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

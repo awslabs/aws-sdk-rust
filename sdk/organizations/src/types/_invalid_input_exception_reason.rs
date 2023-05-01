@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invalidinputexceptionreason = unimplemented!();
 /// match invalidinputexceptionreason {
@@ -56,22 +56,14 @@
 /// Specifically, when `invalidinputexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvalidInputExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DuplicateTagKey,
@@ -130,159 +122,93 @@ pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedResourceInResourcePolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidInputExceptionReason {
-    fn from(s: &str) -> Self {
-        match s {
-            "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
-            "IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
-            "INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
-            "INVALID_EMAIL_ADDRESS_TARGET" => {
-                InvalidInputExceptionReason::InvalidEmailAddressTarget
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
+"IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
+"INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
+"INVALID_EMAIL_ADDRESS_TARGET" => InvalidInputExceptionReason::InvalidEmailAddressTarget,
+"INVALID_ENUM" => InvalidInputExceptionReason::InvalidEnum,
+"INVALID_ENUM_POLICY_TYPE" => InvalidInputExceptionReason::InvalidEnumPolicyType,
+"INVALID_FULL_NAME_TARGET" => InvalidInputExceptionReason::InvalidFullNameTarget,
+"INVALID_LIST_MEMBER" => InvalidInputExceptionReason::InvalidListMember,
+"INVALID_NEXT_TOKEN" => InvalidInputExceptionReason::InvalidPaginationToken,
+"INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
+"INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
+"INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
+"INVALID_RESOURCE_POLICY_JSON" => InvalidInputExceptionReason::InvalidResourcePolicyJson,
+"INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
+"INVALID_SYNTAX_ORGANIZATION_ARN" => InvalidInputExceptionReason::InvalidSyntaxOrganization,
+"INVALID_SYNTAX_POLICY_ID" => InvalidInputExceptionReason::InvalidSyntaxPolicy,
+"INVALID_SYSTEM_TAGS_PARAMETER" => InvalidInputExceptionReason::InvalidSystemTagsParameter,
+"MAX_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MaxLengthExceeded,
+"MAX_LIMIT_EXCEEDED_FILTER" => InvalidInputExceptionReason::MaxFilterLimitExceeded,
+"MAX_VALUE_EXCEEDED" => InvalidInputExceptionReason::MaxValueExceeded,
+"MIN_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MinLengthExceeded,
+"MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
+"MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots,
+"TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
+"UNRECOGNIZED_SERVICE_PRINCIPAL" => InvalidInputExceptionReason::UnrecognizedServicePrincipal,
+"UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedActionInResourcePolicy,
+"UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy,
+"UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy,
+other => InvalidInputExceptionReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "INVALID_ENUM" => InvalidInputExceptionReason::InvalidEnum,
-            "INVALID_ENUM_POLICY_TYPE" => InvalidInputExceptionReason::InvalidEnumPolicyType,
-            "INVALID_FULL_NAME_TARGET" => InvalidInputExceptionReason::InvalidFullNameTarget,
-            "INVALID_LIST_MEMBER" => InvalidInputExceptionReason::InvalidListMember,
-            "INVALID_NEXT_TOKEN" => InvalidInputExceptionReason::InvalidPaginationToken,
-            "INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
-            "INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
-            "INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
-            "INVALID_RESOURCE_POLICY_JSON" => {
-                InvalidInputExceptionReason::InvalidResourcePolicyJson
-            }
-            "INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
-            "INVALID_SYNTAX_ORGANIZATION_ARN" => {
-                InvalidInputExceptionReason::InvalidSyntaxOrganization
-            }
-            "INVALID_SYNTAX_POLICY_ID" => InvalidInputExceptionReason::InvalidSyntaxPolicy,
-            "INVALID_SYSTEM_TAGS_PARAMETER" => {
-                InvalidInputExceptionReason::InvalidSystemTagsParameter
-            }
-            "MAX_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MaxLengthExceeded,
-            "MAX_LIMIT_EXCEEDED_FILTER" => InvalidInputExceptionReason::MaxFilterLimitExceeded,
-            "MAX_VALUE_EXCEEDED" => InvalidInputExceptionReason::MaxValueExceeded,
-            "MIN_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MinLengthExceeded,
-            "MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
-            "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => {
-                InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots
-            }
-            "TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
-            "UNRECOGNIZED_SERVICE_PRINCIPAL" => {
-                InvalidInputExceptionReason::UnrecognizedServicePrincipal
-            }
-            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => {
-                InvalidInputExceptionReason::UnsupportedActionInResourcePolicy
-            }
-            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => {
-                InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy
-            }
-            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => {
-                InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy
-            }
-            other => InvalidInputExceptionReason::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for InvalidInputExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvalidInputExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvalidInputExceptionReason::from(s))
+                }
+            }
 impl InvalidInputExceptionReason {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
-            InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
-            InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
-            InvalidInputExceptionReason::InvalidEmailAddressTarget => {
-                "INVALID_EMAIL_ADDRESS_TARGET"
-            }
-            InvalidInputExceptionReason::InvalidEnum => "INVALID_ENUM",
-            InvalidInputExceptionReason::InvalidEnumPolicyType => "INVALID_ENUM_POLICY_TYPE",
-            InvalidInputExceptionReason::InvalidFullNameTarget => "INVALID_FULL_NAME_TARGET",
-            InvalidInputExceptionReason::InvalidListMember => "INVALID_LIST_MEMBER",
-            InvalidInputExceptionReason::InvalidPaginationToken => "INVALID_NEXT_TOKEN",
-            InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
-            InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
-            InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
-            InvalidInputExceptionReason::InvalidResourcePolicyJson => {
-                "INVALID_RESOURCE_POLICY_JSON"
-            }
-            InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
-            InvalidInputExceptionReason::InvalidSyntaxOrganization => {
-                "INVALID_SYNTAX_ORGANIZATION_ARN"
-            }
-            InvalidInputExceptionReason::InvalidSyntaxPolicy => "INVALID_SYNTAX_POLICY_ID",
-            InvalidInputExceptionReason::InvalidSystemTagsParameter => {
-                "INVALID_SYSTEM_TAGS_PARAMETER"
-            }
-            InvalidInputExceptionReason::MaxLengthExceeded => "MAX_LENGTH_EXCEEDED",
-            InvalidInputExceptionReason::MaxFilterLimitExceeded => "MAX_LIMIT_EXCEEDED_FILTER",
-            InvalidInputExceptionReason::MaxValueExceeded => "MAX_VALUE_EXCEEDED",
-            InvalidInputExceptionReason::MinLengthExceeded => "MIN_LENGTH_EXCEEDED",
-            InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
-            InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => {
-                "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"
-            }
-            InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
-            InvalidInputExceptionReason::UnrecognizedServicePrincipal => {
-                "UNRECOGNIZED_SERVICE_PRINCIPAL"
-            }
-            InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => {
-                "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"
-            }
-            InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => {
-                "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"
-            }
-            InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => {
-                "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"
-            }
-            InvalidInputExceptionReason::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "DUPLICATE_TAG_KEY",
-            "IMMUTABLE_POLICY",
-            "INPUT_REQUIRED",
-            "INVALID_EMAIL_ADDRESS_TARGET",
-            "INVALID_ENUM",
-            "INVALID_ENUM_POLICY_TYPE",
-            "INVALID_FULL_NAME_TARGET",
-            "INVALID_LIST_MEMBER",
-            "INVALID_NEXT_TOKEN",
-            "INVALID_PARTY_TYPE_TARGET",
-            "INVALID_PATTERN",
-            "INVALID_PATTERN_TARGET_ID",
-            "INVALID_RESOURCE_POLICY_JSON",
-            "INVALID_ROLE_NAME",
-            "INVALID_SYNTAX_ORGANIZATION_ARN",
-            "INVALID_SYNTAX_POLICY_ID",
-            "INVALID_SYSTEM_TAGS_PARAMETER",
-            "MAX_LENGTH_EXCEEDED",
-            "MAX_LIMIT_EXCEEDED_FILTER",
-            "MAX_VALUE_EXCEEDED",
-            "MIN_LENGTH_EXCEEDED",
-            "MIN_VALUE_EXCEEDED",
-            "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
-            "TARGET_NOT_SUPPORTED",
-            "UNRECOGNIZED_SERVICE_PRINCIPAL",
-            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
-            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
-            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
+    InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
+    InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
+    InvalidInputExceptionReason::InvalidEmailAddressTarget => "INVALID_EMAIL_ADDRESS_TARGET",
+    InvalidInputExceptionReason::InvalidEnum => "INVALID_ENUM",
+    InvalidInputExceptionReason::InvalidEnumPolicyType => "INVALID_ENUM_POLICY_TYPE",
+    InvalidInputExceptionReason::InvalidFullNameTarget => "INVALID_FULL_NAME_TARGET",
+    InvalidInputExceptionReason::InvalidListMember => "INVALID_LIST_MEMBER",
+    InvalidInputExceptionReason::InvalidPaginationToken => "INVALID_NEXT_TOKEN",
+    InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
+    InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
+    InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
+    InvalidInputExceptionReason::InvalidResourcePolicyJson => "INVALID_RESOURCE_POLICY_JSON",
+    InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
+    InvalidInputExceptionReason::InvalidSyntaxOrganization => "INVALID_SYNTAX_ORGANIZATION_ARN",
+    InvalidInputExceptionReason::InvalidSyntaxPolicy => "INVALID_SYNTAX_POLICY_ID",
+    InvalidInputExceptionReason::InvalidSystemTagsParameter => "INVALID_SYSTEM_TAGS_PARAMETER",
+    InvalidInputExceptionReason::MaxLengthExceeded => "MAX_LENGTH_EXCEEDED",
+    InvalidInputExceptionReason::MaxFilterLimitExceeded => "MAX_LIMIT_EXCEEDED_FILTER",
+    InvalidInputExceptionReason::MaxValueExceeded => "MAX_VALUE_EXCEEDED",
+    InvalidInputExceptionReason::MinLengthExceeded => "MIN_LENGTH_EXCEEDED",
+    InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
+    InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
+    InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
+    InvalidInputExceptionReason::UnrecognizedServicePrincipal => "UNRECOGNIZED_SERVICE_PRINCIPAL",
+    InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
+    InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
+    InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
+    InvalidInputExceptionReason::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DUPLICATE_TAG_KEY", "IMMUTABLE_POLICY", "INPUT_REQUIRED", "INVALID_EMAIL_ADDRESS_TARGET", "INVALID_ENUM", "INVALID_ENUM_POLICY_TYPE", "INVALID_FULL_NAME_TARGET", "INVALID_LIST_MEMBER", "INVALID_NEXT_TOKEN", "INVALID_PARTY_TYPE_TARGET", "INVALID_PATTERN", "INVALID_PATTERN_TARGET_ID", "INVALID_RESOURCE_POLICY_JSON", "INVALID_ROLE_NAME", "INVALID_SYNTAX_ORGANIZATION_ARN", "INVALID_SYNTAX_POLICY_ID", "INVALID_SYSTEM_TAGS_PARAMETER", "MAX_LENGTH_EXCEEDED", "MAX_LIMIT_EXCEEDED_FILTER", "MAX_VALUE_EXCEEDED", "MIN_LENGTH_EXCEEDED", "MIN_VALUE_EXCEEDED", "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS", "TARGET_NOT_SUPPORTED", "UNRECOGNIZED_SERVICE_PRINCIPAL", "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY", "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY", "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"]
+                }
+            }
 impl AsRef<str> for InvalidInputExceptionReason {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

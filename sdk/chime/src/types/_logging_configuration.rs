@@ -3,20 +3,20 @@
 /// <p>The logging configuration associated with an Amazon Chime Voice Connector. Specifies whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
-    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+pub struct LoggingConfiguration  {
+    /// <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
     #[doc(hidden)]
     pub enable_sip_logs: std::option::Option<bool>,
-    /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.</p>
     #[doc(hidden)]
     pub enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfiguration {
-    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    /// <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
     pub fn enable_sip_logs(&self) -> std::option::Option<bool> {
         self.enable_sip_logs
     }
-    /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.</p>
     pub fn enable_media_metric_logs(&self) -> std::option::Option<bool> {
         self.enable_media_metric_logs
     }
@@ -36,31 +36,32 @@ pub struct LoggingConfigurationBuilder {
     pub(crate) enable_media_metric_logs: std::option::Option<bool>,
 }
 impl LoggingConfigurationBuilder {
-    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    /// <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
     pub fn enable_sip_logs(mut self, input: bool) -> Self {
         self.enable_sip_logs = Some(input);
         self
     }
-    /// <p>When true, enables SIP message logs for sending to Amazon CloudWatch Logs.</p>
+    /// <p>Boolean that enables SIP message logs to Amazon CloudWatch logs.</p>
     pub fn set_enable_sip_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_sip_logs = input;
-        self
+        self.enable_sip_logs = input; self
     }
-    /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.</p>
     pub fn enable_media_metric_logs(mut self, input: bool) -> Self {
         self.enable_media_metric_logs = Some(input);
         self
     }
-    /// <p>Boolean that enables the logging of Voice Connector metrics to Cloudwatch.</p>
+    /// <p>Boolean that enables logging of detailed media metrics for Voice Connectors to Amazon CloudWatch logs.</p>
     pub fn set_enable_media_metric_logs(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_media_metric_logs = input;
-        self
+        self.enable_media_metric_logs = input; self
     }
     /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::types::LoggingConfiguration).
     pub fn build(self) -> crate::types::LoggingConfiguration {
         crate::types::LoggingConfiguration {
-            enable_sip_logs: self.enable_sip_logs,
-            enable_media_metric_logs: self.enable_media_metric_logs,
+            enable_sip_logs: self.enable_sip_logs
+            ,
+            enable_media_metric_logs: self.enable_media_metric_logs
+            ,
         }
     }
 }
+

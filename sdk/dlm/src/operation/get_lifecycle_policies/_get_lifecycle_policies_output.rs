@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLifecyclePoliciesOutput {
+pub struct GetLifecyclePoliciesOutput  {
     /// <p>Summary information about the lifecycle policies.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicySummary>>,
@@ -10,19 +10,18 @@ pub struct GetLifecyclePoliciesOutput {
 }
 impl GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::types::LifecyclePolicySummary]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::types::LifecyclePolicySummary]> {
         self.policies.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetLifecyclePoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetLifecyclePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`GetLifecyclePoliciesOutput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesOutputBuilder {
         crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesOutputBuilder::default()
     }
 }
@@ -42,32 +41,30 @@ impl GetLifecyclePoliciesOutputBuilder {
     /// <p>Summary information about the lifecycle policies.</p>
     pub fn policies(mut self, input: crate::types::LifecyclePolicySummary) -> Self {
         let mut v = self.policies.unwrap_or_default();
-        v.push(input);
-        self.policies = Some(v);
-        self
+                        v.push(input);
+                        self.policies = Some(v);
+                        self
     }
     /// <p>Summary information about the lifecycle policies.</p>
-    pub fn set_policies(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicySummary>>,
-    ) -> Self {
-        self.policies = input;
-        self
+    pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::LifecyclePolicySummary>>) -> Self {
+        self.policies = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetLifecyclePoliciesOutput`](crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput).
     pub fn build(self) -> crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput {
         crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput {
-            policies: self.policies,
+            policies: self.policies
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

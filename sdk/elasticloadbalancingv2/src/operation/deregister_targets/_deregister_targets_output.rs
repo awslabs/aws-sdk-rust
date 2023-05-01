@@ -2,18 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTargetsOutput {
+pub struct DeregisterTargetsOutput  {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeregisterTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder {
+    pub fn builder() -> crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder {
         crate::operation::deregister_targets::builders::DeregisterTargetsOutputBuilder::default()
     }
 }
@@ -26,14 +25,14 @@ pub struct DeregisterTargetsOutputBuilder {
 }
 impl DeregisterTargetsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeregisterTargetsOutput`](crate::operation::deregister_targets::DeregisterTargetsOutput).
     pub fn build(self) -> crate::operation::deregister_targets::DeregisterTargetsOutput {
         crate::operation::deregister_targets::DeregisterTargetsOutput {
@@ -41,3 +40,4 @@ impl DeregisterTargetsOutputBuilder {
         }
     }
 }
+

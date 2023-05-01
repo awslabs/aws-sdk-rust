@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKnowledgeBaseInput {
+pub struct GetKnowledgeBaseInput  {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
 }
 impl GetKnowledgeBaseInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
         self.knowledge_base_id.as_deref()
     }
 }
 impl GetKnowledgeBaseInput {
     /// Creates a new builder-style object to manufacture [`GetKnowledgeBaseInput`](crate::operation::get_knowledge_base::GetKnowledgeBaseInput).
-    pub fn builder() -> crate::operation::get_knowledge_base::builders::GetKnowledgeBaseInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_knowledge_base::builders::GetKnowledgeBaseInputBuilder {
         crate::operation::get_knowledge_base::builders::GetKnowledgeBaseInputBuilder::default()
     }
 }
@@ -34,24 +33,17 @@ impl GetKnowledgeBaseInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.knowledge_base_id = input;
-        self
+    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.knowledge_base_id = input; self
     }
     /// Consumes the builder and constructs a [`GetKnowledgeBaseInput`](crate::operation::get_knowledge_base::GetKnowledgeBaseInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_knowledge_base::GetKnowledgeBaseInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_knowledge_base::GetKnowledgeBaseInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_knowledge_base::GetKnowledgeBaseInput {
-                knowledge_base_id: self.knowledge_base_id,
-            },
+                knowledge_base_id: self.knowledge_base_id
+                ,
+            }
         )
     }
 }
+

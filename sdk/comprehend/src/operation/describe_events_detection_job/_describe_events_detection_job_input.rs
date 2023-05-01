@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsDetectionJobInput {
+pub struct DescribeEventsDetectionJobInput  {
     /// <p>The identifier of the events detection job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeEventsDetectionJobInput {
     /// <p>The identifier of the events detection job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeEventsDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobInput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput).
-    pub fn builder() -> crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder{
+    pub fn builder() -> crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder {
         crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobInputBuilder::default()
     }
 }
@@ -34,20 +34,16 @@ impl DescribeEventsDetectionJobInputBuilder {
     }
     /// <p>The identifier of the events detection job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input;
-        self
+        self.job_id = input; self
     }
     /// Consumes the builder and constructs a [`DescribeEventsDetectionJobInput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_events_detection_job::DescribeEventsDetectionJobInput {
-                job_id: self.job_id,
-            },
+                job_id: self.job_id
+                ,
+            }
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The properties of a parallel data resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParallelDataProperties {
+pub struct ParallelDataProperties  {
     /// <p>The custom name assigned to the parallel data resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -58,35 +58,35 @@ pub struct ParallelDataProperties {
 }
 impl ParallelDataProperties {
     /// <p>The custom name assigned to the parallel data resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description assigned to the parallel data resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ParallelDataStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ParallelDataStatus> {
         self.status.as_ref()
     }
     /// <p>The source language of the translations in the parallel data file.</p>
-    pub fn source_language_code(&self) -> std::option::Option<&str> {
+    pub fn source_language_code(&self) -> std::option::Option<& str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    pub fn target_language_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_language_codes(&self) -> std::option::Option<& [std::string::String]> {
         self.target_language_codes.as_deref()
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn parallel_data_config(&self) -> std::option::Option<&crate::types::ParallelDataConfig> {
+    pub fn parallel_data_config(&self) -> std::option::Option<& crate::types::ParallelDataConfig> {
         self.parallel_data_config.as_ref()
     }
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
@@ -106,25 +106,23 @@ impl ParallelDataProperties {
         self.skipped_record_count
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::types::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::types::EncryptionKey> {
         self.encryption_key.as_ref()
     }
     /// <p>The time at which the parallel data resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the parallel data resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    pub fn latest_update_attempt_status(
-        &self,
-    ) -> std::option::Option<&crate::types::ParallelDataStatus> {
+    pub fn latest_update_attempt_status(&self) -> std::option::Option<& crate::types::ParallelDataStatus> {
         self.latest_update_attempt_status.as_ref()
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn latest_update_attempt_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_update_attempt_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.latest_update_attempt_at.as_ref()
     }
 }
@@ -165,8 +163,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The custom name assigned to the parallel data resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,8 +172,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the parallel data resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The description assigned to the parallel data resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,8 +181,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The description assigned to the parallel data resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::ParallelDataStatus) -> Self {
@@ -194,12 +189,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The status of the parallel data resource. When the parallel data is ready for you to use, the status is <code>ACTIVE</code>.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ParallelDataStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The source language of the translations in the parallel data file.</p>
     pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,12 +198,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The source language of the translations in the parallel data file.</p>
-    pub fn set_source_language_code(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.source_language_code = input;
-        self
+    pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.source_language_code = input; self
     }
     /// Appends an item to `target_language_codes`.
     ///
@@ -221,17 +208,13 @@ impl ParallelDataPropertiesBuilder {
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
     pub fn target_language_codes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.target_language_codes.unwrap_or_default();
-        v.push(input.into());
-        self.target_language_codes = Some(v);
-        self
+                        v.push(input.into());
+                        self.target_language_codes = Some(v);
+                        self
     }
     /// <p>The language codes for the target languages available in the parallel data file. All possible target languages are returned as an array.</p>
-    pub fn set_target_language_codes(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.target_language_codes = input;
-        self
+    pub fn set_target_language_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.target_language_codes = input; self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
     pub fn parallel_data_config(mut self, input: crate::types::ParallelDataConfig) -> Self {
@@ -239,12 +222,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-    pub fn set_parallel_data_config(
-        mut self,
-        input: std::option::Option<crate::types::ParallelDataConfig>,
-    ) -> Self {
-        self.parallel_data_config = input;
-        self
+    pub fn set_parallel_data_config(mut self, input: std::option::Option<crate::types::ParallelDataConfig>) -> Self {
+        self.parallel_data_config = input; self
     }
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,8 +232,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>Additional information from Amazon Translate about the parallel data resource. </p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
     pub fn imported_data_size(mut self, input: i64) -> Self {
@@ -263,8 +241,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The number of UTF-8 characters that Amazon Translate imported from the parallel data input file. This number includes only the characters in your translation examples. It does not include characters that are used to format your file. For example, if you provided a Translation Memory Exchange (.tmx) file, this number does not include the tags.</p>
     pub fn set_imported_data_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.imported_data_size = input;
-        self
+        self.imported_data_size = input; self
     }
     /// <p>The number of records successfully imported from the parallel data input file.</p>
     pub fn imported_record_count(mut self, input: i64) -> Self {
@@ -273,8 +250,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The number of records successfully imported from the parallel data input file.</p>
     pub fn set_imported_record_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.imported_record_count = input;
-        self
+        self.imported_record_count = input; self
     }
     /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
     pub fn failed_record_count(mut self, input: i64) -> Self {
@@ -283,8 +259,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The number of records unsuccessfully imported from the parallel data input file.</p>
     pub fn set_failed_record_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.failed_record_count = input;
-        self
+        self.failed_record_count = input; self
     }
     /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
     pub fn skipped_record_count(mut self, input: i64) -> Self {
@@ -293,8 +268,7 @@ impl ParallelDataPropertiesBuilder {
     }
     /// <p>The number of items in the input file that Amazon Translate skipped when you created or updated the parallel data resource. For example, Amazon Translate skips empty records, empty target texts, and empty lines.</p>
     pub fn set_skipped_record_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.skipped_record_count = input;
-        self
+        self.skipped_record_count = input; self
     }
     /// <p>The encryption key used to encrypt this object.</p>
     pub fn encryption_key(mut self, input: crate::types::EncryptionKey) -> Self {
@@ -302,12 +276,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The encryption key used to encrypt this object.</p>
-    pub fn set_encryption_key(
-        mut self,
-        input: std::option::Option<crate::types::EncryptionKey>,
-    ) -> Self {
-        self.encryption_key = input;
-        self
+    pub fn set_encryption_key(mut self, input: std::option::Option<crate::types::EncryptionKey>) -> Self {
+        self.encryption_key = input; self
     }
     /// <p>The time at which the parallel data resource was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -315,12 +285,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The time at which the parallel data resource was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// <p>The time at which the parallel data resource was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -328,12 +294,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The time at which the parallel data resource was last updated.</p>
-    pub fn set_last_updated_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_updated_at = input;
-        self
+    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_updated_at = input; self
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
     pub fn latest_update_attempt_status(mut self, input: crate::types::ParallelDataStatus) -> Self {
@@ -341,12 +303,8 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The status of the most recent update attempt for the parallel data resource.</p>
-    pub fn set_latest_update_attempt_status(
-        mut self,
-        input: std::option::Option<crate::types::ParallelDataStatus>,
-    ) -> Self {
-        self.latest_update_attempt_status = input;
-        self
+    pub fn set_latest_update_attempt_status(mut self, input: std::option::Option<crate::types::ParallelDataStatus>) -> Self {
+        self.latest_update_attempt_status = input; self
     }
     /// <p>The time that the most recent update was attempted.</p>
     pub fn latest_update_attempt_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -354,33 +312,47 @@ impl ParallelDataPropertiesBuilder {
         self
     }
     /// <p>The time that the most recent update was attempted.</p>
-    pub fn set_latest_update_attempt_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.latest_update_attempt_at = input;
-        self
+    pub fn set_latest_update_attempt_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.latest_update_attempt_at = input; self
     }
     /// Consumes the builder and constructs a [`ParallelDataProperties`](crate::types::ParallelDataProperties).
     pub fn build(self) -> crate::types::ParallelDataProperties {
         crate::types::ParallelDataProperties {
-            name: self.name,
-            arn: self.arn,
-            description: self.description,
-            status: self.status,
-            source_language_code: self.source_language_code,
-            target_language_codes: self.target_language_codes,
-            parallel_data_config: self.parallel_data_config,
-            message: self.message,
-            imported_data_size: self.imported_data_size,
-            imported_record_count: self.imported_record_count,
-            failed_record_count: self.failed_record_count,
-            skipped_record_count: self.skipped_record_count,
-            encryption_key: self.encryption_key,
-            created_at: self.created_at,
-            last_updated_at: self.last_updated_at,
-            latest_update_attempt_status: self.latest_update_attempt_status,
-            latest_update_attempt_at: self.latest_update_attempt_at,
+            name: self.name
+            ,
+            arn: self.arn
+            ,
+            description: self.description
+            ,
+            status: self.status
+            ,
+            source_language_code: self.source_language_code
+            ,
+            target_language_codes: self.target_language_codes
+            ,
+            parallel_data_config: self.parallel_data_config
+            ,
+            message: self.message
+            ,
+            imported_data_size: self.imported_data_size
+            ,
+            imported_record_count: self.imported_record_count
+            ,
+            failed_record_count: self.failed_record_count
+            ,
+            skipped_record_count: self.skipped_record_count
+            ,
+            encryption_key: self.encryption_key
+            ,
+            created_at: self.created_at
+            ,
+            last_updated_at: self.last_updated_at
+            ,
+            latest_update_attempt_status: self.latest_update_attempt_status
+            ,
+            latest_update_attempt_at: self.latest_update_attempt_at
+            ,
         }
     }
 }
+

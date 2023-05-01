@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAdministratorAccountInput {}
+pub struct GetAdministratorAccountInput  {
+}
 impl GetAdministratorAccountInput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-    pub fn builder(
-    ) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder
-    {
+    pub fn builder() -> crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder {
         crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl GetAdministratorAccountInput {
 /// A builder for [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetAdministratorAccountInputBuilder {}
+pub struct GetAdministratorAccountInputBuilder {
+}
 impl GetAdministratorAccountInputBuilder {
     /// Consumes the builder and constructs a [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_administrator_account::GetAdministratorAccountInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_administrator_account::GetAdministratorAccountInput {})
+    pub fn build(self) -> Result<crate::operation::get_administrator_account::GetAdministratorAccountInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_administrator_account::GetAdministratorAccountInput {
+            }
+        )
     }
 }
+

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDigestInput {
+pub struct GetDigestInput  {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetDigestInput {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetDigestInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Consumes the builder and constructs a [`GetDigestInput`](crate::operation::get_digest::GetDigestInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_digest::GetDigestInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_digest::GetDigestInput { name: self.name })
+    pub fn build(self) -> Result<crate::operation::get_digest::GetDigestInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_digest::GetDigestInput {
+                name: self.name
+                ,
+            }
+        )
     }
 }
+

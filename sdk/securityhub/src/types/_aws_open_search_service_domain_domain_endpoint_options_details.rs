@@ -3,7 +3,7 @@
 /// <p>Information about additional options for the domain endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
+pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetails  {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
     #[doc(hidden)]
     pub custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
-    pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<& str> {
         self.custom_endpoint_certificate_arn.as_deref()
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
@@ -34,18 +34,17 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
         self.enforce_https
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
-    pub fn custom_endpoint(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint(&self) -> std::option::Option<& str> {
         self.custom_endpoint.as_deref()
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
-    pub fn tls_security_policy(&self) -> std::option::Option<&str> {
+    pub fn tls_security_policy(&self) -> std::option::Option<& str> {
         self.tls_security_policy.as_deref()
     }
 }
 impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
-    pub fn builder(
-    ) -> crate::types::builders::AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
         crate::types::builders::AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder::default()
     }
 }
@@ -62,20 +61,13 @@ pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
 }
 impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
-    pub fn custom_endpoint_certificate_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn custom_endpoint_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.custom_endpoint_certificate_arn = Some(input.into());
         self
     }
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
-    pub fn set_custom_endpoint_certificate_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.custom_endpoint_certificate_arn = input;
-        self
+    pub fn set_custom_endpoint_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.custom_endpoint_certificate_arn = input; self
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
     pub fn custom_endpoint_enabled(mut self, input: bool) -> Self {
@@ -84,8 +76,7 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
     pub fn set_custom_endpoint_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.custom_endpoint_enabled = input;
-        self
+        self.custom_endpoint_enabled = input; self
     }
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
     pub fn enforce_https(mut self, input: bool) -> Self {
@@ -94,8 +85,7 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     }
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
     pub fn set_enforce_https(mut self, input: std::option::Option<bool>) -> Self {
-        self.enforce_https = input;
-        self
+        self.enforce_https = input; self
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
     pub fn custom_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,8 +94,7 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
     pub fn set_custom_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_endpoint = input;
-        self
+        self.custom_endpoint = input; self
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     pub fn tls_security_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,21 +102,25 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
         self
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
-    pub fn set_tls_security_policy(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.tls_security_policy = input;
-        self
+    pub fn set_tls_security_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.tls_security_policy = input; self
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
-            custom_endpoint_certificate_arn: self.custom_endpoint_certificate_arn,
-            custom_endpoint_enabled: self.custom_endpoint_enabled.unwrap_or_default(),
-            enforce_https: self.enforce_https.unwrap_or_default(),
-            custom_endpoint: self.custom_endpoint,
-            tls_security_policy: self.tls_security_policy,
+            custom_endpoint_certificate_arn: self.custom_endpoint_certificate_arn
+            ,
+            custom_endpoint_enabled: self.custom_endpoint_enabled
+                .unwrap_or_default()
+            ,
+            enforce_https: self.enforce_https
+                .unwrap_or_default()
+            ,
+            custom_endpoint: self.custom_endpoint
+            ,
+            tls_security_policy: self.tls_security_policy
+            ,
         }
     }
 }
+

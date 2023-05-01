@@ -3,32 +3,32 @@
 /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlJobCompletionCriteria {
-    /// <p>The maximum number of times a training job is allowed to run.</p>
+pub struct AutoMlJobCompletionCriteria  {
+    /// <p>The maximum number of times a training job is allowed to run.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.</p>
     #[doc(hidden)]
     pub max_candidates: std::option::Option<i32>,
-    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p>
+    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job candidate.</p>
     #[doc(hidden)]
     pub max_runtime_per_training_job_in_seconds: std::option::Option<i32>,
-    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
+    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> 
     /// <p>If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended gracefully. The AutoML job identifies the best model whose training was completed and marks it as the best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment, are not completed.</p>
     #[doc(hidden)]
     pub max_auto_ml_job_runtime_in_seconds: std::option::Option<i32>,
 }
 impl AutoMlJobCompletionCriteria {
-    /// <p>The maximum number of times a training job is allowed to run.</p>
+    /// <p>The maximum number of times a training job is allowed to run.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.</p>
     pub fn max_candidates(&self) -> std::option::Option<i32> {
         self.max_candidates
     }
-    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p>
+    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job candidate.</p>
     pub fn max_runtime_per_training_job_in_seconds(&self) -> std::option::Option<i32> {
         self.max_runtime_per_training_job_in_seconds
     }
-    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
+    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> 
     /// <p>If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended gracefully. The AutoML job identifies the best model whose training was completed and marks it as the best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment, are not completed.</p>
     pub fn max_auto_ml_job_runtime_in_seconds(&self) -> std::option::Option<i32> {
         self.max_auto_ml_job_runtime_in_seconds
@@ -50,54 +50,49 @@ pub struct AutoMlJobCompletionCriteriaBuilder {
     pub(crate) max_auto_ml_job_runtime_in_seconds: std::option::Option<i32>,
 }
 impl AutoMlJobCompletionCriteriaBuilder {
-    /// <p>The maximum number of times a training job is allowed to run.</p>
+    /// <p>The maximum number of times a training job is allowed to run.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.</p>
     pub fn max_candidates(mut self, input: i32) -> Self {
         self.max_candidates = Some(input);
         self
     }
-    /// <p>The maximum number of times a training job is allowed to run.</p>
+    /// <p>The maximum number of times a training job is allowed to run.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.</p>
     pub fn set_max_candidates(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_candidates = input;
-        self
+        self.max_candidates = input; self
     }
-    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p>
+    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job candidate.</p>
     pub fn max_runtime_per_training_job_in_seconds(mut self, input: i32) -> Self {
         self.max_runtime_per_training_job_in_seconds = Some(input);
         self
     }
-    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p>
+    /// <p>The maximum time, in seconds, that each training job executed inside hyperparameter tuning is allowed to run as part of a hyperparameter tuning job. For more information, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StoppingCondition.html">StoppingCondition</a> used by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a> action.</p> 
     /// <p>For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job candidate.</p>
-    pub fn set_max_runtime_per_training_job_in_seconds(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.max_runtime_per_training_job_in_seconds = input;
-        self
+    pub fn set_max_runtime_per_training_job_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_runtime_per_training_job_in_seconds = input; self
     }
-    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
+    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> 
     /// <p>If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended gracefully. The AutoML job identifies the best model whose training was completed and marks it as the best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment, are not completed.</p>
     pub fn max_auto_ml_job_runtime_in_seconds(mut self, input: i32) -> Self {
         self.max_auto_ml_job_runtime_in_seconds = Some(input);
         self
     }
-    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
+    /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p> 
     /// <p>If an AutoML job exceeds the maximum runtime, the job is stopped automatically and its processing is ended gracefully. The AutoML job identifies the best model whose training was completed and marks it as the best-performing model. Any unfinished steps of the job, such as automatic one-click Autopilot model deployment, are not completed.</p>
-    pub fn set_max_auto_ml_job_runtime_in_seconds(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.max_auto_ml_job_runtime_in_seconds = input;
-        self
+    pub fn set_max_auto_ml_job_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+        self.max_auto_ml_job_runtime_in_seconds = input; self
     }
     /// Consumes the builder and constructs a [`AutoMlJobCompletionCriteria`](crate::types::AutoMlJobCompletionCriteria).
     pub fn build(self) -> crate::types::AutoMlJobCompletionCriteria {
         crate::types::AutoMlJobCompletionCriteria {
-            max_candidates: self.max_candidates,
-            max_runtime_per_training_job_in_seconds: self.max_runtime_per_training_job_in_seconds,
-            max_auto_ml_job_runtime_in_seconds: self.max_auto_ml_job_runtime_in_seconds,
+            max_candidates: self.max_candidates
+            ,
+            max_runtime_per_training_job_in_seconds: self.max_runtime_per_training_job_in_seconds
+            ,
+            max_auto_ml_job_runtime_in_seconds: self.max_auto_ml_job_runtime_in_seconds
+            ,
         }
     }
 }
+

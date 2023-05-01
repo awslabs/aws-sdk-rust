@@ -3,7 +3,7 @@
 /// <p>The properties of a table. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableMember {
+pub struct TableMember  {
     /// <p>The name of the table. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct TableMember {
 }
 impl TableMember {
     /// <p>The name of the table. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The schema containing the table. </p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl TableMemberBuilder {
     }
     /// <p>The name of the table. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl TableMemberBuilder {
     }
     /// <p>The type of the table. Possible values include TABLE, VIEW, SYSTEM TABLE, GLOBAL TEMPORARY, LOCAL TEMPORARY, ALIAS, and SYNONYM. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The schema containing the table. </p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl TableMemberBuilder {
     }
     /// <p>The schema containing the table. </p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input;
-        self
+        self.schema = input; self
     }
     /// Consumes the builder and constructs a [`TableMember`](crate::types::TableMember).
     pub fn build(self) -> crate::types::TableMember {
         crate::types::TableMember {
-            name: self.name,
-            r#type: self.r#type,
-            schema: self.schema,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            schema: self.schema
+            ,
         }
     }
 }
+

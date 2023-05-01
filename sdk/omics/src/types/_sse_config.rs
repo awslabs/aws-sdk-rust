@@ -3,7 +3,7 @@
 /// <p>Server-side encryption (SSE) settings for a store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SseConfig {
+pub struct SseConfig  {
     /// <p>The encryption type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EncryptionType>,
@@ -13,11 +13,11 @@ pub struct SseConfig {
 }
 impl SseConfig {
     /// <p>The encryption type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
     /// <p>An encryption key ARN.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl SseConfigBuilder {
     }
     /// <p>The encryption type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>An encryption key ARN.</p>
     pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl SseConfigBuilder {
     }
     /// <p>An encryption key ARN.</p>
     pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// Consumes the builder and constructs a [`SseConfig`](crate::types::SseConfig).
     pub fn build(self) -> crate::types::SseConfig {
         crate::types::SseConfig {
-            r#type: self.r#type,
-            key_arn: self.key_arn,
+            r#type: self.r#type
+            ,
+            key_arn: self.key_arn
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInvitationsOutput {
+pub struct ListInvitationsOutput  {
     /// <p>A list of invitation descriptions.</p>
     #[doc(hidden)]
     pub invitations: std::option::Option<std::vec::Vec<crate::types::Invitation>>,
@@ -13,19 +13,19 @@ pub struct ListInvitationsOutput {
 }
 impl ListInvitationsOutput {
     /// <p>A list of invitation descriptions.</p>
-    pub fn invitations(&self) -> std::option::Option<&[crate::types::Invitation]> {
+    pub fn invitations(&self) -> std::option::Option<& [crate::types::Invitation]> {
         self.invitations.as_deref()
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListInvitationsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
     pub fn builder() -> crate::operation::list_invitations::builders::ListInvitationsOutputBuilder {
@@ -49,17 +49,13 @@ impl ListInvitationsOutputBuilder {
     /// <p>A list of invitation descriptions.</p>
     pub fn invitations(mut self, input: crate::types::Invitation) -> Self {
         let mut v = self.invitations.unwrap_or_default();
-        v.push(input);
-        self.invitations = Some(v);
-        self
+                        v.push(input);
+                        self.invitations = Some(v);
+                        self
     }
     /// <p>A list of invitation descriptions.</p>
-    pub fn set_invitations(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Invitation>>,
-    ) -> Self {
-        self.invitations = input;
-        self
+    pub fn set_invitations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Invitation>>) -> Self {
+        self.invitations = input; self
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl ListInvitationsOutputBuilder {
     }
     /// <p>The pagination parameter to be used on the next list operation to retrieve more items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListInvitationsOutput`](crate::operation::list_invitations::ListInvitationsOutput).
     pub fn build(self) -> crate::operation::list_invitations::ListInvitationsOutput {
         crate::operation::list_invitations::ListInvitationsOutput {
-            invitations: self.invitations,
-            next_token: self.next_token,
+            invitations: self.invitations
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

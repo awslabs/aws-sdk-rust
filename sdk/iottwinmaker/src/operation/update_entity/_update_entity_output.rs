@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEntityOutput {
+pub struct UpdateEntityOutput  {
     /// <p>The date and time when the entity was last updated.</p>
     #[doc(hidden)]
     pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,19 +13,19 @@ pub struct UpdateEntityOutput {
 }
 impl UpdateEntityOutput {
     /// <p>The date and time when the entity was last updated.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
     /// <p>The current state of the entity update.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> std::option::Option<& crate::types::State> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateEntityOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateEntityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEntityOutput`](crate::operation::update_entity::UpdateEntityOutput).
     pub fn builder() -> crate::operation::update_entity::builders::UpdateEntityOutputBuilder {
@@ -48,12 +48,8 @@ impl UpdateEntityOutputBuilder {
         self
     }
     /// <p>The date and time when the entity was last updated.</p>
-    pub fn set_update_date_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.update_date_time = input;
-        self
+    pub fn set_update_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.update_date_time = input; self
     }
     /// <p>The current state of the entity update.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -62,24 +58,26 @@ impl UpdateEntityOutputBuilder {
     }
     /// <p>The current state of the entity update.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input;
-        self
+        self.state = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateEntityOutput`](crate::operation::update_entity::UpdateEntityOutput).
     pub fn build(self) -> crate::operation::update_entity::UpdateEntityOutput {
         crate::operation::update_entity::UpdateEntityOutput {
-            update_date_time: self.update_date_time,
-            state: self.state,
+            update_date_time: self.update_date_time
+            ,
+            state: self.state
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

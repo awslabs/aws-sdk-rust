@@ -3,7 +3,7 @@
 /// <p>Contains metadata for a column in a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Column {
+pub struct Column  {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Column {
 }
 impl Column {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Optional information about the column.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl ColumnBuilder {
     }
     /// <p>The name of the column.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The data type of the column.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl ColumnBuilder {
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>Optional information about the column.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl ColumnBuilder {
     }
     /// <p>Optional information about the column.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input;
-        self
+        self.comment = input; self
     }
     /// Consumes the builder and constructs a [`Column`](crate::types::Column).
     pub fn build(self) -> crate::types::Column {
         crate::types::Column {
-            name: self.name,
-            r#type: self.r#type,
-            comment: self.comment,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
+            comment: self.comment
+            ,
         }
     }
 }
+

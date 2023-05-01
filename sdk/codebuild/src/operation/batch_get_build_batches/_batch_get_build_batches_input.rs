@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetBuildBatchesInput {
+pub struct BatchGetBuildBatchesInput  {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildBatchesInput {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
         self.ids.as_deref()
     }
 }
 impl BatchGetBuildBatchesInput {
     /// Creates a new builder-style object to manufacture [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
-    pub fn builder(
-    ) -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder {
         crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder::default()
     }
 }
@@ -35,25 +34,22 @@ impl BatchGetBuildBatchesInputBuilder {
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-        v.push(input.into());
-        self.ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.ids = Some(v);
+                        self
     }
     /// <p>An array that contains the batch build identifiers to retrieve.</p>
-    pub fn set_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.ids = input;
-        self
+    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.ids = input; self
     }
     /// Consumes the builder and constructs a [`BatchGetBuildBatchesInput`](crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput { ids: self.ids })
+    pub fn build(self) -> Result<crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::batch_get_build_batches::BatchGetBuildBatchesInput {
+                ids: self.ids
+                ,
+            }
+        )
     }
 }
+

@@ -3,14 +3,14 @@
 /// The entitlements that you want to grant on a flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantEntitlementRequest {
+pub struct GrantEntitlementRequest  {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
     pub data_transfer_subscriber_fee_percent: i32,
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    /// The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke.
     #[doc(hidden)]
     pub encryption: std::option::Option<crate::types::Encryption>,
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
@@ -29,23 +29,23 @@ impl GrantEntitlementRequest {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub fn encryption(&self) -> std::option::Option<&crate::types::Encryption> {
+    /// The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke.
+    pub fn encryption(&self) -> std::option::Option<& crate::types::Encryption> {
         self.encryption.as_ref()
     }
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
-    pub fn entitlement_status(&self) -> std::option::Option<&crate::types::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> std::option::Option<& crate::types::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The name of the entitlement. This value must be unique within the current flow.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subscribers(&self) -> std::option::Option<& [std::string::String]> {
         self.subscribers.as_deref()
     }
 }
@@ -74,12 +74,8 @@ impl GrantEntitlementRequestBuilder {
         self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn set_data_transfer_subscriber_fee_percent(
-        mut self,
-        input: std::option::Option<i32>,
-    ) -> Self {
-        self.data_transfer_subscriber_fee_percent = input;
-        self
+    pub fn set_data_transfer_subscriber_fee_percent(mut self, input: std::option::Option<i32>) -> Self {
+        self.data_transfer_subscriber_fee_percent = input; self
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,18 +84,16 @@ impl GrantEntitlementRequestBuilder {
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    /// The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke.
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
         self.encryption = Some(input);
         self
     }
-    /// The type of encryption that will be used on the output that is associated with this entitlement.
+    /// The type of encryption that will be used on the output that is associated with this entitlement. Allowable encryption types: static-key, speke.
     pub fn set_encryption(mut self, input: std::option::Option<crate::types::Encryption>) -> Self {
-        self.encryption = input;
-        self
+        self.encryption = input; self
     }
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
     pub fn entitlement_status(mut self, input: crate::types::EntitlementStatus) -> Self {
@@ -107,12 +101,8 @@ impl GrantEntitlementRequestBuilder {
         self
     }
     /// An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
-    pub fn set_entitlement_status(
-        mut self,
-        input: std::option::Option<crate::types::EntitlementStatus>,
-    ) -> Self {
-        self.entitlement_status = input;
-        self
+    pub fn set_entitlement_status(mut self, input: std::option::Option<crate::types::EntitlementStatus>) -> Self {
+        self.entitlement_status = input; self
     }
     /// The name of the entitlement. This value must be unique within the current flow.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,8 +111,7 @@ impl GrantEntitlementRequestBuilder {
     }
     /// The name of the entitlement. This value must be unique within the current flow.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `subscribers`.
     ///
@@ -131,29 +120,31 @@ impl GrantEntitlementRequestBuilder {
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
     pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-        v.push(input.into());
-        self.subscribers = Some(v);
-        self
+                        v.push(input.into());
+                        self.subscribers = Some(v);
+                        self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flows using your content as the source.
-    pub fn set_subscribers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.subscribers = input;
-        self
+    pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.subscribers = input; self
     }
     /// Consumes the builder and constructs a [`GrantEntitlementRequest`](crate::types::GrantEntitlementRequest).
     pub fn build(self) -> crate::types::GrantEntitlementRequest {
         crate::types::GrantEntitlementRequest {
-            data_transfer_subscriber_fee_percent: self
-                .data_transfer_subscriber_fee_percent
-                .unwrap_or_default(),
-            description: self.description,
-            encryption: self.encryption,
-            entitlement_status: self.entitlement_status,
-            name: self.name,
-            subscribers: self.subscribers,
+            data_transfer_subscriber_fee_percent: self.data_transfer_subscriber_fee_percent
+                .unwrap_or_default()
+            ,
+            description: self.description
+            ,
+            encryption: self.encryption
+            ,
+            entitlement_status: self.entitlement_status
+            ,
+            name: self.name
+            ,
+            subscribers: self.subscribers
+            ,
         }
     }
 }
+

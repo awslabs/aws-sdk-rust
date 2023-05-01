@@ -3,7 +3,7 @@
 /// <p>Describes connection health.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionHealth {
+pub struct ConnectionHealth  {
     /// <p>The connection type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ConnectionType>,
@@ -16,15 +16,15 @@ pub struct ConnectionHealth {
 }
 impl ConnectionHealth {
     /// <p>The connection type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ConnectionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::ConnectionType> {
         self.r#type.as_ref()
     }
     /// <p>The connection status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::ConnectionStatus> {
         self.status.as_ref()
     }
     /// <p>The time the status was last updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl ConnectionHealthBuilder {
     }
     /// <p>The connection type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ConnectionType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The connection status.</p>
     pub fn status(mut self, input: crate::types::ConnectionStatus) -> Self {
@@ -60,12 +59,8 @@ impl ConnectionHealthBuilder {
         self
     }
     /// <p>The connection status.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::ConnectionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::ConnectionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The time the status was last updated.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -74,15 +69,18 @@ impl ConnectionHealthBuilder {
     }
     /// <p>The time the status was last updated.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input;
-        self
+        self.timestamp = input; self
     }
     /// Consumes the builder and constructs a [`ConnectionHealth`](crate::types::ConnectionHealth).
     pub fn build(self) -> crate::types::ConnectionHealth {
         crate::types::ConnectionHealth {
-            r#type: self.r#type,
-            status: self.status,
-            timestamp: self.timestamp,
+            r#type: self.r#type
+            ,
+            status: self.status
+            ,
+            timestamp: self.timestamp
+            ,
         }
     }
 }
+

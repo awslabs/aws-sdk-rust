@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoutesOutput {
+pub struct GetRoutesOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::Route>>,
@@ -13,19 +13,19 @@ pub struct GetRoutesOutput {
 }
 impl GetRoutesOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::Route]> {
         self.items.as_deref()
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRoutesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetRoutesOutput {
     /// Creates a new builder-style object to manufacture [`GetRoutesOutput`](crate::operation::get_routes::GetRoutesOutput).
     pub fn builder() -> crate::operation::get_routes::builders::GetRoutesOutputBuilder {
@@ -49,17 +49,13 @@ impl GetRoutesOutputBuilder {
     /// <p>The elements from this collection.</p>
     pub fn items(mut self, input: crate::types::Route) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::Route>>) -> Self {
+        self.items = input; self
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,24 +64,26 @@ impl GetRoutesOutputBuilder {
     }
     /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetRoutesOutput`](crate::operation::get_routes::GetRoutesOutput).
     pub fn build(self) -> crate::operation::get_routes::GetRoutesOutput {
         crate::operation::get_routes::GetRoutesOutput {
-            items: self.items,
-            next_token: self.next_token,
+            items: self.items
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestingDataResult {
+pub struct TestingDataResult  {
     /// <p>The testing dataset that was supplied for training.</p>
     #[doc(hidden)]
     pub input: std::option::Option<crate::types::TestingData>,
@@ -16,15 +16,15 @@ pub struct TestingDataResult {
 }
 impl TestingDataResult {
     /// <p>The testing dataset that was supplied for training.</p>
-    pub fn input(&self) -> std::option::Option<&crate::types::TestingData> {
+    pub fn input(&self) -> std::option::Option<& crate::types::TestingData> {
         self.input.as_ref()
     }
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
-    pub fn output(&self) -> std::option::Option<&crate::types::TestingData> {
+    pub fn output(&self) -> std::option::Option<& crate::types::TestingData> {
         self.output.as_ref()
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
-    pub fn validation(&self) -> std::option::Option<&crate::types::ValidationData> {
+    pub fn validation(&self) -> std::option::Option<& crate::types::ValidationData> {
         self.validation.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl TestingDataResultBuilder {
     }
     /// <p>The testing dataset that was supplied for training.</p>
     pub fn set_input(mut self, input: std::option::Option<crate::types::TestingData>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
     pub fn output(mut self, input: crate::types::TestingData) -> Self {
@@ -61,8 +60,7 @@ impl TestingDataResultBuilder {
     }
     /// <p>The subset of the dataset that was actually tested. Some images (assets) might not be tested due to file formatting and other issues. </p>
     pub fn set_output(mut self, input: std::option::Option<crate::types::TestingData>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
     pub fn validation(mut self, input: crate::types::ValidationData) -> Self {
@@ -70,19 +68,19 @@ impl TestingDataResultBuilder {
         self
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the test dataset during model training.</p>
-    pub fn set_validation(
-        mut self,
-        input: std::option::Option<crate::types::ValidationData>,
-    ) -> Self {
-        self.validation = input;
-        self
+    pub fn set_validation(mut self, input: std::option::Option<crate::types::ValidationData>) -> Self {
+        self.validation = input; self
     }
     /// Consumes the builder and constructs a [`TestingDataResult`](crate::types::TestingDataResult).
     pub fn build(self) -> crate::types::TestingDataResult {
         crate::types::TestingDataResult {
-            input: self.input,
-            output: self.output,
-            validation: self.validation,
+            input: self.input
+            ,
+            output: self.output
+            ,
+            validation: self.validation
+            ,
         }
     }
 }
+

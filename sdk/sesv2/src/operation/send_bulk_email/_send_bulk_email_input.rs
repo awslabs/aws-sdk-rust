@@ -3,12 +3,12 @@
 /// <p>Represents a request to send email messages to multiple destinations using Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendBulkEmailInput {
+pub struct SendBulkEmailInput  {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
     #[doc(hidden)]
     pub from_email_address: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     #[doc(hidden)]
     pub from_email_address_identity_arn: std::option::Option<std::string::String>,
@@ -18,8 +18,8 @@ pub struct SendBulkEmailInput {
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
     #[doc(hidden)]
     pub feedback_forwarding_email_address: std::option::Option<std::string::String>,
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     #[doc(hidden)]
     pub feedback_forwarding_email_address_identity_arn: std::option::Option<std::string::String>,
@@ -38,44 +38,43 @@ pub struct SendBulkEmailInput {
 }
 impl SendBulkEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn from_email_address_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn from_email_address_identity_arn(&self) -> std::option::Option<& str> {
         self.from_email_address_identity_arn.as_deref()
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn reply_to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reply_to_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.reply_to_addresses.as_deref()
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
-    pub fn feedback_forwarding_email_address(&self) -> std::option::Option<&str> {
+    pub fn feedback_forwarding_email_address(&self) -> std::option::Option<& str> {
         self.feedback_forwarding_email_address.as_deref()
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn feedback_forwarding_email_address_identity_arn(&self) -> std::option::Option<&str> {
-        self.feedback_forwarding_email_address_identity_arn
-            .as_deref()
+    pub fn feedback_forwarding_email_address_identity_arn(&self) -> std::option::Option<& str> {
+        self.feedback_forwarding_email_address_identity_arn.as_deref()
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn default_email_tags(&self) -> std::option::Option<&[crate::types::MessageTag]> {
+    pub fn default_email_tags(&self) -> std::option::Option<& [crate::types::MessageTag]> {
         self.default_email_tags.as_deref()
     }
     /// <p>An object that contains the body of the message. You can specify a template message.</p>
-    pub fn default_content(&self) -> std::option::Option<&crate::types::BulkEmailContent> {
+    pub fn default_content(&self) -> std::option::Option<& crate::types::BulkEmailContent> {
         self.default_content.as_ref()
     }
     /// <p>The list of bulk email entry objects.</p>
-    pub fn bulk_email_entries(&self) -> std::option::Option<&[crate::types::BulkEmailEntry]> {
+    pub fn bulk_email_entries(&self) -> std::option::Option<& [crate::types::BulkEmailEntry]> {
         self.bulk_email_entries.as_deref()
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -94,8 +93,7 @@ pub struct SendBulkEmailInputBuilder {
     pub(crate) from_email_address_identity_arn: std::option::Option<std::string::String>,
     pub(crate) reply_to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) feedback_forwarding_email_address: std::option::Option<std::string::String>,
-    pub(crate) feedback_forwarding_email_address_identity_arn:
-        std::option::Option<std::string::String>,
+    pub(crate) feedback_forwarding_email_address_identity_arn: std::option::Option<std::string::String>,
     pub(crate) default_email_tags: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
     pub(crate) default_content: std::option::Option<crate::types::BulkEmailContent>,
     pub(crate) bulk_email_entries: std::option::Option<std::vec::Vec<crate::types::BulkEmailEntry>>,
@@ -108,32 +106,21 @@ impl SendBulkEmailInputBuilder {
         self
     }
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
-    pub fn set_from_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_email_address = input;
-        self
+    pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_email_address = input; self
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn from_email_address_identity_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn from_email_address_identity_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.from_email_address_identity_arn = Some(input.into());
         self
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FromEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be sender@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn set_from_email_address_identity_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.from_email_address_identity_arn = input;
-        self
+    pub fn set_from_email_address_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.from_email_address_identity_arn = input; self
     }
     /// Appends an item to `reply_to_addresses`.
     ///
@@ -142,53 +129,35 @@ impl SendBulkEmailInputBuilder {
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
     pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.reply_to_addresses.unwrap_or_default();
-        v.push(input.into());
-        self.reply_to_addresses = Some(v);
-        self
+                        v.push(input.into());
+                        self.reply_to_addresses = Some(v);
+                        self
     }
     /// <p>The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.</p>
-    pub fn set_reply_to_addresses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.reply_to_addresses = input;
-        self
+    pub fn set_reply_to_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.reply_to_addresses = input; self
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
-    pub fn feedback_forwarding_email_address(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn feedback_forwarding_email_address(mut self, input: impl Into<std::string::String>) -> Self {
         self.feedback_forwarding_email_address = Some(input.into());
         self
     }
     /// <p>The address that you want bounce and complaint notifications to be sent to.</p>
-    pub fn set_feedback_forwarding_email_address(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.feedback_forwarding_email_address = input;
-        self
+    pub fn set_feedback_forwarding_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.feedback_forwarding_email_address = input; self
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn feedback_forwarding_email_address_identity_arn(
-        mut self,
-        input: impl Into<std::string::String>,
-    ) -> Self {
+    pub fn feedback_forwarding_email_address_identity_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.feedback_forwarding_email_address_identity_arn = Some(input.into());
         self
     }
-    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p>
-    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
+    /// <p>This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.</p> 
+    /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p> 
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
-    pub fn set_feedback_forwarding_email_address_identity_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.feedback_forwarding_email_address_identity_arn = input;
-        self
+    pub fn set_feedback_forwarding_email_address_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.feedback_forwarding_email_address_identity_arn = input; self
     }
     /// Appends an item to `default_email_tags`.
     ///
@@ -197,17 +166,13 @@ impl SendBulkEmailInputBuilder {
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn default_email_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.default_email_tags.unwrap_or_default();
-        v.push(input);
-        self.default_email_tags = Some(v);
-        self
+                        v.push(input);
+                        self.default_email_tags = Some(v);
+                        self
     }
     /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
-    pub fn set_default_email_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MessageTag>>,
-    ) -> Self {
-        self.default_email_tags = input;
-        self
+    pub fn set_default_email_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::MessageTag>>) -> Self {
+        self.default_email_tags = input; self
     }
     /// <p>An object that contains the body of the message. You can specify a template message.</p>
     pub fn default_content(mut self, input: crate::types::BulkEmailContent) -> Self {
@@ -215,12 +180,8 @@ impl SendBulkEmailInputBuilder {
         self
     }
     /// <p>An object that contains the body of the message. You can specify a template message.</p>
-    pub fn set_default_content(
-        mut self,
-        input: std::option::Option<crate::types::BulkEmailContent>,
-    ) -> Self {
-        self.default_content = input;
-        self
+    pub fn set_default_content(mut self, input: std::option::Option<crate::types::BulkEmailContent>) -> Self {
+        self.default_content = input; self
     }
     /// Appends an item to `bulk_email_entries`.
     ///
@@ -229,17 +190,13 @@ impl SendBulkEmailInputBuilder {
     /// <p>The list of bulk email entry objects.</p>
     pub fn bulk_email_entries(mut self, input: crate::types::BulkEmailEntry) -> Self {
         let mut v = self.bulk_email_entries.unwrap_or_default();
-        v.push(input);
-        self.bulk_email_entries = Some(v);
-        self
+                        v.push(input);
+                        self.bulk_email_entries = Some(v);
+                        self
     }
     /// <p>The list of bulk email entry objects.</p>
-    pub fn set_bulk_email_entries(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BulkEmailEntry>>,
-    ) -> Self {
-        self.bulk_email_entries = input;
-        self
+    pub fn set_bulk_email_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::BulkEmailEntry>>) -> Self {
+        self.bulk_email_entries = input; self
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
     pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,31 +204,33 @@ impl SendBulkEmailInputBuilder {
         self
     }
     /// <p>The name of the configuration set to use when sending the email.</p>
-    pub fn set_configuration_set_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.configuration_set_name = input;
-        self
+    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.configuration_set_name = input; self
     }
     /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_bulk_email::SendBulkEmailInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::send_bulk_email::SendBulkEmailInput {
-            from_email_address: self.from_email_address,
-            from_email_address_identity_arn: self.from_email_address_identity_arn,
-            reply_to_addresses: self.reply_to_addresses,
-            feedback_forwarding_email_address: self.feedback_forwarding_email_address,
-            feedback_forwarding_email_address_identity_arn: self
-                .feedback_forwarding_email_address_identity_arn,
-            default_email_tags: self.default_email_tags,
-            default_content: self.default_content,
-            bulk_email_entries: self.bulk_email_entries,
-            configuration_set_name: self.configuration_set_name,
-        })
+    pub fn build(self) -> Result<crate::operation::send_bulk_email::SendBulkEmailInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::send_bulk_email::SendBulkEmailInput {
+                from_email_address: self.from_email_address
+                ,
+                from_email_address_identity_arn: self.from_email_address_identity_arn
+                ,
+                reply_to_addresses: self.reply_to_addresses
+                ,
+                feedback_forwarding_email_address: self.feedback_forwarding_email_address
+                ,
+                feedback_forwarding_email_address_identity_arn: self.feedback_forwarding_email_address_identity_arn
+                ,
+                default_email_tags: self.default_email_tags
+                ,
+                default_content: self.default_content
+                ,
+                bulk_email_entries: self.bulk_email_entries
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+            }
+        )
     }
 }
+

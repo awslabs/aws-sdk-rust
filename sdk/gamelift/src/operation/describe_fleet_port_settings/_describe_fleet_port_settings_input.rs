@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetPortSettingsInput {
+pub struct DescribeFleetPortSettingsInput  {
     /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeFleetPortSettingsInput {
 }
 impl DescribeFleetPortSettingsInput {
     /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 impl DescribeFleetPortSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetPortSettingsInput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput).
-    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder{
+    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder {
         crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsInputBuilder::default()
     }
 }
@@ -42,8 +42,7 @@ impl DescribeFleetPortSettingsInputBuilder {
     }
     /// <p>A unique identifier for the fleet to retrieve port settings for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input;
-        self
+        self.fleet_id = input; self
     }
     /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,21 +51,18 @@ impl DescribeFleetPortSettingsInputBuilder {
     }
     /// <p>A remote location to check for status of port setting updates. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input;
-        self
+        self.location = input; self
     }
     /// Consumes the builder and constructs a [`DescribeFleetPortSettingsInput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsInput {
-                fleet_id: self.fleet_id,
-                location: self.location,
-            },
+                fleet_id: self.fleet_id
+                ,
+                location: self.location
+                ,
+            }
         )
     }
 }
+

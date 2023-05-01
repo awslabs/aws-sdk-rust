@@ -3,7 +3,7 @@
 /// <p>Describes the state of an authorization rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientVpnAuthorizationRuleStatus {
+pub struct ClientVpnAuthorizationRuleStatus  {
     /// <p>The state of the authorization rule.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
@@ -13,11 +13,11 @@ pub struct ClientVpnAuthorizationRuleStatus {
 }
 impl ClientVpnAuthorizationRuleStatus {
     /// <p>The state of the authorization rule.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ClientVpnAuthorizationRuleStatusCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::ClientVpnAuthorizationRuleStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the authorization rule, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl ClientVpnAuthorizationRuleStatusBuilder {
         self
     }
     /// <p>The state of the authorization rule.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::ClientVpnAuthorizationRuleStatusCode>) -> Self {
+        self.code = input; self
     }
     /// <p>A message about the status of the authorization rule, if applicable.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl ClientVpnAuthorizationRuleStatusBuilder {
     }
     /// <p>A message about the status of the authorization rule, if applicable.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`ClientVpnAuthorizationRuleStatus`](crate::types::ClientVpnAuthorizationRuleStatus).
     pub fn build(self) -> crate::types::ClientVpnAuthorizationRuleStatus {
         crate::types::ClientVpnAuthorizationRuleStatus {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

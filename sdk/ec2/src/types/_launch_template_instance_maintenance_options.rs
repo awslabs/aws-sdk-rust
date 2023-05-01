@@ -3,16 +3,14 @@
 /// <p>The maintenance options of your instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateInstanceMaintenanceOptions {
+pub struct LaunchTemplateInstanceMaintenanceOptions  {
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
     #[doc(hidden)]
     pub auto_recovery: std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>,
 }
 impl LaunchTemplateInstanceMaintenanceOptions {
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn auto_recovery(
-        &self,
-    ) -> std::option::Option<&crate::types::LaunchTemplateAutoRecoveryState> {
+    pub fn auto_recovery(&self) -> std::option::Option<& crate::types::LaunchTemplateAutoRecoveryState> {
         self.auto_recovery.as_ref()
     }
 }
@@ -36,17 +34,15 @@ impl LaunchTemplateInstanceMaintenanceOptionsBuilder {
         self
     }
     /// <p>Disables the automatic recovery behavior of your instance or sets it to default.</p>
-    pub fn set_auto_recovery(
-        mut self,
-        input: std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>,
-    ) -> Self {
-        self.auto_recovery = input;
-        self
+    pub fn set_auto_recovery(mut self, input: std::option::Option<crate::types::LaunchTemplateAutoRecoveryState>) -> Self {
+        self.auto_recovery = input; self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateInstanceMaintenanceOptions`](crate::types::LaunchTemplateInstanceMaintenanceOptions).
     pub fn build(self) -> crate::types::LaunchTemplateInstanceMaintenanceOptions {
         crate::types::LaunchTemplateInstanceMaintenanceOptions {
-            auto_recovery: self.auto_recovery,
+            auto_recovery: self.auto_recovery
+            ,
         }
     }
 }
+

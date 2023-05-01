@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendDataToWirelessDeviceOutput {
+pub struct SendDataToWirelessDeviceOutput  {
     /// <p>The ID of the message sent to the wireless device.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct SendDataToWirelessDeviceOutput {
 }
 impl SendDataToWirelessDeviceOutput {
     /// <p>The ID of the message sent to the wireless device.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SendDataToWirelessDeviceOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl SendDataToWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`SendDataToWirelessDeviceOutput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput).
-    pub fn builder() -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceOutputBuilder{
+    pub fn builder() -> crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceOutputBuilder {
         crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceOutputBuilder::default()
     }
 }
@@ -41,25 +41,24 @@ impl SendDataToWirelessDeviceOutputBuilder {
     }
     /// <p>The ID of the message sent to the wireless device.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`SendDataToWirelessDeviceOutput`](crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput {
+    pub fn build(self) -> crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput {
         crate::operation::send_data_to_wireless_device::SendDataToWirelessDeviceOutput {
-            message_id: self.message_id,
+            message_id: self.message_id
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

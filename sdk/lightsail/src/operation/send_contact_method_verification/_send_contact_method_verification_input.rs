@@ -2,22 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendContactMethodVerificationInput {
+pub struct SendContactMethodVerificationInput  {
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::ContactMethodVerificationProtocol>,
 }
 impl SendContactMethodVerificationInput {
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    pub fn protocol(
-        &self,
-    ) -> std::option::Option<&crate::types::ContactMethodVerificationProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::types::ContactMethodVerificationProtocol> {
         self.protocol.as_ref()
     }
 }
 impl SendContactMethodVerificationInput {
     /// Creates a new builder-style object to manufacture [`SendContactMethodVerificationInput`](crate::operation::send_contact_method_verification::SendContactMethodVerificationInput).
-    pub fn builder() -> crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder{
+    pub fn builder() -> crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder {
         crate::operation::send_contact_method_verification::builders::SendContactMethodVerificationInputBuilder::default()
     }
 }
@@ -35,20 +33,11 @@ impl SendContactMethodVerificationInputBuilder {
         self
     }
     /// <p>The protocol to verify, such as <code>Email</code> or <code>SMS</code> (text messaging).</p>
-    pub fn set_protocol(
-        mut self,
-        input: std::option::Option<crate::types::ContactMethodVerificationProtocol>,
-    ) -> Self {
-        self.protocol = input;
-        self
+    pub fn set_protocol(mut self, input: std::option::Option<crate::types::ContactMethodVerificationProtocol>) -> Self {
+        self.protocol = input; self
     }
     /// Consumes the builder and constructs a [`SendContactMethodVerificationInput`](crate::operation::send_contact_method_verification::SendContactMethodVerificationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::send_contact_method_verification::SendContactMethodVerificationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::send_contact_method_verification::SendContactMethodVerificationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::send_contact_method_verification::SendContactMethodVerificationInput {
                 protocol: self.protocol
@@ -57,3 +46,4 @@ impl SendContactMethodVerificationInputBuilder {
         )
     }
 }
+

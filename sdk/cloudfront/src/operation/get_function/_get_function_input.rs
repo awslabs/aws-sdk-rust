@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFunctionInput {
+pub struct GetFunctionInput  {
     /// <p>The name of the function whose code you are getting.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetFunctionInput {
 }
 impl GetFunctionInput {
     /// <p>The name of the function whose code you are getting.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-    pub fn stage(&self) -> std::option::Option<&crate::types::FunctionStage> {
+    pub fn stage(&self) -> std::option::Option<& crate::types::FunctionStage> {
         self.stage.as_ref()
     }
 }
@@ -42,8 +42,7 @@ impl GetFunctionInputBuilder {
     }
     /// <p>The name of the function whose code you are getting.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn stage(mut self, input: crate::types::FunctionStage) -> Self {
@@ -52,19 +51,18 @@ impl GetFunctionInputBuilder {
     }
     /// <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     pub fn set_stage(mut self, input: std::option::Option<crate::types::FunctionStage>) -> Self {
-        self.stage = input;
-        self
+        self.stage = input; self
     }
     /// Consumes the builder and constructs a [`GetFunctionInput`](crate::operation::get_function::GetFunctionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_function::GetFunctionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_function::GetFunctionInput {
-            name: self.name,
-            stage: self.stage,
-        })
+    pub fn build(self) -> Result<crate::operation::get_function::GetFunctionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_function::GetFunctionInput {
+                name: self.name
+                ,
+                stage: self.stage
+                ,
+            }
+        )
     }
 }
+

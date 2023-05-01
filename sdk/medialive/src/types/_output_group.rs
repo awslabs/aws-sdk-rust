@@ -3,7 +3,7 @@
 /// Output groups for this Live Event. Output groups contain information about where streams should be distributed.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputGroup {
+pub struct OutputGroup  {
     /// Custom output group name optionally defined by the user.
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct OutputGroup {
 }
 impl OutputGroup {
     /// Custom output group name optionally defined by the user.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// Settings associated with the output group.
-    pub fn output_group_settings(&self) -> std::option::Option<&crate::types::OutputGroupSettings> {
+    pub fn output_group_settings(&self) -> std::option::Option<& crate::types::OutputGroupSettings> {
         self.output_group_settings.as_ref()
     }
     /// Placeholder documentation for __listOfOutput
-    pub fn outputs(&self) -> std::option::Option<&[crate::types::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::types::Output]> {
         self.outputs.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl OutputGroupBuilder {
     }
     /// Custom output group name optionally defined by the user.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Settings associated with the output group.
     pub fn output_group_settings(mut self, input: crate::types::OutputGroupSettings) -> Self {
@@ -60,12 +59,8 @@ impl OutputGroupBuilder {
         self
     }
     /// Settings associated with the output group.
-    pub fn set_output_group_settings(
-        mut self,
-        input: std::option::Option<crate::types::OutputGroupSettings>,
-    ) -> Self {
-        self.output_group_settings = input;
-        self
+    pub fn set_output_group_settings(mut self, input: std::option::Option<crate::types::OutputGroupSettings>) -> Self {
+        self.output_group_settings = input; self
     }
     /// Appends an item to `outputs`.
     ///
@@ -74,24 +69,24 @@ impl OutputGroupBuilder {
     /// Placeholder documentation for __listOfOutput
     pub fn outputs(mut self, input: crate::types::Output) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-        v.push(input);
-        self.outputs = Some(v);
-        self
+                        v.push(input);
+                        self.outputs = Some(v);
+                        self
     }
     /// Placeholder documentation for __listOfOutput
-    pub fn set_outputs(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Output>>,
-    ) -> Self {
-        self.outputs = input;
-        self
+    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Output>>) -> Self {
+        self.outputs = input; self
     }
     /// Consumes the builder and constructs a [`OutputGroup`](crate::types::OutputGroup).
     pub fn build(self) -> crate::types::OutputGroup {
         crate::types::OutputGroup {
-            name: self.name,
-            output_group_settings: self.output_group_settings,
-            outputs: self.outputs,
+            name: self.name
+            ,
+            output_group_settings: self.output_group_settings
+            ,
+            outputs: self.outputs
+            ,
         }
     }
 }
+

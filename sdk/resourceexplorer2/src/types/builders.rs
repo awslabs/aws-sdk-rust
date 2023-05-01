@@ -18,3 +18,4 @@ pub use crate::types::_resource_property::ResourcePropertyBuilder;
 pub use crate::types::_supported_resource_type::SupportedResourceTypeBuilder;
 
 pub use crate::types::_batch_get_view_error::BatchGetViewErrorBuilder;
+

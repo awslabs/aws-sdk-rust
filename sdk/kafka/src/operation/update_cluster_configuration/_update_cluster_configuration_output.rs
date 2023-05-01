@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClusterConfigurationOutput {
+pub struct UpdateClusterConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct UpdateClusterConfigurationOutput {
 }
 impl UpdateClusterConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateClusterConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateClusterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigurationOutput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput).
-    pub fn builder() -> crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationOutputBuilder {
         crate::operation::update_cluster_configuration::builders::UpdateClusterConfigurationOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl UpdateClusterConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input;
-        self
+        self.cluster_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
     pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,30 +57,27 @@ impl UpdateClusterConfigurationOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn set_cluster_operation_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.cluster_operation_arn = input;
-        self
+    pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.cluster_operation_arn = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateClusterConfigurationOutput`](crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput {
+    pub fn build(self) -> crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput {
         crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput {
-            cluster_arn: self.cluster_arn,
-            cluster_operation_arn: self.cluster_operation_arn,
+            cluster_arn: self.cluster_arn
+            ,
+            cluster_operation_arn: self.cluster_operation_arn
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

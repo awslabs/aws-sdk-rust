@@ -3,7 +3,7 @@
 /// <p>A filter used to match specific automation executions. This is used to limit the scope of Automation execution information returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutomationExecutionFilter {
+pub struct AutomationExecutionFilter  {
     /// <p>One or more keys to limit the results.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::AutomationExecutionFilterKey>,
@@ -13,11 +13,11 @@ pub struct AutomationExecutionFilter {
 }
 impl AutomationExecutionFilter {
     /// <p>One or more keys to limit the results.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::AutomationExecutionFilterKey> {
+    pub fn key(&self) -> std::option::Option<& crate::types::AutomationExecutionFilterKey> {
         self.key.as_ref()
     }
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl AutomationExecutionFilterBuilder {
         self
     }
     /// <p>One or more keys to limit the results.</p>
-    pub fn set_key(
-        mut self,
-        input: std::option::Option<crate::types::AutomationExecutionFilterKey>,
-    ) -> Self {
-        self.key = input;
-        self
+    pub fn set_key(mut self, input: std::option::Option<crate::types::AutomationExecutionFilterKey>) -> Self {
+        self.key = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -56,23 +52,22 @@ impl AutomationExecutionFilterBuilder {
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>The values used to limit the execution information associated with the filter's key.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`AutomationExecutionFilter`](crate::types::AutomationExecutionFilter).
     pub fn build(self) -> crate::types::AutomationExecutionFilter {
         crate::types::AutomationExecutionFilter {
-            key: self.key,
-            values: self.values,
+            key: self.key
+            ,
+            values: self.values
+            ,
         }
     }
 }
+

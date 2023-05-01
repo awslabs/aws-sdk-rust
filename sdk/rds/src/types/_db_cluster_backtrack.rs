@@ -3,7 +3,7 @@
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DbClusterBacktrack {
+pub struct DbClusterBacktrack  {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -19,47 +19,45 @@ pub struct DbClusterBacktrack {
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
     #[doc(hidden)]
     pub backtrack_request_creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the backtrack. This property returns one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+    /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl DbClusterBacktrack {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Contains the backtrack identifier.</p>
-    pub fn backtrack_identifier(&self) -> std::option::Option<&str> {
+    pub fn backtrack_identifier(&self) -> std::option::Option<& str> {
         self.backtrack_identifier.as_deref()
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    pub fn backtrack_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtrack_to(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backtrack_to.as_ref()
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    pub fn backtracked_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtracked_from(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backtracked_from.as_ref()
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
-    pub fn backtrack_request_creation_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtrack_request_creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backtrack_request_creation_time.as_ref()
     }
-    /// <p>The status of the backtrack. This property returns one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+    /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
@@ -88,12 +86,8 @@ impl DbClusterBacktrackBuilder {
         self
     }
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn set_db_cluster_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.db_cluster_identifier = input;
-        self
+    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.db_cluster_identifier = input; self
     }
     /// <p>Contains the backtrack identifier.</p>
     pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,12 +95,8 @@ impl DbClusterBacktrackBuilder {
         self
     }
     /// <p>Contains the backtrack identifier.</p>
-    pub fn set_backtrack_identifier(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.backtrack_identifier = input;
-        self
+    pub fn set_backtrack_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.backtrack_identifier = input; self
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
     pub fn backtrack_to(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,12 +104,8 @@ impl DbClusterBacktrackBuilder {
         self
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    pub fn set_backtrack_to(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.backtrack_to = input;
-        self
+    pub fn set_backtrack_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.backtrack_to = input; self
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
     pub fn backtracked_from(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,12 +113,8 @@ impl DbClusterBacktrackBuilder {
         self
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    pub fn set_backtracked_from(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.backtracked_from = input;
-        self
+    pub fn set_backtracked_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.backtracked_from = input; self
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
     pub fn backtrack_request_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,44 +122,46 @@ impl DbClusterBacktrackBuilder {
         self
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
-    pub fn set_backtrack_request_creation_time(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.backtrack_request_creation_time = input;
-        self
+    pub fn set_backtrack_request_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.backtrack_request_creation_time = input; self
     }
-    /// <p>The status of the backtrack. This property returns one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+    /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The status of the backtrack. This property returns one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+    /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`DbClusterBacktrack`](crate::types::DbClusterBacktrack).
     pub fn build(self) -> crate::types::DbClusterBacktrack {
         crate::types::DbClusterBacktrack {
-            db_cluster_identifier: self.db_cluster_identifier,
-            backtrack_identifier: self.backtrack_identifier,
-            backtrack_to: self.backtrack_to,
-            backtracked_from: self.backtracked_from,
-            backtrack_request_creation_time: self.backtrack_request_creation_time,
-            status: self.status,
+            db_cluster_identifier: self.db_cluster_identifier
+            ,
+            backtrack_identifier: self.backtrack_identifier
+            ,
+            backtrack_to: self.backtrack_to
+            ,
+            backtracked_from: self.backtracked_from
+            ,
+            backtrack_request_creation_time: self.backtrack_request_creation_time
+            ,
+            status: self.status
+            ,
         }
     }
 }
+

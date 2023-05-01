@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkerFleetsOutput {
+pub struct ListWorkerFleetsOutput  {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListWorkerFleetsOutput {
 }
 impl ListWorkerFleetsOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// List of worker fleets.
-    pub fn worker_fleets(&self) -> std::option::Option<&[crate::types::WorkerFleet]> {
+    pub fn worker_fleets(&self) -> std::option::Option<& [crate::types::WorkerFleet]> {
         self.worker_fleets.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkerFleetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListWorkerFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkerFleetsOutput`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput).
-    pub fn builder() -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_worker_fleets::builders::ListWorkerFleetsOutputBuilder {
         crate::operation::list_worker_fleets::builders::ListWorkerFleetsOutputBuilder::default()
     }
 }
@@ -50,8 +49,7 @@ impl ListWorkerFleetsOutputBuilder {
     }
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `worker_fleets`.
     ///
@@ -60,33 +58,32 @@ impl ListWorkerFleetsOutputBuilder {
     /// List of worker fleets.
     pub fn worker_fleets(mut self, input: crate::types::WorkerFleet) -> Self {
         let mut v = self.worker_fleets.unwrap_or_default();
-        v.push(input);
-        self.worker_fleets = Some(v);
-        self
+                        v.push(input);
+                        self.worker_fleets = Some(v);
+                        self
     }
     /// List of worker fleets.
-    pub fn set_worker_fleets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkerFleet>>,
-    ) -> Self {
-        self.worker_fleets = input;
-        self
+    pub fn set_worker_fleets(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkerFleet>>) -> Self {
+        self.worker_fleets = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListWorkerFleetsOutput`](crate::operation::list_worker_fleets::ListWorkerFleetsOutput).
     pub fn build(self) -> crate::operation::list_worker_fleets::ListWorkerFleetsOutput {
         crate::operation::list_worker_fleets::ListWorkerFleetsOutput {
-            next_token: self.next_token,
-            worker_fleets: self.worker_fleets,
+            next_token: self.next_token
+            ,
+            worker_fleets: self.worker_fleets
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

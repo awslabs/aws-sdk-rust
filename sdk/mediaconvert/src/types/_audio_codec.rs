@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let audiocodec = unimplemented!();
 /// match audiocodec {
@@ -39,22 +39,14 @@
 /// Specifically, when `audiocodec` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioCodec::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AudioCodec {
     #[allow(missing_docs)] // documentation missing in model
     Aac,
@@ -79,70 +71,59 @@ pub enum AudioCodec {
     #[allow(missing_docs)] // documentation missing in model
     Wav,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AudioCodec {
-    fn from(s: &str) -> Self {
-        match s {
-            "AAC" => AudioCodec::Aac,
-            "AC3" => AudioCodec::Ac3,
-            "AIFF" => AudioCodec::Aiff,
-            "EAC3" => AudioCodec::Eac3,
-            "EAC3_ATMOS" => AudioCodec::Eac3Atmos,
-            "MP2" => AudioCodec::Mp2,
-            "MP3" => AudioCodec::Mp3,
-            "OPUS" => AudioCodec::Opus,
-            "PASSTHROUGH" => AudioCodec::Passthrough,
-            "VORBIS" => AudioCodec::Vorbis,
-            "WAV" => AudioCodec::Wav,
-            other => AudioCodec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AAC" => AudioCodec::Aac,
+"AC3" => AudioCodec::Ac3,
+"AIFF" => AudioCodec::Aiff,
+"EAC3" => AudioCodec::Eac3,
+"EAC3_ATMOS" => AudioCodec::Eac3Atmos,
+"MP2" => AudioCodec::Mp2,
+"MP3" => AudioCodec::Mp3,
+"OPUS" => AudioCodec::Opus,
+"PASSTHROUGH" => AudioCodec::Passthrough,
+"VORBIS" => AudioCodec::Vorbis,
+"WAV" => AudioCodec::Wav,
+other => AudioCodec::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for AudioCodec {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioCodec::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AudioCodec::from(s))
+                }
+            }
 impl AudioCodec {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            AudioCodec::Aac => "AAC",
-            AudioCodec::Ac3 => "AC3",
-            AudioCodec::Aiff => "AIFF",
-            AudioCodec::Eac3 => "EAC3",
-            AudioCodec::Eac3Atmos => "EAC3_ATMOS",
-            AudioCodec::Mp2 => "MP2",
-            AudioCodec::Mp3 => "MP3",
-            AudioCodec::Opus => "OPUS",
-            AudioCodec::Passthrough => "PASSTHROUGH",
-            AudioCodec::Vorbis => "VORBIS",
-            AudioCodec::Wav => "WAV",
-            AudioCodec::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AAC",
-            "AC3",
-            "AIFF",
-            "EAC3",
-            "EAC3_ATMOS",
-            "MP2",
-            "MP3",
-            "OPUS",
-            "PASSTHROUGH",
-            "VORBIS",
-            "WAV",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    AudioCodec::Aac => "AAC",
+    AudioCodec::Ac3 => "AC3",
+    AudioCodec::Aiff => "AIFF",
+    AudioCodec::Eac3 => "EAC3",
+    AudioCodec::Eac3Atmos => "EAC3_ATMOS",
+    AudioCodec::Mp2 => "MP2",
+    AudioCodec::Mp3 => "MP3",
+    AudioCodec::Opus => "OPUS",
+    AudioCodec::Passthrough => "PASSTHROUGH",
+    AudioCodec::Vorbis => "VORBIS",
+    AudioCodec::Wav => "WAV",
+    AudioCodec::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AAC", "AC3", "AIFF", "EAC3", "EAC3_ATMOS", "MP2", "MP3", "OPUS", "PASSTHROUGH", "VORBIS", "WAV"]
+                }
+            }
 impl AsRef<str> for AudioCodec {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

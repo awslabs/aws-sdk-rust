@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCreatedArtifactsOutput {
+pub struct ListCreatedArtifactsOutput  {
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,22 @@ pub struct ListCreatedArtifactsOutput {
 }
 impl ListCreatedArtifactsOutput {
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-    pub fn created_artifact_list(&self) -> std::option::Option<&[crate::types::CreatedArtifact]> {
+    pub fn created_artifact_list(&self) -> std::option::Option<& [crate::types::CreatedArtifact]> {
         self.created_artifact_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCreatedArtifactsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCreatedArtifactsOutput {
     /// Creates a new builder-style object to manufacture [`ListCreatedArtifactsOutput`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsOutputBuilder {
+    pub fn builder() -> crate::operation::list_created_artifacts::builders::ListCreatedArtifactsOutputBuilder {
         crate::operation::list_created_artifacts::builders::ListCreatedArtifactsOutputBuilder::default()
     }
 }
@@ -39,8 +38,7 @@ impl ListCreatedArtifactsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListCreatedArtifactsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) created_artifact_list:
-        std::option::Option<std::vec::Vec<crate::types::CreatedArtifact>>,
+    pub(crate) created_artifact_list: std::option::Option<std::vec::Vec<crate::types::CreatedArtifact>>,
     _request_id: Option<String>,
 }
 impl ListCreatedArtifactsOutputBuilder {
@@ -51,8 +49,7 @@ impl ListCreatedArtifactsOutputBuilder {
     }
     /// <p>If there are more created artifacts than the max result, return the next token to be passed to the next call as a bookmark of where to start from.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `created_artifact_list`.
     ///
@@ -61,33 +58,32 @@ impl ListCreatedArtifactsOutputBuilder {
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
     pub fn created_artifact_list(mut self, input: crate::types::CreatedArtifact) -> Self {
         let mut v = self.created_artifact_list.unwrap_or_default();
-        v.push(input);
-        self.created_artifact_list = Some(v);
-        self
+                        v.push(input);
+                        self.created_artifact_list = Some(v);
+                        self
     }
     /// <p>List of created artifacts up to the maximum number of results specified in the request.</p>
-    pub fn set_created_artifact_list(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreatedArtifact>>,
-    ) -> Self {
-        self.created_artifact_list = input;
-        self
+    pub fn set_created_artifact_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreatedArtifact>>) -> Self {
+        self.created_artifact_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCreatedArtifactsOutput`](crate::operation::list_created_artifacts::ListCreatedArtifactsOutput).
     pub fn build(self) -> crate::operation::list_created_artifacts::ListCreatedArtifactsOutput {
         crate::operation::list_created_artifacts::ListCreatedArtifactsOutput {
-            next_token: self.next_token,
-            created_artifact_list: self.created_artifact_list,
+            next_token: self.next_token
+            ,
+            created_artifact_list: self.created_artifact_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

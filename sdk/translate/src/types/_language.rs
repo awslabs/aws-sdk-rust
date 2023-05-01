@@ -3,7 +3,7 @@
 /// <p>A supported language.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Language {
+pub struct Language  {
     /// <p>Language name of the supported language.</p>
     #[doc(hidden)]
     pub language_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Language {
 }
 impl Language {
     /// <p>Language name of the supported language.</p>
-    pub fn language_name(&self) -> std::option::Option<&str> {
+    pub fn language_name(&self) -> std::option::Option<& str> {
         self.language_name.as_deref()
     }
     /// <p>Language code for the supported language.</p>
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> std::option::Option<& str> {
         self.language_code.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl LanguageBuilder {
     }
     /// <p>Language name of the supported language.</p>
     pub fn set_language_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_name = input;
-        self
+        self.language_name = input; self
     }
     /// <p>Language code for the supported language.</p>
     pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl LanguageBuilder {
     }
     /// <p>Language code for the supported language.</p>
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input;
-        self
+        self.language_code = input; self
     }
     /// Consumes the builder and constructs a [`Language`](crate::types::Language).
     pub fn build(self) -> crate::types::Language {
         crate::types::Language {
-            language_name: self.language_name,
-            language_code: self.language_code,
+            language_name: self.language_name
+            ,
+            language_code: self.language_code
+            ,
         }
     }
 }
+

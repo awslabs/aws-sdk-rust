@@ -4,82 +4,55 @@ pub use crate::operation::get_resource_shares::_get_resource_shares_output::GetR
 pub use crate::operation::get_resource_shares::_get_resource_shares_input::GetResourceSharesInputBuilder;
 
 /// Fluent builder constructing a request to `GetResourceShares`.
-///
+/// 
 /// <p>Retrieves details about the resource shares that you own or that are shared with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceSharesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder,
-}
-impl GetResourceSharesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_resource_shares::builders::GetResourceSharesInputBuilder
+            }
+impl GetResourceSharesFluentBuilder  {
     /// Creates a new `GetResourceShares`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_resource_shares::GetResourceShares,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_shares::GetResourceSharesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_resource_shares::GetResourceSharesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_resource_shares::GetResourceSharesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_resource_shares::GetResourceShares, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_resource_shares::GetResourceSharesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_resource_shares::GetResourceSharesOutput, aws_smithy_http::result::SdkError<crate::operation::get_resource_shares::GetResourceSharesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator {
-        crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator {
+                            crate::operation::get_resource_shares::paginator::GetResourceSharesPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `resourceShareArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_arns`](Self::set_resource_share_arns).
@@ -90,10 +63,7 @@ impl GetResourceSharesFluentBuilder {
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> of individual resource shares that you want information about.</p>
-    pub fn set_resource_share_arns(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_resource_share_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
@@ -103,31 +73,25 @@ impl GetResourceSharesFluentBuilder {
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that have this status.</p>
-    pub fn set_resource_share_status(
-        mut self,
-        input: std::option::Option<crate::types::ResourceShareStatus>,
-    ) -> Self {
+    pub fn set_resource_share_status(mut self, input: std::option::Option<crate::types::ResourceShareStatus>) -> Self {
         self.inner = self.inner.set_resource_share_status(input);
         self
     }
-    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li> 
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li> 
     /// </ul>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.inner = self.inner.resource_owner(input);
         self
     }
-    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p>
-    /// <ul>
-    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li>
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that match the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b> <code>SELF</code> </b> – resource shares that your account shares with other accounts</p> </li> 
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – resource shares that other accounts share with your account</p> </li> 
     /// </ul>
-    pub fn set_resource_owner(
-        mut self,
-        input: std::option::Option<crate::types::ResourceOwner>,
-    ) -> Self {
+    pub fn set_resource_owner(mut self, input: std::option::Option<crate::types::ResourceOwner>) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
@@ -151,10 +115,7 @@ impl GetResourceSharesFluentBuilder {
         self
     }
     /// <p>Specifies that you want to retrieve details of only those resource shares that match the specified tag keys and values.</p>
-    pub fn set_tag_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
-    ) -> Self {
+    pub fn set_tag_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>) -> Self {
         self.inner = self.inner.set_tag_filters(input);
         self
     }
@@ -178,14 +139,25 @@ impl GetResourceSharesFluentBuilder {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
     pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
         self
     }
-    /// <p>Specifies that you want to retrieve details of only those resource shares that use the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>.</p>
+    /// <p>Specifies that you want to retrieve details of only those resource shares that use the managed permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>.</p>
     pub fn set_permission_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_permission_arn(input);
         self
     }
+    /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
+    pub fn permission_version(mut self, input: i32) -> Self {
+        self.inner = self.inner.permission_version(input);
+        self
+    }
+    /// <p>Specifies that you want to retrieve details for only those resource shares that use the specified version of the managed permission.</p>
+    pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_permission_version(input);
+        self
+    }
 }
+

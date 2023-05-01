@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalableTargetsOutput {
+pub struct DescribeScalableTargetsOutput  {
     /// <p>The scalable targets that match the request parameters.</p>
     #[doc(hidden)]
     pub scalable_targets: std::option::Option<std::vec::Vec<crate::types::ScalableTarget>>,
@@ -13,24 +13,22 @@ pub struct DescribeScalableTargetsOutput {
 }
 impl DescribeScalableTargetsOutput {
     /// <p>The scalable targets that match the request parameters.</p>
-    pub fn scalable_targets(&self) -> std::option::Option<&[crate::types::ScalableTarget]> {
+    pub fn scalable_targets(&self) -> std::option::Option<& [crate::types::ScalableTarget]> {
         self.scalable_targets.as_deref()
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeScalableTargetsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeScalableTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalableTargetsOutput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsOutputBuilder
-    {
+    pub fn builder() -> crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsOutputBuilder {
         crate::operation::describe_scalable_targets::builders::DescribeScalableTargetsOutputBuilder::default()
     }
 }
@@ -51,17 +49,13 @@ impl DescribeScalableTargetsOutputBuilder {
     /// <p>The scalable targets that match the request parameters.</p>
     pub fn scalable_targets(mut self, input: crate::types::ScalableTarget) -> Self {
         let mut v = self.scalable_targets.unwrap_or_default();
-        v.push(input);
-        self.scalable_targets = Some(v);
-        self
+                        v.push(input);
+                        self.scalable_targets = Some(v);
+                        self
     }
     /// <p>The scalable targets that match the request parameters.</p>
-    pub fn set_scalable_targets(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScalableTarget>>,
-    ) -> Self {
-        self.scalable_targets = input;
-        self
+    pub fn set_scalable_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::ScalableTarget>>) -> Self {
+        self.scalable_targets = input; self
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,26 +64,26 @@ impl DescribeScalableTargetsOutputBuilder {
     }
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeScalableTargetsOutput`](crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput {
+    pub fn build(self) -> crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput {
         crate::operation::describe_scalable_targets::DescribeScalableTargetsOutput {
-            scalable_targets: self.scalable_targets,
-            next_token: self.next_token,
+            scalable_targets: self.scalable_targets
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

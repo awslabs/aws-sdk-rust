@@ -3,7 +3,7 @@
 /// <p>Describes a successful rule update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleUpdateSuccess {
+pub struct RuleUpdateSuccess  {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -28,15 +28,15 @@ pub struct RuleUpdateSuccess {
 }
 impl RuleUpdateSuccess {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the listener.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the listener.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether this is the default rule.</p>
@@ -44,7 +44,7 @@ impl RuleUpdateSuccess {
         self.is_default
     }
     /// <p>The rule match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::RuleMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The rule priority.</p>
@@ -52,7 +52,7 @@ impl RuleUpdateSuccess {
         self.priority
     }
     /// <p>The action for the default rule.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::RuleAction> {
+    pub fn action(&self) -> std::option::Option<& crate::types::RuleAction> {
         self.action.as_ref()
     }
 }
@@ -83,8 +83,7 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>The ID of the listener.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +92,7 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>The ID of the listener.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The name of the listener.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,8 +101,7 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>The name of the listener.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>Indicates whether this is the default rule.</p>
     pub fn is_default(mut self, input: bool) -> Self {
@@ -113,8 +110,7 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>Indicates whether this is the default rule.</p>
     pub fn set_is_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_default = input;
-        self
+        self.is_default = input; self
     }
     /// <p>The rule match.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
@@ -123,8 +119,7 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>The rule match.</p>
     pub fn set_match(mut self, input: std::option::Option<crate::types::RuleMatch>) -> Self {
-        self.r#match = input;
-        self
+        self.r#match = input; self
     }
     /// <p>The rule priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -133,8 +128,7 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>The rule priority.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input;
-        self
+        self.priority = input; self
     }
     /// <p>The action for the default rule.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
@@ -143,19 +137,26 @@ impl RuleUpdateSuccessBuilder {
     }
     /// <p>The action for the default rule.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::RuleAction>) -> Self {
-        self.action = input;
-        self
+        self.action = input; self
     }
     /// Consumes the builder and constructs a [`RuleUpdateSuccess`](crate::types::RuleUpdateSuccess).
     pub fn build(self) -> crate::types::RuleUpdateSuccess {
         crate::types::RuleUpdateSuccess {
-            arn: self.arn,
-            id: self.id,
-            name: self.name,
-            is_default: self.is_default,
-            r#match: self.r#match,
-            priority: self.priority,
-            action: self.action,
+            arn: self.arn
+            ,
+            id: self.id
+            ,
+            name: self.name
+            ,
+            is_default: self.is_default
+            ,
+            r#match: self.r#match
+            ,
+            priority: self.priority
+            ,
+            action: self.action
+            ,
         }
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>This structure contains information about when the canary was created and modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryTimeline {
+pub struct CanaryTimeline  {
     /// <p>The date and time the canary was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,19 +19,19 @@ pub struct CanaryTimeline {
 }
 impl CanaryTimeline {
     /// <p>The date and time the canary was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn last_started(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_started(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_started.as_ref()
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn last_stopped(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_stopped(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_stopped.as_ref()
     }
 }
@@ -59,8 +59,7 @@ impl CanaryTimelineBuilder {
     }
     /// <p>The date and time the canary was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input;
-        self
+        self.created = input; self
     }
     /// <p>The date and time the canary was most recently modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,12 +67,8 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time the canary was most recently modified.</p>
-    pub fn set_last_modified(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_modified = input;
-        self
+    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_modified = input; self
     }
     /// <p>The date and time that the canary's most recent run started.</p>
     pub fn last_started(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -81,12 +76,8 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time that the canary's most recent run started.</p>
-    pub fn set_last_started(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_started = input;
-        self
+    pub fn set_last_started(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_started = input; self
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
     pub fn last_stopped(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,20 +85,21 @@ impl CanaryTimelineBuilder {
         self
     }
     /// <p>The date and time that the canary's most recent run ended.</p>
-    pub fn set_last_stopped(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.last_stopped = input;
-        self
+    pub fn set_last_stopped(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.last_stopped = input; self
     }
     /// Consumes the builder and constructs a [`CanaryTimeline`](crate::types::CanaryTimeline).
     pub fn build(self) -> crate::types::CanaryTimeline {
         crate::types::CanaryTimeline {
-            created: self.created,
-            last_modified: self.last_modified,
-            last_started: self.last_started,
-            last_stopped: self.last_stopped,
+            created: self.created
+            ,
+            last_modified: self.last_modified
+            ,
+            last_started: self.last_started
+            ,
+            last_stopped: self.last_stopped
+            ,
         }
     }
 }
+

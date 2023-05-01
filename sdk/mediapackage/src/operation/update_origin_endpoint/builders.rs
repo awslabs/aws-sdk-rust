@@ -4,97 +4,66 @@ pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_output
 pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_input::UpdateOriginEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateOriginEndpoint`.
-///
+/// 
 /// Updates an existing OriginEndpoint.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOriginEndpointFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointInputBuilder,
-}
-impl UpdateOriginEndpointFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::update_origin_endpoint::builders::UpdateOriginEndpointInputBuilder
+            }
+impl UpdateOriginEndpointFluentBuilder  {
     /// Creates a new `UpdateOriginEndpoint`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::update_origin_endpoint::UpdateOriginEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_endpoint::UpdateOriginEndpointError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::update_origin_endpoint::UpdateOriginEndpointError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_origin_endpoint::UpdateOriginEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::update_origin_endpoint::UpdateOriginEndpointError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::update_origin_endpoint::UpdateOriginEndpointError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// CDN Authorization credentials
     pub fn authorization(mut self, input: crate::types::Authorization) -> Self {
         self.inner = self.inner.authorization(input);
         self
     }
     /// CDN Authorization credentials
-    pub fn set_authorization(
-        mut self,
-        input: std::option::Option<crate::types::Authorization>,
-    ) -> Self {
+    pub fn set_authorization(mut self, input: std::option::Option<crate::types::Authorization>) -> Self {
         self.inner = self.inner.set_authorization(input);
         self
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn cmaf_package(
-        mut self,
-        input: crate::types::CmafPackageCreateOrUpdateParameters,
-    ) -> Self {
+    pub fn cmaf_package(mut self, input: crate::types::CmafPackageCreateOrUpdateParameters) -> Self {
         self.inner = self.inner.cmaf_package(input);
         self
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn set_cmaf_package(
-        mut self,
-        input: std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters>,
-    ) -> Self {
+    pub fn set_cmaf_package(mut self, input: std::option::Option<crate::types::CmafPackageCreateOrUpdateParameters>) -> Self {
         self.inner = self.inner.set_cmaf_package(input);
         self
     }
@@ -104,10 +73,7 @@ impl UpdateOriginEndpointFluentBuilder {
         self
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn set_dash_package(
-        mut self,
-        input: std::option::Option<crate::types::DashPackage>,
-    ) -> Self {
+    pub fn set_dash_package(mut self, input: std::option::Option<crate::types::DashPackage>) -> Self {
         self.inner = self.inner.set_dash_package(input);
         self
     }
@@ -167,10 +133,7 @@ impl UpdateOriginEndpointFluentBuilder {
         self
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    pub fn set_origination(
-        mut self,
-        input: std::option::Option<crate::types::Origination>,
-    ) -> Self {
+    pub fn set_origination(mut self, input: std::option::Option<crate::types::Origination>) -> Self {
         self.inner = self.inner.set_origination(input);
         self
     }
@@ -204,11 +167,9 @@ impl UpdateOriginEndpointFluentBuilder {
         self
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn set_whitelist(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
+    pub fn set_whitelist(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
         self.inner = self.inner.set_whitelist(input);
         self
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeSource {
+pub struct CodeSource  {
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
     #[doc(hidden)]
     pub s3: std::option::Option<crate::types::S3Location>,
 }
 impl CodeSource {
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3(&self) -> std::option::Option<& crate::types::S3Location> {
         self.s3.as_ref()
     }
 }
@@ -35,11 +35,14 @@ impl CodeSourceBuilder {
     }
     /// <p>Information about the Amazon S3 location where the source code files provided with the project request are stored. </p>
     pub fn set_s3(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3 = input;
-        self
+        self.s3 = input; self
     }
     /// Consumes the builder and constructs a [`CodeSource`](crate::types::CodeSource).
     pub fn build(self) -> crate::types::CodeSource {
-        crate::types::CodeSource { s3: self.s3 }
+        crate::types::CodeSource {
+            s3: self.s3
+            ,
+        }
     }
 }
+

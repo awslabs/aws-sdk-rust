@@ -3,7 +3,7 @@
 /// <p>Contains metadata related to a message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageMetadata {
+pub struct MessageMetadata  {
     /// <p>The identifier of the message that contains the metadata information. </p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MessageMetadata {
 }
 impl MessageMetadata {
     /// <p>The identifier of the message that contains the metadata information. </p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The list of receipt information for a message for different recipients.</p>
-    pub fn receipts(&self) -> std::option::Option<&[crate::types::Receipt]> {
+    pub fn receipts(&self) -> std::option::Option<& [crate::types::Receipt]> {
         self.receipts.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl MessageMetadataBuilder {
     }
     /// <p>The identifier of the message that contains the metadata information. </p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input;
-        self
+        self.message_id = input; self
     }
     /// Appends an item to `receipts`.
     ///
@@ -53,23 +52,22 @@ impl MessageMetadataBuilder {
     /// <p>The list of receipt information for a message for different recipients.</p>
     pub fn receipts(mut self, input: crate::types::Receipt) -> Self {
         let mut v = self.receipts.unwrap_or_default();
-        v.push(input);
-        self.receipts = Some(v);
-        self
+                        v.push(input);
+                        self.receipts = Some(v);
+                        self
     }
     /// <p>The list of receipt information for a message for different recipients.</p>
-    pub fn set_receipts(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Receipt>>,
-    ) -> Self {
-        self.receipts = input;
-        self
+    pub fn set_receipts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Receipt>>) -> Self {
+        self.receipts = input; self
     }
     /// Consumes the builder and constructs a [`MessageMetadata`](crate::types::MessageMetadata).
     pub fn build(self) -> crate::types::MessageMetadata {
         crate::types::MessageMetadata {
-            message_id: self.message_id,
-            receipts: self.receipts,
+            message_id: self.message_id
+            ,
+            receipts: self.receipts
+            ,
         }
     }
 }
+

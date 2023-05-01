@@ -3,7 +3,7 @@
 /// <p>Describes the public access policies that apply to the S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublicAccess {
+pub struct PublicAccess  {
     /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
     #[doc(hidden)]
     pub permission_configuration: std::option::Option<crate::types::PermissionConfiguration>,
@@ -13,13 +13,11 @@ pub struct PublicAccess {
 }
 impl PublicAccess {
     /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
-    pub fn permission_configuration(
-        &self,
-    ) -> std::option::Option<&crate::types::PermissionConfiguration> {
+    pub fn permission_configuration(&self) -> std::option::Option<& crate::types::PermissionConfiguration> {
         self.permission_configuration.as_ref()
     }
     /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
-    pub fn effective_permission(&self) -> std::option::Option<&str> {
+    pub fn effective_permission(&self) -> std::option::Option<& str> {
         self.effective_permission.as_deref()
     }
 }
@@ -39,20 +37,13 @@ pub struct PublicAccessBuilder {
 }
 impl PublicAccessBuilder {
     /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
-    pub fn permission_configuration(
-        mut self,
-        input: crate::types::PermissionConfiguration,
-    ) -> Self {
+    pub fn permission_configuration(mut self, input: crate::types::PermissionConfiguration) -> Self {
         self.permission_configuration = Some(input);
         self
     }
     /// <p>Contains information about how permissions are configured for the S3 bucket.</p>
-    pub fn set_permission_configuration(
-        mut self,
-        input: std::option::Option<crate::types::PermissionConfiguration>,
-    ) -> Self {
-        self.permission_configuration = input;
-        self
+    pub fn set_permission_configuration(mut self, input: std::option::Option<crate::types::PermissionConfiguration>) -> Self {
+        self.permission_configuration = input; self
     }
     /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
     pub fn effective_permission(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,18 +51,17 @@ impl PublicAccessBuilder {
         self
     }
     /// <p>Describes the effective permission on this bucket after factoring all attached policies.</p>
-    pub fn set_effective_permission(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.effective_permission = input;
-        self
+    pub fn set_effective_permission(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.effective_permission = input; self
     }
     /// Consumes the builder and constructs a [`PublicAccess`](crate::types::PublicAccess).
     pub fn build(self) -> crate::types::PublicAccess {
         crate::types::PublicAccess {
-            permission_configuration: self.permission_configuration,
-            effective_permission: self.effective_permission,
+            permission_configuration: self.permission_configuration
+            ,
+            effective_permission: self.effective_permission
+            ,
         }
     }
 }
+

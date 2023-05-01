@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domaincontrollerstatus = unimplemented!();
 /// match domaincontrollerstatus {
@@ -35,22 +35,14 @@
 /// Specifically, when `domaincontrollerstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainControllerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainControllerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -67,60 +59,51 @@ pub enum DomainControllerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Restoring,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainControllerStatus {
-    fn from(s: &str) -> Self {
-        match s {
-            "Active" => DomainControllerStatus::Active,
-            "Creating" => DomainControllerStatus::Creating,
-            "Deleted" => DomainControllerStatus::Deleted,
-            "Deleting" => DomainControllerStatus::Deleting,
-            "Failed" => DomainControllerStatus::Failed,
-            "Impaired" => DomainControllerStatus::Impaired,
-            "Restoring" => DomainControllerStatus::Restoring,
-            other => DomainControllerStatus::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Active" => DomainControllerStatus::Active,
+"Creating" => DomainControllerStatus::Creating,
+"Deleted" => DomainControllerStatus::Deleted,
+"Deleting" => DomainControllerStatus::Deleting,
+"Failed" => DomainControllerStatus::Failed,
+"Impaired" => DomainControllerStatus::Impaired,
+"Restoring" => DomainControllerStatus::Restoring,
+other => DomainControllerStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
+            }
 impl std::str::FromStr for DomainControllerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainControllerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainControllerStatus::from(s))
+                }
+            }
 impl DomainControllerStatus {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            DomainControllerStatus::Active => "Active",
-            DomainControllerStatus::Creating => "Creating",
-            DomainControllerStatus::Deleted => "Deleted",
-            DomainControllerStatus::Deleting => "Deleting",
-            DomainControllerStatus::Failed => "Failed",
-            DomainControllerStatus::Impaired => "Impaired",
-            DomainControllerStatus::Restoring => "Restoring",
-            DomainControllerStatus::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Active",
-            "Creating",
-            "Deleted",
-            "Deleting",
-            "Failed",
-            "Impaired",
-            "Restoring",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    DomainControllerStatus::Active => "Active",
+    DomainControllerStatus::Creating => "Creating",
+    DomainControllerStatus::Deleted => "Deleted",
+    DomainControllerStatus::Deleting => "Deleting",
+    DomainControllerStatus::Failed => "Failed",
+    DomainControllerStatus::Impaired => "Impaired",
+    DomainControllerStatus::Restoring => "Restoring",
+    DomainControllerStatus::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Active", "Creating", "Deleted", "Deleting", "Failed", "Impaired", "Restoring"]
+                }
+            }
 impl AsRef<str> for DomainControllerStatus {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

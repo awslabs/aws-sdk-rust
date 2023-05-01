@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReceivedLicensesOutput {
+pub struct ListReceivedLicensesOutput  {
     /// <p>Received license details.</p>
     #[doc(hidden)]
     pub licenses: std::option::Option<std::vec::Vec<crate::types::GrantedLicense>>,
@@ -13,23 +13,22 @@ pub struct ListReceivedLicensesOutput {
 }
 impl ListReceivedLicensesOutput {
     /// <p>Received license details.</p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::types::GrantedLicense]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::types::GrantedLicense]> {
         self.licenses.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReceivedLicensesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListReceivedLicensesOutput {
     /// Creates a new builder-style object to manufacture [`ListReceivedLicensesOutput`](crate::operation::list_received_licenses::ListReceivedLicensesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_received_licenses::builders::ListReceivedLicensesOutputBuilder {
+    pub fn builder() -> crate::operation::list_received_licenses::builders::ListReceivedLicensesOutputBuilder {
         crate::operation::list_received_licenses::builders::ListReceivedLicensesOutputBuilder::default()
     }
 }
@@ -50,17 +49,13 @@ impl ListReceivedLicensesOutputBuilder {
     /// <p>Received license details.</p>
     pub fn licenses(mut self, input: crate::types::GrantedLicense) -> Self {
         let mut v = self.licenses.unwrap_or_default();
-        v.push(input);
-        self.licenses = Some(v);
-        self
+                        v.push(input);
+                        self.licenses = Some(v);
+                        self
     }
     /// <p>Received license details.</p>
-    pub fn set_licenses(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GrantedLicense>>,
-    ) -> Self {
-        self.licenses = input;
-        self
+    pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::types::GrantedLicense>>) -> Self {
+        self.licenses = input; self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,24 +64,26 @@ impl ListReceivedLicensesOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListReceivedLicensesOutput`](crate::operation::list_received_licenses::ListReceivedLicensesOutput).
     pub fn build(self) -> crate::operation::list_received_licenses::ListReceivedLicensesOutput {
         crate::operation::list_received_licenses::ListReceivedLicensesOutput {
-            licenses: self.licenses,
-            next_token: self.next_token,
+            licenses: self.licenses
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

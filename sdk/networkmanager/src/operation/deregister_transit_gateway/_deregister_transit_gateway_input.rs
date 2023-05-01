@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTransitGatewayInput {
+pub struct DeregisterTransitGatewayInput  {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -12,19 +12,17 @@ pub struct DeregisterTransitGatewayInput {
 }
 impl DeregisterTransitGatewayInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> std::option::Option<& str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn transit_gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_arn(&self) -> std::option::Option<& str> {
         self.transit_gateway_arn.as_deref()
     }
 }
 impl DeregisterTransitGatewayInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayInput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput).
-    pub fn builder(
-    ) -> crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder
-    {
+    pub fn builder() -> crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder {
         crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder::default()
     }
 }
@@ -43,12 +41,8 @@ impl DeregisterTransitGatewayInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.global_network_id = input;
-        self
+    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.global_network_id = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
     pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,25 +50,19 @@ impl DeregisterTransitGatewayInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-    pub fn set_transit_gateway_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.transit_gateway_arn = input;
-        self
+    pub fn set_transit_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.transit_gateway_arn = input; self
     }
     /// Consumes the builder and constructs a [`DeregisterTransitGatewayInput`](crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::deregister_transit_gateway::DeregisterTransitGatewayInput {
-                global_network_id: self.global_network_id,
-                transit_gateway_arn: self.transit_gateway_arn,
-            },
+                global_network_id: self.global_network_id
+                ,
+                transit_gateway_arn: self.transit_gateway_arn
+                ,
+            }
         )
     }
 }
+

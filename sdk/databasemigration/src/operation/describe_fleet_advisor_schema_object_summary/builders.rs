@@ -4,86 +4,74 @@ pub use crate::operation::describe_fleet_advisor_schema_object_summary::_describ
 pub use crate::operation::describe_fleet_advisor_schema_object_summary::_describe_fleet_advisor_schema_object_summary_input::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeFleetAdvisorSchemaObjectSummary`.
-///
+/// 
 /// <p>Provides descriptions of the schemas discovered by your Fleet Advisor collectors.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder
             }
-impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
+impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder  {
     /// Creates a new `DescribeFleetAdvisorSchemaObjectSummary`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummary, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput, aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator{
-        crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::new(self.handle, self.inner)
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator {
+                            crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::new(self.handle, self.inner)
+                        }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
-    /// <ul>
-    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
-    /// </ul>
+    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p> 
+    /// <ul> 
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p>
-    /// <ul>
-    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
-    /// </ul>
+    /// <p> If you specify any of the following filters, the output includes information for only those schema objects that meet the filter criteria:</p> 
+    /// <ul> 
+    /// <li> <p> <code>schema-id</code> – The ID of the schema, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> 
+    /// </ul> 
     /// <p>Example: <code>describe-fleet-advisor-schema-object-summary --filter Name="schema-id",Values="50"</code> </p>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -108,3 +96,4 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
         self
     }
 }
+

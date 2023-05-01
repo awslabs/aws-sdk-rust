@@ -3,21 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationInput {
+pub struct DescribeApplicationInput  {
     /// <p>Name of the application.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
 }
 impl DescribeApplicationInput {
     /// <p>Name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> std::option::Option<& str> {
         self.application_name.as_deref()
     }
 }
 impl DescribeApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn builder(
-    ) -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
+    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
         crate::operation::describe_application::builders::DescribeApplicationInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl DescribeApplicationInputBuilder {
     }
     /// <p>Name of the application.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input;
-        self
+        self.application_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_application::DescribeApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_application::DescribeApplicationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_application::DescribeApplicationInput {
-                application_name: self.application_name,
-            },
+                application_name: self.application_name
+                ,
+            }
         )
     }
 }
+

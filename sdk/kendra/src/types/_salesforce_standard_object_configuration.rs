@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for indexing a single standard object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SalesforceStandardObjectConfiguration {
+pub struct SalesforceStandardObjectConfiguration  {
     /// <p>The name of the standard object.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::SalesforceStandardObjectName>,
@@ -15,26 +15,23 @@ pub struct SalesforceStandardObjectConfiguration {
     pub document_title_field_name: std::option::Option<std::string::String>,
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
     #[doc(hidden)]
-    pub field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub field_mappings: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SalesforceStandardObjectConfiguration {
     /// <p>The name of the standard object.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::SalesforceStandardObjectName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::SalesforceStandardObjectName> {
         self.name.as_ref()
     }
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
-    pub fn document_data_field_name(&self) -> std::option::Option<&str> {
+    pub fn document_data_field_name(&self) -> std::option::Option<& str> {
         self.document_data_field_name.as_deref()
     }
     /// <p>The name of the field in the standard object table that contains the document title.</p>
-    pub fn document_title_field_name(&self) -> std::option::Option<&str> {
+    pub fn document_title_field_name(&self) -> std::option::Option<& str> {
         self.document_title_field_name.as_deref()
     }
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    pub fn field_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
+    pub fn field_mappings(&self) -> std::option::Option<& [crate::types::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
     }
 }
@@ -52,8 +49,7 @@ pub struct SalesforceStandardObjectConfigurationBuilder {
     pub(crate) name: std::option::Option<crate::types::SalesforceStandardObjectName>,
     pub(crate) document_data_field_name: std::option::Option<std::string::String>,
     pub(crate) document_title_field_name: std::option::Option<std::string::String>,
-    pub(crate) field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+    pub(crate) field_mappings: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl SalesforceStandardObjectConfigurationBuilder {
     /// <p>The name of the standard object.</p>
@@ -62,12 +58,8 @@ impl SalesforceStandardObjectConfigurationBuilder {
         self
     }
     /// <p>The name of the standard object.</p>
-    pub fn set_name(
-        mut self,
-        input: std::option::Option<crate::types::SalesforceStandardObjectName>,
-    ) -> Self {
-        self.name = input;
-        self
+    pub fn set_name(mut self, input: std::option::Option<crate::types::SalesforceStandardObjectName>) -> Self {
+        self.name = input; self
     }
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
     pub fn document_data_field_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,12 +67,8 @@ impl SalesforceStandardObjectConfigurationBuilder {
         self
     }
     /// <p>The name of the field in the standard object table that contains the document contents.</p>
-    pub fn set_document_data_field_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.document_data_field_name = input;
-        self
+    pub fn set_document_data_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.document_data_field_name = input; self
     }
     /// <p>The name of the field in the standard object table that contains the document title.</p>
     pub fn document_title_field_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,12 +76,8 @@ impl SalesforceStandardObjectConfigurationBuilder {
         self
     }
     /// <p>The name of the field in the standard object table that contains the document title.</p>
-    pub fn set_document_title_field_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.document_title_field_name = input;
-        self
+    pub fn set_document_title_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.document_title_field_name = input; self
     }
     /// Appends an item to `field_mappings`.
     ///
@@ -102,25 +86,26 @@ impl SalesforceStandardObjectConfigurationBuilder {
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
-        v.push(input);
-        self.field_mappings = Some(v);
-        self
+                        v.push(input);
+                        self.field_mappings = Some(v);
+                        self
     }
     /// <p>Maps attributes or field names of the standard object to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Salesforce data source field names must exist in your Salesforce custom metadata.</p>
-    pub fn set_field_mappings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
-    ) -> Self {
-        self.field_mappings = input;
-        self
+    pub fn set_field_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>) -> Self {
+        self.field_mappings = input; self
     }
     /// Consumes the builder and constructs a [`SalesforceStandardObjectConfiguration`](crate::types::SalesforceStandardObjectConfiguration).
     pub fn build(self) -> crate::types::SalesforceStandardObjectConfiguration {
         crate::types::SalesforceStandardObjectConfiguration {
-            name: self.name,
-            document_data_field_name: self.document_data_field_name,
-            document_title_field_name: self.document_title_field_name,
-            field_mappings: self.field_mappings,
+            name: self.name
+            ,
+            document_data_field_name: self.document_data_field_name
+            ,
+            document_title_field_name: self.document_title_field_name
+            ,
+            field_mappings: self.field_mappings
+            ,
         }
     }
 }
+

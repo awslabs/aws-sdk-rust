@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
+pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput  {
     /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct AssociatePhoneNumbersWithVoiceConnectorGroupInput {
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
-    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_group_id(&self) -> std::option::Option<& str> {
         self.voice_connector_group_id.as_deref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn e164_phone_numbers(&self) -> std::option::Option<& [std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
@@ -29,7 +29,7 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
 }
 impl AssociatePhoneNumbersWithVoiceConnectorGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociatePhoneNumbersWithVoiceConnectorGroupInput`](crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupInput).
-    pub fn builder() -> crate::operation::associate_phone_numbers_with_voice_connector_group::builders::AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder{
+    pub fn builder() -> crate::operation::associate_phone_numbers_with_voice_connector_group::builders::AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
         crate::operation::associate_phone_numbers_with_voice_connector_group::builders::AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder::default()
     }
 }
@@ -49,12 +49,8 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
         self
     }
     /// <p>The Amazon Chime SDK Voice Connector group ID.</p>
-    pub fn set_voice_connector_group_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.voice_connector_group_id = input;
-        self
+    pub fn set_voice_connector_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.voice_connector_group_id = input; self
     }
     /// Appends an item to `e164_phone_numbers`.
     ///
@@ -63,17 +59,13 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-        v.push(input.into());
-        self.e164_phone_numbers = Some(v);
-        self
+                        v.push(input.into());
+                        self.e164_phone_numbers = Some(v);
+                        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.e164_phone_numbers = input;
-        self
+    pub fn set_e164_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.e164_phone_numbers = input; self
     }
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn force_associate(mut self, input: bool) -> Self {
@@ -82,11 +74,10 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
     }
     /// <p>If true, associates the provided phone numbers with the provided Amazon Chime SDK Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
     pub fn set_force_associate(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_associate = input;
-        self
+        self.force_associate = input; self
     }
     /// Consumes the builder and constructs a [`AssociatePhoneNumbersWithVoiceConnectorGroupInput`](crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupInput).
-    pub fn build(self) -> Result<crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::associate_phone_numbers_with_voice_connector_group::AssociatePhoneNumbersWithVoiceConnectorGroupInput {
                 voice_connector_group_id: self.voice_connector_group_id
@@ -99,3 +90,4 @@ impl AssociatePhoneNumbersWithVoiceConnectorGroupInputBuilder {
         )
     }
 }
+

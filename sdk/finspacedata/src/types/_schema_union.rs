@@ -3,14 +3,14 @@
 /// <p>A union of schema types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaUnion {
+pub struct SchemaUnion  {
     /// <p>The configuration for a schema on a tabular Dataset.</p>
     #[doc(hidden)]
     pub tabular_schema_config: std::option::Option<crate::types::SchemaDefinition>,
 }
 impl SchemaUnion {
     /// <p>The configuration for a schema on a tabular Dataset.</p>
-    pub fn tabular_schema_config(&self) -> std::option::Option<&crate::types::SchemaDefinition> {
+    pub fn tabular_schema_config(&self) -> std::option::Option<& crate::types::SchemaDefinition> {
         self.tabular_schema_config.as_ref()
     }
 }
@@ -34,17 +34,15 @@ impl SchemaUnionBuilder {
         self
     }
     /// <p>The configuration for a schema on a tabular Dataset.</p>
-    pub fn set_tabular_schema_config(
-        mut self,
-        input: std::option::Option<crate::types::SchemaDefinition>,
-    ) -> Self {
-        self.tabular_schema_config = input;
-        self
+    pub fn set_tabular_schema_config(mut self, input: std::option::Option<crate::types::SchemaDefinition>) -> Self {
+        self.tabular_schema_config = input; self
     }
     /// Consumes the builder and constructs a [`SchemaUnion`](crate::types::SchemaUnion).
     pub fn build(self) -> crate::types::SchemaUnion {
         crate::types::SchemaUnion {
-            tabular_schema_config: self.tabular_schema_config,
+            tabular_schema_config: self.tabular_schema_config
+            ,
         }
     }
 }
+

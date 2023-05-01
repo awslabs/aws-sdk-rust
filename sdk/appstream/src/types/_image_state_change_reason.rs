@@ -3,7 +3,7 @@
 /// <p>Describes the reason why the last image state change occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageStateChangeReason {
+pub struct ImageStateChangeReason  {
     /// <p>The state change reason code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::ImageStateChangeReasonCode>,
@@ -13,11 +13,11 @@ pub struct ImageStateChangeReason {
 }
 impl ImageStateChangeReason {
     /// <p>The state change reason code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::ImageStateChangeReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::types::ImageStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>The state change reason message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl ImageStateChangeReasonBuilder {
         self
     }
     /// <p>The state change reason code.</p>
-    pub fn set_code(
-        mut self,
-        input: std::option::Option<crate::types::ImageStateChangeReasonCode>,
-    ) -> Self {
-        self.code = input;
-        self
+    pub fn set_code(mut self, input: std::option::Option<crate::types::ImageStateChangeReasonCode>) -> Self {
+        self.code = input; self
     }
     /// <p>The state change reason message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,14 +52,16 @@ impl ImageStateChangeReasonBuilder {
     }
     /// <p>The state change reason message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// Consumes the builder and constructs a [`ImageStateChangeReason`](crate::types::ImageStateChangeReason).
     pub fn build(self) -> crate::types::ImageStateChangeReason {
         crate::types::ImageStateChangeReason {
-            code: self.code,
-            message: self.message,
+            code: self.code
+            ,
+            message: self.message
+            ,
         }
     }
 }
+

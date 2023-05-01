@@ -2,15 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasourcePackagesOutput {
+pub struct ListDatasourcePackagesOutput  {
     /// <p>Details on the data source packages active in the behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_packages: std::option::Option<
-        std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    >,
+    pub datasource_packages: std::option::Option<std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,31 +13,22 @@ pub struct ListDatasourcePackagesOutput {
 }
 impl ListDatasourcePackagesOutput {
     /// <p>Details on the data source packages active in the behavior graph.</p>
-    pub fn datasource_packages(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    > {
+    pub fn datasource_packages(&self) -> std::option::Option<& std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>> {
         self.datasource_packages.as_ref()
     }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDatasourcePackagesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListDatasourcePackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::list_datasource_packages::builders::ListDatasourcePackagesOutputBuilder {
         crate::operation::list_datasource_packages::builders::ListDatasourcePackagesOutputBuilder::default()
     }
 }
@@ -51,12 +37,7 @@ impl ListDatasourcePackagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasourcePackagesOutputBuilder {
-    pub(crate) datasource_packages: std::option::Option<
-        std::collections::HashMap<
-            crate::types::DatasourcePackage,
-            crate::types::DatasourcePackageIngestDetail,
-        >,
-    >,
+    pub(crate) datasource_packages: std::option::Option<std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -66,28 +47,15 @@ impl ListDatasourcePackagesOutputBuilder {
     /// To override the contents of this collection use [`set_datasource_packages`](Self::set_datasource_packages).
     ///
     /// <p>Details on the data source packages active in the behavior graph.</p>
-    pub fn datasource_packages(
-        mut self,
-        k: crate::types::DatasourcePackage,
-        v: crate::types::DatasourcePackageIngestDetail,
-    ) -> Self {
+    pub fn datasource_packages(mut self, k: crate::types::DatasourcePackage, v: crate::types::DatasourcePackageIngestDetail) -> Self {
         let mut hash_map = self.datasource_packages.unwrap_or_default();
-        hash_map.insert(k, v);
-        self.datasource_packages = Some(hash_map);
-        self
+                        hash_map.insert(k, v);
+                        self.datasource_packages = Some(hash_map);
+                        self
     }
     /// <p>Details on the data source packages active in the behavior graph.</p>
-    pub fn set_datasource_packages(
-        mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                crate::types::DatasourcePackage,
-                crate::types::DatasourcePackageIngestDetail,
-            >,
-        >,
-    ) -> Self {
-        self.datasource_packages = input;
-        self
+    pub fn set_datasource_packages(mut self, input: std::option::Option<std::collections::HashMap<crate::types::DatasourcePackage, crate::types::DatasourcePackageIngestDetail>>) -> Self {
+        self.datasource_packages = input; self
     }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,24 +64,26 @@ impl ListDatasourcePackagesOutputBuilder {
     }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListDatasourcePackagesOutput`](crate::operation::list_datasource_packages::ListDatasourcePackagesOutput).
     pub fn build(self) -> crate::operation::list_datasource_packages::ListDatasourcePackagesOutput {
         crate::operation::list_datasource_packages::ListDatasourcePackagesOutput {
-            datasource_packages: self.datasource_packages,
-            next_token: self.next_token,
+            datasource_packages: self.datasource_packages
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

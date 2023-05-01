@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOriginEndpointsOutput {
+pub struct ListOriginEndpointsOutput  {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,25 +13,23 @@ pub struct ListOriginEndpointsOutput {
 }
 impl ListOriginEndpointsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of OriginEndpoint records.
-    pub fn origin_endpoints(&self) -> std::option::Option<&[crate::types::OriginEndpoint]> {
+    pub fn origin_endpoints(&self) -> std::option::Option<& [crate::types::OriginEndpoint]> {
         self.origin_endpoints.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListOriginEndpointsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListOriginEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput).
-    pub fn builder(
-    ) -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder {
-        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder::default(
-        )
+    pub fn builder() -> crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder {
+        crate::operation::list_origin_endpoints::builders::ListOriginEndpointsOutputBuilder::default()
     }
 }
 
@@ -51,8 +49,7 @@ impl ListOriginEndpointsOutputBuilder {
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Appends an item to `origin_endpoints`.
     ///
@@ -61,33 +58,32 @@ impl ListOriginEndpointsOutputBuilder {
     /// A list of OriginEndpoint records.
     pub fn origin_endpoints(mut self, input: crate::types::OriginEndpoint) -> Self {
         let mut v = self.origin_endpoints.unwrap_or_default();
-        v.push(input);
-        self.origin_endpoints = Some(v);
-        self
+                        v.push(input);
+                        self.origin_endpoints = Some(v);
+                        self
     }
     /// A list of OriginEndpoint records.
-    pub fn set_origin_endpoints(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OriginEndpoint>>,
-    ) -> Self {
-        self.origin_endpoints = input;
-        self
+    pub fn set_origin_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::OriginEndpoint>>) -> Self {
+        self.origin_endpoints = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListOriginEndpointsOutput`](crate::operation::list_origin_endpoints::ListOriginEndpointsOutput).
     pub fn build(self) -> crate::operation::list_origin_endpoints::ListOriginEndpointsOutput {
         crate::operation::list_origin_endpoints::ListOriginEndpointsOutput {
-            next_token: self.next_token,
-            origin_endpoints: self.origin_endpoints,
+            next_token: self.next_token
+            ,
+            origin_endpoints: self.origin_endpoints
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

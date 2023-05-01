@@ -3,7 +3,7 @@
 /// <p>Provides information about all the versions of a specific message template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateVersionsResponse {
+pub struct TemplateVersionsResponse  {
     /// <p>An array of responses, one for each version of the message template.</p>
     #[doc(hidden)]
     pub item: std::option::Option<std::vec::Vec<crate::types::TemplateVersionResponse>>,
@@ -19,19 +19,19 @@ pub struct TemplateVersionsResponse {
 }
 impl TemplateVersionsResponse {
     /// <p>An array of responses, one for each version of the message template.</p>
-    pub fn item(&self) -> std::option::Option<&[crate::types::TemplateVersionResponse]> {
+    pub fn item(&self) -> std::option::Option<& [crate::types::TemplateVersionResponse]> {
         self.item.as_deref()
     }
     /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> std::option::Option<& str> {
         self.request_id.as_deref()
     }
 }
@@ -59,17 +59,13 @@ impl TemplateVersionsResponseBuilder {
     /// <p>An array of responses, one for each version of the message template.</p>
     pub fn item(mut self, input: crate::types::TemplateVersionResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
-        v.push(input);
-        self.item = Some(v);
-        self
+                        v.push(input);
+                        self.item = Some(v);
+                        self
     }
     /// <p>An array of responses, one for each version of the message template.</p>
-    pub fn set_item(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TemplateVersionResponse>>,
-    ) -> Self {
-        self.item = input;
-        self
+    pub fn set_item(mut self, input: std::option::Option<std::vec::Vec<crate::types::TemplateVersionResponse>>) -> Self {
+        self.item = input; self
     }
     /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +74,7 @@ impl TemplateVersionsResponseBuilder {
     }
     /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input;
-        self
+        self.message = input; self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +83,7 @@ impl TemplateVersionsResponseBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,16 +92,20 @@ impl TemplateVersionsResponseBuilder {
     }
     /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input;
-        self
+        self.request_id = input; self
     }
     /// Consumes the builder and constructs a [`TemplateVersionsResponse`](crate::types::TemplateVersionsResponse).
     pub fn build(self) -> crate::types::TemplateVersionsResponse {
         crate::types::TemplateVersionsResponse {
-            item: self.item,
-            message: self.message,
-            next_token: self.next_token,
-            request_id: self.request_id,
+            item: self.item
+            ,
+            message: self.message
+            ,
+            next_token: self.next_token
+            ,
+            request_id: self.request_id
+            ,
         }
     }
 }
+

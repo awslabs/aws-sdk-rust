@@ -3,14 +3,14 @@
 /// <p>Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskSchedule {
+pub struct TaskSchedule  {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
     #[doc(hidden)]
     pub schedule_expression: std::option::Option<std::string::String>,
 }
 impl TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
-    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> std::option::Option<& str> {
         self.schedule_expression.as_deref()
     }
 }
@@ -34,17 +34,15 @@ impl TaskScheduleBuilder {
         self
     }
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
-    pub fn set_schedule_expression(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.schedule_expression = input;
-        self
+    pub fn set_schedule_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.schedule_expression = input; self
     }
     /// Consumes the builder and constructs a [`TaskSchedule`](crate::types::TaskSchedule).
     pub fn build(self) -> crate::types::TaskSchedule {
         crate::types::TaskSchedule {
-            schedule_expression: self.schedule_expression,
+            schedule_expression: self.schedule_expression
+            ,
         }
     }
 }
+

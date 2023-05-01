@@ -3,7 +3,7 @@
 /// <p>Specifies the direct JDBC source connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectJdbcSource {
+pub struct DirectJdbcSource  {
     /// <p>The name of the JDBC source connection.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct DirectJdbcSource {
 }
 impl DirectJdbcSource {
     /// <p>The name of the JDBC source connection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The database of the JDBC source connection.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The table of the JDBC source connection.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> std::option::Option<& str> {
         self.table.as_deref()
     }
     /// <p>The connection name of the JDBC source.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> std::option::Option<& str> {
         self.connection_name.as_deref()
     }
     /// <p>The connection type of the JDBC source.</p>
-    pub fn connection_type(&self) -> std::option::Option<&crate::types::JdbcConnectionType> {
+    pub fn connection_type(&self) -> std::option::Option<& crate::types::JdbcConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>The temp directory of the JDBC Redshift source.</p>
-    pub fn redshift_tmp_dir(&self) -> std::option::Option<&str> {
+    pub fn redshift_tmp_dir(&self) -> std::option::Option<& str> {
         self.redshift_tmp_dir.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl DirectJdbcSourceBuilder {
     }
     /// <p>The name of the JDBC source connection.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The database of the JDBC source connection.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,8 +84,7 @@ impl DirectJdbcSourceBuilder {
     }
     /// <p>The database of the JDBC source connection.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input;
-        self
+        self.database = input; self
     }
     /// <p>The table of the JDBC source connection.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +93,7 @@ impl DirectJdbcSourceBuilder {
     }
     /// <p>The table of the JDBC source connection.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input;
-        self
+        self.table = input; self
     }
     /// <p>The connection name of the JDBC source.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +102,7 @@ impl DirectJdbcSourceBuilder {
     }
     /// <p>The connection name of the JDBC source.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input;
-        self
+        self.connection_name = input; self
     }
     /// <p>The connection type of the JDBC source.</p>
     pub fn connection_type(mut self, input: crate::types::JdbcConnectionType) -> Self {
@@ -114,12 +110,8 @@ impl DirectJdbcSourceBuilder {
         self
     }
     /// <p>The connection type of the JDBC source.</p>
-    pub fn set_connection_type(
-        mut self,
-        input: std::option::Option<crate::types::JdbcConnectionType>,
-    ) -> Self {
-        self.connection_type = input;
-        self
+    pub fn set_connection_type(mut self, input: std::option::Option<crate::types::JdbcConnectionType>) -> Self {
+        self.connection_type = input; self
     }
     /// <p>The temp directory of the JDBC Redshift source.</p>
     pub fn redshift_tmp_dir(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,18 +120,24 @@ impl DirectJdbcSourceBuilder {
     }
     /// <p>The temp directory of the JDBC Redshift source.</p>
     pub fn set_redshift_tmp_dir(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.redshift_tmp_dir = input;
-        self
+        self.redshift_tmp_dir = input; self
     }
     /// Consumes the builder and constructs a [`DirectJdbcSource`](crate::types::DirectJdbcSource).
     pub fn build(self) -> crate::types::DirectJdbcSource {
         crate::types::DirectJdbcSource {
-            name: self.name,
-            database: self.database,
-            table: self.table,
-            connection_name: self.connection_name,
-            connection_type: self.connection_type,
-            redshift_tmp_dir: self.redshift_tmp_dir,
+            name: self.name
+            ,
+            database: self.database
+            ,
+            table: self.table
+            ,
+            connection_name: self.connection_name
+            ,
+            connection_type: self.connection_type
+            ,
+            redshift_tmp_dir: self.redshift_tmp_dir
+            ,
         }
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationVpcConfigurationOutput {
+pub struct DeleteApplicationVpcConfigurationOutput  {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DeleteApplicationVpcConfigurationOutput {
 }
 impl DeleteApplicationVpcConfigurationOutput {
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
     /// <p>The updated version ID of the application.</p>
@@ -22,13 +22,13 @@ impl DeleteApplicationVpcConfigurationOutput {
     }
 }
 impl aws_http::request_id::RequestId for DeleteApplicationVpcConfigurationOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteApplicationVpcConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVpcConfigurationOutput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationOutputBuilder{
+    pub fn builder() -> crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationOutputBuilder {
         crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationOutputBuilder::default()
     }
 }
@@ -49,8 +49,7 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
     }
     /// <p>The ARN of the Kinesis Data Analytics application.</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input;
-        self
+        self.application_arn = input; self
     }
     /// <p>The updated version ID of the application.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
@@ -59,20 +58,19 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
     }
     /// <p>The updated version ID of the application.</p>
     pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.application_version_id = input;
-        self
+        self.application_version_id = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteApplicationVpcConfigurationOutput`](crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput).
-    pub fn build(self) -> crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput{
+    pub fn build(self) -> crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput {
         crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput {
             application_arn: self.application_arn
             ,
@@ -82,3 +80,4 @@ impl DeleteApplicationVpcConfigurationOutputBuilder {
         }
     }
 }
+

@@ -2,25 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKeyPairInput {
+pub struct DeleteKeyPairInput  {
     /// <p>The name of the key pair to delete.</p>
     #[doc(hidden)]
     pub key_pair_name: std::option::Option<std::string::String>,
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
-    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note> 
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p> 
     /// </note>
     #[doc(hidden)]
     pub expected_fingerprint: std::option::Option<std::string::String>,
 }
 impl DeleteKeyPairInput {
     /// <p>The name of the key pair to delete.</p>
-    pub fn key_pair_name(&self) -> std::option::Option<&str> {
+    pub fn key_pair_name(&self) -> std::option::Option<& str> {
         self.key_pair_name.as_deref()
     }
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
-    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note> 
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p> 
     /// </note>
-    pub fn expected_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn expected_fingerprint(&self) -> std::option::Option<& str> {
         self.expected_fingerprint.as_deref()
     }
 }
@@ -46,36 +46,31 @@ impl DeleteKeyPairInputBuilder {
     }
     /// <p>The name of the key pair to delete.</p>
     pub fn set_key_pair_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_pair_name = input;
-        self
+        self.key_pair_name = input; self
     }
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
-    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note> 
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p> 
     /// </note>
     pub fn expected_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
         self.expected_fingerprint = Some(input.into());
         self
     }
-    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note>
-    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p>
+    /// <p>The RSA fingerprint of the Lightsail default key pair to delete.</p> <note> 
+    /// <p>The <code>expectedFingerprint</code> parameter is required only when specifying to delete a Lightsail default key pair.</p> 
     /// </note>
-    pub fn set_expected_fingerprint(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.expected_fingerprint = input;
-        self
+    pub fn set_expected_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.expected_fingerprint = input; self
     }
     /// Consumes the builder and constructs a [`DeleteKeyPairInput`](crate::operation::delete_key_pair::DeleteKeyPairInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_key_pair::DeleteKeyPairInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_key_pair::DeleteKeyPairInput {
-            key_pair_name: self.key_pair_name,
-            expected_fingerprint: self.expected_fingerprint,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_key_pair::DeleteKeyPairInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_key_pair::DeleteKeyPairInput {
+                key_pair_name: self.key_pair_name
+                ,
+                expected_fingerprint: self.expected_fingerprint
+                ,
+            }
+        )
     }
 }
+

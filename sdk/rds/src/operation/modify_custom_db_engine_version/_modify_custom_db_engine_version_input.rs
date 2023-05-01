@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCustomDbEngineVersionInput {
+pub struct ModifyCustomDbEngineVersionInput  {
     /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -12,61 +12,61 @@ pub struct ModifyCustomDbEngineVersionInput {
     /// <p>An optional description of your CEV.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
-    /// <dl>
+    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p> 
+    /// <dl> 
     /// <dt>
     /// available
-    /// </dt>
-    /// <dd>
-    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p> 
+    /// </dd> 
     /// <dt>
     /// inactive
-    /// </dt>
-    /// <dd>
-    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::CustomEngineVersionStatus>,
 }
 impl ModifyCustomDbEngineVersionInput {
     /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>An optional description of your CEV.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
-    /// <dl>
+    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p> 
+    /// <dl> 
     /// <dt>
     /// available
-    /// </dt>
-    /// <dd>
-    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p> 
+    /// </dd> 
     /// <dt>
     /// inactive
-    /// </dt>
-    /// <dd>
-    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CustomEngineVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::CustomEngineVersionStatus> {
         self.status.as_ref()
     }
 }
 impl ModifyCustomDbEngineVersionInput {
     /// Creates a new builder-style object to manufacture [`ModifyCustomDbEngineVersionInput`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput).
-    pub fn builder() -> crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder{
+    pub fn builder() -> crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder {
         crate::operation::modify_custom_db_engine_version::builders::ModifyCustomDbEngineVersionInputBuilder::default()
     }
 }
@@ -88,8 +88,7 @@ impl ModifyCustomDbEngineVersionInputBuilder {
     }
     /// <p>The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input;
-        self
+        self.engine = input; self
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +97,7 @@ impl ModifyCustomDbEngineVersionInputBuilder {
     }
     /// <p>The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input;
-        self
+        self.engine_version = input; self
     }
     /// <p>An optional description of your CEV.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,66 +106,61 @@ impl ModifyCustomDbEngineVersionInputBuilder {
     }
     /// <p>An optional description of your CEV.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input;
-        self
+        self.description = input; self
     }
-    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
-    /// <dl>
+    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p> 
+    /// <dl> 
     /// <dt>
     /// available
-    /// </dt>
-    /// <dd>
-    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p> 
+    /// </dd> 
     /// <dt>
     /// inactive
-    /// </dt>
-    /// <dd>
-    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
     pub fn status(mut self, input: crate::types::CustomEngineVersionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
-    /// <dl>
+    /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p> 
+    /// <dl> 
     /// <dt>
     /// available
-    /// </dt>
-    /// <dd>
-    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can use this CEV to create a new RDS Custom DB instance.</p> 
+    /// </dd> 
     /// <dt>
     /// inactive
-    /// </dt>
-    /// <dd>
-    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::CustomEngineVersionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::CustomEngineVersionStatus>) -> Self {
+        self.status = input; self
     }
     /// Consumes the builder and constructs a [`ModifyCustomDbEngineVersionInput`](crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionInput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                description: self.description,
-                status: self.status,
-            },
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+            }
         )
     }
 }
+

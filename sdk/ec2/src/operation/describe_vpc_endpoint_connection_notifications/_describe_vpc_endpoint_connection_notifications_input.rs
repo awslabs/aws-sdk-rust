@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointConnectionNotificationsInput {
+pub struct DescribeVpcEndpointConnectionNotificationsInput  {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
     /// <p>The ID of the notification.</p>
     #[doc(hidden)]
     pub connection_notification_id: std::option::Option<std::string::String>,
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
-    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
+    /// <p>The filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> 
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li> 
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li> 
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -33,19 +33,19 @@ impl DescribeVpcEndpointConnectionNotificationsInput {
         self.dry_run
     }
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(&self) -> std::option::Option<&str> {
+    pub fn connection_notification_id(&self) -> std::option::Option<& str> {
         self.connection_notification_id.as_deref()
     }
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
-    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
+    /// <p>The filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> 
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li> 
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li> 
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li> 
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
@@ -53,13 +53,13 @@ impl DescribeVpcEndpointConnectionNotificationsInput {
         self.max_results
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeVpcEndpointConnectionNotificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointConnectionNotificationsInput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder{
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder {
         crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder::default()
     }
 }
@@ -82,8 +82,7 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input;
-        self
+        self.dry_run = input; self
     }
     /// <p>The ID of the notification.</p>
     pub fn connection_notification_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,47 +90,39 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         self
     }
     /// <p>The ID of the notification.</p>
-    pub fn set_connection_notification_id(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.connection_notification_id = input;
-        self
+    pub fn set_connection_notification_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.connection_notification_id = input; self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
-    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
+    /// <p>The filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> 
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li> 
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li> 
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li> 
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-        v.push(input);
-        self.filters = Some(v);
-        self
+                        v.push(input);
+                        self.filters = Some(v);
+                        self
     }
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
-    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
-    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
-    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
+    /// <p>The filters.</p> 
+    /// <ul> 
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li> 
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> 
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li> 
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li> 
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li> 
     /// </ul>
-    pub fn set_filters(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    ) -> Self {
-        self.filters = input;
-        self
+    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+        self.filters = input; self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -140,8 +131,7 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,11 +140,10 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointConnectionNotificationsInput`](crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsInput {
                 dry_run: self.dry_run
@@ -171,3 +160,4 @@ impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
         )
     }
 }
+

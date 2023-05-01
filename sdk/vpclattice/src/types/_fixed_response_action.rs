@@ -3,7 +3,7 @@
 /// <p>Information about an action that returns a custom HTTP response. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FixedResponseAction {
+pub struct FixedResponseAction  {
     /// <p>The HTTP response code.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
@@ -35,13 +35,14 @@ impl FixedResponseActionBuilder {
     }
     /// <p>The HTTP response code.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input;
-        self
+        self.status_code = input; self
     }
     /// Consumes the builder and constructs a [`FixedResponseAction`](crate::types::FixedResponseAction).
     pub fn build(self) -> crate::types::FixedResponseAction {
         crate::types::FixedResponseAction {
-            status_code: self.status_code,
+            status_code: self.status_code
+            ,
         }
     }
 }
+

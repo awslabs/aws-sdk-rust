@@ -3,7 +3,7 @@
 /// <p>Represents the result of a get upload request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUploadOutput {
+pub struct GetUploadOutput  {
     /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
     #[doc(hidden)]
     pub upload: std::option::Option<crate::types::Upload>,
@@ -11,15 +11,15 @@ pub struct GetUploadOutput {
 }
 impl GetUploadOutput {
     /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
-    pub fn upload(&self) -> std::option::Option<&crate::types::Upload> {
+    pub fn upload(&self) -> std::option::Option<& crate::types::Upload> {
         self.upload.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetUploadOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetUploadOutput {
     /// Creates a new builder-style object to manufacture [`GetUploadOutput`](crate::operation::get_upload::GetUploadOutput).
     pub fn builder() -> crate::operation::get_upload::builders::GetUploadOutputBuilder {
@@ -42,23 +42,24 @@ impl GetUploadOutputBuilder {
     }
     /// <p>An app or a set of one or more tests to upload or that have been uploaded.</p>
     pub fn set_upload(mut self, input: std::option::Option<crate::types::Upload>) -> Self {
-        self.upload = input;
-        self
+        self.upload = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetUploadOutput`](crate::operation::get_upload::GetUploadOutput).
     pub fn build(self) -> crate::operation::get_upload::GetUploadOutput {
         crate::operation::get_upload::GetUploadOutput {
-            upload: self.upload,
+            upload: self.upload
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

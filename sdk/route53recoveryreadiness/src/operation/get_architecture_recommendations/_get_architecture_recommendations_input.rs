@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetArchitectureRecommendationsInput {
+pub struct GetArchitectureRecommendationsInput  {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -19,17 +19,17 @@ impl GetArchitectureRecommendationsInput {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
         self.recovery_group_name.as_deref()
     }
 }
 impl GetArchitectureRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`GetArchitectureRecommendationsInput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput).
-    pub fn builder() -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder{
+    pub fn builder() -> crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder {
         crate::operation::get_architecture_recommendations::builders::GetArchitectureRecommendationsInputBuilder::default()
     }
 }
@@ -50,8 +50,7 @@ impl GetArchitectureRecommendationsInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,8 +59,7 @@ impl GetArchitectureRecommendationsInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// <p>The name of a recovery group.</p>
     pub fn recovery_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +67,11 @@ impl GetArchitectureRecommendationsInputBuilder {
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.recovery_group_name = input;
-        self
+    pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.recovery_group_name = input; self
     }
     /// Consumes the builder and constructs a [`GetArchitectureRecommendationsInput`](crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_architecture_recommendations::GetArchitectureRecommendationsInput {
                 max_results: self.max_results
@@ -96,3 +85,4 @@ impl GetArchitectureRecommendationsInputBuilder {
         )
     }
 }
+

@@ -3,7 +3,7 @@
 /// Information about a function definition version.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionDefinitionVersion {
+pub struct FunctionDefinitionVersion  {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
     #[doc(hidden)]
     pub default_config: std::option::Option<crate::types::FunctionDefaultConfig>,
@@ -13,11 +13,11 @@ pub struct FunctionDefinitionVersion {
 }
 impl FunctionDefinitionVersion {
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn default_config(&self) -> std::option::Option<&crate::types::FunctionDefaultConfig> {
+    pub fn default_config(&self) -> std::option::Option<& crate::types::FunctionDefaultConfig> {
         self.default_config.as_ref()
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn functions(&self) -> std::option::Option<&[crate::types::Function]> {
+    pub fn functions(&self) -> std::option::Option<& [crate::types::Function]> {
         self.functions.as_deref()
     }
 }
@@ -42,12 +42,8 @@ impl FunctionDefinitionVersionBuilder {
         self
     }
     /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-    pub fn set_default_config(
-        mut self,
-        input: std::option::Option<crate::types::FunctionDefaultConfig>,
-    ) -> Self {
-        self.default_config = input;
-        self
+    pub fn set_default_config(mut self, input: std::option::Option<crate::types::FunctionDefaultConfig>) -> Self {
+        self.default_config = input; self
     }
     /// Appends an item to `functions`.
     ///
@@ -56,23 +52,22 @@ impl FunctionDefinitionVersionBuilder {
     /// A list of Lambda functions in this function definition version.
     pub fn functions(mut self, input: crate::types::Function) -> Self {
         let mut v = self.functions.unwrap_or_default();
-        v.push(input);
-        self.functions = Some(v);
-        self
+                        v.push(input);
+                        self.functions = Some(v);
+                        self
     }
     /// A list of Lambda functions in this function definition version.
-    pub fn set_functions(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Function>>,
-    ) -> Self {
-        self.functions = input;
-        self
+    pub fn set_functions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Function>>) -> Self {
+        self.functions = input; self
     }
     /// Consumes the builder and constructs a [`FunctionDefinitionVersion`](crate::types::FunctionDefinitionVersion).
     pub fn build(self) -> crate::types::FunctionDefinitionVersion {
         crate::types::FunctionDefinitionVersion {
-            default_config: self.default_config,
-            functions: self.functions,
+            default_config: self.default_config
+            ,
+            functions: self.functions
+            ,
         }
     }
 }
+

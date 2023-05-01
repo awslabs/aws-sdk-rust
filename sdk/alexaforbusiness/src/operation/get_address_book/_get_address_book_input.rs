@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAddressBookInput {
+pub struct GetAddressBookInput  {
     /// <p>The ARN of the address book for which to request details.</p>
     #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl GetAddressBookInput {
     /// <p>The ARN of the address book for which to request details.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<&str> {
+    pub fn address_book_arn(&self) -> std::option::Option<& str> {
         self.address_book_arn.as_deref()
     }
 }
@@ -34,18 +34,16 @@ impl GetAddressBookInputBuilder {
     }
     /// <p>The ARN of the address book for which to request details.</p>
     pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address_book_arn = input;
-        self
+        self.address_book_arn = input; self
     }
     /// Consumes the builder and constructs a [`GetAddressBookInput`](crate::operation::get_address_book::GetAddressBookInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_address_book::GetAddressBookInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::get_address_book::GetAddressBookInput {
-            address_book_arn: self.address_book_arn,
-        })
+    pub fn build(self) -> Result<crate::operation::get_address_book::GetAddressBookInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::get_address_book::GetAddressBookInput {
+                address_book_arn: self.address_book_arn
+                ,
+            }
+        )
     }
 }
+

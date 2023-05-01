@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlywheelInput {
+pub struct UpdateFlywheelInput  {
     /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
     #[doc(hidden)]
     pub flywheel_arn: std::option::Option<std::string::String>,
@@ -18,21 +18,19 @@ pub struct UpdateFlywheelInput {
 }
 impl UpdateFlywheelInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
-    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
         self.flywheel_arn.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn active_model_arn(&self) -> std::option::Option<&str> {
+    pub fn active_model_arn(&self) -> std::option::Option<& str> {
         self.active_model_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn data_security_config(
-        &self,
-    ) -> std::option::Option<&crate::types::UpdateDataSecurityConfig> {
+    pub fn data_security_config(&self) -> std::option::Option<& crate::types::UpdateDataSecurityConfig> {
         self.data_security_config.as_ref()
     }
 }
@@ -60,8 +58,7 @@ impl UpdateFlywheelInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel to update.</p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input;
-        self
+        self.flywheel_arn = input; self
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn active_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +67,7 @@ impl UpdateFlywheelInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn set_active_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.active_model_arn = input;
-        self
+        self.active_model_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,12 +75,8 @@ impl UpdateFlywheelInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn set_data_access_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.data_access_role_arn = input;
-        self
+    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.data_access_role_arn = input; self
     }
     /// <p>Flywheel data security configuration.</p>
     pub fn data_security_config(mut self, input: crate::types::UpdateDataSecurityConfig) -> Self {
@@ -92,25 +84,23 @@ impl UpdateFlywheelInputBuilder {
         self
     }
     /// <p>Flywheel data security configuration.</p>
-    pub fn set_data_security_config(
-        mut self,
-        input: std::option::Option<crate::types::UpdateDataSecurityConfig>,
-    ) -> Self {
-        self.data_security_config = input;
-        self
+    pub fn set_data_security_config(mut self, input: std::option::Option<crate::types::UpdateDataSecurityConfig>) -> Self {
+        self.data_security_config = input; self
     }
     /// Consumes the builder and constructs a [`UpdateFlywheelInput`](crate::operation::update_flywheel::UpdateFlywheelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_flywheel::UpdateFlywheelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::update_flywheel::UpdateFlywheelInput {
-            flywheel_arn: self.flywheel_arn,
-            active_model_arn: self.active_model_arn,
-            data_access_role_arn: self.data_access_role_arn,
-            data_security_config: self.data_security_config,
-        })
+    pub fn build(self) -> Result<crate::operation::update_flywheel::UpdateFlywheelInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::update_flywheel::UpdateFlywheelInput {
+                flywheel_arn: self.flywheel_arn
+                ,
+                active_model_arn: self.active_model_arn
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                data_security_config: self.data_security_config
+                ,
+            }
+        )
     }
 }
+

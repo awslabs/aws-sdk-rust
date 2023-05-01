@@ -2,12 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DownloadDefaultKeyPairInput {}
+pub struct DownloadDefaultKeyPairInput  {
+}
 impl DownloadDefaultKeyPairInput {
     /// Creates a new builder-style object to manufacture [`DownloadDefaultKeyPairInput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput).
-    pub fn builder(
-    ) -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder
-    {
+    pub fn builder() -> crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder {
         crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder::default()
     }
 }
@@ -15,15 +14,15 @@ impl DownloadDefaultKeyPairInput {
 /// A builder for [`DownloadDefaultKeyPairInput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DownloadDefaultKeyPairInputBuilder {}
+pub struct DownloadDefaultKeyPairInputBuilder {
+}
 impl DownloadDefaultKeyPairInputBuilder {
     /// Consumes the builder and constructs a [`DownloadDefaultKeyPairInput`](crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput {})
+    pub fn build(self) -> Result<crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairInput {
+            }
+        )
     }
 }
+

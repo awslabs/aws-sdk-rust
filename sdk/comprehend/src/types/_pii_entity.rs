@@ -3,7 +3,7 @@
 /// <p>Provides information about a PII entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PiiEntity {
+pub struct PiiEntity  {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
     pub score: std::option::Option<f32>,
@@ -23,7 +23,7 @@ impl PiiEntity {
         self.score
     }
     /// <p>The entity's type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PiiEntityType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::PiiEntityType> {
         self.r#type.as_ref()
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
@@ -59,8 +59,7 @@ impl PiiEntityBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input;
-        self
+        self.score = input; self
     }
     /// <p>The entity's type.</p>
     pub fn r#type(mut self, input: crate::types::PiiEntityType) -> Self {
@@ -69,8 +68,7 @@ impl PiiEntityBuilder {
     }
     /// <p>The entity's type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PiiEntityType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl PiiEntityBuilder {
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.begin_offset = input;
-        self
+        self.begin_offset = input; self
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
@@ -89,16 +86,20 @@ impl PiiEntityBuilder {
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.end_offset = input;
-        self
+        self.end_offset = input; self
     }
     /// Consumes the builder and constructs a [`PiiEntity`](crate::types::PiiEntity).
     pub fn build(self) -> crate::types::PiiEntity {
         crate::types::PiiEntity {
-            score: self.score,
-            r#type: self.r#type,
-            begin_offset: self.begin_offset,
-            end_offset: self.end_offset,
+            score: self.score
+            ,
+            r#type: self.r#type
+            ,
+            begin_offset: self.begin_offset
+            ,
+            end_offset: self.end_offset
+            ,
         }
     }
 }
+

@@ -3,21 +3,20 @@
 /// <p>The <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> request includes the following element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationDetailInput {
+pub struct GetOperationDetailInput  {
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl GetOperationDetailInput {
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
 }
 impl GetOperationDetailInput {
     /// Creates a new builder-style object to manufacture [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
-    pub fn builder(
-    ) -> crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder {
+    pub fn builder() -> crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder {
         crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder::default()
     }
 }
@@ -36,20 +35,16 @@ impl GetOperationDetailInputBuilder {
     }
     /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input;
-        self
+        self.operation_id = input; self
     }
     /// Consumes the builder and constructs a [`GetOperationDetailInput`](crate::operation::get_operation_detail::GetOperationDetailInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_operation_detail::GetOperationDetailInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_operation_detail::GetOperationDetailInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_operation_detail::GetOperationDetailInput {
-                operation_id: self.operation_id,
-            },
+                operation_id: self.operation_id
+                ,
+            }
         )
     }
 }
+

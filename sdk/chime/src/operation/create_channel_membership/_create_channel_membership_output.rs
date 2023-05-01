@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelMembershipOutput {
+pub struct CreateChannelMembershipOutput  {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -13,24 +13,22 @@ pub struct CreateChannelMembershipOutput {
 }
 impl CreateChannelMembershipOutput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> std::option::Option<& str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN and metadata of the member being added.</p>
-    pub fn member(&self) -> std::option::Option<&crate::types::Identity> {
+    pub fn member(&self) -> std::option::Option<& crate::types::Identity> {
         self.member.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateChannelMembershipOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateChannelMembershipOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelMembershipOutput`](crate::operation::create_channel_membership::CreateChannelMembershipOutput).
-    pub fn builder(
-    ) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_channel_membership::builders::CreateChannelMembershipOutputBuilder {
         crate::operation::create_channel_membership::builders::CreateChannelMembershipOutputBuilder::default()
     }
 }
@@ -51,8 +49,7 @@ impl CreateChannelMembershipOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input;
-        self
+        self.channel_arn = input; self
     }
     /// <p>The ARN and metadata of the member being added.</p>
     pub fn member(mut self, input: crate::types::Identity) -> Self {
@@ -61,26 +58,26 @@ impl CreateChannelMembershipOutputBuilder {
     }
     /// <p>The ARN and metadata of the member being added.</p>
     pub fn set_member(mut self, input: std::option::Option<crate::types::Identity>) -> Self {
-        self.member = input;
-        self
+        self.member = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateChannelMembershipOutput`](crate::operation::create_channel_membership::CreateChannelMembershipOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::create_channel_membership::CreateChannelMembershipOutput {
+    pub fn build(self) -> crate::operation::create_channel_membership::CreateChannelMembershipOutput {
         crate::operation::create_channel_membership::CreateChannelMembershipOutput {
-            channel_arn: self.channel_arn,
-            member: self.member,
+            channel_arn: self.channel_arn
+            ,
+            member: self.member
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

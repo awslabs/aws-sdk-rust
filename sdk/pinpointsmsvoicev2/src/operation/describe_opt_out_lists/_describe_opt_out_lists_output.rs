@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptOutListsOutput {
+pub struct DescribeOptOutListsOutput  {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
     #[doc(hidden)]
     pub opt_out_lists: std::option::Option<std::vec::Vec<crate::types::OptOutListInformation>>,
@@ -13,23 +13,22 @@ pub struct DescribeOptOutListsOutput {
 }
 impl DescribeOptOutListsOutput {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    pub fn opt_out_lists(&self) -> std::option::Option<&[crate::types::OptOutListInformation]> {
+    pub fn opt_out_lists(&self) -> std::option::Option<& [crate::types::OptOutListInformation]> {
         self.opt_out_lists.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOptOutListsOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeOptOutListsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptOutListsOutput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsOutputBuilder {
         crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsOutputBuilder::default()
     }
 }
@@ -38,8 +37,7 @@ impl DescribeOptOutListsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOptOutListsOutputBuilder {
-    pub(crate) opt_out_lists:
-        std::option::Option<std::vec::Vec<crate::types::OptOutListInformation>>,
+    pub(crate) opt_out_lists: std::option::Option<std::vec::Vec<crate::types::OptOutListInformation>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,17 +49,13 @@ impl DescribeOptOutListsOutputBuilder {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
     pub fn opt_out_lists(mut self, input: crate::types::OptOutListInformation) -> Self {
         let mut v = self.opt_out_lists.unwrap_or_default();
-        v.push(input);
-        self.opt_out_lists = Some(v);
-        self
+                        v.push(input);
+                        self.opt_out_lists = Some(v);
+                        self
     }
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    pub fn set_opt_out_lists(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptOutListInformation>>,
-    ) -> Self {
-        self.opt_out_lists = input;
-        self
+    pub fn set_opt_out_lists(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptOutListInformation>>) -> Self {
+        self.opt_out_lists = input; self
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,24 +64,26 @@ impl DescribeOptOutListsOutputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeOptOutListsOutput`](crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput).
     pub fn build(self) -> crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput {
         crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput {
-            opt_out_lists: self.opt_out_lists,
-            next_token: self.next_token,
+            opt_out_lists: self.opt_out_lists
+            ,
+            next_token: self.next_token
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

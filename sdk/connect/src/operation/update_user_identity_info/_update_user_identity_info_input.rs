@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserIdentityInfoInput {
+pub struct UpdateUserIdentityInfoInput  {
     /// <p>The identity information for the user.</p>
     #[doc(hidden)]
     pub identity_info: std::option::Option<crate::types::UserIdentityInfo>,
@@ -15,23 +15,21 @@ pub struct UpdateUserIdentityInfoInput {
 }
 impl UpdateUserIdentityInfoInput {
     /// <p>The identity information for the user.</p>
-    pub fn identity_info(&self) -> std::option::Option<&crate::types::UserIdentityInfo> {
+    pub fn identity_info(&self) -> std::option::Option<& crate::types::UserIdentityInfo> {
         self.identity_info.as_ref()
     }
     /// <p>The identifier of the user account.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
 }
 impl UpdateUserIdentityInfoInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserIdentityInfoInput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput).
-    pub fn builder(
-    ) -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder {
         crate::operation::update_user_identity_info::builders::UpdateUserIdentityInfoInputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl UpdateUserIdentityInfoInputBuilder {
         self
     }
     /// <p>The identity information for the user.</p>
-    pub fn set_identity_info(
-        mut self,
-        input: std::option::Option<crate::types::UserIdentityInfo>,
-    ) -> Self {
-        self.identity_info = input;
-        self
+    pub fn set_identity_info(mut self, input: std::option::Option<crate::types::UserIdentityInfo>) -> Self {
+        self.identity_info = input; self
     }
     /// <p>The identifier of the user account.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +59,7 @@ impl UpdateUserIdentityInfoInputBuilder {
     }
     /// <p>The identifier of the user account.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input;
-        self
+        self.user_id = input; self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,22 +68,20 @@ impl UpdateUserIdentityInfoInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input;
-        self
+        self.instance_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateUserIdentityInfoInput`](crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_user_identity_info::UpdateUserIdentityInfoInput {
-                identity_info: self.identity_info,
-                user_id: self.user_id,
-                instance_id: self.instance_id,
-            },
+                identity_info: self.identity_info
+                ,
+                user_id: self.user_id
+                ,
+                instance_id: self.instance_id
+                ,
+            }
         )
     }
 }
+

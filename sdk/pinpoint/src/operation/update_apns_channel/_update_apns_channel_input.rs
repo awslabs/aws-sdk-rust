@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApnsChannelInput {
+pub struct UpdateApnsChannelInput  {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
     #[doc(hidden)]
     pub apns_channel_request: std::option::Option<crate::types::ApnsChannelRequest>,
@@ -12,18 +12,17 @@ pub struct UpdateApnsChannelInput {
 }
 impl UpdateApnsChannelInput {
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn apns_channel_request(&self) -> std::option::Option<&crate::types::ApnsChannelRequest> {
+    pub fn apns_channel_request(&self) -> std::option::Option<& crate::types::ApnsChannelRequest> {
         self.apns_channel_request.as_ref()
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
 impl UpdateApnsChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateApnsChannelInput`](crate::operation::update_apns_channel::UpdateApnsChannelInput).
-    pub fn builder(
-    ) -> crate::operation::update_apns_channel::builders::UpdateApnsChannelInputBuilder {
+    pub fn builder() -> crate::operation::update_apns_channel::builders::UpdateApnsChannelInputBuilder {
         crate::operation::update_apns_channel::builders::UpdateApnsChannelInputBuilder::default()
     }
 }
@@ -42,12 +41,8 @@ impl UpdateApnsChannelInputBuilder {
         self
     }
     /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-    pub fn set_apns_channel_request(
-        mut self,
-        input: std::option::Option<crate::types::ApnsChannelRequest>,
-    ) -> Self {
-        self.apns_channel_request = input;
-        self
+    pub fn set_apns_channel_request(mut self, input: std::option::Option<crate::types::ApnsChannelRequest>) -> Self {
+        self.apns_channel_request = input; self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,21 +51,18 @@ impl UpdateApnsChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input;
-        self
+        self.application_id = input; self
     }
     /// Consumes the builder and constructs a [`UpdateApnsChannelInput`](crate::operation::update_apns_channel::UpdateApnsChannelInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_apns_channel::UpdateApnsChannelInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_apns_channel::UpdateApnsChannelInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_apns_channel::UpdateApnsChannelInput {
-                apns_channel_request: self.apns_channel_request,
-                application_id: self.application_id,
-            },
+                apns_channel_request: self.apns_channel_request
+                ,
+                application_id: self.application_id
+                ,
+            }
         )
     }
 }
+

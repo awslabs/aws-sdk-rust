@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportVectorEnrichmentJobInput {
+pub struct ExportVectorEnrichmentJobInput  {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,27 +18,25 @@ pub struct ExportVectorEnrichmentJobInput {
 }
 impl ExportVectorEnrichmentJobInput {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn output_config(
-        &self,
-    ) -> std::option::Option<&crate::types::ExportVectorEnrichmentJobOutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<& crate::types::ExportVectorEnrichmentJobOutputConfig> {
         self.output_config.as_ref()
     }
 }
 impl ExportVectorEnrichmentJobInput {
     /// Creates a new builder-style object to manufacture [`ExportVectorEnrichmentJobInput`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput).
-    pub fn builder() -> crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder{
+    pub fn builder() -> crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder {
         crate::operation::export_vector_enrichment_job::builders::ExportVectorEnrichmentJobInputBuilder::default()
     }
 }
@@ -50,8 +48,7 @@ pub struct ExportVectorEnrichmentJobInputBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-    pub(crate) output_config:
-        std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
+    pub(crate) output_config: std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
 }
 impl ExportVectorEnrichmentJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
@@ -61,8 +58,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input;
-        self
+        self.arn = input; self
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,8 +67,7 @@ impl ExportVectorEnrichmentJobInputBuilder {
     }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input;
-        self
+        self.client_token = input; self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,43 +75,32 @@ impl ExportVectorEnrichmentJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.</p>
-    pub fn set_execution_role_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.execution_role_arn = input;
-        self
+    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.execution_role_arn = input; self
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn output_config(
-        mut self,
-        input: crate::types::ExportVectorEnrichmentJobOutputConfig,
-    ) -> Self {
+    pub fn output_config(mut self, input: crate::types::ExportVectorEnrichmentJobOutputConfig) -> Self {
         self.output_config = Some(input);
         self
     }
     /// <p>Output location information for exporting Vector Enrichment Job results. </p>
-    pub fn set_output_config(
-        mut self,
-        input: std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>,
-    ) -> Self {
-        self.output_config = input;
-        self
+    pub fn set_output_config(mut self, input: std::option::Option<crate::types::ExportVectorEnrichmentJobOutputConfig>) -> Self {
+        self.output_config = input; self
     }
     /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobInput`](crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::export_vector_enrichment_job::ExportVectorEnrichmentJobInput {
-                arn: self.arn,
-                client_token: self.client_token,
-                execution_role_arn: self.execution_role_arn,
-                output_config: self.output_config,
-            },
+                arn: self.arn
+                ,
+                client_token: self.client_token
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                output_config: self.output_config
+                ,
+            }
         )
     }
 }
+

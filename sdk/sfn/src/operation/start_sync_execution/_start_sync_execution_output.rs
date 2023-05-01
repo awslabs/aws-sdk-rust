@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartSyncExecutionOutput {
+pub struct StartSyncExecutionOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
@@ -33,8 +33,8 @@ pub struct StartSyncExecutionOutput {
     /// <p>Provides details about execution input or output.</p>
     #[doc(hidden)]
     pub input_details: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     #[doc(hidden)]
     pub output: std::option::Option<std::string::String>,
@@ -51,69 +51,65 @@ pub struct StartSyncExecutionOutput {
 }
 impl StartSyncExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
-    pub fn execution_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_arn(&self) -> std::option::Option<& str> {
         self.execution_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The name of the execution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date the execution is started.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SyncExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::SyncExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> std::option::Option<& str> {
         self.cause.as_deref()
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> std::option::Option<& str> {
         self.input.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(
-        &self,
-    ) -> std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
+    pub fn input_details(&self) -> std::option::Option<& crate::types::CloudWatchEventsExecutionDataDetails> {
         self.input_details.as_ref()
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> std::option::Option<& str> {
         self.output.as_deref()
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(
-        &self,
-    ) -> std::option::Option<&crate::types::CloudWatchEventsExecutionDataDetails> {
+    pub fn output_details(&self) -> std::option::Option<& crate::types::CloudWatchEventsExecutionDataDetails> {
         self.output_details.as_ref()
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
-    pub fn trace_header(&self) -> std::option::Option<&str> {
+    pub fn trace_header(&self) -> std::option::Option<& str> {
         self.trace_header.as_deref()
     }
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
-    pub fn billing_details(&self) -> std::option::Option<&crate::types::BillingDetails> {
+    pub fn billing_details(&self) -> std::option::Option<& crate::types::BillingDetails> {
         self.billing_details.as_ref()
     }
 }
-impl std::fmt::Debug for StartSyncExecutionOutput {
+impl  std::fmt::Debug for StartSyncExecutionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartSyncExecutionOutput");
         formatter.field("execution_arn", &self.execution_arn);
@@ -135,14 +131,13 @@ impl std::fmt::Debug for StartSyncExecutionOutput {
     }
 }
 impl aws_http::request_id::RequestId for StartSyncExecutionOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl StartSyncExecutionOutput {
     /// Creates a new builder-style object to manufacture [`StartSyncExecutionOutput`](crate::operation::start_sync_execution::StartSyncExecutionOutput).
-    pub fn builder(
-    ) -> crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder {
+    pub fn builder() -> crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder {
         crate::operation::start_sync_execution::builders::StartSyncExecutionOutputBuilder::default()
     }
 }
@@ -160,11 +155,9 @@ pub struct StartSyncExecutionOutputBuilder {
     pub(crate) error: std::option::Option<std::string::String>,
     pub(crate) cause: std::option::Option<std::string::String>,
     pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) input_details:
-        std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
+    pub(crate) input_details: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     pub(crate) output: std::option::Option<std::string::String>,
-    pub(crate) output_details:
-        std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
+    pub(crate) output_details: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
     pub(crate) trace_header: std::option::Option<std::string::String>,
     pub(crate) billing_details: std::option::Option<crate::types::BillingDetails>,
     _request_id: Option<String>,
@@ -177,8 +170,7 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_arn = input;
-        self
+        self.execution_arn = input; self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
     pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,12 +178,8 @@ impl StartSyncExecutionOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
-    pub fn set_state_machine_arn(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.state_machine_arn = input;
-        self
+    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.state_machine_arn = input; self
     }
     /// <p>The name of the execution.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +188,7 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>The name of the execution.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The date the execution is started.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -209,12 +196,8 @@ impl StartSyncExecutionOutputBuilder {
         self
     }
     /// <p>The date the execution is started.</p>
-    pub fn set_start_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.start_date = input;
-        self
+    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input; self
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
     pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -223,8 +206,7 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>If the execution has already ended, the date the execution stopped.</p>
     pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_date = input;
-        self
+        self.stop_date = input; self
     }
     /// <p>The current status of the execution.</p>
     pub fn status(mut self, input: crate::types::SyncExecutionStatus) -> Self {
@@ -232,12 +214,8 @@ impl StartSyncExecutionOutputBuilder {
         self
     }
     /// <p>The current status of the execution.</p>
-    pub fn set_status(
-        mut self,
-        input: std::option::Option<crate::types::SyncExecutionStatus>,
-    ) -> Self {
-        self.status = input;
-        self
+    pub fn set_status(mut self, input: std::option::Option<crate::types::SyncExecutionStatus>) -> Self {
+        self.status = input; self
     }
     /// <p>The error code of the failure.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -246,8 +224,7 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input;
-        self
+        self.error = input; self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,8 +233,7 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cause = input;
-        self
+        self.cause = input; self
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,54 +242,38 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input;
-        self
+        self.input = input; self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn input_details(
-        mut self,
-        input: crate::types::CloudWatchEventsExecutionDataDetails,
-    ) -> Self {
+    pub fn input_details(mut self, input: crate::types::CloudWatchEventsExecutionDataDetails) -> Self {
         self.input_details = Some(input);
         self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn set_input_details(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    ) -> Self {
-        self.input_details = input;
-        self
+    pub fn set_input_details(mut self, input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>) -> Self {
+        self.input_details = input; self
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
         self.output = Some(input.into());
         self
     }
-    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note>
-    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p>
+    /// <p>The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p> <note> 
+    /// <p>This field is set only if the execution succeeds. If the execution fails, this field is null.</p> 
     /// </note>
     pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output = input;
-        self
+        self.output = input; self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn output_details(
-        mut self,
-        input: crate::types::CloudWatchEventsExecutionDataDetails,
-    ) -> Self {
+    pub fn output_details(mut self, input: crate::types::CloudWatchEventsExecutionDataDetails) -> Self {
         self.output_details = Some(input);
         self
     }
     /// <p>Provides details about execution input or output.</p>
-    pub fn set_output_details(
-        mut self,
-        input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>,
-    ) -> Self {
-        self.output_details = input;
-        self
+    pub fn set_output_details(mut self, input: std::option::Option<crate::types::CloudWatchEventsExecutionDataDetails>) -> Self {
+        self.output_details = input; self
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
@@ -322,8 +282,7 @@ impl StartSyncExecutionOutputBuilder {
     }
     /// <p>The X-Ray trace header that was passed to the execution.</p>
     pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trace_header = input;
-        self
+        self.trace_header = input; self
     }
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
     pub fn billing_details(mut self, input: crate::types::BillingDetails) -> Self {
@@ -331,39 +290,49 @@ impl StartSyncExecutionOutputBuilder {
         self
     }
     /// <p>An object that describes workflow billing details, including billed duration and memory use.</p>
-    pub fn set_billing_details(
-        mut self,
-        input: std::option::Option<crate::types::BillingDetails>,
-    ) -> Self {
-        self.billing_details = input;
-        self
+    pub fn set_billing_details(mut self, input: std::option::Option<crate::types::BillingDetails>) -> Self {
+        self.billing_details = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`StartSyncExecutionOutput`](crate::operation::start_sync_execution::StartSyncExecutionOutput).
     pub fn build(self) -> crate::operation::start_sync_execution::StartSyncExecutionOutput {
         crate::operation::start_sync_execution::StartSyncExecutionOutput {
-            execution_arn: self.execution_arn,
-            state_machine_arn: self.state_machine_arn,
-            name: self.name,
-            start_date: self.start_date,
-            stop_date: self.stop_date,
-            status: self.status,
-            error: self.error,
-            cause: self.cause,
-            input: self.input,
-            input_details: self.input_details,
-            output: self.output,
-            output_details: self.output_details,
-            trace_header: self.trace_header,
-            billing_details: self.billing_details,
+            execution_arn: self.execution_arn
+            ,
+            state_machine_arn: self.state_machine_arn
+            ,
+            name: self.name
+            ,
+            start_date: self.start_date
+            ,
+            stop_date: self.stop_date
+            ,
+            status: self.status
+            ,
+            error: self.error
+            ,
+            cause: self.cause
+            ,
+            input: self.input
+            ,
+            input_details: self.input_details
+            ,
+            output: self.output
+            ,
+            output_details: self.output_details
+            ,
+            trace_header: self.trace_header
+            ,
+            billing_details: self.billing_details
+            ,
             _request_id: self._request_id,
         }
     }
@@ -389,3 +358,4 @@ impl std::fmt::Debug for StartSyncExecutionOutputBuilder {
         formatter.finish()
     }
 }
+

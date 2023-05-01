@@ -3,7 +3,7 @@
 /// <p>The Amazon Web Services resources in which DevOps Guru detected unusual behavior that resulted in the generation of an anomaly. When DevOps Guru detects multiple related anomalies, it creates and insight with details about the anomalous behavior and suggestions about how to correct the problem.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyResource {
+pub struct AnomalyResource  {
     /// <p>The name of the Amazon Web Services resource.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AnomalyResource {
 }
 impl AnomalyResource {
     /// <p>The name of the Amazon Web Services resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the Amazon Web Services resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl AnomalyResourceBuilder {
     }
     /// <p>The name of the Amazon Web Services resource.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The type of the Amazon Web Services resource.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl AnomalyResourceBuilder {
     }
     /// <p>The type of the Amazon Web Services resource.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Consumes the builder and constructs a [`AnomalyResource`](crate::types::AnomalyResource).
     pub fn build(self) -> crate::types::AnomalyResource {
         crate::types::AnomalyResource {
-            name: self.name,
-            r#type: self.r#type,
+            name: self.name
+            ,
+            r#type: self.r#type
+            ,
         }
     }
 }
+

@@ -3,14 +3,14 @@
 /// <p>The maximum label of a data path label.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaximumLabelType {
+pub struct MaximumLabelType  {
     /// <p>The visibility of the maximum label.</p>
     #[doc(hidden)]
     pub visibility: std::option::Option<crate::types::Visibility>,
 }
 impl MaximumLabelType {
     /// <p>The visibility of the maximum label.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -35,13 +35,14 @@ impl MaximumLabelTypeBuilder {
     }
     /// <p>The visibility of the maximum label.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input;
-        self
+        self.visibility = input; self
     }
     /// Consumes the builder and constructs a [`MaximumLabelType`](crate::types::MaximumLabelType).
     pub fn build(self) -> crate::types::MaximumLabelType {
         crate::types::MaximumLabelType {
-            visibility: self.visibility,
+            visibility: self.visibility
+            ,
         }
     }
 }
+

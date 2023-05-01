@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyInput {
+pub struct PutResourcePolicyInput  {
     /// <p>Contains the policy document to set, in JSON format.</p>
     #[doc(hidden)]
     pub policy_in_json: std::option::Option<std::string::String>,
@@ -15,46 +15,45 @@ pub struct PutResourcePolicyInput {
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
     #[doc(hidden)]
     pub policy_exists_condition: std::option::Option<crate::types::ExistCondition>,
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
-    /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
-    /// </ul>
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> 
+    /// <ul> 
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> 
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li> 
+    /// </ul> 
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     #[doc(hidden)]
     pub enable_hybrid: std::option::Option<crate::types::EnableHybridValues>,
 }
 impl PutResourcePolicyInput {
     /// <p>Contains the policy document to set, in JSON format.</p>
-    pub fn policy_in_json(&self) -> std::option::Option<&str> {
+    pub fn policy_in_json(&self) -> std::option::Option<& str> {
         self.policy_in_json.as_deref()
     }
     /// <p>Do not use. For internal use only.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
-    pub fn policy_hash_condition(&self) -> std::option::Option<&str> {
+    pub fn policy_hash_condition(&self) -> std::option::Option<& str> {
         self.policy_hash_condition.as_deref()
     }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
-    pub fn policy_exists_condition(&self) -> std::option::Option<&crate::types::ExistCondition> {
+    pub fn policy_exists_condition(&self) -> std::option::Option<& crate::types::ExistCondition> {
         self.policy_exists_condition.as_ref()
     }
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
-    /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
-    /// </ul>
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> 
+    /// <ul> 
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> 
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li> 
+    /// </ul> 
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-    pub fn enable_hybrid(&self) -> std::option::Option<&crate::types::EnableHybridValues> {
+    pub fn enable_hybrid(&self) -> std::option::Option<& crate::types::EnableHybridValues> {
         self.enable_hybrid.as_ref()
     }
 }
 impl PutResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn builder(
-    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+    pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
         crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder::default()
     }
 }
@@ -77,8 +76,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>Contains the policy document to set, in JSON format.</p>
     pub fn set_policy_in_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_in_json = input;
-        self
+        self.policy_in_json = input; self
     }
     /// <p>Do not use. For internal use only.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +85,7 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>Do not use. For internal use only.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input;
-        self
+        self.resource_arn = input; self
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
     pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,12 +93,8 @@ impl PutResourcePolicyInputBuilder {
         self
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
-    pub fn set_policy_hash_condition(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.policy_hash_condition = input;
-        self
+    pub fn set_policy_hash_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.policy_hash_condition = input; self
     }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
     pub fn policy_exists_condition(mut self, input: crate::types::ExistCondition) -> Self {
@@ -109,51 +102,44 @@ impl PutResourcePolicyInputBuilder {
         self
     }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
-    pub fn set_policy_exists_condition(
-        mut self,
-        input: std::option::Option<crate::types::ExistCondition>,
-    ) -> Self {
-        self.policy_exists_condition = input;
-        self
+    pub fn set_policy_exists_condition(mut self, input: std::option::Option<crate::types::ExistCondition>) -> Self {
+        self.policy_exists_condition = input; self
     }
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
-    /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
-    /// </ul>
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> 
+    /// <ul> 
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> 
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li> 
+    /// </ul> 
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn enable_hybrid(mut self, input: crate::types::EnableHybridValues) -> Self {
         self.enable_hybrid = Some(input);
         self
     }
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
-    /// <ul>
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
-    /// </ul>
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> 
+    /// <ul> 
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> 
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li> 
+    /// </ul> 
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-    pub fn set_enable_hybrid(
-        mut self,
-        input: std::option::Option<crate::types::EnableHybridValues>,
-    ) -> Self {
-        self.enable_hybrid = input;
-        self
+    pub fn set_enable_hybrid(mut self, input: std::option::Option<crate::types::EnableHybridValues>) -> Self {
+        self.enable_hybrid = input; self
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::put_resource_policy::PutResourcePolicyInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::put_resource_policy::PutResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::put_resource_policy::PutResourcePolicyInput {
-                policy_in_json: self.policy_in_json,
-                resource_arn: self.resource_arn,
-                policy_hash_condition: self.policy_hash_condition,
-                policy_exists_condition: self.policy_exists_condition,
-                enable_hybrid: self.enable_hybrid,
-            },
+                policy_in_json: self.policy_in_json
+                ,
+                resource_arn: self.resource_arn
+                ,
+                policy_hash_condition: self.policy_hash_condition
+                ,
+                policy_exists_condition: self.policy_exists_condition
+                ,
+                enable_hybrid: self.enable_hybrid
+                ,
+            }
         )
     }
 }
+

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVoiceProfileDomainOutput {
+pub struct UpdateVoiceProfileDomainOutput  {
     /// <p>The updated details of the voice profile domain.</p>
     #[doc(hidden)]
     pub voice_profile_domain: std::option::Option<crate::types::VoiceProfileDomain>,
@@ -10,18 +10,18 @@ pub struct UpdateVoiceProfileDomainOutput {
 }
 impl UpdateVoiceProfileDomainOutput {
     /// <p>The updated details of the voice profile domain.</p>
-    pub fn voice_profile_domain(&self) -> std::option::Option<&crate::types::VoiceProfileDomain> {
+    pub fn voice_profile_domain(&self) -> std::option::Option<& crate::types::VoiceProfileDomain> {
         self.voice_profile_domain.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateVoiceProfileDomainOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UpdateVoiceProfileDomainOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVoiceProfileDomainOutput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput).
-    pub fn builder() -> crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainOutputBuilder{
+    pub fn builder() -> crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainOutputBuilder {
         crate::operation::update_voice_profile_domain::builders::UpdateVoiceProfileDomainOutputBuilder::default()
     }
 }
@@ -40,29 +40,25 @@ impl UpdateVoiceProfileDomainOutputBuilder {
         self
     }
     /// <p>The updated details of the voice profile domain.</p>
-    pub fn set_voice_profile_domain(
-        mut self,
-        input: std::option::Option<crate::types::VoiceProfileDomain>,
-    ) -> Self {
-        self.voice_profile_domain = input;
-        self
+    pub fn set_voice_profile_domain(mut self, input: std::option::Option<crate::types::VoiceProfileDomain>) -> Self {
+        self.voice_profile_domain = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UpdateVoiceProfileDomainOutput`](crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput).
-    pub fn build(
-        self,
-    ) -> crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput {
+    pub fn build(self) -> crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput {
         crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput {
-            voice_profile_domain: self.voice_profile_domain,
+            voice_profile_domain: self.voice_profile_domain
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fleetmetricunit = unimplemented!();
 /// match fleetmetricunit {
@@ -55,22 +55,14 @@
 /// Specifically, when `fleetmetricunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FleetMetricUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FleetMetricUnit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -127,120 +119,91 @@ pub enum FleetMetricUnit {
     #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FleetMetricUnit {
-    fn from(s: &str) -> Self {
-        match s {
-            "Bits" => FleetMetricUnit::Bits,
-            "Bits/Second" => FleetMetricUnit::BitsSecond,
-            "Bytes" => FleetMetricUnit::Bytes,
-            "Bytes/Second" => FleetMetricUnit::BytesSecond,
-            "Count" => FleetMetricUnit::Count,
-            "Count/Second" => FleetMetricUnit::CountSecond,
-            "Gigabits" => FleetMetricUnit::Gigabits,
-            "Gigabits/Second" => FleetMetricUnit::GigabitsSecond,
-            "Gigabytes" => FleetMetricUnit::Gigabytes,
-            "Gigabytes/Second" => FleetMetricUnit::GigabytesSecond,
-            "Kilobits" => FleetMetricUnit::Kilobits,
-            "Kilobits/Second" => FleetMetricUnit::KilobitsSecond,
-            "Kilobytes" => FleetMetricUnit::Kilobytes,
-            "Kilobytes/Second" => FleetMetricUnit::KilobytesSecond,
-            "Megabits" => FleetMetricUnit::Megabits,
-            "Megabits/Second" => FleetMetricUnit::MegabitsSecond,
-            "Megabytes" => FleetMetricUnit::Megabytes,
-            "Megabytes/Second" => FleetMetricUnit::MegabytesSecond,
-            "Microseconds" => FleetMetricUnit::Microseconds,
-            "Milliseconds" => FleetMetricUnit::Milliseconds,
-            "None" => FleetMetricUnit::None,
-            "Percent" => FleetMetricUnit::Percent,
-            "Seconds" => FleetMetricUnit::Seconds,
-            "Terabits" => FleetMetricUnit::Terabits,
-            "Terabits/Second" => FleetMetricUnit::TerabitsSecond,
-            "Terabytes" => FleetMetricUnit::Terabytes,
-            "Terabytes/Second" => FleetMetricUnit::TerabytesSecond,
-            other => {
-                FleetMetricUnit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "Bits" => FleetMetricUnit::Bits,
+"Bits/Second" => FleetMetricUnit::BitsSecond,
+"Bytes" => FleetMetricUnit::Bytes,
+"Bytes/Second" => FleetMetricUnit::BytesSecond,
+"Count" => FleetMetricUnit::Count,
+"Count/Second" => FleetMetricUnit::CountSecond,
+"Gigabits" => FleetMetricUnit::Gigabits,
+"Gigabits/Second" => FleetMetricUnit::GigabitsSecond,
+"Gigabytes" => FleetMetricUnit::Gigabytes,
+"Gigabytes/Second" => FleetMetricUnit::GigabytesSecond,
+"Kilobits" => FleetMetricUnit::Kilobits,
+"Kilobits/Second" => FleetMetricUnit::KilobitsSecond,
+"Kilobytes" => FleetMetricUnit::Kilobytes,
+"Kilobytes/Second" => FleetMetricUnit::KilobytesSecond,
+"Megabits" => FleetMetricUnit::Megabits,
+"Megabits/Second" => FleetMetricUnit::MegabitsSecond,
+"Megabytes" => FleetMetricUnit::Megabytes,
+"Megabytes/Second" => FleetMetricUnit::MegabytesSecond,
+"Microseconds" => FleetMetricUnit::Microseconds,
+"Milliseconds" => FleetMetricUnit::Milliseconds,
+"None" => FleetMetricUnit::None,
+"Percent" => FleetMetricUnit::Percent,
+"Seconds" => FleetMetricUnit::Seconds,
+"Terabits" => FleetMetricUnit::Terabits,
+"Terabits/Second" => FleetMetricUnit::TerabitsSecond,
+"Terabytes" => FleetMetricUnit::Terabytes,
+"Terabytes/Second" => FleetMetricUnit::TerabytesSecond,
+other => FleetMetricUnit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for FleetMetricUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FleetMetricUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FleetMetricUnit::from(s))
+                }
+            }
 impl FleetMetricUnit {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FleetMetricUnit::Bits => "Bits",
-            FleetMetricUnit::BitsSecond => "Bits/Second",
-            FleetMetricUnit::Bytes => "Bytes",
-            FleetMetricUnit::BytesSecond => "Bytes/Second",
-            FleetMetricUnit::Count => "Count",
-            FleetMetricUnit::CountSecond => "Count/Second",
-            FleetMetricUnit::Gigabits => "Gigabits",
-            FleetMetricUnit::GigabitsSecond => "Gigabits/Second",
-            FleetMetricUnit::Gigabytes => "Gigabytes",
-            FleetMetricUnit::GigabytesSecond => "Gigabytes/Second",
-            FleetMetricUnit::Kilobits => "Kilobits",
-            FleetMetricUnit::KilobitsSecond => "Kilobits/Second",
-            FleetMetricUnit::Kilobytes => "Kilobytes",
-            FleetMetricUnit::KilobytesSecond => "Kilobytes/Second",
-            FleetMetricUnit::Megabits => "Megabits",
-            FleetMetricUnit::MegabitsSecond => "Megabits/Second",
-            FleetMetricUnit::Megabytes => "Megabytes",
-            FleetMetricUnit::MegabytesSecond => "Megabytes/Second",
-            FleetMetricUnit::Microseconds => "Microseconds",
-            FleetMetricUnit::Milliseconds => "Milliseconds",
-            FleetMetricUnit::None => "None",
-            FleetMetricUnit::Percent => "Percent",
-            FleetMetricUnit::Seconds => "Seconds",
-            FleetMetricUnit::Terabits => "Terabits",
-            FleetMetricUnit::TerabitsSecond => "Terabits/Second",
-            FleetMetricUnit::Terabytes => "Terabytes",
-            FleetMetricUnit::TerabytesSecond => "Terabytes/Second",
-            FleetMetricUnit::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FleetMetricUnit::Bits => "Bits",
+    FleetMetricUnit::BitsSecond => "Bits/Second",
+    FleetMetricUnit::Bytes => "Bytes",
+    FleetMetricUnit::BytesSecond => "Bytes/Second",
+    FleetMetricUnit::Count => "Count",
+    FleetMetricUnit::CountSecond => "Count/Second",
+    FleetMetricUnit::Gigabits => "Gigabits",
+    FleetMetricUnit::GigabitsSecond => "Gigabits/Second",
+    FleetMetricUnit::Gigabytes => "Gigabytes",
+    FleetMetricUnit::GigabytesSecond => "Gigabytes/Second",
+    FleetMetricUnit::Kilobits => "Kilobits",
+    FleetMetricUnit::KilobitsSecond => "Kilobits/Second",
+    FleetMetricUnit::Kilobytes => "Kilobytes",
+    FleetMetricUnit::KilobytesSecond => "Kilobytes/Second",
+    FleetMetricUnit::Megabits => "Megabits",
+    FleetMetricUnit::MegabitsSecond => "Megabits/Second",
+    FleetMetricUnit::Megabytes => "Megabytes",
+    FleetMetricUnit::MegabytesSecond => "Megabytes/Second",
+    FleetMetricUnit::Microseconds => "Microseconds",
+    FleetMetricUnit::Milliseconds => "Milliseconds",
+    FleetMetricUnit::None => "None",
+    FleetMetricUnit::Percent => "Percent",
+    FleetMetricUnit::Seconds => "Seconds",
+    FleetMetricUnit::Terabits => "Terabits",
+    FleetMetricUnit::TerabitsSecond => "Terabits/Second",
+    FleetMetricUnit::Terabytes => "Terabytes",
+    FleetMetricUnit::TerabytesSecond => "Terabytes/Second",
+    FleetMetricUnit::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"]
+                }
+            }
 impl AsRef<str> for FleetMetricUnit {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+
